@@ -66,6 +66,116 @@
     }
   },
   {
+    "id": "c_3x7m6c6f",
+    "ja": "総務の人に、会議室のプロジェクターを直してくれるよう頼んでもらえますか？",
+    "en": "Could you ask someone from the admin team to fix the projector in the meeting room?",
+    "alternatives": [
+      "Would you mind asking someone in admin to fix the projector in the meeting room?",
+      "Can you ask the admin team to repair the meeting room projector?"
+    ],
+    "point": "ask + 人 + to do の語順。ask that 節にしない",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 6,
+    "grammar": ["verb-object-to-do", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:48aa03de811625ab02cd2bd02541a874ffa7d629f987e1a5b2a4ed5c68b638ee",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4c2n4c2t",
+    "ja": "新しい経費精算システムの使い方がまだよくわからないので、お時間のあるときにいくつかアドバイスをいただけませんか？",
+    "en": "I still don't quite understand how the new expense system works, so could you give me some advice when you have a moment?",
+    "alternatives": [
+      "I'm still not sure how to use the new expense system, so could you give me a few tips when you're free?",
+      "I'm still not really sure how the new expense system works, so could you give me some pointers whenever you have time?"
+    ],
+    "point": "advice は数えられない。an advice や advices にしない",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 10,
+    "grammar": ["articles-and-countability", "noun-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a79cc32afc24bb5d212d67030c20cb88f9fc3d6872284f9f257512678ae78a25",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4q3w6j5q",
+    "ja": "コピー機の紙、昨日補充されたばかりなのに、もう切れてるよ。",
+    "en": "The copier paper was only refilled yesterday, but it's already run out.",
+    "alternatives": [
+      "The paper in the copier was just refilled yesterday, but it's already gone.",
+      "They only refilled the copier paper yesterday, and it's already run out."
+    ],
+    "point": "紙が主語なので was refilled と受け身にする",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 4,
+    "grammar": ["passive-voice", "present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cb92664fe50af4b6aef53069a7d10478749b62a23834856b53eeaf933fe9f6ac",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5z6u9w2w",
+    "ja": "新人は毎朝始業の10分前に来て、みんなに挨拶しながら自分の席まで歩いていくんだよ。",
+    "en": "Every morning, the new hire arrives ten minutes before work starts and walks to their desk, greeting everyone along the way.",
+    "alternatives": [
+      "The new hire comes in ten minutes early every morning and heads to their desk, saying hello to everyone as they go.",
+      "Every morning the new hire gets in ten minutes before we start and goes to their desk, greeting everybody on the way."
+    ],
+    "point": "「挨拶しながら」は文末に greeting を添えるだけでよい",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:32ba7e2b705f21f41df4d493cde97f254cb282c39c44726f8fae31b54625c44e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7a8z9c2e",
+    "ja": "コピー用紙、また切れちゃってる。先週まとめて注文しておくべきだったよ。",
+    "en": "We're out of copy paper again. I should have ordered a big batch last week.",
+    "alternatives": [
+      "We've run out of copy paper again. I should've ordered a bunch at once last week.",
+      "The copy paper has run out again. I should've placed a bulk order last week."
+    ],
+    "point": "「すべきだった」は should have + 過去分詞",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 6,
+    "grammar": ["modal-perfect", "articles-and-countability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:184e46dbb8bf3557b85a0c9469591e3bc714d432505a14522a85dc28668b8a58",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_7q7n8n3c",
     "ja": "部長が来たとき、あなたは休憩していたんですか？",
     "en": "Were you taking a break when the manager came by?",

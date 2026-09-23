@@ -110,6 +110,50 @@
     }
   },
   {
+    "id": "c_3y5m8w5p",
+    "ja": "引っ越しの手伝い、何時に行けばいい？",
+    "en": "What time should I come to help you move?",
+    "alternatives": [
+      "When should I come to help you move?",
+      "What time should I come over to help with the move?"
+    ],
+    "point": "「何時に」は What time で文頭に置く",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 2,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ea1b0e658a4b7c157bf1e1f8078dc1cc49d82222e0c05b82a047157c168191da",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4h9g7q9g",
+    "ja": "紙をちょっともらえる？メモを取りたいんだ。",
+    "en": "Can I have some paper? I need to take notes.",
+    "alternatives": [
+      "Could I get some paper? I want to take notes.",
+      "Can you give me some paper? I need to write something down."
+    ],
+    "point": "paper は数えられないので a paper ではなく some paper",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 3,
+    "grammar": ["articles-and-countability", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ffcb8ecf4f74960d6bdd110278e68e6d7251bec91104adf5cb57e64edbadb7e1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4m6m9a8k",
     "ja": "ご近所さんに猫の世話を頼んだこと、ある？私は先週初めてお隣の奥さんに頼んだんだけど、快く引き受けてくれたよ。",
     "en": "Have you ever asked a neighbor to look after your cat? I asked the woman next door for the first time last week, and she gladly agreed.",
@@ -198,6 +242,28 @@
     }
   },
   {
+    "id": "c_5h5p8g3g",
+    "ja": "ごめん、今夜は君の犬の散歩を代わってあげられないんだ。",
+    "en": "Sorry, I can't walk your dog for you tonight.",
+    "alternatives": [
+      "Sorry, I can't take your dog for a walk tonight.",
+      "I'm sorry, I won't be able to walk your dog tonight."
+    ],
+    "point": "「散歩させる」は walk を他動詞で使い walk your dog とする",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 3,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2f8990be62d17b334b4ae9c8b2da7cd03a38e69d174d4ae08715ffa93e4dba73",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_6x8p6x6s",
     "ja": "私が引っかかったのは、頼まれたこと自体じゃなくて、まるで私に借りでもあるかのような彼の頼み方だったんだ。",
     "en": "What bothered me wasn't the favor itself, but the way he asked, as if I owed him one.",
@@ -214,6 +280,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:8f9a3f97b312b8e35299c5cfe6dc18279f0bdab3d2b1bc4cb46bf7af406cf442",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8k4t7n4p",
+    "ja": "僕、土曜に友達の引っ越しの手伝いを頼まれてるんだ。",
+    "en": "I've been asked to help my friend move on Saturday.",
+    "alternatives": [
+      "I was asked to help my friend move on Saturday.",
+      "My friend asked me to help with their move on Saturday."
+    ],
+    "point": "「頼まれている」は受動態 have been asked to do で表す",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 3,
+    "grammar": ["passive-voice", "present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:54b79b42ccb1a74268cbe06509ae42d1a3bbeb82f10f9f7c867584566e828087",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

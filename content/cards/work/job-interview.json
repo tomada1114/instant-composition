@@ -66,6 +66,50 @@
     }
   },
   {
+    "id": "c_6e9s9r9z",
+    "ja": "最後に、このポジションではどんな成果が期待されているのか伺ってもよろしいですか？",
+    "en": "Lastly, may I ask what kind of results you expect from this position?",
+    "alternatives": [
+      "Finally, could I ask what kind of results are expected in this position?",
+      "Lastly, may I ask what results you'd expect from someone in this role?"
+    ],
+    "point": "ask の後は what you expect の語順。do you にしない",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 5,
+    "grammar": ["requests-permission", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c6cf815468f6f33dcca1d4e32b50f119b3b2ec053b32b16a634f684d71d581cb",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7g9r2w4p",
+    "ja": "私はマネジメントの経験はあまりありませんが、後輩の指導は 3 年間ずっと担当してきました。",
+    "en": "Although I don't have much management experience, I've been mentoring junior staff for three years.",
+    "alternatives": [
+      "Even though I don't have much experience in management, I've been training junior colleagues for three years.",
+      "I don't have much management experience, but I've been mentoring junior staff for the past three years."
+    ],
+    "point": "続けてきたことは I've been 〜ing で表す",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 5,
+    "grammar": ["concession-contrast", "present-perfect-continuous"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5d5204bec26f3a73567c52dee88ddda2748a3c52e53dd25002949157cb3b0028",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_7j7f3z3t",
     "ja": "御社には海外で働くチャンスはありますか？",
     "en": "Are there any opportunities to work overseas at your company?",
@@ -82,6 +126,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:74a507aa3c0d82afc181091e0e15683dc33b9576fbf6cfa89ff8913022a841d1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8s2j4p8z",
+    "ja": "私がこの職に応募した一番の理由は、御社の製品開発に直接関われることです。",
+    "en": "The main reason I applied for this job is that I'd get to work directly on your product development.",
+    "alternatives": [
+      "The biggest reason I applied for this position is that I'd get to work directly on developing your products.",
+      "My main reason for applying is that I'd be directly involved in your product development."
+    ],
+    "point": "reason is that 〜 の形。because でつなげない",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:aae94c0d83b6cfc244e0f19c5ba6bb051eedb60bf38084c2de0a315f49bf7802",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

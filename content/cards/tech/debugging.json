@@ -198,6 +198,28 @@
     }
   },
   {
+    "id": "c_3t8v9p2n",
+    "ja": "田中さんはそのバグは昨日のリリース後に初めて出たと言っていましたが、私はまだ再現できていません。",
+    "en": "Tanaka said the bug had first appeared after yesterday's release, but I haven't been able to reproduce it yet.",
+    "alternatives": [
+      "Tanaka said the bug first showed up after yesterday's release, but I still haven't managed to reproduce it.",
+      "According to Tanaka, the bug first appeared after yesterday's release, but I haven't been able to reproduce it yet."
+    ],
+    "point": "言っていた内容は時制を一つ過去へずらして had appeared",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 7,
+    "grammar": ["reported-speech", "tense-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a4ecd82c49000cc44819d8bb6a82213d5a52e34009c26a785f4f7e7fd9f3dbbc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3u7q8b4w",
     "ja": "私が不思議に思っているのは、データベースを移行する前に登録したユーザーにだけこのエラーが出るということです。",
     "en": "What puzzles me is that this error only appears for users who signed up before we migrated the database.",
@@ -670,6 +692,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:e3afa757965ce63003d965343e6687d3f1f0fecd4d30ddf4c7029532fbca01e3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9e5u7x4j",
+    "ja": "アップロードのたびにアプリが10秒ほど固まって、ユーザーはエラーメッセージもない真っ白な画面を見つめたままになるんです。",
+    "en": "The app freezes for about ten seconds after every upload, leaving users staring at a blank screen with no error message.",
+    "alternatives": [
+      "After every upload, the app freezes for about ten seconds, leaving users staring at a blank screen with no error message.",
+      "The app hangs for around ten seconds after each upload, leaving users looking at a blank screen without any error message."
+    ],
+    "point": "結果は leaving users staring と分詞で後ろにつなぐ",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3c1b207ef81065420145fd146c01f93fb1fa8f4e2e3c1a5846a5f0ec1580b5d4",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

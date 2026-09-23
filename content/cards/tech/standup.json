@@ -66,6 +66,28 @@
     }
   },
   {
+    "id": "c_4u4z3r9w",
+    "ja": "API の仕様はまだ固まっていませんが、私たちのチームは今日からフロント側の実装に着手します。",
+    "en": "Although the API spec hasn't been finalized yet, our team is starting on the front end today.",
+    "alternatives": [
+      "Even though the API spec isn't final yet, our team will start working on the front end today.",
+      "The API spec still isn't finalized, but our team is starting the front-end work today."
+    ],
+    "point": "「まだ固まっていない」は hasn't been finalized yet",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["concession-contrast", "passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4233788bab616747c01cc2921dc4e8c7523adfee7df73c2d162166a5b66e6309",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4w7s6n3x",
     "ja": "昨日のデプロイが何の警告もなく失敗したので、誰かが環境変数を消してしまったに違いありません。",
     "en": "Yesterday's deploy failed without any warning, so someone must have deleted an environment variable.",
@@ -236,6 +258,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:3d6ff73be7b43f4714db3069a14c8a9f973adff244e38b9d055d5171d0da5a7c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9c6q9x7e",
+    "ja": "今日どこかで30分ほど、ステージング環境のエラーを一緒に見てもらえないかなと思っているんですが。",
+    "en": "I was wondering if you could spare about thirty minutes sometime today to look at the staging errors with me.",
+    "alternatives": [
+      "Would you be able to spend about thirty minutes with me sometime today looking at the staging errors?",
+      "Do you think you could find thirty minutes today to go over the staging errors with me?"
+    ],
+    "point": "「〜してもらえないかな」は I was wondering if you could",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 8,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b8bb63d458515054cd7183235f952be113eb18cd53b6a9a0fb26ad2ba4b73a78",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

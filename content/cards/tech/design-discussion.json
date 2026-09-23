@@ -88,6 +88,28 @@
     }
   },
   {
+    "id": "c_4k8d9n9h",
+    "ja": "この API の仕様は、フロントエンドチームのレビューが終わるまで確定しません。",
+    "en": "The API spec won't be finalized until it's been reviewed by the front-end team.",
+    "alternatives": [
+      "The API spec won't be locked in until it's been reviewed by the front-end team.",
+      "The API spec isn't going to be finalized until the front-end team has reviewed it."
+    ],
+    "point": "until 節は未来のことでも will を使わず、it's been reviewed とする",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 6,
+    "grammar": ["passive-voice", "time-and-if-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:28fb49595a61d45c271cdbc927beae9371f06b27e1474fd6c095330c4df5cca4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4t9m2s7d",
     "ja": "僕たちが去年メッセージキューを選んでいたら、今こんなにタイムアウトで苦労していないはずだよね。",
     "en": "If we had chosen a message queue last year, we wouldn't be struggling with these timeouts now.",
@@ -126,6 +148,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:b2b62e98e96279ae6ba7596a430b3eae6f0b5c0b1801343971bc34d30a2e36d8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5e2c3t4m",
+    "ja": "もし彼女が最初にデータ量を見積もっていなかったら、私たちはたぶん間違ったデータベースを選んでいたでしょう。",
+    "en": "If she hadn't estimated the data volume up front, we would probably have chosen the wrong database.",
+    "alternatives": [
+      "If she hadn't estimated the data volume at the start, we'd probably have picked the wrong database.",
+      "We'd probably have chosen the wrong database if she hadn't estimated the data volume first."
+    ],
+    "point": "過去の仮定は had not 過去分詞、帰結は would have 過去分詞",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9b086ec6cd4a038d7b2e1b1711bc7cb2e526af3fc1901e48c7bb8cf1a54dd696",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5k5k5z4r",
+    "ja": "元のシステムを作ったチームが勧めたやり方は、来年見込んでいるトラフィックの量を考慮していません。",
+    "en": "The approach recommended by the team that built the original system doesn't account for how much traffic we're expecting next year.",
+    "alternatives": [
+      "The approach recommended by the team that built the original system doesn't take into account how much traffic we expect next year.",
+      "The team that built the original system recommended an approach that doesn't account for the traffic we're expecting next year."
+    ],
+    "point": "主語が長くても動詞は doesn't で受ける",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 10,
+    "grammar": ["nested-clauses", "noun-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cc83d06f58ccc605a5f5e68db6fbf997bdacd1bcd4a4cc88e81055d135cf3c11",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
@@ -192,6 +258,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:512217b6a52d0029edf806a520dcd3c84b73683fb6262b77109e26a58ffe2f79",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7u6f8a8f",
+    "ja": "認証まわりを担当しているエンジニアに、この設計を見てもらうよう頼んでもらえますか？",
+    "en": "Could you ask the engineer handling authentication to take a look at this design?",
+    "alternatives": [
+      "Could you ask the engineer in charge of authentication to look over this design?",
+      "Would you ask the engineer who handles authentication to review this design?"
+    ],
+    "point": "the engineer handling で後ろから説明、ask 人 to 動詞",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 5,
+    "grammar": ["post-modification", "verb-object-to-do"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3d94ab0f521a2b5b6a635bf1e8b3d98b1d2bd95b01f0fc3e31c29887ab8553da",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7x3d9e3j",
+    "ja": "課金ロジックだけ変更のペースがほかと違うので、サービスを二つに分けることを考えてもらえないかなと思っていたんですが。",
+    "en": "I was wondering if you'd be open to splitting the service in two, since the billing logic keeps changing at a different pace from everything else.",
+    "alternatives": [
+      "I was wondering whether you'd consider splitting the service in two, since the billing logic changes at a different pace from the rest.",
+      "I was wondering if you might consider breaking the service into two, because the billing logic keeps changing at a different rate from everything else."
+    ],
+    "point": "控えめな提案は I was wondering if で始める",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:87c3e39846a9130165d4dcae7675483896cfbc0ef35df356e472891afe7ad9af",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

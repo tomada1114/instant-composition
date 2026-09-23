@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2a4f9c9a",
+    "ja": "私たちの予約の日付が間違っているようなので、確認していただけないかと思いまして。",
+    "en": "It seems there's a mistake with the dates on our booking, so I was wondering if you could check it.",
+    "alternatives": [
+      "There seems to be an error in the dates of our reservation, so I was wondering if you could look into it.",
+      "It looks like the dates on our booking are wrong, so I was wondering if you could check them."
+    ],
+    "point": "丁寧な依頼は I was wondering if you could と過去形で",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 8,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:41f459dfaf91fc19d3e0dfb54123732daa1566d13fcf0f4c77ce51a9a404d951",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2h4x9s7c",
     "ja": "私たち、空港行きのバスに乗り遅れてしまいました。次のバスは何時ですか？",
     "en": "We missed the airport bus. When's the next one?",
@@ -16,6 +38,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:0a8158340b7fef728d9881edf171a188da239738a1ec1a805bc47beb79b0062a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3a6d5n7w",
+    "ja": "なくなったスーツケースに名札を付けておけばよかったって、妻がずっと言っています。",
+    "en": "My wife keeps saying she wishes she had put a name tag on the suitcase that went missing.",
+    "alternatives": [
+      "My wife keeps saying she wishes she'd attached a name tag to the missing suitcase.",
+      "My wife keeps telling me she wishes she had put a name tag on the suitcase that got lost."
+    ],
+    "point": "過去の後悔は wish の後を had put と過去完了に",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 9,
+    "grammar": ["wishes-regrets", "relative-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:23de9f8786392eff16bf08166ca50cdb4ac94093d632604fe74c1cbad51bd477",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3b4u4w6z",
+    "ja": "私たち、もう少し早くホテルを出ていれば、空港行きのバスに乗り遅れなかったのに。",
+    "en": "If we had left the hotel a bit earlier, we wouldn't have missed the airport bus.",
+    "alternatives": [
+      "If we'd left the hotel a little earlier, we wouldn't have missed the bus to the airport.",
+      "We wouldn't have missed the airport bus if we had left the hotel a bit sooner."
+    ],
+    "point": "過去の後悔は if 節を had left、主節を wouldn't have missed に",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ac307e767960863911f51209a9fcd89ea7159f88888f72191d5fd3da50a5d060",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

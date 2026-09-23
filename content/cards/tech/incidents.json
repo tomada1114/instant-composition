@@ -176,6 +176,28 @@
     }
   },
   {
+    "id": "c_5v6r6e7u",
+    "ja": "原因がはっきりするまで、昨日のリリースを元に戻しておいてもらえますか？",
+    "en": "Could you roll back yesterday's release until we figure out what caused the problem?",
+    "alternatives": [
+      "Can you roll back yesterday's release until we find out what caused it?",
+      "Could you revert yesterday's release until we know what the cause is?"
+    ],
+    "point": "元に戻すは roll back、until 節は現在形で",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["phrasal-verbs", "time-and-if-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d27edcb57835007236a5ecc8b8639c37c2297d5adaf904946b3971d6d7cfc052",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_6r8g7y8z",
     "ja": "開発チームはもう障害の原因を特定しましたか？",
     "en": "Has the dev team identified the cause of the outage yet?",

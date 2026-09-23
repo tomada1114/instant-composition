@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_3m8x3z6u",
+    "ja": "この書類に記入したいので、そのペンをお借りしてもいいですか？",
+    "en": "May I borrow your pen to fill out this form?",
+    "alternatives": [
+      "Could I borrow your pen to fill out this form?",
+      "Is it okay if I borrow your pen to fill out this form?"
+    ],
+    "point": "「記入する」は fill out、目的は to で続ける",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 3,
+    "grammar": ["requests-permission", "infinitives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4621dba0959cb6e67f85725042d0959de6e6b9a5dedf1139fd8e42f5f395f160",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3p4p5c2v",
     "ja": "郵便局の人が、この小包は明日届くって言ってたよ。",
     "en": "The person at the post office said this package would arrive tomorrow.",
@@ -82,6 +104,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:2334c10615add6f0cd2feadc282ea05a5195fdc9108d211031cf4dbbc1d9d696",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6p7c4f7f",
+    "ja": "母は郵便局で、もう30分も列に並んでいます。",
+    "en": "My mom has been in line at the post office for thirty minutes.",
+    "alternatives": [
+      "My mom has been waiting in line at the post office for thirty minutes.",
+      "My mother has been standing in line at the post office for thirty minutes."
+    ],
+    "point": "今も続いている状態は has been で表す",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 4,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:24104aadc99a672354cc6d90da5c08852be6fa17fb0ba9bc9fd16a0b3b7f6cda",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6v4u4d3c",
+    "ja": "私の新しいキャッシュカード、もう郵送してくれましたか？",
+    "en": "Have you mailed my new bank card yet?",
+    "alternatives": [
+      "Have you already sent my new bank card?",
+      "Have you sent out my new bank card yet?"
+    ],
+    "point": "疑問文の「もう」は文末の yet で表す",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 3,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f112b6d712b934b4fe7c7fb539748e857f33097c5c42f954ea3b43ddf86f62ac",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

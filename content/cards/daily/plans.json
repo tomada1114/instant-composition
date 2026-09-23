@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_3j2s4h2g",
+    "ja": "姉と私、旅行の日程をもう三回も変えてるんだよね。",
+    "en": "My sister and I have already changed our trip dates three times.",
+    "alternatives": [
+      "My sister and I have rescheduled our trip three times already.",
+      "My sister and I have already moved the dates of our trip three times."
+    ],
+    "point": "「もう三回も変えてる」は過去形でなく現在完了で言う",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 4,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d122500a0c034069207e2141fff3b89908f7bc349a82fd59bd20b3690354eb2a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4g8r9d3x",
     "ja": "土曜のバーベキュー、私たち何時に集合することになったんだっけ？",
     "en": "What time did we decide to meet for Saturday's barbecue?",
@@ -192,6 +214,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:45b13b350073a64036c67c4a7646921fb7d66691f5b39cccd2ca860dde796288",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9m5p7x6k",
+    "ja": "土曜の朝、駅の近くにできた新しいカフェで会おうよ。",
+    "en": "Let's meet at the new café near the station on Saturday morning.",
+    "alternatives": [
+      "How about meeting at the new café by the station on Saturday morning?",
+      "Why don't we meet at the new café near the station Saturday morning?"
+    ],
+    "point": "「駅の近くの」は near the station を名詞の後ろに置く",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2dd54e37647cbeeea742d84aa1d7ae6f53c1ae9b74bea9283295dc937b5602e3",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

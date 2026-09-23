@@ -177,6 +177,28 @@
     }
   },
   {
+    "id": "c_6z6d6v6s",
+    "ja": "前回重大なバグが見つかったのは決済フローだったので、リリース前に QA チームにもう一度テストしてもらいましょう。",
+    "en": "Before we release this, let's have the QA team test the checkout flow again, since that's where they caught a critical bug last time.",
+    "alternatives": [
+      "Let's get the QA team to test the checkout flow again before release, because that's where they found a critical bug last time.",
+      "Before the release, let's have QA retest the checkout flow, since that's where a critical bug turned up last time."
+    ],
+    "point": "「〜してもらう」は have + 人 + 動詞の原形（to は不要）",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 9,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:215a1efab9d618511e2864badbe95dc7f8bd94b470c88c2f5946cfae54617ba3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_7d2r5s2g",
     "ja": "たとえユーザーからの要望が多くても、その機能は今回のリリースには入れられません。",
     "en": "Even if a lot of users ask for it, we can't include that feature in this release.",
@@ -193,6 +215,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:7816050d60f32ca92762f249572e9231918c9ec1e145a83d7724e789f3c483b9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7r4x3u6v",
+    "ja": "営業チームは、解約をほのめかしている大口顧客 3 社を理由に、その機能を最優先にするよう迫ってきています。",
+    "en": "The sales team is pushing us to make that feature a top priority, citing three major clients who've hinted they might cancel.",
+    "alternatives": [
+      "Sales is pressing us to prioritize that feature, pointing to three big clients who've hinted they may cancel.",
+      "The sales team is pushing hard for that feature to be the top priority, citing three key clients who've suggested they might leave."
+    ],
+    "point": "「〜を理由に」は文末に citing 〜 と分詞で添える",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["participle-clauses", "nested-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3ed62ce987e7e9e6329fccdf8adfbfdac48cbc96a9ef649cb364e6ae4c8f4571",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

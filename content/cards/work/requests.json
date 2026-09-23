@@ -264,6 +264,28 @@
     }
   },
   {
+    "id": "c_6a5k4d5b",
+    "ja": "部長がその依頼を引き受けるのをためらったのは、仕事の量ではなく、締め切りの短さのせいだったんです。",
+    "en": "It wasn't the amount of work but the tight deadline that made our department head hesitate to take on the request.",
+    "alternatives": [
+      "It was the tight deadline, not the amount of work, that made our department head hesitate to take on the request.",
+      "What made our department head hesitate to take on the request wasn't the amount of work but the tight deadline."
+    ],
+    "point": "It wasn't A but B that の語順で強調する",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e3c49630558eea61946208230f785bef2bc1d998ae4c07ca6292cb6bbd2e89a8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_6w2s7f9e",
     "ja": "クライアントから月曜までに署名するよう言われているので、金曜までに契約書を確認していただけないでしょうか。",
     "en": "I was wondering if you could review the contract by Friday, since the client has asked us to sign it by Monday.",

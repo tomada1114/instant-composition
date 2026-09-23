@@ -132,6 +132,28 @@
     }
   },
   {
+    "id": "c_5u4e8b8w",
+    "ja": "あのとき転職してなかったら、僕は今ごろまだ毎晩終電で帰ってたと思う。",
+    "en": "If I hadn't changed jobs back then, I'd probably still be taking the last train home every night.",
+    "alternatives": [
+      "If I hadn't switched jobs back then, I'd probably still be catching the last train home every night.",
+      "I think I'd still be taking the last train home every night if I hadn't changed jobs back then."
+    ],
+    "point": "過去の仮定は had done、今の結果は would be",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:72a7a0a5cb31debaf78d3239d195ef4de2817247d5c692b21cd69b8f95e6fdc6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5x3s8s3g",
     "ja": "転職したんだけど、今の会社のほうが前の会社よりずっと働きやすいよ。",
     "en": "I changed jobs, and my new company is much easier to work for than my old one.",
@@ -170,6 +192,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:2336616b9a9479c48b7510c02258752fc0dba28fc2d16fac064535ddbed84028",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7x5a4p2c",
+    "ja": "前に会ったとき、まだ部屋を探してたよね。もう引っ越したの？",
+    "en": "You were still looking for an apartment when we last met. Have you moved yet?",
+    "alternatives": [
+      "When we last met, you were still looking for an apartment. Have you moved yet?",
+      "You were still apartment hunting last time I saw you. Have you moved already?"
+    ],
+    "point": "前回は過去進行形、今の状況は現在完了で聞く",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 5,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a1b86343a331e479bc6639326b5a0dc997378f4c7f7ea0b9a0aa141c639185b5",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
