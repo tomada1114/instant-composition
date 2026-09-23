@@ -340,6 +340,20 @@ is committing — a secret about to land in history — is instead the single me
 layer this repository does ship: `lefthook`'s pre-commit hook, which every author goes
 through the same gate for.
 
+Beside the tree, the GitHub repository's own settings enforce a few things server-side.
+No file records them, so no diff shows them change; only the owner changes them:
+
+- A ruleset on the default branch requires a pull request, blocks force-pushes and
+  deletion, and blocks the merge until the required checks pass. The required checks are
+  `ci.yml`'s jobs, the spell check, the PR-title check, the dependency review and
+  GitGuardian. It has no bypass actor, because an agent's `gh` runs with the owner's
+  token, so an owner bypass would be an agent bypass too.
+- Actions must be pinned to a full commit SHA, including actions nested in composite
+  actions, so the pin rule in `tests/workflows.test.ts` also holds at run time.
+- Secret scanning with push protection, Dependabot alerts and security updates, CodeQL
+  default setup and private vulnerability reporting are on. CodeQL is not a required
+  check.
+
 Two consequences of that shape are worth naming rather than discovering: a shell command
 that reads a secret path outside a commit (`cat .env`, `cp .env /tmp/x`) is invisible to
 the hook, since it only inspects what is staged; and turning the Git hooks off through

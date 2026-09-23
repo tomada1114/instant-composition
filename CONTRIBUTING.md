@@ -56,7 +56,9 @@ ages out, and never use a broad package-only or wildcard exclusion.
 ## Pull requests
 
 Create a feature branch, keep commits focused, and use a Conventional Commit PR title.
-Run `pnpm check:source` before requesting review.
+Run `pnpm check:source` before requesting review. `main` takes changes only through a
+pull request, and GitHub blocks the merge until the required checks pass (AGENTS.md's
+"Enforcement layers").
 
 Nothing here is published, so a change is not sized by a version number. What decides
 whether a pull request also has to touch a test or a document is what the change is

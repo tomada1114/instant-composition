@@ -150,6 +150,14 @@ The judgment half no test encodes:
   block, `persist-credentials: false`, a timeout) must say in its own body why the
   removed protection no longer applies here. Silence is not review for that.
 
+The default branch's ruleset (AGENTS.md's "Enforcement layers") requires checks **by
+name**. A job's `name:` — the matrix suffix included, as in `Test (ubuntu-latest)` — is
+therefore part of the merge gate. Renaming a required job, splitting it, or adding a
+second OS to the matrix leaves the ruleset waiting for a check that never reports, and
+every pull request stays unmergeable while CI shows green. A change like that says in
+its body which required check it renames, so the owner updates the ruleset in the same
+sitting. Adding a job does not make it required; that is the owner's call too.
+
 ## `lefthook.yml`
 
 The hook is deliberately narrow, and AGENTS.md's "Enforcement layers" holds the argument
