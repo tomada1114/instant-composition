@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2c7z7b9g",
+    "ja": "この設計だと、あとで機能を追加できますか？",
+    "en": "Can we add features later with this design?",
+    "alternatives": [
+      "With this design, can we add features later?",
+      "Can we add more features later with this design?"
+    ],
+    "point": "「できますか」は Can we で文を始める",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a546c047cd2279e2939dcc34a3ebf0f8c5ad0bff74c6993c5e0bd3b8ca13004a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2k4t3a5e",
     "ja": "このサービスを分割したら、レイテンシがどれくらい増えるか誰か分かる？",
     "en": "Does anyone know how much latency we'd add if we split this service?",
@@ -38,6 +60,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:512217b6a52d0029edf806a520dcd3c84b73683fb6262b77109e26a58ffe2f79",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8c3f7q7u",
+    "ja": "私たちは今、二つの案を比べているところです。",
+    "en": "We're comparing two options now.",
+    "alternatives": [
+      "We're comparing two ideas right now.",
+      "Right now we're comparing two options."
+    ],
+    "point": "「今〜しているところ」は be + -ing",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:928e29d3bf8e279f1838c525e18b29ec959e96b2d31e1a18ebb68f80d2c6b570",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

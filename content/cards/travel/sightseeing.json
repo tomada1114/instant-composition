@@ -44,6 +44,50 @@
     }
   },
   {
+    "id": "c_3m4u4z5y",
+    "ja": "英語のガイドツアーが何時に始まるか、それと私たちが事前に予約する必要があるかどうか、教えていただけますか？",
+    "en": "Could you tell me what time the English guided tour starts and whether we need to book in advance?",
+    "alternatives": [
+      "Could you let me know when the English guided tour begins and if we have to reserve ahead of time?",
+      "Would you mind telling me what time the English tour starts and whether we need a reservation?"
+    ],
+    "point": "間接疑問は what time the tour starts と平叙文の語順",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 7,
+    "grammar": ["indirect-questions", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:67a718ca370ef20676acd4aa7db54b7c232578fe356d7f18bac12199d42b413a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3p2n7b6v",
+    "ja": "この観光地で私がいちばん見たいのは、本堂の裏にある庭なんです。",
+    "en": "What I'd most like to see here is the garden behind the main hall.",
+    "alternatives": [
+      "The thing I'd most like to see here is the garden behind the main hall.",
+      "What I really want to see here is the garden behind the main hall."
+    ],
+    "point": "「〜なのは」は What I'd like to see is で主語にする",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 5,
+    "grammar": ["noun-clauses", "post-modification"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4a874206c9d627f05361c0ad98ec3460ee9507d111ae8ce7a756fe11cf698700",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4d9p2z8u",
     "ja": "あの写真を撮ったとき、もしあなたが三脚を持ってきていたら、夜景をもっときれいに撮れたと思いますか？",
     "en": "If you had brought a tripod when you took that photo, do you think you could have gotten a better shot of the night view?",
@@ -82,6 +126,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:baf5a8c9ca6c468534927941cf8bd969308cc98783c5bf6e39ba68ea2bb8a501",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5b2r6h4h",
+    "ja": "すみません、もしよろしければ、この噴水の前で私たちの写真を撮っていただけないかと思いまして。",
+    "en": "Excuse me, I was wondering if you could take a picture of us in front of this fountain.",
+    "alternatives": [
+      "Excuse me, would you mind taking a picture of us in front of this fountain?",
+      "Sorry to bother you, but I was wondering if you could take a photo of us in front of this fountain."
+    ],
+    "point": "丁寧な依頼は I was wondering if you could と過去形で",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fc58bd982efa4cbd0e818e3250e17574c136cc146f7168c7af4f7b8f72dc2fde",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

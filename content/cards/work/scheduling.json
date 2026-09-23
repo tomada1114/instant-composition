@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_6e3h3d5v",
+    "ja": "たとえクライアントに頼まれても、私たちはリリース日をこれ以上前倒しすることはできません。",
+    "en": "Even if the client asks us to, we can't move the release date up any further.",
+    "alternatives": [
+      "Even if the client asks, we can't bring the release date forward any further.",
+      "We can't move up the release date any further, even if the client asks us to."
+    ],
+    "point": "「前倒し」は move up / bring forward、even if 節は現在形",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 8,
+    "grammar": ["concession-contrast", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cbc692351a2910db0bde3dc21b0bbd62331fcecaa27f17856c888db4457437d8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_6g2c6d3u",
     "ja": "私たちは納期を確認するために、明日の朝お客様に電話します。",
     "en": "We'll call the client tomorrow morning to confirm the deadline.",
@@ -148,6 +170,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:4c3c5ba1ce3607d96afc2a030950ebd36c69094b90b6a54e3162179bbb3a1f80",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9n8a9k7p",
+    "ja": "会議が来週にずれたこと、あなたがもっと早く教えてくれていたらよかったのに。",
+    "en": "I wish you had told me sooner that the meeting was moved to next week.",
+    "alternatives": [
+      "If only you'd told me earlier that the meeting got moved to next week.",
+      "I wish you'd let me know sooner that the meeting was pushed to next week."
+    ],
+    "point": "過去への後悔は I wish + had 過去分詞",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["wishes-regrets", "noun-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:046b94dfb7743e4346c4f0507df459a216ffc09e8ff5888571d5c786a82ac61f",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

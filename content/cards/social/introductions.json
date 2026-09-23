@@ -20,5 +20,71 @@
         "at": "2026-09-22"
       }
     }
+  },
+  {
+    "id": "c_4n4v5g6a",
+    "ja": "もし私がもっと英語を話せたら、海外で働いてみたいです。",
+    "en": "If I could speak English better, I'd like to work abroad.",
+    "alternatives": [
+      "If my English were better, I'd like to work overseas.",
+      "If I spoke better English, I'd want to work abroad."
+    ],
+    "point": "今の事実と違う仮定は could と過去形で表す",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 5,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c1612c12c860a5989ccb76e57f156ee4f846e81765bf396c0ae49389a56f313b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4n6u3u6h",
+    "ja": "実は、私がこの仕事を選んだ一番の理由は、地元の人たちの役に立てると思ったからなんです。",
+    "en": "Actually, the main reason I chose this job is that I thought I could help people in my hometown.",
+    "alternatives": [
+      "Actually, what made me choose this job was that I thought I could help the people in my hometown.",
+      "Actually, the biggest reason I picked this job is that I thought I could be useful to local people."
+    ],
+    "point": "The reason is that 〜 の形。because でつながない",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 7,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d27eb24ac23ac5cebe5734984002e548b0f495184591200e804ac4687c304aad",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8g4r4z7s",
+    "ja": "あなたは仕事で英語を使うことに、もう慣れていますか？",
+    "en": "Are you used to using English at work yet?",
+    "alternatives": [
+      "Have you gotten used to using English at work yet?",
+      "Are you used to using English for work yet?"
+    ],
+    "point": "be used to の後は動詞の ing 形",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 5,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7643f6a445af236c9f739e976bc557b2fa6b14eb9937007fbb61e3292c8c1446",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
   }
 ]

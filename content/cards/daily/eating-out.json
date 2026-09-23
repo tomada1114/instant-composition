@@ -45,6 +45,28 @@
     }
   },
   {
+    "id": "c_2s7t5q9v",
+    "ja": "窓際の席はもう全部予約で埋まっていると言われたので、私たちはカウンターに座りました。",
+    "en": "We were told all the window seats had already been reserved, so we sat at the counter.",
+    "alternatives": [
+      "We were told that the window seats were all already reserved, so we sat at the counter.",
+      "Since we were told all the window seats had already been booked, we sat at the counter."
+    ],
+    "point": "「言われた」は were told、席は had been reserved と受動態を重ねる",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 6,
+    "grammar": ["passive-voice", "past-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:780ab0be7492124451b54057a6262bd875c1f487b2b1a0bc1c63ec12385ce80f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2z3s8z7r",
     "ja": "私たち、もう30分も料理を待ってるんですけど、注文ちゃんと通ってますか？",
     "en": "We've been waiting for our food for thirty minutes. Did our order go through?",

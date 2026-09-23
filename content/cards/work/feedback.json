@@ -1,0 +1,46 @@
+[
+  {
+    "id": "c_4s3r9u2b",
+    "ja": "チームリーダーの指摘をもっと早く聞いておけばよかった。そうすれば、発表の前にスライドを直せたのに。",
+    "en": "I wish I'd listened to my team lead's feedback sooner, because then I could have fixed the slides before the presentation.",
+    "alternatives": [
+      "If only I'd listened to my team lead's feedback earlier; I could have fixed the slides before the presentation.",
+      "I should've listened to my team lead's feedback sooner. Then I could've fixed the slides before the presentation."
+    ],
+    "point": "過去の後悔は I wish I had + 過去分詞",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 8,
+    "grammar": ["wishes-regrets", "modal-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f775a8e502da88a87e32b4b652f3f52857ce098457a20a17f3d25c3e43efb1b5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8h8w5a8b",
+    "ja": "今回いただいた報告書は、内容が正確なだけでなく、構成も非常に分かりやすかったです。",
+    "en": "Not only was your report accurate, but it was also remarkably easy to follow.",
+    "alternatives": [
+      "Your report was not only accurate but also really easy to follow.",
+      "Your report wasn't just accurate; it was also very easy to follow."
+    ],
+    "point": "Not only を文頭に出したら was your report と語順を倒す",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:98b3b88644325aa19df973011d9f7c5e62fae62a8176b743f736100f096b6ab3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

@@ -132,6 +132,28 @@
     }
   },
   {
+    "id": "c_3x4m4b8h",
+    "ja": "正直、隣の席で電話している男の人に、ちょっとイライラしています。",
+    "en": "To be honest, I'm a bit annoyed by the man talking on the phone in the seat next to me.",
+    "alternatives": [
+      "Honestly, the man talking on the phone in the next seat is annoying me a little.",
+      "Honestly, I'm a little irritated by the guy talking on his phone in the seat next to me."
+    ],
+    "point": "「電話している男の人」は the man talking on the phone と後ろから修飾",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 8,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2240c24437699e1ba8ac0352a0bd73ddb4b90861b9454b5a59efd850ca38e8c0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5g8w7y9w",
     "ja": "正直言うと、一番がっかりしたのは誰も手伝ってくれなかったことです。",
     "en": "To be honest, what disappointed me most was that nobody helped me.",
@@ -236,6 +258,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:8b2a749b837a82fbc2a21206345ceab38da051f98702d3fa720ce759eee01864",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6z8y2c9q",
+    "ja": "兄は、自分でもすっかり忘れていた誕生日を私が覚えていたので、すごく喜んでいました。",
+    "en": "My brother was really happy that I'd remembered his birthday, which he'd completely forgotten himself.",
+    "alternatives": [
+      "My brother was so happy because I had remembered his birthday, which even he had completely forgotten.",
+      "My brother was really pleased that I'd remembered his birthday, since he'd totally forgotten it himself."
+    ],
+    "point": "喜んだ時点より前のことなので覚えていた・忘れていたは had + 過去分詞",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["past-perfect", "relative-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:58ab26a110155ff9ec14dd190cfebecf56b66392a606804f94462d67a6da65d7",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

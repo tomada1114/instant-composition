@@ -1,5 +1,28 @@
 [
   {
+    "id": "c_2q8u3t3j",
+    "ja": "決済のバグが直るまで、リリース日の発表は見合わせましょう。",
+    "en": "Let's hold off on announcing the release date until the payment bug is fixed.",
+    "alternatives": [
+      "Let's hold off on announcing the release date until we've fixed the payment bug.",
+      "Let's wait to announce the release date until the payment bug is fixed.",
+      "Why don't we hold off on announcing the release date until the payment bug gets fixed?"
+    ],
+    "point": "hold off on の後は動名詞。until 節は未来でも現在形",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["phrasal-verbs", "time-and-if-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d3c204737933be8e96f10cf9b1c2a40523974ed95c64b179aa479f58647f1b75",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2x9x2b8q",
     "ja": "先週のリリースで、私たちはついにダークモードを追加しました。",
     "en": "In last week's release, we finally added dark mode.",
@@ -16,6 +39,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:6b1f6414fb7988213d328fa3cf13a4fcdb7fa54b81176c1af7f6ebdd57d78b11",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4e7z4d5w",
+    "ja": "ユーザーは、このアプリで写真を共有できません。",
+    "en": "Users can't share photos in this app.",
+    "alternatives": [
+      "Users can't share photos with this app.",
+      "Users cannot share photos on this app."
+    ],
+    "point": "「できない」は can't＋動詞の原形",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:995f4076d9cf2959ac0cc2ed39b36d67739b573240529a1ee8810b99ebc9fdc0",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
@@ -88,6 +133,28 @@
     }
   },
   {
+    "id": "c_5p8d5k9p",
+    "ja": "ベータ版のテストが終わったら、その機能を正式に出すかどうか決めよう。",
+    "en": "Let's decide whether to officially launch that feature once the beta testing is over.",
+    "alternatives": [
+      "When the beta testing is done, let's decide if we should officially release that feature.",
+      "Let's decide whether we'll officially roll out that feature after the beta testing is finished."
+    ],
+    "point": "未来のことでも「終わったら」の節は現在形 is over",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["time-and-if-clauses", "noun-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4272ed6164a35587e531d6d763c3634f2a4fefece271960b6108810ae5f3acce",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5y6r3u5s",
     "ja": "営業チームに、機能の要望を一つのリストにまとめるよう頼んでもらえますか？",
     "en": "Could you ask the sales team to put their feature requests in one list?",
@@ -148,6 +215,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:f5ee7190ec64312f859231d6d02149182d5fccdd59d0ab297be24ca8cf98c2a9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9r2w4d9y",
+    "ja": "サラ、その機能要望、次のスプリントまで後回しにしてもらえる？",
+    "en": "Sara, could you put off that feature request until the next sprint?",
+    "alternatives": [
+      "Sara, can you push that feature request back to the next sprint?",
+      "Sara, could you hold off on that feature request until the next sprint?"
+    ],
+    "point": "「後回しにする」は put off / push back で言える",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["phrasal-verbs", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:84692e81a9645988d947b3925181933013c9a2c5f4a8dff572d84f7075051df9",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

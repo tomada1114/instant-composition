@@ -151,6 +151,28 @@
     }
   },
   {
+    "id": "c_7a8t2d4c",
+    "ja": "昨日の夜に食べた牡蠣にあたったのかもしれないって、お医者さんに言われました。",
+    "en": "The doctor said I might have gotten food poisoning from the oysters I ate last night.",
+    "alternatives": [
+      "The doctor told me I might have gotten food poisoning from the oysters I had last night.",
+      "According to the doctor, I might have gotten sick from the oysters I ate last night."
+    ],
+    "point": "過去の推量は might have + 過去分詞",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 7,
+    "grammar": ["modal-perfect", "reported-speech"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b2a22ca6aa72e505047aeb6fa949ff14bdb90e1b29e94a11ba010d1bc9db4239",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_7e5k9g9s",
     "ja": "熱があるなら、今日は家で休んでね。",
     "en": "Stay home today if you have a fever.",

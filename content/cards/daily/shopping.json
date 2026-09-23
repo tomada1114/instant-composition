@@ -1,0 +1,46 @@
+[
+  {
+    "id": "c_2w5q4u4q",
+    "ja": "もし僕が君なら、ネットで買う前にお店で実際に試着してみるよ。",
+    "en": "If I were you, I'd try it on in a store before buying it online.",
+    "alternatives": [
+      "If I were you, I'd try it on at a store before ordering it online.",
+      "If I were you, I'd go try it on in a store before I bought it online."
+    ],
+    "point": "If I were you の後は I'd、before の後は動名詞 buying",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["second-conditional", "gerunds"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c5fd2b1c2993e86172a2484e152478ce62c0ac0cfb1e6f8945156594ddd99c61",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6r9c2z7y",
+    "ja": "このコート、返品するか小さいサイズに交換するかで迷ってるんだ。",
+    "en": "I'm torn between returning this coat and exchanging it for a smaller size.",
+    "alternatives": [
+      "I can't decide whether to return this coat or exchange it for a smaller size.",
+      "I can't decide between returning this coat and exchanging it for a smaller size."
+    ],
+    "point": "between の後は returning と exchanging の動名詞でそろえる",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:30646eaf6ab12b292c76860ab0bd2ca3e260a9c09ac6c2a9ae5537190cb442c7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

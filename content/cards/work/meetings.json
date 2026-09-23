@@ -66,6 +66,28 @@
     }
   },
   {
+    "id": "c_2v7k6t3a",
+    "ja": "その件は私たちが前回の会議で話し合いましたが、それ以降状況がかなり変わっています。",
+    "en": "We discussed that issue at the last meeting, but the situation has changed quite a bit since then.",
+    "alternatives": [
+      "We talked about that at our last meeting, but things have changed a lot since then.",
+      "We went over that issue in the last meeting, but the situation has changed considerably since then."
+    ],
+    "point": "前回は過去形、since then 以降は現在完了",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7f05c1894f6d295b9403de262cb9d082d2370e5c4efd5015ce5f08ceee3c45c2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2y3s6y8u",
     "ja": "この件、もう1時間も話し合っていますよね。そろそろまとめませんか？",
     "en": "We've been discussing this for an hour now, so shall we wrap it up?",
@@ -88,6 +110,28 @@
     }
   },
   {
+    "id": "c_3r5d8d3u",
+    "ja": "部長は先週の会議で、この案は来月までに承認されるだろうと言っていましたよ。",
+    "en": "At last week's meeting, the manager said this proposal would be approved by next month.",
+    "alternatives": [
+      "The manager said at last week's meeting that this proposal would be approved by next month.",
+      "At the meeting last week, the manager told us this proposal would get approved by next month."
+    ],
+    "point": "said の後は will を would に下げる",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["reported-speech", "passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ddff9ef87b3cee1b15c543f91df0c2e85d72435cd0a5d40f7e6238d9269daff4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_6a3u2x9y",
     "ja": "次の議題に移る前に、予算の数字をもう一度確認できないかと思っていたのですが。",
     "en": "I was wondering if we could go over the budget figures once more before we move on.",
@@ -104,6 +148,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:f2bd5cdc854c27de7c2e230ce11353fae5fab4d1c89a3f2cc54503e4fa3c71ce",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7c4e9s3a",
+    "ja": "私が一番気になっているのは、このプロジェクトの最終的な責任者が誰になるのか、私たちがまだ決めていないことです。",
+    "en": "What concerns me most is that we still haven't decided who will ultimately be responsible for this project.",
+    "alternatives": [
+      "What worries me most is that we still haven't decided who'll ultimately be responsible for this project.",
+      "What bothers me most is that we haven't yet decided who will be ultimately responsible for this project."
+    ],
+    "point": "What 節を主語に、who 以下は平叙文の語順",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 9,
+    "grammar": ["noun-clauses", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c77c30de466aa11522c6a97efadc8629b9390c5fcccdacdbbd9032307e5dae63",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

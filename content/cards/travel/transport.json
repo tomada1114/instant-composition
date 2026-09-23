@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2j2p3d2n",
+    "ja": "私たちの電車、30分遅れてるけど、それでも乗り換えには間に合うと思うよ。",
+    "en": "Even though our train is 30 minutes late, I think we'll still make our connection.",
+    "alternatives": [
+      "Our train is 30 minutes late, but I think we'll still make our connection.",
+      "Although our train's running 30 minutes late, I think we can still make the transfer."
+    ],
+    "point": "「それでも」は still。「乗り換えに間に合う」は make the connection",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 7,
+    "grammar": ["concession-contrast", "future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:211d0c00eedd21149b08eabbf23c9fb93603fe1f1f3e2bfb0c1cead9dec1e782",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2t5w9g6d",
     "ja": "駅員さんに頼んで、乗り換えの行き方を紙に書いてもらったんだ。",
     "en": "I had the station staff write down the transfer route for me.",
@@ -104,6 +126,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:124d283eb6e41a0b43b2b57582c4229b4a5e50fa1749e41e70e8f7447631283b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8d8u5f7f",
+    "ja": "この時間は道がすごく混んでるから、タクシーより電車のほうがたぶん早いよ。",
+    "en": "The train will probably be faster than a taxi because traffic is really bad this time of day.",
+    "alternatives": [
+      "Taking the train will probably be quicker than taking a taxi, since the roads are really busy right now.",
+      "The train's probably faster than taking a taxi because traffic is terrible at this hour."
+    ],
+    "point": "「〜より早い」は faster than。「道が混む」は traffic is bad が自然",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 7,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:25f6ac610140a559d01377d1d0922862f1bdc7225800fab2919fefaba205a448",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

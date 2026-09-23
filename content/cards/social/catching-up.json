@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2h5v3w2j",
+    "ja": "最近、週末は何をしてるの？",
+    "en": "What do you do on weekends these days?",
+    "alternatives": [
+      "What are you doing on weekends these days?",
+      "These days, what do you do on weekends?"
+    ],
+    "point": "習慣は現在形 do。「最近」は these days",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 2,
+    "grammar": ["wh-questions", "be-and-present-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:97e60bcddae00f4a59f57534bee7d654509af4689ea6498854197e0284f35b89",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2p6s3e3g",
     "ja": "もしあの時あの会社を辞めてなかったら、僕は今の妻には出会ってなかっただろうね。",
     "en": "If I hadn't quit that company back then, I never would have met my wife.",
@@ -60,6 +82,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:4e3d2104100ca1a50d2426273283dd1d93ebd375340d92bf828737d9a772a502",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7s6j2c4k",
+    "ja": "最近、6 時に起きなきゃいけないんだ。",
+    "en": "These days I have to get up at six.",
+    "alternatives": [
+      "I have to wake up at six these days.",
+      "Recently I've had to get up at six."
+    ],
+    "point": "義務は have to + 動詞の原形",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2336616b9a9479c48b7510c02258752fc0dba28fc2d16fac064535ddbed84028",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7z6c8v8a",
+    "ja": "赤ちゃんの写真、見せてもらえますか？",
+    "en": "Could you show me photos of your baby?",
+    "alternatives": [
+      "Can you show me photos of your baby?",
+      "Could you show me pictures of your baby?"
+    ],
+    "point": "丁寧な依頼は Could you + 動詞の原形",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3b9faad4bb4019acb581c8e2c52f4cd085bb4852efec0903c1dae573c98b6295",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

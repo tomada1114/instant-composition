@@ -108,5 +108,49 @@
         "at": "2026-09-22"
       }
     }
+  },
+  {
+    "id": "c_6x2a8s9b",
+    "ja": "明日の朝いちばんに私に電話するよう、田中さんに伝えてもらえますか？",
+    "en": "Could you tell Mr. Tanaka to call me first thing tomorrow morning?",
+    "alternatives": [
+      "Could you ask Mr. Tanaka to call me first thing tomorrow morning?",
+      "Can you tell Mr. Tanaka to give me a call first thing tomorrow morning?"
+    ],
+    "point": "「人に〜するよう伝える」は tell + 人 + to do",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 4,
+    "grammar": ["verb-object-to-do", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:65dfe3cf95c0da318ef59d7128a5926bc0c29be332e7f96fd66730d794c4aca7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7q7c4c3d",
+    "ja": "メールありがとうございます。私たちは来週の金曜日に御社を訪問する予定です。",
+    "en": "Thank you for your email. We're visiting your office next Friday.",
+    "alternatives": [
+      "Thank you for your email. We're going to visit your office next Friday.",
+      "Thanks for your email. We're planning to visit your office next Friday."
+    ],
+    "point": "決まった予定は be + ing か be going to で表す",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 3,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:68fc6d555e442554be313693c943396ed895b5210d8004babe2f6b1993c9f6c6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
   }
 ]

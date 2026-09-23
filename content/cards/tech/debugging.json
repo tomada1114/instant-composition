@@ -66,6 +66,28 @@
     }
   },
   {
+    "id": "c_4d7s5s7n",
+    "ja": "もし私たちが本番と同じデータでテストできれば、この競合状態ももっと簡単に再現できるんですけどね。",
+    "en": "If we could test with the same data as production, we'd be able to reproduce this race condition much more easily.",
+    "alternatives": [
+      "If we were able to test with the same data as production, we could reproduce this race condition much more easily.",
+      "If we could test with the same data as production, reproducing this race condition would be a lot easier."
+    ],
+    "point": "実際はできないので could と would で仮定を表す",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ca5d827f972f80d512a04a142cd9ddfb42e6f72f9f90f27977896cf0e6d853cd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4f6h7g4x",
     "ja": "ログイン時にアプリが落ちるだけでなく、ユーザーの保存前の下書きまで消えてしまうんです。",
     "en": "Not only does the app crash on login, but it also wipes out the user's unsaved draft.",
@@ -176,6 +198,28 @@
     }
   },
   {
+    "id": "c_5w8w3y9h",
+    "ja": "彼、リリース前に別のタイムゾーンのアカウントでも試しておけばよかったって、すごく後悔してるんです。",
+    "en": "He really wishes he'd tried it with an account in a different time zone before the release.",
+    "alternatives": [
+      "He really wishes he had tested it with an account set to a different time zone before the release.",
+      "He really regrets not trying it with an account in a different time zone before the release."
+    ],
+    "point": "過去への後悔は wish の後を had + 過去分詞に",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f04c08121c8c5ce8d89e2da6aa882a9f44c0f10ce0472cd173c6ff8e864e9757",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_6y9q2y2z",
     "ja": "昨日、彼にエラーログを全部集めてもらったんですが、それでも再現手順がまだはっきりしないんです。",
     "en": "I had him collect all the error logs yesterday, but the steps to reproduce the error still aren't clear.",
@@ -236,6 +280,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:5acca57628859ba1db19f2fcf3ee0227f71056045df44a300136b6f8b239ce47",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7m4x6t8w",
+    "ja": "このバグは先週金曜のリリースで入り込んだんですが、それ以来、サポートにはこの件の問い合わせがもう20件以上来ています。",
+    "en": "This bug slipped in with last Friday's release, and since then support has already received more than twenty tickets about it.",
+    "alternatives": [
+      "This bug was introduced in last Friday's release, and since then support has already gotten more than twenty tickets about it.",
+      "This bug got in with last Friday's release, and support has already had over twenty tickets about it since then."
+    ],
+    "point": "入り込んだ時点は過去形、それ以来の件数は現在完了",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:80a234ea9bc4f51d1a68fc290f1da4ee6be1fdba73b9f6ede3801abd41428717",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
