@@ -537,7 +537,9 @@ export function compareIds(left, right) {
  * Spawning the pinned Prettier with the repository's own config is the only
  * way the output is guaranteed to agree with `pnpm format:check` and the
  * pre-commit hook. The config is passed explicitly so a content root outside
- * the repository (a test's temp directory) is formatted identically.
+ * the repository (a test's temp directory) is formatted identically, and the
+ * ignore file is too: by default Prettier also reads `.gitignore`, whose `tmp/`
+ * entry silently skips every file under a Linux `/tmp` temp root.
  *
  * @param {string} bin - Path of Prettier's CLI script.
  * @returns {Formatter} A formatter spawning that Prettier.
@@ -558,6 +560,8 @@ export function prettierAt(bin) {
       const result = runNode(bin, [
         "--config",
         path.join(repoRoot, ".prettierrc.json"),
+        "--ignore-path",
+        path.join(repoRoot, ".prettierignore"),
         "--write",
         "--log-level",
         "warn",

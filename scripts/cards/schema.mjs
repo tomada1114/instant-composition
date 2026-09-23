@@ -62,9 +62,9 @@ export const OPTIONAL_FIELDS = [];
  */
 
 // Digits and letters alternate so that no two letters are ever adjacent: the
-// repository's spell checker splits identifiers at digits and flags two- and
-// three-letter runs ("ba", "bck") as misspellings, and a single letter is
-// never one. 0/1 and i/l/o are left out as look-alikes.
+// repository's spell checker splits identifiers at digits and flags short
+// letter runs as misspellings, while a single letter is never one. 0/1 and
+// i/l/o are left out because they are easily confused with each other.
 const ID_DIGITS = "23456789";
 const ID_LETTERS = "abcdefghjkmnpqrstuvwxyz";
 
