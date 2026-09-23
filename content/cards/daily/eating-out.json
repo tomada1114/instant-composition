@@ -1,0 +1,136 @@
+[
+  {
+    "id": "c_2c4d3y8g",
+    "ja": "すみません、お水をもう少しいただけますか？",
+    "en": "Excuse me, could I have some more water?",
+    "alternatives": [
+      "Excuse me, can I get some more water?",
+      "Excuse me, could I get a little more water?"
+    ],
+    "point": "丁寧に頼むときは Could I have 〜? で",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a3dfabf71468ac85f27eda6e31e63a1331696d933a4de083df03d7c2fb290557",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2d8k3f7n",
+    "ja": "すみません、私たち、窓際の席に移らせてもらえないかと思いまして。",
+    "en": "Excuse me, I was wondering if we could move to a table by the window.",
+    "alternatives": [
+      "Excuse me, would it be possible for us to move to a table by the window?",
+      "Excuse me, do you think we could move to a window table?",
+      "Excuse me, we were wondering if we could move to a table by the window."
+    ],
+    "point": "I was wondering if we could で控えめに頼む",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["hedging-softening", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ff081a2c783e3446478db7fe7f867bc3365452ea8e37941e5ff20d676565ef8d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3c6g9j3f",
+    "ja": "レストランに着いたら、空いている席があるか見て、メッセージするね。",
+    "en": "When I get to the restaurant, I'll see if there are any free tables and text you.",
+    "alternatives": [
+      "Once I get to the restaurant, I'll check if they have a free table and text you.",
+      "I'll check if they have any free tables when I get to the restaurant and message you."
+    ],
+    "point": "未来のことでも when 節は現在形の get",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 6,
+    "grammar": ["time-and-if-clauses", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fcabfad9b0b1bdcf02ce56e75eddf6b4f5c4619c7e14807676bf138904423b69",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4p9n4f8s",
+    "ja": "あの人気のラーメン屋は、先に予約しないといけないよ。",
+    "en": "You have to book ahead at that popular ramen place.",
+    "alternatives": [
+      "You need to make a reservation at that popular ramen place in advance.",
+      "You'll need a reservation for that popular ramen place."
+    ],
+    "point": "「〜しないといけない」は have to＋動詞の原形",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0a74833ed6df4c048cf9c8fbe9293622b4e61140da56da3620e7cf5b4adbd536",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4u9s6p9j",
+    "ja": "メニューを全部見終えたあと、彼女は結局いつものパスタを注文した。",
+    "en": "Having looked through the whole menu, she ended up ordering her usual pasta.",
+    "alternatives": [
+      "After looking through the whole menu, she ended up ordering her usual pasta.",
+      "Having gone through the entire menu, she ordered her usual pasta in the end."
+    ],
+    "point": "先に終えた動作は Having + 過去分詞 で前に出す",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 6,
+    "grammar": ["participle-clauses", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2bd12c35fad9bb72eccc2e310f63c22014a5f227f760de89c5d8693cd3a7c4fb",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5y9w2n9g",
+    "ja": "すみません、窓際の席に座ってもいいですか？",
+    "en": "Excuse me, may I sit by the window?",
+    "alternatives": [
+      "Excuse me, could I sit by the window?",
+      "Excuse me, is it okay if I sit by the window?",
+      "Excuse me, can I sit by the window?"
+    ],
+    "point": "「〜してもいいですか」は May I 〜? で丁寧に許可を求める",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f357eab8e382e3b4198fc73534d0298eae62c9d265de2e13bd7400da2cd363e1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

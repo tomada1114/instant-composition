@@ -1,0 +1,24 @@
+[
+  {
+    "id": "c_2x8x4w4v",
+    "ja": "兄は休日になるとほとんどの時間をキャンプ道具の手入れに使っているけど、実際にキャンプに行くことはめったにない。",
+    "en": "My brother spends most of his days off maintaining his camping gear, but he rarely actually goes camping.",
+    "alternatives": [
+      "My brother spends most of his days off taking care of his camping gear, but he hardly ever actually goes camping.",
+      "On his days off, my brother spends most of his time looking after his camping equipment, but he seldom actually goes camping."
+    ],
+    "point": "gear も equipment も数えられない名詞なので s を付けない",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 8,
+    "grammar": ["gerunds", "articles-and-countability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:58aefbc3a6e463c6e9bdbb1863c9fc4af6143c3b810dbf81ed527528405adf23",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

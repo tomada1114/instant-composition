@@ -1,0 +1,69 @@
+[
+  {
+    "id": "c_4d7a2r6d",
+    "ja": "天気予報では週末は雨だって言ってたのに、結局ずっと晴れてたね。",
+    "en": "The forecast said it would rain this weekend, but it stayed sunny the whole time.",
+    "alternatives": [
+      "The weather forecast said it was going to rain this weekend, but it was sunny the whole time.",
+      "They said it would rain this weekend, but it ended up being sunny all weekend."
+    ],
+    "point": "said に合わせて will を would にする",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 6,
+    "grammar": ["reported-speech", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2fcd71667f92292aa831ac2729443557bddc937f5095b4e8a530aaf155294a4a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4z7t9f8a",
+    "ja": "先週教えてもらったカフェ、行ってみたよ。すごくよかった。",
+    "en": "I went to the café you told me about last week. It was great.",
+    "alternatives": [
+      "I tried the café that you told me about last week, and I loved it.",
+      "I checked out the café you recommended last week. It was really good."
+    ],
+    "point": "told me about の about を落とさない",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 5,
+    "grammar": ["relative-clauses", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0f37f047980eb41d35a1e913174780a4122fc40cbb09ab21355201ac711202eb",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5y6e2h8a",
+    "ja": "忙しかったけど、昔の友達に久しぶりに会えて、いい週末だったよ。",
+    "en": "Although I was busy, I had a great weekend catching up with old friends.",
+    "alternatives": [
+      "Even though I was busy, I had a great weekend catching up with old friends.",
+      "I was busy, but I had a nice weekend catching up with some old friends.",
+      "I was busy, but it was a good weekend because I got to see some old friends I hadn't seen in ages."
+    ],
+    "point": "although の後に but は重ねない",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 6,
+    "grammar": ["concession-contrast", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9f7f07d4b1fdb211b7533bcfea04f25fc39507577c97b675edee917ddb71f04d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

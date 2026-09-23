@@ -1,0 +1,46 @@
+[
+  {
+    "id": "c_2x9x2b8q",
+    "ja": "先週のリリースで、私たちはついにダークモードを追加しました。",
+    "en": "In last week's release, we finally added dark mode.",
+    "alternatives": [
+      "We finally added dark mode in last week's release.",
+      "We finally shipped dark mode in the release last week."
+    ],
+    "point": "過去の一時点の出来事なので現在完了ではなく過去形",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 4,
+    "grammar": ["tense-contrast", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6b1f6414fb7988213d328fa3cf13a4fcdb7fa54b81176c1af7f6ebdd57d78b11",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5y6r3u5s",
+    "ja": "営業チームに、機能の要望を一つのリストにまとめるよう頼んでもらえますか？",
+    "en": "Could you ask the sales team to put their feature requests in one list?",
+    "alternatives": [
+      "Can you ask the sales team to collect their feature requests in a single list?",
+      "Could you ask the sales team to gather all their feature requests into one list?"
+    ],
+    "point": "ask + 人 + to do の語順。that 節にしない",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["verb-object-to-do", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f4f6833592e97378325927db7d72f0ab2ad07f7ee142f44a3bdb3877ae590ac1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

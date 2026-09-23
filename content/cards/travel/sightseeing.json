@@ -1,0 +1,91 @@
+[
+  {
+    "id": "c_6u6h2g7j",
+    "ja": "展望台が混みすぎていて、私はいい写真が撮れませんでした。",
+    "en": "The observation deck was so crowded that I couldn't get a good photo.",
+    "alternatives": [
+      "I couldn't take a good picture because the observation deck was too crowded.",
+      "The observation deck was too crowded for me to get a good photo."
+    ],
+    "point": "「〜すぎて〜できなかった」は so 〜 that 主語 couldn't で表す",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 4,
+    "grammar": ["can-could-ability", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ffc5616d0e9029d2b481ea875084ff3991f663d4db45bb7919d574b48ce0245e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7x4k3m7n",
+    "ja": "有名なお寺を夕暮れ時に見るために、私たちははるばるここまで来たんです。",
+    "en": "We came all the way here to see the famous temple at sunset.",
+    "alternatives": [
+      "We came all this way to see the famous temple at sunset.",
+      "We traveled all the way here to see the famous temple at dusk."
+    ],
+    "point": "目的の「〜するために」は to + 動詞の原形",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 4,
+    "grammar": ["infinitives", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f66dde3bccbde994f9acbcf526d7f77493601dd4b7c807179b9a3136bedc7e8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8k5q3k6p",
+    "ja": "この近くにいい博物館はありますか？",
+    "en": "Is there a good museum near here?",
+    "alternatives": [
+      "Is there a good museum nearby?",
+      "Is there a good museum around here?",
+      "Are there any good museums around here?"
+    ],
+    "point": "「ありますか」は Is there で始める",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7636b5a5554e6ef0a92498e02b781225de81f01fe5f856cf0c596ebb04f82347",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9s4k7v9n",
+    "ja": "城のツアーは毎朝10時に始まります。",
+    "en": "The castle tour starts at ten every morning.",
+    "alternatives": [
+      "The castle tour begins at ten every morning.",
+      "The tour of the castle starts at 10 every morning."
+    ],
+    "point": "主語 The castle tour は三人称単数なので starts",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 1,
+    "grammar": ["articles-and-countability", "be-and-present-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8573c0bfb3c6a9492a317b328b74d2fc01fc05990700d333016ee6dd92e5cf22",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

@@ -1,0 +1,68 @@
+[
+  {
+    "id": "c_2d9v4s8u",
+    "ja": "会議が始まったときには、部長はもう資料を読み終えていました。",
+    "en": "The manager had already finished reading the materials when the meeting started.",
+    "alternatives": [
+      "When the meeting started, the manager had already read the materials.",
+      "By the time the meeting began, the manager had already gone through the materials."
+    ],
+    "point": "先に終わっていた方は had + 過去分詞",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 5,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4e2fbf2126ba783f384f19f93f060ed9088d5b0e5c0d7998b4acf5d6290762c2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2y3s6y8u",
+    "ja": "この件、もう1時間も話し合っていますよね。そろそろまとめませんか？",
+    "en": "We've been discussing this for an hour now, so shall we wrap it up?",
+    "alternatives": [
+      "We've been talking about this for an hour. Why don't we wrap it up?",
+      "We've been discussing this for an hour, so should we start wrapping up?"
+    ],
+    "point": "1時間ずっと続いていることは have been + -ing",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f50147ed3394edd2eb589611c6ba39293c1a270933ea4c3712cb0b16f49f65c3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8z7h9z2n",
+    "ja": "もし予算がもっとあれば、私たちはこの案に賛成するんですが。",
+    "en": "If we had a bigger budget, we would support this proposal.",
+    "alternatives": [
+      "If we had more budget, we'd agree to this proposal.",
+      "We would support this plan if we had a bigger budget."
+    ],
+    "point": "現実と違う仮定は if 節を過去形、主節は would",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 5,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:92add462a5b241112f4ddc73a66c426477d56f85aee6b8dffcac7aa0f7d6438b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

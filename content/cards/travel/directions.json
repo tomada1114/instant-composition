@@ -1,0 +1,24 @@
+[
+  {
+    "id": "c_3n5f4z8q",
+    "ja": "ここから旧市街まで、どう行くのが一番いいですか？",
+    "en": "What's the best way to get to the old town from here?",
+    "alternatives": [
+      "How should I get to the old town from here?",
+      "What's the best way to get from here to the old town?"
+    ],
+    "point": "「一番いい行き方」は the best way to get to",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 4,
+    "grammar": ["comparatives-superlatives", "infinitives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e99dc8084f0f9da3a5d540353ecb7149d635ef96a6c263ca9cc8329914bc838b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

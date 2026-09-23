@@ -1,0 +1,24 @@
+[
+  {
+    "id": "c_3x4e4b8c",
+    "ja": "恐れ入りますが、ご質問をもう少し詳しくご説明いただけないでしょうか。",
+    "en": "I was wondering if you could explain your question in a little more detail.",
+    "alternatives": [
+      "Would you mind explaining your question in a bit more detail?",
+      "Could you possibly explain your question in a little more detail?"
+    ],
+    "point": "I was wondering if で丁寧に頼む。過去形でも今の依頼",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:78654827a9fc4517d0e60dcc31d1f336ef3817d7fce56e5868c5d5d358b4047f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

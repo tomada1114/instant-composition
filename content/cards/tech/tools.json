@@ -1,0 +1,68 @@
+[
+  {
+    "id": "c_4x6a5t6w",
+    "ja": "先週 Docker は入れたんだけど、ボリュームの共有方法はまだわかってないんだ。",
+    "en": "I set up Docker last week, but I still haven't figured out how to share volumes.",
+    "alternatives": [
+      "I installed Docker last week, but I still haven't worked out how to share volumes.",
+      "I got Docker set up last week, but I haven't figured out how to share volumes yet."
+    ],
+    "point": "last week は過去形、「まだ〜ない」は現在完了で",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 6,
+    "grammar": ["tense-contrast", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef6a1c1a2e1e508ae621df81665fdf6cd626d245bef60586332c9cda2c299c0c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8y9w8x3z",
+    "ja": "チームに展開する前に、リンターをどう設定したか順を追って説明してもらえますか？",
+    "en": "Could you walk me through how you set up the linter before we roll it out to the team?",
+    "alternatives": [
+      "Before we roll it out to the team, could you walk me through how you configured the linter?",
+      "Could you take me through how you set up the linter before we roll it out to the whole team?"
+    ],
+    "point": "walk me through ＋ how 節は疑問文の語順にしない",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 8,
+    "grammar": ["phrasal-verbs", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:14c465d1b3e3b29b288fd90f65e07fe74cd1042a439c23edd255924012607a32",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9t9r9w9z",
+    "ja": "僕のマシンでビルドが通らなかった原因は、設定ファイルじゃなくて古い Node のバージョンだったんだ。",
+    "en": "It was the outdated Node version, not the config file, that broke the build on my machine.",
+    "alternatives": [
+      "What broke the build on my machine was the outdated Node version, not the config file.",
+      "It wasn't the config file but the old Node version that broke the build on my machine."
+    ],
+    "point": "It was A, not B, that 〜 で原因を強調する",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:44e8fa4f69716269aa544bfd96699389271863817145b39a5fe40d6c26b31bd5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

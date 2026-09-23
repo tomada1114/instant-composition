@@ -1,0 +1,46 @@
+[
+  {
+    "id": "c_4t2x7s7e",
+    "ja": "分かったのは、サーバーのタイムゾーンが UTC のままのときだけ、このバグが再現するということです。",
+    "en": "What I've found is that the bug only reproduces when the server's time zone is still set to UTC.",
+    "alternatives": [
+      "What I've figured out is that this bug only shows up when the server's time zone is still UTC.",
+      "What I found is that the bug is only reproducible when the server is still on UTC."
+    ],
+    "point": "「分かったのは〜ということ」は What I've found is that 〜",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["noun-clauses", "cleft-emphasis"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c9769e67a0800ef162ea3670483c7506ba8b991d4e2d69a54b233b23192fcf3c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7c7r7h8x",
+    "ja": "先週のリリース以降、このエラーは3回起きていますが、昨日の夜は一度も出ませんでした。",
+    "en": "This error has occurred three times since last week's release, but it didn't show up once last night.",
+    "alternatives": [
+      "This error has happened three times since the release last week, but it didn't appear even once last night.",
+      "Since last week's release, we've seen this error three times, but it never came up last night."
+    ],
+    "point": "since〜は現在完了、last night は過去形で使い分ける",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c1a8ce1e3df0e55a5216165d2b035eabb84153e4660b5811c710cb3eaad17e6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

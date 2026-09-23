@@ -1,0 +1,24 @@
+[
+  {
+    "id": "c_2w6p8c5a",
+    "ja": "この件は、経理に詳しい田中さんに頼んだほうがいいですよ。",
+    "en": "You should ask Tanaka, who knows a lot about accounting, to handle this.",
+    "alternatives": [
+      "It'd be best to ask Tanaka, who knows a lot about accounting, to handle this.",
+      "You should leave this to Tanaka, who knows a lot about accounting."
+    ],
+    "point": "人に説明を足すときはカンマ＋who で補足する",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 4,
+    "grammar": ["modal-obligation-advice", "relative-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:985485193736b06b926e0d9da8c0a2efe430fa2cc63f79a450cb37df6dffdcc1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

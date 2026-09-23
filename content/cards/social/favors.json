@@ -1,0 +1,112 @@
+[
+  {
+    "id": "c_3t5h6j3b",
+    "ja": "もっと早く言ってくれていたら、引っ越しを喜んで手伝ったのに。",
+    "en": "If you had told me earlier, I would have been happy to help you move.",
+    "alternatives": [
+      "If you'd let me know sooner, I would've gladly helped you move.",
+      "If you'd told me sooner, I'd have been happy to help you move."
+    ],
+    "point": "過去の仮定は if + had 過去分詞、主節は would have 過去分詞",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9808e103f2d275cdd5b6c02e745a825dc4d0733e9e8b17dfa36b59e48379c88f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4q9k7r2c",
+    "ja": "来週末の引っ越し、手伝ってもらえないかな？お昼はもちろんおごるから。",
+    "en": "Could you help me out with the move next weekend? I'll buy you lunch, of course.",
+    "alternatives": [
+      "Would you be able to help me out with the move next weekend? Lunch is on me, of course.",
+      "Could you give me a hand with the move next weekend? I'll treat you to lunch, of course."
+    ],
+    "point": "「手伝う」は help me out with 〜 の句動詞で自然に",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 6,
+    "grammar": ["requests-permission", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f7a72caa471fc21b2a9a12bea60ca4ddfe562376ec5cc296f404aef86a3525b3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4r2a8m8b",
+    "ja": "彼女は週末に車を貸してくれただけでなく、鍵を渡す前にガソリンまで満タンにしてくれたんです。",
+    "en": "Not only did she lend me her car for the weekend, but she also filled up the tank before handing me the keys.",
+    "alternatives": [
+      "She not only lent me her car for the weekend but also filled up the tank before she handed me the keys.",
+      "Not only did she let me borrow her car for the weekend, she even filled the tank before giving me the keys."
+    ],
+    "point": "Not only で始めたら did she lend と語順を倒置する",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 9,
+    "grammar": ["inversion", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bac2a81106d2fa75ecbbc8a85575eea02e8c13e0da841bba4ddb257db1654914",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5b7h4a9j",
+    "ja": "駅に着いたら電話するから、迎えに来てもらえる？",
+    "en": "I'll call you when I get to the station. Could you come pick me up?",
+    "alternatives": [
+      "I'll give you a call when I get to the station. Can you come get me?",
+      "Could you come pick me up? I'll call you once I get to the station."
+    ],
+    "point": "未来のことでも when 節は現在形で get to とする",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 5,
+    "grammar": ["time-and-if-clauses", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2da24dd40970ad9e2cb55b13c44bcdd23b92a76ea86a598c682bdb371962143f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6x8p6x6s",
+    "ja": "私が引っかかったのは、頼まれたこと自体じゃなくて、まるで私に借りでもあるかのような彼の頼み方だったんだ。",
+    "en": "What bothered me wasn't the favor itself, but the way he asked, as if I owed him one.",
+    "alternatives": [
+      "It wasn't the favor itself that bothered me, but the way he asked, as if I owed him something.",
+      "What got to me wasn't the favor itself but how he asked, like I owed him one."
+    ],
+    "point": "What bothered me wasn't A, but B で「引っかかったのは A ではなく B」を強調する",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f9a3f97b312b8e35299c5cfe6dc18279f0bdab3d2b1bc4cb46bf7af406cf442",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

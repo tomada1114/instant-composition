@@ -1,0 +1,68 @@
+[
+  {
+    "id": "c_5m4g2j5n",
+    "ja": "私たちがようやく保安検査を抜けたときには、搭乗口はもう閉まっていました。",
+    "en": "By the time we finally got through security, the boarding gate had already closed.",
+    "alternatives": [
+      "When we finally cleared security, the boarding gate had already closed.",
+      "The gate had already closed by the time we finally got through security."
+    ],
+    "point": "先に起きた「閉まった」は had closed で過去より前を示す",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 5,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ec646c9ed32adc4154362a8ced05f2758ac7ae3d22feb28ccd835accfbf8e91b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6r8h7a6j",
+    "ja": "彼はパスポートを家に忘れてきたに違いない。カウンターでもう10分もかばんの中を探している。",
+    "en": "He must have left his passport at home. He's been searching his bag at the counter for ten minutes now.",
+    "alternatives": [
+      "He must have left his passport at home. He's been digging through his bag at the counter for ten minutes now.",
+      "He must've left his passport at home, because he's been looking through his bag at the counter for ten minutes."
+    ],
+    "point": "「〜したに違いない」と過去を推量するときは must have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["modal-perfect", "present-perfect-continuous"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:38a0e822383a52474c3e3dcf64d741553155e2ec7c4bf6c08222462a466ef9e9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9z7n7h4s",
+    "ja": "すみません、私、座席を間違えて座ってしまったかもしれません。搭乗券を確認してもらえますか？",
+    "en": "Excuse me, I might have taken the wrong seat. Could you check my boarding pass for me?",
+    "alternatives": [
+      "Sorry, I may have sat in the wrong seat. Would you mind checking my boarding pass?",
+      "Excuse me, I think I might be in the wrong seat. Could you take a look at my boarding pass?"
+    ],
+    "point": "過去のことの推量は might have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 6,
+    "grammar": ["modal-perfect", "articles-and-countability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:46be14856ec8e88c4e28b88f205f54add25cb584f7b175d6e1ed769240eb85ba",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

@@ -1,0 +1,69 @@
+[
+  {
+    "id": "c_4q8g6z3h",
+    "ja": "2日前からずっと咳が止まらないんです。",
+    "en": "I've been coughing nonstop for two days.",
+    "alternatives": [
+      "I've been coughing for two days straight.",
+      "I've been coughing constantly for the past two days."
+    ],
+    "point": "今も続いている症状は I've been ＋ -ing ＋ for で言う",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 4,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2752642ac20e5e62d18e08265ed8f90ec5e94d4d014fec2ecd32bd028f389e28",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7r9d7g5m",
+    "ja": "医者に出してもらった薬と一緒に、この風邪薬を飲んでも大丈夫ですか？",
+    "en": "Is it okay to take this cold medicine with the pills prescribed by my doctor?",
+    "alternatives": [
+      "Can I take this cold medicine with the medicine my doctor prescribed?",
+      "Is it safe to take this cold medicine with the pills my doctor prescribed?",
+      "Is it okay to take this cold medicine with what my doctor prescribed?"
+    ],
+    "point": "「医者に出してもらった薬」は pills prescribed by my doctor と後ろから修飾",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 5,
+    "grammar": ["post-modification", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fc71bf163d4b48eef8ae2eda65d39c4cabe13609339720faebae34ec57fa0dce",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8d6k6s2n",
+    "ja": "私が病院に着いた頃には、熱はもう下がっていました。",
+    "en": "By the time I got to the hospital, my fever had already gone down.",
+    "alternatives": [
+      "When I got to the hospital, my fever had already gone down.",
+      "My fever had already come down by the time I reached the hospital."
+    ],
+    "point": "着いた時点より前に下がったので had gone down と過去完了",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 5,
+    "grammar": ["past-perfect", "time-and-if-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7d5b856a252596cff3e2f565b2289b361b4421f6b5654939ac9b9a6f738ebb9d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]
