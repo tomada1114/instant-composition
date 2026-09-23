@@ -62,6 +62,17 @@ pnpm repo:labels   # create/update GitHub labels from .github/labels.yml
 pnpm hooks:install # repair the Git hooks; `pnpm install` installs them already
 pnpm clean         # remove the build and tool caches (.next, coverage, .eslintcache, tsbuildinfo)
 pnpm clean:deep    # the same, plus dist/ and node_modules/ — a reinstall follows
+pnpm cards:lint    # validate content/'s lists and every card; exit 1 on any ERROR
+pnpm cards:gaps    # plan a generation run: which cells get how many cards
+pnpm cards:add     # admit new cards from a JSON file (ids, lint, near-duplicate check)
+pnpm cards:update  # merge edited fields into existing cards
+pnpm cards:tombstone # delete a card into content/tombstones.jsonl; its id is never reused
+pnpm cards:stamp   # mark reviewed cards so the app shows them
+pnpm cards:queue   # list cards waiting for review, most urgent first
+pnpm cards:show    # print cards or tombstones (--brief, --json)
+pnpm cards:dupes   # near-duplicate candidates within a subtopic and against tombstones
+pnpm cards:stats   # totals, review status, coverage by cell, grammar usage
+pnpm cards:new-id  # print fresh card ids
 ```
 
 Reach for `pnpm clean`/`pnpm clean:deep` rather than an `rm -rf`: `scripts/clean.mjs`
@@ -103,6 +114,8 @@ on every edit is slow enough that it stops being run at all.
 | An import that crosses a zone boundary                 | `pnpm exec vitest run tests/boundaries.test.ts`      |
 | A test                                                 | `pnpm exec vitest run tests/<name>.test.ts`          |
 | A script under `scripts/`                              | `pnpm exec vitest run tests/<script>.test.ts`        |
+| A script under `scripts/cards/`                        | `pnpm exec vitest run tests/cards-*.test.ts`         |
+| Anything under `content/`                              | `pnpm cards:lint`                                    |
 | A skill under `.agents/skills/`                        | `pnpm agents:sync && pnpm agents:check && pnpm test` |
 | `package.json`, `pnpm-workspace.yaml`                  | `pnpm install`, then `pnpm check:source`             |
 | Markdown                                               | `pnpm fix`                                           |
@@ -118,6 +131,7 @@ src/
 ├── app/        # the Next.js App Router tree: pages, layouts, route handlers
 └── proxy.ts    # Next.js's request proxy: locale detection ahead of every page request
 messages/       # one JSON catalog per locale; ja.json, the only one, sets the shape
+content/        # the cards and the lists and guides that define them (see Content)
 scripts/        # repository automation, authored as .mjs, never shipped
 ```
 
@@ -180,6 +194,20 @@ a per-file size budget, and `tests/boundaries.test.ts` asserts the same edges fr
 module graph, so a rule deleted from that config still fails the suite. Read the numbers
 and the patterns there — a summary that restated them is the copy that goes stale. How
 to work inside a zone is a skill's subject, not this section's.
+
+## Content
+
+`content/` is the data the app will read: `cards/<topic>/<subtopic>.json` (one array per
+cell, sorted by id), `tombstones.jsonl` (every deleted card, append-only, so an id is
+never reused), the tag lists `taxonomy.json`, `levels.json` and `grammar.json`, and the
+writing and review guides under `guides/`. A card is shown only when its `stamps.core`
+hash matches its current fields — `scripts/cards/schema.mjs` holds that rule for the app
+to reuse.
+
+Cards are written only by the three card skills below through `pnpm cards:*`, never by
+hand-editing the JSON: the commands assign ids, lint, check for near-duplicates, keep
+each file in the one canonical form, and record deletions. The tag lists and guides are
+edited by hand, and `pnpm cards:lint` checks them too.
 
 ## Skills
 
@@ -328,13 +356,16 @@ while its declared task is something else.
 ## Conventions
 
 - All committed code, comments, configuration, and public documentation are in English.
-  `authoring-skills` applies this to a skill's `description`. The one exception is
+  `authoring-skills` applies this to a skill's `description`. One exception is
   `messages/*.json`: those are the UI message catalogs the application renders to a
   reader, so `messages/ja.json` is Japanese by definition. The exception covers the
   catalogs' string values and nothing else — their keys, and every comment, test, and
-  document about them, stay English. The one thing that may itself be non-English is a
-  literal whose exact bytes are what a check or a worked example exercises, where
-  writing it in English would destroy what it demonstrates —
+  document about them, stay English. The same exception, on the same terms, covers the
+  string values of `content/`'s JSON (cards, tombstones, and the tag lists), which are
+  Japanese learning material by definition; the guides under `content/guides/` stay
+  English, quoting Japanese only as the examples they discuss. The one thing that may
+  itself be non-English is a literal whose exact bytes are what a check or a worked
+  example exercises, where writing it in English would destroy what it demonstrates —
   `tests/placeholders.test.ts`'s `PLACEHOLDERS` is the case to compare against, for the
   reason recorded there. Nothing wider: the prose around such a literal stays English —
   a test's `describe` and `it` names, its assertion messages, its comments, and a
