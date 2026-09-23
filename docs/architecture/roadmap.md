@@ -49,15 +49,17 @@ tracker in step.
 
 ## Phase 0 — Restructure the core (local, no AWS)
 
-**Goal.** The application core exists in its target shape, with the current app running
-on top of it.
+**Goal.** The application core exists in its target shape and is tested on its own. The
+Next.js app under `src/` stays as it is until Phase 1 retires it.
 
 **Scope.**
 
-- Convert the repository into a pnpm monorepo skeleton (`packages/`, `apps/`, `infra/`)
-  while the existing Next.js app keeps building.
-- Extract `packages/domain` from `src/core/`, with day arithmetic that takes the
-  learner's time zone instead of reading the process's.
+- Convert the repository into a pnpm workspace with `packages/`, while the existing
+  Next.js app keeps building. `apps/` and `infra/` join it with their first package, in
+  Phases 1 and 2.
+- Build `packages/domain` from the rules in `src/core/`, with day arithmetic that takes
+  the learner's time zone instead of reading the process's. The rules are copied, not
+  moved: `src/core/` stays behind for the Next.js app and goes with it in Phase 1.
 - Build `packages/application`:
   - commands and queries for the current features;
   - `RequestContext` and one `authorize` policy;
@@ -65,12 +67,19 @@ on top of it.
   - projections in place of full-log replays.
 - An in-memory store adapter and the isolation contract suite: write as one learner,
   read through every method as another, get nothing.
-- Point the existing pages and handlers at the application layer, with today's SQLite
-  store adapted to the new port for the one local learner. That leaves one path to the
-  domain even before the API exists.
 
-**Exit.** The current features run through the new application layer; the isolation
-suite is green; no module outside `packages/domain` computes a practice day.
+The existing pages and handlers are not pointed at the application layer, and today's
+SQLite store is not adapted to the new ports. The owner does not use the Next.js app
+while the restructure is under way, so keeping it working on the new core would be work
+Phase 1 throws away; it stays frozen instead, still building and passing its smoke test,
+until the SPA and the API replace it.
+
+**Exit.**
+
+- Every current feature has a command or a query in `packages/application`, tested
+  against the in-memory store.
+- The isolation suite is green.
+- No module under `packages/` other than `packages/domain` computes a practice day.
 
 **AWS.** None.
 
@@ -99,8 +108,10 @@ gone.
 - `apps/web`: a Vite + React SPA ported from `src/components/`, keeping Tailwind v4,
   shadcn/ui and the "instrument" design lock, and calling the API through a generated
   TypeScript client.
-- Retire Next.js and `node:sqlite`; rewrite AGENTS.md and the skills for the new layout.
-- Optionally, a one-off import of the owner's existing SQLite progress.
+- Retire Next.js and `node:sqlite`, and with them the rest of `src/`, whose rules Phase
+  0 copied into the packages; rewrite AGENTS.md and the skills for the new layout.
+- No import of the SQLite progress. The local records were test runs and the owner
+  discards them; the cards under `content/` carry over unchanged.
 
 **Exit.** The SPA talks to the local API, which talks to DynamoDB local; no Next.js
 dependency remains; the OpenAPI document is generated, not hand-written.
