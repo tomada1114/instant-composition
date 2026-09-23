@@ -1,5 +1,49 @@
 [
   {
+    "id": "c_2c8u4a5v",
+    "ja": "あのとき君が引っ越しを手伝ってくれていなかったら、僕は今でも段ボールに囲まれて暮らしていただろうね。",
+    "en": "If you hadn't helped me move back then, I'd still be living surrounded by cardboard boxes.",
+    "alternatives": [
+      "If you hadn't helped me with the move back then, I'd still be surrounded by cardboard boxes.",
+      "Without your help with the move back then, I'd still be living among cardboard boxes."
+    ],
+    "point": "過去の条件は had 過去分詞、今の結果は would be -ing",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:15c227270b914ff256d6ba88980e5881f9fd5eecc3d79638774c030b2cc15029",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3e4x8a9v",
+    "ja": "彼女は今週もう3回も僕のシフトを代わってくれたから、今回は僕が引き受けるべきだね。",
+    "en": "She's already covered my shift three times this week, so I should take this one.",
+    "alternatives": [
+      "She's already taken my shift three times this week, so I should do this one.",
+      "Since she's covered for me three times this week already, I ought to take this one."
+    ],
+    "point": "「今週もう3回」は現在完了、already の位置に注意",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 5,
+    "grammar": ["present-perfect", "modal-obligation-advice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:67d1489163a5af139aea159dab6c69fcf60b1d13b346e75e1808ea319369d00f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3t5h6j3b",
     "ja": "もっと早く言ってくれていたら、引っ越しを喜んで手伝ったのに。",
     "en": "If you had told me earlier, I would have been happy to help you move.",
@@ -104,6 +148,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:8f9a3f97b312b8e35299c5cfe6dc18279f0bdab3d2b1bc4cb46bf7af406cf442",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8u8q8u2m",
+    "ja": "忙しいなら無理に引き受けなくていいからね。気を遣わないで。",
+    "en": "If you're busy, you don't have to take it on. Don't feel obligated.",
+    "alternatives": [
+      "Don't worry about it if you're busy. You don't have to say yes.",
+      "If you're too busy, you don't need to do it. Don't feel pressured."
+    ],
+    "point": "「しなくていい」は don't have to、mustn't は禁止になる",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 4,
+    "grammar": ["modal-obligation-advice", "imperatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d79d4041cc1854459a9379a8e6a77cfa3245043dfa21d0a713702856cd6e9d74",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

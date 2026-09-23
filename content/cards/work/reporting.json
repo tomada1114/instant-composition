@@ -1,0 +1,68 @@
+[
+  {
+    "id": "c_3e3x4h2h",
+    "ja": "テストはまだ全部終わっていませんが、私たちは金曜のリリースには間に合う見込みです。",
+    "en": "Although we haven't finished all the tests yet, we expect to make the Friday release.",
+    "alternatives": [
+      "We haven't finished all the testing yet, but we should still make the Friday release.",
+      "Even though testing isn't finished yet, we expect to be ready for Friday's release."
+    ],
+    "point": "although の後に but は重ねない",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["concession-contrast", "present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a357d12e053052de89057fb4fd59d0bbd8384d5464671b94d8bdb0c0d02c8fc4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6a8v9e3n",
+    "ja": "この件、もう部長に相談しましたか？まだなら、午後に一緒に行きましょう。",
+    "en": "Have you talked to the manager about this yet? If not, let's go together this afternoon.",
+    "alternatives": [
+      "Have you already discussed this with the manager? If you haven't, let's go see them together this afternoon.",
+      "Have you asked the manager about this yet? If not, let's talk to them together this afternoon."
+    ],
+    "point": "「もう〜した？」は現在完了の疑問文、文末に yet",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c7298b9e8ddbb65bc0c57109b269e597dbcbe41652ac08ea3e230221503f213",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6c6j3m4p",
+    "ja": "先方からまだ返信がないので、私が間違ったアドレスに送ってしまったのかもしれません。",
+    "en": "The client still hasn't replied, so I might have sent it to the wrong address.",
+    "alternatives": [
+      "I may have sent it to the wrong address, since the client hasn't replied yet.",
+      "Since we haven't heard back from the client, I might have used the wrong address."
+    ],
+    "point": "過去の推量は might have + 過去分詞",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["modal-perfect", "present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:88409e39b332252a808f2af420a7b6a37688031930b4294b0b107da522457049",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

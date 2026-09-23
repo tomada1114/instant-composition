@@ -22,6 +22,50 @@
     }
   },
   {
+    "id": "c_4n8h5g4e",
+    "ja": "お客さんから一番よく頼まれる機能は、今回のリリースには入らないんです。",
+    "en": "The feature that customers ask for most won't be in this release.",
+    "alternatives": [
+      "The feature customers request most won't be in this release.",
+      "The feature that our customers ask for most isn't going to be in this release."
+    ],
+    "point": "ask for の for を関係詞節の中で落とさない",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["relative-clauses", "future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a3d9cce8cf41d2252fd90b875fbbad439bb916db73ca0a9137a6d6e02fca9742",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4u2p2e2j",
+    "ja": "このアプリにオフラインモードがあればいいのに。出張中によく必要になるんです。",
+    "en": "I wish this app had an offline mode. I often need it on business trips.",
+    "alternatives": [
+      "I wish the app had an offline mode. I often need one when I'm on business trips.",
+      "If only this app had an offline mode. I often need it when I travel for work."
+    ],
+    "point": "現在の願望は wish の後を過去形（had）にする",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:91d1f37f79b00910a59d0e15e6c8aca55e2e21b87b034bc8a2e375ad82aa1007",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5y6r3u5s",
     "ja": "営業チームに、機能の要望を一つのリストにまとめるよう頼んでもらえますか？",
     "en": "Could you ask the sales team to put their feature requests in one list?",
@@ -38,6 +82,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:f4f6833592e97378325927db7d72f0ab2ad07f7ee142f44a3bdb3877ae590ac1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8b3c5b6t",
+    "ja": "もしうちにエンジニアがあと二人いたら、あなたなら検索機能を先に作りますか？",
+    "en": "If we had two more engineers, would you build the search feature first?",
+    "alternatives": [
+      "If we had two extra engineers, would you build search first?",
+      "Would you build the search feature first if we had two more engineers?"
+    ],
+    "point": "仮定の話は if 節を過去形、主節を would にする",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f5ee7190ec64312f859231d6d02149182d5fccdd59d0ab297be24ca8cf98c2a9",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

@@ -1,0 +1,24 @@
+[
+  {
+    "id": "c_2m7j8b6n",
+    "ja": "私たちは今、銀行の窓口で順番を待っているところです。",
+    "en": "We're waiting for our turn at the bank.",
+    "alternatives": [
+      "We're waiting in line at the bank now.",
+      "We're standing in line at the bank right now."
+    ],
+    "point": "「今〜しているところ」は be + 〜ing",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4b2750d742da0d7a53eb6b083c6b424c2304ef9dc71f43427edee1aa14c54ec0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

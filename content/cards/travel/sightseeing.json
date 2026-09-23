@@ -1,5 +1,49 @@
 [
   {
+    "id": "c_2e7r2a9x",
+    "ja": "1日しか時間がない人には、どのツアーがおすすめですか？",
+    "en": "Which tour would you recommend for someone who has only one day?",
+    "alternatives": [
+      "Which tour would you suggest for someone with just one day?",
+      "Which tour do you recommend for someone who only has one day?"
+    ],
+    "point": "「1日しか時間がない人」は someone who has only one day と後ろから説明",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 4,
+    "grammar": ["wh-questions", "relative-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b83624022edc86476a2b64d56ac6317ed6b0e86b68c789a8b82fbd3b1bfebc72",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6k6x5x5x",
+    "ja": "夜のツアーのほうが高いけど、景色はずっといいですよ。",
+    "en": "The night tour is more expensive, but the view is much better.",
+    "alternatives": [
+      "The night tour costs more, but the view is much better.",
+      "The night tour is pricier, but the views are far better."
+    ],
+    "point": "比較級を強めるのは very ではなく much",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:152e24270c64a51b0579485c02839bb8b18e1e5e34f55f3a0c93e8769d5e08a0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_6u6h2g7j",
     "ja": "展望台が混みすぎていて、私はいい写真が撮れませんでした。",
     "en": "The observation deck was so crowded that I couldn't get a good photo.",
@@ -38,6 +82,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:6f66dde3bccbde994f9acbcf526d7f77493601dd4b7c807179b9a3136bedc7e8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8e9k2k8g",
+    "ja": "チケットを持っていなくても、庭園には入れますよ。",
+    "en": "Even if you don't have a ticket, you can still enter the garden.",
+    "alternatives": [
+      "You can still get into the garden even if you don't have a ticket.",
+      "Even without a ticket, you can still go into the garden."
+    ],
+    "point": "「〜しても」は even if、even だけでは節をつなげない",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 5,
+    "grammar": ["concession-contrast", "can-could-ability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ad054ed4663596caddeb1e1db2b2d637a586867de320677050dbcb07aa4cd8bb",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

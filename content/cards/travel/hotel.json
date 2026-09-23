@@ -1,0 +1,46 @@
+[
+  {
+    "id": "c_3z2h3n4e",
+    "ja": "1時間前にタオルを頼んだんですが、まだ届いていません。",
+    "en": "I asked for towels an hour ago, but they haven't arrived yet.",
+    "alternatives": [
+      "I requested some towels an hour ago, but they still haven't come.",
+      "I asked for towels an hour ago, and they haven't come yet."
+    ],
+    "point": "ago は過去形、「まだ〜ない」は現在完了で分ける",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 4,
+    "grammar": ["tense-contrast", "present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:61dba34e21df237c2e8c3fbf07c5d7e041d02da34ef7fbe088b3738638382c1f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7a3f2n7h",
+    "ja": "何時までにチェックアウトすればいいですか？",
+    "en": "What time do I need to check out by?",
+    "alternatives": [
+      "What time do I have to check out by?",
+      "What's the latest I can check out?"
+    ],
+    "point": "「〜までに」の by を文末に置き忘れない",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 4,
+    "grammar": ["wh-questions", "modal-obligation-advice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:301f0e1b05dc9950bdef2341d0969211f4dfd56aa7e4224f8abb9816c074a302",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

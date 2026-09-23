@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2b2r7g9s",
+    "ja": "彼女は途中で 2 回道に迷ったけど、今はもうホテルを見つけました。",
+    "en": "She got lost twice on the way, but she's found the hotel now.",
+    "alternatives": [
+      "She got lost twice on the way, but now she's found the hotel.",
+      "She got lost two times on the way, but she's found her hotel now."
+    ],
+    "point": "過去の出来事は過去形、今の結果は現在完了で分ける",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 5,
+    "grammar": ["tense-contrast", "present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2569b33f19de5d544f1744383b282b463f08aacf2d9033f5aae8affc7cd3abdf",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3n5f4z8q",
     "ja": "ここから旧市街まで、どう行くのが一番いいですか？",
     "en": "What's the best way to get to the old town from here?",
@@ -16,6 +38,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:e99dc8084f0f9da3a5d540353ecb7149d635ef96a6c263ca9cc8329914bc838b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3t8b9b6w",
+    "ja": "駅へ行く道は、工事のため今は通行止めになっています。",
+    "en": "The road to the station has been closed for construction.",
+    "alternatives": [
+      "The road to the station is closed because of construction.",
+      "The road to the station has been closed due to construction work."
+    ],
+    "point": "「〜されている」状態は has been closed / is closed の受動態",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 3,
+    "grammar": ["passive-voice", "present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8a349c1251969d7e94c99828f00dd108a494ccc0923c7f4a17005446d6db275d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7n2u4m4d",
+    "ja": "私は地図アプリを使うより、地元の人に道を聞くほうが好きなんです。",
+    "en": "I prefer asking locals for directions to using a map app.",
+    "alternatives": [
+      "I'd rather ask locals for directions than use a map app.",
+      "I like asking locals for directions better than using a map app."
+    ],
+    "point": "prefer A to B は A も B も動名詞でそろえる",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 5,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dfb8f77e7817d65ffb3bb04037d9ffdf739eb92a6fa455b072fa8abadcea5064",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

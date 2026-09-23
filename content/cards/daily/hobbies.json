@@ -20,5 +20,71 @@
         "at": "2026-09-22"
       }
     }
+  },
+  {
+    "id": "c_3m7t6v2c",
+    "ja": "姉が去年から通っているボルダリングジムのオーナーが、週末に初心者向けのクラスを始めたらしいよ。",
+    "en": "The owner of the bouldering gym my sister has been going to since last year has apparently started a weekend class for beginners.",
+    "alternatives": [
+      "Apparently the owner of the bouldering gym my sister's been going to since last year has started a beginners' class on weekends.",
+      "I heard the owner of the bouldering gym that my sister has been going to since last year has started a weekend class for beginners."
+    ],
+    "point": "主語は「オーナー」。長い修飾の後で動詞 has を忘れない",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f16aa06aecd213737734d54cc59b50ca9ed6db847ec6dfc89bfb244ec903163a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8w3p7p3p",
+    "ja": "差し支えなければ、休みの日は普段どう過ごされているのか、お聞きしたいなと思っていたんですが。",
+    "en": "If you don't mind my asking, I was wondering how you usually spend your days off.",
+    "alternatives": [
+      "I was wondering, if you don't mind me asking, how you normally spend your days off.",
+      "If it's not too personal, I was wondering what you usually do on your days off."
+    ],
+    "point": "how 以下は疑問文の語順にせず how you usually spend",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 7,
+    "grammar": ["hedging-softening", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c7cb0f38dbf8c0519701fdafa60474a33145db65efb3a46e241e0b41878bd09e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9u3g9n5d",
+    "ja": "学生のころにピアノを続けていればよかったなあ。そうすれば今ごろ好きな曲が弾けたのに。",
+    "en": "I wish I'd kept up the piano when I was a student. Then I could play my favorite songs now.",
+    "alternatives": [
+      "If only I had kept playing the piano as a student. I'd be able to play my favorite songs now.",
+      "I wish I hadn't quit the piano as a student. I'd be able to play the songs I like now."
+    ],
+    "point": "過去の後悔は wish + had 過去分詞、今できたはずのことは could + 原形",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 8,
+    "grammar": ["wishes-regrets", "mixed-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f1bc1fbcaebd09397212c29b538d8b8118d6ca2a8dabec5b8656a71b6682e1c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
   }
 ]

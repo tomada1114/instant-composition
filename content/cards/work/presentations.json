@@ -20,5 +20,27 @@
         "at": "2026-09-22"
       }
     }
+  },
+  {
+    "id": "c_7v3v7z2z",
+    "ja": "山田さんがご指摘のとおり、この問題は去年からずっと議論されてきました。",
+    "en": "As Ms. Yamada pointed out, this issue has been discussed since last year.",
+    "alternatives": [
+      "As Ms. Yamada mentioned, this issue has been under discussion since last year.",
+      "As Ms. Yamada pointed out, we've been discussing this issue since last year."
+    ],
+    "point": "「去年から議論されてきた」は has been discussed",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 5,
+    "grammar": ["passive-voice", "present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:82df6859010f531814bc2635c0fa53902b3f3e9d77c232dc54888007156b47a6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
   }
 ]

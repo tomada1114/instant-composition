@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2b6v5d2c",
+    "ja": "昨日の会議で、もっとはっきり反対しておけばよかった。",
+    "en": "I wish I had disagreed more clearly at yesterday's meeting.",
+    "alternatives": [
+      "I should have objected more clearly at yesterday's meeting.",
+      "I wish I'd pushed back more clearly in yesterday's meeting."
+    ],
+    "point": "過去の後悔は wish の後に had＋過去分詞",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["wishes-regrets", "past-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0527041b3d83d27c0ab5d9929105796d3b8dab9f5b1906afad69b054f71ef184",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2d9v4s8u",
     "ja": "会議が始まったときには、部長はもう資料を読み終えていました。",
     "en": "The manager had already finished reading the materials when the meeting started.",
@@ -16,6 +38,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:4e2fbf2126ba783f384f19f93f060ed9088d5b0e5c0d7998b4acf5d6290762c2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2p8f7j9s",
+    "ja": "窓側に座っている女性が、新しいプロジェクトのリーダーです。",
+    "en": "The woman sitting by the window is the leader of the new project.",
+    "alternatives": [
+      "The woman sitting near the window is the new project leader.",
+      "The woman by the window is the leader of the new project."
+    ],
+    "point": "sitting by the window が後ろから woman を説明する",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ac4f02ff45b0e4b89d15c8f8fae92eab756294b7e723b16d28809a79f53607f2",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
@@ -60,6 +104,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:92add462a5b241112f4ddc73a66c426477d56f85aee6b8dffcac7aa0f7d6438b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9w5f9k3s",
+    "ja": "次の議題に移る前に、この件について何か情報があれば共有してもらえますか？",
+    "en": "Before we move on to the next item, could you share any information you have on this?",
+    "alternatives": [
+      "Could you share any information you have about this before we move on to the next item?",
+      "Before we go on to the next topic, could you share whatever information you have on this?"
+    ],
+    "point": "information は数えられないので an や -s をつけない",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["articles-and-countability", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6c2f21c5d0b8c9a8d69fb4fbcceb6e630071b6d770a39159432c3f951839eb7c",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

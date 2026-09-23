@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2p7p2b3w",
+    "ja": "ごめんなさい、今週はとても忙しいので、プレゼン資料作りは手伝えないんです。",
+    "en": "Sorry, I can't help you with the slides because I'm really busy this week.",
+    "alternatives": [
+      "I'm sorry, but I'm too busy this week to help with the slides.",
+      "Sorry, I'm really busy this week, so I can't help with the presentation slides."
+    ],
+    "point": "「〜を手伝う」は help you with the slides の語順",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 5,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c8b420bf3c8482698861ef4173a869432eb381bf652a20d59498384502c5a8cb",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2w6p8c5a",
     "ja": "この件は、経理に詳しい田中さんに頼んだほうがいいですよ。",
     "en": "You should ask Tanaka, who knows a lot about accounting, to handle this.",
@@ -16,6 +38,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:985485193736b06b926e0d9da8c0a2efe430fa2cc63f79a450cb37df6dffdcc1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7r4j3x6a",
+    "ja": "翻訳をお願いしたくて、私は朝からずっと佐藤さんに電話しているんです。",
+    "en": "I've been calling Mr. Sato all morning to ask for a translation.",
+    "alternatives": [
+      "I've been calling Ms. Sato all morning to ask for a translation.",
+      "I've been trying to reach Mr. Sato since this morning to ask for a translation."
+    ],
+    "point": "朝から続けている動作は I've been calling",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 4,
+    "grammar": ["present-perfect-continuous", "infinitives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d8655e1b4080b85a503580044a286acd66db63a0e79728d75d2c1e46b93fe19a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9d9y5v8p",
+    "ja": "そのデータ入力の作業は、来週外部の会社に任されることになっています。",
+    "en": "The data entry work will be handed over to an outside company next week.",
+    "alternatives": [
+      "The data entry work is going to be outsourced to another company next week.",
+      "Next week, the data entry work will be given to an outside company."
+    ],
+    "point": "作業が「任される」側なので will be + 過去分詞の受動態",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 5,
+    "grammar": ["passive-voice", "future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:618cd82f5152677d1d928d0638cde1e058f44fb5e2fdd1274b5fae1dd8d169c8",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_4f6h7g4x",
+    "ja": "ログイン時にアプリが落ちるだけでなく、ユーザーの保存前の下書きまで消えてしまうんです。",
+    "en": "Not only does the app crash on login, but it also wipes out the user's unsaved draft.",
+    "alternatives": [
+      "Not only does the app crash when users log in, but it also deletes their unsaved draft.",
+      "Not only does the app crash at login, but the user's unsaved draft gets wiped out too."
+    ],
+    "point": "Not only の後は does the app crash と語順を倒置",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 9,
+    "grammar": ["inversion", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bfec5e0af4a390bb093edc0b31eecfb70f7fd44dbd9d71217025dd7d40b30a46",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4t2x7s7e",
     "ja": "分かったのは、サーバーのタイムゾーンが UTC のままのときだけ、このバグが再現するということです。",
     "en": "What I've found is that the bug only reproduces when the server's time zone is still set to UTC.",
@@ -22,6 +44,28 @@
     }
   },
   {
+    "id": "c_5g3h3y4p",
+    "ja": "リリース前にもっとログを仕込んでおけばよかったです。今はリクエストがどこで失敗しているのか分からないので。",
+    "en": "I wish we had added more logging before the release, because now we can't tell where the request is failing.",
+    "alternatives": [
+      "We should have added more logging before the release. Now we can't tell where the request is failing.",
+      "I wish we'd put in more logging before the release, because right now we have no idea where the request is failing."
+    ],
+    "point": "過去の後悔は I wish + had 過去分詞",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["wishes-regrets", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:83ed1881814b212cda44439928350bc44a360daf3dcb1be729b388a4b65a67ad",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_7c7r7h8x",
     "ja": "先週のリリース以降、このエラーは3回起きていますが、昨日の夜は一度も出ませんでした。",
     "en": "This error has occurred three times since last week's release, but it didn't show up once last night.",
@@ -38,6 +82,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:1c1a8ce1e3df0e55a5216165d2b035eabb84153e4660b5811c710cb3eaad17e6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7s4h5j6a",
+    "ja": "もしこのバグが新しいライブラリのせいだとしたら、ステージング環境でも出るはずじゃないですか？",
+    "en": "If this bug were caused by the new library, wouldn't it also show up in the staging environment?",
+    "alternatives": [
+      "If the new library were causing this bug, wouldn't we also see it in the staging environment?",
+      "If this bug is caused by the new library, shouldn't it show up in staging too?"
+    ],
+    "point": "現在の仮定は were を使い、帰結は wouldn't で問う",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 7,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:607eb87863e34f831c2146dcda412eb9b09c5189b6da02b86025053e7d6dc922",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

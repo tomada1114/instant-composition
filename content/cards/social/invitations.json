@@ -1,0 +1,24 @@
+[
+  {
+    "id": "c_3j8d8h8p",
+    "ja": "土曜の試合が終わったら、みんなでご飯を食べに行こうよ。",
+    "en": "Let's all go get something to eat when the game ends on Saturday.",
+    "alternatives": [
+      "When the game's over on Saturday, let's all go out to eat.",
+      "Let's all grab something to eat after Saturday's game finishes."
+    ],
+    "point": "未来のことでも when 節は現在形 ends",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 4,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:45ac240f19a3ebf9ace3ffaf06bfa56c82a88badf5b49b6c070c2c2eb010b822",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

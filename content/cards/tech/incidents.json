@@ -1,0 +1,68 @@
+[
+  {
+    "id": "c_2s2c8w7f",
+    "ja": "今はサーバーを再起動しないでください。",
+    "en": "Please don't restart the server right now.",
+    "alternatives": [
+      "Don't restart the server right now, please.",
+      "Please don't restart the server for now."
+    ],
+    "point": "否定の命令は Don't＋動詞の原形",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:58eb86163b408a46c6684f3e667a72537865c0ace559fc75c13008b2fce7c7dc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5r5a2m7x",
+    "ja": "ログイン画面でエラーが出ています。",
+    "en": "There is an error on the login page.",
+    "alternatives": [
+      "There's an error on the login screen.",
+      "The login screen is showing an error."
+    ],
+    "point": "一つのエラーは There is an error。an を忘れない",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 1,
+    "grammar": ["there-is-are", "articles-and-countability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:27434f5475cc457e35a8b624ca988e5b594d78b0452c996234764c573129f5cc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8q4v3v4a",
+    "ja": "まずサーバーのログを確認しましょう。",
+    "en": "Let's check the server logs first.",
+    "alternatives": [
+      "First, let's check the server logs.",
+      "Let's look at the server logs first."
+    ],
+    "point": "提案は Let's＋動詞の原形。logs は複数形",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7b3016582d6c3043beb2926580ec887acd871741384fbe27dfde279ac1b860b0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

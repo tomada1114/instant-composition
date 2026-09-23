@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_4d6b6t8d",
+    "ja": "すみません、前の座席の下に入れたかばんを上の棚に移したいので、手伝ってもらえますか？",
+    "en": "Excuse me, could you help me move the bag I put under the seat in front of me into the overhead bin?",
+    "alternatives": [
+      "Excuse me, would you mind helping me move the bag that's under the seat in front of me up to the overhead bin?",
+      "Excuse me, could you give me a hand moving the bag I put under the seat in front into the overhead bin?"
+    ],
+    "point": "「入れたかばん」は the bag (that) I put と後ろから説明する",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["relative-clauses", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5dff2e7cf08a5dcd6f569f644122587213c8a45b57019f3143f3df053a07c559",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5m4g2j5n",
     "ja": "私たちがようやく保安検査を抜けたときには、搭乗口はもう閉まっていました。",
     "en": "By the time we finally got through security, the boarding gate had already closed.",
@@ -38,6 +60,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:38a0e822383a52474c3e3dcf64d741553155e2ec7c4bf6c08222462a466ef9e9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7n9c4w8w",
+    "ja": "保安検査で止められた原因は、ノートパソコンじゃなくて、かばんに入れっぱなしにしてた水のボトルだったんだ。",
+    "en": "It was the water bottle I'd left in my bag, not my laptop, that got me stopped at security.",
+    "alternatives": [
+      "What got me stopped at security wasn't my laptop but the water bottle I'd left in my bag.",
+      "It wasn't my laptop that got me stopped at security, it was the water bottle I'd left in my bag."
+    ],
+    "point": "強調したい語を It was と that で挟む。not ~ は途中に入れる",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 9,
+    "grammar": ["cleft-emphasis", "past-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:542379bff49a81ab606d99fc0fab2aa96e955f8393ce35c212ed310c6f688629",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
