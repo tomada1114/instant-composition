@@ -41,7 +41,7 @@ function load(storage: QueueStorage | undefined, key: string): AnswerInput[] {
 export function createAnswerQueue(options: {
   readonly key: string;
   readonly send: (answer: AnswerInput) => Promise<SendOutcome>;
-  readonly storage?: QueueStorage;
+  readonly storage?: QueueStorage | undefined;
 }): AnswerQueue {
   const { key, send, storage } = options;
   let pending = load(storage, key);
