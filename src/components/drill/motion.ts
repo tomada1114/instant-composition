@@ -27,6 +27,14 @@ const MOTIONS = {
     ],
     options: { duration: 320, easing: "ease-out" },
   },
+  /** A milestone card appearing on the summary; several are staggered by `delay`. */
+  title: {
+    keyframes: [
+      { opacity: 0, transform: "translateY(8px)" },
+      { opacity: 1, transform: "translateY(0)" },
+    ],
+    options: { duration: 200, easing: "ease-out" },
+  },
 } as const satisfies Record<
   string,
   { keyframes: readonly Keyframe[]; options: KeyframeAnimationOptions }
@@ -50,8 +58,12 @@ export function playMotion(
     animate?: (keyframes: Keyframe[], options: KeyframeAnimationOptions) => unknown;
   } | null,
   name: MotionName,
+  delay = 0,
 ): void {
   if (element?.animate === undefined || prefersReducedMotion()) return;
   const motion = MOTIONS[name];
-  element.animate([...motion.keyframes], { ...motion.options });
+  element.animate(
+    [...motion.keyframes],
+    delay > 0 ? { ...motion.options, delay, fill: "backwards" } : { ...motion.options },
+  );
 }

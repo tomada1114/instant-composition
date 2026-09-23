@@ -6,6 +6,7 @@ import ja from "../messages/ja.json";
 import { DrillScreen } from "../src/components/drill/drill-screen";
 import type { AnswerInput } from "../src/core/api";
 import type { DrillCard, RoundPayload } from "../src/core/views";
+import { makeSummary } from "./summary-fixture";
 
 const push = vi.fn();
 
@@ -66,7 +67,7 @@ function fakeServer(options: { round?: RoundPayload; roundStatus?: number } = {}
     }
     if (url === "/api/answers")
       return Promise.resolve(new Response(null, { status: 204 }));
-    return Promise.resolve(Response.json({ roundId: "round-1" }));
+    return Promise.resolve(Response.json(makeSummary({ roundId: "round-1" })));
   });
   return calls;
 }
@@ -93,7 +94,7 @@ async function renderDrill(kind: "today" | "placement" = "today"): Promise<void>
   window.history.replaceState(null, "", `/ja/drill?kind=${kind}`);
   render(
     <NextIntlClientProvider locale="ja" messages={ja}>
-      <DrillScreen first sound={false} />
+      <DrillScreen first sound={false} dailySize={10} />
     </NextIntlClientProvider>,
   );
   await settle();
@@ -120,6 +121,30 @@ afterEach(() => {
 });
 
 describe("DrillScreen", () => {
+  it("starts one more round from the summary, in place", async () => {
+    const calls = fakeServer({
+      round: {
+        ...ROUND,
+        answered: [
+          { cardId: "c1", pass: "first", result: "ok" },
+          { cardId: "c2", pass: "first", result: "ok" },
+        ],
+      },
+    });
+    await renderDrill();
+    await settle(16);
+    fireEvent.click(
+      screen.getByRole("button", {
+        name: fill(ja.Summary.actions.more, { count: 10 }),
+      }),
+    );
+    await settle();
+    expect(window.location.search).toBe("?kind=extra");
+    expect(
+      calls.filter((call) => call.url === "/api/rounds").map((call) => call.body),
+    ).toStrictEqual([{ kind: "today" }, { kind: "extra" }]);
+  });
+
   it("runs a round by keys, retries the miss, and finishes with every answer", async () => {
     const calls = fakeServer();
     await renderDrill();
@@ -152,7 +177,7 @@ describe("DrillScreen", () => {
     await settle(200);
     press("ArrowRight");
     await settle(400);
-    expect(screen.getByRole("heading", { name: ja.Drill.done.title })).toHaveFocus();
+    expect(screen.getByRole("heading", { name: ja.Summary.title.today })).toHaveFocus();
 
     const answers = calls.filter((call) => call.url === "/api/answers");
     expect(answers.map((call) => (call.body as AnswerInput).result)).toStrictEqual([
@@ -287,7 +312,7 @@ describe("DrillScreen", () => {
       return Promise.resolve(
         finishCalls === 1
           ? new Response("down", { status: 503 })
-          : Response.json({ roundId: "round-1" }),
+          : Response.json(makeSummary({ roundId: "round-1" })),
       );
     });
     await renderDrill();
@@ -305,7 +330,7 @@ describe("DrillScreen", () => {
     fireEvent.click(screen.getByRole("button", { name: ja.Drill.save.resend }));
     await settle();
     expect(
-      screen.getByRole("heading", { name: ja.Drill.done.title }),
+      screen.getByRole("heading", { name: ja.Summary.title.today }),
     ).toBeInTheDocument();
   });
 

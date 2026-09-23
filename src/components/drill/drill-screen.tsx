@@ -2,6 +2,7 @@
 
 import { useEffect, useState, type ReactElement } from "react";
 
+import type { RoundKind } from "../../core/types";
 import type { RoundPayload } from "../../core/views";
 import { requestRound, roundKindFrom, type ApiError } from "./api";
 import { DrillError } from "./drill-error";
@@ -21,7 +22,11 @@ type Loaded =
 export function DrillScreen({
   first,
   sound,
-}: Readonly<{ first: boolean; sound: boolean }>): ReactElement {
+  dailySize,
+}: Readonly<{ first: boolean; sound: boolean; dailySize: number }>): ReactElement {
+  const [kind, setKind] = useState<RoundKind>(() =>
+    roundKindFrom(window.location.search),
+  );
   const [attempt, setAttempt] = useState(0);
   const [loaded, setLoaded] = useState<Loaded & { readonly attempt?: number }>({
     status: "loading",
@@ -29,7 +34,7 @@ export function DrillScreen({
 
   useEffect(() => {
     let current = true;
-    void requestRound(roundKindFrom(window.location.search)).then((result) => {
+    void requestRound(kind).then((result) => {
       if (!current) return;
       setLoaded(
         result.ok
@@ -40,7 +45,7 @@ export function DrillScreen({
     return () => {
       current = false;
     };
-  }, [attempt]);
+  }, [kind, attempt]);
 
   if (loaded.status === "loading" || loaded.attempt !== attempt) {
     return <main className="mx-auto box-content flex min-h-dvh max-w-column px-4" />;
@@ -61,6 +66,13 @@ export function DrillScreen({
       round={loaded.round}
       first={first}
       sound={sound}
+      dailySize={dailySize}
+      onNext={(next) => {
+        // The page stays; only the round changes, so the address follows it.
+        window.history.pushState(null, "", `?kind=${next}`);
+        setKind(next);
+        setAttempt((count) => count + 1);
+      }}
     />
   );
 }

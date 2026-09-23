@@ -28,5 +28,11 @@ export default async function DrillPage({
   setRequestLocale(locale);
 
   const home = getServices().home();
-  return <DrillScreen first={home.state.kind === "placement"} sound={home.sound} />;
+  return (
+    <DrillScreen
+      first={home.state.kind === "placement"}
+      sound={home.sound}
+      dailySize={home.dailySize}
+    />
+  );
 }

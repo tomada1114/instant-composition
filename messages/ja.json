@@ -127,16 +127,78 @@
       "unsaved": "保存できていない記録が {count} 件あります",
       "resend": "送り直す"
     },
-    "done": {
-      "title": "今日は完了",
-      "end": "終わる"
-    },
     "error": {
       "notEnoughTitle": "出せる文が足りません",
       "notEnough": "点検済みの文が {count} 文しかありません。カードの生成と点検を実行してください",
       "widen": "設定で範囲を広げる",
       "loadTitle": "例文を読み込めませんでした",
       "reload": "読み込み直す"
+    }
+  },
+  "Summary": {
+    "title": {
+      "today": "今日は完了",
+      "yesterday": "昨日の分 完了",
+      "recap": "今日の締め"
+    },
+    "close": "閉じる",
+    "back": "戻る",
+    "growth": {
+      "title": "今日の成長",
+      "faster": "文が速くなった",
+      "fixed": "文が × → ○",
+      "delta": "−{seconds, number, ::.0} 秒",
+      "fixedRow": "× → ○",
+      "compared": "前回と比べた {count} 文",
+      "again": "次に出たとき、また比べます",
+      "firstTime": "初めての {count} 文",
+      "firstNext": "次に出たとき、今日と比べます"
+    },
+    "review": {
+      "title": "復習に回った文",
+      "none": "復習に回った文 0",
+      "chip": "復習へ"
+    },
+    "seeAll": "すべて見る",
+    "collapse": "閉じる",
+    "streakUnit": "日連続",
+    "restartTitle": "今日から 1 日目",
+    "difficulty": {
+      "line": "次から TOEIC {toeic} 前後の文",
+      "up": "上がりました",
+      "down": "下がりました"
+    },
+    "placement": {
+      "title": "難易度",
+      "start": "TOEIC {toeic} 前後の文から始めます",
+      "note": "設定からいつでも測り直せます"
+    },
+    "reach": {
+      "title": "到達度（できた文）",
+      "next": "次の節目まで",
+      "nearest": "{topic} あと {count} 文",
+      "added": "+{count}",
+      "empty": "言えるようになった文が、ここで大トピックごとに数えられます"
+    },
+    "titles": {
+      "label": "称号",
+      "streak": "{days} 日連続",
+      "streakNote": "連続が {days} 日になった",
+      "reach": "{topic} {count} 文",
+      "reachNote": "{topic}でできた文が {count} を超えた"
+    },
+    "points": {
+      "earned": "+{points} pt",
+      "total": "合計 {points, number} pt"
+    },
+    "totals": {
+      "line": "言った文 {said, number} ・ 練習した日 {days, number}",
+      "chart": "直近 14 日の言った文"
+    },
+    "actions": {
+      "more": "もう {count} 文",
+      "end": "終わる",
+      "today": "今日の分へ"
     }
   }
 }

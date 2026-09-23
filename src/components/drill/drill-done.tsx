@@ -1,10 +1,11 @@
 import { useTranslations } from "next-intl";
-import { useEffect, useRef, type ReactElement } from "react";
+import type { ReactElement } from "react";
 
 import { Button } from "@/components/ui/button";
 import { NoticeGlyph } from "@/components/ui/glyphs";
 
-import { Link } from "../../i18n/navigation";
+import type { RoundKind } from "../../core/types";
+import { SummaryScreen } from "@/components/summary/summary-screen";
 import type { FinishState } from "./use-drill";
 
 const SHELL =
@@ -17,14 +18,15 @@ const SHELL =
 export function DrillDone({
   finish,
   unsaved,
-}: Readonly<{ finish: FinishState; unsaved: number }>): ReactElement {
+  dailySize,
+  onNext,
+}: Readonly<{
+  finish: FinishState;
+  unsaved: number;
+  dailySize: number;
+  onNext: (kind: RoundKind) => void;
+}>): ReactElement {
   const t = useTranslations("Drill");
-  const heading = useRef<HTMLHeadingElement>(null);
-  const done = finish.status === "done";
-
-  useEffect(() => {
-    if (done) heading.current?.focus();
-  }, [done]);
 
   if (finish.status === "failed") {
     return (
@@ -39,17 +41,13 @@ export function DrillDone({
       </main>
     );
   }
-  if (!done) return <main className={SHELL} />;
+  if (finish.status !== "done") return <main className={SHELL} />;
   return (
-    <main className={SHELL}>
-      <h1 ref={heading} tabIndex={-1} className="focus-visible:outline-none">
-        {t("done.title")}
-      </h1>
-      <div className="mt-auto">
-        <Button asChild className="w-full">
-          <Link href="/">{t("done.end")}</Link>
-        </Button>
-      </div>
-    </main>
+    <SummaryScreen
+      summary={finish.summary}
+      mode="live"
+      dailySize={dailySize}
+      onNext={onNext}
+    />
   );
 }

@@ -40,14 +40,25 @@ const DOT: Readonly<Record<Dot["state"], string>> = {
   upcoming: "border border-border",
 };
 
-/** Monday to Sunday: each dot over its weekday, an open day marked "open" in words too. */
-export function WeekRow({ dots }: Readonly<{ dots: readonly Dot[] }>): ReactElement {
+/**
+ * Monday to Sunday: each dot over its weekday, an open day marked "open" in
+ * words too. `lit` is the day a round just completed, filled with the accent.
+ */
+export function WeekRow({
+  dots,
+  lit = null,
+}: Readonly<{ dots: readonly Dot[]; lit?: string | null }>): ReactElement {
   const t = useTranslations("Home.week");
   return (
     <ol className="flex gap-4">
       {dots.map((dot, index) => (
         <li key={dot.day} className="flex w-3 flex-col items-center gap-1.5">
-          <span className={cn("size-3 rounded-full", DOT[dot.state])} />
+          <span
+            className={cn(
+              "size-3 rounded-full",
+              dot.day === lit ? "bg-accent" : DOT[dot.state],
+            )}
+          />
           <span className="text-caption text-muted-foreground">
             {t(WEEKDAYS[index] ?? "sun")}
           </span>
