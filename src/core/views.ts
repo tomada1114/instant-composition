@@ -10,6 +10,7 @@ import type {
   RoundKind,
   Settings,
   SubtopicRef,
+  TopicInfo,
 } from "./types";
 
 /** What the server hands the browser; shared so both sides compile against one shape. */
@@ -129,4 +130,47 @@ export interface SettingsView {
   readonly removedFocus: readonly SubtopicRef[];
   /** Lowering the size completed today's portion there and then. */
   readonly completedToday: boolean;
+}
+
+export interface BreakdownTopic {
+  readonly id: string;
+  readonly ja: string;
+  /** Mastered per subtopic, in the taxonomy's order. */
+  readonly subtopics: readonly {
+    readonly id: string;
+    readonly ja: string;
+    readonly count: number;
+  }[];
+}
+
+/** The milestones taken in one row of the records screen: the streak, or one topic. */
+export type TitleGroup =
+  | { readonly kind: "streak"; readonly values: readonly number[] }
+  | {
+      readonly kind: "reach";
+      readonly topic: string;
+      readonly ja: string;
+      readonly values: readonly number[];
+    };
+
+/** W10: the long view, with nothing lit — no round has just moved anything. */
+export interface RecordsView {
+  readonly reach: ReachView;
+  readonly breakdown: readonly BreakdownTopic[];
+  readonly toeic: string | null;
+  /** `current` 0 stands for "day 1 from today" and is never shown as 0. */
+  readonly streak: { readonly current: number; readonly longest: number };
+  /** Twelve weeks, oldest first, Monday to Sunday in each. */
+  readonly calendar: readonly (readonly Dot[])[];
+  readonly said: number;
+  readonly practicedDays: number;
+  readonly points: number;
+  readonly titles: readonly TitleGroup[];
+}
+
+/** W11: the settings as saved, what can be chosen, and the difficulty now. */
+export interface SettingsPageView {
+  readonly settings: Settings;
+  readonly topics: readonly TopicInfo[];
+  readonly toeic: string | null;
 }

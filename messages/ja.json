@@ -178,7 +178,7 @@
       "next": "次の節目まで",
       "nearest": "{topic} あと {count} 文",
       "added": "+{count}",
-      "empty": "言えるようになった文が、ここで大トピックごとに数えられます"
+      "empty": "別の日に 2 回言えた文がここに数えられます"
     },
     "titles": {
       "label": "称号",
@@ -200,5 +200,68 @@
       "end": "終わる",
       "today": "今日の分へ"
     }
+  },
+  "Records": {
+    "title": "記録",
+    "back": "戻る",
+    "breakdown": "{topic} の内訳",
+    "difficulty": "難易度",
+    "toeic": "TOEIC {toeic} 前後の文",
+    "notMeasured": "まだ測っていません",
+    "streak": "{days} 日連続",
+    "restart": "今日から 1 日目",
+    "longest": "最長 {days} 日",
+    "calendar": "直近 12 週の練習した日",
+    "totals": "言った文 {said, number} ・ 練習した日 {days, number}",
+    "points": "合計 {points, number} pt",
+    "titles": {
+      "title": "称号",
+      "streak": "連続",
+      "none": "まだありません"
+    },
+    "rules": {
+      "mastered": "できた文 = 別の日に 2 回、時間内に言えた文",
+      "streak": "連続 = 今日の分を終えた日。1 日空いても、翌日のうちに昨日の分をやれば続く"
+    }
+  },
+  "Settings": {
+    "title": "設定",
+    "back": "戻る",
+    "topics": {
+      "title": "使う場面（大トピック）",
+      "keepOne": "1 つは選んだままにします"
+    },
+    "focus": {
+      "title": "重点（2 つまで）",
+      "note": "重点は新しい文の半分までを占めます",
+      "limit": "重点は 2 つまでです",
+      "removed": "{names} の重点も外しました"
+    },
+    "size": {
+      "title": "今日の分の枚数",
+      "count": "{count} 文",
+      "note": "今日の分にもすぐ反映します",
+      "completed": "この枚数に届いたので、今日は完了です"
+    },
+    "sound": {
+      "title": "効果音",
+      "on": "オン",
+      "off": "オフ"
+    },
+    "motion": {
+      "title": "動き",
+      "note": "OS の「動きを減らす」に従います"
+    },
+    "difficulty": {
+      "title": "難易度",
+      "retest": "難易度を測り直す"
+    },
+    "retest": {
+      "title": "難易度を測り直しますか",
+      "body": "易しい順に 10 文を出し、結果で難易度を決め直します。これまでの記録は消えません",
+      "cancel": "やめる",
+      "confirm": "測り直す"
+    },
+    "saveFailed": "保存できませんでした。サーバーが動いているか確かめてください"
   }
 }
