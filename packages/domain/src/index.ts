@@ -1,6 +1,21 @@
 // The pure rules of the application: no I/O, no clock, no process state. Time,
 // the learner's time zone and randomness arrive as arguments.
-export { deriveCardStates } from "./card-state";
+export {
+  checkAnswers,
+  decideAnswers,
+  type AnswerInput,
+  type AnswersChange,
+  type AnswersState,
+  type CardFacts,
+} from "./answers";
+export { deriveCardStates, nextCardState, type LeitnerAnswer } from "./card-state";
+export {
+  decideClose,
+  streakValue,
+  type CloseCatalog,
+  type CloseChange,
+  type CloseState,
+} from "./close";
 export {
   compose,
   countAvailable,
@@ -10,11 +25,21 @@ export {
 } from "./compose";
 export { addDays, calendarWeeks, dayDiff, dayOf, weekdayIndex, weekOf } from "./day";
 export {
+  availableFor,
+  deal,
+  practiceState,
+  refitDeck,
+  seedFor,
+  type PracticeState,
+} from "./deck";
+export {
   adjustLevel,
   type DifficultyAnswer,
   type LevelAdjustment,
   type LevelChange,
 } from "./difficulty";
+export { EMPTY_STATS, emptyTally } from "./empty";
+export type { PracticeError } from "./errors";
 export {
   reviewList,
   roundGrowth,
@@ -51,6 +76,7 @@ export {
   type TitleInput,
   type TitleSeries,
 } from "./milestones";
+export { settleLevel, type LevelSettled } from "./level";
 export {
   choosePlacement,
   placementLevel,
@@ -74,6 +100,26 @@ export type {
   Round,
   RoundOutcome,
 } from "./records";
+export {
+  logOrder,
+  outcomeOf,
+  replayItems,
+  reviewAnswer,
+  type AcceptedAnswer,
+} from "./review";
+export { growthOf } from "./round-growth";
+export {
+  decideSettings,
+  DEFAULT_SETTINGS,
+  type SettingsDecided,
+  type SettingsPatch,
+} from "./settings";
+export {
+  decideStart,
+  type StartChange,
+  type StartCommand,
+  type StartState,
+} from "./start";
 export { randomIndex, seededRandom, shuffled, type Random } from "./random";
 export { err, ok, type Result } from "./result";
 export {
