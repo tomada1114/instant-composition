@@ -252,4 +252,81 @@ describe("DrillScreen", () => {
     await settle(4000);
     expect(screen.queryByText(ja.Drill.save.failed)).not.toBeInTheDocument();
   });
+  it("counts the cards shown so far in the pause hint during the retry pass", async () => {
+    fakeServer();
+    await renderDrill();
+    for (let card = 0; card < 2; card += 1) {
+      press(" ");
+      await settle(200);
+      press("ArrowLeft");
+      await settle(200);
+      await settle(16);
+    }
+    press(" ");
+    await settle(200);
+    press("ArrowLeft");
+    await settle(200);
+    await settle(16);
+    expect(
+      screen.getByText(fill(ja.Drill.card.retryProgress, { current: 2, total: 2 })),
+    ).toBeInTheDocument();
+    press("Escape");
+    expect(
+      screen.getByText(fill(ja.Drill.sheet.hint, { position: 4 })),
+    ).toBeInTheDocument();
+  });
+
+  it("counts only the answers still waiting when the round cannot be finished", async () => {
+    let finishCalls = 0;
+    vi.stubGlobal("fetch", (url: string) => {
+      if (url === "/api/rounds") return Promise.resolve(Response.json(ROUND));
+      if (url === "/api/answers") {
+        return Promise.reject(new TypeError("fetch failed"));
+      }
+      finishCalls += 1;
+      return Promise.resolve(
+        finishCalls === 1
+          ? new Response("down", { status: 503 })
+          : Response.json({ roundId: "round-1" }),
+      );
+    });
+    await renderDrill();
+    for (let card = 0; card < 2; card += 1) {
+      press(" ");
+      await settle(200);
+      press("ArrowRight");
+      await settle(400);
+      await settle(16);
+    }
+    await settle(16);
+    expect(
+      screen.getByText(fill(ja.Drill.save.unsaved, { count: 2 })),
+    ).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: ja.Drill.save.resend }));
+    await settle();
+    expect(
+      screen.getByRole("heading", { name: ja.Drill.done.title }),
+    ).toBeInTheDocument();
+  });
+
+  it("counts the round itself as unsaved when only the finish failed", async () => {
+    vi.stubGlobal("fetch", (url: string) => {
+      if (url === "/api/rounds") return Promise.resolve(Response.json(ROUND));
+      if (url === "/api/answers")
+        return Promise.resolve(new Response(null, { status: 204 }));
+      return Promise.resolve(new Response("down", { status: 503 }));
+    });
+    await renderDrill();
+    for (let card = 0; card < 2; card += 1) {
+      press(" ");
+      await settle(200);
+      press("ArrowRight");
+      await settle(400);
+      await settle(16);
+    }
+    await settle(16);
+    expect(
+      screen.getByText(fill(ja.Drill.save.unsaved, { count: 1 })),
+    ).toBeInTheDocument();
+  });
 });

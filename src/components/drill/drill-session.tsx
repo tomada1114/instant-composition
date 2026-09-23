@@ -107,12 +107,13 @@ export function DrillSession({
     );
   }
   if (phase.kind === "finishing")
-    return <DrillDone finish={finish} unsaved={state.answers.length} />;
+    // The round's own result is unsaved too, so a failed finish reports at least one record.
+    return <DrillDone finish={finish} unsaved={Math.max(1, queue.pending().length)} />;
 
   const resumeAt =
     state.pass === "first"
       ? round.offset + state.firstDone + state.index + 1
-      : round.offset + state.firstDone + state.queue.length;
+      : round.offset + state.firstDone + state.queue.length + state.index + 1;
   return (
     <>
       <CardScreen
