@@ -1,0 +1,751 @@
+[
+  {
+    "id": "c_2e6y7r7j",
+    "ja": "この美術館に来る人のほとんどは、作品そのものじゃなくて、最上階からの眺めが目当てなんですよ。",
+    "en": "It's the view from the top floor, not the art itself, that most visitors come here for.",
+    "alternatives": [
+      "What most visitors come here for is the view from the top floor, not the art itself.",
+      "Most visitors come here for the view from the top floor, not the art itself."
+    ],
+    "point": "強調したい部分を It's と that の間に挟む",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a67e1e457e92f49120adea3e7f3087be7c338f204aa66830f1697f18755fc50f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2e7r2a9x",
+    "ja": "1日しか時間がない人には、どのツアーがおすすめですか？",
+    "en": "Which tour would you recommend for someone who has only one day?",
+    "alternatives": [
+      "Which tour would you suggest for someone with just one day?",
+      "Which tour do you recommend for someone who only has one day?"
+    ],
+    "point": "「1日しか時間がない人」は someone who has only one day と後ろから説明",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 4,
+    "grammar": ["wh-questions", "relative-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b83624022edc86476a2b64d56ac6317ed6b0e86b68c789a8b82fbd3b1bfebc72",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2s4s8y4r",
+    "ja": "もし雨が降ったら、ボートツアーは中止になりますか？",
+    "en": "Will the boat tour be canceled if it rains?",
+    "alternatives": [
+      "Is the boat tour canceled if it rains?",
+      "Does the boat tour get canceled if it rains?"
+    ],
+    "point": "未来のことでも if 節は現在形で it rains",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 3,
+    "grammar": ["time-and-if-clauses", "passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fe6e2ce610c4434e89755586c1f1e0565319d49b4892cee54706235312e275b2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2t9g8y9p",
+    "ja": "もし私がこの街に1日しかいられないとしたら、どの観光スポットをおすすめしますか？",
+    "en": "If I only had one day in this city, which sights would you recommend?",
+    "alternatives": [
+      "If I had just one day in this city, which places would you recommend?",
+      "Which sights would you recommend if I only had one day in this city?"
+    ],
+    "point": "仮の話なので if 節は過去形 had、主節は would",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 5,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7a29c42117700000f01f9b246926b372df0c493f3d5bfcd173757711eccdff4b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3b2j4g4u",
+    "ja": "あの人たち、もう最終ツアーに出発したに違いないよ。受付に誰もいないもん。",
+    "en": "They must have already left for the last tour. There's nobody at the desk.",
+    "alternatives": [
+      "They must have already gone on the final tour. No one's at the reception desk.",
+      "They must have left for the last tour already. There's no one at the front desk."
+    ],
+    "point": "過去の推量「〜したに違いない」は must have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3fe923d459367f320d00a6d754f2c5f3aefefecd696992ce262ca2615cfd893e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3c3m6r4n",
+    "ja": "入口でチケットを売っていた人が私たちに教えてくれたツアーって、まだ予約できるかどうか知ってる？",
+    "en": "Do you know whether the tour that the person selling tickets at the entrance told us about is still available to book?",
+    "alternatives": [
+      "Do you know if we can still book the tour that the person selling tickets at the entrance told us about?",
+      "Do you know if the tour the person selling tickets at the entrance mentioned to us can still be booked?"
+    ],
+    "point": "tour を説明する節の中に、さらに人を説明する語句が入る",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["nested-clauses", "indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6a90c42da0f1eaa7c6b292126142827f09764467cde0f0067ca53bb728f569ec",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3h2j4q7c",
+    "ja": "行く前に、ネットで美術館のチケットを買っておこうよ。",
+    "en": "Let's buy the museum tickets online before we go.",
+    "alternatives": [
+      "Let's get the museum tickets online before we go.",
+      "Why don't we buy the museum tickets online before we go?"
+    ],
+    "point": "「〜しようよ」は Let's のあとに動詞の原形",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 3,
+    "grammar": ["imperatives", "time-and-if-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dba70370c086bfb3ccb9e8b33e9c5ade1cdb45651dca59106f2a318dea583be9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3m4u4z5y",
+    "ja": "英語のガイドツアーが何時に始まるか、それと私たちが事前に予約する必要があるかどうか、教えていただけますか？",
+    "en": "Could you tell me what time the English guided tour starts and whether we need to book in advance?",
+    "alternatives": [
+      "Could you let me know when the English guided tour begins and if we have to reserve ahead of time?",
+      "Would you mind telling me what time the English tour starts and whether we need a reservation?"
+    ],
+    "point": "間接疑問は what time the tour starts と平叙文の語順",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 7,
+    "grammar": ["indirect-questions", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:67a718ca370ef20676acd4aa7db54b7c232578fe356d7f18bac12199d42b413a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3p2n7b6v",
+    "ja": "この観光地で私がいちばん見たいのは、本堂の裏にある庭なんです。",
+    "en": "What I'd most like to see here is the garden behind the main hall.",
+    "alternatives": [
+      "The thing I'd most like to see here is the garden behind the main hall.",
+      "What I really want to see here is the garden behind the main hall."
+    ],
+    "point": "「〜なのは」は What I'd like to see is で主語にする",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 5,
+    "grammar": ["noun-clauses", "post-modification"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4a874206c9d627f05361c0ad98ec3460ee9507d111ae8ce7a756fe11cf698700",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3t4r2y5p",
+    "ja": "すみません、私たち20分くらいチケット売り場を探しているんですが、どこにあるか教えてもらえますか？",
+    "en": "Excuse me, we've been looking for the ticket office for about twenty minutes. Could you tell me where it is?",
+    "alternatives": [
+      "Excuse me, we've been trying to find the ticket office for about twenty minutes. Could you tell me where it is?",
+      "Excuse me, we've been searching for the ticket booth for about twenty minutes. Could you tell us where it is?"
+    ],
+    "point": "今も探し続けているので have been -ing、場所は where it is の語順",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["present-perfect-continuous", "indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:adab3636dfe50ea1780492a97b282138a736766b5d6a38e9f392895c10d7f88a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4d9p2z8u",
+    "ja": "あの写真を撮ったとき、もしあなたが三脚を持ってきていたら、夜景をもっときれいに撮れたと思いますか？",
+    "en": "If you had brought a tripod when you took that photo, do you think you could have gotten a better shot of the night view?",
+    "alternatives": [
+      "Do you think you could have gotten a better shot of the night view if you'd brought a tripod when you took that photo?",
+      "If you'd brought a tripod when you took that photo, do you think the night view would have come out better?"
+    ],
+    "point": "過去の仮定は had brought、その結果は could have gotten で表す",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 10,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:880112f56a96a83fd62e6606a9f857f7ab5e3d31d86621b31ca2ae71dd89c381",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4e4h4w6b",
+    "ja": "私たちがチケットをネットで予約しておいたら、今ごろこの長い列に並んでないで、もう中に入ってるのにね。",
+    "en": "If we'd booked the tickets online, we'd be inside by now instead of standing in this long line.",
+    "alternatives": [
+      "If we had booked our tickets online, we'd be inside already rather than waiting in this long line.",
+      "We'd already be inside instead of standing in this long line if we'd booked the tickets online."
+    ],
+    "point": "過去の仮定は had booked、今の結果は would be",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:baf5a8c9ca6c468534927941cf8bd969308cc98783c5bf6e39ba68ea2bb8a501",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5b2r6h4h",
+    "ja": "すみません、もしよろしければ、この噴水の前で私たちの写真を撮っていただけないかと思いまして。",
+    "en": "Excuse me, I was wondering if you could take a picture of us in front of this fountain.",
+    "alternatives": [
+      "Excuse me, would you mind taking a picture of us in front of this fountain?",
+      "Sorry to bother you, but I was wondering if you could take a photo of us in front of this fountain."
+    ],
+    "point": "丁寧な依頼は I was wondering if you could と過去形で",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fc58bd982efa4cbd0e818e3250e17574c136cc146f7168c7af4f7b8f72dc2fde",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5b9a2w2e",
+    "ja": "ガイドさんが、塔の上は風がすごく強いから、私たちは帽子を置いていったほうがいいって言ってたよ。",
+    "en": "The guide said it was really windy at the top of the tower, so we should leave our hats behind.",
+    "alternatives": [
+      "The guide told us it was really windy at the top of the tower, so we should leave our hats behind.",
+      "Our guide said it was super windy up at the top of the tower, so we'd better leave our hats behind."
+    ],
+    "point": "said の後は時制を合わせて it was にする",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 8,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:36f4c6f62b126724d9fa7f7ad9b0f9f40152cd00a30c0dbc3671e51774114fc6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5c9p4u5y",
+    "ja": "明日、日の出ツアーに参加するつもりなんだ。",
+    "en": "I'm going to join the sunrise tour tomorrow.",
+    "alternatives": [
+      "I'm joining the sunrise tour tomorrow.",
+      "I'm going to take the sunrise tour tomorrow."
+    ],
+    "point": "予定は will より be going to や進行形が自然",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:294b74ca20d8e4cd35e9ebdd2a1ae50176eb47f517083112e568ffe549acb2bf",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6e2y5v6u",
+    "ja": "展望台からの景色、写真に撮っておけばよかったなあ。",
+    "en": "I wish I had taken a picture of the view from the observation deck.",
+    "alternatives": [
+      "I wish I'd gotten a photo of the view from the observation deck.",
+      "I should have taken a picture of the view from the observation deck."
+    ],
+    "point": "過去への後悔は I wish + had + 過去分詞",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4238ff674ad4e9b0e17444f0314a135aa75005b675eee0aa628ee9c4c77582be",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6k6x5x5x",
+    "ja": "夜のツアーのほうが高いけど、景色はずっといいですよ。",
+    "en": "The night tour is more expensive, but the view is much better.",
+    "alternatives": [
+      "The night tour costs more, but the view is much better.",
+      "The night tour is pricier, but the views are far better."
+    ],
+    "point": "比較級を強めるのは very ではなく much",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:152e24270c64a51b0579485c02839bb8b18e1e5e34f55f3a0c93e8769d5e08a0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6q6u7v3y",
+    "ja": "うちの父は、ツアーの間ずっと一番前を歩いて、ガイドさんの話を一言も聞き逃さないようにメモを取ってたよ。",
+    "en": "My dad walked at the front of the group the whole tour, taking notes so he wouldn't miss a word the guide said.",
+    "alternatives": [
+      "My dad stayed at the front of the group for the entire tour, taking notes so he wouldn't miss anything the guide said.",
+      "Throughout the tour, my dad walked at the front, taking notes so he wouldn't miss a single word from the guide."
+    ],
+    "point": "同時の動作は , taking notes と分詞で後ろに続ける",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f17a91b0fe498eeacfb54fd10145c822044414dc0168a6f5c22769c58078618",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6u6h2g7j",
+    "ja": "展望台が混みすぎていて、私はいい写真が撮れませんでした。",
+    "en": "The observation deck was so crowded that I couldn't get a good photo.",
+    "alternatives": [
+      "I couldn't take a good picture because the observation deck was too crowded.",
+      "The observation deck was too crowded for me to get a good photo."
+    ],
+    "point": "「〜すぎて〜できなかった」は so 〜 that 主語 couldn't で表す",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 4,
+    "grammar": ["can-could-ability", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ffc5616d0e9029d2b481ea875084ff3991f663d4db45bb7919d574b48ce0245e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6z5b8v4w",
+    "ja": "この町で、私がまず見ておくべき場所はどこですか？",
+    "en": "What should I see first in this town?",
+    "alternatives": [
+      "What should I visit first in this town?",
+      "Where should I go first in this town?"
+    ],
+    "point": "疑問詞のあとは should I の語順",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 2,
+    "grammar": ["modal-obligation-advice", "wh-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5d108baccb8d84691b4b51b5a3a2cc906acba92558714a00f7ee85ed766d4d1b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7j8d7n2q",
+    "ja": "すみません、展示を見て回る前に、入口でリュックを預けてもいいですか？",
+    "en": "Excuse me, is it okay if I drop off my backpack at the entrance before I look around the exhibits?",
+    "alternatives": [
+      "Excuse me, can I leave my backpack at the entrance before I look around the exhibits?",
+      "Excuse me, would it be all right to drop off my backpack at the entrance before looking around the exhibits?"
+    ],
+    "point": "「預ける」は drop off、「見て回る」は look around",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 8,
+    "grammar": ["requests-permission", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:09312869b710427e088cb20c1adad69f69438734debf5e90e1b783a19eba4a97",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7t6g8k4v",
+    "ja": "今朝私たちが買ったチケットに、宮殿の裏にある庭園のツアーも含まれているかどうか、わかりますか？",
+    "en": "Do you know whether the ticket we bought this morning also covers the tour of the gardens behind the palace?",
+    "alternatives": [
+      "Do you know if the ticket we bought this morning includes the tour of the gardens behind the palace too?",
+      "Would you know whether the ticket we got this morning also covers the garden tour behind the palace?"
+    ],
+    "point": "「かどうか」の後は疑問文にせず主語＋動詞の語順",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 8,
+    "grammar": ["indirect-questions", "relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:48064205f9b4d73f378d5a1810e7c5de0cee9883756dc52d4ea2b85147c48b1a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7v6q4u3x",
+    "ja": "ホテルの人が私たちにおすすめしてくれた展望台って、ここから歩いて行ける距離ですか？",
+    "en": "Is the observation deck that the hotel staff recommended to us within walking distance of here?",
+    "alternatives": [
+      "Is the observation deck the hotel staff recommended to us close enough to walk to from here?",
+      "Can we walk from here to the observation deck that the hotel staff recommended to us?"
+    ],
+    "point": "長い主語は the deck that ～ recommended でまとめてから述語へ",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a2090ab09cd405651513fdf91ce4d1ef58d1835bdb666b5eea847120219bf88c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7x4k3m7n",
+    "ja": "有名なお寺を夕暮れ時に見るために、私たちははるばるここまで来たんです。",
+    "en": "We came all the way here to see the famous temple at sunset.",
+    "alternatives": [
+      "We came all this way to see the famous temple at sunset.",
+      "We traveled all the way here to see the famous temple at dusk."
+    ],
+    "point": "目的の「〜するために」は to + 動詞の原形",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 4,
+    "grammar": ["infinitives", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f66dde3bccbde994f9acbcf526d7f77493601dd4b7c807179b9a3136bedc7e8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8c4d9j3t",
+    "ja": "受付の人に、この美術館が今日何時に閉まるのか聞いてきてもらえる？",
+    "en": "Could you go ask the person at the front desk what time the museum closes today?",
+    "alternatives": [
+      "Can you go ask the person at the reception desk what time the museum closes today?",
+      "Could you go find out from the front desk what time the museum closes today?"
+    ],
+    "point": "what time の後は語順が the museum closes（疑問文の形にしない）",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 6,
+    "grammar": ["indirect-questions", "requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f39d464a6e6b5ef8d8106f31ea3d07bdfbad0aa1dd8e00fd2827c7eca65d302a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8e9k2k8g",
+    "ja": "チケットを持っていなくても、庭園には入れますよ。",
+    "en": "Even if you don't have a ticket, you can still enter the garden.",
+    "alternatives": [
+      "You can still get into the garden even if you don't have a ticket.",
+      "Even without a ticket, you can still go into the garden."
+    ],
+    "point": "「〜しても」は even if、even だけでは節をつなげない",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 5,
+    "grammar": ["concession-contrast", "can-could-ability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ad054ed4663596caddeb1e1db2b2d637a586867de320677050dbcb07aa4cd8bb",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8g3u8r6e",
+    "ja": "その日は一般公開されていなかったのに、ガイドさんは私たちを鐘楼に上らせてくれたんだ。",
+    "en": "The guide let us go up the bell tower even though it was closed to the public that day.",
+    "alternatives": [
+      "Our guide let us climb the bell tower even though it wasn't open to the public that day.",
+      "The guide let us go up the bell tower, even though it wasn't open to the public that day."
+    ],
+    "point": "「〜させてくれた」は let + 人 + 動詞の原形",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 7,
+    "grammar": ["causatives", "concession-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fcb31bde3680607175368601ad4be689ad322dc6221a673b8bb5a97245c9c094",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8h6q2q8m",
+    "ja": "私たちは川沿いを1時間歩いたんだけど、弟が古い橋の写真を撮れるように、数分ごとに立ち止まってたよ。",
+    "en": "We walked along the river for an hour, stopping every few minutes so that my brother could take pictures of the old bridges.",
+    "alternatives": [
+      "We walked along the river for an hour, stopping every few minutes to let my brother take pictures of the old bridges.",
+      "We walked by the river for an hour, stopping every few minutes so my brother could photograph the old bridges."
+    ],
+    "point": "文の後ろに , stopping と付け足して同時の動作を表す",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 10,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ad45361d067fc23c2481b2d6a86d5ec0a4152d6837bf2860e91656ccc1a75d33",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8k3x3r6w",
+    "ja": "私たち、今日はもうお寺を三つ回ったけど、今朝見たお寺が断トツで一番すごかったね。",
+    "en": "We've visited three temples today, but the one we saw this morning was by far the most impressive.",
+    "alternatives": [
+      "We've already been to three temples today, but the one we saw this morning was easily the most impressive.",
+      "We've seen three temples today, and the one this morning was by far the most impressive."
+    ],
+    "point": "今日の合計は現在完了、今朝の出来事は過去形",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 7,
+    "grammar": ["tense-contrast", "comparatives-superlatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9011b6b23d8a0887392395c5befa21e5aba30229d48838cba56e22570b86f054",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8k5q3k6p",
+    "ja": "この近くにいい博物館はありますか？",
+    "en": "Is there a good museum near here?",
+    "alternatives": [
+      "Is there a good museum nearby?",
+      "Is there a good museum around here?",
+      "Are there any good museums around here?"
+    ],
+    "point": "「ありますか」は Is there で始める",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7636b5a5554e6ef0a92498e02b781225de81f01fe5f856cf0c596ebb04f82347",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8x8b4x8k",
+    "ja": "私たちが美術館に着いたときには、午後のガイドツアーはもう満員になっていたので、音声ガイドを借りました。",
+    "en": "By the time we got to the museum, the afternoon guided tour had already filled up, so we rented audio guides.",
+    "alternatives": [
+      "When we arrived at the museum, the afternoon guided tour was already full, so we rented audio guides.",
+      "The afternoon guided tour had already been fully booked by the time we reached the museum, so we rented audio guides."
+    ],
+    "point": "着く前に満員になっていたので had filled up と過去完了",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 8,
+    "grammar": ["past-perfect", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f5564bce17f1f03c40adb0aee4ea0cde00aa8f98fcac1830f8b22217d7eece2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8z6k6h7f",
+    "ja": "兄はツアーの間、ずっと写真を撮っていたよ。",
+    "en": "My brother was taking photos during the whole tour.",
+    "alternatives": [
+      "My brother was taking pictures during the whole tour.",
+      "My brother was taking photos all through the tour."
+    ],
+    "point": "「〜していた」は過去進行形 was taking",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0dfa99fa5e45b45fbb266c586196139eadcbd66ef7f1505aed996e09d79b673e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9k2a6y2t",
+    "ja": "ホテルのフロントの女性がおすすめしてくれた展望台に、どれくらい早く着いておけばいいか、ガイドさんに聞いてもらえますか？",
+    "en": "Could you ask the guide how early we should get to the observation deck that the woman at the hotel front desk recommended?",
+    "alternatives": [
+      "Would you mind asking the guide how early we should arrive at the observation deck the woman at the hotel front desk recommended?",
+      "Could you ask the guide how early we need to get to the observation deck that the woman at the front desk of our hotel recommended?"
+    ],
+    "point": "聞く内容は how early we should と平叙文の語順にする",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["nested-clauses", "indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:550fd3bac293e29371f8d91d630d8e77cb3b25099e381c88db7230e40ea208b3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9s4k7v9n",
+    "ja": "城のツアーは毎朝10時に始まります。",
+    "en": "The castle tour starts at ten every morning.",
+    "alternatives": [
+      "The castle tour begins at ten every morning.",
+      "The tour of the castle starts at 10 every morning."
+    ],
+    "point": "主語 The castle tour は三人称単数なので starts",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 1,
+    "grammar": ["articles-and-countability", "be-and-present-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8573c0bfb3c6a9492a317b328b74d2fc01fc05990700d333016ee6dd92e5cf22",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

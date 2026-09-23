@@ -1,0 +1,549 @@
+[
+  {
+    "id": "c_2d7r4w2x",
+    "ja": "新しいシステムについて、いくつかアドバイスをいただけますか？",
+    "en": "Could you give me some advice on the new system?",
+    "alternatives": [
+      "Could you give me some advice about the new system?",
+      "Can you give me some advice on the new system?"
+    ],
+    "point": "advice は数えられないので advices にしない",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 3,
+    "grammar": ["articles-and-countability", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d622fa3604b503691ec139c69f97a3948c85e892d9dfde7240c192f7532b4177",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2d9m4w6u",
+    "ja": "会議で決まったことを、今日中にチャットでチーム全員に共有してもらえますか？来られなかった人もいるので。",
+    "en": "Could you share what we decided in the meeting with the whole team on chat by end of day, since some people couldn't make it?",
+    "alternatives": [
+      "Could you post what we decided in the meeting in the team chat by the end of the day? Some people couldn't make it.",
+      "Would you mind sharing what was decided in the meeting with everyone on chat by end of day, since some people missed it?"
+    ],
+    "point": "「決まったこと」は what 節でまとめて share の目的語に",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 10,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ecd5d221923203c62073ad643be45f5f70c7d063b1f406dda86f82b2dd11d795",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2g7d8u7p",
+    "ja": "昨日送ってもらったメールに、添付ファイルが付いていませんでした。",
+    "en": "Your email yesterday didn't have the attachment.",
+    "alternatives": [
+      "The attachment wasn't in your email yesterday.",
+      "Yesterday's email from you didn't include the attachment."
+    ],
+    "point": "過去の否定は didn't のあとに動詞の原形 have",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:771dbdd65d29c480bf711a762c27503fcedd4eefef6592a073aab0093c0a83fc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2n4p4h9s",
+    "ja": "先方が本当に知りたいのは、来月の納品日をまだ変更できるかどうかだと思います。",
+    "en": "What the client really wants to know, I think, is whether next month's delivery date can still be changed.",
+    "alternatives": [
+      "I think what the client really wants to know is whether next month's delivery date can still be changed.",
+      "I think the client really just wants to know whether they can still change next month's delivery date."
+    ],
+    "point": "「〜かどうか」は whether 節で、語順は平叙文のまま",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 8,
+    "grammar": ["cleft-emphasis", "noun-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a9cb285710fafe72c722f74828570be3cb6a2c43cd9c37098fef53c9f0fa77d1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3n2q8y5p",
+    "ja": "あなたがもっと早く在庫の件を教えてくれていたら、私は取引先への返信を遅らせずに済んだのですが。",
+    "en": "If you had told me about the stock issue earlier, I wouldn't have had to delay my reply to the client.",
+    "alternatives": [
+      "Had you told me about the stock issue sooner, I wouldn't have had to hold off on replying to the client.",
+      "If you'd let me know about the stock issue earlier, I wouldn't have needed to delay my reply to the client."
+    ],
+    "point": "過去の反実仮想は if + had 過去分詞、主節は would have",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3d408fcc9d2e9b56fddbcbe31f3d8b4a9e7106bf88bb0cff98654a062f0a6ec9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3t9f5v8w",
+    "ja": "うちのチームは、毎日 Slack を使っています。",
+    "en": "Our team uses Slack every day.",
+    "alternatives": ["Our team uses Slack daily.", "We use Slack every day."],
+    "point": "team は単数扱いなので uses と s が付く",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:20d3058f12dc6a46d303a415e5450c7bac8d1811f5c365e361271b6f6085f567",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3u2f4f3m",
+    "ja": "あのメール、先方も CC に入れておけばよかった。今からスレッドごと転送しないといけません。",
+    "en": "I wish I'd cc'd the client on that email; now I have to forward the whole thread to them.",
+    "alternatives": [
+      "If only I'd cc'd the client on that email. Now I need to forward them the whole thread.",
+      "I wish I had copied the client on that email. Now I'll have to forward the entire thread to them."
+    ],
+    "point": "過去の後悔は wish / if only の後に過去完了",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e2341518ab1fcd25beeb3109299e4781a99a7635db877e2f023f4b3d779756c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4m3r3b7a",
+    "ja": "来週の打ち合わせの前に、この提案書にざっと目を通しておいてもらえますか？",
+    "en": "Could you look over this proposal before our meeting next week?",
+    "alternatives": [
+      "Would you mind going over this proposal before our meeting next week?",
+      "Could you skim through this proposal before next week's meeting?"
+    ],
+    "point": "「ざっと目を通す」は look over / go over で言える",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 5,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:02f7375ab9ea20ac3173b117fa754f42e6fb657246034862f5657440a45293d4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4u7k6k4g",
+    "ja": "取引先からの返信を昨日の朝からずっと待っているんですが、まだ来ないんです。",
+    "en": "I've been waiting for the client's reply since yesterday morning, but it hasn't come yet.",
+    "alternatives": [
+      "I've been waiting to hear back from the client since yesterday morning, but nothing yet.",
+      "I've been waiting for a reply from the client since yesterday morning, and it still hasn't come."
+    ],
+    "point": "ずっと待っている は have been waiting、since で起点",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 6,
+    "grammar": ["present-perfect-continuous", "present-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:928bb7b15a3d889e1f738d8c7118d5bfc352a8e5ba206b1035ac3469ee0a080c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4w7f2e7m",
+    "ja": "もしうちから先方に、締め切りを金曜まで延ばしてほしいとメールでお願いしたら、嫌がられると思いますか？",
+    "en": "If we emailed the client to ask for the deadline to be pushed back to Friday, do you think they'd mind?",
+    "alternatives": [
+      "If we asked the client by email to extend the deadline to Friday, do you think they'd be unhappy about it?",
+      "Do you think the client would mind if we emailed them asking to move the deadline to Friday?"
+    ],
+    "point": "仮定の話なので if 節は過去形、主節は would",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 8,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e7b6e07c2a0a33730f9df37290e037916903c49da389581ea8e4d9e553410778",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5f3f4n5x",
+    "ja": "うちの部長は、昨日のメールにどう返信しましたか？",
+    "en": "How did our manager reply to yesterday's email?",
+    "alternatives": [
+      "What was our manager's reply to yesterday's email?",
+      "How did our manager respond to yesterday's email?"
+    ],
+    "point": "過去の疑問文は did を使い、動詞は reply と原形に戻す",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 2,
+    "grammar": ["wh-questions", "past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:afe1cd124eecc2a8d858b71fd36096bff483c11bac508c9dafe1a73366f7b37c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5t7x9n6c",
+    "ja": "取引先が先週送ってきた見積もりの条件を、彼女がもう確認したかどうか、私には分かりません。",
+    "en": "I'm not sure whether she's already checked the terms in the quote the client sent us last week.",
+    "alternatives": [
+      "I don't know if she's gone through the terms in the quote the client sent last week yet.",
+      "I'm not certain she's checked the terms included in the quote that the client sent us last week."
+    ],
+    "point": "whether 節の中に「先方が送った見積もり」を後ろから付ける",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 9,
+    "grammar": ["nested-clauses", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6a2888cafa47cc7ecb3d81cc433b2ebcfc590015f34fbbfffc0015b9569e952f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5u2c3m2r",
+    "ja": "経理部には、私からメールして、今週中に請求書を修正してもらうようにします。",
+    "en": "I'll email the accounting department and have them correct the invoice by the end of this week.",
+    "alternatives": [
+      "I'll send the accounting department an email and get them to fix the invoice by the end of this week.",
+      "I'll email accounting and have them fix the invoice before the end of this week."
+    ],
+    "point": "have＋人＋動詞の原形。to は付けない",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 6,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:985b13be9f2dd1fe721e62b6a7c1d38f6ddbca02b07dfefebe0a6df60af2fd6b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6e5q5w9z",
+    "ja": "見積もりを確定するには、今週金曜までに正確な発注数をいただく必要があるのですが。",
+    "en": "To finalize the quote, we'd need the exact order quantity from you by this Friday.",
+    "alternatives": [
+      "We'd need the exact order quantity from you by this Friday to finalize the quote.",
+      "In order to finalize the quote, we'd need your exact order quantity by this Friday."
+    ],
+    "point": "目的の「〜するには」は To do で文頭に置ける。we'd need で柔らかく",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 7,
+    "grammar": ["infinitives", "hedging-softening"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b4ca604735ff915adad378bf9610fdc443c8ccaa3490701559d25b1d0f8706ea",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6x2a8s9b",
+    "ja": "明日の朝いちばんに私に電話するよう、田中さんに伝えてもらえますか？",
+    "en": "Could you tell Mr. Tanaka to call me first thing tomorrow morning?",
+    "alternatives": [
+      "Could you ask Mr. Tanaka to call me first thing tomorrow morning?",
+      "Can you tell Mr. Tanaka to give me a call first thing tomorrow morning?"
+    ],
+    "point": "「人に〜するよう伝える」は tell + 人 + to do",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 4,
+    "grammar": ["verb-object-to-do", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:65dfe3cf95c0da318ef59d7128a5926bc0c29be332e7f96fd66730d794c4aca7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6x8v2h3p",
+    "ja": "たとえ先方からの返信が金曜まで来なくても、提案書の準備は進めておいてください。",
+    "en": "Even if the client doesn't reply until Friday, please keep working on the proposal.",
+    "alternatives": [
+      "Please go ahead with the proposal even if we don't hear back from the client until Friday.",
+      "Even if the client doesn't get back to us until Friday, please keep preparing the proposal."
+    ],
+    "point": "even if 節は未来のことでも現在形（won't reply にしない）",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 5,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ea2295c1a0e7384cef799f2014d2c11c1c21f274b4215ca29dc6cbce454837d0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7g2b3h8x",
+    "ja": "この件、チャットでやり取りする代わりに、短いオンライン会議をするのはどうですか？",
+    "en": "How about having a quick online meeting instead of discussing this in chat?",
+    "alternatives": [
+      "What about having a short video call instead of discussing this over chat?",
+      "How about holding a quick online meeting instead of going back and forth in chat?"
+    ],
+    "point": "How about と instead of の後は動詞の ing 形",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 4,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:99e079b8d5df3b118a3b8e22464c78147abcb4b434e6de2a2a62a751ae5c6742",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7q7c4c3d",
+    "ja": "メールありがとうございます。私たちは来週の金曜日に御社を訪問する予定です。",
+    "en": "Thank you for your email. We're visiting your office next Friday.",
+    "alternatives": [
+      "Thank you for your email. We're going to visit your office next Friday.",
+      "Thanks for your email. We're planning to visit your office next Friday."
+    ],
+    "point": "決まった予定は be + ing か be going to で表す",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 3,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:68fc6d555e442554be313693c943396ed895b5210d8004babe2f6b1993c9f6c6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7x8q7x4g",
+    "ja": "部長は今朝、昨日の会議の議事録と今後の対応リストを添付して、全員にメールを送ってくれました。",
+    "en": "This morning the manager emailed everyone, attaching the minutes from yesterday's meeting along with a list of next steps.",
+    "alternatives": [
+      "The manager emailed everyone this morning with yesterday's meeting minutes and a list of next steps attached.",
+      "This morning the manager sent an email to everyone, attaching yesterday's meeting minutes and a list of next steps."
+    ],
+    "point": "「添付して」は attaching で文の後ろにつなげる",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2dc2f5f0893d647add6748e5eb918a771ecb3cfa0ac00ee16d3b360a305d2f99",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8j8d4m8t",
+    "ja": "先方が昨日メールに返信してくれていたら、うちのチームは今ごろ契約書の最終版に取りかかっているはずです。",
+    "en": "If the client had replied to our email yesterday, our team would be working on the final contract by now.",
+    "alternatives": [
+      "If the client had gotten back to us yesterday, our team would already be working on the final contract.",
+      "Our team would be working on the final contract by now if the client had answered our email yesterday."
+    ],
+    "point": "過去の仮定は had replied、今の結果は would be で時制を分ける",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b3b88a96cea8849e05caddf99ee31354a5a769b0e798b1f93a8788b8a860f739",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8y7s5s9n",
+    "ja": "山田さんからまだ返事がないので、彼はこちらが送ったチャットを見落としたのかもしれません。",
+    "en": "I still haven't heard back from Mr. Yamada, so he might have missed the message I sent him in the chat.",
+    "alternatives": [
+      "Mr. Yamada still hasn't gotten back to me, so he may have missed the chat message I sent him.",
+      "I haven't heard from Mr. Yamada yet, so maybe he missed the message I sent him on chat."
+    ],
+    "point": "過去の推量は might miss ではなく might have missed",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 8,
+    "grammar": ["modal-perfect", "tense-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:83cf0ed6a4bf7724afe22ae08ea4a007886df629744df8ff716716bbecc055a2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8y7x7h7v",
+    "ja": "先方は、請求書を月曜までに送ると言っていましたよ。",
+    "en": "The client said they would send the invoice by Monday.",
+    "alternatives": [
+      "The client told us they'd send the invoice by Monday.",
+      "The client said they were going to send the invoice by Monday."
+    ],
+    "point": "said に合わせて will を would にする",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 6,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8b309894d378ed10d385c46f68c946ddc4564599e6f425d235fb28735633c4f2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9c7t9q3z",
+    "ja": "チャットをもらったとき、私はお客さんと話していました。",
+    "en": "I was talking with a client when you messaged.",
+    "alternatives": [
+      "I was talking to a customer when you messaged me.",
+      "When you messaged me, I was speaking with a client."
+    ],
+    "point": "「話していた」は was talking と過去進行形にする",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 2,
+    "grammar": ["progressive-aspect", "past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2cfd0791b537ed9611049a5fe40134b06cc701e059bc975b780149ff8a05e754",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9q7h2d3z",
+    "ja": "田中さんのメールには、ファイルが 2 つ添付されています。",
+    "en": "There are two files attached to Tanaka's email.",
+    "alternatives": [
+      "Tanaka's email has two files attached.",
+      "There are two attachments in Tanaka's email."
+    ],
+    "point": "複数のものがあるときは There are を使う",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:33be5fd8776eb0753d9e7892e3d77a924478e984d2a63e1943dfcae74f9c09ac",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9r2t9b4w",
+    "ja": "この件は、チャットで返信してください。",
+    "en": "Please reply to this in the chat.",
+    "alternatives": [
+      "Please answer this in the chat.",
+      "Reply to this in the chat, please."
+    ],
+    "point": "「〜に返信する」は reply to。to を落としやすい",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a28cfbd2d78ec70a34fb420410eda79040edea07e3d14a3f69867b168968d1aa",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  }
+]

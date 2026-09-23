@@ -1,0 +1,596 @@
+[
+  {
+    "id": "c_2b6n6j4m",
+    "ja": "今回の障害は、先月のものよりずっと復旧に時間がかかりました。",
+    "en": "This outage took much longer to fix than the one last month.",
+    "alternatives": [
+      "This outage took a lot longer to resolve than last month's.",
+      "It took much longer to recover from this outage than the one last month."
+    ],
+    "point": "比較級を強めるのは much。very longer とは言わない",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 4,
+    "grammar": ["comparatives-superlatives", "infinitives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d7586a0494e4a0bbd7b7e9bd016c787349570827420e1edc0e3745f0649ff1f5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2b8s4v3t",
+    "ja": "私たちが気づいたときには、サーバーはもう2時間止まっていました。",
+    "en": "By the time we noticed, the server had already been down for two hours.",
+    "alternatives": [
+      "When we noticed, the server had already been down for two hours.",
+      "The server had already been down for two hours when we noticed."
+    ],
+    "point": "気づく前から続いていた状態は had been で表す",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["past-perfect", "time-and-if-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:809f52573666996e8acce2070a2ef6c6f00769adbf9d4e21e5b21b3aef02bacf",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2c4w7y9y",
+    "ja": "インフラチームは、決済システムは今夜 9 時までには復旧するだろうと言っていました。",
+    "en": "The infrastructure team said the payment system would be back up by 9 p.m. tonight.",
+    "alternatives": [
+      "The infrastructure team told us the payment system would be restored by 9 p.m. tonight.",
+      "According to the infrastructure team, the payment system will be back online by 9 tonight."
+    ],
+    "point": "said に合わせて will ではなく would にする",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 6,
+    "grammar": ["reported-speech", "future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e9e54ea56b9cf21c7db22592cdb235e3c6accf6855e2efb1abec8bed7ea17a54",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2c5z2s4k",
+    "ja": "昨日のうちに私たちがバックアップを確認していたら、顧客データを失わずに済んだのに。",
+    "en": "If we had checked the backups yesterday, we wouldn't have lost any customer data.",
+    "alternatives": [
+      "Had we checked the backups yesterday, we wouldn't have lost any customer data.",
+      "If we'd verified the backups yesterday, no customer data would have been lost."
+    ],
+    "point": "過去の後悔は if + had 過去分詞、主節は would have 過去分詞",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:582a83887ea52ae0a75f51d6a96d926751872bbd37ff38572ef2c736eb352367",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2s2c8w7f",
+    "ja": "今はサーバーを再起動しないでください。",
+    "en": "Please don't restart the server right now.",
+    "alternatives": [
+      "Don't restart the server right now, please.",
+      "Please don't restart the server for now."
+    ],
+    "point": "否定の命令は Don't＋動詞の原形",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:58eb86163b408a46c6684f3e667a72537865c0ace559fc75c13008b2fce7c7dc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2u8g2k8f",
+    "ja": "昨夜エラーを出していたサーバーは、もう再起動してあります。",
+    "en": "The server that caused the errors last night has already been restarted.",
+    "alternatives": [
+      "We've already restarted the server that caused the errors last night.",
+      "The server that was throwing errors last night has already been rebooted."
+    ],
+    "point": "The server を that 節で後ろから説明し、動詞は has been restarted",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 4,
+    "grammar": ["relative-clauses", "present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ae7a4d87a5315e91bfba349e6d4f37af029814fd9e2e87b54241505811caf373",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2w3d7k4n",
+    "ja": "お忙しいところすみませんが、今回の障害の報告書を金曜までにまとめていただけないかと思いまして。",
+    "en": "Sorry to bother you, but I was wondering if you could put together the incident report for this outage by Friday.",
+    "alternatives": [
+      "Sorry to bother you when you're busy, but I was wondering if you might be able to write up the report on this outage by Friday.",
+      "I'm sorry to trouble you, but would you mind putting together the report on this outage by Friday?"
+    ],
+    "point": "I was wondering if you could で控えめに頼む",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["hedging-softening", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ed90defd8d3e38d5b48e2d8510a11017fdf0abf9249b288aa70a5c0cc4dd6ce4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3a5n7k5p",
+    "ja": "今回の障害を引き起こしたのは、データベースではなく、期限切れの SSL 証明書でした。",
+    "en": "It was an expired SSL certificate, not the database, that caused this outage.",
+    "alternatives": [
+      "What caused this outage was an expired SSL certificate, not the database.",
+      "It wasn't the database but an expired SSL certificate that caused this outage."
+    ],
+    "point": "It was 〜 that の強調構文で、that の後に caused を続ける",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:676c821244e828ce89c61dbffc11a1f4162e75b97268460056844a603e220d5c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3c5s6n6v",
+    "ja": "決済 API に依存しているサービスは、どれも今もエラーを返しています。",
+    "en": "All the services depending on the payment API are still returning errors.",
+    "alternatives": [
+      "Every service that depends on the payment API is still returning errors.",
+      "All the services relying on the payment API are still throwing errors."
+    ],
+    "point": "「〜に依存している」は depending on で名詞の後ろから修飾",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c1992b94f0f9801330f1154e19e5305e393f8dda4b7f894b4ac7cbc80ec8cd08",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3d9w9d4w",
+    "ja": "今回の障害の影響範囲は、今日の夕方までに田中さんにまとめてもらいます。",
+    "en": "I'll have Tanaka put together a summary of the impact of this outage by this evening.",
+    "alternatives": [
+      "I'll get Tanaka to summarize the impact of this outage by this evening.",
+      "I'm going to have Tanaka write up the scope of this outage by this evening."
+    ],
+    "point": "have + 人 + 動詞の原形。to は付けない",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 6,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e4e8142baabf53ba7e50c0bcdea0051ae7d37f3bd78774761e282625b0d5cd8b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3p3t7b8r",
+    "ja": "昨夜はユーザーが30分ほどログインできませんでした。",
+    "en": "Users couldn't log in for about thirty minutes last night.",
+    "alternatives": [
+      "Last night, users weren't able to log in for about thirty minutes.",
+      "Users couldn't sign in for about 30 minutes last night."
+    ],
+    "point": "過去の「できなかった」は couldn't、期間は for で",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 3,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:03d7e43bc9b16343890217c91a04332d69ac3166b51e3d24f8f4dced9c56487c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3w8u6h5j",
+    "ja": "私たちがまだ分かっていないのは、なぜ監視アラートが鳴らなかったのかということです。",
+    "en": "What we still don't know is why the monitoring alert didn't go off.",
+    "alternatives": [
+      "We still don't know why the monitoring alert didn't go off.",
+      "What we haven't figured out yet is why the monitoring alert never fired."
+    ],
+    "point": "why 以下は疑問文の語順にしない。「鳴る」は go off",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["noun-clauses", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2258e1ed1108ecc831ecd066f21c0d4afbd13a0e5a9a314d2271f4b575ff6ea8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4g5u5x2w",
+    "ja": "インフラチームは昨夜からずっとデータベースの復旧作業をしていますが、まだ終わっていません。",
+    "en": "The infrastructure team has been working on restoring the database since last night, but they haven't finished yet.",
+    "alternatives": [
+      "The infrastructure team has been trying to restore the database since last night, and it's still not done.",
+      "Since last night, the infrastructure team has been working to recover the database, but they're not finished yet."
+    ],
+    "point": "昨夜から続く作業は has been working、since を使う",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 7,
+    "grammar": ["present-perfect-continuous", "tense-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:df60ffcccb15e9b8b0d5d206a2b61ea8164e2b94f494c0519f42bd64b9d66043",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4s6h3v7b",
+    "ja": "仮に今メインのサーバーが落ちたとしたら、アクセスは自動で予備のサーバーに切り替わるんですか？",
+    "en": "If the main server went down now, would traffic automatically switch over to the backup server?",
+    "alternatives": [
+      "If the main server failed right now, would traffic fail over to the backup server automatically?",
+      "Would traffic automatically switch to the backup server if the main server went down now?"
+    ],
+    "point": "仮の話なので went と would、現在形の goes や will にしない",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 6,
+    "grammar": ["second-conditional", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9f58d99c812272a1173acb213b5f01b3b7e44e8ca1dcc9d8f963bfca55831233",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5m9k6f4u",
+    "ja": "障害が起きる前に、誰かがあのディスク容量の警告に気づいていればよかったのに。",
+    "en": "I wish someone had noticed that disk space warning before the outage happened.",
+    "alternatives": [
+      "If only someone had caught that disk space warning before the outage.",
+      "I wish somebody had spotted the disk space warning before the outage started."
+    ],
+    "point": "過去への後悔なので wish の後は had noticed と過去完了",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 6,
+    "grammar": ["wishes-regrets", "past-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c7732bb9cb1c850b3a7145a03805984e1f04b045e45bf092634c3ca055e99331",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5r5a2m7x",
+    "ja": "ログイン画面でエラーが出ています。",
+    "en": "There is an error on the login page.",
+    "alternatives": [
+      "There's an error on the login screen.",
+      "The login screen is showing an error."
+    ],
+    "point": "一つのエラーは There is an error。an を忘れない",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 1,
+    "grammar": ["there-is-are", "articles-and-countability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:27434f5475cc457e35a8b624ca988e5b594d78b0452c996234764c573129f5cc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5t8b4g7p",
+    "ja": "この障害、影響を受けているのは日本のユーザーだけです。",
+    "en": "Only users in Japan are affected by this outage.",
+    "alternatives": [
+      "This outage only affects users in Japan.",
+      "This outage is only affecting users in Japan."
+    ],
+    "point": "「影響を受けている」は are affected by で表す",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 3,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:097cb60aebbb5b4514806642b5afb1d491228dfcafdfda20427a389cbb3576f3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5u9w6p2n",
+    "ja": "決済サービスは復旧しましたが、原因がまだ特定できていないので、私たちはしばらく監視を続けます。",
+    "en": "Although the payment service is back up, we still haven't identified the cause, so we'll keep monitoring it for a while.",
+    "alternatives": [
+      "The payment service is back up, but since we haven't pinned down the cause yet, we'll keep monitoring it for a while.",
+      "Even though the payment service has recovered, we still don't know the cause, so we'll continue monitoring it for now."
+    ],
+    "point": "「まだ特定できていない」は現在完了の haven't identified",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["concession-contrast", "tense-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a867b53e648894584a8bfc3348f7901a9210c3eadf337149cda51fbd0b178fb5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5v5b5f2b",
+    "ja": "この障害で、どのくらいのユーザーが影響を受けていますか？",
+    "en": "How many users are affected by this outage?",
+    "alternatives": [
+      "How many users are being affected by this outage?",
+      "How many users has this outage affected?"
+    ],
+    "point": "How many の後は複数名詞 users、影響を受けるは are affected",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 3,
+    "grammar": ["wh-questions", "passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c023de90914fc95b5135019083f695e6d4caa9d4c0d6e3754e5e62659ffeca3b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5v6r6e7u",
+    "ja": "原因がはっきりするまで、昨日のリリースを元に戻しておいてもらえますか？",
+    "en": "Could you roll back yesterday's release until we figure out what caused the problem?",
+    "alternatives": [
+      "Can you roll back yesterday's release until we find out what caused it?",
+      "Could you revert yesterday's release until we know what the cause is?"
+    ],
+    "point": "元に戻すは roll back、until 節は現在形で",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["phrasal-verbs", "time-and-if-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d27edcb57835007236a5ecc8b8639c37c2297d5adaf904946b3971d6d7cfc052",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6r8g7y8z",
+    "ja": "開発チームはもう障害の原因を特定しましたか？",
+    "en": "Has the dev team identified the cause of the outage yet?",
+    "alternatives": [
+      "Has the development team found the cause of the outage yet?",
+      "Has the dev team figured out what caused the outage yet?"
+    ],
+    "point": "疑問文の「もう」は already ではなく yet を文末に",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:83166801fcb665b77eed2a40594669a3899cdf453e0b05826b7f28dc03c6b17e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7v7b4z9t",
+    "ja": "サービスが復旧したあとも、私たちは今夜ずっとログを監視し続けるべきでしょうか？",
+    "en": "Should we keep monitoring the logs through the night, even after the service is restored?",
+    "alternatives": [
+      "Do we need to keep watching the logs all night, even after the service is back up?",
+      "Should we continue monitoring the logs tonight even once the service has been restored?"
+    ],
+    "point": "keep の後は動詞の ing 形にする",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["modal-obligation-advice", "gerunds"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:39e7f9a4068d4c8d4937f11c6c5df836d676ab10bd81682c163419afe07b295f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8q4v3v4a",
+    "ja": "まずサーバーのログを確認しましょう。",
+    "en": "Let's check the server logs first.",
+    "alternatives": [
+      "First, let's check the server logs.",
+      "Let's look at the server logs first."
+    ],
+    "point": "提案は Let's＋動詞の原形。logs は複数形",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7b3016582d6c3043beb2926580ec887acd871741384fbe27dfde279ac1b860b0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8r5x8k3c",
+    "ja": "今回の障害では、ユーザーがログインできなくなっただけでなく、一部のユーザーは設定データまで失ってしまいました。",
+    "en": "Not only were users unable to log in during this outage, but some of them also lost their settings data.",
+    "alternatives": [
+      "During this outage, not only could users not log in, but some of them also lost their settings data.",
+      "Users couldn't log in during this outage, and some of them even lost their settings data."
+    ],
+    "point": "Not only で始めたら were users と倒置する",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:823a0774c556176b8c87e5d190cefa10c45f73b467289edb2425c0a16ea22da9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9r8p8d9q",
+    "ja": "昨日の夜、サーバーが 2 時間止まりました。",
+    "en": "The server went down for two hours last night.",
+    "alternatives": [
+      "The server was down for two hours last night.",
+      "The server was offline for two hours last night."
+    ],
+    "point": "「止まった」は went down。過去の出来事なので過去形",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:633ac996843b29e79db6a32f99307eb8c800f5bacb70282bdc116693b07370f1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9s2a2q5z",
+    "ja": "うちのチームは、本番に出す前に負荷テストをもう少し長く回しておくべきだったと思います。",
+    "en": "I think we should have run the load test a bit longer before we pushed to production.",
+    "alternatives": [
+      "I think our team should have run the load test longer before going to production.",
+      "We should've let the load test run a little longer before deploying to production, I think."
+    ],
+    "point": "過去の後悔は should have + 過去分詞（run は run のまま）",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5a597dce12de2f961da4beb63b18ba107fea4096fe346ae6d4f1ccf3ba73d7e6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9y8t7m3g",
+    "ja": "再発防止策を金曜日までにまとめてもらえますか？",
+    "en": "Could you write up the preventive measures by Friday?",
+    "alternatives": [
+      "Can you write up the preventive measures by Friday?",
+      "Could you put together a plan to prevent this by Friday?"
+    ],
+    "point": "丁寧な依頼は Could you。「までに」は by Friday",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c715089156ae5bb9391b88f657c60f515de67e1006d9593f4b84470c24bad41d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

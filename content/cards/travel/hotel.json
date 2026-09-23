@@ -1,0 +1,571 @@
+[
+  {
+    "id": "c_2b6a3z4d",
+    "ja": "僕のカードキーが使えなくなっただけじゃなくて、フロントにも30分も誰もいなかったんだ。",
+    "en": "Not only did my key card stop working, but there was also nobody at the front desk for thirty minutes.",
+    "alternatives": [
+      "Not only did my key card stop working, but no one was at the front desk for half an hour either.",
+      "Not only did my room key stop working, but there wasn't anyone at the front desk for thirty minutes."
+    ],
+    "point": "Not only の後は did＋主語＋動詞の原形の語順",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b435eeb7d068f8e5778e386bd2a46481134ec2b61b5a7dfe606396c38cab4fe1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2j3y5z5e",
+    "ja": "すみません、部屋にタオルがもう少し欲しいんですが、いただけますか？",
+    "en": "Could I get some more towels for my room?",
+    "alternatives": [
+      "Can I have some more towels in my room?",
+      "Could you bring me some more towels, please?"
+    ],
+    "point": "towel は数えられるので複数形 towels にする",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 2,
+    "grammar": ["articles-and-countability", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f910be39e2c7d839141ad5954d5238bbea2832334e2b865d1109f097e446e3a5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2m2r8j5y",
+    "ja": "チェックアウトするときに、荷物を夕方まで預かってもらえますか？",
+    "en": "When I check out, could you keep my bags until this evening?",
+    "alternatives": [
+      "Could you hold my luggage until this evening after I check out?",
+      "When I check out, can you store my bags until the evening?"
+    ],
+    "point": "未来のことでも when 節は現在形の check out",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 4,
+    "grammar": ["time-and-if-clauses", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b3b6ac0389955526b3e3acb17f60a66fcd14a4b3064dff2cbf1c4a5ed88464e4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2m4f2s9y",
+    "ja": "チェックアウトの前に、ミニバーの料金をちゃんと確認しておけばよかったなあ。",
+    "en": "I wish I had checked the minibar charges before I checked out.",
+    "alternatives": [
+      "If only I had checked the minibar charges before checking out.",
+      "I wish I'd looked at the minibar charges before I checked out."
+    ],
+    "point": "過去の後悔は wish + had + 過去分詞。wish I checked にしない",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8856a3820a14161cce88eb70cedd07e5977e653b0e0424e0defa5af988443a17",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2p6s4n3h",
+    "ja": "私がシャワーを浴びていたら、急にお湯が出なくなったんです。",
+    "en": "I was taking a shower when the hot water suddenly stopped.",
+    "alternatives": [
+      "The hot water suddenly stopped while I was taking a shower.",
+      "I was showering when the hot water suddenly stopped."
+    ],
+    "point": "途中だった動作は過去進行形、割り込んだ出来事は過去形",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 3,
+    "grammar": ["progressive-aspect", "past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:edca027ffbbd35aabd07a5e7f2860b6dddc21c01fb12d83f070337889d4d2522",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2r8j9n6f",
+    "ja": "私たち、昨夜フロントに電話したんですが、誰も出なかったんです。",
+    "en": "We called the front desk last night, but nobody answered.",
+    "alternatives": [
+      "We called the front desk last night, but no one picked up.",
+      "Last night we called the front desk, but nobody answered."
+    ],
+    "point": "「電話に出る」は answer か pick up",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 3,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:960130c336b313506170ec32394fe13ed8eed799064347ca6fd0df9e4c222c93",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3a7c3u7z",
+    "ja": "私の部屋のエアコンに問題があります。",
+    "en": "There's a problem with the air conditioner in my room.",
+    "alternatives": [
+      "There's something wrong with the air conditioner in my room.",
+      "The air conditioner in my room isn't working properly."
+    ],
+    "point": "「問題がある」は There's a problem with 〜 で言う",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c3870913af91458400723f67d88a37a077576a0b5aea936689f8166283919748",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3c5m7u2k",
+    "ja": "チェックアウトの前に、部屋をもう一度確認しよう。",
+    "en": "Let's check the room again before we check out.",
+    "alternatives": [
+      "Let's check the room once more before checking out.",
+      "Before we check out, let's check the room again."
+    ],
+    "point": "提案は Let's の後に動詞の原形を続ける",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9495243302d0adf69957eba272797b0d8b55aa56d8529689a2ab9b488136c06d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3f4v5x2p",
+    "ja": "シャワーのお湯が出なかったお詫びだと言って、フロントの人が彼に無料の朝食券をくれたんだ。",
+    "en": "The front desk clerk gave him a free breakfast voucher, saying it was an apology for the hot water not working.",
+    "alternatives": [
+      "The front desk gave him a free breakfast voucher, saying it was to apologize for the hot water not working.",
+      "The receptionist gave him a free breakfast voucher, saying it was an apology for the lack of hot water."
+    ],
+    "point": "「と言って」は文末に , saying を添えて表す",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 8,
+    "grammar": ["participle-clauses", "reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:02ad4bfaefe9cac471152de125cb16a2fbc2a1aec51ac68f29d421d6887b7ebd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3h5h4y5b",
+    "ja": "チェックアウトの後、空港行きのシャトルバスが何時に出るか教えていただけますか？",
+    "en": "Could you tell me what time the shuttle bus to the airport leaves after checkout?",
+    "alternatives": [
+      "Could you tell me when the airport shuttle leaves after checkout?",
+      "Would you mind telling me what time the airport shuttle leaves after checkout?"
+    ],
+    "point": "間接疑問は語順が平叙文。does it leave にしない",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 5,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:13a12447d80110d35be6b3ba94a6dca13f225b1e3c4c96375c7e04dfe9b11b06",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3t5c5x2t",
+    "ja": "部屋の Wi-Fi につながらないんです。見てもらえますか？",
+    "en": "I can't connect to the Wi-Fi in my room. Could you check it?",
+    "alternatives": [
+      "I can't get on the Wi-Fi in my room. Could you take a look?",
+      "The Wi-Fi in my room isn't working for me. Could you check it?"
+    ],
+    "point": "「つながらない」は can't connect to",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 5,
+    "grammar": ["can-could-ability", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bccc444dd8422487563d4dcdda8809291f80dd37b531d301afcd1b68204d6d47",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3z2h3n4e",
+    "ja": "1時間前にタオルを頼んだんですが、まだ届いていません。",
+    "en": "I asked for towels an hour ago, but they haven't arrived yet.",
+    "alternatives": [
+      "I requested some towels an hour ago, but they still haven't come.",
+      "I asked for towels an hour ago, and they haven't come yet."
+    ],
+    "point": "ago は過去形、「まだ〜ない」は現在完了で分ける",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 4,
+    "grammar": ["tense-contrast", "present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:61dba34e21df237c2e8c3fbf07c5d7e041d02da34ef7fbe088b3738638382c1f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4a3t7v2g",
+    "ja": "眺めのいい部屋を頼んでいたのに、私が通された部屋からは駐車場しか見えません。",
+    "en": "Although I'd asked for a room with a view, the one they gave me only looks out onto the parking lot.",
+    "alternatives": [
+      "Even though I requested a room with a view, the room I was given only overlooks the parking lot.",
+      "I'd asked for a room with a view, but the one they put me in only faces the parking lot."
+    ],
+    "point": "頼んでいたのは通される前なので過去完了 I'd asked",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 8,
+    "grammar": ["concession-contrast", "past-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:23ef63370dc25e2657d533040d2a3c0a6676894e4c0249541f0963ace9fee4ec",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4f3t5x4t",
+    "ja": "もっと早く予約してたら、彼女は禁煙の部屋に泊まれたのに。",
+    "en": "If she had booked earlier, she could have gotten a non-smoking room.",
+    "alternatives": [
+      "If she'd made a reservation earlier, she could've stayed in a non-smoking room.",
+      "She could have gotten a non-smoking room if she had booked earlier."
+    ],
+    "point": "過去の仮定は if had 過去分詞、could have 過去分詞",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:103b4d54d981dbc4c44e53da13988b0e0972c0272327368c1bc835f198f70e2b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4f3v3w3q",
+    "ja": "シャワーがずっと冷たい水しか出ないので、どなたか部屋まで見に来ていただけないかと思いまして。",
+    "en": "I was wondering if you could send someone up to take a look at the shower, because it keeps running cold.",
+    "alternatives": [
+      "I was hoping you could send someone up to check the shower, since it keeps running cold.",
+      "Would it be possible to send someone up to look at the shower? It keeps running cold."
+    ],
+    "point": "Could you より I was wondering if you could で柔らかく",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 10,
+    "grammar": ["hedging-softening", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:27514261cb5af9593fa134a481bc3ff6428506cda8515a31c4a920ca8564cb42",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4n2q9c9s",
+    "ja": "私たちがチェックインしたときに対応してくれたスタッフの方に、お礼を伝えてもらえますか？",
+    "en": "Could you pass on our thanks to the staff member who helped us when we checked in?",
+    "alternatives": [
+      "Could you thank the staff member who helped us when we checked in?",
+      "Could you please thank the person who helped us at check-in for us?"
+    ],
+    "point": "「対応してくれたスタッフ」は who helped us で後ろから説明",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:db02d4aafcbb9e189a6fabfe4f4357ebce22fd88904527df337beddf11e70225",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4r3s2x6w",
+    "ja": "彼女はチェックアウトの時に、手もつけていないミニバーの料金が請求されていたことに気づいたんです。",
+    "en": "When she checked out, she noticed that she'd been charged for minibar items she had never touched.",
+    "alternatives": [
+      "When she was checking out, she realized that she'd been charged for minibar items she never touched.",
+      "At checkout, she noticed that she'd been billed for things from the minibar that she hadn't touched."
+    ],
+    "point": "気づく前に請求済みなので she'd been charged と過去完了",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["past-perfect", "passive-voice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f641759fdf7d6469f1ebb2f4001501235eda177ea7e3f5f7e14cc27a13d5e4d7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5d4z3h5y",
+    "ja": "私たちがお願いしたのは、ツインではなくダブルの部屋なんです。",
+    "en": "What we asked for was a double room, not a twin.",
+    "alternatives": [
+      "We asked for a double room, not a twin.",
+      "What we requested was a double room, not a twin."
+    ],
+    "point": "「〜したのは」は What we asked for was と what 節を主語に",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9c9e150b26fb16dd4912c4112c3792c6b7eda1029d12b5b2d58febb7a330b9ff",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5d5p4d8k",
+    "ja": "ネットで予約しておけば、今ごろ私たちはもう部屋でくつろいでいるのに。",
+    "en": "If we had booked online, we'd already be relaxing in our room by now.",
+    "alternatives": [
+      "If we'd made the reservation online, we would already be relaxing in our room.",
+      "If we had booked it online, we'd be relaxing in our room by now."
+    ],
+    "point": "過去の条件は had booked、今の結果は would be",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c822f44e2d5fa0c38f4eaf140f5f8e79364cea8996635fb67bd2312e86e8302",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5m2y5s2e",
+    "ja": "フロントの人、きっと私たちの予約の日付を間違えて入れたんだよ。",
+    "en": "The front desk staff must have entered our reservation for the wrong date.",
+    "alternatives": [
+      "The front desk clerk must have put our reservation in for the wrong date.",
+      "Someone at the front desk must have booked us for the wrong date."
+    ],
+    "point": "過去の推量は must have + 過去分詞。must entered にしない",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e36c8828b7bbcee144eee588a33d8542d003868d976b67b87a4d2f0fece443d3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5u5q3c2j",
+    "ja": "隣の部屋の人たちが、もう2時間ずっと大きな音で音楽をかけているんです。",
+    "en": "The people next door have been playing loud music for two hours.",
+    "alternatives": [
+      "The guests next door have been playing loud music for two hours.",
+      "The people in the next room have been playing loud music for two hours."
+    ],
+    "point": "今も続く「ずっと〜している」は have been + ing",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1da412ca1bb6bc8201a4d169845b7eb108ac415e4009d2f96230637d93627d39",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7a3f2n7h",
+    "ja": "何時までにチェックアウトすればいいですか？",
+    "en": "What time do I need to check out by?",
+    "alternatives": [
+      "What time do I have to check out by?",
+      "What's the latest I can check out?"
+    ],
+    "point": "「〜までに」の by を文末に置き忘れない",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 4,
+    "grammar": ["wh-questions", "modal-obligation-advice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:301f0e1b05dc9950bdef2341d0969211f4dfd56aa7e4224f8abb9816c074a302",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7v2x8t4u",
+    "ja": "この部屋より少し広い部屋はありますか？追加料金がかかっても構いません。",
+    "en": "Do you have a slightly bigger room than this one? I don't mind paying extra.",
+    "alternatives": [
+      "Is there a room a little larger than this one? I don't mind paying more.",
+      "Do you have anything a bit bigger than this room? I'm happy to pay extra."
+    ],
+    "point": "「少し広い」は slightly / a little を比較級の前に置く",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 5,
+    "grammar": ["comparatives-superlatives", "gerunds"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:26190a1dde6ea3129677733326120f1b691fc2957ea1a8f8bc3e158a452b1ad7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8a5b2n3c",
+    "ja": "私たちが困っているのは部屋の狭さではなく、隣の部屋の騒音なんです。",
+    "en": "What's bothering us isn't the size of the room but the noise from the room next door.",
+    "alternatives": [
+      "It's not the size of the room that's bothering us, but the noise from next door.",
+      "The problem isn't how small the room is, it's the noise from next door."
+    ],
+    "point": "「困っているのは A ではなく B」は What's bothering us isn't A but B",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5bfccfa61907fd4ca47900ae1ccd0bab27ce2cf7319613a4f1876ae59efb9974",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8d8d4u6e",
+    "ja": "朝食は何時からですか？",
+    "en": "What time is breakfast?",
+    "alternatives": ["When does breakfast start?", "What time does breakfast start?"],
+    "point": "breakfast には a も the も付けない",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 1,
+    "grammar": ["be-and-present-simple", "wh-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5dc0f781a8893b3f03775dff0067269cfc5ba18cc04d53f4061a2f844061a0b2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8v5y5v4f",
+    "ja": "エレベーターの隣の部屋がうるさすぎたので、彼女は別の部屋に替えてもらったんだ。",
+    "en": "The room next to the elevator was too noisy, so she had them move her to another one.",
+    "alternatives": [
+      "The room next to the elevator was too loud, so she got them to move her to a different room.",
+      "Since the room beside the elevator was too noisy, she had them switch her to another room."
+    ],
+    "point": "「替えてもらった」は have 人 + 動詞の原形で had them move her",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 8,
+    "grammar": ["post-modification", "causatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7eaf34aa825be90725056566796ec12e89d3dd901a0e08458e5c13eb040cc913",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

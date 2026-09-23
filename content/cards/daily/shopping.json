@@ -1,0 +1,618 @@
+[
+  {
+    "id": "c_2a3n7f3p",
+    "ja": "ネットで買った冷蔵庫、土曜日に配達してもらうことにしたから、そのとき誰か家にいて配達の人を入れてあげてくれる？",
+    "en": "We're having the new fridge delivered on Saturday, so could someone be home to let the driver in?",
+    "alternatives": [
+      "We've arranged to have the fridge delivered on Saturday, so can someone stay home and let the delivery person in?",
+      "The fridge we bought online is getting delivered on Saturday, so could somebody be there to let the driver in?"
+    ],
+    "point": "「配達してもらう」は have + 物 + 過去分詞、「入れてあげる」は let + 人 + in",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["causatives", "requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e9fb334f74d887f5b5cc7ed4b684a951d451b93cc51fc79695296d47583523dd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2b6g9c8k",
+    "ja": "スカートのサイズが合わなかったので、姉はお店で直してもらった。",
+    "en": "The skirt didn't fit, so my sister had it altered at the store.",
+    "alternatives": [
+      "My sister had the skirt altered at the store because it didn't fit.",
+      "Since the skirt didn't fit, my sister got it altered at the store."
+    ],
+    "point": "「直してもらう」は had it altered（過去分詞）",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:292b9f35930ec992c0939d505f31ba4224e85098bf6b935eeebee18ff7679e05",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2k3u7p3w",
+    "ja": "このコート、先週ネットで買ったんですが、思っていたより生地が薄かったので、返品できないかなと思いまして。",
+    "en": "I bought this coat online last week, but the fabric's thinner than I expected, so I was wondering if I could return it.",
+    "alternatives": [
+      "I ordered this coat online last week, but the fabric is thinner than I thought, so I was hoping I could return it.",
+      "I bought this coat online last week, but since the fabric's thinner than I expected, I was wondering whether I could return it."
+    ],
+    "point": "「〜できないかと思って」は I was wondering if I could で過去形にして和らげる",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:febc7f97692475cfaf32762eac5d011c3ad45eeaf34aa8919537eb467fae0705",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2k5r6p8q",
+    "ja": "すみません、この近くに文房具屋はありますか？",
+    "en": "Excuse me, is there a stationery store near here?",
+    "alternatives": [
+      "Excuse me, is there a stationery shop around here?",
+      "Excuse me, is there a stationery store nearby?"
+    ],
+    "point": "「〜はありますか」は Is there 〜? で始める",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 2,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3ecc3280fbe710dfefcb2a1660b0a04b67302efe0c4b0e4a3fe9569e5de5fac8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2r5k2q7k",
+    "ja": "ネットだと、この二つのかばんはうまく比べられないな。",
+    "en": "I can't really compare these two bags online.",
+    "alternatives": [
+      "I can't compare these two bags very well online.",
+      "It's hard to compare these two bags online."
+    ],
+    "point": "「比べられない」は can't compare。bags と複数形に",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["can-could-ability", "articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ac478b9919dffda495f119bbb758f392458517a98133538a681dc297a626e8f5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2w5q4u4q",
+    "ja": "もし僕が君なら、ネットで買う前にお店で実際に試着してみるよ。",
+    "en": "If I were you, I'd try it on in a store before buying it online.",
+    "alternatives": [
+      "If I were you, I'd try it on at a store before ordering it online.",
+      "If I were you, I'd go try it on in a store before I bought it online."
+    ],
+    "point": "If I were you の後は I'd、before の後は動名詞 buying",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["second-conditional", "gerunds"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c5fd2b1c2993e86172a2484e152478ce62c0ac0cfb1e6f8945156594ddd99c61",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3d4z9m8d",
+    "ja": "買う前に、両方のサイズを試着したほうがいいよ。",
+    "en": "You should try on both sizes before buying.",
+    "alternatives": [
+      "You should try both sizes on before you buy.",
+      "It's a good idea to try on both sizes before you buy."
+    ],
+    "point": "「〜したほうがいい」は should＋動詞の原形",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a791bf789451cf1cb38d4285a2ec1c11a93ac9151f08f89735bb7682e516c03c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3g5u5b7t",
+    "ja": "ネットで靴を探してたら、半額のを見つけたよ。",
+    "en": "I was looking for shoes online and found a half-price pair.",
+    "alternatives": [
+      "I found a half-price pair while I was looking for shoes online.",
+      "I was shopping for shoes online and found a pair at half price."
+    ],
+    "point": "「探していた」は過去進行形 was looking for で表す",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 3,
+    "grammar": ["progressive-aspect", "past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8a929f87d44b0c6fd706b19514aec008c4169da9bfea1692280a95c519a71c80",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3q8n2s7t",
+    "ja": "あのとき店員さんの言うことを聞いて大きいサイズを買っていれば、今ごろ返品の手続きなんてしてなかったのに。",
+    "en": "If I'd listened to the clerk and bought the bigger size, I wouldn't be dealing with a return now.",
+    "alternatives": [
+      "If I'd listened to the clerk and gotten the bigger size, I wouldn't be doing a return now.",
+      "If I'd just listened to the salesperson and gotten the bigger size, I wouldn't have to return it now."
+    ],
+    "point": "過去の条件と今の結果を組み合わせ、後半は would be -ing",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:be73549c39fb83810d96767dbb5a813feeb221f1d9f1272644a73b1bc78376f2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4k3g7q2r",
+    "ja": "店員さんは、その掃除機は来週まで入荷しないって言ってたよ。",
+    "en": "The clerk said the vacuum wouldn't be back in stock until next week.",
+    "alternatives": [
+      "The salesperson said the vacuum wouldn't be in stock until next week.",
+      "The store clerk said they wouldn't have the vacuum in stock until next week."
+    ],
+    "point": "said に合わせて won't を wouldn't に時制をずらす",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 6,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9bfe2d34a3400ccc0fd1fb4cadb7bc93b87efe0c96e49034546a3c79bcedfbbd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4u7c6p7n",
+    "ja": "私がネットで注文したスニーカー、一週間前に発送されたのに、まだ届いていないんです。",
+    "en": "The sneakers I ordered online were shipped a week ago, but they still haven't arrived.",
+    "alternatives": [
+      "The sneakers I ordered online were sent out a week ago, but they still haven't come.",
+      "The sneakers I ordered online were shipped a week ago, but they haven't arrived yet."
+    ],
+    "point": "発送は過去の一点で過去形、まだ届かないは現在完了",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["tense-contrast", "passive-voice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:29f383851122d6789bd773abf94c94cd8e198065336f138d88a1070d2f11bb24",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5d4n7g9p",
+    "ja": "ネットで家具を買う前に、実際に使ってる人の情報がもう少し欲しいんだよね。",
+    "en": "Before I buy furniture online, I'd like a bit more information from people who actually use it.",
+    "alternatives": [
+      "I'd like a little more information from actual users before I buy furniture online.",
+      "Before buying furniture online, I want some more information from people who really use it."
+    ],
+    "point": "furniture も information も数えられない名詞。a や -s は付けない",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["articles-and-countability", "time-and-if-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ae5a8e485bea9ca24d15c6a24dc27c6e6f88e81f2a7eb6cecb0ce196a7ba4ca2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5e7g4b5s",
+    "ja": "すみません、このジャケットは今日セール中ですか？",
+    "en": "Excuse me, is this jacket on sale today?",
+    "alternatives": [
+      "Excuse me, is this jacket discounted today?",
+      "Excuse me, is there a sale on this jacket today?"
+    ],
+    "point": "「セール中」は on sale。be 動詞を文頭に出して疑問文に",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dd52b94739baa8ce09833933a6c9667a54e3662a51182cd336fbc6dbb504ac7b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5p8j4b8u",
+    "ja": "このシャツを返品するには、レシートとタグの両方が必要ですか？",
+    "en": "Do I need both the receipt and the tags to return this shirt?",
+    "alternatives": [
+      "To return this shirt, do I need both the receipt and the tags?",
+      "Will I need both the receipt and the tags to return this shirt?"
+    ],
+    "point": "目的の「〜するには」は to 不定詞で文末に置ける",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 4,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c1958e052d47e0731d8bf1448ae1e54504a039d71a640996d320ba2e02a3a5d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6r9c2z7y",
+    "ja": "このコート、返品するか小さいサイズに交換するかで迷ってるんだ。",
+    "en": "I'm torn between returning this coat and exchanging it for a smaller size.",
+    "alternatives": [
+      "I can't decide whether to return this coat or exchange it for a smaller size.",
+      "I can't decide between returning this coat and exchanging it for a smaller size."
+    ],
+    "point": "between の後は returning と exchanging の動名詞でそろえる",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:30646eaf6ab12b292c76860ab0bd2ca3e260a9c09ac6c2a9ae5537190cb442c7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6s5v6q4t",
+    "ja": "探しているのは、小さくても吸引力がしっかりある掃除機なんですが、何かおすすめはありますか？",
+    "en": "What I'm looking for is a vacuum that's compact but still has strong suction. Is there anything you'd recommend?",
+    "alternatives": [
+      "What I need is a small vacuum that still has powerful suction. Do you have anything you'd recommend?",
+      "I'm looking for a compact vacuum with strong suction. Is there anything you would recommend?"
+    ],
+    "point": "What I'm looking for is の is を落とさない",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["noun-clauses", "relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c4fa34d26a13e643bd2e10bac30252aa2a4ccfef202d3bf7736473354fb4cb41",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6s9c3m2v",
+    "ja": "このモデルって、もう販売終了になったんですか、それとも今だけ在庫切れなんですか？",
+    "en": "Has this model been discontinued, or is it just out of stock right now?",
+    "alternatives": [
+      "Has this model already been discontinued, or is it only out of stock at the moment?",
+      "Have they stopped making this model, or is it just sold out for now?"
+    ],
+    "point": "「販売終了になった」は現在完了の受け身 has been discontinued",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["passive-voice", "tense-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3e50a44b7c10006fa1e743a023575dc360ea8e85b8853d3fb86b2075c87556d0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6z6n8c9q",
+    "ja": "レシートをなくしてしまったんですが、それでもこのセーターを返品してもいいですか？",
+    "en": "I've lost my receipt, but is it still okay to return this sweater?",
+    "alternatives": [
+      "I lost my receipt, but could I still return this sweater?",
+      "I've lost the receipt. Can I still return this sweater?"
+    ],
+    "point": "「それでも〜していいか」は is it still okay to 〜 か Can I still 〜 で言う",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["requests-permission", "present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:491548606d0257e76ccec952681a4e7c74097949d577b445bebdd0a339c7fe6d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7g2j2n9y",
+    "ja": "どっちのサイズにするか決める前に、このスニーカーを試しに履いてみてもいいですか？",
+    "en": "Can I try these sneakers on before I decide which size to get?",
+    "alternatives": [
+      "Could I try on these sneakers before I decide which size to get?",
+      "Is it okay if I try these sneakers on before deciding on a size?"
+    ],
+    "point": "「試しに履く」は try on。目的語は on の前にも後にも置ける",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["phrasal-verbs", "requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d629ec2db3cb3bb4af402c7e235a4894aa66bf7ccfeab1cec700c4022eb63c46",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7t9h5p2u",
+    "ja": "すみません、このお店で一番安い卵はどれですか？",
+    "en": "Excuse me, which eggs are the cheapest here?",
+    "alternatives": [
+      "Excuse me, which are the cheapest eggs in this store?",
+      "Excuse me, what are the cheapest eggs you have?"
+    ],
+    "point": "最上級には the を付けて the cheapest",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 2,
+    "grammar": ["comparatives-superlatives", "wh-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0257afb1a1d030d19a845ea31e4496e1309bbf6b59ef97741546a7bd8f8952d4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7w2x4q7d",
+    "ja": "レシートがあれば、こちらのシャツは返品できますよ。",
+    "en": "You can return this shirt with a receipt.",
+    "alternatives": [
+      "You can return this shirt if you have a receipt.",
+      "With a receipt, you can return this shirt."
+    ],
+    "point": "receipt は数えられる名詞なので a receipt と冠詞をつける",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["can-could-ability", "articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d13ef51aa95a8beef0b5601958f3a47f48209be8233a6759709d291cb35a027a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8b7s9n6p",
+    "ja": "どの充電器を買えばいいか分からなかったので、彼は店員さんに聞いてみた。",
+    "en": "Not sure which charger to get, he asked a salesperson for help.",
+    "alternatives": [
+      "Not knowing which charger to buy, he asked a store clerk for help.",
+      "Since he wasn't sure which charger to get, he asked a salesperson."
+    ],
+    "point": "分詞構文の否定は Not を先頭に置く",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 8,
+    "grammar": ["participle-clauses", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:622efccd63b531ceeead7f068010f95c52ba2b7381fc09ff7a7e183e11b03ea1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8j5b2c2r",
+    "ja": "私がこの掃除機を買う決め手になったのは、店員さんの説明じゃなくて、ネットのレビューだったんだ。",
+    "en": "It was the online reviews, not the salesperson, that finally convinced me to buy this vacuum.",
+    "alternatives": [
+      "What finally convinced me to buy this vacuum was the online reviews, not the salesperson.",
+      "It wasn't the salesperson but the online reviews that made me decide to buy this vacuum."
+    ],
+    "point": "強調したい語を It was と that で挟み、not で対比する",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ab2f90632278af46685049f9e4451d549f2d1aad8e5848262097aadf4aae3ea7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8s5s9s2f",
+    "ja": "母はあのコートを返品して、別の色のものに交換してもらった。",
+    "en": "My mom returned that coat and got a different color.",
+    "alternatives": [
+      "My mother returned that coat and exchanged it for a different color.",
+      "My mom took that coat back and got it in another color."
+    ],
+    "point": "「返品した」は returned、return の後に back は不要",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 3,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d3ce13b1824a1c6defb1a02c04ce0b98b2d9357de73cbc4d792d4fc1a5693626",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8t3p2c9j",
+    "ja": "父はネットのほうが安いとわかっていても、店員に相談できるから近所の電器屋で買うと言っている。",
+    "en": "Even though he knows it's cheaper online, my dad says he'll buy it at the local electronics store because he can ask the staff for advice.",
+    "alternatives": [
+      "My dad says he'll buy it at the local electronics store, even though he knows it's cheaper online, because he can talk to the staff.",
+      "Although my dad knows it's cheaper online, he says he'll get it at the local electronics store since he can ask the staff for advice."
+    ],
+    "point": "「わかっていても」は事実なので even if ではなく even though",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 10,
+    "grammar": ["concession-contrast", "reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8888fa58718b07f55093ed21145493fafe0630f2ebe8c9879d85c0d798e9735a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8x8c8w6y",
+    "ja": "セールのときに買っておけばよかったなあ。今はほぼ倍の値段になってるよ。",
+    "en": "I wish I'd bought it during the sale. It costs almost twice as much now.",
+    "alternatives": [
+      "If only I'd bought it during the sale. It's almost twice as expensive now.",
+      "I wish I had gotten it on sale. Now it's nearly double the price."
+    ],
+    "point": "過去の後悔は wish のあとを過去完了 I'd bought にする",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5fbb6bafab7822936fc2fd411b467f7fd204072f2512a646308c1fa99ad11f33",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9e4v9x7e",
+    "ja": "セールが昨日までだって知ってたら、僕はあのコートをもっと早く買いに行ってたよ。",
+    "en": "If I'd known the sale ended yesterday, I would have gone to buy that coat sooner.",
+    "alternatives": [
+      "If I had known the sale was only until yesterday, I'd have gone to buy that coat earlier.",
+      "I would've gone to buy that coat sooner if I'd known the sale ended yesterday."
+    ],
+    "point": "「知ってたら」は had known、帰結は would have + 過去分詞",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4d3fed0507517a23245223c75e13f99a633f3d65b5182e6bbeaf046fc6fafc45",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9m8a8z9z",
+    "ja": "妻はもう1時間もネットでソファを見比べてるのに、まだ決められないんだ。",
+    "en": "My wife has been comparing sofas online for a whole hour, and she still can't decide.",
+    "alternatives": [
+      "My wife's been comparing sofas online for an entire hour and still can't make up her mind.",
+      "My wife has been looking at sofas online for a whole hour, but she still hasn't decided."
+    ],
+    "point": "今も続く動作は has been comparing、過去形にしない",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f27300740f17feac73d1d689e1b2853309dfdaad051caebc86a8202ffc72e45f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  }
+]

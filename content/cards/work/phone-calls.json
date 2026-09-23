@@ -1,0 +1,571 @@
+[
+  {
+    "id": "c_2b5h5t5a",
+    "ja": "会議の前に私たちで接続テストをしておけば、音声トラブルであんなに時間を無駄にしなかったのに。",
+    "en": "If we had tested the connection before the meeting, we wouldn't have wasted so much time on audio problems.",
+    "alternatives": [
+      "If we'd done a connection test before the meeting, we wouldn't have lost so much time to audio issues.",
+      "We wouldn't have wasted so much time on audio problems if we had tested the connection before the meeting."
+    ],
+    "point": "過去の仮定は if + had 過去分詞、帰結は wouldn't have 過去分詞",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d919fff4a962df22ca2e4c93d9f6314236d967d7d70536a2cd35599c9d152489",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2c3z7d8x",
+    "ja": "通話中ずっと途切れていたのは、回線じゃなくてそちらの音声だったんですよ。",
+    "en": "It was your audio, not the connection, that kept cutting out during the call.",
+    "alternatives": [
+      "What kept cutting out during the call was your audio, not the connection.",
+      "It was your audio that kept cutting out during the call, not the connection."
+    ],
+    "point": "強調したい語を It was と that で挟む",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b6a247026f3857e0d9ac04b8d83451346d26a7a31a2f29dda73fc45ebdc2d76d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2e3n9n9b",
+    "ja": "私が転送ボタンを押したときには、お客様はもう電話を切ってしまっていました。",
+    "en": "By the time I pressed the transfer button, the customer had already hung up.",
+    "alternatives": [
+      "When I pressed the transfer button, the customer had already hung up.",
+      "The customer had already hung up by the time I hit the transfer button."
+    ],
+    "point": "先に起きた「切った」は had hung up、hang の過去分詞は hung",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 6,
+    "grammar": ["past-perfect", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:351a88dda25592909e9898137e601a3e9a387c95181746eb7c774fbaaa41f24e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2g8z8w7u",
+    "ja": "部長宛ての電話を間違えて経理部に回しちゃった。つなぐ前に内線番号を確認するべきだったよ。",
+    "en": "I accidentally transferred a call for the department head to Accounting. I should have checked the extension before putting it through.",
+    "alternatives": [
+      "I mistakenly put a call for the department head through to Accounting. I should've confirmed the extension before transferring it.",
+      "I transferred a call for the department head to Accounting by mistake. I should have checked the extension number before connecting it."
+    ],
+    "point": "過去の後悔は should have + 過去分詞",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:57d68773b0b778b497a63a3b15cf4da10545b8912136a3ac4ba62184959a3047",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2s6k7m5c",
+    "ja": "会議のリンクはどこにありますか？",
+    "en": "Where is the meeting link?",
+    "alternatives": [
+      "Where can I find the meeting link?",
+      "Where's the link for the meeting?"
+    ],
+    "point": "Where の後は is the link の語順にする",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 1,
+    "grammar": ["wh-questions", "be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:684b6da0542d5fcf436029876c88cc6b83a3d2452762413bc58081ba589dd4b4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2t2y9d9m",
+    "ja": "私の画面、みなさん見えますか？",
+    "en": "Can everyone see my screen?",
+    "alternatives": ["Is my screen visible to everyone?", "Can you all see my screen?"],
+    "point": "「見えますか」は can see で表す。are seeing としない",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:16fef6a082d7cd847406e6adb56f9aea1520f871fd9faf29bd6f0387682c3939",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3g7u9d9r",
+    "ja": "来週のオンライン商談の前に、IT 部の人に会議室のマイクとスピーカーをテストしてもらうよう手配してもらえますか？",
+    "en": "Could you arrange to have someone from IT test the meeting room's mic and speakers before next week's online sales meeting?",
+    "alternatives": [
+      "Could you have someone from IT test the mic and speakers in the meeting room before next week's online sales meeting?",
+      "Would you be able to get someone from IT to test the meeting room's mic and speakers before our online sales meeting next week?"
+    ],
+    "point": "have＋人＋原形、get なら get＋人＋to 原形",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fc4c1d63baa33c0b49e04570fb04b6b841b43bc77a16ca075ab2f8e4a93b947c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3n4h4v8v",
+    "ja": "受付の方は、田中さんは会議中なので30分後にかけ直してもらえないかと言っていました。",
+    "en": "The receptionist said Mr. Tanaka was in a meeting and asked if I could call back in thirty minutes.",
+    "alternatives": [
+      "The receptionist told me Mr. Tanaka was in a meeting and asked me to call back in thirty minutes.",
+      "The receptionist said Ms. Tanaka was in a meeting and asked if I could call back in half an hour."
+    ],
+    "point": "said に合わせて is を was、can を could にずらす",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 7,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f7f46b5f509dc66626417594c59956b062f6c590dcded278d417634ecab71939",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3v9z7n7b",
+    "ja": "昨日の会議ではそちらの音声が何度も途切れていましたが、あれから別のヘッドセットに替えましたか？",
+    "en": "Your audio kept cutting out in yesterday's meeting. Have you switched to a different headset since then?",
+    "alternatives": [
+      "Your audio kept dropping out in yesterday's meeting. Have you gotten a different headset since then?",
+      "Your audio kept breaking up in yesterday's meeting. Have you switched to another headset since then?"
+    ],
+    "point": "昨日の出来事は過去形、あれからの変化は現在完了",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ff00fccbbf9521662f5dd613d80e8da7354f9047186a70f2cf7ea129efb95732",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4g7s5m7y",
+    "ja": "回線が悪いので、カメラをオフにしてもいいですか？",
+    "en": "My connection is bad, so can I turn off my camera?",
+    "alternatives": [
+      "Can I turn off my camera? My connection is bad.",
+      "May I turn my camera off? My connection is poor."
+    ],
+    "point": "許可を求めるのは Can I 〜? で、Can you と取り違えない",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d214c5d6ab1192b7a9a24a46d52f029c2b4407fae009da255cceb1d97eb67f2f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4n6b6v2u",
+    "ja": "先方の声がずっとこもって聞こえてたから、向こうはヘッドセットを使わずにノートパソコンのマイクで話していたのかもしれないね。",
+    "en": "Their voices sounded muffled the whole time, so they might have been talking into their laptop mic instead of using a headset.",
+    "alternatives": [
+      "Their voices were muffled the whole time, so they might have been using their laptop's built-in mic rather than a headset.",
+      "Since their audio sounded muffled throughout, they may have been speaking into a laptop mic instead of a headset."
+    ],
+    "point": "過去の推量は might / may have + 過去分詞",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7af0e7cbc5ea77a85a0343828671c0266da0a76f8e2d326b5bfee9ae69e4f775",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4r5y8j9b",
+    "ja": "雑音が入っているので、話さないときはマイクをミュートにしたほうがいいですよ。",
+    "en": "There's some background noise, so you should mute your mic when you're not talking.",
+    "alternatives": [
+      "We're getting some background noise, so you should mute yourself when you're not speaking.",
+      "There's some noise coming through, so you should mute your mic when you aren't talking."
+    ],
+    "point": "「〜したほうがいい」は you should で、had better は強すぎる",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 5,
+    "grammar": ["modal-obligation-advice", "there-is-are"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b7903e10d12e36a31b4aa196c13ef6076d398715fb4bc763e609bd47a105dcc9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4v2h9q3q",
+    "ja": "すみません、今おっしゃったことが聞き取れませんでした。",
+    "en": "Sorry, I didn't catch what you just said.",
+    "alternatives": [
+      "Sorry, I couldn't catch what you just said.",
+      "Sorry, I didn't hear what you just said."
+    ],
+    "point": "「おっしゃったこと」は what you said で表す",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["noun-clauses", "past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:089761d9f7c39e11a8d89cceea18e88a6ebb304c4a04e7fc85aa3f088a5eb199",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5s8m4a8z",
+    "ja": "彼、会議の前にマイクの設定を確認しておけばよかったって言ってたよ。",
+    "en": "He said he wished he had checked his mic settings before the meeting.",
+    "alternatives": [
+      "He said he should have checked his mic settings before the meeting.",
+      "He told me he wished he'd checked his microphone settings before the meeting."
+    ],
+    "point": "過去への後悔は wish + had 過去分詞、checked のままにしない",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["wishes-regrets", "reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ec117118163eab4be90706919eda64fd828c3ed917b72766abcf84566c26862a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5u9t8g4c",
+    "ja": "田中さん、マイクがミュートになっていますよ。もう一度言ってください。",
+    "en": "Mr. Tanaka, you're on mute. Please say that again.",
+    "alternatives": [
+      "Mr. Tanaka, you're muted. Please say it again.",
+      "Mr. Tanaka, you're on mute. Could you say that again?"
+    ],
+    "point": "ミュート中は you're on mute が定番の言い方",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 2,
+    "grammar": ["imperatives", "be-and-present-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6d68cf046e3f2ff7f395b52e44e7fdf91466abf7d17c798e11af9a21343d0a2a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5y5x4e6x",
+    "ja": "私の声が途切れたら、チャットで教えてください。",
+    "en": "If my voice cuts out, please let me know in the chat.",
+    "alternatives": [
+      "Please let me know in the chat if my voice cuts out.",
+      "If my voice breaks up, please tell me in the chat."
+    ],
+    "point": "未来のことでも if 節は現在形 cuts out にする",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["time-and-if-clauses", "imperatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:748b7759851162bf557997ed276469628e79eeeb4c207d6bc13326d302d9a502",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6e5j8n8q",
+    "ja": "部長がいつ会議から戻るか、分かりますか？",
+    "en": "Do you know when the manager will be back from the meeting?",
+    "alternatives": [
+      "Do you know what time the manager will be back from the meeting?",
+      "Do you have any idea when the manager will be back from the meeting?"
+    ],
+    "point": "間接疑問は when the manager will be の語順にする",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:49b5bf3a8947f3a92f70c78fbd5e25d5ea239be5a11221c95bf07f0d2a80e16e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6n4k2w8u",
+    "ja": "お客様からのお電話は、もう営業部に転送されましたよ。",
+    "en": "The customer's call has already been transferred to the sales department.",
+    "alternatives": [
+      "The customer's call has already been put through to the sales department.",
+      "The customer's call was already transferred to the sales team."
+    ],
+    "point": "「転送された」は has been transferred と受動態で",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["passive-voice", "present-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1e51b26d2c379ab9cc103b7c77c827d7f485cab4a671ce52565639918b03182c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6p7n8e5k",
+    "ja": "すみません、今は運転中なので、あとでかけ直します。",
+    "en": "Sorry, I'm driving now. I'll call back later.",
+    "alternatives": [
+      "Sorry, I'm driving right now, so I'll call you back later.",
+      "Sorry, I'm driving right now. I'll call you later."
+    ],
+    "point": "今している最中のことは I'm driving と進行形で言う",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 2,
+    "grammar": ["progressive-aspect", "future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:870fb7a0d6f7850403a7817894442b37541610f40525783ae96a68abddc41a6a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6r8c2d8v",
+    "ja": "この回線、少し雑音がありますね。",
+    "en": "There's some noise on this line.",
+    "alternatives": [
+      "There's a little noise on this line.",
+      "There is some noise on the line."
+    ],
+    "point": "「雑音がある」は There's some noise で、noise は数えない",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 2,
+    "grammar": ["there-is-are", "articles-and-countability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:eed5305e72efe2d9fb89a78f83574c9633142eb3f943dba8e782692acae0dddf",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6r9k8v2s",
+    "ja": "こんなに音声が途切れるんだから、僕なら先方にいったん切ってもらって、それからかけ直すけどね。",
+    "en": "If I were you, I'd have them hang up and then call them back, since the audio keeps cutting out like this.",
+    "alternatives": [
+      "I'd ask them to hang up and then call them back if I were you, since the audio keeps cutting out like this.",
+      "The audio keeps cutting out like this, so if I were you, I'd get them to hang up and then call them back."
+    ],
+    "point": "「僕なら」は If I were you, I'd で表す",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["second-conditional", "causatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:55988382980bb9acb6add14a7cd89f46f04f2b3bd4503a7cb2c923914bece66b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7m4j5p2d",
+    "ja": "すみません、もう少しゆっくり話していただけますか？",
+    "en": "Sorry, could you speak a little more slowly?",
+    "alternatives": [
+      "Sorry, could you talk a little more slowly?",
+      "Sorry, would you mind speaking a bit more slowly?"
+    ],
+    "point": "slow ではなく副詞 slowly を比較級 more slowly にする",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 3,
+    "grammar": ["requests-permission", "comparatives-superlatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f62083994c69334a1e1a6fca40a6f85d83cf2af08d569d8647e38db1340c88cb",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7s7s4a6n",
+    "ja": "ここ 10 分くらい、そちらの映像がずっと止まったり動いたりしていますよ。",
+    "en": "Your video has been freezing on and off for about ten minutes.",
+    "alternatives": [
+      "Your video's been freezing on and off for the last ten minutes or so.",
+      "Your video's been cutting in and out for about ten minutes."
+    ],
+    "point": "続いている状態は has been freezing と現在完了進行形",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:231426162ff60d810dced2b8f37205e3bba0129d05333fc66e31176876ffd543",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8g2g6x3z",
+    "ja": "山田さんが、この通話にあなたにも入ってほしいそうです。",
+    "en": "Yamada wants you to join this call too.",
+    "alternatives": [
+      "Yamada would like you to join this call too.",
+      "Yamada wants you on this call too."
+    ],
+    "point": "want you to join の形。want that you と言わない",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ab09239cf88d451c0ee8ac78add2f0dc0687388cceab5bc8221821db60f06d18",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8x9t7v2t",
+    "ja": "たとえ映像を切ることになっても、音声さえ安定していれば、今日の打ち合わせはこのまま続けられますよ。",
+    "en": "Even if we have to turn off our video, we can still carry on with today's meeting as long as the audio holds up.",
+    "alternatives": [
+      "Even if we need to switch off the video, we can keep going with today's meeting as long as the audio stays stable.",
+      "We can continue today's meeting even if we have to turn our cameras off, as long as the audio is stable."
+    ],
+    "point": "「たとえ〜しても」は even if、「〜さえ安定していれば」は as long as",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 10,
+    "grammar": ["concession-contrast", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d862dd9dcd1310352b9136fb160251f295f016413ae8bdecd6a75d28a013845c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9j9k5r4w",
+    "ja": "担当者はただいま別の電話でお客様の問い合わせに対応しておりますので、あと 10 分ほどかかるかと思います。",
+    "en": "The person in charge is on another line right now, handling a customer inquiry, so it'll probably be about ten more minutes.",
+    "alternatives": [
+      "The person in charge is currently on another call, dealing with a customer inquiry, so it should take about ten more minutes.",
+      "The person in charge is on another line at the moment, taking a customer inquiry, so it'll likely be around ten more minutes."
+    ],
+    "point": "「対応していて」は -ing 形を後ろに添えて表せる",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:20efcb079cfeac7eab51104300b75118560a42356f9f0e15b3ae920b91a240bf",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  }
+]

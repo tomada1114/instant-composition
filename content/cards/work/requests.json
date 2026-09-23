@@ -1,0 +1,618 @@
+[
+  {
+    "id": "c_2g5j5p6c",
+    "ja": "来週の研修の資料、まとめていただけないかと思っていたのですが。",
+    "en": "I was wondering if you could put together the materials for next week's training.",
+    "alternatives": [
+      "I was hoping you could put together the materials for next week's training.",
+      "Would you mind putting together the materials for next week's training?"
+    ],
+    "point": "was wondering if you could で丁寧に依頼を切り出す",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 7,
+    "grammar": ["hedging-softening", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1da929317f6e7ac0b133fd5f4384f8fd2d39401a9b3da07c3b19acd6e5e9263d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2h5f2g5x",
+    "ja": "彼はその仕事を引き受ける前に、締め切りを確認しておくべきでしたね。",
+    "en": "He should have checked the deadline before he agreed to take on that job.",
+    "alternatives": [
+      "He should have checked the deadline before accepting that job.",
+      "He should've looked at the deadline before he took that job on."
+    ],
+    "point": "過去にしなかった後悔は should have + 過去分詞",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 7,
+    "grammar": ["modal-perfect", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:16134ae17750993c41d8a012a0f915aa32730704dc097df172fc0acf7c5ebfd9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2j9r5g5d",
+    "ja": "昨日、田中さんにデータの確認を頼みました。",
+    "en": "I asked Tanaka to check the data yesterday.",
+    "alternatives": [
+      "Yesterday I asked Tanaka to check the data.",
+      "I asked Mr. Tanaka to check the data yesterday."
+    ],
+    "point": "「人に〜を頼む」は ask 人 to 動詞 の形",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 3,
+    "grammar": ["verb-object-to-do", "past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c5bcafc9b93047fbb733bcbda2c43dc1dff8b940b228d374e6a649d5c9a75be3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2p7p2b3w",
+    "ja": "ごめんなさい、今週はとても忙しいので、プレゼン資料作りは手伝えないんです。",
+    "en": "Sorry, I can't help you with the slides because I'm really busy this week.",
+    "alternatives": [
+      "I'm sorry, but I'm too busy this week to help with the slides.",
+      "Sorry, I'm really busy this week, so I can't help with the presentation slides."
+    ],
+    "point": "「〜を手伝う」は help you with the slides の語順",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 5,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c8b420bf3c8482698861ef4173a869432eb381bf652a20d59498384502c5a8cb",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2p8n4p4b",
+    "ja": "こちらで締め切りを一週間延ばせるとしても、この翻訳をお願いするのはやはり難しいですか？",
+    "en": "Even if we could push the deadline back a week, would it still be hard for you to take on this translation?",
+    "alternatives": [
+      "Even if we pushed the deadline back a week, would it still be difficult for you to take on this translation?",
+      "Would it still be hard for you to handle this translation even if we could extend the deadline by a week?"
+    ],
+    "point": "仮定の「としても」は even if に could を合わせ、主節は would",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["concession-contrast", "second-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:aba336c25da563492770abe258bc5da84443f22c7e43e774e255fb65b0d1b6bf",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2w6p8c5a",
+    "ja": "この件は、経理に詳しい田中さんに頼んだほうがいいですよ。",
+    "en": "You should ask Tanaka, who knows a lot about accounting, to handle this.",
+    "alternatives": [
+      "It'd be best to ask Tanaka, who knows a lot about accounting, to handle this.",
+      "You should leave this to Tanaka, who knows a lot about accounting."
+    ],
+    "point": "人に説明を足すときはカンマ＋who で補足する",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 4,
+    "grammar": ["modal-obligation-advice", "relative-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:985485193736b06b926e0d9da8c0a2efe430fa2cc63f79a450cb37df6dffdcc1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3n3w4j2v",
+    "ja": "あなたがもっと早く頼んでくれていたら、私は金曜までに仕上げられたのに。",
+    "en": "If you had asked me sooner, I could have finished it by Friday.",
+    "alternatives": [
+      "If you'd asked me earlier, I could've gotten it done by Friday.",
+      "If you'd come to me sooner, I would have been able to finish it by Friday."
+    ],
+    "point": "過去の事実に反する仮定は had asked と could have finished",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5e32aed24378c285633aea6dec832fb31d1d6031b32dcd8dd99f24ad9e170143",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3w4j3y4v",
+    "ja": "この仕事、喜んで引き受けますが、データの整理は私のアシスタントにやってもらってもいいですか？",
+    "en": "I'm happy to take this on, but would it be okay if I had my assistant sort out the data?",
+    "alternatives": [
+      "I'd be happy to take this on, but is it okay if I get my assistant to organize the data?",
+      "I'm glad to take this on, but could I have my assistant sort out the data?"
+    ],
+    "point": "人にやってもらうは have 人＋動詞の原形",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["causatives", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8a06dc27b2eaff99800e17b8b0a172dde598368cefe7f1ba4c4409d14b2efc7b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3w6w4m9d",
+    "ja": "今日の午後なら、その仕事を手伝えますよ。",
+    "en": "I can help you with that this afternoon.",
+    "alternatives": [
+      "I can give you a hand with that this afternoon.",
+      "I'm free to help with that this afternoon."
+    ],
+    "point": "「仕事を手伝う」は help the work ではなく help you with that",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:77485ee6ca9aa07439e1f896a9449dc449d67b254fca273e664a0fefc1b0a4e4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4c2h4u8x",
+    "ja": "今、急ぎの報告書を書いているので、あとで手伝いますね。",
+    "en": "I'm writing an urgent report, so I'll help later.",
+    "alternatives": [
+      "I'm working on an urgent report, so I'll help you later.",
+      "I'm writing an urgent report now, so I'll help you afterward."
+    ],
+    "point": "「今〜している」は現在進行形 I'm writing にする",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 2,
+    "grammar": ["progressive-aspect", "future-forms"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e2ed593c28b86970919ef7cfacd4be3abdf19a23e50325d9ba8fab588e533e9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4e7h2d4k",
+    "ja": "この翻訳、もっと早くお願いしておけばよかったです。締め切りは明日なんです。",
+    "en": "I wish I had asked you to translate this sooner. The deadline is tomorrow.",
+    "alternatives": [
+      "I wish I'd asked you to translate this earlier. The deadline is tomorrow.",
+      "I should have asked you to translate this sooner. The deadline is tomorrow."
+    ],
+    "point": "過去の後悔は I wish のあとを過去完了に",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7da328e3c80728a26f2b5e4d40ff6983b2709d4f51b4c2faaeed84ca60741cbc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4k7h4r6b",
+    "ja": "予算の条件を確認したうえで、私たちはその案件を来月から引き受けることにしました。",
+    "en": "Having checked the budget, we decided to take on the project starting next month.",
+    "alternatives": [
+      "Having confirmed the budget terms, we decided to take on the project from next month.",
+      "After going over the budget, we decided to take the project on starting next month."
+    ],
+    "point": "先に済ませた動作は Having checked で表す",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 6,
+    "grammar": ["participle-clauses", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:281c8c3a7db4df5c8461e46efaf9498e7f04092033ee2ea8c8654601e6566169",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4n2y3f8h",
+    "ja": "先週お願いした見積もりがまだ届いていないので、今日中に送っていただけますか？",
+    "en": "I asked for the quote last week, but I still haven't received it, so could you send it by the end of today?",
+    "alternatives": [
+      "I asked you for the quote last week, but it still hasn't arrived. Could you send it by the end of today?",
+      "I requested the quote last week and still haven't gotten it, so could you send it over by the end of the day?"
+    ],
+    "point": "頼んだのは過去形、まだ届いていないは現在完了",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 9,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6b4d8dba7173d2ee3fe7c072c0772a87e69149c9aa85431ab59d386a332b7fc8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5a4u4c8e",
+    "ja": "私たちが本当に必要としているのは、金曜までにこのデータを確認してくれる人です。",
+    "en": "What we really need is someone who can check this data by Friday.",
+    "alternatives": [
+      "What we really need is someone to check this data by Friday.",
+      "The thing we really need is someone who can check this data by Friday."
+    ],
+    "point": "「〜なのは」は What で始めて is でつなぐ",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 6,
+    "grammar": ["noun-clauses", "relative-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:38666abd5009eb4c812f556602edd6b4aad37f3b6a70ca0f1be9c45eae0c53d7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5e5h3q2e",
+    "ja": "来週までに予算が承認されるなら喜んで引き受けます、と私から先方に伝えました。",
+    "en": "I told the client I'd be happy to take it on as long as the budget was approved by next week.",
+    "alternatives": [
+      "I told the client that I'd gladly take it on if the budget was approved by next week.",
+      "I let the client know I'd be happy to take it on provided the budget got approved by next week."
+    ],
+    "point": "told に合わせて will は would、is は was に時制をそろえる",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8a0122b66a3a33ab41056adb8f852a2a47411098678c27e021ccc32e38a259ed",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5z9e9k7j",
+    "ja": "うちのチームは今週忙しすぎて、その依頼は受けられません。",
+    "en": "We're too busy this week to take that on.",
+    "alternatives": [
+      "We're too busy to take on that request this week.",
+      "We can't take that on because we're too busy this week."
+    ],
+    "point": "「忙しすぎて〜できない」は too busy to 動詞 で言える",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 3,
+    "grammar": ["infinitives", "be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6c73b632d63e5f2299cb9c5e2950f6cc997a54bf690a3aeb2f0b2c177ff2dbee",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6a5k4d5b",
+    "ja": "部長がその依頼を引き受けるのをためらったのは、仕事の量ではなく、締め切りの短さのせいだったんです。",
+    "en": "It wasn't the amount of work but the tight deadline that made our department head hesitate to take on the request.",
+    "alternatives": [
+      "It was the tight deadline, not the amount of work, that made our department head hesitate to take on the request.",
+      "What made our department head hesitate to take on the request wasn't the amount of work but the tight deadline."
+    ],
+    "point": "It wasn't A but B that の語順で強調する",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e3c49630558eea61946208230f785bef2bc1d998ae4c07ca6292cb6bbd2e89a8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6w2s7f9e",
+    "ja": "クライアントから月曜までに署名するよう言われているので、金曜までに契約書を確認していただけないでしょうか。",
+    "en": "I was wondering if you could review the contract by Friday, since the client has asked us to sign it by Monday.",
+    "alternatives": [
+      "Would you mind reviewing the contract by Friday? The client has asked us to sign it by Monday.",
+      "I was hoping you could look over the contract by Friday, because the client wants us to sign it by Monday."
+    ],
+    "point": "丁寧な依頼は I was wondering if you could で過去形にぼかす",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["hedging-softening", "verb-object-to-do"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d66064b508998ab960c8a7f9747a610f272113ce3e809f2476a996c9c51a27cf",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7k6k9z9j",
+    "ja": "この書類を今日中に部長に渡してください。",
+    "en": "Please give this document to the manager today.",
+    "alternatives": [
+      "Please hand this document to the manager today.",
+      "Please give the manager this document today."
+    ],
+    "point": "命令文は動詞の原形で始める。Please を添えて丁寧に",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 1,
+    "grammar": ["imperatives", "articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3f98ca56c9f64a5865fc8242e1b0eda119275f31953d700e4ba351ebbe53b846",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7r4j3x6a",
+    "ja": "翻訳をお願いしたくて、私は朝からずっと佐藤さんに電話しているんです。",
+    "en": "I've been calling Mr. Sato all morning to ask for a translation.",
+    "alternatives": [
+      "I've been calling Ms. Sato all morning to ask for a translation.",
+      "I've been trying to reach Mr. Sato since this morning to ask for a translation."
+    ],
+    "point": "朝から続けている動作は I've been calling",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 4,
+    "grammar": ["present-perfect-continuous", "infinitives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d8655e1b4080b85a503580044a286acd66db63a0e79728d75d2c1e46b93fe19a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7x5r4v9j",
+    "ja": "部長が頼んだ時には、彼女はもう別の案件を引き受けていました。",
+    "en": "She had already taken on another project when the manager asked her.",
+    "alternatives": [
+      "When the manager asked her, she had already taken on another project.",
+      "By the time the manager asked her, she'd already agreed to another project."
+    ],
+    "point": "頼まれた時点より前の完了は had + 過去分詞",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 5,
+    "grammar": ["past-perfect", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8469be0fe4ea29007781163ef8af2d765c3c91a62b871872966e4142f3700e88",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8m5h2q2v",
+    "ja": "彼女はその依頼を引き受けてくれただけでなく、週末も手伝うと申し出てくれました。",
+    "en": "Not only did she take on the job, but she also offered to help over the weekend.",
+    "alternatives": [
+      "She not only agreed to the request but also offered to help over the weekend.",
+      "Not only did she accept the request, but she also offered to help on the weekend."
+    ],
+    "point": "Not only を文頭に置くと did she の語順になる",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:73471669cb41724198e9677d997ecbea91bb166d41fdfd1f13509f853354c858",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8w2b7w8v",
+    "ja": "もし来週の水曜まで時間をもらえるとしたら、翻訳を引き受けられるんですが、今週は無理です。",
+    "en": "If you gave me until next Wednesday, I could take on the translation, but I can't do it this week.",
+    "alternatives": [
+      "If I had until next Wednesday, I could take on the translation, but this week just isn't possible.",
+      "I could handle the translation if you gave me until next Wednesday, but I can't manage it this week."
+    ],
+    "point": "仮の条件は if 節を過去形、主節を could にする",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["second-conditional", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef64bfaf12d1409c78ac098c64daa7607e84deb6ce9ce6cc9511840092dd6703",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8x5b7t3p",
+    "ja": "この仕事はうちで引き受けますが、条件が一つあって、デザインの最終判断はうちに任せてもらうことです。",
+    "en": "We'll take this on, but our one condition is that you let us make the final call on the design.",
+    "alternatives": [
+      "We'll take this on, but on one condition: that you leave the final decision on the design to us.",
+      "We'll take this job, but the one condition is that you let us have the final say on the design."
+    ],
+    "point": "条件の中身は that + 主語 + 動詞 の節で続ける",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["noun-clauses", "causatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e55dcca703c866f6fc31da8a7b4a364e89626f050a965d00fbff60ef2bd01267",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9d9y5v8p",
+    "ja": "そのデータ入力の作業は、来週外部の会社に任されることになっています。",
+    "en": "The data entry work will be handed over to an outside company next week.",
+    "alternatives": [
+      "The data entry work is going to be outsourced to another company next week.",
+      "Next week, the data entry work will be given to an outside company."
+    ],
+    "point": "作業が「任される」側なので will be + 過去分詞の受動態",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 5,
+    "grammar": ["passive-voice", "future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:618cd82f5152677d1d928d0638cde1e058f44fb5e2fdd1274b5fae1dd8d169c8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9f6y2u9g",
+    "ja": "今週はほかの案件で手いっぱいなので、彼の依頼を引き受けなければよかったと正直思っています。",
+    "en": "Honestly, I wish I hadn't taken on his request, since I'm swamped with other projects this week.",
+    "alternatives": [
+      "To be honest, I wish I hadn't agreed to his request, because I'm overloaded with other projects this week.",
+      "Honestly, I wish I'd said no to his request, since I've got my hands full with other projects this week."
+    ],
+    "point": "過去の後悔は wish + had 過去分詞で表す",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d52ec32eb7401723fe6a13d5e9271cc9b9c69714a4fc09b529978821d7af6945",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9p7n3r8w",
+    "ja": "彼女は、来月の展示会で使うパンフレットの翻訳を、原稿が今週中に届くなら引き受けると言ってくれた。",
+    "en": "She said she'd take on translating the brochures we're using at next month's trade show if the draft arrives this week.",
+    "alternatives": [
+      "She said she'd translate the brochures for next month's trade show as long as she gets the draft by the end of this week.",
+      "She agreed to translate the brochures we'll use at next month's trade show if the draft reaches her this week."
+    ],
+    "point": "言ったのは過去なので will を she'd にずらす",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["nested-clauses", "reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:770967973cf6808ca54337d83e9146906501430d1752012c9b00b2f7913594ea",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9s2w3b8h",
+    "ja": "もし彼があの時その依頼を断っていたら、今ごろこんなに忙しくはなかったでしょうね。",
+    "en": "If he had turned down that request back then, he wouldn't be this busy now.",
+    "alternatives": [
+      "If he'd said no to that request back then, he wouldn't be so busy now.",
+      "If he'd declined that request back then, he wouldn't be this busy right now."
+    ],
+    "point": "if 節は過去完了、主節は今の話なので wouldn't be",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["mixed-conditional", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bae02292a66df258b73abd62553343ee1548cd268ed7f1c9d317480ebc7ae642",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

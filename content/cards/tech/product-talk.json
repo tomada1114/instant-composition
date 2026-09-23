@@ -1,0 +1,597 @@
+[
+  {
+    "id": "c_2b2t2b5m",
+    "ja": "この機能は来週リリースしましょう。",
+    "en": "Let's release this feature next week.",
+    "alternatives": [
+      "Let's ship this feature next week.",
+      "Let's launch this feature next week."
+    ],
+    "point": "提案は Let's + 動詞の原形",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cabaf840c186a2c32238ff2289c35bc71284ac0b55b4d24ce85f4419769ab050",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2q8u3t3j",
+    "ja": "決済のバグが直るまで、リリース日の発表は見合わせましょう。",
+    "en": "Let's hold off on announcing the release date until the payment bug is fixed.",
+    "alternatives": [
+      "Let's hold off on announcing the release date until we've fixed the payment bug.",
+      "Let's wait to announce the release date until the payment bug is fixed.",
+      "Why don't we hold off on announcing the release date until the payment bug gets fixed?"
+    ],
+    "point": "hold off on の後は動名詞。until 節は未来でも現在形",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["phrasal-verbs", "time-and-if-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d3c204737933be8e96f10cf9b1c2a40523974ed95c64b179aa479f58647f1b75",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2x9x2b8q",
+    "ja": "先週のリリースで、私たちはついにダークモードを追加しました。",
+    "en": "In last week's release, we finally added dark mode.",
+    "alternatives": [
+      "We finally added dark mode in last week's release.",
+      "We finally shipped dark mode in the release last week."
+    ],
+    "point": "過去の一時点の出来事なので現在完了ではなく過去形",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 4,
+    "grammar": ["tense-contrast", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6b1f6414fb7988213d328fa3cf13a4fcdb7fa54b81176c1af7f6ebdd57d78b11",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3c2c3t3u",
+    "ja": "シングルサインオンを何度も求めているのは無料ユーザーではなく法人のお客さんなので、次の四半期のロードマップの最優先にしましょう。",
+    "en": "It's our enterprise customers, not the free users, who keep asking for single sign-on, so let's put it at the top of next quarter's roadmap.",
+    "alternatives": [
+      "It's the enterprise customers, rather than free users, who keep requesting single sign-on, so let's make it the top priority on next quarter's roadmap.",
+      "Since it's enterprise customers and not free users who keep asking for single sign-on, let's put it first on next quarter's roadmap."
+    ],
+    "point": "It's A, not B, who 〜 の強調構文で「A こそが」を表す",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:11c3933be66fbac315fc74809aeeda3112e0847c186bd5b27f52ea262c8260b8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3v4e7r3h",
+    "ja": "うちのチームは今、検索機能を改善しているところです。",
+    "en": "Our team is improving the search feature now.",
+    "alternatives": [
+      "We're improving the search feature right now.",
+      "Our team is working on the search feature now."
+    ],
+    "point": "「今〜しているところ」は is improving と be + -ing にする",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6ab33171dca95f11760f360be8052230e0f73d09d00b913e4b67f9d9d7e837b1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3z8x9n5z",
+    "ja": "うちのチームは検索機能についてたくさんフィードバックをもらっていますが、ユーザーが実際にどう使っているかという情報はあまりありません。",
+    "en": "We've gotten a lot of feedback about the search feature, but not much information on how people actually use it.",
+    "alternatives": [
+      "We've received plenty of feedback on the search feature, but we don't have much information about how users actually use it.",
+      "We've had lots of feedback about the search feature, but there isn't much information on how people really use it."
+    ],
+    "point": "feedback も information も数えられないので複数形にしない",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b3c058f00de90c7d14e5c6c1850132e8ca78741f58b1000ba3e26d5eeaba487f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4e7z4d5w",
+    "ja": "ユーザーは、このアプリで写真を共有できません。",
+    "en": "Users can't share photos in this app.",
+    "alternatives": [
+      "Users can't share photos with this app.",
+      "Users cannot share photos on this app."
+    ],
+    "point": "「できない」は can't＋動詞の原形",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:995f4076d9cf2959ac0cc2ed39b36d67739b573240529a1ee8810b99ebc9fdc0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4m2j5j4c",
+    "ja": "今回のリリースの前に、私たちはもっとテストを書かないといけません。",
+    "en": "We have to write more tests before this release.",
+    "alternatives": [
+      "We need to write more tests before this release.",
+      "We must write more tests before this release."
+    ],
+    "point": "「〜しないといけない」は have to。we を主語に立てる",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5960413668e814f20ea66e0a9ebff6d0384911fcfb678ff43897aa5e0d32dbf6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4n8h5g4e",
+    "ja": "お客さんから一番よく頼まれる機能は、今回のリリースには入らないんです。",
+    "en": "The feature that customers ask for most won't be in this release.",
+    "alternatives": [
+      "The feature customers request most won't be in this release.",
+      "The feature that our customers ask for most isn't going to be in this release."
+    ],
+    "point": "ask for の for を関係詞節の中で落とさない",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["relative-clauses", "future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a3d9cce8cf41d2252fd90b875fbbad439bb916db73ca0a9137a6d6e02fca9742",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4r5y6f7m",
+    "ja": "ユーザーから、エクスポート機能の要望がたくさんあります。",
+    "en": "There are a lot of user requests for an export feature.",
+    "alternatives": [
+      "We have a lot of requests from users for an export feature.",
+      "Lots of users have asked for an export feature."
+    ],
+    "point": "requests は複数なので There are で始める",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:44ef92f40d105f67fa6df69f815803673d3e215f8049bcffedd8f4bb515f5369",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4u2p2e2j",
+    "ja": "このアプリにオフラインモードがあればいいのに。出張中によく必要になるんです。",
+    "en": "I wish this app had an offline mode. I often need it on business trips.",
+    "alternatives": [
+      "I wish the app had an offline mode. I often need one when I'm on business trips.",
+      "If only this app had an offline mode. I often need it when I travel for work."
+    ],
+    "point": "現在の願望は wish の後を過去形（had）にする",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:91d1f37f79b00910a59d0e15e6c8aca55e2e21b87b034bc8a2e375ad82aa1007",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5c5a5v3n",
+    "ja": "うちのマネージャーは、ユーザーが本当に欲しいのは新機能じゃなくて読み込みの速さだと考えています。",
+    "en": "Our manager thinks that what users really want is faster loading, not new features.",
+    "alternatives": [
+      "Our manager believes what users really want is faster loading rather than new features.",
+      "Our manager thinks users really want faster load times, not new features."
+    ],
+    "point": "「〜が欲しいもの」は what users want を主語にする",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3b3ea7c00cae1535ff9312939c7c42d54dfbfd64100076f1c63dca88a93718b1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5k2c8k6a",
+    "ja": "お客さんにとって、どっちの機能のほうが大事かな？",
+    "en": "Which feature is more important to our customers?",
+    "alternatives": [
+      "Which feature matters more to our customers?",
+      "Which feature is more important for our customers?"
+    ],
+    "point": "2つを比べるので most ではなく more important を使う",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 2,
+    "grammar": ["comparatives-superlatives", "wh-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:109da5488e452690305b4bea3833c678568e0a68c5f2076ed5d32174b2b69e2e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5p8d5k9p",
+    "ja": "ベータ版のテストが終わったら、その機能を正式に出すかどうか決めよう。",
+    "en": "Let's decide whether to officially launch that feature once the beta testing is over.",
+    "alternatives": [
+      "When the beta testing is done, let's decide if we should officially release that feature.",
+      "Let's decide whether we'll officially roll out that feature after the beta testing is finished."
+    ],
+    "point": "未来のことでも「終わったら」の節は現在形 is over",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["time-and-if-clauses", "noun-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4272ed6164a35587e531d6d763c3634f2a4fefece271960b6108810ae5f3acce",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5y6r3u5s",
+    "ja": "営業チームに、機能の要望を一つのリストにまとめるよう頼んでもらえますか？",
+    "en": "Could you ask the sales team to put their feature requests in one list?",
+    "alternatives": [
+      "Can you ask the sales team to collect their feature requests in a single list?",
+      "Could you ask the sales team to gather all their feature requests into one list?"
+    ],
+    "point": "ask + 人 + to do の語順。that 節にしない",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["verb-object-to-do", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f4f6833592e97378325927db7d72f0ab2ad07f7ee142f44a3bdb3877ae590ac1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6b2c6x4z",
+    "ja": "セキュリティレビューが終わって初めて、私たちは新しい決済機能のリリース日を決められるようになります。",
+    "en": "Only after the security review is finished will we be able to set a release date for the new payment feature.",
+    "alternatives": [
+      "Only once the security review is done will we be able to set a release date for the new payment feature.",
+      "We won't be able to set a release date for the new payment feature until the security review is finished."
+    ],
+    "point": "Only after 節が文頭なら主節は will we と倒置する",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:03180fd820bcf31a6f0a4abd39837a14d946b6eaef8195edae1f80b21b25d4ab",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6s5e7b5m",
+    "ja": "お客さんから、新しい機能の要望が来ています。",
+    "en": "We have a feature request from a customer.",
+    "alternatives": [
+      "A customer sent us a feature request.",
+      "There's a feature request from a customer."
+    ],
+    "point": "request は数えられる名詞なので a を付ける",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 1,
+    "grammar": ["articles-and-countability", "be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:55407cde46e21473c9a67e5db9842e89ae8834167d5e4ba0bac86c16c424263f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6z6d6v6s",
+    "ja": "前回重大なバグが見つかったのは決済フローだったので、リリース前に QA チームにもう一度テストしてもらいましょう。",
+    "en": "Before we release this, let's have the QA team test the checkout flow again, since that's where they caught a critical bug last time.",
+    "alternatives": [
+      "Let's get the QA team to test the checkout flow again before release, because that's where they found a critical bug last time.",
+      "Before the release, let's have QA retest the checkout flow, since that's where a critical bug turned up last time."
+    ],
+    "point": "「〜してもらう」は have + 人 + 動詞の原形（to は不要）",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 9,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:215a1efab9d618511e2864badbe95dc7f8bd94b470c88c2f5946cfae54617ba3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7d2r5s2g",
+    "ja": "たとえユーザーからの要望が多くても、その機能は今回のリリースには入れられません。",
+    "en": "Even if a lot of users ask for it, we can't include that feature in this release.",
+    "alternatives": [
+      "Even if many users request it, we can't add that feature to this release.",
+      "We can't put that feature in this release, even if lots of users want it."
+    ],
+    "point": "「たとえ〜でも」は even if、even though ではない",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7816050d60f32ca92762f249572e9231918c9ec1e145a83d7724e789f3c483b9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7r4x3u6v",
+    "ja": "営業チームは、解約をほのめかしている大口顧客 3 社を理由に、その機能を最優先にするよう迫ってきています。",
+    "en": "The sales team is pushing us to make that feature a top priority, citing three major clients who've hinted they might cancel.",
+    "alternatives": [
+      "Sales is pressing us to prioritize that feature, pointing to three big clients who've hinted they may cancel.",
+      "The sales team is pushing hard for that feature to be the top priority, citing three key clients who've suggested they might leave."
+    ],
+    "point": "「〜を理由に」は文末に citing 〜 と分詞で添える",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["participle-clauses", "nested-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3ed62ce987e7e9e6329fccdf8adfbfdac48cbc96a9ef649cb364e6ae4c8f4571",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7t5z5e7y",
+    "ja": "お忙しいところすみませんが、エクスポート機能を次のスプリントに入れていただけないかと思いまして。",
+    "en": "Sorry to bother you, but I was wondering if you could fit the export feature into the next sprint.",
+    "alternatives": [
+      "Sorry to bother you, but I was wondering whether you could add the export feature to the next sprint.",
+      "I'm sorry to trouble you, but I was wondering if the export feature could go into the next sprint."
+    ],
+    "point": "I was wondering if で依頼を柔らかくする",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:657400e5ce75aa0b12bde924e8f75cdf84b361ee1f4f4003033c5cb4bd4380ba",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8b3c5b6t",
+    "ja": "もしうちにエンジニアがあと二人いたら、あなたなら検索機能を先に作りますか？",
+    "en": "If we had two more engineers, would you build the search feature first?",
+    "alternatives": [
+      "If we had two extra engineers, would you build search first?",
+      "Would you build the search feature first if we had two more engineers?"
+    ],
+    "point": "仮定の話は if 節を過去形、主節を would にする",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f5ee7190ec64312f859231d6d02149182d5fccdd59d0ab297be24ca8cf98c2a9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8g6r7m8x",
+    "ja": "PM は、決済機能のリリースは来月までずれ込むかもしれないと言っていました。",
+    "en": "The PM said the payment feature release might be pushed back until next month.",
+    "alternatives": [
+      "The PM said the release of the payment feature might slip to next month.",
+      "The PM told us the payment feature might not be released until next month."
+    ],
+    "point": "said に合わせて may ではなく might にする",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 6,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cb6e44f4655fe2e9a1c8d7ca393afc6dccf3ea95e1e4f3e38a005fe16ec2d481",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8v7u7z5e",
+    "ja": "このバグ修正は、今いちばん優先度が高いです。",
+    "en": "This bug fix is our top priority now.",
+    "alternatives": [
+      "This bug fix is the top priority right now.",
+      "This bug fix is our highest priority now."
+    ],
+    "point": "priority の前に our や the を忘れない",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 1,
+    "grammar": ["be-and-present-simple", "articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6c405d9c08ad11afc028c1244c037794509b19fde3793eb2d2cd190637faee1f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9c6s7g9r",
+    "ja": "うちが先月ダークモードを優先していたら、今ごろこんなにサポートへの問い合わせは来ていないでしょうね。",
+    "en": "If we had prioritized dark mode last month, we wouldn't be getting so many support requests now.",
+    "alternatives": [
+      "If we'd prioritized dark mode last month, we probably wouldn't be getting this many support tickets now.",
+      "Had we made dark mode a priority last month, we wouldn't be getting so many support requests right now."
+    ],
+    "point": "過去の仮定は had + 過去分詞、今の結果は would be",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:81589bd6b343b6ce20c3bf14a005756ddc8039d86f045a81244055aed98b691a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9g9a3c8b",
+    "ja": "新機能より先に、ログインのバグを直すべきだと思います。",
+    "en": "I think we should fix the login bug before we work on new features.",
+    "alternatives": [
+      "I think we need to fix the login bug before adding new features.",
+      "I think we should fix the login bug before working on new features."
+    ],
+    "point": "should の後は動詞の原形。主語は we を補う",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bd9af9542ebc9e9d9abd5c69708151a08e5aad35b64f4dfca97bbdd491d78f46",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9r2w4d9y",
+    "ja": "サラ、その機能要望、次のスプリントまで後回しにしてもらえる？",
+    "en": "Sara, could you put off that feature request until the next sprint?",
+    "alternatives": [
+      "Sara, can you push that feature request back to the next sprint?",
+      "Sara, could you hold off on that feature request until the next sprint?"
+    ],
+    "point": "「後回しにする」は put off / push back で言える",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["phrasal-verbs", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:84692e81a9645988d947b3925181933013c9a2c5f4a8dff572d84f7075051df9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

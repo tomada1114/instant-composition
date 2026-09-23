@@ -1,0 +1,618 @@
+[
+  {
+    "id": "c_2h5v3w2j",
+    "ja": "最近、週末は何をしてるの？",
+    "en": "What do you do on weekends these days?",
+    "alternatives": [
+      "What are you doing on weekends these days?",
+      "These days, what do you do on weekends?"
+    ],
+    "point": "習慣は現在形 do。「最近」は these days",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 2,
+    "grammar": ["wh-questions", "be-and-present-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:97e60bcddae00f4a59f57534bee7d654509af4689ea6498854197e0284f35b89",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2k2a7z8f",
+    "ja": "仕事は相変わらず忙しいけど、最近は週末に料理教室に通ってるんだ。",
+    "en": "Even though work is still busy, I've been taking a cooking class on weekends lately.",
+    "alternatives": [
+      "Although work is as busy as ever, I've been going to a cooking class on weekends recently.",
+      "Work's still busy, but lately I've been taking cooking classes on weekends."
+    ],
+    "point": "続いている習慣は現在完了進行形 I've been taking",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["concession-contrast", "present-perfect-continuous"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:129cf98dd1c5e12155407a5d20433436244a48447d30ef4c82c29fd06040f606",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2p6s3e3g",
+    "ja": "もしあの時あの会社を辞めてなかったら、僕は今の妻には出会ってなかっただろうね。",
+    "en": "If I hadn't quit that company back then, I never would have met my wife.",
+    "alternatives": [
+      "If I hadn't quit that job back then, I probably wouldn't have met my wife.",
+      "If I hadn't left that company back then, I wouldn't have met my wife."
+    ],
+    "point": "過去の仮定は if + had 過去分詞、帰結は would have 過去分詞",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:383bfb71838773c4681cc9d9a56f5bf6d51dfead8e3cd68f0b30e26601a5331a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2u3p6z7r",
+    "ja": "うちの兄、大学のときにもっと真剣に英語を勉強しておけばよかったって、最近よく言ってるんだ。",
+    "en": "These days my brother keeps saying he wishes he'd studied English more seriously in college.",
+    "alternatives": [
+      "Lately my brother keeps saying he wishes he had studied English harder in college.",
+      "These days my brother often says he wishes he'd taken English more seriously in college."
+    ],
+    "point": "過去を悔やむ wish の後は had + 過去分詞",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["wishes-regrets", "reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e57cd61e3eb76835446503d2081667c5365ec64d2f33b21fcc5dadebca928a1e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3a4d2c4t",
+    "ja": "駅前の本屋で働いてたタカシ、今はカナダに住んでるらしいよ。",
+    "en": "Takashi, who used to work at the bookstore by the station, is apparently living in Canada now.",
+    "alternatives": [
+      "I heard Takashi, who used to work at the bookstore by the station, lives in Canada now.",
+      "Apparently Takashi, the guy who used to work at the bookstore near the station, is living in Canada now."
+    ],
+    "point": "「働いてた」は used to work、人の説明は who でつなぐ",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a88ac2a073ccfe56cd4a07843c577dc5740694b4937110caa2e6712910920154",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3h6h9m4p",
+    "ja": "妹は今留学中で、ホストファミリーからたくさん役立つアドバイスをもらってるらしいよ。",
+    "en": "My sister is studying abroad, and apparently she's getting a lot of useful advice from her host family.",
+    "alternatives": [
+      "My sister's studying abroad now, and I hear she's getting lots of helpful advice from her host family.",
+      "My sister is studying abroad, and it sounds like her host family is giving her a lot of useful advice."
+    ],
+    "point": "advice は数えられないので advices にしない",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fc1a35844d6a1016910b8ccc43368ceed00770fb14b2403e649f71f0b0c5f1f5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3k2r8a8y",
+    "ja": "引っ越してから一番大変だったのは、仕事じゃなくて、近所に知り合いが一人もいないことだったよ。",
+    "en": "What was hardest after I moved wasn't the job but the fact that I didn't know a single person in the neighborhood.",
+    "alternatives": [
+      "The hardest thing after I moved wasn't the job; it was not knowing anyone in the neighborhood.",
+      "What was hardest after the move wasn't work but not knowing a single person nearby."
+    ],
+    "point": "What was hardest で主語を作り、wasn't A but B でつなぐ",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 10,
+    "grammar": ["cleft-emphasis", "noun-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:74bd330faa96d96d1d7199a487795a403e4a5ea64cb1af95a6aa52031dec3b91",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3t3d3e8q",
+    "ja": "君が前に住んでたアパートの隣のラーメン屋って、まだやってる？",
+    "en": "Is the ramen shop next to your old apartment still in business?",
+    "alternatives": [
+      "Is that ramen place next to the apartment you used to live in still open?",
+      "Is the ramen shop next to where you used to live still around?"
+    ],
+    "point": "「〜の隣の」は名詞の後ろに next to を置く",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dac0e814e643cfb26c6e0250d39bd2b58a88c6ba23dc22a03d7afead27b49b0a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3x9s3j2x",
+    "ja": "引っ越したこと、もっと早く君に知らせるべきだったよね。バタバタしてて忘れてたんだ。",
+    "en": "I should have let you know sooner that I'd moved, but things got hectic and I forgot.",
+    "alternatives": [
+      "I should have told you earlier that I'd moved, but I got busy and forgot.",
+      "I really should have told you about my move sooner, but things got hectic and it slipped my mind."
+    ],
+    "point": "「すべきだったのに」は should have + 過去分詞",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["modal-perfect", "past-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:837ff3101a514e9e48fe4a4eb11caa7fb863946896ec8ecbf139ed866bf8fed5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4a9r7n8b",
+    "ja": "妻と僕は去年、子どもたちとキャンプを始めたんだけど、すっかりハマっちゃってさ。",
+    "en": "My wife and I took up camping with the kids last year, and we've really gotten into it.",
+    "alternatives": [
+      "My wife and I started camping with the kids last year, and we've gotten really hooked on it.",
+      "Last year my wife and I took up camping with our kids, and now we're totally into it."
+    ],
+    "point": "「ハマっている」は今の状態なので現在完了か現在形で",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["phrasal-verbs", "tense-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:205cc519e275dfcc1efb150e492be7acfe95251242f8c8e5dcb84c11c1720408",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4d9a5a3e",
+    "ja": "最近転職したって聞いたんだけど、新しい職場はどうなのかなと思って。",
+    "en": "I heard you recently changed jobs, and I was wondering how you're finding the new place.",
+    "alternatives": [
+      "I heard you changed jobs recently, so I was wondering how you're getting on at the new place.",
+      "I heard you recently switched jobs, and I was wondering how things are going at your new workplace."
+    ],
+    "point": "「〜かなと思って」は I was wondering + 疑問詞で柔らかく",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["hedging-softening", "indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1edf2b40c86cda60ec1b0b3cebe13e5534ae5d7a754ab0fb8edebbd19053b272",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4n8f7x4q",
+    "ja": "兄に、来週末の引っ越しを手伝ってって頼まれたんだ。",
+    "en": "My brother asked me to help him move next weekend.",
+    "alternatives": [
+      "My brother asked me to help with his move next weekend.",
+      "My brother asked if I could help him move next weekend."
+    ],
+    "point": "ask + 人 + to do の形。me を忘れずに",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 3,
+    "grammar": ["verb-object-to-do", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5b23fda648d008b75dccb8f07355cebd75ebf1b2948b273a27d3beb7e46bbc11",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4r7y2g5s",
+    "ja": "彼女、最近は週末にギターを習うのにはまってるらしいよ。",
+    "en": "I heard she's really into learning the guitar on weekends these days.",
+    "alternatives": [
+      "Apparently she's gotten really into learning guitar on weekends lately.",
+      "I heard she's hooked on learning the guitar on weekends these days."
+    ],
+    "point": "前置詞 into の後ろは動名詞 learning",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 4,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:24d028c4d1a7bed3b1a83a71fd2b20f4d947740774415b9b274ed13e539f8fb5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4s8v9t7c",
+    "ja": "君が仕事を辞めて農業を始めたって聞いたときに驚いたのは、決断の早さだったよ。",
+    "en": "What surprised me when I heard you'd quit your job to start farming was how quickly you made the decision.",
+    "alternatives": [
+      "When I heard you'd quit your job to start farming, I was surprised by how quickly you decided.",
+      "When I heard you'd quit your job to become a farmer, what surprised me was how fast you made the decision."
+    ],
+    "point": "「驚いたのは〜だった」は What surprised me was で組み立てる",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 10,
+    "grammar": ["cleft-emphasis", "nested-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b42094914c4e881a04079a1b7932a3b7669a5a9461e4f5ca3345fd2c186e2b59",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4v2a7b8k",
+    "ja": "今の職場がもっと家から近かったら、平日でも君ともっと会えるのにな。",
+    "en": "If my office were closer to home, I'd be able to see you more often during the week.",
+    "alternatives": [
+      "If my office was closer to home, I could see you more often on weekdays.",
+      "If I worked closer to home, I'd get to see you more often during the week."
+    ],
+    "point": "現実と違う仮定は if 節を過去形、主節は would/could",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b4beac6fb805a14721f13b09609bfaffdfe101de8999fd42c9d85041c905c854",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5u4e8b8w",
+    "ja": "あのとき転職してなかったら、僕は今ごろまだ毎晩終電で帰ってたと思う。",
+    "en": "If I hadn't changed jobs back then, I'd probably still be taking the last train home every night.",
+    "alternatives": [
+      "If I hadn't switched jobs back then, I'd probably still be catching the last train home every night.",
+      "I think I'd still be taking the last train home every night if I hadn't changed jobs back then."
+    ],
+    "point": "過去の仮定は had done、今の結果は would be",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:72a7a0a5cb31debaf78d3239d195ef4de2817247d5c692b21cd69b8f95e6fdc6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5x3s8s3g",
+    "ja": "転職したんだけど、今の会社のほうが前の会社よりずっと働きやすいよ。",
+    "en": "I changed jobs, and my new company is much easier to work for than my old one.",
+    "alternatives": [
+      "I switched jobs, and my current company is a lot easier to work for than my last one.",
+      "I changed jobs, and working at my new company is much easier than at my old one."
+    ],
+    "point": "比較級の強調は very ではなく much / a lot",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4e3d2104100ca1a50d2426273283dd1d93ebd375340d92bf828737d9a772a502",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5x6u8j2j",
+    "ja": "兄は今、カナダで英語を勉強しているよ。",
+    "en": "My brother is studying English in Canada now.",
+    "alternatives": [
+      "My brother is now studying English in Canada.",
+      "My brother is in Canada studying English now."
+    ],
+    "point": "今していることは is と動詞の ing 形で言う",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0e185dde859e49a7710ce1e7521c6e2e40183b45fa89f182f86ce1439afc20e6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6v8p3t9x",
+    "ja": "ケンがまだあの会社で働いてるかどうか、知ってる？最近全然連絡取ってなくて。",
+    "en": "Do you know whether Ken is still working at that company? I haven't been in touch with him lately.",
+    "alternatives": [
+      "Do you happen to know if Ken still works at that company? I haven't talked to him in a while.",
+      "Do you know if Ken's still at that company? I haven't been in contact with him lately."
+    ],
+    "point": "「〜かどうか知ってる？」は Do you know if/whether + 平叙文の語順",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:011f346e439295aa627b427ed13fbc3c4585b0ea2926587a573b46cda6418bf6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7s6j2c4k",
+    "ja": "最近、6 時に起きなきゃいけないんだ。",
+    "en": "These days I have to get up at six.",
+    "alternatives": [
+      "I have to wake up at six these days.",
+      "Recently I've had to get up at six."
+    ],
+    "point": "義務は have to + 動詞の原形",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2336616b9a9479c48b7510c02258752fc0dba28fc2d16fac064535ddbed84028",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7x5a4p2c",
+    "ja": "前に会ったとき、まだ部屋を探してたよね。もう引っ越したの？",
+    "en": "You were still looking for an apartment when we last met. Have you moved yet?",
+    "alternatives": [
+      "When we last met, you were still looking for an apartment. Have you moved yet?",
+      "You were still apartment hunting last time I saw you. Have you moved already?"
+    ],
+    "point": "前回は過去進行形、今の状況は現在完了で聞く",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 5,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a1b86343a331e479bc6639326b5a0dc997378f4c7f7ea0b9a0aa141c639185b5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7z6c8v8a",
+    "ja": "赤ちゃんの写真、見せてもらえますか？",
+    "en": "Could you show me photos of your baby?",
+    "alternatives": [
+      "Can you show me photos of your baby?",
+      "Could you show me pictures of your baby?"
+    ],
+    "point": "丁寧な依頼は Could you + 動詞の原形",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3b9faad4bb4019acb581c8e2c52f4cd085bb4852efec0903c1dae573c98b6295",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8e4z4e7y",
+    "ja": "来月こっちに戻ってきたら、久しぶりにみんなで集まらない？",
+    "en": "When you come back here next month, why don't we get everyone together again?",
+    "alternatives": [
+      "Once you're back here next month, how about we all get together again?",
+      "When you get back next month, should we get the whole group together again?"
+    ],
+    "point": "来月のことでも when 節は現在形で言う",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 5,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:78c5821ba7227d131b7a644d1e0faaf14e3fc36e0c90325591c0000d20310933",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8f7u9y6k",
+    "ja": "この前ケンにばったり会ったら、来月から大阪に転勤になるって言ってたよ。",
+    "en": "When I ran into Ken the other day, he told me he was being transferred to Osaka next month.",
+    "alternatives": [
+      "I ran into Ken the other day, and he said he was being transferred to Osaka next month.",
+      "When I bumped into Ken the other day, he said he'd be transferred to Osaka next month."
+    ],
+    "point": "言ってた内容は時制を過去にずらし was being transferred に",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["reported-speech", "passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e83f046b55e3440e28635a15c9c353de0d2deeb3081264fd6890d67b3f10ff3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8t6u2t2n",
+    "ja": "姉はこの夏ずっとヨーロッパを旅して回ってて、節約のためにユースホステルに泊まってたよ。",
+    "en": "My sister spent the whole summer traveling around Europe, staying in hostels to save money.",
+    "alternatives": [
+      "My sister traveled around Europe all summer, staying in hostels to save money.",
+      "My sister spent all summer traveling around Europe, staying at hostels to save money."
+    ],
+    "point": "「泊まってた」は , staying と分詞で後ろにつなげる",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d6aa449c6eb06106a849445855e7f79d07bdee8a161282c4bbf17e332a020366",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9e7k9r6t",
+    "ja": "うちの父、最近お医者さんに毎朝30分歩かされてるんだよ。",
+    "en": "My dad's doctor has been making him walk for thirty minutes every morning lately.",
+    "alternatives": [
+      "Lately, my dad's doctor has been making him walk thirty minutes every morning.",
+      "My father's doctor has been making him go for a thirty-minute walk every morning lately."
+    ],
+    "point": "make + 人 + 動詞の原形。to は付けない",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["causatives", "present-perfect-continuous"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:444616c3a80b05cf2ca065cdc667a66e1322eaade03afa5810e51f18c4c8e254",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9r6m3r3b",
+    "ja": "最近、仕事がずっと忙しくて、趣味に使える時間がほとんどないんだ。",
+    "en": "Work has been really busy lately, so I have hardly any time for my hobbies.",
+    "alternatives": [
+      "I've been really busy with work lately, so I barely have any time for my hobbies.",
+      "Things have been hectic at work recently, so I hardly have any time for hobbies."
+    ],
+    "point": "「ほとんど〜ない」は hardly any で、not や no を重ねない",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 5,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:749a5b3bf0e3c9dce27f3066cc4263901b57f24543a5465af6efb641a18f3ee9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9x3r8s5r",
+    "ja": "妹は去年結婚しただけじゃなくて、自分のお店まで開いたんだよ。",
+    "en": "Not only did my sister get married last year, but she also opened her own shop.",
+    "alternatives": [
+      "My sister not only got married last year but also opened her own shop.",
+      "My sister got married last year, and on top of that, she opened her own shop."
+    ],
+    "point": "Not only を文頭に置くと did + 主語 + 原形の語順になる",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:69b566fb7d6d89da1e2ebfc5b25c01321a14285d503d6ff4b17ac1de253c879f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

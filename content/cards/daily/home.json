@@ -1,0 +1,599 @@
+[
+  {
+    "id": "c_2e4w9j3e",
+    "ja": "僕は料理は好きだけど、夕食の後の片付けはいつもすごく面倒に感じちゃうんだよね。",
+    "en": "Although I enjoy cooking, I always find cleaning up after dinner a real hassle.",
+    "alternatives": [
+      "I like cooking, but I always find cleaning up after dinner a real pain.",
+      "Even though I enjoy cooking, cleaning up after dinner always feels like a real chore to me."
+    ],
+    "point": "「〜を面倒に感じる」は find + 動名詞 + a hassle の語順",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["concession-contrast", "gerunds"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5ed1a3ef0f0f17996afd28eee026cb2a9ad104177be393024f4dc64cd0ba1183",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2j5d4g5n",
+    "ja": "私が頭にくるのは、ルームメイトが流しに皿を置きっぱなしにすることじゃなくて、彼女がもう洗ったって言い張ることなんだ。",
+    "en": "What drives me crazy isn't the dishes my roommate leaves in the sink but the way she insists she's already washed them.",
+    "alternatives": [
+      "It's not the dishes my roommate leaves in the sink that bother me, but the way she insists she's already washed them.",
+      "What gets to me is not that my roommate leaves dishes in the sink, but that she insists she's already washed them."
+    ],
+    "point": "「頭にくるのは A じゃなくて B」は What drives me crazy isn't A but B",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e9719dcac2dd20cf0ca697a834f2752e6dd8c6b09e662889bd211b53df9e471c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2r9j5c8s",
+    "ja": "弟はもう自分でシャツにアイロンをかけられるよ。",
+    "en": "My brother can iron his own shirts now.",
+    "alternatives": [
+      "My brother can iron his shirts by himself now.",
+      "My little brother can iron his own shirts now."
+    ],
+    "point": "can の後ろは動詞の原形で irons にしない",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:57d9a538c77cff30f14c1591dcf6b12534c31f2b0b6f7d420a3b068e641fe6dd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2u8m6k6j",
+    "ja": "洗濯機が止まったら、シャツを干しておいてくれる？",
+    "en": "When the washing machine stops, can you hang the shirts up to dry?",
+    "alternatives": [
+      "Can you hang the shirts out to dry when the washer stops?",
+      "Could you hang the shirts up to dry once the washing machine's done?"
+    ],
+    "point": "when 節は未来のことでも現在形 stops のまま",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 4,
+    "grammar": ["time-and-if-clauses", "requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c2676e36be8da1fc5f363dfed4319b7dc9e83065b94bdee5651387abe09bcd2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2v3v6t8z",
+    "ja": "今週末、ガレージの片付けを手伝ってもらえないかなと思ってたんだけど。",
+    "en": "I was wondering if you could help me clean out the garage this weekend.",
+    "alternatives": [
+      "Would you mind helping me clean out the garage this weekend?",
+      "I was hoping you could help me clean out the garage this weekend."
+    ],
+    "point": "I was wondering if you could で柔らかくお願いする",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["hedging-softening", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d5bd3a81ef675e0ce67107590d6416ec8fac7fb92ff9b718c815687a010c75e1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2v7k3h5n",
+    "ja": "お父さんは週末までに網戸を直すって言ってたけど、まだ手もつけてないよ。",
+    "en": "Dad said he'd fix the window screen by the weekend, but he hasn't even started on it yet.",
+    "alternatives": [
+      "Dad said he would fix the screen by the weekend, but he hasn't even touched it yet.",
+      "Dad told us he'd repair the window screen by the weekend, but he still hasn't started on it."
+    ],
+    "point": "言ってた内容は時制の一致で will ではなく would にする",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 7,
+    "grammar": ["reported-speech", "tense-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5e1da74acd8dad8a8cbefd707c0b38cde5cfc4fe0ac4aa3ef8a7f5d5b01f00c9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3b8z5h5q",
+    "ja": "ごめん、僕は一番上の棚に手が届かないんだ。",
+    "en": "Sorry, I can't reach the top shelf.",
+    "alternatives": [
+      "Sorry, I can't get to the top shelf.",
+      "Sorry, the top shelf is too high for me."
+    ],
+    "point": "一番上の棚は特定の棚なので the top shelf と the をつける",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 1,
+    "grammar": ["can-could-ability", "articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3a251507087d17d281da02ab9e2e0d7045bf753b6278be6702d7eeb1c1a4cbef",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3t4z5b6q",
+    "ja": "疲れてても、寝る前にせめて自分のお椀はすすいでもらえる？",
+    "en": "Even if you're tired, could you at least rinse your bowl before you go to bed?",
+    "alternatives": [
+      "Even when you're tired, could you at least rinse out your bowl before bed?",
+      "Even if you're exhausted, can you at least rinse your bowl before going to bed?"
+    ],
+    "point": "「〜てても」は even if、「せめて」の at least を落とさない",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:685d153796022e081c32149ad1e03ef51a4b6086bc6d7eec0e49a46dbbf84010",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4z6x8k4h",
+    "ja": "エアコンのフィルター、先月から掃除されてないよ。",
+    "en": "The air conditioner filter hasn't been cleaned since last month.",
+    "alternatives": [
+      "Nobody has cleaned the air conditioner filter since last month.",
+      "The AC filter hasn't been cleaned since last month."
+    ],
+    "point": "since があるので現在完了の受動 hasn't been cleaned",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 4,
+    "grammar": ["passive-voice", "present-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a2932e6eef0260c1d44af45a12b072e6ac4f933a290ddf32a8137820c2812936",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5n8v9e4j",
+    "ja": "もっと早く配管屋さんに電話してたら、うちは週末ずっとお湯なしで過ごさずに済んだのにね。",
+    "en": "If we'd called the plumber earlier, we wouldn't have spent the whole weekend without hot water.",
+    "alternatives": [
+      "If we had called a plumber sooner, we wouldn't have gone the whole weekend without hot water.",
+      "If we'd gotten the plumber in earlier, we wouldn't have been without hot water all weekend."
+    ],
+    "point": "過去の仮定は if 節が had + 過去分詞、主節は wouldn't have",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:49b72a80ceb619e02b18b103f2023d66a4b87c939d27b516ba3aef617ed2bb51",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5r9m5v4a",
+    "ja": "今日私がやらなきゃいけないのは、洗濯物をたたむことだよ。",
+    "en": "What I have to do today is fold the laundry.",
+    "alternatives": [
+      "What I need to do today is fold the laundry.",
+      "The thing I have to do today is fold the laundry."
+    ],
+    "point": "What I have to do is の後は動詞の原形で OK",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 4,
+    "grammar": ["noun-clauses", "modal-obligation-advice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d3b6d0710b393a62b888dea497a108312ba8f99e6cbe545f52be2c8f7c8a9d91",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6a4q7w6y",
+    "ja": "お母さんから電話があったとき、私はお風呂を掃除してたんだ。",
+    "en": "I was cleaning the bathroom when Mom called.",
+    "alternatives": [
+      "When Mom called, I was cleaning the bathroom.",
+      "I was cleaning the bathtub when Mom called me."
+    ],
+    "point": "途中だった動作は過去進行形 was cleaning で言う",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 5,
+    "grammar": ["progressive-aspect", "past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f6359f026a1a0ce6277884048309b6ffd29daccae70b469a1199aa87faf62ecf",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6e8e7b6a",
+    "ja": "リビングのエアコンは先週の土曜に業者さんにクリーニングしてもらったから、フィルターは触らなくていいよ。",
+    "en": "The living room AC was professionally cleaned last Saturday, so you don't need to touch the filter.",
+    "alternatives": [
+      "We had the living room AC professionally cleaned last Saturday, so you don't need to touch the filter.",
+      "The living room AC got cleaned by a professional last Saturday, so there's no need to touch the filter."
+    ],
+    "point": "エアコンを主語にするなら was cleaned と受け身にする",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c69bc3a7d381a6dc75c9c38d71f0fb619426862f808381773f6744545fafe39",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6j7y7f3g",
+    "ja": "お母さん、冷蔵庫に牛乳がもうないよ。",
+    "en": "Mom, there's no milk in the fridge.",
+    "alternatives": [
+      "Mom, there isn't any milk in the fridge.",
+      "Mom, we're out of milk."
+    ],
+    "point": "milk は数えられないので a をつけず no milk とする",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 1,
+    "grammar": ["there-is-are", "articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a391f206b612289b5037971806e08f3d1db0e716db76f2796bca939a89e6a093",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7a2f9k9y",
+    "ja": "先月ルームメイトが食洗機を買うのに賛成してくれてたら、今ごろ私たち手で皿を洗ってないのにね。",
+    "en": "If my roommate had agreed to buy a dishwasher last month, we wouldn't be washing dishes by hand now.",
+    "alternatives": [
+      "If my roommate had agreed to get a dishwasher last month, we wouldn't be doing the dishes by hand right now.",
+      "If my roommate had said yes to buying a dishwasher last month, we wouldn't be washing the dishes by hand now."
+    ],
+    "point": "過去の仮定は had agreed、今の結果は wouldn't be 〜ing",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:98e38c1fb1978beee87d7d79d38c617909d0cbb47ab1d6ed8a1576cca6452edc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7a5z2c2d",
+    "ja": "冷蔵庫に入ってる牛乳、もう賞味期限が切れてるよ。",
+    "en": "The milk in the fridge has already expired.",
+    "alternatives": [
+      "The milk in the fridge is already past its expiration date.",
+      "The milk in the refrigerator has already expired."
+    ],
+    "point": "「冷蔵庫の牛乳」は in the fridge を milk の後ろに置く",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 5,
+    "grammar": ["post-modification", "present-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:67c59605636447faf8b1adc850c1c0a96f9e9acaeaad2d3778a876e63710360b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7b4t6w9u",
+    "ja": "兄は先週の日曜の午後ずっと庭にいて、草むしりをしたり落ち葉をかき集めたりしてたよ。",
+    "en": "My older brother spent all of last Sunday afternoon in the yard, pulling weeds and raking leaves.",
+    "alternatives": [
+      "My older brother was in the yard all last Sunday afternoon, pulling weeds and raking up leaves.",
+      "My older brother spent the whole afternoon last Sunday in the yard pulling weeds and raking leaves."
+    ],
+    "point": "「〜しながら過ごした」は spent + 時間 + -ing の形",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4ebba605ced4d4d38b4e9b5a48b40f0c8e2bf3fea2b016a87a5b042fd4d82185",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7e2q7g8c",
+    "ja": "今度の土曜日、僕たちはガレージを掃除するつもりだよ。",
+    "en": "We're going to clean the garage this Saturday.",
+    "alternatives": [
+      "We're going to clean out the garage this Saturday.",
+      "We're cleaning the garage this Saturday.",
+      "We plan to clean the garage this Saturday."
+    ],
+    "point": "前から決めている予定は be going to",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:50730bb58fc0201637129da0670491abc4ed954817179de4cc78e2fd6857a68a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7f3a8w9z",
+    "ja": "お母さん、弟に部屋を片付けるように言ってくれる？",
+    "en": "Mom, can you tell my brother to clean his room?",
+    "alternatives": [
+      "Mom, could you tell my brother to clean his room?",
+      "Mom, can you tell my brother to tidy up his room?",
+      "Mom, will you tell my brother to clean up his room?"
+    ],
+    "point": "tell + 人 + to do の語順。that 節にしない",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 3,
+    "grammar": ["verb-object-to-do", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7ef7018e28560bc90f79c9e2b0f23a7bd08999a6e23bb2340fd9103c64ed19c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7g5s8d4h",
+    "ja": "うちでは、子どもたちにゲームをする前に自分の部屋を片付けさせてるんだ。",
+    "en": "We make the kids tidy up their rooms before they can play video games.",
+    "alternatives": [
+      "We have the kids clean their rooms before they're allowed to play video games.",
+      "We get the kids to tidy their rooms before they play video games."
+    ],
+    "point": "make + 人 + 動詞の原形。to は付けない",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 5,
+    "grammar": ["causatives", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3d379f1cbc7e78a6303d2d59d58bd1fc777a32cef848ee6ef7cb44039ac58027",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7p6j7q7w",
+    "ja": "夫はゴミを出すのを忘れてたけど、もう出してくれたよ。",
+    "en": "My husband forgot to take out the trash, but he's done it now.",
+    "alternatives": [
+      "My husband forgot to take the trash out, but he's done it now.",
+      "My husband forgot to take out the garbage, but he's already done it."
+    ],
+    "point": "忘れたのは過去形、今は済んだ状態なので現在完了",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 4,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:39b8ea6a037a7e73bfa065e32b6136afe4e9275bb9623f666c8fcd6c7c7802dc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7v5a3u2e",
+    "ja": "ねえ、掃除機がどこにあるか知ってる？",
+    "en": "Do you know where the vacuum cleaner is?",
+    "alternatives": [
+      "Do you happen to know where the vacuum is?",
+      "Any idea where the vacuum cleaner is?"
+    ],
+    "point": "間接疑問は where the vacuum cleaner is の語順",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 4,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4e63054db9396ac5c1d6e2f9cbf150abde76d1e1fd9436d74ff720d4b75b46cf",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8g3m2m8q",
+    "ja": "掃除機、階段の横に置きっぱなしにしないで、いつもしまってるクローゼットに戻してくれる？",
+    "en": "Could you put the vacuum back in the closet where we usually keep it instead of leaving it by the stairs?",
+    "alternatives": [
+      "Can you put the vacuum back in the closet where it usually goes instead of leaving it next to the stairs?",
+      "Instead of leaving the vacuum by the stairs, could you put it back in the closet where we normally keep it?"
+    ],
+    "point": "「いつもしまってる」場所は where we usually keep it と where で続ける",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 9,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1bda539ea4199ae28ba9a4342f15cb950cab976ef80a2fb249934f488de26801",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8v7p6g9q",
+    "ja": "ねえお父さん、ガレージを片付けるって、もう3週間ずっと言ってるよね。",
+    "en": "Dad, you've been saying you'll clean out the garage for three weeks now.",
+    "alternatives": [
+      "Dad, you've been promising to clean out the garage for three weeks now.",
+      "Dad, you've been telling us you'll clear out the garage for three weeks now."
+    ],
+    "point": "今も続く「ずっと言ってる」は have been saying、for で期間",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d06a01a3bfc94e38eec318b6c32a5ea8eaa817a78766841c045211a0f8a37195",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9a9w3g4m",
+    "ja": "今朝、洗濯物を外に干す前に、天気予報をちゃんと確認しておけばよかったなあ。",
+    "en": "I wish I'd checked the forecast before hanging the laundry outside this morning.",
+    "alternatives": [
+      "I wish I had looked at the weather forecast before I hung the laundry out this morning.",
+      "If only I'd checked the forecast before putting the laundry out to dry this morning."
+    ],
+    "point": "過去の後悔は wish の後を過去完了 I'd checked にする",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b3faf35aad2ca83786ca634c81271a6291140e1c128493d473565ed0249670cb",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9r9b4u6d",
+    "ja": "姉はさっき洗剤を買いにスーパーへ行ったよ。",
+    "en": "My sister just went to the supermarket to buy detergent.",
+    "alternatives": [
+      "My sister went to the supermarket a little while ago to buy detergent.",
+      "My sister just went to the store to buy detergent.",
+      "My sister just went to the supermarket to get detergent."
+    ],
+    "point": "目的の「〜しに」は to + 動詞の原形で表す",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 3,
+    "grammar": ["infinitives", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e5bff4b6aad924cd534317f1229ff4fabae3a8233aa702f8193bbf55d3fef845",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9t4t7u3m",
+    "ja": "出かける前に、リサイクルのゴミを出してもらってもいい？",
+    "en": "Do you mind taking out the recycling before you leave?",
+    "alternatives": [
+      "Would you mind taking out the recycling before you go?",
+      "Could you take out the recycling before you leave?"
+    ],
+    "point": "mind の後は動名詞。to take にしない",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 5,
+    "grammar": ["gerunds", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c3dcc602ba0b69216b50391dbe5ca4946227f4c3e7615a057245ca85faa57c49",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  }
+]

@@ -1,0 +1,678 @@
+[
+  {
+    "id": "c_2d7p3b5a",
+    "ja": "彼女は締め切りの延長を頼んだだけでなく、打ち合わせもすべて来月に移しました。",
+    "en": "Not only did she ask for a deadline extension, but she also moved all her meetings to next month.",
+    "alternatives": [
+      "She not only asked for a deadline extension but also moved all her meetings to next month.",
+      "Not only did she request an extension on the deadline, she also pushed all her meetings to next month."
+    ],
+    "point": "Not only の後は did she ask と疑問文の語順",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:25970748b1dea435b34b6c87600d02f388ba4b94f70e6f3b3638fe872959bc25",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2e2r5j9h",
+    "ja": "彼女は、締め切りが月曜日に変わったことを知らなかったに違いない。",
+    "en": "She must not have known that the deadline had been moved to Monday.",
+    "alternatives": [
+      "She must not have realized the deadline was changed to Monday.",
+      "She can't have known that the deadline had been moved to Monday."
+    ],
+    "point": "過去の推量は must not have known と have＋過去分詞に",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["modal-perfect", "passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ace87cb4f4b25a2bcbeee83f0f8b507174e6743d6b8370c5e54f1f0ab5d5c89f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2m2r3d3j",
+    "ja": "来週の打ち合わせを水曜日から木曜日にずらしていただくことは可能でしょうか。",
+    "en": "I was wondering if it might be possible to move next week's meeting from Wednesday to Thursday.",
+    "alternatives": [
+      "I was wondering whether we could possibly move next week's meeting from Wednesday to Thursday.",
+      "Would it be possible to move next week's meeting from Wednesday to Thursday?"
+    ],
+    "point": "was wondering と過去進行形にすると依頼が柔らかくなる",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:80b5723f3ef3b2c46c88b2d6769c3485383f95d7a42f8f07bca7d5c3d31f9af9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3q6h7d5p",
+    "ja": "取引先との打ち合わせ、先週からずっと日程を調整しようとしているんですが、まだ決まっていません。",
+    "en": "I've been trying to set up a meeting with the client since last week, but nothing's been decided yet.",
+    "alternatives": [
+      "I've been trying to schedule a meeting with the client since last week, but we still haven't settled on a date.",
+      "Since last week I've been trying to arrange a meeting with the client, but nothing's been decided yet."
+    ],
+    "point": "「先週からずっと〜している」は I've been trying で表す",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b709011fc8a29c96700d20927adc6bbe7049a95effe29d24c5d3d291b5ac8515",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4c4b5m7g",
+    "ja": "次の打ち合わせはいつですか？",
+    "en": "When is our next meeting?",
+    "alternatives": ["When's the next meeting?", "When do we have our next meeting?"],
+    "point": "When の後は is + 主語の順。be 動詞を忘れない",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 1,
+    "grammar": ["wh-questions", "be-and-present-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9f4cb6294aec819fd7d96513bcca13f42d59e08389bb2cb6e8c0a6321c5409d4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4d7v4u8x",
+    "ja": "打ち合わせは、来週の火曜日のほうが私には都合がいいです。",
+    "en": "Next Tuesday is better for me.",
+    "alternatives": [
+      "Next Tuesday works better for me.",
+      "Tuesday next week is better for me."
+    ],
+    "point": "「都合がいい」は better for me で比較級にする",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef8a67d228c0cfa094e8d907d690b4293f4cfe8296074052ef389250b2201a56",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4m4f4w7v",
+    "ja": "部長は締め切りを来週の月曜日に延ばしました。",
+    "en": "The manager moved the deadline to next Monday.",
+    "alternatives": [
+      "The manager pushed the deadline to next Monday.",
+      "The manager extended the deadline to next Monday."
+    ],
+    "point": "「来週の月曜日」は next Monday、前置詞 on は不要",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:65ab62e6a483a61d66508ea5ce911f200ce33992bd7453d9fa976a5acfa5c09e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4u5e3k2s",
+    "ja": "締め切りを延ばしてくれるかどうか、クライアントからもう何か情報は来ましたか？",
+    "en": "Have we gotten any information from the client yet about whether they'll extend the deadline?",
+    "alternatives": [
+      "Has the client given us any information yet about whether they'll extend the deadline?",
+      "Have we heard anything from the client yet about whether they'll push back the deadline?"
+    ],
+    "point": "「〜かどうか」は about whether でつなぐ",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["articles-and-countability", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:932a266a6a03756510c32f97d2a710a96c1c36934515363b4005a46e2f8e84a7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5f3h2h3q",
+    "ja": "部長に言って、締め切りを来週の水曜日まで延ばしてもらえませんか？",
+    "en": "Could you get the manager to push the deadline back to next Wednesday?",
+    "alternatives": [
+      "Could you ask the manager to extend the deadline to next Wednesday?",
+      "Would you be able to get the manager to move the deadline to next Wednesday?"
+    ],
+    "point": "get 人 to 動詞 の to を落とさない",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["causatives", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c84674015c04c5cb10ae724c6c8e590f770bd883be40142fa003bdfea2b225ba",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5k8e8z2q",
+    "ja": "会議を月曜日に移しましょう。",
+    "en": "Let's move the meeting to Monday.",
+    "alternatives": [
+      "Let's change the meeting to Monday.",
+      "Let's reschedule the meeting for Monday."
+    ],
+    "point": "曜日の前は on だが「〜に移す」は move to",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ca18d795fc96d504a332f8bf5a153d6262b96b67227efee25272d5579abdaba5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5r2n5y7r",
+    "ja": "私たちは今日中に次の会議の日程を決めなければなりません。",
+    "en": "We have to set a date for the next meeting today.",
+    "alternatives": [
+      "We need to pick a date for the next meeting today.",
+      "We have to decide on the date of the next meeting today."
+    ],
+    "point": "「〜しなければならない」は have to で表す",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f082df69c2e93f940a18d561a49e17a545e7abe038f9bbd6941ad3b5d34ec0b7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5t9z8f4h",
+    "ja": "私が会議室を予約しようとした時には、彼らはもう打ち合わせの日程を変えていました。",
+    "en": "When I tried to book a room, they had already rescheduled the meeting.",
+    "alternatives": [
+      "By the time I tried to book a room, they'd already rescheduled the meeting.",
+      "They had already changed the meeting date when I tried to book a room."
+    ],
+    "point": "予約しようとした時より前の出来事なので had rescheduled",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:59e1a6252fd3e832d73491de2cadf2c4ebd226db221e7733548bc32e9692d095",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5u6w6f4g",
+    "ja": "部長がもっと早く言ってくれていたら、私は出張の日程を変えられたのですが。",
+    "en": "If the manager had told me sooner, I could have changed the dates of my business trip.",
+    "alternatives": [
+      "If my manager had let me know earlier, I could have rescheduled my business trip.",
+      "If the manager had told me earlier, I would have been able to change my business trip dates."
+    ],
+    "point": "過去の仮定は had told と could have changed の形にする",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["third-conditional", "modal-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f81966719ecd3a6bf8fcf1b9332314c58d2b7281c98c5aa14d0da731391dc08",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5v2v7m9n",
+    "ja": "来週のレビュー、部長が何曜日なら空いてるか知ってる？",
+    "en": "Do you know which day the manager is free for next week's review?",
+    "alternatives": [
+      "Do you know what day the manager is available for next week's review?",
+      "Any idea which day the manager's free for the review next week?"
+    ],
+    "point": "間接疑問は which day the manager is の語順。is を前に出さない",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 4,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4a72f8618ef0c1e482765bfe899c31a14c89bd58a1b550b1d4d01faa38f9ef86",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6a8a3j7p",
+    "ja": "来週の打ち合わせ、クライアントが空いているのが水曜の午前だけなので、そこにずらしましょう。",
+    "en": "Let's move next week's meeting to Wednesday morning, which is the only time the client is available.",
+    "alternatives": [
+      "Let's reschedule next week's meeting for Wednesday morning, since that's the only time the client is free.",
+      "Why don't we move next week's meeting to Wednesday morning, the only slot when the client is available?"
+    ],
+    "point": "時間の補足は , which is ～ で後ろから足す",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:91c7946d0bafdf773c54eda11afa9fcebdfb63946aafe4bf48314f5e6587acbe",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6c4a3g7t",
+    "ja": "締め切りは今週の金曜日です。",
+    "en": "The deadline is this Friday.",
+    "alternatives": ["The deadline is Friday this week.", "It's due this Friday."],
+    "point": "this Friday の前に on は付けない",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f5447d7df93f339d382a8d57e121385a406f46eb457176da9794dd98ee86a620",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6e3h3d5v",
+    "ja": "たとえクライアントに頼まれても、私たちはリリース日をこれ以上前倒しすることはできません。",
+    "en": "Even if the client asks us to, we can't move the release date up any further.",
+    "alternatives": [
+      "Even if the client asks, we can't bring the release date forward any further.",
+      "We can't move up the release date any further, even if the client asks us to."
+    ],
+    "point": "「前倒し」は move up / bring forward、even if 節は現在形",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 8,
+    "grammar": ["concession-contrast", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cbc692351a2910db0bde3dc21b0bbd62331fcecaa27f17856c888db4457437d8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6g2c6d3u",
+    "ja": "私たちは納期を確認するために、明日の朝お客様に電話します。",
+    "en": "We'll call the client tomorrow morning to confirm the deadline.",
+    "alternatives": [
+      "We're going to call the client tomorrow morning to confirm the deadline.",
+      "We'll call the client tomorrow morning to confirm the delivery date."
+    ],
+    "point": "「〜するために」は to 不定詞で表す",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 3,
+    "grammar": ["infinitives", "future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:58e4a781f23c89159477a1564b7dcf88c93dc966f2eb86cfa8a270c20ebb7850",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6q3s9k9j",
+    "ja": "私たちは今、打ち合わせを木曜日にずらそうかと考えています。",
+    "en": "We're thinking about moving the meeting to Thursday.",
+    "alternatives": [
+      "We're thinking of moving the meeting to Thursday.",
+      "We're considering moving the meeting to Thursday."
+    ],
+    "point": "about や of の後ろは moving と ing 形にする",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 3,
+    "grammar": ["gerunds", "progressive-aspect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2ff776b0b0e11339dce9236985a0591f6640416d5df3ff314946aaf1aa3c6684",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7a6u8u9j",
+    "ja": "今週はみんな忙しいので、ミーティングを来週に延ばすのはどうですか？",
+    "en": "Since everyone's busy this week, how about pushing the meeting back to next week?",
+    "alternatives": [
+      "Everyone's busy this week, so how about putting the meeting off until next week?",
+      "Since everyone's tied up this week, what about moving the meeting to next week?"
+    ],
+    "point": "how about の後は -ing。延期は push back や put off",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["gerunds", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef258ad5db332975a9ce6863d5c8a4e9334ab94a87dbf8eb5de4274b9d27b2b0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7n3j2m6z",
+    "ja": "来週、全員が出られる日はありますか？",
+    "en": "Is there a day next week everyone can make?",
+    "alternatives": [
+      "Is there a day next week when everyone's free?",
+      "Is there any day next week when everyone's available?"
+    ],
+    "point": "「全員が出られる日」は a day の後ろに everyone can make を続ける",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 4,
+    "grammar": ["there-is-are", "relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3210f02375975bbbd9bdf9c4a5052b57eecf9d954189d47ed5706040e2611178",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8a5f4t8a",
+    "ja": "部長が会議を来週に延期して、みんなが準備する時間を増やしてくれました。",
+    "en": "The manager postponed the meeting until next week, giving everyone more time to prepare.",
+    "alternatives": [
+      "The manager pushed the meeting back to next week, giving everyone more time to prepare.",
+      "The manager moved the meeting to next week, which gave everyone more time to prepare."
+    ],
+    "point": "後半は and gave より , giving で文をつなぐと自然",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:63bf1a70baf31dcc53bb81d5c90f5a6d65938fba28f9dfaddf982d763eb072db",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8b2w2q8f",
+    "ja": "日程をずらす必要があるのは、デザインではなくテストの工程です。",
+    "en": "It's the testing phase, not the design phase, that needs to be rescheduled.",
+    "alternatives": [
+      "What needs to be rescheduled is the testing phase, not the design phase.",
+      "It's not the design phase but the testing phase that needs to be rescheduled."
+    ],
+    "point": "強調は It's A, not B, that ～ の語順で",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 9,
+    "grammar": ["cleft-emphasis", "passive-voice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7c229f9d3f4a1ac2fa4f694a941380fef56a3d8be5a0daf7ce1294f7b6b15cd1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8e8v8n6d",
+    "ja": "部長は、月曜の締め切りに間に合わせるために週末に作業するのは避けたいと思っています。",
+    "en": "Our manager wants to avoid working on the weekend to meet the Monday deadline.",
+    "alternatives": [
+      "Our manager would like to avoid working over the weekend to make the Monday deadline.",
+      "Our manager wants to avoid having to work on the weekend to hit the Monday deadline."
+    ],
+    "point": "avoid の後は to 不定詞ではなく -ing",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["gerunds", "infinitives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d893af42d8536b8bf7d0056450412e3f13c96dd581dcdddfc1ae129ce46e2ba6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8g5k8j8f",
+    "ja": "私たちが先週のうちに会議室を予約していたら、今ごろ打ち合わせの日程で困っていないのに。",
+    "en": "If we'd booked the meeting room last week, we wouldn't be struggling to schedule this meeting now.",
+    "alternatives": [
+      "If we had reserved the meeting room last week, we wouldn't be having trouble scheduling the meeting now.",
+      "Had we booked the room last week, we wouldn't be stuck trying to schedule this meeting right now."
+    ],
+    "point": "過去の仮定でも、今の結果は wouldn't be 〜ing",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 10,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:004f02d666abf3a20d5de4f0b406e39ea988e87f8797f5dae600920265135fb8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8p3h4x8v",
+    "ja": "プロジェクトの締め切りは先月三回も変更されたけど、今月は今のところ一度も変わっていません。",
+    "en": "The project deadline was changed three times last month, but it hasn't changed once so far this month.",
+    "alternatives": [
+      "The project deadline got changed three times last month, but so far this month it hasn't changed at all.",
+      "They changed the project deadline three times last month, but it hasn't changed even once so far this month."
+    ],
+    "point": "last month は過去形、so far this month は現在完了",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:16292035449bed27c6e6bf601b34acac4654508ec3f6cffffca0f175d66b9866",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8u3x9k7n",
+    "ja": "もし締め切りを1週間延ばせるなら、チームはテストにもっと時間をかけられるのに。",
+    "en": "If we could push the deadline back a week, the team would be able to spend more time on testing.",
+    "alternatives": [
+      "If the deadline were pushed back a week, the team could spend more time on testing.",
+      "If we could move the deadline back by a week, the team could put more time into testing."
+    ],
+    "point": "現実と違う仮定なので could 〜, would 〜 と過去形にする",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 8,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:38ebc5000a98f15deda0e1c48b561642ad96560ca490c26f635a51bd0b97647f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9d3w7h2e",
+    "ja": "先方に、打ち合わせを来週の火曜日にずらしてもらうよう頼んでもらえますか？",
+    "en": "Could you ask the client to move the meeting to next Tuesday?",
+    "alternatives": [
+      "Can you ask the client to push the meeting back to next Tuesday?",
+      "Could you ask the client if they could move the meeting to next Tuesday?"
+    ],
+    "point": "ask＋人＋to do の形。人のあとに to 不定詞を続ける",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 4,
+    "grammar": ["verb-object-to-do", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b5e13afb0ca67bb13d81da5bc954d566eb3b732e5f2ffc595c8ef11be3ef02be",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9e5y5m2q",
+    "ja": "先方は、来週の打ち合わせが水曜日の午後なら出られると言っていました。",
+    "en": "The client said they could make next week's meeting if it was on Wednesday afternoon.",
+    "alternatives": [
+      "The client told us they'd be able to attend next week's meeting if it was on Wednesday afternoon.",
+      "The client said they could join next week's meeting if we held it on Wednesday afternoon."
+    ],
+    "point": "時制の一致で can は could、is は was にする",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9b5971b25e6cc709895071bfa6b666050814acf6a98f0a20245790af8b520a41",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9f7g2g4f",
+    "ja": "火曜の午後に予定されていたクライアントとの打ち合わせは、木曜の朝に変更になりました。",
+    "en": "The client meeting scheduled for Tuesday afternoon has been moved to Thursday morning.",
+    "alternatives": [
+      "The client meeting that was scheduled for Tuesday afternoon has been moved to Thursday morning.",
+      "The client meeting set for Tuesday afternoon has been pushed to Thursday morning."
+    ],
+    "point": "scheduled for で後ろから修飾し、has been moved で受け身",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["post-modification", "passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4c3c5ba1ce3607d96afc2a030950ebd36c69094b90b6a54e3162179bbb3a1f80",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9n8a9k7p",
+    "ja": "会議が来週にずれたこと、あなたがもっと早く教えてくれていたらよかったのに。",
+    "en": "I wish you had told me sooner that the meeting was moved to next week.",
+    "alternatives": [
+      "If only you'd told me earlier that the meeting got moved to next week.",
+      "I wish you'd let me know sooner that the meeting was pushed to next week."
+    ],
+    "point": "過去への後悔は I wish + had 過去分詞",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["wishes-regrets", "noun-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:046b94dfb7743e4346c4f0507df459a216ffc09e8ff5888571d5c786a82ac61f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

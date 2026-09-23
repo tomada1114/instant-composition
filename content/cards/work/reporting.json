@@ -1,0 +1,571 @@
+[
+  {
+    "id": "c_2c6x9k9g",
+    "ja": "気になっているのは、クライアントがまだ私たちの提案に返事をくれていないことです。",
+    "en": "What worries me is that the client hasn't replied to our proposal yet.",
+    "alternatives": [
+      "What concerns me is that the client still hasn't responded to our proposal.",
+      "What I'm worried about is that the client hasn't gotten back to us on our proposal yet."
+    ],
+    "point": "「気になっているのは」は What worries me is that で始める",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["noun-clauses", "present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:61ba92cb9428d38f5c8b8f4e9e93837b8ff2bcf8b9aa7217617bc8de0d858d6c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2j9x8r9k",
+    "ja": "先方から見積書が届いたら、私がすぐにチームに共有しますね。",
+    "en": "As soon as the client sends the estimate, I'll share it with the team.",
+    "alternatives": [
+      "I'll share the estimate with the team as soon as the client sends it.",
+      "When the client sends the estimate, I'll share it with the team right away."
+    ],
+    "point": "as soon as の後は未来のことでも現在形 sends にする",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:da8db1b650dc45a7769ca0c5d3c9498c4dbec4c978dc5a1422da498cc3525ecc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2k6c7c6c",
+    "ja": "倉庫でトラブルがあったため、残りの部品の納品は来週まで延期されました。",
+    "en": "Due to a problem at the warehouse, delivery of the remaining parts has been postponed until next week.",
+    "alternatives": [
+      "Because of a problem at the warehouse, the remaining parts won't be delivered until next week.",
+      "Delivery of the rest of the parts has been delayed until next week because of a warehouse problem."
+    ],
+    "point": "納品が主語なので has been postponed と受け身にする",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 7,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:46ba7c2ae6d9d73ec86c2a94c5d3f2119e909e36f8215adfb4a4eb54944875b0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2n9a4p7t",
+    "ja": "課長、この件はいつまでに終わらせればいいですか？",
+    "en": "When do I need to have this done by?",
+    "alternatives": [
+      "When should I get this done by?",
+      "What's the deadline for this?"
+    ],
+    "point": "「いつまでに」は文末に by を残して期限を聞く",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 2,
+    "grammar": ["wh-questions", "modal-obligation-advice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0445cd13d7f37c305c7efbf8e5e0d3f165e8c8843bce8027db8e85a5e750d715",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2u3w9k9b",
+    "ja": "クライアントは予算を承認してくれただけでなく、前倒しで始めてほしいとまで言ってくれました。",
+    "en": "Not only did the client approve the budget, but they also asked us to start ahead of schedule.",
+    "alternatives": [
+      "Not only did the client sign off on the budget, but they also asked us to start early.",
+      "Not only did the client approve the budget, they even asked us to start ahead of schedule."
+    ],
+    "point": "Not only の後は did＋主語＋原形の語順",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:743432f8c0329bf377e887e7c7df9ec4348ffbad6a4ccc1f7dd2eeb82bfaab5d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3e3x4h2h",
+    "ja": "テストはまだ全部終わっていませんが、私たちは金曜のリリースには間に合う見込みです。",
+    "en": "Although we haven't finished all the tests yet, we expect to make the Friday release.",
+    "alternatives": [
+      "We haven't finished all the testing yet, but we should still make the Friday release.",
+      "Even though testing isn't finished yet, we expect to be ready for Friday's release."
+    ],
+    "point": "although の後に but は重ねない",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["concession-contrast", "present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a357d12e053052de89057fb4fd59d0bbd8384d5464671b94d8bdb0c0d02c8fc4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3k8h6e3t",
+    "ja": "昨夜3時にサーバーが止まって、約200人のユーザーがログインできなくなりました。",
+    "en": "The server went down at 3 a.m. last night, leaving about 200 users unable to log in.",
+    "alternatives": [
+      "The server crashed at 3 a.m. last night, and about 200 users couldn't log in.",
+      "At 3 a.m. last night the server went down, which left about 200 users unable to log in."
+    ],
+    "point": "結果は , leaving 〜 unable to の分詞でつなげる",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8e1e8f2c24b4667a34343f8265b136f1dfc31f6d0fd1cc33ecdc7b3857694a08",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3r2x3g7c",
+    "ja": "うちのチームにあと一人エンジニアがいれば、今週中にテストを終えられるんですが。",
+    "en": "If we had one more engineer on the team, we'd be able to finish the testing by the end of this week.",
+    "alternatives": [
+      "If our team had one more engineer, we could finish the testing by the end of this week.",
+      "If we had another engineer on the team, we'd be able to get the testing done by the end of the week."
+    ],
+    "point": "現実と違う仮定なので had と we'd／could を使う",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3db81cacf89268cd9221c90c69dd45490eede85b486e7b3066e4f012c37f85a5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4h6c2n2u",
+    "ja": "営業チームは、締め切りを来週まで延ばすことを検討しています。",
+    "en": "The sales team is thinking about extending the deadline to next week.",
+    "alternatives": [
+      "The sales team is considering extending the deadline to next week.",
+      "The sales team is thinking of pushing the deadline back to next week."
+    ],
+    "point": "about や consider の後ろは to 不定詞ではなく -ing 形",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 4,
+    "grammar": ["gerunds", "progressive-aspect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0104c4beb097bcd0ab73e36c24094d1519090693650cf2dcf65566b6ae4cae63",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4s4w6n2j",
+    "ja": "取引先から、部品は月末まで届かないと言われました。",
+    "en": "The supplier told me the parts wouldn't arrive until the end of the month.",
+    "alternatives": [
+      "The supplier said the parts wouldn't get here until the end of the month.",
+      "I was told by the supplier that the parts wouldn't arrive until the end of the month."
+    ],
+    "point": "言われた内容も過去に合わせて won't ではなく wouldn't",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9d589e57d22a2ea092a62dee12f05958626314f319846a754df21146accb597f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4s7g5h3n",
+    "ja": "リリース前にこのバグのことを知っていればよかったんですが、気づいたのは今朝でした。",
+    "en": "I wish I'd known about this bug before the release, but I only noticed it this morning.",
+    "alternatives": [
+      "I wish I had found out about this bug before the release, but I didn't notice it until this morning.",
+      "I wish I'd known about this bug before the release, but I didn't catch it until this morning."
+    ],
+    "point": "過去の後悔は wish の後を had + 過去分詞にする",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 7,
+    "grammar": ["wishes-regrets", "past-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:294ffe6d0e4bb671c8797b03cecd68afd1246e99261d32a272cfca47a581a615",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4v6h7c3b",
+    "ja": "部長、企画書はもう完成しています。",
+    "en": "The proposal is ready now.",
+    "alternatives": ["The proposal is finished now.", "The proposal is done now."],
+    "point": "「完成している」は be 動詞＋ready で言える",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8378bda7d11d068b110e6757772b4b8a7df6817b431750339c729b24227cde5b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4y9y2r7w",
+    "ja": "先月私が仕様をちゃんと確認していれば、チームが今こんなに手戻りに追われることもなかったはずです。",
+    "en": "If I had checked the specs properly last month, the team wouldn't be dealing with all this rework now.",
+    "alternatives": [
+      "If I'd properly checked the specs last month, the team wouldn't be stuck with so much rework now.",
+      "If I had double-checked the specs last month, the team wouldn't have so much rework to do now."
+    ],
+    "point": "if 節は過去完了、今の結果は wouldn't＋原形",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:685ab5027f1eeb70203c45d2966db25a7a4fd19b52a162dc43144157a743a603",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5b2t3v7w",
+    "ja": "そのデータの不一致、午前中からずっと調べてるんですか？よければ私が手伝いますよ。",
+    "en": "Have you been looking into that data mismatch all morning? I can help if you'd like.",
+    "alternatives": [
+      "Have you been working on that data discrepancy since this morning? I'm happy to help if you want.",
+      "Have you been trying to sort out that data mismatch all morning? I can give you a hand if you like."
+    ],
+    "point": "「ずっと〜している」は Have you been -ing で表す",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5d56603e8d567a065bf9214598e8503a9ced7a93592b0bb796bc6daccc99cd6f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5p5v7e2e",
+    "ja": "先週はデザインでかなり苦労しましたが、今はもう大きな問題はすべて解決しました。",
+    "en": "We struggled a lot with the design last week, but we've now solved all the major issues.",
+    "alternatives": [
+      "We had a hard time with the design last week, but we've already fixed all the big problems.",
+      "The design gave us a lot of trouble last week, but we've now resolved all the major issues."
+    ],
+    "point": "last week は過去形、今の完了は現在完了で分ける",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cae87f772e9482e7a4e6a2961df9eb0017f32738a829bea1b69b5400ccc0d9cc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6a8v9e3n",
+    "ja": "この件、もう部長に相談しましたか？まだなら、午後に一緒に行きましょう。",
+    "en": "Have you talked to the manager about this yet? If not, let's go together this afternoon.",
+    "alternatives": [
+      "Have you already discussed this with the manager? If you haven't, let's go see them together this afternoon.",
+      "Have you asked the manager about this yet? If not, let's talk to them together this afternoon."
+    ],
+    "point": "「もう〜した？」は現在完了の疑問文、文末に yet",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c7298b9e8ddbb65bc0c57109b269e597dbcbe41652ac08ea3e230221503f213",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6c6j3m4p",
+    "ja": "先方からまだ返信がないので、私が間違ったアドレスに送ってしまったのかもしれません。",
+    "en": "The client still hasn't replied, so I might have sent it to the wrong address.",
+    "alternatives": [
+      "I may have sent it to the wrong address, since the client hasn't replied yet.",
+      "Since we haven't heard back from the client, I might have used the wrong address."
+    ],
+    "point": "過去の推量は might have + 過去分詞",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["modal-perfect", "present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:88409e39b332252a808f2af420a7b6a37688031930b4294b0b107da522457049",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6k5p3p3a",
+    "ja": "私がもっと早くご相談していれば、この遅れは防げたと思います。",
+    "en": "If I'd come to you sooner, I think we could have avoided this delay.",
+    "alternatives": [
+      "If I had talked to you earlier, I think we could have prevented this delay.",
+      "I think this delay could have been avoided if I'd consulted you sooner."
+    ],
+    "point": "過去の仮定は If I had 〜, could have 過去分詞",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7a3633841e212aa7bc28b043dff0ddadd5bd8fb59f3818224c5e814e7e997b31",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6m5b3r2v",
+    "ja": "今、田中さんと一緒に来週のプレゼンの資料を作っているところです。",
+    "en": "I'm working on next week's presentation with Tanaka-san now.",
+    "alternatives": [
+      "I'm making the slides for next week's presentation with Tanaka-san now.",
+      "Tanaka-san and I are preparing next week's presentation now."
+    ],
+    "point": "「〜しているところ」は現在進行形 I'm ~ing",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 3,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d34de5ca9d93e1c68e2f404734423127258ea1402795d6c422660b19914bf43e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6z3w2t2d",
+    "ja": "部長、新しいやり方のほうが前のやり方よりずっと速いです。",
+    "en": "The new process is much faster than the old one.",
+    "alternatives": [
+      "The new method is a lot faster than the old one.",
+      "The new way is much quicker than the old one."
+    ],
+    "point": "比較級を強めるのは very ではなく much や a lot",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 3,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dc889ee76959245e3a0562042de93555980ce9ac825ba7af3ccefa702eececd6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7b5r6n6t",
+    "ja": "部長、新しい勤怠システムがいつ使えるようになるか、ご存じですか？",
+    "en": "Do you know when the new attendance system will be ready?",
+    "alternatives": [
+      "Do you know when we can start using the new attendance system?",
+      "Do you have any idea when the new attendance system will be ready?"
+    ],
+    "point": "when の後ろは will the system ではなく主語＋動詞の順",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 4,
+    "grammar": ["indirect-questions", "future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bf71143c4009923a20abbfc78d5c8ea38511564793ac93e7f1fbbd9e87bee314",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7m5j7d6g",
+    "ja": "テストの結果がおかしかったので、今、新人に全部のログを一から確認し直してもらっています。",
+    "en": "The test results looked off, so I'm having our new hire go through all the logs again from scratch.",
+    "alternatives": [
+      "The test results seemed strange, so I'm having our new team member check all the logs again from the beginning.",
+      "Since the test results looked wrong, I'm getting our new hire to recheck all the logs from scratch."
+    ],
+    "point": "have＋人＋動詞の原形。to を付けない（get なら to が要る）",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2895534c4be16e6792492d8b7bd3972b5ce34b6a0c5733699fb5907fedcc858a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8b9k5z5e",
+    "ja": "課長、この不具合について、少しアドバイスをいただけますか？",
+    "en": "Could you give me some advice about this bug?",
+    "alternatives": [
+      "Could you give me some advice on this bug?",
+      "Could I ask for some advice about this bug?"
+    ],
+    "point": "advice は数えられないので an advice や advices にしない",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 3,
+    "grammar": ["articles-and-countability", "requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b8693759563a2e82ae43348845f1f9a4b71f0709734bd4391d0883d1c59b65d0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9b5p2u2n",
+    "ja": "すみません、今の人数だと、うちのチームでは今月中に全部の注文をさばけません。",
+    "en": "Sorry, our team can't handle all the orders this month with the current staff.",
+    "alternatives": [
+      "Sorry, with the current staff, our team can't process all the orders this month.",
+      "Sorry, our team can't get all the orders done this month with the current staff."
+    ],
+    "point": "「注文をさばく」は handle the orders",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["can-could-ability", "articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a06d55ebacc658c5c1be47d256da26525d00ca0b938665610fe7c80d0b9dab92",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9c8h8s9e",
+    "ja": "バグの原因はまだ調べているところですが、近いうちに私からまたご連絡します。",
+    "en": "I'm still looking into the cause of the bug, but I'll get back to you soon.",
+    "alternatives": [
+      "I'm still trying to figure out what's causing the bug, but I'll get back to you shortly.",
+      "I'm still investigating the cause of the bug, but I'll let you know soon."
+    ],
+    "point": "「調べる」は look into、「また連絡する」は get back to you",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:92b22ed36ed2bf44222d37330ece40b73bc80733526121574eb9d3ae6de90df1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9f7d5k9c",
+    "ja": "先週おっしゃっていた新しいツールをいつから使い始めるのか、もう決められましたか？",
+    "en": "Have you decided yet when we'll start using the new tool you mentioned last week?",
+    "alternatives": [
+      "Have you decided when we're going to start using the new tool you talked about last week?",
+      "Have you made a decision yet on when we'll start using the new tool you mentioned last week?"
+    ],
+    "point": "when 以下は疑問文の語順にせず we'll start の順",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["nested-clauses", "indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3da25ad37b7cc48637d303c14fdd722b369ed322abb953a6efe66e0e24f859a1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  }
+]

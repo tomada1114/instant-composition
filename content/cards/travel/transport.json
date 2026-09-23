@@ -1,0 +1,574 @@
+[
+  {
+    "id": "c_2b5y6t2x",
+    "ja": "今タクシーがつかまれば、私たち、乗り継ぎの電車にまだ間に合うのになあ。",
+    "en": "If we could get a taxi right now, we'd still be able to make our connecting train.",
+    "alternatives": [
+      "If we could catch a taxi now, we'd still make our connecting train.",
+      "If we were able to get a taxi right now, we could still catch our connecting train."
+    ],
+    "point": "現実と違う仮定なので could と would で過去形にする",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 6,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6fb7843736bfe7db68b1b4031c4b894f82d65e533ee4f8ca44312a44362ec839",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2j2p3d2n",
+    "ja": "私たちの電車、30分遅れてるけど、それでも乗り換えには間に合うと思うよ。",
+    "en": "Even though our train is 30 minutes late, I think we'll still make our connection.",
+    "alternatives": [
+      "Our train is 30 minutes late, but I think we'll still make our connection.",
+      "Although our train's running 30 minutes late, I think we can still make the transfer."
+    ],
+    "point": "「それでも」は still。「乗り換えに間に合う」は make the connection",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 7,
+    "grammar": ["concession-contrast", "future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:211d0c00eedd21149b08eabbf23c9fb93603fe1f1f3e2bfb0c1cead9dec1e782",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2r9b3z2b",
+    "ja": "すみません、この切符を明日の同じ時間の電車に変更できないかと思いまして。",
+    "en": "Excuse me, I was wondering if I could change this ticket to the same train tomorrow.",
+    "alternatives": [
+      "Excuse me, I was wondering if it would be possible to change this ticket to the same train tomorrow.",
+      "Excuse me, would it be possible to switch this ticket to the same train tomorrow?"
+    ],
+    "point": "I was wondering if で柔らかく、中は could を使う",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 6,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4bc576476becb15779b6b191c17d0e1e5609ca137aae0f40e10f3817c9ec2d27",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2t5w9g6d",
+    "ja": "駅員さんに頼んで、乗り換えの行き方を紙に書いてもらったんだ。",
+    "en": "I had the station staff write down the transfer route for me.",
+    "alternatives": [
+      "I got the station staff to write down the transfer route for me.",
+      "I asked the station staff to write down how to transfer for me."
+    ],
+    "point": "have＋人＋動詞の原形で「人に〜してもらう」。get なら to が要る",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c38c43e07990c6125737c5eced79d8f0343d7d8c05aeb7e093d5506e5f5805c8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2z8j4a5j",
+    "ja": "運転手さん、私たち、もう 10 分くらい同じところをぐるぐる回っていませんか？",
+    "en": "Excuse me, haven't we been going around in circles for about ten minutes now?",
+    "alternatives": [
+      "Excuse me, aren't we just driving around in circles? It's been about ten minutes.",
+      "Sorry, but haven't we been circling the same area for about ten minutes?"
+    ],
+    "point": "続いている動作は have been going の現在完了進行形で",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 9,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ab5b32c967103dabc612804219a7a28e9cc41c0a47a239aba970d940f200e5da",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3a6u2u6j",
+    "ja": "すみません、空港行きのバスがどこから出るか教えていただけますか？",
+    "en": "Excuse me, could you tell me where the bus to the airport leaves from?",
+    "alternatives": [
+      "Excuse me, would you mind telling me where the airport bus leaves from?",
+      "Excuse me, could you tell me where I can catch the bus to the airport?"
+    ],
+    "point": "疑問文を埋め込むと語順は where the bus leaves。from を忘れずに",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["requests-permission", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:35586d4f552ac25481c56832670bc585e2788e3e7eb0fb53b3c6bf6f6737a2f6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3f7x2r4z",
+    "ja": "ごめん、乗ってる電車が遅れてるの。",
+    "en": "Sorry, my train is running late.",
+    "alternatives": [
+      "Sorry, the train I'm on is running late.",
+      "Sorry, my train is delayed."
+    ],
+    "point": "今まさに遅れている電車は is running late",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9a65a6f306bd7dba465f07b1bfe5aba371e77a4a9d5eef63556a747f7e29c9d5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3h4y7d2y",
+    "ja": "もし私たちがホテルをあと 10 分早く出ていたら、最終バスに間に合っていたでしょうね。",
+    "en": "If we had left the hotel ten minutes earlier, we would have made the last bus.",
+    "alternatives": [
+      "We would have caught the last bus if we'd left the hotel ten minutes earlier.",
+      "If we'd left the hotel ten minutes sooner, we'd have caught the last bus."
+    ],
+    "point": "if 節は had left、主節は would have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6268dd2e79ae9c0870349dc8e17d10c6084a80d97c6588020d7ec99ffd31283b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3p6b3x3m",
+    "ja": "姉は新幹線の切符を買うために、早めに駅に行きました。",
+    "en": "My sister went to the station early to buy Shinkansen tickets.",
+    "alternatives": [
+      "My sister went to the station early to get Shinkansen tickets.",
+      "My sister went to the station early to buy bullet train tickets."
+    ],
+    "point": "目的は to + 動詞の原形で表す",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 3,
+    "grammar": ["infinitives", "past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f0195402dc152cce5d031e2c39daf5fed67faaae3ba7b5f86fe6e86242953a71",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3y5d6b9c",
+    "ja": "雨がひどいから、タクシーで行こうよ。",
+    "en": "It's raining hard, so let's take a taxi.",
+    "alternatives": [
+      "It's raining hard, so let's get a taxi.",
+      "It's pouring, so let's take a taxi."
+    ],
+    "point": "「タクシーで行く」は take a taxi で言える",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 2,
+    "grammar": ["imperatives", "progressive-aspect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:880989e57b0eccb5d2eda02d001c69dd2af1731acec1186b073a1920e6bee639",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4c9x9e4t",
+    "ja": "次のバスが何時に来るか、駅員さんに聞いてみて。",
+    "en": "Try asking the station staff when the next bus comes.",
+    "alternatives": [
+      "Try asking a station worker when the next bus comes.",
+      "Try asking the staff at the station when the next bus is."
+    ],
+    "point": "「〜してみて」は try + -ing。try to do は「努力する」",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 4,
+    "grammar": ["gerunds", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:387f71f82871692823445a4b294bf044e20f6d7e39667caac61f4d565bd1270f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4p7y4t5x",
+    "ja": "電車が急に止まって、私たちは 1 時間近く駅と駅の間に閉じ込められました。",
+    "en": "The train stopped suddenly, leaving us stuck between stations for almost an hour.",
+    "alternatives": [
+      "The train came to a sudden stop, leaving us stuck between stations for nearly an hour.",
+      "The train suddenly stopped, and we were stuck between stations for almost an hour."
+    ],
+    "point": "結果は「, leaving us stuck」と分詞で後ろにつなげる",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6de0fc417d3dcf214e72eb41956dd6dc67a2a76a67d0bdcbeeb7f35ae4e321d5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4u3w6a4d",
+    "ja": "バスが 40 分遅れただけでなく、運転手はスーツケースを持った私たちを乗せてくれなかったんです。",
+    "en": "Not only was the bus 40 minutes late, but the driver also wouldn't let us on with our suitcases.",
+    "alternatives": [
+      "Not only was the bus 40 minutes late, but the driver also refused to let us board with our suitcases.",
+      "The bus wasn't just 40 minutes late; the driver also wouldn't let us on with our suitcases."
+    ],
+    "point": "Not only の後は was the bus と語順が倒置する",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:604a7abf7b5172dfd5bc778f3f475415624d749ba6d78258526207eee54e193d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5s5t6z6d",
+    "ja": "彼女が駅に着いたときには、乗るつもりだった終電はもう出てしまっていた。",
+    "en": "By the time she got to the station, the last train she'd planned to take had already left.",
+    "alternatives": [
+      "When she reached the station, the last train she was going to take had already left.",
+      "The last train she'd planned to catch had already left by the time she got to the station."
+    ],
+    "point": "着いた時点より前に出た電車は had already left と過去完了で",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 8,
+    "grammar": ["past-perfect", "relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:981c944251b1da7ab25a36dcfd0332b2da1ecf4222291338dbbd21cccf2dacc8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6a3u5b2p",
+    "ja": "運転手さんに、駅で私たちを降ろしてくれるよう頼んでくれる？",
+    "en": "Can you ask the driver to drop us at the station?",
+    "alternatives": [
+      "Can you tell the driver to drop us at the station?",
+      "Could you ask the driver to let us off at the station?"
+    ],
+    "point": "ask + 人 + to do で「人に〜するよう頼む」",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 3,
+    "grammar": ["verb-object-to-do", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b7bfaf9c7156438e79ba0d61adbc0fd33493e93f8f7df80238e0c021ae95396c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6r8d3d9d",
+    "ja": "私たち、乗る前に切符を買わないといけないんですか？",
+    "en": "Do we have to buy tickets before boarding?",
+    "alternatives": [
+      "Do we need to buy tickets before we get on?",
+      "Do we have to get tickets before we get on?"
+    ],
+    "point": "疑問文は Do we have to 〜？の形にする",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:50fcf1fda0ebdd97d629a93d9b7abd4baf0dbbf9f6d3428d7b700315e3aa30c4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6r8k5b3t",
+    "ja": "電車が遅れたら、会社に電話しなきゃいけないな。",
+    "en": "If the train is late, I'll have to call the office.",
+    "alternatives": [
+      "If the train's delayed, I'll need to call the office.",
+      "If the train is delayed, I'll have to call work."
+    ],
+    "point": "未来のことでも if 節は現在形",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 3,
+    "grammar": ["time-and-if-clauses", "modal-obligation-advice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b8048c0eb83b85b5c28d6272d2f5c61f61aecf31cb51c34cd002c3d1d4b7b5cb",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6t4g8b5u",
+    "ja": "東京駅までの往復切符を2枚と、路線図を1枚いただけますか？",
+    "en": "Could I have two round-trip tickets to Tokyo Station and a route map, please?",
+    "alternatives": [
+      "Can I get two round-trip tickets to Tokyo Station and a route map, please?",
+      "I'd like two round-trip tickets to Tokyo Station and a route map, please."
+    ],
+    "point": "tickets は複数形、map には a を忘れずに",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["articles-and-countability", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b18375483901cb8de4e7c44cadf68bae6cc743f446caf94f893ad2a8d9afdaab",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6v6h8u2n",
+    "ja": "彼女が乗る予定だった電車、大雪で運休になっちゃった。",
+    "en": "The train that she was supposed to take was canceled because of heavy snow.",
+    "alternatives": [
+      "The train she was supposed to take got canceled because of heavy snow.",
+      "The train she was going to take was canceled due to heavy snow."
+    ],
+    "point": "「乗る予定だった電車」は the train (that) she was supposed to take",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["relative-clauses", "passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2b4ef318ad75c3212598b027289c71d720ff6c8d95536acf4ed20f30e5694059",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6y3z8g7x",
+    "ja": "空港行きのバスが 1 時間に 1 本しかないって、もっと早く知っていればよかったなあ。",
+    "en": "I wish I'd known earlier that the airport bus only runs once an hour.",
+    "alternatives": [
+      "If only I'd known sooner that the airport bus only comes once an hour.",
+      "I wish I had found out earlier that the airport bus runs just once an hour."
+    ],
+    "point": "過去の後悔は I wish の後を過去完了 I'd known にする",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 8,
+    "grammar": ["wishes-regrets", "noun-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d7e1ca19d863ccca7926fafc5378bbfc9788df87c6f338d58c08bdcf8afd9d6b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7d4s9b8f",
+    "ja": "この機械で切符を買えますか？",
+    "en": "Can I buy a ticket from this machine?",
+    "alternatives": [
+      "Can I get a ticket from this machine?",
+      "Can I buy tickets at this machine?"
+    ],
+    "point": "「この機械で」は from this machine が自然",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1422630576540c471895b0bef1b37203b51c4ee8418ded9ebfaf4d6c84cd476f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7d5b8m6y",
+    "ja": "バス、もう行っちゃったのかも。停留所に誰もいないよ。",
+    "en": "The bus might have already left. There's nobody at the stop.",
+    "alternatives": [
+      "The bus may have left already. There's no one at the stop.",
+      "The bus might have gone already. Nobody's at the stop."
+    ],
+    "point": "過去の推量は might have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:124d283eb6e41a0b43b2b57582c4229b4a5e50fa1749e41e70e8f7447631283b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7v9m6e3x",
+    "ja": "兄は昨日、間違った電車に乗っちゃったんだ。",
+    "en": "My brother took the wrong train yesterday.",
+    "alternatives": [
+      "My brother got on the wrong train yesterday.",
+      "Yesterday my brother took the wrong train."
+    ],
+    "point": "「間違った電車」は a ではなく the wrong train",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 2,
+    "grammar": ["past-simple", "articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:faacdfeb921140c83e3c975fd15d21ef490eb45ff5c8673a6e84c6c2aaabba67",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8d8u5f7f",
+    "ja": "この時間は道がすごく混んでるから、タクシーより電車のほうがたぶん早いよ。",
+    "en": "The train will probably be faster than a taxi because traffic is really bad this time of day.",
+    "alternatives": [
+      "Taking the train will probably be quicker than taking a taxi, since the roads are really busy right now.",
+      "The train's probably faster than taking a taxi because traffic is terrible at this hour."
+    ],
+    "point": "「〜より早い」は faster than。「道が混む」は traffic is bad が自然",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 7,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:25f6ac610140a559d01377d1d0922862f1bdc7225800fab2919fefaba205a448",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8e2g9d9x",
+    "ja": "私たちが乗る予定だった電車がなぜ運休になったのか、駅員さんの説明がよくわからなかったんです。",
+    "en": "We didn't really understand what the station staff said about why the train we were supposed to take had been canceled.",
+    "alternatives": [
+      "We couldn't really follow the station staff's explanation of why the train we were going to take had been canceled.",
+      "We didn't quite understand the station attendant's explanation of why the train we'd planned to take was canceled."
+    ],
+    "point": "「乗る予定だった電車」は the train we were supposed to take",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 10,
+    "grammar": ["nested-clauses", "noun-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9edd0ca5b52b0ad240d74099611f1caa61cde930efd8d91904f3bd5e9d22df88",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9v2x4e8p",
+    "ja": "すみません、この電車は渋谷に止まりますか？",
+    "en": "Excuse me, does this train stop at Shibuya?",
+    "alternatives": [
+      "Excuse me, is this train stopping at Shibuya?",
+      "Excuse me, will this train stop at Shibuya?"
+    ],
+    "point": "「止まる」は stop at。主語が this train なので does を使う",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9a0d6ea5b1cd1849fbe3c55a3f65f650435773656584a09371e2a356cf82f694",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

@@ -1,0 +1,420 @@
+[
+  {
+    "id": "c_2m7j8b6n",
+    "ja": "私たちは今、銀行の窓口で順番を待っているところです。",
+    "en": "We're waiting for our turn at the bank.",
+    "alternatives": [
+      "We're waiting in line at the bank now.",
+      "We're standing in line at the bank right now."
+    ],
+    "point": "「今〜しているところ」は be + 〜ing",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4b2750d742da0d7a53eb6b083c6b424c2304ef9dc71f43427edee1aa14c54ec0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2q4d9x2k",
+    "ja": "兄は今日の午後、修理に出したノートパソコンを受け取りにお店へ行く予定です。",
+    "en": "My brother is going to the repair shop this afternoon to pick up his laptop.",
+    "alternatives": [
+      "My brother plans to go to the repair shop this afternoon to pick up his laptop.",
+      "This afternoon my brother is going to the repair shop to get his laptop back."
+    ],
+    "point": "「〜しに行く」の目的は to 不定詞で後ろに置く",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 5,
+    "grammar": ["infinitives", "future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e9460b6c44fef5c3b8bd85dad649b590571102086584cc05962e23027efb3a32",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3h8t5t9d",
+    "ja": "妹は郵便局で、この小包を送るにはもう少し情報が必要だと言われました。",
+    "en": "My sister was told at the post office that they needed some more information to send this package.",
+    "alternatives": [
+      "At the post office, my sister was told they needed more information to send this package.",
+      "The post office told my sister they needed some more information to ship this package."
+    ],
+    "point": "information は数えられない名詞、informations や an は不可",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 7,
+    "grammar": ["articles-and-countability", "passive-voice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a1fc244b7006d8787417280c0862ee39ee9eae0c7772c714403e68dc81d70cf6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3m8x3z6u",
+    "ja": "この書類に記入したいので、そのペンをお借りしてもいいですか？",
+    "en": "May I borrow your pen to fill out this form?",
+    "alternatives": [
+      "Could I borrow your pen to fill out this form?",
+      "Is it okay if I borrow your pen to fill out this form?"
+    ],
+    "point": "「記入する」は fill out、目的は to で続ける",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 3,
+    "grammar": ["requests-permission", "infinitives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4621dba0959cb6e67f85725042d0959de6e6b9a5dedf1139fd8e42f5f395f160",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3p3k6y4x",
+    "ja": "市役所の窓口は、土曜日は閉まっています。",
+    "en": "The city hall counter is closed on Saturdays.",
+    "alternatives": [
+      "The counter at city hall is closed on Saturdays.",
+      "The service counter at city hall is closed on Saturdays."
+    ],
+    "point": "毎週のことなので on Saturdays と複数形",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3553a8418874656bcea8f06c6bda16823eb809679f9cf99dc33fd3a5b9702bd3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3p4p5c2v",
+    "ja": "郵便局の人が、この小包は明日届くって言ってたよ。",
+    "en": "The person at the post office said this package would arrive tomorrow.",
+    "alternatives": [
+      "The post office clerk said this package will arrive tomorrow.",
+      "The guy at the post office told me this package would arrive tomorrow."
+    ],
+    "point": "said の後の that 節は will を would に揃えることが多い",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 6,
+    "grammar": ["noun-clauses", "reported-speech"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f6fd1f93bd28d9e1b1cb9d621557812cc3d80cf2938d6c31b1d78bcaae66e820",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3t2e7n5g",
+    "ja": "修理に出したのは画面じゃなくて、バッテリーの方だったんですよ。",
+    "en": "It was the battery, not the screen, that I took in for repair.",
+    "alternatives": [
+      "What I took in for repair was the battery, not the screen.",
+      "It was the battery that I sent in for repair, not the screen."
+    ],
+    "point": "強調したい語を It was と that の間に挟む",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1548a0a43ed4a3c0d78366c97bdf09467d14f4713a21ce2f60af68979e3bc303",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4c3m2y9m",
+    "ja": "修理が終わったら、携帯に電話してもらえますか？",
+    "en": "Could you call my cell phone when the repair is finished?",
+    "alternatives": [
+      "Could you give me a call on my cell when the repair is done?",
+      "Can you call my cell phone once the repair is finished?"
+    ],
+    "point": "when 節は未来のことでも現在形、will be finished にしない",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 3,
+    "grammar": ["time-and-if-clauses", "requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:aa27bdf05d9e4b2a3e9dee5442ad48914a48d2aa81eb49eca97d57b8902ed71e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4e6f4n7y",
+    "ja": "郵便局の窓口の人によると、先週私が送った書類がまだ届いていないのは、住所の書き方のせいかもしれないそうです。",
+    "en": "The clerk at the post office said the reason the documents I sent last week haven't arrived might be the way I wrote the address.",
+    "alternatives": [
+      "According to the post office clerk, the documents I sent last week may not have arrived yet because of how I wrote the address.",
+      "The post office clerk told me the documents I mailed last week might not have arrived because of the way I wrote the address."
+    ],
+    "point": "主語 the reason 〜 arrived が長くても動詞 might be を落とさない",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 10,
+    "grammar": ["nested-clauses", "reported-speech"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:210a1559ca2d0027c82e4f1ff335899b8d25eef096afc04e88e9bf87a779ca45",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5b3z2c3p",
+    "ja": "銀行のATMの前に、今日は長い列ができています。",
+    "en": "There's a long line at the bank ATM today.",
+    "alternatives": [
+      "There's a long line in front of the bank ATM today.",
+      "There is a long line at the ATM at the bank today."
+    ],
+    "point": "「列ができている」は There's a long line で表す",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 2,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:801fdf0068e2fc15639f25fbf26d557bc8a6b72d447a31c9d54f5b3ed22bb35d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5f5p5v4b",
+    "ja": "こちらの用紙にお名前を書いてください。",
+    "en": "Please write your name on this form.",
+    "alternatives": [
+      "Please put your name on this form.",
+      "Write your name on this form, please."
+    ],
+    "point": "用紙に書くは on this form で in ではない",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:717b4220f81b6ab54e15d68ca8247db71274501a03c09e96c0f7fed21df2138d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5v5q4x3g",
+    "ja": "先月パスポートを更新しておけば、今こんな長い列に並んでいないのに。",
+    "en": "If I had renewed my passport last month, I wouldn't be standing in this long line now.",
+    "alternatives": [
+      "If I'd renewed my passport last month, I wouldn't be waiting in this long line now.",
+      "I wouldn't be stuck in this long line now if I had renewed my passport last month."
+    ],
+    "point": "過去の条件は had 過去分詞、今の結果は would be 〜ing",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2334c10615add6f0cd2feadc282ea05a5195fdc9108d211031cf4dbbc1d9d696",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6j4w4g5e",
+    "ja": "この申込書の書き方がよく分からないので、手伝っていただけないかと思いまして。",
+    "en": "I'm not sure how to fill out this form, so I was wondering if you could help me.",
+    "alternatives": [
+      "I'm not sure how to fill out this form, so I was hoping you could help me.",
+      "I don't really know how to fill in this form, so I was wondering if you could help me."
+    ],
+    "point": "丁寧な依頼は I was wondering if you could で過去形にする",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 7,
+    "grammar": ["hedging-softening", "indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b227cb8c1c46fd70d1d86f27f9326f382502ca13efb757559abd308ace589955",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6p7c4f7f",
+    "ja": "母は郵便局で、もう30分も列に並んでいます。",
+    "en": "My mom has been in line at the post office for thirty minutes.",
+    "alternatives": [
+      "My mom has been waiting in line at the post office for thirty minutes.",
+      "My mother has been standing in line at the post office for thirty minutes."
+    ],
+    "point": "今も続いている状態は has been で表す",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 4,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:24104aadc99a672354cc6d90da5c08852be6fa17fb0ba9bc9fd16a0b3b7f6cda",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6v4u4d3c",
+    "ja": "私の新しいキャッシュカード、もう郵送してくれましたか？",
+    "en": "Have you mailed my new bank card yet?",
+    "alternatives": [
+      "Have you already sent my new bank card?",
+      "Have you sent out my new bank card yet?"
+    ],
+    "point": "疑問文の「もう」は文末の yet で表す",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 3,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f112b6d712b934b4fe7c7fb539748e857f33097c5c42f954ea3b43ddf86f62ac",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7b5z7p5r",
+    "ja": "修理カウンターで働いている女性が、私のスマホは金曜までに仕上がるって言ってたよ。",
+    "en": "The woman working at the repair counter said my phone would be ready by Friday.",
+    "alternatives": [
+      "The woman who works at the repair counter said my phone would be ready by Friday.",
+      "The woman at the repair counter told me my phone would be ready by Friday."
+    ],
+    "point": "working at 〜 を名詞の後ろに置き、said の後は would で時制を合わせる",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 6,
+    "grammar": ["post-modification", "reported-speech"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6b40ca309857bab5cd1b06d002cd5d0a103dfd6b2de05479a80738e8ba238b44",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7t9p7w7p",
+    "ja": "兄は郵便局が閉まる前に着いていれば、昨日のうちに小包を受け取れたのに。",
+    "en": "If my brother had gotten to the post office before it closed, he could have picked up the package yesterday.",
+    "alternatives": [
+      "My brother could have picked up the package yesterday if he'd gotten to the post office before it closed.",
+      "If my brother had made it to the post office before it closed, he could've gotten the package yesterday."
+    ],
+    "point": "過去の仮定は had＋過去分詞、結果は could have＋過去分詞",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 8,
+    "grammar": ["third-conditional", "modal-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:58ff86e3f42b79a5394e96e35de474e439ce372e80ae6f17b3eced7e98e6e5c0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9d2w9z9p",
+    "ja": "先週キャッシュカードをなくしたんですが、もう銀行で再発行してもらいました。",
+    "en": "I lost my bank card last week, but I've already had it reissued.",
+    "alternatives": [
+      "I lost my bank card last week, but the bank has already reissued it.",
+      "I lost my ATM card last week, but I've already gotten a new one from the bank."
+    ],
+    "point": "先週は過去形、「もう〜した」は現在完了で分ける",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 6,
+    "grammar": ["tense-contrast", "causatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fe8c29d3e55e97836a0ca3c6be1780a078c4d12d38d451c87bacf2cbab33a7d5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9g9p6z2y",
+    "ja": "もし海外でキャッシュカードをなくしたら、あなたならまず銀行に電話する、それとも支店に行く？",
+    "en": "If you lost your bank card abroad, would you call the bank first or go to a branch?",
+    "alternatives": [
+      "If you were to lose your bank card abroad, would you call the bank first or visit a branch?",
+      "What would you do first if you lost your bank card abroad, call the bank or go to a branch?"
+    ],
+    "point": "仮の話なので if 節は過去形 lost、主節は would you",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 8,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:79005bfdb3700639e2e593901948fea1cf0dbfc2bc24115af22ecf1b8b6582d4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

@@ -1,0 +1,663 @@
+[
+  {
+    "id": "c_2c4u3z7n",
+    "ja": "週末で一番楽しかったのは、実は久しぶりに家で何もしないでのんびりしたことなんだ。",
+    "en": "What I enjoyed most about the weekend was actually relaxing at home and doing nothing for the first time in a while.",
+    "alternatives": [
+      "The thing I enjoyed most about the weekend was actually relaxing at home and doing nothing for the first time in a while.",
+      "What I enjoyed most this weekend was actually just relaxing at home and doing nothing for the first time in ages."
+    ],
+    "point": "「一番〜なのは」は What I enjoyed most was で始める",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0086f7abb5e150db1f333e892889c1c9bf860ce6205a001f6a7788c0676b9f5b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3b7r6j5y",
+    "ja": "先週末は雨がひどかったから、子どもたちには一日中家で好きなゲームをさせてあげたんだ。",
+    "en": "The rain was so heavy last weekend that I let the kids play whatever games they wanted at home all day.",
+    "alternatives": [
+      "It rained so hard last weekend that I let the kids play any games they liked at home all day.",
+      "Since it was pouring last weekend, I let my kids play whatever games they wanted at home all day long."
+    ],
+    "point": "「させてあげた」は let + 人 + 動詞の原形（to は不要）",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 8,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e012ade65302bc133b1deeca71c22bcc1856bc6dc6856df759194f7ab047f7de",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3c7e2n2b",
+    "ja": "もしかして今週末の天気がどうなるか知ってたりしない？子どもたちを公園に連れて行きたいなと思ってて。",
+    "en": "I don't suppose you know what the weather's going to be like this weekend? I'm hoping to take the kids to the park.",
+    "alternatives": [
+      "You wouldn't happen to know what the weather's going to be like this weekend, would you? I'd like to take the kids to the park.",
+      "Do you happen to know what the weather's going to be like this weekend? I'm hoping to take the kids to the park."
+    ],
+    "point": "「知ってたりしない？」は I don't suppose や happen to で柔らかく",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 9,
+    "grammar": ["hedging-softening", "indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d3339c65067d008bb609c60f861a4c5be35332efea3e0523ac2035ba55a29048",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3r8t7w8r",
+    "ja": "新しい家の写真、見せてよ。",
+    "en": "Show me some pictures of your new house.",
+    "alternatives": [
+      "Show me some photos of your new place.",
+      "Show me a few pictures of your new house."
+    ],
+    "point": "複数の写真は pictures、漠然と「何枚か」なら some を付ける",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 1,
+    "grammar": ["articles-and-countability", "imperatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8643589a20bd751660d77c7b2ddf07ce36689f82e038ea2fc5796cabb71fad62",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4b3h5u3v",
+    "ja": "雨がやんだら、私は歩いて駅まで行くよ。",
+    "en": "I'll walk to the station when the rain stops.",
+    "alternatives": [
+      "When the rain stops, I'll walk to the station.",
+      "I'll walk to the station once the rain stops."
+    ],
+    "point": "未来のことでも when 節は現在形 stops",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 3,
+    "grammar": ["time-and-if-clauses", "future-forms"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:23a625357091bc1397d1767e1325f75f0cf98b0fa68c015c7d5b8c9a33f243a2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4d7a2r6d",
+    "ja": "天気予報では週末は雨だって言ってたのに、結局ずっと晴れてたね。",
+    "en": "The forecast said it would rain this weekend, but it stayed sunny the whole time.",
+    "alternatives": [
+      "The weather forecast said it was going to rain this weekend, but it was sunny the whole time.",
+      "They said it would rain this weekend, but it ended up being sunny all weekend."
+    ],
+    "point": "said に合わせて will を would にする",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 6,
+    "grammar": ["reported-speech", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2fcd71667f92292aa831ac2729443557bddc937f5095b4e8a530aaf155294a4a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4h3j2j6p",
+    "ja": "じゃあ、去年あの仕事を断ってなかったら、君は今ごろ大阪に住んでたかもしれないってこと？",
+    "en": "So if you hadn't turned down that job last year, you might be living in Osaka now?",
+    "alternatives": [
+      "So you might be living in Osaka now if you hadn't turned down that job last year?",
+      "So if you hadn't said no to that job last year, you could be living in Osaka now?"
+    ],
+    "point": "去年の仮定は過去完了、今の状況は might be living",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 10,
+    "grammar": ["mixed-conditional", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:09e313080d30524fe6f3852ca0d40f4c4a6ae4f70c8fedc740133e9b2a474341",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4j4r5t5f",
+    "ja": "駅前のラーメン屋、いつも行列ができてるよね。行ったことある？",
+    "en": "There's always a line at the ramen shop by the station. Have you tried it?",
+    "alternatives": [
+      "There's always a long line at that ramen place near the station. Have you been there?",
+      "There's always a line outside the ramen shop by the station. Have you ever eaten there?"
+    ],
+    "point": "「行列ができてる」は There's a line で言える",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 5,
+    "grammar": ["there-is-are", "present-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:84f322f7b6a4d3cec3d03e4feae7ca760fd60c59a5c3ca53a33b244aa73817ea",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4x6v5t9u",
+    "ja": "週末はどこに行ったの？",
+    "en": "Where did you go this weekend?",
+    "alternatives": [
+      "Where did you go on the weekend?",
+      "Where'd you go over the weekend?"
+    ],
+    "point": "過去の疑問文は did + 動詞の原形",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 2,
+    "grammar": ["wh-questions", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:38de4ed97f9f483b9d8b173fc7562496e6bc2e5098b331dbd4987007999b207b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4z7t9f8a",
+    "ja": "先週教えてもらったカフェ、行ってみたよ。すごくよかった。",
+    "en": "I went to the café you told me about last week. It was great.",
+    "alternatives": [
+      "I tried the café that you told me about last week, and I loved it.",
+      "I checked out the café you recommended last week. It was really good."
+    ],
+    "point": "told me about の about を落とさない",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 5,
+    "grammar": ["relative-clauses", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0f37f047980eb41d35a1e913174780a4122fc40cbb09ab21355201ac711202eb",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5m5q5h2b",
+    "ja": "天気予報をちゃんと見てたら、姉は土曜日のキャンプを延期してたと思うよ。",
+    "en": "If my sister had checked the weather forecast, I think she would have postponed Saturday's camping trip.",
+    "alternatives": [
+      "I think my sister would have put off Saturday's camping trip if she'd checked the forecast.",
+      "If my sister had looked at the weather forecast, she probably would have postponed her Saturday camping trip."
+    ],
+    "point": "過去の仮定は if + had 過去分詞、結果は would have",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 7,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ff27308f8b83eea45452ca6a26d8741894f9cb0c3cee769407094f607d130c73",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5p5g5s3t",
+    "ja": "今夜は寒くなるよ。上着を持っていったほうがいいよ。",
+    "en": "It'll be cold tonight. You should take a jacket.",
+    "alternatives": [
+      "It's going to be cold tonight. You should bring a jacket.",
+      "It'll get cold tonight. You should take a coat."
+    ],
+    "point": "助言は should、have to だと強すぎる",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 2,
+    "grammar": ["modal-obligation-advice", "future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c0d98cf5002f86220dfdb743d3b7c08fd6c422ebbc364cc9f8487eeb53d0519f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5p5q9g4f",
+    "ja": "昨日君が電話くれたとき、私は犬と遊んでいたんだ。",
+    "en": "I was playing with my dog when you called yesterday.",
+    "alternatives": [
+      "I was playing with the dog when you called yesterday.",
+      "When you called yesterday, I was playing with my dog."
+    ],
+    "point": "「〜していた」は過去進行形 was + -ing",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 3,
+    "grammar": ["progressive-aspect", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a373425a612176428fa73a118a78f19fe3e24f2d6b40660082bc7ca096574722",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5r9k5z4f",
+    "ja": "もし毎週末こんなにいい天気だったら、僕は絶対ジョギングを始めるんだけどな。",
+    "en": "If the weather were this nice every weekend, I'd definitely start jogging.",
+    "alternatives": [
+      "If every weekend were this nice, I'd definitely take up jogging.",
+      "I'd definitely start jogging if the weather were this nice every weekend."
+    ],
+    "point": "事実と違う仮定は if 節を過去形、主節を I'd にする",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 5,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f0344af9bbbdbbcb18a5f6648cd6d2b57f02d0ef79ed387c3ef32f7e07b916ed",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5x2x3j3k",
+    "ja": "今年の夏は去年よりずっと暑いですね。",
+    "en": "This summer is much hotter than last year, isn't it?",
+    "alternatives": [
+      "It's much hotter this summer than last year, isn't it?",
+      "This summer is a lot hotter than last year, isn't it?"
+    ],
+    "point": "比較級を強めるのは very ではなく much や a lot",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 3,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:01ad5e3b54cb87685c97817ecac4e2ec18ebf42bad797cc2523ef5e47a120d9a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5y6e2h8a",
+    "ja": "忙しかったけど、昔の友達に久しぶりに会えて、いい週末だったよ。",
+    "en": "Although I was busy, I had a great weekend catching up with old friends.",
+    "alternatives": [
+      "Even though I was busy, I had a great weekend catching up with old friends.",
+      "I was busy, but I had a nice weekend catching up with some old friends.",
+      "I was busy, but it was a good weekend because I got to see some old friends I hadn't seen in ages."
+    ],
+    "point": "although の後に but は重ねない",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 6,
+    "grammar": ["concession-contrast", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9f7f07d4b1fdb211b7533bcfea04f25fc39507577c97b675edee917ddb71f04d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6e8c3p6x",
+    "ja": "引っ越してからもう半年だけど、新しい街にはもう慣れた？先月会ったときはまだ道に迷ってたよね。",
+    "en": "It's been six months since you moved, so have you gotten used to the new town yet? You were still getting lost when I saw you last month.",
+    "alternatives": [
+      "You moved six months ago, so are you used to the new town now? You were still getting lost when we met last month.",
+      "Have you settled into the new town yet? It's been six months since you moved, and you were still getting lost when I saw you last month."
+    ],
+    "point": "今の状態は現在完了、先月の様子は過去進行形で分ける",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:60141143c1ca39ced6ea365152425f78e1e1881943ac1896ae0c2c49d77c7cde",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6m4v4f5f",
+    "ja": "すごく日焼けしてるね。先週の連休は、どこか暖かいところに行ってたに違いないね。",
+    "en": "You're really tanned. You must have gone somewhere warm over last week's long weekend.",
+    "alternatives": [
+      "You've got a great tan. You must have been somewhere warm over the long weekend last week.",
+      "You're so tanned. You must have gone somewhere warm for last week's long weekend."
+    ],
+    "point": "過去の推量「〜したに違いない」は must have + 過去分詞",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3382fef53ab1e775dc81b13cf846cc0006f543d37825fe5cc2ec9ae9e2be22bd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6p2j6x3d",
+    "ja": "あのとき姉がキャンプに誘ってくれなかったら、私は今ごろこんなにアウトドアにハマってなかったと思う。",
+    "en": "If my sister hadn't invited me camping back then, I don't think I'd be this into the outdoors now.",
+    "alternatives": [
+      "I don't think I'd be so into the outdoors now if my sister hadn't invited me camping back then.",
+      "If my sister hadn't asked me to go camping back then, I don't think I'd be this into the outdoors now."
+    ],
+    "point": "過去の仮定は hadn't invited、今の結果は I'd be",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 10,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3ee3664b0a78230817b496d270ad4e1982fcf5770acb9f75834d96b92e5df515",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6u5a8t7p",
+    "ja": "妹は毎週末テニスをするんだ。",
+    "en": "My sister plays tennis every weekend.",
+    "alternatives": [
+      "My sister plays tennis on weekends.",
+      "My younger sister plays tennis every weekend."
+    ],
+    "point": "主語が三人称単数なので plays と s を付ける",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b5e11560d0f71b1fedd46cd12f099a0928be9a1e641943262ed5d0bd3435dacd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7a9q7s3g",
+    "ja": "今年の夏は暑かっただけでなく、雨もほとんど降らなかった。",
+    "en": "Not only was this summer hot, but we also hardly had any rain.",
+    "alternatives": [
+      "Not only was it hot this summer, but it also barely rained at all.",
+      "It wasn't just hot this summer; it also hardly rained at all."
+    ],
+    "point": "Not only が文頭なら was this summer と語順が逆になる",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6e39f46ced9712eb9cec6d82508f71e53786fe1efd1aa0eee6d7d4021438b386",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7e6t7g4j",
+    "ja": "駅の近くに新しいカフェがあるよ。",
+    "en": "There's a new cafe near the station.",
+    "alternatives": [
+      "There is a new coffee shop near the station.",
+      "There's a new cafe by the station."
+    ],
+    "point": "「〜がある」は There's で始める",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 1,
+    "grammar": ["there-is-are", "articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:150c62a8045ae42f38afcedf56f48c46c1a944c03bccb34f18707b808e4ff3df",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7q6j6b3n",
+    "ja": "今週末に僕が一番したいのは、家でゆっくりすることだよ。",
+    "en": "What I want to do most this weekend is relax at home.",
+    "alternatives": [
+      "What I most want to do this weekend is relax at home.",
+      "The thing I want to do most this weekend is relax at home."
+    ],
+    "point": "「〜したいこと」が主語。動詞は is で受ける",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 5,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:93c1d4d54f284072747c62479e9e1a08bbfd3a5751318a4c20e0f343edf013ed",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8b9x5w7j",
+    "ja": "昨日の夜の花火大会、雨で中止になったんだって。",
+    "en": "I heard last night's fireworks show was canceled because of the rain.",
+    "alternatives": [
+      "I heard the fireworks last night got canceled because of the rain.",
+      "Apparently, last night's fireworks show was canceled due to the rain."
+    ],
+    "point": "「中止になった」は be/get canceled の受け身で",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 4,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c2dfa1d9c122ff2c2781033fa5aef3d3c6d31519c2f32a632f18f1eb88798f04",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8h9y2e8s",
+    "ja": "先週末に君が話してたカフェ、ついに行ってみたよ。もっと早く知っていればよかったなあ。",
+    "en": "I finally tried that café you mentioned last weekend, and I wish I'd known about it much sooner.",
+    "alternatives": [
+      "I finally went to the café you told me about last weekend, and I wish I'd found out about it sooner.",
+      "I finally checked out that café you mentioned last weekend. If only I'd known about it earlier!"
+    ],
+    "point": "過去の後悔は I wish の後を過去完了 I'd known にする",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4fd600338485e408ab6cfd7c15101d25afcfc4fea52adc3c7d7715a25943adc1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8t4t6f3d",
+    "ja": "駅前の新しいパン屋さんが何時に開くか知ってる？",
+    "en": "Do you know what time the new bakery by the station opens?",
+    "alternatives": [
+      "Do you know when the new bakery near the station opens?",
+      "Any idea what time the new bakery by the station opens?"
+    ],
+    "point": "間接疑問は主語＋動詞の語順で does は使わない",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 4,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:60ceb6aa63d456bbc66c8be9ef9b908f651c535e290b8769c05b4c6275b44388",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9b8b9b7w",
+    "ja": "この前話した、隣に越してきたご夫婦が、先週末うちをバーベキューに誘ってくれたんだ。",
+    "en": "The couple I told you about, the ones who moved in next door, invited us over for a barbecue last weekend.",
+    "alternatives": [
+      "You know the couple who moved in next door that I mentioned? They invited us to a barbecue last weekend.",
+      "That couple who moved in next door, the ones I told you about, invited us to a barbecue last weekend."
+    ],
+    "point": "長い主語を関係節でまとめてから動詞 invited へ",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 8,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7ff8b7fddb0de151f383f89318cb66f1f5e7f4dd72246b7336ff2393d19ddd4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9h4r8a6s",
+    "ja": "週末の旅行の写真を私に送ってって、姉に頼んでおいたよ。",
+    "en": "I asked my sister to send me the photos from our weekend trip.",
+    "alternatives": [
+      "I've asked my sister to send me the pictures from our weekend trip.",
+      "I asked my sister to send me our weekend trip photos."
+    ],
+    "point": "ask＋人＋to do の形で、人の後に to を置く",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 4,
+    "grammar": ["verb-object-to-do", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e482012ddbfb0da5a39800b62a1d638b1c1d9f509e308e88df979f4da8396c5a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9v5d9a8y",
+    "ja": "土曜の午後は妻と川沿いをずっと歩いて、途中でたまたま見つけたカフェに寄ったりしたんだ。",
+    "en": "My wife and I walked along the river all Saturday afternoon, stopping at a cafe we happened to find along the way.",
+    "alternatives": [
+      "On Saturday afternoon, my wife and I walked along the river for hours, stopping at a cafe we came across on the way.",
+      "My wife and I walked by the river all Saturday afternoon, dropping into a cafe we happened to find along the way."
+    ],
+    "point": "後半の「〜に寄ったりした」は , stopping のように -ing でつなぐ",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 9,
+    "grammar": ["participle-clauses", "relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:10c67ba1318e1569ca359a55f39f3205a4be47802008dad0896bca784dbade08",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9x5g7s9b",
+    "ja": "今日は本当に暑いですね。窓を開けてもいいですか？",
+    "en": "It's really hot today. Is it okay if I open the window?",
+    "alternatives": [
+      "It's really hot today. Do you mind if I open the window?",
+      "It's really hot today. May I open the window?"
+    ],
+    "point": "Is it okay if I の後は動詞の現在形",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 4,
+    "grammar": ["requests-permission", "be-and-present-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4bfa39bb356f342c49db25cd6efc6cb80654a2d0ea44cc5b46cc35341701138b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

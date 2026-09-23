@@ -1,0 +1,486 @@
+[
+  {
+    "id": "c_2s4k7y9k",
+    "ja": "今日の午後だけ、共有のビルドサーバーの設定を変えさせてもらってもいいでしょうか？",
+    "en": "Would it be okay if I changed the shared build server's settings just for this afternoon?",
+    "alternatives": [
+      "Is it okay if I change the shared build server's settings just for this afternoon?",
+      "Could I change the settings on the shared build server just for this afternoon?"
+    ],
+    "point": "Would it be okay if の後は過去形 changed にする",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 7,
+    "grammar": ["requests-permission", "hedging-softening"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ec601b773681e0aa25f409a4bebf4193e663cdbccfe93eec248fb9cad53ccbca",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2s8p4a3j",
+    "ja": "このプロジェクトにセットアップ用のスクリプトってありますか？",
+    "en": "Is there a setup script for this project?",
+    "alternatives": [
+      "Does this project have a setup script?",
+      "Is there a script for setting up this project?"
+    ],
+    "point": "「〜ある？」は Is there 〜? で主語は後ろ",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 2,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2e33e9c74975b8ea4750e493c18eaf8d550b4983e82470fa4d0155a10ac1aca3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2y4h7k8n",
+    "ja": "ローカルで Docker を動かすとメモリをどれだけ食うか、セットアップする前に知っておけばよかった。",
+    "en": "I wish I'd known how much memory Docker would eat up locally before I set it up.",
+    "alternatives": [
+      "If only I'd known how much memory Docker would use locally before I set it up.",
+      "I wish I had realized how much memory Docker takes up locally before setting it up."
+    ],
+    "point": "過去の後悔は I wish の後を過去完了 I'd known にする",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 10,
+    "grammar": ["wishes-regrets", "noun-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a397885e212e6cf3f1d3b8aadb5b4eb7d3b7cabb822ba7d13d6c6284742172d6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4t2z2b7p",
+    "ja": "リードエンジニアが先週、全員のノートPCに同じエディタを入れました。",
+    "en": "The lead engineer installed the same editor on everyone's laptop last week.",
+    "alternatives": [
+      "Last week, the lead engineer installed the same editor on everyone's laptop.",
+      "The lead engineer put the same editor on everyone's laptop last week."
+    ],
+    "point": "入れる先は on everyone's laptop。in にしない",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 4,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:77022a61c8e3ee56f8e2b0b99acf257adfc0fec89645685a6fa05c8a19836b58",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4x6a5t6w",
+    "ja": "先週 Docker は入れたんだけど、ボリュームの共有方法はまだわかってないんだ。",
+    "en": "I set up Docker last week, but I still haven't figured out how to share volumes.",
+    "alternatives": [
+      "I installed Docker last week, but I still haven't worked out how to share volumes.",
+      "I got Docker set up last week, but I haven't figured out how to share volumes yet."
+    ],
+    "point": "last week は過去形、「まだ〜ない」は現在完了で",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 6,
+    "grammar": ["tense-contrast", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef6a1c1a2e1e508ae621df81665fdf6cd626d245bef60586332c9cda2c299c0c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5h2t7h3w",
+    "ja": "最近、やっとターミナルでコマンドを打つのに慣れてきたよ。",
+    "en": "I'm finally getting used to typing commands in the terminal.",
+    "alternatives": [
+      "I'm finally getting used to entering commands in the terminal.",
+      "I'm finally getting comfortable typing commands in the terminal."
+    ],
+    "point": "get used to の to は前置詞、後ろは typing",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 3,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7b39aace51acd4a6f8d5449f947373050a76cba3ced95c9ef034c95929d60bed",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5s9h6n9e",
+    "ja": "新しく入った人が初日にインストールしなきゃいけないツールをまとめたリストって、どこかにありますか？",
+    "en": "Is there a list somewhere of the tools that new hires need to install on their first day?",
+    "alternatives": [
+      "Do we have a list anywhere of the tools new hires have to install on their first day?",
+      "Is there a list somewhere of the tools new people need to install on day one?"
+    ],
+    "point": "a list of the tools の後ろに that 節を続けて名詞を修飾する",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d5c416029e671eedb885bdf8506aab7ba9d5fd0e457c90198fc19ee1e1283b9a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6k7d8h5x",
+    "ja": "私は今、エディタに新しい拡張機能をインストールしているところです。",
+    "en": "I'm installing a new editor extension now.",
+    "alternatives": [
+      "I'm installing a new extension for my editor now.",
+      "Right now I'm installing a new editor extension."
+    ],
+    "point": "「今〜しているところ」は現在進行形 I'm 〜ing",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7e6fc880d6aec39988acd12338cb1040b3c9a4891435f404bf375d3f371d96e0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6n3q4k6u",
+    "ja": "リンターは保存するたびに自動で走るけど、型チェックはコミットするときだけ走るように設定してあります。",
+    "en": "I've set it up so that the linter runs automatically every time you save, whereas the type check only runs when you commit.",
+    "alternatives": [
+      "I've configured it so the linter runs automatically whenever you save, while the type check only runs on commit.",
+      "I've set it up so the linter runs automatically each time you save, but the type check runs only when you commit."
+    ],
+    "point": "対比は whereas で2つの設定を並べる",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:caaa355df8a594e62992eab71e4a5796f5dba8e835aac4a97e87fc51d81c9a96",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7f7b2e9g",
+    "ja": "自分のノートパソコンだと Docker が使えないんです。",
+    "en": "I can't use Docker on my laptop.",
+    "alternatives": [
+      "I'm not able to use Docker on my laptop.",
+      "Docker doesn't work on my laptop."
+    ],
+    "point": "can't の後の動詞は原形の use",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3c9994d1dad3a527ec50fc3b601ed38ce7b3eee73c001e9da8b96e1a98ca1919",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7t6t2g7y",
+    "ja": "Docker を入れたら、このコマンドを実行してください。",
+    "en": "Please run this command once you've installed Docker.",
+    "alternatives": [
+      "Run this command after you install Docker.",
+      "After you've installed Docker, please run this command."
+    ],
+    "point": "「入れたら」は完了後なので once you've installed で",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 3,
+    "grammar": ["time-and-if-clauses", "imperatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:32154ad54542bf3e776d0db9c3256f1f77f8f2feeb2d77861e13555437972dc7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7z4u3q8h",
+    "ja": "新しいメンバーに、VS Code の拡張機能を入れるように伝えてもらえますか？",
+    "en": "Could you tell the new member to install the VS Code extensions?",
+    "alternatives": [
+      "Can you tell the new member to install the VS Code extensions?",
+      "Could you ask the new member to install the VS Code extensions?"
+    ],
+    "point": "tell + 人 + to install の形。that 節にしない",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 4,
+    "grammar": ["verb-object-to-do", "requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6bd73ac21860f3eba2be3998c2328f8a9afdb31213e5113ccbc484c5aaf79231",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8g4g4u4v",
+    "ja": "うちのチームは毎日 GitHub を使っています。",
+    "en": "Our team uses GitHub every day.",
+    "alternatives": [
+      "Our team works with GitHub every day.",
+      "We use GitHub every day."
+    ],
+    "point": "team は三人称単数なので uses と s を付ける",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:149c527f644b7f9eeac2c197f8c7b5361249bc540b848509186c680d8c9ae8b4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8h9f8n4d",
+    "ja": "もし彼女がもっと速いマシンを持っていたら、テストを全部ローカルで回せるのにね。",
+    "en": "If she had a faster machine, she could run all the tests locally.",
+    "alternatives": [
+      "She could run all the tests locally if she had a faster machine.",
+      "If she had a faster computer, she'd be able to run all the tests locally."
+    ],
+    "point": "現実と違う仮定なので had と could の過去形を使う",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 5,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:22561a304a85e18086f5373f231ccf6e346ae3c140f5ebecc99ebeb758f83e12",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8q9g3b9n",
+    "ja": "このエディタを 3 年使ってきたけど、こんなに便利な拡張機能は一度も見たことがないよ。",
+    "en": "I've used this editor for three years, but I've never seen such a useful extension.",
+    "alternatives": [
+      "I've been using this editor for three years, and I've never come across an extension this useful.",
+      "I've used this editor for three years and have never seen an extension as useful as this."
+    ],
+    "point": "「3年使ってきた」「見たことがない」はどちらも現在完了",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 5,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8033b91b756714b96050afc5fc0f66bb21d27065462b942bb3678a4dc4c2a6f6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8v5q5j7c",
+    "ja": "インフラチームって、VPN につながないと僕たちはステージング環境に入れないって言ってたっけ？",
+    "en": "Did the infra team say we couldn't access the staging environment unless we were connected to the VPN?",
+    "alternatives": [
+      "Did the infrastructure team say we couldn't get into the staging environment unless we were on the VPN?",
+      "Didn't the infra team say we couldn't access staging without connecting to the VPN?"
+    ],
+    "point": "say の後は時制を合わせて couldn't / were にする",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 7,
+    "grammar": ["reported-speech", "noun-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2eb5a0db9ad15ccf8a702c5233198437694e98b3a218ced78b7796d93f35d836",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8w8k4h3e",
+    "ja": "昨日ビルドが失敗したとき、私はもうキャッシュを消してありました。",
+    "en": "I had already cleared the cache when the build failed yesterday.",
+    "alternatives": [
+      "When the build failed yesterday, I had already cleared the cache.",
+      "I'd already deleted the cache by the time the build failed yesterday."
+    ],
+    "point": "失敗より前に消していたので had cleared にする",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 5,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cc6bb17fc19e6bfedacb8ee8ead412ec5da19b53f1190183dcbf7404e3b5b504",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8y9w8x3z",
+    "ja": "チームに展開する前に、リンターをどう設定したか順を追って説明してもらえますか？",
+    "en": "Could you walk me through how you set up the linter before we roll it out to the team?",
+    "alternatives": [
+      "Before we roll it out to the team, could you walk me through how you configured the linter?",
+      "Could you take me through how you set up the linter before we roll it out to the whole team?"
+    ],
+    "point": "walk me through ＋ how 節は疑問文の語順にしない",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 8,
+    "grammar": ["phrasal-verbs", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:14c465d1b3e3b29b288fd90f65e07fe74cd1042a439c23edd255924012607a32",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9f5n7n7w",
+    "ja": "新しいノート PC のセットアップについて、何かアドバイスある？特にどの拡張機能を入れればいいか知りたいんだ。",
+    "en": "Do you have any advice on setting up a new laptop? I'd especially like to know which extensions I should install.",
+    "alternatives": [
+      "Any advice on setting up a new laptop? I especially want to know which extensions to install.",
+      "Have you got any advice for setting up a new laptop? In particular, I'd like to know which extensions I should install."
+    ],
+    "point": "advice は数えられないので an advice や advices にしない",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 8,
+    "grammar": ["articles-and-countability", "indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:97a42b5c85276dcb8cc6955998ac9f9f95bb8f8c9a54f41d6eb9fed62b869031",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9g2u9b9y",
+    "ja": "たとえ急ぎの修正でも、本番用の設定ファイルを直接編集するのはやめてもらえますか？",
+    "en": "Even if it's an urgent fix, could you please not edit the production config file directly?",
+    "alternatives": [
+      "Even when it's an urgent fix, could you avoid editing the production config file directly?",
+      "Could you please not edit the production config file directly, even if it's an urgent fix?"
+    ],
+    "point": "「たとえ〜でも」は even if、依頼の否定は could you not",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 6,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f4dfe4b613fba1ae0f3516e35ed54c5ca522857b514efc170c492caeaadf0e60",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9t9r9w9z",
+    "ja": "僕のマシンでビルドが通らなかった原因は、設定ファイルじゃなくて古い Node のバージョンだったんだ。",
+    "en": "It was the outdated Node version, not the config file, that broke the build on my machine.",
+    "alternatives": [
+      "What broke the build on my machine was the outdated Node version, not the config file.",
+      "It wasn't the config file but the old Node version that broke the build on my machine."
+    ],
+    "point": "It was A, not B, that 〜 で原因を強調する",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:44e8fa4f69716269aa544bfd96699389271863817145b39a5fe40d6c26b31bd5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9v6t5s3k",
+    "ja": "このエディタのテーマ設定はどこにありますか？",
+    "en": "Where is the theme setting in this editor?",
+    "alternatives": [
+      "Where can I find the theme setting in this editor?",
+      "Where's the theme setting for this editor?"
+    ],
+    "point": "Where の後は is + 主語の語順にする",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 1,
+    "grammar": ["wh-questions", "be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:eebf09cb58a3cf873bfa7f0ef770bf5925658e59712661357c2028ffca61a02f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  }
+]

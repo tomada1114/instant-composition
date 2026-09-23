@@ -1,0 +1,684 @@
+[
+  {
+    "id": "c_2g9b8s6h",
+    "ja": "来週の引っ越し、運ぶ家具が多いから、友達にもう何人か手伝いを頼んでおくね。",
+    "en": "We have a lot of furniture to move next week, so I'll ask a few more friends to help.",
+    "alternatives": [
+      "Since there's a lot of furniture to move next week, I'll ask a few more friends to help out.",
+      "We've got a lot of furniture to move next week, so I'll get a few more friends to help."
+    ],
+    "point": "furniture は数えられないので furnitures にしない",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["articles-and-countability", "infinitives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:71aaae491527d64bc97a520c6c11abba83444a9cc4625117b8cbbb2c78715391",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2j3k3k8j",
+    "ja": "先週は日程が決まらなかったけど、もう全員の都合がつく日が見つかったよ。",
+    "en": "We couldn't settle on a date last week, but we've found a day that works for everyone now.",
+    "alternatives": [
+      "We didn't manage to pick a date last week, but we've now found one that suits everyone.",
+      "Last week we couldn't agree on a date, but we've found a day that works for everyone now."
+    ],
+    "point": "先週は過去形、「もう見つかった」は現在完了で分ける",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["tense-contrast", "relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cbfe8fe4febb3d3f07c19248000006c49577dd7ad4bb8d95fe82f3868aa0685d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2t9f9k6q",
+    "ja": "兄に夕食に誘われたとき、私はもう別の予定を入れてしまっていた。",
+    "en": "When my brother invited me to dinner, I'd already made other plans.",
+    "alternatives": [
+      "I had already made other plans when my brother invited me to dinner.",
+      "By the time my brother asked me to dinner, I'd already made other plans."
+    ],
+    "point": "誘われた時点より前の予定は had made の過去完了",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:44a7a56805e5d2c6178a95016fc90845c4a5235828078eec95dd6f70f97abe57",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3f3m5m3h",
+    "ja": "弟はもう一週間ずっと、みんなで行くキャンプの計画を立ててるんだ。",
+    "en": "My brother has been planning our group camping trip for a week now.",
+    "alternatives": [
+      "My brother's been planning the camping trip for all of us for a whole week.",
+      "For a week now, my brother has been planning the camping trip we're all going on."
+    ],
+    "point": "今も続く行動は has been planning、for で期間を示す",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6a403022855ba1698112b5a75c1fd7cbf61ad971d402c1f774019b220cfbe7cb",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3j2s4h2g",
+    "ja": "姉と私、旅行の日程をもう三回も変えてるんだよね。",
+    "en": "My sister and I have already changed our trip dates three times.",
+    "alternatives": [
+      "My sister and I have rescheduled our trip three times already.",
+      "My sister and I have already moved the dates of our trip three times."
+    ],
+    "point": "「もう三回も変えてる」は過去形でなく現在完了で言う",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 4,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d122500a0c034069207e2141fff3b89908f7bc349a82fd59bd20b3690354eb2a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3y7n6r9m",
+    "ja": "父は来月の連休に、大学時代の友人たちと会うことになってるんだ。",
+    "en": "My dad is meeting his old college friends over the long weekend next month.",
+    "alternatives": [
+      "My dad is going to meet his college friends over next month's long weekend.",
+      "My dad is getting together with his college friends over the long weekend next month."
+    ],
+    "point": "決まっている予定は現在進行形 is meeting で言える",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4c6aaaee7455acf16e38f2b2fa929810a8d11c4e8633b7d32201f72144c55bd2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4f6f8k3t",
+    "ja": "うちの弟は、姉の結婚式の日に休みを取っておけばよかったって後悔してるよ。出張と重なっちゃったんだ。",
+    "en": "My brother wishes he'd taken the day off for our sister's wedding. It ended up clashing with his business trip.",
+    "alternatives": [
+      "My brother regrets not taking the day off for our sister's wedding. It ended up overlapping with his business trip.",
+      "My brother wishes he'd gotten the day off for our sister's wedding, because it clashed with his business trip."
+    ],
+    "point": "主語が三人称なら wishes、後悔の中身は過去完了",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:eed22b0ab7d7a429be527f411ea805cebe965a7316d37bfeae223f7f7319a140",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4g8r9d3x",
+    "ja": "土曜のバーベキュー、私たち何時に集合することになったんだっけ？",
+    "en": "What time did we decide to meet for Saturday's barbecue?",
+    "alternatives": [
+      "What time did we agree to meet for Saturday's barbecue?",
+      "When did we decide to meet for the barbecue on Saturday?"
+    ],
+    "point": "What time を文頭に置き、後ろは did we decide の疑問文の語順",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 3,
+    "grammar": ["wh-questions", "infinitives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ca160af1eb3127389b8859d4181c8958607d9f8a836ada8cb337ffa4ebda71ce",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4v2c8w4h",
+    "ja": "あのとき飛行機を予約しておけば、今ごろ私たちは沖縄のビーチでのんびりしているのにね。",
+    "en": "If we'd booked the flight back then, we'd be relaxing on a beach in Okinawa right now.",
+    "alternatives": [
+      "If we had booked that flight, we'd be on a beach in Okinawa now.",
+      "If we'd booked the flight when we had the chance, we'd be lounging on a beach in Okinawa right now."
+    ],
+    "point": "過去の条件と今の結果は if 節が過去完了、主節が would be",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 10,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2ecb16eed23242bfbfde484a3215686672c94cbaaf226cb9f78684521c3dadb0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5b9n5m6k",
+    "ja": "日曜日にみんなで映画を見に行こうよ。",
+    "en": "Let's go to a movie on Sunday.",
+    "alternatives": [
+      "Let's see a movie on Sunday.",
+      "Let's all go to the movies on Sunday."
+    ],
+    "point": "曜日の前は on。「日曜日に」を on Sunday とする",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b7df5dfd84cfa1e9c2e4cc6352d6b39ac1b26e380d824cdd046eae56f38c2c79",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5d2n8f2b",
+    "ja": "都合が悪いのは週末全部じゃなくて、日曜の朝だけなんだ。",
+    "en": "It's only Sunday morning that doesn't work for me, not the whole weekend.",
+    "alternatives": [
+      "What doesn't work for me is just Sunday morning, not the whole weekend.",
+      "It's just Sunday morning that's bad for me, not the whole weekend."
+    ],
+    "point": "強調したい「日曜の朝」を It's と that で挟む",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9800e6a594a7e93a38f45a61c8fe17b8670be4e4152703f19e646eb6590e8514",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5g7t9s3t",
+    "ja": "もし私に車があったら、今週末あなたを空港まで送っていけるんだけどね。",
+    "en": "If I had a car, I could drive you to the airport this weekend.",
+    "alternatives": [
+      "I'd drive you to the airport this weekend if I had a car.",
+      "If I had a car, I'd be able to take you to the airport this weekend."
+    ],
+    "point": "事実と違う仮定は had、帰結は could を使う",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8ed8191ea73c8fd2cc71f6ca1f7483dcab452d01534421cba1a31ff704ae4783",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5h9e2z6v",
+    "ja": "母が、日曜の夕食会は6時からに変更になったって言ってたよ。",
+    "en": "My mom said Sunday's dinner had been moved to six o'clock.",
+    "alternatives": [
+      "My mom said the Sunday dinner had been changed to six.",
+      "Mom told me Sunday's dinner had been moved to six."
+    ],
+    "point": "said の後は時制を一つ過去へ（had been moved）",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["reported-speech", "passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ec0838184dfe5a1b74ec3d8fb5083f50456488ab6cb1dd2020af7a3d2bca62a7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5q7y4s7v",
+    "ja": "最近残業続きだから、金曜の飲み会は行くのをやめておこうと思ってるんだ。",
+    "en": "I've been working late a lot lately, so I'm thinking of skipping Friday's drinks.",
+    "alternatives": [
+      "I've been working overtime a lot recently, so I'm thinking about skipping the drinks on Friday.",
+      "Since I've been working late so much lately, I'm thinking of not going to Friday's drinks."
+    ],
+    "point": "think of の後は -ing 形。to skip にしない",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 8,
+    "grammar": ["gerunds", "present-perfect-continuous"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7c5360912b190aca1f06d996a78d302ed8ef5cd073368eba133b28b934b537a0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6f3r4u5p",
+    "ja": "ごめん、疲れてるからパーティーに行けないよ。",
+    "en": "Sorry, I can't go to the party. I'm tired.",
+    "alternatives": [
+      "Sorry, I'm too tired to go to the party.",
+      "Sorry, I can't come to the party. I'm tired."
+    ],
+    "point": "「行けない」は can't go、理由は短く別の文で足せる",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 2,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef4fab9b731e8e1f4ed67d4d07217cac2c7c3b1d34e3cfd92b6bfa34010716ed",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6w3c2n2j",
+    "ja": "ケンに、日曜のハイキングは何時に出発するのか聞いてもらえる？",
+    "en": "Could you ask Ken what time we're leaving for the hike on Sunday?",
+    "alternatives": [
+      "Can you ask Ken what time we're heading out for Sunday's hike?",
+      "Could you check with Ken what time we're leaving for the hike on Sunday?"
+    ],
+    "point": "what time の後は we're leaving の語順で、疑問文の語順にしない",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 4,
+    "grammar": ["indirect-questions", "requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f4cfb814ebd701b09c8264a5e66f5f13a61b4473d8bc6c864fe494837263f9d1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6y3j9e6d",
+    "ja": "今週末は雨の予報だから、キャンプは来月に延期するのはどう？",
+    "en": "The forecast says rain this weekend, so how about putting off the camping trip until next month?",
+    "alternatives": [
+      "It's supposed to rain this weekend, so how about postponing the camping trip until next month?",
+      "Since rain is forecast this weekend, how about putting the camping trip off until next month?"
+    ],
+    "point": "how about の後は動詞の -ing 形（putting off）",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["gerunds", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:60d4657e14fb27bebf47c307701cfd03461cbfaa31dd79e607d5c0feda4051ed",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7c9g5e8m",
+    "ja": "姉が、君が来月の旅行の日程をもう決めたかどうか知りたがってるよ。",
+    "en": "My sister wants to know whether you've decided on the dates for next month's trip yet.",
+    "alternatives": [
+      "My sister's asking if you've settled on the dates for next month's trip yet.",
+      "My sister wants to know if you've picked the dates for next month's trip yet."
+    ],
+    "point": "whether の後は you've decided の平叙文の語順にする",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["indirect-questions", "present-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dfd395c4036f7baaa9d2a769109754f95bce262406116ce64b7521174ce07861",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7e4m6f8g",
+    "ja": "幹事に頼んで、来週の同窓会の開始を一時間遅らせてもらったよ。",
+    "en": "I got the organizer to push the start of next week's reunion back an hour.",
+    "alternatives": [
+      "I had the organizer push back the start of next week's reunion by an hour.",
+      "I asked the organizer to move next week's reunion an hour later, and they did."
+    ],
+    "point": "get 人 to do と have 人 do、to の有無に注意",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["causatives", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a5ef456041dab82b80d57c9dfe878418c3281d22568ebbb140efb29ddadd1037",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7q4z8r2u",
+    "ja": "君が土曜のうちに言ってくれてたら、僕たちは日曜の集合時間を一時間遅らせられたのに。",
+    "en": "If you'd told us on Saturday, we could've pushed Sunday's meeting time back an hour.",
+    "alternatives": [
+      "If you'd let us know on Saturday, we could've moved Sunday's meeting time an hour later.",
+      "We could've pushed Sunday's meeting time back an hour if you'd told us on Saturday."
+    ],
+    "point": "「言ってくれてたら」は had + 過去分詞、帰結は could have",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:97a99d25bb471bcc3382d3f7e6ebcaeb45f432d0544d3582c121f9642c527350",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7s7t8q5y",
+    "ja": "兄は、父が退院する日がわかるまで、帰省の日程は決められないって言ってる。",
+    "en": "My brother says he can't decide when to come home until he knows the day Dad gets out of the hospital.",
+    "alternatives": [
+      "My brother says he can't set a date to come home until he finds out when Dad's leaving the hospital.",
+      "My brother says he can't plan his trip home until he knows what day Dad will be discharged."
+    ],
+    "point": "until 節の中は未来のことでも現在形（knows）",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 8,
+    "grammar": ["nested-clauses", "time-and-if-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4a57a92cf2e619e30d0408f9aeac8810b2ad555ac8a3e2d45214dfc88c8a6073",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7u2p6c3j",
+    "ja": "キャンセルするなら、せめて前の日に教えてくれればよかったのに。",
+    "en": "If you were going to cancel, you should have at least told me the day before.",
+    "alternatives": [
+      "You could have at least let me know the day before if you were going to cancel.",
+      "If you had to cancel, you should have at least told me a day earlier."
+    ],
+    "point": "「〜すればよかったのに」は should have + 過去分詞",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:aa74bd6f364a6dd03f0477077ba3b84b53fa171b459142fae01a73aeb15b7a29",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7y3h6j3u",
+    "ja": "日曜のピクニックは雨のせいで来週に延期されたよ。",
+    "en": "Sunday's picnic has been postponed until next week because of the rain.",
+    "alternatives": [
+      "Sunday's picnic was put off until next week because of the rain.",
+      "Because of the rain, Sunday's picnic has been pushed back to next week."
+    ],
+    "point": "ピクニックが主語なので has been postponed の受け身",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 4,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:31f77a0cf8f8ec20ef5fe8022a2f414014990b77167312926079ef5cfcbc1af0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8a5a6p4e",
+    "ja": "悪いけど、今週末に僕が本当に必要なのは、家でのんびりする時間なんだ。",
+    "en": "Sorry, but what I really need this weekend is some time to relax at home.",
+    "alternatives": [
+      "Sorry, but what I really need this weekend is some downtime at home.",
+      "Sorry, but this weekend what I really need is time to just relax at home."
+    ],
+    "point": "「〜なのは」は What I need is で始める",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c091b5bab8a63dc84e642b15b324bb871682db6661a9c95e2b6e54134ff3651",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8a6c7c9a",
+    "ja": "兄は毎週土曜日の午前中、サッカーの練習があるよ。",
+    "en": "My brother has soccer practice every Saturday morning.",
+    "alternatives": [
+      "My brother goes to soccer practice every Saturday morning.",
+      "My older brother has soccer practice on Saturday mornings."
+    ],
+    "point": "主語が三人称単数なので have ではなく has",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7629a7d335a131a2bcc93bedd59d423a4da21c97bb44f7796eae23b88e11c132",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8a9z6p3e",
+    "ja": "土曜に雨が降っても、みんなで集まるのはやめないで、代わりにうちで映画を観ようよ。",
+    "en": "Even if it rains on Saturday, let's not call off the get-together; we can just watch movies at my place instead.",
+    "alternatives": [
+      "Let's not cancel the get-together even if it rains on Saturday; we can just watch movies at my place instead.",
+      "Even if it rains on Saturday, let's still get together and just watch movies at my place instead."
+    ],
+    "point": "「〜しても」は even if、未来のことでも if 節は現在形",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 8,
+    "grammar": ["concession-contrast", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b1efe609250c63f3b8e29128453df4437875d48e7da5b5d314f18f4d46d49790",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8e8v7f2q",
+    "ja": "姉が金曜に電話してきて、土曜の夕食には行けないって言ってたよ。",
+    "en": "My sister called me on Friday and said she couldn't make it to dinner on Saturday.",
+    "alternatives": [
+      "My sister called me on Friday and said she couldn't come to dinner on Saturday.",
+      "My sister phoned me on Friday to say she couldn't make it to Saturday's dinner."
+    ],
+    "point": "過去の発言なので can't ではなく couldn't に時制をそろえる",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d64973acd975610ac58baca0535e5884e2579f4c9f7c6e0339a26333d8ec51c6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8u2y5p2g",
+    "ja": "サラから電話があったとき、私たちはちょうど週末の予定を話し合っていた。",
+    "en": "We were just talking about our weekend plans when Sarah called.",
+    "alternatives": [
+      "We were just discussing our plans for the weekend when Sarah called.",
+      "When Sarah called, we were just talking about our plans for the weekend."
+    ],
+    "point": "話していた最中は過去進行形、電話は過去形 called",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 3,
+    "grammar": ["progressive-aspect", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:32156fb73da1e32aea970541516d254f0703795843a6b522942187391f25b3fc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9b3k5b5h",
+    "ja": "お母さん、土曜の夕食に友達を二人連れて行ってもいいかな？",
+    "en": "Mom, is it okay if I bring two friends along to dinner on Saturday?",
+    "alternatives": [
+      "Mom, would it be okay if I brought two friends to dinner on Saturday?",
+      "Mom, can I bring two friends along to Saturday's dinner?"
+    ],
+    "point": "相手のいる場所へ「連れて行く」は take でなく bring",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4473da6fa3b97a80dc1e3ff5347c50016e4cdf62d24b65a4562a0e23c6639050",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9d5s6z5t",
+    "ja": "急で悪いんだけど、土曜のランチを日曜にずらせないかなと思ってて。",
+    "en": "Sorry for the short notice, but I was wondering if we could move Saturday's lunch to Sunday instead.",
+    "alternatives": [
+      "Sorry it's so last minute, but would it be possible for us to move Saturday's lunch to Sunday?",
+      "Sorry for the late notice, but I was hoping we could push Saturday's lunch back to Sunday."
+    ],
+    "point": "柔らかい頼み方は I was wondering if we could",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:45b13b350073a64036c67c4a7646921fb7d66691f5b39cccd2ca860dde796288",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9m5p7x6k",
+    "ja": "土曜の朝、駅の近くにできた新しいカフェで会おうよ。",
+    "en": "Let's meet at the new café near the station on Saturday morning.",
+    "alternatives": [
+      "How about meeting at the new café by the station on Saturday morning?",
+      "Why don't we meet at the new café near the station Saturday morning?"
+    ],
+    "point": "「駅の近くの」は near the station を名詞の後ろに置く",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2dd54e37647cbeeea742d84aa1d7ae6f53c1ae9b74bea9283295dc937b5602e3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

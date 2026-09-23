@@ -1,0 +1,590 @@
+[
+  {
+    "id": "c_2g6b4k5u",
+    "ja": "このプリンター、使ってもいいですか？",
+    "en": "Can I use this printer?",
+    "alternatives": ["Could I use this printer?", "Is it okay if I use this printer?"],
+    "point": "許可を求めるときは Can I で始める",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f01de4e6767e8997e568000619215f998201fee7c17143eec34cf80d66cf3668",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2j5d8e3v",
+    "ja": "今朝、IT 部門に新しいノートパソコンの設定をしてもらいました。",
+    "en": "I had the IT department set up my new laptop this morning.",
+    "alternatives": [
+      "I got the IT department to set up my new laptop this morning.",
+      "The IT department set up my new laptop for me this morning."
+    ],
+    "point": "have＋人＋動詞の原形。get なら to が要る",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 5,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f6b7b405d874bf1ad24f028c48ad8b44a264ff9c10649494da607905cb2f192a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2k8q5j2y",
+    "ja": "彼女が体調悪いって言ってくれていたら、私たちが仕事を代わってあげたのに。",
+    "en": "If she had told us she wasn't feeling well, we would have covered for her.",
+    "alternatives": [
+      "We would have covered for her if she had told us she wasn't feeling well.",
+      "If she'd let us know she was sick, we'd have covered for her."
+    ],
+    "point": "過去の仮定は if＋had 過去分詞、would have＋過去分詞",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:28fb6cd52d60128cdc4b208e15a2d505b7450d3158b34b9508e4075d59676ebf",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3b9f5m7v",
+    "ja": "ノートパソコンが何度もフリーズするから、朝からずっと IT 部門に連絡しようとしてるんだけど、まだ誰も出てくれないんだ。",
+    "en": "I've been trying to reach IT all morning because my laptop keeps freezing, but nobody's picked up yet.",
+    "alternatives": [
+      "I've been trying to get hold of IT since this morning because my laptop keeps freezing, but no one's answered yet.",
+      "My laptop keeps freezing, so I've been trying to contact IT all morning, but nobody's picked up yet."
+    ],
+    "point": "朝からずっと続く動作は I've been trying と現在完了進行形",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a61dd759f45860a6b310359d4d7b055dc89c493854cbe7c9013d180310a50058",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3b9t7j3e",
+    "ja": "新しい加湿器は前のよりずっと静かだから、会議中もつけっぱなしにしておけるね。",
+    "en": "The new humidifier is much quieter than the old one, so we can leave it on during meetings.",
+    "alternatives": [
+      "Since the new humidifier is a lot quieter than the old one, we can keep it running during meetings.",
+      "The new humidifier is way quieter than the old one, so we can leave it running during meetings."
+    ],
+    "point": "「ずっと」は very ではなく much で比較級を強める",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 7,
+    "grammar": ["comparatives-superlatives", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:51d2047f4697bb10773b8444e5649cc7b7e2227eb6e9566aec612db894763ec5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3c8s9p6n",
+    "ja": "お昼から戻ったら、この書類をコピーしておきますね。",
+    "en": "I'll copy these papers when I get back from lunch.",
+    "alternatives": [
+      "When I get back from lunch, I'll copy these papers.",
+      "I'll copy these documents when I'm back from lunch."
+    ],
+    "point": "「戻ったら」は未来でも when 節は現在形",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 3,
+    "grammar": ["time-and-if-clauses", "future-forms"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b93a26bfdef63fe70aca4a9dce7a8a776de2105c193728652866f7a2975cbcc2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3h6p7q2w",
+    "ja": "もし在宅勤務ができたら、毎朝早起きしなくて済むのに。",
+    "en": "If I could work from home, I wouldn't have to get up early every morning.",
+    "alternatives": [
+      "If I worked from home, I wouldn't need to get up early every morning.",
+      "I wouldn't have to wake up early every morning if I could work remotely."
+    ],
+    "point": "現在の事実に反する仮定は If + 過去形 could、主節は wouldn't で言う",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 5,
+    "grammar": ["second-conditional", "modal-obligation-advice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:af8aa263c9d3f829a7cf8447c2fd8991ddd0fe6ba1e3e6ca659838baed422576",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3x7m6c6f",
+    "ja": "総務の人に、会議室のプロジェクターを直してくれるよう頼んでもらえますか？",
+    "en": "Could you ask someone from the admin team to fix the projector in the meeting room?",
+    "alternatives": [
+      "Would you mind asking someone in admin to fix the projector in the meeting room?",
+      "Can you ask the admin team to repair the meeting room projector?"
+    ],
+    "point": "ask + 人 + to do の語順。ask that 節にしない",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 6,
+    "grammar": ["verb-object-to-do", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:48aa03de811625ab02cd2bd02541a874ffa7d629f987e1a5b2a4ed5c68b638ee",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4c2n4c2t",
+    "ja": "新しい経費精算システムの使い方がまだよくわからないので、お時間のあるときにいくつかアドバイスをいただけませんか？",
+    "en": "I still don't quite understand how the new expense system works, so could you give me some advice when you have a moment?",
+    "alternatives": [
+      "I'm still not sure how to use the new expense system, so could you give me a few tips when you're free?",
+      "I'm still not really sure how the new expense system works, so could you give me some pointers whenever you have time?"
+    ],
+    "point": "advice は数えられない。an advice や advices にしない",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 10,
+    "grammar": ["articles-and-countability", "noun-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a79cc32afc24bb5d212d67030c20cb88f9fc3d6872284f9f257512678ae78a25",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4q3w6j5q",
+    "ja": "コピー機の紙、昨日補充されたばかりなのに、もう切れてるよ。",
+    "en": "The copier paper was only refilled yesterday, but it's already run out.",
+    "alternatives": [
+      "The paper in the copier was just refilled yesterday, but it's already gone.",
+      "They only refilled the copier paper yesterday, and it's already run out."
+    ],
+    "point": "紙が主語なので was refilled と受け身にする",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 4,
+    "grammar": ["passive-voice", "present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cb92664fe50af4b6aef53069a7d10478749b62a23834856b53eeaf933fe9f6ac",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4t7c8s5n",
+    "ja": "去年の忘年会で幹事をやってくれた人が、今どの部署にいるか知ってる？",
+    "en": "Do you know which department the person who organized last year's year-end party is in now?",
+    "alternatives": [
+      "Do you know what department the person who organized last year's year-end party works in now?",
+      "Do you know where the person who planned last year's year-end party is working now?"
+    ],
+    "point": "間接疑問は is の位置に注意、which department の後は平叙文の語順",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 7,
+    "grammar": ["relative-clauses", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a81d16dd955ed5edb523fb2cdca62e88a595e8f48420016add951f1cc6062cc7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5s5k6z3s",
+    "ja": "来週、田中さんが育休から戻ってくるから、私たちで小さなお帰り会をやる予定なんだ。",
+    "en": "Tanaka is coming back from parental leave next week, so we're having a small welcome-back party.",
+    "alternatives": [
+      "Tanaka's returning from parental leave next week, so we're going to have a small welcome-back party.",
+      "Since Tanaka is back from parental leave next week, we're throwing a little welcome-back party."
+    ],
+    "point": "決まった予定は will より進行形 we're having が自然",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 6,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:33f55e8db3aa57f1aeaf4d254fa988c242b55603b9b0d707297e688bc2e052d4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5z6u9w2w",
+    "ja": "新人は毎朝始業の10分前に来て、みんなに挨拶しながら自分の席まで歩いていくんだよ。",
+    "en": "Every morning, the new hire arrives ten minutes before work starts and walks to their desk, greeting everyone along the way.",
+    "alternatives": [
+      "The new hire comes in ten minutes early every morning and heads to their desk, saying hello to everyone as they go.",
+      "Every morning the new hire gets in ten minutes before we start and goes to their desk, greeting everybody on the way."
+    ],
+    "point": "「挨拶しながら」は文末に greeting を添えるだけでよい",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:32ba7e2b705f21f41df4d493cde97f254cb282c39c44726f8fae31b54625c44e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6c6q6w8k",
+    "ja": "田中さんは今日お休みです。",
+    "en": "Tanaka is off today.",
+    "alternatives": ["Tanaka is out today.", "Tanaka isn't in today."],
+    "point": "「休み」は off で表せる。holiday は不要",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:276c31d50f6a43365070ef9bdc35a7d488d24d73d6dda81628d11e0351956559",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6w7t4a4r",
+    "ja": "みんな、もう机の片付けは終わった？",
+    "en": "Have you all finished cleaning your desks?",
+    "alternatives": [
+      "Are you all done cleaning your desks?",
+      "Has everyone finished tidying their desks?"
+    ],
+    "point": "finish の後ろは to 不定詞でなく動名詞",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 3,
+    "grammar": ["gerunds", "present-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c68360f7549f454f539b48e79cd91515a80e8bfa6b49f71a5f5e68e559061f37",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6x2h4b9j",
+    "ja": "帰るときは、会議室の電気を消してね。",
+    "en": "Turn off the meeting room lights when you leave.",
+    "alternatives": [
+      "Please turn off the lights in the meeting room when you leave.",
+      "When you leave, turn off the meeting room lights."
+    ],
+    "point": "電気を「消す」は turn off、主語なしの原形で始める",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2d6434282ff1f7f40c2e35f01f789b97802ceeaa095ab118aa2e743e2800acfd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7a8z9c2e",
+    "ja": "コピー用紙、また切れちゃってる。先週まとめて注文しておくべきだったよ。",
+    "en": "We're out of copy paper again. I should have ordered a big batch last week.",
+    "alternatives": [
+      "We've run out of copy paper again. I should've ordered a bunch at once last week.",
+      "The copy paper has run out again. I should've placed a bulk order last week."
+    ],
+    "point": "「すべきだった」は should have + 過去分詞",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 6,
+    "grammar": ["modal-perfect", "articles-and-countability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:184e46dbb8bf3557b85a0c9469591e3bc714d432505a14522a85dc28668b8a58",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7j9q8d6m",
+    "ja": "給湯室に、誰かのお弁当が置いてありますよ。",
+    "en": "There's someone's lunch box in the kitchen.",
+    "alternatives": [
+      "Someone's lunch box is in the kitchen.",
+      "There's somebody's lunch in the break room."
+    ],
+    "point": "「置いてある」は There is で表せる",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 2,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b95222bbcf7de43fa7ce2c9c0b02893fbea200446a3853005ce0c9c8b93b0651",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7q7n8n3c",
+    "ja": "部長が来たとき、あなたは休憩していたんですか？",
+    "en": "Were you taking a break when the manager came by?",
+    "alternatives": [
+      "Were you on your break when the manager stopped by?",
+      "Were you on a break when the manager came over?"
+    ],
+    "point": "その時していた最中の動作は Were you -ing で聞く",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 3,
+    "grammar": ["progressive-aspect", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7578780551dfd1f8515bcc7e86f26e78d7d848ab96cfc504811cbf54d5398261",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8a8g9n7g",
+    "ja": "彼、昨夜の歓迎会であんなに飲んでなかったら、今こんなに眠そうにしてないだろうね。",
+    "en": "If he hadn't drunk so much at the welcome party last night, he wouldn't look so sleepy right now.",
+    "alternatives": [
+      "He wouldn't look so sleepy now if he hadn't had so much to drink at last night's welcome party.",
+      "If he hadn't drunk that much at the welcome party last night, he wouldn't look this sleepy right now."
+    ],
+    "point": "if 節は過去完了、主節は今の話なので wouldn't look",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6fed9a169ca183fd00e1f512aa5d19323ed96f4e629c160fc234b9623ded7963",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8f4d6q7y",
+    "ja": "課長には、金曜は休みを取ると伝えて、いない間に誰か私の電話を取ってもらえないかと頼んでおいた。",
+    "en": "I told my manager I'd be taking Friday off and asked whether someone could cover my calls while I was out.",
+    "alternatives": [
+      "I told my manager I was taking Friday off and asked if someone could take my calls while I was away.",
+      "I let my manager know I'd be off on Friday and asked whether someone could answer my calls while I was out."
+    ],
+    "point": "時制の一致で will は would、can は could に",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 8,
+    "grammar": ["reported-speech", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5e8b3c6bc82cdfb4fb29ac22b10b4c7e4e630f72c3fc62e243abac29e7b911a4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8p5z3t9z",
+    "ja": "すみません、このファイル、私のパソコンだと開けないんです。",
+    "en": "Sorry, I can't open this file on my computer.",
+    "alternatives": [
+      "Sorry, I'm not able to open this file on my computer.",
+      "Sorry, this file won't open on my computer."
+    ],
+    "point": "「開けない」は can't open で表す",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 2,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fc8814fd36d63e2106a5537ee055aeff13210b081f741c8e7336cd8a7d98a517",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8z2k7f7w",
+    "ja": "新しいコピー用紙はどこにありますか？",
+    "en": "Where is the new copy paper?",
+    "alternatives": [
+      "Where's the new printer paper?",
+      "Where can I find the new copy paper?"
+    ],
+    "point": "paper は数えられないので is を使う",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 1,
+    "grammar": ["wh-questions", "articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:89d356666c0e8b00d764b94cd1915ecb5a4927f6891520a0972f23bd55dafd31",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9a2w6t6j",
+    "ja": "誰かホッチキス見ませんでしたか？昨日はこの棚にあったんですけど。",
+    "en": "Has anyone seen the stapler? It was on this shelf yesterday.",
+    "alternatives": [
+      "Has anybody seen the stapler? It was here on this shelf yesterday.",
+      "Did anyone see the stapler? It was on this shelf yesterday."
+    ],
+    "point": "yesterday がある文は現在完了にせず過去形",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 4,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:84f0727957314b0472f26401b7615bb2c6572e416f542dc65120e9b205575844",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9g9q7j2k",
+    "ja": "カーディガンを持ってくればよかった。今日はオフィスの冷房が効きすぎてて、寒くてたまらないよ。",
+    "en": "I wish I'd brought a cardigan. The air conditioning in the office is way too strong today, and I'm freezing.",
+    "alternatives": [
+      "If only I'd brought a cardigan. The office AC is way too strong today, and I'm freezing.",
+      "I should've brought a cardigan. The air conditioning in the office is far too strong today, and I'm freezing."
+    ],
+    "point": "過去の後悔は I wish I brought ではなく I wish I'd brought",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 8,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b538c78d057baf3818f03886cc4085d267cc5625a4e0846092dc6f0475318fd1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9s2x4k5c",
+    "ja": "私が本当に知りたいのは、誰が私の机のホッチキスを持っていっては戻さないのかってことなんだよね。",
+    "en": "What I'd really like to know is who keeps taking the stapler from my desk without putting it back.",
+    "alternatives": [
+      "What I really want to know is who keeps taking my stapler and never puts it back.",
+      "What I'd like to know is who keeps borrowing the stapler from my desk and not returning it."
+    ],
+    "point": "「持っていっては戻さない」は keeps taking と without putting it back で表す",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 8,
+    "grammar": ["noun-clauses", "nested-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e8c9b0218120d9725a5ba0664e0bc6eee2307489fdc7c2e592e4abb73f82442a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9v6g9v9v",
+    "ja": "私が出社したときには、コピー用紙はもうなくなっていた。",
+    "en": "The copy paper had already run out when I got to the office.",
+    "alternatives": [
+      "By the time I got to the office, the copy paper had already run out.",
+      "When I got to the office, we'd already run out of copy paper."
+    ],
+    "point": "出社より前に起きたことは had run out で表す",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 5,
+    "grammar": ["past-perfect", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:67cf8d9d1501d980071832ea478d4a814f8a307f64ab425c823abf764b02a336",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

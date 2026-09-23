@@ -1,0 +1,640 @@
+[
+  {
+    "id": "c_2c3r6c5m",
+    "ja": "先ほどのご質問ですが、営業部長は先月、新しい価格は4月から適用されると私たちに言っていました。",
+    "en": "Regarding the earlier question, the sales director told us last month that the new prices would take effect in April.",
+    "alternatives": [
+      "About the earlier question, the sales director told us last month that the new prices would start in April.",
+      "As for the earlier question, the sales director told us last month that the new pricing would start in April."
+    ],
+    "point": "過去の発言を伝えるので will ではなく would にする",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0afa5386a416142f66a80e8c84d1e60c56ac73bca9a33c95a2b0f2f26c741d9d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2j9d4r4s",
+    "ja": "発表の前に、プロジェクターの電源を入れてもらえますか？",
+    "en": "Could you turn on the projector before the presentation?",
+    "alternatives": [
+      "Can you turn on the projector before the presentation?",
+      "Could you switch on the projector before the presentation?"
+    ],
+    "point": "「電源を入れる」は turn on。依頼は Could you で丁寧に",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7a0688a634adc47dfc9be5dd4b207bf26ecafcf031e751b9345c55cc8337d58a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2m3k5k2a",
+    "ja": "皆さんは、来年この新しいシステムを導入することについてどう思いますか？",
+    "en": "What do you think about introducing this new system next year?",
+    "alternatives": [
+      "How do you feel about introducing this new system next year?",
+      "What are your thoughts on introducing this new system next year?"
+    ],
+    "point": "about の後ろは to introduce ではなく introducing",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 4,
+    "grammar": ["gerunds", "wh-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3ccd52e22bdb56a846da79ebf0169f13f91ec5d336c20a92e144f5a600bdb1f4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2q7e4z9u",
+    "ja": "では、最初のスライドから始めましょう。",
+    "en": "Let's start with the first slide.",
+    "alternatives": [
+      "Let's begin with the first slide.",
+      "Let's start from the first slide."
+    ],
+    "point": "提案は Let's＋動詞の原形。first の前に the を忘れずに",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 1,
+    "grammar": ["imperatives", "articles-and-countability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e8e555c49ad771782eb233c51df016fb9bcef336fd69084a1b1e3f84bf49e90e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2w9a2u2u",
+    "ja": "私たちが一番心配しているのは、納期に間に合わないことではなく、品質が落ちることです。",
+    "en": "What we're most worried about isn't missing the deadline but a drop in quality.",
+    "alternatives": [
+      "What concerns us most isn't missing the deadline, but the quality going down.",
+      "Our biggest concern isn't missing the deadline but a drop in quality."
+    ],
+    "point": "What we're worried about の about を落とさない",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["cleft-emphasis", "gerunds"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:132c5f592da64768f611fe19590a7f1bd7775280caa4d4508aa98ff7386a8d0d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3c7j2u6e",
+    "ja": "このプランはコストを下げるだけでなく、導入期間も半分に短縮できます。",
+    "en": "Not only does this plan reduce costs, but it also cuts the rollout time in half.",
+    "alternatives": [
+      "Not only does this plan lower costs, but it also cuts the implementation period in half.",
+      "Not only will this plan reduce costs, but it'll also halve the rollout time."
+    ],
+    "point": "Not only の後は does this plan reduce と疑問文の語順",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:df163ef794a8e8916cdd11c03cf4dc4d3933d3f2afeca5a0f07a044bf24a840d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3v9y2f2p",
+    "ja": "このプロジェクトで、私たちは半年間ずっと顧客データを分析してきました。",
+    "en": "We've been analyzing customer data for six months on this project.",
+    "alternatives": [
+      "For this project, we've been analyzing customer data for six months.",
+      "We've been analyzing customer data on this project for the past six months."
+    ],
+    "point": "今も続く「ずっと〜してきた」は have been + -ing",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 4,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2bbf6ed3e0819af0008aa7c550619b026ce55a8d50d3066a27f4e89f5f1c775e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3x4e4b8c",
+    "ja": "恐れ入りますが、ご質問をもう少し詳しくご説明いただけないでしょうか。",
+    "en": "I was wondering if you could explain your question in a little more detail.",
+    "alternatives": [
+      "Would you mind explaining your question in a bit more detail?",
+      "Could you possibly explain your question in a little more detail?"
+    ],
+    "point": "I was wondering if で丁寧に頼む。過去形でも今の依頼",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:78654827a9fc4517d0e60dcc31d1f336ef3817d7fce56e5868c5d5d358b4047f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3y3n6b2z",
+    "ja": "去年の春にうちのチームの予算が削られていなかったら、今日は皆さんに動く試作品をお見せできていたはずです。",
+    "en": "If our team's budget hadn't been cut last spring, we'd be able to show you a working prototype today.",
+    "alternatives": [
+      "If our team's budget hadn't been cut last spring, we could show you a working prototype today.",
+      "If our team hadn't had its budget cut last spring, we'd be able to show you a working prototype today."
+    ],
+    "point": "過去の仮定は had not been、今の結果は would/could",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:db17411c66e19a0f0a176215ae6783b3d4561f544831453995ad0d0618b8f35f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4a8p7n3t",
+    "ja": "質疑応答に入る前に、今日のポイントをもう一度ざっと振り返ってもいいですか？",
+    "en": "Before we open it up for questions, could I quickly go over today's key points one more time?",
+    "alternatives": [
+      "Before we move on to questions, can I quickly go over the main points from today once more?",
+      "Before we take questions, could I quickly run through today's key points again?"
+    ],
+    "point": "「振り返る」は go over / run through の句動詞で",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f2c754f7d92e447779f11daffcafb3325cf7f5fd553aed0bbd9b10868520babd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4n8w2c2f",
+    "ja": "うちの部長が昨日データを確認してくれていたら、私は今、質疑応答で数字を訂正しなくて済んだんですが。",
+    "en": "If our manager had checked the data yesterday, I wouldn't have to correct these figures now during the Q&A.",
+    "alternatives": [
+      "If our manager had checked the data yesterday, I wouldn't need to correct these figures now in the Q&A.",
+      "If our manager had gone over the data yesterday, I wouldn't have to fix these numbers now during the Q&A."
+    ],
+    "point": "過去の条件は had checked、今の結果は wouldn't have to",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:263a7447e026928610dc0ccd3583317885fc233ed61188567e73ad0823ca051f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4t7w6b8f",
+    "ja": "次に、私から今年の売上をお見せします。",
+    "en": "Next, I'm going to show you this year's sales.",
+    "alternatives": [
+      "Next, I'll show you this year's sales.",
+      "Now I'm going to show you our sales for this year."
+    ],
+    "point": "これからすることは I'm going to / I'll で表す",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3dc7d9f9c0d81651f1e6c0e249cd363db064d3865c3ffd56de012443f9229764",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4w4u9e5m",
+    "ja": "もし予算が今の倍あったとしたら、皆さんはこの提案のどの部分を最初に広げますか？",
+    "en": "If you had twice the current budget, which part of this proposal would you expand first?",
+    "alternatives": [
+      "If your budget were twice what it is now, which part of this proposal would you expand first?",
+      "If you had double the current budget, which part of this proposal would you scale up first?"
+    ],
+    "point": "今の事実と違う仮定は過去形、問いは would you",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 6,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b10cf0029d700df9c19ad9dd4b8215936b85c95460535ff56c51283a50a365a4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5x3f4v3b",
+    "ja": "質疑応答で先方の女性担当者が、もう外した機能について聞いてきたので、きっと彼女は提案書を読み違えたんでしょう。",
+    "en": "The client's rep must have misread our proposal, since during the Q&A she asked about a feature we'd already dropped.",
+    "alternatives": [
+      "The woman from the client must have misunderstood our proposal, because during the Q&A she asked about a feature we'd already removed.",
+      "During the Q&A, the client's rep asked about a feature we had already dropped, so she must have misread our proposal."
+    ],
+    "point": "過去への強い推量は must have + 過去分詞",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2b71814f364666a7812b3e065328eefa49395e406590c5b30a70f22f59c55dd0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6k8r7r8p",
+    "ja": "発表のあとで、うちの部長が質問に答えます。",
+    "en": "Our manager will answer questions after the presentation.",
+    "alternatives": [
+      "Our manager is going to answer questions after the presentation.",
+      "Our manager will take questions after the presentation."
+    ],
+    "point": "これからのことなので will か be going to を使う",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a81ad0d7563e01b98515c5bec3b2fedae58526e512f2ecf38452b213f01f8bb7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6u5e5m9d",
+    "ja": "新しい料金プランに関する資料は、会議の後で皆さんにメールでお送りします。",
+    "en": "I'll email everyone the materials on the new pricing plan after the meeting.",
+    "alternatives": [
+      "I'll send you all the materials about the new pricing plan by email after the meeting.",
+      "After the meeting, I'll email you the materials on the new pricing plan."
+    ],
+    "point": "「〜に関する資料」は materials on/about 〜 と後ろから修飾",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6c9cf86ff353e0401731e102c371690b7ce542ae687c8ae26cb9f35b76eb16c5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6z3v6e8e",
+    "ja": "今回の発表は、技術的な細かい話からではなく、顧客アンケートの結果から始めればよかったと思っています。",
+    "en": "I wish I'd opened the presentation with the customer survey results instead of diving into the technical details.",
+    "alternatives": [
+      "I wish I had started the presentation with the customer survey results rather than the technical details.",
+      "I should have opened the presentation with the customer survey results instead of getting into the technical details."
+    ],
+    "point": "過去への後悔は wish の後を had + 過去分詞にする",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d325078a5bf92673463adc9530349179c1876fa7693d479bbce6eefe4908d583",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7j2x3f4q",
+    "ja": "田中さんが質問したとき、私はまだグラフを説明していました。",
+    "en": "I was still explaining the graph when Tanaka-san asked a question.",
+    "alternatives": [
+      "I was still going over the graph when Tanaka-san asked me a question.",
+      "When Tanaka-san asked a question, I was still explaining the graph."
+    ],
+    "point": "途中だった動作は was ＋ -ing、割り込んだ動作は過去形",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 3,
+    "grammar": ["progressive-aspect", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2aba015ddfca1dc222095cdf89ecb205eca30f26595ad85059a046efa2846b05",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7j3x5v8q",
+    "ja": "試験導入の結果が良さそうに見えても、他の地域でもっと検証するまでは、私たちはこれを全社展開すべきではありません。",
+    "en": "Even if the pilot results look promising, we shouldn't roll this out company-wide until we've tested it in more regions.",
+    "alternatives": [
+      "Even if the pilot results look good, we shouldn't roll this out across the company until we've tested it in other regions.",
+      "Even if the pilot results seem promising, we shouldn't launch this company-wide before we've tested it in more regions."
+    ],
+    "point": "「〜しても」は even if、「〜するまでは」は until",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2a4ff4d5cc9580b6f81d10ef9c6513a5ba4e3e2776a3c363cd424cc872cfe944",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7q4y5h6t",
+    "ja": "データを見直した結果、私たちのチームは当初の予測を下方修正することにしました。",
+    "en": "Having reviewed the data, our team decided to revise our original forecast downward.",
+    "alternatives": [
+      "After reviewing the data, our team decided to lower our original forecast.",
+      "Our team reviewed the data and decided to revise our initial forecast downward."
+    ],
+    "point": "先に終えたことは Having + 過去分詞で文頭に置ける",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:919759a69a07bd451c448068250e52150de77aac461047f31a4d0c5abdb0e88c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7v3v7z2z",
+    "ja": "山田さんがご指摘のとおり、この問題は去年からずっと議論されてきました。",
+    "en": "As Ms. Yamada pointed out, this issue has been discussed since last year.",
+    "alternatives": [
+      "As Ms. Yamada mentioned, this issue has been under discussion since last year.",
+      "As Ms. Yamada pointed out, we've been discussing this issue since last year."
+    ],
+    "point": "「去年から議論されてきた」は has been discussed",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 5,
+    "grammar": ["passive-voice", "present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:82df6859010f531814bc2635c0fa53902b3f3e9d77c232dc54888007156b47a6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7x6y8m2b",
+    "ja": "ご質問にお答えする前に、担当のエンジニアに技術的な詳細を説明させます。",
+    "en": "Before I take your questions, I'll have the engineer in charge explain the technical details.",
+    "alternatives": [
+      "Before I answer your questions, I'll have the engineer in charge walk you through the technical details.",
+      "Before taking your questions, I'll have our engineer in charge explain the technical details."
+    ],
+    "point": "have 人 do は原形。to explain にしない",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 5,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0ad89ead60dd6f97e5b0e48d4feae5e950b23d960fcb0e07ce245d35a97cc6d6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7z4c6r8r",
+    "ja": "顧客継続率のスライドで示された数字に、無料体験期間中に解約したユーザーは含まれているのか、説明していただけますか？",
+    "en": "Could you clarify whether the figures you showed on the slide about customer retention include the users who canceled during the free trial?",
+    "alternatives": [
+      "Could you explain whether the numbers on your customer retention slide include users who canceled during the free trial?",
+      "Would you mind clarifying whether the figures on the customer retention slide include the users who canceled during the free trial?"
+    ],
+    "point": "長い主語の後の動詞 include を落とさない",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 9,
+    "grammar": ["nested-clauses", "indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4a2ddea60beecefb1a5446e21e4fdddd332afd32dac3073977691fdb06e8d14c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8m5r3b7x",
+    "ja": "もし君がスライドの数字の間違いを指摘してくれていなかったら、僕は役員会で間違った数字を発表していたよ。",
+    "en": "If you hadn't pointed out the error in the slides, I'd have presented the wrong numbers to the board.",
+    "alternatives": [
+      "If you hadn't caught the mistake in the slides, I would have shown the board the wrong figures.",
+      "I would have presented the wrong numbers to the board if you hadn't pointed out the error on the slides."
+    ],
+    "point": "過去の仮定は if 節が had 過去分詞、主節は would have",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:501cd21c902cceece57bdef3fe096f696ea313e09e6c4530af6a37702f0a31f8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8t8b9m7v",
+    "ja": "これからお見せするデータは、私たちが先月実施した顧客調査に基づいています。",
+    "en": "The data I'm about to show you is based on a customer survey that we conducted last month.",
+    "alternatives": [
+      "The data I'm going to show you is based on a customer survey we carried out last month.",
+      "The data I'll be showing you comes from a customer survey that we ran last month."
+    ],
+    "point": "「私たちが実施した調査」は survey (that) we conducted と後ろに置く",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d8792dba709f6ae1f7c4dc00636a96925bc7b6a3e6016de46fd6c68c3e82f6c3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8u5e2r5e",
+    "ja": "この資料には、グラフが全部で3つあります。",
+    "en": "There are three charts in this handout.",
+    "alternatives": [
+      "This handout has three charts.",
+      "There are three graphs in this handout."
+    ],
+    "point": "複数あるなら There are、場所は文の最後に置く",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:25d59b90c83e01ff162d2c60228631efbc60d73e73ff9a07fdcfb147b3fc7ffd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8w4r6e4b",
+    "ja": "前回の発表以降、私たちは新たに200社の顧客を獲得しましたが、そのほとんどは先月契約したばかりです。",
+    "en": "Since our last presentation, we've gained 200 new clients, but we signed most of them just last month.",
+    "alternatives": [
+      "We've added 200 new clients since our last presentation, but most of them only signed last month.",
+      "Since the last presentation, we've won 200 new clients, though we signed most of them just last month."
+    ],
+    "point": "since は現在完了、last month は過去形と使い分ける",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:80d2ca436cead694f6da6010234e0db0a1ba2e5a58f131c18b75f67446f06472",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9p2n8q3g",
+    "ja": "今日皆さんにお伝えしたいのは、この変更がなぜ今必要なのかということです。",
+    "en": "What I want to tell you today is why this change is necessary right now.",
+    "alternatives": [
+      "What I'd like to share with you today is why we need this change now.",
+      "What I want to explain today is why this change is needed right now."
+    ],
+    "point": "文頭の What I want to tell you を主語にし、is の後は why 節",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["noun-clauses", "indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0c2517633a3762f117a86ba52bb0cb808330413ba4468c57a3ea629a8e95cb88",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9w5d3z5u",
+    "ja": "この提案を役員会で承認してもらうには、私たちは他にどんなデータを用意すべきでしょうか。",
+    "en": "What other data should we prepare to get this proposal approved by the board?",
+    "alternatives": [
+      "What other data do we need to prepare to get the board to approve this proposal?",
+      "To get this proposal approved by the board, what other data should we prepare?"
+    ],
+    "point": "「〜してもらうには」は目的の to get 〜 approved で表す",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 6,
+    "grammar": ["infinitives", "causatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2873064eadbdbe77ab8cec5734a3b05e1acaab419d23dce93a6e5cb13b21835e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  }
+]

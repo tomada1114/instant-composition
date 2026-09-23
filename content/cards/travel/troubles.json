@@ -1,0 +1,464 @@
+[
+  {
+    "id": "c_2a4f9c9a",
+    "ja": "私たちの予約の日付が間違っているようなので、確認していただけないかと思いまして。",
+    "en": "It seems there's a mistake with the dates on our booking, so I was wondering if you could check it.",
+    "alternatives": [
+      "There seems to be an error in the dates of our reservation, so I was wondering if you could look into it.",
+      "It looks like the dates on our booking are wrong, so I was wondering if you could check them."
+    ],
+    "point": "丁寧な依頼は I was wondering if you could と過去形で",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 8,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:41f459dfaf91fc19d3e0dfb54123732daa1566d13fcf0f4c77ce51a9a404d951",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2h4x9s7c",
+    "ja": "私たち、空港行きのバスに乗り遅れてしまいました。次のバスは何時ですか？",
+    "en": "We missed the airport bus. When's the next one?",
+    "alternatives": [
+      "We missed the bus to the airport. What time is the next one?",
+      "We've missed the airport bus. When does the next one come?"
+    ],
+    "point": "「乗り遅れる」は miss。過去形 missed で言う",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 2,
+    "grammar": ["past-simple", "wh-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0a8158340b7fef728d9881edf171a188da239738a1ec1a805bc47beb79b0062a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2z8d7s3b",
+    "ja": "私たちの席がダブルブッキングになっているみたいなんですが、どこに座ればいいか教えてもらえますか？",
+    "en": "It looks like our seats have been double-booked, so could you tell us where we should sit?",
+    "alternatives": [
+      "Our seats seem to have been double-booked, so could you tell us where we should sit?",
+      "It looks like our seats were double-booked, so could you let us know where we should sit?"
+    ],
+    "point": "間接疑問は where we should sit の語順",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 6,
+    "grammar": ["indirect-questions", "passive-voice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f2e4a13b1ab9f0e701565a07889e19342d1ebf1106ae8328a7e60abfa8b716d1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3a6d5n7w",
+    "ja": "なくなったスーツケースに名札を付けておけばよかったって、妻がずっと言っています。",
+    "en": "My wife keeps saying she wishes she had put a name tag on the suitcase that went missing.",
+    "alternatives": [
+      "My wife keeps saying she wishes she'd attached a name tag to the missing suitcase.",
+      "My wife keeps telling me she wishes she had put a name tag on the suitcase that got lost."
+    ],
+    "point": "過去の後悔は wish の後を had put と過去完了に",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 9,
+    "grammar": ["wishes-regrets", "relative-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:23de9f8786392eff16bf08166ca50cdb4ac94093d632604fe74c1cbad51bd477",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3b4u4w6z",
+    "ja": "私たち、もう少し早くホテルを出ていれば、空港行きのバスに乗り遅れなかったのに。",
+    "en": "If we had left the hotel a bit earlier, we wouldn't have missed the airport bus.",
+    "alternatives": [
+      "If we'd left the hotel a little earlier, we wouldn't have missed the bus to the airport.",
+      "We wouldn't have missed the airport bus if we had left the hotel a bit sooner."
+    ],
+    "point": "過去の後悔は if 節を had left、主節を wouldn't have missed に",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ac307e767960863911f51209a9fcd89ea7159f88888f72191d5fd3da50a5d060",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3e4k7j2x",
+    "ja": "空港のスタッフに、私のスーツケースを次の便で送ってくれるよう頼んでくれない？",
+    "en": "Can you ask the airport staff to send my suitcase on the next flight?",
+    "alternatives": [
+      "Could you ask the airport staff to put my suitcase on the next flight?",
+      "Can you get the airport staff to send my suitcase on the next flight?"
+    ],
+    "point": "「〜するよう頼む」は ask＋人＋to do。人のあとに to 不定詞",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:298dad8f385751c655cf3a47feba496cf4f880b6b2d58e41c876012c897a5f0c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3e5b6w8r",
+    "ja": "確認していただきたいのは、私たちのツアーの予約が本当にキャンセルされたかどうかです。",
+    "en": "What we'd like you to check is whether our tour reservation was really canceled.",
+    "alternatives": [
+      "What we'd like you to confirm is whether our tour booking was actually canceled.",
+      "What we'd like you to check is if our tour reservation was really canceled."
+    ],
+    "point": "「〜かどうか」は whether 節で、主語は What 節",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 8,
+    "grammar": ["cleft-emphasis", "noun-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f84cfa88869b9d894bcd8dd7dec9cb48979ecb4c6bf44f28f0279af74e5b8915",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3q7t7r7p",
+    "ja": "財布をなくしてしまいました。何かアドバイスをもらえますか？",
+    "en": "I lost my wallet. Can I get some advice?",
+    "alternatives": [
+      "I've lost my wallet. Could you give me some advice?",
+      "I lost my wallet. Do you have any advice?"
+    ],
+    "point": "advice は数えられないので an advice ではなく some advice",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 2,
+    "grammar": ["articles-and-countability", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d927a8661665e9c2e3a3390f5ccc5f2396b1af5bf7a54f6b809602e55de5d561",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3t8r2y6v",
+    "ja": "この部屋、予約した部屋よりずっと狭いんですが。",
+    "en": "This room is much smaller than the one I booked.",
+    "alternatives": [
+      "This room is a lot smaller than the room I booked.",
+      "This room is much smaller than the one I reserved."
+    ],
+    "point": "比較級の強調は very ではなく much",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 4,
+    "grammar": ["comparatives-superlatives", "relative-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:eb3a4ec48dc87d55072c96724efe8a4abf28d982f10a9f7d84e94d8f770b7312",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4d3q8z9g",
+    "ja": "姉の名前が予約リストにないんです。",
+    "en": "My sister's name isn't on the list.",
+    "alternatives": [
+      "My sister's name is not on the reservation list.",
+      "My sister isn't on the booking list."
+    ],
+    "point": "「リストにない」は be 動詞の否定＋on the list",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1eac7de465bd1c9af7f2d8d2fb0d43253b4623a5bcaa21cce778151a440396c0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4r6k4k8s",
+    "ja": "タクシーを待っていた時に、パスポートがないことに気づいたんです。",
+    "en": "I was waiting for a taxi when I noticed my passport was missing.",
+    "alternatives": [
+      "While I was waiting for a taxi, I noticed my passport was gone.",
+      "I realized my passport was missing while I was waiting for a taxi."
+    ],
+    "point": "「待っていた最中」は過去進行形 was waiting",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 4,
+    "grammar": ["progressive-aspect", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:703630be9561497b0998f934b8d416de85096f1ef0a916aac9349a53f4368452",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4z4q9g5m",
+    "ja": "私たち、空港行きのバスに乗り遅れてしまったので、ほかの行き方を考えるのを手伝ってもらえませんか？",
+    "en": "We missed the airport bus, so could you help us figure out another way to get there?",
+    "alternatives": [
+      "We missed the bus to the airport, so could you help us work out another way to get there?",
+      "We've missed the airport bus. Could you help us figure out some other way to get there?"
+    ],
+    "point": "「考えて見つける」は think ではなく figure out",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 6,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:eb670d83e1b87b6fbb1a1c7a248bedd1fcc7a5f1d1e070be3b24fdad8279fa6b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5q4u8v8c",
+    "ja": "電車で私の前に座っていた男の人が、私のバッグを持って行ったのかもしれません。",
+    "en": "The man sitting in front of me on the train may have taken my bag.",
+    "alternatives": [
+      "The man who was sitting in front of me on the train might have taken my bag.",
+      "The man seated in front of me on the train might have taken my bag."
+    ],
+    "point": "sitting で後ろから man を説明し、過去の推量は may have done",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 7,
+    "grammar": ["post-modification", "modal-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:39aedddf4f80fd95910d87af02e2d5dfdb3e528d13ccf000620d51c64ffed96d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5x5k5d6f",
+    "ja": "昨日カメラを盗まれたんですが、まだ警察には届けていないんです。",
+    "en": "My camera was stolen yesterday, but I haven't reported it to the police yet.",
+    "alternatives": [
+      "Someone stole my camera yesterday, but I haven't reported it to the police yet.",
+      "I had my camera stolen yesterday, but I still haven't reported it to the police."
+    ],
+    "point": "yesterday は過去形、まだ〜していないは現在完了",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["tense-contrast", "passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:09d93de9d16096bc441b0708546e907b6177a411f909e0500a88cc792b4900b8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6f8r5b6p",
+    "ja": "もし電車に乗り遅れたら、駅員さんに相談したほうがいいよ。",
+    "en": "If you miss your train, you should ask the station staff.",
+    "alternatives": [
+      "You should talk to the station staff if you miss your train.",
+      "If you miss your train, you should ask someone at the station."
+    ],
+    "point": "「〜したほうがいい」は should。if 節は未来でも現在形",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 3,
+    "grammar": ["modal-obligation-advice", "time-and-if-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ba3567bb4d50ac38285c502a124412ab6ce3b40dbc3fe90a2abe0a1c86c93275",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6k6e8z8e",
+    "ja": "私たち、スーツケースが出てくるのをもう2時間も待っているんです。",
+    "en": "We've been waiting for our suitcases to come out for two hours now.",
+    "alternatives": [
+      "We've been waiting two hours for our suitcases to come out.",
+      "We've been waiting for our luggage to come out for two hours already."
+    ],
+    "point": "今も待ち続けているので have been waiting を使う",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1954373a42f362c24d965356f66006322b5b7a75d5dffbb92d1a728aad38428a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7j5f9y4e",
+    "ja": "財布を盗まれたのは電車の中じゃなくて、改札のところだったと思います。",
+    "en": "I think it was at the ticket gate, not on the train, that my wallet was stolen.",
+    "alternatives": [
+      "I think my wallet was stolen at the ticket gate, not on the train.",
+      "I think it was at the ticket gate, rather than on the train, that someone stole my wallet."
+    ],
+    "point": "強調したい場所を It was と that の間に挟む",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1f864f7f7b4e09392de16ef903e4002f61be0d01959ec3b4ebea847997d10651",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7q2n4p8u",
+    "ja": "すみません、私のスーツケースが見つからないんです。",
+    "en": "Excuse me, I can't find my suitcase.",
+    "alternatives": [
+      "Sorry, I can't find my suitcase.",
+      "Excuse me, my suitcase is missing."
+    ],
+    "point": "「見つからない」は can't find で表す",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:109285cf126dfd916dd7f3dca0ca54337a261820220611fe2a9f432ee1283aec",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8x7c6c2j",
+    "ja": "カメラを盗まれたので、保険のためにホテルに報告書を作ってもらいたいんですが。",
+    "en": "My camera was stolen, so I'd like to have the hotel prepare a report for my insurance.",
+    "alternatives": [
+      "Since my camera was stolen, I'd like to get the hotel to write a report for my insurance.",
+      "My camera got stolen, so I'd like the hotel to prepare a report for my insurance claim."
+    ],
+    "point": "have + 人 + 原形、get なら get + 人 + to do",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 6,
+    "grammar": ["causatives", "passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:be4e962b0debcb5219423280ca1f1795863cadf3f3df0dd54f6c69e247c78b5c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9k2j8t6m",
+    "ja": "彼女は明日、警察にバッグの盗難届を出すつもりです。",
+    "en": "She's going to report her stolen bag to the police tomorrow.",
+    "alternatives": [
+      "She'll report her stolen bag to the police tomorrow.",
+      "She's going to report her bag stolen to the police tomorrow."
+    ],
+    "point": "予定は be going to、「盗まれたバッグ」は stolen bag",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 3,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:220362e22d6d1596479923be9cac59d862a66fe1af9a77dabdd04e224c295868",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9w5v4g2p",
+    "ja": "もし私の立場だったら、なくしたクレジットカードはすぐ止めますか、それとも明日まで待ちますか？",
+    "en": "If you were in my position, would you cancel the lost credit card right away or wait until tomorrow?",
+    "alternatives": [
+      "If you were me, would you cancel the lost credit card right away or wait until tomorrow?",
+      "If you were in my shoes, would you freeze the card right away or wait until tomorrow?"
+    ],
+    "point": "仮定の質問は If you were と would you で過去形にそろえる",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 7,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:30486b1c9ef1838b1daac4868233fc69f05f30bd5243bc0bd3affd592f3098dc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  }
+]

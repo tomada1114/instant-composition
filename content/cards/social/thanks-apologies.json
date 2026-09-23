@@ -1,0 +1,508 @@
+[
+  {
+    "id": "c_2b3d2j5v",
+    "ja": "うちの課長は、電車の遅れは私たちにはどうしようもなかったのに、お客様を待たせたことを心から謝っていた。",
+    "en": "My manager apologized sincerely to the client for keeping them waiting, even though the train delay was out of our control.",
+    "alternatives": [
+      "Even though the train delay was beyond our control, my manager sincerely apologized to the client for keeping them waiting.",
+      "My manager sincerely apologized to the client for keeping them waiting, even though we couldn't do anything about the train delay."
+    ],
+    "point": "「〜のに」は even though、待たせる は keep 人 waiting",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4fc75f91d63c50e5664ed6727b419792a99bf432c2db594342d48638a6f9e95e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2d6t7g5a",
+    "ja": "わざわざ時間を作って駅まで迎えに来てくださって、ありがとうございます。",
+    "en": "Thank you for taking the time to pick me up at the station.",
+    "alternatives": [
+      "Thank you for making the time to pick me up at the station.",
+      "Thank you for taking the time to come get me at the station."
+    ],
+    "point": "「わざわざ時間を作って」は take the time to do",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 5,
+    "grammar": ["infinitives", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:90ddcec5aff667b0772c80bce965df32a2c47eef90c26b64b1f7d4db7b34cee9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2s6g3e7c",
+    "ja": "私のミスのせいで、チーム全員に週末出勤させることになってしまって、本当に申し訳ない。",
+    "en": "I'm truly sorry that my mistake made the whole team come in on the weekend.",
+    "alternatives": [
+      "I'm really sorry my mistake forced the whole team to work over the weekend.",
+      "I'm so sorry. Because of my mistake, the whole team had to come in on the weekend."
+    ],
+    "point": "make + 人 + 動詞の原形。to は付けない",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 6,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bc8a445294de30d6794cb56a882bea49b51268142d8a19c2f7e8b69ebe5ad0af",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2v5r9a7p",
+    "ja": "君の助けがなかったら、今もまだこの報告書で行き詰まっていたところだよ。手伝ってくれて本当にありがとう。",
+    "en": "If it weren't for your help, I'd still be stuck on this report. Thanks so much for pitching in.",
+    "alternatives": [
+      "Without your help, I'd still be stuck on this report. Thank you so much for pitching in.",
+      "If you hadn't helped me, I'd still be stuck on this report, so thanks a lot for helping out."
+    ],
+    "point": "今も続く状況の仮定は I'd still be で表す",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["second-conditional", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:61d401d503bd7f98ad696a4b99877fb4da7bd426ecb7d06690091efcdaa41e3a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3k2r3d8a",
+    "ja": "引っ越しを手伝ってくれてありがとう。本当に困っていたんだ。",
+    "en": "Thanks for helping me move. I was really struggling.",
+    "alternatives": [
+      "Thank you for helping me move. I was really having a hard time.",
+      "Thanks for your help with the move. I was really struggling."
+    ],
+    "point": "「困っていた」は過去進行形 was struggling で表せる",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0eb13ec2fc3a94ef46fad95fc62aef934e406cd27c74573c6032213c056d9c30",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3r9p9k9d",
+    "ja": "ミスしてすみません。次はダブルチェックします。",
+    "en": "Sorry for the mistake. I'll double-check next time.",
+    "alternatives": [
+      "I'm sorry about the mistake. I will double-check next time.",
+      "Sorry about the mistake. I'll double-check it next time."
+    ],
+    "point": "その場で決めた約束は will。the mistake の冠詞も忘れずに",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 2,
+    "grammar": ["future-forms", "articles-and-countability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:70a2cc362e5b8f747361695c68d0a1f83a30fb25d4ad34548118f1a148ffaed5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3s4a9f2e",
+    "ja": "ミスをしたのは私なので、私から部長に謝るべきです。",
+    "en": "I made the mistake, so I should apologize to the manager.",
+    "alternatives": [
+      "It was my mistake, so I should apologize to the manager.",
+      "I'm the one who made the mistake, so I should apologize to the manager."
+    ],
+    "point": "apologize は自動詞なので to を忘れない",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 3,
+    "grammar": ["modal-obligation-advice", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a110892d62fccf57b69dfbbf1dc23a88dbd7c6fc2f8e6e4f0952f443d3f45de0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4j3k6y7t",
+    "ja": "今回ご迷惑をおかけしたのは、チームのミスではなく、私が数字の確認を怠ったせいです。申し訳ありません。",
+    "en": "It was my failure to check the figures, not a mistake by the team, that caused this inconvenience. I sincerely apologize.",
+    "alternatives": [
+      "What caused this inconvenience was my failure to check the figures, not a mistake by the team. I sincerely apologize.",
+      "It was my failure to check the numbers, not the team's mistake, that caused this trouble. I sincerely apologize."
+    ],
+    "point": "It was A, not B, that で「B ではなく A が」を強調",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4d6622e4636bc802109537ffcbd2c3904a363bfdfdb078fd026191f455405084",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4t7p5g4m",
+    "ja": "彼女の誕生日パーティーに行けなかったこと、ちゃんと謝っておけばよかったな。",
+    "en": "I wish I'd apologized properly to her for missing her birthday party.",
+    "alternatives": [
+      "I wish I had properly apologized to her for not going to her birthday party.",
+      "If only I'd apologized to her properly for missing her birthday party."
+    ],
+    "point": "過去への後悔は wish の後を過去完了にする",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["wishes-regrets", "gerunds"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:08d72d6177a388956eb1c968581bec6c41a66915fcdb0cd5cbc2cfb4d3ae9fae",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5x8c9q6k",
+    "ja": "新人の田中くんがミスに気づいてなかったら、私たち、お客さんに間違った見積もりを送ってたよ。ちゃんとお礼言わなきゃ。",
+    "en": "If our new hire Tanaka hadn't spotted the mistake, we'd have sent the client the wrong quote. We should thank him properly.",
+    "alternatives": [
+      "If Tanaka, our new hire, hadn't caught the mistake, we'd have sent the client the wrong quote. We should really thank him.",
+      "We'd have sent the client the wrong quote if our new guy Tanaka hadn't noticed the mistake. We need to thank him properly."
+    ],
+    "point": "過去の事実の裏は If S had done, S would have done",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8c76943a4393264945ea237a9d9957d9ea4f0b6aca3da76049a6af0f5bcb2b85",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6c5e7v6d",
+    "ja": "越してきたばかりで心細かったので、近所を案内してもらえたことが何より嬉しかったです。ありがとうございました。",
+    "en": "What I appreciated most was that you showed me around the neighborhood when I'd just moved in and felt a bit lost. Thank you.",
+    "alternatives": [
+      "What meant the most to me was that you showed me around the neighborhood when I'd just moved in and felt a little lost. Thank you.",
+      "The thing I appreciated most was you showing me around the neighborhood when I'd just moved here and was feeling uneasy. Thank you."
+    ],
+    "point": "「何より嬉しかったこと」を主語にして was で受ける",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 10,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4f9c53567a68f351afbb9173a2b038fd09cff17c4ff72d8ca491eb1fe07be72c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6k9c2p5a",
+    "ja": "先輩が夜中まで残ってスライドの修正を手伝ってくれたから、お礼にランチをおごったんだ。",
+    "en": "My senior coworker stayed until midnight helping me fix the slides, so I bought them lunch as a thank-you.",
+    "alternatives": [
+      "My senior colleague stayed till midnight helping me fix the slides, so I treated them to lunch.",
+      "My senior coworker stayed until midnight helping me with the slides, so I bought them lunch to say thanks."
+    ],
+    "point": "「残って手伝う」は stayed helping と -ing でつなぐ",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5f5557a2c9cbabba75c1df19b75be77d35f50f568c5fda9759f3a2e4a052b2dd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6s2s7s2p",
+    "ja": "さっき君が車で送ってくれなかったら、僕は今ごろまだ駅で待ってたよ。ほんとにありがとう！",
+    "en": "If you hadn't driven me here, I'd still be waiting at the station right now. Thanks so much!",
+    "alternatives": [
+      "If you hadn't given me a ride, I'd still be waiting at the station right now. Thank you so much!",
+      "Thanks so much! If you hadn't driven me, I'd still be stuck waiting at the station now."
+    ],
+    "point": "過去の条件＋今の結果は If I had done, I'd be doing",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6cadb3a0f7ef3f9aada15df239740fc2d3a4581625e7540c5e9099d61b68764d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6v3z6z7z",
+    "ja": "申し訳ございません、お客様のご注文の品が間違った住所に送られてしまいました。",
+    "en": "I'm very sorry, but your order was sent to the wrong address.",
+    "alternatives": [
+      "I apologize, but your order was sent to the wrong address.",
+      "We're very sorry, but your order was shipped to the wrong address."
+    ],
+    "point": "「送られた」は was sent、住所は the wrong address",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 4,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2b8332c2aabaa9c931b66169836c328274b92cd19b047e7dadecf206d77909e6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7c3g4d3g",
+    "ja": "送る前にちゃんと確認するべきでした。ミスしてしまって申し訳ありません。",
+    "en": "I should have checked it before sending it. I'm sorry about the mistake.",
+    "alternatives": [
+      "I should've double-checked it before I sent it. I'm sorry for the mistake.",
+      "I should have checked it before sending. I apologize for the error."
+    ],
+    "point": "「〜すべきだった」は should have + 過去分詞",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 6,
+    "grammar": ["modal-perfect", "gerunds"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:19e96964d3f0f126f63ba49af60dfa8c2ba82e0dd02a3290d079f962998f6f13",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7e9r4k9q",
+    "ja": "あの朝あなたが車で送ってくれなかったら、私は面接に間に合わなかったと思います。本当にありがとうございました。",
+    "en": "If you hadn't given me a ride that morning, I don't think I'd have made it to the interview. Thank you so much.",
+    "alternatives": [
+      "I don't think I would have made it to the interview if you hadn't driven me that morning. Thank you so much.",
+      "If you hadn't driven me that morning, I probably wouldn't have gotten to the interview in time. I really appreciate it."
+    ],
+    "point": "過去の仮定は had 過去分詞、帰結は would have 過去分詞",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 9,
+    "grammar": ["third-conditional", "hedging-softening"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:76d80a9c4a3138b21ffb4740e2feaa386ae9c9f5822301975d4528f473eb9515",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7w2n6k7w",
+    "ja": "手伝ってくれてありがとう。僕、一週間ずっとこのバグで悩んでたんだ。",
+    "en": "Thanks for your help. I've been struggling with this bug all week.",
+    "alternatives": [
+      "Thanks for helping me. I've been stuck on this bug all week.",
+      "Thank you for the help. I've been struggling with this bug for a whole week."
+    ],
+    "point": "今も続く悩みは I've been ~ing で表す",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:521f31cd1f51ef5726c314e8bd3031858d0dda82baab323dbabe9d29204178e0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7x9n8x6c",
+    "ja": "昨日は電話に出られなくてごめんね。電車に乗ってたんだ。",
+    "en": "Sorry I couldn't answer your call yesterday. I was on the train.",
+    "alternatives": [
+      "Sorry I couldn't pick up your call yesterday. I was on the train.",
+      "Sorry I couldn't take your call yesterday. I was on a train."
+    ],
+    "point": "過去の「できなかった」は couldn't で表す",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 4,
+    "grammar": ["can-could-ability", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:08117d5408cce5ea062b056a7c91cb976287a6b0756e60e813edad21b22b1303",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8c9w2t5b",
+    "ja": "こんなに迷惑をかけてしまったので、今週末に埋め合わせをさせてもらえませんか？",
+    "en": "Could you let me make it up to you this weekend for all the trouble I've caused?",
+    "alternatives": [
+      "Would you let me make it up to you this weekend for all the trouble I caused?",
+      "Can I make it up to you this weekend for causing you so much trouble?"
+    ],
+    "point": "埋め合わせる は make it up to 人",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6452cec70464386e2b1599cfd75091c910fa019d7c306639db4eb0edcb04c8c3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8d4x5e7w",
+    "ja": "先日お貸しいただいた資料を、まだお返ししていなくて申し訳ありません。",
+    "en": "I'm sorry I still haven't returned the documents that you lent me the other day.",
+    "alternatives": [
+      "I'm sorry I haven't returned the materials you lent me the other day yet.",
+      "I apologize that I still haven't returned the documents you lent me the other day."
+    ],
+    "point": "「まだ〜していない」は still haven't returned",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 5,
+    "grammar": ["relative-clauses", "present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f5af17dfbfc30c917d53c3e93661cb87054757733533d1bdad5688b81953ba85",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8t9x6w5s",
+    "ja": "遅れてすみません。もう一度最初から説明していただけますか？",
+    "en": "Sorry I'm late. Could you explain it again from the beginning?",
+    "alternatives": [
+      "I'm sorry I'm late. Could you go over it again from the start?",
+      "Sorry for being late. Would you explain it again from the beginning?"
+    ],
+    "point": "丁寧な依頼は Could you + 動詞の原形",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c808d7fd172995429a00336f5fcf1530fe664d5c6f969df04881f04ac51f7114",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8v9t9c2e",
+    "ja": "お客さんに送る前にミスに気づいてくれて、ありがとう。",
+    "en": "Thanks for catching the mistake before we sent it to the client.",
+    "alternatives": [
+      "Thank you for noticing the mistake before we sent it to the client.",
+      "Thanks for spotting the mistake before we sent it to the client."
+    ],
+    "point": "before の後は過去形 sent で時制をそろえる",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 4,
+    "grammar": ["past-simple", "gerunds"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a3dbc6dae36114ea97130f2dede95a7456a5d8e092e27fae4879739fecf9ec1a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8w5y2p2q",
+    "ja": "手伝ってくれてありがとう。君は本当に優しいね。",
+    "en": "Thanks for your help. You're so kind.",
+    "alternatives": [
+      "Thank you for helping me. You're really kind.",
+      "Thanks for the help. You're very kind."
+    ],
+    "point": "「優しい」は be 動詞＋kind。You kind としない",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c1e4d4c29434ea3060e503a5fd739f217a9cc27a998559ba11e646485b22f889",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  }
+]

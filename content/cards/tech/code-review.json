@@ -1,0 +1,571 @@
+[
+  {
+    "id": "c_2h5r6m4n",
+    "ja": "修正後のコードのほうがずっと読みやすいね。",
+    "en": "The new code is much easier to read.",
+    "alternatives": [
+      "The new code is a lot easier to read.",
+      "The new code is much more readable."
+    ],
+    "point": "比較級を強めるのは very ではなく much",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:da3e08563eee4ec8832595b3f3f861512eca89240a690421c8c5f2ffdb719bb3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2h8p7c9f",
+    "ja": "このレビューは明日の朝までに終わらせます。",
+    "en": "I'll finish this review by tomorrow morning.",
+    "alternatives": [
+      "I'm going to finish this review by tomorrow morning.",
+      "I'll get this review done by tomorrow morning."
+    ],
+    "point": "期限の「までに」は until ではなく by",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a007a9c86092f9049d6ca82bb1f10f6ca6537d5cf117a88e4fc6b7960fe85504",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2m2x5d3f",
+    "ja": "マージする前に、もう一度テストを実行してください。",
+    "en": "Please run the tests again before you merge.",
+    "alternatives": [
+      "Please rerun the tests before merging.",
+      "Run the tests one more time before you merge, please."
+    ],
+    "point": "動詞の原形で始める命令文に please を添える",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 3,
+    "grammar": ["imperatives", "time-and-if-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9c0f48069563c615f294172adfe6f8aaebaee0c3279c19a435022e78aec3cba7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2t5x6w2w",
+    "ja": "細かい点ですが、この変数名はもう少し分かりやすくできるかもしれません。",
+    "en": "This is just a small point, but maybe this variable name could be a little clearer.",
+    "alternatives": [
+      "It's a minor point, but this variable name could perhaps be a bit clearer.",
+      "Just a small thing, but I wonder if this variable name could be a little clearer."
+    ],
+    "point": "「かもしれません」は maybe や could で柔らかく言う",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8c2489104f48f8837febd64b3d62361ed651e6b9cb441c1212b9ca6aa4fc94d1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2y9d7a5x",
+    "ja": "この関数、もっと小さいヘルパー関数に分けることを検討してもらえますか？",
+    "en": "Could you consider splitting this function into smaller helper functions?",
+    "alternatives": [
+      "Would you consider breaking this function up into smaller helpers?",
+      "Could you think about splitting this function into smaller helper functions?"
+    ],
+    "point": "consider の後ろは to 不定詞ではなく動名詞",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 4,
+    "grammar": ["gerunds", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e235fa63f246993aea77355bcccde8834824406a81d83b04f99d95fd28cbed3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3f9s6d5u",
+    "ja": "田中さんにこの PR をレビューしてくれるよう頼んでもらえますか？",
+    "en": "Could you ask Tanaka-san to review this PR?",
+    "alternatives": [
+      "Can you ask Tanaka-san to review this PR?",
+      "Could you ask Tanaka to take a look at this PR?"
+    ],
+    "point": "「人に〜するよう頼む」は ask + 人 + to do",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 3,
+    "grammar": ["verb-object-to-do", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7bf916417a4740bbc08abbe986f1ebe3c526526a355ae46dfa3eefe3f6b286f2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3g7v9q9e",
+    "ja": "このバグ、先週の PR で入り込んだみたいです。",
+    "en": "It looks like this bug was introduced in last week's PR.",
+    "alternatives": [
+      "This bug seems to have been introduced in last week's PR.",
+      "It seems this bug was introduced by last week's PR."
+    ],
+    "point": "バグは「入れられた」ので was introduced と受動態にする",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 4,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:75d1ccc75ae53ffd17a496ed92a720c3348a2fa94b4b5bf194e4f3bb0bd48ecd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3n8n8p7v",
+    "ja": "PR の説明に、パフォーマンスへの影響についての情報を少し追加してもらえますか？",
+    "en": "Could you add some information about the performance impact to the PR description?",
+    "alternatives": [
+      "Can you add a bit of information about the performance impact to the PR description?",
+      "Could you add some details about the performance impact to the PR description?"
+    ],
+    "point": "information は数えられないので an も -s もつけない",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 4,
+    "grammar": ["articles-and-countability", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d24d7d7ca9fcdeabfa7263485d595dd0ea57465109cf199997ca2756f8f1cf57",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3t6y2c3r",
+    "ja": "先月このエッジケースのテストを追加していれば、僕たちは今ごろ本番でこのバグを追いかけていなかったはずです。",
+    "en": "If we'd added a test for this edge case last month, we wouldn't be chasing this bug in production now.",
+    "alternatives": [
+      "If we had added a test for this edge case last month, we wouldn't be tracking down this bug in production now.",
+      "If we'd written a test for this edge case last month, we wouldn't be chasing this bug in production right now."
+    ],
+    "point": "過去の仮定は had added、今の結果は wouldn't be -ing",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:249a5ccc221fc27fb10c4b888852b6614e7080c1381d6e7cf64b12f13aef7bdb",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3w5x5t4h",
+    "ja": "指摘されたところは、もう全部直しました。",
+    "en": "I've already fixed all the issues you pointed out.",
+    "alternatives": [
+      "I've already fixed everything you pointed out.",
+      "I've already addressed all of your comments."
+    ],
+    "point": "「もう直した」は現在完了 I've already fixed",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 4,
+    "grammar": ["present-perfect", "relative-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5689f5d17b14fbc1d4f63ce82cd2c25b92096a98764f7585c14ac54d14f06b0e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4u8x7a6j",
+    "ja": "指摘ありがとうございます。僕が気にしていたのは、リトライ処理がエラーを隠してしまわないかということです。",
+    "en": "Thanks for pointing that out. What I was worried about was whether the retry logic would hide errors.",
+    "alternatives": [
+      "Thanks for the feedback. My concern was that the retry logic might hide errors.",
+      "Thanks for the comment. What worried me was whether the retry logic would hide errors."
+    ],
+    "point": "「気にしていたこと」は What I was worried about で主語に",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["noun-clauses", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:81b0e9979c76060130e859d9224a77f09afd83b31e09de082e738d4bd4e581d0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5d6b5p6p",
+    "ja": "テックリードが、この変数名はわかりにくいって言ってました。",
+    "en": "The tech lead said this variable name was confusing.",
+    "alternatives": [
+      "The tech lead said that this variable name was hard to understand.",
+      "The tech lead told me this variable name was confusing."
+    ],
+    "point": "said に合わせて is ではなく was にする",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 5,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:aa5e4d0040e9faabd9ecb9ef7e8113a5e775208979586d39dec4a20390082655",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5h6x3d4g",
+    "ja": "この PR で追加されたテスト、本物の API を呼んでいるので、モックに置き換えたほうがいいと思います。",
+    "en": "The tests added in this PR call the real API, so I think they should use mocks instead.",
+    "alternatives": [
+      "The tests added in this PR are hitting the real API, so they should probably use mocks.",
+      "The tests added in this PR call the actual API, so I think we should mock it instead."
+    ],
+    "point": "「追加されたテスト」は過去分詞で後ろから修飾",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["post-modification", "modal-obligation-advice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:646a8975b8ef95315f8c977a6b9577b3cfcb4377c6b7c99ef5c0ad86dd3d2a89",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5u5e9p5z",
+    "ja": "このテスト、どうして削除したんですか？",
+    "en": "Why did you delete this test?",
+    "alternatives": [
+      "Why did you remove this test?",
+      "What was the reason you deleted this test?"
+    ],
+    "point": "過去のことを聞くので did ＋動詞の原形",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 3,
+    "grammar": ["wh-questions", "past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e05829c9c82c6358d0a0a9bbc279d96ba54bdf7b6ca864fd69d9e4c81f72de4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6c8s8m7r",
+    "ja": "この PR をマージしたら、Slack でチームに知らせます。",
+    "en": "I'll let the team know on Slack when I merge this PR.",
+    "alternatives": [
+      "I'll tell the team on Slack when I merge this PR.",
+      "Once I merge this PR, I'll let the team know on Slack."
+    ],
+    "point": "未来のことでも when 節は現在形で merge とする",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 5,
+    "grammar": ["time-and-if-clauses", "future-forms"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7d022c54fcb4796dd171e6027c48c0a3b9b1746b740bac300c06ccee36c64e03",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6e2y4p2g",
+    "ja": "この PR の作成者は、公開 API には手を付けずにキャッシュ層を書き直したので、呼び出し側は何も変えなくていいです。",
+    "en": "The author rewrote the caching layer while leaving the public API untouched, so none of the callers need to change.",
+    "alternatives": [
+      "The author rewrote the caching layer, leaving the public API as it was, so the callers don't need any changes.",
+      "The author rewrote the caching layer without touching the public API, so none of the callers have to change."
+    ],
+    "point": "「〜せずに」は while leaving 〜 untouched で添える",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 10,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6fec0090a0f87a262ac8c3cad18ac01a0cc77e3cf7947ce148d0279f12607c55",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6w3x2v4t",
+    "ja": "このマイグレーション、マージされる前にデータベースチームにレビューしてもらうべきだったんじゃないですか？",
+    "en": "Shouldn't this migration have been reviewed by the database team before it was merged?",
+    "alternatives": [
+      "Shouldn't the database team have reviewed this migration before it was merged?",
+      "Shouldn't this migration have been checked by the database team before it got merged?"
+    ],
+    "point": "「すべきだったのでは」は Shouldn't で始め have + 過去分詞",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 9,
+    "grammar": ["modal-perfect", "passive-voice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:286ff78c482d784240c11338972f56ec3d16c4038f2a63fe1c273d618da66b58",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7c3k4t4d",
+    "ja": "このオフバイワンのエラーに気づいてもらえなかったら、僕たちはページ送りが壊れたまま全ユーザーにリリースしていたところでした。",
+    "en": "If you hadn't caught this off-by-one error, we would have shipped broken pagination to all our users.",
+    "alternatives": [
+      "If you hadn't spotted this off-by-one error, we'd have released broken pagination to all our users.",
+      "We would have shipped broken pagination to all our users if you hadn't caught this off-by-one error."
+    ],
+    "point": "過去の事実に反する仮定は had + 過去分詞、帰結は would have",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:751ca498dc2a049c73f7a67307ffe9ce19416699a07369f169cab6ae493f8fba",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8c8q9y9n",
+    "ja": "この関数、ちょっと長すぎますか？",
+    "en": "Is this function too long?",
+    "alternatives": [
+      "Is this function a bit too long?",
+      "Is this function a little too long?"
+    ],
+    "point": "形容詞の疑問文は be 動詞を文頭に出す",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ad3024ec2f8a55d7a283cd6f3c18e6a4f4cc0f0d6ac1d105f78f0b7ee22604bb",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8e3m3y2e",
+    "ja": "このレビューで特に見てほしいのは、ネットワークが切れたときにリトライ処理がちゃんと動くかどうかです。",
+    "en": "What I'd especially like you to check is whether the retry logic still works when the network drops.",
+    "alternatives": [
+      "What I'd really like you to look at is whether the retry logic works properly if the network drops.",
+      "The thing I'd especially like you to check is whether the retry logic still works when the connection drops."
+    ],
+    "point": "「見てほしいのは」は What I'd like you to check is で始める",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 9,
+    "grammar": ["cleft-emphasis", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:797b3349366081873c523ed432aaa9ed5b9ecd8d12d1103fda6dd65e1d9c346d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8h8r6t7u",
+    "ja": "レビューをお願いする前に、僕はもうローカルで全部のテストを通していました。",
+    "en": "I had already gotten all the tests to pass locally before I asked you to review it.",
+    "alternatives": [
+      "I'd already made sure every test passed locally before I asked for your review.",
+      "Before I asked you to review it, I had already gotten every test passing locally."
+    ],
+    "point": "頼む前に済んでいたことは had + 過去分詞で表す",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:aa86008f257d4303e66f7e9ef237a999cbd3eab1e117c60e789b10d21bba1229",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9a8p6v3g",
+    "ja": "この変数名は、もっとわかりやすくするために変えました。",
+    "en": "I changed this variable name to make it clearer.",
+    "alternatives": [
+      "I renamed this variable to make it clearer.",
+      "I changed this variable's name to make it easier to understand."
+    ],
+    "point": "「〜するために」は to ＋動詞の原形",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 3,
+    "grammar": ["infinitives", "past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dcf05b623e30180ef1957166bd077f22d024f5c5d4099dbe37c31993409444e9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9n5v9b2b",
+    "ja": "CI でスナップショットテストが3つ落ちているので、きっとスナップショットの更新を忘れたんですね。",
+    "en": "Three snapshot tests are failing on CI, so you must have forgotten to update the snapshots.",
+    "alternatives": [
+      "You must have forgotten to update the snapshots, since three snapshot tests are failing on CI.",
+      "Three of the snapshot tests are failing on CI, so you must have forgotten to update them."
+    ],
+    "point": "過去への確信ある推量は must have + 過去分詞",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bcdeb6496283d36c67ba56c11729bd6ab473ba80c00707b4ca1fd71fdc62f6b3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9x2g7w4w",
+    "ja": "ごめん、このエラーは僕のパソコンでは再現できませんでした。",
+    "en": "Sorry, I couldn't reproduce this error on my computer.",
+    "alternatives": [
+      "Sorry, I wasn't able to reproduce this error on my computer.",
+      "Sorry, I couldn't reproduce this error on my machine."
+    ],
+    "point": "過去の「できなかった」は couldn't",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 2,
+    "grammar": ["can-could-ability", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c391bcdaba41775878449cd3fabffeaff85a0c194d80182fcf708cc78f646e08",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9x4t5g6j",
+    "ja": "テスト、昨日は通ってたんだけど、今朝リベースしてからずっと3件落ちてるんだ。",
+    "en": "The tests passed yesterday, but since I rebased this morning, three of them have been failing.",
+    "alternatives": [
+      "The tests were passing yesterday, but three of them have been failing since I rebased this morning.",
+      "Yesterday the tests passed, but ever since I rebased this morning, three have been failing."
+    ],
+    "point": "昨日は過去形、今朝から続く状態は現在完了進行形",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 6,
+    "grammar": ["tense-contrast", "present-perfect-continuous"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c4c91d8900798a3166f21da6dc146f84258f1ec7881e239f147f1c82098c19f1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9x6c3y7n",
+    "ja": "この PR にはテストが二つあります。",
+    "en": "There are two tests in this PR.",
+    "alternatives": ["This PR has two tests.", "This PR includes two tests."],
+    "point": "複数なので There are、tests と複数形に",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c6ea9b62e99b4a426247f011b76338e5bad68197cc883e64f9bc8ea11e844c2b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]
