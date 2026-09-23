@@ -226,31 +226,32 @@ with `ERR_CARDS_BUSY`. The tag lists and guides are edited by hand, and
 Each skill owns one kind of change. Load the one whose subject you are working on; each
 names its own boundary with its neighbours.
 
-| Skill                              | Load it when you are working on                                                                                                      |
-| ---------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------ |
-| `building-app-routes`              | a page, layout or Route Handler under `src/app/`, `src/proxy.ts`, or `src/server/`                                                   |
-| `localizing-ui`                    | a catalog under `messages/`, a module under `src/i18n/`, or adding a UI string                                                       |
-| `writing-typescript`               | a `.ts` module or a `.tsx` component under `src/`                                                                                    |
-| `designing-errors`                 | an error type or an `ERR_*` code, in `src/` or `scripts/`                                                                            |
-| `writing-tests`                    | the body of a test under `tests/`                                                                                                    |
-| `placing-tests`                    | a new test file, a vitest project, or a coverage floor                                                                               |
-| `type-testing`                     | an `expectTypeOf` assertion or a `@ts-expect-error` inside a test                                                                    |
-| `writing-repo-scripts`             | a `.mjs` under `scripts/`                                                                                                            |
-| `authoring-skills`                 | a skill under `.agents/skills/`                                                                                                      |
-| `changing-gates`                   | a CI workflow, `lefthook.yml`, or a tool config                                                                                      |
-| `managing-dependencies`            | adding, bumping, or removing a package by hand, or pinning `.mcp.json`'s MCP server versions (an open bot PR is `merge-dependabot`)  |
-| `merge-dependabot`                 | landing open Dependabot or Renovate pull requests                                                                                    |
-| `updating-docs`                    | `README.md`, `CONTRIBUTING.md`, `AGENTS.md`, or whether a change owes a doc at all                                                   |
-| `triaging-issues`                  | filing, labelling, or ranking a GitHub issue                                                                                         |
-| `designing-ui`                     | the design direction, the theme tokens in `src/app/globals.css`, a shadcn/ui component, or styling any screen                        |
-| `shipping-issues`                  | ranking open issues and shipping the top one (or all) through PR, CI, and merge                                                      |
-| `generating-cards`                 | writing new cards into `content/cards/`, filling thin cells, or adding a subtopic                                                    |
-| `reviewing-cards`                  | reviewing, fixing, deleting or stamping cards; `pnpm cards:lint` errors or a non-empty `pnpm cards:queue`                            |
-| `backfilling-card-fields`          | filling a newly declared optional card field across existing cards                                                                   |
-| `starting-an-app`                  | turning this template into a new app: the rename, the locales, the design direction                                                  |
-| `recording-architecture-decisions` | `docs/architecture/`, or whether a change owes an ADR: a boundary, persistence shape, external contract, provider, or security model |
-| `designing-application-core`       | domain rules, commands, queries, ports and adapters, projections, idempotency, or code that reads the clock or a timezone            |
-| `isolating-learner-data`           | an endpoint, store method, session or token handling, job, or model tool that touches a learner's data                               |
+| Skill                              | Load it when you are working on                                                                                                           |
+| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| `building-app-routes`              | a page, layout or Route Handler under `src/app/`, `src/proxy.ts`, or `src/server/`                                                        |
+| `localizing-ui`                    | a catalog under `messages/`, a module under `src/i18n/`, or adding a UI string                                                            |
+| `writing-typescript`               | a `.ts` module or a `.tsx` component under `src/`                                                                                         |
+| `designing-errors`                 | an error type or an `ERR_*` code, in `src/` or `scripts/`                                                                                 |
+| `writing-tests`                    | the body of a test under `tests/`                                                                                                         |
+| `placing-tests`                    | a new test file, a vitest project, or a coverage floor                                                                                    |
+| `type-testing`                     | an `expectTypeOf` assertion or a `@ts-expect-error` inside a test                                                                         |
+| `writing-repo-scripts`             | a `.mjs` under `scripts/`                                                                                                                 |
+| `authoring-skills`                 | a skill under `.agents/skills/`                                                                                                           |
+| `changing-gates`                   | a CI workflow, `lefthook.yml`, or a tool config                                                                                           |
+| `managing-dependencies`            | adding, bumping, or removing a package by hand, or pinning `.mcp.json`'s MCP server versions (an open bot PR is `merge-dependabot`)       |
+| `merge-dependabot`                 | landing open Dependabot or Renovate pull requests                                                                                         |
+| `updating-docs`                    | `README.md`, `CONTRIBUTING.md`, `AGENTS.md`, or whether a change owes a doc at all                                                        |
+| `triaging-issues`                  | filing, labelling, or ranking a GitHub issue                                                                                              |
+| `designing-ui`                     | the design direction, the theme tokens in `src/app/globals.css`, a shadcn/ui component, or styling any screen                             |
+| `shipping-issues`                  | ranking open issues and shipping the top one (or all) through PR, CI, and merge                                                           |
+| `steering-the-roadmap`             | choosing what to work on next, reordering phases or scope, cutting a phase into issues, or the project's status; before `shipping-issues` |
+| `generating-cards`                 | writing new cards into `content/cards/`, filling thin cells, or adding a subtopic                                                         |
+| `reviewing-cards`                  | reviewing, fixing, deleting or stamping cards; `pnpm cards:lint` errors or a non-empty `pnpm cards:queue`                                 |
+| `backfilling-card-fields`          | filling a newly declared optional card field across existing cards                                                                        |
+| `starting-an-app`                  | turning this template into a new app: the rename, the locales, the design direction                                                       |
+| `recording-architecture-decisions` | `docs/architecture/`, or whether a change owes an ADR: a boundary, persistence shape, external contract, provider, or security model      |
+| `designing-application-core`       | domain rules, commands, queries, ports and adapters, projections, idempotency, or code that reads the clock or a timezone                 |
+| `isolating-learner-data`           | an endpoint, store method, session or token handling, job, or model tool that touches a learner's data                                    |
 
 ## Security and human approval
 

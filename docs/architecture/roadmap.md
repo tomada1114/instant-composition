@@ -30,6 +30,9 @@ realizes. An exit criterion is something that can be observed, not a task that w
 
 ## How the work is tracked
 
+`steering-the-roadmap` decides what is worked on next and keeps this page and the
+tracker in step.
+
 - **One parent issue per phase.** Its title is "Phase N — …", and it holds the goal and
   the exit criteria. It carries `on hold` because it is a container, not a unit of work.
 - **Sub-issues.** A phase's work items are sub-issues of its parent, ordered by
