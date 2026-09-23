@@ -165,7 +165,7 @@ describe("the import scanner the zone assertions run on", () => {
   });
 
   it.each([
-    ["src/server/env.ts", ["server-only", "zod"]],
+    ["src/server/env.ts", ["server-only", "node:path", "zod"]],
     [
       "src/components/ui/button.tsx",
       [
