@@ -17,6 +17,7 @@ export {
 export type { ApplicationError, ApplicationErrorCode } from "./errors";
 export { type ApplicationDeps } from "./execute";
 export { finishRound } from "./finish-round";
+export { home } from "./home";
 export {
   createMemoryStores,
   MAX_COMMIT_ITEMS,
@@ -28,7 +29,18 @@ export {
   SYSTEM_OPERATIONS,
   type OperationKind,
 } from "./operations";
+export { history, recap, settingsPage } from "./queries";
+export type {
+  BreakdownTopic,
+  History,
+  HomePreview,
+  HomeView,
+  RecordsView,
+  SettingsPageView,
+  TitleGroup,
+} from "./query-views";
 export { recordAnswers, type RecordAnswersCommand } from "./record-answers";
+export { records } from "./records";
 export { startRound } from "./start-round";
 export {
   keyOf,
