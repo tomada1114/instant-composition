@@ -1,0 +1,68 @@
+[
+  {
+    "id": "c_3h6p7q2w",
+    "ja": "もし在宅勤務ができたら、毎朝早起きしなくて済むのに。",
+    "en": "If I could work from home, I wouldn't have to get up early every morning.",
+    "alternatives": [
+      "If I worked from home, I wouldn't need to get up early every morning.",
+      "I wouldn't have to wake up early every morning if I could work remotely."
+    ],
+    "point": "現在の事実に反する仮定は If + 過去形 could、主節は wouldn't で言う",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 5,
+    "grammar": ["second-conditional", "modal-obligation-advice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:af8aa263c9d3f829a7cf8447c2fd8991ddd0fe6ba1e3e6ca659838baed422576",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7q7n8n3c",
+    "ja": "部長が来たとき、あなたは休憩していたんですか？",
+    "en": "Were you taking a break when the manager came by?",
+    "alternatives": [
+      "Were you on your break when the manager stopped by?",
+      "Were you on a break when the manager came over?"
+    ],
+    "point": "その時していた最中の動作は Were you -ing で聞く",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 3,
+    "grammar": ["progressive-aspect", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7578780551dfd1f8515bcc7e86f26e78d7d848ab96cfc504811cbf54d5398261",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9v6g9v9v",
+    "ja": "私が出社したときには、コピー用紙はもうなくなっていた。",
+    "en": "The copy paper had already run out when I got to the office.",
+    "alternatives": [
+      "By the time I got to the office, the copy paper had already run out.",
+      "When I got to the office, we'd already run out of copy paper."
+    ],
+    "point": "出社より前に起きたことは had run out で表す",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 5,
+    "grammar": ["past-perfect", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:67cf8d9d1501d980071832ea478d4a814f8a307f64ab425c823abf764b02a336",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

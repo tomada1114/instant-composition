@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2p6s3e3g",
+    "ja": "もしあの時あの会社を辞めてなかったら、僕は今の妻には出会ってなかっただろうね。",
+    "en": "If I hadn't quit that company back then, I never would have met my wife.",
+    "alternatives": [
+      "If I hadn't quit that job back then, I probably wouldn't have met my wife.",
+      "If I hadn't left that company back then, I wouldn't have met my wife."
+    ],
+    "point": "過去の仮定は if + had 過去分詞、帰結は would have 過去分詞",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:383bfb71838773c4681cc9d9a56f5bf6d51dfead8e3cd68f0b30e26601a5331a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4r7y2g5s",
     "ja": "彼女、最近は週末にギターを習うのにはまってるらしいよ。",
     "en": "I heard she's really into learning the guitar on weekends these days.",
@@ -38,6 +60,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:4e3d2104100ca1a50d2426273283dd1d93ebd375340d92bf828737d9a772a502",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8f7u9y6k",
+    "ja": "この前ケンにばったり会ったら、来月から大阪に転勤になるって言ってたよ。",
+    "en": "When I ran into Ken the other day, he told me he was being transferred to Osaka next month.",
+    "alternatives": [
+      "I ran into Ken the other day, and he said he was being transferred to Osaka next month.",
+      "When I bumped into Ken the other day, he said he'd be transferred to Osaka next month."
+    ],
+    "point": "言ってた内容は時制を過去にずらし was being transferred に",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["reported-speech", "passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e83f046b55e3440e28635a15c9c353de0d2deeb3081264fd6890d67b3f10ff3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9x3r8s5r",
+    "ja": "妹は去年結婚しただけじゃなくて、自分のお店まで開いたんだよ。",
+    "en": "Not only did my sister get married last year, but she also opened her own shop.",
+    "alternatives": [
+      "My sister not only got married last year but also opened her own shop.",
+      "My sister got married last year, and on top of that, she opened her own shop."
+    ],
+    "point": "Not only を文頭に置くと did + 主語 + 原形の語順になる",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:69b566fb7d6d89da1e2ebfc5b25c01321a14285d503d6ff4b17ac1de253c879f",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

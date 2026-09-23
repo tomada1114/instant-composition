@@ -66,6 +66,28 @@
     }
   },
   {
+    "id": "c_5c5a5v3n",
+    "ja": "うちのマネージャーは、ユーザーが本当に欲しいのは新機能じゃなくて読み込みの速さだと考えています。",
+    "en": "Our manager thinks that what users really want is faster loading, not new features.",
+    "alternatives": [
+      "Our manager believes what users really want is faster loading rather than new features.",
+      "Our manager thinks users really want faster load times, not new features."
+    ],
+    "point": "「〜が欲しいもの」は what users want を主語にする",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3b3ea7c00cae1535ff9312939c7c42d54dfbfd64100076f1c63dca88a93718b1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5y6r3u5s",
     "ja": "営業チームに、機能の要望を一つのリストにまとめるよう頼んでもらえますか？",
     "en": "Could you ask the sales team to put their feature requests in one list?",
@@ -82,6 +104,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:f4f6833592e97378325927db7d72f0ab2ad07f7ee142f44a3bdb3877ae590ac1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7d2r5s2g",
+    "ja": "たとえユーザーからの要望が多くても、その機能は今回のリリースには入れられません。",
+    "en": "Even if a lot of users ask for it, we can't include that feature in this release.",
+    "alternatives": [
+      "Even if many users request it, we can't add that feature to this release.",
+      "We can't put that feature in this release, even if lots of users want it."
+    ],
+    "point": "「たとえ〜でも」は even if、even though ではない",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7816050d60f32ca92762f249572e9231918c9ec1e145a83d7724e789f3c483b9",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

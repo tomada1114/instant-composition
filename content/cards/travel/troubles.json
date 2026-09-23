@@ -1,5 +1,49 @@
 [
   {
+    "id": "c_2h4x9s7c",
+    "ja": "私たち、空港行きのバスに乗り遅れてしまいました。次のバスは何時ですか？",
+    "en": "We missed the airport bus. When's the next one?",
+    "alternatives": [
+      "We missed the bus to the airport. What time is the next one?",
+      "We've missed the airport bus. When does the next one come?"
+    ],
+    "point": "「乗り遅れる」は miss。過去形 missed で言う",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 2,
+    "grammar": ["past-simple", "wh-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0a8158340b7fef728d9881edf171a188da239738a1ec1a805bc47beb79b0062a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3q7t7r7p",
+    "ja": "財布をなくしてしまいました。何かアドバイスをもらえますか？",
+    "en": "I lost my wallet. Can I get some advice?",
+    "alternatives": [
+      "I've lost my wallet. Could you give me some advice?",
+      "I lost my wallet. Do you have any advice?"
+    ],
+    "point": "advice は数えられないので an advice ではなく some advice",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 2,
+    "grammar": ["articles-and-countability", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d927a8661665e9c2e3a3390f5ccc5f2396b1af5bf7a54f6b809602e55de5d561",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5x5k5d6f",
     "ja": "昨日カメラを盗まれたんですが、まだ警察には届けていないんです。",
     "en": "My camera was stolen yesterday, but I haven't reported it to the police yet.",
@@ -16,6 +60,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:09d93de9d16096bc441b0708546e907b6177a411f909e0500a88cc792b4900b8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6k6e8z8e",
+    "ja": "私たち、スーツケースが出てくるのをもう2時間も待っているんです。",
+    "en": "We've been waiting for our suitcases to come out for two hours now.",
+    "alternatives": [
+      "We've been waiting two hours for our suitcases to come out.",
+      "We've been waiting for our luggage to come out for two hours already."
+    ],
+    "point": "今も待ち続けているので have been waiting を使う",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1954373a42f362c24d965356f66006322b5b7a75d5dffbb92d1a728aad38428a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8x7c6c2j",
+    "ja": "カメラを盗まれたので、保険のためにホテルに報告書を作ってもらいたいんですが。",
+    "en": "My camera was stolen, so I'd like to have the hotel prepare a report for my insurance.",
+    "alternatives": [
+      "Since my camera was stolen, I'd like to get the hotel to write a report for my insurance.",
+      "My camera got stolen, so I'd like the hotel to prepare a report for my insurance claim."
+    ],
+    "point": "have + 人 + 原形、get なら get + 人 + to do",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 6,
+    "grammar": ["causatives", "passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:be4e962b0debcb5219423280ca1f1795863cadf3f3df0dd54f6c69e247c78b5c",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

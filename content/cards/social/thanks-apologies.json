@@ -1,0 +1,46 @@
+[
+  {
+    "id": "c_3k2r3d8a",
+    "ja": "引っ越しを手伝ってくれてありがとう。本当に困っていたんだ。",
+    "en": "Thanks for helping me move. I was really struggling.",
+    "alternatives": [
+      "Thank you for helping me move. I was really having a hard time.",
+      "Thanks for your help with the move. I was really struggling."
+    ],
+    "point": "「困っていた」は過去進行形 was struggling で表せる",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0eb13ec2fc3a94ef46fad95fc62aef934e406cd27c74573c6032213c056d9c30",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3r9p9k9d",
+    "ja": "ミスしてすみません。次はダブルチェックします。",
+    "en": "Sorry for the mistake. I'll double-check next time.",
+    "alternatives": [
+      "I'm sorry about the mistake. I will double-check next time.",
+      "Sorry about the mistake. I'll double-check it next time."
+    ],
+    "point": "その場で決めた約束は will。the mistake の冠詞も忘れずに",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 2,
+    "grammar": ["future-forms", "articles-and-countability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:70a2cc362e5b8f747361695c68d0a1f83a30fb25d4ad34548118f1a148ffaed5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

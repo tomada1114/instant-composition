@@ -22,6 +22,50 @@
     }
   },
   {
+    "id": "c_3b2j4g4u",
+    "ja": "あの人たち、もう最終ツアーに出発したに違いないよ。受付に誰もいないもん。",
+    "en": "They must have already left for the last tour. There's nobody at the desk.",
+    "alternatives": [
+      "They must have already gone on the final tour. No one's at the reception desk.",
+      "They must have left for the last tour already. There's no one at the front desk."
+    ],
+    "point": "過去の推量「〜したに違いない」は must have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3fe923d459367f320d00a6d754f2c5f3aefefecd696992ce262ca2615cfd893e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6e2y5v6u",
+    "ja": "展望台からの景色、写真に撮っておけばよかったなあ。",
+    "en": "I wish I had taken a picture of the view from the observation deck.",
+    "alternatives": [
+      "I wish I'd gotten a photo of the view from the observation deck.",
+      "I should have taken a picture of the view from the observation deck."
+    ],
+    "point": "過去への後悔は I wish + had + 過去分詞",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4238ff674ad4e9b0e17444f0314a135aa75005b675eee0aa628ee9c4c77582be",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_6k6x5x5x",
     "ja": "夜のツアーのほうが高いけど、景色はずっといいですよ。",
     "en": "The night tour is more expensive, but the view is much better.",

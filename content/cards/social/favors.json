@@ -284,5 +284,27 @@
         "at": "2026-09-22"
       }
     }
+  },
+  {
+    "id": "c_9m9u9h4j",
+    "ja": "店長にシフトを減らしてもらうよう頼んでもらえますか？正直、かなり困っているんです。",
+    "en": "Could you ask the manager to cut my shifts? Honestly, I'm really struggling.",
+    "alternatives": [
+      "Would you ask the manager to reduce my shifts? To be honest, I'm having a hard time.",
+      "Could you ask the manager to give me fewer shifts? Honestly, I'm really struggling."
+    ],
+    "point": "「人に〜するよう頼む」は ask + 人 + to do の語順",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 4,
+    "grammar": ["verb-object-to-do", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d00582bdf936f3e52b1714499b8db264536fd0c39d4620115f65b7e11f493aba",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
   }
 ]

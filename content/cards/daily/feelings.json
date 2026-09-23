@@ -22,6 +22,94 @@
     }
   },
   {
+    "id": "c_2n7a6a2u",
+    "ja": "彼は転職を考えているみたいだけど、今辞めるのはもったいないと私は思う。",
+    "en": "He seems to be thinking about changing jobs, but I think quitting now would be a waste.",
+    "alternatives": [
+      "It looks like he's considering changing jobs, but I think it'd be a shame to quit now.",
+      "He seems to be thinking of switching jobs, but I think quitting now would be a waste."
+    ],
+    "point": "about の後は動名詞 changing、主語の「辞めるのは」も quitting",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["gerunds", "hedging-softening"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c0424a2672c13dfc9785bd6fda97731df1bf3d4940fbb4384ce465303f337847",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5g8w7y9w",
+    "ja": "正直言うと、一番がっかりしたのは誰も手伝ってくれなかったことです。",
+    "en": "To be honest, what disappointed me most was that nobody helped me.",
+    "alternatives": [
+      "Honestly, the most disappointing thing was that no one helped me.",
+      "To be honest, what let me down the most was that nobody helped me."
+    ],
+    "point": "「〜なのは」は what 節、「〜ということ」は that 節で表す",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d6f69751484f21358b3805dcb15f837dd9d2115ffdcdc03e876df9924f301508",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5h4n8r5h",
+    "ja": "天気のせいで週末の予定をあきらめることになって、あなたはがっかりしてないの？",
+    "en": "Aren't you disappointed that you had to give up your weekend plans because of the weather?",
+    "alternatives": [
+      "Aren't you disappointed you had to give up your plans for the weekend because of the weather?",
+      "Don't you feel let down that the weather made you give up your weekend plans?"
+    ],
+    "point": "「あきらめる」は give up。「〜することになった」は had to で表す",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["phrasal-verbs", "noun-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5ca78b0ff4a7bdc8cce903e156d59416ee1ed0b35bd2000720287b5b444dfe14",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6f5q8h6b",
+    "ja": "兄に無理やりホラー映画を最後まで見させられて、正直ちょっとムッとしました。",
+    "en": "My brother made me sit through a horror movie, and honestly, I was a little annoyed.",
+    "alternatives": [
+      "My brother forced me to sit through a horror movie, and to be honest, I was a bit annoyed.",
+      "My brother made me watch a whole horror movie, and honestly, it annoyed me a little."
+    ],
+    "point": "「無理やり〜させる」は make 人 動詞の原形。sit through で最後まで耐える",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["causatives", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cd2effe4c455e869c65045451333d0c1d77f138d1b67c1c83d092052b9b0b7fa",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_6t4b8u9w",
     "ja": "コンサートが中止になったと聞いて、私はすごくがっかりしたよ。",
     "en": "I was really disappointed to hear that the concert had been canceled.",

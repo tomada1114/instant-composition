@@ -1,5 +1,49 @@
 [
   {
+    "id": "c_2j9d4r4s",
+    "ja": "発表の前に、プロジェクターの電源を入れてもらえますか？",
+    "en": "Could you turn on the projector before the presentation?",
+    "alternatives": [
+      "Can you turn on the projector before the presentation?",
+      "Could you switch on the projector before the presentation?"
+    ],
+    "point": "「電源を入れる」は turn on。依頼は Could you で丁寧に",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7a0688a634adc47dfc9be5dd4b207bf26ecafcf031e751b9345c55cc8337d58a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2q7e4z9u",
+    "ja": "では、最初のスライドから始めましょう。",
+    "en": "Let's start with the first slide.",
+    "alternatives": [
+      "Let's begin with the first slide.",
+      "Let's start from the first slide."
+    ],
+    "point": "提案は Let's＋動詞の原形。first の前に the を忘れずに",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 1,
+    "grammar": ["imperatives", "articles-and-countability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e8e555c49ad771782eb233c51df016fb9bcef336fd69084a1b1e3f84bf49e90e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3x4e4b8c",
     "ja": "恐れ入りますが、ご質問をもう少し詳しくご説明いただけないでしょうか。",
     "en": "I was wondering if you could explain your question in a little more detail.",
@@ -16,6 +60,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:78654827a9fc4517d0e60dcc31d1f336ef3817d7fce56e5868c5d5d358b4047f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7j2x3f4q",
+    "ja": "田中さんが質問したとき、私はまだグラフを説明していました。",
+    "en": "I was still explaining the graph when Tanaka-san asked a question.",
+    "alternatives": [
+      "I was still going over the graph when Tanaka-san asked me a question.",
+      "When Tanaka-san asked a question, I was still explaining the graph."
+    ],
+    "point": "途中だった動作は was ＋ -ing、割り込んだ動作は過去形",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 3,
+    "grammar": ["progressive-aspect", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2aba015ddfca1dc222095cdf89ecb205eca30f26595ad85059a046efa2846b05",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

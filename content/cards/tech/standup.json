@@ -1,0 +1,68 @@
+[
+  {
+    "id": "c_3w4r9q2c",
+    "ja": "今日私がやらなきゃいけないのは、昨日見つかったログイン画面のバグを直すことです。",
+    "en": "What I need to do today is fix the login bug we found yesterday.",
+    "alternatives": [
+      "What I have to do today is fix the login bug we found yesterday.",
+      "The thing I need to do today is fix the login bug we found yesterday."
+    ],
+    "point": "What I need to do is の後は動詞の原形でよい",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 5,
+    "grammar": ["noun-clauses", "relative-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:487cf8825943a60e65a8e92da48035db28bfc5a304804ea0e6d8bd3dcced122c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5b3p3e7v",
+    "ja": "決済 API のテストで落ちているのは、先週追加したテストだけです。",
+    "en": "The only tests failing in the payment API suite are the ones we added last week.",
+    "alternatives": [
+      "The only failing tests in the payment API are the ones we added last week.",
+      "Only the tests we added last week are failing in the payment API suite."
+    ],
+    "point": "failing や we added last week を名詞の後ろに置く",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["post-modification", "relative-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:19b0e783b9784ca09cc11671c9c7fd58128dbff9c11fa708402e5ffbb4890295",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8z2b7a4k",
+    "ja": "インフラチームの誰か、データベース移行について少しアドバイスをもらえますか？そこで詰まっています。",
+    "en": "Could someone on the infra team give me some advice on the database migration? I'm stuck on it.",
+    "alternatives": [
+      "Can anyone on the infra team give me some advice about the database migration? I'm stuck on it.",
+      "Could someone from the infra team give me a few tips on the database migration? I'm stuck on that part."
+    ],
+    "point": "advice は数えられないので an advice ではなく some advice",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 7,
+    "grammar": ["articles-and-countability", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3d6ff73be7b43f4714db3069a14c8a9f973adff244e38b9d055d5171d0da5a7c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]
