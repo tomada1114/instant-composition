@@ -66,6 +66,28 @@
     }
   },
   {
+    "id": "c_3p2f9g8c",
+    "ja": "さっき自己紹介したとき、料理が趣味だって言っておけばよかった。話のきっかけになったのに。",
+    "en": "I wish I'd mentioned that cooking is my hobby when I introduced myself earlier. It would've been a good conversation starter.",
+    "alternatives": [
+      "If only I'd mentioned that I love cooking when I introduced myself earlier. It would've been a great way to start a conversation.",
+      "I should have said my hobby was cooking when I introduced myself earlier. It would've given people something to talk about."
+    ],
+    "point": "wish の後は過去完了 I'd mentioned、過去形にしない",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["wishes-regrets", "modal-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:052d4b60e9325baeee872c0d352122e38f35b11bd9232f1283e52fb1cd7461c0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4n4v5g6a",
     "ja": "もし私がもっと英語を話せたら、海外で働いてみたいです。",
     "en": "If I could speak English better, I'd like to work abroad.",
@@ -154,6 +176,28 @@
     }
   },
   {
+    "id": "c_5w4g7j3g",
+    "ja": "僕は福岡出身で、地元の小さな出版社で編集の仕事をしながら、空いた時間に小説を書いています。",
+    "en": "I'm from Fukuoka and work as an editor at a small local publisher, writing novels in my spare time.",
+    "alternatives": [
+      "I'm from Fukuoka, and I work as an editor at a small local publisher while writing novels in my spare time.",
+      "I come from Fukuoka and I'm an editor at a small local publishing company, and I write novels in my free time."
+    ],
+    "point": "「〜しながら」はカンマ + writing で文末に添えられる",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e323482ed6bc684ae7a3881802a39153a0dfe0bd0b1af7288ed1e36e2303f9c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_6u6s8g6g",
     "ja": "差し支えなければ、今のお仕事を始める前は何をされていたのか教えていただけますか？",
     "en": "Would you mind telling me what you did before you started your current job?",
@@ -172,6 +216,28 @@
         "hash": "sha256:599eda2ebebe8a042f762993285ffe32f9c19900f7125f38615968fadb1bc1dc",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7b8x6r7p",
+    "ja": "さっきケンが、あなたも昔シアトルで働いていたって言ってたんですけど、本当ですか？",
+    "en": "Ken mentioned earlier that you'd also worked in Seattle at one point. Is that true?",
+    "alternatives": [
+      "Ken told me earlier that you used to work in Seattle too. Is that right?",
+      "Ken said earlier that you'd worked in Seattle as well. Is that true?"
+    ],
+    "point": "言ってた内容の「働いていた」は過去完了 you'd worked に下げる",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cf5f4d4d77b44c088a846d1a4d3f963a1738d4c086d9c33593a6191573923ebc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

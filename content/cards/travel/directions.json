@@ -132,6 +132,28 @@
     }
   },
   {
+    "id": "c_3k6c8x3n",
+    "ja": "駅の近くにバス停が二つありますよ。",
+    "en": "There are two bus stops near the station.",
+    "alternatives": [
+      "You'll find two bus stops near the station.",
+      "Near the station, there are two bus stops."
+    ],
+    "point": "複数あるときは There are と複数形の stops",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 1,
+    "grammar": ["there-is-are", "articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b02142ba81e0448c7280a45c10b3137c7087fd68fd6ff21bd6cf6ac83a42527b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3n5f4z8q",
     "ja": "ここから旧市街まで、どう行くのが一番いいですか？",
     "en": "What's the best way to get to the old town from here?",
@@ -150,6 +172,28 @@
         "hash": "sha256:e99dc8084f0f9da3a5d540353ecb7149d635ef96a6c263ca9cc8329914bc838b",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3q8n2m2z",
+    "ja": "すみません、この近くにコンビニはありますか？",
+    "en": "Excuse me, is there a convenience store nearby?",
+    "alternatives": [
+      "Excuse me, is there a convenience store near here?",
+      "Excuse me, is there a convenience store around here?"
+    ],
+    "point": "「ありますか」は Is there で始める",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2df4256ef8fa0e3cb1f1afcf36f4881ece3738bf5c579f9a8c29cfe4c471964a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
@@ -192,6 +236,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:b6d7bc3d6c0e5db28a0cf635b8dc880d4ef3bd86301b883918dc0d316730c8d1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5p8a6f9g",
+    "ja": "その場所、地図で見せてもらえますか？",
+    "en": "Can you show me on the map?",
+    "alternatives": [
+      "Could you show me on the map?",
+      "Can you show me where it is on the map?"
+    ],
+    "point": "show の後に me を忘れない",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8b1e70ac411b5abbdb044d0e8b1f2a0f0239f065dd55d0613c54bbb181873d36",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

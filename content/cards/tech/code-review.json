@@ -198,6 +198,28 @@
     }
   },
   {
+    "id": "c_6e2y4p2g",
+    "ja": "この PR の作成者は、公開 API には手を付けずにキャッシュ層を書き直したので、呼び出し側は何も変えなくていいです。",
+    "en": "The author rewrote the caching layer while leaving the public API untouched, so none of the callers need to change.",
+    "alternatives": [
+      "The author rewrote the caching layer, leaving the public API as it was, so the callers don't need any changes.",
+      "The author rewrote the caching layer without touching the public API, so none of the callers have to change."
+    ],
+    "point": "「〜せずに」は while leaving 〜 untouched で添える",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 10,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6fec0090a0f87a262ac8c3cad18ac01a0cc77e3cf7947ce148d0279f12607c55",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_8c8q9y9n",
     "ja": "この関数、ちょっと長すぎますか？",
     "en": "Is this function too long?",

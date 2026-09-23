@@ -176,6 +176,28 @@
     }
   },
   {
+    "id": "c_4d3q8z9g",
+    "ja": "姉の名前が予約リストにないんです。",
+    "en": "My sister's name isn't on the list.",
+    "alternatives": [
+      "My sister's name is not on the reservation list.",
+      "My sister isn't on the booking list."
+    ],
+    "point": "「リストにない」は be 動詞の否定＋on the list",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1eac7de465bd1c9af7f2d8d2fb0d43253b4623a5bcaa21cce778151a440396c0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4r6k4k8s",
     "ja": "タクシーを待っていた時に、パスポートがないことに気づいたんです。",
     "en": "I was waiting for a taxi when I noticed my passport was missing.",
@@ -304,6 +326,28 @@
         "hash": "sha256:1f864f7f7b4e09392de16ef903e4002f61be0d01959ec3b4ebea847997d10651",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7q2n4p8u",
+    "ja": "すみません、私のスーツケースが見つからないんです。",
+    "en": "Excuse me, I can't find my suitcase.",
+    "alternatives": [
+      "Sorry, I can't find my suitcase.",
+      "Excuse me, my suitcase is missing."
+    ],
+    "point": "「見つからない」は can't find で表す",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:109285cf126dfd916dd7f3dca0ca54337a261820220611fe2a9f432ee1283aec",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

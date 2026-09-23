@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_2r9b3z2b",
+    "ja": "すみません、この切符を明日の同じ時間の電車に変更できないかと思いまして。",
+    "en": "Excuse me, I was wondering if I could change this ticket to the same train tomorrow.",
+    "alternatives": [
+      "Excuse me, I was wondering if it would be possible to change this ticket to the same train tomorrow.",
+      "Excuse me, would it be possible to switch this ticket to the same train tomorrow?"
+    ],
+    "point": "I was wondering if で柔らかく、中は could を使う",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 6,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4bc576476becb15779b6b191c17d0e1e5609ca137aae0f40e10f3817c9ec2d27",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2t5w9g6d",
     "ja": "駅員さんに頼んで、乗り換えの行き方を紙に書いてもらったんだ。",
     "en": "I had the station staff write down the transfer route for me.",
@@ -88,6 +110,28 @@
     }
   },
   {
+    "id": "c_3h4y7d2y",
+    "ja": "もし私たちがホテルをあと 10 分早く出ていたら、最終バスに間に合っていたでしょうね。",
+    "en": "If we had left the hotel ten minutes earlier, we would have made the last bus.",
+    "alternatives": [
+      "We would have caught the last bus if we'd left the hotel ten minutes earlier.",
+      "If we'd left the hotel ten minutes sooner, we'd have caught the last bus."
+    ],
+    "point": "if 節は had left、主節は would have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6268dd2e79ae9c0870349dc8e17d10c6084a80d97c6588020d7ec99ffd31283b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3y5d6b9c",
     "ja": "雨がひどいから、タクシーで行こうよ。",
     "en": "It's raining hard, so let's take a taxi.",
@@ -150,6 +194,28 @@
         "hash": "sha256:604a7abf7b5172dfd5bc778f3f475415624d749ba6d78258526207eee54e193d",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5s5t6z6d",
+    "ja": "彼女が駅に着いたときには、乗るつもりだった終電はもう出てしまっていた。",
+    "en": "By the time she got to the station, the last train she'd planned to take had already left.",
+    "alternatives": [
+      "When she reached the station, the last train she was going to take had already left.",
+      "The last train she'd planned to catch had already left by the time she got to the station."
+    ],
+    "point": "着いた時点より前に出た電車は had already left と過去完了で",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 8,
+    "grammar": ["past-perfect", "relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:981c944251b1da7ab25a36dcfd0332b2da1ecf4222291338dbbd21cccf2dacc8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
@@ -238,6 +304,28 @@
         "hash": "sha256:2b4ef318ad75c3212598b027289c71d720ff6c8d95536acf4ed20f30e5694059",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6y3z8g7x",
+    "ja": "空港行きのバスが 1 時間に 1 本しかないって、もっと早く知っていればよかったなあ。",
+    "en": "I wish I'd known earlier that the airport bus only runs once an hour.",
+    "alternatives": [
+      "If only I'd known sooner that the airport bus only comes once an hour.",
+      "I wish I had found out earlier that the airport bus runs just once an hour."
+    ],
+    "point": "過去の後悔は I wish の後を過去完了 I'd known にする",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 8,
+    "grammar": ["wishes-regrets", "noun-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d7e1ca19d863ccca7926fafc5378bbfc9788df87c6f338d58c08bdcf8afd9d6b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

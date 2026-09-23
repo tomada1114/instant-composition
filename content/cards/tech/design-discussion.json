@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_2d9z3h2c",
+    "ja": "先週、チームはコストの問題でマイクロサービス案をやめました。",
+    "en": "Last week, the team dropped the microservices plan because of cost.",
+    "alternatives": [
+      "The team gave up on the microservices plan last week because of cost.",
+      "Last week, the team decided against microservices because of the cost."
+    ],
+    "point": "案を「やめた」は stopped ではなく dropped や gave up on",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 3,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0fff8a9323987affcb0b48b5d8ef7922c26e40fba7705bb41f101b1ed324a304",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2k4t3a5e",
     "ja": "このサービスを分割したら、レイテンシがどれくらい増えるか誰か分かる？",
     "en": "Does anyone know how much latency we'd add if we split this service?",
@@ -106,6 +128,28 @@
         "hash": "sha256:f4768f2beed25f2b5c4980d2e433c84ccdc0a7f9fb065ba26ae20bea6651dc8c",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3j7h9e9u",
+    "ja": "明日の会議で、この設計のトレードオフについて私から話してもいいですか？",
+    "en": "Is it okay if I talk about this design's trade-offs at tomorrow's meeting?",
+    "alternatives": [
+      "Can I talk about the trade-offs of this design at tomorrow's meeting?",
+      "May I discuss this design's trade-offs at tomorrow's meeting?"
+    ],
+    "point": "「〜してもいい？」は Is it okay if I 〜。if の後は現在形",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 4,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f1ab83dae7920b40935dcffe82712c05a9bc20495955623fdae229f210d5b5d8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
@@ -260,6 +304,28 @@
         "hash": "sha256:4d55e88de8a4abc55217b09906700a4f24cfa949442a6e35c260a6d93b3cb32e",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7j3v3c8b",
+    "ja": "データが増え続けているので、私たちは一覧 API にページングを入れるべきです。",
+    "en": "We should add pagination to the list API because the data keeps growing.",
+    "alternatives": [
+      "We should add paging to the list API since the data keeps growing.",
+      "We ought to add pagination to the list API because the data keeps growing."
+    ],
+    "point": "「べき」は should。must にすると強すぎる",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 4,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f161e6a77dcad74f0393f7ffa825b3dec00fb63d3b9aa374901024b0a3dba56d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_2g7d8u7p",
+    "ja": "昨日送ってもらったメールに、添付ファイルが付いていませんでした。",
+    "en": "Your email yesterday didn't have the attachment.",
+    "alternatives": [
+      "The attachment wasn't in your email yesterday.",
+      "Yesterday's email from you didn't include the attachment."
+    ],
+    "point": "過去の否定は didn't のあとに動詞の原形 have",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:771dbdd65d29c480bf711a762c27503fcedd4eefef6592a073aab0093c0a83fc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3n2q8y5p",
     "ja": "あなたがもっと早く在庫の件を教えてくれていたら、私は取引先への返信を遅らせずに済んだのですが。",
     "en": "If you had told me about the stock issue earlier, I wouldn't have had to delay my reply to the client.",
@@ -82,6 +104,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:928bb7b15a3d889e1f738d8c7118d5bfc352a8e5ba206b1035ac3469ee0a080c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5f3f4n5x",
+    "ja": "うちの部長は、昨日のメールにどう返信しましたか？",
+    "en": "How did our manager reply to yesterday's email?",
+    "alternatives": [
+      "What was our manager's reply to yesterday's email?",
+      "How did our manager respond to yesterday's email?"
+    ],
+    "point": "過去の疑問文は did を使い、動詞は reply と原形に戻す",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 2,
+    "grammar": ["wh-questions", "past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:afe1cd124eecc2a8d858b71fd36096bff483c11bac508c9dafe1a73366f7b37c",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }
@@ -214,6 +258,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:8b309894d378ed10d385c46f68c946ddc4564599e6f425d235fb28735633c4f2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9c7t9q3z",
+    "ja": "チャットをもらったとき、私はお客さんと話していました。",
+    "en": "I was talking with a client when you messaged.",
+    "alternatives": [
+      "I was talking to a customer when you messaged me.",
+      "When you messaged me, I was speaking with a client."
+    ],
+    "point": "「話していた」は was talking と過去進行形にする",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 2,
+    "grammar": ["progressive-aspect", "past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2cfd0791b537ed9611049a5fe40134b06cc701e059bc975b780149ff8a05e754",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

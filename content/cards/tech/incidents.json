@@ -132,6 +132,28 @@
     }
   },
   {
+    "id": "c_2w3d7k4n",
+    "ja": "お忙しいところすみませんが、今回の障害の報告書を金曜までにまとめていただけないかと思いまして。",
+    "en": "Sorry to bother you, but I was wondering if you could put together the incident report for this outage by Friday.",
+    "alternatives": [
+      "Sorry to bother you when you're busy, but I was wondering if you might be able to write up the report on this outage by Friday.",
+      "I'm sorry to trouble you, but would you mind putting together the report on this outage by Friday?"
+    ],
+    "point": "I was wondering if you could で控えめに頼む",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["hedging-softening", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ed90defd8d3e38d5b48e2d8510a11017fdf0abf9249b288aa70a5c0cc4dd6ce4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3a5n7k5p",
     "ja": "今回の障害を引き起こしたのは、データベースではなく、期限切れの SSL 証明書でした。",
     "en": "It was an expired SSL certificate, not the database, that caused this outage.",
@@ -352,6 +374,28 @@
     }
   },
   {
+    "id": "c_5u9w6p2n",
+    "ja": "決済サービスは復旧しましたが、原因がまだ特定できていないので、私たちはしばらく監視を続けます。",
+    "en": "Although the payment service is back up, we still haven't identified the cause, so we'll keep monitoring it for a while.",
+    "alternatives": [
+      "The payment service is back up, but since we haven't pinned down the cause yet, we'll keep monitoring it for a while.",
+      "Even though the payment service has recovered, we still don't know the cause, so we'll continue monitoring it for now."
+    ],
+    "point": "「まだ特定できていない」は現在完了の haven't identified",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["concession-contrast", "tense-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a867b53e648894584a8bfc3348f7901a9210c3eadf337149cda51fbd0b178fb5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5v5b5f2b",
     "ja": "この障害で、どのくらいのユーザーが影響を受けていますか？",
     "en": "How many users are affected by this outage?",
@@ -458,6 +502,28 @@
         "hash": "sha256:7b3016582d6c3043beb2926580ec887acd871741384fbe27dfde279ac1b860b0",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8r5x8k3c",
+    "ja": "今回の障害では、ユーザーがログインできなくなっただけでなく、一部のユーザーは設定データまで失ってしまいました。",
+    "en": "Not only were users unable to log in during this outage, but some of them also lost their settings data.",
+    "alternatives": [
+      "During this outage, not only could users not log in, but some of them also lost their settings data.",
+      "Users couldn't log in during this outage, and some of them even lost their settings data."
+    ],
+    "point": "Not only で始めたら were users と倒置する",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:823a0774c556176b8c87e5d190cefa10c45f73b467289edb2425c0a16ea22da9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

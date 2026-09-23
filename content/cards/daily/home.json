@@ -22,6 +22,50 @@
     }
   },
   {
+    "id": "c_6a4q7w6y",
+    "ja": "お母さんから電話があったとき、私はお風呂を掃除してたんだ。",
+    "en": "I was cleaning the bathroom when Mom called.",
+    "alternatives": [
+      "When Mom called, I was cleaning the bathroom.",
+      "I was cleaning the bathtub when Mom called me."
+    ],
+    "point": "途中だった動作は過去進行形 was cleaning で言う",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 5,
+    "grammar": ["progressive-aspect", "past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f6359f026a1a0ce6277884048309b6ffd29daccae70b469a1199aa87faf62ecf",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7a5z2c2d",
+    "ja": "冷蔵庫に入ってる牛乳、もう賞味期限が切れてるよ。",
+    "en": "The milk in the fridge has already expired.",
+    "alternatives": [
+      "The milk in the fridge is already past its expiration date.",
+      "The milk in the refrigerator has already expired."
+    ],
+    "point": "「冷蔵庫の牛乳」は in the fridge を milk の後ろに置く",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 5,
+    "grammar": ["post-modification", "present-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:67c59605636447faf8b1adc850c1c0a96f9e9acaeaad2d3778a876e63710360b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_7e2q7g8c",
     "ja": "今度の土曜日、僕たちはガレージを掃除するつもりだよ。",
     "en": "We're going to clean the garage this Saturday.",
@@ -131,6 +175,28 @@
         "hash": "sha256:e5bff4b6aad924cd534317f1229ff4fabae3a8233aa702f8193bbf55d3fef845",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9t4t7u3m",
+    "ja": "出かける前に、リサイクルのゴミを出してもらってもいい？",
+    "en": "Do you mind taking out the recycling before you leave?",
+    "alternatives": [
+      "Would you mind taking out the recycling before you go?",
+      "Could you take out the recycling before you leave?"
+    ],
+    "point": "mind の後は動名詞。to take にしない",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 5,
+    "grammar": ["gerunds", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c3dcc602ba0b69216b50391dbe5ca4946227f4c3e7615a057245ca85faa57c49",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   }

@@ -110,6 +110,28 @@
     }
   },
   {
+    "id": "c_7h3a6c3h",
+    "ja": "前の会社で、私は3年目に新しい営業チームのリーダーを任されました。",
+    "en": "At my previous company, I was put in charge of a new sales team in my third year.",
+    "alternatives": [
+      "In my third year at my last company, I was made the leader of a new sales team.",
+      "I was asked to lead a new sales team in my third year at my previous company."
+    ],
+    "point": "「任された」は受け身で was put in charge of と言う",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:79ba69a1bec647a34004daf2536e77a77d34680e0d10dead7caa07a2d6b3c68c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_7j7f3z3t",
     "ja": "御社には海外で働くチャンスはありますか？",
     "en": "Are there any opportunities to work overseas at your company?",
@@ -128,6 +150,28 @@
         "hash": "sha256:74a507aa3c0d82afc181091e0e15683dc33b9576fbf6cfa89ff8913022a841d1",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7u2e4g4w",
+    "ja": "今の会社に入る前、私はすでに5年間エンジニアとして働いていました。",
+    "en": "Before I joined my current company, I had already worked as an engineer for five years.",
+    "alternatives": [
+      "I'd already been working as an engineer for five years before I joined my current company.",
+      "By the time I joined my current company, I'd already worked as an engineer for five years."
+    ],
+    "point": "入社より前のことなので had worked と過去完了にする",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:180c7ab21a0e2b1998895902e8bdf4ba4feef519f82212ec40a5b3e4dc8f84d8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

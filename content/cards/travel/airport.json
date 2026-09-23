@@ -22,6 +22,50 @@
     }
   },
   {
+    "id": "c_3b4g2y2b",
+    "ja": "薬を飲みたいので、お水を一杯いただけますか？",
+    "en": "Could I have a glass of water to take my medicine with, please?",
+    "alternatives": [
+      "Could I get a glass of water, please? I need to take my medicine.",
+      "May I have a glass of water so I can take my medicine?"
+    ],
+    "point": "「薬を飲むための水」は water to take my medicine with",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 4,
+    "grammar": ["infinitives", "requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:80a571c95ae283fe0cceffe9aa3eb8be73bb65100d11d98d8f2e48c2f249d545",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3d6j9x9z",
+    "ja": "入国審査官に、帰りの航空券を見せる必要があるって言われたんだ。",
+    "en": "The immigration officer told me I needed to show my return ticket.",
+    "alternatives": [
+      "The immigration officer said I needed to show my return ticket.",
+      "The immigration officer told me I had to show my return ticket."
+    ],
+    "point": "told に合わせて need も needed と過去形にする",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 5,
+    "grammar": ["reported-speech", "infinitives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:66bf42243d367f8d5c86fc0d2ea024d985ae05d03a6699a96875c1b1e749948c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4d6b6t8d",
     "ja": "すみません、前の座席の下に入れたかばんを上の棚に移したいので、手伝ってもらえますか？",
     "en": "Excuse me, could you help me move the bag I put under the seat in front of me into the overhead bin?",
@@ -40,6 +84,28 @@
         "hash": "sha256:5dff2e7cf08a5dcd6f569f644122587213c8a45b57019f3143f3df053a07c559",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4f4x7a6z",
+    "ja": "保安検査を通ったら、ゲートの近くで何か食べる物を買おうよ。",
+    "en": "Let's grab something to eat near the gate once we get through security.",
+    "alternatives": [
+      "Once we're through security, let's get something to eat near the gate.",
+      "Let's buy something to eat near the gate after we get through security."
+    ],
+    "point": "「通ったら」は未来でも get と現在形にする",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 4,
+    "grammar": ["time-and-if-clauses", "infinitives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:78ff83cb65cc528c50367b691e07b2100ce50be0301dafa8f78eed8dd4b1c712",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

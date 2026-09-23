@@ -154,6 +154,28 @@
     }
   },
   {
+    "id": "c_4s9n4p5z",
+    "ja": "リーダーに、次の会議の日程を決めるよう頼んでもらえますか？",
+    "en": "Could you ask the leader to set the next meeting date?",
+    "alternatives": [
+      "Can you ask the leader to schedule the next meeting?",
+      "Could you ask the leader to decide when the next meeting is?"
+    ],
+    "point": "ask の後は「人＋to do」の語順にする",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 3,
+    "grammar": ["verb-object-to-do", "requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:83c3b77ed441e02d61729ab0b76a296d726e240c3a19f2d092e81b81adb1886d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4y4g3b2b",
     "ja": "すみません、最後のところがよく聞こえませんでした。",
     "en": "Sorry, I couldn't hear the last part very well.",
@@ -242,6 +264,28 @@
     }
   },
   {
+    "id": "c_7h7n8v6f",
+    "ja": "今、部長が新しい計画について説明しているところです。",
+    "en": "The manager is explaining the new plan right now.",
+    "alternatives": [
+      "Our manager is explaining the new plan now.",
+      "The manager is now explaining the new plan."
+    ],
+    "point": "「今〜しているところ」は is explaining の進行形で言う",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ffca4c2bce4860c81304611ddb745e0abccf634b6bd9e1634eb9563fc7e1965f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_7r3u9p6u",
     "ja": "すべてのフィードバックを検討した結果、チームはリリースを来四半期に延期することに決めました。",
     "en": "Having reviewed all the feedback, the team decided to postpone the launch until next quarter.",
@@ -260,6 +304,28 @@
         "hash": "sha256:042a332af2bee86482e818adea8627c123a7f9e6a08fa71389149d67ffd6454d",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8d8g2e2q",
+    "ja": "今日の会議で話し合う議題が三つあります。",
+    "en": "There are three topics to discuss in today's meeting.",
+    "alternatives": [
+      "We have three topics to discuss in today's meeting.",
+      "There are three items on today's agenda."
+    ],
+    "point": "discuss は他動詞なので about を付けない",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 3,
+    "grammar": ["there-is-are", "infinitives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:22173f1d1f8d7fd922d3558f48282a0253e57b157933876dc98f11bfea39a581",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
