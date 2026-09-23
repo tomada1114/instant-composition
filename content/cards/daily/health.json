@@ -371,6 +371,28 @@
     }
   },
   {
+    "id": "c_5q6u2s2a",
+    "ja": "薬剤師さんによると、私がいつも飲んでいる胃薬が、今日出された抗生物質の効き目を弱めるかもしれないそうです。",
+    "en": "The pharmacist said the stomach medicine I usually take might make the antibiotics I was prescribed today less effective.",
+    "alternatives": [
+      "According to the pharmacist, the stomach medicine I normally take could make the antibiotics I got today less effective.",
+      "The pharmacist told me that the stomach pills I usually take might weaken the antibiotics I was prescribed today."
+    ],
+    "point": "「今日出された」は I was prescribed today で後ろから修飾",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 10,
+    "grammar": ["nested-clauses", "reported-speech"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e3d538daa34090668189d6f1c88e9c66b976648c2322407227983f0301f5a8d4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5z2e5y7w",
     "ja": "この薬は食後に飲むように言われたんですが、朝ごはんを抜いた日はどうすればいいですか？",
     "en": "I was told to take this medicine after meals, but what should I do on days when I skip breakfast?",
@@ -520,6 +542,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:04f73e987208356bd2cd6ff69f7bd1a5b0bcb047d84665e27e3a9968205b0bbb",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8a7k4m5d",
+    "ja": "昨日から左耳がよく聞こえないんですが、今日のうちに先生に診ていただくことはできないでしょうか？",
+    "en": "I was wondering if the doctor could possibly see me today, since I haven't been able to hear well out of my left ear since yesterday.",
+    "alternatives": [
+      "I haven't been able to hear well out of my left ear since yesterday, so I was wondering if the doctor might be able to see me today.",
+      "Would there be any chance the doctor could see me today? I haven't been able to hear properly in my left ear since yesterday."
+    ],
+    "point": "「〜できないでしょうか」は I was wondering if で柔らかく",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7b8ca272f640f9570c69584022b76fccd79a81a3ccb9dac8a299fd4d8e4bee90",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

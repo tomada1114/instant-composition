@@ -176,6 +176,28 @@
     }
   },
   {
+    "id": "c_3e7x2k7g",
+    "ja": "タイムアウトが出始めたのは、ライブラリの更新じゃなくて API キーの入れ替えのせいだって、本当に言い切れますか？",
+    "en": "Are you sure it was the API key rotation, not the library upgrade, that caused the timeouts?",
+    "alternatives": [
+      "Are you sure it was the API key rotation rather than the library upgrade that triggered the timeouts?",
+      "Are you certain it was the API key rotation, not the library update, that caused the timeouts?"
+    ],
+    "point": "It was A, not B, that で原因を強調。that 以下に動詞",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a0a6ec553ed3bc5ee523a880a395f809c0dbb0c29f57503da405d1a9c6653519",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3j6f7u3d",
     "ja": "昨日のリリース前に私たちがあの負荷テストを実行していたら、このメモリリークは本番に出る前に見つかっていたはずです。",
     "en": "If we had run that load test before yesterday's release, we would have caught this memory leak before it reached production.",
@@ -503,6 +525,28 @@
     }
   },
   {
+    "id": "c_5d7c2s5w",
+    "ja": "ユーザーに、そのとき何をしていたか教えてもらうよう頼んでもらえますか？",
+    "en": "Can you ask the user to tell us what they were doing?",
+    "alternatives": [
+      "Could you ask the user to tell us what they were doing?",
+      "Can you ask the user to explain what they were doing?"
+    ],
+    "point": "ask + 人 + to do の形。what they were doing の語順に注意",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 4,
+    "grammar": ["verb-object-to-do", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:75db33b88aec9ead53737384af2a405250666e7e6897ea3a04a098eefb0f693d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5g3h3y4p",
     "ja": "リリース前にもっとログを仕込んでおけばよかったです。今はリクエストがどこで失敗しているのか分からないので。",
     "en": "I wish we had added more logging before the release, because now we can't tell where the request is failing.",
@@ -808,6 +852,28 @@
     }
   },
   {
+    "id": "c_9x8u7j6k",
+    "ja": "アプリが落ちたとき、彼は大きなファイルをアップロードしているところでした。",
+    "en": "He was uploading a large file when the app crashed.",
+    "alternatives": [
+      "When the app crashed, he was uploading a large file.",
+      "He was uploading a big file when the app crashed."
+    ],
+    "point": "途中だった動作は was uploading、落ちたのは過去形 crashed",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 3,
+    "grammar": ["progressive-aspect", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6380adf9d926e07633397321b4e6796cda7e87c252bc7334767176aa5d783e74",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_9y4b9u4h",
     "ja": "そちらの環境でも同じ手順でエラーが出るか、試していただけないかと思いまして。",
     "en": "I was wondering if you could try the same steps on your end to see whether the error shows up there too.",
@@ -824,6 +890,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:71acad55fba69427b75839e161d9862246be6e1c05cdadd3be1f12395edde49f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9z6c2j4c",
+    "ja": "この画面、今朝からずっと読み込みに30秒くらいかかっているんです。",
+    "en": "This page has been taking about thirty seconds to load since this morning.",
+    "alternatives": [
+      "This screen has been taking around thirty seconds to load since this morning.",
+      "Since this morning, this page has been taking about thirty seconds to load."
+    ],
+    "point": "今も続く状態は has been taking と現在完了進行形で",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 4,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:88ebf537a90e728d40ea8b8fc8a8cf6d818a063e1650038cde32cb271db94b06",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

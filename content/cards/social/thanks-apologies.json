@@ -66,6 +66,28 @@
     }
   },
   {
+    "id": "c_3s4a9f2e",
+    "ja": "ミスをしたのは私なので、私から部長に謝るべきです。",
+    "en": "I made the mistake, so I should apologize to the manager.",
+    "alternatives": [
+      "It was my mistake, so I should apologize to the manager.",
+      "I'm the one who made the mistake, so I should apologize to the manager."
+    ],
+    "point": "apologize は自動詞なので to を忘れない",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 3,
+    "grammar": ["modal-obligation-advice", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a110892d62fccf57b69dfbbf1dc23a88dbd7c6fc2f8e6e4f0952f443d3f45de0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4j3k6y7t",
     "ja": "今回ご迷惑をおかけしたのは、チームのミスではなく、私が数字の確認を怠ったせいです。申し訳ありません。",
     "en": "It was my failure to check the figures, not a mistake by the team, that caused this inconvenience. I sincerely apologize.",
@@ -176,6 +198,28 @@
     }
   },
   {
+    "id": "c_7x9n8x6c",
+    "ja": "昨日は電話に出られなくてごめんね。電車に乗ってたんだ。",
+    "en": "Sorry I couldn't answer your call yesterday. I was on the train.",
+    "alternatives": [
+      "Sorry I couldn't pick up your call yesterday. I was on the train.",
+      "Sorry I couldn't take your call yesterday. I was on a train."
+    ],
+    "point": "過去の「できなかった」は couldn't で表す",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 4,
+    "grammar": ["can-could-ability", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:08117d5408cce5ea062b056a7c91cb976287a6b0756e60e813edad21b22b1303",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_8d4x5e7w",
     "ja": "先日お貸しいただいた資料を、まだお返ししていなくて申し訳ありません。",
     "en": "I'm sorry I still haven't returned the documents that you lent me the other day.",
@@ -214,6 +258,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:c808d7fd172995429a00336f5fcf1530fe664d5c6f969df04881f04ac51f7114",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8v9t9c2e",
+    "ja": "お客さんに送る前にミスに気づいてくれて、ありがとう。",
+    "en": "Thanks for catching the mistake before we sent it to the client.",
+    "alternatives": [
+      "Thank you for noticing the mistake before we sent it to the client.",
+      "Thanks for spotting the mistake before we sent it to the client."
+    ],
+    "point": "before の後は過去形 sent で時制をそろえる",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 4,
+    "grammar": ["past-simple", "gerunds"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a3dbc6dae36114ea97130f2dede95a7456a5d8e092e27fae4879739fecf9ec1a",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

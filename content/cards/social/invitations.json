@@ -88,6 +88,25 @@
     }
   },
   {
+    "id": "c_3d4t6r4s",
+    "ja": "パーティーは何時に始まるの？",
+    "en": "What time does the party start?",
+    "alternatives": ["When does the party start?", "What time is the party?"],
+    "point": "三人称単数の疑問文は does を使い start は原形",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 1,
+    "grammar": ["wh-questions", "be-and-present-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b9e6c94fcb1de4cb1357f528210bdbeda404929915d99d1f0cd9636a61b7eda2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3j8d8h8p",
     "ja": "土曜の試合が終わったら、みんなでご飯を食べに行こうよ。",
     "en": "Let's all go get something to eat when the game ends on Saturday.",
@@ -258,6 +277,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:768fe1cca23053324c0edb96a3e073d63d43e0092e43b7b0de86cb9e293c4a2f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6s9a6h8w",
+    "ja": "今夜、一緒に夕食に行こうよ。",
+    "en": "Let's go out for dinner tonight.",
+    "alternatives": [
+      "Let's have dinner together tonight.",
+      "Let's go get dinner tonight."
+    ],
+    "point": "誘いは Let's＋動詞の原形で始める",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5fddfc452ce8bd935b5397c22cd5386156a306b7a56ac26b1d7fe2153045fbe2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6w4x9x3a",
+    "ja": "ごめん、土曜日は忙しいんだ。",
+    "en": "Sorry, I'm busy on Saturday.",
+    "alternatives": [
+      "Sorry, I'm busy this Saturday.",
+      "Sorry, I'm not free on Saturday."
+    ],
+    "point": "busy は形容詞なので be 動詞が必要",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dc4232e3ef0bcf78fc5afef5cd71a0b10f722a65ce4a0f358f2bf260c02f808b",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

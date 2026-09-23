@@ -154,6 +154,28 @@
     }
   },
   {
+    "id": "c_5h9e2z6v",
+    "ja": "母が、日曜の夕食会は6時からに変更になったって言ってたよ。",
+    "en": "My mom said Sunday's dinner had been moved to six o'clock.",
+    "alternatives": [
+      "My mom said the Sunday dinner had been changed to six.",
+      "Mom told me Sunday's dinner had been moved to six."
+    ],
+    "point": "said の後は時制を一つ過去へ（had been moved）",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["reported-speech", "passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ec0838184dfe5a1b74ec3d8fb5083f50456488ab6cb1dd2020af7a3d2bca62a7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_6f3r4u5p",
     "ja": "ごめん、疲れてるからパーティーに行けないよ。",
     "en": "Sorry, I can't go to the party. I'm tired.",
@@ -236,6 +258,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:31f77a0cf8f8ec20ef5fe8022a2f414014990b77167312926079ef5cfcbc1af0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8a5a6p4e",
+    "ja": "悪いけど、今週末に僕が本当に必要なのは、家でのんびりする時間なんだ。",
+    "en": "Sorry, but what I really need this weekend is some time to relax at home.",
+    "alternatives": [
+      "Sorry, but what I really need this weekend is some downtime at home.",
+      "Sorry, but this weekend what I really need is time to just relax at home."
+    ],
+    "point": "「〜なのは」は What I need is で始める",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c091b5bab8a63dc84e642b15b324bb871682db6661a9c95e2b6e54134ff3651",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

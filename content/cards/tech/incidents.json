@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2b6n6j4m",
+    "ja": "今回の障害は、先月のものよりずっと復旧に時間がかかりました。",
+    "en": "This outage took much longer to fix than the one last month.",
+    "alternatives": [
+      "This outage took a lot longer to resolve than last month's.",
+      "It took much longer to recover from this outage than the one last month."
+    ],
+    "point": "比較級を強めるのは much。very longer とは言わない",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 4,
+    "grammar": ["comparatives-superlatives", "infinitives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d7586a0494e4a0bbd7b7e9bd016c787349570827420e1edc0e3745f0649ff1f5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2b8s4v3t",
     "ja": "私たちが気づいたときには、サーバーはもう2時間止まっていました。",
     "en": "By the time we noticed, the server had already been down for two hours.",
@@ -82,6 +104,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:58eb86163b408a46c6684f3e667a72537865c0ace559fc75c13008b2fce7c7dc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2u8g2k8f",
+    "ja": "昨夜エラーを出していたサーバーは、もう再起動してあります。",
+    "en": "The server that caused the errors last night has already been restarted.",
+    "alternatives": [
+      "We've already restarted the server that caused the errors last night.",
+      "The server that was throwing errors last night has already been rebooted."
+    ],
+    "point": "The server を that 節で後ろから説明し、動詞は has been restarted",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 4,
+    "grammar": ["relative-clauses", "present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ae7a4d87a5315e91bfba349e6d4f37af029814fd9e2e87b54241505811caf373",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3a5n7k5p",
+    "ja": "今回の障害を引き起こしたのは、データベースではなく、期限切れの SSL 証明書でした。",
+    "en": "It was an expired SSL certificate, not the database, that caused this outage.",
+    "alternatives": [
+      "What caused this outage was an expired SSL certificate, not the database.",
+      "It wasn't the database but an expired SSL certificate that caused this outage."
+    ],
+    "point": "It was 〜 that の強調構文で、that の後に caused を続ける",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:676c821244e828ce89c61dbffc11a1f4162e75b97268460056844a603e220d5c",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
@@ -198,6 +264,50 @@
     }
   },
   {
+    "id": "c_4s6h3v7b",
+    "ja": "仮に今メインのサーバーが落ちたとしたら、アクセスは自動で予備のサーバーに切り替わるんですか？",
+    "en": "If the main server went down now, would traffic automatically switch over to the backup server?",
+    "alternatives": [
+      "If the main server failed right now, would traffic fail over to the backup server automatically?",
+      "Would traffic automatically switch to the backup server if the main server went down now?"
+    ],
+    "point": "仮の話なので went と would、現在形の goes や will にしない",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 6,
+    "grammar": ["second-conditional", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9f58d99c812272a1173acb213b5f01b3b7e44e8ca1dcc9d8f963bfca55831233",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5m9k6f4u",
+    "ja": "障害が起きる前に、誰かがあのディスク容量の警告に気づいていればよかったのに。",
+    "en": "I wish someone had noticed that disk space warning before the outage happened.",
+    "alternatives": [
+      "If only someone had caught that disk space warning before the outage.",
+      "I wish somebody had spotted the disk space warning before the outage started."
+    ],
+    "point": "過去への後悔なので wish の後は had noticed と過去完了",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 6,
+    "grammar": ["wishes-regrets", "past-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c7732bb9cb1c850b3a7145a03805984e1f04b045e45bf092634c3ca055e99331",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5r5a2m7x",
     "ja": "ログイン画面でエラーが出ています。",
     "en": "There is an error on the login page.",
@@ -236,6 +346,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:097cb60aebbb5b4514806642b5afb1d491228dfcafdfda20427a389cbb3576f3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5v5b5f2b",
+    "ja": "この障害で、どのくらいのユーザーが影響を受けていますか？",
+    "en": "How many users are affected by this outage?",
+    "alternatives": [
+      "How many users are being affected by this outage?",
+      "How many users has this outage affected?"
+    ],
+    "point": "How many の後は複数名詞 users、影響を受けるは are affected",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 3,
+    "grammar": ["wh-questions", "passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c023de90914fc95b5135019083f695e6d4caa9d4c0d6e3754e5e62659ffeca3b",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

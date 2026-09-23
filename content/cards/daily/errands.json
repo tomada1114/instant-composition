@@ -88,6 +88,28 @@
     }
   },
   {
+    "id": "c_4e6f4n7y",
+    "ja": "郵便局の窓口の人によると、先週私が送った書類がまだ届いていないのは、住所の書き方のせいかもしれないそうです。",
+    "en": "The clerk at the post office said the reason the documents I sent last week haven't arrived might be the way I wrote the address.",
+    "alternatives": [
+      "According to the post office clerk, the documents I sent last week may not have arrived yet because of how I wrote the address.",
+      "The post office clerk told me the documents I mailed last week might not have arrived because of the way I wrote the address."
+    ],
+    "point": "主語 the reason 〜 arrived が長くても動詞 might be を落とさない",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 10,
+    "grammar": ["nested-clauses", "reported-speech"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:210a1559ca2d0027c82e4f1ff335899b8d25eef096afc04e88e9bf87a779ca45",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5v5q4x3g",
     "ja": "先月パスポートを更新しておけば、今こんな長い列に並んでいないのに。",
     "en": "If I had renewed my passport last month, I wouldn't be standing in this long line now.",

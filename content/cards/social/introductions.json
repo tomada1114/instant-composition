@@ -110,6 +110,50 @@
     }
   },
   {
+    "id": "c_5n9w8t7d",
+    "ja": "私は日本に来る前、10年近く銀行で働いていました。",
+    "en": "Before I came to Japan, I had worked at a bank for almost ten years.",
+    "alternatives": [
+      "I'd worked at a bank for nearly ten years before I came to Japan.",
+      "I worked at a bank for almost ten years before I came to Japan."
+    ],
+    "point": "来日より前の経験なので had worked で時間差を示す",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 5,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:58bd7aaca09019de569b7c00283ee3b0de11840ff11bc71b82c38f3aabe0c868",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5r6m4j2d",
+    "ja": "この街に住もうと決めたのは、何がきっかけだったんですか？",
+    "en": "What was it that made you decide to live in this city?",
+    "alternatives": [
+      "What was it that made you choose to live in this city?",
+      "What made you decide to live in this city?"
+    ],
+    "point": "What was it that で「何が」を強調し過去形でそろえる",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["cleft-emphasis", "causatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f380add9c57812a64b6b5d843f4e12302afdf6da504be69470e492ff02d9896c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_6u6s8g6g",
     "ja": "差し支えなければ、今のお仕事を始める前は何をされていたのか教えていただけますか？",
     "en": "Would you mind telling me what you did before you started your current job?",
@@ -126,6 +170,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:599eda2ebebe8a042f762993285ffe32f9c19900f7125f38615968fadb1bc1dc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7j7a5m6m",
+    "ja": "私はヨガを去年始めたばかりですが、もうすっかりはまっています。",
+    "en": "I only started yoga last year, but I've already gotten really into it.",
+    "alternatives": [
+      "I just took up yoga last year, but I'm already really into it.",
+      "I only started doing yoga last year, but I've already gotten hooked on it."
+    ],
+    "point": "last year は過去形、今の状態は現在完了で分ける",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 5,
+    "grammar": ["tense-contrast", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f571a586674ed3255eafc3b2cd8b4afd408be846a6276fe8d183f7a2700c57cb",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

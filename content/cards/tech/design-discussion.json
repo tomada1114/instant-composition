@@ -286,6 +286,28 @@
     }
   },
   {
+    "id": "c_7q6w6u3n",
+    "ja": "この案には何かデメリットはありますか？",
+    "en": "Are there any downsides to this approach?",
+    "alternatives": [
+      "Is there any downside to this approach?",
+      "Are there any disadvantages to this plan?"
+    ],
+    "point": "Are there any の後は複数形 downsides",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4ddd17c32ad2720e176d55953797207b7c9baa2325c5db3366931cdd96a6adb5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_7u6f8a8f",
     "ja": "認証まわりを担当しているエンジニアに、この設計を見てもらうよう頼んでもらえますか？",
     "en": "Could you ask the engineer handling authentication to take a look at this design?",
@@ -302,6 +324,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:3d94ab0f521a2b5b6a635bf1e8b3d98b1d2bd95b01f0fc3e31c29887ab8553da",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7x3d6y8j",
+    "ja": "三つの案の中では、Redis を使う案がいちばんシンプルだと思います。",
+    "en": "I think the Redis option is the simplest of the three.",
+    "alternatives": [
+      "Of the three options, I think the Redis one is the simplest.",
+      "I think using Redis is the simplest of the three options."
+    ],
+    "point": "三つの中で「いちばん」は the simplest of the three",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 3,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bf30eef96139d9e629ef087841c1a1de1ebefac53bfc2f7287e2a8ecd22f92fd",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

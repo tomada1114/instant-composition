@@ -110,6 +110,28 @@
     }
   },
   {
+    "id": "c_7z9r8g6h",
+    "ja": "田中さんのコードを見ていたら、小さなミスに気づいたんです。",
+    "en": "I was checking Tanaka's code and noticed a small mistake.",
+    "alternatives": [
+      "While I was looking at Tanaka's code, I noticed a small mistake.",
+      "I noticed a small mistake while I was checking Tanaka's code."
+    ],
+    "point": "「見ていたら」は過去進行形 was checking で表す",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 3,
+    "grammar": ["progressive-aspect", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6d017d49873022fb13fe534c10fbfec846dc87f428cf0a471170de3d0ef2907e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_8h8w5a8b",
     "ja": "今回いただいた報告書は、内容が正確なだけでなく、構成も非常に分かりやすかったです。",
     "en": "Not only was your report accurate, but it was also remarkably easy to follow.",

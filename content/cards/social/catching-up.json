@@ -198,6 +198,28 @@
     }
   },
   {
+    "id": "c_5x6u8j2j",
+    "ja": "兄は今、カナダで英語を勉強しているよ。",
+    "en": "My brother is studying English in Canada now.",
+    "alternatives": [
+      "My brother is now studying English in Canada.",
+      "My brother is in Canada studying English now."
+    ],
+    "point": "今していることは is と動詞の ing 形で言う",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0e185dde859e49a7710ce1e7521c6e2e40183b45fa89f182f86ce1439afc20e6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_7s6j2c4k",
     "ja": "最近、6 時に起きなきゃいけないんだ。",
     "en": "These days I have to get up at six.",

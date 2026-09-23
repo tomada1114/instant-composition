@@ -264,6 +264,50 @@
     }
   },
   {
+    "id": "c_8e6k2p2z",
+    "ja": "あの駅員さんに道を聞いていなかったら、私たちは逆方向の電車に乗っていたよ。",
+    "en": "If we hadn't asked that station attendant for directions, we would have gotten on a train going the opposite way.",
+    "alternatives": [
+      "If we hadn't asked that station worker for directions, we'd have taken a train in the wrong direction.",
+      "If we hadn't asked that station attendant, we would've gotten on the wrong train."
+    ],
+    "point": "過去の仮定は had not asked、帰結は would have gotten",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:52c47e31ea93ebac8f3e9d2fbb31bcb158040acd3725b8283f1717f5f71287c0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9a6g2f8m",
+    "ja": "すみません、この辺りに両替できる所があるか教えていただけますか？",
+    "en": "Excuse me, could you tell me if there's a place around here where I can exchange some money?",
+    "alternatives": [
+      "Excuse me, could you tell me whether there's somewhere nearby where I can exchange money?",
+      "Excuse me, would you happen to know if there's a place around here where I can change money?"
+    ],
+    "point": "「〜できる所」は a place where I can と where でつなぐ",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 7,
+    "grammar": ["indirect-questions", "relative-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f568a24eb6e85a2f3e63e1d0f52355c0b89a5931d2791c7aa0388f36aa5787d3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_9v5r2w8j",
     "ja": "よかったら、私が駅まで案内しますよ。",
     "en": "I'll take you to the station if you like.",

@@ -1,5 +1,49 @@
 [
   {
+    "id": "c_2e2r5j9h",
+    "ja": "彼女は、締め切りが月曜日に変わったことを知らなかったに違いない。",
+    "en": "She must not have known that the deadline had been moved to Monday.",
+    "alternatives": [
+      "She must not have realized the deadline was changed to Monday.",
+      "She can't have known that the deadline had been moved to Monday."
+    ],
+    "point": "過去の推量は must not have known と have＋過去分詞に",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["modal-perfect", "passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ace87cb4f4b25a2bcbeee83f0f8b507174e6743d6b8370c5e54f1f0ab5d5c89f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3q6h7d5p",
+    "ja": "取引先との打ち合わせ、先週からずっと日程を調整しようとしているんですが、まだ決まっていません。",
+    "en": "I've been trying to set up a meeting with the client since last week, but nothing's been decided yet.",
+    "alternatives": [
+      "I've been trying to schedule a meeting with the client since last week, but we still haven't settled on a date.",
+      "Since last week I've been trying to arrange a meeting with the client, but nothing's been decided yet."
+    ],
+    "point": "「先週からずっと〜している」は I've been trying で表す",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b709011fc8a29c96700d20927adc6bbe7049a95effe29d24c5d3d291b5ac8515",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4c4b5m7g",
     "ja": "次の打ち合わせはいつですか？",
     "en": "When is our next meeting?",
@@ -35,6 +79,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:ef8a67d228c0cfa094e8d907d690b4293f4cfe8296074052ef389250b2201a56",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4u5e3k2s",
+    "ja": "締め切りを延ばしてくれるかどうか、クライアントからもう何か情報は来ましたか？",
+    "en": "Have we gotten any information from the client yet about whether they'll extend the deadline?",
+    "alternatives": [
+      "Has the client given us any information yet about whether they'll extend the deadline?",
+      "Have we heard anything from the client yet about whether they'll push back the deadline?"
+    ],
+    "point": "「〜かどうか」は about whether でつなぐ",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["articles-and-countability", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:932a266a6a03756510c32f97d2a710a96c1c36934515363b4005a46e2f8e84a7",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
@@ -208,6 +274,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:ef258ad5db332975a9ce6863d5c8a4e9334ab94a87dbf8eb5de4274b9d27b2b0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8a5f4t8a",
+    "ja": "部長が会議を来週に延期して、みんなが準備する時間を増やしてくれました。",
+    "en": "The manager postponed the meeting until next week, giving everyone more time to prepare.",
+    "alternatives": [
+      "The manager pushed the meeting back to next week, giving everyone more time to prepare.",
+      "The manager moved the meeting to next week, which gave everyone more time to prepare."
+    ],
+    "point": "後半は and gave より , giving で文をつなぐと自然",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:63bf1a70baf31dcc53bb81d5c90f5a6d65938fba28f9dfaddf982d763eb072db",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

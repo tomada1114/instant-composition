@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2m2a4z5a",
+    "ja": "ノートパソコンを出して、このトレーに入れてください。",
+    "en": "Please take your laptop out and put it in this tray.",
+    "alternatives": [
+      "Please take out your laptop and put it in this tray.",
+      "Take your laptop out and put it in this tray, please."
+    ],
+    "point": "命令文は動詞の原形から。put it in の it を忘れない",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 3,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:afd89c9f2906c627b7a91f0c0f845f10f8bb0bfd0ee3a1c44f25c1e249841bb1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4d6b6t8d",
     "ja": "すみません、前の座席の下に入れたかばんを上の棚に移したいので、手伝ってもらえますか？",
     "en": "Excuse me, could you help me move the bag I put under the seat in front of me into the overhead bin?",
@@ -60,6 +82,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:ec646c9ed32adc4154362a8ced05f2758ac7ae3d22feb28ccd835accfbf8e91b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5q2z7x7f",
+    "ja": "隣の席の人が咳をしていたから、私は眠れなかった。",
+    "en": "I couldn't sleep because the person next to me was coughing.",
+    "alternatives": [
+      "The person next to me was coughing, so I couldn't sleep.",
+      "I couldn't sleep because the person beside me was coughing."
+    ],
+    "point": "続いていた動作は was coughing と過去進行形にする",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 3,
+    "grammar": ["progressive-aspect", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:de1e73f867db4fe128df8a6726748201e8dbeb536e6cce02ee3cc2b281015097",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
@@ -142,6 +186,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:542379bff49a81ab606d99fc0fab2aa96e955f8393ce35c212ed310c6f688629",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8q7q2p2y",
+    "ja": "私たちは出発の2時間前に空港に着かないといけないよ。",
+    "en": "We have to get to the airport two hours before departure.",
+    "alternatives": [
+      "We need to get to the airport two hours before departure.",
+      "We must be at the airport two hours before departure."
+    ],
+    "point": "「〜しないといけない」は have to。to の後は動詞の原形",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1110e1958702cd7dca15e277044672a0e1967dd79db799bbcb9d453cc90de2f0",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
