@@ -20,5 +20,27 @@
         "at": "2026-09-22"
       }
     }
+  },
+  {
+    "id": "c_6f3r4u5p",
+    "ja": "ごめん、疲れてるからパーティーに行けないよ。",
+    "en": "Sorry, I can't go to the party. I'm tired.",
+    "alternatives": [
+      "Sorry, I'm too tired to go to the party.",
+      "Sorry, I can't come to the party. I'm tired."
+    ],
+    "point": "「行けない」は can't go、理由は短く別の文で足せる",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 2,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef4fab9b731e8e1f4ed67d4d07217cac2c7c3b1d34e3cfd92b6bfa34010716ed",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
   }
 ]

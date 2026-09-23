@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_3r9z9p7d",
+    "ja": "ログインボタンにバグがあります。",
+    "en": "There is a bug in the login button.",
+    "alternatives": [
+      "There's a bug with the login button.",
+      "The login button has a bug."
+    ],
+    "point": "「〜がある」は There is で始める",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a3e777aa47881e3ccc5888c8bfa275c3586250756e4d9499c3970ee13203be97",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4b2s6h5r",
     "ja": "エラーについて、実際にやった手順と画面のスクリーンショットなど、情報をもう少し送ってもらえますか？",
     "en": "Could you send me a bit more information about the error, like the exact steps you took and a screenshot?",
@@ -110,6 +132,25 @@
     }
   },
   {
+    "id": "c_4j3y4r6w",
+    "ja": "ログをもう一度確認しよう。",
+    "en": "Let's check the logs again.",
+    "alternatives": ["Let's look at the logs again.", "Let's check the log again."],
+    "point": "「〜しよう」は Let's＋動詞の原形",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7e3efe8486c9c53d0a5b9f014923a42536c82a6d7d638c5e42647b70fb4e228e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4p6e2t5m",
     "ja": "昨夜のデプロイで設定ファイルが上書きされたに違いない、だから API キーが消えてるんだ、と彼は言っています。",
     "en": "He says the config file must have been overwritten during last night's deploy, which is why the API keys are missing.",
@@ -126,6 +167,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:475531ef9cfca319ea84b410c733e38bcc53d3f46911ae9de29af25f6d09f3b8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4s7r7m3n",
+    "ja": "ロードバランサーのログを確認して初めて、彼女はリクエストが二重に送られていることに気づいたんです。",
+    "en": "Only after checking the load balancer logs did she realize the requests were being sent twice.",
+    "alternatives": [
+      "She didn't realize the requests were being sent twice until she checked the load balancer logs.",
+      "It wasn't until she checked the load balancer logs that she realized the requests were being sent twice."
+    ],
+    "point": "Only after 〜 が文頭なら did she realize の語順",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 9,
+    "grammar": ["inversion", "passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e6afa62015b99103c5137d5f16728dbed883d86351b12664b9b473944c68ba00",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
@@ -214,6 +277,25 @@
     "stamps": {
       "core": {
         "hash": "sha256:f04c08121c8c5ce8d89e2da6aa882a9f44c0f10ce0472cd173c6ff8e864e9757",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6p7e8x8f",
+    "ja": "このエラーはどこで出ますか？",
+    "en": "Where does this error appear?",
+    "alternatives": ["Where does this error show up?", "Where does this error occur?"],
+    "point": "疑問詞の後は does で疑問文にする",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 1,
+    "grammar": ["wh-questions", "be-and-present-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3cc211bc4c4239e27062c82150cd009cd6ea98b384f9576d928bfbed2033a2c2",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

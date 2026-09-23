@@ -151,6 +151,28 @@
     }
   },
   {
+    "id": "c_6t9m6a6z",
+    "ja": "昨日教えてもらった、眠くならない花粉症の薬って、まだありますか？",
+    "en": "Do you still have the allergy medicine you told me about yesterday, the one that doesn't make you drowsy?",
+    "alternatives": [
+      "Do you still have that non-drowsy allergy medicine you told me about yesterday?",
+      "Do you still have the non-drowsy allergy medicine you mentioned yesterday?"
+    ],
+    "point": "medicine の後ろに you told me about を置き、the one that 〜 で補足する",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 8,
+    "grammar": ["nested-clauses", "relative-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b8c3f92fb9b6478d2f506f03078bf244ee3c4c49c1e75b038d618647bc1b3486",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_7a8t2d4c",
     "ja": "昨日の夜に食べた牡蠣にあたったのかもしれないって、お医者さんに言われました。",
     "en": "The doctor said I might have gotten food poisoning from the oysters I ate last night.",
@@ -212,6 +234,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:fc71bf163d4b48eef8ae2eda65d39c4cabe13609339720faebae34ec57fa0dce",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8c2s5s5f",
+    "ja": "妹は熱が38度もあるのに、明日の試験は絶対に受けると言い張っています。",
+    "en": "Even though my sister has a fever of 38 degrees, she insists she's going to take tomorrow's exam no matter what.",
+    "alternatives": [
+      "Although my sister has a 38-degree fever, she's insisting that she'll take tomorrow's exam no matter what.",
+      "My sister has a fever of 38 degrees, but she insists on taking tomorrow's exam no matter what."
+    ],
+    "point": "「〜のに」は even though で前に出す",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:811474440bace924b47f5930617d4481382098ba13258b6842459b78979ed11a",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

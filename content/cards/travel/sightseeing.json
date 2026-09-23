@@ -242,6 +242,28 @@
     }
   },
   {
+    "id": "c_7j8d7n2q",
+    "ja": "すみません、展示を見て回る前に、入口でリュックを預けてもいいですか？",
+    "en": "Excuse me, is it okay if I drop off my backpack at the entrance before I look around the exhibits?",
+    "alternatives": [
+      "Excuse me, can I leave my backpack at the entrance before I look around the exhibits?",
+      "Excuse me, would it be all right to drop off my backpack at the entrance before looking around the exhibits?"
+    ],
+    "point": "「預ける」は drop off、「見て回る」は look around",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 8,
+    "grammar": ["requests-permission", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:09312869b710427e088cb20c1adad69f69438734debf5e90e1b783a19eba4a97",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_7x4k3m7n",
     "ja": "有名なお寺を夕暮れ時に見るために、私たちははるばるここまで来たんです。",
     "en": "We came all the way here to see the famous temple at sunset.",
@@ -303,6 +325,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:7636b5a5554e6ef0a92498e02b781225de81f01fe5f856cf0c596ebb04f82347",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8x8b4x8k",
+    "ja": "私たちが美術館に着いたときには、午後のガイドツアーはもう満員になっていたので、音声ガイドを借りました。",
+    "en": "By the time we got to the museum, the afternoon guided tour had already filled up, so we rented audio guides.",
+    "alternatives": [
+      "When we arrived at the museum, the afternoon guided tour was already full, so we rented audio guides.",
+      "The afternoon guided tour had already been fully booked by the time we reached the museum, so we rented audio guides."
+    ],
+    "point": "着く前に満員になっていたので had filled up と過去完了",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 8,
+    "grammar": ["past-perfect", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f5564bce17f1f03c40adb0aee4ea0cde00aa8f98fcac1830f8b22217d7eece2",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

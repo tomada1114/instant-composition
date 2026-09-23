@@ -1,0 +1,71 @@
+[
+  {
+    "id": "c_7e2q7g8c",
+    "ja": "今度の土曜日、僕たちはガレージを掃除するつもりだよ。",
+    "en": "We're going to clean the garage this Saturday.",
+    "alternatives": [
+      "We're going to clean out the garage this Saturday.",
+      "We're cleaning the garage this Saturday.",
+      "We plan to clean the garage this Saturday."
+    ],
+    "point": "前から決めている予定は be going to",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:50730bb58fc0201637129da0670491abc4ed954817179de4cc78e2fd6857a68a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7f3a8w9z",
+    "ja": "お母さん、弟に部屋を片付けるように言ってくれる？",
+    "en": "Mom, can you tell my brother to clean his room?",
+    "alternatives": [
+      "Mom, could you tell my brother to clean his room?",
+      "Mom, can you tell my brother to tidy up his room?",
+      "Mom, will you tell my brother to clean up his room?"
+    ],
+    "point": "tell + 人 + to do の語順。that 節にしない",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 3,
+    "grammar": ["verb-object-to-do", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7ef7018e28560bc90f79c9e2b0f23a7bd08999a6e23bb2340fd9103c64ed19c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9r9b4u6d",
+    "ja": "姉はさっき洗剤を買いにスーパーへ行ったよ。",
+    "en": "My sister just went to the supermarket to buy detergent.",
+    "alternatives": [
+      "My sister went to the supermarket a little while ago to buy detergent.",
+      "My sister just went to the store to buy detergent.",
+      "My sister just went to the supermarket to get detergent."
+    ],
+    "point": "目的の「〜しに」は to + 動詞の原形で表す",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 3,
+    "grammar": ["infinitives", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e5bff4b6aad924cd534317f1229ff4fabae3a8233aa702f8193bbf55d3fef845",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

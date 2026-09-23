@@ -44,6 +44,50 @@
     }
   },
   {
+    "id": "c_4e7h2d4k",
+    "ja": "この翻訳、もっと早くお願いしておけばよかったです。締め切りは明日なんです。",
+    "en": "I wish I had asked you to translate this sooner. The deadline is tomorrow.",
+    "alternatives": [
+      "I wish I'd asked you to translate this earlier. The deadline is tomorrow.",
+      "I should have asked you to translate this sooner. The deadline is tomorrow."
+    ],
+    "point": "過去の後悔は I wish のあとを過去完了に",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7da328e3c80728a26f2b5e4d40ff6983b2709d4f51b4c2faaeed84ca60741cbc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5a4u4c8e",
+    "ja": "私たちが本当に必要としているのは、金曜までにこのデータを確認してくれる人です。",
+    "en": "What we really need is someone who can check this data by Friday.",
+    "alternatives": [
+      "What we really need is someone to check this data by Friday.",
+      "The thing we really need is someone who can check this data by Friday."
+    ],
+    "point": "「〜なのは」は What で始めて is でつなぐ",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 6,
+    "grammar": ["noun-clauses", "relative-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:38666abd5009eb4c812f556602edd6b4aad37f3b6a70ca0f1be9c45eae0c53d7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_7r4j3x6a",
     "ja": "翻訳をお願いしたくて、私は朝からずっと佐藤さんに電話しているんです。",
     "en": "I've been calling Mr. Sato all morning to ask for a translation.",
@@ -60,6 +104,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:d8655e1b4080b85a503580044a286acd66db63a0e79728d75d2c1e46b93fe19a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8m5h2q2v",
+    "ja": "彼女はその依頼を引き受けてくれただけでなく、週末も手伝うと申し出てくれました。",
+    "en": "Not only did she take on the job, but she also offered to help over the weekend.",
+    "alternatives": [
+      "She not only agreed to the request but also offered to help over the weekend.",
+      "Not only did she accept the request, but she also offered to help on the weekend."
+    ],
+    "point": "Not only を文頭に置くと did she の語順になる",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:73471669cb41724198e9677d997ecbea91bb166d41fdfd1f13509f853354c858",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

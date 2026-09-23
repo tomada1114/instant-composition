@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_5p8j4b8u",
+    "ja": "このシャツを返品するには、レシートとタグの両方が必要ですか？",
+    "en": "Do I need both the receipt and the tags to return this shirt?",
+    "alternatives": [
+      "To return this shirt, do I need both the receipt and the tags?",
+      "Will I need both the receipt and the tags to return this shirt?"
+    ],
+    "point": "目的の「〜するには」は to 不定詞で文末に置ける",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 4,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c1958e052d47e0731d8bf1448ae1e54504a039d71a640996d320ba2e02a3a5d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_6r9c2z7y",
     "ja": "このコート、返品するか小さいサイズに交換するかで迷ってるんだ。",
     "en": "I'm torn between returning this coat and exchanging it for a smaller size.",
@@ -38,6 +60,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:30646eaf6ab12b292c76860ab0bd2ca3e260a9c09ac6c2a9ae5537190cb442c7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9e4v9x7e",
+    "ja": "セールが昨日までだって知ってたら、僕はあのコートをもっと早く買いに行ってたよ。",
+    "en": "If I'd known the sale ended yesterday, I would have gone to buy that coat sooner.",
+    "alternatives": [
+      "If I had known the sale was only until yesterday, I'd have gone to buy that coat earlier.",
+      "I would've gone to buy that coat sooner if I'd known the sale ended yesterday."
+    ],
+    "point": "「知ってたら」は had known、帰結は would have + 過去分詞",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4d3fed0507517a23245223c75e13f99a633f3d65b5182e6bbeaf046fc6fafc45",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

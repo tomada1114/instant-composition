@@ -198,5 +198,49 @@
         "at": "2026-09-22"
       }
     }
+  },
+  {
+    "id": "c_7s3d2v7h",
+    "ja": "昨日一緒にランチしたカフェって、電話でしか予約を受け付けてないんだって。",
+    "en": "The café where we had lunch yesterday only takes reservations by phone, apparently.",
+    "alternatives": [
+      "I heard the café where we had lunch yesterday only takes reservations over the phone.",
+      "Apparently, the café we had lunch at yesterday only accepts reservations by phone."
+    ],
+    "point": "「ランチしたカフェ」は the café where we had lunch と後ろから説明する",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 4,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f8dc91c7e5f6124e9beb86c62c270a215c6c70317cf749862d2369b6916177cf",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8b2v8y5n",
+    "ja": "あのレストランは、料理がおいしかっただけでなく、店員さんもとても親切でした。",
+    "en": "At that restaurant, not only was the food delicious, but the staff were also very friendly.",
+    "alternatives": [
+      "Not only was the food at that restaurant delicious, but the staff were also very kind.",
+      "The food at that restaurant was delicious, and not only that, the staff were very friendly too."
+    ],
+    "point": "Not only を文頭に出すと was the food と倒置になる",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b8d6289e324f4afc47606cf0561f21397dbddb5b83b4f54ba13dc6696b438174",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
   }
 ]

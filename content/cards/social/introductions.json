@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_2y2t8r4u",
+    "ja": "福岡で生まれましたが、父が転勤になったので、主にシンガポールで育ちました。",
+    "en": "I was born in Fukuoka, but I mostly grew up in Singapore because my father was transferred there.",
+    "alternatives": [
+      "I was born in Fukuoka, but because my father was transferred, I mostly grew up in Singapore.",
+      "I was born in Fukuoka, but I mostly grew up in Singapore because my dad got transferred there."
+    ],
+    "point": "「転勤になった」は受け身で was transferred と言う",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 7,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:be69329cfb50e5f307639404057327a0daef335aabb1d2164265230829fa6039",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4n4v5g6a",
     "ja": "もし私がもっと英語を話せたら、海外で働いてみたいです。",
     "en": "If I could speak English better, I'd like to work abroad.",
@@ -66,6 +88,29 @@
     }
   },
   {
+    "id": "c_8a6b6c5e",
+    "ja": "もしあの時友達に誘われていなかったら、私はサーフィンを始めていなかったと思います。",
+    "en": "If my friend hadn't invited me back then, I don't think I would have started surfing.",
+    "alternatives": [
+      "I don't think I would have started surfing if my friend hadn't invited me back then.",
+      "If my friend hadn't invited me back then, I probably wouldn't have gotten into surfing.",
+      "If my friend hadn't asked me to join back then, I don't think I'd have taken up surfing."
+    ],
+    "point": "過去の仮定は if＋had not＋過去分詞、帰結は would have",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:781e44a9daa7f7cf6fa04b3cc246b047012a7697fa0f7d8f08c12ef538e36048",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_8g4r4z7s",
     "ja": "あなたは仕事で英語を使うことに、もう慣れていますか？",
     "en": "Are you used to using English at work yet?",
@@ -82,6 +127,51 @@
     "stamps": {
       "core": {
         "hash": "sha256:7643f6a445af236c9f739e976bc557b2fa6b14eb9937007fbb61e3292c8c1446",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8g7d4v2q",
+    "ja": "私の家族は4人です。",
+    "en": "There are four people in my family.",
+    "alternatives": [
+      "There are four of us in my family.",
+      "My family has four people.",
+      "We are a family of four."
+    ],
+    "point": "「〜人いる」は There are 〜 in my family",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7b769c10adf5d799f0634fcb02d85db3e7d05283c0b49071096613da6958bc60",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8q6m5d6s",
+    "ja": "はじめまして。私は看護師です。",
+    "en": "Nice to meet you. I'm a nurse.",
+    "alternatives": [
+      "Nice to meet you. I work as a nurse.",
+      "Pleased to meet you. I'm a nurse."
+    ],
+    "point": "職業には a をつけて a nurse と言う",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 1,
+    "grammar": ["be-and-present-simple", "articles-and-countability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9ba47d440b2d7bede2fd2d1a46c7f2f0bd36cd2bc783b7d43e27e8ecd907e1bf",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

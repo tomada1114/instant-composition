@@ -44,6 +44,50 @@
     }
   },
   {
+    "id": "c_3n8n8p7v",
+    "ja": "PR の説明に、パフォーマンスへの影響についての情報を少し追加してもらえますか？",
+    "en": "Could you add some information about the performance impact to the PR description?",
+    "alternatives": [
+      "Can you add a bit of information about the performance impact to the PR description?",
+      "Could you add some details about the performance impact to the PR description?"
+    ],
+    "point": "information は数えられないので an も -s もつけない",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 4,
+    "grammar": ["articles-and-countability", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d24d7d7ca9fcdeabfa7263485d595dd0ea57465109cf199997ca2756f8f1cf57",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3t6y2c3r",
+    "ja": "先月このエッジケースのテストを追加していれば、僕たちは今ごろ本番でこのバグを追いかけていなかったはずです。",
+    "en": "If we'd added a test for this edge case last month, we wouldn't be chasing this bug in production now.",
+    "alternatives": [
+      "If we had added a test for this edge case last month, we wouldn't be tracking down this bug in production now.",
+      "If we'd written a test for this edge case last month, we wouldn't be chasing this bug in production right now."
+    ],
+    "point": "過去の仮定は had added、今の結果は wouldn't be -ing",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:249a5ccc221fc27fb10c4b888852b6614e7080c1381d6e7cf64b12f13aef7bdb",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3w5x5t4h",
     "ja": "指摘されたところは、もう全部直しました。",
     "en": "I've already fixed all the issues you pointed out.",

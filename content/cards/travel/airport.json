@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_4u4t5d5f",
+    "ja": "すみません、私の席の下に誰かのかばんがあります。",
+    "en": "Excuse me, there's someone's bag under my seat.",
+    "alternatives": [
+      "Excuse me, someone's bag is under my seat.",
+      "Sorry, there's somebody's bag under my seat."
+    ],
+    "point": "「〜がある」は There's で始め、場所は文末に置く",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 2,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:da2c8373cc9993f42734a663e4b24a455f583c9a91b0d078936a5f2d51a11e35",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5m4g2j5n",
     "ja": "私たちがようやく保安検査を抜けたときには、搭乗口はもう閉まっていました。",
     "en": "By the time we finally got through security, the boarding gate had already closed.",
@@ -82,6 +104,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:542379bff49a81ab606d99fc0fab2aa96e955f8393ce35c212ed310c6f688629",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8x7e9d9t",
+    "ja": "窓側の席に替えてもらえますか？",
+    "en": "Could you change my seat to a window seat?",
+    "alternatives": [
+      "Can you change my seat to a window seat?",
+      "Could you move me to a window seat?"
+    ],
+    "point": "丁寧な依頼は Could you で始める",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a2e554dd1d19e8d3a203dbbb635fd6a34804901e155a175683100fca39302d3d",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

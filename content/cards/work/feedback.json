@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_7e6z9f9y",
+    "ja": "この資料、すごくいいと思います。ただ、会議で見やすいように、グラフをもう少し大きくしてもらえないでしょうか。",
+    "en": "I think this deck is really good, but I was wondering if you could make the charts a bit bigger so they're easier to see in the meeting.",
+    "alternatives": [
+      "I think this deck is really good, but could you possibly make the charts a little bigger so they're easier to see in the meeting?",
+      "I think this deck is really good, though I wonder if you could make the charts a bit larger so they're easier to see in the meeting."
+    ],
+    "point": "柔らかい依頼は I was wondering if you could で",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2629a1616266e8d2ae63505e5c68ebb241317878a83f66fa9ad5dd8f9a88807f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_8h8w5a8b",
     "ja": "今回いただいた報告書は、内容が正確なだけでなく、構成も非常に分かりやすかったです。",
     "en": "Not only was your report accurate, but it was also remarkably easy to follow.",

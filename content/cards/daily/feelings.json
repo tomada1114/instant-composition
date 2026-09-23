@@ -88,6 +88,28 @@
     }
   },
   {
+    "id": "c_2p2y8e3e",
+    "ja": "母がいちばん喜んだのは、孫たちからの手書きの手紙でした。",
+    "en": "It was the handwritten letters from her grandchildren that made my mother happiest.",
+    "alternatives": [
+      "What made my mother happiest was the handwritten letters from her grandchildren.",
+      "The handwritten letters from her grandchildren were what made my mother happiest."
+    ],
+    "point": "強調したい部分を It was と that で挟む",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:267bf237392f851b29d0abacbf39259cac7b8a8b8914b5d1970a27e77c73548c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2t9k8v2j",
     "ja": "もし宝くじで1億円当たったら、あなたは仕事を辞める？それとも続ける？",
     "en": "If you won a hundred million yen in the lottery, would you quit your job or keep working?",
@@ -104,6 +126,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:3f2f0ca90d88bca8de709c2d3538d307cae38002301d7825e790d61cd32fb3d3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3h5h7a2t",
+    "ja": "昨日の映画、どうして気に入らなかったの？",
+    "en": "Why didn't you like the movie yesterday?",
+    "alternatives": [
+      "Why didn't you like yesterday's movie?",
+      "Why didn't you enjoy the movie yesterday?"
+    ],
+    "point": "過去の否定疑問は Why didn't you のあと動詞は原形",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 2,
+    "grammar": ["wh-questions", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a0356508961fda83d279eeb241635394a43a40408a69eb758db0c093d5a55dbb",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
@@ -280,6 +324,73 @@
     "stamps": {
       "core": {
         "hash": "sha256:58ab26a110155ff9ec14dd190cfebecf56b66392a606804f94462d67a6da65d7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7u3v7e5s",
+    "ja": "新しい職場でこんなに温かく迎えてもらえるなんて、夢にも思っていませんでした。",
+    "en": "Never did I imagine that I'd get such a warm welcome at my new workplace.",
+    "alternatives": [
+      "I never imagined I'd get such a warm welcome at my new workplace.",
+      "I never dreamed I'd be welcomed so warmly at my new workplace."
+    ],
+    "point": "Never を文頭に出すと did I imagine の語順になる",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b0164263aa8984e48858cc779ec31d6b144d8849b9cca8510b09b18aa32ebc84",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7x8a2p2b",
+    "ja": "このワンピース、正直な意見を聞いてもいいですか？",
+    "en": "Could I ask your honest opinion on this dress?",
+    "alternatives": [
+      "Could I ask for your honest opinion on this dress?",
+      "May I ask your honest opinion on this dress?",
+      "Can I get your honest opinion on this dress?"
+    ],
+    "point": "丁寧な許可は Could I / May I で始める",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ba4872d2b32a36c6680bf160f057bf1a1c25f9df83ad2bcfe5464bde8f304eaa",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8d3r4e7g",
+    "ja": "もし彼があの仕事を断っていなかったら、今ごろもっと幸せだったと思う？",
+    "en": "Do you think he'd be happier now if he hadn't turned down that job?",
+    "alternatives": [
+      "If he hadn't turned down that job, do you think he'd be happier now?",
+      "If he hadn't said no to that job, do you think he'd be happier now?"
+    ],
+    "point": "過去の仮定は hadn't turned down、今の結果は would be",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3c0559c0e52cc00d2716d67930cd70ed05c127e2a714ac3cbc409c5d339d613d",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

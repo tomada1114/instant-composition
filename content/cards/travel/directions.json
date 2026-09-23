@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_2k2p3j2s",
+    "ja": "私たち、このあたりをもう30分も歩き回ってるんです。駅はどっちですか？",
+    "en": "We've been walking around this area for thirty minutes already. Which way is the station?",
+    "alternatives": [
+      "We've been walking around here for half an hour. Which way is the station?",
+      "We've been walking around here for thirty minutes now. How do we get to the station?"
+    ],
+    "point": "今も続く「ずっと〜している」は have been -ing",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7ce7238d9751beacb4bc084f392288f87a9e0bef3e8d29a0dbea63422fb6bde5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2n3w6k3b",
     "ja": "私、ホテルを出る前に地図アプリをダウンロードしておけばよかった。",
     "en": "I wish I'd downloaded a map app before I left the hotel.",
@@ -38,6 +60,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:7cd50c2f9c4fbdfd83333c8b634c5d84e27b7640232240aa53381067ec8acfbc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2q8x2p4g",
+    "ja": "フロントの人に、駅までの行き方を紙に書いてくれるよう頼んでもらえますか？",
+    "en": "Could you ask the front desk staff to write down directions to the station for me?",
+    "alternatives": [
+      "Can you ask the front desk staff to write down how to get to the station?",
+      "Could you ask someone at the front desk to write the directions to the station on a piece of paper?"
+    ],
+    "point": "ask 人 to do で「人に〜するよう頼む」",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 6,
+    "grammar": ["verb-object-to-do", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5435002d1c7298fadb8aa4efe0256925b312b2e64cdd194da9a59c0399da8573",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
@@ -126,6 +170,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:dfb8f77e7817d65ffb3bb04037d9ffdf739eb92a6fa455b072fa8abadcea5064",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9v7k5r9e",
+    "ja": "橋を渡ったら、交差点が見えるまでまっすぐ進んでください。",
+    "en": "After you cross the bridge, keep going straight until you see an intersection.",
+    "alternatives": [
+      "Once you cross the bridge, go straight until you see an intersection.",
+      "When you cross the bridge, keep walking straight until you see an intersection."
+    ],
+    "point": "after 節も until 節も未来の話だが現在形",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 4,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f0452c7f4eb6e98e2602f4a8470900bc0bad2d6e3b6dc20c1431a5db8eaa15d",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

@@ -66,6 +66,50 @@
     }
   },
   {
+    "id": "c_3t8r2y6v",
+    "ja": "この部屋、予約した部屋よりずっと狭いんですが。",
+    "en": "This room is much smaller than the one I booked.",
+    "alternatives": [
+      "This room is a lot smaller than the room I booked.",
+      "This room is much smaller than the one I reserved."
+    ],
+    "point": "比較級の強調は very ではなく much",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 4,
+    "grammar": ["comparatives-superlatives", "relative-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:eb3a4ec48dc87d55072c96724efe8a4abf28d982f10a9f7d84e94d8f770b7312",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4r6k4k8s",
+    "ja": "タクシーを待っていた時に、パスポートがないことに気づいたんです。",
+    "en": "I was waiting for a taxi when I noticed my passport was missing.",
+    "alternatives": [
+      "While I was waiting for a taxi, I noticed my passport was gone.",
+      "I realized my passport was missing while I was waiting for a taxi."
+    ],
+    "point": "「待っていた最中」は過去進行形 was waiting",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 4,
+    "grammar": ["progressive-aspect", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:703630be9561497b0998f934b8d416de85096f1ef0a916aac9349a53f4368452",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5q4u8v8c",
     "ja": "電車で私の前に座っていた男の人が、私のバッグを持って行ったのかもしれません。",
     "en": "The man sitting in front of me on the train may have taken my bag.",
