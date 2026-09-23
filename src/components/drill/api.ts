@@ -1,4 +1,4 @@
-import type { AnswerInput } from "../../core/api";
+import { roundKindSchema, type AnswerInput } from "../../core/api";
 import { err, ok, type Result } from "../../core/result";
 import type { RoundKind } from "../../core/types";
 import type { RoundPayload, RoundSummary } from "../../core/views";
@@ -52,4 +52,14 @@ export async function sendAnswer(answer: AnswerInput): Promise<SendOutcome> {
   } catch {
     return "failed";
   }
+}
+
+/**
+ * The round kind a `?kind=` query asks for; today's portion when it names
+ * none. Read in the browser, because the locale layout renders statically
+ * and hands a page no search parameters.
+ */
+export function roundKindFrom(search: string): RoundKind {
+  const parsed = roundKindSchema.safeParse(new URLSearchParams(search).get("kind"));
+  return parsed.success ? parsed.data : "today";
 }

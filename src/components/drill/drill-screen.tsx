@@ -2,9 +2,8 @@
 
 import { useEffect, useState, type ReactElement } from "react";
 
-import type { RoundKind } from "../../core/types";
 import type { RoundPayload } from "../../core/views";
-import { requestRound, type ApiError } from "./api";
+import { requestRound, roundKindFrom, type ApiError } from "./api";
 import { DrillError } from "./drill-error";
 import { DrillSession } from "./drill-session";
 
@@ -14,15 +13,15 @@ type Loaded =
   | { readonly status: "ready"; readonly round: RoundPayload };
 
 /**
- * The `/drill` page's client side: it asks the server for the round — a
+ * The `/drill` page's client side: it asks the server for the round `?kind=`
+ * names — a
  * repeated ask resumes the same open round — and loads every card of it up
  * front, so nothing waits between cards.
  */
 export function DrillScreen({
-  kind,
   first,
   sound,
-}: Readonly<{ kind: RoundKind; first: boolean; sound: boolean }>): ReactElement {
+}: Readonly<{ first: boolean; sound: boolean }>): ReactElement {
   const [attempt, setAttempt] = useState(0);
   const [loaded, setLoaded] = useState<Loaded & { readonly attempt?: number }>({
     status: "loading",
@@ -30,7 +29,7 @@ export function DrillScreen({
 
   useEffect(() => {
     let current = true;
-    void requestRound(kind).then((result) => {
+    void requestRound(roundKindFrom(window.location.search)).then((result) => {
       if (!current) return;
       setLoaded(
         result.ok
@@ -41,7 +40,7 @@ export function DrillScreen({
     return () => {
       current = false;
     };
-  }, [kind, attempt]);
+  }, [attempt]);
 
   if (loaded.status === "loading" || loaded.attempt !== attempt) {
     return <main className="mx-auto box-content flex min-h-dvh max-w-column px-4" />;

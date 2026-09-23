@@ -90,9 +90,10 @@ function press(key: string): void {
 }
 
 async function renderDrill(kind: "today" | "placement" = "today"): Promise<void> {
+  window.history.replaceState(null, "", `/ja/drill?kind=${kind}`);
   render(
     <NextIntlClientProvider locale="ja" messages={ja}>
-      <DrillScreen kind={kind} first sound={false} />
+      <DrillScreen first sound={false} />
     </NextIntlClientProvider>,
   );
   await settle();

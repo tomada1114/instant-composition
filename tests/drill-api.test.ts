@@ -1,7 +1,12 @@
 import { describe, expect, it, vi } from "vitest";
 
 import type { AnswerInput } from "../src/core/api";
-import { requestFinish, requestRound, sendAnswer } from "../src/components/drill/api";
+import {
+  requestFinish,
+  requestRound,
+  roundKindFrom,
+  sendAnswer,
+} from "../src/components/drill/api";
 
 const ANSWER: AnswerInput = {
   id: "r:f:c1",
@@ -104,5 +109,17 @@ describe("requestFinish", () => {
     expect(calls[0]?.init?.body).toBe(
       JSON.stringify({ roundId: "r", answers: [ANSWER] }),
     );
+  });
+});
+
+describe("roundKindFrom", () => {
+  it.each([
+    ["?kind=placement", "placement"],
+    ["?kind=yesterday&x=1", "yesterday"],
+    ["?kind=extra", "extra"],
+    ["", "today"],
+    ["?kind=bonus", "today"],
+  ] as const)("reads %j as %s", (search, kind) => {
+    expect(roundKindFrom(search)).toBe(kind);
   });
 });
