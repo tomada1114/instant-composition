@@ -17,6 +17,9 @@ extend-exclude = [
   ".claude/skills/",
 ]
 
-# No word exceptions: every entry this file used to carry belonged to the demo
-# library and its tests, which are gone. Prefer fixing the text over adding one
-# back.
+[default.extend-words]
+# Card points under content/cards/ name the wrong plural a learner must avoid
+# ("advice は数えられないので advices にしない"), so these misspellings are the
+# point of the text, not typos.
+advices = "advices"
+informations = "informations"
