@@ -38,6 +38,8 @@ const automationTests = [
   "tests/server-content.test.ts",
   "tests/server-db.test.ts",
   "tests/server-env.test.ts",
+  "tests/server-finish.test.ts",
+  "tests/server-rounds.test.ts",
   "tests/skills-frontmatter.test.ts",
   "tests/sync-agents.test.ts",
   "tests/sync-labels.test.ts",
