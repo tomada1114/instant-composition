@@ -1,6 +1,6 @@
 import type { AnswerInput, SettingsPatch } from "../../core/api";
 import type { Result } from "../../core/result";
-import type { RoundKind } from "../../core/types";
+import type { RoundKind, TopicInfo } from "../../core/types";
 import type {
   HomeView,
   RoundPayload,
@@ -36,6 +36,8 @@ export interface Services {
   ): Result<RoundSummary, ServiceError>;
   updateSettings(patch: SettingsPatch): Result<SettingsView, ServiceError>;
   history(): History;
+  /** The topics and subtopics a learner may choose, in the taxonomy's order. */
+  topics(): readonly TopicInfo[];
 }
 
 export function createServices(deps: ServiceDeps): Services {
@@ -46,6 +48,10 @@ export function createServices(deps: ServiceDeps): Services {
     recordAnswer: (input) => recordAnswer(deps, input),
     finishRound: (roundId, answers) => finishRound(deps, roundId, answers),
     updateSettings: (patch) => updateSettings(deps, patch),
+    topics() {
+      const loaded = deps.content.get();
+      return loaded.ok ? loaded.value.topics : [];
+    },
     history() {
       const progress = readProgress(deps);
       const seen = new Set(

@@ -1,9 +1,12 @@
+import { rmSync } from "node:fs";
+import path from "node:path";
+
 import { afterEach, describe, expect, it } from "vitest";
 
 import { parseHistory } from "../scripts/cards/plan.mjs";
 import type { RoundKind } from "../src/core/types";
 import type { RoundPayload } from "../src/core/views";
-import { removeContentRoots, writeCards } from "./cards-fixture";
+import { removeContentRoots, TAXONOMY, writeCards } from "./cards-fixture";
 import { makeShownCell } from "./progress-fixture";
 import { firstPassAnswers, makeHarness, type Harness } from "./services-harness";
 
@@ -238,5 +241,26 @@ describe("the history for card generation", () => {
     expect(history.seenIds).toHaveLength(10);
     expect(history.topics).toStrictEqual(["work", "daily"]);
     expect(history.estimatedLevel).toBe(10);
+  });
+});
+
+describe("the topics to choose from", () => {
+  it("lists the taxonomy's topics in its order, with their subtopics", () => {
+    const harness = makeHarness();
+    harnesses.push(harness);
+    expect(harness.services.topics()).toStrictEqual(
+      TAXONOMY.topics.map((topic) => ({
+        id: topic.id,
+        ja: topic.ja,
+        subtopics: topic.subtopics.map(({ id, ja }) => ({ id, ja })),
+      })),
+    );
+  });
+
+  it("lists none when the content cannot be read", () => {
+    const harness = makeHarness();
+    harnesses.push(harness);
+    rmSync(path.join(harness.root, "taxonomy.json"));
+    expect(harness.services.topics()).toStrictEqual([]);
   });
 });
