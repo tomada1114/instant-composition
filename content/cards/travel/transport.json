@@ -176,6 +176,28 @@
     }
   },
   {
+    "id": "c_3p6b3x3m",
+    "ja": "姉は新幹線の切符を買うために、早めに駅に行きました。",
+    "en": "My sister went to the station early to buy Shinkansen tickets.",
+    "alternatives": [
+      "My sister went to the station early to get Shinkansen tickets.",
+      "My sister went to the station early to buy bullet train tickets."
+    ],
+    "point": "目的は to + 動詞の原形で表す",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 3,
+    "grammar": ["infinitives", "past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f0195402dc152cce5d031e2c39daf5fed67faaae3ba7b5f86fe6e86242953a71",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3y5d6b9c",
     "ja": "雨がひどいから、タクシーで行こうよ。",
     "en": "It's raining hard, so let's take a taxi.",
@@ -324,6 +346,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:50fcf1fda0ebdd97d629a93d9b7abd4baf0dbbf9f6d3428d7b700315e3aa30c4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6r8k5b3t",
+    "ja": "電車が遅れたら、会社に電話しなきゃいけないな。",
+    "en": "If the train is late, I'll have to call the office.",
+    "alternatives": [
+      "If the train's delayed, I'll need to call the office.",
+      "If the train is delayed, I'll have to call work."
+    ],
+    "point": "未来のことでも if 節は現在形",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 3,
+    "grammar": ["time-and-if-clauses", "modal-obligation-advice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b8048c0eb83b85b5c28d6272d2f5c61f61aecf31cb51c34cd002c3d1d4b7b5cb",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

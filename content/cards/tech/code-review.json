@@ -66,6 +66,28 @@
     }
   },
   {
+    "id": "c_2t5x6w2w",
+    "ja": "細かい点ですが、この変数名はもう少し分かりやすくできるかもしれません。",
+    "en": "This is just a small point, but maybe this variable name could be a little clearer.",
+    "alternatives": [
+      "It's a minor point, but this variable name could perhaps be a bit clearer.",
+      "Just a small thing, but I wonder if this variable name could be a little clearer."
+    ],
+    "point": "「かもしれません」は maybe や could で柔らかく言う",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8c2489104f48f8837febd64b3d62361ed651e6b9cb441c1212b9ca6aa4fc94d1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2y9d7a5x",
     "ja": "この関数、もっと小さいヘルパー関数に分けることを検討してもらえますか？",
     "en": "Could you consider splitting this function into smaller helper functions?",
@@ -414,6 +436,28 @@
         "hash": "sha256:797b3349366081873c523ed432aaa9ed5b9ecd8d12d1103fda6dd65e1d9c346d",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8h8r6t7u",
+    "ja": "レビューをお願いする前に、僕はもうローカルで全部のテストを通していました。",
+    "en": "I had already gotten all the tests to pass locally before I asked you to review it.",
+    "alternatives": [
+      "I'd already made sure every test passed locally before I asked for your review.",
+      "Before I asked you to review it, I had already gotten every test passing locally."
+    ],
+    "point": "頼む前に済んでいたことは had + 過去分詞で表す",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:aa86008f257d4303e66f7e9ef237a999cbd3eab1e117c60e789b10d21bba1229",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

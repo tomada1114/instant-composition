@@ -110,6 +110,28 @@
     }
   },
   {
+    "id": "c_3c3m6r4n",
+    "ja": "入口でチケットを売っていた人が私たちに教えてくれたツアーって、まだ予約できるかどうか知ってる？",
+    "en": "Do you know whether the tour that the person selling tickets at the entrance told us about is still available to book?",
+    "alternatives": [
+      "Do you know if we can still book the tour that the person selling tickets at the entrance told us about?",
+      "Do you know if the tour the person selling tickets at the entrance mentioned to us can still be booked?"
+    ],
+    "point": "tour を説明する節の中に、さらに人を説明する語句が入る",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["nested-clauses", "indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6a90c42da0f1eaa7c6b292126142827f09764467cde0f0067ca53bb728f569ec",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3h2j4q7c",
     "ja": "行く前に、ネットで美術館のチケットを買っておこうよ。",
     "en": "Let's buy the museum tickets online before we go.",
@@ -172,6 +194,28 @@
         "hash": "sha256:4a874206c9d627f05361c0ad98ec3460ee9507d111ae8ce7a756fe11cf698700",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3t4r2y5p",
+    "ja": "すみません、私たち20分くらいチケット売り場を探しているんですが、どこにあるか教えてもらえますか？",
+    "en": "Excuse me, we've been looking for the ticket office for about twenty minutes. Could you tell me where it is?",
+    "alternatives": [
+      "Excuse me, we've been trying to find the ticket office for about twenty minutes. Could you tell me where it is?",
+      "Excuse me, we've been searching for the ticket booth for about twenty minutes. Could you tell us where it is?"
+    ],
+    "point": "今も探し続けているので have been -ing、場所は where it is の語順",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["present-perfect-continuous", "indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:adab3636dfe50ea1780492a97b282138a736766b5d6a38e9f392895c10d7f88a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
@@ -330,6 +374,28 @@
     }
   },
   {
+    "id": "c_6q6u7v3y",
+    "ja": "うちの父は、ツアーの間ずっと一番前を歩いて、ガイドさんの話を一言も聞き逃さないようにメモを取ってたよ。",
+    "en": "My dad walked at the front of the group the whole tour, taking notes so he wouldn't miss a word the guide said.",
+    "alternatives": [
+      "My dad stayed at the front of the group for the entire tour, taking notes so he wouldn't miss anything the guide said.",
+      "Throughout the tour, my dad walked at the front, taking notes so he wouldn't miss a single word from the guide."
+    ],
+    "point": "同時の動作は , taking notes と分詞で後ろに続ける",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f17a91b0fe498eeacfb54fd10145c822044414dc0168a6f5c22769c58078618",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_6u6h2g7j",
     "ja": "展望台が混みすぎていて、私はいい写真が撮れませんでした。",
     "en": "The observation deck was so crowded that I couldn't get a good photo.",
@@ -412,6 +478,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:48064205f9b4d73f378d5a1810e7c5de0cee9883756dc52d4ea2b85147c48b1a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7v6q4u3x",
+    "ja": "ホテルの人が私たちにおすすめしてくれた展望台って、ここから歩いて行ける距離ですか？",
+    "en": "Is the observation deck that the hotel staff recommended to us within walking distance of here?",
+    "alternatives": [
+      "Is the observation deck the hotel staff recommended to us close enough to walk to from here?",
+      "Can we walk from here to the observation deck that the hotel staff recommended to us?"
+    ],
+    "point": "長い主語は the deck that ～ recommended でまとめてから述語へ",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a2090ab09cd405651513fdf91ce4d1ef58d1835bdb666b5eea847120219bf88c",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }
@@ -506,6 +594,28 @@
     }
   },
   {
+    "id": "c_8h6q2q8m",
+    "ja": "私たちは川沿いを1時間歩いたんだけど、弟が古い橋の写真を撮れるように、数分ごとに立ち止まってたよ。",
+    "en": "We walked along the river for an hour, stopping every few minutes so that my brother could take pictures of the old bridges.",
+    "alternatives": [
+      "We walked along the river for an hour, stopping every few minutes to let my brother take pictures of the old bridges.",
+      "We walked by the river for an hour, stopping every few minutes so my brother could photograph the old bridges."
+    ],
+    "point": "文の後ろに , stopping と付け足して同時の動作を表す",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 10,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ad45361d067fc23c2481b2d6a86d5ec0a4152d6837bf2860e91656ccc1a75d33",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_8k3x3r6w",
     "ja": "私たち、今日はもうお寺を三つ回ったけど、今朝見たお寺が断トツで一番すごかったね。",
     "en": "We've visited three temples today, but the one we saw this morning was by far the most impressive.",
@@ -589,6 +699,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:0dfa99fa5e45b45fbb266c586196139eadcbd66ef7f1505aed996e09d79b673e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9k2a6y2t",
+    "ja": "ホテルのフロントの女性がおすすめしてくれた展望台に、どれくらい早く着いておけばいいか、ガイドさんに聞いてもらえますか？",
+    "en": "Could you ask the guide how early we should get to the observation deck that the woman at the hotel front desk recommended?",
+    "alternatives": [
+      "Would you mind asking the guide how early we should arrive at the observation deck the woman at the hotel front desk recommended?",
+      "Could you ask the guide how early we need to get to the observation deck that the woman at the front desk of our hotel recommended?"
+    ],
+    "point": "聞く内容は how early we should と平叙文の語順にする",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["nested-clauses", "indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:550fd3bac293e29371f8d91d630d8e77cb3b25099e381c88db7230e40ea208b3",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

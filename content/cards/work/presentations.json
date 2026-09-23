@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2c3r6c5m",
+    "ja": "先ほどのご質問ですが、営業部長は先月、新しい価格は4月から適用されると私たちに言っていました。",
+    "en": "Regarding the earlier question, the sales director told us last month that the new prices would take effect in April.",
+    "alternatives": [
+      "About the earlier question, the sales director told us last month that the new prices would start in April.",
+      "As for the earlier question, the sales director told us last month that the new pricing would start in April."
+    ],
+    "point": "過去の発言を伝えるので will ではなく would にする",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0afa5386a416142f66a80e8c84d1e60c56ac73bca9a33c95a2b0f2f26c741d9d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2j9d4r4s",
     "ja": "発表の前に、プロジェクターの電源を入れてもらえますか？",
     "en": "Could you turn on the projector before the presentation?",
@@ -478,6 +500,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:25d59b90c83e01ff162d2c60228631efbc60d73e73ff9a07fdcfb147b3fc7ffd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8w4r6e4b",
+    "ja": "前回の発表以降、私たちは新たに200社の顧客を獲得しましたが、そのほとんどは先月契約したばかりです。",
+    "en": "Since our last presentation, we've gained 200 new clients, but we signed most of them just last month.",
+    "alternatives": [
+      "We've added 200 new clients since our last presentation, but most of them only signed last month.",
+      "Since the last presentation, we've won 200 new clients, though we signed most of them just last month."
+    ],
+    "point": "since は現在完了、last month は過去形と使い分ける",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:80d2ca436cead694f6da6010234e0db0a1ba2e5a58f131c18b75f67446f06472",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

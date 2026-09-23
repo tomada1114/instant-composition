@@ -66,6 +66,28 @@
     }
   },
   {
+    "id": "c_2g8z8w7u",
+    "ja": "部長宛ての電話を間違えて経理部に回しちゃった。つなぐ前に内線番号を確認するべきだったよ。",
+    "en": "I accidentally transferred a call for the department head to Accounting. I should have checked the extension before putting it through.",
+    "alternatives": [
+      "I mistakenly put a call for the department head through to Accounting. I should've confirmed the extension before transferring it.",
+      "I transferred a call for the department head to Accounting by mistake. I should have checked the extension number before connecting it."
+    ],
+    "point": "過去の後悔は should have + 過去分詞",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:57d68773b0b778b497a63a3b15cf4da10545b8912136a3ac4ba62184959a3047",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2s6k7m5c",
     "ja": "会議のリンクはどこにありますか？",
     "en": "Where is the meeting link?",
@@ -101,6 +123,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:16fef6a082d7cd847406e6adb56f9aea1520f871fd9faf29bd6f0387682c3939",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3g7u9d9r",
+    "ja": "来週のオンライン商談の前に、IT 部の人に会議室のマイクとスピーカーをテストしてもらうよう手配してもらえますか？",
+    "en": "Could you arrange to have someone from IT test the meeting room's mic and speakers before next week's online sales meeting?",
+    "alternatives": [
+      "Could you have someone from IT test the mic and speakers in the meeting room before next week's online sales meeting?",
+      "Would you be able to get someone from IT to test the meeting room's mic and speakers before our online sales meeting next week?"
+    ],
+    "point": "have＋人＋原形、get なら get＋人＋to 原形",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fc4c1d63baa33c0b49e04570fb04b6b841b43bc77a16ca075ab2f8e4a93b947c",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }
@@ -167,6 +211,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:d214c5d6ab1192b7a9a24a46d52f029c2b4407fae009da255cceb1d97eb67f2f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4n6b6v2u",
+    "ja": "先方の声がずっとこもって聞こえてたから、向こうはヘッドセットを使わずにノートパソコンのマイクで話していたのかもしれないね。",
+    "en": "Their voices sounded muffled the whole time, so they might have been talking into their laptop mic instead of using a headset.",
+    "alternatives": [
+      "Their voices were muffled the whole time, so they might have been using their laptop's built-in mic rather than a headset.",
+      "Since their audio sounded muffled throughout, they may have been speaking into a laptop mic instead of a headset."
+    ],
+    "point": "過去の推量は might / may have + 過去分詞",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7af0e7cbc5ea77a85a0343828671c0266da0a76f8e2d326b5bfee9ae69e4f775",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

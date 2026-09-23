@@ -177,6 +177,28 @@
     }
   },
   {
+    "id": "c_4d5b6k2u",
+    "ja": "もし僕がこの店のシェフだったら、このスープにはもう少し塩を足すと思うな。",
+    "en": "If I were the chef here, I think I'd add a little more salt to this soup.",
+    "alternatives": [
+      "If I were the chef here, I'd probably put a bit more salt in this soup.",
+      "If I were the chef at this place, I think I'd add a bit more salt to this soup."
+    ],
+    "point": "事実と違う仮定は If I were、後半は I'd で受ける",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 6,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d341bca9e7aeb787bcd61df89e483596b18aa94b814920c5605e2233acf9e3fc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4p6t9w8t",
     "ja": "お腹すいたね。あのカフェでランチを食べよう。",
     "en": "I'm hungry. Let's have lunch at that cafe.",
@@ -523,6 +545,28 @@
         "hash": "sha256:b8d6289e324f4afc47606cf0561f21397dbddb5b83b4f54ba13dc6696b438174",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8y7d4n3m",
+    "ja": "この店が現金しか使えないって、もっと早く知っていればよかった。今、財布に千円しかないんだ。",
+    "en": "I wish I'd known earlier that this restaurant only takes cash. I've only got a thousand yen on me right now.",
+    "alternatives": [
+      "I wish I had found out sooner that this restaurant is cash only. I only have a thousand yen on me right now.",
+      "If only I'd known earlier that this place only takes cash. I've just got a thousand yen on me right now."
+    ],
+    "point": "過去への後悔は wish の後を had + 過去分詞にする",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 8,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9d699d46e03ea3539939636167a87964c4d14def00d20c5f856c39dbfea6563b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

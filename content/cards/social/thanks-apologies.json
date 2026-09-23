@@ -198,6 +198,28 @@
     }
   },
   {
+    "id": "c_6c5e7v6d",
+    "ja": "越してきたばかりで心細かったので、近所を案内してもらえたことが何より嬉しかったです。ありがとうございました。",
+    "en": "What I appreciated most was that you showed me around the neighborhood when I'd just moved in and felt a bit lost. Thank you.",
+    "alternatives": [
+      "What meant the most to me was that you showed me around the neighborhood when I'd just moved in and felt a little lost. Thank you.",
+      "The thing I appreciated most was you showing me around the neighborhood when I'd just moved here and was feeling uneasy. Thank you."
+    ],
+    "point": "「何より嬉しかったこと」を主語にして was で受ける",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 10,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4f9c53567a68f351afbb9173a2b038fd09cff17c4ff72d8ca491eb1fe07be72c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_6k9c2p5a",
     "ja": "先輩が夜中まで残ってスライドの修正を手伝ってくれたから、お礼にランチをおごったんだ。",
     "en": "My senior coworker stayed until midnight helping me fix the slides, so I bought them lunch as a thank-you.",

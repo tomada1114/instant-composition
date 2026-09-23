@@ -283,6 +283,28 @@
     }
   },
   {
+    "id": "c_4x4e4x9c",
+    "ja": "このお店、気に入った！また一緒に来ようよ。",
+    "en": "I love this place! Let's come back again.",
+    "alternatives": [
+      "I really like this place! Let's come back sometime.",
+      "I love this place! We should come back again."
+    ],
+    "point": "「〜しようよ」は Let's + 動詞の原形",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f823771a7e6b688841b004cfc731c1b41035aed99f0898f4d555c24426862c32",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5g8w7y9w",
     "ja": "正直言うと、一番がっかりしたのは誰も手伝ってくれなかったことです。",
     "en": "To be honest, what disappointed me most was that nobody helped me.",

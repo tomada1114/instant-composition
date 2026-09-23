@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_3c7e2n2b",
+    "ja": "もしかして今週末の天気がどうなるか知ってたりしない？子どもたちを公園に連れて行きたいなと思ってて。",
+    "en": "I don't suppose you know what the weather's going to be like this weekend? I'm hoping to take the kids to the park.",
+    "alternatives": [
+      "You wouldn't happen to know what the weather's going to be like this weekend, would you? I'd like to take the kids to the park.",
+      "Do you happen to know what the weather's going to be like this weekend? I'm hoping to take the kids to the park."
+    ],
+    "point": "「知ってたりしない？」は I don't suppose や happen to で柔らかく",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 9,
+    "grammar": ["hedging-softening", "indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d3339c65067d008bb609c60f861a4c5be35332efea3e0523ac2035ba55a29048",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3r8t7w8r",
     "ja": "新しい家の写真、見せてよ。",
     "en": "Show me some pictures of your new house.",
@@ -264,6 +286,28 @@
     }
   },
   {
+    "id": "c_5r9k5z4f",
+    "ja": "もし毎週末こんなにいい天気だったら、僕は絶対ジョギングを始めるんだけどな。",
+    "en": "If the weather were this nice every weekend, I'd definitely start jogging.",
+    "alternatives": [
+      "If every weekend were this nice, I'd definitely take up jogging.",
+      "I'd definitely start jogging if the weather were this nice every weekend."
+    ],
+    "point": "事実と違う仮定は if 節を過去形、主節を I'd にする",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 5,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f0344af9bbbdbbcb18a5f6648cd6d2b57f02d0ef79ed387c3ef32f7e07b916ed",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5x2x3j3k",
     "ja": "今年の夏は去年よりずっと暑いですね。",
     "en": "This summer is much hotter than last year, isn't it?",
@@ -375,6 +419,28 @@
     }
   },
   {
+    "id": "c_6u5a8t7p",
+    "ja": "妹は毎週末テニスをするんだ。",
+    "en": "My sister plays tennis every weekend.",
+    "alternatives": [
+      "My sister plays tennis on weekends.",
+      "My younger sister plays tennis every weekend."
+    ],
+    "point": "主語が三人称単数なので plays と s を付ける",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b5e11560d0f71b1fedd46cd12f099a0928be9a1e641943262ed5d0bd3435dacd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_7a9q7s3g",
     "ja": "今年の夏は暑かっただけでなく、雨もほとんど降らなかった。",
     "en": "Not only was this summer hot, but we also hardly had any rain.",
@@ -393,6 +459,28 @@
         "hash": "sha256:6e39f46ced9712eb9cec6d82508f71e53786fe1efd1aa0eee6d7d4021438b386",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7e6t7g4j",
+    "ja": "駅の近くに新しいカフェがあるよ。",
+    "en": "There's a new cafe near the station.",
+    "alternatives": [
+      "There is a new coffee shop near the station.",
+      "There's a new cafe by the station."
+    ],
+    "point": "「〜がある」は There's で始める",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 1,
+    "grammar": ["there-is-are", "articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:150c62a8045ae42f38afcedf56f48c46c1a944c03bccb34f18707b808e4ff3df",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
@@ -525,6 +613,28 @@
         "hash": "sha256:e482012ddbfb0da5a39800b62a1d638b1c1d9f509e308e88df979f4da8396c5a",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9v5d9a8y",
+    "ja": "土曜の午後は妻と川沿いをずっと歩いて、途中でたまたま見つけたカフェに寄ったりしたんだ。",
+    "en": "My wife and I walked along the river all Saturday afternoon, stopping at a cafe we happened to find along the way.",
+    "alternatives": [
+      "On Saturday afternoon, my wife and I walked along the river for hours, stopping at a cafe we came across on the way.",
+      "My wife and I walked by the river all Saturday afternoon, dropping into a cafe we happened to find along the way."
+    ],
+    "point": "後半の「〜に寄ったりした」は , stopping のように -ing でつなぐ",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 9,
+    "grammar": ["participle-clauses", "relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:10c67ba1318e1569ca359a55f39f3205a4be47802008dad0896bca784dbade08",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

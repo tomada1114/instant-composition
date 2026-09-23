@@ -506,6 +506,28 @@
     }
   },
   {
+    "id": "c_8x5b7t3p",
+    "ja": "この仕事はうちで引き受けますが、条件が一つあって、デザインの最終判断はうちに任せてもらうことです。",
+    "en": "We'll take this on, but our one condition is that you let us make the final call on the design.",
+    "alternatives": [
+      "We'll take this on, but on one condition: that you leave the final decision on the design to us.",
+      "We'll take this job, but the one condition is that you let us have the final say on the design."
+    ],
+    "point": "条件の中身は that + 主語 + 動詞 の節で続ける",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["noun-clauses", "causatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e55dcca703c866f6fc31da8a7b4a364e89626f050a965d00fbff60ef2bd01267",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_9d9y5v8p",
     "ja": "そのデータ入力の作業は、来週外部の会社に任されることになっています。",
     "en": "The data entry work will be handed over to an outside company next week.",
@@ -524,6 +546,28 @@
         "hash": "sha256:618cd82f5152677d1d928d0638cde1e058f44fb5e2fdd1274b5fae1dd8d169c8",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9p7n3r8w",
+    "ja": "彼女は、来月の展示会で使うパンフレットの翻訳を、原稿が今週中に届くなら引き受けると言ってくれた。",
+    "en": "She said she'd take on translating the brochures we're using at next month's trade show if the draft arrives this week.",
+    "alternatives": [
+      "She said she'd translate the brochures for next month's trade show as long as she gets the draft by the end of this week.",
+      "She agreed to translate the brochures we'll use at next month's trade show if the draft reaches her this week."
+    ],
+    "point": "言ったのは過去なので will を she'd にずらす",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["nested-clauses", "reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:770967973cf6808ca54337d83e9146906501430d1752012c9b00b2f7913594ea",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

@@ -528,6 +528,28 @@
     }
   },
   {
+    "id": "c_8a9z6p3e",
+    "ja": "土曜に雨が降っても、みんなで集まるのはやめないで、代わりにうちで映画を観ようよ。",
+    "en": "Even if it rains on Saturday, let's not call off the get-together; we can just watch movies at my place instead.",
+    "alternatives": [
+      "Let's not cancel the get-together even if it rains on Saturday; we can just watch movies at my place instead.",
+      "Even if it rains on Saturday, let's still get together and just watch movies at my place instead."
+    ],
+    "point": "「〜しても」は even if、未来のことでも if 節は現在形",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 8,
+    "grammar": ["concession-contrast", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b1efe609250c63f3b8e29128453df4437875d48e7da5b5d314f18f4d46d49790",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_8e8v7f2q",
     "ja": "姉が金曜に電話してきて、土曜の夕食には行けないって言ってたよ。",
     "en": "My sister called me on Friday and said she couldn't make it to dinner on Saturday.",

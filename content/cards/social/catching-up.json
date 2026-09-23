@@ -66,6 +66,28 @@
     }
   },
   {
+    "id": "c_2u3p6z7r",
+    "ja": "うちの兄、大学のときにもっと真剣に英語を勉強しておけばよかったって、最近よく言ってるんだ。",
+    "en": "These days my brother keeps saying he wishes he'd studied English more seriously in college.",
+    "alternatives": [
+      "Lately my brother keeps saying he wishes he had studied English harder in college.",
+      "These days my brother often says he wishes he'd taken English more seriously in college."
+    ],
+    "point": "過去を悔やむ wish の後は had + 過去分詞",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["wishes-regrets", "reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e57cd61e3eb76835446503d2081667c5365ec64d2f33b21fcc5dadebca928a1e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3h6h9m4p",
     "ja": "妹は今留学中で、ホストファミリーからたくさん役立つアドバイスをもらってるらしいよ。",
     "en": "My sister is studying abroad, and apparently she's getting a lot of useful advice from her host family.",
@@ -128,6 +150,72 @@
         "hash": "sha256:dac0e814e643cfb26c6e0250d39bd2b58a88c6ba23dc22a03d7afead27b49b0a",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3x9s3j2x",
+    "ja": "引っ越したこと、もっと早く君に知らせるべきだったよね。バタバタしてて忘れてたんだ。",
+    "en": "I should have let you know sooner that I'd moved, but things got hectic and I forgot.",
+    "alternatives": [
+      "I should have told you earlier that I'd moved, but I got busy and forgot.",
+      "I really should have told you about my move sooner, but things got hectic and it slipped my mind."
+    ],
+    "point": "「すべきだったのに」は should have + 過去分詞",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["modal-perfect", "past-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:837ff3101a514e9e48fe4a4eb11caa7fb863946896ec8ecbf139ed866bf8fed5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4a9r7n8b",
+    "ja": "妻と僕は去年、子どもたちとキャンプを始めたんだけど、すっかりハマっちゃってさ。",
+    "en": "My wife and I took up camping with the kids last year, and we've really gotten into it.",
+    "alternatives": [
+      "My wife and I started camping with the kids last year, and we've gotten really hooked on it.",
+      "Last year my wife and I took up camping with our kids, and now we're totally into it."
+    ],
+    "point": "「ハマっている」は今の状態なので現在完了か現在形で",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["phrasal-verbs", "tense-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:205cc519e275dfcc1efb150e492be7acfe95251242f8c8e5dcb84c11c1720408",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4d9a5a3e",
+    "ja": "最近転職したって聞いたんだけど、新しい職場はどうなのかなと思って。",
+    "en": "I heard you recently changed jobs, and I was wondering how you're finding the new place.",
+    "alternatives": [
+      "I heard you changed jobs recently, so I was wondering how you're getting on at the new place.",
+      "I heard you recently switched jobs, and I was wondering how things are going at your new workplace."
+    ],
+    "point": "「〜かなと思って」は I was wondering + 疑問詞で柔らかく",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["hedging-softening", "indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1edf2b40c86cda60ec1b0b3cebe13e5534ae5d7a754ab0fb8edebbd19053b272",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
@@ -370,6 +458,28 @@
         "hash": "sha256:3b9faad4bb4019acb581c8e2c52f4cd085bb4852efec0903c1dae573c98b6295",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8e4z4e7y",
+    "ja": "来月こっちに戻ってきたら、久しぶりにみんなで集まらない？",
+    "en": "When you come back here next month, why don't we get everyone together again?",
+    "alternatives": [
+      "Once you're back here next month, how about we all get together again?",
+      "When you get back next month, should we get the whole group together again?"
+    ],
+    "point": "来月のことでも when 節は現在形で言う",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 5,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:78c5821ba7227d131b7a644d1e0faaf14e3fc36e0c90325591c0000d20310933",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
