@@ -110,6 +110,28 @@
     }
   },
   {
+    "id": "c_3w4j3y4v",
+    "ja": "この仕事、喜んで引き受けますが、データの整理は私のアシスタントにやってもらってもいいですか？",
+    "en": "I'm happy to take this on, but would it be okay if I had my assistant sort out the data?",
+    "alternatives": [
+      "I'd be happy to take this on, but is it okay if I get my assistant to organize the data?",
+      "I'm glad to take this on, but could I have my assistant sort out the data?"
+    ],
+    "point": "人にやってもらうは have 人＋動詞の原形",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["causatives", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8a06dc27b2eaff99800e17b8b0a172dde598368cefe7f1ba4c4409d14b2efc7b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4e7h2d4k",
     "ja": "この翻訳、もっと早くお願いしておけばよかったです。締め切りは明日なんです。",
     "en": "I wish I had asked you to translate this sooner. The deadline is tomorrow.",
@@ -148,6 +170,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:281c8c3a7db4df5c8461e46efaf9498e7f04092033ee2ea8c8654601e6566169",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4n2y3f8h",
+    "ja": "先週お願いした見積もりがまだ届いていないので、今日中に送っていただけますか？",
+    "en": "I asked for the quote last week, but I still haven't received it, so could you send it by the end of today?",
+    "alternatives": [
+      "I asked you for the quote last week, but it still hasn't arrived. Could you send it by the end of today?",
+      "I requested the quote last week and still haven't gotten it, so could you send it over by the end of the day?"
+    ],
+    "point": "頼んだのは過去形、まだ届いていないは現在完了",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 9,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6b4d8dba7173d2ee3fe7c072c0772a87e69149c9aa85431ab59d386a332b7fc8",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

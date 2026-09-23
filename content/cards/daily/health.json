@@ -217,6 +217,50 @@
     }
   },
   {
+    "id": "c_4e7s9x6b",
+    "ja": "昨日、薬剤師さんが飲み合わせに気づいてくれていなかったら、妻はもっとひどい副作用が出ていたかもしれません。",
+    "en": "If the pharmacist hadn't noticed the drug interaction yesterday, my wife might have had a much more serious reaction.",
+    "alternatives": [
+      "If the pharmacist hadn't caught the drug interaction yesterday, my wife could have had a far worse side effect.",
+      "Had the pharmacist not noticed the interaction yesterday, my wife might have had much worse side effects."
+    ],
+    "point": "過去の事実の反対は hadn't noticed と might have had",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 7,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c96872298af1d1d81cba1fbf9e280c61e0252c1d5953ae05706d71e02eb72876",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4p9t7e8w",
+    "ja": "兄は今日の午後、病院で診てもらうことになってるよ。",
+    "en": "My brother is seeing a doctor this afternoon.",
+    "alternatives": [
+      "My brother is going to see a doctor this afternoon.",
+      "My brother has a doctor's appointment this afternoon."
+    ],
+    "point": "決まった予定は進行形 is seeing で表せる",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:84af9e8239402e15f36384f39e14258486822f72513a51d51e3f42ff9bf7e53a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4q8g6z3h",
     "ja": "2日前からずっと咳が止まらないんです。",
     "en": "I've been coughing nonstop for two days.",
@@ -277,6 +321,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:5e70aba715ee96558ec443d92250ec951a8c51b9ebc5b77cd2d506cb55d5a342",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6c3u4s5p",
+    "ja": "先生、私が本当に知りたいのは、この痛みが手術しなくても治るかどうかなんです。",
+    "en": "Doctor, what I really want to know is whether this pain will get better without surgery.",
+    "alternatives": [
+      "Doctor, what I really want to know is if this pain will go away without an operation.",
+      "Doctor, the thing I really want to know is whether this pain will go away without surgery."
+    ],
+    "point": "「〜かどうか」は whether で、語順は平叙文のまま",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 6,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9a549a0295426f43624afdc89bf783528f598edc31f39752cf035494a74e404c",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
@@ -372,6 +438,28 @@
     }
   },
   {
+    "id": "c_8a4c2a5h",
+    "ja": "今、ほかに何か薬を飲んでいますか？",
+    "en": "Are you taking any other medicine now?",
+    "alternatives": [
+      "Are you currently taking any other medication?",
+      "Are you on any other medicine right now?"
+    ],
+    "point": "薬を「飲む」は drink ではなく take",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:04f73e987208356bd2cd6ff69f7bd1a5b0bcb047d84665e27e3a9968205b0bbb",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_8c2s5s5f",
     "ja": "妹は熱が38度もあるのに、明日の試験は絶対に受けると言い張っています。",
     "en": "Even though my sister has a fever of 38 degrees, she insists she's going to take tomorrow's exam no matter what.",
@@ -416,6 +504,28 @@
     }
   },
   {
+    "id": "c_8g8z6c3s",
+    "ja": "息子は熱が出ただけじゃなくて、夜中に何度も吐いたんです。",
+    "en": "Not only did my son have a fever, but he also threw up several times during the night.",
+    "alternatives": [
+      "Not only did my son run a fever, but he also vomited several times in the night.",
+      "My son not only had a fever but also threw up several times during the night."
+    ],
+    "point": "Not only が文頭なら did my son have の疑問文語順",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 9,
+    "grammar": ["inversion", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8666bc807bdcdd691bd030679743d905942322da3a5f019a1485d75c3abf03a9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_8n7x8f5n",
     "ja": "かかりつけの先生が週末も診てくれたらいいのに。息子の熱が昨日から下がらないんです。",
     "en": "I wish our family doctor saw patients on weekends. My son's fever hasn't gone down since yesterday.",
@@ -454,6 +564,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:8e97f3c62972d276e3159929e9b84c9abe57b311f5a2b5260acc81f0fd14bcbc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9c8j7f3q",
+    "ja": "昨日の夜は熱が出て、全然眠れなかったんです。",
+    "en": "I had a fever and couldn't sleep at all last night.",
+    "alternatives": [
+      "I had a fever last night, so I couldn't sleep at all.",
+      "I couldn't sleep at all last night because of a fever."
+    ],
+    "point": "「熱が出た」は have の過去形で had a fever",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 3,
+    "grammar": ["past-simple", "can-could-ability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1bafa30e449fcb7d9d01a9005c0b4e65c6857e1730930f45676d747e269eb64b",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

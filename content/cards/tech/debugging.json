@@ -286,6 +286,28 @@
     }
   },
   {
+    "id": "c_4h2e8h2e",
+    "ja": "もっと深く調べる前に、QA チームの誰かに古い Android 端末でこれを再現してみてもらえますか？",
+    "en": "Could you have someone on the QA team try to reproduce this on an older Android device before we dig any deeper?",
+    "alternatives": [
+      "Could you get someone from the QA team to try reproducing this on an older Android device before we look into it further?",
+      "Would you have someone on QA try to reproduce this on an older Android device before we dig deeper?"
+    ],
+    "point": "have 人 do は原形、get 人 to do は to 不定詞",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:322030c0476ae6cbb8abf18cd49f5c4ba31091bf2e7acb69047f1c8bd49facd4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4j3y4r6w",
     "ja": "ログをもう一度確認しよう。",
     "en": "Let's check the logs again.",

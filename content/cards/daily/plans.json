@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_4v2c8w4h",
+    "ja": "あのとき飛行機を予約しておけば、今ごろ私たちは沖縄のビーチでのんびりしているのにね。",
+    "en": "If we'd booked the flight back then, we'd be relaxing on a beach in Okinawa right now.",
+    "alternatives": [
+      "If we had booked that flight, we'd be on a beach in Okinawa now.",
+      "If we'd booked the flight when we had the chance, we'd be lounging on a beach in Okinawa right now."
+    ],
+    "point": "過去の条件と今の結果は if 節が過去完了、主節が would be",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 10,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2ecb16eed23242bfbfde484a3215686672c94cbaaf226cb9f78684521c3dadb0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5d2n8f2b",
     "ja": "都合が悪いのは週末全部じゃなくて、日曜の朝だけなんだ。",
     "en": "It's only Sunday morning that doesn't work for me, not the whole weekend.",
@@ -82,6 +104,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:aa74bd6f364a6dd03f0477077ba3b84b53fa171b459142fae01a73aeb15b7a29",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9d5s6z5t",
+    "ja": "急で悪いんだけど、土曜のランチを日曜にずらせないかなと思ってて。",
+    "en": "Sorry for the short notice, but I was wondering if we could move Saturday's lunch to Sunday instead.",
+    "alternatives": [
+      "Sorry it's so last minute, but would it be possible for us to move Saturday's lunch to Sunday?",
+      "Sorry for the late notice, but I was hoping we could push Saturday's lunch back to Sunday."
+    ],
+    "point": "柔らかい頼み方は I was wondering if we could",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:45b13b350073a64036c67c4a7646921fb7d66691f5b39cccd2ca860dde796288",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

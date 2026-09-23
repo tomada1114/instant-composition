@@ -130,5 +130,27 @@
         "at": "2026-09-22"
       }
     }
+  },
+  {
+    "id": "c_8x9t7v2t",
+    "ja": "たとえ映像を切ることになっても、音声さえ安定していれば、今日の打ち合わせはこのまま続けられますよ。",
+    "en": "Even if we have to turn off our video, we can still carry on with today's meeting as long as the audio holds up.",
+    "alternatives": [
+      "Even if we need to switch off the video, we can keep going with today's meeting as long as the audio stays stable.",
+      "We can continue today's meeting even if we have to turn our cameras off, as long as the audio is stable."
+    ],
+    "point": "「たとえ〜しても」は even if、「〜さえ安定していれば」は as long as",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 10,
+    "grammar": ["concession-contrast", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d862dd9dcd1310352b9136fb160251f295f016413ae8bdecd6a75d28a013845c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
   }
 ]

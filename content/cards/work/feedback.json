@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_5q8w2a8g",
+    "ja": "先週いただいた指摘をもとに、スライドはもう全部直しました。",
+    "en": "I've already fixed all the slides based on the feedback you gave me last week.",
+    "alternatives": [
+      "Based on the feedback you gave me last week, I've already fixed all the slides.",
+      "I've already revised all the slides using the comments you gave me last week."
+    ],
+    "point": "直した結果は現在完了、last week の指摘は過去形で分ける",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 6,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8a26ac11d42be3220479596d7f3b94deb082261bba573a9b67786afcc0c2dc51",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_7e6z9f9y",
     "ja": "この資料、すごくいいと思います。ただ、会議で見やすいように、グラフをもう少し大きくしてもらえないでしょうか。",
     "en": "I think this deck is really good, but I was wondering if you could make the charts a bit bigger so they're easier to see in the meeting.",

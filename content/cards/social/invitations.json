@@ -1,5 +1,49 @@
 [
   {
+    "id": "c_2d7b7y4s",
+    "ja": "あなたがもっと早く誘ってたら、彼女もパーティーに来られたのに。",
+    "en": "If you had invited her sooner, she could have come to the party.",
+    "alternatives": [
+      "If you'd asked her earlier, she could have made it to the party.",
+      "She could have come to the party if you had invited her earlier."
+    ],
+    "point": "過去の仮定は had invited と could have come",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e4c5b4a0569528a748b3994eb118ddf33a41b6974c8ab20cd90083ab2dc2cdae",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2e8c9x6m",
+    "ja": "今週末ひまだったら君をキャンプに誘うんだけど、残念ながら仕事なんだ。",
+    "en": "If I were free this weekend, I'd invite you camping, but unfortunately I have to work.",
+    "alternatives": [
+      "If I had this weekend off, I'd ask you to go camping, but sadly I have to work.",
+      "I'd invite you camping if I were free this weekend, but unfortunately I've got work."
+    ],
+    "point": "現在の事実に反する仮定は If I were と過去形",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 6,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef01291da368f0827645949bc2f40522017ac87f2c060d33bb836dfb3cc3a765",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2n4s2t7j",
     "ja": "来週末みんなでバーベキューをするんだけど、何か飲み物を持ってきてもらえる？",
     "en": "We're having a barbecue next weekend. Could you bring something to drink?",
@@ -60,6 +104,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:45ac240f19a3ebf9ace3ffaf06bfa56c82a88badf5b49b6c070c2c2eb010b822",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5f5n4t7e",
+    "ja": "チームのみんなに、金曜の食事会に来られるかどうか聞いてもらえますか？",
+    "en": "Could you ask everyone on the team whether they can make it to Friday's dinner?",
+    "alternatives": [
+      "Could you ask the team if they can come to the dinner on Friday?",
+      "Would you mind asking everyone on the team whether they can join us for dinner on Friday?"
+    ],
+    "point": "間接疑問は whether they can の平叙文の語順",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 5,
+    "grammar": ["indirect-questions", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2b80709022dcce4b9d79f378c91d8c2255c73965b093a43756746ddab646d77f",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

@@ -44,6 +44,50 @@
     }
   },
   {
+    "id": "c_4t9m2s7d",
+    "ja": "僕たちが去年メッセージキューを選んでいたら、今こんなにタイムアウトで苦労していないはずだよね。",
+    "en": "If we had chosen a message queue last year, we wouldn't be struggling with these timeouts now.",
+    "alternatives": [
+      "If we'd gone with a message queue last year, we wouldn't be struggling with all these timeouts now.",
+      "If we'd picked a message queue last year, we wouldn't be having all these timeout problems now."
+    ],
+    "point": "過去の条件は had chosen、今の結果は wouldn't be",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:85f61f705692015d9575aa78be1117b2a5c9a3cd35ae026eb1e5a75483c91b99",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5a4m7b7y",
+    "ja": "マイクロサービスのほうが柔軟だとしても、うちくらいの規模のチームには複雑すぎると私は思います。",
+    "en": "Even if the microservice approach is more flexible, I think it adds too much complexity for a team of our size.",
+    "alternatives": [
+      "Even if microservices are more flexible, I think they're too complex for a team our size.",
+      "Even if a microservice architecture is more flexible, I think it's too complicated for a team of our size."
+    ],
+    "point": "「〜だとしても」は even if で始める",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b2b62e98e96279ae6ba7596a430b3eae6f0b5c0b1801343971bc34d30a2e36d8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_7k6h8y2s",
     "ja": "テックリードに、キャッシュ層を追加する前にトレードオフをまとめてもらうよう頼んでもらえますか？",
     "en": "Could you ask the tech lead to write up the trade-offs before we add a caching layer?",
@@ -104,6 +148,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:85231ade22fcf750403ce7aebce8ca3775fbb256165951b344d14e4d0815af0d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9p3u5d5s",
+    "ja": "そのキャッシュ設計で確定する前に、私たちに少しフィードバックをいただけますか？",
+    "en": "Could you give us some feedback on the caching design before we commit to it?",
+    "alternatives": [
+      "Could you give us a bit of feedback on the caching design before we lock it in?",
+      "Would you mind giving us some feedback on the caching design before we commit to it?"
+    ],
+    "point": "feedback は数えられない名詞。a feedback や feedbacks にしない",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 5,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3c8828731246d70f9a3d61d9636b844e2cf8bd19abef1c2767185c1f7962d070",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

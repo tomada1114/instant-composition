@@ -110,6 +110,28 @@
     }
   },
   {
+    "id": "c_4u3w6a4d",
+    "ja": "バスが 40 分遅れただけでなく、運転手はスーツケースを持った私たちを乗せてくれなかったんです。",
+    "en": "Not only was the bus 40 minutes late, but the driver also wouldn't let us on with our suitcases.",
+    "alternatives": [
+      "Not only was the bus 40 minutes late, but the driver also refused to let us board with our suitcases.",
+      "The bus wasn't just 40 minutes late; the driver also wouldn't let us on with our suitcases."
+    ],
+    "point": "Not only の後は was the bus と語順が倒置する",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:604a7abf7b5172dfd5bc778f3f475415624d749ba6d78258526207eee54e193d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_6a3u5b2p",
     "ja": "運転手さんに、駅で私たちを降ろしてくれるよう頼んでくれる？",
     "en": "Can you ask the driver to drop us at the station?",
@@ -236,6 +258,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:25f6ac610140a559d01377d1d0922862f1bdc7225800fab2919fefaba205a448",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8e2g9d9x",
+    "ja": "私たちが乗る予定だった電車がなぜ運休になったのか、駅員さんの説明がよくわからなかったんです。",
+    "en": "We didn't really understand what the station staff said about why the train we were supposed to take had been canceled.",
+    "alternatives": [
+      "We couldn't really follow the station staff's explanation of why the train we were going to take had been canceled.",
+      "We didn't quite understand the station attendant's explanation of why the train we'd planned to take was canceled."
+    ],
+    "point": "「乗る予定だった電車」は the train we were supposed to take",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 10,
+    "grammar": ["nested-clauses", "noun-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9edd0ca5b52b0ad240d74099611f1caa61cde930efd8d91904f3bd5e9d22df88",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

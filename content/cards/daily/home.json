@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_5r9m5v4a",
+    "ja": "今日私がやらなきゃいけないのは、洗濯物をたたむことだよ。",
+    "en": "What I have to do today is fold the laundry.",
+    "alternatives": [
+      "What I need to do today is fold the laundry.",
+      "The thing I have to do today is fold the laundry."
+    ],
+    "point": "What I have to do is の後は動詞の原形で OK",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 4,
+    "grammar": ["noun-clauses", "modal-obligation-advice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d3b6d0710b393a62b888dea497a108312ba8f99e6cbe545f52be2c8f7c8a9d91",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_7e2q7g8c",
     "ja": "今度の土曜日、僕たちはガレージを掃除するつもりだよ。",
     "en": "We're going to clean the garage this Saturday.",
@@ -40,6 +62,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:a7ef7018e28560bc90f79c9e2b0f23a7bd08999a6e23bb2340fd9103c64ed19c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7p6j7q7w",
+    "ja": "夫はゴミを出すのを忘れてたけど、もう出してくれたよ。",
+    "en": "My husband forgot to take out the trash, but he's done it now.",
+    "alternatives": [
+      "My husband forgot to take the trash out, but he's done it now.",
+      "My husband forgot to take out the garbage, but he's already done it."
+    ],
+    "point": "忘れたのは過去形、今は済んだ状態なので現在完了",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 4,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:39b8ea6a037a7e73bfa065e32b6136afe4e9275bb9623f666c8fcd6c7c7802dc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7v5a3u2e",
+    "ja": "ねえ、掃除機がどこにあるか知ってる？",
+    "en": "Do you know where the vacuum cleaner is?",
+    "alternatives": [
+      "Do you happen to know where the vacuum is?",
+      "Any idea where the vacuum cleaner is?"
+    ],
+    "point": "間接疑問は where the vacuum cleaner is の語順",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 4,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4e63054db9396ac5c1d6e2f9cbf150abde76d1e1fd9436d74ff720d4b75b46cf",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

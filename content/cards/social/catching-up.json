@@ -154,6 +154,28 @@
     }
   },
   {
+    "id": "c_9r6m3r3b",
+    "ja": "最近、仕事がずっと忙しくて、趣味に使える時間がほとんどないんだ。",
+    "en": "Work has been really busy lately, so I have hardly any time for my hobbies.",
+    "alternatives": [
+      "I've been really busy with work lately, so I barely have any time for my hobbies.",
+      "Things have been hectic at work recently, so I hardly have any time for hobbies."
+    ],
+    "point": "「ほとんど〜ない」は hardly any で、not や no を重ねない",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 5,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:749a5b3bf0e3c9dce27f3066cc4263901b57f24543a5465af6efb641a18f3ee9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_9x3r8s5r",
     "ja": "妹は去年結婚しただけじゃなくて、自分のお店まで開いたんだよ。",
     "en": "Not only did my sister get married last year, but she also opened her own shop.",

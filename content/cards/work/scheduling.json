@@ -19,6 +19,28 @@
     }
   },
   {
+    "id": "c_4d7v4u8x",
+    "ja": "打ち合わせは、来週の火曜日のほうが私には都合がいいです。",
+    "en": "Next Tuesday is better for me.",
+    "alternatives": [
+      "Next Tuesday works better for me.",
+      "Tuesday next week is better for me."
+    ],
+    "point": "「都合がいい」は better for me で比較級にする",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef8a67d228c0cfa094e8d907d690b4293f4cfe8296074052ef389250b2201a56",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5k8e8z2q",
     "ja": "会議を月曜日に移しましょう。",
     "en": "Let's move the meeting to Monday.",
@@ -35,6 +57,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:ca18d795fc96d504a332f8bf5a153d6262b96b67227efee25272d5579abdaba5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5r2n5y7r",
+    "ja": "私たちは今日中に次の会議の日程を決めなければなりません。",
+    "en": "We have to set a date for the next meeting today.",
+    "alternatives": [
+      "We need to pick a date for the next meeting today.",
+      "We have to decide on the date of the next meeting today."
+    ],
+    "point": "「〜しなければならない」は have to で表す",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f082df69c2e93f940a18d561a49e17a545e7abe038f9bbd6941ad3b5d34ec0b7",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

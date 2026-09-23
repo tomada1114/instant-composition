@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2y7r8b8h",
+    "ja": "採用していただけたら、まずはお客様との関係づくりに力を入れるつもりです。",
+    "en": "If I'm hired, I'm going to focus on building relationships with clients first.",
+    "alternatives": [
+      "If I'm hired, I'll focus on building relationships with clients first.",
+      "If you hire me, I'm going to start by focusing on building client relationships."
+    ],
+    "point": "未来のことでも if 節は現在形の受け身 I'm hired",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 4,
+    "grammar": ["future-forms", "time-and-if-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:04965e209269907eb1c21fc68b9f5b78d4bb757e07aaed97b5083a9eaa7c1589",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3c6q5b2b",
     "ja": "彼女は今、転職先を探しているところです。",
     "en": "She's looking for a new job now.",
@@ -16,6 +38,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:3b97422b33f9737fd97320b030d8f45949f6ea26ca179560a4315e8790db782f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3d2q5g3k",
+    "ja": "このポジションでは、技術的な知識よりもコミュニケーション力のほうが大切ですか？",
+    "en": "For this position, are communication skills more important than technical knowledge?",
+    "alternatives": [
+      "Is communication more important than technical knowledge for this position?",
+      "In this role, do communication skills matter more than technical knowledge?"
+    ],
+    "point": "「AよりBのほうが大切」は B is more important than A",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ca42f5714b6ab9041a6c6bde54314fbc9033931fdf3bd96c9bdd5617fa0587d8",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

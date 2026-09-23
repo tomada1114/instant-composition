@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_2r8j9n6f",
+    "ja": "私たち、昨夜フロントに電話したんですが、誰も出なかったんです。",
+    "en": "We called the front desk last night, but nobody answered.",
+    "alternatives": [
+      "We called the front desk last night, but no one picked up.",
+      "Last night we called the front desk, but nobody answered."
+    ],
+    "point": "「電話に出る」は answer か pick up",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 3,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:960130c336b313506170ec32394fe13ed8eed799064347ca6fd0df9e4c222c93",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3a7c3u7z",
     "ja": "私の部屋のエアコンに問題があります。",
     "en": "There's a problem with the air conditioner in my room.",
@@ -38,6 +60,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:c3870913af91458400723f67d88a37a077576a0b5aea936689f8166283919748",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3t5c5x2t",
+    "ja": "部屋の Wi-Fi につながらないんです。見てもらえますか？",
+    "en": "I can't connect to the Wi-Fi in my room. Could you check it?",
+    "alternatives": [
+      "I can't get on the Wi-Fi in my room. Could you take a look?",
+      "The Wi-Fi in my room isn't working for me. Could you check it?"
+    ],
+    "point": "「つながらない」は can't connect to",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 5,
+    "grammar": ["can-could-ability", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bccc444dd8422487563d4dcdda8809291f80dd37b531d301afcd1b68204d6d47",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
@@ -88,6 +132,28 @@
     }
   },
   {
+    "id": "c_5u5q3c2j",
+    "ja": "隣の部屋の人たちが、もう2時間ずっと大きな音で音楽をかけているんです。",
+    "en": "The people next door have been playing loud music for two hours.",
+    "alternatives": [
+      "The guests next door have been playing loud music for two hours.",
+      "The people in the next room have been playing loud music for two hours."
+    ],
+    "point": "今も続く「ずっと〜している」は have been + ing",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1da412ca1bb6bc8201a4d169845b7eb108ac415e4009d2f96230637d93627d39",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_7a3f2n7h",
     "ja": "何時までにチェックアウトすればいいですか？",
     "en": "What time do I need to check out by?",
@@ -104,6 +170,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:301f0e1b05dc9950bdef2341d0969211f4dfd56aa7e4224f8abb9816c074a302",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8v5y5v4f",
+    "ja": "エレベーターの隣の部屋がうるさすぎたので、彼女は別の部屋に替えてもらったんだ。",
+    "en": "The room next to the elevator was too noisy, so she had them move her to another one.",
+    "alternatives": [
+      "The room next to the elevator was too loud, so she got them to move her to a different room.",
+      "Since the room beside the elevator was too noisy, she had them switch her to another room."
+    ],
+    "point": "「替えてもらった」は have 人 + 動詞の原形で had them move her",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 8,
+    "grammar": ["post-modification", "causatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7eaf34aa825be90725056566796ec12e89d3dd901a0e08458e5c13eb040cc913",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
