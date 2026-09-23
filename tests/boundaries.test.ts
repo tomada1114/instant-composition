@@ -3,8 +3,10 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { describe, expect, it } from "vitest";
+import * as z from "zod";
 
-// `eslint.config.mjs` states the zone edges as `no-restricted-imports`
+// `eslint.config.mjs` states the zone edges under `src/` and the edges between
+// the workspace packages under `packages/` as `no-restricted-imports`
 // patterns; this file asserts the same edges from the module graph itself, so
 // a rule deleted from that config still fails the suite. The two are checked
 // independently on purpose — a boundary that only one layer holds is a
@@ -52,11 +54,20 @@ function importSpecifiers(source: string): string[] {
   );
 }
 
-/** Every `.ts`/`.tsx` file under `directory`, as repo-relative POSIX paths. */
+/**
+ * Every `.ts`/`.tsx` file under `directory`, as repo-relative POSIX paths.
+ *
+ * @remarks
+ * `node_modules` is skipped because pnpm gives every workspace package one of
+ * its own, and what sits in it is the dependencies' code, not the package's.
+ */
 function modulesUnder(directory: string): string[] {
   const absolute = path.join(repoRoot, directory);
   return readdirSync(absolute, { withFileTypes: true }).flatMap((entry) => {
     const relative = `${directory}/${entry.name}`;
+    if (entry.name === "node_modules") {
+      return [];
+    }
     if (entry.isDirectory()) {
       return modulesUnder(relative);
     }
@@ -365,5 +376,196 @@ describe("src/components/ is UI: no server-only", () => {
     expect(packageOffenders(modulesIn("src/components"), "server-only")).toStrictEqual(
       [],
     );
+  });
+});
+
+// --- the workspace packages --------------------------------------------------
+
+/**
+ * Every workspace package under `packages/`, and the workspace packages it may
+ * import.
+ *
+ * @remarks
+ * ADR-0002's `application → domain` and `domain → nothing`, written as a
+ * table. `eslint.config.mjs`'s `WORKSPACE_EDGES` states the same edges; the
+ * two are checked independently, so an entry deleted there still fails here.
+ * A package added under `packages/` has to be given a row before this suite
+ * passes, which is the decision the table exists to force.
+ *
+ * "Nothing" is meant literally: a package imports no npm package and no Node
+ * builtin either, until an edit to this table says otherwise.
+ */
+const WORKSPACE_EDGES: Readonly<Record<string, readonly string[]>> = {
+  application: ["domain"],
+  domain: [],
+};
+
+/** The name every workspace package is published under inside the workspace. */
+function packageName(directory: string): string {
+  return `@instant-composition/${directory}`;
+}
+
+/**
+ * `"<file>: <specifier>"` for every import of `modules` that leaves package
+ * `name` other than by an allowed package's name.
+ *
+ * @remarks
+ * A relative specifier is resolved and has to stay inside the package's own
+ * directory. A bare one has to be exactly the name of a package the table
+ * allows: a subpath such as `@instant-composition/domain/src/day` walks past
+ * the package's `exports`, and `@/…` is the Next.js tree's alias, which no
+ * package may name. Unlike the ESLint rule, this sees every climb out of the
+ * package, whatever it is spelled as.
+ */
+function workspaceOffenders(name: string, modules: readonly Module[]): string[] {
+  const root = `packages/${name}`;
+  const allowed = new Set((WORKSPACE_EDGES[name] ?? []).map(packageName));
+  return modules.flatMap((module) =>
+    module.specifiers
+      .filter((specifier) =>
+        specifier.startsWith(".")
+          ? !inZone(
+              path.posix.normalize(
+                path.posix.join(path.posix.dirname(module.file), specifier),
+              ),
+              root,
+            )
+          : !allowed.has(specifier),
+      )
+      .map((specifier) => `${module.file}: ${specifier}`),
+  );
+}
+
+const dependencyMap = z.record(z.string(), z.string()).optional();
+
+const packageManifest = z.object({
+  name: z.string(),
+  private: z.literal(true),
+  scripts: z.record(z.string(), z.string()),
+  dependencies: dependencyMap,
+  devDependencies: dependencyMap,
+  optionalDependencies: dependencyMap,
+  peerDependencies: dependencyMap,
+});
+
+/** `packages/<directory>/package.json`, with every dependency field merged. */
+function readManifest(directory: string) {
+  const manifest = packageManifest.parse(
+    JSON.parse(
+      readFileSync(path.join(repoRoot, "packages", directory, "package.json"), "utf8"),
+    ),
+  );
+  return {
+    name: manifest.name,
+    scripts: manifest.scripts,
+    declared: {
+      ...manifest.dependencies,
+      ...manifest.devDependencies,
+      ...manifest.optionalDependencies,
+      ...manifest.peerDependencies,
+    },
+  };
+}
+
+describe("packages/ imports run one way, application → domain", () => {
+  const directories = readdirSync(path.join(repoRoot, "packages"), {
+    withFileTypes: true,
+  })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name)
+    .sort();
+
+  it("gives every package under packages/ a row, so a new one needs a decision", () => {
+    expect(directories).toStrictEqual(Object.keys(WORKSPACE_EDGES).sort());
+  });
+
+  it.each(Object.keys(WORKSPACE_EDGES))(
+    "scans packages/%s, so the rows below are not asserted over nothing",
+    (name) => {
+      expect(modulesUnder(`packages/${name}`)).toContain(
+        `packages/${name}/src/index.ts`,
+      );
+    },
+  );
+
+  it.each(Object.entries(WORKSPACE_EDGES))(
+    "leaves packages/%s importing nothing outside itself but %p",
+    (name) => {
+      const modules = modulesUnder(`packages/${name}`).map((file) => ({
+        file,
+        specifiers: importSpecifiers(readFileSync(path.join(repoRoot, file), "utf8")),
+      }));
+      expect(workspaceOffenders(name, modules)).toStrictEqual([]);
+    },
+  );
+
+  // A package can import only what its manifest declares — pnpm links nothing
+  // else into its node_modules — so the manifest is the third statement of the
+  // same edges, and the one an install enforces. It has to say exactly what the
+  // table says: a declared dependency the table does not allow is an edge
+  // waiting to be used.
+  it.each(Object.entries(WORKSPACE_EDGES))(
+    "declares in packages/%s/package.json exactly the workspace packages %p",
+    (name, allowed) => {
+      const manifest = readManifest(name);
+      expect(manifest.name).toBe(packageName(name));
+      expect(manifest.declared).toStrictEqual(
+        Object.fromEntries(
+          allowed.map((dependency) => [packageName(dependency), "workspace:*"]),
+        ),
+      );
+    },
+  );
+
+  // The root `typecheck` script runs `typecheck` in every package, and pnpm
+  // passes over a package that has no such script without a word.
+  it.each(Object.keys(WORKSPACE_EDGES))(
+    "gives packages/%s a typecheck script for the root typecheck to run",
+    (name) => {
+      expect(readManifest(name).scripts["typecheck"]).toBe("tsc -p tsconfig.json");
+    },
+  );
+
+  it("reports every way out of a package, so the rows above are not vacuous", () => {
+    const offenders = workspaceOffenders("domain", [
+      {
+        file: "packages/domain/src/rules/probe.ts",
+        specifiers: [
+          "./sibling",
+          "../index",
+          "../../../application/src/index",
+          "../../../../src/core/result",
+          "@/core/result",
+          "@instant-composition/application",
+          "zod",
+          "node:path",
+        ],
+      },
+    ]);
+    expect(offenders).toStrictEqual([
+      "packages/domain/src/rules/probe.ts: ../../../application/src/index",
+      "packages/domain/src/rules/probe.ts: ../../../../src/core/result",
+      "packages/domain/src/rules/probe.ts: @/core/result",
+      "packages/domain/src/rules/probe.ts: @instant-composition/application",
+      "packages/domain/src/rules/probe.ts: zod",
+      "packages/domain/src/rules/probe.ts: node:path",
+    ]);
+  });
+
+  it("admits an allowed package by its name and by nothing else", () => {
+    const offenders = workspaceOffenders("application", [
+      {
+        file: "packages/application/src/probe.ts",
+        specifiers: [
+          "@instant-composition/domain",
+          "@instant-composition/domain/src/day",
+          "../../domain/src/index",
+        ],
+      },
+    ]);
+    expect(offenders).toStrictEqual([
+      "packages/application/src/probe.ts: @instant-composition/domain/src/day",
+      "packages/application/src/probe.ts: ../../domain/src/index",
+    ]);
   });
 });

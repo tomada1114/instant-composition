@@ -191,7 +191,13 @@ export default defineConfig({
       reporter: ["text", "lcov"],
       // Report every source and automation file, so an untested module shows
       // up as 0% instead of vanishing from the denominator.
-      include: ["src/**/*.ts", "src/**/*.tsx", "scripts/**/*.mjs"],
+      include: [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "packages/*/src/**/*.ts",
+        "packages/*/src/**/*.tsx",
+        "scripts/**/*.mjs",
+      ],
       // No top-level lines/functions/statements/branches here: Vitest's v8
       // provider checks those against the coverage of *all* included files
       // combined (src and scripts together), which would let a well-tested
@@ -214,6 +220,16 @@ export default defineConfig({
         // floor to trip. This is a narrower threshold glob, not a
         // `coverage.exclude` entry, which AGENTS.md forbids by name.
         "src/{core,server}/**": {
+          lines: 80,
+          functions: 80,
+          statements: 80,
+          branches: 80,
+        },
+        // The workspace packages are the target shape of the zones above —
+        // `src/core/` moves into `packages/domain` — so they are held to the
+        // same floor from the day they exist, rather than gaining one only
+        // after code has already landed in them.
+        "packages/*/src/**": {
           lines: 80,
           functions: 80,
           statements: 80,

@@ -35,6 +35,19 @@ const NO_EXPORT_STAR = {
     "`export *` publishes symbols implicitly. Re-export each public symbol by name.",
 };
 
+/**
+ * The hand-written application source: the Next.js tree and every workspace
+ * package's `src/`. The syntax bans, the named-export surface and the size
+ * budget below hold for both, so moving a module out of `src/` into a package
+ * is not a way out of any of them.
+ */
+const SOURCE_FILES = [
+  "src/**/*.ts",
+  "src/**/*.tsx",
+  "packages/*/src/**/*.ts",
+  "packages/*/src/**/*.tsx",
+];
+
 /** What `src/internal/**` is, in the words of the rule that made it private. */
 const INTERNAL_IS_PRIVATE =
   "src/internal/ is private. Tests reach it through the public surface of the module that owns it (see the `writing-tests` skill), and repository automation must not depend on module internals at all.";
@@ -91,6 +104,71 @@ const ZONE = /** @type {Record<"app" | "server" | "i18n" | "components", string[
     ["app", "server", "i18n", "components"].map((name) => [name, zonePatterns(name)]),
   )
 );
+
+/**
+ * Each workspace package under `packages/`, and the workspace packages it may
+ * import. ADR-0002's `application → domain` and `domain → nothing`, as a
+ * table the `boundaries/packages/*` blocks below are generated from.
+ *
+ * @remarks
+ * `tests/boundaries.test.ts` holds the same table and checks it against the
+ * module graph and each package's manifest, so an entry deleted here still
+ * fails the suite.
+ */
+const WORKSPACE_EDGES = /** @type {const} */ ({
+  domain: [],
+  application: ["domain"],
+});
+
+/**
+ * The `no-restricted-imports` block for one workspace package.
+ *
+ * @remarks
+ * A package reaches another only by its name, `@instant-composition/<dir>`,
+ * because that is the spelling its manifest's `dependencies` gate — pnpm links
+ * nothing a package does not declare. So the rule has two halves. The first
+ * refuses every bare specifier except an allowed package's name: an npm
+ * package, a `node:` builtin, the `@/` alias of the Next.js tree and a
+ * workspace package outside the row alike. It is a `regex` rather than a
+ * `group` because a gitignore-style group cannot say "anything but these". The
+ * second refuses a relative path into another package's directory or into a
+ * `src/` tree, which is what a climb out of the package into the Next.js
+ * application looks like. It matches specifier text, not the resolved path, so
+ * it does not see every climb out of the package; `tests/boundaries.test.ts`
+ * resolves each one and does.
+ *
+ * @param {keyof typeof WORKSPACE_EDGES} name
+ * @param {string} message
+ */
+function workspacePackageBoundary(name, message) {
+  const allowed = WORKSPACE_EDGES[name].map(
+    (dependency) => `@instant-composition/${dependency}`,
+  );
+  const others = Object.keys(WORKSPACE_EDGES).filter((other) => other !== name);
+  return {
+    name: `boundaries/packages/${name}`,
+    files: [`packages/${name}/**/*.ts`, `packages/${name}/**/*.tsx`],
+    rules: {
+      "no-restricted-imports": [
+        "error",
+        {
+          patterns: [
+            {
+              regex: `^(?!\\.\\.?(?:/|$)${allowed.map((pkg) => `|${pkg}$`).join("")})`,
+              message,
+            },
+            {
+              group: [...others, "src"].flatMap((tree) =>
+                zonePatterns(tree).filter((pattern) => pattern.startsWith(".")),
+              ),
+              message,
+            },
+          ],
+        },
+      ],
+    },
+  };
+}
 
 /** Why `src/components/` looks only at `src/core/`, `src/i18n/` and the framework. */
 const COMPONENTS_LOOK_ONLY_DOWNWARD =
@@ -180,7 +258,7 @@ export default defineConfig([
   },
   {
     name: "src/shared-syntax",
-    files: ["src/**/*.ts", "src/**/*.tsx"],
+    files: SOURCE_FILES,
     rules: {
       "no-restricted-syntax": ["error", NO_ENUM, NO_EXPORT_STAR],
 
@@ -197,7 +275,7 @@ export default defineConfig([
   },
   {
     name: "public-api/explicit-surface",
-    files: ["src/**/*.ts", "src/**/*.tsx"],
+    files: SOURCE_FILES,
     // Next.js finds a page, layout, loading/error boundary or route handler by
     // its file name and reads it through its default export, so `src/app/**`
     // is the one tree where a default export is the interface rather than an
@@ -226,7 +304,7 @@ export default defineConfig([
   },
   {
     name: "src/size-budget",
-    files: ["src/**/*.ts", "src/**/*.tsx"],
+    files: SOURCE_FILES,
     rules: {
       // Blank lines and comments count, deliberately: the budget is on how
       // much a reader has to hold at once, and a file is not easier to follow
@@ -354,6 +432,19 @@ export default defineConfig([
       ],
     },
   },
+  // --- workspace package boundaries ----------------------------------------
+  //
+  // The same discipline one level up, between the packages ADR-0002 lays out.
+  // Each block matches only its own package's files, so they stay disjoint
+  // from the `src/` zone blocks above and from each other.
+  workspacePackageBoundary(
+    "domain",
+    "packages/domain holds the pure rules and imports nothing outside itself: no workspace package, no npm package, no Node builtin, nothing from the Next.js tree. Time, time zones and randomness arrive as arguments; I/O belongs in packages/application's ports.",
+  ),
+  workspacePackageBoundary(
+    "application",
+    "packages/application imports @instant-composition/domain and nothing else outside itself. Reach another package by its name once ADR-0002 allows the edge and this package's manifest declares it; never by a relative path into its directory.",
+  ),
   {
     name: "automation/node-scripts",
     files: ["scripts/**/*.mjs", ".agents/skills/**/*.mjs"],

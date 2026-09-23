@@ -1,0 +1,11 @@
+{
+  // No DOM and no Node: `lib` is the language alone and `types` loads no
+  // ambient declarations, so `process`, `window` or `setTimeout` written here
+  // fails to compile instead of tying the package to one runtime.
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023"],
+    "types": []
+  },
+  "include": ["src"]
+}

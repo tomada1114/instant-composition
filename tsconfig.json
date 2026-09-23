@@ -1,15 +1,15 @@
 {
+  // The shared strictness lives in `tsconfig.base.json`; this file adds what the
+  // Next.js application, its tests and the repository automation need on top.
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "target": "ES2023",
     "lib": ["ES2023", "DOM", "DOM.Iterable"],
-    // Next.js compiles through its own bundler, so module specifiers resolve
-    // the way a bundler resolves them, not the way Node does. `jsx`,
-    // `esModuleInterop`, `resolveJsonModule` and `incremental` below are
-    // likewise values `next build` requires: it rewrites this file when one of
-    // them is missing or different, so they are written out here rather than
-    // discovered as an unexplained diff after a build.
-    "module": "ESNext",
-    "moduleResolution": "bundler",
+    // `jsx`, `esModuleInterop`, `resolveJsonModule` and `incremental` below —
+    // and `module` and `moduleResolution` in the base — are values `next build`
+    // requires: it rewrites this file when one of them is missing or
+    // different, so they are written out rather than discovered as an
+    // unexplained diff after a build.
+    //
     // shadcn/ui components are copied into this repository carrying
     // `@/components/...` imports, so the alias is what lets that generated
     // code compile unedited. `baseUrl` is deliberately unset — TypeScript 5+
@@ -22,28 +22,9 @@
     "paths": { "@/*": ["./src/*"] },
     "jsx": "react-jsx",
     "plugins": [{ "name": "next" }],
-    "strict": true,
-    "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
-    "noImplicitOverride": true,
-    "noPropertyAccessFromIndexSignature": true,
-    "noUncheckedSideEffectImports": true,
-    "noImplicitReturns": true,
-    "useUnknownInCatchVariables": true,
-    "verbatimModuleSyntax": true,
-    "isolatedModules": true,
-    "moduleDetection": "force",
-    "forceConsistentCasingInFileNames": true,
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "incremental": true,
-    "skipLibCheck": true,
-    // Closes the path where a package in node_modules substitutes its own
-    // standard library for TypeScript's built-in lib files.
-    "libReplacement": false,
-    "noEmit": true,
 
     // Repository automation (package checks, agent skills) must run
     // on plain Node before `pnpm install`, so it is authored as `.mjs`.

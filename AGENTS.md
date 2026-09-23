@@ -121,6 +121,7 @@ on every edit is slow enough that it stops being run at all.
 | Anything only a running server shows                   | `pnpm build`, then `pnpm test:smoke`                 |
 | `src/app/globals.css` or `postcss.config.mjs`          | `pnpm build`, then `pnpm test:smoke`                 |
 | An import that crosses a zone boundary                 | `pnpm exec vitest run tests/boundaries.test.ts`      |
+| A package under `packages/`                            | `pnpm typecheck`, then `tests/boundaries.test.ts`    |
 | A test                                                 | `pnpm exec vitest run tests/<name>.test.ts`          |
 | A script under `scripts/`                              | `pnpm exec vitest run tests/<script>.test.ts`        |
 | A script under `scripts/cards/`                        | `pnpm exec vitest run tests/cards-*.test.ts`         |
@@ -140,6 +141,9 @@ src/
 ├── components/ # UI: the shadcn/ui copies under ui/ and this app's own components
 ├── app/        # the Next.js App Router tree: pages, layouts, route handlers
 └── proxy.ts    # Next.js's request proxy: locale detection ahead of every page request
+packages/
+├── domain/      # @instant-composition/domain: the pure rules, importing nothing
+└── application/ # @instant-composition/application: commands, queries and ports
 messages/       # one JSON catalog per locale; ja.json, the only one, sets the shape
 content/        # the cards and the lists and guides that define them (see Content)
 scripts/        # repository automation, authored as .mjs, never shipped
@@ -158,6 +162,29 @@ copies in. Three resolvers are told about it separately — `tsconfig.json`'s `p
 `vitest.config.ts`'s `resolve.alias`, and `eslint.config.mjs`, which matches specifier
 text and so carries an `@/` twin of every zone pattern — and `tests/boundaries.test.ts`
 resolves both spellings, so neither is a way around the order above.
+
+### The workspace
+
+The repository is a pnpm workspace: the Next.js application is its root package, and
+`pnpm-workspace.yaml` adds each directory under `packages/`. These are the packages
+`docs/architecture/adr/0002-architecture-style-and-repository-layout.md` lays out, and
+they grow as the restructure moves code into them; until then they are empty, and `src/`
+is still where the application lives. `apps/` and `infra/` join the workspace with their
+first package.
+
+- **The edges.** `application` → `domain`, and `domain` → nothing — no workspace
+  package, no npm package, no Node builtin. A package reaches another only by its name,
+  `@instant-composition/<dir>`, and only when its own `package.json` declares it.
+  `eslint.config.mjs`'s `boundaries/packages/*` blocks and `tests/boundaries.test.ts`
+  hold the same table, the test also against each manifest; a package added under
+  `packages/` fails the suite until it is given a row.
+- **Source, not builds.** A package's `exports` points at its `src/index.ts`, and
+  whatever consumes it compiles that source; nothing is emitted to a `dist/`. Each
+  package has its own `tsconfig.json` over the shared `tsconfig.base.json`, with no DOM
+  and no Node types, and `pnpm typecheck` checks every one of them after the root.
+- **The same gates as `src/`.** The syntax bans, the named-export surface and the size
+  budget in `eslint.config.mjs`, and the coverage floor in `vitest.config.ts`, cover
+  `packages/*/src/` as they cover `src/`. Tests stay under `tests/`.
 
 ### The seams
 
