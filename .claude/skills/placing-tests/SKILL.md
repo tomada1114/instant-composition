@@ -28,10 +28,10 @@ This is settled, and it is deliberately against the App Router convention of kee
 test beside its component. Four mechanical reasons, each of which would have to be
 undone to move a test into `src/`:
 
-- `coverage.include` in `vitest.config.ts` is `src/**/*.ts`, `src/**/*.tsx` and
-  `scripts/**/*.mjs`. A test file under `src/` would count itself as covered source and
-  quietly lift every floor it sits under — the one direction a coverage number must
-  never move by accident.
+- `coverage.include` in `vitest.config.ts` is the `.ts` and `.tsx` files under `src/`
+  and under each `packages/*/src/`, and `scripts/**/*.mjs`. A test file in either source
+  tree would count itself as covered source and quietly lift every floor it sits under —
+  the one direction a coverage number must never move by accident.
 - The three vitest projects select on `tests/**` globs plus the file extension, and the
   automation project is an explicit list of `tests/…` paths. A co-located test joins no
   project until every one of those globs is widened.
@@ -130,6 +130,10 @@ question.
   step to hide behind, so they carry the same baseline floor as the `src/` zones above.
   A module earns the markup exemption only by being a `.tsx` component; moving logic out
   of `src/server/` into a component module is not a way out of a floor.
+- **`packages/*/src/**`** carries the same baseline floor as the `src/` zones. The
+  workspace packages are where those zones are moving, so the floor was set when the
+  packages were still empty rather than left to arrive after code did. A package's tests
+  live under `tests/` like every other test, and import the package by its name.
 - **`scripts/**`** was never measured before it was added to `coverage.include`, so its
   floor is the last measured coverage rounded down to a clean value, not a guessed
   target — it has been raised as coverage grew (see the dated comments in

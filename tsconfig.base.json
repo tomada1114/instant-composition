@@ -1,0 +1,35 @@
+{
+  // The compiler options every TypeScript project in the workspace shares: the
+  // root `tsconfig.json` (the Next.js application, its tests and the
+  // repository automation) and each `packages/*/tsconfig.json`. What differs
+  // between them — the ambient libraries, `jsx`, the `@/*` alias, `allowJs` —
+  // is stated in each of those files, not here.
+  "compilerOptions": {
+    "target": "ES2023",
+    "lib": ["ES2023"],
+    // Every consumer of a workspace package compiles its source through a
+    // bundler or a bundler-shaped resolver (Next.js, Vitest), so module
+    // specifiers resolve the way a bundler resolves them, not the way Node does.
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedSideEffectImports": true,
+    "noImplicitReturns": true,
+    "useUnknownInCatchVariables": true,
+    "verbatimModuleSyntax": true,
+    "isolatedModules": true,
+    "moduleDetection": "force",
+    "forceConsistentCasingInFileNames": true,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "skipLibCheck": true,
+    // Closes the path where a package in node_modules substitutes its own
+    // standard library for TypeScript's built-in lib files.
+    "libReplacement": false,
+    "noEmit": true
+  }
+}

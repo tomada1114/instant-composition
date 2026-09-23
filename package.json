@@ -27,7 +27,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "lint": "eslint . --max-warnings 0",
-    "typecheck": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json && pnpm --recursive --filter \"./packages/*\" run typecheck",
     "test": "vitest run --project='!smoke'",
     "test:watch": "vitest --project='!smoke'",
     "test:coverage": "vitest run --coverage --project='!smoke'",

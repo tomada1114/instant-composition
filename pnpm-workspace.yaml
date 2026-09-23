@@ -1,8 +1,13 @@
-# Single-package repository: no `packages:` globs on purpose.
+# The workspace: the Next.js application at the root, and the packages ADR-0002
+# lays out under `packages/`. `apps/` and `infra/` join this list with their
+# first package, not before.
 #
-# This file exists so the pnpm supply-chain policy below is declared in one
+# The rest of this file is the pnpm supply-chain policy, declared in one
 # machine-readable place, reviewable in a diff, and applied to every install
 # (local, CI, and release) without relying on per-developer configuration.
+# It covers every package in the workspace, not only the root.
+packages:
+  - "packages/*"
 
 # Reproduce the pnpm version resolved in pnpm-lock.yaml when the local pnpm
 # does not satisfy devEngines.packageManager, instead of failing the install.
