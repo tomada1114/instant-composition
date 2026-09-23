@@ -398,7 +398,14 @@ describe("the built application, served by `next start`", () => {
     const routes = readPrerenderedRoutes();
 
     for (const locale of LOCALES) {
-      for (const page of ["", "/welcome", "/drill", "/recap"]) {
+      for (const page of [
+        "",
+        "/welcome",
+        "/drill",
+        "/recap",
+        "/records",
+        "/settings",
+      ]) {
         expect(routes).not.toHaveProperty(`/${locale}${page}`);
       }
     }
