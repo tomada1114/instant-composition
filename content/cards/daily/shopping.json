@@ -1,5 +1,49 @@
 [
   {
+    "id": "c_2a3n7f3p",
+    "ja": "ネットで買った冷蔵庫、土曜日に配達してもらうことにしたから、そのとき誰か家にいて配達の人を入れてあげてくれる？",
+    "en": "We're having the new fridge delivered on Saturday, so could someone be home to let the driver in?",
+    "alternatives": [
+      "We've arranged to have the fridge delivered on Saturday, so can someone stay home and let the delivery person in?",
+      "The fridge we bought online is getting delivered on Saturday, so could somebody be there to let the driver in?"
+    ],
+    "point": "「配達してもらう」は have + 物 + 過去分詞、「入れてあげる」は let + 人 + in",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["causatives", "requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e9fb334f74d887f5b5cc7ed4b684a951d451b93cc51fc79695296d47583523dd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2b6g9c8k",
+    "ja": "スカートのサイズが合わなかったので、姉はお店で直してもらった。",
+    "en": "The skirt didn't fit, so my sister had it altered at the store.",
+    "alternatives": [
+      "My sister had the skirt altered at the store because it didn't fit.",
+      "Since the skirt didn't fit, my sister got it altered at the store."
+    ],
+    "point": "「直してもらう」は had it altered（過去分詞）",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:292b9f35930ec992c0939d505f31ba4224e85098bf6b935eeebee18ff7679e05",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2k3u7p3w",
     "ja": "このコート、先週ネットで買ったんですが、思っていたより生地が薄かったので、返品できないかなと思いまして。",
     "en": "I bought this coat online last week, but the fabric's thinner than I expected, so I was wondering if I could return it.",

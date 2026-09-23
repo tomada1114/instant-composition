@@ -176,6 +176,28 @@
     }
   },
   {
+    "id": "c_4s7g5h3n",
+    "ja": "リリース前にこのバグのことを知っていればよかったんですが、気づいたのは今朝でした。",
+    "en": "I wish I'd known about this bug before the release, but I only noticed it this morning.",
+    "alternatives": [
+      "I wish I had found out about this bug before the release, but I didn't notice it until this morning.",
+      "I wish I'd known about this bug before the release, but I didn't catch it until this morning."
+    ],
+    "point": "過去の後悔は wish の後を had + 過去分詞にする",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 7,
+    "grammar": ["wishes-regrets", "past-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:294ffe6d0e4bb671c8797b03cecd68afd1246e99261d32a272cfca47a581a615",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4v6h7c3b",
     "ja": "部長、企画書はもう完成しています。",
     "en": "The proposal is ready now.",
@@ -211,6 +233,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:5d56603e8d567a065bf9214598e8503a9ced7a93592b0bb796bc6daccc99cd6f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5p5v7e2e",
+    "ja": "先週はデザインでかなり苦労しましたが、今はもう大きな問題はすべて解決しました。",
+    "en": "We struggled a lot with the design last week, but we've now solved all the major issues.",
+    "alternatives": [
+      "We had a hard time with the design last week, but we've already fixed all the big problems.",
+      "The design gave us a lot of trouble last week, but we've now resolved all the major issues."
+    ],
+    "point": "last week は過去形、今の完了は現在完了で分ける",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cae87f772e9482e7a4e6a2961df9eb0017f32738a829bea1b69b5400ccc0d9cc",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }
@@ -431,6 +475,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:92b22ed36ed2bf44222d37330ece40b73bc80733526121574eb9d3ae6de90df1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9f7d5k9c",
+    "ja": "先週おっしゃっていた新しいツールをいつから使い始めるのか、もう決められましたか？",
+    "en": "Have you decided yet when we'll start using the new tool you mentioned last week?",
+    "alternatives": [
+      "Have you decided when we're going to start using the new tool you talked about last week?",
+      "Have you made a decision yet on when we'll start using the new tool you mentioned last week?"
+    ],
+    "point": "when 以下は疑問文の語順にせず we'll start の順",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["nested-clauses", "indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3da25ad37b7cc48637d303c14fdd722b369ed322abb953a6efe66e0e24f859a1",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

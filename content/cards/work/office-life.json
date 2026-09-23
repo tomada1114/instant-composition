@@ -1,5 +1,24 @@
 [
   {
+    "id": "c_2g6b4k5u",
+    "ja": "このプリンター、使ってもいいですか？",
+    "en": "Can I use this printer?",
+    "alternatives": ["Could I use this printer?", "Is it okay if I use this printer?"],
+    "point": "許可を求めるときは Can I で始める",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f01de4e6767e8997e568000619215f998201fee7c17143eec34cf80d66cf3668",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2j5d8e3v",
     "ja": "今朝、IT 部門に新しいノートパソコンの設定をしてもらいました。",
     "en": "I had the IT department set up my new laptop this morning.",
@@ -242,6 +261,47 @@
     }
   },
   {
+    "id": "c_6c6q6w8k",
+    "ja": "田中さんは今日お休みです。",
+    "en": "Tanaka is off today.",
+    "alternatives": ["Tanaka is out today.", "Tanaka isn't in today."],
+    "point": "「休み」は off で表せる。holiday は不要",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:276c31d50f6a43365070ef9bdc35a7d488d24d73d6dda81628d11e0351956559",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6x2h4b9j",
+    "ja": "帰るときは、会議室の電気を消してね。",
+    "en": "Turn off the meeting room lights when you leave.",
+    "alternatives": [
+      "Please turn off the lights in the meeting room when you leave.",
+      "When you leave, turn off the meeting room lights."
+    ],
+    "point": "電気を「消す」は turn off、主語なしの原形で始める",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2d6434282ff1f7f40c2e35f01f789b97802ceeaa095ab118aa2e743e2800acfd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_7a8z9c2e",
     "ja": "コピー用紙、また切れちゃってる。先週まとめて注文しておくべきだったよ。",
     "en": "We're out of copy paper again. I should have ordered a big batch last week.",
@@ -260,6 +320,28 @@
         "hash": "sha256:184e46dbb8bf3557b85a0c9469591e3bc714d432505a14522a85dc28668b8a58",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7j9q8d6m",
+    "ja": "給湯室に、誰かのお弁当が置いてありますよ。",
+    "en": "There's someone's lunch box in the kitchen.",
+    "alternatives": [
+      "Someone's lunch box is in the kitchen.",
+      "There's somebody's lunch in the break room."
+    ],
+    "point": "「置いてある」は There is で表せる",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 2,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b95222bbcf7de43fa7ce2c9c0b02893fbea200446a3853005ce0c9c8b93b0651",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
@@ -326,6 +408,28 @@
         "hash": "sha256:5e8b3c6bc82cdfb4fb29ac22b10b4c7e4e630f72c3fc62e243abac29e7b911a4",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8z2k7f7w",
+    "ja": "新しいコピー用紙はどこにありますか？",
+    "en": "Where is the new copy paper?",
+    "alternatives": [
+      "Where's the new printer paper?",
+      "Where can I find the new copy paper?"
+    ],
+    "point": "paper は数えられないので is を使う",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 1,
+    "grammar": ["wh-questions", "articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:89d356666c0e8b00d764b94cd1915ecb5a4927f6891520a0972f23bd55dafd31",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

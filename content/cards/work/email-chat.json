@@ -173,6 +173,28 @@
     }
   },
   {
+    "id": "c_5u2c3m2r",
+    "ja": "経理部には、私からメールして、今週中に請求書を修正してもらうようにします。",
+    "en": "I'll email the accounting department and have them correct the invoice by the end of this week.",
+    "alternatives": [
+      "I'll send the accounting department an email and get them to fix the invoice by the end of this week.",
+      "I'll email accounting and have them fix the invoice before the end of this week."
+    ],
+    "point": "have＋人＋動詞の原形。to は付けない",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 6,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:985b13be9f2dd1fe721e62b6a7c1d38f6ddbca02b07dfefebe0a6df60af2fd6b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_6e5q5w9z",
     "ja": "見積もりを確定するには、今週金曜までに正確な発注数をいただく必要があるのですが。",
     "en": "To finalize the quote, we'd need the exact order quantity from you by this Friday.",
@@ -217,6 +239,28 @@
     }
   },
   {
+    "id": "c_6x8v2h3p",
+    "ja": "たとえ先方からの返信が金曜まで来なくても、提案書の準備は進めておいてください。",
+    "en": "Even if the client doesn't reply until Friday, please keep working on the proposal.",
+    "alternatives": [
+      "Please go ahead with the proposal even if we don't hear back from the client until Friday.",
+      "Even if the client doesn't get back to us until Friday, please keep preparing the proposal."
+    ],
+    "point": "even if 節は未来のことでも現在形（won't reply にしない）",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 5,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ea2295c1a0e7384cef799f2014d2c11c1c21f274b4215ca29dc6cbce454837d0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_7g2b3h8x",
     "ja": "この件、チャットでやり取りする代わりに、短いオンライン会議をするのはどうですか？",
     "en": "How about having a quick online meeting instead of discussing this in chat?",
@@ -257,6 +301,28 @@
         "hash": "sha256:68fc6d555e442554be313693c943396ed895b5210d8004babe2f6b1993c9f6c6",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7x8q7x4g",
+    "ja": "部長は今朝、昨日の会議の議事録と今後の対応リストを添付して、全員にメールを送ってくれました。",
+    "en": "This morning the manager emailed everyone, attaching the minutes from yesterday's meeting along with a list of next steps.",
+    "alternatives": [
+      "The manager emailed everyone this morning with yesterday's meeting minutes and a list of next steps attached.",
+      "This morning the manager sent an email to everyone, attaching yesterday's meeting minutes and a list of next steps."
+    ],
+    "point": "「添付して」は attaching で文の後ろにつなげる",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2dc2f5f0893d647add6748e5eb918a771ecb3cfa0ac00ee16d3b360a305d2f99",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

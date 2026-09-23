@@ -1,5 +1,49 @@
 [
   {
+    "id": "c_2t4s3u8w",
+    "ja": "前の会社では3年間物流を担当していましたが、ここ1年はデータ分析の勉強にも力を入れてきました。",
+    "en": "I was in charge of logistics for three years at my last company, but I've also been focusing on studying data analysis over the past year.",
+    "alternatives": [
+      "I handled logistics for three years at my previous company, but for the past year I've also been concentrating on learning data analysis.",
+      "At my last company I was responsible for logistics for three years, and over the past year I've also been putting effort into studying data analysis."
+    ],
+    "point": "今も続く「ここ1年」は現在完了進行形、前職は過去形",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5ce0ef5bdc2cbfdae904f9b2e0246fb097649de6a753fc93d39fe5e2e1bda2d5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2x2u9b4j",
+    "ja": "もし予算の制約がまったくなかったとしたら、どんな製品を作ってみたいですか？",
+    "en": "If you had no budget constraints at all, what kind of product would you want to build?",
+    "alternatives": [
+      "If there were no budget limits at all, what kind of product would you like to make?",
+      "What kind of product would you want to build if you had no budget constraints at all?"
+    ],
+    "point": "仮定の話なので if 節は過去形 had、主節は would",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 6,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ca85a2fb437abc13231f12d4d236a02601e75d2825b8f7e69b9842dbdfde6177",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2y7r8b8h",
     "ja": "採用していただけたら、まずはお客様との関係づくりに力を入れるつもりです。",
     "en": "If I'm hired, I'm going to focus on building relationships with clients first.",
@@ -154,6 +198,28 @@
     }
   },
   {
+    "id": "c_5d5f4f8b",
+    "ja": "彼女が前の職場で担当していたプロジェクトは、まさに私たちが求めている経験です。",
+    "en": "The project she was in charge of at her last job is exactly the experience we're looking for.",
+    "alternatives": [
+      "The project she handled at her previous job is exactly the kind of experience we're looking for.",
+      "The project she managed at her last workplace is just the experience we want."
+    ],
+    "point": "「担当していた」は in charge of。関係詞節の最後に of を残す",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:884ce255459dc82eae27ce366531a8d2ae91f2bd80976d0a2eebf1cd3d485a24",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5m3p5g5r",
     "ja": "私は人前で話すのが得意なので、前の職場ではよくお客様へのプレゼンを任されていました。",
     "en": "I'm good at speaking in front of people, so I was often asked to give presentations to clients at my last job.",
@@ -170,6 +236,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:88a0d2e72ec87a1eb8a9a59a9e5e5fe487e03d99d58633f7c784943b9c6673ee",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5t4p9k2q",
+    "ja": "今振り返ると、前の会社を辞める前に、上司ともっと率直に話し合うべきだったと思います。",
+    "en": "In hindsight, I think I should have talked more openly with my manager before I left my last company.",
+    "alternatives": [
+      "Looking back, I think I should have had a more honest talk with my boss before leaving my last company.",
+      "In hindsight, I should have been more open with my manager before I quit my previous job."
+    ],
+    "point": "過去への後悔は should have + 過去分詞",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4aebc2d91ead4d607c694857269d45cd997775f0d77474db398a8253d425595f",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }
@@ -414,6 +502,28 @@
         "hash": "sha256:10e9caf37cc20fa25267427af41cd45afdd7efefb03ae1c2a2d94d7a73bba4d0",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9y5n3j9h",
+    "ja": "前の職場でチームの作業が予定より遅れたとき、締め切りまでにどうやって遅れを取り戻しましたか？",
+    "en": "When your team fell behind schedule at your last job, how did you catch up before the deadline?",
+    "alternatives": [
+      "At your previous job, when your team fell behind schedule, how did you make up the lost time before the deadline?",
+      "When your team got behind schedule at your last workplace, how did you get back on track before the deadline?"
+    ],
+    "point": "「遅れる」は fall behind、「取り戻す」は catch up",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:75e2cba6b66d555d0b7b99a4a24dbb0b04a0bc0fe1ae313c41051286469c2d5a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   }

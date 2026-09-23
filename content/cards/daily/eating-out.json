@@ -221,6 +221,28 @@
     }
   },
   {
+    "id": "c_5d7k3b7z",
+    "ja": "先月会社の近くにできたラーメン屋さん、もう行ってみた？",
+    "en": "Have you tried the ramen place that opened near the office last month yet?",
+    "alternatives": [
+      "Have you been to the ramen shop that opened near the office last month yet?",
+      "Have you checked out the new ramen place that opened near our office last month yet?"
+    ],
+    "point": "「もう行った？」は現在完了、「先月できた」は過去形",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["tense-contrast", "relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0f206a0b728f3dd9e41c1479dba7621f2332382771f8bddaac2b09824c2301c2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5h9s7m5t",
     "ja": "この店、予約しておけば、私たち今ごろ並ばずに座れてたのにね。",
     "en": "If we'd booked a table here, we'd be sitting down now instead of standing in line.",
@@ -303,6 +325,28 @@
         "hash": "sha256:65dfb44e04afd0f30d6c52e48940a7c3cd24abac38f11a2cea42a3048a4b756a",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7m7v4m6q",
+    "ja": "土曜日は両親と夕食を食べる予定なので、5人でテーブルをもう予約しておいたよ。",
+    "en": "We're having dinner with my parents on Saturday, so I've already booked a table for five.",
+    "alternatives": [
+      "We're going to have dinner with my parents on Saturday, so I've already reserved a table for five.",
+      "Since we're having dinner with my parents on Saturday, I've already booked a table for five people."
+    ],
+    "point": "決まった予定は進行形、予約済みは現在完了で表す",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 6,
+    "grammar": ["future-forms", "present-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:140313d33f6092c103093de3ffc5b320770211171dc16a3894af1d903cdca038",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

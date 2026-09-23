@@ -176,6 +176,28 @@
     }
   },
   {
+    "id": "c_3w6w4m9d",
+    "ja": "今日の午後なら、その仕事を手伝えますよ。",
+    "en": "I can help you with that this afternoon.",
+    "alternatives": [
+      "I can give you a hand with that this afternoon.",
+      "I'm free to help with that this afternoon."
+    ],
+    "point": "「仕事を手伝う」は help the work ではなく help you with that",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:77485ee6ca9aa07439e1f896a9449dc449d67b254fca273e664a0fefc1b0a4e4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4c2h4u8x",
     "ja": "今、急ぎの報告書を書いているので、あとで手伝いますね。",
     "en": "I'm writing an urgent report, so I'll help later.",
@@ -370,6 +392,28 @@
         "hash": "sha256:d66064b508998ab960c8a7f9747a610f272113ce3e809f2476a996c9c51a27cf",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7k6k9z9j",
+    "ja": "この書類を今日中に部長に渡してください。",
+    "en": "Please give this document to the manager today.",
+    "alternatives": [
+      "Please hand this document to the manager today.",
+      "Please give the manager this document today."
+    ],
+    "point": "命令文は動詞の原形で始める。Please を添えて丁寧に",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 1,
+    "grammar": ["imperatives", "articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3f98ca56c9f64a5865fc8242e1b0eda119275f31953d700e4ba351ebbe53b846",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

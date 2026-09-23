@@ -66,6 +66,28 @@
     }
   },
   {
+    "id": "c_2w9a2u2u",
+    "ja": "私たちが一番心配しているのは、納期に間に合わないことではなく、品質が落ちることです。",
+    "en": "What we're most worried about isn't missing the deadline but a drop in quality.",
+    "alternatives": [
+      "What concerns us most isn't missing the deadline, but the quality going down.",
+      "Our biggest concern isn't missing the deadline but a drop in quality."
+    ],
+    "point": "What we're worried about の about を落とさない",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["cleft-emphasis", "gerunds"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:132c5f592da64768f611fe19590a7f1bd7775280caa4d4508aa98ff7386a8d0d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3c7j2u6e",
     "ja": "このプランはコストを下げるだけでなく、導入期間も半分に短縮できます。",
     "en": "Not only does this plan reduce costs, but it also cuts the rollout time in half.",
@@ -128,6 +150,50 @@
         "hash": "sha256:78654827a9fc4517d0e60dcc31d1f336ef3817d7fce56e5868c5d5d358b4047f",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4a8p7n3t",
+    "ja": "質疑応答に入る前に、今日のポイントをもう一度ざっと振り返ってもいいですか？",
+    "en": "Before we open it up for questions, could I quickly go over today's key points one more time?",
+    "alternatives": [
+      "Before we move on to questions, can I quickly go over the main points from today once more?",
+      "Before we take questions, could I quickly run through today's key points again?"
+    ],
+    "point": "「振り返る」は go over / run through の句動詞で",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f2c754f7d92e447779f11daffcafb3325cf7f5fd553aed0bbd9b10868520babd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6u5e5m9d",
+    "ja": "新しい料金プランに関する資料は、会議の後で皆さんにメールでお送りします。",
+    "en": "I'll email everyone the materials on the new pricing plan after the meeting.",
+    "alternatives": [
+      "I'll send you all the materials about the new pricing plan by email after the meeting.",
+      "After the meeting, I'll email you the materials on the new pricing plan."
+    ],
+    "point": "「〜に関する資料」は materials on/about 〜 と後ろから修飾",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6c9cf86ff353e0401731e102c371690b7ce542ae687c8ae26cb9f35b76eb16c5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
@@ -258,6 +324,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:0c2517633a3762f117a86ba52bb0cb808330413ba4468c57a3ea629a8e95cb88",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9w5d3z5u",
+    "ja": "この提案を役員会で承認してもらうには、私たちは他にどんなデータを用意すべきでしょうか。",
+    "en": "What other data should we prepare to get this proposal approved by the board?",
+    "alternatives": [
+      "What other data do we need to prepare to get the board to approve this proposal?",
+      "To get this proposal approved by the board, what other data should we prepare?"
+    ],
+    "point": "「〜してもらうには」は目的の to get 〜 approved で表す",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 6,
+    "grammar": ["infinitives", "causatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2873064eadbdbe77ab8cec5734a3b05e1acaab419d23dce93a6e5cb13b21835e",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

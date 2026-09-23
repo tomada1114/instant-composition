@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_4c6j7n8q",
+    "ja": "お客さんがうちのチームに、週報をもっと短くしてほしいと言ってきました。",
+    "en": "The client asked our team to keep the weekly reports shorter.",
+    "alternatives": [
+      "The client asked our team to make the weekly reports shorter.",
+      "The client told our team they want the weekly reports to be shorter."
+    ],
+    "point": "「〜してほしいと言う」は ask + 人 + to do で表す",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 4,
+    "grammar": ["verb-object-to-do", "comparatives-superlatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:548540861ce3de1dd96f09d0e0bc6afab1987b2a9f4d96fd758a1a5bd3d153f2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4s3r9u2b",
     "ja": "チームリーダーの指摘をもっと早く聞いておけばよかった。そうすれば、発表の前にスライドを直せたのに。",
     "en": "I wish I'd listened to my team lead's feedback sooner, because then I could have fixed the slides before the presentation.",
@@ -236,6 +258,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:0c7405d4d86666a4fd12a21abdc083731c9d446e34f9af87fca83f21a5356098",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9v6j9m8t",
+    "ja": "ありがとうございます。指摘してもらえなかったら、お客さんに間違った数字を送るところでした。",
+    "en": "Thank you. If you hadn't pointed that out, I would have sent the client the wrong numbers.",
+    "alternatives": [
+      "Thank you. If you hadn't caught that, I would have sent the wrong numbers to the client.",
+      "Thank you. If you hadn't pointed that out, I'd have sent the client the wrong figures."
+    ],
+    "point": "過去の仮定は had + 過去分詞、結果は would have + 過去分詞",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 7,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bebebae5edddb033e97dde410276846593105f203d5f0bd2382805c6677657ae",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

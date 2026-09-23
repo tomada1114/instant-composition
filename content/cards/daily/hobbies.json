@@ -308,6 +308,28 @@
     }
   },
   {
+    "id": "c_7m8s5r5h",
+    "ja": "もし毎週3連休だったら、何か新しい趣味を始める？それとも家でのんびりするだけ？",
+    "en": "If you had a three-day weekend every week, would you take up a new hobby or just relax at home?",
+    "alternatives": [
+      "If every weekend were three days long, would you start a new hobby or just relax at home?",
+      "If you got a three-day weekend every week, would you pick up a new hobby or just take it easy at home?"
+    ],
+    "point": "現実と違う仮定は if 節を過去形、主節は would に",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 8,
+    "grammar": ["second-conditional", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:28b01d944b0e6fc1722a4c95f5637a7db64c2bba8dced33534f09c95d1f9f882",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_7x2d2y5s",
     "ja": "休みの日は、たいてい何をしてるの？",
     "en": "What do you usually do on your days off?",
@@ -414,6 +436,28 @@
         "hash": "sha256:c7cb0f38dbf8c0519701fdafa60474a33145db65efb3a46e241e0b41878bd09e",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8z2w7y6u",
+    "ja": "兄は昨日の釣り大会で一番いい場所を取ったんだから、夜明け前から並んだに違いないね。",
+    "en": "Since my brother got the best spot at yesterday's fishing contest, he must have lined up before dawn.",
+    "alternatives": [
+      "My brother must have lined up before dawn, since he got the best spot at yesterday's fishing contest.",
+      "Since my brother got the best spot at the fishing contest yesterday, he must have been in line before dawn."
+    ],
+    "point": "過去の推量は must have + 過去分詞で表す",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:08aef21353d28b7df3cd2806f78042cefb511728331714822c56c168b5cf85c8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

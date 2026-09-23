@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_2w5d3q7n",
+    "ja": "来週の土曜、猫にえさをあげに何時ごろ行けばいいか教えてもらえますか？",
+    "en": "Could you tell me what time I should come by to feed your cat next Saturday?",
+    "alternatives": [
+      "Can you let me know what time I should stop by to feed your cat next Saturday?",
+      "Could you tell me when I should come over to feed your cat next Saturday?"
+    ],
+    "point": "間接疑問は what time I should と平叙文の語順",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 6,
+    "grammar": ["indirect-questions", "requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a22038af0fdde3ad096f77cdc2e8e6a22ea92419f1039fbd87ebaa655811499b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3d2a4r8t",
     "ja": "田中さんは、来週なら喜んであなたの原稿に目を通すけど、今週は締め切りで手一杯だと言っていました。",
     "en": "Ms. Tanaka said she'd be happy to look over your draft next week, but that she was swamped with deadlines this week.",
@@ -264,6 +286,28 @@
     }
   },
   {
+    "id": "c_5h3d2d4b",
+    "ja": "頼みごとをするなら、兄より姉のほうがずっと頼みやすいんだ。",
+    "en": "It's much easier to ask my sister for a favor than my brother.",
+    "alternatives": [
+      "Asking my sister for a favor is much easier than asking my brother.",
+      "I find it much easier to ask my sister for a favor than my brother."
+    ],
+    "point": "比較級の強調は very ではなく much",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 4,
+    "grammar": ["comparatives-superlatives", "infinitives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0c680ed244bd0763ae1ffb487599b27f5d8a99943efe436a909819430bafa46b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5h5p8g3g",
     "ja": "ごめん、今夜は君の犬の散歩を代わってあげられないんだ。",
     "en": "Sorry, I can't walk your dog for you tonight.",
@@ -414,6 +458,28 @@
         "hash": "sha256:d79d4041cc1854459a9379a8e6a77cfa3245043dfa21d0a713702856cd6e9d74",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9b6r6n8r",
+    "ja": "同僚のケンが困った顔で私の席に来て、コピー機を直すのを手伝ってほしいと頼んできた。",
+    "en": "My coworker Ken came to my desk looking worried and asked me to help fix the copier.",
+    "alternatives": [
+      "My coworker Ken came up to my desk looking worried and asked if I could help fix the copier.",
+      "My coworker Ken came to my desk with a worried look and asked me to help him fix the copier."
+    ],
+    "point": "「困った顔で」は looking worried と分詞で後ろに添える",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["participle-clauses", "verb-object-to-do"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:60a427a24798e9f6f553644b1526872bc54bba35da9b799c7ec6992b270d8598",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

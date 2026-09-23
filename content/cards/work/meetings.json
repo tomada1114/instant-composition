@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_2c7g2c8w",
+    "ja": "たとえ部長がこの提案に反対でも、来週の会議ではやはり私たちのデータを丁寧に説明すべきだと思います。",
+    "en": "Even if the director is against this proposal, I still think we should walk everyone through our data carefully at next week's meeting.",
+    "alternatives": [
+      "Even if the director opposes this proposal, I still think we should explain our data carefully at next week's meeting.",
+      "Even if the director doesn't like this proposal, I still think we should go through our data carefully at next week's meeting."
+    ],
+    "point": "「たとえ〜でも」は even if で、主節に still を添える",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4bc51a193b6324d01d266fe0f2104a04eb09315efa8555d74cbf5b8935674972",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2d9v4s8u",
     "ja": "会議が始まったときには、部長はもう資料を読み終えていました。",
     "en": "The manager had already finished reading the materials when the meeting started.",
@@ -154,6 +176,28 @@
     }
   },
   {
+    "id": "c_4e5m3x2z",
+    "ja": "木曜の会議でその場で決められるように、修正した数字を事前にそちらのチームから送ってもらえますか？",
+    "en": "Could you have your team send me the revised figures before Thursday's meeting so that we can make a decision on the spot?",
+    "alternatives": [
+      "Could you get your team to send me the revised numbers before Thursday's meeting so we can decide right there?",
+      "Would you have your team send me the updated figures ahead of Thursday's meeting so that we can decide on the spot?"
+    ],
+    "point": "have＋人＋動詞の原形、get なら to 不定詞",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 9,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f5787131861f6b52ce3fa51b78c6cc4ee639a5093169dd4064d9d3eab347ed63",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4s9n4p5z",
     "ja": "リーダーに、次の会議の日程を決めるよう頼んでもらえますか？",
     "en": "Could you ask the leader to set the next meeting date?",
@@ -198,6 +242,28 @@
     }
   },
   {
+    "id": "c_4z6w9u7d",
+    "ja": "結局、この会議で決めなければならないのは、発売日を遅らせるかどうか、ということですよね？",
+    "en": "So what we need to decide in this meeting is whether to push back the launch date, right?",
+    "alternatives": [
+      "So the thing we have to decide in this meeting is whether to delay the launch date, right?",
+      "So what we have to decide in this meeting is whether we push back the launch date, right?"
+    ],
+    "point": "「かどうか」は whether to ～ で、What ～ is に続ける",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 8,
+    "grammar": ["cleft-emphasis", "noun-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:eceb07957f74f1426612b3f26118c1246d4edc20a934699dc5575ccdaa24a831",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_6a3u2x9y",
     "ja": "次の議題に移る前に、予算の数字をもう一度確認できないかと思っていたのですが。",
     "en": "I was wondering if we could go over the budget figures once more before we move on.",
@@ -216,6 +282,25 @@
         "hash": "sha256:f2bd5cdc854c27de7c2e230ce11353fae5fab4d1c89a3f2cc54503e4fa3c71ce",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6s2y4h3j",
+    "ja": "私はその案に賛成です。",
+    "en": "I agree with the idea.",
+    "alternatives": ["I'm for the idea.", "I support the idea."],
+    "point": "agree は be 動詞なしで使う（I'm agree は誤り）",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 1,
+    "grammar": ["be-and-present-simple", "articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b08788343b63593b7a9ab60c7628e89407cda8eee23b75116abe76f79c8be8dd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
@@ -330,6 +415,25 @@
     }
   },
   {
+    "id": "c_8v5n3y7j",
+    "ja": "では、会議を始めましょう。",
+    "en": "Let's start the meeting.",
+    "alternatives": ["Let's begin the meeting.", "Let's get the meeting started."],
+    "point": "「〜しましょう」は Let's＋動詞の原形",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 1,
+    "grammar": ["imperatives", "articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:88b7997ab5a4aba97ab12c98a4fda3e4f81614ee3db8eea4ef8d9f264950c213",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_8v7d2x4d",
     "ja": "会議が終わるまでに結論が出なかったら、来週またこの話を続けましょう。",
     "en": "If we don't reach a decision by the time the meeting ends, let's pick this up again next week.",
@@ -392,6 +496,28 @@
         "hash": "sha256:6c2f21c5d0b8c9a8d69fb4fbcceb6e630071b6d770a39159432c3f951839eb7c",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9y8t5t5k",
+    "ja": "資料の3ページを見てください。",
+    "en": "Please look at page three of the handout.",
+    "alternatives": [
+      "Please take a look at page three of the handout.",
+      "Please turn to page three of the handout."
+    ],
+    "point": "「〜を見る」は look at。at を落とさない",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:eb13545f9f7ccddcda89b5b07ddf6d5c56e06c603414e853cc535e577eabb737",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   }
