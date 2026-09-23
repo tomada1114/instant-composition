@@ -355,4 +355,41 @@ describe("the sound switch", () => {
       "true",
     );
   });
+
+  it("settles on what the last save left, however the answers arrive", async () => {
+    const pending: ((ok: boolean) => void)[] = [];
+    vi.stubGlobal(
+      "fetch",
+      () =>
+        new Promise<Response>((resolve, reject) => {
+          pending.push((ok) => {
+            if (ok)
+              resolve(
+                Response.json({
+                  settings: {},
+                  removedFocus: [],
+                  completedToday: false,
+                }),
+              );
+            else reject(new TypeError("fetch failed"));
+          });
+        }),
+    );
+    renderHome(view({ kind: "ready", streak: COUNT }));
+    fireEvent.click(screen.getByRole("button", { name: ja.Home.soundOn }));
+    fireEvent.click(screen.getByRole("button", { name: ja.Home.soundOff }));
+    fireEvent.click(screen.getByRole("button", { name: ja.Home.soundOn }));
+    await act(async () => {
+      pending[2]?.(true);
+      await Promise.resolve();
+      await Promise.resolve();
+      pending[0]?.(false);
+      await Promise.resolve();
+      await Promise.resolve();
+    });
+    expect(screen.getByRole("button", { name: ja.Home.soundOff })).toHaveAttribute(
+      "aria-pressed",
+      "false",
+    );
+  });
 });

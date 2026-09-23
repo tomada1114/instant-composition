@@ -7,9 +7,10 @@ import { WelcomeScreen } from "../src/components/home/welcome-screen";
 import type { TopicInfo } from "../src/core/types";
 
 const push = vi.fn();
+const refresh = vi.fn();
 
 vi.mock("../src/i18n/navigation", () => ({
-  useRouter: () => ({ push }),
+  useRouter: () => ({ push, refresh }),
 }));
 
 const TOPICS: readonly TopicInfo[] = [
@@ -24,10 +25,10 @@ const TOPICS: readonly TopicInfo[] = [
   { id: "daily", ja: "日常", subtopics: [{ id: "home", ja: "家" }] },
 ];
 
-function renderWelcome(): void {
+function renderWelcome(topics: readonly TopicInfo[] = TOPICS): void {
   render(
     <NextIntlClientProvider locale="ja" messages={ja}>
-      <WelcomeScreen topics={TOPICS} />
+      <WelcomeScreen topics={topics} />
     </NextIntlClientProvider>,
   );
 }
@@ -109,5 +110,17 @@ describe("WelcomeScreen, W1", () => {
     expect(screen.getByRole("alert")).toHaveTextContent(ja.Welcome.saveFailed);
     expect(push).not.toHaveBeenCalled();
     expect(screen.getByRole("button", { name: ja.Welcome.next })).toBeEnabled();
+  });
+
+  it("says the cards could not be read, rather than offer nothing to choose", () => {
+    renderWelcome([]);
+    expect(
+      screen.getByRole("heading", { name: ja.Home.loadFailed.title }),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole("button", { name: ja.Welcome.next }),
+    ).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: ja.Home.loadFailed.reload }));
+    expect(refresh).toHaveBeenCalled();
   });
 });

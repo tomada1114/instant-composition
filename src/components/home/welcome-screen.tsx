@@ -10,6 +10,7 @@ import { Button } from "@/components/ui/button";
 import { SelectCard } from "@/components/ui/select-card";
 
 import { useRouter } from "../../i18n/navigation";
+import { LoadFailedPanel } from "./home-empty";
 
 /** W1: the first visit picks the topics, then goes straight on to the placement round. */
 export function WelcomeScreen({
@@ -44,6 +45,18 @@ export function WelcomeScreen({
       setSaving(false);
       setFailed(true);
     });
+  }
+
+  if (topics.length === 0) {
+    return (
+      <main className="mx-auto box-content flex min-h-[calc(100dvh-4rem)] max-w-column flex-col justify-center px-4 py-8">
+        <LoadFailedPanel
+          onReload={() => {
+            router.refresh();
+          }}
+        />
+      </main>
+    );
   }
 
   return (
