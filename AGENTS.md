@@ -20,11 +20,14 @@ checked.
 
 ## Overview
 
-A template for a Next.js application on the App Router, written in ESM-only TypeScript:
-a locale-prefixed page tree styled with Tailwind v4 and shadcn/ui, one JSON endpoint,
-and one language-model call behind a port that an adapter implements. It answers with a
-fake adapter out of the box, so `pnpm dev` works before any credential exists, and the
-whole AI layer is built to come out in one piece for a project that does not want one.
+Instant Composition is a Japanese→English instant-composition drill for Japanese
+learners of English: a card shows a Japanese sentence and the learner says it in English
+before the timer runs out, then checks the answer. Cards are pre-generated JSON under
+`content/`, written ahead of time by Claude Code skills, so the application calls no
+language model at runtime. It is a Next.js App Router application in ESM-only
+TypeScript, styled with Tailwind v4 and shadcn/ui, meant to run as a local server with
+progress in SQLite (planned). It was started from a template whose language-model layer
+was removed whole.
 
 It is private: nothing here is packed, published, or consumed as a tarball, so there is
 no published `engines.node` floor — `.node-version` and `devEngines.runtime` carry the
@@ -33,14 +36,13 @@ Corepack.
 
 ## Before the first screen
 
-The template ships no design direction. `src/app/globals.css` carries shadcn/ui's stock
+No design direction is settled yet. `src/app/globals.css` carries shadcn/ui's stock
 `neutral` tokens only so a copied component renders, and the lock in `designing-ui` is
-blank; both carry a marker that `tests/placeholders.test.ts` lists beside the rest of
-the template's identity. In this template itself that is intended. In a project started
-from it, settling the direction comes before the first screen of its own: when asked to
-build or restyle UI while that marker still stands, say so and propose settling it first
-— `starting-an-app` owns the step. Never choose a palette, a typeface or a layout by
-taste to get a screen done.
+blank; both carry a marker that `tests/placeholders.test.ts` still lists. Settling the
+direction comes before the first screen of this app's own: when asked to build or
+restyle UI while that marker still stands, say so and propose settling it first —
+`starting-an-app` owns the step. Never choose a palette, a typeface or a layout by taste
+to get a screen done.
 
 ## Quick reference
 
@@ -89,8 +91,8 @@ on every edit is slow enough that it stops being run at all.
 
 | What you changed                                       | The narrowest check that can fail                    |
 | ------------------------------------------------------ | ---------------------------------------------------- |
-| A module under `src/core/` or `src/ai/`                | `pnpm exec vitest run tests/<module>.test.ts`        |
-| A handler or the composition root under `src/server/`  | `pnpm exec vitest run tests/server-handler.test.ts`  |
+| A module under `src/core/`                             | `pnpm exec vitest run tests/<module>.test.ts`        |
+| A module under `src/server/`                           | `pnpm exec vitest run tests/<module>.test.ts`        |
 | `src/server/env.ts` or `.env.example`                  | `pnpm exec vitest run tests/server-env.test.ts`      |
 | A page, layout or route handler under `src/app/`       | `pnpm build`, then `pnpm test:smoke`                 |
 | A component with a rendered test                       | `pnpm exec vitest run tests/<name>.test.tsx`         |
@@ -110,8 +112,7 @@ on every edit is slow enough that it stops being run at all.
 ```
 src/
 ├── core/       # framework-free vocabulary: a Result, a domain type, a pure function
-├── ai/         # the LlmPort, its error vocabulary, and the adapters behind it
-├── server/     # the environment read, the composition root, and request handlers
+├── server/     # the environment read and request handlers
 ├── i18n/       # the locale list, its URL routing, and the typed message catalogs
 ├── components/ # UI: the shadcn/ui copies under ui/ and this app's own components
 ├── app/        # the Next.js App Router tree: pages, layouts, route handlers
@@ -120,12 +121,12 @@ messages/       # one JSON catalog per locale, shaped by en.json
 scripts/        # repository automation, authored as .mjs, never shipped
 ```
 
-Imports run one way — `app` → `server` → `ai` → `core`, with `app` → `components` →
-`core` beside it — and `i18n` is a leaf that the page tree, the components and the
-handlers all read. `core` is the bottom of both orders: it names no framework and no
-vendor SDK, so it survives a change of either. `components` is reached from `app` alone
-— it renders what it is handed, so it names no page, no handler and nothing in the AI
-layer, and `server`, `ai`, `core` and `i18n` in turn name nothing in it.
+Imports run one way — `app` → `server` → `core`, with `app` → `components` → `core`
+beside it — and `i18n` is a leaf that the page tree, the components and the handlers all
+read. `core` is the bottom of both orders: it names no framework, so it survives a
+change of it. `components` is reached from `app` alone — it renders what it is handed,
+so it names no page and no handler, and `server`, `core` and `i18n` in turn name nothing
+in it.
 
 A module under `src/` is reached either relatively or through the `@/*` → `./src/*`
 alias, which exists because shadcn/ui writes `@/components/...` into every component it
@@ -134,55 +135,38 @@ copies in. Three resolvers are told about it separately — `tsconfig.json`'s `p
 text and so carries an `@/` twin of every zone pattern — and `tests/boundaries.test.ts`
 resolves both spellings, so neither is a way around the order above.
 
-### The three seams
+### The seams
 
-Everything a project built from this template is expected to replace sits behind one of
-three seams:
+Everything this application expects to replace or grow sits behind one of two seams:
 
-- **The port.** `src/ai/port.ts` declares `LlmPort`, the vendor-neutral interface every
-  model call goes through, and `src/ai/index.ts` is the AI layer's whole surface — the
-  port, its error vocabulary, and whichever adapter that file chooses to publish.
-  `src/ai/adapters/` is private to the layer, so swapping the fake for a provider, or
-  deleting the layer outright, is a bounded edit; `tests/ai-layer-removal.test.ts` is
-  what keeps the deletion bounded rather than trusting that it stays so.
-- **The Web-standard handler.** `src/server/handlers/ask.ts` exports
-  `createAskHandler(dependencies)`, which returns a plain
-  `(request: Request) => Promise<Response>` and imports nothing from `next`. That is
-  what lets a test drive it with `new Request(…)` and no framework, and what keeps
-  `src/app/api/ask/route.ts` a one-line re-export with no logic of its own to test.
+- **The Web-standard handler.** A request handler under `src/server/handlers/` returns a
+  plain `(request: Request) => Promise<Response>` and imports nothing from `next`. That
+  is what lets a test drive it with `new Request(…)` and no framework, and what keeps a
+  `route.ts` under `src/app/api/` a one-line re-export with no logic of its own to test.
 - **The environment.** `src/server/env.ts` is the only module under `src/` that reads
   `process.env`. It validates the whole environment against one schema and hands every
   other module what it needs as an argument, so "where does this secret enter the
   process" is a question a reader answers by opening one file.
 
-`src/server/composition.ts` is where the three meet: the single place the environment,
-an adapter and a handler are joined, and the single line in this repository that names a
-vendor. That choice made anywhere else is the leak these boundaries exist to prevent.
-
 ### Rate limiting
 
-This template deliberately implements neither rate limiting nor concurrency limiting for
-`POST /api/ask`. It owns no limiter state, store, algorithm, or rate-limit environment
-variable. A deployment that wires a billed adapter must enforce its caller-throughput
-policy at an edge or gateway before the request reaches the app, with enforcement shared
-across instances; a per-process limiter is not equivalent across instances.
-`API_ACCESS_KEY` is authentication only, not a rate-limit declaration.
-
-The app still owns its existing per-request request-body and prompt ceilings and rejects
-those before `llm.generate`.
+This application implements neither rate limiting nor concurrency limiting. It owns no
+limiter state, store, algorithm, or rate-limit environment variable. An endpoint that
+bills a provider must have its caller-throughput policy enforced at an edge or gateway
+before the request reaches the app, with enforcement shared across instances; a
+per-process limiter is not equivalent across instances. `API_ACCESS_KEY` is
+authentication only, not a rate-limit declaration.
 
 ### What is contract and what is private
 
 Nothing here is published, so the contract is not an export map. It is what a caller
 outside the process can observe, plus what each zone publishes to the zone above it:
 
-- **Contract.** The HTTP surface of `POST /api/ask` — its request body, its answer, and
-  the `error.code` vocabulary a client branches on. The `LlmPort` interface, `LlmError`
-  and its `ERR_LLM_*` codes, and everything else `src/ai/index.ts` names. The locale
-  list in `src/i18n/locales.ts` and the message keys `messages/en.json` defines.
-- **Private.** `src/ai/adapters/**`; the wiring inside `src/server/composition.ts`; and
-  any module a zone's own surface does not re-export. A test reaches a private module
-  through the surface that owns it, never around it.
+- **Contract.** The HTTP surface of any route under `src/app/api/` — its request body,
+  its answer, and the `error.code` vocabulary a client branches on. The locale list in
+  `src/i18n/locales.ts` and the message keys `messages/en.json` defines.
+- **Private.** Any module a zone's own surface does not re-export. A test reaches a
+  private module through the surface that owns it, never around it.
 
 Next.js loads a page, layout, boundary or route handler under `src/app/` by file name
 through its default export, and does the same for `src/proxy.ts` and
@@ -206,7 +190,6 @@ names its own boundary with its neighbours.
 | ----------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
 | `building-app-routes`   | a page, layout or Route Handler under `src/app/`, `src/proxy.ts`, or `src/server/`                                                  |
 | `localizing-ui`         | a catalog under `messages/`, a module under `src/i18n/`, or adding a UI string                                                      |
-| `integrating-llm`       | the `LlmPort`, an adapter under `src/ai/`, or a fixture under `tests/fixtures/llm/`                                                 |
 | `writing-typescript`    | a `.ts` module or a `.tsx` component under `src/`                                                                                   |
 | `designing-errors`      | an error type or an `ERR_*` code, in `src/` or `scripts/`                                                                           |
 | `writing-tests`         | the body of a test under `tests/`                                                                                                   |
@@ -221,7 +204,7 @@ names its own boundary with its neighbours.
 | `triaging-issues`       | filing, labelling, or ranking a GitHub issue                                                                                        |
 | `designing-ui`          | the design direction, the theme tokens in `src/app/globals.css`, a shadcn/ui component, or styling any screen                       |
 | `shipping-issues`       | ranking open issues and shipping the top one (or all) through PR, CI, and merge                                                     |
-| `starting-an-app`       | turning this template into a new app: the rename, the AI layer, the locales, the design direction                                   |
+| `starting-an-app`       | turning this template into a new app: the rename, the locales, the design direction                                                 |
 
 ## Security and human approval
 
@@ -235,11 +218,11 @@ names its own boundary with its neighbours.
   repository, not something it ships or requires.
 - Never read or write `.env*` (the `.example`, `.sample` and `.template` variants are
   fine), anything under `secrets/`, or `.claude/settings.local.json`. A `.env` in a
-  checkout of this template holds a real provider credential, so reading one is already
-  a disclosure whether or not anything is written back: no `cat`, no `grep`, no copy to
-  a temp path, and never a value out of it onto a command line. `src/server/env.ts` is
-  the list of names the process reads, and `.env.example` ships every one of them with
-  an empty value — those two are what to open when you need to know what exists.
+  checkout may hold a real credential, so reading one is already a disclosure whether or
+  not anything is written back: no `cat`, no `grep`, no copy to a temp path, and never a
+  value out of it onto a command line. `src/server/env.ts` is the list of names the
+  process reads, and `.env.example` ships every one of them with an empty value — those
+  two are what to open when you need to know what exists.
 - Never write a credential into a tracked file — no registry auth token, no private key.
 - `pnpm-lock.yaml` is generated by `pnpm install`, never hand-edited;
   `managing-dependencies` holds the reasoning.
