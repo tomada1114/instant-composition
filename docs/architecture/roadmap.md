@@ -110,7 +110,8 @@ gone.
   TypeScript client.
 - Retire Next.js and `node:sqlite`, and with them the rest of `src/`, whose rules Phase
   0 copied into the packages; rewrite AGENTS.md and the skills for the new layout.
-- Optionally, a one-off import of the owner's existing SQLite progress.
+- No import of the SQLite progress. The local records were test runs and the owner
+  discards them; the cards under `content/` carry over unchanged.
 
 **Exit.** The SPA talks to the local API, which talks to DynamoDB local; no Next.js
 dependency remains; the OpenAPI document is generated, not hand-written.
