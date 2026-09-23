@@ -81,6 +81,19 @@ until the SPA and the API replace it.
 - The isolation suite is green.
 - No module under `packages/` other than `packages/domain` computes a practice day.
 
+**Landed** at `48a9967` (#56, #57, #59, #60). How each exit was observed:
+
+- Each method of `src/server/services`' `Services` has a command or a query in
+  `packages/application`: `startRound`, `recordAnswers`, `finishRound`,
+  `updateSettings`, `home`, `records`, `recap`, `settingsPage` (which also carries the
+  taxonomy `topics()` served) and `history`. `tests/application-commands.test.ts`,
+  `tests/application-projections.test.ts` and `tests/application-queries.test.ts` run
+  them against the in-memory store.
+- `tests/application-memory-store.test.ts` runs the isolation contract suite in
+  `tests/learner-store-contract.ts`, and passes.
+- `packages/application` reaches the practice day only through `todayOf`, which calls
+  `packages/domain`'s `dayOf` with the learner's time zone and boundary hour.
+
 **AWS.** None.
 
 **Realizes.** [0002](adr/0002-architecture-style-and-repository-layout.md),
