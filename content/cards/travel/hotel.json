@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_2m4f2s9y",
+    "ja": "チェックアウトの前に、ミニバーの料金をちゃんと確認しておけばよかったなあ。",
+    "en": "I wish I had checked the minibar charges before I checked out.",
+    "alternatives": [
+      "If only I had checked the minibar charges before checking out.",
+      "I wish I'd looked at the minibar charges before I checked out."
+    ],
+    "point": "過去の後悔は wish + had + 過去分詞。wish I checked にしない",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8856a3820a14161cce88eb70cedd07e5977e653b0e0424e0defa5af988443a17",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2r8j9n6f",
     "ja": "私たち、昨夜フロントに電話したんですが、誰も出なかったんです。",
     "en": "We called the front desk last night, but nobody answered.",
@@ -106,6 +128,50 @@
         "hash": "sha256:9495243302d0adf69957eba272797b0d8b55aa56d8529689a2ab9b488136c06d",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3f4v5x2p",
+    "ja": "シャワーのお湯が出なかったお詫びだと言って、フロントの人が彼に無料の朝食券をくれたんだ。",
+    "en": "The front desk clerk gave him a free breakfast voucher, saying it was an apology for the hot water not working.",
+    "alternatives": [
+      "The front desk gave him a free breakfast voucher, saying it was to apologize for the hot water not working.",
+      "The receptionist gave him a free breakfast voucher, saying it was an apology for the lack of hot water."
+    ],
+    "point": "「と言って」は文末に , saying を添えて表す",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 8,
+    "grammar": ["participle-clauses", "reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:02ad4bfaefe9cac471152de125cb16a2fbc2a1aec51ac68f29d421d6887b7ebd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3h5h4y5b",
+    "ja": "チェックアウトの後、空港行きのシャトルバスが何時に出るか教えていただけますか？",
+    "en": "Could you tell me what time the shuttle bus to the airport leaves after checkout?",
+    "alternatives": [
+      "Could you tell me when the airport shuttle leaves after checkout?",
+      "Would you mind telling me what time the airport shuttle leaves after checkout?"
+    ],
+    "point": "間接疑問は語順が平叙文。does it leave にしない",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 5,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:13a12447d80110d35be6b3ba94a6dca13f225b1e3c4c96375c7e04dfe9b11b06",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
@@ -176,6 +242,50 @@
     }
   },
   {
+    "id": "c_5d5p4d8k",
+    "ja": "ネットで予約しておけば、今ごろ私たちはもう部屋でくつろいでいるのに。",
+    "en": "If we had booked online, we'd already be relaxing in our room by now.",
+    "alternatives": [
+      "If we'd made the reservation online, we would already be relaxing in our room.",
+      "If we had booked it online, we'd be relaxing in our room by now."
+    ],
+    "point": "過去の条件は had booked、今の結果は would be",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c822f44e2d5fa0c38f4eaf140f5f8e79364cea8996635fb67bd2312e86e8302",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5m2y5s2e",
+    "ja": "フロントの人、きっと私たちの予約の日付を間違えて入れたんだよ。",
+    "en": "The front desk staff must have entered our reservation for the wrong date.",
+    "alternatives": [
+      "The front desk clerk must have put our reservation in for the wrong date.",
+      "Someone at the front desk must have booked us for the wrong date."
+    ],
+    "point": "過去の推量は must have + 過去分詞。must entered にしない",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e36c8828b7bbcee144eee588a33d8542d003868d976b67b87a4d2f0fece443d3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5u5q3c2j",
     "ja": "隣の部屋の人たちが、もう2時間ずっと大きな音で音楽をかけているんです。",
     "en": "The people next door have been playing loud music for two hours.",
@@ -216,6 +326,28 @@
         "hash": "sha256:301f0e1b05dc9950bdef2341d0969211f4dfd56aa7e4224f8abb9816c074a302",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7v2x8t4u",
+    "ja": "この部屋より少し広い部屋はありますか？追加料金がかかっても構いません。",
+    "en": "Do you have a slightly bigger room than this one? I don't mind paying extra.",
+    "alternatives": [
+      "Is there a room a little larger than this one? I don't mind paying more.",
+      "Do you have anything a bit bigger than this room? I'm happy to pay extra."
+    ],
+    "point": "「少し広い」は slightly / a little を比較級の前に置く",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 5,
+    "grammar": ["comparatives-superlatives", "gerunds"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:26190a1dde6ea3129677733326120f1b691fc2957ea1a8f8bc3e158a452b1ad7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_4w3b8k6e",
+    "ja": "彼の説明はわかりやすいけど、もう少しゆっくり話したほうがいいですね。",
+    "en": "His explanations are clear, but he should speak a little more slowly.",
+    "alternatives": [
+      "His explanations are easy to understand, but he should talk a bit more slowly.",
+      "He explains things clearly, but he should speak a little slower."
+    ],
+    "point": "「〜したほうがいい」は had better より should が柔らかい",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 4,
+    "grammar": ["modal-obligation-advice", "be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:12a96286dd885909c971b9d7ca030c13abad97a9162727626c53db28ce1ffa69",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4x4u8r9s",
     "ja": "細かい直しはいくつか必要だけど、全体の構成はすごくいいと思うよ。",
     "en": "Although a few details need fixing, I think the overall structure is great.",
@@ -40,6 +62,28 @@
         "hash": "sha256:3043b5ef4c3f887073413b682a31832865b75eb81eb538ffcad6201be809b6bd",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5q8b5b6b",
+    "ja": "このレポートへのコメントは、明日の朝までに私から送りますね。",
+    "en": "I'll send you my comments on this report by tomorrow morning.",
+    "alternatives": [
+      "I'll get my comments on this report to you by tomorrow morning.",
+      "I'll send my feedback on this report by tomorrow morning."
+    ],
+    "point": "「〜までに」は until ではなく by",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 4,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5a72e41fafb1c6fd27daeeeb500111d885a1521e8ba54e96eb217c4e728bd1f3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
@@ -150,6 +194,28 @@
         "hash": "sha256:98b3b88644325aa19df973011d9f7c5e62fae62a8176b743f736100f096b6ab3",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9j5b5e6m",
+    "ja": "最後にまとめのスライドを入れることは考えてみた？",
+    "en": "Have you thought about adding a summary slide at the end?",
+    "alternatives": [
+      "Have you considered adding a summary slide at the end?",
+      "Did you think about adding a summary slide at the end?"
+    ],
+    "point": "about の後は add ではなく adding",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 4,
+    "grammar": ["gerunds", "present-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0c7405d4d86666a4fd12a21abdc083731c9d446e34f9af87fca83f21a5356098",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   }

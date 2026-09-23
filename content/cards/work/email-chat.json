@@ -66,6 +66,28 @@
     }
   },
   {
+    "id": "c_4u7k6k4g",
+    "ja": "取引先からの返信を昨日の朝からずっと待っているんですが、まだ来ないんです。",
+    "en": "I've been waiting for the client's reply since yesterday morning, but it hasn't come yet.",
+    "alternatives": [
+      "I've been waiting to hear back from the client since yesterday morning, but nothing yet.",
+      "I've been waiting for a reply from the client since yesterday morning, and it still hasn't come."
+    ],
+    "point": "ずっと待っている は have been waiting、since で起点",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 6,
+    "grammar": ["present-perfect-continuous", "present-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:928bb7b15a3d889e1f738d8c7118d5bfc352a8e5ba206b1035ac3469ee0a080c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5t7x9n6c",
     "ja": "取引先が先週送ってきた見積もりの条件を、彼女がもう確認したかどうか、私には分かりません。",
     "en": "I'm not sure whether she's already checked the terms in the quote the client sent us last week.",
@@ -132,6 +154,28 @@
     }
   },
   {
+    "id": "c_7g2b3h8x",
+    "ja": "この件、チャットでやり取りする代わりに、短いオンライン会議をするのはどうですか？",
+    "en": "How about having a quick online meeting instead of discussing this in chat?",
+    "alternatives": [
+      "What about having a short video call instead of discussing this over chat?",
+      "How about holding a quick online meeting instead of going back and forth in chat?"
+    ],
+    "point": "How about と instead of の後は動詞の ing 形",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 4,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:99e079b8d5df3b118a3b8e22464c78147abcb4b434e6de2a2a62a751ae5c6742",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_7q7c4c3d",
     "ja": "メールありがとうございます。私たちは来週の金曜日に御社を訪問する予定です。",
     "en": "Thank you for your email. We're visiting your office next Friday.",
@@ -150,6 +194,28 @@
         "hash": "sha256:68fc6d555e442554be313693c943396ed895b5210d8004babe2f6b1993c9f6c6",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8y7x7h7v",
+    "ja": "先方は、請求書を月曜までに送ると言っていましたよ。",
+    "en": "The client said they would send the invoice by Monday.",
+    "alternatives": [
+      "The client told us they'd send the invoice by Monday.",
+      "The client said they were going to send the invoice by Monday."
+    ],
+    "point": "said に合わせて will を would にする",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 6,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8b309894d378ed10d385c46f68c946ddc4564599e6f425d235fb28735633c4f2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   }

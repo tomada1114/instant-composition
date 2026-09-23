@@ -154,6 +154,28 @@
     }
   },
   {
+    "id": "c_4y4g3b2b",
+    "ja": "すみません、最後のところがよく聞こえませんでした。",
+    "en": "Sorry, I couldn't hear the last part very well.",
+    "alternatives": [
+      "Sorry, I couldn't really hear the last part.",
+      "Excuse me, I couldn't hear the last part clearly."
+    ],
+    "point": "「聞こえなかった」は didn't hear より couldn't hear",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 2,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dc385084e2736050905f8da7cd0e6befaaab47d74f752f22988f47f0a7b02b97",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_6a3u2x9y",
     "ja": "次の議題に移る前に、予算の数字をもう一度確認できないかと思っていたのですが。",
     "en": "I was wondering if we could go over the budget figures once more before we move on.",

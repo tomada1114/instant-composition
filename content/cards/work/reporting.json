@@ -22,6 +22,50 @@
     }
   },
   {
+    "id": "c_2j9x8r9k",
+    "ja": "先方から見積書が届いたら、私がすぐにチームに共有しますね。",
+    "en": "As soon as the client sends the estimate, I'll share it with the team.",
+    "alternatives": [
+      "I'll share the estimate with the team as soon as the client sends it.",
+      "When the client sends the estimate, I'll share it with the team right away."
+    ],
+    "point": "as soon as の後は未来のことでも現在形 sends にする",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:da8db1b650dc45a7769ca0c5d3c9498c4dbec4c978dc5a1422da498cc3525ecc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2k6c7c6c",
+    "ja": "倉庫でトラブルがあったため、残りの部品の納品は来週まで延期されました。",
+    "en": "Due to a problem at the warehouse, delivery of the remaining parts has been postponed until next week.",
+    "alternatives": [
+      "Because of a problem at the warehouse, the remaining parts won't be delivered until next week.",
+      "Delivery of the rest of the parts has been delayed until next week because of a warehouse problem."
+    ],
+    "point": "納品が主語なので has been postponed と受け身にする",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 7,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:46ba7c2ae6d9d73ec86c2a94c5d3f2119e909e36f8215adfb4a4eb54944875b0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3e3x4h2h",
     "ja": "テストはまだ全部終わっていませんが、私たちは金曜のリリースには間に合う見込みです。",
     "en": "Although we haven't finished all the tests yet, we expect to make the Friday release.",
@@ -62,6 +106,28 @@
         "hash": "sha256:0104c4beb097bcd0ab73e36c24094d1519090693650cf2dcf65566b6ae4cae63",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5b2t3v7w",
+    "ja": "そのデータの不一致、午前中からずっと調べてるんですか？よければ私が手伝いますよ。",
+    "en": "Have you been looking into that data mismatch all morning? I can help if you'd like.",
+    "alternatives": [
+      "Have you been working on that data discrepancy since this morning? I'm happy to help if you want.",
+      "Have you been trying to sort out that data mismatch all morning? I can give you a hand if you like."
+    ],
+    "point": "「ずっと〜している」は Have you been -ing で表す",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5d56603e8d567a065bf9214598e8503a9ced7a93592b0bb796bc6daccc99cd6f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
@@ -172,6 +238,72 @@
         "hash": "sha256:bf71143c4009923a20abbfc78d5c8ea38511564793ac93e7f1fbbd9e87bee314",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8b9k5z5e",
+    "ja": "課長、この不具合について、少しアドバイスをいただけますか？",
+    "en": "Could you give me some advice about this bug?",
+    "alternatives": [
+      "Could you give me some advice on this bug?",
+      "Could I ask for some advice about this bug?"
+    ],
+    "point": "advice は数えられないので an advice や advices にしない",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 3,
+    "grammar": ["articles-and-countability", "requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b8693759563a2e82ae43348845f1f9a4b71f0709734bd4391d0883d1c59b65d0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9b5p2u2n",
+    "ja": "すみません、今の人数だと、うちのチームでは今月中に全部の注文をさばけません。",
+    "en": "Sorry, our team can't handle all the orders this month with the current staff.",
+    "alternatives": [
+      "Sorry, with the current staff, our team can't process all the orders this month.",
+      "Sorry, our team can't get all the orders done this month with the current staff."
+    ],
+    "point": "「注文をさばく」は handle the orders",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["can-could-ability", "articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a06d55ebacc658c5c1be47d256da26525d00ca0b938665610fe7c80d0b9dab92",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9c8h8s9e",
+    "ja": "バグの原因はまだ調べているところですが、近いうちに私からまたご連絡します。",
+    "en": "I'm still looking into the cause of the bug, but I'll get back to you soon.",
+    "alternatives": [
+      "I'm still trying to figure out what's causing the bug, but I'll get back to you shortly.",
+      "I'm still investigating the cause of the bug, but I'll let you know soon."
+    ],
+    "point": "「調べる」は look into、「また連絡する」は get back to you",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:92b22ed36ed2bf44222d37330ece40b73bc80733526121574eb9d3ae6de90df1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   }

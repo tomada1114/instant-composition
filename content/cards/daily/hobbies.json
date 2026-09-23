@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2u9y6x9y",
+    "ja": "先週の日曜日、私は一日中家で映画を観ました。",
+    "en": "I watched movies at home all day last Sunday.",
+    "alternatives": [
+      "Last Sunday, I watched movies at home all day.",
+      "I spent all day last Sunday watching movies at home."
+    ],
+    "point": "「一日中」は all day。the や a をつけない",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:25441965d297967a6ebd2d6f8e8035aac8475ae1a62b4ca1983017ce41bb791f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2x8x4w4v",
     "ja": "兄は休日になるとほとんどの時間をキャンプ道具の手入れに使っているけど、実際にキャンプに行くことはめったにない。",
     "en": "My brother spends most of his days off maintaining his camping gear, but he rarely actually goes camping.",
@@ -66,6 +88,94 @@
     }
   },
   {
+    "id": "c_4q5u6r5u",
+    "ja": "姉は毎週日曜日の朝、公園でヨガをしています。",
+    "en": "My sister does yoga in the park every Sunday morning.",
+    "alternatives": [
+      "My sister practices yoga in the park every Sunday morning.",
+      "Every Sunday morning, my sister does yoga in the park."
+    ],
+    "point": "習慣は現在形、主語が三人称単数なので does",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 3,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4e76a81048c715199eeb5914aa8799297db979133c595d60e3cb5f3208ab66c3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4y6t4y6z",
+    "ja": "夫と私は、結婚してから毎年夏に同じキャンプ場に行っているんです。",
+    "en": "My husband and I have gone to the same campsite every summer since we got married.",
+    "alternatives": [
+      "My husband and I have been going to the same campsite every summer since we got married.",
+      "Since we got married, my husband and I have gone to the same campsite every summer."
+    ],
+    "point": "since があるので現在形ではなく現在完了にする",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 6,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3bf0a50153173a69002f9fd30cc9c80b39ac18077830e5f2a3d7d33705ed3114",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5z7k4m4y",
+    "ja": "駅前に新しくできたボルダリングジム、もう行ってみた？",
+    "en": "Have you tried the new bouldering gym near the station yet?",
+    "alternatives": [
+      "Have you been to the new bouldering gym by the station yet?",
+      "Have you checked out the new bouldering gym near the station yet?"
+    ],
+    "point": "「駅前の」は near the station を名詞の後ろに置く",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 6,
+    "grammar": ["present-perfect", "post-modification"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f70faf7b847e2126c347e4f9f43a88b21ddfbf3623cdc015d4bafc378977ef93",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6f2u2w6k",
+    "ja": "この近くに、いいテニスコートはありますか？",
+    "en": "Is there a good tennis court near here?",
+    "alternatives": [
+      "Are there any good tennis courts near here?",
+      "Is there a nice tennis court around here?"
+    ],
+    "point": "疑問文は Is there で始める。There is の語順のままにしない",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 2,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f567cb80188fc264abb8719200ef3c661836072f9c1305269530ac4e001c9214",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_6f9j2d8e",
     "ja": "母は定年後に始めた水彩画にすっかりはまっていて、最近は地元の展示会にまで作品を出しているんです。",
     "en": "My mom has really gotten into the watercolor painting she took up after retiring, and she's even been entering her work in local exhibitions lately.",
@@ -88,6 +198,28 @@
     }
   },
   {
+    "id": "c_6y7w6e5t",
+    "ja": "妹はアウトドア派ってわけじゃないのに、週末はたいていサーフィンに行ってるんだ。",
+    "en": "Although my sister isn't really an outdoor person, she goes surfing most weekends.",
+    "alternatives": [
+      "Even though my sister isn't much of an outdoor person, she goes surfing most weekends.",
+      "My sister isn't really the outdoorsy type, but she goes surfing most weekends."
+    ],
+    "point": "go surfing は to を付けない。go to surfing は誤り",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 6,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4457ed60198c803de036e7b5bacd8e0d0c9d33e633d86e80a017d0ea24298d03",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_7j4r5z2a",
     "ja": "昨日電話くれたとき、ちょうど庭でトマトを植えてたんだ。",
     "en": "I was planting tomatoes in the garden when you called yesterday.",
@@ -106,6 +238,28 @@
         "hash": "sha256:3236c5c2f6f847acf01d4ac2c2f341e98a47a7b68f20550155a16e7cf79294e1",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8c6d4r2w",
+    "ja": "山に登るなら、水を多めに持っていったほうがいいよ。",
+    "en": "If you go hiking in the mountains, you should bring extra water.",
+    "alternatives": [
+      "If you're climbing a mountain, you should take plenty of water.",
+      "You should bring extra water if you go up a mountain."
+    ],
+    "point": "「〜したほうがいい」は should で表す",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 4,
+    "grammar": ["modal-obligation-advice", "time-and-if-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fcac2c743902bd743da4b7ff2cb0d6f76a699a05efe37eef3212a09d39d05c1e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

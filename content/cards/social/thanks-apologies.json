@@ -110,6 +110,28 @@
     }
   },
   {
+    "id": "c_4t7p5g4m",
+    "ja": "彼女の誕生日パーティーに行けなかったこと、ちゃんと謝っておけばよかったな。",
+    "en": "I wish I'd apologized properly to her for missing her birthday party.",
+    "alternatives": [
+      "I wish I had properly apologized to her for not going to her birthday party.",
+      "If only I'd apologized to her properly for missing her birthday party."
+    ],
+    "point": "過去への後悔は wish の後を過去完了にする",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["wishes-regrets", "gerunds"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:08d72d6177a388956eb1c968581bec6c41a66915fcdb0cd5cbc2cfb4d3ae9fae",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5x8c9q6k",
     "ja": "新人の田中くんがミスに気づいてなかったら、私たち、お客さんに間違った見積もりを送ってたよ。ちゃんとお礼言わなきゃ。",
     "en": "If our new hire Tanaka hadn't spotted the mistake, we'd have sent the client the wrong quote. We should thank him properly.",
@@ -128,6 +150,28 @@
         "hash": "sha256:8c76943a4393264945ea237a9d9957d9ea4f0b6aca3da76049a6af0f5bcb2b85",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6k9c2p5a",
+    "ja": "先輩が夜中まで残ってスライドの修正を手伝ってくれたから、お礼にランチをおごったんだ。",
+    "en": "My senior coworker stayed until midnight helping me fix the slides, so I bought them lunch as a thank-you.",
+    "alternatives": [
+      "My senior colleague stayed till midnight helping me fix the slides, so I treated them to lunch.",
+      "My senior coworker stayed until midnight helping me with the slides, so I bought them lunch to say thanks."
+    ],
+    "point": "「残って手伝う」は stayed helping と -ing でつなぐ",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5f5557a2c9cbabba75c1df19b75be77d35f50f568c5fda9759f3a2e4a052b2dd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

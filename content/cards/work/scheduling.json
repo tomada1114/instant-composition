@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2d7p3b5a",
+    "ja": "彼女は締め切りの延長を頼んだだけでなく、打ち合わせもすべて来月に移しました。",
+    "en": "Not only did she ask for a deadline extension, but she also moved all her meetings to next month.",
+    "alternatives": [
+      "She not only asked for a deadline extension but also moved all her meetings to next month.",
+      "Not only did she request an extension on the deadline, she also pushed all her meetings to next month."
+    ],
+    "point": "Not only の後は did she ask と疑問文の語順",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:25970748b1dea435b34b6c87600d02f388ba4b94f70e6f3b3638fe872959bc25",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2e2r5j9h",
     "ja": "彼女は、締め切りが月曜日に変わったことを知らなかったに違いない。",
     "en": "She must not have known that the deadline had been moved to Monday.",
@@ -195,6 +217,28 @@
     }
   },
   {
+    "id": "c_6a8a3j7p",
+    "ja": "来週の打ち合わせ、クライアントが空いているのが水曜の午前だけなので、そこにずらしましょう。",
+    "en": "Let's move next week's meeting to Wednesday morning, which is the only time the client is available.",
+    "alternatives": [
+      "Let's reschedule next week's meeting for Wednesday morning, since that's the only time the client is free.",
+      "Why don't we move next week's meeting to Wednesday morning, the only slot when the client is available?"
+    ],
+    "point": "時間の補足は , which is ～ で後ろから足す",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:91c7946d0bafdf773c54eda11afa9fcebdfb63946aafe4bf48314f5e6587acbe",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_6c4a3g7t",
     "ja": "締め切りは今週の金曜日です。",
     "en": "The deadline is this Friday.",
@@ -298,6 +342,28 @@
         "hash": "sha256:63bf1a70baf31dcc53bb81d5c90f5a6d65938fba28f9dfaddf982d763eb072db",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8b2w2q8f",
+    "ja": "日程をずらす必要があるのは、デザインではなくテストの工程です。",
+    "en": "It's the testing phase, not the design phase, that needs to be rescheduled.",
+    "alternatives": [
+      "What needs to be rescheduled is the testing phase, not the design phase.",
+      "It's not the design phase but the testing phase that needs to be rescheduled."
+    ],
+    "point": "強調は It's A, not B, that ～ の語順で",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 9,
+    "grammar": ["cleft-emphasis", "passive-voice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7c229f9d3f4a1ac2fa4f694a941380fef56a3d8be5a0daf7ce1294f7b6b15cd1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

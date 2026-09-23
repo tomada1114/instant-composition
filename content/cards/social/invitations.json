@@ -349,6 +349,28 @@
     }
   },
   {
+    "id": "c_7p9s4g3a",
+    "ja": "来週の土曜日のほうが、私たちには都合がいいです。",
+    "en": "Next Saturday is better for us.",
+    "alternatives": [
+      "Next Saturday works better for us.",
+      "Next Saturday would be better for us."
+    ],
+    "point": "日付を主語にして is better for us。We are better にしない",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fbb37290506e9dd2831870f2f62b485d116af88024e67c7ec572436dde880795",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_8h6s8j2y",
     "ja": "今夜のパーティー、もう誘われた？",
     "en": "Have you been invited to tonight's party yet?",
@@ -367,6 +389,28 @@
         "hash": "sha256:7054a4a69f0929bbb22c80a8fd7ef1841d6b944b2f2f7990d398b4139075f7a9",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8p7h5s8y",
+    "ja": "彼女の誕生日パーティーに、ケーキを一つ持っていくね。",
+    "en": "I'll bring a cake to her birthday party.",
+    "alternatives": [
+      "I'm going to bring a cake to her birthday party.",
+      "I'll take a cake to her birthday party."
+    ],
+    "point": "丸ごとのケーキは数えられるので a cake",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 2,
+    "grammar": ["articles-and-countability", "future-forms"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:44bd90ffa1c66f9e66b236ba7c2e1bb670a73431223b0ba2d2eb22b89aeae41b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

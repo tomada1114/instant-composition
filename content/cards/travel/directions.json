@@ -176,6 +176,28 @@
     }
   },
   {
+    "id": "c_4b4z7w8h",
+    "ja": "すみません、この辺りに両替所はありますか？それとも一番近いのは駅の中ですか？",
+    "en": "Excuse me, is there a currency exchange around here, or is the nearest one inside the station?",
+    "alternatives": [
+      "Excuse me, is there somewhere to exchange money near here, or is the closest one in the station?",
+      "Sorry, is there a currency exchange office nearby, or is the nearest one inside the station?"
+    ],
+    "point": "初めて話題にする両替所は a、一つに決まる「一番近い」は the",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 6,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b6d7bc3d6c0e5db28a0cf635b8dc880d4ef3bd86301b883918dc0d316730c8d1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_6f9m6g6u",
     "ja": "すみません、この近くで SIM カードが買える場所を知りませんか？",
     "en": "Excuse me, do you know a place near here where I can buy a SIM card?",
@@ -216,6 +238,50 @@
         "hash": "sha256:9a918cfac5ef4fc74097eb4650229140888b799c5f5fb62ec7c0ffe9124761f1",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6r6k6e2t",
+    "ja": "さっき道を聞いた男の人が、その橋は通行止めだから遠回りしないといけないって言ってたよ。",
+    "en": "The man I asked earlier said the bridge was closed, so we'd have to take a detour.",
+    "alternatives": [
+      "The guy I asked for directions earlier said the bridge was closed and we would need to take a detour.",
+      "The man I asked a minute ago told me the bridge was closed, so we'd have to go the long way around."
+    ],
+    "point": "時制の一致で is→was、will have to→would have to にする",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 6,
+    "grammar": ["reported-speech", "relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8afbd522569c524242bfd18bdb66b0eeb9f33f0e06ffcf47e5a2226b953b407a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7e8v9g6v",
+    "ja": "道がわからなければ、ホテルのフロントの人に地図に印をつけてもらうといいですよ。",
+    "en": "If you're not sure of the way, you could have the front desk mark it on a map for you.",
+    "alternatives": [
+      "If you don't know the way, you could get the front desk to mark it on a map for you.",
+      "If you're unsure of the way, why not have the front desk mark it on a map for you?"
+    ],
+    "point": "have＋人＋動詞の原形。get なら get＋人＋to 不定詞になる",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 9,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5648b7234c8eb01b0ab13dc8c0ca3d42c8756c3d522120b7a4cf5cca0f3075fc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

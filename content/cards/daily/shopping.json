@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2r5k2q7k",
+    "ja": "ネットだと、この二つのかばんはうまく比べられないな。",
+    "en": "I can't really compare these two bags online.",
+    "alternatives": [
+      "I can't compare these two bags very well online.",
+      "It's hard to compare these two bags online."
+    ],
+    "point": "「比べられない」は can't compare。bags と複数形に",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["can-could-ability", "articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ac478b9919dffda495f119bbb758f392458517a98133538a681dc297a626e8f5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2w5q4u4q",
     "ja": "もし僕が君なら、ネットで買う前にお店で実際に試着してみるよ。",
     "en": "If I were you, I'd try it on in a store before buying it online.",
@@ -66,6 +88,50 @@
     }
   },
   {
+    "id": "c_5d4n7g9p",
+    "ja": "ネットで家具を買う前に、実際に使ってる人の情報がもう少し欲しいんだよね。",
+    "en": "Before I buy furniture online, I'd like a bit more information from people who actually use it.",
+    "alternatives": [
+      "I'd like a little more information from actual users before I buy furniture online.",
+      "Before buying furniture online, I want some more information from people who really use it."
+    ],
+    "point": "furniture も information も数えられない名詞。a や -s は付けない",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["articles-and-countability", "time-and-if-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ae5a8e485bea9ca24d15c6a24dc27c6e6f88e81f2a7eb6cecb0ce196a7ba4ca2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5e7g4b5s",
+    "ja": "すみません、このジャケットは今日セール中ですか？",
+    "en": "Excuse me, is this jacket on sale today?",
+    "alternatives": [
+      "Excuse me, is this jacket discounted today?",
+      "Excuse me, is there a sale on this jacket today?"
+    ],
+    "point": "「セール中」は on sale。be 動詞を文頭に出して疑問文に",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dd52b94739baa8ce09833933a6c9667a54e3662a51182cd336fbc6dbb504ac7b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5p8j4b8u",
     "ja": "このシャツを返品するには、レシートとタグの両方が必要ですか？",
     "en": "Do I need both the receipt and the tags to return this shirt?",
@@ -128,6 +194,50 @@
         "hash": "sha256:491548606d0257e76ccec952681a4e7c74097949d577b445bebdd0a339c7fe6d",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7g2j2n9y",
+    "ja": "どっちのサイズにするか決める前に、このスニーカーを試しに履いてみてもいいですか？",
+    "en": "Can I try these sneakers on before I decide which size to get?",
+    "alternatives": [
+      "Could I try on these sneakers before I decide which size to get?",
+      "Is it okay if I try these sneakers on before deciding on a size?"
+    ],
+    "point": "「試しに履く」は try on。目的語は on の前にも後にも置ける",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["phrasal-verbs", "requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d629ec2db3cb3bb4af402c7e235a4894aa66bf7ccfeab1cec700c4022eb63c46",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7w2x4q7d",
+    "ja": "レシートがあれば、こちらのシャツは返品できますよ。",
+    "en": "You can return this shirt with a receipt.",
+    "alternatives": [
+      "You can return this shirt if you have a receipt.",
+      "With a receipt, you can return this shirt."
+    ],
+    "point": "receipt は数えられる名詞なので a receipt と冠詞をつける",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["can-could-ability", "articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d13ef51aa95a8beef0b5601958f3a47f48209be8233a6759709d291cb35a027a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

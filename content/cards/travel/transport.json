@@ -88,6 +88,28 @@
     }
   },
   {
+    "id": "c_3y5d6b9c",
+    "ja": "雨がひどいから、タクシーで行こうよ。",
+    "en": "It's raining hard, so let's take a taxi.",
+    "alternatives": [
+      "It's raining hard, so let's get a taxi.",
+      "It's pouring, so let's take a taxi."
+    ],
+    "point": "「タクシーで行く」は take a taxi で言える",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 2,
+    "grammar": ["imperatives", "progressive-aspect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:880989e57b0eccb5d2eda02d001c69dd2af1731acec1186b073a1920e6bee639",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4c9x9e4t",
     "ja": "次のバスが何時に来るか、駅員さんに聞いてみて。",
     "en": "Try asking the station staff when the next bus comes.",
@@ -150,6 +172,28 @@
         "hash": "sha256:b7bfaf9c7156438e79ba0d61adbc0fd33493e93f8f7df80238e0c021ae95396c",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6r8d3d9d",
+    "ja": "私たち、乗る前に切符を買わないといけないんですか？",
+    "en": "Do we have to buy tickets before boarding?",
+    "alternatives": [
+      "Do we need to buy tickets before we get on?",
+      "Do we have to get tickets before we get on?"
+    ],
+    "point": "疑問文は Do we have to 〜？の形にする",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:50fcf1fda0ebdd97d629a93d9b7abd4baf0dbbf9f6d3428d7b700315e3aa30c4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
@@ -238,6 +282,28 @@
         "hash": "sha256:124d283eb6e41a0b43b2b57582c4229b4a5e50fa1749e41e70e8f7447631283b",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7v9m6e3x",
+    "ja": "兄は昨日、間違った電車に乗っちゃったんだ。",
+    "en": "My brother took the wrong train yesterday.",
+    "alternatives": [
+      "My brother got on the wrong train yesterday.",
+      "Yesterday my brother took the wrong train."
+    ],
+    "point": "「間違った電車」は a ではなく the wrong train",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 2,
+    "grammar": ["past-simple", "articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:faacdfeb921140c83e3c975fd15d21ef490eb45ff5c8673a6e84c6c2aaabba67",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
