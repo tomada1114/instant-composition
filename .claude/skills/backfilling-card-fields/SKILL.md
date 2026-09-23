@@ -45,16 +45,23 @@ cards can take the field without the drill pausing.
 
 ## Procedure
 
-1. **Branch.** As in `generating-cards` step 1.
+1. **Branch.** Run `git status --porcelain`. If anything outside `content/` is modified,
+   stop and report it. On `main`, create `cards/<YYYY-MM-DD>` (append `-2`, `-3` … if it
+   exists) and switch to it. On a `cards/*` branch, stay on it. On any other branch,
+   stop and report — never commit anywhere but a `cards/*` branch.
 2. `pnpm cards:queue --missing <name> [range] --limit <n> --json` — cards without the
    field, stamped cards first.
 3. Batch by 20. For each batch, one writer sub-agent (the `executor` agent in Claude
    Code when defined) gets the field spec, `content/guides/writing.md`, and the cards;
-   it returns `[{ "id": …, "<name>": … }]`.
-4. Save to `tmp/cards/<name>-<batch>.json`, `pnpm cards:update` it. Rejected entries are
-   reported, not retried by hand.
+   it returns `[{ "id": …, "<name>": … }]`. Take the JSON array out of the reply (strip
+   code fences and prose); if it does not parse, re-ask once, and if it still does not,
+   skip the batch and report it.
+4. Save to `tmp/cards/<name>-<batch>.json` and `pnpm cards:update` it — one write
+   command at a time, never in parallel (a second one fails with `ERR_CARDS_BUSY`).
+   Rejected entries are reported, not retried by hand.
 5. After all batches: run `reviewing-cards --field <name>`. **REQUIRED:**
    `reviewing-cards`.
-6. Commit: `feat(cards): backfill <name> on <n> cards`.
-7. Report: filled, rejected with reasons, reviewed, and what
-   `pnpm cards:queue --missing <name> --count` still lists.
+6. Commit: `git add content`; if `git diff --cached --quiet` reports nothing staged,
+   skip it. Otherwise `git commit -m "feat(cards): backfill <name> on <n> cards"`.
+7. Report: filled, rejected with reasons, batches skipped for bad writer output,
+   reviewed, and what `pnpm cards:queue --missing <name> --count` still lists.

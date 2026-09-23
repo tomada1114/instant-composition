@@ -206,8 +206,10 @@ to reuse.
 
 Cards are written only by the three card skills below through `pnpm cards:*`, never by
 hand-editing the JSON: the commands assign ids, lint, check for near-duplicates, keep
-each file in the one canonical form, and record deletions. The tag lists and guides are
-edited by hand, and `pnpm cards:lint` checks them too.
+each file in the one canonical form, and record deletions. Each write command holds
+`content/.cards.lock` while it runs, so they run one at a time; a second one fails fast
+with `ERR_CARDS_BUSY`. The tag lists and guides are edited by hand, and
+`pnpm cards:lint` checks them too.
 
 ## Skills
 
