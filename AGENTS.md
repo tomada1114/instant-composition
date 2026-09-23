@@ -169,9 +169,12 @@ The repository is a pnpm workspace: the Next.js application is its root package,
 `pnpm-workspace.yaml` adds each directory under `packages/`. These are the packages
 `docs/architecture/adr/0002-architecture-style-and-repository-layout.md` lays out, and
 they grow as the restructure moves code into them. `packages/domain` holds a copy of
-`src/core/`'s rules, with the practice day computed in the learner's time zone; `src/`
-is still where the running application lives, and it keeps its own `src/core/` until
-Phase 1 retires it. `apps/` and `infra/` join the workspace with their first package.
+`src/core/`'s rules, with the practice day computed in the learner's time zone, and
+`packages/application` the request context, the authorization policy and the
+learner-bound store port with its in-memory adapter, which runs the isolation contract
+suite in `tests/learner-store-contract.ts`; `src/` is still where the running
+application lives, and it keeps its own `src/core/` until Phase 1 retires it. `apps/`
+and `infra/` join the workspace with their first package.
 
 - **The edges.** `application` → `domain`, and `domain` → nothing — no workspace
   package, no npm package, no Node builtin. A package reaches another only by its name,

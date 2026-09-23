@@ -58,6 +58,22 @@ export {
   type PlacementInput,
 } from "./placement";
 export { roundPoints, totals, type Totals } from "./points";
+export type {
+  CompositionDetail,
+  DayTally,
+  FirstPassMark,
+  ItemProgress,
+  ItemRef,
+  ItemSnapshot,
+  LearnerStats,
+  LevelEntry,
+  LevelReason,
+  Outcome,
+  Portion,
+  ReviewEntry,
+  Round,
+  RoundOutcome,
+} from "./records";
 export { randomIndex, seededRandom, shuffled, type Random } from "./random";
 export { err, ok, type Result } from "./result";
 export {
