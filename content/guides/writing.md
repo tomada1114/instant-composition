@@ -32,8 +32,13 @@ few seconds, and grades themselves by comparing against the back.
   composition books.
 - One sentence. Two short sentences only when the second is what makes the scene
   (「傘持ってる？雨が降りそう。」).
-- Plain punctuation: 、。？！. No 「…」, no English words (proper nouns and product
-  names aside), no romaji.
+- Plain punctuation: 、。？！. No 「…」 and no romaji.
+- Latin letters only for proper nouns, product names, acronyms and units, written the
+  way a Japanese writer
+  would: 「Slack で送って」, 「iPhone」, 「OK です」, 「PR を出す」,「Tシャツ」, 「5km」.
+  Never an English word in lower case (「meeting を始めよう」): it hands the learner the
+  answer. The lint rejects a Latin word that starts lower case unless it is a unit or
+  one of the few names that do (iPhone, macOS).
 
 ## `en` — the model answer
 
