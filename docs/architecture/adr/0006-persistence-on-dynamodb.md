@@ -127,8 +127,10 @@ own key prefixes, or their own table if their access patterns diverge.
 
 - On-demand capacity. DynamoDB bills per request, with no capacity to plan and no charge
   for idle capacity.
-- Point-in-time recovery and deletion protection are on. The table belongs to the
-  stateful stack ([ADR-0009](0009-aws-topology-environments-and-operations.md)).
+- Point-in-time recovery and deletion protection are on in every stage, with each
+  stage's recovery period set in
+  [ADR-0009](0009-aws-topology-environments-and-operations.md). The table belongs to the
+  stateful stack.
 - Analytics come later, through an export to S3. Nothing reads the live table for
   reporting.
 
