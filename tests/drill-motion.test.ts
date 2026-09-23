@@ -60,6 +60,18 @@ describe("playMotion", () => {
     expect(el.calls[0]?.options.duration).toBe(duration);
   });
 
+  it("rises a milestone card over 200 ms after the delay it is given", () => {
+    stubReducedMotion(false);
+    const el = element();
+    playMotion(el, "title", 300);
+    expect(el.calls[0]?.options).toStrictEqual({
+      duration: 200,
+      easing: "ease-out",
+      delay: 300,
+      fill: "backwards",
+    });
+  });
+
   it("plays nothing under reduced motion", () => {
     stubReducedMotion(true);
     const el = element();

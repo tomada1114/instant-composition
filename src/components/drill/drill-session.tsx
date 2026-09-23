@@ -3,6 +3,7 @@ import { useEffect, useReducer, useState, type ReactElement } from "react";
 
 import { drillReducer } from "../../core/drill-machine";
 import { currentCard, initDrill, type DrillState } from "../../core/drill-state";
+import type { RoundKind } from "../../core/types";
 import type { RoundPayload } from "../../core/views";
 import { useRouter } from "../../i18n/navigation";
 import { CardScreen } from "./card-screen";
@@ -52,7 +53,15 @@ export function DrillSession({
   round,
   first,
   sound,
-}: Readonly<{ round: RoundPayload; first: boolean; sound: boolean }>): ReactElement {
+  dailySize,
+  onNext,
+}: Readonly<{
+  round: RoundPayload;
+  first: boolean;
+  sound: boolean;
+  dailySize: number;
+  onNext: (kind: RoundKind) => void;
+}>): ReactElement {
   const t = useTranslations("Drill");
   const router = useRouter();
   const [state, dispatch] = useReducer(drillReducer, round, startDrill);
@@ -108,7 +117,14 @@ export function DrillSession({
   }
   if (phase.kind === "finishing")
     // The round's own result is unsaved too, so a failed finish reports at least one record.
-    return <DrillDone finish={finish} unsaved={Math.max(1, queue.pending().length)} />;
+    return (
+      <DrillDone
+        finish={finish}
+        unsaved={Math.max(1, queue.pending().length)}
+        dailySize={dailySize}
+        onNext={onNext}
+      />
+    );
 
   const resumeAt =
     state.pass === "first"

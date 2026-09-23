@@ -3,19 +3,16 @@ import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import type { ReactElement } from "react";
 
-import { DrillScreen } from "../../../components/drill/drill-screen";
+import { RecapScreen } from "../../../components/summary/recap-screen";
 import { LOCALES } from "../../../i18n/locales";
+import { redirect } from "../../../i18n/navigation";
 import { getServices } from "../../../server/composition";
 
 /** It reads the progress database on every request, so it is never prerendered. */
 export const dynamic = "force-dynamic";
 
-/**
- * One round: `?kind=` picks today's portion (the default), yesterday's, an
- * extra round, or the placement. The client reads it and fetches the round,
- * since it is what times the cards.
- */
-export default async function DrillPage({
+/** W9r: today's last finished round's summary; with none yet, the start screen. */
+export default async function RecapPage({
   params,
 }: Readonly<{
   params: Promise<{ locale: string }>;
@@ -27,12 +24,9 @@ export default async function DrillPage({
   // eslint-disable-next-line @typescript-eslint/no-deprecated -- required by next-intl's legacy static-rendering API
   setRequestLocale(locale);
 
-  const home = getServices().home();
-  return (
-    <DrillScreen
-      first={home.state.kind === "placement"}
-      sound={home.sound}
-      dailySize={home.dailySize}
-    />
-  );
+  const summary = getServices().recap();
+  if (summary === undefined) {
+    return redirect({ href: "/", locale });
+  }
+  return <RecapScreen summary={summary} />;
 }
