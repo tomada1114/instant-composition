@@ -59,13 +59,18 @@ another's content.
   demand. `authoring-skills` owns how one is written, mirrored, and checked.
 - `.env.example` — every environment name the process reads, shipped with an empty
   value. It is the file to open when the question is what exists.
+- `docs/architecture/` — the architecture record: vision, current state, roadmap,
+  references and the ADRs. `recording-architecture-decisions` owns when a change owes an
+  ADR there and how one is written.
 - TSDoc in `src/**` — a published symbol's contract. An interface several
   implementations share is where this matters most: it is what an implementer reads
   instead of reading the implementation that happens to ship. `writing-typescript` owns
   what the comment says; this skill owns only whether one is owed.
 
-There is no `CHANGELOG.md` and no `docs/` tree here. A pull request explains itself in a
-line or two, and `.github/PULL_REQUEST_TEMPLATE.md` owns that — do not reinstate either.
+There is no `CHANGELOG.md` here, and `docs/` holds only the architecture record. A pull
+request explains itself in a line or two, and `.github/PULL_REQUEST_TEMPLATE.md` owns
+that — do not reinstate a changelog, and do not grow `docs/` a second tree beside
+`docs/architecture/`.
 
 ## A skill is documentation; editing one is usually not a doc change
 
