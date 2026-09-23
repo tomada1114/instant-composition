@@ -1,10 +1,10 @@
 {
   "Metadata": {
-    "title": "Next.js App Template",
-    "description": "An App Router skeleton."
+    "title": "Instant Composition",
+    "description": "Instant English composition drills: see a Japanese sentence, say it in English before the timer runs out."
   },
   "HomePage": {
-    "title": "Next.js App Template",
+    "title": "Instant Composition",
     "intro": "The App Router skeleton renders in {language}.",
     "localeCount": "{count, plural, one {# language ships with this template.} other {# languages ship with this template.}}"
   },

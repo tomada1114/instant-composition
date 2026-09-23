@@ -1,8 +1,9 @@
-# my-package
+# instant-composition
 
-[![CI](https://github.com/tomada1114/nextjs-app-template/actions/workflows/ci.yml/badge.svg)](https://github.com/tomada1114/nextjs-app-template/actions/workflows/ci.yml)
+[![CI](https://github.com/tomada1114/instant-composition/actions/workflows/ci.yml/badge.svg)](https://github.com/tomada1114/instant-composition/actions/workflows/ci.yml)
 
-A short description.
+Instant English composition drills: see a Japanese sentence, say it in English before
+the timer runs out.
 
 ## What this is
 
@@ -93,4 +94,4 @@ change is held to.
 
 ## License
 
-[MIT](LICENSE) © Your Name
+[MIT](LICENSE) © tomada
