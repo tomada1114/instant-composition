@@ -13,7 +13,7 @@ export function IntroScreen({
   const t = useTranslations("Drill.intro");
   const card = useTranslations("Drill.card");
   return (
-    <main className="mx-auto box-content flex min-h-dvh max-w-column flex-col px-4 py-8">
+    <main className="mx-auto box-content flex min-h-[calc(100dvh-4rem)] max-w-column flex-col px-4 py-8">
       <div className="flex flex-1 flex-col justify-center gap-8">
         <div className="flex flex-col gap-2">
           <h1>{first ? t("titleFirst", { count }) : t("titleAgain", { count })}</h1>

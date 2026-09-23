@@ -8,7 +8,7 @@ import { Link } from "../../i18n/navigation";
 import type { FinishState } from "./use-drill";
 
 const SHELL =
-  "mx-auto box-content flex min-h-dvh max-w-column flex-col gap-4 px-4 py-8";
+  "mx-auto box-content flex min-h-[calc(100dvh-4rem)] max-w-column flex-col gap-4 px-4 py-8";
 
 /**
  * Where a round ends: the summary once the server has it, or the notice that
@@ -42,7 +42,7 @@ export function DrillDone({
   if (!done) return <main className={SHELL} />;
   return (
     <main className={SHELL}>
-      <h1 ref={heading} tabIndex={-1}>
+      <h1 ref={heading} tabIndex={-1} className="focus-visible:outline-none">
         {t("done.title")}
       </h1>
       <div className="mt-auto">
