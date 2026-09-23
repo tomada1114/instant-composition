@@ -3,6 +3,7 @@ import { act, fireEvent, render, screen, within } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import ja from "../messages/ja.json";
+import { RecapScreen } from "../src/components/summary/recap-screen";
 import { SummaryScreen } from "../src/components/summary/summary-screen";
 import type { RoundSummary } from "../src/core/views";
 import { makeSummary } from "./summary-fixture";
@@ -269,6 +270,20 @@ describe("SummaryScreen, W9r: re-reading today", () => {
       window.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape" }));
     });
     expect(push).toHaveBeenLastCalledWith("/");
+  });
+});
+
+describe("RecapScreen", () => {
+  it("reads today's last summary back, with no buttons below", () => {
+    render(
+      <NextIntlClientProvider locale="ja" messages={ja}>
+        <RecapScreen summary={makeSummary()} />
+      </NextIntlClientProvider>,
+    );
+    expect(
+      screen.getByRole("heading", { level: 1, name: ja.Summary.title.recap }),
+    ).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /もう/u })).not.toBeInTheDocument();
   });
 });
 
