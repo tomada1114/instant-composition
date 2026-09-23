@@ -174,10 +174,12 @@ first package.
 
 - **The edges.** `application` → `domain`, and `domain` → nothing — no workspace
   package, no npm package, no Node builtin. A package reaches another only by its name,
-  `@instant-composition/<dir>`, and only when its own `package.json` declares it.
-  `eslint.config.mjs`'s `boundaries/packages/*` blocks and `tests/boundaries.test.ts`
-  hold the same table, the test also against each manifest; a package added under
-  `packages/` fails the suite until it is given a row.
+  `@instant-composition/<dir>`, and only when its own `package.json` declares it. The
+  same holds from outside `packages/`: `src/`, `tests/` and `scripts/` never import a
+  package by a relative path, which would walk past its `exports`. `eslint.config.mjs`'s
+  `boundaries/packages/*` blocks and `tests/boundaries.test.ts` hold the same table, the
+  test also against each manifest; a package added under `packages/` fails the suite
+  until it is given a row.
 - **Source, not builds.** A package's `exports` points at its `src/index.ts`, and
   whatever consumes it compiles that source; nothing is emitted to a `dist/`. Each
   package has its own `tsconfig.json` over the shared `tsconfig.base.json`, with no DOM

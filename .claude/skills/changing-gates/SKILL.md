@@ -313,12 +313,17 @@ Traps that have cost time here:
   `boundaries/core-is-framework-free-and-imports-no-zone`, `boundaries/i18n-is-a-leaf`,
   `boundaries/server-never-imports-app`,
   `boundaries/components-import-only-core-and-i18n`,
-  `boundaries/private-trees-are-not-importable`, `boundaries/packages/<dir>` (one per
+  `boundaries/private-trees-are-not-importable`,
+  `boundaries/app-reaches-packages-by-name`, `boundaries/packages/<dir>` (one per
   workspace package), `automation/node-scripts`, `tests/vitest-rules`,
   `tests/relaxations`. Four of the `boundaries/*` blocks are one import order written
   per zone, so they match disjoint file sets by construction; the fifth protects private
-  trees from `tests/` and `scripts/`. Name a new block the same way — the name is what a
-  reader, and ESLint's own config inspector, has to identify it by.
+  trees from `tests/` and `scripts/`, and `boundaries/app-reaches-packages-by-name`
+  covers `src/app/` and `src/proxy.ts`, which no zone block matches. All six restate
+  `NO_RELATIVE_PACKAGE_IMPORT` — a relative path into `packages/` — because the rule's
+  options replace rather than merge, and a block that dropped it would reopen the way
+  past a package's `exports`. Name a new block the same way — the name is what a reader,
+  and ESLint's own config inspector, has to identify it by.
 - `src/shared-syntax`, `public-api/explicit-surface` and `src/size-budget` match
   `SOURCE_FILES`, which is `src/` and every `packages/*/src/`: a rule meant for the
   application's own source belongs there, so moving a module into a package never drops

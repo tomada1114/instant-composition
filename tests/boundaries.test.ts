@@ -55,23 +55,26 @@ function importSpecifiers(source: string): string[] {
 }
 
 /**
- * Every `.ts`/`.tsx` file under `directory`, as repo-relative POSIX paths.
+ * Every file under `directory` whose name matches `extension` — `.ts`/`.tsx`
+ * by default — as repo-relative POSIX paths.
  *
  * @remarks
  * `node_modules` is skipped because pnpm gives every workspace package one of
  * its own, and what sits in it is the dependencies' code, not the package's.
+ * `fixtures` is skipped because `tests/fixtures/` holds data under test, some
+ * of it malformed on purpose, rather than modules of this repository.
  */
-function modulesUnder(directory: string): string[] {
+function modulesUnder(directory: string, extension = /\.tsx?$/): string[] {
   const absolute = path.join(repoRoot, directory);
   return readdirSync(absolute, { withFileTypes: true }).flatMap((entry) => {
     const relative = `${directory}/${entry.name}`;
-    if (entry.name === "node_modules") {
+    if (entry.name === "node_modules" || entry.name === "fixtures") {
       return [];
     }
     if (entry.isDirectory()) {
-      return modulesUnder(relative);
+      return modulesUnder(relative, extension);
     }
-    return /\.tsx?$/.test(entry.name) ? [relative] : [];
+    return extension.test(entry.name) ? [relative] : [];
   });
 }
 
@@ -566,6 +569,80 @@ describe("packages/ imports run one way, application → domain", () => {
     expect(offenders).toStrictEqual([
       "packages/application/src/probe.ts: @instant-composition/domain/src/day",
       "packages/application/src/probe.ts: ../../domain/src/index",
+    ]);
+  });
+});
+
+// --- reaching a package from outside it ---------------------------------------
+
+/**
+ * `"<file>: <specifier>"` for every relative import of `modules` that resolves
+ * into `packages/`.
+ *
+ * @remarks
+ * A package publishes only what its `exports` names, and a relative path walks
+ * straight past that into any module it holds. From outside a package the one
+ * way in is its name, `@instant-composition/<dir>`. The `@/` alias maps to
+ * `src/` alone, so it cannot reach `packages/` and needs no branch here.
+ */
+function relativeReachesIntoPackages(modules: readonly Module[]): string[] {
+  return modules.flatMap((module) =>
+    module.specifiers
+      .filter(
+        (specifier) =>
+          specifier.startsWith(".") &&
+          inZone(
+            path.posix.normalize(
+              path.posix.join(path.posix.dirname(module.file), specifier),
+            ),
+            "packages",
+          ),
+      )
+      .map((specifier) => `${module.file}: ${specifier}`),
+  );
+}
+
+describe("a workspace package is reached from outside only by its name", () => {
+  const trees: readonly (readonly [string, RegExp])[] = [
+    ["src", /\.tsx?$/],
+    ["tests", /\.tsx?$/],
+    ["scripts", /\.mjs$/],
+  ];
+
+  it.each(trees)(
+    "finds no relative import into packages/ under %s/",
+    (tree, extension) => {
+      const files = modulesUnder(tree, extension);
+      expect(files).not.toStrictEqual([]);
+      const modules = files.map((file) => ({
+        file,
+        specifiers: importSpecifiers(readFileSync(path.join(repoRoot, file), "utf8")),
+      }));
+      expect(relativeReachesIntoPackages(modules)).toStrictEqual([]);
+    },
+  );
+
+  it("reports a relative reach into a package, and nothing else, so the check is not vacuous", () => {
+    const offenders = relativeReachesIntoPackages([
+      {
+        file: "tests/probe.test.ts",
+        specifiers: [
+          "../packages/domain/src/day",
+          "./../packages/application",
+          "@instant-composition/domain",
+          "./repo-tree",
+          "../src/core/result",
+        ],
+      },
+      {
+        file: "src/server/services/probe.ts",
+        specifiers: ["../../../packages/domain/src/index", "@/core/result"],
+      },
+    ]);
+    expect(offenders).toStrictEqual([
+      "tests/probe.test.ts: ../packages/domain/src/day",
+      "tests/probe.test.ts: ./../packages/application",
+      "src/server/services/probe.ts: ../../../packages/domain/src/index",
     ]);
   });
 });

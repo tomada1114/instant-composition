@@ -121,6 +121,23 @@ const WORKSPACE_EDGES = /** @type {const} */ ({
 });
 
 /**
+ * A relative path into `packages/`, from any tree outside it.
+ *
+ * @remarks
+ * A package publishes only what its `exports` names; a relative path walks
+ * past that into any module it holds. Every block below that sets
+ * `no-restricted-imports` for `src/`, `tests/` or `scripts/` restates this
+ * entry, because the rule's options replace rather than merge across config
+ * objects. `tests/boundaries.test.ts` resolves each relative specifier and
+ * checks the same thing without relying on how it is spelled.
+ */
+const NO_RELATIVE_PACKAGE_IMPORT = {
+  group: ["../**/packages/**", "./../**/packages/**"],
+  message:
+    "Reach a workspace package by its name, @instant-composition/<dir>, which goes through its `exports`. A relative path into packages/ walks past the package's public surface into modules it keeps private.",
+};
+
+/**
  * The `no-restricted-imports` block for one workspace package.
  *
  * @remarks
@@ -344,6 +361,7 @@ export default defineConfig([
         "error",
         {
           patterns: [
+            NO_RELATIVE_PACKAGE_IMPORT,
             {
               group: [
                 "next",
@@ -374,6 +392,7 @@ export default defineConfig([
         "error",
         {
           patterns: [
+            NO_RELATIVE_PACKAGE_IMPORT,
             {
               group: [...ZONE.app, ...ZONE.server, ...ZONE.components],
               message:
@@ -392,6 +411,7 @@ export default defineConfig([
         "error",
         {
           patterns: [
+            NO_RELATIVE_PACKAGE_IMPORT,
             {
               group: [...ZONE.app, ...ZONE.components],
               message:
@@ -418,6 +438,7 @@ export default defineConfig([
         "error",
         {
           patterns: [
+            NO_RELATIVE_PACKAGE_IMPORT,
             {
               group: [...ZONE.app, ...ZONE.server],
               message: COMPONENTS_LOOK_ONLY_DOWNWARD,
@@ -430,6 +451,16 @@ export default defineConfig([
           ],
         },
       ],
+    },
+  },
+  {
+    // `src/app/` is the top of the import order and names every zone below
+    // it, so it has no zone block of its own; this one holds only the rule
+    // every tree shares. `src/proxy.ts` sits beside it at the root of `src/`.
+    name: "boundaries/app-reaches-packages-by-name",
+    files: ["src/app/**/*.ts", "src/app/**/*.tsx", "src/proxy.ts"],
+    rules: {
+      "no-restricted-imports": ["error", { patterns: [NO_RELATIVE_PACKAGE_IMPORT] }],
     },
   },
   // --- workspace package boundaries ----------------------------------------
@@ -521,6 +552,7 @@ export default defineConfig([
         "error",
         {
           patterns: [
+            NO_RELATIVE_PACKAGE_IMPORT,
             {
               // `dist/internal` used to be listed beside this: the same module
               // after a build, back when this repository published a tarball.
