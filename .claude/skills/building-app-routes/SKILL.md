@@ -37,12 +37,12 @@ almost never a file under `src/app/`.
 
 ## The Server / Client boundary
 
-Every file under `src/app/` is a Server Component until one says `"use client"`. This
-template ships no such file: `src/app/[locale]/page.tsx` calls `useLocale` and
-`useTranslations` and still runs on the server, because `next-intl` publishes a
-`react-server` export condition and those hooks resolve to a server implementation
-there. A hook is therefore not evidence that a file is a Client Component — the
-directive is, and nothing else is.
+Every file under `src/app/` is a Server Component until one says `"use client"`. No file
+under `src/app/` carries it — the directive sits on the screens under `src/components/`
+a page renders — and `src/app/[locale]/not-found.tsx` calls `useTranslations` and still
+runs on the server, because `next-intl` publishes a `react-server` export condition and
+those hooks resolve to a server implementation there. A hook is therefore not evidence
+that a file is a Client Component — the directive is, and nothing else is.
 
 - Add `"use client"` to the smallest file that actually needs the client: the one owning
   state, an effect, a browser API, or a DOM event handler. Pass it data as props from
@@ -63,14 +63,16 @@ directive is, and nothing else is.
   beside the handler. A client under `src/components/` cannot import `src/server/`, and
   a second copy of the shape on the client side is one that drifts from the server's.
 
-An **asynchronous** Server Component is not unit-tested here. `LocaleLayout` in
-`src/app/[locale]/layout.tsx` awaits its `params`; Testing Library renders on the client
+An **asynchronous** Server Component is not unit-tested here. Every page and layout
+under `src/app/[locale]/` awaits its `params`; Testing Library renders on the client
 renderer, which has nothing to resolve that promise with, so a test of it would assert
 against a render production never performs. `vitest.config.ts`'s `component` project
-covers the synchronous case instead — `tests/home-page.test.tsx` renders `HomePage`
-under jsdom and supplies the `NextIntlClientProvider` context a real Server Component
-tree would have provided. Everything asynchronous is checked by `pnpm build` and by
-opening the page.
+covers what a page hands its data to instead: a page stays a thin reader of `server/`
+that passes a view to one Client Component, and `tests/home-screen.test.tsx` renders
+that component — `HomeScreen` with a `HomeView` — under jsdom, supplying the
+`NextIntlClientProvider` context the Server Component tree would have provided. The page
+itself, its redirects included, is checked by `pnpm build`, `pnpm test:smoke` and
+opening it.
 
 ### Adding a page
 

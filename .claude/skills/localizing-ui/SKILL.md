@@ -26,8 +26,8 @@ AGENTS.md's Conventions makes `messages/*.json` the one exception to the English
 rule, and states the exception's own limit: it covers the catalogs' string values and
 nothing else. Keys stay English, and so does every comment, test, and document about
 them, bar the narrow case AGENTS.md spells out — a literal whose exact bytes are what a
-check or a worked example exercises, which is why the `localeCount` example below quotes
-`ja.json` rather than translating it. That rule lives in AGENTS.md; this skill only
+check or a worked example exercises, which is why the plural example below quotes
+Japanese rather than translating it. That rule lives in AGENTS.md; this skill only
 points at it.
 
 The place it is easiest to break is a skill's own frontmatter. Enforced by:
@@ -90,18 +90,18 @@ lookup table of its own.
   across catalogs — an argument the caller does not pass is a runtime formatting error
   in that one locale, on a page nobody opened in it.
 - Plural **categories** deliberately differ between catalogs, and the test does not
-  compare them. `HomePage.localeCount` carries only `other` in `ja.json`, because
-  Japanese has no singular/plural distinction; an English catalog added later would
-  carry `one` and `other`, and an unused `one` branch in Japanese would be a translation
-  of a grammar the language does not have.
+  compare them. A plural key carries only `other` in `ja.json`, because Japanese has no
+  singular/plural distinction; an English catalog added later would carry `one` and
+  `other`, and an unused `one` branch in Japanese would be a translation of a grammar
+  the language does not have.
 
   ```json
-  "localeCount": "{count, plural, other {このテンプレートには # 言語が含まれています。}}"
+  "cardCount": "{count, plural, other {# 文}}"
   ```
 
 - `#` inside a plural branch is the count. Pass it as an argument —
-  `t("localeCount", { count: LOCALES.length })` — and never format a number into the
-  string yourself, which would hard-code one locale's digit grouping into all of them.
+  `t("cardCount", { count: cards.length })` — and never format a number into the string
+  yourself, which would hard-code one locale's digit grouping into all of them.
 
 ## The modules, and which one to reach for
 

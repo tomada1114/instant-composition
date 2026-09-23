@@ -69,24 +69,14 @@ What goes into each site:
   advisory form.
 - **The copyright holder** in `LICENSE`, and the same name wherever the README repeats
   it. Every fork inherits `LICENSE` verbatim, which is why the template ships a blank.
-- **The app's display name** — the `title` in `src/app/[locale]/layout.tsx`'s
-  `metadata`, which is the browser tab, and the `HomePage.title` key in
-  `messages/en.json` and `messages/ja.json`, which is the page heading. Only the catalog
-  half is per-locale — each catalog gets the name written in its own language; the
-  layout's `title`, like `description` below, is one hard-coded string.
-- **The one-line `description`** in that same `metadata` block, which renders into
-  `<meta name="description">` and so into search results and link previews. It is not
-  per-locale — the layout hard-codes one string for every locale — so there is one site,
-  not one per catalog.
+- **The app's display name** — the `Metadata.title` key in each catalog, which
+  `src/app/[locale]/layout.tsx`'s `generateMetadata` reads into the browser tab. Each
+  catalog gets the name written in its own language.
+- **The one-line `description`** — the `Metadata.description` key beside it, which
+  renders into `<meta name="description">` and so into search results and link previews;
+  one per catalog, like the name.
 
-Those are the only reader-visible strings the inventory covers. The home page's body
-text — each catalog's `HomePage.intro` and `HomePage.localeCount`, which still describe
-the page as a template — is deliberately left out: it is demo copy for a demo page you
-are expected to rewrite or delete, so pinning it would pin strings that may not survive
-your first day, and one of them is quoted in `localizing-ui` as a worked example that
-has nothing to do with your identity. Review that copy by hand once the page is yours.
-`tests/home-page.test.tsx` asserts the English `intro` as a literal, so rewriting it
-turns that test red; update the assertion in the same edit.
+Those are the only reader-visible strings the inventory covers.
 
 Emptying `EXPECTED_INVENTORY` is the intended edit and is not weakening a gate. Widening
 `SKIPPED_DIRECTORIES` or `SKIPPED_FILES`, or dropping an entry from `PLACEHOLDERS`, to
@@ -129,8 +119,8 @@ forward. Dropping `ja` touches:
   and keys `MESSAGES` by locale.
 - `messages/en.json` — the switcher entry naming the dropped language.
 - `tests/messages.test.ts` — its switcher key in `MESSAGE_KEYS`, plus every other place
-  it names the locale literally — and `tests/proxy.test.ts`, `tests/home-page.test.tsx`,
-  and `tests/server-smoke.test.ts`, each of which names the locale literally too.
+  it names the locale literally — and `tests/proxy.test.ts` and
+  `tests/server-smoke.test.ts`, each of which names the locale literally too.
 - `README.md`'s quick start, and AGENTS.md's Conventions exception, which names
   `messages/ja.json` as the one committed file that is not in English.
 
