@@ -20,7 +20,7 @@ export function makeAnswer(overrides: Partial<AnswerRecord> = {}): AnswerRecord 
     topic: "work",
     subtopic: "meetings",
     level: 5,
-    ja: "会議を始めましょう。",
+    prompt: "会議を始めましょう。",
     ...overrides,
   };
 }

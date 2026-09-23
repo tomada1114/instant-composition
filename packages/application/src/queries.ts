@@ -53,8 +53,8 @@ export async function settingsPage(
     settings: settings?.value ?? DEFAULT_SETTINGS,
     topics: snapshot.topics.map((topic) => ({
       id: topic.id,
-      ja: topic.ja,
-      subtopics: topic.subtopics.map(({ id, ja }) => ({ id, ja })),
+      name: topic.name,
+      subtopics: topic.subtopics.map(({ id, name }) => ({ id, name })),
     })),
     toeic: level === null ? null : toeicOf(snapshot, level.level),
   });

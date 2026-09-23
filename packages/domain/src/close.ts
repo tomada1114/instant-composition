@@ -110,7 +110,7 @@ export function decideClose(state: CloseState, now: number): CloseChange {
   const shownOrder = new Map(round.deck.map((id, index) => [id, index]));
   const misses = state.reviews
     .filter((review) => review.detail.pass === "first" && review.detail.result !== "ok")
-    .map((review) => ({ cardId: review.item.id, ja: review.snapshot.prompt }));
+    .map((review) => ({ cardId: review.item.id, prompt: review.snapshot.prompt }));
   const outcome: RoundOutcome = {
     placement: level.placement,
     difficulty: level.difficulty,

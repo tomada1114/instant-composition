@@ -47,6 +47,7 @@
     "cards:queue": "node scripts/cards/cli.mjs queue",
     "cards:stamp": "node scripts/cards/cli.mjs stamp",
     "cards:stats": "node scripts/cards/cli.mjs stats",
+    "catalog:build": "node scripts/catalog/build.mjs",
     "check:staged": "node scripts/check-staged.mjs",
     "check:quick": "pnpm run format:check && pnpm run lint && pnpm run typecheck && pnpm run test",
     "check:source": "pnpm run format:check && pnpm run lint && pnpm run typecheck && pnpm run build && pnpm run test:smoke && pnpm run test:coverage",

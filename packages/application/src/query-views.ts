@@ -28,11 +28,11 @@ export interface HomeView {
 
 export interface BreakdownTopic {
   readonly id: string;
-  readonly ja: string;
+  readonly name: string;
   /** Mastered per subtopic, in the taxonomy's order. */
   readonly subtopics: readonly {
     readonly id: string;
-    readonly ja: string;
+    readonly name: string;
     readonly count: number;
   }[];
 }
@@ -43,7 +43,7 @@ export type TitleGroup =
   | {
       readonly kind: "reach";
       readonly topic: string;
-      readonly ja: string;
+      readonly name: string;
       readonly values: readonly number[];
     };
 

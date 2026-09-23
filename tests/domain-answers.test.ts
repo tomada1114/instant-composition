@@ -24,12 +24,18 @@ const CARDS: ReadonlyMap<string, CardFacts> = new Map<string, CardFacts>([
     (id) =>
       [
         id,
-        { topic: "work", subtopic: "meetings", level: 5, ja: `${id}の文`, words: 8 },
+        {
+          topic: "work",
+          subtopic: "meetings",
+          level: 5,
+          prompt: `${id}の文`,
+          words: 8,
+        },
       ] as const,
   ),
   [
     "c5",
-    { topic: "work", subtopic: "meetings", level: 5, ja: "削除済み", words: null },
+    { topic: "work", subtopic: "meetings", level: 5, prompt: "削除済み", words: null },
   ],
 ]);
 

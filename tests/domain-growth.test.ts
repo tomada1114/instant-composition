@@ -24,14 +24,14 @@ describe("today's growth", () => {
           cardId: "c1",
           elapsedMs: 2_800,
           answeredAt: 10,
-          ja: "一",
+          prompt: "一",
         }),
         makeAnswer({ ...now, cardId: "c2", elapsedMs: 3_901, answeredAt: 11 }),
       ],
     });
     expect(growth).toMatchObject({ faster: 1, fixed: 0, compared: 2, firstTime: 0 });
     expect(growth.rows).toStrictEqual([
-      { cardId: "c1", ja: "一", kind: "faster", deltaMs: 1_200 },
+      { cardId: "c1", prompt: "一", kind: "faster", deltaMs: 1_200 },
     ]);
   });
 
@@ -131,15 +131,21 @@ describe("today's growth", () => {
 describe("cards sent to review", () => {
   it("are this round's first-pass misses in the order shown, retried ones included", () => {
     const list = reviewList("r", [
-      makeAnswer({ ...now, cardId: "a", result: "ng", answeredAt: 2, ja: "あ" }),
+      makeAnswer({ ...now, cardId: "a", result: "ng", answeredAt: 2, prompt: "あ" }),
       makeAnswer({ ...now, cardId: "b", answeredAt: 1 }),
-      makeAnswer({ ...now, cardId: "c", result: "timeout", answeredAt: 3, ja: "う" }),
+      makeAnswer({
+        ...now,
+        cardId: "c",
+        result: "timeout",
+        answeredAt: 3,
+        prompt: "う",
+      }),
       makeAnswer({ ...now, cardId: "a", pass: "retry", answeredAt: 4 }),
       makeAnswer({ ...before, cardId: "d", result: "ng", answeredAt: 0 }),
     ]);
     expect(list).toStrictEqual([
-      { cardId: "a", ja: "あ" },
-      { cardId: "c", ja: "う" },
+      { cardId: "a", prompt: "あ" },
+      { cardId: "c", prompt: "う" },
     ]);
   });
 });

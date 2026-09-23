@@ -13,7 +13,22 @@ export {
   type Catalog,
   type CatalogSnapshot,
   type CatalogUnreadable,
+  type LevelInfo,
 } from "./catalog";
+export {
+  catalogSnapshotOf,
+  type CatalogDocument,
+  type CompositionItem,
+  type ConceptEntry,
+  type ConceptId,
+  type LanguageTag,
+  type LevelStep,
+  type Localization,
+  type Localized,
+  type TombstoneItem,
+  type TopicEntry,
+  type WithdrawnItem,
+} from "./catalog-document";
 export type { ApplicationError, ApplicationErrorCode } from "./errors";
 export { type ApplicationDeps } from "./execute";
 export { finishRound } from "./finish-round";

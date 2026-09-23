@@ -1,21 +1,28 @@
 import type {
   CardContent,
   CardFacts,
+  RetiredCard,
   Result,
   SubtopicRef,
-  TombstoneMeta,
   TopicInfo,
 } from "@instant-composition/domain";
 
-/** The cards and their lists, as one read-only snapshot. */
+/** One step of the target's 1–10 ladder: its CEFR band and its exam reference. */
+export interface LevelInfo {
+  readonly cefr: string;
+  readonly toeic: string;
+}
+
+/** One language pair's cards and lists, resolved for the learner's first language. */
 export interface CatalogSnapshot {
+  /** The content hash of the snapshot this was read from. */
+  readonly version: string;
   readonly topics: readonly TopicInfo[];
-  readonly toeicByLevel: ReadonlyMap<number, string>;
-  /** Cards whose review stamp matches: the only ones a round may deal. */
+  readonly levels: ReadonlyMap<number, LevelInfo>;
+  /** Cards whose review stamp matches: the only ones a round may deal or show. */
   readonly shown: ReadonlyMap<string, CardContent>;
-  /** Every well-formed card, reviewed or not. */
-  readonly known: ReadonlyMap<string, CardContent>;
-  readonly tombstones: ReadonlyMap<string, TombstoneMeta>;
+  /** Cards an answer may still name although they are not shown. */
+  readonly retired: ReadonlyMap<string, RetiredCard>;
 }
 
 /** The catalog could not be read, so nothing can be dealt or checked against it. */
@@ -28,35 +35,32 @@ export interface Catalog {
   snapshot(): Promise<Result<CatalogSnapshot, CatalogUnreadable>>;
 }
 
-/** Every card an answer may name: the known ones, then the tombstones of deleted ones. */
+/** Every card an answer may name: the retired ones, then the shown ones over them. */
 export function cardFacts(snapshot: CatalogSnapshot): Map<string, CardFacts> {
-  const facts = new Map<string, CardFacts>();
-  for (const [id, tombstone] of snapshot.tombstones) {
-    facts.set(id, { ...tombstone, words: null });
-  }
-  for (const [id, card] of snapshot.known) {
+  const facts = new Map<string, CardFacts>(snapshot.retired);
+  for (const [id, card] of snapshot.shown) {
     facts.set(id, card);
   }
   return facts;
 }
 
-/** Where a card belongs now: its card, else its tombstone. */
+/** Where a card belongs now: its shown card, else its retired entry. */
 export function placeOf(
   snapshot: CatalogSnapshot,
 ): (cardId: string) => SubtopicRef | undefined {
-  return (cardId) => snapshot.known.get(cardId) ?? snapshot.tombstones.get(cardId);
+  return (cardId) => snapshot.shown.get(cardId) ?? snapshot.retired.get(cardId);
 }
 
 export function toeicOf(snapshot: CatalogSnapshot, level: number): string {
-  return snapshot.toeicByLevel.get(level) ?? "";
+  return snapshot.levels.get(level)?.toeic ?? "";
 }
 
 const EMPTY_SNAPSHOT: CatalogSnapshot = {
+  version: "",
   topics: [],
-  toeicByLevel: new Map(),
+  levels: new Map(),
   shown: new Map(),
-  known: new Map(),
-  tombstones: new Map(),
+  retired: new Map(),
 };
 
 /** The snapshot, or an empty one a screen can still be drawn from when it cannot be read. */

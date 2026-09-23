@@ -19,21 +19,28 @@ export interface CardMeta {
   readonly words: number;
 }
 
-/** A card as the drill shows it. */
+/** A card as the drill shows it, with its prompt and explanation in the learner's first language. */
 export interface CardContent extends CardMeta {
-  readonly ja: string;
-  readonly en: string;
+  readonly prompt: string;
+  /** The model answer, in the target language. */
+  readonly text: string;
   readonly alternatives: readonly string[];
-  readonly point: string;
+  readonly explanation: string;
 }
 
-/** What survives of a deleted card. */
-export interface TombstoneMeta {
+/**
+ * A card an answer may still name although it is not shown: deleted, or edited
+ * since its review. Neither carries the text of an unreviewed edit.
+ */
+export interface RetiredCard {
   readonly id: string;
-  readonly ja: string;
   readonly topic: string;
   readonly subtopic: string;
   readonly level: number;
+  /** Null for a deleted card, whose limit falls back to the shortest. */
+  readonly words: number | null;
+  /** The prompt as deleted; null for an edited card, whose reviewed prompt is gone. */
+  readonly prompt: string | null;
 }
 
 /** One graded card, as stored. */
@@ -54,7 +61,7 @@ export interface AnswerRecord {
   readonly topic: string;
   readonly subtopic: string;
   readonly level: number;
-  readonly ja: string;
+  readonly prompt: string | null;
 }
 
 /** Where a card sits in the Leitner boxes, derived from its first-pass answers. */
@@ -82,6 +89,7 @@ export interface Settings {
 /** A top-level topic and its subtopics, in `content/taxonomy.json`'s order. */
 export interface TopicInfo {
   readonly id: string;
-  readonly ja: string;
-  readonly subtopics: readonly { readonly id: string; readonly ja: string }[];
+  /** In the learner's first language. */
+  readonly name: string;
+  readonly subtopics: readonly { readonly id: string; readonly name: string }[];
 }

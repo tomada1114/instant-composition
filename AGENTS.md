@@ -82,6 +82,7 @@ pnpm cards:show    # print cards or tombstones (--brief, --json)
 pnpm cards:dupes   # near-duplicate candidates within a subtopic and against tombstones
 pnpm cards:stats   # totals, review status, coverage by cell, grammar usage
 pnpm cards:new-id  # print fresh card ids
+pnpm catalog:build # write content/'s snapshot per language pair to dist/catalog/<target>/<l1>.json
 ```
 
 Reach for `pnpm clean`/`pnpm clean:deep` rather than an `rm -rf`: `scripts/clean.mjs`

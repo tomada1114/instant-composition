@@ -173,8 +173,8 @@ describe("decideClose", () => {
     const round = makeRound({ deck: ["c3", "c1", "c2"], firstPass: 3 });
     const reviews = [first("c1", "ng"), first("c2", "ok"), first("c3", "ng")];
     expect(decideClose(state({ round, reviews }), 50).outcome.review).toStrictEqual([
-      { cardId: "c3", ja: "c3の文" },
-      { cardId: "c1", ja: "c1の文" },
+      { cardId: "c3", prompt: "c3の文" },
+      { cardId: "c1", prompt: "c1の文" },
     ]);
   });
 
@@ -201,8 +201,8 @@ describe("decideClose", () => {
       compared: 2,
       firstTime: 1,
       rows: [
-        { cardId: "c1", ja: "c1の文", deltaMs: 2_000, kind: "faster" },
-        { cardId: "c2", ja: "c2の文", deltaMs: 2_000, kind: "fixed" },
+        { cardId: "c1", prompt: "c1の文", deltaMs: 2_000, kind: "faster" },
+        { cardId: "c2", prompt: "c2の文", deltaMs: 2_000, kind: "fixed" },
       ],
     });
   });

@@ -25,6 +25,7 @@ const automationTests = [
   "tests/boundaries.test.ts",
   "tests/cards-cli.test.ts",
   "tests/cards-lifecycle.test.ts",
+  "tests/catalog-build.test.ts",
   "tests/check-staged.test.ts",
   "tests/ci-sync.test.ts",
   "tests/clean.test.ts",
