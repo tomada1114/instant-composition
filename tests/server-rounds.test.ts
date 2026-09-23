@@ -264,3 +264,12 @@ describe("the topics to choose from", () => {
     expect(harness.services.topics()).toStrictEqual([]);
   });
 });
+
+describe("the start screen", () => {
+  it("carries the daily size the extra round is dealt at", () => {
+    const harness = setUp();
+    expect(harness.services.home().dailySize).toBe(10);
+    harness.services.updateSettings({ dailySize: 20 });
+    expect(harness.services.home().dailySize).toBe(20);
+  });
+});

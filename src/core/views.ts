@@ -117,6 +117,8 @@ export interface HomeView {
   readonly preview: HomePreview | undefined;
   readonly todayRounds: number;
   readonly todayCards: number;
+  /** The size an extra round is dealt at: "one more N". */
+  readonly dailySize: number;
   readonly sound: boolean;
   readonly contentError: boolean;
 }

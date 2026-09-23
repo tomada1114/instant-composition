@@ -79,6 +79,7 @@ export function home(deps: ServiceDeps): HomeView {
     todayRounds: deps.store.roundsOn(today).filter((round) => round.finishedAt !== null)
       .length,
     todayCards: firstToday.length,
+    dailySize: progress.settings?.dailySize ?? TUNING.defaultDailySize,
     sound: progress.settings?.sound ?? true,
     contentError: progress.contentError,
   };
