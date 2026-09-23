@@ -1,0 +1,68 @@
+[
+  {
+    "id": "c_2k4t3a5e",
+    "ja": "このサービスを分割したら、レイテンシがどれくらい増えるか誰か分かる？",
+    "en": "Does anyone know how much latency we'd add if we split this service?",
+    "alternatives": [
+      "Does anybody know how much extra latency we'd get if we split this service?",
+      "Does anyone know how much the latency would go up if we split this service?"
+    ],
+    "point": "間接疑問は how much latency we'd add の語順",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 7,
+    "grammar": ["indirect-questions", "second-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:366110a3cbe1be990498c83b2558590b5327514914cb393e54d2bbec852e0033",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7k6h8y2s",
+    "ja": "テックリードに、キャッシュ層を追加する前にトレードオフをまとめてもらうよう頼んでもらえますか？",
+    "en": "Could you ask the tech lead to write up the trade-offs before we add a caching layer?",
+    "alternatives": [
+      "Can you ask the tech lead to write up the trade-offs before we add a caching layer?",
+      "Could you ask the tech lead to lay out the trade-offs before we add a cache layer?"
+    ],
+    "point": "ask＋人＋to do。「まとめる」は write up が自然",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 6,
+    "grammar": ["verb-object-to-do", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:512217b6a52d0029edf806a520dcd3c84b73683fb6262b77109e26a58ffe2f79",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9b7y7h7v",
+    "ja": "私たちがモノリスに決めたのは、速さじゃなくて運用コストが理由だったんです。",
+    "en": "It was the operating cost, not the speed, that made us choose the monolith.",
+    "alternatives": [
+      "It was operating costs, not speed, that made us go with the monolith.",
+      "What made us choose the monolith was the operating cost, not the speed."
+    ],
+    "point": "It was A, not B, that ～ で理由を強調する",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 8,
+    "grammar": ["cleft-emphasis", "causatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:85231ade22fcf750403ce7aebce8ca3775fbb256165951b344d14e4d0815af0d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

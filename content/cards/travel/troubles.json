@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_3e4k7j2x",
+    "ja": "空港のスタッフに、私のスーツケースを次の便で送ってくれるよう頼んでくれない？",
+    "en": "Can you ask the airport staff to send my suitcase on the next flight?",
+    "alternatives": [
+      "Could you ask the airport staff to put my suitcase on the next flight?",
+      "Can you get the airport staff to send my suitcase on the next flight?"
+    ],
+    "point": "「〜するよう頼む」は ask＋人＋to do。人のあとに to 不定詞",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:298dad8f385751c655cf3a47feba496cf4f880b6b2d58e41c876012c897a5f0c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3q7t7r7p",
     "ja": "財布をなくしてしまいました。何かアドバイスをもらえますか？",
     "en": "I lost my wallet. Can I get some advice?",
@@ -38,6 +60,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:d927a8661665e9c2e3a3390f5ccc5f2396b1af5bf7a54f6b809602e55de5d561",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5q4u8v8c",
+    "ja": "電車で私の前に座っていた男の人が、私のバッグを持って行ったのかもしれません。",
+    "en": "The man sitting in front of me on the train may have taken my bag.",
+    "alternatives": [
+      "The man who was sitting in front of me on the train might have taken my bag.",
+      "The man seated in front of me on the train might have taken my bag."
+    ],
+    "point": "sitting で後ろから man を説明し、過去の推量は may have done",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 7,
+    "grammar": ["post-modification", "modal-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:39aedddf4f80fd95910d87af02e2d5dfdb3e528d13ccf000620d51c64ffed96d",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

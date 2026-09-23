@@ -22,6 +22,50 @@
     }
   },
   {
+    "id": "c_2x4r3q6d",
+    "ja": "スタックトレースから判断すると、同じレコードを二つのリクエストが同時に更新したときに落ちてるんだと思う。",
+    "en": "Judging from the stack trace, I think it crashes when two requests update the same record at the same time.",
+    "alternatives": [
+      "Based on the stack trace, I think the crash happens when two requests update the same record simultaneously.",
+      "From the stack trace, it looks like it crashes when two requests try to update the same record at once."
+    ],
+    "point": "「〜から判断すると」は Judging from で文頭に置く",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a8cbaa59ea62fca771a78d053f2a53a193109b671d6fa2fb287f6e8df3246d6c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4b2s6h5r",
+    "ja": "エラーについて、実際にやった手順と画面のスクリーンショットなど、情報をもう少し送ってもらえますか？",
+    "en": "Could you send me a bit more information about the error, like the exact steps you took and a screenshot?",
+    "alternatives": [
+      "Can you send me some more information on the error, such as the exact steps you followed and a screenshot?",
+      "Could you give me a little more information about the error, like the steps you took and a screenshot?"
+    ],
+    "point": "information は数えられないので a bit more information",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4b8c8494d6585924af47b3f5cd3fc977c28737749ac3922c62754697872e36e7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4f6h7g4x",
     "ja": "ログイン時にアプリが落ちるだけでなく、ユーザーの保存前の下書きまで消えてしまうんです。",
     "en": "Not only does the app crash on login, but it also wipes out the user's unsaved draft.",

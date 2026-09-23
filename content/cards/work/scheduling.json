@@ -1,0 +1,68 @@
+[
+  {
+    "id": "c_5t9z8f4h",
+    "ja": "私が会議室を予約しようとした時には、彼らはもう打ち合わせの日程を変えていました。",
+    "en": "When I tried to book a room, they had already rescheduled the meeting.",
+    "alternatives": [
+      "By the time I tried to book a room, they'd already rescheduled the meeting.",
+      "They had already changed the meeting date when I tried to book a room."
+    ],
+    "point": "予約しようとした時より前の出来事なので had rescheduled",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:59e1a6252fd3e832d73491de2cadf2c4ebd226db221e7733548bc32e9692d095",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5v2v7m9n",
+    "ja": "来週のレビュー、部長が何曜日なら空いてるか知ってる？",
+    "en": "Do you know which day the manager is free for next week's review?",
+    "alternatives": [
+      "Do you know what day the manager is available for next week's review?",
+      "Any idea which day the manager's free for the review next week?"
+    ],
+    "point": "間接疑問は which day the manager is の語順。is を前に出さない",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 4,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4a72f8618ef0c1e482765bfe899c31a14c89bd58a1b550b1d4d01faa38f9ef86",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9d3w7h2e",
+    "ja": "先方に、打ち合わせを来週の火曜日にずらしてもらうよう頼んでもらえますか？",
+    "en": "Could you ask the client to move the meeting to next Tuesday?",
+    "alternatives": [
+      "Can you ask the client to push the meeting back to next Tuesday?",
+      "Could you ask the client if they could move the meeting to next Tuesday?"
+    ],
+    "point": "ask＋人＋to do の形。人のあとに to 不定詞を続ける",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 4,
+    "grammar": ["verb-object-to-do", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b5e13afb0ca67bb13d81da5bc954d566eb3b732e5f2ffc595c8ef11be3ef02be",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

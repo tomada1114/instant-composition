@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_4n8b9j7t",
+    "ja": "ログイン画面の修正はもうレビューされましたか？今日中にマージしたいんです。",
+    "en": "Has the login page fix been reviewed yet? I'd like to get it merged today.",
+    "alternatives": [
+      "Has anyone reviewed the login page fix yet? I want to get it merged today.",
+      "Has the fix for the login screen been reviewed yet? I'd like to merge it today."
+    ],
+    "point": "「もうされた？」は Has the fix been reviewed yet? の形",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 5,
+    "grammar": ["passive-voice", "present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bdf4d0d8eeb2cd6b6fb9d3dbe29fc6187d88b951ead5a8c96d79a388f15c4dad",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5b3p3e7v",
     "ja": "決済 API のテストで落ちているのは、先週追加したテストだけです。",
     "en": "The only tests failing in the payment API suite are the ones we added last week.",
@@ -38,6 +60,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:19b0e783b9784ca09cc11671c9c7fd58128dbff9c11fa708402e5ffbb4890295",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5m2b7k7m",
+    "ja": "先週キャッシュの設定をちゃんと確認していたら、今こんなにこのバグで苦労していないはずです。",
+    "en": "If I had checked the cache settings properly last week, I wouldn't be struggling with this bug now.",
+    "alternatives": [
+      "If I'd properly checked the cache settings last week, I wouldn't be having so much trouble with this bug now.",
+      "If I'd checked the cache config carefully last week, I wouldn't be fighting this bug right now."
+    ],
+    "point": "過去の仮定は had checked、今の結果は wouldn't be -ing",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0847c67a751e1552ff3bcddc067f606b8c4f2897c771746122114a7cb43d5343",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7y5r9x7z",
+    "ja": "昨日から決済 API のテストを書いているんですが、まだ半分くらいしか終わっていません。",
+    "en": "I've been writing tests for the payment API since yesterday, but I've only finished about half.",
+    "alternatives": [
+      "I've been working on the payment API tests since yesterday, but I've only gotten through about half of them.",
+      "Since yesterday I've been writing tests for the payment API, but only about half are done so far."
+    ],
+    "point": "「昨日から〜している」は現在完了進行形、「終わった」は現在完了",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["present-perfect", "present-perfect-continuous"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b77a5a4de9366565e2a940e758a75f5c5b76fd42ae88a2e9f96904bbc3211823",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

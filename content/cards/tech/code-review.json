@@ -1,0 +1,112 @@
+[
+  {
+    "id": "c_2y9d7a5x",
+    "ja": "この関数、もっと小さいヘルパー関数に分けることを検討してもらえますか？",
+    "en": "Could you consider splitting this function into smaller helper functions?",
+    "alternatives": [
+      "Would you consider breaking this function up into smaller helpers?",
+      "Could you think about splitting this function into smaller helper functions?"
+    ],
+    "point": "consider の後ろは to 不定詞ではなく動名詞",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 4,
+    "grammar": ["gerunds", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e235fa63f246993aea77355bcccde8834824406a81d83b04f99d95fd28cbed3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4u8x7a6j",
+    "ja": "指摘ありがとうございます。僕が気にしていたのは、リトライ処理がエラーを隠してしまわないかということです。",
+    "en": "Thanks for pointing that out. What I was worried about was whether the retry logic would hide errors.",
+    "alternatives": [
+      "Thanks for the feedback. My concern was that the retry logic might hide errors.",
+      "Thanks for the comment. What worried me was whether the retry logic would hide errors."
+    ],
+    "point": "「気にしていたこと」は What I was worried about で主語に",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["noun-clauses", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:81b0e9979c76060130e859d9224a77f09afd83b31e09de082e738d4bd4e581d0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5h6x3d4g",
+    "ja": "この PR で追加されたテスト、本物の API を呼んでいるので、モックに置き換えたほうがいいと思います。",
+    "en": "The tests added in this PR call the real API, so I think they should use mocks instead.",
+    "alternatives": [
+      "The tests added in this PR are hitting the real API, so they should probably use mocks.",
+      "The tests added in this PR call the actual API, so I think we should mock it instead."
+    ],
+    "point": "「追加されたテスト」は過去分詞で後ろから修飾",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["post-modification", "modal-obligation-advice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:646a8975b8ef95315f8c977a6b9577b3cfcb4377c6b7c99ef5c0ad86dd3d2a89",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8e3m3y2e",
+    "ja": "このレビューで特に見てほしいのは、ネットワークが切れたときにリトライ処理がちゃんと動くかどうかです。",
+    "en": "What I'd especially like you to check is whether the retry logic still works when the network drops.",
+    "alternatives": [
+      "What I'd really like you to look at is whether the retry logic works properly if the network drops.",
+      "The thing I'd especially like you to check is whether the retry logic still works when the connection drops."
+    ],
+    "point": "「見てほしいのは」は What I'd like you to check is で始める",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 9,
+    "grammar": ["cleft-emphasis", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:797b3349366081873c523ed432aaa9ed5b9ecd8d12d1103fda6dd65e1d9c346d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9x4t5g6j",
+    "ja": "テスト、昨日は通ってたんだけど、今朝リベースしてからずっと3件落ちてるんだ。",
+    "en": "The tests passed yesterday, but since I rebased this morning, three of them have been failing.",
+    "alternatives": [
+      "The tests were passing yesterday, but three of them have been failing since I rebased this morning.",
+      "Yesterday the tests passed, but ever since I rebased this morning, three have been failing."
+    ],
+    "point": "昨日は過去形、今朝から続く状態は現在完了進行形",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 6,
+    "grammar": ["tense-contrast", "present-perfect-continuous"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c4c91d8900798a3166f21da6dc146f84258f1ec7881e239f147f1c82098c19f1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

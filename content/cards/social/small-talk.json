@@ -66,6 +66,28 @@
     }
   },
   {
+    "id": "c_4x6v5t9u",
+    "ja": "週末はどこに行ったの？",
+    "en": "Where did you go this weekend?",
+    "alternatives": [
+      "Where did you go on the weekend?",
+      "Where'd you go over the weekend?"
+    ],
+    "point": "過去の疑問文は did + 動詞の原形",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 2,
+    "grammar": ["wh-questions", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:38de4ed97f9f483b9d8b173fc7562496e6bc2e5098b331dbd4987007999b207b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4z7t9f8a",
     "ja": "先週教えてもらったカフェ、行ってみたよ。すごくよかった。",
     "en": "I went to the café you told me about last week. It was great.",
@@ -82,6 +104,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:0f37f047980eb41d35a1e913174780a4122fc40cbb09ab21355201ac711202eb",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5m5q5h2b",
+    "ja": "天気予報をちゃんと見てたら、姉は土曜日のキャンプを延期してたと思うよ。",
+    "en": "If my sister had checked the weather forecast, I think she would have postponed Saturday's camping trip.",
+    "alternatives": [
+      "I think my sister would have put off Saturday's camping trip if she'd checked the forecast.",
+      "If my sister had looked at the weather forecast, she probably would have postponed her Saturday camping trip."
+    ],
+    "point": "過去の仮定は if + had 過去分詞、結果は would have",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 7,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ff27308f8b83eea45452ca6a26d8741894f9cb0c3cee769407094f607d130c73",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5p5g5s3t",
+    "ja": "今夜は寒くなるよ。上着を持っていったほうがいいよ。",
+    "en": "It'll be cold tonight. You should take a jacket.",
+    "alternatives": [
+      "It's going to be cold tonight. You should bring a jacket.",
+      "It'll get cold tonight. You should take a coat."
+    ],
+    "point": "助言は should、have to だと強すぎる",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 2,
+    "grammar": ["modal-obligation-advice", "future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c0d98cf5002f86220dfdb743d3b7c08fd6c422ebbc364cc9f8487eeb53d0519f",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
@@ -127,6 +193,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:9f7f07d4b1fdb211b7533bcfea04f25fc39507577c97b675edee917ddb71f04d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6e8c3p6x",
+    "ja": "引っ越してからもう半年だけど、新しい街にはもう慣れた？先月会ったときはまだ道に迷ってたよね。",
+    "en": "It's been six months since you moved, so have you gotten used to the new town yet? You were still getting lost when I saw you last month.",
+    "alternatives": [
+      "You moved six months ago, so are you used to the new town now? You were still getting lost when we met last month.",
+      "Have you settled into the new town yet? It's been six months since you moved, and you were still getting lost when I saw you last month."
+    ],
+    "point": "今の状態は現在完了、先月の様子は過去進行形で分ける",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:60141143c1ca39ced6ea365152425f78e1e1881943ac1896ae0c2c49d77c7cde",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

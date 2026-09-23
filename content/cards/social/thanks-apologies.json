@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2s6g3e7c",
+    "ja": "私のミスのせいで、チーム全員に週末出勤させることになってしまって、本当に申し訳ない。",
+    "en": "I'm truly sorry that my mistake made the whole team come in on the weekend.",
+    "alternatives": [
+      "I'm really sorry my mistake forced the whole team to work over the weekend.",
+      "I'm so sorry. Because of my mistake, the whole team had to come in on the weekend."
+    ],
+    "point": "make + 人 + 動詞の原形。to は付けない",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 6,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bc8a445294de30d6794cb56a882bea49b51268142d8a19c2f7e8b69ebe5ad0af",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3k2r3d8a",
     "ja": "引っ越しを手伝ってくれてありがとう。本当に困っていたんだ。",
     "en": "Thanks for helping me move. I was really struggling.",

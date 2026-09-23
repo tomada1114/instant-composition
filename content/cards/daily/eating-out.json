@@ -45,6 +45,28 @@
     }
   },
   {
+    "id": "c_2z3s8z7r",
+    "ja": "私たち、もう30分も料理を待ってるんですけど、注文ちゃんと通ってますか？",
+    "en": "We've been waiting for our food for thirty minutes. Did our order go through?",
+    "alternatives": [
+      "We've been waiting thirty minutes for our food. Did you get our order?",
+      "We've been waiting for our food for half an hour. Did our order go through?"
+    ],
+    "point": "待ち続けている今の状態は have been -ing",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["present-perfect-continuous", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5137ee713b4903e0d9dd0311a602313a6a2abb3dc5127ab11498bbbd47609a48",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3c6g9j3f",
     "ja": "レストランに着いたら、空いている席があるか見て、メッセージするね。",
     "en": "When I get to the restaurant, I'll see if there are any free tables and text you.",
@@ -128,6 +150,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:f357eab8e382e3b4198fc73534d0298eae62c9d265de2e13bd7400da2cd363e1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6w9y8x7t",
+    "ja": "昨日の夜、兄が駅前の新しいラーメン屋に連れて行ってくれた。",
+    "en": "Last night my brother took me to the new ramen place by the station.",
+    "alternatives": [
+      "My brother took me to the new ramen shop near the station last night.",
+      "Last night my brother brought me to the new ramen place near the station."
+    ],
+    "point": "「連れて行ってくれた」は took me to で過去形",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:65dfb44e04afd0f30d6c52e48940a7c3cd24abac38f11a2cea42a3048a4b756a",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

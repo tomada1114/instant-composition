@@ -41,6 +41,28 @@
     }
   },
   {
+    "id": "c_3y2f3j4k",
+    "ja": "この薬を飲んでいる間は、お酒を飲むのを避けたほうがいいですか？",
+    "en": "Should I avoid drinking alcohol while I'm taking this medicine?",
+    "alternatives": [
+      "Do I need to avoid drinking alcohol while I'm on this medication?",
+      "Is it better to avoid drinking alcohol while I'm taking this medicine?"
+    ],
+    "point": "avoid の後は to 不定詞でなく drinking と動名詞",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 4,
+    "grammar": ["gerunds", "modal-obligation-advice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e0c6bd6c30b3cfc8c72325e7c95e22a186d9b5d7d2344ab7ee3834007be50dfa",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4q8g6z3h",
     "ja": "2日前からずっと咳が止まらないんです。",
     "en": "I've been coughing nonstop for two days.",
@@ -124,6 +146,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:7d5b856a252596cff3e2f565b2289b361b4421f6b5654939ac9b9a6f738ebb9d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9k8s8k9z",
+    "ja": "お医者さんに、薬を飲んだら少なくとも一日は安静にしてって言われたの。",
+    "en": "The doctor told me I should rest for at least a day after taking the medicine.",
+    "alternatives": [
+      "The doctor said I should rest for at least a day after taking the medicine.",
+      "The doctor said I needed to rest for at least a day after I took the medicine."
+    ],
+    "point": "言われた内容は told me の後に I should で続ける",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 6,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:feac1ee31579e0f9648a8258dc738841fc029d3815ad3bd4b51d6ea0150eabbb",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

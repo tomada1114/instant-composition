@@ -1,0 +1,68 @@
+[
+  {
+    "id": "c_2t5w9g6d",
+    "ja": "駅員さんに頼んで、乗り換えの行き方を紙に書いてもらったんだ。",
+    "en": "I had the station staff write down the transfer route for me.",
+    "alternatives": [
+      "I got the station staff to write down the transfer route for me.",
+      "I asked the station staff to write down how to transfer for me."
+    ],
+    "point": "have＋人＋動詞の原形で「人に〜してもらう」。get なら to が要る",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c38c43e07990c6125737c5eced79d8f0343d7d8c05aeb7e093d5506e5f5805c8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3a6u2u6j",
+    "ja": "すみません、空港行きのバスがどこから出るか教えていただけますか？",
+    "en": "Excuse me, could you tell me where the bus to the airport leaves from?",
+    "alternatives": [
+      "Excuse me, would you mind telling me where the airport bus leaves from?",
+      "Excuse me, could you tell me where I can catch the bus to the airport?"
+    ],
+    "point": "疑問文を埋め込むと語順は where the bus leaves。from を忘れずに",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["requests-permission", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:35586d4f552ac25481c56832670bc585e2788e3e7eb0fb53b3c6bf6f6737a2f6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6v6h8u2n",
+    "ja": "彼女が乗る予定だった電車、大雪で運休になっちゃった。",
+    "en": "The train that she was supposed to take was canceled because of heavy snow.",
+    "alternatives": [
+      "The train she was supposed to take got canceled because of heavy snow.",
+      "The train she was going to take was canceled due to heavy snow."
+    ],
+    "point": "「乗る予定だった電車」は the train (that) she was supposed to take",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["relative-clauses", "passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2b4ef318ad75c3212598b027289c71d720ff6c8d95536acf4ed20f30e5694059",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2m2r8j5y",
+    "ja": "チェックアウトするときに、荷物を夕方まで預かってもらえますか？",
+    "en": "When I check out, could you keep my bags until this evening?",
+    "alternatives": [
+      "Could you hold my luggage until this evening after I check out?",
+      "When I check out, can you store my bags until the evening?"
+    ],
+    "point": "未来のことでも when 節は現在形の check out",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 4,
+    "grammar": ["time-and-if-clauses", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b3b6ac0389955526b3e3acb17f60a66fcd14a4b3064dff2cbf1c4a5ed88464e4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3z2h3n4e",
     "ja": "1時間前にタオルを頼んだんですが、まだ届いていません。",
     "en": "I asked for towels an hour ago, but they haven't arrived yet.",
@@ -16,6 +38,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:61dba34e21df237c2e8c3fbf07c5d7e041d02da34ef7fbe088b3738638382c1f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4f3t5x4t",
+    "ja": "もっと早く予約してたら、彼女は禁煙の部屋に泊まれたのに。",
+    "en": "If she had booked earlier, she could have gotten a non-smoking room.",
+    "alternatives": [
+      "If she'd made a reservation earlier, she could've stayed in a non-smoking room.",
+      "She could have gotten a non-smoking room if she had booked earlier."
+    ],
+    "point": "過去の仮定は if had 過去分詞、could have 過去分詞",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:103b4d54d981dbc4c44e53da13988b0e0972c0272327368c1bc835f198f70e2b",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

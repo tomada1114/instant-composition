@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_2t9k8v2j",
+    "ja": "もし宝くじで1億円当たったら、あなたは仕事を辞める？それとも続ける？",
+    "en": "If you won a hundred million yen in the lottery, would you quit your job or keep working?",
+    "alternatives": [
+      "Would you quit your job or keep working if you won a hundred million yen in the lottery?",
+      "If you won a hundred million yen in the lottery, would you quit or keep your job?"
+    ],
+    "point": "ありえない仮定は if 節を過去形、主節を would にする",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3f2f0ca90d88bca8de709c2d3538d307cae38002301d7825e790d61cd32fb3d3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5g8w7y9w",
     "ja": "正直言うと、一番がっかりしたのは誰も手伝ってくれなかったことです。",
     "en": "To be honest, what disappointed me most was that nobody helped me.",
@@ -82,6 +104,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:5ca78b0ff4a7bdc8cce903e156d59416ee1ed0b35bd2000720287b5b444dfe14",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5n4b6d7g",
+    "ja": "兄は口では平気だと言っているけど、本当はかなりがっかりしていると思う。",
+    "en": "Although my brother says he's fine, I think he's actually pretty disappointed.",
+    "alternatives": [
+      "My brother says he's fine, but I think he's actually really disappointed.",
+      "Even though my brother says he's okay, I think he's actually pretty let down."
+    ],
+    "point": "although の後は節が続く。but と一緒に使わない",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b3cd3691da684c3df26332d218807634cb530719da6f20f88bfa115b73cb8923",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
@@ -170,6 +214,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:55d3394b873d032080d0a92fa72de351bbb0becbd0d3f9be26258f0c67791842",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9w9f9c6s",
+    "ja": "あの頃、自分の気持ちにもっと正直になっていればよかったって、今でも時々思うんだ。",
+    "en": "I sometimes still wish I'd been more honest about my feelings back then.",
+    "alternatives": [
+      "I still sometimes wish I had been more honest about how I felt back then.",
+      "Sometimes I still wish I'd been more upfront about my feelings back then."
+    ],
+    "point": "過去への後悔は wish の後を過去完了（I'd been）にする",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:15c3f378a671afdc9410d460e449242eee67981c139322c65198bb3dfb907037",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

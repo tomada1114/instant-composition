@@ -44,6 +44,72 @@
     }
   },
   {
+    "id": "c_4d9p2z8u",
+    "ja": "あの写真を撮ったとき、もしあなたが三脚を持ってきていたら、夜景をもっときれいに撮れたと思いますか？",
+    "en": "If you had brought a tripod when you took that photo, do you think you could have gotten a better shot of the night view?",
+    "alternatives": [
+      "Do you think you could have gotten a better shot of the night view if you'd brought a tripod when you took that photo?",
+      "If you'd brought a tripod when you took that photo, do you think the night view would have come out better?"
+    ],
+    "point": "過去の仮定は had brought、その結果は could have gotten で表す",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 10,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:880112f56a96a83fd62e6606a9f857f7ab5e3d31d86621b31ca2ae71dd89c381",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4e4h4w6b",
+    "ja": "私たちがチケットをネットで予約しておいたら、今ごろこの長い列に並んでないで、もう中に入ってるのにね。",
+    "en": "If we'd booked the tickets online, we'd be inside by now instead of standing in this long line.",
+    "alternatives": [
+      "If we had booked our tickets online, we'd be inside already rather than waiting in this long line.",
+      "We'd already be inside instead of standing in this long line if we'd booked the tickets online."
+    ],
+    "point": "過去の仮定は had booked、今の結果は would be",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:baf5a8c9ca6c468534927941cf8bd969308cc98783c5bf6e39ba68ea2bb8a501",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5b9a2w2e",
+    "ja": "ガイドさんが、塔の上は風がすごく強いから、私たちは帽子を置いていったほうがいいって言ってたよ。",
+    "en": "The guide said it was really windy at the top of the tower, so we should leave our hats behind.",
+    "alternatives": [
+      "The guide told us it was really windy at the top of the tower, so we should leave our hats behind.",
+      "Our guide said it was super windy up at the top of the tower, so we'd better leave our hats behind."
+    ],
+    "point": "said の後は時制を合わせて it was にする",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 8,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:36f4c6f62b126724d9fa7f7ad9b0f9f40152cd00a30c0dbc3671e51774114fc6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_6e2y5v6u",
     "ja": "展望台からの景色、写真に撮っておけばよかったなあ。",
     "en": "I wish I had taken a picture of the view from the observation deck.",
