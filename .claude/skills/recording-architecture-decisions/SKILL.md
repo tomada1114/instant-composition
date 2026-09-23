@@ -15,8 +15,9 @@ description: >
 **Owns:** `docs/architecture/` — whether a change owes an ADR or a status change, the
 ADR's shape and statuses, keeping the living pages true as work lands, and how a fact is
 written into any of them. **Does not own:** which other surface a change lands on
-(`updating-docs`); how a skill is written (`authoring-skills`); the decisions themselves
-— those are the ADRs.
+(`updating-docs`); how a skill is written (`authoring-skills`); what is worked on next
+and the phase issues (`steering-the-roadmap`); the decisions themselves — those are the
+ADRs.
 
 ## What the tree is for
 
