@@ -33,23 +33,6 @@ const prerenderManifestPath = path.join(repoRoot, ".next", "prerender-manifest.j
 /** The `next` CLI, run through this process's own Node rather than a shell. */
 const nextCli = createRequire(import.meta.url).resolve("next/dist/bin/next");
 
-/**
- * The credential the spawned server is given, and the only one it accepts.
- *
- * @remarks
- * Set on the child's environment rather than read from the ambient one, which
- * decides whether `POST /api/ask` answers 401 or 200: a developer who exports
- * `API_ACCESS_KEY`, or a `.env` Next.js loads at start-up, would otherwise
- * flip this suite's expectation without touching a line of it. Next.js does
- * not overwrite a variable already present in the environment it is spawned
- * with, so this value wins over either.
- *
- * It is a throwaway string, not a secret: what stands behind the port is the
- * fake adapter `src/server/composition.ts` wires, so an answer here reaches no
- * provider and costs nobody anything.
- */
-const ACCESS_KEY = "smoke-test-throwaway-access-key";
-
 /** How long `next start` gets to accept its first connection. */
 const READY_TIMEOUT_MS = 60_000;
 
@@ -336,7 +319,7 @@ beforeAll(async () => {
       // production build would otherwise be served under `test` and every
       // `process.env.NODE_ENV === "production"` branch would take a path no
       // deployment takes.
-      env: { ...process.env, NODE_ENV: "production", API_ACCESS_KEY: ACCESS_KEY },
+      env: { ...process.env, NODE_ENV: "production" },
       stdio: ["ignore", "pipe", "pipe"],
       detached: true,
     },
@@ -390,13 +373,13 @@ describe("the built application, served by `next start`", () => {
   it("redirects a path with no locale prefix to one that has it", async () => {
     const response = await fetch(baseUrl, {
       redirect: "manual",
-      headers: { "accept-language": "en" },
+      headers: { "accept-language": "ja" },
     });
 
     expect(response.status).toBe(307);
     const location = response.headers.get("location");
     expect(location).not.toBeNull();
-    expect(new URL(location ?? "", baseUrl).pathname).toBe("/en");
+    expect(new URL(location ?? "", baseUrl).pathname).toBe("/ja");
   });
 
   it.each(LOCALES)(
@@ -436,7 +419,7 @@ describe("the built application, served by `next start`", () => {
   // failed silently would ship an unstyled application with every other gate
   // green.
   it("serves a stylesheet carrying the utility the home page uses", async () => {
-    const document = await (await fetch(`${baseUrl}/en`)).text();
+    const document = await (await fetch(`${baseUrl}/ja`)).text();
     const href = /<link[^>]+rel="stylesheet"[^>]+href="([^"]+)"/u.exec(document)?.[1];
     if (href === undefined) {
       throw new Error(`the home page linked no stylesheet:\n${document}`);
@@ -452,32 +435,21 @@ describe("the built application, served by `next start`", () => {
     await expect(stylesheet.text()).resolves.toMatch(/\.p-8\s*\{[^}]*padding:/u);
   });
 
-  it("serves distinct metadata for English and Japanese", async () => {
-    const documents = await Promise.all(
-      LOCALES.map(async (locale) => (await fetch(`${baseUrl}/${locale}`)).text()),
-    );
-
-    expect(documents[0]).not.toContain(`<title>${MESSAGES.ja.Metadata.title}</title>`);
-    expect(documents[0]).not.toContain(
-      `<meta name="description" content="${MESSAGES.ja.Metadata.description}"`,
-    );
-  });
-
   // The two halves of "an unknown route 404s" are asserted apart, and both with
   // `redirect: "manual"`, because following the redirect merges them: a single
-  // `fetch("/no-such-page")` reports the 404 of `/en/no-such-page` and passes
+  // `fetch("/no-such-page")` reports the 404 of `/ja/no-such-page` and passes
   // just as happily if the proxy stopped running and the unprefixed path 404d
   // on its own — one of the failures this suite exists to catch.
   it("redirects an unknown path with no locale prefix rather than 404ing it", async () => {
     const response = await fetch(`${baseUrl}/no-such-page`, {
       redirect: "manual",
-      headers: { "accept-language": "en" },
+      headers: { "accept-language": "ja" },
     });
 
     expect(response.status).toBe(307);
     const location = response.headers.get("location");
     expect(location).not.toBeNull();
-    expect(new URL(location ?? "", baseUrl).pathname).toBe("/en/no-such-page");
+    expect(new URL(location ?? "", baseUrl).pathname).toBe("/ja/no-such-page");
   });
 
   it.each(LOCALES)(
@@ -497,46 +469,6 @@ describe("the built application, served by `next start`", () => {
       expect(document).toContain(MESSAGES[locale].NotFound.title);
       expect(document).toContain(MESSAGES[locale].NotFound.description);
       expect(document).toContain(MESSAGES[locale].NotFound.homeLink);
-
-      const otherLocale = locale === "en" ? "ja" : "en";
-      expect(document).not.toContain(MESSAGES[otherLocale].NotFound.title);
     },
   );
-
-  it("refuses POST /api/ask without the access key", async () => {
-    const response = await fetch(`${baseUrl}/api/ask`, {
-      method: "POST",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify({ prompt: "Hello", locale: "en" }),
-    });
-
-    expect(response.status).toBe(401);
-    await expect(response.json()).resolves.toMatchObject({
-      error: { code: "ERR_UNAUTHORIZED" },
-    });
-  });
-
-  it("answers POST /api/ask with the access key", async () => {
-    const response = await fetch(`${baseUrl}/api/ask`, {
-      method: "POST",
-      headers: {
-        "content-type": "application/json",
-        authorization: `Bearer ${ACCESS_KEY}`,
-      },
-      body: JSON.stringify({ prompt: "Hello", locale: "en" }),
-    });
-
-    expect(response.status).toBe(200);
-    const body: unknown = await response.json();
-    if (typeof body !== "object" || body === null || !("answer" in body)) {
-      throw new TypeError(
-        `POST /api/ask must answer with an \`answer\` field; it answered ${JSON.stringify(body)}`,
-      );
-    }
-    // The shape, never the wording: which adapter answers is
-    // `src/server/composition.ts`'s to change without editing this suite.
-    expect(Object.keys(body)).toStrictEqual(["answer"]);
-    expect(typeof body.answer).toBe("string");
-    expect(body.answer).not.toBe("");
-  });
 });

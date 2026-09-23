@@ -40,26 +40,15 @@ const INTERNAL_IS_PRIVATE =
   "src/internal/ is private. Tests reach it through the public surface of the module that owns it (see the `writing-tests` skill), and repository automation must not depend on module internals at all.";
 
 /**
- * The Anthropic SDK, under every subpath it publishes.
- *
- * @remarks
- * `no-restricted-imports` matches the specifier as written and never resolves
- * it, so this ban holds before the package is a dependency and keeps holding
- * if it stops being one. That is what lets the zone boundaries below be
- * stated once, ahead of the adapter that will consume the SDK.
- */
-const ANTHROPIC_SDK = ["@anthropic-ai/**"];
-
-/**
  * Each zone under `src/`, as every specifier that can reach into it.
  *
  * @remarks
  * A zone is reachable two ways. Relatively, leaving your own zone costs at
- * least one `../`, and the same module is `../ai/index` from one file and
- * `../../ai/index` from another. The globstar after the `../` absorbs the rest
+ * least one `../`, and the same module is `../core/result` from one file and
+ * `../../core/result` from another. The globstar after the `../` absorbs the rest
  * whatever the importer's depth, so one pattern covers every caller; the bare
  * form is listed alongside the recursive one because a directory import
- * (`../ai`) has no trailing segment for a trailing globstar to match.
+ * (`../server`) has no trailing segment for a trailing globstar to match.
  *
  * The leading `../` is load-bearing, not decoration. An unanchored
  * `**\/server` also matches the package subpath `next-intl/server`, which
@@ -69,15 +58,14 @@ const ANTHROPIC_SDK = ["@anthropic-ai/**"];
  * Each entry also carries a `./../**` twin of every `../**` pattern, because
  * `no-restricted-imports` matches the specifier text through the `ignore`
  * package rather than resolving it, and `ignore` treats a leading `./` as a
- * different string from a leading `../` — so `./../ai/errors` matches
- * neither the `../**\/ai/**` pattern nor the `!../**\/ai/index` exemption below
- * without its own `./../**` copy. A bare specifier still cannot start with
+ * different string from a leading `../` — so `./../server/env` does not
+ * match the `../**\/server/**` pattern without its own `./../**` copy. A bare specifier still cannot start with
  * `./..`, so the twin is exactly as safe as the pattern it doubles.
  *
  * The other way is the `@/*` → `./src/*` alias `tsconfig.json` declares,
  * because shadcn/ui writes `@/components/...` imports into every component it
  * copies in. That spelling carries no `../` to anchor and needs none: it is
- * already absolute from `src/`, so `@/ai/**` names the zone from any depth,
+ * already absolute from `src/`, so `@/server/**` names the zone from any depth,
  * and it is safe to match unanchored because no bare package name can start
  * with `@/` — a scoped package is `@scope/name`, and an empty scope is not
  * legal. A zone left without its `@/` twin would be a boundary the alias walks
@@ -98,53 +86,15 @@ function zonePatterns(name) {
   ];
 }
 
-const ZONE =
-  /** @type {Record<"app" | "server" | "ai" | "i18n" | "components", string[]>} */ (
-    Object.fromEntries(
-      ["app", "server", "ai", "i18n", "components"].map((name) => [
-        name,
-        zonePatterns(name),
-      ]),
-    )
-  );
-
-/**
- * Every module inside the AI layer except the one it publishes.
- *
- * @remarks
- * An allow-list stated as a negation, so a module added under `src/ai/` is
- * private by default rather than private only once someone remembers to list
- * it. Order matters: both negations must follow both patterns they exempt,
- * because the last matching entry wins. The `./../**` twin exists for the
- * same reason as {@link ZONE}'s: `./../ai/errors` and `./../ai/index` are
- * invisible to the `../**` forms, so each needs its own pattern and its own
- * exemption. The `@/` form is the third spelling, and needs its own exemption
- * for the same reason.
- */
-const AI_LAYER_PRIVATE = [
-  "../**/ai/**",
-  "./../**/ai/**",
-  "@/ai/**",
-  "!../**/ai/index",
-  "!./../**/ai/index",
-  "!@/ai/index",
-];
-
-/** Why everything under `src/ai/` but its surface is off limits to a caller. */
-const AI_LAYER_IS_PRIVATE =
-  "src/ai/index.ts is the AI layer's whole surface. Everything else under src/ai/ — the port, the error vocabulary, every adapter — is private to the layer, and naming one from here is what makes the vendor choice leak out of src/server/composition.ts, which is the one file allowed to make it.";
-
-/** Why the AI layer names no zone above it, stated by two blocks. */
-const AI_LAYER_LOOKS_ONLY_DOWNWARD =
-  "src/ai/ sits below src/server/, src/components/ and src/app/ in the import order, and src/i18n/ is read by those rather than by the port. A locale, a request, a rendering or a handler concern reaching in here is what stops the layer coming out in one piece — take it as an argument on the LlmPort call instead.";
+const ZONE = /** @type {Record<"app" | "server" | "i18n" | "components", string[]>} */ (
+  Object.fromEntries(
+    ["app", "server", "i18n", "components"].map((name) => [name, zonePatterns(name)]),
+  )
+);
 
 /** Why `src/components/` looks only at `src/core/`, `src/i18n/` and the framework. */
 const COMPONENTS_LOOK_ONLY_DOWNWARD =
-  "src/components/ is UI: it renders what it is handed. The import order is app → components → core, so a component names no page, no handler, no composition root, and nothing in the AI layer. Take the value as a prop and let src/app/ do the fetching.";
-
-/** Why a vendor SDK stops at the adapter that wraps it. */
-const VENDOR_SDK_IS_AN_ADAPTERS_BUSINESS =
-  "Only an adapter under src/ai/adapters/ talks to a vendor SDK. A request or a response crossing this zone is an LlmPort call, so the layer can be swapped — or removed whole — without touching src/app/ or src/server/.";
+  "src/components/ is UI: it renders what it is handed. The import order is app → components → core, so a component names no page and no handler. Take the value as a prop and let src/app/ do the fetching.";
 
 export default defineConfig([
   // Only generated trees are ignored; everything hand-written is linted,
@@ -294,13 +244,12 @@ export default defineConfig([
   },
   // --- zone boundaries -------------------------------------------------------
   //
-  // AGENTS.md states one import order — `app` → `server` → `ai` → `core`, with
+  // AGENTS.md states one import order — `app` → `server` → `core`, with
   // `app` → `components` → `core` beside it and `i18n` a leaf the page tree,
-  // the components and the handlers read — and the seven blocks below are that
+  // the components and the handlers read — and the five blocks below are that
   // order, written per zone as the zones each one may not name. The leaf
   // property is an edge like any other: `src/i18n/` may read `src/core/` and
-  // nothing above it. On top of the order, `src/app/` and `src/server/`
-  // reach the AI layer only through `src/ai/index.ts`.
+  // nothing above it.
   // `tests/boundaries.test.ts` asserts the same shape from the module graph, so
   // deleting a block here still fails the suite.
   //
@@ -308,8 +257,7 @@ export default defineConfig([
   // objects, exactly like `no-restricted-syntax` (see NO_EXPORT_STAR above).
   // The blocks match disjoint file sets on purpose, so none of them can silently
   // drop another's patterns — which is why `src/app` and `src/server` are stated
-  // apart, and why the `src/ai` block excludes `src/ai/port.ts`, whose own block
-  // restates what it still wants. Keep a new block disjoint from them too.
+  // apart. Keep a new block disjoint from them too.
   {
     name: "boundaries/core-is-framework-free-and-imports-no-zone",
     files: ["src/core/**/*.ts", "src/core/**/*.tsx"],
@@ -326,65 +274,14 @@ export default defineConfig([
                 "react/**",
                 "react-dom",
                 "react-dom/**",
-                ...ANTHROPIC_SDK,
               ],
               message:
-                "src/core/ holds the vocabulary the other zones are written in — a Result, a domain type, a pure function — and it stays free of the framework and of any vendor SDK so it survives a change of either. Put the framework-aware code in src/app/ or src/server/ and the vendor-aware code behind src/ai/.",
+                "src/core/ holds the vocabulary the other zones are written in — a Result, a domain type, a pure function — and it stays free of the framework so it survives a change of it. Put the framework-aware code in src/app/ or src/server/.",
             },
             {
-              group: [
-                ...ZONE.ai,
-                ...ZONE.server,
-                ...ZONE.app,
-                ...ZONE.i18n,
-                ...ZONE.components,
-              ],
+              group: [...ZONE.server, ...ZONE.app, ...ZONE.i18n, ...ZONE.components],
               message:
-                "src/core/ is the bottom of the import order app → server → ai → core (and app → components → core), so it names no zone above it. A type only one zone needs belongs in that zone; one they share belongs here, with nothing imported to define it.",
-            },
-          ],
-        },
-      ],
-    },
-  },
-  {
-    name: "boundaries/ai-imports-only-core",
-    files: ["src/ai/**/*.ts", "src/ai/**/*.tsx"],
-    // `src/ai/port.ts` has its own block below, which restates these patterns
-    // alongside the adapter ban only the port carries.
-    ignores: ["src/ai/port.ts"],
-    rules: {
-      "no-restricted-imports": [
-        "error",
-        {
-          patterns: [
-            {
-              group: [...ZONE.app, ...ZONE.server, ...ZONE.i18n, ...ZONE.components],
-              message: AI_LAYER_LOOKS_ONLY_DOWNWARD,
-            },
-          ],
-        },
-      ],
-    },
-  },
-  {
-    name: "boundaries/port-does-not-know-its-adapters",
-    files: ["src/ai/port.ts"],
-    rules: {
-      "no-restricted-imports": [
-        "error",
-        {
-          patterns: [
-            {
-              // Unanchored on purpose: from the port the specifier is
-              // `./adapters/…`, which no `../`-anchored pattern can match.
-              group: ["**/adapters", "**/adapters/**"],
-              message:
-                "The port is the interface adapters implement, so it cannot depend on one. An import here inverts the dependency and makes the fake — or the next vendor — impossible to remove.",
-            },
-            {
-              group: [...ZONE.app, ...ZONE.server, ...ZONE.i18n, ...ZONE.components],
-              message: AI_LAYER_LOOKS_ONLY_DOWNWARD,
+                "src/core/ is the bottom of the import order app → server → core (and app → components → core), so it names no zone above it. A type only one zone needs belongs in that zone; one they share belongs here, with nothing imported to define it.",
             },
           ],
         },
@@ -400,7 +297,7 @@ export default defineConfig([
         {
           patterns: [
             {
-              group: [...ZONE.app, ...ZONE.server, ...ZONE.ai, ...ZONE.components],
+              group: [...ZONE.app, ...ZONE.server, ...ZONE.components],
               message:
                 "src/i18n/ is a leaf: the page tree, the components and the handlers read it, and it reads nothing but src/core/ and its own catalogs. An import here inverts that and makes the locale list depend on the code that renders it.",
             },
@@ -410,28 +307,7 @@ export default defineConfig([
     },
   },
   {
-    name: "boundaries/app-reaches-the-ai-layer-through-src-ai",
-    files: ["src/app/**/*.ts", "src/app/**/*.tsx"],
-    rules: {
-      "no-restricted-imports": [
-        "error",
-        {
-          patterns: [
-            {
-              group: AI_LAYER_PRIVATE,
-              message: AI_LAYER_IS_PRIVATE,
-            },
-            {
-              group: ANTHROPIC_SDK,
-              message: VENDOR_SDK_IS_AN_ADAPTERS_BUSINESS,
-            },
-          ],
-        },
-      ],
-    },
-  },
-  {
-    name: "boundaries/server-reaches-ai-through-src-ai-and-never-app",
+    name: "boundaries/server-never-imports-app",
     files: ["src/server/**/*.ts", "src/server/**/*.tsx"],
     rules: {
       "no-restricted-imports": [
@@ -439,17 +315,9 @@ export default defineConfig([
         {
           patterns: [
             {
-              group: AI_LAYER_PRIVATE,
-              message: AI_LAYER_IS_PRIVATE,
-            },
-            {
-              group: ANTHROPIC_SDK,
-              message: VENDOR_SDK_IS_AN_ADAPTERS_BUSINESS,
-            },
-            {
               group: [...ZONE.app, ...ZONE.components],
               message:
-                "src/server/ sits below src/app/ in the import order app → server → ai → core. A handler or the composition root naming a page, a layout, a route module or a component inverts that: the App Router tree imports the server layer and renders the components, never the other way round.",
+                "src/server/ sits below src/app/ in the import order app → server → core. A handler naming a page, a layout, a route module or a component inverts that: the App Router tree imports the server layer and renders the components, never the other way round.",
             },
           ],
         },
@@ -473,12 +341,8 @@ export default defineConfig([
         {
           patterns: [
             {
-              group: [...ZONE.app, ...ZONE.server, ...ZONE.ai],
+              group: [...ZONE.app, ...ZONE.server],
               message: COMPONENTS_LOOK_ONLY_DOWNWARD,
-            },
-            {
-              group: ANTHROPIC_SDK,
-              message: VENDOR_SDK_IS_AN_ADAPTERS_BUSINESS,
             },
             {
               group: ["server-only"],
@@ -581,21 +445,6 @@ export default defineConfig([
                 "@/internal/**",
               ],
               message: INTERNAL_IS_PRIVATE,
-            },
-            {
-              // The zone equivalent, for the trees outside `src/`: an adapter
-              // is private to the AI layer, and a test asserts against it
-              // through `src/ai/index.ts` — which is what makes the contract
-              // suite in tests/ai-port.test.ts run unchanged against whichever
-              // adapter src/ai/index.ts publishes.
-              group: [
-                "**/src/ai/adapters",
-                "**/src/ai/adapters/**",
-                "@/ai/adapters",
-                "@/ai/adapters/**",
-              ],
-              message:
-                "src/ai/adapters/ is private to the AI layer: import what src/ai/index.ts publishes instead.",
             },
           ],
         },

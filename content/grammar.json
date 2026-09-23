@@ -1,0 +1,278 @@
+{
+  "version": 1,
+  "items": [
+    {
+      "id": "be-and-present-simple",
+      "ja": "be 動詞・現在形",
+      "minLevel": 1,
+      "maxLevel": 4,
+      "example": "I work from home on Fridays."
+    },
+    {
+      "id": "imperatives",
+      "ja": "命令文・Let's",
+      "minLevel": 1,
+      "maxLevel": 4,
+      "example": "Let's take a short break."
+    },
+    {
+      "id": "wh-questions",
+      "ja": "疑問詞の疑問文",
+      "minLevel": 1,
+      "maxLevel": 5,
+      "example": "Where did you put the keys?"
+    },
+    {
+      "id": "there-is-are",
+      "ja": "There is / There are",
+      "minLevel": 1,
+      "maxLevel": 5,
+      "example": "There is a problem with the printer."
+    },
+    {
+      "id": "can-could-ability",
+      "ja": "can / could（能力・可能）",
+      "minLevel": 1,
+      "maxLevel": 5,
+      "example": "I can't hear you very well."
+    },
+    {
+      "id": "articles-and-countability",
+      "ja": "冠詞・数えられる名詞と数えられない名詞",
+      "minLevel": 1,
+      "maxLevel": 10,
+      "example": "Could you give me some advice?"
+    },
+    {
+      "id": "progressive-aspect",
+      "ja": "進行形（現在・過去）",
+      "minLevel": 1,
+      "maxLevel": 6,
+      "example": "I was cooking when you called."
+    },
+    {
+      "id": "past-simple",
+      "ja": "過去形",
+      "minLevel": 2,
+      "maxLevel": 6,
+      "example": "We missed the last train."
+    },
+    {
+      "id": "future-forms",
+      "ja": "未来の表し方（will / be going to / 予定の進行形）",
+      "minLevel": 2,
+      "maxLevel": 7,
+      "example": "I'm meeting a client tomorrow."
+    },
+    {
+      "id": "modal-obligation-advice",
+      "ja": "must / have to / should",
+      "minLevel": 2,
+      "maxLevel": 7,
+      "example": "You should bring an umbrella."
+    },
+    {
+      "id": "comparatives-superlatives",
+      "ja": "比較級・最上級",
+      "minLevel": 2,
+      "maxLevel": 7,
+      "example": "This one is a little cheaper."
+    },
+    {
+      "id": "requests-permission",
+      "ja": "依頼と許可（Could you / May I / Is it okay if）",
+      "minLevel": 2,
+      "maxLevel": 8,
+      "example": "Is it okay if I leave a bit early?"
+    },
+    {
+      "id": "time-and-if-clauses",
+      "ja": "時・条件の副詞節（未来のことも現在形）",
+      "minLevel": 3,
+      "maxLevel": 8,
+      "example": "I'll call you when I get to the station."
+    },
+    {
+      "id": "present-perfect",
+      "ja": "現在完了（経験・完了・継続）",
+      "minLevel": 3,
+      "maxLevel": 8,
+      "example": "Have you ever been to Osaka?"
+    },
+    {
+      "id": "passive-voice",
+      "ja": "受動態",
+      "minLevel": 3,
+      "maxLevel": 9,
+      "example": "The meeting has been moved to Thursday."
+    },
+    {
+      "id": "infinitives",
+      "ja": "不定詞（目的・名詞・形容詞的）",
+      "minLevel": 3,
+      "maxLevel": 8,
+      "example": "I need something to drink."
+    },
+    {
+      "id": "gerunds",
+      "ja": "動名詞・動名詞と不定詞の選び分け",
+      "minLevel": 3,
+      "maxLevel": 8,
+      "example": "I'm thinking about changing jobs."
+    },
+    {
+      "id": "verb-object-to-do",
+      "ja": "want / ask / tell + 人 + to do",
+      "minLevel": 3,
+      "maxLevel": 8,
+      "example": "Can you ask him to call me back?"
+    },
+    {
+      "id": "relative-clauses",
+      "ja": "関係詞（who / which / that / where）",
+      "minLevel": 4,
+      "maxLevel": 9,
+      "example": "This is the café where we first met."
+    },
+    {
+      "id": "indirect-questions",
+      "ja": "間接疑問",
+      "minLevel": 4,
+      "maxLevel": 9,
+      "example": "Do you know what time the store closes?"
+    },
+    {
+      "id": "post-modification",
+      "ja": "後置修飾（分詞・前置詞句）",
+      "minLevel": 4,
+      "maxLevel": 9,
+      "example": "The man standing by the door is my boss."
+    },
+    {
+      "id": "noun-clauses",
+      "ja": "名詞節（that 節・what 節）",
+      "minLevel": 4,
+      "maxLevel": 10,
+      "example": "What I need is a little more time."
+    },
+    {
+      "id": "present-perfect-continuous",
+      "ja": "現在完了進行形",
+      "minLevel": 4,
+      "maxLevel": 9,
+      "example": "I've been waiting for twenty minutes."
+    },
+    {
+      "id": "tense-contrast",
+      "ja": "時制の選び分け（過去形と現在完了など）",
+      "minLevel": 4,
+      "maxLevel": 10,
+      "example": "I lost my wallet, but I've found it now."
+    },
+    {
+      "id": "past-perfect",
+      "ja": "過去完了",
+      "minLevel": 5,
+      "maxLevel": 9,
+      "example": "The train had already left when we arrived."
+    },
+    {
+      "id": "second-conditional",
+      "ja": "仮定法過去",
+      "minLevel": 5,
+      "maxLevel": 10,
+      "example": "If I had more time, I'd learn to cook."
+    },
+    {
+      "id": "causatives",
+      "ja": "使役（make / let / have / get）",
+      "minLevel": 5,
+      "maxLevel": 10,
+      "example": "I had my hair cut at the new salon yesterday."
+    },
+    {
+      "id": "phrasal-verbs",
+      "ja": "句動詞",
+      "minLevel": 5,
+      "maxLevel": 10,
+      "example": "Let's go over the plan once more."
+    },
+    {
+      "id": "reported-speech",
+      "ja": "話法・時制の一致",
+      "minLevel": 5,
+      "maxLevel": 10,
+      "example": "She said she would be a little late."
+    },
+    {
+      "id": "concession-contrast",
+      "ja": "譲歩・対比（although / even if / whereas）",
+      "minLevel": 5,
+      "maxLevel": 10,
+      "example": "Even if it rains, the event will go ahead."
+    },
+    {
+      "id": "hedging-softening",
+      "ja": "婉曲・柔らかい言い方",
+      "minLevel": 6,
+      "maxLevel": 10,
+      "example": "I was wondering if you could take a look at this."
+    },
+    {
+      "id": "third-conditional",
+      "ja": "仮定法過去完了",
+      "minLevel": 6,
+      "maxLevel": 10,
+      "example": "If I had left earlier, I wouldn't have missed it."
+    },
+    {
+      "id": "participle-clauses",
+      "ja": "分詞構文",
+      "minLevel": 6,
+      "maxLevel": 10,
+      "example": "Having finished the report, she went home early."
+    },
+    {
+      "id": "modal-perfect",
+      "ja": "助動詞 + have done（should have / must have / might have）",
+      "minLevel": 6,
+      "maxLevel": 10,
+      "example": "I should have checked the schedule before I booked."
+    },
+    {
+      "id": "wishes-regrets",
+      "ja": "wish / if only",
+      "minLevel": 6,
+      "maxLevel": 10,
+      "example": "I wish I had known about it sooner."
+    },
+    {
+      "id": "cleft-emphasis",
+      "ja": "強調構文（It is ... that / What ... is）",
+      "minLevel": 8,
+      "maxLevel": 10,
+      "example": "It was the price, not the design, that surprised me."
+    },
+    {
+      "id": "mixed-conditional",
+      "ja": "混合仮定法",
+      "minLevel": 8,
+      "maxLevel": 10,
+      "example": "If I had taken that job, I'd be living in London now."
+    },
+    {
+      "id": "nested-clauses",
+      "ja": "節の入れ子・長い名詞句",
+      "minLevel": 8,
+      "maxLevel": 10,
+      "example": "The person who told me what you had said wasn't sure."
+    },
+    {
+      "id": "inversion",
+      "ja": "倒置",
+      "minLevel": 9,
+      "maxLevel": 10,
+      "example": "Not only did he apologize, but he also paid for dinner."
+    }
+  ]
+}

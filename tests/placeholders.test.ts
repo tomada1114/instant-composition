@@ -89,38 +89,15 @@ const PLACEHOLDERS = [
  * `<file>: <placeholder>` rows.
  *
  * @remarks
- * These seven files *are* the template's identity, so a placeholder in them is
- * intended, not a leak: they are what a new app rewrites first. Four carry the
- * repository's identity — the package name and description, the slug, the
- * copyright holder — and four the copy a visitor reads: the localized metadata
- * and `HomePage.title` keys in each catalog. Everything else in
- * the tree — the rest of `src/`, `tests/`, `scripts/`, the skills, the
- * workflows, `CONTRIBUTING.md`, `AGENTS.md` — must name nothing of the sort,
- * so the rename is a bounded edit to seven files rather than a
- * repository-wide search that can miss one. Two of the rows are the template's
- * real repository slug rather than a blank, deliberately: the CI badge and the
- * security-advisory link have to resolve *while this repository is the
- * template*, and a fork replaces them like any other row.
- *
- * The design-direction rows sit outside that count: the stylesheet and both
- * copies of `designing-ui` carry the marker until a new app settles its
- * direction, which `starting-an-app` sequences after the rename.
+ * The rename is done: every identity row is gone, so no identity string of
+ * the template survives anywhere in the tree. What remains is the
+ * design-direction marker — the stylesheet and both copies of `designing-ui`
+ * carry it until this app settles its direction, which `starting-an-app`
+ * sequences after the rename.
  */
 const EXPECTED_INVENTORY = [
   ".agents/skills/designing-ui/SKILL.md: DESIGN DIRECTION: UNSETTLED",
   ".claude/skills/designing-ui/SKILL.md: DESIGN DIRECTION: UNSETTLED",
-  ".github/ISSUE_TEMPLATE/config.yml: tomada1114/nextjs-app-template",
-  "LICENSE: Your Name",
-  "README.md: A short description.",
-  "README.md: Your Name",
-  "README.md: my-package",
-  "README.md: tomada1114/nextjs-app-template",
-  "messages/en.json: An App Router skeleton.",
-  "messages/en.json: Next.js App Template",
-  "messages/ja.json: App Router のひな形です。",
-  "messages/ja.json: Next.js アプリテンプレート",
-  "package.json: A short description.",
-  "package.json: my-package",
   "src/app/globals.css: DESIGN DIRECTION: UNSETTLED",
 ];
 

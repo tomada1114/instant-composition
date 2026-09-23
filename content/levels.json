@@ -1,0 +1,126 @@
+{
+  "version": 1,
+  "note": "All scores are rough, in-app reference points only. No exam maps to spoken sentence difficulty.",
+  "levels": [
+    {
+      "level": 1,
+      "toeic": "300",
+      "cefr": "A1+",
+      "ielts": null,
+      "toeflIbt": "1.5–2",
+      "words": {
+        "min": 3,
+        "max": 8
+      },
+      "summary": "中 1 相当。現在形・be 動詞・命令文の短い単文"
+    },
+    {
+      "level": 2,
+      "toeic": "400",
+      "cefr": "A2",
+      "ielts": null,
+      "toeflIbt": "2",
+      "words": {
+        "min": 4,
+        "max": 9
+      },
+      "summary": "中 2 相当。過去・未来・助動詞・比較"
+    },
+    {
+      "level": 3,
+      "toeic": "500",
+      "cefr": "A2+",
+      "ielts": "3.5",
+      "toeflIbt": "2.5",
+      "words": {
+        "min": 5,
+        "max": 11
+      },
+      "summary": "中 3 相当。現在完了・受動態・不定詞と動名詞の基本"
+    },
+    {
+      "level": 4,
+      "toeic": "600",
+      "cefr": "B1-",
+      "ielts": "4.0",
+      "toeflIbt": "3",
+      "words": {
+        "min": 6,
+        "max": 13
+      },
+      "summary": "関係詞・間接疑問・後置修飾"
+    },
+    {
+      "level": 5,
+      "toeic": "730",
+      "cefr": "B1+",
+      "ielts": "5.0",
+      "toeflIbt": "3.5",
+      "words": {
+        "min": 7,
+        "max": 15
+      },
+      "summary": "仮定法過去・使役・基本の句動詞"
+    },
+    {
+      "level": 6,
+      "toeic": "800",
+      "cefr": "B2-",
+      "ielts": "5.5",
+      "toeflIbt": "4",
+      "words": {
+        "min": 8,
+        "max": 17
+      },
+      "summary": "仮定法過去完了・分詞構文"
+    },
+    {
+      "level": 7,
+      "toeic": "860",
+      "cefr": "B2",
+      "ielts": "6.0",
+      "toeflIbt": "4–4.5",
+      "words": {
+        "min": 9,
+        "max": 19
+      },
+      "summary": "婉曲・譲歩・複文の組み合わせ"
+    },
+    {
+      "level": 8,
+      "toeic": "900",
+      "cefr": "B2+",
+      "ielts": "6.5",
+      "toeflIbt": "4.5",
+      "words": {
+        "min": 10,
+        "max": 22
+      },
+      "summary": "節の入れ子・句動詞の選び分け"
+    },
+    {
+      "level": 9,
+      "toeic": "950",
+      "cefr": "C1-",
+      "ielts": "7.0",
+      "toeflIbt": "5",
+      "words": {
+        "min": 10,
+        "max": 24
+      },
+      "summary": "倒置・強調・細かなニュアンス"
+    },
+    {
+      "level": 10,
+      "toeic": "990+",
+      "cefr": "C1",
+      "ielts": "7.5+",
+      "toeflIbt": "5.5",
+      "words": {
+        "min": 12,
+        "max": 28
+      },
+      "summary": "入り組んだ文（TOEIC の上限の先）"
+    }
+  ]
+}

@@ -5,22 +5,20 @@ description: >
   adding or renaming a UI string so the catalogs, MESSAGE_KEYS and the typed key union
   stay in step, ICU arguments and plural categories, and linking with Link from
   src/i18n/navigation.ts rather than next/link. Use when adding a translated string,
-  editing messages/en.json or messages/ja.json, touching src/i18n/locales.ts,
-  messages.ts, routing.ts, request.ts or navigation.ts, adding a locale, mapping a UI
-  locale to the LLM port's outputLanguage, or when a message renders as its own key
+  editing messages/ja.json, touching src/i18n/locales.ts, messages.ts, routing.ts,
+  request.ts or navigation.ts, adding a locale, or when a message renders as its own key
   name.
 ---
 
 # Localizing UI
 
 **Owns:** what goes into a message catalog and how a locale reaches the code that
-renders it — `messages/*.json`, the typed key union in `src/i18n/messages.ts`, the
-locale-aware modules under `src/i18n/`, and the one mapping from a UI locale to the LLM
-port's `outputLanguage`. **Does not own:** the shape of a page, layout, Route Handler or
-`src/proxy.ts` (`building-app-routes`); how a rendered test case is written
-(`writing-tests`) and which vitest project it joins (`placing-tests`); TypeScript idiom
-inside a module (`writing-typescript`); dropping a locale when turning this template
-into an app (`starting-an-app`).
+renders it — `messages/*.json`, the typed key union in `src/i18n/messages.ts`, and the
+locale-aware modules under `src/i18n/`. **Does not own:** the shape of a page, layout,
+Route Handler or `src/proxy.ts` (`building-app-routes`); how a rendered test case is
+written (`writing-tests`) and which vitest project it joins (`placing-tests`);
+TypeScript idiom inside a module (`writing-typescript`); dropping a locale when turning
+this template into an app (`starting-an-app`).
 
 ## A tree full of Japanese is not a violation
 
@@ -42,48 +40,48 @@ the text; adding an exclusion is weakening a gate.
 
 ## Adding a string, end to end
 
-Four edits, in this order. Doing three of them and running a check reports the half you
-have not made yet, so make all four first.
+Three edits, in this order. Doing two of them and running a check reports the part you
+have not made yet, so make all three first.
 
-1. `messages/en.json` — add the key under a namespace. English is the source of truth
-   for the catalog's _shape_: `Messages = typeof en`.
-2. `messages/ja.json` — add the same key. Omitting it is a type error rather than a
+1. `messages/ja.json` — add the key under a namespace. Japanese, the one locale this app
+   ships, is the source of truth for the catalog's _shape_: `Messages = typeof ja`. A
+   locale added later must hold the same key; omitting it is a type error rather than a
    blank string in production, because `MESSAGES` is annotated
    `Readonly<Record<Locale, Messages>>`.
-3. `tests/messages.test.ts` — add the dotted `Namespace.key` to `MESSAGE_KEYS`. It lives
+2. `tests/messages.test.ts` — add the dotted `Namespace.key` to `MESSAGE_KEYS`. It lives
    in the test, not in `src/`, because nothing the application ships reads it: it exists
    only to be diffed against the catalog (see the three checks below).
-4. Render it: `const t = useTranslations("Namespace")`, then `t("key")`.
+3. Render it: `const t = useTranslations("Namespace")`, then `t("key")`.
 
 Then `pnpm exec vitest run tests/messages.test.ts && pnpm typecheck`.
 
 Three checks hold the catalog, the hand-written list and the typed union together. The
-last two overlap on purpose: both fail when `en.json` gains a key nobody listed, but
+last two overlap on purpose: both fail when `ja.json` gains a key nobody listed, but
 only the runtime case names it.
 
 - `MESSAGE_KEYS` is `as const satisfies readonly MessageKey[]`, so an entry the catalog
-  does not hold — a typo, a key renamed or deleted in `en.json` — fails
+  does not hold — a typo, a key renamed or deleted in `ja.json` — fails
   `pnpm typecheck`.
 - `expectTypeOf<(typeof MESSAGE_KEYS)[number]>().toEqualTypeOf<MessageKey>()` fails
-  `pnpm typecheck` when `en.json` gained a key nobody listed, but the error names a type
+  `pnpm typecheck` when `ja.json` gained a key nobody listed, but the error names a type
   mismatch, not the key. `as const satisfies` rather than an annotation of
   `readonly MessageKey[]` is what makes this possible: the annotation would discard the
   literal tuple type and let a new key land silently.
 - The runtime case fires on that same omission, comparing the list against the keys read
-  from `messages/en.json` on disk rather than from what the bundler resolved — keep it
+  from `messages/ja.json` on disk rather than from what the bundler resolved — keep it
   for that: it is the one check that names the offending key, and the only one that
   would notice `DottedKeys` and the test's own `dottedKeys` walk disagreeing, a
   divergence that would make both type checks agree wrongly.
 
-`MESSAGE_KEYS` is the one thing here that is not derived from `en.json`, and that is
+`MESSAGE_KEYS` is the one thing here that is not derived from `ja.json`, and that is
 deliberate. `MessageKey` agrees with the catalog by construction, so it can never report
-a key that was never added; only a list a human maintains as step 3 above can. Deriving
-it would collapse all three checks into `flatten(en) === flatten(en)`.
+a key that was never added; only a list a human maintains as step 2 above can. Deriving
+it would collapse all three checks into `flatten(ja) === flatten(ja)`.
 
 A namespace is a first-level object in the catalog and the argument `useTranslations`
-takes. Group by the component that reads it — the template's `LocaleSwitcher` namespace
-holds one entry per locale code, which is what lets `switcher(locale)` name a language
-without a lookup table of its own.
+takes. Group by the component that reads it — the `LocaleSwitcher` namespace holds one
+entry per locale code, which is what lets `switcher(locale)` name a language without a
+lookup table of its own.
 
 ## ICU arguments and plural categories
 
@@ -92,9 +90,10 @@ without a lookup table of its own.
   across catalogs — an argument the caller does not pass is a runtime formatting error
   in that one locale, on a page nobody opened in it.
 - Plural **categories** deliberately differ between catalogs, and the test does not
-  compare them. `HomePage.localeCount` carries `one` and `other` in `en.json` and only
-  `other` in `ja.json`, because Japanese has no singular/plural distinction; an unused
-  `one` branch there would be a translation of a grammar the language does not have.
+  compare them. `HomePage.localeCount` carries only `other` in `ja.json`, because
+  Japanese has no singular/plural distinction; an English catalog added later would
+  carry `one` and `other`, and an unused `one` branch in Japanese would be a translation
+  of a grammar the language does not have.
 
   ```json
   "localeCount": "{count, plural, other {このテンプレートには # 言語が含まれています。}}"
@@ -118,7 +117,7 @@ than a paraphrase. What is worth knowing before you open one:
   hand-written `MESSAGE_KEYS` manifest that `MessageKey` is checked against lives in
   `tests/messages.test.ts`.
 - `routing.ts` — `defineRouting`. `localePrefix` defaults to `"always"`, which is why
-  `/en` and `/ja` are the only shapes a page is served under and `/` is a redirect.
+  `/ja` is the only shape a page is served under and `/` is a redirect.
 - `request.ts` — the per-request config, loaded by exact path from `next.config.ts`, so
   it is a default export and `eslint.config.mjs` exempts it by name. It validates the
   requested locale rather than trusting it: the `[locale]` segment is catch-all, so
@@ -137,48 +136,26 @@ out of step, or the string was read under a namespace that does not hold it. Run
 ## Never `next/link`
 
 Take `Link`, `redirect`, `usePathname` and `useRouter` from `src/i18n/navigation.ts`,
-and give them a pathname with no locale in it — `/`, not `/en`. Reaching for `next/link`
+and give them a pathname with no locale in it — `/`, not `/ja`. Reaching for `next/link`
 or `next/navigation` directly is the mistake that module exists to prevent: it emits a
 URL with no locale, `src/proxy.ts` then redirects it, and the reader pays a round trip
 and loses the locale they were on.
 
-Passing `locale` to `Link` explicitly is how a language switch targets the other
-language, as `src/app/[locale]/page.tsx` does; leaving it off keeps the active one. A
-switcher across a tree of pages reads the current path from `usePathname()` in the same
-module rather than hard-coding `/`.
+Passing `locale` to `Link` explicitly is how a language switch targets another language;
+leaving it off keeps the active one. A switcher across a tree of pages reads the current
+path from `usePathname()` in the same module rather than hard-coding `/`.
 
 **BACKGROUND:** `building-app-routes` for `src/proxy.ts`'s matcher and the `[locale]`
 segment, which have to agree with each other.
 
-## The `outputLanguage` seam
-
-`LlmRequest.outputLanguage` in `src/ai/port.ts` is an open BCP 47 tag naming a language
-a model can write in. A UI locale is the closed union of the languages this application
-ships a catalog for. `OUTPUT_LANGUAGE_BY_LOCALE` in `src/server/handlers/ask.ts` is the
-only place the two vocabularies are allowed to meet, and it stays there:
-
-- Never in `src/ai/port.ts` and never in an adapter. The port knows nothing about this
-  application's catalogs, which is what keeps it vendor-neutral and the AI layer
-  removable in one piece.
-- Never in a page or a component. The locale reaches the endpoint as the `locale` field
-  of the request body, defaulted to `DEFAULT_LOCALE`.
-- The table is `as const satisfies Record<Locale, string>`, so a locale added to
-  `LOCALES` without a row fails to compile instead of silently answering in English.
-  Pinned by `tests/server-handler.test.ts`.
-- The indirection earns its keep on a locale whose tag is not its own name — a `zh`
-  catalog answered in `zh-Hans`.
-
-Shared ground with `building-app-routes`: that skill owns the handler's shape and its
-error vocabulary, this one owns which tag a locale maps to.
-
 ## Adding a locale
 
-The template ships `en` and `ja`. A third is one list read five times: `LOCALES` in
-`src/i18n/locales.ts`; a new `messages/<locale>.json` translating every key `en.json`
-holds; a static import and a `MESSAGES` entry in `src/i18n/messages.ts`; a row in
-`OUTPUT_LANGUAGE_BY_LOCALE`; and a `LocaleSwitcher.<locale>` entry in **every** catalog
-— that one is a new key, so `MESSAGE_KEYS` in `tests/messages.test.ts` gains a line too.
-Nothing under `src/app/` or in `src/proxy.ts` changes; neither names a locale.
+This app ships `ja` only. A second locale is one list read four times: `LOCALES` in
+`src/i18n/locales.ts`; a new `messages/<locale>.json` translating every key `ja.json`
+holds; a static import and a `MESSAGES` entry in `src/i18n/messages.ts`; and a
+`LocaleSwitcher.<locale>` entry in **every** catalog — that one is a new key, so
+`MESSAGE_KEYS` in `tests/messages.test.ts` gains a line too. Nothing under `src/app/` or
+in `src/proxy.ts` changes; neither names a locale.
 
 Locale negotiation is `next-intl`'s middleware reading the request's `Accept-Language`
 header and its locale cookie, and nothing more — no domain routing, no geolocation, no
@@ -196,7 +173,7 @@ pnpm exec vitest run tests/proxy.test.ts     # only if routing or the matcher ch
 pnpm build                                   # only if a page or layout changed
 ```
 
-Then open `/en` and `/ja` under `pnpm dev`. `pnpm run test:smoke` (after `pnpm build`)
-serves the built application and checks that both answer 200 with the matching
+Then open `/ja` under `pnpm dev`. `pnpm run test:smoke` (after `pnpm build`) serves the
+built application and checks that every shipped locale answers 200 with the matching
 `<html lang>`, which catches a locale that never renders at all; nothing checks that a
 string reads correctly in it, and that is what opening the pages is for.

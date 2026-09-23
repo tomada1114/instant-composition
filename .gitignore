@@ -47,6 +47,11 @@ next-env.d.ts
 # Credentials kept in a checkout: never tracked, and never read by a tool here
 secrets/
 
+# Scratch for skill runs (writer output, edit batches before `pnpm cards:*`)
+tmp/
+# Held by a running `pnpm cards:*` write command; never committed
+content/.cards.lock
+
 # Logs
 *.log
 

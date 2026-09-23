@@ -6,8 +6,8 @@ import { DEFAULT_LOCALE, LOCALES } from "../src/i18n/locales";
 
 // The failure this file exists to catch is silent: `proxy.ts` decides which
 // requests acquire a locale prefix, and `src/app/[locale]/` decides which
-// prefixes render. Disagree, and `/` 404s — or `/api/ask` gets redirected to
-// `/en/api/ask` — with every other suite still green, because nothing else in
+// prefixes render. Disagree, and `/` 404s — or `/api/cards` gets redirected to
+// `/ja/api/cards` — with every other suite still green, because nothing else in
 // the repository reads both halves.
 
 /**
@@ -49,7 +49,7 @@ describe("the paths locale detection runs on", () => {
 
   it.each([
     ["an API route", "/api"],
-    ["a nested API route", "/api/ask"],
+    ["a nested API route", "/api/cards/next"],
     ["a framework asset", "/_next/static/chunk.js"],
     ["a deployment-platform path", "/_vercel/insights"],
     ["anything with a file extension", "/favicon.ico"],
@@ -85,7 +85,7 @@ describe("locale detection", () => {
   });
 
   it("falls back to the default locale for a language this app does not ship", () => {
-    const target = redirectTarget(proxy(get("/", { "accept-language": "fr" })));
+    const target = redirectTarget(proxy(get("/", { "accept-language": "en" })));
 
     expect(target).toBe(`/${DEFAULT_LOCALE}`);
   });
@@ -100,6 +100,6 @@ describe("locale detection", () => {
   it("sends every redirect to a locale the [locale] segment can render", () => {
     const targets = ["/", "/nested"].map((path) => redirectTarget(proxy(get(path))));
 
-    expect(targets).toStrictEqual(["/en", "/en/nested"]);
+    expect(targets).toStrictEqual(["/ja", "/ja/nested"]);
   });
 });

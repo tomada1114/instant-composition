@@ -1,4 +1,3 @@
-import en from "../../messages/en.json";
 import ja from "../../messages/ja.json";
 import type { Locale } from "./locales";
 
@@ -6,12 +5,13 @@ import type { Locale } from "./locales";
  * The catalog shape every locale must provide.
  *
  * @remarks
- * The English catalog is the source of truth for the *shape*: it is the one
- * this repository writes first, and every other locale is a translation of it.
+ * The Japanese catalog is the source of truth for the *shape*: it is the one
+ * locale this application ships, so any locale added later is a translation of
+ * it.
  * {@link MESSAGES} being annotated as a full `Record` is what turns "ja is
  * missing a key" into a type error rather than a blank string at runtime.
  */
-export type Messages = typeof en;
+export type Messages = typeof ja;
 
 /**
  * Every dotted key a translator function accepts, derived from the catalog.
@@ -31,7 +31,7 @@ type DottedKeys<TCatalog> = {
  * Every message key in the catalog, as `Namespace.key`.
  *
  * @remarks
- * Derived, so it cannot disagree with `messages/en.json` — which also means it
+ * Derived, so it cannot disagree with `messages/ja.json` — which also means it
  * cannot notice a key nobody added there. Catching that takes a manifest
  * written by hand, and `tests/messages.test.ts` holds it: nothing under `src/`
  * reads such a list, and a compile-time assertion belongs where the two things
@@ -43,11 +43,11 @@ export type MessageKey = DottedKeys<Messages>;
  * The catalogs, keyed by locale.
  *
  * @remarks
- * Both are imported statically rather than through a dynamic `import()` per
- * locale. Two small catalogs are not worth a code-split, and a static import is
+ * Imported statically rather than through a dynamic `import()` per locale. A
+ * small catalog is not worth a code-split, and a static import is
  * what gives {@link Messages} something to be inferred from.
  */
-export const MESSAGES: Readonly<Record<Locale, Messages>> = { en, ja };
+export const MESSAGES: Readonly<Record<Locale, Messages>> = { ja };
 
 declare module "next-intl" {
   // Teaches `useTranslations`, `getTranslations` and `useLocale` this

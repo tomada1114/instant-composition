@@ -3,7 +3,7 @@ import { act, render, screen } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 
 import HomePage from "../src/app/[locale]/page";
-import en from "../messages/en.json";
+import ja from "../messages/ja.json";
 
 vi.mock("next-intl/server", () => ({
   setRequestLocale: () => undefined,
@@ -24,8 +24,8 @@ vi.mock("next-intl/server", () => ({
 async function renderHomePage(): Promise<void> {
   await act(async () => {
     render(
-      <NextIntlClientProvider locale="en" messages={en}>
-        <HomePage params={Promise.resolve({ locale: "en" })} />
+      <NextIntlClientProvider locale="ja" messages={ja}>
+        <HomePage params={Promise.resolve({ locale: "ja" })} />
       </NextIntlClientProvider>,
     );
     await Promise.resolve();
@@ -45,25 +45,13 @@ describe("HomePage", () => {
     await renderHomePage();
 
     expect(
-      screen.getByRole("heading", { name: en.HomePage.title }),
+      screen.getByRole("heading", { name: ja.HomePage.title }),
     ).toBeInTheDocument();
+    // Built from the catalog on disk rather than written as a literal: the
+    // only shipped catalog is Japanese, and AGENTS.md's Conventions keep a
+    // Japanese literal out of a test unless its exact bytes are the point.
     expect(
-      screen.getByText("The App Router skeleton renders in English."),
+      screen.getByText(ja.HomePage.intro.replace("{language}", ja.LocaleSwitcher.ja)),
     ).toBeInTheDocument();
-  });
-
-  it("renders a locale link for every shipped locale", async () => {
-    await renderHomePage();
-
-    const nav = screen.getByRole("navigation", { name: en.LocaleSwitcher.label });
-    expect(nav).toBeInTheDocument();
-
-    const english = screen.getByRole("link", { name: en.LocaleSwitcher.en });
-    expect(english).toHaveAttribute("href", "/en");
-    expect(english).toHaveAttribute("hreflang", "en");
-
-    const japanese = screen.getByRole("link", { name: en.LocaleSwitcher.ja });
-    expect(japanese).toHaveAttribute("href", "/ja");
-    expect(japanese).toHaveAttribute("hreflang", "ja");
   });
 });

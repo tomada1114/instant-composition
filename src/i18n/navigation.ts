@@ -7,7 +7,7 @@ import { routing } from "./routing";
  *
  * @remarks
  * Every one of these takes a pathname without the locale prefix — `/` rather
- * than `/en` — and adds the active locale on the way out. Using `next/link`
+ * than `/ja` — and adds the active locale on the way out. Using `next/link`
  * directly instead is the mistake this module exists to prevent: it produces a
  * URL with no locale, which `proxy.ts` then redirects, costing a round trip and
  * losing the locale the reader was already on.

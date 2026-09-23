@@ -1,10 +1,10 @@
 {
   "Metadata": {
-    "title": "Next.js アプリテンプレート",
-    "description": "App Router のひな形です。"
+    "title": "Instant Composition",
+    "description": "Instant English composition drills: see a Japanese sentence, say it in English before the timer runs out."
   },
   "HomePage": {
-    "title": "Next.js アプリテンプレート",
+    "title": "瞬間英作文",
     "intro": "App Router のひな形を{language}で表示しています。",
     "localeCount": "{count, plural, other {このテンプレートには # 言語が含まれています。}}"
   },
@@ -15,7 +15,6 @@
   },
   "LocaleSwitcher": {
     "label": "言語",
-    "en": "英語",
     "ja": "日本語"
   }
 }

@@ -274,14 +274,14 @@ function dummyIcuValues(message: string): Record<string, string | number | Date>
 const catalogs = new Map(LOCALES.map((locale) => [locale, readCatalog(locale)]));
 
 /** The reference catalog: the one every other locale is a translation of. */
-const referenceKeys = dottedKeys(catalogs.get("en")).sort();
+const referenceKeys = dottedKeys(catalogs.get("ja")).sort();
 
 /**
  * Every key the catalogs are expected to hold, written out by hand.
  *
  * @remarks
- * This is the one thing here that is *not* derived from `messages/en.json`.
- * `MessageKey` is (`DottedKeys<typeof en>`), so it agrees with the catalog by
+ * This is the one thing here that is *not* derived from `messages/ja.json`.
+ * `MessageKey` is (`DottedKeys<typeof ja>`), so it agrees with the catalog by
  * construction and can never report a key that was never added; only a list a
  * human maintains, one of the edits `localizing-ui`'s "adding a string" walks
  * through, can.
@@ -300,7 +300,6 @@ const MESSAGE_KEYS = [
   "NotFound.description",
   "NotFound.homeLink",
   "LocaleSwitcher.label",
-  "LocaleSwitcher.en",
   "LocaleSwitcher.ja",
 ] as const satisfies readonly MessageKey[];
 
@@ -313,16 +312,16 @@ describe("the message catalogs", () => {
     expect(referenceKeys.length).toBeGreaterThan(0);
   });
 
-  it.each([...LOCALES])("gives %s exactly the keys en has", (locale) => {
+  it.each([...LOCALES])("gives %s exactly the keys ja has", (locale) => {
     expect(dottedKeys(catalogs.get(locale)).sort()).toStrictEqual(referenceKeys);
   });
 
   // MESSAGES is annotated Readonly<Record<Locale, Messages>>, and every
-  // catalog is assignable to Messages — so `{ en, ja: en }` type-checks and
-  // ships a copy-paste that serves English under /ja. This is also what keeps
-  // MESSAGES a value import: `vitest related` only sees this suite depend on
-  // messages/en.json through the value chain messages.test.ts ->
-  // src/i18n/messages.ts -> messages/en.json, since every other case here
+  // catalog is assignable to Messages — so once a second locale exists, one
+  // catalog wired under another's key type-checks and ships a copy-paste. This
+  // is also what keeps MESSAGES a value import: `vitest related` only sees this
+  // suite depend on messages/ja.json through the value chain messages.test.ts
+  // -> src/i18n/messages.ts -> messages/ja.json, since every other case here
   // reads the catalogs with readFileSync, which Vite's module graph cannot
   // see. A type-only import would silently stop lefthook's test:related job
   // from selecting this suite when a translator edits a catalog.
@@ -339,9 +338,9 @@ describe("the message catalogs", () => {
     expect(blank).toStrictEqual([]);
   });
 
-  it.each([...LOCALES])("asks %s for the same ICU arguments as en", (locale) => {
+  it.each([...LOCALES])("asks %s for the same ICU arguments as ja", (locale) => {
     const mismatched = referenceKeys.filter((key) => {
-      const reference = valueAt(catalogs.get("en"), key);
+      const reference = valueAt(catalogs.get("ja"), key);
       const translated = valueAt(catalogs.get(locale), key);
       if (typeof reference !== "string" || typeof translated !== "string") {
         return true;
@@ -407,7 +406,7 @@ describe("the message catalogs", () => {
     it("passes a Date for a date/time argument, so a valid date message formats", () => {
       const message = "{when, date, short}";
       const translate = createTranslator({
-        locale: "en",
+        locale: "ja",
         messages: { Fixture: { when: message } },
         onError: (error) => {
           throw error;
@@ -432,7 +431,7 @@ describe("the message catalogs", () => {
     it("still reports a hyphenated name as broken, because it is not legal ICU syntax", () => {
       const message = "{user-name}";
       const translate = createTranslator({
-        locale: "en",
+        locale: "ja",
         messages: { Fixture: { greeting: message } },
         onError: (error) => {
           throw error;
@@ -456,7 +455,7 @@ describe("the message catalogs", () => {
       expect(icuArguments(message)).toStrictEqual(["1fast"]);
 
       const translate = createTranslator({
-        locale: "en",
+        locale: "ja",
         messages: { Fixture: { greeting: message } },
         onError: (error) => {
           throw error;
@@ -480,7 +479,7 @@ describe("the message catalogs", () => {
       expect(icuArguments(message)).toStrictEqual(["gender"]);
 
       const translate = createTranslator({
-        locale: "en",
+        locale: "ja",
         messages: { Fixture: { pronoun: message } },
         onError: (error) => {
           throw error;
@@ -497,12 +496,12 @@ describe("the message catalogs", () => {
 
 describe("the typed message keys", () => {
   // Three checks hold the catalog, the hand-written list above and MessageKey
-  // together. The last two overlap on purpose: both fail when en.json gains
+  // together. The last two overlap on purpose: both fail when ja.json gains
   // a key nobody listed, but only the runtime case names it.
   //  - `MESSAGE_KEYS` is `as const satisfies readonly MessageKey[]` (above),
   //    so an entry the catalog does not hold — a typo, a key renamed or
-  //    deleted in en.json — fails `pnpm typecheck`.
-  //  - the `expectTypeOf` below fails `pnpm typecheck` when en.json gained a
+  //    deleted in ja.json — fails `pnpm typecheck`.
+  //  - the `expectTypeOf` below fails `pnpm typecheck` when ja.json gained a
   //    key nobody listed, but the error names a type mismatch, not the key.
   //  - `names every key the catalog on disk holds, and no others` (below)
   //    fires on that same omission, reading from the file on disk rather
