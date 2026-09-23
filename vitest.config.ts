@@ -35,6 +35,7 @@ const automationTests = [
   "tests/node-tools.test.ts",
   "tests/placeholders.test.ts",
   "tests/repo-tree.test.ts",
+  "tests/server-content.test.ts",
   "tests/server-env.test.ts",
   "tests/skills-frontmatter.test.ts",
   "tests/sync-agents.test.ts",
