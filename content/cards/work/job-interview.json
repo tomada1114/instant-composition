@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2n9b9h4p",
+    "ja": "正直に言うと、前の会社が海外事業から撤退していなかったら、私は転職を考えていなかったと思います。",
+    "en": "To be honest, if my last company hadn't pulled out of its overseas business, I don't think I'd have considered changing jobs.",
+    "alternatives": [
+      "Honestly, if my previous company hadn't withdrawn from its overseas business, I don't think I would have thought about changing jobs.",
+      "To be honest, I doubt I'd have considered a job change if my last company hadn't pulled out of its overseas business."
+    ],
+    "point": "過去の事実の反対は if + had 過去分詞、主節は would have 過去分詞",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 9,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2bdbbbf87e459f152276a8ed42d4933c276f6776cbd4d078be4b60a612fe0a3f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2t4s3u8w",
     "ja": "前の会社では3年間物流を担当していましたが、ここ1年はデータ分析の勉強にも力を入れてきました。",
     "en": "I was in charge of logistics for three years at my last company, but I've also been focusing on studying data analysis over the past year.",

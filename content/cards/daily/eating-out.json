@@ -45,6 +45,50 @@
     }
   },
   {
+    "id": "c_2e7u5k7d",
+    "ja": "クーポンを使うのを忘れていなかったら、私たち、会計で千円くらい節約できたのにね。",
+    "en": "If we hadn't forgotten to use the coupon, we could have saved about a thousand yen on the bill.",
+    "alternatives": [
+      "If we'd remembered to use the coupon, we could have saved about a thousand yen on the bill.",
+      "We could have saved about a thousand yen on the bill if we hadn't forgotten the coupon."
+    ],
+    "point": "過去の仮定は if + had 過去分詞、結果は could have",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:50c95b75ce3e002aa559bfd4d62b23d97a6a23b7d27533ede886bb6bc21060de",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2q8e8s2s",
+    "ja": "店員さんに、お皿を下げてもらうように頼んでもらえる？",
+    "en": "Could you ask the waiter to take our plates?",
+    "alternatives": [
+      "Can you ask the server to clear our plates?",
+      "Could you ask the waiter to take away our plates?"
+    ],
+    "point": "ask + 人 + to do の形。that 節にしない",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 3,
+    "grammar": ["verb-object-to-do", "requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:df623019c64ce60e6f0dc556c92c80846616057a432be1ce1589bba3186bc7e2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2s7t5q9v",
     "ja": "窓際の席はもう全部予約で埋まっていると言われたので、私たちはカウンターに座りました。",
     "en": "We were told all the window seats had already been reserved, so we sat at the counter.",
@@ -265,6 +309,28 @@
     }
   },
   {
+    "id": "c_5p4u8s5t",
+    "ja": "店員さんが、デザートは閉店の30分前までしか注文できないって言ってたよ。",
+    "en": "The server said we could only order dessert until thirty minutes before closing.",
+    "alternatives": [
+      "The server told us we could only order dessert up until thirty minutes before closing.",
+      "The server said dessert could only be ordered until thirty minutes before closing."
+    ],
+    "point": "said に合わせて can を could に時制をそろえる",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0048ef687b7fb8d8013ed0f25a829ed5f90bfef450bfad789af2367a1b5b1fa3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5y9w2n9g",
     "ja": "すみません、窓際の席に座ってもいいですか？",
     "en": "Excuse me, may I sit by the window?",
@@ -307,6 +373,28 @@
     }
   },
   {
+    "id": "c_6v8m2p6v",
+    "ja": "私たちは、席が空くまで外で待つのはかまいませんよ。",
+    "en": "We don't mind waiting outside until a table opens up.",
+    "alternatives": [
+      "We don't mind waiting outside until a table is free.",
+      "We're fine with waiting outside until a table opens up."
+    ],
+    "point": "mind の後は動名詞。to wait にしない",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 3,
+    "grammar": ["gerunds", "time-and-if-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7384258e8766f29c337385daf029f775d6b7612f3318c189c1febe553d1826c4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_6w9y8x7t",
     "ja": "昨日の夜、兄が駅前の新しいラーメン屋に連れて行ってくれた。",
     "en": "Last night my brother took me to the new ramen place by the station.",
@@ -325,6 +413,28 @@
         "hash": "sha256:65dfb44e04afd0f30d6c52e48940a7c3cd24abac38f11a2cea42a3048a4b756a",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6y2g2d8f",
+    "ja": "あの店員さん、きっと私たちの注文を聞き間違えたんだね。頼んでいないパスタが来たもん。",
+    "en": "That server must have misheard our order, because we got a pasta we didn't ask for.",
+    "alternatives": [
+      "The server must have gotten our order wrong, since they brought a pasta we didn't order.",
+      "That server must have misheard us, because we got a pasta we never ordered."
+    ],
+    "point": "過去の確信ある推量は must have + 過去分詞",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:05bd5b829670c0ba4036df1ecc720f2ef6dd4664419c87ae6bfd6bafe430ee69",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

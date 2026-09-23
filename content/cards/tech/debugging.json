@@ -613,6 +613,28 @@
     }
   },
   {
+    "id": "c_5w7z6b3e",
+    "ja": "彼がエラー処理をちゃんと書いていたら、今ごろ私たちのところにこんなにたくさんの問い合わせは来ていないはずです。",
+    "en": "If he had written proper error handling, we wouldn't be getting so many support requests right now.",
+    "alternatives": [
+      "We wouldn't be getting this many support requests right now if he had written proper error handling.",
+      "If he'd handled errors properly, we wouldn't be getting so many support requests right now."
+    ],
+    "point": "過去の仮定と今の結果は had done と would be ~ing",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 10,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d5040591065cd97ea12e71bf3acea181384378e0d3cf06c889cd91e0952c25c2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5w8w3y9h",
     "ja": "彼、リリース前に別のタイムゾーンのアカウントでも試しておけばよかったって、すごく後悔してるんです。",
     "en": "He really wishes he'd tried it with an account in a different time zone before the release.",
@@ -672,6 +694,28 @@
         "hash": "sha256:a6462549be0add26cf8b4377d98f7bd36e646f0c68d4d2ca96344e04e93da477",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6t7w4j4g",
+    "ja": "新しいバージョンを出してからずっと検索が遅いので、誰かがインデックスを削除したに違いないと彼は見ています。",
+    "en": "He thinks someone must have deleted the index, because search has been slow ever since we released the new version.",
+    "alternatives": [
+      "Because search has been slow ever since we released the new version, he thinks someone must have deleted the index.",
+      "He figures someone must have deleted the index, since search has been slow ever since the new version went out."
+    ],
+    "point": "「〜したに違いない」は must have + 過去分詞",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["modal-perfect", "tense-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5f691552ada5a69387e9093d763108cd329eabccf3c2147e8c02500dd6c8be46",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

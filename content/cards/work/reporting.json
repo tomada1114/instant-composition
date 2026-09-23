@@ -88,6 +88,28 @@
     }
   },
   {
+    "id": "c_2u3w9k9b",
+    "ja": "クライアントは予算を承認してくれただけでなく、前倒しで始めてほしいとまで言ってくれました。",
+    "en": "Not only did the client approve the budget, but they also asked us to start ahead of schedule.",
+    "alternatives": [
+      "Not only did the client sign off on the budget, but they also asked us to start early.",
+      "Not only did the client approve the budget, they even asked us to start ahead of schedule."
+    ],
+    "point": "Not only の後は did＋主語＋原形の語順",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:743432f8c0329bf377e887e7c7df9ec4348ffbad6a4ccc1f7dd2eeb82bfaab5d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3e3x4h2h",
     "ja": "テストはまだ全部終わっていませんが、私たちは金曜のリリースには間に合う見込みです。",
     "en": "Although we haven't finished all the tests yet, we expect to make the Friday release.",
@@ -176,6 +198,28 @@
     }
   },
   {
+    "id": "c_4s4w6n2j",
+    "ja": "取引先から、部品は月末まで届かないと言われました。",
+    "en": "The supplier told me the parts wouldn't arrive until the end of the month.",
+    "alternatives": [
+      "The supplier said the parts wouldn't get here until the end of the month.",
+      "I was told by the supplier that the parts wouldn't arrive until the end of the month."
+    ],
+    "point": "言われた内容も過去に合わせて won't ではなく wouldn't",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9d589e57d22a2ea092a62dee12f05958626314f319846a754df21146accb597f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4s7g5h3n",
     "ja": "リリース前にこのバグのことを知っていればよかったんですが、気づいたのは今朝でした。",
     "en": "I wish I'd known about this bug before the release, but I only noticed it this morning.",
@@ -211,6 +255,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:8378bda7d11d068b110e6757772b4b8a7df6817b431750339c729b24227cde5b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4y9y2r7w",
+    "ja": "先月私が仕様をちゃんと確認していれば、チームが今こんなに手戻りに追われることもなかったはずです。",
+    "en": "If I had checked the specs properly last month, the team wouldn't be dealing with all this rework now.",
+    "alternatives": [
+      "If I'd properly checked the specs last month, the team wouldn't be stuck with so much rework now.",
+      "If I had double-checked the specs last month, the team wouldn't have so much rework to do now."
+    ],
+    "point": "if 節は過去完了、今の結果は wouldn't＋原形",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:685ab5027f1eeb70203c45d2966db25a7a4fd19b52a162dc43144157a743a603",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

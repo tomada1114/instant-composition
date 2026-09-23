@@ -176,6 +176,94 @@
     }
   },
   {
+    "id": "c_4n8w2c2f",
+    "ja": "うちの部長が昨日データを確認してくれていたら、私は今、質疑応答で数字を訂正しなくて済んだんですが。",
+    "en": "If our manager had checked the data yesterday, I wouldn't have to correct these figures now during the Q&A.",
+    "alternatives": [
+      "If our manager had checked the data yesterday, I wouldn't need to correct these figures now in the Q&A.",
+      "If our manager had gone over the data yesterday, I wouldn't have to fix these numbers now during the Q&A."
+    ],
+    "point": "過去の条件は had checked、今の結果は wouldn't have to",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:263a7447e026928610dc0ccd3583317885fc233ed61188567e73ad0823ca051f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4t7w6b8f",
+    "ja": "次に、私から今年の売上をお見せします。",
+    "en": "Next, I'm going to show you this year's sales.",
+    "alternatives": [
+      "Next, I'll show you this year's sales.",
+      "Now I'm going to show you our sales for this year."
+    ],
+    "point": "これからすることは I'm going to / I'll で表す",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3dc7d9f9c0d81651f1e6c0e249cd363db064d3865c3ffd56de012443f9229764",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4w4u9e5m",
+    "ja": "もし予算が今の倍あったとしたら、皆さんはこの提案のどの部分を最初に広げますか？",
+    "en": "If you had twice the current budget, which part of this proposal would you expand first?",
+    "alternatives": [
+      "If your budget were twice what it is now, which part of this proposal would you expand first?",
+      "If you had double the current budget, which part of this proposal would you scale up first?"
+    ],
+    "point": "今の事実と違う仮定は過去形、問いは would you",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 6,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b10cf0029d700df9c19ad9dd4b8215936b85c95460535ff56c51283a50a365a4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6k8r7r8p",
+    "ja": "発表のあとで、うちの部長が質問に答えます。",
+    "en": "Our manager will answer questions after the presentation.",
+    "alternatives": [
+      "Our manager is going to answer questions after the presentation.",
+      "Our manager will take questions after the presentation."
+    ],
+    "point": "これからのことなので will か be going to を使う",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a81ad0d7563e01b98515c5bec3b2fedae58526e512f2ecf38452b213f01f8bb7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_6u5e5m9d",
     "ja": "新しい料金プランに関する資料は、会議の後で皆さんにメールでお送りします。",
     "en": "I'll email everyone the materials on the new pricing plan after the meeting.",
@@ -304,6 +392,28 @@
         "hash": "sha256:d8792dba709f6ae1f7c4dc00636a96925bc7b6a3e6016de46fd6c68c3e82f6c3",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8u5e2r5e",
+    "ja": "この資料には、グラフが全部で3つあります。",
+    "en": "There are three charts in this handout.",
+    "alternatives": [
+      "This handout has three charts.",
+      "There are three graphs in this handout."
+    ],
+    "point": "複数あるなら There are、場所は文の最後に置く",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:25d59b90c83e01ff162d2c60228631efbc60d73e73ff9a07fdcfb147b3fc7ffd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

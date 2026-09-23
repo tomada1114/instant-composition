@@ -220,6 +220,28 @@
     }
   },
   {
+    "id": "c_4u7c6p7n",
+    "ja": "私がネットで注文したスニーカー、一週間前に発送されたのに、まだ届いていないんです。",
+    "en": "The sneakers I ordered online were shipped a week ago, but they still haven't arrived.",
+    "alternatives": [
+      "The sneakers I ordered online were sent out a week ago, but they still haven't come.",
+      "The sneakers I ordered online were shipped a week ago, but they haven't arrived yet."
+    ],
+    "point": "発送は過去の一点で過去形、まだ届かないは現在完了",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["tense-contrast", "passive-voice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:29f383851122d6789bd773abf94c94cd8e198065336f138d88a1070d2f11bb24",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5d4n7g9p",
     "ja": "ネットで家具を買う前に、実際に使ってる人の情報がもう少し欲しいんだよね。",
     "en": "Before I buy furniture online, I'd like a bit more information from people who actually use it.",
@@ -324,6 +346,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:c4fa34d26a13e643bd2e10bac30252aa2a4ccfef202d3bf7736473354fb4cb41",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6s9c3m2v",
+    "ja": "このモデルって、もう販売終了になったんですか、それとも今だけ在庫切れなんですか？",
+    "en": "Has this model been discontinued, or is it just out of stock right now?",
+    "alternatives": [
+      "Has this model already been discontinued, or is it only out of stock at the moment?",
+      "Have they stopped making this model, or is it just sold out for now?"
+    ],
+    "point": "「販売終了になった」は現在完了の受け身 has been discontinued",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["passive-voice", "tense-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3e50a44b7c10006fa1e743a023575dc360ea8e85b8853d3fb86b2075c87556d0",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }
@@ -436,6 +480,28 @@
         "hash": "sha256:622efccd63b531ceeead7f068010f95c52ba2b7381fc09ff7a7e183e11b03ea1",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8j5b2c2r",
+    "ja": "私がこの掃除機を買う決め手になったのは、店員さんの説明じゃなくて、ネットのレビューだったんだ。",
+    "en": "It was the online reviews, not the salesperson, that finally convinced me to buy this vacuum.",
+    "alternatives": [
+      "What finally convinced me to buy this vacuum was the online reviews, not the salesperson.",
+      "It wasn't the salesperson but the online reviews that made me decide to buy this vacuum."
+    ],
+    "point": "強調したい語を It was と that で挟み、not で対比する",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ab2f90632278af46685049f9e4451d549f2d1aad8e5848262097aadf4aae3ea7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

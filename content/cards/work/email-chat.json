@@ -85,6 +85,28 @@
     }
   },
   {
+    "id": "c_3u2f4f3m",
+    "ja": "あのメール、先方も CC に入れておけばよかった。今からスレッドごと転送しないといけません。",
+    "en": "I wish I'd cc'd the client on that email; now I have to forward the whole thread to them.",
+    "alternatives": [
+      "If only I'd cc'd the client on that email. Now I need to forward them the whole thread.",
+      "I wish I had copied the client on that email. Now I'll have to forward the entire thread to them."
+    ],
+    "point": "過去の後悔は wish / if only の後に過去完了",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e2341518ab1fcd25beeb3109299e4781a99a7635db877e2f023f4b3d779756c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4m3r3b7a",
     "ja": "来週の打ち合わせの前に、この提案書にざっと目を通しておいてもらえますか？",
     "en": "Could you look over this proposal before our meeting next week?",
@@ -123,6 +145,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:928bb7b15a3d889e1f738d8c7118d5bfc352a8e5ba206b1035ac3469ee0a080c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4w7f2e7m",
+    "ja": "もしうちから先方に、締め切りを金曜まで延ばしてほしいとメールでお願いしたら、嫌がられると思いますか？",
+    "en": "If we emailed the client to ask for the deadline to be pushed back to Friday, do you think they'd mind?",
+    "alternatives": [
+      "If we asked the client by email to extend the deadline to Friday, do you think they'd be unhappy about it?",
+      "Do you think the client would mind if we emailed them asking to move the deadline to Friday?"
+    ],
+    "point": "仮定の話なので if 節は過去形、主節は would",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 8,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e7b6e07c2a0a33730f9df37290e037916903c49da389581ea8e4d9e553410778",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

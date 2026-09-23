@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2a4t8p9b",
+    "ja": "ケンは来月の連休、山小屋で小説を書いて過ごすって言ってたけど、本当にやるのかな。",
+    "en": "Ken said he'd spend next month's long weekend writing a novel in a mountain cabin, but I wonder if he'll really do it.",
+    "alternatives": [
+      "Ken said he was going to spend next month's long weekend writing a novel in a mountain cabin, but I wonder if he'll really do it.",
+      "Ken told me he'd spend the long weekend next month writing a novel at a mountain cabin, but I wonder if he'll really do it."
+    ],
+    "point": "「言ってた」に合わせて伝えた内容の時制を過去にずらす",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 9,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b286903ed39ffcd1aa0ba96c4887d679262d17d4aef1df73e837344417be765a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2m3d2f9k",
     "ja": "この図書館には、漫画がたくさんあるよ。",
     "en": "There are a lot of manga in this library.",
@@ -38,6 +60,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:25441965d297967a6ebd2d6f8e8035aac8475ae1a62b4ca1983017ce41bb791f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2w4c5j3a",
+    "ja": "友達に先週の釣り大会で誰が優勝したのか聞かれたけど、実はまだ結果を見てなかったんだよね。",
+    "en": "A friend asked me who had won last week's fishing tournament, but I actually hadn't checked the results yet.",
+    "alternatives": [
+      "A friend asked me who won last week's fishing tournament, but I actually hadn't looked at the results yet.",
+      "My friend asked me who'd won the fishing tournament last week, but I actually hadn't seen the results yet."
+    ],
+    "point": "「誰が優勝したのか聞かれた」は asked me who had won と過去完了に",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 7,
+    "grammar": ["reported-speech", "indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0d5a87acde1eaf855dd62653862fbb941c25e93a603b304a554b04639ccc4f75",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }
@@ -456,6 +500,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:08aef21353d28b7df3cd2806f78042cefb511728331714822c56c168b5cf85c8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9d9r4y3c",
+    "ja": "うちの夫は日曜日になると、ラジオで野球中継を聞きながら何時間もかけて庭の手入れをしているんです。",
+    "en": "On Sundays, my husband spends hours working in the garden, listening to the baseball game on the radio.",
+    "alternatives": [
+      "My husband spends hours on Sundays taking care of the garden, listening to the ball game on the radio.",
+      "On Sundays, my husband spends hours gardening while listening to the baseball game on the radio."
+    ],
+    "point": "「〜しながら」は文の後ろに -ing 形をつなげて表せる",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d6e7b267a9e64941641f80b914cb1ed2a52bb0c5957273e87827353d7275a97e",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

@@ -394,5 +394,27 @@
         "at": "2026-09-22"
       }
     }
+  },
+  {
+    "id": "c_9w5v4g2p",
+    "ja": "もし私の立場だったら、なくしたクレジットカードはすぐ止めますか、それとも明日まで待ちますか？",
+    "en": "If you were in my position, would you cancel the lost credit card right away or wait until tomorrow?",
+    "alternatives": [
+      "If you were me, would you cancel the lost credit card right away or wait until tomorrow?",
+      "If you were in my shoes, would you freeze the card right away or wait until tomorrow?"
+    ],
+    "point": "仮定の質問は If you were と would you で過去形にそろえる",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 7,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:30486b1c9ef1838b1daac4868233fc69f05f30bd5243bc0bd3affd592f3098dc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
   }
 ]

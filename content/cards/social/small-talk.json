@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2c4u3z7n",
+    "ja": "週末で一番楽しかったのは、実は久しぶりに家で何もしないでのんびりしたことなんだ。",
+    "en": "What I enjoyed most about the weekend was actually relaxing at home and doing nothing for the first time in a while.",
+    "alternatives": [
+      "The thing I enjoyed most about the weekend was actually relaxing at home and doing nothing for the first time in a while.",
+      "What I enjoyed most this weekend was actually just relaxing at home and doing nothing for the first time in ages."
+    ],
+    "point": "「一番〜なのは」は What I enjoyed most was で始める",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0086f7abb5e150db1f333e892889c1c9bf860ce6205a001f6a7788c0676b9f5b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3b7r6j5y",
     "ja": "先週末は雨がひどかったから、子どもたちには一日中家で好きなゲームをさせてあげたんだ。",
     "en": "The rain was so heavy last weekend that I let the kids play whatever games they wanted at home all day.",
@@ -62,6 +84,50 @@
         "hash": "sha256:2fcd71667f92292aa831ac2729443557bddc937f5095b4e8a530aaf155294a4a",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4h3j2j6p",
+    "ja": "じゃあ、去年あの仕事を断ってなかったら、君は今ごろ大阪に住んでたかもしれないってこと？",
+    "en": "So if you hadn't turned down that job last year, you might be living in Osaka now?",
+    "alternatives": [
+      "So you might be living in Osaka now if you hadn't turned down that job last year?",
+      "So if you hadn't said no to that job last year, you could be living in Osaka now?"
+    ],
+    "point": "去年の仮定は過去完了、今の状況は might be living",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 10,
+    "grammar": ["mixed-conditional", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:09e313080d30524fe6f3852ca0d40f4c4a6ae4f70c8fedc740133e9b2a474341",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4j4r5t5f",
+    "ja": "駅前のラーメン屋、いつも行列ができてるよね。行ったことある？",
+    "en": "There's always a line at the ramen shop by the station. Have you tried it?",
+    "alternatives": [
+      "There's always a long line at that ramen place near the station. Have you been there?",
+      "There's always a line outside the ramen shop by the station. Have you ever eaten there?"
+    ],
+    "point": "「行列ができてる」は There's a line で言える",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 5,
+    "grammar": ["there-is-are", "present-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:84f322f7b6a4d3cec3d03e4feae7ca760fd60c59a5c3ca53a33b244aa73817ea",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
@@ -243,6 +309,28 @@
     }
   },
   {
+    "id": "c_6p2j6x3d",
+    "ja": "あのとき姉がキャンプに誘ってくれなかったら、私は今ごろこんなにアウトドアにハマってなかったと思う。",
+    "en": "If my sister hadn't invited me camping back then, I don't think I'd be this into the outdoors now.",
+    "alternatives": [
+      "I don't think I'd be so into the outdoors now if my sister hadn't invited me camping back then.",
+      "If my sister hadn't asked me to go camping back then, I don't think I'd be this into the outdoors now."
+    ],
+    "point": "過去の仮定は hadn't invited、今の結果は I'd be",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 10,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3ee3664b0a78230817b496d270ad4e1982fcf5770acb9f75834d96b92e5df515",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_7a9q7s3g",
     "ja": "今年の夏は暑かっただけでなく、雨もほとんど降らなかった。",
     "en": "Not only was this summer hot, but we also hardly had any rain.",
@@ -261,6 +349,50 @@
         "hash": "sha256:6e39f46ced9712eb9cec6d82508f71e53786fe1efd1aa0eee6d7d4021438b386",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7q6j6b3n",
+    "ja": "今週末に僕が一番したいのは、家でゆっくりすることだよ。",
+    "en": "What I want to do most this weekend is relax at home.",
+    "alternatives": [
+      "What I most want to do this weekend is relax at home.",
+      "The thing I want to do most this weekend is relax at home."
+    ],
+    "point": "「〜したいこと」が主語。動詞は is で受ける",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 5,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:93c1d4d54f284072747c62479e9e1a08bbfd3a5751318a4c20e0f343edf013ed",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8b9x5w7j",
+    "ja": "昨日の夜の花火大会、雨で中止になったんだって。",
+    "en": "I heard last night's fireworks show was canceled because of the rain.",
+    "alternatives": [
+      "I heard the fireworks last night got canceled because of the rain.",
+      "Apparently, last night's fireworks show was canceled due to the rain."
+    ],
+    "point": "「中止になった」は be/get canceled の受け身で",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 4,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c2dfa1d9c122ff2c2781033fa5aef3d3c6d31519c2f32a632f18f1eb88798f04",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

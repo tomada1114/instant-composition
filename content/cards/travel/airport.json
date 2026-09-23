@@ -308,6 +308,28 @@
     }
   },
   {
+    "id": "c_5u3q5x8k",
+    "ja": "スーツケースを預けていなかったら、私たちは今ごろもう空港を出ていたのに。",
+    "en": "If we hadn't checked our suitcases, we'd already be out of the airport by now.",
+    "alternatives": [
+      "We'd already be out of the airport by now if we hadn't checked our suitcases.",
+      "If we hadn't checked our bags, we'd be out of the airport already."
+    ],
+    "point": "過去の仮定で今の結果を言うので主節は would be",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:677af87e41bb85941c772496160f26d5de4b34f6ab1abf66b1f2879a03662f79",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5y8s6g3t",
     "ja": "この国に来るのは初めてではないんですが、前回来たのはもう10年以上前です。",
     "en": "This isn't my first time visiting this country, but the last time I came was over ten years ago.",
@@ -368,6 +390,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:af10d1512bb81ea425958e53623ed4456abfa77acae319ab71e1bfba5fbd90cb",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6w7s6f8a",
+    "ja": "あと5分早く空港に着いていたら、私はチェックインに間に合っていたのに。",
+    "en": "If I'd gotten to the airport five minutes earlier, I would've made it in time for check-in.",
+    "alternatives": [
+      "If I had arrived at the airport five minutes earlier, I would have made it to check-in in time.",
+      "I would've made it in time for check-in if I'd gotten to the airport five minutes earlier."
+    ],
+    "point": "過去の反対は if 節が had＋過去分詞、主節は would have",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d28ccf3f8266841017859da87a2bfcdfa125f3aa4fc4d89b445088152ba154dc",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

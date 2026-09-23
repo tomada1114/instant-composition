@@ -66,6 +66,28 @@
     }
   },
   {
+    "id": "c_3b9f9y4h",
+    "ja": "先週紹介してくれた翻訳者さんに、私が書いた記事を見てもらえないか聞いてもらえませんか？",
+    "en": "Could you ask the translator you introduced me to last week if they'd be willing to look over the article I wrote?",
+    "alternatives": [
+      "Would you mind asking the translator you introduced me to last week if they could check the article I wrote?",
+      "Could you ask the translator you introduced me to last week whether they'd look over the article I wrote?"
+    ],
+    "point": "「〜か聞いて」は ask + if/whether 節、introduced me to の to を忘れずに",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 10,
+    "grammar": ["nested-clauses", "noun-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bd347e462c06423bfa65d5813dd22c991ed67f2d667572f251a67220386861cb",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3d2a4r8t",
     "ja": "田中さんは、来週なら喜んであなたの原稿に目を通すけど、今週は締め切りで手一杯だと言っていました。",
     "en": "Ms. Tanaka said she'd be happy to look over your draft next week, but that she was swamped with deadlines this week.",
@@ -128,6 +150,28 @@
         "hash": "sha256:9808e103f2d275cdd5b6c02e745a825dc4d0733e9e8b17dfa36b59e48379c88f",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3x6f2w5y",
+    "ja": "兄は、あのとき断らずに私の引っ越しを手伝えばよかったって、今でも言ってるんだ。",
+    "en": "My brother still says he wishes he had helped me move that time instead of turning me down.",
+    "alternatives": [
+      "My brother still says he wishes he'd helped me with my move back then instead of saying no.",
+      "Even now, my brother says he wishes he had helped me move that time rather than turning me down."
+    ],
+    "point": "過去の後悔は wish + had + 過去分詞で言う",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["wishes-regrets", "reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d0833e1be4ffcdce88fa28554df04ad591d79e0d1387324725f6c5f86d2f3538",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

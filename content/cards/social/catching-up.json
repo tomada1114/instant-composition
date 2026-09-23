@@ -198,6 +198,28 @@
     }
   },
   {
+    "id": "c_4v2a7b8k",
+    "ja": "今の職場がもっと家から近かったら、平日でも君ともっと会えるのにな。",
+    "en": "If my office were closer to home, I'd be able to see you more often during the week.",
+    "alternatives": [
+      "If my office was closer to home, I could see you more often on weekdays.",
+      "If I worked closer to home, I'd get to see you more often during the week."
+    ],
+    "point": "現実と違う仮定は if 節を過去形、主節は would/could",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b4beac6fb805a14721f13b09609bfaffdfe101de8999fd42c9d85041c905c854",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5u4e8b8w",
     "ja": "あのとき転職してなかったら、僕は今ごろまだ毎晩終電で帰ってたと思う。",
     "en": "If I hadn't changed jobs back then, I'd probably still be taking the last train home every night.",
@@ -348,6 +370,28 @@
         "hash": "sha256:9e83f046b55e3440e28635a15c9c353de0d2deeb3081264fd6890d67b3f10ff3",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9e7k9r6t",
+    "ja": "うちの父、最近お医者さんに毎朝30分歩かされてるんだよ。",
+    "en": "My dad's doctor has been making him walk for thirty minutes every morning lately.",
+    "alternatives": [
+      "Lately, my dad's doctor has been making him walk thirty minutes every morning.",
+      "My father's doctor has been making him go for a thirty-minute walk every morning lately."
+    ],
+    "point": "make + 人 + 動詞の原形。to は付けない",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["causatives", "present-perfect-continuous"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:444616c3a80b05cf2ca065cdc667a66e1322eaade03afa5810e51f18c4c8e254",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

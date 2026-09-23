@@ -198,6 +198,28 @@
     }
   },
   {
+    "id": "c_5b3z2c3p",
+    "ja": "銀行のATMの前に、今日は長い列ができています。",
+    "en": "There's a long line at the bank ATM today.",
+    "alternatives": [
+      "There's a long line in front of the bank ATM today.",
+      "There is a long line at the ATM at the bank today."
+    ],
+    "point": "「列ができている」は There's a long line で表す",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 2,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:801fdf0068e2fc15639f25fbf26d557bc8a6b72d447a31c9d54f5b3ed22bb35d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5f5p5v4b",
     "ja": "こちらの用紙にお名前を書いてください。",
     "en": "Please write your name on this form.",
