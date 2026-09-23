@@ -11,7 +11,7 @@ export interface GrowthInput {
 
 export interface GrowthRow {
   readonly cardId: string;
-  readonly ja: string;
+  readonly prompt: string | null;
   /** `faster`: correct both times and quicker now. `fixed`: missed last time, correct now. */
   readonly kind: "faster" | "fixed";
   /** Last time's elapsed minus this time's; the list is sorted on it. */
@@ -57,7 +57,7 @@ export function roundGrowth(input: GrowthInput): Growth {
       continue;
     }
     const deltaMs = previous.elapsedMs - answer.elapsedMs;
-    const row = { cardId: answer.cardId, ja: answer.ja, deltaMs };
+    const row = { cardId: answer.cardId, prompt: answer.prompt, deltaMs };
     if (previous.result !== "ok") {
       rows.push({ ...row, kind: "fixed" });
     } else if (deltaMs >= TUNING.growth.fasterThresholdMs) {
@@ -77,7 +77,7 @@ export function roundGrowth(input: GrowthInput): Growth {
 
 export interface ReviewRow {
   readonly cardId: string;
-  readonly ja: string;
+  readonly prompt: string | null;
 }
 
 /** This round's first-pass misses, in the order they were shown. */
@@ -91,5 +91,5 @@ export function reviewList(
         answer.roundId === roundId && answer.pass === "first" && answer.result !== "ok",
     )
     .sort((a, b) => a.answeredAt - b.answeredAt)
-    .map((answer) => ({ cardId: answer.cardId, ja: answer.ja }));
+    .map((answer) => ({ cardId: answer.cardId, prompt: answer.prompt }));
 }

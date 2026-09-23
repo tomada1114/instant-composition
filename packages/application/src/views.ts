@@ -25,7 +25,7 @@ export interface RoundPayload {
   readonly portionDay: DayKey | null;
   /** First-pass card ids in order. */
   readonly deck: readonly string[];
-  /** Every card the deck and its retries may show, keyed by id. */
+  /** Every shown card the deck and its retries may show, keyed by id; a card edited since its review is left out. */
   readonly cards: Readonly<Record<string, DrillCard>>;
   /** What was already answered, oldest first, so a resumed round picks up after it. */
   readonly answered: readonly {
@@ -42,7 +42,7 @@ export interface RoundPayload {
 
 export interface ReachTopic {
   readonly id: string;
-  readonly ja: string;
+  readonly name: string;
   readonly count: number;
   /** Mastered in this round. */
   readonly added: number;
@@ -51,7 +51,7 @@ export interface ReachTopic {
 
 export interface ReachView {
   readonly topics: readonly ReachTopic[];
-  readonly nearest: { readonly ja: string; readonly remaining: number } | null;
+  readonly nearest: { readonly name: string; readonly remaining: number } | null;
 }
 
 export interface TotalsView {

@@ -10,13 +10,13 @@ import {
 const TAXONOMY: TopicInfo[] = [
   {
     id: "work",
-    ja: "仕事",
+    name: "仕事",
     subtopics: [
-      { id: "a", ja: "A" },
-      { id: "b", ja: "B" },
+      { id: "a", name: "A" },
+      { id: "b", name: "B" },
     ],
   },
-  { id: "travel", ja: "旅行", subtopics: [{ id: "c", ja: "C" }] },
+  { id: "travel", name: "旅行", subtopics: [{ id: "c", name: "C" }] },
 ];
 
 const CURRENT = {

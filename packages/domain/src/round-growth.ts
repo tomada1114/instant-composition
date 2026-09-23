@@ -38,7 +38,7 @@ export function growthOf(
       continue;
     }
     const deltaMs = previous.elapsedMs - review.detail.elapsedMs;
-    const row = { cardId: review.item.id, ja: review.snapshot.prompt, deltaMs };
+    const row = { cardId: review.item.id, prompt: review.snapshot.prompt, deltaMs };
     if (previous.result !== "ok") {
       rows.push({ ...row, kind: "fixed" });
     } else if (deltaMs >= TUNING.growth.fasterThresholdMs) {

@@ -1,8 +1,8 @@
 import { TUNING } from "./tuning";
 
-/** Words in an English answer, split on whitespace as `content/levels.json` counts them. */
-export function countWords(en: string): number {
-  return en.split(/\s+/u).filter((word) => word !== "").length;
+/** Words in a model answer, split on whitespace. */
+export function countWords(text: string): number {
+  return text.split(/\s+/u).filter((word) => word !== "").length;
 }
 
 export function limitSecondsForWords(words: number): number {

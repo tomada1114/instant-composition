@@ -30,10 +30,10 @@ function card(
     subtopic,
     level,
     words: 8,
-    ja: `${id}の文`,
-    en: `The sentence for ${id}.`,
+    prompt: `${id}の文`,
+    text: `The sentence for ${id}.`,
     alternatives: [],
-    point: "",
+    explanation: "",
   };
 }
 
@@ -50,20 +50,23 @@ export function makeSnapshot(): CatalogSnapshot {
   );
   const byId = new Map(cards.map((entry) => [entry.id, entry]));
   return {
+    version: "sha256:fixture",
     topics: TOPICS.map((topic) => ({
       id: topic,
-      ja: `${topic}の話題`,
+      name: `${topic}の話題`,
       subtopics: SUBTOPICS.map((subtopic) => ({
         id: subtopic,
-        ja: `${topic}/${subtopic}`,
+        name: `${topic}/${subtopic}`,
       })),
     })),
-    toeicByLevel: new Map(
-      Array.from({ length: 10 }, (_, level) => [level + 1, `${String(level + 1)}00`]),
+    levels: new Map(
+      Array.from({ length: 10 }, (_, level) => [
+        level + 1,
+        { cefr: "B1", toeic: `${String(level + 1)}00` },
+      ]),
     ),
     shown: byId,
-    known: byId,
-    tombstones: new Map(),
+    retired: new Map(),
   };
 }
 

@@ -44,7 +44,7 @@ function preview(
     (ref) =>
       snapshot.topics
         .find((topic) => topic.id === ref.topic)
-        ?.subtopics.find((sub) => sub.id === ref.subtopic)?.ja ?? ref.subtopic,
+        ?.subtopics.find((sub) => sub.id === ref.subtopic)?.name ?? ref.subtopic,
   );
   return {
     size,

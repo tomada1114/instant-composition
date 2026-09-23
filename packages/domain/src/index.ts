@@ -151,9 +151,9 @@ export type {
   DailySize,
   DayKey,
   Pass,
+  RetiredCard,
   RoundKind,
   Settings,
   SubtopicRef,
-  TombstoneMeta,
   TopicInfo,
 } from "./types";

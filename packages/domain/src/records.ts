@@ -26,7 +26,8 @@ export interface ItemSnapshot {
   readonly topic: string;
   readonly subtopic: string;
   readonly level: number;
-  readonly prompt: string;
+  /** Null when the item had been edited since its review, so no reviewed prompt was known. */
+  readonly prompt: string | null;
 }
 
 /** A scale every activity maps onto, and a spaced-repetition scheduler reads. */

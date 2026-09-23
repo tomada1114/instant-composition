@@ -20,7 +20,7 @@ export function payloadOf(
 ): RoundPayload {
   const cards: Record<string, DrillCard> = {};
   for (const id of round.deck) {
-    const card = snapshot.known.get(id);
+    const card = snapshot.shown.get(id);
     if (card !== undefined) {
       cards[id] = { ...card, limitMs: limitMsForWords(card.words) };
     }
@@ -50,7 +50,7 @@ export function reachViewOf(
   snapshot: CatalogSnapshot,
 ): ReachView {
   const name = (topic: string): string =>
-    snapshot.topics.find((info) => info.id === topic)?.ja ?? topic;
+    snapshot.topics.find((info) => info.id === topic)?.name ?? topic;
   const nearest = nearestMilestone(
     new Map(reach.map((entry) => [entry.topic, entry.count])),
     reach.map((entry) => entry.topic),
@@ -58,7 +58,7 @@ export function reachViewOf(
   return {
     topics: reach.map((entry) => ({
       id: entry.topic,
-      ja: name(entry.topic),
+      name: name(entry.topic),
       count: entry.count,
       added: entry.added,
       ring: ringProgress(entry.count),
@@ -66,7 +66,7 @@ export function reachViewOf(
     nearest:
       nearest === undefined
         ? null
-        : { ja: name(nearest.topic), remaining: nearest.remaining },
+        : { name: name(nearest.topic), remaining: nearest.remaining },
   };
 }
 
@@ -100,7 +100,7 @@ export function summaryOf(
     reach: reachViewOf(outcome.reach, snapshot),
     titles: outcome.titles,
     topicNames: Object.fromEntries(
-      snapshot.topics.map((topic) => [topic.id, topic.ja]),
+      snapshot.topics.map((topic) => [topic.id, topic.name]),
     ),
     points: outcome.points,
     totals: outcome.totals,

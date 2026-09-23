@@ -38,7 +38,7 @@ function titleGroups(keys: readonly string[], snapshot: CatalogSnapshot): TitleG
       groups.push({
         kind: "reach",
         topic: topic.id,
-        ja: topic.ja,
+        name: topic.name,
         values: ascending(values),
       });
     }
@@ -46,7 +46,7 @@ function titleGroups(keys: readonly string[], snapshot: CatalogSnapshot): TitleG
   return groups;
 }
 
-/** Where each mastered item belongs: its card, else its tombstone, else its last review. */
+/** Where each mastered item belongs: its card, else its retired entry, else its last review. */
 function masteredPlaces(
   items: readonly ItemProgress[],
   snapshot: CatalogSnapshot,
@@ -101,10 +101,10 @@ export async function records(
     ),
     breakdown: chosen.map((topic) => ({
       id: topic.id,
-      ja: topic.ja,
+      name: topic.name,
       subtopics: topic.subtopics.map((subtopic) => ({
         id: subtopic.id,
-        ja: subtopic.ja,
+        name: subtopic.name,
         count: bySubtopic.get(`${topic.id}/${subtopic.id}`) ?? 0,
       })),
     })),

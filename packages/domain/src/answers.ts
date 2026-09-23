@@ -25,12 +25,12 @@ export interface AnswerInput {
   readonly elapsedMs: number;
 }
 
-/** What the catalog knows of a card, or of its tombstone (`words` null). */
+/** What the catalog knows of a card, shown or retired; see `RetiredCard` for the nulls. */
 export interface CardFacts {
   readonly topic: string;
   readonly subtopic: string;
   readonly level: number;
-  readonly ja: string;
+  readonly prompt: string | null;
   readonly words: number | null;
 }
 
@@ -113,7 +113,7 @@ export function decideAnswers(
         topic: card.topic,
         subtopic: card.subtopic,
         level: card.level,
-        prompt: card.ja,
+        prompt: card.prompt,
       },
     });
     entries.push(reviewed.entry);

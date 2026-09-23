@@ -39,7 +39,7 @@ function asAnswer(entry: ReviewEntry): AnswerRecord {
     topic: entry.snapshot.topic,
     subtopic: entry.snapshot.subtopic,
     level: entry.snapshot.level,
-    ja: entry.snapshot.prompt,
+    prompt: entry.snapshot.prompt,
   };
 }
 
