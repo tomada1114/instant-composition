@@ -109,11 +109,16 @@ gone.
 **Scope.**
 
 - `packages/contracts`: request and response schemas, with the OpenAPI 3.1 document
-  generated from them and committed.
-- `apps/api`: a Hono application serving `/v1`, writing structured logs from its first
-  handler.
-- `packages/adapters`: the DynamoDB store, run locally against DynamoDB local, passing
-  the same contract suite as the in-memory store.
+  generated from them and committed. It covers the endpoints the current commands and
+  queries back; `/v1/me` arrives with learner registration in Phase 3, and
+  `GET /v1/rounds/{roundId}` with the offline answer queue in Phase 5.
+- `apps/api`: a Hono application serving the `/v1` paths under the `/api` root, so a
+  client calls `/api/v1/...`
+  ([ADR-0007](adr/0007-http-api-contract-and-offline-sync.md)), writing structured logs
+  from its first handler.
+- `packages/adapters`: the DynamoDB store, run against DynamoDB local's Docker image on
+  a checkout and as a service container in CI, passing the same contract suite as the
+  in-memory store, which moves there from `packages/application`.
 - A catalog snapshot ready for language pairs:
   - items anchored on the target-language sentence, with per-L1 prompt and explanation
     and CEFR levels;
@@ -185,7 +190,7 @@ stages, foundation stack, deploys).
   - Bearer tokens for native clients;
   - both resolved by one authenticator.
 - Learner registration on first sign-in: an internal LearnerId, time zone, L1 and UI
-  locale.
+  locale, read and changed through `/v1/me`.
 - The project's authentication conventions recorded next to `isolating-learner-data`.
 
 **Exit.**
@@ -236,7 +241,9 @@ stages, foundation stack, deploys).
 - The offline answer-queue semantics in the API:
   - client-reported answer time, with server-side bounds;
   - late answers accepted into the round's day;
-  - idempotent replay.
+  - idempotent replay;
+  - `GET /v1/rounds/{roundId}`, so a client resumes a round with the answers already
+    recorded.
 - Optionally, typed answers captured alongside self-grades.
   - They are the labels a grading evaluation will need later.
   - The current timer (6 to 20 seconds per card) is too short for typing, so this needs
