@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 import { describe, expect, it, vi } from "vitest";
 import * as z from "zod";
 
-import { readServerEnv, SERVER_ENV_NAMES } from "../src/server/env";
+import { readServerEnv, SERVER_ENV_NAMES, storagePaths } from "../src/server/env";
 
 // `.env.example` is the one `.env*` file this repository tracks
 // (`.gitignore`), and it is the only documentation of what the application
@@ -210,5 +210,40 @@ describe("readServerEnv with nothing billed wired", () => {
     expect(readServerEnv({ requiresAccessKey: false })).toStrictEqual({
       API_ACCESS_KEY: "an-example-access-key",
     });
+  });
+});
+
+describe("where the cards and the progress database live", () => {
+  it("reads CONTENT_DIR and PROGRESS_DB_PATH when they are set", () => {
+    vi.stubEnv("CONTENT_DIR", "/cards/content");
+    vi.stubEnv("PROGRESS_DB_PATH", "/data/progress.sqlite");
+
+    expect(
+      storagePaths(readServerEnv({ requiresAccessKey: false }), "/repo"),
+    ).toStrictEqual({
+      contentDir: "/cards/content",
+      databasePath: "/data/progress.sqlite",
+    });
+  });
+
+  it("defaults to content/ and data/progress.sqlite under the working directory", () => {
+    vi.stubEnv("CONTENT_DIR", "");
+    vi.stubEnv("PROGRESS_DB_PATH", undefined);
+
+    expect(
+      storagePaths(readServerEnv({ requiresAccessKey: false }), "/repo"),
+    ).toStrictEqual({
+      contentDir: path.join("/repo", "content"),
+      databasePath: path.join("/repo", "data", "progress.sqlite"),
+    });
+  });
+
+  it("resolves a relative path against the working directory", () => {
+    vi.stubEnv("CONTENT_DIR", "../cards/content");
+    vi.stubEnv("PROGRESS_DB_PATH", undefined);
+
+    expect(
+      storagePaths(readServerEnv({ requiresAccessKey: false }), "/repo").contentDir,
+    ).toBe(path.join("/cards", "content"));
   });
 });

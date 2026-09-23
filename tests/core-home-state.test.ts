@@ -119,7 +119,7 @@ describe("the start screen state", () => {
     });
   });
 
-  it("does not resume a part of yesterday that can no longer be made up", () => {
+  it("does not resume a part of yesterday left from an earlier day", () => {
     expect(
       homeState(
         input({
@@ -130,7 +130,7 @@ describe("the start screen state", () => {
     ).toMatchObject({ kind: "ready" });
   });
 
-  it("resumes a part of yesterday while it can still be made up", () => {
+  it("offers yesterday again, rather than resuming it, once the day has turned", () => {
     expect(
       homeState(
         input({
@@ -138,11 +138,7 @@ describe("the start screen state", () => {
           portions: new Map([["2026-09-22", { target: 10, progress: 4 }]]),
         }),
       ),
-    ).toMatchObject({
-      kind: "in-progress",
-      portion: "yesterday",
-      resumeKind: "yesterday",
-    });
+    ).toMatchObject({ kind: "recover-offer" });
   });
 
   it("shows day one above today's portion on a day that started over", () => {

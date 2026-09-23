@@ -1,5 +1,7 @@
 import "server-only";
 
+import path from "node:path";
+
 import * as z from "zod";
 
 /**
@@ -11,8 +13,8 @@ import * as z from "zod";
  * environment. Node reports that as `""`, not as a missing key, and treating
  * the two differently would make a copied example file a configuration error.
  *
- * The value is trimmed rather than kept as written, because every name here is
- * a credential and surrounding whitespace is never part of one. A secret pasted
+ * The value is trimmed rather than kept as written: surrounding whitespace is
+ * never part of a credential or of a path. A secret pasted
  * out of a manager with a trailing newline would otherwise be a key no caller
  * can present in a matching form: a bearer token cannot carry leading or
  * trailing whitespace, so an untrimmed `API_ACCESS_KEY` would refuse every
@@ -51,6 +53,19 @@ const serverEnvShape = z.object({
    * `building-app-routes` for that guidance.
    */
   API_ACCESS_KEY: optionalSetting,
+
+  /**
+   * The content root the cards are read from: `taxonomy.json`, `levels.json`,
+   * `cards/` and `tombstones.jsonl`. Defaults to `content/` under the working
+   * directory; point it at another checkout to practise cards not on `main`.
+   */
+  CONTENT_DIR: optionalSetting,
+
+  /**
+   * The SQLite file progress is kept in. Defaults to `data/progress.sqlite`
+   * under the working directory; its directory is created on first use.
+   */
+  PROGRESS_DB_PATH: optionalSetting,
 });
 
 /** The validated environment, as the rest of `src/server/` sees it. */
@@ -115,4 +130,21 @@ export function readServerEnv(requirements: ServerEnvRequirements): ServerEnv {
     ? billedServerEnvSchema
     : serverEnvShape;
   return schema.parse(process.env);
+}
+
+/** Where the cards are read from and progress is written to. */
+export interface StoragePaths {
+  readonly contentDir: string;
+  readonly databasePath: string;
+}
+
+/** The two storage locations, relative settings resolved against `cwd`. */
+export function storagePaths(env: ServerEnv, cwd: string): StoragePaths {
+  return {
+    contentDir: path.resolve(cwd, env.CONTENT_DIR ?? "content"),
+    databasePath: path.resolve(
+      cwd,
+      env.PROGRESS_DB_PATH ?? path.join("data", "progress.sqlite"),
+    ),
+  };
 }

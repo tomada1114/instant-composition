@@ -1,4 +1,3 @@
-import { addDays } from "./day";
 import { longestRun, streakStatus, type CompletedDays } from "./streak";
 import { TUNING } from "./tuning";
 import type { DayKey, RoundKind } from "./types";
@@ -56,13 +55,12 @@ export type HomeState =
       readonly streak: StreakView;
     };
 
-/** A portion under way; yesterday's only counts while it can still be made up. */
-function inProgress(
-  input: HomeInput,
-  streak: StreakView,
-  yesterdayOpen: boolean,
-): HomeState | undefined {
-  const yesterday = addDays(input.today, -1);
+/**
+ * A portion under way: today's open round, or today's portion begun. A day
+ * boundary leaves an earlier day's round behind, so yesterday's portion is
+ * only under way while a round of it started today is open.
+ */
+function inProgress(input: HomeInput, streak: StreakView): HomeState | undefined {
   const partial = (day: DayKey): PortionProgress | undefined => {
     const portion = input.portions.get(day);
     return portion !== undefined && !input.completed.has(day) ? portion : undefined;
@@ -70,9 +68,7 @@ function inProgress(
   const active = input.activeRound;
   const portionDay =
     active?.portionDay ??
-    (yesterdayOpen ? [input.today, yesterday] : [input.today]).find(
-      (day) => (partial(day)?.progress ?? 0) > 0,
-    );
+    ((partial(input.today)?.progress ?? 0) > 0 ? input.today : undefined);
   const portion = portionDay === undefined ? undefined : partial(portionDay);
   if (portionDay === undefined || portion === undefined) {
     return undefined;
@@ -115,7 +111,7 @@ export function homeState(input: HomeInput): HomeState {
         value: status.current,
         yesterdayGap: true,
       };
-      const resumed = inProgress(input, gapView, true);
+      const resumed = inProgress(input, gapView);
       if (resumed?.kind === "in-progress" && resumed.portion === "today") {
         return {
           ...resumed,
@@ -136,7 +132,7 @@ export function homeState(input: HomeInput): HomeState {
           ? { kind: "count", value: status.current, yesterdayGap: false }
           : { kind: "restart", longest: status.longest };
       return (
-        inProgress(input, view, false) ??
+        inProgress(input, view) ??
         (input.available < TUNING.minDeckSize
           ? { kind: "not-enough", available: input.available, streak: view }
           : { kind: "ready", streak: view })

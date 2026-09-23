@@ -52,6 +52,9 @@ tmp/
 # Held by a running `pnpm cards:*` write command; never committed
 content/.cards.lock
 
+# Local progress database (PROGRESS_DB_PATH's default)
+data/
+
 # Logs
 *.log
 

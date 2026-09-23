@@ -1,8 +1,16 @@
 import { type ChildProcess, spawn } from "node:child_process";
 import { once } from "node:events";
-import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
+import {
+  existsSync,
+  mkdtempSync,
+  readFileSync,
+  readdirSync,
+  rmSync,
+  statSync,
+} from "node:fs";
 import { createRequire } from "node:module";
 import { createServer } from "node:net";
+import { tmpdir } from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -10,6 +18,8 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 
 import { LOCALES } from "../src/i18n/locales";
 import { MESSAGES } from "../src/i18n/messages";
+import { makeContentRoot, removeContentRoots } from "./cards-fixture";
+import { writeStandardCards } from "./services-harness";
 
 // The only suite that asks the application a question over HTTP. Every other
 // test here drives one layer through its own surface — a handler with
@@ -241,6 +251,8 @@ async function stopServer(server: ChildProcess): Promise<void> {
 }
 
 let server: ChildProcess | undefined;
+/** Where the served build keeps progress: a throwaway directory, never `data/`. */
+let databaseDirectory: string | undefined;
 let stopWatchingForInterrupts: (() => void) | undefined;
 let baseUrl = "";
 
@@ -306,6 +318,13 @@ async function waitUntilServing(
 beforeAll(async () => {
   assertFreshBuild();
 
+  // The build is served against fixture cards and a fresh database, so the
+  // assertions below hold whatever the checkout's own content/ holds and no
+  // run leaves progress behind.
+  const contentRoot = makeContentRoot();
+  writeStandardCards(contentRoot);
+  databaseDirectory = mkdtempSync(path.join(tmpdir(), "smoke-progress-"));
+
   const port = await reserveEphemeralPort();
   baseUrl = `http://127.0.0.1:${String(port)}`;
 
@@ -319,7 +338,12 @@ beforeAll(async () => {
       // production build would otherwise be served under `test` and every
       // `process.env.NODE_ENV === "production"` branch would take a path no
       // deployment takes.
-      env: { ...process.env, NODE_ENV: "production" },
+      env: {
+        ...process.env,
+        NODE_ENV: "production",
+        CONTENT_DIR: contentRoot,
+        PROGRESS_DB_PATH: path.join(databaseDirectory, "progress.sqlite"),
+      },
       stdio: ["ignore", "pipe", "pipe"],
       detached: true,
     },
@@ -358,6 +382,11 @@ afterAll(async () => {
   if (server !== undefined) {
     await stopServer(server);
     server = undefined;
+  }
+  removeContentRoots();
+  if (databaseDirectory !== undefined) {
+    rmSync(databaseDirectory, { recursive: true, force: true });
+    databaseDirectory = undefined;
   }
 });
 
@@ -479,4 +508,59 @@ describe("the built application, served by `next start`", () => {
       expect(document).toContain(MESSAGES[locale].NotFound.homeLink);
     },
   );
+});
+
+describe("the JSON API of the built application", () => {
+  async function send(
+    route: string,
+    method: string,
+    body?: unknown,
+  ): Promise<Response> {
+    return fetch(`${baseUrl}${route}`, {
+      method,
+      headers: { "content-type": "application/json" },
+      ...(body === undefined ? {} : { body: JSON.stringify(body) }),
+    });
+  }
+
+  // One test on purpose: each step needs the state the one before it left in
+  // the served database.
+  it("saves settings, starts a placement round and reports the history", async () => {
+    const saved = await send("/api/settings", "PUT", { topics: ["work", "daily"] });
+    expect(saved.status).toBe(200);
+
+    const started = await send("/api/rounds", "POST", { kind: "placement" });
+    expect(started.status).toBe(200);
+    const round = (await started.json()) as {
+      id: string;
+      deck: string[];
+      total: number;
+    };
+    expect(round.total).toBe(10);
+
+    const answered = await send("/api/answers", "POST", {
+      id: "smoke-1",
+      roundId: round.id,
+      cardId: round.deck[0],
+      pass: "first",
+      result: "ok",
+      elapsedMs: 2_000,
+    });
+    expect(answered.status).toBe(204);
+
+    const history = await send("/api/history", "GET");
+    expect(history.status).toBe(200);
+    expect(await history.json()).toStrictEqual({
+      seenIds: [round.deck[0]],
+      topics: ["work", "daily"],
+      focusSubtopics: [],
+      estimatedLevel: 1,
+    });
+  });
+
+  it("refuses a malformed body with the documented code", async () => {
+    const response = await send("/api/rounds", "POST", { kind: "bonus" });
+    expect(response.status).toBe(400);
+    expect(await response.json()).toMatchObject({ error: { code: "ERR_BAD_REQUEST" } });
+  });
 });
