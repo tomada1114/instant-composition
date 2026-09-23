@@ -176,6 +176,28 @@
     }
   },
   {
+    "id": "c_3y3n6b2z",
+    "ja": "去年の春にうちのチームの予算が削られていなかったら、今日は皆さんに動く試作品をお見せできていたはずです。",
+    "en": "If our team's budget hadn't been cut last spring, we'd be able to show you a working prototype today.",
+    "alternatives": [
+      "If our team's budget hadn't been cut last spring, we could show you a working prototype today.",
+      "If our team hadn't had its budget cut last spring, we'd be able to show you a working prototype today."
+    ],
+    "point": "過去の仮定は had not been、今の結果は would/could",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:db17411c66e19a0f0a176215ae6783b3d4561f544831453995ad0d0618b8f35f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4a8p7n3t",
     "ja": "質疑応答に入る前に、今日のポイントをもう一度ざっと振り返ってもいいですか？",
     "en": "Before we open it up for questions, could I quickly go over today's key points one more time?",
@@ -374,6 +396,28 @@
     }
   },
   {
+    "id": "c_7j3x5v8q",
+    "ja": "試験導入の結果が良さそうに見えても、他の地域でもっと検証するまでは、私たちはこれを全社展開すべきではありません。",
+    "en": "Even if the pilot results look promising, we shouldn't roll this out company-wide until we've tested it in more regions.",
+    "alternatives": [
+      "Even if the pilot results look good, we shouldn't roll this out across the company until we've tested it in other regions.",
+      "Even if the pilot results seem promising, we shouldn't launch this company-wide before we've tested it in more regions."
+    ],
+    "point": "「〜しても」は even if、「〜するまでは」は until",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2a4ff4d5cc9580b6f81d10ef9c6513a5ba4e3e2776a3c363cd424cc872cfe944",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_7q4y5h6t",
     "ja": "データを見直した結果、私たちのチームは当初の予測を下方修正することにしました。",
     "en": "Having reviewed the data, our team decided to revise our original forecast downward.",
@@ -434,6 +478,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:0ad89ead60dd6f97e5b0e48d4feae5e950b23d960fcb0e07ce245d35a97cc6d6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7z4c6r8r",
+    "ja": "顧客継続率のスライドで示された数字に、無料体験期間中に解約したユーザーは含まれているのか、説明していただけますか？",
+    "en": "Could you clarify whether the figures you showed on the slide about customer retention include the users who canceled during the free trial?",
+    "alternatives": [
+      "Could you explain whether the numbers on your customer retention slide include users who canceled during the free trial?",
+      "Would you mind clarifying whether the figures on the customer retention slide include the users who canceled during the free trial?"
+    ],
+    "point": "長い主語の後の動詞 include を落とさない",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 9,
+    "grammar": ["nested-clauses", "indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4a2ddea60beecefb1a5446e21e4fdddd332afd32dac3073977691fdb06e8d14c",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

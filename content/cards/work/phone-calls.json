@@ -437,6 +437,28 @@
     }
   },
   {
+    "id": "c_6r9k8v2s",
+    "ja": "こんなに音声が途切れるんだから、僕なら先方にいったん切ってもらって、それからかけ直すけどね。",
+    "en": "If I were you, I'd have them hang up and then call them back, since the audio keeps cutting out like this.",
+    "alternatives": [
+      "I'd ask them to hang up and then call them back if I were you, since the audio keeps cutting out like this.",
+      "The audio keeps cutting out like this, so if I were you, I'd get them to hang up and then call them back."
+    ],
+    "point": "「僕なら」は If I were you, I'd で表す",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["second-conditional", "causatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:55988382980bb9acb6add14a7cd89f46f04f2b3bd4503a7cb2c923914bece66b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_7m4j5p2d",
     "ja": "すみません、もう少しゆっくり話していただけますか？",
     "en": "Sorry, could you speak a little more slowly?",
@@ -521,6 +543,28 @@
         "hash": "sha256:d862dd9dcd1310352b9136fb160251f295f016413ae8bdecd6a75d28a013845c",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9j9k5r4w",
+    "ja": "担当者はただいま別の電話でお客様の問い合わせに対応しておりますので、あと 10 分ほどかかるかと思います。",
+    "en": "The person in charge is on another line right now, handling a customer inquiry, so it'll probably be about ten more minutes.",
+    "alternatives": [
+      "The person in charge is currently on another call, dealing with a customer inquiry, so it should take about ten more minutes.",
+      "The person in charge is on another line at the moment, taking a customer inquiry, so it'll likely be around ten more minutes."
+    ],
+    "point": "「対応していて」は -ing 形を後ろに添えて表せる",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:20efcb079cfeac7eab51104300b75118560a42356f9f0e15b3ae920b91a240bf",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   }

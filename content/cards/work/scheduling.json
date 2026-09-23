@@ -129,6 +129,28 @@
     }
   },
   {
+    "id": "c_4m4f4w7v",
+    "ja": "部長は締め切りを来週の月曜日に延ばしました。",
+    "en": "The manager moved the deadline to next Monday.",
+    "alternatives": [
+      "The manager pushed the deadline to next Monday.",
+      "The manager extended the deadline to next Monday."
+    ],
+    "point": "「来週の月曜日」は next Monday、前置詞 on は不要",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:65ab62e6a483a61d66508ea5ce911f200ce33992bd7453d9fa976a5acfa5c09e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4u5e3k2s",
     "ja": "締め切りを延ばしてくれるかどうか、クライアントからもう何か情報は来ましたか？",
     "en": "Have we gotten any information from the client yet about whether they'll extend the deadline?",
@@ -368,6 +390,28 @@
     }
   },
   {
+    "id": "c_6q3s9k9j",
+    "ja": "私たちは今、打ち合わせを木曜日にずらそうかと考えています。",
+    "en": "We're thinking about moving the meeting to Thursday.",
+    "alternatives": [
+      "We're thinking of moving the meeting to Thursday.",
+      "We're considering moving the meeting to Thursday."
+    ],
+    "point": "about や of の後ろは moving と ing 形にする",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 3,
+    "grammar": ["gerunds", "progressive-aspect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2ff776b0b0e11339dce9236985a0591f6640416d5df3ff314946aaf1aa3c6684",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_7a6u8u9j",
     "ja": "今週はみんな忙しいので、ミーティングを来週に延ばすのはどうですか？",
     "en": "Since everyone's busy this week, how about pushing the meeting back to next week?",
@@ -386,6 +430,28 @@
         "hash": "sha256:ef258ad5db332975a9ce6863d5c8a4e9334ab94a87dbf8eb5de4274b9d27b2b0",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7n3j2m6z",
+    "ja": "来週、全員が出られる日はありますか？",
+    "en": "Is there a day next week everyone can make?",
+    "alternatives": [
+      "Is there a day next week when everyone's free?",
+      "Is there any day next week when everyone's available?"
+    ],
+    "point": "「全員が出られる日」は a day の後ろに everyone can make を続ける",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 4,
+    "grammar": ["there-is-are", "relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3210f02375975bbbd9bdf9c4a5052b57eecf9d954189d47ed5706040e2611178",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

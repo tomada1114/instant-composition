@@ -220,6 +220,28 @@
     }
   },
   {
+    "id": "c_4v3f2q3q",
+    "ja": "インフラチームは、来月までにはデータベースを移行できないだろうと言っていました。",
+    "en": "The infrastructure team said they wouldn't be able to migrate the database by next month.",
+    "alternatives": [
+      "The infrastructure team told us they wouldn't be able to move the database over by next month.",
+      "The infra team said they wouldn't be able to migrate the database before next month."
+    ],
+    "point": "said の後は時制を合わせて won't を wouldn't にする",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 6,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cb9b4440b6eb1d0f380608fdce4bd49b793598fd50d4b4f1235b6303c601f36a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5a4m7b7y",
     "ja": "マイクロサービスのほうが柔軟だとしても、うちくらいの規模のチームには複雑すぎると私は思います。",
     "en": "Even if the microservice approach is more flexible, I think it adds too much complexity for a team of our size.",
@@ -546,6 +568,50 @@
         "hash": "sha256:928e29d3bf8e279f1838c525e18b29ec959e96b2d31e1a18ebb68f80d2c6b570",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8g2p6s9e",
+    "ja": "決める前に、二つの案のトレードオフをもう一度一緒に確認してもらえますか？",
+    "en": "Before we decide, could you go over the trade-offs of both options with me once more?",
+    "alternatives": [
+      "Could you go through the trade-offs of both options with me again before we decide?",
+      "Before we make a decision, could you run through the trade-offs of the two options with me again?"
+    ],
+    "point": "「確認する」は check より go over が自然",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 6,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e02b7034ad1d736e61b9d086568ed5179e091097d4ead9be8e6554a8056144a7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8p9r6r8h",
+    "ja": "うちはリレーショナルDBにして、書き込みの速さを少し犠牲にする代わりに整合性をしっかり取ったんです。",
+    "en": "We went with a relational database, trading a bit of write speed for much stronger consistency.",
+    "alternatives": [
+      "We chose a relational database, giving up a little write speed in exchange for much stronger consistency.",
+      "We went with a relational database and gave up some write speed to get much stronger consistency."
+    ],
+    "point": "「AをBと引き換えに」は trade A for B の語順",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 7,
+    "grammar": ["participle-clauses", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:eb1f484edff5bf6a8a6bb8d32388a5615599f96819c3f64fd7b8e467d68951f1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

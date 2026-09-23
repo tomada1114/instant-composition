@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_2d6t7g5a",
+    "ja": "わざわざ時間を作って駅まで迎えに来てくださって、ありがとうございます。",
+    "en": "Thank you for taking the time to pick me up at the station.",
+    "alternatives": [
+      "Thank you for making the time to pick me up at the station.",
+      "Thank you for taking the time to come get me at the station."
+    ],
+    "point": "「わざわざ時間を作って」は take the time to do",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 5,
+    "grammar": ["infinitives", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:90ddcec5aff667b0772c80bce965df32a2c47eef90c26b64b1f7d4db7b34cee9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2s6g3e7c",
     "ja": "私のミスのせいで、チーム全員に週末出勤させることになってしまって、本当に申し訳ない。",
     "en": "I'm truly sorry that my mistake made the whole team come in on the weekend.",
@@ -264,6 +286,28 @@
     }
   },
   {
+    "id": "c_6v3z6z7z",
+    "ja": "申し訳ございません、お客様のご注文の品が間違った住所に送られてしまいました。",
+    "en": "I'm very sorry, but your order was sent to the wrong address.",
+    "alternatives": [
+      "I apologize, but your order was sent to the wrong address.",
+      "We're very sorry, but your order was shipped to the wrong address."
+    ],
+    "point": "「送られた」は was sent、住所は the wrong address",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 4,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2b8332c2aabaa9c931b66169836c328274b92cd19b047e7dadecf206d77909e6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_7c3g4d3g",
     "ja": "送る前にちゃんと確認するべきでした。ミスしてしまって申し訳ありません。",
     "en": "I should have checked it before sending it. I'm sorry about the mistake.",
@@ -304,6 +348,28 @@
         "hash": "sha256:76d80a9c4a3138b21ffb4740e2feaa386ae9c9f5822301975d4528f473eb9515",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7w2n6k7w",
+    "ja": "手伝ってくれてありがとう。僕、一週間ずっとこのバグで悩んでたんだ。",
+    "en": "Thanks for your help. I've been struggling with this bug all week.",
+    "alternatives": [
+      "Thanks for helping me. I've been stuck on this bug all week.",
+      "Thank you for the help. I've been struggling with this bug for a whole week."
+    ],
+    "point": "今も続く悩みは I've been ~ing で表す",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:521f31cd1f51ef5726c314e8bd3031858d0dda82baab323dbabe9d29204178e0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

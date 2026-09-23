@@ -550,6 +550,28 @@
     }
   },
   {
+    "id": "c_9f6y2u9g",
+    "ja": "今週はほかの案件で手いっぱいなので、彼の依頼を引き受けなければよかったと正直思っています。",
+    "en": "Honestly, I wish I hadn't taken on his request, since I'm swamped with other projects this week.",
+    "alternatives": [
+      "To be honest, I wish I hadn't agreed to his request, because I'm overloaded with other projects this week.",
+      "Honestly, I wish I'd said no to his request, since I've got my hands full with other projects this week."
+    ],
+    "point": "過去の後悔は wish + had 過去分詞で表す",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d52ec32eb7401723fe6a13d5e9271cc9b9c69714a4fc09b529978821d7af6945",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_9p7n3r8w",
     "ja": "彼女は、来月の展示会で使うパンフレットの翻訳を、原稿が今週中に届くなら引き受けると言ってくれた。",
     "en": "She said she'd take on translating the brochures we're using at next month's trade show if the draft arrives this week.",

@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2a8n5k5a",
+    "ja": "この資料、お客さんが気にしていた点を全部カバーしていますね。",
+    "en": "This deck covers every point that the client was worried about.",
+    "alternatives": [
+      "This deck addresses all the points the client was concerned about.",
+      "This material covers everything that the client was worried about."
+    ],
+    "point": "「お客さんが気にしていた点」は名詞の後ろに関係詞節を置く",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 4,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:92fa421bdd31db4f04813c1398d88290200ff08d08272c4c56ec2240b2330b22",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2p6v8d9n",
     "ja": "次の提案書は、出す前に先輩の誰かにざっと目を通してもらうといいかもしれませんね。",
     "en": "For the next proposal, it might be a good idea to have one of the senior staff look it over before you submit it.",
@@ -280,6 +302,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:5f1488de80b986d12715ef394a694eec23a43449432a77f9f1a359d8ca8b0f8e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9g4p5z9b",
+    "ja": "最近ずっと丁寧にコードレビューしてくれていて、本当に助かっています。",
+    "en": "You've been doing really careful code reviews lately, and it's been a huge help.",
+    "alternatives": [
+      "You've been reviewing the code really carefully lately, and it's been a big help.",
+      "You've been doing such careful code reviews recently, and it's really helped us."
+    ],
+    "point": "「最近ずっと〜してくれている」は have been doing で表す",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:472e63806710131b7a64df67958b1985ea417971c73574c924ec2209b092539b",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

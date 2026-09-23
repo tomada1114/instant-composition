@@ -110,6 +110,28 @@
     }
   },
   {
+    "id": "c_4d2w5r8a",
+    "ja": "昨日の午後に私が気づいたときには、夜間バッチがもう三回も失敗していました。",
+    "en": "By the time I noticed it yesterday afternoon, the nightly batch job had already failed three times.",
+    "alternatives": [
+      "When I noticed it yesterday afternoon, the nightly batch had already failed three times.",
+      "The nightly batch job had already failed three times by the time I noticed it yesterday afternoon."
+    ],
+    "point": "気づいた時点より前の失敗なので had failed を使う",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b71da72b1cf1d860e67f83d6902a8c3b4cc4964d8c8f8fdfc990435767800f70",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4f9q9w6c",
     "ja": "今日はログイン画面のバグを直しています。",
     "en": "I'm fixing the login page bug today.",
@@ -484,6 +506,28 @@
     }
   },
   {
+    "id": "c_7v4h4n3s",
+    "ja": "負荷テストをどこまでやればリリースしていいのか、今日中に誰か教えてもらえませんか？",
+    "en": "Could someone let me know today how much load testing we need to do before we can release?",
+    "alternatives": [
+      "Could someone tell me today how much load testing we need before we can release?",
+      "Could anyone let me know today how much load testing is needed before we release?"
+    ],
+    "point": "how much の後は we need の平叙文の語順にする",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 7,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:622a5cf71a3c8122a31fa4dc2955e158524b18e3f1bb0d8038a334d469da4c14",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_7y5r9x7z",
     "ja": "昨日から決済 API のテストを書いているんですが、まだ半分くらいしか終わっていません。",
     "en": "I've been writing tests for the payment API since yesterday, but I've only finished about half.",
@@ -590,6 +634,28 @@
         "hash": "sha256:7ec340c40313af4eb44e369592f3ad23fd2dc4195e59ba6dffb304e945494aed",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9x6y5t2t",
+    "ja": "私たちは昨日の障害対応に追われて、ドキュメントの更新にまだ手を付けられていません。",
+    "en": "We got tied up with yesterday's outage, so we haven't gotten around to updating the docs yet.",
+    "alternatives": [
+      "We were caught up dealing with yesterday's outage, so we haven't gotten to the documentation updates yet.",
+      "Yesterday's outage kept us busy, so we still haven't started on updating the docs."
+    ],
+    "point": "「まだ手を付けていない」は haven't gotten around to ~ing",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 9,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3b97c03d82c5ba65059b3a98274240b6cf7627c002237002625790d22c92705f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   }

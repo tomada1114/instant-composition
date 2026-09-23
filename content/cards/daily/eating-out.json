@@ -89,6 +89,50 @@
     }
   },
   {
+    "id": "c_2r7q3n3d",
+    "ja": "このパスタ、私が前回食べたのよりずっとおいしいね。",
+    "en": "This pasta is much better than the one I had last time.",
+    "alternatives": [
+      "This pasta is way better than the one I had last time.",
+      "This pasta tastes much better than what I had last time."
+    ],
+    "point": "「ずっと」は比較級の前に much や way を置く",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 4,
+    "grammar": ["comparatives-superlatives", "relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b1ec0756d284fbc33e4cec6ad382d21a7c2bbb4a9b42daa8a63e56ce256ffbdb",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2r8q6k8a",
+    "ja": "すみません、このお店でいちばん人気の料理は何ですか？",
+    "en": "Excuse me, what's the most popular dish here?",
+    "alternatives": [
+      "Excuse me, what's your most popular dish?",
+      "Excuse me, which dish is the most popular here?"
+    ],
+    "point": "「いちばん人気の」は the most popular で表す",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 2,
+    "grammar": ["wh-questions", "comparatives-superlatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c4dd106e5b42b44c2987392cc5e8674cb308806869c82b0dadcdf2fb1e8aa2cd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2s7t5q9v",
     "ja": "窓際の席はもう全部予約で埋まっていると言われたので、私たちはカウンターに座りました。",
     "en": "We were told all the window seats had already been reserved, so we sat at the counter.",
@@ -398,6 +442,28 @@
     }
   },
   {
+    "id": "c_6k6z4t3j",
+    "ja": "私たち、このお店の有名なチーズケーキを食べるために来たんです。",
+    "en": "We came here to try your famous cheesecake.",
+    "alternatives": [
+      "We came to try your famous cheesecake.",
+      "We came here to have your famous cheesecake."
+    ],
+    "point": "「食べるために」は to 不定詞で目的を表す",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 3,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a1d281249f04a036783270787fd07176b3a0ee71fb5169c706ec41f7a8a21bb6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_6t8p3t2d",
     "ja": "このお店、カードで払えますか？",
     "en": "Can I pay by card here?",
@@ -433,6 +499,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:7384258e8766f29c337385daf029f775d6b7612f3318c189c1febe553d1826c4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6w5w8w7f",
+    "ja": "来週の金曜の夜、6人で予約したいんですが、そのうち二人は小さい子どもなので、ベビーカーを置けるスペースはありますか？",
+    "en": "I'd like to book a table for six next Friday night. Two of them are small kids, so is there any space for a stroller?",
+    "alternatives": [
+      "I'd like to reserve a table for six next Friday night. Two of them are young children, so is there room for a stroller?",
+      "Could I book a table for six for next Friday night? Two of them are little kids, so do you have space for a stroller?"
+    ],
+    "point": "「余地」の意味の space や room は数えないので a を付けない",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 10,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a10281e138d5d3112006891feaf4646eb6f0009f56a37afe521d4dd4dc38c651",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }
@@ -477,6 +565,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:05bd5b829670c0ba4036df1ecc720f2ef6dd4664419c87ae6bfd6bafe430ee69",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7j5x5d3u",
+    "ja": "すみません、このステーキ、シェフにもう少し焼いてもらえますか？私には少し赤すぎるので。",
+    "en": "Excuse me, could you have the chef cook this steak a little longer? It's a bit too rare for me.",
+    "alternatives": [
+      "Excuse me, could you get the chef to cook this steak a bit longer? It's a little too rare for me.",
+      "Excuse me, would you mind having the chef cook this steak a little more? It's a bit too rare for me."
+    ],
+    "point": "have＋人＋動詞の原形、get なら人の後に to が要る",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 8,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cc65e0b4e17579469027db1543a0180c82a5afc6cc38d64b64eb54033762cd17",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

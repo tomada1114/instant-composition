@@ -88,6 +88,28 @@
     }
   },
   {
+    "id": "c_3a4d2c4t",
+    "ja": "駅前の本屋で働いてたタカシ、今はカナダに住んでるらしいよ。",
+    "en": "Takashi, who used to work at the bookstore by the station, is apparently living in Canada now.",
+    "alternatives": [
+      "I heard Takashi, who used to work at the bookstore by the station, lives in Canada now.",
+      "Apparently Takashi, the guy who used to work at the bookstore near the station, is living in Canada now."
+    ],
+    "point": "「働いてた」は used to work、人の説明は who でつなぐ",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a88ac2a073ccfe56cd4a07843c577dc5740694b4937110caa2e6712910920154",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3h6h9m4p",
     "ja": "妹は今留学中で、ホストファミリーからたくさん役立つアドバイスをもらってるらしいよ。",
     "en": "My sister is studying abroad, and apparently she's getting a lot of useful advice from her host family.",

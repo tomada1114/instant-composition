@@ -418,6 +418,28 @@
     }
   },
   {
+    "id": "c_7q4z8r2u",
+    "ja": "君が土曜のうちに言ってくれてたら、僕たちは日曜の集合時間を一時間遅らせられたのに。",
+    "en": "If you'd told us on Saturday, we could've pushed Sunday's meeting time back an hour.",
+    "alternatives": [
+      "If you'd let us know on Saturday, we could've moved Sunday's meeting time an hour later.",
+      "We could've pushed Sunday's meeting time back an hour if you'd told us on Saturday."
+    ],
+    "point": "「言ってくれてたら」は had + 過去分詞、帰結は could have",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:97a99d25bb471bcc3382d3f7e6ebcaeb45f432d0544d3582c121f9642c527350",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_7s7t8q5y",
     "ja": "兄は、父が退院する日がわかるまで、帰省の日程は決められないって言ってる。",
     "en": "My brother says he can't decide when to come home until he knows the day Dad gets out of the hospital.",

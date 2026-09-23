@@ -107,6 +107,28 @@
     }
   },
   {
+    "id": "c_3c8s9p6n",
+    "ja": "お昼から戻ったら、この書類をコピーしておきますね。",
+    "en": "I'll copy these papers when I get back from lunch.",
+    "alternatives": [
+      "When I get back from lunch, I'll copy these papers.",
+      "I'll copy these documents when I'm back from lunch."
+    ],
+    "point": "「戻ったら」は未来でも when 節は現在形",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 3,
+    "grammar": ["time-and-if-clauses", "future-forms"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b93a26bfdef63fe70aca4a9dce7a8a776de2105c193728652866f7a2975cbcc2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3h6p7q2w",
     "ja": "もし在宅勤務ができたら、毎朝早起きしなくて済むのに。",
     "en": "If I could work from home, I wouldn't have to get up early every morning.",
@@ -280,6 +302,28 @@
     }
   },
   {
+    "id": "c_6w7t4a4r",
+    "ja": "みんな、もう机の片付けは終わった？",
+    "en": "Have you all finished cleaning your desks?",
+    "alternatives": [
+      "Are you all done cleaning your desks?",
+      "Has everyone finished tidying their desks?"
+    ],
+    "point": "finish の後ろは to 不定詞でなく動名詞",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 3,
+    "grammar": ["gerunds", "present-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c68360f7549f454f539b48e79cd91515a80e8bfa6b49f71a5f5e68e559061f37",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_6x2h4b9j",
     "ja": "帰るときは、会議室の電気を消してね。",
     "en": "Turn off the meeting room lights when you leave.",
@@ -408,6 +452,28 @@
         "hash": "sha256:5e8b3c6bc82cdfb4fb29ac22b10b4c7e4e630f72c3fc62e243abac29e7b911a4",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8p5z3t9z",
+    "ja": "すみません、このファイル、私のパソコンだと開けないんです。",
+    "en": "Sorry, I can't open this file on my computer.",
+    "alternatives": [
+      "Sorry, I'm not able to open this file on my computer.",
+      "Sorry, this file won't open on my computer."
+    ],
+    "point": "「開けない」は can't open で表す",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 2,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fc8814fd36d63e2106a5537ee055aeff13210b081f741c8e7336cd8a7d98a517",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

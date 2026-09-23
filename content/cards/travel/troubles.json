@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_2z8d7s3b",
+    "ja": "私たちの席がダブルブッキングになっているみたいなんですが、どこに座ればいいか教えてもらえますか？",
+    "en": "It looks like our seats have been double-booked, so could you tell us where we should sit?",
+    "alternatives": [
+      "Our seats seem to have been double-booked, so could you tell us where we should sit?",
+      "It looks like our seats were double-booked, so could you let us know where we should sit?"
+    ],
+    "point": "間接疑問は where we should sit の語順",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 6,
+    "grammar": ["indirect-questions", "passive-voice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f2e4a13b1ab9f0e701565a07889e19342d1ebf1106ae8328a7e60abfa8b716d1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3a6d5n7w",
     "ja": "なくなったスーツケースに名札を付けておけばよかったって、妻がずっと言っています。",
     "en": "My wife keeps saying she wishes she had put a name tag on the suitcase that went missing.",

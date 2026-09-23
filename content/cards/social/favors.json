@@ -462,6 +462,28 @@
     }
   },
   {
+    "id": "c_8r9r6w7r",
+    "ja": "いいよ。箱はどこに置けばいい？",
+    "en": "Sure. Where do I put the boxes?",
+    "alternatives": [
+      "Sure. Where should I put the boxes?",
+      "Okay. Where do the boxes go?"
+    ],
+    "point": "「どこに」は Where を文の先頭に置く",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f203b8f59cfc04b2e1a5fd5164f56b37f628bb2c02cfdaf14cd1c0f603f5f8ed",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_8s5x3t9f",
     "ja": "ごめん、土曜は兄の結婚式に行くことになってるんだけど、日曜なら犬の世話をしてあげられるよ。",
     "en": "Sorry, I'm going to my brother's wedding on Saturday, but I could look after your dog on Sunday.",

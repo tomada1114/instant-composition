@@ -132,6 +132,28 @@
     }
   },
   {
+    "id": "c_3m7a8e6g",
+    "ja": "休みの日に私をいちばんリラックスさせてくれるのは、ヨガでも読書でもなく、近所の川沿いを何時間も歩くことなんです。",
+    "en": "It's not yoga or reading but walking along the river near my place for hours that relaxes me most on my days off.",
+    "alternatives": [
+      "What relaxes me most on my days off isn't yoga or reading but walking along the nearby river for hours.",
+      "On my days off, it's walking for hours along the river near my house, not yoga or reading, that relaxes me most."
+    ],
+    "point": "It's not A but B that 〜 で強調、that の後の動詞は B に合わせる",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:950690044a89f3a789429aaac12a731cc8226c18f56d04673eaa7f8ab70b4d88",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3m7t6v2c",
     "ja": "姉が去年から通っているボルダリングジムのオーナーが、週末に初心者向けのクラスを始めたらしいよ。",
     "en": "The owner of the bouldering gym my sister has been going to since last year has apparently started a weekend class for beginners.",
@@ -172,6 +194,28 @@
         "hash": "sha256:e1ec9e591a50cc2dc2bd3e1086aec6a954e686b6311aebb6004f3d1113570e8d",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4f8f8u8z",
+    "ja": "弟さんが毎月ボードゲームをしに行ってるカフェで、彼が君に話してたゲームが売ってるかどうか知ってる？",
+    "en": "Do you know whether the café where your brother plays board games every month sells the game he told you about?",
+    "alternatives": [
+      "Do you know if the café your brother goes to every month to play board games sells the game he told you about?",
+      "Do you know if they sell the game your brother told you about at the café where he plays board games every month?"
+    ],
+    "point": "「〜かどうか」は whether/if で、後ろは平叙文の語順",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 9,
+    "grammar": ["nested-clauses", "indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bb94651a32ac3f9d0961647fcaa7637f23fea747ba399c25651177a9c9c06ef3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
