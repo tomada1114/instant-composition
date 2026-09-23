@@ -117,7 +117,7 @@ src/
 ├── components/ # UI: the shadcn/ui copies under ui/ and this app's own components
 ├── app/        # the Next.js App Router tree: pages, layouts, route handlers
 └── proxy.ts    # Next.js's request proxy: locale detection ahead of every page request
-messages/       # one JSON catalog per locale, shaped by en.json
+messages/       # one JSON catalog per locale; ja.json, the only one, sets the shape
 scripts/        # repository automation, authored as .mjs, never shipped
 ```
 
@@ -164,7 +164,7 @@ outside the process can observe, plus what each zone publishes to the zone above
 
 - **Contract.** The HTTP surface of any route under `src/app/api/` — its request body,
   its answer, and the `error.code` vocabulary a client branches on. The locale list in
-  `src/i18n/locales.ts` and the message keys `messages/en.json` defines.
+  `src/i18n/locales.ts` and the message keys `messages/ja.json` defines.
 - **Private.** Any module a zone's own surface does not re-export. A test reaches a
   private module through the surface that owns it, never around it.
 

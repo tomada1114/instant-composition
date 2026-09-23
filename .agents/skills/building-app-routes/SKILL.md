@@ -58,8 +58,7 @@ directive is, and nothing else is.
   shadcn/ui copies in `ui/`, the app's own components next to them — and a component
   that needs the client carries the directive in its own file, so the page above it
   stays a Server Component. A component with no state, effect or handler needs no
-  directive even when it came from the registry: `src/app/[locale]/page.tsx` renders
-  `Button` with none anywhere on the path.
+  directive even when it came from the registry.
 - A request schema that browser code also has to satisfy belongs in `src/core/`, not
   beside the handler. A client under `src/components/` cannot import `src/server/`, and
   a second copy of the shape on the client side is one that drifts from the server's.

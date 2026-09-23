@@ -373,13 +373,13 @@ describe("the built application, served by `next start`", () => {
   it("redirects a path with no locale prefix to one that has it", async () => {
     const response = await fetch(baseUrl, {
       redirect: "manual",
-      headers: { "accept-language": "en" },
+      headers: { "accept-language": "ja" },
     });
 
     expect(response.status).toBe(307);
     const location = response.headers.get("location");
     expect(location).not.toBeNull();
-    expect(new URL(location ?? "", baseUrl).pathname).toBe("/en");
+    expect(new URL(location ?? "", baseUrl).pathname).toBe("/ja");
   });
 
   it.each(LOCALES)(
@@ -419,7 +419,7 @@ describe("the built application, served by `next start`", () => {
   // failed silently would ship an unstyled application with every other gate
   // green.
   it("serves a stylesheet carrying the utility the home page uses", async () => {
-    const document = await (await fetch(`${baseUrl}/en`)).text();
+    const document = await (await fetch(`${baseUrl}/ja`)).text();
     const href = /<link[^>]+rel="stylesheet"[^>]+href="([^"]+)"/u.exec(document)?.[1];
     if (href === undefined) {
       throw new Error(`the home page linked no stylesheet:\n${document}`);
@@ -435,32 +435,21 @@ describe("the built application, served by `next start`", () => {
     await expect(stylesheet.text()).resolves.toMatch(/\.p-8\s*\{[^}]*padding:/u);
   });
 
-  it("serves distinct metadata for English and Japanese", async () => {
-    const documents = await Promise.all(
-      LOCALES.map(async (locale) => (await fetch(`${baseUrl}/${locale}`)).text()),
-    );
-
-    expect(documents[0]).not.toContain(`<title>${MESSAGES.ja.Metadata.title}</title>`);
-    expect(documents[0]).not.toContain(
-      `<meta name="description" content="${MESSAGES.ja.Metadata.description}"`,
-    );
-  });
-
   // The two halves of "an unknown route 404s" are asserted apart, and both with
   // `redirect: "manual"`, because following the redirect merges them: a single
-  // `fetch("/no-such-page")` reports the 404 of `/en/no-such-page` and passes
+  // `fetch("/no-such-page")` reports the 404 of `/ja/no-such-page` and passes
   // just as happily if the proxy stopped running and the unprefixed path 404d
   // on its own — one of the failures this suite exists to catch.
   it("redirects an unknown path with no locale prefix rather than 404ing it", async () => {
     const response = await fetch(`${baseUrl}/no-such-page`, {
       redirect: "manual",
-      headers: { "accept-language": "en" },
+      headers: { "accept-language": "ja" },
     });
 
     expect(response.status).toBe(307);
     const location = response.headers.get("location");
     expect(location).not.toBeNull();
-    expect(new URL(location ?? "", baseUrl).pathname).toBe("/en/no-such-page");
+    expect(new URL(location ?? "", baseUrl).pathname).toBe("/ja/no-such-page");
   });
 
   it.each(LOCALES)(
@@ -480,9 +469,6 @@ describe("the built application, served by `next start`", () => {
       expect(document).toContain(MESSAGES[locale].NotFound.title);
       expect(document).toContain(MESSAGES[locale].NotFound.description);
       expect(document).toContain(MESSAGES[locale].NotFound.homeLink);
-
-      const otherLocale = locale === "en" ? "ja" : "en";
-      expect(document).not.toContain(MESSAGES[otherLocale].NotFound.title);
     },
   );
 });

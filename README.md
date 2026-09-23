@@ -24,9 +24,9 @@ pnpm install
 pnpm dev
 ```
 
-Then open <http://localhost:3000>, which redirects to the locale your browser asks for —
-`/en` or `/ja`. The page it renders is `src/app/[locale]/page.tsx`, and the text on it
-comes from `messages/en.json` and `messages/ja.json`.
+Then open <http://localhost:3000>, which redirects to `/ja` — the UI ships in Japanese
+only. The page it renders is `src/app/[locale]/page.tsx`, and the text on it comes from
+`messages/ja.json`.
 
 ## Where this app stands
 

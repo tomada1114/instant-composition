@@ -54,7 +54,7 @@ Assert what inference is supposed to preserve, not what the annotation already s
   `expectTypeOf` rejects a member the list forgot. Annotating the list
   `readonly TheUnion[]` instead would lose the literal tuple type and let a new member
   land with no case for it. `MESSAGE_KEYS` in `tests/messages.test.ts`, checked against
-  `MessageKey` (`DottedKeys<typeof en>` in `src/i18n/messages.ts`), is the model: the
+  `MessageKey` (`DottedKeys<typeof ja>` in `src/i18n/messages.ts`), is the model: the
   manifest lives in the test rather than in source because nothing under `src/` reads it
   — a compile-time assertion belongs wherever the two things it holds together live, in
   source when one of them is a constant the application ships, in a test when what is

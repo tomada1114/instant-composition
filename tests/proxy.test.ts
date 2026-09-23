@@ -7,7 +7,7 @@ import { DEFAULT_LOCALE, LOCALES } from "../src/i18n/locales";
 // The failure this file exists to catch is silent: `proxy.ts` decides which
 // requests acquire a locale prefix, and `src/app/[locale]/` decides which
 // prefixes render. Disagree, and `/` 404s — or `/api/cards` gets redirected to
-// `/en/api/cards` — with every other suite still green, because nothing else in
+// `/ja/api/cards` — with every other suite still green, because nothing else in
 // the repository reads both halves.
 
 /**
@@ -85,7 +85,7 @@ describe("locale detection", () => {
   });
 
   it("falls back to the default locale for a language this app does not ship", () => {
-    const target = redirectTarget(proxy(get("/", { "accept-language": "fr" })));
+    const target = redirectTarget(proxy(get("/", { "accept-language": "en" })));
 
     expect(target).toBe(`/${DEFAULT_LOCALE}`);
   });
@@ -100,6 +100,6 @@ describe("locale detection", () => {
   it("sends every redirect to a locale the [locale] segment can render", () => {
     const targets = ["/", "/nested"].map((path) => redirectTarget(proxy(get(path))));
 
-    expect(targets).toStrictEqual(["/en", "/en/nested"]);
+    expect(targets).toStrictEqual(["/ja", "/ja/nested"]);
   });
 });

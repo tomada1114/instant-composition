@@ -3,26 +3,15 @@ import { setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { use, type ReactElement } from "react";
 
-import { Button } from "@/components/ui/button";
-
 import { LOCALES } from "../../i18n/locales";
-import { Link } from "../../i18n/navigation";
 
 /**
- * The one page this template ships, translated.
+ * The one page this app ships so far, translated.
  *
  * @remarks
- * The locale links are the smallest honest language switch: `Link` from
- * `src/i18n/navigation.ts` adds the locale prefix to the unprefixed pathname
- * it is given, so `/ja` is reachable from `/en` without the reader typing a
- * URL. The pathname here is the literal `/` rather than the current one — the
- * template ships a single page; a switcher on a tree of pages would read
- * `usePathname()` from the same module instead.
- *
- * Each link renders through `Button`'s `asChild`, which is the smallest
- * worked example of the `src/components/` zone: a Server Component page
- * handing a copied shadcn/ui component its content, with no `"use client"`
- * anywhere on the path.
+ * It carries no language switch: the app ships a single locale, and a switch
+ * with one entry is dead UI. `Link` from `src/i18n/navigation.ts` is what a
+ * switch uses once a second locale exists.
  */
 export default function HomePage({
   params,
@@ -46,19 +35,6 @@ export default function HomePage({
       <p className="text-muted-foreground">
         {t("localeCount", { count: LOCALES.length })}
       </p>
-      <nav aria-label={switcher("label")}>
-        <ul className="flex flex-wrap gap-2">
-          {LOCALES.map((candidate) => (
-            <li key={candidate}>
-              <Button asChild variant={candidate === locale ? "default" : "outline"}>
-                <Link href="/" locale={candidate} hrefLang={candidate}>
-                  {switcher(candidate)}
-                </Link>
-              </Button>
-            </li>
-          ))}
-        </ul>
-      </nav>
     </main>
   );
 }

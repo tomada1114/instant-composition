@@ -44,7 +44,7 @@ surface, and that surface is the seam:
   handler.
 - **A synchronous Server Component**, rendered under jsdom through Testing Library, with
   the context a Server Component tree would have supplied passed explicitly:
-  `NextIntlClientProvider` with a `locale` and the real `messages/en.json`.
+  `NextIntlClientProvider` with a `locale` and the real `messages/ja.json`.
   `tests/home-page.test.tsx` is the model, and it queries by role and accessible name
   rather than by class or test id. The page under test carries no `"use client"` —
   `building-app-routes` explains why hooks alone would not make it one — so what makes

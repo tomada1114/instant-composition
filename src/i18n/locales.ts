@@ -11,7 +11,7 @@
  * `messages/<locale>.json` must exist for every entry;
  * `tests/messages.test.ts` is what checks that rather than trusting it.
  */
-export const LOCALES = ["en", "ja"] as const;
+export const LOCALES = ["ja"] as const;
 
 /** One of {@link LOCALES}. */
 export type Locale = (typeof LOCALES)[number];
@@ -20,4 +20,4 @@ export type Locale = (typeof LOCALES)[number];
  * The locale served when a request names none, or names one this app does not
  * ship.
  */
-export const DEFAULT_LOCALE: Locale = "en";
+export const DEFAULT_LOCALE: Locale = "ja";
