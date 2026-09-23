@@ -42,5 +42,49 @@
         "at": "2026-09-22"
       }
     }
+  },
+  {
+    "id": "c_7e4m6f8g",
+    "ja": "幹事に頼んで、来週の同窓会の開始を一時間遅らせてもらったよ。",
+    "en": "I got the organizer to push the start of next week's reunion back an hour.",
+    "alternatives": [
+      "I had the organizer push back the start of next week's reunion by an hour.",
+      "I asked the organizer to move next week's reunion an hour later, and they did."
+    ],
+    "point": "get 人 to do と have 人 do、to の有無に注意",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["causatives", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a5ef456041dab82b80d57c9dfe878418c3281d22568ebbb140efb29ddadd1037",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7u2p6c3j",
+    "ja": "キャンセルするなら、せめて前の日に教えてくれればよかったのに。",
+    "en": "If you were going to cancel, you should have at least told me the day before.",
+    "alternatives": [
+      "You could have at least let me know the day before if you were going to cancel.",
+      "If you had to cancel, you should have at least told me a day earlier."
+    ],
+    "point": "「〜すればよかったのに」は should have + 過去分詞",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:aa74bd6f364a6dd03f0477077ba3b84b53fa171b459142fae01a73aeb15b7a29",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
   }
 ]

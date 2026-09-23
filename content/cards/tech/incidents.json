@@ -1,5 +1,49 @@
 [
   {
+    "id": "c_2b8s4v3t",
+    "ja": "私たちが気づいたときには、サーバーはもう2時間止まっていました。",
+    "en": "By the time we noticed, the server had already been down for two hours.",
+    "alternatives": [
+      "When we noticed, the server had already been down for two hours.",
+      "The server had already been down for two hours when we noticed."
+    ],
+    "point": "気づく前から続いていた状態は had been で表す",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["past-perfect", "time-and-if-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:809f52573666996e8acce2070a2ef6c6f00769adbf9d4e21e5b21b3aef02bacf",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2c5z2s4k",
+    "ja": "昨日のうちに私たちがバックアップを確認していたら、顧客データを失わずに済んだのに。",
+    "en": "If we had checked the backups yesterday, we wouldn't have lost any customer data.",
+    "alternatives": [
+      "Had we checked the backups yesterday, we wouldn't have lost any customer data.",
+      "If we'd verified the backups yesterday, no customer data would have been lost."
+    ],
+    "point": "過去の後悔は if + had 過去分詞、主節は would have 過去分詞",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:582a83887ea52ae0a75f51d6a96d926751872bbd37ff38572ef2c736eb352367",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2s2c8w7f",
     "ja": "今はサーバーを再起動しないでください。",
     "en": "Please don't restart the server right now.",
@@ -16,6 +60,72 @@
     "stamps": {
       "core": {
         "hash": "sha256:58eb86163b408a46c6684f3e667a72537865c0ace559fc75c13008b2fce7c7dc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3c5s6n6v",
+    "ja": "決済 API に依存しているサービスは、どれも今もエラーを返しています。",
+    "en": "All the services depending on the payment API are still returning errors.",
+    "alternatives": [
+      "Every service that depends on the payment API is still returning errors.",
+      "All the services relying on the payment API are still throwing errors."
+    ],
+    "point": "「〜に依存している」は depending on で名詞の後ろから修飾",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c1992b94f0f9801330f1154e19e5305e393f8dda4b7f894b4ac7cbc80ec8cd08",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3p3t7b8r",
+    "ja": "昨夜はユーザーが30分ほどログインできませんでした。",
+    "en": "Users couldn't log in for about thirty minutes last night.",
+    "alternatives": [
+      "Last night, users weren't able to log in for about thirty minutes.",
+      "Users couldn't sign in for about 30 minutes last night."
+    ],
+    "point": "過去の「できなかった」は couldn't、期間は for で",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 3,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:03d7e43bc9b16343890217c91a04332d69ac3166b51e3d24f8f4dced9c56487c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3w8u6h5j",
+    "ja": "私たちがまだ分かっていないのは、なぜ監視アラートが鳴らなかったのかということです。",
+    "en": "What we still don't know is why the monitoring alert didn't go off.",
+    "alternatives": [
+      "We still don't know why the monitoring alert didn't go off.",
+      "What we haven't figured out yet is why the monitoring alert never fired."
+    ],
+    "point": "why 以下は疑問文の語順にしない。「鳴る」は go off",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["noun-clauses", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2258e1ed1108ecc831ecd066f21c0d4afbd13a0e5a9a314d2271f4b575ff6ea8",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
@@ -60,6 +170,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:097cb60aebbb5b4514806642b5afb1d491228dfcafdfda20427a389cbb3576f3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6r8g7y8z",
+    "ja": "開発チームはもう障害の原因を特定しましたか？",
+    "en": "Has the dev team identified the cause of the outage yet?",
+    "alternatives": [
+      "Has the development team found the cause of the outage yet?",
+      "Has the dev team figured out what caused the outage yet?"
+    ],
+    "point": "疑問文の「もう」は already ではなく yet を文末に",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:83166801fcb665b77eed2a40594669a3899cdf453e0b05826b7f28dc03c6b17e",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

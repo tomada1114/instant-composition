@@ -1,5 +1,49 @@
 [
   {
+    "id": "c_2g5j5p6c",
+    "ja": "来週の研修の資料、まとめていただけないかと思っていたのですが。",
+    "en": "I was wondering if you could put together the materials for next week's training.",
+    "alternatives": [
+      "I was hoping you could put together the materials for next week's training.",
+      "Would you mind putting together the materials for next week's training?"
+    ],
+    "point": "was wondering if you could で丁寧に依頼を切り出す",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 7,
+    "grammar": ["hedging-softening", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1da929317f6e7ac0b133fd5f4384f8fd2d39401a9b3da07c3b19acd6e5e9263d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2h5f2g5x",
+    "ja": "彼はその仕事を引き受ける前に、締め切りを確認しておくべきでしたね。",
+    "en": "He should have checked the deadline before he agreed to take on that job.",
+    "alternatives": [
+      "He should have checked the deadline before accepting that job.",
+      "He should've looked at the deadline before he took that job on."
+    ],
+    "point": "過去にしなかった後悔は should have + 過去分詞",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 7,
+    "grammar": ["modal-perfect", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:16134ae17750993c41d8a012a0f915aa32730704dc097df172fc0acf7c5ebfd9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2p7p2b3w",
     "ja": "ごめんなさい、今週はとても忙しいので、プレゼン資料作りは手伝えないんです。",
     "en": "Sorry, I can't help you with the slides because I'm really busy this week.",
@@ -132,6 +176,28 @@
     }
   },
   {
+    "id": "c_6w2s7f9e",
+    "ja": "クライアントから月曜までに署名するよう言われているので、金曜までに契約書を確認していただけないでしょうか。",
+    "en": "I was wondering if you could review the contract by Friday, since the client has asked us to sign it by Monday.",
+    "alternatives": [
+      "Would you mind reviewing the contract by Friday? The client has asked us to sign it by Monday.",
+      "I was hoping you could look over the contract by Friday, because the client wants us to sign it by Monday."
+    ],
+    "point": "丁寧な依頼は I was wondering if you could で過去形にぼかす",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["hedging-softening", "verb-object-to-do"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d66064b508998ab960c8a7f9747a610f272113ce3e809f2476a996c9c51a27cf",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_7r4j3x6a",
     "ja": "翻訳をお願いしたくて、私は朝からずっと佐藤さんに電話しているんです。",
     "en": "I've been calling Mr. Sato all morning to ask for a translation.",
@@ -154,6 +220,28 @@
     }
   },
   {
+    "id": "c_7x5r4v9j",
+    "ja": "部長が頼んだ時には、彼女はもう別の案件を引き受けていました。",
+    "en": "She had already taken on another project when the manager asked her.",
+    "alternatives": [
+      "When the manager asked her, she had already taken on another project.",
+      "By the time the manager asked her, she'd already agreed to another project."
+    ],
+    "point": "頼まれた時点より前の完了は had + 過去分詞",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 5,
+    "grammar": ["past-perfect", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8469be0fe4ea29007781163ef8af2d765c3c91a62b871872966e4142f3700e88",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_8m5h2q2v",
     "ja": "彼女はその依頼を引き受けてくれただけでなく、週末も手伝うと申し出てくれました。",
     "en": "Not only did she take on the job, but she also offered to help over the weekend.",
@@ -170,6 +258,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:73471669cb41724198e9677d997ecbea91bb166d41fdfd1f13509f853354c858",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8w2b7w8v",
+    "ja": "もし来週の水曜まで時間をもらえるとしたら、翻訳を引き受けられるんですが、今週は無理です。",
+    "en": "If you gave me until next Wednesday, I could take on the translation, but I can't do it this week.",
+    "alternatives": [
+      "If I had until next Wednesday, I could take on the translation, but this week just isn't possible.",
+      "I could handle the translation if you gave me until next Wednesday, but I can't manage it this week."
+    ],
+    "point": "仮の条件は if 節を過去形、主節を could にする",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["second-conditional", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef64bfaf12d1409c78ac098c64daa7607e84deb6ce9ce6cc9511840092dd6703",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

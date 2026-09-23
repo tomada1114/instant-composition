@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_2k6t7h2v",
+    "ja": "すみません、市立図書館を探しているんですが。",
+    "en": "Excuse me, I'm looking for the city library.",
+    "alternatives": [
+      "Excuse me, I'm trying to find the city library.",
+      "Sorry, I'm looking for the city library."
+    ],
+    "point": "「探している」は今している最中なので進行形 I'm looking for",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:13f656e815e06ab9a5107cab4783ab1314678215288d3c9a25692d0d40e1899f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2n3w6k3b",
     "ja": "私、ホテルを出る前に地図アプリをダウンロードしておけばよかった。",
     "en": "I wish I'd downloaded a map app before I left the hotel.",
@@ -176,6 +198,28 @@
     }
   },
   {
+    "id": "c_6r5x6b4r",
+    "ja": "美術館はこの通りの突き当たりにありますよ。",
+    "en": "The museum is at the end of this street.",
+    "alternatives": [
+      "The museum is at the end of this road.",
+      "The museum is where this street ends."
+    ],
+    "point": "「突き当たりに」は at the end of で表す",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9a918cfac5ef4fc74097eb4650229140888b799c5f5fb62ec7c0ffe9124761f1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_7k4v8j3y",
     "ja": "ホテルが見つからないなら、彼らは一つ手前の駅で降りるべきだったんだと思うよ。",
     "en": "If they can't find the hotel, I think they should have gotten off one stop earlier.",
@@ -214,6 +258,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:dfb8f77e7817d65ffb3bb04037d9ffdf739eb92a6fa455b072fa8abadcea5064",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9v5r2w8j",
+    "ja": "よかったら、私が駅まで案内しますよ。",
+    "en": "I'll take you to the station if you like.",
+    "alternatives": [
+      "I'll show you the way to the station if you like.",
+      "I can take you to the station if you want."
+    ],
+    "point": "その場で決めた申し出は will を使う",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e6148be05ecb31910ea7b639a210e3ecca7893d12211455c15a032ed28d6a09f",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

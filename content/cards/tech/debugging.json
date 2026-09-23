@@ -110,6 +110,28 @@
     }
   },
   {
+    "id": "c_2y7a5k9z",
+    "ja": "再現手順を送ってくれたあのお客さんが、どのブラウザを使っていたか覚えてる？",
+    "en": "Do you remember which browser the customer who sent us the reproduction steps was using?",
+    "alternatives": [
+      "Do you remember what browser the customer who sent us the repro steps was using?",
+      "Do you remember which browser that customer who sent the repro steps was on?"
+    ],
+    "point": "間接疑問は which browser + 主語 + 動詞の語順",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["nested-clauses", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b767ac3b83a6ed0e7f3af457ffda80cbfb4851033c4eb5b9b09281cc0b6ffb2d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3r9z9p7d",
     "ja": "ログインボタンにバグがあります。",
     "en": "There is a bug in the login button.",
@@ -132,6 +154,28 @@
     }
   },
   {
+    "id": "c_3u7q8b4w",
+    "ja": "私が不思議に思っているのは、データベースを移行する前に登録したユーザーにだけこのエラーが出るということです。",
+    "en": "What puzzles me is that this error only appears for users who signed up before we migrated the database.",
+    "alternatives": [
+      "What I find strange is that the error only shows up for users who registered before we migrated the database.",
+      "The thing that puzzles me is that only users who signed up before the database migration get this error."
+    ],
+    "point": "「不思議なのは」は What puzzles me is that で文を始める",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 9,
+    "grammar": ["cleft-emphasis", "nested-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:beb3089aa15c7ed9b1f261afc36d635e265548658eb5196e6073f539859b72a6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4b2s6h5r",
     "ja": "エラーについて、実際にやった手順と画面のスクリーンショットなど、情報をもう少し送ってもらえますか？",
     "en": "Could you send me a bit more information about the error, like the exact steps you took and a screenshot?",
@@ -148,6 +192,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:4b8c8494d6585924af47b3f5cd3fc977c28737749ac3922c62754697872e36e7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4c4h8a4y",
+    "ja": "ユーザーが報告してきた時刻からすると、あのバッチ処理は私たちが思っていたより1時間早く実行されたに違いありません。",
+    "en": "Judging by the times users reported, the batch job must have run an hour earlier than we thought.",
+    "alternatives": [
+      "Based on the times users reported, the batch job must have run an hour earlier than we thought.",
+      "Going by the times users gave us, that batch job must have run an hour before we thought it did."
+    ],
+    "point": "過去の確信は must have + 過去分詞（run は原形と同形）",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 7,
+    "grammar": ["modal-perfect", "comparatives-superlatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:96dbc251882b043a1dd0f1744ae8c89180df5d2de64f2e7c4ec571e08401fb87",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

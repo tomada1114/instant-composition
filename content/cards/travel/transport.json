@@ -66,6 +66,28 @@
     }
   },
   {
+    "id": "c_3f7x2r4z",
+    "ja": "ごめん、乗ってる電車が遅れてるの。",
+    "en": "Sorry, my train is running late.",
+    "alternatives": [
+      "Sorry, the train I'm on is running late.",
+      "Sorry, my train is delayed."
+    ],
+    "point": "今まさに遅れている電車は is running late",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9a65a6f306bd7dba465f07b1bfe5aba371e77a4a9d5eef63556a747f7e29c9d5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4c9x9e4t",
     "ja": "次のバスが何時に来るか、駅員さんに聞いてみて。",
     "en": "Try asking the station staff when the next bus comes.",
@@ -82,6 +104,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:387f71f82871692823445a4b294bf044e20f6d7e39667caac61f4d565bd1270f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6a3u5b2p",
+    "ja": "運転手さんに、駅で私たちを降ろしてくれるよう頼んでくれる？",
+    "en": "Can you ask the driver to drop us at the station?",
+    "alternatives": [
+      "Can you tell the driver to drop us at the station?",
+      "Could you ask the driver to let us off at the station?"
+    ],
+    "point": "ask + 人 + to do で「人に〜するよう頼む」",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 3,
+    "grammar": ["verb-object-to-do", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b7bfaf9c7156438e79ba0d61adbc0fd33493e93f8f7df80238e0c021ae95396c",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
@@ -132,6 +176,28 @@
     }
   },
   {
+    "id": "c_7d4s9b8f",
+    "ja": "この機械で切符を買えますか？",
+    "en": "Can I buy a ticket from this machine?",
+    "alternatives": [
+      "Can I get a ticket from this machine?",
+      "Can I buy tickets at this machine?"
+    ],
+    "point": "「この機械で」は from this machine が自然",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1422630576540c471895b0bef1b37203b51c4ee8418ded9ebfaf4d6c84cd476f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_7d5b8m6y",
     "ja": "バス、もう行っちゃったのかも。停留所に誰もいないよ。",
     "en": "The bus might have already left. There's nobody at the stop.",
@@ -170,6 +236,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:25f6ac610140a559d01377d1d0922862f1bdc7225800fab2919fefaba205a448",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9v2x4e8p",
+    "ja": "すみません、この電車は渋谷に止まりますか？",
+    "en": "Excuse me, does this train stop at Shibuya?",
+    "alternatives": [
+      "Excuse me, is this train stopping at Shibuya?",
+      "Excuse me, will this train stop at Shibuya?"
+    ],
+    "point": "「止まる」は stop at。主語が this train なので does を使う",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9a0d6ea5b1cd1849fbe3c55a3f65f650435773656584a09371e2a356cf82f694",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

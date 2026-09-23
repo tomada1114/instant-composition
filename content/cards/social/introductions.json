@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_2r7t9h5w",
+    "ja": "こっちに引っ越してきてからずっと働いている会社は、病院向けのソフトを作っています。",
+    "en": "The company I've been working at since I moved here makes software for hospitals.",
+    "alternatives": [
+      "The company I've worked at since moving here makes software for hospitals.",
+      "Since I moved here, I've been working at a company that makes software for hospitals."
+    ],
+    "point": "主語は The company で、動詞 makes は長い修飾の後に来る",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["nested-clauses", "present-perfect-continuous"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cdaf366fb4e424fd275e72d6417b21a46b48675f64f58bce9ff8ecdd3fb7dad7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2y2t8r4u",
     "ja": "福岡で生まれましたが、父が転勤になったので、主にシンガポールで育ちました。",
     "en": "I was born in Fukuoka, but I mostly grew up in Singapore because my father was transferred there.",
@@ -194,6 +216,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:9ba47d440b2d7bede2fd2d1a46c7f2f0bd36cd2bc783b7d43e27e8ecd907e1bf",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9m8t7v9g",
+    "ja": "差し支えなければ、どういう経緯でこの業界に入ることになったのか聞いてもいいですか？",
+    "en": "If you don't mind my asking, how did you end up getting into this industry?",
+    "alternatives": [
+      "If you don't mind me asking, how did you get into this industry?",
+      "Do you mind if I ask how you ended up in this industry?"
+    ],
+    "point": "「〜することになった」は end up -ing、「業界に入る」は get into",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 7,
+    "grammar": ["phrasal-verbs", "hedging-softening"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d79e95bcee1e817736979d990bc25704a7bff6065c856a348ccd14c636c18551",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

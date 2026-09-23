@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_4h6c2n2u",
+    "ja": "営業チームは、締め切りを来週まで延ばすことを検討しています。",
+    "en": "The sales team is thinking about extending the deadline to next week.",
+    "alternatives": [
+      "The sales team is considering extending the deadline to next week.",
+      "The sales team is thinking of pushing the deadline back to next week."
+    ],
+    "point": "about や consider の後ろは to 不定詞ではなく -ing 形",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 4,
+    "grammar": ["gerunds", "progressive-aspect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0104c4beb097bcd0ab73e36c24094d1519090693650cf2dcf65566b6ae4cae63",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_6a8v9e3n",
     "ja": "この件、もう部長に相談しましたか？まだなら、午後に一緒に行きましょう。",
     "en": "Have you talked to the manager about this yet? If not, let's go together this afternoon.",
@@ -104,6 +126,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:d34de5ca9d93e1c68e2f404734423127258ea1402795d6c422660b19914bf43e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6z3w2t2d",
+    "ja": "部長、新しいやり方のほうが前のやり方よりずっと速いです。",
+    "en": "The new process is much faster than the old one.",
+    "alternatives": [
+      "The new method is a lot faster than the old one.",
+      "The new way is much quicker than the old one."
+    ],
+    "point": "比較級を強めるのは very ではなく much や a lot",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 3,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dc889ee76959245e3a0562042de93555980ce9ac825ba7af3ccefa702eececd6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7b5r6n6t",
+    "ja": "部長、新しい勤怠システムがいつ使えるようになるか、ご存じですか？",
+    "en": "Do you know when the new attendance system will be ready?",
+    "alternatives": [
+      "Do you know when we can start using the new attendance system?",
+      "Do you have any idea when the new attendance system will be ready?"
+    ],
+    "point": "when の後ろは will the system ではなく主語＋動詞の順",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 4,
+    "grammar": ["indirect-questions", "future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bf71143c4009923a20abbfc78d5c8ea38511564793ac93e7f1fbbd9e87bee314",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

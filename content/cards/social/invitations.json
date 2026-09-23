@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2n4s2t7j",
+    "ja": "来週末みんなでバーベキューをするんだけど、何か飲み物を持ってきてもらえる？",
+    "en": "We're having a barbecue next weekend. Could you bring something to drink?",
+    "alternatives": [
+      "We're going to have a barbecue next weekend. Can you bring something to drink?",
+      "We're having a barbecue next weekend, so could you bring some drinks?"
+    ],
+    "point": "「飲み物」は something to drink と不定詞で後ろから説明",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 4,
+    "grammar": ["infinitives", "future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a2de40b4fe540e6b76743854e3bd0f0c1594a0630f73aa139727f18324d84808",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2w9r6f5f",
     "ja": "昨日、同僚にランチに誘われたけど、断ったんだ。",
     "en": "A coworker invited me to lunch yesterday, but I said no.",
@@ -148,6 +170,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:7054a4a69f0929bbb22c80a8fd7ef1841d6b944b2f2f7990d398b4139075f7a9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9r9j8z7z",
+    "ja": "急な出張が入って、送別会の誘いを断らなきゃいけなかったんだ。",
+    "en": "I had to turn down the farewell party invitation because of a sudden business trip.",
+    "alternatives": [
+      "I had to decline the invitation to the farewell party because of a sudden business trip.",
+      "Because of a sudden business trip, I had to say no to the farewell party invitation."
+    ],
+    "point": "「誘いを断る」は turn down。長い目的語は down の後ろに置く",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 6,
+    "grammar": ["phrasal-verbs", "modal-obligation-advice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d37cc91bb8468a9e6905016f75bd30814aee33a2a440a709eee7eaec1514c16c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9r9v5e7h",
+    "ja": "彼女、先週のランチの誘いは断ったけど、今週末の映画にはもう OK してくれたよ。",
+    "en": "She turned down lunch last week, but she's already said yes to a movie this weekend.",
+    "alternatives": [
+      "She said no to lunch last week, but she's already agreed to see a movie this weekend.",
+      "She declined lunch last week, but she's already said yes to a movie this weekend."
+    ],
+    "point": "先週は過去形、「もう OK した」は現在完了で使い分ける",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 6,
+    "grammar": ["tense-contrast", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:358c305ac6f57cd45daca21a22096c1c07bbd1fd592f5f14085f7768036d4244",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

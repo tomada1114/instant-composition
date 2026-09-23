@@ -1,5 +1,71 @@
 [
   {
+    "id": "c_2c3z7d8x",
+    "ja": "通話中ずっと途切れていたのは、回線じゃなくてそちらの音声だったんですよ。",
+    "en": "It was your audio, not the connection, that kept cutting out during the call.",
+    "alternatives": [
+      "What kept cutting out during the call was your audio, not the connection.",
+      "It was your audio that kept cutting out during the call, not the connection."
+    ],
+    "point": "強調したい語を It was と that で挟む",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b6a247026f3857e0d9ac04b8d83451346d26a7a31a2f29dda73fc45ebdc2d76d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3n4h4v8v",
+    "ja": "受付の方は、田中さんは会議中なので30分後にかけ直してもらえないかと言っていました。",
+    "en": "The receptionist said Mr. Tanaka was in a meeting and asked if I could call back in thirty minutes.",
+    "alternatives": [
+      "The receptionist told me Mr. Tanaka was in a meeting and asked me to call back in thirty minutes.",
+      "The receptionist said Ms. Tanaka was in a meeting and asked if I could call back in half an hour."
+    ],
+    "point": "said に合わせて is を was、can を could にずらす",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 7,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f7f46b5f509dc66626417594c59956b062f6c590dcded278d417634ecab71939",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3v9z7n7b",
+    "ja": "昨日の会議ではそちらの音声が何度も途切れていましたが、あれから別のヘッドセットに替えましたか？",
+    "en": "Your audio kept cutting out in yesterday's meeting. Have you switched to a different headset since then?",
+    "alternatives": [
+      "Your audio kept dropping out in yesterday's meeting. Have you gotten a different headset since then?",
+      "Your audio kept breaking up in yesterday's meeting. Have you switched to another headset since then?"
+    ],
+    "point": "昨日の出来事は過去形、あれからの変化は現在完了",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ff00fccbbf9521662f5dd613d80e8da7354f9047186a70f2cf7ea129efb95732",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5u9t8g4c",
     "ja": "田中さん、マイクがミュートになっていますよ。もう一度言ってください。",
     "en": "Mr. Tanaka, you're on mute. Please say that again.",

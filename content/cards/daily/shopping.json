@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_3q8n2s7t",
+    "ja": "あのとき店員さんの言うことを聞いて大きいサイズを買っていれば、今ごろ返品の手続きなんてしてなかったのに。",
+    "en": "If I'd listened to the clerk and bought the bigger size, I wouldn't be dealing with a return now.",
+    "alternatives": [
+      "If I'd listened to the clerk and gotten the bigger size, I wouldn't be doing a return now.",
+      "If I'd just listened to the salesperson and gotten the bigger size, I wouldn't have to return it now."
+    ],
+    "point": "過去の条件と今の結果を組み合わせ、後半は would be -ing",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:be73549c39fb83810d96767dbb5a813feeb221f1d9f1272644a73b1bc78376f2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4k3g7q2r",
     "ja": "店員さんは、その掃除機は来週まで入荷しないって言ってたよ。",
     "en": "The clerk said the vacuum wouldn't be back in stock until next week.",
@@ -104,6 +126,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:491548606d0257e76ccec952681a4e7c74097949d577b445bebdd0a339c7fe6d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8b7s9n6p",
+    "ja": "どの充電器を買えばいいか分からなかったので、彼は店員さんに聞いてみた。",
+    "en": "Not sure which charger to get, he asked a salesperson for help.",
+    "alternatives": [
+      "Not knowing which charger to buy, he asked a store clerk for help.",
+      "Since he wasn't sure which charger to get, he asked a salesperson."
+    ],
+    "point": "分詞構文の否定は Not を先頭に置く",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 8,
+    "grammar": ["participle-clauses", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:622efccd63b531ceeead7f068010f95c52ba2b7381fc09ff7a7e183e11b03ea1",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

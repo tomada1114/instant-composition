@@ -66,6 +66,28 @@
     }
   },
   {
+    "id": "c_5d9e4e3z",
+    "ja": "ログイン画面に、まだバグが一つ残っています。",
+    "en": "There's still one bug on the login screen.",
+    "alternatives": [
+      "There is still a bug on the login screen.",
+      "There's still one bug left on the login screen."
+    ],
+    "point": "「〜がある」は There is で始める",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2202763fe4129d60e839e68eda96b0d8303e732fd1d5211bc2d23f6abbbce12f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5m2b7k7m",
     "ja": "先週キャッシュの設定をちゃんと確認していたら、今こんなにこのバグで苦労していないはずです。",
     "en": "If I had checked the cache settings properly last week, I wouldn't be struggling with this bug now.",
@@ -104,6 +126,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:b77a5a4de9366565e2a940e758a75f5c5b76fd42ae88a2e9f96904bbc3211823",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8x6y4c3t",
+    "ja": "テストが終わったら、私から Slack で知らせますね。",
+    "en": "I'll let you know on Slack when the tests are done.",
+    "alternatives": [
+      "I'll tell you on Slack when the tests are finished.",
+      "When the tests are done, I'll let you know on Slack."
+    ],
+    "point": "未来のことでも when 節は現在形（are done）",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 3,
+    "grammar": ["time-and-if-clauses", "future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e48c711e10af48166cf614e0c34bf6cbc71e8cf893821cf07a50053937fe963e",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

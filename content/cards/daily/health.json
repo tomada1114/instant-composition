@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2a4k7p8r",
+    "ja": "この薬を飲み始めてから発疹が出てきたので、別の薬に変えられないか先生に確認してもらえますか？",
+    "en": "I've broken out in a rash since I started taking this, so could you check with the doctor about switching me to something else?",
+    "alternatives": [
+      "I've come out in a rash since I started this medicine, so could you ask the doctor whether I can switch to something else?",
+      "Since I started taking this, I've broken out in a rash, so could you check with the doctor if I can change to a different medicine?"
+    ],
+    "point": "発疹が出るは break out in a rash、確認するは check with",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 9,
+    "grammar": ["phrasal-verbs", "tense-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:07c384fe0b8bd88820a1f55fced9b1a3749bae85490bcca4f93c02aa56d8bd67",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2c4v7d9q",
     "ja": "先生、私は咳が出て、のどが痛いです。",
     "en": "I have a cough and a sore throat.",
@@ -410,6 +432,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:c7e6e65fa0413789d9f63166380f552457e9f2a425ce51c2f7e81667267b96d8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8z7m8a9n",
+    "ja": "私が心配なのは頭痛じゃなくて、ここ数日、毎朝めまいがすることなんです。",
+    "en": "What worries me isn't the headache, it's the dizziness I've been getting every morning for the past few days.",
+    "alternatives": [
+      "It's not the headache that worries me, it's the dizziness I've been having every morning for the last few days.",
+      "The headache isn't what worries me; it's that I've been feeling dizzy every morning for the past few days."
+    ],
+    "point": "「心配なのは〜」は What worries me is で始めて強調する",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 9,
+    "grammar": ["cleft-emphasis", "present-perfect-continuous"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8e97f3c62972d276e3159929e9b84c9abe57b311f5a2b5260acc81f0fd14bcbc",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
