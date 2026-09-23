@@ -66,6 +66,28 @@
     }
   },
   {
+    "id": "c_2n9a4p7t",
+    "ja": "課長、この件はいつまでに終わらせればいいですか？",
+    "en": "When do I need to have this done by?",
+    "alternatives": [
+      "When should I get this done by?",
+      "What's the deadline for this?"
+    ],
+    "point": "「いつまでに」は文末に by を残して期限を聞く",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 2,
+    "grammar": ["wh-questions", "modal-obligation-advice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0445cd13d7f37c305c7efbf8e5e0d3f165e8c8843bce8027db8e85a5e750d715",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3e3x4h2h",
     "ja": "テストはまだ全部終わっていませんが、私たちは金曜のリリースには間に合う見込みです。",
     "en": "Although we haven't finished all the tests yet, we expect to make the Friday release.",
@@ -128,6 +150,25 @@
         "hash": "sha256:0104c4beb097bcd0ab73e36c24094d1519090693650cf2dcf65566b6ae4cae63",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4v6h7c3b",
+    "ja": "部長、企画書はもう完成しています。",
+    "en": "The proposal is ready now.",
+    "alternatives": ["The proposal is finished now.", "The proposal is done now."],
+    "point": "「完成している」は be 動詞＋ready で言える",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8378bda7d11d068b110e6757772b4b8a7df6817b431750339c729b24227cde5b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

@@ -110,6 +110,28 @@
     }
   },
   {
+    "id": "c_4f9q9w6c",
+    "ja": "今日はログイン画面のバグを直しています。",
+    "en": "I'm fixing the login page bug today.",
+    "alternatives": [
+      "Today I'm fixing the bug on the login page.",
+      "I'm working on the login page bug today."
+    ],
+    "point": "今やっている作業は進行形 I'm fixing で言う",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3070c8339cc04777ca9d1185511e8e893c5c54e43d90cb0dd0016fa297d6f652",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4k4g6x8d",
     "ja": "インフラチームは、ステージング環境は今日の午後には復旧すると言っていました。",
     "en": "The infrastructure team told us the staging environment would be back up by this afternoon.",
@@ -150,6 +172,28 @@
         "hash": "sha256:bdf4d0d8eeb2cd6b6fb9d3dbe29fc6187d88b951ead5a8c96d79a388f15c4dad",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4r3d2g3k",
+    "ja": "インフラチームは昨日、ずっとデータベースの移行作業をしていました。",
+    "en": "The infra team was migrating the database all day yesterday.",
+    "alternatives": [
+      "The infra team was working on the database migration all day yesterday.",
+      "Yesterday the infra team was migrating the database all day."
+    ],
+    "point": "チームは単数扱いで was＋-ing の過去進行形",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 3,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5cfe7e5676dc9109fc5f03c984b80c6980a0d39471227efb746fcf234d996994",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
@@ -346,6 +390,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:17b9624f5649960d0e11d5c6239238323a3dd10f82dba7eec2924bd5417820e4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7p6a7n7z",
+    "ja": "テストサーバーがまだ遅いんです。",
+    "en": "The test server is still slow.",
+    "alternatives": [
+      "The test server is still running slow.",
+      "Our test server is still slow."
+    ],
+    "point": "「遅い」は形容詞なので be 動詞 is を忘れない",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c94868ce0987f44a930fbdaa40b4855a3dc973d37629306a56c48c19ac054d1b",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

@@ -308,6 +308,28 @@
     }
   },
   {
+    "id": "c_5y8s6g3t",
+    "ja": "この国に来るのは初めてではないんですが、前回来たのはもう10年以上前です。",
+    "en": "This isn't my first time visiting this country, but the last time I came was over ten years ago.",
+    "alternatives": [
+      "I've been to this country before, but the last time I came was more than ten years ago.",
+      "It's not my first visit here, but I last came over ten years ago."
+    ],
+    "point": "前回の訪問は過去の一時点なので現在完了でなく過去形 came",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e13ae7a634a43b87a06e95d03395ef9e1aba18f8d89786bed9d27efb4760180b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_6r8h7a6j",
     "ja": "彼はパスポートを家に忘れてきたに違いない。カウンターでもう10分もかばんの中を探している。",
     "en": "He must have left his passport at home. He's been searching his bag at the counter for ten minutes now.",
@@ -326,6 +348,28 @@
         "hash": "sha256:38a0e822383a52474c3e3dcf64d741553155e2ec7c4bf6c08222462a466ef9e9",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6t3g9g4t",
+    "ja": "乗り継ぎ便を予約してくれた旅行会社には、荷物は最終目的地まで通しで預けられると言われたんですが、合っていますか？",
+    "en": "The travel agency that booked my connecting flight told me my bag could be checked through to my final destination. Is that right?",
+    "alternatives": [
+      "The travel agency that booked my connecting flight said my bag could be checked all the way to my final destination. Is that correct?",
+      "I was told by the travel agency that booked my connection that my bag could go through to my final destination. Is that right?"
+    ],
+    "point": "「〜に言われた」は旅行会社を主語にして told me と能動態で言う",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 10,
+    "grammar": ["nested-clauses", "reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:af10d1512bb81ea425958e53623ed4456abfa77acae319ab71e1bfba5fbd90cb",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
@@ -384,6 +428,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:9707c28ed153c84728986ab570682a1eb12a206a2e96d01f5655bb498eced2dd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7n2k6b8t",
+    "ja": "さっき食事はいらないと言ったんですが、それでも飲み物だけいただけますか？",
+    "en": "Even though I said earlier that I didn't want a meal, could I still get just a drink?",
+    "alternatives": [
+      "I know I said earlier I didn't want a meal, but could I still have just a drink?",
+      "Although I said earlier that I didn't need a meal, could I still get something to drink?"
+    ],
+    "point": "said に合わせて「いらない」も過去形 didn't want にする",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 10,
+    "grammar": ["concession-contrast", "reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c0247238db4f85f5a1c365db1dd4c32e7dfef2a7046af9c83b7f3745f5e79fd3",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

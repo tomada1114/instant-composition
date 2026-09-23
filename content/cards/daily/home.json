@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2e4w9j3e",
+    "ja": "僕は料理は好きだけど、夕食の後の片付けはいつもすごく面倒に感じちゃうんだよね。",
+    "en": "Although I enjoy cooking, I always find cleaning up after dinner a real hassle.",
+    "alternatives": [
+      "I like cooking, but I always find cleaning up after dinner a real pain.",
+      "Even though I enjoy cooking, cleaning up after dinner always feels like a real chore to me."
+    ],
+    "point": "「〜を面倒に感じる」は find + 動名詞 + a hassle の語順",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["concession-contrast", "gerunds"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5ed1a3ef0f0f17996afd28eee026cb2a9ad104177be393024f4dc64cd0ba1183",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2j5d4g5n",
     "ja": "私が頭にくるのは、ルームメイトが流しに皿を置きっぱなしにすることじゃなくて、彼女がもう洗ったって言い張ることなんだ。",
     "en": "What drives me crazy isn't the dishes my roommate leaves in the sink but the way she insists she's already washed them.",
@@ -110,6 +132,28 @@
     }
   },
   {
+    "id": "c_3t4z5b6q",
+    "ja": "疲れてても、寝る前にせめて自分のお椀はすすいでもらえる？",
+    "en": "Even if you're tired, could you at least rinse your bowl before you go to bed?",
+    "alternatives": [
+      "Even when you're tired, could you at least rinse out your bowl before bed?",
+      "Even if you're exhausted, can you at least rinse your bowl before going to bed?"
+    ],
+    "point": "「〜てても」は even if、「せめて」の at least を落とさない",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:685d153796022e081c32149ad1e03ef51a4b6086bc6d7eec0e49a46dbbf84010",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4z6x8k4h",
     "ja": "エアコンのフィルター、先月から掃除されてないよ。",
     "en": "The air conditioner filter hasn't been cleaned since last month.",
@@ -126,6 +170,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:a2932e6eef0260c1d44af45a12b072e6ac4f933a290ddf32a8137820c2812936",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5n8v9e4j",
+    "ja": "もっと早く配管屋さんに電話してたら、うちは週末ずっとお湯なしで過ごさずに済んだのにね。",
+    "en": "If we'd called the plumber earlier, we wouldn't have spent the whole weekend without hot water.",
+    "alternatives": [
+      "If we had called a plumber sooner, we wouldn't have gone the whole weekend without hot water.",
+      "If we'd gotten the plumber in earlier, we wouldn't have been without hot water all weekend."
+    ],
+    "point": "過去の仮定は if 節が had + 過去分詞、主節は wouldn't have",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:49b72a80ceb619e02b18b103f2023d66a4b87c939d27b516ba3aef617ed2bb51",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }
@@ -214,6 +280,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:a391f206b612289b5037971806e08f3d1db0e716db76f2796bca939a89e6a093",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7a2f9k9y",
+    "ja": "先月ルームメイトが食洗機を買うのに賛成してくれてたら、今ごろ私たち手で皿を洗ってないのにね。",
+    "en": "If my roommate had agreed to buy a dishwasher last month, we wouldn't be washing dishes by hand now.",
+    "alternatives": [
+      "If my roommate had agreed to get a dishwasher last month, we wouldn't be doing the dishes by hand right now.",
+      "If my roommate had said yes to buying a dishwasher last month, we wouldn't be washing the dishes by hand now."
+    ],
+    "point": "過去の仮定は had agreed、今の結果は wouldn't be 〜ing",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:98e38c1fb1978beee87d7d79d38c617909d0cbb47ab1d6ed8a1576cca6452edc",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }
@@ -328,6 +416,28 @@
         "hash": "sha256:4e63054db9396ac5c1d6e2f9cbf150abde76d1e1fd9436d74ff720d4b75b46cf",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8v7p6g9q",
+    "ja": "ねえお父さん、ガレージを片付けるって、もう3週間ずっと言ってるよね。",
+    "en": "Dad, you've been saying you'll clean out the garage for three weeks now.",
+    "alternatives": [
+      "Dad, you've been promising to clean out the garage for three weeks now.",
+      "Dad, you've been telling us you'll clear out the garage for three weeks now."
+    ],
+    "point": "今も続く「ずっと言ってる」は have been saying、for で期間",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d06a01a3bfc94e38eec318b6c32a5ea8eaa817a78766841c045211a0f8a37195",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

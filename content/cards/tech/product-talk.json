@@ -133,6 +133,28 @@
     }
   },
   {
+    "id": "c_4m2j5j4c",
+    "ja": "今回のリリースの前に、私たちはもっとテストを書かないといけません。",
+    "en": "We have to write more tests before this release.",
+    "alternatives": [
+      "We need to write more tests before this release.",
+      "We must write more tests before this release."
+    ],
+    "point": "「〜しないといけない」は have to。we を主語に立てる",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5960413668e814f20ea66e0a9ebff6d0384911fcfb678ff43897aa5e0d32dbf6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4n8h5g4e",
     "ja": "お客さんから一番よく頼まれる機能は、今回のリリースには入らないんです。",
     "en": "The feature that customers ask for most won't be in this release.",
@@ -151,6 +173,28 @@
         "hash": "sha256:a3d9cce8cf41d2252fd90b875fbbad439bb916db73ca0a9137a6d6e02fca9742",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4r5y6f7m",
+    "ja": "ユーザーから、エクスポート機能の要望がたくさんあります。",
+    "en": "There are a lot of user requests for an export feature.",
+    "alternatives": [
+      "We have a lot of requests from users for an export feature.",
+      "Lots of users have asked for an export feature."
+    ],
+    "point": "requests は複数なので There are で始める",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:44ef92f40d105f67fa6df69f815803673d3e215f8049bcffedd8f4bb515f5369",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
@@ -437,6 +481,28 @@
         "hash": "sha256:81589bd6b343b6ce20c3bf14a005756ddc8039d86f045a81244055aed98b691a",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9g9a3c8b",
+    "ja": "新機能より先に、ログインのバグを直すべきだと思います。",
+    "en": "I think we should fix the login bug before we work on new features.",
+    "alternatives": [
+      "I think we need to fix the login bug before adding new features.",
+      "I think we should fix the login bug before working on new features."
+    ],
+    "point": "should の後は動詞の原形。主語は we を補う",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bd9af9542ebc9e9d9abd5c69708151a08e5aad35b64f4dfca97bbdd491d78f46",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

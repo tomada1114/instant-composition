@@ -111,6 +111,28 @@
     }
   },
   {
+    "id": "c_3x8r9k3b",
+    "ja": "彼があの店にもう行かないって決めたのは、料理じゃなくて店員の対応のせいだったんだよ。",
+    "en": "It was the service, not the food, that made him decide never to go back there.",
+    "alternatives": [
+      "What made him decide never to go back there was the service, not the food.",
+      "It was the service, not the food, that made him decide not to go there again."
+    ],
+    "point": "強調したい語を It was と that の間に置く",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:90ecc3b357f161a14d50a081c6596fab205445d726be558cede0a8ce3e095619",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4p6t9w8t",
     "ja": "お腹すいたね。あのカフェでランチを食べよう。",
     "en": "I'm hungry. Let's have lunch at that cafe.",
@@ -195,6 +217,28 @@
         "hash": "sha256:1e9966d7a1b74492bd18b4e98aed6b68876eaaac47c60ebed01c97d62a5b9be3",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5h9s7m5t",
+    "ja": "この店、予約しておけば、私たち今ごろ並ばずに座れてたのにね。",
+    "en": "If we'd booked a table here, we'd be sitting down now instead of standing in line.",
+    "alternatives": [
+      "If we'd made a reservation here, we'd already be seated instead of waiting in line.",
+      "If we'd reserved a table here, we could be sitting down now instead of standing in line."
+    ],
+    "point": "過去の条件は had+過去分詞、今の結果は would be ~ing",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d8d130aaadbcf66e8f2d5521e331c92be3d18bb6f7214733eedb992b2c525fa1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
@@ -303,6 +347,28 @@
         "hash": "sha256:b8d6289e324f4afc47606cf0561f21397dbddb5b83b4f54ba13dc6696b438174",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9r6q8u5x",
+    "ja": "このお店のオムライス、食べたことある？ここに来るたびに頼んでるんだ。",
+    "en": "Have you ever tried the omelet rice here? I order it every time I come.",
+    "alternatives": [
+      "Have you ever had the omelet rice here? I get it every time I come.",
+      "Have you tried the omelet rice here before? I always order it when I come."
+    ],
+    "point": "経験は Have you ever tried、習慣は現在形 I order",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c2ca540396a05cef7777a741f5b007abf787c1fda2daaa6d4f80ab27f9b1576",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   }

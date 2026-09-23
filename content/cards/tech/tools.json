@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_2y4h7k8n",
+    "ja": "ローカルで Docker を動かすとメモリをどれだけ食うか、セットアップする前に知っておけばよかった。",
+    "en": "I wish I'd known how much memory Docker would eat up locally before I set it up.",
+    "alternatives": [
+      "If only I'd known how much memory Docker would use locally before I set it up.",
+      "I wish I had realized how much memory Docker takes up locally before setting it up."
+    ],
+    "point": "過去の後悔は I wish の後を過去完了 I'd known にする",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 10,
+    "grammar": ["wishes-regrets", "noun-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a397885e212e6cf3f1d3b8aadb5b4eb7d3b7cabb822ba7d13d6c6284742172d6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4t2z2b7p",
     "ja": "リードエンジニアが先週、全員のノートPCに同じエディタを入れました。",
     "en": "The lead engineer installed the same editor on everyone's laptop last week.",
@@ -104,6 +126,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:7b39aace51acd4a6f8d5449f947373050a76cba3ced95c9ef034c95929d60bed",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5s9h6n9e",
+    "ja": "新しく入った人が初日にインストールしなきゃいけないツールをまとめたリストって、どこかにありますか？",
+    "en": "Is there a list somewhere of the tools that new hires need to install on their first day?",
+    "alternatives": [
+      "Do we have a list anywhere of the tools new hires have to install on their first day?",
+      "Is there a list somewhere of the tools new people need to install on day one?"
+    ],
+    "point": "a list of the tools の後ろに that 節を続けて名詞を修飾する",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d5c416029e671eedb885bdf8506aab7ba9d5fd0e457c90198fc19ee1e1283b9a",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

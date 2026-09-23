@@ -176,6 +176,28 @@
     }
   },
   {
+    "id": "c_5b9n5m6k",
+    "ja": "日曜日にみんなで映画を見に行こうよ。",
+    "en": "Let's go to a movie on Sunday.",
+    "alternatives": [
+      "Let's see a movie on Sunday.",
+      "Let's all go to the movies on Sunday."
+    ],
+    "point": "曜日の前は on。「日曜日に」を on Sunday とする",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b7df5dfd84cfa1e9c2e4cc6352d6b39ac1b26e380d824cdd046eae56f38c2c79",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5d2n8f2b",
     "ja": "都合が悪いのは週末全部じゃなくて、日曜の朝だけなんだ。",
     "en": "It's only Sunday morning that doesn't work for me, not the whole weekend.",
@@ -242,6 +264,28 @@
     }
   },
   {
+    "id": "c_5q7y4s7v",
+    "ja": "最近残業続きだから、金曜の飲み会は行くのをやめておこうと思ってるんだ。",
+    "en": "I've been working late a lot lately, so I'm thinking of skipping Friday's drinks.",
+    "alternatives": [
+      "I've been working overtime a lot recently, so I'm thinking about skipping the drinks on Friday.",
+      "Since I've been working late so much lately, I'm thinking of not going to Friday's drinks."
+    ],
+    "point": "think of の後は -ing 形。to skip にしない",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 8,
+    "grammar": ["gerunds", "present-perfect-continuous"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7c5360912b190aca1f06d996a78d302ed8ef5cd073368eba133b28b934b537a0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_6f3r4u5p",
     "ja": "ごめん、疲れてるからパーティーに行けないよ。",
     "en": "Sorry, I can't go to the party. I'm tired.",
@@ -280,6 +324,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:f4cfb814ebd701b09c8264a5e66f5f13a61b4473d8bc6c864fe494837263f9d1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6y3j9e6d",
+    "ja": "今週末は雨の予報だから、キャンプは来月に延期するのはどう？",
+    "en": "The forecast says rain this weekend, so how about putting off the camping trip until next month?",
+    "alternatives": [
+      "It's supposed to rain this weekend, so how about postponing the camping trip until next month?",
+      "Since rain is forecast this weekend, how about putting the camping trip off until next month?"
+    ],
+    "point": "how about の後は動詞の -ing 形（putting off）",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["gerunds", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:60d4657e14fb27bebf47c307701cfd03461cbfaa31dd79e607d5c0feda4051ed",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }
@@ -326,6 +392,28 @@
         "hash": "sha256:a5ef456041dab82b80d57c9dfe878418c3281d22568ebbb140efb29ddadd1037",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7s7t8q5y",
+    "ja": "兄は、父が退院する日がわかるまで、帰省の日程は決められないって言ってる。",
+    "en": "My brother says he can't decide when to come home until he knows the day Dad gets out of the hospital.",
+    "alternatives": [
+      "My brother says he can't set a date to come home until he finds out when Dad's leaving the hospital.",
+      "My brother says he can't plan his trip home until he knows what day Dad will be discharged."
+    ],
+    "point": "until 節の中は未来のことでも現在形（knows）",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 8,
+    "grammar": ["nested-clauses", "time-and-if-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4a57a92cf2e619e30d0408f9aeac8810b2ad555ac8a3e2d45214dfc88c8a6073",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
@@ -392,6 +480,28 @@
         "hash": "sha256:2c091b5bab8a63dc84e642b15b324bb871682db6661a9c95e2b6e54134ff3651",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8a6c7c9a",
+    "ja": "兄は毎週土曜日の午前中、サッカーの練習があるよ。",
+    "en": "My brother has soccer practice every Saturday morning.",
+    "alternatives": [
+      "My brother goes to soccer practice every Saturday morning.",
+      "My older brother has soccer practice on Saturday mornings."
+    ],
+    "point": "主語が三人称単数なので have ではなく has",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7629a7d335a131a2bcc93bedd59d423a4da21c97bb44f7796eae23b88e11c132",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

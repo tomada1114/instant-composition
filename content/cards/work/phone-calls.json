@@ -107,6 +107,28 @@
     }
   },
   {
+    "id": "c_4g7s5m7y",
+    "ja": "回線が悪いので、カメラをオフにしてもいいですか？",
+    "en": "My connection is bad, so can I turn off my camera?",
+    "alternatives": [
+      "Can I turn off my camera? My connection is bad.",
+      "May I turn my camera off? My connection is poor."
+    ],
+    "point": "許可を求めるのは Can I 〜? で、Can you と取り違えない",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d214c5d6ab1192b7a9a24a46d52f029c2b4407fae009da255cceb1d97eb67f2f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4v2h9q3q",
     "ja": "すみません、今おっしゃったことが聞き取れませんでした。",
     "en": "Sorry, I didn't catch what you just said.",
@@ -235,6 +257,50 @@
         "hash": "sha256:eed5305e72efe2d9fb89a78f83574c9633142eb3f943dba8e782692acae0dddf",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7m4j5p2d",
+    "ja": "すみません、もう少しゆっくり話していただけますか？",
+    "en": "Sorry, could you speak a little more slowly?",
+    "alternatives": [
+      "Sorry, could you talk a little more slowly?",
+      "Sorry, would you mind speaking a bit more slowly?"
+    ],
+    "point": "slow ではなく副詞 slowly を比較級 more slowly にする",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 3,
+    "grammar": ["requests-permission", "comparatives-superlatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f62083994c69334a1e1a6fca40a6f85d83cf2af08d569d8647e38db1340c88cb",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8g2g6x3z",
+    "ja": "山田さんが、この通話にあなたにも入ってほしいそうです。",
+    "en": "Yamada wants you to join this call too.",
+    "alternatives": [
+      "Yamada would like you to join this call too.",
+      "Yamada wants you on this call too."
+    ],
+    "point": "want you to join の形。want that you と言わない",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ab09239cf88d451c0ee8ac78add2f0dc0687388cceab5bc8221821db60f06d18",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

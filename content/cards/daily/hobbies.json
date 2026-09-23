@@ -154,6 +154,28 @@
     }
   },
   {
+    "id": "c_5z4d8a3t",
+    "ja": "父はピアノが弾けません。",
+    "en": "My father can't play the piano.",
+    "alternatives": [
+      "My dad can't play the piano.",
+      "My father isn't able to play the piano."
+    ],
+    "point": "can't の後ろは原形の play。楽器には the を付ける",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 1,
+    "grammar": ["can-could-ability", "articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:352ea055267c0c71bcd5b3d478b27dd595d57f3d8e9a43e8e0f7b8d5c3fc4a1e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5z7k4m4y",
     "ja": "駅前に新しくできたボルダリングジム、もう行ってみた？",
     "en": "Have you tried the new bouldering gym near the station yet?",
@@ -170,6 +192,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:f70faf7b847e2126c347e4f9f43a88b21ddfbf3623cdc015d4bafc378977ef93",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6a4d6p2h",
+    "ja": "日曜日の午後は、一緒にカードゲームをしよう。",
+    "en": "Let's play card games on Sunday afternoon.",
+    "alternatives": [
+      "Let's play cards on Sunday afternoon.",
+      "Let's play a card game on Sunday afternoon."
+    ],
+    "point": "Let's の後ろは動詞の原形。「日曜の午後に」は on",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:64c0f888f4fe6c5b3a6bf8b9380a3f10b52639a25350c5b574740d1038d2ca94",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }
@@ -260,6 +304,28 @@
         "hash": "sha256:3236c5c2f6f847acf01d4ac2c2f341e98a47a7b68f20550155a16e7cf79294e1",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7x2d2y5s",
+    "ja": "休みの日は、たいてい何をしてるの？",
+    "en": "What do you usually do on your days off?",
+    "alternatives": [
+      "What do you usually do on your day off?",
+      "What do you normally do when you're off?"
+    ],
+    "point": "習慣を聞くので現在形。usually は do の前に置く",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 2,
+    "grammar": ["wh-questions", "be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dda21b59529bce11b2653ab0e365ff3230c784dbe3b5c6b42918f63678547443",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

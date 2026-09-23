@@ -239,6 +239,50 @@
     }
   },
   {
+    "id": "c_4b7g9q3a",
+    "ja": "姉は合格通知をじっと見つめたまま、受かったのが信じられない様子で 1 時間も座っていた。",
+    "en": "My sister sat there for an hour, staring at the acceptance letter, unable to believe she'd actually gotten in.",
+    "alternatives": [
+      "My sister sat there for a whole hour staring at her acceptance letter, as if she couldn't believe she'd passed.",
+      "For an hour, my sister just sat there staring at the acceptance letter, not believing she'd gotten in."
+    ],
+    "point": "「〜したまま」は , staring のように ing 形で後ろに続ける",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4f8088e70047655ca91f0d7423e2ed3f4dfe9963eb76cf1192f5d545a6706222",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4j5b3s7s",
+    "ja": "前もって言ってくれていたら、空港まで迎えに行けたのに。残念だよ。",
+    "en": "If you'd told me beforehand, I could have picked you up at the airport. It's a shame.",
+    "alternatives": [
+      "If you had let me know in advance, I could've picked you up at the airport. What a shame.",
+      "It's too bad. If you'd told me ahead of time, I could have come to get you at the airport."
+    ],
+    "point": "過去の仮定は If you'd told と could have picked の形",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["third-conditional", "modal-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:326444bddfa4dfc262fec37e4331b573858be7d166c65806a5a0b47cb60a6283",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5g8w7y9w",
     "ja": "正直言うと、一番がっかりしたのは誰も手伝ってくれなかったことです。",
     "en": "To be honest, what disappointed me most was that nobody helped me.",

@@ -220,6 +220,28 @@
     }
   },
   {
+    "id": "c_3y8u8b6w",
+    "ja": "私がどうしても知りたいのは、この時間でも駅までのバスがまだ走っているかどうかなんです。",
+    "en": "What I really need to know is whether there's still a bus running to the station at this hour.",
+    "alternatives": [
+      "What I really want to know is whether a bus still runs to the station at this time of night.",
+      "The thing I really need to know is if there's still a bus to the station at this hour."
+    ],
+    "point": "「〜かどうか」は whether 節、語順は平叙文のまま",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 10,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ccbfc493606f4949d44b090dd809c3bafe18fa913a5c0856ae5cf7ff772f1f64",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4b4z7w8h",
     "ja": "すみません、この辺りに両替所はありますか？それとも一番近いのは駅の中ですか？",
     "en": "Excuse me, is there a currency exchange around here, or is the nearest one inside the station?",

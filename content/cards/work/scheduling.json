@@ -217,6 +217,28 @@
     }
   },
   {
+    "id": "c_5u6w6f4g",
+    "ja": "部長がもっと早く言ってくれていたら、私は出張の日程を変えられたのですが。",
+    "en": "If the manager had told me sooner, I could have changed the dates of my business trip.",
+    "alternatives": [
+      "If my manager had let me know earlier, I could have rescheduled my business trip.",
+      "If the manager had told me earlier, I would have been able to change my business trip dates."
+    ],
+    "point": "過去の仮定は had told と could have changed の形にする",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["third-conditional", "modal-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f81966719ecd3a6bf8fcf1b9332314c58d2b7281c98c5aa14d0da731391dc08",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5v2v7m9n",
     "ja": "来週のレビュー、部長が何曜日なら空いてるか知ってる？",
     "en": "Do you know which day the manager is free for next week's review?",
@@ -434,6 +456,28 @@
     }
   },
   {
+    "id": "c_8u3x9k7n",
+    "ja": "もし締め切りを1週間延ばせるなら、チームはテストにもっと時間をかけられるのに。",
+    "en": "If we could push the deadline back a week, the team would be able to spend more time on testing.",
+    "alternatives": [
+      "If the deadline were pushed back a week, the team could spend more time on testing.",
+      "If we could move the deadline back by a week, the team could put more time into testing."
+    ],
+    "point": "現実と違う仮定なので could 〜, would 〜 と過去形にする",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 8,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:38ebc5000a98f15deda0e1c48b561642ad96560ca490c26f635a51bd0b97647f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_9d3w7h2e",
     "ja": "先方に、打ち合わせを来週の火曜日にずらしてもらうよう頼んでもらえますか？",
     "en": "Could you ask the client to move the meeting to next Tuesday?",
@@ -452,6 +496,28 @@
         "hash": "sha256:b5e13afb0ca67bb13d81da5bc954d566eb3b732e5f2ffc595c8ef11be3ef02be",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9e5y5m2q",
+    "ja": "先方は、来週の打ち合わせが水曜日の午後なら出られると言っていました。",
+    "en": "The client said they could make next week's meeting if it was on Wednesday afternoon.",
+    "alternatives": [
+      "The client told us they'd be able to attend next week's meeting if it was on Wednesday afternoon.",
+      "The client said they could join next week's meeting if we held it on Wednesday afternoon."
+    ],
+    "point": "時制の一致で can は could、is は was にする",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9b5971b25e6cc709895071bfa6b666050814acf6a98f0a20245790af8b520a41",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
