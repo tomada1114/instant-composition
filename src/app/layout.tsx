@@ -1,6 +1,17 @@
+import type { Viewport } from "next";
 import type { ReactNode } from "react";
 
 import "./globals.css";
+
+/**
+ * The app is dark only, so the browser's own controls and toolbar match the
+ * canvas — `--canvas` in `src/app/globals.css`. Declared here rather than in
+ * the locale layout so the root-level not-found boundary carries it too.
+ */
+export const viewport: Viewport = {
+  colorScheme: "dark",
+  themeColor: "#000000",
+};
 
 /**
  * The root layout Next.js requires, with the global stylesheet but no shell.

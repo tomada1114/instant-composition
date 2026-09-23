@@ -4,37 +4,28 @@ import type { ComponentProps, ReactElement } from "react";
 
 import { cn } from "@/components/lib/utils";
 
-// Copied from the shadcn/ui registry (`new-york` style) with three edits,
-// which is the whole diff a reviewer should expect against the registry copy:
-// `Slot` comes from `@radix-ui/react-slot` rather than the `radix-ui`
-// umbrella, `cn` from this repository's `src/components/lib/utils.ts`, and the
-// props are an `interface` with an explicit return type, as this repository's
-// ESLint config and `writing-typescript` require. The classes are the
-// registry's own and read only the theme tokens `src/app/globals.css` defines.
+// Copied from the shadcn/ui registry (`new-york` style), then restyled to
+// `designing-ui`'s button recipe. Against the registry copy: `Slot` comes from
+// `@radix-ui/react-slot` rather than the `radix-ui` umbrella, `cn` from this
+// repository's `src/components/lib/utils.ts`, the props are an `interface`
+// with an explicit return type, and the variants are the recipe's three —
+// `primary` (the one accent fill a screen may carry), `secondary` and `text`.
+// The registry's `size` prop is gone: each variant has one height. Focus is
+// the global white outline from `src/app/globals.css`, so no ring is set here.
 const buttonVariants = cva(
-  "inline-flex shrink-0 items-center justify-center gap-2 rounded-md text-sm font-medium whitespace-nowrap transition-all outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-destructive aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 [&_svg]:pointer-events-none [&_svg]:shrink-0 [&_svg:not([class*='size-'])]:size-4",
+  "inline-flex shrink-0 items-center justify-center gap-3 rounded-full px-6 whitespace-nowrap disabled:pointer-events-none [&_svg]:pointer-events-none [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive:
-          "bg-destructive text-white hover:bg-destructive/90 focus-visible:ring-destructive/20 dark:bg-destructive/60 dark:focus-visible:ring-destructive/40",
-        outline:
-          "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground dark:border-input dark:bg-input/30 dark:hover:bg-input/50",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
-        link: "text-primary underline-offset-4 hover:underline",
-      },
-      size: {
-        default: "h-9 px-4 py-2 has-[>svg]:px-3",
-        sm: "h-8 gap-1.5 rounded-md px-3 has-[>svg]:px-2.5",
-        lg: "h-10 rounded-md px-6 has-[>svg]:px-4",
-        icon: "size-9",
+        primary:
+          "h-14 bg-accent text-action text-accent-foreground active:bg-accent-pressed disabled:bg-raised disabled:text-disabled",
+        secondary:
+          "h-14 border-[1.5px] border-input text-action text-foreground active:bg-raised disabled:border-disabled disabled:text-disabled",
+        text: "h-11 text-body text-muted-foreground active:text-foreground disabled:text-disabled",
       },
     },
     defaultVariants: {
-      variant: "default",
-      size: "default",
+      variant: "primary",
     },
   },
 );
@@ -48,7 +39,6 @@ interface ButtonProps
 function Button({
   className,
   variant,
-  size,
   asChild = false,
   ...props
 }: ButtonProps): ReactElement {
@@ -57,7 +47,7 @@ function Button({
   return (
     <Comp
       data-slot="button"
-      className={cn(buttonVariants({ variant, size, className }))}
+      className={cn(buttonVariants({ variant, className }))}
       {...props}
     />
   );

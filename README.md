@@ -32,10 +32,10 @@ only. The page it renders is `src/app/[locale]/page.tsx`, and the text on it com
 
 It was started from a Next.js App Router template by following
 [`starting-an-app`](.agents/skills/starting-an-app/SKILL.md): the template's identity
-was renamed and its language-model layer removed whole. The design direction is not
-settled yet — `src/app/globals.css` still carries shadcn/ui's stock neutral tokens, and
-`tests/placeholders.test.ts` keeps reporting that, alongside the
-[`designing-ui`](.agents/skills/designing-ui/SKILL.md) skill, until it is.
+was renamed and its language-model layer removed whole. The design direction is settled
+— a dark-only "night scoreboard", black with one neon green — and lives in the
+[`designing-ui`](.agents/skills/designing-ui/SKILL.md) skill with its tokens in
+`src/app/globals.css`. The screens themselves are next.
 
 `pnpm dlx shadcn@latest add <name>` cannot run from this repository's root under its
 supply-chain policy; `designing-ui` holds the workaround.
