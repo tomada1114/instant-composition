@@ -1,0 +1,46 @@
+[
+  {
+    "id": "c_4r7y2g5s",
+    "ja": "彼女、最近は週末にギターを習うのにはまってるらしいよ。",
+    "en": "I heard she's really into learning the guitar on weekends these days.",
+    "alternatives": [
+      "Apparently she's gotten really into learning guitar on weekends lately.",
+      "I heard she's hooked on learning the guitar on weekends these days."
+    ],
+    "point": "前置詞 into の後ろは動名詞 learning",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 4,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:24d028c4d1a7bed3b1a83a71fd2b20f4d947740774415b9b274ed13e539f8fb5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5x3s8s3g",
+    "ja": "転職したんだけど、今の会社のほうが前の会社よりずっと働きやすいよ。",
+    "en": "I changed jobs, and my new company is much easier to work for than my old one.",
+    "alternatives": [
+      "I switched jobs, and my current company is a lot easier to work for than my last one.",
+      "I changed jobs, and working at my new company is much easier than at my old one."
+    ],
+    "point": "比較級の強調は very ではなく much / a lot",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4e3d2104100ca1a50d2426273283dd1d93ebd375340d92bf828737d9a772a502",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

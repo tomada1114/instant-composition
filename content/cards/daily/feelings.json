@@ -1,0 +1,90 @@
+[
+  {
+    "id": "c_2c3f4d2q",
+    "ja": "上司に本当の気持ちを伝えたほうがいいと思うよ。",
+    "en": "I think you should tell your boss how you really feel.",
+    "alternatives": [
+      "I think you should tell your boss what you really think.",
+      "I think you should let your boss know how you really feel."
+    ],
+    "point": "「気持ち」は how you feel と節で表すと自然",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 4,
+    "grammar": ["modal-obligation-advice", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:492d6c323a8dd363a65f5034a20c6c2d3c81316899fe07d1ccddea0576d6ac8f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6t4b8u9w",
+    "ja": "コンサートが中止になったと聞いて、私はすごくがっかりしたよ。",
+    "en": "I was really disappointed to hear that the concert had been canceled.",
+    "alternatives": [
+      "I was so disappointed to hear the concert had been canceled.",
+      "It was really disappointing to hear that the concert was canceled."
+    ],
+    "point": "感情の原因は to hear、中止は受け身 had been canceled",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 5,
+    "grammar": ["infinitives", "passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8b2a749b837a82fbc2a21206345ceab38da051f98702d3fa720ce759eee01864",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8v2p7j4k",
+    "ja": "明日の朝もまだ雨が降ってたら、家にいたほうがよくない？",
+    "en": "Wouldn't it be better to stay home if it's still raining tomorrow morning?",
+    "alternatives": [
+      "If it's still raining tomorrow morning, wouldn't it be better to stay home?",
+      "Shouldn't we just stay home if it's still raining tomorrow morning?"
+    ],
+    "point": "未来でも if 節は現在形 it's still raining",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 5,
+    "grammar": ["time-and-if-clauses", "infinitives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f0c004151622dd510c5ed0720a2cdd899f127d0dd0e934b03dc0d1c69ffd1132",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8v3y6q4y",
+    "ja": "新しい仕事、最初は緊張したけど、もう慣れたよ。",
+    "en": "I was nervous at first, but I've gotten used to my new job.",
+    "alternatives": [
+      "My new job made me nervous at first, but I've gotten used to it.",
+      "I was nervous at first, but I'm used to my new job now."
+    ],
+    "point": "「最初は」は過去形、「もう慣れた」は現在完了で",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 4,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:55d3394b873d032080d0a92fa72de351bbb0becbd0d3f9be26258f0c67791842",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

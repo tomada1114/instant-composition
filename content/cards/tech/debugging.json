@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2f4e2s6u",
+    "ja": "あなたが先週直したと言っていたバグが、今朝ユーザーが報告してきたものと同じかどうか、確認してもらえますか？",
+    "en": "Could you check whether the bug you said you fixed last week is the same one that users reported this morning?",
+    "alternatives": [
+      "Can you check if the bug you said you'd fixed last week is the same one users reported this morning?",
+      "Could you confirm whether the bug you told me you fixed last week is the one users reported this morning?"
+    ],
+    "point": "the bug you said you fixed と節を入れ子にする",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["nested-clauses", "noun-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b224199caca07bec507b14f593e20fa434e27153cd82ca95093bbc7edc1ee014",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4f6h7g4x",
     "ja": "ログイン時にアプリが落ちるだけでなく、ユーザーの保存前の下書きまで消えてしまうんです。",
     "en": "Not only does the app crash on login, but it also wipes out the user's unsaved draft.",
@@ -16,6 +38,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:bfec5e0af4a390bb093edc0b31eecfb70f7fd44dbd9d71217025dd7d40b30a46",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4p6e2t5m",
+    "ja": "昨夜のデプロイで設定ファイルが上書きされたに違いない、だから API キーが消えてるんだ、と彼は言っています。",
+    "en": "He says the config file must have been overwritten during last night's deploy, which is why the API keys are missing.",
+    "alternatives": [
+      "He says the config file must have gotten overwritten during last night's deployment, and that's why the API keys are gone.",
+      "According to him, the config file must have been overwritten in last night's deploy, which explains why the API keys are missing."
+    ],
+    "point": "過去の確信は must have been + 過去分詞",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["modal-perfect", "reported-speech"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:475531ef9cfca319ea84b410c733e38bcc53d3f46911ae9de29af25f6d09f3b8",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
@@ -104,6 +148,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:607eb87863e34f831c2146dcda412eb9b09c5189b6da02b86025053e7d6dc922",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9n9u4m5a",
+    "ja": "先週私たちがあのパッチを当てていたら、今ごろこのタイムアウトは起きていないはずです。",
+    "en": "If we had applied that patch last week, these timeouts wouldn't be happening now.",
+    "alternatives": [
+      "If we'd applied that patch last week, we wouldn't be seeing these timeouts now.",
+      "If we'd put that patch in last week, we wouldn't have these timeouts now."
+    ],
+    "point": "過去の仮定は had applied、今の結果は wouldn't be",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:491c17fce8d972226a575ee2193f614becb2812e7e1ff3b85a4553b6979156fb",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

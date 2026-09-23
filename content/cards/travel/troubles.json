@@ -1,0 +1,24 @@
+[
+  {
+    "id": "c_5x5k5d6f",
+    "ja": "昨日カメラを盗まれたんですが、まだ警察には届けていないんです。",
+    "en": "My camera was stolen yesterday, but I haven't reported it to the police yet.",
+    "alternatives": [
+      "Someone stole my camera yesterday, but I haven't reported it to the police yet.",
+      "I had my camera stolen yesterday, but I still haven't reported it to the police."
+    ],
+    "point": "yesterday は過去形、まだ〜していないは現在完了",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["tense-contrast", "passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:09d93de9d16096bc441b0708546e907b6177a411f909e0500a88cc792b4900b8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

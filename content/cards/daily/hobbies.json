@@ -44,6 +44,116 @@
     }
   },
   {
+    "id": "c_3y8w6j4r",
+    "ja": "土曜日にロードバイクを点検してもらうつもりだったんだけど、行ってみたらその店がもうつぶれてたんだよね。",
+    "en": "I was going to have my road bike serviced on Saturday, but it turned out the shop had already closed down.",
+    "alternatives": [
+      "I was planning to get my road bike checked on Saturday, but when I went, the shop had already closed for good.",
+      "I meant to have my road bike looked at on Saturday, but it turned out the shop had already gone out of business."
+    ],
+    "point": "「点検してもらう」は have + 物 + 過去分詞",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 8,
+    "grammar": ["causatives", "past-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e1ec9e591a50cc2dc2bd3e1086aec6a954e686b6311aebb6004f3d1113570e8d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6f9j2d8e",
+    "ja": "母は定年後に始めた水彩画にすっかりはまっていて、最近は地元の展示会にまで作品を出しているんです。",
+    "en": "My mom has really gotten into the watercolor painting she took up after retiring, and she's even been entering her work in local exhibitions lately.",
+    "alternatives": [
+      "My mother is totally hooked on the watercolor painting she took up after she retired, and lately she's even been submitting her work to local exhibitions.",
+      "My mom has gotten really into watercolors since she took them up after retiring, and recently she's even been showing her work at local exhibitions."
+    ],
+    "point": "「始める（趣味）」は take up、「はまる」は get into",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 10,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3135420243475931a7b56454a42b9547a52032cac34e125bd7c0fe106739fad2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7j4r5z2a",
+    "ja": "昨日電話くれたとき、ちょうど庭でトマトを植えてたんだ。",
+    "en": "I was planting tomatoes in the garden when you called yesterday.",
+    "alternatives": [
+      "When you called yesterday, I was planting tomatoes in the garden.",
+      "I was in the garden planting tomatoes when you called yesterday."
+    ],
+    "point": "途中だった動作は過去進行形、割り込んだ出来事は過去形",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 4,
+    "grammar": ["progressive-aspect", "time-and-if-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3236c5c2f6f847acf01d4ac2c2f341e98a47a7b68f20550155a16e7cf79294e1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8e2j6t5b",
+    "ja": "今週末に本当にしたいのは、家でのんびり本を読むことなんだ。",
+    "en": "What I really want to do this weekend is relax at home and read.",
+    "alternatives": [
+      "What I really want to do this weekend is stay home and read a book.",
+      "All I really want to do this weekend is chill at home with a book."
+    ],
+    "point": "「〜したいこと」は What I want to do で主語にする",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 5,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f1e4934d7ed9674263019a7a8d5711434f294eedcc99b8494394615c83bfd09f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8g2e5m7g",
+    "ja": "ギターって、いつから習ってるの？",
+    "en": "How long have you been learning the guitar?",
+    "alternatives": [
+      "How long have you been taking guitar lessons?",
+      "When did you start learning the guitar?"
+    ],
+    "point": "今も続いている期間は How long have you been 〜ing",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 4,
+    "grammar": ["present-perfect-continuous", "wh-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0b6f820daf197276ab47f56b1ab05584cdf3b40c9af5af39d0db1e1f60891490",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_8w3p7p3p",
     "ja": "差し支えなければ、休みの日は普段どう過ごされているのか、お聞きしたいなと思っていたんですが。",
     "en": "If you don't mind my asking, I was wondering how you usually spend your days off.",

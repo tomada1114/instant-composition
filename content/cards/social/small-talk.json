@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_3b7r6j5y",
+    "ja": "先週末は雨がひどかったから、子どもたちには一日中家で好きなゲームをさせてあげたんだ。",
+    "en": "The rain was so heavy last weekend that I let the kids play whatever games they wanted at home all day.",
+    "alternatives": [
+      "It rained so hard last weekend that I let the kids play any games they liked at home all day.",
+      "Since it was pouring last weekend, I let my kids play whatever games they wanted at home all day long."
+    ],
+    "point": "「させてあげた」は let + 人 + 動詞の原形（to は不要）",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 8,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e012ade65302bc133b1deeca71c22bcc1856bc6dc6856df759194f7ab047f7de",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4d7a2r6d",
     "ja": "天気予報では週末は雨だって言ってたのに、結局ずっと晴れてたね。",
     "en": "The forecast said it would rain this weekend, but it stayed sunny the whole time.",
@@ -44,6 +66,28 @@
     }
   },
   {
+    "id": "c_5p5q9g4f",
+    "ja": "昨日君が電話くれたとき、私は犬と遊んでいたんだ。",
+    "en": "I was playing with my dog when you called yesterday.",
+    "alternatives": [
+      "I was playing with the dog when you called yesterday.",
+      "When you called yesterday, I was playing with my dog."
+    ],
+    "point": "「〜していた」は過去進行形 was + -ing",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 3,
+    "grammar": ["progressive-aspect", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a373425a612176428fa73a118a78f19fe3e24f2d6b40660082bc7ca096574722",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5y6e2h8a",
     "ja": "忙しかったけど、昔の友達に久しぶりに会えて、いい週末だったよ。",
     "en": "Although I was busy, I had a great weekend catching up with old friends.",
@@ -61,6 +105,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:9f7f07d4b1fdb211b7533bcfea04f25fc39507577c97b675edee917ddb71f04d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6m4v4f5f",
+    "ja": "すごく日焼けしてるね。先週の連休は、どこか暖かいところに行ってたに違いないね。",
+    "en": "You're really tanned. You must have gone somewhere warm over last week's long weekend.",
+    "alternatives": [
+      "You've got a great tan. You must have been somewhere warm over the long weekend last week.",
+      "You're so tanned. You must have gone somewhere warm for last week's long weekend."
+    ],
+    "point": "過去の推量「〜したに違いない」は must have + 過去分詞",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3382fef53ab1e775dc81b13cf846cc0006f543d37825fe5cc2ec9ae9e2be22bd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9b8b9b7w",
+    "ja": "この前話した、隣に越してきたご夫婦が、先週末うちをバーベキューに誘ってくれたんだ。",
+    "en": "The couple I told you about, the ones who moved in next door, invited us over for a barbecue last weekend.",
+    "alternatives": [
+      "You know the couple who moved in next door that I mentioned? They invited us to a barbecue last weekend.",
+      "That couple who moved in next door, the ones I told you about, invited us to a barbecue last weekend."
+    ],
+    "point": "長い主語を関係節でまとめてから動詞 invited へ",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 8,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7ff8b7fddb0de151f383f89318cb66f1f5e7f4dd72246b7336ff2393d19ddd4",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

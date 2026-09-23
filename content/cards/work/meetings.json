@@ -88,6 +88,72 @@
     }
   },
   {
+    "id": "c_6a3u2x9y",
+    "ja": "次の議題に移る前に、予算の数字をもう一度確認できないかと思っていたのですが。",
+    "en": "I was wondering if we could go over the budget figures once more before we move on.",
+    "alternatives": [
+      "I was wondering whether we could go through the budget numbers again before moving on.",
+      "I was hoping we could go over the budget figures one more time before we move on."
+    ],
+    "point": "過去進行形 was wondering で柔らかい提案に",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 8,
+    "grammar": ["hedging-softening", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f2bd5cdc854c27de7c2e230ce11353fae5fab4d1c89a3f2cc54503e4fa3c71ce",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7r3u9p6u",
+    "ja": "すべてのフィードバックを検討した結果、チームはリリースを来四半期に延期することに決めました。",
+    "en": "Having reviewed all the feedback, the team decided to postpone the launch until next quarter.",
+    "alternatives": [
+      "After reviewing all the feedback, the team decided to push the launch back to next quarter.",
+      "Having gone through all the feedback, the team decided to delay the launch until next quarter."
+    ],
+    "point": "先に終えた動作は Having + 過去分詞で表す",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:042a332af2bee86482e818adea8627c123a7f9e6a08fa71389149d67ffd6454d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8v7d2x4d",
+    "ja": "会議が終わるまでに結論が出なかったら、来週またこの話を続けましょう。",
+    "en": "If we don't reach a decision by the time the meeting ends, let's pick this up again next week.",
+    "alternatives": [
+      "If we haven't reached a decision by the end of the meeting, let's continue this next week.",
+      "If we can't come to a conclusion before the meeting ends, let's pick this up again next week."
+    ],
+    "point": "「終わるまでに」も未来だが節の中は現在形 ends",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 8,
+    "grammar": ["time-and-if-clauses", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dcd760f4ab1468003f6f20854852e357e2f92d2c1e8e3853067824573a49672b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_8z7h9z2n",
     "ja": "もし予算がもっとあれば、私たちはこの案に賛成するんですが。",
     "en": "If we had a bigger budget, we would support this proposal.",

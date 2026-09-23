@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2c6x9k9g",
+    "ja": "気になっているのは、クライアントがまだ私たちの提案に返事をくれていないことです。",
+    "en": "What worries me is that the client hasn't replied to our proposal yet.",
+    "alternatives": [
+      "What concerns me is that the client still hasn't responded to our proposal.",
+      "What I'm worried about is that the client hasn't gotten back to us on our proposal yet."
+    ],
+    "point": "「気になっているのは」は What worries me is that で始める",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["noun-clauses", "present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:61ba92cb9428d38f5c8b8f4e9e93837b8ff2bcf8b9aa7217617bc8de0d858d6c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3e3x4h2h",
     "ja": "テストはまだ全部終わっていませんが、私たちは金曜のリリースには間に合う見込みです。",
     "en": "Although we haven't finished all the tests yet, we expect to make the Friday release.",

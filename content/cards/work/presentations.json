@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_7q4y5h6t",
+    "ja": "データを見直した結果、私たちのチームは当初の予測を下方修正することにしました。",
+    "en": "Having reviewed the data, our team decided to revise our original forecast downward.",
+    "alternatives": [
+      "After reviewing the data, our team decided to lower our original forecast.",
+      "Our team reviewed the data and decided to revise our initial forecast downward."
+    ],
+    "point": "先に終えたことは Having + 過去分詞で文頭に置ける",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:919759a69a07bd451c448068250e52150de77aac461047f31a4d0c5abdb0e88c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_7v3v7z2z",
     "ja": "山田さんがご指摘のとおり、この問題は去年からずっと議論されてきました。",
     "en": "As Ms. Yamada pointed out, this issue has been discussed since last year.",
@@ -38,6 +60,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:82df6859010f531814bc2635c0fa53902b3f3e9d77c232dc54888007156b47a6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8t8b9m7v",
+    "ja": "これからお見せするデータは、私たちが先月実施した顧客調査に基づいています。",
+    "en": "The data I'm about to show you is based on a customer survey that we conducted last month.",
+    "alternatives": [
+      "The data I'm going to show you is based on a customer survey we carried out last month.",
+      "The data I'll be showing you comes from a customer survey that we ran last month."
+    ],
+    "point": "「私たちが実施した調査」は survey (that) we conducted と後ろに置く",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d8792dba709f6ae1f7c4dc00636a96925bc7b6a3e6016de46fd6c68c3e82f6c3",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

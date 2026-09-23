@@ -1,0 +1,68 @@
+[
+  {
+    "id": "c_3n2q8y5p",
+    "ja": "あなたがもっと早く在庫の件を教えてくれていたら、私は取引先への返信を遅らせずに済んだのですが。",
+    "en": "If you had told me about the stock issue earlier, I wouldn't have had to delay my reply to the client.",
+    "alternatives": [
+      "Had you told me about the stock issue sooner, I wouldn't have had to hold off on replying to the client.",
+      "If you'd let me know about the stock issue earlier, I wouldn't have needed to delay my reply to the client."
+    ],
+    "point": "過去の反実仮想は if + had 過去分詞、主節は would have",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3d408fcc9d2e9b56fddbcbe31f3d8b4a9e7106bf88bb0cff98654a062f0a6ec9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4m3r3b7a",
+    "ja": "来週の打ち合わせの前に、この提案書にざっと目を通しておいてもらえますか？",
+    "en": "Could you look over this proposal before our meeting next week?",
+    "alternatives": [
+      "Would you mind going over this proposal before our meeting next week?",
+      "Could you skim through this proposal before next week's meeting?"
+    ],
+    "point": "「ざっと目を通す」は look over / go over で言える",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 5,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:02f7375ab9ea20ac3173b117fa754f42e6fb657246034862f5657440a45293d4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5t7x9n6c",
+    "ja": "取引先が先週送ってきた見積もりの条件を、彼女がもう確認したかどうか、私には分かりません。",
+    "en": "I'm not sure whether she's already checked the terms in the quote the client sent us last week.",
+    "alternatives": [
+      "I don't know if she's gone through the terms in the quote the client sent last week yet.",
+      "I'm not certain she's checked the terms included in the quote that the client sent us last week."
+    ],
+    "point": "whether 節の中に「先方が送った見積もり」を後ろから付ける",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 9,
+    "grammar": ["nested-clauses", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6a2888cafa47cc7ecb3d81cc433b2ebcfc590015f34fbbfffc0015b9569e952f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

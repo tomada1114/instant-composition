@@ -22,6 +22,50 @@
     }
   },
   {
+    "id": "c_2n3w6k3b",
+    "ja": "私、ホテルを出る前に地図アプリをダウンロードしておけばよかった。",
+    "en": "I wish I'd downloaded a map app before I left the hotel.",
+    "alternatives": [
+      "If only I had downloaded a map app before leaving the hotel.",
+      "I should have downloaded a map app before I left the hotel."
+    ],
+    "point": "過去への後悔は I wish の後を過去完了 had done にする",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 7,
+    "grammar": ["wishes-regrets", "past-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7cd50c2f9c4fbdfd83333c8b634c5d84e27b7640232240aa53381067ec8acfbc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2z8b5b4c",
+    "ja": "すみません、ここから一番近い駅への行き方を教えていただけますか？",
+    "en": "Excuse me, could you tell me how to get to the nearest station from here?",
+    "alternatives": [
+      "Excuse me, would you mind telling me how to get to the nearest station from here?",
+      "Excuse me, could you tell me the way to the nearest station?"
+    ],
+    "point": "「行き方」は how to get to で、get の後の to を落とさない",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 5,
+    "grammar": ["requests-permission", "infinitives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1533f07419f7619294e396c6ec6911b25deefbb4586fee0c45e3b59d8ec728fd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3n5f4z8q",
     "ja": "ここから旧市街まで、どう行くのが一番いいですか？",
     "en": "What's the best way to get to the old town from here?",

@@ -22,6 +22,50 @@
     }
   },
   {
+    "id": "c_2r7y2w5d",
+    "ja": "引っ越しの手伝いを頼んだら、兄は私にピザをおごらせてから、やっと引き受けてくれたんだ。",
+    "en": "When I asked my brother to help me move, he made me buy him pizza before he finally agreed to help.",
+    "alternatives": [
+      "When I asked my brother to help me move, he didn't agree until he'd made me buy him pizza.",
+      "My brother made me buy him pizza before he finally agreed to help me move."
+    ],
+    "point": "「〜させる」は make 人 + 動詞の原形（to は付けない）",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 8,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:489ef529518b6b228fe5ffeddfb62620d9a0a95df6d15dd4e1b666ad9981b3be",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3d2a4r8t",
+    "ja": "田中さんは、来週なら喜んであなたの原稿に目を通すけど、今週は締め切りで手一杯だと言っていました。",
+    "en": "Ms. Tanaka said she'd be happy to look over your draft next week, but that she was swamped with deadlines this week.",
+    "alternatives": [
+      "Ms. Tanaka said she would gladly go over your draft next week, but that she had too many deadlines this week.",
+      "Mr. Tanaka said he'd be happy to look over your draft next week, but that he was swamped with deadlines this week."
+    ],
+    "point": "伝える側の過去に合わせて will → would、is → was",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 8,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:49780412b80e2ba21cf9edea64f43c750ef095b4018b168a086566ec16e28c54",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3e4x8a9v",
     "ja": "彼女は今週もう3回も僕のシフトを代わってくれたから、今回は僕が引き受けるべきだね。",
     "en": "She's already covered my shift three times this week, so I should take this one.",
@@ -60,6 +104,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:9808e103f2d275cdd5b6c02e745a825dc4d0733e9e8b17dfa36b59e48379c88f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4m6m9a8k",
+    "ja": "ご近所さんに猫の世話を頼んだこと、ある？私は先週初めてお隣の奥さんに頼んだんだけど、快く引き受けてくれたよ。",
+    "en": "Have you ever asked a neighbor to look after your cat? I asked the woman next door for the first time last week, and she gladly agreed.",
+    "alternatives": [
+      "Have you ever asked a neighbor to take care of your cat? Last week I asked the lady next door for the first time, and she was happy to do it.",
+      "Have you ever had a neighbor look after your cat? I asked the woman next door for the first time last week, and she was happy to help."
+    ],
+    "point": "経験は現在完了、last week があれば過去形",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:72227d5e041370dfb6c14eb368722a53052cdd457853a2a4ed2c34f1064e19bf",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
@@ -148,6 +214,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:8f9a3f97b312b8e35299c5cfe6dc18279f0bdab3d2b1bc4cb46bf7af406cf442",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8n5g9a9r",
+    "ja": "先月彼女にカメラを貸したんだけど、まだ返してもらってないんだ。",
+    "en": "I lent her my camera last month, but she hasn't given it back yet.",
+    "alternatives": [
+      "I lent my camera to her last month, but she still hasn't returned it.",
+      "Last month I lent her my camera, and she hasn't returned it yet."
+    ],
+    "point": "last month は過去形、まだ返っていない今の状態は現在完了",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 5,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b328a969fe4ffb29413f28bb6a3a81c88aa65ff137ef1a49cdb9eb584d2433fc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8s5x3t9f",
+    "ja": "ごめん、土曜は兄の結婚式に行くことになってるんだけど、日曜なら犬の世話をしてあげられるよ。",
+    "en": "Sorry, I'm going to my brother's wedding on Saturday, but I could look after your dog on Sunday.",
+    "alternatives": [
+      "Sorry, I'm attending my brother's wedding on Saturday, but I can take care of your dog on Sunday.",
+      "Sorry, I've got my brother's wedding on Saturday, but I could watch your dog on Sunday."
+    ],
+    "point": "決まっている予定は進行形 I'm going to my brother's wedding",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["future-forms", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:55531edeae487bed6488c7222aa73ab3f00a885280138b0f77ac6048725075c1",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

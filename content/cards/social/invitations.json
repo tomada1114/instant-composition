@@ -20,5 +20,71 @@
         "at": "2026-09-22"
       }
     }
+  },
+  {
+    "id": "c_5v8f8e9v",
+    "ja": "たとえ少し遅れても、ぜひ今夜のパーティーには来てね。",
+    "en": "Even if you're a little late, please come to the party tonight.",
+    "alternatives": [
+      "Even if you're running a bit late, do come to the party tonight.",
+      "Please come to the party tonight, even if you're a little late."
+    ],
+    "point": "「たとえ〜でも」は even if、中身は現在形",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 5,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:729f3e7de193c9816aeafd9d95496748a5455a08fe94e4eec547686807f7bd41",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6a8f9p3r",
+    "ja": "ずっと君をキャンプに誘おうと思ってたんだけど、来月空いてる？",
+    "en": "I've been meaning to invite you to go camping. Are you free next month?",
+    "alternatives": [
+      "I've been wanting to ask you to go camping. Are you free next month?",
+      "I've been meaning to ask you to come camping. Are you free next month?"
+    ],
+    "point": "「ずっと〜しようと思ってた」は I've been meaning to",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:768fe1cca23053324c0edb96a3e073d63d43e0092e43b7b0de86cb9e293c4a2f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7h2p8q4x",
+    "ja": "佐藤さん一家が今週末バーベキューを計画してるんだけど、あなたも来る？",
+    "en": "The Satos are planning a barbecue this weekend. Do you want to come?",
+    "alternatives": [
+      "The Satos are having a barbecue this weekend. Want to come?",
+      "The Satos are planning a barbecue this weekend. Are you coming too?"
+    ],
+    "point": "計画中のことは進行形 are planning、気軽な誘いは Do you want to come?",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 4,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b0b6390bc13e139f864c634d1fd121cf331a04e0de7b186d561b90edf73c74a9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
   }
 ]
