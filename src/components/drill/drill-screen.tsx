@@ -24,9 +24,9 @@ export function DrillScreen({
   sound,
   dailySize,
 }: Readonly<{ first: boolean; sound: boolean; dailySize: number }>): ReactElement {
-  const [kind, setKind] = useState<RoundKind>(() =>
-    roundKindFrom(window.location.search),
-  );
+  // Null until "one more" or "to today" picks one; the first round follows the
+  // address, read in the effect because the server render has no `window`.
+  const [kind, setKind] = useState<RoundKind | null>(null);
   const [attempt, setAttempt] = useState(0);
   const [loaded, setLoaded] = useState<Loaded & { readonly attempt?: number }>({
     status: "loading",
@@ -34,7 +34,7 @@ export function DrillScreen({
 
   useEffect(() => {
     let current = true;
-    void requestRound(kind).then((result) => {
+    void requestRound(kind ?? roundKindFrom(window.location.search)).then((result) => {
       if (!current) return;
       setLoaded(
         result.ok
