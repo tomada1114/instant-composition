@@ -73,6 +73,13 @@ loaded on demand — not for a fact stated once. Extend an existing skill instea
 creating a near-duplicate when the new material is a variant of what that skill already
 covers.
 
+A platform area such as infrastructure code, logging, authentication or LLM calls gets a
+project skill once this repository has made its own decisions there. The skill holds
+those decisions and the reasons for them: stack names, stage settings, log fields, which
+token goes where. It holds nothing a vendor already documents. General platform
+knowledge stays with official documentation and the vendor's own skills, which the
+project skill names instead of restating.
+
 One home per rule: a rule stated in both AGENTS.md and a skill costs context twice and
 the two copies drift apart. The one exception is a prohibition an agent needs even while
 its own declared task is something else entirely (for example, never weaken a gate to

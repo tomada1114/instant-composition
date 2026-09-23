@@ -29,9 +29,12 @@ that share one picture of the learner:
   as a monthly allowance or as prepaid credits is still open
   ([ADR-0010](adr/0010-entitlements-and-billing.md)).
 
-The first public release is deliberately LLM-free. The owner wants to use the drill on
-real infrastructure, with real sign-in, long enough for the foundation to settle before
-language models add cost, latency and a new failure mode.
+Until the planned features exist, the owner is the only user, on a `dev` environment on
+AWS. The drill runs there first without language models, with real sign-in, long enough
+for the foundation to settle before models add cost, latency and a new failure mode. The
+public launch comes one to two years out, after the features and a phase of production
+guards ([roadmap](roadmap.md)). Running a second environment for years would double the
+operating work and the cost.
 
 ## Guiding principles
 
@@ -128,14 +131,20 @@ so the design can carry a long technical discussion without relying on memory.
 
 ## Owner constraints
 
-- **Sequence.** Infrastructure and authorization first; the application is used LLM-free
-  for a while; LLM features, AgentCore and automated card generation come later.
-- **Production level: "portfolio grade".** Separate AWS accounts per environment (still
-  under discussion, [ADR-0009](adr/0009-aws-topology-environments-and-operations.md)),
-  infrastructure as code with CI deployments, monitoring and alerts, point-in-time
-  recovery for the database, account deletion and data export. Cognito's paid threat
-  protection waits until abuse is actually observed; restore drills and SLOs are not yet
-  in scope.
+- **Sequence.**
+  - Infrastructure and authorization come first, and the owner uses the app on `dev`
+    without language models for a while.
+  - LLM features, their usage limits, vocabulary and more languages follow on `dev`.
+  - Production guards and the public launch come after those.
+  - Native apps, AgentCore and automated card generation come after the launch.
+  - Whatever is hard to add later is built early; whatever can be added later waits for
+    the production-guard phase.
+- **Production level: "portfolio grade".** Separate AWS accounts per environment,
+  created before the launch; until then the owner's current account is `dev`
+  ([ADR-0009](adr/0009-aws-topology-environments-and-operations.md)), infrastructure as
+  code with CI deployments, monitoring and alerts, point-in-time recovery for the
+  database, account deletion and data export. Cognito's paid threat protection waits
+  until abuse is actually observed; restore drills and SLOs are not yet in scope.
 - **Budget.** Fixed costs up to tens of thousands of JPY per year are acceptable, which
   is enough for a paid CDN tier or monitoring but not for always-on compute.
 - **Stack.** No attachment to the current framework. The criteria are fitness for the

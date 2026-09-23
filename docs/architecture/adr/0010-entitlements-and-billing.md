@@ -121,6 +121,19 @@ the ledger has a bug. It is not the per-learner guard: it watches the whole acco
 one learner. Unverified: budget data lags actual spend, which would also keep it from
 stopping a single learner in time.
 
+**Sequencing** (the owner's timing, set 2026-09-23):
+
+1. LLM features first run in `dev`, where self sign-up is off and the owner is the only
+   learner ([ADR-0009](0009-aws-topology-environments-and-operations.md)). The limit is
+   held on the provider side: the Budgets action on Bedrock and the account's spend
+   alerts. No per-learner limit exists yet.
+2. The ledger follows in `dev` while the LLM features are still being built, so that
+   enforcement runs long before anyone else can sign up. The owner's own balance may be
+   generous; what is under test is the mechanism. Stripe is wired in its test mode at
+   this step.
+3. The production-guard phase only switches on live payments and self sign-up. The
+   enforcement code is already running by then.
+
 ## Consequences
 
 ### Positive

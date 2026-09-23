@@ -1,8 +1,6 @@
 # ADR-0009: AWS topology, environments and operations
 
-- Status: Accepted (2026-09-23): the topology, managing infrastructure as code, and the
-  production level. Still Proposed, to be settled with the owner: separate `dev` and
-  `prod` AWS accounts, and CDK as the infrastructure-as-code tool (see Open questions).
+- Status: Accepted (2026-09-23), including the account layout, its timing, and CDK
 - Date: 2026-09-23
 - Deciders: the owner
 
@@ -30,6 +28,13 @@ The owner set the production level to "portfolio grade":
 
 Fixed costs up to tens of thousands of JPY per year are acceptable. Components billed by
 the hour whether used or not still need a reason to exist.
+
+The owner also set the timing. Until the planned features exist (LLM feedback,
+vocabulary, more languages), the owner is the only user, on a `dev` environment.
+Production comes one to two years out, after a phase that adds the production guards
+([roadmap](../roadmap.md)). What is hard to add later is built early; what can be added
+later waits for that phase. The owner's AWS account is new and on the Free plan, and
+anything that would end its credits early is deferred.
 
 ## Decision drivers
 
@@ -90,12 +95,50 @@ learner ──► CloudFront (flat-rate plan: WAF, DDoS protection, bot manageme
 
 **Accounts.**
 
-- AWS Organizations with separate `dev` and `prod` member accounts. People sign in
-  through IAM Identity Center.
+- The target is AWS Organizations with three accounts:
+  - a management account that holds only billing, IAM Identity Center and Budgets;
+  - a `dev` member;
+  - a `prod` member.
+
+  No workload runs in the management account, because service control policies do not
+  apply to it.
+
+- Until the production-guard phase, the owner's existing standalone account **is the
+  `dev` account**. Creating or joining an organization ends a Free-plan account's
+  credits at once and moves it to the paid plan, so the organization waits.
+- When the organization is created:
+  - a new account becomes the management account;
+  - the current account is invited in as `dev`, so dev's resources stay where they are;
+  - `prod` is created inside the organization.
+- Human access:
+  - Until the organization exists, a person signs in to dev as an IAM user with MFA and
+    gets short-lived CLI credentials through `aws login` (AWS CLI 2.32.0 or later). IAM
+    Identity Center replaces that user once the organization exists.
+  - The root user has MFA and no access keys.
+  - No long-lived access key is issued to a person or an agent.
+- Coding agents (Claude Code with the AWS MCP server) work with `dev` credentials only.
+  Nothing reaches `prod` except the deploy workflow, behind its manual approval.
+- Development never reads `prod`.
+  - When the owner wants their own history in `dev`, it arrives through the learner data
+    export, limited to their own partition.
+  - The owner's `dev` data is not migrated to `prod`.
+  - The reviewed cards need no migration: every deploy carries the same catalog snapshot
+    ([ADR-0004](0004-multi-language-content-model.md)).
 - The dev account also hosts the Cognito user pool that local development signs in
   against ([ADR-0005](0005-identity-and-authorization.md)).
 
 **Infrastructure as code: AWS CDK in TypeScript, in `infra/`.**
+
+- The server is TypeScript, so the infrastructure code can share its types and gates.
+- The AWS tooling this project works with ships a dedicated CDK skill.
+- AgentCore's deploy path (`agentcore deploy`) runs on CDK
+  ([ADR-0012](0012-agents-and-agentcore.md)).
+- Terraform has no such skill here and would need its own state store.
+- SAM leaves CloudFront, WAF, Cognito and the stack split to raw CloudFormation.
+- AWS Blocks (infrastructure from code) would put `@aws-blocks` imports into the
+  application and replace the OpenAPI contract with typed imports, against
+  [ADR-0002](0002-architecture-style-and-repository-layout.md) and
+  [ADR-0007](0007-http-api-contract-and-offline-sync.md).
 
 ```text
 foundation  stateful, rarely changed, retained on delete:
@@ -113,10 +156,29 @@ CloudFormation refuses to modify that value or delete the exporting stack (check
 `Fn::GetStackOutput` creates a weak reference without an export and is an alternative to
 evaluate when the CDK app is written.
 
+**Stages.** One CDK app builds either stage from the same code. `prod` is then "the same
+thing, deployed with the prod stage", not a second design. The stage decides only these
+settings:
+
+| Setting                                           | `dev`                                                                 | `prod`                                                          |
+| ------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------- |
+| DynamoDB deletion protection, retain on delete    | On — the owner's own learning history accumulates here for years      | On                                                              |
+| DynamoDB point-in-time recovery                   | On, with a 7-day recovery period                                      | On; the period is set in the production-guard phase (1–35 days) |
+| Cognito self sign-up                              | Off: only an administrator creates users (`AllowAdminCreateUserOnly`) | On                                                              |
+| CloudFront flat-rate plan                         | Free                                                                  | Free, then Pro when traffic warrants                            |
+| WAF rate-based rules, SES for authentication mail | None; Cognito's own sender is enough for admin-created users          | Yes                                                             |
+| Deploy                                            | On every merge to `main`                                              | Behind a manual approval                                        |
+
+Point-in-time recovery is priced by table size whatever the recovery period, so the
+7-day period in `dev` is a preference, not a saving. In `prod` the period also bounds
+how long a deleted learner's data stays restorable, which the privacy policy has to
+state.
+
 **Deploys.**
 
 - GitHub Actions assumes a deploy role through OIDC, so no long-lived AWS keys exist.
-- `dev` deploys on merge. `prod` waits behind a manual approval.
+- `dev` deploys on every merge from the moment the first stack exists, because the owner
+  wants the fast loop from the start. `prod` waits behind a manual approval.
 - Adding the workflow is a gate change. It goes through the `changing-gates` skill and
   the owner's approval, and is never added as a side effect of another change.
 
@@ -140,37 +202,45 @@ evaluate when the CDK app is written.
 **Observability baseline.**
 
 - Structured JSON logs carry `requestId`, the command or query name, the outcome code
-  and the duration.
+  and the duration. They are a code convention from the first handler on, not a
+  monitoring feature.
 - Alarms cover the API's 5xx rate, Lambda errors and throttles, and DynamoDB throttles.
 - One dashboard shows traffic, errors and latency. Tracing is a candidate, not a
   baseline.
+- The alarms and the dashboard exist from the first hosted `dev` deploy. They are sized
+  to fit CloudWatch's free tier, so they cost nothing there. The logs themselves are
+  billed by volume beyond that tier.
 
-**Email.** Sign-up and recovery email go through Amazon SES rather than Cognito's
-built-in sender. Unverified: the exact limits of Cognito's built-in email, which is the
-reason for this choice.
+**Email.** In `prod`, sign-up and recovery email go through Amazon SES rather than
+Cognito's built-in sender. Unverified: the exact limits of Cognito's built-in email,
+which is the reason for this choice. `dev` creates its users by hand and keeps the
+built-in sender.
 
 **Data protection.**
 
-- DynamoDB point-in-time recovery and deletion protection are on in `prod`.
+- DynamoDB point-in-time recovery and deletion protection are on in both stages (see
+  Stages).
 - Account deletion and data export are features, not scripts. They work per learner
-  partition (ADR-0006).
+  partition (ADR-0006) and ship in the production-guard phase.
 
 ### Fixed and baseline costs
 
 Prices are as of 2026-09-23. A region appears only where the source states one.
 
-| Component                     | Cost model                                                                               |
-| ----------------------------- | ---------------------------------------------------------------------------------------- |
-| CloudFront flat-rate Free     | $0/month; 1M requests and 100 GB included; WAF, DDoS protection, bot management included |
-| CloudFront flat-rate Pro      | $15/month; 10M requests included; no overage charges                                     |
-| Cognito Lite / Essentials     | 10,000 MAU/month free; Essentials $0.015 per MAU beyond                                  |
-| AWS Budgets                   | Free without actions; first two budgets with actions free, then $0.10/day each           |
-| Parameter Store (standard)    | No additional charge                                                                     |
-| Secrets Manager               | $0.40 per secret-month, $0.05 per 10,000 API calls                                       |
-| API Gateway, Lambda, DynamoDB | Per request / duration / storage. Unverified: Tokyo unit prices                          |
-| Avoided: NAT gateway          | Hourly + per GB (example: us-east-2 $0.045/hour, $0.045/GB)                              |
-| Avoided: ALB                  | Hourly + LCU (example: us-east-1 $0.0225/hour, $0.008/LCU-hour)                          |
-| Avoided: interface endpoints  | Per endpoint per AZ-hour (example: $0.01/AZ-hour) + $0.01/GB                             |
+| Component                      | Cost model                                                                               |
+| ------------------------------ | ---------------------------------------------------------------------------------------- |
+| CloudFront flat-rate Free      | $0/month; 1M requests and 100 GB included; WAF, DDoS protection, bot management included |
+| CloudFront flat-rate Pro       | $15/month; 10M requests included; no overage charges                                     |
+| Cognito Lite / Essentials      | 10,000 MAU/month free; Essentials $0.015 per MAU beyond                                  |
+| Organizations, Identity Center | No additional charge; the free tier is shared once across an organization                |
+| CloudWatch free tier           | 10 alarm metrics, 3 dashboards, 5 GB of log data per month                               |
+| AWS Budgets                    | Free without actions; first two budgets with actions free, then $0.10/day each           |
+| Parameter Store (standard)     | No additional charge                                                                     |
+| Secrets Manager                | $0.40 per secret-month, $0.05 per 10,000 API calls                                       |
+| API Gateway, Lambda, DynamoDB  | Per request / duration / storage. Unverified: Tokyo unit prices                          |
+| Avoided: NAT gateway           | Hourly + per GB (example: us-east-2 $0.045/hour, $0.045/GB)                              |
+| Avoided: ALB                   | Hourly + LCU (example: us-east-1 $0.0225/hour, $0.008/LCU-hour)                          |
+| Avoided: interface endpoints   | Per endpoint per AZ-hour (example: $0.01/AZ-hour) + $0.01/GB                             |
 
 ## Consequences
 
@@ -186,17 +256,25 @@ Prices are as of 2026-09-23. A region appears only where the source states one.
 ### Negative
 
 - API Gateway adds a per-request charge that option 3 would avoid.
-- Two accounts, Identity Center and an OIDC deploy role are more setup than a single
-  account. This is accepted at the chosen production level.
+- Three accounts, Identity Center and an OIDC deploy role are more setup than a single
+  account. This is accepted at the chosen production level, and all of it except the
+  deploy role waits for the production-guard phase.
+- Until then, the only boundary between `dev` and everything else is the one account.
+  That is acceptable while `dev` holds no one's data but the owner's.
 - Lambda cold starts add latency to the first request after idle. It is measured, not
   assumed. The drill's timer runs on the client, so it is not affected.
 
 ### Follow-ups
 
-- Bootstrap Organizations, the accounts, Identity Center and Budgets before any other
-  stack.
+- Before the first stack, secure the current account:
+  - MFA on the root user, and no root access keys;
+  - an IAM administrator with MFA and `aws login`;
+  - Budgets alerts.
+
+  Organizations, Identity Center and `prod` come in the production-guard phase.
+
 - Write the `foundation` stack first. Local development needs its Cognito user pool
-  before any production deploy.
+  before anything is hosted.
 - Measure the Tokyo unit prices in the Pricing Calculator. Replace every Unverified row
   above.
 
@@ -209,19 +287,11 @@ Prices are as of 2026-09-23. A region appears only where the source states one.
 - Unverified: Cognito's built-in email limits.
 - Whether option 3 (Function URL plus an origin secret) is worth its rotation burden
   once real traffic prices API Gateway.
-- **Separate `dev` and `prod` accounts, or one account.** The owner is weighing whether
-  a personal-scale service needs hard account isolation, and whether development may use
-  production data and configuration. One account with a stack per stage is less setup
-  and lets dev read real data; separate accounts bound the blast radius of an IAM
-  mistake or a destructive deploy, keep learners' personal data out of development, and
-  give each stage its own budget. The foundation stack, the Cognito user pool that local
-  development signs in against, and the deploy workflow all depend on the answer, so it
-  is settled before Phase 2 starts.
-- **The infrastructure-as-code tool.** CDK in TypeScript is proposed because the rest of
-  the server is TypeScript, the AWS tooling available to this project supports it, and
-  AgentCore's own deploy path (`agentcore deploy`) uses it
-  ([ADR-0012](0012-agents-and-agentcore.md)). The owner wants the tool that is easiest
-  to operate with that tooling; confirm before the first stack is written.
+- Unverified: whether a Free-plan account can use every service `dev` needs (Cognito, a
+  CloudFront flat-rate plan, API Gateway, Lambda, DynamoDB). Check when the first stack
+  is written.
+- The `prod` point-in-time recovery period, weighed against how long a deleted learner's
+  data may stay restorable.
 - Whether `/api/*` or a separate API hostname is better for native apps. A separate
   hostname decouples app releases from the web distribution but reintroduces CORS for
   the SPA.
@@ -255,6 +325,29 @@ Prices are as of 2026-09-23. A region appears only where the source states one.
 - Cross-stack exports cannot change while imported; `Fn::GetStackOutput`, checked
   2026-09-23:
   https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/full.md
+- Free-plan credits end when an account creates or joins an organization, checked
+  2026-09-23: https://aws.amazon.com/free/free-tier-faqs/ and
+  https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-plans.html
+- One free tier per organization, and no fee for consolidated billing, checked
+  2026-09-23:
+  https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilling-effective.html
+  and
+  https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/consolidated-billing.html
+- Separate production from development accounts; no workloads in the management account,
+  checked 2026-09-23:
+  https://docs.aws.amazon.com/organizations/latest/userguide/orgs_best-practices.html,
+  https://docs.aws.amazon.com/organizations/latest/userguide/orgs_best-practices_mgmt-acct.html
+  and
+  https://docs.aws.amazon.com/wellarchitected/2025-02-25/framework/sec_securely_operate_multi_accounts.html
+- IAM Identity Center at no additional charge, checked 2026-09-23:
+  https://aws.amazon.com/iam/identity-center/faqs/
+- `aws login` short-term credentials, checked 2026-09-23:
+  https://docs.aws.amazon.com/signin/latest/userguide/command-line-sign-in.html
+- Point-in-time recovery periods of 1–35 days, priced by table size, checked 2026-09-23:
+  https://aws.amazon.com/blogs/database/announcing-configurable-point-in-time-recovery-periods-for-amazon-dynamodb/
+- Cognito `AllowAdminCreateUserOnly`, checked 2026-09-23:
+  https://docs.aws.amazon.com/sdk-for-kotlin/api/latest/cognitoidentityprovider/aws.sdk.kotlin.services.cognitoidentityprovider.model/-admin-create-user-config-type/allow-admin-create-user-only.html
+- CloudWatch free tier, checked 2026-09-23: https://aws.amazon.com/cloudwatch/pricing/
 
 ## Related
 
