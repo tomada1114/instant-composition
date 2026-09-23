@@ -66,6 +66,28 @@
     }
   },
   {
+    "id": "c_2t9g8y9p",
+    "ja": "もし私がこの街に1日しかいられないとしたら、どの観光スポットをおすすめしますか？",
+    "en": "If I only had one day in this city, which sights would you recommend?",
+    "alternatives": [
+      "If I had just one day in this city, which places would you recommend?",
+      "Which sights would you recommend if I only had one day in this city?"
+    ],
+    "point": "仮の話なので if 節は過去形 had、主節は would",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 5,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7a29c42117700000f01f9b246926b372df0c493f3d5bfcd173757711eccdff4b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3b2j4g4u",
     "ja": "あの人たち、もう最終ツアーに出発したに違いないよ。受付に誰もいないもん。",
     "en": "They must have already left for the last tour. There's nobody at the desk.",
@@ -374,6 +396,28 @@
     }
   },
   {
+    "id": "c_7t6g8k4v",
+    "ja": "今朝私たちが買ったチケットに、宮殿の裏にある庭園のツアーも含まれているかどうか、わかりますか？",
+    "en": "Do you know whether the ticket we bought this morning also covers the tour of the gardens behind the palace?",
+    "alternatives": [
+      "Do you know if the ticket we bought this morning includes the tour of the gardens behind the palace too?",
+      "Would you know whether the ticket we got this morning also covers the garden tour behind the palace?"
+    ],
+    "point": "「かどうか」の後は疑問文にせず主語＋動詞の語順",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 8,
+    "grammar": ["indirect-questions", "relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:48064205f9b4d73f378d5a1810e7c5de0cee9883756dc52d4ea2b85147c48b1a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_7x4k3m7n",
     "ja": "有名なお寺を夕暮れ時に見るために、私たちははるばるここまで来たんです。",
     "en": "We came all the way here to see the famous temple at sunset.",
@@ -396,6 +440,28 @@
     }
   },
   {
+    "id": "c_8c4d9j3t",
+    "ja": "受付の人に、この美術館が今日何時に閉まるのか聞いてきてもらえる？",
+    "en": "Could you go ask the person at the front desk what time the museum closes today?",
+    "alternatives": [
+      "Can you go ask the person at the reception desk what time the museum closes today?",
+      "Could you go find out from the front desk what time the museum closes today?"
+    ],
+    "point": "what time の後は語順が the museum closes（疑問文の形にしない）",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 6,
+    "grammar": ["indirect-questions", "requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f39d464a6e6b5ef8d8106f31ea3d07bdfbad0aa1dd8e00fd2827c7eca65d302a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_8e9k2k8g",
     "ja": "チケットを持っていなくても、庭園には入れますよ。",
     "en": "Even if you don't have a ticket, you can still enter the garden.",
@@ -414,6 +480,28 @@
         "hash": "sha256:ad054ed4663596caddeb1e1db2b2d637a586867de320677050dbcb07aa4cd8bb",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8g3u8r6e",
+    "ja": "その日は一般公開されていなかったのに、ガイドさんは私たちを鐘楼に上らせてくれたんだ。",
+    "en": "The guide let us go up the bell tower even though it was closed to the public that day.",
+    "alternatives": [
+      "Our guide let us climb the bell tower even though it wasn't open to the public that day.",
+      "The guide let us go up the bell tower, even though it wasn't open to the public that day."
+    ],
+    "point": "「〜させてくれた」は let + 人 + 動詞の原形",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 7,
+    "grammar": ["causatives", "concession-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fcb31bde3680607175368601ad4be689ad322dc6221a673b8bb5a97245c9c094",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

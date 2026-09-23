@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_2q9y8r2p",
+    "ja": "ギターはもう何年も弾いてないって言ってたけど、学生のころはバンドを組んでたの？",
+    "en": "You said you haven't played the guitar in years, but did you play in a band back when you were a student?",
+    "alternatives": [
+      "You mentioned you haven't touched a guitar in years, but were you in a band when you were a student?",
+      "You said you haven't played guitar for years, but did you play in a band in your student days?"
+    ],
+    "point": "「何年も弾いてない」は現在完了、「学生のころ」は過去形",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 8,
+    "grammar": ["tense-contrast", "reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:927c6d6c943287d9b302d8e91ccbf33112a560fc97d4bb53f67e6e4361648882",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2u9y6x9y",
     "ja": "先週の日曜日、私は一日中家で映画を観ました。",
     "en": "I watched movies at home all day last Sunday.",
@@ -368,6 +390,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:28b01d944b0e6fc1722a4c95f5637a7db64c2bba8dced33534f09c95d1f9f882",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7m9g5x6c",
+    "ja": "あの日もう少し早く家を出ていたら、私たち、花火大会でいい場所を取れていたのにね。",
+    "en": "If we'd left home a little earlier that day, we could have gotten a good spot at the fireworks festival.",
+    "alternatives": [
+      "If we had left the house a bit earlier that day, we would have been able to get a good spot at the fireworks festival.",
+      "We could have gotten a good spot at the fireworks festival if we'd left home a little earlier that day."
+    ],
+    "point": "過去の仮定は had+過去分詞、結果は could/would have+過去分詞",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7cc4787854544cde847f812d0db2d8d092178e3ddd18b9eab19b5cef71ff55d6",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

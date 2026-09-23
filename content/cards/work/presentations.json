@@ -242,6 +242,28 @@
     }
   },
   {
+    "id": "c_5x3f4v3b",
+    "ja": "質疑応答で先方の女性担当者が、もう外した機能について聞いてきたので、きっと彼女は提案書を読み違えたんでしょう。",
+    "en": "The client's rep must have misread our proposal, since during the Q&A she asked about a feature we'd already dropped.",
+    "alternatives": [
+      "The woman from the client must have misunderstood our proposal, because during the Q&A she asked about a feature we'd already removed.",
+      "During the Q&A, the client's rep asked about a feature we had already dropped, so she must have misread our proposal."
+    ],
+    "point": "過去への強い推量は must have + 過去分詞",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2b71814f364666a7812b3e065328eefa49395e406590c5b30a70f22f59c55dd0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_6k8r7r8p",
     "ja": "発表のあとで、うちの部長が質問に答えます。",
     "en": "Our manager will answer questions after the presentation.",
@@ -280,6 +302,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:6c9cf86ff353e0401731e102c371690b7ce542ae687c8ae26cb9f35b76eb16c5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6z3v6e8e",
+    "ja": "今回の発表は、技術的な細かい話からではなく、顧客アンケートの結果から始めればよかったと思っています。",
+    "en": "I wish I'd opened the presentation with the customer survey results instead of diving into the technical details.",
+    "alternatives": [
+      "I wish I had started the presentation with the customer survey results rather than the technical details.",
+      "I should have opened the presentation with the customer survey results instead of getting into the technical details."
+    ],
+    "point": "過去への後悔は wish の後を had + 過去分詞にする",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d325078a5bf92673463adc9530349179c1876fa7693d479bbce6eefe4908d583",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }
@@ -368,6 +412,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:0ad89ead60dd6f97e5b0e48d4feae5e950b23d960fcb0e07ce245d35a97cc6d6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8m5r3b7x",
+    "ja": "もし君がスライドの数字の間違いを指摘してくれていなかったら、僕は役員会で間違った数字を発表していたよ。",
+    "en": "If you hadn't pointed out the error in the slides, I'd have presented the wrong numbers to the board.",
+    "alternatives": [
+      "If you hadn't caught the mistake in the slides, I would have shown the board the wrong figures.",
+      "I would have presented the wrong numbers to the board if you hadn't pointed out the error on the slides."
+    ],
+    "point": "過去の仮定は if 節が had 過去分詞、主節は would have",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:501cd21c902cceece57bdef3fe096f696ea313e09e6c4530af6a37702f0a31f8",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

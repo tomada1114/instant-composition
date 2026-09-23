@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_2m2x5d3f",
+    "ja": "マージする前に、もう一度テストを実行してください。",
+    "en": "Please run the tests again before you merge.",
+    "alternatives": [
+      "Please rerun the tests before merging.",
+      "Run the tests one more time before you merge, please."
+    ],
+    "point": "動詞の原形で始める命令文に please を添える",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 3,
+    "grammar": ["imperatives", "time-and-if-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9c0f48069563c615f294172adfe6f8aaebaee0c3279c19a435022e78aec3cba7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2y9d7a5x",
     "ja": "この関数、もっと小さいヘルパー関数に分けることを検討してもらえますか？",
     "en": "Could you consider splitting this function into smaller helper functions?",
@@ -242,6 +264,28 @@
     }
   },
   {
+    "id": "c_5u5e9p5z",
+    "ja": "このテスト、どうして削除したんですか？",
+    "en": "Why did you delete this test?",
+    "alternatives": [
+      "Why did you remove this test?",
+      "What was the reason you deleted this test?"
+    ],
+    "point": "過去のことを聞くので did ＋動詞の原形",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 3,
+    "grammar": ["wh-questions", "past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e05829c9c82c6358d0a0a9bbc279d96ba54bdf7b6ca864fd69d9e4c81f72de4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_6c8s8m7r",
     "ja": "この PR をマージしたら、Slack でチームに知らせます。",
     "en": "I'll let the team know on Slack when I merge this PR.",
@@ -280,6 +324,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:6fec0090a0f87a262ac8c3cad18ac01a0cc77e3cf7947ce148d0279f12607c55",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6w3x2v4t",
+    "ja": "このマイグレーション、マージされる前にデータベースチームにレビューしてもらうべきだったんじゃないですか？",
+    "en": "Shouldn't this migration have been reviewed by the database team before it was merged?",
+    "alternatives": [
+      "Shouldn't the database team have reviewed this migration before it was merged?",
+      "Shouldn't this migration have been checked by the database team before it got merged?"
+    ],
+    "point": "「すべきだったのでは」は Shouldn't で始め have + 過去分詞",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 9,
+    "grammar": ["modal-perfect", "passive-voice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:286ff78c482d784240c11338972f56ec3d16c4038f2a63fe1c273d618da66b58",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7c3k4t4d",
+    "ja": "このオフバイワンのエラーに気づいてもらえなかったら、僕たちはページ送りが壊れたまま全ユーザーにリリースしていたところでした。",
+    "en": "If you hadn't caught this off-by-one error, we would have shipped broken pagination to all our users.",
+    "alternatives": [
+      "If you hadn't spotted this off-by-one error, we'd have released broken pagination to all our users.",
+      "We would have shipped broken pagination to all our users if you hadn't caught this off-by-one error."
+    ],
+    "point": "過去の事実に反する仮定は had + 過去分詞、帰結は would have",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:751ca498dc2a049c73f7a67307ffe9ce19416699a07369f169cab6ae493f8fba",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }
@@ -326,6 +414,50 @@
         "hash": "sha256:797b3349366081873c523ed432aaa9ed5b9ecd8d12d1103fda6dd65e1d9c346d",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9a8p6v3g",
+    "ja": "この変数名は、もっとわかりやすくするために変えました。",
+    "en": "I changed this variable name to make it clearer.",
+    "alternatives": [
+      "I renamed this variable to make it clearer.",
+      "I changed this variable's name to make it easier to understand."
+    ],
+    "point": "「〜するために」は to ＋動詞の原形",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 3,
+    "grammar": ["infinitives", "past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dcf05b623e30180ef1957166bd077f22d024f5c5d4099dbe37c31993409444e9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9n5v9b2b",
+    "ja": "CI でスナップショットテストが3つ落ちているので、きっとスナップショットの更新を忘れたんですね。",
+    "en": "Three snapshot tests are failing on CI, so you must have forgotten to update the snapshots.",
+    "alternatives": [
+      "You must have forgotten to update the snapshots, since three snapshot tests are failing on CI.",
+      "Three of the snapshot tests are failing on CI, so you must have forgotten to update them."
+    ],
+    "point": "過去への確信ある推量は must have + 過去分詞",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bcdeb6496283d36c67ba56c11729bd6ab473ba80c00707b4ca1fd71fdc62f6b3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

@@ -132,6 +132,28 @@
     }
   },
   {
+    "id": "c_4f6f8k3t",
+    "ja": "うちの弟は、姉の結婚式の日に休みを取っておけばよかったって後悔してるよ。出張と重なっちゃったんだ。",
+    "en": "My brother wishes he'd taken the day off for our sister's wedding. It ended up clashing with his business trip.",
+    "alternatives": [
+      "My brother regrets not taking the day off for our sister's wedding. It ended up overlapping with his business trip.",
+      "My brother wishes he'd gotten the day off for our sister's wedding, because it clashed with his business trip."
+    ],
+    "point": "主語が三人称なら wishes、後悔の中身は過去完了",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:eed22b0ab7d7a429be527f411ea805cebe965a7316d37bfeae223f7f7319a140",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4g8r9d3x",
     "ja": "土曜のバーベキュー、私たち何時に集合することになったんだっけ？",
     "en": "What time did we decide to meet for Saturday's barbecue?",

@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2b3d2j5v",
+    "ja": "うちの課長は、電車の遅れは私たちにはどうしようもなかったのに、お客様を待たせたことを心から謝っていた。",
+    "en": "My manager apologized sincerely to the client for keeping them waiting, even though the train delay was out of our control.",
+    "alternatives": [
+      "Even though the train delay was beyond our control, my manager sincerely apologized to the client for keeping them waiting.",
+      "My manager sincerely apologized to the client for keeping them waiting, even though we couldn't do anything about the train delay."
+    ],
+    "point": "「〜のに」は even though、待たせる は keep 人 waiting",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4fc75f91d63c50e5664ed6727b419792a99bf432c2db594342d48638a6f9e95e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2s6g3e7c",
     "ja": "私のミスのせいで、チーム全員に週末出勤させることになってしまって、本当に申し訳ない。",
     "en": "I'm truly sorry that my mistake made the whole team come in on the weekend.",
@@ -18,6 +40,28 @@
         "hash": "sha256:bc8a445294de30d6794cb56a882bea49b51268142d8a19c2f7e8b69ebe5ad0af",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2v5r9a7p",
+    "ja": "君の助けがなかったら、今もまだこの報告書で行き詰まっていたところだよ。手伝ってくれて本当にありがとう。",
+    "en": "If it weren't for your help, I'd still be stuck on this report. Thanks so much for pitching in.",
+    "alternatives": [
+      "Without your help, I'd still be stuck on this report. Thank you so much for pitching in.",
+      "If you hadn't helped me, I'd still be stuck on this report, so thanks a lot for helping out."
+    ],
+    "point": "今も続く状況の仮定は I'd still be で表す",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["second-conditional", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:61d401d503bd7f98ad696a4b99877fb4da7bd426ecb7d06690091efcdaa41e3a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
@@ -260,6 +304,28 @@
         "hash": "sha256:08117d5408cce5ea062b056a7c91cb976287a6b0756e60e813edad21b22b1303",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8c9w2t5b",
+    "ja": "こんなに迷惑をかけてしまったので、今週末に埋め合わせをさせてもらえませんか？",
+    "en": "Could you let me make it up to you this weekend for all the trouble I've caused?",
+    "alternatives": [
+      "Would you let me make it up to you this weekend for all the trouble I caused?",
+      "Can I make it up to you this weekend for causing you so much trouble?"
+    ],
+    "point": "埋め合わせる は make it up to 人",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6452cec70464386e2b1599cfd75091c910fa019d7c306639db4eb0edcb04c8c3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

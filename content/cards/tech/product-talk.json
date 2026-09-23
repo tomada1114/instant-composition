@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2b2t2b5m",
+    "ja": "この機能は来週リリースしましょう。",
+    "en": "Let's release this feature next week.",
+    "alternatives": [
+      "Let's ship this feature next week.",
+      "Let's launch this feature next week."
+    ],
+    "point": "提案は Let's + 動詞の原形",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cabaf840c186a2c32238ff2289c35bc71284ac0b55b4d24ce85f4419769ab050",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2q8u3t3j",
     "ja": "決済のバグが直るまで、リリース日の発表は見合わせましょう。",
     "en": "Let's hold off on announcing the release date until the payment bug is fixed.",
@@ -331,6 +353,28 @@
     }
   },
   {
+    "id": "c_6s5e7b5m",
+    "ja": "お客さんから、新しい機能の要望が来ています。",
+    "en": "We have a feature request from a customer.",
+    "alternatives": [
+      "A customer sent us a feature request.",
+      "There's a feature request from a customer."
+    ],
+    "point": "request は数えられる名詞なので a を付ける",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 1,
+    "grammar": ["articles-and-countability", "be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:55407cde46e21473c9a67e5db9842e89ae8834167d5e4ba0bac86c16c424263f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_6z6d6v6s",
     "ja": "前回重大なバグが見つかったのは決済フローだったので、リリース前に QA チームにもう一度テストしてもらいましょう。",
     "en": "Before we release this, let's have the QA team test the checkout flow again, since that's where they caught a critical bug last time.",
@@ -459,6 +503,28 @@
         "hash": "sha256:cb6e44f4655fe2e9a1c8d7ca393afc6dccf3ea95e1e4f3e38a005fe16ec2d481",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8v7u7z5e",
+    "ja": "このバグ修正は、今いちばん優先度が高いです。",
+    "en": "This bug fix is our top priority now.",
+    "alternatives": [
+      "This bug fix is the top priority right now.",
+      "This bug fix is our highest priority now."
+    ],
+    "point": "priority の前に our や the を忘れない",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 1,
+    "grammar": ["be-and-present-simple", "articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6c405d9c08ad11afc028c1244c037794509b19fde3793eb2d2cd190637faee1f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2p6v8d9n",
+    "ja": "次の提案書は、出す前に先輩の誰かにざっと目を通してもらうといいかもしれませんね。",
+    "en": "For the next proposal, it might be a good idea to have one of the senior staff look it over before you submit it.",
+    "alternatives": [
+      "It might be a good idea to have one of the senior staff look over your next proposal before you submit it.",
+      "Before you submit your next proposal, you might want to have a senior colleague look it over."
+    ],
+    "point": "have + 人 + 動詞の原形で「人に〜してもらう」",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["causatives", "hedging-softening"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e2b6fdab8db7a8f1971a27df515deae298a3f606efbd09f416ccd9d497926198",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4c6j7n8q",
     "ja": "お客さんがうちのチームに、週報をもっと短くしてほしいと言ってきました。",
     "en": "The client asked our team to keep the weekly reports shorter.",
@@ -238,6 +260,28 @@
         "hash": "sha256:98b3b88644325aa19df973011d9f7c5e62fae62a8176b743f736100f096b6ab3",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8x9j2q3m",
+    "ja": "先週のレビューで田中さんに、私のコードは動くけど読みにくいと言われたので、今週は変数名を全部見直しました。",
+    "en": "In last week's review, Tanaka said my code worked but was hard to read, so I went through all the variable names this week.",
+    "alternatives": [
+      "Tanaka told me in last week's review that my code worked but was hard to read, so I went over all the variable names this week.",
+      "At last week's review, Tanaka said my code worked but was difficult to read, so this week I went back over all the variable names."
+    ],
+    "point": "said の後は時制の一致で worked / was と過去形に",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["reported-speech", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5f1488de80b986d12715ef394a694eec23a43449432a77f9f1a359d8ca8b0f8e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

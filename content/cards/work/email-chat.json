@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_2d9m4w6u",
+    "ja": "会議で決まったことを、今日中にチャットでチーム全員に共有してもらえますか？来られなかった人もいるので。",
+    "en": "Could you share what we decided in the meeting with the whole team on chat by end of day, since some people couldn't make it?",
+    "alternatives": [
+      "Could you post what we decided in the meeting in the team chat by the end of the day? Some people couldn't make it.",
+      "Would you mind sharing what was decided in the meeting with everyone on chat by end of day, since some people missed it?"
+    ],
+    "point": "「決まったこと」は what 節でまとめて share の目的語に",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 10,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ecd5d221923203c62073ad643be45f5f70c7d063b1f406dda86f82b2dd11d795",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2g7d8u7p",
     "ja": "昨日送ってもらったメールに、添付ファイルが付いていませんでした。",
     "en": "Your email yesterday didn't have the attachment.",
@@ -38,6 +60,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:771dbdd65d29c480bf711a762c27503fcedd4eefef6592a073aab0093c0a83fc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2n4p4h9s",
+    "ja": "先方が本当に知りたいのは、来月の納品日をまだ変更できるかどうかだと思います。",
+    "en": "What the client really wants to know, I think, is whether next month's delivery date can still be changed.",
+    "alternatives": [
+      "I think what the client really wants to know is whether next month's delivery date can still be changed.",
+      "I think the client really just wants to know whether they can still change next month's delivery date."
+    ],
+    "point": "「〜かどうか」は whether 節で、語順は平叙文のまま",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 8,
+    "grammar": ["cleft-emphasis", "noun-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a9cb285710fafe72c722f74828570be3cb6a2c43cd9c37098fef53c9f0fa77d1",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

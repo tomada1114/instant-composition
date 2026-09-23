@@ -66,6 +66,28 @@
     }
   },
   {
+    "id": "c_4b3h5u3v",
+    "ja": "雨がやんだら、私は歩いて駅まで行くよ。",
+    "en": "I'll walk to the station when the rain stops.",
+    "alternatives": [
+      "When the rain stops, I'll walk to the station.",
+      "I'll walk to the station once the rain stops."
+    ],
+    "point": "未来のことでも when 節は現在形 stops",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 3,
+    "grammar": ["time-and-if-clauses", "future-forms"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:23a625357091bc1397d1767e1325f75f0cf98b0fa68c015c7d5b8c9a33f243a2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4d7a2r6d",
     "ja": "天気予報では週末は雨だって言ってたのに、結局ずっと晴れてたね。",
     "en": "The forecast said it would rain this weekend, but it stayed sunny the whole time.",
@@ -238,6 +260,28 @@
         "hash": "sha256:a373425a612176428fa73a118a78f19fe3e24f2d6b40660082bc7ca096574722",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5x2x3j3k",
+    "ja": "今年の夏は去年よりずっと暑いですね。",
+    "en": "This summer is much hotter than last year, isn't it?",
+    "alternatives": [
+      "It's much hotter this summer than last year, isn't it?",
+      "This summer is a lot hotter than last year, isn't it?"
+    ],
+    "point": "比較級を強めるのは very ではなく much や a lot",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 3,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:01ad5e3b54cb87685c97817ecac4e2ec18ebf42bad797cc2523ef5e47a120d9a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

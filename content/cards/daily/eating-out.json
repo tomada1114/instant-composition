@@ -287,6 +287,28 @@
     }
   },
   {
+    "id": "c_5f3g9b2k",
+    "ja": "すみません、私が知りたいのは、この料理をニンニク抜きで作ってもらえるかどうかなんです。",
+    "en": "Excuse me, what I'd like to know is whether you can make this dish without garlic.",
+    "alternatives": [
+      "Excuse me, what I'd like to know is if you could make this dish without garlic.",
+      "Excuse me, what I'm wondering is whether you can make this dish without garlic."
+    ],
+    "point": "「知りたいのは」は what 節を主語にして is で続ける",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 9,
+    "grammar": ["noun-clauses", "indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:55723de076247cce04f252b52b6e21d0de7120d9d9aabfba504850d92bacd6e8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5h9s7m5t",
     "ja": "この店、予約しておけば、私たち今ごろ並ばずに座れてたのにね。",
     "en": "If we'd booked a table here, we'd be sitting down now instead of standing in line.",
@@ -521,6 +543,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:2c2ca540396a05cef7777a741f5b007abf787c1fda2daaa6d4f80ab27f9b1576",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9s5j9x9k",
+    "ja": "うちの父は、駅の向かいにあるあの小さなカフェのサンドイッチの話を今でもしています。",
+    "en": "My dad still talks about the sandwiches at that little cafe across from the station.",
+    "alternatives": [
+      "My father still talks about the sandwiches at that small cafe across from the station.",
+      "My dad still talks about the sandwiches from that little cafe opposite the station."
+    ],
+    "point": "「駅の向かいにある」は cafe の後ろに前置詞句で置く",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ff281b94a8cfcaceeb315133b2fe59df819b6204d3770bc295406f0add6cb4f6",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

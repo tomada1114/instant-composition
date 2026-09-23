@@ -88,6 +88,28 @@
     }
   },
   {
+    "id": "c_2p6s4n3h",
+    "ja": "私がシャワーを浴びていたら、急にお湯が出なくなったんです。",
+    "en": "I was taking a shower when the hot water suddenly stopped.",
+    "alternatives": [
+      "The hot water suddenly stopped while I was taking a shower.",
+      "I was showering when the hot water suddenly stopped."
+    ],
+    "point": "途中だった動作は過去進行形、割り込んだ出来事は過去形",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 3,
+    "grammar": ["progressive-aspect", "past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:edca027ffbbd35aabd07a5e7f2860b6dddc21c01fb12d83f070337889d4d2522",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2r8j9n6f",
     "ja": "私たち、昨夜フロントに電話したんですが、誰も出なかったんです。",
     "en": "We called the front desk last night, but nobody answered.",
@@ -308,6 +330,28 @@
     }
   },
   {
+    "id": "c_4n2q9c9s",
+    "ja": "私たちがチェックインしたときに対応してくれたスタッフの方に、お礼を伝えてもらえますか？",
+    "en": "Could you pass on our thanks to the staff member who helped us when we checked in?",
+    "alternatives": [
+      "Could you thank the staff member who helped us when we checked in?",
+      "Could you please thank the person who helped us at check-in for us?"
+    ],
+    "point": "「対応してくれたスタッフ」は who helped us で後ろから説明",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:db02d4aafcbb9e189a6fabfe4f4357ebce22fd88904527df337beddf11e70225",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4r3s2x6w",
     "ja": "彼女はチェックアウトの時に、手もつけていないミニバーの料金が請求されていたことに気づいたんです。",
     "en": "When she checked out, she noticed that she'd been charged for minibar items she had never touched.",
@@ -324,6 +368,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:f641759fdf7d6469f1ebb2f4001501235eda177ea7e3f5f7e14cc27a13d5e4d7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5d4z3h5y",
+    "ja": "私たちがお願いしたのは、ツインではなくダブルの部屋なんです。",
+    "en": "What we asked for was a double room, not a twin.",
+    "alternatives": [
+      "We asked for a double room, not a twin.",
+      "What we requested was a double room, not a twin."
+    ],
+    "point": "「〜したのは」は What we asked for was と what 節を主語に",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9c9e150b26fb16dd4912c4112c3792c6b7eda1029d12b5b2d58febb7a330b9ff",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }
