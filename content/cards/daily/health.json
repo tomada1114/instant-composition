@@ -151,6 +151,28 @@
     }
   },
   {
+    "id": "c_3t7v9n8u",
+    "ja": "母は昨日の夕方に台所で転んで、手首を押さえたまま一時間近く動けなかったんです。",
+    "en": "My mother fell in the kitchen yesterday evening and couldn't move for almost an hour, holding her wrist the whole time.",
+    "alternatives": [
+      "My mom fell in the kitchen yesterday evening and couldn't move for nearly an hour, clutching her wrist the whole time.",
+      "Yesterday evening my mother fell in the kitchen and was unable to move for almost an hour, holding her wrist."
+    ],
+    "point": "「押さえたまま」は文末に holding を添えて表す",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c964aa67d51f6116c27be18fc6a0e8fe65a4bf1bbec999735360e03deed11416",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3w5d9q4q",
     "ja": "一晩中高熱が続いたので、彼女は朝一番に近くのクリニックに行きました。",
     "en": "Having had a high fever all night, she went to a nearby clinic first thing in the morning.",
@@ -255,6 +277,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:c96872298af1d1d81cba1fbf9e280c61e0252c1d5953ae05706d71e02eb72876",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4g3j7r5p",
+    "ja": "階段を上るたびに右膝がずきずき痛むので、昨日ジムで無理しすぎたのかもしれません。",
+    "en": "My right knee throbs every time I go up the stairs, so I might have overdone it at the gym yesterday.",
+    "alternatives": [
+      "My right knee aches whenever I climb the stairs, so maybe I pushed myself too hard at the gym yesterday.",
+      "Since my right knee throbs every time I take the stairs, I may have overdone it at the gym yesterday."
+    ],
+    "point": "過去の推量は might + have + 過去分詞",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 8,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a4e409db7fa9239481d5024365033b9d382a0be9a65cf85279a51321a7e360fa",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

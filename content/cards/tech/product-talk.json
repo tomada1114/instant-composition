@@ -45,6 +45,50 @@
     }
   },
   {
+    "id": "c_3c2c3t3u",
+    "ja": "シングルサインオンを何度も求めているのは無料ユーザーではなく法人のお客さんなので、次の四半期のロードマップの最優先にしましょう。",
+    "en": "It's our enterprise customers, not the free users, who keep asking for single sign-on, so let's put it at the top of next quarter's roadmap.",
+    "alternatives": [
+      "It's the enterprise customers, rather than free users, who keep requesting single sign-on, so let's make it the top priority on next quarter's roadmap.",
+      "Since it's enterprise customers and not free users who keep asking for single sign-on, let's put it first on next quarter's roadmap."
+    ],
+    "point": "It's A, not B, who 〜 の強調構文で「A こそが」を表す",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:11c3933be66fbac315fc74809aeeda3112e0847c186bd5b27f52ea262c8260b8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3z8x9n5z",
+    "ja": "うちのチームは検索機能についてたくさんフィードバックをもらっていますが、ユーザーが実際にどう使っているかという情報はあまりありません。",
+    "en": "We've gotten a lot of feedback about the search feature, but not much information on how people actually use it.",
+    "alternatives": [
+      "We've received plenty of feedback on the search feature, but we don't have much information about how users actually use it.",
+      "We've had lots of feedback about the search feature, but there isn't much information on how people really use it."
+    ],
+    "point": "feedback も information も数えられないので複数形にしない",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b3c058f00de90c7d14e5c6c1850132e8ca78741f58b1000ba3e26d5eeaba487f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4e7z4d5w",
     "ja": "ユーザーは、このアプリで写真を共有できません。",
     "en": "Users can't share photos in this app.",
@@ -171,6 +215,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:f4f6833592e97378325927db7d72f0ab2ad07f7ee142f44a3bdb3877ae590ac1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6b2c6x4z",
+    "ja": "セキュリティレビューが終わって初めて、私たちは新しい決済機能のリリース日を決められるようになります。",
+    "en": "Only after the security review is finished will we be able to set a release date for the new payment feature.",
+    "alternatives": [
+      "Only once the security review is done will we be able to set a release date for the new payment feature.",
+      "We won't be able to set a release date for the new payment feature until the security review is finished."
+    ],
+    "point": "Only after 節が文頭なら主節は will we と倒置する",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:03180fd820bcf31a6f0a4abd39837a14d946b6eaef8195edae1f80b21b25d4ab",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

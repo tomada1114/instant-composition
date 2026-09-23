@@ -110,6 +110,28 @@
     }
   },
   {
+    "id": "c_3t9d4v8h",
+    "ja": "金曜の仕事のあと、私たちと一緒に夕食でもどうかなと思ってたんですが。",
+    "en": "I was wondering if you'd like to grab dinner with us after work on Friday.",
+    "alternatives": [
+      "I was wondering if you'd like to join us for dinner after work on Friday.",
+      "I was wondering whether you'd want to have dinner with us after work on Friday."
+    ],
+    "point": "過去進行形 I was wondering if で控えめに誘う",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5412026478e33f15caff7b77f3c907e7e7540ca5005358b7c2bf78b1a254d338",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5f5n4t7e",
     "ja": "チームのみんなに、金曜の食事会に来られるかどうか聞いてもらえますか？",
     "en": "Could you ask everyone on the team whether they can make it to Friday's dinner?",
@@ -198,6 +220,28 @@
     }
   },
   {
+    "id": "c_5w5d5b9z",
+    "ja": "今夜のカラオケ、一緒に行けたらいいんだけど、明日の朝早い便に乗るんだ。",
+    "en": "I wish I could join you for karaoke tonight, but I have an early flight tomorrow.",
+    "alternatives": [
+      "I wish I could come to karaoke with you tonight, but I have an early flight tomorrow.",
+      "I wish I could go to karaoke with you guys tonight, but I've got an early flight tomorrow."
+    ],
+    "point": "今の叶わない願いは I wish I can ではなく I could",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8307851bce48b372b2d79240ce46a070c23cf12575328a4c0b0281dc99150028",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_6a8f9p3r",
     "ja": "ずっと君をキャンプに誘おうと思ってたんだけど、来月空いてる？",
     "en": "I've been meaning to invite you to go camping. Are you free next month?",
@@ -258,6 +302,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:7054a4a69f0929bbb22c80a8fd7ef1841d6b944b2f2f7990d398b4139075f7a9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9a5t9t4j",
+    "ja": "彼女、コンサートのあとにみんなで新しいラーメン屋に行こうって提案してたよ。",
+    "en": "She suggested going to the new ramen place together after the concert.",
+    "alternatives": [
+      "She suggested that we all go to the new ramen place after the concert.",
+      "She suggested we all go to the new ramen shop after the concert."
+    ],
+    "point": "suggest の後は to 不定詞ではなく -ing か that 節",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 5,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d7071866e8d3ac78324926b813ce2a8b157f6461e9580d085988463e863dea79",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

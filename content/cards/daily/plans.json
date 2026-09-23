@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_3y7n6r9m",
+    "ja": "父は来月の連休に、大学時代の友人たちと会うことになってるんだ。",
+    "en": "My dad is meeting his old college friends over the long weekend next month.",
+    "alternatives": [
+      "My dad is going to meet his college friends over next month's long weekend.",
+      "My dad is getting together with his college friends over the long weekend next month."
+    ],
+    "point": "決まっている予定は現在進行形 is meeting で言える",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4c6aaaee7455acf16e38f2b2fa929810a8d11c4e8633b7d32201f72144c55bd2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4g8r9d3x",
     "ja": "土曜のバーベキュー、私たち何時に集合することになったんだっけ？",
     "en": "What time did we decide to meet for Saturday's barbecue?",
@@ -104,6 +126,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:9800e6a594a7e93a38f45a61c8fe17b8670be4e4152703f19e646eb6590e8514",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5g7t9s3t",
+    "ja": "もし私に車があったら、今週末あなたを空港まで送っていけるんだけどね。",
+    "en": "If I had a car, I could drive you to the airport this weekend.",
+    "alternatives": [
+      "I'd drive you to the airport this weekend if I had a car.",
+      "If I had a car, I'd be able to take you to the airport this weekend."
+    ],
+    "point": "事実と違う仮定は had、帰結は could を使う",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8ed8191ea73c8fd2cc71f6ca1f7483dcab452d01534421cba1a31ff704ae4783",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
@@ -192,6 +236,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:31f77a0cf8f8ec20ef5fe8022a2f414014990b77167312926079ef5cfcbc1af0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8u2y5p2g",
+    "ja": "サラから電話があったとき、私たちはちょうど週末の予定を話し合っていた。",
+    "en": "We were just talking about our weekend plans when Sarah called.",
+    "alternatives": [
+      "We were just discussing our plans for the weekend when Sarah called.",
+      "When Sarah called, we were just talking about our plans for the weekend."
+    ],
+    "point": "話していた最中は過去進行形、電話は過去形 called",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 3,
+    "grammar": ["progressive-aspect", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:32156fb73da1e32aea970541516d254f0703795843a6b522942187391f25b3fc",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

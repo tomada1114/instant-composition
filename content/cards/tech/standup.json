@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_2z5c4h2w",
+    "ja": "データ移行が夜のうちに終わっただけでなく、テストも全部通りました。",
+    "en": "Not only did the data migration finish overnight, but all the tests passed as well.",
+    "alternatives": [
+      "Not only did the data migration complete overnight, but every test passed too.",
+      "The data migration finished overnight, and all the tests passed too."
+    ],
+    "point": "Not only が文頭なら did the migration finish と倒置する",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:08d4084fe1b7d11ec8bc6b73eca2fd4328467c910aa03d53b876e2ae68c081bf",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3w4r9q2c",
     "ja": "今日私がやらなきゃいけないのは、昨日見つかったログイン画面のバグを直すことです。",
     "en": "What I need to do today is fix the login bug we found yesterday.",
@@ -198,6 +220,28 @@
     }
   },
   {
+    "id": "c_7b7x3d6d",
+    "ja": "佐藤さんが昨日、決済まわりのテストを全部書き直してくれて、そのおかげで CI がかなり速くなりました。",
+    "en": "Sato rewrote all the payment tests yesterday, making our CI run a lot faster.",
+    "alternatives": [
+      "Sato rewrote all the payment tests yesterday, which made our CI much faster.",
+      "Yesterday Sato rewrote every payment test, and that made our CI run much faster."
+    ],
+    "point": "結果は, making で続け、make + 目的語 + 原形 run にする",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["participle-clauses", "causatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1140b84dff9aaa9b6b3c2504a98ff6c6d5d6a5b48cd6da8ab13ee6532448aded",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_7y5r9x7z",
     "ja": "昨日から決済 API のテストを書いているんですが、まだ半分くらいしか終わっていません。",
     "en": "I've been writing tests for the payment API since yesterday, but I've only finished about half.",
@@ -280,6 +324,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:b8bb63d458515054cd7183235f952be113eb18cd53b6a9a0fb26ad2ba4b73a78",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9k7v9j7u",
+    "ja": "昨日のうちにレビューをお願いしておけばよかったです。今日中にマージできないかもしれません。",
+    "en": "I wish I'd asked for a review yesterday. I might not be able to merge it today.",
+    "alternatives": [
+      "I should have asked for a review yesterday. Now I might not be able to merge it today.",
+      "I wish I had asked someone to review it yesterday. I may not get it merged today."
+    ],
+    "point": "過去の後悔は wish の後を過去完了 I'd asked にする",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7ec340c40313af4eb44e369592f3ad23fd2dc4195e59ba6dffb304e945494aed",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_2c4w7y9y",
+    "ja": "インフラチームは、決済システムは今夜 9 時までには復旧するだろうと言っていました。",
+    "en": "The infrastructure team said the payment system would be back up by 9 p.m. tonight.",
+    "alternatives": [
+      "The infrastructure team told us the payment system would be restored by 9 p.m. tonight.",
+      "According to the infrastructure team, the payment system will be back online by 9 tonight."
+    ],
+    "point": "said に合わせて will ではなく would にする",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 6,
+    "grammar": ["reported-speech", "future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e9e54ea56b9cf21c7db22592cdb235e3c6accf6855e2efb1abec8bed7ea17a54",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2c5z2s4k",
     "ja": "昨日のうちに私たちがバックアップを確認していたら、顧客データを失わずに済んだのに。",
     "en": "If we had checked the backups yesterday, we wouldn't have lost any customer data.",
@@ -88,6 +110,28 @@
     }
   },
   {
+    "id": "c_3d9w9d4w",
+    "ja": "今回の障害の影響範囲は、今日の夕方までに田中さんにまとめてもらいます。",
+    "en": "I'll have Tanaka put together a summary of the impact of this outage by this evening.",
+    "alternatives": [
+      "I'll get Tanaka to summarize the impact of this outage by this evening.",
+      "I'm going to have Tanaka write up the scope of this outage by this evening."
+    ],
+    "point": "have + 人 + 動詞の原形。to は付けない",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 6,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e4e8142baabf53ba7e50c0bcdea0051ae7d37f3bd78774761e282625b0d5cd8b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3p3t7b8r",
     "ja": "昨夜はユーザーが30分ほどログインできませんでした。",
     "en": "Users couldn't log in for about thirty minutes last night.",
@@ -126,6 +170,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:2258e1ed1108ecc831ecd066f21c0d4afbd13a0e5a9a314d2271f4b575ff6ea8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4g5u5x2w",
+    "ja": "インフラチームは昨夜からずっとデータベースの復旧作業をしていますが、まだ終わっていません。",
+    "en": "The infrastructure team has been working on restoring the database since last night, but they haven't finished yet.",
+    "alternatives": [
+      "The infrastructure team has been trying to restore the database since last night, and it's still not done.",
+      "Since last night, the infrastructure team has been working to recover the database, but they're not finished yet."
+    ],
+    "point": "昨夜から続く作業は has been working、since を使う",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 7,
+    "grammar": ["present-perfect-continuous", "tense-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:df60ffcccb15e9b8b0d5d206a2b61ea8164e2b94f494c0519f42bd64b9d66043",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
@@ -214,6 +280,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:83166801fcb665b77eed2a40594669a3899cdf453e0b05826b7f28dc03c6b17e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7v7b4z9t",
+    "ja": "サービスが復旧したあとも、私たちは今夜ずっとログを監視し続けるべきでしょうか？",
+    "en": "Should we keep monitoring the logs through the night, even after the service is restored?",
+    "alternatives": [
+      "Do we need to keep watching the logs all night, even after the service is back up?",
+      "Should we continue monitoring the logs tonight even once the service has been restored?"
+    ],
+    "point": "keep の後は動詞の ing 形にする",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["modal-obligation-advice", "gerunds"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:39e7f9a4068d4c8d4937f11c6c5df836d676ab10bd81682c163419afe07b295f",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

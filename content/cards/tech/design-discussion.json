@@ -66,6 +66,28 @@
     }
   },
   {
+    "id": "c_2w8s4u6a",
+    "ja": "このキャッシュ層は、レイテンシを下げるだけでなく、データベースの負荷も大幅に減らしてくれます。",
+    "en": "Not only does this cache layer cut latency, but it also takes a lot of load off the database.",
+    "alternatives": [
+      "This cache layer not only cuts latency but also takes a lot of load off the database.",
+      "Not only does this cache layer reduce latency, it also greatly reduces the load on the database."
+    ],
+    "point": "Not only を文頭に出したら does + 主語の語順に",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:69ad224956bc15c7809d619e9982658bf08b2cecc65c80498f391e3cc9f9781b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3e4s2f2q",
     "ja": "僕たちがレビューをやる前に、佐藤さんはもうデータベースの読み取りと書き込みを分ける案を出していたんだよ。",
     "en": "Before we held the review, Sato had already suggested separating database reads and writes.",
@@ -308,6 +330,28 @@
     }
   },
   {
+    "id": "c_7x5p9d7u",
+    "ja": "最初からスキーマの変更履歴を残しておけばよかったと、今ではうちのチームの全員が思っています。",
+    "en": "Everyone on the team now wishes we had kept a history of schema changes from the start.",
+    "alternatives": [
+      "The whole team now wishes we'd tracked our schema changes from the beginning.",
+      "Now everyone on the team wishes we had recorded our schema changes from day one."
+    ],
+    "point": "過去への後悔は wish の後を had + 過去分詞に",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 7,
+    "grammar": ["wishes-regrets", "past-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:df8b53781294de8d2afe4bcf5a5ee4ce26f8156440a872caeae41d5c4162da80",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_8c3f7q7u",
     "ja": "私たちは今、二つの案を比べているところです。",
     "en": "We're comparing two options now.",
@@ -346,6 +390,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:85231ade22fcf750403ce7aebce8ca3775fbb256165951b344d14e4d0815af0d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9e6k3n5e",
+    "ja": "障害が起きても一つのサービスの中で影響が収まるような設計にできないでしょうか？",
+    "en": "Couldn't we go with a design where a failure stays contained within a single service?",
+    "alternatives": [
+      "Couldn't we design it so that a failure doesn't spread beyond one service?",
+      "Could we design it so that a failure stays contained within a single service?"
+    ],
+    "point": "design の後は where でどんな設計かを説明する",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c820c6727a7999beb5ce631ef754729a23cbf96413d8b3c023530de794a6c98f",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

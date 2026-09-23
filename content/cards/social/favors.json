@@ -220,6 +220,28 @@
     }
   },
   {
+    "id": "c_5a2v9z2f",
+    "ja": "ごめん、今料理してるんだ。あとで手伝うね。",
+    "en": "Sorry, I'm cooking right now. I'll help later.",
+    "alternatives": [
+      "Sorry, I'm in the middle of cooking. I'll help you later.",
+      "Sorry, I'm busy cooking. I'll help out later."
+    ],
+    "point": "「今〜してる」は I'm cooking と進行形にする",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6ff4a2a1af448bfa41682cf655860096aecda9c8dca0b482479146db860f836c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5b7h4a9j",
     "ja": "駅に着いたら電話するから、迎えに来てもらえる？",
     "en": "I'll call you when I get to the station. Could you come pick me up?",
@@ -258,6 +280,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:2f8990be62d17b334b4ae9c8b2da7cd03a38e69d174d4ae08715ffa93e4dba73",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5j7z9s4b",
+    "ja": "今、忙しい？ちょっとお願いがあるんだ。",
+    "en": "Are you busy? I need a favor.",
+    "alternatives": [
+      "Are you busy now? I have a favor to ask.",
+      "Are you busy right now? I need a favor."
+    ],
+    "point": "「忙しい？」は be 動詞で Are you busy? と聞く",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:04c7423550290f0ef6349ba763212aab8c2d0372ff737fc019dc609625660838",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

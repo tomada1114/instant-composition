@@ -110,6 +110,28 @@
     }
   },
   {
+    "id": "c_4n8f7x4q",
+    "ja": "兄に、来週末の引っ越しを手伝ってって頼まれたんだ。",
+    "en": "My brother asked me to help him move next weekend.",
+    "alternatives": [
+      "My brother asked me to help with his move next weekend.",
+      "My brother asked if I could help him move next weekend."
+    ],
+    "point": "ask + 人 + to do の形。me を忘れずに",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 3,
+    "grammar": ["verb-object-to-do", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5b23fda648d008b75dccb8f07355cebd75ebf1b2948b273a27d3beb7e46bbc11",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4r7y2g5s",
     "ja": "彼女、最近は週末にギターを習うのにはまってるらしいよ。",
     "en": "I heard she's really into learning the guitar on weekends these days.",

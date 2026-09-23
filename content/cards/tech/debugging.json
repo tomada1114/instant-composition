@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2d8y9k6y",
+    "ja": "彼女の話では、画像を何枚かアップロードした直後に、画面が真っ白になってデータの一部が消えるそうです。",
+    "en": "According to her, the screen goes blank and some of the data disappears right after she uploads a few images.",
+    "alternatives": [
+      "She says the screen goes white and part of the data disappears right after she uploads a few images.",
+      "According to her, right after she uploads a few images, the screen turns blank and some of the data is lost."
+    ],
+    "point": "data は数えられないので some of the data に単数動詞",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:90bae6a6cef3fa37265cdf630b34e4d5db004f720a1c9746660fae15668fa077",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2f4e2s6u",
     "ja": "あなたが先週直したと言っていたバグが、今朝ユーザーが報告してきたものと同じかどうか、確認してもらえますか？",
     "en": "Could you check whether the bug you said you fixed last week is the same one that users reported this morning?",
@@ -459,6 +481,28 @@
     }
   },
   {
+    "id": "c_4v8w2y3w",
+    "ja": "もしこのバグを一から再現しないといけないとしたら、まずどこから調べますか？",
+    "en": "If you had to reproduce this bug from scratch, where would you start looking first?",
+    "alternatives": [
+      "If you needed to reproduce this bug from scratch, where would you look first?",
+      "Where would you start looking first if you had to reproduce this bug from scratch?"
+    ],
+    "point": "仮の話なので had to と would を使い、will にしない",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 5,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a0051fce4215d26b8a63bb394bb972938fd8486acdfd24b89ca1a3c55c5e77e1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5g3h3y4p",
     "ja": "リリース前にもっとログを仕込んでおけばよかったです。今はリクエストがどこで失敗しているのか分からないので。",
     "en": "I wish we had added more logging before the release, because now we can't tell where the request is failing.",
@@ -692,6 +736,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:e3afa757965ce63003d965343e6687d3f1f0fecd4d30ddf4c7029532fbca01e3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9a2w6s9u",
+    "ja": "ユーザーからはアプリが落ちると言われているのに、ログにはエラーが一つも残っていないので、私たちはまだ原因を絞り込めていません。",
+    "en": "Although users say the app crashes, there isn't a single error in the logs, so we still haven't narrowed down the cause.",
+    "alternatives": [
+      "Even though users report that the app crashes, the logs show no errors at all, so we haven't narrowed down the cause yet.",
+      "Users say the app crashes, but there's not a single error in the logs, so we still haven't pinned down the cause."
+    ],
+    "point": "「〜のに」は although で1文にまとめ、but と重ねない",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["concession-contrast", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1ac454c938e17236bda5bdd33395e0d46d9d359d2dd66a7d0249bd36a3c51322",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_3b9t7j3e",
+    "ja": "新しい加湿器は前のよりずっと静かだから、会議中もつけっぱなしにしておけるね。",
+    "en": "The new humidifier is much quieter than the old one, so we can leave it on during meetings.",
+    "alternatives": [
+      "Since the new humidifier is a lot quieter than the old one, we can keep it running during meetings.",
+      "The new humidifier is way quieter than the old one, so we can leave it running during meetings."
+    ],
+    "point": "「ずっと」は very ではなく much で比較級を強める",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 7,
+    "grammar": ["comparatives-superlatives", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:51d2047f4697bb10773b8444e5649cc7b7e2227eb6e9566aec612db894763ec5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3h6p7q2w",
     "ja": "もし在宅勤務ができたら、毎朝早起きしなくて済むのに。",
     "en": "If I could work from home, I wouldn't have to get up early every morning.",
@@ -126,6 +148,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:cb92664fe50af4b6aef53069a7d10478749b62a23834856b53eeaf933fe9f6ac",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4t7c8s5n",
+    "ja": "去年の忘年会で幹事をやってくれた人が、今どの部署にいるか知ってる？",
+    "en": "Do you know which department the person who organized last year's year-end party is in now?",
+    "alternatives": [
+      "Do you know what department the person who organized last year's year-end party works in now?",
+      "Do you know where the person who planned last year's year-end party is working now?"
+    ],
+    "point": "間接疑問は is の位置に注意、which department の後は平叙文の語順",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 7,
+    "grammar": ["relative-clauses", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a81d16dd955ed5edb523fb2cdca62e88a595e8f48420016add951f1cc6062cc7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5s5k6z3s",
+    "ja": "来週、田中さんが育休から戻ってくるから、私たちで小さなお帰り会をやる予定なんだ。",
+    "en": "Tanaka is coming back from parental leave next week, so we're having a small welcome-back party.",
+    "alternatives": [
+      "Tanaka's returning from parental leave next week, so we're going to have a small welcome-back party.",
+      "Since Tanaka is back from parental leave next week, we're throwing a little welcome-back party."
+    ],
+    "point": "決まった予定は will より進行形 we're having が自然",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 6,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:33f55e8db3aa57f1aeaf4d254fa988c242b55603b9b0d707297e688bc2e052d4",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

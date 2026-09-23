@@ -132,6 +132,28 @@
     }
   },
   {
+    "id": "c_7c3g4d3g",
+    "ja": "送る前にちゃんと確認するべきでした。ミスしてしまって申し訳ありません。",
+    "en": "I should have checked it before sending it. I'm sorry about the mistake.",
+    "alternatives": [
+      "I should've double-checked it before I sent it. I'm sorry for the mistake.",
+      "I should have checked it before sending. I apologize for the error."
+    ],
+    "point": "「〜すべきだった」は should have + 過去分詞",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 6,
+    "grammar": ["modal-perfect", "gerunds"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:19e96964d3f0f126f63ba49af60dfa8c2ba82e0dd02a3290d079f962998f6f13",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_7e9r4k9q",
     "ja": "あの朝あなたが車で送ってくれなかったら、私は面接に間に合わなかったと思います。本当にありがとうございました。",
     "en": "If you hadn't given me a ride that morning, I don't think I'd have made it to the interview. Thank you so much.",
@@ -170,6 +192,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:f5af17dfbfc30c917d53c3e93661cb87054757733533d1bdad5688b81953ba85",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8t9x6w5s",
+    "ja": "遅れてすみません。もう一度最初から説明していただけますか？",
+    "en": "Sorry I'm late. Could you explain it again from the beginning?",
+    "alternatives": [
+      "I'm sorry I'm late. Could you go over it again from the start?",
+      "Sorry for being late. Would you explain it again from the beginning?"
+    ],
+    "point": "丁寧な依頼は Could you + 動詞の原形",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c808d7fd172995429a00336f5fcf1530fe664d5c6f969df04881f04ac51f7114",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

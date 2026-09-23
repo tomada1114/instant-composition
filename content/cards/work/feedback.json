@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_4x4u8r9s",
+    "ja": "細かい直しはいくつか必要だけど、全体の構成はすごくいいと思うよ。",
+    "en": "Although a few details need fixing, I think the overall structure is great.",
+    "alternatives": [
+      "Even though some details need to be fixed, I think the overall structure is really good.",
+      "A few details need fixing, but I think the overall structure is great."
+    ],
+    "point": "although を使ったら後ろに but を重ねない",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 5,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3043b5ef4c3f887073413b682a31832865b75eb81eb538ffcad6201be809b6bd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5q8w2a8g",
     "ja": "先週いただいた指摘をもとに、スライドはもう全部直しました。",
     "en": "I've already fixed all the slides based on the feedback you gave me last week.",
@@ -38,6 +60,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:8a26ac11d42be3220479596d7f3b94deb082261bba573a9b67786afcc0c2dc51",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7c3y2x2u",
+    "ja": "私のプレゼンについて、何かアドバイスをもらえますか？",
+    "en": "Could you give me some advice on my presentation?",
+    "alternatives": [
+      "Can you give me any advice about my presentation?",
+      "Do you have any advice for my presentation?"
+    ],
+    "point": "advice は数えられないので an advice や advices にしない",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 2,
+    "grammar": ["articles-and-countability", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e165455531fd8838e0d1a26a1dfc2421e8c232d45e1154c65d5e41c1859f73c6",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

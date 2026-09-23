@@ -110,6 +110,28 @@
     }
   },
   {
+    "id": "c_3e5b6w8r",
+    "ja": "確認していただきたいのは、私たちのツアーの予約が本当にキャンセルされたかどうかです。",
+    "en": "What we'd like you to check is whether our tour reservation was really canceled.",
+    "alternatives": [
+      "What we'd like you to confirm is whether our tour booking was actually canceled.",
+      "What we'd like you to check is if our tour reservation was really canceled."
+    ],
+    "point": "「〜かどうか」は whether 節で、主語は What 節",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 8,
+    "grammar": ["cleft-emphasis", "noun-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f84cfa88869b9d894bcd8dd7dec9cb48979ecb4c6bf44f28f0279af74e5b8915",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3q7t7r7p",
     "ja": "財布をなくしてしまいました。何かアドバイスをもらえますか？",
     "en": "I lost my wallet. Can I get some advice?",
@@ -176,6 +198,28 @@
     }
   },
   {
+    "id": "c_4z4q9g5m",
+    "ja": "私たち、空港行きのバスに乗り遅れてしまったので、ほかの行き方を考えるのを手伝ってもらえませんか？",
+    "en": "We missed the airport bus, so could you help us figure out another way to get there?",
+    "alternatives": [
+      "We missed the bus to the airport, so could you help us work out another way to get there?",
+      "We've missed the airport bus. Could you help us figure out some other way to get there?"
+    ],
+    "point": "「考えて見つける」は think ではなく figure out",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 6,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:eb670d83e1b87b6fbb1a1c7a248bedd1fcc7a5f1d1e070be3b24fdad8279fa6b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5q4u8v8c",
     "ja": "電車で私の前に座っていた男の人が、私のバッグを持って行ったのかもしれません。",
     "en": "The man sitting in front of me on the train may have taken my bag.",
@@ -236,6 +280,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:1954373a42f362c24d965356f66006322b5b7a75d5dffbb92d1a728aad38428a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7j5f9y4e",
+    "ja": "財布を盗まれたのは電車の中じゃなくて、改札のところだったと思います。",
+    "en": "I think it was at the ticket gate, not on the train, that my wallet was stolen.",
+    "alternatives": [
+      "I think my wallet was stolen at the ticket gate, not on the train.",
+      "I think it was at the ticket gate, rather than on the train, that someone stole my wallet."
+    ],
+    "point": "強調したい場所を It was と that の間に挟む",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1f864f7f7b4e09392de16ef903e4002f61be0d01959ec3b4ebea847997d10651",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

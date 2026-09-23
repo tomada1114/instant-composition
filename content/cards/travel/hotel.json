@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2j3y5z5e",
+    "ja": "すみません、部屋にタオルがもう少し欲しいんですが、いただけますか？",
+    "en": "Could I get some more towels for my room?",
+    "alternatives": [
+      "Can I have some more towels in my room?",
+      "Could you bring me some more towels, please?"
+    ],
+    "point": "towel は数えられるので複数形 towels にする",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 2,
+    "grammar": ["articles-and-countability", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f910be39e2c7d839141ad5954d5238bbea2832334e2b865d1109f097e446e3a5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2m2r8j5y",
     "ja": "チェックアウトするときに、荷物を夕方まで預かってもらえますか？",
     "en": "When I check out, could you keep my bags until this evening?",
@@ -60,6 +82,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:c3870913af91458400723f67d88a37a077576a0b5aea936689f8166283919748",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3c5m7u2k",
+    "ja": "チェックアウトの前に、部屋をもう一度確認しよう。",
+    "en": "Let's check the room again before we check out.",
+    "alternatives": [
+      "Let's check the room once more before checking out.",
+      "Before we check out, let's check the room again."
+    ],
+    "point": "提案は Let's の後に動詞の原形を続ける",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9495243302d0adf69957eba272797b0d8b55aa56d8529689a2ab9b488136c06d",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
@@ -170,6 +214,25 @@
     "stamps": {
       "core": {
         "hash": "sha256:301f0e1b05dc9950bdef2341d0969211f4dfd56aa7e4224f8abb9816c074a302",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8d8d4u6e",
+    "ja": "朝食は何時からですか？",
+    "en": "What time is breakfast?",
+    "alternatives": ["When does breakfast start?", "What time does breakfast start?"],
+    "point": "breakfast には a も the も付けない",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 1,
+    "grammar": ["be-and-present-simple", "wh-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5dc0f781a8893b3f03775dff0067269cfc5ba18cc04d53f4061a2f844061a0b2",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

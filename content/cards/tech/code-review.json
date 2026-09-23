@@ -1,5 +1,49 @@
 [
   {
+    "id": "c_2h5r6m4n",
+    "ja": "修正後のコードのほうがずっと読みやすいね。",
+    "en": "The new code is much easier to read.",
+    "alternatives": [
+      "The new code is a lot easier to read.",
+      "The new code is much more readable."
+    ],
+    "point": "比較級を強めるのは very ではなく much",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:da3e08563eee4ec8832595b3f3f861512eca89240a690421c8c5f2ffdb719bb3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2h8p7c9f",
+    "ja": "このレビューは明日の朝までに終わらせます。",
+    "en": "I'll finish this review by tomorrow morning.",
+    "alternatives": [
+      "I'm going to finish this review by tomorrow morning.",
+      "I'll get this review done by tomorrow morning."
+    ],
+    "point": "期限の「までに」は until ではなく by",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a007a9c86092f9049d6ca82bb1f10f6ca6537d5cf117a88e4fc6b7960fe85504",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2y9d7a5x",
     "ja": "この関数、もっと小さいヘルパー関数に分けることを検討してもらえますか？",
     "en": "Could you consider splitting this function into smaller helper functions?",
@@ -192,6 +236,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:797b3349366081873c523ed432aaa9ed5b9ecd8d12d1103fda6dd65e1d9c346d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9x2g7w4w",
+    "ja": "ごめん、このエラーは僕のパソコンでは再現できませんでした。",
+    "en": "Sorry, I couldn't reproduce this error on my computer.",
+    "alternatives": [
+      "Sorry, I wasn't able to reproduce this error on my computer.",
+      "Sorry, I couldn't reproduce this error on my machine."
+    ],
+    "point": "過去の「できなかった」は couldn't",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 2,
+    "grammar": ["can-could-ability", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c391bcdaba41775878449cd3fabffeaff85a0c194d80182fcf708cc78f646e08",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
