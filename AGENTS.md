@@ -36,13 +36,12 @@ Corepack.
 
 ## Before the first screen
 
-No design direction is settled yet. `src/app/globals.css` carries shadcn/ui's stock
-`neutral` tokens only so a copied component renders, and the lock in `designing-ui` is
-blank; both carry a marker that `tests/placeholders.test.ts` still lists. Settling the
-direction comes before the first screen of this app's own: when asked to build or
-restyle UI while that marker still stands, say so and propose settling it first —
-`starting-an-app` owns the step. Never choose a palette, a typeface or a layout by taste
-to get a screen done.
+The design direction is settled: a "night scoreboard" — black canvas, white and grey
+ink, one neon green for the four roles `designing-ui` names — and it is dark only.
+`designing-ui` holds the lock, the ledger behind it and the component recipes; read it
+before building or restyling any screen. A screen adapts to the lock rather than
+renegotiating it: never choose a palette, a typeface or a layout by taste to get a
+screen done, and never add a light theme.
 
 ## Quick reference
 

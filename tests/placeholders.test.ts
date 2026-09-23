@@ -63,10 +63,10 @@ import { readText, repoRoot, walk } from "./repo-tree";
  * renaming project to that copy by hand instead.
  *
  * The last entry is not an identity string but a decision the template leaves
- * open on purpose: the design direction. `src/app/globals.css` ships stock
- * shadcn/ui tokens and `designing-ui` an empty lock, both carrying this
- * marker, so a project that renamed everything still reports that its screens
- * are being built against a direction nobody chose. It is listed here rather
+ * open on purpose: the design direction. The template's `src/app/globals.css`
+ * ships stock shadcn/ui tokens and its `designing-ui` an empty lock, both
+ * carrying this marker, so a project that renamed everything still reports
+ * that its screens are being built against a direction nobody chose. It is listed here rather
  * than in a suite of its own because this inventory is already the checklist
  * a new app works through, and a second list is one a new app never runs.
  */
@@ -89,17 +89,12 @@ const PLACEHOLDERS = [
  * `<file>: <placeholder>` rows.
  *
  * @remarks
- * The rename is done: every identity row is gone, so no identity string of
- * the template survives anywhere in the tree. What remains is the
- * design-direction marker — the stylesheet and both copies of `designing-ui`
- * carry it until this app settles its direction, which `starting-an-app`
- * sequences after the rename.
+ * Empty: the rename is done and the design direction is settled, so no
+ * identity string of the template and no unsettled-direction marker survives
+ * anywhere in the tree. The marker stays in `PLACEHOLDERS` so that one coming
+ * back — a stock stylesheet or a blank lock copied in again — fails here.
  */
-const EXPECTED_INVENTORY = [
-  ".agents/skills/designing-ui/SKILL.md: DESIGN DIRECTION: UNSETTLED",
-  ".claude/skills/designing-ui/SKILL.md: DESIGN DIRECTION: UNSETTLED",
-  "src/app/globals.css: DESIGN DIRECTION: UNSETTLED",
-];
+const EXPECTED_INVENTORY: string[] = [];
 
 /**
  * This file, which necessarily spells out every placeholder it looks for.

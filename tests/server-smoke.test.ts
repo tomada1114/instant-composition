@@ -435,6 +435,14 @@ describe("the built application, served by `next start`", () => {
     await expect(stylesheet.text()).resolves.toMatch(/\.p-8\s*\{[^}]*padding:/u);
   });
 
+  // The app is dark only. `viewport` in `src/app/layout.tsx` tells the browser
+  // before the stylesheet arrives, and no other test renders that export.
+  it("declares the document dark-only", async () => {
+    const document = await (await fetch(`${baseUrl}/ja`)).text();
+
+    expect(document).toMatch(/<meta name="color-scheme" content="dark"\s*\/?>/u);
+  });
+
   // The two halves of "an unknown route 404s" are asserted apart, and both with
   // `redirect: "manual"`, because following the redirect merges them: a single
   // `fetch("/no-such-page")` reports the 404 of `/ja/no-such-page` and passes

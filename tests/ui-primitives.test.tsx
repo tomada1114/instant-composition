@@ -22,10 +22,28 @@ describe("cn", () => {
     expect(cn("flex", false, undefined, "p-8")).toBe("flex p-8");
   });
 
-  it("keeps a default size beside a theme color, since the two do not conflict", () => {
-    expect(cn("text-sm", "text-muted-foreground")).toBe(
-      "text-sm text-muted-foreground",
-    );
+  // `src/app/globals.css` adds its own size, radius, container and shadow
+  // names, which `twMerge` would otherwise misfile: a size read as a color is
+  // dropped beside a real one, and a shadow read as a shadow color survives
+  // beside the utility meant to replace it. Each name must still conflict
+  // with its own kind and nothing else.
+  it.each([
+    ["a type-scale size beside a theme color", "text-answer", "text-muted-foreground"],
+    ["a type-scale size beside the Latin family", "text-number-lg", "font-latin"],
+    ["a radius token beside a padding", "rounded-card", "p-6"],
+    ["the column width beside a width", "max-w-column", "w-full"],
+    ["the glow beside the accent color", "shadow-glow", "bg-accent"],
+  ])("keeps %s, since the two do not conflict", (_, first, second) => {
+    expect(cn(first, second)).toBe(`${first} ${second}`);
+  });
+
+  it.each([
+    ["a type-scale size", "text-body", "text-answer"],
+    ["a radius token", "rounded-card", "rounded-full"],
+    ["a container token", "max-w-column", "max-w-none"],
+    ["the glow", "shadow-glow", "shadow-none"],
+  ])("lets the later of two conflicting uses of %s win", (_, first, second) => {
+    expect(cn(first, second)).toBe(second);
   });
 });
 
@@ -57,14 +75,27 @@ describe("Button", () => {
 
     const { className } = screen.getByRole("button");
     expect(className).toContain("px-8");
-    expect(className).not.toContain("px-4");
+    expect(className).not.toContain("px-6");
   });
 
   it("applies the variant it is given instead of the default one", () => {
-    render(<Button variant="outline">Save</Button>);
+    render(<Button variant="secondary">Save</Button>);
 
     const { className } = screen.getByRole("button");
-    expect(className).toContain("border");
-    expect(className).not.toContain("bg-primary");
+    expect(className).toContain("border-input");
+    expect(className).not.toContain("bg-accent");
+  });
+
+  it("keeps its type-scale size when a caller sets a color", () => {
+    render(
+      <Button variant="secondary" className="text-muted-foreground">
+        Save
+      </Button>,
+    );
+
+    const classes = screen.getByRole("button").className.split(" ");
+    expect(classes).toContain("text-action");
+    expect(classes).toContain("text-muted-foreground");
+    expect(classes).not.toContain("text-foreground");
   });
 });

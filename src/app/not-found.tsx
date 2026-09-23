@@ -2,6 +2,7 @@ import { getLocale } from "next-intl/server";
 import type { ReactElement } from "react";
 
 import { MESSAGES } from "../i18n/messages";
+import { inter } from "./fonts";
 
 /** The shelled fallback for framework-level misses outside a locale shell. */
 export default async function RootNotFound(): Promise<ReactElement> {
@@ -9,7 +10,7 @@ export default async function RootNotFound(): Promise<ReactElement> {
   const messages = MESSAGES[locale].NotFound;
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={inter.variable}>
       <body>
         <main className="mx-auto flex max-w-2xl flex-col items-start gap-4 p-8">
           <h1>{messages.title}</h1>
