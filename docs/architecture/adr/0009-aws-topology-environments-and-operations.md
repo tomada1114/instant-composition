@@ -36,6 +36,13 @@ Production comes one to two years out, after a phase that adds the production gu
 later waits for that phase. The owner's AWS account is new and on the Free plan, and
 anything that would end its credits early is deferred.
 
+Keeping the credits is not the same as staying on the Free plan. A Free plan ends after
+six months or when its credits run out, and an account that has not upgraded to the Paid
+plan by then closes; upgrading keeps the remaining credits (checked 2026-09-23). The
+owner accepts charges in `dev` of up to about $30 a month, so the account upgrades
+whenever a service needs it, and before the six months end at the latest. Only what
+forfeits the credits outright — creating or joining an organization — is deferred.
+
 ## Decision drivers
 
 - Run cost should scale with use, with few components billed by the hour.
@@ -105,7 +112,9 @@ learner ──► CloudFront (flat-rate plan: WAF, DDoS protection, bot manageme
 
 - Until the production-guard phase, the owner's existing standalone account **is the
   `dev` account**. Creating or joining an organization ends a Free-plan account's
-  credits at once and moves it to the paid plan, so the organization waits.
+  credits at once and moves it to the paid plan, so the organization waits. The account
+  still upgrades to the Paid plan on its own before the Free plan ends (see Context),
+  which keeps the credits.
 - When the organization is created:
   - a new account becomes the management account;
   - the current account is invited in as `dev`, so dev's resources stay where they are;
@@ -273,6 +282,9 @@ Prices are as of 2026-09-23. A region appears only where the source states one.
 
   Organizations, Identity Center and `prod` come in the production-guard phase.
 
+- Upgrade the account to the Paid plan before the Free plan's six months end, or earlier
+  when a service `dev` needs is not on the Free plan. Leaving it on the Free plan past
+  that point closes the account.
 - Write the `foundation` stack first. Local development needs its Cognito user pool
   before anything is hosted.
 - Measure the Tokyo unit prices in the Pricing Calculator. Replace every Unverified row
@@ -328,6 +340,9 @@ Prices are as of 2026-09-23. A region appears only where the source states one.
 - Free-plan credits end when an account creates or joins an organization, checked
   2026-09-23: https://aws.amazon.com/free/free-tier-faqs/ and
   https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-plans.html
+- A Free plan ends after six months or when its credits run out; the account then closes
+  unless upgraded, and upgrading keeps the remaining credits, checked 2026-09-23:
+  https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-plans.html
 - One free tier per organization, and no fee for consolidated billing, checked
   2026-09-23:
   https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilling-effective.html
@@ -343,6 +358,9 @@ Prices are as of 2026-09-23. A region appears only where the source states one.
   https://aws.amazon.com/iam/identity-center/faqs/
 - `aws login` short-term credentials, checked 2026-09-23:
   https://docs.aws.amazon.com/signin/latest/userguide/command-line-sign-in.html
+- `aws login` needs `signin:AuthorizeOAuth2Access` and `signin:CreateOAuth2Token`, which
+  the `SignInLocalDevelopmentAccess` managed policy grants, checked 2026-09-23:
+  https://docs.aws.amazon.com/signin/latest/userguide/security-iam-awsmanpol.html
 - Point-in-time recovery periods of 1–35 days, priced by table size, checked 2026-09-23:
   https://aws.amazon.com/blogs/database/announcing-configurable-point-in-time-recovery-periods-for-amazon-dynamodb/
 - Cognito `AllowAdminCreateUserOnly`, checked 2026-09-23:

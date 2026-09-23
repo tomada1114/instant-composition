@@ -125,7 +125,12 @@ dependency remains; the OpenAPI document is generated, not hand-written.
   - `aws login` for short-lived CLI credentials;
   - Budgets alerts.
 
-  The account stays standalone, so its Free-plan credits last.
+  The account stays standalone, because joining an organization forfeits its Free-plan
+  credits.
+
+- Upgrade the account to the Paid plan before the Free plan's six months end, or when a
+  service `dev` needs is not on the Free plan. Upgrading keeps the credits; a Free-plan
+  account that reaches the end of its plan closes.
 
 - `infra/`: a CDK app with a stage setting. The `foundation` stack in `dev` holds:
   - the DynamoDB table, with deletion protection and point-in-time recovery;

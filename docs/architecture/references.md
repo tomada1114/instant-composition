@@ -237,6 +237,27 @@ listed under [Unverified](#unverified) instead of being stated as fact.
 
 ## Operations and cost
 
+- [Choosing a plan](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/free-tier-plans.html)
+  and [Free Tier FAQs](https://aws.amazon.com/free/free-tier-faqs/) — covers:
+  - A Free plan ends after six months or when its credits run out, whichever comes
+    first; an account not upgraded by then closes, and its content is kept for 90 days.
+  - Upgrading to the Paid plan keeps the remaining credits.
+  - Creating or joining an organization, or setting up a Control Tower landing zone,
+    ends the credits at once and upgrades the account to the Paid plan.
+
+  Checked 2026-09-23.
+
+- [Sign in through the AWS CLI](https://docs.aws.amazon.com/signin/latest/userguide/command-line-sign-in.html)
+  and
+  [AWS Sign-In managed policies](https://docs.aws.amazon.com/signin/latest/userguide/security-iam-awsmanpol.html)
+  — `aws login` (AWS CLI 2.32.0 or later) issues short-term credentials. An IAM identity
+  needs `signin:AuthorizeOAuth2Access` and `signin:CreateOAuth2Token`, which
+  `SignInLocalDevelopmentAccess` grants and `AdministratorAccess` already includes.
+  Checked 2026-09-23.
+- [IAM user and role access to Billing information](https://docs.aws.amazon.com/help-panel/awsaccountbilling/latest/console/hp-account-iam.html)
+  — only the root user can activate it. It gates the Billing and Cost Management console
+  pages, not the Budgets, Cost Explorer or Cost and Usage Reports APIs. Checked
+  2026-09-23.
 - [AWS Budgets pricing](https://aws.amazon.com/aws-cost-management/aws-budgets/pricing/)
   and
   [Budgets actions](https://aws.amazon.com/blogs/aws-cloud-financial-management/get-started-with-aws-budgets-actions/)
