@@ -242,6 +242,28 @@
     }
   },
   {
+    "id": "c_5c9p4u5y",
+    "ja": "明日、日の出ツアーに参加するつもりなんだ。",
+    "en": "I'm going to join the sunrise tour tomorrow.",
+    "alternatives": [
+      "I'm joining the sunrise tour tomorrow.",
+      "I'm going to take the sunrise tour tomorrow."
+    ],
+    "point": "予定は will より be going to や進行形が自然",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:294b74ca20d8e4cd35e9ebdd2a1ae50176eb47f517083112e568ffe549acb2bf",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_6e2y5v6u",
     "ja": "展望台からの景色、写真に撮っておけばよかったなあ。",
     "en": "I wish I had taken a picture of the view from the observation deck.",
@@ -304,6 +326,28 @@
         "hash": "sha256:ffc5616d0e9029d2b481ea875084ff3991f663d4db45bb7919d574b48ce0245e",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6z5b8v4w",
+    "ja": "この町で、私がまず見ておくべき場所はどこですか？",
+    "en": "What should I see first in this town?",
+    "alternatives": [
+      "What should I visit first in this town?",
+      "Where should I go first in this town?"
+    ],
+    "point": "疑問詞のあとは should I の語順",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 2,
+    "grammar": ["modal-obligation-advice", "wh-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5d108baccb8d84691b4b51b5a3a2cc906acba92558714a00f7ee85ed766d4d1b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
@@ -437,6 +481,28 @@
         "hash": "sha256:6f5564bce17f1f03c40adb0aee4ea0cde00aa8f98fcac1830f8b22217d7eece2",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8z6k6h7f",
+    "ja": "兄はツアーの間、ずっと写真を撮っていたよ。",
+    "en": "My brother was taking photos during the whole tour.",
+    "alternatives": [
+      "My brother was taking pictures during the whole tour.",
+      "My brother was taking photos all through the tour."
+    ],
+    "point": "「〜していた」は過去進行形 was taking",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0dfa99fa5e45b45fbb266c586196139eadcbd66ef7f1505aed996e09d79b673e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

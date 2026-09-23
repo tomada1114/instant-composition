@@ -154,6 +154,28 @@
     }
   },
   {
+    "id": "c_5n9q4k7k",
+    "ja": "今は駅前のカフェで働いているんです。",
+    "en": "I'm working at a café near the station now.",
+    "alternatives": [
+      "Right now, I'm working at a café by the station.",
+      "I'm currently working at a café near the station."
+    ],
+    "point": "一時的な今の仕事は進行形 I'm working で言う",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:25da51f2648aa80cfca93c9fca5e33e73c42f4ebcff2838b41dfe5c59207c018",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5n9w8t7d",
     "ja": "私は日本に来る前、10年近く銀行で働いていました。",
     "en": "Before I came to Japan, I had worked at a bank for almost ten years.",
@@ -194,6 +216,28 @@
         "hash": "sha256:f380add9c57812a64b6b5d843f4e12302afdf6da504be69470e492ff02d9896c",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5w2b4f8p",
+    "ja": "僕も自己紹介しないとね。トムです。",
+    "en": "I should introduce myself too. I'm Tom.",
+    "alternatives": [
+      "I have to introduce myself, too. I'm Tom.",
+      "Let me introduce myself too. My name's Tom."
+    ],
+    "point": "「自己紹介する」は introduce myself、myself を忘れない",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6bd70c411a6c53e075ffc139dbe21258a55f16eb900f7f7d10f80018afacaaf9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_2s8p4a3j",
+    "ja": "このプロジェクトにセットアップ用のスクリプトってありますか？",
+    "en": "Is there a setup script for this project?",
+    "alternatives": [
+      "Does this project have a setup script?",
+      "Is there a script for setting up this project?"
+    ],
+    "point": "「〜ある？」は Is there 〜? で主語は後ろ",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 2,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2e33e9c74975b8ea4750e493c18eaf8d550b4983e82470fa4d0155a10ac1aca3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4t2z2b7p",
     "ja": "リードエンジニアが先週、全員のノートPCに同じエディタを入れました。",
     "en": "The lead engineer installed the same editor on everyone's laptop last week.",
@@ -82,6 +104,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:7b39aace51acd4a6f8d5449f947373050a76cba3ced95c9ef034c95929d60bed",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6k7d8h5x",
+    "ja": "私は今、エディタに新しい拡張機能をインストールしているところです。",
+    "en": "I'm installing a new editor extension now.",
+    "alternatives": [
+      "I'm installing a new extension for my editor now.",
+      "Right now I'm installing a new editor extension."
+    ],
+    "point": "「今〜しているところ」は現在進行形 I'm 〜ing",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7e6fc880d6aec39988acd12338cb1040b3c9a4891435f404bf375d3f371d96e0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6n3q4k6u",
+    "ja": "リンターは保存するたびに自動で走るけど、型チェックはコミットするときだけ走るように設定してあります。",
+    "en": "I've set it up so that the linter runs automatically every time you save, whereas the type check only runs when you commit.",
+    "alternatives": [
+      "I've configured it so the linter runs automatically whenever you save, while the type check only runs on commit.",
+      "I've set it up so the linter runs automatically each time you save, but the type check runs only when you commit."
+    ],
+    "point": "対比は whereas で2つの設定を並べる",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:caaa355df8a594e62992eab71e4a5796f5dba8e835aac4a97e87fc51d81c9a96",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }
@@ -220,6 +286,28 @@
     }
   },
   {
+    "id": "c_8v5q5j7c",
+    "ja": "インフラチームって、VPN につながないと僕たちはステージング環境に入れないって言ってたっけ？",
+    "en": "Did the infra team say we couldn't access the staging environment unless we were connected to the VPN?",
+    "alternatives": [
+      "Did the infrastructure team say we couldn't get into the staging environment unless we were on the VPN?",
+      "Didn't the infra team say we couldn't access staging without connecting to the VPN?"
+    ],
+    "point": "say の後は時制を合わせて couldn't / were にする",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 7,
+    "grammar": ["reported-speech", "noun-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2eb5a0db9ad15ccf8a702c5233198437694e98b3a218ced78b7796d93f35d836",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_8w8k4h3e",
     "ja": "昨日ビルドが失敗したとき、私はもうキャッシュを消してありました。",
     "en": "I had already cleared the cache when the build failed yesterday.",
@@ -280,6 +368,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:97a42b5c85276dcb8cc6955998ac9f9f95bb8f8c9a54f41d6eb9fed62b869031",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9g2u9b9y",
+    "ja": "たとえ急ぎの修正でも、本番用の設定ファイルを直接編集するのはやめてもらえますか？",
+    "en": "Even if it's an urgent fix, could you please not edit the production config file directly?",
+    "alternatives": [
+      "Even when it's an urgent fix, could you avoid editing the production config file directly?",
+      "Could you please not edit the production config file directly, even if it's an urgent fix?"
+    ],
+    "point": "「たとえ〜でも」は even if、依頼の否定は could you not",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 6,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f4dfe4b613fba1ae0f3516e35ed54c5ca522857b514efc170c492caeaadf0e60",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

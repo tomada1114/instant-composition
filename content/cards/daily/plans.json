@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2g9b8s6h",
+    "ja": "来週の引っ越し、運ぶ家具が多いから、友達にもう何人か手伝いを頼んでおくね。",
+    "en": "We have a lot of furniture to move next week, so I'll ask a few more friends to help.",
+    "alternatives": [
+      "Since there's a lot of furniture to move next week, I'll ask a few more friends to help out.",
+      "We've got a lot of furniture to move next week, so I'll get a few more friends to help."
+    ],
+    "point": "furniture は数えられないので furnitures にしない",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["articles-and-countability", "infinitives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:71aaae491527d64bc97a520c6c11abba83444a9cc4625117b8cbbb2c78715391",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2j3k3k8j",
     "ja": "先週は日程が決まらなかったけど、もう全員の都合がつく日が見つかったよ。",
     "en": "We couldn't settle on a date last week, but we've found a day that works for everyone now.",
@@ -238,6 +260,50 @@
         "hash": "sha256:ef4fab9b731e8e1f4ed67d4d07217cac2c7c3b1d34e3cfd92b6bfa34010716ed",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6w3c2n2j",
+    "ja": "ケンに、日曜のハイキングは何時に出発するのか聞いてもらえる？",
+    "en": "Could you ask Ken what time we're leaving for the hike on Sunday?",
+    "alternatives": [
+      "Can you ask Ken what time we're heading out for Sunday's hike?",
+      "Could you check with Ken what time we're leaving for the hike on Sunday?"
+    ],
+    "point": "what time の後は we're leaving の語順で、疑問文の語順にしない",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 4,
+    "grammar": ["indirect-questions", "requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f4cfb814ebd701b09c8264a5e66f5f13a61b4473d8bc6c864fe494837263f9d1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7c9g5e8m",
+    "ja": "姉が、君が来月の旅行の日程をもう決めたかどうか知りたがってるよ。",
+    "en": "My sister wants to know whether you've decided on the dates for next month's trip yet.",
+    "alternatives": [
+      "My sister's asking if you've settled on the dates for next month's trip yet.",
+      "My sister wants to know if you've picked the dates for next month's trip yet."
+    ],
+    "point": "whether の後は you've decided の平叙文の語順にする",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["indirect-questions", "present-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dfd395c4036f7baaa9d2a769109754f95bce262406116ce64b7521174ce07861",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

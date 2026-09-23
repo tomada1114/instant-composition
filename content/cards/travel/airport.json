@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2c2j9b7t",
+    "ja": "シートベルトのサインが点いているのはわかっているんですが、気分が悪いので、トイレに行ってもいいですか？",
+    "en": "I know the seatbelt sign is on, but I'm feeling sick, so would it be okay if I used the restroom?",
+    "alternatives": [
+      "I know the seatbelt sign is on, but I feel sick, so could I use the restroom?",
+      "I realize the seatbelt sign is on, but I'm feeling sick, so would it be all right if I went to the restroom?"
+    ],
+    "point": "would it be okay if の後は過去形 used にする",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["requests-permission", "hedging-softening"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:56570d82975fdceea2dc1cbf04bbe237be5f87fccd0b8e7989a8d2ad13ec722e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2m2a4z5a",
     "ja": "ノートパソコンを出して、このトレーに入れてください。",
     "en": "Please take your laptop out and put it in this tray.",

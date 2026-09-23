@@ -67,6 +67,28 @@
     }
   },
   {
+    "id": "c_3v4e7r3h",
+    "ja": "うちのチームは今、検索機能を改善しているところです。",
+    "en": "Our team is improving the search feature now.",
+    "alternatives": [
+      "We're improving the search feature right now.",
+      "Our team is working on the search feature now."
+    ],
+    "point": "「今〜しているところ」は is improving と be + -ing にする",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6ab33171dca95f11760f360be8052230e0f73d09d00b913e4b67f9d9d7e837b1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3z8x9n5z",
     "ja": "うちのチームは検索機能についてたくさんフィードバックをもらっていますが、ユーザーが実際にどう使っているかという情報はあまりありません。",
     "en": "We've gotten a lot of feedback about the search feature, but not much information on how people actually use it.",
@@ -173,6 +195,28 @@
         "hash": "sha256:3b3ea7c00cae1535ff9312939c7c42d54dfbfd64100076f1c63dca88a93718b1",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5k2c8k6a",
+    "ja": "お客さんにとって、どっちの機能のほうが大事かな？",
+    "en": "Which feature is more important to our customers?",
+    "alternatives": [
+      "Which feature matters more to our customers?",
+      "Which feature is more important for our customers?"
+    ],
+    "point": "2つを比べるので most ではなく more important を使う",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 2,
+    "grammar": ["comparatives-superlatives", "wh-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:109da5488e452690305b4bea3833c678568e0a68c5f2076ed5d32174b2b69e2e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

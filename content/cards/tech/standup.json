@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2p3k7m4b",
+    "ja": "佐藤さんが先週直したと言っていたバグがまだ本番で起きているので、今日は彼女と一緒に原因を調べます。",
+    "en": "The bug that Sato said she'd fixed last week is still happening in production, so I'm going to dig into the cause with her today.",
+    "alternatives": [
+      "The bug Sato told us she had fixed last week is still showing up in production, so I'll look into the cause with her today.",
+      "The bug that Sato said she fixed last week is still occurring in production, so today I'm going to investigate the cause with her."
+    ],
+    "point": "主語は The bug that Sato said she'd fixed で、動詞 is まで長い",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 10,
+    "grammar": ["nested-clauses", "reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:497da71edfc5f4707859084afce988fa40b3c27071dd901a069e8e83611dba09",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2x6h8a6n",
     "ja": "ステージング環境、今日の午後まで私に使わせてもらえませんか？負荷テストをやり直したいんです。",
     "en": "Could you let me use the staging environment until this afternoon? I want to rerun the load test.",
@@ -40,6 +62,28 @@
         "hash": "sha256:08d4084fe1b7d11ec8bc6b73eca2fd4328467c910aa03d53b876e2ae68c081bf",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3u2c6x7v",
+    "ja": "ケンは昨日、キャッシュの不具合の原因を突き止められましたか？",
+    "en": "Did Ken find the cause of the caching bug yesterday?",
+    "alternatives": [
+      "Was Ken able to find what caused the caching bug yesterday?",
+      "Did Ken figure out the cause of the caching bug yesterday?"
+    ],
+    "point": "昨日のことなので Has ではなく Did で聞く",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:51dd4db4eedda38af4d65a5d882ce7055b9fb063cc0f1f9861c46b872a5d8257",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
@@ -242,6 +286,28 @@
     }
   },
   {
+    "id": "c_6b7y2x5c",
+    "ja": "昨日デプロイが失敗したんですが、もう私が直しました。",
+    "en": "The deployment failed yesterday, but I've already fixed it.",
+    "alternatives": [
+      "Yesterday's deployment failed, but I've fixed it now.",
+      "The deploy failed yesterday, but I've already fixed it."
+    ],
+    "point": "昨日の失敗は過去形、「もう直した」は現在完了で分ける",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cd66e49e5e7655378ab851625d06d37551aca580bf0b50b4ed29970e59cf67a8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_7b7x3d6d",
     "ja": "佐藤さんが昨日、決済まわりのテストを全部書き直してくれて、そのおかげで CI がかなり速くなりました。",
     "en": "Sato rewrote all the payment tests yesterday, making our CI run a lot faster.",
@@ -260,6 +326,28 @@
         "hash": "sha256:1140b84dff9aaa9b6b3c2504a98ff6c6d5d6a5b48cd6da8ab13ee6532448aded",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7h9z9q6d",
+    "ja": "今日は API のドキュメントを書き終えることに集中します。",
+    "en": "Today I'll focus on finishing the API documentation.",
+    "alternatives": [
+      "I'm going to focus on finishing the API docs today.",
+      "Today I'm focusing on finishing the API documentation."
+    ],
+    "point": "focus on の後は動名詞 finishing、to finish にしない",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["gerunds", "future-forms"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:17b9624f5649960d0e11d5c6239238323a3dd10f82dba7eec2924bd5417820e4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

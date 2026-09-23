@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_2m2r3d3j",
+    "ja": "来週の打ち合わせを水曜日から木曜日にずらしていただくことは可能でしょうか。",
+    "en": "I was wondering if it might be possible to move next week's meeting from Wednesday to Thursday.",
+    "alternatives": [
+      "I was wondering whether we could possibly move next week's meeting from Wednesday to Thursday.",
+      "Would it be possible to move next week's meeting from Wednesday to Thursday?"
+    ],
+    "point": "was wondering と過去進行形にすると依頼が柔らかくなる",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:80b5723f3ef3b2c46c88b2d6769c3485383f95d7a42f8f07bca7d5c3d31f9af9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3q6h7d5p",
     "ja": "取引先との打ち合わせ、先週からずっと日程を調整しようとしているんですが、まだ決まっていません。",
     "en": "I've been trying to set up a meeting with the client since last week, but nothing's been decided yet.",
@@ -386,6 +408,28 @@
         "hash": "sha256:d893af42d8536b8bf7d0056450412e3f13c96dd581dcdddfc1ae129ce46e2ba6",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8p3h4x8v",
+    "ja": "プロジェクトの締め切りは先月三回も変更されたけど、今月は今のところ一度も変わっていません。",
+    "en": "The project deadline was changed three times last month, but it hasn't changed once so far this month.",
+    "alternatives": [
+      "The project deadline got changed three times last month, but so far this month it hasn't changed at all.",
+      "They changed the project deadline three times last month, but it hasn't changed even once so far this month."
+    ],
+    "point": "last month は過去形、so far this month は現在完了",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:16292035449bed27c6e6bf601b34acac4654508ec3f6cffffca0f175d66b9866",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

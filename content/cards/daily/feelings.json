@@ -66,6 +66,28 @@
     }
   },
   {
+    "id": "c_2k2e6b2r",
+    "ja": "彼女、今朝からずっと機嫌が悪いんだよね。",
+    "en": "She's been in a bad mood since this morning.",
+    "alternatives": [
+      "She has been grumpy since this morning.",
+      "She's been in a bad mood all morning."
+    ],
+    "point": "「今朝からずっと」は is ではなく has been で表す",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 3,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9a8e864035c229fbb840c1d34d9e798310e2d7b9eae13953b4738e7b664efe8b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2n7a6a2u",
     "ja": "彼は転職を考えているみたいだけど、今辞めるのはもったいないと私は思う。",
     "en": "He seems to be thinking about changing jobs, but I think quitting now would be a waste.",
@@ -412,6 +434,28 @@
         "hash": "sha256:3c0559c0e52cc00d2716d67930cd70ed05c127e2a714ac3cbc409c5d339d613d",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8u4j2n3w",
+    "ja": "この服の色、派手すぎると思う？",
+    "en": "Do you think this color is too bright?",
+    "alternatives": [
+      "Do you think this color is too flashy?",
+      "Do you think this color's too loud?"
+    ],
+    "point": "Do you think の後ろは this color is と普通の語順",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 3,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:07096bf7fec243e507b4daea12b46b3f397a515e7beab0e78fa36540d7767370",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

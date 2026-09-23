@@ -44,6 +44,50 @@
     }
   },
   {
+    "id": "c_2u8m6k6j",
+    "ja": "洗濯機が止まったら、シャツを干しておいてくれる？",
+    "en": "When the washing machine stops, can you hang the shirts up to dry?",
+    "alternatives": [
+      "Can you hang the shirts out to dry when the washer stops?",
+      "Could you hang the shirts up to dry once the washing machine's done?"
+    ],
+    "point": "when 節は未来のことでも現在形 stops のまま",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 4,
+    "grammar": ["time-and-if-clauses", "requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c2676e36be8da1fc5f363dfed4319b7dc9e83065b94bdee5651387abe09bcd2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2v3v6t8z",
+    "ja": "今週末、ガレージの片付けを手伝ってもらえないかなと思ってたんだけど。",
+    "en": "I was wondering if you could help me clean out the garage this weekend.",
+    "alternatives": [
+      "Would you mind helping me clean out the garage this weekend?",
+      "I was hoping you could help me clean out the garage this weekend."
+    ],
+    "point": "I was wondering if you could で柔らかくお願いする",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["hedging-softening", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d5bd3a81ef675e0ce67107590d6416ec8fac7fb92ff9b718c815687a010c75e1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3b8z5h5q",
     "ja": "ごめん、僕は一番上の棚に手が届かないんだ。",
     "en": "Sorry, I can't reach the top shelf.",
@@ -60,6 +104,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:3a251507087d17d281da02ab9e2e0d7045bf753b6278be6702d7eeb1c1a4cbef",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4z6x8k4h",
+    "ja": "エアコンのフィルター、先月から掃除されてないよ。",
+    "en": "The air conditioner filter hasn't been cleaned since last month.",
+    "alternatives": [
+      "Nobody has cleaned the air conditioner filter since last month.",
+      "The AC filter hasn't been cleaned since last month."
+    ],
+    "point": "since があるので現在完了の受動 hasn't been cleaned",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 4,
+    "grammar": ["passive-voice", "present-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a2932e6eef0260c1d44af45a12b072e6ac4f933a290ddf32a8137820c2812936",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }
@@ -104,6 +170,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:f6359f026a1a0ce6277884048309b6ffd29daccae70b469a1199aa87faf62ecf",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6e8e7b6a",
+    "ja": "リビングのエアコンは先週の土曜に業者さんにクリーニングしてもらったから、フィルターは触らなくていいよ。",
+    "en": "The living room AC was professionally cleaned last Saturday, so you don't need to touch the filter.",
+    "alternatives": [
+      "We had the living room AC professionally cleaned last Saturday, so you don't need to touch the filter.",
+      "The living room AC got cleaned by a professional last Saturday, so there's no need to touch the filter."
+    ],
+    "point": "エアコンを主語にするなら was cleaned と受け身にする",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c69bc3a7d381a6dc75c9c38d71f0fb619426862f808381773f6744545fafe39",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

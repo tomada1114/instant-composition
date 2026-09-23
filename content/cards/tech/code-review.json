@@ -88,6 +88,28 @@
     }
   },
   {
+    "id": "c_3g7v9q9e",
+    "ja": "このバグ、先週の PR で入り込んだみたいです。",
+    "en": "It looks like this bug was introduced in last week's PR.",
+    "alternatives": [
+      "This bug seems to have been introduced in last week's PR.",
+      "It seems this bug was introduced by last week's PR."
+    ],
+    "point": "バグは「入れられた」ので was introduced と受動態にする",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 4,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:75d1ccc75ae53ffd17a496ed92a720c3348a2fa94b4b5bf194e4f3bb0bd48ecd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3n8n8p7v",
     "ja": "PR の説明に、パフォーマンスへの影響についての情報を少し追加してもらえますか？",
     "en": "Could you add some information about the performance impact to the PR description?",
@@ -176,6 +198,28 @@
     }
   },
   {
+    "id": "c_5d6b5p6p",
+    "ja": "テックリードが、この変数名はわかりにくいって言ってました。",
+    "en": "The tech lead said this variable name was confusing.",
+    "alternatives": [
+      "The tech lead said that this variable name was hard to understand.",
+      "The tech lead told me this variable name was confusing."
+    ],
+    "point": "said に合わせて is ではなく was にする",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 5,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:aa5e4d0040e9faabd9ecb9ef7e8113a5e775208979586d39dec4a20390082655",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5h6x3d4g",
     "ja": "この PR で追加されたテスト、本物の API を呼んでいるので、モックに置き換えたほうがいいと思います。",
     "en": "The tests added in this PR call the real API, so I think they should use mocks instead.",
@@ -194,6 +238,28 @@
         "hash": "sha256:646a8975b8ef95315f8c977a6b9577b3cfcb4377c6b7c99ef5c0ad86dd3d2a89",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6c8s8m7r",
+    "ja": "この PR をマージしたら、Slack でチームに知らせます。",
+    "en": "I'll let the team know on Slack when I merge this PR.",
+    "alternatives": [
+      "I'll tell the team on Slack when I merge this PR.",
+      "Once I merge this PR, I'll let the team know on Slack."
+    ],
+    "point": "未来のことでも when 節は現在形で merge とする",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 5,
+    "grammar": ["time-and-if-clauses", "future-forms"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7d022c54fcb4796dd171e6027c48c0a3b9b1746b740bac300c06ccee36c64e03",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

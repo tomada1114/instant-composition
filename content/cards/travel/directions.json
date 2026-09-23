@@ -242,6 +242,28 @@
     }
   },
   {
+    "id": "c_4c5v3v8e",
+    "ja": "すみません、この住所が地図のどのあたりなのか、それと歩いて行ける距離なのかどうか教えていただけますか？",
+    "en": "Excuse me, could you tell me where this address is on the map and whether it's within walking distance?",
+    "alternatives": [
+      "Excuse me, could you show me where this address is on the map and tell me if I can walk there?",
+      "Sorry, could you tell me where this address is on the map and if it's walkable?"
+    ],
+    "point": "where this address is の語順。is を前に出さない",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 7,
+    "grammar": ["indirect-questions", "requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c63a0fcaebb35e46819fdb8e9b4779c09fb12be3a0377dbd508a638e99d49558",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4u2k2k2j",
     "ja": "スマホの充電が切れていなければ自分で調べるんですが、駅までの行き方を教えてもらえますか？",
     "en": "If my phone weren't dead, I'd look it up myself, but could you tell me how to get to the station?",

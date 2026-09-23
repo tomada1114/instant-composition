@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2m3d2f9k",
+    "ja": "この図書館には、漫画がたくさんあるよ。",
+    "en": "There are a lot of manga in this library.",
+    "alternatives": [
+      "This library has a lot of manga.",
+      "There are lots of comics in this library."
+    ],
+    "point": "「たくさんある」は There are a lot of で言う",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 2,
+    "grammar": ["there-is-are", "articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4f4ec1f0dd4071aedddb1dea653bbdee5a903fe178c1696fee46a3fff63600a3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2u9y6x9y",
     "ja": "先週の日曜日、私は一日中家で映画を観ました。",
     "en": "I watched movies at home all day last Sunday.",

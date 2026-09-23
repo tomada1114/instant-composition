@@ -107,6 +107,28 @@
     }
   },
   {
+    "id": "c_4v2h9q3q",
+    "ja": "すみません、今おっしゃったことが聞き取れませんでした。",
+    "en": "Sorry, I didn't catch what you just said.",
+    "alternatives": [
+      "Sorry, I couldn't catch what you just said.",
+      "Sorry, I didn't hear what you just said."
+    ],
+    "point": "「おっしゃったこと」は what you said で表す",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["noun-clauses", "past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:089761d9f7c39e11a8d89cceea18e88a6ebb304c4a04e7fc85aa3f088a5eb199",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5u9t8g4c",
     "ja": "田中さん、マイクがミュートになっていますよ。もう一度言ってください。",
     "en": "Mr. Tanaka, you're on mute. Please say that again.",
@@ -125,6 +147,50 @@
         "hash": "sha256:6d68cf046e3f2ff7f395b52e44e7fdf91466abf7d17c798e11af9a21343d0a2a",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5y5x4e6x",
+    "ja": "私の声が途切れたら、チャットで教えてください。",
+    "en": "If my voice cuts out, please let me know in the chat.",
+    "alternatives": [
+      "Please let me know in the chat if my voice cuts out.",
+      "If my voice breaks up, please tell me in the chat."
+    ],
+    "point": "未来のことでも if 節は現在形 cuts out にする",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["time-and-if-clauses", "imperatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:748b7759851162bf557997ed276469628e79eeeb4c207d6bc13326d302d9a502",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6e5j8n8q",
+    "ja": "部長がいつ会議から戻るか、分かりますか？",
+    "en": "Do you know when the manager will be back from the meeting?",
+    "alternatives": [
+      "Do you know what time the manager will be back from the meeting?",
+      "Do you have any idea when the manager will be back from the meeting?"
+    ],
+    "point": "間接疑問は when the manager will be の語順にする",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:49b5bf3a8947f3a92f70c78fbd5e25d5ea239be5a11221c95bf07f0d2a80e16e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
