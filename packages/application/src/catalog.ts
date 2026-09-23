@@ -50,3 +50,21 @@ export function placeOf(
 export function toeicOf(snapshot: CatalogSnapshot, level: number): string {
   return snapshot.toeicByLevel.get(level) ?? "";
 }
+
+const EMPTY_SNAPSHOT: CatalogSnapshot = {
+  topics: [],
+  toeicByLevel: new Map(),
+  shown: new Map(),
+  known: new Map(),
+  tombstones: new Map(),
+};
+
+/** The snapshot, or an empty one a screen can still be drawn from when it cannot be read. */
+export async function snapshotOrEmpty(
+  catalog: Catalog,
+): Promise<{ readonly snapshot: CatalogSnapshot; readonly unreadable: boolean }> {
+  const read = await catalog.snapshot();
+  return read.ok
+    ? { snapshot: read.value, unreadable: false }
+    : { snapshot: EMPTY_SNAPSHOT, unreadable: true };
+}
