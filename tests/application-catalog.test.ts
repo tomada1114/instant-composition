@@ -4,6 +4,8 @@ import {
   cardFacts,
   catalogSnapshotOf,
   recordAnswers,
+  records,
+  settingsPage,
   startRound,
   updateSettings,
   type Catalog,
@@ -11,7 +13,13 @@ import {
   type CatalogSnapshot,
 } from "@instant-composition/application";
 
-import { answersFor, makeHarness, makeSnapshot } from "./application-harness";
+import { makeItem, makeStats } from "./application-fixtures";
+import {
+  answersFor,
+  fixedCatalog,
+  makeHarness,
+  makeSnapshot,
+} from "./application-harness";
 
 // A two-topic document for the pair en/ja, with one item of each kind the
 // builder writes: shown, shown without a ja localization, withdrawn and deleted.
@@ -251,5 +259,83 @@ describe("an answer naming a card edited since the round was dealt", () => {
     expect(resumed.ok && Object.keys(resumed.value.cards).sort()).toStrictEqual(
       [...others].sort(),
     );
+  });
+});
+
+describe("the records of a card no longer shown", () => {
+  it("count a mastered card where its retired entry now places it", async () => {
+    const snapshot: CatalogSnapshot = {
+      ...makeSnapshot(),
+      retired: new Map([
+        [
+          "gone",
+          {
+            id: "gone",
+            topic: "travel",
+            subtopic: "b",
+            level: 3,
+            words: null,
+            prompt: "消えた文",
+          },
+        ],
+      ]),
+    };
+    const h = makeHarness(fixedCatalog(snapshot));
+    await updateSettings(h.deps, h.context(), { topics: ["work", "travel"] });
+    await h.stores.forLearner(h.learner).commit({
+      puts: [
+        {
+          type: "item",
+          value: makeItem({
+            item: { kind: "composition", id: "gone" },
+            mastered: { day: "2026-09-20", sessionId: "r0" },
+            placement: { topic: "work", subtopic: "a" },
+          }),
+        },
+      ],
+      updates: [],
+      expect: [],
+    });
+
+    const view = await records(h.deps, h.context());
+    expect(view.ok && view.value.breakdown).toStrictEqual([
+      {
+        id: "work",
+        name: "workの話題",
+        subtopics: [
+          { id: "a", name: "work/a", count: 0 },
+          { id: "b", name: "work/b", count: 0 },
+        ],
+      },
+      {
+        id: "travel",
+        name: "travelの話題",
+        subtopics: [
+          { id: "a", name: "travel/a", count: 0 },
+          { id: "b", name: "travel/b", count: 1 },
+        ],
+      },
+    ]);
+  });
+});
+
+describe("a level with no TOEIC reference", () => {
+  it("shows an empty score rather than none", async () => {
+    const h = makeHarness(fixedCatalog({ ...makeSnapshot(), levels: new Map() }));
+    await h.stores.forLearner(h.learner).commit({
+      puts: [
+        {
+          type: "stats",
+          value: makeStats({
+            level: { level: 4, reason: "placement", roundId: null, at: 1_000 },
+          }),
+        },
+      ],
+      updates: [],
+      expect: [],
+    });
+
+    const view = await settingsPage(h.deps, h.context());
+    expect(view.ok && view.value.toeic).toBe("");
   });
 });
