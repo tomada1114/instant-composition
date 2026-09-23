@@ -1,5 +1,6 @@
 import { NextIntlClientProvider } from "next-intl";
 import { act, fireEvent, render, screen } from "@testing-library/react";
+import type { ReactNode } from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import ja from "../messages/ja.json";
@@ -16,13 +17,14 @@ vi.mock("../src/i18n/navigation", () => ({
   Link: ({
     href,
     children,
-    className,
+    ...rest
   }: {
     href: string;
-    children: string;
+    children: ReactNode;
     className?: string;
+    "aria-label"?: string;
   }) => (
-    <a href={href} className={className}>
+    <a href={href} {...rest}>
       {children}
     </a>
   ),
@@ -102,16 +104,18 @@ describe("HomeScreen, W3a: today's portion not started", () => {
     for (const day of ["mon", "tue", "wed", "thu", "fri", "sat", "sun"] as const) {
       expect(screen.getByText(ja.Home.week[day])).toBeInTheDocument();
     }
+    expect(screen.getByText("10")).toBeInTheDocument();
     expect(
-      screen.getByRole("heading", { name: ja.Home.today.title }),
+      screen.getByText(fill(ja.Home.today.minutes, { minutes: 5 })),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(fill(ja.Home.today.size, { count: 10, minutes: 5 })),
+      screen.getByText(fill(ja.Home.today.review, { count: 4 })),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(
-        fill(ja.Home.today.mixFocus, { review: 4, fresh: 6, focus: "meetings-ja" }),
-      ),
+      screen.getByText(fill(ja.Home.today.fresh, { count: 6 })),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(fill(ja.Home.today.focus, { names: "meetings-ja" })),
     ).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: ja.Home.today.start }));
     expect(push).toHaveBeenLastCalledWith("/drill?kind=today");
@@ -125,8 +129,11 @@ describe("HomeScreen, W3a: today's portion not started", () => {
       ),
     );
     expect(
-      screen.getByText(fill(ja.Home.today.mix, { review: 4, fresh: 6 })),
+      screen.getByText(fill(ja.Home.today.review, { count: 4 })),
     ).toBeInTheDocument();
+    expect(
+      screen.queryByText(fill(ja.Home.today.focus, { names: "" }), { exact: false }),
+    ).toBeNull();
   });
 
   it("says why the portion is smaller than the setting on a short day", () => {
@@ -136,11 +143,7 @@ describe("HomeScreen, W3a: today's portion not started", () => {
         { preview: { ...PREVIEW, size: 7, shortage: true, minutes: 4 } },
       ),
     );
-    expect(
-      screen.getByText(
-        fill(ja.Home.today.sizeShort, { count: 7, minutes: 4, setting: 10 }),
-      ),
-    ).toBeInTheDocument();
+    expect(screen.getByText("7")).toBeInTheDocument();
     expect(
       screen.getByText(fill(ja.Home.today.shortage, { count: 7 })),
     ).toBeInTheDocument();

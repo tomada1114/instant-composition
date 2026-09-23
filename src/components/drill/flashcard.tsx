@@ -1,46 +1,20 @@
 import { useTranslations } from "next-intl";
-import {
-  useEffect,
-  useLayoutEffect,
-  useRef,
-  useState,
-  type ReactElement,
-  type ReactNode,
-} from "react";
+import { useEffect, useLayoutEffect, useRef, useState, type ReactElement } from "react";
 
 import { cn } from "@/components/lib/utils";
-import { Chip } from "@/components/ui/chip";
+import { Eyebrow } from "@/components/ui/eyebrow";
+import { ReturnGlyph } from "@/components/ui/glyphs";
 
 import type { DrillCard } from "../../core/views";
 import { playMotion } from "./motion";
 
-/** Past this many characters a prompt runs to a third line at `front`, so it drops to `front-long`. */
-const FRONT_LONG_AFTER = 31;
+/** Past this many characters a prompt runs to a fourth line at `front`, so it drops to `front-long`. */
+const FRONT_LONG_AFTER = 36;
 
-function CardFrame({
-  glow = false,
-  onClick,
-  children,
-}: Readonly<{
-  glow?: boolean;
-  onClick?: () => void;
-  children: ReactNode;
-}>): ReactElement {
-  return (
-    <div
-      onClick={onClick}
-      className={cn(
-        "flex min-h-70 flex-1 flex-col overflow-hidden rounded-card bg-card p-6 transition-shadow duration-120",
-        glow &&
-          "shadow-glow motion-reduce:shadow-none motion-reduce:ring-2 motion-reduce:ring-accent",
-      )}
-    >
-      {children}
-    </div>
-  );
-}
-
-/** W4 and W4r: the prompt, with the "again" mark on a retry; empty while paused. */
+/**
+ * W4 and W4r: the prompt set large on the canvas itself — no card box — with
+ * the "again" mark on a retry; empty while paused. The whole area flips.
+ */
 export function CardFront({
   card,
   retry,
@@ -60,20 +34,30 @@ export function CardFront({
   }, [card.id, retry]);
 
   return (
-    <CardFrame {...(onFlip === undefined ? {} : { onClick: onFlip })}>
+    <div
+      data-part="card"
+      onClick={onFlip}
+      className="flex min-h-0 flex-1 flex-col justify-center pb-12"
+    >
       {hidden ? null : (
-        <div ref={content} className="flex flex-col items-start gap-4">
-          {retry ? <Chip variant="again">{t("again")}</Chip> : null}
+        <div ref={content} className="flex flex-col items-start gap-5">
+          {retry ? (
+            <Eyebrow className="flex items-center gap-1.5">
+              <ReturnGlyph className="size-3.5" />
+              {t("again")}
+            </Eyebrow>
+          ) : null}
           <p
-            className={
-              card.ja.length > FRONT_LONG_AFTER ? "text-front-long" : "text-front"
-            }
+            className={cn(
+              "text-balance",
+              card.ja.length > FRONT_LONG_AFTER ? "text-front-long" : "text-front",
+            )}
           >
             {card.ja}
           </p>
         </div>
       )}
-    </CardFrame>
+    </div>
   );
 }
 
@@ -87,37 +71,41 @@ function BackFooter({
   fast: boolean;
 }>): ReactElement {
   const t = useTranslations("Drill.card");
-  const chip = useRef<HTMLSpanElement>(null);
+  const mark = useRef<HTMLSpanElement>(null);
   const seconds = Math.round(elapsedMs / 100) / 10;
 
   useEffect(() => {
-    if (fast) playMotion(chip.current, "chip");
+    if (fast) playMotion(mark.current, "chip");
   }, [fast]);
 
   if (mode === "timeout") {
     return (
-      <div className="flex items-center justify-between gap-3">
-        <span className="text-label">{t("timedOut")}</span>
-        <Chip variant="review">{t("review")}</Chip>
-      </div>
+      <p className="flex items-center gap-2 text-label text-muted-foreground">
+        <ReturnGlyph className="size-4" />
+        <span>{t("timedOut")}</span>
+        <span aria-hidden>・</span>
+        <span>{t("review")}</span>
+      </p>
     );
   }
   return (
-    <div className="flex items-center justify-end">
+    <p className="flex justify-end">
       {fast ? (
-        <Chip ref={chip} variant="speed">
+        <span ref={mark} className="font-display text-figure-sm text-accent">
           {t("fast", { seconds })}
-        </Chip>
+        </span>
       ) : (
-        <span className="font-mono text-mono-md">{t("seconds", { seconds })}</span>
+        <span className="font-display text-figure-sm">{t("seconds", { seconds })}</span>
       )}
-    </div>
+    </p>
   );
 }
 
 /**
- * W5, W6 and W7: the answer to read. Only the card scrolls when it does not
- * fit; the area then takes focus, and ↑/↓ scroll it by `data-part`.
+ * W5, W6 and W7: the answer to read, top to bottom — the whole prompt, the
+ * model answer, the alternates between hairlines, the key point. Only this
+ * area scrolls when it does not fit; it then takes focus, and ↑/↓ scroll it
+ * by `data-part`.
  */
 export function CardBack({
   card,
@@ -143,53 +131,58 @@ export function CardBack({
   }, [card.id]);
 
   return (
-    <CardFrame glow={feedback?.result === "ok"}>
+    <div data-part="card" className="relative flex min-h-0 flex-1 flex-col">
       <div
         ref={area}
         data-part="back-scroll"
         tabIndex={overflowing ? 0 : undefined}
         className={cn(
-          "-m-2 flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto p-2",
+          "-mx-2 flex min-h-0 flex-1 flex-col gap-5 overflow-y-auto px-2 pt-5 pb-2",
           hidden && "invisible",
         )}
       >
-        <p className="truncate text-muted-foreground">{card.ja}</p>
+        <p className="text-point text-muted-foreground">{card.ja}</p>
         <p
           lang="en"
           className={cn(
             "font-latin text-answer transition-colors duration-160",
+            feedback?.result === "ok" && "text-accent",
             feedback?.result === "ng" && "text-muted-foreground",
           )}
         >
           {card.en}
         </p>
         {card.alternatives.length > 0 ? (
-          <div className="flex flex-col gap-2 rounded-tile bg-raised p-4">
+          <ul className="border-t border-border">
             {card.alternatives.map((alternative) => (
-              <p key={alternative} lang="en" className="font-latin text-alt">
+              <li
+                key={alternative}
+                lang="en"
+                className="border-b border-border py-3 font-latin text-alt text-soft"
+              >
                 {alternative}
-              </p>
+              </li>
             ))}
-          </div>
+          </ul>
         ) : null}
         <p className="text-point text-muted-foreground">
-          <span className="mr-2 text-label">{t("point")}</span>
+          <span className="mr-2 text-label text-foreground">{t("point")}</span>
           {card.point}
         </p>
-        <div className="mt-auto">
+        <div className="mt-auto pt-2">
           <BackFooter
             mode={mode}
             elapsedMs={elapsedMs}
             fast={feedback?.fast ?? false}
           />
         </div>
-        {overflowing ? (
-          <div
-            aria-hidden
-            className="pointer-events-none sticky bottom-0 -mt-10 h-6 shrink-0 bg-linear-to-b from-transparent to-card"
-          />
-        ) : null}
       </div>
-    </CardFrame>
+      {overflowing ? (
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-linear-to-b from-transparent to-background"
+        />
+      ) : null}
+    </div>
   );
 }

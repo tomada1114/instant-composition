@@ -2,55 +2,43 @@ import { useTranslations } from "next-intl";
 import type { ReactElement } from "react";
 
 import { Button } from "@/components/ui/button";
-import { Chip } from "@/components/ui/chip";
+import { Eyebrow } from "@/components/ui/eyebrow";
+import { ArrowGlyph } from "@/components/ui/glyphs";
+import { Kbd } from "@/components/ui/kbd";
 
-/** W2: how grading works and which keys do what, once, before the placement round. */
+/** W2: the three moves of a card, once, before the placement round. */
 export function IntroScreen({
   first,
   count,
   onStart,
 }: Readonly<{ first: boolean; count: number; onStart: () => void }>): ReactElement {
   const t = useTranslations("Drill.intro");
-  const card = useTranslations("Drill.card");
+  const steps = [t("say"), t("flip"), t("grade")];
   return (
-    <main className="mx-auto box-content flex min-h-[calc(100dvh-4rem)] max-w-column flex-col px-4 py-8">
-      <div className="flex flex-1 flex-col justify-center gap-8">
-        <div className="flex flex-col gap-2">
-          <h1>{first ? t("titleFirst", { count }) : t("titleAgain", { count })}</h1>
-          <p className="text-muted-foreground">{t("order")}</p>
-          <p className="text-muted-foreground">{t("portion", { count })}</p>
-        </div>
-        <ol className="flex list-decimal flex-col gap-3 pl-5">
-          <li>
-            {t("say")}
-            <span className="block text-muted-foreground">{t("sayNote")}</span>
-          </li>
-          <li>{t("flip")}</li>
-          <li>{t("grade")}</li>
-        </ol>
-        <p
-          aria-hidden
-          className="hidden flex-wrap items-center gap-x-4 gap-y-2 text-caption text-muted-foreground pointer-fine:flex"
-        >
-          <span className="inline-flex items-center gap-2">
-            <Chip variant="kbd">Space</Chip>
-            {card("flip")}
-          </span>
-          <span className="inline-flex items-center gap-2">
-            <Chip variant="kbd">→ J</Chip>
-            {card("said")}
-          </span>
-          <span className="inline-flex items-center gap-2">
-            <Chip variant="kbd">← F</Chip>
-            {card("notSaid")}
-          </span>
-        </p>
+    <main className="mx-auto box-content flex min-h-[calc(100dvh-2rem)] max-w-column flex-col px-4 pt-8 pb-3">
+      <div className="flex flex-col gap-3">
+        <Eyebrow aria-hidden>{t("eyebrow")}</Eyebrow>
+        <h1 className="text-heading">
+          {first ? t("titleFirst", { count }) : t("titleAgain", { count })}
+        </h1>
       </div>
+      <ol className="my-auto border-t border-border py-10">
+        {steps.map((step, index) => (
+          <li
+            key={step}
+            className="flex items-baseline gap-5 border-b border-border py-5"
+          >
+            <span aria-hidden className="font-mono text-mono-sm text-muted-foreground">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+            <span className="text-heading">{step}</span>
+          </li>
+        ))}
+      </ol>
       <Button className="w-full" onClick={onStart}>
         {t("start")}
-        <Chip variant="kbd" className="border-current text-current">
-          Space
-        </Chip>
+        <ArrowGlyph className="size-4.5" />
+        <Kbd>Space</Kbd>
       </Button>
     </main>
   );

@@ -1,5 +1,6 @@
 import { NextIntlClientProvider } from "next-intl";
 import { act, fireEvent, render, screen, within } from "@testing-library/react";
+import type { ReactNode } from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import ja from "../messages/ja.json";
@@ -13,13 +14,14 @@ vi.mock("../src/i18n/navigation", () => ({
   Link: ({
     href,
     children,
-    className,
+    ...rest
   }: {
     href: string;
-    children: string;
+    children: ReactNode;
     className?: string;
+    "aria-label"?: string;
   }) => (
-    <a href={href} className={className}>
+    <a href={href} {...rest}>
       {children}
     </a>
   ),
@@ -105,11 +107,16 @@ describe("SettingsScreen, W11 topics", () => {
     );
   });
 
-  it("never lets the last topic go", () => {
-    server();
+  it("never lets the last topic go, and says why once it is pressed", () => {
+    const bodies = server();
     renderSettings({ ...PAGE, settings: { ...SETTINGS, topics: ["work"] } });
-    expect(screen.getByRole("button", { name: /仕事/u })).toBeDisabled();
-    expect(screen.getByText(ja.Settings.topics.keepOne)).toBeInTheDocument();
+    const last = screen.getByRole("button", { name: /仕事/u });
+    expect(last).toHaveAttribute("aria-disabled", "true");
+    expect(last).toHaveAttribute("aria-pressed", "true");
+    expect(screen.queryByText(ja.Settings.topics.keepOne)).toBeNull();
+    fireEvent.click(last);
+    expect(bodies).toStrictEqual([]);
+    expect(screen.getByRole("status")).toHaveTextContent(ja.Settings.topics.keepOne);
   });
 
   it("says which focus went with a removed topic", async () => {
@@ -148,11 +155,13 @@ describe("SettingsScreen, W11 focus", () => {
       ],
     });
     expect(within(focus).getByRole("button", { name: "日程調整" })).toBeDisabled();
-    expect(screen.getByText(ja.Settings.focus.limit)).toBeInTheDocument();
+    expect(
+      screen.getByText(fill(ja.Settings.focus.count, { count: 2, max: 2 })),
+    ).toBeInTheDocument();
   });
 });
 
-describe("SettingsScreen, W11 size, sound and motion", () => {
+describe("SettingsScreen, W11 size and sound", () => {
   it("saves the daily size and says when it completes today", async () => {
     const bodies = server({ completedToday: true });
     renderSettings();
@@ -172,7 +181,7 @@ describe("SettingsScreen, W11 size, sound and motion", () => {
     expect(screen.getByText(ja.Settings.size.completed)).toBeInTheDocument();
   });
 
-  it("switches the sound, and shows the motion follows the system", async () => {
+  it("switches the sound", async () => {
     const bodies = server();
     renderSettings();
     const toggle = screen.getByRole("switch", { name: ja.Settings.sound.title });
@@ -181,7 +190,6 @@ describe("SettingsScreen, W11 size, sound and motion", () => {
     await settle();
     expect(bodies).toStrictEqual([{ sound: false }]);
     expect(toggle).toHaveAttribute("aria-checked", "false");
-    expect(screen.getByText(ja.Settings.motion.note)).toBeInTheDocument();
   });
 
   it("goes back to what was saved, and says so, when a save fails", async () => {

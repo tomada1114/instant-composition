@@ -2,10 +2,11 @@ import { useTranslations } from "next-intl";
 import { useRef, useState, type ReactElement } from "react";
 
 import { saveSettings } from "@/components/lib/api";
-import { NoteGlyph } from "@/components/ui/glyphs";
+import { SpeakerGlyph } from "@/components/ui/glyphs";
+import { IconButton } from "@/components/ui/icon-button";
 
 /**
- * ♪ at the top left: switches the sound effects, saved at once. Only the
+ * The speaker at the top: switches the sound effects, saved at once. Only the
  * latest save's answer moves the switch, and a failure puts back what was
  * last saved, so answers arriving out of order cannot strand it.
  */
@@ -26,14 +27,13 @@ export function SoundToggle({ initial }: Readonly<{ initial: boolean }>): ReactE
   }
 
   return (
-    <button
+    <IconButton
       type="button"
       aria-pressed={on}
       aria-label={on ? t("soundOn") : t("soundOff")}
       onClick={toggle}
-      className="flex size-11 items-center justify-center rounded-full text-foreground active:bg-raised"
     >
-      <NoteGlyph off={!on} />
-    </button>
+      <SpeakerGlyph off={!on} />
+    </IconButton>
   );
 }

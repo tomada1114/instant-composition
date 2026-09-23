@@ -15,17 +15,21 @@ export function DrillError({
   const notEnough = error.code === "ERR_NOT_ENOUGH_CARDS";
   return (
     <main className="mx-auto box-content flex min-h-[calc(100dvh-4rem)] max-w-column flex-col justify-center px-4 py-8">
-      <div className="flex flex-col items-start gap-4 rounded-card bg-card p-6">
-        <h1>{notEnough ? t("notEnoughTitle") : t("loadTitle")}</h1>
-        {notEnough ? (
-          <>
+      <div className="flex flex-col gap-5 rounded-card bg-card p-6">
+        <div className="flex flex-col gap-1">
+          <h1 className="text-heading">
+            {notEnough ? t("notEnoughTitle") : t("loadTitle")}
+          </h1>
+          {notEnough ? (
             <p className="text-muted-foreground">
               {t("notEnough", { count: error.available ?? 0 })}
             </p>
-            <Button asChild variant="secondary">
-              <Link href="/settings">{t("widen")}</Link>
-            </Button>
-          </>
+          ) : null}
+        </div>
+        {notEnough ? (
+          <Button asChild variant="secondary">
+            <Link href="/settings">{t("widen")}</Link>
+          </Button>
         ) : (
           <Button variant="secondary" onClick={onReload}>
             {t("reload")}

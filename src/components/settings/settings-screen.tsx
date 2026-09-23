@@ -36,7 +36,7 @@ function RetestSheet({
         </h2>
         <p className="text-muted-foreground">{t("body")}</p>
       </div>
-      <div className="flex flex-col gap-3">
+      <div className="flex flex-col gap-2.5">
         <Button variant="secondary" className="w-full" onClick={onCancel}>
           {t("cancel")}
         </Button>
@@ -60,7 +60,7 @@ export function SettingsScreen({
   const soundId = useId();
 
   return (
-    <main className="mx-auto box-content flex max-w-column flex-col gap-10 px-4 py-4">
+    <main className="mx-auto box-content flex max-w-column flex-col gap-10 px-4 pt-4 pb-10">
       <BackHeader title={t("title")} back={t("back")} escape={!asking} />
       {state.failed ? (
         <p role="alert" className="rounded-tile bg-raised px-4 py-3">
@@ -70,44 +70,36 @@ export function SettingsScreen({
       <TopicsSection topics={page.topics} state={state} />
       <FocusSection topics={page.topics} state={state} />
       <SizeSection state={state} />
-      <section className="flex flex-col gap-4">
-        <div className="flex items-center justify-between">
-          <h2 id={soundId} className="text-label text-muted-foreground">
-            {t("sound.title")}
-          </h2>
+      <section className="flex flex-col border-y border-border">
+        <div className="flex min-h-16 items-center justify-between gap-4">
+          <h2 id={soundId}>{t("sound.title")}</h2>
           <Toggle
             labelledBy={soundId}
             on={state.settings.sound}
-            words={state.settings.sound ? t("sound.on") : t("sound.off")}
             onChange={(sound) => {
               state.save({ sound });
             }}
           />
         </div>
-        <p className="flex gap-3">
-          <span className="text-label text-muted-foreground">{t("motion.title")}</span>
-          <span className="text-caption text-muted-foreground">{t("motion.note")}</span>
-        </p>
-      </section>
-      <section className="flex flex-col gap-4">
-        <p className="flex gap-3">
-          <span className="text-label text-muted-foreground">
+        <div className="flex min-h-16 items-center justify-between gap-4 border-t border-border">
+          <h2 className="flex items-baseline gap-3">
             {t("difficulty.title")}
-          </span>
-          <span>
-            {page.toeic === null
-              ? records("notMeasured")
-              : records("toeic", { toeic: page.toeic })}
-          </span>
-        </p>
-        <Button
-          variant="secondary"
-          onClick={() => {
-            setAsking(true);
-          }}
-        >
-          {t("difficulty.retest")}
-        </Button>
+            <span className="font-mono text-mono-sm text-muted-foreground">
+              {page.toeic === null
+                ? records("notMeasured")
+                : records("toeic", { toeic: page.toeic })}
+            </span>
+          </h2>
+          <Button
+            variant="text"
+            className="-mr-3 text-foreground"
+            onClick={() => {
+              setAsking(true);
+            }}
+          >
+            {t("difficulty.retest")}
+          </Button>
+        </div>
       </section>
       {asking ? (
         <RetestSheet

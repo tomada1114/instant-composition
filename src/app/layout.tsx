@@ -10,7 +10,7 @@ import "./globals.css";
  */
 export const viewport: Viewport = {
   colorScheme: "dark",
-  themeColor: "#000000",
+  themeColor: "#0a0a0b",
 };
 
 /**

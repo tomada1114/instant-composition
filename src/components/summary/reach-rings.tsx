@@ -2,7 +2,7 @@ import { useTranslations } from "next-intl";
 import { useId, type ReactElement } from "react";
 
 import type { ReachTopic, ReachView } from "../../core/views";
-import { cn } from "@/components/lib/utils";
+import { InfoTip } from "@/components/ui/info-tip";
 
 import type { Shown } from "./summary-parts";
 
@@ -68,8 +68,8 @@ function Label({
   const t = useTranslations("Summary.reach");
   return (
     <p className="flex items-baseline gap-2">
-      <span className="text-label">{topic.ja}</span>
-      <span className="font-latin">{count}</span>
+      <span className="text-label text-muted-foreground">{topic.ja}</span>
+      <span className="font-display text-figure-sm">{count}</span>
       {topic.added > 0 ? (
         <span className="text-label text-accent">
           {t("added", { count: topic.added })}
@@ -90,8 +90,13 @@ export function ReachRings({
   const empty = reach.topics.every((topic) => topic.count === 0);
   const grid = reach.topics.length > 4;
   return (
-    <section aria-labelledby={id} className="flex flex-col gap-4">
-      <h2 id={id}>{t("title")}</h2>
+    <section aria-labelledby={id} className="flex flex-col gap-5">
+      <div className="flex flex-wrap items-center gap-x-1">
+        <h2 id={id} className="text-muted-foreground">
+          {t("title")}
+        </h2>
+        <InfoTip label={t("infoLabel")} text={t("info")} />
+      </div>
       {grid ? (
         <ul data-layout="grid" className="grid grid-cols-2 gap-x-4 gap-y-4">
           {reach.topics.map((topic) => (
@@ -128,12 +133,14 @@ export function ReachRings({
       {empty ? (
         <p className="text-muted-foreground">{t("empty")}</p>
       ) : reach.nearest === null ? null : (
-        <div className={cn("flex flex-col")}>
-          <p className="text-caption text-muted-foreground">{t("next")}</p>
-          <p>
+        <p className="flex items-baseline gap-3">
+          <span className="font-mono text-eyebrow text-muted-foreground uppercase">
+            {t("next")}
+          </span>
+          <span>
             {t("nearest", { topic: reach.nearest.ja, count: reach.nearest.remaining })}
-          </p>
-        </div>
+          </span>
+        </p>
       )}
     </section>
   );

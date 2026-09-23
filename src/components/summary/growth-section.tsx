@@ -3,7 +3,6 @@ import { useId, useState, type ReactElement, type ReactNode } from "react";
 
 import type { Growth, ReviewRow } from "../../core/growth";
 import { Button } from "@/components/ui/button";
-import { Chip } from "@/components/ui/chip";
 
 import type { Shown } from "./summary-parts";
 
@@ -33,7 +32,7 @@ function Folded<T>({
       {rows.length > FOLDED ? (
         <Button
           variant="text"
-          className="self-end px-2"
+          className="-mr-3 self-end"
           aria-expanded={open}
           aria-controls={id}
           onClick={() => {
@@ -53,7 +52,7 @@ function Stat({
 }: Readonly<{ value: number; label: string }>): ReactElement {
   return (
     <div className="flex flex-col gap-1">
-      <span className="font-latin text-number-md text-accent">{value}</span>
+      <span className="font-display text-number-md text-accent">{value}</span>
       <span className="text-label">{label}</span>
     </div>
   );
@@ -68,8 +67,10 @@ export function GrowthSection({
   const id = useId();
   const grew = growth.faster + growth.fixed > 0;
   return (
-    <section aria-labelledby={id} className="flex flex-col gap-3">
-      <h2 id={id}>{t("title")}</h2>
+    <section aria-labelledby={id} className="flex flex-col gap-4">
+      <h2 id={id} className="text-muted-foreground">
+        {t("title")}
+      </h2>
       {grew ? (
         <>
           <div className="flex gap-10">
@@ -85,7 +86,7 @@ export function GrowthSection({
             render={(row) => (
               <>
                 <span className="flex-1 truncate">{row.ja}</span>
-                <span className="shrink-0 font-latin text-label">
+                <span className="shrink-0 font-mono text-mono-sm">
                   {row.kind === "faster"
                     ? t("delta", { seconds: row.deltaMs / 1000 })
                     : t("fixedRow")}
@@ -95,16 +96,14 @@ export function GrowthSection({
           />
         </>
       ) : growth.compared > 0 ? (
-        <div className="flex flex-col text-muted-foreground">
-          <p>{t("compared", { count: growth.compared })}</p>
-          <p>{t("again")}</p>
-        </div>
+        <p className="text-muted-foreground">
+          {t("compared", { count: growth.compared })}
+        </p>
       ) : null}
       {growth.firstTime > 0 ? (
-        <div className="flex flex-col text-muted-foreground">
-          <p>{t("firstTime", { count: growth.firstTime })}</p>
-          {growth.compared === 0 ? <p>{t("firstNext")}</p> : null}
-        </div>
+        <p className="text-muted-foreground">
+          {t("firstTime", { count: growth.firstTime })}
+        </p>
       ) : null}
     </section>
   );
@@ -120,26 +119,23 @@ export function ReviewSection({
   if (rows.length === 0) {
     return (
       <section>
-        <p>{t("none")}</p>
+        <p className="text-muted-foreground">{t("none")}</p>
       </section>
     );
   }
   return (
-    <section aria-labelledby={id} className="flex flex-col gap-3">
-      <div className="flex items-baseline gap-4">
-        <h2 id={id}>{t("title")}</h2>
-        <span className="font-latin text-number-md">
+    <section aria-labelledby={id} className="flex flex-col gap-4">
+      <div className="flex items-baseline justify-between gap-4">
+        <h2 id={id} className="text-muted-foreground">
+          {t("title")}
+        </h2>
+        <span className="font-display text-figure-sm">
           {shown("review", rows.length)}
         </span>
       </div>
       <Folded
         rows={rows}
-        render={(row) => (
-          <>
-            <span className="flex-1 truncate">{row.ja}</span>
-            <Chip variant="review">{t("chip")}</Chip>
-          </>
-        )}
+        render={(row) => <span className="flex-1 truncate">{row.ja}</span>}
       />
     </section>
   );

@@ -1,5 +1,6 @@
 import { NextIntlClientProvider } from "next-intl";
 import { act, fireEvent, render, screen, within } from "@testing-library/react";
+import type { ReactNode } from "react";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import ja from "../messages/ja.json";
@@ -13,13 +14,14 @@ vi.mock("../src/i18n/navigation", () => ({
   Link: ({
     href,
     children,
-    className,
+    ...rest
   }: {
     href: string;
-    children: string;
+    children: ReactNode;
     className?: string;
+    "aria-label"?: string;
   }) => (
-    <a href={href} className={className}>
+    <a href={href} {...rest}>
       {children}
     </a>
   ),
@@ -98,7 +100,7 @@ beforeEach(() => {
 });
 
 describe("RecordsScreen, W10", () => {
-  it("shows the rings, the difficulty, the run, the totals and the rules, with no accent", () => {
+  it("shows the rings, the difficulty, the run and the totals, with no accent", () => {
     renderRecords(RECORDS);
     expect(
       screen.getByRole("heading", { level: 1, name: ja.Records.title }),
@@ -114,17 +116,26 @@ describe("RecordsScreen, W10", () => {
     expect(
       screen.getByText(fill(ja.Records.longest, { days: 21 })),
     ).toBeInTheDocument();
-    expect(
-      screen.getByText(fill(ja.Records.totals, { said: "2,315", days: 79 })),
-    ).toBeInTheDocument();
-    expect(
-      screen.getByText(fill(ja.Records.points, { points: "3,105" })),
-    ).toBeInTheDocument();
-    expect(screen.getByText(ja.Records.rules.mastered)).toBeInTheDocument();
-    expect(screen.getByText(ja.Records.rules.streak)).toBeInTheDocument();
+    expect(screen.getByText("2,315")).toBeInTheDocument();
+    expect(screen.getByText("79")).toBeInTheDocument();
+    expect(screen.getByText("3,105")).toBeInTheDocument();
     expect(
       document.querySelector(".text-accent, .bg-accent, .stroke-accent"),
     ).toBeNull();
+  });
+
+  it("folds the counting rules behind their buttons until asked", () => {
+    renderRecords(RECORDS);
+    for (const [label, text] of [
+      [ja.Summary.reach.infoLabel, ja.Summary.reach.info],
+      [ja.Records.rules.label, ja.Records.rules.streak],
+    ] as const) {
+      const button = screen.getByRole("button", { name: label });
+      expect(screen.getByText(text)).not.toBeVisible();
+      fireEvent.click(button);
+      expect(button).toHaveAttribute("aria-expanded", "true");
+      expect(screen.getByText(text)).toBeVisible();
+    }
   });
 
   it("opens one topic's breakdown in place, bars relative to its largest subtopic", () => {
@@ -158,8 +169,8 @@ describe("RecordsScreen, W10", () => {
     expect(dots.querySelectorAll("[data-state='done']")).toHaveLength(60);
     const titles = screen.getByRole("region", { name: ja.Records.titles.title });
     expect(within(titles).getByText(ja.Records.titles.streak)).toBeInTheDocument();
-    expect(within(titles).getByText("7・14")).toBeInTheDocument();
-    expect(within(titles).getByText("10・25・50・100")).toBeInTheDocument();
+    expect(within(titles).getByText("7 · 14")).toBeInTheDocument();
+    expect(within(titles).getByText("10 · 25 · 50 · 100")).toBeInTheDocument();
   });
 
   it("goes back on Esc", () => {

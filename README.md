@@ -46,7 +46,7 @@ CONTENT_DIR=../instant-composition-cards/content PROGRESS_DB_PATH=/tmp/try.sqlit
 It was started from a Next.js App Router template by following
 [`starting-an-app`](.agents/skills/starting-an-app/SKILL.md): the template's identity
 was renamed and its language-model layer removed whole. The design direction is settled
-— a dark-only "night scoreboard", black with one neon green — and lives in the
+— a dark-only "instrument", near-black with one lime — and lives in the
 [`designing-ui`](.agents/skills/designing-ui/SKILL.md) skill with its tokens in
 `src/app/globals.css`. The first version's screens are built: the topic choice and
 placement, the start screen, the drill, the end-of-round summary and its recap, the

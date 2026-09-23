@@ -1,5 +1,6 @@
 import { NextIntlClientProvider } from "next-intl";
 import { act, fireEvent, render, screen, within } from "@testing-library/react";
+import type { ReactNode } from "react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import ja from "../messages/ja.json";
@@ -14,13 +15,14 @@ vi.mock("../src/i18n/navigation", () => ({
   Link: ({
     href,
     children,
-    className,
+    ...rest
   }: {
     href: string;
-    children: string;
+    children: ReactNode;
     className?: string;
+    "aria-label"?: string;
   }) => (
-    <a href={href} className={className}>
+    <a href={href} {...rest}>
       {children}
     </a>
   ),
@@ -179,7 +181,6 @@ describe("SummaryScreen, a round with nothing to compare or review", () => {
     expect(
       screen.getByText(fill(ja.Summary.growth.compared, { count: 4 })),
     ).toBeInTheDocument();
-    expect(screen.getByText(ja.Summary.growth.again)).toBeInTheDocument();
     expect(
       screen.getByText(fill(ja.Summary.growth.firstTime, { count: 6 })),
     ).toBeInTheDocument();
@@ -199,8 +200,9 @@ describe("SummaryScreen, a round with nothing to compare or review", () => {
     expect(
       screen.getByText(fill(ja.Summary.growth.firstTime, { count: 10 })),
     ).toBeInTheDocument();
-    expect(screen.getByText(ja.Summary.growth.firstNext)).toBeInTheDocument();
-    expect(screen.queryByText(ja.Summary.growth.again)).not.toBeInTheDocument();
+    expect(
+      screen.queryByText(fill(ja.Summary.growth.compared, { count: 0 })),
+    ).not.toBeInTheDocument();
   });
 });
 
@@ -217,11 +219,6 @@ describe("SummaryScreen titles", () => {
       fill(ja.Summary.titles.reach, { topic: "日常", count: 100 }),
       fill(ja.Summary.titles.reach, { topic: "仕事", count: 25 }),
     ]);
-    expect(
-      screen.getByText(
-        fill(ja.Summary.titles.reachNote, { topic: "日常", count: 100 }),
-      ),
-    ).toBeInTheDocument();
   });
 });
 
@@ -299,7 +296,6 @@ describe("SummaryScreen, W9f: the first round", () => {
     expect(
       screen.getByText(fill(ja.Summary.placement.start, { toeic: "600" })),
     ).toBeInTheDocument();
-    expect(screen.getByText(ja.Summary.placement.note)).toBeInTheDocument();
   });
 
   it("says where the next rounds go after a re-test", () => {
