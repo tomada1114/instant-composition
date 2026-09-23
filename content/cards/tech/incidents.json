@@ -242,6 +242,28 @@
     }
   },
   {
+    "id": "c_9s2a2q5z",
+    "ja": "うちのチームは、本番に出す前に負荷テストをもう少し長く回しておくべきだったと思います。",
+    "en": "I think we should have run the load test a bit longer before we pushed to production.",
+    "alternatives": [
+      "I think our team should have run the load test longer before going to production.",
+      "We should've let the load test run a little longer before deploying to production, I think."
+    ],
+    "point": "過去の後悔は should have + 過去分詞（run は run のまま）",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5a597dce12de2f961da4beb63b18ba107fea4096fe346ae6d4f1ccf3ba73d7e6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_9y8t7m3g",
     "ja": "再発防止策を金曜日までにまとめてもらえますか？",
     "en": "Could you write up the preventive measures by Friday?",

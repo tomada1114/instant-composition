@@ -154,6 +154,28 @@
     }
   },
   {
+    "id": "c_5r2v9h6s",
+    "ja": "あのとき誘いを断ってなかったら、今ごろ私もみんなとキャンプ場にいたんだろうな。",
+    "en": "If I hadn't turned down the invitation, I'd be at the campsite with everyone right now.",
+    "alternatives": [
+      "If I hadn't said no to the invitation, I'd be at the campsite with everyone now.",
+      "If I'd accepted the invitation, I'd be at the campsite with everyone right now."
+    ],
+    "point": "過去の条件は had 過去分詞、今の結果は would be",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["mixed-conditional", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:90a2df3fb8aa3781731959e6e979399d86ec79e23753cedeb8d86d09238b38fc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5v8f8e9v",
     "ja": "たとえ少し遅れても、ぜひ今夜のパーティーには来てね。",
     "en": "Even if you're a little late, please come to the party tonight.",
@@ -236,6 +258,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:7054a4a69f0929bbb22c80a8fd7ef1841d6b944b2f2f7990d398b4139075f7a9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9g8t3q4u",
+    "ja": "彼女が本当に知りたいのは、君が土曜のパーティーに来られるかどうかだよ。",
+    "en": "What she really wants to know is whether you can come to the party on Saturday.",
+    "alternatives": [
+      "What she really wants to know is if you can make it to the party on Saturday.",
+      "What she actually wants to know is whether you can come to Saturday's party."
+    ],
+    "point": "「〜なのは」は What で始め、かどうかは whether 節",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["cleft-emphasis", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:827a8948ffa64996ea577d49c8b7e25a21aaa9c1856011d8ed140eeee3286b0a",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

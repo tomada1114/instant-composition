@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2x6h8a6n",
+    "ja": "ステージング環境、今日の午後まで私に使わせてもらえませんか？負荷テストをやり直したいんです。",
+    "en": "Could you let me use the staging environment until this afternoon? I want to rerun the load test.",
+    "alternatives": [
+      "Would you let me use the staging environment until this afternoon? I'd like to redo the load test.",
+      "Could you let me have the staging environment until this afternoon? I need to run the load test again."
+    ],
+    "point": "使わせて = let me use。to use にしない",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 7,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:25798d37697cdad39a613d951d1682c59df7a2656beea3f358807b609d68be8c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3w4r9q2c",
     "ja": "今日私がやらなきゃいけないのは、昨日見つかったログイン画面のバグを直すことです。",
     "en": "What I need to do today is fix the login bug we found yesterday.",
@@ -38,6 +60,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:bdf4d0d8eeb2cd6b6fb9d3dbe29fc6187d88b951ead5a8c96d79a388f15c4dad",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4w7s6n3x",
+    "ja": "昨日のデプロイが何の警告もなく失敗したので、誰かが環境変数を消してしまったに違いありません。",
+    "en": "Yesterday's deploy failed without any warning, so someone must have deleted an environment variable.",
+    "alternatives": [
+      "Since yesterday's deploy failed without any warning, someone must have removed an environment variable.",
+      "Yesterday's deployment failed with no warning, so somebody must have deleted an environment variable."
+    ],
+    "point": "過去の推量は must have + 過去分詞",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cd87384d8a189f1bf6d7144eb63135460510422128d562cad39176a512184a98",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
@@ -104,6 +148,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:0847c67a751e1552ff3bcddc067f606b8c4f2897c771746122114a7cb43d5343",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5s8j6f2k",
+    "ja": "今日はインターンの人にテストケースを書いてもらって、私はレビューに集中するつもりです。",
+    "en": "Today I'm going to have our intern write the test cases so I can focus on reviews.",
+    "alternatives": [
+      "Today I'll have our intern write the test cases so that I can concentrate on reviewing.",
+      "Today I'm getting our intern to write the test cases so I can focus on reviews."
+    ],
+    "point": "have + 人 + 動詞の原形。to は付けない",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a81f38c5ac89278529a592e417e4d27ae50322d813e1db661bb8cd77c2ff5028",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

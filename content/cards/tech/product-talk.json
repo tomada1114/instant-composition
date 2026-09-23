@@ -199,6 +199,28 @@
     }
   },
   {
+    "id": "c_7t5z5e7y",
+    "ja": "お忙しいところすみませんが、エクスポート機能を次のスプリントに入れていただけないかと思いまして。",
+    "en": "Sorry to bother you, but I was wondering if you could fit the export feature into the next sprint.",
+    "alternatives": [
+      "Sorry to bother you, but I was wondering whether you could add the export feature to the next sprint.",
+      "I'm sorry to trouble you, but I was wondering if the export feature could go into the next sprint."
+    ],
+    "point": "I was wondering if で依頼を柔らかくする",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:657400e5ce75aa0b12bde924e8f75cdf84b361ee1f4f4003033c5cb4bd4380ba",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_8b3c5b6t",
     "ja": "もしうちにエンジニアがあと二人いたら、あなたなら検索機能を先に作りますか？",
     "en": "If we had two more engineers, would you build the search feature first?",
@@ -215,6 +237,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:f5ee7190ec64312f859231d6d02149182d5fccdd59d0ab297be24ca8cf98c2a9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8g6r7m8x",
+    "ja": "PM は、決済機能のリリースは来月までずれ込むかもしれないと言っていました。",
+    "en": "The PM said the payment feature release might be pushed back until next month.",
+    "alternatives": [
+      "The PM said the release of the payment feature might slip to next month.",
+      "The PM told us the payment feature might not be released until next month."
+    ],
+    "point": "said に合わせて may ではなく might にする",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 6,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cb6e44f4655fe2e9a1c8d7ca393afc6dccf3ea95e1e4f3e38a005fe16ec2d481",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9c6s7g9r",
+    "ja": "うちが先月ダークモードを優先していたら、今ごろこんなにサポートへの問い合わせは来ていないでしょうね。",
+    "en": "If we had prioritized dark mode last month, we wouldn't be getting so many support requests now.",
+    "alternatives": [
+      "If we'd prioritized dark mode last month, we probably wouldn't be getting this many support tickets now.",
+      "Had we made dark mode a priority last month, we wouldn't be getting so many support requests right now."
+    ],
+    "point": "過去の仮定は had + 過去分詞、今の結果は would be",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:81589bd6b343b6ce20c3bf14a005756ddc8039d86f045a81244055aed98b691a",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

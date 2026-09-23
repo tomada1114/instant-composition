@@ -111,6 +111,28 @@
     }
   },
   {
+    "id": "c_4p6t9w8t",
+    "ja": "お腹すいたね。あのカフェでランチを食べよう。",
+    "en": "I'm hungry. Let's have lunch at that cafe.",
+    "alternatives": [
+      "I'm starving. Let's get lunch at that cafe.",
+      "I'm getting hungry. Let's eat lunch at that cafe."
+    ],
+    "point": "lunch には a を付けない",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 1,
+    "grammar": ["imperatives", "articles-and-countability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b26747af38c745b6e3529915110c68859622a14bd03dde5c602277c3eafd3f92",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4p9n4f8s",
     "ja": "あの人気のラーメン屋は、先に予約しないといけないよ。",
     "en": "You have to book ahead at that popular ramen place.",
@@ -155,6 +177,28 @@
     }
   },
   {
+    "id": "c_4v7n7w8p",
+    "ja": "シェフが今朝市場で仕入れてきたという魚を使った料理、二人分まだ注文できますか？",
+    "en": "Can we still order two portions of the dish made with the fish the chef bought at the market this morning?",
+    "alternatives": [
+      "Is it still possible for us to order two servings of the dish that uses the fish the chef got at the market this morning?",
+      "Could we still get two orders of the dish made with the fish the chef picked up at the market this morning?"
+    ],
+    "point": "the fish の後ろに the chef bought をそのままつなぎ、関係詞は省ける",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1e9966d7a1b74492bd18b4e98aed6b68876eaaac47c60ebed01c97d62a5b9be3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5y9w2n9g",
     "ja": "すみません、窓際の席に座ってもいいですか？",
     "en": "Excuse me, may I sit by the window?",
@@ -172,6 +216,25 @@
     "stamps": {
       "core": {
         "hash": "sha256:f357eab8e382e3b4198fc73534d0298eae62c9d265de2e13bd7400da2cd363e1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6t8p3t2d",
+    "ja": "このお店、カードで払えますか？",
+    "en": "Can I pay by card here?",
+    "alternatives": ["Can I pay with a card here?", "Do you take cards here?"],
+    "point": "「カードで」は by card。by の後は冠詞なし",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ecd2e7303db6b5af8a6ba2d96145e685687ef28794889e4d07f3ac5dbdd647ed",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

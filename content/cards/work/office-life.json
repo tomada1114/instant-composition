@@ -1,5 +1,49 @@
 [
   {
+    "id": "c_2j5d8e3v",
+    "ja": "今朝、IT 部門に新しいノートパソコンの設定をしてもらいました。",
+    "en": "I had the IT department set up my new laptop this morning.",
+    "alternatives": [
+      "I got the IT department to set up my new laptop this morning.",
+      "The IT department set up my new laptop for me this morning."
+    ],
+    "point": "have＋人＋動詞の原形。get なら to が要る",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 5,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f6b7b405d874bf1ad24f028c48ad8b44a264ff9c10649494da607905cb2f192a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2k8q5j2y",
+    "ja": "彼女が体調悪いって言ってくれていたら、私たちが仕事を代わってあげたのに。",
+    "en": "If she had told us she wasn't feeling well, we would have covered for her.",
+    "alternatives": [
+      "We would have covered for her if she had told us she wasn't feeling well.",
+      "If she'd let us know she was sick, we'd have covered for her."
+    ],
+    "point": "過去の仮定は if＋had 過去分詞、would have＋過去分詞",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:28fb6cd52d60128cdc4b208e15a2d505b7450d3158b34b9508e4075d59676ebf",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3h6p7q2w",
     "ja": "もし在宅勤務ができたら、毎朝早起きしなくて済むのに。",
     "en": "If I could work from home, I wouldn't have to get up early every morning.",
@@ -38,6 +82,72 @@
     "stamps": {
       "core": {
         "hash": "sha256:7578780551dfd1f8515bcc7e86f26e78d7d848ab96cfc504811cbf54d5398261",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8f4d6q7y",
+    "ja": "課長には、金曜は休みを取ると伝えて、いない間に誰か私の電話を取ってもらえないかと頼んでおいた。",
+    "en": "I told my manager I'd be taking Friday off and asked whether someone could cover my calls while I was out.",
+    "alternatives": [
+      "I told my manager I was taking Friday off and asked if someone could take my calls while I was away.",
+      "I let my manager know I'd be off on Friday and asked whether someone could answer my calls while I was out."
+    ],
+    "point": "時制の一致で will は would、can は could に",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 8,
+    "grammar": ["reported-speech", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5e8b3c6bc82cdfb4fb29ac22b10b4c7e4e630f72c3fc62e243abac29e7b911a4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9a2w6t6j",
+    "ja": "誰かホッチキス見ませんでしたか？昨日はこの棚にあったんですけど。",
+    "en": "Has anyone seen the stapler? It was on this shelf yesterday.",
+    "alternatives": [
+      "Has anybody seen the stapler? It was here on this shelf yesterday.",
+      "Did anyone see the stapler? It was on this shelf yesterday."
+    ],
+    "point": "yesterday がある文は現在完了にせず過去形",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 4,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:84f0727957314b0472f26401b7615bb2c6572e416f542dc65120e9b205575844",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9s2x4k5c",
+    "ja": "私が本当に知りたいのは、誰が私の机のホッチキスを持っていっては戻さないのかってことなんだよね。",
+    "en": "What I'd really like to know is who keeps taking the stapler from my desk without putting it back.",
+    "alternatives": [
+      "What I really want to know is who keeps taking my stapler and never puts it back.",
+      "What I'd like to know is who keeps borrowing the stapler from my desk and not returning it."
+    ],
+    "point": "「持っていっては戻さない」は keeps taking と without putting it back で表す",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 8,
+    "grammar": ["noun-clauses", "nested-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e8c9b0218120d9725a5ba0664e0bc6eee2307489fdc7c2e592e4abb73f82442a",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

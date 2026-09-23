@@ -1,5 +1,49 @@
 [
   {
+    "id": "c_2t9f9k6q",
+    "ja": "兄に夕食に誘われたとき、私はもう別の予定を入れてしまっていた。",
+    "en": "When my brother invited me to dinner, I'd already made other plans.",
+    "alternatives": [
+      "I had already made other plans when my brother invited me to dinner.",
+      "By the time my brother asked me to dinner, I'd already made other plans."
+    ],
+    "point": "誘われた時点より前の予定は had made の過去完了",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:44a7a56805e5d2c6178a95016fc90845c4a5235828078eec95dd6f70f97abe57",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4g8r9d3x",
+    "ja": "土曜のバーベキュー、私たち何時に集合することになったんだっけ？",
+    "en": "What time did we decide to meet for Saturday's barbecue?",
+    "alternatives": [
+      "What time did we agree to meet for Saturday's barbecue?",
+      "When did we decide to meet for the barbecue on Saturday?"
+    ],
+    "point": "What time を文頭に置き、後ろは did we decide の疑問文の語順",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 3,
+    "grammar": ["wh-questions", "infinitives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ca160af1eb3127389b8859d4181c8958607d9f8a836ada8cb337ffa4ebda71ce",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4v2c8w4h",
     "ja": "あのとき飛行機を予約しておけば、今ごろ私たちは沖縄のビーチでのんびりしているのにね。",
     "en": "If we'd booked the flight back then, we'd be relaxing on a beach in Okinawa right now.",
@@ -104,6 +148,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:aa74bd6f364a6dd03f0477077ba3b84b53fa171b459142fae01a73aeb15b7a29",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7y3h6j3u",
+    "ja": "日曜のピクニックは雨のせいで来週に延期されたよ。",
+    "en": "Sunday's picnic has been postponed until next week because of the rain.",
+    "alternatives": [
+      "Sunday's picnic was put off until next week because of the rain.",
+      "Because of the rain, Sunday's picnic has been pushed back to next week."
+    ],
+    "point": "ピクニックが主語なので has been postponed の受け身",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 4,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:31f77a0cf8f8ec20ef5fe8022a2f414014990b77167312926079ef5cfcbc1af0",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

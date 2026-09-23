@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_2k2a7z8f",
+    "ja": "仕事は相変わらず忙しいけど、最近は週末に料理教室に通ってるんだ。",
+    "en": "Even though work is still busy, I've been taking a cooking class on weekends lately.",
+    "alternatives": [
+      "Although work is as busy as ever, I've been going to a cooking class on weekends recently.",
+      "Work's still busy, but lately I've been taking cooking classes on weekends."
+    ],
+    "point": "続いている習慣は現在完了進行形 I've been taking",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["concession-contrast", "present-perfect-continuous"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:129cf98dd1c5e12155407a5d20433436244a48447d30ef4c82c29fd06040f606",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2p6s3e3g",
     "ja": "もしあの時あの会社を辞めてなかったら、僕は今の妻には出会ってなかっただろうね。",
     "en": "If I hadn't quit that company back then, I never would have met my wife.",
@@ -38,6 +60,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:383bfb71838773c4681cc9d9a56f5bf6d51dfead8e3cd68f0b30e26601a5331a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3h6h9m4p",
+    "ja": "妹は今留学中で、ホストファミリーからたくさん役立つアドバイスをもらってるらしいよ。",
+    "en": "My sister is studying abroad, and apparently she's getting a lot of useful advice from her host family.",
+    "alternatives": [
+      "My sister's studying abroad now, and I hear she's getting lots of helpful advice from her host family.",
+      "My sister is studying abroad, and it sounds like her host family is giving her a lot of useful advice."
+    ],
+    "point": "advice は数えられないので advices にしない",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fc1a35844d6a1016910b8ccc43368ceed00770fb14b2403e649f71f0b0c5f1f5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3t3d3e8q",
+    "ja": "君が前に住んでたアパートの隣のラーメン屋って、まだやってる？",
+    "en": "Is the ramen shop next to your old apartment still in business?",
+    "alternatives": [
+      "Is that ramen place next to the apartment you used to live in still open?",
+      "Is the ramen shop next to where you used to live still around?"
+    ],
+    "point": "「〜の隣の」は名詞の後ろに next to を置く",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dac0e814e643cfb26c6e0250d39bd2b58a88c6ba23dc22a03d7afead27b49b0a",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

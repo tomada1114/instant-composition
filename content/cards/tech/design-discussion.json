@@ -44,6 +44,50 @@
     }
   },
   {
+    "id": "c_2r7u7b9t",
+    "ja": "リードエンジニアは、この設計が長期的にはうまくスケールしないと最初から気づいていたのかもしれません。",
+    "en": "The lead engineer may have realized from the start that this design wouldn't scale well in the long run.",
+    "alternatives": [
+      "The lead engineer might have known from the beginning that this design wouldn't scale well long-term.",
+      "Maybe the lead engineer realized right from the start that this design wouldn't scale well over time."
+    ],
+    "point": "過去の推量は may have + 過去分詞、that 節は時制を合わせ wouldn't",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 7,
+    "grammar": ["modal-perfect", "noun-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b48dab4c6f75fbd4e8897e86c478ec737a844a3d5fca9c807cd8d4fa83e2c81e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3e4s2f2q",
+    "ja": "僕たちがレビューをやる前に、佐藤さんはもうデータベースの読み取りと書き込みを分ける案を出していたんだよ。",
+    "en": "Before we held the review, Sato had already suggested separating database reads and writes.",
+    "alternatives": [
+      "Sato had already proposed splitting database reads and writes before we did the review.",
+      "By the time we had the review, Sato had already suggested separating reads and writes in the database."
+    ],
+    "point": "レビューより前の出来事なので had suggested",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f4768f2beed25f2b5c4980d2e433c84ccdc0a7f9fb065ba26ae20bea6651dc8c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4t9m2s7d",
     "ja": "僕たちが去年メッセージキューを選んでいたら、今こんなにタイムアウトで苦労していないはずだよね。",
     "en": "If we had chosen a message queue last year, we wouldn't be struggling with these timeouts now.",
@@ -82,6 +126,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:b2b62e98e96279ae6ba7596a430b3eae6f0b5c0b1801343971bc34d30a2e36d8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6j9k2v3y",
+    "ja": "僕たち、もう3週間もキャッシュ層の設計について議論してるのに、まだ誰もベンチマークを取ってないよね。",
+    "en": "We've been debating the caching layer for three weeks, but nobody has run a benchmark yet.",
+    "alternatives": [
+      "We've been discussing the cache layer design for three weeks, and still no one has run a benchmark.",
+      "We've been arguing about the caching layer for three weeks now, yet nobody's done any benchmarking."
+    ],
+    "point": "続いている議論は現在完了進行形 have been debating",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 6,
+    "grammar": ["present-perfect-continuous", "tense-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:069016a9ab2fd26f1afcd585a95386f7cf8b4935f789b2ea5f2008d4a31c704a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6n5k4r6j",
+    "ja": "最初に GraphQL を採用しましたけど、それ以来、開発って本当に速くなったと思いますか？",
+    "en": "We adopted GraphQL at the start, but do you think it has actually made development faster since then?",
+    "alternatives": [
+      "We chose GraphQL at the beginning, but do you think development has really gotten faster since then?",
+      "We went with GraphQL from the start, but do you feel it's actually sped up development since then?"
+    ],
+    "point": "since then があるので後半は現在完了 has made",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4d55e88de8a4abc55217b09906700a4f24cfa949442a6e35c260a6d93b3cb32e",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

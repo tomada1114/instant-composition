@@ -88,6 +88,28 @@
     }
   },
   {
+    "id": "c_9a3g6x5m",
+    "ja": "御社で、新規事業を担当しているチームに加わるチャンスはありますか？",
+    "en": "Is there a chance I could join the team working on new ventures at your company?",
+    "alternatives": [
+      "Would I have a chance to join the team in charge of new ventures here?",
+      "Would there be an opportunity to join the team handling new ventures at your company?"
+    ],
+    "point": "「担当しているチーム」は the team working on と後ろから説明",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 6,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0debbd469d802cc5fb98d1b116801054a89632b51a8e3baddcf6dd651ceb8d6e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_9b3f9r9c",
     "ja": "私は大阪の小さな会社でエンジニアをしています。",
     "en": "I'm an engineer at a small company in Osaka.",
@@ -104,6 +126,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:be2e862f781f13c52e4fbafec3c1ff4e982e567251f4f6d64bb6726f0770e567",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9v3b4s4y",
+    "ja": "学生のうちに英語をもっと真剣に勉強しておけばよかったと、今でも思っています。",
+    "en": "I still wish I had studied English more seriously when I was a student.",
+    "alternatives": [
+      "I still wish I'd taken English more seriously as a student.",
+      "Even now, I wish I had studied English harder when I was a student."
+    ],
+    "point": "過去への後悔は wish の後を had + 過去分詞にする",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:10e9caf37cc20fa25267427af41cd45afdd7efefb03ae1c2a2d94d7a73bba4d0",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

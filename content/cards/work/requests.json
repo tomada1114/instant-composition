@@ -66,6 +66,28 @@
     }
   },
   {
+    "id": "c_2p8n4p4b",
+    "ja": "こちらで締め切りを一週間延ばせるとしても、この翻訳をお願いするのはやはり難しいですか？",
+    "en": "Even if we could push the deadline back a week, would it still be hard for you to take on this translation?",
+    "alternatives": [
+      "Even if we pushed the deadline back a week, would it still be difficult for you to take on this translation?",
+      "Would it still be hard for you to handle this translation even if we could extend the deadline by a week?"
+    ],
+    "point": "仮定の「としても」は even if に could を合わせ、主節は would",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["concession-contrast", "second-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:aba336c25da563492770abe258bc5da84443f22c7e43e774e255fb65b0d1b6bf",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2w6p8c5a",
     "ja": "この件は、経理に詳しい田中さんに頼んだほうがいいですよ。",
     "en": "You should ask Tanaka, who knows a lot about accounting, to handle this.",
@@ -214,6 +236,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:38666abd5009eb4c812f556602edd6b4aad37f3b6a70ca0f1be9c45eae0c53d7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5e5h3q2e",
+    "ja": "来週までに予算が承認されるなら喜んで引き受けます、と私から先方に伝えました。",
+    "en": "I told the client I'd be happy to take it on as long as the budget was approved by next week.",
+    "alternatives": [
+      "I told the client that I'd gladly take it on if the budget was approved by next week.",
+      "I let the client know I'd be happy to take it on provided the budget got approved by next week."
+    ],
+    "point": "told に合わせて will は would、is は was に時制をそろえる",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8a0122b66a3a33ab41056adb8f852a2a47411098678c27e021ccc32e38a259ed",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

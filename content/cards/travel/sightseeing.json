@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_2s4s8y4r",
+    "ja": "もし雨が降ったら、ボートツアーは中止になりますか？",
+    "en": "Will the boat tour be canceled if it rains?",
+    "alternatives": [
+      "Is the boat tour canceled if it rains?",
+      "Does the boat tour get canceled if it rains?"
+    ],
+    "point": "未来のことでも if 節は現在形で it rains",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 3,
+    "grammar": ["time-and-if-clauses", "passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fe6e2ce610c4434e89755586c1f1e0565319d49b4892cee54706235312e275b2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3b2j4g4u",
     "ja": "あの人たち、もう最終ツアーに出発したに違いないよ。受付に誰もいないもん。",
     "en": "They must have already left for the last tour. There's nobody at the desk.",
@@ -60,6 +82,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:3fe923d459367f320d00a6d754f2c5f3aefefecd696992ce262ca2615cfd893e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3h2j4q7c",
+    "ja": "行く前に、ネットで美術館のチケットを買っておこうよ。",
+    "en": "Let's buy the museum tickets online before we go.",
+    "alternatives": [
+      "Let's get the museum tickets online before we go.",
+      "Why don't we buy the museum tickets online before we go?"
+    ],
+    "point": "「〜しようよ」は Let's のあとに動詞の原形",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 3,
+    "grammar": ["imperatives", "time-and-if-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dba70370c086bfb3ccb9e8b33e9c5ade1cdb45651dca59106f2a318dea583be9",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

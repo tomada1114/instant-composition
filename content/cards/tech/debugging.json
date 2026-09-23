@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_2m7m6t2a",
+    "ja": "ジョブが毎晩ちょうど0時に失敗しているので、もしかするとタイムゾーンの設定が原因ということはないでしょうか？",
+    "en": "Could it be that the time zone setting is to blame, given that the job fails at exactly midnight every night?",
+    "alternatives": [
+      "Since the job fails at exactly midnight every night, could the time zone setting be what's causing it?",
+      "Is it possible that the time zone setting is the cause, since the job fails at exactly midnight every night?"
+    ],
+    "point": "「もしかして〜では」は Could it be that で柔らかく切り出す",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["hedging-softening", "noun-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:058f9ae5c24296ea257ea77aedb6a41c439e1dbf33f1dff2b4a5184c40bbd728",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2q9z3j2c",
     "ja": "再現手順を送ってもらえますか？",
     "en": "Could you send me the steps to reproduce?",
@@ -126,6 +148,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:b767ac3b83a6ed0e7f3af457ffda80cbfb4851033c4eb5b9b09281cc0b6ffb2d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3j6f7u3d",
+    "ja": "昨日のリリース前に私たちがあの負荷テストを実行していたら、このメモリリークは本番に出る前に見つかっていたはずです。",
+    "en": "If we had run that load test before yesterday's release, we would have caught this memory leak before it reached production.",
+    "alternatives": [
+      "Had we run that load test before yesterday's release, we'd have caught this memory leak before it hit production.",
+      "If we'd run that load test ahead of yesterday's release, this memory leak would have been found before it got to production."
+    ],
+    "point": "過去の仮定は if we had run、帰結は would have caught",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2eb043f4aaf4401d21ead3788a2ca78cc955b11a52e2c5b7a0e74621505fbe4e",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_2k8s7n3b",
+    "ja": "今日休めるなら病院に行くんですけど、大事な会議があって抜けられないんです。",
+    "en": "If I could take the day off, I'd go see a doctor, but I've got an important meeting I can't miss.",
+    "alternatives": [
+      "If I could take today off, I'd go to the doctor, but there's an important meeting I can't skip.",
+      "I'd go see a doctor if I could take the day off, but I have an important meeting I can't miss."
+    ],
+    "point": "今の事実に反する仮定は If I could 〜, I'd 〜 と過去形で",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 8,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:810cebdf5ba6bbf6cf02d6ba380cb4aed6118f0aa45e559078bd29bc9766ce8a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2q9q4a8f",
     "ja": "この薬を処方される前に、先生にアレルギーのことを伝えておけばよかった。",
     "en": "I wish I'd told the doctor about my allergy before I was prescribed this medicine.",
@@ -498,6 +520,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:7d5b856a252596cff3e2f565b2289b361b4421f6b5654939ac9b9a6f738ebb9d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8g7s7m7k",
+    "ja": "痛みがほとんどなくなったとしても、処方された抗生物質は最後まで飲み切ったほうがいいですか？",
+    "en": "Even if the pain has mostly gone away, should I still finish all the antibiotics I was prescribed?",
+    "alternatives": [
+      "Even if the pain is mostly gone, should I still take all of the antibiotics I was prescribed?",
+      "Should I still finish the whole course of antibiotics even if the pain has pretty much gone away?"
+    ],
+    "point": "「〜としても」は even if、主節に still を添える",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 7,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:021ddfce1eb79d54130036a36867cbea69a0612c79c19b135d67d20452c3e5f0",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
