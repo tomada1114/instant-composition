@@ -25,8 +25,9 @@ pnpm dev
 ```
 
 Then open <http://localhost:3000>, which redirects to `/ja` — the UI ships in Japanese
-only. The page it renders is `src/app/[locale]/page.tsx`, and the text on it comes from
-`messages/ja.json`.
+only. A first visit goes on to picking topics and the placement round; after that `/ja`
+is the start screen, `src/app/[locale]/(home)/page.tsx`. The text on every screen comes
+from `messages/ja.json`.
 
 ## Where this app stands
 

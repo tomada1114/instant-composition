@@ -143,7 +143,7 @@ const message = "imported from ../server/env by hand";
  * nothing — is asserted directly by this and by the zone-coverage case below.
  */
 const SCAN_ANCHORS = [
-  "src/app/[locale]/page.tsx",
+  "src/app/[locale]/(home)/page.tsx",
   "src/components/ui/button.tsx",
   "src/core/result.ts",
   "src/proxy.ts",
@@ -197,9 +197,9 @@ describe("the import scanner the zone assertions run on", () => {
   });
 
   it("resolves a relative specifier to the module it names", () => {
-    expect(resolveWithin("src/app/[locale]/page.tsx", "../../i18n/locales")).toBe(
-      "src/i18n/locales",
-    );
+    expect(
+      resolveWithin("src/app/[locale]/drill/page.tsx", "../../../i18n/locales"),
+    ).toBe("src/i18n/locales");
     expect(resolveWithin("src/components/ui/button.tsx", "./../lib/utils")).toBe(
       "src/components/lib/utils",
     );
@@ -210,7 +210,7 @@ describe("the import scanner the zone assertions run on", () => {
     expect(
       resolveWithin("src/components/ui/button.tsx", "@/components/lib/utils"),
     ).toBe("src/components/lib/utils");
-    expect(resolveWithin("src/app/[locale]/page.tsx", "@/server/env")).toBe(
+    expect(resolveWithin("src/app/[locale]/drill/page.tsx", "@/server/env")).toBe(
       "src/server/env",
     );
     // The whole point of the `@/` branch: the same specifier resolves to the

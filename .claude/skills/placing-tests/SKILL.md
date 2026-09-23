@@ -20,8 +20,8 @@ style, and its fixtures (`writing-tests`); compile-time assertions with `expectT
 ## Location: `tests/`, never beside the source
 
 Every test file lives at `tests/<subject>.test.ts` or `tests/<subject>.test.tsx`, named
-after the seam it covers rather than after a file path — `tests/home-page.test.tsx` for
-the page component, `tests/proxy.test.ts` for the locale proxy, `tests/result.test.ts`
+after the seam it covers rather than after a file path — `tests/home-screen.test.tsx`
+for the start screen, `tests/proxy.test.ts` for the locale proxy, `tests/result.test.ts`
 for the `Result` vocabulary. Never co-locate a test next to the module it covers.
 
 This is settled, and it is deliberately against the App Router convention of keeping a
@@ -62,9 +62,9 @@ subject:
   only project running under jsdom, and the only one loading `tests/dom-setup.ts`, which
   registers the DOM matchers and Testing Library's `cleanup`. A test that renders a
   component under jsdom goes here by being written as `.tsx`; there is no list to join.
-  `tests/home-page.test.tsx`, the only one today, renders a synchronous Server Component
-  — this template ships no Client Component. It has no I/O either, so it keeps the same
-  short budget as `unit`.
+  The screens' Client Components are tested here — `tests/home-screen.test.tsx`,
+  `tests/drill-session.test.tsx` — with `fetch` stubbed and the router mocked, so they
+  have no I/O either and keep the same short budget as `unit`.
 - **`automation`** — the explicit `automationTests` list at the top of
   `vitest.config.ts`, with a 120-second budget. Everything that shells out, reads or
   writes a temp directory, spawns `git`/`node`, or walks whole trees on disk asserting

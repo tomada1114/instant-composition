@@ -54,14 +54,6 @@ import { readText, repoRoot, walk } from "./repo-tree";
  * inventory rows self-fulfilling — they would still appear after a correct
  * rename, so the list could never empty.
  *
- * The home page's body copy — `HomePage.intro` and `HomePage.localeCount` in
- * each catalog — is deliberately absent. It is demo copy for a demo page a
- * project rewrites or deletes on day one, and `localizing-ui` quotes
- * `ja.json`'s `localeCount` as its worked example of plural categories, so a
- * needle for it would put inventory rows on a skill whose subject is ICU
- * plurals rather than this template's identity. `starting-an-app` sends a
- * renaming project to that copy by hand instead.
- *
  * The last entry is not an identity string but a decision the template leaves
  * open on purpose: the design direction. The template's `src/app/globals.css`
  * ships stock shadcn/ui tokens and its `designing-ui` an empty lock, both
@@ -127,7 +119,7 @@ describe("the template's own identity strings", () => {
     "package.json",
     "CONTRIBUTING.md",
     "AGENTS.md",
-    "src/app/[locale]/page.tsx",
+    "src/app/[locale]/(home)/page.tsx",
     "src/core/result.ts",
     "scripts/check-staged.mjs",
     ".github/workflows/ci.yml",

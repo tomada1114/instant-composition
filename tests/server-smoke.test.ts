@@ -391,11 +391,16 @@ afterAll(async () => {
 });
 
 describe("the built application, served by `next start`", () => {
-  it("prerenders every shipped locale", () => {
+  // Every locale page shows the learner's own progress, so none may be baked
+  // at build time: a prerendered start screen would show the build machine's
+  // database, or none at all, to every request after it.
+  it("renders every shipped locale's pages on request, never at build time", () => {
     const routes = readPrerenderedRoutes();
 
     for (const locale of LOCALES) {
-      expect(routes).toHaveProperty(`/${locale}`);
+      for (const page of ["", "/welcome", "/drill"]) {
+        expect(routes).not.toHaveProperty(`/${locale}${page}`);
+      }
     }
   });
 

@@ -42,14 +42,13 @@ surface, and that surface is the seam:
   composed elsewhere, so the only thing left to assert about the file itself is that
   identity — `expect(POST).toBe(builtHandler)`. Everything else is a test of the
   handler.
-- **A synchronous Server Component**, rendered under jsdom through Testing Library, with
-  the context a Server Component tree would have supplied passed explicitly:
-  `NextIntlClientProvider` with a `locale` and the real `messages/ja.json`.
-  `tests/home-page.test.tsx` is the model, and it queries by role and accessible name
-  rather than by class or test id. The page under test carries no `"use client"` —
-  `building-app-routes` explains why hooks alone would not make it one — so what makes
-  it renderable here is that it is synchronous, not that it runs on the client. An
-  asynchronous Server Component is deliberately out of scope — no gate here renders one.
+- **A component**, rendered under jsdom through Testing Library, with the context a
+  Server Component tree would have supplied passed explicitly: `NextIntlClientProvider`
+  with a `locale` and the real `messages/ja.json`, and `src/i18n/navigation` mocked for
+  the router. `tests/home-screen.test.tsx` is the model: it builds the view the page
+  would pass, and queries by role and accessible name rather than by class or test id.
+  An asynchronous Server Component — every page under `src/app/` — is deliberately out
+  of scope; no gate here renders one.
 - **A contract suite.** When several implementations sit behind one interface, the
   behavior every implementation owes is written once as a `describe…Contract` function
   and called once per implementation with a harness that builds what each case needs. A
