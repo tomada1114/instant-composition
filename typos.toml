@@ -19,7 +19,7 @@ extend-exclude = [
 
 [default.extend-words]
 # Card points under content/cards/ name the wrong plural a learner must avoid
-# ("advice は数えられないので advices にしない"), so these misspellings are the
+# (for example, that advice never takes -s), so these misspellings are the
 # point of the text, not typos.
 advices = "advices"
 informations = "informations"
