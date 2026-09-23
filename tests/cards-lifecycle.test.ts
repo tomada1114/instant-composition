@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -6,7 +6,7 @@ import { afterEach, describe, expect, it } from "vitest";
 
 import { repoRoot, runNode } from "../scripts/lib/node-tools.mjs";
 import { isShown } from "../scripts/cards/schema.mjs";
-import { prettierFormatter } from "../scripts/cards/store.mjs";
+import { prettierAt, prettierFormatter } from "../scripts/cards/store.mjs";
 import {
   jsonOut,
   makeContentRoot,
@@ -82,7 +82,7 @@ function cards(root: string): Shown[] {
 describe("a card set's life through the cards:* commands", () => {
   it("adds, reviews, edits and deletes cards the way the skills do", () => {
     const root = makeContentRoot();
-    const options = { format: prettierFormatter };
+    const options = { formatter: prettierFormatter };
 
     const added = runCards(
       root,
@@ -176,11 +176,21 @@ describe("a card set's life through the cards:* commands", () => {
     const root = makeContentRoot();
     writeUnder(root, "broken.json", "{");
     expect(() => {
-      prettierFormatter([path.join(root, "broken.json")]);
+      prettierFormatter.format([path.join(root, "broken.json")]);
     }).toThrow(expect.objectContaining({ code: "ERR_CARDS_FORMATTER" }));
   });
 
   it("formats nothing when nothing was written", () => {
-    expect(prettierFormatter([])).toBeUndefined();
+    expect(prettierFormatter.format([])).toBeUndefined();
+  });
+
+  it("reports a missing Prettier before anything is written", () => {
+    const root = makeContentRoot();
+    const run = runCards(root, ["add", writeInput(root, "new.json", INPUT)], {
+      formatter: prettierAt(path.join(root, "no-prettier.cjs")),
+    });
+    expect(run.code).toBe(1);
+    expect(run.err).toMatch(/^ERR_CARDS_FORMATTER: /mu);
+    expect(existsSync(path.join(root, "cards"))).toBe(false);
   });
 });

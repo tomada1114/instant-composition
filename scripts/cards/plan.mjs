@@ -5,11 +5,20 @@ import { inRange, isEmptyRange } from "./args.mjs";
 import { spreadRank } from "./common.mjs";
 import { CardsError } from "./errors.mjs";
 
-/** The most cards one run asks one writer for. */
-export const MAX_PER_CELL = 5;
+/**
+ * The most cards one run asks one writer for. Small on purpose: a run of 1000
+ * cards then touches about 333 of the cells instead of 200.
+ */
+export const MAX_PER_CELL = 3;
 
-/** How much thinner a focus subtopic counts as, under `--history`. */
+/** How much a focus subtopic's deficit is multiplied by, under `--history`. */
 export const FOCUS_WEIGHT = 2;
+
+/**
+ * The card count a cell is measured against: its deficit is how far short of
+ * this it is. It only has to sit above any count a cell reaches in practice.
+ */
+export const CELL_TARGET = 20;
 
 /**
  * What the app will know about a learner, fed in with `--history`.
@@ -82,10 +91,12 @@ export function parseHistory(value) {
  * Plan a generation run.
  *
  * @remarks
- * Cells are subtopic × level. Each gets a thinness — the cards it already
- * has, or under `--history` the cards the learner has not seen, divided by
- * {@link FOCUS_WEIGHT} for a focus subtopic — and the thinnest are filled
- * first, up to {@link MAX_PER_CELL} each. Ties fall to a fixed pseudo-random
+ * Cells are subtopic × level. Each gets a deficit — how far its count (the
+ * cards it has, or under `--history` the cards the learner has not seen) is
+ * short of {@link CELL_TARGET}, times {@link FOCUS_WEIGHT} for a focus
+ * subtopic — and the largest deficits are filled first, fewest cards breaking
+ * a tie, up to {@link MAX_PER_CELL} each. An empty focus cell therefore comes
+ * before an empty ordinary one. Ties fall to a fixed pseudo-random
  * order that interleaves topics round-robin, so an empty repository is not
  * filled topic 1 first.
  *
@@ -123,7 +134,7 @@ export function planGaps(input) {
       }
     : (range.levels ?? { min: 1, max: 10 });
 
-  /** @type {{ topic: string, subtopic: string, level: number, thinness: number, order: [number, number] }[]} */
+  /** @type {{ topic: string, subtopic: string, level: number, have: number, deficit: number, order: [number, number] }[]} */
   const cells = [];
   for (const [topicIndex, topic] of lists.topics.entries()) {
     if (useHistory && history.topics.length > 0 && !history.topics.includes(topic.id))
@@ -149,14 +160,16 @@ export function planGaps(input) {
         topic: topic.id,
         subtopic: cell.subtopic,
         level: cell.level,
-        thinness: have / (focus.has(key) ? FOCUS_WEIGHT : 1),
+        have,
+        deficit: Math.max(0, CELL_TARGET - have) * (focus.has(key) ? FOCUS_WEIGHT : 1),
         order: [position, topicIndex],
       });
     }
   }
   cells.sort(
     (left, right) =>
-      left.thinness - right.thinness ||
+      right.deficit - left.deficit ||
+      left.have - right.have ||
       left.order[0] - right.order[0] ||
       left.order[1] - right.order[1],
   );

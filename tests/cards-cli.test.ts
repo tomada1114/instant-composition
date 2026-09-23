@@ -1,8 +1,9 @@
-import { existsSync, readFileSync, rmSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync, rmSync, utimesSync } from "node:fs";
 import path from "node:path";
 
 import { afterEach, describe, expect, it } from "vitest";
 
+import { CardsError } from "../scripts/cards/errors.mjs";
 import { coreHash } from "../scripts/cards/schema.mjs";
 import {
   jsonOut,
@@ -132,7 +133,7 @@ describe("cards:lint", () => {
     ["JAPANESE_IN_EN", { en: "Let's start the 会議." }],
     ["END_PUNCTUATION", { en: "Let's start the meeting" }],
     ["END_PUNCTUATION", { alternatives: ["Shall we get started", "Let's get going."] }],
-    ["LATIN_IN_JA", { ja: "Meeting を始めましょう。" }],
+    ["LATIN_IN_JA", { ja: "meeting を始めましょう。" }],
     ["ELLIPSIS", { ja: "会議を…始めましょう。" }],
     ["ELLIPSIS", { en: "Let's start... the meeting." }],
     ["ELLIPSIS", { point: "Let's で..." }],
@@ -226,10 +227,13 @@ describe("cards:lint", () => {
     expect(run.out).toBe("cards:lint: 1 cards checked, 0 errors");
   });
 
-  it("fails an unknown --ids with ERR_CARDS_UNKNOWN_ID", () => {
-    expect(
-      errorCode(runCards(makeContentRoot(), ["lint", "--ids", "c_9z9z9z9z"]).err),
-    ).toBe("ERR_CARDS_UNKNOWN_ID");
+  it("reports an unknown --ids on its own and lints the rest", () => {
+    const root = makeContentRoot();
+    writeCards(root, "work/meetings.json", [makeCard("c_2a2a2a2a")]);
+    const run = runCards(root, ["lint", "--ids", "c_2a2a2a2a,c_9z9z9z9z"]);
+    expect(run.code).toBe(0);
+    expect(run.err).toBe("unknown id c_9z9z9z9z: does not exist");
+    expect(run.out).toBe("cards:lint: 1 cards checked, 0 errors");
   });
 
   it("checks grammar examples against their levels", () => {
@@ -345,19 +349,34 @@ describe("cards:lint", () => {
 });
 
 describe("cards:gaps", () => {
-  it("fills the thinnest cells first, at most five each, spread across topics", () => {
-    const run = runCards(makeContentRoot(), ["gaps", "12", "--json"]);
-    const plan = jsonOut(run) as {
-      topic: string;
-      level: number;
-      count: number;
-      targetGrammar: string[];
-    }[];
-    expect(plan.map((cell) => cell.count)).toEqual([5, 5, 2]);
+  it("fills the thinnest cells first, at most three each, spread across topics", () => {
+    const run = runCards(makeContentRoot(), ["gaps", "11", "--json"]);
+    const { plan, shortfall } = jsonOut(run) as {
+      plan: { topic: string; count: number; targetGrammar: string[] }[];
+      shortfall: number;
+    };
+    expect(plan.map((cell) => cell.count)).toEqual([3, 3, 3, 2]);
     expect(new Set(plan.slice(0, 2).map((cell) => cell.topic)).size).toBe(2);
     for (const cell of plan) {
       expect(cell.targetGrammar).toHaveLength(cell.count >= 3 ? 3 : 2);
     }
+    expect(shortfall).toBe(0);
+    expect(run.err).toBe("");
+  });
+
+  it("warns and reports a shortfall when the range has too few cells", () => {
+    const run = runCards(makeContentRoot(), [
+      "gaps",
+      "10",
+      "subtopic=daily/home",
+      "level=4-5",
+      "--json",
+    ]);
+    expect(jsonOut(run)).toEqual(
+      expect.objectContaining({ requested: 10, planned: 6, shortfall: 4 }),
+    );
+    expect(run.err).toMatch(/^WARN cards:gaps planned 6 of 10 cards/u);
+    expect(run.code).toBe(0);
   });
 
   it("aims only at grammar valid at the cell's level, least used first", () => {
@@ -369,11 +388,9 @@ describe("cards:gaps", () => {
         en: "Could you open the window?",
       }),
     ]);
-    const plan = jsonOut(
+    const { plan } = jsonOut(
       runCards(root, ["gaps", "2", "subtopic=work/meetings", "level=3", "--json"]),
-    ) as {
-      targetGrammar: string[];
-    }[];
+    ) as { plan: { targetGrammar: string[] }[] };
     expect(plan[0]?.targetGrammar).toHaveLength(2);
     expect(plan[0]?.targetGrammar).not.toContain("requests-permission");
   });
@@ -381,15 +398,12 @@ describe("cards:gaps", () => {
   it("stays inside the range and skips cells that already have cards", () => {
     const root = makeContentRoot();
     writeCards(root, "work/meetings.json", [makeCard("c_2a2a2a2a")]);
-    const plan = jsonOut(
+    const { plan } = jsonOut(
       runCards(root, ["gaps", "5", "topic=work", "level=1", "--json"]),
-    ) as {
-      topic: string;
-      subtopic: string;
-      level: number;
-    }[];
-    expect(plan).toEqual([
-      expect.objectContaining({ topic: "work", subtopic: "requests", level: 1 }),
+    ) as { plan: { subtopic: string; level: number; count: number }[] };
+    expect(plan.map((cell) => [cell.subtopic, cell.level, cell.count])).toEqual([
+      ["requests", 1, 3],
+      ["meetings", 1, 2],
     ]);
   });
 
@@ -427,22 +441,20 @@ describe("cards:gaps", () => {
       focusSubtopics: ["work/requests"],
       estimatedLevel: 1,
     });
-    const plan = jsonOut(
-      runCards(root, ["gaps", "20", "--history", history, "--json"]),
-    ) as {
-      topic: string;
-      subtopic: string;
-      level: number;
-    }[];
+    const { plan } = jsonOut(
+      runCards(root, ["gaps", "12", "--history", history, "--json"]),
+    ) as { plan: { topic: string; subtopic: string; level: number }[] };
     expect(plan.every((cell) => cell.topic === "work" && cell.level <= 2)).toBe(true);
-    // Focus halves requests' count, so its level-2 cell (one unseen card) is
-    // as thin as an empty cell would be only after every empty one.
-    expect(plan.at(-1)).toEqual(
-      expect.objectContaining({ subtopic: "requests", level: 2 }),
-    );
+    // Focus doubles the deficit: the empty focus cell comes first, then the
+    // focus cell with one unseen card, then the ordinary cells. The seen card
+    // leaves meetings L2 as empty as meetings L1.
     expect(
-      plan.find((cell) => cell.subtopic === "meetings" && cell.level === 2),
-    ).toBeTruthy();
+      plan.slice(0, 2).map((cell) => `${cell.subtopic} L${String(cell.level)}`),
+    ).toEqual(["requests L1", "requests L2"]);
+    expect(plan.slice(2).map((cell) => cell.subtopic)).toEqual([
+      "meetings",
+      "meetings",
+    ]);
   });
 
   it("prints a human plan", () => {
@@ -653,7 +665,7 @@ describe("cards:add", () => {
     writeUnder(
       root,
       "tombstones.jsonl",
-      `${JSON.stringify({ id: "c_3b3b3b3b", ja: "ゴミを出してくれる？", en: "Can you take out the trash?", topic: "work", subtopic: "requests", level: 7, reason: "x", deletedAt: "2026-09-01" })}\n`,
+      `${JSON.stringify({ id: "c_3b3b3b3b", ja: "ゴミを出してくれる？", en: "Can you take out the trash?", topic: "daily", subtopic: "home", level: 7, reason: "x", deletedAt: "2026-09-01" })}\n`,
     );
     const input = writeInput(root, "add.json", [
       makeInput({ en: "Start." }),
@@ -1018,7 +1030,7 @@ describe("cards:stamp", () => {
       ["stamp", "--ids", "c_2a2a2a2a", "--field", "note"],
       "ERR_CARDS_UNKNOWN_FIELD",
     ],
-    ["an unknown id", ["stamp", "--ids", "c_9z9z9z9z"], "ERR_CARDS_UNKNOWN_ID"],
+    ["an unknown id", ["stamp", "--ids", "c_9z9z9z9z"], "ERR_CARDS_STAMP_REFUSED"],
   ])("refuses %s", (_label, argv, code) => {
     const root = makeContentRoot();
     writeCards(root, "work/meetings.json", [makeCard("c_2a2a2a2a")]);
@@ -1354,5 +1366,219 @@ describe("cards:stats", () => {
         cells: { total: 30, empty: 28 },
       }),
     );
+  });
+});
+
+describe("write safety", () => {
+  function lockPath(root: string): string {
+    return path.join(root, ".cards.lock");
+  }
+
+  it("fails fast with ERR_CARDS_BUSY while another write holds the lock", () => {
+    const root = makeContentRoot();
+    writeUnder(root, ".cards.lock", "123\n");
+    const run = runCards(root, ["add", writeInput(root, "add.json", [makeInput()])]);
+    expect(run.code).toBe(1);
+    expect(errorCode(run.err)).toBe("ERR_CARDS_BUSY");
+    expect(existsSync(path.join(root, "cards"))).toBe(false);
+    // The lock belongs to the other command; the refused one leaves it alone.
+    expect(existsSync(lockPath(root))).toBe(true);
+  });
+
+  it("breaks a lock older than ten minutes and says so", () => {
+    const root = makeContentRoot();
+    writeUnder(root, ".cards.lock", "123\n");
+    const old = new Date(Date.now() - 11 * 60 * 1000);
+    utimesSync(lockPath(root), old, old);
+    const run = runCards(root, ["add", writeInput(root, "add.json", [makeInput()])]);
+    expect(run.code).toBe(0);
+    expect(run.err).toMatch(/^Breaking a stale lock: /u);
+    expect(existsSync(lockPath(root))).toBe(false);
+  });
+
+  it.each([
+    ["add", (root: string) => ["add", writeInput(root, "add.json", [makeInput()])]],
+    ["a failing add", (root: string) => ["add", writeInput(root, "add.json", {})]],
+    ["update", (root: string) => ["update", writeInput(root, "u.json", [])]],
+    ["tombstone", () => ["tombstone", "--id", "c_2a2a2a2a", "--reason", "x"]],
+    ["stamp", () => ["stamp", "--ids", "c_2a2a2a2a"]],
+  ])("releases the lock after %s", (_label, argv) => {
+    const root = makeContentRoot();
+    writeCards(root, "work/meetings.json", [makeCard("c_2a2a2a2a")]);
+    runCards(root, argv(root));
+    expect(existsSync(lockPath(root))).toBe(false);
+  });
+
+  it("reports a content root it cannot lock", () => {
+    const root = makeContentRoot();
+    const run = runCards(root, [
+      "stamp",
+      "--ids",
+      "c_2a2a2a2a",
+      "--root",
+      path.join(root, "missing"),
+    ]);
+    expect(errorCode(run.err)).toBe("ERR_CARDS_CONTENT");
+  });
+
+  it("writes nothing when the formatter is not ready", () => {
+    const root = makeContentRoot();
+    const run = runCards(root, ["add", writeInput(root, "add.json", [makeInput()])], {
+      formatter: {
+        ready: () => {
+          throw new CardsError("ERR_CARDS_FORMATTER", "missing", {
+            expected: "a formatter",
+            actual: "none",
+            next: "install it",
+          });
+        },
+        format: () => undefined,
+      },
+    });
+    expect(errorCode(run.err)).toBe("ERR_CARDS_FORMATTER");
+    expect(existsSync(path.join(root, "cards"))).toBe(false);
+  });
+
+  it("leaves every card file as it was when formatting fails", () => {
+    const root = makeContentRoot();
+    writeCards(root, "work/meetings.json", [makeCard("c_2a2a2a2a")]);
+    const before = readFileSync(
+      path.join(root, "cards", "work", "meetings.json"),
+      "utf8",
+    );
+    const run = runCards(root, ["stamp", "--ids", "c_2a2a2a2a"], {
+      formatter: {
+        ready: () => undefined,
+        format: () => {
+          throw new CardsError("ERR_CARDS_FORMATTER", "failed", {
+            expected: "exit 0",
+            actual: "exit 2",
+            next: "look",
+          });
+        },
+      },
+    });
+    expect(errorCode(run.err)).toBe("ERR_CARDS_FORMATTER");
+    expect(
+      readFileSync(path.join(root, "cards", "work", "meetings.json"), "utf8"),
+    ).toBe(before);
+    expect(readdirSync(path.join(root, "cards", "work"))).toEqual(["meetings.json"]);
+  });
+
+  it("ignores dotfiles and files that are not JSON under cards/", () => {
+    const root = makeContentRoot();
+    writeCards(root, "work/meetings.json", [makeCard("c_2a2a2a2a")]);
+    writeUnder(root, "cards/.DS_Store", "\u0000");
+    writeUnder(root, "cards/work/.meetings.99.tmp.json", "{");
+    writeUnder(root, "cards/work/notes.txt", "notes");
+    const run = runCards(root, ["lint"]);
+    expect(run.code).toBe(0);
+    expect(run.out).toBe("cards:lint: 1 cards checked, 0 errors");
+  });
+});
+
+describe("cards:tombstone reruns", () => {
+  const argv = ["tombstone", "--id", "c_2a2a2a2a", "--reason", "duplicate"];
+
+  it("succeeds without a second line when the card is already gone", () => {
+    const root = makeContentRoot();
+    writeCards(root, "work/meetings.json", [
+      makeCard("c_2a2a2a2a"),
+      makeCard("c_3b3b3b3b"),
+    ]);
+    expect(runCards(root, argv).code).toBe(0);
+    const rerun = runCards(root, argv);
+    expect(rerun.code).toBe(0);
+    expect(rerun.out).toBe("already tombstoned c_2a2a2a2a");
+    expect(tombstoneLines(root)).toHaveLength(1);
+  });
+
+  it("finishes a run that recorded the tombstone but did not remove the card", () => {
+    const root = makeContentRoot();
+    writeCards(root, "work/meetings.json", [
+      makeCard("c_2a2a2a2a"),
+      makeCard("c_3b3b3b3b"),
+    ]);
+    writeUnder(
+      root,
+      "tombstones.jsonl",
+      `${JSON.stringify({ id: "c_2a2a2a2a", ja: "会議を始めましょう。", en: "Let's start the meeting.", topic: "work", subtopic: "meetings", level: 1, reason: "duplicate", deletedAt: "2026-09-22" })}\n`,
+    );
+    expect(runCards(root, argv).code).toBe(0);
+    expect(cardFile(root, "work/meetings.json").map((card) => card["id"])).toEqual([
+      "c_3b3b3b3b",
+    ]);
+    expect(tombstoneLines(root)).toHaveLength(1);
+  });
+});
+
+describe("unknown ids in a batch", () => {
+  function seed(root: string): void {
+    writeCards(root, "work/meetings.json", [makeCard("c_2a2a2a2a")]);
+    writeUnder(
+      root,
+      "tombstones.jsonl",
+      `${JSON.stringify({ id: "c_3b3b3b3b", ja: "あ", en: "A.", topic: "work", subtopic: "meetings", level: 1, reason: "x", deletedAt: "2026-09-01" })}\n`,
+    );
+  }
+
+  it("shows the known cards and reports the rest", () => {
+    const root = makeContentRoot();
+    seed(root);
+    const run = runCards(root, ["show", "--ids", "c_2a2a2a2a,c_3b3b3b3b", "--brief"]);
+    expect(run.code).toBe(0);
+    expect(run.out).toBe("会議を始めましょう。 ⟶ Let's start the meeting.");
+    expect(run.err).toBe("unknown id c_3b3b3b3b: tombstoned");
+  });
+
+  it("queues the known cards and reports the rest", () => {
+    const root = makeContentRoot();
+    seed(root);
+    const run = runCards(root, ["queue", "--ids", "c_9z9z9z9z,c_2a2a2a2a", "--count"]);
+    expect(run.out).toBe("1");
+    expect(run.err).toBe("unknown id c_9z9z9z9z: does not exist");
+  });
+
+  it("checks the known cards for duplicates and reports the rest", () => {
+    const root = makeContentRoot();
+    seed(root);
+    const run = runCards(root, ["dupes", "--ids", "c_3b3b3b3b"]);
+    expect(run.code).toBe(0);
+    expect(run.err).toBe("unknown id c_3b3b3b3b: tombstoned");
+  });
+
+  it("stamps the known cards and refuses the rest by id", () => {
+    const root = makeContentRoot();
+    seed(root);
+    const run = runCards(root, ["stamp", "--ids", "c_2a2a2a2a,c_3b3b3b3b"]);
+    expect(run.code).toBe(1);
+    expect(run.out).toBe("stamped c_2a2a2a2a core");
+    expect(errorCode(run.err)).toBe("ERR_CARDS_STAMP_REFUSED");
+    expect(run.err).toMatch(/c_3b3b3b3b \(tombstoned\)/u);
+  });
+});
+
+describe("the writer's view of a cell", () => {
+  it("shows the cards one level either side with a --level range", () => {
+    const root = makeContentRoot();
+    writeCards(root, "work/meetings.json", [
+      makeCard("c_2a2a2a2a", { level: 2, ja: "二の文です。" }),
+      makeCard("c_3b3b3b3b", { level: 3, ja: "三の文です。" }),
+      makeCard("c_4c4c4c4c", { level: 4, ja: "四の文です。" }),
+      makeCard("c_5d5d5d5d", { level: 5, ja: "五の文です。" }),
+    ]);
+    const run = runCards(root, [
+      "show",
+      "--cell",
+      "work/meetings",
+      "--level",
+      "2-4",
+      "--brief",
+    ]);
+    expect(run.out.split("\n").map((line) => line.split(" ")[0])).toEqual([
+      "二の文です。",
+      "三の文です。",
+      "四の文です。",
+    ]);
   });
 });

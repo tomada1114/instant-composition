@@ -11,14 +11,15 @@ import {
 } from "./args.mjs";
 import {
   asTyped,
-  entriesById,
+  partitionIds,
   findingsByCard,
   readInput,
+  reportUnknown,
   STATUS_ORDER,
   statusOf,
 } from "./common.mjs";
 import { CardsError } from "./errors.mjs";
-import { parseHistory, planGaps } from "./plan.mjs";
+import { MAX_PER_CELL, parseHistory, planGaps } from "./plan.mjs";
 import { entryLabel, lintStore } from "./rules.mjs";
 import { fieldHash, isShown, randomId, readStamp } from "./schema.mjs";
 import { findNearDuplicates } from "./similarity.mjs";
@@ -76,6 +77,20 @@ export function declaredField(context, name) {
   return name;
 }
 
+/**
+ * The stored cards among `ids`, reporting the rest on stderr.
+ *
+ * @param {Context} context - Output sink.
+ * @param {Store} store - The loaded content root.
+ * @param {readonly string[]} ids - Requested ids.
+ * @returns {CardEntry[]} The cards found, in request order.
+ */
+function knownEntries(context, store, ids) {
+  const { entries, unknown } = partitionIds(store, ids);
+  reportUnknown(context, unknown);
+  return entries;
+}
+
 /** @type {CommandSpec} */
 export const lintSpec = {
   usage: "[--ids <id,…>] [--json]",
@@ -94,9 +109,10 @@ export const lintSpec = {
  */
 export function runLint(parsed, context) {
   const store = loadStore(context.root);
-  const ids = idsFlag(parsed, "ids");
-  if (ids !== undefined)
-    entriesById(store, ids, "run `pnpm cards:lint` without --ids.");
+  const requested = idsFlag(parsed, "ids");
+  const known = requested === undefined ? undefined : partitionIds(store, requested);
+  if (known !== undefined) reportUnknown(context, known.unknown);
+  const ids = known?.entries.map((entry) => String(entry.raw["id"]));
   const findings = lintStore(
     store,
     { lists: store.lists, optionalFields: context.optionalFields },
@@ -218,8 +234,8 @@ export function runShow(parsed, context) {
   const selected =
     ids === undefined
       ? store.cards.filter((entry) => inRange(parsed.range, entry.raw))
-      : entriesById(store, ids, "check the id with `pnpm cards:show --brief`.").filter(
-          (entry) => inRange(parsed.range, entry.raw),
+      : knownEntries(context, store, ids).filter((entry) =>
+          inRange(parsed.range, entry.raw),
         );
   if (json) {
     printJson(
@@ -307,10 +323,7 @@ export function runQueue(parsed, context) {
   const missingName =
     missingFlag === undefined ? undefined : declaredField(context, missingFlag);
   const ids = idsFlag(parsed, "ids");
-  const pool =
-    ids === undefined
-      ? store.cards
-      : entriesById(store, ids, "check the id with `pnpm cards:show --ids <id>`.");
+  const pool = ids === undefined ? store.cards : knownEntries(context, store, ids);
   const findings = findingsByCard(store, context);
 
   /** @type {Queued[]} */
@@ -586,9 +599,7 @@ export function runDupes(parsed, context) {
     subjects = parsedInput.map((value, index) => inputComparable(value, index));
   } else if (ids !== undefined) {
     const wanted = new Set(
-      entriesById(store, ids, "check the id with `pnpm cards:show --ids <id>`.").map(
-        (entry) => String(entry.raw["id"]),
-      ),
+      knownEntries(context, store, ids).map((entry) => String(entry.raw["id"])),
     );
     subjects = cards.filter((card) => wanted.has(card.key));
   }
@@ -676,8 +687,16 @@ export function runGaps(parsed, context) {
     range: parsed.range,
     history,
   });
+  const requested = Number(countText);
+  const planned = plan.reduce((sum, cell) => sum + cell.count, 0);
+  const shortfall = requested - planned;
+  if (shortfall > 0) {
+    context.err(
+      `WARN cards:gaps planned ${String(planned)} of ${String(requested)} cards: ${String(plan.length)} cells in range × at most ${String(MAX_PER_CELL)} each.`,
+    );
+  }
   if (flag(parsed, "json")) {
-    printJson(context, plan);
+    printJson(context, { plan, requested, planned, shortfall });
     return 0;
   }
   for (const cell of plan) {
@@ -685,7 +704,6 @@ export function runGaps(parsed, context) {
       `${cell.topic}/${cell.subtopic} L${String(cell.level)} ×${String(cell.count)}  grammar: ${cell.targetGrammar.join(", ")}`,
     );
   }
-  const planned = plan.reduce((sum, cell) => sum + cell.count, 0);
   context.out(`${String(planned)} cards planned in ${String(plan.length)} cells`);
   return 0;
 }

@@ -12,6 +12,7 @@
  *   `ERR_CARDS_CARD_FILE`, `ERR_CARDS_TOMBSTONES`.
  * - Review the cards first: `ERR_CARDS_LINT`, `ERR_CARDS_STAMP_REFUSED`.
  * - Fix the environment: `ERR_CARDS_FORMATTER`, `ERR_CARDS_ID_SPACE`.
+ * - Wait and rerun: `ERR_CARDS_BUSY`.
  *
  * @typedef {"ERR_CARDS_USAGE"
  *   | "ERR_CARDS_UNKNOWN_ID"
@@ -23,7 +24,8 @@
  *   | "ERR_CARDS_LINT"
  *   | "ERR_CARDS_STAMP_REFUSED"
  *   | "ERR_CARDS_FORMATTER"
- *   | "ERR_CARDS_ID_SPACE"} CardsErrorCode
+ *   | "ERR_CARDS_ID_SPACE"
+ *   | "ERR_CARDS_BUSY"} CardsErrorCode
  */
 
 /**

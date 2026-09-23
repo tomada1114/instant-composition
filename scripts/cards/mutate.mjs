@@ -5,8 +5,8 @@ import { readKey } from "../lib/json.mjs";
 import { flag, idsFlag, stringFlag, usageError } from "./args.mjs";
 import {
   asTyped,
-  entriesById,
   entryById,
+  partitionIds,
   findingsByCard,
   readInput,
 } from "./common.mjs";
@@ -17,6 +17,7 @@ import { CORE_FIELDS, coreHash, fieldHash } from "./schema.mjs";
 import { findNearDuplicates } from "./similarity.mjs";
 import {
   appendTombstones,
+  withLock,
   cardFile,
   loadStore,
   orderCard,
@@ -105,6 +106,18 @@ export const addSpec = {
  * @returns {number} Exit code: 0 even when cards were dropped.
  */
 export function runAdd(parsed, context) {
+  context.formatter.ready();
+  return withLock(context.root, context.err, () => addLocked(parsed, context));
+}
+
+/**
+ * The body of `cards:add`, run while the lock is held.
+ *
+ * @param {Parsed} parsed - Arguments.
+ * @param {Context} context - Environment.
+ * @returns {number} Exit code.
+ */
+function addLocked(parsed, context) {
   const input = readArrayInput(parsed.positionals[0], "add", addSpec);
   const store = loadStore(context.root);
   const replacing = stringFlag(parsed, "replacing");
@@ -207,7 +220,7 @@ export function runAdd(parsed, context) {
     context.root,
     new Map([...touched].map((file) => [file, files.get(file) ?? []])),
     optionalNames(context),
-    context.format,
+    context.formatter,
   );
 
   if (flag(parsed, "json")) {
@@ -253,6 +266,18 @@ export const updateSpec = {
  * @returns {number} Exit code: 0 even when entries were rejected.
  */
 export function runUpdate(parsed, context) {
+  context.formatter.ready();
+  return withLock(context.root, context.err, () => updateLocked(parsed, context));
+}
+
+/**
+ * The body of `cards:update`, run while the lock is held.
+ *
+ * @param {Parsed} parsed - Arguments.
+ * @param {Context} context - Environment.
+ * @returns {number} Exit code.
+ */
+function updateLocked(parsed, context) {
   const input = readArrayInput(parsed.positionals[0], "update", updateSpec);
   const store = loadStore(context.root);
   const env = { lists: store.lists, optionalFields: context.optionalFields };
@@ -357,7 +382,7 @@ export function runUpdate(parsed, context) {
     context.root,
     new Map([...touched].map((file) => [file, files.get(file) ?? []])),
     optionalNames(context),
-    context.format,
+    context.formatter,
   );
 
   if (flag(parsed, "json")) {
@@ -397,6 +422,18 @@ export const tombstoneSpec = {
  * @returns {number} Exit code.
  */
 export function runTombstone(parsed, context) {
+  context.formatter.ready();
+  return withLock(context.root, context.err, () => tombstoneLocked(parsed, context));
+}
+
+/**
+ * The body of `cards:tombstone`, run while the lock is held.
+ *
+ * @param {Parsed} parsed - Arguments.
+ * @param {Context} context - Environment.
+ * @returns {number} Exit code.
+ */
+function tombstoneLocked(parsed, context) {
   const id = stringFlag(parsed, "id");
   const reason = stringFlag(parsed, "reason")?.trim();
   const replacedBy = stringFlag(parsed, "replaced-by");
@@ -406,7 +443,20 @@ export function runTombstone(parsed, context) {
     throw usageError("tombstone", tombstoneSpec, "--reason must be one non-empty line");
   }
   const store = loadStore(context.root);
-  const entry = entryById(store, id, "check the id with `pnpm cards:show --ids <id>`.");
+  const entry = store.cards.find((candidate) => candidate.raw["id"] === id);
+  const already = store.tombstones.some((tombstone) => tombstone.id === id);
+  if (entry === undefined && already) {
+    // A rerun after the tombstone was written and the card removed.
+    context.out(`already tombstoned ${id}`);
+    return 0;
+  }
+  if (entry === undefined) {
+    throw new CardsError("ERR_CARDS_UNKNOWN_ID", `No card has the id ${id}.`, {
+      expected: "the id of a card under cards/",
+      actual: `${id} does not exist`,
+      next: "check the id with `pnpm cards:show --ids <id>`.",
+    });
+  }
   if (replacedBy !== undefined) {
     if (replacedBy === id) {
       throw usageError(
@@ -422,31 +472,37 @@ export function runTombstone(parsed, context) {
     );
   }
 
+  // The tombstone goes first: if the command dies before the card file is
+  // rewritten, a rerun finds the tombstone and only removes the card, and the
+  // id is never left unrecorded.
+  if (!already) {
+    const { ja, en, topic, subtopic, level } = entry.raw;
+    /** @type {import("./store.mjs").Tombstone} */
+    const tombstone = {
+      id,
+      ja: String(ja),
+      en: String(en),
+      topic: String(topic),
+      subtopic: String(subtopic),
+      level: typeof level === "number" && Number.isInteger(level) ? level : 0,
+      reason,
+      deletedAt: context.today(),
+    };
+    if (replacedBy !== undefined) tombstone.replacedBy = replacedBy;
+    appendTombstones(context.root, [tombstone]);
+  }
   const files = copyFiles(store);
-  files.set(
-    entry.file,
-    (files.get(entry.file) ?? []).filter((record) => record !== entry.raw),
-  );
   writeCardFiles(
     context.root,
-    new Map([[entry.file, files.get(entry.file) ?? []]]),
+    new Map([
+      [
+        entry.file,
+        (files.get(entry.file) ?? []).filter((record) => record !== entry.raw),
+      ],
+    ]),
     optionalNames(context),
-    context.format,
+    context.formatter,
   );
-  const { ja, en, topic, subtopic, level } = entry.raw;
-  /** @type {import("./store.mjs").Tombstone} */
-  const tombstone = {
-    id,
-    ja: String(ja),
-    en: String(en),
-    topic: String(topic),
-    subtopic: String(subtopic),
-    level: typeof level === "number" && Number.isInteger(level) ? level : 0,
-    reason,
-    deletedAt: context.today(),
-  };
-  if (replacedBy !== undefined) tombstone.replacedBy = replacedBy;
-  appendTombstones(context.root, [tombstone]);
   context.out(
     `tombstoned ${id}${replacedBy === undefined ? "" : ` → ${replacedBy}`}: ${reason}`,
   );
@@ -471,23 +527,33 @@ export const stampSpec = {
  *   when any card fails lint or lacks the field.
  */
 export function runStamp(parsed, context) {
+  context.formatter.ready();
+  return withLock(context.root, context.err, () => stampLocked(parsed, context));
+}
+
+/**
+ * The body of `cards:stamp`, run while the lock is held.
+ *
+ * @param {Parsed} parsed - Arguments.
+ * @param {Context} context - Environment.
+ * @returns {number} Exit code.
+ */
+function stampLocked(parsed, context) {
   const ids = idsFlag(parsed, "ids");
   if (ids === undefined || ids.length === 0)
     throw usageError("stamp", stampSpec, "--ids is required");
   const fieldFlag = stringFlag(parsed, "field");
   const name = fieldFlag === undefined ? "core" : declaredField(context, fieldFlag);
   const store = loadStore(context.root);
-  const entries = entriesById(
-    store,
-    ids,
-    "stamp only ids that `pnpm cards:queue --json` listed.",
-  );
+  const { entries, unknown } = partitionIds(store, ids);
   const findings = findingsByCard(store, context);
   const files = copyFiles(store);
   /** @type {Set<string>} */
   const touched = new Set();
   /** @type {string[]} */
-  const refused = [];
+  const refused = unknown.map(({ id, reason }) => `${id} (${reason})`);
+  /** @type {string[]} */
+  const done = [];
 
   for (const entry of entries) {
     const id = String(entry.raw["id"]);
@@ -527,19 +593,20 @@ export function runStamp(parsed, context) {
     );
     entry.raw = stamped;
     touched.add(entry.file);
-    context.out(`stamped ${id} ${name}`);
+    done.push(`stamped ${id} ${name}`);
   }
 
   writeCardFiles(
     context.root,
     new Map([...touched].map((file) => [file, files.get(file) ?? []])),
     optionalNames(context),
-    context.format,
+    context.formatter,
   );
 
+  for (const line of done) context.out(line);
   if (refused.length > 0) {
     throw new CardsError("ERR_CARDS_STAMP_REFUSED", "Some cards were not stamped.", {
-      expected: "every listed card to pass `pnpm cards:lint`",
+      expected: "every listed id to be a card that passes `pnpm cards:lint`",
       actual: `refused: ${refused.join("; ")}`,
       next: "fix those cards through `reviewing-cards`, then stamp them; the others were stamped.",
     });

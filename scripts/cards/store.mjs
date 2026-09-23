@@ -3,14 +3,20 @@
 // files keep one canonical shape.
 import {
   appendFileSync,
+  closeSync,
   existsSync,
   mkdirSync,
+  openSync,
   readdirSync,
   readFileSync,
+  renameSync,
   rmSync,
+  statSync,
   writeFileSync,
+  writeSync,
 } from "node:fs";
 import path from "node:path";
+import process from "node:process";
 
 import { parseJson, readKey } from "../lib/json.mjs";
 import { repoRoot, runNode } from "../lib/node-tools.mjs";
@@ -336,10 +342,13 @@ function listFiles(directory, prefix) {
   /** @type {string[]} */
   const found = [];
   for (const entry of readdirSync(directory, { withFileTypes: true })) {
+    // A dotfile (.DS_Store, an interrupted write's temp file) is not a card
+    // file, and neither is anything that is not JSON.
+    if (entry.name.startsWith(".")) continue;
     const relative = prefix === "" ? entry.name : `${prefix}/${entry.name}`;
     if (entry.isDirectory()) {
       found.push(...listFiles(path.join(directory, entry.name), relative));
-    } else {
+    } else if (entry.name.endsWith(".json")) {
       found.push(relative);
     }
   }
@@ -512,13 +521,15 @@ export function compareIds(left, right) {
  * Formats written files so they are byte-identical to what the repository's
  * formatter produces, and `pnpm format:check` stays green.
  *
- * @callback Formatter
- * @param {readonly string[]} files - Absolute paths just written.
- * @returns {void}
+ * @typedef {object} Formatter
+ * @property {() => void} ready - Throws `ERR_CARDS_FORMATTER` when the
+ *   formatter cannot run; called before anything is written.
+ * @property {(files: readonly string[]) => void} format - Formats the files
+ *   in place.
  */
 
 /**
- * Run the repository's Prettier over the given files.
+ * The repository's Prettier, run over the files a command writes.
  *
  * @remarks
  * Prettier collapses a short array onto one line and a hand-rolled serializer
@@ -528,68 +539,184 @@ export function compareIds(left, right) {
  * pre-commit hook. The config is passed explicitly so a content root outside
  * the repository (a test's temp directory) is formatted identically.
  *
- * @type {Formatter}
+ * @param {string} bin - Path of Prettier's CLI script.
+ * @returns {Formatter} A formatter spawning that Prettier.
  */
-export function prettierFormatter(files) {
-  if (files.length === 0) return;
-  const bin = path.join(repoRoot, "node_modules", "prettier", "bin", "prettier.cjs");
-  if (!existsSync(bin)) {
-    throw new CardsError("ERR_CARDS_FORMATTER", "Prettier is not installed.", {
-      expected: "node_modules/prettier/bin/prettier.cjs",
-      actual: "missing",
-      next: "run `pnpm install`, then rerun the command; the card files were written but not formatted.",
-    });
-  }
-  const result = runNode(bin, [
-    "--config",
-    path.join(repoRoot, ".prettierrc.json"),
-    "--write",
-    "--log-level",
-    "warn",
-    ...files,
-  ]);
-  if (result.status !== 0) {
-    throw new CardsError(
-      "ERR_CARDS_FORMATTER",
-      "Prettier failed on the written card files.",
-      {
-        expected: "exit status 0",
-        actual:
-          result.stderr.trim().split("\n")[0] ?? `exit status ${String(result.status)}`,
-        next: "run `pnpm exec prettier --check content/cards` to see the failure, then `pnpm cards:lint`.",
-      },
-    );
-  }
+export function prettierAt(bin) {
+  return {
+    ready() {
+      if (!existsSync(bin)) {
+        throw new CardsError("ERR_CARDS_FORMATTER", "Prettier is not installed.", {
+          expected: "node_modules/prettier/bin/prettier.cjs",
+          actual: "missing",
+          next: "run `pnpm install`, then rerun the command; nothing was written.",
+        });
+      }
+    },
+    format(files) {
+      if (files.length === 0) return;
+      const result = runNode(bin, [
+        "--config",
+        path.join(repoRoot, ".prettierrc.json"),
+        "--write",
+        "--log-level",
+        "warn",
+        ...files,
+      ]);
+      if (result.status !== 0) {
+        throw new CardsError(
+          "ERR_CARDS_FORMATTER",
+          "Prettier failed on the card files.",
+          {
+            expected: "exit status 0",
+            actual:
+              result.stderr.trim().split("\n")[0] ??
+              `exit status ${String(result.status)}`,
+            next: "run `pnpm exec prettier --check content/cards` to see the failure; nothing was written.",
+          },
+        );
+      }
+    },
+  };
 }
+
+/** The Prettier this repository pins. */
+export const prettierFormatter = prettierAt(
+  path.join(repoRoot, "node_modules", "prettier", "bin", "prettier.cjs"),
+);
 
 /**
  * Write card files, each sorted by id with canonical key order, deleting a
- * file left empty, then format what was written.
+ * file left empty.
+ *
+ * @remarks
+ * Every file is written to a temporary sibling first, formatted there, and
+ * only then renamed over the real one, so a formatter failure leaves every
+ * card file as it was and a crash never leaves a half-written one.
  *
  * @param {string} root - Content root.
  * @param {ReadonlyMap<string, readonly Record<string, unknown>[]>} files -
  *   Card arrays by path relative to `cards/`.
  * @param {readonly string[]} optionalNames - Declared optional field names.
- * @param {Formatter} format - Formatter for the written files.
+ * @param {Formatter} formatter - Formatter for the written files.
  * @returns {void}
  */
-export function writeCardFiles(root, files, optionalNames, format) {
-  /** @type {string[]} */
-  const written = [];
+export function writeCardFiles(root, files, optionalNames, formatter) {
+  /** @type {{ absolute: string, temp: string | undefined }[]} */
+  const plans = [];
   for (const [file, records] of files) {
     const absolute = path.join(root, "cards", file);
     if (records.length === 0) {
-      rmSync(absolute, { force: true });
+      plans.push({ absolute, temp: undefined });
       continue;
     }
     const sorted = [...records]
       .sort((left, right) => compareIds(sortKey(left), sortKey(right)))
       .map((raw) => orderCard(raw, optionalNames));
+    // Keeps the `.json` extension so the formatter infers the parser, and a
+    // leading dot so the loader never mistakes a leftover for a card file.
+    const temp = path.join(
+      path.dirname(absolute),
+      `.${path.basename(absolute, ".json")}.${String(process.pid)}.tmp.json`,
+    );
     mkdirSync(path.dirname(absolute), { recursive: true });
-    writeFileSync(absolute, `${JSON.stringify(sorted, null, 2)}\n`);
-    written.push(absolute);
+    writeFileSync(temp, `${JSON.stringify(sorted, null, 2)}\n`);
+    plans.push({ absolute, temp });
   }
-  format(written);
+  const temps = plans.flatMap((plan) => (plan.temp === undefined ? [] : [plan.temp]));
+  try {
+    formatter.format(temps);
+  } catch (error) {
+    for (const temp of temps) rmSync(temp, { force: true });
+    throw error;
+  }
+  for (const { absolute, temp } of plans) {
+    if (temp === undefined) rmSync(absolute, { force: true });
+    else renameSync(temp, absolute);
+  }
+}
+
+/** The lock file every write command holds, under the content root. */
+export const LOCK_FILE = ".cards.lock";
+
+/** A lock older than this is taken to be left by a crashed command. */
+export const STALE_LOCK_MS = 10 * 60 * 1000;
+
+/**
+ * @param {string} lock - Lock path.
+ * @returns {number | undefined} An open descriptor, or undefined when the
+ *   lock already exists.
+ * @throws {CardsError} `ERR_CARDS_CONTENT` when it cannot be created at all.
+ */
+function tryLock(lock) {
+  try {
+    return openSync(lock, "wx");
+  } catch (error) {
+    if (error instanceof Error && "code" in error && error.code === "EEXIST") {
+      return undefined;
+    }
+    throw new CardsError("ERR_CARDS_CONTENT", "The content root is not writable.", {
+      expected: `a writable directory holding ${LOCK_FILE}`,
+      actual: error instanceof Error ? error.message : String(error),
+      next: "check that the content root exists (`--root`) and is writable.",
+      cause: error,
+    });
+  }
+}
+
+/**
+ * Run a write under the content root's exclusive lock.
+ *
+ * @remarks
+ * Every write command loads the whole root, changes it in memory and writes
+ * back, so two running at once would each overwrite what the other wrote.
+ * The lock makes the second one fail fast instead. A lock left by a crashed
+ * command is broken once it is older than {@link STALE_LOCK_MS}.
+ *
+ * @template T
+ * @param {string} root - Content root.
+ * @param {(text: string) => void} warn - Where to say a stale lock was broken.
+ * @param {() => T} action - The write.
+ * @returns {T} What the write returned.
+ * @throws {CardsError} `ERR_CARDS_BUSY` while another command holds the lock.
+ */
+export function withLock(root, warn, action) {
+  const lock = path.join(root, LOCK_FILE);
+  let fd = tryLock(lock);
+  if (fd === undefined) {
+    /** @type {number} */
+    let age;
+    try {
+      age = Date.now() - statSync(lock).mtimeMs;
+    } catch {
+      age = Number.POSITIVE_INFINITY;
+    }
+    if (age >= STALE_LOCK_MS) {
+      warn(
+        `Breaking a stale lock: ${LOCK_FILE} is ${String(Math.round(age / 60_000))} minutes old, so the command that took it is gone.`,
+      );
+      rmSync(lock, { force: true });
+      fd = tryLock(lock);
+    }
+  }
+  if (fd === undefined) {
+    throw new CardsError(
+      "ERR_CARDS_BUSY",
+      "Another cards:* write command is running.",
+      {
+        expected: `no ${LOCK_FILE} under the content root`,
+        actual: `${LOCK_FILE} exists and is younger than ${String(STALE_LOCK_MS / 60_000)} minutes`,
+        next: "wait for the other command to finish and rerun; run write commands one at a time. A lock left by a crash is broken automatically after 10 minutes.",
+      },
+    );
+  }
+  try {
+    writeSync(fd, `${String(process.pid)}\n`);
+    return action();
+  } finally {
+    closeSync(fd);
+    rmSync(lock, { force: true });
+  }
 }
 
 /**

@@ -118,7 +118,7 @@ export function main(argv, overrides = {}) {
       console.error(text);
     },
     today: () => localDate(new Date()),
-    format: prettierFormatter,
+    formatter: prettierFormatter,
     random: (max) => randomInt(max),
     optionalFields: OPTIONAL_FIELDS,
     ...overrides,

@@ -2,17 +2,47 @@
 // script detection, and the normalization that makes two sentences comparable.
 
 /**
- * ASCII words a `ja` sentence may contain. `content/guides/writing.md` allows
- * proper nouns and product names only; this list is where a new one is added,
- * after a reviewer agrees it is one.
+ * Units a `ja` sentence may write in Latin letters, compared without case
+ * (`5km`, `100g`, `64GB`). Every other Latin word starting lower case is taken
+ * to leak the English answer.
  */
-export const JA_ASCII_ALLOWLIST = /** @type {const} */ ([
-  "PC",
-  "Wi-Fi",
-  "SNS",
-  "PDF",
-  "URL",
-  "ID",
+export const JA_LATIN_UNITS = /** @type {const} */ ([
+  "mm",
+  "cm",
+  "m",
+  "km",
+  "mg",
+  "g",
+  "kg",
+  "ml",
+  "dl",
+  "l",
+  "cc",
+  "kb",
+  "mb",
+  "gb",
+  "tb",
+  "kw",
+  "kwh",
+  "mph",
+  "ha",
+]);
+
+/**
+ * Names that start lower case but are proper nouns all the same. Every other
+ * name is written capitalized (Slack, Zoom) or in capitals (OK, PR, ATM, the
+ * T of Tシャツ), and those need no list.
+ */
+export const JA_LOWERCASE_NAMES = /** @type {const} */ ([
+  "iPhone",
+  "iPad",
+  "iPod",
+  "iMac",
+  "iOS",
+  "iCloud",
+  "iTunes",
+  "macOS",
+  "eBay",
 ]);
 
 // Hiragana, katakana (full and half width), CJK ideographs and CJK punctuation.
@@ -32,15 +62,26 @@ export function hasJapanese(text) {
 }
 
 /**
+ * Latin words in a `ja` sentence that a Japanese writer would not write
+ * there: anything starting lower case, other than a unit or a listed name.
+ * Capitalized and all-capital words pass as names, products and acronyms.
+ *
  * @param {string} ja - A card's `ja`.
- * @returns {string[]} Latin-script words in it that the allowlist does not name.
+ * @returns {string[]} The offending words, as written.
  */
 export function unexpectedLatinWords(ja) {
   /** @type {readonly string[]} */
-  const allowed = JA_ASCII_ALLOWLIST;
+  const units = JA_LATIN_UNITS;
+  /** @type {readonly string[]} */
+  const names = JA_LOWERCASE_NAMES;
   return [...ja.matchAll(LATIN_WORD)]
     .map((match) => match[0])
-    .filter((word) => !allowed.includes(word));
+    .filter((word) => {
+      const plain = word.normalize("NFKC");
+      const first = plain.charAt(0);
+      if (first !== first.toLowerCase()) return false;
+      return !units.includes(plain.toLowerCase()) && !names.includes(plain);
+    });
 }
 
 /**

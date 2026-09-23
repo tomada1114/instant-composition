@@ -185,7 +185,7 @@ export function lintCard(raw, id, env, options) {
     if (words.length > 0) {
       add(
         "LATIN_IN_JA",
-        `"ja" contains ${words.map((word) => `"${word}"`).join(", ")}`,
+        `"ja" contains ${words.map((word) => `"${word}"`).join(", ")}; Latin letters in ja are for names, acronyms and units only`,
       );
     }
   }

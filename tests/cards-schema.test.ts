@@ -179,11 +179,17 @@ describe("Japanese text checks", () => {
     expect(hasJapanese(text)).toBe(expected);
   });
 
-  it("lets allowlisted words through and reports the rest", () => {
-    expect(unexpectedLatinWords("PC と Wi-Fi の Meeting を ＯＫ")).toEqual([
-      "Meeting",
-      "ＯＫ",
-    ]);
+  it.each([
+    ["acronyms", "OK です。PR と API と CI、ATM で Tシャツ", []],
+    ["capitalized names", "Slack と Zoom と GitHub と Wi-Fi", []],
+    ["listed lower-case names", "iPhone と iPad と macOS と eBay", []],
+    ["units in any case", "5km 歩いて 100g 買い、64GB と 2Mb と 500ml", []],
+    ["full-width capitals", "ＯＫ です", []],
+    ["lower-case English", "meeting を start する", ["meeting", "start"]],
+    ["an unlisted lower-case name", "iWatch を買った", ["iWatch"]],
+    ["full-width lower case", "ｍｅｅｔｉｎｇ です", ["ｍｅｅｔｉｎｇ"]],
+  ])("judges %s in ja", (_label, ja, expected) => {
+    expect(unexpectedLatinWords(ja)).toEqual(expected);
   });
 
   it("strips punctuation, spaces and width differences from Japanese", () => {
@@ -226,14 +232,16 @@ describe("n-gram similarity", () => {
   });
 
   it.each([
-    [{ ja: 0.6, en: 0 }, true],
-    [{ ja: 0, en: 0.65 }, true],
-    [{ ja: 0.59, en: 0.64 }, false],
+    [{ ja: 0.8, en: 0.7 }, true],
+    [{ ja: 0.9, en: 0 }, true],
+    [{ ja: 0, en: 0.9 }, true],
+    [{ ja: 0.89, en: 0.69 }, false],
+    [{ ja: 0.79, en: 0.89 }, false],
   ])("isNearDuplicate(%j) is %s", (scores, expected) => {
     expect(isNearDuplicate(scores)).toBe(expected);
   });
 
-  it("compares within a subtopic and one level either side, and with every tombstone", () => {
+  it("compares within a subtopic: cards one level either side, tombstones at any level", () => {
     const base = { topic: "work", subtopic: "meetings", level: 4 };
     const subject = {
       ...base,
@@ -249,18 +257,13 @@ describe("n-gram similarity", () => {
     };
     const far = { ...near, key: "c_4c4c4c4c", level: 6 };
     const elsewhere = { ...near, key: "c_5d5d5d5d", subtopic: "requests" };
-    const tombstone = {
-      ...near,
-      key: "c_6e6e6e6e",
-      topic: "daily",
-      subtopic: "home",
-      level: 9,
-    };
+    const tombstone = { ...near, key: "c_6e6e6e6e", level: 9 };
     const replaced = { ...tombstone, key: "c_7f7f7f7f", replacedBy: subject.key };
+    const otherCell = { ...tombstone, key: "c_8g8g8g8g", subtopic: "requests" };
     const pairs = findNearDuplicates(
       [subject],
       [subject, near, far, elsewhere],
-      [tombstone, replaced],
+      [tombstone, replaced, otherCell],
     );
     expect(pairs.map((pair) => [pair.b, pair.against])).toEqual([
       ["c_3b3b3b3b", "card"],
@@ -280,4 +283,69 @@ describe("n-gram similarity", () => {
     const twin = { ...card, key: "c_3b3b3b3b" };
     expect(findNearDuplicates([card, twin], [card, twin], [])).toHaveLength(1);
   });
+
+  const pair = (ja: [string, string], en: [string, string]) =>
+    findNearDuplicates(
+      [
+        {
+          key: "a",
+          ja: ja[0],
+          en: en[0],
+          topic: "work",
+          subtopic: "meetings",
+          level: 3,
+        },
+      ],
+      [
+        {
+          key: "b",
+          ja: ja[1],
+          en: en[1],
+          topic: "work",
+          subtopic: "meetings",
+          level: 3,
+        },
+      ],
+      [],
+    );
+
+  it.each([
+    [
+      ["駅はどこですか？", "トイレはどこですか？"],
+      ["Where is the station?", "Where is the restroom?"],
+    ],
+    [
+      ["これ、手伝ってもらえますか？", "これ、確認してもらえますか？"],
+      ["Could you help me with this?", "Could you check this?"],
+    ],
+    [
+      ["資料を共有してもらえますか？", "画面を共有してもらえますか？"],
+      ["Could you share the documents?", "Could you share your screen?"],
+    ],
+    [
+      ["会議は何時に始まりますか？", "会議は何時に終わりますか？"],
+      ["What time does the meeting start?", "What time does the meeting end?"],
+    ],
+  ] as [[string, string], [string, string]][])(
+    "does not flag short sentences that only share a frame: %j",
+    (ja, en) => {
+      expect(pair(ja, en)).toEqual([]);
+    },
+  );
+
+  it.each([
+    [
+      ["私は会議に遅れました。", "彼は会議に遅れました。"],
+      ["I was late for the meeting.", "He was late for the meeting."],
+    ],
+    [
+      ["今日の会議は中止です。", "明日の会議は中止です。"],
+      ["Today's meeting is canceled.", "Tomorrow's meeting is canceled."],
+    ],
+  ] as [[string, string], [string, string]][])(
+    "still flags a true near-duplicate: %j",
+    (ja, en) => {
+      expect(pair(ja, en)).toHaveLength(1);
+    },
+  );
 });

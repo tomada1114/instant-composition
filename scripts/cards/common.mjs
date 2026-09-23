@@ -18,7 +18,7 @@ import { coreHash, readStamp } from "./schema.mjs";
  * @property {(text: string) => void} out - Standard output, one call per line.
  * @property {(text: string) => void} err - Standard error.
  * @property {() => string} today - Local date, `YYYY-MM-DD`.
- * @property {import("./store.mjs").Formatter} format - Formats written files.
+ * @property {import("./store.mjs").Formatter} formatter - Formats written files.
  * @property {(max: number) => number} random - Integer in `[0, max)`.
  * @property {readonly import("./schema.mjs").OptionalField[]} optionalFields
  */
@@ -146,6 +146,52 @@ export function entryById(store, id, next) {
     });
   }
   return entry;
+}
+
+/**
+ * @typedef {object} UnknownId
+ * @property {string} id
+ * @property {"tombstoned" | "does not exist"} reason
+ */
+
+/**
+ * Split requested ids into the stored cards and the ids no card has, so one
+ * stale or deleted id is reported on its own instead of failing the batch.
+ *
+ * @param {import("./store.mjs").Store} store - The loaded content root.
+ * @param {readonly string[]} ids - Requested ids.
+ * @returns {{ entries: import("./store.mjs").CardEntry[], unknown: UnknownId[] }}
+ *   The entries in request order, and the ids that matched none.
+ */
+export function partitionIds(store, ids) {
+  /** @type {import("./store.mjs").CardEntry[]} */
+  const entries = [];
+  /** @type {UnknownId[]} */
+  const unknown = [];
+  for (const id of ids) {
+    const entry = store.cards.find((candidate) => candidate.raw["id"] === id);
+    if (entry !== undefined) entries.push(entry);
+    else {
+      unknown.push({
+        id,
+        reason: store.tombstones.some((tombstone) => tombstone.id === id)
+          ? "tombstoned"
+          : "does not exist",
+      });
+    }
+  }
+  return { entries, unknown };
+}
+
+/**
+ * Report ids that matched no card, one line each on stderr.
+ *
+ * @param {Context} context - Output sink.
+ * @param {readonly UnknownId[]} unknown - The ids.
+ * @returns {void}
+ */
+export function reportUnknown(context, unknown) {
+  for (const { id, reason } of unknown) context.err(`unknown id ${id}: ${reason}`);
 }
 
 /**

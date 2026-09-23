@@ -16,7 +16,10 @@ export interface Run {
 }
 
 export interface RunOptions {
-  format?: (files: readonly string[]) => void;
+  formatter?: {
+    ready: () => void;
+    format: (files: readonly string[]) => void;
+  };
   random?: (max: number) => number;
   today?: string;
   optionalFields?: readonly {
@@ -193,7 +196,7 @@ export function runCards(root: string, argv: string[], options: RunOptions = {})
       err.push(text);
     },
     today: () => options.today ?? "2026-09-22",
-    format: options.format ?? (() => undefined),
+    formatter: options.formatter ?? { ready: () => undefined, format: () => undefined },
     ...(options.random === undefined ? {} : { random: options.random }),
     ...(options.optionalFields === undefined
       ? {}

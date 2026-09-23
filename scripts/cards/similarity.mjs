@@ -2,15 +2,17 @@
 import { charNgrams, dice, normalizeEn, normalizeJa } from "./text.mjs";
 
 /**
- * Every tunable of the near-duplicate check, in one place. A pair is a
- * candidate when either side reaches its threshold. `ja` is compared on
+ * Every tunable of the near-duplicate check, in one place. `ja` is compared on
  * character bigrams (Japanese has no word boundaries to split on), `en` on
- * character trigrams of the normalized sentence, which tolerates inflection
- * without treating a shared function word as overlap.
+ * character trigrams of the normalized sentence. A pair is a candidate when
+ * both sides reach their threshold, or either side reaches `either`: short
+ * sentences sharing a frame (「〜はどこですか？」, "What time does … start?")
+ * score high on one side alone without being the same question.
  */
 export const DUPES = /** @type {const} */ ({
-  ja: { ngram: 2, threshold: 0.6 },
-  en: { ngram: 3, threshold: 0.65 },
+  ja: { ngram: 2, threshold: 0.8 },
+  en: { ngram: 3, threshold: 0.7 },
+  either: 0.9,
   // Cards are compared with cards at most this many levels apart.
   levelSpan: 1,
 });
@@ -73,10 +75,14 @@ function score(left, right) {
 
 /**
  * @param {{ ja: number, en: number }} scores - A pair's similarities.
- * @returns {boolean} True when either reaches its threshold.
+ * @returns {boolean} True when the pair is a near-duplicate candidate.
  */
 export function isNearDuplicate(scores) {
-  return scores.ja >= DUPES.ja.threshold || scores.en >= DUPES.en.threshold;
+  return (
+    (scores.ja >= DUPES.ja.threshold && scores.en >= DUPES.en.threshold) ||
+    scores.ja >= DUPES.either ||
+    scores.en >= DUPES.either
+  );
 }
 
 /**
@@ -84,9 +90,10 @@ export function isNearDuplicate(scores) {
  *
  * @remarks
  * A subject is compared with every card in the same subtopic within
- * {@link DUPES}.levelSpan levels, and with every tombstone wherever it sits —
- * except the tombstone that the subject itself replaced. A pair of two
- * subjects is reported once.
+ * {@link DUPES}.levelSpan levels, and with every tombstone in the same
+ * subtopic at any level — except the tombstone that the subject itself
+ * replaced. That is exactly what a writer is shown, so a writer can avoid
+ * everything this check would reject. A pair of two subjects is reported once.
  *
  * @param {readonly Comparable[]} subjects - What is being checked.
  * @param {readonly Comparable[]} cards - Existing cards; may include subjects.
@@ -123,7 +130,13 @@ export function findNearDuplicates(subjects, cards, tombstones) {
       }
     }
     for (const other of preparedTombstones) {
-      if (other.item.replacedBy === subject.item.key) continue;
+      if (
+        other.item.replacedBy === subject.item.key ||
+        other.item.topic !== subject.item.topic ||
+        other.item.subtopic !== subject.item.subtopic
+      ) {
+        continue;
+      }
       const scores = score(subject, other);
       if (isNearDuplicate(scores)) {
         pairs.push({
