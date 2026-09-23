@@ -11,10 +11,10 @@ const fixtures = "tests/fixtures/**";
 // Tests that import repository automation, touch the filesystem, spawn a
 // subprocess, or use git. They are listed explicitly so a new test defaults to
 // the short-timeout unit project until its I/O needs are deliberately reviewed.
-// The files not listed here are pure unit tests; guard-rules.test.ts and
-// pr-checks.test.ts are the intentional exceptions to the usual `src/**` rule,
-// because each drives a pure-function module under scripts/lib/ directly and
-// touches nothing else.
+// The files not listed here are pure unit tests; guard-rules.test.ts,
+// pr-checks.test.ts and cards-schema.test.ts are the intentional exceptions to
+// the usual `src/**` rule, because each drives pure-function modules under
+// scripts/ directly and touches nothing else.
 //
 // The two boundary suites — boundaries and placeholders — are listed for the same reason workflows.test.ts is: they
 // assert against files on disk rather than against imported code, walking
@@ -23,6 +23,8 @@ const fixtures = "tests/fixtures/**";
 // the short unit budget is not meant to cover.
 const automationTests = [
   "tests/boundaries.test.ts",
+  "tests/cards-cli.test.ts",
+  "tests/cards-lifecycle.test.ts",
   "tests/check-staged.test.ts",
   "tests/ci-sync.test.ts",
   "tests/clean.test.ts",
