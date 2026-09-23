@@ -110,6 +110,28 @@
     }
   },
   {
+    "id": "c_3k8h6e3t",
+    "ja": "昨夜3時にサーバーが止まって、約200人のユーザーがログインできなくなりました。",
+    "en": "The server went down at 3 a.m. last night, leaving about 200 users unable to log in.",
+    "alternatives": [
+      "The server crashed at 3 a.m. last night, and about 200 users couldn't log in.",
+      "At 3 a.m. last night the server went down, which left about 200 users unable to log in."
+    ],
+    "point": "結果は , leaving 〜 unable to の分詞でつなげる",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8e1e8f2c24b4667a34343f8265b136f1dfc31f6d0fd1cc33ecdc7b3857694a08",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3r2x3g7c",
     "ja": "うちのチームにあと一人エンジニアがいれば、今週中にテストを終えられるんですが。",
     "en": "If we had one more engineer on the team, we'd be able to finish the testing by the end of this week.",
@@ -235,6 +257,28 @@
         "hash": "sha256:88409e39b332252a808f2af420a7b6a37688031930b4294b0b107da522457049",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6k5p3p3a",
+    "ja": "私がもっと早くご相談していれば、この遅れは防げたと思います。",
+    "en": "If I'd come to you sooner, I think we could have avoided this delay.",
+    "alternatives": [
+      "If I had talked to you earlier, I think we could have prevented this delay.",
+      "I think this delay could have been avoided if I'd consulted you sooner."
+    ],
+    "point": "過去の仮定は If I had 〜, could have 過去分詞",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7a3633841e212aa7bc28b043dff0ddadd5bd8fb59f3818224c5e814e7e997b31",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

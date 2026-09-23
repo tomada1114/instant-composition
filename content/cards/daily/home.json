@@ -110,6 +110,28 @@
     }
   },
   {
+    "id": "c_2v7k3h5n",
+    "ja": "お父さんは週末までに網戸を直すって言ってたけど、まだ手もつけてないよ。",
+    "en": "Dad said he'd fix the window screen by the weekend, but he hasn't even started on it yet.",
+    "alternatives": [
+      "Dad said he would fix the screen by the weekend, but he hasn't even touched it yet.",
+      "Dad told us he'd repair the window screen by the weekend, but he still hasn't started on it."
+    ],
+    "point": "言ってた内容は時制の一致で will ではなく would にする",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 7,
+    "grammar": ["reported-speech", "tense-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5e1da74acd8dad8a8cbefd707c0b38cde5cfc4fe0ac4aa3ef8a7f5d5b01f00c9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3b8z5h5q",
     "ja": "ごめん、僕は一番上の棚に手が届かないんだ。",
     "en": "Sorry, I can't reach the top shelf.",
@@ -330,6 +352,28 @@
     }
   },
   {
+    "id": "c_7b4t6w9u",
+    "ja": "兄は先週の日曜の午後ずっと庭にいて、草むしりをしたり落ち葉をかき集めたりしてたよ。",
+    "en": "My older brother spent all of last Sunday afternoon in the yard, pulling weeds and raking leaves.",
+    "alternatives": [
+      "My older brother was in the yard all last Sunday afternoon, pulling weeds and raking up leaves.",
+      "My older brother spent the whole afternoon last Sunday in the yard pulling weeds and raking leaves."
+    ],
+    "point": "「〜しながら過ごした」は spent + 時間 + -ing の形",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4ebba605ced4d4d38b4e9b5a48b40f0c8e2bf3fea2b016a87a5b042fd4d82185",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_7e2q7g8c",
     "ja": "今度の土曜日、僕たちはガレージを掃除するつもりだよ。",
     "en": "We're going to clean the garage this Saturday.",
@@ -372,6 +416,28 @@
         "hash": "sha256:a7ef7018e28560bc90f79c9e2b0f23a7bd08999a6e23bb2340fd9103c64ed19c",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7g5s8d4h",
+    "ja": "うちでは、子どもたちにゲームをする前に自分の部屋を片付けさせてるんだ。",
+    "en": "We make the kids tidy up their rooms before they can play video games.",
+    "alternatives": [
+      "We have the kids clean their rooms before they're allowed to play video games.",
+      "We get the kids to tidy their rooms before they play video games."
+    ],
+    "point": "make + 人 + 動詞の原形。to は付けない",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 5,
+    "grammar": ["causatives", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3d379f1cbc7e78a6303d2d59d58bd1fc777a32cef848ee6ef7cb44039ac58027",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
@@ -420,6 +486,28 @@
     }
   },
   {
+    "id": "c_8g3m2m8q",
+    "ja": "掃除機、階段の横に置きっぱなしにしないで、いつもしまってるクローゼットに戻してくれる？",
+    "en": "Could you put the vacuum back in the closet where we usually keep it instead of leaving it by the stairs?",
+    "alternatives": [
+      "Can you put the vacuum back in the closet where it usually goes instead of leaving it next to the stairs?",
+      "Instead of leaving the vacuum by the stairs, could you put it back in the closet where we normally keep it?"
+    ],
+    "point": "「いつもしまってる」場所は where we usually keep it と where で続ける",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 9,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1bda539ea4199ae28ba9a4342f15cb950cab976ef80a2fb249934f488de26801",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_8v7p6g9q",
     "ja": "ねえお父さん、ガレージを片付けるって、もう3週間ずっと言ってるよね。",
     "en": "Dad, you've been saying you'll clean out the garage for three weeks now.",
@@ -436,6 +524,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:d06a01a3bfc94e38eec318b6c32a5ea8eaa817a78766841c045211a0f8a37195",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9a9w3g4m",
+    "ja": "今朝、洗濯物を外に干す前に、天気予報をちゃんと確認しておけばよかったなあ。",
+    "en": "I wish I'd checked the forecast before hanging the laundry outside this morning.",
+    "alternatives": [
+      "I wish I had looked at the weather forecast before I hung the laundry out this morning.",
+      "If only I'd checked the forecast before putting the laundry out to dry this morning."
+    ],
+    "point": "過去の後悔は wish の後を過去完了 I'd checked にする",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b3faf35aad2ca83786ca634c81271a6291140e1c128493d473565ed0249670cb",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

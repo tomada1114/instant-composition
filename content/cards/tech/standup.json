@@ -286,6 +286,28 @@
     }
   },
   {
+    "id": "c_5k2y7f8d",
+    "ja": "健太さんは、今日中にリリースノートを書かないといけません。",
+    "en": "Kenta has to write the release notes today.",
+    "alternatives": [
+      "Kenta needs to write the release notes today.",
+      "Kenta must write the release notes today."
+    ],
+    "point": "主語が三人称単数なので have to ではなく has to",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:71599c2ef573deb7e53f8e7c034582bf31e7c94efc6ff69f1a449a27b20a985b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5m2b7k7m",
     "ja": "先週キャッシュの設定をちゃんと確認していたら、今こんなにこのバグで苦労していないはずです。",
     "en": "If I had checked the cache settings properly last week, I wouldn't be struggling with this bug now.",
@@ -352,6 +374,28 @@
     }
   },
   {
+    "id": "c_6v9g2x9u",
+    "ja": "昨日のデプロイ、どこで止まったんですか？",
+    "en": "Where did yesterday's deploy get stuck?",
+    "alternatives": [
+      "Where did the deploy stop yesterday?",
+      "Where did yesterday's deployment fail?"
+    ],
+    "point": "過去の疑問なので did を使い、動詞は原形に戻す",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 2,
+    "grammar": ["wh-questions", "past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5023e38532f067fa31118b66cc7b1e4c676a999670844cd47bfa23a7b0a21af2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_7b7x3d6d",
     "ja": "佐藤さんが昨日、決済まわりのテストを全部書き直してくれて、そのおかげで CI がかなり速くなりました。",
     "en": "Sato rewrote all the payment tests yesterday, making our CI run a lot faster.",
@@ -412,6 +456,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:c94868ce0987f44a930fbdaa40b4855a3dc973d37629306a56c48c19ac054d1b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7t3d9h6z",
+    "ja": "今日のうちに、みんなでテスト結果を確認しましょう。",
+    "en": "Let's all check the test results today.",
+    "alternatives": [
+      "Let's go over the test results together today.",
+      "Let's all review the test results today."
+    ],
+    "point": "「〜しましょう」は Let's の後に動詞の原形",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d5d67c7e6325efa171aa2c14630d6f552433f4dfe0ab8ebc9022d4d42cd6dedc",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

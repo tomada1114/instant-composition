@@ -132,6 +132,28 @@
     }
   },
   {
+    "id": "c_4s3z5y5y",
+    "ja": "今回のポジションで御社が求めている人物像について、もう少し詳しく教えていただけますか？",
+    "en": "Could you tell me a little more about the kind of person you're looking for in this position?",
+    "alternatives": [
+      "Could you tell me a bit more about what kind of person you're looking for in this role?",
+      "Could you explain a little more about the type of person you hope to hire for this position?"
+    ],
+    "point": "the kind of person you're looking for の for を落とさない",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["relative-clauses", "requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:624d86ddddfdcfb7d7941e9530e3f7f4bfde6905be3988e76878c20219b2cc7e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5m3p5g5r",
     "ja": "私は人前で話すのが得意なので、前の職場ではよくお客様へのプレゼンを任されていました。",
     "en": "I'm good at speaking in front of people, so I was often asked to give presentations to clients at my last job.",
@@ -238,6 +260,28 @@
         "hash": "sha256:74a507aa3c0d82afc181091e0e15683dc33b9576fbf6cfa89ff8913022a841d1",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7k2m7f4t",
+    "ja": "前の上司は新人にも大きな案件を任せてくれたので、早いうちから多くの経験を積めました。",
+    "en": "My previous manager let new hires handle big projects, so I got a lot of experience early on.",
+    "alternatives": [
+      "My old manager let newcomers take on large projects, so I gained a lot of experience early.",
+      "Because my last manager let new employees handle major projects, I got plenty of experience early on."
+    ],
+    "point": "let + 人 + 動詞の原形。to を入れない",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:80d954f618ccc1154ffa48e99e98dcb4dde8ba27dc5ee7baae1c4542844f6c22",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

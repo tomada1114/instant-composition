@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2b5h5t5a",
+    "ja": "会議の前に私たちで接続テストをしておけば、音声トラブルであんなに時間を無駄にしなかったのに。",
+    "en": "If we had tested the connection before the meeting, we wouldn't have wasted so much time on audio problems.",
+    "alternatives": [
+      "If we'd done a connection test before the meeting, we wouldn't have lost so much time to audio issues.",
+      "We wouldn't have wasted so much time on audio problems if we had tested the connection before the meeting."
+    ],
+    "point": "過去の仮定は if + had 過去分詞、帰結は wouldn't have 過去分詞",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d919fff4a962df22ca2e4c93d9f6314236d967d7d70536a2cd35599c9d152489",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2c3z7d8x",
     "ja": "通話中ずっと途切れていたのは、回線じゃなくてそちらの音声だったんですよ。",
     "en": "It was your audio, not the connection, that kept cutting out during the call.",
@@ -18,6 +40,28 @@
         "hash": "sha256:b6a247026f3857e0d9ac04b8d83451346d26a7a31a2f29dda73fc45ebdc2d76d",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2e3n9n9b",
+    "ja": "私が転送ボタンを押したときには、お客様はもう電話を切ってしまっていました。",
+    "en": "By the time I pressed the transfer button, the customer had already hung up.",
+    "alternatives": [
+      "When I pressed the transfer button, the customer had already hung up.",
+      "The customer had already hung up by the time I hit the transfer button."
+    ],
+    "point": "先に起きた「切った」は had hung up、hang の過去分詞は hung",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 6,
+    "grammar": ["past-perfect", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:351a88dda25592909e9898137e601a3e9a387c95181746eb7c774fbaaa41f24e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
@@ -129,6 +173,28 @@
     }
   },
   {
+    "id": "c_4r5y8j9b",
+    "ja": "雑音が入っているので、話さないときはマイクをミュートにしたほうがいいですよ。",
+    "en": "There's some background noise, so you should mute your mic when you're not talking.",
+    "alternatives": [
+      "We're getting some background noise, so you should mute yourself when you're not speaking.",
+      "There's some noise coming through, so you should mute your mic when you aren't talking."
+    ],
+    "point": "「〜したほうがいい」は you should で、had better は強すぎる",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 5,
+    "grammar": ["modal-obligation-advice", "there-is-are"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b7903e10d12e36a31b4aa196c13ef6076d398715fb4bc763e609bd47a105dcc9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4v2h9q3q",
     "ja": "すみません、今おっしゃったことが聞き取れませんでした。",
     "en": "Sorry, I didn't catch what you just said.",
@@ -145,6 +211,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:089761d9f7c39e11a8d89cceea18e88a6ebb304c4a04e7fc85aa3f088a5eb199",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5s8m4a8z",
+    "ja": "彼、会議の前にマイクの設定を確認しておけばよかったって言ってたよ。",
+    "en": "He said he wished he had checked his mic settings before the meeting.",
+    "alternatives": [
+      "He said he should have checked his mic settings before the meeting.",
+      "He told me he wished he'd checked his microphone settings before the meeting."
+    ],
+    "point": "過去への後悔は wish + had 過去分詞、checked のままにしない",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["wishes-regrets", "reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ec117118163eab4be90706919eda64fd828c3ed917b72766abcf84566c26862a",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }
@@ -217,6 +305,28 @@
     }
   },
   {
+    "id": "c_6n4k2w8u",
+    "ja": "お客様からのお電話は、もう営業部に転送されましたよ。",
+    "en": "The customer's call has already been transferred to the sales department.",
+    "alternatives": [
+      "The customer's call has already been put through to the sales department.",
+      "The customer's call was already transferred to the sales team."
+    ],
+    "point": "「転送された」は has been transferred と受動態で",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["passive-voice", "present-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1e51b26d2c379ab9cc103b7c77c827d7f485cab4a671ce52565639918b03182c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_6p7n8e5k",
     "ja": "すみません、今は運転中なので、あとでかけ直します。",
     "en": "Sorry, I'm driving now. I'll call back later.",
@@ -277,6 +387,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:f62083994c69334a1e1a6fca40a6f85d83cf2af08d569d8647e38db1340c88cb",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7s7s4a6n",
+    "ja": "ここ 10 分くらい、そちらの映像がずっと止まったり動いたりしていますよ。",
+    "en": "Your video has been freezing on and off for about ten minutes.",
+    "alternatives": [
+      "Your video's been freezing on and off for the last ten minutes or so.",
+      "Your video's been cutting in and out for about ten minutes."
+    ],
+    "point": "続いている状態は has been freezing と現在完了進行形",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:231426162ff60d810dced2b8f37205e3bba0129d05333fc66e31176876ffd543",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

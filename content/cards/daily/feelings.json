@@ -393,6 +393,28 @@
     }
   },
   {
+    "id": "c_6x4n4t7k",
+    "ja": "昨日姉に、私が選んだ色はこの部屋に合わないって言われて、正直ちょっと傷ついた。",
+    "en": "Honestly, it hurt a little when my sister said yesterday that the color I'd picked didn't go with this room.",
+    "alternatives": [
+      "Honestly, I was a little hurt when my sister told me yesterday that the color I'd chosen didn't suit this room.",
+      "To be honest, it stung a bit when my sister said yesterday that the color I picked didn't go with this room."
+    ],
+    "point": "said に合わせて「合わない」も didn't go と過去形にする",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 8,
+    "grammar": ["nested-clauses", "reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2e9de90d6b688bb6972cb65cfbb27538c9cd8316c024546d0cd0bea5e6dca941",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_6z8y2c9q",
     "ja": "兄は、自分でもすっかり忘れていた誕生日を私が覚えていたので、すごく喜んでいました。",
     "en": "My brother was really happy that I'd remembered his birthday, which he'd completely forgotten himself.",
@@ -482,6 +504,28 @@
     }
   },
   {
+    "id": "c_8r2e8e4s",
+    "ja": "あの日ちゃんと話し合っていたら、私たち、今こんなに気まずい思いをしていないはずだよ。",
+    "en": "If we had talked things through properly that day, we wouldn't be feeling this awkward around each other now.",
+    "alternatives": [
+      "If we'd properly talked it over that day, we wouldn't feel so awkward around each other now.",
+      "If we'd talked it through properly that day, things wouldn't be this awkward between us now."
+    ],
+    "point": "過去の仮定は had talked、今の結果は wouldn't be と分ける",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 10,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2310439d3d46b70c3cb3cc80d775018c1783380cafaec3dd73856dd45165a32b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_8u4j2n3w",
     "ja": "この服の色、派手すぎると思う？",
     "en": "Do you think this color is too bright?",
@@ -544,6 +588,28 @@
         "hash": "sha256:55d3394b873d032080d0a92fa72de351bbb0becbd0d3f9be26258f0c67791842",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8x6n4f2g",
+    "ja": "引っ越しの準備で困っていたとき、同僚が役に立つアドバイスをたくさんくれて、本当に助かりました。",
+    "en": "When I was struggling to get ready for the move, a coworker gave me a lot of useful advice, and it was a huge help.",
+    "alternatives": [
+      "When I was having a hard time getting ready for the move, a coworker gave me lots of helpful advice, which really helped.",
+      "A coworker gave me a lot of useful advice when I was struggling to prepare for the move, and it really helped me out."
+    ],
+    "point": "advice は数えられないので advices や a advice にしない",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 10,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b9706df3206596ed4a82a20c6a9614e77e437f9327dc0958f447338dfedec254",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

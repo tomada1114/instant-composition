@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_2m3k5k2a",
+    "ja": "皆さんは、来年この新しいシステムを導入することについてどう思いますか？",
+    "en": "What do you think about introducing this new system next year?",
+    "alternatives": [
+      "How do you feel about introducing this new system next year?",
+      "What are your thoughts on introducing this new system next year?"
+    ],
+    "point": "about の後ろは to introduce ではなく introducing",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 4,
+    "grammar": ["gerunds", "wh-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3ccd52e22bdb56a846da79ebf0169f13f91ec5d336c20a92e144f5a600bdb1f4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2q7e4z9u",
     "ja": "では、最初のスライドから始めましょう。",
     "en": "Let's start with the first slide.",
@@ -40,6 +62,50 @@
         "hash": "sha256:e8e555c49ad771782eb233c51df016fb9bcef336fd69084a1b1e3f84bf49e90e",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3c7j2u6e",
+    "ja": "このプランはコストを下げるだけでなく、導入期間も半分に短縮できます。",
+    "en": "Not only does this plan reduce costs, but it also cuts the rollout time in half.",
+    "alternatives": [
+      "Not only does this plan lower costs, but it also cuts the implementation period in half.",
+      "Not only will this plan reduce costs, but it'll also halve the rollout time."
+    ],
+    "point": "Not only の後は does this plan reduce と疑問文の語順",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:df163ef794a8e8916cdd11c03cf4dc4d3933d3f2afeca5a0f07a044bf24a840d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3v9y2f2p",
+    "ja": "このプロジェクトで、私たちは半年間ずっと顧客データを分析してきました。",
+    "en": "We've been analyzing customer data for six months on this project.",
+    "alternatives": [
+      "For this project, we've been analyzing customer data for six months.",
+      "We've been analyzing customer data on this project for the past six months."
+    ],
+    "point": "今も続く「ずっと〜してきた」は have been + -ing",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 4,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2bbf6ed3e0819af0008aa7c550619b026ce55a8d50d3066a27f4e89f5f1c775e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
@@ -132,6 +198,28 @@
     }
   },
   {
+    "id": "c_7x6y8m2b",
+    "ja": "ご質問にお答えする前に、担当のエンジニアに技術的な詳細を説明させます。",
+    "en": "Before I take your questions, I'll have the engineer in charge explain the technical details.",
+    "alternatives": [
+      "Before I answer your questions, I'll have the engineer in charge walk you through the technical details.",
+      "Before taking your questions, I'll have our engineer in charge explain the technical details."
+    ],
+    "point": "have 人 do は原形。to explain にしない",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 5,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0ad89ead60dd6f97e5b0e48d4feae5e950b23d960fcb0e07ce245d35a97cc6d6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_8t8b9m7v",
     "ja": "これからお見せするデータは、私たちが先月実施した顧客調査に基づいています。",
     "en": "The data I'm about to show you is based on a customer survey that we conducted last month.",
@@ -150,6 +238,28 @@
         "hash": "sha256:d8792dba709f6ae1f7c4dc00636a96925bc7b6a3e6016de46fd6c68c3e82f6c3",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9p2n8q3g",
+    "ja": "今日皆さんにお伝えしたいのは、この変更がなぜ今必要なのかということです。",
+    "en": "What I want to tell you today is why this change is necessary right now.",
+    "alternatives": [
+      "What I'd like to share with you today is why we need this change now.",
+      "What I want to explain today is why this change is needed right now."
+    ],
+    "point": "文頭の What I want to tell you を主語にし、is の後は why 節",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["noun-clauses", "indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0c2517633a3762f117a86ba52bb0cb808330413ba4468c57a3ea629a8e95cb88",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   }

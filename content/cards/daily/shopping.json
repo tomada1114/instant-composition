@@ -264,6 +264,28 @@
     }
   },
   {
+    "id": "c_6s5v6q4t",
+    "ja": "探しているのは、小さくても吸引力がしっかりある掃除機なんですが、何かおすすめはありますか？",
+    "en": "What I'm looking for is a vacuum that's compact but still has strong suction. Is there anything you'd recommend?",
+    "alternatives": [
+      "What I need is a small vacuum that still has powerful suction. Do you have anything you'd recommend?",
+      "I'm looking for a compact vacuum with strong suction. Is there anything you would recommend?"
+    ],
+    "point": "What I'm looking for is の is を落とさない",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["noun-clauses", "relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c4fa34d26a13e643bd2e10bac30252aa2a4ccfef202d3bf7736473354fb4cb41",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_6z6n8c9q",
     "ja": "レシートをなくしてしまったんですが、それでもこのセーターを返品してもいいですか？",
     "en": "I've lost my receipt, but is it still okay to return this sweater?",
@@ -418,6 +440,28 @@
     }
   },
   {
+    "id": "c_8x8c8w6y",
+    "ja": "セールのときに買っておけばよかったなあ。今はほぼ倍の値段になってるよ。",
+    "en": "I wish I'd bought it during the sale. It costs almost twice as much now.",
+    "alternatives": [
+      "If only I'd bought it during the sale. It's almost twice as expensive now.",
+      "I wish I had gotten it on sale. Now it's nearly double the price."
+    ],
+    "point": "過去の後悔は wish のあとを過去完了 I'd bought にする",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5fbb6bafab7822936fc2fd411b467f7fd204072f2512a646308c1fa99ad11f33",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_9e4v9x7e",
     "ja": "セールが昨日までだって知ってたら、僕はあのコートをもっと早く買いに行ってたよ。",
     "en": "If I'd known the sale ended yesterday, I would have gone to buy that coat sooner.",
@@ -436,6 +480,28 @@
         "hash": "sha256:4d3fed0507517a23245223c75e13f99a633f3d65b5182e6bbeaf046fc6fafc45",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9m8a8z9z",
+    "ja": "妻はもう1時間もネットでソファを見比べてるのに、まだ決められないんだ。",
+    "en": "My wife has been comparing sofas online for a whole hour, and she still can't decide.",
+    "alternatives": [
+      "My wife's been comparing sofas online for an entire hour and still can't make up her mind.",
+      "My wife has been looking at sofas online for a whole hour, but she still hasn't decided."
+    ],
+    "point": "今も続く動作は has been comparing、過去形にしない",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f27300740f17feac73d1d689e1b2853309dfdaad051caebc86a8202ffc72e45f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   }

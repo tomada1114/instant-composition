@@ -66,6 +66,25 @@
     }
   },
   {
+    "id": "c_3t9f5v8w",
+    "ja": "うちのチームは、毎日 Slack を使っています。",
+    "en": "Our team uses Slack every day.",
+    "alternatives": ["Our team uses Slack daily.", "We use Slack every day."],
+    "point": "team は単数扱いなので uses と s が付く",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:20d3058f12dc6a46d303a415e5450c7bac8d1811f5c365e361271b6f6085f567",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4m3r3b7a",
     "ja": "来週の打ち合わせの前に、この提案書にざっと目を通しておいてもらえますか？",
     "en": "Could you look over this proposal before our meeting next week?",
@@ -242,6 +261,50 @@
     }
   },
   {
+    "id": "c_8j8d4m8t",
+    "ja": "先方が昨日メールに返信してくれていたら、うちのチームは今ごろ契約書の最終版に取りかかっているはずです。",
+    "en": "If the client had replied to our email yesterday, our team would be working on the final contract by now.",
+    "alternatives": [
+      "If the client had gotten back to us yesterday, our team would already be working on the final contract.",
+      "Our team would be working on the final contract by now if the client had answered our email yesterday."
+    ],
+    "point": "過去の仮定は had replied、今の結果は would be で時制を分ける",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b3b88a96cea8849e05caddf99ee31354a5a769b0e798b1f93a8788b8a860f739",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8y7s5s9n",
+    "ja": "山田さんからまだ返事がないので、彼はこちらが送ったチャットを見落としたのかもしれません。",
+    "en": "I still haven't heard back from Mr. Yamada, so he might have missed the message I sent him in the chat.",
+    "alternatives": [
+      "Mr. Yamada still hasn't gotten back to me, so he may have missed the chat message I sent him.",
+      "I haven't heard from Mr. Yamada yet, so maybe he missed the message I sent him on chat."
+    ],
+    "point": "過去の推量は might miss ではなく might have missed",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 8,
+    "grammar": ["modal-perfect", "tense-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:83cf0ed6a4bf7724afe22ae08ea4a007886df629744df8ff716716bbecc055a2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_8y7x7h7v",
     "ja": "先方は、請求書を月曜までに送ると言っていましたよ。",
     "en": "The client said they would send the invoice by Monday.",
@@ -280,6 +343,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:2cfd0791b537ed9611049a5fe40134b06cc701e059bc975b780149ff8a05e754",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9q7h2d3z",
+    "ja": "田中さんのメールには、ファイルが 2 つ添付されています。",
+    "en": "There are two files attached to Tanaka's email.",
+    "alternatives": [
+      "Tanaka's email has two files attached.",
+      "There are two attachments in Tanaka's email."
+    ],
+    "point": "複数のものがあるときは There are を使う",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:33be5fd8776eb0753d9e7892e3d77a924478e984d2a63e1943dfcae74f9c09ac",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_9r2t9b4w",
+    "ja": "この件は、チャットで返信してください。",
+    "en": "Please reply to this in the chat.",
+    "alternatives": [
+      "Please answer this in the chat.",
+      "Reply to this in the chat, please."
+    ],
+    "point": "「〜に返信する」は reply to。to を落としやすい",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a28cfbd2d78ec70a34fb420410eda79040edea07e3d14a3f69867b168968d1aa",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

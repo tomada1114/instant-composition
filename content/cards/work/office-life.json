@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_3b9f5m7v",
+    "ja": "ノートパソコンが何度もフリーズするから、朝からずっと IT 部門に連絡しようとしてるんだけど、まだ誰も出てくれないんだ。",
+    "en": "I've been trying to reach IT all morning because my laptop keeps freezing, but nobody's picked up yet.",
+    "alternatives": [
+      "I've been trying to get hold of IT since this morning because my laptop keeps freezing, but no one's answered yet.",
+      "My laptop keeps freezing, so I've been trying to contact IT all morning, but nobody's picked up yet."
+    ],
+    "point": "朝からずっと続く動作は I've been trying と現在完了進行形",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a61dd759f45860a6b310359d4d7b055dc89c493854cbe7c9013d180310a50058",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3b9t7j3e",
     "ja": "新しい加湿器は前のよりずっと静かだから、会議中もつけっぱなしにしておけるね。",
     "en": "The new humidifier is much quieter than the old one, so we can leave it on during meetings.",
@@ -264,6 +286,28 @@
     }
   },
   {
+    "id": "c_8a8g9n7g",
+    "ja": "彼、昨夜の歓迎会であんなに飲んでなかったら、今こんなに眠そうにしてないだろうね。",
+    "en": "If he hadn't drunk so much at the welcome party last night, he wouldn't look so sleepy right now.",
+    "alternatives": [
+      "He wouldn't look so sleepy now if he hadn't had so much to drink at last night's welcome party.",
+      "If he hadn't drunk that much at the welcome party last night, he wouldn't look this sleepy right now."
+    ],
+    "point": "if 節は過去完了、主節は今の話なので wouldn't look",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6fed9a169ca183fd00e1f512aa5d19323ed96f4e629c160fc234b9623ded7963",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_8f4d6q7y",
     "ja": "課長には、金曜は休みを取ると伝えて、いない間に誰か私の電話を取ってもらえないかと頼んでおいた。",
     "en": "I told my manager I'd be taking Friday off and asked whether someone could cover my calls while I was out.",
@@ -304,6 +348,28 @@
         "hash": "sha256:84f0727957314b0472f26401b7615bb2c6572e416f542dc65120e9b205575844",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9g9q7j2k",
+    "ja": "カーディガンを持ってくればよかった。今日はオフィスの冷房が効きすぎてて、寒くてたまらないよ。",
+    "en": "I wish I'd brought a cardigan. The air conditioning in the office is way too strong today, and I'm freezing.",
+    "alternatives": [
+      "If only I'd brought a cardigan. The office AC is way too strong today, and I'm freezing.",
+      "I should've brought a cardigan. The air conditioning in the office is far too strong today, and I'm freezing."
+    ],
+    "point": "過去の後悔は I wish I brought ではなく I wish I'd brought",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 8,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b538c78d057baf3818f03886cc4085d267cc5625a4e0846092dc6f0475318fd1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

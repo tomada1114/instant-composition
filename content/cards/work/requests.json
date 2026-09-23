@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_2j9r5g5d",
+    "ja": "昨日、田中さんにデータの確認を頼みました。",
+    "en": "I asked Tanaka to check the data yesterday.",
+    "alternatives": [
+      "Yesterday I asked Tanaka to check the data.",
+      "I asked Mr. Tanaka to check the data yesterday."
+    ],
+    "point": "「人に〜を頼む」は ask 人 to 動詞 の形",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 3,
+    "grammar": ["verb-object-to-do", "past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c5bcafc9b93047fbb733bcbda2c43dc1dff8b940b228d374e6a649d5c9a75be3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2p7p2b3w",
     "ja": "ごめんなさい、今週はとても忙しいので、プレゼン資料作りは手伝えないんです。",
     "en": "Sorry, I can't help you with the slides because I'm really busy this week.",
@@ -154,6 +176,28 @@
     }
   },
   {
+    "id": "c_4c2h4u8x",
+    "ja": "今、急ぎの報告書を書いているので、あとで手伝いますね。",
+    "en": "I'm writing an urgent report, so I'll help later.",
+    "alternatives": [
+      "I'm working on an urgent report, so I'll help you later.",
+      "I'm writing an urgent report now, so I'll help you afterward."
+    ],
+    "point": "「今〜している」は現在進行形 I'm writing にする",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 2,
+    "grammar": ["progressive-aspect", "future-forms"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e2ed593c28b86970919ef7cfacd4be3abdf19a23e50325d9ba8fab588e533e9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4e7h2d4k",
     "ja": "この翻訳、もっと早くお願いしておけばよかったです。締め切りは明日なんです。",
     "en": "I wish I had asked you to translate this sooner. The deadline is tomorrow.",
@@ -260,6 +304,28 @@
         "hash": "sha256:8a0122b66a3a33ab41056adb8f852a2a47411098678c27e021ccc32e38a259ed",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5z9e9k7j",
+    "ja": "うちのチームは今週忙しすぎて、その依頼は受けられません。",
+    "en": "We're too busy this week to take that on.",
+    "alternatives": [
+      "We're too busy to take on that request this week.",
+      "We can't take that on because we're too busy this week."
+    ],
+    "point": "「忙しすぎて〜できない」は too busy to 動詞 で言える",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 3,
+    "grammar": ["infinitives", "be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6c73b632d63e5f2299cb9c5e2950f6cc997a54bf690a3aeb2f0b2c177ff2dbee",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

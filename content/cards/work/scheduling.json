@@ -151,6 +151,28 @@
     }
   },
   {
+    "id": "c_5f3h2h3q",
+    "ja": "部長に言って、締め切りを来週の水曜日まで延ばしてもらえませんか？",
+    "en": "Could you get the manager to push the deadline back to next Wednesday?",
+    "alternatives": [
+      "Could you ask the manager to extend the deadline to next Wednesday?",
+      "Would you be able to get the manager to move the deadline to next Wednesday?"
+    ],
+    "point": "get 人 to 動詞 の to を落とさない",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["causatives", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c84674015c04c5cb10ae724c6c8e590f770bd883be40142fa003bdfea2b225ba",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5k8e8z2q",
     "ja": "会議を月曜日に移しましょう。",
     "en": "Let's move the meeting to Monday.",
@@ -430,6 +452,28 @@
         "hash": "sha256:d893af42d8536b8bf7d0056450412e3f13c96dd581dcdddfc1ae129ce46e2ba6",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8g5k8j8f",
+    "ja": "私たちが先週のうちに会議室を予約していたら、今ごろ打ち合わせの日程で困っていないのに。",
+    "en": "If we'd booked the meeting room last week, we wouldn't be struggling to schedule this meeting now.",
+    "alternatives": [
+      "If we had reserved the meeting room last week, we wouldn't be having trouble scheduling the meeting now.",
+      "Had we booked the room last week, we wouldn't be stuck trying to schedule this meeting right now."
+    ],
+    "point": "過去の仮定でも、今の結果は wouldn't be 〜ing",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 10,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:004f02d666abf3a20d5de4f0b406e39ea988e87f8797f5dae600920265135fb8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

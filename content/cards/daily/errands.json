@@ -132,6 +132,28 @@
     }
   },
   {
+    "id": "c_3t2e7n5g",
+    "ja": "修理に出したのは画面じゃなくて、バッテリーの方だったんですよ。",
+    "en": "It was the battery, not the screen, that I took in for repair.",
+    "alternatives": [
+      "What I took in for repair was the battery, not the screen.",
+      "It was the battery that I sent in for repair, not the screen."
+    ],
+    "point": "強調したい語を It was と that の間に挟む",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1548a0a43ed4a3c0d78366c97bdf09467d14f4713a21ce2f60af68979e3bc303",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4c3m2y9m",
     "ja": "修理が終わったら、携帯に電話してもらえますか？",
     "en": "Could you call my cell phone when the repair is finished?",
@@ -304,6 +326,28 @@
         "hash": "sha256:6b40ca309857bab5cd1b06d002cd5d0a103dfd6b2de05479a80738e8ba238b44",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7t9p7w7p",
+    "ja": "兄は郵便局が閉まる前に着いていれば、昨日のうちに小包を受け取れたのに。",
+    "en": "If my brother had gotten to the post office before it closed, he could have picked up the package yesterday.",
+    "alternatives": [
+      "My brother could have picked up the package yesterday if he'd gotten to the post office before it closed.",
+      "If my brother had made it to the post office before it closed, he could've gotten the package yesterday."
+    ],
+    "point": "過去の仮定は had＋過去分詞、結果は could have＋過去分詞",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 8,
+    "grammar": ["third-conditional", "modal-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:58ff86e3f42b79a5394e96e35de474e439ce372e80ae6f17b3eced7e98e6e5c0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
