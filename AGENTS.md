@@ -25,9 +25,9 @@ learners of English: a card shows a Japanese sentence and the learner says it in
 before the timer runs out, then checks the answer. Cards are pre-generated JSON under
 `content/`, written ahead of time by Claude Code skills, so the application calls no
 language model at runtime. It is a Next.js App Router application in ESM-only
-TypeScript, styled with Tailwind v4 and shadcn/ui, meant to run as a local server with
-progress in SQLite (planned). It was started from a template whose language-model layer
-was removed whole.
+TypeScript, styled with Tailwind v4 and shadcn/ui, run as a local server with progress
+in a SQLite file (`node:sqlite`). It was started from a template whose language-model
+layer was removed whole.
 
 It is private: nothing here is packed, published, or consumed as a tarball, so there is
 no published `engines.node` floor — `.node-version` and `devEngines.runtime` carry the
@@ -124,7 +124,8 @@ on every edit is slow enough that it stops being run at all.
 ```
 src/
 ├── core/       # framework-free vocabulary: a Result, a domain type, a pure function
-├── server/     # the environment read and request handlers
+├── server/     # the environment read, the SQLite store, the content loader, the
+│               # services the pages and handlers call, and the request handlers
 ├── i18n/       # the locale list, its URL routing, and the typed message catalogs
 ├── components/ # UI: the shadcn/ui copies under ui/ and this app's own components
 ├── app/        # the Next.js App Router tree: pages, layouts, route handlers
