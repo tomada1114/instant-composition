@@ -1,0 +1,68 @@
+[
+  {
+    "id": "c_3c6q5b2b",
+    "ja": "彼女は今、転職先を探しているところです。",
+    "en": "She's looking for a new job now.",
+    "alternatives": [
+      "She's currently looking for a new job.",
+      "She's looking for a new job right now."
+    ],
+    "point": "今している最中のことは is looking と進行形で",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3b97422b33f9737fd97320b030d8f45949f6ea26ca179560a4315e8790db782f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7j7f3z3t",
+    "ja": "御社には海外で働くチャンスはありますか？",
+    "en": "Are there any opportunities to work overseas at your company?",
+    "alternatives": [
+      "Is there a chance to work overseas at your company?",
+      "Are there any chances to work abroad at your company?"
+    ],
+    "point": "「海外で働くチャンス」は opportunities to work overseas と to 不定詞で後ろから",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 3,
+    "grammar": ["there-is-are", "infinitives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:74a507aa3c0d82afc181091e0e15683dc33b9576fbf6cfa89ff8913022a841d1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9b3f9r9c",
+    "ja": "私は大阪の小さな会社でエンジニアをしています。",
+    "en": "I'm an engineer at a small company in Osaka.",
+    "alternatives": [
+      "I work as an engineer at a small company in Osaka.",
+      "I work as an engineer for a small company in Osaka."
+    ],
+    "point": "職業は現在形で。「会社で」は at a company",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 2,
+    "grammar": ["be-and-present-simple", "articles-and-countability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:be2e862f781f13c52e4fbafec3c1ff4e982e567251f4f6d64bb6726f0770e567",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

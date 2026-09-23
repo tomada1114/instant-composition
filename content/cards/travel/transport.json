@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_6t4g8b5u",
+    "ja": "東京駅までの往復切符を2枚と、路線図を1枚いただけますか？",
+    "en": "Could I have two round-trip tickets to Tokyo Station and a route map, please?",
+    "alternatives": [
+      "Can I get two round-trip tickets to Tokyo Station and a route map, please?",
+      "I'd like two round-trip tickets to Tokyo Station and a route map, please."
+    ],
+    "point": "tickets は複数形、map には a を忘れずに",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["articles-and-countability", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b18375483901cb8de4e7c44cadf68bae6cc743f446caf94f893ad2a8d9afdaab",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_6v6h8u2n",
     "ja": "彼女が乗る予定だった電車、大雪で運休になっちゃった。",
     "en": "The train that she was supposed to take was canceled because of heavy snow.",
@@ -60,6 +82,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:2b4ef318ad75c3212598b027289c71d720ff6c8d95536acf4ed20f30e5694059",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7d5b8m6y",
+    "ja": "バス、もう行っちゃったのかも。停留所に誰もいないよ。",
+    "en": "The bus might have already left. There's nobody at the stop.",
+    "alternatives": [
+      "The bus may have left already. There's no one at the stop.",
+      "The bus might have gone already. Nobody's at the stop."
+    ],
+    "point": "過去の推量は might have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:124d283eb6e41a0b43b2b57582c4229b4a5e50fa1749e41e70e8f7447631283b",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

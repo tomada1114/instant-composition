@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_3a7c3u7z",
+    "ja": "私の部屋のエアコンに問題があります。",
+    "en": "There's a problem with the air conditioner in my room.",
+    "alternatives": [
+      "There's something wrong with the air conditioner in my room.",
+      "The air conditioner in my room isn't working properly."
+    ],
+    "point": "「問題がある」は There's a problem with 〜 で言う",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c3870913af91458400723f67d88a37a077576a0b5aea936689f8166283919748",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3z2h3n4e",
     "ja": "1時間前にタオルを頼んだんですが、まだ届いていません。",
     "en": "I asked for towels an hour ago, but they haven't arrived yet.",

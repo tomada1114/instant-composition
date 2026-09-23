@@ -1,0 +1,24 @@
+[
+  {
+    "id": "c_2g4y8d9k",
+    "ja": "窓のそばに立っている女性が、私の上司の田中さんです。",
+    "en": "The woman standing by the window is my boss, Ms. Tanaka.",
+    "alternatives": [
+      "The woman who's standing by the window is my boss, Ms. Tanaka.",
+      "The woman standing next to the window is my boss, Ms. Tanaka."
+    ],
+    "point": "「立っている女性」は the woman standing と後ろから説明する",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6895ee5a2001ff63d0d4f2d66ab92621e6300b3deda6e901cad22f763ba6ace8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

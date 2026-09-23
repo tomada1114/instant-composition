@@ -1,0 +1,24 @@
+[
+  {
+    "id": "c_5d2n8f2b",
+    "ja": "都合が悪いのは週末全部じゃなくて、日曜の朝だけなんだ。",
+    "en": "It's only Sunday morning that doesn't work for me, not the whole weekend.",
+    "alternatives": [
+      "What doesn't work for me is just Sunday morning, not the whole weekend.",
+      "It's just Sunday morning that's bad for me, not the whole weekend."
+    ],
+    "point": "強調したい「日曜の朝」を It's と that で挟む",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9800e6a594a7e93a38f45a61c8fe17b8670be4e4152703f19e646eb6590e8514",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

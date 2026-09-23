@@ -1,0 +1,68 @@
+[
+  {
+    "id": "c_5u9t8g4c",
+    "ja": "田中さん、マイクがミュートになっていますよ。もう一度言ってください。",
+    "en": "Mr. Tanaka, you're on mute. Please say that again.",
+    "alternatives": [
+      "Mr. Tanaka, you're muted. Please say it again.",
+      "Mr. Tanaka, you're on mute. Could you say that again?"
+    ],
+    "point": "ミュート中は you're on mute が定番の言い方",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 2,
+    "grammar": ["imperatives", "be-and-present-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6d68cf046e3f2ff7f395b52e44e7fdf91466abf7d17c798e11af9a21343d0a2a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6p7n8e5k",
+    "ja": "すみません、今は運転中なので、あとでかけ直します。",
+    "en": "Sorry, I'm driving now. I'll call back later.",
+    "alternatives": [
+      "Sorry, I'm driving right now, so I'll call you back later.",
+      "Sorry, I'm driving right now. I'll call you later."
+    ],
+    "point": "今している最中のことは I'm driving と進行形で言う",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 2,
+    "grammar": ["progressive-aspect", "future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:870fb7a0d6f7850403a7817894442b37541610f40525783ae96a68abddc41a6a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6r8c2d8v",
+    "ja": "この回線、少し雑音がありますね。",
+    "en": "There's some noise on this line.",
+    "alternatives": [
+      "There's a little noise on this line.",
+      "There is some noise on the line."
+    ],
+    "point": "「雑音がある」は There's some noise で、noise は数えない",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 2,
+    "grammar": ["there-is-are", "articles-and-countability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:eed5305e72efe2d9fb89a78f83574c9633142eb3f943dba8e782692acae0dddf",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  }
+]

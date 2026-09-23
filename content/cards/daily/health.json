@@ -41,6 +41,50 @@
     }
   },
   {
+    "id": "c_3s8a8b8b",
+    "ja": "念のためお聞きしますが、これまでにこの種類の薬で副作用が出たことはありますか？",
+    "en": "Just to check, have you ever had any side effects from this kind of medicine?",
+    "alternatives": [
+      "Just to make sure, have you ever had side effects from this type of medicine?",
+      "Can I just ask, have you ever had side effects from this kind of medicine?"
+    ],
+    "point": "経験を聞くので Have you ever had、「〜で」は from",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 5,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2d7935be6a3efae0345a55453ef03f98127088839bbc47677306a7ffebced672",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3w5d9q4q",
+    "ja": "一晩中高熱が続いたので、彼女は朝一番に近くのクリニックに行きました。",
+    "en": "Having had a high fever all night, she went to a nearby clinic first thing in the morning.",
+    "alternatives": [
+      "Since she'd had a high fever all night, she went to a nearby clinic first thing in the morning.",
+      "After having a high fever all night, she went to a local clinic first thing in the morning."
+    ],
+    "point": "先に続いた状態は Having had で理由として前に置く",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:74b16a4544939cd9c0da4c3cebec3ad63a842cacda68e6b093761bb50eae8864",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3y2f3j4k",
     "ja": "この薬を飲んでいる間は、お酒を飲むのを避けたほうがいいですか？",
     "en": "Should I avoid drinking alcohol while I'm taking this medicine?",
@@ -57,6 +101,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:e0c6bd6c30b3cfc8c72325e7c95e22a186d9b5d7d2344ab7ee3834007be50dfa",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4e6p5s4f",
+    "ja": "この薬を3日間飲んでいるんですが、前より頭痛がひどくなった気がします。",
+    "en": "I've been taking this medicine for three days, but I feel like my headaches are worse than before.",
+    "alternatives": [
+      "I've been on this medicine for three days, but I think my headaches are worse than before.",
+      "I've taken this medicine for three days, but my headaches feel worse than they did before."
+    ],
+    "point": "「前より」は worse than before、3日間は現在完了進行形で",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 7,
+    "grammar": ["comparatives-superlatives", "present-perfect-continuous"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c9641d09008fa6b7f3a1743bb06f3ade22190adf4de29b222f9d58a438888cab",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

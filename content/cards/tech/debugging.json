@@ -154,6 +154,28 @@
     }
   },
   {
+    "id": "c_5t6t5q8j",
+    "ja": "このエラー、私の環境では再現できないんです。",
+    "en": "I can't reproduce this error in my environment.",
+    "alternatives": [
+      "I can't reproduce this error on my machine.",
+      "I'm not able to reproduce this error in my environment."
+    ],
+    "point": "「再現できない」は can't reproduce",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 3,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bc3ef2294efb2c1107d3f344a5a1e9040d0a73d04a540886eef269535b009d3a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_6y9q2y2z",
     "ja": "昨日、彼にエラーログを全部集めてもらったんですが、それでも再現手順がまだはっきりしないんです。",
     "en": "I had him collect all the error logs yesterday, but the steps to reproduce the error still aren't clear.",
@@ -192,6 +214,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:1c1a8ce1e3df0e55a5216165d2b035eabb84153e4660b5811c710cb3eaad17e6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7g4f3n7v",
+    "ja": "たとえキャッシュを消しても、同じ手順を踏むとやっぱり画面が真っ白になる、と彼は言っています。",
+    "en": "He says that even if you clear the cache, the screen still goes blank when you follow the same steps.",
+    "alternatives": [
+      "He says the screen still goes blank when you follow the same steps, even if you clear the cache.",
+      "According to him, even if you clear the cache, following the same steps still makes the screen go blank."
+    ],
+    "point": "「たとえ〜ても」は even if、「やっぱり」は still で添える",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["concession-contrast", "time-and-if-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5acca57628859ba1db19f2fcf3ee0227f71056045df44a300136b6f8b239ce47",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

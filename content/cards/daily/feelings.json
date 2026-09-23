@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2b2t7j5y",
+    "ja": "店長が新しい企画、すごくいいって言ってくれて、めっちゃ嬉しかった。",
+    "en": "I was so happy when the manager told me the new plan was really good.",
+    "alternatives": [
+      "I was really happy when the manager said the new plan was great.",
+      "It made me so happy when the manager told me the new plan was really good."
+    ],
+    "point": "told me の後は時制を合わせて is ではなく was",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 5,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e01734aa0b7dce42adee00b259240ad815f59e1fcbb0b27a900597f1bdb338d9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2c3f4d2q",
     "ja": "上司に本当の気持ちを伝えたほうがいいと思うよ。",
     "en": "I think you should tell your boss how you really feel.",
@@ -16,6 +38,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:492d6c323a8dd363a65f5034a20c6c2d3c81316899fe07d1ccddea0576d6ac8f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2g2b6q7k",
+    "ja": "最近ずっと夜よく眠れてなくて、正直ちょっと参ってきてるんだ。",
+    "en": "I haven't been sleeping well lately, and to be honest, it's kind of wearing me down.",
+    "alternatives": [
+      "I haven't been sleeping well recently, and honestly, it's kind of getting to me.",
+      "I haven't been getting much sleep lately, and to be honest, it's wearing me down a bit."
+    ],
+    "point": "「最近ずっと〜してない」は haven't been ~ing で継続を出す",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["present-perfect-continuous", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1a0888b6650a17652b796770631f018dfe36700ec49efe5025274db6dbdccb52",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
@@ -60,6 +104,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:3f2f0ca90d88bca8de709c2d3538d307cae38002301d7825e790d61cd32fb3d3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3v6u4r2j",
+    "ja": "あんなこと言うべきじゃなかったな。彼女、きっと傷ついたと思う。",
+    "en": "I shouldn't have said that. She must have been hurt.",
+    "alternatives": [
+      "I shouldn't have said something like that. She must have been hurt.",
+      "I shouldn't have said that. I bet she was hurt."
+    ],
+    "point": "過去への後悔は shouldn't have、過去の推量は must have",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bc1045b06ad23c159adda616cd903b1a60d5e9cd588a10883b252c6557c76258",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

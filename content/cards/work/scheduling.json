@@ -44,6 +44,72 @@
     }
   },
   {
+    "id": "c_6g2c6d3u",
+    "ja": "私たちは納期を確認するために、明日の朝お客様に電話します。",
+    "en": "We'll call the client tomorrow morning to confirm the deadline.",
+    "alternatives": [
+      "We're going to call the client tomorrow morning to confirm the deadline.",
+      "We'll call the client tomorrow morning to confirm the delivery date."
+    ],
+    "point": "「〜するために」は to 不定詞で表す",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 3,
+    "grammar": ["infinitives", "future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:58e4a781f23c89159477a1564b7dcf88c93dc966f2eb86cfa8a270c20ebb7850",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7a6u8u9j",
+    "ja": "今週はみんな忙しいので、ミーティングを来週に延ばすのはどうですか？",
+    "en": "Since everyone's busy this week, how about pushing the meeting back to next week?",
+    "alternatives": [
+      "Everyone's busy this week, so how about putting the meeting off until next week?",
+      "Since everyone's tied up this week, what about moving the meeting to next week?"
+    ],
+    "point": "how about の後は -ing。延期は push back や put off",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["gerunds", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef258ad5db332975a9ce6863d5c8a4e9334ab94a87dbf8eb5de4274b9d27b2b0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8e8v8n6d",
+    "ja": "部長は、月曜の締め切りに間に合わせるために週末に作業するのは避けたいと思っています。",
+    "en": "Our manager wants to avoid working on the weekend to meet the Monday deadline.",
+    "alternatives": [
+      "Our manager would like to avoid working over the weekend to make the Monday deadline.",
+      "Our manager wants to avoid having to work on the weekend to hit the Monday deadline."
+    ],
+    "point": "avoid の後は to 不定詞ではなく -ing",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["gerunds", "infinitives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d893af42d8536b8bf7d0056450412e3f13c96dd581dcdddfc1ae129ce46e2ba6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_9d3w7h2e",
     "ja": "先方に、打ち合わせを来週の火曜日にずらしてもらうよう頼んでもらえますか？",
     "en": "Could you ask the client to move the meeting to next Tuesday?",
@@ -60,6 +126,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:b5e13afb0ca67bb13d81da5bc954d566eb3b732e5f2ffc595c8ef11be3ef02be",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9f7g2g4f",
+    "ja": "火曜の午後に予定されていたクライアントとの打ち合わせは、木曜の朝に変更になりました。",
+    "en": "The client meeting scheduled for Tuesday afternoon has been moved to Thursday morning.",
+    "alternatives": [
+      "The client meeting that was scheduled for Tuesday afternoon has been moved to Thursday morning.",
+      "The client meeting set for Tuesday afternoon has been pushed to Thursday morning."
+    ],
+    "point": "scheduled for で後ろから修飾し、has been moved で受け身",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["post-modification", "passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4c3c5ba1ce3607d96afc2a030950ebd36c69094b90b6a54e3162179bbb3a1f80",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

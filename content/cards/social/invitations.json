@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2w9r6f5f",
+    "ja": "昨日、同僚にランチに誘われたけど、断ったんだ。",
+    "en": "A coworker invited me to lunch yesterday, but I said no.",
+    "alternatives": [
+      "A coworker invited me to lunch yesterday, but I declined.",
+      "My coworker asked me to lunch yesterday, but I said no."
+    ],
+    "point": "「誘われた」は coworker を主語に invited me で言える",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 3,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a4b6c98bd74ed8aefe8f00ed97d1e7b19a70e4c0b01bb63c8bb363d1dc78fe51",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3j8d8h8p",
     "ja": "土曜の試合が終わったら、みんなでご飯を食べに行こうよ。",
     "en": "Let's all go get something to eat when the game ends on Saturday.",
@@ -16,6 +38,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:45ac240f19a3ebf9ace3ffaf06bfa56c82a88badf5b49b6c070c2c2eb010b822",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5j3c6x8z",
+    "ja": "金曜の夜に花火大会があるんだけど、一緒に行かない？",
+    "en": "There's a fireworks show Friday night. Want to go together?",
+    "alternatives": [
+      "There's a fireworks festival on Friday night. Do you want to go together?",
+      "There's a fireworks display Friday night. Do you want to come with me?"
+    ],
+    "point": "「〜がある」は There's で始め、誘いは Want to 〜? で軽く",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:34ee21c64b4ff6129e6c79bc9791ce57a1d6d9be5769115230875c7f0f0e39ee",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
@@ -82,6 +126,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:b0b6390bc13e139f864c634d1fd121cf331a04e0de7b186d561b90edf73c74a9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8h6s8j2y",
+    "ja": "今夜のパーティー、もう誘われた？",
+    "en": "Have you been invited to tonight's party yet?",
+    "alternatives": [
+      "Has anyone invited you to tonight's party yet?",
+      "Have you gotten an invitation to tonight's party yet?"
+    ],
+    "point": "「もう〜された？」は Have you been + 過去分詞 + yet",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 3,
+    "grammar": ["present-perfect", "passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7054a4a69f0929bbb22c80a8fd7ef1841d6b944b2f2f7990d398b4139075f7a9",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

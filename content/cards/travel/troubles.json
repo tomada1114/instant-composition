@@ -152,5 +152,27 @@
         "at": "2026-09-22"
       }
     }
+  },
+  {
+    "id": "c_9k2j8t6m",
+    "ja": "彼女は明日、警察にバッグの盗難届を出すつもりです。",
+    "en": "She's going to report her stolen bag to the police tomorrow.",
+    "alternatives": [
+      "She'll report her stolen bag to the police tomorrow.",
+      "She's going to report her bag stolen to the police tomorrow."
+    ],
+    "point": "予定は be going to、「盗まれたバッグ」は stolen bag",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 3,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:220362e22d6d1596479923be9cac59d862a66fe1af9a77dabdd04e224c295868",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
   }
 ]

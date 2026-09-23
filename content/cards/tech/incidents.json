@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_5t8b4g7p",
+    "ja": "この障害、影響を受けているのは日本のユーザーだけです。",
+    "en": "Only users in Japan are affected by this outage.",
+    "alternatives": [
+      "This outage only affects users in Japan.",
+      "This outage is only affecting users in Japan."
+    ],
+    "point": "「影響を受けている」は are affected by で表す",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 3,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:097cb60aebbb5b4514806642b5afb1d491228dfcafdfda20427a389cbb3576f3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_8q4v3v4a",
     "ja": "まずサーバーのログを確認しましょう。",
     "en": "Let's check the server logs first.",
@@ -60,6 +82,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:7b3016582d6c3043beb2926580ec887acd871741384fbe27dfde279ac1b860b0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9r8p8d9q",
+    "ja": "昨日の夜、サーバーが 2 時間止まりました。",
+    "en": "The server went down for two hours last night.",
+    "alternatives": [
+      "The server was down for two hours last night.",
+      "The server was offline for two hours last night."
+    ],
+    "point": "「止まった」は went down。過去の出来事なので過去形",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:633ac996843b29e79db6a32f99307eb8c800f5bacb70282bdc116693b07370f1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9y8t7m3g",
+    "ja": "再発防止策を金曜日までにまとめてもらえますか？",
+    "en": "Could you write up the preventive measures by Friday?",
+    "alternatives": [
+      "Can you write up the preventive measures by Friday?",
+      "Could you put together a plan to prevent this by Friday?"
+    ],
+    "point": "丁寧な依頼は Could you。「までに」は by Friday",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c715089156ae5bb9391b88f657c60f515de67e1006d9593f4b84470c24bad41d",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

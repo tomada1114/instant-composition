@@ -64,5 +64,115 @@
         "at": "2026-09-22"
       }
     }
+  },
+  {
+    "id": "c_4j3k6y7t",
+    "ja": "今回ご迷惑をおかけしたのは、チームのミスではなく、私が数字の確認を怠ったせいです。申し訳ありません。",
+    "en": "It was my failure to check the figures, not a mistake by the team, that caused this inconvenience. I sincerely apologize.",
+    "alternatives": [
+      "What caused this inconvenience was my failure to check the figures, not a mistake by the team. I sincerely apologize.",
+      "It was my failure to check the numbers, not the team's mistake, that caused this trouble. I sincerely apologize."
+    ],
+    "point": "It was A, not B, that で「B ではなく A が」を強調",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4d6622e4636bc802109537ffcbd2c3904a363bfdfdb078fd026191f455405084",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5x8c9q6k",
+    "ja": "新人の田中くんがミスに気づいてなかったら、私たち、お客さんに間違った見積もりを送ってたよ。ちゃんとお礼言わなきゃ。",
+    "en": "If our new hire Tanaka hadn't spotted the mistake, we'd have sent the client the wrong quote. We should thank him properly.",
+    "alternatives": [
+      "If Tanaka, our new hire, hadn't caught the mistake, we'd have sent the client the wrong quote. We should really thank him.",
+      "We'd have sent the client the wrong quote if our new guy Tanaka hadn't noticed the mistake. We need to thank him properly."
+    ],
+    "point": "過去の事実の裏は If S had done, S would have done",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8c76943a4393264945ea237a9d9957d9ea4f0b6aca3da76049a6af0f5bcb2b85",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6s2s7s2p",
+    "ja": "さっき君が車で送ってくれなかったら、僕は今ごろまだ駅で待ってたよ。ほんとにありがとう！",
+    "en": "If you hadn't driven me here, I'd still be waiting at the station right now. Thanks so much!",
+    "alternatives": [
+      "If you hadn't given me a ride, I'd still be waiting at the station right now. Thank you so much!",
+      "Thanks so much! If you hadn't driven me, I'd still be stuck waiting at the station now."
+    ],
+    "point": "過去の条件＋今の結果は If I had done, I'd be doing",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6cadb3a0f7ef3f9aada15df239740fc2d3a4581625e7540c5e9099d61b68764d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7e9r4k9q",
+    "ja": "あの朝あなたが車で送ってくれなかったら、私は面接に間に合わなかったと思います。本当にありがとうございました。",
+    "en": "If you hadn't given me a ride that morning, I don't think I'd have made it to the interview. Thank you so much.",
+    "alternatives": [
+      "I don't think I would have made it to the interview if you hadn't driven me that morning. Thank you so much.",
+      "If you hadn't driven me that morning, I probably wouldn't have gotten to the interview in time. I really appreciate it."
+    ],
+    "point": "過去の仮定は had 過去分詞、帰結は would have 過去分詞",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 9,
+    "grammar": ["third-conditional", "hedging-softening"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:76d80a9c4a3138b21ffb4740e2feaa386ae9c9f5822301975d4528f473eb9515",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8d4x5e7w",
+    "ja": "先日お貸しいただいた資料を、まだお返ししていなくて申し訳ありません。",
+    "en": "I'm sorry I still haven't returned the documents that you lent me the other day.",
+    "alternatives": [
+      "I'm sorry I haven't returned the materials you lent me the other day yet.",
+      "I apologize that I still haven't returned the documents you lent me the other day."
+    ],
+    "point": "「まだ〜していない」は still haven't returned",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 5,
+    "grammar": ["relative-clauses", "present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f5af17dfbfc30c917d53c3e93661cb87054757733533d1bdad5688b81953ba85",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
   }
 ]

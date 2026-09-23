@@ -22,6 +22,50 @@
     }
   },
   {
+    "id": "c_3f9s6d5u",
+    "ja": "田中さんにこの PR をレビューしてくれるよう頼んでもらえますか？",
+    "en": "Could you ask Tanaka-san to review this PR?",
+    "alternatives": [
+      "Can you ask Tanaka-san to review this PR?",
+      "Could you ask Tanaka to take a look at this PR?"
+    ],
+    "point": "「人に〜するよう頼む」は ask + 人 + to do",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 3,
+    "grammar": ["verb-object-to-do", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7bf916417a4740bbc08abbe986f1ebe3c526526a355ae46dfa3eefe3f6b286f2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_3w5x5t4h",
+    "ja": "指摘されたところは、もう全部直しました。",
+    "en": "I've already fixed all the issues you pointed out.",
+    "alternatives": [
+      "I've already fixed everything you pointed out.",
+      "I've already addressed all of your comments."
+    ],
+    "point": "「もう直した」は現在完了 I've already fixed",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 4,
+    "grammar": ["present-perfect", "relative-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5689f5d17b14fbc1d4f63ce82cd2c25b92096a98764f7585c14ac54d14f06b0e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4u8x7a6j",
     "ja": "指摘ありがとうございます。僕が気にしていたのは、リトライ処理がエラーを隠してしまわないかということです。",
     "en": "Thanks for pointing that out. What I was worried about was whether the retry logic would hide errors.",

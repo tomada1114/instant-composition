@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2d7r4w2x",
+    "ja": "新しいシステムについて、いくつかアドバイスをいただけますか？",
+    "en": "Could you give me some advice on the new system?",
+    "alternatives": [
+      "Could you give me some advice about the new system?",
+      "Can you give me some advice on the new system?"
+    ],
+    "point": "advice は数えられないので advices にしない",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 3,
+    "grammar": ["articles-and-countability", "requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d622fa3604b503691ec139c69f97a3948c85e892d9dfde7240c192f7532b4177",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3n2q8y5p",
     "ja": "あなたがもっと早く在庫の件を教えてくれていたら、私は取引先への返信を遅らせずに済んだのですが。",
     "en": "If you had told me about the stock issue earlier, I wouldn't have had to delay my reply to the client.",
@@ -60,6 +82,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:6a2888cafa47cc7ecb3d81cc433b2ebcfc590015f34fbbfffc0015b9569e952f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6e5q5w9z",
+    "ja": "見積もりを確定するには、今週金曜までに正確な発注数をいただく必要があるのですが。",
+    "en": "To finalize the quote, we'd need the exact order quantity from you by this Friday.",
+    "alternatives": [
+      "We'd need the exact order quantity from you by this Friday to finalize the quote.",
+      "In order to finalize the quote, we'd need your exact order quantity by this Friday."
+    ],
+    "point": "目的の「〜するには」は To do で文頭に置ける。we'd need で柔らかく",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 7,
+    "grammar": ["infinitives", "hedging-softening"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b4ca604735ff915adad378bf9610fdc443c8ccaa3490701559d25b1d0f8706ea",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
