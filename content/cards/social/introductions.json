@@ -88,6 +88,28 @@
     }
   },
   {
+    "id": "c_6u6s8g6g",
+    "ja": "差し支えなければ、今のお仕事を始める前は何をされていたのか教えていただけますか？",
+    "en": "Would you mind telling me what you did before you started your current job?",
+    "alternatives": [
+      "If you don't mind my asking, could you tell me what you did before your current job?",
+      "Do you mind if I ask what you were doing before you started your current job?"
+    ],
+    "point": "間接疑問は what you did の語順、did you do にしない",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 6,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:599eda2ebebe8a042f762993285ffe32f9c19900f7125f38615968fadb1bc1dc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_8a6b6c5e",
     "ja": "もしあの時友達に誘われていなかったら、私はサーフィンを始めていなかったと思います。",
     "en": "If my friend hadn't invited me back then, I don't think I would have started surfing.",

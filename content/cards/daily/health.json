@@ -22,6 +22,50 @@
     }
   },
   {
+    "id": "c_2q9q4a8f",
+    "ja": "この薬を処方される前に、先生にアレルギーのことを伝えておけばよかった。",
+    "en": "I wish I'd told the doctor about my allergy before I was prescribed this medicine.",
+    "alternatives": [
+      "If only I'd told the doctor about my allergy before I was prescribed this medicine.",
+      "I should have mentioned my allergy to the doctor before I was prescribed this medicine."
+    ],
+    "point": "過去の後悔は I wish の後を過去完了にする",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 7,
+    "grammar": ["wishes-regrets", "passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:93dc23c5683d708b2d562297057fe77a3574bae9643da8b69f27d1f78a99a064",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2r8y7f4r",
+    "ja": "夫は胸の痛みなんて大したことないと言い張るけど、明日は絶対に検査を受けさせます。",
+    "en": "My husband keeps insisting his chest pain is nothing, but I'm definitely making him get it checked tomorrow.",
+    "alternatives": [
+      "My husband keeps saying his chest pain is nothing, but I'll make him have it checked tomorrow.",
+      "My husband insists his chest pain is nothing, but I'm definitely making him get it looked at tomorrow."
+    ],
+    "point": "嫌がる相手にさせるのは make him do、get it checked の形も",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 7,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e0d55746628ff15a19c5219260dc6ed0fb4e5eb04c31411e338ded74e06ffb28",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3b2p7z9q",
     "ja": "近くに薬局はありますか？",
     "en": "Is there a pharmacy near here?",
@@ -107,6 +151,28 @@
     }
   },
   {
+    "id": "c_4d8m5t6v",
+    "ja": "先月ちゃんと健康診断を受けていたら、彼は今ごろ入院なんてしていなかったはずだよ。",
+    "en": "If he had gotten a checkup last month, he wouldn't be in the hospital right now.",
+    "alternatives": [
+      "If he'd had a checkup last month, he wouldn't be in the hospital now.",
+      "If he'd gone in for a checkup last month, he wouldn't be in the hospital now."
+    ],
+    "point": "過去の仮定は had gotten、今の結果は wouldn't be",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4accc09b5ddad06f87670444d4e7854c791b890d27b79a5687f10de95984479c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4e6p5s4f",
     "ja": "この薬を3日間飲んでいるんですが、前より頭痛がひどくなった気がします。",
     "en": "I've been taking this medicine for three days, but I feel like my headaches are worse than before.",
@@ -145,6 +211,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:2752642ac20e5e62d18e08265ed8f90ec5e94d4d014fec2ecd32bd028f389e28",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5k6p5v2y",
+    "ja": "すみません、この薬を飲むと眠くなるかどうか、教えていただけないかと思いまして。",
+    "en": "Excuse me, I was wondering if you could tell me whether this medicine will make me drowsy.",
+    "alternatives": [
+      "Excuse me, I was wondering whether you could tell me if this medicine will make me sleepy.",
+      "Sorry, I was wondering if you could let me know whether this medication causes drowsiness."
+    ],
+    "point": "過去進行形 was wondering で丁寧に。中身は whether 節",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 7,
+    "grammar": ["hedging-softening", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ec4c8811ee68ff8af44a5e0c50c5f934a0e265ff5658e6a5b87f5a217d087c8d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5z2e5y7w",
+    "ja": "この薬は食後に飲むように言われたんですが、朝ごはんを抜いた日はどうすればいいですか？",
+    "en": "I was told to take this medicine after meals, but what should I do on days when I skip breakfast?",
+    "alternatives": [
+      "I was told to take this medicine after eating, but what should I do if I skip breakfast?",
+      "I've been told to take this after meals, so what should I do on days I skip breakfast?"
+    ],
+    "point": "言われた は I was told to do の受け身で言う",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 9,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5e70aba715ee96558ec443d92250ec951a8c51b9ebc5b77cd2d506cb55d5a342",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
@@ -278,6 +388,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:7d5b856a252596cff3e2f565b2289b361b4421f6b5654939ac9b9a6f738ebb9d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8n7x8f5n",
+    "ja": "かかりつけの先生が週末も診てくれたらいいのに。息子の熱が昨日から下がらないんです。",
+    "en": "I wish our family doctor saw patients on weekends. My son's fever hasn't gone down since yesterday.",
+    "alternatives": [
+      "If only our family doctor saw patients on weekends. My son's fever hasn't gone down since yesterday.",
+      "I wish our family doctor worked weekends. My son's fever hasn't come down since yesterday."
+    ],
+    "point": "今の願望は wish + 過去形。熱は現在完了で hasn't gone down",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 7,
+    "grammar": ["wishes-regrets", "present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c7e6e65fa0413789d9f63166380f552457e9f2a425ce51c2f7e81667267b96d8",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

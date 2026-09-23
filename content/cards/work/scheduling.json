@@ -1,5 +1,46 @@
 [
   {
+    "id": "c_4c4b5m7g",
+    "ja": "次の打ち合わせはいつですか？",
+    "en": "When is our next meeting?",
+    "alternatives": ["When's the next meeting?", "When do we have our next meeting?"],
+    "point": "When の後は is + 主語の順。be 動詞を忘れない",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 1,
+    "grammar": ["wh-questions", "be-and-present-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9f4cb6294aec819fd7d96513bcca13f42d59e08389bb2cb6e8c0a6321c5409d4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5k8e8z2q",
+    "ja": "会議を月曜日に移しましょう。",
+    "en": "Let's move the meeting to Monday.",
+    "alternatives": [
+      "Let's change the meeting to Monday.",
+      "Let's reschedule the meeting for Monday."
+    ],
+    "point": "曜日の前は on だが「〜に移す」は move to",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ca18d795fc96d504a332f8bf5a153d6262b96b67227efee25272d5579abdaba5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5t9z8f4h",
     "ja": "私が会議室を予約しようとした時には、彼らはもう打ち合わせの日程を変えていました。",
     "en": "When I tried to book a room, they had already rescheduled the meeting.",
@@ -38,6 +79,25 @@
     "stamps": {
       "core": {
         "hash": "sha256:4a72f8618ef0c1e482765bfe899c31a14c89bd58a1b550b1d4d01faa38f9ef86",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6c4a3g7t",
+    "ja": "締め切りは今週の金曜日です。",
+    "en": "The deadline is this Friday.",
+    "alternatives": ["The deadline is Friday this week.", "It's due this Friday."],
+    "point": "this Friday の前に on は付けない",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f5447d7df93f339d382a8d57e121385a406f46eb457176da9794dd98ee86a620",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_4k3g7q2r",
+    "ja": "店員さんは、その掃除機は来週まで入荷しないって言ってたよ。",
+    "en": "The clerk said the vacuum wouldn't be back in stock until next week.",
+    "alternatives": [
+      "The salesperson said the vacuum wouldn't be in stock until next week.",
+      "The store clerk said they wouldn't have the vacuum in stock until next week."
+    ],
+    "point": "said に合わせて won't を wouldn't に時制をずらす",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 6,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9bfe2d34a3400ccc0fd1fb4cadb7bc93b87efe0c96e49034546a3c79bcedfbbd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_5p8j4b8u",
     "ja": "このシャツを返品するには、レシートとタグの両方が必要ですか？",
     "en": "Do I need both the receipt and the tags to return this shirt?",
@@ -60,6 +82,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:30646eaf6ab12b292c76860ab0bd2ca3e260a9c09ac6c2a9ae5537190cb442c7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6z6n8c9q",
+    "ja": "レシートをなくしてしまったんですが、それでもこのセーターを返品してもいいですか？",
+    "en": "I've lost my receipt, but is it still okay to return this sweater?",
+    "alternatives": [
+      "I lost my receipt, but could I still return this sweater?",
+      "I've lost the receipt. Can I still return this sweater?"
+    ],
+    "point": "「それでも〜していいか」は is it still okay to 〜 か Can I still 〜 で言う",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["requests-permission", "present-perfect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:491548606d0257e76ccec952681a4e7c74097949d577b445bebdd0a339c7fe6d",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

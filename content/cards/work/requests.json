@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_3n3w4j2v",
+    "ja": "あなたがもっと早く頼んでくれていたら、私は金曜までに仕上げられたのに。",
+    "en": "If you had asked me sooner, I could have finished it by Friday.",
+    "alternatives": [
+      "If you'd asked me earlier, I could've gotten it done by Friday.",
+      "If you'd come to me sooner, I would have been able to finish it by Friday."
+    ],
+    "point": "過去の事実に反する仮定は had asked と could have finished",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5e32aed24378c285633aea6dec832fb31d1d6031b32dcd8dd99f24ad9e170143",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_4e7h2d4k",
     "ja": "この翻訳、もっと早くお願いしておけばよかったです。締め切りは明日なんです。",
     "en": "I wish I had asked you to translate this sooner. The deadline is tomorrow.",
@@ -60,6 +82,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:7da328e3c80728a26f2b5e4d40ff6983b2709d4f51b4c2faaeed84ca60741cbc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4k7h4r6b",
+    "ja": "予算の条件を確認したうえで、私たちはその案件を来月から引き受けることにしました。",
+    "en": "Having checked the budget, we decided to take on the project starting next month.",
+    "alternatives": [
+      "Having confirmed the budget terms, we decided to take on the project from next month.",
+      "After going over the budget, we decided to take the project on starting next month."
+    ],
+    "point": "先に済ませた動作は Having checked で表す",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 6,
+    "grammar": ["participle-clauses", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:281c8c3a7db4df5c8461e46efaf9498e7f04092033ee2ea8c8654601e6566169",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
@@ -148,6 +192,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:618cd82f5152677d1d928d0638cde1e058f44fb5e2fdd1274b5fae1dd8d169c8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9s2w3b8h",
+    "ja": "もし彼があの時その依頼を断っていたら、今ごろこんなに忙しくはなかったでしょうね。",
+    "en": "If he had turned down that request back then, he wouldn't be this busy now.",
+    "alternatives": [
+      "If he'd said no to that request back then, he wouldn't be so busy now.",
+      "If he'd declined that request back then, he wouldn't be this busy right now."
+    ],
+    "point": "if 節は過去完了、主節は今の話なので wouldn't be",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["mixed-conditional", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bae02292a66df258b73abd62553343ee1548cd268ed7f1c9d317480ebc7ae642",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

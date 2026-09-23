@@ -88,6 +88,44 @@
     }
   },
   {
+    "id": "c_7c2d9g2f",
+    "ja": "入国の目的ですか？観光で来ました。",
+    "en": "I'm here for sightseeing.",
+    "alternatives": ["I'm here on vacation.", "I'm here as a tourist."],
+    "point": "入国審査では I'm here for 目的 で答える",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0035b528897000a5a7c5bc7315e8650325d3a2c415c6013bb699356c8c1410ed",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7f2x9m9x",
+    "ja": "すみません、10 番ゲートはどこですか？",
+    "en": "Excuse me, where is Gate 10?",
+    "alternatives": ["Sorry, where is Gate 10?", "Excuse me, which way is Gate 10?"],
+    "point": "where の後は is＋主語の語順",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 1,
+    "grammar": ["wh-questions", "be-and-present-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:10af481061fe8514a338741d5e1a2ddf02e8968e547da3154d99d0cfacc16e02",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_7n9c4w8w",
     "ja": "保安検査で止められた原因は、ノートパソコンじゃなくて、かばんに入れっぱなしにしてた水のボトルだったんだ。",
     "en": "It was the water bottle I'd left in my bag, not my laptop, that got me stopped at security.",

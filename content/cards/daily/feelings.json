@@ -132,6 +132,25 @@
     }
   },
   {
+    "id": "c_2v7q4e5x",
+    "ja": "私、今すごく緊張してる。",
+    "en": "I'm feeling really nervous right now.",
+    "alternatives": ["I'm getting really nervous now.", "I'm so nervous right now."],
+    "point": "「今〜な気分」は feel を進行形にして I'm feeling とできる",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:df71807d5df49f457022bb86768a9a0165412897d378c59960243d5314c752e5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_3h5h7a2t",
     "ja": "昨日の映画、どうして気に入らなかったの？",
     "en": "Why didn't you like the movie yesterday?",

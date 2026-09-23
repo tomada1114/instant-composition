@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2e6y7r7j",
+    "ja": "この美術館に来る人のほとんどは、作品そのものじゃなくて、最上階からの眺めが目当てなんですよ。",
+    "en": "It's the view from the top floor, not the art itself, that most visitors come here for.",
+    "alternatives": [
+      "What most visitors come here for is the view from the top floor, not the art itself.",
+      "Most visitors come here for the view from the top floor, not the art itself."
+    ],
+    "point": "強調したい部分を It's と that の間に挟む",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a67e1e457e92f49120adea3e7f3087be7c338f204aa66830f1697f18755fc50f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2e7r2a9x",
     "ja": "1日しか時間がない人には、どのツアーがおすすめですか？",
     "en": "Which tour would you recommend for someone who has only one day?",
@@ -302,6 +324,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:ad054ed4663596caddeb1e1db2b2d637a586867de320677050dbcb07aa4cd8bb",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8k3x3r6w",
+    "ja": "私たち、今日はもうお寺を三つ回ったけど、今朝見たお寺が断トツで一番すごかったね。",
+    "en": "We've visited three temples today, but the one we saw this morning was by far the most impressive.",
+    "alternatives": [
+      "We've already been to three temples today, but the one we saw this morning was easily the most impressive.",
+      "We've seen three temples today, and the one this morning was by far the most impressive."
+    ],
+    "point": "今日の合計は現在完了、今朝の出来事は過去形",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 7,
+    "grammar": ["tense-contrast", "comparatives-superlatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9011b6b23d8a0887392395c5befa21e5aba30229d48838cba56e22570b86f054",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

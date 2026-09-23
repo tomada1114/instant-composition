@@ -66,6 +66,28 @@
     }
   },
   {
+    "id": "c_4c9x9e4t",
+    "ja": "次のバスが何時に来るか、駅員さんに聞いてみて。",
+    "en": "Try asking the station staff when the next bus comes.",
+    "alternatives": [
+      "Try asking a station worker when the next bus comes.",
+      "Try asking the staff at the station when the next bus is."
+    ],
+    "point": "「〜してみて」は try + -ing。try to do は「努力する」",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 4,
+    "grammar": ["gerunds", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:387f71f82871692823445a4b294bf044e20f6d7e39667caac61f4d565bd1270f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_6t4g8b5u",
     "ja": "東京駅までの往復切符を2枚と、路線図を1枚いただけますか？",
     "en": "Could I have two round-trip tickets to Tokyo Station and a route map, please?",

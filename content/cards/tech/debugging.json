@@ -22,6 +22,72 @@
     }
   },
   {
+    "id": "c_2j2a4z3r",
+    "ja": "彼は明日の朝、そのサーバーのログを調べる予定です。",
+    "en": "He's going to check the server logs tomorrow morning.",
+    "alternatives": [
+      "He'll check the server logs tomorrow morning.",
+      "He's checking the server logs tomorrow morning."
+    ],
+    "point": "予定は be going to。主語 he に合わせて He's",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8ce95937816a0c771b72962bf3030a2f395098a91f06471e6bde7112362c80a8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2q9z3j2c",
+    "ja": "再現手順を送ってもらえますか？",
+    "en": "Could you send me the steps to reproduce?",
+    "alternatives": [
+      "Can you send me the reproduction steps?",
+      "Could you send me the steps to reproduce it?"
+    ],
+    "point": "丁寧な依頼は Could you で始める",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0b8752cd6609adc226f72c1279912ebac10d1877eebe01f08da4e80912d5511d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_2t8t9e8b",
+    "ja": "再現手順を私と一緒にもう一度見直して、データがどの段階で壊れるのか絞り込むのを手伝ってもらえますか？",
+    "en": "Could you go over the repro steps with me again and help narrow down where the data gets corrupted?",
+    "alternatives": [
+      "Could you walk through the repro steps with me again and help pin down where the data gets corrupted?",
+      "Can you go through the reproduction steps with me again and help figure out where the data gets corrupted?"
+    ],
+    "point": "見直すは go over、絞り込むは narrow down",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["phrasal-verbs", "indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:47370175bea08dc611c4f020874aa8210fa5fb855676bf1c5693da0b5f46c94c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2x4r3q6d",
     "ja": "スタックトレースから判断すると、同じレコードを二つのリクエストが同時に更新したときに落ちてるんだと思う。",
     "en": "Judging from the stack trace, I think it crashes when two requests update the same record at the same time.",
@@ -104,6 +170,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:ca5d827f972f80d512a04a142cd9ddfb42e6f72f9f90f27977896cf0e6d853cd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4e6b6g4n",
+    "ja": "このバグは昨日のバグより直すのが難しいです。",
+    "en": "This bug is harder to fix than yesterday's.",
+    "alternatives": [
+      "This bug is more difficult to fix than yesterday's.",
+      "This one is harder to fix than yesterday's bug."
+    ],
+    "point": "hard の比較級は harder、than の後は yesterday's で OK",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8b90f1d3d38961438b41a9997d3b315bf515a9dd53e89c61435316e4479ba7a8",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
@@ -296,6 +384,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:3cc211bc4c4239e27062c82150cd009cd6ea98b384f9576d928bfbed2033a2c2",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6s4s3g5q",
+    "ja": "もしあのとき君がエラーログを残してくれていなかったら、私たちは今もまだ原因を探しているでしょうね。",
+    "en": "If you hadn't kept those error logs back then, we'd still be looking for the cause now.",
+    "alternatives": [
+      "If you hadn't saved those error logs back then, we'd still be searching for the cause.",
+      "If you hadn't kept the error logs at the time, we'd still be hunting for the cause now."
+    ],
+    "point": "過去の仮定は had not 過去分詞、今の結果は would be -ing",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a6462549be0add26cf8b4377d98f7bd36e646f0c68d4d2ca96344e04e93da477",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

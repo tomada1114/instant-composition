@@ -154,6 +154,28 @@
     }
   },
   {
+    "id": "c_8c8q9y9n",
+    "ja": "この関数、ちょっと長すぎますか？",
+    "en": "Is this function too long?",
+    "alternatives": [
+      "Is this function a bit too long?",
+      "Is this function a little too long?"
+    ],
+    "point": "形容詞の疑問文は be 動詞を文頭に出す",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ad3024ec2f8a55d7a283cd6f3c18e6a4f4cc0f0d6ac1d105f78f0b7ee22604bb",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_8e3m3y2e",
     "ja": "このレビューで特に見てほしいのは、ネットワークが切れたときにリトライ処理がちゃんと動くかどうかです。",
     "en": "What I'd especially like you to check is whether the retry logic still works when the network drops.",
@@ -192,6 +214,25 @@
     "stamps": {
       "core": {
         "hash": "sha256:c4c91d8900798a3166f21da6dc146f84258f1ec7881e239f147f1c82098c19f1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9x6c3y7n",
+    "ja": "この PR にはテストが二つあります。",
+    "en": "There are two tests in this PR.",
+    "alternatives": ["This PR has two tests.", "This PR includes two tests."],
+    "point": "複数なので There are、tests と複数形に",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c6ea9b62e99b4a426247f011b76338e5bad68197cc883e64f9bc8ea11e844c2b",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

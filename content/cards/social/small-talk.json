@@ -287,6 +287,28 @@
     }
   },
   {
+    "id": "c_8t4t6f3d",
+    "ja": "駅前の新しいパン屋さんが何時に開くか知ってる？",
+    "en": "Do you know what time the new bakery by the station opens?",
+    "alternatives": [
+      "Do you know when the new bakery near the station opens?",
+      "Any idea what time the new bakery by the station opens?"
+    ],
+    "point": "間接疑問は主語＋動詞の語順で does は使わない",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 4,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:60ceb6aa63d456bbc66c8be9ef9b908f651c535e290b8769c05b4c6275b44388",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_9b8b9b7w",
     "ja": "この前話した、隣に越してきたご夫婦が、先週末うちをバーベキューに誘ってくれたんだ。",
     "en": "The couple I told you about, the ones who moved in next door, invited us over for a barbecue last weekend.",
@@ -303,6 +325,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:a7ff8b7fddb0de151f383f89318cb66f1f5e7f4dd72246b7336ff2393d19ddd4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9h4r8a6s",
+    "ja": "週末の旅行の写真を私に送ってって、姉に頼んでおいたよ。",
+    "en": "I asked my sister to send me the photos from our weekend trip.",
+    "alternatives": [
+      "I've asked my sister to send me the pictures from our weekend trip.",
+      "I asked my sister to send me our weekend trip photos."
+    ],
+    "point": "ask＋人＋to do の形で、人の後に to を置く",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 4,
+    "grammar": ["verb-object-to-do", "past-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e482012ddbfb0da5a39800b62a1d638b1c1d9f509e308e88df979f4da8396c5a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9x5g7s9b",
+    "ja": "今日は本当に暑いですね。窓を開けてもいいですか？",
+    "en": "It's really hot today. Is it okay if I open the window?",
+    "alternatives": [
+      "It's really hot today. Do you mind if I open the window?",
+      "It's really hot today. May I open the window?"
+    ],
+    "point": "Is it okay if I の後は動詞の現在形",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 4,
+    "grammar": ["requests-permission", "be-and-present-simple"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4bfa39bb356f342c49db25cd6efc6cb80654a2d0ea44cc5b46cc35341701138b",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

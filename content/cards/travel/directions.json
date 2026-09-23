@@ -154,6 +154,50 @@
     }
   },
   {
+    "id": "c_6f9m6g6u",
+    "ja": "すみません、この近くで SIM カードが買える場所を知りませんか？",
+    "en": "Excuse me, do you know a place near here where I can buy a SIM card?",
+    "alternatives": [
+      "Excuse me, do you know anywhere near here where I can buy a SIM card?",
+      "Excuse me, do you know of a place around here where I could buy a SIM card?"
+    ],
+    "point": "場所を説明する関係詞は where で、後ろは完全な文",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d0fc4135f4ca9c0ae74f388500010b3397d553798317bd1ff3569152fa1057f3",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7k4v8j3y",
+    "ja": "ホテルが見つからないなら、彼らは一つ手前の駅で降りるべきだったんだと思うよ。",
+    "en": "If they can't find the hotel, I think they should have gotten off one stop earlier.",
+    "alternatives": [
+      "If they can't find the hotel, I think they should have gotten off at the previous stop.",
+      "If they can't find the hotel, they probably should've gotten off a stop earlier."
+    ],
+    "point": "過去にすべきだったことは should have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 8,
+    "grammar": ["modal-perfect", "phrasal-verbs"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ee52d000b80e12b61af7e9c7dd89497a52e778bb830e464f40f3ee958609c622",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_7n2u4m4d",
     "ja": "私は地図アプリを使うより、地元の人に道を聞くほうが好きなんです。",
     "en": "I prefer asking locals for directions to using a map app.",
@@ -192,6 +236,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:8f0452c7f4eb6e98e2602f4a8470900bc0bad2d6e3b6dc20c1431a5db8eaa15d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9y2b9g5e",
+    "ja": "駅員さんが私に教えてくれた道は、あなたがさっき言っていた道とは違いました。",
+    "en": "The route the station staff told me about was different from the one you mentioned earlier.",
+    "alternatives": [
+      "The directions the station staff gave me were different from the ones you mentioned earlier.",
+      "The way the station staff showed me was different from the one you mentioned earlier."
+    ],
+    "point": "主語が長い名詞句でも動詞 was を見失わない",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 8,
+    "grammar": ["nested-clauses", "relative-clauses"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:36a25f59c48e1b27d11f2fda15aa50dca053bbabd90b4fe371d8355ebbd9b628",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

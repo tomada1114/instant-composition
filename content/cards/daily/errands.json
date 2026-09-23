@@ -66,6 +66,50 @@
     }
   },
   {
+    "id": "c_5v5q4x3g",
+    "ja": "先月パスポートを更新しておけば、今こんな長い列に並んでいないのに。",
+    "en": "If I had renewed my passport last month, I wouldn't be standing in this long line now.",
+    "alternatives": [
+      "If I'd renewed my passport last month, I wouldn't be waiting in this long line now.",
+      "I wouldn't be stuck in this long line now if I had renewed my passport last month."
+    ],
+    "point": "過去の条件は had 過去分詞、今の結果は would be 〜ing",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2334c10615add6f0cd2feadc282ea05a5195fdc9108d211031cf4dbbc1d9d696",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7b5z7p5r",
+    "ja": "修理カウンターで働いている女性が、私のスマホは金曜までに仕上がるって言ってたよ。",
+    "en": "The woman working at the repair counter said my phone would be ready by Friday.",
+    "alternatives": [
+      "The woman who works at the repair counter said my phone would be ready by Friday.",
+      "The woman at the repair counter told me my phone would be ready by Friday."
+    ],
+    "point": "working at 〜 を名詞の後ろに置き、said の後は would で時制を合わせる",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 6,
+    "grammar": ["post-modification", "reported-speech"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6b40ca309857bab5cd1b06d002cd5d0a103dfd6b2de05479a80738e8ba238b44",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_9d2w9z9p",
     "ja": "先週キャッシュカードをなくしたんですが、もう銀行で再発行してもらいました。",
     "en": "I lost my bank card last week, but I've already had it reissued.",
@@ -82,6 +126,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:fe8c29d3e55e97836a0ca3c6be1780a078c4d12d38d451c87bacf2cbab33a7d5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9g9p6z2y",
+    "ja": "もし海外でキャッシュカードをなくしたら、あなたならまず銀行に電話する、それとも支店に行く？",
+    "en": "If you lost your bank card abroad, would you call the bank first or go to a branch?",
+    "alternatives": [
+      "If you were to lose your bank card abroad, would you call the bank first or visit a branch?",
+      "What would you do first if you lost your bank card abroad, call the bank or go to a branch?"
+    ],
+    "point": "仮の話なので if 節は過去形 lost、主節は would you",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 8,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:79005bfdb3700639e2e593901948fea1cf0dbfc2bc24115af22ecf1b8b6582d4",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }

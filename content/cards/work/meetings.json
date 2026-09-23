@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_2m6k5y3m",
+    "ja": "最後に、私が今日の決定事項をまとめます。",
+    "en": "Finally, I'll summarize today's decisions.",
+    "alternatives": [
+      "Lastly, I'll sum up today's decisions.",
+      "Finally, I'm going to summarize what we decided today."
+    ],
+    "point": "「まとめます」は I'll summarize か I'll sum up で言える",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7fc23b3a3fa6a95d3f718e03073ed4931a8c65a5f82b8f9d38f921780431365f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
     "id": "c_2p8f7j9s",
     "ja": "窓側に座っている女性が、新しいプロジェクトのリーダーです。",
     "en": "The woman sitting by the window is the leader of the new project.",
@@ -170,6 +192,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:c77c30de466aa11522c6a97efadc8629b9390c5fcccdacdbbd9032307e5dae63",
+        "perspectivesVersion": 1,
+        "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7g9k5m7n",
+    "ja": "田中さんは先週の会議で何て言ったんですか？",
+    "en": "What did Mr. Tanaka say at last week's meeting?",
+    "alternatives": [
+      "What did Mr. Tanaka say in last week's meeting?",
+      "What did Ms. Tanaka say at last week's meeting?"
+    ],
+    "point": "過去の疑問文は did の後の動詞を原形 say に",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 2,
+    "grammar": ["past-simple", "wh-questions"],
+    "createdAt": "2026-09-22",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0a1fe58e4c240ffb4fb7dc99ddb1ad035528864e315ce35447524b8b089c7503",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
       }
