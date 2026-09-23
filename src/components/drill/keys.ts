@@ -14,7 +14,8 @@ const SCROLL: Readonly<Record<string, 1 | -1>> = { ArrowDown: 1, ArrowUp: -1 };
 /**
  * Maps a `KeyboardEvent.key` to the drill's action in its current state.
  * While paused only Escape is taken, so Space and Enter reach the sheet's
- * focused button as a native press.
+ * focused button as a native press. `?` pauses too: the pause sheet is where
+ * the keys are listed.
  */
 export function keyAction(state: DrillState, key: string): DrillKeyAction | undefined {
   const { phase } = state;
@@ -22,7 +23,7 @@ export function keyAction(state: DrillState, key: string): DrillKeyAction | unde
   if (phase.kind === "finishing") return undefined;
   if (phase.kind === "intro")
     return PRIMARY_KEYS.has(key) ? { type: "start" } : undefined;
-  if (key === "Escape") return { type: "pause" };
+  if (key === "Escape" || key === "?") return { type: "pause" };
   if (phase.kind === "front")
     return PRIMARY_KEYS.has(key) ? { type: "flip" } : undefined;
   if (phase.kind !== "back") return undefined;

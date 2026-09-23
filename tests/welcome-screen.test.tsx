@@ -52,8 +52,7 @@ describe("WelcomeScreen, W1", () => {
       "aria-pressed",
       "false",
     );
-    expect(screen.getByText("会議 ・ 依頼")).toBeInTheDocument();
-    expect(screen.getByText(ja.Welcome.needOne)).toBeInTheDocument();
+    expect(screen.getByText("会議・依頼")).toBeInTheDocument();
     expect(screen.getByRole("button", { name: ja.Welcome.next })).toBeDisabled();
   });
 
@@ -72,7 +71,7 @@ describe("WelcomeScreen, W1", () => {
       "aria-pressed",
       "true",
     );
-    expect(screen.queryByText(ja.Welcome.needOne)).not.toBeInTheDocument();
+    expect(screen.getByRole("button", { name: ja.Welcome.next })).toBeEnabled();
     fireEvent.click(screen.getByRole("button", { name: ja.Welcome.next }));
     await settle();
     expect(bodies).toStrictEqual([{ topics: ["work", "daily"] }]);

@@ -39,6 +39,7 @@ describe("keyAction", () => {
     [" ", { type: "flip" }],
     ["Enter", { type: "flip" }],
     ["Escape", { type: "pause" }],
+    ["?", { type: "pause" }],
     ["ArrowRight", undefined],
   ])("on a front maps %j", (key, action) => {
     expect(keyAction(front, key)).toStrictEqual(action);
@@ -81,6 +82,7 @@ describe("keyAction", () => {
     expect(keyAction(paused, "Escape")).toStrictEqual({ type: "resume" });
     expect(keyAction(paused, " ")).toBeUndefined();
     expect(keyAction(paused, "Enter")).toBeUndefined();
+    expect(keyAction(paused, "?")).toBeUndefined();
   });
 
   it("does nothing once the round is finishing", () => {

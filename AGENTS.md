@@ -36,12 +36,12 @@ Corepack.
 
 ## Before the first screen
 
-The design direction is settled: a "night scoreboard" — black canvas, white and grey
-ink, one neon green for the four roles `designing-ui` names — and it is dark only.
-`designing-ui` holds the lock, the ledger behind it and the component recipes; read it
-before building or restyling any screen. A screen adapts to the lock rather than
-renegotiating it: never choose a palette, a typeface or a layout by taste to get a
-screen done, and never add a light theme.
+The design direction is settled: an "instrument" — near-black canvas, white and grey
+ink, big figures and small tracked mono labels, one lime for the four roles
+`designing-ui` names — and it is dark only. `designing-ui` holds the lock, the ledger
+behind it and the component recipes; read it before building or restyling any screen. A
+screen adapts to the lock rather than renegotiating it: never choose a palette, a
+typeface or a layout by taste to get a screen done, and never add a light theme.
 
 ## Quick reference
 

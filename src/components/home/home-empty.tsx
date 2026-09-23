@@ -11,13 +11,15 @@ export function NotEnoughPanel({
 }: Readonly<{ available: number }>): ReactElement {
   const t = useTranslations("Home.notEnough");
   return (
-    <section className="flex flex-col items-start gap-4 rounded-card bg-card p-6">
-      <h2>{t("title")}</h2>
-      <p className="text-muted-foreground">{t("body", { count: available })}</p>
+    <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-1">
+        <h2 className="text-heading">{t("title")}</h2>
+        <p className="text-muted-foreground">{t("body", { count: available })}</p>
+      </div>
       <Button asChild variant="secondary">
         <Link href="/settings">{t("widen")}</Link>
       </Button>
-    </section>
+    </div>
   );
 }
 
@@ -27,11 +29,11 @@ export function LoadFailedPanel({
 }: Readonly<{ onReload: () => void }>): ReactElement {
   const t = useTranslations("Home.loadFailed");
   return (
-    <section className="flex flex-col items-start gap-4 rounded-card bg-card p-6">
-      <h2>{t("title")}</h2>
+    <div className="flex flex-col gap-5">
+      <h2 className="text-heading">{t("title")}</h2>
       <Button data-primary variant="secondary" onClick={onReload}>
         {t("reload")}
       </Button>
-    </section>
+    </div>
   );
 }

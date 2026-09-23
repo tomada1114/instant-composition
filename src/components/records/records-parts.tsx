@@ -4,6 +4,7 @@ import { useId, useState, type ReactElement } from "react";
 import type { Dot } from "../../core/streak";
 import type { BreakdownTopic, TitleGroup } from "../../core/views";
 import { cn } from "@/components/lib/utils";
+import { ChevronGlyph } from "@/components/ui/glyphs";
 
 /** `disclosure` + `bar-list`: one topic's mastered cards per subtopic, opened in place. */
 export function Breakdown({
@@ -23,22 +24,27 @@ export function Breakdown({
         onClick={() => {
           setOpen((value) => !value);
         }}
-        className="flex h-11 items-center justify-between text-left"
+        className="flex h-12 items-center justify-between border-b border-border text-left"
       >
         <span>{name}</span>
-        <span aria-hidden className="text-muted-foreground">
-          {open ? "▾" : "▸"}
-        </span>
+        <ChevronGlyph
+          className={cn(
+            "size-4 text-muted-foreground transition-transform duration-200",
+            !open && "-rotate-90",
+          )}
+        />
       </button>
       {open ? (
-        <ul id={id} aria-label={name} className="flex flex-col gap-2 pb-2">
+        <ul id={id} aria-label={name} className="flex flex-col gap-2.5 py-4">
           {topic.subtopics.map((subtopic) => (
             <li
               key={subtopic.id}
               className="grid grid-cols-[7rem_1fr_2.5rem] items-center gap-3"
             >
-              <span className="truncate">{subtopic.ja}</span>
-              <span className="h-2 overflow-hidden rounded-full bg-border">
+              <span className="truncate text-caption text-muted-foreground">
+                {subtopic.ja}
+              </span>
+              <span className="h-1.5 overflow-hidden rounded-full bg-border">
                 <span
                   data-part="fill"
                   className="block h-full rounded-full bg-foreground"
@@ -69,14 +75,14 @@ export function DotCalendar({
 }: Readonly<{ weeks: readonly (readonly Dot[])[] }>): ReactElement {
   const t = useTranslations("Records");
   return (
-    <div role="img" aria-label={t("calendar")} className="flex gap-1">
+    <div role="img" aria-label={t("calendar")} className="flex gap-1.5">
       {weeks.map((week) => (
-        <div key={week[0]?.day} className="flex flex-col gap-1">
+        <div key={week[0]?.day} className="flex flex-col gap-1.5">
           {week.map((dot) => (
             <span
               key={dot.day}
               data-state={dot.state}
-              className={cn("size-2.5 rounded-full", DOT[dot.state])}
+              className={cn("size-3 rounded-full", DOT[dot.state])}
             />
           ))}
         </div>
@@ -92,8 +98,8 @@ export function MilestoneList({
   const t = useTranslations("Records.titles");
   const id = useId();
   return (
-    <section aria-labelledby={id} className="flex flex-col gap-2">
-      <h2 id={id} className="text-label">
+    <section aria-labelledby={id} className="flex flex-col gap-4">
+      <h2 id={id} className="text-muted-foreground">
         {t("title")}
       </h2>
       {groups.length === 0 ? (
@@ -108,7 +114,7 @@ export function MilestoneList({
               <dt className="text-label text-muted-foreground">
                 {group.kind === "streak" ? t("streak") : group.ja}
               </dt>
-              <dd className="tabular-nums">{group.values.join("・")}</dd>
+              <dd className="font-mono text-mono-sm">{group.values.join(" · ")}</dd>
             </div>
           ))}
         </dl>

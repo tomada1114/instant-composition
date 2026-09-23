@@ -1,5 +1,5 @@
 import { useTranslations } from "next-intl";
-import { useId, type ReactElement } from "react";
+import { useId, useState, type ReactElement } from "react";
 
 import type { DailySize, SubtopicRef, TopicInfo } from "../../core/types";
 import { TUNING } from "../../core/tuning";
@@ -12,11 +12,17 @@ import type { SettingsState } from "./use-settings";
 function Heading({
   id,
   children,
-}: Readonly<{ id: string; children: string }>): ReactElement {
+  aside,
+}: Readonly<{ id: string; children: string; aside?: string }>): ReactElement {
   return (
-    <h2 id={id} className="text-label text-muted-foreground">
-      {children}
-    </h2>
+    <div className="flex items-baseline justify-between">
+      <h2 id={id} className="text-muted-foreground">
+        {children}
+      </h2>
+      {aside === undefined ? null : (
+        <span className="font-mono text-mono-sm text-muted-foreground">{aside}</span>
+      )}
+    </div>
   );
 }
 
@@ -27,8 +33,14 @@ export function TopicsSection({
 }: Readonly<{ topics: readonly TopicInfo[]; state: SettingsState }>): ReactElement {
   const t = useTranslations("Settings.topics");
   const id = useId();
+  const [refused, setRefused] = useState(false);
   const chosen = state.settings.topics;
   function toggle(topicId: string): void {
+    if (chosen.length === 1 && chosen.includes(topicId)) {
+      setRefused(true);
+      return;
+    }
+    setRefused(false);
     const next = chosen.includes(topicId)
       ? chosen.filter((other) => other !== topicId)
       : [...chosen, topicId];
@@ -39,16 +51,16 @@ export function TopicsSection({
   return (
     <section aria-labelledby={id} className="flex flex-col gap-3">
       <Heading id={id}>{t("title")}</Heading>
-      <ul className="flex flex-col gap-3">
+      <ul className="flex flex-col gap-2">
         {topics.map((topic) => {
           const selected = chosen.includes(topic.id);
           return (
             <li key={topic.id}>
               <SelectCard
                 title={topic.ja}
-                detail={topic.subtopics.map((subtopic) => subtopic.ja).join(" ・ ")}
+                detail={topic.subtopics.map((subtopic) => subtopic.ja).join("・")}
                 selected={selected}
-                disabled={selected && chosen.length === 1}
+                locked={selected && chosen.length === 1}
                 onToggle={() => {
                   toggle(topic.id);
                 }}
@@ -57,9 +69,9 @@ export function TopicsSection({
           );
         })}
       </ul>
-      {chosen.length === 1 ? (
-        <p className="text-caption text-muted-foreground">{t("keepOne")}</p>
-      ) : null}
+      <p role="status" className="text-caption text-muted-foreground empty:hidden">
+        {refused ? t("keepOne") : ""}
+      </p>
     </section>
   );
 }
@@ -97,7 +109,12 @@ export function FocusSection({
       .join("・");
   return (
     <section className="flex flex-col gap-3">
-      <Heading id={id}>{t("title")}</Heading>
+      <Heading
+        id={id}
+        aside={t("count", { count: focus.length, max: TUNING.maxFocus })}
+      >
+        {t("title")}
+      </Heading>
       <div role="group" aria-labelledby={id} className="flex flex-wrap gap-2">
         {offered.map((ref) => {
           const selected = focus.some((chosen) => same(chosen, ref));
@@ -119,9 +136,6 @@ export function FocusSection({
           );
         })}
       </div>
-      <p className="text-caption text-muted-foreground">
-        {full ? t("limit") : t("note")}
-      </p>
       {state.removedFocus.length > 0 ? (
         <p role="status">{t("removed", { names: names(state.removedFocus) })}</p>
       ) : null}
@@ -150,7 +164,6 @@ export function SizeSection({
           state.save({ dailySize });
         }}
       />
-      <p className="text-caption text-muted-foreground">{t("note")}</p>
       {state.completedToday ? <p role="status">{t("completed")}</p> : null}
     </section>
   );

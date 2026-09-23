@@ -22,7 +22,7 @@ export function Segmented<T extends string | number>({
     <div
       role="radiogroup"
       aria-label={label}
-      className="flex rounded-full bg-raised p-1"
+      className="flex rounded-control bg-card p-1"
     >
       {options.map((option) => (
         <button
@@ -35,7 +35,7 @@ export function Segmented<T extends string | number>({
             onChange(option.value);
           }}
           className={cn(
-            "h-10 flex-1 rounded-full font-latin text-label",
+            "h-11 flex-1 rounded-tile font-display text-action",
             option.value === value
               ? "bg-primary text-primary-foreground"
               : "text-foreground",

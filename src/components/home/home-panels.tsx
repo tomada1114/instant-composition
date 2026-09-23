@@ -1,75 +1,24 @@
 import { useTranslations } from "next-intl";
-import type { ReactElement, ReactNode } from "react";
+import type { ReactElement } from "react";
 
 import type { HomeState } from "../../core/home-state";
 import type { RoundKind } from "../../core/types";
 import { TUNING } from "../../core/tuning";
 import type { HomeView } from "../../core/views";
 import { Button } from "@/components/ui/button";
+import { ArrowGlyph, CheckGlyph } from "@/components/ui/glyphs";
 import { PrimaryButton as Primary } from "@/components/ui/primary-button";
 
 import { Link } from "../../i18n/navigation";
 
-type Go = (kind: RoundKind) => void;
-
-function Block({ children }: Readonly<{ children: ReactNode }>): ReactElement {
-  return <section className="flex flex-col gap-2">{children}</section>;
-}
+export type Go = (kind: RoundKind) => void;
 
 function Deadline(): ReactElement {
   const t = useTranslations("Home");
   return (
-    <p className="text-caption text-muted-foreground">
+    <p className="font-mono text-mono-sm text-muted-foreground">
       {t("deadline", { hour: TUNING.dayBoundaryHour })}
     </p>
-  );
-}
-
-/** W3a: today's size, how it splits, and why it is short on a short day. */
-export function ReadyPanel({
-  view,
-  go,
-}: Readonly<{ view: HomeView; go: Go }>): ReactElement {
-  const t = useTranslations("Home.today");
-  const preview = view.preview;
-  return (
-    <>
-      {preview === undefined ? null : (
-        <Block>
-          <h2>{t("title")}</h2>
-          <p>
-            {preview.shortage
-              ? t("sizeShort", {
-                  count: preview.size,
-                  minutes: preview.minutes,
-                  setting: preview.setting,
-                })
-              : t("size", { count: preview.size, minutes: preview.minutes })}
-          </p>
-          {preview.shortage ? (
-            <p className="text-muted-foreground">
-              {t("shortage", { count: preview.size })}
-            </p>
-          ) : null}
-          <p className="text-muted-foreground">
-            {preview.focusNames.length > 0
-              ? t("mixFocus", {
-                  review: preview.reviewCount,
-                  fresh: preview.newCount,
-                  focus: preview.focusNames.join("・"),
-                })
-              : t("mix", { review: preview.reviewCount, fresh: preview.newCount })}
-          </p>
-        </Block>
-      )}
-      <Primary
-        onPress={() => {
-          go("today");
-        }}
-      >
-        {t("start")}
-      </Primary>
-    </>
   );
 }
 
@@ -81,12 +30,25 @@ export function ProgressPanel({
   go,
 }: Readonly<{ state: Of<"in-progress">; go: Go }>): ReactElement {
   const t = useTranslations("Home.progress");
+  const share = state.target > 0 ? Math.min(1, state.progress / state.target) : 0;
   return (
     <>
-      <Block>
-        <h2>{state.portion === "today" ? t("today") : t("yesterday")}</h2>
-        <p>{t("count", { done: state.progress, target: state.target })}</p>
-      </Block>
+      <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-3">
+          <h2 className="text-label text-muted-foreground">
+            {state.portion === "today" ? t("today") : t("yesterday")}
+          </h2>
+          <p className="font-display text-number-md">
+            {t("count", { done: state.progress, target: state.target })}
+          </p>
+        </div>
+        <div aria-hidden className="h-1.5 overflow-hidden rounded-full bg-border">
+          <div
+            className="h-full rounded-full bg-foreground"
+            style={{ width: `${String(share * 100)}%` }}
+          />
+        </div>
+      </div>
       <Primary
         onPress={() => {
           go(state.resumeKind);
@@ -108,16 +70,25 @@ export function DonePanel({
   const more = t("more", { count: view.dailySize });
   return (
     <>
-      <Block>
-        <h2>{t("title")}</h2>
-        <p>{t("count", { rounds: view.todayRounds, cards: view.todayCards })}</p>
-        <Link
-          href="/recap"
-          className="self-start py-2 text-muted-foreground underline underline-offset-4"
-        >
-          {t("recap")}
-        </Link>
-      </Block>
+      <div className="flex items-start justify-between gap-3">
+        <div className="flex flex-col gap-2">
+          <h2 className="flex items-center gap-2 text-heading">
+            <span className="flex size-6 items-center justify-center rounded-full bg-primary text-primary-foreground">
+              <CheckGlyph className="size-4" />
+            </span>
+            {t("title")}
+          </h2>
+          <p className="font-mono text-mono-sm text-muted-foreground">
+            {t("count", { rounds: view.todayRounds, cards: view.todayCards })}
+          </p>
+        </div>
+        <Button asChild variant="text" className="-mr-3 -mt-2.5 gap-1">
+          <Link href="/recap">
+            {t("recap")}
+            <ArrowGlyph className="size-4" />
+          </Link>
+        </Button>
+      </div>
       {state.restoresTo === null ? (
         <Primary
           onPress={() => {
@@ -128,8 +99,10 @@ export function DonePanel({
         </Primary>
       ) : (
         <div className="flex flex-col gap-3">
-          <p>{t("restores", { days: state.restoresTo })}</p>
-          <Deadline />
+          <div className="flex flex-col gap-1">
+            <p>{t("restores", { days: state.restoresTo })}</p>
+            <Deadline />
+          </div>
           <Primary
             onPress={() => {
               go("yesterday");
@@ -160,9 +133,9 @@ export function RecoverPanel({
   const size = view.preview?.size ?? 0;
   return (
     <>
-      <Block>
-        <p className="text-muted-foreground">{t("hint")}</p>
-        <p>
+      <div className="flex flex-col gap-2">
+        <p>{t("hint")}</p>
+        <p className="font-mono text-mono-sm text-muted-foreground">
           {t("size", {
             yesterday: size,
             today: size,
@@ -170,8 +143,8 @@ export function RecoverPanel({
           })}
         </p>
         <Deadline />
-      </Block>
-      <div className="flex flex-col gap-3">
+      </div>
+      <div className="flex flex-col gap-1">
         <Primary
           onPress={() => {
             go("yesterday");

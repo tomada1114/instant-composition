@@ -4,10 +4,12 @@
     "description": "Instant English composition drills: see a Japanese sentence, say it in English before the timer runs out."
   },
   "Home": {
+    "brand": "Instant Composition",
     "soundOn": "効果音 オン",
     "soundOff": "効果音 オフ",
     "records": "記録",
     "settings": "設定",
+    "streakEyebrow": "Streak",
     "streakUnit": "日連続",
     "restartTitle": "今日から 1 日目",
     "longest": "最長 {days} 日",
@@ -21,44 +23,45 @@
       "sat": "土",
       "sun": "日",
       "done": "済み",
-      "gap": "空",
+      "gap": "空き",
       "missed": "未",
       "upcoming": "これから"
     },
     "today": {
-      "title": "今日の分",
-      "size": "{count} 文 ・ 約 {minutes} 分",
-      "sizeShort": "{count} 文 ・ 約 {minutes} 分（設定 {setting}）",
-      "shortage": "点検済みの文が足りないため {count} 文です",
-      "mix": "復習 {review} ・ 新しい文 {fresh}",
-      "mixFocus": "復習 {review} ・ 新しい文 {fresh} ・ 重点 {focus}",
+      "eyebrow": "Today",
+      "unit": "文",
+      "minutes": "約 {minutes} 分",
+      "review": "復習 {count}",
+      "fresh": "新規 {count}",
+      "focus": "重点 {names}",
+      "shortage": "点検済みの文が足りず {count} 文です",
       "start": "始める"
     },
     "progress": {
-      "today": "今日の分 ・ 途中",
-      "yesterday": "昨日の分 ・ 途中",
-      "count": "{done} / {target} まで進んでいます",
+      "today": "今日の分",
+      "yesterday": "昨日の分",
+      "count": "{done} / {target}",
       "resume": "続きから"
     },
     "done": {
       "title": "今日は完了",
-      "count": "今日 {rounds} 回 ・ {cards} 文",
-      "recap": "今日の締めを見る",
+      "count": "{rounds} 回 ・ {cards} 文",
+      "recap": "締めを見る",
       "more": "もう {count} 文",
-      "restores": "昨日の分をやれば {days} 日連続に戻ります",
+      "restores": "昨日の分で {days} 日連続に戻せます",
       "recover": "昨日の分を取り返す"
     },
     "recover": {
       "hint": "昨日の分もやれば連続が続きます",
-      "size": "昨日の分 {yesterday} 文 + 今日の分 {today} 文 ・ 約 {minutes} 分",
+      "size": "{yesterday} + {today} 文 ・ 約 {minutes} 分",
       "start": "昨日の分もやる",
       "restart": "今日から数え直す"
     },
     "deadline": "午前 {hour} 時まで",
     "notEnough": {
       "title": "出せる文が足りません",
-      "body": "点検済みの文が {count} 文しかありません。カードの生成と点検を実行してください",
-      "widen": "設定で範囲を広げる"
+      "body": "点検済みは {count} 文だけです",
+      "widen": "範囲を広げる"
     },
     "loadFailed": {
       "title": "例文を読み込めませんでした",
@@ -66,12 +69,11 @@
     }
   },
   "Welcome": {
-    "title": "ようこそ",
-    "prompt": "使う場面を選んでください",
-    "note": "いくつでも選べます。あとで設定で変えられます",
-    "needOne": "1 つ選ぶと次へ進めます",
+    "eyebrow": "Welcome",
+    "title": "どの場面で話しますか",
+    "note": "複数選べます",
     "next": "次へ",
-    "saveFailed": "設定を保存できませんでした。サーバーが動いているか確かめてください"
+    "saveFailed": "保存できませんでした。サーバーを確認してください"
   },
   "NotFound": {
     "title": "ページが見つかりません",
@@ -84,14 +86,12 @@
   },
   "Drill": {
     "intro": {
-      "titleFirst": "最初の {count} 文で難易度を測ります",
-      "titleAgain": "{count} 文で難易度を測り直します",
-      "order": "易しい文から順に出ます。",
-      "portion": "この {count} 文が今日の分になります",
-      "say": "日本語を見て、英語を言う",
-      "sayNote": "（声に出すか、頭の中で）",
-      "flip": "言えたらめくる。時間が切れると自動でめくれます",
-      "grade": "裏を見て、自分で ○ か × をつける",
+      "eyebrow": "Placement",
+      "titleFirst": "{count} 文で難易度を測ります",
+      "titleAgain": "{count} 文で測り直します",
+      "say": "英語で言う",
+      "flip": "めくる",
+      "grade": "自分で ○ / ×",
       "start": "始める"
     },
     "card": {
@@ -104,7 +104,7 @@
       "point": "要点",
       "seconds": "{seconds, number, ::.0} 秒",
       "said": "言えた",
-      "notSaid": "言えなかった",
+      "notSaid": "まだ",
       "timedOut": "時間切れ",
       "review": "復習へ",
       "next": "次へ",
@@ -117,20 +117,20 @@
       "review": "復習へ"
     },
     "sheet": {
-      "title": "ここで中断しますか",
-      "hint": "今日のうちなら {position} 枚目から続けられます",
-      "quit": "いまはやめる",
+      "title": "一時停止",
+      "hint": "今日のうちなら {position} 枚目から",
+      "quit": "やめる",
       "continue": "続ける"
     },
     "save": {
-      "failed": "記録を保存できませんでした。サーバーが動いているか確かめてください",
-      "unsaved": "保存できていない記録が {count} 件あります",
+      "failed": "記録を保存できませんでした",
+      "unsaved": "未保存の記録 {count} 件",
       "resend": "送り直す"
     },
     "error": {
       "notEnoughTitle": "出せる文が足りません",
-      "notEnough": "点検済みの文が {count} 文しかありません。カードの生成と点検を実行してください",
-      "widen": "設定で範囲を広げる",
+      "notEnough": "点検済みは {count} 文だけです",
+      "widen": "範囲を広げる",
       "loadTitle": "例文を読み込めませんでした",
       "reload": "読み込み直す"
     }
@@ -149,43 +149,39 @@
       "fixed": "文が × → ○",
       "delta": "−{seconds, number, ::.0} 秒",
       "fixedRow": "× → ○",
-      "compared": "前回と比べた {count} 文",
-      "again": "次に出たとき、また比べます",
-      "firstTime": "初めての {count} 文",
-      "firstNext": "次に出たとき、今日と比べます"
+      "compared": "前回と比べた {count} 文 ・ 変化なし",
+      "firstTime": "初めての {count} 文"
     },
     "review": {
       "title": "復習に回った文",
-      "none": "復習に回った文 0",
-      "chip": "復習へ"
+      "none": "復習に回った文 0"
     },
     "seeAll": "すべて見る",
     "collapse": "閉じる",
     "streakUnit": "日連続",
     "restartTitle": "今日から 1 日目",
     "difficulty": {
-      "line": "次から TOEIC {toeic} 前後の文",
+      "line": "次は TOEIC {toeic} 前後",
       "up": "上がりました",
       "down": "下がりました"
     },
     "placement": {
       "title": "難易度",
-      "start": "TOEIC {toeic} 前後の文から始めます",
-      "note": "設定からいつでも測り直せます"
+      "start": "TOEIC {toeic} 前後から始めます"
     },
     "reach": {
-      "title": "到達度（できた文）",
-      "next": "次の節目まで",
+      "title": "到達度",
+      "info": "別の日に 2 回、時間内に言えた文を数えます",
+      "infoLabel": "到達度の数え方",
+      "next": "次の節目",
       "nearest": "{topic} あと {count} 文",
       "added": "+{count}",
-      "empty": "別の日に 2 回言えた文がここに数えられます"
+      "empty": "まだ 0 文"
     },
     "titles": {
       "label": "称号",
       "streak": "{days} 日連続",
-      "streakNote": "連続が {days} 日になった",
-      "reach": "{topic} {count} 文",
-      "reachNote": "{topic}でできた文が {count} を超えた"
+      "reach": "{topic} {count} 文"
     },
     "points": {
       "earned": "+{points} pt",
@@ -206,62 +202,56 @@
     "back": "戻る",
     "breakdown": "{topic} の内訳",
     "difficulty": "難易度",
-    "toeic": "TOEIC {toeic} 前後の文",
-    "notMeasured": "まだ測っていません",
-    "streak": "{days} 日連続",
+    "toeic": "TOEIC {toeic}",
+    "notMeasured": "未測定",
+    "streakLabel": "連続",
+    "streak": "{days} 日",
     "restart": "今日から 1 日目",
     "longest": "最長 {days} 日",
     "calendar": "直近 12 週の練習した日",
-    "totals": "言った文 {said, number} ・ 練習した日 {days, number}",
-    "points": "合計 {points, number} pt",
+    "said": "言った文",
+    "days": "練習した日",
+    "points": "ポイント",
     "titles": {
       "title": "称号",
       "streak": "連続",
       "none": "まだありません"
     },
     "rules": {
-      "mastered": "できた文 = 別の日に 2 回、時間内に言えた文",
-      "streak": "連続 = 今日の分を終えた日。1 日空いても、翌日のうちに昨日の分をやれば続く"
+      "label": "数え方",
+      "streak": "今日の分を終えた日を数えます。1 日空いても、翌日のうちに昨日の分をやれば続きます"
     }
   },
   "Settings": {
     "title": "設定",
     "back": "戻る",
     "topics": {
-      "title": "使う場面（大トピック）",
+      "title": "場面",
       "keepOne": "1 つは選んだままにします"
     },
     "focus": {
-      "title": "重点（2 つまで）",
-      "note": "重点は新しい文の半分までを占めます",
-      "limit": "重点は 2 つまでです",
+      "title": "重点",
+      "count": "{count} / {max}",
       "removed": "{names} の重点も外しました"
     },
     "size": {
-      "title": "今日の分の枚数",
+      "title": "1 日の枚数",
       "count": "{count} 文",
-      "note": "今日の分にもすぐ反映します",
-      "completed": "この枚数に届いたので、今日は完了です"
+      "completed": "この枚数で今日は完了です"
     },
     "sound": {
-      "title": "効果音",
-      "on": "オン",
-      "off": "オフ"
-    },
-    "motion": {
-      "title": "動き",
-      "note": "OS の「動きを減らす」に従います"
+      "title": "効果音"
     },
     "difficulty": {
       "title": "難易度",
-      "retest": "難易度を測り直す"
+      "retest": "測り直す"
     },
     "retest": {
       "title": "難易度を測り直しますか",
-      "body": "易しい順に 10 文を出し、結果で難易度を決め直します。これまでの記録は消えません",
+      "body": "易しい順に 10 文。これまでの記録は消えません",
       "cancel": "やめる",
       "confirm": "測り直す"
     },
-    "saveFailed": "保存できませんでした。サーバーが動いているか確かめてください"
+    "saveFailed": "保存できませんでした。サーバーを確認してください"
   }
 }

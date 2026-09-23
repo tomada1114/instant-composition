@@ -5,8 +5,8 @@ import { cn } from "@/components/lib/utils";
 import { CheckGlyph } from "./glyphs";
 
 /**
- * `chip/choice`: a pressable pill, selected with a white border and a check
- * rather than a color. 36 tall, its hit area grown to 44.
+ * `chip/choice`: a pressable pill, selected as a white fill with a check —
+ * never the accent. 36 tall, its hit area grown to 44.
  */
 export function ChoiceChip({
   label,
@@ -26,18 +26,14 @@ export function ChoiceChip({
       disabled={disabled}
       onClick={onToggle}
       className={cn(
-        "relative flex h-9 items-center gap-1.5 rounded-full border-[1.5px] bg-raised px-3 text-label",
+        "relative flex h-9 items-center gap-1.5 rounded-full px-3.5 text-label",
         "before:absolute before:-inset-y-1 before:inset-x-0 before:content-['']",
-        selected ? "border-foreground" : "border-transparent",
+        selected ? "bg-primary text-primary-foreground" : "bg-card text-foreground",
         "disabled:text-disabled",
       )}
     >
+      {selected ? <CheckGlyph className="-ml-1 size-4" /> : null}
       {label}
-      {selected ? (
-        <span aria-hidden className="-mr-1 [&_svg]:size-4">
-          <CheckGlyph />
-        </span>
-      ) : null}
     </button>
   );
 }

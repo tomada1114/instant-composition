@@ -18,17 +18,20 @@ export function StreakBlock({
   const t = useTranslations("Summary");
   const { streak } = summary;
   return (
-    <section className="flex flex-col gap-4">
+    <section className="flex flex-col gap-5">
       {streak.restart ? (
         <p className="text-heading">{t("restartTitle")}</p>
       ) : (
         <p className="flex items-baseline gap-3">
           <span
-            className={cn("font-latin text-number-lg", streak.changed && "text-accent")}
+            className={cn(
+              "font-display text-number-lg",
+              streak.changed && "text-accent",
+            )}
           >
             {shown("streak", streak.value)}
           </span>
-          <span className="text-label">{t("streakUnit")}</span>
+          <span className="text-label text-muted-foreground">{t("streakUnit")}</span>
         </p>
       )}
       <WeekRow dots={summary.week} lit={summary.filled} />
@@ -64,10 +67,9 @@ export function DifficultyLine({
 export function PlacementCard({ toeic }: Readonly<{ toeic: string }>): ReactElement {
   const t = useTranslations("Summary.placement");
   return (
-    <section className="flex flex-col gap-1 rounded-card bg-card p-6">
+    <section className="flex flex-col gap-2 rounded-card bg-card p-6">
       <p className="text-label text-muted-foreground">{t("title")}</p>
       <p className="text-heading">{t("start", { toeic })}</p>
-      <p className="text-caption text-muted-foreground">{t("note")}</p>
     </section>
   );
 }
@@ -98,22 +100,10 @@ export function TitleCards({
     const title = parseTitleKey(key);
     if (title === undefined) return [];
     if (title.kind === "streak") {
-      return [
-        {
-          key,
-          name: t("streak", { days: title.value }),
-          note: t("streakNote", { days: title.value }),
-        },
-      ];
+      return [{ key, name: t("streak", { days: title.value }) }];
     }
     const topic = topicNames[title.topic] ?? title.topic;
-    return [
-      {
-        key,
-        name: t("reach", { topic, count: title.value }),
-        note: t("reachNote", { topic, count: title.value }),
-      },
-    ];
+    return [{ key, name: t("reach", { topic, count: title.value }) }];
   });
   if (titles.length === 0) return null;
   return (
@@ -122,11 +112,12 @@ export function TitleCards({
         <section
           key={title.key}
           data-title
-          className="flex flex-col gap-1 rounded-card border-[1.5px] border-accent bg-card p-5"
+          className="flex flex-col gap-2 rounded-card border-[1.5px] border-accent bg-card p-5"
         >
-          <p className="text-caption text-muted-foreground">{t("label")}</p>
-          <h3>{title.name}</h3>
-          <p className="text-caption text-muted-foreground">{title.note}</p>
+          <p className="font-mono text-eyebrow text-muted-foreground uppercase">
+            {t("label")}
+          </p>
+          <h3 className="text-heading">{title.name}</h3>
         </section>
       ))}
     </div>
@@ -142,16 +133,16 @@ export function PointsTotals({
   const { points, totals } = summary;
   const most = Math.max(1, ...totals.last14.map((bar) => bar.count));
   return (
-    <section className="flex flex-col gap-3">
+    <section className="flex flex-col gap-4">
       <p className="flex items-baseline justify-between">
         {points.earned > 0 ? (
-          <span className="font-mono text-mono-md text-accent">
+          <span className="font-display text-figure-sm text-accent">
             {t("points.earned", { points: points.earned })}
           </span>
         ) : (
           <span />
         )}
-        <span className="text-caption text-muted-foreground">
+        <span className="font-mono text-mono-sm text-muted-foreground">
           {t("points.total", { points: shown("points", points.total) })}
         </span>
       </p>
@@ -172,7 +163,7 @@ export function PointsTotals({
           return (
             <div
               key={bar.day}
-              className="flex w-2 flex-col justify-end"
+              className="flex w-2 flex-col justify-end overflow-hidden rounded-full"
               style={{ height: `${String((bar.count / most) * 100)}%` }}
             >
               {grown > 0 ? (

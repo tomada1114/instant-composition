@@ -7,6 +7,9 @@ import type { TopicInfo } from "../../core/types";
 import { saveSettings } from "@/components/lib/api";
 import { usePrimaryKey } from "@/components/lib/use-primary-key";
 import { Button } from "@/components/ui/button";
+import { Eyebrow } from "@/components/ui/eyebrow";
+import { ArrowGlyph } from "@/components/ui/glyphs";
+import { Kbd } from "@/components/ui/kbd";
 import { SelectCard } from "@/components/ui/select-card";
 
 import { useRouter } from "../../i18n/navigation";
@@ -60,18 +63,18 @@ export function WelcomeScreen({
   }
 
   return (
-    <main className="mx-auto box-content flex min-h-[calc(100dvh-4rem)] max-w-column flex-col gap-8 px-4 py-8">
-      <div className="flex flex-col gap-2">
-        <h1>{t("title")}</h1>
-        <p>{t("prompt")}</p>
+    <main className="mx-auto box-content flex min-h-[calc(100dvh-2rem)] max-w-column flex-col gap-8 px-4 pt-8 pb-3">
+      <div className="flex flex-col gap-3">
+        <Eyebrow aria-hidden>{t("eyebrow")}</Eyebrow>
+        <h1 className="text-heading">{t("title")}</h1>
         <p className="text-caption text-muted-foreground">{t("note")}</p>
       </div>
-      <ul className="flex flex-col gap-3">
+      <ul className="flex flex-col gap-2">
         {topics.map((topic) => (
           <li key={topic.id}>
             <SelectCard
               title={topic.ja}
-              detail={topic.subtopics.map((subtopic) => subtopic.ja).join(" ・ ")}
+              detail={topic.subtopics.map((subtopic) => subtopic.ja).join("・")}
               selected={chosen.has(topic.id)}
               onToggle={() => {
                 toggle(topic.id);
@@ -80,14 +83,11 @@ export function WelcomeScreen({
           </li>
         ))}
       </ul>
-      <div className="mt-auto flex flex-col gap-3">
+      <div className="sticky bottom-0 -mx-4 mt-auto flex flex-col gap-3 bg-background px-4 pt-2 pb-3">
         {failed ? (
           <p role="alert" className="rounded-tile bg-raised px-4 py-3">
             {t("saveFailed")}
           </p>
-        ) : null}
-        {chosen.size === 0 ? (
-          <p className="text-caption text-muted-foreground">{t("needOne")}</p>
         ) : null}
         <Button
           data-primary
@@ -96,6 +96,8 @@ export function WelcomeScreen({
           onClick={next}
         >
           {t("next")}
+          <ArrowGlyph className="size-4.5" />
+          <Kbd>Space</Kbd>
         </Button>
       </div>
     </main>

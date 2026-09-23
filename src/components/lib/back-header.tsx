@@ -2,11 +2,14 @@
 
 import { useEffect, type ReactElement } from "react";
 
+import { IconButton } from "@/components/ui/icon-button";
+import { BackGlyph } from "@/components/ui/glyphs";
+
 import { Link, useRouter } from "../../i18n/navigation";
 
 /**
- * "← back" and the screen's title; Esc goes back too, unless `escape` is
- * off because something above the screen (a sheet) takes Esc first.
+ * ← and the screen's title; Esc goes back too, unless `escape` is off
+ * because something above the screen (a sheet) takes Esc first.
  */
 export function BackHeader({
   title,
@@ -27,15 +30,13 @@ export function BackHeader({
   }, [escape, router]);
 
   return (
-    <header className="flex min-h-11 items-center gap-4">
-      <Link
-        href="/"
-        className="flex h-11 items-center pr-2 text-muted-foreground active:text-foreground"
-      >
-        <span aria-hidden>←&nbsp;</span>
-        {back}
-      </Link>
-      <h1>{title}</h1>
+    <header className="flex flex-col gap-6">
+      <IconButton asChild>
+        <Link href="/" aria-label={back}>
+          <BackGlyph />
+        </Link>
+      </IconButton>
+      <h1 className="text-heading">{title}</h1>
     </header>
   );
 }

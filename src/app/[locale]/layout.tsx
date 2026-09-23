@@ -4,8 +4,10 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import type { ReactElement, ReactNode } from "react";
 
+import { KeyMode } from "@/components/lib/key-mode";
+
 import { LOCALES, type Locale } from "../../i18n/locales";
-import { inter } from "../fonts";
+import { fontVariables } from "../fonts";
 
 /** Keep locale pages static while the root 404 can localize unmatched paths. */
 export const dynamic = "force-static";
@@ -66,9 +68,10 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   return (
-    <html lang={locale} className={inter.variable}>
+    <html lang={locale} className={fontVariables}>
       <body>
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <KeyMode />
       </body>
     </html>
   );

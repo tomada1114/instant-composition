@@ -90,7 +90,7 @@ describe("CardBack", () => {
     ).not.toBeInTheDocument();
   });
 
-  it("shows the fast chip on a fast ○", () => {
+  it("shows the fast mark on a fast ○", () => {
     renderWithMessages(
       <CardBack
         card={CARD}
@@ -116,7 +116,14 @@ describe("TopStrip", () => {
   it("names the pause button and shows the progress", () => {
     const onPause = vi.fn();
     renderWithMessages(
-      <TopStrip pass="first" current={7} total={10} combo={0} onPause={onPause} />,
+      <TopStrip
+        pass="first"
+        current={7}
+        total={10}
+        combo={0}
+        lit={false}
+        onPause={onPause}
+      />,
     );
     expect(
       screen.getByText(fill(ja.Drill.card.progress, { current: 7, total: 10 })),
@@ -132,6 +139,7 @@ describe("TopStrip", () => {
         current={1}
         total={3}
         combo={0}
+        lit={false}
         onPause={() => undefined}
       />,
     );
@@ -147,6 +155,7 @@ describe("TopStrip", () => {
         current={2}
         total={10}
         combo={1}
+        lit={false}
         onPause={() => undefined}
       />,
     );
@@ -158,6 +167,7 @@ describe("TopStrip", () => {
           current={3}
           total={10}
           combo={3}
+          lit
           onPause={() => undefined}
         />
       </NextIntlClientProvider>,
@@ -224,7 +234,7 @@ describe("PauseSheet", () => {
 });
 
 describe("IntroScreen", () => {
-  it("explains the first placement and starts on the button", () => {
+  it("names the three moves of a card and starts on the button", () => {
     const onStart = vi.fn();
     renderWithMessages(<IntroScreen first count={10} onStart={onStart} />);
     expect(
@@ -232,9 +242,13 @@ describe("IntroScreen", () => {
         name: fill(ja.Drill.intro.titleFirst, { count: 10 }),
       }),
     ).toBeInTheDocument();
-    expect(
-      screen.getByText(fill(ja.Drill.intro.portion, { count: 10 })),
-    ).toBeInTheDocument();
+    for (const step of [
+      ja.Drill.intro.say,
+      ja.Drill.intro.flip,
+      ja.Drill.intro.grade,
+    ]) {
+      expect(screen.getByText(step)).toBeInTheDocument();
+    }
     fireEvent.click(screen.getByRole("button", { name: ja.Drill.intro.start }));
     expect(onStart).toHaveBeenCalledOnce();
   });

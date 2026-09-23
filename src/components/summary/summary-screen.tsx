@@ -8,7 +8,8 @@ import type { RoundSummary } from "../../core/views";
 import { prefersReducedMotion } from "@/components/drill/motion";
 import { usePrimaryKey } from "@/components/lib/use-primary-key";
 import { Button } from "@/components/ui/button";
-import { CloseGlyph } from "@/components/ui/glyphs";
+import { BackGlyph, CloseGlyph } from "@/components/ui/glyphs";
+import { IconButton } from "@/components/ui/icon-button";
 import { PrimaryButton } from "@/components/ui/primary-button";
 
 import { Link, useRouter } from "../../i18n/navigation";
@@ -81,32 +82,33 @@ export function SummaryScreen({
   const placement = summary.placement;
 
   return (
-    <main className="mx-auto box-content flex min-h-[calc(100dvh-2rem)] max-w-column flex-col px-4 pt-4">
-      <header className="flex min-h-11 items-center justify-between gap-4">
-        {live ? null : (
-          <Link
-            href="/"
-            className="flex h-11 items-center pr-2 text-muted-foreground active:text-foreground"
-          >
-            <span aria-hidden>←&nbsp;</span>
-            {t("back")}
-          </Link>
-        )}
-        <h1 ref={heading} tabIndex={-1} className="flex-1 focus-visible:outline-none">
+    <main className="mx-auto box-content flex min-h-[calc(100dvh-1rem)] max-w-column flex-col px-4 pt-4">
+      <header className="flex flex-col gap-6">
+        <div className="flex h-11 items-center justify-between">
+          {live ? (
+            <span />
+          ) : (
+            <IconButton asChild>
+              <Link href="/" aria-label={t("back")}>
+                <BackGlyph />
+              </Link>
+            </IconButton>
+          )}
+          {live ? (
+            <IconButton type="button" aria-label={t("close")} onClick={end}>
+              <CloseGlyph />
+            </IconButton>
+          ) : null}
+        </div>
+        <h1
+          ref={heading}
+          tabIndex={-1}
+          className="text-heading focus-visible:outline-none"
+        >
           {title}
         </h1>
-        {live ? (
-          <button
-            type="button"
-            aria-label={t("close")}
-            onClick={end}
-            className="-mr-3 flex size-11 items-center justify-center text-muted-foreground active:text-foreground"
-          >
-            <CloseGlyph />
-          </button>
-        ) : null}
       </header>
-      <div className="flex flex-col gap-10 py-6">
+      <div className="mt-4 flex flex-col divide-y divide-border *:py-8">
         {placement?.first === true ? <PlacementCard toeic={placement.toeic} /> : null}
         <GrowthSection growth={summary.growth} shown={shown} />
         <ReviewSection rows={summary.review} shown={shown} />
@@ -128,7 +130,7 @@ export function SummaryScreen({
         <PointsTotals summary={summary} shown={shown} />
       </div>
       {live ? (
-        <footer className="sticky bottom-0 -mx-4 mt-auto flex flex-col gap-3 bg-background px-4 pt-2 pb-4">
+        <footer className="sticky bottom-0 -mx-4 mt-auto flex flex-col gap-2.5 bg-background px-4 pt-3 pb-3">
           {summary.yesterday ? (
             summary.todayOpen ? (
               <>
