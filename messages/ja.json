@@ -16,5 +16,62 @@
   "LocaleSwitcher": {
     "label": "言語",
     "ja": "日本語"
+  },
+  "Drill": {
+    "intro": {
+      "titleFirst": "最初の {count} 文で難易度を測ります",
+      "titleAgain": "{count} 文で難易度を測り直します",
+      "order": "易しい文から順に出ます。",
+      "portion": "この {count} 文が今日の分になります",
+      "say": "日本語を見て、英語を言う",
+      "sayNote": "（声に出すか、頭の中で）",
+      "flip": "言えたらめくる。時間が切れると自動でめくれます",
+      "grade": "裏を見て、自分で ○ か × をつける",
+      "start": "始める"
+    },
+    "card": {
+      "pause": "中断",
+      "progress": "{current} / {total}",
+      "retryProgress": "もう一度 {current} / {total}",
+      "comboLabel": "連続",
+      "again": "もう一度",
+      "flip": "めくる",
+      "point": "要点",
+      "seconds": "{seconds, number, ::.0} 秒",
+      "said": "言えた",
+      "notSaid": "言えなかった",
+      "timedOut": "時間切れ",
+      "review": "復習へ",
+      "next": "次へ",
+      "fast": "速い {seconds, number, ::.0} 秒"
+    },
+    "announce": {
+      "front": "表。{ja}。持ち時間 {seconds} 秒",
+      "timeout": "時間切れ。復習へ",
+      "said": "言えた",
+      "review": "復習へ"
+    },
+    "sheet": {
+      "title": "ここで中断しますか",
+      "hint": "今日のうちなら {position} 枚目から続けられます",
+      "quit": "いまはやめる",
+      "continue": "続ける"
+    },
+    "save": {
+      "failed": "記録を保存できませんでした。サーバーが動いているか確かめてください",
+      "unsaved": "保存できていない記録が {count} 件あります",
+      "resend": "送り直す"
+    },
+    "done": {
+      "title": "今日は完了",
+      "end": "終わる"
+    },
+    "error": {
+      "notEnoughTitle": "出せる文が足りません",
+      "notEnough": "点検済みの文が {count} 文しかありません。カードの生成と点検を実行してください",
+      "widen": "設定で範囲を広げる",
+      "loadTitle": "例文を読み込めませんでした",
+      "reload": "読み込み直す"
+    }
   }
 }
