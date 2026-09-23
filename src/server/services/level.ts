@@ -10,7 +10,7 @@ export interface LevelOutcome {
   readonly difficulty: RoundSummary["difficulty"];
 }
 
-function toeic(progress: Progress, level: number): string {
+export function toeic(progress: Progress, level: number): string {
   return progress.content.toeicByLevel.get(level) ?? "";
 }
 

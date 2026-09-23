@@ -19,7 +19,8 @@ function streakValue(completed: CompletedDays, day: DayKey): number {
   return status.kind === "broken" ? 0 : status.current;
 }
 
-function storedPoints(summary: unknown): number {
+/** The points a saved summary earned; a summary of another shape earned none. */
+export function storedPoints(summary: unknown): number {
   if (typeof summary !== "object" || summary === null || !("points" in summary)) {
     return 0;
   }

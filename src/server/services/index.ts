@@ -3,8 +3,10 @@ import type { Result } from "../../core/result";
 import type { RoundKind, TopicInfo } from "../../core/types";
 import type {
   HomeView,
+  RecordsView,
   RoundPayload,
   RoundSummary,
+  SettingsPageView,
   SettingsView,
 } from "../../core/views";
 import { recordAnswer } from "./answer";
@@ -12,6 +14,7 @@ import type { ServiceDeps, ServiceError } from "./deps";
 import { finishRound } from "./finish";
 import { home, recap } from "./home";
 import { readProgress } from "./progress";
+import { records, settingsPage } from "./records";
 import { updateSettings } from "./settings";
 import { startRound } from "./start";
 
@@ -28,6 +31,8 @@ export interface History {
 export interface Services {
   home(): HomeView;
   recap(): RoundSummary | undefined;
+  records(): RecordsView;
+  settingsPage(): SettingsPageView;
   startRound(kind: RoundKind): Result<RoundPayload, ServiceError>;
   recordAnswer(input: AnswerInput): Result<undefined, ServiceError>;
   finishRound(
@@ -44,6 +49,8 @@ export function createServices(deps: ServiceDeps): Services {
   return {
     home: () => home(deps),
     recap: () => recap(deps),
+    records: () => records(deps),
+    settingsPage: () => settingsPage(deps),
     startRound: (kind) => startRound(deps, kind),
     recordAnswer: (input) => recordAnswer(deps, input),
     finishRound: (roundId, answers) => finishRound(deps, roundId, answers),
