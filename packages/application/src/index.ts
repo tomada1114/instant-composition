@@ -8,7 +8,15 @@ export {
   type RequestContext,
   type SystemJob,
 } from "./context";
+export {
+  cardFacts,
+  type Catalog,
+  type CatalogSnapshot,
+  type CatalogUnreadable,
+} from "./catalog";
 export type { ApplicationError, ApplicationErrorCode } from "./errors";
+export { type ApplicationDeps } from "./execute";
+export { finishRound } from "./finish-round";
 export {
   createMemoryStores,
   MAX_COMMIT_ITEMS,
@@ -20,6 +28,8 @@ export {
   SYSTEM_OPERATIONS,
   type OperationKind,
 } from "./operations";
+export { recordAnswers, type RecordAnswersCommand } from "./record-answers";
+export { startRound } from "./start-round";
 export {
   keyOf,
   type Commit,
@@ -30,3 +40,13 @@ export {
   type LearnerStores,
   type Stored,
 } from "./store";
+export { updateSettings } from "./update-settings";
+export type {
+  DrillCard,
+  ReachTopic,
+  ReachView,
+  RoundPayload,
+  RoundSummary,
+  SettingsView,
+  TotalsView,
+} from "./views";
