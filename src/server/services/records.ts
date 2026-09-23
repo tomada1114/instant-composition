@@ -1,14 +1,19 @@
 import { reachBySubtopic } from "../../core/mastery";
 import { parseTitleKey } from "../../core/milestones";
 import { totals } from "../../core/points";
-import { calendarDots, longestRun, streakStatus } from "../../core/streak";
+import { calendarDots, longestRun } from "../../core/streak";
 import type { RecordsView, SettingsPageView, TitleGroup } from "../../core/views";
 import { DEFAULT_SETTINGS } from "./settings";
 import type { ServiceDeps } from "./deps";
-import { storedPoints } from "./finish";
+import { storedPoints, streakValue } from "./finish";
 import { toeic } from "./level";
 import { readProgress, type Progress } from "./progress";
 import { computeReach } from "./reach";
+
+/** The TOEIC band of the level now, or null before the first placement. */
+function toeicNow(progress: Progress): string | null {
+  return progress.level === undefined ? null : toeic(progress, progress.level.level);
+}
 
 function titleGroups(deps: ServiceDeps, progress: Progress): TitleGroup[] {
   const streak: number[] = [];
@@ -43,7 +48,6 @@ export function records(deps: ServiceDeps): RecordsView {
   const reach = computeReach(progress, undefined);
   const bySubtopic = reachBySubtopic(reach.mastered, reach.where);
   const chosen = progress.settings?.topics ?? [];
-  const status = streakStatus(progress.completed, progress.today);
   const all = totals(progress.answers, progress.today);
   return {
     reach: reach.view,
@@ -58,9 +62,9 @@ export function records(deps: ServiceDeps): RecordsView {
           count: bySubtopic.get(`${topic.id}/${subtopic.id}`) ?? 0,
         })),
       })),
-    toeic: progress.level === undefined ? null : toeic(progress, progress.level.level),
+    toeic: toeicNow(progress),
     streak: {
-      current: status.kind === "broken" ? 0 : status.current,
+      current: streakValue(progress.completed, progress.today),
       longest: longestRun(progress.completed),
     },
     calendar: calendarDots(progress.completed, progress.today, progress.firstDay),
@@ -83,6 +87,6 @@ export function settingsPage(deps: ServiceDeps): SettingsPageView {
       ja: topic.ja,
       subtopics: topic.subtopics.map(({ id, ja }) => ({ id, ja })),
     })),
-    toeic: progress.level === undefined ? null : toeic(progress, progress.level.level),
+    toeic: toeicNow(progress),
   };
 }

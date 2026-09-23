@@ -14,7 +14,7 @@ import { portionProgress, readProgress } from "./progress";
 import { computeReach } from "./reach";
 
 /** The run shown for `day`; 0 stands for "day 1 from today" and is never displayed. */
-function streakValue(completed: CompletedDays, day: DayKey): number {
+export function streakValue(completed: CompletedDays, day: DayKey): number {
   const status = streakStatus(completed, day);
   return status.kind === "broken" ? 0 : status.current;
 }
