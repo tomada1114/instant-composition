@@ -88,6 +88,28 @@
     }
   },
   {
+    "id": "c_3r2x3g7c",
+    "ja": "うちのチームにあと一人エンジニアがいれば、今週中にテストを終えられるんですが。",
+    "en": "If we had one more engineer on the team, we'd be able to finish the testing by the end of this week.",
+    "alternatives": [
+      "If our team had one more engineer, we could finish the testing by the end of this week.",
+      "If we had another engineer on the team, we'd be able to get the testing done by the end of the week."
+    ],
+    "point": "現実と違う仮定なので had と we'd／could を使う",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3db81cacf89268cd9221c90c69dd45490eede85b486e7b3066e4f012c37f85a5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4h6c2n2u",
     "ja": "営業チームは、締め切りを来週まで延ばすことを検討しています。",
     "en": "The sales team is thinking about extending the deadline to next week.",

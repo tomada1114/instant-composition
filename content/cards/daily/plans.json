@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2j3k3k8j",
+    "ja": "先週は日程が決まらなかったけど、もう全員の都合がつく日が見つかったよ。",
+    "en": "We couldn't settle on a date last week, but we've found a day that works for everyone now.",
+    "alternatives": [
+      "We didn't manage to pick a date last week, but we've now found one that suits everyone.",
+      "Last week we couldn't agree on a date, but we've found a day that works for everyone now."
+    ],
+    "point": "先週は過去形、「もう見つかった」は現在完了で分ける",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["tense-contrast", "relative-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cbfe8fe4febb3d3f07c19248000006c49577dd7ad4bb8d95fe82f3868aa0685d",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2t9f9k6q",
     "ja": "兄に夕食に誘われたとき、私はもう別の予定を入れてしまっていた。",
     "en": "When my brother invited me to dinner, I'd already made other plans.",
@@ -304,6 +326,28 @@
         "hash": "sha256:32156fb73da1e32aea970541516d254f0703795843a6b522942187391f25b3fc",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9b3k5b5h",
+    "ja": "お母さん、土曜の夕食に友達を二人連れて行ってもいいかな？",
+    "en": "Mom, is it okay if I bring two friends along to dinner on Saturday?",
+    "alternatives": [
+      "Mom, would it be okay if I brought two friends to dinner on Saturday?",
+      "Mom, can I bring two friends along to Saturday's dinner?"
+    ],
+    "point": "相手のいる場所へ「連れて行く」は take でなく bring",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4473da6fa3b97a80dc1e3ff5347c50016e4cdf62d24b65a4562a0e23c6639050",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

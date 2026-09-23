@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2b5y6t2x",
+    "ja": "今タクシーがつかまれば、私たち、乗り継ぎの電車にまだ間に合うのになあ。",
+    "en": "If we could get a taxi right now, we'd still be able to make our connecting train.",
+    "alternatives": [
+      "If we could catch a taxi now, we'd still make our connecting train.",
+      "If we were able to get a taxi right now, we could still catch our connecting train."
+    ],
+    "point": "現実と違う仮定なので could と would で過去形にする",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 6,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6fb7843736bfe7db68b1b4031c4b894f82d65e533ee4f8ca44312a44362ec839",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2j2p3d2n",
     "ja": "私たちの電車、30分遅れてるけど、それでも乗り換えには間に合うと思うよ。",
     "en": "Even though our train is 30 minutes late, I think we'll still make our connection.",
@@ -172,6 +194,28 @@
         "hash": "sha256:387f71f82871692823445a4b294bf044e20f6d7e39667caac61f4d565bd1270f",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4p7y4t5x",
+    "ja": "電車が急に止まって、私たちは 1 時間近く駅と駅の間に閉じ込められました。",
+    "en": "The train stopped suddenly, leaving us stuck between stations for almost an hour.",
+    "alternatives": [
+      "The train came to a sudden stop, leaving us stuck between stations for nearly an hour.",
+      "The train suddenly stopped, and we were stuck between stations for almost an hour."
+    ],
+    "point": "結果は「, leaving us stuck」と分詞で後ろにつなげる",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6de0fc417d3dcf214e72eb41956dd6dc67a2a76a67d0bdcbeeb7f35ae4e321d5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

@@ -371,6 +371,28 @@
     }
   },
   {
+    "id": "c_7x2p5v5k",
+    "ja": "行きたいんだけど、今週の土曜は上司に出勤させられるから、今回はパスするね。",
+    "en": "I'd love to come, but my boss is making me work this Saturday, so I'll have to pass this time.",
+    "alternatives": [
+      "I'd really like to go, but my boss is making me work this Saturday, so I'll have to sit this one out.",
+      "I'd love to join you, but my boss is having me work this Saturday, so I'll pass this time."
+    ],
+    "point": "make me work の work は原形で、to は付けない",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e451d2067174cb3fed2c35b941875857422e504bb6573f493d19a2c15a23ee81",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_8h6s8j2y",
     "ja": "今夜のパーティー、もう誘われた？",
     "en": "Have you been invited to tonight's party yet?",
@@ -409,6 +431,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:44bd90ffa1c66f9e66b236ba7c2e1bb670a73431223b0ba2d2eb22b89aeae41b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8z8c3t8s",
+    "ja": "妹が、今週末のバーベキューには行くけど、たぶん少し遅れるって言ってたよ。",
+    "en": "My sister said she'd come to the barbecue this weekend, but that she'd probably be a little late.",
+    "alternatives": [
+      "My sister told me she'd come to the barbecue this weekend but would probably be a little late.",
+      "My sister said she was coming to this weekend's barbecue but would probably be a bit late."
+    ],
+    "point": "「言ってた」に合わせて will ではなく would にする",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 7,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e547d8450e44b01678851840a3312103836f2331caef7b40b4cb1c735934f95c",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

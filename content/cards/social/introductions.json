@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2c4m4a3n",
+    "ja": "彼女は日本語と韓国語を両方話せるんですよ。",
+    "en": "She can speak both Japanese and Korean.",
+    "alternatives": [
+      "She speaks both Japanese and Korean.",
+      "She's able to speak both Japanese and Korean."
+    ],
+    "point": "「両方」は both A and B の語順で言う",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 3,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3ef50f983e634c001d9f333352567e82d6b20d962561cef03e4aaff66ccc8bee",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2g4y8d9k",
     "ja": "窓のそばに立っている女性が、私の上司の田中さんです。",
     "en": "The woman standing by the window is my boss, Ms. Tanaka.",
@@ -287,6 +309,28 @@
     }
   },
   {
+    "id": "c_8a7y7w5f",
+    "ja": "上司に、挨拶してくるように言われたんです。",
+    "en": "My boss told me to come and say hello.",
+    "alternatives": [
+      "My boss asked me to come and say hi.",
+      "My boss told me to come say hello."
+    ],
+    "point": "「〜するように言われた」は told me to do で言える",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 3,
+    "grammar": ["verb-object-to-do", "past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f54ecc19525717ee38e6a743a2e9acc607db8adfb031472079d0a341d7cd488a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_8g4r4z7s",
     "ja": "あなたは仕事で英語を使うことに、もう慣れていますか？",
     "en": "Are you used to using English at work yet?",
@@ -372,6 +416,28 @@
         "hash": "sha256:d79e95bcee1e817736979d990bc25704a7bff6065c856a348ccd14c636c18551",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9q6n4f8g",
+    "ja": "私、来月から東京で新しい仕事を始めるんです。",
+    "en": "I'm starting a new job in Tokyo next month.",
+    "alternatives": [
+      "I'm going to start a new job in Tokyo next month.",
+      "I'll be starting a new job in Tokyo next month."
+    ],
+    "point": "決まっている予定は現在進行形で言える",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 3,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9319d9b774dffa024651074c8a2479d4a829a7d9e76fa5b6ae6c3d016c15c0e6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   }

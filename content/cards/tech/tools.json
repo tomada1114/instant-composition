@@ -1,5 +1,49 @@
 [
   {
+    "id": "c_2s4k7y9k",
+    "ja": "今日の午後だけ、共有のビルドサーバーの設定を変えさせてもらってもいいでしょうか？",
+    "en": "Would it be okay if I changed the shared build server's settings just for this afternoon?",
+    "alternatives": [
+      "Is it okay if I change the shared build server's settings just for this afternoon?",
+      "Could I change the settings on the shared build server just for this afternoon?"
+    ],
+    "point": "Would it be okay if の後は過去形 changed にする",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 7,
+    "grammar": ["requests-permission", "hedging-softening"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ec601b773681e0aa25f409a4bebf4193e663cdbccfe93eec248fb9cad53ccbca",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4t2z2b7p",
+    "ja": "リードエンジニアが先週、全員のノートPCに同じエディタを入れました。",
+    "en": "The lead engineer installed the same editor on everyone's laptop last week.",
+    "alternatives": [
+      "Last week, the lead engineer installed the same editor on everyone's laptop.",
+      "The lead engineer put the same editor on everyone's laptop last week."
+    ],
+    "point": "入れる先は on everyone's laptop。in にしない",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 4,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:77022a61c8e3ee56f8e2b0b99acf257adfc0fec89645685a6fa05c8a19836b58",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4x6a5t6w",
     "ja": "先週 Docker は入れたんだけど、ボリュームの共有方法はまだわかってないんだ。",
     "en": "I set up Docker last week, but I still haven't figured out how to share volumes.",
@@ -44,6 +88,28 @@
     }
   },
   {
+    "id": "c_7f7b2e9g",
+    "ja": "自分のノートパソコンだと Docker が使えないんです。",
+    "en": "I can't use Docker on my laptop.",
+    "alternatives": [
+      "I'm not able to use Docker on my laptop.",
+      "Docker doesn't work on my laptop."
+    ],
+    "point": "can't の後の動詞は原形の use",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3c9994d1dad3a527ec50fc3b601ed38ce7b3eee73c001e9da8b96e1a98ca1919",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_7t6t2g7y",
     "ja": "Docker を入れたら、このコマンドを実行してください。",
     "en": "Please run this command once you've installed Docker.",
@@ -60,6 +126,116 @@
     "stamps": {
       "core": {
         "hash": "sha256:32154ad54542bf3e776d0db9c3256f1f77f8f2feeb2d77861e13555437972dc7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_7z4u3q8h",
+    "ja": "新しいメンバーに、VS Code の拡張機能を入れるように伝えてもらえますか？",
+    "en": "Could you tell the new member to install the VS Code extensions?",
+    "alternatives": [
+      "Can you tell the new member to install the VS Code extensions?",
+      "Could you ask the new member to install the VS Code extensions?"
+    ],
+    "point": "tell + 人 + to install の形。that 節にしない",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 4,
+    "grammar": ["verb-object-to-do", "requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6bd73ac21860f3eba2be3998c2328f8a9afdb31213e5113ccbc484c5aaf79231",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8g4g4u4v",
+    "ja": "うちのチームは毎日 GitHub を使っています。",
+    "en": "Our team uses GitHub every day.",
+    "alternatives": [
+      "Our team works with GitHub every day.",
+      "We use GitHub every day."
+    ],
+    "point": "team は三人称単数なので uses と s を付ける",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:149c527f644b7f9eeac2c197f8c7b5361249bc540b848509186c680d8c9ae8b4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8h9f8n4d",
+    "ja": "もし彼女がもっと速いマシンを持っていたら、テストを全部ローカルで回せるのにね。",
+    "en": "If she had a faster machine, she could run all the tests locally.",
+    "alternatives": [
+      "She could run all the tests locally if she had a faster machine.",
+      "If she had a faster computer, she'd be able to run all the tests locally."
+    ],
+    "point": "現実と違う仮定なので had と could の過去形を使う",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 5,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:22561a304a85e18086f5373f231ccf6e346ae3c140f5ebecc99ebeb758f83e12",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8q9g3b9n",
+    "ja": "このエディタを 3 年使ってきたけど、こんなに便利な拡張機能は一度も見たことがないよ。",
+    "en": "I've used this editor for three years, but I've never seen such a useful extension.",
+    "alternatives": [
+      "I've been using this editor for three years, and I've never come across an extension this useful.",
+      "I've used this editor for three years and have never seen an extension as useful as this."
+    ],
+    "point": "「3年使ってきた」「見たことがない」はどちらも現在完了",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 5,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8033b91b756714b96050afc5fc0f66bb21d27065462b942bb3678a4dc4c2a6f6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8w8k4h3e",
+    "ja": "昨日ビルドが失敗したとき、私はもうキャッシュを消してありました。",
+    "en": "I had already cleared the cache when the build failed yesterday.",
+    "alternatives": [
+      "When the build failed yesterday, I had already cleared the cache.",
+      "I'd already deleted the cache by the time the build failed yesterday."
+    ],
+    "point": "失敗より前に消していたので had cleared にする",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 5,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cc6bb17fc19e6bfedacb8ee8ead412ec5da19b53f1190183dcbf7404e3b5b504",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }
@@ -106,6 +282,28 @@
         "hash": "sha256:44e8fa4f69716269aa544bfd96699389271863817145b39a5fe40d6c26b31bd5",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_9v6t5s3k",
+    "ja": "このエディタのテーマ設定はどこにありますか？",
+    "en": "Where is the theme setting in this editor?",
+    "alternatives": [
+      "Where can I find the theme setting in this editor?",
+      "Where's the theme setting for this editor?"
+    ],
+    "point": "Where の後は is + 主語の語順にする",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 1,
+    "grammar": ["wh-questions", "be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:eebf09cb58a3cf873bfa7f0ef770bf5925658e59712661357c2028ffca61a02f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   }

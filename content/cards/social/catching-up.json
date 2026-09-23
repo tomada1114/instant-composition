@@ -88,6 +88,28 @@
     }
   },
   {
+    "id": "c_3k2r8a8y",
+    "ja": "引っ越してから一番大変だったのは、仕事じゃなくて、近所に知り合いが一人もいないことだったよ。",
+    "en": "What was hardest after I moved wasn't the job but the fact that I didn't know a single person in the neighborhood.",
+    "alternatives": [
+      "The hardest thing after I moved wasn't the job; it was not knowing anyone in the neighborhood.",
+      "What was hardest after the move wasn't work but not knowing a single person nearby."
+    ],
+    "point": "What was hardest で主語を作り、wasn't A but B でつなぐ",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 10,
+    "grammar": ["cleft-emphasis", "noun-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:74bd330faa96d96d1d7199a487795a403e4a5ea64cb1af95a6aa52031dec3b91",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3t3d3e8q",
     "ja": "君が前に住んでたアパートの隣のラーメン屋って、まだやってる？",
     "en": "Is the ramen shop next to your old apartment still in business?",
@@ -150,6 +172,28 @@
         "hash": "sha256:24d028c4d1a7bed3b1a83a71fd2b20f4d947740774415b9b274ed13e539f8fb5",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4s8v9t7c",
+    "ja": "君が仕事を辞めて農業を始めたって聞いたときに驚いたのは、決断の早さだったよ。",
+    "en": "What surprised me when I heard you'd quit your job to start farming was how quickly you made the decision.",
+    "alternatives": [
+      "When I heard you'd quit your job to start farming, I was surprised by how quickly you decided.",
+      "When I heard you'd quit your job to become a farmer, what surprised me was how fast you made the decision."
+    ],
+    "point": "「驚いたのは〜だった」は What surprised me was で組み立てる",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 10,
+    "grammar": ["cleft-emphasis", "nested-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b42094914c4e881a04079a1b7932a3b7669a5a9461e4f5ca3345fd2c186e2b59",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

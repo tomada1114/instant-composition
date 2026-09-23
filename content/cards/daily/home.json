@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2j5d4g5n",
+    "ja": "私が頭にくるのは、ルームメイトが流しに皿を置きっぱなしにすることじゃなくて、彼女がもう洗ったって言い張ることなんだ。",
+    "en": "What drives me crazy isn't the dishes my roommate leaves in the sink but the way she insists she's already washed them.",
+    "alternatives": [
+      "It's not the dishes my roommate leaves in the sink that bother me, but the way she insists she's already washed them.",
+      "What gets to me is not that my roommate leaves dishes in the sink, but that she insists she's already washed them."
+    ],
+    "point": "「頭にくるのは A じゃなくて B」は What drives me crazy isn't A but B",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e9719dcac2dd20cf0ca697a834f2752e6dd8c6b09e662889bd211b53df9e471c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5r9m5v4a",
     "ja": "今日私がやらなきゃいけないのは、洗濯物をたたむことだよ。",
     "en": "What I have to do today is fold the laundry.",

@@ -242,6 +242,28 @@
     }
   },
   {
+    "id": "c_4x5a5a8v",
+    "ja": "すみません、この近くに駅まで行くバスがあるかどうか、教えていただけないかと思いまして。",
+    "en": "Excuse me, I was wondering if you could tell me whether there's a bus around here that goes to the station.",
+    "alternatives": [
+      "Excuse me, would you mind telling me if there's a bus near here that goes to the station?",
+      "Sorry to bother you, but could you tell me if there's a bus around here that goes to the station?"
+    ],
+    "point": "whether の後は there's の語順。is there にしない",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 8,
+    "grammar": ["hedging-softening", "indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3957ba8641dd817151b7c2ceda696536ba83fe12e32daf5f51e04d12652bc4ea",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5p8a6f9g",
     "ja": "その場所、地図で見せてもらえますか？",
     "en": "Can you show me on the map?",
@@ -414,6 +436,28 @@
         "hash": "sha256:52c47e31ea93ebac8f3e9d2fbb31bcb158040acd3725b8283f1717f5f71287c0",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8u2j8n9f",
+    "ja": "その女性は地図を確認しながら、駅から美術館までの行き方を丁寧に説明してくれました。",
+    "en": "The woman carefully explained how to get from the station to the museum, checking the map as she went.",
+    "alternatives": [
+      "The woman explained carefully how to get from the station to the museum while checking the map.",
+      "The woman checked the map as she carefully explained the way from the station to the museum."
+    ],
+    "point": "「〜しながら」は文末に , checking のように -ing を添える",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:52be3c04c1ae0630c672b4afec529cf2818aabc2c88748beeb31c77e0a5541cc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

@@ -66,6 +66,50 @@
     }
   },
   {
+    "id": "c_3m8a6m6f",
+    "ja": "10 人のエンジニアのチームをまとめてきた経験から、私はプロジェクトを予定どおりに進める方法を身につけました。",
+    "en": "Having managed a team of ten engineers, I've learned how to keep projects on schedule.",
+    "alternatives": [
+      "After managing a team of ten engineers, I've learned how to keep projects on schedule.",
+      "Managing a team of ten engineers taught me how to keep projects on schedule."
+    ],
+    "point": "「〜してきた経験から」は Having + 過去分詞で文頭にまとめる",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 8,
+    "grammar": ["participle-clauses", "present-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1de1946a2adfb6c2db57239c176db12602493f05e70b30aef2e9d66a352e34d5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_5m3p5g5r",
+    "ja": "私は人前で話すのが得意なので、前の職場ではよくお客様へのプレゼンを任されていました。",
+    "en": "I'm good at speaking in front of people, so I was often asked to give presentations to clients at my last job.",
+    "alternatives": [
+      "Since I'm good at public speaking, I often gave client presentations at my previous job.",
+      "I'm comfortable speaking in front of people, so I was often put in charge of client presentations at my last job."
+    ],
+    "point": "good at の後は動詞を -ing にする。to speak は不可。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 8,
+    "grammar": ["gerunds", "passive-voice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:88a0d2e72ec87a1eb8a9a59a9e5e5fe487e03d99d58633f7c784943b9c6673ee",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_6e9s9r9z",
     "ja": "最後に、このポジションではどんな成果が期待されているのか伺ってもよろしいですか？",
     "en": "Lastly, may I ask what kind of results you expect from this position?",

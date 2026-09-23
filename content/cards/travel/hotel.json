@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2b6a3z4d",
+    "ja": "僕のカードキーが使えなくなっただけじゃなくて、フロントにも30分も誰もいなかったんだ。",
+    "en": "Not only did my key card stop working, but there was also nobody at the front desk for thirty minutes.",
+    "alternatives": [
+      "Not only did my key card stop working, but no one was at the front desk for half an hour either.",
+      "Not only did my room key stop working, but there wasn't anyone at the front desk for thirty minutes."
+    ],
+    "point": "Not only の後は did＋主語＋動詞の原形の語順",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b435eeb7d068f8e5778e386bd2a46481134ec2b61b5a7dfe606396c38cab4fe1",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2j3y5z5e",
     "ja": "すみません、部屋にタオルがもう少し欲しいんですが、いただけますか？",
     "en": "Could I get some more towels for my room?",
@@ -220,6 +242,28 @@
     }
   },
   {
+    "id": "c_4a3t7v2g",
+    "ja": "眺めのいい部屋を頼んでいたのに、私が通された部屋からは駐車場しか見えません。",
+    "en": "Although I'd asked for a room with a view, the one they gave me only looks out onto the parking lot.",
+    "alternatives": [
+      "Even though I requested a room with a view, the room I was given only overlooks the parking lot.",
+      "I'd asked for a room with a view, but the one they put me in only faces the parking lot."
+    ],
+    "point": "頼んでいたのは通される前なので過去完了 I'd asked",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 8,
+    "grammar": ["concession-contrast", "past-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:23ef63370dc25e2657d533040d2a3c0a6676894e4c0249541f0963ace9fee4ec",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4f3t5x4t",
     "ja": "もっと早く予約してたら、彼女は禁煙の部屋に泊まれたのに。",
     "en": "If she had booked earlier, she could have gotten a non-smoking room.",
@@ -346,6 +390,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:26190a1dde6ea3129677733326120f1b691fc2957ea1a8f8bc3e158a452b1ad7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8a5b2n3c",
+    "ja": "私たちが困っているのは部屋の狭さではなく、隣の部屋の騒音なんです。",
+    "en": "What's bothering us isn't the size of the room but the noise from the room next door.",
+    "alternatives": [
+      "It's not the size of the room that's bothering us, but the noise from next door.",
+      "The problem isn't how small the room is, it's the noise from next door."
+    ],
+    "point": "「困っているのは A ではなく B」は What's bothering us isn't A but B",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5bfccfa61907fd4ca47900ae1ccd0bab27ce2cf7319613a4f1876ae59efb9974",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

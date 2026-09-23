@@ -66,6 +66,28 @@
     }
   },
   {
+    "id": "c_3m4h7h5b",
+    "ja": "すみません、この税関申告書に何を書けばいいか教えてもらえますか？",
+    "en": "Excuse me, could you tell me what I should write on this customs form?",
+    "alternatives": [
+      "Excuse me, could you tell me what I need to write on this customs form?",
+      "Excuse me, can you tell me what to write on this customs declaration form?"
+    ],
+    "point": "文中の疑問は what I should の語順。should I にしない",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 5,
+    "grammar": ["indirect-questions", "requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4f69791fbdc50e138fc7da95cefe7bd3a6f3cf6de3d309d5ce705464a9a62f96",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4d6b6t8d",
     "ja": "すみません、前の座席の下に入れたかばんを上の棚に移したいので、手伝ってもらえますか？",
     "en": "Excuse me, could you help me move the bag I put under the seat in front of me into the overhead bin?",
@@ -128,6 +150,28 @@
         "hash": "sha256:da2c8373cc9993f42734a663e4b24a455f583c9a91b0d078936a5f2d51a11e35",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4x5x9h5y",
+    "ja": "娘の隣に座りたいので、私と席を替わっていただいてもかまいませんか？",
+    "en": "Would you mind switching seats with me so I can sit next to my daughter?",
+    "alternatives": [
+      "Would you mind trading seats with me so I can sit next to my daughter?",
+      "Would you mind changing seats with me so that I can sit beside my daughter?"
+    ],
+    "point": "mind の後は動名詞。to switch にしない",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 5,
+    "grammar": ["gerunds", "requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8c16228279de41e765cfba4de4471bfadbe9950a4f2eddf0fa2511952448f94a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

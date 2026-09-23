@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_2k5r6p8q",
+    "ja": "すみません、この近くに文房具屋はありますか？",
+    "en": "Excuse me, is there a stationery store near here?",
+    "alternatives": [
+      "Excuse me, is there a stationery shop around here?",
+      "Excuse me, is there a stationery store nearby?"
+    ],
+    "point": "「〜はありますか」は Is there 〜? で始める",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 2,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3ecc3280fbe710dfefcb2a1660b0a04b67302efe0c4b0e4a3fe9569e5de5fac8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2r5k2q7k",
     "ja": "ネットだと、この二つのかばんはうまく比べられないな。",
     "en": "I can't really compare these two bags online.",
@@ -82,6 +104,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:a791bf789451cf1cb38d4285a2ec1c11a93ac9151f08f89735bb7682e516c03c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3g5u5b7t",
+    "ja": "ネットで靴を探してたら、半額のを見つけたよ。",
+    "en": "I was looking for shoes online and found a half-price pair.",
+    "alternatives": [
+      "I found a half-price pair while I was looking for shoes online.",
+      "I was shopping for shoes online and found a pair at half price."
+    ],
+    "point": "「探していた」は過去進行形 was looking for で表す",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 3,
+    "grammar": ["progressive-aspect", "past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8a929f87d44b0c6fd706b19514aec008c4169da9bfea1692280a95c519a71c80",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }
@@ -326,6 +370,28 @@
         "hash": "sha256:622efccd63b531ceeead7f068010f95c52ba2b7381fc09ff7a7e183e11b03ea1",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8s5s9s2f",
+    "ja": "母はあのコートを返品して、別の色のものに交換してもらった。",
+    "en": "My mom returned that coat and got a different color.",
+    "alternatives": [
+      "My mother returned that coat and exchanged it for a different color.",
+      "My mom took that coat back and got it in another color."
+    ],
+    "point": "「返品した」は returned、return の後に back は不要",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 3,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d3ce13b1824a1c6defb1a02c04ce0b98b2d9357de73cbc4d792d4fc1a5693626",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
