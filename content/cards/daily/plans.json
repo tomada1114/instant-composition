@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_3f3m5m3h",
+    "ja": "弟はもう一週間ずっと、みんなで行くキャンプの計画を立ててるんだ。",
+    "en": "My brother has been planning our group camping trip for a week now.",
+    "alternatives": [
+      "My brother's been planning the camping trip for all of us for a whole week.",
+      "For a week now, my brother has been planning the camping trip we're all going on."
+    ],
+    "point": "今も続く行動は has been planning、for で期間を示す",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6a403022855ba1698112b5a75c1fd7cbf61ad971d402c1f774019b220cfbe7cb",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3j2s4h2g",
     "ja": "姉と私、旅行の日程をもう三回も変えてるんだよね。",
     "en": "My sister and I have already changed our trip dates three times.",
@@ -304,6 +326,28 @@
         "hash": "sha256:2c091b5bab8a63dc84e642b15b324bb871682db6661a9c95e2b6e54134ff3651",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8e8v7f2q",
+    "ja": "姉が金曜に電話してきて、土曜の夕食には行けないって言ってたよ。",
+    "en": "My sister called me on Friday and said she couldn't make it to dinner on Saturday.",
+    "alternatives": [
+      "My sister called me on Friday and said she couldn't come to dinner on Saturday.",
+      "My sister phoned me on Friday to say she couldn't make it to Saturday's dinner."
+    ],
+    "point": "過去の発言なので can't ではなく couldn't に時制をそろえる",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d64973acd975610ac58baca0535e5884e2579f4c9f7c6e0339a26333d8ec51c6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

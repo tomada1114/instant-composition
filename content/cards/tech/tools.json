@@ -264,6 +264,28 @@
     }
   },
   {
+    "id": "c_9f5n7n7w",
+    "ja": "新しいノート PC のセットアップについて、何かアドバイスある？特にどの拡張機能を入れればいいか知りたいんだ。",
+    "en": "Do you have any advice on setting up a new laptop? I'd especially like to know which extensions I should install.",
+    "alternatives": [
+      "Any advice on setting up a new laptop? I especially want to know which extensions to install.",
+      "Have you got any advice for setting up a new laptop? In particular, I'd like to know which extensions I should install."
+    ],
+    "point": "advice は数えられないので an advice や advices にしない",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 8,
+    "grammar": ["articles-and-countability", "indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:97a42b5c85276dcb8cc6955998ac9f9f95bb8f8c9a54f41d6eb9fed62b869031",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_9t9r9w9z",
     "ja": "僕のマシンでビルドが通らなかった原因は、設定ファイルじゃなくて古い Node のバージョンだったんだ。",
     "en": "It was the outdated Node version, not the config file, that broke the build on my machine.",

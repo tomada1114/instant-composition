@@ -22,6 +22,47 @@
     }
   },
   {
+    "id": "c_2s6k7m5c",
+    "ja": "会議のリンクはどこにありますか？",
+    "en": "Where is the meeting link?",
+    "alternatives": [
+      "Where can I find the meeting link?",
+      "Where's the link for the meeting?"
+    ],
+    "point": "Where の後は is the link の語順にする",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 1,
+    "grammar": ["wh-questions", "be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:684b6da0542d5fcf436029876c88cc6b83a3d2452762413bc58081ba589dd4b4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_2t2y9d9m",
+    "ja": "私の画面、みなさん見えますか？",
+    "en": "Can everyone see my screen?",
+    "alternatives": ["Is my screen visible to everyone?", "Can you all see my screen?"],
+    "point": "「見えますか」は can see で表す。are seeing としない",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:16fef6a082d7cd847406e6adb56f9aea1520f871fd9faf29bd6f0387682c3939",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3n4h4v8v",
     "ja": "受付の方は、田中さんは会議中なので30分後にかけ直してもらえないかと言っていました。",
     "en": "The receptionist said Mr. Tanaka was in a meeting and asked if I could call back in thirty minutes.",

@@ -88,6 +88,28 @@
     }
   },
   {
+    "id": "c_2z8j4a5j",
+    "ja": "運転手さん、私たち、もう 10 分くらい同じところをぐるぐる回っていませんか？",
+    "en": "Excuse me, haven't we been going around in circles for about ten minutes now?",
+    "alternatives": [
+      "Excuse me, aren't we just driving around in circles? It's been about ten minutes.",
+      "Sorry, but haven't we been circling the same area for about ten minutes?"
+    ],
+    "point": "続いている動作は have been going の現在完了進行形で",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 9,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ab5b32c967103dabc612804219a7a28e9cc41c0a47a239aba970d940f200e5da",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3a6u2u6j",
     "ja": "すみません、空港行きのバスがどこから出るか教えていただけますか？",
     "en": "Excuse me, could you tell me where the bus to the airport leaves from?",

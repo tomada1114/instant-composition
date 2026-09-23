@@ -154,6 +154,28 @@
     }
   },
   {
+    "id": "c_3j8s6d4u",
+    "ja": "両方の案をホワイトボードに書き出してみよう。",
+    "en": "Let's write both options on the whiteboard.",
+    "alternatives": [
+      "Let's put both options on the whiteboard.",
+      "Let's list both options on the whiteboard."
+    ],
+    "point": "「〜してみよう」は Let's＋動詞の原形で言う",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1a5b3126e5d1b99021374c4601ec3c9b348d2f0a18766d85b9c3fd8b782261ed",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4k8d9n9h",
     "ja": "この API の仕様は、フロントエンドチームのレビューが終わるまで確定しません。",
     "en": "The API spec won't be finalized until it's been reviewed by the front-end team.",
@@ -260,6 +282,28 @@
         "hash": "sha256:cc83d06f58ccc605a5f5e68db6fbf997bdacd1bcd4a4cc88e81055d135cf3c11",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_5s6n2g9x",
+    "ja": "なぜ田中さんはこの設計を選んだんですか？",
+    "en": "Why did Tanaka choose this design?",
+    "alternatives": [
+      "Why did Tanaka pick this design?",
+      "Why did Tanaka go with this design?"
+    ],
+    "point": "過去の疑問は did を使い、動詞は原形の choose に戻す",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 2,
+    "grammar": ["wh-questions", "past-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:14d03ed6a7c1e66eb8f4c9a6d8fa224b8c2833a09ac068d442d4c2aea1a5881f",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
@@ -458,6 +502,28 @@
         "hash": "sha256:df8b53781294de8d2afe4bcf5a5ee4ce26f8156440a872caeae41d5c4162da80",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_7z8c8h3w",
+    "ja": "この案は安いけど、あまり柔軟じゃないです。",
+    "en": "This option is cheap, but it isn't very flexible.",
+    "alternatives": [
+      "This option is cheap but not very flexible.",
+      "This plan is cheap, but it isn't very flexible."
+    ],
+    "point": "形容詞だけの文にも be 動詞 is が必要",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:eb27993a5e31f0ee7a3c4d1857ff7ffb2768934e8733e464838d4e1e7aba8df0",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

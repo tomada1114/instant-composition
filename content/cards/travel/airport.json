@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_2u9k7k8p",
+    "ja": "ご迷惑でなければ、通路側の席に替えていただけないかと思いまして。",
+    "en": "I was wondering if you could possibly move me to an aisle seat, if it's not too much trouble.",
+    "alternatives": [
+      "If it's no trouble, I was hoping you might be able to switch me to an aisle seat.",
+      "Would it be at all possible to move me to an aisle seat, if it's not too much trouble?"
+    ],
+    "point": "I was wondering if you could で丁寧に頼む。過去形でも今の依頼",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a0da59d0c8a586aed5a18f3ba6dd5d0efc3bc4e7f32fdc0e3ac8999b2b067ce8",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3b4g2y2b",
     "ja": "薬を飲みたいので、お水を一杯いただけますか？",
     "en": "Could I have a glass of water to take my medicine with, please?",
@@ -88,6 +110,28 @@
     }
   },
   {
+    "id": "c_3m9q6b5e",
+    "ja": "彼、もう少し英語が話せたら、入国審査でこんなに時間かからないだろうにね。",
+    "en": "If he could speak a bit more English, he wouldn't be taking so long at immigration.",
+    "alternatives": [
+      "If he spoke a little more English, he wouldn't be taking this long at immigration.",
+      "If his English were a bit better, it wouldn't be taking him so long at immigration."
+    ],
+    "point": "今の事実に反する仮定は if 節を過去形、主節は wouldn't",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 6,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2015b16045243dcc242914840fcf6506bb3f20da176ce40ef3156df4d6480ce9",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4d6b6t8d",
     "ja": "すみません、前の座席の下に入れたかばんを上の棚に移したいので、手伝ってもらえますか？",
     "en": "Excuse me, could you help me move the bag I put under the seat in front of me into the overhead bin?",
@@ -106,6 +150,28 @@
         "hash": "sha256:5dff2e7cf08a5dcd6f569f644122587213c8a45b57019f3143f3df053a07c559",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_4f2h8z5s",
+    "ja": "窓側の席を頼んでおけばよかったな。そうすれば着陸のときに景色が見られたのに。",
+    "en": "I wish I'd asked for a window seat so I could've seen the view as we came in to land.",
+    "alternatives": [
+      "I should have asked for a window seat so I could have seen the view when we landed.",
+      "If only I'd asked for a window seat, I could've enjoyed the view during the landing."
+    ],
+    "point": "過去の後悔は I wish I had 過去分詞。wish I asked は誤り",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["wishes-regrets", "modal-perfect"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0ddae653855cf56009cd78dd33aa7e3f3ade7ed9cbfbadda409c99c3761524c5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },
@@ -280,6 +346,28 @@
     }
   },
   {
+    "id": "c_7f9t5g3d",
+    "ja": "お客様、着陸する前にこの入国カードに記入していただけますか？",
+    "en": "Could you fill out this arrival card before we land, please?",
+    "alternatives": [
+      "Would you mind filling out this arrival card before we land?",
+      "Could you please fill in this arrival card before we land?"
+    ],
+    "point": "「記入する」は fill out（fill in も可）で表す",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 5,
+    "grammar": ["phrasal-verbs", "requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9707c28ed153c84728986ab570682a1eb12a206a2e96d01f5655bb498eced2dd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_7n9c4w8w",
     "ja": "保安検査で止められた原因は、ノートパソコンじゃなくて、かばんに入れっぱなしにしてた水のボトルだったんだ。",
     "en": "It was the water bottle I'd left in my bag, not my laptop, that got me stopped at security.",
@@ -298,6 +386,28 @@
         "hash": "sha256:542379bff49a81ab606d99fc0fab2aa96e955f8393ce35c212ed310c6f688629",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_8d7s6v6j",
+    "ja": "保安検査で係員に聞かれたのは、かばんにノートパソコンが入っているかどうかだけでした。",
+    "en": "All they asked me at security was whether I had a laptop in my bag.",
+    "alternatives": [
+      "The only thing they asked me at security was whether there was a laptop in my bag.",
+      "At security, they only asked me if I had a laptop in my bag."
+    ],
+    "point": "「〜かどうか」は whether か if で名詞節にする",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 7,
+    "grammar": ["noun-clauses", "indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b9894b3de60aba0a6a7d8b00d1e71009f2ee21da50142a6e914438164a12ce7c",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

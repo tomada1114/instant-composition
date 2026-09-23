@@ -286,6 +286,50 @@
     }
   },
   {
+    "id": "c_4f3v3w3q",
+    "ja": "シャワーがずっと冷たい水しか出ないので、どなたか部屋まで見に来ていただけないかと思いまして。",
+    "en": "I was wondering if you could send someone up to take a look at the shower, because it keeps running cold.",
+    "alternatives": [
+      "I was hoping you could send someone up to check the shower, since it keeps running cold.",
+      "Would it be possible to send someone up to look at the shower? It keeps running cold."
+    ],
+    "point": "Could you より I was wondering if you could で柔らかく",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 10,
+    "grammar": ["hedging-softening", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:27514261cb5af9593fa134a481bc3ff6428506cda8515a31c4a920ca8564cb42",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_4r3s2x6w",
+    "ja": "彼女はチェックアウトの時に、手もつけていないミニバーの料金が請求されていたことに気づいたんです。",
+    "en": "When she checked out, she noticed that she'd been charged for minibar items she had never touched.",
+    "alternatives": [
+      "When she was checking out, she realized that she'd been charged for minibar items she never touched.",
+      "At checkout, she noticed that she'd been billed for things from the minibar that she hadn't touched."
+    ],
+    "point": "気づく前に請求済みなので she'd been charged と過去完了",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["past-perfect", "passive-voice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f641759fdf7d6469f1ebb2f4001501235eda177ea7e3f5f7e14cc27a13d5e4d7",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5d5p4d8k",
     "ja": "ネットで予約しておけば、今ごろ私たちはもう部屋でくつろいでいるのに。",
     "en": "If we had booked online, we'd already be relaxing in our room by now.",

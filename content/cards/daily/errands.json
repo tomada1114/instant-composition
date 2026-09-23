@@ -44,6 +44,28 @@
     }
   },
   {
+    "id": "c_3h8t5t9d",
+    "ja": "妹は郵便局で、この小包を送るにはもう少し情報が必要だと言われました。",
+    "en": "My sister was told at the post office that they needed some more information to send this package.",
+    "alternatives": [
+      "At the post office, my sister was told they needed more information to send this package.",
+      "The post office told my sister they needed some more information to ship this package."
+    ],
+    "point": "information は数えられない名詞、informations や an は不可",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 7,
+    "grammar": ["articles-and-countability", "passive-voice"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a1fc244b7006d8787417280c0862ee39ee9eae0c7772c714403e68dc81d70cf6",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_3m8x3z6u",
     "ja": "この書類に記入したいので、そのペンをお借りしてもいいですか？",
     "en": "May I borrow your pen to fill out this form?",
@@ -110,6 +132,28 @@
     }
   },
   {
+    "id": "c_4c3m2y9m",
+    "ja": "修理が終わったら、携帯に電話してもらえますか？",
+    "en": "Could you call my cell phone when the repair is finished?",
+    "alternatives": [
+      "Could you give me a call on my cell when the repair is done?",
+      "Can you call my cell phone once the repair is finished?"
+    ],
+    "point": "when 節は未来のことでも現在形、will be finished にしない",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 3,
+    "grammar": ["time-and-if-clauses", "requests-permission"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:aa27bdf05d9e4b2a3e9dee5442ad48914a48d2aa81eb49eca97d57b8902ed71e",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4e6f4n7y",
     "ja": "郵便局の窓口の人によると、先週私が送った書類がまだ届いていないのは、住所の書き方のせいかもしれないそうです。",
     "en": "The clerk at the post office said the reason the documents I sent last week haven't arrived might be the way I wrote the address.",
@@ -172,6 +216,28 @@
         "hash": "sha256:2334c10615add6f0cd2feadc282ea05a5195fdc9108d211031cf4dbbc1d9d696",
         "perspectivesVersion": 1,
         "at": "2026-09-22"
+      }
+    }
+  },
+  {
+    "id": "c_6j4w4g5e",
+    "ja": "この申込書の書き方がよく分からないので、手伝っていただけないかと思いまして。",
+    "en": "I'm not sure how to fill out this form, so I was wondering if you could help me.",
+    "alternatives": [
+      "I'm not sure how to fill out this form, so I was hoping you could help me.",
+      "I don't really know how to fill in this form, so I was wondering if you could help me."
+    ],
+    "point": "丁寧な依頼は I was wondering if you could で過去形にする",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 7,
+    "grammar": ["hedging-softening", "indirect-questions"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b227cb8c1c46fd70d1d86f27f9326f382502ca13efb757559abd308ace589955",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
       }
     }
   },

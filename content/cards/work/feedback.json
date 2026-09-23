@@ -154,6 +154,28 @@
     }
   },
   {
+    "id": "c_7w6u9k2g",
+    "ja": "この報告書には、小さなミスが二つあります。",
+    "en": "There are two small mistakes in this report.",
+    "alternatives": [
+      "This report has two small mistakes.",
+      "I found two small mistakes in this report."
+    ],
+    "point": "複数のミスなので There is ではなく There are",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e478326984d0c871e201b7f978208d7c4747632fee6dddcd6d89fa21fe5507c5",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_7z9r8g6h",
     "ja": "田中さんのコードを見ていたら、小さなミスに気づいたんです。",
     "en": "I was checking Tanaka's code and noticed a small mistake.",

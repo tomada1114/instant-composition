@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2d3z7g6r",
+    "ja": "その週末は妹の引っ越しを手伝うともう約束していたので、ケンからのコンサートの誘いは断るしかなかったんだ。",
+    "en": "I'd already promised to help my sister move that weekend, so I had to turn down Ken's invitation to the concert.",
+    "alternatives": [
+      "Since I'd already promised to help my sister move that weekend, I had to turn down Ken's invitation to the concert.",
+      "I had to say no to Ken's concert invitation because I'd already promised to help my sister move that weekend."
+    ],
+    "point": "先にした約束は I'd already promised と過去完了で",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 9,
+    "grammar": ["past-perfect", "phrasal-verbs"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c3995cb7a224ee8fb7c4809dc4483403843aea1f189542646e759aaabef062a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_2d7b7y4s",
     "ja": "あなたがもっと早く誘ってたら、彼女もパーティーに来られたのに。",
     "en": "If you had invited her sooner, she could have come to the party.",
@@ -431,6 +453,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:44bd90ffa1c66f9e66b236ba7c2e1bb670a73431223b0ba2d2eb22b89aeae41b",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8r8w6w2j",
+    "ja": "先月駅前にオープンしたタイ料理の店、行ったことある人がみんなすごく良いって言ってるから、今夜一緒に行かない？",
+    "en": "Everyone who's been to the Thai place that opened by the station last month says it's really good, so do you want to go tonight?",
+    "alternatives": [
+      "Everybody who's tried the Thai restaurant that opened near the station last month says it's really good, so why don't we go tonight?",
+      "Everyone who's been to that Thai place that opened by the station last month loves it, so do you want to go together tonight?"
+    ],
+    "point": "Everyone who's been は単数扱いなので動詞は says",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:52897fcbe979ff0ae2082c5702ab60322f8e09091072daf3a88096a6033cd794",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8y2k2c3r",
+    "ja": "土曜日にうちでバーベキューしない？何時に始めるかは完全に君に任せるよ。",
+    "en": "Why don't we have a barbecue at my place on Saturday? What time we start is totally up to you.",
+    "alternatives": [
+      "Do you want to have a barbecue at my place on Saturday? You can decide what time we start.",
+      "How about a barbecue at my place on Saturday? It's completely up to you what time we start."
+    ],
+    "point": "「何時に始めるか」は what time we start の語順で疑問文にしない",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f0e743f64c83d9fc8a1c342e6930b0509950380752abb80789fb206d6d19b4d5",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

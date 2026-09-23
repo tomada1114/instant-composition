@@ -22,6 +22,50 @@
     }
   },
   {
+    "id": "c_2r9j5c8s",
+    "ja": "弟はもう自分でシャツにアイロンをかけられるよ。",
+    "en": "My brother can iron his own shirts now.",
+    "alternatives": [
+      "My brother can iron his shirts by himself now.",
+      "My little brother can iron his own shirts now."
+    ],
+    "point": "can の後ろは動詞の原形で irons にしない",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:57d9a538c77cff30f14c1591dcf6b12534c31f2b0b6f7d420a3b068e641fe6dd",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_3b8z5h5q",
+    "ja": "ごめん、僕は一番上の棚に手が届かないんだ。",
+    "en": "Sorry, I can't reach the top shelf.",
+    "alternatives": [
+      "Sorry, I can't get to the top shelf.",
+      "Sorry, the top shelf is too high for me."
+    ],
+    "point": "一番上の棚は特定の棚なので the top shelf と the をつける",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 1,
+    "grammar": ["can-could-ability", "articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3a251507087d17d281da02ab9e2e0d7045bf753b6278be6702d7eeb1c1a4cbef",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_5r9m5v4a",
     "ja": "今日私がやらなきゃいけないのは、洗濯物をたたむことだよ。",
     "en": "What I have to do today is fold the laundry.",
@@ -60,6 +104,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:f6359f026a1a0ce6277884048309b6ffd29daccae70b469a1199aa87faf62ecf",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_6j7y7f3g",
+    "ja": "お母さん、冷蔵庫に牛乳がもうないよ。",
+    "en": "Mom, there's no milk in the fridge.",
+    "alternatives": [
+      "Mom, there isn't any milk in the fridge.",
+      "Mom, we're out of milk."
+    ],
+    "point": "milk は数えられないので a をつけず no milk とする",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 1,
+    "grammar": ["there-is-are", "articles-and-countability"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a391f206b612289b5037971806e08f3d1db0e716db76f2796bca939a89e6a093",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }

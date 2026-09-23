@@ -264,6 +264,28 @@
     }
   },
   {
+    "id": "c_7m5j7d6g",
+    "ja": "テストの結果がおかしかったので、今、新人に全部のログを一から確認し直してもらっています。",
+    "en": "The test results looked off, so I'm having our new hire go through all the logs again from scratch.",
+    "alternatives": [
+      "The test results seemed strange, so I'm having our new team member check all the logs again from the beginning.",
+      "Since the test results looked wrong, I'm getting our new hire to recheck all the logs from scratch."
+    ],
+    "point": "have＋人＋動詞の原形。to を付けない（get なら to が要る）",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2895534c4be16e6792492d8b7bd3972b5ce34b6a0c5733699fb5907fedcc858a",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_8b9k5z5e",
     "ja": "課長、この不具合について、少しアドバイスをいただけますか？",
     "en": "Could you give me some advice about this bug?",

@@ -242,6 +242,28 @@
     }
   },
   {
+    "id": "c_4u2k2k2j",
+    "ja": "スマホの充電が切れていなければ自分で調べるんですが、駅までの行き方を教えてもらえますか？",
+    "en": "If my phone weren't dead, I'd look it up myself, but could you tell me how to get to the station?",
+    "alternatives": [
+      "If my phone had any battery left, I'd check it myself, but could you tell me the way to the station?",
+      "I'd look it up myself if my phone weren't dead, but could you tell me how to get to the station?"
+    ],
+    "point": "今の事実に反する仮定なので weren't と I'd を使う",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 8,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:510980ff94c476aa4c54e9b6f0f70f490753d83bbad9aed53c653d76b6786db4",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_4x5a5a8v",
     "ja": "すみません、この近くに駅まで行くバスがあるかどうか、教えていただけないかと思いまして。",
     "en": "Excuse me, I was wondering if you could tell me whether there's a bus around here that goes to the station.",
@@ -440,6 +462,28 @@
     }
   },
   {
+    "id": "c_8p8n5s8p",
+    "ja": "さっきあの角を左に曲がってたら、私たち今ごろもうホテルに着いてたのにね。",
+    "en": "If we'd turned left at that corner earlier, we'd already be at the hotel by now.",
+    "alternatives": [
+      "If we had taken a left at that corner, we'd be at the hotel by now.",
+      "We'd already be at the hotel if we'd turned left back at that corner."
+    ],
+    "point": "過去の仮定で今の結果なので後半は would be",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8dee3f59c63f3edb3d53c2392cce6b74e1440e9b9cefc191b5a3e169a4333c06",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
     "id": "c_8u2j8n9f",
     "ja": "その女性は地図を確認しながら、駅から美術館までの行き方を丁寧に説明してくれました。",
     "en": "The woman carefully explained how to get from the station to the museum, checking the map as she went.",
@@ -456,6 +500,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:52be3c04c1ae0630c672b4afec529cf2818aabc2c88748beeb31c77e0a5541cc",
+        "perspectivesVersion": 1,
+        "at": "2026-09-23"
+      }
+    }
+  },
+  {
+    "id": "c_8u6b8u6p",
+    "ja": "美術館は駅から少し遠いけど、川沿いを歩いていけば迷わずに着けますよ。",
+    "en": "Although the museum is a bit far from the station, you can't miss it if you walk along the river.",
+    "alternatives": [
+      "Even though the museum's a bit far from the station, you won't get lost if you follow the river.",
+      "The museum is a bit far from the station, but if you walk along the river, you can't miss it."
+    ],
+    "point": "Although を使ったら後半に but は付けない",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-23",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3246a8b8160449ee0df6c91a5800f86866beac39e26035694132f0924da7cd23",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
       }
