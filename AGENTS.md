@@ -168,9 +168,10 @@ resolves both spellings, so neither is a way around the order above.
 The repository is a pnpm workspace: the Next.js application is its root package, and
 `pnpm-workspace.yaml` adds each directory under `packages/`. These are the packages
 `docs/architecture/adr/0002-architecture-style-and-repository-layout.md` lays out, and
-they grow as the restructure moves code into them; until then they are empty, and `src/`
-is still where the application lives. `apps/` and `infra/` join the workspace with their
-first package.
+they grow as the restructure moves code into them. `packages/domain` holds a copy of
+`src/core/`'s rules, with the practice day computed in the learner's time zone; `src/`
+is still where the running application lives, and it keeps its own `src/core/` until
+Phase 1 retires it. `apps/` and `infra/` join the workspace with their first package.
 
 - **The edges.** `application` → `domain`, and `domain` → nothing — no workspace
   package, no npm package, no Node builtin. A package reaches another only by its name,
@@ -186,7 +187,8 @@ first package.
   and no Node types, and `pnpm typecheck` checks every one of them after the root.
 - **The same gates as `src/`.** The syntax bans, the named-export surface and the size
   budget in `eslint.config.mjs`, and the coverage floor in `vitest.config.ts`, cover
-  `packages/*/src/` as they cover `src/`. Tests stay under `tests/`.
+  `packages/*/src/` as they cover `src/`. Tests stay under `tests/` and import a package
+  by its name, which the root `package.json` declares as a `workspace:*` devDependency.
 
 ### The seams
 
