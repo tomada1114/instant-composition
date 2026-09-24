@@ -108,6 +108,24 @@ The catalog is built at deploy time into one snapshot per language pair, for exa
 `catalog/en/ja.json`, with a content hash as its version. The API serves the snapshot
 for the learner's current pair, and answers record the snapshot version they were given.
 
+As built in Phase 1 (`scripts/catalog/build.mjs`, typed by
+`packages/application/src/catalog-document.ts`), `pnpm catalog:build` writes
+`dist/catalog/<target>/<l1>.json`, and the snapshot departs from the item sketch above
+in three ways:
+
+- **No stamps.** The builder resolves the stamps: an item enters `items` only when its
+  core and its L1 localization are stamped as they stand. The rule that computes a stamp
+  stays with the content tooling (`scripts/cards/schema.mjs`), so the API never needs
+  it, and unreviewed text never leaves the build.
+- **A `withdrawn` list.** An item edited since its review ships as its id, topic,
+  subtopic, level and word count, with none of its text, so an answer that names it
+  still resolves.
+- **Tombstones with prompts.** A deleted item ships with its per-L1 prompt, the one it
+  was deleted with.
+
+The document also carries each level's CEFR band and exam references from
+`content/levels.json`, and `version` is `sha256:<hex>` over the rest of the document.
+
 ### Languages in the profile
 
 A learner's profile holds three separate settings:
@@ -171,8 +189,8 @@ mechanically for fields that did not change, so migration does not force a re-re
 
 - Rewrite `scripts/cards/schema.mjs` and the card commands for the new shape, and write
   a one-off migration for `content/cards/`.
-- Read the CEFR band from `content/levels.json` instead of only the TOEIC value, and
-  move the file to a per-target location.
+- Read the CEFR band from `content/levels.json` instead of only the TOEIC value (done in
+  Phase 1: the snapshot carries it), and move the file to a per-target location.
 - Add a report-this-item command to the API
   ([ADR-0007](0007-http-api-contract-and-offline-sync.md)).
 
