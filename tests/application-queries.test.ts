@@ -7,9 +7,11 @@ import {
   recap,
   recordAnswers,
   records,
+  roundSummary,
   settingsPage,
   startRound,
   updateSettings,
+  learnerId,
   type ApplicationDeps,
   type RequestContext,
 } from "@instant-composition/application";
@@ -72,6 +74,7 @@ const QUERIES: Readonly<Record<string, Query>> = {
   home,
   records,
   recap,
+  roundSummary: (deps, context) => roundSummary(deps, context, "p0"),
   settingsPage,
   history,
 };
@@ -211,6 +214,49 @@ describe("recap", () => {
     });
 
     expect(await recap(h.deps, h.context(NOON + 1_000))).toStrictEqual(finished);
+  });
+});
+
+describe("roundSummary", () => {
+  it("reads back the summary a finished round kept, on a later day too", async () => {
+    const h = makeHarness();
+    await updateSettings(h.deps, h.context(), { topics: ["work"] });
+    const round = await started(h, "placement", "p0", NOON);
+    const finished = await finishRound(h.deps, h.context(), {
+      roundId: round.id,
+      answers: answersFor(round),
+    });
+
+    expect(finished.ok).toBe(true);
+    expect(
+      await roundSummary(h.deps, h.context(NOON + 3 * DAY_MS), "p0"),
+    ).toStrictEqual(finished);
+  });
+
+  it("does not find a round that is open, or one there is no such id for", async () => {
+    const h = makeHarness();
+    await updateSettings(h.deps, h.context(), { topics: ["work"] });
+    await started(h, "placement", "p0", NOON);
+    const notFound = { ok: false, error: { code: "ERR_ROUND_NOT_FOUND" } };
+
+    expect(await roundSummary(h.deps, h.context(), "p0")).toStrictEqual(notFound);
+    expect(await roundSummary(h.deps, h.context(), "missing")).toStrictEqual(notFound);
+  });
+
+  it("does not find another learner's finished round", async () => {
+    const h = makeHarness();
+    await placed(h);
+    const other = learnerId("learner-b");
+    const context: RequestContext = {
+      ...h.context(),
+      actor: { kind: "learner", learnerId: other },
+      learner: { ...h.context().learner, id: other },
+    };
+
+    expect(await roundSummary(h.deps, context, "p0")).toStrictEqual({
+      ok: false,
+      error: { code: "ERR_ROUND_NOT_FOUND" },
+    });
   });
 });
 

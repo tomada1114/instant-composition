@@ -1,12 +1,26 @@
-import { DEFAULT_SETTINGS, ok, type Result } from "@instant-composition/domain";
+import { DEFAULT_SETTINGS, err, ok, type Result } from "@instant-composition/domain";
 
-import { snapshotOrEmpty, toeicOf } from "./catalog";
+import { snapshotOrEmpty, toeicOf, type CatalogSnapshot } from "./catalog";
 import type { RequestContext } from "./context";
 import type { ApplicationError } from "./errors";
 import { storeFor, todayOf, type ApplicationDeps } from "./execute";
 import { summaryOf } from "./present";
 import type { History, SettingsPageView } from "./query-views";
+import type { LearnerStore } from "./store";
 import type { RoundSummary } from "./views";
+
+/** The summary `roundId` kept when it finished, or `undefined` for a round not finished. */
+async function keptSummary(
+  store: LearnerStore,
+  roundId: string,
+  snapshot: CatalogSnapshot,
+): Promise<RoundSummary | undefined> {
+  const round = await store.round(roundId);
+  const outcome = round?.value.outcome ?? null;
+  return round === undefined || outcome === null
+    ? undefined
+    : summaryOf(round.value, outcome, snapshot);
+}
 
 /** The kept summary of today's last finished round, for reading back. */
 export async function recap(
@@ -24,13 +38,26 @@ export async function recap(
     store.days([today]),
   ]);
   const last = tallies.get(today)?.value.lastFinishedRound ?? null;
-  const round = last === null ? undefined : await store.round(last);
-  const outcome = round?.value.outcome ?? null;
-  return ok(
-    round === undefined || outcome === null
-      ? undefined
-      : summaryOf(round.value, outcome, snapshot),
-  );
+  return ok(last === null ? undefined : await keptSummary(store, last, snapshot));
+}
+
+/**
+ * The summary the round `roundId` kept when it finished, whatever day it was.
+ * A round the learner does not have, or one not finished, is not found: the
+ * store is the learner's own, so another learner's round is never reached.
+ */
+export async function roundSummary(
+  deps: ApplicationDeps,
+  context: RequestContext,
+  roundId: string,
+): Promise<Result<RoundSummary, ApplicationError>> {
+  const bound = storeFor(deps, context, "recap");
+  if (!bound.ok) {
+    return bound;
+  }
+  const { snapshot } = await snapshotOrEmpty(deps.catalog);
+  const summary = await keptSummary(bound.value, roundId, snapshot);
+  return summary === undefined ? err({ code: "ERR_ROUND_NOT_FOUND" }) : ok(summary);
 }
 
 /** The settings as saved (the defaults before any), the taxonomy and the difficulty. */
