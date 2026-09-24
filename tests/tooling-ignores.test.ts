@@ -111,15 +111,16 @@ describe("the .claude/skills ignore entry in eslint.config.mjs", () => {
 
 // Terminal output is the product of repository automation: a `.mjs` under
 // `scripts/` or inside a skill *is* a command, and printing is what it does.
-// Nothing under `src/` is, so a module there still cannot print as a side
-// effect of being imported — including the App Router entry points, which the
-// framework imports on every render.
+// Nothing under an app's or a package's `src/` is, so a module there still
+// cannot print as a side effect of being imported — the API writes its log
+// lines through the sink it is handed, and the web client runs in a browser.
 describe("the automation-only no-console boundary in eslint.config.mjs", () => {
   it.each([
     ["a repository automation script", "scripts/clean.mjs", 0],
     ["an automation script inside a skill", `${source}/scripts/survey-prs.mjs`, 0],
-    ["an App Router page", "src/app/[locale]/drill/page.tsx", 2],
-    ["an App Router layout", "src/app/[locale]/layout.tsx", 2],
+    ["a web client screen", "apps/web/src/drill/drill-screen.tsx", 2],
+    ["an API module", "apps/api/src/app.ts", 2],
+    ["a workspace package module", "packages/domain/src/index.ts", 2],
   ])("sets no-console to %s for %s", async (_label, relative, expected) => {
     const config = (await eslint.calculateConfigForFile(
       path.join(repoRoot, relative),
@@ -171,7 +172,7 @@ describe("the generated/ignored tree stays consistent across tooling", () => {
   // Build/test output nobody commits: .gitignore keeps it out of git
   // entirely, so there is nothing in it for ESLint, Prettier, or typos to
   // usefully check either.
-  const BUILD_OUTPUT = ["dist/", ".next/", "coverage/"];
+  const BUILD_OUTPUT = ["dist/", "coverage/"];
 
   // The opposite case: `.claude/skills/` IS tracked (AGENTS.md — both the
   // authored `.agents/skills/` and its generated mirror are committed real

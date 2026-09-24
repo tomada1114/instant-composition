@@ -1,7 +1,3 @@
-import { createRequire } from "node:module";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
 import { defineConfig } from "vitest/config";
 
 // Without this, a fixture suite written to fail is collected as one of this
@@ -13,8 +9,9 @@ const fixtures = "tests/fixtures/**";
 // the short-timeout unit project until its I/O needs are deliberately reviewed.
 // The files not listed here are pure unit tests; guard-rules.test.ts,
 // pr-checks.test.ts, cards-schema.test.ts and ts-resolve.test.ts are the
-// intentional exceptions to the usual `src/**` rule, because each drives
-// pure-function modules under scripts/ directly and touches nothing else.
+// intentional exceptions to the usual rule that a unit test drives a package
+// or an app, because each drives pure-function modules under scripts/
+// directly and touches nothing else.
 //
 // The two boundary suites — boundaries and placeholders — are listed for the same reason workflows.test.ts is: they
 // assert against files on disk rather than against imported code, walking
@@ -33,6 +30,8 @@ const automationTests = [
   "tests/ci-sync.test.ts",
   "tests/clean.test.ts",
   "tests/contracts-openapi.test.ts",
+  "tests/dev.test.ts",
+  "tests/env-example.test.ts",
   "tests/git-env.test.ts",
   "tests/labels.test.ts",
   "tests/lefthook-partial-stage.test.ts",
@@ -40,12 +39,6 @@ const automationTests = [
   "tests/node-tools.test.ts",
   "tests/placeholders.test.ts",
   "tests/repo-tree.test.ts",
-  "tests/server-content.test.ts",
-  "tests/server-db.test.ts",
-  "tests/server-env.test.ts",
-  "tests/server-finish.test.ts",
-  "tests/server-handlers.test.ts",
-  "tests/server-rounds.test.ts",
   "tests/skills-frontmatter.test.ts",
   "tests/sync-agents.test.ts",
   "tests/sync-labels.test.ts",
@@ -55,19 +48,21 @@ const automationTests = [
   "tests/workflows.test.ts",
 ];
 
-// The one suite that needs `pnpm build`'s output on disk before it can run at
-// all: it starts the built application with `next start` and asserts over
-// HTTP. That is why it is its own project rather than another entry in
+// The one suite that needs the whole stack on disk before it can run at all:
+// it serves `pnpm web:build`'s bundle with `vite preview` in front of the API,
+// started as `pnpm api` starts it, on DynamoDB local, and asserts over HTTP.
+// That is why it is its own project rather than another entry in
 // `automationTests` — the default run (`pnpm test`, `pnpm test:coverage`, and
-// ci.yml's `test` job) has no build to serve, and a suite that quietly built
-// one for itself would pay for a second build in every workflow. It refuses to
-// run against a missing or stale build instead, so the build stays the
-// caller's to do exactly once. `pnpm run test:smoke` is what runs it, from
-// `check:source` and from ci.yml's `static` job immediately after `Build`; the
-// default scripts leave it out by naming the projects they run. Naming the file
-// here is still what keeps it out of `unit` below, whose glob would otherwise
-// collect it on a 5-second budget.
-const smokeTests = ["tests/server-smoke.test.ts"];
+// ci.yml's `test` job) has neither the bundle nor the container, and a suite
+// that quietly built the bundle for itself would pay for a second build in
+// every workflow. It refuses to run against a missing or stale bundle, or
+// without DynamoDB local, instead, so the build stays the caller's to do
+// exactly once. `pnpm run test:smoke` is what runs it, from `check:source` and
+// from ci.yml's `static` job immediately after `Build the web client`; the
+// default scripts leave it out by naming the projects they run. Naming the
+// file here is still what keeps it out of `unit` below, whose glob would
+// otherwise collect it on a 5-second budget.
+const smokeTests = ["tests/stack-smoke.test.ts"];
 
 // The suites that need DynamoDB local running beside them: the store contract
 // against the DynamoDB adapter, and the API over it, on tables they create and
@@ -84,47 +79,9 @@ const dynamodbTests = [
   "tests/api-dynamodb-local.test.ts",
 ];
 
-// `server-only` is a build-time marker rather than a runtime module: its only
-// entry throws on import, and a React Server Components bundler never loads it
-// because the package's `react-server` export condition points at an empty
-// file instead. Nothing outside such a bundler resolves that condition, so a
-// test importing anything under `src/server/` would fail on the marker rather
-// than on the behavior it asserts. Point the runner at the very file the RSC
-// graph gets. Vite's own condition options do not reach it — the package is
-// externalised and loaded by Node — and `server-only/empty.js` is not a
-// subpath its `exports` map publishes, so the path is derived from the
-// resolved entry instead. This narrows what the runner resolves; it turns no
-// check off.
-const serverOnlyEmptyModule = path.join(
-  path.dirname(createRequire(import.meta.url).resolve("server-only")),
-  "empty.js",
-);
-
-// `tsconfig.json` declares `paths: { "@/*": ["./src/*"] }`, and Vite reads
-// none of it — `paths` is a type-checker instruction, not a resolver one. A
-// test importing `@/components/ui/button` would fail to resolve without this,
-// so the mapping is restated here against this file's own directory rather
-// than against the process cwd, which `pnpm exec vitest` does not guarantee.
-// `extends: true` on every project below is what carries it into all five.
-const srcDirectory = path.join(path.dirname(fileURLToPath(import.meta.url)), "src");
-
 export default defineConfig({
-  resolve: { alias: { "@": srcDirectory } },
   test: {
     environment: "node",
-    alias: { "server-only": serverOnlyEmptyModule },
-    server: {
-      deps: {
-        // `next` ships no `exports` map, so `next/server` — which
-        // `next-intl/middleware` imports, and `proxy.ts` therefore reaches —
-        // is only resolvable by a bundler's extension search, never by Node's
-        // ESM resolver. Letting Vite transform `next-intl` rather than handing
-        // it to Node is what makes that import resolve the way it does in a
-        // real build. This changes who resolves the module, not what is
-        // executed.
-        inline: [/next-intl/],
-      },
-    },
     // Cleanup is the runner's job, not each test's. A spy, a stubbed env var or
     // a stubbed global that outlives the test that created it turns a later
     // failure into a mystery whose cause is in a different file, and makes the
@@ -141,8 +98,9 @@ export default defineConfig({
     // where it lives: a new `.test.ts` file is unit by default, a `.test.tsx`
     // file needs a DOM and joins `component` instead, the explicit automation
     // list receives the long budget only after its I/O needs are known,
-    // `smoke` is the one suite that cannot run without a build to serve, and
-    // `dynamodb` the one that cannot run without DynamoDB local. A
+    // `smoke` is the one suite that cannot run without a build to serve and
+    // DynamoDB local behind it, and `dynamodb` the one that needs DynamoDB
+    // local alone. A
     // hung unit or component test (no I/O, so it can only be looping or
     // awaiting forever) is a bug that should be visible in seconds.
     // `coverage` below is unaffected by this split — Vitest collects and
@@ -166,11 +124,9 @@ export default defineConfig({
         extends: true,
         test: {
           name: "component",
-          // A React Client Component needs `document`/`window` to render, so
-          // this project alone runs under jsdom; `tests/**/*.test.ts` stays on
-          // the faster `node` environment inherited from the top level. An
-          // asynchronous Server Component is out of scope for both — see
-          // `writing-tests`.
+          // A React component needs `document`/`window` to render, so this
+          // project alone runs under jsdom; `tests/**/*.test.ts` stays on the
+          // faster `node` environment inherited from the top level.
           environment: "jsdom",
           include: ["tests/**/*.test.tsx"],
           exclude: [fixtures],
@@ -198,8 +154,8 @@ export default defineConfig({
         test: {
           name: "smoke",
           include: smokeTests,
-          // Spawning a production server, waiting for it to listen, and
-          // asking it for a rendered page is the same order of cost as the
+          // Spawning two servers, waiting for them to listen, and asking them
+          // for a document and a round is the same order of cost as the
           // automation project's subprocesses, so it gets the same budget
           // rather than one nobody measured.
           testTimeout: 120_000,
@@ -225,8 +181,6 @@ export default defineConfig({
       // Report every source and automation file, so an untested module shows
       // up as 0% instead of vanishing from the denominator.
       include: [
-        "src/**/*.ts",
-        "src/**/*.tsx",
         "packages/*/src/**/*.ts",
         "packages/*/src/**/*.tsx",
         "apps/*/src/**/*.ts",
@@ -235,35 +189,16 @@ export default defineConfig({
       ],
       // No top-level lines/functions/statements/branches here: Vitest's v8
       // provider checks those against the coverage of *all* included files
-      // combined (src and scripts together), which would let a well-tested
-      // src/ subsidize an untested scripts/ file or vice versa. Each glob
-      // below is its own independent threshold set instead, so the src/ zones,
-      // scripts/**, and scripts/lib/guard/** are each judged only against
-      // their own coverage.
+      // combined (apps, packages and scripts together), which would let a
+      // well-tested package subsidize an untested scripts/ file or vice versa.
+      // Each glob below is its own independent threshold set instead, so the
+      // packages, the apps, scripts/**, and scripts/lib/guard/** are each
+      // judged only against their own coverage.
       thresholds: {
-        // The floor covers the zones whose code is this repository's own
-        // logic. `src/app/**` and the `.tsx` half of `src/components/**` are
-        // deliberately absent: they are Next.js entry points and rendered
-        // markup, and a floor they cannot meet would only teach the next
-        // author to move the number. What exercises them instead is
-        // `tests/server-smoke.test.ts`, which serves the built application
-        // and asks it for a page over HTTP. Nothing of that shows up here:
-        // coverage stops at the process boundary, so the v8 provider reports
-        // these files at whatever the in-process tests reach and no number
-        // below moves when the smoke suite passes. They stay inside `include`
-        // above, so they still report as a percentage — they simply have no
-        // floor to trip. This is a narrower threshold glob, not a
-        // `coverage.exclude` entry, which AGENTS.md forbids by name.
-        "src/{core,server}/**": {
-          lines: 80,
-          functions: 80,
-          statements: 80,
-          branches: 80,
-        },
-        // The workspace packages are the target shape of the zones above —
-        // `src/core/` moves into `packages/domain` — so they are held to the
-        // same floor from the day they exist, rather than gaining one only
-        // after code has already landed in them.
+        // The workspace packages hold this repository's own logic — the
+        // rules, the commands and queries, the contract and the adapters —
+        // so each file under them counts against this floor from the day it
+        // exists.
         "packages/*/src/**": {
           lines: 80,
           functions: 80,
@@ -271,22 +206,14 @@ export default defineConfig({
           branches: 80,
         },
         // The deployable apps sit on top of the packages and hold the same kind
-        // of logic — an HTTP adapter's routing, validation and logging — so
-        // they carry the same floor from their first file. A local entry that
-        // only a spawned process runs counts here at whatever the in-process
-        // tests reach, which is why it is kept thin.
+        // of logic — an HTTP adapter's routing, validation and logging, and a
+        // client's state, requests and rendering — so they carry the same
+        // floor from their first file. A local entry that only a spawned
+        // process runs (`apps/api/src/main.ts`, `apps/web/src/main.tsx`)
+        // counts here at whatever the in-process tests reach, which is why it
+        // is kept thin; `tests/stack-smoke.test.ts` runs both, but coverage
+        // stops at the process boundary.
         "apps/*/src/**": {
-          lines: 80,
-          functions: 80,
-          statements: 80,
-          branches: 80,
-        },
-        // `src/components/**` mixes rendered markup with plain logic — a
-        // hook, a formatter, a client for a JSON endpoint — and only the
-        // `.tsx` files have a rendering step to excuse them. The `.ts` files
-        // are held to the same floor as the zones above, so moving logic out
-        // of `src/server/` into a component module is not a way out of one.
-        "src/components/**/*.ts": {
           lines: 80,
           functions: 80,
           statements: 80,

@@ -2,8 +2,7 @@ import * as z from "zod";
 
 /**
  * The values several request and response schemas share. A client-made id is
- * bounded the way `src/core/api.ts` bounds it, so a body cannot carry an
- * unbounded string into a store key.
+ * bounded, so a body cannot carry an unbounded string into a store key.
  */
 
 export const idSchema = z.string().min(1).max(64);

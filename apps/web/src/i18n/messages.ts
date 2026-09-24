@@ -5,9 +5,8 @@ import ja from "../../../../messages/ja.json";
  * from.
  *
  * @remarks
- * `messages/ja.json` at the repository root is the catalog the Next.js tree
- * reads too: there is one catalog, and its shape is the type every `t()` call
- * is checked against. The locale is not in the URL and nothing negotiates it:
+ * `messages/ja.json` at the repository root is the one catalog, and its shape
+ * is the type every `t()` call is checked against. The locale is not in the URL and nothing negotiates it:
  * `ja` is the only catalog, so there is nothing to choose between until a
  * second one exists (ADR-0008).
  */

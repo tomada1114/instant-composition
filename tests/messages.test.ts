@@ -2,18 +2,20 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { createTranslator } from "next-intl";
 import { describe, expect, expectTypeOf, it } from "vitest";
 
-import { LOCALES } from "../src/i18n/locales";
-import { MESSAGES, type MessageKey, type Messages } from "../src/i18n/messages";
+import {
+  createTranslator,
+  LOCALE,
+  MESSAGES,
+  type Messages,
+} from "@instant-composition/web";
 
 // A message catalog is the one place in this repository where a missing entry
-// is invisible: `next-intl` renders an absent key as the key itself, in
-// production, on a page nobody looked at in that locale. So the catalogs are
-// asserted against each other and against the typed key union that `src/`
-// compiles with, from the files on disk rather than from what a bundler
-// resolved.
+// is invisible: `use-intl` renders an absent key as the key itself, in
+// production, on a screen nobody looked at in that locale. So the catalogs are
+// asserted against each other and against a hand-written list of every key,
+// from the files on disk rather than from what a bundler resolved.
 //
 // AGENTS.md's "everything committed is English" rule stops at `messages/*.json`
 // for the obvious reason: a translation catalog whose contents were English
@@ -91,8 +93,8 @@ function toIcuArgumentType(type: string): IcuArgumentType {
  * key, never examined for a name, and only what is nested *inside* a
  * branch's own `{...}` is scanned again for an argument reference.
  *
- * `@formatjs/icu-messageformat-parser` is what `next-intl` actually compiles
- * with (via `use-intl` and `intl-messageformat`), which would make this
+ * `@formatjs/icu-messageformat-parser` is what `use-intl` actually compiles
+ * with (through `intl-messageformat`), which would make this
  * unnecessary — but it is not a direct dependency of this repository, and
  * pnpm's non-hoisted `node_modules` does not expose a transitive package that
  * is not declared: `require.resolve("@formatjs/icu-messageformat-parser")`
@@ -271,7 +273,31 @@ function dummyIcuValues(message: string): Record<string, string | number | Date>
   );
 }
 
+/**
+ * The locales the web client ships. One today (`apps/web/src/i18n/messages.ts`
+ * says why), and every case below runs once per entry, so a second catalog
+ * joins them by joining this list.
+ */
+const LOCALES = [LOCALE] as const;
+
 const catalogs = new Map(LOCALES.map((locale) => [locale, readCatalog(locale)]));
+
+/**
+ * Every dotted key a translator accepts, derived from the catalog's type.
+ *
+ * @remarks
+ * A leaf is a string; anything else is a namespace whose own keys are appended
+ * after a dot. Derived, so it cannot disagree with `messages/ja.json` — which
+ * also means it cannot notice a key nobody added there. {@link MESSAGE_KEYS}
+ * below, written by hand, is what can.
+ */
+type DottedKeys<TCatalog> = {
+  [TKey in keyof TCatalog & string]: TCatalog[TKey] extends string
+    ? TKey
+    : `${TKey}.${DottedKeys<TCatalog[TKey]>}`;
+}[keyof TCatalog & string];
+
+type MessageKey = DottedKeys<Messages>;
 
 /** The reference catalog: the one every other locale is a translation of. */
 const referenceKeys = dottedKeys(catalogs.get("ja")).sort();
@@ -281,7 +307,7 @@ const referenceKeys = dottedKeys(catalogs.get("ja")).sort();
  *
  * @remarks
  * This is the one thing here that is *not* derived from `messages/ja.json`.
- * `MessageKey` is (`DottedKeys<typeof ja>`), so it agrees with the catalog by
+ * `MessageKey` is (`DottedKeys<Messages>`), so it agrees with the catalog by
  * construction and can never report a key that was never added; only a list a
  * human maintains, one of the edits `localizing-ui`'s "adding a string" walks
  * through, can.
@@ -481,17 +507,16 @@ describe("the message catalogs", () => {
     expect(dottedKeys(catalogs.get(locale)).sort()).toStrictEqual(referenceKeys);
   });
 
-  // MESSAGES is annotated Readonly<Record<Locale, Messages>>, and every
-  // catalog is assignable to Messages — so once a second locale exists, one
-  // catalog wired under another's key type-checks and ships a copy-paste. This
-  // is also what keeps MESSAGES a value import: `vitest related` only sees this
-  // suite depend on messages/ja.json through the value chain messages.test.ts
-  // -> src/i18n/messages.ts -> messages/ja.json, since every other case here
-  // reads the catalogs with readFileSync, which Vite's module graph cannot
-  // see. A type-only import would silently stop lefthook's test:related job
-  // from selecting this suite when a translator edits a catalog.
+  // What the client renders is the catalog on disk. This is also what keeps
+  // MESSAGES a value import: `vitest related` only sees this suite depend on
+  // messages/ja.json through the value chain messages.test.ts ->
+  // apps/web/src/i18n/messages.ts -> messages/ja.json, since every other case
+  // here reads the catalogs with readFileSync, which Vite's module graph
+  // cannot see. A type-only import would silently stop lefthook's
+  // test:related job from selecting this suite when a translator edits a
+  // catalog.
   it.each([...LOCALES])("serves %s the catalog on disk", (locale) => {
-    expect(MESSAGES[locale]).toStrictEqual(catalogs.get(locale));
+    expect(MESSAGES).toStrictEqual(catalogs.get(locale));
   });
 
   it.each([...LOCALES])("leaves no blank message in %s", (locale) => {
@@ -517,13 +542,13 @@ describe("the message catalogs", () => {
   });
 
   // The comparison above only ever looks at argument *names*, and never asks
-  // next-intl to actually compile the message. An unbalanced brace, a
+  // use-intl to actually compile the message. An unbalanced brace, a
   // malformed `plural` clause, or a broken `select` can leave the names
   // untouched and still pass it, then fail at render time in whichever locale
   // nobody was looking at. Actually invoking the message through the same
   // translator the app renders with, with a rethrowing `onError`, is what
   // catches that; `dummyIcuValues` passing a values object also defeats
-  // next-intl's no-compile fast path, so every message is genuinely parsed
+  // use-intl's no-compile fast path, so every message is genuinely parsed
   // rather than only the ones a component happens to pass arguments to.
   it.each([...LOCALES])(
     "formats every message in %s without an ICU error",
