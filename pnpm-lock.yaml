@@ -249,6 +249,9 @@ importers:
       '@instant-composition/application':
         specifier: workspace:*
         version: link:packages/application
+      '@instant-composition/contracts':
+        specifier: workspace:*
+        version: link:packages/contracts
       '@instant-composition/domain':
         specifier: workspace:*
         version: link:packages/domain
@@ -315,6 +318,12 @@ importers:
       '@instant-composition/domain':
         specifier: workspace:*
         version: link:../domain
+
+  packages/contracts:
+    dependencies:
+      zod:
+        specifier: ^4.5.4
+        version: 4.5.4
 
   packages/domain: {}
 

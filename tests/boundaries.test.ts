@@ -400,6 +400,19 @@ describe("src/components/ is UI: no server-only", () => {
  */
 const WORKSPACE_EDGES: Readonly<Record<string, readonly string[]>> = {
   application: ["domain"],
+  contracts: [],
+  domain: [],
+};
+
+/**
+ * The npm packages each workspace package may import, by exact name: ADR-0002's
+ * `contracts → (zod only)`. `eslint.config.mjs`'s `NPM_EDGES` states the same.
+ * A package's manifest declares each at the root's own range, so the
+ * workspace resolves one copy of it.
+ */
+const NPM_EDGES: Readonly<Record<string, readonly string[]>> = {
+  application: [],
+  contracts: ["zod"],
   domain: [],
 };
 
@@ -422,7 +435,10 @@ function packageName(directory: string): string {
  */
 function workspaceOffenders(name: string, modules: readonly Module[]): string[] {
   const root = `packages/${name}`;
-  const allowed = new Set((WORKSPACE_EDGES[name] ?? []).map(packageName));
+  const allowed = new Set([
+    ...(WORKSPACE_EDGES[name] ?? []).map(packageName),
+    ...(NPM_EDGES[name] ?? []),
+  ]);
   return modules.flatMap((module) =>
     module.specifiers
       .filter((specifier) =>
@@ -470,6 +486,17 @@ function readManifest(directory: string) {
   };
 }
 
+/** The root manifest's own range for an npm package, which a package must repeat. */
+function rootRange(dependency: string): string | undefined {
+  const root = z
+    .object({
+      dependencies: dependencyMap,
+      devDependencies: dependencyMap,
+    })
+    .parse(JSON.parse(readFileSync(path.join(repoRoot, "package.json"), "utf8")));
+  return { ...root.devDependencies, ...root.dependencies }[dependency];
+}
+
 describe("packages/ imports run one way, application → domain", () => {
   const directories = readdirSync(path.join(repoRoot, "packages"), {
     withFileTypes: true,
@@ -480,6 +507,7 @@ describe("packages/ imports run one way, application → domain", () => {
 
   it("gives every package under packages/ a row, so a new one needs a decision", () => {
     expect(directories).toStrictEqual(Object.keys(WORKSPACE_EDGES).sort());
+    expect(directories).toStrictEqual(Object.keys(NPM_EDGES).sort());
   });
 
   it.each(Object.keys(WORKSPACE_EDGES))(
@@ -508,14 +536,18 @@ describe("packages/ imports run one way, application → domain", () => {
   // table says: a declared dependency the table does not allow is an edge
   // waiting to be used.
   it.each(Object.entries(WORKSPACE_EDGES))(
-    "declares in packages/%s/package.json exactly the workspace packages %p",
+    "declares in packages/%s/package.json exactly the workspace packages %p and its npm row",
     (name, allowed) => {
       const manifest = readManifest(name);
       expect(manifest.name).toBe(packageName(name));
       expect(manifest.declared).toStrictEqual(
-        Object.fromEntries(
-          allowed.map((dependency) => [packageName(dependency), "workspace:*"]),
-        ),
+        Object.fromEntries([
+          ...allowed.map((dependency) => [packageName(dependency), "workspace:*"]),
+          ...(NPM_EDGES[name] ?? []).map((dependency) => [
+            dependency,
+            rootRange(dependency),
+          ]),
+        ]),
       );
     },
   );
@@ -552,6 +584,27 @@ describe("packages/ imports run one way, application → domain", () => {
       "packages/domain/src/rules/probe.ts: @instant-composition/application",
       "packages/domain/src/rules/probe.ts: zod",
       "packages/domain/src/rules/probe.ts: node:path",
+    ]);
+  });
+
+  it("admits an allowed npm package by its exact name and no subpath of it", () => {
+    const offenders = workspaceOffenders("contracts", [
+      {
+        file: "packages/contracts/src/probe.ts",
+        specifiers: [
+          "zod",
+          "zod/v4/core",
+          "zod-openapi",
+          "@instant-composition/application",
+          "node:fs",
+        ],
+      },
+    ]);
+    expect(offenders).toStrictEqual([
+      "packages/contracts/src/probe.ts: zod/v4/core",
+      "packages/contracts/src/probe.ts: zod-openapi",
+      "packages/contracts/src/probe.ts: @instant-composition/application",
+      "packages/contracts/src/probe.ts: node:fs",
     ]);
   });
 
