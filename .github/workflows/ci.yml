@@ -22,12 +22,12 @@ jobs:
     timeout-minutes: 15
     permissions:
       contents: read
-    # DynamoDB local for the `DynamoDB contract suite` step below: the image
-    # compose.yaml runs on a checkout, pinned by tag and digest in both places
-    # (tests/workflows.test.ts holds the two together). The runner starts the
-    # steps only once the health check passes. A service container needs a
-    # Linux runner, which is why it sits on this job and not on `test`'s OS
-    # matrix.
+    # DynamoDB local for the `Smoke test` and `DynamoDB contract suite` steps
+    # below: the image compose.yaml runs on a checkout, pinned by tag and
+    # digest in both places (tests/workflows.test.ts holds the two together).
+    # The runner starts the steps only once the health check passes. A service
+    # container needs a Linux runner, which is why it sits on this job and not
+    # on `test`'s OS matrix.
     services:
       dynamodb:
         image: amazon/dynamodb-local:3.3.1@sha256:ff89bd48ff32cd8d9be5fee8873b65b8854dc408f1afe881be6eb00247bc0dab
@@ -68,25 +68,19 @@ jobs:
       - name: Type check
         run: pnpm run typecheck
 
-      # `next build` type-checks the App Router entry points the way the
-      # framework loads them, which the bare `tsc` step above cannot: a page
-      # or layout is reached through Next's file-system convention, not
-      # through an import.
-      - name: Build
-        run: pnpm run build
-
-      # The browser client under apps/web is a static Vite bundle, a separate
-      # build from the Next.js one above. Its types are already checked by
-      # `Type check`; this step holds that the bundle itself still builds.
+      # The browser client under apps/web is a static Vite bundle. Its types
+      # are already checked by `Type check`; this step holds that the bundle
+      # itself still builds.
       - name: Build the web client
         run: pnpm run web:build
 
-      # The only check that starts the application and asks it for a page over
-      # HTTP. It sits here, after `Build`, because it serves that
-      # build: in the `test` job below there is none, and giving it one would
-      # mean building this application twice in a single workflow. The default
-      # test run filters it out for the same reason — see `test:smoke` in
-      # package.json.
+      # The only check that starts the stack and asks it for a document and a
+      # round over HTTP: the bundle above served by `vite preview`, in front
+      # of the API on the DynamoDB service container. It sits here, after the
+      # build, because it serves that build: in the `test` job below there is
+      # none, and giving it one would mean building the client twice in a
+      # single workflow. The default test run filters it out for the same
+      # reason — see `test:smoke` in package.json.
       - name: Smoke test
         run: pnpm run test:smoke
 

@@ -65,7 +65,7 @@ no applause. Browsers block autoplay, so the first "start" press unlocks audio.
 
 ### Key hints
 
-Hints are for whoever uses keys, and nobody else. `src/components/lib/key-mode.tsx`
+Hints are for whoever uses keys, and nobody else. `apps/web/src/lib/key-mode.tsx`
 listens for the first key press on any screen (modifiers and Tab do not count), sets
 `data-keys` on `<html>` and remembers it in local storage, so from then on every `Kbd`
 shows at its control's edge and the pause sheet lists the drill's keys. A learner who

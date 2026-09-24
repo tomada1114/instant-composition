@@ -2,12 +2,13 @@
 name: writing-tests
 description: >
   Use when writing or reviewing a test under tests/ — a .test.ts or a .test.tsx — or
-  adding the regression test a src/ bug fix needs: naming an it() after behavior,
-  driving a handler factory with new Request(), rendering a page under jsdom with
-  NextIntlClientProvider, writing one contract suite shared by every implementation,
-  asserting an error's class and `code`, not its message, sweeping edge cases with
-  it.each, choosing a fake over a mock, replacing a real sleep with vi.useFakeTimers,
-  isolating a filesystem test in mkdtempSync, or fixing a flaky or skipped test.
+  adding the regression test a bug fix in packages/ or apps/ needs: naming an it() after
+  behavior, driving the API app with new Request(), rendering a web screen under jsdom
+  through tests/web-harness.tsx, writing one contract suite shared by every
+  implementation, asserting an error's class and `code`, not its message, sweeping edge
+  cases with it.each, choosing a fake over a mock, replacing a real sleep with
+  vi.useFakeTimers, isolating a filesystem test in mkdtempSync, or fixing a flaky or
+  skipped test.
 ---
 
 # Writing Tests
@@ -17,7 +18,8 @@ what it asserts, how it fakes the world, and the anti-patterns to reject in revi
 **Does not own:** which file a test lives in, which vitest project it joins, and the
 coverage floors (`placing-tests`); compile-time assertions with `expectTypeOf`
 (`type-testing`); the shape of the error classes a test asserts against
-(`designing-errors`); where the code under test belongs (`building-app-routes`).
+(`designing-errors`); where the code under test belongs (`designing-application-core`,
+`serving-the-api`, `building-web-screens`).
 
 ## Naming and scope
 
@@ -25,38 +27,40 @@ coverage floors (`placing-tests`); compile-time assertions with `expectTypeOf`
   `it("rejects a body that is not JSON", ...)`, not `it("calls parse")`.
 - One behavior per `it`. Branching inside a test body belongs in a separate `it` or an
   `it.each` table, never an `if` in the test.
-- Cover the happy path and the failure path of everything a zone publishes.
+- Cover the happy path and the failure path of everything a package or app publishes.
 
 ## Test through an interface, not around one
 
-There is no single entry point to test this application through — each zone has its own
-surface, and that surface is the seam:
+There is no single entry point to test this application through — each package and app
+has its own surface, and that surface is the seam:
 
-- **A handler factory, driven with a real `Request`.** A handler factory under
-  `src/server/handlers/` takes its dependencies as arguments, so a test builds a
-  `new Request(url, { method: "POST", body })` and asserts the `Response` it gets back —
-  status, `content-type`, and the parsed JSON body. Nothing is mocked: the dependency is
-  injected because the factory asks for it. Assert what the handler passed a dependency
-  through a recording wrapper rather than by counting calls.
-- **A Route Handler module.** `src/app/api/<name>/route.ts` re-exports a handler
-  composed elsewhere, so the only thing left to assert about the file itself is that
-  identity — `expect(POST).toBe(builtHandler)`. Everything else is a test of the
-  handler.
-- **A component**, rendered under jsdom through Testing Library, with the context a
-  Server Component tree would have supplied passed explicitly: `NextIntlClientProvider`
-  with a `locale` and the real `messages/ja.json`, and `src/i18n/navigation` mocked for
-  the router. `tests/home-screen.test.tsx` is the model: it builds the view the page
-  would pass, and queries by role and accessible name rather than by class or test id.
-  An asynchronous Server Component — every page under `src/app/` — is deliberately out
-  of scope; no gate here renders one.
+- **The API app, driven with a real `Request`.** `createApp` from
+  `@instant-composition/api` takes its store, catalog, authenticator, clock and log sink
+  as arguments, so a test builds a `new Request(…)` and asserts the `Response` it gets
+  back — status, `content-type`, and the parsed JSON body. `tests/api-harness.ts` wires
+  it over the in-memory store with a clock that stands still and a recording log.
+  Nothing is mocked: each dependency is injected because the app asks for it.
+- **A command or query**, called through `@instant-composition/application` over the
+  in-memory adapter, with time and the learner arriving as arguments —
+  `tests/application-harness.ts` is the model.
+- **A web screen**, rendered under jsdom by mounting the whole `App` at a path with
+  `renderApp` from `tests/web-harness.tsx`, with the API replaced by `fakeApi`'s
+  stand-in `fetch` rather than by mocking a module. The harness supplies the catalog,
+  the query cache and the router exactly as the browser entry does, so nothing is passed
+  in by hand. `tests/web-home.test.tsx` is the model: it answers the screen's reads with
+  fixture views, and queries by role and accessible name rather than by class or test
+  id. A component too small to need the app renders inside `CatalogProvider` instead.
+- **A pure web-client module** — the drill's reducer, the answer queue, the endpoints —
+  is a plain `.test.ts` against what `@instant-composition/web` exports.
 - **A contract suite.** When several implementations sit behind one interface, the
   behavior every implementation owes is written once as a `describe…Contract` function
   and called once per implementation with a harness that builds what each case needs. A
   new implementation adds a call, never a second copy of the assertions; a quirk of one
   implementation goes in its own `describe` beside it.
 
-A zone is reached through what its `index.ts` publishes, never the module underneath it.
-Enforced by: `eslint.config.mjs`'s `boundaries/private-trees-are-not-importable` block.
+A package or app is reached by its name, which resolves to what its `src/index.ts`
+publishes, never the module underneath it. Enforced by: `eslint.config.mjs`'s
+`boundaries/private-trees-are-not-importable` block and `tests/boundaries.test.ts`.
 Wanting to reach past a surface to assert something means the module is the wrong shape,
 not that the test needs an exception.
 
@@ -86,7 +90,8 @@ example, the spec — never recomputed the way the implementation computes it.
 and can never disagree with it, even when the implementation is wrong. Write the number,
 string, or object you expect by hand, or take it from a source outside the function
 under test. A message catalog read from disk is the same idea: `tests/messages.test.ts`
-asserts against `messages/*.json` rather than against what a bundler resolved.
+asserts against `messages/*.json` rather than against what a bundler resolved, and a
+rendered test compares against `ja` (the catalog) rather than a string copied out of it.
 
 ## Edge cases to sweep every time
 

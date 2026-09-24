@@ -1,8 +1,9 @@
 import js from "@eslint/js";
 import vitest from "@vitest/eslint-plugin";
 import { defineConfig, globalIgnores } from "eslint/config";
-import next from "eslint-config-next";
 import eslintConfigPrettier from "eslint-config-prettier";
+import jsxA11y from "eslint-plugin-jsx-a11y";
+import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import tseslint from "typescript-eslint";
 
@@ -10,10 +11,11 @@ import tseslint from "typescript-eslint";
  * The `enum` ban, applied to every file this config sees.
  *
  * @remarks
- * `tsconfig.json` used to carry this as `erasableSyntaxOnly`, which existed
- * because `src/` had to run under Node's type stripping unbuilt. Next.js
- * compiles the tree instead, so the premise is gone and the ban is stated
- * here, where it can name the reason rather than a whole syntax class.
+ * Stated here rather than as `tsconfig.json`'s `erasableSyntaxOnly`, where it
+ * can name the reason rather than a whole syntax class. `pnpm api` runs the
+ * API's source on Node's type stripping, which rejects an `enum` too;
+ * `tests/api-local-run.test.ts` is what catches the rest of what Node cannot
+ * strip.
  */
 const NO_ENUM = {
   selector: "TSEnumDeclaration",
@@ -22,8 +24,8 @@ const NO_ENUM = {
 };
 
 /**
- * The `export *` ban, shared by the whole `src/` tree and by the extra
- * entry-point rules below.
+ * The `export *` ban, shared by every package's and app's `src/` and by the
+ * extra entry-point rules below.
  *
  * @remarks
  * `no-restricted-syntax` options replace rather than merge across config
@@ -37,77 +39,50 @@ const NO_EXPORT_STAR = {
 };
 
 /**
- * The hand-written application source: the Next.js tree, every workspace
- * package's `src/` and every deployable app's `src/`. The syntax bans, the
- * named-export surface and the size budget below hold for all three, so moving
- * a module out of `src/` into a package or an app is not a way out of any of
- * them.
+ * The hand-written application source: every workspace package's `src/` and
+ * every deployable app's `src/`. The syntax bans, the named-export surface and
+ * the size budget below hold for both, so moving a module from a package into
+ * an app, or back, is not a way out of any of them.
  */
 const SOURCE_FILES = [
-  "src/**/*.ts",
-  "src/**/*.tsx",
   "packages/*/src/**/*.ts",
   "packages/*/src/**/*.tsx",
   "apps/*/src/**/*.ts",
   "apps/*/src/**/*.tsx",
 ];
 
-/** What `src/internal/**` is, in the words of the rule that made it private. */
+/** What a `src/internal/**` directory is, in the words of the rule that made it private. */
 const INTERNAL_IS_PRIVATE =
-  "src/internal/ is private. Tests reach it through the public surface of the module that owns it (see the `writing-tests` skill), and repository automation must not depend on module internals at all.";
+  "A src/internal/ directory is private. Tests reach it through the public surface of the package or app that owns it (see the `writing-tests` skill), and repository automation must not depend on module internals at all.";
 
 /**
- * Each zone under `src/`, as every specifier that can reach into it.
+ * Every relative specifier that can reach into a directory named `name`.
  *
  * @remarks
- * A zone is reachable two ways. Relatively, leaving your own zone costs at
- * least one `../`, and the same module is `../core/result` from one file and
- * `../../core/result` from another. The globstar after the `../` absorbs the rest
- * whatever the importer's depth, so one pattern covers every caller; the bare
- * form is listed alongside the recursive one because a directory import
- * (`../server`) has no trailing segment for a trailing globstar to match.
+ * Leaving your own directory costs at least one `../`, and the same module is
+ * `../domain/src/index` from one file and `../../domain/src/index` from
+ * another. The globstar after the `../` absorbs the rest whatever the
+ * importer's depth, so one pattern covers every caller; the bare form is listed
+ * alongside the recursive one because a directory import (`../domain`) has no
+ * trailing segment for a trailing globstar to match.
  *
- * The leading `../` is load-bearing, not decoration. An unanchored
- * `**\/server` also matches the package subpath `next-intl/server`, which
- * `src/i18n/request.ts` imports — the anchored form cannot, because a bare
- * specifier never starts with `..` or `.`.
+ * The leading `../` is load-bearing, not decoration: an unanchored
+ * `**\/server` would also match a package subpath such as `react-dom/server`,
+ * and the anchored form cannot, because a bare specifier never starts with
+ * `..` or `.`.
  *
  * Each entry also carries a `./../**` twin of every `../**` pattern, because
  * `no-restricted-imports` matches the specifier text through the `ignore`
  * package rather than resolving it, and `ignore` treats a leading `./` as a
- * different string from a leading `../` — so `./../server/env` does not
- * match the `../**\/server/**` pattern without its own `./../**` copy. A bare specifier still cannot start with
- * `./..`, so the twin is exactly as safe as the pattern it doubles.
- *
- * The other way is the `@/*` → `./src/*` alias `tsconfig.json` declares,
- * because shadcn/ui writes `@/components/...` imports into every component it
- * copies in. That spelling carries no `../` to anchor and needs none: it is
- * already absolute from `src/`, so `@/server/**` names the zone from any depth,
- * and it is safe to match unanchored because no bare package name can start
- * with `@/` — a scoped package is `@scope/name`, and an empty scope is not
- * legal. A zone left without its `@/` twin would be a boundary the alias walks
- * straight through, which is why {@link zonePatterns} generates every entry
- * with both, rather than leaving the twin to be remembered per zone.
+ * different string from a leading `../`. A bare specifier still cannot start
+ * with `./..`, so the twin is exactly as safe as the pattern it doubles.
  *
  * @param {string} name
  * @returns {string[]}
  */
 function zonePatterns(name) {
-  return [
-    `../**/${name}`,
-    `../**/${name}/**`,
-    `./../**/${name}`,
-    `./../**/${name}/**`,
-    `@/${name}`,
-    `@/${name}/**`,
-  ];
+  return [`../**/${name}`, `../**/${name}/**`, `./../**/${name}`, `./../**/${name}/**`];
 }
-
-const ZONE = /** @type {Record<"app" | "server" | "i18n" | "components", string[]>} */ (
-  Object.fromEntries(
-    ["app", "server", "i18n", "components"].map((name) => [name, zonePatterns(name)]),
-  )
-);
 
 /**
  * Each workspace package under `packages/`, and the workspace packages it may
@@ -165,7 +140,7 @@ const NODE_EDGES =
  * @remarks
  * A package or an app publishes only what its `exports` names; a relative
  * path walks past that into any module it holds. Every block below that sets
- * `no-restricted-imports` for `src/`, `tests/` or `scripts/` restates this
+ * `no-restricted-imports` for `tests/` or `scripts/` restates this
  * entry, because the rule's options replace rather than merge across config
  * objects. `tests/boundaries.test.ts` resolves each relative specifier and
  * checks the same thing without relying on how it is spelled.
@@ -253,14 +228,13 @@ const APP_TOOLING_EDGES =
  * because that is the spelling its manifest's `dependencies` gate — pnpm links
  * nothing a package does not declare. So the rule has two halves. The first
  * refuses every bare specifier except an allowed package's name: an npm
- * package, a `node:` builtin, the `@/` alias of the Next.js tree and a
- * workspace package outside the row alike. It is a `regex` rather than a
- * `group` because a gitignore-style group cannot say "anything but these". The
- * second refuses a relative path into another package's or app's directory or
- * into a `src/` tree, which is what a climb out of the package into the
- * Next.js application looks like. It matches specifier text, not the resolved
- * path, so it does not see every climb out of the package;
- * `tests/boundaries.test.ts` resolves each one and does.
+ * package, a `node:` builtin, a path alias and a workspace package outside the
+ * row alike. It is a `regex` rather than a `group` because a gitignore-style
+ * group cannot say "anything but these". The second refuses a relative path
+ * into another package's or app's directory or into another `src/` tree. It
+ * matches specifier text, not the resolved path, so it does not see every
+ * climb out of the package; `tests/boundaries.test.ts` resolves each one and
+ * does.
  *
  * @param {{ tree: "packages" | "apps", name: string, workspace: readonly string[], npm: readonly string[], node: readonly string[], files?: readonly string[], block?: string }} row
  * @param {string} message
@@ -358,27 +332,6 @@ function appBoundary(name, message) {
   ];
 }
 
-/** The rules of `eslint-config-next`'s first entry, which the web client borrows. */
-const NEXT_RULES = next[0]?.rules ?? {};
-
-/**
- * A plugin object `eslint-config-next`'s first entry carries, which the web
- * client borrows rather than resolving a second copy of it.
- *
- * @param {string} name
- */
-function nextPlugin(name) {
-  const plugin = next[0]?.plugins?.[name];
-  if (plugin === undefined) {
-    throw new Error(`eslint-config-next no longer carries the ${name} plugin.`);
-  }
-  return plugin;
-}
-
-/** Why `src/components/` looks only at `src/core/`, `src/i18n/` and the framework. */
-const COMPONENTS_LOOK_ONLY_DOWNWARD =
-  "src/components/ is UI: it renders what it is handed. The import order is app → components → core, so a component names no page and no handler. Take the value as a prop and let src/app/ do the fetching.";
-
 export default defineConfig([
   // Only generated trees are ignored; everything hand-written is linted,
   // including repository automation and config files. `.claude/skills/` is a
@@ -389,7 +342,6 @@ export default defineConfig([
   // linted in their own checkout.
   // A `tests/fixtures/` file is malformed on purpose, so linting it reports
   // the very defect a test asserts on.
-  // `.next/` and `next-env.d.ts` are written by `next dev`/`next build`.
   // `apps/web/src/openapi/` is generated from `packages/contracts/openapi.json`
   // by `pnpm web:client`, and `tests/web-openapi-client.test.ts` fails on any
   // difference from what the generator writes, so a hand edit there cannot
@@ -398,8 +350,6 @@ export default defineConfig([
     "apps/web/dist/",
     "apps/web/src/openapi/",
     "dist/",
-    ".next/",
-    "next-env.d.ts",
     "coverage/",
     ".claude/skills/",
     ".claude/worktrees/",
@@ -445,54 +395,38 @@ export default defineConfig([
       "no-restricted-syntax": ["error", NO_ENUM],
     },
   },
-  // `eslint-config-next` states its two rule blocks against `**/*`, which here
-  // would also mean `scripts/**/*.mjs` and `tests/**/*.ts` — trees this
-  // repository parses with typescript-eslint and lints with its own rules.
-  // Narrow them to the tree the Next.js compiler owns. The config's third
-  // entry has no `files` key (it is a global-ignores entry) and is taken as
-  // published.
-  ...next.map((entry) =>
-    "files" in entry ? { ...entry, files: ["src/**/*.{ts,tsx}"] } : entry,
-  ),
   {
-    name: "next/pinned-react-version",
-    files: ["src/**/*.{ts,tsx}"],
-    settings: {
-      // `eslint-config-next` asks eslint-plugin-react to *detect* the React
-      // version, and that detection path calls an ESLint 9 context API that
-      // ESLint 10 removed — every react/* rule throws while loading. Naming
-      // the version skips detection entirely. Keep this in step with the
-      // `react` major/minor in package.json, and drop it once
-      // eslint-plugin-react declares eslint 10 in its peer range.
-      react: { version: "19.2" },
-    },
-  },
-  {
-    // The web client's React rules, in place of the ones `eslint-config-next`
-    // scopes to `src/` above: the hooks rules from the declared
-    // `eslint-plugin-react-hooks`, and the `react/*` and `jsx-a11y/*` rules
-    // `eslint-config-next` turns on, taken with the plugin objects it ships
-    // rather than a second copy of either. `@next/next/*` and `import/*` stay
-    // behind: neither applies to a Vite SPA. The hooks plugin object is the
-    // one `eslint-config-next` carries, which is the declared package's own
-    // export, because that package's typings do not satisfy ESLint's
-    // `Plugin`. When #44 removes `eslint-config-next`, `react` and `jsx-a11y`
-    // have to be declared here in their own right.
+    // The web client's React rules: the hooks rules — the React Compiler's
+    // diagnostics included — from the declared `eslint-plugin-react-hooks`,
+    // taken as its flat `recommended` config publishes them.
+    ...reactHooks.configs.flat.recommended,
     name: "web/react",
     files: ["apps/web/**/*.{ts,tsx}"],
-    plugins: {
-      react: nextPlugin("react"),
-      "react-hooks": nextPlugin("react-hooks"),
-      "jsx-a11y": nextPlugin("jsx-a11y"),
-    },
+  },
+  {
+    // The React and accessibility rules the web client ran under
+    // `eslint-config-next` before it was retired, restated from the declared
+    // plugins so removing Next.js did not remove them: eslint-plugin-react's
+    // `recommended` minus the three that the new JSX transform and TypeScript
+    // make redundant, and the six jsx-a11y rules that config chose. The React
+    // version is named rather than detected, because detection calls an API
+    // ESLint 10 removed and every react/* rule then throws while loading.
+    name: "web/react-a11y",
+    files: ["apps/web/**/*.tsx"],
+    plugins: { react, "jsx-a11y": jsxA11y },
     settings: { react: { version: "19.2" } },
     rules: {
-      ...reactHooks.configs.recommended.rules,
-      ...Object.fromEntries(
-        Object.entries(NEXT_RULES).filter(([rule]) =>
-          /^(react|jsx-a11y)\//u.test(rule),
-        ),
-      ),
+      ...react.configs.recommended.rules,
+      "react/no-unknown-property": "off",
+      "react/react-in-jsx-scope": "off",
+      "react/prop-types": "off",
+      "react/jsx-no-target-blank": "off",
+      "jsx-a11y/alt-text": ["warn", { elements: ["img"] }],
+      "jsx-a11y/aria-props": "warn",
+      "jsx-a11y/aria-proptypes": "warn",
+      "jsx-a11y/aria-unsupported-elements": "warn",
+      "jsx-a11y/role-has-required-aria-props": "warn",
+      "jsx-a11y/role-supports-aria-props": "warn",
     },
   },
   {
@@ -515,17 +449,10 @@ export default defineConfig([
   {
     name: "public-api/explicit-surface",
     files: SOURCE_FILES,
-    // Next.js finds a page, layout, loading/error boundary or route handler by
-    // its file name and reads it through its default export, so `src/app/**`
-    // is the one tree where a default export is the interface rather than an
-    // unnamed hole in one. The other two entries are the same case one
-    // directory over: Next.js loads `src/proxy.ts` by that exact path, and
-    // `createNextIntlPlugin` in next.config.ts loads `src/i18n/request.ts` by
-    // that exact path, both reading a default export — so the name is the
-    // file's and the export cannot carry one. All three are framework-owned
-    // entry points, named one by one; everywhere else under `src/` the surface
-    // stays named exports, which is what a reviewer can read a diff of.
-    ignores: ["src/app/**", "src/i18n/request.ts", "src/proxy.ts"],
+    // No framework here loads a module by its file name, so every surface is
+    // named exports, which is what a reviewer can read a diff of. An app's
+    // config file beside its `src/` (`apps/web/vite.config.ts`) is outside
+    // this block: Vite reads it through its default export.
     rules: {
       "no-restricted-exports": [
         "error",
@@ -548,7 +475,7 @@ export default defineConfig([
       // Blank lines and comments count, deliberately: the budget is on how
       // much a reader has to hold at once, and a file is not easier to follow
       // because two thirds of it is prose. 200 is a ceiling, not a target —
-      // every module under `src/` is well under it today, so the rule fires
+      // every module under a `src/` is well under it today, so the rule fires
       // only on a file that grew past the point where it does one thing.
       // Splitting is the answer; raising the number or writing a disable
       // directive is what AGENTS.md's "never weaken a gate" rules out.
@@ -559,140 +486,18 @@ export default defineConfig([
       "max-lines": ["error", { max: 200, skipBlankLines: false, skipComments: false }],
     },
   },
-  // --- zone boundaries -------------------------------------------------------
-  //
-  // AGENTS.md states one import order — `app` → `server` → `core`, with
-  // `app` → `components` → `core` beside it and `i18n` a leaf the page tree,
-  // the components and the handlers read — and the five blocks below are that
-  // order, written per zone as the zones each one may not name. The leaf
-  // property is an edge like any other: `src/i18n/` may read `src/core/` and
-  // nothing above it.
-  // `tests/boundaries.test.ts` asserts the same shape from the module graph, so
-  // deleting a block here still fails the suite.
-  //
-  // `no-restricted-imports` options replace rather than merge across config
-  // objects, exactly like `no-restricted-syntax` (see NO_EXPORT_STAR above).
-  // The blocks match disjoint file sets on purpose, so none of them can silently
-  // drop another's patterns — which is why `src/app` and `src/server` are stated
-  // apart. Keep a new block disjoint from them too.
-  {
-    name: "boundaries/core-is-framework-free-and-imports-no-zone",
-    files: ["src/core/**/*.ts", "src/core/**/*.tsx"],
-    rules: {
-      "no-restricted-imports": [
-        "error",
-        {
-          patterns: [
-            NO_RELATIVE_PACKAGE_IMPORT,
-            {
-              group: [
-                "next",
-                "next/**",
-                "react",
-                "react/**",
-                "react-dom",
-                "react-dom/**",
-              ],
-              message:
-                "src/core/ holds the vocabulary the other zones are written in — a Result, a domain type, a pure function — and it stays free of the framework so it survives a change of it. Put the framework-aware code in src/app/ or src/server/.",
-            },
-            {
-              group: [...ZONE.server, ...ZONE.app, ...ZONE.i18n, ...ZONE.components],
-              message:
-                "src/core/ is the bottom of the import order app → server → core (and app → components → core), so it names no zone above it. A type only one zone needs belongs in that zone; one they share belongs here, with nothing imported to define it.",
-            },
-          ],
-        },
-      ],
-    },
-  },
-  {
-    name: "boundaries/i18n-is-a-leaf",
-    files: ["src/i18n/**/*.ts", "src/i18n/**/*.tsx"],
-    rules: {
-      "no-restricted-imports": [
-        "error",
-        {
-          patterns: [
-            NO_RELATIVE_PACKAGE_IMPORT,
-            {
-              group: [...ZONE.app, ...ZONE.server, ...ZONE.components],
-              message:
-                "src/i18n/ is a leaf: the page tree, the components and the handlers read it, and it reads nothing but src/core/ and its own catalogs. An import here inverts that and makes the locale list depend on the code that renders it.",
-            },
-          ],
-        },
-      ],
-    },
-  },
-  {
-    name: "boundaries/server-never-imports-app",
-    files: ["src/server/**/*.ts", "src/server/**/*.tsx"],
-    rules: {
-      "no-restricted-imports": [
-        "error",
-        {
-          patterns: [
-            NO_RELATIVE_PACKAGE_IMPORT,
-            {
-              group: [...ZONE.app, ...ZONE.components],
-              message:
-                "src/server/ sits below src/app/ in the import order app → server → core. A handler naming a page, a layout, a route module or a component inverts that: the App Router tree imports the server layer and renders the components, never the other way round.",
-            },
-          ],
-        },
-      ],
-    },
-  },
-  {
-    // The zone shadcn/ui copies components into, and the app's own components
-    // beside them. It sits between `src/app/` and `src/core/` — a component is
-    // handed its data and renders it — so it may name the framework, the UI
-    // libraries, `src/core/` and the `src/i18n/` leaf, and nothing else under
-    // `src/`. `server-only` is banned outright rather than reached through a
-    // zone pattern: a component importing it has decided it can never be a
-    // Client Component, which is the opposite of what this zone is for, and
-    // the marker's whole job is to fail the build far from the cause.
-    name: "boundaries/components-import-only-core-and-i18n",
-    files: ["src/components/**/*.ts", "src/components/**/*.tsx"],
-    rules: {
-      "no-restricted-imports": [
-        "error",
-        {
-          patterns: [
-            NO_RELATIVE_PACKAGE_IMPORT,
-            {
-              group: [...ZONE.app, ...ZONE.server],
-              message: COMPONENTS_LOOK_ONLY_DOWNWARD,
-            },
-            {
-              group: ["server-only"],
-              message:
-                "server-only pins a module to the server graph, and a component under src/components/ has to stay renderable from either graph. Put the server-side work in src/server/ and hand the component its result.",
-            },
-          ],
-        },
-      ],
-    },
-  },
-  {
-    // `src/app/` is the top of the import order and names every zone below
-    // it, so it has no zone block of its own; this one holds only the rule
-    // every tree shares. `src/proxy.ts` sits beside it at the root of `src/`.
-    name: "boundaries/app-reaches-packages-by-name",
-    files: ["src/app/**/*.ts", "src/app/**/*.tsx", "src/proxy.ts"],
-    rules: {
-      "no-restricted-imports": ["error", { patterns: [NO_RELATIVE_PACKAGE_IMPORT] }],
-    },
-  },
   // --- workspace package boundaries ----------------------------------------
   //
-  // The same discipline one level up, between the packages ADR-0002 lays out.
-  // Each block matches only its own package's files, so they stay disjoint
-  // from the `src/` zone blocks above and from each other.
+  // The import order between the packages and apps ADR-0002 lays out. Each
+  // block matches only its own package's files, so they stay disjoint from
+  // each other: `no-restricted-imports` options replace rather than merge
+  // across config objects, exactly like `no-restricted-syntax` (see
+  // NO_EXPORT_STAR above), so two blocks matching one file would silently
+  // drop one's patterns. `tests/boundaries.test.ts` asserts the same edges from
+  // the module graph, so deleting a block here still fails the suite.
   workspacePackageBoundary(
     "domain",
-    "packages/domain holds the pure rules and imports nothing outside itself: no workspace package, no npm package, no Node builtin, nothing from the Next.js tree. Time, time zones and randomness arrive as arguments; I/O belongs in packages/application's ports.",
+    "packages/domain holds the pure rules and imports nothing outside itself: no workspace package, no npm package, no Node builtin. Time, time zones and randomness arrive as arguments; I/O belongs in packages/application's ports.",
   ),
   workspacePackageBoundary(
     "contracts",
@@ -708,11 +513,11 @@ export default defineConfig([
   ),
   ...appBoundary(
     "api",
-    "apps/api is the HTTP adapter: it imports @instant-composition/adapters, application, contracts and domain, hono, @hono/node-server and node:path, each by its exact name, and nothing else outside itself — never the Next.js tree under src/, and never a package by a relative path.",
+    "apps/api is the HTTP adapter: it imports @instant-composition/adapters, application, contracts and domain, hono, @hono/node-server and node:path, each by its exact name, and nothing else outside itself — never a package by a relative path.",
   ),
   ...appBoundary(
     "web",
-    "apps/web is the browser client: its src/ imports React, the router, the query cache, use-intl and the UI libraries its row names, each by its exact name, and no workspace package — it reaches the API over HTTP through the types generated into src/openapi/. Its config files add Vite and its plugins. Never the Next.js tree under src/, and never a package by a relative path.",
+    "apps/web is the browser client: its src/ imports React, the router, the query cache, use-intl and the UI libraries its row names, each by its exact name, and no workspace package — it reaches the API over HTTP through the types generated into src/openapi/. Its config files add Vite and its plugins. Never a package by a relative path.",
   ),
   {
     name: "automation/node-scripts",
@@ -797,14 +602,7 @@ export default defineConfig([
               // Nothing builds to `dist/` any more (issue #4 removed the
               // packaging gates), so the built spelling is gone and the source
               // one is the whole rule.
-              // The `@/` spellings are the same module through the alias
-              // `tsconfig.json` declares, which no `**/src/...` pattern sees.
-              group: [
-                "**/src/internal",
-                "**/src/internal/**",
-                "@/internal",
-                "@/internal/**",
-              ],
+              group: ["**/src/internal", "**/src/internal/**"],
               message: INTERNAL_IS_PRIVATE,
             },
           ],

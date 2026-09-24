@@ -1,13 +1,13 @@
 ---
 name: designing-application-core
 description: >
-  Covers how domain and application code is shaped in the target architecture: pure
-  domain rules with time and timezone passed in, commands and queries as data handled as
-  load, decide, commit, projections over append-only logs, ports only at real seams, and
-  bounded contexts as modules. Use when adding or rewriting a rule under src/core, a
-  service under src/server/services, a store method, a command or query, a port or
-  adapter, a transaction or conditional write, an idempotency key, or code that reads
-  the clock, a timezone or a random seed; or when weighing a new layer or abstraction.
+  Covers how domain and application code is shaped: pure domain rules with time and
+  timezone passed in, commands and queries as data handled as load, decide, commit,
+  projections over append-only logs, ports only at real seams, and bounded contexts as
+  modules. Use when adding or rewriting a rule in packages/domain, a command, query or
+  port in packages/application, a store method or adapter in packages/adapters, a
+  conditional write, an idempotency key, or code that reads the clock, a timezone or a
+  random seed; or when weighing a new layer, package or abstraction.
 ---
 
 # Designing the Application Core
@@ -15,46 +15,47 @@ description: >
 **Owns:** the shape of domain and application code — the direction dependencies run,
 what must stay pure, how a command and a query flow, where a port may exist, and which
 patterns are deliberately not adopted. **Does not own:** TypeScript idiom
-(`writing-typescript`); the HTTP edge and route files (`building-app-routes`); error
-types and codes (`designing-errors`); who may touch whose data
-(`isolating-learner-data`); the decisions themselves, which are ADR-0001, 0002, 0003 and
-0006 under `docs/architecture/adr/`.
+(`writing-typescript`); the HTTP edge (`serving-the-api`) and the web client
+(`building-web-screens`); error types and codes (`designing-errors`); who may touch
+whose data (`isolating-learner-data`); the decisions themselves, which are ADR-0001,
+0002, 0003 and 0006 under `docs/architecture/adr/`.
 
-## Where the code is, and where it is going
+## Where the code is
 
-The target is a monorepo in which `packages/domain` → `packages/application` →
-`packages/adapters` → `apps/*` (the API, the web client, later a worker); see
-`docs/architecture/adr/0002-architecture-style-and-repository-layout.md` (Accepted).
-Until that restructure lands, today's zones stand in for it: `src/core` is the domain,
-`src/server/services` the application layer, `src/server/db` and `src/server/content`
-the adapters, and the handlers plus `src/app` the entry points. The current zone rules
-stay enforced until the restructure changes them.
+The layout is the one
+`docs/architecture/adr/0002-architecture-style-and-repository-layout.md` (Accepted) sets
+out: `packages/domain` (the rules) → `packages/application` (commands, queries, ports,
+the request context and authorization) → `packages/adapters` (the DynamoDB and in-memory
+stores, the catalog snapshot), with `packages/contracts` holding the HTTP schemas beside
+them, and `apps/api` wiring adapters to the application. `apps/web` imports none of
+them: it reaches the API over HTTP. A worker joins `apps/` when there is one. The edges
+between them are `eslint.config.mjs`'s tables, asserted again by
+`tests/boundaries.test.ts`; read them there.
 
-New or rewritten code takes the target shape now — async ports, learner-bound stores,
-commands as data — so the restructure moves files instead of rewriting them twice. Where
-an ADR is still Proposed, follow it and raise a disagreement in the pull request rather
-than inventing a third shape. Values an ADR owns (a key layout, an endpoint list) are
-read there, not restated here.
+Where an ADR is still Proposed, follow it and raise a disagreement in the pull request
+rather than inventing a third shape. Values an ADR owns (a key layout, an endpoint list)
+are read there, not restated here.
 
 ## Dependencies run one way
 
-The domain imports only itself and pure libraries. The application layer imports the
-domain and declares the ports it needs. Adapters implement ports. Entry points wire
-adapters to the application and translate a transport into commands and queries. Nothing
-inward names anything outward — that is what let the domain survive the removal of a
-whole language-model layer, and what lets it survive leaving Next.js.
+The domain imports nothing outside itself — no package, no Node builtin. The application
+layer imports the domain and declares the ports it needs. Adapters implement ports.
+Entry points wire adapters to the application and translate a transport into commands
+and queries. Nothing inward names anything outward — that is what let the domain survive
+the removal of a whole language-model layer and then of the framework it was first
+written under.
 
 ## The domain is pure
 
 - No I/O, no `Date.now()`, no `Math.random()`, no `process.env`, and no process
   timezone. Time arrives as epoch milliseconds, the learner's timezone and day boundary
-  as arguments, randomness as a seed. `src/core/day.ts:25-32` (at d2a5cd9) derives the
-  day from the process timezone — the dependency to remove, because a server running in
-  UTC moves a Tokyo learner's practice day by nine hours.
+  as arguments, randomness as a seed. `dayOf` in `packages/domain/src/day.ts` takes the
+  learner's IANA time zone for that reason: a rule reading the process timezone would
+  move a Tokyo learner's practice day by nine hours on a server running in UTC.
 - Rules are functions over plain readonly data. Safety comes from branded types and zod
   schemas, not from classes.
-- Tunable values live in one object, as `TUNING` in `src/core/tuning.ts` does, never
-  scattered as literals.
+- Tunable values live in one object, as `TUNING` in `packages/domain/src/tuning.ts`
+  does, never scattered as literals.
 
 ## Commands and queries
 
@@ -63,13 +64,13 @@ whole language-model layer, and what lets it survive leaving Next.js.
   domain, and **commits** the resulting changes as one atomic conditional write whose
   conditions state what must still hold ("the round is open", "this answer id is new").
   A failed condition is re-run or answered with a domain error — never retried blindly.
-- No port method brackets reads and writes around a caller's callback, the way
-  `transaction(body)` does at `src/server/db/types.ts:47-48`. DynamoDB has no
-  interactive transaction, and a caller-held one hides the consistency boundary inside
-  the caller.
+- No port method brackets reads and writes around a caller's callback (a
+  `transaction(body)`). DynamoDB has no interactive transaction, and a caller-held one
+  hides the consistency boundary inside the caller. `LearnerStore.commit` in
+  `packages/application/src/store.ts` is the shape instead: the writes, plus the
+  versions each read must still hold.
 - A read is a **query** answered from projections — item memory, learner totals —
-  maintained on write, never by replaying the whole history per request as
-  `src/server/services/progress.ts:52` and `src/core/card-state.ts:23` do today.
+  maintained on write, never by replaying the whole history per request.
 - Append-only logs (answers, reviews) are what projections are rebuilt from. Keep them:
   fitting FSRS parameters, switching from Leitner to FSRS, and replaying an evaluation
   all need the history. Each entry keeps the state before and after and a snapshot of
@@ -81,8 +82,9 @@ whole language-model layer, and what lets it survive leaving Next.js.
 
 - A command that can be retried carries an identity the client made (an answer id, a
   round id) or an `Idempotency-Key`, and the commit's condition turns a repeat into a
-  no-op that returns the first result. `src/server/db/answers.ts:49` and
-  `src/server/services/finish.ts:133-135` already work this way.
+  no-op that returns the first result. An answer whose client-made id a round already
+  holds is skipped (`packages/domain/src/answers.ts`), and finishing a finished round
+  answers with the summary it kept (`packages/application/src/finish-round.ts`).
 - For non-deterministic work, such as a language-model grade, idempotency means storing
   the first result under the job's key and returning it — not expecting the same output
   twice.

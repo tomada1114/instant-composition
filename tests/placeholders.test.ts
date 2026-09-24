@@ -55,7 +55,7 @@ import { readText, repoRoot, walk } from "./repo-tree";
  * rename, so the list could never empty.
  *
  * The last entry is not an identity string but a decision the template leaves
- * open on purpose: the design direction. The template's `src/app/globals.css`
+ * open on purpose: the design direction. The template's stylesheet
  * ships stock shadcn/ui tokens and its `designing-ui` an empty lock, both
  * carrying this marker, so a project that renamed everything still reports
  * that its screens are being built against a direction nobody chose. It is listed here rather
@@ -119,8 +119,9 @@ describe("the template's own identity strings", () => {
     "package.json",
     "CONTRIBUTING.md",
     "AGENTS.md",
-    "src/app/[locale]/(home)/page.tsx",
-    "src/core/result.ts",
+    "apps/web/src/app.tsx",
+    "apps/api/src/app.ts",
+    "packages/domain/src/index.ts",
     "scripts/check-staged.mjs",
     ".github/workflows/ci.yml",
     ".agents/skills/changing-gates/SKILL.md",

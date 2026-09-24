@@ -62,13 +62,13 @@ glyph: a pill reads as something to press.
 - No hover style: the listed states are complete, and a hover-only cue does not reach a
   touch screen.
 
-`src/components/ui/button.tsx` is this recipe.
+`apps/web/src/ui/button.tsx` is this recipe.
 
 ## Key hint (`kbd`)
 
 A 20-tall pill, 1px border and text in `currentColor` at 45% opacity, `eyebrow` mono
 with normal tracking, pinned 14 from one edge of its control. Hidden until `<html>`
-carries `data-keys`, which `src/components/lib/key-mode.tsx` sets on the first key press
+carries `data-keys`, which `apps/web/src/lib/key-mode.tsx` sets on the first key press
 and remembers in local storage; `aria-hidden` always. A "←" hint sits at the start edge,
 every other at the end. Never a free-standing chip, and never shown to a learner who has
 only touched the screen.
@@ -83,8 +83,8 @@ only touched the screen.
   a block ("Streak", "Today", "Placement", "Welcome"). Decorative when the figure beside
   it already has a Japanese name: then `aria-hidden`.
 
-Glyphs are drawn in `src/components/ui/glyphs.tsx` on a 20 grid, 1.75 strokes, round
-ends. There is no icon library.
+Glyphs are drawn in `apps/web/src/ui/glyphs.tsx` on a 20 grid, 1.75 strokes, round ends.
+There is no icon library.
 
 ## Grade pair
 

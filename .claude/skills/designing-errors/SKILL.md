@@ -1,20 +1,22 @@
 ---
 name: designing-errors
 description: >
-  Covers the shape of an error type and the vocabulary of its `code` string, in both
-  src/** and scripts/**, where a stage prefix such as ERR_AGENTS_* or ERR_LABELS_* is
-  reported on stderr. Use when adding or changing an Error subclass, choosing or
-  renaming an ERR_* code, deciding what an error may carry and what it must never carry
-  (a credential, a prompt, a model's output), wiring an AbortSignal rejection reason, or
-  writing the PR line that a changed code needs.
+  Covers the shape of an error type and the vocabulary of its `code` string in
+  packages/*, apps/* and scripts/** — the HTTP error.code list in
+  packages/contracts/src/errors.ts, the domain and application failure unions, and stage
+  prefixes such as ERR_AGENTS_* reported on stderr. Use when adding or changing an Error
+  subclass or a failure union, choosing or renaming an ERR_* code, deciding what an
+  error may carry and what it must never carry (a credential, a prompt, a model's
+  output), wiring an AbortSignal rejection reason, or writing the PR line that a changed
+  code needs.
 ---
 
 # Designing Errors
 
-**Owns:** the shape of an error type and the vocabulary of `code` strings, in both
-`src/**` and `scripts/**`. **Does not own:** general type-system judgment
-(`writing-typescript`); how an error is asserted in a test (`writing-tests`); the HTTP
-status and response body a code is answered with (`building-app-routes`); the full
+**Owns:** the shape of an error type and the vocabulary of `code` strings, in the
+packages, the apps and `scripts/**`. **Does not own:** general type-system judgment
+(`writing-typescript`); how an error is asserted in a test (`writing-tests`); how
+`apps/api` turns a code into a response and a log line (`serving-the-api`); the full
 stderr message shape for repository automation (`writing-repo-scripts` — the `ERR_`
 prefix rule below is shared with it).
 
@@ -63,7 +65,7 @@ crash report, and — through a response body — back to whoever made the reque
 what it holds on that basis, not on what would be convenient to debug with.
 
 - **Never a credential.** No API key, no `Authorization` header, no URL with a token in
-  its query string, no environment value read through `src/server/env.ts`.
+  its query string, no environment value read through `apps/api/src/env.ts`.
 - **Never request content.** The parsed request body and anything a third party sent
   back are data someone else supplied; a message that quotes them turns every log line
   into a copy of them. Name the shape instead — a field path, a length that was
@@ -95,8 +97,15 @@ what happened, and a copy breaks that.
 
 - `ERR_` prefix, `SCREAMING_SNAKE_CASE`, describing the failure rather than the function
   that raised it (`ERR_SCHEMA_MISMATCH`, not `ERR_PARSE_FAILED`).
-- Under `src/**`, the prefix after `ERR_` names the layer the code belongs to, and the
-  layer owns its union in one file. Group the members in that file's TSDoc by what a
+- The codes a client sees are one list: `STATUS_BY_CODE` in
+  `packages/contracts/src/errors.ts`. The failure unions below it — `PracticeError` in
+  `packages/domain`, `ApplicationError` in `packages/application` — use those same
+  strings rather than a prefix of their own, because a command's failure reaches the
+  client unrenamed; `tests/contracts-schemas.test.ts` holds the application's codes
+  inside the contract's. A failure no client ever sees — an app refusing to start —
+  carries its app's prefix instead (`ERR_API_ENV_*`, `ERR_API_ROUTE_TABLE`), and the web
+  client's own `ERR_NETWORK` stands for no readable answer at all.
+- Each vocabulary lives in one file. Group its members in that file's TSDoc by what a
   caller can _do_ about each, which is the axis a vocabulary is built on, not which
   dependency produced it. Add a member there, once, rather than per implementation: a
   new member changes what every implementation promises.
@@ -122,7 +131,11 @@ matches on.
 - Say so in the PR body, in one line naming the old code, the new one, and what a client
   has to change. A code that changes silently is one nobody downstream finds out about
   until an alert stops firing.
-- There is a compile-time backstop for one half of it: write the table mapping codes to
-  HTTP statuses `as const satisfies Record<TheErrorCode, number>`, so a code added to or
-  removed from the union fails the build until that table agrees. It cannot see a
-  client, and it cannot see a `scripts/**` code at all.
+- There is a compile-time backstop for one half of it: every table keyed by a code
+  closes with `satisfies Record<TheErrorCode, …>` — `MESSAGE_BY_CODE` against
+  `STATUS_BY_CODE`'s keys is the model — so a code added to or removed from the union
+  fails `pnpm typecheck` until each table agrees. It cannot see a client's `switch`, and
+  it cannot see a `scripts/**` code at all. A changed code also changes the contract's
+  document: `pnpm contracts:openapi` rewrites `packages/contracts/openapi.json`, and
+  `pnpm web:client` the web client's types generated from it. **BACKGROUND:**
+  `building-web-screens`.

@@ -66,14 +66,14 @@ Run it on unlabeled issues, and on any issue whose label the digest flags as too
 keywords — enough to _rank_, not enough to _choose_. Spend a short, bounded pass
 gathering evidence for the top 3–5 rows only:
 
-| Question                                            | How to check                                                                                                                 |
-| --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| Does it really unblock the issues the table claims? | read both ends' comments; a bare `#12` mention is not a dependency                                                           |
-| Is the "damage" still real?                         | is the failure reproducible now — check whether CI on `<default>` is actually red, or run the project's test command         |
-| Does it touch shared ground?                        | grep the paths/symbols the body names; a change under `src/core`, `schema/`, `.github/workflows/` has ripple by construction |
-| Is it actually specified?                           | Does the body state a behavior, a file, or an acceptance condition?                                                          |
-| Has someone already started?                        | `HAS-OPEN-PR` flag, plus recent comments claiming the work                                                                   |
-| Is it stale for a reason?                           | An issue untouched for a year with no reaction may be dead; check comments before reviving it                                |
+| Question                                            | How to check                                                                                                                                   |
+| --------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
+| Does it really unblock the issues the table claims? | read both ends' comments; a bare `#12` mention is not a dependency                                                                             |
+| Is the "damage" still real?                         | is the failure reproducible now — check whether CI on `<default>` is actually red, or run the project's test command                           |
+| Does it touch shared ground?                        | grep the paths/symbols the body names; a change under `packages/domain`, `packages/contracts`, `.github/workflows/` has ripple by construction |
+| Is it actually specified?                           | Does the body state a behavior, a file, or an acceptance condition?                                                                            |
+| Has someone already started?                        | `HAS-OPEN-PR` flag, plus recent comments claiming the work                                                                                     |
+| Is it stale for a reason?                           | An issue untouched for a year with no reaction may be dead; check comments before reviving it                                                  |
 
 Stop the research when the top candidate is clearly ahead. Do not read every open issue
 in full — that is what the score exists to avoid.

@@ -1,24 +1,24 @@
 ---
 name: localizing-ui
 description: >
-  Covers the message catalogs under messages/ and the locale plumbing in src/i18n/:
-  adding or renaming a UI string so the catalogs, MESSAGE_KEYS and the typed key union
-  stay in step, ICU arguments and plural categories, and linking with Link from
-  src/i18n/navigation.ts rather than next/link. Use when adding a translated string,
-  editing messages/ja.json, touching src/i18n/locales.ts, messages.ts, routing.ts,
-  request.ts or navigation.ts, adding a locale, or when a message renders as its own key
+  Covers the message catalogs under messages/ and the web client's use-intl plumbing in
+  apps/web/src/i18n/: adding or renaming a UI string so the catalog, MESSAGE_KEYS and
+  the typed key union stay in step, ICU arguments and plural categories, useTranslations
+  and CatalogProvider, and why the locale is not in the URL. Use when adding a
+  translated string, editing messages/ja.json, touching apps/web/src/i18n/messages.ts or
+  provider.tsx, proposing a second locale, or when a message renders as its own key
   name.
 ---
 
 # Localizing UI
 
-**Owns:** what goes into a message catalog and how a locale reaches the code that
-renders it — `messages/*.json`, the typed key union in `src/i18n/messages.ts`, and the
-locale-aware modules under `src/i18n/`. **Does not own:** the shape of a page, layout,
-Route Handler or `src/proxy.ts` (`building-app-routes`); how a rendered test case is
-written (`writing-tests`) and which vitest project it joins (`placing-tests`);
-TypeScript idiom inside a module (`writing-typescript`); dropping a locale when turning
-this template into an app (`starting-an-app`).
+**Owns:** what goes into a message catalog and how it reaches the code that renders it —
+`messages/*.json`, the catalog typing in `apps/web/src/i18n/messages.ts`, and
+`CatalogProvider` in `apps/web/src/i18n/provider.tsx`. **Does not own:** the route tree,
+links and the screens that render the strings (`building-web-screens`); how a rendered
+test case is written (`writing-tests`) and which vitest project it joins
+(`placing-tests`); TypeScript idiom inside a module (`writing-typescript`); the locale
+steps of turning this template into an app (`starting-an-app`).
 
 ## A tree full of Japanese is not a violation
 
@@ -44,14 +44,15 @@ Three edits, in this order. Doing two of them and running a check reports the pa
 have not made yet, so make all three first.
 
 1. `messages/ja.json` — add the key under a namespace. Japanese, the one locale this app
-   ships, is the source of truth for the catalog's _shape_: `Messages = typeof ja`. A
-   locale added later must hold the same key; omitting it is a type error rather than a
-   blank string in production, because `MESSAGES` is annotated
-   `Readonly<Record<Locale, Messages>>`.
+   ships, is the source of truth for the catalog's _shape_: `Messages = typeof ja` in
+   `apps/web/src/i18n/messages.ts`, and its `declare module "use-intl"` block registers
+   that shape as `AppConfig`'s `Messages`, so a key outside the catalog fails to compile
+   instead of rendering as its own name.
 2. `tests/messages.test.ts` — add the dotted `Namespace.key` to `MESSAGE_KEYS`. It lives
-   in the test, not in `src/`, because nothing the application ships reads it: it exists
-   only to be diffed against the catalog (see the three checks below).
-3. Render it: `const t = useTranslations("Namespace")`, then `t("key")`.
+   in the test, not in the web client, because nothing the application ships reads it:
+   it exists only to be diffed against the catalog (see the three checks below).
+3. Render it: `const t = useTranslations("Namespace")` from `use-intl`, then `t("key")`.
+   Every screen is already under `CatalogProvider`, which `App` mounts once.
 
 Then `pnpm exec vitest run tests/messages.test.ts && pnpm typecheck`.
 
@@ -79,9 +80,10 @@ a key that was never added; only a list a human maintains as step 2 above can. D
 it would collapse all three checks into `flatten(ja) === flatten(ja)`.
 
 A namespace is a first-level object in the catalog and the argument `useTranslations`
-takes. Group by the component that reads it — the `LocaleSwitcher` namespace holds one
-entry per locale code, which is what lets `switcher(locale)` name a language without a
-lookup table of its own.
+takes. Group by the screen or component that reads it (`Home`, `Drill`, `Settings`), so
+a screen's strings are one namespace to read and one to review. The document's own title
+and description are the `Metadata` namespace, which `App` writes into the document on
+mount; `apps/web/index.html` carries only a placeholder.
 
 ## ICU arguments and plural categories
 
@@ -102,78 +104,55 @@ lookup table of its own.
 - `#` inside a plural branch is the count. Pass it as an argument —
   `t("cardCount", { count: cards.length })` — and never format a number into the string
   yourself, which would hard-code one locale's digit grouping into all of them.
+- Every message is also formatted once by `tests/messages.test.ts`, with
+  `createTranslator` (re-exported from `@instant-composition/web`, the same formatter
+  `useTranslations` uses) and a dummy value per argument, so malformed ICU syntax fails
+  there rather than on a screen.
 
 ## The modules, and which one to reach for
 
-Each file under `src/i18n/` carries its reasoning in its own TSDoc; read the file rather
-than a paraphrase. What is worth knowing before you open one:
+Each file under `apps/web/src/i18n/` carries its reasoning in its own TSDoc; read the
+file rather than a paraphrase. What is worth knowing before you open one:
 
-- `locales.ts` — `LOCALES`, `Locale`, `DEFAULT_LOCALE`. It imports nothing on purpose,
-  so a module that only has to name a locale does not pull `next-intl` in behind it.
-  Import the list from here, not from `routing.ts`.
-- `messages.ts` — the catalogs, `MessageKey`, and the `declare module "next-intl"` block
-  that teaches `AppConfig` this application's `Locale` and `Messages`. That block is why
-  a key outside the catalog fails to compile instead of rendering as its own name. The
-  hand-written `MESSAGE_KEYS` manifest that `MessageKey` is checked against lives in
-  `tests/messages.test.ts`.
-- `routing.ts` — `defineRouting`. `localePrefix` defaults to `"always"`, which is why
-  `/ja` is the only shape a page is served under and `/` is a redirect.
-- `request.ts` — the per-request config, loaded by exact path from `next.config.ts`, so
-  it is a default export and `eslint.config.mjs` exempts it by name. It validates the
-  requested locale rather than trusting it: the `[locale]` segment is catch-all, so
-  `/favicon.ico` arrives here as the locale `favicon.ico`, and falling back to
-  `DEFAULT_LOCALE` keeps that a rendered page the layout can 404 instead of a lookup
-  into a catalog that does not exist. Its scoped
-  `eslint-disable-next-line @typescript-eslint/no-deprecated` for `requestLocale`
-  deletes itself: `reportUnusedDisableDirectives` fails the lint the moment the
-  deprecation lifts. Do not widen it to the file.
-- `navigation.ts` — `Link`, `getPathname`, `redirect`, `usePathname`, `useRouter`.
+- `messages.ts` — `LOCALE` (`"ja"`), `Messages`, `MESSAGES`, and the `use-intl`
+  `AppConfig` augmentation. It imports `messages/ja.json` by a relative path — the one
+  relative read out of `apps/web` that `tests/boundaries.test.ts` admits, since
+  `apps/web` imports no workspace package.
+- `provider.tsx` — `CatalogProvider`, `use-intl`'s `IntlProvider` over `LOCALE` and
+  `MESSAGES`. A test rendering a single component wraps it in this; a test mounting the
+  whole `App` gets it already.
 
-**A message that renders as its own key name** means the catalogs and `MESSAGE_KEYS` are
+**A message that renders as its own key name** means the catalog and `MESSAGE_KEYS` are
 out of step, or the string was read under a namespace that does not hold it. Run
 `tests/messages.test.ts` first; it names the key.
 
-## Never `next/link`
+## The locale is not in the URL
 
-Take `Link`, `redirect`, `usePathname` and `useRouter` from `src/i18n/navigation.ts`,
-and give them a pathname with no locale in it — `/`, not `/ja`. Reaching for `next/link`
-or `next/navigation` directly is the mistake that module exists to prevent: it emits a
-URL with no locale, `src/proxy.ts` then redirects it, and the reader pays a round trip
-and loses the locale they were on.
-
-Passing `locale` to `Link` explicitly is how a language switch targets another language;
-leaving it off keeps the active one. A switcher across a tree of pages reads the current
-path from `usePathname()` in the same module rather than hard-coding `/`.
-
-**BACKGROUND:** `building-app-routes` for `src/proxy.ts`'s matcher and the `[locale]`
-segment, which have to agree with each other.
+A path names a screen and nothing else — `/records`, never `/ja/records` — and nothing
+negotiates a locale: no `Accept-Language`, no cookie, no stored preference. `ja` is the
+only catalog, so there is nothing to choose between. ADR-0008 records that, and records
+that the locale will come from the learner's profile once a second one exists. Do not
+describe a negotiation that is not there, and do not add a locale segment to a route.
 
 ## Adding a locale
 
-This app ships `ja` only. A second locale is one list read four times: `LOCALES` in
-`src/i18n/locales.ts`; a new `messages/<locale>.json` translating every key `ja.json`
-holds; a static import and a `MESSAGES` entry in `src/i18n/messages.ts`; and a
-`LocaleSwitcher.<locale>` entry in **every** catalog — that one is a new key, so
-`MESSAGE_KEYS` in `tests/messages.test.ts` gains a line too. Nothing under `src/app/` or
-in `src/proxy.ts` changes; neither names a locale.
-
-Locale negotiation is `next-intl`'s middleware reading the request's `Accept-Language`
-header and its locale cookie, and nothing more — no domain routing, no geolocation, no
-stored per-user preference. Do not describe one that is not there.
-
-**REQUIRED:** `starting-an-app` for _dropping_ a locale; that is a different list and it
-owns it.
+This app ships `ja` only, and a second locale is an architecture change rather than a
+catalog edit: `LOCALE` becomes a list, `MESSAGES` a record keyed by it,
+`CatalogProvider` has to be told which one to use, and where that choice comes from is
+the open part of ADR-0008. Take it through an ADR first. **REQUIRED:**
+`recording-architecture-decisions`. The catalog half is then a new
+`messages/<locale>.json` translating every key `ja.json` holds, and the `LOCALES` list
+at the top of `tests/messages.test.ts`, which already compares every catalog's keys and
+ICU arguments against `ja`.
 
 ## What to run
 
 ```bash
 pnpm exec vitest run tests/messages.test.ts  # catalogs against each other and against MESSAGE_KEYS
 pnpm typecheck                               # both type directions, and every t() call site
-pnpm exec vitest run tests/proxy.test.ts     # only if routing or the matcher changed
-pnpm build                                   # only if a page or layout changed
+pnpm exec vitest run tests/web-<screen>.test.tsx  # the screen that renders the string
 ```
 
-Then open `/ja` under `pnpm dev`. `pnpm run test:smoke` (after `pnpm build`) serves the
-built application and checks that every shipped locale answers 200 with the matching
-`<html lang>`, which catches a locale that never renders at all; nothing checks that a
-string reads correctly in it, and that is what opening the pages is for.
+Then open the screen under `pnpm dev`. `pnpm run test:smoke` checks only that the built
+document says `<html lang="ja">`, which `apps/web/index.html` hard-codes; nothing checks
+that a string reads correctly on screen, and that is what opening it is for.

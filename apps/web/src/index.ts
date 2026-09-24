@@ -44,6 +44,10 @@ export {
 } from "./drill/use-drill";
 export { LOCALE, MESSAGES, type Messages } from "./i18n/messages";
 export { CatalogProvider } from "./i18n/provider";
+// The translator `useTranslations` formats with, so tests/messages.test.ts can
+// parse every message the way the client renders it: the root declares no
+// `use-intl` of its own for a test to import.
+export { createTranslator } from "use-intl";
 export {
   API_ROOT,
   finishRound,

@@ -42,7 +42,6 @@ export const repoRoot = fileURLToPath(new URL("..", import.meta.url));
 const SKIPPED_DIRECTORIES = new Set([
   "node_modules",
   ".git",
-  ".next",
   "dist",
   "coverage",
   "fixtures",
@@ -55,12 +54,7 @@ const SKIPPED_DIRECTORIES = new Set([
 // Generated files and tool caches: nothing here is authored, and anything a
 // caller scans for could only appear in one as an echo of a file that *is*
 // authored.
-const SKIPPED_FILES = new Set([
-  "pnpm-lock.yaml",
-  ".eslintcache",
-  ".DS_Store",
-  "next-env.d.ts",
-]);
+const SKIPPED_FILES = new Set(["pnpm-lock.yaml", ".eslintcache", ".DS_Store"]);
 
 /**
  * Every readable, hand-written file under `root`, as root-relative paths.

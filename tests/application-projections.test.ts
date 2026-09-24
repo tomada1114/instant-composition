@@ -24,7 +24,7 @@ import {
   type Harness,
 } from "./application-harness";
 
-/** The log entry in the shape the replaying rules of `src/core` read. */
+/** The log entry in the shape the replaying rules of `packages/domain` read. */
 function asAnswer(entry: ReviewEntry): AnswerRecord {
   return {
     id: entry.id,
@@ -101,7 +101,7 @@ describe("the projections a command keeps", () => {
     expect(items).toStrictEqual(replayItems(log));
   });
 
-  it("agree with the replaying rules the Next.js app still uses", async () => {
+  it("agree with the rules that replay the whole answer log", async () => {
     const h = makeHarness();
     await fiveDays(h);
     const store = h.stores.forLearner(h.learner);

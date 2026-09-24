@@ -2,11 +2,11 @@
 name: starting-an-app
 description: >
   Covers turning this template into a new application: the copy-and-rename procedure
-  driven by tests/placeholders.test.ts, what a new project keeps untouched, whether to
-  keep both locales or drop one, and settling the design direction before the first
-  screen. Use when starting an app from this repository, replacing the package name, the
-  app's display name or the repository slug, dropping a locale from src/i18n/locales.ts
-  and messages/, or replacing the stock shadcn/ui tokens.
+  driven by tests/placeholders.test.ts, what a new project keeps untouched, which locale
+  the one catalog under messages/ is in, and settling the design direction before the
+  first screen. Use when starting an app from this repository, replacing the package
+  name, the app's display name or the repository slug, replacing the ja catalog read by
+  apps/web/src/i18n/messages.ts, or replacing the tokens in apps/web/src/globals.css.
 ---
 
 # Starting an App
@@ -14,9 +14,9 @@ description: >
 **Owns:** turning this repository into a new application — the rename, what the new app
 keeps, the locale decision, and when the design direction gets settled. **Does not
 own:** how a skill is authored or mirrored (`authoring-skills`); the README's own prose
-(`updating-docs`); what a gate file may contain (`changing-gates`); working inside the
-App Router tree (`building-app-routes`); what a settled direction contains and how the
-tokens are edited (`designing-ui`).
+(`updating-docs`); what a gate file may contain (`changing-gates`); building a screen in
+the web client (`building-web-screens`); adding a second locale (`localizing-ui`); what
+a settled direction contains and how the tokens are edited (`designing-ui`).
 
 There is deliberately no bootstrap script. The one this repository used to ship was
 profile-driven machinery that rewrote the tree and then deleted itself, so the only
@@ -69,12 +69,12 @@ What goes into each site:
   advisory form.
 - **The copyright holder** in `LICENSE`, and the same name wherever the README repeats
   it. Every fork inherits `LICENSE` verbatim, which is why the template ships a blank.
-- **The app's display name** — the `Metadata.title` key in each catalog, which
-  `src/app/[locale]/layout.tsx`'s `generateMetadata` reads into the browser tab. Each
-  catalog gets the name written in its own language.
-- **The one-line `description`** — the `Metadata.description` key beside it, which
-  renders into `<meta name="description">` and so into search results and link previews;
-  one per catalog, like the name.
+- **The app's display name** — the `Metadata.title` key in the catalog, which `App`
+  (`apps/web/src/app.tsx`) writes into the document's title on mount, written in the
+  catalog's own language. `apps/web/index.html`'s `<title>` is what shows before the
+  script runs, so it changes too.
+- **The one-line `description`** — the `Metadata.description` key beside it, which `App`
+  writes into `<meta name="description">`.
 
 Those are the only reader-visible strings the inventory covers.
 
@@ -103,53 +103,42 @@ rename unchanged and is most of what starting from this template buys:
   against the new repository early: the workflow only ever _applies_ a label, and when
   one does not exist yet it emits a notice instead of failing, so a missing taxonomy is
   silent. **BACKGROUND:** `triaging-issues` for what the labels mean.
-- **`.env.example`**, even when the app reads nothing yet. `src/server/env.ts` is the
-  only module that touches `process.env`, and `tests/server-env.test.ts` asserts the two
-  stay in step; the example file is half of that check.
+- **`.env.example`**, even when the app reads nothing new yet. `apps/api/src/env.ts` is
+  the only module that touches `process.env`, and `tests/env-example.test.ts` asserts
+  the two stay in step; the example file is half of that check.
 
 ## The locale decision
 
-The template ships `en` and `ja`. Keeping both costs nothing and is the default; the
-other choice is dropping one, and a third locale is added by reading the same list
-forward. Dropping `ja` touches:
+The app ships one catalog, `messages/ja.json`, and keeps the locale out of the URL
+(ADR-0008). Keeping it is the default. An app whose learners read another language
+replaces it rather than adding a second, and that touches:
 
-- `src/i18n/locales.ts` — `LOCALES`, which is the closed union everything else derives
-  from.
-- `messages/ja.json`, deleted, and `src/i18n/messages.ts`, which statically imports it
-  and keys `MESSAGES` by locale.
-- `messages/en.json` — the switcher entry naming the dropped language.
-- `tests/messages.test.ts` — its switcher key in `MESSAGE_KEYS`, plus every other place
-  it names the locale literally — and `tests/proxy.test.ts` and
-  `tests/server-smoke.test.ts`, each of which names the locale literally too.
+- `messages/ja.json`, replaced by `messages/<locale>.json` translating every key.
+- `apps/web/src/i18n/messages.ts` — the static import of the catalog and `LOCALE`.
+- `apps/web/index.html`'s `<html lang>`, and `tests/stack-smoke.test.ts`, which asserts
+  it.
+- `tests/messages.test.ts` — it reads `messages/<LOCALE>.json`, but also names `ja`
+  literally as its reference catalog; `MESSAGE_KEYS` changes only if the keys do.
 - `README.md`'s quick start, and AGENTS.md's Conventions exception, which names
   `messages/ja.json` as the one committed file that is not in English.
 
-`src/proxy.ts` does **not** change: its matcher excludes API routes, framework asset
-trees and paths with an extension, and names no locale at all. `tests/proxy.test.ts`
-does change, because its cases spell one out.
-
-Two of these fail at compile time rather than at runtime, by design:
-`OUTPUT_LANGUAGE_BY_LOCALE` and `MESSAGE_KEYS` are written with `satisfies`, so a locale
-removed from `LOCALES` without its entries removed fails `pnpm typecheck` instead of
-rendering a key as its own name in production — `MESSAGE_KEYS` lives in
-`tests/messages.test.ts` rather than in `src/`, but `tsconfig.json`'s `include` covers
-`tests`, so `pnpm typecheck` type-checks it there too. Check with:
+`pnpm typecheck` then checks every `t()` call against the new catalog's shape. Check
+with:
 
 ```bash
-pnpm exec vitest run tests/messages.test.ts tests/proxy.test.ts
+pnpm exec vitest run tests/messages.test.ts
+pnpm typecheck
 ```
 
-One locale still means a prefixed URL: `localePrefix` defaults to `"always"` in
-`src/i18n/routing.ts`, so `/` keeps redirecting to `/en`. Changing that is a routing
-decision, not part of the rename, and it is what `tests/proxy.test.ts` asserts either
-way.
+A second locale beside the first is not part of starting an app: where the choice
+between them comes from is the open part of ADR-0008. **BACKGROUND:** `localizing-ui`.
 
 ## Settling the design direction
 
 The template ships shadcn/ui's stock `neutral` tokens and an unsettled lock in
 `designing-ui`, both carrying the design-direction marker that `PLACEHOLDERS` in
 `tests/placeholders.test.ts` lists — so the same inventory run as the rename reports it,
-one row for `src/app/globals.css` and one per copy of `designing-ui`'s `SKILL.md`.
+one row for `apps/web/src/globals.css` and one per copy of `designing-ui`'s `SKILL.md`.
 
 Settle it before the first real screen, and research it rather than choosing by taste:
 the user-level `refero-design` skill is the method when it is installed, and the choice
@@ -158,16 +147,17 @@ is the human's either way — present the options and let them pick. Then:
 - Fill `designing-ui`'s lock and ledger in the shape that section gives, and replace the
   marker sentence and the paragraph under it with the settled direction. Edit the
   `.agents/` copy and run `pnpm agents:sync`.
-- Replace the stock values in `src/app/globals.css`, keeping the `:root` +
+- Replace the stock values in `apps/web/src/globals.css`, keeping the `:root` +
   `@theme inline` shape, and replace its marker comment with one naming the direction.
-  Fonts load through `next/font` in the layout that owns `<html>`; `pnpm build` then
-  fetches them at build time, so a fresh build needs network access.
-- Restyle `src/components/ui/button.tsx` to the settled recipe, dropping any variant the
-  lock has no use for, and update `tests/ui-primitives.test.tsx` in the same edit.
+  Fonts are `@fontsource-variable/*` packages imported by `apps/web/src/main.tsx` and
+  bundled, so a family changes by swapping the package (under `managing-dependencies`),
+  its import, and its name in `globals.css`.
+- Restyle `apps/web/src/ui/button.tsx` to the settled recipe, dropping any variant the
+  lock has no use for, and update `tests/web-ui-primitives.test.tsx` in the same edit.
 - Delete the marker's rows from `EXPECTED_INVENTORY`. The marker stays in `PLACEHOLDERS`
   so it cannot come back unnoticed.
 
 ```bash
-pnpm exec vitest run tests/placeholders.test.ts tests/ui-primitives.test.tsx
-pnpm build && pnpm test:smoke
+pnpm exec vitest run tests/placeholders.test.ts tests/web-ui-primitives.test.tsx
+pnpm db:up && pnpm web:build && pnpm test:smoke
 ```

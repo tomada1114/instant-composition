@@ -1,8 +1,9 @@
-# DynamoDB local for `pnpm test:dynamodb` and local runs of the API: `pnpm db:up`
-# starts it, `pnpm db:down` removes it. ci.yml's `static` job runs the same
-# image, pinned by tag and digest in both places (tests/workflows.test.ts
-# holds the two together). The image's own command runs it in memory, so a
-# restart starts from no tables at all.
+# DynamoDB local for `pnpm test:dynamodb`, `pnpm test:smoke` and local runs of
+# the stack (`pnpm dev`, `pnpm api`): `pnpm db:up` starts it, `pnpm db:down`
+# removes it. ci.yml's `static` job runs the same image, pinned by tag and
+# digest in both places (tests/workflows.test.ts holds the two together). The
+# image's own command runs it in memory, so a restart starts from no tables at
+# all.
 name: instant-composition
 
 services:

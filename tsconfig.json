@@ -1,27 +1,14 @@
 {
   // The shared strictness lives in `tsconfig.base.json`; this file adds what the
-  // Next.js application, its tests and the repository automation need on top.
+  // tests and the repository automation need on top. Each package and app
+  // type-checks its own source through its own `tsconfig.json`; `pnpm
+  // typecheck` runs this one first and then every one of those.
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
+    // The component tests under `tests/*.test.tsx` render under jsdom, so
+    // they need the DOM types and JSX.
     "lib": ["ES2023", "DOM", "DOM.Iterable"],
-    // `jsx`, `esModuleInterop`, `resolveJsonModule` and `incremental` below —
-    // and `module` and `moduleResolution` in the base — are values `next build`
-    // requires: it rewrites this file when one of them is missing or
-    // different, so they are written out rather than discovered as an
-    // unexplained diff after a build.
-    //
-    // shadcn/ui components are copied into this repository carrying
-    // `@/components/...` imports, so the alias is what lets that generated
-    // code compile unedited. `baseUrl` is deliberately unset — TypeScript 5+
-    // resolves `paths` against this file's own directory — because setting it
-    // would also make every bare specifier resolvable as a path from the
-    // project root. Two other resolvers have to be told the same thing by
-    // hand: `vitest.config.ts`'s `resolve.alias` (Vite never reads `paths`)
-    // and `eslint.config.mjs`'s zone patterns, which match specifier text and
-    // so need an `@/` twin of every `../` one.
-    "paths": { "@/*": ["./src/*"] },
     "jsx": "react-jsx",
-    "plugins": [{ "name": "next" }],
     "esModuleInterop": true,
     "resolveJsonModule": true,
     "incremental": true,
@@ -33,19 +20,13 @@
     "checkJs": true
   },
   "include": [
-    "src",
     "tests",
     "scripts",
     ".agents/skills",
     ".claude/skills",
     "*.ts",
     "*.mts",
-    "*.mjs",
-    // Route and page types Next.js generates into the (gitignored) build
-    // directory. Absent before the first build, which an `include` glob
-    // tolerates.
-    ".next/types/**/*.ts",
-    ".next/dev/types/**/*.ts"
+    "*.mjs"
   ],
   // `.claude/skills/` is a generated, committed mirror of `.agents/skills/`
   // (`pnpm agents:sync`): every skill lives at `.claude/skills/<name>/...`,

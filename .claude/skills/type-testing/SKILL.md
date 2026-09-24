@@ -3,11 +3,11 @@ name: type-testing
 description: >
   Covers compile-time assertions with Vitest's expectTypeOf, written in the same suite
   as the runtime tests for the surface they check — the Result vocabulary in
-  src/core/result.ts, and the derived MessageKey union in src/i18n/messages.ts against
-  the hand-written manifest in tests/messages.test.ts. Use when adding or reviewing a
-  @ts-expect-error assertion, a type test for a changed exported signature or for a
-  generic that must not widen, an `as const satisfies` list that has to stay in step
-  with a union, or when a type test passes even though the annotation it checks is
+  packages/domain/src/result.ts, and the MessageKey union derived from the web client's
+  Messages type against the manifest in tests/messages.test.ts. Use when adding or
+  reviewing a @ts-expect-error assertion, a type test for a changed exported signature
+  or for a generic that must not widen, an `as const satisfies` list that has to stay in
+  step with a union, or when a type test passes even though the annotation it checks is
   wrong.
 ---
 
@@ -24,8 +24,8 @@ module being asserted about (`writing-typescript`).
 There is no separate types-only test file. An `expectTypeOf` assertion lives in the same
 suite as the runtime tests for the surface it checks, so a change to that surface breaks
 both halves in one place instead of leaving a type file nobody opened. Today that means
-`tests/result.test.ts` for the `Result` vocabulary and `tests/messages.test.ts` for the
-catalog's key union.
+`tests/domain-result.test.ts` for the `Result` vocabulary and `tests/messages.test.ts`
+for the catalog's key union.
 
 An `it()` whose whole assertion is type-level is legitimate and needs no runtime
 `expect`. Enforced by: `eslint.config.mjs`'s `vitest/expect-expect`, which lists
@@ -54,9 +54,10 @@ Assert what inference is supposed to preserve, not what the annotation already s
   `expectTypeOf` rejects a member the list forgot. Annotating the list
   `readonly TheUnion[]` instead would lose the literal tuple type and let a new member
   land with no case for it. `MESSAGE_KEYS` in `tests/messages.test.ts`, checked against
-  `MessageKey` (`DottedKeys<typeof ja>` in `src/i18n/messages.ts`), is the model: the
-  manifest lives in the test rather than in source because nothing under `src/` reads it
-  — a compile-time assertion belongs wherever the two things it holds together live, in
+  `MessageKey` (`DottedKeys<Messages>`, derived in that same file from the `Messages`
+  type `@instant-composition/web` exports), is the model: the manifest and the derived
+  union both live in the test because nothing in the web client reads either — a
+  compile-time assertion belongs wherever the two things it holds together live, in
   source when one of them is a constant the application ships, in a test when what is
   being pinned is an inference the source cannot state about itself.
 
@@ -114,9 +115,9 @@ The narrowing only bites when the initializer's own type is a single member of t
 declared union — an object literal, or a class instance.
 `const result: Result<string, RangeError> = ok("hello")` keeps the union, because `ok`
 returns `Result<T, never>`, itself a union; that is why the narrowing cases in
-`tests/result.test.ts` are real tests rather than instances of this trap. Do not rely on
-the difference: a parameter is unambiguous, and an initializer's type can change under
-you.
+`tests/domain-result.test.ts` are real tests rather than instances of this trap. Do not
+rely on the difference: a parameter is unambiguous, and an initializer's type can change
+under you.
 
 ## Trap 3: `@ts-expect-error` can be satisfied by the wrong error
 
@@ -152,6 +153,9 @@ it. Two consequences worth planning around:
 - A type assertion is erased before anything runs. It says nothing about whether the
   value at runtime matches the type, which is why a schema-validated value is asserted
   both ways: once for the inferred type, once for the value.
-- The App Router entry points are type-checked by `pnpm build`, not by a test. A page or
-  a layout whose props stopped matching what Next.js passes fails there, and no
-  `expectTypeOf` in `tests/` would have seen it.
+- Some type contracts are declared by module augmentation in the web client rather than
+  asserted in a test: `apps/web/src/router.tsx` registers the route tree with TanStack
+  Router, so a `Link` to a path it does not hold fails to compile, and
+  `apps/web/src/i18n/messages.ts` registers the catalog with `use-intl`, so a
+  `useTranslations` key outside it does. `pnpm typecheck` is what sees those, through
+  `apps/web/tsconfig.json`; an `expectTypeOf` in `tests/` would only restate them.

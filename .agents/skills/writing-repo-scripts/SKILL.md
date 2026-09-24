@@ -15,8 +15,8 @@ description: >
 **Owns:** the authoring contract for `scripts/**/*.mjs` — imports, typing, git safety,
 and the stderr contract. **Does not own:** authoring a skill or mirroring it into
 `.claude/skills/` (`authoring-skills`); where a script's tests live and its coverage
-floor (`placing-tests`); the `ERR_<STAGE>_*` code vocabulary shared with `src/`
-(`designing-errors`).
+floor (`placing-tests`); the `ERR_<STAGE>_*` code vocabulary shared with the packages
+and apps (`designing-errors`).
 
 ## Why `.mjs`, not `.ts`
 
@@ -25,9 +25,10 @@ floor (`placing-tests`); the `ERR_<STAGE>_*` code vocabulary shared with `src/`
 - Import only `node:*` builtins and the shared helpers under `scripts/lib/`. Never
   import a dependency from `node_modules` directly — a script that needs an installed
   tool spawns it at run time instead, so the script still loads even when that
-  dependency is absent. No script does today, and no helper resolves a dependency's bin
-  any more, so a script that needs one has to locate it and hand the path to `runNode`
-  (`scripts/lib/node-tools.mjs`) itself.
+  dependency is absent. No helper resolves a dependency's bin, so a script that needs
+  one locates the file itself and runs it on the current Node — `scripts/dev.mjs` finds
+  Vite's CLI under `apps/web/node_modules/` and reports `ERR_DEV_NOT_INSTALLED` when it
+  is missing, rather than failing on a `spawn` error.
 - Import Node globals explicitly (`import process from "node:process"`,
   `import console from "node:console"`) rather than relying on the ambient globals Node
   provides at the top level.
@@ -39,7 +40,7 @@ automation/node-scripts block in `eslint.config.mjs`.
 
 - These files are type-checked exactly like a `.ts` module. Declare boundary types in
   JSDoc (`@param`, `@returns`, `@typedef`) with the same rigor as a TypeScript signature
-  — an untyped parameter here is as much a gap as one in `src/`.
+  — an untyped parameter here is as much a gap as one in a package's `src/`.
 - Receive `JSON.parse` output as `unknown` and narrow it through `readKey`/`readString`
   in `scripts/lib/json.mjs`, never a direct cast. `noPropertyAccessFromIndexSignature`
   and the typed-lint `dot-notation` rule disagree about literal-key access on a
@@ -121,4 +122,4 @@ Next: run `pnpm agents:sync`.
 A new script is covered by the `scripts/**` coverage floor from the moment it exists —
 an untested file counts as 0%, not as absent from the measurement. **BACKGROUND:**
 `placing-tests` explains why `scripts/**` and `scripts/lib/guard/**` carry their own
-floors instead of `src/**`'s.
+floors instead of the packages' and apps'.
