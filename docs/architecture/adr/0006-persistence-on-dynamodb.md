@@ -98,12 +98,17 @@ LEARNER#<learnerId>   LEVEL#<at>                           level history entry
 LEARNER#<learnerId>   ROUND#<roundId>                      kind, day, deck, status, summary
 LEARNER#<learnerId>   ROUND#<roundId>#ANSWER#<answerId>    log entry (ADR-0003 envelope)
 LEARNER#<learnerId>   PORTION#<day>                        target, completedAt
+LEARNER#<learnerId>   DAY#<day>                            the day's tally (projection)
 LEARNER#<learnerId>   ITEM#<kind>#<itemId>                 memory state (projection)
 LEARNER#<learnerId>   TITLE#<key>                          awarded title
 IDENTITY#<sub>        LEARNER                              sub → LearnerId mapping
 ```
 
 - A round and its answers are one `Query` on a key prefix.
+- A window of day tallies is one `Query` with `BETWEEN` on `DAY#`, because the days sort
+  as dates.
+- Every id inside a key is escaped with `encodeURIComponent`, which escapes `#` and `%`.
+  No id can reach across a separator, so two different keys never share a string.
 - Due items are one `Query` on `ITEM#`. A learner holds at most a few thousand items, so
   a secondary index on due date is not needed yet.
 - Deleting or exporting an account means querying one partition, plus the identity
@@ -111,6 +116,11 @@ IDENTITY#<sub>        LEARNER                              sub → LearnerId map
 
 The ledger ([ADR-0010](0010-entitlements-and-billing.md)) and any job state get their
 own key prefixes, or their own table if their access patterns diverge.
+
+The store Phase 1 built (`packages/adapters/src/keys.ts`) follows this layout. It adds
+the `DAY#` tallies and the escaping rule above, and names the key attributes `PK` and
+`SK`. `PROFILE`, `LEVEL#`, `TITLE#` and the identity mapping arrive with the features
+that write them.
 
 ### Idempotency and offline sync
 
