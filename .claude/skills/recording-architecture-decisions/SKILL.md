@@ -64,11 +64,17 @@ the answer belongs in an ADR.
   confirmed it) → **Superseded by ADR-NNNN**. A partly settled decision says which part
   is which ("Accepted: DynamoDB. Proposed: the key layout.").
 - Only the owner accepts. An agent writes Proposed and names what acceptance needs.
-- Never rewrite an Accepted decision in place. A changed conclusion is a new ADR that
-  supersedes the old one; the old file changes only its status line and gains a link
-  forward. The record earns its keep in a design review by showing what was decided,
-  when, and why it changed — an edited decision erases the last half. A typo, a dead
-  link or a re-dated price is an editorial fix and may be made in place.
+- When the owner changes an Accepted decision midway, rewrite the ADR in place so it
+  states the current decision, and bring the roadmap and the issues into line in the
+  same sitting. This is the owner's standing choice: one page that is true beats a chain
+  of pages to reconcile, and git history keeps the earlier text. The status line gains
+  `amended YYYY-MM-DD (<what>)`, and the new text gives the reason, so a reader still
+  sees what changed and why.
+- A new ADR supersedes an old one only when the decision is replaced whole — a different
+  provider, a reversed direction — so that rewriting would leave nothing of the old
+  decision; the old file then changes only its status line and gains a link forward. A
+  typo, a dead link or a re-dated price is an editorial fix, made in place with no
+  status change.
 - Update `README.md`'s ADR table in the same change as the ADR.
 
 ## Keeping the living pages true

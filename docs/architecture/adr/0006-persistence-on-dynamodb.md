@@ -1,6 +1,7 @@
 # ADR-0006: Persistence on DynamoDB
 
-- Status: Accepted (2026-09-23), including the store shape
+- Status: Accepted (2026-09-23), including the store shape; amended 2026-09-24 (`dev`
+  table protection waits for the Paid plan)
 - Date: 2026-09-23
 - Deciders: the owner
 

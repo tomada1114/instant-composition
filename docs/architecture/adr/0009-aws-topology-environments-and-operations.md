@@ -1,6 +1,7 @@
 # ADR-0009: AWS topology, environments and operations
 
-- Status: Accepted (2026-09-23), including the account layout, its timing, and CDK
+- Status: Accepted (2026-09-23), including the account layout, its timing, and CDK;
+  amended 2026-09-24 (`dev` table protection waits for the Paid plan)
 - Date: 2026-09-23
 - Deciders: the owner
 
