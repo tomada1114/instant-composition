@@ -15,6 +15,9 @@ extend-exclude = [
   # are spell-checked at their real path, and checking the copy too would
   # report the same typo twice, at a path nobody may edit.
   ".claude/skills/",
+  # Generated from packages/contracts/openapi.json (`pnpm web:client`); a typo
+  # there is the contract's, fixed in packages/contracts and regenerated.
+  "apps/web/src/openapi/",
 ]
 
 [default.extend-words]

@@ -1,0 +1,14 @@
+{
+  // The browser client: DOM types and Vite's client ambient types (the CSS and
+  // font imports `src/main.tsx` makes), and no Node types — nothing under
+  // `src/` runs anywhere but a browser. `vite.config.ts` is checked here too,
+  // and reads no Node global for that reason.
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "types": ["vite/client"],
+    "jsx": "react-jsx",
+    "resolveJsonModule": true
+  },
+  "include": ["src", "vite.config.ts"]
+}
