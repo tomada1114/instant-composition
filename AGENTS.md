@@ -60,11 +60,14 @@ pnpm dev           # start the Next.js development server on http://localhost:30
 pnpm build         # production build; also type-checks the App Router entry points
 pnpm start         # serve the production build from `pnpm build`
 pnpm check:quick   # format check, lint, typecheck, tests — the everyday gate
-pnpm check:source  # the same gate plus the build, with coverage thresholds enforced
+pnpm check:source  # the same gate plus the build, the smoke and DynamoDB suites, and coverage
 pnpm fix           # ESLint autofix, then Prettier
 pnpm test          # tests only
 pnpm test:coverage # tests with the coverage thresholds enforced
 pnpm test:smoke    # serves the last `pnpm build` with `next start` and asserts over HTTP
+pnpm test:dynamodb # the store contract suite against DynamoDB local; needs `pnpm db:up`
+pnpm db:up         # start DynamoDB local from compose.yaml's pinned image, on localhost:8000
+pnpm db:down       # stop and remove it; it runs in memory, so its tables go with it
 pnpm agents:sync   # regenerate .claude/skills/ from .agents/skills/
 pnpm agents:check  # fail when the two skill trees have drifted apart
 pnpm repo:labels   # create/update GitHub labels from .github/labels.yml
@@ -94,13 +97,14 @@ target list is reviewable in `package.json` instead of retyped at a prompt each 
 
 Run a single test file with `pnpm exec vitest run tests/<name>.test.ts`.
 
-`pnpm check:quick` is the everyday local gate; `pnpm check:source` adds the build and
-the coverage floors on top of it. CI runs those same checks as separate steps, so a
-green `pnpm check:source` here means those are green too. `lefthook`'s pre-commit hook
-runs a staged-file-scoped version of the same tools — format applied rather than merely
-checked, tests limited to the ones reachable from the staged files — before every
-commit. Nothing — not a hook, not a workflow — defines a check of its own; they all call
-these scripts.
+`pnpm check:quick` is the everyday local gate, and needs nothing running beside it;
+`pnpm check:source` adds the build, the smoke suite, the DynamoDB suite and the coverage
+floors on top of it, so it needs Docker and `pnpm db:up` first. CI runs those same
+checks as separate steps, so a green `pnpm check:source` here means those are green too.
+`lefthook`'s pre-commit hook runs a staged-file-scoped version of the same tools —
+format applied rather than merely checked, tests limited to the ones reachable from the
+staged files — before every commit. Nothing — not a hook, not a workflow — defines a
+check of its own; they all call these scripts.
 
 Development and source checks stay on Node 24, stated once in `.node-version` and once
 in `devEngines.runtime`. Never relax `devEngines.runtime`'s `onFail: error`, and never
@@ -124,6 +128,8 @@ on every edit is slow enough that it stops being run at all.
 | `src/app/globals.css` or `postcss.config.mjs`          | `pnpm build`, then `pnpm test:smoke`                 |
 | An import that crosses a zone boundary                 | `pnpm exec vitest run tests/boundaries.test.ts`      |
 | A package under `packages/`                            | `pnpm typecheck`, then `tests/boundaries.test.ts`    |
+| A module under `packages/adapters/`                    | `pnpm exec vitest run tests/adapters-*.test.ts`      |
+| The DynamoDB store, or the store contract suite        | `pnpm db:up`, then `pnpm test:dynamodb`              |
 | A schema or route under `packages/contracts/`          | `pnpm exec vitest run tests/contracts-*.test.ts`     |
 | A test                                                 | `pnpm exec vitest run tests/<name>.test.ts`          |
 | A script under `scripts/`                              | `pnpm exec vitest run tests/<script>.test.ts`        |
@@ -132,6 +138,14 @@ on every edit is slow enough that it stops being run at all.
 | A skill under `.agents/skills/`                        | `pnpm agents:sync && pnpm agents:check && pnpm test` |
 | `package.json`, `pnpm-workspace.yaml`                  | `pnpm install`, then `pnpm check:source`             |
 | Markdown                                               | `pnpm fix`                                           |
+
+`pnpm test:dynamodb` is its own vitest project, `dynamodb`, kept out of `pnpm test` and
+`pnpm check:quick` the way `smoke` is: the everyday gate needs no container, and it
+names the projects it runs, so it cannot claim a DynamoDB run it did not make. The suite
+is still mandatory — `check:source` runs it, and so does ci.yml's required `static` job,
+against a service container of the same pinned image — and it fails with an instruction
+rather than skipping when DynamoDB local is not answering. The in-memory run of the same
+contract stays in `pnpm test`.
 
 ## Architecture
 
@@ -147,6 +161,7 @@ src/
 packages/
 ├── domain/      # @instant-composition/domain: the pure rules, importing nothing
 ├── application/ # @instant-composition/application: commands, queries and ports
+├── adapters/    # @instant-composition/adapters: the DynamoDB and in-memory stores, the catalog
 └── contracts/   # @instant-composition/contracts: the HTTP API's zod schemas and OpenAPI
 messages/       # one JSON catalog per locale; ja.json, the only one, sets the shape
 content/        # the cards and the lists and guides that define them (see Content)
@@ -176,28 +191,34 @@ they grow as the restructure moves code into them. `packages/domain` holds a cop
 `src/core/`'s rules, with the practice day computed in the learner's time zone, and the
 pure `decide` functions behind each command. `packages/application` holds the request
 context, the authorization policy, the practice commands as load, decide, commit, the
-queries each screen reads from projections alone, and the learner-bound store port with
-its in-memory adapter, which runs the isolation contract suite in
-`tests/learner-store-contract.ts`. `packages/contracts` holds the `/v1` request and
-response schemas and the OpenAPI 3.1 document built from them, committed as
+queries each screen reads from projections alone, and the ports they need: the
+learner-bound store and the catalog. `packages/adapters` implements those ports: the
+DynamoDB store on ADR-0006's single table, each commit one `TransactWriteItems`; the
+in-memory store; and the catalog that reads one `pnpm catalog:build` snapshot. Both
+stores run the contract suite in `tests/learner-store-contract.ts`, isolation included —
+the in-memory one in `pnpm test`, the DynamoDB one against DynamoDB local in
+`pnpm test:dynamodb`. `packages/contracts` holds the `/v1` request and response schemas
+and the OpenAPI 3.1 document built from them, committed as
 `packages/contracts/openapi.json`; `tests/contracts-openapi.test.ts` fails when the file
 differs from what the schemas generate, and `pnpm contracts:openapi` rewrites it
 (ADR-0013). `src/` is still where the running application lives, and it keeps its own
 `src/core/` until Phase 1 retires it. `apps/` and `infra/` join the workspace with their
 first package.
 
-- **The edges.** `application` → `domain`, `contracts` → `zod` alone, and `domain` →
-  nothing — no workspace package, no npm package, no Node builtin. A package reaches
-  another only by its name, `@instant-composition/<dir>`, and only when its own
-  `package.json` declares it. The same holds from outside `packages/`: `src/`, `tests/`
-  and `scripts/` never import a package by a relative path, which would walk past its
-  `exports`. `eslint.config.mjs`'s `boundaries/packages/*` blocks and
+- **The edges.** `adapters` → `application` and `domain`, the AWS SDK's DynamoDB
+  clients, `zod` and `node:fs/promises`; `application` → `domain`; `contracts` → `zod`
+  alone; and `domain` → nothing — no workspace package, no npm package, no Node builtin.
+  A package reaches another only by its name, `@instant-composition/<dir>`, and only
+  when its own `package.json` declares it. The same holds from outside `packages/`:
+  `src/`, `tests/` and `scripts/` never import a package by a relative path, which would
+  walk past its `exports`. `eslint.config.mjs`'s `boundaries/packages/*` blocks and
   `tests/boundaries.test.ts` hold the same table, the test also against each manifest; a
   package added under `packages/` fails the suite until it is given a row.
 - **Source, not builds.** A package's `exports` points at its `src/index.ts`, and
   whatever consumes it compiles that source; nothing is emitted to a `dist/`. Each
   package has its own `tsconfig.json` over the shared `tsconfig.base.json`, with no DOM
-  and no Node types, and `pnpm typecheck` checks every one of them after the root.
+  and no Node types — except `adapters`, the one package that does I/O — and
+  `pnpm typecheck` checks every one of them after the root.
 - **The same gates as `src/`.** The syntax bans, the named-export surface and the size
   budget in `eslint.config.mjs`, and the coverage floor in `vitest.config.ts`, cover
   `packages/*/src/` as they cover `src/`. Tests stay under `tests/` and import a package
