@@ -64,15 +64,16 @@ says where that belongs.
 plus what an operator needs to act on it, and every one is present on every line (`null`
 where it does not apply):
 
-| Field        | Value                                                                 |
-| ------------ | --------------------------------------------------------------------- |
-| `requestId`  | Made by the server per request; never read from a header              |
-| `operation`  | The contract `operationId` (`getHome`, `finishRound`, …), or `null`   |
-| `outcome`    | `ok`, the `ERR_*` code answered, `unmatched`, or `failed`             |
-| `status`     | The HTTP status sent, which the 5xx alarm reads                       |
-| `durationMs` | From the request's arrival to its answer, on the injected clock       |
-| `learnerId`  | The internal `LearnerId` the request acted as, once authenticated     |
-| `fault`      | The thrown error's class name when `outcome` is `failed`, else `null` |
+| Field        | Value                                                                           |
+| ------------ | ------------------------------------------------------------------------------- |
+| `requestId`  | Made by the server per request; never read from a header                        |
+| `operation`  | The contract `operationId` (`getHome`, `finishRound`, …), or `null`             |
+| `outcome`    | `ok`, the `ERR_*` code answered, `unmatched`, or `failed`                       |
+| `status`     | The HTTP status sent, which the 5xx alarm reads                                 |
+| `durationMs` | From the request's arrival to its answer, on the injected clock                 |
+| `learnerId`  | The internal `LearnerId` the request acted as, once authenticated               |
+| `fault`      | The thrown error's class name when `outcome` is `failed`, else `null`           |
+| `reason`     | `missing`, `unreadable` or `malformed` on `ERR_CONTENT_UNREADABLE`, else `null` |
 
 Never add a field carrying a request body, a path, a query string, a card's text, a
 learner's answers, a header or an error message: a message can quote what the caller or
