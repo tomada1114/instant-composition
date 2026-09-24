@@ -129,7 +129,7 @@ describe("the home screen, W3a: today's portion not started", () => {
     expect(where()).toBe("/drill?kind=today");
   });
 
-  it("links to the records and the settings, whose screens are still to come", async () => {
+  it("links to the records and the settings", async () => {
     serveHome(homeView({ kind: "ready", streak: COUNT }));
     await renderApp("/");
     expect(screen.getByRole("link", { name: ja.Home.records })).toHaveAttribute(
@@ -140,9 +140,8 @@ describe("the home screen, W3a: today's portion not started", () => {
     expect(settings).toHaveAttribute("href", "/settings");
     fireEvent.click(settings);
     await settle();
-    expect(
-      screen.getByRole("heading", { name: ja.NotFound.title }),
-    ).toBeInTheDocument();
+    expect(where()).toBe("/settings");
+    expect(screen.queryByRole("heading", { name: ja.NotFound.title })).toBeNull();
   });
 
   it("names the document from the catalog", async () => {

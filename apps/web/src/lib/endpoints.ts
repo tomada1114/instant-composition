@@ -4,10 +4,18 @@ import type {
   FinishRoundResponses,
   GetHomeData,
   GetHomeResponses,
+  GetRecordsData,
+  GetRecordsResponses,
+  GetRoundSummaryData,
+  GetRoundSummaryResponses,
+  GetSettingsData,
+  GetSettingsResponses,
   HomeView,
   RecordAnswersData,
+  RecordsView,
   RoundPayload,
   RoundSummary,
+  SettingsPageView,
   SettingsPatch,
   SettingsView,
   StartRoundData,
@@ -105,6 +113,29 @@ async function call<TResponses extends { 200: unknown }>(
 
 export function getHome(): Promise<Result<HomeView, ApiError>> {
   return call<GetHomeResponses>("GET", { url: "/v1/home" } satisfies GetHomeData);
+}
+
+/** The settings as saved (the defaults before any), the topics to choose from, and the difficulty. */
+export function getSettings(): Promise<Result<SettingsPageView, ApiError>> {
+  return call<GetSettingsResponses>("GET", {
+    url: "/v1/settings",
+  } satisfies GetSettingsData);
+}
+
+export function getRecords(): Promise<Result<RecordsView, ApiError>> {
+  return call<GetRecordsResponses>("GET", {
+    url: "/v1/records",
+  } satisfies GetRecordsData);
+}
+
+/** The summary the round `roundId` kept when it finished; `ERR_ROUND_NOT_FOUND` for one not finished. */
+export function getRoundSummary(
+  roundId: string,
+): Promise<Result<RoundSummary, ApiError>> {
+  return call<GetRoundSummaryResponses>("GET", {
+    url: "/v1/rounds/{roundId}/summary",
+    path: { roundId },
+  } satisfies GetRoundSummaryData);
 }
 
 export function updateSettings(

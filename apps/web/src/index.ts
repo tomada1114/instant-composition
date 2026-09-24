@@ -48,6 +48,9 @@ export {
   API_ROOT,
   finishRound,
   getHome,
+  getRecords,
+  getRoundSummary,
+  getSettings,
   operationUrl,
   recordAnswers,
   startRound,
@@ -69,12 +72,16 @@ export type {
   HomeView,
   Pass,
   ReachView,
+  RecordsView,
   RoundKind,
   RoundPayload,
   RoundSummary,
+  Settings,
+  SettingsPageView,
   SettingsPatch,
   SettingsView,
   StreakView,
+  TopicInfo,
 } from "./openapi";
 export { countUpPlan, valueAt, type CountUp } from "./summary/count-up";
 export { SummaryScreen } from "./summary/summary-screen";

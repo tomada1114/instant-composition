@@ -15,7 +15,13 @@ const onEnd = vi.fn();
 function renderSummary(summary: RoundSummary): void {
   render(
     <CatalogProvider>
-      <SummaryScreen summary={summary} dailySize={10} onNext={onNext} onEnd={onEnd} />
+      <SummaryScreen
+        summary={summary}
+        mode="live"
+        dailySize={10}
+        onNext={onNext}
+        onEnd={onEnd}
+      />
     </CatalogProvider>,
   );
 }

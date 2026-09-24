@@ -47,6 +47,7 @@ export function DrillDone({
   return (
     <SummaryScreen
       summary={finish.summary}
+      mode="live"
       dailySize={dailySize}
       onNext={onNext}
       onEnd={onEnd}
