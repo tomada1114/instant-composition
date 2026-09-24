@@ -24,6 +24,7 @@ describe("the request log", () => {
         durationMs: 0,
         learnerId: "local-learner",
         fault: null,
+        reason: null,
       },
       {
         requestId: "req-2",
@@ -33,6 +34,7 @@ describe("the request log", () => {
         durationMs: 0,
         learnerId: "local-learner",
         fault: null,
+        reason: null,
       },
     ]);
   });
@@ -81,9 +83,36 @@ describe("the request log", () => {
         durationMs: 0,
         learnerId: null,
         fault: "RangeError",
+        reason: null,
       },
     ]);
   });
+
+  it.each(["missing", "unreadable", "malformed"] as const)(
+    "logs why the catalog could not be read (%s), and answers with the code alone",
+    async (reason) => {
+      const unreadable: Catalog = {
+        snapshot: () =>
+          Promise.resolve({
+            ok: false,
+            error: { code: "ERR_CONTENT_UNREADABLE", reason },
+          }),
+      };
+      const api = makeApi({ catalog: unreadable });
+      const response = await api.call("POST", "/v1/rounds", {
+        roundId: "p1",
+        kind: "placement",
+      });
+      const body = await response.text();
+
+      expect(response.status).toBe(503);
+      expect(body).toContain('"code":"ERR_CONTENT_UNREADABLE"');
+      expect(body).not.toContain(reason);
+      expect(api.lines).toMatchObject([
+        { outcome: "ERR_CONTENT_UNREADABLE", fault: null, reason },
+      ]);
+    },
+  );
 
   it("carries no body, card text or answer of the request it records", async () => {
     const api = makeApi();
@@ -113,10 +142,11 @@ describe("the request log", () => {
       durationMs: 12,
       learnerId: "local-learner",
       fault: null,
+      reason: null,
     };
     jsonLines((text) => written.push(text))(line);
     expect(written).toStrictEqual([
-      '{"requestId":"req-1","operation":"getHome","outcome":"ok","status":200,"durationMs":12,"learnerId":"local-learner","fault":null}\n',
+      '{"requestId":"req-1","operation":"getHome","outcome":"ok","status":200,"durationMs":12,"learnerId":"local-learner","fault":null,"reason":null}\n',
     ]);
   });
 });

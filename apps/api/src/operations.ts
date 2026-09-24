@@ -10,6 +10,7 @@ import {
   updateSettings,
   type ApplicationDeps,
   type ApplicationError,
+  type CatalogUnreadable,
   type RequestContext,
 } from "@instant-composition/application";
 import {
@@ -26,7 +27,13 @@ export interface BodySchema<T> {
 }
 
 /** What a handler answers: the value to send, or the contract code to refuse with. */
-export type Outcome = Result<unknown, { readonly code: ErrorCode }>;
+export type Outcome = Result<
+  unknown,
+  {
+    readonly code: ErrorCode;
+    readonly reason?: CatalogUnreadable["reason"];
+  }
+>;
 
 /** What an operation is handed once the request is authenticated and its path checked. */
 export interface OperationInput {
