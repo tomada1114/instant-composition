@@ -80,10 +80,6 @@
     "description": "お探しのページは存在しません。",
     "homeLink": "ホームページに戻る"
   },
-  "LocaleSwitcher": {
-    "label": "言語",
-    "ja": "日本語"
-  },
   "Drill": {
     "intro": {
       "eyebrow": "Placement",

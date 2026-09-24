@@ -300,7 +300,7 @@ type DottedKeys<TCatalog> = {
 type MessageKey = DottedKeys<Messages>;
 
 /** The reference catalog: the one every other locale is a translation of. */
-const referenceKeys = dottedKeys(catalogs.get("ja")).sort();
+const referenceKeys = dottedKeys(catalogs.get(LOCALE)).sort();
 
 /**
  * Every key the catalogs are expected to hold, written out by hand.
@@ -376,8 +376,6 @@ const MESSAGE_KEYS = [
   "NotFound.title",
   "NotFound.description",
   "NotFound.homeLink",
-  "LocaleSwitcher.label",
-  "LocaleSwitcher.ja",
   "Drill.intro.eyebrow",
   "Drill.intro.titleFirst",
   "Drill.intro.titleAgain",
@@ -528,9 +526,9 @@ describe("the message catalogs", () => {
     expect(blank).toStrictEqual([]);
   });
 
-  it.each([...LOCALES])("asks %s for the same ICU arguments as ja", (locale) => {
+  it.each([...LOCALES])(`asks %s for the same ICU arguments as ${LOCALE}`, (locale) => {
     const mismatched = referenceKeys.filter((key) => {
-      const reference = valueAt(catalogs.get("ja"), key);
+      const reference = valueAt(catalogs.get(LOCALE), key);
       const translated = valueAt(catalogs.get(locale), key);
       if (typeof reference !== "string" || typeof translated !== "string") {
         return true;
