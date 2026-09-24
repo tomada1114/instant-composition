@@ -1,12 +1,14 @@
-# The workspace: the Next.js application at the root, and the packages ADR-0002
-# lays out under `packages/`. `apps/` and `infra/` join this list with their
-# first package, not before.
+# The workspace: the Next.js application at the root, the packages ADR-0002
+# lays out under `packages/`, and the deployable apps under `apps/` (the API
+# and the web client). `infra/` joins this list with its first package, not
+# before.
 #
 # The rest of this file is the pnpm supply-chain policy, declared in one
 # machine-readable place, reviewable in a diff, and applied to every install
 # (local, CI, and release) without relying on per-developer configuration.
 # It covers every package in the workspace, not only the root.
 packages:
+  - "apps/*"
   - "packages/*"
 
 # Reproduce the pnpm version resolved in pnpm-lock.yaml when the local pnpm

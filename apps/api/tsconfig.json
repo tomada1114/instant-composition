@@ -1,0 +1,10 @@
+{
+  // The HTTP entry point: it serves the API on Node, so it compiles against
+  // Node's types like packages/adapters, and against no DOM.
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023"],
+    "types": ["node"]
+  },
+  "include": ["src"]
+}
