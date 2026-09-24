@@ -4,6 +4,9 @@ import {
   API_ROOT,
   finishRound,
   getHome,
+  getRecords,
+  getRoundSummary,
+  getSettings,
   operationUrl,
   recordAnswers,
   requestFinish,
@@ -118,6 +121,32 @@ describe("getHome", () => {
     expect(await getHome()).toStrictEqual({
       ok: false,
       error: { code: "ERR_NETWORK" },
+    });
+  });
+});
+
+describe("the reads each screen makes", () => {
+  it.each([
+    ["getSettings", getSettings, "/api/v1/settings"],
+    ["getRecords", getRecords, "/api/v1/records"],
+    [
+      "getRoundSummary",
+      () => getRoundSummary("round 1"),
+      "/api/v1/rounds/round%201/summary",
+    ],
+  ] as const)("%s gets %s with no body and answers its view", async (_, read, url) => {
+    const calls = stubFetch(() => Promise.resolve(Response.json({ read: true })));
+    expect(await read()).toStrictEqual({ ok: true, value: { read: true } });
+    expect(calls).toStrictEqual([
+      { url, method: "GET", body: undefined, contentType: null },
+    ]);
+  });
+
+  it("passes on the round a summary read cannot find", async () => {
+    stubFetch(() => Promise.resolve(envelope(404, "ERR_ROUND_NOT_FOUND")));
+    expect(await getRoundSummary("r")).toStrictEqual({
+      ok: false,
+      error: { code: "ERR_ROUND_NOT_FOUND" },
     });
   });
 });

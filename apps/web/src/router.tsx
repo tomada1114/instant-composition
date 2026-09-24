@@ -9,8 +9,12 @@ import type { ReactElement } from "react";
 import { DrillPage } from "./drill/drill-page";
 import { roundKindFrom } from "./drill/rounds";
 import { HomePage } from "./home/home-page";
+import { WelcomePage } from "./home/welcome-page";
 import { NotFound } from "./not-found";
 import type { RoundKind } from "./openapi";
+import { RecordsPage } from "./records/records-page";
+import { SettingsPage } from "./settings/settings-page";
+import { RecapPage } from "./summary/recap-page";
 
 /**
  * The route tree, written as code rather than generated from files (ADR-0008):
@@ -41,22 +45,37 @@ const drillRoute = createRoute({
   },
 });
 
-/**
- * Screens the home and drill screens link to whose port is #43. The routes
- * exist so those links are typed and land somewhere; until then each renders
- * the not-found page.
- */
-function pendingRoute<TPath extends string>(path: TPath) {
-  return createRoute({ getParentRoute: () => rootRoute, path, component: NotFound });
-}
+const recordsRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "records",
+  component: RecordsPage,
+});
+
+const recapRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "recap",
+  component: RecapPage,
+});
+
+const settingsRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "settings",
+  component: SettingsPage,
+});
+
+const welcomeRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "welcome",
+  component: WelcomePage,
+});
 
 const routeTree = rootRoute.addChildren([
   homeRoute,
   drillRoute,
-  pendingRoute("records"),
-  pendingRoute("recap"),
-  pendingRoute("settings"),
-  pendingRoute("welcome"),
+  recordsRoute,
+  recapRoute,
+  settingsRoute,
+  welcomeRoute,
 ]);
 
 const buildRouter = () => createRouter({ routeTree });

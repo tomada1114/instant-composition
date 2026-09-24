@@ -12,6 +12,11 @@ describe("the web client's tuning", () => {
     expect(TUNING.fastRatio).toBe(DOMAIN_TUNING.fastRatio);
   });
 
+  it("offers the domain's daily sizes and keeps its most focus subtopics", () => {
+    expect(TUNING.dailySizes).toStrictEqual(DOMAIN_TUNING.dailySizes);
+    expect(TUNING.maxFocus).toBe(DOMAIN_TUNING.maxFocus);
+  });
+
   it("calls a flip fast up to half the limit, and not past it", () => {
     expect(isFast(5_000, 10_000)).toBe(true);
     expect(isFast(5_001, 10_000)).toBe(false);
