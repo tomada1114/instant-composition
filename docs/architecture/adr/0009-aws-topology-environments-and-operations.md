@@ -1,7 +1,8 @@
 # ADR-0009: AWS topology, environments and operations
 
 - Status: Accepted (2026-09-23), including the account layout, its timing, and CDK;
-  amended 2026-09-24 (`dev` table protection waits for the Paid plan)
+  amended 2026-09-24 (`dev` table protection waits for the Paid plan; resources added as
+  each phase first needs them)
 - Date: 2026-09-23
 - Deciders: the owner
 
@@ -296,8 +297,9 @@ Prices are as of 2026-09-23. A region appears only where the source states one.
 - Upgrade the account to the Paid plan before the Free plan's six months end, or earlier
   when a service `dev` needs is not on the Free plan. Leaving it on the Free plan past
   that point closes the account.
-- Write the `foundation` stack first. Local development needs its Cognito user pool
-  before anything is hosted.
+- Write the `foundation` stack first, and add to it what each phase first needs: the
+  learner table in Phase 2, the Cognito user pool in Phase 3, where local development
+  needs it before anything is hosted.
 - Measure the Tokyo unit prices in the Pricing Calculator. Replace every Unverified row
   above.
 
@@ -310,9 +312,9 @@ Prices are as of 2026-09-23. A region appears only where the source states one.
 - Unverified: Cognito's built-in email limits.
 - Whether option 3 (Function URL plus an origin secret) is worth its rotation burden
   once real traffic prices API Gateway.
-- Unverified: whether a Free-plan account can use every service `dev` needs (Cognito, a
-  CloudFront flat-rate plan, API Gateway, Lambda, DynamoDB). Check when the first stack
-  is written.
+- Unverified: whether the Free plan allows every feature `dev` needs. Every service is
+  on its list ([references](../references.md#operations-and-cost), checked 2026-09-24);
+  point-in-time recovery and deletion protection wait for the Paid plan (Stages).
 - The `prod` point-in-time recovery period, weighed against how long a deleted learner's
   data may stay restorable.
 - Whether `/api/*` or a separate API hostname is better for native apps. A separate

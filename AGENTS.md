@@ -349,6 +349,11 @@ names its own boundary with its neighbours.
   `backfilling-card-fields` is the owner's authorization to **commit** on a `cards/*`
   branch, and only there. It never authorizes a push, a pull request, or a merge, and
   never `--no-verify`.
+- In the `dev` AWS account, creating and deploying the resources an ADR or an issue
+  already plans needs no further ask; the owner prefers speed there. A resource with a
+  fixed monthly cost of about $10 or more (an RDS instance, a NAT gateway, a load
+  balancer) needs the owner's OK before the change that adds it, and `prod`, the
+  account's plan, Organizations and IAM access keys always stay the owner's.
 - Never take a learner id from a request body, a path, a query string, or a
   language-model tool argument, and never read or write learner data through a store
   that is not bound to the authenticated learner. `isolating-learner-data` holds the
