@@ -4,7 +4,7 @@ import { Hono } from "hono";
 
 import type { Authenticator } from "./authenticator";
 import { failure, readJsonBody } from "./http";
-import type { LogSink, RequestOutcome } from "./log";
+import type { LogLine, LogSink, RequestOutcome } from "./log";
 import { OPERATIONS, type Operation } from "./operations";
 import { bindRoutes, routerPath } from "./routes";
 
@@ -39,6 +39,7 @@ export interface ApiVariables {
   outcome: RequestOutcome;
   learnerId: string | null;
   fault: string | null;
+  reason: LogLine["reason"];
 }
 
 export type ApiApp = Hono<{ Variables: ApiVariables }>;
@@ -47,13 +48,15 @@ interface Answered {
   readonly response: Response;
   readonly outcome: RequestOutcome;
   readonly learnerId: string | null;
+  readonly reason: LogLine["reason"];
 }
 
 function refused(
   code: Parameters<typeof failure>[0],
   learnerId: string | null,
+  reason: LogLine["reason"] = null,
 ): Answered {
-  return { response: failure(code), outcome: code, learnerId };
+  return { response: failure(code), outcome: code, learnerId, reason };
 }
 
 /** Authenticate, check the path and the body, run the operation, answer. */
@@ -94,13 +97,13 @@ async function answer(
     body,
   });
   if (!outcome.ok) {
-    return refused(outcome.error.code, learnerId);
+    return refused(outcome.error.code, learnerId, outcome.error.reason ?? null);
   }
   const response =
     route.success.status === 204
       ? new Response(null, { status: 204 })
       : Response.json(outcome.value, { status: route.success.status });
-  return { response, outcome: "ok", learnerId };
+  return { response, outcome: "ok", learnerId, reason: null };
 }
 
 /**
@@ -130,6 +133,7 @@ export function createApp(
     c.set("outcome", "unmatched");
     c.set("learnerId", null);
     c.set("fault", null);
+    c.set("reason", null);
     await next();
     deps.log({
       requestId: c.var.requestId,
@@ -139,6 +143,7 @@ export function createApp(
       durationMs: deps.now() - started,
       learnerId: c.var.learnerId,
       fault: c.var.fault,
+      reason: c.var.reason,
     });
   });
 
@@ -158,6 +163,7 @@ export function createApp(
         );
         c.set("outcome", answered.outcome);
         c.set("learnerId", answered.learnerId);
+        c.set("reason", answered.reason);
         return answered.response;
       },
     );

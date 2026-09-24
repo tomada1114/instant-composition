@@ -1,3 +1,4 @@
+import type { CatalogUnreadable } from "@instant-composition/application";
 import type { ErrorCode } from "@instant-composition/contracts";
 
 /**
@@ -28,6 +29,8 @@ export interface LogLine {
   readonly learnerId: string | null;
   /** The thrown error's class name when `outcome` is `failed`; never its message. */
   readonly fault: string | null;
+  /** Why the catalog could not be read when `outcome` is `ERR_CONTENT_UNREADABLE`; never the file's contents. */
+  readonly reason: CatalogUnreadable["reason"] | null;
 }
 
 /** Where log lines go: stdout on a local run, a recording array in a test. */
