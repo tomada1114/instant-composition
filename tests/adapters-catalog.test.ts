@@ -1,4 +1,4 @@
-import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 
@@ -60,6 +60,15 @@ describe("snapshotCatalog", () => {
 
   it("answers ERR_CONTENT_UNREADABLE with reason missing for a missing file", async () => {
     expect(await snapshotCatalog(file).snapshot()).toStrictEqual(MISSING);
+  });
+
+  it("answers ERR_CONTENT_UNREADABLE with reason unreadable for a path that cannot be read", async () => {
+    mkdirSync(file, { recursive: true });
+
+    expect(await snapshotCatalog(file).snapshot()).toStrictEqual({
+      ok: false,
+      error: { code: "ERR_CONTENT_UNREADABLE", reason: "unreadable" },
+    });
   });
 
   it("answers ERR_CONTENT_UNREADABLE with reason malformed for a file that is not JSON", async () => {
