@@ -1,8 +1,12 @@
 import { TUNING } from "./tuning";
 
-/** Words in a model answer, split on whitespace. */
+/**
+ * Words in a model answer: whitespace-separated tokens carrying a letter or
+ * digit, so a lone "—" or "&" is none. scripts/cards/text.mjs holds the same
+ * rule for the card linter; tests/cards-word-count.test.ts keeps them equal.
+ */
 export function countWords(text: string): number {
-  return text.split(/\s+/u).filter((word) => word !== "").length;
+  return text.split(/\s+/u).filter((token) => /[\p{L}\p{N}]/u.test(token)).length;
 }
 
 export function limitSecondsForWords(words: number): number {

@@ -29,6 +29,7 @@ describe("the time limit", () => {
     expect(countWords("Can we push the meeting to next week?")).toBe(8);
     expect(countWords("  I'll   send it.  ")).toBe(3);
     expect(countWords("")).toBe(0);
+    expect(countWords("Wait — send it.")).toBe(3);
   });
 });
 
