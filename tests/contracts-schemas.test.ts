@@ -2,8 +2,8 @@ import {
   finishRound,
   history,
   home,
-  recap,
   recordAnswers,
+  roundSummary,
   records,
   settingsPage,
   startRound,
@@ -279,7 +279,11 @@ describe("what the application answers parses under the contract", () => {
         finishRound(h.deps, h.context(later), { roundId: today.id, answers }),
       ),
     );
-    note("recap", roundSummarySchema, await value(recap(h.deps, h.context(later))));
+    note(
+      "roundSummary",
+      roundSummarySchema,
+      await value(roundSummary(h.deps, h.context(later), today.id)),
+    );
     note("home done", homeViewSchema, await value(home(h.deps, h.context(later))));
     note("records", recordsViewSchema, await value(records(h.deps, h.context(later))));
     note("history", historySchema, await value(history(h.deps, h.context(later))));

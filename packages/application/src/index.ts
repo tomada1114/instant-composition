@@ -39,7 +39,7 @@ export {
   SYSTEM_OPERATIONS,
   type OperationKind,
 } from "./operations";
-export { history, recap, roundSummary, settingsPage } from "./queries";
+export { history, roundSummary, settingsPage } from "./queries";
 export type {
   BreakdownTopic,
   History,
