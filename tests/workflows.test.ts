@@ -3059,6 +3059,20 @@ describe("workflow regression checks for repository automation", () => {
     expect((testJob.match(/run: pnpm run test:coverage/g) ?? []).length).toBe(1);
   });
 
+  it("runs DynamoDB local from the same image, pinned by tag and digest, in CI and on a checkout", () => {
+    // A tag alone can be re-pushed, and a digest alone says nothing a reader
+    // can check against a release. Both, and the same both in the two places
+    // that start the container, so CI tests against what `pnpm db:up` runs.
+    const pinned =
+      /^\s*image:\s*(amazon\/dynamodb-local:\d+\.\d+\.\d+@sha256:[0-9a-f]{64})\s*$/m;
+    const compose = readFileSync(path.join(repoRoot, "compose.yaml"), "utf8");
+    const inCompose = pinned.exec(compose)?.[1];
+    const inCi = pinned.exec(workflowSource("ci.yml"))?.[1];
+
+    expect(inCompose).toMatch(/^amazon\/dynamodb-local:/);
+    expect(inCi).toBe(inCompose);
+  });
+
   it("keeps the dependency-review severity gate", () => {
     // Without `fail-on-severity` the action reports advisories and passes, so
     // the workflow's presence in .github/workflows/ would prove nothing.

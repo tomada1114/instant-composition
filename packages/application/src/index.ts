@@ -34,11 +34,6 @@ export { type ApplicationDeps } from "./execute";
 export { finishRound } from "./finish-round";
 export { home } from "./home";
 export {
-  createMemoryStores,
-  MAX_COMMIT_ITEMS,
-  type MemoryStores,
-} from "./memory-store";
-export {
   authorize,
   LEARNER_OPERATIONS,
   SYSTEM_OPERATIONS,

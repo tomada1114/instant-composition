@@ -1,22 +1,15 @@
-import { err, ok, type ReviewEntry } from "@instant-composition/domain";
-
-import type { LearnerId } from "./context";
 import {
   keyOf,
-  type Commit,
   type Entry,
   type Key,
+  type LearnerId,
   type LearnerStore,
   type LearnerStores,
   type Stored,
-} from "./store";
+} from "@instant-composition/application";
+import { err, ok, type ReviewEntry } from "@instant-composition/domain";
 
-/**
- * The most items one commit may name, puts, updates and expectations together:
- * DynamoDB's TransactWriteItems limit, held here too so a command that would
- * outgrow it fails against the fake first.
- */
-export const MAX_COMMIT_ITEMS = 100;
+import { checkShape, sortKeyOf } from "./keys";
 
 interface Slot {
   readonly entry: Entry;
@@ -24,24 +17,6 @@ interface Slot {
 }
 
 type ValueOf<T extends Entry["type"]> = Extract<Entry, { type: T }>["value"];
-
-/** Unambiguous whatever an id contains, and blind to property order. */
-function encode(key: Key): string {
-  switch (key.type) {
-    case "settings":
-    case "stats":
-      return JSON.stringify([key.type]);
-    case "round":
-      return JSON.stringify([key.type, key.id]);
-    case "review":
-      return JSON.stringify([key.type, key.sessionId, key.id]);
-    case "portion":
-    case "day":
-      return JSON.stringify([key.type, key.day]);
-    case "item":
-      return JSON.stringify([key.type, key.item.kind, key.item.id]);
-  }
-}
 
 /** A serialized copy, as a real store hands back: no caller shares a stored object. */
 function copy<T>(value: T): T {
@@ -52,28 +27,11 @@ function byTime(a: ReviewEntry, b: ReviewEntry): number {
   return a.answeredAt - b.answeredAt || a.id.localeCompare(b.id);
 }
 
-function checkShape(commit: Commit): void {
-  const keys = [
-    ...commit.puts.map((entry) => encode(keyOf(entry))),
-    ...commit.updates.map(({ entry }) => encode(keyOf(entry))),
-    ...commit.expect.map(({ key }) => encode(key)),
-  ];
-  if (keys.length > MAX_COMMIT_ITEMS) {
-    throw new RangeError(`A commit names at most ${String(MAX_COMMIT_ITEMS)} items.`);
-  }
-  if (new Set(keys).size !== keys.length) {
-    throw new RangeError("A commit names each key once.");
-  }
-  if (commit.updates.some(({ entry }) => entry.type === "review")) {
-    throw new RangeError("The review log is append-only.");
-  }
-}
-
 function memoryStore(slots: Map<string, Slot>, counted: () => void): LearnerStore {
   function read<T extends Entry["type"]>(
     key: Key & { readonly type: T },
   ): Stored<ValueOf<T>> | undefined {
-    const slot = slots.get(encode(key));
+    const slot = slots.get(sortKeyOf(key));
     return slot === undefined
       ? undefined
       : { value: copy(slot.entry.value) as ValueOf<T>, version: slot.version };
@@ -89,7 +47,7 @@ function memoryStore(slots: Map<string, Slot>, counted: () => void): LearnerStor
   }
 
   function holds(key: Key, version: number | null): boolean {
-    return (slots.get(encode(key))?.version ?? null) === version;
+    return (slots.get(sortKeyOf(key))?.version ?? null) === version;
   }
 
   function reviews(sessionId?: string): readonly ReviewEntry[] {
@@ -150,7 +108,7 @@ function memoryStore(slots: Map<string, Slot>, counted: () => void): LearnerStor
         return Promise.resolve(err({ code: "ERR_CONFLICT" }));
       }
       for (const { entry, version } of writes) {
-        slots.set(encode(keyOf(entry)), {
+        slots.set(sortKeyOf(keyOf(entry)), {
           entry: copy(entry),
           version: (version ?? 0) + 1,
         });

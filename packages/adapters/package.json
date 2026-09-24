@@ -1,0 +1,19 @@
+{
+  "name": "@instant-composition/adapters",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.1134.0",
+    "@aws-sdk/lib-dynamodb": "^3.1134.0",
+    "@instant-composition/application": "workspace:*",
+    "@instant-composition/domain": "workspace:*",
+    "zod": "^4.5.4"
+  }
+}
