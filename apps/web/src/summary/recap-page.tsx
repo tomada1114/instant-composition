@@ -2,9 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 import { Navigate, useNavigate } from "@tanstack/react-router";
 import type { ReactElement } from "react";
 
-import { lastFinishedRound } from "../lib/last-round";
 import { PageLoadFailed, PageLoading } from "../lib/page-shell";
-import { errorCodeOf, readRoundSummary } from "../lib/queries";
+import { errorCodeOf, HOME_QUERY, readRoundSummary } from "../lib/queries";
 import type { RoundSummary } from "../openapi";
 import { SummaryScreen } from "./summary-screen";
 
@@ -34,18 +33,31 @@ export function RecapScreen({
 const NOTHING_TO_READ: readonly string[] = ["ERR_ROUND_NOT_FOUND", "ERR_BAD_REQUEST"];
 
 /**
- * The `/recap` route: the summary of the last round this client finished.
- * With none remembered, or one the API no longer has, it is the start
- * screen's.
+ * The `/recap` route: the summary of today's last finished round, as the
+ * home view names it, whichever browser finished it. A cached home view is
+ * not acted on — it may predate the round — so nothing is read until a home
+ * read made for this visit answers. With no round finished today, or one the
+ * API no longer has, it is the start screen's.
  */
 export function RecapPage(): ReactElement {
-  const roundId = lastFinishedRound();
+  const home = useQuery({ ...HOME_QUERY, refetchOnMount: "always" });
+  const roundId = home.isFetchedAfterMount ? home.data?.todayLastRoundId : undefined;
   const summary = useQuery({
     queryKey: ["round-summary", roundId],
     queryFn: () => readRoundSummary(roundId ?? ""),
     enabled: roundId !== undefined,
   });
 
+  if (!home.isFetchedAfterMount) return <PageLoading />;
+  if (home.isError) {
+    return (
+      <PageLoadFailed
+        onReload={() => {
+          void home.refetch();
+        }}
+      />
+    );
+  }
   if (roundId === undefined) return <Navigate to="/" replace />;
   if (summary.isPending) return <PageLoading />;
   if (summary.isError) {

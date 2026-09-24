@@ -63,6 +63,8 @@ export const homeViewSchema = z.object({
   preview: homePreviewSchema.exactOptional(),
   todayRounds: countSchema,
   todayCards: countSchema,
+  /** Today's last finished round, for the recap to read back; absent before any. */
+  todayLastRoundId: z.string().exactOptional(),
   dailySize: countSchema,
   sound: z.boolean(),
   contentError: z.boolean(),

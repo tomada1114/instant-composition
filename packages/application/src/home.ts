@@ -137,6 +137,7 @@ export async function home(
         : undefined,
     todayRounds: tally?.roundsFinished ?? 0,
     todayCards: tally?.firstPass ?? 0,
+    todayLastRoundId: tally?.lastFinishedRound ?? undefined,
     dailySize: practice.dailySize,
     sound: settings?.value.sound ?? true,
     contentError: unreadable,

@@ -20,6 +20,8 @@ export interface HomeView {
   readonly preview: HomePreview | undefined;
   readonly todayRounds: number;
   readonly todayCards: number;
+  /** Today's last finished round, the one the recap reads back; `undefined` before any. */
+  readonly todayLastRoundId: string | undefined;
   /** The size an extra round is dealt at: "one more N". */
   readonly dailySize: number;
   readonly sound: boolean;
