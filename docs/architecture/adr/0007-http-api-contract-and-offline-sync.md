@@ -1,6 +1,8 @@
 # ADR-0007: HTTP API contract and offline answer sync
 
-- Status: Accepted (2026-09-23)
+- Status: Accepted (2026-09-23); the OpenAPI generation line under "Framework" and the
+  open question on Zod v4 are superseded by
+  [ADR-0013](0013-openapi-generated-from-zod-json-schema.md)
 - Date: 2026-09-23
 - Deciders: the owner
 

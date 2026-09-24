@@ -499,6 +499,20 @@ listed under [Unverified](#unverified) instead of being stated as fact.
   example. Checked 2026-09-23.
 - [hono-openapi](https://github.com/rhinobase/hono-openapi) — OpenAPI documents
   generated from route validators and `describeRoute`. Checked 2026-09-23.
+- [Hono, Zod OpenAPI](https://hono.dev/examples/zod-openapi) — routes declared with
+  `createRoute()` and registered with `app.openapi()`, with `z` imported from
+  `@hono/zod-openapi`. Checked 2026-09-23.
+- [Zod, JSON Schema](https://zod.dev/json-schema) — `z.toJSONSchema()` introduced in Zod
+  4.0; Draft 2020-12 as the default target, with `draft-04`, `draft-07` and
+  `openapi-3.0` the others; a registry converted in one pass with `$ref`s shaped by the
+  `uri` option; `additionalProperties` left unset in `io: "input"` mode. Checked
+  2026-09-23.
+- [OpenAPI Specification 3.1.1](https://spec.openapis.org/oas/v3.1.1.html) — the Schema
+  Object is JSON Schema Draft 2020-12, and a relative server URL resolves the paths
+  under it. Checked 2026-09-23.
+- [Vitest, Snapshot](https://vitest.dev/guide/snapshot) — `toMatchFileSnapshot`, and no
+  snapshot written when `CI` is set, so a mismatched or missing one fails the run.
+  Checked 2026-09-23.
 
 ## Unverified
 
@@ -527,7 +541,8 @@ on it.
     offered.
 - **API client generators:** Apple's `swift-openapi-generator` for the Swift client, and
   OpenAPI Generator for the Kotlin client.
-- **Hono and Zod v4:** whether hono-openapi or `@hono/zod-openapi` supports Zod v4.
+- **OpenAPI `discriminator`:** whether those generators need one on a `oneOf` union to
+  produce usable types ([ADR-0013](adr/0013-openapi-generated-from-zod-json-schema.md)).
 - **SPA libraries:** TanStack Router, TanStack Query and next-intl's framework-agnostic
   core.
 - **AgentCore:**

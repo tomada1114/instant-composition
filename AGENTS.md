@@ -83,6 +83,7 @@ pnpm cards:dupes   # near-duplicate candidates within a subtopic and against tom
 pnpm cards:stats   # totals, review status, coverage by cell, grammar usage
 pnpm cards:new-id  # print fresh card ids
 pnpm catalog:build # write content/'s snapshot per language pair to dist/catalog/<target>/<l1>.json
+pnpm contracts:openapi # rewrite packages/contracts/openapi.json from the schemas
 ```
 
 Reach for `pnpm clean`/`pnpm clean:deep` rather than an `rm -rf`: `scripts/clean.mjs`
@@ -123,6 +124,7 @@ on every edit is slow enough that it stops being run at all.
 | `src/app/globals.css` or `postcss.config.mjs`          | `pnpm build`, then `pnpm test:smoke`                 |
 | An import that crosses a zone boundary                 | `pnpm exec vitest run tests/boundaries.test.ts`      |
 | A package under `packages/`                            | `pnpm typecheck`, then `tests/boundaries.test.ts`    |
+| A schema or route under `packages/contracts/`          | `pnpm exec vitest run tests/contracts-*.test.ts`     |
 | A test                                                 | `pnpm exec vitest run tests/<name>.test.ts`          |
 | A script under `scripts/`                              | `pnpm exec vitest run tests/<script>.test.ts`        |
 | A script under `scripts/cards/`                        | `pnpm exec vitest run tests/cards-*.test.ts`         |
@@ -144,7 +146,8 @@ src/
 └── proxy.ts    # Next.js's request proxy: locale detection ahead of every page request
 packages/
 ├── domain/      # @instant-composition/domain: the pure rules, importing nothing
-└── application/ # @instant-composition/application: commands, queries and ports
+├── application/ # @instant-composition/application: commands, queries and ports
+└── contracts/   # @instant-composition/contracts: the HTTP API's zod schemas and OpenAPI
 messages/       # one JSON catalog per locale; ja.json, the only one, sets the shape
 content/        # the cards and the lists and guides that define them (see Content)
 scripts/        # repository automation, authored as .mjs, never shipped
@@ -175,18 +178,22 @@ pure `decide` functions behind each command. `packages/application` holds the re
 context, the authorization policy, the practice commands as load, decide, commit, the
 queries each screen reads from projections alone, and the learner-bound store port with
 its in-memory adapter, which runs the isolation contract suite in
-`tests/learner-store-contract.ts`. `src/` is still where the running application lives,
-and it keeps its own `src/core/` until Phase 1 retires it. `apps/` and `infra/` join the
-workspace with their first package.
+`tests/learner-store-contract.ts`. `packages/contracts` holds the `/v1` request and
+response schemas and the OpenAPI 3.1 document built from them, committed as
+`packages/contracts/openapi.json`; `tests/contracts-openapi.test.ts` fails when the file
+differs from what the schemas generate, and `pnpm contracts:openapi` rewrites it
+(ADR-0013). `src/` is still where the running application lives, and it keeps its own
+`src/core/` until Phase 1 retires it. `apps/` and `infra/` join the workspace with their
+first package.
 
-- **The edges.** `application` → `domain`, and `domain` → nothing — no workspace
-  package, no npm package, no Node builtin. A package reaches another only by its name,
-  `@instant-composition/<dir>`, and only when its own `package.json` declares it. The
-  same holds from outside `packages/`: `src/`, `tests/` and `scripts/` never import a
-  package by a relative path, which would walk past its `exports`. `eslint.config.mjs`'s
-  `boundaries/packages/*` blocks and `tests/boundaries.test.ts` hold the same table, the
-  test also against each manifest; a package added under `packages/` fails the suite
-  until it is given a row.
+- **The edges.** `application` → `domain`, `contracts` → `zod` alone, and `domain` →
+  nothing — no workspace package, no npm package, no Node builtin. A package reaches
+  another only by its name, `@instant-composition/<dir>`, and only when its own
+  `package.json` declares it. The same holds from outside `packages/`: `src/`, `tests/`
+  and `scripts/` never import a package by a relative path, which would walk past its
+  `exports`. `eslint.config.mjs`'s `boundaries/packages/*` blocks and
+  `tests/boundaries.test.ts` hold the same table, the test also against each manifest; a
+  package added under `packages/` fails the suite until it is given a row.
 - **Source, not builds.** A package's `exports` points at its `src/index.ts`, and
   whatever consumes it compiles that source; nothing is emitted to a `dist/`. Each
   package has its own `tsconfig.json` over the shared `tsconfig.base.json`, with no DOM
