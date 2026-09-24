@@ -1,6 +1,8 @@
 # ADR-0009: AWS topology, environments and operations
 
-- Status: Accepted (2026-09-23), including the account layout, its timing, and CDK
+- Status: Accepted (2026-09-23), including the account layout, its timing, and CDK; the
+  `dev` DynamoDB protection settings are superseded by
+  [ADR-0014](0014-defer-dev-table-protection-on-the-free-plan.md)
 - Date: 2026-09-23
 - Deciders: the owner
 

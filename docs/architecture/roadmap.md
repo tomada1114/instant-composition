@@ -178,15 +178,15 @@ observed:
   - Every service this phase uses is on the Free plan's service list
     ([references](references.md#operations-and-cost)), so the phase starts on the Free
     plan.
-  - Whether the Free plan allows DynamoDB point-in-time recovery and deletion protection
-    is unverified. If the first deploy shows it does not, the table ships without that
-    feature, which is turned on after the upgrade; the upgrade is not brought forward
-    for it.
+  - The phase stays on the Free plan as far as the work allows; nothing in it brings the
+    upgrade forward.
   - The owner watches the plan's end date and the credit balance and upgrades when
     either comes near (#49); an agent does not track them.
 
 - `infra/`: a CDK app with a stage setting. The `foundation` stack in `dev` holds:
-  - the DynamoDB table, with deletion protection and point-in-time recovery;
+  - the DynamoDB table, retained by CloudFormation on stack deletion or replacement,
+    without point-in-time recovery or deletion protection until the Paid-plan upgrade
+    ([ADR-0014](adr/0014-defer-dev-table-protection-on-the-free-plan.md));
   - the Cognito user pool, with self sign-up off.
 - Deploy to `dev` on every merge to `main`, from GitHub Actions through OIDC. This is a
   gate change, so it goes through `changing-gates`.
@@ -241,12 +241,17 @@ stages, foundation stack, deploys).
 - The deploy-on-merge pipeline extended to the `app` stack.
 - The observability baseline, sized to CloudWatch's free tier: alarms on API errors,
   Lambda errors and throttles, and DynamoDB throttles, plus one dashboard.
+- Point-in-time recovery (7 days) and deletion protection turned on for the `dev` table,
+  once the account is on the Paid plan
+  ([ADR-0014](adr/0014-defer-dev-table-protection-on-the-free-plan.md)).
 
 **Exit.**
 
 - The `dev` URL serves the app over HTTPS, to the owner only.
 - A merge reaches it with no manual step.
 - An alarm fires on API errors.
+- `aws dynamodb describe-continuous-backups` and `aws dynamodb describe-table` show
+  point-in-time recovery and deletion protection on for the `dev` table.
 
 **AWS.** CloudFront, S3, API Gateway, Lambda, CloudWatch.
 

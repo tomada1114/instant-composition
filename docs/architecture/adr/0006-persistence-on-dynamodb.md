@@ -1,6 +1,8 @@
 # ADR-0006: Persistence on DynamoDB
 
-- Status: Accepted (2026-09-23), including the store shape
+- Status: Accepted (2026-09-23), including the store shape; "in every stage" under
+  Operations is superseded for `dev` by
+  [ADR-0014](0014-defer-dev-table-protection-on-the-free-plan.md)
 - Date: 2026-09-23
 - Deciders: the owner
 
