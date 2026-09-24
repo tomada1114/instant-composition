@@ -88,7 +88,9 @@ function json(schema: z.ZodType, where: string): MediaContent {
 }
 
 function parametersOf(route: Route): PathParameter[] {
-  const names = [...route.path.matchAll(/\{([^}]+)\}/g)].map((match) => match[1] ?? "");
+  const names = [...route.path.matchAll(/\{([^{}]+)\}/g)].map(
+    (match) => match[1] ?? "",
+  );
   return names.map((name) => {
     const schema = PATH_PARAMETERS[name];
     if (schema === undefined) {
