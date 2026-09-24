@@ -7,7 +7,7 @@ const ROUND_PARAM = "{roundId}";
 
 /** Every `{name}` a contract path names. */
 function pathParams(path: string): string[] {
-  return [...path.matchAll(/\{[^}]*\}/g)].map((match) => match[0]);
+  return [...path.matchAll(/\{[^{}]*\}/g)].map((match) => match[0]);
 }
 
 /** A contract route and the handler that serves it. */
