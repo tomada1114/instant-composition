@@ -288,6 +288,17 @@ listed under [Unverified](#unverified) instead of being stated as fact.
   describes the new sign-up experience, which it says is in limited release. Checked
   2026-09-24.
 
+- [`DeletionPolicy` attribute](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-attribute-deletionpolicy.html)
+  and
+  [CDK `RemovalPolicy`](https://docs.aws.amazon.com/cdk/api/v2/docs/aws-cdk-lib.RemovalPolicy.html)
+  — covers:
+  - `Retain` keeps a resource and its contents when its stack is deleted or when it is
+    removed from the template, and can be set on any resource type.
+  - `DeletionPolicy` alone does not cover a resource replaced by an update;
+    `UpdateReplacePolicy` does, and CDK's retain policies set it.
+
+  Checked 2026-09-24.
+
 - [Bootstrap your environment for use with the AWS CDK](https://docs.aws.amazon.com/cdk/v2/guide/bootstrapping-env.html)
   — the modern bootstrap template creates an S3 bucket, a KMS key, IAM roles, an ECR
   repository and an SSM parameter for its version. Checked 2026-09-24.
@@ -605,6 +616,8 @@ on it.
     DynamoDB, Cognito, CloudFormation, S3, ECR, Systems Manager, IAM, Lambda, API
     Gateway and CloudFront succeeded from the `dev` account on 2026-09-24. That shows
     the services can be reached, not that every feature can be enabled.
+    [ADR-0009](adr/0009-aws-topology-environments-and-operations.md) no longer depends
+    on the answer.
 
 ## Internal sources
 

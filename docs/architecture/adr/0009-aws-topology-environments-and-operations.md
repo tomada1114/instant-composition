@@ -1,6 +1,7 @@
 # ADR-0009: AWS topology, environments and operations
 
-- Status: Accepted (2026-09-23), including the account layout, its timing, and CDK
+- Status: Accepted (2026-09-23), including the account layout, its timing, and CDK;
+  amended 2026-09-24 (`dev` table protection waits for the Paid plan)
 - Date: 2026-09-23
 - Deciders: the owner
 
@@ -171,12 +172,22 @@ settings:
 
 | Setting                                           | `dev`                                                                 | `prod`                                                          |
 | ------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------- |
-| DynamoDB deletion protection, retain on delete    | On — the owner's own learning history accumulates here for years      | On                                                              |
-| DynamoDB point-in-time recovery                   | On, with a 7-day recovery period                                      | On; the period is set in the production-guard phase (1–35 days) |
+| DynamoDB retain on delete and on replacement      | On — the owner's own learning history accumulates here for years      | On                                                              |
+| DynamoDB deletion protection                      | On once the account is on the Paid plan (below)                       | On                                                              |
+| DynamoDB point-in-time recovery                   | On once the account is on the Paid plan, with a 7-day recovery period | On; the period is set in the production-guard phase (1–35 days) |
 | Cognito self sign-up                              | Off: only an administrator creates users (`AllowAdminCreateUserOnly`) | On                                                              |
 | CloudFront flat-rate plan                         | Free                                                                  | Free, then Pro when traffic warrants                            |
 | WAF rate-based rules, SES for authentication mail | None; Cognito's own sender is enough for admin-created users          | Yes                                                             |
 | Deploy                                            | On every merge to `main`                                              | Behind a manual approval                                        |
+
+The `dev` account stays on the Free plan as far as the work allows. Its service list
+does not say whether point-in-time recovery and deletion protection may be enabled
+([references](../references.md#operations-and-cost), checked 2026-09-24), and nothing
+reads or writes the table before Phase 4. So the `dev` table is created without either,
+and both are turned on as soon as the account is on the Paid plan, as a Phase 4 work
+item. Until then a bad write cannot be undone and the table can be deleted directly; the
+CloudFormation `Retain` deletion and update-replace policies, which need no plan
+feature, keep it through any change made to the stack.
 
 Point-in-time recovery is priced by table size whatever the recovery period, so the
 7-day period in `dev` is a preference, not a saving. In `prod` the period also bounds
@@ -227,8 +238,8 @@ built-in sender.
 
 **Data protection.**
 
-- DynamoDB point-in-time recovery and deletion protection are on in both stages (see
-  Stages).
+- DynamoDB point-in-time recovery and deletion protection are on in both stages, in
+  `dev` from the Paid-plan upgrade (see Stages).
 - Account deletion and data export are features, not scripts. They work per learner
   partition (ADR-0006) and ship in the production-guard phase.
 

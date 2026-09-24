@@ -104,8 +104,9 @@ For each change the owner asks for:
      sub-issue links.
    - **A change to an ADR decision** — a context boundary, a persistence shape, a
      contract, a provider or the security model. **REQUIRED:**
-     `recording-architecture-decisions` first: a new or superseding ADR. Then the
-     roadmap, then the issues.
+     `recording-architecture-decisions` first: the ADR rewritten in place, or a
+     superseding one when the decision is replaced whole. Then the roadmap, then the
+     issues.
    - **A new idea.** Add it as a scope line in the right phase, or as a new phase if it
      stands alone. It gets issues only when that phase comes within reach.
 3. **Get the owner's approval, then apply everything together.**

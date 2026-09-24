@@ -28,10 +28,13 @@ Last reviewed 2026-09-23 against commit `d2a5cd9`.
 | Superseded | Replaced by a later ADR, which it names. Kept for the reasoning, never edited into agreement.                    |
 
 An ADR moves from Proposed to Accepted when the owner confirms it; the change is a
-one-line edit to its status with the date. An Accepted ADR is not rewritten when the
-decision changes: a new ADR supersedes it, and the old one gains a "Superseded by" line.
-Several ADRs are partly Accepted — the owner confirmed the direction while a detail
-below it is still a recommendation — and say which part is which.
+one-line edit to its status with the date. When the owner changes an Accepted decision,
+the ADR is rewritten in place to state the current decision, with the reason, and its
+status gains an "amended" date; the roadmap and the issues change with it. A new ADR
+supersedes an old one only when the decision is replaced whole, and the old one gains a
+"Superseded by" line. Several ADRs are partly Accepted — the owner confirmed the
+direction while a detail below it is still a recommendation — and say which part is
+which.
 
 ## Decisions
 
