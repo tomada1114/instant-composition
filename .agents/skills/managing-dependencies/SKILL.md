@@ -102,6 +102,10 @@ ships, not noise.
   with `pnpm install --lockfile-only` when you want the lockfile without the install.
 - Dev dependencies are kept current by bot PRs plus the lockfile, not by hand.
   **REQUIRED:** `merge-dependabot` to land one.
+- An agent runs the `pnpm add` or `pnpm install` itself, once the review record above is
+  written; it does not hand the command to the owner to type. Whatever approval the
+  owner's own tool configuration puts in front of that command is the checkpoint, and a
+  declined one ends the change there rather than inviting another spelling of it.
 
 ## The release-age cooldown
 
