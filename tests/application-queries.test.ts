@@ -161,6 +161,21 @@ describe("home", () => {
     });
   });
 
+  it("names today's last finished round, and none on a day with none", async () => {
+    const h = makeHarness();
+    const lastRoundOf = async (now: number) => {
+      const view = await home(h.deps, h.context(now));
+      return view.ok ? view.value.todayLastRoundId : "not ok";
+    };
+    expect(await lastRoundOf(NOON)).toBeUndefined();
+
+    const later = await practiced(h, 1);
+
+    expect(await lastRoundOf(NOON)).toBe("p0");
+    expect(await lastRoundOf(later)).toBe("t1");
+    expect(await lastRoundOf(later + DAY_MS)).toBeUndefined();
+  });
+
   it("shows a round under way", async () => {
     const h = makeHarness();
     await placed(h);

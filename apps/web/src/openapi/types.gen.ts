@@ -232,6 +232,7 @@ export type HomeView = {
     preview?: HomePreview;
     todayRounds: number;
     todayCards: number;
+    todayLastRoundId?: string;
     dailySize: number;
     sound: boolean;
     contentError: boolean;

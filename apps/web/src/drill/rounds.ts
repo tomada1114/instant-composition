@@ -5,7 +5,6 @@ import {
   type ApiError,
   type SendOutcome,
 } from "../lib/endpoints";
-import { rememberFinishedRound } from "../lib/last-round";
 import type { Result } from "../lib/result";
 import type { Answer, RoundKind, RoundPayload, RoundSummary } from "../openapi";
 import type { AnswerInput } from "./drill-state";
@@ -47,14 +46,12 @@ function answerOf(input: AnswerInput): Answer {
   };
 }
 
-/** Finishes the round, and remembers it as the one the recap screen reads back. */
-export async function requestFinish(
+/** Finishes the round, answering with the summary it keeps. */
+export function requestFinish(
   roundId: string,
   answers: readonly AnswerInput[],
 ): Promise<Result<RoundSummary, ApiError>> {
-  const finished = await finishRound(roundId, answers.map(answerOf));
-  if (finished.ok) rememberFinishedRound(finished.value.roundId);
-  return finished;
+  return finishRound(roundId, answers.map(answerOf));
 }
 
 /** One answer, sent as a batch of one; the queue decides whether to send it again. */

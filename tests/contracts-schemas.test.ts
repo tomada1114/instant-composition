@@ -298,11 +298,12 @@ describe("what the application answers parses under the contract", () => {
     }
   });
 
-  it("including a home with no preview, which leaves the field out", async () => {
+  it("including a home with no preview and no finished round, which leaves both fields out", async () => {
     const h = makeHarness();
     const view = await value(home(h.deps, h.context()));
     const read = wire(view);
     expect(read).not.toHaveProperty("preview");
+    expect(read).not.toHaveProperty("todayLastRoundId");
     expect(homeViewSchema.safeParse(read).success).toBe(true);
   });
 });
