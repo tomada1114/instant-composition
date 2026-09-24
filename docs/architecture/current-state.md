@@ -6,6 +6,10 @@ Next.js server, with progress in a SQLite file. It was built to work first, and 
 what follows is what carries forward and what stands between it and the target in
 [vision.md](vision.md).
 
+It stays pinned to that commit as the baseline the rewrite is measured from: the paths
+it cites under `src/` were retired when Phase 1 landed (#44), and
+[roadmap.md](roadmap.md) records where each phase moved the code.
+
 ## What carries forward
 
 These are seams and assets the rewrite keeps, in substance if not in location.

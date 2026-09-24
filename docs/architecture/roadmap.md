@@ -124,8 +124,9 @@ gone.
     and CEFR levels;
   - built from the existing Japanese-to-English content at build time.
 - `apps/web`: a Vite + React SPA ported from `src/components/`, keeping Tailwind v4,
-  shadcn/ui and the "instrument" design lock, and calling the API through a generated
-  TypeScript client.
+  shadcn/ui and the "instrument" design lock, and calling the API with TypeScript types
+  generated from the OpenAPI document (the calls are hand-written; see ADR-0008's
+  amendment).
 - Retire Next.js and `node:sqlite`, and with them the rest of `src/`, whose rules Phase
   0 copied into the packages; rewrite AGENTS.md and the skills for the new layout.
 - No import of the SQLite progress. The local records were test runs and the owner
@@ -133,6 +134,20 @@ gone.
 
 **Exit.** The SPA talks to the local API, which talks to DynamoDB local; no Next.js
 dependency remains; the OpenAPI document is generated, not hand-written.
+
+**Landed** at `621f9bc` (#63, #67, #68, #72, #74, #76, #78, #81). How each exit was
+observed:
+
+- `tests/stack-smoke.test.ts` serves the `pnpm web:build` output and `apps/api` on
+  DynamoDB local and asserts over HTTP, through the SPA's same-origin `/api` path; it
+  passes in `pnpm check:source` with `pnpm db:up`, and in CI against the service
+  container. `pnpm test:dynamodb` runs the store contract suite against DynamoDB local.
+- No `package.json` in the workspace declares `next`, `next-intl` or any other Next.js
+  package, `pnpm-lock.yaml` resolves none, and `src/` no longer exists.
+- `packages/contracts/openapi.json` is built from the zod schemas
+  ([ADR-0013](adr/0013-openapi-generated-from-zod-json-schema.md));
+  `tests/contracts-openapi.test.ts` regenerates it and fails on any difference, and
+  `tests/web-openapi-client.test.ts` does the same for the web client's types.
 
 **AWS.** None; DynamoDB local only.
 
