@@ -3,7 +3,7 @@ import { DEFAULT_SETTINGS, err, ok, type Result } from "@instant-composition/dom
 import { snapshotOrEmpty, toeicOf, type CatalogSnapshot } from "./catalog";
 import type { RequestContext } from "./context";
 import type { ApplicationError } from "./errors";
-import { storeFor, todayOf, type ApplicationDeps } from "./execute";
+import { storeFor, type ApplicationDeps } from "./execute";
 import { summaryOf } from "./present";
 import type { History, SettingsPageView } from "./query-views";
 import type { LearnerStore } from "./store";
@@ -20,25 +20,6 @@ async function keptSummary(
   return round === undefined || outcome === null
     ? undefined
     : summaryOf(round.value, outcome, snapshot);
-}
-
-/** The kept summary of today's last finished round, for reading back. */
-export async function recap(
-  deps: ApplicationDeps,
-  context: RequestContext,
-): Promise<Result<RoundSummary | undefined, ApplicationError>> {
-  const bound = storeFor(deps, context, "recap");
-  if (!bound.ok) {
-    return bound;
-  }
-  const store = bound.value;
-  const today = todayOf(context);
-  const [{ snapshot }, tallies] = await Promise.all([
-    snapshotOrEmpty(deps.catalog),
-    store.days([today]),
-  ]);
-  const last = tallies.get(today)?.value.lastFinishedRound ?? null;
-  return ok(last === null ? undefined : await keptSummary(store, last, snapshot));
 }
 
 /**

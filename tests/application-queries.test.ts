@@ -4,7 +4,6 @@ import {
   finishRound,
   history,
   home,
-  recap,
   recordAnswers,
   records,
   roundSummary,
@@ -73,7 +72,6 @@ type Query = (deps: ApplicationDeps, context: RequestContext) => Promise<unknown
 const QUERIES: Readonly<Record<string, Query>> = {
   home,
   records,
-  recap,
   roundSummary: (deps, context) => roundSummary(deps, context, "p0"),
   settingsPage,
   history,
@@ -211,24 +209,6 @@ describe("home", () => {
       contentError: true,
       state: { kind: "onboarding" },
     });
-  });
-});
-
-describe("recap", () => {
-  it("reads back the summary today's last finished round kept", async () => {
-    const h = makeHarness();
-    await updateSettings(h.deps, h.context(), { topics: ["work"] });
-    expect(await recap(h.deps, h.context())).toStrictEqual({
-      ok: true,
-      value: undefined,
-    });
-    const round = await started(h, "placement", "p0", NOON);
-    const finished = await finishRound(h.deps, h.context(), {
-      roundId: round.id,
-      answers: answersFor(round),
-    });
-
-    expect(await recap(h.deps, h.context(NOON + 1_000))).toStrictEqual(finished);
   });
 });
 
