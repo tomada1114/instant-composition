@@ -315,25 +315,28 @@ Traps that have cost time here:
   `boundaries/components-import-only-core-and-i18n`,
   `boundaries/private-trees-are-not-importable`,
   `boundaries/app-reaches-packages-by-name`, `boundaries/packages/<dir>` (one per
-  workspace package), `automation/node-scripts`, `tests/vitest-rules`,
-  `tests/relaxations`. Four of the `boundaries/*` blocks are one import order written
-  per zone, so they match disjoint file sets by construction; the fifth protects private
-  trees from `tests/` and `scripts/`, and `boundaries/app-reaches-packages-by-name`
-  covers `src/app/` and `src/proxy.ts`, which no zone block matches. All six restate
-  `NO_RELATIVE_PACKAGE_IMPORT` — a relative path into `packages/` — because the rule's
-  options replace rather than merge, and a block that dropped it would reopen the way
-  past a package's `exports`. Name a new block the same way — the name is what a reader,
-  and ESLint's own config inspector, has to identify it by.
+  workspace package), `boundaries/apps/<dir>` (one per app holding source),
+  `automation/node-scripts`, `tests/vitest-rules`, `tests/relaxations`. Four of the
+  `boundaries/*` blocks are one import order written per zone, so they match disjoint
+  file sets by construction; the fifth protects private trees from `tests/` and
+  `scripts/`, and `boundaries/app-reaches-packages-by-name` covers `src/app/` and
+  `src/proxy.ts`, which no zone block matches. All six restate
+  `NO_RELATIVE_PACKAGE_IMPORT` — a relative path into `packages/` or `apps/` — because
+  the rule's options replace rather than merge, and a block that dropped it would reopen
+  the way past a package's `exports`. Name a new block the same way — the name is what a
+  reader, and ESLint's own config inspector, has to identify it by.
 - `src/shared-syntax`, `public-api/explicit-surface` and `src/size-budget` match
-  `SOURCE_FILES`, which is `src/` and every `packages/*/src/`: a rule meant for the
-  application's own source belongs there, so moving a module into a package never drops
-  it. The `boundaries/packages/*` blocks are generated from `WORKSPACE_EDGES`, one per
-  package matching only that package's files. Each refuses every bare specifier but an
-  allowed package's name through a `regex` pattern — a gitignore-style `group` cannot
-  say "anything but these" — and a relative path into another package or into a `src/`
-  tree through a `group`. The group reads specifier text, so a climb out of the package
-  it does not name still passes lint; `tests/boundaries.test.ts` resolves every relative
-  specifier and is the check that sees it.
+  `SOURCE_FILES`, which is `src/`, every `packages/*/src/` and every `apps/*/src/`: a
+  rule meant for the application's own source belongs there, so moving a module into a
+  package or an app never drops it. The `boundaries/packages/*` blocks are generated
+  from `WORKSPACE_EDGES`, one per package matching only that package's files, and the
+  `boundaries/apps/*` blocks from `APP_WORKSPACE_EDGES` the same way. Each refuses every
+  bare specifier but an allowed package's name through a `regex` pattern — a
+  gitignore-style `group` cannot say "anything but these" — and a relative path into
+  another package or into a `src/` tree through a `group`. The group reads specifier
+  text, so a climb out of the package it does not name still passes lint;
+  `tests/boundaries.test.ts` resolves every relative specifier and is the check that
+  sees it.
 - `tests/boundaries.test.ts` asserts those same edges from the module graph, and it pins
   zones rather than files. An exhaustive list of the modules under `src/` failed on
   every legal new file, which teaches its reader to edit the meta-test until the day
@@ -377,9 +380,9 @@ how the caller stays the only one paying for a build. A green `check:quick` ther
 still says nothing about anything only a running server shows.
 
 The same holds for DynamoDB. `pnpm run test:dynamodb` runs the learner-store contract
-suite against the DynamoDB adapter on DynamoDB local, and only there: from
-`check:source` after `pnpm db:up`, and from ci.yml's `static` job, whose `services:`
-container runs the image `compose.yaml` pins by tag and digest
+suite against the DynamoDB adapter on DynamoDB local, and the API over it, and only
+there: from `check:source` after `pnpm db:up`, and from ci.yml's `static` job, whose
+`services:` container runs the image `compose.yaml` pins by tag and digest
 (`tests/workflows.test.ts` holds the two references equal). The container sits on
 `static` rather than `test` because a service container needs a Linux runner and `test`
 is an OS matrix. A green `check:quick` says nothing about how the adapter behaves

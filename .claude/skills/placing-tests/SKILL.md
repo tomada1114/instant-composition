@@ -28,10 +28,11 @@ This is settled, and it is deliberately against the App Router convention of kee
 test beside its component. Four mechanical reasons, each of which would have to be
 undone to move a test into `src/`:
 
-- `coverage.include` in `vitest.config.ts` is the `.ts` and `.tsx` files under `src/`
-  and under each `packages/*/src/`, and `scripts/**/*.mjs`. A test file in either source
-  tree would count itself as covered source and quietly lift every floor it sits under —
-  the one direction a coverage number must never move by accident.
+- `coverage.include` in `vitest.config.ts` is the `.ts` and `.tsx` files under `src/`,
+  under each `packages/*/src/` and each `apps/*/src/`, and `scripts/**/*.mjs`. A test
+  file in any of those source trees would count itself as covered source and quietly
+  lift every floor it sits under — the one direction a coverage number must never move
+  by accident.
 - The three vitest projects select on `tests/**` globs plus the file extension, and the
   automation project is an explicit list of `tests/…` paths. A co-located test joins no
   project until every one of those globs is widened.
@@ -84,16 +85,17 @@ subject:
   passes every assertion while proving nothing about the change. Adding a file here is a
   claim that no in-process test could have asserted the same thing; prefer `automation`
   whenever one could.
-- **`dynamodb`** — the `dynamodbTests` list, one file today: the learner-store contract
-  suite against the DynamoDB adapter on DynamoDB local, each case on a table it creates.
-  It is left out of the default run for the same reason as `smoke` — `pnpm test` and
-  `check:quick` must not need a container — and `pnpm run test:dynamodb` runs it, after
-  `pnpm db:up` on a checkout and from `check:source` and ci.yml's `static` job, whose
-  service container runs the image `compose.yaml` pins. It fails with an instruction
-  when nothing answers rather than skipping. Coverage does not come from here: the
-  default run never includes it, so what it exercises is covered in-process too — the
-  adapter's side of the wire against a fake DynamoDB on a loopback port, in
-  `automation`.
+- **`dynamodb`** — the `dynamodbTests` list: the learner-store contract suite against
+  the DynamoDB adapter on DynamoDB local, and the API driven over that adapter, each
+  case on a table it creates. It is left out of the default run for the same reason as
+  `smoke` — `pnpm test` and `check:quick` must not need a container — and
+  `pnpm run test:dynamodb` runs it, after `pnpm db:up` on a checkout and from
+  `check:source` and ci.yml's `static` job, whose service container runs the image
+  `compose.yaml` pins. It fails with an instruction when nothing answers rather than
+  skipping. Coverage does not come from here: the default run never includes it, so what
+  it exercises is covered in-process too — the adapter's side of the wire against a fake
+  DynamoDB on a loopback port, in `automation`, and the API over the in-memory store, in
+  `unit`.
 
 The default scripts name the projects they run instead of negating the two they leave
 out, because two `--project='!name'` filters do not narrow each other: vitest runs a
@@ -150,6 +152,10 @@ question.
   workspace packages are where those zones are moving, so the floor was set when the
   packages were still empty rather than left to arrive after code did. A package's tests
   live under `tests/` like every other test, and import the package by its name.
+- **`apps/*/src/**`** carries the same floor, for the same reason, from an app's first
+  file. An app's local entry point (`apps/api/src/main.ts`) runs only in a process a
+  test would have to spawn, so it counts at 0% against that floor: keep it to wiring,
+  and put anything with a branch in a module a test imports.
 - **`scripts/**`** was never measured before it was added to `coverage.include`, so its
   floor is the last measured coverage rounded down to a clean value, not a guessed
   target — it has been raised as coverage grew (see the dated comments in

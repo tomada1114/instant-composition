@@ -65,9 +65,10 @@ pnpm fix           # ESLint autofix, then Prettier
 pnpm test          # tests only
 pnpm test:coverage # tests with the coverage thresholds enforced
 pnpm test:smoke    # serves the last `pnpm build` with `next start` and asserts over HTTP
-pnpm test:dynamodb # the store contract suite against DynamoDB local; needs `pnpm db:up`
+pnpm test:dynamodb # the store contract suite and the API against DynamoDB local; needs `pnpm db:up`
 pnpm db:up         # start DynamoDB local from compose.yaml's pinned image, on localhost:8000
 pnpm db:down       # stop and remove it; it runs in memory, so its tables go with it
+pnpm api           # serve apps/api on http://127.0.0.1:8787/api against DynamoDB local
 pnpm agents:sync   # regenerate .claude/skills/ from .agents/skills/
 pnpm agents:check  # fail when the two skill trees have drifted apart
 pnpm repo:labels   # create/update GitHub labels from .github/labels.yml
@@ -128,6 +129,7 @@ on every edit is slow enough that it stops being run at all.
 | `src/app/globals.css` or `postcss.config.mjs`          | `pnpm build`, then `pnpm test:smoke`                 |
 | An import that crosses a zone boundary                 | `pnpm exec vitest run tests/boundaries.test.ts`      |
 | A package under `packages/`                            | `pnpm typecheck`, then `tests/boundaries.test.ts`    |
+| A module under `apps/api/`                             | `pnpm exec vitest run tests/api-*.test.ts`           |
 | A module under `packages/adapters/`                    | `pnpm exec vitest run tests/adapters-*.test.ts`      |
 | The DynamoDB store, or the store contract suite        | `pnpm db:up`, then `pnpm test:dynamodb`              |
 | A schema or route under `packages/contracts/`          | `pnpm exec vitest run tests/contracts-*.test.ts`     |
@@ -163,6 +165,9 @@ packages/
 ├── application/ # @instant-composition/application: commands, queries and ports
 ├── adapters/    # @instant-composition/adapters: the DynamoDB and in-memory stores, the catalog
 └── contracts/   # @instant-composition/contracts: the HTTP API's zod schemas and OpenAPI
+apps/
+├── api/         # @instant-composition/api: the Hono app serving contracts' routes under /api
+└── web/         # @instant-composition/web: the SPA's manifest alone until #42 builds it
 messages/       # one JSON catalog per locale; ja.json, the only one, sets the shape
 content/        # the cards and the lists and guides that define them (see Content)
 scripts/        # repository automation, authored as .mjs, never shipped
@@ -185,14 +190,14 @@ resolves both spellings, so neither is a way around the order above.
 ### The workspace
 
 The repository is a pnpm workspace: the Next.js application is its root package, and
-`pnpm-workspace.yaml` adds each directory under `packages/`. These are the packages
-`docs/architecture/adr/0002-architecture-style-and-repository-layout.md` lays out, and
-they grow as the restructure moves code into them. `packages/domain` holds a copy of
-`src/core/`'s rules, with the practice day computed in the learner's time zone, and the
-pure `decide` functions behind each command. `packages/application` holds the request
-context, the authorization policy, the practice commands as load, decide, commit, the
-queries each screen reads from projections alone, and the ports they need: the
-learner-bound store and the catalog. `packages/adapters` implements those ports: the
+`pnpm-workspace.yaml` adds each directory under `apps/` and `packages/`. These are the
+packages `docs/architecture/adr/0002-architecture-style-and-repository-layout.md` lays
+out, and they grow as the restructure moves code into them. `packages/domain` holds a
+copy of `src/core/`'s rules, with the practice day computed in the learner's time zone,
+and the pure `decide` functions behind each command. `packages/application` holds the
+request context, the authorization policy, the practice commands as load, decide,
+commit, the queries each screen reads from projections alone, and the ports they need:
+the learner-bound store and the catalog. `packages/adapters` implements those ports: the
 DynamoDB store on ADR-0006's single table, each commit one `TransactWriteItems`; the
 in-memory store; and the catalog that reads one `pnpm catalog:build` snapshot. Both
 stores run the contract suite in `tests/learner-store-contract.ts`, isolation included —
@@ -201,9 +206,12 @@ the in-memory one in `pnpm test`, the DynamoDB one against DynamoDB local in
 and the OpenAPI 3.1 document built from them, committed as
 `packages/contracts/openapi.json`; `tests/contracts-openapi.test.ts` fails when the file
 differs from what the schemas generate, and `pnpm contracts:openapi` rewrites it
-(ADR-0013). `src/` is still where the running application lives, and it keeps its own
-`src/core/` until Phase 1 retires it. `apps/` and `infra/` join the workspace with their
-first package.
+(ADR-0013). `apps/api` serves every route in contracts' `ROUTES` under `/api` by calling
+`packages/application`, with a stand-in authenticator bound to one local learner until
+Phase 3; `serving-the-api` holds how. `apps/web` is a manifest until #42 builds the SPA,
+and no gate runs it: `pnpm typecheck` filters `./packages/*` and `./apps/api`. `src/` is
+still where the running application lives, and it keeps its own `src/core/` until Phase
+1 retires it. `infra/` joins the workspace with its first package.
 
 - **The edges.** `adapters` → `application` and `domain`, the AWS SDK's DynamoDB
   clients, `zod` and `node:fs/promises`; `application` → `domain`; `contracts` → `zod`
@@ -213,7 +221,10 @@ first package.
   `src/`, `tests/` and `scripts/` never import a package by a relative path, which would
   walk past its `exports`. `eslint.config.mjs`'s `boundaries/packages/*` blocks and
   `tests/boundaries.test.ts` hold the same table, the test also against each manifest; a
-  package added under `packages/` fails the suite until it is given a row.
+  package added under `packages/` fails the suite until it is given a row. `apps/api` →
+  `adapters`, `application`, `contracts` and `domain`, `hono`, `@hono/node-server` and
+  `node:path`, held the same way by the `boundaries/apps/api` block; an app with source
+  under `apps/` needs a row too.
 - **Source, not builds.** A package's `exports` points at its `src/index.ts`, and
   whatever consumes it compiles that source; nothing is emitted to a `dist/`. Each
   package has its own `tsconfig.json` over the shared `tsconfig.base.json`, with no DOM
@@ -221,8 +232,9 @@ first package.
   `pnpm typecheck` checks every one of them after the root.
 - **The same gates as `src/`.** The syntax bans, the named-export surface and the size
   budget in `eslint.config.mjs`, and the coverage floor in `vitest.config.ts`, cover
-  `packages/*/src/` as they cover `src/`. Tests stay under `tests/` and import a package
-  by its name, which the root `package.json` declares as a `workspace:*` devDependency.
+  `packages/*/src/` and `apps/*/src/` as they cover `src/`. Tests stay under `tests/`
+  and import a package by its name, which the root `package.json` declares as a
+  `workspace:*` devDependency.
 
 ### The seams
 
@@ -232,10 +244,13 @@ Everything this application expects to replace or grow sits behind one of two se
   plain `(request: Request) => Promise<Response>` and imports nothing from `next`. That
   is what lets a test drive it with `new Request(…)` and no framework, and what keeps a
   `route.ts` under `src/app/api/` a one-line re-export with no logic of its own to test.
+  `apps/api`'s `createApp` keeps the same shape: it takes every dependency as an
+  argument, and a test drives `app.fetch(new Request(…))` with no network.
 - **The environment.** `src/server/env.ts` is the only module under `src/` that reads
-  `process.env`. It validates the whole environment against one schema and hands every
-  other module what it needs as an argument, so "where does this secret enter the
-  process" is a question a reader answers by opening one file.
+  `process.env`, and `apps/api/src/env.ts` the only one in `apps/api`. Each validates
+  the whole environment in one place and hands every other module what it needs as an
+  argument, so "where does this secret enter the process" is a question a reader answers
+  by opening one file.
 
 ### Rate limiting
 
@@ -251,9 +266,10 @@ authentication only, not a rate-limit declaration.
 Nothing here is published, so the contract is not an export map. It is what a caller
 outside the process can observe, plus what each zone publishes to the zone above it:
 
-- **Contract.** The HTTP surface of any route under `src/app/api/` — its request body,
-  its answer, and the `error.code` vocabulary a client branches on. The locale list in
-  `src/i18n/locales.ts` and the message keys `messages/ja.json` defines.
+- **Contract.** The HTTP surface of any route under `src/app/api/`, and of every route
+  `apps/api` serves from `packages/contracts` — its request body, its answer, and the
+  `error.code` vocabulary a client branches on. The locale list in `src/i18n/locales.ts`
+  and the message keys `messages/ja.json` defines.
 - **Private.** Any module a zone's own surface does not re-export. A test reaches a
   private module through the surface that owns it, never around it.
 
@@ -317,6 +333,7 @@ names its own boundary with its neighbours.
 | `recording-architecture-decisions` | `docs/architecture/`, or whether a change owes an ADR: a boundary, persistence shape, external contract, provider, or security model      |
 | `designing-application-core`       | domain rules, commands, queries, ports and adapters, projections, idempotency, or code that reads the clock or a timezone                 |
 | `isolating-learner-data`           | an endpoint, store method, session or token handling, job, or model tool that touches a learner's data                                    |
+| `serving-the-api`                  | an operation handler, the request log's fields, the stand-in authenticator, or the local run under `apps/api/`                            |
 
 ## Security and human approval
 
