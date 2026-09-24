@@ -159,7 +159,7 @@ describe("startRound", () => {
       await startRound(h.deps, h.context(), { kind: "today", roundId: "r1" }),
     ).toStrictEqual({
       ok: false,
-      error: { code: "ERR_CONTENT_UNREADABLE" },
+      error: { code: "ERR_CONTENT_UNREADABLE", reason: "missing" },
     });
   });
 

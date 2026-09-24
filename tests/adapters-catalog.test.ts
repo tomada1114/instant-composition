@@ -1,4 +1,4 @@
-import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 
@@ -13,7 +13,14 @@ import { DEFAULT_ROOT } from "../scripts/cards/store.mjs";
 // the real content/ into a temporary directory: nothing here writes under the
 // repository.
 
-const UNREADABLE = { ok: false, error: { code: "ERR_CONTENT_UNREADABLE" } };
+const MISSING = {
+  ok: false,
+  error: { code: "ERR_CONTENT_UNREADABLE", reason: "missing" },
+};
+const MALFORMED = {
+  ok: false,
+  error: { code: "ERR_CONTENT_UNREADABLE", reason: "malformed" },
+};
 
 let out = "";
 let file = "";
@@ -51,15 +58,24 @@ describe("snapshotCatalog", () => {
     expect(read.value.topics.map((topic) => topic.name)).toContain("日常");
   });
 
-  it("answers ERR_CONTENT_UNREADABLE for a missing file", async () => {
-    expect(await snapshotCatalog(file).snapshot()).toStrictEqual(UNREADABLE);
+  it("answers ERR_CONTENT_UNREADABLE with reason missing for a missing file", async () => {
+    expect(await snapshotCatalog(file).snapshot()).toStrictEqual(MISSING);
   });
 
-  it("answers ERR_CONTENT_UNREADABLE for a file that is not JSON", async () => {
+  it("answers ERR_CONTENT_UNREADABLE with reason unreadable for a path that cannot be read", async () => {
+    mkdirSync(file, { recursive: true });
+
+    expect(await snapshotCatalog(file).snapshot()).toStrictEqual({
+      ok: false,
+      error: { code: "ERR_CONTENT_UNREADABLE", reason: "unreadable" },
+    });
+  });
+
+  it("answers ERR_CONTENT_UNREADABLE with reason malformed for a file that is not JSON", async () => {
     built();
     writeFileSync(file, "{ not json");
 
-    expect(await snapshotCatalog(file).snapshot()).toStrictEqual(UNREADABLE);
+    expect(await snapshotCatalog(file).snapshot()).toStrictEqual(MALFORMED);
   });
 
   it.each<[string, (document: Record<string, unknown>) => unknown]>([
@@ -81,11 +97,14 @@ describe("snapshotCatalog", () => {
     ],
     ["an array", () => []],
     ["a bare string", () => "catalog"],
-  ])("answers ERR_CONTENT_UNREADABLE for %s", async (_, malform) => {
-    writeFileSync(file, JSON.stringify(malform(built())));
+  ])(
+    "answers ERR_CONTENT_UNREADABLE with reason malformed for %s",
+    async (_, malform) => {
+      writeFileSync(file, JSON.stringify(malform(built())));
 
-    expect(await snapshotCatalog(file).snapshot()).toStrictEqual(UNREADABLE);
-  });
+      expect(await snapshotCatalog(file).snapshot()).toStrictEqual(MALFORMED);
+    },
+  );
 
   it("reads the file once and serves every later call from that read", async () => {
     built();
@@ -105,7 +124,7 @@ describe("snapshotCatalog", () => {
 
   it("reads again after a failure, so a snapshot built later is picked up", async () => {
     const catalog = snapshotCatalog(file);
-    expect(await catalog.snapshot()).toStrictEqual(UNREADABLE);
+    expect(await catalog.snapshot()).toStrictEqual(MISSING);
 
     built();
 
