@@ -60,7 +60,7 @@ pnpm dev           # start the Next.js development server on http://localhost:30
 pnpm build         # production build; also type-checks the App Router entry points
 pnpm start         # serve the production build from `pnpm build`
 pnpm check:quick   # format check, lint, typecheck, tests — the everyday gate
-pnpm check:source  # the same gate plus the build, the smoke and DynamoDB suites, and coverage
+pnpm check:source  # the same gate plus both builds, the smoke and DynamoDB suites, and coverage
 pnpm fix           # ESLint autofix, then Prettier
 pnpm test          # tests only
 pnpm test:coverage # tests with the coverage thresholds enforced
@@ -69,6 +69,9 @@ pnpm test:dynamodb # the store contract suite and the API against DynamoDB local
 pnpm db:up         # start DynamoDB local from compose.yaml's pinned image, on localhost:8000
 pnpm db:down       # stop and remove it; it runs in memory, so its tables go with it
 pnpm api           # serve apps/api on http://127.0.0.1:8787/api against DynamoDB local
+pnpm web           # serve apps/web on http://127.0.0.1:5173, proxying /api to `pnpm api`
+pnpm web:build     # build apps/web's static SPA into apps/web/dist/
+pnpm web:client    # rewrite apps/web/src/openapi/ from packages/contracts/openapi.json
 pnpm agents:sync   # regenerate .claude/skills/ from .agents/skills/
 pnpm agents:check  # fail when the two skill trees have drifted apart
 pnpm repo:labels   # create/update GitHub labels from .github/labels.yml
@@ -130,6 +133,9 @@ on every edit is slow enough that it stops being run at all.
 | An import that crosses a zone boundary                 | `pnpm exec vitest run tests/boundaries.test.ts`      |
 | A package under `packages/`                            | `pnpm typecheck`, then `tests/boundaries.test.ts`    |
 | A module under `apps/api/`                             | `pnpm exec vitest run tests/api-*.test.ts`           |
+| A module under `apps/web/src/`                         | `pnpm exec vitest run tests/web-`                    |
+| `apps/web/vite.config.ts`, `index.html` or its CSS     | `pnpm web:build`                                     |
+| `packages/contracts/openapi.json`                      | `pnpm web:client`, then `pnpm typecheck`             |
 | A module under `packages/adapters/`                    | `pnpm exec vitest run tests/adapters-*.test.ts`      |
 | The DynamoDB store, or the store contract suite        | `pnpm db:up`, then `pnpm test:dynamodb`              |
 | A schema or route under `packages/contracts/`          | `pnpm exec vitest run tests/contracts-*.test.ts`     |
@@ -167,7 +173,7 @@ packages/
 └── contracts/   # @instant-composition/contracts: the HTTP API's zod schemas and OpenAPI
 apps/
 ├── api/         # @instant-composition/api: the Hono app serving contracts' routes under /api
-└── web/         # @instant-composition/web: the SPA's manifest alone until #42 builds it
+└── web/         # @instant-composition/web: the Vite + React SPA, calling the API under /api
 messages/       # one JSON catalog per locale; ja.json, the only one, sets the shape
 content/        # the cards and the lists and guides that define them (see Content)
 scripts/        # repository automation, authored as .mjs, never shipped
@@ -208,10 +214,15 @@ and the OpenAPI 3.1 document built from them, committed as
 differs from what the schemas generate, and `pnpm contracts:openapi` rewrites it
 (ADR-0013). `apps/api` serves every route in contracts' `ROUTES` under `/api` by calling
 `packages/application`, with a stand-in authenticator bound to one local learner until
-Phase 3; `serving-the-api` holds how. `apps/web` is a manifest until #42 builds the SPA,
-and no gate runs it: `pnpm typecheck` filters `./packages/*` and `./apps/api`. `src/` is
-still where the running application lives, and it keeps its own `src/core/` until Phase
-1 retires it. `infra/` joins the workspace with its first package.
+Phase 3; `serving-the-api` holds how. `apps/web` is the browser client ADR-0008
+describes: a Vite + React SPA with TanStack Router, TanStack Query and use-intl over
+`messages/ja.json`, which reaches the API only over HTTP under `/api`, typed by what
+@hey-api/openapi-ts generates from `packages/contracts/openapi.json` into
+`apps/web/src/openapi/`. That tree is committed, `tests/web-openapi-client.test.ts`
+fails when it differs from a fresh generation, and `pnpm web:client` rewrites it. The
+home and drill screens run there so far; the rest of the port is still in `src/`, which
+is where the running application lives, and it keeps its own `src/core/` until Phase 1
+retires it. `infra/` joins the workspace with its first package.
 
 - **The edges.** `adapters` → `application` and `domain`, the AWS SDK's DynamoDB
   clients, `zod` and `node:fs/promises`; `application` → `domain`; `contracts` → `zod`
@@ -223,8 +234,13 @@ still where the running application lives, and it keeps its own `src/core/` unti
   `tests/boundaries.test.ts` hold the same table, the test also against each manifest; a
   package added under `packages/` fails the suite until it is given a row. `apps/api` →
   `adapters`, `application`, `contracts` and `domain`, `hono`, `@hono/node-server` and
-  `node:path`, held the same way by the `boundaries/apps/api` block; an app with source
-  under `apps/` needs a row too.
+  `node:path`, held the same way by the `boundaries/apps/api` block. `apps/web` imports
+  no workspace package: its `src/` reaches React, the router, the query cache, use-intl
+  and its UI libraries by exact specifier, its config files add Vite and its plugins,
+  and of the trees outside it only `messages/`. The `boundaries/apps/web` and
+  `boundaries/apps/web/config` blocks hold the specifiers, and
+  `tests/boundaries.test.ts` the resolved paths. An app with source under `apps/` needs
+  a row too.
 - **Source, not builds.** A package's `exports` points at its `src/index.ts`, and
   whatever consumes it compiles that source; nothing is emitted to a `dist/`. Each
   package has its own `tsconfig.json` over the shared `tsconfig.base.json`, with no DOM
