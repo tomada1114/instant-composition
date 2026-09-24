@@ -20,3 +20,8 @@ pnpm-lock.yaml
 
 # Full working copies created by agent sessions; formatted in their own checkout.
 .claude/worktrees/
+
+# Generated from packages/contracts/openapi.json by `pnpm web:client`, and held
+# byte for byte to the generator's output by tests/web-openapi-client.test.ts;
+# reformatting it would be a difference that test reports.
+apps/web/src/openapi/

@@ -442,7 +442,8 @@ function packageName(directory: string): string {
  * directory `root` other than by one of the `allowed` specifiers.
  *
  * @remarks
- * A relative specifier is resolved and has to stay inside `root`. A bare one
+ * A relative specifier is resolved and has to stay inside `root`, or inside
+ * one of the `shared` data trees at the repository root. A bare one
  * has to be exactly an allowed name: a subpath such as
  * `@instant-composition/domain/src/day` walks past the package's `exports`,
  * and `@/…` is the Next.js tree's alias, which no package or app may name.
@@ -453,19 +454,17 @@ function offendersLeaving(
   root: string,
   allowed: ReadonlySet<string>,
   modules: readonly Module[],
+  shared: readonly string[] = [],
 ): string[] {
   return modules.flatMap((module) =>
     module.specifiers
-      .filter((specifier) =>
-        specifier.startsWith(".")
-          ? !inZone(
-              path.posix.normalize(
-                path.posix.join(path.posix.dirname(module.file), specifier),
-              ),
-              root,
-            )
-          : !allowed.has(specifier),
-      )
+      .filter((specifier) => {
+        if (!specifier.startsWith(".")) return !allowed.has(specifier);
+        const resolved = path.posix.normalize(
+          path.posix.join(path.posix.dirname(module.file), specifier),
+        );
+        return ![root, ...shared].some((tree) => inZone(resolved, tree));
+      })
       .map((specifier) => `${module.file}: ${specifier}`),
   );
 }
@@ -695,30 +694,93 @@ describe("packages/ imports run one way, adapters → application → domain", (
 /**
  * Every app under `apps/` that holds source, and the workspace packages it may
  * import: ADR-0002's `apps/* → application, adapters, contracts`, plus
- * `domain`. `eslint.config.mjs`'s `APP_WORKSPACE_EDGES` states the same.
+ * `domain`. `web` imports none: it reaches the API over HTTP. `eslint.config.mjs`'s
+ * `APP_WORKSPACE_EDGES` states the same.
  */
 const APP_WORKSPACE_EDGES: Readonly<Record<string, readonly string[]>> = {
   api: ["adapters", "application", "contracts", "domain"],
+  web: [],
 };
 
-/** The npm packages each app may import, by exact name (`APP_NPM_EDGES`). */
+/**
+ * The npm specifiers each app's `src/` may import, by exact name
+ * (`APP_NPM_EDGES`). A subpath is listed as itself, and the manifest declares
+ * the package it belongs to.
+ */
 const APP_NPM_EDGES: Readonly<Record<string, readonly string[]>> = {
   api: ["@hono/node-server", "hono"],
+  web: [
+    "@fontsource-variable/inter-tight",
+    "@fontsource-variable/jetbrains-mono",
+    "@fontsource-variable/space-grotesk",
+    "@radix-ui/react-slot",
+    "@tanstack/react-query",
+    "@tanstack/react-router",
+    "class-variance-authority",
+    "clsx",
+    "react",
+    "react-dom/client",
+    "tailwind-merge",
+    "use-intl",
+  ],
 };
 
 /** The Node builtins each app may import, by exact specifier (`APP_NODE_EDGES`). */
 const APP_NODE_EDGES: Readonly<Record<string, readonly string[]>> = {
   api: ["node:path"],
+  web: [],
 };
 
 /**
- * Apps that are a manifest and nothing else yet, each with what gives it
- * source. An app here may hold no `src/`: the day one does, it needs a row in
- * the tables above instead.
+ * The build tools each app declares as devDependencies (`APP_TOOLING_EDGES`):
+ * its config files beside `src/` may import them, and `src/` may not.
  */
-const APPS_WITHOUT_SOURCE: Readonly<Record<string, string>> = {
-  web: "#42 builds the SPA; until then its manifest only declares its dependencies",
+const APP_TOOLING_EDGES: Readonly<Record<string, readonly string[]>> = {
+  api: [],
+  web: [
+    "@hey-api/openapi-ts",
+    "@tailwindcss/vite",
+    "@types/react",
+    "@types/react-dom",
+    "@vitejs/plugin-react",
+    "tailwindcss",
+    "vite",
+  ],
 };
+
+/**
+ * Directories at the repository root an app's source may read by a relative
+ * path: data, not modules of another package. The web client renders the one
+ * message catalog under `messages/`, which the Next.js tree reads too.
+ */
+const APP_SHARED_TREES: Readonly<Record<string, readonly string[]>> = {
+  api: [],
+  web: ["messages"],
+};
+
+/** The package a specifier belongs to: `react-dom/client` is `react-dom`'s. */
+function packageOf(specifier: string): string {
+  const segments = specifier.split("/");
+  return (specifier.startsWith("@") ? segments.slice(0, 2) : segments.slice(0, 1)).join(
+    "/",
+  );
+}
+
+/**
+ * The range an app declares for a build tool: the root's own where the root
+ * declares it, else a caret or tilde range on a full version, or `undefined`
+ * so the manifest assertion fails on anything else.
+ */
+function toolRange(
+  declared: Readonly<Record<string, string>>,
+  dependency: string,
+): string | undefined {
+  const range = declared[dependency];
+  return (
+    rootRange(dependency) ??
+    (range !== undefined && /^[\^~]\d+\.\d+\.\d+$/.test(range) ? range : undefined)
+  );
+}
 
 describe("apps/ imports only the packages ADR-0002 allows", () => {
   const directories = readdirSync(path.join(repoRoot, "apps"), { withFileTypes: true })
@@ -726,20 +788,17 @@ describe("apps/ imports only the packages ADR-0002 allows", () => {
     .map((entry) => entry.name)
     .sort();
 
-  it("gives every app under apps/ a row, or names it as holding no source yet", () => {
-    expect(directories).toStrictEqual(
-      [...Object.keys(APP_WORKSPACE_EDGES), ...Object.keys(APPS_WITHOUT_SOURCE)].sort(),
-    );
-    expect(Object.keys(APP_NPM_EDGES).sort()).toStrictEqual(
-      Object.keys(APP_WORKSPACE_EDGES).sort(),
-    );
-    expect(Object.keys(APP_NODE_EDGES).sort()).toStrictEqual(
-      Object.keys(APP_WORKSPACE_EDGES).sort(),
-    );
-  });
-
-  it.each(Object.keys(APPS_WITHOUT_SOURCE))("finds no source under apps/%s", (name) => {
-    expect(modulesUnder(`apps/${name}`)).toStrictEqual([]);
+  it("gives every app under apps/ a row, so a new one needs a decision", () => {
+    const apps = Object.keys(APP_WORKSPACE_EDGES).sort();
+    expect(directories).toStrictEqual(apps);
+    for (const table of [
+      APP_NPM_EDGES,
+      APP_NODE_EDGES,
+      APP_TOOLING_EDGES,
+      APP_SHARED_TREES,
+    ]) {
+      expect(Object.keys(table).sort()).toStrictEqual(apps);
+    }
   });
 
   it.each(Object.entries(APP_WORKSPACE_EDGES))(
@@ -756,27 +815,65 @@ describe("apps/ imports only the packages ADR-0002 allows", () => {
         ...(APP_NPM_EDGES[name] ?? []),
         ...(APP_NODE_EDGES[name] ?? []),
       ]);
-      expect(offendersLeaving(`apps/${name}`, allowed, modules)).toStrictEqual([]);
+      const shared = APP_SHARED_TREES[name] ?? [];
+      const source = modules.filter((module) =>
+        inZone(module.file, `apps/${name}/src`),
+      );
+      const config = modules.filter((module) => !source.includes(module));
+      expect(offendersLeaving(`apps/${name}`, allowed, source, shared)).toStrictEqual(
+        [],
+      );
+      expect(
+        offendersLeaving(
+          `apps/${name}`,
+          new Set([...allowed, ...(APP_TOOLING_EDGES[name] ?? [])]),
+          config,
+          shared,
+        ),
+      ).toStrictEqual([]);
     },
   );
 
   it.each(Object.entries(APP_WORKSPACE_EDGES))(
-    "declares in apps/%s/package.json exactly the workspace packages %p and its npm row",
+    "declares in apps/%s/package.json exactly the workspace packages %p, its npm row and its tools",
     (name, workspace) => {
       const manifest = readManifest(name, "apps");
       expect(manifest.name).toBe(packageName(name));
       expect(manifest.declared).toStrictEqual(
         Object.fromEntries([
           ...workspace.map((dependency) => [packageName(dependency), "workspace:*"]),
-          ...(APP_NPM_EDGES[name] ?? []).map((dependency) => [
+          ...(APP_NPM_EDGES[name] ?? [])
+            .map(packageOf)
+            .map((dependency) => [
+              dependency,
+              rootRange(dependency) ?? ownRange(manifest.declared, dependency),
+            ]),
+          ...(APP_TOOLING_EDGES[name] ?? []).map((dependency) => [
             dependency,
-            rootRange(dependency) ?? ownRange(manifest.declared, dependency),
+            toolRange(manifest.declared, dependency),
           ]),
         ]),
       );
       expect(manifest.scripts["typecheck"]).toBe("tsc -p tsconfig.json");
     },
   );
+
+  it("admits a relative read of a shared root tree, and of no other", () => {
+    const probe = {
+      file: "apps/web/src/i18n/probe.ts",
+      specifiers: [
+        "../../../../messages/ja.json",
+        "../../../../content/taxonomy.json",
+        "../../../../src/i18n/messages",
+      ],
+    };
+    expect(
+      offendersLeaving("apps/web", new Set(), [probe], ["messages"]),
+    ).toStrictEqual([
+      "apps/web/src/i18n/probe.ts: ../../../../content/taxonomy.json",
+      "apps/web/src/i18n/probe.ts: ../../../../src/i18n/messages",
+    ]);
+  });
 
   it("reports a climb out of an app and a package it may not name", () => {
     const allowed = new Set(["@instant-composition/application", "hono"]);

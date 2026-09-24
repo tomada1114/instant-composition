@@ -75,8 +75,14 @@ jobs:
       - name: Build
         run: pnpm run build
 
+      # The browser client under apps/web is a static Vite bundle, a separate
+      # build from the Next.js one above. Its types are already checked by
+      # `Type check`; this step holds that the bundle itself still builds.
+      - name: Build the web client
+        run: pnpm run web:build
+
       # The only check that starts the application and asks it for a page over
-      # HTTP. It sits here, immediately after `Build`, because it serves that
+      # HTTP. It sits here, after `Build`, because it serves that
       # build: in the `test` job below there is none, and giving it one would
       # mean building this application twice in a single workflow. The default
       # test run filters it out for the same reason — see `test:smoke` in

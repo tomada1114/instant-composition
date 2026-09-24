@@ -3,6 +3,7 @@ import vitest from "@vitest/eslint-plugin";
 import { defineConfig, globalIgnores } from "eslint/config";
 import next from "eslint-config-next";
 import eslintConfigPrettier from "eslint-config-prettier";
+import reactHooks from "eslint-plugin-react-hooks";
 import tseslint from "typescript-eslint";
 
 /**
@@ -184,25 +185,64 @@ const NO_RELATIVE_PACKAGE_IMPORT = {
  * Each deployable app under `apps/` that holds source, and the workspace
  * packages it may import: ADR-0002's `apps/* → application, adapters,
  * contracts`, plus `domain` for the `Result` vocabulary and the tuning the
- * API reads. `apps/web` holds no source until the SPA is built, so it has no
- * row yet.
+ * API reads. `apps/web` imports none: it reaches the API over HTTP, through
+ * types generated from the contract's OpenAPI document (ADR-0008).
  *
  * @remarks
  * `tests/boundaries.test.ts` holds the same tables.
  */
 const APP_WORKSPACE_EDGES = /** @type {const} */ ({
   api: ["adapters", "application", "contracts", "domain"],
+  web: [],
 });
 
-/** The npm packages and Node builtins each app may import, by exact name. */
+/**
+ * The npm specifiers and Node builtins each app's `src/` may import, by exact
+ * name. A subpath is listed as itself (`react-dom/client`), because the row
+ * admits specifiers, not packages.
+ */
 const APP_NPM_EDGES =
   /** @type {Record<keyof typeof APP_WORKSPACE_EDGES, readonly string[]>} */ ({
     api: ["hono", "@hono/node-server"],
+    web: [
+      "@fontsource-variable/inter-tight",
+      "@fontsource-variable/jetbrains-mono",
+      "@fontsource-variable/space-grotesk",
+      "@radix-ui/react-slot",
+      "@tanstack/react-query",
+      "@tanstack/react-router",
+      "class-variance-authority",
+      "clsx",
+      "react",
+      "react-dom/client",
+      "tailwind-merge",
+      "use-intl",
+    ],
   });
 
 const APP_NODE_EDGES =
   /** @type {Record<keyof typeof APP_WORKSPACE_EDGES, readonly string[]>} */ ({
     api: ["node:path"],
+    web: [],
+  });
+
+/**
+ * The build tools each app declares as devDependencies: its own config files
+ * (`apps/<dir>/*.ts`, outside `src/`) may import them on top of its `src/`
+ * row, and `src/` itself may not.
+ */
+const APP_TOOLING_EDGES =
+  /** @type {Record<keyof typeof APP_WORKSPACE_EDGES, readonly string[]>} */ ({
+    api: [],
+    web: [
+      "@hey-api/openapi-ts",
+      "@tailwindcss/vite",
+      "@types/react",
+      "@types/react-dom",
+      "@vitejs/plugin-react",
+      "tailwindcss",
+      "vite",
+    ],
   });
 
 /**
@@ -222,7 +262,7 @@ const APP_NODE_EDGES =
  * path, so it does not see every climb out of the package;
  * `tests/boundaries.test.ts` resolves each one and does.
  *
- * @param {{ tree: "packages" | "apps", name: string, workspace: readonly string[], npm: readonly string[], node: readonly string[] }} row
+ * @param {{ tree: "packages" | "apps", name: string, workspace: readonly string[], npm: readonly string[], node: readonly string[], files?: readonly string[], block?: string }} row
  * @param {string} message
  */
 function workspaceBoundary(row, message) {
@@ -234,11 +274,15 @@ function workspaceBoundary(row, message) {
   const others = [
     ...Object.keys(WORKSPACE_EDGES),
     ...Object.keys(APP_WORKSPACE_EDGES),
-    "web",
   ].filter((other) => other !== row.name);
   return {
-    name: `boundaries/${row.tree}/${row.name}`,
-    files: [`${row.tree}/${row.name}/**/*.ts`, `${row.tree}/${row.name}/**/*.tsx`],
+    name: `boundaries/${row.tree}/${row.block ?? row.name}`,
+    files: [
+      ...(row.files ?? [
+        `${row.tree}/${row.name}/**/*.ts`,
+        `${row.tree}/${row.name}/**/*.tsx`,
+      ]),
+    ],
     rules: {
       "no-restricted-imports": [
         "error",
@@ -279,20 +323,56 @@ function workspacePackageBoundary(name, message) {
 }
 
 /**
+ * One app's boundary, as two disjoint blocks when the app has config files
+ * of its own: `src/` held to its row, and the config files beside it to the
+ * row plus its build tools. `no-restricted-imports` options replace rather
+ * than merge, so the two cannot share a block.
+ *
  * @param {keyof typeof APP_WORKSPACE_EDGES} name
  * @param {string} message
  */
 function appBoundary(name, message) {
-  return workspaceBoundary(
-    {
-      tree: "apps",
-      name,
-      workspace: APP_WORKSPACE_EDGES[name],
-      npm: APP_NPM_EDGES[name],
-      node: APP_NODE_EDGES[name],
-    },
-    message,
-  );
+  const row = /** @type {const} */ ({
+    tree: "apps",
+    name,
+    workspace: APP_WORKSPACE_EDGES[name],
+    npm: APP_NPM_EDGES[name],
+    node: APP_NODE_EDGES[name],
+  });
+  const tooling = APP_TOOLING_EDGES[name];
+  if (tooling.length === 0) return [workspaceBoundary(row, message)];
+  return [
+    workspaceBoundary(
+      { ...row, files: [`apps/${name}/src/**/*.ts`, `apps/${name}/src/**/*.tsx`] },
+      message,
+    ),
+    workspaceBoundary(
+      {
+        ...row,
+        npm: [...row.npm, ...tooling],
+        files: [`apps/${name}/*.ts`],
+        block: `${name}/config`,
+      },
+      message,
+    ),
+  ];
+}
+
+/** The rules of `eslint-config-next`'s first entry, which the web client borrows. */
+const NEXT_RULES = next[0]?.rules ?? {};
+
+/**
+ * A plugin object `eslint-config-next`'s first entry carries, which the web
+ * client borrows rather than resolving a second copy of it.
+ *
+ * @param {string} name
+ */
+function nextPlugin(name) {
+  const plugin = next[0]?.plugins?.[name];
+  if (plugin === undefined) {
+    throw new Error(`eslint-config-next no longer carries the ${name} plugin.`);
+  }
+  return plugin;
 }
 
 /** Why `src/components/` looks only at `src/core/`, `src/i18n/` and the framework. */
@@ -310,7 +390,13 @@ export default defineConfig([
   // A `tests/fixtures/` file is malformed on purpose, so linting it reports
   // the very defect a test asserts on.
   // `.next/` and `next-env.d.ts` are written by `next dev`/`next build`.
+  // `apps/web/src/openapi/` is generated from `packages/contracts/openapi.json`
+  // by `pnpm web:client`, and `tests/web-openapi-client.test.ts` fails on any
+  // difference from what the generator writes, so a hand edit there cannot
+  // survive; it is still type-checked, as everything `src/` imports is.
   globalIgnores([
+    "apps/web/dist/",
+    "apps/web/src/openapi/",
     "dist/",
     ".next/",
     "next-env.d.ts",
@@ -379,6 +465,34 @@ export default defineConfig([
       // `react` major/minor in package.json, and drop it once
       // eslint-plugin-react declares eslint 10 in its peer range.
       react: { version: "19.2" },
+    },
+  },
+  {
+    // The web client's React rules, in place of the ones `eslint-config-next`
+    // scopes to `src/` above: the hooks rules from the declared
+    // `eslint-plugin-react-hooks`, and the `react/*` and `jsx-a11y/*` rules
+    // `eslint-config-next` turns on, taken with the plugin objects it ships
+    // rather than a second copy of either. `@next/next/*` and `import/*` stay
+    // behind: neither applies to a Vite SPA. The hooks plugin object is the
+    // one `eslint-config-next` carries, which is the declared package's own
+    // export, because that package's typings do not satisfy ESLint's
+    // `Plugin`. When #44 removes `eslint-config-next`, `react` and `jsx-a11y`
+    // have to be declared here in their own right.
+    name: "web/react",
+    files: ["apps/web/**/*.{ts,tsx}"],
+    plugins: {
+      react: nextPlugin("react"),
+      "react-hooks": nextPlugin("react-hooks"),
+      "jsx-a11y": nextPlugin("jsx-a11y"),
+    },
+    settings: { react: { version: "19.2" } },
+    rules: {
+      ...reactHooks.configs.recommended.rules,
+      ...Object.fromEntries(
+        Object.entries(NEXT_RULES).filter(([rule]) =>
+          /^(react|jsx-a11y)\//u.test(rule),
+        ),
+      ),
     },
   },
   {
@@ -592,9 +706,13 @@ export default defineConfig([
     "adapters",
     "packages/adapters implements packages/application's ports: it imports @instant-composition/application and @instant-composition/domain, the AWS SDK's DynamoDB client and document client, zod, and node:fs/promises, each by its exact name, and nothing else outside itself.",
   ),
-  appBoundary(
+  ...appBoundary(
     "api",
     "apps/api is the HTTP adapter: it imports @instant-composition/adapters, application, contracts and domain, hono, @hono/node-server and node:path, each by its exact name, and nothing else outside itself — never the Next.js tree under src/, and never a package by a relative path.",
+  ),
+  ...appBoundary(
+    "web",
+    "apps/web is the browser client: its src/ imports React, the router, the query cache, use-intl and the UI libraries its row names, each by its exact name, and no workspace package — it reaches the API over HTTP through the types generated into src/openapi/. Its config files add Vite and its plugins. Never the Next.js tree under src/, and never a package by a relative path.",
   ),
   {
     name: "automation/node-scripts",
