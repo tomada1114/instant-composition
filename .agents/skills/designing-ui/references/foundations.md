@@ -71,8 +71,9 @@ the only lime is the timer.
 | Figures               | `font-display`: Space Grotesk                                       | 600           |
 | Labels and counters   | `font-mono`: JetBrains Mono                                         | 500           |
 
-The three Latin families are loaded by `src/app/fonts.ts`. Every figure is tabular:
-`body` sets `tabular-nums`, so counting up never shifts a digit.
+The three Latin families are bundled from `@fontsource-variable/*`, imported by
+`apps/web/src/main.tsx`. Every figure is tabular: `body` sets `tabular-nums`, so
+counting up never shifts a digit.
 
 | Token        | Family  | Size | Line height | Tracking | Weight | Used for                                               |
 | ------------ | ------- | ---- | ----------- | -------- | ------ | ------------------------------------------------------ |

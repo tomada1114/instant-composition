@@ -3,23 +3,23 @@ name: changing-gates
 description: >
   Covers editing a file that enforces rather than implements: a .github/workflows/*.yml
   CI workflow, lefthook.yml, or a setting inside eslint.config.mjs, tsconfig.json,
-  vitest.config.ts, .prettierrc.json, or next.config.ts. Use when a CI job or a deploy
-  workflow is proposed, a step is added to check:source or ci.yml, a lefthook stage or
-  glob changes, an ESLint rule or a vitest project is added or loosened, or the question
-  is which gate would have caught a change — including what none of them sees, such as
-  src/proxy.ts and anything needing a running server.
+  vitest.config.ts, .prettierrc.json, or apps/web/vite.config.ts. Use when a CI job or a
+  deploy workflow is proposed, a step is added to check:source or ci.yml, a lefthook
+  stage or glob changes, an ESLint rule, a boundary row or a vitest project is added or
+  loosened, or the question is which gate would have caught a change — including what
+  none of them sees, such as the Vite /api proxy and anything needing a running stack.
 ---
 
 # Changing Gates
 
 **Owns:** a change to a file that enforces rather than implements — a CI workflow,
 `lefthook.yml`, or a tool config (`eslint.config.mjs`, `tsconfig.json`,
-`vitest.config.ts`, `.prettierrc.json`, `next.config.ts`) — and which gate can see a
-given change at all. **Does not own:** adding a dependency the config then configures
-(`managing-dependencies`); a coverage floor's value or which vitest project a test joins
-(`placing-tests`); a `.mjs` under `scripts/` that a gate invokes
-(`writing-repo-scripts`); what `src/proxy.ts` does and where it belongs
-(`building-app-routes`); `.github/labels.yml` (`triaging-issues`).
+`vitest.config.ts`, `.prettierrc.json`, `apps/web/vite.config.ts`) — and which gate can
+see a given change at all. **Does not own:** adding a dependency the config then
+configures (`managing-dependencies`); a coverage floor's value or which vitest project a
+test joins (`placing-tests`); a `.mjs` under `scripts/` that a gate invokes
+(`writing-repo-scripts`); what the web client's dev server and proxy serve
+(`building-web-screens`); `.github/labels.yml` (`triaging-issues`).
 
 ## The one rule every gate change shares
 
@@ -268,10 +268,11 @@ Two properties are worth knowing before relying on it or editing it:
 ## Tool configs
 
 Each of `eslint.config.mjs`, `tsconfig.json`, `vitest.config.ts`, `.prettierrc.json` and
-`next.config.ts` holds its own current values — read the file rather than a copy of a
-rule written elsewhere. A PR changing one owes three things in its body: which rule or
-option moved, why, and what now passes or newly fails that did not before. AGENTS.md
-governs whether the change is allowed at all; this skill does not restate that.
+`apps/web/vite.config.ts` holds its own current values — read the file rather than a
+copy of a rule written elsewhere. A PR changing one owes three things in its body: which
+rule or option moved, why, and what now passes or newly fails that did not before.
+AGENTS.md governs whether the change is allowed at all; this skill does not restate
+that.
 
 Traps that have cost time here:
 
@@ -281,103 +282,93 @@ Traps that have cost time here:
   `NO_ENUM` and `NO_EXPORT_STAR` are shared constants and why the `boundaries/*` blocks
   match disjoint file sets. Keep a new block disjoint from them, or restate what it
   still wants.
-- Anchor a zone pattern with a leading `../`. Unanchored, `**/server` also matches the
-  package subpath `next-intl/server`, which `src/i18n/request.ts` imports today;
-  `../**/server` cannot match any bare specifier. Same shape for `../**/app` against
-  `next/app`. `no-restricted-imports` matches this specifier text through the `ignore`
+- Anchor a relative pattern with a leading `../`. Unanchored, `**/server` would also
+  match a package subpath such as `react-dom/server`; `../**/server` cannot match any
+  bare specifier. `no-restricted-imports` matches specifier text through the `ignore`
   package rather than resolving it, and `ignore` treats a leading `./` as a different
   string from a leading `../` — so `./../server` is invisible to `../**/server` even
-  though it resolves to the same module. Every `ZONE` entry and `AI_LAYER_PRIVATE`
-  therefore carries a `./../**` twin of each `../**` pattern; a bare specifier still
-  cannot start with `./..`, so the twin is exactly as safe as the pattern it doubles.
-- The `@/*` alias `tsconfig.json` declares is a third spelling of the same module, and
-  it needs no anchor: no bare package name can start with `@/`, since an empty scope is
-  not legal. It still needs its own entry — a zone left without an `@/` twin is a
-  boundary the alias walks straight through — which is why `zonePatterns()` generates
-  all six forms per zone, and why any negation exempting a module needs an `@/` form of
-  its own. A resolver added later (a bundler, a test runner) reads neither `paths` nor
-  this config, and has to be told about the alias separately, the way
-  `vitest.config.ts`'s `resolve.alias` is.
-- A `group` accepts `!` negations, and the **last matching entry wins**. That is how a
-  zone's surface is stated as an allow-list rather than a deny-list naming each private
-  module, which would go stale the next time something lands in the zone. Every pattern
-  must come before every negation, since the `./../` twin needs its own exemption too.
+  though it resolves to the same module. `zonePatterns()` therefore generates a
+  `./../**` twin of each `../**` pattern; a bare specifier still cannot start with
+  `./..`, so the twin is exactly as safe as the pattern it doubles.
+- There is no path alias. Every module under `apps/*/src/` and `packages/*/src/` is
+  reached relatively inside its own tree and by `@instant-composition/<dir>` from
+  outside it. An alias added back would be a spelling no pattern above names, and every
+  resolver — `tsconfig.json`'s `paths`, Vite, Vitest, this config — would have to be
+  told about it separately; that is a boundary change, not a convenience.
 - `eslintConfigPrettier` must stay the last element of the exported array. Anywhere else
   it stops turning off the stylistic rules that would fight Prettier, and the two gates
   then disagree about the same file.
-- `eslint-config-next` states its rule blocks against `**/*`; this config re-scopes each
-  to the `src/` tree on the way in. Spreading a new shared config in unscoped puts
-  framework rules on `scripts/**` and `tests/**`.
+- A shared config spread in unscoped applies to `scripts/**` and `tests/**` as well. The
+  web client's React rules are the `web/react` block — `eslint-plugin-react-hooks`' flat
+  `recommended`, scoped to `apps/web/**`; a React or accessibility plugin added later
+  gets the same scoping.
 - The named blocks are the map: `src/shared-syntax`, `src/size-budget`,
-  `public-api/explicit-surface`,
-  `boundaries/core-is-framework-free-and-imports-no-zone`, `boundaries/i18n-is-a-leaf`,
-  `boundaries/server-never-imports-app`,
-  `boundaries/components-import-only-core-and-i18n`,
-  `boundaries/private-trees-are-not-importable`,
-  `boundaries/app-reaches-packages-by-name`, `boundaries/packages/<dir>` (one per
-  workspace package), `boundaries/apps/<dir>` (one per app holding source),
-  `automation/node-scripts`, `tests/vitest-rules`, `tests/relaxations`. Four of the
-  `boundaries/*` blocks are one import order written per zone, so they match disjoint
-  file sets by construction; the fifth protects private trees from `tests/` and
-  `scripts/`, and `boundaries/app-reaches-packages-by-name` covers `src/app/` and
-  `src/proxy.ts`, which no zone block matches. All six restate
-  `NO_RELATIVE_PACKAGE_IMPORT` — a relative path into `packages/` or `apps/` — because
-  the rule's options replace rather than merge, and a block that dropped it would reopen
-  the way past a package's `exports`. Name a new block the same way — the name is what a
-  reader, and ESLint's own config inspector, has to identify it by.
+  `public-api/explicit-surface`, `web/react`, `boundaries/packages/<dir>` (one per
+  workspace package), `boundaries/apps/<dir>` (one per app holding source, plus
+  `boundaries/apps/<dir>/config` for an app whose config files import build tools),
+  `boundaries/private-trees-are-not-importable`, `automation/node-scripts`,
+  `tests/vitest-rules`, `tests/relaxations`. The per-package and per-app blocks match
+  disjoint file sets by construction; `boundaries/private-trees-are-not-importable`
+  covers `tests/` and `scripts/` and restates `NO_RELATIVE_PACKAGE_IMPORT` — a relative
+  path into `packages/` or `apps/` — because the rule's options replace rather than
+  merge. Name a new block the same way — the name is what a reader, and ESLint's own
+  config inspector, has to identify it by.
 - `src/shared-syntax`, `public-api/explicit-surface` and `src/size-budget` match
-  `SOURCE_FILES`, which is `src/`, every `packages/*/src/` and every `apps/*/src/`: a
-  rule meant for the application's own source belongs there, so moving a module into a
-  package or an app never drops it. The `boundaries/packages/*` blocks are generated
-  from `WORKSPACE_EDGES`, one per package matching only that package's files, and the
-  `boundaries/apps/*` blocks from `APP_WORKSPACE_EDGES` the same way. Each refuses every
-  bare specifier but an allowed package's name through a `regex` pattern — a
+  `SOURCE_FILES`, every `packages/*/src/` and every `apps/*/src/`: a rule meant for the
+  application's own source belongs there, so moving a module from a package into an app
+  never drops it. An app's config file beside its `src/` (`apps/web/vite.config.ts`) is
+  outside them, which is what lets Vite read its default export. The
+  `boundaries/packages/*` blocks are generated from `WORKSPACE_EDGES`, `NPM_EDGES` and
+  `NODE_EDGES`, the `boundaries/apps/*` blocks from the `APP_*` tables the same way.
+  Each refuses every bare specifier but an allowed name through a `regex` pattern — a
   gitignore-style `group` cannot say "anything but these" — and a relative path into
-  another package or into a `src/` tree through a `group`. The group reads specifier
-  text, so a climb out of the package it does not name still passes lint;
-  `tests/boundaries.test.ts` resolves every relative specifier and is the check that
-  sees it.
-- `tests/boundaries.test.ts` asserts those same edges from the module graph, and it pins
-  zones rather than files. An exhaustive list of the modules under `src/` failed on
-  every legal new file, which teaches its reader to edit the meta-test until the day
-  that edit hides something real; a table of zones fails only on a change that needs a
-  boundary decision — a new zone, or a second module at the root of `src/`.
+  another package or app through a `group`. The group reads specifier text, so a climb
+  out of the package it does not name still passes lint; `tests/boundaries.test.ts`
+  resolves every relative specifier and is the check that sees it.
+- `tests/boundaries.test.ts` holds the same tables, asserts them from the module graph
+  and against each manifest, and gives every directory under `packages/` and `apps/` a
+  row: a new package or app fails the suite until it is given one, which is the boundary
+  decision it needs. It pins rows rather than files, so a legal new module inside a
+  package never trips it.
 - `vitest.config.ts` runs five projects — `unit`, `component` (jsdom), `automation`,
   `smoke`, `dynamodb` — and coverage is collected once for the whole run, never per
   project. The default run (`test`, `test:coverage`, `test:watch` and `test:related`)
   names `unit`, `component` and `automation` and so leaves out `smoke`, which serves
-  `pnpm build`'s output, and `dynamodb`, which needs DynamoDB local; ci.yml's `test` job
-  has neither. They are named rather than negated because a second `--project='!name'`
-  does not narrow the first, and `tests/ci-sync.test.ts` fails when a project is named
-  by none of `check:source`'s test steps. Which project a file joins, and the value of
-  any threshold, are `placing-tests`. What belongs here is that `extends: true` is what
-  carries the shared `allowOnly`/restore/unstub settings into a project: a hand-written
-  project object without it drops them silently.
-- `next.config.ts` is a gate as well as a build config: `agentRules: false` is what
-  stops `next dev` appending to AGENTS.md behind the author. Removing it makes a
-  hand-written source of truth a tool rewrites.
+  `pnpm web:build`'s output in front of the API on DynamoDB local, and `dynamodb`, which
+  needs DynamoDB local; ci.yml's `test` job has neither. They are named rather than
+  negated because a second `--project='!name'` does not narrow the first, and
+  `tests/ci-sync.test.ts` fails when a project is named by none of `check:source`'s test
+  steps. Which project a file joins, and the value of any threshold, are
+  `placing-tests`. What belongs here is that `extends: true` is what carries the shared
+  `allowOnly`/restore/unstub settings into a project: a hand-written project object
+  without it drops them silently.
+- `apps/web/vite.config.ts` is a gate as well as a build config: `envDir: false` is what
+  keeps Vite from loading any `.env*` file, which AGENTS.md keeps every tool off. Its
+  `server` and `preview` blocks share one `/api` proxy, and the smoke suite serves
+  through `preview`, so a change to one and not the other is a dev server the smoke
+  suite no longer describes.
 
 ## What no gate here sees
 
-No check here boots a browser, and only one boots a server: `pnpm run test:smoke` serves
-the last `pnpm build` with `next start` under `NODE_ENV=production` and asserts over
-`fetch` that `/` redirects to a locale-prefixed path, that every shipped locale renders
-with the right `<html lang>`, that an unknown unprefixed path is redirected rather than
-404ed and that the prefixed one 404s, and that the page links a stylesheet carrying a
-Tailwind utility it uses. The stylesheet case is the only check that sees PostCSS run at
-all: a component test renders a `className` into the DOM whether or not any CSS was
-generated. Each hop is asserted with `redirect: "manual"`, because a followed redirect
-merges the proxy's answer with the route's and would pass with the proxy gone. That is
-the whole of what a running server is checked for — the seams between the layers, not
-their behaviour, which each layer's own suite owns.
+No check here boots a browser, and only one runs the whole stack: `pnpm run test:smoke`
+serves the last `pnpm web:build` with `vite preview` in front of the API, started as
+`pnpm api` starts it, on DynamoDB local, and asserts over `fetch` that the document is
+served dark-only and in Japanese, that any client route gets that same document, that it
+links a stylesheet carrying a Tailwind utility the client uses, and that a round trip
+through the `/api` proxy saves, starts, records and reads back — plus one contract
+refusal and the bare unmatched `404`. The stylesheet case is the only check that sees
+Tailwind run at all: a component test renders a `className` into the DOM whether or not
+any CSS was generated. That is the whole of what a running stack is checked for — the
+seams between the layers, not their behaviour, which each layer's own suite owns.
 
 It runs from `check:source` and from ci.yml's `static` job, both times immediately after
-`Build`, and from neither `pnpm test` nor `pnpm check:quick`: the build is what it
-serves, so a run without one would either fail or pay for a second build. It never
-builds for itself — it compares `.next/BUILD_ID` against `src/`, `messages/`,
-`next.config.ts` and `postcss.config.mjs` and refuses a missing or stale build, which is
-how the caller stays the only one paying for a build. A green `check:quick` therefore
-still says nothing about anything only a running server shows.
+`Build the web client`, and from neither `pnpm test` nor `pnpm check:quick`: the bundle
+is what it serves, so a run without one would either fail or pay for a second build. It
+never builds for itself — it compares `apps/web/dist/index.html` against the client's
+source, `index.html`, `vite.config.ts`, `package.json` and `messages/`, refuses a
+missing or stale bundle, and refuses to start without DynamoDB local, which is how the
+caller stays the only one paying for either. A green `check:quick` therefore still says
+nothing about anything only a running stack shows.
 
 The same holds for DynamoDB. `pnpm run test:dynamodb` runs the learner-store contract
 suite against the DynamoDB adapter on DynamoDB local, and the API over it, and only
@@ -388,6 +379,6 @@ there: from `check:source` after `pnpm db:up`, and from ci.yml's `static` job, w
 is an OS matrix. A green `check:quick` says nothing about how the adapter behaves
 against a real engine.
 
-Everything outside those five assertions is still a place a change can be wrong while
-every gate passes. A gate proposed to close such a gap is a real gate, not a lint rule,
-and belongs in the PR as such.
+Everything outside those assertions is still a place a change can be wrong while every
+gate passes. A gate proposed to close such a gap is a real gate, not a lint rule, and
+belongs in the PR as such.

@@ -24,10 +24,11 @@ Instant Composition is a Japanese→English instant-composition drill for Japane
 learners of English: a card shows a Japanese sentence and the learner says it in English
 before the timer runs out, then checks the answer. Cards are pre-generated JSON under
 `content/`, written ahead of time by Claude Code skills, so the application calls no
-language model at runtime. It is a Next.js App Router application in ESM-only
-TypeScript, styled with Tailwind v4 and shadcn/ui, run as a local server with progress
-in a SQLite file (`node:sqlite`). It was started from a template whose language-model
-layer was removed whole.
+language model at runtime. It is a pnpm workspace in ESM-only TypeScript: a React
+single-page app under `apps/web` (Vite, Tailwind v4, components derived from shadcn/ui)
+calls an HTTP API under `apps/api` (Hono), which keeps progress in DynamoDB through the
+packages under `packages/` — DynamoDB local, in a container, on a checkout. It was
+started from a template whose language-model layer was removed whole.
 
 It is private: nothing here is packed, published, or consumed as a tarball, so there is
 no published `engines.node` floor — `.node-version` and `devEngines.runtime` carry the
@@ -45,26 +46,23 @@ typeface or a layout by taste to get a screen done, and never add a light theme.
 
 ## Before changing the architecture
 
-The architecture is being rewritten toward the target recorded in `docs/architecture/` —
-start at its `README.md`, whose ADRs say what is decided and what is only proposed. New
-or rewritten domain and application code takes the shape `designing-application-core`
-describes, even while today's zones stand in for the target packages; those zones and
-their checks stay enforced until the restructure replaces them. A change to a context
-boundary, a persistence shape, an external contract, a provider, or the security model
-owes an ADR, as `recording-architecture-decisions` sets out.
+The architecture follows the target recorded in `docs/architecture/` — start at its
+`README.md`, whose ADRs say what is decided and what is only proposed. Domain and
+application code lives in `packages/` and takes the shape `designing-application-core`
+describes. A change to a context boundary, a persistence shape, an external contract, a
+provider, or the security model owes an ADR, as `recording-architecture-decisions` sets
+out.
 
 ## Quick reference
 
 ```sh
-pnpm dev           # start the Next.js development server on http://localhost:3000
-pnpm build         # production build; also type-checks the App Router entry points
-pnpm start         # serve the production build from `pnpm build`
+pnpm dev           # DynamoDB local, the API and the web client together, on http://127.0.0.1:5173
 pnpm check:quick   # format check, lint, typecheck, tests — the everyday gate
-pnpm check:source  # the same gate plus both builds, the smoke and DynamoDB suites, and coverage
+pnpm check:source  # the same gate plus the web build, the smoke and DynamoDB suites, and coverage
 pnpm fix           # ESLint autofix, then Prettier
 pnpm test          # tests only
 pnpm test:coverage # tests with the coverage thresholds enforced
-pnpm test:smoke    # serves the last `pnpm build` with `next start` and asserts over HTTP
+pnpm test:smoke    # serves the last `pnpm web:build` in front of the API and asserts over HTTP
 pnpm test:dynamodb # the store contract suite and the API against DynamoDB local; needs `pnpm db:up`
 pnpm db:up         # start DynamoDB local from compose.yaml's pinned image, on localhost:8000
 pnpm db:down       # stop and remove it; it runs in memory, so its tables go with it
@@ -76,7 +74,7 @@ pnpm agents:sync   # regenerate .claude/skills/ from .agents/skills/
 pnpm agents:check  # fail when the two skill trees have drifted apart
 pnpm repo:labels   # create/update GitHub labels from .github/labels.yml
 pnpm hooks:install # repair the Git hooks; `pnpm install` installs them already
-pnpm clean         # remove the build and tool caches (.next, coverage, .eslintcache, tsbuildinfo)
+pnpm clean         # remove the build and tool caches (apps/web/dist, coverage, .eslintcache, tsbuildinfo)
 pnpm clean:deep    # the same, plus dist/ and node_modules/ — a reinstall follows
 pnpm cards:lint    # validate content/'s lists and every card; exit 1 on any ERROR
 pnpm cards:gaps    # plan a generation run: which cells get how many cards
@@ -101,11 +99,16 @@ target list is reviewable in `package.json` instead of retyped at a prompt each 
 
 Run a single test file with `pnpm exec vitest run tests/<name>.test.ts`.
 
+`pnpm dev` is the whole local stack in one command: it runs `pnpm db:up`, builds the
+catalog snapshot when `dist/catalog/` has none, and runs `pnpm api` and `pnpm web` side
+by side until Ctrl-C, which stops both. DynamoDB local keeps running, with its tables,
+until `pnpm db:down`.
+
 `pnpm check:quick` is the everyday local gate, and needs nothing running beside it;
-`pnpm check:source` adds the build, the smoke suite, the DynamoDB suite and the coverage
-floors on top of it, so it needs Docker and `pnpm db:up` first. CI runs those same
-checks as separate steps, so a green `pnpm check:source` here means those are green too.
-`lefthook`'s pre-commit hook runs a staged-file-scoped version of the same tools —
+`pnpm check:source` adds the web build, the smoke suite, the DynamoDB suite and the
+coverage floors on top of it, so it needs Docker and `pnpm db:up` first. CI runs those
+same checks as separate steps, so a green `pnpm check:source` here means those are green
+too. `lefthook`'s pre-commit hook runs a staged-file-scoped version of the same tools —
 format applied rather than merely checked, tests limited to the ones reachable from the
 staged files — before every commit. Nothing — not a hook, not a workflow — defines a
 check of its own; they all call these scripts.
@@ -119,33 +122,28 @@ reach for `--config.runtime-on-fail=ignore`: nothing here runs on any other Node
 Run the narrowest check that can fail, then the gate. Reaching for `pnpm check:source`
 on every edit is slow enough that it stops being run at all.
 
-| What you changed                                       | The narrowest check that can fail                    |
-| ------------------------------------------------------ | ---------------------------------------------------- |
-| A module under `src/core/`                             | `pnpm exec vitest run tests/<module>.test.ts`        |
-| A module under `src/server/`                           | `pnpm exec vitest run tests/<module>.test.ts`        |
-| `src/server/env.ts` or `.env.example`                  | `pnpm exec vitest run tests/server-env.test.ts`      |
-| A page, layout or route handler under `src/app/`       | `pnpm build`, then `pnpm test:smoke`                 |
-| A component with a rendered test                       | `pnpm exec vitest run tests/<name>.test.tsx`         |
-| A catalog under `messages/`, or `src/i18n/messages.ts` | `pnpm exec vitest run tests/messages.test.ts`        |
-| `src/proxy.ts` or the locale routing behind it         | `pnpm exec vitest run tests/proxy.test.ts`           |
-| Anything only a running server shows                   | `pnpm build`, then `pnpm test:smoke`                 |
-| `src/app/globals.css` or `postcss.config.mjs`          | `pnpm build`, then `pnpm test:smoke`                 |
-| An import that crosses a zone boundary                 | `pnpm exec vitest run tests/boundaries.test.ts`      |
-| A package under `packages/`                            | `pnpm typecheck`, then `tests/boundaries.test.ts`    |
-| A module under `apps/api/`                             | `pnpm exec vitest run tests/api-*.test.ts`           |
-| A module under `apps/web/src/`                         | `pnpm exec vitest run tests/web-`                    |
-| `apps/web/vite.config.ts`, `index.html` or its CSS     | `pnpm web:build`                                     |
-| `packages/contracts/openapi.json`                      | `pnpm web:client`, then `pnpm typecheck`             |
-| A module under `packages/adapters/`                    | `pnpm exec vitest run tests/adapters-*.test.ts`      |
-| The DynamoDB store, or the store contract suite        | `pnpm db:up`, then `pnpm test:dynamodb`              |
-| A schema or route under `packages/contracts/`          | `pnpm exec vitest run tests/contracts-*.test.ts`     |
-| A test                                                 | `pnpm exec vitest run tests/<name>.test.ts`          |
-| A script under `scripts/`                              | `pnpm exec vitest run tests/<script>.test.ts`        |
-| A script under `scripts/cards/`                        | `pnpm exec vitest run tests/cards-*.test.ts`         |
-| Anything under `content/`                              | `pnpm cards:lint`                                    |
-| A skill under `.agents/skills/`                        | `pnpm agents:sync && pnpm agents:check && pnpm test` |
-| `package.json`, `pnpm-workspace.yaml`                  | `pnpm install`, then `pnpm check:source`             |
-| Markdown                                               | `pnpm fix`                                           |
+| What you changed                                     | The narrowest check that can fail                                      |
+| ---------------------------------------------------- | ---------------------------------------------------------------------- |
+| A module under `packages/domain/` or `application/`  | `pnpm exec vitest run tests/<package>-*.test.ts`                       |
+| A module under `packages/adapters/`                  | `pnpm exec vitest run tests/adapters-*.test.ts`                        |
+| The DynamoDB store, or the store contract suite      | `pnpm db:up`, then `pnpm test:dynamodb`                                |
+| A schema or route under `packages/contracts/`        | `pnpm exec vitest run tests/contracts-*.test.ts`                       |
+| `packages/contracts/openapi.json`                    | `pnpm web:client`, then `pnpm typecheck`                               |
+| A module under `apps/api/`                           | `pnpm exec vitest run tests/api-*.test.ts`                             |
+| `apps/api/src/env.ts` or `.env.example`              | `pnpm exec vitest run tests/api-env.test.ts tests/env-example.test.ts` |
+| A module or screen under `apps/web/src/`             | `pnpm exec vitest run tests/web-<name>`                                |
+| A catalog under `messages/`, or `apps/web/src/i18n/` | `pnpm exec vitest run tests/messages.test.ts`                          |
+| `apps/web/vite.config.ts`, `index.html` or its CSS   | `pnpm web:build`, then `pnpm test:smoke`                               |
+| Anything only the running stack shows                | `pnpm db:up && pnpm web:build`, then `pnpm test:smoke`                 |
+| An import that crosses a package or app boundary     | `pnpm exec vitest run tests/boundaries.test.ts`                        |
+| A package's or app's manifest or `tsconfig.json`     | `pnpm typecheck`, then `tests/boundaries.test.ts`                      |
+| A test                                               | `pnpm exec vitest run tests/<name>.test.ts`                            |
+| A script under `scripts/`                            | `pnpm exec vitest run tests/<script>.test.ts`                          |
+| A script under `scripts/cards/`                      | `pnpm exec vitest run tests/cards-*.test.ts`                           |
+| Anything under `content/`                            | `pnpm cards:lint`                                                      |
+| A skill under `.agents/skills/`                      | `pnpm agents:sync && pnpm agents:check && pnpm test`                   |
+| `package.json`, `pnpm-workspace.yaml`                | `pnpm install`, then `pnpm check:source`                               |
+| Markdown                                             | `pnpm fix`                                                             |
 
 `pnpm test:dynamodb` is its own vitest project, `dynamodb`, kept out of `pnpm test` and
 `pnpm check:quick` the way `smoke` is: the everyday gate needs no container, and it
@@ -158,115 +156,102 @@ contract stays in `pnpm test`.
 ## Architecture
 
 ```
-src/
-├── core/       # framework-free vocabulary: a Result, a domain type, a pure function
-├── server/     # the environment read, the SQLite store, the content loader, the
-│               # services the pages and handlers call, and the request handlers
-├── i18n/       # the locale list, its URL routing, and the typed message catalogs
-├── components/ # UI: the shadcn/ui copies under ui/ and this app's own components
-├── app/        # the Next.js App Router tree: pages, layouts, route handlers
-└── proxy.ts    # Next.js's request proxy: locale detection ahead of every page request
+apps/
+├── api/         # @instant-composition/api: the Hono app serving contracts' routes under /api
+└── web/         # @instant-composition/web: the Vite + React SPA, calling the API under /api
 packages/
 ├── domain/      # @instant-composition/domain: the pure rules, importing nothing
 ├── application/ # @instant-composition/application: commands, queries and ports
 ├── adapters/    # @instant-composition/adapters: the DynamoDB and in-memory stores, the catalog
 └── contracts/   # @instant-composition/contracts: the HTTP API's zod schemas and OpenAPI
-apps/
-├── api/         # @instant-composition/api: the Hono app serving contracts' routes under /api
-└── web/         # @instant-composition/web: the Vite + React SPA, calling the API under /api
-messages/       # one JSON catalog per locale; ja.json, the only one, sets the shape
+messages/       # the one UI catalog, ja.json, which apps/web renders
 content/        # the cards and the lists and guides that define them (see Content)
 scripts/        # repository automation, authored as .mjs, never shipped
+tests/          # every test, for every package and app (see `placing-tests`)
 ```
 
-Imports run one way — `app` → `server` → `core`, with `app` → `components` → `core`
-beside it — and `i18n` is a leaf that the page tree, the components and the handlers all
-read. `core` is the bottom of both orders: it names no framework, so it survives a
-change of it. `components` is reached from `app` alone — it renders what it is handed,
-so it names no page and no handler, and `server`, `core` and `i18n` in turn name nothing
-in it.
-
-A module under `src/` is reached either relatively or through the `@/*` → `./src/*`
-alias, which exists because shadcn/ui writes `@/components/...` into every component it
-copies in. Three resolvers are told about it separately — `tsconfig.json`'s `paths`,
-`vitest.config.ts`'s `resolve.alias`, and `eslint.config.mjs`, which matches specifier
-text and so carries an `@/` twin of every zone pattern — and `tests/boundaries.test.ts`
-resolves both spellings, so neither is a way around the order above.
+Imports run one way: `apps/api` → `adapters` → `application` → `domain`, with `apps/api`
+also naming `application`, `contracts` and `domain` itself, and `contracts` naming no
+workspace package. `domain` is the bottom: it names no framework, no npm package and no
+Node builtin, so it survives a change of any of them. `apps/web` names none of them: it
+reaches the API only over HTTP. Every module is reached by a relative path inside its
+own package or app and by the package's name from outside it; there is no path alias.
 
 ### The workspace
 
-The repository is a pnpm workspace: the Next.js application is its root package, and
-`pnpm-workspace.yaml` adds each directory under `apps/` and `packages/`. These are the
-packages `docs/architecture/adr/0002-architecture-style-and-repository-layout.md` lays
-out, and they grow as the restructure moves code into them. `packages/domain` holds a
-copy of `src/core/`'s rules, with the practice day computed in the learner's time zone,
-and the pure `decide` functions behind each command. `packages/application` holds the
-request context, the authorization policy, the practice commands as load, decide,
-commit, the queries each screen reads from projections alone, and the ports they need:
-the learner-bound store and the catalog. `packages/adapters` implements those ports: the
-DynamoDB store on ADR-0006's single table, each commit one `TransactWriteItems`; the
-in-memory store; and the catalog that reads one `pnpm catalog:build` snapshot. Both
-stores run the contract suite in `tests/learner-store-contract.ts`, isolation included —
-the in-memory one in `pnpm test`, the DynamoDB one against DynamoDB local in
-`pnpm test:dynamodb`. `packages/contracts` holds the `/v1` request and response schemas
-and the OpenAPI 3.1 document built from them, committed as
-`packages/contracts/openapi.json`; `tests/contracts-openapi.test.ts` fails when the file
-differs from what the schemas generate, and `pnpm contracts:openapi` rewrites it
-(ADR-0013). `apps/api` serves every route in contracts' `ROUTES` under `/api` by calling
-`packages/application`, with a stand-in authenticator bound to one local learner until
-Phase 3; `serving-the-api` holds how. `apps/web` is the browser client ADR-0008
-describes: a Vite + React SPA with TanStack Router, TanStack Query and use-intl over
-`messages/ja.json`, which reaches the API only over HTTP under `/api`, typed by what
-@hey-api/openapi-ts generates from `packages/contracts/openapi.json` into
-`apps/web/src/openapi/`. That tree is committed, `tests/web-openapi-client.test.ts`
-fails when it differs from a fresh generation, and `pnpm web:client` rewrites it. The
-home and drill screens run there so far; the rest of the port is still in `src/`, which
-is where the running application lives, and it keeps its own `src/core/` until Phase 1
-retires it. `infra/` joins the workspace with its first package.
+The repository is a pnpm workspace: the root package holds the tests and the repository
+automation, and `pnpm-workspace.yaml` adds each directory under `apps/` and `packages/`.
+These are the packages and apps
+`docs/architecture/adr/0002-architecture-style-and-repository-layout.md` lays out.
+`packages/domain` holds the pure rules, with the practice day computed in the learner's
+time zone, and the pure `decide` functions behind each command. `packages/application`
+holds the request context, the authorization policy, the practice commands as load,
+decide, commit, the queries each screen reads from projections alone, and the ports they
+need: the learner-bound store and the catalog. `packages/adapters` implements those
+ports: the DynamoDB store on ADR-0006's single table, each commit one
+`TransactWriteItems`; the in-memory store; and the catalog that reads one
+`pnpm catalog:build` snapshot. Both stores run the contract suite in
+`tests/learner-store-contract.ts`, isolation included — the in-memory one in
+`pnpm test`, the DynamoDB one against DynamoDB local in `pnpm test:dynamodb`.
+`packages/contracts` holds the `/v1` request and response schemas and the OpenAPI 3.1
+document built from them, committed as `packages/contracts/openapi.json`;
+`tests/contracts-openapi.test.ts` fails when the file differs from what the schemas
+generate, and `pnpm contracts:openapi` rewrites it (ADR-0013). `apps/api` serves every
+route in contracts' `ROUTES` under `/api` by calling `packages/application`, with a
+stand-in authenticator bound to one local learner until Phase 3; `serving-the-api` holds
+how. `apps/web` is the browser client ADR-0008 describes: a Vite + React SPA with
+TanStack Router, TanStack Query and use-intl over `messages/ja.json`, which reaches the
+API only over HTTP under `/api`, typed by what @hey-api/openapi-ts generates from
+`packages/contracts/openapi.json` into `apps/web/src/openapi/`. That tree is committed,
+`tests/web-openapi-client.test.ts` fails when it differs from a fresh generation, and
+`pnpm web:client` rewrites it. `infra/` joins the workspace with its first package.
 
 - **The edges.** `adapters` → `application` and `domain`, the AWS SDK's DynamoDB
   clients, `zod` and `node:fs/promises`; `application` → `domain`; `contracts` → `zod`
   alone; and `domain` → nothing — no workspace package, no npm package, no Node builtin.
   A package reaches another only by its name, `@instant-composition/<dir>`, and only
-  when its own `package.json` declares it. The same holds from outside `packages/`:
-  `src/`, `tests/` and `scripts/` never import a package by a relative path, which would
-  walk past its `exports`. `eslint.config.mjs`'s `boundaries/packages/*` blocks and
-  `tests/boundaries.test.ts` hold the same table, the test also against each manifest; a
-  package added under `packages/` fails the suite until it is given a row. `apps/api` →
-  `adapters`, `application`, `contracts` and `domain`, `hono`, `@hono/node-server` and
-  `node:path`, held the same way by the `boundaries/apps/api` block. `apps/web` imports
-  no workspace package: its `src/` reaches React, the router, the query cache, use-intl
-  and its UI libraries by exact specifier, its config files add Vite and its plugins,
-  and of the trees outside it only `messages/`. The `boundaries/apps/web` and
-  `boundaries/apps/web/config` blocks hold the specifiers, and
+  when its own `package.json` declares it. The same holds from outside `packages/` and
+  `apps/`: `tests/` and `scripts/` never import a package or an app by a relative path,
+  which would walk past its `exports`. `eslint.config.mjs`'s `boundaries/packages/*`
+  blocks and `tests/boundaries.test.ts` hold the same table, the test also against each
+  manifest; a package added under `packages/` fails the suite until it is given a row.
+  `apps/api` → `adapters`, `application`, `contracts` and `domain`, `hono`,
+  `@hono/node-server` and `node:path`, held the same way by the `boundaries/apps/api`
+  block. `apps/web` imports no workspace package: its `src/` reaches React, the router,
+  the query cache, use-intl and its UI libraries by exact specifier, its config files
+  add Vite and its plugins, and of the trees outside it only `messages/`. The
+  `boundaries/apps/web` and `boundaries/apps/web/config` blocks hold the specifiers, and
   `tests/boundaries.test.ts` the resolved paths. An app with source under `apps/` needs
   a row too.
 - **Source, not builds.** A package's `exports` points at its `src/index.ts`, and
-  whatever consumes it compiles that source; nothing is emitted to a `dist/`. Each
-  package has its own `tsconfig.json` over the shared `tsconfig.base.json`, with no DOM
-  and no Node types — except `adapters`, the one package that does I/O — and
-  `pnpm typecheck` checks every one of them after the root.
-- **The same gates as `src/`.** The syntax bans, the named-export surface and the size
-  budget in `eslint.config.mjs`, and the coverage floor in `vitest.config.ts`, cover
-  `packages/*/src/` and `apps/*/src/` as they cover `src/`. Tests stay under `tests/`
-  and import a package by its name, which the root `package.json` declares as a
+  whatever consumes it compiles that source — Vite for the web client, Vitest for the
+  tests, and Node's own type stripping for `pnpm api`, through the resolve hook
+  `scripts/ts-hooks.mjs` registers; nothing but the web client's bundle is emitted. Each
+  package and app has its own `tsconfig.json` over the shared `tsconfig.base.json`, with
+  no DOM and no Node types — except `adapters`, the one package that does I/O, and the
+  apps, which run on Node or in a browser — and `pnpm typecheck` checks every one of
+  them after the root's, which covers `tests/` and `scripts/`.
+- **The same gates everywhere.** The syntax bans, the named-export surface and the size
+  budget in `eslint.config.mjs`, and a coverage floor in `vitest.config.ts`, cover
+  `packages/*/src/` and `apps/*/src/` alike. Tests stay under `tests/` and import a
+  package or an app by its name, which the root `package.json` declares as a
   `workspace:*` devDependency.
 
 ### The seams
 
 Everything this application expects to replace or grow sits behind one of two seams:
 
-- **The Web-standard handler.** A request handler under `src/server/handlers/` returns a
-  plain `(request: Request) => Promise<Response>` and imports nothing from `next`. That
-  is what lets a test drive it with `new Request(…)` and no framework, and what keeps a
-  `route.ts` under `src/app/api/` a one-line re-export with no logic of its own to test.
-  `apps/api`'s `createApp` keeps the same shape: it takes every dependency as an
-  argument, and a test drives `app.fetch(new Request(…))` with no network.
-- **The environment.** `src/server/env.ts` is the only module under `src/` that reads
-  `process.env`, and `apps/api/src/env.ts` the only one in `apps/api`. Each validates
-  the whole environment in one place and hands every other module what it needs as an
-  argument, so "where does this secret enter the process" is a question a reader answers
-  by opening one file.
+- **The Web-standard app.** `apps/api`'s `createApp` returns a Hono app whose `fetch` is
+  a plain `(request: Request) => Promise<Response>`, and it takes every dependency — the
+  stores, the catalog, the authenticator, the clock and the log sink — as an argument.
+  That is what lets a test drive `app.fetch(new Request(…))` with no server and no
+  network, and what keeps `apps/api/src/main.ts`, the local entry `pnpm api` runs, a few
+  lines of wiring that a hosted entry replaces without touching the app.
+- **The environment.** `apps/api/src/env.ts` is the only module under any `src/` that
+  reads `process.env`. It validates the whole environment in one place and hands every
+  other module what it needs as an argument, so "where does this setting enter the
+  process" is a question a reader answers by opening one file. The web client reads no
+  environment; its Vite config reads `API_PORT` alone, for the `/api` proxy.
 
 ### Rate limiting
 
@@ -274,42 +259,41 @@ This application implements neither rate limiting nor concurrency limiting. It o
 limiter state, store, algorithm, or rate-limit environment variable. An endpoint that
 bills a provider must have its caller-throughput policy enforced at an edge or gateway
 before the request reaches the app, with enforcement shared across instances; a
-per-process limiter is not equivalent across instances. `API_ACCESS_KEY` is
-authentication only, not a rate-limit declaration.
+per-process limiter is not equivalent across instances.
 
 ### What is contract and what is private
 
 Nothing here is published, so the contract is not an export map. It is what a caller
-outside the process can observe, plus what each zone publishes to the zone above it:
+outside the process can observe, plus what each package publishes to the ones above it:
 
-- **Contract.** The HTTP surface of any route under `src/app/api/`, and of every route
-  `apps/api` serves from `packages/contracts` — its request body, its answer, and the
-  `error.code` vocabulary a client branches on. The locale list in `src/i18n/locales.ts`
-  and the message keys `messages/ja.json` defines.
-- **Private.** Any module a zone's own surface does not re-export. A test reaches a
-  private module through the surface that owns it, never around it.
+- **Contract.** Every route `apps/api` serves from `packages/contracts` — its request
+  body, its answer, and the `error.code` vocabulary a client branches on, as
+  `packages/contracts/openapi.json` records them. The message keys `messages/ja.json`
+  defines.
+- **Private.** Any module a package's or app's `src/index.ts` does not re-export. A test
+  reaches a private module through the surface that owns it, never around it.
 
-Next.js loads a page, layout, boundary or route handler under `src/app/` by file name
-through its default export, and does the same for `src/proxy.ts` and
-`src/i18n/request.ts`. Those are framework-owned entry points, where the file's path is
-the symbol's name; everywhere else under `src/` the surface is named exports, which is
-what a reviewer can read a diff of.
+No framework here loads a module by its file name, so every surface under a `src/` is
+named exports, which is what a reviewer can read a diff of. A tool's config file beside
+an app's `src/` — `apps/web/vite.config.ts` — is read through its default export and
+sits outside that rule.
 
 These edges are enforced twice and their values are written down in neither this file
-nor a skill: `eslint.config.mjs` carries them as `no-restricted-imports` zone blocks and
-a per-file size budget, and `tests/boundaries.test.ts` asserts the same edges from the
+nor a skill: `eslint.config.mjs` carries them as `no-restricted-imports` blocks and a
+per-file size budget, and `tests/boundaries.test.ts` asserts the same edges from the
 module graph, so a rule deleted from that config still fails the suite. Read the numbers
 and the patterns there — a summary that restated them is the copy that goes stale. How
-to work inside a zone is a skill's subject, not this section's.
+to work inside a package or an app is a skill's subject, not this section's.
 
 ## Content
 
-`content/` is the data the app will read: `cards/<topic>/<subtopic>.json` (one array per
-cell, sorted by id), `tombstones.jsonl` (every deleted card, append-only, so an id is
-never reused), the tag lists `taxonomy.json`, `levels.json` and `grammar.json`, and the
-writing and review guides under `guides/`. A card is shown only when its `stamps.core`
-hash matches its current fields — `scripts/cards/schema.mjs` holds that rule for the app
-to reuse.
+`content/` is the data the app reads, through the catalog snapshot `pnpm catalog:build`
+writes from it: `cards/<topic>/<subtopic>.json` (one array per cell, sorted by id),
+`tombstones.jsonl` (every deleted card, append-only, so an id is never reused), the tag
+lists `taxonomy.json`, `levels.json` and `grammar.json`, and the writing and review
+guides under `guides/`. A card is shown only when its `stamps.core` hash matches its
+current fields — `scripts/cards/schema.mjs` holds that rule, and the snapshot carries
+only the cards it admits.
 
 Cards are written only by the three card skills below through `pnpm cards:*`, never by
 hand-editing the JSON: the commands assign ids, lint, check for near-duplicates, keep
@@ -325,10 +309,10 @@ names its own boundary with its neighbours.
 
 | Skill                              | Load it when you are working on                                                                                                           |
 | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| `building-app-routes`              | a page, layout or Route Handler under `src/app/`, `src/proxy.ts`, or `src/server/`                                                        |
-| `localizing-ui`                    | a catalog under `messages/`, a module under `src/i18n/`, or adding a UI string                                                            |
-| `writing-typescript`               | a `.ts` module or a `.tsx` component under `src/`                                                                                         |
-| `designing-errors`                 | an error type or an `ERR_*` code, in `src/` or `scripts/`                                                                                 |
+| `building-web-screens`             | a screen, route, query or API call under `apps/web/src/`, or regenerating the client after a contract change                              |
+| `localizing-ui`                    | a catalog under `messages/`, a module under `apps/web/src/i18n/`, or adding a UI string                                                   |
+| `writing-typescript`               | a `.ts` module or a `.tsx` component under `packages/*/src/` or `apps/*/src/`                                                             |
+| `designing-errors`                 | an error type or an `ERR_*` code, in `packages/`, `apps/` or `scripts/`                                                                   |
 | `writing-tests`                    | the body of a test under `tests/`                                                                                                         |
 | `placing-tests`                    | a new test file, a vitest project, or a coverage floor                                                                                    |
 | `type-testing`                     | an `expectTypeOf` assertion or a `@ts-expect-error` inside a test                                                                         |
@@ -339,7 +323,7 @@ names its own boundary with its neighbours.
 | `merge-dependabot`                 | landing open Dependabot or Renovate pull requests                                                                                         |
 | `updating-docs`                    | `README.md`, `CONTRIBUTING.md`, `AGENTS.md`, or whether a change owes a doc at all                                                        |
 | `triaging-issues`                  | filing, labelling, or ranking a GitHub issue                                                                                              |
-| `designing-ui`                     | the design direction, the theme tokens in `src/app/globals.css`, a shadcn/ui component, or styling any screen                             |
+| `designing-ui`                     | the design direction, the theme tokens in `apps/web/src/globals.css`, a shadcn/ui component, or styling any screen                        |
 | `shipping-issues`                  | ranking open issues and shipping the top one (or all) through PR, CI, and merge                                                           |
 | `steering-the-roadmap`             | choosing what to work on next, reordering phases or scope, cutting a phase into issues, or the project's status; before `shipping-issues` |
 | `generating-cards`                 | writing new cards into `content/cards/`, filling thin cells, or adding a subtopic                                                         |
@@ -373,9 +357,9 @@ names its own boundary with its neighbours.
   fine), anything under `secrets/`, or `.claude/settings.local.json`. A `.env` in a
   checkout may hold a real credential, so reading one is already a disclosure whether or
   not anything is written back: no `cat`, no `grep`, no copy to a temp path, and never a
-  value out of it onto a command line. `src/server/env.ts` is the list of names the
-  process reads, and `.env.example` ships every one of them with an empty value — those
-  two are what to open when you need to know what exists.
+  value out of it onto a command line. `apps/api/src/env.ts` is the list of names a
+  local run reads, and `.env.example` ships every one of them with an empty value —
+  those two are what to open when you need to know what exists.
 - Never write a credential into a tracked file — no registry auth token, no private key.
 - `pnpm-lock.yaml` is generated by `pnpm install`, never hand-edited;
   `managing-dependencies` holds the reasoning.

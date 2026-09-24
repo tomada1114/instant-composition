@@ -3,11 +3,12 @@ name: placing-tests
 description: >
   Decides where a new test file goes — always under tests/, never beside the module it
   covers — which of vitest.config.ts's five projects it joins (unit, component under
-  jsdom for a .test.tsx, the explicit automation list, smoke for the suite that serves a
-  build, or dynamodb for the one needing DynamoDB local), and which coverage.thresholds
-  floor governs it. Use when adding a .test.ts or .test.tsx file, when a test needs a
-  DOM, spawns a subprocess or a server, needs DynamoDB, when choosing between `pnpm exec
-  vitest run` and `pnpm test:coverage`, or when a coverage run drops below a floor.
+  jsdom for a .test.tsx, the explicit automation list, smoke for the suite serving the
+  built stack, or dynamodb for the one needing DynamoDB local), and which
+  coverage.thresholds floor governs it. Use when adding a .test.ts or .test.tsx file,
+  when a test needs a DOM, spawns a subprocess or a server, needs DynamoDB, when
+  choosing between `pnpm exec vitest run` and `pnpm test:coverage`, or when a coverage
+  run drops below a floor.
 ---
 
 # Placing Tests
@@ -20,27 +21,28 @@ style, and its fixtures (`writing-tests`); compile-time assertions with `expectT
 ## Location: `tests/`, never beside the source
 
 Every test file lives at `tests/<subject>.test.ts` or `tests/<subject>.test.tsx`, named
-after the seam it covers rather than after a file path — `tests/home-screen.test.tsx`
-for the start screen, `tests/proxy.test.ts` for the locale proxy, `tests/result.test.ts`
-for the `Result` vocabulary. Never co-locate a test next to the module it covers.
+after the seam it covers rather than after a file path, and prefixed with the package or
+app it drives — `tests/web-home.test.tsx` for the home screen,
+`tests/api-routes.test.ts` for the API's route table, `tests/domain-result.test.ts` for
+the `Result` vocabulary. Never co-locate a test next to the module it covers.
 
-This is settled, and it is deliberately against the App Router convention of keeping a
-test beside its component. Four mechanical reasons, each of which would have to be
-undone to move a test into `src/`:
+This is settled, and it is deliberately against the common convention of keeping a test
+beside its component. Four mechanical reasons, each of which would have to be undone to
+move a test into a package's or an app's `src/`:
 
-- `coverage.include` in `vitest.config.ts` is the `.ts` and `.tsx` files under `src/`,
-  under each `packages/*/src/` and each `apps/*/src/`, and `scripts/**/*.mjs`. A test
-  file in any of those source trees would count itself as covered source and quietly
-  lift every floor it sits under — the one direction a coverage number must never move
-  by accident.
-- The three vitest projects select on `tests/**` globs plus the file extension, and the
-  automation project is an explicit list of `tests/…` paths. A co-located test joins no
-  project until every one of those globs is widened.
+- `coverage.include` in `vitest.config.ts` is the `.ts` and `.tsx` files under each
+  `packages/*/src/` and each `apps/*/src/`, and `scripts/**/*.mjs`. A test file in any
+  of those source trees would count itself as covered source and quietly lift every
+  floor it sits under — the one direction a coverage number must never move by accident.
+- The vitest projects select on `tests/**` globs plus the file extension, and the
+  automation, smoke and dynamodb projects are explicit lists of `tests/…` paths. A
+  co-located test joins no project until every one of those globs is widened.
 - `eslint.config.mjs` scopes rules by tree: the `tests/vitest-rules` and
-  `tests/relaxations` blocks match `tests/**`, while `src/size-budget`'s 200-line cap
-  and the Next.js rule set match `src/**`. A test under `src/` would get the source
-  rules and none of the test ones.
-- `next build` compiles the `src/` tree. A test file there is build input.
+  `tests/relaxations` blocks match `tests/**`, while `src/size-budget`'s 200-line cap,
+  the named-export surface and the package boundaries match `SOURCE_FILES`. A test under
+  a `src/` would get the source rules and none of the test ones.
+- `vite build` bundles `apps/web/src/`, and each package's own `tsconfig.json` checks
+  its `src/` with no test types. A test file there is build input.
 
 `tests/fixtures/` is reserved for data under test, not test modules. Nothing under it is
 linted, formatted, type-checked, spell-checked, or collected as a test —
@@ -56,35 +58,38 @@ an `automation` test as a child process.
 file actually touches and which environment it needs — never from its name or its
 subject:
 
-- **`unit`** — `tests/**/*.test.ts`, the default. The test imports only `src/**` (plus,
-  as a deliberate exception, the pure-function modules under `scripts/lib/`) and touches
-  no filesystem, subprocess, or git. Node environment, 5-second budget.
+- **`unit`** — `tests/**/*.test.ts`, the default. The test imports only workspace
+  packages and apps by name (plus, as a deliberate exception, the pure-function modules
+  under `scripts/`) and touches no filesystem, subprocess, or git. Node environment,
+  5-second budget.
 - **`component`** — `tests/**/*.test.tsx`, selected by the extension alone. This is the
   only project running under jsdom, and the only one loading `tests/dom-setup.ts`, which
   registers the DOM matchers and Testing Library's `cleanup`. A test that renders a
   component under jsdom goes here by being written as `.tsx`; there is no list to join.
-  The screens' Client Components are tested here — `tests/home-screen.test.tsx`,
-  `tests/drill-session.test.tsx` — with `fetch` stubbed and the router mocked, so they
-  have no I/O either and keep the same short budget as `unit`.
+  The web client's screens are tested here — `tests/web-home.test.tsx`,
+  `tests/web-drill.test.tsx` — by mounting the whole app through `tests/web-harness.tsx`
+  with `fetch` stubbed, so they have no I/O either and keep the same short budget as
+  `unit`.
 - **`automation`** — the explicit `automationTests` list at the top of
   `vitest.config.ts`, with a 120-second budget. Everything that shells out, reads or
   writes a temp directory, spawns `git`/`node`, or walks whole trees on disk asserting
   against files rather than against imported code.
 - **`smoke`** — the `smokeTests` list beside it, one file today. A test joins it only
-  when it cannot run without `pnpm build`'s output on disk: it starts the built
-  application with `next start` and asserts over `fetch`. That is what makes it a
-  project of its own rather than another automation entry — the default run
+  when it cannot run without the whole stack: `tests/stack-smoke.test.ts` serves
+  `pnpm web:build`'s bundle with `vite preview` in front of the API, started as
+  `pnpm api` starts it, on DynamoDB local, and asserts over `fetch`. That is what makes
+  it a project of its own rather than another automation entry — the default run
   (`pnpm test`, `pnpm test:coverage`, and ci.yml's `test` job) leaves it out by naming
-  only `unit`, `component` and `automation`, because there is no build there to serve
-  and a suite that built one for itself would pay for a second build in every workflow.
-  `pnpm run test:smoke` is what runs it, from `check:source` and from ci.yml's `static`
-  job, both times straight after `Build`. A test here checks the build it was handed
-  rather than making one: `tests/server-smoke.test.ts` fails with an instruction when
-  `.next/BUILD_ID` is missing, and again when it is older than `src/`, `messages/`,
-  `next.config.ts` or `postcss.config.mjs`, because a run against last commit's build
-  passes every assertion while proving nothing about the change. Adding a file here is a
-  claim that no in-process test could have asserted the same thing; prefer `automation`
-  whenever one could.
+  only `unit`, `component` and `automation`, because there is neither a bundle nor a
+  container there, and a suite that built the bundle for itself would pay for a second
+  build in every workflow. `pnpm run test:smoke` is what runs it, from `check:source`
+  and from ci.yml's `static` job, both times straight after `Build the web client`. A
+  test here checks the bundle it was handed rather than making one: the suite fails with
+  an instruction when `apps/web/dist/index.html` is missing, when it is older than the
+  client's source or `messages/`, and when DynamoDB local does not answer, because a run
+  against last commit's bundle passes every assertion while proving nothing about the
+  change. Adding a file here is a claim that no in-process test could have asserted the
+  same thing; prefer `automation` whenever one could.
 - **`dynamodb`** — the `dynamodbTests` list: the learner-store contract suite against
   the DynamoDB adapter on DynamoDB local, and the API driven over that adapter, each
   case on a table it creates. It is left out of the default run for the same reason as
@@ -127,35 +132,22 @@ covered from the moment it exists — write its test in the same PR, not as foll
 
 **There is no top-level floor, and that is a decision rather than an omission.** The v8
 provider checks a top-level threshold against the coverage of _all_ included files
-combined, so one number over `src/` and `scripts/` together would let a well-tested zone
-subsidize an untested file in the other. Independent per-glob threshold sets are what
-stop that: each is judged only against its own coverage, and each answers a different
-question.
+combined, so one number over the packages, the apps and `scripts/` together would let a
+well-tested tree subsidize an untested file in another. Independent per-glob threshold
+sets are what stop that: each is judged only against its own coverage, and each answers
+a different question.
 
-- **The `src/` zones** named in `coverage.thresholds` carry the baseline floor for this
-  repository's own logic. That glob is deliberately narrower than `coverage.include`:
-  `src/app/**` and the `.tsx` files under `src/components/**` carry **no floor at all**.
-  They are framework entry points and rendered markup, exercised by a component render
-  or a build rather than by a unit test, and a floor they cannot meet would only teach
-  the next author to move the number. They stay inside `coverage.include`, so an
-  untested file there still reports as a percentage — it simply has no floor to trip.
-  That distinction is the whole point: a narrower _threshold_ glob keeps the number
-  visible, while a `coverage.exclude` entry would hide it, which is what AGENTS.md's
-  "never weaken a gate" forbids by name. Widening or narrowing the threshold glob is a
-  decision to argue for in a PR.
-- **`src/components/**/*.ts`** splits the zone by extension. Its `.ts` files are plain
-  logic — a hook, a formatter, a client for a JSON endpoint, `cn` — with no rendering
-  step to hide behind, so they carry the same baseline floor as the `src/` zones above.
-  A module earns the markup exemption only by being a `.tsx` component; moving logic out
-  of `src/server/` into a component module is not a way out of a floor.
-- **`packages/*/src/**`** carries the same baseline floor as the `src/` zones. The
-  workspace packages are where those zones are moving, so the floor was set when the
-  packages were still empty rather than left to arrive after code did. A package's tests
-  live under `tests/` like every other test, and import the package by its name.
-- **`apps/*/src/**`** carries the same floor, for the same reason, from an app's first
-  file. An app's local entry point (`apps/api/src/main.ts`) runs only in a process a
-  test would have to spawn, so it counts at 0% against that floor: keep it to wiring,
-  and put anything with a branch in a module a test imports.
+- **`packages/*/src/**`** carries the baseline floor for this repository's own logic —
+  the rules, the commands and queries, the contract and the adapters — from the day a
+  file exists. A package's tests live under `tests/` like every other test, and import
+  the package by its name.
+- **`apps/*/src/**`** carries the same floor from an app's first file, `.tsx` included:
+  the web client's screens are rendered under jsdom through the whole app, so markup is
+  not exempt. An app's local entry point (`apps/api/src/main.ts`,
+  `apps/web/src/main.tsx`) runs only in a process a test would have to spawn, so it
+  counts at 0% against that floor: keep it to wiring, and put anything with a branch in
+  a module a test imports. The generated `apps/web/src/openapi/` is inside the glob too;
+  it holds only types, so it has nothing to execute.
 - **`scripts/**`** was never measured before it was added to `coverage.include`, so its
   floor is the last measured coverage rounded down to a clean value, not a guessed
   target — it has been raised as coverage grew (see the dated comments in
@@ -173,11 +165,11 @@ deliberately does not repeat them, since a copied number goes stale the moment t
 config changes.
 
 **Coverage stops at the process boundary.** The v8 provider instruments the Vitest
-workers and nothing else, so a `src/` module that only ever executes inside a process
-the test spawns reports 0% however thoroughly the integration test exercises it — and 0%
-against a floor fails the run. Design for it rather than discovering it: keep the part
-that runs in the child thin and put the logic behind it in a module the test can also
-call in-process.
+workers and nothing else, so a module that only ever executes inside a process the test
+spawns reports 0% however thoroughly the integration test exercises it — and 0% against
+a floor fails the run. Design for it rather than discovering it: keep the part that runs
+in the child thin and put the logic behind it in a module the test can also call
+in-process.
 
 - **Branch coverage is the one that matters.** Cover both sides of a conditional rather
   than adding a trivial test whose only effect is moving a line/statement percentage.
@@ -191,7 +183,7 @@ call in-process.
 ```bash
 pnpm exec vitest run tests/<name>.test.ts   # one file, fast iteration
 pnpm test:coverage                          # full suite with floors enforced
-pnpm build && pnpm run test:smoke           # the smoke project, which needs the build
+pnpm db:up && pnpm web:build && pnpm run test:smoke   # the smoke project: bundle + DynamoDB local
 pnpm db:up && pnpm run test:dynamodb        # the dynamodb project, which needs DynamoDB local
 ```
 

@@ -124,8 +124,8 @@ export function assertInstalled(processes) {
  * @remarks
  * A snapshot named by `API_CATALOG_PATH` is the caller's, and is never built
  * here. One already on disk is used as it is, however old: rebuilding it is
- * `pnpm catalog:build`'s job, and the API reads it again on the next request
- * that needs it.
+ * `pnpm catalog:build`'s job, and the API reads a readable snapshot once per
+ * start.
  *
  * @param {Readonly<Record<string, string | undefined>>} env - The environment the API will read.
  * @param {object} [options]

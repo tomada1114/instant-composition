@@ -12,7 +12,7 @@ gh run list --branch <branch> --limit 1 --json databaseId -q '.[0].databaseId' \
 
 Which _step_ failed is the fastest way to tell these apart. F1 to F3 fail before any
 project code runs, at `pnpm install`; F4 onward fail inside a check, in the order CI
-runs them — format, lint, typecheck, build, then tests.
+runs them — format, lint, typecheck, the web build and the smoke test, then tests.
 
 ## F1 — Peer range conflict (`strictPeerDependencies`)
 
@@ -80,28 +80,31 @@ for a Prettier formatting change) belong on the branch. If the new version deman
 real design decision or a config change with tradeoffs, hold the PR and report what it
 wants. Never silence it with `@ts-expect-error` or an `eslint-disable` to land the bump.
 
-## F5 — The application no longer builds
+## F5 — The web client no longer builds, or the stack no longer serves
 
-**Symptom:** formatting, lint and typecheck pass; CI's `Build` step fails at
-`pnpm run build` (`next build`). Often the only failing step.
+**Symptom:** formatting, lint and typecheck pass; CI's `Build the web client` step fails
+at `pnpm run web:build` (`vite build`), or the `Smoke test` step after it fails. Often
+the only failing step.
 
-**Cause:** a bump to `next`, `react`, `react-dom`, `next-intl`, or anything
-`next.config.ts` loads. `next build` compiles the App Router tree, runs the framework's
-own plugins, and type-checks the route entry points — a surface no unit test reaches, so
-it is the first place a framework bump shows up.
+**Cause:** a bump to `vite`, `@vitejs/plugin-react`, `tailwindcss` or
+`@tailwindcss/vite`, or anything `apps/web/vite.config.ts` loads — the bundle is a
+surface no unit test builds. A smoke failure on a green build points at what only a
+running stack shows: the stylesheet Tailwind generated, the `/api` proxy of
+`vite preview`, or the API started as `pnpm api` starts it (a `hono`,
+`@hono/node-server` or AWS SDK bump).
 
 **Fix:** reproduce it locally, since the CI log truncates the part that matters:
 
 ```bash
-pnpm install --frozen-lockfile && pnpm run build
+pnpm install --frozen-lockfile && pnpm run web:build
+pnpm run db:up && pnpm run test:smoke
 ```
 
 A renamed config key or a moved export named in the upstream migration note is
-mechanical and belongs on the branch. A failure that needs an App Router change — a
-changed route or layout signature, a newly required export — is a migration rather than
-a bump: hold the PR and report what the release notes ask for. Never drop the build step
-and never reach for `typescript.ignoreBuildErrors` or `eslint.ignoreDuringBuilds` in
-`next.config.ts` to get past it.
+mechanical and belongs on the branch. A failure that needs a change to how the client is
+routed or bundled — a router API that moved, a plugin that now wants a different setup —
+is a migration rather than a bump: hold the PR and report what the release notes ask
+for. Never drop the build or smoke step to get past it.
 
 ## F6 — Test or coverage failure
 

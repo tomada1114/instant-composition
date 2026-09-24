@@ -36,7 +36,9 @@ repository stopped being one.
 answer it rather than deferring back:
 
 - `README.md` changes when the first ten minutes with a checkout change — the quick
-  start commands, what the one API route takes or answers, or where a new app begins.
+  start commands (`pnpm dev` and what it needs running), the layout of `apps/` and
+  `packages/`, or where a new app begins. The HTTP API's operations are documented by
+  `packages/contracts/openapi.json`, which is generated; prose does not repeat them.
 - `CONTRIBUTING.md` changes when setup, the toolchain versions, the dependency cooldown,
   or the pull request process changes.
 - Neither changes for a refactor, a test, a gate or a rule that AGENTS.md owns, or an
@@ -50,22 +52,24 @@ another's content.
 - `README.md` — the tour: what this template is, how to run it, and where copying it
   into a new app starts. It links to `AGENTS.md` and `CONTRIBUTING.md` instead of
   repeating them, so it must not grow a second command index or a second rule list.
-- `AGENTS.md` — the agent-facing guide: the architecture, the zone boundaries, the Quick
-  reference command index, the rules, and the Skills routing table. A changed boundary,
-  gate rule, or `pnpm` command lands here.
+- `AGENTS.md` — the agent-facing guide: the architecture, the package boundaries, the
+  Quick reference command index, the rules, and the Skills routing table. A changed
+  boundary, gate rule, or `pnpm` command lands here.
 - `CONTRIBUTING.md` — local setup, the dependency cooldown, and the pull request
   process. Nothing here is published, so it describes no release step.
 - `.agents/skills/<name>/SKILL.md` — the conventions of one kind of change, loaded on
   demand. `authoring-skills` owns how one is written, mirrored, and checked.
-- `.env.example` — every environment name the process reads, shipped with an empty
-  value. It is the file to open when the question is what exists.
+- `.env.example` — every environment name a local run reads (`apps/api/src/env.ts`'s
+  `API_ENV_NAMES`), shipped with an empty value. It is the file to open when the
+  question is what exists.
 - `docs/architecture/` — the architecture record: vision, current state, roadmap,
   references and the ADRs. `recording-architecture-decisions` owns when a change owes an
   ADR there and how one is written.
-- TSDoc in `src/**` — a published symbol's contract. An interface several
-  implementations share is where this matters most: it is what an implementer reads
-  instead of reading the implementation that happens to ship. `writing-typescript` owns
-  what the comment says; this skill owns only whether one is owed.
+- TSDoc in `packages/*/src/**` and `apps/*/src/**` — a published symbol's contract. An
+  interface several implementations share is where this matters most: it is what an
+  implementer reads instead of reading the implementation that happens to ship.
+  `writing-typescript` owns what the comment says; this skill owns only whether one is
+  owed.
 
 There is no `CHANGELOG.md` here, and `docs/` holds only the architecture record. A pull
 request explains itself in a line or two, and `.github/PULL_REQUEST_TEMPLATE.md` owns
@@ -96,9 +100,9 @@ Conventions owns the English rule and the one exception the catalogs get.
 ## What belongs in prose
 
 Document non-obvious behavior, architecture decisions, and trade-offs. Do not restate
-what the code or the type system already says — the same principle TSDoc follows in
-`src/**`. If a reader could get the fact from the signature or from running the code, it
-does not need a sentence here.
+what the code or the type system already says — the same principle TSDoc follows in the
+packages and apps. If a reader could get the fact from the signature or from running the
+code, it does not need a sentence here.
 
 ## Nothing verifies a fenced example
 
@@ -109,8 +113,8 @@ does not have is worse than one that stays silent.
 
 That leaves a discipline instead. Keep a fenced example to something a reader can check
 by eye — a command, a request body, a path. When the example has to be runnable, put the
-runnable thing in `src/`, where a test already calls it, and have the document point at
-it rather than copy it.
+runnable thing in a package or app, where a test already calls it, and have the document
+point at it rather than copy it.
 
 ## Generated trees are off-limits
 

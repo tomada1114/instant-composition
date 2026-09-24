@@ -15,11 +15,11 @@ description: >
 **Owns:** the rules that keep a learner's data reachable only by that learner, and by
 actors working for them within a grant — how identity enters a request, how stores are
 scoped, where authorization is decided, and the tests that prove it. **Does not own:**
-error types and what they may carry (`designing-errors`); route and handler files
-(`building-app-routes`); the shape of commands and ports (`designing-application-core`);
-how a test case is written (`writing-tests`); secrets and `.env*` (AGENTS.md "Security
-and human approval"). The decisions are ADR-0005, 0006 and 0012 under
-`docs/architecture/adr/`.
+error types and what they may carry (`designing-errors`); the API's handler table and
+local authenticator wiring (`serving-the-api`); the shape of commands and ports
+(`designing-application-core`); how a test case is written (`writing-tests`); secrets
+and `.env*` (AGENTS.md "Security and human approval"). The decisions are ADR-0005, 0006
+and 0012 under `docs/architecture/adr/`.
 
 AGENTS.md's "Security and human approval" carries the prohibition itself, because an
 agent meets it while working on something else. This skill holds the reasoning and the

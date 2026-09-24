@@ -4,20 +4,21 @@ description: >
   Covers this app's settled "instrument" direction and the Tailwind v4 + shadcn/ui
   foundation under it: the design lock and ledger, the dark-only tokens and the three
   web fonts, the component recipes, motion, sound, keys, key hints and accessibility
-  rules, adding a shadcn/ui component with pnpm dlx shadcn@latest add into
-  src/components/ui/, cn and tailwind-merge, and the Preflight traps. Use when building
-  or restyling a component or screen, choosing a color, type size, radius, spacing or
-  motion, using the accent, or adding or renaming a theme token.
+  rules, copying a shadcn/ui registry component by hand into apps/web/src/ui/, the
+  tokens in apps/web/src/globals.css, cn and tailwind-merge, and the Preflight traps.
+  Use when building or restyling a component or screen in apps/web, choosing a color,
+  type size, radius, spacing or motion, using the accent, or adding or renaming a theme
+  token.
 ---
 
 # Designing UI
 
-**Owns:** the visual direction and its lock, the theme tokens in `src/app/globals.css`,
-the component recipes, how a shadcn/ui component enters `src/components/`, and the craft
-rules every screen follows. **Does not own:** which zone a component may import from
-(`building-app-routes` and AGENTS.md's Architecture); the TypeScript inside a component
-(`writing-typescript`); the text a component renders (`localizing-ui`); the rename and
-locale steps of starting an app (`starting-an-app`).
+**Owns:** the visual direction and its lock, the theme tokens in
+`apps/web/src/globals.css`, the component recipes, how a shadcn/ui component enters
+`apps/web/src/ui/`, and the craft rules every screen follows. **Does not own:** the
+route, the data a screen reads and where its files go (`building-web-screens`); the
+TypeScript inside a component (`writing-typescript`); the text a component renders
+(`localizing-ui`); the rename and locale steps of starting an app (`starting-an-app`).
 
 The tokens are partly mechanical — `globals.css` clears Tailwind's own palette, radii,
 sizes, shadows and animations, so an off-vocabulary class generates nothing — but a
@@ -92,7 +93,7 @@ than home-made feel); "Here" marks a call made while transcribing either.
 | Sizes in rem at a 16px root                                                                 | Here     | px values stay exact by default and scale with the browser's text size                                                            |
 | Focus is a global white 2px outline, 2px offset, in the base layer                          | Here     | On every control; one rule cannot be forgotten per component                                                                      |
 | Reduced motion spares `data-motion="essential"`                                             | Here     | The timer bar keeps shrinking under reduced motion; the global collapse would freeze it                                           |
-| `viewport` declares `color-scheme: dark` and a `#0A0A0B` `theme-color`                      | Here     | Browser controls and a phone's toolbar match the canvas before the stylesheet loads                                               |
+| `index.html` declares `color-scheme: dark` and a `#0A0A0B` `theme-color`                    | Here     | Browser controls and a phone's toolbar match the canvas before the stylesheet loads                                               |
 
 ## References
 
@@ -111,25 +112,25 @@ Read the one the task needs; each records what is settled, not a proposal.
 
 ## Foundation
 
-Tailwind v4 with no `tailwind.config.js`: `postcss.config.mjs` is the whole of the build
-wiring, and the theme is CSS. A component never carries a raw color, a one-off `px` type
+Tailwind v4 with no `tailwind.config.js`: the `@tailwindcss/vite` plugin in
+`apps/web/vite.config.ts` is the whole of the build wiring, and the theme is CSS in
+`apps/web/src/globals.css`. A component never carries a raw color, a one-off `px` type
 size, or an arbitrary-value color.
 
-- `components.json` points every shadcn alias inside one zone, so the CLI writes into
-  `src/components/` and nowhere else.
-- `pnpm dlx shadcn@latest …` cannot run from the repository root: the CLI's own
-  dependency graph reaches a package that `pnpm-workspace.yaml`'s `trustPolicy` refuses.
-  Run it from a scratch directory outside the checkout with
-  `-c <path to this checkout>`. Any package the component needs is then added with
-  `pnpm add` here, under the review `managing-dependencies` owns.
-- `add` may also write CSS variables — even a `.dark` block — into `globals.css`. Read
-  that diff and revert it; a new role goes into the palette by hand.
-- Rewrite the copy on the way in: `cn` from `@/components/lib/utils`, `Slot` from
-  `@radix-ui/react-slot`, an `interface` for the props and an explicit return type, then
-  restyle it to its recipe — `hover:bg-accent` becomes `hover:bg-raised`, `destructive`
-  and `shadow-*` classes go, radii become `rounded-card`, `rounded-control`,
-  `rounded-tile`, `rounded-icon`, `rounded-bar` or `rounded-full`.
-  `src/components/ui/button.tsx` is the worked example.
+- There is no `components.json` and no `@/` alias, so the shadcn CLI has nowhere to
+  write. A registry component is copied by hand into `apps/web/src/ui/`, and its `@/…`
+  imports become relative ones. Any package it needs is added to `apps/web` with
+  `pnpm add` under the review `managing-dependencies` owns, and named in the web
+  client's import row (`APP_NPM_EDGES` in `eslint.config.mjs`), or lint refuses it.
+- A registry item may also carry CSS variables — even a `.dark` block. Leave them out; a
+  new role goes into the palette by hand.
+- Rewrite the copy on the way in: `cn` from `../lib/utils`, `Slot` from
+  `@radix-ui/react-slot`, an `interface` for the props and an explicit return type, a
+  named export rather than a default one, then restyle it to its recipe —
+  `hover:bg-accent` becomes `hover:bg-raised`, `destructive` and `shadow-*` classes go,
+  radii become `rounded-card`, `rounded-control`, `rounded-tile`, `rounded-icon`,
+  `rounded-bar` or `rounded-full`. `apps/web/src/ui/button.tsx` is the worked example;
+  its header comment records each departure from the registry copy.
 - Prefer a registry component over a hand-rolled one. The reject list still applies to a
   component that ships inside a library.
 
@@ -145,12 +146,14 @@ size, or an arbitrary-value color.
   Declare such a block `@theme static` when raw CSS reads the tokens too.
 - Never give a size token and a color token the same name: with both, a bare
   `text-<name>` always resolves to the color.
-- `twMerge` knows only Tailwind's default theme. `src/components/lib/utils.ts` extends
-  it with every size, radius and container name `globals.css` declares; a new one is
-  added in both places, plus a `cn` case in `tests/ui-primitives.test.tsx`.
-- The fonts are `next/font/google` in `src/app/fonts.ts`, exposed as CSS variables that
-  `--font-latin`, `--font-display` and `--font-mono` read; `fontVariables` goes on every
-  `<html>`. A fourth family is renegotiating the lock.
+- `twMerge` knows only Tailwind's default theme. `apps/web/src/lib/utils.ts` extends it
+  with every size, radius and container name `globals.css` declares; a new one is added
+  in both places, plus a `cn` case in `tests/web-ui-primitives.test.tsx`.
+- The fonts are the three `@fontsource-variable/*` packages, imported once by
+  `apps/web/src/main.tsx` and bundled with the client — nothing is fetched from a font
+  host. `globals.css` names each family on `:root` (`--font-inter-tight` and its
+  siblings), and `--font-latin`, `--font-display` and `--font-mono` read those. A fourth
+  family is renegotiating the lock.
 - Measure a new text/background pairing against WCAG contrast rather than estimating it,
   and add it to the table in the foundations reference.
 
@@ -162,6 +165,10 @@ size, or an arbitrary-value color.
 - Tailwind v4's Preflight gives a button `cursor: default`; the base layer restores the
   pointer for enabled buttons. Keep that rule rather than adding `cursor-pointer`.
 - Focus is visible on every control; never remove the outline to tidy a field.
+- No accessibility lint runs today: the web client's only React rules are the hooks
+  rules (`web/react` in `eslint.config.mjs`). What holds the accessibility rules in the
+  behaviour reference is review, and the rendered tests that find a control by its role
+  and accessible name.
 - Motion is functional and short, and `prefers-reduced-motion` switches each moment to
   its reduced form. No spinner and no pulsing skeleton, anywhere.
 - Copy is a label, not an instruction. Before adding a line of explanation, ask what the

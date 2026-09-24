@@ -1,28 +1,29 @@
 ---
 name: writing-typescript
 description: >
-  Use when writing or reviewing TypeScript under src/**, in a .ts module or a .tsx
-  component: narrowing unknown instead of any, `satisfies` vs `as`, a type guard,
-  interface vs type, an exhaustive switch over a union, inline `import type` under
-  verbatimModuleSyntax, why `enum` is rejected (no-restricted-syntax), what a zone
-  surface index.ts may export, annotating a return type or a generic boundary, hitting
-  noUncheckedIndexedAccess, exactOptionalPropertyTypes or
-  noPropertyAccessFromIndexSignature, placing a new constant, or fixing a logic bug in
-  an existing src/ function.
+  Use when writing or reviewing TypeScript under packages/*/src or apps/*/src, in a .ts
+  module or a .tsx component: narrowing unknown instead of any, `satisfies` vs `as`, a
+  type guard, interface vs type, an exhaustive switch over a union, inline `import type`
+  under verbatimModuleSyntax, why `enum` is rejected, what a src/index.ts may export,
+  which package or node: builtin a module may import, annotating a return type or a
+  generic, noUncheckedIndexedAccess, exactOptionalPropertyTypes or
+  noPropertyAccessFromIndexSignature, placing a constant, or fixing a logic bug there.
 ---
 
 # Writing TypeScript
 
 **Owns:** type-system judgment, naming, and constant placement inside a module under
-`src/**`. **Does not own:** the shape of an error class and the `ERR_*` code vocabulary
-(`designing-errors`); which file a page, a handler or a client component belongs in
-(`building-app-routes`); compile-time assertions with `expectTypeOf` (`type-testing`);
-the `.mjs` files under `scripts/` (`writing-repo-scripts`).
+`packages/*/src/` or `apps/*/src/`. **Does not own:** the shape of an error class and
+the `ERR_*` code vocabulary (`designing-errors`); which package a rule, command or port
+belongs in (`designing-application-core`); where an API handler or a web screen goes
+(`serving-the-api`, `building-web-screens`); compile-time assertions with `expectTypeOf`
+(`type-testing`); the `.mjs` files under `scripts/` (`writing-repo-scripts`).
 
 ## Naming and constants
 
 - An error `code` string is not a naming decision made here — **REQUIRED:**
-  `designing-errors` owns the `ERR_*` vocabulary for both `src/` and `scripts/`.
+  `designing-errors` owns the `ERR_*` vocabulary for the packages, the apps and
+  `scripts/`.
 - Keep a constant next to the code that reads it: a table only one handler reads sits in
   that handler's module. Do not create a shared `constants.ts` grab-bag that forces
   unrelated modules to import each other.
@@ -97,9 +98,9 @@ the `.mjs` files under `scripts/` (`writing-repo-scripts`).
   accidentally widen a generic that should stay preserved. **BACKGROUND:**
   `type-testing`.
 - Keep exported generics narrow: accept the widest reasonable input, return the
-  narrowest true output. `ok<T>(value: T): Result<T, never>` in `src/core/result.ts` is
-  the worked example: `never` keeps the value assignable to a `Result<T, E>` for any `E`
-  without the caller restating it.
+  narrowest true output. `ok<T>(value: T): Result<T, never>` in
+  `packages/domain/src/result.ts` is the worked example: `never` keeps the value
+  assignable to a `Result<T, E>` for any `E` without the caller restating it.
 - Let inference do the work inside a function body; reserve explicit annotations for
   boundaries (parameters, exported return types), not every local binding.
 
@@ -107,8 +108,9 @@ the `.mjs` files under `scripts/` (`writing-repo-scripts`).
 
 - Prefer a discriminated union with a literal field (`ok`, `code`, `kind`) over a bag of
   optional flags when a value has mutually exclusive shapes, and narrow it by branching
-  on that field. `Result` is the one every zone is written against: `if (!result.ok)`
-  gives back `error` typed and `value` gone.
+  on that field. `Result` is the one the packages and apps are written against
+  (`apps/web` keeps its own copy in `src/lib/result.ts`, since it imports no workspace
+  package): `if (!result.ok)` gives back `error` typed and `value` gone.
 - Handle a union exhaustively by giving each member its own `case`. Do not add a
   `default` branch to make the check pass:
   `@typescript-eslint/switch-exhaustiveness-check` in `eslint.config.mjs` sets
@@ -118,21 +120,25 @@ the `.mjs` files under `scripts/` (`writing-repo-scripts`).
 
 ## What a module may import
 
-- `node:*` is not restricted anywhere under `src/`. `@types/node` is a devDependency and
-  `tsconfig.json` declares no `types` array, so the Node types are in scope, and
-  `eslint.config.mjs` names the protocol nowhere. No module under `src/` imports one
-  today, but that is a description of this tree, not a rule to defend — the restriction
-  older prose here claimed never existed in this repository.
-- What is real is the zone boundary. `src/core/**` may not import the framework, and no
-  zone imports one above it in the order. AGENTS.md's Architecture section states the
-  direction and `eslint.config.mjs`'s `boundaries/*` blocks carry the patterns, with
-  `tests/boundaries.test.ts` asserting the same shape from the module graph. Read those
-  rather than a summary here.
-- A zone publishes through one file, and that file names every symbol it re-exports.
-  `export *` is banned under `src/` (`no-restricted-syntax`), so what a zone above may
-  reach is exactly what a reviewer can read in that file's diff. Adding a symbol there
-  is a decision about the zone's surface, not a re-export detail — and reaching past it
-  into a private tree is what the boundary rules exist to stop.
+- Every bare specifier is an allow-list entry. Each package and app has a row naming the
+  workspace packages, npm packages and `node:` builtins its `src/` may import, by exact
+  specifier — a subpath is its own entry — and anything else fails lint. Enforced by:
+  `eslint.config.mjs`'s `WORKSPACE_EDGES`, `NPM_EDGES`, `NODE_EDGES` and `APP_*` tables,
+  asserted again from the module graph and each manifest by `tests/boundaries.test.ts`.
+  Adding an entry is a boundary decision, not an import detail: `packages/domain`
+  imports nothing at all, and time, randomness and I/O reach it as arguments.
+  **BACKGROUND:** `designing-application-core`.
+- The types a tree compiles against are part of the same boundary. Each package's and
+  app's own `tsconfig.json` sets its `lib` and `types`, so a DOM or Node global a tree
+  was not given fails `pnpm typecheck` there rather than lint.
+- Inside a package or app, imports are relative; there is no path alias. Across trees
+  they go by `@instant-composition/<dir>`, which resolves to that tree's `src/index.ts`.
+- A package or app publishes through that one file, and it names every symbol it
+  re-exports. `export *` is banned in `SOURCE_FILES` (`no-restricted-syntax`), and so is
+  a default export (`public-api/explicit-surface`), so what a caller may reach is
+  exactly what a reviewer can read in that file's diff. Adding a symbol there is a
+  decision about the surface, not a re-export detail — and reaching past it into a
+  private module is what the boundary rules exist to stop.
 - A module that outgrows the per-file size budget in `eslint.config.mjs`'s
   `src/size-budget` block is a module doing more than one thing. Split it; the number is
   a ceiling, not a target, and raising it is what AGENTS.md rules out.
