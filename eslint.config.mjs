@@ -118,7 +118,23 @@ const ZONE = /** @type {Record<"app" | "server" | "i18n" | "components", string[
 const WORKSPACE_EDGES = /** @type {const} */ ({
   domain: [],
   application: ["domain"],
+  contracts: [],
 });
+
+/**
+ * The npm packages each workspace package may import, by exact name: ADR-0002's
+ * `contracts → (zod only)`. Every other package imports none.
+ *
+ * @remarks
+ * `tests/boundaries.test.ts` holds the same table, and checks that the
+ * package's manifest declares exactly these at the root's own version.
+ */
+const NPM_EDGES =
+  /** @type {Record<keyof typeof WORKSPACE_EDGES, readonly string[]>} */ ({
+    domain: [],
+    application: [],
+    contracts: ["zod"],
+  });
 
 /**
  * A relative path into `packages/`, from any tree outside it.
@@ -158,9 +174,10 @@ const NO_RELATIVE_PACKAGE_IMPORT = {
  * @param {string} message
  */
 function workspacePackageBoundary(name, message) {
-  const allowed = WORKSPACE_EDGES[name].map(
-    (dependency) => `@instant-composition/${dependency}`,
-  );
+  const allowed = [
+    ...WORKSPACE_EDGES[name].map((dependency) => `@instant-composition/${dependency}`),
+    ...NPM_EDGES[name],
+  ];
   const others = Object.keys(WORKSPACE_EDGES).filter((other) => other !== name);
   return {
     name: `boundaries/packages/${name}`,
@@ -471,6 +488,10 @@ export default defineConfig([
   workspacePackageBoundary(
     "domain",
     "packages/domain holds the pure rules and imports nothing outside itself: no workspace package, no npm package, no Node builtin, nothing from the Next.js tree. Time, time zones and randomness arrive as arguments; I/O belongs in packages/application's ports.",
+  ),
+  workspacePackageBoundary(
+    "contracts",
+    "packages/contracts holds the HTTP API's zod schemas and the OpenAPI document built from them, and imports zod and nothing else outside itself: no workspace package, no Node builtin, no zod subpath. A test that holds a schema to an application type imports both packages from tests/.",
   ),
   workspacePackageBoundary(
     "application",

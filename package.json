@@ -48,6 +48,7 @@
     "cards:stamp": "node scripts/cards/cli.mjs stamp",
     "cards:stats": "node scripts/cards/cli.mjs stats",
     "catalog:build": "node scripts/catalog/build.mjs",
+    "contracts:openapi": "vitest run tests/contracts-openapi.test.ts --update",
     "check:staged": "node scripts/check-staged.mjs",
     "check:quick": "pnpm run format:check && pnpm run lint && pnpm run typecheck && pnpm run test",
     "check:source": "pnpm run format:check && pnpm run lint && pnpm run typecheck && pnpm run build && pnpm run test:smoke && pnpm run test:coverage",
@@ -58,6 +59,7 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@instant-composition/application": "workspace:*",
+    "@instant-composition/contracts": "workspace:*",
     "@instant-composition/domain": "workspace:*",
     "@tailwindcss/postcss": "^4.3.3",
     "@testing-library/dom": "^10.4.1",
