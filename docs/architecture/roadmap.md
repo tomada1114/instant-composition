@@ -186,7 +186,7 @@ observed:
 - `infra/`: a CDK app with a stage setting. The `foundation` stack in `dev` holds:
   - the DynamoDB table, retained by CloudFormation on stack deletion or replacement,
     without point-in-time recovery or deletion protection until the Paid-plan upgrade
-    ([ADR-0014](adr/0014-defer-dev-table-protection-on-the-free-plan.md));
+    ([ADR-0009](adr/0009-aws-topology-environments-and-operations.md));
   - the Cognito user pool, with self sign-up off.
 - Deploy to `dev` on every merge to `main`, from GitHub Actions through OIDC. This is a
   gate change, so it goes through `changing-gates`.
@@ -243,7 +243,7 @@ stages, foundation stack, deploys).
   Lambda errors and throttles, and DynamoDB throttles, plus one dashboard.
 - Point-in-time recovery (7 days) and deletion protection turned on for the `dev` table,
   once the account is on the Paid plan
-  ([ADR-0014](adr/0014-defer-dev-table-protection-on-the-free-plan.md)).
+  ([ADR-0009](adr/0009-aws-topology-environments-and-operations.md)).
 
 **Exit.**
 

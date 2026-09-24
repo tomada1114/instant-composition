@@ -616,8 +616,8 @@ on it.
     DynamoDB, Cognito, CloudFormation, S3, ECR, Systems Manager, IAM, Lambda, API
     Gateway and CloudFront succeeded from the `dev` account on 2026-09-24. That shows
     the services can be reached, not that every feature can be enabled.
-    [ADR-0014](adr/0014-defer-dev-table-protection-on-the-free-plan.md) no longer
-    depends on the answer.
+    [ADR-0009](adr/0009-aws-topology-environments-and-operations.md) no longer depends
+    on the answer.
 
 ## Internal sources
 
