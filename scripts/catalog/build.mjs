@@ -17,6 +17,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import process from "node:process";
 
+import { countWords } from "../cards/text.mjs";
 import { readKey } from "../lib/json.mjs";
 import { repoRoot } from "../lib/node-tools.mjs";
 import { CardsError } from "../cards/errors.mjs";
@@ -152,17 +153,6 @@ function asCard(raw) {
     return undefined;
   }
   return { id, ja, en, alternatives, point, topic, subtopic, level, grammar, stamps };
-}
-
-/**
- * Words the way packages/domain's `countWords` counts a model answer, so a
- * withdrawn card keeps the time limit it had while it was shown.
- *
- * @param {string} text - A model answer.
- * @returns {number} Its whitespace-separated words.
- */
-function answerWords(text) {
-  return text.split(/\s+/u).filter((word) => word !== "").length;
 }
 
 /**
@@ -305,7 +295,7 @@ export function catalogDocument(store, pair) {
       topic: card.topic,
       subtopic: card.subtopic,
       level: card.level,
-      words: answerWords(card.en),
+      words: countWords(card.en),
     })),
     tombstones: [...store.tombstones]
       .sort((left, right) => compareIds(left.id, right.id))

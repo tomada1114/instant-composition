@@ -141,7 +141,7 @@ describe("the snapshot built from a content root", () => {
 
     expect(document.withdrawn).toStrictEqual([
       { id: "c_3b4c5d6e", topic: "work", subtopic: "meetings", level: 1, words: 4 },
-      { id: "c_4c5d6e7f", topic: "work", subtopic: "requests", level: 2, words: 7 },
+      { id: "c_4c5d6e7f", topic: "work", subtopic: "requests", level: 2, words: 6 },
     ]);
     expect(JSON.stringify(document)).not.toContain("send it again");
   });

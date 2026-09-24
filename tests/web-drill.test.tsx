@@ -20,7 +20,7 @@ import {
 import { makeSummary } from "./web-summary-fixture";
 
 // The web client's drill, mounted as the whole app at `/drill` over a stand-in
-// API: a round run by keys to its summary, the pause sheet, the placement
+// API: a round run by keys and by taps to its summary, the pause sheet, the placement
 // intro, and each way a round cannot start or cannot be saved.
 
 const READY = homeView({ kind: "ready", streak: COUNT });
@@ -182,6 +182,59 @@ describe("the drill, a round run to its summary", () => {
     await renderApp("/drill?kind=bonus");
     expect(screen.getByText("prompt-c1")).toBeInTheDocument();
     expect(posted(calls, "/api/v1/rounds")).toMatchObject([{ kind: "today" }]);
+  });
+});
+
+describe("the drill, a round run by taps", () => {
+  /** A button whose name starts with `label`, ahead of its key hint. */
+  function tap(label: string): void {
+    fireEvent.click(
+      screen.getByRole("button", { name: (name) => name.startsWith(label) }),
+    );
+  }
+
+  it("flips on the card and the flip button, grades by button, and moves on after a timeout", async () => {
+    const calls = serve();
+    await renderApp("/drill?kind=today");
+    await settle(16);
+
+    fireEvent.click(screen.getByText("prompt-c1"));
+    expect(screen.getByText("answer-c1")).toBeInTheDocument();
+    await settle(200);
+    tap(ja.Drill.card.said);
+    await settle(400);
+    await settle(16);
+    expect(screen.getByText("prompt-c2")).toBeInTheDocument();
+
+    await settle(7100);
+    expect(screen.getByText(ja.Drill.card.timedOut)).toBeInTheDocument();
+    tap(ja.Drill.card.next);
+    await settle(16);
+    expect(screen.getByText(ja.Drill.card.again)).toBeInTheDocument();
+
+    tap(ja.Drill.card.flip);
+    expect(screen.getByText("answer-c2")).toBeInTheDocument();
+    await settle(200);
+    tap(ja.Drill.card.notSaid);
+    await settle(400);
+    expect(screen.getByRole("heading", { name: ja.Summary.title.today })).toHaveFocus();
+
+    const answers = posted(calls, ANSWERS) as { answers: AnswerInput[] }[];
+    expect(answers.map((body) => body.answers.map((a) => a.result))).toStrictEqual([
+      ["ok"],
+      ["timeout"],
+      ["ng"],
+    ]);
+  });
+
+  it("pauses from the top strip's pause button", async () => {
+    serve();
+    await renderApp("/drill?kind=today");
+    fireEvent.click(screen.getByRole("button", { name: ja.Drill.card.pause }));
+    expect(
+      screen.getByRole("dialog", { name: ja.Drill.sheet.title }),
+    ).toBeInTheDocument();
+    expect(screen.queryByText("prompt-c1")).not.toBeInTheDocument();
   });
 });
 
