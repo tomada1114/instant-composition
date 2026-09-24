@@ -127,7 +127,9 @@ describe("the recap screen, W9r: re-reading today", () => {
   });
 
   it("reads the home view again for this visit rather than acting on a cached one", async () => {
-    const calls = serveRecap({ home: homeSequence(NONE_NAMED, FINISHED_R7) });
+    const calls = serveRecap({
+      home: homeSequence(homeView(DONE, { todayLastRoundId: "r6" }), FINISHED_R7),
+    });
     await renderApp("/");
     fireEvent.click(screen.getByRole("link", { name: ja.Home.done.recap }));
     await settle();

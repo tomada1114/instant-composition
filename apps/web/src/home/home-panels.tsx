@@ -79,12 +79,14 @@ export function DonePanel({
             {t("count", { rounds: view.todayRounds, cards: view.todayCards })}
           </p>
         </div>
-        <Button asChild variant="text" className="-mr-3 -mt-2.5 gap-1">
-          <Link to="/recap">
-            {t("recap")}
-            <ArrowGlyph className="size-4" />
-          </Link>
-        </Button>
+        {view.todayLastRoundId === undefined ? null : (
+          <Button asChild variant="text" className="-mr-3 -mt-2.5 gap-1">
+            <Link to="/recap">
+              {t("recap")}
+              <ArrowGlyph className="size-4" />
+            </Link>
+          </Button>
+        )}
       </div>
       {state.restoresTo === null ? (
         <Primary

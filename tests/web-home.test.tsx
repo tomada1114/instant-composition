@@ -202,7 +202,10 @@ describe("the home screen, W3b: a portion under way", () => {
 describe("the home screen, W3c: today's portion done", () => {
   it("counts today's rounds and offers one more round of the daily size", async () => {
     serveHome(
-      homeView({ kind: "done", restoresTo: null, streak: { ...COUNT, value: 13 } }),
+      homeView(
+        { kind: "done", restoresTo: null, streak: { ...COUNT, value: 13 } },
+        { todayLastRoundId: "r7" },
+      ),
     );
     await renderApp("/");
     expect(
@@ -218,6 +221,19 @@ describe("the home screen, W3c: today's portion done", () => {
     press(" ");
     await settle();
     expect(where()).toBe("/drill?kind=extra");
+  });
+
+  it("offers no recap link when no round finished today to recap", async () => {
+    serveHome(
+      homeView({ kind: "done", restoresTo: null, streak: { ...COUNT, value: 13 } }),
+    );
+    await renderApp("/");
+    expect(
+      screen.getByRole("heading", { name: ja.Home.done.title }),
+    ).toBeInTheDocument();
+    expect(
+      screen.queryByRole("link", { name: ja.Home.done.recap }),
+    ).not.toBeInTheDocument();
   });
 
   it("makes making up yesterday the primary action until the cut-off", async () => {
