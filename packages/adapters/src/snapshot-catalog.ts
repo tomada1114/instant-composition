@@ -12,24 +12,25 @@ import { parseCatalogDocument } from "./catalog-schema";
 
 type Read = Result<CatalogSnapshot, CatalogUnreadable>;
 
-const UNREADABLE: Read = err({ code: "ERR_CONTENT_UNREADABLE" });
+const MISSING: Read = err({ code: "ERR_CONTENT_UNREADABLE", reason: "missing" });
+const MALFORMED: Read = err({ code: "ERR_CONTENT_UNREADABLE", reason: "malformed" });
 
 async function load(file: string): Promise<Read> {
   let text: string;
   try {
     text = await readFile(file, "utf8");
   } catch {
-    return UNREADABLE;
+    return MISSING;
   }
   let json: unknown;
   try {
     json = JSON.parse(text);
   } catch {
-    return UNREADABLE;
+    return MALFORMED;
   }
   const document = parseCatalogDocument(json);
   return document === undefined
-    ? UNREADABLE
+    ? MALFORMED
     : ok(catalogSnapshotOf(document, document.l1));
 }
 
@@ -42,7 +43,7 @@ async function load(file: string): Promise<Read> {
  * The file is read and validated once for the catalog's lifetime — once per
  * process when the process builds one catalog — and every caller shares that
  * read. A missing or malformed file is `ERR_CONTENT_UNREADABLE`, never a
- * throw, and is not remembered: the next call reads again, so a snapshot
+ * throw, with a `reason` telling the two apart, and is not remembered: the next call reads again, so a snapshot
  * built after the process started is picked up without a restart.
  */
 export function snapshotCatalog(file: string): Catalog {

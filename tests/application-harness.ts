@@ -75,7 +75,10 @@ export function fixedCatalog(snapshot: CatalogSnapshot = makeSnapshot()): Catalo
 
 export const unreadableCatalog: Catalog = {
   snapshot: () =>
-    Promise.resolve({ ok: false, error: { code: "ERR_CONTENT_UNREADABLE" } }),
+    Promise.resolve({
+      ok: false,
+      error: { code: "ERR_CONTENT_UNREADABLE", reason: "missing" },
+    }),
 };
 
 /** 2026-09-22 at 12:00 in Tokyo. */

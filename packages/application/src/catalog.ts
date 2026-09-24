@@ -28,6 +28,11 @@ export interface CatalogSnapshot {
 /** The catalog could not be read, so nothing can be dealt or checked against it. */
 export interface CatalogUnreadable {
   readonly code: "ERR_CONTENT_UNREADABLE";
+  /**
+   * `missing` when the file could not be read at all — run `pnpm catalog:build` —
+   * and `malformed` when it was read but is not a snapshot this build accepts.
+   */
+  readonly reason: "missing" | "malformed";
 }
 
 /** Files in development, a build-time snapshot in production. */
