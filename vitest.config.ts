@@ -22,6 +22,8 @@ const fixtures = "tests/fixtures/**";
 // repository rather than with what they import, which is exactly the case
 // the short unit budget is not meant to cover.
 const automationTests = [
+  "tests/adapters-catalog.test.ts",
+  "tests/adapters-dynamodb-store.test.ts",
   "tests/boundaries.test.ts",
   "tests/cards-cli.test.ts",
   "tests/cards-lifecycle.test.ts",
@@ -60,10 +62,21 @@ const automationTests = [
 // run against a missing or stale build instead, so the build stays the
 // caller's to do exactly once. `pnpm run test:smoke` is what runs it, from
 // `check:source` and from ci.yml's `static` job immediately after `Build`; the
-// two default scripts filter it out with `--project='!smoke'`. Naming the file
+// default scripts leave it out by naming the projects they run. Naming the file
 // here is still what keeps it out of `unit` below, whose glob would otherwise
 // collect it on a 5-second budget.
 const smokeTests = ["tests/server-smoke.test.ts"];
+
+// The suites that need DynamoDB local running beside them: the store contract
+// against the DynamoDB adapter, on tables they create and delete. Kept out of
+// the default run the way `smoke` is, because `pnpm test` and `check:quick`
+// must not depend on a container, and a suite that quietly skipped without
+// one would pass while proving nothing. `pnpm run test:dynamodb` is what runs
+// it, after `pnpm db:up` on a checkout and from ci.yml's `static` job against
+// its service container; it fails with an instruction when nothing answers.
+// The adapter's own logic is covered in-process by the `unit` suite against a
+// fake HTTP handler, so the coverage floors do not depend on this project.
+const dynamodbTests = ["tests/adapters-dynamodb-local.test.ts"];
 
 // `server-only` is a build-time marker rather than a runtime module: its only
 // entry throws on import, and a React Server Components bundler never loads it
@@ -86,7 +99,7 @@ const serverOnlyEmptyModule = path.join(
 // test importing `@/components/ui/button` would fail to resolve without this,
 // so the mapping is restated here against this file's own directory rather
 // than against the process cwd, which `pnpm exec vitest` does not guarantee.
-// `extends: true` on every project below is what carries it into all four.
+// `extends: true` on every project below is what carries it into all five.
 const srcDirectory = path.join(path.dirname(fileURLToPath(import.meta.url)), "src");
 
 export default defineConfig({
@@ -118,11 +131,12 @@ export default defineConfig({
     // everywhere — not only under CI, which is the default — means the author
     // finds it before the commit rather than the pipeline finding it after.
     allowOnly: false,
-    // Four projects, split by what a test actually touches rather than by
+    // Five projects, split by what a test actually touches rather than by
     // where it lives: a new `.test.ts` file is unit by default, a `.test.tsx`
     // file needs a DOM and joins `component` instead, the explicit automation
-    // list receives the long budget only after its I/O needs are known, and
-    // `smoke` is the one suite that cannot run without a build to serve. A
+    // list receives the long budget only after its I/O needs are known,
+    // `smoke` is the one suite that cannot run without a build to serve, and
+    // `dynamodb` the one that cannot run without DynamoDB local. A
     // hung unit or component test (no I/O, so it can only be looping or
     // awaiting forever) is a bug that should be visible in seconds.
     // `coverage` below is unaffected by this split — Vitest collects and
@@ -137,7 +151,7 @@ export default defineConfig({
         test: {
           name: "unit",
           include: ["tests/**/*.test.ts"],
-          exclude: [...automationTests, ...smokeTests, fixtures],
+          exclude: [...automationTests, ...smokeTests, ...dynamodbTests, fixtures],
           testTimeout: 5_000,
           hookTimeout: 5_000,
         },
@@ -184,6 +198,17 @@ export default defineConfig({
           // rather than one nobody measured.
           testTimeout: 120_000,
           hookTimeout: 120_000,
+        },
+      },
+      {
+        extends: true,
+        test: {
+          name: "dynamodb",
+          include: dynamodbTests,
+          // Each case creates a table and makes a handful of round trips to a
+          // local container: slower than a unit test, far from a subprocess.
+          testTimeout: 30_000,
+          hookTimeout: 30_000,
         },
       },
     ],

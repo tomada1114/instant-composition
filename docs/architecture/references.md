@@ -176,7 +176,27 @@ listed under [Unverified](#unverified) instead of being stated as fact.
   and
   [2019: the year in review for DynamoDB](https://aws.amazon.com/blogs/database/2019-the-year-in-review-for-amazon-dynamodb/)
   — DynamoDB local supports the transactional APIs and on-demand mode, but not
-  point-in-time recovery. Checked 2026-09-23.
+  point-in-time recovery. Checked 2026-09-23. The usage notes also cover what
+  `packages/adapters` and its DynamoDB-local suite rely on:
+  - DynamoDB local never throws a transaction conflict for the transactional APIs, so
+    the adapter's handling of a `TransactionConflict` cancellation is tested against a
+    fake rather than against DynamoDB local.
+  - Its table names are case-insensitive, and its access key may hold only letters and
+    digits.
+  - `-inMemory` keeps no data across a restart.
+
+  Checked 2026-09-23.
+
+- [TransactWriteItems](https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_TransactWriteItems.html)
+  and
+  [TransactionCanceledException](https://docs.aws.amazon.com/botocore/latest/reference/services/dynamodb/client/exceptions/TransactionCanceledException.html)
+  — a request carries 1 to 100 actions, no two on the same item; a cancelled one lists a
+  reason per action in request order, `None` for an action that did not fail, and
+  `ConditionalCheckFailed` or `TransactionConflict` among the others. Checked
+  2026-09-23.
+- [Telemetry in DynamoDB local](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DynamoDBLocalTelemetry.html)
+  — `DDB_LOCAL_TELEMETRY=0` turns telemetry off, which `compose.yaml` and ci.yml's
+  service container both set. Checked 2026-09-23.
 - [Aurora DSQL FAQs](https://aws.amazon.com/rds/aurora/dsql/faqs/),
   [pricing](https://aws.amazon.com/rds/aurora/dsql/pricing/) and
   [billing](https://docs.aws.amazon.com/aurora-dsql/latest/userguide/billing-metering.html)

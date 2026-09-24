@@ -399,6 +399,7 @@ describe("src/components/ is UI: no server-only", () => {
  * builtin either, until an edit to this table says otherwise.
  */
 const WORKSPACE_EDGES: Readonly<Record<string, readonly string[]>> = {
+  adapters: ["application", "domain"],
   application: ["domain"],
   contracts: [],
   domain: [],
@@ -406,13 +407,28 @@ const WORKSPACE_EDGES: Readonly<Record<string, readonly string[]>> = {
 
 /**
  * The npm packages each workspace package may import, by exact name: ADR-0002's
- * `contracts → (zod only)`. `eslint.config.mjs`'s `NPM_EDGES` states the same.
- * A package's manifest declares each at the root's own range, so the
- * workspace resolves one copy of it.
+ * `contracts → (zod only)`, and the AWS SDK plus zod for `adapters`.
+ * `eslint.config.mjs`'s `NPM_EDGES` states the same. A package's manifest
+ * declares each at the root's own range where the root declares it too, so
+ * the workspace resolves one copy of it; one only a package declares has a
+ * single range already.
  */
 const NPM_EDGES: Readonly<Record<string, readonly string[]>> = {
+  adapters: ["@aws-sdk/client-dynamodb", "@aws-sdk/lib-dynamodb", "zod"],
   application: [],
   contracts: ["zod"],
+  domain: [],
+};
+
+/**
+ * The Node builtins each workspace package may import, by exact specifier:
+ * `adapters` reads the catalog snapshot from disk, and no other package does
+ * I/O. `eslint.config.mjs`'s `NODE_EDGES` states the same.
+ */
+const NODE_EDGES: Readonly<Record<string, readonly string[]>> = {
+  adapters: ["node:fs/promises"],
+  application: [],
+  contracts: [],
   domain: [],
 };
 
@@ -438,6 +454,7 @@ function workspaceOffenders(name: string, modules: readonly Module[]): string[] 
   const allowed = new Set([
     ...(WORKSPACE_EDGES[name] ?? []).map(packageName),
     ...(NPM_EDGES[name] ?? []),
+    ...(NODE_EDGES[name] ?? []),
   ]);
   return modules.flatMap((module) =>
     module.specifiers
@@ -497,7 +514,20 @@ function rootRange(dependency: string): string | undefined {
   return { ...root.devDependencies, ...root.dependencies }[dependency];
 }
 
-describe("packages/ imports run one way, application → domain", () => {
+/**
+ * The range a package declares for an npm package the root does not: a caret
+ * range on a full version, as `pnpm add` writes one, or `undefined` so the
+ * manifest assertion fails on anything else.
+ */
+function ownRange(
+  declared: Readonly<Record<string, string>>,
+  dependency: string,
+): string | undefined {
+  const range = declared[dependency];
+  return range !== undefined && /^\^\d+\.\d+\.\d+$/.test(range) ? range : undefined;
+}
+
+describe("packages/ imports run one way, adapters → application → domain", () => {
   const directories = readdirSync(path.join(repoRoot, "packages"), {
     withFileTypes: true,
   })
@@ -508,6 +538,7 @@ describe("packages/ imports run one way, application → domain", () => {
   it("gives every package under packages/ a row, so a new one needs a decision", () => {
     expect(directories).toStrictEqual(Object.keys(WORKSPACE_EDGES).sort());
     expect(directories).toStrictEqual(Object.keys(NPM_EDGES).sort());
+    expect(directories).toStrictEqual(Object.keys(NODE_EDGES).sort());
   });
 
   it.each(Object.keys(WORKSPACE_EDGES))(
@@ -545,7 +576,7 @@ describe("packages/ imports run one way, application → domain", () => {
           ...allowed.map((dependency) => [packageName(dependency), "workspace:*"]),
           ...(NPM_EDGES[name] ?? []).map((dependency) => [
             dependency,
-            rootRange(dependency),
+            rootRange(dependency) ?? ownRange(manifest.declared, dependency),
           ]),
         ]),
       );
@@ -605,6 +636,28 @@ describe("packages/ imports run one way, application → domain", () => {
       "packages/contracts/src/probe.ts: zod-openapi",
       "packages/contracts/src/probe.ts: @instant-composition/application",
       "packages/contracts/src/probe.ts: node:fs",
+    ]);
+  });
+
+  it("admits an allowed Node builtin by its exact specifier and no other builtin", () => {
+    const offenders = workspaceOffenders("adapters", [
+      {
+        file: "packages/adapters/src/probe.ts",
+        specifiers: [
+          "node:fs/promises",
+          "@aws-sdk/client-dynamodb",
+          "node:fs",
+          "node:child_process",
+          "@aws-sdk/client-s3",
+          "@instant-composition/contracts",
+        ],
+      },
+    ]);
+    expect(offenders).toStrictEqual([
+      "packages/adapters/src/probe.ts: node:fs",
+      "packages/adapters/src/probe.ts: node:child_process",
+      "packages/adapters/src/probe.ts: @aws-sdk/client-s3",
+      "packages/adapters/src/probe.ts: @instant-composition/contracts",
     ]);
   });
 

@@ -39,11 +39,13 @@ gate at every commit; AGENTS.md's "Enforcement layers" explains why nothing here
 it.
 
 Useful focused commands are `pnpm check:source`, `pnpm test`, and `pnpm test:coverage`.
-Neither of the last two is the whole suite: both filter out the `smoke` project, which
+Neither of the last two is the whole suite: both leave out the `smoke` project, which
 serves the output of `pnpm build` with `next start` and asserts over HTTP, and which
-refuses to run against a missing or stale build rather than reporting on one. Run that
-one with `pnpm build && pnpm run test:smoke`; `pnpm check:source` runs both halves, in
-that order.
+refuses to run against a missing or stale build rather than reporting on one, and the
+`dynamodb` project, which runs the store contract suite against DynamoDB local. Run
+those with `pnpm build && pnpm run test:smoke` and, with Docker running,
+`pnpm db:up && pnpm run test:dynamodb`; `pnpm check:source` runs all of them, and
+`pnpm db:down` stops the container afterwards.
 
 ## Dependency cooldown
 

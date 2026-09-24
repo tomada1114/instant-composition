@@ -119,21 +119,40 @@ const WORKSPACE_EDGES = /** @type {const} */ ({
   domain: [],
   application: ["domain"],
   contracts: [],
+  adapters: ["application", "domain"],
 });
 
 /**
  * The npm packages each workspace package may import, by exact name: ADR-0002's
- * `contracts → (zod only)`. Every other package imports none.
+ * `contracts → (zod only)`, and the AWS SDK plus zod for `adapters`, the one
+ * package that performs I/O. Every other package imports none.
  *
  * @remarks
  * `tests/boundaries.test.ts` holds the same table, and checks that the
- * package's manifest declares exactly these at the root's own version.
+ * package's manifest declares exactly these, at the root's own version where
+ * the root declares one too.
  */
 const NPM_EDGES =
   /** @type {Record<keyof typeof WORKSPACE_EDGES, readonly string[]>} */ ({
     domain: [],
     application: [],
     contracts: ["zod"],
+    adapters: ["@aws-sdk/client-dynamodb", "@aws-sdk/lib-dynamodb", "zod"],
+  });
+
+/**
+ * The Node builtins each workspace package may import, by exact specifier.
+ * Only `adapters` does I/O, and it reads the catalog snapshot from disk.
+ *
+ * @remarks
+ * `tests/boundaries.test.ts` holds the same table.
+ */
+const NODE_EDGES =
+  /** @type {Record<keyof typeof WORKSPACE_EDGES, readonly string[]>} */ ({
+    domain: [],
+    application: [],
+    contracts: [],
+    adapters: ["node:fs/promises"],
   });
 
 /**
@@ -177,6 +196,7 @@ function workspacePackageBoundary(name, message) {
   const allowed = [
     ...WORKSPACE_EDGES[name].map((dependency) => `@instant-composition/${dependency}`),
     ...NPM_EDGES[name],
+    ...NODE_EDGES[name],
   ];
   const others = Object.keys(WORKSPACE_EDGES).filter((other) => other !== name);
   return {
@@ -496,6 +516,10 @@ export default defineConfig([
   workspacePackageBoundary(
     "application",
     "packages/application imports @instant-composition/domain and nothing else outside itself. Reach another package by its name once ADR-0002 allows the edge and this package's manifest declares it; never by a relative path into its directory.",
+  ),
+  workspacePackageBoundary(
+    "adapters",
+    "packages/adapters implements packages/application's ports: it imports @instant-composition/application and @instant-composition/domain, the AWS SDK's DynamoDB client and document client, zod, and node:fs/promises, each by its exact name, and nothing else outside itself.",
   ),
   {
     name: "automation/node-scripts",

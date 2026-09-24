@@ -2,12 +2,12 @@
 name: placing-tests
 description: >
   Decides where a new test file goes — always under tests/, never beside the module it
-  covers — which of vitest.config.ts's four projects it joins (unit, component under
-  jsdom for a .test.tsx, the explicit automation list, or smoke for the one suite that
-  serves a build), and which coverage.thresholds floor governs it. Use when adding a
-  .test.ts or .test.tsx file, when a test needs a DOM, spawns a subprocess or a server,
-  when choosing between `pnpm exec vitest run` and `pnpm test:coverage`, or when a
-  coverage run drops below a floor.
+  covers — which of vitest.config.ts's five projects it joins (unit, component under
+  jsdom for a .test.tsx, the explicit automation list, smoke for the suite that serves a
+  build, or dynamodb for the one needing DynamoDB local), and which coverage.thresholds
+  floor governs it. Use when adding a .test.ts or .test.tsx file, when a test needs a
+  DOM, spawns a subprocess or a server, needs DynamoDB, when choosing between `pnpm exec
+  vitest run` and `pnpm test:coverage`, or when a coverage run drops below a floor.
 ---
 
 # Placing Tests
@@ -51,7 +51,7 @@ an `automation` test as a child process.
 
 ## Choosing a project
 
-`vitest.config.ts` splits `test.projects` four ways. Placement follows from what the
+`vitest.config.ts` splits `test.projects` five ways. Placement follows from what the
 file actually touches and which environment it needs — never from its name or its
 subject:
 
@@ -73,17 +73,33 @@ subject:
   when it cannot run without `pnpm build`'s output on disk: it starts the built
   application with `next start` and asserts over `fetch`. That is what makes it a
   project of its own rather than another automation entry — the default run
-  (`pnpm test`, `pnpm test:coverage`, and ci.yml's `test` job) filters it out with
-  `--project='!smoke'`, because there is no build there to serve and a suite that built
-  one for itself would pay for a second build in every workflow. `pnpm run test:smoke`
-  is what runs it, from `check:source` and from ci.yml's `static` job, both times
-  straight after `Build`. A test here checks the build it was handed rather than making
-  one: `tests/server-smoke.test.ts` fails with an instruction when `.next/BUILD_ID` is
-  missing, and again when it is older than `src/`, `messages/`, `next.config.ts` or
-  `postcss.config.mjs`, because a run against last commit's build passes every assertion
-  while proving nothing about the change. Adding a file here is a claim that no
-  in-process test could have asserted the same thing; prefer `automation` whenever one
-  could.
+  (`pnpm test`, `pnpm test:coverage`, and ci.yml's `test` job) leaves it out by naming
+  only `unit`, `component` and `automation`, because there is no build there to serve
+  and a suite that built one for itself would pay for a second build in every workflow.
+  `pnpm run test:smoke` is what runs it, from `check:source` and from ci.yml's `static`
+  job, both times straight after `Build`. A test here checks the build it was handed
+  rather than making one: `tests/server-smoke.test.ts` fails with an instruction when
+  `.next/BUILD_ID` is missing, and again when it is older than `src/`, `messages/`,
+  `next.config.ts` or `postcss.config.mjs`, because a run against last commit's build
+  passes every assertion while proving nothing about the change. Adding a file here is a
+  claim that no in-process test could have asserted the same thing; prefer `automation`
+  whenever one could.
+- **`dynamodb`** — the `dynamodbTests` list, one file today: the learner-store contract
+  suite against the DynamoDB adapter on DynamoDB local, each case on a table it creates.
+  It is left out of the default run for the same reason as `smoke` — `pnpm test` and
+  `check:quick` must not need a container — and `pnpm run test:dynamodb` runs it, after
+  `pnpm db:up` on a checkout and from `check:source` and ci.yml's `static` job, whose
+  service container runs the image `compose.yaml` pins. It fails with an instruction
+  when nothing answers rather than skipping. Coverage does not come from here: the
+  default run never includes it, so what it exercises is covered in-process too — the
+  adapter's side of the wire against a fake DynamoDB on a loopback port, in
+  `automation`.
+
+The default scripts name the projects they run instead of negating the two they leave
+out, because two `--project='!name'` filters do not narrow each other: vitest runs a
+project any one filter matches, so `!smoke` alone lets `dynamodb` back in.
+`tests/ci-sync.test.ts` fails when a project in `vitest.config.ts` is named by none of
+`check:source`'s test steps, so a new project cannot fall out of every run unnoticed.
 
 The two directions fail differently, which is why `automation` is a list rather than a
 glob. Forgetting to register a test that does I/O leaves it in `unit`, where the short
@@ -170,6 +186,7 @@ call in-process.
 pnpm exec vitest run tests/<name>.test.ts   # one file, fast iteration
 pnpm test:coverage                          # full suite with floors enforced
 pnpm build && pnpm run test:smoke           # the smoke project, which needs the build
+pnpm db:up && pnpm run test:dynamodb        # the dynamodb project, which needs DynamoDB local
 ```
 
 If `pnpm test:coverage` fails on a floor, add real coverage for the uncovered branch —

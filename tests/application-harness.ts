@@ -1,11 +1,10 @@
+import { createMemoryStores, type MemoryStores } from "@instant-composition/adapters";
 import {
-  createMemoryStores,
   learnerId,
   type ApplicationDeps,
   type Catalog,
   type CatalogSnapshot,
   type LearnerId,
-  type MemoryStores,
   type RequestContext,
   type RoundPayload,
 } from "@instant-composition/application";

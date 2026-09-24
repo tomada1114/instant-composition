@@ -339,14 +339,17 @@ Traps that have cost time here:
   every legal new file, which teaches its reader to edit the meta-test until the day
   that edit hides something real; a table of zones fails only on a change that needs a
   boundary decision — a new zone, or a second module at the root of `src/`.
-- `vitest.config.ts` runs four projects — `unit`, `component` (jsdom), `automation`,
-  `smoke` — and coverage is collected once for the whole run, never per project. `smoke`
-  is the one the default run filters out (`--project='!smoke'` in `test`,
-  `test:coverage`, `test:watch` and `test:related`), because it serves `pnpm build`'s
-  output and there is none in ci.yml's `test` job. Which project a file joins, and the
-  value of any threshold, are `placing-tests`. What belongs here is that `extends: true`
-  is what carries the shared `allowOnly`/restore/unstub settings into a project: a
-  hand-written project object without it drops them silently.
+- `vitest.config.ts` runs five projects — `unit`, `component` (jsdom), `automation`,
+  `smoke`, `dynamodb` — and coverage is collected once for the whole run, never per
+  project. The default run (`test`, `test:coverage`, `test:watch` and `test:related`)
+  names `unit`, `component` and `automation` and so leaves out `smoke`, which serves
+  `pnpm build`'s output, and `dynamodb`, which needs DynamoDB local; ci.yml's `test` job
+  has neither. They are named rather than negated because a second `--project='!name'`
+  does not narrow the first, and `tests/ci-sync.test.ts` fails when a project is named
+  by none of `check:source`'s test steps. Which project a file joins, and the value of
+  any threshold, are `placing-tests`. What belongs here is that `extends: true` is what
+  carries the shared `allowOnly`/restore/unstub settings into a project: a hand-written
+  project object without it drops them silently.
 - `next.config.ts` is a gate as well as a build config: `agentRules: false` is what
   stops `next dev` appending to AGENTS.md behind the author. Removing it makes a
   hand-written source of truth a tool rewrites.
@@ -372,6 +375,15 @@ builds for itself — it compares `.next/BUILD_ID` against `src/`, `messages/`,
 `next.config.ts` and `postcss.config.mjs` and refuses a missing or stale build, which is
 how the caller stays the only one paying for a build. A green `check:quick` therefore
 still says nothing about anything only a running server shows.
+
+The same holds for DynamoDB. `pnpm run test:dynamodb` runs the learner-store contract
+suite against the DynamoDB adapter on DynamoDB local, and only there: from
+`check:source` after `pnpm db:up`, and from ci.yml's `static` job, whose `services:`
+container runs the image `compose.yaml` pins by tag and digest
+(`tests/workflows.test.ts` holds the two references equal). The container sits on
+`static` rather than `test` because a service container needs a Linux runner and `test`
+is an OS matrix. A green `check:quick` says nothing about how the adapter behaves
+against a real engine.
 
 Everything outside those five assertions is still a place a change can be wrong while
 every gate passes. A gate proposed to close such a gap is a real gate, not a lint rule,

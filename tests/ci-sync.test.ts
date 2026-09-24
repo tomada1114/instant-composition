@@ -4,6 +4,8 @@ import { fileURLToPath } from "node:url";
 
 import { describe, expect, it } from "vitest";
 
+import vitestConfig from "../vitest.config";
+
 // `check:source` restates, as one composite script, ground that
 // `.github/workflows/ci.yml`'s jobs also cover as separate `run:` steps (split
 // for failure attribution — a reader should see which step failed, not just
@@ -32,11 +34,8 @@ const CI_ONLY_EXCEPTIONS = new Map<string, string>([
   ],
 ]);
 
-/**
- * Extract the `pnpm run <name>` tokens out of `check:source`'s definition,
- * in order.
- */
-function checkSourceSteps(): string[] {
+/** One script out of package.json, or a failure naming it. */
+function script(name: string): string {
   const manifest: unknown = JSON.parse(
     readFileSync(path.join(repoRoot, "package.json"), "utf8"),
   );
@@ -44,14 +43,22 @@ function checkSourceSteps(): string[] {
     typeof manifest === "object" && manifest !== null && "scripts" in manifest
       ? manifest.scripts
       : undefined;
-  const checkSource =
-    typeof scripts === "object" && scripts !== null && "check:source" in scripts
-      ? scripts["check:source"]
+  const body =
+    typeof scripts === "object" && scripts !== null && name in scripts
+      ? (scripts as Record<string, unknown>)[name]
       : undefined;
-  if (typeof checkSource !== "string") {
-    throw new Error('package.json has no "check:source" script to check.');
+  if (typeof body !== "string") {
+    throw new Error(`package.json has no "${name}" script to check.`);
   }
-  return [...checkSource.matchAll(/pnpm run ([\w:-]+)/g)].map(
+  return body;
+}
+
+/**
+ * Extract the `pnpm run <name>` tokens out of `check:source`'s definition,
+ * in order.
+ */
+function checkSourceSteps(): string[] {
+  return [...script("check:source").matchAll(/pnpm run ([\w:-]+)/g)].map(
     (match) => match[1] ?? "",
   );
 }
@@ -166,5 +173,38 @@ describe("check:source stays in sync with ci.yml", () => {
     ]) {
       expect(reason.trim().length).toBeGreaterThan(0);
     }
+  });
+});
+
+// The default scripts name the vitest projects they run rather than the ones
+// they leave out, because a second `--project='!name'` does not narrow the
+// first — vitest runs a project any one filter matches. So a project added to
+// vitest.config.ts runs nowhere until a script names it; this is what notices.
+describe("every vitest project runs in check:source", () => {
+  const projects = (vitestConfig.test?.projects ?? []).flatMap((project) => {
+    const name =
+      typeof project === "object" && "test" in project ? project.test.name : undefined;
+    return typeof name === "string" ? [name] : [];
+  });
+  const selected = checkSourceSteps()
+    .filter((step) => step.startsWith("test"))
+    .flatMap((step) =>
+      [...script(step).matchAll(/--project=([\w-]+)/g)].map((match) => match[1] ?? ""),
+    );
+
+  it("reads the projects vitest.config.ts declares", () => {
+    expect(projects).toContain("unit");
+    expect(projects).toContain("dynamodb");
+  });
+
+  it.each(projects)(
+    "runs the %s project from one of check:source's test steps",
+    (name) => {
+      expect(selected).toContain(name);
+    },
+  );
+
+  it("runs each project from one step only, so none is run twice", () => {
+    expect(new Set(selected).size).toBe(selected.length);
   });
 });
