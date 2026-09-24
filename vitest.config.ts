@@ -12,9 +12,9 @@ const fixtures = "tests/fixtures/**";
 // subprocess, or use git. They are listed explicitly so a new test defaults to
 // the short-timeout unit project until its I/O needs are deliberately reviewed.
 // The files not listed here are pure unit tests; guard-rules.test.ts,
-// pr-checks.test.ts and cards-schema.test.ts are the intentional exceptions to
-// the usual `src/**` rule, because each drives pure-function modules under
-// scripts/ directly and touches nothing else.
+// pr-checks.test.ts, cards-schema.test.ts and ts-resolve.test.ts are the
+// intentional exceptions to the usual `src/**` rule, because each drives
+// pure-function modules under scripts/ directly and touches nothing else.
 //
 // The two boundary suites — boundaries and placeholders — are listed for the same reason workflows.test.ts is: they
 // assert against files on disk rather than against imported code, walking
@@ -24,6 +24,7 @@ const fixtures = "tests/fixtures/**";
 const automationTests = [
   "tests/adapters-catalog.test.ts",
   "tests/adapters-dynamodb-store.test.ts",
+  "tests/api-local-run.test.ts",
   "tests/boundaries.test.ts",
   "tests/cards-cli.test.ts",
   "tests/cards-lifecycle.test.ts",
@@ -68,7 +69,8 @@ const automationTests = [
 const smokeTests = ["tests/server-smoke.test.ts"];
 
 // The suites that need DynamoDB local running beside them: the store contract
-// against the DynamoDB adapter, on tables they create and delete. Kept out of
+// against the DynamoDB adapter, and the API over it, on tables they create and
+// delete. Kept out of
 // the default run the way `smoke` is, because `pnpm test` and `check:quick`
 // must not depend on a container, and a suite that quietly skipped without
 // one would pass while proving nothing. `pnpm run test:dynamodb` is what runs
@@ -76,7 +78,10 @@ const smokeTests = ["tests/server-smoke.test.ts"];
 // its service container; it fails with an instruction when nothing answers.
 // The adapter's own logic is covered in-process by the `unit` suite against a
 // fake HTTP handler, so the coverage floors do not depend on this project.
-const dynamodbTests = ["tests/adapters-dynamodb-local.test.ts"];
+const dynamodbTests = [
+  "tests/adapters-dynamodb-local.test.ts",
+  "tests/api-dynamodb-local.test.ts",
+];
 
 // `server-only` is a build-time marker rather than a runtime module: its only
 // entry throws on import, and a React Server Components bundler never loads it
@@ -223,6 +228,8 @@ export default defineConfig({
         "src/**/*.tsx",
         "packages/*/src/**/*.ts",
         "packages/*/src/**/*.tsx",
+        "apps/*/src/**/*.ts",
+        "apps/*/src/**/*.tsx",
         "scripts/**/*.mjs",
       ],
       // No top-level lines/functions/statements/branches here: Vitest's v8
@@ -257,6 +264,17 @@ export default defineConfig({
         // same floor from the day they exist, rather than gaining one only
         // after code has already landed in them.
         "packages/*/src/**": {
+          lines: 80,
+          functions: 80,
+          statements: 80,
+          branches: 80,
+        },
+        // The deployable apps sit on top of the packages and hold the same kind
+        // of logic — an HTTP adapter's routing, validation and logging — so
+        // they carry the same floor from their first file. A local entry that
+        // only a spawned process runs counts here at whatever the in-process
+        // tests reach, which is why it is kept thin.
+        "apps/*/src/**": {
           lines: 80,
           functions: 80,
           statements: 80,

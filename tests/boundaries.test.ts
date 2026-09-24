@@ -5,9 +5,9 @@ import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import * as z from "zod";
 
-// `eslint.config.mjs` states the zone edges under `src/` and the edges between
-// the workspace packages under `packages/` as `no-restricted-imports`
-// patterns; this file asserts the same edges from the module graph itself, so
+// `eslint.config.mjs` states the zone edges under `src/`, the edges between
+// the workspace packages under `packages/` and those of the apps under
+// `apps/` as `no-restricted-imports` patterns; this file asserts the same edges from the module graph itself, so
 // a rule deleted from that config still fails the suite. The two are checked
 // independently on purpose — a boundary that only one layer holds is a
 // boundary one edit removes.
@@ -438,24 +438,22 @@ function packageName(directory: string): string {
 }
 
 /**
- * `"<file>: <specifier>"` for every import of `modules` that leaves package
- * `name` other than by an allowed package's name.
+ * `"<file>: <specifier>"` for every import of `modules` that leaves the
+ * directory `root` other than by one of the `allowed` specifiers.
  *
  * @remarks
- * A relative specifier is resolved and has to stay inside the package's own
- * directory. A bare one has to be exactly the name of a package the table
- * allows: a subpath such as `@instant-composition/domain/src/day` walks past
- * the package's `exports`, and `@/…` is the Next.js tree's alias, which no
- * package may name. Unlike the ESLint rule, this sees every climb out of the
- * package, whatever it is spelled as.
+ * A relative specifier is resolved and has to stay inside `root`. A bare one
+ * has to be exactly an allowed name: a subpath such as
+ * `@instant-composition/domain/src/day` walks past the package's `exports`,
+ * and `@/…` is the Next.js tree's alias, which no package or app may name.
+ * Unlike the ESLint rule, this sees every climb out of the directory, whatever
+ * it is spelled as.
  */
-function workspaceOffenders(name: string, modules: readonly Module[]): string[] {
-  const root = `packages/${name}`;
-  const allowed = new Set([
-    ...(WORKSPACE_EDGES[name] ?? []).map(packageName),
-    ...(NPM_EDGES[name] ?? []),
-    ...(NODE_EDGES[name] ?? []),
-  ]);
+function offendersLeaving(
+  root: string,
+  allowed: ReadonlySet<string>,
+  modules: readonly Module[],
+): string[] {
   return modules.flatMap((module) =>
     module.specifiers
       .filter((specifier) =>
@@ -472,6 +470,19 @@ function workspaceOffenders(name: string, modules: readonly Module[]): string[] 
   );
 }
 
+/** {@link offendersLeaving} for package `name`, with the tables' allowed names. */
+function workspaceOffenders(name: string, modules: readonly Module[]): string[] {
+  return offendersLeaving(
+    `packages/${name}`,
+    new Set([
+      ...(WORKSPACE_EDGES[name] ?? []).map(packageName),
+      ...(NPM_EDGES[name] ?? []),
+      ...(NODE_EDGES[name] ?? []),
+    ]),
+    modules,
+  );
+}
+
 const dependencyMap = z.record(z.string(), z.string()).optional();
 
 const packageManifest = z.object({
@@ -484,11 +495,11 @@ const packageManifest = z.object({
   peerDependencies: dependencyMap,
 });
 
-/** `packages/<directory>/package.json`, with every dependency field merged. */
-function readManifest(directory: string) {
+/** `<tree>/<directory>/package.json`, with every dependency field merged. */
+function readManifest(directory: string, tree: "packages" | "apps" = "packages") {
   const manifest = packageManifest.parse(
     JSON.parse(
-      readFileSync(path.join(repoRoot, "packages", directory, "package.json"), "utf8"),
+      readFileSync(path.join(repoRoot, tree, directory, "package.json"), "utf8"),
     ),
   );
   return {
@@ -679,36 +690,150 @@ describe("packages/ imports run one way, adapters → application → domain", (
   });
 });
 
+// --- the deployable apps ------------------------------------------------------
+
+/**
+ * Every app under `apps/` that holds source, and the workspace packages it may
+ * import: ADR-0002's `apps/* → application, adapters, contracts`, plus
+ * `domain`. `eslint.config.mjs`'s `APP_WORKSPACE_EDGES` states the same.
+ */
+const APP_WORKSPACE_EDGES: Readonly<Record<string, readonly string[]>> = {
+  api: ["adapters", "application", "contracts", "domain"],
+};
+
+/** The npm packages each app may import, by exact name (`APP_NPM_EDGES`). */
+const APP_NPM_EDGES: Readonly<Record<string, readonly string[]>> = {
+  api: ["@hono/node-server", "hono"],
+};
+
+/** The Node builtins each app may import, by exact specifier (`APP_NODE_EDGES`). */
+const APP_NODE_EDGES: Readonly<Record<string, readonly string[]>> = {
+  api: ["node:path"],
+};
+
+/**
+ * Apps that are a manifest and nothing else yet, each with what gives it
+ * source. An app here may hold no `src/`: the day one does, it needs a row in
+ * the tables above instead.
+ */
+const APPS_WITHOUT_SOURCE: Readonly<Record<string, string>> = {
+  web: "#42 builds the SPA; until then its manifest only declares its dependencies",
+};
+
+describe("apps/ imports only the packages ADR-0002 allows", () => {
+  const directories = readdirSync(path.join(repoRoot, "apps"), { withFileTypes: true })
+    .filter((entry) => entry.isDirectory())
+    .map((entry) => entry.name)
+    .sort();
+
+  it("gives every app under apps/ a row, or names it as holding no source yet", () => {
+    expect(directories).toStrictEqual(
+      [...Object.keys(APP_WORKSPACE_EDGES), ...Object.keys(APPS_WITHOUT_SOURCE)].sort(),
+    );
+    expect(Object.keys(APP_NPM_EDGES).sort()).toStrictEqual(
+      Object.keys(APP_WORKSPACE_EDGES).sort(),
+    );
+    expect(Object.keys(APP_NODE_EDGES).sort()).toStrictEqual(
+      Object.keys(APP_WORKSPACE_EDGES).sort(),
+    );
+  });
+
+  it.each(Object.keys(APPS_WITHOUT_SOURCE))("finds no source under apps/%s", (name) => {
+    expect(modulesUnder(`apps/${name}`)).toStrictEqual([]);
+  });
+
+  it.each(Object.entries(APP_WORKSPACE_EDGES))(
+    "leaves apps/%s importing nothing outside itself but %p and its npm and Node rows",
+    (name, workspace) => {
+      const files = modulesUnder(`apps/${name}`);
+      expect(files).toContain(`apps/${name}/src/index.ts`);
+      const modules = files.map((file) => ({
+        file,
+        specifiers: importSpecifiers(readFileSync(path.join(repoRoot, file), "utf8")),
+      }));
+      const allowed = new Set([
+        ...workspace.map(packageName),
+        ...(APP_NPM_EDGES[name] ?? []),
+        ...(APP_NODE_EDGES[name] ?? []),
+      ]);
+      expect(offendersLeaving(`apps/${name}`, allowed, modules)).toStrictEqual([]);
+    },
+  );
+
+  it.each(Object.entries(APP_WORKSPACE_EDGES))(
+    "declares in apps/%s/package.json exactly the workspace packages %p and its npm row",
+    (name, workspace) => {
+      const manifest = readManifest(name, "apps");
+      expect(manifest.name).toBe(packageName(name));
+      expect(manifest.declared).toStrictEqual(
+        Object.fromEntries([
+          ...workspace.map((dependency) => [packageName(dependency), "workspace:*"]),
+          ...(APP_NPM_EDGES[name] ?? []).map((dependency) => [
+            dependency,
+            rootRange(dependency) ?? ownRange(manifest.declared, dependency),
+          ]),
+        ]),
+      );
+      expect(manifest.scripts["typecheck"]).toBe("tsc -p tsconfig.json");
+    },
+  );
+
+  it("reports a climb out of an app and a package it may not name", () => {
+    const allowed = new Set(["@instant-composition/application", "hono"]);
+    expect(
+      offendersLeaving("apps/api", allowed, [
+        {
+          file: "apps/api/src/probe.ts",
+          specifiers: [
+            "./app",
+            "hono",
+            "hono/aws-lambda",
+            "../../../src/server/http",
+            "../../web/src/main",
+            "@/core/result",
+            "zod",
+          ],
+        },
+      ]),
+    ).toStrictEqual([
+      "apps/api/src/probe.ts: hono/aws-lambda",
+      "apps/api/src/probe.ts: ../../../src/server/http",
+      "apps/api/src/probe.ts: ../../web/src/main",
+      "apps/api/src/probe.ts: @/core/result",
+      "apps/api/src/probe.ts: zod",
+    ]);
+  });
+});
+
 // --- reaching a package from outside it ---------------------------------------
 
 /**
  * `"<file>: <specifier>"` for every relative import of `modules` that resolves
- * into `packages/`.
+ * into `packages/` or `apps/`.
  *
  * @remarks
- * A package publishes only what its `exports` names, and a relative path walks
- * straight past that into any module it holds. From outside a package the one
- * way in is its name, `@instant-composition/<dir>`. The `@/` alias maps to
- * `src/` alone, so it cannot reach `packages/` and needs no branch here.
+ * A package or an app publishes only what its `exports` names, and a relative
+ * path walks straight past that into any module it holds. From outside one the
+ * one way in is its name, `@instant-composition/<dir>`. The `@/` alias maps to
+ * `src/` alone, so it cannot reach either tree and needs no branch here.
  */
 function relativeReachesIntoPackages(modules: readonly Module[]): string[] {
   return modules.flatMap((module) =>
     module.specifiers
-      .filter(
-        (specifier) =>
+      .filter((specifier) => {
+        const resolved = path.posix.normalize(
+          path.posix.join(path.posix.dirname(module.file), specifier),
+        );
+        return (
           specifier.startsWith(".") &&
-          inZone(
-            path.posix.normalize(
-              path.posix.join(path.posix.dirname(module.file), specifier),
-            ),
-            "packages",
-          ),
-      )
+          (inZone(resolved, "packages") || inZone(resolved, "apps"))
+        );
+      })
       .map((specifier) => `${module.file}: ${specifier}`),
   );
 }
 
-describe("a workspace package is reached from outside only by its name", () => {
+describe("a workspace package or app is reached from outside only by its name", () => {
   const trees: readonly (readonly [string, RegExp])[] = [
     ["src", /\.tsx?$/],
     ["tests", /\.tsx?$/],
@@ -716,7 +841,7 @@ describe("a workspace package is reached from outside only by its name", () => {
   ];
 
   it.each(trees)(
-    "finds no relative import into packages/ under %s/",
+    "finds no relative import into packages/ or apps/ under %s/",
     (tree, extension) => {
       const files = modulesUnder(tree, extension);
       expect(files).not.toStrictEqual([]);
@@ -735,6 +860,7 @@ describe("a workspace package is reached from outside only by its name", () => {
         specifiers: [
           "../packages/domain/src/day",
           "./../packages/application",
+          "../apps/api/src/app",
           "@instant-composition/domain",
           "./repo-tree",
           "../src/core/result",
@@ -748,6 +874,7 @@ describe("a workspace package is reached from outside only by its name", () => {
     expect(offenders).toStrictEqual([
       "tests/probe.test.ts: ../packages/domain/src/day",
       "tests/probe.test.ts: ./../packages/application",
+      "tests/probe.test.ts: ../apps/api/src/app",
       "src/server/services/probe.ts: ../../../packages/domain/src/index",
     ]);
   });

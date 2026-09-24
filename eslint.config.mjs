@@ -36,16 +36,19 @@ const NO_EXPORT_STAR = {
 };
 
 /**
- * The hand-written application source: the Next.js tree and every workspace
- * package's `src/`. The syntax bans, the named-export surface and the size
- * budget below hold for both, so moving a module out of `src/` into a package
- * is not a way out of any of them.
+ * The hand-written application source: the Next.js tree, every workspace
+ * package's `src/` and every deployable app's `src/`. The syntax bans, the
+ * named-export surface and the size budget below hold for all three, so moving
+ * a module out of `src/` into a package or an app is not a way out of any of
+ * them.
  */
 const SOURCE_FILES = [
   "src/**/*.ts",
   "src/**/*.tsx",
   "packages/*/src/**/*.ts",
   "packages/*/src/**/*.tsx",
+  "apps/*/src/**/*.ts",
+  "apps/*/src/**/*.tsx",
 ];
 
 /** What `src/internal/**` is, in the words of the rule that made it private. */
@@ -156,24 +159,54 @@ const NODE_EDGES =
   });
 
 /**
- * A relative path into `packages/`, from any tree outside it.
+ * A relative path into `packages/` or `apps/`, from any tree outside them.
  *
  * @remarks
- * A package publishes only what its `exports` names; a relative path walks
- * past that into any module it holds. Every block below that sets
+ * A package or an app publishes only what its `exports` names; a relative
+ * path walks past that into any module it holds. Every block below that sets
  * `no-restricted-imports` for `src/`, `tests/` or `scripts/` restates this
  * entry, because the rule's options replace rather than merge across config
  * objects. `tests/boundaries.test.ts` resolves each relative specifier and
  * checks the same thing without relying on how it is spelled.
  */
 const NO_RELATIVE_PACKAGE_IMPORT = {
-  group: ["../**/packages/**", "./../**/packages/**"],
+  group: [
+    "../**/packages/**",
+    "./../**/packages/**",
+    "../**/apps/**",
+    "./../**/apps/**",
+  ],
   message:
-    "Reach a workspace package by its name, @instant-composition/<dir>, which goes through its `exports`. A relative path into packages/ walks past the package's public surface into modules it keeps private.",
+    "Reach a workspace package or app by its name, @instant-composition/<dir>, which goes through its `exports`. A relative path into packages/ or apps/ walks past its public surface into modules it keeps private.",
 };
 
 /**
- * The `no-restricted-imports` block for one workspace package.
+ * Each deployable app under `apps/` that holds source, and the workspace
+ * packages it may import: ADR-0002's `apps/* → application, adapters,
+ * contracts`, plus `domain` for the `Result` vocabulary and the tuning the
+ * API reads. `apps/web` holds no source until the SPA is built, so it has no
+ * row yet.
+ *
+ * @remarks
+ * `tests/boundaries.test.ts` holds the same tables.
+ */
+const APP_WORKSPACE_EDGES = /** @type {const} */ ({
+  api: ["adapters", "application", "contracts", "domain"],
+});
+
+/** The npm packages and Node builtins each app may import, by exact name. */
+const APP_NPM_EDGES =
+  /** @type {Record<keyof typeof APP_WORKSPACE_EDGES, readonly string[]>} */ ({
+    api: ["hono", "@hono/node-server"],
+  });
+
+const APP_NODE_EDGES =
+  /** @type {Record<keyof typeof APP_WORKSPACE_EDGES, readonly string[]>} */ ({
+    api: ["node:path"],
+  });
+
+/**
+ * The `no-restricted-imports` block for one workspace package or app.
  *
  * @remarks
  * A package reaches another only by its name, `@instant-composition/<dir>`,
@@ -183,25 +216,29 @@ const NO_RELATIVE_PACKAGE_IMPORT = {
  * package, a `node:` builtin, the `@/` alias of the Next.js tree and a
  * workspace package outside the row alike. It is a `regex` rather than a
  * `group` because a gitignore-style group cannot say "anything but these". The
- * second refuses a relative path into another package's directory or into a
- * `src/` tree, which is what a climb out of the package into the Next.js
- * application looks like. It matches specifier text, not the resolved path, so
- * it does not see every climb out of the package; `tests/boundaries.test.ts`
- * resolves each one and does.
+ * second refuses a relative path into another package's or app's directory or
+ * into a `src/` tree, which is what a climb out of the package into the
+ * Next.js application looks like. It matches specifier text, not the resolved
+ * path, so it does not see every climb out of the package;
+ * `tests/boundaries.test.ts` resolves each one and does.
  *
- * @param {keyof typeof WORKSPACE_EDGES} name
+ * @param {{ tree: "packages" | "apps", name: string, workspace: readonly string[], npm: readonly string[], node: readonly string[] }} row
  * @param {string} message
  */
-function workspacePackageBoundary(name, message) {
+function workspaceBoundary(row, message) {
   const allowed = [
-    ...WORKSPACE_EDGES[name].map((dependency) => `@instant-composition/${dependency}`),
-    ...NPM_EDGES[name],
-    ...NODE_EDGES[name],
+    ...row.workspace.map((dependency) => `@instant-composition/${dependency}`),
+    ...row.npm,
+    ...row.node,
   ];
-  const others = Object.keys(WORKSPACE_EDGES).filter((other) => other !== name);
+  const others = [
+    ...Object.keys(WORKSPACE_EDGES),
+    ...Object.keys(APP_WORKSPACE_EDGES),
+    "web",
+  ].filter((other) => other !== row.name);
   return {
-    name: `boundaries/packages/${name}`,
-    files: [`packages/${name}/**/*.ts`, `packages/${name}/**/*.tsx`],
+    name: `boundaries/${row.tree}/${row.name}`,
+    files: [`${row.tree}/${row.name}/**/*.ts`, `${row.tree}/${row.name}/**/*.tsx`],
     rules: {
       "no-restricted-imports": [
         "error",
@@ -222,6 +259,40 @@ function workspacePackageBoundary(name, message) {
       ],
     },
   };
+}
+
+/**
+ * @param {keyof typeof WORKSPACE_EDGES} name
+ * @param {string} message
+ */
+function workspacePackageBoundary(name, message) {
+  return workspaceBoundary(
+    {
+      tree: "packages",
+      name,
+      workspace: WORKSPACE_EDGES[name],
+      npm: NPM_EDGES[name],
+      node: NODE_EDGES[name],
+    },
+    message,
+  );
+}
+
+/**
+ * @param {keyof typeof APP_WORKSPACE_EDGES} name
+ * @param {string} message
+ */
+function appBoundary(name, message) {
+  return workspaceBoundary(
+    {
+      tree: "apps",
+      name,
+      workspace: APP_WORKSPACE_EDGES[name],
+      npm: APP_NPM_EDGES[name],
+      node: APP_NODE_EDGES[name],
+    },
+    message,
+  );
 }
 
 /** Why `src/components/` looks only at `src/core/`, `src/i18n/` and the framework. */
@@ -520,6 +591,10 @@ export default defineConfig([
   workspacePackageBoundary(
     "adapters",
     "packages/adapters implements packages/application's ports: it imports @instant-composition/application and @instant-composition/domain, the AWS SDK's DynamoDB client and document client, zod, and node:fs/promises, each by its exact name, and nothing else outside itself.",
+  ),
+  appBoundary(
+    "api",
+    "apps/api is the HTTP adapter: it imports @instant-composition/adapters, application, contracts and domain, hono, @hono/node-server and node:path, each by its exact name, and nothing else outside itself — never the Next.js tree under src/, and never a package by a relative path.",
   ),
   {
     name: "automation/node-scripts",
