@@ -2,6 +2,8 @@ import js from "@eslint/js";
 import vitest from "@vitest/eslint-plugin";
 import { defineConfig, globalIgnores } from "eslint/config";
 import eslintConfigPrettier from "eslint-config-prettier";
+import jsxA11y from "eslint-plugin-jsx-a11y";
+import react from "eslint-plugin-react";
 import reactHooks from "eslint-plugin-react-hooks";
 import tseslint from "typescript-eslint";
 
@@ -400,6 +402,32 @@ export default defineConfig([
     ...reactHooks.configs.flat.recommended,
     name: "web/react",
     files: ["apps/web/**/*.{ts,tsx}"],
+  },
+  {
+    // The React and accessibility rules the web client ran under
+    // `eslint-config-next` before it was retired, restated from the declared
+    // plugins so removing Next.js did not remove them: eslint-plugin-react's
+    // `recommended` minus the three that the new JSX transform and TypeScript
+    // make redundant, and the six jsx-a11y rules that config chose. The React
+    // version is named rather than detected, because detection calls an API
+    // ESLint 10 removed and every react/* rule then throws while loading.
+    name: "web/react-a11y",
+    files: ["apps/web/**/*.tsx"],
+    plugins: { react, "jsx-a11y": jsxA11y },
+    settings: { react: { version: "19.2" } },
+    rules: {
+      ...react.configs.recommended.rules,
+      "react/no-unknown-property": "off",
+      "react/react-in-jsx-scope": "off",
+      "react/prop-types": "off",
+      "react/jsx-no-target-blank": "off",
+      "jsx-a11y/alt-text": ["warn", { elements: ["img"] }],
+      "jsx-a11y/aria-props": "warn",
+      "jsx-a11y/aria-proptypes": "warn",
+      "jsx-a11y/aria-unsupported-elements": "warn",
+      "jsx-a11y/role-has-required-aria-props": "warn",
+      "jsx-a11y/role-supports-aria-props": "warn",
+    },
   },
   {
     name: "src/shared-syntax",

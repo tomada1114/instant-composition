@@ -165,10 +165,10 @@ size, or an arbitrary-value color.
 - Tailwind v4's Preflight gives a button `cursor: default`; the base layer restores the
   pointer for enabled buttons. Keep that rule rather than adding `cursor-pointer`.
 - Focus is visible on every control; never remove the outline to tidy a field.
-- No accessibility lint runs today: the web client's only React rules are the hooks
-  rules (`web/react` in `eslint.config.mjs`). What holds the accessibility rules in the
-  behaviour reference is review, and the rendered tests that find a control by its role
-  and accessible name.
+- Lint catches only a narrow slice of accessibility: the six jsx-a11y rules in
+  `web/react-a11y` (`eslint.config.mjs`) check ARIA attributes, roles and `alt` text.
+  What holds the rest of the rules in the behaviour reference is review, and the
+  rendered tests that find a control by its role and accessible name.
 - Motion is functional and short, and `prefers-reduced-motion` switches each moment to
   its reduced form. No spinner and no pulsing skeleton, anywhere.
 - Copy is a label, not an instruction. Before adding a line of explanation, ask what the

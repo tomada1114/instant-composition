@@ -299,20 +299,21 @@ Traps that have cost time here:
   it stops turning off the stylistic rules that would fight Prettier, and the two gates
   then disagree about the same file.
 - A shared config spread in unscoped applies to `scripts/**` and `tests/**` as well. The
-  web client's React rules are the `web/react` block — `eslint-plugin-react-hooks`' flat
-  `recommended`, scoped to `apps/web/**`; a React or accessibility plugin added later
-  gets the same scoping.
+  web client's React rules are two blocks scoped to `apps/web/**`: `web/react`,
+  `eslint-plugin-react-hooks`' flat `recommended`, and `web/react-a11y`, restating the
+  React and jsx-a11y rules `eslint-config-next` applied before Next.js was retired. Its
+  React version is named, not detected: detection calls an API ESLint 10 removed.
 - The named blocks are the map: `src/shared-syntax`, `src/size-budget`,
-  `public-api/explicit-surface`, `web/react`, `boundaries/packages/<dir>` (one per
-  workspace package), `boundaries/apps/<dir>` (one per app holding source, plus
-  `boundaries/apps/<dir>/config` for an app whose config files import build tools),
-  `boundaries/private-trees-are-not-importable`, `automation/node-scripts`,
-  `tests/vitest-rules`, `tests/relaxations`. The per-package and per-app blocks match
-  disjoint file sets by construction; `boundaries/private-trees-are-not-importable`
-  covers `tests/` and `scripts/` and restates `NO_RELATIVE_PACKAGE_IMPORT` — a relative
-  path into `packages/` or `apps/` — because the rule's options replace rather than
-  merge. Name a new block the same way — the name is what a reader, and ESLint's own
-  config inspector, has to identify it by.
+  `public-api/explicit-surface`, `web/react`, `web/react-a11y`,
+  `boundaries/packages/<dir>` (one per workspace package), `boundaries/apps/<dir>` (one
+  per app holding source, plus `boundaries/apps/<dir>/config` for an app whose config
+  files import build tools), `boundaries/private-trees-are-not-importable`,
+  `automation/node-scripts`, `tests/vitest-rules`, `tests/relaxations`. The per-package
+  and per-app blocks match disjoint file sets by construction;
+  `boundaries/private-trees-are-not-importable` covers `tests/` and `scripts/` and
+  restates `NO_RELATIVE_PACKAGE_IMPORT` — a relative path into `packages/` or `apps/` —
+  because the rule's options replace rather than merge. Name a new block the same way —
+  the name is what a reader, and ESLint's own config inspector, has to identify it by.
 - `src/shared-syntax`, `public-api/explicit-surface` and `src/size-budget` match
   `SOURCE_FILES`, every `packages/*/src/` and every `apps/*/src/`: a rule meant for the
   application's own source belongs there, so moving a module from a package into an app

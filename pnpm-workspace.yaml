@@ -71,3 +71,13 @@ overrides:
   # repository calls nanoid, and postcss is where the build toolchain does.
   # Drop this once postcss ships a range that resolves past 3.3.18 on its own.
   postcss>nanoid: ^3.3.18
+
+# Peer-range exceptions, one graph edge each. strictPeerDependencies above
+# stays on: these two plugins lint the web client's React and accessibility
+# rules and still cap their declared eslint peer at 9, while this repository
+# runs eslint 10. Drop an entry as soon as its plugin publishes a release
+# naming eslint 10.
+peerDependencyRules:
+  allowedVersions:
+    eslint-plugin-jsx-a11y>eslint: "10"
+    eslint-plugin-react>eslint: "10"
