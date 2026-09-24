@@ -264,8 +264,33 @@ listed under [Unverified](#unverified) instead of being stated as fact.
   - Upgrading to the Paid plan keeps the remaining credits.
   - Creating or joining an organization, or setting up a Control Tower landing zone,
     ends the credits at once and upgrades the account to the Paid plan.
+  - A Free plan leaves out services and features that could use up the credits, such as
+    Savings Plans and Reserved Instances. For the services it does include, the page
+    points to the AWS Free Tier page.
 
-  Checked 2026-09-23.
+  Checked 2026-09-23; the last point checked 2026-09-24.
+
+- [Supported AWS services for Sign up for AWS (new)](https://docs.aws.amazon.com/accounts/latest/reference/supported-services-sign-up-new.html)
+  — lists which services the Free plan includes. Every service Phase 2 uses is on the
+  list: IAM, STS, Budgets, CloudFormation, DynamoDB and Cognito. So are the services the
+  CDK bootstrap creates (S3, KMS, ECR and Systems Manager for the SSM parameter). The
+  services Phases 3 and 4 plan to use are on it too: Lambda, API Gateway, CloudFront,
+  CloudWatch Logs and WAF. The features the page leaves out that matter here are:
+  - CloudFormation StackSets
+  - DynamoDB global tables
+  - Lambda@Edge
+  - S3 cross-Region replication
+  - multi-Region KMS keys
+  - AWS Shield
+
+  Organizations, IAM Identity Center and Control Tower are not supported at all. The
+  page does not mention DynamoDB point-in-time recovery or deletion protection. It
+  describes the new sign-up experience, which it says is in limited release. Checked
+  2026-09-24.
+
+- [Bootstrap your environment for use with the AWS CDK](https://docs.aws.amazon.com/cdk/v2/guide/bootstrapping-env.html)
+  — the modern bootstrap template creates an S3 bucket, a KMS key, IAM roles, an ECR
+  repository and an SSM parameter for its version. Checked 2026-09-24.
 
 - [Sign in through the AWS CLI](https://docs.aws.amazon.com/signin/latest/userguide/command-line-sign-in.html)
   and
@@ -572,6 +597,14 @@ on it.
   - payment options on AWS that could replace Stripe
   - a subscription aggregator that unifies store and web purchases
 - **Budgets:** how far budget data lags behind actual spend.
+- **Free plan eligibility:**
+  - whether the new-experience service list above is the list that governs an account
+    that signed up for the Free plan the standard way
+  - whether DynamoDB point-in-time recovery and deletion protection are available on the
+    Free plan; the list names only global tables as excluded. Read-only calls to
+    DynamoDB, Cognito, CloudFormation, S3, ECR, Systems Manager, IAM, Lambda, API
+    Gateway and CloudFront succeeded from the `dev` account on 2026-09-24. That shows
+    the services can be reached, not that every feature can be enabled.
 
 ## Internal sources
 

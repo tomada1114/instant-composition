@@ -175,6 +175,15 @@ observed:
 - Upgrade the account to the Paid plan before the Free plan's six months end, or when a
   service `dev` needs is not on the Free plan. Upgrading keeps the credits; a Free-plan
   account that reaches the end of its plan closes.
+  - Every service this phase uses is on the Free plan's service list
+    ([references](references.md#operations-and-cost)), so the phase starts on the Free
+    plan.
+  - Whether the Free plan allows DynamoDB point-in-time recovery and deletion protection
+    is unverified. If the first deploy shows it does not, the table ships without that
+    feature, which is turned on after the upgrade; the upgrade is not brought forward
+    for it.
+  - The owner watches the plan's end date and the credit balance and upgrades when
+    either comes near (#49); an agent does not track them.
 
 - `infra/`: a CDK app with a stage setting. The `foundation` stack in `dev` holds:
   - the DynamoDB table, with deletion protection and point-in-time recovery;
