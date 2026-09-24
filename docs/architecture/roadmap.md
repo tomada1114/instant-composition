@@ -38,9 +38,9 @@ tracker in step.
 - **Sub-issues.** A phase's work items are sub-issues of its parent, ordered by
   `Depends on: #N` lines.
 - **No dates.** There are no due dates and no schedule. Only the order is recorded.
-- **Issues are cut when a phase comes within reach.** Phases 0 and 1, and the first step
-  of Phase 2, have work items now. A later phase is split when it starts, against the
-  code, skills and ADRs that exist by then.
+- **Issues are cut when a phase comes within reach.** Phases 0, 1 and 2, and the first
+  step of Phase 3, have work items now. A later phase is split when it starts, against
+  the code, skills and ADRs that exist by then.
 - **Platform skills record only this project's decisions.** A phase that introduces a
   platform area (infrastructure code, logging, authentication, LLM calls) also adds or
   extends a project skill for it. That skill holds only what this project decided;
@@ -186,8 +186,11 @@ observed:
 - `infra/`: a CDK app with a stage setting. The `foundation` stack in `dev` holds:
   - the DynamoDB table, retained by CloudFormation on stack deletion or replacement,
     without point-in-time recovery or deletion protection until the Paid-plan upgrade
-    ([ADR-0009](adr/0009-aws-topology-environments-and-operations.md));
-  - the Cognito user pool, with self sign-up off.
+    ([ADR-0009](adr/0009-aws-topology-environments-and-operations.md)).
+
+  Infrastructure is added when it is first needed, so the Cognito user pool arrives with
+  Phase 3.
+
 - Deploy to `dev` on every merge to `main`, from GitHub Actions through OIDC. This is a
   gate change, so it goes through `changing-gates`.
 - A project skill for how this repository writes, stages and deploys its infrastructure.
@@ -198,7 +201,7 @@ observed:
 - No long-lived AWS access key exists.
 - A budget alert is configured.
 
-**AWS.** IAM, Budgets, CloudFormation (the CDK bootstrap), DynamoDB, Cognito.
+**AWS.** IAM, Budgets, CloudFormation (the CDK bootstrap), DynamoDB.
 
 **Realizes.** [0009](adr/0009-aws-topology-environments-and-operations.md) (accounts,
 stages, foundation stack, deploys).
@@ -209,6 +212,7 @@ stages, foundation stack, deploys).
 
 **Scope.**
 
+- The Cognito user pool in the `foundation` stack, with self sign-up off in `dev`.
 - Sign-in through the API:
   - web sessions through API-hosted auth endpoints that set HttpOnly cookies;
   - Bearer tokens for native clients;
