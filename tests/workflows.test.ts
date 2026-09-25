@@ -2861,6 +2861,7 @@ describe("the workflows in .github/workflows", () => {
       "check-pr-title.yml",
       "ci.yml",
       "dependency-review.yml",
+      "deploy-dev.yml",
       "pr-label.yml",
       "security-audit.yml",
       "typos.yml",
@@ -2915,14 +2916,27 @@ describe("the workflows in .github/workflows", () => {
 
   it("grants a write scope only where the job cannot do its work without one", () => {
     // pr-label writes a label and tolerates the read-only token a fork PR
-    // gets. Everything else, and in particular everything that runs
-    // repository code, stays read-only. This repository publishes nothing, so
-    // no workflow needs OIDC or a tag push any more.
+    // gets. deploy-dev writes only `id-token`, the OIDC token its AWS deploy
+    // role trusts, and runs on push to main alone. Everything else, and in
+    // particular everything that runs repository code on a pull request,
+    // stays read-only.
     const writers = workflowNames.filter((name) =>
       scan(workflowSource(name)).some((line) => line.text.endsWith(": write")),
     );
 
-    expect(writers.sort()).toEqual(["pr-label.yml"]);
+    expect(writers.sort()).toEqual(["deploy-dev.yml", "pr-label.yml"]);
+  });
+
+  it("gives the deploy workflow no write scope but its OIDC token, on main alone", () => {
+    const source = workflowSource("deploy-dev.yml");
+    expect(
+      scan(source)
+        .map((line) => line.text)
+        .filter((text) => text.endsWith(": write")),
+    ).toEqual(["id-token: write"]);
+    expect(source).toMatch(/^on:\n {2}push:\n {4}branches: \[main\]\n\n/m);
+    expect(source).toContain("role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}");
+    expect(source).toContain("pnpm cdk deploy -c stage=dev foundation");
   });
 });
 
