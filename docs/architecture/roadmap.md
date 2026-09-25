@@ -194,6 +194,19 @@ observed:
 - No long-lived AWS access key exists.
 - A budget alert is configured.
 
+**Landed** at `f8b4bfe` (#46, #103, #104, #105, #106, #107, #116). How each exit was
+observed:
+
+- `.github/workflows/deploy-dev.yml`'s run 36144493526, started by the push that merged
+  #118, deployed `instant-composition-dev-foundation` with no command run by hand
+  (`foundation … (no changes)`). The earlier run that created the learner table was
+  checked against #104's settings with `aws dynamodb describe-table` (reported on #106).
+- `aws iam list-access-keys` is empty for the only IAM user, and
+  `aws iam get-account-summary` reports `AccountAccessKeysPresent: 0`. GitHub Actions
+  reaches the account through the OIDC deploy role alone.
+- `aws budgets describe-budgets` lists `monthly-30usd` (alerts at 85% and 100% actual,
+  100% forecast) and `zero-spend` (any actual spend over $0.01).
+
 **AWS.** IAM, Budgets, CloudFormation (the CDK bootstrap), DynamoDB.
 
 **Realizes.** [0009](adr/0009-aws-topology-environments-and-operations.md) (accounts,
