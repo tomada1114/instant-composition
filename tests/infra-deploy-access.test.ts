@@ -43,7 +43,7 @@ describe("the dev deploy-access stack", () => {
               StringEquals: {
                 "token.actions.githubusercontent.com:aud": "sts.amazonaws.com",
                 "token.actions.githubusercontent.com:sub":
-                  "repo:tomada1114/instant-composition:ref:refs/heads/main",
+                  "repo:tomada1114@68495563/instant-composition@1382590627:ref:refs/heads/main",
               },
             },
           },
