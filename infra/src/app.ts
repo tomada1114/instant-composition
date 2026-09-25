@@ -1,5 +1,6 @@
-import { App, Stack } from "aws-cdk-lib";
+import { App } from "aws-cdk-lib";
 
+import { FoundationStack } from "./foundation-stack";
 import { parseStage, type Stage } from "./stage";
 
 /** Where every stage deploys (ADR-0009). */
@@ -27,7 +28,8 @@ export interface StagedApp {
 export function buildApp(context: Readonly<Record<string, unknown>> = {}): StagedApp {
   const app = new App({ context: { ...context } });
   const stage = parseStage(app.node.tryGetContext("stage"));
-  new Stack(app, "foundation", {
+  new FoundationStack(app, "foundation", {
+    stage,
     stackName: `instant-composition-${stage}-foundation`,
     env: { region: REGION },
   });

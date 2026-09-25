@@ -231,7 +231,7 @@ const APP_TOOLING_EDGES =
  * @remarks
  * `tests/boundaries.test.ts` holds the same row.
  */
-const INFRA_NPM_EDGES = ["aws-cdk-lib", "constructs"];
+const INFRA_NPM_EDGES = ["aws-cdk-lib", "aws-cdk-lib/aws-dynamodb", "constructs"];
 
 /**
  * The `no-restricted-imports` block for one workspace package or app.
@@ -542,7 +542,7 @@ export default defineConfig([
       node: [],
       files: ["infra/**/*.ts"],
     },
-    "infra/ is the CDK app: it imports aws-cdk-lib and constructs, each by its exact specifier, and nothing else outside itself — no workspace package, no Node builtin. A stage's settings arrive through its CDK context, not through process.env.",
+    "infra/ is the CDK app: it imports aws-cdk-lib, the aws-cdk-lib subpaths its row names, and constructs, each by its exact specifier, and nothing else outside itself — no workspace package, no Node builtin. A stage's settings arrive through its CDK context, not through process.env.",
   ),
   ...appBoundary(
     "web",
