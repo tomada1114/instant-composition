@@ -172,16 +172,9 @@ observed:
   The account stays standalone, because joining an organization forfeits its Free-plan
   credits.
 
-- Upgrade the account to the Paid plan before the Free plan's six months end, or when a
-  service `dev` needs is not on the Free plan. Upgrading keeps the credits; a Free-plan
-  account that reaches the end of its plan closes.
-  - Every service this phase uses is on the Free plan's service list
-    ([references](references.md#operations-and-cost)), so the phase starts on the Free
-    plan.
-  - The phase stays on the Free plan as far as the work allows; nothing in it brings the
-    upgrade forward.
-  - The owner watches the plan's end date and the credit balance and upgrades when
-    either comes near (#49); an agent does not track them.
+- Stay on the Free plan. Every service this phase uses is on its service list
+  ([references](references.md#operations-and-cost)), and nothing in the phase brings the
+  Paid-plan upgrade forward; the upgrade belongs to Phase 4.
 
 - `infra/`: a CDK app with a stage setting. The `foundation` stack in `dev` holds:
   - the DynamoDB table, retained by CloudFormation on stack deletion or replacement,
@@ -245,6 +238,10 @@ stages, foundation stack, deploys).
 - The deploy-on-merge pipeline extended to the `app` stack.
 - The observability baseline, sized to CloudWatch's free tier: alarms on API errors,
   Lambda errors and throttles, and DynamoDB throttles, plus one dashboard.
+- Upgrade the account to the Paid plan (#49), which the owner does in the console.
+  Upgrading keeps the credits. The Free plan also ends when its six months end or its
+  credits run out, and an account that reaches that end closes, so the owner upgrades
+  earlier if either comes near; an agent does not track them.
 - Point-in-time recovery (7 days) and deletion protection turned on for the `dev` table,
   once the account is on the Paid plan
   ([ADR-0009](adr/0009-aws-topology-environments-and-operations.md)).
