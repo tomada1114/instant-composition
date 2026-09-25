@@ -342,6 +342,7 @@ names its own boundary with its neighbours.
 | `designing-application-core`       | domain rules, commands, queries, ports and adapters, projections, idempotency, or code that reads the clock or a timezone                 |
 | `isolating-learner-data`           | an endpoint, store method, session or token handling, job, or model tool that touches a learner's data                                    |
 | `serving-the-api`                  | an operation handler, the request log's fields, the stand-in authenticator, or the local run under `apps/api/`                            |
+| `writing-infrastructure`           | a stack, construct or stage setting under `infra/`, `pnpm cdk`, the deploy role, or `.github/workflows/deploy-dev.yml`                    |
 
 ## Security and human approval
 
