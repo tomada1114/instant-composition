@@ -722,7 +722,11 @@ describe("apps/ imports only the packages ADR-0002 allows", () => {
  * no workspace package and no Node builtin — it describes the AWS resources,
  * not the application that runs on them.
  */
-const INFRA_NPM_EDGES: readonly string[] = ["aws-cdk-lib", "constructs"];
+const INFRA_NPM_EDGES: readonly string[] = [
+  "aws-cdk-lib",
+  "aws-cdk-lib/aws-dynamodb",
+  "constructs",
+];
 
 /** The CDK CLI, which `cdk.json`'s app command is run by and nothing imports. */
 const INFRA_TOOLING_EDGES: readonly string[] = ["aws-cdk"];
@@ -745,10 +749,9 @@ describe("infra/ imports the CDK and nothing of the application", () => {
     expect(manifest.name).toBe(packageName("infra"));
     expect(manifest.declared).toStrictEqual(
       Object.fromEntries(
-        [...INFRA_NPM_EDGES, ...INFRA_TOOLING_EDGES].map((dependency) => [
-          dependency,
-          toolRange(manifest.declared, dependency),
-        ]),
+        [...INFRA_NPM_EDGES.map(packageOf), ...INFRA_TOOLING_EDGES].map(
+          (dependency) => [dependency, toolRange(manifest.declared, dependency)],
+        ),
       ),
     );
     expect(manifest.scripts["typecheck"]).toBe("tsc -p tsconfig.json");
