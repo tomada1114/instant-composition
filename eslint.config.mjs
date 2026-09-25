@@ -231,7 +231,12 @@ const APP_TOOLING_EDGES =
  * @remarks
  * `tests/boundaries.test.ts` holds the same row.
  */
-const INFRA_NPM_EDGES = ["aws-cdk-lib", "aws-cdk-lib/aws-dynamodb", "constructs"];
+const INFRA_NPM_EDGES = [
+  "aws-cdk-lib",
+  "aws-cdk-lib/aws-dynamodb",
+  "aws-cdk-lib/aws-iam",
+  "constructs",
+];
 
 /**
  * The `no-restricted-imports` block for one workspace package or app.
