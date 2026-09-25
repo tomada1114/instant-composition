@@ -11,8 +11,17 @@ import { type Stage } from "./stage";
 
 const GITHUB_OIDC_URL = "https://token.actions.githubusercontent.com";
 
-/** The one workflow subject the deploy role trusts: this repository's `main`. */
-export const DEPLOY_SUBJECT = "repo:tomada1114/instant-composition:ref:refs/heads/main";
+/**
+ * The one workflow subject the deploy role trusts: this repository's `main`.
+ *
+ * @remarks
+ * The repository sends GitHub's immutable subject (`owner@id/repo@id`), so a
+ * renamed repository, or a new one created under the same name, cannot match
+ * it. `gh api repos/tomada1114/instant-composition/actions/oidc/customization/sub`
+ * shows the prefix.
+ */
+export const DEPLOY_SUBJECT =
+  "repo:tomada1114@68495563/instant-composition@1382590627:ref:refs/heads/main";
 
 /** The stack output the deploy role's ARN is read from, for the workflow's variable. */
 export const DEPLOY_ROLE_ARN_OUTPUT = "DeployRoleArn";
