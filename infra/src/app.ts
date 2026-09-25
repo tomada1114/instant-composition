@@ -1,5 +1,6 @@
 import { App } from "aws-cdk-lib";
 
+import { DeployAccessStack } from "./deploy-access-stack";
 import { FoundationStack } from "./foundation-stack";
 import { parseStage, type Stage } from "./stage";
 
@@ -33,5 +34,14 @@ export function buildApp(context: Readonly<Record<string, unknown>> = {}): Stage
     stackName: `instant-composition-${stage}-foundation`,
     env: { region: REGION },
   });
+  // `prod`'s deploy waits behind a manual approval (ADR-0009), which this
+  // role's trust does not express, so only `dev` has one until that phase.
+  if (stage === "dev") {
+    new DeployAccessStack(app, "deploy-access", {
+      stage,
+      stackName: `instant-composition-${stage}-deploy-access`,
+      env: { region: REGION },
+    });
+  }
   return { app, stage };
 }

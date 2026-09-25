@@ -725,6 +725,7 @@ describe("apps/ imports only the packages ADR-0002 allows", () => {
 const INFRA_NPM_EDGES: readonly string[] = [
   "aws-cdk-lib",
   "aws-cdk-lib/aws-dynamodb",
+  "aws-cdk-lib/aws-iam",
   "constructs",
 ];
 
