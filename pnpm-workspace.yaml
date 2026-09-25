@@ -1,7 +1,6 @@
 # The workspace: the tests and the repository automation at the root, the
-# packages ADR-0002 lays out under `packages/`, and the deployable apps under
-# `apps/` (the API and the web client). `infra/` joins this list with its first
-# package, not before.
+# packages ADR-0002 lays out under `packages/`, the deployable apps under
+# `apps/` (the API and the web client), and the CDK app under `infra/`.
 #
 # The rest of this file is the pnpm supply-chain policy, declared in one
 # machine-readable place, reviewable in a diff, and applied to every install
@@ -10,6 +9,7 @@
 packages:
   - "apps/*"
   - "packages/*"
+  - "infra"
 
 # Reproduce the pnpm version resolved in pnpm-lock.yaml when the local pnpm
 # does not satisfy devEngines.packageManager, instead of failing the install.

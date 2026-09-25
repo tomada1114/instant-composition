@@ -1,0 +1,11 @@
+{
+  // The CDK app: it builds CloudFormation templates in memory and compiles
+  // against no DOM and no Node types, so a stage that reads `process.env`
+  // instead of its context fails to compile.
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    "lib": ["ES2023"],
+    "types": []
+  },
+  "include": ["src"]
+}

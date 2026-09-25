@@ -89,6 +89,7 @@ pnpm cards:stats   # totals, review status, coverage by cell, grammar usage
 pnpm cards:new-id  # print fresh card ids
 pnpm catalog:build # write content/'s snapshot per language pair to dist/catalog/<target>/<l1>.json
 pnpm contracts:openapi # rewrite packages/contracts/openapi.json from the schemas
+pnpm cdk synth -c stage=dev # run the CDK CLI in infra/; synthesis needs no AWS credentials
 ```
 
 Reach for `pnpm clean`/`pnpm clean:deep` rather than an `rm -rf`: `scripts/clean.mjs`
@@ -130,6 +131,7 @@ on every edit is slow enough that it stops being run at all.
 | A schema or route under `packages/contracts/`        | `pnpm exec vitest run tests/contracts-*.test.ts`                       |
 | `packages/contracts/openapi.json`                    | `pnpm web:client`, then `pnpm typecheck`                               |
 | A module under `apps/api/`                           | `pnpm exec vitest run tests/api-*.test.ts`                             |
+| A module under `infra/`                              | `pnpm exec vitest run tests/infra-*.test.ts`                           |
 | `apps/api/src/env.ts` or `.env.example`              | `pnpm exec vitest run tests/api-env.test.ts tests/env-example.test.ts` |
 | A module or screen under `apps/web/src/`             | `pnpm exec vitest run tests/web-<name>`                                |
 | A catalog under `messages/`, or `apps/web/src/i18n/` | `pnpm exec vitest run tests/messages.test.ts`                          |
@@ -164,6 +166,7 @@ packages/
 ├── application/ # @instant-composition/application: commands, queries and ports
 ├── adapters/    # @instant-composition/adapters: the DynamoDB and in-memory stores, the catalog
 └── contracts/   # @instant-composition/contracts: the HTTP API's zod schemas and OpenAPI
+infra/          # @instant-composition/infra: the CDK app, one app for either stage
 messages/       # the one UI catalog, ja.json, which apps/web renders
 content/        # the cards and the lists and guides that define them (see Content)
 scripts/        # repository automation, authored as .mjs, never shipped
@@ -180,8 +183,8 @@ own package or app and by the package's name from outside it; there is no path a
 ### The workspace
 
 The repository is a pnpm workspace: the root package holds the tests and the repository
-automation, and `pnpm-workspace.yaml` adds each directory under `apps/` and `packages/`.
-These are the packages and apps
+automation, and `pnpm-workspace.yaml` adds each directory under `apps/` and `packages/`,
+and `infra/`. These are the packages and apps
 `docs/architecture/adr/0002-architecture-style-and-repository-layout.md` lays out.
 `packages/domain` holds the pure rules, with the practice day computed in the learner's
 time zone, and the pure `decide` functions behind each command. `packages/application`
@@ -204,7 +207,10 @@ TanStack Router, TanStack Query and use-intl over `messages/ja.json`, which reac
 API only over HTTP under `/api`, typed by what @hey-api/openapi-ts generates from
 `packages/contracts/openapi.json` into `apps/web/src/openapi/`. That tree is committed,
 `tests/web-openapi-client.test.ts` fails when it differs from a fresh generation, and
-`pnpm web:client` rewrites it. `infra/` joins the workspace with its first package.
+`pnpm web:client` rewrites it. `infra/` is the CDK app ADR-0009 describes: one app
+builds either stage from its `stage` context value (`dev` | `prod`), and an unknown or
+missing stage fails synthesis; `tests/infra-*.test.ts` synthesize it, so the everyday
+gate fails when synthesis does.
 
 - **The edges.** `adapters` → `application` and `domain`, the AWS SDK's DynamoDB
   clients, `zod` and `node:fs/promises`; `application` → `domain`; `contracts` → `zod`
@@ -222,7 +228,9 @@ API only over HTTP under `/api`, typed by what @hey-api/openapi-ts generates fro
   add Vite and its plugins, and of the trees outside it only `messages/`. The
   `boundaries/apps/web` and `boundaries/apps/web/config` blocks hold the specifiers, and
   `tests/boundaries.test.ts` the resolved paths. An app with source under `apps/` needs
-  a row too.
+  a row too. `infra/` imports no workspace package and no Node builtin: `aws-cdk-lib`
+  and `constructs` alone, each subpath listed as itself, held by the `boundaries/infra`
+  block and the same test.
 - **Source, not builds.** A package's `exports` points at its `src/index.ts`, and
   whatever consumes it compiles that source — Vite for the web client, Vitest for the
   tests, and Node's own type stripping for `pnpm api`, through the resolve hook
@@ -233,9 +241,9 @@ API only over HTTP under `/api`, typed by what @hey-api/openapi-ts generates fro
   them after the root's, which covers `tests/` and `scripts/`.
 - **The same gates everywhere.** The syntax bans, the named-export surface and the size
   budget in `eslint.config.mjs`, and a coverage floor in `vitest.config.ts`, cover
-  `packages/*/src/` and `apps/*/src/` alike. Tests stay under `tests/` and import a
-  package or an app by its name, which the root `package.json` declares as a
-  `workspace:*` devDependency.
+  `packages/*/src/` and `apps/*/src/` alike; the ESLint rules cover `infra/src/` too.
+  Tests stay under `tests/` and import a package or an app by its name, which the root
+  `package.json` declares as a `workspace:*` devDependency.
 
 ### The seams
 

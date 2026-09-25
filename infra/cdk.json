@@ -1,0 +1,4 @@
+{
+  "app": "node --import ../scripts/ts-hooks.mjs src/main.ts",
+  "output": "cdk.out"
+}
