@@ -39,16 +39,17 @@ const NO_EXPORT_STAR = {
 };
 
 /**
- * The hand-written application source: every workspace package's `src/` and
- * every deployable app's `src/`. The syntax bans, the named-export surface and
- * the size budget below hold for both, so moving a module from a package into
- * an app, or back, is not a way out of any of them.
+ * The hand-written application source: every workspace package's `src/`,
+ * every deployable app's `src/`, and the CDK app's. The syntax bans, the
+ * named-export surface and the size budget below hold for all of them, so
+ * moving a module from one tree into another is not a way out of any of them.
  */
 const SOURCE_FILES = [
   "packages/*/src/**/*.ts",
   "packages/*/src/**/*.tsx",
   "apps/*/src/**/*.ts",
   "apps/*/src/**/*.tsx",
+  "infra/src/**/*.ts",
 ];
 
 /** What a `src/internal/**` directory is, in the words of the rule that made it private. */
@@ -151,9 +152,11 @@ const NO_RELATIVE_PACKAGE_IMPORT = {
     "./../**/packages/**",
     "../**/apps/**",
     "./../**/apps/**",
+    "../**/infra/**",
+    "./../**/infra/**",
   ],
   message:
-    "Reach a workspace package or app by its name, @instant-composition/<dir>, which goes through its `exports`. A relative path into packages/ or apps/ walks past its public surface into modules it keeps private.",
+    "Reach a workspace package or app by its name, @instant-composition/<dir>, which goes through its `exports`. A relative path into packages/, apps/ or infra/ walks past its public surface into modules it keeps private.",
 };
 
 /**
@@ -221,6 +224,16 @@ const APP_TOOLING_EDGES =
   });
 
 /**
+ * The npm packages the CDK app under `infra/` may import, by exact specifier:
+ * the CDK library and its construct base class, and no workspace package — it
+ * describes the AWS resources, not the application that runs on them.
+ *
+ * @remarks
+ * `tests/boundaries.test.ts` holds the same row.
+ */
+const INFRA_NPM_EDGES = ["aws-cdk-lib", "constructs"];
+
+/**
  * The `no-restricted-imports` block for one workspace package or app.
  *
  * @remarks
@@ -236,7 +249,7 @@ const APP_TOOLING_EDGES =
  * climb out of the package; `tests/boundaries.test.ts` resolves each one and
  * does.
  *
- * @param {{ tree: "packages" | "apps", name: string, workspace: readonly string[], npm: readonly string[], node: readonly string[], files?: readonly string[], block?: string }} row
+ * @param {{ tree: "packages" | "apps" | "infra", name: string, workspace: readonly string[], npm: readonly string[], node: readonly string[], files?: readonly string[], block?: string }} row
  * @param {string} message
  */
 function workspaceBoundary(row, message) {
@@ -248,9 +261,13 @@ function workspaceBoundary(row, message) {
   const others = [
     ...Object.keys(WORKSPACE_EDGES),
     ...Object.keys(APP_WORKSPACE_EDGES),
+    "infra",
   ].filter((other) => other !== row.name);
   return {
-    name: `boundaries/${row.tree}/${row.block ?? row.name}`,
+    name:
+      row.tree === row.name
+        ? `boundaries/${row.name}`
+        : `boundaries/${row.tree}/${row.block ?? row.name}`,
     files: [
       ...(row.files ?? [
         `${row.tree}/${row.name}/**/*.ts`,
@@ -350,6 +367,7 @@ export default defineConfig([
     "apps/web/dist/",
     "apps/web/src/openapi/",
     "dist/",
+    "infra/cdk.out/",
     "coverage/",
     ".claude/skills/",
     ".claude/worktrees/",
@@ -514,6 +532,17 @@ export default defineConfig([
   ...appBoundary(
     "api",
     "apps/api is the HTTP adapter: it imports @instant-composition/adapters, application, contracts and domain, hono, @hono/node-server and node:path, each by its exact name, and nothing else outside itself — never a package by a relative path.",
+  ),
+  workspaceBoundary(
+    {
+      tree: "infra",
+      name: "infra",
+      workspace: [],
+      npm: INFRA_NPM_EDGES,
+      node: [],
+      files: ["infra/**/*.ts"],
+    },
+    "infra/ is the CDK app: it imports aws-cdk-lib and constructs, each by its exact specifier, and nothing else outside itself — no workspace package, no Node builtin. A stage's settings arrive through its CDK context, not through process.env.",
   ),
   ...appBoundary(
     "web",

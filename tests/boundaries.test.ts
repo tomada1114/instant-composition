@@ -84,10 +84,11 @@ interface Module {
   readonly specifiers: readonly string[];
 }
 
-/** Every module of a workspace package or an app, with what it imports. */
+/** Every module of a workspace package, an app or the CDK app, with what it imports. */
 const sourceModules: readonly Module[] = [
   ...modulesUnder("packages"),
   ...modulesUnder("apps"),
+  ...modulesUnder("infra"),
 ]
   .sort()
   .map((file) => ({
@@ -130,6 +131,7 @@ const SCAN_ANCHORS = [
   "apps/api/src/main.ts",
   "apps/web/src/drill/drill-screen.tsx",
   "apps/web/vite.config.ts",
+  "infra/src/index.ts",
   "packages/adapters/src/index.ts",
   "packages/domain/src/index.ts",
 ];
@@ -305,7 +307,7 @@ const packageManifest = z.object({
 });
 
 /** `<tree>/<directory>/package.json`, with every dependency field merged. */
-function readManifest(directory: string, tree: "packages" | "apps" = "packages") {
+function readManifest(directory: string, tree: "packages" | "apps" | "." = "packages") {
   const manifest = packageManifest.parse(
     JSON.parse(
       readFileSync(path.join(repoRoot, tree, directory, "package.json"), "utf8"),
@@ -712,11 +714,75 @@ describe("apps/ imports only the packages ADR-0002 allows", () => {
   });
 });
 
+// --- the CDK app ---------------------------------------------------------------
+
+/**
+ * The npm specifiers the CDK app under `infra/` may import, by exact name
+ * (`INFRA_NPM_EDGES`): the CDK library and the construct base class. It names
+ * no workspace package and no Node builtin — it describes the AWS resources,
+ * not the application that runs on them.
+ */
+const INFRA_NPM_EDGES: readonly string[] = ["aws-cdk-lib", "constructs"];
+
+/** The CDK CLI, which `cdk.json`'s app command is run by and nothing imports. */
+const INFRA_TOOLING_EDGES: readonly string[] = ["aws-cdk"];
+
+describe("infra/ imports the CDK and nothing of the application", () => {
+  it("leaves infra/ importing nothing outside itself but its npm row", () => {
+    const files = modulesUnder("infra");
+    expect(files).toContain("infra/src/index.ts");
+    const modules = files.map((file) => ({
+      file,
+      specifiers: importSpecifiers(readFileSync(path.join(repoRoot, file), "utf8")),
+    }));
+    expect(offendersLeaving("infra", new Set(INFRA_NPM_EDGES), modules)).toStrictEqual(
+      [],
+    );
+  });
+
+  it("declares in infra/package.json exactly its npm row and the CDK CLI", () => {
+    const manifest = readManifest("infra", ".");
+    expect(manifest.name).toBe(packageName("infra"));
+    expect(manifest.declared).toStrictEqual(
+      Object.fromEntries(
+        [...INFRA_NPM_EDGES, ...INFRA_TOOLING_EDGES].map((dependency) => [
+          dependency,
+          toolRange(manifest.declared, dependency),
+        ]),
+      ),
+    );
+    expect(manifest.scripts["typecheck"]).toBe("tsc -p tsconfig.json");
+  });
+
+  it("reports a workspace package, a Node builtin and an unlisted subpath", () => {
+    expect(
+      offendersLeaving("infra", new Set(INFRA_NPM_EDGES), [
+        {
+          file: "infra/src/probe.ts",
+          specifiers: [
+            "./stage",
+            "aws-cdk-lib",
+            "aws-cdk-lib/aws-s3",
+            "@instant-composition/domain",
+            "node:fs",
+            "../../packages/domain/src/index",
+          ],
+        },
+      ]),
+    ).toStrictEqual([
+      "infra/src/probe.ts: aws-cdk-lib/aws-s3",
+      "infra/src/probe.ts: @instant-composition/domain",
+      "infra/src/probe.ts: node:fs",
+      "infra/src/probe.ts: ../../packages/domain/src/index",
+    ]);
+  });
+});
+
 // --- reaching a package from outside it ---------------------------------------
 
 /**
  * `"<file>: <specifier>"` for every relative import of `modules` that resolves
- * into `packages/` or `apps/`.
+ * into `packages/`, `apps/` or `infra/`.
  *
  * @remarks
  * A package or an app publishes only what its `exports` names, and a relative
@@ -732,7 +798,7 @@ function relativeReachesIntoPackages(modules: readonly Module[]): string[] {
         );
         return (
           specifier.startsWith(".") &&
-          (inZone(resolved, "packages") || inZone(resolved, "apps"))
+          ["packages", "apps", "infra"].some((tree) => inZone(resolved, tree))
         );
       })
       .map((specifier) => `${module.file}: ${specifier}`),
@@ -746,7 +812,7 @@ describe("a workspace package or app is reached from outside only by its name", 
   ];
 
   it.each(trees)(
-    "finds no relative import into packages/ or apps/ under %s/",
+    "finds no relative import into packages/, apps/ or infra/ under %s/",
     (tree, extension) => {
       const files = modulesUnder(tree, extension);
       expect(files).not.toStrictEqual([]);
@@ -766,6 +832,7 @@ describe("a workspace package or app is reached from outside only by its name", 
           "../packages/domain/src/day",
           "./../packages/application",
           "../apps/api/src/app",
+          "../infra/src/app",
           "@instant-composition/domain",
           "./repo-tree",
           "../scripts/lib/json.mjs",
@@ -780,6 +847,7 @@ describe("a workspace package or app is reached from outside only by its name", 
       "tests/probe.test.ts: ../packages/domain/src/day",
       "tests/probe.test.ts: ./../packages/application",
       "tests/probe.test.ts: ../apps/api/src/app",
+      "tests/probe.test.ts: ../infra/src/app",
       "scripts/cards/probe.mjs: ../../packages/domain/src/index",
     ]);
   });

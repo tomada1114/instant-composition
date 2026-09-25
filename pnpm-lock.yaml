@@ -239,6 +239,9 @@ importers:
       '@instant-composition/domain':
         specifier: workspace:*
         version: link:packages/domain
+      '@instant-composition/infra':
+        specifier: workspace:*
+        version: link:infra
       '@instant-composition/web':
         specifier: workspace:*
         version: link:apps/web
@@ -382,6 +385,19 @@ importers:
         specifier: ~8.1.5
         version: 8.1.5(@types/node@26.4.1)(jiti@2.7.0)(yaml@2.9.0)
 
+  infra:
+    dependencies:
+      aws-cdk-lib:
+        specifier: ^2.270.0
+        version: 2.270.0(constructs@10.8.1)
+      constructs:
+        specifier: ^10.8.1
+        version: 10.8.1
+    devDependencies:
+      aws-cdk:
+        specifier: ^2.1142.0
+        version: 2.1142.0
+
   packages/adapters:
     dependencies:
       '@aws-sdk/client-dynamodb':
@@ -426,6 +442,19 @@ packages:
   '@asamuzakjp/dom-selector@8.3.2':
     resolution: {integrity: sha512-93Z1N+BQNXysodoicpOIyNh2drHfz/CTf9nnT0FEx72GJcIiwgydD7tGAr78j41LsYn3hlRn+LdGPuBLn1Bl8Q==}
     engines: {node: ^22.13.0 || >=24.0.0}
+
+  '@aws-cdk/asset-awscli-v1@2.2.292':
+    resolution: {integrity: sha512-d4aMFsAFj19FtxVyw8IzlUKv5Zu4sIvgnEjI2IU6IWBJgVbJ4aFnadANqYa+6MwB1CQbGOg0jh8WE77M+Nb/9A==}
+
+  '@aws-cdk/asset-node-proxy-agent-v6@2.1.3':
+    resolution: {integrity: sha512-98We1QWfin9vtuuQtNFhIIAEWb8CreyYTAP0Vn8HqSBoNiFJM9nZgifJeQawT9Wq0NX1HCNFlxCyTccIrK1PSA==}
+
+  '@aws-cdk/cloud-assembly-schema@54.24.0':
+    resolution: {integrity: sha512-9sH1pBpWuqZR/9rYAveNi62B/jDrc9BNOL83alD/wtIUSbRkg1aj6JX2r1cSugQwLBjCizQscQZgAb5wWnTTMg==}
+    engines: {node: '>= 18.0.0'}
+    bundledDependencies:
+      - jsonschema
+      - semver
 
   '@aws-sdk/client-dynamodb@3.1134.0':
     resolution: {integrity: sha512-i2FzVUVQWT0fEPE7/CxIP0620svDeNZKw4yU7VAa1s3otwXJ7CP2hgblvbPD6H3p+mTNSPfHoEyxK0iZDmBODQ==}
@@ -1393,6 +1422,30 @@ packages:
     resolution: {integrity: sha512-wvUjBtSGN7+7SjNpq/9M2Tg350UZD3q62IFZLbRAR1bSMlCo1ZaeW+BJ+D090e4hIIZLBcTDWe4Mh4jvUDajzQ==}
     engines: {node: '>= 0.4'}
 
+  aws-cdk-lib@2.270.0:
+    resolution: {integrity: sha512-xoO9FEqcVTTK39N6n+LxvAAsS5WZSGX/p+uv3l2W+LXDEIWctq6VECdluuFwdXnbyf4v4eIxo2btrkUepnEy0Q==}
+    engines: {node: '>= 20.0.0'}
+    peerDependencies:
+      constructs: ^10.5.0
+    bundledDependencies:
+      - '@aws/cloudformation-validate'
+      - '@balena/dockerignore'
+      - '@aws-cdk/cloud-assembly-api'
+      - case
+      - fs-extra
+      - ignore
+      - jsonschema
+      - minimatch
+      - punycode
+      - semver
+      - yaml
+      - mime-types
+
+  aws-cdk@2.1142.0:
+    resolution: {integrity: sha512-gNOeii+avTJmOwfR8tVgraZ5A2EBC/529EXg7e+yBp8Zl608dAv5CtFRoJt8QoKiruiCwYr4HF6ClNAse/NkSg==}
+    engines: {node: '>= 18.0.0'}
+    hasBin: true
+
   axe-core@4.13.0:
     resolution: {integrity: sha512-UzGt8zg7Ny8djbYMhxl2zuEevVa7r2gJjYY5Lwr1xM7+XU2nd6CkIWFTVcCIbAP63vSz71NaVyyuSk9lHKcy0A==}
     engines: {node: '>=4'}
@@ -1492,6 +1545,9 @@ packages:
 
   confbox@0.3.1:
     resolution: {integrity: sha512-cKUSoKa8YxFZZSmraVi7onONx3amu77ngK3kGpsYHDH7drPwCRkQE1RYMPlLRrMtnciRj274XNRxcHxnKmDSnA==}
+
+  constructs@10.8.1:
+    resolution: {integrity: sha512-98yGXYyhePqPYh3cYu8nzBERmAhC0DONe3UD03okK0nehZ7hYP4wgZuf02a04+uOWxnTJ5Rpp5m0GRNpwyLGGA==}
 
   convert-source-map@2.0.0:
     resolution: {integrity: sha512-Kvp459HrV2FEJ1CAsi1Ku+MY3kasH19TFykTz2xWmMeq6bk2NU3XXvfJ+Q61m0xktWwt+1HSYf3JZsTms3aRJg==}
@@ -2991,6 +3047,12 @@ snapshots:
       is-potential-custom-element-name: 1.0.1
       lru-cache: 11.5.2
 
+  '@aws-cdk/asset-awscli-v1@2.2.292': {}
+
+  '@aws-cdk/asset-node-proxy-agent-v6@2.1.3': {}
+
+  '@aws-cdk/cloud-assembly-schema@54.24.0': {}
+
   '@aws-sdk/client-dynamodb@3.1134.0':
     dependencies:
       '@aws-sdk/core': 3.978.0
@@ -4080,6 +4142,15 @@ snapshots:
     dependencies:
       possible-typed-array-names: 1.1.0
 
+  aws-cdk-lib@2.270.0(constructs@10.8.1):
+    dependencies:
+      '@aws-cdk/asset-awscli-v1': 2.2.292
+      '@aws-cdk/asset-node-proxy-agent-v6': 2.1.3
+      '@aws-cdk/cloud-assembly-schema': 54.24.0
+      constructs: 10.8.1
+
+  aws-cdk@2.1142.0: {}
+
   axe-core@4.13.0: {}
 
   axobject-query@4.1.0: {}
@@ -4182,6 +4253,8 @@ snapshots:
   confbox@0.2.4: {}
 
   confbox@0.3.1: {}
+
+  constructs@10.8.1: {}
 
   convert-source-map@2.0.0: {}
 

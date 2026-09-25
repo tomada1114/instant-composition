@@ -2,6 +2,7 @@
 dist/
 coverage/
 node_modules/
+cdk.out/
 
 # Data under test, not source: a fixture is committed precisely because it is
 # malformed, and formatting it would remove the defect a test asserts on.

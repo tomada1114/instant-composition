@@ -54,3 +54,6 @@ content/.cards.lock
 # OS
 .DS_Store
 Thumbs.db
+
+# CDK synthesis output (`pnpm cdk synth`)
+cdk.out/
