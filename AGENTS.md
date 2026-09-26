@@ -74,7 +74,7 @@ pnpm agents:sync   # regenerate .claude/skills/ from .agents/skills/
 pnpm agents:check  # fail when the two skill trees have drifted apart
 pnpm repo:labels   # create/update GitHub labels from .github/labels.yml
 pnpm hooks:install # repair the Git hooks; `pnpm install` installs them already
-pnpm clean         # remove the build and tool caches (apps/web/dist, coverage, .eslintcache, tsbuildinfo)
+pnpm clean         # remove the build and tool caches (apps/web/dist, infra/cdk.out, coverage, .eslintcache, tsbuildinfo)
 pnpm clean:deep    # the same, plus dist/ and node_modules/ — a reinstall follows
 pnpm cards:lint    # validate content/'s lists and every card; exit 1 on any ERROR
 pnpm cards:gaps    # plan a generation run: which cells get how many cards
