@@ -2,6 +2,7 @@
   "app": "node --import ../scripts/ts-hooks.mjs src/main.ts",
   "output": "cdk.out",
   "context": {
+    "cli-telemetry": false,
     "@aws-cdk/aws-signer:signingProfileNamePassedToCfn": true,
     "@aws-cdk/aws-ecs-patterns:secGroupsDisablesImplicitOpenListener": true,
     "@aws-cdk/aws-lambda:recognizeLayerVersion": true,
