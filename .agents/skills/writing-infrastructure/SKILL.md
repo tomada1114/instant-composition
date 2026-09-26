@@ -39,6 +39,9 @@ a second design.
 - A stack's construct id is the same in every stage (`foundation`, `deploy-access`), so
   a CLI command names it the same way. Its CloudFormation name carries the stage:
   `instant-composition-<stage>-<id>`.
+- The CDK CLI's usage telemetry is off for this app: `infra/cdk.json`'s `context` sets
+  `"cli-telemetry": false`, so neither a local `pnpm cdk` run nor `Deploy dev` reports
+  it. `pnpm cdk cli-telemetry --status` from `infra/` confirms it.
 
 ## The stacks
 
