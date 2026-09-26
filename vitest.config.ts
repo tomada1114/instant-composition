@@ -185,15 +185,16 @@ export default defineConfig({
         "packages/*/src/**/*.tsx",
         "apps/*/src/**/*.ts",
         "apps/*/src/**/*.tsx",
+        "infra/src/**/*.ts",
         "scripts/**/*.mjs",
       ],
       // No top-level lines/functions/statements/branches here: Vitest's v8
       // provider checks those against the coverage of *all* included files
-      // combined (apps, packages and scripts together), which would let a
-      // well-tested package subsidize an untested scripts/ file or vice versa.
-      // Each glob below is its own independent threshold set instead, so the
-      // packages, the apps, scripts/**, and scripts/lib/guard/** are each
-      // judged only against their own coverage.
+      // combined (apps, packages, infra and scripts together), which would let
+      // a well-tested package subsidize an untested scripts/ file or vice
+      // versa. Each glob below is its own independent threshold set instead,
+      // so the packages, the apps, infra/src/**, scripts/**, and
+      // scripts/lib/guard/** are each judged only against their own coverage.
       thresholds: {
         // The workspace packages hold this repository's own logic — the
         // rules, the commands and queries, the contract and the adapters —
@@ -214,6 +215,18 @@ export default defineConfig({
         // is kept thin; `tests/stack-smoke.test.ts` runs both, but coverage
         // stops at the process boundary.
         "apps/*/src/**": {
+          lines: 80,
+          functions: 80,
+          statements: 80,
+          branches: 80,
+        },
+        // infra/ holds this repository's own stack and stage logic — which
+        // resources exist, their Retain policies, the per-stage settings and
+        // the deploy role's trust — so it carries the same floor as the
+        // packages and the apps. `infra/src/main.ts`, the entry `pnpm cdk`
+        // spawns, counts at whatever the in-process tests reach, which is why
+        // it stays a single call to `buildApp`.
+        "infra/src/**": {
           lines: 80,
           functions: 80,
           statements: 80,

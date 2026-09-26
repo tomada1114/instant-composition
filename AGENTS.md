@@ -241,9 +241,9 @@ gate fails when synthesis does.
   them after the root's, which covers `tests/` and `scripts/`.
 - **The same gates everywhere.** The syntax bans, the named-export surface and the size
   budget in `eslint.config.mjs`, and a coverage floor in `vitest.config.ts`, cover
-  `packages/*/src/` and `apps/*/src/` alike; the ESLint rules cover `infra/src/` too.
-  Tests stay under `tests/` and import a package or an app by its name, which the root
-  `package.json` declares as a `workspace:*` devDependency.
+  `packages/*/src/` and `apps/*/src/` alike, and `infra/src/` as well. Tests stay under
+  `tests/` and import a package or an app by its name, which the root `package.json`
+  declares as a `workspace:*` devDependency.
 
 ### The seams
 
