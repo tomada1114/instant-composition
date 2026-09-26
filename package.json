@@ -19,8 +19,8 @@
     }
   },
   "scripts": {
-    "clean": "node scripts/clean.mjs apps/web/dist coverage .eslintcache tsconfig.tsbuildinfo",
-    "clean:deep": "node scripts/clean.mjs apps/web/dist coverage .eslintcache tsconfig.tsbuildinfo dist node_modules",
+    "clean": "node scripts/clean.mjs apps/web/dist infra/cdk.out coverage .eslintcache tsconfig.tsbuildinfo",
+    "clean:deep": "node scripts/clean.mjs apps/web/dist infra/cdk.out coverage .eslintcache tsconfig.tsbuildinfo dist node_modules",
     "dev": "pnpm run db:up && node scripts/dev.mjs",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
