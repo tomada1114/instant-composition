@@ -1,13 +1,13 @@
 ---
 name: triaging-issues
 description: >
-  Covers this repository's issue vocabulary: the type and priority label taxonomy in
-  .github/labels.yml, what `blocked: design`, `blocked: dependency`, `blocked: external`
-  and `on hold` mean, and what an issue body must contain (a `path:line`, an observable
-  close condition, a `Depends on: #N` line). Use when filing a GitHub issue, triaging or
-  re-prioritizing the backlog, picking a `priority: P0`-`P3` label, choosing between
-  `bug`/`enhancement`/ `documentation`/`chore`/`security`, or running `pnpm
-  repo:labels`.
+  Covers this repository's issue vocabulary: the type, priority and `phase: N` label
+  taxonomy in .github/labels.yml, what `blocked: design`, `blocked: dependency`,
+  `blocked: external` and `on hold` mean, and what an issue body must contain (a
+  `path:line`, an observable close condition, a `Depends on: #N` line). Use when filing
+  a GitHub issue, triaging or re-prioritizing the backlog, picking a `priority: P0`-`P3`
+  label, choosing between `bug`/`enhancement`/ `documentation`/`chore`/`security`, or
+  running `pnpm repo:labels`.
 ---
 
 # Triaging Issues
@@ -44,6 +44,24 @@ re-derived later without redoing the judgement.
 A label that turns out to be wrong gets corrected, not worked around. Ranking around a
 stale label in your head leaves the next reader to make the same mistake — fix the label
 instead of mentally overriding it.
+
+## Phase labels
+
+`phase: 0` through `phase: 13` say which phase of `docs/architecture/roadmap.md` an
+issue belongs to, so a listing shows it without opening the issue. Read together, an
+issue's labels answer the three questions a backlog is scanned for: which phase
+(`phase: N`), how much it matters (`priority: *`), and whether it can start
+(`blocked: *`, `on hold`).
+
+- A phase's parent and each of its sub-issues carry that phase's label, and exactly one
+  phase label. The sub-issue link is the membership; the label is how it reads at a
+  glance, so the two move together.
+- An issue outside every phase — a follow-up nobody has placed yet — carries none. It is
+  placed, link and label together, the next time the roadmap is steered.
+- A phase label never stands in for readiness or priority; it is not a tier.
+
+`steering-the-roadmap` applies and moves them, because it owns which phase an issue is
+in.
 
 ## Type labels
 
