@@ -57,11 +57,7 @@ const COMMAND_ERRORS = [
   "ERR_CONTENT_UNREADABLE",
 ] as const;
 
-/**
- * The `/v1` operations the commands and queries in `packages/application`
- * back today (ADR-0007). `GET /v1/rounds/{roundId}` arrives with the offline
- * answer queue.
- */
+/** The `/v1` operations the commands and queries in `packages/application` back (ADR-0007). */
 export const ROUTES: readonly Route[] = [
   {
     method: "get",
@@ -118,6 +114,16 @@ export const ROUTES: readonly Route[] = [
     requestBody: startRoundRequestSchema,
     success: { status: 200, body: roundPayloadSchema },
     errors: [...COMMAND_ERRORS, "ERR_ROUND_CLOSED", "ERR_NOT_ENOUGH_CARDS"],
+  },
+  {
+    method: "get",
+    path: "/v1/rounds/{roundId}",
+    operationId: "getRound",
+    summary:
+      "A round the learner has, whatever day it was started or however it ended, with the answers it already holds; it is read as stored, never refitted.",
+    requestBody: null,
+    success: { status: 200, body: roundPayloadSchema },
+    errors: [...ROUND_QUERY_ERRORS, "ERR_CONTENT_UNREADABLE"],
   },
   {
     method: "post",

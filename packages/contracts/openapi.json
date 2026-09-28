@@ -311,6 +311,70 @@
         }
       }
     },
+    "/v1/rounds/{roundId}": {
+      "get": {
+        "operationId": "getRound",
+        "summary": "A round the learner has, whatever day it was started or however it ended, with the answers it already holds; it is read as stored, never refitted.",
+        "parameters": [
+          {
+            "name": "roundId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string", "minLength": 1, "maxLength": 64 }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/RoundPayload" }
+              }
+            }
+          },
+          "400": {
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "401": {
+            "description": "ERR_UNAUTHENTICATED: The request carries no valid access token.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "403": {
+            "description": "ERR_FORBIDDEN: The caller may not run this operation.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "404": {
+            "description": "ERR_ROUND_NOT_FOUND: No round has that id.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "503": {
+            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/rounds/{roundId}/answers": {
       "post": {
         "operationId": "recordAnswers",
@@ -809,11 +873,17 @@
             "items": {
               "type": "object",
               "properties": {
+                "id": { "type": "string" },
                 "cardId": { "type": "string" },
                 "pass": { "$ref": "#/components/schemas/Pass" },
-                "result": { "$ref": "#/components/schemas/AnswerResult" }
+                "result": { "$ref": "#/components/schemas/AnswerResult" },
+                "answeredAt": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 9007199254740991
+                }
               },
-              "required": ["cardId", "pass", "result"]
+              "required": ["id", "cardId", "pass", "result", "answeredAt"]
             }
           },
           "offset": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },

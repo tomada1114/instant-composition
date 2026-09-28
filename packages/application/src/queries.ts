@@ -4,10 +4,10 @@ import { snapshotOrEmpty, toeicOf, type CatalogSnapshot } from "./catalog";
 import type { RequestContext } from "./context";
 import type { ApplicationError } from "./errors";
 import { storeFor, type ApplicationDeps } from "./execute";
-import { summaryOf } from "./present";
+import { payloadOf, summaryOf } from "./present";
 import type { History, SettingsPageView } from "./query-views";
 import type { LearnerStore } from "./store";
-import type { RoundSummary } from "./views";
+import type { RoundPayload, RoundSummary } from "./views";
 
 /** The summary `roundId` kept when it finished, or `undefined` for a round not finished. */
 async function keptSummary(
@@ -39,6 +39,39 @@ export async function roundSummary(
   const { snapshot } = await snapshotOrEmpty(deps.catalog);
   const summary = await keptSummary(bound.value, roundId, snapshot);
   return summary === undefined ? err({ code: "ERR_ROUND_NOT_FOUND" }) : ok(summary);
+}
+
+/**
+ * The round `roundId` as it is stored, with the answers it already holds —
+ * open, finished or abandoned, on whatever day it was started — so a client
+ * can resume it or reconcile its queue. Nothing is written: unlike a start, it
+ * never refits the deck nor abandons the round. A round the learner does not
+ * have is not found, another learner's included, since the store is their own.
+ */
+export async function roundPayload(
+  deps: ApplicationDeps,
+  context: RequestContext,
+  roundId: string,
+): Promise<Result<RoundPayload, ApplicationError>> {
+  const bound = storeFor(deps, context, "round");
+  if (!bound.ok) {
+    return bound;
+  }
+  const store = bound.value;
+  const round = await store.round(roundId);
+  if (round === undefined) {
+    return err({ code: "ERR_ROUND_NOT_FOUND" });
+  }
+  const { portionDay } = round.value;
+  const [snapshot, reviews, portion] = await Promise.all([
+    deps.catalog.snapshot(),
+    store.reviewsOf(roundId),
+    portionDay === null ? undefined : store.portion(portionDay),
+  ]);
+  // An empty snapshot would drop every card, which a client would read as all edited.
+  return snapshot.ok
+    ? ok(payloadOf(round.value, reviews, portion?.value, snapshot.value))
+    : snapshot;
 }
 
 /** The settings as saved (the defaults before any), the taxonomy and the difficulty. */

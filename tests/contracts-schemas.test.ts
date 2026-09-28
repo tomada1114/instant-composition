@@ -4,6 +4,7 @@ import {
   home,
   profile,
   recordAnswers,
+  roundPayload,
   roundSummary,
   records,
   settingsPage,
@@ -334,6 +335,11 @@ describe("what the application answers parses under the contract", () => {
       ),
     );
     note(
+      "roundPayload with answers",
+      roundPayloadSchema,
+      await value(roundPayload(h.deps, h.context(later), today.id)),
+    );
+    note(
       "finishRound today",
       roundSummarySchema,
       await value(
@@ -353,7 +359,7 @@ describe("what the application answers parses under the contract", () => {
 
   it("for every view a day of practice produces", async () => {
     const views = await throughTheDay(makeHarness());
-    expect(views.map(([name]) => name)).toHaveLength(14);
+    expect(views.map(([name]) => name)).toHaveLength(15);
     for (const [name, schema, view] of views) {
       const parsed = schema.safeParse(wire(view));
       expect({ name, issues: parsed.error?.issues ?? [] }).toStrictEqual({

@@ -39,9 +39,13 @@ export interface RoundPayload {
   readonly cards: Readonly<Record<string, DrillCard>>;
   /** What was already answered, oldest first, so a resumed round picks up after it. */
   readonly answered: readonly {
+    /** The answer's own id, so a client can tell which of its queued answers are held. */
+    readonly id: string;
     readonly cardId: string;
     readonly pass: Pass;
     readonly result: AnswerResult;
+    /** As stored: the client's time, held between the round's start and the server's. */
+    readonly answeredAt: number;
   }[];
   /** The progress counter reads `offset + position / total`. */
   readonly offset: number;

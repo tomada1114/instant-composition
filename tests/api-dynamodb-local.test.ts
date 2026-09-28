@@ -2,7 +2,11 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 
 import { LOCAL_SUBJECT } from "@instant-composition/api";
 import { learnerId } from "@instant-composition/application";
-import { profileSchema, roundSummarySchema } from "@instant-composition/contracts";
+import {
+  profileSchema,
+  roundPayloadSchema,
+  roundSummarySchema,
+} from "@instant-composition/contracts";
 
 import {
   batchFor,
@@ -10,6 +14,7 @@ import {
   startedPlacement,
   subjectAuthenticator,
 } from "./api-harness";
+import { NOON } from "./application-harness";
 import { localTables } from "./dynamodb-local";
 
 // The API over the DynamoDB store on DynamoDB local: the round's whole life
@@ -52,6 +57,27 @@ describe("the API on DynamoDB local", () => {
       new Set(["learner-1"]),
     );
     expect((await api.directory.learnerOf(LOCAL_SUBJECT))?.learnerId).toBe("learner-1");
+  });
+
+  it("reads a round back with the answers it holds, oldest first", async () => {
+    const api = makeApi(await tables.freshBacking());
+    const round = await startedPlacement(api);
+    api.advance(10_000);
+    const held = batchFor(round)
+      .answers.slice(0, 2)
+      .map((answer, index) => ({ ...answer, answeredAt: NOON + 5_000 - index }));
+    expect(
+      (await api.call("POST", "/v1/rounds/p1/answers", { answers: held })).status,
+    ).toBe(204);
+
+    const read = roundPayloadSchema.parse(
+      await (await api.call("GET", "/v1/rounds/p1")).json(),
+    );
+
+    expect(read.deck).toStrictEqual(round.deck);
+    expect(read.answered.map((answer) => [answer.id, answer.answeredAt])).toStrictEqual(
+      held.map((answer) => [answer.id, answer.answeredAt]).reverse(),
+    );
   });
 
   it("changes nothing when the same batch is posted twice, before and after finish", async () => {

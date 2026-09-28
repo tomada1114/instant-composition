@@ -5,6 +5,7 @@ import {
   profile,
   recordAnswers,
   records,
+  roundPayload,
   roundSummary,
   settingsPage,
   startRound,
@@ -126,6 +127,7 @@ export const OPERATIONS: Readonly<Record<string, Operation>> = {
   startRound: command(startRoundRequestSchema, false, (deps, context, _, start) =>
     startRound(deps, context, start),
   ),
+  getRound: roundQuery(roundPayload),
   recordAnswers: command(answersRequestSchema, true, (deps, context, roundId, batch) =>
     recordAnswers(deps, context, {
       roundId,
