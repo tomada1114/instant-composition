@@ -5,9 +5,10 @@ description: >
   `improvement` label taxonomy in .github/labels.yml, what `blocked: design`, `blocked:
   dependency`, `blocked: external` and `on hold` mean, and what an issue body must
   contain (a `path:line`, an observable close condition, a `Depends on: #N` line). Use
-  when filing a GitHub issue, triaging or re-prioritizing the backlog, picking a
-  `priority: P0`-`P3` label, choosing between `bug`/`enhancement`/
-  `documentation`/`chore`/`security`, or running `pnpm repo:labels`.
+  when filing a GitHub issue, including a change the owner wants after using the app,
+  triaging or re-prioritizing the backlog, picking a `priority: P0`-`P3` or a
+  `bug`/`enhancement`/`documentation`/`chore`/`security` label, or running `pnpm
+  repo:labels`.
 ---
 
 # Triaging Issues
@@ -19,6 +20,13 @@ workflow beyond the tracker.
 Labels carry the triage decision, so it is made once and read back rather than
 re-derived every time the backlog is looked at. An issue is filed with a type label and
 left untiered; triage adds the priority.
+
+## A request from daily use
+
+When the owner asks for a change they noticed while using the app, decide its lane
+before filing: an `improvement`, or phase work under a parent. **REQUIRED:**
+`steering-the-roadmap`, which classifies the request and files it; this skill then
+supplies its labels and body.
 
 ## Priority labels
 
