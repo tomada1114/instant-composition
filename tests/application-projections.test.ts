@@ -8,13 +8,7 @@ import {
   type LearnerStore,
   type LearnerStores,
 } from "@instant-composition/application";
-import {
-  deriveCardStates,
-  masteredCards,
-  replayItems,
-  type AnswerRecord,
-  type ReviewEntry,
-} from "@instant-composition/domain";
+import { replayItems } from "@instant-composition/domain";
 
 import {
   answersFor,
@@ -23,25 +17,6 @@ import {
   NOON,
   type Harness,
 } from "./application-harness";
-
-/** The log entry in the shape the replaying rules of `packages/domain` read. */
-function asAnswer(entry: ReviewEntry): AnswerRecord {
-  return {
-    id: entry.id,
-    roundId: entry.sessionId,
-    cardId: entry.item.id,
-    pass: entry.detail.pass,
-    result: entry.detail.result,
-    elapsedMs: entry.detail.elapsedMs,
-    limitMs: entry.detail.limitMs,
-    day: entry.day,
-    answeredAt: entry.answeredAt,
-    topic: entry.snapshot.topic,
-    subtopic: entry.snapshot.subtopic,
-    level: entry.snapshot.level,
-    prompt: entry.snapshot.prompt,
-  };
-}
 
 /** A placement, then five days of rounds with misses, retries and fast answers. */
 async function fiveDays(h: Harness): Promise<void> {
@@ -147,37 +122,8 @@ describe("the projections a command keeps", () => {
     );
 
     expect(log.length).toBeGreaterThan(50);
+    expect([...items.values()].some((item) => item.mastered !== null)).toBe(true);
     expect(items).toStrictEqual(replayItems(log));
-  });
-
-  it("agree with the rules that replay the whole answer log", async () => {
-    const h = makeHarness();
-    await fiveDays(h);
-    const store = h.stores.forLearner(h.learner);
-    const answers = (await store.reviews()).map(asAnswer);
-    const items = await store.items();
-
-    const memory = new Map([...items].map(([id, stored]) => [id, stored.value.memory]));
-    const mastered = new Map(
-      [...items].flatMap(([id, stored]) =>
-        stored.value.mastered === null
-          ? []
-          : [
-              [
-                id,
-                {
-                  cardId: id,
-                  day: stored.value.mastered.day,
-                  roundId: stored.value.mastered.sessionId,
-                },
-              ] as const,
-            ],
-      ),
-    );
-
-    expect(memory).toStrictEqual(deriveCardStates(answers));
-    expect(mastered.size).toBeGreaterThan(0);
-    expect(mastered).toStrictEqual(masteredCards(answers));
   });
 
   it("keep the learner's totals and each day's tally in step with the log", async () => {

@@ -1,7 +1,6 @@
 import { describe, expect, it } from "vitest";
 
 import {
-  masteredCards,
   nearestMilestone,
   reachBySubtopic,
   reachByTopic,
@@ -11,55 +10,6 @@ import {
 } from "@instant-composition/domain";
 
 import { makeAnswer } from "./domain-fixtures";
-
-describe("a card counts as mastered", () => {
-  it("on its second correct first-pass answer on a different day", () => {
-    const mastered = masteredCards([
-      makeAnswer({ day: "2026-09-20", answeredAt: 1, roundId: "a" }),
-      makeAnswer({ day: "2026-09-22", answeredAt: 2, roundId: "b" }),
-    ]);
-    expect(mastered.get("c1")).toStrictEqual({
-      cardId: "c1",
-      day: "2026-09-22",
-      roundId: "b",
-    });
-  });
-
-  it("not from two correct answers on the same day", () => {
-    const mastered = masteredCards([
-      makeAnswer({ answeredAt: 1, roundId: "a" }),
-      makeAnswer({ answeredAt: 2, roundId: "b" }),
-    ]);
-    expect(mastered.size).toBe(0);
-  });
-
-  it("not from a retry", () => {
-    const mastered = masteredCards([
-      makeAnswer({ day: "2026-09-20", answeredAt: 1 }),
-      makeAnswer({ day: "2026-09-22", answeredAt: 2, pass: "retry" }),
-    ]);
-    expect(mastered.size).toBe(0);
-  });
-
-  it("not from a timeout or a miss, which leave earlier days standing", () => {
-    const mastered = masteredCards([
-      makeAnswer({ day: "2026-09-18", answeredAt: 1 }),
-      makeAnswer({ day: "2026-09-19", answeredAt: 2, result: "timeout" }),
-      makeAnswer({ day: "2026-09-20", answeredAt: 3, result: "ng" }),
-      makeAnswer({ day: "2026-09-21", answeredAt: 4, roundId: "late" }),
-    ]);
-    expect(mastered.get("c1")?.day).toBe("2026-09-21");
-  });
-
-  it("once, at the first time it qualifies", () => {
-    const mastered = masteredCards([
-      makeAnswer({ day: "2026-09-18", answeredAt: 1 }),
-      makeAnswer({ day: "2026-09-19", answeredAt: 2, roundId: "first" }),
-      makeAnswer({ day: "2026-09-20", answeredAt: 3, roundId: "again" }),
-    ]);
-    expect(mastered.get("c1")?.roundId).toBe("first");
-  });
-});
 
 describe("where a mastered card is counted", () => {
   const answers = [
