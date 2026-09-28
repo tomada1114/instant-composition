@@ -49,9 +49,11 @@ export function payloadOf(
     deck: round.deck,
     cards,
     answered: reviews.map((review) => ({
+      id: review.id,
       cardId: review.item.id,
       pass: review.detail.pass,
       result: review.detail.result,
+      answeredAt: review.answeredAt,
     })),
     offset: counted ? portion.progress - round.firstPass : 0,
     total: counted ? portion.target : round.deck.length,

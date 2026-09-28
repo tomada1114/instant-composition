@@ -40,7 +40,15 @@ export const roundPayloadSchema = z.object({
   deck: z.array(z.string()),
   cards: z.record(z.string(), drillCardSchema),
   answered: z.array(
-    z.object({ cardId: z.string(), pass: passSchema, result: answerResultSchema }),
+    z.object({
+      /** The answer's own id, as the client made it. */
+      id: z.string(),
+      cardId: z.string(),
+      pass: passSchema,
+      result: answerResultSchema,
+      /** When it was answered, in epoch milliseconds, as the server holds it. */
+      answeredAt: z.int().min(0),
+    }),
   ),
   offset: countSchema,
   total: countSchema,

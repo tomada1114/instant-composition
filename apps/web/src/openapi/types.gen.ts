@@ -105,9 +105,11 @@ export type RoundPayload = {
         [key: string]: DrillCard;
     };
     answered: Array<{
+        id: string;
         cardId: string;
         pass: Pass;
         result: AnswerResult;
+        answeredAt: number;
     }>;
     offset: number;
     total: number;
@@ -538,6 +540,49 @@ export type StartRoundResponses = {
 };
 
 export type StartRoundResponse = StartRoundResponses[keyof StartRoundResponses];
+
+export type GetRoundData = {
+    body?: never;
+    path: {
+        roundId: string;
+    };
+    query?: never;
+    url: '/v1/rounds/{roundId}';
+};
+
+export type GetRoundErrors = {
+    /**
+     * ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.
+     */
+    400: ErrorResponse;
+    /**
+     * ERR_UNAUTHENTICATED: The request carries no valid access token.
+     */
+    401: ErrorResponse;
+    /**
+     * ERR_FORBIDDEN: The caller may not run this operation.
+     */
+    403: ErrorResponse;
+    /**
+     * ERR_ROUND_NOT_FOUND: No round has that id.
+     */
+    404: ErrorResponse;
+    /**
+     * ERR_CONTENT_UNREADABLE: The card content could not be read.
+     */
+    503: ErrorResponse;
+};
+
+export type GetRoundError = GetRoundErrors[keyof GetRoundErrors];
+
+export type GetRoundResponses = {
+    /**
+     * OK
+     */
+    200: RoundPayload;
+};
+
+export type GetRoundResponse = GetRoundResponses[keyof GetRoundResponses];
 
 export type RecordAnswersData = {
     body: AnswersRequest;

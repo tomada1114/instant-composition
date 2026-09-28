@@ -54,6 +54,17 @@ function serve(options: Serve = {}): ApiCall[] {
   });
 }
 
+/** A correct first pass the server already holds for `cardId`. */
+function firstPassOf(cardId: string): RoundPayload["answered"][number] {
+  return {
+    id: `round-1:f:${cardId}`,
+    cardId,
+    pass: "first",
+    result: "ok",
+    answeredAt: Date.UTC(2026, 8, 22, 3, 0),
+  };
+}
+
 function posted(calls: readonly ApiCall[], url: string): unknown[] {
   return calls
     .filter((call) => call.method === "POST" && call.url === url)
@@ -140,10 +151,7 @@ describe("the drill, a round run to its summary", () => {
     const calls = serve({
       round: {
         ...ROUND,
-        answered: [
-          { cardId: "c1", pass: "first", result: "ok" },
-          { cardId: "c2", pass: "first", result: "ok" },
-        ],
+        answered: [firstPassOf("c1"), firstPassOf("c2")],
       },
     });
     await renderApp("/drill?kind=today");
@@ -164,10 +172,7 @@ describe("the drill, a round run to its summary", () => {
     serve({
       round: {
         ...ROUND,
-        answered: [
-          { cardId: "c1", pass: "first", result: "ok" },
-          { cardId: "c2", pass: "first", result: "ok" },
-        ],
+        answered: [firstPassOf("c1"), firstPassOf("c2")],
       },
     });
     await renderApp("/drill?kind=today");

@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import { MAX_REQUEST_BODY_BYTES } from "@instant-composition/api";
-import { learnerId } from "@instant-composition/application";
+import { learnerId, type RoundPayload } from "@instant-composition/application";
 import {
   errorResponseSchema,
   MESSAGE_BY_CODE,
@@ -74,6 +74,69 @@ describe("the queries", () => {
     expect(
       await refusal(await api.call("GET", `/v1/rounds/${roundId}/summary`)),
     ).toStrictEqual([404, "ERR_ROUND_NOT_FOUND"]);
+  });
+});
+
+describe("reading a round back", () => {
+  it("resumes an earlier day's round a later start abandoned, with the answers it holds", async () => {
+    const api = makeApi();
+    await finished(api);
+    api.advance(86_400_000);
+    const started = (await contracted(
+      await api.call("POST", "/v1/rounds", { roundId: "t1", kind: "today" }),
+      "startRound",
+    )) as RoundPayload;
+    const held = batchFor(started)
+      .answers.slice(0, 3)
+      .map((answer, index) => ({
+        ...answer,
+        answeredAt: NOON + 86_400_000 + (3 - index) * 1_000,
+      }));
+    api.advance(10_000);
+    await api.call("POST", "/v1/rounds/t1/answers", { answers: held });
+    api.advance(86_400_000);
+    await api.call("POST", "/v1/rounds", { roundId: "t2", kind: "today" });
+
+    const response = await api.call("GET", "/v1/rounds/t1");
+
+    const read = (await contracted(response, "getRound")) as RoundPayload;
+    expect(read).toMatchObject({ id: "t1", day: started.day, deck: started.deck });
+    expect(read.answered).toStrictEqual(
+      held
+        .map(({ id, cardId, pass, result, answeredAt }) => ({
+          id,
+          cardId,
+          pass,
+          result,
+          answeredAt,
+        }))
+        .reverse(),
+    );
+    const stored = await api.stores.forLearner(learnerId("learner-1")).round("t1");
+    expect(stored?.value.abandonedAt).toBe(NOON + 2 * 86_400_000 + 10_000);
+  });
+
+  it("does not find a round there is no such id for", async () => {
+    const api = makeApi();
+    await startedPlacement(api);
+    expect(await refusal(await api.call("GET", "/v1/rounds/p9"))).toStrictEqual([
+      404,
+      "ERR_ROUND_NOT_FOUND",
+    ]);
+  });
+
+  it("answers 503 when the catalog cannot be read", async () => {
+    const api = makeApi();
+    await startedPlacement(api);
+    const unreadable = makeApi({
+      stores: api.stores,
+      directory: api.directory,
+      catalog: unreadableCatalog,
+    });
+    expect(await refusal(await unreadable.call("GET", "/v1/rounds/p1"))).toStrictEqual([
+      503,
+      "ERR_CONTENT_UNREADABLE",
+    ]);
   });
 });
 
@@ -238,7 +301,12 @@ describe("who a request acts as", () => {
       newLearnerId: () => learnerId("learner-b"),
     });
     const before = await a.call("GET", "/v1/rounds/p1/summary");
+    const round = await a.call("GET", "/v1/rounds/p1");
 
+    expect(await refusal(await b.call("GET", "/v1/rounds/p1"))).toStrictEqual([
+      404,
+      "ERR_ROUND_NOT_FOUND",
+    ]);
     expect(await refusal(await b.call("GET", "/v1/rounds/p1/summary"))).toStrictEqual([
       404,
       "ERR_ROUND_NOT_FOUND",
@@ -251,7 +319,11 @@ describe("who a request acts as", () => {
     ).toStrictEqual([404, "ERR_ROUND_NOT_FOUND"]);
     const after = await a.call("GET", "/v1/rounds/p1/summary");
     expect(await after.json()).toStrictEqual(await before.json());
+    expect(await (await a.call("GET", "/v1/rounds/p1")).json()).toStrictEqual(
+      await round.json(),
+    );
     expect(b.lines.map((line) => line.learnerId)).toStrictEqual([
+      "learner-b",
       "learner-b",
       "learner-b",
       "learner-b",

@@ -257,6 +257,7 @@ describe("the API behind the Cognito authenticator", () => {
     const b = api(bearer(accessToken(KEY, "subject-b")), a);
 
     for (const [method, path, body] of [
+      ["GET", "/v1/rounds/p1", undefined],
       ["GET", "/v1/rounds/p1/summary", undefined],
       ["POST", "/v1/rounds/p1/answers", { answers: [] }],
       ["POST", "/v1/rounds/p1/finish", { answers: [] }],
@@ -268,6 +269,7 @@ describe("the API behind the Cognito authenticator", () => {
       );
     }
     expect(b.lines.map((line) => line.learnerId)).toStrictEqual([
+      "learner-b",
       "learner-b",
       "learner-b",
       "learner-b",

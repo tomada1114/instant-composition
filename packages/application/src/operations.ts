@@ -13,6 +13,7 @@ export const LEARNER_OPERATIONS = [
   "profile",
   "home",
   "records",
+  "round",
   "recap",
   "settings",
   "history",

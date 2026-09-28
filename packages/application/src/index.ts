@@ -41,7 +41,7 @@ export {
   type OperationKind,
 } from "./operations";
 export { profile, updateProfile } from "./profile";
-export { history, roundSummary, settingsPage } from "./queries";
+export { history, roundPayload, roundSummary, settingsPage } from "./queries";
 export type {
   BreakdownTopic,
   History,

@@ -6,12 +6,14 @@ import {
   home,
   recordAnswers,
   records,
+  roundPayload,
   roundSummary,
   settingsPage,
   startRound,
   updateSettings,
   learnerId,
   type ApplicationDeps,
+  type LearnerStores,
   type RequestContext,
 } from "@instant-composition/application";
 
@@ -72,6 +74,7 @@ type Query = (deps: ApplicationDeps, context: RequestContext) => Promise<unknown
 const QUERIES: Readonly<Record<string, Query>> = {
   home,
   records,
+  roundPayload: (deps, context) => roundPayload(deps, context, "p0"),
   roundSummary: (deps, context) => roundSummary(deps, context, "p0"),
   settingsPage,
   history,
@@ -251,6 +254,126 @@ describe("roundSummary", () => {
     expect(await roundSummary(h.deps, context, "p0")).toStrictEqual({
       ok: false,
       error: { code: "ERR_ROUND_NOT_FOUND" },
+    });
+  });
+});
+
+describe("roundPayload", () => {
+  /** The harness's stores, refusing any commit: a query that writes throws. */
+  function readOnly(stores: LearnerStores): LearnerStores {
+    return {
+      forLearner: (id) => ({
+        ...stores.forLearner(id),
+        commit: () => Promise.reject(new Error("A query committed.")),
+      }),
+    };
+  }
+
+  /** Today's round `t1` on the day after the placement, with its first three answers held. */
+  async function underWay(h: Harness) {
+    await placed(h);
+    const tomorrow = NOON + DAY_MS;
+    const round = await started(h, "today", "t1", tomorrow);
+    const answers = answersFor(round, (_, index) => (index === 1 ? "ng" : "ok"))
+      .slice(0, 3)
+      .map((answer, index) => ({ ...answer, answeredAt: tomorrow + index * 5_000 }));
+    await recordAnswers(h.deps, h.context(tomorrow + 20_000), {
+      roundId: round.id,
+      answers,
+    });
+    return { round, answers, tomorrow };
+  }
+
+  it("answers what a retried start answers for the same round", async () => {
+    const h = makeHarness();
+    const { tomorrow } = await underWay(h);
+
+    const read = await roundPayload(h.deps, h.context(tomorrow), "t1");
+
+    expect(read).toStrictEqual(
+      await startRound(h.deps, h.context(tomorrow), { kind: "today", roundId: "t1" }),
+    );
+  });
+
+  it("resumes an earlier day's round with the answers it holds, writing and refitting nothing", async () => {
+    const h = makeHarness();
+    const { round, answers, tomorrow } = await underWay(h);
+    const store = h.stores.forLearner(h.learner);
+    const stored = await store.round("t1");
+    const stats = await store.stats();
+
+    const read = await roundPayload(
+      { ...h.deps, stores: readOnly(h.stores) },
+      h.context(tomorrow + 2 * DAY_MS),
+      "t1",
+    );
+
+    expect(read.ok && read.value).toMatchObject({
+      id: "t1",
+      day: round.day,
+      deck: round.deck,
+      answered: answers.map((answer) => ({
+        id: answer.id,
+        cardId: answer.cardId,
+        pass: "first",
+        result: answer.result,
+        answeredAt: answer.answeredAt,
+      })),
+    });
+    expect(await store.round("t1")).toStrictEqual(stored);
+    expect(await store.stats()).toStrictEqual(stats);
+  });
+
+  it("resumes a round a later day's start abandoned, with its answered list", async () => {
+    const h = makeHarness();
+    const { round, answers, tomorrow } = await underWay(h);
+    const later = tomorrow + DAY_MS;
+    await started(h, "today", "t2", later);
+
+    const read = await roundPayload(h.deps, h.context(later), "t1");
+
+    expect((await h.stores.forLearner(h.learner).round("t1"))?.value.abandonedAt).toBe(
+      later,
+    );
+    expect(read.ok && read.value.deck).toStrictEqual(round.deck);
+    expect(
+      read.ok && read.value.answered.map((answer) => [answer.id, answer.answeredAt]),
+    ).toStrictEqual(answers.map((answer) => [answer.id, answer.answeredAt]));
+  });
+
+  it("answers a finished round too, with every answer it kept", async () => {
+    const h = makeHarness();
+    await placed(h);
+
+    const read = await roundPayload(h.deps, h.context(NOON + DAY_MS), "p0");
+
+    expect(read.ok && read.value.answered).toHaveLength(10);
+  });
+
+  it("does not find a round there is no such id for, nor another learner's", async () => {
+    const h = makeHarness();
+    await underWay(h);
+    const other = learnerId("learner-b");
+    const context: RequestContext = {
+      ...h.context(),
+      actor: { kind: "learner", learnerId: other },
+      learner: { ...h.context().learner, id: other },
+    };
+    const notFound = { ok: false, error: { code: "ERR_ROUND_NOT_FOUND" } };
+
+    expect(await roundPayload(h.deps, h.context(), "missing")).toStrictEqual(notFound);
+    expect(await roundPayload(h.deps, context, "t1")).toStrictEqual(notFound);
+  });
+
+  it("refuses rather than dropping every card when the catalog cannot be read", async () => {
+    const h = makeHarness();
+    await underWay(h);
+
+    expect(
+      await roundPayload({ ...h.deps, catalog: unreadableCatalog }, h.context(), "t1"),
+    ).toStrictEqual({
+      ok: false,
+      error: { code: "ERR_CONTENT_UNREADABLE", reason: "missing" },
     });
   });
 });
