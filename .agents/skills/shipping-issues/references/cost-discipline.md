@@ -10,7 +10,8 @@ before changing a run count, or before picking a `/code-review` effort.
 - [What the startup costs](#what-the-startup-costs)
 - [Run budget](#run-budget)
 - [Model and effort assignment](#model-and-effort-assignment)
-  - [The foundation exception: `opus` for what the backlog builds on](#the-foundation-exception-opus-for-what-the-backlog-builds-on)
+  - [Where the cost of a spawn actually goes](#where-the-cost-of-a-spawn-actually-goes)
+  - [The foundation exception: `architect` for what the backlog builds on](#the-foundation-exception-architect-for-what-the-backlog-builds-on)
   - [The floor: too small to delegate](#the-floor-too-small-to-delegate)
 - [What parallel mode costs](#what-parallel-mode-costs)
 
@@ -34,46 +35,27 @@ Only for [step 4](../SKILL.md#4-review-the-branch)'s local pass.
 context — the finders' reads never reach here, only the findings do. Effort controls how
 much of that runs:
 
-**`low` is this repository's default effort.** The user set it as the standing choice
-for every review this skill runs; use it unless the row below genuinely calls for more,
-and do not silently drift back to `medium` because a diff looks large.
+**`medium` is this repository's standing effort, for every branch.** The owner chose it
+over `low`: the implementation is usually an `executor` run at low effort, and a
+one-pass review on top of a low-effort implementation leaves nobody reading the change
+with any depth.
 
 | effort   | pipeline                                                                      | when                                                                                                                                                                       |
 | -------- | ----------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `low`    | one pass, no verify sub-pass, ≤4 findings, skips test/fixture hunks           | **the default** — use it unless a row below applies                                                                                                                        |
-| `medium` | 8 finder angles × 6 candidates, 1-vote verify, ≤8 findings (precision-biased) | reach for it only deliberately: a change whose blast radius is hard to see from the diff alone, or one the run has already had to repair once                              |
+| `medium` | 8 finder angles × 6 candidates, 1-vote verify, ≤8 findings (precision-biased) | **the default, every branch**                                                                                                                                              |
 | `high`   | same 8 angles, 1-vote verify biased toward recall, ≤10 findings               | the change can lose or corrode data that already exists — a migration, a storage-layer write, a released public contract real consumers are on — or the user asked for one |
 
-Diff size or file count alone is not a reason to escalate — `low` already reads the
-whole diff for scope and correctness, and a big mechanical rename is exactly the shape
-it handles well. Never `ultra`: it runs in the cloud, is billed per use, and the prompt
-that defines it says explicitly that a model cannot launch it itself.
+Never `low`: it is one pass with no verify sub-pass, and it **skips test and fixture
+hunks**, so a diff confined to a file under `tests/` that _is_ a gate — one that lints
+workflow YAML, asserts boundaries, or walks the tree for secrets — comes back `(none)`
+having read nothing. Observed: a gate change reviewed at `low` returned no findings;
+re-run at `medium` it returned four, one of them a security rule that silently accepted
+three of the four YAML spellings it existed to reject. Never `ultra` either: it runs in
+the cloud, is billed per use, and the prompt that defines it says a model cannot launch
+it itself.
 
-### The escalation that is not optional: a diff `low` cannot see
-
-`low` **skips test and fixture hunks**. That is right for an ordinary test — it follows
-the behavior the code already fixed. It is wrong whenever the file under `tests/` _is_
-the gate rather than a consumer of one, and it fails silently: a diff confined to such a
-file comes back `(none)` in a few seconds, which reads exactly like a clean review and
-is not one.
-
-Before accepting any `low` verdict, ask what the review actually read:
-
-- **Every hunk in the diff is in a test or fixture file → `low` reviewed nothing.**
-  Escalate to `medium`. Judge the file by its _role_, not its path: a file under
-  `tests/` that lints workflow YAML, asserts zone or import boundaries, walks the tree
-  for secrets or placeholders, or otherwise decides what "green" means is a gate, and a
-  hole in it is a hole in every future change.
-- **A clean verdict that names what it skipped is not a clean verdict.** A result like
-  "the entire diff is confined to X, which this review level skips" is the review
-  telling you it abstained. Read the sentence, not the empty findings list.
-- A run that escalated for this reason says so in the step 10 report, with the reason —
-  otherwise it looks like drift away from the standing `low` default.
-
-Observed cost of getting this wrong: a gate change reviewed at `low` returned no
-findings; re-run at `medium` it returned four, all reproduced against the branch, one of
-them a security rule that silently accepted three of the four YAML spellings it existed
-to reject.
+Diff size or file count alone is not a reason to go to `high`. A run that did escalate
+says so in the step 10 report, with the reason.
 
 ## What the startup costs
 
@@ -100,10 +82,11 @@ bounded by K.
 ## Run budget
 
 Run count scales with issue count, not with thoroughness: one triage spawn (optional),
-one implementation sub-agent per issue plus up to 2 resume/patch runs when this
-session's judgment finds the first incomplete, one `/code-review` per branch, in
-parallel mode one fix sub-agent per branch that had accepted findings (none when a
-review came back clean), one repair sub-agent per failing CI attempt (capped at 3). This
+one implementation sub-agent per issue plus up to 2 patch rounds — sent to that same
+agent, not to a fresh spawn — when this session's judgment finds the first incomplete,
+one `/code-review` per branch, in parallel mode one fix sub-agent per branch that had
+accepted findings (none when a review came back clean), up to 3 CI repair attempts per
+PR, on at most two agents (an `executor` continued, then a fresh `architect`). This
 session's own judgment calls — reading the implementation diff, reading `--fix`'s diff,
 deciding what CI failure means — cost targeted reads in this context, never a spawn.
 Filing a follow-up (step 8) never adds a run either: whatever found it already returned
@@ -111,7 +94,7 @@ the lead under `FOLLOW-UPS`, and confirming it costs a couple of targeted reads.
 
 Two things scale that count beyond the issue list itself, both deliberately bounded:
 
-- **Background design agents (step 8b)** — one `opus` run per design-blocked issue,
+- **Background design agents (step 8b)** — one `architect` run per design-blocked issue,
   capped at 3 in flight. They cost nothing in wall-clock on the shipping path (nothing
   ever waits on one) and almost nothing in this context: what comes back is a verdict
   and a two-line approach, while the design itself goes to the issue. What they buy is a
@@ -124,23 +107,50 @@ Two things scale that count beyond the issue list itself, both deliberately boun
 
 ## Model and effort assignment
 
-Implementation and priority research run on `sonnet` — fully specified work with a clear
-pass/fail — with one standing exception below. CI repair starts on `sonnet` and
-escalates to `opus` once the same failure survives two attempts in a row — persistent
-failure is a sign the spec (or the fix) needs more judgment, not more mechanical
-retries. The `/code-review` fallback runs on `opus`, since review and bug-finding is
-Opus-class work with genuinely unresolved spec. Design decisions (step 8b) run on `opus`
-for the same reason and more so — deciding an approach nobody has decided is the least
-mechanical work this skill delegates, and a bad decision recorded on an issue outlives
-the run that made it. It is also the only sub-agent here that writes to GitHub (one
-comment, one label) and the only one that writes no code at all.
+<!-- derived from orchestrating-models §2 -->
 
-### The foundation exception: `opus` for what the backlog builds on
+Every sub-agent runs on Opus 5.5; the tier is the effort, and there are exactly two,
+defined in `.claude/agents/`:
+
+| Agent       | Effort | Takes                                                                  |
+| ----------- | ------ | ---------------------------------------------------------------------- |
+| `executor`  | low    | settled spec, clear pass/fail, mechanical work, judgment-free research |
+| `architect` | high   | design judgment, review and bug-finding, a foundation, unresolved spec |
+
+Spawn one by `subagent_type`, never by a bare `model`: a bare model inherits this
+session's effort (medium), which is neither tier. A runtime without these named agents
+runs the step at the nearest effort it can set, or inline in this session.
+
+Implementation and priority research go to `executor` — fully specified work with a
+clear pass/fail — with one standing exception below. CI repair starts on `executor` and
+escalates to `architect` once the same failure survives two attempts in a row —
+persistent failure is a sign the spec (or the fix) needs more judgment, not more
+mechanical retries. The `/code-review` fallback runs on `architect`, since review and
+bug-finding is work with genuinely unresolved spec. Design decisions (step 8b) run on
+`architect` for the same reason and more so — deciding an approach nobody has decided is
+the least mechanical work this skill delegates, and a bad decision recorded on an issue
+outlives the run that made it. It is also the only sub-agent here that writes to GitHub
+(one comment, one label) and the only one that writes no code at all.
+
+### Where the cost of a spawn actually goes
+
+A sub-agent shares no prompt cache with this session: it starts cold and pays for its
+system prompt, tool definitions, the project's instruction files and its brief at the
+cache-_write_ price, once per spawn. Inside its own run the later turns read that back
+at the cache-read price, so the fixed cost is per spawn, not per turn — small next to
+the implementation it buys. What does add up is **spawning again for the same issue**:
+every fresh agent re-learns the diff and re-explores the code a previous one already
+read. So a patch round, a second CI repair attempt on the same tier, and any follow-up
+question go to **the same agent, continued** (`SendMessage` in Claude Code), which keeps
+its context and its warm cache. Spawn fresh only when the tier changes (the CI repair
+escalation to `architect`) or the agent cannot be continued.
+
+### The foundation exception: `architect` for what the backlog builds on
 
 Some issues are not "fully specified work with a clear pass/fail" even when their body
 is excellent, because what they produce is a **shape other issues copy** rather than a
-behavior a test pins down. Spawn the step 3 implementation on **`opus`** when the issue
-is any of:
+behavior a test pins down. Spawn the step 3 implementation on **`architect`** when the
+issue is any of:
 
 - **Architecture or a skeleton** — the directory layout, the app/router skeleton, the
   composition root, a zone or module boundary.
@@ -154,31 +164,26 @@ is any of:
 
 The test is not difficulty, it is **blast radius**: would a wrong call here be cheap to
 correct in its own follow-up, or would it be copied by every issue after it? Only the
-second earns `opus`.
+second earns `architect`.
 
 Signals visible before spawning, straight off `issue_digest.py`: an `unblocks×N` of 2 or
 more, a `foundation`/`schema`/`interface` signal, or a Done-means written as a structure
 to establish rather than a behavior to observe. Any one of those is a reason to look;
 the blast-radius test decides.
 
-Everything else stays on `sonnet`, which is most of a backlog: bug fixes, removals,
+Everything else stays on `executor`, which is most of a backlog: bug fixes, removals,
 mechanical rewrites, config edits, documentation that follows a shape already settled,
 and any issue whose Done-means is a command that passes. A removal-only issue is
-`sonnet` even when it is `P0` and unblocks the whole chain — deleting what a decision
+`executor` even when it is `P0` and unblocks the whole chain — deleting what a decision
 already condemned carries no design in it.
 
-The same escalation applies to a resume/patch run: it inherits the model the first run
-used, because a foundation the first run got half-right is exactly where the remaining
-judgment sits.
+A patch round stays on the tier its first run used, because a foundation the first run
+got half-right is exactly where the remaining judgment sits.
 
-The Agent tool used for these spawns takes a `model` but not a per-spawn `effort` — a
-sub-agent's reasoning effort follows this session's own configuration, there is no
-separate dial to set here.
-
-Implementation stays delegated even when the main model is Opus — a deliberate exception
-to the Opus-main "do it yourself" default, bought for context isolation: the diff and
-the repo exploration are never needed in the main context again once this session has
-judged the result.
+Implementation stays delegated even though this session runs the same model — a
+deliberate exception to the "do it yourself" default, bought for context isolation: the
+diff and the repo exploration are never needed in the main context again once this
+session has judged the result.
 
 ### The floor: too small to delegate
 
@@ -214,7 +219,7 @@ implementations. What it changes is when they happen, and what has to be set up 
 
 **Added, per issue in a parallel batch:** one dependency install and one baseline verify
 (`worktree_setup.sh`), both outside this context — the parent reads one `verdict:` line
-each. Plus, per branch with accepted review findings, one `sonnet` fix run that serial
+each. Plus, per branch with accepted review findings, one `executor` fix run that serial
 mode gets for free from `/code-review --fix`.
 
 **Saved:** the implementations overlap instead of queueing, which is the longest stretch

@@ -140,8 +140,8 @@ Two paths lead here, and they differ only in who decides and when:
   the critical path, before step 3.
 - **background — [step 8b](../SKILL.md#8b-unblock-held-designs-in-the-background)**, for
   every _other_ design-blocked issue: the ones this run just filed and the ones already
-  sitting in the backlog. An `opus` sub-agent decides each one while this session keeps
-  shipping, and does 1–2 and 4 below itself.
+  sitting in the backlog. An `architect` sub-agent decides each one while this session
+  keeps shipping, and does 1–2 and 4 below itself.
 
 Either way, the same four things happen in the same order:
 

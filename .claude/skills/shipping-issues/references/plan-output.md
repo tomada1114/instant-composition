@@ -2,8 +2,8 @@
 
 `plan.py` prints preflight, ranking, selection, the repo profile and the parallel
 grouping as one block from a single `gh` fetch. Read the block; do not re-derive any of
-it. This file is the field-by-field legend — SKILL.md step 1 keeps only the two fields
-that carry a duty for the calling session.
+it. This file is the field-by-field legend — SKILL.md step 1 keeps only the fields that
+carry a duty for the calling session.
 
 ## Table of Contents
 
