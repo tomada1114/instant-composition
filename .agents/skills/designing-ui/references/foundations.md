@@ -106,6 +106,8 @@ carry `lang="en"` so a screen reader voices them in English.
 | Base unit                                   | 4 (Tailwind's own spacing scale)                                  |
 | Column                                      | `max-w-column` (420), centered; canvas outside it                 |
 | Side gutter                                 | 16 (`px-4`) below 452 wide                                        |
+| Wide window (`wide:`)                       | `(width >= 48rem) and (height >= 40rem)`: a PC, not a phone       |
+| Column height                               | The window's; on `wide` at most 720, centered in the window       |
 | Panel padding                               | 20 (`p-5`); a tile 16 (`p-4`)                                     |
 | Between blocks                              | 40 (`gap-10`); summary sections are 32 above and below a hairline |
 | Panel radius (home panel, sheet, milestone) | 28 (`rounded-card`)                                               |
@@ -118,6 +120,14 @@ carry `lang="en"` so a screen reader voices them in English.
 | Minimum hit target                          | 44 × 44                                                           |
 | Shadow                                      | None. Depth is canvas / surface / raised                          |
 | Border                                      | 1.5px (`border-[1.5px]`), only where a recipe says                |
+
+On a `wide` window the column stops at 720 tall (`--column-height`) and sits centered,
+`--column-inset` above and below, so a screen keeps a phone's shape instead of setting
+its prompt and its actions a window apart; 452 × 720 is about 5:8, a phone browser's
+visible area. The height term is what keeps a phone on its side (about 932 × 430) on the
+phone layout. A screen sizes itself from `--column-height`, never from `dvh`, and
+anything fixed to the bottom edge adds `--column-inset`. Taller content scrolls as the
+page, from the same top line.
 
 Vertical order on every screen: the main actions (start, flip, ○/×, next) sit in the
 bottom third, where a thumb reaches, on a PC too; pause, navigation and close sit at the

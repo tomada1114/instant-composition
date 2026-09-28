@@ -24,7 +24,7 @@ export function DrillError({
   const t = useTranslations("Drill.error");
   const notEnough = error.code === "ERR_NOT_ENOUGH_CARDS";
   return (
-    <main className="mx-auto box-content flex min-h-[calc(100dvh-4rem)] max-w-column flex-col justify-center px-4 py-8">
+    <main className="mx-auto box-content flex min-h-[calc(var(--column-height)-4rem)] max-w-column flex-col justify-center px-4 py-8">
       <div className="flex flex-col gap-5 rounded-card bg-card p-6">
         <div className="flex flex-col gap-1">
           <h1 className="text-heading">

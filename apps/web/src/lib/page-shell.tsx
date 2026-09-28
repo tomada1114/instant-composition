@@ -7,7 +7,9 @@ import { LoadFailedPanel } from "../home/home-empty";
  * it — no spinner and no pulsing placeholder (`designing-ui`).
  */
 export function PageLoading(): ReactElement {
-  return <main className="mx-auto box-content flex min-h-dvh max-w-column px-4" />;
+  return (
+    <main className="mx-auto box-content flex min-h-(--column-height) max-w-column px-4" />
+  );
 }
 
 /** A screen whose read failed: say so, and read again on request. */
@@ -15,7 +17,7 @@ export function PageLoadFailed({
   onReload,
 }: Readonly<{ onReload: () => void }>): ReactElement {
   return (
-    <main className="mx-auto box-content flex min-h-[calc(100dvh-4rem)] max-w-column flex-col justify-center px-4 py-8">
+    <main className="mx-auto box-content flex min-h-[calc(var(--column-height)-4rem)] max-w-column flex-col justify-center px-4 py-8">
       <LoadFailedPanel onReload={onReload} />
     </main>
   );

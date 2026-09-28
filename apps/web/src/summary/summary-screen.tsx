@@ -81,7 +81,7 @@ export function SummaryScreen({
   const placement = summary.placement;
 
   return (
-    <main className="mx-auto box-content flex min-h-[calc(100dvh-1rem)] max-w-column flex-col px-4 pt-4">
+    <main className="mx-auto box-content flex min-h-[calc(var(--column-height)-1rem)] max-w-column flex-col px-4 pt-4">
       <header className="flex flex-col gap-6">
         <div className="flex h-11 items-center justify-between">
           {live ? (

@@ -1,14 +1,14 @@
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 
-import { Button, cn } from "@instant-composition/web";
+import { Button, cn, Sheet } from "@instant-composition/web";
 
-// The shadcn/ui button copied into the web client, and the `cn` it calls.
-// What is asserted is the wiring, not the styling: that a caller's own
+// The shadcn/ui button copied into the web client, the `cn` it calls, and the
+// sheet. What is asserted is the wiring, not the styling: that a caller's own
 // `className` wins over the component's default, which is the one behaviour
 // of `cn` a component's appearance depends on. No class list is pinned beyond
-// that — a test restating one would fail on every legitimate restyle, which is
-// `designing-ui`'s subject, not this file's.
+// that and the sheet's breakpoint classes — a test restating one would fail on
+// every legitimate restyle, which is `designing-ui`'s subject, not this file's.
 
 describe("cn", () => {
   it("lets the later of two conflicting Tailwind utilities win", () => {
@@ -93,5 +93,35 @@ describe("Button", () => {
     expect(classes).toContain("text-action");
     expect(classes).toContain("text-muted-foreground");
     expect(classes).not.toContain("text-foreground");
+  });
+});
+
+describe("Sheet", () => {
+  // The one class list pinned here: jsdom evaluates no media query, so the
+  // `wide:` classes are the only trace a test can see of the sheet turning
+  // into a centered dialog on a PC while staying a bottom sheet on a phone.
+  function renderSheet(): HTMLElement {
+    render(
+      <Sheet titleId="sheet-title">
+        <h2 id="sheet-title">Paused</h2>
+      </Sheet>,
+    );
+    return screen.getByRole("dialog", { name: "Paused" });
+  }
+
+  it("rises from the bottom with its top corners rounded on a phone", () => {
+    const dialog = renderSheet();
+
+    expect(dialog.parentElement?.className.split(" ")).toContain("items-end");
+    expect(dialog.className.split(" ")).toContain("rounded-t-card");
+  });
+
+  it("opens centered over the same scrim, every corner rounded, on a wide window", () => {
+    const dialog = renderSheet();
+
+    const scrim = dialog.parentElement?.className.split(" ");
+    expect(scrim).toContain("wide:items-center");
+    expect(scrim).toContain("bg-background/70");
+    expect(dialog.className.split(" ")).toContain("wide:rounded-card");
   });
 });

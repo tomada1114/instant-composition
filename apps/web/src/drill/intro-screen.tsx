@@ -15,7 +15,7 @@ export function IntroScreen({
   const t = useTranslations("Drill.intro");
   const steps = [t("say"), t("flip"), t("grade")];
   return (
-    <main className="mx-auto box-content flex min-h-[calc(100dvh-2rem)] max-w-column flex-col px-4 pt-8 pb-3">
+    <main className="mx-auto box-content flex min-h-[calc(var(--column-height)-2rem)] max-w-column flex-col px-4 pt-8 pb-3">
       <div className="flex flex-col gap-3">
         <Eyebrow aria-hidden>{t("eyebrow")}</Eyebrow>
         <h1 className="text-heading">
