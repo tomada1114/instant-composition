@@ -1,7 +1,7 @@
 # ADR-0005: Identity and authorization
 
-- Status: Accepted (2026-09-23), amended 2026-09-27 (the learner profile lives in the
-  learner table)
+- Status: Accepted (2026-09-23); amended 2026-09-27 (the learner profile lives in the
+  learner table) and 2026-09-28 (the user pool's sign-in identifier)
 - Date: 2026-09-23
 - Deciders: the owner
 
@@ -76,6 +76,11 @@ The owner has decided:
   month at no charge, and Essentials adds features that Lite lacks, such as access-token
   customization (as of 2026-09-23).
 - Self sign-up with email verification.
+- **Sign-in identifier.** The email address is the username, matched case-insensitively.
+  Both are fixed when the pool is created: changing either means a new pool, and a new
+  pool issues new `sub`s, which would cut every learner off from their `IDENTITY#<sub>`
+  mapping. A federated identity provider added later gets its own generated username, so
+  this does not constrain the social sign-in question below.
 - **Web.** A confidential app client. The API hosts `/v1/auth/login`, `/callback`,
   `/refresh` and `/logout`. They run the authorization code flow with PKCE (S256), keep
   the client secret server-side, and set HttpOnly, Secure, SameSite=Lax cookies.
