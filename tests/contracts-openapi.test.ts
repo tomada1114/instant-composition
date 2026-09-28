@@ -116,6 +116,7 @@ describe("openApiDocument", () => {
     expect(Object.keys(responses ?? {})).toStrictEqual([
       "200",
       "400",
+      "401",
       "403",
       "404",
       "409",

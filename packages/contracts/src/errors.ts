@@ -4,7 +4,8 @@ import * as z from "zod";
  * Every `error.code` the API answers with, and the status each travels under.
  *
  * @remarks
- * Grouped by what a client can do. The request itself is wrong and resending
+ * Grouped by what a client can do. The caller must sign in again first:
+ * `ERR_UNAUTHENTICATED`. The request itself is wrong and resending
  * it changes nothing: `ERR_BAD_REQUEST`, `ERR_PAYLOAD_TOO_LARGE`,
  * `ERR_FORBIDDEN`, `ERR_ROUND_NOT_FOUND`. The round or the day has moved on, so
  * reload before acting: `ERR_ROUND_CLOSED`. Another write kept winning, so the
@@ -18,6 +19,7 @@ import * as z from "zod";
  */
 export const STATUS_BY_CODE = {
   ERR_BAD_REQUEST: 400,
+  ERR_UNAUTHENTICATED: 401,
   ERR_FORBIDDEN: 403,
   ERR_ROUND_NOT_FOUND: 404,
   ERR_ROUND_CLOSED: 409,
@@ -32,6 +34,7 @@ export type ErrorCode = keyof typeof STATUS_BY_CODE;
 /** One fixed sentence per code: a message never quotes what the request carried. */
 export const MESSAGE_BY_CODE = {
   ERR_BAD_REQUEST: "The request does not fit the round or the settings it names.",
+  ERR_UNAUTHENTICATED: "The request carries no valid access token.",
   ERR_FORBIDDEN: "The caller may not run this operation.",
   ERR_ROUND_NOT_FOUND: "No round has that id.",
   ERR_ROUND_CLOSED: "That round or day can no longer take this request.",
