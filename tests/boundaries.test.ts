@@ -732,9 +732,17 @@ describe("apps/ imports only the packages ADR-0002 allows", () => {
  */
 const INFRA_NPM_EDGES: readonly string[] = [
   "aws-cdk-lib",
+  "aws-cdk-lib/aws-apigatewayv2",
+  "aws-cdk-lib/aws-apigatewayv2-integrations",
+  "aws-cdk-lib/aws-cloudfront",
+  "aws-cdk-lib/aws-cloudfront-origins",
   "aws-cdk-lib/aws-cognito",
   "aws-cdk-lib/aws-dynamodb",
   "aws-cdk-lib/aws-iam",
+  "aws-cdk-lib/aws-lambda",
+  "aws-cdk-lib/aws-lambda-nodejs",
+  "aws-cdk-lib/aws-logs",
+  "aws-cdk-lib/aws-s3",
   "aws-cdk-lib/aws-ssm",
   "constructs",
 ];
@@ -776,7 +784,7 @@ describe("infra/ imports the CDK and nothing of the application", () => {
           specifiers: [
             "./stage",
             "aws-cdk-lib",
-            "aws-cdk-lib/aws-s3",
+            "aws-cdk-lib/aws-ec2",
             "@instant-composition/domain",
             "node:fs",
             "../../packages/domain/src/index",
@@ -784,7 +792,7 @@ describe("infra/ imports the CDK and nothing of the application", () => {
         },
       ]),
     ).toStrictEqual([
-      "infra/src/probe.ts: aws-cdk-lib/aws-s3",
+      "infra/src/probe.ts: aws-cdk-lib/aws-ec2",
       "infra/src/probe.ts: @instant-composition/domain",
       "infra/src/probe.ts: node:fs",
       "infra/src/probe.ts: ../../packages/domain/src/index",
