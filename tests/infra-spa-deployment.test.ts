@@ -43,8 +43,13 @@ interface Resource {
   readonly DependsOn?: string[];
 }
 
-function resources(): Record<string, Resource> {
-  return TEMPLATE.toJSON()["Resources"] as Record<string, Resource>;
+/** BucketDeployment's one handler, a singleton whose logical id carries a fixed uuid. */
+function uploadHandlers(template: Template): Resource[] {
+  return Object.entries(
+    template.findResources("AWS::Lambda::Function") as Record<string, Resource>,
+  )
+    .filter(([id]) => id.startsWith("CustomCDKBucketDeployment"))
+    .map(([, resource]) => resource);
 }
 
 function singleId(type: string): string {
@@ -74,10 +79,8 @@ describe("the dev app stack's web upload", () => {
     "uploads nothing %s web-dist context, so synthesis needs no build",
     (_, template) => {
       expect(template.findResources(DEPLOYMENT)).toStrictEqual({});
-      // The API's function alone: no upload handler either.
-      expect(Object.keys(template.findResources("AWS::Lambda::Function"))).toHaveLength(
-        1,
-      );
+      expect(uploadHandlers(template)).toStrictEqual([]);
+      expect(template.findResources("AWS::Lambda::LayerVersion")).toStrictEqual({});
     },
   );
 
@@ -135,10 +138,7 @@ describe("the dev app stack's web upload", () => {
   });
 
   it("runs one handler, logging to a group kept for a month", () => {
-    const handlers = Object.values(resources()).filter(
-      ({ Type, Properties }) =>
-        Type === "AWS::Lambda::Function" && Properties["Runtime"] !== "nodejs24.x",
-    );
+    const handlers = uploadHandlers(TEMPLATE);
     expect(handlers).toHaveLength(1);
     const logs = Object.entries(TEMPLATE.findResources("AWS::Logs::LogGroup")).find(
       ([id]) => id.startsWith("SpaDeploymentLogs"),
