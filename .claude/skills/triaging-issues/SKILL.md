@@ -1,13 +1,13 @@
 ---
 name: triaging-issues
 description: >
-  Covers this repository's issue vocabulary: the type, priority and `phase: N` label
-  taxonomy in .github/labels.yml, what `blocked: design`, `blocked: dependency`,
-  `blocked: external` and `on hold` mean, and what an issue body must contain (a
-  `path:line`, an observable close condition, a `Depends on: #N` line). Use when filing
-  a GitHub issue, triaging or re-prioritizing the backlog, picking a `priority: P0`-`P3`
-  label, choosing between `bug`/`enhancement`/ `documentation`/`chore`/`security`, or
-  running `pnpm repo:labels`.
+  Covers this repository's issue vocabulary: the type, priority, `phase: N` and
+  `improvement` label taxonomy in .github/labels.yml, what `blocked: design`, `blocked:
+  dependency`, `blocked: external` and `on hold` mean, and what an issue body must
+  contain (a `path:line`, an observable close condition, a `Depends on: #N` line). Use
+  when filing a GitHub issue, triaging or re-prioritizing the backlog, picking a
+  `priority: P0`-`P3` label, choosing between `bug`/`enhancement`/
+  `documentation`/`chore`/`security`, or running `pnpm repo:labels`.
 ---
 
 # Triaging Issues
@@ -58,6 +58,11 @@ issue's labels answer the three questions a backlog is scanned for: which phase
   glance, so the two move together.
 - An issue outside every phase — a follow-up nobody has placed yet — carries none. It is
   placed, link and label together, the next time the roadmap is steered.
+- An issue labelled `improvement` carries none on purpose, and is not waiting to be
+  placed. It is a small change the owner asked for after using the app — a key binding,
+  a default, a tuning value, copy or layout within the design lock — shipped whenever it
+  is ready. `improvement` is a lane, not a type: the issue still takes `enhancement` or
+  `bug`, and a priority. `steering-the-roadmap` decides what qualifies.
 - A phase label never stands in for readiness or priority; it is not a tier.
 
 `steering-the-roadmap` applies and moves them, because it owns which phase an issue is

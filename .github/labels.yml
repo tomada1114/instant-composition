@@ -99,6 +99,13 @@
   color: 0e8a16
   description: "Belongs to Phase 13 of docs/architecture/roadmap.md."
 
+# Lane label: a small change asked for after using the app, shipped whenever
+# it is ready rather than in a phase. It carries no `phase: N` label and is no
+# phase parent's sub-issue. A lane, not a type: the issue keeps its type label.
+- name: improvement
+  color: 1d76db
+  description: "A small change from using the app, shipped outside the phase plan."
+
 # Labels applied by .github/workflows/pr-label.yml from a PR's Conventional
 # Commit type. Never used for issue triage.
 - name: dependencies
