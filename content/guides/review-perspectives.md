@@ -1,6 +1,6 @@
 # Review perspectives
 
-perspectivesVersion: 1
+perspectivesVersion: 2
 
 The checks each independent reviewer applies. Bump `perspectivesVersion` above whenever
 a check is added or materially changed; every card stamped with an older version then
@@ -50,14 +50,18 @@ Shown `ja`, `en`, `alternatives`.
 - **R2.4** `ja` is natural Japanese, not translationese, and pins the English skeleton
   (see `writing.md`).
 - **R2.5** Nothing from "Things never to write" in `writing.md`.
+- **R2.6** `ja`, `en` and every alternative are as short as the scene allows (see "Short
+  at every level" in `writing.md`). A card whose sentence could lose words without
+  losing its point is a `FIX`: name the words that can go.
 
 ## R3 — tags and point
 
 Shown the whole card, `content/levels.json`, `content/grammar.json`,
 `content/taxonomy.json`, and the near-duplicate candidates from `pnpm cards:dupes`.
 
-- **R3.1** `level` fits the card by the definitions in `levels.json` (off by one is a
-  `FIX` retag; off by more is also a `FIX` retag, never a rebuild).
+- **R3.1** `level` fits the card by the definitions in `levels.json`, judged by
+  structure, vocabulary and idiom — never by length (off by one is a `FIX` retag; off by
+  more is also a `FIX` retag, never a rebuild).
 - **R3.2** `grammar` names what the card actually exercises, 1–2 ids.
 - **R3.3** `subtopic` fits the scene described in `taxonomy.json`.
 - **R3.4** `point` is correct, is the single most useful thing to notice, and follows

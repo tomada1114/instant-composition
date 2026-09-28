@@ -76,7 +76,8 @@ effort is `high`, and a spawn that names only the model takes the session's effo
    sub-agent (see [Model and effort](#model-and-effort)). Build the brief from
    [references/writer-brief.md](references/writer-brief.md), filling in:
    - the full text of `content/guides/writing.md`;
-   - the level's entry from `content/levels.json`, including its word range;
+   - the level's entry from `content/levels.json`, including its `words` range and its
+     `jaChars` cap;
    - the target grammar entries from `content/grammar.json`, plus the ids of every other
      grammar item valid at that level;
    - the subtopic's `ja` and `scene`;

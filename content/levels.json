@@ -10,9 +10,12 @@
       "toeflIbt": "1.5–2",
       "words": {
         "min": 3,
-        "max": 8
+        "max": 6
       },
-      "summary": "中 1 相当。現在形・be 動詞・命令文の短い単文"
+      "jaChars": {
+        "max": 15
+      },
+      "summary": "中 1 相当。be 動詞・現在形・命令文。語彙は身の回りの基本語"
     },
     {
       "level": 2,
@@ -21,10 +24,13 @@
       "ielts": null,
       "toeflIbt": "2",
       "words": {
-        "min": 4,
-        "max": 9
+        "min": 3,
+        "max": 7
       },
-      "summary": "中 2 相当。過去・未来・助動詞・比較"
+      "jaChars": {
+        "max": 18
+      },
+      "summary": "中 2 相当。過去・未来・助動詞・比較。語彙は日常の基本語"
     },
     {
       "level": 3,
@@ -33,10 +39,13 @@
       "ielts": "3.5",
       "toeflIbt": "2.5",
       "words": {
-        "min": 5,
-        "max": 11
+        "min": 3,
+        "max": 7
       },
-      "summary": "中 3 相当。現在完了・受動態・不定詞と動名詞の基本"
+      "jaChars": {
+        "max": 18
+      },
+      "summary": "中 3 相当。現在完了・受動態・不定詞と動名詞の基本。日常の定番表現"
     },
     {
       "level": 4,
@@ -45,10 +54,13 @@
       "ielts": "4.0",
       "toeflIbt": "3",
       "words": {
-        "min": 6,
-        "max": 13
+        "min": 3,
+        "max": 8
       },
-      "summary": "関係詞・間接疑問・後置修飾"
+      "jaChars": {
+        "max": 20
+      },
+      "summary": "関係詞・間接疑問・後置修飾。語彙は仕事や生活の一般語"
     },
     {
       "level": 5,
@@ -57,10 +69,13 @@
       "ielts": "5.0",
       "toeflIbt": "3.5",
       "words": {
-        "min": 7,
-        "max": 15
+        "min": 4,
+        "max": 8
       },
-      "summary": "仮定法過去・使役・基本の句動詞"
+      "jaChars": {
+        "max": 20
+      },
+      "summary": "仮定法過去・使役・基本の句動詞。会話の定番コロケーション"
     },
     {
       "level": 6,
@@ -69,10 +84,13 @@
       "ielts": "5.5",
       "toeflIbt": "4",
       "words": {
-        "min": 8,
-        "max": 17
+        "min": 4,
+        "max": 9
       },
-      "summary": "仮定法過去完了・分詞構文"
+      "jaChars": {
+        "max": 23
+      },
+      "summary": "仮定法過去完了・分詞構文・助動詞 + have done。句動詞と慣用表現が増える"
     },
     {
       "level": 7,
@@ -81,10 +99,13 @@
       "ielts": "6.0",
       "toeflIbt": "4–4.5",
       "words": {
-        "min": 9,
-        "max": 19
+        "min": 4,
+        "max": 10
       },
-      "summary": "婉曲・譲歩・複文の組み合わせ"
+      "jaChars": {
+        "max": 25
+      },
+      "summary": "婉曲・譲歩。仕事や社会の話題の語彙と定番のイディオム"
     },
     {
       "level": 8,
@@ -93,10 +114,13 @@
       "ielts": "6.5",
       "toeflIbt": "4.5",
       "words": {
-        "min": 10,
-        "max": 22
+        "min": 4,
+        "max": 10
       },
-      "summary": "節の入れ子・句動詞の選び分け"
+      "jaChars": {
+        "max": 25
+      },
+      "summary": "強調構文・混合仮定法。句動詞の選び分けとやや抽象的な語彙"
     },
     {
       "level": 9,
@@ -105,10 +129,13 @@
       "ielts": "7.0",
       "toeflIbt": "5",
       "words": {
-        "min": 10,
-        "max": 24
+        "min": 4,
+        "max": 11
       },
-      "summary": "倒置・強調・細かなニュアンス"
+      "jaChars": {
+        "max": 28
+      },
+      "summary": "倒置・細かなニュアンス。含みのある語と口語のイディオム"
     },
     {
       "level": 10,
@@ -117,10 +144,13 @@
       "ielts": "7.5+",
       "toeflIbt": "5.5",
       "words": {
-        "min": 12,
-        "max": 28
+        "min": 4,
+        "max": 12
       },
-      "summary": "入り組んだ文（TOEIC の上限の先）"
+      "jaChars": {
+        "max": 30
+      },
+      "summary": "母語話者らしい慣用句・口語表現・語の微妙な選び分け（TOEIC の上限の先）"
     }
   ]
 }
