@@ -109,3 +109,12 @@ export const settingsViewSchema = z.object({
   removedFocus: z.array(subtopicRefSchema),
   completedToday: z.boolean(),
 });
+
+/** `GET` and `PATCH /v1/me`: the learner's profile as stored. */
+export const profileSchema = z.object({
+  /** An IANA time zone, such as `Asia/Tokyo`: every practice day is derived in it. */
+  timeZone: z.string(),
+  l1: z.string(),
+  target: z.string(),
+  uiLocale: z.string(),
+});

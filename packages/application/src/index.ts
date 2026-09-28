@@ -6,6 +6,7 @@ export {
   type LearnerId,
   type LearnerProfile,
   type Profile,
+  type ProfilePatch,
   type RequestContext,
   type SystemJob,
 } from "./context";
@@ -40,6 +41,7 @@ export {
   SYSTEM_OPERATIONS,
   type OperationKind,
 } from "./operations";
+export { profile, updateProfile } from "./profile";
 export { history, roundSummary, settingsPage } from "./queries";
 export type {
   BreakdownTopic,

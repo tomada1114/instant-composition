@@ -1,8 +1,9 @@
 import { act, fireEvent, screen } from "@testing-library/react";
-import { afterEach, beforeEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import type {
   HomeView,
+  Profile,
   SettingsPageView,
   SettingsView,
   TopicInfo,
@@ -21,9 +22,9 @@ import {
 } from "./web-harness";
 
 // The welcome screen, W1, mounted as the whole app at `/welcome` over a
-// stand-in API: a first visit picks its topics from the settings read, saves
-// them, and goes on to the placement round; any later visit is the start
-// screen's.
+// stand-in API: a first visit picks its topics from the settings read, sends
+// the browser's time zone and saves the topics, and goes on to the placement
+// round; any later visit is the start screen's.
 
 const TOPICS: TopicInfo[] = [
   {
@@ -51,6 +52,16 @@ const SAVED: SettingsView = {
   completedToday: false,
 };
 
+/** The time zone the tests' browser reports, whatever the process runs in. */
+const BROWSER_ZONE = "Europe/London";
+
+const PROFILE: Profile = {
+  timeZone: BROWSER_ZONE,
+  l1: "ja",
+  target: "en",
+  uiLocale: "ja",
+};
+
 /**
  * An API for a learner who has chosen no topics yet: the home view is
  * onboarding until a patch is saved, and placement after it.
@@ -60,6 +71,7 @@ function serveWelcome(
     readonly topics?: TopicInfo[];
     readonly home?: HomeView;
     readonly save?: () => Response | Promise<Response>;
+    readonly profile?: () => Response | Promise<Response>;
   } = {},
 ): ApiCall[] {
   let saved = false;
@@ -76,8 +88,17 @@ function serveWelcome(
       saved = true;
       return options.save?.() ?? Response.json(SAVED);
     }
+    if (call.method === "PATCH" && call.url === "/api/v1/me") {
+      return options.profile?.() ?? Response.json(PROFILE);
+    }
     return undefined;
   });
+}
+
+function patches(calls: readonly ApiCall[]): [string, unknown][] {
+  return calls
+    .filter((call) => call.method === "PATCH")
+    .map((call) => [call.url, call.body]);
 }
 
 function where(): string {
@@ -90,6 +111,12 @@ function next(): HTMLElement {
 
 beforeEach(() => {
   fakeTimers();
+  // Only the zone is replaced; everything else is what this runtime resolves.
+  const resolved = new Intl.DateTimeFormat().resolvedOptions();
+  vi.spyOn(Intl.DateTimeFormat.prototype, "resolvedOptions").mockReturnValue({
+    ...resolved,
+    timeZone: BROWSER_ZONE,
+  });
 });
 
 afterEach(() => {
@@ -125,13 +152,15 @@ describe("the welcome screen, W1", () => {
     await settle();
     await settle();
     expect(where()).toBe("/drill?kind=placement");
-    const saves = calls.filter((call) => call.method === "PATCH");
-    expect(saves.map((call) => call.body)).toStrictEqual([
-      { topics: ["work", "daily"] },
+    expect(patches(calls)).toStrictEqual([
+      ["/api/v1/me", { timeZone: BROWSER_ZONE }],
+      ["/api/v1/settings", { topics: ["work", "daily"] }],
     ]);
     // The drill reads the home view afresh, so it sees the placement it now is.
     const afterSave = calls.slice(
-      calls.findIndex((call) => call.method === "PATCH") + 1,
+      calls.findIndex(
+        (call) => call.url === "/api/v1/settings" && call.method === "PATCH",
+      ) + 1,
     );
     expect(afterSave.map((call) => call.url)).toContain("/api/v1/home");
   });
@@ -165,6 +194,57 @@ describe("the welcome screen, W1", () => {
     expect(screen.getByRole("alert")).toHaveTextContent(ja.Welcome.saveFailed);
     expect(where()).toBe("/welcome");
     expect(next()).toBeEnabled();
+  });
+
+  it("goes on with the profile's own time zone when the API does not know the browser's", async () => {
+    const calls = serveWelcome({ profile: () => refusal(400, "ERR_BAD_REQUEST") });
+    await renderApp("/welcome");
+    fireEvent.click(screen.getByRole("button", { name: /日常/u }));
+    fireEvent.click(next());
+    await settle();
+    await settle();
+    expect(where()).toBe("/drill?kind=placement");
+    expect(patches(calls).map(([url]) => url)).toStrictEqual([
+      "/api/v1/me",
+      "/api/v1/settings",
+    ]);
+  });
+
+  it("stays and saves no topics when the time zone cannot be sent", async () => {
+    const calls = serveWelcome({
+      profile: () => Promise.reject(new TypeError("fetch failed")),
+    });
+    await renderApp("/welcome");
+    fireEvent.click(screen.getByRole("button", { name: /日常/u }));
+    fireEvent.click(next());
+    await settle();
+    expect(screen.getByRole("alert")).toHaveTextContent(ja.Welcome.saveFailed);
+    expect(where()).toBe("/welcome");
+    expect(patches(calls).map(([url]) => url)).toStrictEqual(["/api/v1/me"]);
+  });
+
+  it("sends the time zone once, even when the topics take a second try", async () => {
+    let attempts = 0;
+    const calls = serveWelcome({
+      save: () => {
+        attempts += 1;
+        return attempts === 1 ? refusal(409, "ERR_CONFLICT") : Response.json(SAVED);
+      },
+    });
+    await renderApp("/welcome");
+    fireEvent.click(screen.getByRole("button", { name: /日常/u }));
+    fireEvent.click(next());
+    await settle();
+    expect(screen.getByRole("alert")).toHaveTextContent(ja.Welcome.saveFailed);
+    fireEvent.click(next());
+    await settle();
+    await settle();
+    expect(where()).toBe("/drill?kind=placement");
+    expect(patches(calls).map(([url]) => url)).toStrictEqual([
+      "/api/v1/me",
+      "/api/v1/settings",
+      "/api/v1/settings",
+    ]);
   });
 
   it("says the cards could not be read, rather than offer nothing to choose", async () => {

@@ -74,6 +74,13 @@ export type SettingsPatch = {
     sound?: boolean;
 };
 
+export type ProfilePatch = {
+    timeZone?: string;
+    l1?: string;
+    target?: string;
+    uiLocale?: 'ja';
+};
+
 export type DrillCard = {
     id: string;
     topic: string;
@@ -178,6 +185,13 @@ export type SettingsView = {
     settings: Settings;
     removedFocus: Array<SubtopicRef>;
     completedToday: boolean;
+};
+
+export type Profile = {
+    timeZone: string;
+    l1: string;
+    target: string;
+    uiLocale: string;
 };
 
 export type StreakView = {
@@ -302,6 +316,80 @@ export type ErrorResponse = {
     };
 };
 
+export type GetProfileData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/v1/me';
+};
+
+export type GetProfileErrors = {
+    /**
+     * ERR_UNAUTHENTICATED: The request carries no valid access token.
+     */
+    401: ErrorResponse;
+    /**
+     * ERR_FORBIDDEN: The caller may not run this operation.
+     */
+    403: ErrorResponse;
+};
+
+export type GetProfileError = GetProfileErrors[keyof GetProfileErrors];
+
+export type GetProfileResponses = {
+    /**
+     * OK
+     */
+    200: Profile;
+};
+
+export type GetProfileResponse = GetProfileResponses[keyof GetProfileResponses];
+
+export type UpdateProfileData = {
+    body: ProfilePatch;
+    path?: never;
+    query?: never;
+    url: '/v1/me';
+};
+
+export type UpdateProfileErrors = {
+    /**
+     * ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.
+     */
+    400: ErrorResponse;
+    /**
+     * ERR_UNAUTHENTICATED: The request carries no valid access token.
+     */
+    401: ErrorResponse;
+    /**
+     * ERR_FORBIDDEN: The caller may not run this operation.
+     */
+    403: ErrorResponse;
+    /**
+     * ERR_CONFLICT: Another write to the same data kept winning; send the request again.
+     */
+    409: ErrorResponse;
+    /**
+     * ERR_PAYLOAD_TOO_LARGE: The request body is too large.
+     */
+    413: ErrorResponse;
+    /**
+     * ERR_CONTENT_UNREADABLE: The card content could not be read.
+     */
+    503: ErrorResponse;
+};
+
+export type UpdateProfileError = UpdateProfileErrors[keyof UpdateProfileErrors];
+
+export type UpdateProfileResponses = {
+    /**
+     * OK
+     */
+    200: Profile;
+};
+
+export type UpdateProfileResponse = UpdateProfileResponses[keyof UpdateProfileResponses];
+
 export type GetSettingsData = {
     body?: never;
     path?: never;
@@ -340,7 +428,7 @@ export type UpdateSettingsData = {
 
 export type UpdateSettingsErrors = {
     /**
-     * ERR_BAD_REQUEST: The request does not fit the round or the settings it names.
+     * ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.
      */
     400: ErrorResponse;
     /**
@@ -414,7 +502,7 @@ export type StartRoundData = {
 
 export type StartRoundErrors = {
     /**
-     * ERR_BAD_REQUEST: The request does not fit the round or the settings it names.
+     * ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.
      */
     400: ErrorResponse;
     /**
@@ -461,7 +549,7 @@ export type RecordAnswersData = {
 
 export type RecordAnswersErrors = {
     /**
-     * ERR_BAD_REQUEST: The request does not fit the round or the settings it names.
+     * ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.
      */
     400: ErrorResponse;
     /**
@@ -512,7 +600,7 @@ export type FinishRoundData = {
 
 export type FinishRoundErrors = {
     /**
-     * ERR_BAD_REQUEST: The request does not fit the round or the settings it names.
+     * ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.
      */
     400: ErrorResponse;
     /**
@@ -563,7 +651,7 @@ export type GetRoundSummaryData = {
 
 export type GetRoundSummaryErrors = {
     /**
-     * ERR_BAD_REQUEST: The request does not fit the round or the settings it names.
+     * ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.
      */
     400: ErrorResponse;
     /**

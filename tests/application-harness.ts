@@ -50,6 +50,8 @@ export function makeSnapshot(): CatalogSnapshot {
   const byId = new Map(cards.map((entry) => [entry.id, entry]));
   return {
     version: "sha256:fixture",
+    target: "en",
+    l1: "ja",
     topics: TOPICS.map((topic) => ({
       id: topic,
       name: `${topic}の話題`,

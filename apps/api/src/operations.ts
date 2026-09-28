@@ -2,11 +2,13 @@ import {
   finishRound,
   history,
   home,
+  profile,
   recordAnswers,
   records,
   roundSummary,
   settingsPage,
   startRound,
+  updateProfile,
   updateSettings,
   type ApplicationDeps,
   type ApplicationError,
@@ -15,6 +17,7 @@ import {
 } from "@instant-composition/application";
 import {
   answersRequestSchema,
+  profilePatchSchema,
   settingsPatchSchema,
   startRoundRequestSchema,
   type ErrorCode,
@@ -111,6 +114,10 @@ function answersOf<A extends object>(
  * `packages/contracts`' `ROUTES`.
  */
 export const OPERATIONS: Readonly<Record<string, Operation>> = {
+  getProfile: query(profile),
+  updateProfile: command(profilePatchSchema, false, (deps, context, _, patch) =>
+    updateProfile(deps, context, patch),
+  ),
   getSettings: query(settingsPage),
   updateSettings: command(settingsPatchSchema, false, (deps, context, _, patch) =>
     updateSettings(deps, context, patch),

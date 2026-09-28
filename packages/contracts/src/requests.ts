@@ -54,3 +54,25 @@ export const settingsPatchSchema = z.object({
   dailySize: dailySizeSchema.exactOptional(),
   sound: z.boolean().exactOptional(),
 });
+
+/**
+ * The UI locales there is a catalog for, one per `messages/<locale>.json`.
+ * This package imports only zod, so the list is written out;
+ * `tests/messages.test.ts` holds it to the files.
+ */
+export const UI_LOCALES = ["ja"] as const;
+
+/** A BCP 47 language tag, bounded; which ones are served is the catalog's to say. */
+const languageTagSchema = z.string().min(1).max(35);
+
+/**
+ * `PATCH /v1/me`: only the fields present change. The time zone must be an
+ * IANA zone and the languages the pair the catalog serves, which the command
+ * checks; the UI locale must have a catalog.
+ */
+export const profilePatchSchema = z.object({
+  timeZone: z.string().min(1).max(64).exactOptional(),
+  l1: languageTagSchema.exactOptional(),
+  target: languageTagSchema.exactOptional(),
+  uiLocale: z.enum(UI_LOCALES).exactOptional(),
+});

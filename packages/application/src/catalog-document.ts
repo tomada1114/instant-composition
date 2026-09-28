@@ -157,6 +157,8 @@ export function catalogSnapshotOf(
   }
   return {
     version: document.version,
+    target: document.target,
+    l1,
     topics: topicsFor(document.topics, l1),
     levels: levelsOf(document.levels),
     shown,

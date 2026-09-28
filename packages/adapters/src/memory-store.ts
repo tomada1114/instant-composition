@@ -59,6 +59,10 @@ function memoryStore(slots: Map<string, Slot>, counted: () => void): LearnerStor
   }
 
   return {
+    profile() {
+      counted();
+      return Promise.resolve(read({ type: "profile" }));
+    },
     settings() {
       counted();
       return Promise.resolve(read({ type: "settings" }));

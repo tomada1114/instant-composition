@@ -110,6 +110,7 @@ function dynamoDbStore(
   }
 
   return {
+    profile: () => get({ type: "profile" }),
     settings: () => get({ type: "settings" }),
     stats: () => get({ type: "stats" }),
     round: (id) => get({ type: "round", id }),

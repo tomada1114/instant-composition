@@ -9,10 +9,16 @@ import {
 } from "./query-views";
 import {
   answersRequestSchema,
+  profilePatchSchema,
   settingsPatchSchema,
   startRoundRequestSchema,
 } from "./requests";
-import { roundPayloadSchema, roundSummarySchema, settingsViewSchema } from "./views";
+import {
+  profileSchema,
+  roundPayloadSchema,
+  roundSummarySchema,
+  settingsViewSchema,
+} from "./views";
 
 export interface Route {
   readonly method: "get" | "post" | "patch";
@@ -53,10 +59,29 @@ const COMMAND_ERRORS = [
 
 /**
  * The `/v1` operations the commands and queries in `packages/application`
- * back today (ADR-0007). `/v1/me` arrives with learner registration and
- * `GET /v1/rounds/{roundId}` with the offline answer queue.
+ * back today (ADR-0007). `GET /v1/rounds/{roundId}` arrives with the offline
+ * answer queue.
  */
 export const ROUTES: readonly Route[] = [
+  {
+    method: "get",
+    path: "/v1/me",
+    operationId: "getProfile",
+    summary: "The learner's profile: time zone, first language, target and UI locale.",
+    requestBody: null,
+    success: { status: 200, body: profileSchema },
+    errors: QUERY_ERRORS,
+  },
+  {
+    method: "patch",
+    path: "/v1/me",
+    operationId: "updateProfile",
+    summary:
+      "Changes the profile fields the body sets: an IANA time zone, and a first language, target and UI locale the app serves.",
+    requestBody: profilePatchSchema,
+    success: { status: 200, body: profileSchema },
+    errors: COMMAND_ERRORS,
+  },
   {
     method: "get",
     path: "/v1/settings",

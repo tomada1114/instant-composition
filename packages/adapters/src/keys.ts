@@ -38,8 +38,15 @@ export function identityKeyOf(subject: string): string {
   return `IDENTITY#${part(subject)}`;
 }
 
-/** The sort keys the identity context writes: the mapping, and the learner's profile. */
-export const IDENTITY_SORT_KEY = { mapping: "LEARNER", profile: "PROFILE" } as const;
+/**
+ * The sort keys the identity context writes: the mapping, and the learner's
+ * profile — the very item the learner-bound store reads and changes as its
+ * `profile` entry, so registration and a later change share one row.
+ */
+export const IDENTITY_SORT_KEY = {
+  mapping: "LEARNER",
+  profile: sortKeyOf({ type: "profile" }),
+} as const;
 
 /**
  * Where an entry sits inside its learner's partition. ADR-0006's layout, plus
@@ -48,6 +55,8 @@ export const IDENTITY_SORT_KEY = { mapping: "LEARNER", profile: "PROFILE" } as c
  */
 export function sortKeyOf(key: Key): string {
   switch (key.type) {
+    case "profile":
+      return "PROFILE";
     case "settings":
       return "SETTINGS";
     case "stats":

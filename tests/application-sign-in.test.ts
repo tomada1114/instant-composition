@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 
-import { createMemoryDirectory } from "@instant-composition/adapters";
+import {
+  createMemoryDirectory,
+  createMemoryStores,
+} from "@instant-composition/adapters";
 import {
   learnerId,
   signIn,
@@ -25,7 +28,7 @@ function counter(): { next: () => LearnerId; count: () => number } {
 
 describe("signIn", () => {
   it("registers a first sign-in with the default profile and a fresh id", async () => {
-    const directory = createMemoryDirectory();
+    const directory = createMemoryDirectory(createMemoryStores());
 
     expect(
       await signIn({ directory, newLearnerId: counter().next }, "sub-1"),
@@ -44,7 +47,7 @@ describe("signIn", () => {
   });
 
   it("answers a registered subject from its record, minting nothing", async () => {
-    const directory = createMemoryDirectory();
+    const directory = createMemoryDirectory(createMemoryStores());
     await directory.register("sub-1", {
       learnerId: learnerId("learner-9"),
       profile: { timeZone: "Europe/Paris", l1: "fr", target: "en", uiLocale: "fr" },

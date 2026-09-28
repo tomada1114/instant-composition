@@ -14,6 +14,7 @@ import {
   roundKindFrom,
   sendAnswer,
   startRound,
+  updateProfile,
   updateSettings,
   type AnswerInput,
 } from "@instant-composition/web";
@@ -165,6 +166,26 @@ describe("updateSettings", () => {
         url: "/api/v1/settings",
         method: "PATCH",
         body: { sound: false },
+        contentType: "application/json",
+      },
+    ]);
+  });
+});
+
+describe("updateProfile", () => {
+  it("patches /api/v1/me with the fields to change, as JSON", async () => {
+    const calls = stubFetch(() =>
+      Promise.resolve(Response.json({ timeZone: "Europe/London" })),
+    );
+    expect(await updateProfile({ timeZone: "Europe/London" })).toStrictEqual({
+      ok: true,
+      value: { timeZone: "Europe/London" },
+    });
+    expect(calls).toStrictEqual([
+      {
+        url: "/api/v1/me",
+        method: "PATCH",
+        body: { timeZone: "Europe/London" },
         contentType: "application/json",
       },
     ]);

@@ -13,6 +13,7 @@ import {
   makeDay,
   makeItem,
   makePortion,
+  makeProfile,
   makeReview,
   makeRound,
   makeSettings,
@@ -37,6 +38,7 @@ type Read = (store: LearnerStore) => Promise<unknown>;
  * compile here until the isolation case below covers it.
  */
 const READS: Readonly<Record<Exclude<keyof LearnerStore, "commit">, Read>> = {
+  profile: (store) => store.profile(),
   settings: (store) => store.settings(),
   stats: (store) => store.stats(),
   round: (store) => store.round("r1"),
@@ -157,6 +159,35 @@ export function describeLearnerStoreContract(
       });
     });
 
+    it("changes the profile only at the version it was read at", async () => {
+      await store.commit({
+        puts: [{ type: "profile", value: makeProfile() }],
+        updates: [],
+        expect: [],
+      });
+      const paris = makeProfile({ timeZone: "Europe/Paris" });
+
+      const current = await store.commit({
+        puts: [],
+        updates: [{ entry: { type: "profile", value: paris }, version: 1 }],
+        expect: [],
+      });
+      const stale = await store.commit({
+        puts: [],
+        updates: [
+          {
+            entry: { type: "profile", value: makeProfile({ timeZone: "Asia/Tokyo" }) },
+            version: 1,
+          },
+        ],
+        expect: [],
+      });
+
+      expect(current.ok).toBe(true);
+      expect(stale).toStrictEqual(CONFLICT);
+      expect(await store.profile()).toStrictEqual({ value: paris, version: 2 });
+    });
+
     it("refuses a put over an entry that exists", async () => {
       const entry = { type: "round" as const, value: makeRound() };
       await store.commit({ puts: [entry], updates: [], expect: [] });
@@ -251,6 +282,7 @@ export function describeLearnerStoreContract(
     it("reads back every entry exactly as it was written", async () => {
       await store.commit({ puts: oneOfEach(), updates: [], expect: [] });
 
+      expect(await store.profile()).toStrictEqual({ value: makeProfile(), version: 1 });
       expect(await store.settings()).toStrictEqual({
         value: makeSettings(),
         version: 1,

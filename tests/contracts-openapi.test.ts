@@ -70,9 +70,11 @@ describe("openApiDocument", () => {
     expect(operations.sort()).toStrictEqual([
       "GET /v1/history getHistory",
       "GET /v1/home getHome",
+      "GET /v1/me getProfile",
       "GET /v1/records getRecords",
       "GET /v1/rounds/{roundId}/summary getRoundSummary",
       "GET /v1/settings getSettings",
+      "PATCH /v1/me updateProfile",
       "PATCH /v1/settings updateSettings",
       "POST /v1/rounds startRound",
       "POST /v1/rounds/{roundId}/answers recordAnswers",
@@ -143,7 +145,7 @@ describe("openApiDocument", () => {
 
   it("builds a route it is handed rather than only the shipped table", () => {
     expect(Object.keys(openApiDocument([probe]).paths)).toStrictEqual(["/v1/probe"]);
-    expect(ROUTES).toHaveLength(9);
+    expect(ROUTES).toHaveLength(11);
   });
 
   it.each([

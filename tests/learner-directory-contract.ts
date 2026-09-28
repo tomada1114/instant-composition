@@ -11,7 +11,8 @@ import {
 
 // The contract every LearnerDirectory adapter runs: the in-memory one and the
 // DynamoDB one. What a registration writes and reads back, that it is one
-// conditional commit, and that it reaches no learner-bound read.
+// conditional commit, and that of what learner-bound reads return it adds only
+// the learner's own profile — the entry a later change is written through.
 
 const CONFLICT = { ok: false, error: { code: "ERR_CONFLICT" } };
 const OK = { ok: true, value: undefined };
@@ -116,17 +117,57 @@ export function describeLearnerDirectoryContract(
       expect(found).toStrictEqual(["learner-0", "learner-1", "learner-2", "learner-3"]);
     });
 
-    it("adds nothing any learner-bound read returns", async () => {
+    it("adds only the profile to what the learner's own store reads", async () => {
       await directory.register("subject-a", {
         learnerId: learnerId("learner-a"),
         profile: LONDON,
       });
       const store = stores.forLearner(learnerId("learner-a"));
 
+      expect(await store.profile()).toStrictEqual({ value: LONDON, version: 1 });
+      expect(await stores.forLearner(learnerId("learner-b")).profile()).toBeUndefined();
       expect(await store.settings()).toBeUndefined();
       expect(await store.stats()).toBeUndefined();
       expect(await store.reviews()).toStrictEqual([]);
       expect((await store.items()).size).toBe(0);
+    });
+  });
+
+  describe(`${name}: the profile after registration`, () => {
+    let directory: LearnerDirectory;
+    let stores: LearnerStores;
+
+    beforeEach(async () => {
+      ({ directory, stores } = await makeBacking());
+      await directory.register("subject-a", {
+        learnerId: learnerId("learner-a"),
+        profile: LONDON,
+      });
+    });
+
+    it("signs in with a profile the learner's own store changed", async () => {
+      const paris: Profile = { ...LONDON, timeZone: "Europe/Paris" };
+      const changed = await stores.forLearner(learnerId("learner-a")).commit({
+        puts: [],
+        updates: [{ entry: { type: "profile", value: paris }, version: 1 }],
+        expect: [],
+      });
+
+      expect(changed).toStrictEqual(OK);
+      expect(await directory.learnerOf("subject-a")).toStrictEqual({
+        learnerId: "learner-a",
+        profile: paris,
+      });
+    });
+
+    it("keeps another learner's change out of the registered learner's profile", async () => {
+      await stores.forLearner(learnerId("learner-b")).commit({
+        puts: [{ type: "profile", value: { ...LONDON, timeZone: "Asia/Tokyo" } }],
+        updates: [],
+        expect: [],
+      });
+
+      expect((await directory.learnerOf("subject-a"))?.profile).toStrictEqual(LONDON);
     });
   });
 

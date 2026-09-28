@@ -17,6 +17,10 @@ export interface LevelInfo {
 export interface CatalogSnapshot {
   /** The content hash of the snapshot this was read from. */
   readonly version: string;
+  /** The language the cards are practised in, such as `en`. */
+  readonly target: string;
+  /** The first language the snapshot is resolved for, such as `ja`. */
+  readonly l1: string;
   readonly topics: readonly TopicInfo[];
   readonly levels: ReadonlyMap<number, LevelInfo>;
   /** Cards whose review stamp matches: the only ones a round may deal or show. */
@@ -63,6 +67,8 @@ export function toeicOf(snapshot: CatalogSnapshot, level: number): string {
 
 const EMPTY_SNAPSHOT: CatalogSnapshot = {
   version: "",
+  target: "",
+  l1: "",
   topics: [],
   levels: new Map(),
   shown: new Map(),

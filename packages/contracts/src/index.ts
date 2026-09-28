@@ -29,9 +29,16 @@ export {
   answerSchema,
   answersRequestSchema,
   MAX_ROUND_ANSWERS,
+  profilePatchSchema,
   roundIdParamSchema,
   settingsPatchSchema,
   startRoundRequestSchema,
+  UI_LOCALES,
 } from "./requests";
 export { ROUTES, type Route } from "./routes";
-export { roundPayloadSchema, roundSummarySchema, settingsViewSchema } from "./views";
+export {
+  profileSchema,
+  roundPayloadSchema,
+  roundSummarySchema,
+  settingsViewSchema,
+} from "./views";

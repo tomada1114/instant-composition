@@ -1,4 +1,4 @@
-import type { Entry } from "@instant-composition/application";
+import type { Entry, Profile } from "@instant-composition/application";
 import type {
   DayTally,
   ItemProgress,
@@ -10,6 +10,16 @@ import type {
 } from "@instant-composition/domain";
 
 // Factories for the packages/application suites. Nothing here asserts.
+
+export function makeProfile(overrides: Partial<Profile> = {}): Profile {
+  return {
+    timeZone: "Europe/London",
+    l1: "ja",
+    target: "en",
+    uiLocale: "ja",
+    ...overrides,
+  };
+}
 
 export function makeSettings(overrides: Partial<Settings> = {}): Settings {
   return { topics: ["work"], focus: [], dailySize: 10, sound: true, ...overrides };
@@ -113,6 +123,7 @@ export function makeItem(overrides: Partial<ItemProgress> = {}): ItemProgress {
 /** One entry of every type, so a suite over them covers the whole store. */
 export function oneOfEach(): Entry[] {
   return [
+    { type: "profile", value: makeProfile() },
     { type: "settings", value: makeSettings() },
     { type: "stats", value: makeStats() },
     { type: "round", value: makeRound() },

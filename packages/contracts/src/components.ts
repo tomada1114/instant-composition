@@ -25,6 +25,7 @@ import {
 import {
   answerSchema,
   answersRequestSchema,
+  profilePatchSchema,
   settingsPatchSchema,
   startRoundRequestSchema,
 } from "./requests";
@@ -32,6 +33,7 @@ import {
   drillCardSchema,
   growthRowSchema,
   growthSchema,
+  profileSchema,
   reviewRowSchema,
   roundPayloadSchema,
   roundSummarySchema,
@@ -59,6 +61,7 @@ export const COMPONENTS = {
   Answer: answerSchema,
   AnswersRequest: answersRequestSchema,
   SettingsPatch: settingsPatchSchema,
+  ProfilePatch: profilePatchSchema,
   DrillCard: drillCardSchema,
   RoundPayload: roundPayloadSchema,
   GrowthRow: growthRowSchema,
@@ -67,6 +70,7 @@ export const COMPONENTS = {
   TotalsView: totalsViewSchema,
   RoundSummary: roundSummarySchema,
   SettingsView: settingsViewSchema,
+  Profile: profileSchema,
   StreakView: streakViewSchema,
   HomeState: homeStateSchema,
   HomePreview: homePreviewSchema,
