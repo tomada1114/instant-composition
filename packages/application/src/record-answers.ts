@@ -38,13 +38,14 @@ function recordChunk(
     if (round === undefined) {
       return err({ code: "ERR_ROUND_NOT_FOUND" });
     }
-    const checked = checkAnswers(round.value, command.answers, facts);
+    const reviews = await store.reviewsOf(round.value.id);
+    const recorded = new Set(reviews.map((review) => review.id));
+    const checked = checkAnswers(round.value, command.answers, facts, recorded);
     if (!checked.ok) {
       return checked;
     }
     const { portionDay, day } = round.value;
-    const [reviews, stats, items, portion, tallies] = await Promise.all([
-      store.reviewsOf(round.value.id),
+    const [stats, items, portion, tallies] = await Promise.all([
       store.stats(),
       store.items(),
       portionDay === null ? undefined : store.portion(portionDay),
@@ -58,7 +59,7 @@ function recordChunk(
         portion: portion?.value,
         day: tally?.value,
         items: itemValues(items),
-        recorded: new Set(reviews.map((review) => review.id)),
+        recorded,
       },
       chunk,
       facts,
@@ -105,7 +106,8 @@ export async function recordInto(
 }
 
 /**
- * Records answers against an open round, ignoring ids it already holds. A
+ * Records answers against an open round, ignoring ids it already holds; a
+ * batch of held ids alone is taken, and writes nothing, after finish too. A
  * round crossing the day boundary keeps taking answers for the day it started.
  */
 export async function recordAnswers(
