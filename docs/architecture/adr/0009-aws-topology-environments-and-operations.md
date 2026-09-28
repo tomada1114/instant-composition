@@ -1,8 +1,9 @@
 # ADR-0009: AWS topology, environments and operations
 
 - Status: Accepted (2026-09-23), including the account layout, its timing, and CDK;
-  amended 2026-09-24 (`dev` table protection waits for the Paid plan; resources added as
-  each phase first needs them)
+  amended 2026-09-24 (resources added as each phase first needs them); amended
+  2026-09-27 (no point-in-time recovery or deletion protection on the `dev` table; the
+  Paid-plan upgrade is the owner's and is tracked only when a feature needs it)
 - Date: 2026-09-23
 - Deciders: the owner
 
@@ -44,6 +45,12 @@ plan by then closes; upgrading keeps the remaining credits (checked 2026-09-23).
 owner accepts charges in `dev` of up to about $30 a month, so the account upgrades
 whenever a service needs it, and before the six months end at the latest. Only what
 forfeits the credits outright — creating or joining an organization — is deferred.
+
+The upgrade itself is the owner's, done in the console. An upgrade forced by the
+calendar or the credit balance is not tracked as an issue: AWS emails the account ahead
+of either end, and nothing in the plan waits on it. An upgrade that a feature needs — a
+service or setting the Free plan does not allow — is filed as its own
+`blocked: external` issue, which the feature's issue names in a `Depends on:` line.
 
 ## Decision drivers
 
@@ -174,26 +181,25 @@ settings:
 | Setting                                           | `dev`                                                                 | `prod`                                                          |
 | ------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------- |
 | DynamoDB retain on delete and on replacement      | On — the owner's own learning history accumulates here for years      | On                                                              |
-| DynamoDB deletion protection                      | On once the account is on the Paid plan (below)                       | On                                                              |
-| DynamoDB point-in-time recovery                   | On once the account is on the Paid plan, with a 7-day recovery period | On; the period is set in the production-guard phase (1–35 days) |
+| DynamoDB deletion protection                      | Off (below)                                                           | On                                                              |
+| DynamoDB point-in-time recovery                   | Off (below)                                                           | On; the period is set in the production-guard phase (1–35 days) |
 | Cognito self sign-up                              | Off: only an administrator creates users (`AllowAdminCreateUserOnly`) | On                                                              |
 | CloudFront flat-rate plan                         | Free                                                                  | Free, then Pro when traffic warrants                            |
 | WAF rate-based rules, SES for authentication mail | None; Cognito's own sender is enough for admin-created users          | Yes                                                             |
 | Deploy                                            | On every merge to `main`                                              | Behind a manual approval                                        |
 
-The `dev` account stays on the Free plan as far as the work allows. Its service list
-does not say whether point-in-time recovery and deletion protection may be enabled
-([references](../references.md#operations-and-cost), checked 2026-09-24), and nothing
-reads or writes the table before Phase 4. So the `dev` table is created without either,
-and both are turned on as soon as the account is on the Paid plan, as a Phase 4 work
-item. Until then a bad write cannot be undone and the table can be deleted directly; the
-CloudFormation `Retain` deletion and update-replace policies, which need no plan
-feature, keep it through any change made to the stack.
+The `dev` table has neither point-in-time recovery nor deletion protection, for as long
+as `dev` is the only environment. The owner decided this on 2026-09-27: until `prod`
+exists, `dev` holds only the owner's own history, and losing it is an accepted risk, not
+a reason to pay for point-in-time recovery or to tie a work item to the Paid plan. So a
+bad write in `dev` cannot be undone, and the table can be deleted directly from the
+console or the API. The CloudFormation `Retain` deletion and update-replace policies,
+which need no plan feature, still keep the table through any change made to the stack.
+Both protections are on in `prod` from the table's creation.
 
-Point-in-time recovery is priced by table size whatever the recovery period, so the
-7-day period in `dev` is a preference, not a saving. In `prod` the period also bounds
-how long a deleted learner's data stays restorable, which the privacy policy has to
-state.
+Point-in-time recovery is priced by table size whatever the recovery period. In `prod`
+the period also bounds how long a deleted learner's data stays restorable, which the
+privacy policy has to state.
 
 **Deploys.**
 
@@ -239,8 +245,8 @@ built-in sender.
 
 **Data protection.**
 
-- DynamoDB point-in-time recovery and deletion protection are on in both stages, in
-  `dev` from the Paid-plan upgrade (see Stages).
+- DynamoDB point-in-time recovery and deletion protection are on in `prod` and off in
+  `dev` (see Stages).
 - Account deletion and data export are features, not scripts. They work per learner
   partition (ADR-0006) and ship in the production-guard phase.
 
@@ -294,9 +300,10 @@ Prices are as of 2026-09-23. A region appears only where the source states one.
 
   Organizations, Identity Center and `prod` come in the production-guard phase.
 
-- Upgrade the account to the Paid plan before the Free plan's six months end, or earlier
-  when a service `dev` needs is not on the Free plan. Leaving it on the Free plan past
-  that point closes the account.
+- The owner upgrades the account to the Paid plan before the Free plan's six months end
+  or its credits run out, untracked; leaving it on the Free plan past that point closes
+  the account. A feature that needs a service or setting the Free plan does not allow
+  gets its own `blocked: external` upgrade issue first (see Context).
 - Write the `foundation` stack first, and add to it what each phase first needs: the
   learner table in Phase 2, the Cognito user pool in Phase 3, where local development
   needs it before anything is hosted.
@@ -313,8 +320,7 @@ Prices are as of 2026-09-23. A region appears only where the source states one.
 - Whether option 3 (Function URL plus an origin secret) is worth its rotation burden
   once real traffic prices API Gateway.
 - Unverified: whether the Free plan allows every feature `dev` needs. Every service is
-  on its list ([references](../references.md#operations-and-cost), checked 2026-09-24);
-  point-in-time recovery and deletion protection wait for the Paid plan (Stages).
+  on its list ([references](../references.md#operations-and-cost), checked 2026-09-24).
 - The `prod` point-in-time recovery period, weighed against how long a deleted learner's
   data may stay restorable.
 - Whether `/api/*` or a separate API hostname is better for native apps. A separate

@@ -24,8 +24,8 @@ import { type Stage } from "./stage";
 
 /**
  * Whether the learner table is protected by point-in-time recovery and
- * deletion protection. In `dev` both wait for the account's Paid plan
- * (ADR-0009, Stages; #101 turns them on there).
+ * deletion protection. `dev` goes without both until `prod` exists
+ * (ADR-0009, Stages).
  */
 const TABLE_PROTECTED: Readonly<Record<Stage, boolean>> = {
   dev: false,
