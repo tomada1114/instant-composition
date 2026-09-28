@@ -14,6 +14,7 @@ import type { AnswerInput, CardContent } from "@instant-composition/domain";
 // Nothing here asserts.
 
 export const TOPICS = ["work", "travel"] as const;
+const CONCEPT = "en:grammar/imperatives";
 const SUBTOPICS = ["a", "b"] as const;
 
 function card(
@@ -29,6 +30,7 @@ function card(
     subtopic,
     level,
     words: 8,
+    concepts: [CONCEPT],
     prompt: `${id}の文`,
     text: `The sentence for ${id}.`,
     alternatives: [],
@@ -66,6 +68,7 @@ export function makeSnapshot(): CatalogSnapshot {
         { cefr: "B1", toeic: `${String(level + 1)}00` },
       ]),
     ),
+    conceptNames: new Map([[CONCEPT, "命令文"]]),
     shown: byId,
     retired: new Map(),
   };

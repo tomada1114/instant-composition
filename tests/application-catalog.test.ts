@@ -38,7 +38,10 @@ function makeDocument(overrides: Partial<CatalogDocument> = {}): CatalogDocument
       },
       { level: 2, cefr: "A2", exams: { ielts: null } },
     ],
-    concepts: [{ id: "en:grammar/imperatives", names: { ja: "命令文" } }],
+    concepts: [
+      { id: "en:grammar/imperatives", names: { ja: "命令文" } },
+      { id: "en:grammar/past-simple", names: { zh: "一般过去时" } },
+    ],
     topics: [
       {
         id: "work",
@@ -108,7 +111,7 @@ describe("a snapshot for one first language", () => {
     expect(snapshot.version).toBe("sha256:abc");
   });
 
-  it("shows a localized item with its prompt, explanation and word count", () => {
+  it("shows a localized item with its prompt, explanation, word count and grammar concepts", () => {
     expect([...snapshot.shown.keys()]).toStrictEqual(["c_2a"]);
     expect(snapshot.shown.get("c_2a")).toStrictEqual({
       id: "c_2a",
@@ -116,6 +119,7 @@ describe("a snapshot for one first language", () => {
       subtopic: "meetings",
       level: 1,
       words: 4,
+      concepts: ["en:grammar/imperatives"],
       prompt: "会議を始めましょう。",
       text: "Let's start the  meeting.",
       alternatives: ["Shall we get started?"],
@@ -164,6 +168,15 @@ describe("a snapshot for one first language", () => {
       },
       { id: "travel", name: "travel", subtopics: [] },
     ]);
+  });
+
+  it("names each concept in this language, in the document's order, falling back to its id", () => {
+    expect(snapshot.conceptNames).toStrictEqual(
+      new Map([
+        ["en:grammar/imperatives", "命令文"],
+        ["en:grammar/past-simple", "en:grammar/past-simple"],
+      ]),
+    );
   });
 
   it("keeps each level's CEFR band beside its TOEIC score, empty when there is none", () => {

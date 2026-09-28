@@ -94,6 +94,19 @@ describe("the commands", () => {
     );
   });
 
+  it("deals each card with the drill's fields alone, leaving the card's concepts off the wire", async () => {
+    const api = makeApi();
+    const round = await startedPlacement(api);
+    const shapes = Object.values(round.cards).map((card) =>
+      Object.keys(card).sort().join(" "),
+    );
+    expect(new Set(shapes)).toStrictEqual(
+      new Set([
+        "alternatives explanation id level limitMs prompt subtopic text topic words",
+      ]),
+    );
+  });
+
   it("resumes the round a retried start made", async () => {
     const api = makeApi();
     const first = await startedPlacement(api);

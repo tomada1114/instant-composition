@@ -156,6 +156,7 @@ export type {
   CardContent,
   CardMeta,
   CardState,
+  ConceptId,
   DailySize,
   DayKey,
   Pass,
