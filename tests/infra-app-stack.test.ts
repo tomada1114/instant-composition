@@ -91,7 +91,7 @@ function webUrl(path?: string): { "Fn::Join": [string, unknown[]] } {
 // ADR-0009's cost guard: nothing billed by the hour whether used or not —
 // no NAT gateway, load balancer, interface endpoint or database instance.
 describe("the dev app stack's resources", () => {
-  it("are only the bucket, the distribution, the HTTP API, the function and the web client", () => {
+  it("are only the bucket, the distribution, the HTTP API, the function, their alarms and the web client", () => {
     // The CLI adds its own AWS::CDK::Metadata, which bills nothing.
     const types = new Set(
       Object.values(TEMPLATE.toJSON()["Resources"] as Record<string, { Type: string }>)
@@ -107,6 +107,8 @@ describe("the dev app stack's resources", () => {
         "AWS::CloudFront::Distribution",
         "AWS::CloudFront::Function",
         "AWS::CloudFront::OriginAccessControl",
+        "AWS::CloudWatch::Alarm",
+        "AWS::CloudWatch::Dashboard",
         "AWS::Cognito::ManagedLoginBranding",
         "AWS::Cognito::UserPoolClient",
         "AWS::IAM::Policy",
@@ -116,6 +118,7 @@ describe("the dev app stack's resources", () => {
         "AWS::Logs::LogGroup",
         "AWS::S3::Bucket",
         "AWS::S3::BucketPolicy",
+        "AWS::SNS::Topic",
         "Custom::WebClientSecret",
       ].sort(),
     );

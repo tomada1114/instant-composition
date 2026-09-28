@@ -2,21 +2,21 @@
 name: serving-the-api
 description: >
   Covers apps/api, the Hono app serving packages/contracts' ROUTES under /api/v1: an
-  operation handler, the route-table check, the error envelope and body reader, the
-  per-request log line, the Cognito and stand-in authenticators, the web sign-in
-  endpoints under /v1/auth/, the Lambda entry, apps/api/src/env.ts and .env.example, and
-  pnpm api or pnpm dev. Use when an endpoint is added to the contract, a log field is
-  added, an API_* variable is added, the sign-in, refresh or logout flow changes, a
-  request is refused with an unexpected code, or the API will not start.
+  operation handler, the route-table check, the order a request is checked in, the error
+  envelope and body reader, the per-request log line, the Lambda entry,
+  apps/api/src/env.ts and .env.example, and pnpm api or pnpm dev. Use when an endpoint
+  is added to the contract, a log field is added, an API_* variable is added, a request
+  is refused with an unexpected code, or the API will not start.
 ---
 
 # Serving the API
 
 **Owns:** how `apps/api` turns the contract into HTTP — the handler table, the order a
-request is checked in, the log line, the authenticators and which one a local run wires,
-the environment and the local run. **Does not own:** the schemas and the `ROUTES` table
-themselves (`packages/contracts`, ADR-0007 and ADR-0013); the commands and queries a
-handler calls (`designing-application-core`); who may reach whose data
+request is checked in, the log line, the hosted entry's wiring, the environment and the
+local run. **Does not own:** the schemas and the `ROUTES` table themselves
+(`packages/contracts`, ADR-0007 and ADR-0013); the commands and queries a handler calls
+(`designing-application-core`); which authenticator runs, the credentials, the cookies
+and the `/v1/auth/*` endpoints (`authenticating-learners`); who may reach whose data
 (`isolating-learner-data`); the `ERR_*` vocabulary (`designing-errors`); the web client
 that calls it through the `/api` proxy (`building-web-screens`); where a test goes
 (`placing-tests`).
@@ -85,65 +85,15 @@ learner's answers, a header, a cookie, a token, an authorization code or an erro
 message: a message can quote what the caller or a dependency sent.
 `tests/api-log.test.ts` holds the shape and that absence.
 
-## The authenticators
+## Authentication
 
-`cognitoAuthenticator` in `apps/api/src/cognito-authenticator.ts` is the real one: it
-verifies a Cognito access token with `aws-jwt-verify` (`tokenUse: "access"`, the
-expected client id), read from `Authorization: Bearer` or, when that header is absent,
-from the `SESSION_COOKIE` the web session carries — never both, so the Bearer path reads
-no cookie. The cookie path also checks `Origin` on every state-changing request against
-the web origins it is handed. A token that does not verify is `ERR_UNAUTHENTICATED`; a
-key set that cannot be fetched throws, a bare 500, since it is not the caller's fault.
-Tests hand it a `keySet` signed for locally (`tests/cognito-tokens.ts`), and with one it
-never fetches.
-
-`localAuthenticator` in `apps/api/src/local-authenticator.ts` is the stand-in: it makes
-every request the one local subject, `LOCAL_SUBJECT`. Like any authenticator it yields
-only the subject: the learner is the one the learner directory maps it to, registered
-with the default profile on the first request, so a local run's learner id is minted,
-not configured. It authenticates nothing, so it must never be reachable from anywhere
-but this machine: only `main.ts` wires it, through `localRunAuthenticator`, and only
-when every `API_COGNITO_*` name is unset (they are set all four or none); the start-up
-line names which one ran (`"authenticator":"cognito"` or `"local"`). Either way the
-server listens on `127.0.0.1` alone, and `readApiEnv` refuses to start
-(`ERR_API_ENV_NOT_LOCAL`) where AWS marks the process as its own
-(`AWS_LAMBDA_FUNCTION_NAME`, `AWS_EXECUTION_ENV` or `ECS_CONTAINER_METADATA_URI`). The
-hosted entry never reaches it: see below. **REQUIRED:** `isolating-learner-data` before
-touching either.
-
-## The web sign-in endpoints
-
-ADR-0005's backend-for-frontend: the browser never holds a token.
-`apps/api/src/cognito-web-session.ts` serves four endpoints, listed with their log
-`operation` in `WEB_SESSION_ROUTES` (`apps/api/src/web-session.ts`), and `createApp`
-mounts them only when handed a `webSession`, which a local run does when a user pool is
-configured. They are not in contracts' `ROUTES`: three of them answer a browser
-navigation with a redirect rather than JSON, and none of them signs a learner in.
-
-- `GET /v1/auth/login` sends the browser to the managed login's `/oauth2/authorize` with
-  a fresh `state` and an S256 PKCE challenge, and keeps both secrets in the
-  `SIGN_IN_COOKIE` for ten minutes.
-- `GET /v1/auth/callback` is a top-level navigation from Cognito's domain, so it carries
-  no `Origin`: its CSRF check is the `state`, matched against the sign-in cookie
-  (`ERR_FORBIDDEN` when it is missing or differs). It redeems the code with the verifier
-  and the client secret — held by the server alone, sent as HTTP Basic to
-  `/oauth2/token` — and sets `SESSION_COOKIE` and `REFRESH_COOKIE`, then redirects to
-  `/`.
-- `POST /v1/auth/refresh` renews through `/oauth2/token`'s `refresh_token` grant and
-  keeps the rotated refresh token; `POST /v1/auth/logout` revokes it through
-  `/oauth2/revoke` (a failure there still signs out), drops both cookies and sends the
-  browser to the managed login's `/logout`. Both change state from a page, so a missing
-  or foreign `Origin` is `ERR_FORBIDDEN` before anything is read.
-
-Every cookie is `__Host-` prefixed and set `Path=/; HttpOnly; Secure; SameSite=Lax`
-(`apps/api/src/cookies.ts`); the prefix is why none of them can take a narrower path. A
-grant the pool refuses (`invalid_grant`) is `ERR_UNAUTHENTICATED`, and a refused refresh
-also drops the session's cookies; any other answer from the pool — unreachable, a
-misconfigured client, a body that is not a token set — throws `TokenEndpointError`, a
-bare 500 whose log line names the class alone. The callback and sign-out URLs a local
-run sends are `LOCAL_SIGN_IN_URLS`, which must stay the ones the `dev` web client
-registers in `infra/src/foundation-stack.ts`. Tests drive all four against the fake user
-pool domain in `tests/web-session-harness.ts`, never Cognito.
+Authentication is the first step of every request and the only one this skill does not
+hold. `createApp` is handed an `authenticator` and, when a user pool is configured, a
+`webSession` whose `/v1/auth/*` endpoints it mounts outside `ROUTES`; `main.ts` picks
+Cognito's or the stand-in through `localRunAuthenticator`, and the hosted entry always
+builds Cognito's. **REQUIRED:** `authenticating-learners` for which authenticator runs
+where, the credential paths and cookies, the sign-in endpoints and the `API_COGNITO_*`
+names, and `isolating-learner-data` before touching either authenticator.
 
 ## The hosted entry
 
@@ -152,26 +102,15 @@ the one module besides `main.ts` that wires AWS: the DynamoDB stores and directo
 the function's Region (`regionalDynamoDbClient`), the catalog snapshot bundled with the
 function, and `hostedHandler` from `apps/api/src/hosted.ts`, which runs the app through
 `hono/aws-lambda`'s `handle` and puts every `Set-Cookie` in the result's `cookies`.
-`hostedApp` builds `cognitoAuthenticator` and the web sign-in endpoints itself from
-`HostedEnv`, and `HostedDependencies` has no `authenticator` field, so the stand-in
-cannot be wired. Its web origins, callback URL and sign-out URL come from `API_WEB_*`,
-never from `LOCAL_WEB_ORIGINS` or `LOCAL_SIGN_IN_URLS`.
+`hostedApp` builds the authenticator and the web sign-in endpoints itself from
+`HostedEnv`, so nothing hands it one.
 
 `readHostedEnv` validates the hosted environment once, when `lambda.ts` is first loaded,
 and throws — failing the function's start — unless every `HOSTED_ENV_NAMES` entry but
-the extension's port is set; `API_COGNITO_CLIENT_SECRET` is refused there. The web app
-client's secret is a Parameter Store `SecureString` named by
-`API_COGNITO_CLIENT_SECRET_PARAMETER`, read by `readSecureString` through the AWS
-Parameters and Secrets Lambda extension on `localhost:2773` with the function's
-`AWS_SESSION_TOKEN` as `X-Aws-Parameters-Secrets-Token`. It is asked on every sign-in
-endpoint call rather than held by the process: the extension's own cache holds it for at
-most 300 seconds, so a rotated secret reaches a warm function within that bound. A read
-that fails, or a parameter that is plain text or holds no client secret, throws
-`SecretParameterError` (`ERR_API_SECRET_UNREADABLE`), a bare 500 whose log line names
-the class alone; neither the secret nor the session token is ever put into an error or a
-log line. The hosted names are set by the app stack, not a shell, so `.env.example` does
-not list them. `tests/api-lambda.test.ts` drives `hostedHandler` with HTTP API events
-against the fake user pool domain and a fake extension, and
+the extension's port is set. How the web app client's secret reaches the function, and
+why `API_COGNITO_CLIENT_SECRET` is refused there, is `authenticating-learners`'. The
+hosted names are the `app` stack's to set, never a shell's, so `.env.example` does not
+list them. `tests/api-lambda.test.ts` drives `hostedHandler` with HTTP API events, and
 `tests/api-local-run.test.ts` loads `lambda.ts` itself with and without its
 configuration.
 

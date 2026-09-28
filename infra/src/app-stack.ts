@@ -24,6 +24,7 @@ import { StringParameter } from "aws-cdk-lib/aws-ssm";
 import { type Construct } from "constructs";
 
 import { addApiFunction } from "./api-function";
+import { addObservability } from "./observability";
 import {
   FOUNDATION_PARAMETERS,
   type FoundationParameter,
@@ -72,6 +73,8 @@ export interface AppStackProps extends StackProps {
    * the function is bundled from `apps/api` and the catalog from `content/`.
    */
   readonly repositoryRoot: string;
+  /** The address the alarm topic mails, from deploy-time context; never committed. */
+  readonly alarmEmail?: string | undefined;
 }
 
 /**
@@ -87,7 +90,7 @@ export class AppStack extends Stack {
   constructor(
     scope: Construct,
     id: string,
-    { stage, repositoryRoot, ...props }: AppStackProps,
+    { stage, repositoryRoot, alarmEmail, ...props }: AppStackProps,
   ) {
     super(scope, id, props);
     const foundation = (parameter: FoundationParameter): string =>
@@ -113,9 +116,10 @@ export class AppStack extends Stack {
       secretParameterName: webClientSecretParameterName(stage),
     });
 
+    const tableName = foundation(FOUNDATION_PARAMETERS.learnerTableName);
     const handler = addApiFunction(this, {
       repositoryRoot,
-      tableName: foundation(FOUNDATION_PARAMETERS.learnerTableName),
+      tableName,
       tableArn: foundation(FOUNDATION_PARAMETERS.learnerTableArn),
       userPoolId: foundation(FOUNDATION_PARAMETERS.userPoolId),
       clientId: webClient.clientId,
@@ -129,6 +133,8 @@ export class AppStack extends Stack {
       path: "/{proxy+}",
       integration: new HttpLambdaIntegration("ApiIntegration", handler),
     });
+
+    addObservability(this, { stage, api, handler, tableName, alarmEmail });
 
     new CfnOutput(this, WEB_URL_OUTPUT, { value: webUrl });
     new CfnOutput(this, SPA_BUCKET_NAME_OUTPUT, { value: bucket.bucketName });
