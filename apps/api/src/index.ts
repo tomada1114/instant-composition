@@ -14,6 +14,12 @@ export {
   type CognitoAuthenticatorOptions,
 } from "./cognito-authenticator";
 export {
+  cognitoWebSession,
+  REFRESH_COOKIE,
+  SIGN_IN_COOKIE,
+  type CognitoWebSessionOptions,
+} from "./cognito-web-session";
+export {
   API_ENV_NAMES,
   ApiEnvError,
   readApiEnv,
@@ -23,8 +29,10 @@ export {
 export { MAX_REQUEST_BODY_BYTES } from "./http";
 export { LOCAL_SUBJECT, localAuthenticator } from "./local-authenticator";
 export {
+  LOCAL_SIGN_IN_URLS,
   LOCAL_WEB_ORIGINS,
   localRunAuthenticator,
+  localRunWebSession,
   type LocalRunAuthenticator,
 } from "./local-run-authenticator";
 export { ensureTable } from "./local-table";
@@ -36,3 +44,14 @@ export {
   type OperationInput,
   type Outcome,
 } from "./operations";
+export {
+  TokenEndpointError,
+  type CognitoClient,
+  type Fetch,
+  type IssuedTokens,
+} from "./token-endpoint";
+export {
+  WEB_SESSION_ROUTES,
+  type WebSession,
+  type WebSessionAnswer,
+} from "./web-session";

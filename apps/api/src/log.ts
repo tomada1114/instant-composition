@@ -14,13 +14,17 @@ export type RequestOutcome = "ok" | ErrorCode | "unmatched" | "failed";
  * @remarks
  * Every field is present on every line, `null` where it does not apply, so a
  * log query never has to ask whether a key exists. A line never carries a
- * request body, a path, a card's text or a learner's answers: nothing here is
- * copied from what the caller sent.
+ * request body, a path, a card's text, a learner's answers, a token, a cookie
+ * or an authorization code: nothing here is copied from what the caller sent.
  */
 export interface LogLine {
   /** Made by the server for this request; never taken from a header. */
   readonly requestId: string;
-  /** The contract `operationId`, or `null` when no operation matched. */
+  /**
+   * The contract `operationId`, the web-session endpoint's name
+   * (`startSignIn`, `finishSignIn`, `refreshSession`, `signOut`), or `null`
+   * when no operation matched.
+   */
   readonly operation: string | null;
   readonly outcome: RequestOutcome;
   readonly status: number;

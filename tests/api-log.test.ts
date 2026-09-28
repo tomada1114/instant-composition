@@ -5,6 +5,7 @@ import type { Catalog } from "@instant-composition/application";
 
 import { batchFor, makeApi, startedPlacement } from "./api-harness";
 import { makeSnapshot } from "./application-harness";
+import { CLIENT_SECRET, makeWebApi, WEB_ORIGIN } from "./web-session-harness";
 
 // One JSON line per request: the request id, the contract operation, how it
 // ended, the status and how long it took — and nothing the caller sent.
@@ -130,6 +131,42 @@ describe("the request log", () => {
     expect(written).not.toContain(card?.prompt);
     expect(written).not.toContain('"ng"');
     expect(written).not.toContain("travel");
+  });
+
+  it("carries no token, cookie, code, state or secret of a web sign-in", async () => {
+    const web = makeWebApi();
+    await web.signIn("subject-a");
+    await web.browser.request("GET", "/v1/home");
+    await web.browser.request("POST", "/v1/auth/refresh", { origin: WEB_ORIGIN });
+    const { code } = web.cognito.signIn(
+      (await web.browser.request("GET", "/v1/auth/login")).headers.get("location") ??
+        "",
+      "subject-a",
+    );
+    await web.browser.request("GET", `/v1/auth/callback?code=${code}&state=forged`);
+    await web.browser.request("POST", "/v1/auth/logout", { origin: WEB_ORIGIN });
+    const written = JSON.stringify(web.api.lines);
+    const verifiers = web.cognito.calls.flatMap((call) =>
+      call.form["code_verifier"] === undefined ? [] : [call.form["code_verifier"]],
+    );
+
+    expect(web.api.lines.map((line) => line.operation)).toStrictEqual([
+      "startSignIn",
+      "finishSignIn",
+      "getHome",
+      "refreshSession",
+      "startSignIn",
+      "finishSignIn",
+      "signOut",
+    ]);
+    expect(web.cognito.issued).toHaveLength(8);
+    expect(verifiers).toHaveLength(1);
+    for (const secret of [...web.cognito.issued, ...verifiers, CLIENT_SECRET]) {
+      expect(written).not.toContain(secret);
+    }
+    for (const name of ["__Host-", "cookie", "Bearer", "subject-a", "forged"]) {
+      expect(written).not.toContain(name);
+    }
   });
 
   it("writes each line as one line of JSON", () => {
