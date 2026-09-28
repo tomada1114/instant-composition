@@ -41,8 +41,13 @@ tracker in step.
   off an issue listing beside its priority and its `blocked:` labels.
 - **No dates.** There are no due dates and no schedule. Only the order is recorded.
 - **Issues are cut when a phase comes within reach.** Phases 0 through 3 have work items
-  now, and Phase 4 has the Paid-plan upgrade and the table protection after it. A later
-  phase is split when it starts, against the code, skills and ADRs that exist by then.
+  now. A later phase is split when it starts, against the code, skills and ADRs that
+  exist by then.
+- **The Paid plan is the owner's.** The owner upgrades the `dev` account before the Free
+  plan's six months or its credits run out, and that upgrade is not an issue. Only a
+  feature that needs a service or setting the Free plan does not allow gets an upgrade
+  issue, labelled `blocked: external` and named in the feature's `Depends on:` line
+  ([ADR-0009](adr/0009-aws-topology-environments-and-operations.md)).
 - **Platform skills record only this project's decisions.** A phase that introduces a
   platform area (infrastructure code, logging, authentication, LLM calls) also adds or
   extends a project skill for it. That skill holds only what this project decided;
@@ -175,12 +180,12 @@ observed:
   credits.
 
 - Stay on the Free plan. Every service this phase uses is on its service list
-  ([references](references.md#operations-and-cost)), and nothing in the phase brings the
-  Paid-plan upgrade forward; the upgrade belongs to Phase 4.
+  ([references](references.md#operations-and-cost)), and nothing in the phase needs the
+  Paid plan.
 
 - `infra/`: a CDK app with a stage setting. The `foundation` stack in `dev` holds:
   - the DynamoDB table, retained by CloudFormation on stack deletion or replacement,
-    without point-in-time recovery or deletion protection until the Paid-plan upgrade
+    without point-in-time recovery or deletion protection, which `dev` does without
     ([ADR-0009](adr/0009-aws-topology-environments-and-operations.md)).
 
   Infrastructure is added when it is first needed, so the Cognito user pool arrives with
@@ -253,21 +258,12 @@ stages, foundation stack, deploys).
 - The deploy-on-merge pipeline extended to the `app` stack.
 - The observability baseline, sized to CloudWatch's free tier: alarms on API errors,
   Lambda errors and throttles, and DynamoDB throttles, plus one dashboard.
-- Upgrade the account to the Paid plan (#49), which the owner does in the console.
-  Upgrading keeps the credits. The Free plan also ends when its six months end or its
-  credits run out, and an account that reaches that end closes, so the owner upgrades
-  earlier if either comes near; an agent does not track them.
-- Point-in-time recovery (7 days) and deletion protection turned on for the `dev` table,
-  once the account is on the Paid plan
-  ([ADR-0009](adr/0009-aws-topology-environments-and-operations.md)).
 
 **Exit.**
 
 - The `dev` URL serves the app over HTTPS, to the owner only.
 - A merge reaches it with no manual step.
 - An alarm fires on API errors.
-- `aws dynamodb describe-continuous-backups` and `aws dynamodb describe-table` show
-  point-in-time recovery and deletion protection on for the `dev` table.
 
 **AWS.** CloudFront, S3, API Gateway, Lambda, CloudWatch.
 
@@ -477,7 +473,8 @@ owner's machine.
   the same grader later through a transcription step.
 - **Cognito threat protection.** It requires the Plus plan, which has no free tier; it
   is switched on when abuse is observed, not in anticipation.
-- **Restore drills and SLOs.** Point-in-time recovery is on from the start; rehearsing a
-  restore and committing to service levels are a step beyond "portfolio grade".
+- **Restore drills and SLOs.** Point-in-time recovery is on in `prod` from the start;
+  rehearsing a restore and committing to service levels are a step beyond "portfolio
+  grade".
 - **An analytics store.** Evaluation and cost questions are answered from logs and
   exports until one of them genuinely needs ad hoc queries over learner data.
