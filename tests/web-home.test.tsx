@@ -1,5 +1,5 @@
 import { act, fireEvent, screen } from "@testing-library/react";
-import { afterEach, beforeEach, describe, expect, it } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { TUNING, type HomeView } from "@instant-composition/web";
 
@@ -409,6 +409,43 @@ describe("the home screen before and instead of the home view", () => {
     expect(
       screen.getByRole("button", { name: ja.Home.today.start }),
     ).toBeInTheDocument();
+  });
+
+  it("stays loading, with no failure, while the browser goes to sign in", async () => {
+    const visited: string[] = [];
+    const real = window.location;
+    const assign = (url: string): void => {
+      visited.push(url);
+    };
+    vi.stubGlobal(
+      "location",
+      // A proxy over the real Location would break the invariant its
+      // non-configurable `assign` imposes, so it wraps an empty target.
+      new Proxy(
+        {},
+        {
+          get: (_, key) => {
+            if (key === "assign") return assign;
+            const value: unknown = Reflect.get(real, key);
+            const read: unknown =
+              typeof value === "function" ? value.bind(real) : value;
+            return read;
+          },
+        },
+      ),
+    );
+    fakeApi((call) =>
+      call.url === "/api/v1/home" || call.url === "/api/v1/auth/refresh"
+        ? refusal(401, "ERR_UNAUTHENTICATED")
+        : undefined,
+    );
+    await renderApp("/");
+    await settle(TUNING.skeletonDelayMs);
+    expect(visited).toStrictEqual(["/api/v1/auth/login"]);
+    expect(
+      screen.queryByRole("heading", { name: ja.Home.loadFailed.title }),
+    ).not.toBeInTheDocument();
+    expect(document.querySelector("main")?.childElementCount).toBe(3);
   });
 
   it("says the cards could not be read, and reads the view again on request", async () => {
