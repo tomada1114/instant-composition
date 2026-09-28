@@ -80,3 +80,58 @@ describe("the foundation stack's learner table", () => {
     expect(outputs[LEARNER_TABLE_NAME_OUTPUT]).not.toHaveProperty("Export");
   });
 });
+
+// ADR-0005's user pool, with the stage differences ADR-0009's Stages table
+// names: self sign-up off and Cognito's own sender in `dev`.
+describe("the foundation stack's user pool", () => {
+  it.each<Stage>(["dev", "prod"])(
+    "is one Essentials pool signed in to by email in %s",
+    (stage) => {
+      const template = foundationTemplate(stage);
+      expect(
+        Object.keys(template.findResources("AWS::Cognito::UserPool")),
+      ).toHaveLength(1);
+      expect(() =>
+        template.hasResourceProperties("AWS::Cognito::UserPool", {
+          UserPoolTier: "ESSENTIALS",
+          UsernameAttributes: ["email"],
+          UsernameConfiguration: { CaseSensitive: false },
+          AutoVerifiedAttributes: ["email"],
+          MfaConfiguration: "OFF",
+        }),
+      ).not.toThrow();
+    },
+  );
+
+  it.each<[Stage, boolean]>([
+    ["dev", true],
+    ["prod", false],
+  ])("lets only an administrator create users in %s: %s", (stage, adminOnly) => {
+    expect(() =>
+      foundationTemplate(stage).hasResourceProperties("AWS::Cognito::UserPool", {
+        AdminCreateUserConfig: { AllowAdminCreateUserOnly: adminOnly },
+      }),
+    ).not.toThrow();
+  });
+
+  it("sends its email through Cognito's own sender in dev", () => {
+    expect(() =>
+      foundationTemplate("dev").hasResourceProperties("AWS::Cognito::UserPool", {
+        EmailConfiguration: { EmailSendingAccount: "COGNITO_DEFAULT" },
+      }),
+    ).not.toThrow();
+  });
+
+  it.each<Stage>(["dev", "prod"])(
+    "is retained on delete and on replacement, and protected from deletion, in %s",
+    (stage) => {
+      expect(() =>
+        foundationTemplate(stage).hasResource("AWS::Cognito::UserPool", {
+          DeletionPolicy: "Retain",
+          UpdateReplacePolicy: "Retain",
+          Properties: { DeletionProtection: "ACTIVE" },
+        }),
+      ).not.toThrow();
+    },
+  );
+});
