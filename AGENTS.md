@@ -346,7 +346,7 @@ names its own boundary with its neighbours.
 | `recording-architecture-decisions` | `docs/architecture/`, or whether a change owes an ADR: a boundary, persistence shape, external contract, provider, or security model      |
 | `designing-application-core`       | domain rules, commands, queries, ports and adapters, projections, idempotency, or code that reads the clock or a timezone                 |
 | `isolating-learner-data`           | an endpoint, store method, session or token handling, job, or model tool that touches a learner's data                                    |
-| `serving-the-api`                  | an operation handler, the request log's fields, the stand-in authenticator, or the local run under `apps/api/`                            |
+| `serving-the-api`                  | an operation handler, the request log's fields, the stand-in authenticator, the local run or the Lambda entry under `apps/api/`           |
 | `writing-infrastructure`           | a stack, construct or stage setting under `infra/`, `pnpm cdk`, the deploy role, or `.github/workflows/deploy-dev.yml`                    |
 
 ## Security and human approval

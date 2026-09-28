@@ -4,10 +4,10 @@ description: >
   Covers apps/api, the Hono app serving packages/contracts' ROUTES under /api/v1: an
   operation handler, the route-table check, the error envelope and body reader, the
   per-request log line, the Cognito and stand-in authenticators, the web sign-in
-  endpoints under /v1/auth/, apps/api/src/env.ts and .env.example, and pnpm api or pnpm
-  dev. Use when an endpoint is added to the contract, a log field is added, an API_*
-  variable is added, the sign-in, refresh or logout flow changes, a request is refused
-  with an unexpected code, or the local API will not start.
+  endpoints under /v1/auth/, the Lambda entry, apps/api/src/env.ts and .env.example, and
+  pnpm api or pnpm dev. Use when an endpoint is added to the contract, a log field is
+  added, an API_* variable is added, the sign-in, refresh or logout flow changes, a
+  request is refused with an unexpected code, or the API will not start.
 ---
 
 # Serving the API
@@ -107,9 +107,9 @@ when every `API_COGNITO_*` name is unset (they are set all four or none); the st
 line names which one ran (`"authenticator":"cognito"` or `"local"`). Either way the
 server listens on `127.0.0.1` alone, and `readApiEnv` refuses to start
 (`ERR_API_ENV_NOT_LOCAL`) where AWS marks the process as its own
-(`AWS_LAMBDA_FUNCTION_NAME`, `AWS_EXECUTION_ENV` or `ECS_CONTAINER_METADATA_URI`). A
-hosted entry (Phase 4's Lambda handler) takes `cognitoAuthenticator` directly.
-**REQUIRED:** `isolating-learner-data` before touching either.
+(`AWS_LAMBDA_FUNCTION_NAME`, `AWS_EXECUTION_ENV` or `ECS_CONTAINER_METADATA_URI`). The
+hosted entry never reaches it: see below. **REQUIRED:** `isolating-learner-data` before
+touching either.
 
 ## The web sign-in endpoints
 
@@ -145,12 +145,44 @@ run sends are `LOCAL_SIGN_IN_URLS`, which must stay the ones the `dev` web clien
 registers in `infra/src/foundation-stack.ts`. Tests drive all four against the fake user
 pool domain in `tests/web-session-harness.ts`, never Cognito.
 
+## The hosted entry
+
+`apps/api/src/lambda.ts` is the Lambda handler behind API Gateway's HTTP API (ADR-0009),
+the one module besides `main.ts` that wires AWS: the DynamoDB stores and directory in
+the function's Region (`regionalDynamoDbClient`), the catalog snapshot bundled with the
+function, and `hostedHandler` from `apps/api/src/hosted.ts`, which runs the app through
+`hono/aws-lambda`'s `handle` and puts every `Set-Cookie` in the result's `cookies`.
+`hostedApp` builds `cognitoAuthenticator` and the web sign-in endpoints itself from
+`HostedEnv`, and `HostedDependencies` has no `authenticator` field, so the stand-in
+cannot be wired. Its web origins, callback URL and sign-out URL come from `API_WEB_*`,
+never from `LOCAL_WEB_ORIGINS` or `LOCAL_SIGN_IN_URLS`.
+
+`readHostedEnv` validates the hosted environment once, when `lambda.ts` is first loaded,
+and throws — failing the function's start — unless every `HOSTED_ENV_NAMES` entry but
+the extension's port is set; `API_COGNITO_CLIENT_SECRET` is refused there. The web app
+client's secret is a Parameter Store `SecureString` named by
+`API_COGNITO_CLIENT_SECRET_PARAMETER`, read by `readSecureString` through the AWS
+Parameters and Secrets Lambda extension on `localhost:2773` with the function's
+`AWS_SESSION_TOKEN` as `X-Aws-Parameters-Secrets-Token`. It is asked on every sign-in
+endpoint call rather than held by the process: the extension's own cache holds it for at
+most 300 seconds, so a rotated secret reaches a warm function within that bound. A read
+that fails, or a parameter that is plain text or holds no client secret, throws
+`SecretParameterError` (`ERR_API_SECRET_UNREADABLE`), a bare 500 whose log line names
+the class alone; neither the secret nor the session token is ever put into an error or a
+log line. The hosted names are set by the app stack, not a shell, so `.env.example` does
+not list them. `tests/api-lambda.test.ts` drives `hostedHandler` with HTTP API events
+against the fake user pool domain and a fake extension, and
+`tests/api-local-run.test.ts` loads `lambda.ts` itself with and without its
+configuration.
+
 ## Environment and the local run
 
 `apps/api/src/env.ts` is the only module in `apps/api` that reads `process.env`, and
-`API_ENV_NAMES` lists what it reads; every name has a default or is optional, so none
-has to be set. No `.env` file is loaded, so the names come from the shell. Adding a name
-means adding it to `apps/api/src/env.ts` _and_ to `.env.example` with an empty value;
+`API_ENV_NAMES` lists what the local run reads (`HOSTED_ENV_NAMES` the hosted entry's);
+every local name has a default or is optional, so none has to be set. The rule each
+value is held to lives in `apps/api/src/env-values.ts`, shared by both readers. No
+`.env` file is loaded, so the names come from the shell. Adding a name means adding it
+to `apps/api/src/env.ts` _and_ to `.env.example` with an empty value;
 `tests/env-example.test.ts` fails until the two agree, and is the check to run first. A
 blank value reads as absent, and a value no setting accepts stops the process at start
 (`ERR_API_ENV_INVALID`, naming every such variable) rather than returning a `Result`: a
