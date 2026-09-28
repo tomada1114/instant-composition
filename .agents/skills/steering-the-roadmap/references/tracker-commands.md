@@ -29,6 +29,51 @@ query($owner: String!, $name: String!) {
 A closed phase parent drops out of this list. To see the landed phases as well, change
 `states: OPEN` to `states: [OPEN, CLOSED]`.
 
+## One phase at a glance
+
+```bash
+gh issue list --state all --label "phase: 3" --limit 100
+```
+
+## Phase labels that disagree with the sub-issue links
+
+Every open sub-issue of a phase parent carries that parent's `phase: N` and no other
+phase label. This prints each one that does not; no output means the two agree:
+
+```bash
+gh api graphql -F owner='{owner}' -F name='{repo}' -f query='
+query($owner: String!, $name: String!) {
+  repository(owner: $owner, name: $name) {
+    issues(first: 50, states: [OPEN, CLOSED], labels: ["on hold"]) {
+      nodes {
+        title
+        subIssues(first: 50) {
+          nodes { number state labels(first: 20) { nodes { name } } }
+        }
+      }
+    }
+  }
+}' --jq '.data.repository.issues.nodes[]
+  | select(.title | startswith("Phase "))
+  | (.title | capture("^Phase (?<n>[0-9]+)").n) as $n
+  | .subIssues.nodes[]
+  | select(.state == "OPEN")
+  | (.labels.nodes | map(.name) | map(select(startswith("phase: ")))) as $p
+  | select($p != ["phase: \($n)"])
+  | "#\(.number) under Phase \($n) carries \($p)"'
+```
+
+It checks open work items only: a closed phase is left as it landed, and a parent's own
+label is checked by eye in `gh issue list --label "phase: N"`.
+
+## Labelling a work item with its phase
+
+```bash
+gh issue edit <n> --add-label "phase: <N>"
+# moving it: swap the label with the sub-issue link (removeSubIssue, then addSubIssue)
+gh issue edit <n> --remove-label "phase: <old>" --add-label "phase: <new>"
+```
+
 ## One issue's dependencies
 
 ```bash

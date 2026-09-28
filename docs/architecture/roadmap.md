@@ -37,10 +37,12 @@ tracker in step.
   the exit criteria. It carries `on hold` because it is a container, not a unit of work.
 - **Sub-issues.** A phase's work items are sub-issues of its parent, ordered by
   `Depends on: #N` lines.
+- **Phase labels.** The parent and each work item carry `phase: N`, so the phase reads
+  off an issue listing beside its priority and its `blocked:` labels.
 - **No dates.** There are no due dates and no schedule. Only the order is recorded.
-- **Issues are cut when a phase comes within reach.** Phases 0, 1 and 2, and the first
-  step of Phase 3, have work items now. A later phase is split when it starts, against
-  the code, skills and ADRs that exist by then.
+- **Issues are cut when a phase comes within reach.** Phases 0 through 3 have work items
+  now, and Phase 4 has the Paid-plan upgrade and the table protection after it. A later
+  phase is split when it starts, against the code, skills and ADRs that exist by then.
 - **Platform skills record only this project's decisions.** A phase that introduces a
   platform area (infrastructure code, logging, authentication, LLM calls) also adds or
   extends a project skill for it. That skill holds only what this project decided;

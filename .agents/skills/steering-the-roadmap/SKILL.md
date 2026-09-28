@@ -31,7 +31,8 @@ The plan has two homes and no third:
   it links say what each phase builds, and why.
 - **GitHub** holds one parent issue per phase, titled "Phase N — …" and labelled
   `on hold`. The phase's work items are sub-issues of that parent, ordered by
-  `Depends on: #N` lines. There are no milestones and no dates.
+  `Depends on: #N` lines. The parent and every work item carry `phase: N`, so a listing
+  shows the phase without opening an issue. There are no milestones and no dates.
 
 Do not keep a plan anywhere else: no notes file, no memory entry, no TODO list in a
 comment. A decision that changes the plan lands in one of those two homes, or it is lost
@@ -101,7 +102,8 @@ For each change the owner asks for:
 2. **Classify it:**
    - **Order or scope inside the existing design.** Edit the roadmap, then update the
      tracker to match: parents' titles and bodies, `Depends on:` lines, labels and
-     sub-issue links.
+     sub-issue links. An item that moves phase swaps its `phase: N` label and its
+     sub-issue link together.
    - **A change to an ADR decision** — a context boundary, a persistence shape, a
      contract, a provider or the security model. **REQUIRED:**
      `recording-architecture-decisions` first: the ADR rewritten in place, or a
@@ -139,8 +141,12 @@ owner asks.
   project skill that records this project's own decisions. **BACKGROUND:**
   `authoring-skills`.
 - Show the owner the proposed list before creating anything.
-- Once the owner approves, create the issues and link each one to its phase parent as a
-  sub-issue ([tracker-commands.md](references/tracker-commands.md)).
+- Once the owner approves, create the issues with the phase's `phase: N` label and link
+  each one to its phase parent as a sub-issue
+  ([tracker-commands.md](references/tracker-commands.md)).
+- A follow-up filed while shipping carries no phase label. When the status query shows
+  one under a parent, or an open issue sits outside every phase, place it: link and
+  label together. **BACKGROUND:** `triaging-issues`.
 
 ## Talking with the owner
 
