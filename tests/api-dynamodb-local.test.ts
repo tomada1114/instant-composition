@@ -54,6 +54,32 @@ describe("the API on DynamoDB local", () => {
     expect((await api.directory.learnerOf(LOCAL_SUBJECT))?.learnerId).toBe("learner-1");
   });
 
+  it("changes nothing when the same batch is posted twice, before and after finish", async () => {
+    const api = makeApi(await tables.freshBacking());
+    const round = await startedPlacement(api);
+    const batch = batchFor(round);
+    const store = api.stores.forLearner(learnerId("learner-1"));
+    const held = async () =>
+      Promise.all([
+        store.round("p1"),
+        store.reviewsOf("p1"),
+        store.stats(),
+        store.items(),
+      ]);
+
+    expect((await api.call("POST", "/v1/rounds/p1/answers", batch)).status).toBe(204);
+    const once = await held();
+    expect((await api.call("POST", "/v1/rounds/p1/answers", batch)).status).toBe(204);
+    expect(await held()).toStrictEqual(once);
+
+    expect(
+      (await api.call("POST", "/v1/rounds/p1/finish", { answers: [] })).status,
+    ).toBe(200);
+    const finished = await held();
+    expect((await api.call("POST", "/v1/rounds/p1/answers", batch)).status).toBe(204);
+    expect(await held()).toStrictEqual(finished);
+  });
+
   it("changes the profile registration wrote, and signs the next request in with it", async () => {
     const backing = await tables.freshBacking();
     const a = makeApi({ ...backing, authenticator: subjectAuthenticator("subject-a") });

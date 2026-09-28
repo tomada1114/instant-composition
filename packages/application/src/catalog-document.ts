@@ -1,6 +1,7 @@
 import {
   countWords,
   type CardContent,
+  type ConceptId,
   type RetiredCard,
   type TopicInfo,
 } from "@instant-composition/domain";
@@ -16,9 +17,6 @@ import type { CatalogSnapshot, LevelInfo } from "./catalog";
 
 /** A BCP 47 language tag, such as `en` or `ja`. */
 export type LanguageTag = string;
-
-/** A concept namespaced by its target language, such as `en:grammar/present-perfect`. */
-export type ConceptId = string;
 
 export type Localized<T> = Readonly<Partial<Record<LanguageTag, T>>>;
 
@@ -107,6 +105,15 @@ function topicsFor(topics: readonly TopicEntry[], l1: LanguageTag): TopicInfo[] 
   }));
 }
 
+function conceptNamesFor(
+  concepts: readonly ConceptEntry[],
+  l1: LanguageTag,
+): Map<ConceptId, string> {
+  return new Map(
+    concepts.map((concept) => [concept.id, concept.names[l1] ?? concept.id]),
+  );
+}
+
 function levelsOf(steps: readonly LevelStep[]): Map<number, LevelInfo> {
   return new Map(
     steps.map((step) => [
@@ -135,7 +142,7 @@ export function catalogSnapshotOf(
   }
   const shown = new Map<string, CardContent>();
   for (const item of document.items) {
-    const { id, topic, subtopic, level, text, alternatives } = item;
+    const { id, topic, subtopic, level, text, alternatives, concepts } = item;
     const words = countWords(text);
     const localization = item.localizations[l1];
     if (localization === undefined) {
@@ -149,6 +156,7 @@ export function catalogSnapshotOf(
       subtopic,
       level,
       words,
+      concepts,
       prompt,
       text,
       alternatives,
@@ -161,6 +169,7 @@ export function catalogSnapshotOf(
     l1,
     topics: topicsFor(document.topics, l1),
     levels: levelsOf(document.levels),
+    conceptNames: conceptNamesFor(document.concepts, l1),
     shown,
     retired,
   };

@@ -58,6 +58,31 @@ describe("snapshotCatalog", () => {
     expect(read.value.topics.map((topic) => topic.name)).toContain("日常");
   });
 
+  it("carries each shown card's grammar concepts and every concept's name as the build wrote them", async () => {
+    const document = built();
+    const items = document["items"] as { id: string; concepts: string[] }[];
+    const concepts = document["concepts"] as { id: string; names: { ja: string } }[];
+    const practising = items.filter((item) => item.concepts.length > 0);
+
+    const read = await snapshotCatalog(file).snapshot();
+
+    if (!read.ok) {
+      throw new Error("The built snapshot was not readable.");
+    }
+    expect(practising).not.toHaveLength(0);
+    expect(
+      practising.map((item) => read.value.shown.get(item.id)?.concepts),
+    ).toStrictEqual(practising.map((item) => item.concepts));
+    expect(
+      practising
+        .flatMap((item) => item.concepts)
+        .filter((id) => !id.startsWith("en:grammar/")),
+    ).toStrictEqual([]);
+    expect(read.value.conceptNames).toStrictEqual(
+      new Map(concepts.map((concept) => [concept.id, concept.names.ja])),
+    );
+  });
+
   it("answers ERR_CONTENT_UNREADABLE with reason missing for a missing file", async () => {
     expect(await snapshotCatalog(file).snapshot()).toStrictEqual(MISSING);
   });

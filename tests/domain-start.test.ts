@@ -26,6 +26,7 @@ const CARDS: CardMeta[] = Array.from({ length: 40 }, (_, index) => ({
   subtopic: index % 2 === 0 ? "a" : "b",
   level: (index % 10) + 1,
   words: 8,
+  concepts: [],
 }));
 
 function state(

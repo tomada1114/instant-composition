@@ -26,5 +26,13 @@ export function makeAnswer(overrides: Partial<AnswerRecord> = {}): AnswerRecord 
 }
 
 export function makeCardMeta(id: string, overrides: Partial<CardMeta> = {}): CardMeta {
-  return { id, topic: "work", subtopic: "meetings", level: 5, words: 8, ...overrides };
+  return {
+    id,
+    topic: "work",
+    subtopic: "meetings",
+    level: 5,
+    words: 8,
+    concepts: [],
+    ...overrides,
+  };
 }

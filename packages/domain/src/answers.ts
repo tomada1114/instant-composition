@@ -34,13 +34,18 @@ export interface CardFacts {
   readonly words: number | null;
 }
 
-/** Refuses the whole batch when any answer names another round or an unknown card. */
+/**
+ * Refuses the whole batch when any answer names another round or an unknown
+ * card. A finished round refuses only a batch carrying an id it does not hold,
+ * so a replayed batch stays safe after finish.
+ */
 export function checkAnswers(
   round: Round,
   inputs: readonly AnswerInput[],
   cards: ReadonlyMap<string, CardFacts>,
+  recorded: ReadonlySet<string>,
 ): Result<undefined, PracticeError> {
-  if (round.finishedAt !== null) {
+  if (round.finishedAt !== null && inputs.some((input) => !recorded.has(input.id))) {
     return err({ code: "ERR_ROUND_CLOSED" });
   }
   const valid = inputs.every(
