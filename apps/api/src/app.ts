@@ -5,6 +5,7 @@ import { answer, type ApiDependencies } from "./answer";
 import type { LogLine, RequestOutcome } from "./log";
 import { OPERATIONS, type Operation } from "./operations";
 import { bindRoutes, routerPath } from "./routes";
+import { WEB_SESSION_ROUTES } from "./web-session";
 
 /** The path every contract route is served under: a client calls `/api` + its path. */
 export const API_ROOT = "/api";
@@ -35,8 +36,9 @@ export type ApiApp = Hono<{ Variables: ApiVariables }>;
 
 /**
  * The API as a Web-standard app: `app.fetch(request)` answers every contract
- * route in `packages/contracts`' `ROUTES` under {@link API_ROOT}, and writes
- * one log line per request, matched or not.
+ * route in `packages/contracts`' `ROUTES` under {@link API_ROOT}, and the web
+ * sign-in endpoints when `deps.webSession` is given, and writes one log line
+ * per request, matched or not.
  *
  * @throws {@link RouteTableError} when a contract route has no handler or a
  * handler has no contract route, so a gap is found when the app is built
@@ -94,6 +96,18 @@ export function createApp(
         return answered.response;
       },
     );
+  }
+
+  const session = deps.webSession;
+  if (session !== undefined) {
+    for (const { method, path, operation } of WEB_SESSION_ROUTES) {
+      app.on(method, `${API_ROOT}${path}`, async (c) => {
+        c.set("operation", operation);
+        const answered = await session[operation](c.req.raw);
+        c.set("outcome", answered.outcome);
+        return answered.response;
+      });
+    }
   }
 
   app.notFound(() => new Response(null, { status: 404 }));

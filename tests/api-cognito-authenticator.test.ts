@@ -182,6 +182,8 @@ describe("localRunAuthenticator", () => {
     const chosen = localRunAuthenticator({
       userPoolId: USER_POOL_ID,
       clientId: CLIENT_ID,
+      clientSecret: "testclientsecret1",
+      domain: "https://test-pool.auth.ap-northeast-1.amazoncognito.com",
     });
     expect(chosen.kind).toBe("cognito");
     expect(await chosen.authenticator.authenticate(request("GET", {}))).toStrictEqual(
