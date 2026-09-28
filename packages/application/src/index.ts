@@ -50,6 +50,7 @@ export type {
   RecordsView,
   SettingsPageView,
   TitleGroup,
+  WeakPoints,
 } from "./query-views";
 export { recordAnswers, type RecordAnswersCommand } from "./record-answers";
 export { records } from "./records";

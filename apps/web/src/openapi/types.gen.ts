@@ -240,6 +240,7 @@ export type HomePreview = {
     reviewCount: number;
     newCount: number;
     focusNames: Array<string>;
+    weakNames: Array<string>;
     minutes: number;
 };
 
@@ -275,9 +276,22 @@ export type TitleGroup = {
     values: Array<number>;
 };
 
+export type WeakPoints = {
+    grammar: Array<{
+        id: string;
+        name: string;
+    }>;
+    subtopics: Array<{
+        topic: string;
+        subtopic: string;
+        name: string;
+    }>;
+};
+
 export type RecordsView = {
     reach: ReachView;
     breakdown: Array<BreakdownTopic>;
+    weak: WeakPoints;
     toeic: string | null;
     streak: {
         current: number;
