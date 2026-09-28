@@ -6,12 +6,20 @@ import {
 import { Template } from "aws-cdk-lib/assertions";
 import { describe, expect, it } from "vitest";
 
-function deployAccessTemplate(): Template {
+function synthesizeDeployAccess(): Template {
   const stack = buildApp({ stage: "dev" }).app.node.findChild("deploy-access");
   if (!(stack instanceof DeployAccessStack)) {
     throw new TypeError("the dev app has no deploy-access stack");
   }
   return Template.fromStack(stack);
+}
+
+// Synthesized once at collection, outside any test's timeout: the first
+// synthesis loads aws-cdk-lib and alone takes seconds (#150).
+const TEMPLATE = synthesizeDeployAccess();
+
+function deployAccessTemplate(): Template {
+  return TEMPLATE;
 }
 
 function onlyResource(template: Template, type: string): Record<string, unknown> {

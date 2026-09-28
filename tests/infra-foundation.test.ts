@@ -12,12 +12,23 @@ import {
 import { Match, Template } from "aws-cdk-lib/assertions";
 import { describe, expect, it } from "vitest";
 
-function foundationTemplate(stage: Stage): Template {
+function synthesizeFoundation(stage: Stage): Template {
   const stack = buildApp({ stage }).app.node.findChild("foundation");
   if (!(stack instanceof FoundationStack)) {
     throw new TypeError("the app has no foundation stack");
   }
   return Template.fromStack(stack);
+}
+
+// Synthesized once per stage at collection, outside any test's timeout: the
+// first synthesis loads aws-cdk-lib and alone takes seconds (#150).
+const TEMPLATES: Readonly<Record<Stage, Template>> = {
+  dev: synthesizeFoundation("dev"),
+  prod: synthesizeFoundation("prod"),
+};
+
+function foundationTemplate(stage: Stage): Template {
+  return TEMPLATES[stage];
 }
 
 // ADR-0006's single table, as packages/adapters writes it: `PK` and `SK`
