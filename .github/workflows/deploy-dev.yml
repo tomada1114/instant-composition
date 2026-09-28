@@ -5,6 +5,8 @@ name: Deploy dev
 # OIDC token, so no AWS access key exists anywhere; that role may only assume
 # the CDK bootstrap roles, which do the deploying. Its ARN is the repository
 # variable AWS_DEPLOY_ROLE_ARN, set from the stack's `DeployRoleArn` output.
+# The web build reaches the SPA bucket through the `app` stack itself, so the
+# role needs no S3 or CloudFront permission of its own.
 on:
   push:
     branches: [main]
@@ -20,9 +22,11 @@ concurrency:
 
 jobs:
   deploy:
-    name: Deploy the dev foundation stack
+    name: Deploy the dev foundation and app stacks
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    # Two stacks now, and `app` waits on CloudFront twice: for the
+    # distribution itself and for the upload's invalidation.
+    timeout-minutes: 45
     permissions:
       contents: read
       # The OIDC token the deploy role's trust policy checks; nothing else here
@@ -42,10 +46,34 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      # The `app` stack uploads this build; the Lambda bundle builds its own
+      # catalog snapshot while it is synthesized.
+      - name: Build the web client
+        run: pnpm web:build
+
       - uses: aws-actions/configure-aws-credentials@e1253824e5c10ff9df46874f81ed3ec929e19cfd # v6.3.0
         with:
           role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}
           aws-region: ap-northeast-1
 
+      # --exclusively deploys the named stack alone; without it, deploying
+      # `app` would deploy its dependency `foundation` a second time.
       - name: Deploy the foundation stack
-        run: pnpm cdk deploy -c stage=dev foundation --require-approval never
+        run: pnpm cdk deploy -c stage=dev foundation --exclusively --require-approval never
+
+      # `app` reads foundation's parameters as it deploys, so it goes second.
+      # ALARM_EMAIL is a secret so the address stays masked in the run's log;
+      # a deploy without it removes the alarm topic's subscription, so its
+      # absence is reported rather than silent.
+      - name: Deploy the app stack
+        env:
+          ALARM_EMAIL: ${{ secrets.ALARM_EMAIL }}
+        run: |
+          set -euo pipefail
+          context=(-c stage=dev -c "web-dist=$GITHUB_WORKSPACE/apps/web/dist")
+          if [ -n "$ALARM_EMAIL" ]; then
+            context+=(-c "alarm-email=$ALARM_EMAIL")
+          else
+            echo "::warning::ALARM_EMAIL is not set: the alarm topic has no subscription."
+          fi
+          pnpm cdk deploy "${context[@]}" app --exclusively --require-approval never

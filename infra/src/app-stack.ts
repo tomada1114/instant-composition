@@ -25,6 +25,7 @@ import { type Construct } from "constructs";
 
 import { addApiFunction } from "./api-function";
 import { addObservability } from "./observability";
+import { addSpaDeployment } from "./spa-deployment";
 import {
   FOUNDATION_PARAMETERS,
   type FoundationParameter,
@@ -75,6 +76,8 @@ export interface AppStackProps extends StackProps {
   readonly repositoryRoot: string;
   /** The address the alarm topic mails, from deploy-time context; never committed. */
   readonly alarmEmail?: string | undefined;
+  /** The web client's build to upload, from deploy-time context; nothing is uploaded without it. */
+  readonly webDist?: string | undefined;
 }
 
 /**
@@ -90,7 +93,7 @@ export class AppStack extends Stack {
   constructor(
     scope: Construct,
     id: string,
-    { stage, repositoryRoot, alarmEmail, ...props }: AppStackProps,
+    { stage, repositoryRoot, alarmEmail, webDist, ...props }: AppStackProps,
   ) {
     super(scope, id, props);
     const foundation = (parameter: FoundationParameter): string =>
@@ -135,6 +138,10 @@ export class AppStack extends Stack {
     });
 
     addObservability(this, { stage, api, handler, tableName, alarmEmail });
+    if (webDist !== undefined) {
+      // The same `isWebsite` mismatch addDistribution explains.
+      addSpaDeployment(this, { bucket: bucket as IBucket, distribution, webDist });
+    }
 
     new CfnOutput(this, WEB_URL_OUTPUT, { value: webUrl });
     new CfnOutput(this, SPA_BUCKET_NAME_OUTPUT, { value: bucket.bucketName });

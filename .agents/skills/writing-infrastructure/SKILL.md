@@ -110,11 +110,22 @@ a second design.
 
 ## Deploying
 
-- `.github/workflows/deploy-dev.yml` runs on every push to `main`. It assumes the deploy
-  role and runs `pnpm cdk deploy -c stage=dev foundation --require-approval never`, with
-  no approval step. Deploys queue in merge order and are never cancelled. It deploys
-  `foundation` only. Deploying a new stack from CI is a change to that command, made per
+- `.github/workflows/deploy-dev.yml` runs on every push to `main`, with no approval
+  step. It runs `pnpm web:build`, assumes the deploy role, and deploys `foundation`,
+  then `app`, each with `--exclusively` so neither command drags in the other. Deploys
+  queue in merge order and are never cancelled. `deploy-access` is never deployed from
+  CI. Deploying another stack from CI is a change to those commands, made per
   `changing-gates`.
+- The web build reaches the SPA bucket through the `app` stack, never through `aws s3`:
+  `-c web-dist=<apps/web/dist>` adds two `BucketDeployment`s (`spa-deployment.ts`), run
+  by the bootstrap roles, so the deploy role keeps its one permission. Fingerprinted
+  `assets/*` are cached for a year and never pruned; everything else is `no-cache`,
+  pruned, and its upload invalidates `/*`. Without `web-dist` nothing is uploaded, so
+  synthesis, the tests and a hand deploy of `foundation` need no build, and a hand
+  deploy of `app` without it removes the uploads but keeps the files.
+- `-c alarm-email=<address>` comes from the repository **secret** `ALARM_EMAIL`, a
+  secret so the address stays masked in the run's log. A deploy without it removes the
+  alarm topic's subscription; the workflow still deploys and posts a warning.
 - After a merge that changes a stack, confirm the `Deploy dev` run succeeded and read
   the live resource back (`aws dynamodb describe-table`, `aws iam get-role`, …) against
   what the tests assert. A green synth proves nothing about the account.
