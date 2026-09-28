@@ -31,7 +31,7 @@ a second design.
   difference must come from ADR-0009's Stages table; one that is not there owes the ADR
   an amendment first.
 - What differs today: the learner table's point-in-time recovery and deletion protection
-  (on in `prod`, off in `dev` until the Paid plan, #101), the user pool's self sign-up
+  (on in `prod`, off in `dev` by the owner's choice), the user pool's self sign-up
   (`SELF_SIGN_UP`: off in `dev`, where only an administrator creates users), and the
   `deploy-access` stack, which only `dev` builds.
 - Every stage deploys to `ap-northeast-1` (`REGION`). No stack reads `process.env`:

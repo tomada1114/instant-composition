@@ -1,7 +1,7 @@
 # ADR-0006: Persistence on DynamoDB
 
-- Status: Accepted (2026-09-23), including the store shape; amended 2026-09-24 (`dev`
-  table protection waits for the Paid plan)
+- Status: Accepted (2026-09-23), including the store shape; amended 2026-09-27 (no
+  point-in-time recovery or deletion protection on the `dev` table)
 - Date: 2026-09-23
 - Deciders: the owner
 
@@ -138,8 +138,8 @@ that write them.
 
 - On-demand capacity. DynamoDB bills per request, with no capacity to plan and no charge
   for idle capacity.
-- Point-in-time recovery and deletion protection are on in every stage — in `dev` from
-  the Paid-plan upgrade — with each stage's recovery period and that timing set in
+- Point-in-time recovery and deletion protection are on in `prod` and off in `dev`, with
+  the recovery period and the reason set in
   [ADR-0009](0009-aws-topology-environments-and-operations.md). The table belongs to the
   stateful stack.
 - Analytics come later, through an export to S3. Nothing reads the live table for
