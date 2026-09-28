@@ -1,7 +1,7 @@
 import type { Authenticator } from "./authenticator";
 import { cognitoAuthenticator } from "./cognito-authenticator";
 import { cognitoWebSession } from "./cognito-web-session";
-import type { CognitoSettings } from "./env";
+import type { CognitoSettings } from "./env-settings";
 import { localAuthenticator } from "./local-authenticator";
 import type { Fetch } from "./token-endpoint";
 import type { WebSession } from "./web-session";
