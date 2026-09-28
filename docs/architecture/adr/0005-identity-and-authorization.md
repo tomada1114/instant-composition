@@ -199,10 +199,11 @@ Authorization happens at two levels, and both are required.
   `http://localhost:<port>/...`. Cognito permits http only for `localhost`, `127.0.0.1`
   and `[::1]`.
 - **The stand-in** (amended 2026-09-28, the owner's decision of 2026-09-27). The local
-  run (`pnpm api`) verifies tokens against that pool when `API_COGNITO_USER_POOL_ID` and
-  `API_COGNITO_CLIENT_ID` are set. With neither set, it serves one stand-in subject that
+  run (`pnpm api`) verifies tokens against that pool, and serves the web sign-in
+  endpoints, when the four `API_COGNITO_*` names are set: the pool, the web app client,
+  its secret and the sign-in domain. With none set, it serves one stand-in subject that
   authenticates nothing, so a checkout runs with no pool and no sign-in; setting only
-  one refuses to start. The stand-in is wired by that local entry alone, which listens
+  some refuses to start. The stand-in is wired by that local entry alone, which listens
   on the loopback interface and refuses to start inside AWS, and its start-up line names
   which authenticator runs. No hosted entry uses it. This narrows "local development
   authenticates against it too" above to a local run that is configured for the pool.

@@ -240,6 +240,22 @@ stages, foundation stack, deploys).
 - Two administrator-created learners cannot see each other's data through the API.
 - Tests verify tokens without calling Cognito.
 
+**Landed** at `780bdd0` (#108, #129, #130, #131, #132, #133, #134, #135, #136). How each
+exit was observed:
+
+- On 2026-09-28 the owner exported the four `API_COGNITO_*` values in their own shell
+  and ran `pnpm dev` from a checkout of `main`, which started with the Cognito
+  authenticator. In Chrome, `http://127.0.0.1:5173` redirected to the `dev` pool's
+  managed login, and an administrator-created learner signed in and played a round
+  (recorded on #136). Safari does not keep the `Secure` cookies over plain
+  `http://127.0.0.1`, so local sign-in uses Chrome or Firefox, and Safari is checked on
+  the HTTPS `dev` URL in Phase 4 (#160).
+- After signing the first learner out, a second administrator-created learner started at
+  onboarding and saw none of the first one's rounds, even with the URL edited by hand
+  (#136).
+- `tests/api-cognito-authenticator.test.ts` and `tests/api-web-session.test.ts` sign
+  tokens with a local key pair, and fake the token endpoint, without calling Cognito.
+
 **AWS.** Cognito (`dev`).
 
 **Realizes.** [0005](adr/0005-identity-and-authorization.md).
@@ -251,7 +267,9 @@ stages, foundation stack, deploys).
 **Scope.**
 
 - The `app` stack in `dev`:
-  - CloudFront on the flat-rate Free plan;
+  - CloudFront on pay-as-you-go pricing, with settings the flat-rate Free plan admits,
+    until the account leaves the Free Tier, and on that plan afterwards (#173,
+    [ADR-0009](adr/0009-aws-topology-environments-and-operations.md));
   - S3 for the SPA;
   - an API Gateway HTTP API;
   - the API on Lambda (`nodejs24.x`), with no VPC.
