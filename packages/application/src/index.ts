@@ -22,7 +22,6 @@ export {
   type CatalogDocument,
   type CompositionItem,
   type ConceptEntry,
-  type ConceptId,
   type LanguageTag,
   type LevelStep,
   type Localization,
