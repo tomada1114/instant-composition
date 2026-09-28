@@ -207,8 +207,8 @@ directory: the subject comes from a Cognito access token, as a Bearer header or 
 session cookie, when `API_COGNITO_*` name a user pool, and from a stand-in naming one
 local subject otherwise. With a pool it also serves the web sign-in endpoints under
 `/api/v1/auth/`, outside `ROUTES`, which keep a browser's tokens in HttpOnly cookies;
-`serving-the-api` holds how. `apps/web` is the browser client ADR-0008 describes: a
-Vite + React SPA with TanStack Router, TanStack Query and use-intl over
+`authenticating-learners` holds how. `apps/web` is the browser client ADR-0008
+describes: a Vite + React SPA with TanStack Router, TanStack Query and use-intl over
 `messages/ja.json`, which reaches the API only over HTTP under `/api`, typed by what
 @hey-api/openapi-ts generates from `packages/contracts/openapi.json` into
 `apps/web/src/openapi/`. That tree is committed, `tests/web-openapi-client.test.ts`
@@ -346,7 +346,8 @@ names its own boundary with its neighbours.
 | `recording-architecture-decisions` | `docs/architecture/`, or whether a change owes an ADR: a boundary, persistence shape, external contract, provider, or security model      |
 | `designing-application-core`       | domain rules, commands, queries, ports and adapters, projections, idempotency, or code that reads the clock or a timezone                 |
 | `isolating-learner-data`           | an endpoint, store method, session or token handling, job, or model tool that touches a learner's data                                    |
-| `serving-the-api`                  | an operation handler, the request log's fields, the stand-in authenticator, the local run or the Lambda entry under `apps/api/`           |
+| `authenticating-learners`          | sign-in, refresh or sign-out, a credential or cookie, the stand-in authenticator, or `API_COGNITO_*` and the client secret                |
+| `serving-the-api`                  | an operation handler, the request log's fields, the local run or the Lambda entry under `apps/api/`                                       |
 | `writing-infrastructure`           | a stack, construct or stage setting under `infra/`, `pnpm cdk`, the deploy role, or `.github/workflows/deploy-dev.yml`                    |
 
 ## Security and human approval
