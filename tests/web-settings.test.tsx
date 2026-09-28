@@ -433,14 +433,19 @@ describe("the settings screen, the time zone", () => {
       return undefined;
     });
     await renderApp("/settings");
+    const [first, second] = [
+      "Europe/London",
+      "Pacific/Auckland",
+      "America/Chicago",
+    ].filter((zone) => zone !== device);
     const select = screen.getByRole("combobox", { name: ja.Settings.timeZone.title });
-    fireEvent.change(select, { target: { value: "Europe/London" } });
+    fireEvent.change(select, { target: { value: first } });
     await settle();
-    fireEvent.change(select, { target: { value: other } });
+    fireEvent.change(select, { target: { value: second } });
     await settle();
     failFirst?.();
     await settle();
-    expect(select).toHaveValue(other);
+    expect(select).toHaveValue(second);
     expect(screen.queryByRole("alert")).toBeNull();
   });
 });
