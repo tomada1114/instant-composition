@@ -132,10 +132,10 @@ covered from the moment it exists — write its test in the same PR, not as foll
 
 **There is no top-level floor, and that is a decision rather than an omission.** The v8
 provider checks a top-level threshold against the coverage of _all_ included files
-combined, so one number over the packages, the apps and `scripts/` together would let a
-well-tested tree subsidize an untested file in another. Independent per-glob threshold
-sets are what stop that: each is judged only against its own coverage, and each answers
-a different question.
+combined, so one number over the packages, the apps, `infra/` and `scripts/` together
+would let a well-tested tree subsidize an untested file in another. Independent per-glob
+threshold sets are what stop that: each is judged only against its own coverage, and
+each answers a different question.
 
 - **`packages/*/src/**`** carries the baseline floor for this repository's own logic —
   the rules, the commands and queries, the contract and the adapters — from the day a
@@ -148,6 +148,12 @@ a different question.
   counts at 0% against that floor: keep it to wiring, and put anything with a branch in
   a module a test imports. The generated `apps/web/src/openapi/` is inside the glob too;
   it holds only types, so it has nothing to execute.
+- **`infra/src/**`** carries the same floor for this repository's own stack and stage
+  logic — which resources exist, their retain policies, the per-stage settings and the
+  deploy role's trust. `tests/infra-*.test.ts` synthesize the app in-process, so that is
+  what the floor measures. `infra/src/main.ts` is the entry `pnpm cdk` spawns and counts
+  at whatever those in-process tests reach, which is why it stays a single call to
+  `buildApp`: anything with a branch belongs in a module the tests import.
 - **`scripts/**`** was never measured before it was added to `coverage.include`, so its
   floor is the last measured coverage rounded down to a clean value, not a guessed
   target — it has been raised as coverage grew (see the dated comments in
