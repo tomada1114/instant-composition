@@ -4,6 +4,7 @@ import { AppStack } from "./app-stack";
 import { DeployAccessStack } from "./deploy-access-stack";
 import { FoundationStack } from "./foundation-stack";
 import { ALARM_EMAIL_CONTEXT } from "./observability";
+import { WEB_DIST_CONTEXT } from "./spa-deployment";
 import { parseStage, type Stage } from "./stage";
 
 /** Where every stage deploys (ADR-0009). */
@@ -68,11 +69,13 @@ export function buildApp(context: Readonly<Record<string, unknown>> = {}): Stage
       throw new MissingRepositoryRootError(repositoryRoot);
     }
     const alarmEmail: unknown = app.node.tryGetContext(ALARM_EMAIL_CONTEXT);
+    const webDist: unknown = app.node.tryGetContext(WEB_DIST_CONTEXT);
     const hosted = new AppStack(app, "app", {
       stage,
       repositoryRoot,
       alarmEmail:
         typeof alarmEmail === "string" && alarmEmail !== "" ? alarmEmail : undefined,
+      webDist: typeof webDist === "string" && webDist !== "" ? webDist : undefined,
       stackName: `instant-composition-${stage}-app`,
       env: { region: REGION },
     });

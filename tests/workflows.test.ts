@@ -2938,6 +2938,35 @@ describe("the workflows in .github/workflows", () => {
     expect(source).toContain("role-to-assume: ${{ vars.AWS_DEPLOY_ROLE_ARN }}");
     expect(source).toContain("pnpm cdk deploy -c stage=dev foundation");
   });
+
+  // #157: a merge reaches the dev URL with no manual step. The build comes
+  // before the deploys, and `app` after `foundation`, whose parameters it reads.
+  it("builds the web client, then deploys foundation and app, each alone, in that order", () => {
+    const commands = runCommands(workflowSource("deploy-dev.yml")).map(
+      ({ command }) => command,
+    );
+    const build = commands.findIndex((command) => command.includes("pnpm web:build"));
+    const foundation = commands.findIndex((command) =>
+      command.includes("pnpm cdk deploy -c stage=dev foundation --exclusively"),
+    );
+    const app = commands.findIndex((command) =>
+      command.includes('pnpm cdk deploy "${context[@]}" app --exclusively'),
+    );
+    expect(build).toBeGreaterThanOrEqual(0);
+    expect(foundation).toBeGreaterThan(build);
+    expect(app).toBeGreaterThan(foundation);
+    expect(commands[app]).toContain('-c "web-dist=$GITHUB_WORKSPACE/apps/web/dist"');
+  });
+
+  // Without alarm-email a deploy removes the alarm topic's subscription
+  // (#158), so the address comes from a masked secret, never the tree.
+  it("passes the alarm address from the ALARM_EMAIL secret, and only when it is set", () => {
+    const source = workflowSource("deploy-dev.yml");
+    expect(source).toContain("ALARM_EMAIL: ${{ secrets.ALARM_EMAIL }}");
+    expect(source).toContain('if [ -n "$ALARM_EMAIL" ]; then');
+    expect(source).toContain('context+=(-c "alarm-email=$ALARM_EMAIL")');
+    expect(source).not.toMatch(/alarm-email=[^$"]/);
+  });
 });
 
 // --- the pull-request vocabulary shared by the bots and the labels ----------

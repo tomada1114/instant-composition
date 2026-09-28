@@ -18,6 +18,7 @@ export {
   PARAMETERS_EXTENSION_LAYER_ARN,
   type ApiFunctionProps,
 } from "./api-function";
+export { WEB_DIST_CONTEXT } from "./spa-deployment";
 export { parseStage, STAGES, UnknownStageError, type Stage } from "./stage";
 export {
   FoundationStack,

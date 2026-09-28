@@ -253,6 +253,7 @@ const INFRA_NPM_EDGES = [
   "aws-cdk-lib/aws-lambda-nodejs",
   "aws-cdk-lib/aws-logs",
   "aws-cdk-lib/aws-s3",
+  "aws-cdk-lib/aws-s3-deployment",
   "aws-cdk-lib/aws-sns",
   "aws-cdk-lib/aws-sns-subscriptions",
   "aws-cdk-lib/aws-ssm",
