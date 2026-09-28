@@ -64,6 +64,20 @@ export function placeOf(
   return (cardId) => snapshot.shown.get(cardId) ?? snapshot.retired.get(cardId);
 }
 
+/** A subtopic's name, or its id when the taxonomy no longer holds it. */
+export function subtopicName(snapshot: CatalogSnapshot, ref: SubtopicRef): string {
+  return (
+    snapshot.topics
+      .find((topic) => topic.id === ref.topic)
+      ?.subtopics.find((subtopic) => subtopic.id === ref.subtopic)?.name ?? ref.subtopic
+  );
+}
+
+/** A concept's name, or its id when the catalog does not list it. */
+export function conceptName(snapshot: CatalogSnapshot, concept: ConceptId): string {
+  return snapshot.conceptNames.get(concept) ?? concept;
+}
+
 export function toeicOf(snapshot: CatalogSnapshot, level: number): string {
   return snapshot.levels.get(level)?.toeic ?? "";
 }

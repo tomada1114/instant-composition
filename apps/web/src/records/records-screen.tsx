@@ -5,7 +5,7 @@ import { BackHeader } from "../lib/back-header";
 import type { RecordsView } from "../openapi";
 import { ReachRings } from "../summary/reach-rings";
 import { InfoTip } from "../ui/info-tip";
-import { Breakdown, DotCalendar, MilestoneList } from "./records-parts";
+import { Breakdown, DotCalendar, MilestoneList, WeakList } from "./records-parts";
 
 function final(_key: string, value: number): number {
   return value;
@@ -47,6 +47,7 @@ export function RecordsScreen({
           ))}
         </div>
       </div>
+      <WeakList weak={records.weak} />
       <dl className="grid grid-cols-2 gap-2">
         <Tile
           label={t("streakLabel")}

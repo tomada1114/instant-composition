@@ -35,6 +35,7 @@ to the design's names.
 | `bar-chart`               | — (last 14 days)                                           | today's bar grew, unchanged                                                    |
 | `milestone-card`          | —                                                          | only in the session that reached it; stacked when several                      |
 | `milestone-list`          | —                                                          | some earned, none ("none yet")                                                 |
+| `weak-list`               | —                                                          | grammar and scenes, one of them, none ("none right now")                       |
 | `difficulty-line`         | `up`, `down`, `same`                                       | —                                                                              |
 | `info-tip`                | —                                                          | closed, open                                                                   |
 | `sheet`                   | `pause`, `confirm`                                         | —                                                                              |
@@ -144,7 +145,8 @@ carries the state and its one primary action.
 
 `mix-bar`: a 6-tall split — the review share `bg-foreground`, the new share
 `bg-muted-foreground`, 2 apart — over a `caption` row: a swatch and "review 4", a swatch
-and "new 6", and "focus: meetings" when a focus is set.
+and "new 6", "focus: meetings" when a focus is set, and "weak: present perfect" when the
+deal carries a weak grammar concept — names only, set apart by "、", never lit.
 
 ## Chips and selection controls
 
@@ -256,7 +258,8 @@ above and below each. Section titles are muted `label`s.
 ## Record screen parts
 
 The record screen: ← and "records" (`heading`); the rings with ⓘ and each topic's
-disclosure; the stat tiles; the calendar with ⓘ; the milestones. Nothing is lit.
+disclosure; the weak points with ⓘ; the stat tiles; the calendar with ⓘ; the milestones.
+Nothing is lit.
 
 | Part             | Value                                                                                                                                                                                                                           |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -265,3 +268,4 @@ disclosure; the stat tiles; the calendar with ⓘ; the milestones. Nothing is li
 | `stat/tile`      | `bg-card rounded-tile p-4`: the name in muted `caption`, the figure in `figure-sm`, an optional `eyebrow`-sized note ("longest 21 days"). Streak and difficulty two across; said, days and points three across                  |
 | `dot-calendar`   | Last 12 weeks, one column per week (oldest left), rows Monday to Sunday. Dots 12 across, 6 apart. The `week-row` states with a solid hairline ring for upcoming, but never the accent — nothing grows here                      |
 | `milestone-list` | A muted `label` title, then per row the subject (`label`, muted) and the milestones earned ("7 · 14 · 30", `mono-sm`, white). Streak first, then topic order. Empty: "none yet", muted `body`                                   |
+| `weak-list`      | A muted `label` title with ⓘ; per row the kind (`label`, muted) and its names (`body`, white, "、" between), weakest first. No row for an empty kind; neither: "none right now". No count, no rate, no accent                   |

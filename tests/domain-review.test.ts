@@ -117,6 +117,53 @@ describe("reviewAnswer", () => {
     expect(progress?.mastered).toStrictEqual({ day: "2026-09-23", sessionId: "r3" });
   });
 
+  it("leaves an item never seen unseen after a retry", () => {
+    const { entry, progress } = reviewAnswer(undefined, answer({ pass: "retry" }));
+    expect(progress).toBeUndefined();
+    expect(entry.before).toBeNull();
+    expect(entry.after).toBeNull();
+    expect(replayItems([entry]).has("c1")).toBe(false);
+  });
+
+  it("does not count a correct retry toward mastery", () => {
+    const progress = fold([
+      answer({ day: "2026-09-20", answeredAt: 1 }),
+      answer({
+        id: "a2",
+        sessionId: "r2",
+        pass: "retry",
+        day: "2026-09-22",
+        answeredAt: 2,
+      }),
+    ]);
+    expect(progress?.okDays).toStrictEqual(["2026-09-20"]);
+    expect(progress?.mastered).toBeNull();
+  });
+
+  it("keeps an earlier correct day through a timeout and a miss", () => {
+    const progress = fold([
+      answer({ day: "2026-09-18", answeredAt: 1 }),
+      answer({
+        id: "a2",
+        sessionId: "r2",
+        result: "timeout",
+        elapsedMs: 10_000,
+        day: "2026-09-19",
+        answeredAt: 2,
+      }),
+      answer({
+        id: "a3",
+        sessionId: "r3",
+        result: "ng",
+        day: "2026-09-20",
+        answeredAt: 3,
+      }),
+      answer({ id: "a4", sessionId: "r4", day: "2026-09-21", answeredAt: 4 }),
+    ]);
+    expect(progress?.okDays).toStrictEqual(["2026-09-18", "2026-09-21"]);
+    expect(progress?.mastered).toStrictEqual({ day: "2026-09-21", sessionId: "r4" });
+  });
+
   it("keeps the latest first pass and the one from the session before it", () => {
     const progress = fold([
       answer({ elapsedMs: 9_000 }),

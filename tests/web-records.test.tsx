@@ -16,7 +16,8 @@ import {
 
 // The records screen, W10, mounted as the whole app at `/records` over a
 // stand-in API: the long view the records read answers, the breakdown opened
-// in place, the calendar and the titles, going back, and a failed read.
+// in place, the weak points, the calendar and the titles, going back, and a
+// failed read.
 
 function calendar(done: number): Dot[][] {
   return Array.from({ length: 12 }, (_, week) =>
@@ -59,6 +60,16 @@ const RECORDS: RecordsView = {
       ],
     },
   ],
+  weak: {
+    grammar: [
+      { id: "en:grammar/present-perfect", name: "現在完了" },
+      { id: "en:grammar/imperatives", name: "命令文・Let's" },
+    ],
+    subtopics: [
+      { topic: "daily", subtopic: "home", name: "家" },
+      { topic: "work", subtopic: "schedule", name: "日程調整" },
+    ],
+  },
   toeic: "730",
   streak: { current: 13, longest: 21 },
   calendar: calendar(60),
@@ -125,6 +136,7 @@ describe("the records screen, W10", () => {
     await renderApp("/records");
     for (const [label, text] of [
       [ja.Summary.reach.infoLabel, ja.Summary.reach.info],
+      [ja.Records.weak.infoLabel, ja.Records.weak.info],
       [ja.Records.rules.label, ja.Records.rules.streak],
     ] as const) {
       const button = screen.getByRole("button", { name: label });
@@ -178,6 +190,40 @@ describe("the records screen, W10", () => {
     expect(within(titles).getByText("10 · 25 · 50 · 100")).toBeInTheDocument();
   });
 
+  it("names the weak grammar and scenes, weakest first, with no count beside them", async () => {
+    serveRecords();
+    await renderApp("/records");
+    const weak = screen.getByRole("region", { name: ja.Records.weak.title });
+    expect(
+      within(weak)
+        .getAllByRole("term")
+        .map((term) => term.textContent),
+    ).toStrictEqual([ja.Records.weak.grammar, ja.Records.weak.subtopics]);
+    expect(
+      within(weak)
+        .getAllByRole("definition")
+        .map((definition) => definition.textContent),
+    ).toStrictEqual(["現在完了、命令文・Let's", "家、日程調整"]);
+  });
+
+  it("leaves out a kind with nothing weak in it", async () => {
+    serveRecords({
+      ...RECORDS,
+      weak: {
+        grammar: [],
+        subtopics: [{ topic: "work", subtopic: "email", name: "メール" }],
+      },
+    });
+    await renderApp("/records");
+    const weak = screen.getByRole("region", { name: ja.Records.weak.title });
+    expect(
+      within(weak)
+        .getAllByRole("term")
+        .map((term) => term.textContent),
+    ).toStrictEqual([ja.Records.weak.subtopics]);
+    expect(within(weak).queryByText(ja.Records.weak.none)).toBeNull();
+  });
+
   it("goes back on ← and on Esc", async () => {
     serveRecords();
     await renderApp("/records");
@@ -192,7 +238,7 @@ describe("the records screen, W10", () => {
 });
 
 describe("the records screen, W10 empty", () => {
-  it("shows grooves, one line, day 1 after a break, and no titles yet", async () => {
+  it("shows grooves, one line, day 1 after a break, no titles yet and nothing weak", async () => {
     serveRecords({
       ...RECORDS,
       reach: {
@@ -206,12 +252,18 @@ describe("the records screen, W10 empty", () => {
       toeic: null,
       streak: { current: 0, longest: 1 },
       titles: [],
+      weak: { grammar: [], subtopics: [] },
     });
     await renderApp("/records");
     expect(screen.getByText(ja.Summary.reach.empty)).toBeInTheDocument();
     expect(screen.getByText(ja.Records.restart)).toBeInTheDocument();
     expect(screen.getByText(ja.Records.notMeasured)).toBeInTheDocument();
     expect(screen.getByText(ja.Records.titles.none)).toBeInTheDocument();
+    expect(
+      within(screen.getByRole("region", { name: ja.Records.weak.title })).getByText(
+        ja.Records.weak.none,
+      ),
+    ).toBeInTheDocument();
   });
 });
 

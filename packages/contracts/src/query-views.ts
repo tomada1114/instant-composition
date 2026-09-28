@@ -53,6 +53,8 @@ export const homePreviewSchema = z.object({
   reviewCount: countSchema,
   newCount: countSchema,
   focusNames: z.array(z.string()),
+  /** The weak grammar concepts the dealt cards carry, by name, weakest first. */
+  weakNames: z.array(z.string()),
   minutes: countSchema,
 });
 
@@ -78,6 +80,14 @@ export const breakdownTopicSchema = z.object({
   ),
 });
 
+/** The learner's weakest grammar concepts and subtopics, weakest first, by name only. */
+export const weakPointsSchema = z.object({
+  grammar: z.array(z.object({ id: z.string(), name: z.string() })),
+  subtopics: z.array(
+    z.object({ topic: z.string(), subtopic: z.string(), name: z.string() }),
+  ),
+});
+
 /** The milestones taken in one row of the records screen: the streak, or one topic. */
 export const titleGroupSchema = z.discriminatedUnion("kind", [
   z.object({ kind: z.literal("streak"), values: z.array(countSchema) }),
@@ -92,6 +102,7 @@ export const titleGroupSchema = z.discriminatedUnion("kind", [
 export const recordsViewSchema = z.object({
   reach: reachViewSchema,
   breakdown: z.array(breakdownTopicSchema),
+  weak: weakPointsSchema,
   toeic: z.string().nullable(),
   streak: z.object({ current: countSchema, longest: countSchema }),
   /** Twelve weeks, oldest first, Monday to Sunday in each. */

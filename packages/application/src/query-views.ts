@@ -11,6 +11,8 @@ export interface HomePreview {
   readonly reviewCount: number;
   readonly newCount: number;
   readonly focusNames: readonly string[];
+  /** The weak grammar concepts the dealt cards carry, by name, weakest first. */
+  readonly weakNames: readonly string[];
   readonly minutes: number;
 }
 
@@ -49,10 +51,21 @@ export type TitleGroup =
       readonly values: readonly number[];
     };
 
+/** The learner's weakest grammar concepts and subtopics, weakest first, by name only. */
+export interface WeakPoints {
+  readonly grammar: readonly { readonly id: string; readonly name: string }[];
+  readonly subtopics: readonly {
+    readonly topic: string;
+    readonly subtopic: string;
+    readonly name: string;
+  }[];
+}
+
 /** The long view, with nothing lit: no round has just moved anything. */
 export interface RecordsView {
   readonly reach: ReachView;
   readonly breakdown: readonly BreakdownTopic[];
+  readonly weak: WeakPoints;
   readonly toeic: string | null;
   /** `current` 0 stands for "day 1 from today" and is never shown as 0. */
   readonly streak: { readonly current: number; readonly longest: number };
