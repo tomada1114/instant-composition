@@ -87,7 +87,56 @@ async function fiveDays(h: Harness): Promise<void> {
   }
 }
 
+/**
+ * Day 1's round is left with its answers queued, day 2's round answers some of
+ * the same cards, and then day 1's answers arrive, stamped with day 1's times.
+ */
+async function lateArrival(h: Harness): Promise<void> {
+  await updateSettings(h.deps, h.context(), { topics: ["work", "travel"] });
+  const placement = await startRound(h.deps, h.context(), {
+    kind: "placement",
+    roundId: "p1",
+  });
+  if (!placement.ok) throw new Error(placement.error.code);
+  await finishRound(h.deps, h.context(), {
+    roundId: "p1",
+    answers: answersFor(placement.value),
+  });
+  const early = await startRound(h.deps, h.context(NOON + DAY_MS), {
+    kind: "today",
+    roundId: "t1",
+  });
+  const later = await startRound(h.deps, h.context(NOON + 2 * DAY_MS), {
+    kind: "today",
+    roundId: "t2",
+  });
+  if (!early.ok || !later.ok) throw new Error("A round did not start.");
+  await finishRound(h.deps, h.context(NOON + 2 * DAY_MS + 60_000), {
+    roundId: later.value.id,
+    answers: answersFor(later.value, (_, index) => (index % 2 === 0 ? "ok" : "ng")),
+  });
+  await recordAnswers(h.deps, h.context(NOON + 2 * DAY_MS + 120_000), {
+    roundId: early.value.id,
+    answers: answersFor(early.value, (_, index) => (index % 3 === 0 ? "ng" : "ok")).map(
+      (answer, index) => ({ ...answer, answeredAt: NOON + DAY_MS + index * 1_000 }),
+    ),
+  });
+}
+
 describe("the projections a command keeps", () => {
+  it("equal what replaying the review log rebuilds when a round's answers arrive late", async () => {
+    const h = makeHarness();
+    await lateArrival(h);
+    const store = h.stores.forLearner(h.learner);
+    const log = await store.reviews();
+    const items = new Map(
+      [...(await store.items())].map(([id, stored]) => [id, stored.value]),
+    );
+
+    expect(log.some((entry) => entry.sessionId === "t1")).toBe(true);
+    expect(items).toStrictEqual(replayItems(log));
+  });
+
   it("equal what replaying the review log rebuilds", async () => {
     const h = makeHarness();
     await fiveDays(h);

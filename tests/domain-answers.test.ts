@@ -16,6 +16,8 @@ import {
   makeStats,
 } from "./application-fixtures";
 
+const DAY_MS = 86_400_000;
+
 // Worked examples against a 5-card round `r1` on 2026-09-22, every card eight
 // words long, so the limit is ceil(4 + 8 * 0.5) = 8 seconds.
 
@@ -141,6 +143,97 @@ describe("decideAnswers", () => {
     expect(change?.entries[0]).toMatchObject({ day: "2026-09-21", answeredAt: 1_234 });
   });
 
+  it("holds a client's time below the round's start up to the start", () => {
+    const change = decideAnswers(state(), [answer({ answeredAt: 5 })], CARDS, 9_000);
+    expect(change?.entries[0]?.answeredAt).toBe(1_000);
+  });
+
+  it("holds a client's time above the server's down to the server's", () => {
+    const change = decideAnswers(
+      state(),
+      [answer({ answeredAt: 99_000 })],
+      CARDS,
+      9_000,
+    );
+    expect(change?.entries[0]?.answeredAt).toBe(9_000);
+  });
+
+  it("keeps a client's time between the round's start and the server's", () => {
+    const change = decideAnswers(
+      state(),
+      [answer({ answeredAt: 4_321 })],
+      CARDS,
+      9_000,
+    );
+    expect(change?.entries[0]?.answeredAt).toBe(4_321);
+  });
+
+  it("orders a batch by the time each answer was given, then by id", () => {
+    const change = decideAnswers(
+      state(),
+      [
+        answer({ id: "r1:f:c1", answeredAt: 3_000 }),
+        answer({ id: "r1:f:c2", cardId: "c2", answeredAt: 2_000 }),
+        answer({ id: "r1:f:c3", cardId: "c3" }),
+        answer({ id: "r1:f:c4", cardId: "c4", answeredAt: 2_000 }),
+      ],
+      CARDS,
+      9_000,
+    );
+    expect(change?.entries.map((entry) => [entry.id, entry.answeredAt])).toStrictEqual([
+      ["r1:f:c2", 2_000],
+      ["r1:f:c4", 2_000],
+      ["r1:f:c1", 3_000],
+      ["r1:f:c3", 9_000],
+    ]);
+  });
+
+  it("records a late answer to a previous day's round on that round's day", () => {
+    const round = makeRound({ day: "2026-09-21", startedAt: 1_000 });
+    const change = decideAnswers(
+      state({ round, portion: makePortion({ day: "2026-09-21" }), day: undefined }),
+      [answer({ answeredAt: 2_500 })],
+      CARDS,
+      DAY_MS,
+    );
+    expect(change?.entries[0]).toMatchObject({ day: "2026-09-21", answeredAt: 2_500 });
+    expect(change?.day.day).toBe("2026-09-21");
+    expect(change?.items[0]?.memory).toMatchObject({
+      lastDay: "2026-09-21",
+      dueDay: "2026-09-25",
+    });
+  });
+
+  it.each([
+    ["answered before the item's latest first pass", 2_500, "2026-09-22"],
+    ["answered no later than the item's latest first pass", 3_000, "2026-09-22"],
+    ["given for a day before the one the item last moved on", 5_000, "2026-09-23"],
+  ])(
+    "logs a stale answer %s, leaving the item's schedule as it was",
+    (_, at, lastDay) => {
+      const item = makeItem({
+        memory: { box: 3, dueDay: "2026-09-30", lastDay, seenCount: 4 },
+        last: { sessionId: "r2", result: "ok", elapsedMs: 2_000, answeredAt: 3_000 },
+      });
+      const change = decideAnswers(
+        state({ items: new Map([["c1", item]]) }),
+        [answer({ result: "ng", answeredAt: at })],
+        CARDS,
+        9_000,
+      );
+      expect(change?.items).toStrictEqual([]);
+      expect(change?.entries[0]).toMatchObject({
+        day: "2026-09-22",
+        answeredAt: at,
+        outcome: "again",
+        before: item.memory,
+        after: item.memory,
+      });
+      expect(change?.round.firstPass).toBe(1);
+      expect(change?.day.firstPass).toBe(1);
+    },
+  );
+
   it("moves an item on a first pass, and leaves it on a retry", () => {
     const item = makeItem({
       memory: { box: 2, dueDay: "2026-09-24", lastDay: "2026-09-20", seenCount: 2 },
@@ -149,7 +242,7 @@ describe("decideAnswers", () => {
       state({ items: new Map([["c1", item]]) }),
       [answer({ id: "r1:r:c2", cardId: "c2", pass: "retry" }), answer()],
       CARDS,
-      9,
+      9_000,
     );
     expect(change?.items.map((progress) => progress.item.id)).toStrictEqual(["c1"]);
     expect(change?.items[0]?.memory).toStrictEqual({
@@ -229,5 +322,30 @@ describe("decideAnswers", () => {
     expect(far?.stats.levelWindow).toHaveLength(30);
     expect(far?.stats.levelWindow.at(-1)?.answeredAt).toBe(29);
     expect(none?.stats.levelWindow).toStrictEqual([]);
+  });
+
+  it("sorts a late answer into the window by its time, so the newest are kept", () => {
+    const full = makeStats({
+      level: { level: 5, reason: "placement", roundId: "p1", at: 1 },
+      levelWindow: Array.from({ length: 30 }, (_, index) => ({
+        level: 5,
+        result: "ok" as const,
+        elapsedMs: 1,
+        limitMs: 8_000,
+        answeredAt: 2_000 + index,
+      })),
+    });
+
+    const change = decideAnswers(
+      state({ stats: full }),
+      [answer({ answeredAt: 1_500 }), answer({ id: "r1:f:c2", cardId: "c2" })],
+      CARDS,
+      9_000,
+    );
+
+    expect(change?.stats.levelWindow.map((entry) => entry.answeredAt)).toStrictEqual([
+      ...Array.from({ length: 29 }, (_, index) => 2_001 + index),
+      9_000,
+    ]);
   });
 });

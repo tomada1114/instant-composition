@@ -54,7 +54,10 @@ export interface ReviewEntry {
   /** The session's practice day, not the wall-clock day of the answer. */
   readonly day: DayKey;
   readonly outcome: Outcome;
-  /** The item's memory state around this review; a retry leaves it unchanged. */
+  /**
+   * The item's memory state around this review; a retry leaves it unchanged,
+   * and so does a first pass that came late, which is how a replay knows it.
+   */
   readonly before: CardState | null;
   readonly after: CardState | null;
   readonly snapshot: ItemSnapshot;

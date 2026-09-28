@@ -7,7 +7,7 @@ import type {
   ReviewEntry,
 } from "./records";
 import { isFast } from "./timer";
-import type { AnswerResult, DayKey, Pass } from "./types";
+import type { AnswerResult, CardState, DayKey, Pass } from "./types";
 
 /** Everything known of one answer once it is accepted into a round. */
 export interface AcceptedAnswer {
@@ -35,7 +35,22 @@ export function outcomeOf(
   return isFast(elapsedMs, limitMs) ? "easy" : "good";
 }
 
-/** The item after a first-pass answer; a retry leaves it as it was. */
+/**
+ * Whether a first pass comes too late to move its item: answered no later than
+ * the item's latest first pass, or for a day before the one its memory was
+ * last moved on. Taking it would rewind the schedule, so it is only logged.
+ */
+function isLate(progress: ItemProgress | undefined, answer: AcceptedAnswer): boolean {
+  if (progress === undefined) {
+    return false;
+  }
+  return (
+    answer.day < progress.memory.lastDay ||
+    (progress.last !== null && answer.answeredAt <= progress.last.answeredAt)
+  );
+}
+
+/** The item after a first-pass answer that moves it. */
 function advance(progress: ItemProgress | undefined, entry: ReviewEntry): ItemProgress {
   const { detail } = entry;
   const memory = entry.after ?? progress?.memory;
@@ -71,13 +86,15 @@ function advance(progress: ItemProgress | undefined, entry: ReviewEntry): ItemPr
 
 /**
  * Takes one answer into the log: the entry to append, and the item's progress
- * after it. Only a first pass moves the item.
+ * after it. Only a first pass moves the item, and a late one does not: it is
+ * logged with the memory state it found, as a retry is.
  */
 export function reviewAnswer(
   progress: ItemProgress | undefined,
   answer: AcceptedAnswer,
 ): { readonly entry: ReviewEntry; readonly progress: ItemProgress | undefined } {
   const before = progress?.memory ?? null;
+  const moves = answer.pass === "first" && !isLate(progress, answer);
   const entry: ReviewEntry = {
     id: answer.id,
     item: { kind: "composition", id: answer.cardId },
@@ -86,8 +103,7 @@ export function reviewAnswer(
     day: answer.day,
     outcome: outcomeOf(answer.result, answer.elapsedMs, answer.limitMs),
     before,
-    after:
-      answer.pass === "first" ? nextCardState(before ?? undefined, answer) : before,
+    after: moves ? nextCardState(before ?? undefined, answer) : before,
     snapshot: answer.snapshot,
     detail: {
       activity: "composition",
@@ -99,7 +115,7 @@ export function reviewAnswer(
   };
   return {
     entry,
-    progress: answer.pass === "first" ? advance(progress, entry) : progress,
+    progress: moves ? advance(progress, entry) : progress,
   };
 }
 
@@ -108,11 +124,38 @@ export function logOrder(a: ReviewEntry, b: ReviewEntry): number {
   return a.answeredAt - b.answeredAt || a.id.localeCompare(b.id);
 }
 
-/** Every item's progress, rebuilt from the log alone. */
+function sameState(a: CardState, b: CardState): boolean {
+  return (
+    a.box === b.box &&
+    a.lastDay === b.lastDay &&
+    a.dueDay === b.dueDay &&
+    a.seenCount === b.seenCount
+  );
+}
+
+/**
+ * Whether an entry moved its item: a first pass that did not come late. A late
+ * one is read off the log itself, logged with its memory state unchanged,
+ * which a first pass that moves an item never is: it counts one more sighting.
+ */
+function movedItem(entry: ReviewEntry): boolean {
+  return (
+    entry.detail.pass === "first" &&
+    (entry.before === null ||
+      entry.after === null ||
+      !sameState(entry.before, entry.after))
+  );
+}
+
+/**
+ * Every item's progress, rebuilt from the log alone. It skips a late first
+ * pass as the command that logged it did, so it rebuilds what the commands kept
+ * although a late answer sorts before the answers it arrived after.
+ */
 export function replayItems(log: readonly ReviewEntry[]): Map<string, ItemProgress> {
   const items = new Map<string, ItemProgress>();
   for (const entry of [...log].sort(logOrder)) {
-    if (entry.detail.pass === "first") {
+    if (movedItem(entry)) {
       items.set(entry.item.id, advance(items.get(entry.item.id), entry));
     }
   }

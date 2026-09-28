@@ -30,8 +30,10 @@ export const startRoundRequestSchema = z.object({
 });
 
 /**
- * One graded card. The round comes from the path and the time from the
- * server, which stamps `answeredAt` itself.
+ * One graded card; the round comes from the path. `answeredAt` is when the
+ * learner answered, in epoch milliseconds on the client's clock: the server
+ * holds it between the round's start and its own time rather than refusing
+ * it, and takes its own time when it is absent.
  */
 export const answerSchema = z.object({
   /** Made by the client; a repeated id is ignored, which is what makes a resend safe. */
@@ -40,6 +42,7 @@ export const answerSchema = z.object({
   pass: passSchema,
   result: answerResultSchema,
   elapsedMs: z.int().min(0).max(600_000),
+  answeredAt: z.int().min(0).exactOptional(),
 });
 
 /** `POST /v1/rounds/{roundId}/answers` and `…/finish`: a batch, so a replay is the same call. */

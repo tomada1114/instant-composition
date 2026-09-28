@@ -23,6 +23,8 @@ export interface AnswerInput {
   readonly pass: Pass;
   readonly result: AnswerResult;
   readonly elapsedMs: number;
+  /** Epoch ms on the client's clock; absent, the server's time is taken. */
+  readonly answeredAt?: number;
 }
 
 /** What the catalog knows of a card, shown or retired; see `RetiredCard` for the nulls. */
@@ -77,9 +79,22 @@ export interface AnswersChange {
 }
 
 /**
+ * A client's time held between the round's start and the server's; the
+ * server's clock wins should the round seem to start after it.
+ */
+function clampAnsweredAt(
+  reported: number | undefined,
+  round: Round,
+  now: number,
+): number {
+  return Math.min(Math.max(reported ?? now, round.startedAt), now);
+}
+
+/**
  * Takes checked answers into `state`, in log order, skipping ids already held.
  * The limit is worked out here rather than trusted from the client, and a
- * round crossing the day boundary keeps its own day.
+ * round crossing the day boundary keeps its own day, so an answer arriving
+ * late is still taken for the day it was given on.
  */
 export function decideAnswers(
   state: AnswersState,
@@ -88,18 +103,23 @@ export function decideAnswers(
   now: number,
 ): AnswersChange | undefined {
   const { round } = state;
-  // Every answer of a batch is stamped `now`, so log order is id order.
   const fresh = inputs
     .filter(
       (input, index) =>
         !state.recorded.has(input.id) &&
         inputs.findIndex((other) => other.id === input.id) === index,
     )
-    .sort((a, b) => a.id.localeCompare(b.id));
+    .map((input) => ({
+      input,
+      answeredAt: clampAnsweredAt(input.answeredAt, round, now),
+    }))
+    .sort(
+      (a, b) => a.answeredAt - b.answeredAt || a.input.id.localeCompare(b.input.id),
+    );
   const items = new Map(state.items);
   const moved = new Set<string>();
   const entries: ReviewEntry[] = [];
-  for (const input of fresh) {
+  for (const { input, answeredAt } of fresh) {
     const card = cards.get(input.cardId);
     if (card === undefined) continue;
     const limitMs =
@@ -113,7 +133,7 @@ export function decideAnswers(
       elapsedMs:
         input.result === "timeout" ? limitMs : Math.min(input.elapsedMs, limitMs),
       day: round.day,
-      answeredAt: now,
+      answeredAt,
       snapshot: {
         topic: card.topic,
         subtopic: card.subtopic,
@@ -122,7 +142,10 @@ export function decideAnswers(
       },
     });
     entries.push(reviewed.entry);
-    if (input.pass === "first" && reviewed.progress !== undefined) {
+    if (
+      reviewed.progress !== undefined &&
+      reviewed.progress !== items.get(input.cardId)
+    ) {
       items.set(input.cardId, reviewed.progress);
       moved.add(input.cardId);
     }
@@ -167,7 +190,10 @@ export function decideAnswers(
         stats.firstDay === null || round.day < stats.firstDay
           ? round.day
           : stats.firstDay,
-      levelWindow: [...stats.levelWindow, ...window].slice(-TUNING.difficulty.window),
+      // A late answer may be older than the window's newest, so it is sorted in.
+      levelWindow: [...stats.levelWindow, ...window]
+        .sort((a, b) => a.answeredAt - b.answeredAt)
+        .slice(-TUNING.difficulty.window),
     },
   };
 }
