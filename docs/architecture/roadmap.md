@@ -46,7 +46,7 @@ tracker in step.
   whenever it is ready, ahead of phase work, and no phase's exit waits on it. A request
   that needs AWS, touches an ADR decision or overlaps a later phase's scope goes into
   that phase instead.
-- **Issues are cut when a phase comes within reach.** Phases 0 through 3 have work items
+- **Issues are cut when a phase comes within reach.** Phases 0 through 5 have work items
   now. A later phase is split when it starts, against the code, skills and ADRs that
   exist by then.
 - **The Paid plan is the owner's.** The owner upgrades the `dev` account before the Free
@@ -319,7 +319,12 @@ was observed, on 2026-09-28:
 
 - Learner model v0: weaknesses by grammar item and topic.
   - They are derived by rules from the learning record and the cards' grammar tags.
-  - They feed into deck composition.
+  - They are computed when read, from the item projection and the cards; nothing new is
+    stored.
+  - Grammar weaknesses feed into deck composition. Topic and subtopic weaknesses are
+    shown to the learner but do not change the deal: the learner chooses topics, and
+    subtopics are already balanced within them (the owner's call when the phase was
+    cut).
 - The offline answer-queue semantics in the API:
   - client-reported answer time, with server-side bounds;
   - late answers accepted into the round's day;
@@ -330,6 +335,8 @@ was observed, on 2026-09-28:
   - They are the labels a grading evaluation will need later.
   - The current timer (6 to 20 seconds per card) is too short for typing, so this needs
     its own timing rule.
+  - It was not cut into work items with the rest of the phase, and the exit does not
+    wait on it.
 - Changing the profile after onboarding: the settings screen shows the stored time zone
   and lets the learner replace it, through `PATCH /v1/me`. Onboarding sets it once from
   the browser; nothing changes it afterwards yet.
