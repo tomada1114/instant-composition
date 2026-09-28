@@ -1,9 +1,9 @@
 // The local run of the API (`pnpm api`): the app on Node, against DynamoDB
-// local and the catalog snapshot. It verifies Cognito access tokens when
-// `API_COGNITO_*` name a user pool, and otherwise serves the one stand-in
-// subject. Either way it listens on the loopback interface only and
-// `readApiEnv` refuses to start inside AWS, because the stand-in lets every
-// request in. Kept thin: what it wires is tested where it is defined.
+// local and the catalog snapshot. It verifies Cognito access tokens, and
+// serves the web sign-in endpoints, when `API_COGNITO_*` name a user pool,
+// and otherwise serves the one stand-in subject. Either way it listens on the
+// loopback interface only and `readApiEnv` refuses to start inside AWS,
+// because the stand-in lets every request in. Kept thin: what it wires is tested where it is defined.
 import path from "node:path";
 
 import { serve } from "@hono/node-server";
@@ -18,7 +18,7 @@ import { learnerId } from "@instant-composition/application";
 
 import { API_ROOT, createApp } from "./app";
 import { readApiEnv } from "./env";
-import { localRunAuthenticator } from "./local-run-authenticator";
+import { localRunAuthenticator, localRunWebSession } from "./local-run-authenticator";
 import { ensureTable } from "./local-table";
 import { jsonLines } from "./log";
 
@@ -42,6 +42,7 @@ const app = createApp({
   now: Date.now,
   requestId: () => crypto.randomUUID(),
   log: jsonLines(write),
+  webSession: localRunWebSession(env.cognito, (request) => fetch(request)),
 });
 const readable = (await catalog.snapshot()).ok;
 

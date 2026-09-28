@@ -9,6 +9,7 @@ import {
   type ApiApp,
   type Authenticator,
   type LogLine,
+  type WebSession,
 } from "@instant-composition/api";
 import {
   learnerId,
@@ -47,6 +48,8 @@ export interface ApiHarnessOptions {
   readonly now?: number;
   /** Headers every `call` sends, such as the credential a client carries. */
   readonly headers?: Readonly<Record<string, string>>;
+  /** The web sign-in endpoints, when the app is to serve them. */
+  readonly webSession?: WebSession;
 }
 
 /** An authenticator that makes every request `subject`, as a verified token would. */
@@ -80,6 +83,7 @@ export function makeApi(options: ApiHarnessOptions = {}): ApiHarness {
     log: (line) => {
       lines.push(line);
     },
+    webSession: options.webSession,
   });
   return {
     app,

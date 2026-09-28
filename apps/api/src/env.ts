@@ -18,10 +18,17 @@ export interface ApiEnv {
   readonly cognito: CognitoSettings | null;
 }
 
-/** The Cognito user pool and app client a local run verifies access tokens against. */
+/**
+ * The Cognito user pool a local run verifies access tokens against, and the
+ * confidential web app client and domain it signs a browser in through.
+ */
 export interface CognitoSettings {
   readonly userPoolId: string;
   readonly clientId: string;
+  /** The web app client's secret: it goes to the pool's token endpoint and nowhere else. */
+  readonly clientSecret: string;
+  /** The user pool domain's origin, e.g. `https://example.auth.ap-northeast-1.amazoncognito.com`. */
+  readonly domain: string;
 }
 
 /** A variable held no value its setting accepts, or the process is not a local one. */
@@ -64,14 +71,38 @@ const userPoolId: Parse<string> = (value) =>
 const clientId: Parse<string> = (value) =>
   /^[\w+]{1,128}$/.test(value) ? value : undefined;
 
+/** An app client secret as Cognito shapes it. */
+const clientSecret: Parse<string> = (value) =>
+  /^[\w+]{1,64}$/.test(value) ? value : undefined;
+
+/** A user pool domain's base URL: https, and nothing after the host. */
+const domain: Parse<string> = (value) => {
+  const url = URL.parse(value);
+  return url?.protocol === "https:" &&
+    url.username === "" &&
+    url.password === "" &&
+    url.pathname === "/" &&
+    url.search === "" &&
+    url.hash === ""
+    ? url.origin
+    : undefined;
+};
+
+/** The variables naming the user pool: all set, or none. */
+const COGNITO_NAMES = [
+  "API_COGNITO_USER_POOL_ID",
+  "API_COGNITO_CLIENT_ID",
+  "API_COGNITO_CLIENT_SECRET",
+  "API_COGNITO_DOMAIN",
+] as const;
+
 /** Every variable {@link readApiEnv} reads. */
 export const API_ENV_NAMES = [
   "API_PORT",
   "API_DYNAMODB_ENDPOINT",
   "API_TABLE_NAME",
   "API_CATALOG_PATH",
-  "API_COGNITO_USER_POOL_ID",
-  "API_COGNITO_CLIENT_ID",
+  ...COGNITO_NAMES,
 ] as const;
 
 /**
@@ -95,12 +126,12 @@ function blank(source: Source, name: string): boolean {
  * Reads and validates the local run's environment. A blank value reads as
  * unset, and surrounding whitespace is dropped.
  *
- * The two `API_COGNITO_*` names are set together or not at all: both set wire
- * the Cognito authenticator, neither the stand-in.
+ * The four `API_COGNITO_*` names are set together or not at all: all set wire
+ * the Cognito authenticator and the web sign-in endpoints, none the stand-in.
  *
  * @throws {@link ApiEnvError} `ERR_API_ENV_INVALID` naming every variable that
- * holds no value its setting accepts — or that is unset while its partner is
- * set — or `ERR_API_ENV_NOT_LOCAL` when AWS runs the process.
+ * holds no value its setting accepts — or that is unset while another
+ * `API_COGNITO_*` name is set — or `ERR_API_ENV_NOT_LOCAL` when AWS runs the process.
  */
 export function readApiEnv(source: Source = process.env): ApiEnv {
   const hosted = HOSTED_MARKERS.filter((name) => (source[name] ?? "") !== "");
@@ -131,13 +162,10 @@ export function readApiEnv(source: Source = process.env): ApiEnv {
   };
   const pool = read("API_COGNITO_USER_POOL_ID", userPoolId);
   const client = read("API_COGNITO_CLIENT_ID", clientId);
-  for (const [name, partner] of [
-    ["API_COGNITO_USER_POOL_ID", "API_COGNITO_CLIENT_ID"],
-    ["API_COGNITO_CLIENT_ID", "API_COGNITO_USER_POOL_ID"],
-  ] as const) {
-    if (blank(source, name) && !blank(source, partner)) {
-      invalid.push(name);
-    }
+  const secret = read("API_COGNITO_CLIENT_SECRET", clientSecret);
+  const at = read("API_COGNITO_DOMAIN", domain);
+  if (COGNITO_NAMES.some((name) => !blank(source, name))) {
+    invalid.push(...COGNITO_NAMES.filter((name) => blank(source, name)));
   }
   if (invalid.length > 0) {
     throw new ApiEnvError(
@@ -149,8 +177,11 @@ export function readApiEnv(source: Source = process.env): ApiEnv {
   return {
     ...env,
     cognito:
-      pool === undefined || client === undefined
+      pool === undefined ||
+      client === undefined ||
+      secret === undefined ||
+      at === undefined
         ? null
-        : { userPoolId: pool, clientId: client },
+        : { userPoolId: pool, clientId: client, clientSecret: secret, domain: at },
   };
 }

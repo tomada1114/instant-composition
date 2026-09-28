@@ -4,6 +4,7 @@ import { FetchError, JwtBaseError } from "aws-jwt-verify/error";
 import { SimpleJwksCache, type Jwks } from "aws-jwt-verify/jwk";
 
 import type { AuthFailure, Authenticator, Principal } from "./authenticator";
+import { cookieValue } from "./cookies";
 
 /**
  * The cookie the web session carries its access token in (ADR-0005). The
@@ -39,16 +40,6 @@ const FORBIDDEN = err<AuthFailure>({ code: "ERR_FORBIDDEN" });
 
 /** RFC 6750's `Bearer <b64token>`, the scheme matched case-insensitively. */
 const BEARER = /^Bearer +([\w.~+/-]+=*) *$/iu;
-
-function cookieValue(header: string | null, name: string): string | undefined {
-  for (const pair of header?.split(";") ?? []) {
-    const at = pair.indexOf("=");
-    if (at !== -1 && pair.slice(0, at).trim() === name) {
-      return pair.slice(at + 1).trim();
-    }
-  }
-  return undefined;
-}
 
 /** A key set that answers any fetch with itself, so an unknown key id is refused, not fetched. */
 function fixedJwksCache(keySet: Jwks): SimpleJwksCache {
