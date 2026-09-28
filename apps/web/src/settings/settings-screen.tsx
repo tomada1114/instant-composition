@@ -3,6 +3,7 @@ import { useEffect, useId, useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
 import { BackHeader } from "../lib/back-header";
+import { LOGOUT_URL } from "../lib/endpoints";
 import type { SettingsPageView } from "../openapi";
 import { Button } from "../ui/button";
 import { Sheet } from "../ui/sheet";
@@ -98,6 +99,16 @@ export function SettingsScreen({
           </Button>
         </div>
       </section>
+      <form
+        method="post"
+        action={LOGOUT_URL}
+        className="flex min-h-16 items-center justify-between gap-4 border-b border-border"
+      >
+        <h2>{t("signOut.title")}</h2>
+        <Button type="submit" variant="text" className="-mr-3 text-foreground">
+          {t("signOut.action")}
+        </Button>
+      </form>
       {asking ? (
         <RetestSheet
           onCancel={() => {

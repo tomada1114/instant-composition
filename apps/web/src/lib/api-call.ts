@@ -44,7 +44,16 @@ export function operationUrl(data: OperationData): string {
   return `${API_ROOT}${filled}`;
 }
 
-export function send(method: Method, data: OperationData): Promise<Response> {
+/** Where the browser goes to sign in: a full-page navigation to the API's managed-login redirect. */
+export const LOGIN_URL = `${API_ROOT}/v1/auth/login`;
+
+/** Renews the session cookies from the refresh cookie; outside the contract's routes, so called by path. */
+export const REFRESH_URL = `${API_ROOT}/v1/auth/refresh`;
+
+/** Signs out: posted by a top-level form, since the answer is a 303 to another origin. */
+export const LOGOUT_URL = `${API_ROOT}/v1/auth/logout`;
+
+function request(method: Method, data: OperationData): Promise<Response> {
   return fetch(
     operationUrl(data),
     data.body === undefined
@@ -55,6 +64,46 @@ export function send(method: Method, data: OperationData): Promise<Response> {
           body: JSON.stringify(data.body),
         },
   );
+}
+
+async function isUnauthenticated(response: Response): Promise<boolean> {
+  if (response.status !== 401) return false;
+  const body: unknown = await response
+    .clone()
+    .json()
+    .catch(() => null);
+  return errorCode(body) === "ERR_UNAUTHENTICATED";
+}
+
+/** Only a 204 renews the session; a 404 (no user pool configured) or a refusal does not. */
+async function refreshSession(): Promise<boolean> {
+  try {
+    const response = await fetch(REFRESH_URL, {
+      method: "POST",
+      credentials: "same-origin",
+    });
+    return response.status === 204;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Sends one call. An `ERR_UNAUTHENTICATED` answer renews the session once and
+ * sends the call again; when renewal fails, or the retry is refused too, the
+ * browser is sent to sign in. At most one refresh per call, so this never loops.
+ */
+export async function send(method: Method, data: OperationData): Promise<Response> {
+  const first = await request(method, data);
+  if (!(await isUnauthenticated(first))) return first;
+  if (await refreshSession()) {
+    const retry = await request(method, data);
+    if (!(await isUnauthenticated(retry))) return retry;
+    globalThis.location.assign(LOGIN_URL);
+    return retry;
+  }
+  globalThis.location.assign(LOGIN_URL);
+  return first;
 }
 
 /** The envelope's `error.code`, or `undefined` for a body that is not the envelope. */

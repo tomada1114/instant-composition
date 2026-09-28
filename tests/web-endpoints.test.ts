@@ -7,7 +7,9 @@ import {
   getRecords,
   getRoundSummary,
   getSettings,
+  LOGIN_URL,
   operationUrl,
+  REFRESH_URL,
   recordAnswers,
   requestFinish,
   requestRound,
@@ -305,5 +307,84 @@ describe("roundKindFrom", () => {
     [3, "today"],
   ] as const)("reads %j as %s", (value, kind) => {
     expect(roundKindFrom(value)).toBe(kind);
+  });
+});
+
+describe("an unauthenticated answer", () => {
+  function stubLocation(): string[] {
+    const visited: string[] = [];
+    vi.stubGlobal("location", {
+      assign: (url: string) => {
+        visited.push(url);
+      },
+    });
+    return visited;
+  }
+
+  it("refreshes the session once and sends the call again", async () => {
+    const visited = stubLocation();
+    const answers = [
+      envelope(401, "ERR_UNAUTHENTICATED"),
+      new Response(null, { status: 204 }),
+      Response.json({ settings: {} }),
+    ];
+    const calls = stubFetch(() =>
+      Promise.resolve(answers.shift() ?? envelope(500, "ERR_X")),
+    );
+    const result = await getSettings();
+    expect(result.ok).toBe(true);
+    expect(calls.map((call) => [call.method, call.url])).toStrictEqual([
+      ["GET", "/api/v1/settings"],
+      ["POST", REFRESH_URL],
+      ["GET", "/api/v1/settings"],
+    ]);
+    expect(visited).toStrictEqual([]);
+  });
+
+  it.each([
+    ["refused", () => envelope(401, "ERR_UNAUTHENTICATED")],
+    ["not served (no user pool)", () => new Response("", { status: 404 })],
+  ] as const)(
+    "sends the browser to sign in when the refresh is %s",
+    async (_, refresh) => {
+      const visited = stubLocation();
+      const answers = [envelope(401, "ERR_UNAUTHENTICATED"), refresh()];
+      const calls = stubFetch(() =>
+        Promise.resolve(answers.shift() ?? envelope(500, "ERR_X")),
+      );
+      expect(await getHome()).toStrictEqual({
+        ok: false,
+        error: { code: "ERR_UNAUTHENTICATED" },
+      });
+      expect(calls.map((call) => call.url)).toStrictEqual([
+        "/api/v1/home",
+        REFRESH_URL,
+      ]);
+      expect(visited).toStrictEqual([LOGIN_URL]);
+      expect(LOGIN_URL).toBe("/api/v1/auth/login");
+    },
+  );
+
+  it("refreshes at most once when the retry is refused too", async () => {
+    const visited = stubLocation();
+    const answers = [
+      envelope(401, "ERR_UNAUTHENTICATED"),
+      new Response(null, { status: 204 }),
+      envelope(401, "ERR_UNAUTHENTICATED"),
+    ];
+    const calls = stubFetch(() =>
+      Promise.resolve(answers.shift() ?? envelope(500, "ERR_X")),
+    );
+    await getHome();
+    expect(calls).toHaveLength(3);
+    expect(visited).toStrictEqual([LOGIN_URL]);
+  });
+
+  it("leaves any other 401 alone", async () => {
+    const visited = stubLocation();
+    const calls = stubFetch(() => Promise.resolve(envelope(401, "ERR_OTHER")));
+    await getHome();
+    expect(calls).toHaveLength(1);
+    expect(visited).toStrictEqual([]);
   });
 });

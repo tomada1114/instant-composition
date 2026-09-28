@@ -335,3 +335,15 @@ describe("the settings screen when the read fails", () => {
     expect(calls).toHaveLength(2);
   });
 });
+
+describe("the settings screen, sign-out", () => {
+  it("posts a top-level form to the logout endpoint", async () => {
+    serveSettings();
+    await renderApp("/settings");
+    const button = screen.getByRole("button", { name: ja.Settings.signOut.action });
+    expect(button).toHaveAttribute("type", "submit");
+    const form = button.closest("form");
+    expect(form).toHaveAttribute("method", "post");
+    expect(form).toHaveAttribute("action", "/api/v1/auth/logout");
+  });
+});
