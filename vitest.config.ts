@@ -28,6 +28,7 @@ const automationTests = [
   "tests/catalog-build.test.ts",
   "tests/check-staged.test.ts",
   "tests/ci-sync.test.ts",
+  "tests/ci-watch.test.ts",
   "tests/clean.test.ts",
   "tests/contracts-openapi.test.ts",
   "tests/dev.test.ts",
