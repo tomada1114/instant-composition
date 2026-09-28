@@ -3,11 +3,15 @@ import { describe, expect, it } from "vitest";
 import {
   compose,
   countAvailable,
+  deal,
+  EMPTY_STATS,
+  practiceState,
   type CardMeta,
   type CardState,
   type ComposeInput,
+  type ItemProgress,
 } from "@instant-composition/domain";
-import { makeCardMeta } from "./domain-fixtures";
+import { makeCardMeta, makeItemProgress } from "./domain-fixtures";
 
 const TODAY = "2026-09-22";
 
@@ -33,6 +37,7 @@ function input(overrides: Partial<ComposeInput> = {}): ComposeInput {
     level: 5,
     topics: ["work", "daily"],
     focus: [],
+    weakConcepts: [],
     cards: [],
     states: new Map(),
     exclude: new Set(),
@@ -260,5 +265,126 @@ describe("the order of a deck", () => {
       .slice(1)
       .filter((id, index) => id.startsWith(ids[index]?.[0] ?? "-"));
     expect(adjacent).toStrictEqual([]);
+  });
+});
+
+describe("weak grammar concepts", () => {
+  const WEAK = "en:grammar/passive";
+  const OTHER = "en:grammar/imperatives";
+  const plain = cell("n", 30, { concepts: [OTHER] });
+  const tagged = cell("w", 3, { concepts: [WEAK] });
+  const weakIn = (ids: readonly string[]) => ids.filter((id) => id.startsWith("w"));
+
+  it("steer the same seed to a different deck holding weak-tagged new cards", () => {
+    const cards = [...plain, ...tagged];
+    const without = composed({ cards });
+    const weak = composed({ cards, weakConcepts: [WEAK] });
+
+    expect(weak.cardIds).not.toStrictEqual(without.cardIds);
+    expect(weakIn(without.cardIds).length).toBeLessThan(3);
+    expect(weakIn(weak.cardIds).sort()).toStrictEqual(["w1", "w2", "w3"]);
+    expect(weak).toMatchObject({ newCount: 10, weakCount: 3, weakConcepts: [WEAK] });
+    expect(without).toMatchObject({ weakCount: 0, weakConcepts: [] });
+  });
+
+  it("come after the focus share, which keeps its half", () => {
+    const cards = [
+      ...cell("h", 10, { topic: "daily", subtopic: "home", concepts: [OTHER] }),
+      ...plain,
+      ...tagged,
+    ];
+    const deck = composed({
+      cards,
+      focus: [{ topic: "daily", subtopic: "home" }],
+      weakConcepts: [WEAK],
+    });
+    expect(deck.focusCount).toBe(5);
+    expect(weakIn(deck.cardIds)).toHaveLength(3);
+  });
+
+  it("share the weak share between the top two concepts", () => {
+    const second = "en:grammar/conditionals";
+    const deck = composed({
+      cards: [
+        ...plain,
+        ...cell("w", 5, { concepts: [WEAK] }),
+        ...cell("c", 5, { concepts: [second] }),
+      ],
+      weakConcepts: [WEAK, second],
+    });
+    expect(weakIn(deck.cardIds).length).toBeGreaterThanOrEqual(2);
+    expect(
+      deck.cardIds.filter((id) => id.startsWith("c")).length,
+    ).toBeGreaterThanOrEqual(1);
+    expect(deck.weakConcepts).toStrictEqual([WEAK, second]);
+  });
+
+  it("draw nothing from outside the level band", () => {
+    const deck = composed({
+      cards: [...plain, ...cell("w", 3, { concepts: [WEAK], level: 7 })],
+      weakConcepts: [WEAK],
+    });
+    expect(deck).toMatchObject({ weakCount: 0, weakConcepts: [] });
+  });
+
+  it("put a weak review first among reviews due the same day", () => {
+    const cards = [
+      makeCardMeta("r1", { concepts: [OTHER] }),
+      makeCardMeta("r2", { concepts: [WEAK] }),
+      makeCardMeta("r3", { concepts: [OTHER] }),
+    ];
+    const states = new Map([
+      ["r1", due("2026-09-20", 1, "2026-09-12")],
+      ["r2", due("2026-09-20", 3, "2026-09-18")],
+      ["r3", due("2026-09-19", 4, "2026-09-18")],
+    ]);
+    // floor(4 * 0.6) = 2 review slots: the earlier due day first, then the weak tie.
+    const deck = composed({
+      size: 4,
+      minSize: 1,
+      cards: [...cards, ...cell("n", 5, { concepts: [OTHER] })],
+      states,
+      weakConcepts: [WEAK],
+    });
+    expect(deck.cardIds.filter((id) => id.startsWith("r")).sort()).toStrictEqual([
+      "r2",
+      "r3",
+    ]);
+  });
+});
+
+describe("the dealing state", () => {
+  const WEAK = "en:grammar/passive";
+  const cards = [
+    ...cell("w", 6, { concepts: [WEAK] }),
+    ...cell("n", 20, { concepts: ["en:grammar/imperatives"] }),
+  ];
+  const missed = new Map(
+    ["w1", "w2", "w3"].map((id) => [id, makeItemProgress(id, "ng")] as const),
+  );
+
+  function stateWith(items: ReadonlyMap<string, ItemProgress>) {
+    return practiceState({
+      today: TODAY,
+      stats: {
+        ...EMPTY_STATS,
+        level: { level: 5, reason: "placement", roundId: null, at: 0 },
+      },
+      settings: { topics: ["work"], focus: [], dailySize: 10, sound: true },
+      cards,
+      items,
+    });
+  }
+
+  it("carries the grammar concepts the learner keeps missing", () => {
+    expect(stateWith(missed).weakConcepts).toStrictEqual([WEAK]);
+    expect(stateWith(new Map()).weakConcepts).toStrictEqual([]);
+  });
+
+  it("hands them to every deal, which takes the three unseen weak cards", () => {
+    const dealt = deal(stateWith(missed), { size: 10, seed: "s" });
+    expect(
+      dealt.ok && dealt.value.cardIds.filter((id) => id.startsWith("w")).sort(),
+    ).toStrictEqual(["w4", "w5", "w6"]);
   });
 });

@@ -13,7 +13,9 @@ import {
 import {
   answersFor,
   DAY_MS,
+  fixedCatalog,
   makeHarness,
+  makeSnapshot,
   NOON,
   unreadableCatalog,
   type Harness,
@@ -179,6 +181,52 @@ describe("startRound", () => {
       ok: false,
       error: { code: "ERR_FORBIDDEN" },
     });
+  });
+});
+
+describe("startRound after misses on one grammar concept", () => {
+  const WEAK = "en:grammar/passive";
+  const snapshot = makeSnapshot({
+    perLevel: 10,
+    concepts: [
+      WEAK,
+      "en:grammar/can",
+      "en:grammar/will",
+      "en:grammar/must",
+      "en:grammar/if",
+    ],
+  });
+  const isWeak = (cardId: string): boolean =>
+    snapshot.shown.get(cardId)?.concepts.includes(WEAK) ?? false;
+
+  /**
+   * Placed, then two extra rounds that miss every `WEAK` card or none, then a
+   * third. All on one day, so the third deals only unseen cards: a missed card
+   * coming back as a review cannot account for the difference.
+   */
+  async function thirdExtra(missWeak: boolean): Promise<RoundPayload> {
+    const h = makeHarness(fixedCatalog(snapshot));
+    await placed(h);
+    for (const roundId of ["e1", "e2"]) {
+      const round = await start(h, "extra", roundId);
+      const finished = await finishRound(h.deps, h.context(), {
+        roundId,
+        answers: answersFor(round, (cardId) =>
+          missWeak && isWeak(cardId) ? "ng" : "ok",
+        ),
+      });
+      expect(finished.ok).toBe(true);
+    }
+    return start(h, "extra", "e3");
+  }
+
+  it("deals more cards of that concept than the same history without the misses", async () => {
+    const missed = await thirdExtra(true);
+    const clean = await thirdExtra(false);
+
+    expect(missed.deck.filter(isWeak).length).toBeGreaterThan(
+      clean.deck.filter(isWeak).length,
+    );
   });
 });
 

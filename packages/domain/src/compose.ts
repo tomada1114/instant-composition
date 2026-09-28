@@ -1,8 +1,14 @@
-import { pickByLevel, pickFocus, subtopicKey, type PickState } from "./compose-pick";
+import {
+  pickByLevel,
+  pickFocus,
+  pickWeak,
+  subtopicKey,
+  type PickState,
+} from "./compose-pick";
 import { seededRandom, shuffled } from "./random";
 import { err, ok, type Result } from "./result";
 import { TUNING } from "./tuning";
-import type { CardMeta, CardState, DayKey, SubtopicRef } from "./types";
+import type { CardMeta, CardState, ConceptId, DayKey, SubtopicRef } from "./types";
 
 export interface ComposeInput {
   readonly size: number;
@@ -12,6 +18,8 @@ export interface ComposeInput {
   readonly level: number;
   readonly topics: readonly string[];
   readonly focus: readonly SubtopicRef[];
+  /** The learner's weak grammar concepts, weakest first. */
+  readonly weakConcepts: readonly ConceptId[];
   /** Only the cards that may be shown. */
   readonly cards: readonly CardMeta[];
   readonly states: ReadonlyMap<string, CardState>;
@@ -25,6 +33,10 @@ export interface Composition {
   readonly reviewCount: number;
   readonly newCount: number;
   readonly focusCount: number;
+  /** Cards dealt, new or review, that carry at least one weak concept. */
+  readonly weakCount: number;
+  /** The weak concepts at least one dealt card carries, weakest first. */
+  readonly weakConcepts: readonly ConceptId[];
   /** Fewer cards than asked for, because no more could be dealt. */
   readonly shortage: boolean;
 }
@@ -57,7 +69,15 @@ export function countAvailable(input: AvailabilityInput): number {
   return seen.length + fresh.length;
 }
 
-function byReviewOrder(states: ReadonlyMap<string, CardState>) {
+function carriesAny(concepts: ReadonlySet<ConceptId>): (card: CardMeta) => boolean {
+  return (card) => card.concepts.some((concept) => concepts.has(concept));
+}
+
+/** The earliest due first; on the same due day, a card with a weak concept first. */
+function byReviewOrder(
+  states: ReadonlyMap<string, CardState>,
+  isWeak: (card: CardMeta) => boolean,
+) {
   return (a: CardMeta, b: CardMeta): number => {
     const left = states.get(a.id);
     const right = states.get(b.id);
@@ -66,6 +86,7 @@ function byReviewOrder(states: ReadonlyMap<string, CardState>) {
     }
     return (
       left.dueDay.localeCompare(right.dueDay) ||
+      Number(isWeak(b)) - Number(isWeak(a)) ||
       left.box - right.box ||
       left.lastDay.localeCompare(right.lastDay) ||
       a.id.localeCompare(b.id)
@@ -100,7 +121,8 @@ function scatter(deck: readonly CardMeta[]): CardMeta[] {
 
 /**
  * Deals one round: due reviews up to a share of the deck, then new cards (the
- * focus share first), then more reviews to fill whatever new cards could not.
+ * focus share first, then the weak share), then more reviews to fill whatever
+ * new cards could not.
  */
 export function compose(input: ComposeInput): Result<Composition, NotEnoughCards> {
   const { seen, fresh } = candidates(input);
@@ -110,7 +132,8 @@ export function compose(input: ComposeInput): Result<Composition, NotEnoughCards
   }
 
   const random = seededRandom(input.seed);
-  const order = byReviewOrder(input.states);
+  const isWeak = carriesAny(new Set(input.weakConcepts));
+  const order = byReviewOrder(input.states, isWeak);
   const dueSorted = seen
     .filter((card) => (input.states.get(card.id)?.dueDay ?? "") <= input.today)
     .sort(order);
@@ -127,19 +150,28 @@ export function compose(input: ComposeInput): Result<Composition, NotEnoughCards
   const focusQuota =
     input.focus.length === 0 ? 0 : Math.floor(newSlots * TUNING.mix.focusShareOfNew);
   const focused = pickFocus(fresh, input.focus, focusQuota, input.level, state);
-  const rest = pickByLevel(fresh, newSlots - focused.length, input.level, state);
+  const weakQuota = Math.min(
+    newSlots - focused.length,
+    Math.floor(newSlots * TUNING.mix.weakShareOfNew),
+  );
+  const weak = pickWeak(fresh, input.weakConcepts, weakQuota, input.level, state);
+  const targeted = [...focused, ...weak];
+  const rest = pickByLevel(fresh, newSlots - targeted.length, input.level, state);
 
   const fillers = [...dueSorted.slice(reviewSlots), ...notDueSorted].slice(
     0,
-    input.size - reviews.length - focused.length - rest.length,
+    input.size - reviews.length - targeted.length - rest.length,
   );
-  const deck = [...reviews, ...focused, ...rest, ...fillers];
+  const deck = [...reviews, ...targeted, ...rest, ...fillers];
+  const dealtConcepts = new Set(deck.flatMap((card) => card.concepts));
 
   return ok({
     cardIds: scatter(shuffled(deck, random)).map((card) => card.id),
     reviewCount: reviews.length + fillers.length,
-    newCount: focused.length + rest.length,
+    newCount: targeted.length + rest.length,
     focusCount: focused.length,
+    weakCount: deck.filter(isWeak).length,
+    weakConcepts: input.weakConcepts.filter((concept) => dealtConcepts.has(concept)),
     shortage: deck.length < input.size,
   });
 }

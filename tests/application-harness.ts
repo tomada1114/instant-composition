@@ -22,6 +22,7 @@ function card(
   subtopic: string,
   level: number,
   index: number,
+  concept: string,
 ): CardContent {
   const id = `${topic}-${subtopic}-${String(level)}-${String(index)}`;
   return {
@@ -30,7 +31,7 @@ function card(
     subtopic,
     level,
     words: 8,
-    concepts: [CONCEPT],
+    concepts: [concept],
     prompt: `${id}の文`,
     text: `The sentence for ${id}.`,
     alternatives: [],
@@ -38,13 +39,27 @@ function card(
   };
 }
 
+export interface SnapshotOptions {
+  /** Cards at every level of every subtopic; three unless given. */
+  readonly perLevel?: number;
+  /** Handed out in turn by a card's index within its level; one concept unless given. */
+  readonly concepts?: readonly string[];
+}
+
 /** Two topics of two subtopics, three cards at every level from 1 to 10 in each. */
-export function makeSnapshot(): CatalogSnapshot {
+export function makeSnapshot(options: SnapshotOptions = {}): CatalogSnapshot {
+  const concepts = options.concepts ?? [CONCEPT];
   const cards = TOPICS.flatMap((topic) =>
     SUBTOPICS.flatMap((subtopic) =>
       Array.from({ length: 10 }, (_, level) =>
-        Array.from({ length: 3 }, (__, index) =>
-          card(topic, subtopic, level + 1, index),
+        Array.from({ length: options.perLevel ?? 3 }, (__, index) =>
+          card(
+            topic,
+            subtopic,
+            level + 1,
+            index,
+            concepts[index % concepts.length] ?? CONCEPT,
+          ),
         ),
       ).flat(),
     ),
@@ -68,7 +83,9 @@ export function makeSnapshot(): CatalogSnapshot {
         { cefr: "B1", toeic: `${String(level + 1)}00` },
       ]),
     ),
-    conceptNames: new Map([[CONCEPT, "命令文"]]),
+    conceptNames: new Map(
+      concepts.map((concept) => [concept, concept === CONCEPT ? "命令文" : concept]),
+    ),
     shown: byId,
     retired: new Map(),
   };

@@ -6,12 +6,14 @@ import { TUNING } from "./tuning";
 import type {
   CardMeta,
   CardState,
+  ConceptId,
   DailySize,
   DayKey,
   RoundKind,
   Settings,
   SubtopicRef,
 } from "./types";
+import { weaknesses } from "./weakness";
 
 /** What dealing a deck reads, taken once per command or query. */
 export interface PracticeState {
@@ -20,6 +22,8 @@ export interface PracticeState {
   readonly topics: readonly string[];
   readonly focus: readonly SubtopicRef[];
   readonly dailySize: DailySize;
+  /** The weakest grammar concepts, weakest first: what the weak share draws from. */
+  readonly weakConcepts: readonly ConceptId[];
   /** Only the cards a round may deal. */
   readonly cards: readonly CardMeta[];
   readonly states: ReadonlyMap<string, CardState>;
@@ -35,12 +39,14 @@ export function practiceState(input: {
   readonly items: ReadonlyMap<string, ItemProgress>;
 }): PracticeState {
   const items = [...input.items.values()];
+  const shown = new Map(input.cards.map((card) => [card.id, card]));
   return {
     today: input.today,
     level: input.stats.level?.level ?? 1,
     topics: input.settings?.topics ?? [],
     focus: input.settings?.focus ?? [],
     dailySize: input.settings?.dailySize ?? TUNING.defaultDailySize,
+    weakConcepts: weaknesses({ items, shown }).grammar.map((weak) => weak.concept),
     cards: input.cards,
     states: new Map(items.map((progress) => [progress.item.id, progress.memory])),
     answeredToday: new Set(

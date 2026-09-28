@@ -22,6 +22,8 @@ export const TUNING = {
   mix: {
     reviewShareMax: 0.6,
     focusShareOfNew: 0.5,
+    /** Taken after the focus share, from the learner's weak grammar concepts. */
+    weakShareOfNew: 0.3,
     levelShare: { same: 0.6, below: 0.2, above: 0.2 },
   },
   /** Days until the next review, indexed by box 0..5. */
