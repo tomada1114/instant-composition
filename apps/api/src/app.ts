@@ -1,24 +1,13 @@
-import { requestContext, type ApplicationDeps } from "@instant-composition/application";
-import { roundIdParamSchema, ROUTES, type Route } from "@instant-composition/contracts";
+import { ROUTES, type Route } from "@instant-composition/contracts";
 import { Hono } from "hono";
 
-import type { Authenticator } from "./authenticator";
-import { failure, readJsonBody } from "./http";
-import type { LogLine, LogSink, RequestOutcome } from "./log";
+import { answer, type ApiDependencies } from "./answer";
+import type { LogLine, RequestOutcome } from "./log";
 import { OPERATIONS, type Operation } from "./operations";
 import { bindRoutes, routerPath } from "./routes";
 
 /** The path every contract route is served under: a client calls `/api` + its path. */
 export const API_ROOT = "/api";
-
-/** Everything the app is handed, so a test runs it with no network and a fixed clock. */
-export interface ApiDependencies extends ApplicationDeps {
-  readonly authenticator: Authenticator;
-  /** Epoch milliseconds: the request's `now`, and both ends of its duration. */
-  readonly now: () => number;
-  readonly requestId: () => string;
-  readonly log: LogSink;
-}
 
 /** The contract's routes and the handlers served disagree, so the app refuses to be built. */
 export class RouteTableError extends Error {
@@ -43,68 +32,6 @@ export interface ApiVariables {
 }
 
 export type ApiApp = Hono<{ Variables: ApiVariables }>;
-
-interface Answered {
-  readonly response: Response;
-  readonly outcome: RequestOutcome;
-  readonly learnerId: string | null;
-  readonly reason: LogLine["reason"];
-}
-
-function refused(
-  code: Parameters<typeof failure>[0],
-  learnerId: string | null,
-  reason: LogLine["reason"] = null,
-): Answered {
-  return { response: failure(code), outcome: code, learnerId, reason };
-}
-
-/** Authenticate, check the path and the body, run the operation, answer. */
-async function answer(
-  route: Route,
-  operation: Operation,
-  deps: ApiDependencies,
-  request: Request,
-  params: Readonly<Record<string, string>>,
-  requestId: string,
-): Promise<Answered> {
-  const identity = await deps.authenticator.authenticate(request);
-  const learnerId = identity.learner.id;
-  const context = requestContext({ ...identity, now: deps.now(), requestId });
-  if (!context.ok) {
-    return refused(context.error.code, learnerId);
-  }
-  let roundId = "";
-  if (operation.roundPath) {
-    const parsed = roundIdParamSchema.safeParse(params["roundId"]);
-    if (!parsed.success) {
-      return refused("ERR_BAD_REQUEST", learnerId);
-    }
-    roundId = parsed.data;
-  }
-  let body: unknown = undefined;
-  if (operation.body !== null) {
-    const read = await readJsonBody(request);
-    if (!read.ok) {
-      return refused(read.error, learnerId);
-    }
-    body = read.value;
-  }
-  const outcome = await operation.handle({
-    deps,
-    context: context.value,
-    roundId,
-    body,
-  });
-  if (!outcome.ok) {
-    return refused(outcome.error.code, learnerId, outcome.error.reason ?? null);
-  }
-  const response =
-    route.success.status === 204
-      ? new Response(null, { status: 204 })
-      : Response.json(outcome.value, { status: route.success.status });
-  return { response, outcome: "ok", learnerId, reason: null };
-}
 
 /**
  * The API as a Web-standard app: `app.fetch(request)` answers every contract

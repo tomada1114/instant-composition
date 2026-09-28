@@ -1,4 +1,7 @@
-import { createMemoryStores } from "@instant-composition/adapters";
+import {
+  createMemoryDirectory,
+  createMemoryStores,
+} from "@instant-composition/adapters";
 import {
   API_ROOT,
   createApp,
@@ -7,21 +10,26 @@ import {
   type Authenticator,
   type LogLine,
 } from "@instant-composition/api";
-import type {
-  Catalog,
-  LearnerStores,
-  RoundPayload,
+import {
+  learnerId,
+  type Catalog,
+  type LearnerDirectory,
+  type LearnerId,
+  type LearnerStores,
+  type RoundPayload,
 } from "@instant-composition/application";
+import { ok } from "@instant-composition/domain";
 
 import { fixedCatalog, NOON } from "./application-harness";
 
-// The API app over the in-memory store and the fixture catalog, with a clock
-// that stands still, numbered request ids and a recording log. Nothing here
-// asserts.
+// The API app over the in-memory store and directory and the fixture catalog,
+// with a clock that stands still, numbered request and learner ids and a
+// recording log. Nothing here asserts.
 
 export interface ApiHarness {
   readonly app: ApiApp;
   readonly stores: LearnerStores;
+  readonly directory: LearnerDirectory;
   readonly lines: LogLine[];
   /** Moves the clock the app reads; it stands still otherwise. */
   readonly advance: (ms: number) => void;
@@ -31,21 +39,38 @@ export interface ApiHarness {
 export interface ApiHarnessOptions {
   readonly catalog?: Catalog;
   readonly stores?: LearnerStores;
+  readonly directory?: LearnerDirectory;
   readonly authenticator?: Authenticator;
+  /** Where a first sign-in's learner id comes from: `learner-1`, `learner-2`, … by default. */
+  readonly newLearnerId?: () => LearnerId;
   readonly now?: number;
+  /** Headers every `call` sends, such as the credential a client carries. */
+  readonly headers?: Readonly<Record<string, string>>;
+}
+
+/** An authenticator that makes every request `subject`, as a verified token would. */
+export function subjectAuthenticator(subject: string): Authenticator {
+  return { authenticate: () => Promise.resolve(ok({ subject })) };
 }
 
 export function makeApi(options: ApiHarnessOptions = {}): ApiHarness {
   const stores = options.stores ?? createMemoryStores();
+  const directory = options.directory ?? createMemoryDirectory();
   const lines: LogLine[] = [];
   let now = options.now ?? NOON;
   let issued = 0;
+  let registered = 0;
   const app = createApp({
     stores,
     catalog: options.catalog ?? fixedCatalog(),
-    authenticator:
-      options.authenticator ??
-      localAuthenticator({ id: undefined, timeZone: undefined }),
+    directory,
+    newLearnerId:
+      options.newLearnerId ??
+      (() => {
+        registered += 1;
+        return learnerId(`learner-${String(registered)}`);
+      }),
+    authenticator: options.authenticator ?? localAuthenticator(),
     now: () => now,
     requestId: () => {
       issued += 1;
@@ -58,6 +83,7 @@ export function makeApi(options: ApiHarnessOptions = {}): ApiHarness {
   return {
     app,
     stores,
+    directory,
     lines,
     advance: (ms) => {
       now += ms;
@@ -66,12 +92,11 @@ export function makeApi(options: ApiHarnessOptions = {}): ApiHarness {
       app.fetch(
         new Request(`http://localhost${API_ROOT}${path}`, {
           method,
-          ...(body === undefined
-            ? {}
-            : {
-                body: JSON.stringify(body),
-                headers: { "content-type": "application/json" },
-              }),
+          headers: {
+            ...options.headers,
+            ...(body === undefined ? {} : { "content-type": "application/json" }),
+          },
+          ...(body === undefined ? {} : { body: JSON.stringify(body) }),
         }),
       ),
   };

@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 
+import { createMemoryDirectory } from "@instant-composition/adapters";
 import {
   createApp,
   OPERATIONS,
@@ -28,6 +29,10 @@ function buildWith(
       {
         stores: { forLearner: () => ({}) as never },
         catalog: fixedCatalog(),
+        directory: createMemoryDirectory(),
+        newLearnerId: () => {
+          throw new Error("unused");
+        },
         authenticator: { authenticate: () => Promise.reject(new Error("unused")) },
         now: () => 0,
         requestId: () => "req",

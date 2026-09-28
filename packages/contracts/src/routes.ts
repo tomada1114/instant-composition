@@ -27,12 +27,16 @@ export interface Route {
   readonly errors: readonly ErrorCode[];
 }
 
-/** Every operation reads a learner-bound store, which the policy may refuse. */
-const QUERY_ERRORS = ["ERR_FORBIDDEN"] as const;
+/**
+ * Every operation needs a signed-in caller and reads a learner-bound store,
+ * which the policy may refuse.
+ */
+const QUERY_ERRORS = ["ERR_UNAUTHENTICATED", "ERR_FORBIDDEN"] as const;
 
 /** A path's `{roundId}` is validated like a body field. */
 const ROUND_QUERY_ERRORS = [
   "ERR_BAD_REQUEST",
+  "ERR_UNAUTHENTICATED",
   "ERR_FORBIDDEN",
   "ERR_ROUND_NOT_FOUND",
 ] as const;
@@ -41,6 +45,7 @@ const ROUND_QUERY_ERRORS = [
 const COMMAND_ERRORS = [
   "ERR_BAD_REQUEST",
   "ERR_PAYLOAD_TOO_LARGE",
+  "ERR_UNAUTHENTICATED",
   "ERR_FORBIDDEN",
   "ERR_CONFLICT",
   "ERR_CONTENT_UNREADABLE",

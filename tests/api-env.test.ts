@@ -15,8 +15,7 @@ const DEFAULTS: ApiEnv = {
   dynamoDbEndpoint: "http://localhost:8000",
   tableName: "instant-composition-local",
   catalogPath: "dist/catalog/en/ja.json",
-  learnerId: undefined,
-  learnerTimeZone: undefined,
+  cognito: null,
 };
 
 function refusedWith(source: Record<string, string>): ApiEnvError {
@@ -47,17 +46,25 @@ describe("readApiEnv", () => {
         API_DYNAMODB_ENDPOINT: "http://127.0.0.1:8001",
         API_TABLE_NAME: "learners-dev",
         API_CATALOG_PATH: "/tmp/catalog.json",
-        API_LOCAL_LEARNER_ID: "learner_2",
-        API_LOCAL_LEARNER_TIME_ZONE: "asia/tokyo",
+        API_COGNITO_USER_POOL_ID: " ap-northeast-1_AbC123 ",
+        API_COGNITO_CLIENT_ID: "1example23456789",
       }),
     ).toStrictEqual({
       port: 9000,
       dynamoDbEndpoint: "http://127.0.0.1:8001",
       tableName: "learners-dev",
       catalogPath: "/tmp/catalog.json",
-      learnerId: "learner_2",
-      learnerTimeZone: "Asia/Tokyo",
+      cognito: { userPoolId: "ap-northeast-1_AbC123", clientId: "1example23456789" },
     });
+  });
+
+  it.each([
+    ["API_COGNITO_USER_POOL_ID", { API_COGNITO_CLIENT_ID: "1example23456789" }],
+    ["API_COGNITO_CLIENT_ID", { API_COGNITO_USER_POOL_ID: "ap-northeast-1_AbC123" }],
+  ])("refuses a user pool half configured, naming the unset %s", (name, source) => {
+    const error = refusedWith(source);
+    expect(error.code).toBe("ERR_API_ENV_INVALID");
+    expect(error.names).toStrictEqual([name]);
   });
 
   it.each([
@@ -69,11 +76,19 @@ describe("readApiEnv", () => {
     ["API_DYNAMODB_ENDPOINT", "ftp://localhost"],
     ["API_TABLE_NAME", "x1"],
     ["API_TABLE_NAME", "learners/dev"],
-    ["API_LOCAL_LEARNER_ID", "a#b"],
-    ["API_LOCAL_LEARNER_ID", "x".repeat(65)],
-    ["API_LOCAL_LEARNER_TIME_ZONE", "Mars/Olympus"],
+    ["API_COGNITO_USER_POOL_ID", "dummy-not-a-real-value"],
+    ["API_COGNITO_USER_POOL_ID", "AbC123"],
+    ["API_COGNITO_CLIENT_ID", "dummy-not-a-real-value"],
   ])("refuses %s=%s by naming it", (name, value) => {
-    const error = refusedWith({ [name]: value });
+    const partners: Record<string, string> = {
+      API_COGNITO_USER_POOL_ID: "ap-northeast-1_AbC123",
+      API_COGNITO_CLIENT_ID: "1example23456789",
+    };
+    const error = refusedWith(
+      name.startsWith("API_COGNITO_")
+        ? { ...partners, [name]: value }
+        : { [name]: value },
+    );
     expect(error.code).toBe("ERR_API_ENV_INVALID");
     expect(error.names).toStrictEqual([name]);
     expect(error.message).not.toContain(value);

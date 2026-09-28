@@ -4,21 +4,22 @@ description: >
   Covers apps/api, the Hono app serving packages/contracts' ROUTES under /api/v1: adding
   or changing an operation handler, the route-table check against the contract, the
   error envelope and bounded body reader, the per-request JSON log line and its fields,
-  the local stand-in authenticator, apps/api/src/env.ts and .env.example, and running it
-  with pnpm api or pnpm dev against DynamoDB local. Use when an endpoint is added to the
-  contract, a log field is added or read, an API_* environment variable is added, a
-  request is refused with an unexpected code, or the local API will not start.
+  the Cognito and stand-in authenticators, apps/api/src/env.ts and .env.example, and
+  running it with pnpm api or pnpm dev against DynamoDB local. Use when an endpoint is
+  added to the contract, a log field is added or read, an API_* environment variable is
+  added, a request is refused with an unexpected code, or the local API will not start.
 ---
 
 # Serving the API
 
 **Owns:** how `apps/api` turns the contract into HTTP — the handler table, the order a
-request is checked in, the log line, the stand-in authenticator, the environment and the
-local run. **Does not own:** the schemas and the `ROUTES` table themselves
-(`packages/contracts`, ADR-0007 and ADR-0013); the commands and queries a handler calls
-(`designing-application-core`); who may reach whose data (`isolating-learner-data`); the
-`ERR_*` vocabulary (`designing-errors`); the web client that calls it through the `/api`
-proxy (`building-web-screens`); where a test goes (`placing-tests`).
+request is checked in, the log line, the authenticators and which one a local run wires,
+the environment and the local run. **Does not own:** the schemas and the `ROUTES` table
+themselves (`packages/contracts`, ADR-0007 and ADR-0013); the commands and queries a
+handler calls (`designing-application-core`); who may reach whose data
+(`isolating-learner-data`); the `ERR_*` vocabulary (`designing-errors`); the web client
+that calls it through the `/api` proxy (`building-web-screens`); where a test goes
+(`placing-tests`).
 
 ## One table, checked both ways
 
@@ -37,7 +38,11 @@ answers an empty body.
 
 ## The order a request is checked in
 
-Authenticate and build the `RequestContext` (a refused context is `ERR_FORBIDDEN`), then
+Authenticate (no credential that verifies is `ERR_UNAUTHENTICATED`, a session cookie on
+a state-changing request from a foreign origin `ERR_FORBIDDEN`), sign the subject in
+with `signIn` over the learner directory (a first sign-in registers the learner; a
+registration that keeps losing its race is `ERR_CONFLICT`), and build the
+`RequestContext` from the stored profile (a refused context is `ERR_FORBIDDEN`), then
 validate the `{roundId}` path parameter with `roundIdParamSchema`, then read the body
 through the bounded reader in `apps/api/src/http.ts` (`ERR_PAYLOAD_TOO_LARGE` past
 `MAX_REQUEST_BODY_BYTES`, `ERR_BAD_REQUEST` for anything not JSON or not the schema),
@@ -79,24 +84,38 @@ Never add a field carrying a request body, a path, a query string, a card's text
 learner's answers, a header or an error message: a message can quote what the caller or
 a dependency sent. `tests/api-log.test.ts` holds the shape and that absence.
 
-## The stand-in authenticator
+## The authenticators
 
-Until Phase 3, `localAuthenticator` in `apps/api/src/local-authenticator.ts` makes every
-request the one local learner — `local-learner` in `Asia/Tokyo` unless the environment
-names another. It is the only module that names a learner, and it authenticates nothing,
-so it must never be reachable from anywhere but this machine: only `main.ts` wires it,
-the server listens on `127.0.0.1` alone, and `readApiEnv` refuses to start
+`cognitoAuthenticator` in `apps/api/src/cognito-authenticator.ts` is the real one: it
+verifies a Cognito access token with `aws-jwt-verify` (`tokenUse: "access"`, the
+expected client id), read from `Authorization: Bearer` or, when that header is absent,
+from the `SESSION_COOKIE` the web session carries — never both, so the Bearer path reads
+no cookie. The cookie path also checks `Origin` on every state-changing request against
+the web origins it is handed. A token that does not verify is `ERR_UNAUTHENTICATED`; a
+key set that cannot be fetched throws, a bare 500, since it is not the caller's fault.
+Tests hand it a `keySet` signed for locally (`tests/cognito-tokens.ts`), and with one it
+never fetches.
+
+`localAuthenticator` in `apps/api/src/local-authenticator.ts` is the stand-in: it makes
+every request the one local subject, `LOCAL_SUBJECT`. Like any authenticator it yields
+only the subject: the learner is the one the learner directory maps it to, registered
+with the default profile on the first request, so a local run's learner id is minted,
+not configured. It authenticates nothing, so it must never be reachable from anywhere
+but this machine: only `main.ts` wires it, through `localRunAuthenticator`, and only
+when `API_COGNITO_USER_POOL_ID` and `API_COGNITO_CLIENT_ID` are both unset; the start-up
+line names which one ran (`"authenticator":"cognito"` or `"local"`). Either way the
+server listens on `127.0.0.1` alone, and `readApiEnv` refuses to start
 (`ERR_API_ENV_NOT_LOCAL`) where AWS marks the process as its own
 (`AWS_LAMBDA_FUNCTION_NAME`, `AWS_EXECUTION_ENV` or `ECS_CONTAINER_METADATA_URI`). A
-hosted entry (Phase 4's Lambda handler) takes a real `Authenticator` instead.
+hosted entry (Phase 4's Lambda handler) takes `cognitoAuthenticator` directly.
 **REQUIRED:** `isolating-learner-data` before touching either.
 
 ## Environment and the local run
 
 `apps/api/src/env.ts` is the only module in `apps/api` that reads `process.env`, and
-`API_ENV_NAMES` lists what it reads; every name has a default, so none has to be set. No
-`.env` file is loaded, so the names come from the shell. Adding a name means adding it
-to `apps/api/src/env.ts` _and_ to `.env.example` with an empty value;
+`API_ENV_NAMES` lists what it reads; every name has a default or is optional, so none
+has to be set. No `.env` file is loaded, so the names come from the shell. Adding a name
+means adding it to `apps/api/src/env.ts` _and_ to `.env.example` with an empty value;
 `tests/env-example.test.ts` fails until the two agree, and is the check to run first. A
 blank value reads as absent, and a value no setting accepts stops the process at start
 (`ERR_API_ENV_INVALID`, naming every such variable) rather than returning a `Result`: a

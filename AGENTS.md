@@ -190,27 +190,30 @@ and `infra/`. These are the packages and apps
 time zone, and the pure `decide` functions behind each command. `packages/application`
 holds the request context, the authorization policy, the practice commands as load,
 decide, commit, the queries each screen reads from projections alone, and the ports they
-need: the learner-bound store and the catalog. `packages/adapters` implements those
-ports: the DynamoDB store on ADR-0006's single table, each commit one
-`TransactWriteItems`; the in-memory store; and the catalog that reads one
-`pnpm catalog:build` snapshot. Both stores run the contract suite in
-`tests/learner-store-contract.ts`, isolation included — the in-memory one in
-`pnpm test`, the DynamoDB one against DynamoDB local in `pnpm test:dynamodb`.
-`packages/contracts` holds the `/v1` request and response schemas and the OpenAPI 3.1
-document built from them, committed as `packages/contracts/openapi.json`;
-`tests/contracts-openapi.test.ts` fails when the file differs from what the schemas
-generate, and `pnpm contracts:openapi` rewrites it (ADR-0013). `apps/api` serves every
-route in contracts' `ROUTES` under `/api` by calling `packages/application`, with a
-stand-in authenticator bound to one local learner until Phase 3; `serving-the-api` holds
-how. `apps/web` is the browser client ADR-0008 describes: a Vite + React SPA with
-TanStack Router, TanStack Query and use-intl over `messages/ja.json`, which reaches the
-API only over HTTP under `/api`, typed by what @hey-api/openapi-ts generates from
-`packages/contracts/openapi.json` into `apps/web/src/openapi/`. That tree is committed,
-`tests/web-openapi-client.test.ts` fails when it differs from a fresh generation, and
-`pnpm web:client` rewrites it. `infra/` is the CDK app ADR-0009 describes: one app
-builds either stage from its `stage` context value (`dev` | `prod`), and an unknown or
-missing stage fails synthesis; `tests/infra-*.test.ts` synthesize it, so the everyday
-gate fails when synthesis does.
+need: the learner-bound store, the learner directory and the catalog.
+`packages/adapters` implements those ports: the DynamoDB store on ADR-0006's single
+table, each commit one `TransactWriteItems`; the in-memory store; a DynamoDB and an
+in-memory learner directory; and the catalog that reads one `pnpm catalog:build`
+snapshot. Both stores run the contract suite in `tests/learner-store-contract.ts`,
+isolation included, and both directories the one in
+`tests/learner-directory-contract.ts` — the in-memory ones in `pnpm test`, the DynamoDB
+ones against DynamoDB local in `pnpm test:dynamodb`. `packages/contracts` holds the
+`/v1` request and response schemas and the OpenAPI 3.1 document built from them,
+committed as `packages/contracts/openapi.json`; `tests/contracts-openapi.test.ts` fails
+when the file differs from what the schemas generate, and `pnpm contracts:openapi`
+rewrites it (ADR-0013). `apps/api` serves every route in contracts' `ROUTES` under
+`/api` by calling `packages/application`, signing each request in through the learner
+directory: the subject comes from a Cognito access token, as a Bearer header or the web
+session cookie, when `API_COGNITO_*` name a user pool, and from a stand-in naming one
+local subject otherwise; `serving-the-api` holds how. `apps/web` is the browser client
+ADR-0008 describes: a Vite + React SPA with TanStack Router, TanStack Query and use-intl
+over `messages/ja.json`, which reaches the API only over HTTP under `/api`, typed by
+what @hey-api/openapi-ts generates from `packages/contracts/openapi.json` into
+`apps/web/src/openapi/`. That tree is committed, `tests/web-openapi-client.test.ts`
+fails when it differs from a fresh generation, and `pnpm web:client` rewrites it.
+`infra/` is the CDK app ADR-0009 describes: one app builds either stage from its `stage`
+context value (`dev` | `prod`), and an unknown or missing stage fails synthesis;
+`tests/infra-*.test.ts` synthesize it, so the everyday gate fails when synthesis does.
 
 - **The edges.** `adapters` → `application` and `domain`, the AWS SDK's DynamoDB
   clients, `zod` and `node:fs/promises`; `application` → `domain`; `contracts` → `zod`
