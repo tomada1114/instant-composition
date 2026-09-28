@@ -124,6 +124,7 @@ export const PREVIEW: HomePreview = {
   reviewCount: 4,
   newCount: 6,
   focusNames: ["meetings-ja"],
+  weakNames: ["命令文・Let's", "現在完了"],
   minutes: 5,
 };
 

@@ -1216,6 +1216,7 @@
           },
           "newCount": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
           "focusNames": { "type": "array", "items": { "type": "string" } },
+          "weakNames": { "type": "array", "items": { "type": "string" } },
           "minutes": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 }
         },
         "required": [
@@ -1225,6 +1226,7 @@
           "reviewCount",
           "newCount",
           "focusNames",
+          "weakNames",
           "minutes"
         ]
       },
@@ -1319,6 +1321,35 @@
           }
         ]
       },
+      "WeakPoints": {
+        "type": "object",
+        "properties": {
+          "grammar": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": { "type": "string" },
+                "name": { "type": "string" }
+              },
+              "required": ["id", "name"]
+            }
+          },
+          "subtopics": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "topic": { "type": "string" },
+                "subtopic": { "type": "string" },
+                "name": { "type": "string" }
+              },
+              "required": ["topic", "subtopic", "name"]
+            }
+          }
+        },
+        "required": ["grammar", "subtopics"]
+      },
       "RecordsView": {
         "type": "object",
         "properties": {
@@ -1327,6 +1358,7 @@
             "type": "array",
             "items": { "$ref": "#/components/schemas/BreakdownTopic" }
           },
+          "weak": { "$ref": "#/components/schemas/WeakPoints" },
           "toeic": { "type": ["string", "null"] },
           "streak": {
             "type": "object",
@@ -1366,6 +1398,7 @@
         "required": [
           "reach",
           "breakdown",
+          "weak",
           "toeic",
           "streak",
           "calendar",

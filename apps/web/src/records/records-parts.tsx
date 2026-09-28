@@ -2,8 +2,9 @@ import { useId, useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
 import { cn } from "../lib/utils";
-import type { BreakdownTopic, Dot, TitleGroup } from "../openapi";
+import type { BreakdownTopic, Dot, TitleGroup, WeakPoints } from "../openapi";
 import { ChevronGlyph } from "../ui/glyphs";
+import { InfoTip } from "../ui/info-tip";
 
 /** `disclosure` + `bar-list`: one topic's mastered cards per subtopic, opened in place. */
 export function Breakdown({
@@ -114,6 +115,43 @@ export function MilestoneList({
                 {group.kind === "streak" ? t("streak") : group.name}
               </dt>
               <dd className="font-mono text-mono-sm">{group.values.join(" · ")}</dd>
+            </div>
+          ))}
+        </dl>
+      )}
+    </section>
+  );
+}
+
+/** `weak-list`: the weakest grammar and subtopics by name alone; no miss count, no rate, no accent. */
+export function WeakList({ weak }: Readonly<{ weak: WeakPoints }>): ReactElement {
+  const t = useTranslations("Records.weak");
+  const id = useId();
+  const rows = [
+    { key: "grammar", label: t("grammar"), names: weak.grammar.map((row) => row.name) },
+    {
+      key: "subtopics",
+      label: t("subtopics"),
+      names: weak.subtopics.map((row) => row.name),
+    },
+  ].filter((row) => row.names.length > 0);
+  return (
+    <section aria-labelledby={id} className="flex flex-col gap-4">
+      <div className="flex flex-wrap items-center gap-x-1">
+        <h2 id={id} className="text-muted-foreground">
+          {t("title")}
+        </h2>
+        <InfoTip label={t("infoLabel")} text={t("info")} />
+      </div>
+      {rows.length === 0 ? (
+        <p className="text-muted-foreground">{t("none")}</p>
+      ) : (
+        <dl className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-1">
+          {rows.map((row) => (
+            <div key={row.key} className="contents">
+              <dt className="text-label text-muted-foreground">{row.label}</dt>
+              {/* A grammar name may hold a "・" itself, so these are set apart by "、". */}
+              <dd>{row.names.join("、")}</dd>
             </div>
           ))}
         </dl>
