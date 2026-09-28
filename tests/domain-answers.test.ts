@@ -64,13 +64,20 @@ function state(overrides: Partial<AnswersState> = {}): AnswersState {
 }
 
 describe("checkAnswers", () => {
-  it("answers ERR_ROUND_CLOSED for a finished round", () => {
-    expect(checkAnswers(makeRound({ finishedAt: 5 }), [answer()], CARDS)).toStrictEqual(
-      {
-        ok: false,
-        error: { code: "ERR_ROUND_CLOSED" },
-      },
-    );
+  it("answers ERR_ROUND_CLOSED for a new answer to a finished round", () => {
+    expect(
+      checkAnswers(makeRound({ finishedAt: 5 }), [answer()], CARDS, new Set()),
+    ).toStrictEqual({
+      ok: false,
+      error: { code: "ERR_ROUND_CLOSED" },
+    });
+  });
+
+  it("accepts a finished round's batch made only of answers it holds", () => {
+    const held = answer();
+    expect(
+      checkAnswers(makeRound({ finishedAt: 5 }), [held], CARDS, new Set([held.id])),
+    ).toStrictEqual({ ok: true, value: undefined });
   });
 
   it.each([
@@ -79,16 +86,16 @@ describe("checkAnswers", () => {
     ["a card the catalog does not know", answer({ cardId: "c5" })],
   ])("refuses a batch holding an answer for %s", (_, bad) => {
     const cards = new Map([...CARDS].filter(([id]) => id !== "c5"));
-    expect(checkAnswers(makeRound(), [answer(), bad], cards)).toStrictEqual({
+    expect(checkAnswers(makeRound(), [answer(), bad], cards, new Set())).toStrictEqual({
       ok: false,
       error: { code: "ERR_BAD_REQUEST" },
     });
   });
 
   it("accepts an abandoned round, whose answers still count", () => {
-    expect(checkAnswers(makeRound({ abandonedAt: 5 }), [answer()], CARDS).ok).toBe(
-      true,
-    );
+    expect(
+      checkAnswers(makeRound({ abandonedAt: 5 }), [answer()], CARDS, new Set()).ok,
+    ).toBe(true);
   });
 });
 

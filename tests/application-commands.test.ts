@@ -230,7 +230,26 @@ describe("recordAnswers", () => {
     ).toStrictEqual({ ok: false, error: { code: "ERR_ROUND_NOT_FOUND" } });
   });
 
-  it("refuses an answer for a finished round", async () => {
+  it("changes nothing when a batch is sent again after the round is finished", async () => {
+    const h = makeHarness();
+    await placed(h);
+    const round = await start(h, "extra", "e1");
+    const batch = { roundId: round.id, answers: answersFor(round).slice(0, 4) };
+    const store = h.stores.forLearner(h.learner);
+    expect((await recordAnswers(h.deps, h.context(), batch)).ok).toBe(true);
+    expect(
+      (await finishRound(h.deps, h.context(), { roundId: round.id, answers: [] })).ok,
+    ).toBe(true);
+    const finished = await everything(store);
+
+    expect(await recordAnswers(h.deps, h.context(NOON + 1_000), batch)).toStrictEqual({
+      ok: true,
+      value: undefined,
+    });
+    expect(await everything(store)).toStrictEqual(finished);
+  });
+
+  it("refuses a new answer for a finished round", async () => {
     const h = makeHarness();
     await placed(h);
     const [answered] = await h.stores.forLearner(h.learner).reviewsOf("p1");

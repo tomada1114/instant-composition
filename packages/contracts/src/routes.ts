@@ -123,7 +123,8 @@ export const ROUTES: readonly Route[] = [
     method: "post",
     path: "/v1/rounds/{roundId}/answers",
     operationId: "recordAnswers",
-    summary: "Records a batch of answers; ids the round already holds are ignored.",
+    summary:
+      "Records a batch of answers; ids the round already holds are ignored, so a batch of those alone answers 204 even after finish, and one with a new id for a finished round answers ERR_ROUND_CLOSED.",
     requestBody: answersRequestSchema,
     success: { status: 204, body: null },
     errors: [...COMMAND_ERRORS, "ERR_ROUND_NOT_FOUND", "ERR_ROUND_CLOSED"],
