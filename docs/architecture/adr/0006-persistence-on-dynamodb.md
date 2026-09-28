@@ -120,8 +120,9 @@ own key prefixes, or their own table if their access patterns diverge.
 
 The store Phase 1 built (`packages/adapters/src/keys.ts`) follows this layout. It adds
 the `DAY#` tallies and the escaping rule above, and names the key attributes `PK` and
-`SK`. `PROFILE`, `LEVEL#`, `TITLE#` and the identity mapping arrive with the features
-that write them.
+`SK`. `PROFILE` and the identity mapping are written together by the learner directory
+when a learner first signs in ([ADR-0005](0005-identity-and-authorization.md)), each
+only while absent; `LEVEL#` and `TITLE#` arrive with the features that write them.
 
 ### Idempotency and offline sync
 
