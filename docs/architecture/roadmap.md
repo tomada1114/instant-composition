@@ -289,6 +289,9 @@ stages, foundation stack, deploys).
   - They are the labels a grading evaluation will need later.
   - The current timer (6 to 20 seconds per card) is too short for typing, so this needs
     its own timing rule.
+- Changing the profile after onboarding: the settings screen shows the stored time zone
+  and lets the learner replace it, through `PATCH /v1/me`. Onboarding sets it once from
+  the browser; nothing changes it afterwards yet.
 
 **Exit.** Weak points visibly change what a round deals; a batch of answers replayed
 twice changes nothing the second time.
