@@ -333,6 +333,7 @@ async function waitUntilServing(
 
 const servers: Server[] = [];
 const scratch: string[] = [];
+let apiOutput: () => string = () => "";
 /** The learner table this run's API creates; DynamoDB local keeps it until deleted. */
 const tableName = `smoke-${randomUUID()}`;
 let baseUrl = "";
@@ -357,6 +358,11 @@ beforeAll(async () => {
     API_PORT: String(apiPort),
     API_TABLE_NAME: tableName,
     API_CATALOG_PATH: path.join(out, "en", "ja.json"),
+    // The stack is served as the stand-in learner, whatever user pool the
+    // shell names: signing in needs Cognito, which no suite here calls. A
+    // blank value reads as unset.
+    API_COGNITO_USER_POOL_ID: "",
+    API_COGNITO_CLIENT_ID: "",
   };
   // Exactly the command `pnpm api` runs.
   const api = startServer(
@@ -365,6 +371,7 @@ beforeAll(async () => {
     { cwd: repoRoot, env },
   );
   servers.push(api);
+  apiOutput = api.output;
   await waitUntilServing(
     api,
     `"url":"http://127.0.0.1:${String(apiPort)}/api"`,
@@ -500,5 +507,9 @@ describe("the API behind the client's own origin", () => {
     const response = await send("/v1/no-such-route", "GET");
 
     expect(response.status).toBe(404);
+  });
+
+  it("names the stand-in authenticator in its start-up line", () => {
+    expect(apiOutput()).toContain('"authenticator":"local"');
   });
 });

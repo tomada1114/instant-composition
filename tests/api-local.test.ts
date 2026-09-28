@@ -13,7 +13,8 @@ describe("localAuthenticator", () => {
     }),
   ])("makes every request the one local subject (%#)", async (request) => {
     expect(await localAuthenticator().authenticate(request)).toStrictEqual({
-      subject: "local",
+      ok: true,
+      value: { subject: "local" },
     });
   });
 });

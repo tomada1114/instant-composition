@@ -18,6 +18,7 @@ import {
   type LearnerStores,
   type RoundPayload,
 } from "@instant-composition/application";
+import { ok } from "@instant-composition/domain";
 
 import { fixedCatalog, NOON } from "./application-harness";
 
@@ -43,11 +44,13 @@ export interface ApiHarnessOptions {
   /** Where a first sign-in's learner id comes from: `learner-1`, `learner-2`, … by default. */
   readonly newLearnerId?: () => LearnerId;
   readonly now?: number;
+  /** Headers every `call` sends, such as the credential a client carries. */
+  readonly headers?: Readonly<Record<string, string>>;
 }
 
 /** An authenticator that makes every request `subject`, as a verified token would. */
 export function subjectAuthenticator(subject: string): Authenticator {
-  return { authenticate: () => Promise.resolve({ subject }) };
+  return { authenticate: () => Promise.resolve(ok({ subject })) };
 }
 
 export function makeApi(options: ApiHarnessOptions = {}): ApiHarness {
@@ -89,12 +92,11 @@ export function makeApi(options: ApiHarnessOptions = {}): ApiHarness {
       app.fetch(
         new Request(`http://localhost${API_ROOT}${path}`, {
           method,
-          ...(body === undefined
-            ? {}
-            : {
-                body: JSON.stringify(body),
-                headers: { "content-type": "application/json" },
-              }),
+          headers: {
+            ...options.headers,
+            ...(body === undefined ? {} : { "content-type": "application/json" }),
+          },
+          ...(body === undefined ? {} : { body: JSON.stringify(body) }),
         }),
       ),
   };

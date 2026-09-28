@@ -159,7 +159,7 @@ describe("the import scanner the edge assertions run on", () => {
         "@instant-composition/application",
         "./app",
         "./env",
-        "./local-authenticator",
+        "./local-run-authenticator",
         "./local-table",
         "./log",
       ],
@@ -521,7 +521,13 @@ const APP_WORKSPACE_EDGES: Readonly<Record<string, readonly string[]>> = {
  * the package it belongs to.
  */
 const APP_NPM_EDGES: Readonly<Record<string, readonly string[]>> = {
-  api: ["@hono/node-server", "hono"],
+  api: [
+    "@hono/node-server",
+    "aws-jwt-verify",
+    "aws-jwt-verify/error",
+    "aws-jwt-verify/jwk",
+    "hono",
+  ],
   web: [
     "@fontsource-variable/inter-tight",
     "@fontsource-variable/jetbrains-mono",

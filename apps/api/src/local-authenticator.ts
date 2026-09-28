@@ -1,3 +1,5 @@
+import { ok } from "@instant-composition/domain";
+
 import type { Authenticator, Principal } from "./authenticator";
 
 /**
@@ -11,11 +13,12 @@ export const LOCAL_SUBJECT = "local";
  *
  * @remarks
  * It authenticates nothing, so it is only ever wired by `main.ts`, the local
- * Node entry, which listens on the loopback interface alone and refuses to
- * start inside AWS (see `readApiEnv`). No hosted entry may use it; Phase 3
- * replaces it with the Cognito verifier behind the same `Authenticator` port.
+ * Node entry, and only when no user pool is configured there; that entry
+ * listens on the loopback interface alone and refuses to start inside AWS
+ * (see `readApiEnv`). No hosted entry may use it: those take
+ * `cognitoAuthenticator`.
  */
 export function localAuthenticator(): Authenticator {
   const principal: Principal = { subject: LOCAL_SUBJECT };
-  return { authenticate: () => Promise.resolve(principal) };
+  return { authenticate: () => Promise.resolve(ok(principal)) };
 }
