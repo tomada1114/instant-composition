@@ -527,6 +527,7 @@ const APP_NPM_EDGES: Readonly<Record<string, readonly string[]>> = {
     "aws-jwt-verify/error",
     "aws-jwt-verify/jwk",
     "hono",
+    "hono/aws-lambda",
   ],
   web: [
     "@fontsource-variable/inter-tight",

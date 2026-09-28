@@ -32,7 +32,8 @@ export const WEB_ORIGIN = "http://127.0.0.1:5173";
 export const CALLBACK_URL = "http://127.0.0.1:5173/api/v1/auth/callback";
 export const SIGN_OUT_URL = "http://127.0.0.1:5173/";
 
-const KEY = signingKey("pool-key");
+/** The key the fake user pool signs its access tokens with. */
+export const POOL_KEY = signingKey("pool-key");
 
 /** One request the API made to the user pool's domain. */
 export interface DomainCall {
@@ -68,7 +69,7 @@ export interface FakeCognito {
 const s256 = (verifier: string): string =>
   createHash("sha256").update(verifier).digest("base64url");
 
-function fakeCognito(key: SigningKey): FakeCognito {
+export function fakeCognito(key: SigningKey): FakeCognito {
   const calls: DomainCall[] = [];
   const issued: string[] = [];
   const codes = new Map<
@@ -232,13 +233,13 @@ export interface WebHarness {
 }
 
 export function makeWebApi(): WebHarness {
-  const cognito = fakeCognito(KEY);
+  const cognito = fakeCognito(POOL_KEY);
   const api = makeApi({
     authenticator: cognitoAuthenticator({
       userPoolId: USER_POOL_ID,
       clientId: CLIENT_ID,
       webOrigins: [WEB_ORIGIN],
-      keySet: keySetOf(KEY),
+      keySet: keySetOf(POOL_KEY),
     }),
     webSession: cognitoWebSession({
       clientId: CLIENT_ID,
