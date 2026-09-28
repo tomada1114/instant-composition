@@ -8,7 +8,7 @@ export {
   type AnswersState,
   type CardFacts,
 } from "./answers";
-export { deriveCardStates, nextCardState, type LeitnerAnswer } from "./card-state";
+export { nextCardState, type LeitnerAnswer } from "./card-state";
 export {
   decideClose,
   streakValue,
@@ -65,13 +65,11 @@ export {
   type StreakView,
 } from "./home-state";
 export {
-  masteredCards,
   nearestMilestone,
   reachBySubtopic,
   reachByTopic,
   resolvePlacement,
   ringProgress,
-  type Mastery,
   type RingProgress,
 } from "./mastery";
 export {

@@ -1,41 +1,6 @@
 import { nextMilestone, previousMilestone } from "./milestones";
 import { TUNING, type MilestoneSeries } from "./tuning";
-import type { AnswerRecord, DayKey, SubtopicRef } from "./types";
-
-export interface Mastery {
-  readonly cardId: string;
-  /** The round's day of the answer that made the card mastered. */
-  readonly day: DayKey;
-  readonly roundId: string;
-}
-
-/**
- * Every mastered card: correct on its first pass on two different days.
- * Retries never count; a placement round counts like any other.
- */
-export function masteredCards(answers: readonly AnswerRecord[]): Map<string, Mastery> {
-  const okDays = new Map<string, Set<DayKey>>();
-  const mastered = new Map<string, Mastery>();
-  const oks = answers
-    .filter((answer) => answer.pass === "first" && answer.result === "ok")
-    .sort((a, b) => a.answeredAt - b.answeredAt);
-  for (const answer of oks) {
-    if (mastered.has(answer.cardId)) {
-      continue;
-    }
-    const days = okDays.get(answer.cardId) ?? new Set<DayKey>();
-    days.add(answer.day);
-    okDays.set(answer.cardId, days);
-    if (days.size >= 2) {
-      mastered.set(answer.cardId, {
-        cardId: answer.cardId,
-        day: answer.day,
-        roundId: answer.roundId,
-      });
-    }
-  }
-  return mastered;
-}
+import type { AnswerRecord, SubtopicRef } from "./types";
 
 /**
  * Where each answered card belongs: its current card, else its tombstone, else
