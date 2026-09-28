@@ -491,6 +491,8 @@ const MESSAGE_KEYS = [
   "Settings.retest.cancel",
   "Settings.retest.confirm",
   "Settings.saveFailed",
+  "Settings.signOut.title",
+  "Settings.signOut.action",
 ] as const satisfies readonly MessageKey[];
 
 describe("the message catalogs", () => {
