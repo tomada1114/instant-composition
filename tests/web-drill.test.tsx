@@ -110,7 +110,7 @@ describe("the drill, a round run to its summary", () => {
     press("ArrowLeft");
     expect(screen.getByText("answer-c1")).toBeInTheDocument();
     await settle(200);
-    press("j");
+    press("k");
     await settle(400);
     expect(screen.getByText("prompt-c2")).toBeInTheDocument();
 
