@@ -13,6 +13,23 @@ right) and `point` (the one thing worth noticing).
 Everything below follows from that: the learner has only the Japanese to go on, has a
 few seconds, and grades themselves by comparing against the back.
 
+## Short at every level
+
+Instant composition trains producing a sentence at once. A longer sentence is slower to
+produce, not harder in a way that trains that, so difficulty comes from vocabulary,
+idioms and phrasal verbs, and structure — never from length. Every level in
+`content/levels.json` caps length, and the caps stay close together from level 1 to
+level 10:
+
+- `en` sits inside the level's `words` range, and every alternative stays at or under
+  its `words.max`.
+- `ja` stays at or under the level's `jaChars.max` characters. Whitespace does not
+  count; punctuation does.
+
+The lint rejects a card over any of these. The cap is a ceiling, not a target: a
+sentence is as short as its scene allows. If a word or a clause can go without losing
+the point of the card, it goes.
+
 ## `ja` — the front
 
 - **Natural Japanese a person would actually say or write** in the scene, not
@@ -31,7 +48,7 @@ few seconds, and grades themselves by comparing against the back.
   textbook sentence with no context — the most common complaint about existing
   composition books.
 - One sentence. Two short sentences only when the second is what makes the scene
-  (「傘持ってる？雨が降りそう。」).
+  (「傘持ってる？雨が降りそう。」), and only within the level's `jaChars.max`.
 - Plain punctuation: 、。？！. No 「…」 and no romaji.
 - Latin letters only for proper nouns, product names, acronyms and units, written the
   way a Japanese writer
@@ -45,7 +62,10 @@ few seconds, and grades themselves by comparing against the back.
 - What a fluent speaker would naturally say in that scene, at the card's level. Not the
   most literal rendering of the Japanese, and not a showcase of rare vocabulary.
 - Its length must sit inside the level's `words` range in `content/levels.json` — the
-  lint rejects it otherwise, and the timer depends on it.
+  lint rejects it otherwise, and the timer depends on it. Aim below the cap: no padding
+  clause, no second detail the scene does not need.
+- A higher level asks for a harder word, an idiom or phrasal verb, or a harder structure
+  — not for more of the sentence.
 - Contractions are fine and usually more natural in speech (`I'm`, `don't`).
 - Ends with `.`, `?` or `!`. No `...`, no `…`.
 - American spelling.
@@ -60,6 +80,7 @@ few seconds, and grades themselves by comparing against the back.
   `Is it okay if we…`), not exotic ones.
 - Not a trivial respelling of `en` (contraction vs. full form, punctuation only). The
   lint rejects those.
+- At most the level's `words.max` words, like `en`; the lint rejects a longer one.
 - If a variant shifts meaning or politeness, leave it out rather than include it.
 
 ## `point` — one line
@@ -74,7 +95,9 @@ few seconds, and grades themselves by comparing against the back.
 - `topic` / `subtopic` come from `content/taxonomy.json` only. The scene description
   there is what the sentence should be about.
 - `level` from `content/levels.json`: judge by what it takes to produce the sentence
-  quickly — structure first, then vocabulary, then length.
+  quickly — its structure, the tier of its vocabulary, and the idioms or phrasal verbs
+  it needs, as each level's `summary` names them. Length is never a reason for a higher
+  level; every level caps it.
 - `grammar`: 1–2 ids from `content/grammar.json`, the structures the card actually
   exercises. Each id's `minLevel`–`maxLevel` must include the card's level. Never shown
   to the learner.

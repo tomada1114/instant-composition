@@ -15,7 +15,12 @@ Write **{n}** new cards for this cell:
 - Topic / subtopic: **{topic.ja} / {subtopic.ja}** (`{topic.id}` / `{subtopic.id}`)
 - Scene: {subtopic.scene}
 - Level: **{level.level}** — {level.summary} (TOEIC ≈ {level.toeic}, CEFR ≈
-  {level.cefr}). `en` must be **{level.words.min}–{level.words.max} words**.
+  {level.cefr}). `en` must be **{level.words.min}–{level.words.max} words**, every
+  alternative at most **{level.words.max} words**, and `ja` at most
+  **{level.jaChars.max} characters** (whitespace not counted).
+- These caps are ceilings, not targets: write each sentence as short as its scene
+  allows. Make the card harder through what the level summary names — vocabulary, idioms
+  and phrasal verbs, structure — never through a longer sentence.
 - Target grammar — spread these across the cards; every card uses at least one of them:
   {for each target: `- {id}: {ja} — e.g. "{example}"`}
 - Other grammar ids valid at this level (use only for a second tag): {comma-separated
@@ -50,7 +55,9 @@ Return **only** a JSON array, no prose, no code fence. Each element:
 }
 ```
 
-Before returning, check each card yourself: the word count of `en` is inside the range;
-2 or 3 alternatives, none a mere contraction or punctuation variant of `en`; `grammar`
-has 1–2 ids from the lists above; `ja` pins the subject, tense, polarity and politeness
-of the English.
+Before returning, check each card yourself: the word count of `en` is inside
+{level.words.min}–{level.words.max}; each alternative has at most {level.words.max}
+words; `ja` has at most {level.jaChars.max} characters, whitespace not counted; no word
+or clause could go without losing the card's point; 2 or 3 alternatives, none a mere
+contraction or punctuation variant of `en`; `grammar` has 1–2 ids from the lists above;
+`ja` pins the subject, tense, polarity and politeness of the English.

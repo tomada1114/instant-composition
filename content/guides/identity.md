@@ -9,15 +9,15 @@ one question that decides whether a change keeps the id:
 Yes → **edit in place** (same id). No → **rebuild**: move the old card to
 `content/tombstones.jsonl` with `replacedBy`, and write a new card with a new id.
 
-| Edit in place (same id)                                                                                                  | Rebuild (tombstone + new id)                                                                        |
-| ------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------- |
-| Fixing a typo, punctuation, an article or other outright error                                                           | The meaning of `ja` changes: who, what, when, positive/negative, request vs. suggestion             |
-| Making `ja` more natural without changing its meaning                                                                    | The skeleton of `en` changes: tense, sentence pattern, main-clause structure                        |
-| Adding a cue to `ja` that pins the skeleton (e.g. 「もう」 for a perfect) — **only when `en` already had that skeleton** | The main grammar item the card exercises changes                                                    |
-| Swapping words in `en` (start → begin), or a more natural phrasing with the same skeleton                                | `en` changes length enough that the timer moves by roughly ×1.5 or more, or to roughly ×2/3 or less |
-| Adding, removing, or replacing alternatives                                                                              |                                                                                                     |
-| Rewriting `point`                                                                                                        |                                                                                                     |
-| Retagging `topic`, `subtopic`, `level` or `grammar`                                                                      |                                                                                                     |
+| Edit in place (same id)                                                                                                  | Rebuild (tombstone + new id)                                                            |
+| ------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------- |
+| Fixing a typo, punctuation, an article or other outright error                                                           | The meaning of `ja` changes: who, what, when, positive/negative, request vs. suggestion |
+| Making `ja` more natural without changing its meaning                                                                    | The skeleton of `en` changes: tense, sentence pattern, main-clause structure            |
+| Adding a cue to `ja` that pins the skeleton (e.g. 「もう」 for a perfect) — **only when `en` already had that skeleton** | The main grammar item the card exercises changes                                        |
+| Swapping words in `en` (start → begin), or a more natural phrasing with the same skeleton                                | `en`'s word count grows by roughly ×1.5 or more, or shrinks to roughly ×2/3 or less     |
+| Adding, removing, or replacing alternatives                                                                              |                                                                                         |
+| Rewriting `point`                                                                                                        |                                                                                         |
+| Retagging `topic`, `subtopic`, `level` or `grammar`                                                                      |                                                                                         |
 
 - Retagging the level keeps the id: the question is the same; the app's difficulty
   adjustment simply uses the current tag.
