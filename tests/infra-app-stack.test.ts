@@ -35,17 +35,24 @@ const CACHING_OPTIMIZED = "658327ea-f89d-4fab-a63d-7e88639e58f6";
 const CACHING_DISABLED = "4135ea2d-6df8-44a3-9df3-4b5a84be39ad";
 const ALL_VIEWER_EXCEPT_HOST_HEADER = "b689b0a8-53d0-40ab-baf2-68738e2966ac";
 
-function logicalIdOf(type: string): string {
-  const [id, ...others] = Object.keys(TEMPLATE.findResources(type));
+// The API's function, role, policy and log group, beside the web client
+// secret writer's.
+const API_FUNCTION = "ApiFunction";
+
+/** The one resource of `type` whose logical id starts with `prefix`. */
+function logicalIdOf(type: string, prefix = ""): string {
+  const [id, ...others] = Object.keys(TEMPLATE.findResources(type)).filter((key) =>
+    key.startsWith(prefix),
+  );
   if (id === undefined || others.length > 0) {
-    throw new TypeError(`the template has no single ${type}`);
+    throw new TypeError(`the template has no single ${type} named ${prefix}…`);
   }
   return id;
 }
 
-function propertiesOf(type: string): Record<string, unknown> {
+function propertiesOf(type: string, prefix = ""): Record<string, unknown> {
   const properties: unknown =
-    TEMPLATE.findResources(type)[logicalIdOf(type)]?.["Properties"];
+    TEMPLATE.findResources(type)[logicalIdOf(type, prefix)]?.["Properties"];
   if (typeof properties !== "object" || properties === null) {
     throw new TypeError(`${type} has no properties`);
   }
@@ -84,7 +91,7 @@ function webUrl(path?: string): { "Fn::Join": [string, unknown[]] } {
 // ADR-0009's cost guard: nothing billed by the hour whether used or not —
 // no NAT gateway, load balancer, interface endpoint or database instance.
 describe("the dev app stack's resources", () => {
-  it("are only the bucket, the distribution, the HTTP API and the function", () => {
+  it("are only the bucket, the distribution, the HTTP API, the function and the web client", () => {
     // The CLI adds its own AWS::CDK::Metadata, which bills nothing.
     const types = new Set(
       Object.values(TEMPLATE.toJSON()["Resources"] as Record<string, { Type: string }>)
@@ -100,6 +107,8 @@ describe("the dev app stack's resources", () => {
         "AWS::CloudFront::Distribution",
         "AWS::CloudFront::Function",
         "AWS::CloudFront::OriginAccessControl",
+        "AWS::Cognito::ManagedLoginBranding",
+        "AWS::Cognito::UserPoolClient",
         "AWS::IAM::Policy",
         "AWS::IAM::Role",
         "AWS::Lambda::Function",
@@ -107,12 +116,13 @@ describe("the dev app stack's resources", () => {
         "AWS::Logs::LogGroup",
         "AWS::S3::Bucket",
         "AWS::S3::BucketPolicy",
+        "Custom::WebClientSecret",
       ].sort(),
     );
   });
 
   // CloudFormation cannot write a SecureString, and a String would put the
-  // secret in the template; the parameter is created outside it (#156).
+  // secret in the template; the custom resource writes the parameter instead.
   it("create no parameter, so no secret is in the template", () => {
     expect(TEMPLATE.findResources("AWS::SSM::Parameter")).toStrictEqual({});
   });
@@ -327,7 +337,7 @@ describe("the dev app stack's HTTP API", () => {
       ApiId: { Ref: logicalIdOf("AWS::ApiGatewayV2::Api") },
       IntegrationType: "AWS_PROXY",
       IntegrationUri: {
-        "Fn::GetAtt": [logicalIdOf("AWS::Lambda::Function"), "Arn"],
+        "Fn::GetAtt": [logicalIdOf("AWS::Lambda::Function", API_FUNCTION), "Arn"],
       },
       PayloadFormatVersion: "2.0",
     });
@@ -336,7 +346,7 @@ describe("the dev app stack's HTTP API", () => {
 
 describe("the dev app stack's function", () => {
   it("runs nodejs24.x on arm64, outside any VPC, beside the Parameters and Secrets extension", () => {
-    const properties = propertiesOf("AWS::Lambda::Function");
+    const properties = propertiesOf("AWS::Lambda::Function", API_FUNCTION);
     expect(properties).toMatchObject({
       Runtime: "nodejs24.x",
       Architectures: ["arm64"],
@@ -349,9 +359,9 @@ describe("the dev app stack's function", () => {
     );
   });
 
-  it("is configured with foundation's identifiers, the bundled catalog and the dev URL", () => {
+  it("is configured with foundation's identifiers, the dev URL's client, the bundled catalog and the dev URL", () => {
     const variables = (
-      propertiesOf("AWS::Lambda::Function")["Environment"] as {
+      propertiesOf("AWS::Lambda::Function", API_FUNCTION)["Environment"] as {
         Variables: Record<string, unknown>;
       }
     ).Variables;
@@ -359,7 +369,7 @@ describe("the dev app stack's function", () => {
       API_TABLE_NAME: foundationReference(FOUNDATION_PARAMETERS.learnerTableName),
       API_CATALOG_PATH: LAMBDA_CATALOG_PATH,
       API_COGNITO_USER_POOL_ID: foundationReference(FOUNDATION_PARAMETERS.userPoolId),
-      API_COGNITO_CLIENT_ID: foundationReference(FOUNDATION_PARAMETERS.webClientId),
+      API_COGNITO_CLIENT_ID: { Ref: logicalIdOf("AWS::Cognito::UserPoolClient") },
       API_COGNITO_DOMAIN: foundationReference(FOUNDATION_PARAMETERS.signInDomainUrl),
       API_COGNITO_CLIENT_SECRET_PARAMETER:
         "/instant-composition/dev/app/web-client-secret",
@@ -427,8 +437,10 @@ describe("the dev app stack's function role", () => {
   }
 
   it("may use the learner table, read the secret parameter, and decrypt it through Parameter Store only", () => {
-    const policy = propertiesOf("AWS::IAM::Policy");
-    expect(policy["Roles"]).toStrictEqual([{ Ref: logicalIdOf("AWS::IAM::Role") }]);
+    const policy = propertiesOf("AWS::IAM::Policy", API_FUNCTION);
+    expect(policy["Roles"]).toStrictEqual([
+      { Ref: logicalIdOf("AWS::IAM::Role", API_FUNCTION) },
+    ]);
     const table = foundationReference(FOUNDATION_PARAMETERS.learnerTableArn);
     const kms = {
       "Fn::Join": [
@@ -483,7 +495,7 @@ describe("the dev app stack's function role", () => {
   });
 
   it("is assumed by Lambda alone and otherwise holds only the basic logging policy", () => {
-    const role = propertiesOf("AWS::IAM::Role");
+    const role = propertiesOf("AWS::IAM::Role", API_FUNCTION);
     expect(role["AssumeRolePolicyDocument"]).toStrictEqual({
       Version: "2012-10-17",
       Statement: [
@@ -514,7 +526,9 @@ describe("the dev app stack's function role", () => {
       TEMPLATE.hasResourceProperties("AWS::Lambda::Permission", {
         Action: "lambda:InvokeFunction",
         Principal: "apigateway.amazonaws.com",
-        FunctionName: { "Fn::GetAtt": [logicalIdOf("AWS::Lambda::Function"), "Arn"] },
+        FunctionName: {
+          "Fn::GetAtt": [logicalIdOf("AWS::Lambda::Function", API_FUNCTION), "Arn"],
+        },
         SourceArn: Match.objectLike({
           "Fn::Join": Match.arrayWith([
             Match.arrayWith([{ Ref: logicalIdOf("AWS::ApiGatewayV2::Api") }]),

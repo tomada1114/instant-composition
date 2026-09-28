@@ -1,20 +1,11 @@
-import {
-  CfnOutput,
-  Duration,
-  Fn,
-  RemovalPolicy,
-  Stack,
-  type StackProps,
-} from "aws-cdk-lib";
+import { CfnOutput, Fn, RemovalPolicy, Stack, type StackProps } from "aws-cdk-lib";
 import {
   AccountRecovery,
   CfnManagedLoginBranding,
   FeaturePlan,
   ManagedLoginVersion,
   Mfa,
-  OAuthScope,
   UserPool,
-  UserPoolClientIdentityProvider,
   UserPoolEmail,
 } from "aws-cdk-lib/aws-cognito";
 import { AttributeType, BillingMode, Table } from "aws-cdk-lib/aws-dynamodb";
@@ -27,6 +18,7 @@ import {
   foundationParameterName,
 } from "./foundation-parameters";
 import { type Stage } from "./stage";
+import { webClientOptions, type WebClientUrls } from "./web-client";
 
 /**
  * Whether the learner table is protected by point-in-time recovery and
@@ -46,12 +38,6 @@ const SELF_SIGN_UP: Readonly<Record<Stage, boolean>> = {
   dev: false,
   prod: true,
 };
-
-/** Where Cognito sends the browser back to, after sign-in and after sign-out. */
-interface WebClientUrls {
-  readonly callbackUrl: string;
-  readonly signOutUrl: string;
-}
 
 /**
  * The web app client's redirect URLs, or `undefined` where the stage has no
@@ -136,30 +122,7 @@ export class FoundationStack extends Stack {
    * browser in with (ADR-0005, Web), and the domain serving managed login.
    */
   private addWebSignIn(userPool: UserPool, stage: Stage, urls: WebClientUrls): void {
-    const client = userPool.addClient("WebClient", {
-      generateSecret: true,
-      // Every direct flow named false, so the list is empty rather than
-      // absent: an absent one gets Cognito's default, ALLOW_REFRESH_TOKEN_AUTH
-      // included, which refresh-token rotation cannot run with (ADR-0005,
-      // Refresh). The browser signs in through managed login alone.
-      authFlows: {
-        user: false,
-        userSrp: false,
-        userPassword: false,
-        adminUserPassword: false,
-        custom: false,
-      },
-      oAuth: {
-        flows: { authorizationCodeGrant: true },
-        scopes: [OAuthScope.OPENID],
-        callbackUrls: [urls.callbackUrl],
-        logoutUrls: [urls.signOutUrl],
-      },
-      supportedIdentityProviders: [UserPoolClientIdentityProvider.COGNITO],
-      refreshTokenRotationGracePeriod: Duration.seconds(10),
-      enableTokenRevocation: true,
-      preventUserExistenceErrors: true,
-    });
+    const client = userPool.addClient("WebClient", webClientOptions(urls));
 
     // A prefix is unique across every account in the region, so it carries
     // the first group of this stack's own generated id: stable for the
