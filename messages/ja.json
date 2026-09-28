@@ -241,7 +241,7 @@
     "timeZone": {
       "title": "タイムゾーン",
       "useDevice": "この端末の {zone} にする",
-      "saved": "次の日付から {zone} で数えます"
+      "saved": "今日から {zone} の日付で数えます。記録済みの日はそのままです"
     },
     "difficulty": {
       "title": "難易度",

@@ -81,11 +81,7 @@ export function SettingsScreen({
             }}
           />
         </div>
-        <TimeZoneRow
-          onFailed={() => {
-            setZoneFailed(true);
-          }}
-        />
+        <TimeZoneRow onFailedChange={setZoneFailed} />
         <div className="flex min-h-16 items-center justify-between gap-4 border-t border-border">
           <h2 className="flex items-baseline gap-3">
             {t("difficulty.title")}

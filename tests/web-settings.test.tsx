@@ -14,6 +14,7 @@ import {
   fill,
   ja,
   press,
+  refusal,
   renderApp,
   settle,
   type ApiCall,
@@ -406,5 +407,40 @@ describe("the settings screen, the time zone", () => {
     expect(
       screen.getByRole("combobox", { name: ja.Settings.timeZone.title }),
     ).toHaveValue(device);
+  });
+
+  it("keeps the latest save when an earlier one fails after it", async () => {
+    let failFirst: (() => void) | undefined;
+    const profile = { timeZone: device, l1: "ja", target: "en", uiLocale: "ja" };
+    fakeApi((call) => {
+      if (call.method === "GET" && call.url === "/api/v1/settings") {
+        return Response.json(PAGE);
+      }
+      if (call.method === "GET" && call.url === "/api/v1/me") {
+        return Response.json(profile);
+      }
+      if (call.method === "PATCH" && call.url === "/api/v1/me") {
+        const { timeZone } = call.body as { timeZone: string };
+        if (failFirst === undefined) {
+          return new Promise<Response>((resolve) => {
+            failFirst = () => {
+              resolve(refusal(503, "ERR_UNAVAILABLE"));
+            };
+          });
+        }
+        return Response.json({ ...profile, timeZone });
+      }
+      return undefined;
+    });
+    await renderApp("/settings");
+    const select = screen.getByRole("combobox", { name: ja.Settings.timeZone.title });
+    fireEvent.change(select, { target: { value: "Europe/London" } });
+    await settle();
+    fireEvent.change(select, { target: { value: other } });
+    await settle();
+    failFirst?.();
+    await settle();
+    expect(select).toHaveValue(other);
+    expect(screen.queryByRole("alert")).toBeNull();
   });
 });

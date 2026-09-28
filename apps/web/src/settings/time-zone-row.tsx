@@ -1,5 +1,5 @@
 import { useQuery, useQueryClient } from "@tanstack/react-query";
-import { useId, useMemo, useState, type ReactElement } from "react";
+import { useId, useMemo, useRef, useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
 import { updateProfile } from "../lib/endpoints";
@@ -23,13 +23,15 @@ function zoneChoices(current: string): readonly string[] {
  * day already recorded. The row is left out while the profile cannot be read.
  */
 export function TimeZoneRow({
-  onFailed,
-}: Readonly<{ onFailed: () => void }>): ReactElement | null {
+  onFailedChange,
+}: Readonly<{ onFailedChange: (failed: boolean) => void }>): ReactElement | null {
   const t = useTranslations("Settings.timeZone");
   const client = useQueryClient();
   const profile = useQuery({ ...PROFILE_QUERY, refetchOnMount: "always" });
   const [changed, setChanged] = useState(false);
   const labelId = useId();
+  const saved = useRef(profile.data);
+  const latest = useRef(0);
   const device = useMemo(() => deviceTimeZone(), []);
   const zone = profile.data?.timeZone;
   const choices = useMemo(() => (zone === undefined ? [] : zoneChoices(zone)), [zone]);
@@ -38,17 +40,22 @@ export function TimeZoneRow({
 
   function save(timeZone: string): void {
     if (profile.data === undefined || timeZone === zone) return;
-    const before = profile.data;
-    client.setQueryData(PROFILE_QUERY.queryKey, { ...before, timeZone });
+    const request = ++latest.current;
+    saved.current ??= profile.data;
+    client.setQueryData(PROFILE_QUERY.queryKey, { ...profile.data, timeZone });
     setChanged(false);
+    onFailedChange(false);
     void updateProfile({ timeZone }).then((result) => {
+      if (result.ok) saved.current = result.value;
+      // Only the latest save settles the row; an earlier answer arriving late changes nothing shown.
+      if (request !== latest.current) return;
       if (result.ok) {
         client.setQueryData(PROFILE_QUERY.queryKey, result.value);
         setChanged(true);
         return;
       }
-      client.setQueryData(PROFILE_QUERY.queryKey, before);
-      onFailed();
+      client.setQueryData(PROFILE_QUERY.queryKey, saved.current);
+      onFailedChange(true);
     });
   }
 
