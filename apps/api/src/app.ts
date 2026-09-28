@@ -1,4 +1,9 @@
-import { requestContext, type ApplicationDeps } from "@instant-composition/application";
+import {
+  requestContext,
+  signIn,
+  type ApplicationDeps,
+  type SignInDeps,
+} from "@instant-composition/application";
 import { roundIdParamSchema, ROUTES, type Route } from "@instant-composition/contracts";
 import { Hono } from "hono";
 
@@ -11,8 +16,11 @@ import { bindRoutes, routerPath } from "./routes";
 /** The path every contract route is served under: a client calls `/api` + its path. */
 export const API_ROOT = "/api";
 
-/** Everything the app is handed, so a test runs it with no network and a fixed clock. */
-export interface ApiDependencies extends ApplicationDeps {
+/**
+ * Everything the app is handed, so a test runs it with no network and a fixed
+ * clock. Signing in is the edge's alone: an operation never sees the directory.
+ */
+export interface ApiDependencies extends ApplicationDeps, SignInDeps {
   readonly authenticator: Authenticator;
   /** Epoch milliseconds: the request's `now`, and both ends of its duration. */
   readonly now: () => number;
@@ -59,7 +67,7 @@ function refused(
   return { response: failure(code), outcome: code, learnerId, reason };
 }
 
-/** Authenticate, check the path and the body, run the operation, answer. */
+/** Authenticate and sign in, check the path and the body, run the operation, answer. */
 async function answer(
   route: Route,
   operation: Operation,
@@ -68,9 +76,19 @@ async function answer(
   params: Readonly<Record<string, string>>,
   requestId: string,
 ): Promise<Answered> {
-  const identity = await deps.authenticator.authenticate(request);
-  const learnerId = identity.learner.id;
-  const context = requestContext({ ...identity, now: deps.now(), requestId });
+  const principal = await deps.authenticator.authenticate(request);
+  const signedIn = await signIn(deps, principal.subject);
+  if (!signedIn.ok) {
+    return refused(signedIn.error.code, null);
+  }
+  const learner = signedIn.value;
+  const learnerId = learner.id;
+  const context = requestContext({
+    actor: { kind: "learner", learnerId },
+    learner,
+    now: deps.now(),
+    requestId,
+  });
   if (!context.ok) {
     return refused(context.error.code, learnerId);
   }
@@ -91,7 +109,7 @@ async function answer(
     body = read.value;
   }
   const outcome = await operation.handle({
-    deps,
+    deps: { stores: deps.stores, catalog: deps.catalog },
     context: context.value,
     roundId,
     body,

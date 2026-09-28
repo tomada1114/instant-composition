@@ -156,6 +156,7 @@ describe("the import scanner the edge assertions run on", () => {
         "node:path",
         "@hono/node-server",
         "@instant-composition/adapters",
+        "@instant-composition/application",
         "./app",
         "./env",
         "./local-authenticator",

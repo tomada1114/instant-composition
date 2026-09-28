@@ -1,5 +1,5 @@
 // The local run of the API (`pnpm api`): the app on Node, against DynamoDB
-// local and the catalog snapshot, as the one stand-in learner. It listens on
+// local and the catalog snapshot, as the one stand-in subject. It listens on
 // the loopback interface only and `readApiEnv` refuses to start inside AWS,
 // because the stand-in authenticator lets every request in. Kept thin: what
 // it wires is tested where it is defined.
@@ -7,11 +7,13 @@ import path from "node:path";
 
 import { serve } from "@hono/node-server";
 import {
+  createDynamoDbDirectory,
   createDynamoDbStores,
   createLearnerTable,
   localDynamoDbClient,
   snapshotCatalog,
 } from "@instant-composition/adapters";
+import { learnerId } from "@instant-composition/application";
 
 import { API_ROOT, createApp } from "./app";
 import { readApiEnv } from "./env";
@@ -28,13 +30,13 @@ const write = (text: string): void => {
 const client = localDynamoDbClient(env.dynamoDbEndpoint);
 const created = await ensureTable(() => createLearnerTable(client, env.tableName));
 const catalog = snapshotCatalog(path.resolve(env.catalogPath));
+const table = { client, tableName: env.tableName };
 const app = createApp({
-  stores: createDynamoDbStores({ client, tableName: env.tableName }),
+  stores: createDynamoDbStores(table),
   catalog,
-  authenticator: localAuthenticator({
-    id: env.learnerId,
-    timeZone: env.learnerTimeZone,
-  }),
+  directory: createDynamoDbDirectory(table),
+  newLearnerId: () => learnerId(crypto.randomUUID()),
+  authenticator: localAuthenticator(),
   now: Date.now,
   requestId: () => crypto.randomUUID(),
   log: jsonLines(write),

@@ -26,13 +26,22 @@ export type Actor =
       readonly grants: readonly OperationKind[];
     };
 
-export interface LearnerProfile {
-  readonly id: LearnerId;
+/** What the learner table's `PROFILE` item holds: the learner's own record, not the identity provider's. */
+export interface Profile {
   /** An IANA time zone, such as `Asia/Tokyo`: every practice day is derived in it. */
   readonly timeZone: string;
-  readonly dayBoundaryHour: number;
   /** The learner's first language, such as `ja`. */
   readonly l1: string;
+  /** The language the learner practises, such as `en`. */
+  readonly target: string;
+  /** The language the interface is shown in, such as `ja`. */
+  readonly uiLocale: string;
+}
+
+/** The learner a request serves: the stored profile, with what the rules add to it. */
+export interface LearnerProfile extends Profile {
+  readonly id: LearnerId;
+  readonly dayBoundaryHour: number;
 }
 
 /** Built once per request by the edge; nothing below it re-derives identity. */

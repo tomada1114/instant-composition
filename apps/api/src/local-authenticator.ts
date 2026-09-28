@@ -1,28 +1,13 @@
-import { learnerId, type LearnerProfile } from "@instant-composition/application";
-import { TUNING } from "@instant-composition/domain";
-
-import type { Authenticator, Identity } from "./authenticator";
+import type { Authenticator, Principal } from "./authenticator";
 
 /**
- * The one learner a local run serves when the environment names none. This
- * module is the only place in the API that names a learner: every other one
- * receives the learner in the `RequestContext` built from what this returns.
+ * The one subject a local run serves. Its learner is registered on the first
+ * request, like any first sign-in, and found by it on every one after.
  */
-const LOCAL_LEARNER = {
-  id: "local-learner",
-  timeZone: "Asia/Tokyo",
-  /** The first language `dist/catalog/en/ja.json` is built for. */
-  l1: "ja",
-} as const;
-
-/** What a local run may say about its learner; anything absent takes the default. */
-export interface LocalLearnerOptions {
-  readonly id: string | undefined;
-  readonly timeZone: string | undefined;
-}
+export const LOCAL_SUBJECT = "local";
 
 /**
- * The stand-in authenticator: every request is the one local learner.
+ * The stand-in authenticator: every request is the one local subject.
  *
  * @remarks
  * It authenticates nothing, so it is only ever wired by `main.ts`, the local
@@ -30,14 +15,7 @@ export interface LocalLearnerOptions {
  * start inside AWS (see `readApiEnv`). No hosted entry may use it; Phase 3
  * replaces it with the Cognito verifier behind the same `Authenticator` port.
  */
-export function localAuthenticator(options: LocalLearnerOptions): Authenticator {
-  const id = learnerId(options.id ?? LOCAL_LEARNER.id);
-  const learner: LearnerProfile = {
-    id,
-    timeZone: options.timeZone ?? LOCAL_LEARNER.timeZone,
-    dayBoundaryHour: TUNING.dayBoundaryHour,
-    l1: LOCAL_LEARNER.l1,
-  };
-  const identity: Identity = { actor: { kind: "learner", learnerId: id }, learner };
-  return { authenticate: () => Promise.resolve(identity) };
+export function localAuthenticator(): Authenticator {
+  const principal: Principal = { subject: LOCAL_SUBJECT };
+  return { authenticate: () => Promise.resolve(principal) };
 }

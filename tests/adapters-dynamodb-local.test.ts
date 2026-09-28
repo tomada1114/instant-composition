@@ -11,10 +11,12 @@ import {
 
 import { answersFor, fixedCatalog, makeHarness, NOON } from "./application-harness";
 import { localTables } from "./dynamodb-local";
+import { describeLearnerDirectoryContract } from "./learner-directory-contract";
 import { describeLearnerStoreContract } from "./learner-store-contract";
 
-// The DynamoDB store against DynamoDB local: the whole contract suite, each
-// case on a table of its own, then a command flow through the application.
+// The DynamoDB store and directory against DynamoDB local: both contract
+// suites, each case on a table of its own, then a command flow through the
+// application.
 // Needs `pnpm db:up`; `pnpm test:dynamodb` runs it, never the default suite.
 
 const tables = localTables();
@@ -28,6 +30,7 @@ afterAll(async () => {
 });
 
 describeLearnerStoreContract("the DynamoDB store", () => tables.fresh());
+describeLearnerDirectoryContract("the DynamoDB directory", () => tables.freshBacking());
 
 /** Every read of the learner's store, versions included. */
 async function everything(store: LearnerStore): Promise<unknown> {

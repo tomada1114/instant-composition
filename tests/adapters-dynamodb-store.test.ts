@@ -4,12 +4,18 @@ import type { AddressInfo } from "node:net";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 
 import {
+  createDynamoDbDirectory,
   createDynamoDbStores,
   createLearnerTable,
   deleteLearnerTable,
   localDynamoDbClient,
 } from "@instant-composition/adapters";
-import { learnerId, type LearnerStore } from "@instant-composition/application";
+import {
+  DEFAULT_PROFILE,
+  learnerId,
+  type LearnerDirectory,
+  type LearnerStore,
+} from "@instant-composition/application";
 
 import { makeReview, makeStats } from "./application-fixtures";
 
@@ -299,6 +305,134 @@ describe("a read", () => {
     answers.push({ status: 200, body: { Item: { value: { M: {} } } } });
 
     await expect(storeOf().settings()).rejects.toThrow(TypeError);
+  });
+});
+
+function directoryOf(): LearnerDirectory {
+  return createDynamoDbDirectory({
+    client: localDynamoDbClient(endpoint),
+    tableName: "learners",
+  });
+}
+
+const REGISTRATION = { learnerId: learnerId("learner-a"), profile: DEFAULT_PROFILE };
+
+describe("the learner directory", () => {
+  it("registers as one TransactWriteItems: the mapping and the profile, each only while absent", async () => {
+    expect(await directoryOf().register("sub#1", REGISTRATION)).toStrictEqual({
+      ok: true,
+      value: undefined,
+    });
+
+    expect(calls.map((call) => call.operation)).toStrictEqual(["TransactWriteItems"]);
+    const items = calls[0]?.body["TransactItems"] as Record<
+      string,
+      Record<string, unknown>
+    >[];
+    expect(items.map((item) => item["Put"]?.["ConditionExpression"])).toStrictEqual([
+      "attribute_not_exists(#pk)",
+      "attribute_not_exists(#pk)",
+    ]);
+    expect(items[0]?.["Put"]?.["Item"]).toStrictEqual({
+      PK: { S: "IDENTITY#sub%231" },
+      SK: { S: "LEARNER" },
+      type: { S: "identity" },
+      version: { N: "1" },
+      value: { M: { learnerId: { S: "learner-a" } } },
+    });
+    expect(items[1]?.["Put"]?.["Item"]).toMatchObject({
+      PK: { S: "LEARNER#learner-a" },
+      SK: { S: "PROFILE" },
+      type: { S: "profile" },
+      version: { N: "1" },
+      value: {
+        M: {
+          timeZone: { S: "Asia/Tokyo" },
+          l1: { S: "ja" },
+          target: { S: "en" },
+          uiLocale: { S: "ja" },
+        },
+      },
+    });
+  });
+
+  it.each([
+    ["a subject already mapped", ["ConditionalCheckFailed", "None"]],
+    ["a concurrent registration", ["TransactionConflict", "None"]],
+  ])("answers ERR_CONFLICT when cancelled for %s", async (_, codes) => {
+    answers.push(cancelled(...codes));
+
+    expect(await directoryOf().register("sub-1", REGISTRATION)).toStrictEqual({
+      ok: false,
+      error: { code: "ERR_CONFLICT" },
+    });
+  });
+
+  it("throws on a failure no retry can clear", async () => {
+    answers.push(failure("ResourceNotFoundException"));
+
+    await expect(directoryOf().register("sub-1", REGISTRATION)).rejects.toMatchObject({
+      name: "ResourceNotFoundException",
+    });
+  });
+
+  it("reads the mapping, then the profile in the learner's partition, both consistently", async () => {
+    answers.push(
+      {
+        status: 200,
+        body: { Item: { value: { M: { learnerId: { S: "learner-a" } } } } },
+      },
+      {
+        status: 200,
+        body: {
+          Item: {
+            value: {
+              M: {
+                timeZone: { S: "Asia/Tokyo" },
+                l1: { S: "ja" },
+                target: { S: "en" },
+                uiLocale: { S: "ja" },
+              },
+            },
+          },
+        },
+      },
+    );
+
+    expect(await directoryOf().learnerOf("sub-1")).toStrictEqual({
+      learnerId: "learner-a",
+      profile: { timeZone: "Asia/Tokyo", l1: "ja", target: "en", uiLocale: "ja" },
+    });
+    expect(calls.map((call) => call.body)).toMatchObject([
+      {
+        Key: { PK: { S: "IDENTITY#sub-1" }, SK: { S: "LEARNER" } },
+        ConsistentRead: true,
+      },
+      {
+        Key: { PK: { S: "LEARNER#learner-a" }, SK: { S: "PROFILE" } },
+        ConsistentRead: true,
+      },
+    ]);
+  });
+
+  it("answers an unmapped subject with nothing, reading no profile", async () => {
+    expect(await directoryOf().learnerOf("sub-1")).toBeUndefined();
+    expect(calls).toHaveLength(1);
+  });
+
+  it("refuses a mapping whose learner has no profile rather than inventing one", async () => {
+    answers.push({
+      status: 200,
+      body: { Item: { value: { M: { learnerId: { S: "learner-a" } } } } },
+    });
+
+    await expect(directoryOf().learnerOf("sub-1")).rejects.toThrow(TypeError);
+  });
+
+  it("refuses a row with no value", async () => {
+    answers.push({ status: 200, body: { Item: { version: { N: "1" } } } });
+
+    await expect(directoryOf().learnerOf("sub-1")).rejects.toThrow(TypeError);
   });
 });
 

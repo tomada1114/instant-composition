@@ -1,5 +1,6 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 
+import { LOCAL_SUBJECT } from "@instant-composition/api";
 import { roundSummarySchema } from "@instant-composition/contracts";
 
 import { batchFor, makeApi, startedPlacement } from "./api-harness";
@@ -20,8 +21,8 @@ afterAll(async () => {
 });
 
 describe("the API on DynamoDB local", () => {
-  it("starts, records, finishes and reads back a round", async () => {
-    const api = makeApi({ stores: await tables.fresh() });
+  it("registers the learner, then starts, records, finishes and reads back a round", async () => {
+    const api = makeApi(await tables.freshBacking());
     const round = await startedPlacement(api);
     const batch = batchFor(round);
 
@@ -41,5 +42,9 @@ describe("the API on DynamoDB local", () => {
       "ok",
       "ok",
     ]);
+    expect(new Set(api.lines.map((line) => line.learnerId))).toStrictEqual(
+      new Set(["learner-1"]),
+    );
+    expect((await api.directory.learnerOf(LOCAL_SUBJECT))?.learnerId).toBe("learner-1");
   });
 });

@@ -31,6 +31,17 @@ export function partitionKeyOf(learner: LearnerId): string {
 }
 
 /**
+ * The identity mapping's partition: one per identity provider subject, outside
+ * every learner's partition, so no learner-bound read can reach it.
+ */
+export function identityKeyOf(subject: string): string {
+  return `IDENTITY#${part(subject)}`;
+}
+
+/** The sort keys the identity context writes: the mapping, and the learner's profile. */
+export const IDENTITY_SORT_KEY = { mapping: "LEARNER", profile: "PROFILE" } as const;
+
+/**
  * Where an entry sits inside its learner's partition. ADR-0006's layout, plus
  * `DAY#<day>` for the day tallies it does not list. A review sorts under its
  * round, so a round's reviews are one prefix and no round id can match it.

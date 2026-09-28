@@ -101,7 +101,14 @@ export function makeHarness(catalog: Catalog = fixedCatalog()): Harness {
     learner,
     context: (now = NOON) => ({
       actor: { kind: "learner", learnerId: learner },
-      learner: { id: learner, timeZone: "Asia/Tokyo", dayBoundaryHour: 4, l1: "ja" },
+      learner: {
+        id: learner,
+        timeZone: "Asia/Tokyo",
+        dayBoundaryHour: 4,
+        l1: "ja",
+        target: "en",
+        uiLocale: "ja",
+      },
       now,
       requestId: "req",
     }),

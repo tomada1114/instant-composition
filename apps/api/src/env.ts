@@ -14,9 +14,6 @@ export interface ApiEnv {
   readonly tableName: string;
   /** The catalog snapshot `pnpm catalog:build` writes, relative to the working directory or absolute. */
   readonly catalogPath: string;
-  /** The stand-in learner's id and time zone, or `undefined` for its own default. */
-  readonly learnerId: string | undefined;
-  readonly learnerTimeZone: string | undefined;
 }
 
 /** A variable held no value its setting accepts, or the process is not a local one. */
@@ -49,27 +46,12 @@ const httpUrl: Parse<string> = (value) =>
 const tableName: Parse<string> = (value) =>
   /^[\w.-]{3,255}$/.test(value) ? value : undefined;
 
-/** A learner id as the stores key it: short, and nothing a key separator could split. */
-const learnerKey: Parse<string> = (value) =>
-  /^[\w-]{1,64}$/.test(value) ? value : undefined;
-
-const timeZone: Parse<string> = (value) => {
-  try {
-    return new Intl.DateTimeFormat("en", { timeZone: value }).resolvedOptions()
-      .timeZone;
-  } catch {
-    return undefined;
-  }
-};
-
 /** Every variable {@link readApiEnv} reads. */
 export const API_ENV_NAMES = [
   "API_PORT",
   "API_DYNAMODB_ENDPOINT",
   "API_TABLE_NAME",
   "API_CATALOG_PATH",
-  "API_LOCAL_LEARNER_ID",
-  "API_LOCAL_LEARNER_TIME_ZONE",
 ] as const;
 
 /**
@@ -118,8 +100,6 @@ export function readApiEnv(source: Source = process.env): ApiEnv {
     dynamoDbEndpoint: read("API_DYNAMODB_ENDPOINT", httpUrl) ?? "http://localhost:8000",
     tableName: read("API_TABLE_NAME", tableName) ?? "instant-composition-local",
     catalogPath: read("API_CATALOG_PATH", text) ?? "dist/catalog/en/ja.json",
-    learnerId: read("API_LOCAL_LEARNER_ID", learnerKey),
-    learnerTimeZone: read("API_LOCAL_LEARNER_TIME_ZONE", timeZone),
   };
   if (invalid.length > 0) {
     throw new ApiEnvError(

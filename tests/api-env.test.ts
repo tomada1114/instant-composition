@@ -15,8 +15,6 @@ const DEFAULTS: ApiEnv = {
   dynamoDbEndpoint: "http://localhost:8000",
   tableName: "instant-composition-local",
   catalogPath: "dist/catalog/en/ja.json",
-  learnerId: undefined,
-  learnerTimeZone: undefined,
 };
 
 function refusedWith(source: Record<string, string>): ApiEnvError {
@@ -47,16 +45,12 @@ describe("readApiEnv", () => {
         API_DYNAMODB_ENDPOINT: "http://127.0.0.1:8001",
         API_TABLE_NAME: "learners-dev",
         API_CATALOG_PATH: "/tmp/catalog.json",
-        API_LOCAL_LEARNER_ID: "learner_2",
-        API_LOCAL_LEARNER_TIME_ZONE: "asia/tokyo",
       }),
     ).toStrictEqual({
       port: 9000,
       dynamoDbEndpoint: "http://127.0.0.1:8001",
       tableName: "learners-dev",
       catalogPath: "/tmp/catalog.json",
-      learnerId: "learner_2",
-      learnerTimeZone: "Asia/Tokyo",
     });
   });
 
@@ -69,9 +63,6 @@ describe("readApiEnv", () => {
     ["API_DYNAMODB_ENDPOINT", "ftp://localhost"],
     ["API_TABLE_NAME", "x1"],
     ["API_TABLE_NAME", "learners/dev"],
-    ["API_LOCAL_LEARNER_ID", "a#b"],
-    ["API_LOCAL_LEARNER_ID", "x".repeat(65)],
-    ["API_LOCAL_LEARNER_TIME_ZONE", "Mars/Olympus"],
   ])("refuses %s=%s by naming it", (name, value) => {
     const error = refusedWith({ [name]: value });
     expect(error.code).toBe("ERR_API_ENV_INVALID");
