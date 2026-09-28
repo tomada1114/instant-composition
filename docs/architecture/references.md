@@ -134,6 +134,15 @@ listed under [Unverified](#unverified) instead of being stated as fact.
 - [AWS WAF with CloudFront](https://docs.aws.amazon.com/waf/latest/developerguide/cloudfront-features.html)
   — a web ACL must stay associated with a distribution on a flat-rate plan. Checked
   2026-09-23.
+- [Available plans](https://docs.aws.amazon.com/PricingPlanManager/latest/UserGuide/plans.html)
+  and
+  [getting started with the PricingPlanManager API](https://docs.aws.amazon.com/PricingPlanManager/latest/UserGuide/getting-started-pricingplanmanager-api.html)
+  — Free Tier accounts cannot use CloudFront flat-rate plans, and a plan subscription
+  needs the distribution and a `CLOUDFRONT`-scope web ACL to exist first. Checked
+  2026-09-28.
+- [CloudFront FAQs](https://aws.amazon.com/cloudfront/faqs/) — the pay-as-you-go
+  CloudFront Free Tier includes 1 TB of data transfer and 10 million requests a month.
+  Checked 2026-09-28.
 - [AWS WAF FAQs](https://aws.amazon.com/waf/faqs/) and
   [one-click protections](https://aws.amazon.com/blogs/networking-and-content-delivery/mitigate-common-web-threats-with-one-click-in-amazon-cloudfront/)
   — covers:

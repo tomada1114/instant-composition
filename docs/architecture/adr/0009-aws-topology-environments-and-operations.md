@@ -3,7 +3,9 @@
 - Status: Accepted (2026-09-23), including the account layout, its timing, and CDK;
   amended 2026-09-24 (resources added as each phase first needs them); amended
   2026-09-27 (no point-in-time recovery or deletion protection on the `dev` table; the
-  Paid-plan upgrade is the owner's and is tracked only when a feature needs it)
+  Paid-plan upgrade is the owner's and is tracked only when a feature needs it); amended
+  2026-09-28 (`dev`'s distribution runs on pay-as-you-go pricing until the account
+  leaves the Free Tier)
 - Date: 2026-09-23
 - Deciders: the owner
 
@@ -178,17 +180,17 @@ evaluate when the CDK app is written.
 thing, deployed with the prod stage", not a second design. The stage decides only these
 settings:
 
-| Setting                                           | `dev`                                                                                          | `prod`                                                          |
-| ------------------------------------------------- | ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| DynamoDB retain on delete and on replacement      | On — the owner's own learning history accumulates here for years                               | On                                                              |
-| DynamoDB deletion protection                      | Off (below)                                                                                    | On                                                              |
-| DynamoDB point-in-time recovery                   | Off (below)                                                                                    | On; the period is set in the production-guard phase (1–35 days) |
-| Cognito self sign-up                              | Off: only an administrator creates users (`AllowAdminCreateUserOnly`)                          | On                                                              |
-| Cognito user pool deletion protection             | On                                                                                             | On                                                              |
-| Cognito web app client and sign-in domain         | A confidential client redirecting to `http://127.0.0.1:5173`; managed login on a prefix domain | None until `prod` has a URL (production-guard phase)            |
-| CloudFront flat-rate plan                         | Free                                                                                           | Free, then Pro when traffic warrants                            |
-| WAF rate-based rules, SES for authentication mail | None; Cognito's own sender is enough for admin-created users                                   | Yes                                                             |
-| Deploy                                            | On every merge to `main`                                                                       | Behind a manual approval                                        |
+| Setting                                           | `dev`                                                                                                      | `prod`                                                          |
+| ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| DynamoDB retain on delete and on replacement      | On — the owner's own learning history accumulates here for years                                           | On                                                              |
+| DynamoDB deletion protection                      | Off (below)                                                                                                | On                                                              |
+| DynamoDB point-in-time recovery                   | Off (below)                                                                                                | On; the period is set in the production-guard phase (1–35 days) |
+| Cognito self sign-up                              | Off: only an administrator creates users (`AllowAdminCreateUserOnly`)                                      | On                                                              |
+| Cognito user pool deletion protection             | On                                                                                                         | On                                                              |
+| Cognito web app client and sign-in domain         | A confidential client redirecting to `http://127.0.0.1:5173`; managed login on a prefix domain             | None until `prod` has a URL (production-guard phase)            |
+| CloudFront flat-rate plan                         | None while the account is on the Free Tier: pay-as-you-go with plan-compatible settings (below); then Free | Free, then Pro when traffic warrants                            |
+| WAF rate-based rules, SES for authentication mail | None; Cognito's own sender is enough for admin-created users                                               | Yes                                                             |
+| Deploy                                            | On every merge to `main`                                                                                   | Behind a manual approval                                        |
 
 The `dev` table has neither point-in-time recovery nor deletion protection, for as long
 as `dev` is the only environment. The owner decided this on 2026-09-27: until `prod`
@@ -198,6 +200,17 @@ bad write in `dev` cannot be undone, and the table can be deleted directly from 
 console or the API. The CloudFormation `Retain` deletion and update-replace policies,
 which need no plan feature, still keep the table through any change made to the stack.
 Both protections are on in `prod` from the table's creation.
+
+The `dev` distribution is not subscribed to the flat-rate Free plan while the account is
+on the Free Tier. The owner decided this on 2026-09-28, when the `app` stack was built:
+Free Tier accounts cannot use CloudFront flat-rate plans, and a subscription also needs
+a `CLOUDFRONT`-scope WAF web ACL, which lives in us-east-1 and stays associated with the
+distribution (checked 2026-09-28; sources below). Until the owner's Paid-plan upgrade,
+the distribution runs on pay-as-you-go pricing. At `dev` traffic that costs about $0,
+because the CloudFront Free Tier includes 1 TB of transfer and 10 million requests a
+month. It uses only settings a plan admits (managed cache and origin request policies,
+origin access control, one CloudFront Function), so the subscription is a later
+addition, not a rebuild (#173).
 
 Point-in-time recovery is priced by table size whatever the recovery period. In `prod`
 the period also bounds how long a deleted learner's data stays restorable, which the
@@ -334,6 +347,10 @@ Prices are as of 2026-09-23. A region appears only where the source states one.
 - CloudFront OAC for Lambda Function URLs (`x-amz-content-sha256` on POST/PUT), checked
   2026-09-23:
   https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-lambda.html
+- CloudFront flat-rate plan eligibility and prerequisites, checked 2026-09-28:
+  https://docs.aws.amazon.com/PricingPlanManager/latest/UserGuide/plans.html,
+  https://docs.aws.amazon.com/PricingPlanManager/latest/UserGuide/getting-started-pricingplanmanager-api.html,
+  https://aws.amazon.com/cloudfront/faqs/ (the pay-as-you-go Free Tier).
 - CloudFront flat-rate plans, checked 2026-09-23:
   https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/flat-rate-pricing-plan.html,
   https://aws.amazon.com/blogs/networking-and-content-delivery/amazon-cloudfront-flat-rate-pricing-plans-new-features-and-expanded-capabilities/,
