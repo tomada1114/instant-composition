@@ -50,6 +50,11 @@ allowBuilds:
   # lefthook ships a postinstall that downloads/links its Go binary; that is
   # the whole point of depending on it for Git hooks.
   lefthook: true
+  # esbuild's postinstall (install.js) only checks that the platform binary
+  # arrived through its optional @esbuild/<platform> dependency, and downloads
+  # one when it did not. pnpm installs that optional dependency itself, and
+  # esbuild's bin wrapper runs it without the script, so it is refused.
+  esbuild: false
 
 # Transitive-version overrides. Each entry names the single graph edge it
 # replaces (`parent>child`) rather than the package globally, so a future
