@@ -144,16 +144,19 @@ if [[ "$CHECK_SOURCE" == "checks" ]]; then
     gh pr checks "$PR" --watch --interval 20 >/dev/null 2>&1 &
     watch_pid=$!
     # Polls once a second rather than one long sleep, so it exits by itself
-    # soon after the watch ends and never outlives this script.
+    # soon after the watch ends and never outlives this script. It counts
+    # sleeps, not `date +%s` seconds, whose one-second resolution would kill
+    # the watch up to a second early.
     (
-      end=$(( $(date +%s) + TIMEOUT ))
+      waited=0
       while kill -0 "$watch_pid" 2>/dev/null; do
-        if (( $(date +%s) >= end )); then
+        if (( waited >= TIMEOUT )); then
           : >"$TIMED_OUT_MARK"
           kill "$watch_pid" 2>/dev/null
           exit 0
         fi
         sleep 1
+        waited=$(( waited + 1 ))
       done
     ) >/dev/null 2>&1 &
     watcher_pid=$!

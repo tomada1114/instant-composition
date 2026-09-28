@@ -87,16 +87,18 @@ The owner has decided:
   the client secret server-side, and set HttpOnly, Secure, SameSite=Lax cookies.
 - **Native apps.** Public app clients running the authorization code flow with PKCE
   through the system browser. They send `Authorization: Bearer <access token>`.
-- **Refresh.** Refresh-token rotation is enabled. It requires refreshing through
-  `GetTokensFromRefreshToken` and is incompatible with the `REFRESH_TOKEN_AUTH` flow,
-  which is therefore disabled on the app clients.
+- **Refresh.** Refresh-token rotation is enabled. It refreshes through the token
+  endpoint's `refresh_token` grant or `GetTokensFromRefreshToken`, and is incompatible
+  with the `REFRESH_TOKEN_AUTH` flow, which is therefore disabled on the app clients.
+  The web session's `/refresh` uses the token endpoint and stores the rotated refresh
+  token.
 
 ### One Authenticator port
 
 ```ts
-// packages/application
+// apps/api/src/authenticator.ts
 interface Authenticator {
-  authenticate(request: Request): Promise<Result<Principal, AuthError>>;
+  authenticate(request: Request): Promise<Result<Principal, AuthFailure>>;
 }
 // Bearer header (native) or session cookie (web), resolved by the same code.
 ```
