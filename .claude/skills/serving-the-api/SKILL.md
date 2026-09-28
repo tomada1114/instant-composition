@@ -3,10 +3,11 @@ name: serving-the-api
 description: >
   Covers apps/api, the Hono app serving packages/contracts' ROUTES under /api/v1: an
   operation handler, the route-table check, the order a request is checked in, the error
-  envelope and body reader, the per-request log line, the Lambda entry,
-  apps/api/src/env.ts and .env.example, and pnpm api or pnpm dev. Use when an endpoint
-  is added to the contract, a log field is added, an API_* variable is added, a request
-  is refused with an unexpected code, or the API will not start.
+  envelope and body reader, the per-request log line, the Lambda entry lambda.ts and
+  readHostedEnv, apps/api/src/env.ts and .env.example, and pnpm api or pnpm dev. Use
+  when an endpoint is added to the contract, a log field is added, an API_* variable is
+  added, a request is refused with an unexpected code, or the API or its Lambda function
+  will not start.
 ---
 
 # Serving the API
@@ -102,17 +103,30 @@ the one module besides `main.ts` that wires AWS: the DynamoDB stores and directo
 the function's Region (`regionalDynamoDbClient`), the catalog snapshot bundled with the
 function, and `hostedHandler` from `apps/api/src/hosted.ts`, which runs the app through
 `hono/aws-lambda`'s `handle` and puts every `Set-Cookie` in the result's `cookies`.
-`hostedApp` builds the authenticator and the web sign-in endpoints itself from
-`HostedEnv`, so nothing hands it one.
+`hostedApp` builds Cognito's authenticator and the web sign-in endpoints itself from
+`HostedEnv`, and `HostedDependencies` has no field for either, so the stand-in cannot be
+wired there at all.
 
 `readHostedEnv` validates the hosted environment once, when `lambda.ts` is first loaded,
 and throws — failing the function's start — unless every `HOSTED_ENV_NAMES` entry but
 the extension's port is set. How the web app client's secret reaches the function, and
 why `API_COGNITO_CLIENT_SECRET` is refused there, is `authenticating-learners`'. The
-hosted names are the `app` stack's to set, never a shell's, so `.env.example` does not
-list them. `tests/api-lambda.test.ts` drives `hostedHandler` with HTTP API events, and
+hosted names are the `app` stack's to set (`addApiFunction` in
+`infra/src/api-function.ts`), never a shell's, so `.env.example` does not list them:
+Lambda supplies the Region and the session token, the stack everything else, with the
+web origin and both redirect URLs derived from the distribution's URL. A hosted name
+added here is added there in the same change, or the next deploy's function fails to
+start. `tests/api-lambda.test.ts` drives `hostedHandler` with HTTP API events, and
 `tests/api-local-run.test.ts` loads `lambda.ts` itself with and without its
 configuration.
+
+In `dev`, CloudFront sends `/api/*` to the HTTP API with the path unchanged, so the app
+serves the same `/api/v1/...` paths as locally, and each line of the log goes from
+stdout to the function's log group. The function runs an esbuild bundle of `lambda.ts`
+with every import inlined and the catalog snapshot built beside it at
+`API_CATALOG_PATH`. `tests/infra-api-bundle.test.ts` builds that bundle and starts it in
+a bare Node process, so it is the check to run after changing what `lambda.ts` imports.
+**REQUIRED:** `writing-infrastructure` for the function, the route and the distribution.
 
 ## Environment and the local run
 

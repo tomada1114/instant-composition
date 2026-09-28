@@ -18,9 +18,10 @@ a local run and the hosted entry get the pool's settings, and how tests stand in
 Cognito. **Does not own:** the isolation rules identity serves — verify before trusting,
 the internal `LearnerId`, 404 for another learner's resource (`isolating-learner-data`);
 the handler table, log line and environment rules of `apps/api` (`serving-the-api`); the
-user pool, the web app client and their stage settings (`writing-infrastructure`); why
-Cognito and a backend-for-frontend (ADR-0005, and ADR-0009 for secrets). General Cognito
-and OAuth knowledge stays with AWS's documentation and AWS's own skills.
+user pool, the local and hosted web app clients, the secret's parameter and their stage
+settings (`writing-infrastructure`); why Cognito and a backend-for-frontend (ADR-0005,
+and ADR-0009 for secrets). General Cognito and OAuth knowledge stays with AWS's
+documentation and AWS's own skills.
 
 ## Two credentials, one authenticator
 
@@ -160,6 +161,11 @@ warm function within the extension's 300-second cache. A failed read, a paramete
 is not a `SecureString`, or a value that is no client secret throws
 `SecretParameterError` (`ERR_API_SECRET_UNREADABLE`), a bare 500. Neither the secret nor
 the session token ever reaches an error, a log line or a response.
+
+On `dev`, the client is the `app` stack's hosted web app client, redirecting to the
+distribution's URL, and its secret is copied into the parameter by the stack's
+`Custom::WebClientSecret`; `writing-infrastructure` holds both, and the names the stack
+sets.
 
 ## Tests never call Cognito
 
