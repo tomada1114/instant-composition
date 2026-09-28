@@ -1,12 +1,13 @@
 import { randomUUID } from "node:crypto";
 
 import {
+  createDynamoDbDirectory,
   createDynamoDbStores,
   createLearnerTable,
   deleteLearnerTable,
   localDynamoDbClient,
 } from "@instant-composition/adapters";
-import type { LearnerStores } from "@instant-composition/application";
+import type { LearnerDirectory, LearnerStores } from "@instant-composition/application";
 
 // DynamoDB local for the `dynamodb` vitest project, where `pnpm db:up` and
 // ci.yml's service container both publish it. Nothing here asks for more than
@@ -18,6 +19,8 @@ export const DYNAMODB_LOCAL_ENDPOINT = "http://localhost:8000";
 export interface LocalTables {
   /** Stores on a fresh, empty table of their own. */
   fresh(): Promise<LearnerStores>;
+  /** A directory and the stores beside it, on a fresh, empty table of their own. */
+  freshBacking(): Promise<{ directory: LearnerDirectory; stores: LearnerStores }>;
   /** Fails with what to run when DynamoDB local is not answering. */
   reachable(): Promise<void>;
   close(): Promise<void>;
@@ -38,6 +41,13 @@ export function localTables(): LocalTables {
   return {
     async fresh() {
       return createDynamoDbStores({ client, tableName: await create() });
+    },
+    async freshBacking() {
+      const table = { client, tableName: await create() };
+      return {
+        directory: createDynamoDbDirectory(table),
+        stores: createDynamoDbStores(table),
+      };
     },
     async reachable() {
       // No wait and no retry: `pnpm db:up` and ci.yml's service both return

@@ -37,14 +37,16 @@ answers an empty body.
 
 ## The order a request is checked in
 
-Authenticate and build the `RequestContext` (a refused context is `ERR_FORBIDDEN`), then
-validate the `{roundId}` path parameter with `roundIdParamSchema`, then read the body
-through the bounded reader in `apps/api/src/http.ts` (`ERR_PAYLOAD_TOO_LARGE` past
-`MAX_REQUEST_BODY_BYTES`, `ERR_BAD_REQUEST` for anything not JSON or not the schema),
-then run the command or query. Every refusal is contracts' envelope,
-`{ error: { code, message } }`, with `STATUS_BY_CODE`'s status and `MESSAGE_BY_CODE`'s
-fixed sentence; nothing the request carried is echoed. A batch's answers carry no
-`roundId`: the handler adds the path's.
+Authenticate, sign the subject in with `signIn` over the learner directory (a first
+sign-in registers the learner; a registration that keeps losing its race is
+`ERR_CONFLICT`), and build the `RequestContext` from the stored profile (a refused
+context is `ERR_FORBIDDEN`), then validate the `{roundId}` path parameter with
+`roundIdParamSchema`, then read the body through the bounded reader in
+`apps/api/src/http.ts` (`ERR_PAYLOAD_TOO_LARGE` past `MAX_REQUEST_BODY_BYTES`,
+`ERR_BAD_REQUEST` for anything not JSON or not the schema), then run the command or
+query. Every refusal is contracts' envelope, `{ error: { code, message } }`, with
+`STATUS_BY_CODE`'s status and `MESSAGE_BY_CODE`'s fixed sentence; nothing the request
+carried is echoed. A batch's answers carry no `roundId`: the handler adds the path's.
 
 A request no route matches answers a bare `404`, and a handler that throws a bare `500`.
 Neither is a contract code, so a client never branches on them.
@@ -82,14 +84,15 @@ a dependency sent. `tests/api-log.test.ts` holds the shape and that absence.
 ## The stand-in authenticator
 
 Until Phase 3, `localAuthenticator` in `apps/api/src/local-authenticator.ts` makes every
-request the one local learner — `local-learner` in `Asia/Tokyo` unless the environment
-names another. It is the only module that names a learner, and it authenticates nothing,
-so it must never be reachable from anywhere but this machine: only `main.ts` wires it,
-the server listens on `127.0.0.1` alone, and `readApiEnv` refuses to start
-(`ERR_API_ENV_NOT_LOCAL`) where AWS marks the process as its own
-(`AWS_LAMBDA_FUNCTION_NAME`, `AWS_EXECUTION_ENV` or `ECS_CONTAINER_METADATA_URI`). A
-hosted entry (Phase 4's Lambda handler) takes a real `Authenticator` instead.
-**REQUIRED:** `isolating-learner-data` before touching either.
+request the one local subject, `LOCAL_SUBJECT`. Like any authenticator it yields only
+the subject: the learner is the one the learner directory maps it to, registered with
+the default profile on the first request, so a local run's learner id is minted, not
+configured. It authenticates nothing, so it must never be reachable from anywhere but
+this machine: only `main.ts` wires it, the server listens on `127.0.0.1` alone, and
+`readApiEnv` refuses to start (`ERR_API_ENV_NOT_LOCAL`) where AWS marks the process as
+its own (`AWS_LAMBDA_FUNCTION_NAME`, `AWS_EXECUTION_ENV` or
+`ECS_CONTAINER_METADATA_URI`). A hosted entry (Phase 4's Lambda handler) takes a real
+`Authenticator` instead. **REQUIRED:** `isolating-learner-data` before touching either.
 
 ## Environment and the local run
 

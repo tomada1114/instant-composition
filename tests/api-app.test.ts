@@ -1,10 +1,6 @@
 import { describe, expect, it } from "vitest";
 
-import {
-  localAuthenticator,
-  MAX_REQUEST_BODY_BYTES,
-  type Authenticator,
-} from "@instant-composition/api";
+import { MAX_REQUEST_BODY_BYTES } from "@instant-composition/api";
 import { learnerId } from "@instant-composition/application";
 import {
   errorResponseSchema,
@@ -12,7 +8,13 @@ import {
   ROUTES,
 } from "@instant-composition/contracts";
 
-import { batchFor, makeApi, startedPlacement, type ApiHarness } from "./api-harness";
+import {
+  batchFor,
+  makeApi,
+  startedPlacement,
+  subjectAuthenticator,
+  type ApiHarness,
+} from "./api-harness";
 import { unreadableCatalog } from "./application-harness";
 
 // The app driven with `new Request(…)` over the in-memory store: each answer
@@ -86,9 +88,7 @@ describe("the commands", () => {
     const again = await api.call("POST", "/v1/rounds/p1/answers", batch);
     expect(again.status).toBe(204);
 
-    const reviews = await api.stores
-      .forLearner(learnerId("local-learner"))
-      .reviewsOf("p1");
+    const reviews = await api.stores.forLearner(learnerId("learner-1")).reviewsOf("p1");
     expect(reviews.map((review) => review.id)).toStrictEqual(
       batch.answers.map((answer) => answer.id).sort(),
     );
@@ -193,51 +193,14 @@ describe("a request the contract refuses", () => {
 });
 
 describe("who a request acts as", () => {
-  it("answers 403 for an actor serving another learner than the one authenticated", async () => {
-    const local = await localAuthenticator({
-      id: "a",
-      timeZone: undefined,
-    }).authenticate(new Request("http://localhost/"));
-    const authenticator: Authenticator = {
-      authenticate: () =>
-        Promise.resolve({
-          ...local,
-          actor: { kind: "learner", learnerId: learnerId("b") },
-        }),
-    };
-    const api = makeApi({ authenticator });
-    expect(await refusal(await api.call("GET", "/v1/home"))).toStrictEqual([
-      403,
-      "ERR_FORBIDDEN",
-    ]);
-  });
-
-  it("answers 403 for an agent not granted the operation", async () => {
-    const local = await localAuthenticator({
-      id: "a",
-      timeZone: undefined,
-    }).authenticate(new Request("http://localhost/"));
-    const authenticator: Authenticator = {
-      authenticate: () =>
-        Promise.resolve({
-          ...local,
-          actor: { kind: "agent", onBehalfOf: local.learner.id, grants: ["home"] },
-        }),
-    };
-    const api = makeApi({ authenticator });
-    expect((await api.call("GET", "/v1/home")).status).toBe(200);
-    expect(await refusal(await api.call("GET", "/v1/records"))).toStrictEqual([
-      403,
-      "ERR_FORBIDDEN",
-    ]);
-  });
-
   it("does not find another learner's round, and leaves it as it was", async () => {
-    const a = makeApi();
+    const a = makeApi({ authenticator: subjectAuthenticator("subject-a") });
     await finished(a);
     const b = makeApi({
       stores: a.stores,
-      authenticator: localAuthenticator({ id: "learner-b", timeZone: undefined }),
+      directory: a.directory,
+      authenticator: subjectAuthenticator("subject-b"),
+      newLearnerId: () => learnerId("learner-b"),
     });
     const before = await a.call("GET", "/v1/rounds/p1/summary");
 
@@ -253,5 +216,10 @@ describe("who a request acts as", () => {
     ).toStrictEqual([404, "ERR_ROUND_NOT_FOUND"]);
     const after = await a.call("GET", "/v1/rounds/p1/summary");
     expect(await after.json()).toStrictEqual(await before.json());
+    expect(b.lines.map((line) => line.learnerId)).toStrictEqual([
+      "learner-b",
+      "learner-b",
+      "learner-b",
+    ]);
   });
 });

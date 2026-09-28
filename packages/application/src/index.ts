@@ -5,6 +5,7 @@ export {
   type Actor,
   type LearnerId,
   type LearnerProfile,
+  type Profile,
   type RequestContext,
   type SystemJob,
 } from "./context";
@@ -51,6 +52,13 @@ export type {
 } from "./query-views";
 export { recordAnswers, type RecordAnswersCommand } from "./record-answers";
 export { records } from "./records";
+export {
+  DEFAULT_PROFILE,
+  signIn,
+  type LearnerDirectory,
+  type Registration,
+  type SignInDeps,
+} from "./sign-in";
 export { startRound } from "./start-round";
 export {
   keyOf,

@@ -7,10 +7,10 @@ export {
   type ApiDependencies,
   type ApiVariables,
 } from "./app";
-export type { Authenticator, Identity } from "./authenticator";
+export type { Authenticator, Principal } from "./authenticator";
 export { API_ENV_NAMES, ApiEnvError, readApiEnv, type ApiEnv } from "./env";
 export { MAX_REQUEST_BODY_BYTES } from "./http";
-export { localAuthenticator, type LocalLearnerOptions } from "./local-authenticator";
+export { LOCAL_SUBJECT, localAuthenticator } from "./local-authenticator";
 export { ensureTable } from "./local-table";
 export { jsonLines, type LogLine, type LogSink, type RequestOutcome } from "./log";
 export {

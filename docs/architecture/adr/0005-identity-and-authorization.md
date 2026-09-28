@@ -1,6 +1,7 @@
 # ADR-0005: Identity and authorization
 
-- Status: Accepted (2026-09-23); amended 2026-09-28 (the user pool's sign-in identifier)
+- Status: Accepted (2026-09-23); amended 2026-09-27 (the learner profile lives in the
+  learner table) and 2026-09-28 (the user pool's sign-in identifier)
 - Date: 2026-09-23
 - Deciders: the owner
 
@@ -58,6 +59,15 @@ The owner has decided:
   mapped to it. The internal id is chosen, so that adding an identity provider or
   linking accounts never rewrites data keys.
 
+- **Where the learner profile lives.**
+  - (a) Cognito user attributes.
+  - (b) The application's own records, in the learner table.
+
+  (b) is chosen by the owner (2026-09-27): the profile is portable across identity
+  providers, is exported and deleted with the learner's partition, and is read and
+  changed like the rest of the learner's data, where (a) would tie it to one provider
+  and to Cognito's admin API.
+
 ## Decision
 
 ### Authentication
@@ -93,8 +103,10 @@ interface Authenticator {
 - The Cognito adapter verifies access tokens with `aws-jwt-verify`, using
   `tokenUse: "access"` and the expected `clientId`. AWS's guidance states that the
   audience must be checked.
-- The identity context maps `sub` to LearnerId, creating the learner on first sign-in.
-- The HTTP adapter builds `RequestContext` once per request:
+- The authenticator yields only the verified subject. The identity context maps `sub` to
+  LearnerId, creating the learner on first sign-in (below).
+- The HTTP adapter builds `RequestContext` once per request, its `learner` from the
+  stored profile:
 
 ```ts
 interface RequestContext {
@@ -104,11 +116,28 @@ interface RequestContext {
     readonly id: LearnerId;
     readonly timezone: string;
     readonly l1: string;
+    readonly target: string;
+    readonly uiLocale: string;
   };
   readonly now: number;
   readonly requestId: string;
 }
 ```
+
+### Learner registration and the profile
+
+- A learner's profile — time zone, L1, target language and UI locale — lives in the
+  learner table's `LEARNER#<id> / PROFILE` item
+  ([ADR-0006](0006-persistence-on-dynamodb.md)), not in Cognito attributes.
+- The identity context is its own port, separate from the learner-bound stores: it is
+  asked before any learner is known, and its only input is the verified subject, so it
+  offers no way to name another learner.
+- A first sign-in registers the learner with a default profile:
+  `IDENTITY#<sub> / LEARNER` and `LEARNER#<id> / PROFILE` in one conditional commit,
+  each written only while absent. Of two first sign-ins racing, one commits; the other
+  reads the mapping again and signs in as the same LearnerId.
+- A new LearnerId comes from an id source the entry point supplies, never from
+  randomness inside the application layer.
 
 ### Authorization
 
@@ -170,7 +199,8 @@ Authorization happens at two levels, and both are required.
 - The API owns the web login flow, including cookie handling, CSRF checks and refresh
   timing, instead of delegating it to a library-managed SPA client.
 - The two credential carriers must stay behaviorally identical, which adds test cases.
-- The LearnerId mapping costs one lookup per request (cacheable per token).
+- Resolving the learner costs two consistent reads per request, the mapping and the
+  profile (cacheable per token).
 
 ### Follow-ups
 
@@ -187,8 +217,6 @@ Authorization happens at two levels, and both are required.
 - Whether API Gateway's JWT authorizer should also pre-screen Bearer requests as a cheap
   first gate. HTTP APIs support a JWT authorizer configured with a Cognito issuer and
   audience.
-- Where learner profile data lives: Cognito attributes or the identity context's own
-  records. The current lean is own records, because they are portable and exportable.
 - Unverified: the default email sending limits of a Cognito user pool, which decide
   whether Amazon SES is needed at launch.
 

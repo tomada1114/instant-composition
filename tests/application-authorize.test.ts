@@ -56,7 +56,14 @@ describe("authorize", () => {
 });
 
 describe("requestContext", () => {
-  const learner = { id: ME, timeZone: "Asia/Tokyo", dayBoundaryHour: 4, l1: "ja" };
+  const learner = {
+    id: ME,
+    timeZone: "Asia/Tokyo",
+    dayBoundaryHour: 4,
+    l1: "ja",
+    target: "en",
+    uiLocale: "ja",
+  };
 
   it.each(Object.entries(ACTORS))("accepts %s acting for the learner", (_, actor) => {
     const context = { actor, learner, now: 0, requestId: "req-1" };
