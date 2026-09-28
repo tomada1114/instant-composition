@@ -2,7 +2,8 @@
 
 - Status: Accepted (2026-09-23); the OpenAPI generation line under "Framework" and the
   open question on Zod v4 are superseded by
-  [ADR-0013](0013-openapi-generated-from-zod-json-schema.md)
+  [ADR-0013](0013-openapi-generated-from-zod-json-schema.md); amended 2026-09-28 (a late
+  answer never rewinds an item's schedule, and no expiry is in force)
 - Date: 2026-09-23
 - Deciders: the owner
 
@@ -130,9 +131,9 @@ offline replay use the same call.
 
 **Idempotency.**
 
-- Answers keep client-generated ids. Round creation should also accept a
-  client-generated id, so a retried `POST /v1/rounds` cannot open two rounds. This is
-  decided here but not yet built.
+- Answers keep client-generated ids. Round creation also accepts a client-generated id
+  (the `roundId` of `startRoundRequestSchema`), so a retried `POST /v1/rounds` cannot
+  open two rounds.
 - Any other create that has no natural id accepts an `Idempotency-Key` header. The
   server stores the first response under that key and replays it.
 - Finishing is already idempotent by design and stays so.
@@ -144,12 +145,21 @@ offline replay use the same call.
 - Answers made offline are queued with their client ids and a client `answeredAt`. They
   are sent later through the batch endpoint.
 - The server accepts `answeredAt` only between the round's `startedAt` and the server's
-  current time. Outside that range it clamps the value. Today the server stamps
-  `answeredAt` itself (`src/server/services/answer.ts:66`); the change is needed because
-  the replay order drives scheduling.
-- Late answers count toward the round's day, not the arrival day. This keeps today's
-  rule that a round belongs to the day it started on
-  (`src/server/services/answer.ts:47-51`).
+  current time. Outside that range it clamps the value rather than refusing the answer,
+  and an answer without one takes the server's time. A batch is taken in (`answeredAt`,
+  id) order, because the replay order drives scheduling.
+- Late answers count toward the round's day, not the arrival day. This keeps the rule
+  that a round belongs to the day it started on.
+- A late answer is appended to the log but never moves an item's memory backwards
+  (amended 2026-09-28, the owner's decision). A first pass answered no later than the
+  item's latest first pass, or for a day before the one the item's memory last moved on,
+  is logged with the memory state it found and leaves the item as it was, as a retry
+  does. Replaying the log skips such an entry the same way, so the projection and a
+  replay agree. Taking it on arrival would set the item's `lastDay` and `dueDay` from
+  the older day and rewind its schedule, and slotting it in at its time would mean
+  replaying the item's history on a write, which the projections of
+  [ADR-0006](0006-persistence-on-dynamodb.md) exist to avoid. It still counts toward the
+  round, the day and the learner's totals.
 - An abandoned round still accepts answers, and they still count. Today an open round is
   abandoned when another kind starts (`src/server/services/start.ts:133`), but it is
   never rejected for being abandoned.
@@ -207,7 +217,8 @@ offline replay use the same call.
   whether OpenAPI Generator fits the Kotlin client. Both are candidates, not yet
   evaluated.
 - Whether a round needs a server-side expiry for queued answers. For example, how many
-  days late an answer may arrive and still count.
+  days late an answer may arrive and still count. None is in force: a round takes
+  answers until it is finished (the owner, 2026-09-28).
 - Whether native apps prefetch more than today's round. Multi-day prefetch would have
   the server deal decks ahead of time, which interacts with the daily portion rules.
 
