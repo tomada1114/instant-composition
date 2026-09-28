@@ -2,12 +2,12 @@
 name: writing-infrastructure
 description: >
   Covers this repository's own infrastructure decisions in infra/, the AWS CDK app: the
-  stage setting and what differs between dev and prod, the foundation / app stack split,
-  the Retain policies on stateful resources, the GitHub OIDC deploy role and its scope,
-  how a stack change is tested and deployed, and which new AWS resources need the
-  owner's OK first. Use when adding or changing a stack, construct or stage setting
-  under infra/, running pnpm cdk synth or deploy, editing
-  .github/workflows/deploy-dev.yml, or when a Deploy dev run fails.
+  stage setting and what differs between dev and prod, the foundation / app split and
+  its Parameter Store hand-off, the Retain policies, the app stack's CloudFront, HTTP
+  API, Lambda bundle, hosted web app client, Custom::WebClientSecret and alarms, the
+  GitHub OIDC deploy role, how a stack change is tested and deployed, and which AWS
+  resources need the owner's OK. Use when changing anything under infra/, running pnpm
+  cdk, editing .github/workflows/deploy-dev.yml, or when a Deploy dev run fails.
 ---
 
 # Writing Infrastructure
@@ -15,8 +15,10 @@ description: >
 **Owns:** the decisions this repository has made about its AWS infrastructure and how
 `infra/` expresses them. **Does not own:** general CDK and CloudFormation knowledge (the
 vendor's `aws-cdk` skill and AWS documentation); why the topology is what it is
-(ADR-0009, **BACKGROUND:** `recording-architecture-decisions`); workflow lint rules
-(**REQUIRED:** `changing-gates` for any edit to `deploy-dev.yml`).
+(ADR-0009, **BACKGROUND:** `recording-architecture-decisions`); the code the API
+function runs and the names it reads (`serving-the-api`); how the client secret is read
+and a learner signed in (`authenticating-learners`); workflow lint rules (**REQUIRED:**
+`changing-gates` for any edit to `deploy-dev.yml`).
 
 ## One app, two stages
 
@@ -32,19 +34,25 @@ a second design.
   an amendment first.
 - What differs today: the learner table's point-in-time recovery and deletion protection
   (on in `prod`, off in `dev` by the owner's choice), the user pool's self sign-up
-  (`SELF_SIGN_UP`: off in `dev`, where only an administrator creates users), the web app
-  client and its sign-in domain (`WEB_CLIENT`: `dev` only, with `127.0.0.1:5173`
-  redirects; `prod` gets one once it has a URL), and the `deploy-access` stack, which
-  only `dev` builds.
+  (`SELF_SIGN_UP`: off in `dev`, where only an administrator creates users), the local
+  web app client and its sign-in domain (`WEB_CLIENT`: `dev` only, with `127.0.0.1:5173`
+  redirects; `prod` gets one once it has a URL), and the `deploy-access` and `app`
+  stacks, which only `dev` builds (`buildApp` in `infra/src/app.ts`): `prod` is not
+  hosted until the production-guard phase, so it builds `foundation` alone.
 - Every stage deploys to `ap-northeast-1` (`REGION`). No stack reads `process.env`:
   `infra/tsconfig.json` loads no Node types, so a setting that is not in the CDK context
   fails to compile.
-- A stack's construct id is the same in every stage (`foundation`, `deploy-access`), so
-  a CLI command names it the same way. Its CloudFormation name carries the stage:
-  `instant-composition-<stage>-<id>`.
+- A stack's construct id is the same in every stage (`foundation`, `deploy-access`,
+  `app`), so a CLI command names it the same way. Its CloudFormation name carries the
+  stage: `instant-composition-<stage>-<id>`.
 - The CDK CLI's usage telemetry is off for this app: `infra/cdk.json`'s `context` sets
   `"cli-telemetry": false`, so neither a local `pnpm cdk` run nor `Deploy dev` reports
   it. `pnpm cdk cli-telemetry --status` from `infra/` confirms it.
+- The other context keys: `repository-root`, which `infra/cdk.json` sets to `..` for a
+  CLI run in `infra/` and without which a stage that builds `app` throws
+  `MissingRepositoryRootError` (`ERR_INFRA_REPOSITORY_ROOT`), since the function is
+  bundled from the checkout; and `web-dist` and `alarm-email`, which only a deploy
+  passes ("Deploying").
 
 ## The stacks
 
@@ -54,21 +62,31 @@ a second design.
   included, because the owner's own learning history lives there. The user pool also has
   deletion protection in every stage: a new pool issues new `sub`s, which strands every
   learner's data. Its sign-in settings (email as the username, case-insensitive) cannot
-  change without replacing it. In `dev` the pool also has the confidential web app
-  client (code grant, `openid`, refresh-token rotation, an empty `ExplicitAuthFlows` so
-  `ALLOW_REFRESH_TOKEN_AUTH` stays off), a prefix domain for managed login whose prefix
-  carries the stack id's first group so it is unique in the region, and the client's
-  Cognito-provided managed login style, without which managed login shows no page. Keep
-  a logical id stable once deployed, because a changed id replaces the resource. Let
-  CloudFormation name the resources, so that a replacement never collides with a name in
-  use.
-- **`app`**, when it comes, holds what is rebuilt often: API Gateway, Lambda,
-  CloudFront. It depends on `foundation`, never the reverse. It reads foundation's
-  identifiers by name, never through a CloudFormation export, because an imported export
-  locks the exporting value (ADR-0009). That is why `LearnerTableName` is a stack output
-  with no `exportName`, and so are `UserPoolId`, `WebClientId` and `SignInDomainUrl`,
-  which a local run reads from `aws cloudformation describe-stacks`. The client secret
-  is never an output.
+  change without replacing it. In `dev` the pool also has the local checkout's
+  confidential web app client (`webClientOptions`: code grant, `openid`, refresh-token
+  rotation, an empty `ExplicitAuthFlows` so `ALLOW_REFRESH_TOKEN_AUTH` stays off), a
+  prefix domain for managed login whose prefix carries the stack id's first group so it
+  is unique in the region, and the client's Cognito-provided managed login style,
+  without which managed login shows no page. Keep a logical id stable once deployed,
+  because a changed id replaces the resource. Let CloudFormation name the resources, so
+  that a replacement never collides with a name in use.
+- **The hand-off.** `foundation` publishes its identifiers as free standard-tier
+  `String` parameters under `/instant-composition/<stage>/foundation/`
+  (`FOUNDATION_PARAMETERS` in `infra/src/foundation-parameters.ts` names them), and
+  `app` resolves them by name at deploy time. Never an export or `Fn::GetStackOutput`:
+  an imported export locks the exporting value (ADR-0009), and
+  `tests/infra-app-stack.test.ts` fails on either. The stack outputs
+  (`LearnerTableName`, `UserPoolId`, `WebClientId`, `SignInDomainUrl`; `app`'s `WebUrl`,
+  `SpaBucketName`, `DistributionId`) carry no `exportName` and are for people and a
+  local run, which reads them with `aws cloudformation describe-stacks`. No client
+  secret is ever an output.
+- **`app`** (`dev` only) holds what is rebuilt often: the distribution, the SPA bucket,
+  the HTTP API, the API function, the hosted web app client and its secret, and the
+  alarms. It depends on `foundation` for deploy order alone, never the reverse. The
+  hosted client lives here, not in `foundation`, because its redirect URLs are the
+  distribution's, and `foundation` must never depend on `app` (owner, 2026-09-28,
+  ADR-0009). Read [references/app-stack.md](references/app-stack.md) before changing any
+  construct in it: each holds a decision a plausible edit would undo.
 - **`deploy-access`** (`dev` only) holds the GitHub OIDC identity provider and the
   deploy role. The owner deployed it once by hand, with
   `pnpm cdk deploy -c stage=dev deploy-access`, because the workflow needs the role
@@ -103,6 +121,14 @@ a second design.
   billing, the Retain policies, per-stage protection, trust conditions and the exact
   permission. Assert them for every stage the setting differs in. Snapshot tests are not
   used here.
+- The suites synthesize with asset bundling off (`infraContext` in
+  `tests/infra-context.ts`), so they run neither esbuild nor the catalog build.
+  `tests/infra-api-bundle.test.ts` is the one suite that bundles the function as a
+  deploy does and starts the bundle. `tests/infra-web-client-secret.test.ts` runs the
+  secret writer's inline Python, so the infra suites need `python3` on the `PATH`.
+- `tests/infra-app-stack.test.ts` lists every resource type `app` may hold. A new type
+  fails it until the list changes, which is the moment to check it against "What needs
+  the owner's OK".
 - A new `aws-cdk-lib/<module>` import is a boundary edit. `infra/` imports
   `aws-cdk-lib`, `constructs` and the subpaths its row lists, each by its exact
   specifier, and nothing of the application. Add the subpath to both
@@ -128,7 +154,10 @@ a second design.
   alarm topic's subscription; the workflow still deploys and posts a warning.
 - After a merge that changes a stack, confirm the `Deploy dev` run succeeded and read
   the live resource back (`aws dynamodb describe-table`, `aws iam get-role`, …) against
-  what the tests assert. A green synth proves nothing about the account.
+  what the tests assert. A green synth proves nothing about the account. For `app`, the
+  `WebUrl` output is the check: `/` and a client route answer `200` with the SPA, and
+  `/api/v1/home` without a session answers `401` `ERR_UNAUTHENTICATED` through
+  CloudFront.
 - Agents use `dev` credentials only (`aws login`, short-lived). When the session has
   expired, ask the owner to sign in again rather than working around it. Nothing an
   agent runs touches `prod`.
