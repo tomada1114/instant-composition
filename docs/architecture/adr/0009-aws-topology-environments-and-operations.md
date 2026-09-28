@@ -178,15 +178,17 @@ evaluate when the CDK app is written.
 thing, deployed with the prod stage", not a second design. The stage decides only these
 settings:
 
-| Setting                                           | `dev`                                                                 | `prod`                                                          |
-| ------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------- |
-| DynamoDB retain on delete and on replacement      | On — the owner's own learning history accumulates here for years      | On                                                              |
-| DynamoDB deletion protection                      | Off (below)                                                           | On                                                              |
-| DynamoDB point-in-time recovery                   | Off (below)                                                           | On; the period is set in the production-guard phase (1–35 days) |
-| Cognito self sign-up                              | Off: only an administrator creates users (`AllowAdminCreateUserOnly`) | On                                                              |
-| CloudFront flat-rate plan                         | Free                                                                  | Free, then Pro when traffic warrants                            |
-| WAF rate-based rules, SES for authentication mail | None; Cognito's own sender is enough for admin-created users          | Yes                                                             |
-| Deploy                                            | On every merge to `main`                                              | Behind a manual approval                                        |
+| Setting                                           | `dev`                                                                                          | `prod`                                                          |
+| ------------------------------------------------- | ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| DynamoDB retain on delete and on replacement      | On — the owner's own learning history accumulates here for years                               | On                                                              |
+| DynamoDB deletion protection                      | Off (below)                                                                                    | On                                                              |
+| DynamoDB point-in-time recovery                   | Off (below)                                                                                    | On; the period is set in the production-guard phase (1–35 days) |
+| Cognito self sign-up                              | Off: only an administrator creates users (`AllowAdminCreateUserOnly`)                          | On                                                              |
+| Cognito user pool deletion protection             | On                                                                                             | On                                                              |
+| Cognito web app client and sign-in domain         | A confidential client redirecting to `http://127.0.0.1:5173`; managed login on a prefix domain | None until `prod` has a URL (production-guard phase)            |
+| CloudFront flat-rate plan                         | Free                                                                                           | Free, then Pro when traffic warrants                            |
+| WAF rate-based rules, SES for authentication mail | None; Cognito's own sender is enough for admin-created users                                   | Yes                                                             |
+| Deploy                                            | On every merge to `main`                                                                       | Behind a manual approval                                        |
 
 The `dev` table has neither point-in-time recovery nor deletion protection, for as long
 as `dev` is the only environment. The owner decided this on 2026-09-27: until `prod`
