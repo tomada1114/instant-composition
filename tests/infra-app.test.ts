@@ -1,10 +1,14 @@
 import {
   buildApp,
+  MissingRepositoryRootError,
   REGION,
+  REPOSITORY_ROOT_CONTEXT,
   STAGES,
   UnknownStageError,
 } from "@instant-composition/infra";
 import { describe, expect, it } from "vitest";
+
+import { infraContext } from "./infra-context";
 
 // Synthesis is the whole of what the CDK app can get wrong before a deploy, and
 // it needs no AWS credentials, so the everyday gate runs it for every stage.
@@ -12,15 +16,16 @@ import { describe, expect, it } from "vitest";
 // timeout: the first synthesis loads aws-cdk-lib and alone takes seconds (#150).
 const SYNTHESIZED = new Map(
   STAGES.map((stage) => {
-    const { app, stage: built } = buildApp({ stage });
+    const { app, stage: built } = buildApp(infraContext(stage));
     return [stage, { built, stacks: app.synth().stacks }] as const;
   }),
 );
 
 describe("the CDK app", () => {
-  // Only `dev` has a deploy role: `prod`'s deploy waits behind an approval.
+  // Only `dev` has a deploy role, since `prod`'s deploy waits behind an
+  // approval, and only `dev` is hosted until the production phases.
   const STACKS = {
-    dev: ["deploy-access", "foundation"],
+    dev: ["deploy-access", "foundation", "app"],
     prod: ["foundation"],
   } as const;
 
@@ -42,6 +47,40 @@ describe("the CDK app", () => {
         region: REGION,
       })),
     );
+  });
+
+  // ADR-0009: `app` reads foundation's identifiers by name, so the order is
+  // a deploy order alone, and nothing in `foundation` waits on `app`.
+  it("deploys the dev app stack after foundation, never the reverse", () => {
+    const stacks = SYNTHESIZED.get("dev")?.stacks ?? [];
+    const ids = new Set(stacks.map(({ id }) => id));
+    // Each stack also depends on its own asset manifest, which is no stack.
+    const dependencies = Object.fromEntries(
+      stacks.map(({ id, dependencies: on }) => [
+        id,
+        on.map((artifact) => artifact.id).filter((artifact) => ids.has(artifact)),
+      ]),
+    );
+    expect(dependencies).toStrictEqual({
+      "deploy-access": [],
+      foundation: [],
+      app: ["foundation"],
+    });
+  });
+
+  it.each([[undefined], [""], [42]])(
+    "refuses to build dev without a repository root to bundle from: %p",
+    (root) => {
+      const build = () => buildApp({ stage: "dev", [REPOSITORY_ROOT_CONTEXT]: root });
+      expect(build).toThrow(MissingRepositoryRootError);
+      expect(build).toThrow(
+        expect.objectContaining({ code: "ERR_INFRA_REPOSITORY_ROOT" }),
+      );
+    },
+  );
+
+  it("builds prod, which bundles nothing, without a repository root", () => {
+    expect(buildApp({ stage: "prod" }).stage).toBe("prod");
   });
 
   it.each([["qa"], [undefined], ["Dev"]])("refuses to build the stage %p", (stage) => {

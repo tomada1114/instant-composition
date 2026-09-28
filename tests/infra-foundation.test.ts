@@ -12,8 +12,10 @@ import {
 import { Match, Template } from "aws-cdk-lib/assertions";
 import { describe, expect, it } from "vitest";
 
+import { infraContext } from "./infra-context";
+
 function synthesizeFoundation(stage: Stage): Template {
-  const stack = buildApp({ stage }).app.node.findChild("foundation");
+  const stack = buildApp(infraContext(stage)).app.node.findChild("foundation");
   if (!(stack instanceof FoundationStack)) {
     throw new TypeError("the app has no foundation stack");
   }

@@ -6,8 +6,10 @@ import {
 import { Template } from "aws-cdk-lib/assertions";
 import { describe, expect, it } from "vitest";
 
+import { infraContext } from "./infra-context";
+
 function synthesizeDeployAccess(): Template {
-  const stack = buildApp({ stage: "dev" }).app.node.findChild("deploy-access");
+  const stack = buildApp(infraContext("dev")).app.node.findChild("deploy-access");
   if (!(stack instanceof DeployAccessStack)) {
     throw new TypeError("the dev app has no deploy-access stack");
   }
