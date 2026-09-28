@@ -38,6 +38,26 @@ never authorizes a push, a pull request, or a merge.
 once per session. `content/levels.json`, `content/grammar.json` and
 `content/taxonomy.json` are the only valid tag values.
 
+## Model and effort
+
+<!-- derived from orchestrating-models §2 -->
+
+Every sub-agent the three card skills spawn — writers, rebuild writers, the reviewers
+R1, R2 and R3, and field fillers — is the `worker` agent in Claude Code: Sonnet 5.5 at
+medium effort, fixed by `.claude/agents/worker.md`. Where no such agent exists (Codex
+CLI), a general-purpose sub-agent does the same job. Spawn it by name: its own default
+effort is `high`, and a spawn that names only the model takes the session's effort.
+
+- Each job is one reply to a complete brief, with no tool calls. Sonnet 5.5 costs half
+  of Opus 5.5 per token, and its weakness at medium — stopping to check in during long
+  agentic work — never comes up.
+- Quality rests on the pipeline, not on one model: lint, the near-duplicate check, three
+  independent reviewers, and a second round that deletes whatever fails again. Watch the
+  tombstone count in `pnpm cards:stats`; if the share deleted per run climbs, raise R2
+  first, since it judges naturalness.
+- At medium, Sonnet 5.5 sometimes writes a draft before its final JSON, so every reply
+  is read by taking its last JSON array.
+
 ## Procedure
 
 1. **Branch.** Run `git status --porcelain`. If anything outside `content/` is modified,
@@ -52,9 +72,8 @@ once per session. `content/levels.json`, `content/grammar.json` and
    many cards each gets (at most 3), and 2–3 target grammar ids per cell. Do not
    second-guess the plan; it already weighs what is thin. A `shortfall` above 0 (also
    warned on stderr) means the range has too few cells; carry it into the report.
-4. **Write, one writer per cell, in parallel.** Each writer is a separate sub-agent (in
-   Claude Code, the `executor` agent when it is defined; otherwise a general-purpose
-   sub-agent). Build the brief from
+4. **Write, one writer per cell, in parallel.** Each writer is a separate `worker`
+   sub-agent (see [Model and effort](#model-and-effort)). Build the brief from
    [references/writer-brief.md](references/writer-brief.md), filling in:
    - the full text of `content/guides/writing.md`;
    - the level's entry from `content/levels.json`, including its word range;
@@ -66,17 +85,18 @@ once per session. `content/levels.json`, `content/grammar.json` and
      exactly what `cards:add` compares a new card against, so the writer can avoid it;
    - how many cards to write. Each writer returns a JSON array of cards without `id`,
      `createdAt` or `stamps`.
-5. **Admit, one command at a time.** Take the JSON array out of each writer's reply:
-   strip code fences and any prose around the outermost `[ … ]`. If it still does not
-   parse as a JSON array, re-ask that writer once, quoting the parse error; if the
-   second reply is bad too, drop the cell and report it. Save the array to
-   `tmp/cards/<topic>-<subtopic>-<level>.json` (`tmp/` is gitignored scratch) and run
-   `pnpm cards:add <that file>`. It assigns ids, rejects cards that fail lint or sit too
-   close to an existing card or tombstone, and prints what it dropped and why (a lint
-   rule, or `NEAR_DUPLICATE` with the card or tombstone it resembles). Do not hand-edit
-   a dropped card back in. Writers run in parallel, but `pnpm cards:*` write commands
-   (`add`, `update`, `tombstone`, `stamp`) run one at a time, never in parallel: each
-   holds a lock on `content/`, and a second one fails with `ERR_CARDS_BUSY`.
+5. **Admit, one command at a time.** Take the last JSON array out of each writer's
+   reply, never the span from the first `[` to the last `]` (see
+   [Model and effort](#model-and-effort)). If none parses as a JSON array, re-ask that
+   writer once, quoting the parse error; if the second reply is bad too, drop the cell
+   and report it. Save the array to `tmp/cards/<topic>-<subtopic>-<level>.json` (`tmp/`
+   is gitignored scratch) and run `pnpm cards:add <that file>`. It assigns ids, rejects
+   cards that fail lint or sit too close to an existing card or tombstone, and prints
+   what it dropped and why (a lint rule, or `NEAR_DUPLICATE` with the card or tombstone
+   it resembles). Do not hand-edit a dropped card back in. Writers run in parallel, but
+   `pnpm cards:*` write commands (`add`, `update`, `tombstone`, `stamp`) run one at a
+   time, never in parallel: each holds a lock on `content/`, and a second one fails with
+   `ERR_CARDS_BUSY`.
 6. **Top up once.** If drops left the run short, re-brief only the short cells for only
    the missing count, telling the writer why the previous ones were dropped. Admit
    again. If still short, stop and report the shortfall — never loop further.

@@ -58,12 +58,12 @@ vs. rebuild), `content/guides/review-perspectives.md` (the checks and the curren
       these cards and never sees another reviewer's output. Briefs are in
       [references/reviewer-briefs.md](references/reviewer-briefs.md). R1 sees labels
       (`b1`, `b2`, …) instead of card ids; keep the label → id map yourself and map its
-      answer back. In Claude Code, R1 uses the `executor` agent and R2/R3 the
-      `architect` agent when those are defined; otherwise general-purpose sub-agents.
-   3. **Read the replies.** Take the JSON array out of each reply: strip code fences and
-      any prose around the outermost `[ … ]`. If it still does not parse, re-ask that
-      reviewer once, quoting the parse error. If the second reply is bad too, skip the
-      batch: apply nothing, stamp nothing, and report it.
+      answer back. All three are `worker` sub-agents (`generating-cards`, "Model and
+      effort").
+   3. **Read the replies.** Take the last JSON array out of each reply, never the span
+      from the first `[` to the last `]`. If none parses, re-ask that reviewer once,
+      quoting the parse error. If the second reply is bad too, skip the batch: apply
+      nothing, stamp nothing, and report it.
    4. **Adjudicate** every card yourself — keep, edit, rebuild, or delete — using
       `identity.md` for edit vs. rebuild. For R1, compare each blind sentence's skeleton
       with `en`: a different skeleton means fix `ja` or add an alternative; a natural,

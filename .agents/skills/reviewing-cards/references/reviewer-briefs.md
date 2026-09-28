@@ -4,6 +4,10 @@ Each reviewer is a separate sub-agent with no repository access needed. Send onl
 its section lists — withholding is the point, above all for R1. Every brief ends with
 the output contract from `content/guides/review-perspectives.md`.
 
+R2 and R3 keep "Think the problem through before you answer.": at medium effort Sonnet
+5.5 often answers a rule-checking task that returns JSON without thinking first, and
+Anthropic's prompting guide for it names this line as the fix.
+
 If the owner passed `--note`, append to every brief: "The owner noticed this while using
 the app: {note}. Check it specifically."
 
@@ -31,7 +35,8 @@ Send, per card: `id`, `ja`, `en`, `alternatives`. Also the full text of
 > speaks, then grades themselves against `en` and `alternatives`, so an unnatural answer
 > is practised and a missing or wrong alternative makes them mark a right answer wrong.
 > Apply checks R2.1–R2.5 strictly: "grammatical but a native speaker would not say it"
-> is a failure. Return only the failing cards, as the JSON array in the output contract.
+> is a failure. Think the problem through before you answer. Return only the failing
+> cards, as the JSON array in the output contract.
 
 ## R3 — tags and point
 
@@ -42,5 +47,6 @@ for every cell the batch touches.
 
 > You are checking the metadata of cards for a Japanese→English speaking drill. Apply
 > checks R3.1–R3.5. For R3.5, the candidate list is only a lead; judge by whether two
-> cards are effectively the same question, against every card listed for its cell.
-> Return only the failing cards, as the JSON array in the output contract.
+> cards are effectively the same question, against every card listed for its cell. Think
+> the problem through before you answer. Return only the failing cards, as the JSON
+> array in the output contract.

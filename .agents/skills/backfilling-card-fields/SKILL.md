@@ -51,11 +51,10 @@ cards can take the field without the drill pausing.
    stop and report — never commit anywhere but a `cards/*` branch.
 2. `pnpm cards:queue --missing <name> [range] --limit <n> --json` — cards without the
    field, stamped cards first.
-3. Batch by 20. For each batch, one writer sub-agent (the `executor` agent in Claude
-   Code when defined) gets the field spec, `content/guides/writing.md`, and the cards;
-   it returns `[{ "id": …, "<name>": … }]`. Take the JSON array out of the reply (strip
-   code fences and prose); if it does not parse, re-ask once, and if it still does not,
-   skip the batch and report it.
+3. Batch by 20. For each batch, one `worker` sub-agent (`generating-cards`, "Model and
+   effort") gets the field spec, `content/guides/writing.md`, and the cards; it returns
+   `[{ "id": …, "<name>": … }]`. Take the last JSON array out of the reply; if none
+   parses, re-ask once, and if it still does not, skip the batch and report it.
 4. Save to `tmp/cards/<name>-<batch>.json` and `pnpm cards:update` it — one write
    command at a time, never in parallel (a second one fails with `ERR_CARDS_BUSY`).
    Rejected entries are reported, not retried by hand.
