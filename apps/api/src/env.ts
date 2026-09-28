@@ -1,92 +1,25 @@
-/**
- * The configuration of a local run of the API, read from the environment.
- *
- * @remarks
- * This is the only module in `apps/api` that reads `process.env`; everything
- * else is handed what it needs as an argument. No `.env` file is loaded: a
- * local run takes these names from the shell that starts it, and every one of
- * them has a default or is optional, so `pnpm api` needs none set.
- */
-export interface ApiEnv {
-  readonly port: number;
-  /** DynamoDB local's endpoint; `localDynamoDbClient` refuses one off the loopback. */
-  readonly dynamoDbEndpoint: string;
-  readonly tableName: string;
-  /** The catalog snapshot `pnpm catalog:build` writes, relative to the working directory or absolute. */
-  readonly catalogPath: string;
-  /** The user pool whose access tokens the API accepts; `null` runs the stand-in authenticator. */
-  readonly cognito: CognitoSettings | null;
-}
+import {
+  ApiEnvError,
+  awsRegion,
+  blank,
+  clientId,
+  clientSecret,
+  domain,
+  envReader,
+  httpsOrigins,
+  httpsUrl,
+  httpUrl,
+  parameterName,
+  port,
+  invalidVariables,
+  tableName,
+  text,
+  userPoolId,
+  type Source,
+} from "./env-values";
+import type { ApiEnv, HostedEnv } from "./env-settings";
 
-/**
- * The Cognito user pool a local run verifies access tokens against, and the
- * confidential web app client and domain it signs a browser in through.
- */
-export interface CognitoSettings {
-  readonly userPoolId: string;
-  readonly clientId: string;
-  /** The web app client's secret: it goes to the pool's token endpoint and nowhere else. */
-  readonly clientSecret: string;
-  /** The user pool domain's origin, e.g. `https://example.auth.ap-northeast-1.amazoncognito.com`. */
-  readonly domain: string;
-}
-
-/** A variable held no value its setting accepts, or the process is not a local one. */
-export class ApiEnvError extends Error {
-  readonly code: "ERR_API_ENV_INVALID" | "ERR_API_ENV_NOT_LOCAL";
-  /** The variables at fault, by name; never their values. */
-  readonly names: readonly string[];
-
-  constructor(code: ApiEnvError["code"], names: readonly string[], message: string) {
-    super(message);
-    this.name = "ApiEnvError";
-    this.code = code;
-    this.names = names;
-  }
-}
-
-type Parse<T> = (value: string) => T | undefined;
-
-const text: Parse<string> = (value) => value;
-
-const port: Parse<number> = (value) => {
-  const number = /^\d{1,5}$/.test(value) ? Number(value) : 0;
-  return number >= 1 && number <= 65_535 ? number : undefined;
-};
-
-const httpUrl: Parse<string> = (value) =>
-  /^https?:$/.test(URL.parse(value)?.protocol ?? "") ? value : undefined;
-
-/** DynamoDB's own rule for a table name. */
-const tableName: Parse<string> = (value) =>
-  /^[\w.-]{3,255}$/.test(value) ? value : undefined;
-
-/** A user pool id as Cognito shapes it, `<region>_<id>` (the rule `aws-jwt-verify` applies). */
-const userPoolId: Parse<string> = (value) =>
-  /^(?:eusc-[a-z]{2}|[a-z]{2})-(?:gov-)?[a-z]+-\d_[a-zA-Z0-9]+$/.test(value)
-    ? value
-    : undefined;
-
-/** An app client id as Cognito shapes it. */
-const clientId: Parse<string> = (value) =>
-  /^[\w+]{1,128}$/.test(value) ? value : undefined;
-
-/** An app client secret as Cognito shapes it. */
-const clientSecret: Parse<string> = (value) =>
-  /^[\w+]{1,64}$/.test(value) ? value : undefined;
-
-/** A user pool domain's base URL: https, and nothing after the host. */
-const domain: Parse<string> = (value) => {
-  const url = URL.parse(value);
-  return url?.protocol === "https:" &&
-    url.username === "" &&
-    url.password === "" &&
-    url.pathname === "/" &&
-    url.search === "" &&
-    url.hash === ""
-    ? url.origin
-    : undefined;
-};
+// The only module in `apps/api` that reads `process.env`; no `.env` file is loaded.
 
 /** The variables naming the user pool: all set, or none. */
 const COGNITO_NAMES = [
@@ -116,12 +49,6 @@ const HOSTED_MARKERS = [
   "ECS_CONTAINER_METADATA_URI",
 ];
 
-type Source = Readonly<Record<string, string | undefined>>;
-
-function blank(source: Source, name: string): boolean {
-  return (source[name]?.trim() ?? "") === "";
-}
-
 /**
  * Reads and validates the local run's environment. A blank value reads as
  * unset, and surrounding whitespace is dropped.
@@ -142,18 +69,7 @@ export function readApiEnv(source: Source = process.env): ApiEnv {
       "The local API serves only a process on this machine; it refuses to start where AWS runs it.",
     );
   }
-  const invalid: string[] = [];
-  function read<T>(
-    name: (typeof API_ENV_NAMES)[number],
-    parse: Parse<T>,
-  ): T | undefined {
-    const raw = source[name]?.trim() ?? "";
-    const value = raw === "" ? undefined : parse(raw);
-    if (raw !== "" && value === undefined) {
-      invalid.push(name);
-    }
-    return value;
-  }
+  const { read, invalid } = envReader(source);
   const env: Omit<ApiEnv, "cognito"> = {
     port: read("API_PORT", port) ?? 8787,
     dynamoDbEndpoint: read("API_DYNAMODB_ENDPOINT", httpUrl) ?? "http://localhost:8000",
@@ -168,11 +84,7 @@ export function readApiEnv(source: Source = process.env): ApiEnv {
     invalid.push(...COGNITO_NAMES.filter((name) => blank(source, name)));
   }
   if (invalid.length > 0) {
-    throw new ApiEnvError(
-      "ERR_API_ENV_INVALID",
-      invalid,
-      `These variables hold no value their setting accepts: ${invalid.join(", ")}.`,
-    );
+    throw invalidVariables(invalid);
   }
   return {
     ...env,
@@ -183,5 +95,84 @@ export function readApiEnv(source: Source = process.env): ApiEnv {
       at === undefined
         ? null
         : { userPoolId: pool, clientId: client, clientSecret: secret, domain: at },
+  };
+}
+
+/** Every variable {@link readHostedEnv} reads; `API_COGNITO_CLIENT_SECRET` only to refuse it. */
+export const HOSTED_ENV_NAMES = [
+  "AWS_REGION",
+  "AWS_SESSION_TOKEN",
+  "PARAMETERS_SECRETS_EXTENSION_HTTP_PORT",
+  "API_TABLE_NAME",
+  "API_CATALOG_PATH",
+  "API_COGNITO_USER_POOL_ID",
+  "API_COGNITO_CLIENT_ID",
+  "API_COGNITO_DOMAIN",
+  "API_COGNITO_CLIENT_SECRET_PARAMETER",
+  "API_COGNITO_CLIENT_SECRET",
+  "API_WEB_ORIGINS",
+  "API_WEB_CALLBACK_URL",
+  "API_WEB_SIGN_OUT_URL",
+] as const;
+
+/**
+ * Reads and validates the hosted entry's environment, once, when the function
+ * starts. Every name is required but the extension's port; the user pool is
+ * never optional here, because the hosted entry has no stand-in to fall back
+ * to. `API_COGNITO_CLIENT_SECRET` is refused: the secret enters through the
+ * Parameters and Secrets extension alone, never as a plain variable.
+ *
+ * @throws {@link ApiEnvError} `ERR_API_ENV_INVALID` naming every variable that
+ * is unset, holds no value its setting accepts, or is the refused one.
+ */
+export function readHostedEnv(source: Source = process.env): HostedEnv {
+  const { read, required, invalid } = envReader(source);
+  const region = required("AWS_REGION", awsRegion);
+  const sessionToken = required("AWS_SESSION_TOKEN", text);
+  const extensionPort = read("PARAMETERS_SECRETS_EXTENSION_HTTP_PORT", port) ?? 2773;
+  const table = required("API_TABLE_NAME", tableName);
+  const catalogPath = required("API_CATALOG_PATH", text);
+  const pool = required("API_COGNITO_USER_POOL_ID", userPoolId);
+  const client = required("API_COGNITO_CLIENT_ID", clientId);
+  const at = required("API_COGNITO_DOMAIN", domain);
+  const secretParameter = required(
+    "API_COGNITO_CLIENT_SECRET_PARAMETER",
+    parameterName,
+  );
+  if (!blank(source, "API_COGNITO_CLIENT_SECRET")) {
+    invalid.push("API_COGNITO_CLIENT_SECRET");
+  }
+  const origins = required("API_WEB_ORIGINS", httpsOrigins);
+  const callbackUrl = required("API_WEB_CALLBACK_URL", httpsUrl);
+  const signOutUrl = required("API_WEB_SIGN_OUT_URL", httpsUrl);
+  if (
+    invalid.length > 0 ||
+    region === undefined ||
+    sessionToken === undefined ||
+    table === undefined ||
+    catalogPath === undefined ||
+    pool === undefined ||
+    client === undefined ||
+    at === undefined ||
+    secretParameter === undefined ||
+    origins === undefined ||
+    callbackUrl === undefined ||
+    signOutUrl === undefined
+  ) {
+    // `required` has named each of these that is undefined, so `invalid` is never empty here.
+    throw invalidVariables(invalid);
+  }
+  return {
+    region,
+    tableName: table,
+    catalogPath,
+    cognito: {
+      userPoolId: pool,
+      clientId: client,
+      domain: at,
+      clientSecretParameter: secretParameter,
+    },
+    web: { origins, callbackUrl, signOutUrl },
+    extension: { port: extensionPort, sessionToken },
   };
 }

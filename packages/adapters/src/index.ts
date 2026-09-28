@@ -5,6 +5,7 @@ export {
   deleteLearnerTable,
   localDynamoDbClient,
 } from "./dynamodb-local";
+export { regionalDynamoDbClient } from "./dynamodb-client";
 export { createDynamoDbDirectory } from "./dynamodb-directory";
 export { createDynamoDbStores, type DynamoDbStoresOptions } from "./dynamodb-store";
 export { MAX_COMMIT_ITEMS } from "./keys";

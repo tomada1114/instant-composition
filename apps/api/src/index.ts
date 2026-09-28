@@ -19,13 +19,23 @@ export {
   SIGN_IN_COOKIE,
   type CognitoWebSessionOptions,
 } from "./cognito-web-session";
+export { API_ENV_NAMES, HOSTED_ENV_NAMES, readApiEnv, readHostedEnv } from "./env";
+export { ApiEnvError } from "./env-values";
 export {
-  API_ENV_NAMES,
-  ApiEnvError,
-  readApiEnv,
-  type ApiEnv,
-  type CognitoSettings,
-} from "./env";
+  hostedApp,
+  hostedHandler,
+  type HostedDependencies,
+  type HttpApiEvent,
+  type HttpApiHandler,
+} from "./hosted";
+export type {
+  ApiEnv,
+  CognitoSettings,
+  HostedCognitoSettings,
+  HostedEnv,
+  ParametersExtension,
+  WebSignInSettings,
+} from "./env-settings";
 export { MAX_REQUEST_BODY_BYTES } from "./http";
 export { LOCAL_SUBJECT, localAuthenticator } from "./local-authenticator";
 export {
@@ -44,6 +54,7 @@ export {
   type OperationInput,
   type Outcome,
 } from "./operations";
+export { readSecureString, SecretParameterError } from "./parameters-extension";
 export {
   TokenEndpointError,
   type CognitoClient,
