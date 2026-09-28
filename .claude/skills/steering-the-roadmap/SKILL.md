@@ -6,7 +6,8 @@ description: >
   owner's intent. Use when asked which issue or phase to take on next, before invoking
   shipping-issues, when the owner wants to reorder phases or add, drop, defer or reshape
   a feature, when a phase starts and needs its work items cut, when a phase's work items
-  are all closed, or when asked for the project's status, progress or plan.
+  are all closed, when the owner asks for a small change after using the app (a key
+  binding, a default, a tuning value), or when asked for the project's status or plan.
 ---
 
 # Steering the Roadmap
@@ -32,7 +33,9 @@ The plan has two homes and no third:
 - **GitHub** holds one parent issue per phase, titled "Phase N — …" and labelled
   `on hold`. The phase's work items are sub-issues of that parent, ordered by
   `Depends on: #N` lines. The parent and every work item carry `phase: N`, so a listing
-  shows the phase without opening an issue. There are no milestones and no dates.
+  shows the phase without opening an issue. There are no milestones and no dates. Beside
+  the phases, open issues labelled `improvement` form a standing lane with no parent and
+  no phase label ([below](#improvements-from-daily-use)).
 
 Do not keep a plan anywhere else: no notes file, no memory entry, no TODO list in a
 comment. A decision that changes the plan lands in one of those two homes, or it is lost
@@ -47,18 +50,20 @@ has gone stale.
 
 Reason in this order, and say which step decided the pick:
 
-1. **Phase order.**
+1. **Improvements first.** A ready `improvement` issue goes ahead of phase work. It is
+   small, and it is friction the owner meets every day; the owner chose this order.
+2. **Phase order.**
    - Phases 0–4 are fixed. So are 10–13.
    - The owner orders 5, 6, 8 and 9 as they use the app; 7 follows 6.
    - Work inside the earliest phase that still has open work, unless the owner says
      otherwise.
-2. **Readiness.** An item is ready when every `Depends on:` issue is closed and it
+3. **Readiness.** An item is ready when every `Depends on:` issue is closed and it
    carries neither `blocked: design`, `blocked: external` nor `on hold`.
    - A stale `blocked: dependency` whose blockers are all closed is ready. Clear the
      label; do not read around it.
-3. **Leverage.** Among the ready items, prefer the priority label first. Then prefer the
+4. **Leverage.** Among the ready items, prefer the priority label first. Then prefer the
    item that unblocks the most other items.
-4. **The owner's intent overrides all of this.** Before acting on an override, say what
+5. **The owner's intent overrides all of this.** Before acting on an override, say what
    it costs: which dependency it jumps, what it leaves half done, and which exit
    criterion it delays.
 
@@ -79,7 +84,8 @@ it on this skill's own choice.
 
 - Pass it a single issue number by default.
 - Pass `all` only when the owner asks for the whole ready queue. Say first how far that
-  queue reaches (for example "all of Phase 0 and Phase 1").
+  queue reaches (for example "all of Phase 0 and Phase 1"). `all --label improvement`
+  limits it to the improvement lane.
 
 When it returns, run the status query again, then do the following:
 
@@ -145,8 +151,33 @@ owner asks.
   each one to its phase parent as a sub-issue
   ([tracker-commands.md](references/tracker-commands.md)).
 - A follow-up filed while shipping carries no phase label. When the status query shows
-  one under a parent, or an open issue sits outside every phase, place it: link and
-  label together. **BACKGROUND:** `triaging-issues`.
+  one under a parent, or an open issue sits outside every phase without `improvement`,
+  place it: link and label together. **BACKGROUND:** `triaging-issues`.
+
+## Improvements from daily use
+
+When the owner asks for a small change after using the app:
+
+1. **Classify it.**
+   - **An improvement** stays inside the existing design: a key binding, a default, a
+     tuning value, copy, a layout within `designing-ui`'s lock, a small change to how an
+     existing screen behaves.
+   - **Phase work** needs AWS or `infra/`, touches an ADR decision (a boundary, a
+     persistence shape, the API contract, a provider, the security model), or overlaps a
+     later phase's scope. Take it through "When the plan changes" instead.
+   - A change against the design lock goes to `designing-ui` first. When the call is
+     close, say which way it leans and why, and ask.
+2. **File it without asking.** The owner's request authorizes creating the issue, and
+   nothing more. Label it `improvement`, a type and a priority (`priority: P2` by
+   default); give it no `phase:` label and no parent. Its body names what else reads the
+   thing it changes — a tuning value in `packages/domain` is also read by the API.
+   **REQUIRED:** `triaging-issues`. Several requests in one message get one issue each,
+   unless they are one pull request's worth.
+3. **Report the numbers and stop.** Shipping waits for the owner's pick, as in "Handing
+   off to `shipping-issues`".
+
+The lane has no exit criteria and never gates a phase. An improvement that turns out to
+need an ADR or AWS loses the label and is placed in a phase, link and label together.
 
 ## Talking with the owner
 

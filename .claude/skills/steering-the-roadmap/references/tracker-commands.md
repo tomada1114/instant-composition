@@ -112,3 +112,12 @@ together. **BACKGROUND:** `triaging-issues`.
 ```bash
 gh issue close <phase-parent> --comment "Exit criteria observed: <the commands and results>."
 ```
+
+## The improvement lane
+
+```bash
+gh issue list --state open --label improvement
+```
+
+An `improvement` issue has no phase parent, so the status query above never lists it.
+Run this beside it.

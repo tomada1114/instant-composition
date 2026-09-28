@@ -40,6 +40,12 @@ tracker in step.
 - **Phase labels.** The parent and each work item carry `phase: N`, so the phase reads
   off an issue listing beside its priority and its `blocked:` labels.
 - **No dates.** There are no due dates and no schedule. Only the order is recorded.
+- **Improvements beside the phases.** A small change the owner asks for after using the
+  app — a key binding, a default, a tuning value, copy or layout within the design lock
+  — is an issue labelled `improvement`, with no phase label and no parent. It ships
+  whenever it is ready, ahead of phase work, and no phase's exit waits on it. A request
+  that needs AWS, touches an ADR decision or overlaps a later phase's scope goes into
+  that phase instead.
 - **Issues are cut when a phase comes within reach.** Phases 0 through 3 have work items
   now. A later phase is split when it starts, against the code, skills and ADRs that
   exist by then.
