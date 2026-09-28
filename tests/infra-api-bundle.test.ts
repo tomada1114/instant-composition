@@ -29,14 +29,18 @@ describe("the dev app stack's function bundle", () => {
       "aws:cdk:bundling-stacks": ["app"],
     }).app.synth();
     const template: unknown = assembly.getStackArtifact("app").template;
-    const [code, ...others] = Object.values(
+    // The API's function, not the web client secret writer beside it.
+    const [code, ...others] = Object.entries(
       (template as { Resources: Record<string, { Type: string; Properties: unknown }> })
         .Resources,
     )
-      .filter(({ Type }) => Type === "AWS::Lambda::Function")
-      .map(({ Properties }) => (Properties as { Code: { S3Key: string } }).Code);
+      .filter(
+        ([id, { Type }]) =>
+          Type === "AWS::Lambda::Function" && id.startsWith("ApiFunction"),
+      )
+      .map(([, { Properties }]) => (Properties as { Code: { S3Key: string } }).Code);
     if (code === undefined || others.length > 0) {
-      throw new TypeError("the app stack has no single function");
+      throw new TypeError("the app stack has no single API function");
     }
     const key = code.S3Key;
     bundle = path.join(assembly.directory, `asset.${key.replace(/\.zip$/, "")}`);

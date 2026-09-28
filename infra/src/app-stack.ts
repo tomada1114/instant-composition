@@ -32,6 +32,7 @@ import {
   foundationParameterName,
 } from "./foundation-parameters";
 import { type Stage } from "./stage";
+import { addHostedWebClient } from "./web-client";
 
 /**
  * The CloudFront Function that sends a client route to the SPA's entry: a
@@ -59,8 +60,8 @@ export const DISTRIBUTION_ID_OUTPUT = "DistributionId";
 
 /**
  * The `SecureString` parameter the hosted web app client's secret is kept in.
- * The `app` stack does not create it: CloudFormation cannot write a
- * `SecureString`, and the client it belongs to comes with #156.
+ * CloudFormation cannot write a `SecureString`, so the stack's custom resource
+ * copies the secret in, and no template ever holds it.
  */
 export function webClientSecretParameterName(stage: Stage): string {
   return `/instant-composition/${stage}/app/web-client-secret`;
@@ -111,6 +112,12 @@ export class AppStack extends Stack {
     });
     const distribution = this.addDistribution(bucket, api, stage);
     const webUrl = `https://${distribution.distributionDomainName}`;
+    const webClient = addHostedWebClient(this, {
+      userPoolId: foundation(FOUNDATION_PARAMETERS.userPoolId),
+      userPoolArn: foundation(FOUNDATION_PARAMETERS.userPoolArn),
+      webUrl,
+      secretParameterName: webClientSecretParameterName(stage),
+    });
 
     const tableName = foundation(FOUNDATION_PARAMETERS.learnerTableName);
     const handler = addApiFunction(this, {
@@ -118,12 +125,13 @@ export class AppStack extends Stack {
       tableName,
       tableArn: foundation(FOUNDATION_PARAMETERS.learnerTableArn),
       userPoolId: foundation(FOUNDATION_PARAMETERS.userPoolId),
-      // Foundation's web client until #156 gives this URL a client of its own.
-      clientId: foundation(FOUNDATION_PARAMETERS.webClientId),
+      clientId: webClient.clientId,
       signInDomainUrl: foundation(FOUNDATION_PARAMETERS.signInDomainUrl),
       clientSecretParameter: webClientSecretParameterName(stage),
       webUrl,
     });
+    // A replaced client's function never starts before its secret is written.
+    handler.node.addDependency(webClient.secretWritten);
     api.addRoutes({
       path: "/{proxy+}",
       integration: new HttpLambdaIntegration("ApiIntegration", handler),
