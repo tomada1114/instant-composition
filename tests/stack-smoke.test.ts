@@ -10,6 +10,7 @@ import { fileURLToPath } from "node:url";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 
 import { deleteLearnerTable, localDynamoDbClient } from "@instant-composition/adapters";
+import { API_ENV_NAMES } from "@instant-composition/api";
 import { historySchema, roundPayloadSchema } from "@instant-composition/contracts";
 
 import { buildCatalog } from "../scripts/catalog/build.mjs";
@@ -360,9 +361,14 @@ beforeAll(async () => {
     API_CATALOG_PATH: path.join(out, "en", "ja.json"),
     // The stack is served as the stand-in learner, whatever user pool the
     // shell names: signing in needs Cognito, which no suite here calls. A
-    // blank value reads as unset.
-    API_COGNITO_USER_POOL_ID: "",
-    API_COGNITO_CLIENT_ID: "",
+    // blank value reads as unset, and all of them are cleared, since setting
+    // only some refuses to start.
+    ...Object.fromEntries(
+      API_ENV_NAMES.filter((name) => name.startsWith("API_COGNITO_")).map((name) => [
+        name,
+        "",
+      ]),
+    ),
   };
   // Exactly the command `pnpm api` runs.
   const api = startServer(
