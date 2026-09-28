@@ -734,6 +734,7 @@ const INFRA_NPM_EDGES: readonly string[] = [
   "aws-cdk-lib/aws-cognito",
   "aws-cdk-lib/aws-dynamodb",
   "aws-cdk-lib/aws-iam",
+  "aws-cdk-lib/aws-ssm",
   "constructs",
 ];
 

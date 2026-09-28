@@ -18,6 +18,14 @@ const DEFAULTS: ApiEnv = {
   cognito: null,
 };
 
+/** A whole user pool configuration, well formed. */
+const COGNITO = {
+  API_COGNITO_USER_POOL_ID: "ap-northeast-1_AbC123",
+  API_COGNITO_CLIENT_ID: "1example23456789",
+  API_COGNITO_CLIENT_SECRET: "1example2secret3456789abcdef",
+  API_COGNITO_DOMAIN: "https://example.auth.ap-northeast-1.amazoncognito.com",
+};
+
 function refusedWith(source: Record<string, string>): ApiEnvError {
   try {
     readApiEnv(source);
@@ -46,25 +54,42 @@ describe("readApiEnv", () => {
         API_DYNAMODB_ENDPOINT: "http://127.0.0.1:8001",
         API_TABLE_NAME: "learners-dev",
         API_CATALOG_PATH: "/tmp/catalog.json",
+        ...COGNITO,
         API_COGNITO_USER_POOL_ID: " ap-northeast-1_AbC123 ",
-        API_COGNITO_CLIENT_ID: "1example23456789",
+        API_COGNITO_DOMAIN: "https://example.auth.ap-northeast-1.amazoncognito.com/",
       }),
     ).toStrictEqual({
       port: 9000,
       dynamoDbEndpoint: "http://127.0.0.1:8001",
       tableName: "learners-dev",
       catalogPath: "/tmp/catalog.json",
-      cognito: { userPoolId: "ap-northeast-1_AbC123", clientId: "1example23456789" },
+      cognito: {
+        userPoolId: "ap-northeast-1_AbC123",
+        clientId: "1example23456789",
+        clientSecret: "1example2secret3456789abcdef",
+        domain: "https://example.auth.ap-northeast-1.amazoncognito.com",
+      },
     });
   });
 
-  it.each([
-    ["API_COGNITO_USER_POOL_ID", { API_COGNITO_CLIENT_ID: "1example23456789" }],
-    ["API_COGNITO_CLIENT_ID", { API_COGNITO_USER_POOL_ID: "ap-northeast-1_AbC123" }],
-  ])("refuses a user pool half configured, naming the unset %s", (name, source) => {
-    const error = refusedWith(source);
-    expect(error.code).toBe("ERR_API_ENV_INVALID");
-    expect(error.names).toStrictEqual([name]);
+  it.each(Object.keys(COGNITO))(
+    "refuses a user pool configured without %s, naming it alone",
+    (name) => {
+      const error = refusedWith({ ...COGNITO, [name]: " " });
+      expect(error.code).toBe("ERR_API_ENV_INVALID");
+      expect(error.names).toStrictEqual([name]);
+    },
+  );
+
+  it("names every unset user pool variable when only one is set", () => {
+    expect(
+      refusedWith({ API_COGNITO_CLIENT_SECRET: COGNITO.API_COGNITO_CLIENT_SECRET })
+        .names,
+    ).toStrictEqual([
+      "API_COGNITO_USER_POOL_ID",
+      "API_COGNITO_CLIENT_ID",
+      "API_COGNITO_DOMAIN",
+    ]);
   });
 
   it.each([
@@ -79,14 +104,23 @@ describe("readApiEnv", () => {
     ["API_COGNITO_USER_POOL_ID", "dummy-not-a-real-value"],
     ["API_COGNITO_USER_POOL_ID", "AbC123"],
     ["API_COGNITO_CLIENT_ID", "dummy-not-a-real-value"],
+    ["API_COGNITO_CLIENT_SECRET", "dummy-not-a-real-value"],
+    ["API_COGNITO_CLIENT_SECRET", "a".repeat(65)],
+    ["API_COGNITO_DOMAIN", "dummy-not-a-real-value"],
+    ["API_COGNITO_DOMAIN", "http://example.auth.ap-northeast-1.amazoncognito.com"],
+    [
+      "API_COGNITO_DOMAIN",
+      "https://example.auth.ap-northeast-1.amazoncognito.com/oauth2",
+    ],
+    ["API_COGNITO_DOMAIN", "https://example.auth.ap-northeast-1.amazoncognito.com?x=1"],
+    [
+      "API_COGNITO_DOMAIN",
+      "https://user:pw@example.auth.ap-northeast-1.amazoncognito.com",
+    ],
   ])("refuses %s=%s by naming it", (name, value) => {
-    const partners: Record<string, string> = {
-      API_COGNITO_USER_POOL_ID: "ap-northeast-1_AbC123",
-      API_COGNITO_CLIENT_ID: "1example23456789",
-    };
     const error = refusedWith(
       name.startsWith("API_COGNITO_")
-        ? { ...partners, [name]: value }
+        ? { ...COGNITO, [name]: value }
         : { [name]: value },
     );
     expect(error.code).toBe("ERR_API_ENV_INVALID");

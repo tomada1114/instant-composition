@@ -18,8 +18,14 @@ import {
   UserPoolEmail,
 } from "aws-cdk-lib/aws-cognito";
 import { AttributeType, BillingMode, Table } from "aws-cdk-lib/aws-dynamodb";
+import { ParameterTier, StringParameter } from "aws-cdk-lib/aws-ssm";
 import { type Construct } from "constructs";
 
+import {
+  FOUNDATION_PARAMETERS,
+  type FoundationParameter,
+  foundationParameterName,
+} from "./foundation-parameters";
 import { type Stage } from "./stage";
 
 /**
@@ -98,6 +104,8 @@ export class FoundationStack extends Stack {
       deletionProtection: isProtected,
     });
     new CfnOutput(this, LEARNER_TABLE_NAME_OUTPUT, { value: table.tableName });
+    this.publish(stage, FOUNDATION_PARAMETERS.learnerTableName, table.tableName);
+    this.publish(stage, FOUNDATION_PARAMETERS.learnerTableArn, table.tableArn);
 
     // The sign-in and username settings cannot change once the pool exists: a
     // changed one replaces the pool, and every learner's `sub` with it.
@@ -116,6 +124,8 @@ export class FoundationStack extends Stack {
       deletionProtection: true,
     });
     new CfnOutput(this, USER_POOL_ID_OUTPUT, { value: userPool.userPoolId });
+    this.publish(stage, FOUNDATION_PARAMETERS.userPoolId, userPool.userPoolId);
+    this.publish(stage, FOUNDATION_PARAMETERS.userPoolArn, userPool.userPoolArn);
 
     const webClient = WEB_CLIENT[stage];
     if (webClient !== undefined) this.addWebSignIn(userPool, stage, webClient);
@@ -174,5 +184,16 @@ export class FoundationStack extends Stack {
     // secret store at startup (ADR-0009, Configuration and secrets).
     new CfnOutput(this, WEB_CLIENT_ID_OUTPUT, { value: client.userPoolClientId });
     new CfnOutput(this, SIGN_IN_DOMAIN_URL_OUTPUT, { value: domain.baseUrl() });
+    this.publish(stage, FOUNDATION_PARAMETERS.webClientId, client.userPoolClientId);
+    this.publish(stage, FOUNDATION_PARAMETERS.signInDomainUrl, domain.baseUrl());
+  }
+
+  /** One standard-tier (free) String parameter under the stage's prefix. */
+  private publish(stage: Stage, parameter: FoundationParameter, value: string): void {
+    new StringParameter(this, `Parameter-${parameter}`, {
+      parameterName: foundationParameterName(stage, parameter),
+      stringValue: value,
+      tier: ParameterTier.STANDARD,
+    });
   }
 }

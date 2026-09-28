@@ -1,5 +1,7 @@
 import {
   buildApp,
+  FOUNDATION_PARAMETERS,
+  foundationParameterName,
   FoundationStack,
   LEARNER_TABLE_NAME_OUTPUT,
   SIGN_IN_DOMAIN_URL_OUTPUT,
@@ -292,6 +294,63 @@ describe("the foundation stack's sign-in outputs", () => {
       expect(JSON.stringify(outputs)).not.toMatch(/ClientSecret|Export/);
       // Reading the secret back needs a custom resource; none exists.
       expect(JSON.stringify(template.toJSON())).not.toContain("Custom::");
+    },
+  );
+});
+
+// The app stack reads these by name, never through an export (ADR-0009).
+describe("the foundation stack's Parameter Store identifiers", () => {
+  function parametersOf(template: Template): Record<string, unknown> {
+    const byName: Record<string, unknown> = {};
+    for (const resource of Object.values(
+      template.findResources("AWS::SSM::Parameter"),
+    )) {
+      const properties: unknown = resource["Properties"];
+      expect(properties).toMatchObject({ Type: "String", Tier: "Standard" });
+      const { Name: name, Value: value } = properties as {
+        Name: string;
+        Value: unknown;
+      };
+      byName[name] = value;
+    }
+    return byName;
+  }
+
+  it.each<Stage>(["dev", "prod"])(
+    "publishes the table's and the user pool's name, id and ARN under /instant-composition/%s/foundation",
+    (stage) => {
+      const template = foundationTemplate(stage);
+      const table = logicalIdOf(template, "AWS::DynamoDB::Table");
+      const pool = logicalIdOf(template, "AWS::Cognito::UserPool");
+      const expected: Record<string, unknown> = {
+        [foundationParameterName(stage, FOUNDATION_PARAMETERS.learnerTableName)]: {
+          Ref: table,
+        },
+        [foundationParameterName(stage, FOUNDATION_PARAMETERS.learnerTableArn)]: {
+          "Fn::GetAtt": [table, "Arn"],
+        },
+        [foundationParameterName(stage, FOUNDATION_PARAMETERS.userPoolId)]: {
+          Ref: pool,
+        },
+        [foundationParameterName(stage, FOUNDATION_PARAMETERS.userPoolArn)]: {
+          "Fn::GetAtt": [pool, "Arn"],
+        },
+      };
+      if (stage === "dev") {
+        expected[foundationParameterName(stage, FOUNDATION_PARAMETERS.webClientId)] = {
+          Ref: logicalIdOf(template, "AWS::Cognito::UserPoolClient"),
+        };
+        expected[
+          foundationParameterName(stage, FOUNDATION_PARAMETERS.signInDomainUrl)
+        ] = template.findOutputs(SIGN_IN_DOMAIN_URL_OUTPUT)[
+          SIGN_IN_DOMAIN_URL_OUTPUT
+        ]?.["Value"];
+      }
+      const parameters = parametersOf(template);
+      expect(parameters).toStrictEqual(expected);
+      for (const name of Object.keys(parameters)) {
+        expect(name.startsWith(`/instant-composition/${stage}/foundation/`)).toBe(true);
+      }
     },
   );
 });

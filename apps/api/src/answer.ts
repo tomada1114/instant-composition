@@ -10,6 +10,7 @@ import type { Authenticator } from "./authenticator";
 import { failure, readJsonBody } from "./http";
 import type { LogLine, LogSink, RequestOutcome } from "./log";
 import type { Operation } from "./operations";
+import type { WebSession } from "./web-session";
 
 /**
  * Everything the app is handed, so a test runs it with no network and a fixed
@@ -21,6 +22,11 @@ export interface ApiDependencies extends ApplicationDeps, SignInDeps {
   readonly now: () => number;
   readonly requestId: () => string;
   readonly log: LogSink;
+  /**
+   * The web sign-in endpoints under `/v1/auth/`, served only when given: a run
+   * with no user pool has nothing to sign a browser in to.
+   */
+  readonly webSession?: WebSession | undefined;
 }
 
 export interface Answered {

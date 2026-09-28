@@ -1,13 +1,13 @@
 ---
 name: serving-the-api
 description: >
-  Covers apps/api, the Hono app serving packages/contracts' ROUTES under /api/v1: adding
-  or changing an operation handler, the route-table check against the contract, the
-  error envelope and bounded body reader, the per-request JSON log line and its fields,
-  the Cognito and stand-in authenticators, apps/api/src/env.ts and .env.example, and
-  running it with pnpm api or pnpm dev against DynamoDB local. Use when an endpoint is
-  added to the contract, a log field is added or read, an API_* environment variable is
-  added, a request is refused with an unexpected code, or the local API will not start.
+  Covers apps/api, the Hono app serving packages/contracts' ROUTES under /api/v1: an
+  operation handler, the route-table check, the error envelope and body reader, the
+  per-request log line, the Cognito and stand-in authenticators, the web sign-in
+  endpoints under /v1/auth/, apps/api/src/env.ts and .env.example, and pnpm api or pnpm
+  dev. Use when an endpoint is added to the contract, a log field is added, an API_*
+  variable is added, the sign-in, refresh or logout flow changes, a request is refused
+  with an unexpected code, or the local API will not start.
 ---
 
 # Serving the API
@@ -72,7 +72,7 @@ where it does not apply):
 | Field        | Value                                                                           |
 | ------------ | ------------------------------------------------------------------------------- |
 | `requestId`  | Made by the server per request; never read from a header                        |
-| `operation`  | The contract `operationId` (`getHome`, `finishRound`, …), or `null`             |
+| `operation`  | The contract `operationId` (`getHome`, …), a web-session endpoint, or `null`    |
 | `outcome`    | `ok`, the `ERR_*` code answered, `unmatched`, or `failed`                       |
 | `status`     | The HTTP status sent, which the 5xx alarm reads                                 |
 | `durationMs` | From the request's arrival to its answer, on the injected clock                 |
@@ -81,8 +81,9 @@ where it does not apply):
 | `reason`     | `missing`, `unreadable` or `malformed` on `ERR_CONTENT_UNREADABLE`, else `null` |
 
 Never add a field carrying a request body, a path, a query string, a card's text, a
-learner's answers, a header or an error message: a message can quote what the caller or
-a dependency sent. `tests/api-log.test.ts` holds the shape and that absence.
+learner's answers, a header, a cookie, a token, an authorization code or an error
+message: a message can quote what the caller or a dependency sent.
+`tests/api-log.test.ts` holds the shape and that absence.
 
 ## The authenticators
 
@@ -102,13 +103,47 @@ only the subject: the learner is the one the learner directory maps it to, regis
 with the default profile on the first request, so a local run's learner id is minted,
 not configured. It authenticates nothing, so it must never be reachable from anywhere
 but this machine: only `main.ts` wires it, through `localRunAuthenticator`, and only
-when `API_COGNITO_USER_POOL_ID` and `API_COGNITO_CLIENT_ID` are both unset; the start-up
+when every `API_COGNITO_*` name is unset (they are set all four or none); the start-up
 line names which one ran (`"authenticator":"cognito"` or `"local"`). Either way the
 server listens on `127.0.0.1` alone, and `readApiEnv` refuses to start
 (`ERR_API_ENV_NOT_LOCAL`) where AWS marks the process as its own
 (`AWS_LAMBDA_FUNCTION_NAME`, `AWS_EXECUTION_ENV` or `ECS_CONTAINER_METADATA_URI`). A
 hosted entry (Phase 4's Lambda handler) takes `cognitoAuthenticator` directly.
 **REQUIRED:** `isolating-learner-data` before touching either.
+
+## The web sign-in endpoints
+
+ADR-0005's backend-for-frontend: the browser never holds a token.
+`apps/api/src/cognito-web-session.ts` serves four endpoints, listed with their log
+`operation` in `WEB_SESSION_ROUTES` (`apps/api/src/web-session.ts`), and `createApp`
+mounts them only when handed a `webSession`, which a local run does when a user pool is
+configured. They are not in contracts' `ROUTES`: three of them answer a browser
+navigation with a redirect rather than JSON, and none of them signs a learner in.
+
+- `GET /v1/auth/login` sends the browser to the managed login's `/oauth2/authorize` with
+  a fresh `state` and an S256 PKCE challenge, and keeps both secrets in the
+  `SIGN_IN_COOKIE` for ten minutes.
+- `GET /v1/auth/callback` is a top-level navigation from Cognito's domain, so it carries
+  no `Origin`: its CSRF check is the `state`, matched against the sign-in cookie
+  (`ERR_FORBIDDEN` when it is missing or differs). It redeems the code with the verifier
+  and the client secret — held by the server alone, sent as HTTP Basic to
+  `/oauth2/token` — and sets `SESSION_COOKIE` and `REFRESH_COOKIE`, then redirects to
+  `/`.
+- `POST /v1/auth/refresh` renews through `/oauth2/token`'s `refresh_token` grant and
+  keeps the rotated refresh token; `POST /v1/auth/logout` revokes it through
+  `/oauth2/revoke` (a failure there still signs out), drops both cookies and sends the
+  browser to the managed login's `/logout`. Both change state from a page, so a missing
+  or foreign `Origin` is `ERR_FORBIDDEN` before anything is read.
+
+Every cookie is `__Host-` prefixed and set `Path=/; HttpOnly; Secure; SameSite=Lax`
+(`apps/api/src/cookies.ts`); the prefix is why none of them can take a narrower path. A
+grant the pool refuses (`invalid_grant`) is `ERR_UNAUTHENTICATED`, and a refused refresh
+also drops the session's cookies; any other answer from the pool — unreachable, a
+misconfigured client, a body that is not a token set — throws `TokenEndpointError`, a
+bare 500 whose log line names the class alone. The callback and sign-out URLs a local
+run sends are `LOCAL_SIGN_IN_URLS`, which must stay the ones the `dev` web client
+registers in `infra/src/foundation-stack.ts`. Tests drive all four against the fake user
+pool domain in `tests/web-session-harness.ts`, never Cognito.
 
 ## Environment and the local run
 
