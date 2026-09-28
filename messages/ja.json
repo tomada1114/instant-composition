@@ -238,6 +238,11 @@
     "sound": {
       "title": "効果音"
     },
+    "timeZone": {
+      "title": "タイムゾーン",
+      "useDevice": "この端末の {zone} にする",
+      "saved": "次の日付から {zone} で数えます"
+    },
     "difficulty": {
       "title": "難易度",
       "retest": "測り直す"

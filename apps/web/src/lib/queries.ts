@@ -2,6 +2,7 @@ import { QueryClient, queryOptions } from "@tanstack/react-query";
 
 import {
   getHome,
+  getProfile,
   getRecords,
   getRoundSummary,
   getSettings,
@@ -47,6 +48,12 @@ export const HOME_QUERY = queryOptions({
 export const SETTINGS_QUERY = queryOptions({
   queryKey: ["settings"],
   queryFn: () => valueOf(getSettings()),
+});
+
+/** `GET /v1/me`: the profile, whose time zone the settings screen shows and changes. */
+export const PROFILE_QUERY = queryOptions({
+  queryKey: ["profile"],
+  queryFn: () => valueOf(getProfile()),
 });
 
 export const RECORDS_QUERY = queryOptions({

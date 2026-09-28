@@ -332,7 +332,7 @@ describe("the settings screen when the read fails", () => {
     expect(
       screen.getByRole("heading", { level: 1, name: ja.Settings.title }),
     ).toBeInTheDocument();
-    expect(calls).toHaveLength(2);
+    expect(calls.filter((call) => call.url === "/api/v1/settings")).toHaveLength(2);
   });
 });
 
@@ -345,5 +345,66 @@ describe("the settings screen, sign-out", () => {
     const form = button.closest("form");
     expect(form).toHaveAttribute("method", "post");
     expect(form).toHaveAttribute("action", "/api/v1/auth/logout");
+  });
+});
+
+describe("the settings screen, the time zone", () => {
+  /** Serves the settings page and a profile in `zone`, saving each profile patch. */
+  function serveProfile(zone: string): { readonly zones: string[] } {
+    const zones: string[] = [];
+    let profile = { timeZone: zone, l1: "ja", target: "en", uiLocale: "ja" };
+    fakeApi((call) => {
+      if (call.method === "GET" && call.url === "/api/v1/settings") {
+        return Response.json(PAGE);
+      }
+      if (call.method === "GET" && call.url === "/api/v1/me") {
+        return Response.json(profile);
+      }
+      if (call.method === "PATCH" && call.url === "/api/v1/me") {
+        const { timeZone } = call.body as { timeZone: string };
+        zones.push(timeZone);
+        profile = { ...profile, timeZone };
+        return Response.json(profile);
+      }
+      return undefined;
+    });
+    return { zones };
+  }
+
+  const device = new Intl.DateTimeFormat().resolvedOptions().timeZone;
+  const other = device === "Pacific/Auckland" ? "Europe/London" : "Pacific/Auckland";
+
+  it("shows the stored zone and saves one picked through PATCH /v1/me", async () => {
+    const { zones } = serveProfile(device);
+    await renderApp("/settings");
+    const select = screen.getByRole("combobox", { name: ja.Settings.timeZone.title });
+    expect(select).toHaveValue(device);
+    expect(
+      screen.queryByRole("button", {
+        name: fill(ja.Settings.timeZone.useDevice, { zone: device }),
+      }),
+    ).toBeNull();
+    fireEvent.change(select, { target: { value: other } });
+    await settle();
+    expect(zones).toStrictEqual([other]);
+    expect(select).toHaveValue(other);
+    expect(
+      screen.getByText(fill(ja.Settings.timeZone.saved, { zone: other })),
+    ).toBeInTheDocument();
+  });
+
+  it("offers this device's zone when the stored one differs", async () => {
+    const { zones } = serveProfile(other);
+    await renderApp("/settings");
+    fireEvent.click(
+      screen.getByRole("button", {
+        name: fill(ja.Settings.timeZone.useDevice, { zone: device }),
+      }),
+    );
+    await settle();
+    expect(zones).toStrictEqual([device]);
+    expect(
+      screen.getByRole("combobox", { name: ja.Settings.timeZone.title }),
+    ).toHaveValue(device);
   });
 });
