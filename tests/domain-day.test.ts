@@ -5,6 +5,7 @@ import {
   calendarWeeks,
   dayDiff,
   dayOf,
+  timeZoneOf,
   weekdayIndex,
   weekOf,
 } from "@instant-composition/domain";
@@ -122,5 +123,29 @@ describe("day arithmetic", () => {
     expect(weeks[11]?.[0]).toBe("2026-09-21");
     expect(weeks[0]?.[0]).toBe("2026-07-06");
     expect(weeks.every((week) => week.length === 7)).toBe(true);
+  });
+});
+
+describe("timeZoneOf", () => {
+  it.each([
+    ["Asia/Tokyo", "Asia/Tokyo"],
+    ["America/Los_Angeles", "America/Los_Angeles"],
+    ["UTC", "UTC"],
+    ["asia/tokyo", "Asia/Tokyo"],
+  ])("takes %j as %j", (value, zone) => {
+    expect(timeZoneOf(value)).toBe(zone);
+  });
+
+  it.each([["Nowhere/City"], [""], ["+09:00"], ["-05:00"], ["Asia/Tokyo "]])(
+    "refuses %j",
+    (value) => {
+      expect(timeZoneOf(value)).toBeUndefined();
+    },
+  );
+
+  it("answers a zone dayOf reads back", () => {
+    const zone = timeZoneOf("europe/london");
+    expect(zone).toBeDefined();
+    expect(dayOf(utc(2026, 9, 22, 12), zone ?? "")).toBe("2026-09-22");
   });
 });

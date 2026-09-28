@@ -57,6 +57,24 @@ export function dayOf(
   return hour < boundaryHour ? addDays(day, -1) : day;
 }
 
+/**
+ * `value` as an IANA time zone, in the spelling the runtime resolves it to —
+ * `Asia/Tokyo` for `asia/tokyo` — so what is stored always reads back through
+ * {@link dayOf}. `undefined` for a name no zone has, and for a UTC offset such
+ * as `+09:00`, which names no zone and follows no daylight-saving rule.
+ */
+export function timeZoneOf(value: string): string | undefined {
+  if (!/^[A-Za-z]/u.test(value)) {
+    return undefined;
+  }
+  try {
+    return new Intl.DateTimeFormat("en-US", { timeZone: value }).resolvedOptions()
+      .timeZone;
+  } catch {
+    return undefined;
+  }
+}
+
 export function addDays(day: DayKey, days: number): DayKey {
   return fromUtcMs(utcMs(day) + days * MS_PER_DAY);
 }

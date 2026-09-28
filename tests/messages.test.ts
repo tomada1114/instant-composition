@@ -1,9 +1,10 @@
-import { readFileSync } from "node:fs";
+import { readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { describe, expect, expectTypeOf, it } from "vitest";
 
+import { UI_LOCALES } from "@instant-composition/contracts";
 import {
   createTranslator,
   LOCALE,
@@ -495,6 +496,18 @@ const MESSAGE_KEYS = [
 describe("the message catalogs", () => {
   it("has a catalog for every locale the application ships", () => {
     expect([...catalogs.keys()]).toStrictEqual([...LOCALES]);
+  });
+
+  // `PATCH /v1/me` takes a UI locale only from contracts' UI_LOCALES, written
+  // out there because that package imports nothing but zod.
+  it("lets a learner choose exactly the UI locales there is a catalog for", () => {
+    const onDisk = readdirSync(path.join(repoRoot, "messages"))
+      .filter((file) => file.endsWith(".json"))
+      .map((file) => file.slice(0, -".json".length))
+      .sort();
+
+    expect([...UI_LOCALES].sort()).toStrictEqual(onDisk);
+    expect(onDisk).toStrictEqual([...LOCALES].sort());
   });
 
   it("found keys to compare, so the assertions below are not vacuous", () => {

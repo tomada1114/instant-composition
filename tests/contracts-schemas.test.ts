@@ -2,15 +2,19 @@ import {
   finishRound,
   history,
   home,
+  profile,
   recordAnswers,
   roundSummary,
   records,
   settingsPage,
   startRound,
+  updateProfile,
   updateSettings,
   type ApplicationErrorCode,
   type History,
   type HomeView,
+  type Profile,
+  type ProfilePatch,
   type RecordsView,
   type RoundPayload,
   type RoundSummary,
@@ -23,6 +27,8 @@ import {
   historySchema,
   homeViewSchema,
   MAX_ROUND_ANSWERS,
+  profilePatchSchema,
+  profileSchema,
   recordsViewSchema,
   roundIdParamSchema,
   roundPayloadSchema,
@@ -91,6 +97,11 @@ describe("each response schema mirrors the application view it serves", () => {
     expectTypeOf<z.infer<typeof historySchema>>().toExtend<Wire<History>>();
   });
 
+  it("Profile", () => {
+    expectTypeOf<Wire<Profile>>().toExtend<z.infer<typeof profileSchema>>();
+    expectTypeOf<z.infer<typeof profileSchema>>().toExtend<Wire<Profile>>();
+  });
+
   it("does not pass by construction: a view missing a field fails the check", () => {
     type Short = Omit<Wire<History>, "estimatedLevel">;
     expectTypeOf<Short>().not.toExtend<z.infer<typeof historySchema>>();
@@ -113,6 +124,13 @@ describe("each request schema carries exactly what its command takes", () => {
   it("a settings patch is the domain's patch, absent fields left out", () => {
     expectTypeOf<z.infer<typeof settingsPatchSchema>>().toExtend<SettingsPatch>();
     expectTypeOf<Wire<SettingsPatch>>().toExtend<z.infer<typeof settingsPatchSchema>>();
+  });
+
+  it("a profile patch fits the command's patch, its UI locale narrowed to the catalogs", () => {
+    expectTypeOf<z.infer<typeof profilePatchSchema>>().toExtend<ProfilePatch>();
+    expectTypeOf<Wire<Omit<ProfilePatch, "uiLocale">>>().toExtend<
+      z.infer<typeof profilePatchSchema>
+    >();
   });
 
   it("gives every code the application reports a status", () => {
@@ -185,6 +203,30 @@ describe("request bounds", () => {
     expect(settingsPatchSchema.safeParse(patch).success).toBe(false);
   });
 
+  it.each([
+    ["an empty time zone", { timeZone: "" }],
+    ["a time zone of 65 characters", { timeZone: "x".repeat(65) }],
+    ["an empty first language", { l1: "" }],
+    ["a target of 36 characters", { target: "x".repeat(36) }],
+    ["a UI locale with no catalog", { uiLocale: "en" }],
+    ["an explicit undefined", { timeZone: undefined }],
+  ])("refuses a profile patch with %s", (_, patch) => {
+    expect(profilePatchSchema.safeParse(patch).success).toBe(false);
+  });
+
+  it("takes a partial profile patch and drops a field it does not name", () => {
+    expect(
+      profilePatchSchema.parse({
+        timeZone: "Europe/London",
+        learnerId: "someone-else",
+      }),
+    ).toStrictEqual({ timeZone: "Europe/London" });
+    expect(profilePatchSchema.parse({ uiLocale: "ja" })).toStrictEqual({
+      uiLocale: "ja",
+    });
+    expect(profilePatchSchema.parse({})).toStrictEqual({});
+  });
+
   it("takes an empty patch and drops a field it does not name", () => {
     expect(settingsPatchSchema.parse({ sound: false, theme: "light" })).toStrictEqual({
       sound: false,
@@ -219,6 +261,12 @@ describe("what the application answers parses under the contract", () => {
       "home before settings",
       homeViewSchema,
       await value(home(h.deps, h.context())),
+    );
+    note("profile", profileSchema, await value(profile(h.deps, h.context())));
+    note(
+      "updateProfile",
+      profileSchema,
+      await value(updateProfile(h.deps, h.context(), { timeZone: "Asia/Tokyo" })),
     );
     note(
       "updateSettings",
@@ -292,7 +340,7 @@ describe("what the application answers parses under the contract", () => {
 
   it("for every view a day of practice produces", async () => {
     const views = await throughTheDay(makeHarness());
-    expect(views.map(([name]) => name)).toHaveLength(12);
+    expect(views.map(([name]) => name)).toHaveLength(14);
     for (const [name, schema, view] of views) {
       const parsed = schema.safeParse(wire(view));
       expect({ name, issues: parsed.error?.issues ?? [] }).toStrictEqual({

@@ -3,6 +3,108 @@
   "info": { "title": "Instant Composition API", "version": "1" },
   "servers": [{ "url": "/api" }],
   "paths": {
+    "/v1/me": {
+      "get": {
+        "operationId": "getProfile",
+        "summary": "The learner's profile: time zone, first language, target and UI locale.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Profile" }
+              }
+            }
+          },
+          "401": {
+            "description": "ERR_UNAUTHENTICATED: The request carries no valid access token.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "403": {
+            "description": "ERR_FORBIDDEN: The caller may not run this operation.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "operationId": "updateProfile",
+        "summary": "Changes the profile fields the body sets: an IANA time zone, and a first language, target and UI locale the app serves.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/ProfilePatch" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/Profile" }
+              }
+            }
+          },
+          "400": {
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "401": {
+            "description": "ERR_UNAUTHENTICATED: The request carries no valid access token.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "403": {
+            "description": "ERR_FORBIDDEN: The caller may not run this operation.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "409": {
+            "description": "ERR_CONFLICT: Another write to the same data kept winning; send the request again.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "413": {
+            "description": "ERR_PAYLOAD_TOO_LARGE: The request body is too large.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "503": {
+            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/settings": {
       "get": {
         "operationId": "getSettings",
@@ -55,7 +157,7 @@
             }
           },
           "400": {
-            "description": "ERR_BAD_REQUEST: The request does not fit the round or the settings it names.",
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.",
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
@@ -159,7 +261,7 @@
             }
           },
           "400": {
-            "description": "ERR_BAD_REQUEST: The request does not fit the round or the settings it names.",
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.",
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
@@ -232,7 +334,7 @@
         "responses": {
           "204": { "description": "Done; no body." },
           "400": {
-            "description": "ERR_BAD_REQUEST: The request does not fit the round or the settings it names.",
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.",
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
@@ -320,7 +422,7 @@
             }
           },
           "400": {
-            "description": "ERR_BAD_REQUEST: The request does not fit the round or the settings it names.",
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.",
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
@@ -400,7 +502,7 @@
             }
           },
           "400": {
-            "description": "ERR_BAD_REQUEST: The request does not fit the round or the settings it names.",
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.",
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
@@ -645,6 +747,15 @@
             ]
           },
           "sound": { "type": "boolean" }
+        }
+      },
+      "ProfilePatch": {
+        "type": "object",
+        "properties": {
+          "timeZone": { "type": "string", "minLength": 1, "maxLength": 64 },
+          "l1": { "type": "string", "minLength": 1, "maxLength": 35 },
+          "target": { "type": "string", "minLength": 1, "maxLength": 35 },
+          "uiLocale": { "type": "string", "enum": ["ja"] }
         }
       },
       "DrillCard": {
@@ -901,6 +1012,16 @@
           "completedToday": { "type": "boolean" }
         },
         "required": ["settings", "removedFocus", "completedToday"]
+      },
+      "Profile": {
+        "type": "object",
+        "properties": {
+          "timeZone": { "type": "string" },
+          "l1": { "type": "string" },
+          "target": { "type": "string" },
+          "uiLocale": { "type": "string" }
+        },
+        "required": ["timeZone", "l1", "target", "uiLocale"]
       },
       "StreakView": {
         "oneOf": [

@@ -11,10 +11,11 @@ import type {
   Settings,
 } from "@instant-composition/domain";
 
-import type { LearnerId } from "./context";
+import type { LearnerId, Profile } from "./context";
 
 /** One record of a learner's data. Its key is derived from its value (`keyOf`). */
 export type Entry =
+  | { readonly type: "profile"; readonly value: Profile }
   | { readonly type: "settings"; readonly value: Settings }
   | { readonly type: "stats"; readonly value: LearnerStats }
   | { readonly type: "round"; readonly value: Round }
@@ -25,6 +26,7 @@ export type Entry =
 
 /** Where an entry lives inside the learner's own data; no key names a learner. */
 export type Key =
+  | { readonly type: "profile" }
   | { readonly type: "settings" }
   | { readonly type: "stats" }
   | { readonly type: "round"; readonly id: string }
@@ -35,6 +37,7 @@ export type Key =
 
 export function keyOf(entry: Entry): Key {
   switch (entry.type) {
+    case "profile":
     case "settings":
     case "stats":
       return { type: entry.type };
@@ -81,6 +84,8 @@ export interface CommitConflict {
  * caller can express a read or a write of another learner's entries.
  */
 export interface LearnerStore {
+  /** The profile the learner directory wrote at registration, as changed since. */
+  profile(): Promise<Stored<Profile> | undefined>;
   settings(): Promise<Stored<Settings> | undefined>;
   stats(): Promise<Stored<LearnerStats> | undefined>;
   round(id: string): Promise<Stored<Round> | undefined>;

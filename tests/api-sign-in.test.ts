@@ -1,6 +1,9 @@
 import { describe, expect, it } from "vitest";
 
-import { createMemoryDirectory } from "@instant-composition/adapters";
+import {
+  createMemoryDirectory,
+  createMemoryStores,
+} from "@instant-composition/adapters";
 import { LOCAL_SUBJECT } from "@instant-composition/api";
 import {
   learnerId,
@@ -62,8 +65,13 @@ describe("signing a request in", () => {
   });
 
   it("finds a learner registered by an earlier process, whatever id this one would mint", async () => {
-    const directory = createMemoryDirectory();
-    const first = makeApi({ directory, newLearnerId: mintingFrom("learner-x").next });
+    const stores = createMemoryStores();
+    const directory = createMemoryDirectory(stores);
+    const first = makeApi({
+      stores,
+      directory,
+      newLearnerId: mintingFrom("learner-x").next,
+    });
     await startedPlacement(first);
     const later = mintingFrom("learner-y");
     const second = makeApi({
@@ -80,9 +88,11 @@ describe("signing a request in", () => {
   });
 
   it("gives two subjects two learners", async () => {
-    const directory = createMemoryDirectory();
+    const stores = createMemoryStores();
+    const directory = createMemoryDirectory(stores);
     const ids = mintingFrom("learner-a", "learner-b");
     const a = makeApi({
+      stores,
       directory,
       newLearnerId: ids.next,
       authenticator: subjectAuthenticator("subject-a"),
@@ -102,7 +112,8 @@ describe("signing a request in", () => {
   });
 
   it("derives the practice day in the stored profile's time zone", async () => {
-    const directory = createMemoryDirectory();
+    const stores = createMemoryStores();
+    const directory = createMemoryDirectory(stores);
     await directory.register(LOCAL_SUBJECT, {
       learnerId: learnerId("learner-la"),
       profile: {
@@ -113,7 +124,7 @@ describe("signing a request in", () => {
       },
     });
     // NOON is 12:00 on 2026-09-22 in Tokyo, and still 20:00 on the 21st in Los Angeles.
-    const api = makeApi({ directory });
+    const api = makeApi({ stores, directory });
 
     await startedPlacement(api);
 

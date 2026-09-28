@@ -29,7 +29,7 @@ function buildWith(
       {
         stores: { forLearner: () => ({}) as never },
         catalog: fixedCatalog(),
-        directory: createMemoryDirectory(),
+        directory: createMemoryDirectory({ forLearner: () => ({}) as never }),
         newLearnerId: () => {
           throw new Error("unused");
         },

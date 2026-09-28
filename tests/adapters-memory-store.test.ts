@@ -11,10 +11,10 @@ import { describeLearnerDirectoryContract } from "./learner-directory-contract";
 import { describeLearnerStoreContract } from "./learner-store-contract";
 
 describeLearnerStoreContract("the in-memory store", createMemoryStores);
-describeLearnerDirectoryContract("the in-memory directory", () => ({
-  directory: createMemoryDirectory(),
-  stores: createMemoryStores(),
-}));
+describeLearnerDirectoryContract("the in-memory directory", () => {
+  const stores = createMemoryStores();
+  return { directory: createMemoryDirectory(stores), stores };
+});
 
 describe("the in-memory store", () => {
   it("counts one read per method call, across learners", async () => {

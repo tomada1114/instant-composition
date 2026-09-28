@@ -38,6 +38,9 @@ export interface Profile {
   readonly uiLocale: string;
 }
 
+/** The profile fields a change sets; the rest keep their value. */
+export type ProfilePatch = Partial<Profile>;
+
 /** The learner a request serves: the stored profile, with what the rules add to it. */
 export interface LearnerProfile extends Profile {
   readonly id: LearnerId;

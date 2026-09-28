@@ -1,13 +1,19 @@
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 
 import { LOCAL_SUBJECT } from "@instant-composition/api";
-import { roundSummarySchema } from "@instant-composition/contracts";
+import { learnerId } from "@instant-composition/application";
+import { profileSchema, roundSummarySchema } from "@instant-composition/contracts";
 
-import { batchFor, makeApi, startedPlacement } from "./api-harness";
+import {
+  batchFor,
+  makeApi,
+  startedPlacement,
+  subjectAuthenticator,
+} from "./api-harness";
 import { localTables } from "./dynamodb-local";
 
 // The API over the DynamoDB store on DynamoDB local: the round's whole life
-// through HTTP, as `pnpm api` serves it. Needs `pnpm db:up`; `pnpm
+// and the learner's profile through HTTP, as `pnpm api` serves it. Needs `pnpm db:up`; `pnpm
 // test:dynamodb` runs it, never the default suite.
 
 const tables = localTables();
@@ -46,5 +52,45 @@ describe("the API on DynamoDB local", () => {
       new Set(["learner-1"]),
     );
     expect((await api.directory.learnerOf(LOCAL_SUBJECT))?.learnerId).toBe("learner-1");
+  });
+
+  it("changes the profile registration wrote, and signs the next request in with it", async () => {
+    const backing = await tables.freshBacking();
+    const a = makeApi({ ...backing, authenticator: subjectAuthenticator("subject-a") });
+    const b = makeApi({
+      ...backing,
+      authenticator: subjectAuthenticator("subject-b"),
+      newLearnerId: () => learnerId("learner-b"),
+    });
+
+    const changed = await a.call("PATCH", "/v1/me", {
+      timeZone: "America/Los_Angeles",
+    });
+    const again = await a.call("PATCH", "/v1/me", { uiLocale: "ja" });
+    const other = await b.call("PATCH", "/v1/me", { timeZone: "Europe/London" });
+    const round = await startedPlacement(a);
+
+    const la = {
+      timeZone: "America/Los_Angeles",
+      l1: "ja",
+      target: "en",
+      uiLocale: "ja",
+    };
+    expect(profileSchema.parse(await changed.json())).toStrictEqual(la);
+    expect(profileSchema.parse(await again.json())).toStrictEqual(la);
+    expect(profileSchema.parse(await other.json())).toMatchObject({
+      timeZone: "Europe/London",
+    });
+    expect(
+      profileSchema.parse(await (await a.call("GET", "/v1/me")).json()),
+    ).toStrictEqual(la);
+    // NOON is 12:00 on 2026-09-22 in Tokyo, and still 20:00 on the 21st in Los Angeles.
+    expect(round.day).toBe("2026-09-21");
+    expect(
+      await backing.stores.forLearner(learnerId("learner-1")).profile(),
+    ).toStrictEqual({
+      value: la,
+      version: 2,
+    });
   });
 });

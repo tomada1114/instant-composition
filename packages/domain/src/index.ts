@@ -23,7 +23,15 @@ export {
   type Composition,
   type NotEnoughCards,
 } from "./compose";
-export { addDays, calendarWeeks, dayDiff, dayOf, weekdayIndex, weekOf } from "./day";
+export {
+  addDays,
+  calendarWeeks,
+  dayDiff,
+  dayOf,
+  timeZoneOf,
+  weekdayIndex,
+  weekOf,
+} from "./day";
 export {
   availableFor,
   deal,

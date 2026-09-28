@@ -33,7 +33,8 @@ export type ErrorCode = keyof typeof STATUS_BY_CODE;
 
 /** One fixed sentence per code: a message never quotes what the request carried. */
 export const MESSAGE_BY_CODE = {
-  ERR_BAD_REQUEST: "The request does not fit the round or the settings it names.",
+  ERR_BAD_REQUEST:
+    "The request does not fit the round, the settings or the profile it names.",
   ERR_UNAUTHENTICATED: "The request carries no valid access token.",
   ERR_FORBIDDEN: "The caller may not run this operation.",
   ERR_ROUND_NOT_FOUND: "No round has that id.",

@@ -22,7 +22,8 @@ import { ok } from "@instant-composition/domain";
 
 import { fixedCatalog, NOON } from "./application-harness";
 
-// The API app over the in-memory store and directory and the fixture catalog,
+// The API app over the in-memory store and directory — the directory keeping
+// its profiles in those stores, as the DynamoDB one does — and the fixture catalog,
 // with a clock that stands still, numbered request and learner ids and a
 // recording log. Nothing here asserts.
 
@@ -55,7 +56,7 @@ export function subjectAuthenticator(subject: string): Authenticator {
 
 export function makeApi(options: ApiHarnessOptions = {}): ApiHarness {
   const stores = options.stores ?? createMemoryStores();
-  const directory = options.directory ?? createMemoryDirectory();
+  const directory = options.directory ?? createMemoryDirectory(stores);
   const lines: LogLine[] = [];
   let now = options.now ?? NOON;
   let issued = 0;
