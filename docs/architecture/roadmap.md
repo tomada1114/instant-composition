@@ -317,14 +317,14 @@ was observed, on 2026-09-28:
 
 **Scope.**
 
-- Learner model v0: weaknesses by grammar item and topic.
+- Learner model v0: weaknesses by grammar concept and by subtopic
+  ([ADR-0003](adr/0003-bounded-contexts-and-activity-integration.md#learner-model-v0)).
   - They are derived by rules from the learning record and the cards' grammar tags.
   - They are computed when read, from the item projection and the cards; nothing new is
     stored.
-  - Grammar weaknesses feed into deck composition. Topic and subtopic weaknesses are
-    shown to the learner but do not change the deal: the learner chooses topics, and
-    subtopics are already balanced within them (the owner's call when the phase was
-    cut).
+  - Grammar weaknesses feed into deck composition. Subtopic weaknesses are shown to the
+    learner but do not change the deal: the learner chooses topics, and subtopics are
+    already balanced within them (the owner's call when the phase was cut).
 - The offline answer-queue semantics in the API:
   - client-reported answer time, with server-side bounds;
   - late answers accepted into the round's day;

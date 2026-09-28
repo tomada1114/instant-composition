@@ -1,6 +1,8 @@
 # ADR-0003: Bounded contexts and activity integration
 
-- Status: Accepted (boundaries now, vocabulary later); the context list is Proposed
+- Status: Accepted (boundaries now, vocabulary later); the context list is Proposed;
+  amended 2026-09-28 (learner-model is built now as v0, derived at read time), Proposed
+  until the owner accepts it
 - Date: 2026-09-23
 - Deciders: the owner
 
@@ -54,17 +56,17 @@ Each context is a module with a public surface
 ([ADR-0002](0002-architecture-style-and-repository-layout.md)). Those marked "now" are
 built during the restructure; the rest arrive with the features that need them.
 
-| Context              | Owns                                                                                                                              | When  |
-| -------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ----- |
-| identity             | LearnerId and its mapping to the Cognito `sub`; profile (timezone, L1, UI locale); account deletion and export                    | now   |
-| catalog              | Items, taxonomy, grammar inventories, levels, as versioned read-only snapshots ([ADR-0004](0004-multi-language-content-model.md)) | now   |
-| practice-composition | Rounds, day portions, placement, level changes, deck composition                                                                  | now   |
-| learning-record      | The append-only review log and each item's memory state; due queries                                                              | now   |
-| engagement           | Streak, points, titles, daily goal                                                                                                | later |
-| practice-vocabulary  | Vocabulary sessions, scopes, new-item limits                                                                                      | later |
-| learner-model        | Weaknesses and strengths per concept (grammar point, lexeme, topic)                                                               | later |
-| assessment           | LLM grading and feedback jobs, rubric versions ([ADR-0011](0011-llm-integration-and-evaluation.md))                               | later |
-| entitlements         | The usage ledger and plan state ([ADR-0010](0010-entitlements-and-billing.md))                                                    | later |
+| Context              | Owns                                                                                                                              | When     |
+| -------------------- | --------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| identity             | LearnerId and its mapping to the Cognito `sub`; profile (timezone, L1, UI locale); account deletion and export                    | now      |
+| catalog              | Items, taxonomy, grammar inventories, levels, as versioned read-only snapshots ([ADR-0004](0004-multi-language-content-model.md)) | now      |
+| practice-composition | Rounds, day portions, placement, level changes, deck composition                                                                  | now      |
+| learning-record      | The append-only review log and each item's memory state; due queries                                                              | now      |
+| engagement           | Streak, points, titles, daily goal                                                                                                | later    |
+| practice-vocabulary  | Vocabulary sessions, scopes, new-item limits                                                                                      | later    |
+| learner-model        | Weaknesses and strengths per concept (grammar point, lexeme, topic); v0 below                                                     | now (v0) |
+| assessment           | LLM grading and feedback jobs, rubric versions ([ADR-0011](0011-llm-integration-and-evaluation.md))                               | later    |
+| entitlements         | The usage ledger and plan state ([ADR-0010](0010-entitlements-and-billing.md))                                                    | later    |
 
 Items cross contexts only as references:
 
@@ -118,6 +120,40 @@ record outlives a deleted card (`src/core/types.ts:53-57`).
 - At the switch, composition history is replayed through FSRS to seed item states. The
   log is kept whole partly so that this replay is possible.
 
+### Learner model v0
+
+Amended 2026-09-28 for Phase 5, which builds the learner model's first version; this
+section is Proposed until the owner accepts it. The owner decided on 2026-09-28 that v0
+is derived when read and that only grammar weaknesses feed deck composition.
+
+- **What it ranks.** Grammar concepts and subtopics, each by a smoothed miss rate over
+  the shown items the learner has given a first pass: an item is a miss when its latest
+  first pass was `ng` or a timeout, and the rate is `(misses + 1) / (seen + 3)`, so two
+  misses in two items do not outrank a steady record over many. A concept or subtopic is
+  weak from 3 seen items and a rate of 0.4, and the two weakest of each are kept. These
+  are starting values, held in `TUNING.weakness` with the other practice rules' values
+  and adjusted while the app is in use.
+- **Where it comes from.** A pure `weaknesses` function in `packages/domain` reads each
+  item's projection (`ItemProgress`, the `ITEM#` items of
+  [ADR-0006](0006-persistence-on-dynamodb.md)) and the catalog snapshot's shown cards,
+  whose grammar concepts arrive as `en:grammar/<id>` ids
+  ([ADR-0004](0004-multi-language-content-model.md)). An item whose card is no longer
+  shown is left out, so a deleted or edited card stops counting until it is shown again.
+- **Nothing is stored.** The items are one Query that the practice and home reads load
+  already, and the function is a pass over them, so a stored per-concept projection
+  would add a write to every commit and a backfill to every change of the rule without
+  saving a read. ADR-0006's persistence shape is unchanged. A stored projection becomes
+  worth it when a rule needs history the item projection does not keep — a trend over
+  time, or evidence from a second activity.
+- **Who reads it.** Grammar weaknesses feed composition's deck; subtopic weaknesses are
+  shown to the learner but do not change the deal, since the learner chooses topics and
+  subtopics are already balanced within them.
+
+Considered and not taken for v0: a stored projection per concept, maintained on each
+commit (the cost above, for no read saved); and a rate over every first pass in the
+review log rather than each item's latest (it would keep counting a miss the learner has
+since corrected, and reading the log per request is what projections exist to avoid).
+
 ### Engagement
 
 Streak, points and titles stay inside practice-composition until vocabulary exists. They
@@ -150,6 +186,7 @@ against.
   prototype uses `request_retention: 0.9` with fuzz and short-term steps enabled
   (`vocab: src/core/scheduler.ts:56-60`).
 - Decide when the FSRS optimizer runs; the prototype leaves this open.
+- Owner acceptance of the learner model v0 section, including its starting values.
 
 ## Open questions
 
