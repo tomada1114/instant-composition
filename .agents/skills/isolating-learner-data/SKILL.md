@@ -15,8 +15,9 @@ description: >
 **Owns:** the rules that keep a learner's data reachable only by that learner, and by
 actors working for them within a grant — how identity enters a request, how stores are
 scoped, where authorization is decided, and the tests that prove it. **Does not own:**
-error types and what they may carry (`designing-errors`); the API's handler table and
-local authenticator wiring (`serving-the-api`); the shape of commands and ports
+error types and what they may carry (`designing-errors`); the API's handler table
+(`serving-the-api`); the credential paths, cookies and sign-in endpoints, and which
+authenticator runs where (`authenticating-learners`); the shape of commands and ports
 (`designing-application-core`); how a test case is written (`writing-tests`); secrets
 and `.env*` (AGENTS.md "Security and human approval"). The decisions are ADR-0005, 0006
 and 0012 under `docs/architecture/adr/`.
@@ -44,7 +45,7 @@ filter.
   serves.
 - A native app sends `Authorization: Bearer` with an access token; the web client sends
   the session cookie set by the API's auth endpoints. One authenticator port accepts
-  either and yields the same actor.
+  either and yields the same actor; **REQUIRED:** `authenticating-learners` for how.
 - Verify every Cognito access token against the user pool's JWKS with `aws-jwt-verify`,
   with `tokenUse: "access"` and the expected `clientId`. Never decode a token without
   verifying it: the AgentCore sample that reads claims unverified is safe only because
