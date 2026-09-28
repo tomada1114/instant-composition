@@ -348,4 +348,29 @@ describe("decideAnswers", () => {
       9_000,
     ]);
   });
+
+  it("keeps an answer from before the last level change out of the window, and one after it in", () => {
+    const changed = makeStats({
+      level: { level: 5, reason: "up", roundId: "r0", at: 3_000 },
+      levelWindow: [],
+    });
+
+    const change = decideAnswers(
+      state({ stats: changed }),
+      [
+        answer({ answeredAt: 2_999 }),
+        answer({ id: "r1:f:c2", cardId: "c2", answeredAt: 3_000 }),
+      ],
+      CARDS,
+      9_000,
+    );
+
+    expect(change?.entries).toHaveLength(2);
+    expect(change?.round.firstPass).toBe(2);
+    expect(change?.day.firstPass).toBe(2);
+    expect(change?.stats.said).toBe(2);
+    expect(change?.stats.levelWindow.map((entry) => entry.answeredAt)).toStrictEqual([
+      3_000,
+    ]);
+  });
 });
