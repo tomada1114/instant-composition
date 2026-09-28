@@ -13,6 +13,8 @@ import {
 } from "@instant-composition/web";
 
 const LIMIT = 7000;
+/** The wall clock, in epoch ms, when the monotonic clock reads zero. */
+const WALL = 1_790_000_000_000;
 
 function init(overrides: Partial<DrillInit> = {}): DrillState {
   return initDrill({
@@ -32,7 +34,11 @@ function run(state: DrillState, ...events: DrillEvent[]): DrillState {
 
 /** Shows the current front at `at` and flips it `elapsed` later. */
 function flipAfter(state: DrillState, at: number, elapsed: number): DrillState {
-  return run(state, { type: "shown", at }, { type: "flip", at: at + elapsed });
+  return run(
+    state,
+    { type: "shown", at },
+    { type: "flip", at: at + elapsed, wall: WALL + (at + elapsed) },
+  );
 }
 
 function grade(
@@ -41,7 +47,7 @@ function grade(
   at: number,
   key = false,
 ): DrillState {
-  return drillReducer(state, { type: "grade", result, at, key });
+  return drillReducer(state, { type: "grade", result, at, wall: WALL + at, key });
 }
 
 /** Grades the current card `result` by pointer and moves on past the feedback. */
@@ -57,7 +63,7 @@ function timeOut(state: DrillState, at: number): DrillState {
   return run(
     state,
     { type: "shown", at },
-    { type: "tick", at: at + LIMIT },
+    { type: "tick", at: at + LIMIT, wall: WALL + (at + LIMIT) },
     { type: "next", at: at + LIMIT + 1000 },
   );
 }
@@ -78,19 +84,25 @@ describe("starting a drill", () => {
   it("waits on the explanation when asked to, and starts on start", () => {
     const state = init({ intro: true });
     expect(state.phase.kind).toBe("intro");
-    expect(drillReducer(state, { type: "flip", at: 5 }).phase.kind).toBe("intro");
+    expect(
+      drillReducer(state, { type: "flip", at: 5, wall: WALL + 5 }).phase.kind,
+    ).toBe("intro");
     expect(drillReducer(state, { type: "start", at: 5 }).phase.kind).toBe("front");
   });
 });
 
 describe("the front's clock", () => {
   it("runs from the moment the front is shown", () => {
-    const state = run(init(), { type: "shown", at: 1000 }, { type: "tick", at: 3500 });
+    const state = run(
+      init(),
+      { type: "shown", at: 1000 },
+      { type: "tick", at: 3500, wall: WALL + 3500 },
+    );
     expect(remainingMs(state)).toBe(LIMIT - 2500);
   });
 
   it("ignores a flip before the front was shown", () => {
-    const state = drillReducer(init(), { type: "flip", at: 10 });
+    const state = drillReducer(init(), { type: "flip", at: 10, wall: WALL + 10 });
     expect(state.phase.kind).toBe("front");
   });
 
@@ -102,10 +114,15 @@ describe("the front's clock", () => {
 
   it("times out on the tick that reaches the limit and records a timeout", () => {
     const shown = drillReducer(init(), { type: "shown", at: 0 });
-    expect(drillReducer(shown, { type: "tick", at: LIMIT - 1 }).phase.kind).toBe(
-      "front",
-    );
-    const state = drillReducer(shown, { type: "tick", at: LIMIT + 40 });
+    expect(
+      drillReducer(shown, { type: "tick", at: LIMIT - 1, wall: WALL + (LIMIT - 1) })
+        .phase.kind,
+    ).toBe("front");
+    const state = drillReducer(shown, {
+      type: "tick",
+      at: LIMIT + 40,
+      wall: WALL + (LIMIT + 40),
+    });
     expect(state.phase).toMatchObject({ kind: "back", mode: "timeout" });
     expect(state.answers).toStrictEqual([
       {
@@ -115,6 +132,7 @@ describe("the front's clock", () => {
         pass: "first",
         result: "timeout",
         elapsedMs: LIMIT,
+        answeredAt: WALL + LIMIT + 40,
       },
     ]);
   });
@@ -155,7 +173,22 @@ describe("grading a back", () => {
         pass: "first",
         result: "ok",
         elapsedMs: 2100,
+        answeredAt: WALL + 3000,
       },
+    ]);
+  });
+
+  it("reports each answer as given at the wall-clock time of its grade, not of its flip", () => {
+    const back = flipAfter(init(), 0, 2100);
+    const graded = drillReducer(back, {
+      type: "grade",
+      result: "ng",
+      at: 5000,
+      wall: 1_800_000_000_123,
+      key: false,
+    });
+    expect(graded.answers.map((recorded) => recorded.answeredAt)).toStrictEqual([
+      1_800_000_000_123,
     ]);
   });
 
@@ -181,11 +214,21 @@ describe("grading a back", () => {
 
   it("breaks the combo on a timeout", () => {
     const state = run(answer(init(), 0, "ok"), { type: "shown", at: 10_000 });
-    expect(drillReducer(state, { type: "tick", at: 10_000 + LIMIT }).combo).toBe(0);
+    expect(
+      drillReducer(state, {
+        type: "tick",
+        at: 10_000 + LIMIT,
+        wall: WALL + (10_000 + LIMIT),
+      }).combo,
+    ).toBe(0);
   });
 
   it("offers only next on a timed-out back", () => {
-    const back = run(init(), { type: "shown", at: 0 }, { type: "tick", at: LIMIT });
+    const back = run(
+      init(),
+      { type: "shown", at: 0 },
+      { type: "tick", at: LIMIT, wall: WALL + LIMIT },
+    );
     expect(grade(back, "ok", LIMIT + 1000).phase.kind).toBe("back");
     const next = drillReducer(back, { type: "next", at: LIMIT + 1000 });
     expect(currentCard(next)).toStrictEqual({ cardId: "c2", pass: "first" });
@@ -203,7 +246,7 @@ describe("pausing", () => {
       init(),
       { type: "shown", at: 0 },
       { type: "pause", at: 3000 },
-      { type: "tick", at: 60_000 },
+      { type: "tick", at: 60_000, wall: WALL + 60_000 },
     );
     expect(paused.paused).toBe(true);
     expect(paused.phase.kind).toBe("front");
@@ -212,10 +255,12 @@ describe("pausing", () => {
     const resumed = run(
       paused,
       { type: "resume", at: 100_000 },
-      { type: "tick", at: 103_000 },
+      { type: "tick", at: 103_000, wall: WALL + 103_000 },
     );
     expect(remainingMs(resumed)).toBe(1000);
-    expect(drillReducer(resumed, { type: "tick", at: 104_000 }).phase).toMatchObject({
+    expect(
+      drillReducer(resumed, { type: "tick", at: 104_000, wall: WALL + 104_000 }).phase,
+    ).toMatchObject({
       kind: "back",
       mode: "timeout",
     });
@@ -232,7 +277,9 @@ describe("pausing", () => {
 
   it("ignores flips and grades while paused", () => {
     const front = run(init(), { type: "shown", at: 0 }, { type: "pause", at: 100 });
-    expect(drillReducer(front, { type: "flip", at: 200 }).phase.kind).toBe("front");
+    expect(
+      drillReducer(front, { type: "flip", at: 200, wall: WALL + 200 }).phase.kind,
+    ).toBe("front");
     const back = run(flipAfter(init(), 0, 1000), { type: "pause", at: 1500 });
     expect(grade(back, "ok", 3000).phase.kind).toBe("back");
   });
@@ -256,7 +303,7 @@ describe("pausing", () => {
       feedback,
       { type: "advance", at: 1800 },
       { type: "shown", at: 1810 },
-      { type: "tick", at: 30_000 },
+      { type: "tick", at: 30_000, wall: WALL + 30_000 },
     );
     expect(next.phase).toMatchObject({ kind: "front", runningSince: null });
     expect(remainingMs(next)).toBe(LIMIT);

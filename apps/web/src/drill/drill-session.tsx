@@ -85,13 +85,16 @@ export function DrillSession({
 
   function act(action: DrillAction, key: boolean): void {
     const at = performance.now();
+    const wall = Date.now();
     if (sound) browserSound.unlock();
     if (action.type === "scroll") {
       document
         .querySelector("[data-part=back-scroll]")
         ?.scrollBy({ top: SCROLL_STEP * action.direction });
     } else if (action.type === "grade") {
-      dispatch({ type: "grade", result: action.result, at, key });
+      dispatch({ type: "grade", result: action.result, at, wall, key });
+    } else if (action.type === "flip") {
+      dispatch({ type: "flip", at, wall });
     } else {
       dispatch({ type: action.type, at });
     }

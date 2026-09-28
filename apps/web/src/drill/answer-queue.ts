@@ -29,7 +29,8 @@ function isAnswer(value: unknown): value is AnswerInput {
     typeof entry.cardId === "string" &&
     PASSES.includes(entry.pass) &&
     RESULTS.includes(entry.result) &&
-    Number.isInteger(entry.elapsedMs)
+    Number.isInteger(entry.elapsedMs) &&
+    (entry.answeredAt === undefined || Number.isInteger(entry.answeredAt))
   );
 }
 

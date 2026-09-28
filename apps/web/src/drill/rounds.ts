@@ -37,13 +37,16 @@ export function requestRound(
 
 /** The batch body's answer: the round travels in the path, not in the answer. */
 function answerOf(input: AnswerInput): Answer {
-  return {
+  const answer: Answer = {
     id: input.id,
     cardId: input.cardId,
     pass: input.pass,
     result: input.result,
     elapsedMs: input.elapsedMs,
   };
+  return input.answeredAt === undefined
+    ? answer
+    : { ...answer, answeredAt: input.answeredAt };
 }
 
 /** Finishes the round, answering with the summary it keeps. */

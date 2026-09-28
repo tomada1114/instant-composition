@@ -15,6 +15,7 @@ function answer(cardId: string): AnswerInput {
     pass: "first",
     result: "ok",
     elapsedMs: 1000,
+    answeredAt: 1_790_000_000_000,
   };
 }
 
@@ -99,6 +100,45 @@ describe("createAnswerQueue", () => {
     expect(most).toBe(1);
   });
 
+  it("keeps each answer's wall-clock time through storage and hands it to the sender", async () => {
+    const storage = memoryStorage();
+    const given: AnswerInput[] = [];
+    const first = createAnswerQueue({
+      key: "k",
+      send: () => Promise.resolve("failed"),
+      storage,
+    });
+    await first.enqueue({ ...answer("c1"), answeredAt: 1_790_000_000_123 });
+
+    const reloaded = createAnswerQueue({
+      key: "k",
+      send: (item) => {
+        given.push(item);
+        return Promise.resolve("sent");
+      },
+      storage,
+    });
+    expect(await reloaded.flush()).toBe(true);
+    expect(given.map((item) => item.answeredAt)).toStrictEqual([1_790_000_000_123]);
+  });
+
+  it("keeps an answer an earlier build stored without its time", () => {
+    const untimed: AnswerInput = {
+      id: "r:f:c1",
+      roundId: "r",
+      cardId: "c1",
+      pass: "first",
+      result: "ok",
+      elapsedMs: 1000,
+    };
+    const queue = createAnswerQueue({
+      key: "k",
+      send: scriptedSender().send,
+      storage: memoryStorage({ k: JSON.stringify([untimed]) }),
+    });
+    expect(queue.pending()).toStrictEqual([untimed]);
+  });
+
   it("picks up what an earlier page left in storage, and flushes it", async () => {
     const storage = memoryStorage({ k: JSON.stringify([answer("c1")]) });
     const sender = scriptedSender("sent");
@@ -126,6 +166,10 @@ describe("createAnswerQueue", () => {
       JSON.stringify([{ ...answer("c1"), elapsedMs: 1.5 }]),
     ],
     ["an answer missing its round", JSON.stringify([{ ...answer("c1"), roundId: 1 }])],
+    [
+      "an answer with a time that is not whole milliseconds",
+      JSON.stringify([{ ...answer("c1"), answeredAt: "2026-09-22" }]),
+    ],
   ])("ignores %s in storage", (_, stored) => {
     const queue = createAnswerQueue({
       key: "k",
