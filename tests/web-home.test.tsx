@@ -71,16 +71,19 @@ describe("the home screen, W3a: today's portion not started", () => {
     expect(
       screen.getByText(fill(ja.Home.today.focus, { names: "meetings-ja" })),
     ).toBeInTheDocument();
+    expect(
+      screen.getByText(fill(ja.Home.today.weak, { names: "命令文・Let's、現在完了" })),
+    ).toBeInTheDocument();
     fireEvent.click(screen.getByRole("button", { name: ja.Home.today.start }));
     await settle();
     expect(where()).toBe("/drill?kind=today");
   });
 
-  it("leaves the focus out of the mix when none is chosen, and a new-only mix unsplit", async () => {
+  it("leaves the focus and the weak grammar out of the mix when there are none, and a new-only mix unsplit", async () => {
     serveHome(
       homeView(
         { kind: "ready", streak: COUNT },
-        { preview: { ...PREVIEW, focusNames: [], reviewCount: 0 } },
+        { preview: { ...PREVIEW, focusNames: [], weakNames: [], reviewCount: 0 } },
       ),
     );
     await renderApp("/");
@@ -89,6 +92,9 @@ describe("the home screen, W3a: today's portion not started", () => {
     ).toBeInTheDocument();
     expect(
       screen.queryByText(fill(ja.Home.today.focus, { names: "" }), { exact: false }),
+    ).toBeNull();
+    expect(
+      screen.queryByText(fill(ja.Home.today.weak, { names: "" }), { exact: false }),
     ).toBeNull();
   });
 

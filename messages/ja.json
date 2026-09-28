@@ -34,6 +34,7 @@
       "review": "復習 {count}",
       "fresh": "新規 {count}",
       "focus": "重点 {names}",
+      "weak": "苦手 {names}",
       "shortage": "点検済みの文が足りず {count} 文です",
       "start": "始める"
     },
@@ -212,6 +213,14 @@
       "title": "称号",
       "streak": "連続",
       "none": "まだありません"
+    },
+    "weak": {
+      "title": "苦手",
+      "grammar": "文法",
+      "subtopics": "場面",
+      "none": "今はありません",
+      "infoLabel": "苦手の決め方",
+      "info": "直近の 1 回目で言えなかった文が多い文法と場面です。苦手な文法は今日の文に多めに入ります"
     },
     "rules": {
       "label": "数え方",

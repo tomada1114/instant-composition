@@ -20,7 +20,9 @@ import {
 import {
   answersFor,
   DAY_MS,
+  fixedCatalog,
   makeHarness,
+  makeSnapshot,
   NOON,
   unreadableCatalog,
   type Harness,
@@ -37,14 +39,19 @@ async function started(
   return round.value;
 }
 
-/** A placement of ten answers on the first day. */
-async function placed(h: Harness, dailySize: 10 | 30 = 10): Promise<void> {
+/** A placement of ten answers on the first day, all said unless `missed`. */
+async function placed(
+  h: Harness,
+  dailySize: 10 | 30 = 10,
+  missed = false,
+): Promise<void> {
   await updateSettings(h.deps, h.context(), { topics: ["work", "travel"], dailySize });
   const round = await started(h, "placement", "p0", NOON);
-  await finishRound(h.deps, h.context(), {
+  const finished = await finishRound(h.deps, h.context(), {
     roundId: round.id,
-    answers: answersFor(round),
+    answers: answersFor(round, () => (missed ? "ng" : "ok")),
   });
+  if (!finished.ok) throw new Error(finished.error.code);
 }
 
 /** The placement, then a day's portion of thirty, missed and retried unless `said`, on each of `days` days. */
@@ -160,6 +167,19 @@ describe("home", () => {
       todayCards: 10,
       preview: undefined,
     });
+  });
+
+  it("names the weak grammar today's deal carries, and none after a clean record", async () => {
+    const missed = makeHarness();
+    await placed(missed, 10, true);
+    const clean = makeHarness();
+    await placed(clean);
+
+    const weak = await home(missed.deps, missed.context(NOON + DAY_MS));
+    const none = await home(clean.deps, clean.context(NOON + DAY_MS));
+
+    expect(weak.ok && weak.value.preview?.weakNames).toStrictEqual(["命令文"]);
+    expect(none.ok && none.value.preview?.weakNames).toStrictEqual([]);
   });
 
   it("names today's last finished round, and none on a day with none", async () => {
@@ -414,6 +434,39 @@ describe("records", () => {
     expect(mastered).toBeGreaterThan(0);
     expect(broken).toBe(mastered);
     expect(view.ok && view.value.titles.length).toBeGreaterThan(0);
+  });
+});
+
+describe("records' weak points", () => {
+  it("names the weak grammar and subtopics, weakest first, and nothing after a clean record", async () => {
+    const missed = makeHarness();
+    await placed(missed, 10, true);
+    const clean = makeHarness();
+    await placed(clean);
+
+    const weak = await records(missed.deps, missed.context());
+    const none = await records(clean.deps, clean.context());
+
+    expect(weak.ok && weak.value.weak.grammar).toStrictEqual([
+      { id: "en:grammar/imperatives", name: "命令文" },
+    ]);
+    const subtopics = weak.ok ? weak.value.weak.subtopics : [];
+    expect(subtopics.length).toBeGreaterThan(0);
+    for (const entry of subtopics) {
+      expect(entry.name).toBe(`${entry.topic}/${entry.subtopic}`);
+    }
+    expect(none.ok && none.value.weak).toStrictEqual({ grammar: [], subtopics: [] });
+  });
+
+  it("falls back to a concept's id when the catalog gives it no name", async () => {
+    const h = makeHarness(fixedCatalog({ ...makeSnapshot(), conceptNames: new Map() }));
+    await placed(h, 10, true);
+
+    const view = await records(h.deps, h.context());
+
+    expect(view.ok && view.value.weak.grammar).toStrictEqual([
+      { id: "en:grammar/imperatives", name: "en:grammar/imperatives" },
+    ]);
   });
 });
 

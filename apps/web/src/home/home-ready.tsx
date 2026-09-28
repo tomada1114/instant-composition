@@ -7,7 +7,7 @@ import { PrimaryButton as Primary } from "../ui/primary-button";
 
 import type { Go } from "./home-panels";
 
-/** Review against new as one split bar, with the counts beside a swatch each. */
+/** Review against new as one split bar, with the counts beside a swatch each, then the focus and the weak grammar dealt. */
 function Mix({ preview }: Readonly<{ preview: HomePreview }>): ReactElement {
   const t = useTranslations("Home.today");
   const total = Math.max(1, preview.reviewCount + preview.newCount);
@@ -35,6 +35,10 @@ function Mix({ preview }: Readonly<{ preview: HomePreview }>): ReactElement {
         </span>
         {preview.focusNames.length > 0 ? (
           <span>{t("focus", { names: preview.focusNames.join("・") })}</span>
+        ) : null}
+        {preview.weakNames.length > 0 ? (
+          // A grammar name may hold a "・" itself, so these are set apart by "、".
+          <span>{t("weak", { names: preview.weakNames.join("、") })}</span>
         ) : null}
       </p>
     </div>

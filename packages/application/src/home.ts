@@ -16,7 +16,12 @@ import {
   type Settings,
 } from "@instant-composition/domain";
 
-import { snapshotOrEmpty, type CatalogSnapshot } from "./catalog";
+import {
+  conceptName,
+  snapshotOrEmpty,
+  subtopicName,
+  type CatalogSnapshot,
+} from "./catalog";
 import type { RequestContext } from "./context";
 import type { ApplicationError } from "./errors";
 import { storeFor, todayOf, type ApplicationDeps } from "./execute";
@@ -40,19 +45,16 @@ function preview(
   if (!dealt.ok) {
     return undefined;
   }
-  const focusNames = (settings?.focus ?? []).map(
-    (ref) =>
-      snapshot.topics
-        .find((topic) => topic.id === ref.topic)
-        ?.subtopics.find((sub) => sub.id === ref.subtopic)?.name ?? ref.subtopic,
-  );
   return {
     size,
     setting,
     shortage: size < setting,
     reviewCount: dealt.value.reviewCount,
     newCount: dealt.value.newCount,
-    focusNames,
+    focusNames: (settings?.focus ?? []).map((ref) => subtopicName(snapshot, ref)),
+    weakNames: dealt.value.weakConcepts.map((concept) =>
+      conceptName(snapshot, concept),
+    ),
     minutes: estimateMinutes(twoPortions ? size * 2 : size),
   };
 }

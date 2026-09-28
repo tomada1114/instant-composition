@@ -7,17 +7,25 @@ import {
   reachBySubtopic,
   reachByTopic,
   streakValue,
+  weaknesses,
   type ItemProgress,
   type Result,
   type SubtopicRef,
 } from "@instant-composition/domain";
 
-import { placeOf, snapshotOrEmpty, toeicOf, type CatalogSnapshot } from "./catalog";
+import {
+  conceptName,
+  placeOf,
+  snapshotOrEmpty,
+  subtopicName,
+  toeicOf,
+  type CatalogSnapshot,
+} from "./catalog";
 import type { RequestContext } from "./context";
 import type { ApplicationError } from "./errors";
 import { storeFor, todayOf, type ApplicationDeps } from "./execute";
 import { reachViewOf } from "./present";
-import type { RecordsView, TitleGroup } from "./query-views";
+import type { RecordsView, TitleGroup, WeakPoints } from "./query-views";
 
 function titleGroups(keys: readonly string[], snapshot: CatalogSnapshot): TitleGroup[] {
   const streak: number[] = [];
@@ -62,6 +70,25 @@ function masteredPlaces(
   );
 }
 
+/** The weakest concepts and subtopics over the shown cards, named for the screen. */
+function weakPoints(
+  items: readonly ItemProgress[],
+  snapshot: CatalogSnapshot,
+): WeakPoints {
+  const weak = weaknesses({ items, shown: snapshot.shown });
+  return {
+    grammar: weak.grammar.map(({ concept }) => ({
+      id: concept,
+      name: conceptName(snapshot, concept),
+    })),
+    subtopics: weak.subtopics.map(({ topic, subtopic }) => ({
+      topic,
+      subtopic,
+      name: subtopicName(snapshot, { topic, subtopic }),
+    })),
+  };
+}
+
 /** Mastered cards by topic and subtopic, the run, the calendar and the totals. */
 export async function records(
   deps: ApplicationDeps,
@@ -81,10 +108,8 @@ export async function records(
   const stats = stored?.value ?? EMPTY_STATS;
   const today = todayOf(context);
   const completed = new Set(stats.completedDays);
-  const where = masteredPlaces(
-    [...items.values()].map((item) => item.value),
-    snapshot,
-  );
+  const progress = [...items.values()].map((item) => item.value);
+  const where = masteredPlaces(progress, snapshot);
   const byTopic = reachByTopic(where.keys(), where);
   const bySubtopic = reachBySubtopic(where.keys(), where);
   const chosen = snapshot.topics.filter((topic) =>
@@ -108,6 +133,7 @@ export async function records(
         count: bySubtopic.get(`${topic.id}/${subtopic.id}`) ?? 0,
       })),
     })),
+    weak: weakPoints(progress, snapshot),
     toeic: stats.level === null ? null : toeicOf(snapshot, stats.level.level),
     streak: { current: streakValue(completed, today), longest: longestRun(completed) },
     calendar: calendarDots(completed, today, stats.firstDay ?? undefined),

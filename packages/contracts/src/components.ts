@@ -21,6 +21,7 @@ import {
   streakViewSchema,
   titleGroupSchema,
   topicInfoSchema,
+  weakPointsSchema,
 } from "./query-views";
 import {
   answerSchema,
@@ -77,6 +78,7 @@ export const COMPONENTS = {
   HomeView: homeViewSchema,
   BreakdownTopic: breakdownTopicSchema,
   TitleGroup: titleGroupSchema,
+  WeakPoints: weakPointsSchema,
   RecordsView: recordsViewSchema,
   TopicInfo: topicInfoSchema,
   SettingsPageView: settingsPageViewSchema,
