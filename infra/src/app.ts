@@ -3,6 +3,7 @@ import { App } from "aws-cdk-lib";
 import { AppStack } from "./app-stack";
 import { DeployAccessStack } from "./deploy-access-stack";
 import { FoundationStack } from "./foundation-stack";
+import { ALARM_EMAIL_CONTEXT } from "./observability";
 import { parseStage, type Stage } from "./stage";
 
 /** Where every stage deploys (ADR-0009). */
@@ -66,9 +67,12 @@ export function buildApp(context: Readonly<Record<string, unknown>> = {}): Stage
     if (typeof repositoryRoot !== "string" || repositoryRoot === "") {
       throw new MissingRepositoryRootError(repositoryRoot);
     }
+    const alarmEmail: unknown = app.node.tryGetContext(ALARM_EMAIL_CONTEXT);
     const hosted = new AppStack(app, "app", {
       stage,
       repositoryRoot,
+      alarmEmail:
+        typeof alarmEmail === "string" && alarmEmail !== "" ? alarmEmail : undefined,
       stackName: `instant-composition-${stage}-app`,
       env: { region: REGION },
     });

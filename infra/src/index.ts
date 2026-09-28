@@ -39,3 +39,8 @@ export {
   DeployAccessStack,
   type DeployAccessStackProps,
 } from "./deploy-access-stack";
+export {
+  addObservability,
+  ALARM_EMAIL_CONTEXT,
+  type ObservabilityProps,
+} from "./observability";
