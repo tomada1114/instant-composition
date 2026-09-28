@@ -1,8 +1,8 @@
 # ADR-0003: Bounded contexts and activity integration
 
 - Status: Accepted (boundaries now, vocabulary later); the context list is Proposed;
-  amended 2026-09-28 (learner-model is built now as v0, derived at read time), Proposed
-  until the owner accepts it
+  amended 2026-09-28 (learner-model is built now as v0, derived at read time), which the
+  owner accepted on 2026-09-28
 - Date: 2026-09-23
 - Deciders: the owner
 
@@ -122,9 +122,10 @@ record outlives a deleted card (`src/core/types.ts:53-57`).
 
 ### Learner model v0
 
-Amended 2026-09-28 for Phase 5, which builds the learner model's first version; this
-section is Proposed until the owner accepts it. The owner decided on 2026-09-28 that v0
-is derived when read and that only grammar weaknesses feed deck composition.
+Amended 2026-09-28 for Phase 5, which builds the learner model's first version, and
+accepted by the owner on 2026-09-28 with its starting values. The owner decided on
+2026-09-28 that v0 is derived when read and that only grammar weaknesses feed deck
+composition.
 
 - **What it ranks.** Grammar concepts and subtopics, each by a smoothed miss rate over
   the shown items the learner has given a first pass: an item is a miss when its latest
@@ -186,7 +187,6 @@ against.
   prototype uses `request_retention: 0.9` with fuzz and short-term steps enabled
   (`vocab: src/core/scheduler.ts:56-60`).
 - Decide when the FSRS optimizer runs; the prototype leaves this open.
-- Owner acceptance of the learner model v0 section, including its starting values.
 
 ## Open questions
 
