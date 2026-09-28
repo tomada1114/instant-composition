@@ -283,6 +283,23 @@ exit was observed:
 - A merge reaches it with no manual step.
 - An alarm fires on API errors.
 
+**Landed** at `bb620f3` (#153, #154, #155, #156, #157, #158, #159, #160). How each exit
+was observed, on 2026-09-28:
+
+- The `app` stack's `WebUrl` output serves the SPA over HTTPS: `/` and a client route
+  answer 200 with the SPA, and `/api/v1/home` without a session answers
+  `401 ERR_UNAUTHENTICATED` through CloudFront. Self sign-up is off in `dev`, so only
+  administrator-created users sign in. The owner signed in and used the app from a
+  laptop (Chrome) and an iPhone (Safari) (#160).
+- `.github/workflows/deploy-dev.yml`'s run 36460001830, started by the merge of #157,
+  built the web client and deployed `foundation`, then `app`, with no command run by
+  hand. The owner re-ran it once, after saving the `ALARM_EMAIL` secret, to add the
+  alarm topic's subscription.
+- The API function's reserved concurrency was set to 0 and five requests answered 503.
+  `ApiServerErrorAlarm` (the HTTP API's `5xx`) and `FunctionThrottleAlarm` entered ALARM
+  within two minutes, and both emails reached the owner. The reserved concurrency was
+  then removed (#160).
+
 **AWS.** CloudFront, S3, API Gateway, Lambda, CloudWatch.
 
 **Realizes.** [0008](adr/0008-web-client-as-static-spa.md),
