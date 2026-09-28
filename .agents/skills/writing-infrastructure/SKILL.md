@@ -32,8 +32,10 @@ a second design.
   an amendment first.
 - What differs today: the learner table's point-in-time recovery and deletion protection
   (on in `prod`, off in `dev` until the Paid plan, #101), the user pool's self sign-up
-  (`SELF_SIGN_UP`: off in `dev`, where only an administrator creates users), and the
-  `deploy-access` stack, which only `dev` builds.
+  (`SELF_SIGN_UP`: off in `dev`, where only an administrator creates users), the web app
+  client and its sign-in domain (`WEB_CLIENT`: `dev` only, with `127.0.0.1:5173`
+  redirects; `prod` gets one once it has a URL), and the `deploy-access` stack, which
+  only `dev` builds.
 - Every stage deploys to `ap-northeast-1` (`REGION`). No stack reads `process.env`:
   `infra/tsconfig.json` loads no Node types, so a setting that is not in the CDK context
   fails to compile.
@@ -52,14 +54,21 @@ a second design.
   included, because the owner's own learning history lives there. The user pool also has
   deletion protection in every stage: a new pool issues new `sub`s, which strands every
   learner's data. Its sign-in settings (email as the username, case-insensitive) cannot
-  change without replacing it. Keep a logical id stable once deployed, because a changed
-  id replaces the resource. Let CloudFormation name the resources, so that a replacement
-  never collides with a name in use.
+  change without replacing it. In `dev` the pool also has the confidential web app
+  client (code grant, `openid`, refresh-token rotation, an empty `ExplicitAuthFlows` so
+  `ALLOW_REFRESH_TOKEN_AUTH` stays off), a prefix domain for managed login whose prefix
+  carries the stack id's first group so it is unique in the region, and the client's
+  Cognito-provided managed login style, without which managed login shows no page. Keep
+  a logical id stable once deployed, because a changed id replaces the resource. Let
+  CloudFormation name the resources, so that a replacement never collides with a name in
+  use.
 - **`app`**, when it comes, holds what is rebuilt often: API Gateway, Lambda,
   CloudFront. It depends on `foundation`, never the reverse. It reads foundation's
   identifiers by name, never through a CloudFormation export, because an imported export
   locks the exporting value (ADR-0009). That is why `LearnerTableName` is a stack output
-  with no `exportName`.
+  with no `exportName`, and so are `UserPoolId`, `WebClientId` and `SignInDomainUrl`,
+  which a local run reads from `aws cloudformation describe-stacks`. The client secret
+  is never an output.
 - **`deploy-access`** (`dev` only) holds the GitHub OIDC identity provider and the
   deploy role. The owner deployed it once by hand, with
   `pnpm cdk deploy -c stage=dev deploy-access`, because the workflow needs the role
