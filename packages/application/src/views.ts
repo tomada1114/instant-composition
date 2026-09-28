@@ -1,6 +1,5 @@
 import type {
   AnswerResult,
-  CardContent,
   DayKey,
   Dot,
   Growth,
@@ -14,7 +13,18 @@ import type {
 
 /** What a command hands back to a client, in the shapes the screens read. */
 
-export interface DrillCard extends CardContent {
+/** A card as the drill shows it: `drillCardSchema`'s fields, and no others. */
+export interface DrillCard {
+  readonly id: string;
+  readonly topic: string;
+  readonly subtopic: string;
+  readonly level: number;
+  readonly words: number;
+  readonly prompt: string;
+  /** The model answer, in the target language. */
+  readonly text: string;
+  readonly alternatives: readonly string[];
+  readonly explanation: string;
   readonly limitMs: number;
 }
 

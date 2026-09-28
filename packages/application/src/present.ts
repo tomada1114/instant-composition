@@ -22,7 +22,22 @@ export function payloadOf(
   for (const id of round.deck) {
     const card = snapshot.shown.get(id);
     if (card !== undefined) {
-      cards[id] = { ...card, limitMs: limitMsForWords(card.words) };
+      // Picked field by field: the response is not stripped to the contract, so a
+      // spread would put every field a card gains, such as its concepts, on the wire.
+      const { topic, subtopic, level, words, prompt, text, alternatives, explanation } =
+        card;
+      cards[id] = {
+        id,
+        topic,
+        subtopic,
+        level,
+        words,
+        prompt,
+        text,
+        alternatives,
+        explanation,
+        limitMs: limitMsForWords(words),
+      };
     }
   }
   const counted = round.kind !== "placement" && portion !== undefined;

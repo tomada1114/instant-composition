@@ -1,6 +1,7 @@
 import type {
   CardContent,
   CardFacts,
+  ConceptId,
   RetiredCard,
   Result,
   SubtopicRef,
@@ -23,6 +24,8 @@ export interface CatalogSnapshot {
   readonly l1: string;
   readonly topics: readonly TopicInfo[];
   readonly levels: ReadonlyMap<number, LevelInfo>;
+  /** Each concept's name in `l1`, in the catalog's order; its id when it has none. */
+  readonly conceptNames: ReadonlyMap<ConceptId, string>;
   /** Cards whose review stamp matches: the only ones a round may deal or show. */
   readonly shown: ReadonlyMap<string, CardContent>;
   /** Cards an answer may still name although they are not shown. */
@@ -71,6 +74,7 @@ const EMPTY_SNAPSHOT: CatalogSnapshot = {
   l1: "",
   topics: [],
   levels: new Map(),
+  conceptNames: new Map(),
   shown: new Map(),
   retired: new Map(),
 };

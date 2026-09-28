@@ -10,6 +10,9 @@ export type Pass = "first" | "retry";
 /** What a round is for; see `compose.ts` and `placement.ts` for how each is built. */
 export type RoundKind = "placement" | "today" | "yesterday" | "extra";
 
+/** A concept namespaced by its target language, such as `en:grammar/present-perfect`. */
+export type ConceptId = string;
+
 /** The fields of a card every rule reads. */
 export interface CardMeta {
   readonly id: string;
@@ -17,6 +20,8 @@ export interface CardMeta {
   readonly subtopic: string;
   readonly level: number;
   readonly words: number;
+  /** What the model answer practises, such as `en:grammar/present-perfect`. */
+  readonly concepts: readonly ConceptId[];
 }
 
 /** A card as the drill shows it, with its prompt and explanation in the learner's first language. */
