@@ -97,6 +97,18 @@ export function countWords(en) {
 }
 
 /**
+ * Count characters the way the level caps mean them: code points, whitespace
+ * left out. The spaces a Japanese writer puts around a number or a name
+ * (「10 分」, 「Slack で」) are layout, not length.
+ *
+ * @param {string} ja - A Japanese sentence.
+ * @returns {number} Its character count.
+ */
+export function countJaChars(ja) {
+  return Array.from(ja.replaceAll(/\s/gu, "")).length;
+}
+
+/**
  * @param {string} text - Any card text.
  * @returns {boolean} True when it contains `...` or `…`.
  */

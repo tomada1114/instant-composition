@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import { countWords as timerWords } from "@instant-composition/domain";
 
-import { countWords as lintWords } from "../scripts/cards/text.mjs";
+import { countJaChars, countWords as lintWords } from "../scripts/cards/text.mjs";
 
 describe("a model answer's word count", () => {
   it.each([
@@ -16,5 +16,17 @@ describe("a model answer's word count", () => {
   ])("is the same for the linter and the timer: %j", (text, expected) => {
     expect(lintWords(text)).toBe(expected);
     expect(timerWords(text)).toBe(expected);
+  });
+});
+
+describe("a prompt's character count", () => {
+  it.each([
+    ["会議を始めましょう。", 10],
+    ["明日の会議、10 分遅れて始めてもいいですか？", 22],
+    ["Slack で送って", 9],
+    ["  ", 0],
+    ["𠮷野家で", 4],
+  ])("leaves whitespace out and counts code points: %j", (text, expected) => {
+    expect(countJaChars(text)).toBe(expected);
   });
 });

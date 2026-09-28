@@ -31,7 +31,7 @@ export interface RunOptions {
 const roots: string[] = [];
 
 /** Word ranges per level, mirroring the shape of `content/levels.json`. */
-const WORDS: readonly (readonly [number, number])[] = [
+export const WORDS: readonly (readonly [number, number])[] = [
   [3, 8],
   [4, 9],
   [5, 11],
@@ -43,6 +43,11 @@ const WORDS: readonly (readonly [number, number])[] = [
   [10, 24],
   [12, 28],
 ];
+
+/** The `ja` character cap per level: 2.5 × the level's word cap, rounded up. */
+export function jaCharsMax(level: number): number {
+  return Math.ceil((WORDS[level - 1]?.[1] ?? 0) * 2.5);
+}
 
 export const TAXONOMY = {
   version: 1,
@@ -122,6 +127,7 @@ export function makeContentRoot(): string {
         ielts: null,
         toeflIbt: "0",
         words: { min, max },
+        jaChars: { max: jaCharsMax(index + 1) },
         summary: `level ${String(index + 1)}`,
       })),
     }),

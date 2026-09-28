@@ -6,6 +6,7 @@ import { afterEach, describe, expect, it } from "vitest";
 import { CardsError } from "../scripts/cards/errors.mjs";
 import { coreHash } from "../scripts/cards/schema.mjs";
 import {
+  jaCharsMax,
   jsonOut,
   makeCard,
   makeContentRoot,
@@ -123,6 +124,16 @@ describe("cards:lint", () => {
       "WORD_COUNT",
       { en: "Let's start the meeting right now because everyone is here." },
     ],
+    ["JA_LENGTH", { ja: `${"会".repeat(jaCharsMax(1))}。` }],
+    [
+      "ALTERNATIVE_WORD_COUNT",
+      {
+        alternatives: [
+          "Shall we go ahead and get the meeting started now?",
+          "Let's get going.",
+        ],
+      },
+    ],
     ["ALTERNATIVES_COUNT", { alternatives: ["Shall we get started?"] }],
     ["ALTERNATIVES_COUNT", { alternatives: ["A b c.", "D e f.", "G h i.", "J k l."] }],
     [
@@ -170,6 +181,67 @@ describe("cards:lint", () => {
     expect(run.code).toBe(1);
     expect(run.out).toContain(` ${rule} `);
     expect(errorCode(run.err)).toBe("ERR_CARDS_LINT");
+  });
+
+  it("measures ja and each alternative against the card's own level", () => {
+    const root = makeContentRoot();
+    const over = `${"会".repeat(jaCharsMax(1))}。`;
+    writeCards(root, "work/meetings.json", [
+      makeCard("c_2a2a2a2a", { ja: over }),
+      makeCard("c_3b3b3b3b", { ja: over, level: 2, grammar: ["past-simple"] }),
+      makeCard("c_4c4c4c4c", {
+        alternatives: ["Shall we go ahead and get it started?", "Let's get going."],
+      }),
+      makeCard("c_5d5d5d5d", {
+        alternatives: ["Shall we go ahead and get it started now?", "Let's go."],
+      }),
+    ]);
+    const run = runCards(root, ["lint", "--json"]);
+    const errors = (jsonOut(run) as { errors: { id: string; message: string }[] })
+      .errors;
+    expect(errors).toStrictEqual([
+      {
+        id: "c_2a2a2a2a",
+        rule: "JA_LENGTH",
+        message: `"ja" has ${String(jaCharsMax(1) + 1)} characters; level 1 allows at most ${String(jaCharsMax(1))}`,
+      },
+      {
+        id: "c_5d5d5d5d",
+        rule: "ALTERNATIVE_WORD_COUNT",
+        message: "alternatives[0] has 9 words; level 1 allows at most 8",
+      },
+    ]);
+  });
+
+  it("does not count whitespace in ja toward its cap", () => {
+    const root = makeContentRoot();
+    const spaced = `${"会 ".repeat(jaCharsMax(1) - 1)}。`;
+    writeCards(root, "work/meetings.json", [makeCard("c_2a2a2a2a", { ja: spaced })]);
+    expect(runCards(root, ["lint"]).code).toBe(0);
+  });
+
+  it("fails with ERR_CARDS_CONTENT on a level without a usable ja cap", () => {
+    const root = makeContentRoot();
+    const file = path.join(root, "levels.json");
+    const levels = readJson(file) as { levels: Record<string, unknown>[] };
+    const [first, second, ...rest] = levels.levels;
+    writeUnder(
+      root,
+      "levels.json",
+      JSON.stringify({
+        levels: [
+          Object.fromEntries(
+            Object.entries(first ?? {}).filter(([key]) => key !== "jaChars"),
+          ),
+          { ...second, jaChars: { max: 0 } },
+          ...rest,
+        ],
+      }),
+    );
+    const run = runCards(root, ["lint"]);
+    expect(errorCode(run.err)).toBe("ERR_CARDS_CONTENT");
+    expect(run.err).toContain("entry #0 needs");
+    expect(run.err).toContain("level 2 has jaChars.max 0");
   });
 
   it("allows an allowlisted proper noun in ja", () => {

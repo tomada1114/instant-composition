@@ -47,7 +47,8 @@ const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/u;
 /**
  * @typedef {object} Level
  * @property {number} level
- * @property {{ min: number, max: number }} words
+ * @property {{ min: number, max: number }} words - The `en` word range.
+ * @property {{ max: number }} jaChars - The `ja` character cap.
  * @property {string} summary
  * @property {unknown} raw - The entry as written, for briefs that quote it.
  */
@@ -230,10 +231,17 @@ export function loadLists(root) {
     const words = readKey(rawLevel, "words");
     const min = readKey(words, "min");
     const max = readKey(words, "max");
+    const jaMax = readKey(readKey(rawLevel, "jaChars"), "max");
     const summary = readKey(rawLevel, "summary");
-    if (!isInt(level) || !isInt(min) || !isInt(max) || !isText(summary)) {
+    if (
+      !isInt(level) ||
+      !isInt(min) ||
+      !isInt(max) ||
+      !isInt(jaMax) ||
+      !isText(summary)
+    ) {
       problems.push(
-        `levels.json: entry #${String(index)} needs an integer \`level\`, \`words.min\`, \`words.max\` and a \`summary\``,
+        `levels.json: entry #${String(index)} needs an integer \`level\`, \`words.min\`, \`words.max\`, \`jaChars.max\` and a \`summary\``,
       );
       continue;
     }
@@ -247,7 +255,18 @@ export function loadLists(root) {
         `levels.json: level ${String(level)} has words ${String(min)}–${String(max)}`,
       );
     }
-    levels.set(level, { level, words: { min, max }, summary, raw: rawLevel });
+    if (jaMax < 1) {
+      problems.push(
+        `levels.json: level ${String(level)} has jaChars.max ${String(jaMax)}`,
+      );
+    }
+    levels.set(level, {
+      level,
+      words: { min, max },
+      jaChars: { max: jaMax },
+      summary,
+      raw: rawLevel,
+    });
   }
   if (levels.size !== 10) {
     problems.push(

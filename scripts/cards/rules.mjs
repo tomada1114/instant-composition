@@ -5,6 +5,7 @@ import { readKey } from "../lib/json.mjs";
 import { CORE_FIELDS, ID_PATTERN, readStamp } from "./schema.mjs";
 import { cardFile, compareIds, sortKey } from "./store.mjs";
 import {
+  countJaChars,
   countWords,
   endsAsSentence,
   hasEllipsis,
@@ -181,6 +182,16 @@ export function lintCard(raw, id, env, options) {
   }
 
   if (typeof ja === "string") {
+    if (levelEntry !== undefined) {
+      const length = countJaChars(ja);
+      const cap = levelEntry.jaChars.max;
+      if (length > cap) {
+        add(
+          "JA_LENGTH",
+          `"ja" has ${String(length)} characters; level ${String(levelEntry.level)} allows at most ${String(cap)}`,
+        );
+      }
+    }
     const words = unexpectedLatinWords(ja);
     if (words.length > 0) {
       add(
@@ -208,6 +219,16 @@ export function lintCard(raw, id, env, options) {
     /** @type {string[]} */
     const seen = typeof en === "string" ? [normalizeEn(en)] : [];
     for (const [index, text] of alternatives.entries()) {
+      if (levelEntry !== undefined) {
+        const words = countWords(text);
+        const cap = levelEntry.words.max;
+        if (words > cap) {
+          add(
+            "ALTERNATIVE_WORD_COUNT",
+            `alternatives[${String(index)}] has ${String(words)} words; level ${String(levelEntry.level)} allows at most ${String(cap)}`,
+          );
+        }
+      }
       const normalized = normalizeEn(text);
       if (seen.includes(normalized)) {
         add(

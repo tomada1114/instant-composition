@@ -27,7 +27,7 @@
       "ja": "There is / There are",
       "minLevel": 1,
       "maxLevel": 5,
-      "example": "There is a problem with the printer."
+      "example": "There's a problem with the printer."
     },
     {
       "id": "can-could-ability",
@@ -83,14 +83,14 @@
       "ja": "依頼と許可（Could you / May I / Is it okay if）",
       "minLevel": 2,
       "maxLevel": 8,
-      "example": "Is it okay if I leave a bit early?"
+      "example": "Is it okay if I leave early?"
     },
     {
       "id": "time-and-if-clauses",
       "ja": "時・条件の副詞節（未来のことも現在形）",
       "minLevel": 3,
       "maxLevel": 8,
-      "example": "I'll call you when I get to the station."
+      "example": "I'll call you when I arrive."
     },
     {
       "id": "present-perfect",
@@ -125,7 +125,7 @@
       "ja": "want / ask / tell + 人 + to do",
       "minLevel": 3,
       "maxLevel": 8,
-      "example": "Can you ask him to call me back?"
+      "example": "Could you ask him to call me?"
     },
     {
       "id": "relative-clauses",
@@ -146,7 +146,7 @@
       "ja": "後置修飾（分詞・前置詞句）",
       "minLevel": 4,
       "maxLevel": 9,
-      "example": "The man standing by the door is my boss."
+      "example": "The man standing there is my boss."
     },
     {
       "id": "noun-clauses",
@@ -167,7 +167,7 @@
       "ja": "時制の選び分け（過去形と現在完了など）",
       "minLevel": 4,
       "maxLevel": 10,
-      "example": "I lost my wallet, but I've found it now."
+      "example": "I lost my key, but I've found it now."
     },
     {
       "id": "past-perfect",
@@ -181,14 +181,14 @@
       "ja": "仮定法過去",
       "minLevel": 5,
       "maxLevel": 10,
-      "example": "If I had more time, I'd learn to cook."
+      "example": "If I had time, I'd learn to cook."
     },
     {
       "id": "causatives",
       "ja": "使役（make / let / have / get）",
       "minLevel": 5,
       "maxLevel": 10,
-      "example": "I had my hair cut at the new salon yesterday."
+      "example": "I had my hair cut yesterday."
     },
     {
       "id": "phrasal-verbs",
@@ -209,21 +209,21 @@
       "ja": "譲歩・対比（although / even if / whereas）",
       "minLevel": 5,
       "maxLevel": 10,
-      "example": "Even if it rains, the event will go ahead."
+      "example": "Even if it rains, we'll go ahead."
     },
     {
       "id": "hedging-softening",
       "ja": "婉曲・柔らかい言い方",
       "minLevel": 6,
       "maxLevel": 10,
-      "example": "I was wondering if you could take a look at this."
+      "example": "I was wondering if you could help."
     },
     {
       "id": "third-conditional",
       "ja": "仮定法過去完了",
       "minLevel": 6,
       "maxLevel": 10,
-      "example": "If I had left earlier, I wouldn't have missed it."
+      "example": "If I had left earlier, I'd have made it."
     },
     {
       "id": "participle-clauses",
@@ -258,21 +258,21 @@
       "ja": "混合仮定法",
       "minLevel": 8,
       "maxLevel": 10,
-      "example": "If I had taken that job, I'd be living in London now."
+      "example": "If I had taken that job, I'd be in London now."
     },
     {
       "id": "nested-clauses",
       "ja": "節の入れ子・長い名詞句",
       "minLevel": 8,
       "maxLevel": 10,
-      "example": "The person who told me what you had said wasn't sure."
+      "example": "The man who told me what you said wasn't sure."
     },
     {
       "id": "inversion",
       "ja": "倒置",
       "minLevel": 9,
       "maxLevel": 10,
-      "example": "Not only did he apologize, but he also paid for dinner."
+      "example": "Not only did he apologize, he also paid for dinner."
     }
   ]
 }
