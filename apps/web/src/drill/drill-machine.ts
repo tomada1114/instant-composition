@@ -32,6 +32,7 @@ function record(
   state: DrillState,
   result: AnswerResult,
   elapsedMs: number,
+  wall: number,
 ): DrillState {
   const card = currentCard(state);
   if (card === undefined) return state;
@@ -49,14 +50,15 @@ function record(
         pass: card.pass,
         result,
         elapsedMs: Math.round(elapsedMs),
+        answeredAt: wall,
       },
     ],
   };
 }
 
-function timeout(state: DrillState, at: number): DrillState {
+function timeout(state: DrillState, at: number, wall: number): DrillState {
   const limit = limitOf(state);
-  const recorded = record(state, "timeout", limit);
+  const recorded = record(state, "timeout", limit, wall);
   return {
     ...recorded,
     phase: { kind: "back", mode: "timeout", elapsedMs: limit, since: at },
@@ -78,7 +80,7 @@ function onFront(
     case "flip": {
       if (!running) return state;
       const used = usedMs(phase, event.at);
-      if (used >= limitOf(state)) return timeout(state, event.at);
+      if (used >= limitOf(state)) return timeout(state, event.at, event.wall);
       return event.type === "tick"
         ? { ...state, phase: { ...phase, now: event.at } }
         : {
@@ -100,7 +102,7 @@ function onBack(
   if (event.type !== "grade") return state;
   if (event.key && event.at - phase.since < TUNING.keyLockAfterFlipMs) return state;
   const fast = event.result === "ok" && isFast(phase.elapsedMs, limitOf(state));
-  const recorded = record(state, event.result, phase.elapsedMs);
+  const recorded = record(state, event.result, phase.elapsedMs, event.wall);
   return {
     ...recorded,
     phase: { kind: "feedback", result: event.result, fast, elapsedMs: phase.elapsedMs },

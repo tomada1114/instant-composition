@@ -30,13 +30,20 @@ export type DrillPhase =
     }
   | { readonly kind: "finishing" };
 
+/**
+ * `at` is on the page's monotonic clock, which times the card. An event that
+ * can record an answer also carries `wall`, the same moment on the wall clock
+ * in epoch ms, which the answer reports as the time it was given.
+ */
 export type DrillEvent =
-  | { readonly type: "start" | "shown" | "tick" | "flip" | "next"; readonly at: number }
+  | { readonly type: "start" | "shown" | "next"; readonly at: number }
+  | { readonly type: "tick" | "flip"; readonly at: number; readonly wall: number }
   | { readonly type: "advance" | "pause" | "hide" | "resume"; readonly at: number }
   | {
       readonly type: "grade";
       readonly result: "ok" | "ng";
       readonly at: number;
+      readonly wall: number;
       /** A key is locked out for a moment after the flip; a pressed button is not. */
       readonly key: boolean;
     };
@@ -49,6 +56,8 @@ export interface AnswerInput {
   readonly pass: Pass;
   readonly result: AnswerResult;
   readonly elapsedMs: number;
+  /** Epoch ms on the wall clock; one stored by an earlier build of the queue may lack it. */
+  readonly answeredAt?: number;
 }
 
 export interface DrillInit {

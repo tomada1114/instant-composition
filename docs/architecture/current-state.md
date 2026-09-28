@@ -109,6 +109,10 @@ wrong for scheduling and for "answered today". The offline contract needs a
 client-reported time with server-side bounds
 ([ADR-0007](adr/0007-http-api-contract-and-offline-sync.md)).
 
+No longer holds (#183): an answer in the `/v1` batch carries an optional `answeredAt`,
+which `decideAnswers` in `packages/domain` holds between the round's start and the
+server's time, and a late answer is logged without rewinding the item's schedule.
+
 ### Language and level are hard-coded
 
 A card's prompt is a field named `ja` (`src/core/types.ts:23-24`), topic names are `ja`

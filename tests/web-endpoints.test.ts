@@ -33,6 +33,7 @@ const ANSWER: AnswerInput = {
   pass: "first",
   result: "ok",
   elapsedMs: 1200,
+  answeredAt: 1_790_000_000_000,
 };
 
 interface Call {
@@ -240,7 +241,14 @@ describe("finishRound and requestFinish", () => {
       method: "POST",
       body: {
         answers: [
-          { id: "r:f:c1", cardId: "c1", pass: "first", result: "ok", elapsedMs: 1200 },
+          {
+            id: "r:f:c1",
+            cardId: "c1",
+            pass: "first",
+            result: "ok",
+            elapsedMs: 1200,
+            answeredAt: 1_790_000_000_000,
+          },
         ],
       },
     });
@@ -262,9 +270,33 @@ describe("recordAnswers and sendAnswer", () => {
       method: "POST",
       body: {
         answers: [
-          { id: "r:f:c1", cardId: "c1", pass: "first", result: "ok", elapsedMs: 1200 },
+          {
+            id: "r:f:c1",
+            cardId: "c1",
+            pass: "first",
+            result: "ok",
+            elapsedMs: 1200,
+            answeredAt: 1_790_000_000_000,
+          },
         ],
       },
+    });
+  });
+
+  it("leaves the time off an answer queued without one, for the server to stamp", async () => {
+    const calls = stubFetch(() => Promise.resolve(new Response(null, { status: 204 })));
+    await sendAnswer({
+      id: "r:f:c1",
+      roundId: "r",
+      cardId: "c1",
+      pass: "first",
+      result: "ok",
+      elapsedMs: 1200,
+    });
+    expect(calls[0]?.body).toStrictEqual({
+      answers: [
+        { id: "r:f:c1", cardId: "c1", pass: "first", result: "ok", elapsedMs: 1200 },
+      ],
     });
   });
 

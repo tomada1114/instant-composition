@@ -61,6 +61,7 @@ export type Answer = {
     pass: Pass;
     result: AnswerResult;
     elapsedMs: number;
+    answeredAt?: number;
 };
 
 export type AnswersRequest = {

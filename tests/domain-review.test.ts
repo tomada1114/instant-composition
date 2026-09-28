@@ -6,6 +6,7 @@ import {
   reviewAnswer,
   type AcceptedAnswer,
   type ItemProgress,
+  type ReviewEntry,
 } from "@instant-composition/domain";
 
 import { makeReview } from "./application-fixtures";
@@ -26,13 +27,23 @@ function answer(overrides: Partial<AcceptedAnswer> = {}): AcceptedAnswer {
   };
 }
 
-/** Folds answers through `reviewAnswer`, as a run of commands would. */
-function fold(answers: readonly AcceptedAnswer[]): ItemProgress | undefined {
+/** Folds answers through `reviewAnswer` in arrival order, as a run of commands would. */
+function folded(answers: readonly AcceptedAnswer[]): {
+  readonly progress: ItemProgress | undefined;
+  readonly log: readonly ReviewEntry[];
+} {
   let progress: ItemProgress | undefined;
+  const log: ReviewEntry[] = [];
   for (const next of answers) {
-    progress = reviewAnswer(progress, next).progress;
+    const reviewed = reviewAnswer(progress, next);
+    progress = reviewed.progress;
+    log.push(reviewed.entry);
   }
-  return progress;
+  return { progress, log };
+}
+
+function fold(answers: readonly AcceptedAnswer[]): ItemProgress | undefined {
+  return folded(answers).progress;
 }
 
 describe("outcomeOf", () => {
@@ -71,6 +82,27 @@ describe("reviewAnswer", () => {
     );
     expect(entry.before).toStrictEqual(before?.memory);
     expect(entry.after).toStrictEqual(before?.memory);
+    expect(progress).toBe(before);
+  });
+
+  it("logs a first pass older than the item's latest with the state unchanged, and leaves the item", () => {
+    const before = fold([answer({ id: "a2", sessionId: "r2", answeredAt: 9 })]);
+    const { entry, progress } = reviewAnswer(
+      before,
+      answer({ result: "ng", answeredAt: 5 }),
+    );
+    expect(entry).toMatchObject({ outcome: "again", answeredAt: 5 });
+    expect(entry.before).toStrictEqual(before?.memory);
+    expect(entry.after).toStrictEqual(before?.memory);
+    expect(progress).toBe(before);
+  });
+
+  it("leaves an item alone for a first pass given for a day before its last", () => {
+    const before = fold([answer({ day: "2026-09-23", answeredAt: 3 })]);
+    const { progress } = reviewAnswer(
+      before,
+      answer({ id: "a2", sessionId: "r0", answeredAt: 7 }),
+    );
     expect(progress).toBe(before);
   });
 
@@ -130,6 +162,25 @@ describe("replayItems", () => {
       mastered: { day: "2026-09-23", sessionId: "r1" },
       last: { answeredAt: 9 },
     });
+  });
+
+  it("skips a late first pass as the commands did, though it sorts before what it followed", () => {
+    const { progress, log } = folded([
+      answer({ answeredAt: 1 }),
+      answer({ id: "a3", sessionId: "r3", day: "2026-09-24", answeredAt: 30 }),
+      answer({ id: "a2", sessionId: "r2", day: "2026-09-23", answeredAt: 20 }),
+      answer({
+        id: "a4",
+        sessionId: "r4",
+        day: "2026-09-25",
+        result: "ng",
+        answeredAt: 40,
+      }),
+    ]);
+
+    expect(progress?.memory.lastDay).toBe("2026-09-25");
+    expect(progress?.okDays).toStrictEqual(["2026-09-22", "2026-09-24"]);
+    expect(replayItems([...log].reverse()).get("c1")).toStrictEqual(progress);
   });
 
   it("refuses a first pass logged without a memory state", () => {

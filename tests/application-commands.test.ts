@@ -319,6 +319,74 @@ describe("recordAnswers", () => {
     ).toStrictEqual({ ok: false, error: { code: "ERR_ROUND_CLOSED" } });
   });
 
+  it("holds a client's answeredAt between the round's start and the server's time", async () => {
+    const h = makeHarness();
+    await placed(h);
+    const round = await start(h, "extra", "e1", NOON + 1_000);
+    const [early, late, inside] = answersFor(round);
+    if (early === undefined || late === undefined || inside === undefined) {
+      throw new Error("The deck is too small.");
+    }
+
+    await recordAnswers(h.deps, h.context(NOON + 60_000), {
+      roundId: round.id,
+      answers: [
+        { ...early, answeredAt: NOON - DAY_MS },
+        { ...late, answeredAt: NOON + DAY_MS },
+        { ...inside, answeredAt: NOON + 30_000 },
+      ],
+    });
+
+    const logged = await h.stores.forLearner(h.learner).reviewsOf(round.id);
+    expect(logged.map((entry) => [entry.item.id, entry.answeredAt])).toStrictEqual([
+      [early.cardId, NOON + 1_000],
+      [inside.cardId, NOON + 30_000],
+      [late.cardId, NOON + 60_000],
+    ]);
+  });
+
+  it("takes a late round's answers on its own day, never rewinding an item a later round moved", async () => {
+    const h = makeHarness();
+    await placed(h);
+    const early = await start(h, "today", "t1", NOON + DAY_MS);
+    const later = await start(h, "today", "t2", NOON + 2 * DAY_MS);
+    const store = h.stores.forLearner(h.learner);
+    await recordAnswers(h.deps, h.context(NOON + 2 * DAY_MS + 60_000), {
+      roundId: later.id,
+      answers: answersFor(later),
+    });
+    const moved = new Map(
+      [...(await store.items())].map(([id, stored]) => [id, stored.value]),
+    );
+    const both = early.deck.filter((cardId) => later.deck.includes(cardId));
+    const only = early.deck.filter((cardId) => !later.deck.includes(cardId));
+    expect(both.length).toBeGreaterThan(0);
+    expect(only.length).toBeGreaterThan(0);
+
+    await recordAnswers(h.deps, h.context(NOON + 2 * DAY_MS + 120_000), {
+      roundId: early.id,
+      answers: answersFor(early, () => "ng").map((answer, index) => ({
+        ...answer,
+        answeredAt: NOON + DAY_MS + 10_000 + index * 1_000,
+      })),
+    });
+
+    const items = await store.items();
+    expect(
+      (await store.reviewsOf(early.id)).every((entry) => entry.day === "2026-09-23"),
+    ).toBe(true);
+    for (const cardId of both) {
+      expect(items.get(cardId)?.value).toStrictEqual(moved.get(cardId));
+    }
+    for (const cardId of only) {
+      expect(items.get(cardId)?.value.memory).toMatchObject({
+        box: 0,
+        lastDay: "2026-09-23",
+        dueDay: "2026-09-24",
+      });
+    }
+  });
+
   it("takes in a batch larger than one commit may hold", async () => {
     const h = makeHarness();
     await placed(h);

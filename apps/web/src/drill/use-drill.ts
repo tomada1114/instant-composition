@@ -52,7 +52,7 @@ export function useDrillClock(state: DrillState, dispatch: Dispatch<DrillEvent>)
   useEffect(() => {
     if (!running) return undefined;
     const timer = setInterval(() => {
-      dispatch({ type: "tick", at: performance.now() });
+      dispatch({ type: "tick", at: performance.now(), wall: Date.now() });
     }, TICK_MS);
     return () => {
       clearInterval(timer);

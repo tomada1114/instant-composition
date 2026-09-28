@@ -19,12 +19,13 @@ function state(intro = false): DrillState {
 }
 
 const front = drillReducer(state(), { type: "shown", at: 0 });
-const back = drillReducer(front, { type: "flip", at: 1000 });
-const timedOut = drillReducer(front, { type: "tick", at: 7000 });
+const back = drillReducer(front, { type: "flip", at: 1000, wall: 1000 });
+const timedOut = drillReducer(front, { type: "tick", at: 7000, wall: 7000 });
 const feedback = drillReducer(back, {
   type: "grade",
   result: "ok",
   at: 2000,
+  wall: 2000,
   key: false,
 });
 const paused = drillReducer(front, { type: "pause", at: 500 });

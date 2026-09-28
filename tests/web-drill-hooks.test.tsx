@@ -86,12 +86,19 @@ describe("useDrillClock", () => {
     const { result } = renderHook(useClockedDrill);
     act(() => void vi.advanceTimersToNextFrame());
     act(() => void vi.advanceTimersByTime(4000));
-    act(() => result.current.dispatch({ type: "flip", at: performance.now() }));
+    act(() =>
+      result.current.dispatch({
+        type: "flip",
+        at: performance.now(),
+        wall: Date.now(),
+      }),
+    );
     act(() =>
       result.current.dispatch({
         type: "grade",
         result: "ng",
         at: performance.now(),
+        wall: Date.now(),
         key: false,
       }),
     );

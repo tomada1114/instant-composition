@@ -15,7 +15,7 @@ import {
   subjectAuthenticator,
   type ApiHarness,
 } from "./api-harness";
-import { unreadableCatalog } from "./application-harness";
+import { NOON, unreadableCatalog } from "./application-harness";
 
 // The app driven with `new Request(…)` over the in-memory store: each answer
 // is checked against the contract's schema for it, and each refusal against
@@ -92,6 +92,28 @@ describe("the commands", () => {
     expect(reviews.map((review) => review.id)).toStrictEqual(
       batch.answers.map((answer) => answer.id).sort(),
     );
+  });
+
+  it("logs the time a client says each answer was given, held to the server's", async () => {
+    const api = makeApi();
+    const round = await startedPlacement(api);
+    api.advance(60_000);
+    const [given, ahead] = batchFor(round).answers;
+    if (given === undefined || ahead === undefined) throw new Error("No deck.");
+
+    const recorded = await api.call("POST", "/v1/rounds/p1/answers", {
+      answers: [
+        { ...given, answeredAt: NOON + 30_000 },
+        { ...ahead, answeredAt: NOON + 86_400_000 },
+      ],
+    });
+
+    expect(recorded.status).toBe(204);
+    const reviews = await api.stores.forLearner(learnerId("learner-1")).reviewsOf("p1");
+    expect(reviews.map((review) => [review.id, review.answeredAt])).toStrictEqual([
+      [given.id, NOON + 30_000],
+      [ahead.id, NOON + 60_000],
+    ]);
   });
 
   it("deals each card with the drill's fields alone, leaving the card's concepts off the wire", async () => {

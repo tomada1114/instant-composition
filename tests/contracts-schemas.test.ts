@@ -169,8 +169,21 @@ describe("request bounds", () => {
     ["an elapsedMs over ten minutes", { ...answer, elapsedMs: 600_001 }],
     ["an unknown pass", { ...answer, pass: "third" }],
     ["an unknown result", { ...answer, result: "skip" }],
+    ["a negative answeredAt", { ...answer, answeredAt: -1 }],
+    ["a fractional answeredAt", { ...answer, answeredAt: 1.5 }],
+    ["an answeredAt that is not a number", { ...answer, answeredAt: "2026-09-22" }],
   ])("refuses an answer with %s", (_, value) => {
     expect(answerSchema.safeParse(value).success).toBe(false);
+  });
+
+  it("takes an answer with or without the epoch milliseconds it was given at", () => {
+    expect(answerSchema.safeParse(answer).success).toBe(true);
+    expect(
+      answerSchema.safeParse({ ...answer, answeredAt: 1_790_000_000_000 }).data,
+    ).toStrictEqual({
+      ...answer,
+      answeredAt: 1_790_000_000_000,
+    });
   });
 
   it("takes an id of 64 characters and ten minutes exactly", () => {
