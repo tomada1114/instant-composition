@@ -2,9 +2,12 @@ import {
   buildApp,
   FoundationStack,
   LEARNER_TABLE_NAME_OUTPUT,
+  SIGN_IN_DOMAIN_URL_OUTPUT,
   type Stage,
+  USER_POOL_ID_OUTPUT,
+  WEB_CLIENT_ID_OUTPUT,
 } from "@instant-composition/infra";
-import { Template } from "aws-cdk-lib/assertions";
+import { Match, Template } from "aws-cdk-lib/assertions";
 import { describe, expect, it } from "vitest";
 
 function foundationTemplate(stage: Stage): Template {
@@ -132,6 +135,163 @@ describe("the foundation stack's user pool", () => {
           Properties: { DeletionProtection: "ACTIVE" },
         }),
       ).not.toThrow();
+    },
+  );
+});
+
+function logicalIdOf(template: Template, type: string): string {
+  const [id, ...others] = Object.keys(template.findResources(type));
+  if (id === undefined || others.length > 0) {
+    throw new TypeError(`the template has no single ${type}`);
+  }
+  return id;
+}
+
+// ADR-0005's web sign-in: a confidential client the API's `/v1/auth/*`
+// endpoints use, and a domain serving managed login, in `dev` only.
+describe("the foundation stack's web sign-in", () => {
+  it("has one confidential web client limited to the code grant and openid in dev", () => {
+    const template = foundationTemplate("dev");
+    const pool = logicalIdOf(template, "AWS::Cognito::UserPool");
+    expect(
+      Object.keys(template.findResources("AWS::Cognito::UserPoolClient")),
+    ).toHaveLength(1);
+    expect(() =>
+      template.hasResourceProperties("AWS::Cognito::UserPoolClient", {
+        UserPoolId: { Ref: pool },
+        GenerateSecret: true,
+        AllowedOAuthFlowsUserPoolClient: true,
+        AllowedOAuthFlows: ["code"],
+        AllowedOAuthScopes: ["openid"],
+        SupportedIdentityProviders: ["COGNITO"],
+        CallbackURLs: ["http://127.0.0.1:5173/api/v1/auth/callback"],
+        LogoutURLs: ["http://127.0.0.1:5173/"],
+        PreventUserExistenceErrors: "ENABLED",
+        EnableTokenRevocation: true,
+      }),
+    ).not.toThrow();
+  });
+
+  it("rotates refresh tokens and allows no direct sign-in flow in dev", () => {
+    expect(() =>
+      foundationTemplate("dev").hasResourceProperties("AWS::Cognito::UserPoolClient", {
+        RefreshTokenRotation: { Feature: "ENABLED" },
+        // Empty rather than absent: an absent list gets Cognito's default,
+        // which includes ALLOW_REFRESH_TOKEN_AUTH.
+        ExplicitAuthFlows: Match.exact([]),
+      }),
+    ).not.toThrow();
+  });
+
+  // A prefix is unique across the region's accounts, so it carries the first
+  // group of the stack's own generated id: stable, collision-free, not secret.
+  it("serves managed login from a prefix domain unique to the stack in dev", () => {
+    const template = foundationTemplate("dev");
+    expect(
+      Object.keys(template.findResources("AWS::Cognito::UserPoolDomain")),
+    ).toHaveLength(1);
+    expect(() =>
+      template.hasResourceProperties("AWS::Cognito::UserPoolDomain", {
+        UserPoolId: { Ref: logicalIdOf(template, "AWS::Cognito::UserPool") },
+        ManagedLoginVersion: 2,
+        Domain: {
+          "Fn::Join": [
+            "",
+            [
+              "instant-composition-dev-",
+              {
+                "Fn::Select": [
+                  0,
+                  {
+                    "Fn::Split": [
+                      "-",
+                      {
+                        "Fn::Select": [
+                          2,
+                          { "Fn::Split": ["/", { Ref: "AWS::StackId" }] },
+                        ],
+                      },
+                    ],
+                  },
+                ],
+              },
+            ],
+          ],
+        },
+      }),
+    ).not.toThrow();
+  });
+
+  it("gives the web client Cognito's own managed login style in dev", () => {
+    const template = foundationTemplate("dev");
+    expect(() =>
+      template.hasResourceProperties("AWS::Cognito::ManagedLoginBranding", {
+        UserPoolId: { Ref: logicalIdOf(template, "AWS::Cognito::UserPool") },
+        ClientId: { Ref: logicalIdOf(template, "AWS::Cognito::UserPoolClient") },
+        UseCognitoProvidedValues: true,
+      }),
+    ).not.toThrow();
+  });
+
+  it.each([
+    "AWS::Cognito::UserPoolClient",
+    "AWS::Cognito::UserPoolDomain",
+    "AWS::Cognito::ManagedLoginBranding",
+  ])("has no %s in prod until prod has a URL", (type) => {
+    expect(Object.keys(foundationTemplate("prod").findResources(type))).toHaveLength(0);
+  });
+});
+
+// A local run reads these from `aws cloudformation describe-stacks` rather
+// than from this repository (ADR-0005, Follow-ups).
+describe("the foundation stack's sign-in outputs", () => {
+  it.each<Stage>(["dev", "prod"])("exports the user pool's id in %s", (stage) => {
+    const template = foundationTemplate(stage);
+    const outputs = template.findOutputs(USER_POOL_ID_OUTPUT);
+    expect(outputs[USER_POOL_ID_OUTPUT]).toStrictEqual({
+      Value: { Ref: logicalIdOf(template, "AWS::Cognito::UserPool") },
+    });
+  });
+
+  it("exports the web client's id and the sign-in domain's URL in dev", () => {
+    const template = foundationTemplate("dev");
+    const outputs = template.findOutputs("*");
+    expect(outputs[WEB_CLIENT_ID_OUTPUT]).toStrictEqual({
+      Value: { Ref: logicalIdOf(template, "AWS::Cognito::UserPoolClient") },
+    });
+    expect(outputs[SIGN_IN_DOMAIN_URL_OUTPUT]).toStrictEqual({
+      Value: {
+        "Fn::Join": [
+          "",
+          [
+            "https://",
+            { Ref: logicalIdOf(template, "AWS::Cognito::UserPoolDomain") },
+            ".auth.ap-northeast-1.amazoncognito.com",
+          ],
+        ],
+      },
+    });
+  });
+
+  it.each<Stage>(["dev", "prod"])(
+    "exports no client secret, and nothing through a CloudFormation export, in %s",
+    (stage) => {
+      const template = foundationTemplate(stage);
+      const outputs = template.findOutputs("*");
+      expect(Object.keys(outputs).sort()).toStrictEqual(
+        (stage === "dev"
+          ? [
+              LEARNER_TABLE_NAME_OUTPUT,
+              SIGN_IN_DOMAIN_URL_OUTPUT,
+              USER_POOL_ID_OUTPUT,
+              WEB_CLIENT_ID_OUTPUT,
+            ]
+          : [LEARNER_TABLE_NAME_OUTPUT, USER_POOL_ID_OUTPUT]
+        ).sort(),
+      );
+      expect(JSON.stringify(outputs)).not.toMatch(/ClientSecret|Export/);
+      // Reading the secret back needs a custom resource; none exists.
+      expect(JSON.stringify(template.toJSON())).not.toContain("Custom::");
     },
   );
 });
