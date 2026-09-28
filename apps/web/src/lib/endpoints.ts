@@ -4,6 +4,8 @@ import type {
   FinishRoundResponses,
   GetHomeData,
   GetHomeResponses,
+  GetProfileData,
+  GetProfileResponses,
   GetRecordsData,
   GetRecordsResponses,
   GetRoundSummaryData,
@@ -75,6 +77,11 @@ export function updateSettings(
     url: "/v1/settings",
     body: patch,
   } satisfies UpdateSettingsData);
+}
+
+/** The learner's profile: the time zone the practice day is counted in, and the languages. */
+export function getProfile(): Promise<Result<Profile, ApiError>> {
+  return call<GetProfileResponses>("GET", { url: "/v1/me" } satisfies GetProfileData);
 }
 
 /** Changes the profile fields `patch` sets; `ERR_BAD_REQUEST` for a value the API does not serve. */

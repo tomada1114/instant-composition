@@ -9,6 +9,7 @@ import { Button } from "../ui/button";
 import { Sheet } from "../ui/sheet";
 import { Toggle } from "../ui/toggle";
 import { FocusSection, SizeSection, TopicsSection } from "./settings-sections";
+import { TimeZoneRow } from "./time-zone-row";
 import { useSettings } from "./use-settings";
 
 /** W12: measuring again is confirmed first; Esc and "cancel" close it. */
@@ -55,12 +56,13 @@ export function SettingsScreen({
   const navigate = useNavigate();
   const state = useSettings(page.settings);
   const [asking, setAsking] = useState(false);
+  const [zoneFailed, setZoneFailed] = useState(false);
   const soundId = useId();
 
   return (
     <main className="mx-auto box-content flex max-w-column flex-col gap-10 px-4 pt-4 pb-10">
       <BackHeader title={t("title")} back={t("back")} escape={!asking} />
-      {state.failed ? (
+      {state.failed || zoneFailed ? (
         <p role="alert" className="rounded-tile bg-raised px-4 py-3">
           {t("saveFailed")}
         </p>
@@ -79,6 +81,7 @@ export function SettingsScreen({
             }}
           />
         </div>
+        <TimeZoneRow onFailedChange={setZoneFailed} />
         <div className="flex min-h-16 items-center justify-between gap-4 border-t border-border">
           <h2 className="flex items-baseline gap-3">
             {t("difficulty.title")}
