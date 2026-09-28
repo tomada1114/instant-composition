@@ -233,6 +233,7 @@ const APP_TOOLING_EDGES =
  */
 const INFRA_NPM_EDGES = [
   "aws-cdk-lib",
+  "aws-cdk-lib/aws-cognito",
   "aws-cdk-lib/aws-dynamodb",
   "aws-cdk-lib/aws-iam",
   "constructs",
