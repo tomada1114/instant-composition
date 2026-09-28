@@ -92,6 +92,9 @@ async function refreshSession(): Promise<boolean> {
  * Sends one call. An `ERR_UNAUTHENTICATED` answer renews the session once and
  * sends the call again; when renewal fails, or the retry is refused too, the
  * browser is sent to sign in. At most one refresh per call, so this never loops.
+ * Once the browser is on its way to sign in, the call never settles, so a
+ * screen stays in its loading state instead of flashing a failure before the
+ * page unloads.
  */
 export async function send(method: Method, data: OperationData): Promise<Response> {
   const first = await request(method, data);
@@ -99,11 +102,13 @@ export async function send(method: Method, data: OperationData): Promise<Respons
   if (await refreshSession()) {
     const retry = await request(method, data);
     if (!(await isUnauthenticated(retry))) return retry;
-    globalThis.location.assign(LOGIN_URL);
-    return retry;
   }
+  return signIn();
+}
+
+function signIn(): Promise<never> {
   globalThis.location.assign(LOGIN_URL);
-  return first;
+  return new Promise<never>(() => undefined);
 }
 
 /** The envelope's `error.code`, or `undefined` for a body that is not the envelope. */

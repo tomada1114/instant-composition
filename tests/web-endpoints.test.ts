@@ -353,6 +353,22 @@ describe("an unauthenticated answer", () => {
     return visited;
   }
 
+  /** Whether `pending` is still unsettled once the browser has been sent to sign in. */
+  async function staysPending(
+    pending: Promise<unknown>,
+    visited: string[],
+  ): Promise<boolean> {
+    let settled = false;
+    void pending.finally(() => {
+      settled = true;
+    });
+    await vi.waitFor(() => {
+      expect(visited).toStrictEqual([LOGIN_URL]);
+    });
+    await new Promise((resolve) => setTimeout(resolve, 10));
+    return !settled;
+  }
+
   it("refreshes the session once and sends the call again", async () => {
     const visited = stubLocation();
     const answers = [
@@ -377,17 +393,14 @@ describe("an unauthenticated answer", () => {
     ["refused", () => envelope(401, "ERR_UNAUTHENTICATED")],
     ["not served (no user pool)", () => new Response("", { status: 404 })],
   ] as const)(
-    "sends the browser to sign in when the refresh is %s",
+    "sends the browser to sign in, and never settles, when the refresh is %s",
     async (_, refresh) => {
       const visited = stubLocation();
       const answers = [envelope(401, "ERR_UNAUTHENTICATED"), refresh()];
       const calls = stubFetch(() =>
         Promise.resolve(answers.shift() ?? envelope(500, "ERR_X")),
       );
-      expect(await getHome()).toStrictEqual({
-        ok: false,
-        error: { code: "ERR_UNAUTHENTICATED" },
-      });
+      expect(await staysPending(getHome(), visited)).toBe(true);
       expect(calls.map((call) => call.url)).toStrictEqual([
         "/api/v1/home",
         REFRESH_URL,
@@ -407,7 +420,7 @@ describe("an unauthenticated answer", () => {
     const calls = stubFetch(() =>
       Promise.resolve(answers.shift() ?? envelope(500, "ERR_X")),
     );
-    await getHome();
+    expect(await staysPending(getHome(), visited)).toBe(true);
     expect(calls).toHaveLength(3);
     expect(visited).toStrictEqual([LOGIN_URL]);
   });
