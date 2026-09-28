@@ -115,7 +115,7 @@
     },
     "sheet": {
       "title": "一時停止",
-      "hint": "今日のうちなら {position} 枚目から",
+      "hint": "やめても午前 {hour} 時までなら {position} 枚目から再開",
       "quit": "やめる",
       "continue": "続ける"
     },
