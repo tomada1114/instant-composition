@@ -156,11 +156,12 @@ export function decideAnswers(
   const firsts = entries.filter((entry) => entry.detail.pass === "first");
   const day = state.day ?? emptyTally(round.day);
   const { stats } = state;
-  const level = stats.level;
+  const { level } = stats;
   const window =
     level === null
       ? []
       : firsts
+          .filter((entry) => entry.answeredAt >= level.at) // older: the old level's window
           .filter((entry) => Math.abs(entry.snapshot.level - level.level) <= 1)
           .map((entry) => ({
             level: entry.snapshot.level,
