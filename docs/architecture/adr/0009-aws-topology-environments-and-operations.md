@@ -4,8 +4,8 @@
   amended 2026-09-24 (resources added as each phase first needs them); amended
   2026-09-27 (no point-in-time recovery or deletion protection on the `dev` table; the
   Paid-plan upgrade is the owner's and is tracked only when a feature needs it); amended
-  2026-09-28 (`dev`'s distribution runs on pay-as-you-go pricing until the account
-  leaves the Free Tier)
+  2026-09-28 (the hosted `dev` URL's web app client lives in the `app` stack; `dev`'s
+  distribution runs on pay-as-you-go pricing until the account leaves the Free Tier)
 - Date: 2026-09-23
 - Deciders: the owner
 
@@ -163,8 +163,8 @@ learner ──► CloudFront (flat-rate plan: WAF, DDoS protection, bot manageme
 ```text
 foundation  stateful, rarely changed, retained on delete:
             Cognito user pool, DynamoDB tables (PITR, deletion protection), S3 buckets
-app         rebuilt often: API Gateway, Lambda, CloudFront distribution, SPA asset bucket;
-            later SQS and the worker Lambda
+app         rebuilt often: API Gateway, Lambda, CloudFront distribution, SPA asset bucket,
+            the web app client of the distribution's URL; later SQS and the worker Lambda
 agents      later, only if ADR-0012's conditions are met
 ```
 
@@ -175,6 +175,13 @@ CloudFormation refuses to modify that value or delete the exporting stack (check
 2026-09-23) — the coupling the parameter-name approach avoids. CloudFormation's newer
 `Fn::GetStackOutput` creates a weak reference without an export and is an alternative to
 evaluate when the CDK app is written.
+
+A web app client's callback and sign-out URLs are the URL it serves, and the hosted
+one's is the distribution's, which exists only once the `app` stack does. So the owner
+decided on 2026-09-28 that the client for a hosted URL is created in the `app` stack, on
+the user pool whose id it reads from Parameter Store, while `foundation` keeps the pool,
+its domain and the client for a local checkout. Both clients have the same settings
+([ADR-0005](0005-identity-and-authorization.md), Web); only their URLs differ.
 
 **Stages.** One CDK app builds either stage from the same code. `prod` is then "the same
 thing, deployed with the prod stage", not a second design. The stage decides only these
@@ -188,6 +195,7 @@ settings:
 | Cognito self sign-up                              | Off: only an administrator creates users (`AllowAdminCreateUserOnly`)                                      | On                                                              |
 | Cognito user pool deletion protection             | On                                                                                                         | On                                                              |
 | Cognito web app client and sign-in domain         | A confidential client redirecting to `http://127.0.0.1:5173`; managed login on a prefix domain             | None until `prod` has a URL (production-guard phase)            |
+| Hosted web app client, in the `app` stack         | A confidential client redirecting to the distribution's `https://` URL                                     | None until `prod` is hosted (production-guard phase)            |
 | CloudFront flat-rate plan                         | None while the account is on the Free Tier: pay-as-you-go with plan-compatible settings (below); then Free | Free, then Pro when traffic warrants                            |
 | WAF rate-based rules, SES for authentication mail | None; Cognito's own sender is enough for admin-created users                                               | Yes                                                             |
 | Deploy                                            | On every merge to `main`                                                                                   | Behind a manual approval                                        |
@@ -233,6 +241,10 @@ privacy policy has to state.
   values for at most 300 seconds.
 - Parameter Store `SecureString` is the default store. Secrets Manager is used where
   rotation is needed.
+- CloudFormation cannot create a `SecureString`. The hosted web app client's secret is
+  copied into one by a custom resource in the `app` stack, which reads it from Cognito
+  and writes it in the same invocation, on every change to the client. The secret never
+  appears in a template, a resource property, an output or a log.
 
 **Cost guard.**
 
