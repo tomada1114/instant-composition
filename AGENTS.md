@@ -203,11 +203,12 @@ committed as `packages/contracts/openapi.json`; `tests/contracts-openapi.test.ts
 when the file differs from what the schemas generate, and `pnpm contracts:openapi`
 rewrites it (ADR-0013). `apps/api` serves every route in contracts' `ROUTES` under
 `/api` by calling `packages/application`, signing each request in through the learner
-directory, with a stand-in authenticator naming one local subject until Phase 3;
-`serving-the-api` holds how. `apps/web` is the browser client ADR-0008 describes: a
-Vite + React SPA with TanStack Router, TanStack Query and use-intl over
-`messages/ja.json`, which reaches the API only over HTTP under `/api`, typed by what
-@hey-api/openapi-ts generates from `packages/contracts/openapi.json` into
+directory: the subject comes from a Cognito access token, as a Bearer header or the web
+session cookie, when `API_COGNITO_*` name a user pool, and from a stand-in naming one
+local subject otherwise; `serving-the-api` holds how. `apps/web` is the browser client
+ADR-0008 describes: a Vite + React SPA with TanStack Router, TanStack Query and use-intl
+over `messages/ja.json`, which reaches the API only over HTTP under `/api`, typed by
+what @hey-api/openapi-ts generates from `packages/contracts/openapi.json` into
 `apps/web/src/openapi/`. That tree is committed, `tests/web-openapi-client.test.ts`
 fails when it differs from a fresh generation, and `pnpm web:client` rewrites it.
 `infra/` is the CDK app ADR-0009 describes: one app builds either stage from its `stage`

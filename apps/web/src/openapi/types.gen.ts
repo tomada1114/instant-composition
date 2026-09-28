@@ -311,6 +311,10 @@ export type GetSettingsData = {
 
 export type GetSettingsErrors = {
     /**
+     * ERR_UNAUTHENTICATED: The request carries no valid access token.
+     */
+    401: ErrorResponse;
+    /**
      * ERR_FORBIDDEN: The caller may not run this operation.
      */
     403: ErrorResponse;
@@ -339,6 +343,10 @@ export type UpdateSettingsErrors = {
      * ERR_BAD_REQUEST: The request does not fit the round or the settings it names.
      */
     400: ErrorResponse;
+    /**
+     * ERR_UNAUTHENTICATED: The request carries no valid access token.
+     */
+    401: ErrorResponse;
     /**
      * ERR_FORBIDDEN: The caller may not run this operation.
      */
@@ -377,6 +385,10 @@ export type GetHomeData = {
 
 export type GetHomeErrors = {
     /**
+     * ERR_UNAUTHENTICATED: The request carries no valid access token.
+     */
+    401: ErrorResponse;
+    /**
      * ERR_FORBIDDEN: The caller may not run this operation.
      */
     403: ErrorResponse;
@@ -405,6 +417,10 @@ export type StartRoundErrors = {
      * ERR_BAD_REQUEST: The request does not fit the round or the settings it names.
      */
     400: ErrorResponse;
+    /**
+     * ERR_UNAUTHENTICATED: The request carries no valid access token.
+     */
+    401: ErrorResponse;
     /**
      * ERR_FORBIDDEN: The caller may not run this operation.
      */
@@ -448,6 +464,10 @@ export type RecordAnswersErrors = {
      * ERR_BAD_REQUEST: The request does not fit the round or the settings it names.
      */
     400: ErrorResponse;
+    /**
+     * ERR_UNAUTHENTICATED: The request carries no valid access token.
+     */
+    401: ErrorResponse;
     /**
      * ERR_FORBIDDEN: The caller may not run this operation.
      */
@@ -496,6 +516,10 @@ export type FinishRoundErrors = {
      */
     400: ErrorResponse;
     /**
+     * ERR_UNAUTHENTICATED: The request carries no valid access token.
+     */
+    401: ErrorResponse;
+    /**
      * ERR_FORBIDDEN: The caller may not run this operation.
      */
     403: ErrorResponse;
@@ -543,6 +567,10 @@ export type GetRoundSummaryErrors = {
      */
     400: ErrorResponse;
     /**
+     * ERR_UNAUTHENTICATED: The request carries no valid access token.
+     */
+    401: ErrorResponse;
+    /**
      * ERR_FORBIDDEN: The caller may not run this operation.
      */
     403: ErrorResponse;
@@ -572,6 +600,10 @@ export type GetRecordsData = {
 
 export type GetRecordsErrors = {
     /**
+     * ERR_UNAUTHENTICATED: The request carries no valid access token.
+     */
+    401: ErrorResponse;
+    /**
      * ERR_FORBIDDEN: The caller may not run this operation.
      */
     403: ErrorResponse;
@@ -596,6 +628,10 @@ export type GetHistoryData = {
 };
 
 export type GetHistoryErrors = {
+    /**
+     * ERR_UNAUTHENTICATED: The request carries no valid access token.
+     */
+    401: ErrorResponse;
     /**
      * ERR_FORBIDDEN: The caller may not run this operation.
      */

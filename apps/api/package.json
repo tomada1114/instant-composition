@@ -15,6 +15,7 @@
     "@instant-composition/application": "workspace:*",
     "@instant-composition/contracts": "workspace:*",
     "@instant-composition/domain": "workspace:*",
+    "aws-jwt-verify": "^5.2.1",
     "hono": "^4.13.8"
   }
 }

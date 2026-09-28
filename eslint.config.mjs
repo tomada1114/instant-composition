@@ -181,7 +181,13 @@ const APP_WORKSPACE_EDGES = /** @type {const} */ ({
  */
 const APP_NPM_EDGES =
   /** @type {Record<keyof typeof APP_WORKSPACE_EDGES, readonly string[]>} */ ({
-    api: ["hono", "@hono/node-server"],
+    api: [
+      "hono",
+      "@hono/node-server",
+      "aws-jwt-verify",
+      "aws-jwt-verify/error",
+      "aws-jwt-verify/jwk",
+    ],
     web: [
       "@fontsource-variable/inter-tight",
       "@fontsource-variable/jetbrains-mono",
@@ -537,7 +543,7 @@ export default defineConfig([
   ),
   ...appBoundary(
     "api",
-    "apps/api is the HTTP adapter: it imports @instant-composition/adapters, application, contracts and domain, hono, @hono/node-server and node:path, each by its exact name, and nothing else outside itself — never a package by a relative path.",
+    "apps/api is the HTTP adapter: it imports @instant-composition/adapters, application, contracts and domain, hono, @hono/node-server, aws-jwt-verify with its error and jwk subpaths, and node:path, each by its exact name, and nothing else outside itself — never a package by a relative path.",
   ),
   workspaceBoundary(
     {

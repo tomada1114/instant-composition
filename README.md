@@ -37,8 +37,10 @@ memory.
 The snapshot is built only when there is none: after `content/` changes, run
 `pnpm catalog:build` and restart `pnpm dev`, since the API reads a snapshot once per
 start. The variables a local run reads are listed with empty values in `.env.example`;
-every one has a default. For example, `API_CATALOG_PATH` points the API at another
-snapshot, and `API_TABLE_NAME` at a fresh table, without touching your own progress:
+every one has a default or is optional. Without `API_COGNITO_*`, every request is one
+local learner, with no sign-in. For example, `API_CATALOG_PATH` points the API at
+another snapshot, and `API_TABLE_NAME` at a fresh table, without touching your own
+progress:
 
 ```sh
 API_TABLE_NAME=scratch pnpm dev

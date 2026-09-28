@@ -1,7 +1,8 @@
 # ADR-0005: Identity and authorization
 
 - Status: Accepted (2026-09-23); amended 2026-09-27 (the learner profile lives in the
-  learner table) and 2026-09-28 (the user pool's sign-in identifier)
+  learner table), 2026-09-28 (the user pool's sign-in identifier) and 2026-09-28 (the
+  stand-in authenticator's place in local development)
 - Date: 2026-09-23
 - Deciders: the owner
 
@@ -103,6 +104,12 @@ interface Authenticator {
 - The Cognito adapter verifies access tokens with `aws-jwt-verify`, using
   `tokenUse: "access"` and the expected `clientId`. AWS's guidance states that the
   audience must be checked.
+- A request with an `Authorization` header is judged by that header alone; without one,
+  the access token is read from the `__Host-access-token` cookie. The `__Host-` prefix
+  makes a browser keep it only when it is `Secure`, on `Path=/` and without `Domain`, so
+  no sibling host can plant one.
+- A missing, expired or foreign token answers `ERR_UNAUTHENTICATED` (401) on every
+  route.
 - The authenticator yields only the verified subject. The identity context maps `sub` to
   LearnerId, creating the learner on first sign-in (below).
 - The HTTP adapter builds `RequestContext` once per request, its `learner` from the
@@ -162,7 +169,10 @@ Authorization happens at two levels, and both are required.
 ### Web-specific protections
 
 - The cookie path checks the `Origin` header on state-changing requests, as CSRF
-  protection alongside SameSite.
+  protection alongside SameSite. It is compared with the web client's origins, named to
+  the authenticator, rather than with the request's own: the local Vite proxy rewrites
+  `Host`, and CloudFront will sit in front of the API's own host. A missing or foreign
+  origin answers `ERR_FORBIDDEN`.
 - The Bearer path does not read cookies, so native clients are unaffected.
 
 ### Abuse and cost
@@ -180,6 +190,14 @@ Authorization happens at two levels, and both are required.
 - A real development user pool, with an app client whose callback is
   `http://localhost:<port>/...`. Cognito permits http only for `localhost`, `127.0.0.1`
   and `[::1]`.
+- **The stand-in** (amended 2026-09-28, the owner's decision of 2026-09-27). The local
+  run (`pnpm api`) verifies tokens against that pool when `API_COGNITO_USER_POOL_ID` and
+  `API_COGNITO_CLIENT_ID` are set. With neither set, it serves one stand-in subject that
+  authenticates nothing, so a checkout runs with no pool and no sign-in; setting only
+  one refuses to start. The stand-in is wired by that local entry alone, which listens
+  on the loopback interface and refuses to start inside AWS, and its start-up line names
+  which authenticator runs. No hosted entry uses it. This narrows "local development
+  authenticates against it too" above to a local run that is configured for the pool.
 - Tests never call Cognito. They sign JWTs with a local key pair and give the verifier
   that key set, so the production verification code runs in tests.
 - No official Cognito emulator was found. LocalStack is third-party and is not relied
@@ -204,8 +222,12 @@ Authorization happens at two levels, and both are required.
 
 ### Follow-ups
 
-- Replace `API_ACCESS_KEY` and the `requiresAccessKey` rule with this port. Keep the
-  invariant it expressed: an endpoint that bills a provider can never be wired open.
+- ~~Replace `API_ACCESS_KEY` and the `requiresAccessKey` rule with this port.~~ Closed
+  2026-09-28: both left with `src/` in Phase 1, and every route now goes through the
+  Cognito authenticator (#132). The invariant they held — an endpoint that bills a
+  provider can never be wired open — is carried by
+  [ADR-0010](0010-entitlements-and-billing.md)'s wiring rule, which lands with the
+  ledger in Phase 7.
 - Record the dev user pool's non-secret identifiers in configuration
   ([ADR-0009](0009-aws-topology-environments-and-operations.md)), never in this
   repository.
