@@ -1,11 +1,11 @@
 # Implementation (sub-agent prompt)
 
 Spawned at [SKILL.md step 3](../../SKILL.md#3-implement), one issue at a time.
-**`sonnet` is the default; `opus` when the issue is foundational** — architecture or a
-skeleton, an interface/port/schema, or a skill, instruction file, or gate whose shape
-the rest of the backlog copies. The test is blast radius, not difficulty:
-[cost-discipline.md#the-foundation-exception-opus-for-what-the-backlog-builds-on](../cost-discipline.md#the-foundation-exception-opus-for-what-the-backlog-builds-on).
-A resume/patch run stays on the model its first run used.
+**`executor` is the default; `architect` when the issue is foundational** — architecture
+or a skeleton, an interface/port/schema, or a skill, instruction file, or gate whose
+shape the rest of the backlog copies. The test is blast radius, not difficulty:
+[cost-discipline.md#the-foundation-exception-architect-for-what-the-backlog-builds-on](../cost-discipline.md#the-foundation-exception-architect-for-what-the-backlog-builds-on).
+A patch round continues the same agent; spawn fresh only when it cannot be continued.
 
 ```
 Implement GitHub issue #{n} in {owner}/{repo}. Once you return, your branch is
@@ -47,8 +47,9 @@ Branch: {branch_name}             <- already created and checked out; do not
 Likely files: {paths from step 2's triage, or — when step 2 was skipped on a
                labeled backlog — a short grep/glob the parent runs against
                the issue's own keywords right before spawning; never blank}
-Project conventions: read {workdir}/CLAUDE.md and
-{workdir}/AGENTS.md before writing code.
+Project conventions: {workdir}/CLAUDE.md and {workdir}/AGENTS.md are usually
+already in your context — read them only if they are not — plus the skills
+AGENTS.md names for the files you touch.
 Decisions already made: {anything step 2/2b resolved, so it is not re-opened}
 Verification command: {verify_command, from step 3's smoke run — if that
                         smoke run found none, say so explicitly here rather
@@ -56,8 +57,8 @@ Verification command: {verify_command, from step 3's smoke run — if that
 </context>
 
 Do:
-1. Read the project's own instruction files and follow them, including its
-   test and commit conventions.
+1. Follow the project's own instruction files, including its test and commit
+   conventions.
 2. If the task claims a performance improvement (runtime, throughput, memory,
    latency), measure the *before* state here, on the unmodified code, with the
    exact command you will re-run afterwards.

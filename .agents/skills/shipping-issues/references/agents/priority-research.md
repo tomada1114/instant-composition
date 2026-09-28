@@ -1,9 +1,9 @@
 # Priority research and labeling (sub-agent prompt)
 
-Filled and handed to a `sonnet` worker (or read and run inline where the runtime exposes
-no delegation) from `references/delegation-templates.md`'s "Priority research and
-labeling" section — the spawn condition, the return contract, and what the caller does
-with each section live there. This file is only the prompt body.
+Filled and handed to an `executor` worker (or read and run inline where the runtime
+exposes no delegation) from `references/delegation-templates.md`'s "Priority research
+and labeling" section — the spawn condition, the return contract, and what the caller
+does with each section live there. This file is only the prompt body.
 
 The worker writes the labels itself — that is the point of the handoff. What comes back
 is the pick with its evidence, the order behind it, and the blocked/unclear lists; the

@@ -1,8 +1,8 @@
 # Review fix, parallel mode (sub-agent prompt)
 
 Spawned at [SKILL.md step 4](../../SKILL.md#4-review-the-branch) in parallel mode — only
-for findings this session has already read and accepted, one **`sonnet`** sub-agent per
-branch that has any.
+for findings this session has already read and accepted, one **`executor`** sub-agent
+per branch that has any.
 
 `/code-review --fix` writes to the session's own working tree, which in parallel mode is
 the main checkout sitting on the default branch — the wrong tree — so the review runs
@@ -30,8 +30,9 @@ That read is the ONLY GitHub command you are permitted to run.
 matters`. Findings I rejected are not listed here and must not be inferred.}
 </findings>
 
-Project conventions: read {workdir}/CLAUDE.md and {workdir}/AGENTS.md before
-changing anything.
+Project conventions: {workdir}/CLAUDE.md and {workdir}/AGENTS.md are usually
+already in your context — read them only if they are not — plus the skills
+AGENTS.md names for the files you touch.
 Verification command: {verify_command}
 
 Do:
@@ -64,5 +65,5 @@ FOLLOW-UPS: <defects you saw that are NOT in the list, one per line as
 
 `REJECTED` is read, not skimmed — it is the run's only signal that a finding this
 session accepted did not survive contact with the code, and a rejection that reads like
-a real defect goes back through the same loop with the reason addressed. `FOLLOW-UPS`
-feeds step 8 like every other one.
+a real defect goes back to the same fix agent, continued, with the reason addressed.
+`FOLLOW-UPS` feeds step 8 like every other one.

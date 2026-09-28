@@ -1,8 +1,8 @@
 # Design decision (sub-agent prompt)
 
 Spawned at [SKILL.md step 8b](../../SKILL.md#8b-unblock-held-designs-in-the-background),
-one **`opus`** sub-agent per design-blocked issue, **in the background** — this session
-spawns a round in one message and goes straight back to shipping.
+one **`architect`** sub-agent per design-blocked issue, **in the background** — this
+session spawns a round in one message and goes straight back to shipping.
 
 This is the only sub-agent in this skill that writes to GitHub, and only two writes: one
 comment on the issue and one label clear. It writes nothing in the checkout, so
@@ -18,7 +18,8 @@ in the repository, and run no `rm`.
 Read, in this order:
   - the issue and its thread:
     gh issue view {n} --repo {owner}/{repo} --json title,body,labels,comments
-  - the project's own conventions: {workdir}/CLAUDE.md, {workdir}/AGENTS.md
+  - the project's own conventions, {workdir}/CLAUDE.md and {workdir}/AGENTS.md,
+    unless they are already in your context
   - the code the issue names, and the nearest thing this repo already does that
     solves a similar problem — your design has to look like it, not like a
     greenfield design
