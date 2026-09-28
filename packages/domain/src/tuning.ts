@@ -38,6 +38,13 @@ export const TUNING = {
   streakMilestones: { fixed: [7, 14, 30, 60, 100, 200, 365], step: 100 },
   points: { perCard: 1, portionBonus: 10 },
   growth: { fasterThresholdMs: 100 },
+  /**
+   * A grammar concept or subtopic is weak at `minSeen` shown items given a first
+   * pass and a rate of at least `minRate`, where the rate is
+   * `(misses + prior.misses) / (seen + prior.seen)` and a miss is an item whose
+   * latest first pass was `ng` or a timeout. The `top` weakest of each are kept.
+   */
+  weakness: { minSeen: 3, minRate: 0.4, prior: { misses: 1, seen: 3 }, top: 2 },
 } as const;
 
 /** A milestone series: the listed values, then every `step` past the last one. */

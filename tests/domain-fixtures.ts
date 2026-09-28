@@ -1,4 +1,9 @@
-import type { AnswerRecord, CardMeta } from "@instant-composition/domain";
+import type {
+  AnswerRecord,
+  AnswerResult,
+  CardMeta,
+  ItemProgress,
+} from "@instant-composition/domain";
 
 // Factories for the packages/domain suites. Nothing here asserts.
 
@@ -33,6 +38,24 @@ export function makeCardMeta(id: string, overrides: Partial<CardMeta> = {}): Car
     level: 5,
     words: 8,
     concepts: [],
+    ...overrides,
+  };
+}
+
+/** An item whose latest first pass, on 2026-09-22 in round r1, was `result`. */
+export function makeItemProgress(
+  id: string,
+  result: AnswerResult,
+  overrides: Partial<ItemProgress> = {},
+): ItemProgress {
+  return {
+    item: { kind: "composition", id },
+    memory: { box: 1, dueDay: "2026-09-23", lastDay: "2026-09-22", seenCount: 1 },
+    okDays: result === "ok" ? ["2026-09-22"] : [],
+    mastered: null,
+    placement: { topic: "work", subtopic: "meetings" },
+    last: { sessionId: "r1", result, elapsedMs: 8_000, answeredAt: 2_000 },
+    previous: null,
     ...overrides,
   };
 }

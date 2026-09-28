@@ -166,3 +166,11 @@ export type {
   SubtopicRef,
   TopicInfo,
 } from "./types";
+export {
+  weaknesses,
+  type ConceptWeakness,
+  type SubtopicWeakness,
+  type WeaknessEvidence,
+  type WeaknessInput,
+  type Weaknesses,
+} from "./weakness";
