@@ -9,6 +9,12 @@ export {
   type FoundationStackProps,
 } from "./foundation-stack";
 export {
+  FOUNDATION_PARAMETERS,
+  foundationParameterName,
+  foundationParameterPath,
+  type FoundationParameter,
+} from "./foundation-parameters";
+export {
   DEPLOY_ROLE_ARN_OUTPUT,
   DEPLOY_SUBJECT,
   DeployAccessStack,
