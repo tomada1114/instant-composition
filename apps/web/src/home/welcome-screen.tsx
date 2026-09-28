@@ -1,7 +1,7 @@
-import { useState, type ReactElement } from "react";
+import { useRef, useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
-import { updateSettings } from "../lib/endpoints";
+import { updateProfile, updateSettings } from "../lib/endpoints";
 import { usePrimaryKey } from "../lib/use-primary-key";
 import type { TopicInfo } from "../openapi";
 import { Button } from "../ui/button";
@@ -11,10 +11,20 @@ import { Kbd } from "../ui/kbd";
 import { SelectCard } from "../ui/select-card";
 import { LoadFailedPanel } from "./home-empty";
 
+/** The time zone this browser runs in, as an IANA name such as `Asia/Tokyo`. */
+function browserTimeZone(): string {
+  return new Intl.DateTimeFormat().resolvedOptions().timeZone;
+}
+
 /**
  * W1: the first visit picks the topics, then goes straight on to the
  * placement round — `onSaved`, once the choice is saved. `onReload` reads the
  * topics again, for when there were none to offer.
+ *
+ * Saving the choice first sends the browser's time zone, so the placement
+ * round is already dated in it. That happens once: this screen is shown only
+ * until topics are saved, which the API records, so no later visit on any
+ * device sends it again whatever its storage holds.
  */
 export function WelcomeScreen({
   topics,
@@ -29,7 +39,18 @@ export function WelcomeScreen({
   const [chosen, setChosen] = useState<ReadonlySet<string>>(new Set());
   const [saving, setSaving] = useState(false);
   const [failed, setFailed] = useState(false);
+  const zoneSent = useRef(false);
   usePrimaryKey();
+
+  async function save(topicIds: string[]): Promise<boolean> {
+    if (!zoneSent.current) {
+      const sent = await updateProfile({ timeZone: browserTimeZone() });
+      // A zone the API does not know leaves the profile's own: go on without it.
+      if (!sent.ok && sent.error.code !== "ERR_BAD_REQUEST") return false;
+      zoneSent.current = true;
+    }
+    return (await updateSettings({ topics: topicIds })).ok;
+  }
 
   function toggle(id: string): void {
     setChosen((current) => {
@@ -45,8 +66,8 @@ export function WelcomeScreen({
     const picked = topics
       .filter((topic) => chosen.has(topic.id))
       .map((topic) => topic.id);
-    void updateSettings({ topics: picked }).then((saved) => {
-      if (saved.ok) {
+    void save(picked).then((saved) => {
+      if (saved) {
         onSaved();
         return;
       }
