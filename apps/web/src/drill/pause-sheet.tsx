@@ -10,8 +10,8 @@ function KeyLegend(): ReactElement {
   const t = useTranslations("Drill.card");
   const rows = [
     ["Space", t("flip")],
-    ["→  J", t("said")],
-    ["←  F", t("notSaid")],
+    ["→  K  F", t("said")],
+    ["←  J  D", t("notSaid")],
     ["Esc  ?", t("pause")],
   ] as const;
   return (
