@@ -736,6 +736,8 @@ const INFRA_NPM_EDGES: readonly string[] = [
   "aws-cdk-lib/aws-apigatewayv2-integrations",
   "aws-cdk-lib/aws-cloudfront",
   "aws-cdk-lib/aws-cloudfront-origins",
+  "aws-cdk-lib/aws-cloudwatch",
+  "aws-cdk-lib/aws-cloudwatch-actions",
   "aws-cdk-lib/aws-cognito",
   "aws-cdk-lib/aws-dynamodb",
   "aws-cdk-lib/aws-iam",
@@ -743,6 +745,8 @@ const INFRA_NPM_EDGES: readonly string[] = [
   "aws-cdk-lib/aws-lambda-nodejs",
   "aws-cdk-lib/aws-logs",
   "aws-cdk-lib/aws-s3",
+  "aws-cdk-lib/aws-sns",
+  "aws-cdk-lib/aws-sns-subscriptions",
   "aws-cdk-lib/aws-ssm",
   "constructs",
 ];
