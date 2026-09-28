@@ -1,6 +1,6 @@
 import { randomIndex, type Random } from "./random";
 import { TUNING } from "./tuning";
-import type { CardMeta, SubtopicRef } from "./types";
+import type { CardMeta, ConceptId, SubtopicRef } from "./types";
 
 /** Shared across one deck's picks, so the subtopic balance spans all of them. */
 export interface PickState {
@@ -79,9 +79,27 @@ export function pickByLevel(
 }
 
 /**
- * The focus share of the new cards: split between two focus subtopics, the
- * first taking the odd one, and either making up what the other lacks.
+ * `quota` cards split between `pools`, the first taking the odd one, and any
+ * pool making up what another lacks.
  */
+function pickShared(
+  pools: readonly (readonly CardMeta[])[],
+  quota: number,
+  level: number,
+  state: PickState,
+): CardMeta[] {
+  const picked: CardMeta[] = [];
+  pools.forEach((pool, index) => {
+    const share = Math.ceil((quota - picked.length) / (pools.length - index));
+    picked.push(...pickByLevel(pool, share, level, state));
+  });
+  for (const pool of pools) {
+    picked.push(...pickByLevel(pool, quota - picked.length, level, state));
+  }
+  return picked;
+}
+
+/** The focus share of the new cards, split between the focus subtopics. */
 export function pickFocus(
   pool: readonly CardMeta[],
   focus: readonly SubtopicRef[],
@@ -92,13 +110,19 @@ export function pickFocus(
   const pools = focus.map((ref) =>
     pool.filter((card) => subtopicKey(card) === subtopicKey(ref)),
   );
-  const picked: CardMeta[] = [];
-  pools.forEach((focusPool, index) => {
-    const share = Math.ceil((quota - picked.length) / (pools.length - index));
-    picked.push(...pickByLevel(focusPool, share, level, state));
-  });
-  for (const focusPool of pools) {
-    picked.push(...pickByLevel(focusPool, quota - picked.length, level, state));
-  }
-  return picked;
+  return pickShared(pools, quota, level, state);
+}
+
+/** The weak share of the new cards, split between the weak concepts, weakest first. */
+export function pickWeak(
+  pool: readonly CardMeta[],
+  concepts: readonly ConceptId[],
+  quota: number,
+  level: number,
+  state: PickState,
+): CardMeta[] {
+  const pools = concepts.map((concept) =>
+    pool.filter((card) => card.concepts.includes(concept)),
+  );
+  return pickShared(pools, quota, level, state);
 }
