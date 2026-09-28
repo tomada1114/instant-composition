@@ -145,6 +145,12 @@ interface RequestContext {
   reads the mapping again and signs in as the same LearnerId.
 - A new LearnerId comes from an id source the entry point supplies, never from
   randomness inside the application layer.
+- After registration the profile is read and changed through `GET` and `PATCH /v1/me`
+  ([ADR-0007](0007-http-api-contract-and-offline-sync.md)) like the rest of the
+  learner's data: the same `PROFILE` item is the learner-bound store's `profile` entry,
+  so a change goes through `forLearner(ctx.learner.id)` and never names a learner, and
+  it is a conditional write on the item's version, so of two changes racing, the later
+  one is decided again over the earlier one's result.
 
 ### Authorization
 
