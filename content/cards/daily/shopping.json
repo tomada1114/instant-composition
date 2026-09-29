@@ -67,22 +67,6 @@
     "stamps": {}
   },
   {
-    "id": "c_2w6s5t4z",
-    "ja": "先にこのスニーカー、履いてみてもいいですか？",
-    "en": "Could I try these sneakers on first?",
-    "alternatives": [
-      "Is it okay if I try these sneakers on?",
-      "Can I try on these sneakers first?"
-    ],
-    "point": "「試しに履く」は try on。代名詞なら try them on の語順",
-    "topic": "daily",
-    "subtopic": "shopping",
-    "level": 7,
-    "grammar": ["phrasal-verbs", "requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3h6f4e4s",
     "ja": "土曜に冷蔵庫が届くから、誰か家にいてくれる？",
     "en": "Could someone be home Saturday when the fridge arrives?",

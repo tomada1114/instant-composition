@@ -2,12 +2,12 @@
   {
     "id": "c_2b6k7r8d",
     "ja": "彼女は今週もう3回、代わってくれたんだ。",
-    "en": "She's already covered for me three times.",
+    "en": "She's covered for me three times this week.",
     "alternatives": [
-      "She's already taken my shift three times.",
-      "She's covered for me three times already."
+      "She's covered my shift three times this week.",
+      "She's subbed for me three times this week."
     ],
-    "point": "「もう3回」は現在完了、already は have の後ろ",
+    "point": "「今週もう3回」は今週がまだ続くので現在完了で言う",
     "topic": "social",
     "subtopic": "favors",
     "level": 5,
@@ -131,7 +131,7 @@
     "point": "「散歩させる」は walk を他動詞で使い walk your dog とする",
     "topic": "social",
     "subtopic": "favors",
-    "level": 3,
+    "level": 2,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-22",
     "stamps": {
@@ -146,8 +146,12 @@
     "id": "c_5j7z9s4b",
     "ja": "今、忙しい？お願いがあるの。",
     "en": "Busy? I need a favor.",
-    "alternatives": ["Are you busy? I need help.", "Are you free? I need help."],
-    "point": "「忙しい？」は Are you busy? と be 動詞で聞く",
+    "alternatives": [
+      "You busy? I need a favor.",
+      "Busy now? I need a favor.",
+      "Are you busy? I need help."
+    ],
+    "point": "「お願いがある」は I need a favor、a を忘れずに",
     "topic": "social",
     "subtopic": "favors",
     "level": 1,
@@ -401,7 +405,7 @@
     "en": "She hasn't given my camera back yet.",
     "alternatives": [
       "She still hasn't returned my camera.",
-      "I still haven't gotten my camera back."
+      "She still hasn't given it back."
     ],
     "point": "まだ返っていない今の状態は現在完了 hasn't + 過去分詞",
     "topic": "social",
@@ -415,7 +419,10 @@
     "id": "c_9q2n2j3r",
     "ja": "友達に引っ越しの手伝いを頼まれた。",
     "en": "A friend asked me to help move.",
-    "alternatives": ["A friend wants me to help move.", "I was asked to help move."],
+    "alternatives": [
+      "My friend asked me to help move.",
+      "A friend asked for my help moving."
+    ],
     "point": "「人に〜するよう頼む」は ask 人 to do で表す",
     "topic": "social",
     "subtopic": "favors",

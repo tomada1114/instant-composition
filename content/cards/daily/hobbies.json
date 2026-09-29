@@ -1,53 +1,5 @@
 [
   {
-    "id": "c_2g4k8d9n",
-    "ja": "早く出ていれば、場所取りできたのにね。",
-    "en": "If we'd left earlier, we'd have gotten a spot.",
-    "alternatives": [
-      "We'd have gotten a spot if we'd left earlier.",
-      "Had we left earlier, we'd have gotten a spot."
-    ],
-    "point": "過去の仮定は had+過去分詞、結果は would have+過去分詞",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 6,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2j8v5b7y",
-    "ja": "学生のころピアノを続けとけばよかったなあ。",
-    "en": "I wish I'd kept playing piano as a student.",
-    "alternatives": [
-      "If only I'd stuck with the piano back then.",
-      "I wish I hadn't quit piano as a student."
-    ],
-    "point": "過去の後悔は wish + had 過去分詞",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 6,
-    "grammar": ["wishes-regrets"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3k9u2p4y",
-    "ja": "先週の大会で誰が優勝したか、まだ見てないんだ。",
-    "en": "I haven't seen who won last week's tournament yet.",
-    "alternatives": [
-      "I still haven't checked who won last week's tournament.",
-      "I haven't found out who won last week's tournament."
-    ],
-    "point": "「誰が優勝したか」は who won と肯定文の語順で続ける",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 6,
-    "grammar": ["indirect-questions", "present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3q5b3s2b",
     "ja": "父は釣り大会の列に並んだに違いない。",
     "en": "Dad must have lined up for the fishing contest.",
@@ -61,7 +13,13 @@
     "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5dc8a18073cd697756252d202134f4e7968de8360eaf0e19caaacdde2f58319d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3s3y3w6q",
@@ -77,7 +35,13 @@
     "level": 6,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:25ad71f5926b78a0080274367ca462efc6cda4c70d6f2d109aa1b32ce2ab774a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3s6d6d6k",
@@ -93,7 +57,13 @@
     "level": 9,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c191682604944260a333ed21135935754a51067a82b486c4ba89af8b924f52dd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3s7n3y5h",
@@ -118,22 +88,6 @@
     }
   },
   {
-    "id": "c_4p3t5y8w",
-    "ja": "週末がもっと長かったら、何か趣味を始める？",
-    "en": "If weekends were longer, would you start a hobby?",
-    "alternatives": [
-      "Would you start a hobby if weekends were longer?",
-      "With longer weekends, would you take up a hobby?"
-    ],
-    "point": "現実と違う仮定は if 節を過去形 were、主節は would に",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 6,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_4w4t9u4g",
     "ja": "癒されるのはヨガじゃなく、川沿いの散歩です。",
     "en": "It's riverside walks, not yoga, that help me unwind.",
@@ -147,7 +101,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e18830b99f9980fbd65c37f4812d97d7e8b35681d5818bffb69b5623e8a4b458",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5p4c6v4v",
@@ -254,22 +214,6 @@
     }
   },
   {
-    "id": "c_6x9z4q9c",
-    "ja": "ギターやめたの？昔バンドにいた？",
-    "en": "You quit guitar? Were you in a band?",
-    "alternatives": [
-      "Quit guitar? Were you in a band?",
-      "Gave up guitar? Were you in a band?"
-    ],
-    "point": "「昔は」の質問は過去形 were で聞く",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 4,
-    "grammar": ["tense-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7a4q6w4p",
     "ja": "夫は日曜、ラジオを聞きながら庭いじりしてます。",
     "en": "My husband gardens on Sundays, listening to the radio.",
@@ -283,23 +227,13 @@
     "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7h3p6p5q",
-    "ja": "兄はキャンプ道具を磨くだけで、めったに使わない。",
-    "en": "My brother polishes his gear but rarely uses it.",
-    "alternatives": [
-      "My brother polishes his camping gear but seldom uses it.",
-      "My brother polishes his gear but hardly ever uses it."
-    ],
-    "point": "gear は数えられない名詞なので gears としない",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 7,
-    "grammar": ["articles-and-countability"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:81bdb7df332f183783e52700fb5d7d2eeb13307a8964f335c916bd16e94de699",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8f9p8x7m",
@@ -359,7 +293,13 @@
     "level": 6,
     "grammar": ["phrasal-verbs", "present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5ae9b9e15ca86477f6bf3e7490c198db7310fc32d6c1eb1c07d6524b428796c0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8r3w6n5c",
@@ -382,22 +322,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_8v7d9n8k",
-    "ja": "バイクを持って行った店が、もう閉店していたんだよ。",
-    "en": "The shop where I took my bike had closed.",
-    "alternatives": [
-      "The shop I took my bike to had closed.",
-      "The shop I'd taken my bike to had closed down."
-    ],
-    "point": "行った時点より前の出来事は過去完了 had closed",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 7,
-    "grammar": ["past-perfect", "relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_8v9m4w2r",
@@ -435,7 +359,13 @@
     "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e611f6aeaba930c2c509c54e23297df2816c2b70cdf1a8d7d2c19b622763ee3f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9q3j7k8n",

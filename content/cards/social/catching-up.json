@@ -21,7 +21,7 @@
     "en": "What was toughest about moving was not knowing anyone.",
     "alternatives": [
       "The toughest part of moving was not knowing a soul.",
-      "What I struggled with most after moving was knowing no one."
+      "The hardest thing about moving was not knowing anyone."
     ],
     "point": "What was toughest で主語を作り、was の後に動名詞",
     "topic": "social",
@@ -34,12 +34,12 @@
   {
     "id": "c_2h5v3w2j",
     "ja": "最近、週末は何をしてるの？",
-    "en": "What do you do on weekends lately?",
+    "en": "What do you do weekends these days?",
     "alternatives": [
-      "What are you doing on weekends lately?",
-      "How do you spend weekends these days?"
+      "How do you spend weekends these days?",
+      "What do you usually do on weekends?"
     ],
-    "point": "習慣は現在形 do。「最近」は lately や these days",
+    "point": "習慣は現在形 do。「最近」は these days",
     "topic": "social",
     "subtopic": "catching-up",
     "level": 2,
@@ -73,25 +73,22 @@
     "id": "c_3a5q3u5n",
     "ja": "新しい仕事は前よりずっと楽だよ。",
     "en": "My new job's much easier than before.",
-    "alternatives": [
-      "My new job is a lot easier than before.",
-      "My current job is a lot easier than before."
-    ],
+    "alternatives": ["My new job is way easier now.", "My new job's a lot easier."],
     "point": "比較級の強調は very ではなく much / a lot",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 6,
+    "level": 3,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_3e8z4v7h",
-    "ja": "君の昔の家の隣のラーメン屋、まだある？",
-    "en": "Is the ramen shop next door still open?",
+    "ja": "隣にあったラーメン屋、まだある？",
+    "en": "Is the ramen shop next door still there?",
     "alternatives": [
-      "Is that ramen place next door still open?",
-      "Is the ramen place next door still around?"
+      "Is that ramen place next door still around?",
+      "Does that ramen shop next door still exist?"
     ],
     "point": "「隣の」は next door を名詞の後ろに置く",
     "topic": "social",
@@ -202,13 +199,13 @@
     "ja": "兄、最近よく英語やっとけばよかったって言うんだ。",
     "en": "My brother keeps saying he wishes he'd studied English.",
     "alternatives": [
-      "My brother often says he wishes he'd studied English more.",
-      "My brother keeps saying if only he'd studied English."
+      "My brother often says he wishes he'd studied English.",
+      "My brother keeps saying he should've studied English."
     ],
     "point": "過去を悔やむ wish の後は had + 過去分詞",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 8,
+    "level": 7,
     "grammar": ["wishes-regrets", "reported-speech"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -219,7 +216,7 @@
     "en": "Apparently, my sister abroad is getting some good advice.",
     "alternatives": [
       "I hear my sister abroad is getting some good advice.",
-      "My sister, studying abroad, is reportedly getting good advice."
+      "My sister who's studying abroad is apparently getting good advice."
     ],
     "point": "advice は数えられない名詞。advices にしない",
     "topic": "social",
@@ -270,10 +267,10 @@
   {
     "id": "c_6f4q4j7n",
     "ja": "父は最近、医者に毎日歩かされてるんだ。",
-    "en": "The doctor's been making my dad walk daily.",
+    "en": "The doctor's been making my dad walk every day.",
     "alternatives": [
       "My dad's doctor has him walking every day.",
-      "Lately my dad's doctor makes him walk daily."
+      "Lately my dad's doctor makes him walk every day."
     ],
     "point": "make + 人 + 動詞の原形。to は付けない",
     "topic": "social",
@@ -288,8 +285,8 @@
     "ja": "あのとき留学してたら、今ごろ英語ペラペラなのに。",
     "en": "If I'd studied abroad then, I'd be fluent now.",
     "alternatives": [
-      "Had I studied abroad then, I'd be fluent now.",
-      "If I'd gone abroad to study, I'd be fluent now."
+      "If I'd studied abroad back then, I'd be fluent now.",
+      "If I'd studied abroad then, I'd be fluent by now."
     ],
     "point": "過去の仮定は had+過去分詞、今の結果は would+動詞の原形",
     "topic": "social",
@@ -321,7 +318,7 @@
     "en": "I was wondering how you're finding your new job.",
     "alternatives": [
       "I was wondering how the new job is going.",
-      "I'd love to know how you're finding the new job."
+      "I wanted to ask how your new job is going."
     ],
     "point": "「〜かなと思って」は I was wondering + 疑問詞",
     "topic": "social",
@@ -336,13 +333,13 @@
     "ja": "引っ越しのこと、もっと早く言うべきだったね。",
     "en": "I should've told you about the move sooner.",
     "alternatives": [
-      "I should have let you know about my move earlier.",
-      "I really should have told you I'd moved sooner."
+      "I should have told you about the move earlier.",
+      "I should've mentioned the move sooner."
     ],
     "point": "「すべきだったのに」は should have + 過去分詞",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 8,
+    "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -350,10 +347,10 @@
   {
     "id": "c_6y4p6z7u",
     "ja": "一緒に働いてたタカシ、カナダにいるらしいよ。",
-    "en": "Takashi, who worked with me, is in Canada.",
+    "en": "Apparently Takashi, who worked with me, is in Canada.",
     "alternatives": [
-      "Apparently Takashi, who worked with me, is in Canada.",
-      "I hear Takashi, my old coworker, lives in Canada."
+      "Apparently Takashi, my old coworker, is in Canada.",
+      "I heard Takashi, my ex-coworker, is in Canada."
     ],
     "point": "人の説明は who でつなぎ、主語の直後に入れる",
     "topic": "social",
@@ -365,7 +362,7 @@
   },
   {
     "id": "c_7b8w6f6g",
-    "ja": "毎朝6時に起きなきゃいけないんだ。",
+    "ja": "朝6時に起きなきゃいけないんだ。",
     "en": "I have to get up at six.",
     "alternatives": ["I have to wake up at six.", "I've got to get up at six."],
     "point": "義務は have to + 動詞の原形",
@@ -395,10 +392,10 @@
   {
     "id": "c_7z6c8v8a",
     "ja": "赤ちゃんの写真、見せてもらえますか？",
-    "en": "Could you show me baby photos?",
+    "en": "Could you show me your baby's photos?",
     "alternatives": [
-      "Can you show me baby pictures?",
-      "Could you show me your baby photos?"
+      "Can you show me your baby's pictures?",
+      "Could I see your baby's photos?"
     ],
     "point": "丁寧な依頼は Could you + 動詞の原形",
     "topic": "social",
