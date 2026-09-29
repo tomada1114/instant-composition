@@ -10,7 +10,13 @@
     "level": 3,
     "grammar": ["gerunds", "articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:23d9fd30e35049c90df84d82d1497b95bb1cf845e1a69e7ca1f8d998338e8dcd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3c3y2j5x",
@@ -42,7 +48,13 @@
     "level": 2,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a2910388af86fb5fab509babe5ebb022567f693247b65425cd2444a8573df992",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3p5j6y9k",
@@ -55,20 +67,32 @@
     "level": 1,
     "grammar": ["wh-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5243f0bb31d4fdac3ddde607a34fac6e3448ff982b0d14dce558c974b1c3b009",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3s8s5s7g",
     "ja": "私、これ変えられる？",
     "en": "Can I change this?",
-    "alternatives": ["Can I edit this?", "May I change this?"],
+    "alternatives": ["Can I edit this?", "Can I change it?"],
     "point": "「できる？」は Can I〜?",
     "topic": "tech",
     "subtopic": "tools",
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9c95b8e8da22a54f0623eb25a0ce1b7809682e236ecf2422fe873fa8437fa6ab",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4g6q5g5s",
@@ -125,7 +149,13 @@
     "level": 2,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8d995256167348ba1fa9f2140fe40dcf155878dd05893b66b242883d687c97ee",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5v2z4k8s",
@@ -163,7 +193,13 @@
     "level": 3,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cf71fcaf7caf2694ed78230926776be5fd7428f5357d1e602a31769e177e8bdf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6e4w9f7h",
@@ -198,7 +234,13 @@
     "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:552d17bf63d6ca54f7460a5d1353f4d05a2dfea5b92973d603fba2f7b9e527a2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6z2m4s6c",
@@ -230,7 +272,13 @@
     "level": 3,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b143e2394f0be88127a1852289a43351f294b414f176bbb5b5f04fcd9823b4f2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8f6m5r6w",
@@ -243,6 +291,12 @@
     "level": 2,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a5ce3f37792107c8450ea4e8c20b317e0fbdf99b2c8738b885a4cb9729de98da",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

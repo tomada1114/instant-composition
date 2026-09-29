@@ -13,7 +13,13 @@
     "level": 3,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f3a3ea6eaa47074b7c58665d7b33f8d7c594f96a322b3debb8a4c57c5a6d03c1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3q5x6t3m",
@@ -26,7 +32,13 @@
     "level": 3,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3585e93d79d0d7d5db8cf73fc435606b8f497a452c0c22afef25a127e04c8b85",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5d9b8j2t",
@@ -93,16 +105,22 @@
   },
   {
     "id": "c_6n5z3z9h",
-    "ja": "いい点がありますよ。",
-    "en": "There are good points.",
-    "alternatives": ["There are some good points.", "I see some good points."],
+    "ja": "いい点が二つあるよ。",
+    "en": "There are two good points.",
+    "alternatives": ["I see two good points.", "Two points are good."],
     "point": "複数は There are。point は複数形 points",
     "topic": "work",
     "subtopic": "feedback",
     "level": 1,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:94db7869cdbc0756a7ffdccc48e661388c008c2cf415e87276868e73fc7a6f75",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6n8r5e9m",
@@ -137,7 +155,13 @@
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fc08252c72e2287b90154385be30f2bff4d44efdba203256a9ee968940c37e7b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7c5q3b8n",
@@ -150,7 +174,13 @@
     "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8352d63059afec93edd3fd557d298ef21f51ea86ee37949c3b68e14d16a7cabd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7m3n9r6b",
@@ -163,7 +193,13 @@
     "level": 3,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5a69884ad2973ead3b4e1bdfefa075bc3f6c7745b71646a8896086aa70b6e7bd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7s7t7h5w",
@@ -176,7 +212,13 @@
     "level": 1,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6a1616f724026caa2b85f5858fe5076eaf91d9ebbf4526caa46cd95ed578205b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8a6r9d8a",
@@ -189,7 +231,13 @@
     "level": 2,
     "grammar": ["wh-questions", "modal-obligation-advice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b286dde3949fa033369722fa3e5f64695fa85f368a3ce3f8f4b17df56cca697a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8a9e7h6d",
@@ -243,6 +291,12 @@
     "level": 2,
     "grammar": ["requests-permission", "articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:555aeddcb2cbd4179a3f844ea0f1f1c14a037f0387b30e010cb5ea916f0cc65f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

@@ -10,7 +10,13 @@
     "level": 3,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b4e5e441c5d9881a5c959c86352326173f98709dad73ff6e758d82e6bec9b287",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3f4g3y2q",
@@ -45,7 +51,13 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bfe231ae384a4f56565c1ff7cb0fb34390a30e29798a717c3ebee0dd0bf6ebc8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3u8p2m9d",
@@ -96,7 +108,13 @@
     "level": 2,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c32d23f0fc3282fec3a9a0b6bd541f1d447c508820ae0a19d8d060c14202cece",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4b3w7z9h",
@@ -109,7 +127,13 @@
     "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:812c84f596682e73711088cb9fb769b1c75e7444df4e483ecb78cfc58db29dff",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4m7t6v2c",
@@ -122,7 +146,13 @@
     "level": 1,
     "grammar": ["articles-and-countability", "imperatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b08e9091e4de0f6e0b6669f738b59739792bbd2ab4edaa1520f1add08f217ba0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4q6f5x4a",
@@ -154,7 +184,13 @@
     "level": 3,
     "grammar": ["imperatives", "time-and-if-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ee7bb0a4b52d95776677497998687f11033810d58f505be4c9aaa3743cec7200",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6g3b4s4c",
@@ -178,15 +214,21 @@
   {
     "id": "c_6h6v3t3h",
     "ja": "友達が予定を変えたんだ。",
-    "en": "My friend changed the plan.",
-    "alternatives": ["My friend changed plans.", "A friend of mine changed plans."],
+    "en": "My friend changed plans.",
+    "alternatives": ["My friend changed the plan.", "A friend of mine changed plans."],
     "point": "change plans は複数形。特定の予定なら the plan",
     "topic": "daily",
     "subtopic": "plans",
     "level": 3,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4db53241c3526d227c3855b4449376bd4565adfed119da640daf42bd32520724",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6n9p4b3x",
@@ -221,7 +263,13 @@
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:93c514d14d4b46135eb0150a1a796e844f1c781b6084388010419c72079135fb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8x2v6k8x",
@@ -234,6 +282,12 @@
     "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:344aabeb7d71ecb12715cb8fb7888a20c8ec7ba2d272232310bd85b07caea206",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

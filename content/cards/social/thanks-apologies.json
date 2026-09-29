@@ -10,7 +10,13 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8063d52ca40fa9d920671d8613adf83fbecc37dd876062abc90559b86b4531f0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3a4m4z5b",
@@ -42,7 +48,13 @@
     "level": 2,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c67dbb0b15a537fc45eb7da240ccfff12990b3051e1a233abb833b5b8def40e4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3c5k4w3a",
@@ -77,7 +89,13 @@
     "level": 2,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2185ea39741c9f2967401d2839f1788889da600269ea763e2aa13e3f7257eca0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4k7t2t6a",
@@ -90,20 +108,32 @@
     "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:50bc1f015e452a192a8e5a844aa9e271b77a4f3bcdf328c13aedc83250c27537",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4u4r9t6f",
     "ja": "何かお返しできる？",
-    "en": "Can I repay you?",
-    "alternatives": ["Could I repay you?", "Can I return the favor?"],
-    "point": "「お返しする」は repay",
+    "en": "Can I return the favor?",
+    "alternatives": ["Can I repay you?", "Can I do something in return?"],
+    "point": "「お返しする」は return the favor",
     "topic": "social",
     "subtopic": "thanks-apologies",
     "level": 2,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2b6d3c06ef8d255fb4df4381f5b14ebe8e884e06091544368d8cb421e270d011",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5b3c6x7u",
@@ -160,7 +190,13 @@
     "level": 1,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f2f88bfb9a3134e20876658f1fa8d3165de3c0412123cbd97c4bae4d1f02c321",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6z8d2f6w",
@@ -192,7 +228,13 @@
     "level": 3,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c92ceedfada419eb4c3f121502519e019b51bc3aa9f1c3449ed2e3d22544487",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7r9e5e5g",
@@ -230,19 +272,31 @@
     "level": 3,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4c4bb69c74433a3d81c4e30d77b3ccfed695626f2a76c052e57652b80806f967",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9k6h7s6x",
-    "ja": "今回は許してくれる？",
+    "ja": "許してくれる？",
     "en": "Can you forgive me?",
-    "alternatives": ["Can you forgive me this time?", "Could you forgive me?"],
+    "alternatives": ["Will you forgive me?", "Could you forgive me?"],
     "point": "許しを頼むときは Can you で始める",
     "topic": "social",
     "subtopic": "thanks-apologies",
     "level": 3,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d2364a98cdde52b1c26823b86dff6a06d77f56b80a5ee47ffb0aed50216313e7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

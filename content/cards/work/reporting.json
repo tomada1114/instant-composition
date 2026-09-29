@@ -10,7 +10,13 @@
     "level": 1,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:da87e3495bc933cdf41a3fc0bfb15995aadee5ed1d043acdb1073cc38c276e8b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2v5y9f3f",
@@ -23,20 +29,36 @@
     "level": 2,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d477dda4a5246a4d7743ad419b65f1bb7e09fd0e3262d510c777eb67aa734240",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3w4a9t5d",
     "ja": "不具合は修正されました。",
     "en": "The bug was fixed.",
-    "alternatives": ["The bug got fixed.", "The issue was fixed."],
+    "alternatives": [
+      "The bug got fixed.",
+      "The issue was fixed.",
+      "The bug has been fixed."
+    ],
     "point": "受け身は was + 過去分詞。fix は fixed",
     "topic": "work",
     "subtopic": "reporting",
     "level": 3,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:83b00736723e7ef499139318c258596d10986632135406f248cf79df0c0ac5f1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3y5k3x2q",
@@ -49,7 +71,13 @@
     "level": 3,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bbda449dd1a247a595363854a5c7f5673002973976c67849b810808239a29be8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4m3j8y9u",
@@ -62,7 +90,13 @@
     "level": 1,
     "grammar": ["wh-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:94cb92e3929cee57898f04a2cd02130a0a2dc2015dba4dfa1c76f6dd66e79287",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4y2j8b7z",
@@ -131,14 +165,24 @@
     "id": "c_5u9m9k6b",
     "ja": "進み具合を知らせてね。",
     "en": "Keep me posted.",
-    "alternatives": ["Let me know your progress.", "Keep me updated."],
+    "alternatives": [
+      "Keep me updated.",
+      "Let me know how it's going.",
+      "Update me on your progress."
+    ],
     "point": "Keep me posted は「随時知らせて」の定番",
     "topic": "work",
     "subtopic": "reporting",
     "level": 2,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3025ecb36bc75a6d77a722a7c40c25b2e47d0dd0dc637ad72ab06295b4ffb009",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6c2h8a4f",
@@ -151,7 +195,13 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:22ce162ad3878294e750c871b9e023173cb9dd9a0a3f702c0a6523995541a90e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6q4v4t5c",
@@ -164,7 +214,13 @@
     "level": 2,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c56aec8d6db5b8f9742344cf68101d22814e59f604aa79bf599925eae958fead",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6u2k6a5c",
@@ -199,7 +255,13 @@
     "level": 3,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b97cf66de697c423c0cc4d61d227a3013e63b41ee87403d0c42c5df2cab1235e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8a4m6d8y",

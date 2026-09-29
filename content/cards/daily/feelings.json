@@ -51,20 +51,32 @@
     "level": 3,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0acebd3b879d54ff5c4b90445c2b63b1c65f304489302996f51a1704ac7f4c7a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4e6w5s7b",
     "ja": "一人になってもいい？",
     "en": "Can I be alone?",
-    "alternatives": ["May I be alone a bit?", "Can I have some time alone?"],
+    "alternatives": ["Can I have some time alone?", "Can I have a minute alone?"],
     "point": "許可を求める Can I 〜? に be alone を続ける",
     "topic": "daily",
     "subtopic": "feelings",
     "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cee12880a01031d9dafed664baa052956477dcc8f0f3053f4e15e552a2ef4130",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4v9a4j8e",
@@ -96,7 +108,13 @@
     "level": 1,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:630e2a2702983e8d8b1934d74c74f8b04ebf60d397cd50230fa4448ea0db9b03",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5a9a3b2h",
@@ -109,7 +127,13 @@
     "level": 3,
     "grammar": ["infinitives", "be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:552876d9598993efbdc1eba17f8e0fc2a643580b127c43a62f12e134e3103ce4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6c6d5c7h",
@@ -178,14 +202,20 @@
     "id": "c_8e3q4j9r",
     "ja": "それを聞いて残念です。",
     "en": "I'm sorry to hear that.",
-    "alternatives": ["I'm sad to hear that.", "I'm sorry to hear it."],
+    "alternatives": ["I'm so sorry to hear that.", "Sorry to hear that."],
     "point": "「〜して残念」は sorry + to 不定詞",
     "topic": "daily",
     "subtopic": "feelings",
     "level": 3,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bd8a40178ebd7eb5fb3624eeb044e192050c65c9f835276ace0d30629238c8f5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8t8g5t4q",
@@ -198,7 +228,13 @@
     "level": 2,
     "grammar": ["wh-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a75a57063c65d4736229db2709e19e0fac253f96dbd835c344f4f84a57304768",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8x6x5b9n",
@@ -211,7 +247,13 @@
     "level": 1,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:69024040eb26a00a5489396188fc16d4128dc0758cec522c08e5d9beeba267ec",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9b9h9v7a",
@@ -224,7 +266,13 @@
     "level": 1,
     "grammar": ["wh-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:06195286097e4f6132f1348e2da6b7a721068530b694e10da3743b9f6256d49f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9x9p2r4r",
@@ -237,6 +285,12 @@
     "level": 2,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1f752ff02ebc07174f0fbe95628015d710ced41b6c5c29399504b3c826d47c19",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

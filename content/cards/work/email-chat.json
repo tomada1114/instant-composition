@@ -5,7 +5,7 @@
     "en": "I'll reply tomorrow morning.",
     "alternatives": [
       "I'm going to reply tomorrow morning.",
-      "I'll get back tomorrow morning."
+      "I'll write back tomorrow morning."
     ],
     "point": "その場で決めた予定は I'll。「明日の朝」は tomorrow morning",
     "topic": "work",
@@ -13,7 +13,13 @@
     "level": 2,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:eeb8d251717453c18b72ab5e686c7cacb0dfe46eed54a634bb14403949965009",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3t3r4v3a",
@@ -40,15 +46,21 @@
   {
     "id": "c_3x8v2d8g",
     "ja": "私にも CC してください。",
-    "en": "Please CC me.",
-    "alternatives": ["Please copy me.", "Please CC me on it."],
+    "en": "Please CC me too.",
+    "alternatives": ["Please copy me too.", "Add me to the CC too."],
     "point": "命令文に Please。「私に」は me",
     "topic": "work",
     "subtopic": "email-chat",
     "level": 3,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b7e8b0ce25fd450f3c3ac99ce80b3cbe98dc9020ddc3af266e932e4043414f70",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4s7c6j6n",
@@ -61,7 +73,13 @@
     "level": 3,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:28f6338495627bb04c13736ebcfc82f6d1723e58e66e9b7ac484a7526c0eb4b3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5g6s8v5u",
@@ -74,7 +92,13 @@
     "level": 2,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d752333c552e35db6bd03f031f756e505ef52990092bae12b6eb13dc8337efa0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7u2a2h2j",
@@ -87,7 +111,13 @@
     "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:44f0d94f6b8fb759a15fc6ff55d422bbfc7770006c3b36d0ddecf97d7f4fd4fb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7y4c8y8e",
@@ -100,7 +130,13 @@
     "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cea5e88079994843c2615c58bfd56c14eca36e505bac12b738d03524c01b5896",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8j2w5z2q",
@@ -128,14 +164,20 @@
     "id": "c_8q5z3k3w",
     "ja": "これは急ぎです。",
     "en": "This is urgent.",
-    "alternatives": ["This is important.", "It's urgent."],
+    "alternatives": ["It's urgent.", "This can't wait."],
     "point": "「急ぎ」は urgent。be 動詞は is",
     "topic": "work",
     "subtopic": "email-chat",
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ce3201bf42be4a870a13ab74b53132e7a122618d1f8e8ec27356eaacc8fbe54f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8y5r4p9z",
@@ -201,14 +243,20 @@
     "id": "c_9g6e6m8j",
     "ja": "添付が二つあります。",
     "en": "There are two attachments.",
-    "alternatives": ["Two files are attached.", "I attached two files."],
+    "alternatives": ["Two files are attached.", "There are two files attached."],
     "point": "複数なら There are。名詞は attachments",
     "topic": "work",
     "subtopic": "email-chat",
     "level": 1,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2100d724245ebafa3530bd64b7dbf37039ef3830a20e7bac3b077a5d684bb9a4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9n6p9h8t",
@@ -236,13 +284,19 @@
     "id": "c_9p6p8x2r",
     "ja": "彼に返信するよう頼んだ。",
     "en": "I asked him to reply.",
-    "alternatives": ["I asked him to write back.", "I told him to reply."],
+    "alternatives": ["I asked him to write back.", "I asked him to respond."],
     "point": "ask + 人 + to do。人は him と目的格",
     "topic": "work",
     "subtopic": "email-chat",
     "level": 3,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b4172949a2ccd1a8d88dd9460ee016061276a6e0449e76ff17263ba156082364",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

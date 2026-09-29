@@ -32,7 +32,13 @@
     "level": 2,
     "grammar": ["articles-and-countability", "past-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:738ec0560a4bb4c3a6b59efabce7f150f543455d0cd599e382b2e9938efd0d77",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2v4y4d7e",
@@ -67,7 +73,13 @@
     "level": 3,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2fa5a3994d3b6de6495427958ec1673575d66d27f38a89da495fd20eed63f0d4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3p5x8b2v",
@@ -80,7 +92,13 @@
     "level": 3,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6ac1872f68809a511af2b1b43d9b6a12c8ccde277f0a1b7fdeb63e7ac02b0f7e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4m9c8r7f",
@@ -112,20 +130,36 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0c265014e75b05d61baaf09e23b7a5e5ae776012b676bd7184ebbcdace6195e6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4z6t7m3b",
     "ja": "見て、虹だよ！",
     "en": "Look at the rainbow!",
-    "alternatives": ["Look at that rainbow!", "Check out the rainbow!"],
+    "alternatives": [
+      "Look at that rainbow!",
+      "Look, a rainbow!",
+      "Check out the rainbow!"
+    ],
     "point": "「見て」は look at。see ではない",
     "topic": "social",
     "subtopic": "small-talk",
     "level": 1,
     "grammar": ["imperatives", "articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:eedf4cdbd318ea475604b9131d970c80b1653b552a7399139e5e0958d620bcfb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5c9y3u7f",
@@ -153,40 +187,58 @@
     "id": "c_6a3r9v3p",
     "ja": "私、泳ぎは得意だよ。",
     "en": "I can swim well.",
-    "alternatives": ["I'm a good swimmer.", "I swim well."],
+    "alternatives": ["I'm a good swimmer.", "I'm good at swimming.", "I swim well."],
     "point": "「得意」は can + 動詞 + well で言える",
     "topic": "social",
     "subtopic": "small-talk",
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4e27fcf0bfa66d492cc63c2e96a266dc7315802e5488045c7b418a70e4f85e42",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6z3u5e5d",
     "ja": "彼は料理が上手なんだ。",
-    "en": "He can cook well.",
-    "alternatives": ["He's a good cook.", "He cooks well."],
-    "point": "「上手」は can + 動詞 + well",
+    "en": "He's a good cook.",
+    "alternatives": ["He cooks well.", "He's good at cooking."],
+    "point": "「上手」は a good cook か good at -ing",
     "topic": "social",
     "subtopic": "small-talk",
     "level": 2,
-    "grammar": ["can-could-ability"],
+    "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e8682bf23bcd6d504a68bbcbdced8bd9a46e21213b8cd21d43742158a5dbdf23",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7h9g6y3g",
     "ja": "週末はどこへ行ったの？",
     "en": "Where'd you go this weekend?",
-    "alternatives": ["Did you go anywhere this weekend?", "Go anywhere this weekend?"],
+    "alternatives": ["Where did you go last weekend?", "Where'd you go last weekend?"],
     "point": "where + did + 主語 + 動詞の原形",
     "topic": "social",
     "subtopic": "small-talk",
     "level": 3,
     "grammar": ["wh-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b8c966338a451f38e08f40cbd8ec6cb744ecfc5140e96f9917f31745e2eddd86",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8b3a8p5v",
@@ -214,14 +266,39 @@
     "id": "c_8k3p4k9z",
     "ja": "雨が降ってきたね。",
     "en": "It's starting to rain.",
-    "alternatives": ["It's beginning to rain.", "It has started to rain."],
+    "alternatives": ["It's beginning to rain.", "It started raining."],
     "point": "降り始めは be starting to で言う",
     "topic": "social",
     "subtopic": "small-talk",
     "level": 2,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:087181d3dd8901f9fc3ee3eb93690302ef855aafe25e0a145da813c3f478d1fb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8t5z4n7h",
+    "ja": "近くに公園があるよ。",
+    "en": "There's a park nearby.",
+    "alternatives": ["There's a park near here.", "There's a park close by."],
+    "point": "「〜がある」は there is / there's",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:68c130907189aea56b3d8569e3ad1fbee150d6159e31b29b3fd0aa9151b65ce4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8u9x5e9k",

@@ -32,7 +32,13 @@
     "level": 3,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0eb85a1af42849dde08a9e12bcce83956689af7d290954bad91882bff5c7929e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2p7r4f2x",
@@ -45,7 +51,13 @@
     "level": 2,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dd85022cbffa665c9ef00fb07d1f8a43c5bb759e6623b209c98d06ba84efe2ef",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3q3z6m8j",
@@ -73,14 +85,24 @@
     "id": "c_3w2v6t2j",
     "ja": "歩いて行けるよ。",
     "en": "You can walk there.",
-    "alternatives": ["You can go on foot.", "It's within walking distance."],
+    "alternatives": [
+      "You can go on foot.",
+      "We can walk there.",
+      "It's within walking distance."
+    ],
     "point": "「行ける」は can + 動詞の原形",
     "topic": "travel",
     "subtopic": "directions",
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a5137094829212422b1d3fe05a8e185782674197cb7be1cdb4958a5c7c711843",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3w9u7x5v",
@@ -105,14 +127,20 @@
     "id": "c_4h3z6z3w",
     "ja": "もう一度お願いします。",
     "en": "Could you repeat that?",
-    "alternatives": ["Can you say that again?", "Would you mind repeating that?"],
+    "alternatives": ["Can you say that again?", "One more time, please."],
     "point": "聞き返す丁寧な依頼は Could you 〜?",
     "topic": "travel",
     "subtopic": "directions",
     "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9ffec1f9a2725e269de2c0768e130fbd56bb6b19a2965da4f3e3367c9015cc16",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4x4g7e8g",
@@ -120,7 +148,7 @@
     "en": "Where is the subway entrance?",
     "alternatives": [
       "Which way is the subway entrance?",
-      "Where do I enter the subway?"
+      "Where's the entrance to the subway?"
     ],
     "point": "入口は entrance。場所は Where で聞く",
     "topic": "travel",
@@ -128,20 +156,32 @@
     "level": 3,
     "grammar": ["wh-questions", "articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4dd65b6e500e9ab6d4bcbcf42a59c85dd4938d6cfdd33262dd5fc8d1b40d46a2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5h4a2p3m",
     "ja": "駅は近いですよ。",
-    "en": "The station is near.",
-    "alternatives": ["The station is close.", "It's close by."],
-    "point": "近い は near か close",
+    "en": "The station is close.",
+    "alternatives": ["The station is near.", "It's close by."],
+    "point": "「近い」は close か near で言える",
     "topic": "travel",
     "subtopic": "directions",
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8fb7081c275892def5db8ebb4206edc00b5e5d5fcea9fe79d68e2a38d33c157b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5q9c7u3b",
@@ -154,20 +194,32 @@
     "level": 3,
     "grammar": ["imperatives", "articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:06aa7032a87de9cfc3801e5d182a6ce26e7e2c90714fb4c8653519eee853e229",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5r9a2r8t",
     "ja": "ATMはある？",
     "en": "Is there an ATM?",
-    "alternatives": ["Is there an ATM nearby?", "Does it have an ATM?"],
+    "alternatives": ["Is there an ATM nearby?", "Do you have an ATM?"],
     "point": "「〜はありますか」は Is there 〜?",
     "topic": "travel",
     "subtopic": "directions",
     "level": 1,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:71d3f81402cca035501726f0545909d89d58490b42bff03bd1849d04d976ec2f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6h7e7s9y",
@@ -194,15 +246,21 @@
   {
     "id": "c_6r3r7e5t",
     "ja": "地図を見ています。",
-    "en": "I'm checking the map.",
-    "alternatives": ["I'm looking at a map.", "I'm reading the map."],
+    "en": "I'm looking at the map.",
+    "alternatives": ["I'm checking the map.", "I'm reading the map."],
     "point": "今の動作は am + -ing",
     "topic": "travel",
     "subtopic": "directions",
     "level": 2,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c0a09e4cdeb26fbd62093d9ff7b57e59be6a35a5a2895ae1d71672b7b7b91a02",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7y5r9g5z",

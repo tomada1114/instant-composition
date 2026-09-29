@@ -10,7 +10,13 @@
     "level": 2,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b039de99522f432c3628d55dc0b37b99b46dbadb2ae43ba69080ebbf36dd0f1e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2n4p6t6f",
@@ -23,7 +29,13 @@
     "level": 3,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d852c1b6be3e6c14d68dc4b188e47e36b3c60ce6f7659421dce28775e7756eea",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4d4d7u2a",
@@ -36,7 +48,13 @@
     "level": 1,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:58f2fd78663a41c1f4d8dd62b479bb940124d9e532e9b6c885610588065a0885",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4q8c8j9u",
@@ -90,7 +108,13 @@
     "level": 2,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:04300cf816f33cb57d646f61499d99aa2d60e0fd9234033fe8c1440d6a8c25d0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5q3q2a6s",
@@ -137,14 +161,20 @@
     "id": "c_5s3q6n5b",
     "ja": "電車に乗り遅れました。",
     "en": "I missed my train.",
-    "alternatives": ["I missed the train.", "I was late for my train."],
+    "alternatives": ["I missed the train.", "I couldn't catch my train."],
     "point": "乗り遅れるは miss。過去形は missed",
     "topic": "travel",
     "subtopic": "transport",
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fd7800c552825622b9475849b0a192c614710a8c94bdc9be7ea5b3cd6016b635",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6b8m2k8k",
@@ -157,7 +187,13 @@
     "level": 1,
     "grammar": ["wh-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:32b08c9edf5c3d83c62843f9d9373dae801a2589ef8905e64b638834aad9b444",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6v2u8q8x",
@@ -192,7 +228,13 @@
     "level": 3,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b767e45afc9a7fa02669b01953ef164fd9a34af4d50e1f88951103287079526f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7s5a5q2b",
@@ -205,7 +247,13 @@
     "level": 3,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:34724d0b8fc828a4bd71ebb3a1a819dde77670d09a3f9b01f48de38fd217ca3b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7u5v4r3w",
@@ -237,6 +285,12 @@
     "level": 1,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:afcca7c8f0e9cf32501dda05fefc6653ff790f98ac4f92cecfad9fcf5cbb3e60",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

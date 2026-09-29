@@ -10,7 +10,13 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ff76f556106c3c15f5b781e9a52f837f262d36e57d1b77a10cf583be4c8655e1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3k5h5s5f",
@@ -73,14 +79,24 @@
     "id": "c_4a4p8g3g",
     "ja": "試したほうがいいよ。",
     "en": "You should try it.",
-    "alternatives": ["You'd better try it.", "You ought to try it."],
+    "alternatives": [
+      "You should give it a try.",
+      "You should try it out.",
+      "I'd try it."
+    ],
     "point": "「〜したほうがいい」は should + 動詞の原形",
     "topic": "daily",
     "subtopic": "shopping",
     "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4e6d35f996deeae7473fd66e4e9f9194fdcc131e56d3156629405ee0c2051b1b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4g7e7f4n",
@@ -93,7 +109,13 @@
     "level": 1,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b71f632f4cf2cd2f8b0de41cfd8af2514143c0e95ae691a52ad5124af69b5775",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4p3m2x8b",
@@ -120,10 +142,10 @@
   {
     "id": "c_5b2r9u5e",
     "ja": "もう荷物を受け取ったよ。",
-    "en": "I've already got the package.",
+    "en": "I've already received the package.",
     "alternatives": [
-      "I've already received the package.",
-      "I have already gotten the package."
+      "I've already gotten the package.",
+      "I've already got the package."
     ],
     "point": "「もう〜した」は have + 過去分詞 + already",
     "topic": "daily",
@@ -131,20 +153,32 @@
     "level": 3,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f24770e0eecf83c41739aee10d50622ef13347c9a47b9f4f255da0905900472f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6h6j9s4x",
     "ja": "レシート、取っといて。",
     "en": "Keep the receipt.",
-    "alternatives": ["Hold on to the receipt.", "Make sure you keep the receipt."],
+    "alternatives": ["Hold on to the receipt.", "Save the receipt."],
     "point": "「取っておく」は keep。命令文は動詞から始める",
     "topic": "daily",
     "subtopic": "shopping",
     "level": 2,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:46a4313e3a268e2fbe38a414b12076ed69dbc728989423abb5d7073f9c94afde",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6v5y9u7v",
@@ -157,7 +191,13 @@
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7813089c2ce9b40310219be93faa1fdd403c2717825e06480b602ac1e296ee9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7f4f4b9p",
@@ -181,18 +221,21 @@
   {
     "id": "c_8g6j3g6m",
     "ja": "Mはまだ残ってますか？",
-    "en": "Are there any Mediums left?",
-    "alternatives": [
-      "Do you still have any medium ones?",
-      "Are there any mediums still available?"
-    ],
+    "en": "Are there any mediums left?",
+    "alternatives": ["Do you still have any mediums?", "Is size M still available?"],
     "point": "「残っている」は there are ～ left",
     "topic": "daily",
     "subtopic": "shopping",
     "level": 4,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:03d5fe8626250441659584ad7577eb2d1747905d5381ecc1caf02af79b0e8a5d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8h9r9p6c",
@@ -208,7 +251,13 @@
     "level": 4,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:db53de88d6267be91477dbd9756c989e70cbc3e015fe8a58be5b539a13c8007b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9n5g7f9w",
@@ -240,6 +289,12 @@
     "level": 2,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1fcfd4bcdac9b9cc03b763a3abea13bc739705271d50eb4cbb9b36c3d2dffae6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

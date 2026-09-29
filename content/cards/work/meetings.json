@@ -10,7 +10,13 @@
     "level": 3,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:43c047836c694101b8269c0ca43a7b16df8d34fdf85b6826a937fb2efd85cb6a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3q2v6z6c",
@@ -87,7 +93,13 @@
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fc646c577879e957a3557c18e0e543ac444385a53ef1ec0347364ab3c324300e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5m9b6g4c",
@@ -100,7 +112,13 @@
     "level": 1,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8b7073a31ed52ce5051c271704d3040389b4c558c9e7f6ad29e36f0f2715764a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5s2v9x5d",
@@ -116,20 +134,36 @@
     "level": 3,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:26440ad08f59ebf8f45090f25d33602ff9e4f250bf928ce09ad1857abe66d81f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5v6e7w2x",
     "ja": "3時に始めます。",
     "en": "We start at three.",
-    "alternatives": ["We begin at three.", "We're starting at three."],
+    "alternatives": [
+      "We begin at three.",
+      "We're starting at three.",
+      "We'll start at three."
+    ],
     "point": "時刻の前は at。予定の開始は現在形でも言える",
     "topic": "work",
     "subtopic": "meetings",
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:25e4c0302baded952d9fe7be6cb07c9dd2c1a755f3b28f9bd95d30d29088b4a5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6m5r2s3k",
@@ -145,7 +179,13 @@
     "level": 3,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4124d447a9c2c62117793eaf18c7c0bee2c595e385a5305b8d66a9831f7bd3a1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7z3h6x8b",
@@ -199,7 +239,13 @@
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:066c492a8e11263d98ba9422c97bbabadf0d685264c5aea09793687f7e4d7afe",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8t9p7n4e",
@@ -227,14 +273,20 @@
     "id": "c_9f5n2f9x",
     "ja": "メモは私が取れますよ。",
     "en": "I can take notes.",
-    "alternatives": ["I can take the notes.", "I can write the notes."],
+    "alternatives": ["I can take the notes.", "I'm happy to take notes."],
     "point": "「メモを取る」は take notes。notes は複数形",
     "topic": "work",
     "subtopic": "meetings",
     "level": 2,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c80a770cd5882208411a91392eb3f6cf573f59c4431ce69c6045f16bec75884d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9x4m8r2r",
@@ -247,6 +299,12 @@
     "level": 2,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f7bb8fe20c3f9449c0bcfcea138a58ef93638e78b5996b4820149dab32fecf93",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

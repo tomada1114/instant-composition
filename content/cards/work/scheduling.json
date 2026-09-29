@@ -10,7 +10,13 @@
     "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:44135b7676710c7a7c1e2310cab4fab590558543985e71e5a033d072a0b34078",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3k7p2s6k",
@@ -23,7 +29,13 @@
     "level": 3,
     "grammar": ["wh-questions", "be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3874046cfb02490c373db6c76bbc924ff3c90626e0d3b4528c957c62e5724d02",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3r8v8f5k",
@@ -36,20 +48,36 @@
     "level": 1,
     "grammar": ["wh-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:39182d58e63da0d2d6227ae945133fa79b0629db88c4da2b7d1d929edac7ccf3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4a9v2y7z",
     "ja": "会議を遅らせてもいい？",
     "en": "Can we delay it?",
-    "alternatives": ["Could we delay it?", "Can we push it back?"],
+    "alternatives": [
+      "Could we delay it?",
+      "Can we push it back?",
+      "Can we delay the meeting?"
+    ],
     "point": "「延期する」は push back。許可は Can we",
     "topic": "work",
     "subtopic": "scheduling",
     "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:536118061a71cda1bac6717e3b75340191aa209e0cbb3256d5296fb7a08039dc",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4u4e3x4u",
@@ -84,7 +112,13 @@
     "level": 3,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b78b8d6075a4efcda7d3b1e1ece1198493506f9ff4c167452297749868032d6c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5m4j7y6v",
@@ -97,7 +131,13 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:43874c2cc07ed80280b1b546a124ddd6a33f39f338625b2ef8b23d0cb9661c8c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6m5j9g4d",
@@ -195,20 +235,32 @@
     "level": 2,
     "grammar": ["wh-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8a00e058e69a37c4250a334dac97c84f4ba8965972ef16d136db1b4112a2b95f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8d3y5j8g",
     "ja": "締め切りは月曜です。",
     "en": "The deadline is Monday.",
     "alternatives": ["The deadline is on Monday.", "It's due Monday."],
-    "point": "next Monday に at や on は付けない",
+    "point": "「締め切り」は deadline。It's due Monday. とも言える",
     "topic": "work",
     "subtopic": "scheduling",
     "level": 2,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4a04c1d9cf74f32b876f7837857e4cfa1906d08b76d5ba277056aa209846f990",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8p2d4u9a",
@@ -221,7 +273,13 @@
     "level": 3,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a3d93c8206c271f5579e31a01a201eac7240795233970e815d2bd58ac14819e8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9q6y6y3q",

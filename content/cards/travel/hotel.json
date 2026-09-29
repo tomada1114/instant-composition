@@ -3,14 +3,24 @@
     "id": "c_3w8r8a6w",
     "ja": "Wi-Fi使える？",
     "en": "Can I use Wi-Fi?",
-    "alternatives": ["Is Wi-Fi available?", "Can I connect to Wi-Fi?"],
+    "alternatives": [
+      "Is Wi-Fi available?",
+      "Can I connect to Wi-Fi?",
+      "Do you have Wi-Fi?"
+    ],
     "point": "「〜できますか」は Can I 〜?",
     "topic": "travel",
     "subtopic": "hotel",
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c27354db90d7388f7aad580180dabfcfeaeb8aac49aa9c6f30120da86e7ee3de",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4t5c9h2j",
@@ -23,27 +33,36 @@
     "level": 3,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1a957d90a6d070bc5610515b31acf6a1a72bc8f7400ca5a69ce304b61b1b0401",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4z7j8v9f",
     "ja": "今日は掃除は結構です。",
     "en": "Please skip cleaning today.",
-    "alternatives": [
-      "Please don't clean my room today.",
-      "Don't clean the room today, please."
-    ],
+    "alternatives": ["Please don't clean my room today.", "No cleaning today, thanks."],
     "point": "「しないで」は Don't か skip で言える",
     "topic": "travel",
     "subtopic": "hotel",
     "level": 2,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3b2b486a37ee49c1f82a9046bef54f83f6e63ff931f5c57bf67fa7de7b2065b5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5j9b9r8g",
-    "ja": "タオルをください。",
+    "ja": "タオルを何枚かください。",
     "en": "Some towels, please.",
     "alternatives": ["Can I have some towels?", "I need some towels."],
     "point": "数が決まらない複数は some towels",
@@ -52,7 +71,13 @@
     "level": 1,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e0e004a4e4926c069a0ab04786b77eefe34b9601b7a2ba5ea4597c644b283115",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5m2u5n6k",
@@ -128,20 +153,32 @@
     "level": 3,
     "grammar": ["gerunds", "requests-permission"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b6fa7229b9d0f4f853043d80161ec79f5680f69eb2e5da8a83fef75bf55a3454",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6h6g5p7p",
     "ja": "この部屋は禁煙ですか？",
     "en": "Is this room nonsmoking?",
-    "alternatives": ["Is this a no-smoking room?", "Is smoking banned in this room?"],
+    "alternatives": ["Is this a no-smoking room?", "Is this room smoke-free?"],
     "point": "「禁煙の」は nonsmoking か no-smoking",
     "topic": "travel",
     "subtopic": "hotel",
     "level": 2,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:505041507322829aaa9b82d0534d3be96246ea0bf99c605231b54a57103a93ff",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7g8s4v3r",
@@ -154,7 +191,13 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a53b22e4b3528c46995dd689a2df50ae142febc7f619eada03cd9785039b78fb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7t6t7r8j",
@@ -189,7 +232,13 @@
     "level": 2,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2cd797d611f07e77facc195cb204c4e0f0dc290b913c5c607a1e65cb97839659",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8r6v7v8z",
@@ -221,7 +270,13 @@
     "level": 3,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bad1756a78e0adb88606c701e0a78194d1f66949fe2d2345f28d482cb95f5296",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9h2a6c9k",

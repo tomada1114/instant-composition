@@ -73,7 +73,13 @@
     "level": 2,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:da3e2bc63e0f11d2a576beebcd02cbf0b4e7318479faef7a2a622f799e5fbe58",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4z4r6d7p",
@@ -86,7 +92,13 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fbe322236b55ec12b1fdc8d54ae85c81110e53340010397716b4f16e3cf73a32",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5s9q8a5g",
@@ -111,14 +123,20 @@
     "id": "c_6g9y3z8s",
     "ja": "一つお願いがあります。",
     "en": "I need a favor.",
-    "alternatives": ["I have a favor to ask.", "Could I ask you a favor?"],
+    "alternatives": ["I have a favor to ask.", "I'd like to ask a favor."],
     "point": "favor は数えられる名詞。a を付ける",
     "topic": "work",
     "subtopic": "requests",
     "level": 3,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e1cde11def04f343a0e4411f08ba928d50ab161066dbcf290a1c04a73b9a4b7c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7k9u6s9m",
@@ -131,7 +149,13 @@
     "level": 3,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:648b559b5b00d0a0110135535b02b6be814849056593e847525f6f2b3334a2db",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7s7x8m4w",
@@ -144,20 +168,32 @@
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:57971945b093b57981b17364b0cada2d5433fa43711114fa4a80774ec639ad27",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8b7b3d5y",
     "ja": "それは私の仕事です。",
     "en": "That's my job.",
-    "alternatives": ["That's my responsibility.", "That's my area."],
+    "alternatives": ["That's my responsibility.", "It's my job."],
     "point": "「それ」は That。That's は That is の短縮",
     "topic": "work",
     "subtopic": "requests",
     "level": 2,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dc3b200bd49fb16e12f51648f20797a8d4432e74c87fcb71e8fc1c521ca9d596",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8e5f4f2h",
@@ -192,7 +228,13 @@
     "level": 1,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8cfe70ba09402c4d40ba8bfa0c7ee2beadc9217ace42468e23f660112dc928c2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8m4g6w6g",
@@ -205,7 +247,13 @@
     "level": 1,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a93ac0c7fee56966ebd7717cc3fade95e787b992d0d330aa47bc85f9ae5fab47",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8n2b3j5f",
@@ -240,7 +288,13 @@
     "level": 3,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:60606a26185a54c3a3cc7a68957c81beb5f0f9ee07b191c66680d7c6e98de08d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9v2c8f6m",

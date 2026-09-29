@@ -10,7 +10,13 @@
     "level": 3,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:62aa535ee2dc53c131f2fea4bf0f3361c243c90e105f3002d869760a841d84db",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2j5u6y9h",
@@ -45,7 +51,13 @@
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6750b8ac3e0ed8ed63728fc7151d22d7c65b47f0fcd17e208eca20ea5ef8839a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3k3x3g9v",
@@ -80,7 +92,13 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:63768d9eeabcd622daf07661eb6e4b5da50f57450d899fbc658dcd5070766bb3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3p2j4r6x",
@@ -115,7 +133,13 @@
     "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:683c22b02111669f01cb6a2bd51ba1af138cf3b07a579eb67c419752c0dd3876",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3s2v2n5k",
@@ -128,7 +152,13 @@
     "level": 2,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:17cac9d7491d9ee6bee99b620e5f54e24d87cfd9c1cc5445814c97d8f6896a47",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3x9j3s3d",
@@ -153,14 +183,20 @@
     "id": "c_4b4p6v9g",
     "ja": "先週、彼に誘われたよ。",
     "en": "He invited me last week.",
-    "alternatives": ["Last week he invited me.", "He asked me last week."],
+    "alternatives": ["Last week he invited me.", "He invited me out last week."],
     "point": "日本語は受け身でも英語は he を主語に",
     "topic": "social",
     "subtopic": "invitations",
     "level": 3,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2cdda2ee36ee0d21ac42b593c9709dcc4bf5fb6526309b13c04d05f0506efb12",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4s4n3b8p",
@@ -173,7 +209,13 @@
     "level": 1,
     "grammar": ["wh-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:787238c091d95de0f28b0fbd8ba30a0baf85d4c6b3152be2b1f268bc58a5d488",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4z3y6s7p",
@@ -205,7 +247,13 @@
     "level": 3,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:45b63803335c9ce99635e1539d5f9d2a697b87c566832ddf905cc461769d94b7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7b9d2e5w",
@@ -252,13 +300,19 @@
     "id": "c_9y7p5c5d",
     "ja": "早く来たほうがいいよ。",
     "en": "You should come early.",
-    "alternatives": ["You'd better come early.", "You should get here early."],
+    "alternatives": ["You should get here early.", "It's best to come early."],
     "point": "「〜したほうがいい」は should",
     "topic": "social",
     "subtopic": "invitations",
     "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0fb4c580a840e2921b0a12df28242c05866e9c7796232adce1078c34e2f0f60e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

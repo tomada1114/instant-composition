@@ -10,7 +10,13 @@
     "level": 3,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e8d6721dfb196f370b5e7a72c67527fda089c2c6d1e09e2abe7791430c60a2e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3w5n2w4v",
@@ -23,7 +29,13 @@
     "level": 3,
     "grammar": ["there-is-are", "articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:18011178ff622c3012ff1b2c003471da44dffadbc45a6bcf64107761a83b9434",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4j3a7e5g",
@@ -51,14 +63,20 @@
     "id": "c_5b8b6w9m",
     "ja": "音声にラグがあります。",
     "en": "There's a lag.",
-    "alternatives": ["There's a delay.", "I'm hearing a lag."],
+    "alternatives": ["There's a delay.", "There's audio lag.", "The audio is lagging."],
     "point": "ラグは a lag。There's + 単数名詞",
     "topic": "work",
     "subtopic": "phone-calls",
     "level": 2,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fb2d26d1cda85b234dd0293163324dc614e40c99c214fbf0271a49e4a6938457",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6t4z4z4t",
@@ -90,7 +108,13 @@
     "level": 1,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bc1cdeea6fa1b21374174efed1d43b3c9746d3d4e88e95b23f0b9d9ebc571413",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6y3e3t8s",
@@ -103,7 +127,13 @@
     "level": 1,
     "grammar": ["there-is-are", "articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f2be6dc6b0c1e4e75a3de2385099ebf322629461034033b482b660a4ce5a87fa",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6y5a6a6g",
@@ -116,7 +146,13 @@
     "level": 2,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c51df02373cb51992e52b1a168de348a556fc23c0751d8a013d93245f0b265a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7j6g6x4b",
@@ -129,7 +165,13 @@
     "level": 3,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:758608980c8d760a0f4ca2bfd074b7f9ca5d53ab786b31763787c14300403e24",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7u6u3d5z",
@@ -142,7 +184,13 @@
     "level": 1,
     "grammar": ["wh-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:06a2bb6beb15fdc6da8377713b4ee3e810ef439ae4d78b6c343476c5ff5aada9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8h7h9v7u",
@@ -218,7 +266,13 @@
     "level": 2,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:591c4f7659bcfde095519a76e9bacc3e3597868020d4ecba170890f80a66b974",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9z4p4h6u",

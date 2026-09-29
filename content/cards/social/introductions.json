@@ -2,15 +2,25 @@
   {
     "id": "c_2a8k6q3a",
     "ja": "自己紹介しなきゃね。",
-    "en": "I must introduce myself.",
-    "alternatives": ["I have to introduce myself.", "I should introduce myself."],
-    "point": "「〜しなきゃ」は must か have to",
+    "en": "I should introduce myself.",
+    "alternatives": [
+      "I need to introduce myself.",
+      "I have to introduce myself.",
+      "I'd better introduce myself."
+    ],
+    "point": "「〜しなきゃ」は should か have to",
     "topic": "social",
     "subtopic": "introductions",
     "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:901718d46c43d600c97cd90b9affec3ffab420d24f9c5814b09b080ad9a12853",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3e2h2m8p",
@@ -56,15 +66,21 @@
   {
     "id": "c_4n6z6c2x",
     "ja": "ピアノが弾けます。",
-    "en": "I can play piano.",
-    "alternatives": ["I play the piano.", "I can play the piano."],
-    "point": "「弾ける」は can + 動詞",
+    "en": "I can play the piano.",
+    "alternatives": ["I can play piano.", "I'm able to play piano."],
+    "point": "「弾ける」は can + 動詞。楽器には the を付ける",
     "topic": "social",
     "subtopic": "introductions",
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:71e459d6970bf7fa59e6526e1e2eef746608ab7db61cf5607e963170f5e40128",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5h8s6t6p",
@@ -77,7 +93,13 @@
     "level": 2,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ffe18f9c615f15fa4d0ee49b133380a1730b47a06090ef5def55838e5c3e45b1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7f5g2j9b",
@@ -90,7 +112,13 @@
     "level": 3,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:45008578797f7d300fc2deed58fcd7a88066709e86e9479947180b02d3da255d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8n8b3n4z",
@@ -103,20 +131,13 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
-  },
-  {
-    "id": "c_8t5z4n7h",
-    "ja": "近くに公園があるよ。",
-    "en": "There's a park nearby.",
-    "alternatives": ["There's a park near here.", "There's a park close by."],
-    "point": "「〜がある」は there is / there's",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 1,
-    "grammar": ["there-is-are"],
-    "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fe9dfd908e72eeea7f0f1b6ea9830dfe1638b80692840f7125b872532d815354",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8v8h7m7u",
@@ -142,7 +163,7 @@
   },
   {
     "id": "c_9e2b8q3v",
-    "ja": "加藤さんに、挨拶を頼まれた。",
+    "ja": "加藤さんによろしくと頼まれた。",
     "en": "Kato asked me to say hi.",
     "alternatives": ["Kato asked me to say hello.", "Kato wanted me to say hi."],
     "point": "「人に〜を頼む」は ask 人 to do",
@@ -151,7 +172,13 @@
     "level": 4,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dde7535ffa047fc7f6219906814dbeed9ffdbb6d8dd3bcd3c0abb923416505d3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9f9k9a9u",
@@ -176,14 +203,20 @@
     "id": "c_9k6c6y4p",
     "ja": "料理なら少しできます。",
     "en": "I can cook a little.",
-    "alternatives": ["I can cook a bit.", "I cook a little."],
+    "alternatives": ["I can cook a bit.", "I can cook a little bit."],
     "point": "a little で「少し」の控えめさが出る",
     "topic": "social",
     "subtopic": "introductions",
     "level": 3,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:df86dfe589c0a1252e59f275412121a9ead2b88049d32d6db5569197d9f6f6ea",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9t7c2w8f",
@@ -196,7 +229,13 @@
     "level": 3,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6ea57e2ddac676d74679544531918fb8f7e4a0e38ecaed76b66094e1a33b8a41",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9x4z9n8c",
@@ -231,6 +270,12 @@
     "level": 2,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c918f9192fa3c4b7cfd1b84d699bf5cb63562fcfd8dd628696c9a15d4041c64e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

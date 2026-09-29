@@ -10,7 +10,13 @@
     "level": 1,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1d16988da69480ad0967b2f02911952c8f709867c9380bcf7fa08e8d1f698c88",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3x7d4c3g",
@@ -26,7 +32,13 @@
     "level": 3,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:44a3ee9dfc2a74f5969c37d302f1d847556d79599ede3fb49dea517985ec5ec7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4b6b2y2f",
@@ -39,7 +51,13 @@
     "level": 3,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:082c64fba66e16bc91523bae9020f8abbae0d96ec994261612348f80865f98fa",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4g6k5b7t",
@@ -90,7 +108,13 @@
     "level": 3,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:90f98ce9757d070b53489d342b87a99600361bc0126a1b6f3865d8bc8762a71f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4t9p8g2r",
@@ -125,7 +149,13 @@
     "level": 1,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e01523c095821a641aae17d3f9cfe64ac21850c13e196555ada518cfaa003fbf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6m3t3h7p",
@@ -179,7 +209,13 @@
     "level": 2,
     "grammar": ["there-is-are", "articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:64d8bdfb99af2a63841a6b121c2e8cfc59b3207c4e561960b6dfd73c5cde78aa",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7z8w3v9p",
@@ -217,7 +253,13 @@
     "level": 4,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1a7daf5171e0c88499b71a64d3161ef98793a75a26b3b073212adc9c1a7aa2b2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9n3w7k9b",
@@ -230,7 +272,13 @@
     "level": 2,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:594bb1d909ddc19e2518032e1dcd92c9630e165bfb5f17bef98867996d9842c0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9y8a8b2y",
@@ -243,6 +291,12 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cb0840cfe494b4b4b2874d54a155a524683fc4a76fbe0b22230f829819749a0b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

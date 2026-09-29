@@ -3,40 +3,62 @@
     "id": "c_2q2x6n3t",
     "ja": "ゴミは分別すべきです。",
     "en": "We should sort the trash.",
-    "alternatives": ["We have to separate the trash.", "Trash should be sorted."],
+    "alternatives": [
+      "Trash should be sorted.",
+      "We should separate the trash.",
+      "You should sort the trash."
+    ],
     "point": "「〜すべき」は should + 動詞の原形",
     "topic": "work",
     "subtopic": "office-life",
     "level": 3,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:431f2a940bcee0219e9d44a69b9843bddc5d9cb80de8c319dcc9c5db8d989f4e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2w8t6c5d",
     "ja": "コーヒーを入れたよ。",
     "en": "I made some coffee.",
-    "alternatives": ["I brewed some coffee.", "There's fresh coffee."],
+    "alternatives": ["I brewed some coffee.", "I made us some coffee."],
     "point": "coffee は数えられない名詞。some を使う",
     "topic": "work",
     "subtopic": "office-life",
     "level": 1,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8d98a10faef7a6c889f848a2754df730aea10c381aabef440e7f30f4cf1d6404",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3a2s2c2m",
     "ja": "お昼、どこで食べる？",
     "en": "Where should we eat lunch?",
-    "alternatives": ["Where do you want to eat?", "Where are we eating?"],
+    "alternatives": ["Where do you want to eat?", "Where should we go for lunch?"],
     "point": "「どこで〜する？」は Where should we〜？",
     "topic": "work",
     "subtopic": "office-life",
     "level": 3,
     "grammar": ["wh-questions", "modal-obligation-advice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e83c4ad612a499d8438d76703916cc416bb4024ad65d4de415e486018468129a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3s3k3s3u",
@@ -49,7 +71,13 @@
     "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dfc490daa0f3f895913359c08501b67854b4a2b93ff23f80c34eff8895dafd34",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4f5t6x7d",
@@ -95,15 +123,21 @@
   {
     "id": "c_5g7w7f7s",
     "ja": "新しい椅子が届いた。",
-    "en": "The new chairs arrived.",
-    "alternatives": ["Our new chairs are here.", "The new chairs came."],
+    "en": "The new chair arrived.",
+    "alternatives": ["The new chair is here.", "The new chair came in."],
     "point": "届いた新しいものには the を付ける",
     "topic": "work",
     "subtopic": "office-life",
     "level": 2,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ec72baacaae47c95c38d047df6e3613e08ef844d5d1776c8edbb83964970069f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5r7n4r5v",
@@ -176,7 +210,13 @@
     "level": 2,
     "grammar": ["there-is-are", "articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:375f1f1fee2693ffab19ca8fee87d1fc745dac80f808a0c76a9c094f84e2409c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6k5e4d5g",
@@ -200,28 +240,40 @@
   {
     "id": "c_7u6v4e6j",
     "ja": "空いてる会議室がないよ。",
-    "en": "There are no free rooms.",
-    "alternatives": ["There isn't a free room.", "No meeting room is free."],
-    "point": "「〜がない」は There are no + 複数名詞",
+    "en": "There's no free meeting room.",
+    "alternatives": ["There are no free meeting rooms.", "No meeting room is free."],
+    "point": "「〜がない」は There's no + 名詞",
     "topic": "work",
     "subtopic": "office-life",
     "level": 3,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f6df5620d6ee427f7be2deab5965940af1adf19838edbde765129c06741ee72f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9h2q3y3e",
     "ja": "今なら手伝えるよ。",
     "en": "I can help now.",
-    "alternatives": ["I can lend a hand.", "I'm free to help."],
+    "alternatives": ["I can help right now.", "I can help you now."],
     "point": "できる は can + 動詞の原形",
     "topic": "work",
     "subtopic": "office-life",
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4a0374b288c90bbdf2bcc1bf3820977d0c5dae66f75a03663604fbc292941d3c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9r6u9v4z",
@@ -234,6 +286,12 @@
     "level": 1,
     "grammar": ["wh-questions", "articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:093a3d8e6966b1861b4ecc55226f137193dacc1ed5c5255a864d670b91e84b29",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

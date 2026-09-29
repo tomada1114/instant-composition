@@ -48,7 +48,13 @@
     "level": 3,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c3ee69884ca5fcd84c56f0ae53de726940c017700d38bc74cdaded4d15d94b85",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2y6f8r3h",
@@ -61,33 +67,51 @@
     "level": 1,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1b16ab8243e7f51fe1b31adb6e541b9bc355fac473b24d38566fcd8a5b2dd562",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3a2w2t7x",
     "ja": "ケンに名前変更を頼んで。",
     "en": "Ask Ken to rename it.",
-    "alternatives": ["Tell Ken to rename it.", "Please ask Ken to rename it."],
+    "alternatives": ["Please ask Ken to rename it.", "Ask Ken to change the name."],
     "point": "ask + 人 + to 動詞の形",
     "topic": "tech",
     "subtopic": "code-review",
     "level": 3,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:136cff1521aa8161a2c2b42c0e617b5e9335fda31fc1b8a6007870cd070e7955",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3y8j9k4h",
-    "ja": "PR が前より小さい。",
-    "en": "The PR is smaller.",
-    "alternatives": ["The PR is smaller than before.", "The PR is smaller now."],
+    "ja": "この PR は前より小さい。",
+    "en": "It's smaller than before.",
+    "alternatives": ["The PR is smaller than before.", "This PR is smaller now."],
     "point": "比較は形容詞 + er",
     "topic": "tech",
     "subtopic": "code-review",
     "level": 2,
     "grammar": ["comparatives-superlatives", "be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f452b4fb34e9506bf370dfc590810e5a8e222d39fd01fb9a283cdac8c88c68a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4g9v6e3n",
@@ -100,20 +124,13 @@
     "level": 1,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
-  },
-  {
-    "id": "c_4h2v2r6v",
-    "ja": "もっと速くできるよ。",
-    "en": "This could be faster.",
-    "alternatives": ["We can make this faster.", "This can be faster."],
-    "point": "「できるよ」は can / could で提案する",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 2,
-    "grammar": ["can-could-ability", "comparatives-superlatives"],
-    "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:29b9ad670917dffc90be00de95c8fd0c14176aec71bd8c41f6543b40eec8ad2e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4x6m6c5y",
@@ -192,33 +209,70 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:27cf9e61d998782e4956399677c29fedb544a51e7cc8d97007d43af6eb6d14d2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8f8x2n8k",
     "ja": "もうテストを直したよ。",
     "en": "I've fixed the tests.",
-    "alternatives": ["I already fixed the tests.", "The tests are fixed now."],
+    "alternatives": ["I already fixed the tests.", "I already fixed the test."],
     "point": "完了は have + 過去分詞",
     "topic": "tech",
     "subtopic": "code-review",
     "level": 3,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9c416f0b5d5a2238eb74ac36e39094186c9d877e2fb1d7e1ad3bf51cf156fcc9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8t2g6a2j",
     "ja": "これ、私には追えない。",
     "en": "I can't follow this.",
-    "alternatives": ["I can't understand this.", "This is hard to follow."],
+    "alternatives": ["I can't keep up with this.", "I can't follow it."],
     "point": "「追う」は follow を使う",
     "topic": "tech",
     "subtopic": "code-review",
     "level": 2,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a91db6980926901c83f0e2c72cf0524252aa70fb0b69b1e0c31b3c39cb57fccb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9j5e2g3p",
+    "ja": "私ならもっと速くできるよ。",
+    "en": "I can make it faster.",
+    "alternatives": ["I can speed it up.", "I can do it faster."],
+    "point": "「速くできる」は can make it faster",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 2,
+    "grammar": ["can-could-ability", "comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:18926a1d5aaa6d0c9620655c2e05a88f6b399542193b423b67ba974aff11f922",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9k4k6r2e",

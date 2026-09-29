@@ -1,18 +1,5 @@
 [
   {
-    "id": "c_2g8s4t5k",
-    "ja": "仕事はどう？",
-    "en": "How's work?",
-    "alternatives": ["How's work going?", "How's your work?"],
-    "point": "調子は how で聞く",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 1,
-    "grammar": ["wh-questions"],
-    "createdAt": "2026-09-29",
-    "stamps": {}
-  },
-  {
     "id": "c_2h5s9c3s",
     "ja": "引っ越すことにしたんだ。",
     "en": "I decided to move.",
@@ -23,7 +10,13 @@
     "level": 3,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:91b81b999d50f96a2414a3594a10e9a8ed6f8be927135c7e2ff8e85d21139103",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2h7n3d9e",
@@ -58,7 +51,13 @@
     "level": 3,
     "grammar": ["wh-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7174066aa2d2d15827796f50ac61ea935ff554cc07223eef93da281b20743072",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3g4v7q4z",
@@ -90,7 +89,13 @@
     "level": 1,
     "grammar": ["progressive-aspect", "wh-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8ec4d92b04df2b04ba0f77aaae536fe45958da27209c3bc54a8cb7067ebba5e7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3w3a9f2c",
@@ -122,7 +127,13 @@
     "level": 1,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7100ba59d37030c62907b5398e955025271dad92152bae61df4604dc3dedce0b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5b2j7v6x",
@@ -135,7 +146,13 @@
     "level": 2,
     "grammar": ["wh-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5d93dddfc9569e28f0ad88aaa13ea891f3904d41ba5ab8c16cb8da5ce1e2834f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5m7q4c8y",
@@ -167,20 +184,32 @@
     "level": 2,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7c49aeba2c352fd19e7a70c03eb1ae3ff3571d65634d10706660fd7ed8036f86",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6q8z7n2p",
     "ja": "ちょっと聞いてもいい？",
-    "en": "Can I ask something?",
-    "alternatives": ["Could I ask you something?", "May I ask you something?"],
+    "en": "Can I ask you something?",
+    "alternatives": ["Could I ask you something?", "Can I ask you a question?"],
     "point": "許可は Can I ～? で軽く聞ける",
     "topic": "social",
     "subtopic": "catching-up",
     "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e2e1c347f528278abe4c6bf435ae9f93da45f6fb2f4f38e8dd268538b65c479b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9b2a9x6d",
@@ -237,6 +266,12 @@
     "level": 3,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:905edc4f16d88b01f4232f1dacfd5992b7d8a3dbf1c1f5b1af3dfb14265a1771",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

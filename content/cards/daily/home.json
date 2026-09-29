@@ -10,7 +10,13 @@
     "level": 3,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6c712398326b0545c9acf7089c3885d8129adc4aecddf9779b0c0170ff993c89",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2j4n5r7v",
@@ -23,7 +29,13 @@
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f431346a06c46984dcfcb4536fe76e2584bc871a35618bbb73ffac0185262811",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3b9g6w7j",
@@ -36,20 +48,32 @@
     "level": 1,
     "grammar": ["articles-and-countability", "imperatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8fd732385f3395ba0afecd30423d583eab074de5c2fffc84fcb72809ffc9dcd5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3s5w7x5s",
     "ja": "何か飲むものある？",
-    "en": "Is there something to drink?",
-    "alternatives": ["Is there anything to drink?", "Do we have anything to drink?"],
+    "en": "Is there anything to drink?",
+    "alternatives": ["Is there something to drink?", "Do we have anything to drink?"],
     "point": "「〜するもの」は something to + 動詞",
     "topic": "daily",
     "subtopic": "home",
     "level": 3,
     "grammar": ["infinitives", "there-is-are"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4eefbdab54dfff8f62c23d4d73d0d04a775346f955e7d30b590abe2e7acf4362",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4m6q9n3s",
@@ -65,7 +89,13 @@
     "level": 2,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c2ae9ace5af53bab8b853f56a8de63aef6ed2b78b9518d044551a664b74cda9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4n4a5p3j",
@@ -90,27 +120,39 @@
     "id": "c_6e5f5q4s",
     "ja": "庭に犬がいるよ。",
     "en": "There's a dog outside.",
-    "alternatives": ["A dog is outside.", "There's a dog out back."],
+    "alternatives": ["A dog's in the yard.", "There's a dog out back."],
     "point": "「〜がいる」は There's + 単数の名詞",
     "topic": "daily",
     "subtopic": "home",
     "level": 1,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:37c52c29d8d4f09e5fb18a8641b752c13cb6afeb68679b0aff2ea714f3c7f4f6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6m6j2b7p",
     "ja": "卵が全然ないよ。",
     "en": "There are no eggs.",
     "alternatives": ["We have no eggs.", "We're out of eggs."],
-    "point": "複数の名詞なら There are no 〜。「残り」は left",
+    "point": "卵は複数形。「全然ない」は no + 複数形",
     "topic": "daily",
     "subtopic": "home",
     "level": 2,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:149c14044ca064c632bd71d12212c64a00685d2ab713e6b9a089597c92cc3439",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7a7u8k3s",
@@ -164,7 +206,13 @@
     "level": 3,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:44dc7496adcaf63ca1492407600e7bf1965cddee4333074cc33580d837a1f43a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8t5s7m3q",
@@ -237,6 +285,12 @@
     "level": 2,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7475a8714242a7c150e3e5c656c5ba4804e0abdf5bcf0fcfd0bd3fd33f8d74f5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

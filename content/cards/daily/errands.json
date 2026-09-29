@@ -13,7 +13,13 @@
     "level": 3,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a74949ccd60c5899e715b60dc54df0386c0a81345aa9bf86a876c4be9b680856",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2x3w9b6r",
@@ -45,7 +51,13 @@
     "level": 2,
     "grammar": ["articles-and-countability", "modal-obligation-advice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3675f1822bb5d07761d06ee78b7e0d382906e10e4c88e017b87158c26bd306c8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3d3q6g9e",
@@ -77,7 +89,13 @@
     "level": 2,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:443e0085920b40fa68d32a0e7287a7fcc29ad260695dfb310b76934fa51d1900",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4e5y6r2k",
@@ -131,7 +149,13 @@
     "level": 3,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d07931468f0ff98be610e65805552cea7206dd519d25264bfb12fa1764c6caf0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8e3a2h6z",
@@ -166,7 +190,13 @@
     "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0ecc9bf111fb3efbd1ab902d903de8bf03b030e989009b436a1ae0aa7f603cfd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8h2u4w5d",
@@ -179,7 +209,13 @@
     "level": 2,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b88792c7942710f87d54aec66552f4756037648f7f61583abb468afcb7036f0f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8s9y7e9s",
@@ -207,14 +243,20 @@
     "id": "c_8y3w4m3q",
     "ja": "ここに窓口があるよ。",
     "en": "There's a counter here.",
-    "alternatives": ["There's a window here.", "A counter is right here."],
+    "alternatives": ["There's a window here.", "There's a service desk here."],
     "point": "「〜がある」は There's + a + 単数名詞",
     "topic": "daily",
     "subtopic": "errands",
     "level": 1,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:94777cc3199b34f8896f24f70bf893d37426feadc6c7416d1f8a03ff73722bbf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9c7a4z9k",
@@ -227,7 +269,13 @@
     "level": 3,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ee30a3399904b358107f2e59c8939cbf4e524f556f0080a7128853d6ef2a6ae6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9s6p7r5u",
@@ -240,6 +288,12 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:09e91f5cf981f27decab23901b9cf4fd7ee1103d9efa8f9f8980e444e3c8822c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

@@ -29,7 +29,13 @@
     "level": 2,
     "grammar": ["wh-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:65cdd7966439232cedfdfbd0a3ab05a91ba1cbe4dc94317afdec065c50081c4f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2u7j4e8j",
@@ -42,7 +48,13 @@
     "level": 3,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b44635a03a21c8388c612bd8ff6b8cf5519c4dd5e281e3176a37c7b241b6883c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4d7b4u6z",
@@ -74,7 +86,13 @@
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:275ca645dc2109cecbf933a8560060b3482e168b2d4db6ea9d1395946d1c7eb5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4z5m4c7h",
@@ -102,14 +120,20 @@
     "id": "c_5h2a9h7a",
     "ja": "ペン貸して。",
     "en": "Lend me a pen.",
-    "alternatives": ["Please lend me a pen.", "Let me borrow a pen."],
+    "alternatives": ["Please lend me a pen.", "Can I borrow a pen?"],
     "point": "「貸す」は lend、「借りる」は borrow",
     "topic": "social",
     "subtopic": "favors",
     "level": 1,
     "grammar": ["articles-and-countability", "imperatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d48408bde779cfe4fc6ec334f33841911e4aabdb9a47daa87cb1fd63baaa917a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5k4a2e9g",
@@ -144,7 +168,13 @@
     "level": 1,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4634bc2c03e8f2109585fd8985315a9820141ccc125907a591fcf848e38a98e3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6f6n8c3z",
@@ -195,7 +225,13 @@
     "level": 1,
     "grammar": ["wh-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dd2acd9dc354ccad572715f19342d5daabfd7be3beb7963a43d78e2471398c8f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7v4r4b4x",
@@ -208,7 +244,13 @@
     "level": 3,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:927efbe76bdca2f664da2a8405b4b0483ecbbca9f776722b3c33fe65910661db",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9f8u8c9a",
@@ -221,19 +263,31 @@
     "level": 3,
     "grammar": ["passive-voice", "infinitives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7c96264be75aa9df987059b2812670d5965c325a702a07cb67b7df73423e4d6c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9z6s7f3g",
     "ja": "消しゴム借りるね。",
-    "en": "I'll borrow an eraser.",
-    "alternatives": ["Let me borrow an eraser.", "I'm going to borrow an eraser."],
-    "point": "母音で始まる語の前は an",
+    "en": "I'll borrow your eraser.",
+    "alternatives": ["Let me borrow your eraser.", "I'm borrowing your eraser."],
+    "point": "借りるのは borrow、貸すのは lend。その場の決定は I'll",
     "topic": "social",
     "subtopic": "favors",
     "level": 2,
-    "grammar": ["articles-and-countability"],
+    "grammar": ["future-forms"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2e875153ed9d02905cfd15e42df367c406fc8495e2d36a35a1346dc4b7ddd9f2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

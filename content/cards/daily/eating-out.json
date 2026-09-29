@@ -29,20 +29,36 @@
     "level": 2,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:269cdca3657585706d1500b1301c70418f334179528be9b546f5774a1e83c295",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3a2b9p5q",
     "ja": "席を替えていいですか？",
-    "en": "Could we change tables?",
-    "alternatives": ["Can we change tables?", "May we change tables?"],
-    "point": "許可を求めるなら Could we / Can we",
+    "en": "Could I change seats?",
+    "alternatives": [
+      "Can I switch seats?",
+      "Can we change tables?",
+      "May I change seats?"
+    ],
+    "point": "許可を求めるなら Could I / Can I",
     "topic": "daily",
     "subtopic": "eating-out",
     "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f67b7383917fe704e2b0e17efc002e7960dfbb275341b41f85cd0c7a20070955",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3j2w6j7m",
@@ -74,7 +90,13 @@
     "level": 1,
     "grammar": ["wh-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3db26f946a2babbe59d260185292edba196734a8e64764f6db0bf3d85f240900",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4n2s4p6j",
@@ -98,7 +120,7 @@
   {
     "id": "c_4v3y9t9m",
     "ja": "お水、もらえる？",
-    "en": "Can I have water?",
+    "en": "Can I have some water?",
     "alternatives": ["Can I get some water?", "Could I have some water?"],
     "point": "頼むときは Can I have 〜?",
     "topic": "daily",
@@ -106,7 +128,13 @@
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1354d9e69d095d1cc1a603313d33f4352f2254faeb8e5ade2abd16b1e9072071",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5m9a7t2u",
@@ -119,7 +147,13 @@
     "level": 3,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c8709d1191f29cb6d2db3901fa8ad449e7793db18b42fcdff9ae47b56556f56",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5y3n9k3q",
@@ -132,7 +166,13 @@
     "level": 3,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:267d7de6af8370a20676c302e16c1a2c8b23af403d2ad9e8357d32112bea3edb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7h4n7d2m",
@@ -186,20 +226,32 @@
     "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6e8523a91af6c9d5ac837fa0c73b7e94dc401fe0ba7fb5f0e3f444c07527aaa6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9g8t3u5p",
     "ja": "予約したほうがいいよ。",
     "en": "You should book ahead.",
-    "alternatives": ["You should make a reservation.", "You'd better reserve ahead."],
-    "point": "助言は should。「席を予約する」は book a table",
+    "alternatives": ["You should make a reservation.", "You should reserve a table."],
+    "point": "助言は should。「予約する」は book ahead でもよい",
     "topic": "daily",
     "subtopic": "eating-out",
     "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e928237ac6fdb5cfbeb34fa76f80466f22c7ed80662d0e9f76ecda4db7c6c9f0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9v3a9c7r",
@@ -235,6 +287,12 @@
     "level": 3,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bcb4f4f80e665785c02c8a9c08eb51f3b4b072b9c7443165a3c58648e9b9b41d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]
