@@ -13,7 +13,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f078b21d7f559881896326a84d79c0d42fa4aaa2fe3a3a84302185d2723425ac",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2k6m7e9h",
@@ -51,7 +57,13 @@
     "level": 7,
     "grammar": ["causatives", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fc00a924de1fc9409028b56b82ffc9e2a93e9aef99c6be3fe1f7b8f8ef60e6c4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3v4n5y7v",
@@ -152,7 +164,13 @@
     "level": 7,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:746193ce6aab46ef515949a0f3b78ef3df98c954e479af6bc2d132dbcbd85ebe",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4y8c9d6c",
@@ -168,7 +186,13 @@
     "level": 7,
     "grammar": ["hedging-softening", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ea1d8e3129ed0dcc7252b73b561fd382688dc0677525758324329dcb2d3352c5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5b9n5m6k",
@@ -205,9 +229,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:9800e6a594a7e93a38f45a61c8fe17b8670be4e4152703f19e646eb6590e8514",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:6bafd6cd8ac37a2c58a9bb8af2904e6ea12bd4e5c47a64591049ca0cf4cebda5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -232,22 +256,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_5u6r8v2m",
-    "ja": "悪いけど、必要なのは家でのんびりする時間。",
-    "en": "Sorry, what I need is downtime at home.",
-    "alternatives": [
-      "Sorry, all I need is some downtime at home.",
-      "Sorry, I just need some downtime at home."
-    ],
-    "point": "「〜なのは」は What I need is で始める",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 6,
-    "grammar": ["noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_6b3m9h2n",
@@ -285,7 +293,13 @@
     "level": 4,
     "grammar": ["infinitives", "verb-object-to-do"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1784238ef2d5a2f2f4f57d8f048130e4da891e11937f64566b70381a6857a09b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7p7r8b6h",
@@ -301,7 +315,13 @@
     "level": 6,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9c95c591b015a6a92ff8614ece24488ff5a058926f824cd1c57bdde98dd6c421",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7x5k3e9v",
@@ -317,7 +337,13 @@
     "level": 6,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c3e424907eab3da1f7972d231044ce92c14d7693c8580e75e4a7cf2899aded04",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7x9f4a6j",
@@ -342,22 +368,6 @@
     }
   },
   {
-    "id": "c_7y9s4f5s",
-    "ja": "兄は、父が退院するまで帰省できないって。",
-    "en": "My brother can't come home until Dad gets discharged.",
-    "alternatives": [
-      "My brother can't visit until Dad leaves the hospital.",
-      "My brother can't make it home until Dad's discharged."
-    ],
-    "point": "until 節の中は未来のことでも現在形（gets）",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 6,
-    "grammar": ["time-and-if-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8a9d9p3j",
     "ja": "母が、夕食は6時に変わったって言ってた。",
     "en": "Mom said dinner had been moved to six.",
@@ -371,7 +381,13 @@
     "level": 6,
     "grammar": ["reported-speech", "passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e55e2d6a3f7e9ead83dfd4b8f2da07c30939eb6afea5bc6faf08f1c5945f8dd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8n5r3f4m",
@@ -415,22 +431,6 @@
     }
   },
   {
-    "id": "c_8x7y3b7h",
-    "ja": "妹が行けないと言い出したのは金曜になってからだよ。",
-    "en": "Not until Friday did my sister say she couldn't come.",
-    "alternatives": [
-      "It wasn't until Friday that my sister said she couldn't come.",
-      "My sister didn't say she couldn't come until Friday."
-    ],
-    "point": "Not until を文頭に出すと、あとは疑問文の語順になる",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 9,
-    "grammar": ["inversion", "reported-speech"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8z4x8r2j",
     "ja": "私たち、旅行の日程をもう三回変えたよ。",
     "en": "We've already changed our dates three times.",
@@ -451,38 +451,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9f6e2c4c",
-    "ja": "雨でも中止にせず、うちに集まろうよ。",
-    "en": "Rain or shine, let's get together at my place.",
-    "alternatives": [
-      "Even if it rains, let's still meet at my place.",
-      "Rain or shine, let's meet up at my place."
-    ],
-    "point": "「雨でも」は rain or shine か even if。even if 節は現在形",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 8,
-    "grammar": ["concession-contrast", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9n7u6v4e",
-    "ja": "雨予報だし、キャンプは延期しない？",
-    "en": "With rain forecast, how about putting off the trip?",
-    "alternatives": [
-      "With rain coming, why not postpone the trip?",
-      "It'll rain, so how about postponing the trip?"
-    ],
-    "point": "how about の後は動詞の -ing 形（putting off）",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 6,
-    "grammar": ["gerunds", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9p6a2h9q",
