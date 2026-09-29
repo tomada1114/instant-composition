@@ -10,20 +10,35 @@
     "level": 5,
     "grammar": ["tense-contrast", "present-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:83d40244341be2fabbe6e14ca741d1f6bc661ac04ae945d5cc2ac4a84693bef3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7a7u8k3s",
     "ja": "ゴミを出さなきゃいけない。",
-    "en": "The trash has to go out.",
-    "alternatives": ["I have to take out the trash.", "I need to take out the trash."],
-    "point": "義務は have to",
+    "en": "I have to take out the trash.",
+    "alternatives": [
+      "I need to take out the trash.",
+      "I've got to take out the trash."
+    ],
+    "point": "義務は have to、ゴミを出すは take out",
     "topic": "daily",
     "subtopic": "home",
     "level": 5,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9979bc655f5a57491162b0fb81c7bb217137b135075ba013c4329ef33876b933",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7m6s6r7c",
@@ -36,7 +51,13 @@
     "level": 5,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f3a03644e406aecd595311a03baf9cae25b180bee5f584c13d695dda5e2112ca",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8t5s7m3q",
@@ -49,7 +70,13 @@
     "level": 4,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8b25b7ab8420833d8fe052478bda6decb3b2e280528985812c898803d599d7ce",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9c4e8j3t",
@@ -65,7 +92,13 @@
     "level": 4,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:846978751460100ccb8e69a747cbc29c0cec37166697ccab1c929257640e72eb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9d8m7w8m",
@@ -78,6 +111,12 @@
     "level": 4,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c5dff7daa802b469fbdaebc869bd69016f76060edf3ad469a01f372af3af4e4f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

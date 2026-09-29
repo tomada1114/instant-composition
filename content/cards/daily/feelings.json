@@ -10,7 +10,13 @@
     "level": 4,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3cbd57f374c771a71664a665ab30a4289a902b762c8401588f84445db890da66",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4v9a4j8e",
@@ -23,7 +29,13 @@
     "level": 4,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:146b5fce75b6a20d1e21be89ae7baa0f3f6ec0fa9689fe099c8154d1e9debf35",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7f2v2m4z",
@@ -36,6 +48,12 @@
     "level": 4,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4a93ffbe61a1130cd7f5fe90d026c9da13dff226ba13357bbd7e4009107cb06f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

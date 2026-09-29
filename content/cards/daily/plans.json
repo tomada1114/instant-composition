@@ -13,7 +13,13 @@
     "level": 5,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6b52fe7ed45a0d8f0fddbca5c1aa3c0fef590247be711cf1b3e081a44a3ebe03",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3u8p2m9d",
@@ -26,7 +32,13 @@
     "level": 5,
     "grammar": ["wh-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:91650f67ce472eaa92126585c2983148f95103d468459bf4fbdb087d01364605",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6n9p4b3x",
@@ -42,6 +54,12 @@
     "level": 5,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:122316d96dc86a8c849336c2c6dc220b7359f82fd9f525952c3cec403f88c52b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

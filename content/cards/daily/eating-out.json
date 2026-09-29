@@ -10,7 +10,13 @@
     "level": 5,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4a5399b6a9608a6df04cc8f3a63bd3cf5df480528801431ecd61a3c3a5ce642e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3j2w6j7m",
@@ -23,20 +29,32 @@
     "level": 4,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5845e4eb8de8647a56fd75f64817ad64e5716de791d6e7ea3c76b465fee84228",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4n2s4p6j",
     "ja": "ここに来たことある？",
     "en": "Have you been here before?",
-    "alternatives": ["Have you ever been here?", "Have you ever come here?"],
+    "alternatives": ["Have you ever been here?", "Have you ever been here before?"],
     "point": "経験は Have you (ever) 〜?",
     "topic": "daily",
     "subtopic": "eating-out",
     "level": 5,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b29b2f0ca89f0fd36a5d200336c182bf3e921637bbdd6336da8ca62e4bbc5293",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7h4n7d2m",
@@ -52,7 +70,13 @@
     "level": 5,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e97047206f92b449eac4f2ecf70f0bf17b4c22b880cea0042c877775dfe9776b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8m5x5h8h",
@@ -65,19 +89,35 @@
     "level": 4,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:62586409f964b5d2f8d646128e284997a4be0a2be8312a0ff3d87f7c357d048b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9v3a9c7r",
     "ja": "窓際の席をお願いします。",
-    "en": "A table by the window, please.",
-    "alternatives": ["Could we sit by the window?", "We'd like a table by the window."],
-    "point": "「窓際の」は名詞の後ろに by the window",
+    "en": "A window seat, please.",
+    "alternatives": [
+      "A table by the window, please.",
+      "Could we sit by the window?",
+      "We'd like a window seat."
+    ],
+    "point": "「窓際の席」は a window seat と言える",
     "topic": "daily",
     "subtopic": "eating-out",
     "level": 4,
-    "grammar": ["post-modification"],
+    "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:03ad8bd96f5b3ea6dddac20734571c1f7d11a4190719d28772e32f6396a5ede7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

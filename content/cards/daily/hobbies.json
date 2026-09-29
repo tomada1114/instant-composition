@@ -10,7 +10,13 @@
     "level": 4,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b599d992bfbc44d52d8b15e5971c40bb54f7dbd648d18424e587efbbffc43ea7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5x5t5w6j",
@@ -23,7 +29,13 @@
     "level": 4,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:72873eda3ce253fcd9b83c96c4382cfde2a78e70ae2047ce5f4fab2d185eb7f1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7s7b6f4z",
@@ -39,6 +51,12 @@
     "level": 4,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b6a03581591d1176e4d5695bd9305bb5e7c7428962da3e2b23b24111e052d12e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

@@ -13,7 +13,13 @@
     "level": 5,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f0f1cf9ad9f6c36d5ba2af31ee7c9504fdf6695e2c921f16419ae2894857c95e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6z8h2v8y",
@@ -29,7 +35,13 @@
     "level": 5,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ec94bcac116ca5529601de93919bdac4a1b1cb18fc30a55159113fafc1c82780",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8b3w9y3d",
@@ -45,6 +57,12 @@
     "level": 5,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b22f9eb8c1b7bce57d2d489adf5576bd0f1069be0f32500f57bb80efd35f2ef4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]
