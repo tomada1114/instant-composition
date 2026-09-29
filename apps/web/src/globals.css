@@ -195,12 +195,12 @@
    * settings), its hairline included. 49, an iOS tab bar's height, so the
    * tallest home panel still fits a PC's 720. */
   --tab-bar-height: 3.0625rem;
-  /* What a screen under the bar pads its foot by: the bar, plus whatever of a
-   * phone's home-indicator inset the column's own inset does not already
-   * cover. Zero extra wherever `env()` reads 0, as on a desktop browser. */
-  --tab-bar-space: calc(
-    var(--tab-bar-height) + max(0px, env(safe-area-inset-bottom) - var(--column-inset))
-  );
+  /* Whatever of a phone's home-indicator inset the column's own inset does
+   * not already cover: what anything resting on the column's bottom edge adds
+   * to its foot. Zero wherever `env()` reads 0, as on a desktop browser. */
+  --safe-bottom: max(0px, env(safe-area-inset-bottom) - var(--column-inset));
+  /* What a screen under the bar pads its foot by. */
+  --tab-bar-space: calc(var(--tab-bar-height) + var(--safe-bottom));
 
   @variant wide {
     --column-height: min(100dvh, 45rem);

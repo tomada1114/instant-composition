@@ -68,8 +68,62 @@ export function unsavedAnswers(
   });
 }
 
+/** Storage whose keys can be listed, as `sessionStorage`'s can. */
+export interface ListedStorage extends QueueStorage {
+  readonly length: number;
+  key(index: number): string | null;
+}
+
+const PREFIX = "drill-answers:";
+/** Keys a flush is already sending, so a second arrival (a remount) never sends them alongside it. */
+const flushing = new Set<string>();
+
+/** The storage key holding the unsent answers of round `roundId`. */
+export function queueKey(roundId: string): string {
+  return `${PREFIX}${roundId}`;
+}
+
+/**
+ * Sends, under their fixed ids, what earlier pages of this tab left queued for
+ * rounds other than `currentId` — one abandoned at the day's turn or by another
+ * kind, which the server still takes. A key empties as its answers are sent or
+ * refused (a finished round answers `ERR_ROUND_CLOSED`); only a failed send
+ * stays for the next arrival. Nothing here waits on or reports to the current round.
+ */
+export async function flushEarlierRounds(options: {
+  readonly currentId: string;
+  readonly send: (answer: AnswerInput) => Promise<SendOutcome>;
+  readonly storage?: ListedStorage | undefined;
+}): Promise<void> {
+  const { currentId, send, storage } = options;
+  const keys: string[] = [];
+  try {
+    for (let index = 0; index < (storage?.length ?? 0); index += 1) {
+      const key = storage?.key(index);
+      if (
+        key?.startsWith(PREFIX) === true &&
+        key !== queueKey(currentId) &&
+        !flushing.has(key)
+      )
+        keys.push(key);
+    }
+  } catch {
+    return;
+  }
+  for (const key of keys) flushing.add(key);
+  for (const key of keys) {
+    const queue = createAnswerQueue({ key, send, storage });
+    try {
+      if (queue.pending().length === 0) queue.clear();
+      else await queue.flush();
+    } finally {
+      flushing.delete(key);
+    }
+  }
+}
+
 /** The tab's `sessionStorage`, or nothing where reading it throws (storage blocked). */
-export function sessionStore(): QueueStorage | undefined {
+export function sessionStore(): ListedStorage | undefined {
   try {
     return window.sessionStorage;
   } catch {

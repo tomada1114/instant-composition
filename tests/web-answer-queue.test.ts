@@ -3,6 +3,8 @@ import { describe, expect, it } from "vitest";
 import {
   type AnswerInput,
   createAnswerQueue,
+  flushEarlierRounds,
+  type ListedStorage,
   type QueueStorage,
   type SendOutcome,
 } from "@instant-composition/web";
@@ -211,5 +213,65 @@ describe("createAnswerQueue", () => {
     queue.clear();
     expect(queue.pending()).toStrictEqual([]);
     expect(storage.data.has("k")).toBe(false);
+  });
+});
+
+function listed(initial: Record<string, string>): ListedStorage & {
+  readonly data: Map<string, string>;
+} {
+  const storage = memoryStorage(initial);
+  return {
+    ...storage,
+    get length() {
+      return storage.data.size;
+    },
+    key: (index) => [...storage.data.keys()][index] ?? null,
+  };
+}
+
+describe("flushEarlierRounds", () => {
+  const stored = (...cards: string[]): string =>
+    JSON.stringify(cards.map((cardId) => answer(cardId)));
+
+  it("sends an earlier round's answers under their fixed ids and clears its key", async () => {
+    const storage = listed({ "drill-answers:r": stored("c1", "c2") });
+    const sent: string[] = [];
+    await flushEarlierRounds({
+      currentId: "new",
+      send: (item) => {
+        sent.push(item.id);
+        return Promise.resolve("sent");
+      },
+      storage,
+    });
+    expect(sent).toStrictEqual(["r:f:c1", "r:f:c2"]);
+    expect(storage.data.has("drill-answers:r")).toBe(false);
+  });
+
+  it("clears a round the server refuses, as a finished one is", async () => {
+    const storage = listed({ "drill-answers:r": stored("c1", "c2") });
+    const sender = scriptedSender("rejected", "rejected");
+    await flushEarlierRounds({ currentId: "new", send: sender.send, storage });
+    expect(storage.data.has("drill-answers:r")).toBe(false);
+  });
+
+  it("keeps what failed to send for the next arrival", async () => {
+    const storage = listed({ "drill-answers:r": stored("c1", "c2") });
+    const sender = scriptedSender("failed");
+    await flushEarlierRounds({ currentId: "new", send: sender.send, storage });
+    expect(sender.sent).toStrictEqual(["c1"]);
+    expect(storage.data.get("drill-answers:r")).toBe(stored("c1", "c2"));
+  });
+
+  it("clears an unreadable key without a request, and leaves the current round and other keys alone", async () => {
+    const storage = listed({
+      "drill-answers:r": "not json",
+      "drill-answers:new": stored("c1"),
+      other: "x",
+    });
+    const sender = scriptedSender();
+    await flushEarlierRounds({ currentId: "new", send: sender.send, storage });
+    expect(sender.sent).toStrictEqual([]);
+    expect([...storage.data.keys()]).toStrictEqual(["drill-answers:new", "other"]);
   });
 });

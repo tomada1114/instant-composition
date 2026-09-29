@@ -154,7 +154,7 @@ function SummaryActions({
 }>): ReactElement {
   const t = useTranslations("Summary");
   return (
-    <footer className="sticky bottom-0 -mx-4 mt-auto flex flex-col gap-2.5 bg-background px-4 pt-3 pb-3">
+    <footer className="sticky bottom-0 -mx-4 mt-auto flex flex-col gap-2.5 bg-background px-4 pt-3 pb-[calc(0.75rem+var(--safe-bottom))]">
       {summary.yesterday ? (
         summary.todayOpen ? (
           <>

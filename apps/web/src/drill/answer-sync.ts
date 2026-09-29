@@ -3,6 +3,8 @@ import { useEffect, useRef, useState, type Dispatch } from "react";
 import type { RoundPayload } from "../openapi";
 import {
   createAnswerQueue,
+  flushEarlierRounds,
+  queueKey,
   sessionStore,
   unsavedAnswers,
   type AnswerQueue,
@@ -17,18 +19,28 @@ export interface ArrivedQueue {
   readonly unsaved: readonly AnswerInput[];
 }
 
-/** The round's answer queue, holding whatever an earlier page of this tab left unsent. */
+/**
+ * The round's answer queue, holding whatever an earlier page of this tab left
+ * unsent; what earlier rounds left is sent on the side, apart from this queue.
+ */
 export function useAnswerQueue(
   round: Pick<RoundPayload, "id" | "deck" | "answered">,
 ): ArrivedQueue {
   const [arrived] = useState(() => {
     const queue = createAnswerQueue({
-      key: `drill-answers:${round.id}`,
+      key: queueKey(round.id),
       send: sendAnswer,
       storage: sessionStore(),
     });
     return { queue, unsaved: unsavedAnswers(queue.pending(), round) };
   });
+  useEffect(() => {
+    void flushEarlierRounds({
+      currentId: round.id,
+      send: sendAnswer,
+      storage: sessionStore(),
+    });
+  }, [round.id]);
   return arrived;
 }
 
