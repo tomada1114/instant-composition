@@ -341,8 +341,13 @@ above and below each. Section titles are muted `label`s.
 - `info-tip`: a 44 hit area around a 16 ⓘ glyph beside a section title; pressing it
   opens one muted `caption` line under the title in place (`aria-expanded`). For a
   definition someone needs once: what counts as mastered, how the streak counts.
-- `toast`: 24 above the bottom edge; `bg-raised rounded-tile`, `text-foreground`, the
-  notice glyph; gone after 4 s. Never red. No success toast, ever.
+- `toast`: fixed across the column with its 16 gutter, 96 above the column's bottom edge
+  (plus `--column-inset`), so it clears the drill's bottom buttons;
+  `bg-raised rounded-tile`, padding 14 / 16, the notice glyph 12 before a
+  `text-foreground` line. Gone after 4 s (`TUNING.toastMs`), shown again for each new
+  failure; it takes no press (`pointer-events-none`) and speaks through a
+  `role="status"` region that stays mounted. Never red. No success toast, ever.
+  `apps/web/src/drill/toast.tsx` is this recipe.
 - `empty-state`: a `bg-card rounded-card` panel with a `heading`, at most one muted line
   and one `secondary` button.
 - `skeleton`: after 300 ms of start-screen loading, `bg-card` blocks the size of the
