@@ -90,6 +90,7 @@ export interface RecordsView {
 export interface SettingsPageView {
   readonly settings: Required<Settings>;
   readonly topics: readonly TopicInfo[];
+  /** The same value as `difficulty.toeic`; deprecated in the /v1 contract and dropped at /v2. */
   readonly toeic: string | null;
   readonly difficulty: LevelView;
   /** Every level the learner may pick, lowest first, by its TOEIC reference. */

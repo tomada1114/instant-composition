@@ -127,7 +127,11 @@ export const topicInfoSchema = z.object({
 export const settingsPageViewSchema = z.object({
   settings: settingsSchema,
   topics: z.array(topicInfoSchema),
-  toeic: z.string().nullable(),
+  toeic: z.string().nullable().meta({
+    deprecated: true,
+    description:
+      "The same value as `difficulty.toeic`, which a client reads instead. Kept for /v1 (ADR-0007); removed in /v2.",
+  }),
   difficulty: levelViewSchema,
   /** Every level the learner may pick, lowest first, by its TOEIC reference. */
   levels: z.array(z.object({ level: levelSchema, toeic: z.string() })),
