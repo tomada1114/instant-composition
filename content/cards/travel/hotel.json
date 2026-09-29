@@ -4,8 +4,9 @@
     "ja": "チェックアウトのとき、鍵を返し忘れました。",
     "en": "I forgot to drop my key off at checkout.",
     "alternatives": [
-      "I forgot to return my key when I left.",
-      "I forgot to give my key back at checkout."
+      "I forgot to return my key at checkout.",
+      "I forgot to give my key back at checkout.",
+      "I forgot to hand in my key at checkout."
     ],
     "point": "「返す」は drop off / hand in の句動詞で言える",
     "topic": "travel",
@@ -13,7 +14,13 @@
     "level": 6,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ca4775a5377b87e999546a2dd0d73f1d7a5cc48c0a708ea00604e87cb19156b8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2h7a4r2q",

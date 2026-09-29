@@ -5,15 +5,22 @@
     "en": "I finally made it to the castle I've dreamed of.",
     "alternatives": [
       "I'm finally at the castle I've always dreamed of.",
+      "I've finally made it to the castle I've dreamed of.",
       "I finally got to the castle I've always dreamed of."
     ],
-    "point": "憧れ続けた今への結びつきは現在完了で表す",
+    "point": "「やっと来られた」は made it to ～ で言える",
     "topic": "travel",
     "subtopic": "sightseeing",
     "level": 7,
     "grammar": ["present-perfect", "relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a26ea8e83eb3e4b8b628344551561c1c0b5927b2c4ba96d704b5052b780b2d1c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2g2v8q5u",
