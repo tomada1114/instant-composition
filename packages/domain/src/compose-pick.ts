@@ -2,11 +2,13 @@ import { randomIndex, type Random } from "./random";
 import { TUNING } from "./tuning";
 import type { CardMeta, ConceptId, SubtopicRef } from "./types";
 
-/** Shared across one deck's picks, so the subtopic balance spans all of them. */
+/** Shared across one deck's picks, so the subtopic balance and the level plan span all of them. */
 export interface PickState {
   readonly random: Random;
   readonly counts: Map<string, number>;
   readonly taken: Set<string>;
+  /** New cards still planned per card level; see `levelPlan`. */
+  readonly plan: Map<number, number>;
 }
 
 export function subtopicKey(card: SubtopicRef): string {
@@ -44,10 +46,60 @@ export function pickBalanced(
   return picked;
 }
 
+/** Whether a new card at `cardLevel` may be dealt at `level`: one below it up to the probe. */
+export function inLevelBand(cardLevel: number, level: number): boolean {
+  return cardLevel >= level - 1 && cardLevel <= level + TUNING.mix.probeStep;
+}
+
+/** The bands with their shares, in the order a tie in the plan goes. */
+function bands(level: number): readonly (readonly [number, number])[] {
+  const { same, above, probe, below } = TUNING.mix.levelShare;
+  return [
+    [level, same],
+    [level + 1, above],
+    [level + TUNING.mix.probeStep, probe],
+    [level - 1, below],
+  ];
+}
+
 /**
- * `count` new cards split over the level and its two neighbours by
- * `TUNING.mix.levelShare`, the remainder going to the level itself; a band
- * that runs short is made up from the level first, then its neighbours.
+ * How a deck's `count` new cards split over the card levels: by
+ * `TUNING.mix.levelShare`, largest remainder first, then at least one card a
+ * level up and one probe once `TUNING.mix.offLevelFrom` new cards allow them,
+ * taken from the level below first. Planned over the whole deck, not per
+ * share of it, so a few new cards beside the reviews still reach above.
+ */
+export function levelPlan(count: number, level: number): Map<number, number> {
+  const shares = bands(level);
+  const plan = new Map(
+    shares.map(([band, share]) => [band, Math.floor(count * share)]),
+  );
+  const left = count - [...plan.values()].reduce((sum, planned) => sum + planned, 0);
+  const byRemainder = shares
+    .map(([band, share], index) => ({ band, index, rest: (count * share) % 1 }))
+    .sort((a, b) => b.rest - a.rest || a.index - b.index);
+  for (const { band } of byRemainder.slice(0, left)) {
+    plan.set(band, (plan.get(band) ?? 0) + 1);
+  }
+  const { above, probe } = TUNING.mix.offLevelFrom;
+  const floors: readonly (readonly [number, number])[] = [
+    [level + 1, above],
+    [level + TUNING.mix.probeStep, probe],
+  ];
+  for (const [band, from] of floors) {
+    const donor = [level - 1, level].find((other) => (plan.get(other) ?? 0) > 0);
+    if (count >= from && plan.get(band) === 0 && donor !== undefined) {
+      plan.set(donor, (plan.get(donor) ?? 0) - 1);
+      plan.set(band, 1);
+    }
+  }
+  return plan;
+}
+
+/**
+ * Up to `count` new cards from `pool`, each from the band with the most of
+ * `state.plan` left; once the plan has no band `pool` can serve, the level
+ * first, then its neighbours, then the probe.
  */
 export function pickByLevel(
   pool: readonly CardMeta[],
@@ -55,25 +107,27 @@ export function pickByLevel(
   level: number,
   state: PickState,
 ): CardMeta[] {
-  const { below, above } = TUNING.mix.levelShare;
-  const belowCount = Math.floor(count * below);
-  const aboveCount = Math.floor(count * above);
-  const quotas: readonly (readonly [number, number])[] = [
-    [level, count - belowCount - aboveCount],
-    [level - 1, belowCount],
-    [level + 1, aboveCount],
-  ];
+  const makeUp = [level, level - 1, level + 1, level + TUNING.mix.probeStep];
   const atLevel = (target: number): CardMeta[] =>
-    pool.filter((card) => card.level === target);
-
-  const picked = quotas.flatMap(([target, quota]) =>
-    pickBalanced(atLevel(target), quota, state),
-  );
-  for (const [target] of quotas) {
-    const deficit = count - picked.length;
-    if (deficit > 0) {
-      picked.push(...pickBalanced(atLevel(target), deficit, state));
+    pool.filter((card) => card.level === target && !state.taken.has(card.id));
+  const planned = (band: number): number => state.plan.get(band) ?? 0;
+  const picked: CardMeta[] = [];
+  while (picked.length < count) {
+    const open = bands(level)
+      .map(([band]) => band)
+      .filter((band) => atLevel(band).length > 0);
+    const band =
+      open.reduce<number | undefined>(
+        (best, next) =>
+          planned(next) > (best === undefined ? 0 : planned(best)) ? next : best,
+        undefined,
+      ) ?? makeUp.find((next) => open.includes(next));
+    const [card] = band === undefined ? [] : pickBalanced(atLevel(band), 1, state);
+    if (band === undefined || card === undefined) {
+      break;
     }
+    state.plan.set(band, planned(band) - 1);
+    picked.push(card);
   }
   return picked;
 }
