@@ -1,0 +1,50 @@
+[
+  {
+    "id": "c_4u4e3x4u",
+    "ja": "火曜のほうが都合いい？",
+    "en": "Is Tuesday better for you?",
+    "alternatives": [
+      "Would Tuesday work better for you?",
+      "Is Tuesday more convenient for you?"
+    ],
+    "point": "都合がいいは better for you",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6y4d7x9c",
+    "ja": "月曜の会議は中止です。",
+    "en": "The meeting on Monday is canceled.",
+    "alternatives": [
+      "The Monday meeting is canceled.",
+      "The meeting on Monday is off."
+    ],
+    "point": "どの会議かは on Monday で後ろから足す",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6z3j5w5k",
+    "ja": "会議、もう金曜に移したよ。",
+    "en": "I've moved it to Friday.",
+    "alternatives": [
+      "I've already moved it to Friday.",
+      "I've moved the meeting to Friday."
+    ],
+    "point": "もう〜した は already + 現在完了",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 4,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]

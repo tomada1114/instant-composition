@@ -1,0 +1,47 @@
+[
+  {
+    "id": "c_3t3r4v3a",
+    "ja": "添付を忘れてすみません。",
+    "en": "Sorry, I forgot the attachment.",
+    "alternatives": [
+      "Sorry, I forgot to attach the file.",
+      "Sorry, I left out the attachment."
+    ],
+    "point": "特定の添付は the attachment",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 4,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8y5r4p9z",
+    "ja": "これ、誰に送ればいい？",
+    "en": "Who should I send this to?",
+    "alternatives": ["Who do I send this to?", "Who should this go to?"],
+    "point": "前置詞 to は文末に残る",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 4,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9n6p9h8t",
+    "ja": "日程確認でご連絡しました。",
+    "en": "Writing to confirm the date.",
+    "alternatives": [
+      "I'm writing to confirm the date.",
+      "I'm emailing to confirm the date."
+    ],
+    "point": "目的は to + 動詞の原形で言える",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 4,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]

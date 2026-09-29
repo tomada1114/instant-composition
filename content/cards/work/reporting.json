@@ -1,0 +1,92 @@
+[
+  {
+    "id": "c_4y2j8b7z",
+    "ja": "金曜までには終えられません。",
+    "en": "I can't finish it by Friday.",
+    "alternatives": [
+      "I can't get it done by Friday.",
+      "I'm unable to finish by Friday."
+    ],
+    "point": "できないは can't、期限は by",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5a5d9j8h",
+    "ja": "納期がいつか、ご存じですか？",
+    "en": "Do you know when it's due?",
+    "alternatives": ["Do you know when it's due by?", "Any idea when it's due?"],
+    "point": "間接疑問は when it's due の語順",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 4,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5a5w8g6s",
+    "ja": "わかり次第、ご報告します。",
+    "en": "I'll update you when I know.",
+    "alternatives": ["I'll update you once I know.", "I'll let you know when I know."],
+    "point": "when 節の中は未来でも現在形",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6u2k6a5c",
+    "ja": "売り上げは先月より好調です。",
+    "en": "Sales are better than last month.",
+    "alternatives": [
+      "Sales are up from last month.",
+      "Sales are stronger than last month."
+    ],
+    "point": "比べる相手は than で示す",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8a4m6d8y",
+    "ja": "報告書を書き終えました。",
+    "en": "I finished writing the report.",
+    "alternatives": [
+      "I've finished writing the report.",
+      "I'm done writing the report."
+    ],
+    "point": "finish の後ろは ~ing",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 4,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8v4z4g5h",
+    "ja": "心配なのは日程です。",
+    "en": "What worries me is the schedule.",
+    "alternatives": [
+      "What I'm worried about is the schedule.",
+      "The schedule is what worries me."
+    ],
+    "point": "What worries me is ~ の形で「〜なのは〜だ」",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]

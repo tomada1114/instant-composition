@@ -1,0 +1,92 @@
+[
+  {
+    "id": "c_2t9n3b2w",
+    "ja": "明日、代わりに出られる？",
+    "en": "Can you cover for me tomorrow?",
+    "alternatives": [
+      "Could you cover for me tomorrow?",
+      "Can you fill in for me tomorrow?"
+    ],
+    "point": "代わりを務めるは cover for ~",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 5,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_2v4t5q7v",
+    "ja": "返事、ずっと待ってます。",
+    "en": "I've been waiting for your reply.",
+    "alternatives": [
+      "I've been waiting to hear back.",
+      "I've been waiting on your reply."
+    ],
+    "point": "続いている動作は have been ~ing",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5s9q8a5g",
+    "ja": "報告書が昼までに必要です。",
+    "en": "The report is needed by noon.",
+    "alternatives": ["We need the report by noon.", "I need the report by noon."],
+    "point": "期限は until ではなく by noon",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 5,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8e5f4f2h",
+    "ja": "話した資料、送ってね。",
+    "en": "Send the file I mentioned.",
+    "alternatives": [
+      "Please send the file I mentioned.",
+      "Could you send the file I mentioned?"
+    ],
+    "point": "file の後ろに I mentioned を置いて資料を特定する",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 4,
+    "grammar": ["relative-clauses", "requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8n2b3j5f",
+    "ja": "先に彼に聞いたほうがいい。",
+    "en": "You should ask him first.",
+    "alternatives": [
+      "You'd better ask him first.",
+      "I think you should ask him first."
+    ],
+    "point": "助言は should。first は文末に置く",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 4,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9v2c8f6m",
+    "ja": "早退してもいいですか？",
+    "en": "May I leave early?",
+    "alternatives": ["Is it okay if I leave early?", "Can I head out early?"],
+    "point": "許可を求めるときは May I / Is it okay if",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 4,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]
