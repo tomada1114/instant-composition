@@ -22,6 +22,22 @@
     }
   },
   {
+    "id": "c_2v6m6z6w",
+    "ja": "友だちに促され、ヨガを試した。",
+    "en": "A friend got me to try yoga.",
+    "alternatives": [
+      "A friend talked me into trying yoga.",
+      "A friend got me trying yoga."
+    ],
+    "point": "get + 人 + to do で「〜してもらう・させる」",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 9,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3g2j4g6w",
     "ja": "近くに本屋があるよ。",
     "en": "There's a bookstore nearby.",
@@ -80,6 +96,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4k3c2c6x",
+    "ja": "続けていたら、今ごろ上手なのに。",
+    "en": "If I'd kept up, I'd be good.",
+    "alternatives": [
+      "I'd be good now if I'd kept at it.",
+      "If I'd kept practicing, I'd be good now."
+    ],
+    "point": "過去の仮定 + 今の結果は had done と would do",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4k3t7h3f",
+    "ja": "暇なら毎週ハイキングに行くのに。",
+    "en": "If I had time, I'd hike weekly.",
+    "alternatives": [
+      "If I were free, I'd go hiking every week.",
+      "I'd go hiking weekly if I had the time."
+    ],
+    "point": "if 節は過去形、主節は would + 原形",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 9,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5a4g9c3t",
@@ -148,6 +196,22 @@
     "subtopic": "hobbies",
     "level": 8,
     "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5t2e8d8p",
+    "ja": "妻に誘われて、釣りにはまった。",
+    "en": "My wife got me hooked on fishing.",
+    "alternatives": [
+      "My wife got me addicted on fishing.",
+      "Thanks to my wife, I got hooked on fishing."
+    ],
+    "point": "get + 人 + hooked on で「はまらせる」",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 10,
+    "grammar": ["causatives"],
     "createdAt": "2026-09-29",
     "stamps": {}
   },
@@ -454,6 +518,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9k5k4x2x",
+    "ja": "私が合唱団やめたって、誰が言ったの？",
+    "en": "Who told you I'd quit the choir?",
+    "alternatives": [
+      "Who said I'd quit the choir?",
+      "Who's telling you I quit the choir?"
+    ],
+    "point": "quit の時制は主節に合わせて I'd quit",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9k6s5y9j",
+    "ja": "もっと早く楽器を始めればよかった。",
+    "en": "I wish I'd taken up an instrument earlier.",
+    "alternatives": [
+      "If only I'd taken up an instrument sooner.",
+      "I wish I had started playing an instrument sooner."
+    ],
+    "point": "「始める」趣味は take up。過去の後悔は wish + had done",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 10,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9n3a2b4a",

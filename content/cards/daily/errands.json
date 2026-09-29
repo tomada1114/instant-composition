@@ -41,6 +41,38 @@
     }
   },
   {
+    "id": "c_2j2w6m7c",
+    "ja": "窓口の人が、郵送でいいと言ってた。",
+    "en": "The clerk said mailing it would be fine.",
+    "alternatives": [
+      "The clerk said mailing it would be okay.",
+      "The clerk told me mailing it would be fine."
+    ],
+    "point": "said の後は時制を一つ過去にずらす",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_2u7y7j6h",
+    "ja": "昨日来てれば、もう済んでたのに。",
+    "en": "If I'd come yesterday, I'd be done.",
+    "alternatives": [
+      "If I'd come yesterday, I'd be done by now.",
+      "Had I come yesterday, I'd be done now."
+    ],
+    "point": "過去の仮定 + 今の結果は had done と would be",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2x3w9b6r",
     "ja": "これに記入してください。",
     "en": "Please fill this out.",
@@ -137,6 +169,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3n6b6v4k",
+    "ja": "お待ちの方は番号札をどうぞ。",
+    "en": "Anyone waiting can take a number.",
+    "alternatives": [
+      "Those waiting can take a number.",
+      "If you're waiting, take a number."
+    ],
+    "point": "waiting を後ろから Anyone に付ける",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 8,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4a3h4t5w",
+    "ja": "手間取ったのは本人確認だった。",
+    "en": "What took time was the ID check.",
+    "alternatives": [
+      "It was the ID check that took time.",
+      "The ID check was what took so long."
+    ],
+    "point": "What 〜 is で「〜なのは、だ」と強調",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_4d9f7a4k",
@@ -237,6 +301,22 @@
     }
   },
   {
+    "id": "c_5x9f6k3u",
+    "ja": "頼んで、延滞料を免除してもらった。",
+    "en": "I got them to waive the late fee.",
+    "alternatives": [
+      "I had them waive the late fee.",
+      "I managed to get the late fee waived."
+    ],
+    "point": "get + 人 + to do で「頼んでしてもらう」",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5x9v6x2q",
     "ja": "荷物は明日届けられます。",
     "en": "It'll be delivered tomorrow.",
@@ -259,6 +339,22 @@
     }
   },
   {
+    "id": "c_7e7v8x4g",
+    "ja": "手数料がかかっても、今日済ませたい。",
+    "en": "Even with a fee, I'd rather finish today.",
+    "alternatives": [
+      "Even if there's a fee, I want to finish today.",
+      "I'd rather get it done today, fee or not."
+    ],
+    "point": "Even if / Even with で譲歩を表す",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7f4b2z3x",
     "ja": "必要なのは、身分証明書ですね。",
     "en": "What you need is an ID.",
@@ -276,6 +372,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7u5x9p7q",
+    "ja": "署名を済ませて、列に並んだ。",
+    "en": "Having signed, I joined the line.",
+    "alternatives": [
+      "After signing, I got in line.",
+      "Having signed it, I stood in line."
+    ],
+    "point": "分詞構文 Having + 過去分詞は「済ませてから」",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 9,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7w8s3y9b",
+    "ja": "役所が夜も開いてたら助かるのに。",
+    "en": "It'd help if it stayed open late.",
+    "alternatives": [
+      "I'd appreciate it if the office were open late.",
+      "It'd be great if the office were open late."
+    ],
+    "point": "現在の願望は if + 過去形、would help",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 8,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8e3a2h6z",
@@ -377,6 +505,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9a7p6r2u",
+    "ja": "コートの修理をしてもらった。",
+    "en": "I had my coat repaired.",
+    "alternatives": ["I got my coat fixed.", "I had my coat mended."],
+    "point": "have + 物 + 過去分詞で「してもらう」",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 9,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9c7a4z9k",
