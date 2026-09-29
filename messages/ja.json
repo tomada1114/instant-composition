@@ -210,7 +210,8 @@
       "next": "次の節目",
       "nearest": "{topic} あと {count} 文",
       "added": "+{count}",
-      "empty": "まだ 0 文"
+      "empty": "まだ 0 文",
+      "pending": "あと 1 日言えれば数えます · {count} 文"
     },
     "titles": {
       "label": "称号",

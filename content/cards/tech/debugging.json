@@ -1,0 +1,438 @@
+[
+  {
+    "id": "c_2t4b3c8r",
+    "ja": "まず再現手順を書くべき。",
+    "en": "You should write repro steps first.",
+    "alternatives": [
+      "You should write down repro steps first.",
+      "First, you should write repro steps."
+    ],
+    "point": "助言は should + 動詞の原形",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 5,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e33d614c01511bf7c2fc8ebf5b9615f047cde590657ab8fb1e071213e93997f7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3j7s9w3e",
+    "ja": "今回が一番厄介なバグだ。",
+    "en": "It's the trickiest bug yet.",
+    "alternatives": [
+      "This is the toughest bug so far.",
+      "This is the trickiest bug yet."
+    ],
+    "point": "最上級は the + -est",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2ad7cf5e256caa7ec7c8b51ede227891df246115bf6ae03c4b4c539463f0f142",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3m4f5k9u",
+    "ja": "君の環境で試していい？",
+    "en": "Can I try yours?",
+    "alternatives": ["Can I try it on yours?", "Can I test it on yours?"],
+    "point": "許可は Can I〜? / May I〜?",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9c4cff5c51f6a0e71a3a457bd958fc3accc1573056b41bdc6212f7bf2f9b79e8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3q8f8k2x",
+    "ja": "このエラー、いつから？",
+    "en": "When did this error start?",
+    "alternatives": [
+      "When did this error first show up?",
+      "When did we start seeing this error?"
+    ],
+    "point": "疑問詞の後は did + 主語 + 原形",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 5,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:43c21093b6d8eb51c7009933c81a284237fa9b78ee741c50ee2b21b81b407351",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4s3m9e8x",
+    "ja": "早く教えてくれてたらなあ。",
+    "en": "I wish you'd told me earlier.",
+    "alternatives": [
+      "I wish you had told me sooner.",
+      "If only you'd told me earlier."
+    ],
+    "point": "you'd は you had。過去の後悔は wish + 過去完了",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6da5ab1ed7f432016584fb4a2d78a222e0c4582a337d4f1bc33f8871377e6835",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4z7j6m2y",
+    "ja": "再現する必要がある。",
+    "en": "I need to reproduce it.",
+    "alternatives": ["I have to reproduce it.", "We need to reproduce this."],
+    "point": "「〜する必要」は need to + 動詞",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 3,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e460840d7193d90edac74d7bbe1d6122308c415fc1698a5e20e5f03898aea516",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5d3g4p8t",
+    "ja": "何時間もデバッグしてるよ。",
+    "en": "I've been debugging for hours.",
+    "alternatives": [
+      "I've spent hours debugging.",
+      "I've been debugging for hours now."
+    ],
+    "point": "続いている動作は have been + -ing",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 4,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cf1512417b9e3b581bbef783f67ee75576b21d633ce9c81d309403f76b2f4f60",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5e7q2q5b",
+    "ja": "ログを見せて。",
+    "en": "Show me the logs.",
+    "alternatives": ["Let me see the logs.", "Please show me the logs."],
+    "point": "命令文は動詞で始める",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 1,
+    "grammar": ["imperatives", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8139c8f8b764f34253579e8c82952e423c1d4cf07f3a6a9a1e1f01aedec1b856",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5q9n3d6a",
+    "ja": "ページを更新して。",
+    "en": "Reload the page.",
+    "alternatives": ["Refresh the page.", "Please reload the page."],
+    "point": "「更新する」は reload / refresh。命令文は動詞から",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 1,
+    "grammar": ["imperatives", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9616a76c88194c28ec5bb80d27c0382a60164c61c8311c53aa1c54ed8367aeb8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6a5b9g7k",
+    "ja": "明日、再現手順を送ります。",
+    "en": "I'll send repro steps tomorrow.",
+    "alternatives": [
+      "I'm going to send repro steps tomorrow.",
+      "I'll send the repro steps tomorrow."
+    ],
+    "point": "その場で決めた予定は will",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 4,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b59e872bcf8c160a3aef8269a874adb354d74e17b4ff8606db4ae96df13d22cf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6c9t2n7h",
+    "ja": "エラーが一つあるよ。",
+    "en": "There's one error.",
+    "alternatives": ["I see one error.", "One error is showing."],
+    "point": "数えられる名詞に単数の There's",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d7349bab5b35e6fc0a09e0f955183accc868c2f57238109595579016b5a4d52c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6d3y8u7j",
+    "ja": "前回の公開から失敗続き。",
+    "en": "It's been failing since last deploy.",
+    "alternatives": [
+      "It's failed since the last deploy.",
+      "It's been failing since the deploy."
+    ],
+    "point": "since + 過去の時点は現在完了",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 5,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:61db43aa659c29e200971b1ff770206985d5c51b75a94acb05a69c65f117f85b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6x8u8k2m",
+    "ja": "キャッシュを消して。",
+    "en": "Clear the cache.",
+    "alternatives": ["Please clear the cache.", "Delete the cache."],
+    "point": "特定のものには the をつける",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 2,
+    "grammar": ["imperatives", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b4eaed2ddd62651a38a16d5e86b376d8b0b5157dcef8fae2a9ea0efbb38b5550",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7g6a6y5h",
+    "ja": "バグは本番でしか起きなかった。",
+    "en": "The bug only happened in production.",
+    "alternatives": [
+      "The bug only occurred in production.",
+      "We only saw the bug in production."
+    ],
+    "point": "only は動詞の前。過去の出来事は happened",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 6,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5d84e6d2028ed51d4cb9198b8a35889a45d1269bf4480a9cdfc61a9d582060ec",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7t6p5j9q",
+    "ja": "ログを見てもいいですか？",
+    "en": "May I check the logs?",
+    "alternatives": ["Could I check the logs?", "Can I check the logs?"],
+    "point": "丁寧な許可は May I / Could I",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:611f801d709db2f0a494a278233afa81f81a8bca70fca85a37656aeb20fd5bfe",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7x6k3t5y",
+    "ja": "失敗テストが二つある。",
+    "en": "There are two failing tests.",
+    "alternatives": ["Two tests are failing.", "I see two failing tests."],
+    "point": "複数名詞には There are",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:29baaa7a0991064864d6b2c90bb802006f9afe90c0af7cfa3e9a9efa67ff925e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8a6n3v8b",
+    "ja": "キャッシュを消したら直った。",
+    "en": "Clearing the cache fixed it.",
+    "alternatives": [
+      "Just clearing the cache fixed it.",
+      "Clearing the cache was enough to fix it."
+    ],
+    "point": "動名詞が主語になる。To clear ではなく Clearing",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 7,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c01695c331deadb57c30c834431bd86bdeb8ea59911bf02f860fb5c94d183405",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8f9x8e4q",
+    "ja": "先にログを入れればよかった。",
+    "en": "I wish I'd added logging first.",
+    "alternatives": [
+      "I wish I had added logs first.",
+      "If only I'd added logging first."
+    ],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dc3186fd3f8fe9a8d2d4c40590ac83adbdfb151a6acad13855bea0970db21743",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8j3w8e5b",
+    "ja": "ログは、もう上書きされていた。",
+    "en": "The logs had already been overwritten.",
+    "alternatives": [
+      "The logs were already overwritten by then.",
+      "The logs had been overwritten by then."
+    ],
+    "point": "見た時より前のこと。had been + 過去分詞",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6a1c25bb8deb1f727812f99cba107ef9c60d4d5252276ca06461e809f1366bc7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8r2f8g2p",
+    "ja": "なぜ失敗するか分からない。",
+    "en": "I can't tell why it fails.",
+    "alternatives": [
+      "I don't know why it fails.",
+      "I can't figure out why it fails.",
+      "I have no idea why it fails."
+    ],
+    "point": "間接疑問は why it fails の語順。why does it ではない",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 7,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1e78c735064a2d27055ab1d793173a5619d133812841d3f3744828150dacee10",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9p2m9w8b",
+    "ja": "別のブラウザで試して。",
+    "en": "Try another browser.",
+    "alternatives": ["Try a different browser.", "Use another browser."],
+    "point": "another + 単数名詞。a を重ねない",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 2,
+    "grammar": ["imperatives", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7a45d7f2f792a4ae61343b3f561f1a202b49a05814b0a032503f7dfe8875d25b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

@@ -1,0 +1,432 @@
+[
+  {
+    "id": "c_2j4f5f4h",
+    "ja": "練習してたら、乗り切れたのに。",
+    "en": "If I'd practiced, I'd have coped.",
+    "alternatives": [
+      "I'd have coped if I'd practiced.",
+      "If I'd practiced, I'd have gotten through it."
+    ],
+    "point": "過去の仮定は had + 過去分詞 と would have",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b3a776e2dd103ebdc5107b868998e314e11c1b038b1414d69b7cc05f40608357",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2p3c9j9e",
+    "ja": "売上は昨年から伸びています。",
+    "en": "Sales have grown since last year.",
+    "alternatives": [
+      "Sales have been rising since last year.",
+      "Sales have increased since last year."
+    ],
+    "point": "since と現在完了、過去の一点なら過去形",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f55f3b1fdb3c88904f8473069a93760389723109646084a5574e156dbf35f0ce",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2w2d2x4h",
+    "ja": "これは何の図ですか？",
+    "en": "What is this chart?",
+    "alternatives": ["What does this chart show?", "What's this chart about?"],
+    "point": "疑問詞 what を文頭に。「図」は chart",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f2f98ecaf3fa17917928bc746a1053b68c3abc966acf98d2b4fe5e416337fae",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3d8e3y6h",
+    "ja": "詳細は後で共有されます。",
+    "en": "Details will be shared later.",
+    "alternatives": ["We'll share the details later.", "You'll get the details later."],
+    "point": "未来の受け身は will be + 過去分詞",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 3,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:35a58f57163fd21fee5113492ab988aedf39f34040cc923c255a83af8d316c99",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3x2k2s9c",
+    "ja": "このグラフを見てください。",
+    "en": "Please look at this graph.",
+    "alternatives": ["Take a look at this graph.", "Have a look at this graph."],
+    "point": "「見る」は look at＋対象",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 3,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ad059f5a723374bdbe8251916ee5b94ec203f9ed63af462025b9d0aa54a34cc5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3x2p9y9m",
+    "ja": "これが当社製品です。",
+    "en": "This is our product.",
+    "alternatives": ["Here is our product.", "This is what we make."],
+    "point": "「弊社の」は our。this で手元のものを示す",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6cfde159daaecf5be5d99291a31cf488b66d313260e54bded64c372559e767d5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3y8z5y7p",
+    "ja": "上のグラフをご覧ください。",
+    "en": "Please see the chart above.",
+    "alternatives": [
+      "Please look at the graph above.",
+      "Please refer to the chart above.",
+      "Please see the graph above."
+    ],
+    "point": "「上の」は名詞のあとに above を置く",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1deac470441d04cc020ca84db5d6c8a266aac99ccca500e668bf7341dc51446f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4n2h3t7s",
+    "ja": "よく見ると、傾向が分かります。",
+    "en": "Looking closely, you'll see a trend.",
+    "alternatives": [
+      "If you look closely, you'll see a trend.",
+      "Look closely and you'll see a trend."
+    ],
+    "point": "「〜すると」は Looking closely の分詞構文",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6e1f26db2c8d2a7e6e6355e6b97372ffb9c971c4f1bcf830a717d219e4d30b99",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4t6g6a3u",
+    "ja": "終わったら質問を受けます。",
+    "en": "I'll field questions when I finish.",
+    "alternatives": [
+      "Once I'm done, I'll take questions.",
+      "I'll take questions after I've finished."
+    ],
+    "point": "when 節の中は未来でも現在形",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:20164b3e2535d8c0c9914e226d76e4d7ddea7346d1e28aff1616d22d2514d7e6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4y6m5j6k",
+    "ja": "ご清聴に感謝します。",
+    "en": "Thank you for listening.",
+    "alternatives": ["Thanks for listening.", "Thank you for your attention."],
+    "point": "for のあとは動名詞（-ing）",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 4,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:17974f709a09d60e8fc7d708f6e43b288d4619ed210186d80c118522b65b60ea",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4y6p9k2j",
+    "ja": "先に進んでもいい？",
+    "en": "Can I move on?",
+    "alternatives": ["May I move on?", "Is it okay to move on?"],
+    "point": "move on で「先へ進む」。許可は Can I / May I",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5b2af17a5477430ab177789399d29d6ca661327fdf8dcfdf5fc6b9d37b7242e3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6k4u5g2g",
+    "ja": "同僚に資料を見てもらった。",
+    "en": "I had a coworker check my slides.",
+    "alternatives": [
+      "A coworker checked my slides for me.",
+      "I had a coworker check the slides."
+    ],
+    "point": "have＋人＋原形で「〜してもらう」",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 5,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:967b0a574ae4a47dd5c00c8e0dc908e1388c661a30d8e02cbe5506c0a2d0d37d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7b2y3n4k",
+    "ja": "部長に、発表を頼まれました。",
+    "en": "My director asked me to present.",
+    "alternatives": [
+      "I was asked by the director to present.",
+      "The director asked me to give the presentation."
+    ],
+    "point": "ask + 人 + to do",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 6,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f86bcf6d36e56d47dfc95407bca27c59fd88f0beebe6f595101a4d471e7f5825",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7b5d8k8z",
+    "ja": "背景の説明から始めます。",
+    "en": "I'll start by explaining the background.",
+    "alternatives": [
+      "Let me start by explaining the background.",
+      "I'll start with the background."
+    ],
+    "point": "by のあとは動名詞（-ing）",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 5,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:60ef6f1b8da75b24876e0645df8e9c34f90e825999441c2111c601c42084aa36",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7f4m2h2g",
+    "ja": "利点は二つあります。",
+    "en": "There are two advantages to this.",
+    "alternatives": ["This has two advantages.", "This plan has two benefits."],
+    "point": "利点が二つなので There are",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 5,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f4eccb71bdee07e96c3012e632c4fb92ebe23de8888484f1dc4e736f083cba58",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7t6z2q3j",
+    "ja": "十分間の発表です。",
+    "en": "It's a ten-minute talk.",
+    "alternatives": ["The talk is ten minutes long.", "This talk takes ten minutes."],
+    "point": "ten-minute は単数形でハイフンでつなぐ",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:023b96c003cc76d8d36766207b17b766f5ca854e1e09c2bf02e4111808e385c4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8c9a5q7r",
+    "ja": "今、資料を配ってます。",
+    "en": "I'm handing out copies.",
+    "alternatives": ["I'm passing out handouts.", "I'm handing out the materials."],
+    "point": "hand out は「配る」。今の動作は進行形",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:309dd8a31b10057742fcd19f3735ee8aea57f5451a116a6efbc43ca112909440",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8h4k8a6n",
+    "ja": "最近これを調べています。",
+    "en": "I've been studying this lately.",
+    "alternatives": [
+      "I've been looking into this lately.",
+      "Lately I've been researching this."
+    ],
+    "point": "今も続く動作は have been -ing",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 4,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:76cabba039712238113e051fffa3f49ad363cab66ec92b4df7fe5e6ae44f9928",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8u2p8h9b",
+    "ja": "データはいつ集められたの？",
+    "en": "When was the data collected?",
+    "alternatives": ["When was the data gathered?", "When was that data collected?"],
+    "point": "「集めた」は受け身なら was collected",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 3,
+    "grammar": ["wh-questions", "passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1834dd3ba579aab0568dc1a370a010775b382c5cbe3eba8da0251539de6704cd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9d5c7z2p",
+    "ja": "予行してれば、うまくいった。",
+    "en": "If I'd rehearsed, it'd have worked.",
+    "alternatives": [
+      "It would've worked if I'd rehearsed.",
+      "If I had rehearsed, it would have worked."
+    ],
+    "point": "過去の仮定は if + had + 過去分詞",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6fd2bc0650e0f0effd1c3d646c62f282b0b88ff929e444d41eef4893190913f8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9n3f6y4k",
+    "ja": "画面を共有中です。",
+    "en": "I'm sharing my screen.",
+    "alternatives": ["I'm sharing the screen.", "I'm showing my screen."],
+    "point": "「〜中」は進行形。share は共有する",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef8cff5804dceeaa833be3042e7ce4bc80966141f66482411e07ddb8cc53af24",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

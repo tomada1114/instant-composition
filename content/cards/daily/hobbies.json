@@ -1,5 +1,49 @@
 [
   {
+    "id": "c_2h3m7c9v",
+    "ja": "晴れたら、釣りに行くよ。",
+    "en": "If it's sunny, I'll go fishing.",
+    "alternatives": [
+      "I'll go fishing if it's sunny.",
+      "If the weather's nice, I'll go fishing."
+    ],
+    "point": "未来のことでも if 節は現在形",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 5,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8b82d742187f5c043338703fb0a1ef8b5dfbd603339cb01f3b349c7459811291",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3g2j4g6w",
+    "ja": "近くに本屋があるよ。",
+    "en": "There's a bookstore nearby.",
+    "alternatives": [
+      "There's a bookstore near here.",
+      "There's a bookstore around here."
+    ],
+    "point": "「〜がある」は There's + a + 単数名詞",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 2,
+    "grammar": ["there-is-are", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:34a77c18e302bd86cf940ec3d9fd3c135a35ee56326c15d921f9434d8d3a1b22",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3v9x4x5b",
     "ja": "私が好きなのは山登りです。",
     "en": "What I like is hiking.",
@@ -13,6 +57,82 @@
     "stamps": {
       "core": {
         "hash": "sha256:b599d992bfbc44d52d8b15e5971c40bb54f7dbd648d18424e587efbbffc43ea7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4g3b3p2v",
+    "ja": "ハイキングに行こう。",
+    "en": "Let's go hiking.",
+    "alternatives": ["Let's go for a hike.", "Let's go on a hike."],
+    "point": "「〜しに行く」は go + -ing",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1ce561fe4944837ea92efa45e7ad2a9b13844c0affc0ad45252f4cb26e0a824f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5e6y6x3z",
+    "ja": "雨でも走るつもりだよ。",
+    "en": "I'll run even if it rains.",
+    "alternatives": ["Even if it rains, I'll run.", "Rain or shine, I'll run."],
+    "point": "Even if の後は未来でも現在形",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 7,
+    "grammar": ["concession-contrast", "time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0e3e903c7c774d4d24549d15961c5058bf204b17c0f81e6d69d25ba02b550972",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5h3k3b7q",
+    "ja": "近くにジムがあるよ。",
+    "en": "There's a gym nearby.",
+    "alternatives": ["A gym is nearby.", "There's a gym near here."],
+    "point": "「〜がある」は There's + 単数の名詞",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7bb3c7f37cbcba0d1bb5447f1dbf8a270fe66f682283fe3b8a8d6fc6f7a2790",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5w4n2y7m",
+    "ja": "撮影してもいいですか？",
+    "en": "May I take pictures?",
+    "alternatives": ["Could I take pictures?", "Is it okay to take pictures?"],
+    "point": "丁寧な許可は May I / Could I。take pictures で撮影",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2b35f4543d44416c19095a122527d4c3810d372e41cf15e775da5c4ec79246c7",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -38,6 +158,85 @@
     }
   },
   {
+    "id": "c_5x8g7j9t",
+    "ja": "ギターを買ったんだ。",
+    "en": "I bought a guitar.",
+    "alternatives": ["I got a guitar.", "I picked up a guitar."],
+    "point": "buy の過去は bought。数えられる名詞に a を付ける",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 2,
+    "grammar": ["past-simple", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ae68817cc80938f83f4510d0963ffe2e81fa28899400ab321b0698b6af7db53a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5z3f3w2a",
+    "ja": "週末、ハイキングに行くかも。",
+    "en": "I might go hiking this weekend.",
+    "alternatives": [
+      "I may go hiking this weekend.",
+      "I might go for a hike this weekend."
+    ],
+    "point": "かもは might でやわらげる",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 6,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bbc5d2dc8f937afc15cf463a2d1416483cb9d451911f63d782674fd3a4867c5a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6u3t3a4q",
+    "ja": "週末は休むといいよ。",
+    "en": "You should rest this weekend.",
+    "alternatives": ["Take it easy this weekend.", "Try to rest this weekend."],
+    "point": "「〜するといい」の助言は should + 動詞の原形",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5a3ccb61bf367c0cb5b6504a4039f89bcffba5aaba910ab86837b146d81c374d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7a6e6z8j",
+    "ja": "先週、釣りに行ったよ。",
+    "en": "I went fishing last week.",
+    "alternatives": ["Last week I went fishing.", "I went out fishing last week."],
+    "point": "「行く」の過去は went。「釣りに行く」は go fishing",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bba5ec506f26ebbb4284ea3193d43a4455f9bd56d1d1b6e09b8d83c490a4f8a4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_7s7b6f4z",
     "ja": "弟は今ゲームをしているよ。",
     "en": "My brother's playing games now.",
@@ -54,6 +253,174 @@
     "stamps": {
       "core": {
         "hash": "sha256:b6a03581591d1176e4d5695bd9305bb5e7c7428962da3e2b23b24111e052d12e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7v2x6k5z",
+    "ja": "週末はキャンプに行くんだ。",
+    "en": "I'm going camping this weekend.",
+    "alternatives": [
+      "I'm going to go camping this weekend.",
+      "I'm heading out camping this weekend."
+    ],
+    "point": "決まった予定は現在進行形で言える",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 5,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f8dd87e2bc9147ab41f95a79c06639d195ddb17db0c1efb409c9935053d0677e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8f6w6h6f",
+    "ja": "開演は何時か知ってる？",
+    "en": "Do you know when it starts?",
+    "alternatives": ["Do you know what time it starts?", "Any idea when it starts?"],
+    "point": "間接疑問は when の後が平叙文の語順",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 4,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:06710871010f1a532e4eabb11327e493ff90420c62e2ea3ddf90c06f70c7d1b1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8r3t2s5r",
+    "ja": "祭りは毎年夏に開かれる。",
+    "en": "The festival is held every summer.",
+    "alternatives": [
+      "The festival takes place every summer.",
+      "They hold the festival every summer."
+    ],
+    "point": "「開かれる」は is held の受動態",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 5,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ffdf85addad507a4c5d898916d9cff3ef7904169d9610f5272d1d6d3b2d7f93f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8x9f8w9r",
+    "ja": "日曜の陶芸教室に通ってる。",
+    "en": "I take a Sunday pottery class.",
+    "alternatives": [
+      "I go to a Sunday pottery class.",
+      "I attend a pottery class on Sundays."
+    ],
+    "point": "教室に通うは take a class が自然",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 6,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:266138496321d1499747da162f9e41ca824f2514182f537ae49f530af7df634c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9e4g2b2m",
+    "ja": "最近、ヨガを始めたんだ。",
+    "en": "I took up yoga recently.",
+    "alternatives": ["I've taken up yoga recently.", "I recently took up yoga."],
+    "point": "趣味を始めるは take up",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 7,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0513cf437625bc690c3c5351e6ae05e059bc314dae088bbf5d83f8a9e54b1b5a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9e7q5u3z",
+    "ja": "私の趣味は写真です。",
+    "en": "My hobby is photography.",
+    "alternatives": [
+      "Photography is my hobby.",
+      "I'm into photography.",
+      "My hobby is taking photos."
+    ],
+    "point": "趣味は My hobby is 〜。photography は a を付けない",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 3,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a8e07c0b54b15a78ac1eb162fdb5600696fdf23ea2d12e78e6d0c0a0402c567a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9f7b3f7y",
+    "ja": "初心者でも、ギターは楽しいよ。",
+    "en": "Guitar is fun, even for beginners.",
+    "alternatives": [
+      "Guitar is fun even for a beginner.",
+      "Even for a beginner, guitar is fun."
+    ],
+    "point": "even for ~ で「〜でも」の譲歩",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 6,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:539ca72b3e7eb2baaf9e9abc9bf61d0ed578bd96c026644c08722bf463031e82",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9n3a2b4a",
+    "ja": "私、ギター弾けるよ。",
+    "en": "I can play guitar.",
+    "alternatives": ["I can play the guitar.", "I'm able to play guitar."],
+    "point": "楽器名の前の the は付けても付けなくてもよい",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5ba4ba504c9a5c2bf87b03a0c84cf9b4c430a564475370ac42c7936a8ec42039",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

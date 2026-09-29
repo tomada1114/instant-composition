@@ -19,6 +19,88 @@
     }
   },
   {
+    "id": "c_2m5a9v6e",
+    "ja": "この町は楽しい所が多い。",
+    "en": "There are many fun places here.",
+    "alternatives": [
+      "This town has lots of fun places.",
+      "This town has plenty of fun spots."
+    ],
+    "point": "「〜が多い」は There are many で言える",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 5,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:696c3b57c10fed3c019718bfb9b51602ed946d941d78a4472556f6e2b9745f55",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3p7z6b4w",
+    "ja": "一人で歩くのは平気だよ。",
+    "en": "I don't mind walking alone.",
+    "alternatives": [
+      "I don't mind walking by myself.",
+      "Walking alone doesn't bother me."
+    ],
+    "point": "mind の後は -ing",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b3c01fbf98341479a577c62c5308ff4ca96bff4e2e2693f28643286e938dab7e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4a5n5u4g",
+    "ja": "ひと言いいですか？",
+    "en": "May I say something?",
+    "alternatives": ["Could I say something?", "Is it okay to say something?"],
+    "point": "丁寧に許可を求める May I / Could I",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0acebd3b879d54ff5c4b90445c2b63b1c65f304489302996f51a1704ac7f4c7a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4e6w5s7b",
+    "ja": "一人になってもいい？",
+    "en": "Can I be alone?",
+    "alternatives": ["Can I have some time alone?", "Can I have a minute alone?"],
+    "point": "許可を求める Can I 〜? に be alone を続ける",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cee12880a01031d9dafed664baa052956477dcc8f0f3053f4e15e552a2ef4130",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4v9a4j8e",
     "ja": "無理しないほうがいいよ。",
     "en": "You shouldn't push yourself.",
@@ -38,6 +120,110 @@
     }
   },
   {
+    "id": "c_4z6r6p5c",
+    "ja": "今、わくわくしてる！",
+    "en": "I'm feeling excited.",
+    "alternatives": ["I'm so excited!", "I'm really excited!"],
+    "point": "今の気持ちは進行形 I'm feeling 〜",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:630e2a2702983e8d8b1934d74c74f8b04ebf60d397cd50230fa4448ea0db9b03",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5a9a3b2h",
+    "ja": "会えてうれしいよ。",
+    "en": "I'm glad to see you.",
+    "alternatives": ["I'm happy to see you.", "It's nice to see you."],
+    "point": "気持ちの理由は形容詞 + to 不定詞",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 3,
+    "grammar": ["infinitives", "be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:552876d9598993efbdc1eba17f8e0fc2a643580b127c43a62f12e134e3103ce4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6c6d5c7h",
+    "ja": "雨でも、私は楽しかったよ。",
+    "en": "Despite the rain, I had fun.",
+    "alternatives": [
+      "Even in the rain, I had fun.",
+      "I had fun even though it rained."
+    ],
+    "point": "despite の後ろは名詞。節なら even though",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 5,
+    "grammar": ["concession-contrast", "past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d11aa42446ff15777be452b52028119a4c2a426ccbdf4e21008e4b572c7a904a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6n2k9e6b",
+    "ja": "傘があれば、濡れなかったのに。",
+    "en": "An umbrella would've kept me dry.",
+    "alternatives": [
+      "I'd have stayed dry with an umbrella.",
+      "I wouldn't have gotten wet with an umbrella."
+    ],
+    "point": "過去の仮定は would have + 過去分詞",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bc4b4ad8dbab490008b2c4361e887a2fe6a2cb67de8779c8c1b401c93395d70e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7c4z9t7s",
+    "ja": "聞いた知らせ、嬉しかったよ。",
+    "en": "I loved the news I heard.",
+    "alternatives": [
+      "I was happy about the news I heard.",
+      "The news I heard made me happy."
+    ],
+    "point": "聞いた知らせは news の後ろに置く",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d76dd7af8639c2d02cd01cdb755b34101b54d9ee8142f74b3e8b5995bebd940b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_7f2v2m4z",
     "ja": "もう落ち着いたよ。",
     "en": "I've calmed down now.",
@@ -51,6 +237,187 @@
     "stamps": {
       "core": {
         "hash": "sha256:4a93ffbe61a1130cd7f5fe90d026c9da13dff226ba13357bbd7e4009107cb06f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7v2b3k8z",
+    "ja": "彼の言葉に、傷ついたよ。",
+    "en": "I was hurt by his words.",
+    "alternatives": ["I was hurt by what he said.", "What he said hurt me."],
+    "point": "傷つけられたは受動態 be hurt",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bc702dda73921cb6c7234b69185832ade1afad272dbc5433eff5cbdac4bf979a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7w3y4d5p",
+    "ja": "試験に受かってほっとした。",
+    "en": "I was relieved I passed.",
+    "alternatives": [
+      "I felt relieved after passing the exam.",
+      "I was relieved to pass the exam."
+    ],
+    "point": "ほっとした＝ relieved（過去の気持ち）",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 5,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f0e566af67861879de2fa32ae3df5b944e31ef92cb6f315a73323341e6613c2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8e3q4j9r",
+    "ja": "それを聞いて残念です。",
+    "en": "I'm sorry to hear that.",
+    "alternatives": ["I'm so sorry to hear that.", "Sorry to hear that."],
+    "point": "「〜して残念」は sorry + to 不定詞",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 3,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bd8a40178ebd7eb5fb3624eeb044e192050c65c9f835276ace0d30629238c8f5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8k7e8z8f",
+    "ja": "明日は絶対、緊張するだろうな。",
+    "en": "I'm going to be nervous tomorrow.",
+    "alternatives": [
+      "I'll be nervous tomorrow.",
+      "I'm sure I'll be nervous tomorrow.",
+      "I'll definitely be nervous tomorrow."
+    ],
+    "point": "見込みのある未来は be going to",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6c5f47cf741447465aa23ec4b7396cb5dd7bf7798a0bfe72e4ace9024d733568",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8t8g5t4q",
+    "ja": "なんで泣いてるの？",
+    "en": "Why are you crying?",
+    "alternatives": ["How come you're crying?", "What are you crying for?"],
+    "point": "「今〜している理由」は Why + 進行形",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 2,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a75a57063c65d4736229db2709e19e0fac253f96dbd835c344f4f84a57304768",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8x6x5b9n",
+    "ja": "いい日だね！",
+    "en": "It's a good day.",
+    "alternatives": ["It's a great day.", "Today is a good day."],
+    "point": "数えられる名詞 day には a を付ける",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:69024040eb26a00a5489396188fc16d4128dc0758cec522c08e5d9beeba267ec",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9a4x6y9t",
+    "ja": "終わったらほっとするよ。",
+    "en": "I'll be relieved when it's over.",
+    "alternatives": [
+      "I'll be relieved once it's over.",
+      "When it's over, I'll be so relieved."
+    ],
+    "point": "when の後は未来でも現在形",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c29e4c5276a7571c0a5379ac4d39a88a72bbd6143ae1537a9633d1c7dc8abaf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9b9h9v7a",
+    "ja": "どうしたの？",
+    "en": "What's wrong?",
+    "alternatives": ["What's the matter?", "What's the problem?"],
+    "point": "様子を尋ねる定番。What's wrong? は短くて便利",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:06195286097e4f6132f1348e2da6b7a721068530b694e10da3743b9f6256d49f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9x9p2r4r",
+    "ja": "もう歩けないよ。",
+    "en": "I can't walk anymore.",
+    "alternatives": ["I can't walk any further.", "I can't take another step."],
+    "point": "「もう〜できない」は can't + 動詞 + anymore",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 2,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1f752ff02ebc07174f0fbe95628015d710ced41b6c5c29399504b3c826d47c19",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

@@ -1,0 +1,434 @@
+[
+  {
+    "id": "c_3d7d3t4w",
+    "ja": "明日の朝、返信します。",
+    "en": "I'll reply tomorrow morning.",
+    "alternatives": [
+      "I'm going to reply tomorrow morning.",
+      "I'll write back tomorrow morning."
+    ],
+    "point": "その場で決めた予定は I'll。「明日の朝」は tomorrow morning",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:eeb8d251717453c18b72ab5e686c7cacb0dfe46eed54a634bb14403949965009",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3d7j7j4v",
+    "ja": "上司をCCに入れるべきだった。",
+    "en": "I should have cc'd my boss.",
+    "alternatives": [
+      "I should have copied my boss in.",
+      "I should have looped my boss in."
+    ],
+    "point": "後悔や反省は should have + 過去分詞",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:896e68a9a9a0adbf0b3858d13d89c0fe56dd670ead5dc7998b2398fdb32d54df",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3t3r4v3a",
+    "ja": "添付を忘れてすみません。",
+    "en": "Sorry, I forgot the attachment.",
+    "alternatives": [
+      "Sorry, I forgot to attach the file.",
+      "Sorry, I left out the attachment."
+    ],
+    "point": "特定の添付は the attachment",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 4,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8520341d04103cd7c52419229d738f7ccf66e7cda38e7d6515793934ddd37037",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3u9g4g8k",
+    "ja": "明日、彼にもう一度連絡します。",
+    "en": "I'll follow up with him tomorrow.",
+    "alternatives": [
+      "I'll circle back with him tomorrow.",
+      "I'll check in with him again tomorrow."
+    ],
+    "point": "「改めて連絡する」は follow up with",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 7,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bda583c5f4cafb7584b0c9993386ea4bda94b3c409bfbc598aa2ed0c91be37bf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3x8v2d8g",
+    "ja": "私にも CC してください。",
+    "en": "Please CC me too.",
+    "alternatives": ["Please copy me too.", "Add me to the CC too."],
+    "point": "命令文に Please。「私に」は me",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 3,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b7e8b0ce25fd450f3c3ac99ce80b3cbe98dc9020ddc3af266e932e4043414f70",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4s7c6j6n",
+    "ja": "ここに誤字があります。",
+    "en": "There's a typo here.",
+    "alternatives": ["There's a typo in here.", "I see a typo here."],
+    "point": "「ある」は There's + 単数。typo の前は a",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:28f6338495627bb04c13736ebcfc82f6d1723e58e66e9b7ac484a7526c0eb4b3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5g6s8v5u",
+    "ja": "今メール書いてます。",
+    "en": "I'm writing an email.",
+    "alternatives": ["I'm writing an email now.", "I'm typing an email."],
+    "point": "「今〜している」は am + -ing。email の前は an",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d752333c552e35db6bd03f031f756e505ef52990092bae12b6eb13dc8337efa0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6g3f5f5b",
+    "ja": "Slack が朝から鳴ってる。",
+    "en": "My Slack's been pinging all morning.",
+    "alternatives": [
+      "Slack has been buzzing since this morning.",
+      "My Slack has been going off all morning."
+    ],
+    "point": "朝からずっと続く動作は現在完了進行形",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c6979878c0f80d740ff5965a1969036db475566abaf1265d3628497a4ba55ae",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7c7f8b8x",
+    "ja": "読み終えて、すぐ返信した。",
+    "en": "Having read it, I replied immediately.",
+    "alternatives": [
+      "After reading it, I replied right away.",
+      "I read it and replied right away."
+    ],
+    "point": "先に終えた動作は having + 過去分詞",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cc95d7ad26e6230a570b17569121fcb8d49fed07e360a510ee4ec2f745876047",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7j4y5n8r",
+    "ja": "宛先は先に確認したほうがいい。",
+    "en": "You should double-check the recipients first.",
+    "alternatives": [
+      "You'd better double-check the recipients first.",
+      "It's worth double-checking the recipients first."
+    ],
+    "point": "助言は should、再確認は double-check",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 7,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:69ded7463164842a7d50719044d41188225f87a0789c1c894e1bee248ef30720",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7u2a2h2j",
+    "ja": "早めに返信ください。",
+    "en": "Please reply soon.",
+    "alternatives": ["Please reply quickly.", "Reply soon, please."],
+    "point": "お願いの命令文は Please を付けて動詞から始める",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:44f0d94f6b8fb759a15fc6ff55d422bbfc7770006c3b36d0ddecf97d7f4fd4fb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7y4c8y8e",
+    "ja": "それ、送ってくれる？",
+    "en": "Can you send it?",
+    "alternatives": ["Could you send it?", "Would you send it?"],
+    "point": "お願いは Can you / Could you。丁寧なのは Could",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cea5e88079994843c2615c58bfd56c14eca36e505bac12b738d03524c01b5896",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8d3g4b5f",
+    "ja": "もっと早く返信しなくてごめん。",
+    "en": "Sorry for not replying sooner.",
+    "alternatives": [
+      "I'm sorry I didn't reply earlier.",
+      "Sorry for not getting back to you sooner."
+    ],
+    "point": "謝る理由は for + -ing、否定は not を前に",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 6,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a2253655f7f56e354b7b9afe020d4fa2e220155b2ea5b191085f04064d51a16d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8j2w5z2q",
+    "ja": "メールより電話が早いよ。",
+    "en": "A call is faster than email.",
+    "alternatives": [
+      "Calling is quicker than emailing.",
+      "It's faster to call than to email."
+    ],
+    "point": "比べる相手は than のあとに置く",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 5,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ca08f40a2bce593a2d9faba3d22f1d1d27f653ac1239066f0d357c5e6caa1559",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8q5z3k3w",
+    "ja": "これは急ぎです。",
+    "en": "This is urgent.",
+    "alternatives": ["It's urgent.", "This can't wait."],
+    "point": "「急ぎ」は urgent。be 動詞は is",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ce3201bf42be4a870a13ab74b53132e7a122618d1f8e8ec27356eaacc8fbe54f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8y5r4p9z",
+    "ja": "これ、誰に送ればいい？",
+    "en": "Who should I send this to?",
+    "alternatives": ["Who do I send this to?", "Who should this go to?"],
+    "point": "前置詞 to は文末に残る",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 4,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1fb7d918c183e8a27f5e696837db6d0110d5a91c8031bcad33f3aefd5e5dec87",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9c7x7m2u",
+    "ja": "届いたらすぐ返信します。",
+    "en": "I'll reply once I get it.",
+    "alternatives": ["I'll reply when I get it.", "I'll reply as soon as it arrives."],
+    "point": "when 節は未来のことでも現在形",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 5,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5cec32e5eaad06d7de7a8b3a4609d982842fd4526c2b9b774ccf9173d4ec8072",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9g4w9x2f",
+    "ja": "彼は明日送ると言った。",
+    "en": "He said he'd send it tomorrow.",
+    "alternatives": [
+      "He told me he'd send it tomorrow.",
+      "He said he was sending it tomorrow."
+    ],
+    "point": "said のあとは will が would に変わる",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 5,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4d6f2353ec19407ebf44ffe026942d572414302df0544c2f59423251f6c7f3ae",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9g6e6m8j",
+    "ja": "添付が二つあります。",
+    "en": "There are two attachments.",
+    "alternatives": ["Two files are attached.", "There are two files attached."],
+    "point": "複数なら There are。名詞は attachments",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2100d724245ebafa3530bd64b7dbf37039ef3830a20e7bac3b077a5d684bb9a4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9n6p9h8t",
+    "ja": "日程確認でご連絡しました。",
+    "en": "Writing to confirm the date.",
+    "alternatives": [
+      "I'm writing to confirm the date.",
+      "I'm emailing to confirm the date."
+    ],
+    "point": "目的は to + 動詞の原形で言える",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 4,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:205b597f3e80f719a6f876baf76323d80a90c105ce7765d067f13e557454ecef",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9p6p8x2r",
+    "ja": "彼に返信するよう頼んだ。",
+    "en": "I asked him to reply.",
+    "alternatives": ["I asked him to write back.", "I asked him to respond."],
+    "point": "ask + 人 + to do。人は him と目的格",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b4172949a2ccd1a8d88dd9460ee016061276a6e0449e76ff17263ba156082364",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

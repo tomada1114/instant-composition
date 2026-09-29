@@ -1,6 +1,6 @@
 import { addDays } from "./day";
 import { settleLevel } from "./level";
-import { reachByTopic } from "./mastery";
+import { pendingReach, reachByTopic } from "./mastery";
 import { newTitles } from "./milestones";
 import { roundPoints } from "./points";
 import { emptyTally } from "./empty";
@@ -126,6 +126,11 @@ export function decideClose(state: CloseState, now: number): CloseChange {
       count: counts.after.get(topic) ?? 0,
       added: (counts.after.get(topic) ?? 0) - (counts.before.get(topic) ?? 0),
     })),
+    pending: pendingReach(
+      state.items.values(),
+      new Set(catalog.chosen),
+      catalog.placeOf,
+    ),
     titles,
     points: { earned, total: stats.points + earned },
     totals: {

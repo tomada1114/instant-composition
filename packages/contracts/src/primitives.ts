@@ -79,4 +79,5 @@ export const reachTopicSchema = z.object({
 export const reachViewSchema = z.object({
   topics: z.array(reachTopicSchema),
   nearest: z.object({ name: z.string(), remaining: countSchema }).nullable(),
+  pending: countSchema.exactOptional(),
 });

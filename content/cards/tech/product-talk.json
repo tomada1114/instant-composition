@@ -1,0 +1,429 @@
+[
+  {
+    "id": "c_2c8y3p5d",
+    "ja": "機能を少し減らそう。",
+    "en": "Let's cut some features.",
+    "alternatives": ["Let's trim a few features.", "Let's reduce the features a bit."],
+    "point": "「〜しよう」は Let's + 動詞",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:402513ade7f8335936f4b638cc42ca15758fffbabac99e84d89f793ff88a6ee9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2n4d8c7a",
+    "ja": "ユーザーに試すよう頼んで。",
+    "en": "Ask users to try it.",
+    "alternatives": ["Get users to try it.", "Ask users to test it."],
+    "point": "ask + 人 + to 動詞。命令文でも同じ形",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7518a56317fb15e0a29e698178e174a5458aad7896438e46d758704f77e753bc",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2r2h9b5a",
+    "ja": "この機能は、削るべきだった。",
+    "en": "We should have cut this feature.",
+    "alternatives": [
+      "We should've dropped this feature.",
+      "We should have removed this feature."
+    ],
+    "point": "過去の後悔は should have + 過去分詞",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:79f3c5f1478de469d078d1052975ea218bbd835c450f05a052bd76a10baee447",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3g9h4g4q",
+    "ja": "通知を減らすのはどうかな？",
+    "en": "How about reducing notifications?",
+    "alternatives": [
+      "What about reducing notifications?",
+      "Why not reduce notifications?"
+    ],
+    "point": "How about の後は -ing",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 4,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:55b1b5a779de93ed00aaacb3f80cbe3f479a7b0848e56f73e5b408c29c4fd864",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3k3d3t4u",
+    "ja": "もうリリースした？",
+    "en": "Have you released it yet?",
+    "alternatives": ["Have you shipped it yet?", "Have you already released it?"],
+    "point": "「もう〜した？」は Have you ～ yet?",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 3,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e660e7a6245dbd8626ac455a7f3ea1fcc61653653ad49ea466ed7b4ae72a46a5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3k6d4e4t",
+    "ja": "こっちのほうが安い。",
+    "en": "This one is cheaper.",
+    "alternatives": ["This one costs less.", "This one is less expensive."],
+    "point": "短い形容詞は cheaper のように er",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2a8801ec7ddc077f5e6b8fc703e8c8d87ac279473a8dbaabb8d39947125b00d0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3s8y7q7r",
+    "ja": "ユーザーが増えてるよ。",
+    "en": "Users are increasing.",
+    "alternatives": ["We're getting more users.", "The number of users is growing."],
+    "point": "変化の途中は進行形 are ～ing",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:621a999dc124f66545254e5bb094fc18847f0ca0ce52c1b7ceddeb0db189dfa8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4p8q5n7w",
+    "ja": "結局、誰向けの機能？",
+    "en": "Who is this feature actually for?",
+    "alternatives": [
+      "Who's this feature really for?",
+      "Who is this feature meant for?"
+    ],
+    "point": "前置詞 for は文末に残せる",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fd968a1768a646ce869def8f8b03cb376f30df9afb4c972605397d873521d8bd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4t4a7m7t",
+    "ja": "オフラインでも使えるよ。",
+    "en": "You can use it offline.",
+    "alternatives": ["It works offline too.", "You can even use it offline."],
+    "point": "「できる」は can + 動詞の原形",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 4,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c4b025571ee967c3f614d50e27e58b3c8c631a70a5b6fe8fc47ab7b29a2cd9ec",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4v2k2d8j",
+    "ja": "公開後、利用者が倍増した。",
+    "en": "Users have doubled since launch.",
+    "alternatives": [
+      "Our user count has doubled since launch.",
+      "The number of users has doubled since launch.",
+      "Users doubled after the launch."
+    ],
+    "point": "since と結果の今への影響は現在完了",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 6,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:833fb4950e8739f9690edaa74cfa70c34bb1de484a77d46220268974ab9e1fe7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5h8a6d8f",
+    "ja": "先にユーザーに聞くべき。",
+    "en": "We should ask users first.",
+    "alternatives": ["We should ask the users first.", "We ought to ask users first."],
+    "point": "「〜すべき」は should + 動詞",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:18f073255115a1e5daa3b922035a6a41a4e901ed03522737ddf7a5b30158736a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5w6x5t3z",
+    "ja": "離脱防止のために作った。",
+    "en": "We built it to prevent churn.",
+    "alternatives": ["We made it to prevent churn.", "We built this to reduce churn."],
+    "point": "目的は to + 動詞の原形",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:46fb9db02b2e35bd559a3327278892adcd5066aedb4b286c6e22fdc597773b8c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6f6a7q6d",
+    "ja": "今、テストしてるよ。",
+    "en": "I'm testing it now.",
+    "alternatives": ["I'm testing it right now.", "I'm testing this now."],
+    "point": "「〜してる」は be + ～ing",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7e2251b5b0282f1b98bc1c40e5c0b6d7bbcc448d573aca950206df2ff8f08e49",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6u6v7v6n",
+    "ja": "ボタンが二つあるよ。",
+    "en": "There are two buttons.",
+    "alternatives": ["We have two buttons.", "It has two buttons."],
+    "point": "複数は There are + 複数名詞",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:002076c6ff13f193b29ffe9532fa436f0a5853c216dcd8e5a9fc8584512372be",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6y7b2x2j",
+    "ja": "これ、いい案だね。",
+    "en": "It's a good idea.",
+    "alternatives": ["That's a good idea.", "This is a good idea."],
+    "point": "idea は数えられるので a をつける",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:30eaf02397a02a639ddbe1e6c6b5ae2aae86dce2f093632d779df0450acc7d47",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7j3t9v8p",
+    "ja": "地味なのに人気の機能だ。",
+    "en": "Although it's unglamorous, it's popular.",
+    "alternatives": [
+      "Even though it's plain, it's popular.",
+      "It's a plain feature, but it's popular."
+    ],
+    "point": "「〜なのに」は although / even though",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fed750eca52c5291ce91fc048efdabda00dbf86ff6d418fa54bc3e1ebd59e4ca",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7x8w3s9j",
+    "ja": "先月、ダークモードを出した。",
+    "en": "We shipped dark mode last month.",
+    "alternatives": [
+      "We released dark mode last month.",
+      "We launched dark mode last month."
+    ],
+    "point": "last month があれば過去形 shipped",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 6,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bc4dd4e9d08ecb27c859e0fe482aa5312e365c9d29cb81eaeb6d4d56d22f45c4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8y7m7r5b",
+    "ja": "ユーザーが望むのは速い検索。",
+    "en": "What users want is fast search.",
+    "alternatives": [
+      "What users want is faster search.",
+      "Users want fast search, above all."
+    ],
+    "point": "What 節が主語。want の目的語は抜ける",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ee29b098b6b5c97e0304fc8d0b79ebf94a36aa7c3a8a05bd71e471754fb7cf29",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9c3a7f2m",
+    "ja": "月曜に新プランを公開する。",
+    "en": "We're launching the new plan Monday.",
+    "alternatives": [
+      "We're releasing the new plan Monday.",
+      "The new plan goes live Monday."
+    ],
+    "point": "決まった予定は進行形で言える",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 4,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4717c002658f2b33cfffe81fb79b41202d5654d9e6b9c765bf87b619a3478bf4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9d9d9y8d",
+    "ja": "公開したら教えて。",
+    "en": "Tell me when it's released.",
+    "alternatives": ["Let me know when it ships.", "Tell me once it's released."],
+    "point": "when 節は未来でも現在形",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:49bf714c2e7fba4cee00c1af4b8c8de264852583e78517479d1ffb1feaf5385a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9x9g4h4c",
+    "ja": "画面を簡単に、と彼に頼んだ。",
+    "en": "I asked him to simplify the screen.",
+    "alternatives": [
+      "I asked him to simplify this screen.",
+      "I asked him to make the screen simpler."
+    ],
+    "point": "ask + 人 + to 動詞。that 節にしない",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 6,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:07f82b967d772e48afa64973fdce50b5d91f565de3221fdadc995cb3e058e1c2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

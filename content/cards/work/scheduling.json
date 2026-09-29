@@ -1,0 +1,410 @@
+[
+  {
+    "id": "c_2d7z5x5g",
+    "ja": "金曜にしましょう。",
+    "en": "Let's make it Friday.",
+    "alternatives": ["Let's do Friday.", "Let's go with Friday."],
+    "point": "「〜しましょう」は Let's + 動詞",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:44135b7676710c7a7c1e2310cab4fab590558543985e71e5a033d072a0b34078",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3k7p2s6k",
+    "ja": "いつなら空いていますか？",
+    "en": "When are you free?",
+    "alternatives": ["When are you available?", "When would you be free?"],
+    "point": "疑問詞 When + be 動詞 + 主語の順",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 3,
+    "grammar": ["wh-questions", "be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3874046cfb02490c373db6c76bbc924ff3c90626e0d3b4528c957c62e5724d02",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3r8v8f5k",
+    "ja": "会議は何時ですか？",
+    "en": "What time's the meeting?",
+    "alternatives": ["When does the meeting start?", "When is the meeting?"],
+    "point": "「何時」は What time。疑問詞が文頭",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:39182d58e63da0d2d6227ae945133fa79b0629db88c4da2b7d1d929edac7ccf3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4a9v2y7z",
+    "ja": "会議を遅らせてもいい？",
+    "en": "Can we delay it?",
+    "alternatives": [
+      "Could we delay it?",
+      "Can we push it back?",
+      "Can we delay the meeting?"
+    ],
+    "point": "「延期する」は push back。許可は Can we",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:536118061a71cda1bac6717e3b75340191aa209e0cbb3256d5296fb7a08039dc",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4u4e3x4u",
+    "ja": "火曜のほうが都合いい？",
+    "en": "Is Tuesday better for you?",
+    "alternatives": [
+      "Would Tuesday work better for you?",
+      "Is Tuesday more convenient for you?"
+    ],
+    "point": "都合がいいは better for you",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b23011b4c63083881773cd91d05e65bc58e30f4d85702ae7e91a1bacb4ac127c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5h2v2v6x",
+    "ja": "金曜に会うのはどう？",
+    "en": "How about meeting on Friday?",
+    "alternatives": ["What about meeting on Friday?", "How about we meet on Friday?"],
+    "point": "How about の後は -ing。曜日の前は on",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 3,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b78b8d6075a4efcda7d3b1e1ece1198493506f9ff4c167452297749868032d6c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5j5e6j3k",
+    "ja": "今週ずっと会議を調整してる。",
+    "en": "I've been rescheduling meetings all week.",
+    "alternatives": [
+      "I've been coordinating meetings all week.",
+      "I've been juggling the schedule all week."
+    ],
+    "point": "今週ずっとは現在完了進行形",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b0bd8a21f1603dc664838c27c635170e891ff48ad28c834baaa5b765a0064e7f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5m4j7y6v",
+    "ja": "明日、空いてる？",
+    "en": "Are you free tomorrow?",
+    "alternatives": ["Are you available tomorrow?", "Do you have time tomorrow?"],
+    "point": "「空いている」は be free。疑問は Are を前に",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:43874c2cc07ed80280b1b546a124ddd6a33f39f338625b2ef8b23d0cb9661c8c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6m5j9g4d",
+    "ja": "遅れても木曜で大丈夫です。",
+    "en": "Even if we're late, Thursday's fine.",
+    "alternatives": [
+      "Thursday's fine even if we run late.",
+      "Thursday works even if we're late."
+    ],
+    "point": "Even if のあとは未来のことも現在形",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4ad30282bd1d0f27e483413b796e09831b99066061466b8714bbe46b87b8db26",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6y4d7x9c",
+    "ja": "月曜の会議は中止です。",
+    "en": "Monday's meeting is canceled.",
+    "alternatives": ["The meeting on Monday is canceled.", "Monday's meeting is off."],
+    "point": "「中止された」は be canceled の受け身",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 4,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:21faf05d9d6e73f6e0b4326bda7322bf4b7f53caae0647e5ded3f20c8426d8b0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6z3j5w5k",
+    "ja": "会議、もう金曜に移したよ。",
+    "en": "I've moved it to Friday.",
+    "alternatives": [
+      "I've already moved it to Friday.",
+      "I've moved the meeting to Friday."
+    ],
+    "point": "もう〜した は already + 現在完了",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 4,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f4fe4ed26ddd62cb52e7f28ebfa27a8aed4abdffc465374c0d3419ce931dd1d2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6z6v6m5z",
+    "ja": "会議は先送りになりました。",
+    "en": "The meeting's been pushed back.",
+    "alternatives": [
+      "The meeting has been postponed.",
+      "They pushed the meeting back."
+    ],
+    "point": "push back は「延期する」の定番句動詞",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5ea1be8fa6e6e6fc9709b0fe07e33525e9ae939232368bd6d90bd5cfc6a80baa",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7v6m8a2q",
+    "ja": "確認したら、金曜は大丈夫です。",
+    "en": "Having checked, I'm free on Friday.",
+    "alternatives": [
+      "Having checked my calendar, I can do Friday.",
+      "I've checked, and Friday works for me."
+    ],
+    "point": "先に済ませた動作は having + 過去分詞",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3aefd1d1cf2d70e4c1992be16a2c2bccf063c2560a8295328f2e80409ed9dd51",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7w6r5k5c",
+    "ja": "木曜予定の会議、ずらせる？",
+    "en": "Can we push Thursday's meeting back?",
+    "alternatives": [
+      "Can we move Thursday's meeting?",
+      "Could we reschedule Thursday's meeting?"
+    ],
+    "point": "push ~ back は「延期する」",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cec23a0d24ff3ef6de75ca3e61334039486535530fd6318727f28946e2432634",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7x7r8x3q",
+    "ja": "ケンに会議室を取ってもらった。",
+    "en": "I had Ken book the room.",
+    "alternatives": ["I got Ken to book the room.", "Ken booked the room for me."],
+    "point": "have + 人 + 動詞の原形",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cab3bc58671b6cca7eb82e13c353af0739a8632fd8c8380e1a7ecaad551c4888",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7y4u4x8v",
+    "ja": "何曜日がいいですか？",
+    "en": "Which day is good?",
+    "alternatives": ["Which day works for you?", "What day is good?"],
+    "point": "曜日を選ぶなら Which day。works も便利",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 2,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8a00e058e69a37c4250a334dac97c84f4ba8965972ef16d136db1b4112a2b95f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8b4e9m2r",
+    "ja": "何時ならいいか教えてね。",
+    "en": "Let me know what time works.",
+    "alternatives": [
+      "Could you tell me what time suits you?",
+      "Please tell me what time works for you."
+    ],
+    "point": "what time 節を動詞の目的語にする",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:11b02ac8bd6e3b48dfe8d08b630461e5d4f51fbc8613b9a6e50a01702308736a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8d3y5j8g",
+    "ja": "締め切りは月曜です。",
+    "en": "The deadline is Monday.",
+    "alternatives": ["The deadline is on Monday.", "It's due Monday."],
+    "point": "「締め切り」は deadline。It's due Monday. とも言える",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4a04c1d9cf74f32b876f7837857e4cfa1906d08b76d5ba277056aa209846f990",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8p2d4u9a",
+    "ja": "午後なら空いています。",
+    "en": "I'm free in the afternoon.",
+    "alternatives": ["I'm available in the afternoon.", "I'm free this afternoon."],
+    "point": "「午後に」は in the afternoon",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 3,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a3d93c8206c271f5579e31a01a201eac7240795233970e815d2bd58ac14819e8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9q6y6y3q",
+    "ja": "会議室、取っておきました。",
+    "en": "I've reserved a meeting room.",
+    "alternatives": ["I booked a meeting room.", "I've booked us a room."],
+    "point": "初めて話に出る部屋なので a を使う",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1fcfbff0a03a0da4d40fb2513f79db4677c518b8f644ca00349d95ef00aebe2d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

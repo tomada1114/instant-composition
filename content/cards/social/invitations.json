@@ -1,0 +1,444 @@
+[
+  {
+    "id": "c_2j2s8y6v",
+    "ja": "まだ席があるよ。",
+    "en": "There are still seats.",
+    "alternatives": ["There are seats left.", "We still have seats."],
+    "point": "数えられる複数なら there are",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:62aa535ee2dc53c131f2fea4bf0f3361c243c90e105f3002d869760a841d84db",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2j5u6y9h",
+    "ja": "ずっと誘おうと思ってた。",
+    "en": "I've been meaning to invite you.",
+    "alternatives": [
+      "I've been meaning to ask you out.",
+      "I've been meaning to invite you over."
+    ],
+    "point": "「ずっと〜しようと思ってた」は have been meaning to",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b967b3ebced30c4c155fb2625b83fa26aa0075358ccefaf41fb5b4a07efd8999",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2m5s8a9n",
+    "ja": "出かける気分じゃないんだ。",
+    "en": "I don't feel like going out.",
+    "alternatives": [
+      "I'm not really up for going out.",
+      "I'm not in the mood to go out."
+    ],
+    "point": "feel like の後ろは -ing",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 7,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:83ff099f80977200c7d57c911785ee8ca387dc0016bc2eb901b5cad60a4b8ede",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2w5c5n9u",
+    "ja": "昨日カイを誘ったよ。",
+    "en": "I invited Kai yesterday.",
+    "alternatives": ["Yesterday I invited Kai.", "I asked Kai to come yesterday."],
+    "point": "invite は規則動詞で過去形は invited",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6750b8ac3e0ed8ed63728fc7151d22d7c65b47f0fcd17e208eca20ea5ef8839a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3k3x3g9v",
+    "ja": "来るかどうか教えて。",
+    "en": "Tell me if you're coming.",
+    "alternatives": [
+      "Let me know if you can come.",
+      "Let me know whether you're coming."
+    ],
+    "point": "「かどうか」は if か whether",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 4,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:be7b60c86462ecf682453a0a45f3254d35024b174af582022b43683d490b97d7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3k4q7c3k",
+    "ja": "今夜、空いてる？",
+    "en": "Are you free tonight?",
+    "alternatives": ["Are you free this evening?", "Do you have plans tonight?"],
+    "point": "「空いてる」は be free",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:63768d9eeabcd622daf07661eb6e4b5da50f57450d899fbc658dcd5070766bb3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3p2j4r6x",
+    "ja": "今夜は友達と外食するんだ。",
+    "en": "I'm eating out with friends tonight.",
+    "alternatives": [
+      "I'm dining out with friends tonight.",
+      "I'm meeting friends for dinner tonight."
+    ],
+    "point": "決まった予定は現在進行形で言える",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 5,
+    "grammar": ["progressive-aspect", "future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:72dce28f00f1eeab663cac2a9e3b8f5bd55ac0a7daa234902fb696a592e57595",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3q7g4c3d",
+    "ja": "私と一緒に来てよ。",
+    "en": "Come with me.",
+    "alternatives": ["Come along with me.", "Join me."],
+    "point": "命令文は主語を付けず動詞から始める",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:683c22b02111669f01cb6a2bd51ba1af138cf3b07a579eb67c419752c0dd3876",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3s2v2n5k",
+    "ja": "日曜にパーティーだよ。",
+    "en": "There's a party Sunday.",
+    "alternatives": ["We're having a party Sunday.", "A party is on Sunday."],
+    "point": "「〜がある」は there is",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 2,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:17cac9d7491d9ee6bee99b620e5f54e24d87cfd9c1cc5445814c97d8f6896a47",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3x9j3s3d",
+    "ja": "カイに来てと頼まれた。",
+    "en": "Kai asked me to come.",
+    "alternatives": ["Kai asked me to come over.", "I was asked by Kai to come."],
+    "point": "ask 人 to do で「人に〜するよう頼む」",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 4,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2b5e42e4fa3587870dd4eb2f453ff14c6bb7d39bc80179761a53fb609d292b44",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4b4p6v9g",
+    "ja": "先週、彼に誘われたよ。",
+    "en": "He invited me last week.",
+    "alternatives": ["Last week he invited me.", "He invited me out last week."],
+    "point": "日本語は受け身でも英語は he を主語に",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 3,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2cdda2ee36ee0d21ac42b593c9709dcc4bf5fb6526309b13c04d05f0506efb12",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4s4n3b8p",
+    "ja": "どこで会おうか？",
+    "en": "Where should we meet?",
+    "alternatives": ["Where shall we meet?", "Where can we meet?"],
+    "point": "場所を聞くなら where で始める",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:787238c091d95de0f28b0fbd8ba30a0baf85d4c6b3152be2b1f268bc58a5d488",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4w5q2z6b",
+    "ja": "今夜、うちに遊びに来ない？",
+    "en": "Why don't you come over tonight?",
+    "alternatives": ["Do you want to come over tonight?", "Want to come over tonight?"],
+    "point": "come over は「家に来る」。Why don't you ~? は誘い",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 6,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:18ecf54389249c36bccbea48af923949853d0fcf38a4743b99d97157a95bc7a6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4z3y6s7p",
+    "ja": "雨が降っても、私は行くよ。",
+    "en": "I'll go even if it rains.",
+    "alternatives": ["Even if it rains, I'll go.", "I'll come even if it's raining."],
+    "point": "未来のことでも even if の後ろは現在形",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 5,
+    "grammar": ["concession-contrast", "time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ca2ae776e4600952b4168e03270d83dd5113288a4aaa87b57f77e3f00a3dc859",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4z9w8a7p",
+    "ja": "電話の時には、もう食べてた。",
+    "en": "I'd already eaten when you called.",
+    "alternatives": [
+      "I had already eaten when you called.",
+      "You called after I'd already eaten."
+    ],
+    "point": "電話より前のことは過去完了",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6a0b0cf7481829ef03041f9a5001dd01c72bca6388c287b6fa8322ecd2c12b2b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5a6t6q6g",
+    "ja": "来てくれたらと思ってたんだ。",
+    "en": "I was hoping you'd come along.",
+    "alternatives": [
+      "I was hoping you could join us.",
+      "I was wondering if you'd come along."
+    ],
+    "point": "was hoping で控えめな誘いになる",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:49b95da22650351ce16c642fcacccb643dc7a96760d06ac03ed4b357e3893245",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5d9w8b2q",
+    "ja": "行けたらいいのになあ。",
+    "en": "I wish I could make it.",
+    "alternatives": ["If only I could make it.", "I wish I were able to come."],
+    "point": "現実と違う願いは wish + could。make it は「行ける」",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a5e6b25e0a2e7853b7ebe82d795f821abe51b2edc7a5733892328ff83b66a82e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5q7k2t8g",
+    "ja": "ぜひ行きたいです。",
+    "en": "I'd love to go.",
+    "alternatives": ["I'd love to come.", "I'd like to go."],
+    "point": "「行きたい」は would love to + 動詞",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 3,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:45b63803335c9ce99635e1539d5f9d2a697b87c566832ddf905cc461769d94b7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7b9d2e5w",
+    "ja": "終わったら合流するよ。",
+    "en": "I'll join you when I'm done.",
+    "alternatives": [
+      "I'll meet you once I'm done.",
+      "I'll join you once I finish work."
+    ],
+    "point": "未来のことでも when 節は現在形",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 5,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c6d7ed985d5c37439a4e76b1a0a53f499d544fe66a0eba3218d598a21888ba92",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7t2b3s2p",
+    "ja": "前に話したバンド、観に行こう。",
+    "en": "Let's see the band I mentioned.",
+    "alternatives": [
+      "Let's go see the band I mentioned.",
+      "Let's see that band I told you about."
+    ],
+    "point": "the band の後ろに I mentioned を続ける",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ab7f6961583fc624200a83d79d46ec625999f5b616e2a65079e1972c4e319bfa",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8v8d5f7m",
+    "ja": "もう夕飯は食べたの？",
+    "en": "Have you had dinner yet?",
+    "alternatives": ["Have you eaten yet?", "Have you eaten dinner yet?"],
+    "point": "「もう〜した？」は現在完了 + yet",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 4,
+    "grammar": ["tense-contrast", "present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:05665a6d8d8cebd751e90806fc0357ac14df01f25823ffa2fcb34240561a6e84",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9y7p5c5d",
+    "ja": "早く来たほうがいいよ。",
+    "en": "You should come early.",
+    "alternatives": ["You should get here early.", "It's best to come early."],
+    "point": "「〜したほうがいい」は should",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0fb4c580a840e2921b0a12df28242c05866e9c7796232adce1078c34e2f0f60e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

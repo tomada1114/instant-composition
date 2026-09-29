@@ -330,6 +330,25 @@ describe("SummaryScreen difficulty and reach variants", () => {
     expect(screen.getByText(ja.Summary.reach.empty)).toBeInTheDocument();
   });
 
+  it("states the rule and the pending count while every topic is still 0", () => {
+    const topics = ["daily", "work"].map((id) => ({
+      id,
+      name: id,
+      count: 0,
+      added: 0,
+      ring: { from: 0, to: 10, done: 0, span: 10 },
+    }));
+    renderSummary(
+      makeSummary({
+        reach: { topics, nearest: { name: "daily", remaining: 10 }, pending: 15 },
+      }),
+    );
+    expect(
+      screen.getByText(ja.Summary.reach.pending.replace("{count}", "15")),
+    ).toBeInTheDocument();
+    expect(screen.queryByText(ja.Summary.reach.empty)).not.toBeInTheDocument();
+  });
+
   it("counts from today after a break instead of showing a 0", () => {
     renderSummary(
       makeSummary({

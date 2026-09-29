@@ -1,0 +1,421 @@
+[
+  {
+    "id": "c_2c7b4f2p",
+    "ja": "並ばずに入れませんか？",
+    "en": "Can we get in without waiting?",
+    "alternatives": ["Can we skip the line?", "Could we get in without lining up?"],
+    "point": "「〜せずに」は without + 動名詞",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 5,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8bfe62d589e366d40a93eb0dbb0701bd4cfb71d11ba65aaa2708ddb0229869fe",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2g5a3r8g",
+    "ja": "もう少し時間があればいいのに。",
+    "en": "I wish I had more time.",
+    "alternatives": ["If only I had more time.", "I wish I had a little more time."],
+    "point": "今の願望は wish + 過去形（had）",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:111fee404d345a4f3ccdf1c77a0f475dfac19f827a79ab152a244803c71f264a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2j8m7g6g",
+    "ja": "早めに行った方がいいよ。",
+    "en": "You should go early.",
+    "alternatives": ["You'd better go early.", "It's best to go early."],
+    "point": "助言は should + 動詞の原形",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bf064d3ef5102373a7375f84362645248ab20ba380716ebf1fc94ead5bb9c437",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2q3r9a8f",
+    "ja": "撮影はご遠慮ください。",
+    "en": "Please don't take pictures here.",
+    "alternatives": ["Please don't take photos here.", "Please don't take photos."],
+    "point": "禁止のお願いは Please don't 〜",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 3,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a83e5c4ed5cabbeee145c4a083b26fc2f76688f27c39ca4b73507c09af3c54b3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3g6c2w5g",
+    "ja": "大人二枚、お願いします。",
+    "en": "Two adults, please.",
+    "alternatives": ["Two adult tickets, please.", "Two tickets for adults, please."],
+    "point": "「大人二枚」は人数で頼める",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 2,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5cdcf67ddd758807f390c9295f21528f496706a0e8a24df15ec397ffe4c375f1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3k4a3r4k",
+    "ja": "写真を撮りに来ました。",
+    "en": "I came here to take photos.",
+    "alternatives": ["I came to take some photos.", "I'm here to take photos."],
+    "point": "「〜しに来た」は to 不定詞で目的を言う",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 5,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1008835b57c180722a21893bba5d336717ec2b71d71c8a507175279275a44edb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3p6v8u7q",
+    "ja": "近くに公園がある。",
+    "en": "There's a park nearby.",
+    "alternatives": ["A park is nearby.", "There's a park close by."],
+    "point": "「〜がある」は There's + 単数名詞",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f975a33ebeb2330d2369e6d6c6c042e4a2c09f24cd53a43fbf54e82844ed2bc6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4s6n8p5s",
+    "ja": "ツアーは何分かかりますか？",
+    "en": "How long is the tour?",
+    "alternatives": ["How long does the tour take?", "How long will the tour last?"],
+    "point": "所要時間は How long",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 4,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cf18e4e1c77181e9f81afc95d09497d0d1b1a547ae6bfc32f1882750df059c0a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4s8j7h3f",
+    "ja": "足元に気をつけて。",
+    "en": "Watch your step.",
+    "alternatives": ["Mind your step.", "Watch your footing."],
+    "point": "足元に気をつけては Watch your step",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a9d3325bc02ba1651d71f1e31fb37c8e4afde3b24c9251fda3abdf7e89de88b5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4z5x5d8y",
+    "ja": "写真お願いします。",
+    "en": "Take a photo, please.",
+    "alternatives": ["Please take a picture.", "Can you take a photo?"],
+    "point": "お願いの命令文は please を添える",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:43b44cbec8a0ba4d255d6905e7383eb57cdc50448f0846751ae83e9ba9abe673",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5d2m2m2t",
+    "ja": "ここは人気だと聞きました。",
+    "en": "I heard it's popular here.",
+    "alternatives": [
+      "They say it's popular here.",
+      "I've heard this place is popular."
+    ],
+    "point": "heard のあとは that を省ける",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 4,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:931a261f272bb270dce50e5af1c02414381d53c6eb3449b7a0ed1c59e9e67cc7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5d5z4d2e",
+    "ja": "ガイドを予約すべきだった。",
+    "en": "I should have booked a guide.",
+    "alternatives": [
+      "I should've booked a guide ahead.",
+      "I ought to have booked a guide.",
+      "I should have reserved a guide."
+    ],
+    "point": "過去の後悔・非難は should have done",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:089d93d83dbb6bd23d69e04d20d698f3493904e4a52b09b0be41af266d6e2fdd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5f8j7f6y",
+    "ja": "午後のほうが空いてる？",
+    "en": "Is the afternoon less crowded?",
+    "alternatives": ["Is it quieter in the afternoon?", "Is the afternoon less busy?"],
+    "point": "「空いてる」は less crowded で言える",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 5,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:64f20f750d063f072d8d5f23d9fefb79eae1aecd09853b3e2ff07ca370fc1bdf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5g9d5t3g",
+    "ja": "私は十時のツアーに出ます。",
+    "en": "I'm taking the ten o'clock tour.",
+    "alternatives": [
+      "I'm going on the ten o'clock tour.",
+      "I'll take the ten o'clock tour.",
+      "I'm going to take the ten o'clock tour."
+    ],
+    "point": "決まった予定は現在進行形で言える",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 7,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:01f5d4eb781e6e4fd7f86750194103e180baed555682671c3d0a8bf0938624c6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5n7b5p9e",
+    "ja": "朝からずっと歩き回っています。",
+    "en": "I've been walking around since morning.",
+    "alternatives": [
+      "I've been on my feet since morning.",
+      "I've been walking around all morning."
+    ],
+    "point": "since + 起点、ずっと続く動作は have been -ing",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:41faf3dbc68bbbc94b15f715857a4e3d6589f5c773efa314b8fb831699452039",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6a7a8d9k",
+    "ja": "展望台はありますか？",
+    "en": "Is there an observation deck?",
+    "alternatives": ["Is there a lookout?", "Is there a viewing platform?"],
+    "point": "母音で始まる語の前は an",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 2,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:76c60e4153d03b098820cd2422976612830eb5b4f8159ecfc28b075d82e48da4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6u3j6j8y",
+    "ja": "彼、写真撮ってる。",
+    "en": "He's taking photos.",
+    "alternatives": ["He is taking pictures.", "He's snapping pictures."],
+    "point": "撮っている最中は is taking",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e594d9ceb700db2aaf61921eec6f54e1d9d47cbf60fa42fbf02a4d29f401ac1d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6z8y6b5a",
+    "ja": "前回来てから、変わったね。",
+    "en": "It's changed since my last visit.",
+    "alternatives": [
+      "It has changed since my last visit.",
+      "It's changed since I was last here."
+    ],
+    "point": "since と一緒なら現在完了（has changed）",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 6,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:07d21faa40d733826a27317e5b5b909474178f54c35acda2350962cd0057079c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7b6g7c7z",
+    "ja": "雨が降ったら中止です。",
+    "en": "It's canceled if it rains.",
+    "alternatives": ["If it rains, it's canceled.", "They cancel it if it rains."],
+    "point": "未来のことでも if 節は現在形",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2bb03b03845c3ac583eab305dc3f45ba805f6449b38fc54f54122b5e12026bb4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8n6w8v9x",
+    "ja": "私たちを撮ってもらえませんか？",
+    "en": "Would you mind taking our picture?",
+    "alternatives": [
+      "Could you possibly take our picture?",
+      "Would you mind taking a picture of us?"
+    ],
+    "point": "Would you mind の後は -ing",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:421ba31b88a7299d28272013c232191a2dc2be9a5e043ea856193ae104eb359d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9j5x3k3z",
+    "ja": "ここで撮ってもいいですか？",
+    "en": "May I take photos here?",
+    "alternatives": ["Can I take photos here?", "Is it okay to take photos here?"],
+    "point": "許可を求める May I ～? は丁寧",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 4,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:414bf11b3d2c88c16d0630ed58a4263bb06fa36af5a11ae52055dc336d367f67",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

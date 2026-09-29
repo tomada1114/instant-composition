@@ -1,0 +1,413 @@
+[
+  {
+    "id": "c_2e8h8u6f",
+    "ja": "もう一日あればいいのに。",
+    "en": "I wish I had another day.",
+    "alternatives": ["I wish I had one more day.", "If only I had another day."],
+    "point": "今の願望は wish + 過去形。had にする",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0a13bdba493d853abce097dafd111ea0c8e6113e05b4bab5df6fc57a7c158fb8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3j8v3k2p",
+    "ja": "今日はブロッカーが一つある。",
+    "en": "There's one blocker today.",
+    "alternatives": ["I've got one blocker today.", "I have one blocker today."],
+    "point": "「〜がある」は There is + 単数",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cd9d009edebca3f6e53194e92bedd8c2bdd56b7a82ab9613aa1e37a9b6974ca2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3r3j5t5x",
+    "ja": "PR はサムに見てもらう。",
+    "en": "I'll have Sam review my PR.",
+    "alternatives": ["I'll get Sam to review my PR.", "I'm having Sam review my PR."],
+    "point": "have + 人 + 動詞の原形で「〜してもらう」",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 5,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5d697929978c9dd6069c42fb596967fea36e4e110cf1e3217960fe563242ac24",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4u7b5f5t",
+    "ja": "バグを直してるよ。",
+    "en": "I'm fixing a bug.",
+    "alternatives": ["I'm working on a bug.", "I'm fixing a bug now."],
+    "point": "今していることは be + ing",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8a5029efe247785b1cc0b0d4250fd0bdf3bf6510dc8d011daeb710807631ec6e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5m5t9k5u",
+    "ja": "昨日テストを三つ足した。",
+    "en": "I added three tests yesterday.",
+    "alternatives": [
+      "I added three new tests yesterday.",
+      "Yesterday I added three tests."
+    ],
+    "point": "yesterday があれば過去形",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c50865b19f19fdf3d837a3743e73a75cceb6e91d1817f5f9dcaa455d139b6b34",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5w7g4s7j",
+    "ja": "今日ケンはリモート。",
+    "en": "Ken is remote today.",
+    "alternatives": ["Ken is working remotely today.", "Ken is working from home."],
+    "point": "三人称単数は is",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ee3f2c1029b9f7fccd2aecb8f06604534249cb67ffa88400c62e8c06a8fc59e5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6h2v7r4n",
+    "ja": "誰か、なぜ落ちるか分かる？",
+    "en": "Does anyone know why it's crashing?",
+    "alternatives": [
+      "Does anybody know why it keeps crashing?",
+      "Anyone know why it's failing?"
+    ],
+    "point": "間接疑問は why + 主語 + 動詞",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 5,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:edd46f91bc51035e04381bb07278759862ba39429eacf4ba04ce69872e59bc68",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6n2r3w2e",
+    "ja": "QA のせいで足止めされてる。",
+    "en": "We're being held up by QA.",
+    "alternatives": ["We're being held up because of QA.", "QA is holding us up."],
+    "point": "進行中の受動は being + 過去分詞 held up",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 7,
+    "grammar": ["passive-voice", "phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c02c55a8a93cdb5395c1a7868376b5c343a2ccf580325f1f2da002a4eee2ebc",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6s8r9m5z",
+    "ja": "詰まったら、聞くね。",
+    "en": "I'll ask if I get stuck.",
+    "alternatives": ["If I get stuck, I'll ask.", "I'll ask when I'm stuck."],
+    "point": "if 節は未来でも現在形",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:981080e8a8833c27de7abada6940dd6e6bc57faca7d078bbb044c5951dc6977e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7a5f6t9u",
+    "ja": "ログインのバグを直した。",
+    "en": "I fixed a bug in login.",
+    "alternatives": ["I fixed a login bug.", "I fixed a bug in the login."],
+    "point": "「〜の」は前置詞句で後ろから足す",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 5,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6cdb6808df19d70511051b0b0bce6ed68a8f2823caa17519bef21dd088c4e4d0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7s9k6v6s",
+    "ja": "もう移行を終わらせました。",
+    "en": "I've finished the migration.",
+    "alternatives": ["I've already finished the migration.", "The migration's done."],
+    "point": "「もう」の完了は現在完了",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1d3703a6d09a79828a8c72a6901133c475f68868f2eb2da4a3609af0d3c2eab1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7s9x7j2s",
+    "ja": "知っていたら、手伝ったのに。",
+    "en": "If I'd known, I'd have helped.",
+    "alternatives": [
+      "If I had known, I would have helped.",
+      "Had I known, I'd have helped."
+    ],
+    "point": "過去の仮定は if + had 過去分詞、would have + 過去分詞",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:186cb16a99e18e469ad3dacef7478bc06e2e07deffba2626659931a00555a06c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7x4b3j2q",
+    "ja": "いつ見てもらえる？",
+    "en": "When can you review it?",
+    "alternatives": ["When could you review it?", "When can you look at it?"],
+    "point": "時は When で始める",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 3,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bdec7c86eba11577a95b9ea081f0672bc450e7a71c9e23d37179834656d2c99c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7z7g9c9z",
+    "ja": "今朝、私の PR がマージされた。",
+    "en": "My PR was merged this morning.",
+    "alternatives": ["My PR got merged this morning.", "My PR went in this morning."],
+    "point": "された側が主役なら受動態 was merged",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d194d0d1b99baa0b9491b4d71c9ff096b809947f4d796c31d4cda8c50d6db631",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8j5a2t4d",
+    "ja": "今日は在宅でもいいですか？",
+    "en": "May I work from home today?",
+    "alternatives": ["Could I work from home today?", "Can I work from home today?"],
+    "point": "May I 〜? は丁寧な許可。from home に冠詞はいらない",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 7,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a2096bd08c974ebff941706f8b99bc639305546a30880936961ee5f721a119e6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8p8u8b5v",
+    "ja": "あのバグ、引き続き調べます。",
+    "en": "I'll keep looking into that bug.",
+    "alternatives": [
+      "I'll continue looking into that bug.",
+      "I'll keep investigating that bug."
+    ],
+    "point": "look into は「調べる」。keep + 動名詞",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 7,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ae843a3d69aff2a8363045e1b1b94befac3b737c038b4a25422c770e9dc6dc9a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8u3s5f5t",
+    "ja": "ミアの PR を見てます。",
+    "en": "I'm reviewing Mia's PR.",
+    "alternatives": ["I'm looking at Mia's PR.", "I'm reviewing a PR from Mia."],
+    "point": "今の動作は be + ing",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 2,
+    "grammar": ["progressive-aspect", "be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b3519c1a160df0958fa6b75dcc30d0698dc4fbd8cfe880df3f04c53eb230eb77",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8v3k2q5c",
+    "ja": "今、何の作業中？",
+    "en": "What are you working on?",
+    "alternatives": ["What are you doing now?", "What are you up to?"],
+    "point": "「何の作業中？」は What are you working on? 前置詞 on は最後に残す",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 1,
+    "grammar": ["wh-questions", "progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7915261a81a74a762c8447c87cbbb0ed632bf2125a9fbe572b2822d531beabbb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9h3j5t8e",
+    "ja": "デプロイしなきゃ。",
+    "en": "I have to deploy.",
+    "alternatives": ["I need to deploy.", "I've got to deploy."],
+    "point": "「しなきゃ」は have to",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8d9933c3c340785bec45cf8db52f90dd61c3606d6024a69279f967f8c545599d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9p9x4j8g",
+    "ja": "ケンに手伝ってほしい。",
+    "en": "I want Ken to help.",
+    "alternatives": ["I'd like Ken to help.", "I want Ken to help me."],
+    "point": "want + 人 + to 動詞",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:47bea1727338aa8470c6b8cd996bf1d0d65e9d63d09ddcbb2ee9240c063b42a8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9t5r3v4k",
+    "ja": "詰まったら聞いてね。",
+    "en": "Ask if you're stuck.",
+    "alternatives": ["Ask me if you're stuck.", "If you're stuck, just ask."],
+    "point": "「〜したら」は if 節。命令文は動詞から始める",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:414028e80e8362deb9a20ae20ef45a1506af00348edbc46fa8c99957872add31",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

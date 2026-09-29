@@ -1,0 +1,436 @@
+[
+  {
+    "id": "c_2k3z7u4h",
+    "ja": "私、問題があります。",
+    "en": "I have a problem.",
+    "alternatives": ["I've got a problem.", "I have an issue."],
+    "point": "数えられる名詞の単数には a。problem は子音",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:da87e3495bc933cdf41a3fc0bfb15995aadee5ed1d043acdb1073cc38c276e8b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2v5y9f3f",
+    "ja": "スライドを作成中です。",
+    "en": "I'm making the slides.",
+    "alternatives": ["I'm working on the slides.", "I'm preparing the slides."],
+    "point": "「〜中」は am + -ing。slide は複数形で",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d477dda4a5246a4d7743ad419b65f1bb7e09fd0e3262d510c777eb67aa734240",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3w4a9t5d",
+    "ja": "不具合は修正されました。",
+    "en": "The bug was fixed.",
+    "alternatives": [
+      "The bug got fixed.",
+      "The issue was fixed.",
+      "The bug has been fixed."
+    ],
+    "point": "受け身は was + 過去分詞。fix は fixed",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 3,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:83b00736723e7ef499139318c258596d10986632135406f248cf79df0c0ac5f1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3y5k3x2q",
+    "ja": "もう報告書を送りました。",
+    "en": "I've already sent the report.",
+    "alternatives": ["I've sent the report already.", "I already sent the report."],
+    "point": "「もう」は already。have + 過去分詞 sent",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 3,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bbda449dd1a247a595363854a5c7f5673002973976c67849b810808239a29be8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4m3j8y9u",
+    "ja": "何が問題ですか？",
+    "en": "What's the problem?",
+    "alternatives": ["What's the issue?", "What's wrong?"],
+    "point": "「何が」は What。特定の問題なので the",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:94cb92e3929cee57898f04a2cd02130a0a2dc2015dba4dfa1c76f6dd66e79287",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4y2j8b7z",
+    "ja": "金曜までに終えられません。",
+    "en": "I can't finish it by Friday.",
+    "alternatives": [
+      "I can't get it done by Friday.",
+      "I'm unable to finish by Friday."
+    ],
+    "point": "できないは can't、期限は by",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ebfc79894a642c3a22a18e30c607e4be1b21ed469b9dbfddb568dff7a4b463cf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5a5d9j8h",
+    "ja": "納期がいつかご存じですか？",
+    "en": "Do you know when it's due?",
+    "alternatives": [
+      "Do you know when the deadline is?",
+      "Would you know when it's due?"
+    ],
+    "point": "間接疑問は when it's due の語順",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 4,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:09634d91ab08c2aa70840bcf3f96ad431669f72e9c1a5d9596b8e5a945a661d5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5a5w8g6s",
+    "ja": "わかり次第、ご報告します。",
+    "en": "I'll update you when I know.",
+    "alternatives": ["I'll update you once I know.", "I'll tell you once I know."],
+    "point": "when 節の中は未来でも現在形",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a03ad655901a33992fd4a18ef05b5b29734857309f5a8cb52b58a9ec72d08f84",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5h9f4k4x",
+    "ja": "原因が分かったので直します。",
+    "en": "Knowing the cause, I'll fix it.",
+    "alternatives": [
+      "Now I've found the cause, I'll fix it.",
+      "I found the cause, so I'll fix it."
+    ],
+    "point": "理由は Knowing で先に言う分詞構文",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e3764f9524d8a24573e365b8b502d2142790126797f32f122b5cee0d0bf19a05",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5u9m9k6b",
+    "ja": "進み具合を知らせてね。",
+    "en": "Keep me posted.",
+    "alternatives": [
+      "Keep me updated.",
+      "Let me know how it's going.",
+      "Update me on your progress."
+    ],
+    "point": "Keep me posted は「随時知らせて」の定番",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3025ecb36bc75a6d77a722a7c40c25b2e47d0dd0dc637ad72ab06295b4ffb009",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6c2h8a4f",
+    "ja": "万事予定どおりです。",
+    "en": "Everything is on schedule.",
+    "alternatives": ["Everything is going as planned.", "Everything is on track."],
+    "point": "Everything は単数扱いなので is",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:22ce162ad3878294e750c871b9e023173cb9dd9a0a3f702c0a6523995541a90e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6q4v4t5c",
+    "ja": "明日、ご報告します。",
+    "en": "I'll update you tomorrow.",
+    "alternatives": ["I'll report back tomorrow.", "I'm going to update you tomorrow."],
+    "point": "update + 人。「報告する」は update you が自然",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c56aec8d6db5b8f9742344cf68101d22814e59f604aa79bf599925eae958fead",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6u2k6a5c",
+    "ja": "売上は先月より好調です。",
+    "en": "Sales are better than last month.",
+    "alternatives": [
+      "Sales are up from last month.",
+      "Sales are stronger than last month."
+    ],
+    "point": "比べる相手は than で示す",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2fb77c7677bf82a69e173046f651d970f755ec5cfc7e570f9acb20e9155b6ebe",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7h7q2u3y",
+    "ja": "予算がきついです。",
+    "en": "The budget is tight.",
+    "alternatives": ["The budget is limited.", "We're on a tight budget."],
+    "point": "「きつい」は tight。予算は the budget",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 3,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b97cf66de697c423c0cc4d61d227a3013e63b41ee87403d0c42c5df2cab1235e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7p7f3x9b",
+    "ja": "もっと早く報告すべきでした。",
+    "en": "I should have reported it sooner.",
+    "alternatives": [
+      "I should have told you earlier.",
+      "I ought to have reported it earlier."
+    ],
+    "point": "後悔は should have + 過去分詞",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:63dabb52b4790ca21184c5df2ea34d05e8f1900bade48852359dac29794e7e01",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8a4m6d8y",
+    "ja": "報告書を書き終えました。",
+    "en": "I finished writing the report.",
+    "alternatives": [
+      "I've finished writing the report.",
+      "I'm done writing the report."
+    ],
+    "point": "finish の後ろは ~ing",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 4,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e1bce3b4cce81e5a40b533965dedbf6949a828c912b0fb9b88c8227dc4600e9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8g8j9s3b",
+    "ja": "作業は順調に進んでいます。",
+    "en": "Things are coming along nicely.",
+    "alternatives": ["It's coming along well.", "We're making good progress."],
+    "point": "順調に進むは come along",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 7,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:02ef230df4ca4708216e655719b0d57cf850636d21a79159c0b2cc922a751030",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8v3n8z6z",
+    "ja": "先日話した問題は解決済みです。",
+    "en": "The issue I raised is resolved.",
+    "alternatives": [
+      "The problem I mentioned has been solved.",
+      "The issue that I brought up is resolved."
+    ],
+    "point": "目的語の関係詞 that は省ける",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d3ff3e62c73bdda0c3b41bf307f1ea2a33b45ffd47f9156a6cd48b649d951a99",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8v4z4g5h",
+    "ja": "心配なのは日程です。",
+    "en": "What worries me is the schedule.",
+    "alternatives": [
+      "What I'm worried about is the schedule.",
+      "The schedule is what worries me."
+    ],
+    "point": "What worries me is ~ の形で「〜なのは〜だ」",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:631d11d9fd2fdffbbc41d47ab15d2170b52d08379afce0cc3bd9190a6eeec105",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9g4d4a3w",
+    "ja": "その件は、ずっと調べています。",
+    "en": "I've been looking into it.",
+    "alternatives": ["I've been digging into it.", "I've been investigating it."],
+    "point": "調べるは look into、継続は現在完了進行形",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 7,
+    "grammar": ["phrasal-verbs", "present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:387ca83ac48d2443c629c21a8f8710c2682c1a26edaafee6f9b1fc5d29ad4697",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9j2y7m4y",
+    "ja": "すぐ上司に相談したほうがいい。",
+    "en": "You should talk to your boss now.",
+    "alternatives": [
+      "You'd better talk to your boss soon.",
+      "You should talk to your boss right away."
+    ],
+    "point": "助言は should + 動詞の原形",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d7168c3596cee0e040534a67fed3b7aac3773abc411c1d6eec96c57c71e07f42",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

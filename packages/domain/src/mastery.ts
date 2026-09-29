@@ -1,5 +1,6 @@
 import { nextMilestone, previousMilestone } from "./milestones";
 import { TUNING, type MilestoneSeries } from "./tuning";
+import type { ItemProgress } from "./records";
 import type { AnswerRecord, SubtopicRef } from "./types";
 
 /**
@@ -35,6 +36,20 @@ export function reachByTopic(
   where: ReadonlyMap<string, SubtopicRef>,
 ): Map<string, number> {
   return tally([...cardIds].flatMap((id) => where.get(id)?.topic ?? []));
+}
+
+/** Items in `topics` said in time on exactly one day and not yet mastered. */
+export function pendingReach(
+  items: Iterable<ItemProgress>,
+  topics: ReadonlySet<string>,
+  placeOf: (cardId: string) => SubtopicRef | undefined,
+): number {
+  return [...items].filter(
+    (item) =>
+      item.mastered === null &&
+      item.okDays.length === 1 &&
+      topics.has((placeOf(item.item.id) ?? item.placement).topic),
+  ).length;
 }
 
 /** Keyed `topic/subtopic`. */

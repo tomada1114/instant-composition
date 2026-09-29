@@ -131,7 +131,11 @@ export function ReachRings({
         </div>
       )}
       {empty ? (
-        <p className="text-muted-foreground">{t("empty")}</p>
+        <p className="text-muted-foreground">
+          {reach.pending === undefined || reach.pending === 0
+            ? t("empty")
+            : t("pending", { count: reach.pending })}
+        </p>
       ) : reach.nearest === null ? null : (
         <p className="flex items-baseline gap-3">
           <span className="font-mono text-eyebrow text-muted-foreground uppercase">

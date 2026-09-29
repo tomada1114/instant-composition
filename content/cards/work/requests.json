@@ -1,0 +1,447 @@
+[
+  {
+    "id": "c_2k8s7y7e",
+    "ja": "サムにやり直してと頼んだ。",
+    "en": "I asked Sam to redo it.",
+    "alternatives": ["I asked Sam to do it again.", "I asked Sam to try again."],
+    "point": "ask + 人 + to do の語順",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 5,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e6791a6f487400729123d67445fd25f993663e625fae37da5b5b4adfa545bed0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2t9n3b2w",
+    "ja": "明日、代わりに出られる？",
+    "en": "Can you cover for me tomorrow?",
+    "alternatives": [
+      "Could you cover for me tomorrow?",
+      "Can you fill in for me tomorrow?"
+    ],
+    "point": "代わりを務めるは cover for ~",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 5,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cb6e51e1b551a24bbc3ace4275443aa811e243c4b806aedee98525e595cb19c8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2v4t5q7v",
+    "ja": "返事、ずっと待ってます。",
+    "en": "I've been waiting for your reply.",
+    "alternatives": [
+      "I've been waiting to hear back.",
+      "I've been waiting on your reply."
+    ],
+    "point": "続いている動作は have been ~ing",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e6aa5b4e164953d7ceff10937ebcc4f3a8f8221641714b89f021e452ab7738ec",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2z3g5j4g",
+    "ja": "今、彼に連絡中です。",
+    "en": "I'm contacting him now.",
+    "alternatives": ["I'm reaching out to him now.", "I'm getting in touch with him."],
+    "point": "「今〜している」は am + -ing。連絡する contact",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:da3e2bc63e0f11d2a576beebcd02cbf0b4e7318479faef7a2a622f799e5fbe58",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4x3h9j8f",
+    "ja": "よければ、手伝ってもらえない？",
+    "en": "I don't suppose you could help?",
+    "alternatives": [
+      "I was wondering if you could help.",
+      "Would there be any chance you could help?"
+    ],
+    "point": "I don't suppose you could で控えめに頼む",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:924fa4e45a46a155ef5446ed764dd278df294206bea742ee81e94543cc6435cd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4z2b4b5p",
+    "ja": "もうお願いしたと思ってた。",
+    "en": "I thought I'd already asked you.",
+    "alternatives": [
+      "I believed I'd already asked you.",
+      "I was under the impression I'd already asked."
+    ],
+    "point": "それ以前の出来事は過去完了",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 7,
+    "grammar": ["past-perfect", "hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d28b6d1177184c67338e12130b89a14021c7bd3c5413b78da020b74220b41833",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4z4r6d7p",
+    "ja": "今、忙しいですか？",
+    "en": "Are you busy now?",
+    "alternatives": ["Are you busy right now?", "Are you free now?"],
+    "point": "疑問文は Are you の順",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fbe322236b55ec12b1fdc8d54ae85c81110e53340010397716b4f16e3cf73a32",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5s9q8a5g",
+    "ja": "報告書が昼までに必要です。",
+    "en": "The report is needed by noon.",
+    "alternatives": ["We need the report by noon.", "I need the report by noon."],
+    "point": "期限は until ではなく by noon",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 5,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8a4849b225133328d0865619340de7c09c95f4bb3b44d51f44acf8dcc79bb2b0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6d7y9z8f",
+    "ja": "ちょっと見ていただけますか？",
+    "en": "Would you mind taking a look?",
+    "alternatives": [
+      "Could you possibly take a look?",
+      "Do you think you could take a look?"
+    ],
+    "point": "Would you mind + -ing は丁寧な依頼",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 6,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d3953bd01f7fbdd54e43c76f71aa72feaf20513ed3f85580ae6b55fecd78765a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6g9y3z8s",
+    "ja": "一つお願いがあります。",
+    "en": "I need a favor.",
+    "alternatives": ["I have a favor to ask.", "I'd like to ask a favor."],
+    "point": "favor は数えられる名詞。a を付ける",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 3,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e1cde11def04f343a0e4411f08ba928d50ab161066dbcf290a1c04a73b9a4b7c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7a3n8w9m",
+    "ja": "頼んだ件、もう終わった？",
+    "en": "Have you finished what I asked?",
+    "alternatives": ["Did you finish what I asked?", "Are you done with what I asked?"],
+    "point": "現在の結果は現在完了、過去の時点は過去形",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 6,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ebab915e6a06bc6379cd6f95cd4e4489d300070d519e6cac6cdd116edd3e52a7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7k9u6s9m",
+    "ja": "それでいいですよ。",
+    "en": "That's fine with me.",
+    "alternatives": ["That works for me.", "That's okay with me."],
+    "point": "「私はいい」は fine with me",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 3,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:648b559b5b00d0a0110135535b02b6be814849056593e847525f6f2b3334a2db",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7n9q6n2r",
+    "ja": "忙しいのを承知でお願いします。",
+    "en": "Knowing you're busy, I hate asking.",
+    "alternatives": [
+      "I hate to ask, knowing you're busy.",
+      "Sorry to ask, knowing how busy you are."
+    ],
+    "point": "Knowing で前置きする分詞構文",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 7,
+    "grammar": ["participle-clauses", "hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:96aa0a993c00a5544cfddd8ebbf1b4c21921ec61429077c3ea736224ea4197de",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7s7x8m4w",
+    "ja": "昨日、彼に頼みました。",
+    "en": "I asked him yesterday.",
+    "alternatives": ["I asked him about it yesterday.", "Yesterday I asked him."],
+    "point": "ask の過去形は asked。yesterday と一緒に使う",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:57971945b093b57981b17364b0cada2d5433fa43711114fa4a80774ec639ad27",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8b7b3d5y",
+    "ja": "それは私の仕事です。",
+    "en": "That's my job.",
+    "alternatives": ["That's my responsibility.", "It's my job."],
+    "point": "「それ」は That。That's は That is の短縮",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dc3b200bd49fb16e12f51648f20797a8d4432e74c87fcb71e8fc1c521ca9d596",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8e5f4f2h",
+    "ja": "話した資料、送ってね。",
+    "en": "Send the file I mentioned.",
+    "alternatives": [
+      "Please send the file I mentioned.",
+      "Send me the file we talked about."
+    ],
+    "point": "file の後ろに I mentioned を置いて資料を特定する",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 4,
+    "grammar": ["relative-clauses", "requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1bb1dd40df8b18e6cc54a10dc4962135d8e3489f1a69d76e3294ad70226a18e3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8g7j8y4r",
+    "ja": "今、対応中です。",
+    "en": "I'm working on it.",
+    "alternatives": ["I'm handling it now.", "I'm on it."],
+    "point": "「〜中」は am + -ing。work on は「取り組む」",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8cfe70ba09402c4d40ba8bfa0c7ee2beadc9217ace42468e23f660112dc928c2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8m4g6w6g",
+    "ja": "助けが必要です。",
+    "en": "I need some help.",
+    "alternatives": ["I need help.", "I need a hand."],
+    "point": "help は数えられない名詞。a は付けない",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a93ac0c7fee56966ebd7717cc3fade95e787b992d0d330aa47bc85f9ae5fab47",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8n2b3j5f",
+    "ja": "先に彼に聞いたほうがいい。",
+    "en": "You should ask him first.",
+    "alternatives": [
+      "You'd better ask him first.",
+      "I think you should ask him first."
+    ],
+    "point": "助言は should。first は文末に置く",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 4,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:879dbb10cca3695e7f782938f72037d355a98cccd4e3c26f7fcb429335d9a1d9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9f4p6z5s",
+    "ja": "私が明日までにやります。",
+    "en": "I'll do it by tomorrow.",
+    "alternatives": ["I'll get it done by tomorrow.", "I'll finish it by tomorrow."],
+    "point": "「〜までに」は by。その場の約束は I'll",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 3,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:60606a26185a54c3a3cc7a68957c81beb5f0f9ee07b191c66680d7c6e98de08d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9f9g6y7s",
+    "ja": "原案はもうご覧になりましたか？",
+    "en": "Have you seen the draft yet?",
+    "alternatives": [
+      "Have you looked at the draft yet?",
+      "Have you had a look at the draft?"
+    ],
+    "point": "「もう」を尋ねる yet は現在完了",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 6,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:14cd137e5a72de0e6000873de9f6625faf4ca703f9681874deda6798baba3c9d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9v2c8f6m",
+    "ja": "早退してもいいですか？",
+    "en": "May I leave early?",
+    "alternatives": ["Is it okay if I leave early?", "Can I head out early?"],
+    "point": "許可を求めるときは May I / Is it okay if",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 4,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:29faa0590392630b0c1f0d7351631aec95a92513e9f439ebbe4d096e3905fad2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

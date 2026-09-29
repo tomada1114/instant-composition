@@ -1,0 +1,428 @@
+[
+  {
+    "id": "c_2z4g4w9z",
+    "ja": "さっきまで、よく聞こえてたよ。",
+    "en": "You were coming through fine earlier.",
+    "alternatives": [
+      "I could hear you fine earlier.",
+      "Your audio was fine a minute ago."
+    ],
+    "point": "さっきまでは過去形、今との対比",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:85d9b6b866b52f502b692ad452e4e63dd729640cd6e6618cfd7c22d24bc151f0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3b2y3d6h",
+    "ja": "彼はすぐ折り返すと言ってた。",
+    "en": "He said he'd call right back.",
+    "alternatives": [
+      "He told me he'd call you back soon.",
+      "He said he would call you back shortly."
+    ],
+    "point": "said のあとは will が would になる",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 7,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0d004208d0271012f75b6bb8bf89fb01e0a7323704d4f9c623e862f71f783acb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3g5g2g3p",
+    "ja": "あとで折り返します。",
+    "en": "I'll call you back later.",
+    "alternatives": ["I'll get back to you later.", "I'm going to call you back."],
+    "point": "折り返しは call back。目的語は間に入れる",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 3,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e8d6721dfb196f370b5e7a72c67527fda089c2c6d1e09e2abe7791430c60a2e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3w5n2w4v",
+    "ja": "受付にお客様がいます。",
+    "en": "There's a visitor at reception.",
+    "alternatives": ["There is a guest at reception.", "A visitor is at reception."],
+    "point": "いる は There's + 単数。a を忘れない",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 3,
+    "grammar": ["there-is-are", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:18011178ff622c3012ff1b2c003471da44dffadbc45a6bcf64107761a83b9434",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4j3a7e5g",
+    "ja": "30分も保留のままです。",
+    "en": "I've been holding for 30 minutes.",
+    "alternatives": [
+      "I've been on hold for 30 minutes.",
+      "I've been on hold 30 minutes now."
+    ],
+    "point": "続いている動作は have been -ing",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3ff53e1b832a0064957b7f0481238ee08cd6c4dc6f20656070fcd5329f81b4a7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4q6y8h8b",
+    "ja": "詳しい者を呼びますね。",
+    "en": "I'll get someone who knows more.",
+    "alternatives": [
+      "Let me get someone who knows more.",
+      "I'll find someone who knows more."
+    ],
+    "point": "someone の後ろに who 節をつける",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d65bbd7941e024137bf8f020f52f1a1c98a47bbadf9a21f6e09f0dd03f84fd51",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5b8b6w9m",
+    "ja": "音声にラグがあります。",
+    "en": "There's a lag.",
+    "alternatives": ["There's a delay.", "There's audio lag.", "The audio is lagging."],
+    "point": "ラグは a lag。There's + 単数名詞",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 2,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fb2d26d1cda85b234dd0293163324dc614e40c99c214fbf0271a49e4a6938457",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5d4p9p6c",
+    "ja": "今、担当者につながりました。",
+    "en": "I've just reached the right person.",
+    "alternatives": [
+      "I've just gotten through to the right person.",
+      "I've just been connected to the right person."
+    ],
+    "point": "今つながったところは現在完了 + just",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 6,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:56c8935ca917fda19932be37dd991efa1db3141861ed4545273eb2f8da637a91",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6t4z4z4t",
+    "ja": "もっとゆっくりお願い！",
+    "en": "Could you speak more slowly?",
+    "alternatives": ["Can you slow down a little?", "Please speak a bit slower."],
+    "point": "slowly の比較級は more slowly",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 5,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e176498af079c6f0d7213aefb690349a16749023f557ec552a9f4692376cda17",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6v8h4f5y",
+    "ja": "伝言、承ります。",
+    "en": "I'll take a message.",
+    "alternatives": ["Let me take a message.", "I can take a message."],
+    "point": "「伝言を預かる」は take a message",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bc1cdeea6fa1b21374174efed1d43b3c9746d3d4e88e95b23f0b9d9ebc571413",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6y3e3t8s",
+    "ja": "雑音が入ってます。",
+    "en": "There's some static.",
+    "alternatives": ["There's some noise.", "I'm hearing static."],
+    "point": "ある・入っている は There's。static は雑音",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 1,
+    "grammar": ["there-is-are", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f2be6dc6b0c1e4e75a3de2385099ebf322629461034033b482b660a4ce5a87fa",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6y5a6a6g",
+    "ja": "今おつなぎしています。",
+    "en": "I'm connecting you now.",
+    "alternatives": ["I'm putting you through.", "I'm transferring your call."],
+    "point": "電話をつなぐは connect / put through",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c51df02373cb51992e52b1a168de348a556fc23c0751d8a013d93245f0b265a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7j6g6x4b",
+    "ja": "もう一回言ってもらえる？",
+    "en": "Could you say that again?",
+    "alternatives": ["Could you repeat that?", "Can you say that again?"],
+    "point": "聞き返しの依頼は Could you〜？",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:758608980c8d760a0f4ca2bfd074b7f9ca5d53ab786b31763787c14300403e24",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7u6u3d5z",
+    "ja": "お名前は何ですか？",
+    "en": "What's your name?",
+    "alternatives": ["Could I get your name?", "May I have your name?"],
+    "point": "電話で丁寧に聞くなら May I have〜？も使える",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:06a2bb6beb15fdc6da8377713b4ee3e810ef439ae4d78b6c343476c5ff5aada9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8h7h9v7u",
+    "ja": "通話は録音されています。",
+    "en": "This call is being recorded.",
+    "alternatives": ["This call is recorded.", "We're recording this call."],
+    "point": "「今〜されている」は be being＋過去分詞",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 5,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3c3c9da00b09135c190918d6971a8ad4647c5d32d380abb6bf9c442c4bde0a3d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8p9h8d4n",
+    "ja": "戻ったら彼が電話します。",
+    "en": "He'll call when he's back.",
+    "alternatives": [
+      "He'll call you when he returns.",
+      "When he gets back, he'll call you."
+    ],
+    "point": "when 節は未来のことでも現在形",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:30e9b358863cd72e98ba6d581da0eee8b0960c1134f5a3614cf937d6e4df5323",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9e5w8d7q",
+    "ja": "回線が悪いと思います。",
+    "en": "I think the line's bad.",
+    "alternatives": [
+      "I think the connection is bad.",
+      "I think we have a bad connection."
+    ],
+    "point": "I think のあとの that 節は that を省ける",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:72821b93bf3f9fc8bc6620a25bda49dffe4af08dd713a8d4af273b3b4ab6add8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9m3n8r8a",
+    "ja": "回線がもっと良ければいいのに。",
+    "en": "I wish the connection were better.",
+    "alternatives": [
+      "I wish we had a better connection.",
+      "If only the connection were better."
+    ],
+    "point": "今の願望は wish + 過去形、be は were",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2d1672c3006bddae865770f6b1bbb7b726cff8e798f0e51e5de6c7b94c9d342f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9p7a7p7k",
+    "ja": "彼から折り返し電話させます。",
+    "en": "I'll have him call you back.",
+    "alternatives": [
+      "I'll get him to call you back.",
+      "I'll make sure he calls you back."
+    ],
+    "point": "have + 人 + 動詞の原形",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 6,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c737956edaf3cb3074e59e43411d568d373e549645590743ec15537aea2b5de7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9s7q2y5d",
+    "ja": "ゆっくり話して。",
+    "en": "Please speak slowly.",
+    "alternatives": ["Speak slowly, please.", "Please slow down."],
+    "point": "命令文は動詞から始め、please で和らげる",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:591c4f7659bcfde095519a76e9bacc3e3597868020d4ecba170890f80a66b974",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9z4p4h6u",
+    "ja": "お電話ですが、どなたですか？",
+    "en": "May I ask who's calling?",
+    "alternatives": ["Could you tell me who's calling?", "Can I ask who this is?"],
+    "point": "電話では Who are you? でなく who's calling",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f8b8330aa993d655a25163c08a9108b6eb8ca31d4a8314e925eeb58774826cc",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

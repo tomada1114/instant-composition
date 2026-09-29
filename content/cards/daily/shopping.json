@@ -1,0 +1,423 @@
+[
+  {
+    "id": "c_3b3u4z8h",
+    "ja": "このシャツは安いよ。",
+    "en": "This shirt is cheap.",
+    "alternatives": ["This shirt is inexpensive.", "This shirt is a bargain."],
+    "point": "「安い」は cheap。this は近くの物",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ff76f556106c3c15f5b781e9a52f837f262d36e57d1b77a10cf583be4c8655e1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3k5h5s5f",
+    "ja": "ジャケットを返品したよ。",
+    "en": "I returned the jacket.",
+    "alternatives": ["I took the jacket back.", "I brought the jacket back."],
+    "point": "返品する＝ return / take back",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 3,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fb36f3ca323d24d003cc77b5b2337ea204a51bf83fcaf5f9e3a1e2992c47126c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3k8r7y9m",
+    "ja": "ネットで買うのが好きだ。",
+    "en": "I like buying things online.",
+    "alternatives": ["I like shopping online.", "I enjoy buying stuff online."],
+    "point": "like の後ろは -ing で「〜するのが好き」",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 3,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c6fc83879ef8e18150207266c3499810873b60e371ae26b12d4c90fe4ebff512",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3m8c5u7t",
+    "ja": "ズボンの丈を詰めてもらった。",
+    "en": "I had my pants taken up.",
+    "alternatives": ["I got my pants shortened.", "I had my pants shortened."],
+    "point": "してもらうは have + 物 + 過去分詞",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 6,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b9b9e7b2288915ee8893b1204735008c93ea3f4d45260f9ef891fb304b746ead",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3w7k6w9t",
+    "ja": "もっと安いのはありますか？",
+    "en": "Do you have a cheaper one?",
+    "alternatives": ["Do you have anything cheaper?", "Is there a cheaper one?"],
+    "point": "「もっと安いの」は a cheaper one",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["comparatives-superlatives", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f7ddfea89cad39a1acca0cc20cac72c50ca509640360d0ae3fef246c573ea7fa",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4a4p8g3g",
+    "ja": "試したほうがいいよ。",
+    "en": "You should try it.",
+    "alternatives": [
+      "You should give it a try.",
+      "You should try it out.",
+      "I'd try it."
+    ],
+    "point": "「〜したほうがいい」は should + 動詞の原形",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4e6d35f996deeae7473fd66e4e9f9194fdcc131e56d3156629405ee0c2051b1b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4g7e7f4n",
+    "ja": "私は靴を探してるの。",
+    "en": "I'm looking for shoes.",
+    "alternatives": ["I'm shopping for shoes.", "I'm looking for some shoes."],
+    "point": "「探している」は be looking for",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b71f632f4cf2cd2f8b0de41cfd8af2514143c0e95ae691a52ad5124af69b5775",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4p3m2x8b",
+    "ja": "紙袋はレジ袋より丈夫です。",
+    "en": "Paper bags are stronger than plastic.",
+    "alternatives": [
+      "Paper bags are sturdier than plastic.",
+      "Paper bags are tougher than plastic ones."
+    ],
+    "point": "一般論は無冠詞の複数形で言う",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["comparatives-superlatives", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ab9fe64ae5804d1218462559633d002f36e9f4b92e6bf4ba4bc52fd477007ba2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5b2r9u5e",
+    "ja": "もう荷物を受け取ったよ。",
+    "en": "I've already received the package.",
+    "alternatives": [
+      "I've already gotten the package.",
+      "I've already got the package."
+    ],
+    "point": "「もう〜した」は have + 過去分詞 + already",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 3,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f24770e0eecf83c41739aee10d50622ef13347c9a47b9f4f255da0905900472f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5e8x2j7z",
+    "ja": "レシートを残せばよかった。",
+    "en": "I should have kept the receipt.",
+    "alternatives": [
+      "I should've held on to the receipt.",
+      "I wish I'd kept the receipt."
+    ],
+    "point": "後悔は should have + 過去分詞",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e2117a96a5deb24a30d0a90fa84086039e17e9b8f6e0e443cb45690c6fe7e1f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5y6e9y9d",
+    "ja": "いつ再入荷するか分かりますか？",
+    "en": "Do you know when it'll restock?",
+    "alternatives": [
+      "Could you tell me when it restocks?",
+      "Do you know when they'll restock?"
+    ],
+    "point": "間接疑問は when の後が平叙文の語順",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a4041db803c5bc8644fded7bfc80dfa7b1897b8dce9e0e60d644deb9b2748fd8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6h6j9s4x",
+    "ja": "レシート、取っといて。",
+    "en": "Keep the receipt.",
+    "alternatives": ["Hold on to the receipt.", "Save the receipt."],
+    "point": "「取っておく」は keep。命令文は動詞から始める",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:46a4313e3a268e2fbe38a414b12076ed69dbc728989423abb5d7073f9c94afde",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6v5y9u7v",
+    "ja": "これ、試してもいい？",
+    "en": "Can I try this?",
+    "alternatives": ["May I try this?", "Can I try this out?"],
+    "point": "「〜していい？」は Can I + 動詞",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7813089c2ce9b40310219be93faa1fdd403c2717825e06480b602ac1e296ee9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7f4f4b9p",
+    "ja": "セールで靴を買ったよ。",
+    "en": "I bought shoes on sale.",
+    "alternatives": ["I got some shoes on sale.", "I picked up shoes on sale."],
+    "point": "「セールで」は on sale",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 4,
+    "grammar": ["past-simple", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2b8c97123109d59d6fd6fc50bfd6cf0109e6c4c1f5fddf6197523147e235c272",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8g6j3g6m",
+    "ja": "Mはまだ残ってますか？",
+    "en": "Are there any mediums left?",
+    "alternatives": ["Do you still have any mediums?", "Is size M still available?"],
+    "point": "「残っている」は there are ～ left",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 4,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:03d5fe8626250441659584ad7577eb2d1747905d5381ecc1caf02af79b0e8a5d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8h9r9p6c",
+    "ja": "これ、ずっと探してたんだ。",
+    "en": "I've been looking for this.",
+    "alternatives": [
+      "I've been searching for this one.",
+      "I've been looking for this for ages."
+    ],
+    "point": "「ずっと〜してた」は have been ～ing",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 4,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:db53de88d6267be91477dbd9756c989e70cbc3e015fe8a58be5b539a13c8007b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9e7x4u6a",
+    "ja": "セールを見に行ってきたよ。",
+    "en": "I went to browse the sale.",
+    "alternatives": ["I went to check out the sale.", "I went to look at the sale."],
+    "point": "目的の「〜しに」は to + 動詞",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 6,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0bb5c7c8e494b05fd4b2fe6cbb6397394a127980f203980380acea836e9da4e2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9h9n5h8f",
+    "ja": "売り切れだと店員が言ってた。",
+    "en": "The clerk said it was sold out.",
+    "alternatives": [
+      "They said it was sold out.",
+      "The clerk told me it was sold out."
+    ],
+    "point": "said の後は時制を一つ過去にずらす",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:19c0797641e4e9eaa5e36dec98346e9fef6c4417d0daa1da3a3787d4e986ccca",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9n5g7f9w",
+    "ja": "返品の期限はいつですか？",
+    "en": "When is the return deadline?",
+    "alternatives": ["What's the deadline for returns?", "What's the return deadline?"],
+    "point": "「いつ」は when、期限は deadline",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["wh-questions", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:924ae3606e9328c80d0299287859aea7595bd4066441f0040f12481b20fd09dd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9r7c4f4x",
+    "ja": "これにするよ。",
+    "en": "I'll take this one.",
+    "alternatives": ["I'll go with this one.", "I'll get this one."],
+    "point": "その場で決めたことは I'll。買うは take もよく使う",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1fcfd4bcdac9b9cc03b763a3abea13bc739705271d50eb4cbb9b36c3d2dffae6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9z7m5f2b",
+    "ja": "これ、返品したいんですが。",
+    "en": "I'd like to send this back.",
+    "alternatives": ["I'd like to return this.", "I'd like to take this back."],
+    "point": "返品は send back / take back の句動詞",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:52ae88e583459c0e01f23f54620f0c1215e3fd475e5a2cbc9d4f8045114926a3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

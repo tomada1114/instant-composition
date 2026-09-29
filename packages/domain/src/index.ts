@@ -67,6 +67,7 @@ export {
 } from "./home-state";
 export {
   nearestMilestone,
+  pendingReach,
   reachBySubtopic,
   reachByTopic,
   resolvePlacement,
