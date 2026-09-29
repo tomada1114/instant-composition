@@ -109,7 +109,8 @@ carry `lang="en"` so a screen reader voices them in English.
 | Wide window (`wide:`)                       | `(width >= 48rem) and (height >= 40rem)`: a PC, not a phone       |
 | Column height                               | The window's; on `wide` at most 720, centered in the window       |
 | Tab bar height                              | 49 (`--tab-bar-height`), hairline included                        |
-| Foot under the tab bar                      | `--tab-bar-space`: the bar plus the home-indicator inset, if any  |
+| Home-indicator inset                        | `--safe-bottom`: what of it `--column-inset` does not cover       |
+| Foot under the tab bar                      | `--tab-bar-space`: the bar plus `--safe-bottom`                   |
 | Panel padding                               | 20 (`p-5`); a tile 16 (`p-4`)                                     |
 | Between blocks                              | 40 (`gap-10`); summary sections are 32 above and below a hairline |
 | Panel radius (home panel, sheet, milestone) | 28 (`rounded-card`)                                               |
@@ -128,7 +129,8 @@ On a `wide` window the column stops at 720 tall (`--column-height`) and sits cen
 its prompt and its actions a window apart; 452 × 720 is about 5:8, a phone browser's
 visible area. The height term is what keeps a phone on its side (about 932 × 430) on the
 phone layout. A screen sizes itself from `--column-height`, never from `dvh`, and
-anything fixed to the bottom edge adds `--column-inset`. Taller content scrolls as the
+anything fixed to the bottom edge adds `--column-inset`, and anything resting on the
+column's bottom edge adds `--safe-bottom` to its foot. Taller content scrolls as the
 page, from the same top line. Records and settings are split into `tabs` so that each
 tab fits a 390 × 844 phone with no page scroll, a list that cannot fit scrolling inside
 its own region; the 452 × 720 PC column and shorter phones get no such promise, and a
