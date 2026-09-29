@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2b2t3t4g",
+    "ja": "家の鍵、かけ忘れたかも。",
+    "en": "I may have left it unlocked.",
+    "alternatives": [
+      "I might have left the door unlocked.",
+      "I may have forgotten to lock up."
+    ],
+    "point": "かも＝may have＋過去分詞。忘れた過去の推量",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2e5x7f6r",
     "ja": "父に手伝ってと頼んだよ。",
     "en": "I asked Dad to help.",

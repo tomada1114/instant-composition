@@ -360,6 +360,22 @@
     }
   },
   {
+    "id": "c_6j6p4a6p",
+    "ja": "遅く着いたので、夕食を逃した。",
+    "en": "Arriving late, I missed dinner.",
+    "alternatives": [
+      "Since I arrived late, I missed dinner.",
+      "I arrived late, so I missed dinner."
+    ],
+    "point": "分詞構文の主語は主節と同じ。Arriving で理由を示す",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6m2j8y6a",
     "ja": "立地はいいが、部屋が古びている。",
     "en": "Although it's well located, the room's dated.",

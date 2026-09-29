@@ -447,6 +447,19 @@
     }
   },
   {
+    "id": "c_8f4u2j5m",
+    "ja": "窓口でここで待つよう頼まれた。",
+    "en": "They asked me to wait here.",
+    "alternatives": ["I was asked to wait here.", "They asked me to wait over here."],
+    "point": "ask 人 to do。asked me waiting は不可",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 6,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8h2u4w5d",
     "ja": "番号札を取ってね。",
     "en": "Take a number, please.",

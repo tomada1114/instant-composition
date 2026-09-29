@@ -293,6 +293,22 @@
     "stamps": {}
   },
   {
+    "id": "c_6j8v9u4v",
+    "ja": "窓側の席はございますか？",
+    "en": "Would a window seat be available?",
+    "alternatives": [
+      "Would there be a window seat available?",
+      "Is there possibly a window seat available?"
+    ],
+    "point": "Would で丁寧に婉曲。Do you have より控えめ",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 6,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6m3t3h7p",
     "ja": "満席でも、私は待ちます。",
     "en": "Even if it's full, I'll wait.",
@@ -439,6 +455,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8p9t5m3n",
+    "ja": "この用紙、書いてもらえますか？",
+    "en": "Could you fill this out?",
+    "alternatives": [
+      "Could you fill out this form?",
+      "Would you mind filling this out?"
+    ],
+    "point": "fill out は「記入する」。fill in も可",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 7,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8s9s2f8h",

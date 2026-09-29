@@ -19,6 +19,22 @@
     }
   },
   {
+    "id": "c_2m3d6d3d",
+    "ja": "昨日よりずっと体調がいい。",
+    "en": "I feel much better than yesterday.",
+    "alternatives": [
+      "I'm feeling a lot better than yesterday.",
+      "I feel way better than I did yesterday."
+    ],
+    "point": "better を強めるのは much / a lot。very は不可",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 7,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3b9a4e7z",
     "ja": "頭が痛いんだ。",
     "en": "I have a headache.",

@@ -463,6 +463,19 @@
     "stamps": {}
   },
   {
+    "id": "c_7u8r3n4t",
+    "ja": "彼に頼んで送ってもらった。",
+    "en": "I got him to drive me.",
+    "alternatives": ["I had him drive me.", "I asked him to drive me."],
+    "point": "get 人 to do は説得して〜してもらう。have は to なし",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7v4r4b4x",
     "ja": "ちょっとお願いがあるの。",
     "en": "I need a favor.",

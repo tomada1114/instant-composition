@@ -368,6 +368,19 @@
     "stamps": {}
   },
   {
+    "id": "c_6d7k2v4g",
+    "ja": "新しい子犬がいるよ。",
+    "en": "There's a new puppy.",
+    "alternatives": ["We have a new puppy.", "I have a new puppy."],
+    "point": "There's の後の名詞が新情報。a を忘れない",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6f6s3u9h",
     "ja": "あの旅行がなければ燃え尽きてた。",
     "en": "Without that trip, I'd have burned out.",

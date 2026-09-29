@@ -242,6 +242,22 @@
     }
   },
   {
+    "id": "c_5v4q9p7z",
+    "ja": "火曜に空いてる枠はありますか？",
+    "en": "Are there any slots open Tuesday?",
+    "alternatives": [
+      "Are there any open slots on Tuesday?",
+      "Do you have any slots open Tuesday?"
+    ],
+    "point": "名詞のあとに open を置いて「空いている」",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5z5s9u9t",
     "ja": "彼女に、締め切りの延長を頼んだ。",
     "en": "I asked her to extend the deadline.",

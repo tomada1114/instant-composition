@@ -333,6 +333,22 @@
     }
   },
   {
+    "id": "c_7n6c5a5y",
+    "ja": "知ってたら、参加したのに。",
+    "en": "If I'd known, I'd have joined.",
+    "alternatives": [
+      "If I had known, I'd have joined.",
+      "Had I known, I'd have joined in."
+    ],
+    "point": "過去の事実の逆は If＋had 過去分詞、would have 過去分詞",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 7,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7s7b6f4z",
     "ja": "弟は今ゲームをしているよ。",
     "en": "My brother's playing games now.",
