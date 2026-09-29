@@ -70,22 +70,6 @@
     "stamps": {}
   },
   {
-    "id": "c_2t6s6z7g",
-    "ja": "彼女によると、画像を上げるとデータが一部消える。",
-    "en": "She says some data disappears when she uploads images.",
-    "alternatives": [
-      "According to her, some data vanishes after uploading images.",
-      "She says some data gets lost when she uploads images."
-    ],
-    "point": "data は数えられないので some data に単数動詞",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 8,
-    "grammar": ["articles-and-countability"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2y4f2r4r",
     "ja": "もしかして、タイムゾーンのせいではないでしょうか？",
     "en": "Could it be the time zone?",
@@ -498,22 +482,6 @@
     "subtopic": "debugging",
     "level": 6,
     "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7s9w3v8e",
-    "ja": "本番データが使えたら、この再現も楽なのに。",
-    "en": "If we could use production data, this'd be easier.",
-    "alternatives": [
-      "If we had production data, reproducing it would be easier.",
-      "If we could use real data, we'd reproduce it faster."
-    ],
-    "point": "実際はできないので could と would で仮定を表す",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 8,
-    "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },

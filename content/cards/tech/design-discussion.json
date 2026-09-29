@@ -4,13 +4,13 @@
     "ja": "先にフィードバックをいただけますか？",
     "en": "Could you give us some feedback first?",
     "alternatives": [
-      "Could we get some feedback from you first?",
-      "Would you mind giving us some feedback first?"
+      "Could we get your feedback first?",
+      "Can you give us some feedback first?"
     ],
     "point": "feedback は数えられない名詞。a feedback にしない",
     "topic": "tech",
     "subtopic": "design-discussion",
-    "level": 5,
+    "level": 3,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -37,7 +37,7 @@
     "en": "If she hadn't checked, we'd have chosen wrong.",
     "alternatives": [
       "We'd have chosen wrong if she hadn't checked.",
-      "Without her check, we'd have chosen wrong."
+      "We'd have picked wrong without her checking."
     ],
     "point": "過去の仮定は had 過去分詞、帰結は would have 過去分詞",
     "topic": "tech",
@@ -458,12 +458,12 @@
     "en": "Can I explain the trade-offs?",
     "alternatives": [
       "May I explain the trade-offs?",
-      "Is it okay if I explain the trade-offs?"
+      "Could I explain the trade-offs?"
     ],
     "point": "「〜してもいい？」は Can I 〜? か May I 〜?",
     "topic": "tech",
     "subtopic": "design-discussion",
-    "level": 4,
+    "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -473,10 +473,10 @@
     "ja": "コストの都合で、それはやめました。",
     "en": "We dropped it because of cost.",
     "alternatives": [
-      "We gave up on it over cost.",
+      "We ruled it out because of cost.",
       "We decided against it because of cost."
     ],
-    "point": "案を「やめた」は stopped ではなく dropped や gave up on",
+    "point": "案を「やめた」は stopped ではなく dropped や ruled out",
     "topic": "tech",
     "subtopic": "design-discussion",
     "level": 3,
@@ -497,22 +497,6 @@
     "subtopic": "design-discussion",
     "level": 6,
     "grammar": ["verb-object-to-do", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9z5h7h8d",
-    "ja": "設計担当に確認を頼んでもらえますか？",
-    "en": "Could you ask the designer to check it?",
-    "alternatives": [
-      "Can you ask the designer to check it?",
-      "Could you get the designer to check it?"
-    ],
-    "point": "ask 人 to 動詞。to の後は原形",
-    "topic": "tech",
-    "subtopic": "design-discussion",
-    "level": 5,
-    "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-28",
     "stamps": {}
   }

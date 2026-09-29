@@ -13,7 +13,13 @@
     "level": 7,
     "grammar": ["phrasal-verbs", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e45823a0ba0bbc12c51335dc4cde1e3cc7da4cab7d183aec30503338adb9d7cc",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2b5g8q7h",
@@ -36,22 +42,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_2n5j6u5r",
-    "ja": "車で送ってもらわなきゃ、面接に間に合わなかった。",
-    "en": "If you hadn't driven me, I'd have missed the interview.",
-    "alternatives": [
-      "Without your ride, I'd have missed the interview.",
-      "I would've missed the interview if you hadn't driven me."
-    ],
-    "point": "過去の仮定は had 過去分詞、帰結は would have 過去分詞",
-    "topic": "social",
-    "subtopic": "thanks-apologies",
-    "level": 7,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_2n7x9f3z",
@@ -98,22 +88,6 @@
     }
   },
   {
-    "id": "c_3n8z3h6v",
-    "ja": "田中くんが気づかなきゃ、数字を間違えて送ってた。",
-    "en": "If Tanaka hadn't noticed, we'd have sent the wrong numbers.",
-    "alternatives": [
-      "Had Tanaka not noticed, we'd have sent the wrong numbers.",
-      "If Tanaka hadn't noticed, I'd have sent the wrong numbers."
-    ],
-    "point": "過去の事実の裏は If S had done, S would have done",
-    "topic": "social",
-    "subtopic": "thanks-apologies",
-    "level": 7,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5d3x2h9x",
     "ja": "彼女の誕生会を欠席したこと、謝ればよかった。",
     "en": "I wish I'd apologized for missing her party.",
@@ -128,7 +102,13 @@
     "level": 7,
     "grammar": ["wishes-regrets", "gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9efe60333fcd89f22ae6da96a383a3d5c8cf9ce66e310d58c9fb084ce06d5efd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5q3d9h2b",
@@ -166,7 +146,13 @@
     "level": 5,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:edcac5093f231f1de264d30a271ab916be2f46f988bebdae34d98aa36e15c829",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5z8r6q6a",
@@ -182,23 +168,13 @@
     "level": 7,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6w9d4v9n",
-    "ja": "近所を案内してもらえたのが、何より嬉しかった。",
-    "en": "What meant the most to me was you showing me around.",
-    "alternatives": [
-      "What I appreciated most was you showing me around the neighborhood.",
-      "Nothing meant more to me than you showing me around."
-    ],
-    "point": "「何より嬉しかったこと」を主語にして was で受ける",
-    "topic": "social",
-    "subtopic": "thanks-apologies",
-    "level": 10,
-    "grammar": ["cleft-emphasis", "noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fcb5c2e0a2e42309be33dbfcd63ec7663762f6f67131d44618d14b33c1ea707d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6y2g9c7u",
@@ -243,22 +219,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_7y6m6f5b",
-    "ja": "残業してくれた先輩に、ランチをおごった。",
-    "en": "I bought my coworker lunch for staying late.",
-    "alternatives": [
-      "I treated my coworker to lunch for staying late.",
-      "I bought my coworker lunch for working late."
-    ],
-    "point": "「おごる」は buy 人 lunch / treat 人 to lunch、理由は for + -ing",
-    "topic": "social",
-    "subtopic": "thanks-apologies",
-    "level": 6,
-    "grammar": ["gerunds"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_8h7e5s8s",
@@ -349,22 +309,6 @@
     }
   },
   {
-    "id": "c_9t5j3w2b",
-    "ja": "問題を起こしたのは、チームではなく私の確認不足でした。",
-    "en": "It was my oversight, not the team's, that caused the problem.",
-    "alternatives": [
-      "What caused the problem was my oversight, not the team's.",
-      "The team wasn't to blame; my oversight caused the problem."
-    ],
-    "point": "It was A, not B, that で「B ではなく A が」を強調",
-    "topic": "social",
-    "subtopic": "thanks-apologies",
-    "level": 10,
-    "grammar": ["cleft-emphasis"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_9x5g9a8q",
     "ja": "うちのせいじゃないのに、課長は謝った。",
     "en": "Even though it wasn't our fault, my manager apologized.",
@@ -379,6 +323,12 @@
     "level": 6,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:55d61b7f9222f29da9fa896900774fd745a201a847df82a06207c8b8abbc7ab3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
