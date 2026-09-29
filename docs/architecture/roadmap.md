@@ -333,8 +333,8 @@ was observed, on 2026-09-28:
     recorded.
 - Optionally, typed answers captured alongside self-grades.
   - They are the labels a grading evaluation will need later.
-  - The current timer (6 to 20 seconds per card) is too short for typing, so this needs
-    its own timing rule.
+  - The timer (the learner's per-card limit, 15 to 60 seconds and 30 by default) is set
+    for speaking, not typing, so this needs its own timing rule.
   - It was not cut into work items with the rest of the phase, and the exit does not
     wait on it.
 - Changing the profile after onboarding: the settings screen shows the stored time zone

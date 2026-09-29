@@ -8,7 +8,12 @@ import type { SettingsPageView } from "../openapi";
 import { Button } from "../ui/button";
 import { Sheet } from "../ui/sheet";
 import { Toggle } from "../ui/toggle";
-import { FocusSection, SizeSection, TopicsSection } from "./settings-sections";
+import {
+  FocusSection,
+  LimitSection,
+  SizeSection,
+  TopicsSection,
+} from "./settings-sections";
 import { TimeZoneRow } from "./time-zone-row";
 import { useSettings } from "./use-settings";
 import { markPressed } from "../drill/pressed";
@@ -71,6 +76,7 @@ export function SettingsScreen({
       <TopicsSection topics={page.topics} state={state} />
       <FocusSection topics={page.topics} state={state} />
       <SizeSection state={state} />
+      <LimitSection state={state} />
       <section className="flex flex-col border-y border-border">
         <div className="flex min-h-16 items-center justify-between gap-4">
           <h2 id={soundId}>{t("sound.title")}</h2>

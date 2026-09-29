@@ -40,7 +40,10 @@ export interface CompositionDetail {
   readonly result: AnswerResult;
   /** Until the flip; `limitMs` for a timeout. */
   readonly elapsedMs: number;
+  /** The round's limit, which the timer ran out at. */
   readonly limitMs: number;
+  /** The card's pace, which "fast" is judged by; see `Paced` for an entry without one. */
+  readonly paceMs?: number;
 }
 
 /** One entry of the review log. Never updated once written. */
@@ -138,6 +141,11 @@ export interface Round {
   readonly portionDay: DayKey | null;
   /** Item ids of the first pass, in the order they are shown. */
   readonly deck: readonly string[];
+  /**
+   * The per-card limit the round was dealt with, which its answers are held
+   * to whatever the setting says later; see `limitMsOf` for a round without one.
+   */
+  readonly limitMs?: number;
   readonly startedAt: number;
   readonly finishedAt: number | null;
   readonly abandonedAt: number | null;

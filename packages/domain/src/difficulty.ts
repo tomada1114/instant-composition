@@ -1,12 +1,11 @@
-import { isFast } from "./timer";
+import { isFast, paceOf, type Paced } from "./timer";
 import { TUNING } from "./tuning";
 import type { AnswerResult } from "./types";
 
-export interface DifficultyAnswer {
+export interface DifficultyAnswer extends Paced {
   readonly level: number;
   readonly result: AnswerResult;
   readonly elapsedMs: number;
-  readonly limitMs: number;
   readonly answeredAt: number;
 }
 
@@ -37,7 +36,7 @@ export function adjustLevel(
   }
 
   const oks = recent.filter((answer) => answer.result === "ok");
-  const fast = oks.filter((answer) => isFast(answer.elapsedMs, answer.limitMs));
+  const fast = oks.filter((answer) => isFast(answer.elapsedMs, paceOf(answer)));
   const okRate = oks.length / recent.length;
   const fastRate = oks.length === 0 ? 0 : fast.length / oks.length;
 

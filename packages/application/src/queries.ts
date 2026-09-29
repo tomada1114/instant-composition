@@ -1,4 +1,10 @@
-import { DEFAULT_SETTINGS, err, ok, type Result } from "@instant-composition/domain";
+import {
+  DEFAULT_SETTINGS,
+  err,
+  ok,
+  withDefaults,
+  type Result,
+} from "@instant-composition/domain";
 
 import { snapshotOrEmpty, toeicOf, type CatalogSnapshot } from "./catalog";
 import type { RequestContext } from "./context";
@@ -91,7 +97,7 @@ export async function settingsPage(
   ]);
   const level = stats?.value.level ?? null;
   return ok({
-    settings: settings?.value ?? DEFAULT_SETTINGS,
+    settings: withDefaults(settings?.value ?? DEFAULT_SETTINGS),
     topics: snapshot.topics.map((topic) => ({
       id: topic.id,
       name: topic.name,

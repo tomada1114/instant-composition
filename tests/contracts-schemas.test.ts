@@ -207,6 +207,14 @@ describe("request bounds", () => {
     ).toBe(false);
   });
 
+  it("takes exactly the time limits the domain offers", () => {
+    for (const limitSeconds of TUNING.limitSeconds) {
+      expect(settingsPatchSchema.safeParse({ limitSeconds }).success).toBe(true);
+    }
+    expect(settingsPatchSchema.safeParse({ limitSeconds: 25 }).success).toBe(false);
+    expect(settingsPatchSchema.safeParse({ limitSeconds: 30_000 }).success).toBe(false);
+  });
+
   it.each([
     ["a daily size not on offer", { dailySize: 7 }],
     ["an empty topic id", { topics: [""] }],

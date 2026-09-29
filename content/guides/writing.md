@@ -6,12 +6,14 @@ judges a card against this file, so a rule that is not here is not a reason to r
 ## What a card is
 
 The learner sees `ja`, says the English aloud before a timer runs out, flips the card,
-and marks themselves right or wrong. The timer is derived from the length of `en`. The
-back shows `en` (the model answer), `alternatives` (2–3 other answers that are just as
-right) and `point` (the one thing worth noticing).
+and marks themselves right or wrong. The timer runs for the limit the learner chose (30
+seconds unless they picked another); the length of `en` sets the card's pace, the time a
+correct answer has to beat to count as fast. The back shows `en` (the model answer),
+`alternatives` (2–3 other answers that are just as right) and `point` (the one thing
+worth noticing).
 
-Everything below follows from that: the learner has only the Japanese to go on, has a
-few seconds, and grades themselves by comparing against the back.
+Everything below follows from that: the learner has only the Japanese to go on, has
+seconds rather than minutes, and grades themselves by comparing against the back.
 
 ## Short at every level
 
@@ -62,8 +64,8 @@ the point of the card, it goes.
 - What a fluent speaker would naturally say in that scene, at the card's level. Not the
   most literal rendering of the Japanese, and not a showcase of rare vocabulary.
 - Its length must sit inside the level's `words` range in `content/levels.json` — the
-  lint rejects it otherwise, and the timer depends on it. Aim below the cap: no padding
-  clause, no second detail the scene does not need.
+  lint rejects it otherwise, and the card's pace depends on it. Aim below the cap: no
+  padding clause, no second detail the scene does not need.
 - A higher level asks for a harder word, an idiom or phrasal verb, or a harder structure
   — not for more of the sentence.
 - Contractions are fine and usually more natural in speech (`I'm`, `don't`).

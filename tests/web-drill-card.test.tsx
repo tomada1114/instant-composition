@@ -25,6 +25,7 @@ const CARD: DrillCard = {
   alternatives: ["Could we move the meeting to next week?", "Can we postpone it?"],
   explanation: "push A to B",
   limitMs: 8000,
+  paceMs: 8000,
 };
 
 function renderWithMessages(element: ReactElement) {

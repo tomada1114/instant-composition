@@ -85,9 +85,9 @@ Rejected: the operational overhead buys nothing at this size.
 
 Make a conversational agent the primary interface and expose features as MCP tools.
 
-- The core activity is a timed drill (a card with a 6–20 second limit,
-  `src/core/tuning.ts:12`). It is not a conversation, and putting a model call on that
-  path adds latency and per-answer cost.
+- The core activity is a timed drill (a card with a limit of 15 to 60 seconds, 30 by
+  default: `TUNING.limitSeconds` in `packages/domain/src/tuning.ts`). It is not a
+  conversation, and putting a model call on that path adds latency and per-answer cost.
 - The owner wants to use the application without any LLM for a while first.
 
 Rejected as the core. Agents remain an option for features that genuinely need them

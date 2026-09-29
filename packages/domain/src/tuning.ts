@@ -8,9 +8,13 @@
  */
 export const TUNING = {
   dayBoundaryHour: 4,
-  /** `ceil(base + words * perWord)`, clamped to `min..max`. */
-  timer: { baseSeconds: 4, secondsPerWord: 0.5, minSeconds: 6, maxSeconds: 20 },
-  /** A correct answer flipped within this share of the limit is "fast". */
+  /**
+   * A card's pace, the yardstick "fast" is judged by: `ceil(base + words *
+   * perWord)` seconds, clamped to `min..max`. It no longer decides when the
+   * timer runs out; the learner's chosen limit does.
+   */
+  pace: { baseSeconds: 4, secondsPerWord: 0.5, minSeconds: 6, maxSeconds: 20 },
+  /** A correct answer flipped within this share of its card's pace is "fast". */
   fastRatio: 0.5,
   estimateSecondsPerCard: 30,
   /** Fewer cards than this and no round is built. */
@@ -18,6 +22,9 @@ export const TUNING = {
   placementSize: 10,
   dailySizes: [5, 10, 15, 20, 30],
   defaultDailySize: 10,
+  /** The per-card time limits the settings offer, in seconds. */
+  limitSeconds: [15, 20, 30, 45, 60],
+  defaultLimitSeconds: 30,
   maxFocus: 2,
   mix: {
     reviewShareMax: 0.6,
