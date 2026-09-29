@@ -1,7 +1,8 @@
 # ADR-0006: Persistence on DynamoDB
 
 - Status: Accepted (2026-09-23), including the store shape; amended 2026-09-27 (no
-  point-in-time recovery or deletion protection on the `dev` table)
+  point-in-time recovery or deletion protection on the `dev` table); amended 2026-09-29
+  (the answer mode on settings, rounds and answers, and a typed answer's text)
 - Date: 2026-09-23
 - Deciders: the owner
 
@@ -93,10 +94,10 @@ One table for learner data, with one partition per learner:
 ```text
 PK                    SK                                   item
 LEARNER#<learnerId>   PROFILE                              timezone, L1, target, UI locale
-LEARNER#<learnerId>   SETTINGS                             topics, focus, daily size, sound, time limit, grade keys
+LEARNER#<learnerId>   SETTINGS                             topics, focus, daily size, sound, time limit, answer mode, grade keys
 LEARNER#<learnerId>   STATS                                points, completed days, level, its mode
 LEARNER#<learnerId>   LEVEL#<at>                           level history entry
-LEARNER#<learnerId>   ROUND#<roundId>                      kind, day, deck, limit, status, summary
+LEARNER#<learnerId>   ROUND#<roundId>                      kind, day, deck, limit, answer mode, status, summary
 LEARNER#<learnerId>   ROUND#<roundId>#ANSWER#<answerId>    log entry (ADR-0003 envelope)
 LEARNER#<learnerId>   PORTION#<day>                        target, completedAt
 LEARNER#<learnerId>   DAY#<day>                            the day's tally (projection)
@@ -128,6 +129,16 @@ last moved (a placement, the answers, or the learner's pick), and the awarded ti
 are kept in `STATS`; a round's move is also recorded in that round's summary, but a
 level picked by hand leaves no entry once it is replaced. `LEVEL#` and `TITLE#` arrive
 with the first feature that reads a level's history or a title's award on its own.
+
+The typed-answer mode (amended 2026-09-29, the owner's decision) adds fields and no
+item: its rules are
+[ADR-0011's "Typed-answer mode"](0011-llm-integration-and-evaluation.md#typed-answer-mode).
+`SETTINGS` holds the answer mode, `spoken | typed`, and a `ROUND#` item the mode it was
+dealt with. An answer log entry carries its round's mode, as it carries the round's day
+and limit, and, in a typed round, the learner's optional `text` of at most 300
+characters. The entry stays append-only: the text is written with the answer and never
+edited. An item written before the mode existed has none and reads as `spoken`, so
+nothing is backfilled.
 
 ### Idempotency and offline sync
 
@@ -230,3 +241,5 @@ AWS documentation, checked 2026-09-23:
   isolation contract
 - [ADR-0007](0007-http-api-contract-and-offline-sync.md) — client ids and queued answers
 - [ADR-0009](0009-aws-topology-environments-and-operations.md) — stacks and backups
+- [ADR-0011](0011-llm-integration-and-evaluation.md#typed-answer-mode) — the
+  typed-answer mode behind the answer mode and the answer's text

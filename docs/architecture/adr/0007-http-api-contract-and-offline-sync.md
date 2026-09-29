@@ -3,7 +3,8 @@
 - Status: Accepted (2026-09-23); the OpenAPI generation line under "Framework" and the
   open question on Zod v4 are superseded by
   [ADR-0013](0013-openapi-generated-from-zod-json-schema.md); amended 2026-09-28 (a late
-  answer never rewinds an item's schedule, and no expiry is in force)
+  answer never rewinds an item's schedule, and no expiry is in force); amended
+  2026-09-29 (the typed-answer mode's settings field, round mode and answer text)
 - Date: 2026-09-23
 - Deciders: the owner
 
@@ -114,7 +115,7 @@ implementation):
 ```text
 GET    /v1/me                          learner profile: L1, target language, timezone, UI locale
 PATCH  /v1/me                          change profile fields
-GET    /v1/settings                    practice settings (topics, focus, daily size, sound, time limit, grade keys)
+GET    /v1/settings                    practice settings (topics, focus, daily size, sound, time limit, answer mode, grade keys)
 PATCH  /v1/settings                    today's PUT /api/settings, as a partial update
 PATCH  /v1/level                       the level: back to automatic, or fixed at one picked by hand
 GET    /v1/home                        the home view (today's portion, streak, next action)
@@ -164,6 +165,23 @@ offline replay use the same call.
 - An abandoned round still accepts answers, and they still count. Today an open round is
   abandoned when another kind starts (`src/server/services/start.ts:133`), but it is
   never rejected for being abandoned.
+
+**Typed-answer mode** (amended 2026-09-29, the owner's decision; the rules are
+[ADR-0011's "Typed-answer mode"](0011-llm-integration-and-evaluation.md#typed-answer-mode)).
+Each change is additive within `/v1`:
+
+- `PATCH /v1/settings` takes an optional answer mode, `spoken | typed`, and
+  `GET /v1/settings` returns it, `spoken` when never chosen. The next round dealt takes
+  it, and the round returns the mode it was dealt with.
+- An answer takes an optional `text`, at most 300 characters, accepted only in a typed
+  round. `GET /v1/rounds/{roundId}` returns it with the answers already recorded, and
+  the round's summary returns it too.
+- `elapsedMs` above its 600 000 ms cap is clamped to the cap rather than refused, which
+  only accepts what was refused before.
+- A `timeout` answer in a typed round, and a `text` in a spoken round, are refused with
+  `ERR_BAD_REQUEST`. A queued answer is judged by the mode its round was dealt with, not
+  the setting at replay time, so an offline replay meets the same rule it was answered
+  under.
 
 **Localization.**
 
@@ -237,4 +255,6 @@ offline replay use the same call.
 - [ADR-0006](0006-persistence-on-dynamodb.md): conditional writes behind idempotency
 - [ADR-0008](0008-web-client-as-static-spa.md): the first client of this contract
 - [ADR-0009](0009-aws-topology-environments-and-operations.md): where the API runs
+- [ADR-0011](0011-llm-integration-and-evaluation.md#typed-answer-mode): the typed-answer
+  mode behind the answer mode and the answer's text
 - [References](../references.md)

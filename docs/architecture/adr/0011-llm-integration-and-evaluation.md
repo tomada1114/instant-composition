@@ -1,6 +1,6 @@
 # ADR-0011: LLM integration and evaluation
 
-- Status: Proposed
+- Status: Proposed. Accepted: the typed-answer mode (the owner, 2026-09-29).
 - Date: 2026-09-23
 - Deciders: the owner
 
@@ -65,7 +65,7 @@ type GradeComposition = (
     pair: { l1: string; target: string };
     prompt: string; // in the learner's L1
     reference: { text: string; alternatives: readonly string[] };
-    answer: string; // typed by the learner, length-capped
+    answer: string; // typed by the learner: an answer's `text`, at most 300 characters
     rubricVersion: string;
   },
 ) => Promise<Result<Graded, LlmError>>;
@@ -129,7 +129,8 @@ language pair.
   - Positives from the existing content: 2,052 alternative answers across 1,020 reviewed
     cards.
   - Negatives made by perturbing references in ways that correspond to known error tags.
-  - Typed answers that learners graded themselves, once typed input exists.
+  - Typed answers that learners graded themselves: the `text` a typed round stores with
+    each self-graded answer (see [Typed-answer mode](#typed-answer-mode)).
   - An adversarial set: instructions injected into the answer field, off-task text, and
     the wrong language.
 - **Metrics.**
@@ -168,10 +169,60 @@ pipeline.
   1,020 stamped cards and 324 tombstones that record why each card was deleted.
 - Only after that is the reviewer trusted, alone, for pairs the owner cannot read.
 
+### Typed-answer mode
+
+Accepted, the owner's decisions of 2026-09-29. Typed input ships before grading, so it
+is decided here rather than left to the grading work. Today every answer is timed as
+speech: the round's limit clamps `elapsedMs` (`decideAnswers` in
+`packages/domain/src/answers.ts`), and `isFast` (`packages/domain/src/timer.ts`) judges
+a flip against the card's spoken pace, `TUNING.pace`. "Fast" moves the Leitner box
+(`packages/domain/src/card-state.ts`), the auto level's `upFastRate`
+(`packages/domain/src/difficulty.ts`), the review label
+(`packages/domain/src/review.ts`) and the summary's "faster" rows
+(`packages/domain/src/growth.ts`). Typing a ten-word answer never fits half of a spoken
+pace, so without a rule of its own a typed round could never raise the level.
+
+1. **The mode is chosen per round.** The settings hold an answer mode, `spoken | typed`,
+   and the next round dealt takes it, the way `limitSeconds` works today: the round
+   under way keeps the mode it was dealt with. The round records its mode, and each
+   answer carries its round's mode, as it already carries the round's day and limit, so
+   a reader of the log needs no round to know it. A setting, round or answer written
+   before the mode existed has none and reads as `spoken`, which is also the default.
+2. **A typed round has no time limit.** It runs no timer and has no `timeout`: an answer
+   with `result: "timeout"` in a typed round is refused with `ERR_BAD_REQUEST`.
+   `elapsedMs` keeps its cap of 600 000 ms, but a larger value is clamped to the cap
+   rather than refused, so an answer typed over more than ten minutes is still recorded.
+   In a spoken round the round's limit clamps it first, as today.
+3. **"Fast" has a typed pace.** `TUNING` gains a typed pace of the same form as the
+   spoken one: seconds to think plus seconds per word, clamped. Its values live there
+   and nowhere else, set when the mode is built and tuned in use like the spoken pace.
+   An answer's `paceMs` is the pace of its round's mode, so `isFast`, and through it the
+   box, the level and the label, run unchanged on both modes. The typed pace is the one
+   knob that balances them.
+4. **Growth compares like with like.** A growth row, "faster" or "fixed", compares an
+   answer only with the card's previous first-pass answer of the same mode. An answer
+   with no earlier first pass in its mode counts as a first time.
+5. **An answer may carry its text.** An answer takes an optional `text` of at most 300
+   characters, accepted only in a typed round; a `text` in a spoken round is refused
+   with `ERR_BAD_REQUEST`. It is stored with the answer in the learning log and returned
+   by `GET /v1/rounds/{roundId}`, with the answers already recorded, and by the round's
+   summary. The learner still grades the answer themselves; the text is what grading
+   will later read as `GradeComposition`'s `answer`, and its cap is the input length cap
+   the defenses above rely on.
+
+These decisions change the stored answer ([ADR-0006](0006-persistence-on-dynamodb.md))
+and the `/v1` contract ([ADR-0007](0007-http-api-contract-and-offline-sync.md)); both
+say so and point here. Every contract change is additive within `/v1`. The text is
+learner data like the rest of the learner's partition: only its learner reads it,
+through learner-bound stores ([ADR-0005](0005-identity-and-authorization.md)), and the
+request log, which carries no request body, never holds it.
+
 ## Consequences
 
 ### Positive
 
+- Self-graded typed answers collect in the learning log from the day typed input ships,
+  before grading exists, and become the evaluation set's learner data.
 - Every model call has an owner, a schema, a version, a cost and an evaluation. The
   question "did this change make grading worse?" has a numeric answer before merge.
 - Duplicate or replayed jobs cost nothing extra.
@@ -185,14 +236,14 @@ pipeline.
   deploy role's account.
 - For pairs the owner cannot read, feedback quality in that L1 rests on LLM judgment and
   learner reports. This limit is accepted by the owner.
-- Typed input needs its own timing rules. Typing an answer within a speaking limit (15
-  to 60 seconds, 30 by default) is a different task.
+- "Fast" in a typed round rests on a typed pace that starts as a guess. Until it is
+  tuned in use, a typed round can move the box and the level faster or slower than a
+  spoken one would for the same learner.
+- A learner who switches modes starts each card's growth comparison afresh in the new
+  mode, so the summary shows fewer "faster" and "fixed" rows at first.
 
 ### Follow-ups
 
-- Decide how typed input is timed before building it.
-- Start collecting self-graded typed answers early, if typed input ships before grading.
-  This gives the evaluation set real data.
 - Measure Converse latency and cost for Haiku 4.5 on the JP profile with a spike before
   committing to per-answer versus per-round grading.
 
@@ -242,8 +293,16 @@ All checked 2026-09-23.
 
 ## Related
 
+- [ADR-0003](0003-bounded-contexts-and-activity-integration.md): the log envelope whose
+  payload carries the typed text
 - [ADR-0004](0004-multi-language-content-model.md): language pairs, concept ids, review
   policy
+- [ADR-0005](0005-identity-and-authorization.md): the learner-bound stores the typed
+  text stays behind
+- [ADR-0006](0006-persistence-on-dynamodb.md): the stored answer, which carries its mode
+  and text
+- [ADR-0007](0007-http-api-contract-and-offline-sync.md): the `/v1` contract the mode
+  and text extend
 - [ADR-0010](0010-entitlements-and-billing.md): the ledger every job reserves against
 - [ADR-0012](0012-agents-and-agentcore.md): when a task becomes an agent
 - [References](../references.md)
