@@ -10,7 +10,13 @@
     "level": 2,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7426d915074b271abca7d1f107b53a4c43d5ac98f7a756774ade308490a5e747",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3u4t8q6e",
@@ -92,9 +98,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:8378bda7d11d068b110e6757772b4b8a7df6817b431750339c729b24227cde5b",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:daa024fc30b7c888c77fddf96c5a6a9c2f1b1e249d6b95541e1134e60c7ffdc6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -112,7 +118,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6af77babd1857cd908137f11fd13535e739246c580aa03104bf0d6f4e11bfa52",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5a6w8j7s",
@@ -128,7 +140,13 @@
     "level": 2,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3e3c80ccc7e201f93296f164881025a6b0b1ef1e16a8129a576bfa07de92c1e2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5t7u3z9g",
@@ -160,7 +178,13 @@
     "level": 4,
     "grammar": ["gerunds", "progressive-aspect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ede53a35f0117aa091b95a589d94666237535751c3ef4d007446cadbee62f2a4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6h6x2w3e",
@@ -176,7 +200,13 @@
     "level": 5,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d5a3064b71da5958bd367ac1acaa9fa7ed84015de10f84f2bc52d46cc39f6c94",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6p9n5c3e",
@@ -192,7 +222,13 @@
     "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:53680042189bdf0c3f376330ca2c3f94ff0688496a458f0ea4fab02338ff5666",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7d4u5s5b",
@@ -208,23 +244,13 @@
     "level": 6,
     "grammar": ["present-perfect", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7r3n2z9f",
-    "ja": "見積もりが届いたら、すぐ共有しますね。",
-    "en": "I'll share the quote once it arrives.",
-    "alternatives": [
-      "As soon as it arrives, I'll share it.",
-      "I'll send you the quote once it arrives."
-    ],
-    "point": "when の後は未来のことでも現在形 arrives にする",
-    "topic": "work",
-    "subtopic": "reporting",
-    "level": 4,
-    "grammar": ["time-and-if-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0ecd110bae083516a4d878caeef86fad40522e107448048e3f6f140c23f0abba",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7r6n5t7n",
@@ -237,7 +263,13 @@
     "level": 3,
     "grammar": ["articles-and-countability", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e03676ab5815c472226e0dc20453b924735c14b453dc42e2b2e15a2facc25346",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7t4b2d7k",
@@ -250,7 +282,13 @@
     "level": 2,
     "grammar": ["wh-questions", "modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:857934c0c3796329fa63f8aae0af120af357a9799239e6dac3454fb4064ed29d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8m2r7h5d",
@@ -394,6 +432,12 @@
     "level": 4,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b1945dd439ac4c30c1424bbb2bbb5834a09a5a74d3e3e7d1211ead0ea3fb8160",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
