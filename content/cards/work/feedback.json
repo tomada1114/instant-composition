@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2j9w8c6f",
+    "ja": "早く言ってくれたら手伝ったよ。",
+    "en": "I'd have helped if you'd asked.",
+    "alternatives": [
+      "If you'd told me earlier, I'd have helped.",
+      "If you'd said something, I'd have helped."
+    ],
+    "point": "過去の仮定は if + had + 過去分詞",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2m3e5w6m",
     "ja": "今、指摘を読み返してる。",
     "en": "I'm rereading your comments.",
@@ -61,6 +77,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5h2v2m2v",
+    "ja": "君がいなければ失敗してた。",
+    "en": "We'd have failed without you.",
+    "alternatives": [
+      "If not for you, we'd have failed.",
+      "Without you, we would have failed."
+    ],
+    "point": "If not for you は過去の仮定の言い方",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 7,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6j9f9h8c",
@@ -183,6 +215,22 @@
     }
   },
   {
+    "id": "c_7k5x5w8e",
+    "ja": "具体例を足してほしいんだけど。",
+    "en": "I'd like you to add examples.",
+    "alternatives": [
+      "Could you add some examples?",
+      "I'd like you to include more examples."
+    ],
+    "point": "want + 人 + to do の形",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 6,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7m3n9r6b",
     "ja": "君の案、採用されたよ。",
     "en": "Your idea was accepted.",
@@ -298,5 +346,50 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9p8q6g6r",
+    "ja": "要点を絞れと言われた。",
+    "en": "I was told to be concise.",
+    "alternatives": ["My boss told me to be brief.", "They asked me to keep it short."],
+    "point": "tell + 人 + to do",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 7,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9w8u9g3a",
+    "ja": "前回の点、直してくれたね。",
+    "en": "You've fixed what I pointed out.",
+    "alternatives": [
+      "You've corrected the points I raised.",
+      "You fixed the issues I mentioned last time."
+    ],
+    "point": "今に残る結果は現在完了",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 6,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9z9z3m3k",
+    "ja": "何がまずかったか、教えて？",
+    "en": "Can you say what went wrong?",
+    "alternatives": [
+      "Could you tell me what went wrong?",
+      "Can you tell me what went wrong?"
+    ],
+    "point": "間接疑問は主語動詞の語順のまま",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 7,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

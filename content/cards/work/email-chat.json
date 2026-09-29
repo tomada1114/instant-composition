@@ -22,6 +22,22 @@
     }
   },
   {
+    "id": "c_3d7j7j4v",
+    "ja": "上司をCCに入れるべきだった。",
+    "en": "I should have cc'd my boss.",
+    "alternatives": [
+      "I should have copied my boss in.",
+      "I ought to have looped in my boss."
+    ],
+    "point": "後悔や反省は should have + 過去分詞",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3t3r4v3a",
     "ja": "添付を忘れてすみません。",
     "en": "Sorry, I forgot the attachment.",
@@ -42,6 +58,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3u9g4g8k",
+    "ja": "明日、彼にもう一度連絡します。",
+    "en": "I'll follow up with him tomorrow.",
+    "alternatives": [
+      "I'll circle back with him tomorrow.",
+      "I'll check in with him again tomorrow."
+    ],
+    "point": "「改めて連絡する」は follow up with",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 7,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_3x8v2d8g",
@@ -101,6 +133,54 @@
     }
   },
   {
+    "id": "c_6g3f5f5b",
+    "ja": "Slack が朝から鳴ってる。",
+    "en": "My Slack's been pinging all morning.",
+    "alternatives": [
+      "Slack has been buzzing since this morning.",
+      "My Slack has been going off all morning."
+    ],
+    "point": "朝からずっと続く動作は現在完了進行形",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7c7f8b8x",
+    "ja": "読み終えて、すぐ返信した。",
+    "en": "Having read it, I replied immediately.",
+    "alternatives": [
+      "After reading it, I replied right away.",
+      "I read it and replied right away."
+    ],
+    "point": "先に終えた動作は having + 過去分詞",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7j4y5n8r",
+    "ja": "宛先は先に確認したほうがいい。",
+    "en": "You should double-check the recipients first.",
+    "alternatives": [
+      "You'd better double-check the recipients first.",
+      "It's worth double-checking the recipients first."
+    ],
+    "point": "助言は should、再確認は double-check",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 7,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7u2a2h2j",
     "ja": "早めに返信ください。",
     "en": "Please reply soon.",
@@ -137,6 +217,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8d3g4b5f",
+    "ja": "もっと早く返信しなくてごめん。",
+    "en": "Sorry for not replying sooner.",
+    "alternatives": [
+      "I'm sorry I didn't reply earlier.",
+      "Sorry for not getting back to you sooner."
+    ],
+    "point": "謝る理由は for + -ing、否定は not を前に",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 6,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8j2w5z2q",

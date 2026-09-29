@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2c9t4t4t",
+    "ja": "この件、ずっと議論してるね。",
+    "en": "We've been debating this for ages.",
+    "alternatives": [
+      "We've been discussing this for ages.",
+      "We've been going back and forth on this."
+    ],
+    "point": "続いている動作は have been + -ing",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2w3u5x6a",
     "ja": "質問していいですか？",
     "en": "May I ask a question?",
@@ -81,6 +97,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3y3e2g3n",
+    "ja": "私は総括を頼まれた。",
+    "en": "I was asked to sum up.",
+    "alternatives": ["They asked me to recap.", "I've been asked to summarize."],
+    "point": "「頼まれた」は be asked to do",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 7,
+    "grammar": ["passive-voice", "verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_3z6e9y9x",
@@ -166,6 +195,22 @@
     }
   },
   {
+    "id": "c_6d9n6g2d",
+    "ja": "先ほど出た案に賛成です。",
+    "en": "I support the idea raised earlier.",
+    "alternatives": [
+      "I'm in favor of the idea mentioned earlier.",
+      "I agree with the idea brought up earlier."
+    ],
+    "point": "名詞のあとに過去分詞を置いて説明する",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 7,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6m5r2s3k",
     "ja": "昨日彼が議題を送ったよ。",
     "en": "He sent the agenda yesterday.",
@@ -186,6 +231,54 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7a5v8e6j",
+    "ja": "もっと早く発言すればよかった。",
+    "en": "I wish I'd spoken up sooner.",
+    "alternatives": [
+      "I wish I had said something earlier.",
+      "If only I'd spoken up sooner."
+    ],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7j3k3x7m",
+    "ja": "私は開始前に資料を送っていた。",
+    "en": "I'd sent the slides beforehand.",
+    "alternatives": [
+      "I'd already sent the slides beforehand.",
+      "The slides had gone out beforehand."
+    ],
+    "point": "「その前にすでに」は過去完了 had + 過去分詞",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7x6h7k7u",
+    "ja": "議事録は後ほど回覧されます。",
+    "en": "The minutes will be circulated.",
+    "alternatives": [
+      "The minutes will be sent around later.",
+      "The minutes will be shared afterward."
+    ],
+    "point": "議事録は minutes と複数形",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 7,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7z3h6x8b",

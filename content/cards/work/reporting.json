@@ -162,6 +162,22 @@
     }
   },
   {
+    "id": "c_5h9f4k4x",
+    "ja": "原因が分かったので直します。",
+    "en": "Knowing the cause, I'll fix it.",
+    "alternatives": [
+      "Now I've found the cause, I'll fix it.",
+      "I found the cause, so I'll fix it."
+    ],
+    "point": "理由は Knowing で先に言う分詞構文",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5u9m9k6b",
     "ja": "進み具合を知らせてね。",
     "en": "Keep me posted.",
@@ -264,6 +280,22 @@
     }
   },
   {
+    "id": "c_7p7f3x9b",
+    "ja": "もっと早く報告すべきでした。",
+    "en": "I should have reported it sooner.",
+    "alternatives": [
+      "I should have told you earlier.",
+      "I ought to have reported it earlier."
+    ],
+    "point": "後悔は should have + 過去分詞",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8a4m6d8y",
     "ja": "報告書を書き終えました。",
     "en": "I finished writing the report.",
@@ -286,6 +318,35 @@
     }
   },
   {
+    "id": "c_8g8j9s3b",
+    "ja": "作業は順調に進んでいます。",
+    "en": "Things are coming along nicely.",
+    "alternatives": ["It's coming along well.", "We're making good progress."],
+    "point": "順調に進むは come along",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 7,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8v3n8z6z",
+    "ja": "先日話した問題は解決済みです。",
+    "en": "The issue I raised is resolved.",
+    "alternatives": [
+      "The problem I mentioned has been solved.",
+      "The issue that I brought up is resolved."
+    ],
+    "point": "目的語の関係詞 that は省ける",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8v4z4g5h",
     "ja": "心配なのは日程です。",
     "en": "What worries me is the schedule.",
@@ -306,5 +367,34 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9g4d4a3w",
+    "ja": "その件は、ずっと調べています。",
+    "en": "I've been looking into it.",
+    "alternatives": ["I've been digging into it.", "I've been investigating it."],
+    "point": "調べるは look into、継続は現在完了進行形",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 7,
+    "grammar": ["phrasal-verbs", "present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9j2y7m4y",
+    "ja": "すぐ上司に相談したほうがいい。",
+    "en": "You should tell your boss now.",
+    "alternatives": [
+      "You'd better talk to your manager.",
+      "You should talk to your boss right away."
+    ],
+    "point": "助言は should + 動詞の原形",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

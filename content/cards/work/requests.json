@@ -82,6 +82,38 @@
     }
   },
   {
+    "id": "c_4x3h9j8f",
+    "ja": "よければ、手伝ってもらえない？",
+    "en": "I don't suppose you could help?",
+    "alternatives": [
+      "I was wondering if you could help.",
+      "Would there be any chance you could help?"
+    ],
+    "point": "I don't suppose you could で控えめに頼む",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4z2b4b5p",
+    "ja": "もうお願いしたと思ってた。",
+    "en": "I thought I'd already asked you.",
+    "alternatives": [
+      "I believed I'd already asked you.",
+      "I was under the impression I'd already asked."
+    ],
+    "point": "それ以前の出来事は過去完了",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 7,
+    "grammar": ["past-perfect", "hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4z4r6d7p",
     "ja": "今、忙しいですか？",
     "en": "Are you busy now?",
@@ -120,6 +152,22 @@
     }
   },
   {
+    "id": "c_6d7y9z8f",
+    "ja": "ちょっと見ていただけますか？",
+    "en": "Would you mind taking a look?",
+    "alternatives": [
+      "Could you possibly take a look?",
+      "Do you think you could take a look?"
+    ],
+    "point": "Would you mind + -ing は丁寧な依頼",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 6,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6g9y3z8s",
     "ja": "一つお願いがあります。",
     "en": "I need a favor.",
@@ -139,6 +187,19 @@
     }
   },
   {
+    "id": "c_7a3n8w9m",
+    "ja": "頼んだ件、もう終わった？",
+    "en": "Have you finished what I asked?",
+    "alternatives": ["Did you finish what I asked?", "Are you done with what I asked?"],
+    "point": "現在の結果は現在完了、過去の時点は過去形",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 6,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7k9u6s9m",
     "ja": "それでいいですよ。",
     "en": "That's fine with me.",
@@ -156,6 +217,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7n9q6n2r",
+    "ja": "忙しいのを承知でお願いします。",
+    "en": "Knowing you're busy, I hate asking.",
+    "alternatives": [
+      "I hate to ask, knowing you're busy.",
+      "Sorry to ask, knowing how busy you are."
+    ],
+    "point": "Knowing で前置きする分詞構文",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 7,
+    "grammar": ["participle-clauses", "hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7s7x8m4w",
@@ -295,6 +372,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9f9g6y7s",
+    "ja": "原案はもうご覧になりましたか？",
+    "en": "Have you seen the draft yet?",
+    "alternatives": [
+      "Have you had time to see the draft?",
+      "Have you had a look at the draft?"
+    ],
+    "point": "「もう」を尋ねる yet は現在完了",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 6,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9v2c8f6m",

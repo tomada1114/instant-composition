@@ -102,6 +102,22 @@
     }
   },
   {
+    "id": "c_5b8m2y5u",
+    "ja": "遅れてるので、早めに集まろう。",
+    "en": "Being behind schedule, let's meet earlier.",
+    "alternatives": [
+      "Since we're behind schedule, let's meet earlier.",
+      "We're behind schedule, so let's meet sooner."
+    ],
+    "point": "理由は Being で始める分詞構文",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5h2v2v6x",
     "ja": "金曜に会うのはどう？",
     "en": "How about meeting on Friday?",
@@ -119,6 +135,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5j5e6j3k",
+    "ja": "今週ずっと会議を調整してる。",
+    "en": "I've been rescheduling meetings all week.",
+    "alternatives": [
+      "I've spent all week juggling meetings.",
+      "I've been juggling the schedule all week."
+    ],
+    "point": "今週ずっとは現在完了進行形",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5m4j7y6v",
@@ -225,6 +257,51 @@
     }
   },
   {
+    "id": "c_7v6m8a2q",
+    "ja": "確認したら、金曜は大丈夫です。",
+    "en": "Having checked, I'm free on Friday.",
+    "alternatives": [
+      "Having checked my calendar, I can do Friday.",
+      "I've checked, and Friday works for me."
+    ],
+    "point": "先に済ませた動作は having + 過去分詞",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7w6r5k5c",
+    "ja": "木曜予定の会議、ずらせる？",
+    "en": "Can we move the meeting set for Thursday?",
+    "alternatives": [
+      "Could we reschedule the Thursday meeting?",
+      "Can we shift Thursday's meeting?"
+    ],
+    "point": "名詞のあとに set for で予定を説明",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7x7r8x3q",
+    "ja": "ケンに会議室を取ってもらった。",
+    "en": "I had Ken book the room.",
+    "alternatives": ["I got Ken to book the room.", "Ken booked the room for me."],
+    "point": "have + 人 + 動詞の原形",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7y4u4x8v",
     "ja": "何曜日がいいですか？",
     "en": "Which day is good?",
@@ -242,6 +319,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8b4e9m2r",
+    "ja": "何時ならいいか教えてね。",
+    "en": "Let me know what time works.",
+    "alternatives": [
+      "Could you tell me what time suits you?",
+      "Please tell me what time works for you."
+    ],
+    "point": "what time 節を動詞の目的語にする",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8d3y5j8g",

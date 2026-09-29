@@ -1,5 +1,37 @@
 [
   {
+    "id": "c_2z4g4w9z",
+    "ja": "さっきまで、よく聞こえてたよ。",
+    "en": "You were coming through fine earlier.",
+    "alternatives": [
+      "I could hear you fine earlier.",
+      "Your audio was fine a minute ago."
+    ],
+    "point": "さっきまでは過去形、今との対比",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3b2y3d6h",
+    "ja": "彼はすぐ折り返すと言ってた。",
+    "en": "He said he'd call right back.",
+    "alternatives": [
+      "He told me he'd call you back soon.",
+      "He said he would call you back shortly."
+    ],
+    "point": "said のあとは will が would になる",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 7,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3g5g2g3p",
     "ja": "あとで折り返します。",
     "en": "I'll call you back later.",
@@ -60,6 +92,19 @@
     }
   },
   {
+    "id": "c_4q6y8h8b",
+    "ja": "詳しい者を呼びますね。",
+    "en": "I'll get someone who knows.",
+    "alternatives": ["Let me get someone who knows.", "I'll find someone who knows."],
+    "point": "someone の後ろに who 節をつける",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5b8b6w9m",
     "ja": "音声にラグがあります。",
     "en": "There's a lag.",
@@ -77,6 +122,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5d4p9p6c",
+    "ja": "今、担当者につながりました。",
+    "en": "I've just reached the right person.",
+    "alternatives": [
+      "I've just gotten through to the right person.",
+      "I've just been connected to the right person."
+    ],
+    "point": "今つながったところは現在完了 + just",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 6,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6t4z4z4t",
@@ -254,6 +315,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9m3n8r8a",
+    "ja": "回線がもっと良ければいいのに。",
+    "en": "I wish the connection were better.",
+    "alternatives": [
+      "I wish we had a better connection.",
+      "If only the connection were better."
+    ],
+    "point": "今の願望は wish + 過去形、be は were",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9p7a7p7k",
+    "ja": "彼から折り返し電話させます。",
+    "en": "I'll have him call you back.",
+    "alternatives": [
+      "I'll get him to call you back.",
+      "I'll make sure he calls you back."
+    ],
+    "point": "have + 人 + 動詞の原形",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 6,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9s7q2y5d",
