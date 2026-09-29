@@ -22,6 +22,22 @@
     }
   },
   {
+    "id": "c_2m7a2r2f",
+    "ja": "フロントは満室と言ったが、結局部屋を用意してくれた。",
+    "en": "They said they were full, but they found us a room.",
+    "alternatives": [
+      "Although the desk said they were full, they found us a room.",
+      "Despite saying they were full, they managed to find us a room."
+    ],
+    "point": "said の後は時制を一つ過去に：were full",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 10,
+    "grammar": ["concession-contrast", "reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2n4f9w2h",
     "ja": "君はパスポートを見せなきゃだめだよ。",
     "en": "You have to show your passport.",
@@ -348,22 +364,6 @@
     "stamps": {}
   },
   {
-    "id": "c_5y6m4y4k",
-    "ja": "部屋に入るなり、シーツが汚れているのに気づいたんです。",
-    "en": "Upon entering the room, I found the sheets stained.",
-    "alternatives": [
-      "The moment I walked in, I noticed the sheets were dirty.",
-      "When I entered the room, I noticed stained sheets."
-    ],
-    "point": "Upon ~ing で「〜するとすぐ」を分詞構文で表せる",
-    "topic": "travel",
-    "subtopic": "hotel",
-    "level": 9,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6a9h3r6u",
     "ja": "対応してくれた方にお礼を伝えてください。",
     "en": "Please thank the staff member who helped us.",
@@ -495,22 +495,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9g3n9z5e",
-    "ja": "フロントは満室と言っていたのに、結局私たちを泊めてくれた。",
-    "en": "Although the desk said they were full, they squeezed us in.",
-    "alternatives": [
-      "Even though the desk said they were full, they fit us in.",
-      "The desk said they were full, but they ended up taking us."
-    ],
-    "point": "said の後は時制を一つ過去に：were full",
-    "topic": "travel",
-    "subtopic": "hotel",
-    "level": 10,
-    "grammar": ["concession-contrast", "reported-speech"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9h3h2c3z",

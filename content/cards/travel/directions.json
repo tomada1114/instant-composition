@@ -546,18 +546,18 @@
     }
   },
   {
-    "id": "c_8v4j3d6w",
-    "ja": "この地図、描き直してもらえませんか？分かりにくくて。",
-    "en": "Could I get you to redraw this map? It's confusing.",
+    "id": "c_8x8f5z7n",
+    "ja": "次の角で降ろしてもらえますか？あとは歩きます。",
+    "en": "Could you drop me off at the next corner? I'll walk.",
     "alternatives": [
-      "Would you mind redrawing this map? It's confusing.",
-      "Could you redraw this map for me? It's confusing."
+      "Would you mind letting me out at the next corner? I'll walk.",
+      "Can you let me off at the next corner? I'll walk."
     ],
-    "point": "「〜してもらう」は get you to + 動詞の原形",
+    "point": "「降ろす」は drop 〜 off / let 〜 off。目的語は off の前",
     "topic": "travel",
     "subtopic": "directions",
     "level": 10,
-    "grammar": ["causatives"],
+    "grammar": ["phrasal-verbs", "hedging-softening"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },

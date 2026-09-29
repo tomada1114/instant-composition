@@ -1,21 +1,5 @@
 [
   {
-    "id": "c_2a5s3n4f",
-    "ja": "この設定、ずっと探してるのに見つからないんだ。",
-    "en": "I've been hunting for this setting forever, with no luck.",
-    "alternatives": [
-      "I've been searching for this setting for ages, no luck.",
-      "I can't find this setting, and I've been looking forever."
-    ],
-    "point": "「ずっと〜している」は現在完了進行形 have been -ing",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 7,
-    "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2d4x7j6u",
     "ja": "彼に拡張機能を入れるよう伝えてもらえる？",
     "en": "Could you tell him to install extensions?",
@@ -51,7 +35,13 @@
     "level": 5,
     "grammar": ["noun-clauses", "indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:58f1eb54df3e28a087573559f8e9e1f59d3c23bba6d16409a5a11c0c26f52c8e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2j6b2j8u",
@@ -74,22 +64,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_2k2x2k5h",
-    "ja": "保存したら、エディタを再起動してね。",
-    "en": "After saving, restart the editor.",
-    "alternatives": [
-      "Once you save, restart the editor.",
-      "Save it, then restart the editor."
-    ],
-    "point": "「〜したら」は After + 〜ing で短く言える（命令文が続く）。",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 3,
-    "grammar": ["time-and-if-clauses", "imperatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_2k3f8k3q",
@@ -127,7 +101,13 @@
     "level": 6,
     "grammar": ["reported-speech", "gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:001c886208558a77922416e759a865a17d2cc1c9ffd345c97f3ef84a51795941",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2q5v4j4x",
@@ -143,7 +123,13 @@
     "level": 5,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:434f790f0021161bd90ddda20519efbb175b772ef2ffbcb58a8cf34f9c58a8c3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2t3z7r3m",
@@ -212,22 +198,6 @@
     }
   },
   {
-    "id": "c_3s4q5d6w",
-    "ja": "Node を上げてから、ビルドが通らない。",
-    "en": "Builds have failed since I upgraded Node.",
-    "alternatives": [
-      "The build's been failing since I upgraded Node.",
-      "Since upgrading Node, the build has been failing."
-    ],
-    "point": "since の前は過去形、今まで続く結果は現在完了",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 5,
-    "grammar": ["tense-contrast", "present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3u8n9q3r",
     "ja": "リンターの設定を順を追って説明してもらえますか？",
     "en": "Could you walk me through your linter setup?",
@@ -263,7 +233,13 @@
     "level": 1,
     "grammar": ["there-is-are", "articles-and-countability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0094c1c3aebb08287b918ec916eb70d3e363f85875808027aa1096efb279f808",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4f6u7b6k",
@@ -279,7 +255,13 @@
     "level": 7,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8940c2b4cfaf5f233a5f7555e5d74cef745262ae6a40e833e79648a22da7d2c6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4r7s5x6p",
@@ -393,39 +375,6 @@
     }
   },
   {
-    "id": "c_7a6x9t2x",
-    "ja": "この設定の形式、ドキュメントか何かありますか？",
-    "en": "Do you happen to have documentation on this config format?",
-    "alternatives": [
-      "Is there any documentation on this config format?",
-      "Could you point me to documentation on this format?",
-      "Do you have docs or anything on this config format?"
-    ],
-    "point": "documentation は数えられない名詞。a も -s も付けない",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 7,
-    "grammar": ["hedging-softening", "articles-and-countability"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7n7c7u7f",
-    "ja": "先週入れた拡張機能、もう消しちゃったの？",
-    "en": "Have you already deleted the extension you installed last week?",
-    "alternatives": [
-      "You've already removed the extension you installed last week?",
-      "Did you already uninstall the extension from last week?"
-    ],
-    "point": "「もう〜したの」は already。last week は過去形とセット",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 7,
-    "grammar": ["tense-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8f2k5v8h",
     "ja": "ターミナルで日本語が打てないんだ。",
     "en": "I can't type Japanese in the terminal.",
@@ -440,7 +389,13 @@
     "level": 2,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8e3893affc86005e0f9e46928f130a0536166bd1eebcf095df8eac61a67855f5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8g4g4u4v",
@@ -475,7 +430,13 @@
     "level": 3,
     "grammar": ["comparatives-superlatives", "infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:86a7b9c3e52eb53a2195114ac04031e518645ac35f99577f8d60d5e8c9f20cf7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9p3z5x9w",
@@ -492,23 +453,13 @@
     "level": 4,
     "grammar": ["relative-clauses", "progressive-aspect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9q8k2c2d",
-    "ja": "ビルド、ずっと待ってるんだけど。",
-    "en": "I've been waiting on the build forever.",
-    "alternatives": [
-      "I've been waiting for the build forever.",
-      "I've been waiting for the build for ages."
-    ],
-    "point": "「ずっと〜してる」は have been -ing。for は待つ対象",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 5,
-    "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ffe1ddbafde5aec163ffb22131f32688829042d1d7cdf52b8f11da7ead08a05d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9x3j8p2u",
@@ -531,21 +482,5 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9z6w9j5t",
-    "ja": "エディタ、乗り換えようと思いつつ、ずっと後回し。",
-    "en": "I've been meaning to switch editors, but keep procrastinating.",
-    "alternatives": [
-      "I keep meaning to switch editors and putting it off.",
-      "I've meant to switch editors for ages, but I keep delaying."
-    ],
-    "point": "ずっと続く「後回し」は現在完了進行や keep -ing で表す",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 9,
-    "grammar": ["present-perfect-continuous", "tense-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   }
 ]

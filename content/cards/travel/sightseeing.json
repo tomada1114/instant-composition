@@ -1,16 +1,16 @@
 [
   {
     "id": "c_2y6s5p5c",
-    "ja": "私がもっと早く出ていたら、最終ツアーに間に合ったのに。",
+    "ja": "私が早く出てたら、最終ツアーに間に合ったのに。",
     "en": "If I'd left sooner, I'd have caught the last tour.",
     "alternatives": [
-      "If I had left earlier, I would have made the last tour.",
-      "I would've caught the last tour if I'd left sooner."
+      "I would've caught the last tour if I'd left sooner.",
+      "If I'd left earlier, I would've made the last tour."
     ],
     "point": "過去の仮定は if + had 過去分詞、would have 過去分詞",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 10,
+    "level": 7,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -75,12 +75,12 @@
     "en": "Do you know who built this bridge?",
     "alternatives": [
       "Could you tell me who built this bridge?",
-      "Do you happen to know who built this bridge?"
+      "Would you know who built this bridge?"
     ],
     "point": "間接疑問は who が主語なので do を使わず built のまま",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 8,
+    "level": 4,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -113,7 +113,7 @@
     "en": "My friend is waiting at the entrance.",
     "alternatives": [
       "My friend's waiting by the entrance.",
-      "My friend is waiting at the gate."
+      "A friend is waiting at the entrance."
     ],
     "point": "今している最中のことは be動詞 + 〜ing で表す",
     "topic": "travel",
@@ -126,15 +126,15 @@
   {
     "id": "c_4a9v5n8e",
     "ja": "彼、朝からずっと展望台で写真を撮ってるよ。",
-    "en": "He's been taking photos at the lookout since morning.",
+    "en": "He's been taking photos at the lookout all morning.",
     "alternatives": [
-      "He's been shooting photos up at the lookout all morning.",
-      "He has been taking pictures at the lookout since morning."
+      "He's been shooting photos at the lookout all morning.",
+      "He's been taking pictures at the lookout all morning."
     ],
     "point": "ずっと続く動作は現在完了進行形 (has been -ing)",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 7,
+    "level": 6,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -142,15 +142,15 @@
   {
     "id": "c_4c7e9w8d",
     "ja": "この街の観光情報って、何かありますか？",
-    "en": "Do you have any information on the local sights?",
+    "en": "Do you have any information on local sights?",
     "alternatives": [
-      "Could I get some information about the local sights?",
-      "Is there any information available on the local sights?"
+      "Could I get some information about local sights?",
+      "Is there any sightseeing info for this town?"
     ],
     "point": "information は数えられない名詞。an や複数形は不可",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 10,
+    "level": 4,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -237,7 +237,7 @@
     "en": "If I'd hired a guide, I'd have seen it.",
     "alternatives": [
       "I'd have seen it if I'd hired a guide.",
-      "Had I hired a guide, I'd have seen it."
+      "If I'd gotten a guide, I would've seen it."
     ],
     "point": "過去の仮定は if + had done、結果は would have done",
     "topic": "travel",
@@ -482,16 +482,16 @@
   },
   {
     "id": "c_7b3r2n5q",
-    "ja": "係員に、あそこに並ぶよう言われたんだ。",
-    "en": "The staff told us to line up over there.",
+    "ja": "私たち、係員にあそこに並ぶよう言われた。",
+    "en": "The staff told us to line up there.",
     "alternatives": [
       "We were told to line up over there.",
-      "A staff member told us to line up over there."
+      "An attendant told us to line up there."
     ],
     "point": "tell + 人 + to do。「並ぶ」は line up",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 8,
+    "level": 5,
     "grammar": ["verb-object-to-do", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -559,22 +559,22 @@
   {
     "id": "c_7u6m5m3d",
     "ja": "ここが撮影禁止だなんて、知りませんでした。",
-    "en": "I had no idea that photography was prohibited here.",
+    "en": "I had no idea photography was banned here.",
     "alternatives": [
-      "I didn't realize photography wasn't allowed in here.",
-      "I wasn't aware that you can't take photos here."
+      "I didn't realize photos weren't allowed here.",
+      "I wasn't aware photos weren't allowed here."
     ],
-    "point": "知らなかった内容は that 節で続ける。photography は無冠詞",
+    "point": "「知らなかった」は I had no idea + that 節。",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 10,
-    "grammar": ["noun-clauses", "articles-and-countability"],
+    "level": 6,
+    "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_7u8c6r8d",
-    "ja": "このチケットで別館にも入れますか？",
+    "ja": "このチケットで別館に入れますか？",
     "en": "Can this ticket get me into the annex?",
     "alternatives": [
       "Does this ticket get me into the annex?",
@@ -585,22 +585,6 @@
     "subtopic": "sightseeing",
     "level": 5,
     "grammar": ["can-could-ability", "articles-and-countability"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8e4x6k3c",
-    "ja": "私たち、もっと早く来てれば日の出に間に合ったのに。",
-    "en": "If we'd come earlier, we'd have caught the sunrise.",
-    "alternatives": [
-      "If we had arrived earlier, we would have caught the sunrise.",
-      "We'd have caught the sunrise if we'd come earlier."
-    ],
-    "point": "間に合う は catch。if 節は had + 過去分詞",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 9,
-    "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -672,33 +656,17 @@
   },
   {
     "id": "c_9a7k2y2e",
-    "ja": "ガイドさんに写真を撮ってもらったよ。",
-    "en": "I had the guide take our photo.",
+    "ja": "ガイドさんに私の写真を撮ってもらった。",
+    "en": "I had the guide take my photo.",
     "alternatives": [
-      "I got the guide to take our photo.",
-      "We had the guide take our photo."
+      "I got the guide to take my photo.",
+      "I had the guide take my picture."
     ],
     "point": "「〜してもらう」は have + 人 + 原形（to は付けない）",
     "topic": "travel",
     "subtopic": "sightseeing",
     "level": 5,
     "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9e9f3h2s",
-    "ja": "ツアーのことで、少しアドバイスをもらえますか？",
-    "en": "Could you give me some advice about tours?",
-    "alternatives": [
-      "Can I get some advice about the tours?",
-      "Would you mind giving me some advice about tours?"
-    ],
-    "point": "adviceは数えられない名詞。an adviceやadvicesは不可",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 7,
-    "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -726,16 +694,16 @@
   },
   {
     "id": "c_9m9n8j3g",
-    "ja": "展望台がこんなに混むなんて、思ってもみなかったよ。",
-    "en": "I never thought the deck would be this packed.",
+    "ja": "展望台がこんなに混むとは、思ってもみなかった。",
+    "en": "I never thought the lookout would be this packed.",
     "alternatives": [
-      "I never imagined the observation deck would be this crowded.",
-      "I didn't expect the deck to be this packed."
+      "I never imagined the lookout would be this crowded.",
+      "I never expected the lookout to be this crowded."
     ],
     "point": "thought の後ろの that は省略可。would で過去から見た未来",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 9,
+    "level": 6,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
