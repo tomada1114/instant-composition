@@ -388,7 +388,13 @@
     "level": 10,
     "grammar": ["inversion"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:eb8cfbaac4f2a1459ec1478c07f7eb3addaf50c0e8394edac722332c23bb001c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5x9q2q6e",
@@ -563,10 +569,10 @@
   {
     "id": "c_7g8x7w5c",
     "ja": "弟は休みのたびに、バンドの練習に私を付き合わせるんだ。",
-    "en": "My brother makes me sit through his band practice every day off.",
+    "en": "My brother makes me sit through band practice on his days off.",
     "alternatives": [
-      "My brother makes me come to band practice every day off.",
-      "My brother drags me to his band practice every day off."
+      "My brother makes me come to band practice on his days off.",
+      "My brother drags me along to band practice on his days off."
     ],
     "point": "make + 人 + 原形。sit through は最後まで付き合う",
     "topic": "daily",
@@ -574,7 +580,13 @@
     "level": 10,
     "grammar": ["causatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0b557bf68e1a1b3af7d6f042f877e91c96220df07c995af4505a897ec4e80435",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7q8m7e8u",
