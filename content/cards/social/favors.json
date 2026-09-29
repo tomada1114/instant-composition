@@ -66,22 +66,6 @@
     }
   },
   {
-    "id": "c_3h2m6r9a",
-    "ja": "もう引き受けてたから、断れなかったんだ。",
-    "en": "I'd already said yes, so I couldn't back out.",
-    "alternatives": [
-      "I'd already agreed, so I couldn't back out.",
-      "I couldn't back out because I'd already said yes."
-    ],
-    "point": "引き受け済みは I'd already said yes、断るは back out",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 7,
-    "grammar": ["past-perfect", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3p7q8a8j",
     "ja": "忙しいなら、無理しなくていいよ。",
     "en": "If you're busy, you don't have to.",
@@ -429,22 +413,6 @@
     }
   },
   {
-    "id": "c_6s2x3z3e",
-    "ja": "小さな頼みが週末を潰すとは思わなかった。",
-    "en": "I never thought a small favor would eat my weekend.",
-    "alternatives": [
-      "I never expected a small favor to eat my weekend.",
-      "I didn't think a small favor would take my weekend."
-    ],
-    "point": "「思わなかった」は I never thought + would で言う",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 7,
-    "grammar": ["noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7e2n4m8h",
     "ja": "早く言ってくれてたら、手伝ったのに。",
     "en": "If you'd told me sooner, I'd have helped.",
@@ -506,22 +474,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_8n3z8k4q",
-    "ja": "手が回らないから、今回は見送るね。",
-    "en": "I'm stretched thin, so I'll pass this time.",
-    "alternatives": [
-      "I'm swamped, so I'll sit this one out.",
-      "I've got a full plate, so I'll pass this time."
-    ],
-    "point": "手一杯は stretched thin、断りは pass this time",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 7,
-    "grammar": ["hedging-softening"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_8p7h3r5c",
@@ -653,22 +605,6 @@
     }
   },
   {
-    "id": "c_9p3x9p5n",
-    "ja": "採用担当に口添えしてもらえない？",
-    "en": "Could you vouch for me with the hiring manager?",
-    "alternatives": [
-      "Could you put in a good word with the recruiter?",
-      "Could you speak up for me to the hiring manager?"
-    ],
-    "point": "口添えは vouch for か put in a good word で言う",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 7,
-    "grammar": ["requests-permission", "hedging-softening"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_9q2n2j3r",
     "ja": "友達に引っ越しの手伝いを頼まれた。",
     "en": "A friend asked me to help move.",
@@ -704,6 +640,12 @@
     "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:acc50c91bc7c59954a051cc71a90f6ebc9c8329b48ed537bd0cd8af2488ec033",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
