@@ -15,9 +15,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:da3e08563eee4ec8832595b3f3f861512eca89240a690421c8c5f2ffdb719bb3",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:b52bc7b29549377a412250a041cb0bd7c441796eb8fb68fc902fb5f3805dcf58",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -67,7 +67,13 @@
     "level": 4,
     "grammar": ["gerunds", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c7cf79e36f63e5f6b6abf97064087044ac5b78124dc093cce6207008fe0acea7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3w5f6y6n",
@@ -83,7 +89,13 @@
     "level": 3,
     "grammar": ["imperatives", "time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4ce35301bc0a4f540c10da3469d858779376950666f91f932abed48074edb9a7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3w5x5t4h",
@@ -101,9 +113,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:5689f5d17b14fbc1d4f63ce82cd2c25b92096a98764f7585c14ac54d14f06b0e",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:794b283e553dee07109d8694008b88135397263f83217e0c17ff2f22225d0d5a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -118,7 +130,13 @@
     "level": 1,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4aeda6d16e44fcb3971c30bd41371db046c3f58a09eb9e6d432fb2bff4616eb7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4x5m8x2m",
@@ -134,7 +152,13 @@
     "level": 2,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b63f086084146a4a35c4b4968611c7ccaf88fa6fdce0f8b1bdb8df2ffd0d2cf8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5k2z3n8n",
@@ -166,7 +190,13 @@
     "level": 4,
     "grammar": ["articles-and-countability", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d6ff0a168e1c93ff4da35cd4b38c1de4aa288259408a40b3a0930896f7936539",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5n5j2f4p",
@@ -181,22 +211,6 @@
     "subtopic": "code-review",
     "level": 9,
     "grammar": ["cleft-emphasis", "indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5p8a9t6t",
-    "ja": "この変数を分かりやすく改名しました。",
-    "en": "I renamed the variable to clarify it.",
-    "alternatives": [
-      "I renamed this variable for clarity.",
-      "I renamed this variable to be clearer."
-    ],
-    "point": "「〜するために」は to ＋動詞の原形",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 3,
-    "grammar": ["infinitives", "past-simple"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -232,9 +246,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:9e05829c9c82c6358d0a0a9bbc279d96ba54bdf7b6ca864fd69d9e4c81f72de4",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:618e2f05cb65b848ab03b13e3b386268811e5249d20545ef7857ef9045015d0a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -300,7 +314,13 @@
     "level": 2,
     "grammar": ["can-could-ability", "past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:716b71e2d165ab1ce1e892001d6bda95cfd41302033fbd03fc28179158fa1682",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8c8q9y9n",
@@ -315,27 +335,11 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:ad3024ec2f8a55d7a283cd6f3c18e6a4f4cc0f0d6ac1d105f78f0b7ee22604bb",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:9c7fdd371ace269360a2a872bf51e9266eee41cee543908210a663fd3a1f4fbe",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_8n2p3j9r",
-    "ja": "このバグ、先週入り込んだんだね。",
-    "en": "This bug was introduced last week.",
-    "alternatives": [
-      "The bug got introduced last week.",
-      "This bug came in last week."
-    ],
-    "point": "「入り込んだ」は誰かが入れたと見て、was introduced と受動態にする",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 4,
-    "grammar": ["passive-voice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_8w4s4r2y",
@@ -383,7 +387,13 @@
     "level": 3,
     "grammar": ["verb-object-to-do", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cf410e13034f7b392c79bdc6f10607c9d3f1077c9e3a94e84a698224a75a9129",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9q2z9p4s",
