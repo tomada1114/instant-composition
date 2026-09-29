@@ -2,7 +2,7 @@ import { useNavigate } from "@tanstack/react-router";
 import { useEffect, useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
-import type { RoundKind, RoundPayload } from "../openapi";
+import type { GradeKeys, RoundKind, RoundPayload } from "../openapi";
 import { useAnswerQueue, useQueuedDrill, type ArrivedQueue } from "./answer-sync";
 import { currentCard, initDrill, progress, type DrillState } from "./drill-state";
 import { CardScreen } from "./card-screen";
@@ -63,6 +63,7 @@ export function DrillSession({
   first,
   pressed,
   sound,
+  gradeKeys,
   dailySize,
   onNext,
 }: Readonly<{
@@ -70,6 +71,7 @@ export function DrillSession({
   first: boolean;
   pressed: boolean;
   sound: boolean;
+  gradeKeys: GradeKeys;
   dailySize: number;
   onNext: (kind: RoundKind) => void;
 }>): ReactElement {
@@ -115,7 +117,7 @@ export function DrillSession({
       dispatch({ type: action.type, at });
     }
   }
-  useDrillKeys(state, (action) => {
+  useDrillKeys(state, gradeKeys, (action) => {
     act(action, true);
   });
 
@@ -173,6 +175,7 @@ export function DrillSession({
       <CardScreen
         state={state}
         round={round}
+        gradeKeys={gradeKeys}
         onAction={(action) => {
           act(action, false);
         }}
@@ -180,6 +183,7 @@ export function DrillSession({
       {state.paused ? (
         <PauseSheet
           position={resumeAt}
+          gradeKeys={gradeKeys}
           onQuit={goHome}
           onContinue={() => {
             act({ type: "resume" }, false);

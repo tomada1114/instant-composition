@@ -215,6 +215,71 @@ describe("the drill, a round run to its summary", () => {
   });
 });
 
+describe("the drill's grade keys", () => {
+  const CHOSEN = homeView(
+    { kind: "ready", streak: COUNT },
+    { gradeKeys: { ok: "KeyL", ng: "Digit1" } },
+  );
+
+  /** The text of the grade button named `label`, its key hint included. */
+  function hintOf(label: string): string | null {
+    return screen.getByRole("button", { name: label }).textContent;
+  }
+
+  it("grades with the keys the learner chose, and shows them on the buttons", async () => {
+    const calls = serve({ home: CHOSEN });
+    await openRound("/drill?kind=today");
+    press(" ");
+    await settle(200);
+    expect(hintOf(ja.Drill.card.said)).toBe(`${ja.Drill.card.said}L`);
+    expect(hintOf(ja.Drill.card.notSaid)).toBe(`${ja.Drill.card.notSaid}1`);
+
+    press("l", "KeyL");
+    await settle(400);
+    await settle(16);
+    expect(screen.getByText("prompt-c2")).toBeInTheDocument();
+    press(" ");
+    await settle(200);
+    press("!", "Digit1");
+    await settle(400);
+
+    const answers = posted(calls, ANSWERS) as { answers: AnswerInput[] }[];
+    expect(answers.map((body) => body.answers.map((a) => a.result))).toStrictEqual([
+      ["ok"],
+      ["ng"],
+    ]);
+  });
+
+  it("ignores → and ←, and K/F and J/D, once another pair is chosen", async () => {
+    const calls = serve({ home: CHOSEN });
+    await openRound("/drill?kind=today");
+    press(" ");
+    await settle(200);
+    for (const [key, code] of [
+      ["ArrowRight", "ArrowRight"],
+      ["ArrowLeft", "ArrowLeft"],
+      ["k", "KeyK"],
+      ["f", "KeyF"],
+      ["j", "KeyJ"],
+      ["d", "KeyD"],
+    ] as const) {
+      press(key, code);
+    }
+    await settle(400);
+    expect(screen.getByText("answer-c1")).toBeInTheDocument();
+    expect(posted(calls, ANSWERS)).toStrictEqual([]);
+  });
+
+  it("shows → and ← on the buttons while the learner keeps the default", async () => {
+    serve();
+    await openRound("/drill?kind=today");
+    press(" ");
+    await settle(200);
+    expect(hintOf(ja.Drill.card.said)).toBe(`${ja.Drill.card.said}→`);
+    expect(hintOf(ja.Drill.card.notSaid)).toBe(`${ja.Drill.card.notSaid}←`);
+  });
+});
+
 describe("the drill, a round run by taps", () => {
   /** A button whose name starts with `label`, ahead of its key hint. */
   function tap(label: string): void {

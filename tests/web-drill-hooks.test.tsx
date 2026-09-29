@@ -121,7 +121,9 @@ describe("useDrillClock", () => {
 describe("useDrillKeys", () => {
   it("hands a mapped key to the handler and stops its default", () => {
     const onAction = vi.fn();
-    renderHook(() => useDrillKeys(fresh(), onAction));
+    renderHook(() =>
+      useDrillKeys(fresh(), { ok: "ArrowRight", ng: "ArrowLeft" }, onAction),
+    );
     const event = new KeyboardEvent("keydown", { key: " ", cancelable: true });
     window.dispatchEvent(event);
     expect(onAction).toHaveBeenCalledWith({ type: "flip" });
@@ -134,14 +136,40 @@ describe("useDrillKeys", () => {
     ["a key with no meaning here", { key: "x" }],
   ])("ignores %s", (_, init) => {
     const onAction = vi.fn();
-    renderHook(() => useDrillKeys(fresh(), onAction));
+    renderHook(() =>
+      useDrillKeys(fresh(), { ok: "ArrowRight", ng: "ArrowLeft" }, onAction),
+    );
     window.dispatchEvent(new KeyboardEvent("keydown", init));
     expect(onAction).not.toHaveBeenCalled();
   });
 
+  it("grades a flipped back by the code of the key the learner chose, and follows a new choice", () => {
+    const onAction = vi.fn();
+    const flipped = drillReducer(drillReducer(fresh(), { type: "shown", at: 0 }), {
+      type: "flip",
+      at: 1000,
+      wall: 1000,
+    });
+    const { rerender } = renderHook(
+      ({ ok }: { ok: string }) => useDrillKeys(flipped, { ok, ng: "KeyA" }, onAction),
+      { initialProps: { ok: "KeyL" } },
+    );
+    window.dispatchEvent(new KeyboardEvent("keydown", { key: "l", code: "KeyL" }));
+    window.dispatchEvent(new KeyboardEvent("keydown", { key: "k", code: "KeyK" }));
+    rerender({ ok: "KeyK" });
+    window.dispatchEvent(new KeyboardEvent("keydown", { key: "k", code: "KeyK" }));
+    window.dispatchEvent(new KeyboardEvent("keydown", { key: "l", code: "KeyL" }));
+    expect(onAction.mock.calls).toStrictEqual([
+      [{ type: "grade", result: "ok" }],
+      [{ type: "grade", result: "ok" }],
+    ]);
+  });
+
   it("pauses when the page is hidden, and does nothing when it shows again", () => {
     const onAction = vi.fn();
-    renderHook(() => useDrillKeys(fresh(), onAction));
+    renderHook(() =>
+      useDrillKeys(fresh(), { ok: "ArrowRight", ng: "ArrowLeft" }, onAction),
+    );
     const visibility = vi.spyOn(document, "visibilityState", "get");
     visibility.mockReturnValue("hidden");
     document.dispatchEvent(new Event("visibilitychange"));

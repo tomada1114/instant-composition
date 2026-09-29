@@ -1,6 +1,7 @@
 import { useTranslations } from "use-intl";
 import type { ReactElement } from "react";
 
+import { keyLabel } from "../lib/grade-keys";
 import { Button } from "../ui/button";
 import { ArrowGlyph, CloseGlyph, RingGlyph } from "../ui/glyphs";
 import { Kbd } from "../ui/kbd";
@@ -12,7 +13,7 @@ import {
   type DrillPhase,
   type DrillState,
 } from "./drill-state";
-import type { RoundPayload } from "../openapi";
+import type { GradeKeys, RoundPayload } from "../openapi";
 import { CardBack, CardFront } from "./flashcard";
 import type { DrillKeyAction } from "./keys";
 import { TimerBar } from "./timer-bar";
@@ -20,10 +21,20 @@ import { TopStrip } from "./top-strip";
 
 type OnAction = (action: DrillKeyAction) => void;
 
+/** A grade's key hint; a "←" sits at the start edge, so it points the way it is pressed. */
+function GradeKbd({ code }: Readonly<{ code: string }>): ReactElement {
+  return <Kbd side={code === "ArrowLeft" ? "start" : "end"}>{keyLabel(code)}</Kbd>;
+}
+
 function Actions({
   phase,
+  gradeKeys,
   onAction,
-}: Readonly<{ phase: DrillPhase; onAction: OnAction }>): ReactElement {
+}: Readonly<{
+  phase: DrillPhase;
+  gradeKeys: GradeKeys;
+  onAction: OnAction;
+}>): ReactElement {
   const t = useTranslations("Drill.card");
   if (phase.kind === "front") {
     return (
@@ -63,7 +74,7 @@ function Actions({
       >
         <CloseGlyph className="size-4.5" />
         {t("notSaid")}
-        <Kbd side="start">←</Kbd>
+        <GradeKbd code={gradeKeys.ng} />
       </Button>
       <Button
         onClick={() => {
@@ -72,7 +83,7 @@ function Actions({
       >
         <RingGlyph className="size-4.5" />
         {t("said")}
-        <Kbd>→</Kbd>
+        <GradeKbd code={gradeKeys.ok} />
       </Button>
     </div>
   );
@@ -85,10 +96,12 @@ function Actions({
 export function CardScreen({
   state,
   round,
+  gradeKeys,
   onAction,
 }: Readonly<{
   state: DrillState;
   round: RoundPayload;
+  gradeKeys: GradeKeys;
   onAction: OnAction;
 }>): ReactElement | null {
   const card = currentCard(state);
@@ -137,7 +150,7 @@ export function CardScreen({
           />
         ) : null}
       </div>
-      <Actions phase={phase} onAction={onAction} />
+      <Actions phase={phase} gradeKeys={gradeKeys} onAction={onAction} />
     </main>
   );
 }

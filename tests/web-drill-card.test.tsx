@@ -187,10 +187,56 @@ describe("TimerBar", () => {
   });
 });
 
+const DEFAULT_KEYS = { ok: "ArrowRight", ng: "ArrowLeft" };
+
+/** The key legend's rows, each as its keys and what they do. */
+function legend(container: HTMLElement): string[][] {
+  return [...container.querySelectorAll("dl > div")].map((row) =>
+    [...row.children].map((cell) => cell.textContent),
+  );
+}
+
 describe("PauseSheet", () => {
+  it("lists → K F and ← J D while the learner keeps the default grade keys", () => {
+    renderWithMessages(
+      <PauseSheet
+        position={1}
+        gradeKeys={DEFAULT_KEYS}
+        onQuit={() => undefined}
+        onContinue={() => undefined}
+      />,
+    );
+    expect(legend(document.body)).toStrictEqual([
+      ["Space", ja.Drill.card.flip],
+      ["→  K  F", ja.Drill.card.said],
+      ["←  J  D", ja.Drill.card.notSaid],
+      ["Esc  ?", ja.Drill.card.pause],
+    ]);
+  });
+
+  it("lists only the keys the learner chose", () => {
+    renderWithMessages(
+      <PauseSheet
+        position={1}
+        gradeKeys={{ ok: "Digit1", ng: "ArrowUp" }}
+        onQuit={() => undefined}
+        onContinue={() => undefined}
+      />,
+    );
+    expect(legend(document.body).slice(1, 3)).toStrictEqual([
+      ["1", ja.Drill.card.said],
+      ["↑", ja.Drill.card.notSaid],
+    ]);
+  });
+
   it("asks whether to stop here, and focuses continue", () => {
     renderWithMessages(
-      <PauseSheet position={7} onQuit={() => undefined} onContinue={() => undefined} />,
+      <PauseSheet
+        position={7}
+        gradeKeys={DEFAULT_KEYS}
+        onQuit={() => undefined}
+        onContinue={() => undefined}
+      />,
     );
     expect(
       screen.getByRole("dialog", { name: ja.Drill.sheet.title }),
@@ -205,7 +251,12 @@ describe("PauseSheet", () => {
     const onQuit = vi.fn();
     const onContinue = vi.fn();
     renderWithMessages(
-      <PauseSheet position={1} onQuit={onQuit} onContinue={onContinue} />,
+      <PauseSheet
+        position={1}
+        gradeKeys={DEFAULT_KEYS}
+        onQuit={onQuit}
+        onContinue={onContinue}
+      />,
     );
     fireEvent.click(screen.getByRole("button", { name: ja.Drill.sheet.quit }));
     fireEvent.click(screen.getByRole("button", { name: ja.Drill.sheet.continue }));
@@ -215,7 +266,12 @@ describe("PauseSheet", () => {
 
   it("keeps Tab inside the sheet", () => {
     renderWithMessages(
-      <PauseSheet position={1} onQuit={() => undefined} onContinue={() => undefined} />,
+      <PauseSheet
+        position={1}
+        gradeKeys={DEFAULT_KEYS}
+        onQuit={() => undefined}
+        onContinue={() => undefined}
+      />,
     );
     const quit = screen.getByRole("button", { name: ja.Drill.sheet.quit });
     const resume = screen.getByRole("button", { name: ja.Drill.sheet.continue });

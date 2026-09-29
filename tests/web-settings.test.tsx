@@ -411,6 +411,115 @@ function expectLevel(mode: "auto" | "manual", toeic: string): void {
   ).toHaveAttribute("aria-checked", "true");
 }
 
+describe("the settings screen, the grade keys", () => {
+  /** The grade key button for `grade`, named by the key it shows now. */
+  function keyButton(grade: "ok" | "ng", key: string): HTMLElement {
+    return screen.getByRole("button", { name: fill(ja.Settings.keys[grade], { key }) });
+  }
+
+  function status(): HTMLElement {
+    const [line] = screen
+      .getAllByRole("status")
+      .filter((element) => element.closest("[role=tabpanel]") !== null);
+    if (line === undefined) throw new Error("No status line.");
+    return line;
+  }
+
+  it("shows → and ← until others are chosen, then sets each key from the next one pressed", async () => {
+    const { patches } = serveSettings();
+    await renderApp("/settings?tab=app");
+    expect(
+      screen.getByRole("group", { name: ja.Settings.keys.title }),
+    ).toBeInTheDocument();
+
+    fireEvent.click(keyButton("ok", "→"));
+    const waiting = keyButton("ok", ja.Settings.keys.waiting);
+    fireEvent.keyDown(waiting, { key: "l", code: "KeyL" });
+    await settle();
+    expect(patches).toStrictEqual([{ gradeKeys: { ok: "KeyL", ng: "ArrowLeft" } }]);
+    expect(keyButton("ok", "L")).toHaveFocus();
+
+    fireEvent.click(keyButton("ng", "←"));
+    fireEvent.keyDown(keyButton("ng", ja.Settings.keys.waiting), {
+      key: "1",
+      code: "Digit1",
+    });
+    await settle();
+    expect(patches).toStrictEqual([
+      { gradeKeys: { ok: "KeyL", ng: "ArrowLeft" } },
+      { gradeKeys: { ok: "KeyL", ng: "Digit1" } },
+    ]);
+    expect(keyButton("ng", "1")).toBeInTheDocument();
+  });
+
+  it("takes ↑ as a grade key, shown as the arrow", async () => {
+    const { patches } = serveSettings();
+    await renderApp("/settings?tab=app");
+    fireEvent.click(keyButton("ng", "←"));
+    fireEvent.keyDown(keyButton("ng", ja.Settings.keys.waiting), {
+      key: "ArrowUp",
+      code: "ArrowUp",
+    });
+    await settle();
+    expect(patches).toStrictEqual([{ gradeKeys: { ok: "ArrowRight", ng: "ArrowUp" } }]);
+    expect(keyButton("ng", "↑")).toBeInTheDocument();
+  });
+
+  it.each([
+    ["Space", " ", "Space"],
+    ["Enter", "Enter", "Enter"],
+    ["the key ? is on", "?", "Slash"],
+    ["a keypad digit", "1", "Numpad1"],
+    ["a function key", "F2", "F2"],
+  ])("refuses %s and keeps waiting for another key", async (_, key, code) => {
+    const { patches } = serveSettings();
+    await renderApp("/settings?tab=app");
+    fireEvent.click(keyButton("ok", "→"));
+    fireEvent.keyDown(keyButton("ok", ja.Settings.keys.waiting), { key, code });
+    await settle();
+    expect(status()).toHaveTextContent(ja.Settings.keys.notAllowed);
+    fireEvent.keyDown(keyButton("ok", ja.Settings.keys.waiting), {
+      key: "k",
+      code: "KeyK",
+    });
+    await settle();
+    expect(patches).toStrictEqual([{ gradeKeys: { ok: "KeyK", ng: "ArrowLeft" } }]);
+    expect(status()).toBeEmptyDOMElement();
+  });
+
+  it("refuses the other grade's key, so the two never share one", async () => {
+    const { patches } = serveSettings();
+    await renderApp("/settings?tab=app");
+    fireEvent.click(keyButton("ok", "→"));
+    fireEvent.keyDown(keyButton("ok", ja.Settings.keys.waiting), {
+      key: "ArrowLeft",
+      code: "ArrowLeft",
+    });
+    await settle();
+    expect(status()).toHaveTextContent(ja.Settings.keys.taken);
+    expect(patches).toStrictEqual([]);
+  });
+
+  it("gives up on Esc without leaving the screen, and on leaving the key", async () => {
+    const { patches } = serveSettings();
+    await renderApp("/settings?tab=app");
+    fireEvent.click(keyButton("ok", "→"));
+    fireEvent.keyDown(keyButton("ok", ja.Settings.keys.waiting), {
+      key: "Escape",
+      code: "Escape",
+    });
+    await settle();
+    expect(keyButton("ok", "→")).toBeInTheDocument();
+    expect(where()).toBe("/settings?tab=app");
+
+    fireEvent.click(keyButton("ng", "←"));
+    fireEvent.blur(keyButton("ng", ja.Settings.keys.waiting));
+    fireEvent.keyDown(keyButton("ng", "←"), { key: "j", code: "KeyJ" });
+    await settle();
+    expect(patches).toStrictEqual([]);
+  });
+});
+
 describe("the settings screen, W12 measuring again", () => {
   it("asks first, and starts the placement on confirm", async () => {
     serveSettings();
