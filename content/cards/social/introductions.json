@@ -299,6 +299,22 @@
     }
   },
   {
+    "id": "c_6x5n6u5m",
+    "ja": "お噂はかねがね伺っていたので、お会いできて嬉しいです。",
+    "en": "Having heard so much about you, I'm glad to meet you.",
+    "alternatives": [
+      "I've heard so much about you, so I'm glad to meet you.",
+      "I've heard so much about you. It's great to finally meet you."
+    ],
+    "point": "「〜していたので」は Having heard のように分詞で始められる",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7a5p6f8f",
     "ja": "僕の仕事は、アプリを設計することです。",
     "en": "What I do is design apps.",
@@ -496,22 +512,6 @@
     "subtopic": "introductions",
     "level": 6,
     "grammar": ["modal-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9t2h7q7u",
-    "ja": "さっきの会議で、あなたに挨拶しておけばよかったです。",
-    "en": "I wish I'd introduced myself to you at the meeting.",
-    "alternatives": [
-      "If only I'd introduced myself to you at the meeting.",
-      "I wish I'd said hello to you at the meeting."
-    ],
-    "point": "過去の後悔は wish + 過去完了（had + 過去分詞）",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 10,
-    "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
     "stamps": {}
   }

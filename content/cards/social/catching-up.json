@@ -57,7 +57,13 @@
     "level": 6,
     "grammar": ["comparatives-superlatives", "present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5df643bf396da223fade04663c6681202758c43965ff4c181fe05f7656749f17",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2z7b3t8f",
@@ -139,7 +145,13 @@
     "level": 4,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e02cc8baca79dcab5b6fce18931a20eacd1049d06a6255b471d988d45d3cb9d0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4f2a7y7w",
@@ -328,7 +340,13 @@
     "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:39b62e4a039c6b05b93f6365cf16f48b1538c75f37818744476c9d786d4d9a0f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6r5k9w4x",
@@ -344,7 +362,13 @@
     "level": 4,
     "grammar": ["relative-clauses", "past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:30f9b6d5ac88e8cd0bc4556128a74818064dcc6514f0fa473984e28bf41422ba",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6s7z6k6m",
@@ -379,39 +403,13 @@
     "level": 2,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7h6s2m5t",
-    "ja": "パリから帰ったばかりの友達に、ばったり会ったよ。",
-    "en": "I ran into a friend just back from Paris.",
-    "alternatives": [
-      "I bumped into a friend just back from Paris.",
-      "I ran into a friend who's just back from Paris."
-    ],
-    "point": "ばったり会うは run into。just back from が名詞を後ろから修飾",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 8,
-    "grammar": ["post-modification", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7h9q2d5h",
-    "ja": "君がこんなにくつろいでるの、初めて見たよ。",
-    "en": "I've never seen you this relaxed.",
-    "alternatives": [
-      "I've never seen you so laid-back.",
-      "This is the most relaxed I've seen you."
-    ],
-    "point": "「初めて見た」は現在完了の経験で never を使う",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 9,
-    "grammar": ["tense-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:206a9fe185007c3443e430329797fc7149ac62d1d981f4627250cc7547456e12",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7w3x3d4p",
@@ -449,7 +447,13 @@
     "level": 6,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5922e610b613cfb95fc4279d86efd30c01833fc305201e2dce6e461cc1bb9434",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8d7y3k9t",
@@ -484,7 +488,13 @@
     "level": 8,
     "grammar": ["mixed-conditional", "third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:89780ae490b95d507110948566a499d5681d9cc361e1ae3683765ceff73467f7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8w8w7u5w",
@@ -544,7 +554,13 @@
     "level": 7,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:91fe1b6c330a9abee2ec0e63c9d2ee53017bf66b973a4979ca7011b4a6417cd6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9q4d9u6f",
@@ -560,23 +576,13 @@
     "level": 4,
     "grammar": ["imperatives", "indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9s9b8m5y",
-    "ja": "同級生だったアヤ、最近何してるのかなあ。",
-    "en": "I wonder what Aya's up to these days.",
-    "alternatives": [
-      "I wonder how Aya's doing these days.",
-      "I wonder what Aya's been up to lately."
-    ],
-    "point": "I wonder の後ろは疑問文の語順にしない（what Aya's up to）",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 6,
-    "grammar": ["indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b3cf15c0a55b34de3b75a418b5f6c42635690437347ae2ec32a54b13cee219b5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9v2d2u7w",
@@ -592,7 +598,13 @@
     "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d508a02c0425fcf3acfb860edb2b1d4e33b111f0cd495890383e29a0e04f4bb2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9y7x8d3u",
@@ -608,6 +620,12 @@
     "level": 6,
     "grammar": ["relative-clauses", "post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b1c0c3487212cacb6b9178b7c2013babdec6a609ba655192f3e548b811369137",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]

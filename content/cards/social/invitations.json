@@ -16,22 +16,6 @@
     "stamps": {}
   },
   {
-    "id": "c_3c5s7u8x",
-    "ja": "誘ってくれたのは嬉しいけど、今回は見送らせて。",
-    "en": "Much as I appreciate the invitation, I'll have to pass.",
-    "alternatives": [
-      "I appreciate the invitation, but I'll have to pass this time.",
-      "Thanks for asking, but I'll sit this one out."
-    ],
-    "point": "Much as ～ は although と同じ譲歩。倒置ぎみの語順",
-    "topic": "social",
-    "subtopic": "invitations",
-    "level": 9,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3d4t6r4s",
     "ja": "パーティーは何時に始まるの？",
     "en": "What time does the party start?",
@@ -117,6 +101,22 @@
     "subtopic": "invitations",
     "level": 7,
     "grammar": ["causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4z7p7f3v",
+    "ja": "誘ってくれてありがと。でも今回は見送らせて。",
+    "en": "Thanks for the invite, but I'll sit this one out.",
+    "alternatives": [
+      "Thanks for asking, but I'm going to pass this time.",
+      "I appreciate the invite, but I'll skip this one."
+    ],
+    "point": "sit ～ out は「今回は参加しない」の口語イディオム",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 9,
+    "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
