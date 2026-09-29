@@ -95,22 +95,6 @@
     "stamps": {}
   },
   {
-    "id": "c_2u7r3m5u",
-    "ja": "先方が昨日返信をくれていたら、今ごろ終わってるのに。",
-    "en": "If they'd replied yesterday, we'd be done by now.",
-    "alternatives": [
-      "Had they replied yesterday, we'd be finished by now.",
-      "If they'd gotten back to us yesterday, we'd be done now."
-    ],
-    "point": "過去の仮定は had replied、今の結果は would be で時制を分ける",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 9,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2x6m2d2t",
     "ja": "添付ファイルが2つあります。",
     "en": "There are two attachments.",
@@ -128,22 +112,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_3r3h9z2t",
-    "ja": "山田さん、返事がない。チャット見落としたかも。",
-    "en": "Yamada hasn't replied. He might have missed my chat.",
-    "alternatives": [
-      "Yamada hasn't answered, so he may have missed my chat.",
-      "No reply from Yamada. Maybe he overlooked my chat."
-    ],
-    "point": "過去の推量は might miss ではなく might have missed",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 8,
-    "grammar": ["modal-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_3t9f5v8w",
@@ -181,22 +149,6 @@
     "stamps": {}
   },
   {
-    "id": "c_5a5q6r7w",
-    "ja": "君が早く言ってくれてたら、返信は間に合ったのに。",
-    "en": "If you'd said earlier, I'd have replied on time.",
-    "alternatives": [
-      "Had you told me sooner, I'd have replied on time.",
-      "If you'd told me sooner, I could've replied on time."
-    ],
-    "point": "過去の反実仮想は if + had 過去分詞、主節は would have",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 8,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5d6g8t6x",
     "ja": "請求書は、経理に今週中に直してもらいます。",
     "en": "I'll have accounting fix the invoice this week.",
@@ -230,6 +182,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_6a7g7p4a",
+    "ja": "会議で決めたこと、チームのチャットに貼ってもらえますか？",
+    "en": "Could you post what we settled on to the team chat?",
+    "alternatives": [
+      "Could you post what we decided to the team chat?",
+      "Would you mind putting what we agreed on in the team chat?"
+    ],
+    "point": "「決めたこと」は what we settled on で post の目的語に",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 10,
+    "grammar": ["noun-clauses", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6d6d8r2u",
+    "ja": "君が早く言ってくれてたら、返信間に合ったのに。",
+    "en": "If you'd said earlier, I'd have replied on time.",
+    "alternatives": [
+      "If you'd told me sooner, I'd have replied in time.",
+      "If you'd said something sooner, I'd have replied on time."
+    ],
+    "point": "過去の反実仮想は if + had 過去分詞、主節は would have",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6f8n4m2s",
@@ -352,22 +336,6 @@
     }
   },
   {
-    "id": "c_9a9u9r5w",
-    "ja": "会議の決定事項、今日中にチャットで共有してもらえますか？",
-    "en": "Could you share what we decided in chat today?",
-    "alternatives": [
-      "Would you mind sharing what was decided in chat today?",
-      "Can you post what we decided in the chat today?"
-    ],
-    "point": "「決まったこと」は what we decided でまとめて share の目的語に",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 10,
-    "grammar": ["noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_9f3v7j5h",
     "ja": "うちが延長を頼んだら、先方は嫌がるかな？",
     "en": "If we asked for an extension, would they mind?",
@@ -380,6 +348,38 @@
     "subtopic": "email-chat",
     "level": 6,
     "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9s3q9p4z",
+    "ja": "先方が昨日返信をくれていたら、今ごろ終わってるのに。",
+    "en": "If they'd replied yesterday, we'd be done by now.",
+    "alternatives": [
+      "If they'd gotten back to us yesterday, we'd be finished.",
+      "If they'd written back yesterday, we'd be finished by now."
+    ],
+    "point": "過去の仮定は had replied、今の結果は would be で時制を分ける",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9x6m3e6f",
+    "ja": "山田さん、返事なし。僕のチャット見逃したかも。",
+    "en": "Yamada hasn't replied. He might have missed my chat.",
+    "alternatives": [
+      "Yamada hasn't answered, so he may have missed my chat.",
+      "No reply from Yamada. Maybe he overlooked my chat."
+    ],
+    "point": "過去の推量は might miss ではなく might have missed",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 8,
+    "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   }

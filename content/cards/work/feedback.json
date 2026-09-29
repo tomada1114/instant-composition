@@ -1,21 +1,5 @@
 [
   {
-    "id": "c_2h2d3c9f",
-    "ja": "田中さんに読みにくいと言われて、変数名を見直しました。",
-    "en": "Tanaka said it was hard to read, so I renamed variables.",
-    "alternatives": [
-      "Tanaka told me it was hard to read, so I renamed variables.",
-      "Tanaka said it was tough to read, so I renamed the variables."
-    ],
-    "point": "said の後は時制の一致で was と過去形に",
-    "topic": "work",
-    "subtopic": "feedback",
-    "level": 10,
-    "grammar": ["reported-speech"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2n4f7k5x",
     "ja": "田中さんのコードにミスを見つけた。",
     "en": "I found a mistake in Tanaka's code.",
@@ -60,6 +44,38 @@
     "subtopic": "feedback",
     "level": 6,
     "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2s5v8q9c",
+    "ja": "次の提案書、出す前に誰かに見てもらうといいかも。",
+    "en": "Maybe have someone review the next proposal before submitting.",
+    "alternatives": [
+      "Maybe get someone to check the next proposal before sending.",
+      "You could have someone check the next proposal before sending."
+    ],
+    "point": "have + 人 + 動詞の原形で「人に〜してもらう」",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 7,
+    "grammar": ["causatives", "hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2u8s6f9g",
+    "ja": "指摘がなければ、間違った数字を送っていました。",
+    "en": "Without your catch, I'd have sent the wrong numbers.",
+    "alternatives": [
+      "If not for you, I'd have sent the wrong numbers.",
+      "Without you catching it, I'd have sent the wrong numbers."
+    ],
+    "point": "「〜がなければ」は without や if not for で表せる",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 7,
+    "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -205,22 +221,6 @@
     }
   },
   {
-    "id": "c_8k7s4h7w",
-    "ja": "いい資料ですが、グラフをもう少し大きくしてもらえませんか？",
-    "en": "Nice deck, but could you make the charts a bit bigger?",
-    "alternatives": [
-      "It's a good deck, but could you make the charts larger?",
-      "Nice deck, though I was wondering if you could enlarge the charts."
-    ],
-    "point": "褒めてから but で頼むと、依頼が柔らかくなる",
-    "topic": "work",
-    "subtopic": "feedback",
-    "level": 10,
-    "grammar": ["hedging-softening"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8s6u7s7j",
     "ja": "ここにミスが二つあります。",
     "en": "There are two mistakes here.",
@@ -243,38 +243,6 @@
     "subtopic": "feedback",
     "level": 2,
     "grammar": ["articles-and-countability", "requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9f2d6h2u",
-    "ja": "次の提案書、出す前に先輩に見てもらうといいかもしれません。",
-    "en": "You might want to have a senior look it over first.",
-    "alternatives": [
-      "Maybe get a senior colleague to look it over first.",
-      "It might be worth having someone senior look it over first."
-    ],
-    "point": "have + 人 + 動詞の原形で「人に〜してもらう」",
-    "topic": "work",
-    "subtopic": "feedback",
-    "level": 10,
-    "grammar": ["causatives", "hedging-softening"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9n6d9p9e",
-    "ja": "指摘がなければ、間違った数字を送っていました。",
-    "en": "If you hadn't caught it, I'd have sent wrong numbers.",
-    "alternatives": [
-      "Had you not caught it, I'd have sent wrong numbers.",
-      "Without your catch, I'd have sent the wrong numbers."
-    ],
-    "point": "過去の仮定は had + 過去分詞、結果は would have + 過去分詞",
-    "topic": "work",
-    "subtopic": "feedback",
-    "level": 7,
-    "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
   }

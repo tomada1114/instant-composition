@@ -13,7 +13,13 @@
     "level": 6,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:827cb5d8ec65662805977f460b717a7fae809bcb20f226d5c61a5ef7963ad017",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2h8f9t3q",
@@ -29,23 +35,13 @@
     "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2j4p6w9f",
-    "ja": "御社で新規事業を担当するチームに入れますか？",
-    "en": "Could I join the team handling new ventures?",
-    "alternatives": [
-      "Can I join the team working on new ventures?",
-      "Can I join the team running new ventures?"
-    ],
-    "point": "「担当するチーム」は the team handling と後ろから説明",
-    "topic": "work",
-    "subtopic": "job-interview",
-    "level": 6,
-    "grammar": ["post-modification"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a0e672bb80e324e377bc00432cbaf282adf3783f13e42bab9c990d98af52312f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3c6q5b2b",
@@ -63,9 +59,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:3b97422b33f9737fd97320b030d8f45949f6ea26ca179560a4315e8790db782f",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:0f330bfa1d5cc15855a14e6441ba9c072f9c2df17886f8b5b0ce1dfc6a935abf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -99,7 +95,13 @@
     "level": 4,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:82c62b5f9253377d7ceb77a2fe0b19183d8d96512c4e58f6312671bae5fd6a52",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3v6e2f9z",
@@ -133,9 +135,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:9251245d76b8012998334d5785b734a1c1db69252434164cae18565a4945b165",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:5808f8d2725aeb9be207c9fc4d1e7c1c3fee5d9456e4312de18a830f95f63cf3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -155,9 +157,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:dff2c798e6f517916e2f6d086f54629292f13de5e77b0b21102650c0fe46b29e",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:ec37ce409b02bdeea88b9ac28dc33ba08628a4b79101ff431d3c67647175ec0d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -175,7 +177,13 @@
     "level": 4,
     "grammar": ["future-forms", "time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4559d533feb29e3452c1565691b7fa1adc5b1d2d5c955a2e92e65629f581b7d6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4k8z5n3h",
@@ -223,15 +231,21 @@
     "level": 2,
     "grammar": ["be-and-present-simple", "articles-and-countability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:098a880886ea4a2321734470ca12894d7dbcf6dc6fff070fce10c7d9d1aad4a7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5p2y9f7k",
     "ja": "人前で話すのが得意で、よくプレゼンを任されました。",
-    "en": "I'm good at public speaking, so I often presented.",
+    "en": "I'm good at public speaking, so I often gave presentations.",
     "alternatives": [
-      "Since I speak well in public, I often gave presentations.",
-      "I'm a strong public speaker, so I often presented."
+      "I speak well in public, so I often gave presentations.",
+      "Being good at public speaking, I often gave presentations."
     ],
     "point": "good at の後は動詞を -ing にする。to speak は不可",
     "topic": "work",
@@ -242,28 +256,12 @@
     "stamps": {}
   },
   {
-    "id": "c_5t6k4r5m",
-    "ja": "部下はいませんが、後輩を育ててきました。",
-    "en": "I don't manage anyone, but I've mentored juniors.",
-    "alternatives": [
-      "I have no reports, but I've mentored juniors.",
-      "I've mentored juniors, though I don't manage anyone."
-    ],
-    "point": "ずっと続けてきたことは I've 過去分詞で表す",
-    "topic": "work",
-    "subtopic": "job-interview",
-    "level": 5,
-    "grammar": ["concession-contrast", "present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5v9s3a8q",
     "ja": "どんな方を求めているか、教えていただけますか？",
-    "en": "Could you say what kind of person you want?",
+    "en": "Could you tell me what kind of person you want?",
     "alternatives": [
-      "Can you tell me what sort of person you need?",
-      "May I ask what kind of person you want?"
+      "Could you tell me what type of person you need?",
+      "Would you tell me what kind of person you're after?"
     ],
     "point": "間接疑問は what kind of person you want の語順",
     "topic": "work",
@@ -292,15 +290,15 @@
   {
     "id": "c_6t2g6u5g",
     "ja": "物流を3年担当し、最近はデータ分析も勉強してきました。",
-    "en": "I did logistics for three years; lately I've studied data analysis.",
+    "en": "I ran logistics for three years; lately I've studied data analysis.",
     "alternatives": [
-      "I worked in logistics for three years, then took up data analysis.",
-      "Logistics was my job for three years; lately I've studied data analysis."
+      "I spent three years in logistics; lately I've studied data analysis.",
+      "I handled logistics for three years; lately I've learned data analysis."
     ],
     "point": "前職は過去形、今につながる「最近」は現在完了",
     "topic": "work",
     "subtopic": "job-interview",
-    "level": 10,
+    "level": 9,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -317,7 +315,7 @@
     "topic": "work",
     "subtopic": "job-interview",
     "level": 7,
-    "grammar": ["phrasal-verbs", "time-and-if-clauses"],
+    "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -351,7 +349,13 @@
     "level": 5,
     "grammar": ["requests-permission", "indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:72be94ba9cd96e885a117adf0e0b222e5886a96cf9c80cf5f3a4c4e78d107157",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7j5m7a8e",
@@ -385,27 +389,11 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:357ee74054e06554b929216acc47722742c4285d64674e3a5634e6ee76874f20",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:2031286a86d0e0916219f91e0052707eed40bfbe814f4243d25cf17ceee18415",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_8w4u3z4n",
-    "ja": "海外で働くチャンスはありますか？",
-    "en": "Are there opportunities to work abroad?",
-    "alternatives": [
-      "Are there any opportunities to work overseas?",
-      "Are there opportunities to work overseas?"
-    ],
-    "point": "「働くチャンス」は opportunities to work と to 不定詞で後ろから",
-    "topic": "work",
-    "subtopic": "job-interview",
-    "level": 3,
-    "grammar": ["there-is-are", "infinitives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9c5u6s9v",
