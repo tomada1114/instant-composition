@@ -64,38 +64,6 @@
     "stamps": {}
   },
   {
-    "id": "c_2t5y3y3h",
-    "ja": "新しい PC のセットアップ、何かアドバイスある？",
-    "en": "Got any advice on setting up a new PC?",
-    "alternatives": [
-      "Any tips for setting up a new PC?",
-      "Do you have advice on setting up a new PC?"
-    ],
-    "point": "advice は数えられないので an advice や advices にしない",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 8,
-    "grammar": ["articles-and-countability", "gerunds"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3a6t7m8e",
-    "ja": "インフラ、ステージングは VPN 必須って言ってた？",
-    "en": "Did infra say staging requires a VPN?",
-    "alternatives": [
-      "Did infra say we need a VPN for staging?",
-      "Did the infra team say staging needs a VPN?"
-    ],
-    "point": "say の後は that を省いて、そのまま節を続ける",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 7,
-    "grammar": ["reported-speech", "noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3e6k4k9a",
     "ja": "Docker 入れたらこれ実行して。",
     "en": "Run this after you install Docker.",
@@ -124,23 +92,6 @@
     "subtopic": "tools",
     "level": 2,
     "grammar": ["past-simple"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3n2r9x3m",
-    "ja": "彼女のPCが速ければ、手元で試せるのに。",
-    "en": "If her PC were faster, she'd test locally.",
-    "alternatives": [
-      "She'd test locally if her PC were faster.",
-      "She could test locally with a faster PC.",
-      "If her PC was faster, she'd test locally."
-    ],
-    "point": "現実と違う仮定は if 節に were（過去形）を使う",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 5,
-    "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -226,6 +177,22 @@
     "stamps": {}
   },
   {
+    "id": "c_5x7k7d6q",
+    "ja": "このPCが速ければ、ビルドが一瞬なのに。",
+    "en": "If this PC were faster, builds would fly.",
+    "alternatives": [
+      "Builds would fly if this PC were faster.",
+      "If this PC were quicker, builds would fly."
+    ],
+    "point": "現実と違う仮定は if 節に were を使う",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 5,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6k7d8h5x",
     "ja": "今、拡張機能を入れてるところ。",
     "en": "I'm installing an extension now.",
@@ -264,6 +231,22 @@
     "stamps": {}
   },
   {
+    "id": "c_7n7g8z5g",
+    "ja": "彼、このツールは無料だって言ってた？",
+    "en": "Did he say this tool is free?",
+    "alternatives": [
+      "Did he mention this tool is free?",
+      "Did he say this tool doesn't cost anything?"
+    ],
+    "point": "say の後の that は省ける",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 5,
+    "grammar": ["reported-speech", "noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7y7s3q6u",
     "ja": "Docker がメモリをこんなに食うって知ってればなあ。",
     "en": "I wish I'd known Docker ate this much memory.",
@@ -276,6 +259,22 @@
     "subtopic": "tools",
     "level": 9,
     "grammar": ["wishes-regrets", "noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8b9y9s7f",
+    "ja": "新しい PC のセットアップ、何かアドバイスある？",
+    "en": "Any advice on setting up a new PC?",
+    "alternatives": [
+      "Got any advice on setting up a new PC?",
+      "Any tips for setting up a new PC?"
+    ],
+    "point": "advice は数えられないので an advice や advices にしない",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 6,
+    "grammar": ["articles-and-countability", "gerunds"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },

@@ -13,7 +13,13 @@
     "level": 7,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:77be6a17f678e4640c34cc22ab117140450b17872a89688c22e14610e308415d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2s2c8w7f",
@@ -60,38 +66,6 @@
     }
   },
   {
-    "id": "c_2z6d5b6n",
-    "ja": "金曜までに報告書をまとめていただけませんか？",
-    "en": "Would you mind putting together the report by Friday?",
-    "alternatives": [
-      "Could you write up the report by Friday?",
-      "Could you get the report done by Friday?"
-    ],
-    "point": "Would you mind の後は動詞の -ing 形",
-    "topic": "tech",
-    "subtopic": "incidents",
-    "level": 6,
-    "grammar": ["gerunds", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3b7g8c7x",
-    "ja": "バックアップを見ていれば、データを守れたのに。",
-    "en": "If we'd checked backups, the data would've survived.",
-    "alternatives": [
-      "Had we checked backups, we'd have saved the data.",
-      "If we'd checked backups, we could've saved the data."
-    ],
-    "point": "過去の後悔は if + had 過去分詞、主節は would have 過去分詞",
-    "topic": "tech",
-    "subtopic": "incidents",
-    "level": 6,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3j2n6n4j",
     "ja": "影響を受けたユーザーは何人ですか？",
     "en": "How many users are affected?",
@@ -109,38 +83,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_3m4c7r3h",
-    "ja": "ログインできないだけでなく、設定も消えた人がいました。",
-    "en": "Not only were users locked out, but some lost their settings.",
-    "alternatives": [
-      "Users couldn't log in, and some even lost their settings.",
-      "Some users were locked out and even lost their settings."
-    ],
-    "point": "Not only で始めたら were users と倒置する",
-    "topic": "tech",
-    "subtopic": "incidents",
-    "level": 10,
-    "grammar": ["inversion"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4e3t4t6m",
-    "ja": "復旧しましたが、念のため監視を続けます。",
-    "en": "Though it's fixed, we'll keep monitoring to be safe.",
-    "alternatives": [
-      "Although it's fixed, we'll keep watching just in case.",
-      "It's fixed, but we'll keep monitoring to be safe."
-    ],
-    "point": "Though の節と主節を but では重ねない",
-    "topic": "tech",
-    "subtopic": "incidents",
-    "level": 6,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_4g3a8m7c",
@@ -163,22 +105,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_4j6u8v5r",
-    "ja": "仮にメインが落ちたら、予備が引き継ぐの？",
-    "en": "If main failed, would the backup take over?",
-    "alternatives": [
-      "Would the backup take over if main went down?",
-      "If main went down, would the backup kick in?"
-    ],
-    "point": "仮の話なので過去形の failed と would を使う",
-    "topic": "tech",
-    "subtopic": "incidents",
-    "level": 6,
-    "grammar": ["second-conditional", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_4m8p3n3n",
@@ -235,7 +161,13 @@
     "level": 6,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:995a23bfcb331cf57adb0057d13a2f101595dea63a60062656d99fceafca9eaf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5b2b5y3n",
@@ -251,7 +183,13 @@
     "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4f5393615a1090000956fb1cd32b52142ceed8a68380a013d27f2a87bb085a77",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5g9p3q8q",
@@ -290,7 +228,13 @@
     "level": 6,
     "grammar": ["reported-speech", "future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:387b12749ff98376d5e7cf369f700807d570fca1b3b7047a342861430b98f2be",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5t8b4g7p",
@@ -366,7 +310,13 @@
     "level": 5,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c72d6cf2483575bdb31fabc7b17994023e0d4b5497807a839f546faf1c152742",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7z9v5d7m",
@@ -382,7 +332,13 @@
     "level": 6,
     "grammar": ["wishes-regrets", "past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:28f714d731b20322cf16fb96809a0eb64fbdae836c9cab710f88ea8a8b362ea4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8q4v3v4a",
@@ -417,24 +373,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9n9w7c3x",
-    "ja": "原因はDBではなく、期限切れの証明書でした。",
-    "en": "What caused it was an expired certificate, not the database.",
-    "alternatives": [
-      "It was an expired certificate, not the database, that caused it.",
-      "The cause was an expired certificate, not the database.",
-      "It wasn't the database; an expired certificate caused it."
-    ],
-    "point": "What caused it was ~ で原因を強調する",
-    "topic": "tech",
-    "subtopic": "incidents",
-    "level": 9,
-    "grammar": ["cleft-emphasis"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:511cf9ea580da9ca234d06326cbc54117447234d333b3acac5ce4a9a1cb3e8ed",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9p2t3x7g",

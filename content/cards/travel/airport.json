@@ -2,12 +2,12 @@
   {
     "id": "c_2b9j4u8c",
     "ja": "窓側の席に替えてもらえますか？",
-    "en": "Can I get a window seat?",
+    "en": "Could I switch to a window seat?",
     "alternatives": [
-      "Could you give me a window seat?",
-      "Could I switch to a window seat?"
+      "Can I change to a window seat?",
+      "Could I move to a window seat?"
     ],
-    "point": "席の希望は Can I get 〜? で気軽に頼める",
+    "point": "「席を替える」は switch to 〜。Could I 〜? で丁寧に頼む",
     "topic": "travel",
     "subtopic": "airport",
     "level": 2,
@@ -18,15 +18,15 @@
   {
     "id": "c_2p9s2x3m",
     "ja": "パソコンをトレーに入れてください。",
-    "en": "Put your laptop in the tray.",
+    "en": "Please put your laptop in the tray.",
     "alternatives": [
-      "Please put your laptop in the tray.",
-      "Place your laptop in the tray."
+      "Put your laptop in the tray, please.",
+      "Please place your laptop in the tray."
     ],
     "point": "命令文は動詞の原形から。入れる場所は in the tray",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 3,
+    "level": 2,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -34,12 +34,12 @@
   {
     "id": "c_2q9z7b2w",
     "ja": "私たちは2時間前に空港に着かないと。",
-    "en": "We must arrive two hours early.",
+    "en": "We need to arrive two hours early.",
     "alternatives": [
       "We have to arrive two hours early.",
-      "We need to arrive two hours early."
+      "We've got to arrive two hours early."
     ],
-    "point": "「〜しないと」は must / have to。後ろは動詞の原形",
+    "point": "「〜しないと」は need to / have to。後ろは動詞の原形",
     "topic": "travel",
     "subtopic": "airport",
     "level": 3,
@@ -82,15 +82,15 @@
   {
     "id": "c_3a9t3m7b",
     "ja": "かばんを上の棚に上げるの、手伝ってもらえますか？",
-    "en": "Would you mind helping me stow this bag overhead?",
+    "en": "Would you mind helping me get this bag up?",
     "alternatives": [
-      "Could you help me put this bag overhead?",
-      "Could you help me get this bag up there?"
+      "Could you help me put this bag up there?",
+      "Could you help me lift this bag up?"
     ],
     "point": "Would you mind の後ろは動名詞（helping）にする",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 8,
+    "level": 7,
     "grammar": ["gerunds", "requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -130,10 +130,10 @@
   {
     "id": "c_3s3g9b9e",
     "ja": "彼の英語がもっと上手なら、もっと早く済むのに。",
-    "en": "If he spoke better English, it'd be faster.",
+    "en": "If he spoke better English, we'd be done sooner.",
     "alternatives": [
-      "If his English were better, this wouldn't take long.",
-      "If he spoke better English, we'd be done sooner."
+      "If his English were better, we'd finish sooner.",
+      "If he spoke better English, we'd finish faster."
     ],
     "point": "今の事実に反する仮定は if 節を過去形、主節は would",
     "topic": "travel",
@@ -154,7 +154,7 @@
     "point": "許可を求めるときは Could I / May I で丁寧に言う",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 8,
+    "level": 6,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -216,32 +216,32 @@
   {
     "id": "c_6g3q7s4a",
     "ja": "私が保安検査で止められたのは、水のボトルのせいだ。",
-    "en": "It was my water bottle that got me stopped.",
+    "en": "It was my water bottle that got me flagged.",
     "alternatives": [
-      "What got me stopped was my water bottle.",
-      "It was my water bottle that got me stopped at security."
+      "What got me flagged was my water bottle.",
+      "I got stopped because of my water bottle."
     ],
     "point": "強調したい語を It was と that で挟む",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 9,
+    "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_6m3f9m2m",
-    "ja": "荷物は通しで預けられると聞いたんですが、本当ですか？",
+    "ja": "荷物は通しで預けられると聞きましたが、本当ですか？",
     "en": "I heard my bag would be checked through, right?",
     "alternatives": [
-      "I was told my bag gets checked through. Is that right?",
-      "I heard my bag can be checked through. Is that right?"
+      "I heard my bag can be checked through. Right?",
+      "I was told it'd be checked through, right?"
     ],
     "point": "聞いた内容は時制をずらし would be checked にする",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 10,
-    "grammar": ["reported-speech", "nested-clauses"],
+    "level": 7,
+    "grammar": ["reported-speech", "passive-voice"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -256,7 +256,7 @@
     "point": "「〜したに違いない」は must have + 過去分詞",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 8,
+    "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -266,13 +266,13 @@
     "ja": "ここには来たことがあるけど、10年前です。",
     "en": "I've been here before, but it was ten years ago.",
     "alternatives": [
-      "I've visited before, but that was ten years ago.",
-      "It's not my first time, but the last was ten years ago."
+      "I've been here before, but that was ten years ago.",
+      "I've visited before, but that was ten years ago."
     ],
     "point": "ten years ago と言う過去の一時点は現在完了でなく過去形",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 10,
+    "level": 7,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -336,14 +336,14 @@
     "ja": "食事はいらないと言いましたが、飲み物はもらえますか？",
     "en": "I said no meal, but could I still get a drink?",
     "alternatives": [
-      "I skipped the meal, but could I still have a drink?",
-      "I know I said no meal, but could I have a drink?"
+      "I declined the meal, but could I get a drink?",
+      "I passed on the meal, but can I get a drink?"
     ],
     "point": "but の前後で対比し、still で「それでも」を出す",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 10,
-    "grammar": ["concession-contrast", "reported-speech"],
+    "level": 9,
+    "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -390,8 +390,8 @@
     "point": "過去の後悔は I wish I had 過去分詞",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 8,
-    "grammar": ["wishes-regrets", "modal-perfect"],
+    "level": 6,
+    "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
