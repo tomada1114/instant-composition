@@ -1,5 +1,65 @@
 [
   {
+    "id": "c_2s7f3v7a",
+    "ja": "彼、荷物を預けてる。",
+    "en": "He's checking a bag.",
+    "alternatives": ["He is checking his bag.", "He's checking in a bag."],
+    "point": "荷物を預ける は check a bag。今の動作は進行形",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1d16988da69480ad0967b2f02911952c8f709867c9380bcf7fa08e8d1f698c88",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3x7d4c3g",
+    "ja": "あの便は今、搭乗中です。",
+    "en": "That flight is boarding now.",
+    "alternatives": [
+      "They're boarding that flight now.",
+      "Boarding for that flight has started."
+    ],
+    "point": "「搭乗中」は is boarding。進行形で今を表す",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 3,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:44a3ee9dfc2a74f5969c37d302f1d847556d79599ede3fb49dea517985ec5ec7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4b6b2y2f",
+    "ja": "ベルトは外すべきですか？",
+    "en": "Should I remove my belt?",
+    "alternatives": ["Should I take my belt off?", "Do I take my belt off?"],
+    "point": "「外す」は remove か take off。should で確認",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:082c64fba66e16bc91523bae9020f8abbae0d96ec994261612348f80865f98fa",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4g6k5b7t",
     "ja": "12番ゲートはどこですか？",
     "en": "Where is gate 12?",
@@ -38,6 +98,25 @@
     }
   },
   {
+    "id": "c_4p3y2y8r",
+    "ja": "毛布をもう一枚ください。",
+    "en": "Could I have another blanket?",
+    "alternatives": ["Can I get another blanket?", "May I have one more blanket?"],
+    "point": "「もう一枚」は another + 単数名詞",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:90f98ce9757d070b53489d342b87a99600361bc0126a1b6f3865d8bc8762a71f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4t9p8g2r",
     "ja": "ゲートが変わったと聞いた。",
     "en": "I heard the gate had changed.",
@@ -54,6 +133,25 @@
     "stamps": {
       "core": {
         "hash": "sha256:4e1c4b9ef4d19205860b7c42ff2613f65c70e2ed1a57e3295a2d18c2f0378c80",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5b9w5d9z",
+    "ja": "トイレがありますよ。",
+    "en": "There's a restroom.",
+    "alternatives": ["We have a restroom here.", "You'll find a restroom."],
+    "point": "「〜がある」は There's + 単数名詞",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e01523c095821a641aae17d3f9cfe64ac21850c13e196555ada518cfaa003fbf",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -101,6 +199,25 @@
     }
   },
   {
+    "id": "c_7h5r8u6j",
+    "ja": "機内にWi-Fiある？",
+    "en": "Is there Wi-Fi onboard?",
+    "alternatives": ["Does the plane have Wi-Fi?", "Is Wi-Fi available on board?"],
+    "point": "Wi-Fi は数えない名詞。a を付けない",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 2,
+    "grammar": ["there-is-are", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:64d8bdfb99af2a63841a6b121c2e8cfc59b3207c4e561960b6dfd73c5cde78aa",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_7z8w3v9p",
     "ja": "もう30分も待っています。",
     "en": "I've been waiting for thirty minutes.",
@@ -117,6 +234,66 @@
     "stamps": {
       "core": {
         "hash": "sha256:2f3066f3ceca26594d8dc85b6cf73c9d7a2f7daf22b48f6986be1d3cff1809f3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8s9s2f8h",
+    "ja": "機内で寝るのは嫌いです。",
+    "en": "I hate sleeping on planes.",
+    "alternatives": [
+      "I don't like sleeping on planes.",
+      "I can't stand sleeping on planes."
+    ],
+    "point": "hate のあとは ～ing の形が自然",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 4,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1a7daf5171e0c88499b71a64d3161ef98793a75a26b3b073212adc9c1a7aa2b2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9n3w7k9b",
+    "ja": "母が外で待っています。",
+    "en": "Mom's waiting outside.",
+    "alternatives": ["My mother is waiting outside.", "Mom is waiting out front."],
+    "point": "今待っている最中は is waiting",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:594bb1d909ddc19e2518032e1dcd92c9630e165bfb5f17bef98867996d9842c0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9y8a8b2y",
+    "ja": "私のパスポートです。",
+    "en": "This is my passport.",
+    "alternatives": ["Here's my passport.", "My passport is right here."],
+    "point": "「これが」は This is。物を差し出すときの定番",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cb0840cfe494b4b4b2874d54a155a524683fc4a76fbe0b22230f829819749a0b",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

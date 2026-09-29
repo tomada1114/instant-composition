@@ -1,5 +1,43 @@
 [
   {
+    "id": "c_3d3y5a9j",
+    "ja": "キャッシュできるよ。",
+    "en": "We can cache it.",
+    "alternatives": ["It can be cached.", "We can cache this."],
+    "point": "できるは can + 動詞の原形",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:68617ed8992855b0ea62b8835ed29aa58a4187eed28ab8155c54c7a38533402d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3h6a4n7j",
+    "ja": "まず選択肢を挙げよう。",
+    "en": "Let's list the options.",
+    "alternatives": ["Let's write out the options.", "First, let's list our options."],
+    "point": "「〜しよう」は Let's + 動詞",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:53f2045c30c8c0b5716f60de6c8c3361ec76c0692babf54cc8f83173852f4cf7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4d3e5p8v",
     "ja": "キャッシュは外すと決めた。",
     "en": "We decided to drop the cache.",
@@ -13,6 +51,44 @@
     "stamps": {
       "core": {
         "hash": "sha256:1d2aee2172ceb6e726230ef0f2e9d8c4fa923144ff61d4fbc66a6036617226f6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4h5m5k9e",
+    "ja": "こっちのほうが楽だよ。",
+    "en": "This is easier.",
+    "alternatives": ["This one is easier.", "This is simpler."],
+    "point": "easy は easier に変える",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 3,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:665036ce81b241e3df4d5e337ae8c42744c2989049ab3f181cbd55fe4c5b8fdf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4z5h3c3p",
+    "ja": "どっちのほうが安い？",
+    "en": "Which one is cheaper?",
+    "alternatives": ["Which is cheaper?", "Which option costs less?"],
+    "point": "選択は which を使う",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 2,
+    "grammar": ["wh-questions", "comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:122e3fdb4acff7621bf997b15f6ed780685b50b5ac59852089db8562e8914860",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -41,6 +117,48 @@
     }
   },
   {
+    "id": "c_5g6s5s6h",
+    "ja": "Postgres にしたよ。",
+    "en": "We went with Postgres.",
+    "alternatives": [
+      "We chose Postgres.",
+      "We picked Postgres.",
+      "We ended up with Postgres."
+    ],
+    "point": "「〜にした」は go with 〜 で言える",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 5,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a0a9e3bbe29cc8b4e6248153d3d1532bce8fa0b813bad336077669a15916f872",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6p4x9v7n",
+    "ja": "何を設計してるの？",
+    "en": "What are you designing?",
+    "alternatives": ["What are you designing now?", "What are you building?"],
+    "point": "今の動作は疑問詞 + be + ing",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 1,
+    "grammar": ["progressive-aspect", "wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2bbbb937dac03ca13fbd14a2a7e92e1e5561b8fbe56d9f048cf38c33a9bd3047",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6u6d4z5n",
     "ja": "別案を出してもいいですか？",
     "en": "May I suggest another option?",
@@ -57,6 +175,25 @@
     "stamps": {
       "core": {
         "hash": "sha256:b649e8d6a04ed91370c14bd74b00df0c7fa224ed1e8647c04b1ec45c8d270121",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6v6u8k7v",
+    "ja": "分割するのはどう？",
+    "en": "How about splitting it?",
+    "alternatives": ["What about splitting it?", "Why not split it?"],
+    "point": "How about のあとは -ing",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 3,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d5631bfd7d59c0a3badbb3b0d18724a2d14b52ad946189b5488586c4cc632032",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -95,6 +232,63 @@
     "stamps": {
       "core": {
         "hash": "sha256:ccdf383735e3c0ef31fb529f16d8c9e4a47a99a2cc4fa6737ebe290fb172d3e2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9s4k8e5y",
+    "ja": "トレードオフが二つある。",
+    "en": "There are two trade-offs.",
+    "alternatives": ["We have two trade-offs.", "I see two trade-offs."],
+    "point": "複数名詞には There are",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3d4bb11b2125aadc3b673ebf41e0ee6405ae2cea3f557d74d7edfa2eae860907",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9t3p5m5j",
+    "ja": "なぜ DB を分けるの？",
+    "en": "Why split the database?",
+    "alternatives": ["Why separate the database?", "Why split the database up?"],
+    "point": "「なぜ〜するの？」は Why + 動詞の原形で短く言える",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0836db883f08f08710353177fa67aea62dfb60c733eb669ebec56f553bedd027",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9u3s2u4p",
+    "ja": "他に選択肢はある？",
+    "en": "Are there other options?",
+    "alternatives": ["Do we have other options?", "Is there another option?"],
+    "point": "複数を尋ねるときは Are there",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 2,
+    "grammar": ["there-is-are", "wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e76b7d48a8e8a3c505ab62c427e9457cdf03e710af11710410dd8dd0f85b32d7",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

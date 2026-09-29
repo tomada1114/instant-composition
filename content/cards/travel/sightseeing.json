@@ -19,6 +19,44 @@
     }
   },
   {
+    "id": "c_2j8m7g6g",
+    "ja": "早めに行った方がいいよ。",
+    "en": "You should go early.",
+    "alternatives": ["You'd better go early.", "It's best to go early."],
+    "point": "助言は should + 動詞の原形",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bf064d3ef5102373a7375f84362645248ab20ba380716ebf1fc94ead5bb9c437",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2q3r9a8f",
+    "ja": "撮影はご遠慮ください。",
+    "en": "Please don't take pictures here.",
+    "alternatives": ["Please don't take photos here.", "Please don't take photos."],
+    "point": "禁止のお願いは Please don't 〜",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 3,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a83e5c4ed5cabbeee145c4a083b26fc2f76688f27c39ca4b73507c09af3c54b3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3g6c2w5g",
     "ja": "大人二枚、お願いします。",
     "en": "Two adults, please.",
@@ -57,6 +95,25 @@
     }
   },
   {
+    "id": "c_3p6v8u7q",
+    "ja": "近くに公園がある。",
+    "en": "There's a park nearby.",
+    "alternatives": ["A park is nearby.", "There's a park close by."],
+    "point": "「〜がある」は There's + 単数名詞",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f975a33ebeb2330d2369e6d6c6c042e4a2c09f24cd53a43fbf54e82844ed2bc6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4s6n8p5s",
     "ja": "ツアーは何分かかりますか？",
     "en": "How long is the tour?",
@@ -70,6 +127,44 @@
     "stamps": {
       "core": {
         "hash": "sha256:cf18e4e1c77181e9f81afc95d09497d0d1b1a547ae6bfc32f1882750df059c0a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4s8j7h3f",
+    "ja": "足元に気をつけて。",
+    "en": "Watch your step.",
+    "alternatives": ["Mind your step.", "Watch your footing."],
+    "point": "足元に気をつけては Watch your step",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a9d3325bc02ba1651d71f1e31fb37c8e4afde3b24c9251fda3abdf7e89de88b5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4z5x5d8y",
+    "ja": "写真お願いします。",
+    "en": "Take a photo, please.",
+    "alternatives": ["Please take a picture.", "Can you take a photo?"],
+    "point": "お願いの命令文は please を添える",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:43b44cbec8a0ba4d255d6905e7383eb57cdc50448f0846751ae83e9ba9abe673",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -111,6 +206,82 @@
     "stamps": {
       "core": {
         "hash": "sha256:64f20f750d063f072d8d5f23d9fefb79eae1aecd09853b3e2ff07ca370fc1bdf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6a7a8d9k",
+    "ja": "展望台はありますか？",
+    "en": "Is there an observation deck?",
+    "alternatives": ["Is there a lookout?", "Is there a viewing platform?"],
+    "point": "母音で始まる語の前は an",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 2,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:76c60e4153d03b098820cd2422976612830eb5b4f8159ecfc28b075d82e48da4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6u3j6j8y",
+    "ja": "彼、写真撮ってる。",
+    "en": "He's taking photos.",
+    "alternatives": ["He is taking pictures.", "He's snapping pictures."],
+    "point": "撮っている最中は is taking",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e594d9ceb700db2aaf61921eec6f54e1d9d47cbf60fa42fbf02a4d29f401ac1d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7b6g7c7z",
+    "ja": "雨が降ったら中止です。",
+    "en": "It's canceled if it rains.",
+    "alternatives": ["If it rains, it's canceled.", "They cancel it if it rains."],
+    "point": "未来のことでも if 節は現在形",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2bb03b03845c3ac583eab305dc3f45ba805f6449b38fc54f54122b5e12026bb4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9j5x3k3z",
+    "ja": "ここで撮ってもいいですか？",
+    "en": "May I take photos here?",
+    "alternatives": ["Can I take photos here?", "Is it okay to take photos here?"],
+    "point": "許可を求める May I ～? は丁寧",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 4,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:414bf11b3d2c88c16d0630ed58a4263bb06fa36af5a11ae52055dc336d367f67",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

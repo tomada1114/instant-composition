@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2a5s4e7f",
+    "ja": "この窓口は月曜休みです。",
+    "en": "This counter is closed Mondays.",
+    "alternatives": [
+      "This counter is closed on Mondays.",
+      "This window is closed on Mondays."
+    ],
+    "point": "曜日の習慣は複数形 Mondays で言える",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 3,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a74949ccd60c5899e715b60dc54df0386c0a81345aa9bf86a876c4be9b680856",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2x3w9b6r",
     "ja": "これに記入してください。",
     "en": "Please fill this out.",
@@ -19,6 +41,25 @@
     }
   },
   {
+    "id": "c_3d2w6x4x",
+    "ja": "身分証が必要です。",
+    "en": "You'll need an ID.",
+    "alternatives": ["You need an ID.", "You have to bring an ID."],
+    "point": "ID は母音で始まる発音なので an ID",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 2,
+    "grammar": ["articles-and-countability", "modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3675f1822bb5d07761d06ee78b7e0d382906e10e4c88e017b87158c26bd306c8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3d3q6g9e",
     "ja": "土曜に受け取れますか？",
     "en": "Can I pick it up Saturday?",
@@ -32,6 +73,25 @@
     "stamps": {
       "core": {
         "hash": "sha256:55d8d0dc37e40efec0c1e5f2375c8b20f742508ed92a368eca93d95d0261df13",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4d9f7a4k",
+    "ja": "今日は列がないね。",
+    "en": "There's no line today.",
+    "alternatives": ["There isn't a line today.", "There's no wait today."],
+    "point": "「〜がない」は There's no + 名詞",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 2,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:443e0085920b40fa68d32a0e7287a7fcc29ad260695dfb310b76934fa51d1900",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -76,6 +136,28 @@
     }
   },
   {
+    "id": "c_5x9v6x2q",
+    "ja": "荷物は明日届けられます。",
+    "en": "It'll be delivered tomorrow.",
+    "alternatives": [
+      "The package will be delivered tomorrow.",
+      "They'll deliver it tomorrow."
+    ],
+    "point": "「届けられる」は will be + 過去分詞",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 3,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d07931468f0ff98be610e65805552cea7206dd519d25264bfb12fa1764c6caf0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8e3a2h6z",
     "ja": "パスポートは更新済みだよ。",
     "en": "I've already renewed my passport.",
@@ -98,6 +180,44 @@
     }
   },
   {
+    "id": "c_8f2m5w7d",
+    "ja": "列に並んでください。",
+    "en": "Please wait in line.",
+    "alternatives": ["Please line up.", "Please stand in line."],
+    "point": "「並ぶ」は wait in line。丁寧な命令は Please を付ける",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0ecc9bf111fb3efbd1ab902d903de8bf03b030e989009b436a1ae0aa7f603cfd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8h2u4w5d",
+    "ja": "番号札を取ってね。",
+    "en": "Take a number, please.",
+    "alternatives": ["Please take a number.", "Please get a ticket."],
+    "point": "「番号札」は a number。数えられる名詞なので a が要る",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 2,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b88792c7942710f87d54aec66552f4756037648f7f61583abb468afcb7036f0f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8s9y7e9s",
     "ja": "修理は金曜だと言われた。",
     "en": "They said it'd be ready Friday.",
@@ -114,6 +234,63 @@
     "stamps": {
       "core": {
         "hash": "sha256:ff0a2404e637f6a01303e9e8c9a2964ae243dd7fae03df96803709b40c494029",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8y3w4m3q",
+    "ja": "ここに窓口があるよ。",
+    "en": "There's a counter here.",
+    "alternatives": ["There's a window here.", "There's a service desk here."],
+    "point": "「〜がある」は There's + a + 単数名詞",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:94777cc3199b34f8896f24f70bf893d37426feadc6c7416d1f8a03ff73722bbf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9c7a4z9k",
+    "ja": "並ぶのは苦手なんだ。",
+    "en": "I hate waiting in line.",
+    "alternatives": ["I can't stand waiting in line.", "I don't like waiting in line."],
+    "point": "hate の後は -ing。「〜するのが苦手」は hate + 動名詞",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 3,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ee30a3399904b358107f2e59c8939cbf4e524f556f0080a7128853d6ef2a6ae6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9s6p7r5u",
+    "ja": "銀行は閉まってるよ。",
+    "en": "The bank is closed.",
+    "alternatives": ["The bank isn't open.", "The bank is shut."],
+    "point": "「閉まっている」は状態なので is closed",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:09e91f5cf981f27decab23901b9cf4fd7ee1103d9efa8f9f8980e444e3c8822c",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

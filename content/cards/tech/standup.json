@@ -38,6 +38,25 @@
     }
   },
   {
+    "id": "c_4u7b5f5t",
+    "ja": "バグを直してるよ。",
+    "en": "I'm fixing a bug.",
+    "alternatives": ["I'm working on a bug.", "I'm fixing a bug now."],
+    "point": "今していることは be + ing",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8a5029efe247785b1cc0b0d4250fd0bdf3bf6510dc8d011daeb710807631ec6e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_5m5t9k5u",
     "ja": "昨日テストを三つ足した。",
     "en": "I added three tests yesterday.",
@@ -60,6 +79,25 @@
     }
   },
   {
+    "id": "c_5w7g4s7j",
+    "ja": "今日ケンはリモート。",
+    "en": "Ken is remote today.",
+    "alternatives": ["Ken is working remotely today.", "Ken is working from home."],
+    "point": "三人称単数は is",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ee3f2c1029b9f7fccd2aecb8f06604534249cb67ffa88400c62e8c06a8fc59e5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6h2v7r4n",
     "ja": "誰か、なぜ落ちるか分かる？",
     "en": "Does anyone know why it's crashing?",
@@ -76,6 +114,25 @@
     "stamps": {
       "core": {
         "hash": "sha256:edd46f91bc51035e04381bb07278759862ba39429eacf4ba04ce69872e59bc68",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6s8r9m5z",
+    "ja": "詰まったら、聞くね。",
+    "en": "I'll ask if I get stuck.",
+    "alternatives": ["If I get stuck, I'll ask.", "I'll ask when I'm stuck."],
+    "point": "if 節は未来でも現在形",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:981080e8a8833c27de7abada6940dd6e6bc57faca7d078bbb044c5951dc6977e",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -114,6 +171,120 @@
     "stamps": {
       "core": {
         "hash": "sha256:1d3703a6d09a79828a8c72a6901133c475f68868f2eb2da4a3609af0d3c2eab1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7x4b3j2q",
+    "ja": "いつ見てもらえる？",
+    "en": "When can you review it?",
+    "alternatives": ["When could you review it?", "When can you look at it?"],
+    "point": "時は When で始める",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 3,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bdec7c86eba11577a95b9ea081f0672bc450e7a71c9e23d37179834656d2c99c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8u3s5f5t",
+    "ja": "ミアの PR を見てます。",
+    "en": "I'm reviewing Mia's PR.",
+    "alternatives": ["I'm looking at Mia's PR.", "I'm reviewing a PR from Mia."],
+    "point": "今の動作は be + ing",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 2,
+    "grammar": ["progressive-aspect", "be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b3519c1a160df0958fa6b75dcc30d0698dc4fbd8cfe880df3f04c53eb230eb77",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8v3k2q5c",
+    "ja": "今、何の作業中？",
+    "en": "What are you working on?",
+    "alternatives": ["What are you doing now?", "What are you up to?"],
+    "point": "「何の作業中？」は What are you working on? 前置詞 on は最後に残す",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 1,
+    "grammar": ["wh-questions", "progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7915261a81a74a762c8447c87cbbb0ed632bf2125a9fbe572b2822d531beabbb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9h3j5t8e",
+    "ja": "デプロイしなきゃ。",
+    "en": "I have to deploy.",
+    "alternatives": ["I need to deploy.", "I've got to deploy."],
+    "point": "「しなきゃ」は have to",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8d9933c3c340785bec45cf8db52f90dd61c3606d6024a69279f967f8c545599d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9p9x4j8g",
+    "ja": "ケンに手伝ってほしい。",
+    "en": "I want Ken to help.",
+    "alternatives": ["I'd like Ken to help.", "I want Ken to help me."],
+    "point": "want + 人 + to 動詞",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:47bea1727338aa8470c6b8cd996bf1d0d65e9d63d09ddcbb2ee9240c063b42a8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9t5r3v4k",
+    "ja": "詰まったら聞いてね。",
+    "en": "Ask if you're stuck.",
+    "alternatives": ["Ask me if you're stuck.", "If you're stuck, just ask."],
+    "point": "「〜したら」は if 節。命令文は動詞から始める",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:414028e80e8362deb9a20ae20ef45a1506af00348edbc46fa8c99957872add31",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

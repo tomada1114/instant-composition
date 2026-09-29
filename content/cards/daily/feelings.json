@@ -41,6 +41,44 @@
     }
   },
   {
+    "id": "c_4a5n5u4g",
+    "ja": "ひと言いいですか？",
+    "en": "May I say something?",
+    "alternatives": ["Could I say something?", "Is it okay to say something?"],
+    "point": "丁寧に許可を求める May I / Could I",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0acebd3b879d54ff5c4b90445c2b63b1c65f304489302996f51a1704ac7f4c7a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4e6w5s7b",
+    "ja": "一人になってもいい？",
+    "en": "Can I be alone?",
+    "alternatives": ["Can I have some time alone?", "Can I have a minute alone?"],
+    "point": "許可を求める Can I 〜? に be alone を続ける",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cee12880a01031d9dafed664baa052956477dcc8f0f3053f4e15e552a2ef4130",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4v9a4j8e",
     "ja": "無理しないほうがいいよ。",
     "en": "You shouldn't push yourself.",
@@ -54,6 +92,44 @@
     "stamps": {
       "core": {
         "hash": "sha256:146b5fce75b6a20d1e21be89ae7baa0f3f6ec0fa9689fe099c8154d1e9debf35",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4z6r6p5c",
+    "ja": "今、わくわくしてる！",
+    "en": "I'm feeling excited.",
+    "alternatives": ["I'm so excited!", "I'm really excited!"],
+    "point": "今の気持ちは進行形 I'm feeling 〜",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:630e2a2702983e8d8b1934d74c74f8b04ebf60d397cd50230fa4448ea0db9b03",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5a9a3b2h",
+    "ja": "会えてうれしいよ。",
+    "en": "I'm glad to see you.",
+    "alternatives": ["I'm happy to see you.", "It's nice to see you."],
+    "point": "気持ちの理由は形容詞 + to 不定詞",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 3,
+    "grammar": ["infinitives", "be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:552876d9598993efbdc1eba17f8e0fc2a643580b127c43a62f12e134e3103ce4",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -117,6 +193,101 @@
     "stamps": {
       "core": {
         "hash": "sha256:6f0e566af67861879de2fa32ae3df5b944e31ef92cb6f315a73323341e6613c2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8e3q4j9r",
+    "ja": "それを聞いて残念です。",
+    "en": "I'm sorry to hear that.",
+    "alternatives": ["I'm so sorry to hear that.", "Sorry to hear that."],
+    "point": "「〜して残念」は sorry + to 不定詞",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 3,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bd8a40178ebd7eb5fb3624eeb044e192050c65c9f835276ace0d30629238c8f5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8t8g5t4q",
+    "ja": "なんで泣いてるの？",
+    "en": "Why are you crying?",
+    "alternatives": ["How come you're crying?", "What are you crying for?"],
+    "point": "「今〜している理由」は Why + 進行形",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 2,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a75a57063c65d4736229db2709e19e0fac253f96dbd835c344f4f84a57304768",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8x6x5b9n",
+    "ja": "いい日だね！",
+    "en": "It's a good day.",
+    "alternatives": ["It's a great day.", "Today is a good day."],
+    "point": "数えられる名詞 day には a を付ける",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:69024040eb26a00a5489396188fc16d4128dc0758cec522c08e5d9beeba267ec",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9b9h9v7a",
+    "ja": "どうしたの？",
+    "en": "What's wrong?",
+    "alternatives": ["What's the matter?", "What's the problem?"],
+    "point": "様子を尋ねる定番。What's wrong? は短くて便利",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:06195286097e4f6132f1348e2da6b7a721068530b694e10da3743b9f6256d49f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9x9p2r4r",
+    "ja": "もう歩けないよ。",
+    "en": "I can't walk anymore.",
+    "alternatives": ["I can't walk any further.", "I can't take another step."],
+    "point": "「もう〜できない」は can't + 動詞 + anymore",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 2,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1f752ff02ebc07174f0fbe95628015d710ced41b6c5c29399504b3c826d47c19",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

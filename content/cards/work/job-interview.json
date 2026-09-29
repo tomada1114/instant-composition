@@ -1,5 +1,43 @@
 [
   {
+    "id": "c_2q4q6w2f",
+    "ja": "何でも聞いて。",
+    "en": "Ask me anything.",
+    "alternatives": ["Please ask me anything.", "Feel free to ask me."],
+    "point": "命令文は主語なしで動詞から始める",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d1df3252794f8a12a90250bcfab9f215498bfe4a25bdc376e20f7d052cb742b8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4c7e9b2h",
+    "ja": "営業の経験者です。",
+    "en": "I'm experienced in sales.",
+    "alternatives": ["I have sales experience.", "I've done sales work."],
+    "point": "経験者は experienced。前置詞は in",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:263bb8eb0c405709890e72b25e5bc26f0138590378ce65eab7c9ee7b126e1cd7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4v2c8p6a",
     "ja": "残業はありますか？",
     "en": "Is there any overtime?",
@@ -13,6 +51,25 @@
     "stamps": {
       "core": {
         "hash": "sha256:35ae46b533a9a52f4a8193a8a6c580d50c23027da0b7efdc8838a272dda01c71",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5v3q4a8x",
+    "ja": "メモしてもいいですか？",
+    "en": "May I take notes?",
+    "alternatives": ["Can I take notes?", "Is it okay to take notes?"],
+    "point": "「メモを取る」は take notes と複数形",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6d0715c7542fc417033836d8893ac56840e851aef8029faefd4ef89833ae7925",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -63,6 +120,25 @@
     }
   },
   {
+    "id": "c_7d7a4h7f",
+    "ja": "私は新卒です。",
+    "en": "I'm a new graduate.",
+    "alternatives": ["I'm a recent graduate.", "I just graduated."],
+    "point": "新卒は new / recent graduate。a を付ける",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1b82298caf7a519467f4a6f3b2b07873491234bfd8f7672877c433d7c45d667d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_7j6g3g7r",
     "ja": "人に教えるのが得意です。",
     "en": "I'm good at teaching others.",
@@ -79,6 +155,67 @@
     "stamps": {
       "core": {
         "hash": "sha256:79fe8927e21a7e11d2d59a21ae347d39608a2934ec5ab31c9bf2e405d23bfd2b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7p6y2e6c",
+    "ja": "初日はいつですか？",
+    "en": "When's my first day?",
+    "alternatives": ["When do I start?", "When is the first day?"],
+    "point": "疑問詞 when を文頭に置く",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 1,
+    "grammar": ["wh-questions", "be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:56e97c5c5fd8260d8956a92b9aa4f862fd6b005056f5af4f14a20e2c5531b3b3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7u2m8x2p",
+    "ja": "今、転職活動中です。",
+    "en": "I'm job hunting.",
+    "alternatives": ["I'm looking for a new job.", "I'm searching for a new job."],
+    "point": "今の状態は進行形。活動中は look for",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:69635c9c3e26072d42a2b50d1c9c8af2bc9c2fcbf3258a5c6197fe48da5f1134",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8e7k8e4v",
+    "ja": "来月から働き始めます。",
+    "en": "I'll start next month.",
+    "alternatives": [
+      "I'm starting next month.",
+      "I'm going to start next month.",
+      "I'll start working next month."
+    ],
+    "point": "これからの意思は will。next に前置詞は不要",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 3,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e05803e8384567100ffc59111b3a798056287a1794eca81e92bb0d18c25725d6",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -102,6 +239,47 @@
     "stamps": {
       "core": {
         "hash": "sha256:eee0a2e747de0144bbae7a1581f274c6ae7fbe56944a5fb4075f03175fb94356",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8r7j6f5d",
+    "ja": "リーダー経験があります。",
+    "en": "I've been a team leader.",
+    "alternatives": ["I have leadership experience.", "I've led teams before."],
+    "point": "経験は現在完了 have + 過去分詞",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 3,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bad5bc256b5c11f96a07051ab3838777fc0aabcac43969d6e8742754b81e98b6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8w9w7e5j",
+    "ja": "大事なのは、信頼です。",
+    "en": "What matters most is trust.",
+    "alternatives": [
+      "Trust is what matters most.",
+      "The most important thing is trust."
+    ],
+    "point": "「〜なのは」は What ～ is の形",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 5,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3d272b4b6fda63d2027513a5cef2f7bcf2ce3ffa102c3071357b8ff3aaa1918b",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

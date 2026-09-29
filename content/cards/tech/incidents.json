@@ -1,5 +1,66 @@
 [
   {
+    "id": "c_4d4b2v7t",
+    "ja": "ロールバックを試して。",
+    "en": "Try a rollback.",
+    "alternatives": [
+      "Try rolling back.",
+      "Try rolling it back.",
+      "Please try a rollback."
+    ],
+    "point": "命令文は動詞から始める",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 2,
+    "grammar": ["imperatives", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7e0ce0d6e571905eeed0df5116b764dbb6b439c74d8840e601ec2cd1149a5652",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4f3u4c5r",
+    "ja": "再起動して。",
+    "en": "Restart it.",
+    "alternatives": ["Please restart it.", "Reboot it."],
+    "point": "命令文は動詞で始める",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 1,
+    "grammar": ["imperatives", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:af36be4dd5211d99b6fdfb59424b8328ae5616350e8aad130bc493cb5fa4e24e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4j9z2s8d",
+    "ja": "チームに状況を伝えて。",
+    "en": "Update the team.",
+    "alternatives": ["Let the team know.", "Tell the team the status."],
+    "point": "update は人を目的語にできる",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 2,
+    "grammar": ["imperatives", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:699b73b10ba35235a3a258ec4c162bb565cce9e0aa9d8a97a181ca5de42bc408",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4p8a8d3k",
     "ja": "障害は公開前に始まってた。",
     "en": "The outage had started before release.",
@@ -16,6 +77,47 @@
     "stamps": {
       "core": {
         "hash": "sha256:14b431b014278eb2512e9ea6199f41dd4244e4b3df6a0a2eeeae3c4236c0b5e7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5k3w9p2z",
+    "ja": "前より影響が小さいよ。",
+    "en": "The impact is smaller now.",
+    "alternatives": [
+      "The impact is lower than before.",
+      "The impact is less than before."
+    ],
+    "point": "比較は形容詞 + er",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:173d9c1af0a3bc7daeae6f52da010b1196dafb05d7ed0433cb3cd190252af58f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5p6v5a6c",
+    "ja": "三時にアラートが鳴った。",
+    "en": "The alert fired at three.",
+    "alternatives": ["An alert went off at three.", "The alarm went off at three."],
+    "point": "アラートが鳴るは fire / go off",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 3,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b64750dbbfd43c7f5bb0b3c54ce7f378c2fa1b03cc7109ce4a1af603bd84f714",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -63,6 +165,67 @@
     }
   },
   {
+    "id": "c_8g9c2a6e",
+    "ja": "原因を調べてるよ。",
+    "en": "I'm checking the cause.",
+    "alternatives": ["I'm investigating the cause.", "I'm looking into the cause."],
+    "point": "「調べる」は check。進行形で「今調べ中」",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a909c55c836aa64ae994ff250ede57bfeee1598b4d519bfea4b9e1994055e64d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8j4z5g5u",
+    "ja": "客が困ってるよ。",
+    "en": "Customers are having trouble.",
+    "alternatives": [
+      "Customers are having problems.",
+      "Customers are struggling.",
+      "A customer is having trouble."
+    ],
+    "point": "複数名詞は冠詞なしで are",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 1,
+    "grammar": ["progressive-aspect", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ab43b4bb9add2ef58b14d2459ec7f22855d69f2f2299a5fee66d3820a62b55f9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8n8r5d6x",
+    "ja": "原因は設定ミスだったよ。",
+    "en": "It was a config error.",
+    "alternatives": ["The cause was a bad config.", "A config mistake caused it."],
+    "point": "過去の be は was",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 3,
+    "grammar": ["past-simple", "be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5be21f25f1f12286c321b548498a33687151844b3573fc99b2682d3e9fe9b6e9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8q7q5q3d",
     "ja": "これが効いた修正です。",
     "en": "It's the fix that worked.",
@@ -95,6 +258,25 @@
     "stamps": {
       "core": {
         "hash": "sha256:afd1c0fd2ec7923e190f32658fd3163a7ee8760c746d05bc90ee1f23a60bce3f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8y4z8v7y",
+    "ja": "今回のほうが深刻です。",
+    "en": "This one is worse.",
+    "alternatives": ["This outage is worse.", "This is worse than last time."],
+    "point": "bad の比較級は worse",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 3,
+    "grammar": ["comparatives-superlatives", "be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3c12cd1692aae440e59dfe220126f74d2d3798c63ffe04b49fe9706dead17036",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

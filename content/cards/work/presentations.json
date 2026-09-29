@@ -1,5 +1,43 @@
 [
   {
+    "id": "c_2w2d2x4h",
+    "ja": "これは何の図ですか？",
+    "en": "What is this chart?",
+    "alternatives": ["What does this chart show?", "What's this chart about?"],
+    "point": "疑問詞 what を文頭に。「図」は chart",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f2f98ecaf3fa17917928bc746a1053b68c3abc966acf98d2b4fe5e416337fae",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3d8e3y6h",
+    "ja": "詳細は後で共有されます。",
+    "en": "Details will be shared later.",
+    "alternatives": ["We'll share the details later.", "You'll get the details later."],
+    "point": "未来の受け身は will be + 過去分詞",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 3,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:35a58f57163fd21fee5113492ab988aedf39f34040cc923c255a83af8d316c99",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3x2k2s9c",
     "ja": "このグラフを見てください。",
     "en": "Please look at this graph.",
@@ -19,6 +57,48 @@
     }
   },
   {
+    "id": "c_3x2p9y9m",
+    "ja": "これが当社製品です。",
+    "en": "This is our product.",
+    "alternatives": ["Here is our product.", "This is what we make."],
+    "point": "「弊社の」は our。this で手元のものを示す",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6cfde159daaecf5be5d99291a31cf488b66d313260e54bded64c372559e767d5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3y8z5y7p",
+    "ja": "上のグラフをご覧ください。",
+    "en": "Please see the chart above.",
+    "alternatives": [
+      "Please look at the graph above.",
+      "Please refer to the chart above.",
+      "Please see the graph above."
+    ],
+    "point": "「上の」は名詞のあとに above を置く",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1deac470441d04cc020ca84db5d6c8a266aac99ccca500e668bf7341dc51446f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4y6m5j6k",
     "ja": "ご清聴に感謝します。",
     "en": "Thank you for listening.",
@@ -32,6 +112,25 @@
     "stamps": {
       "core": {
         "hash": "sha256:17974f709a09d60e8fc7d708f6e43b288d4619ed210186d80c118522b65b60ea",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4y6p9k2j",
+    "ja": "先に進んでもいい？",
+    "en": "Can I move on?",
+    "alternatives": ["May I move on?", "Is it okay to move on?"],
+    "point": "move on で「先へ進む」。許可は Can I / May I",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5b2af17a5477430ab177789399d29d6ca661327fdf8dcfdf5fc6b9d37b7242e3",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -101,6 +200,44 @@
     }
   },
   {
+    "id": "c_7t6z2q3j",
+    "ja": "十分間の発表です。",
+    "en": "It's a ten-minute talk.",
+    "alternatives": ["The talk is ten minutes long.", "This talk takes ten minutes."],
+    "point": "ten-minute は単数形でハイフンでつなぐ",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:023b96c003cc76d8d36766207b17b766f5ca854e1e09c2bf02e4111808e385c4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8c9a5q7r",
+    "ja": "今、資料を配ってます。",
+    "en": "I'm handing out copies.",
+    "alternatives": ["I'm passing out handouts.", "I'm handing out the materials."],
+    "point": "hand out は「配る」。今の動作は進行形",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:309dd8a31b10057742fcd19f3735ee8aea57f5451a116a6efbc43ca112909440",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8h4k8a6n",
     "ja": "最近これを調べています。",
     "en": "I've been studying this lately.",
@@ -117,6 +254,44 @@
     "stamps": {
       "core": {
         "hash": "sha256:76cabba039712238113e051fffa3f49ad363cab66ec92b4df7fe5e6ae44f9928",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8u2p8h9b",
+    "ja": "データはいつ集められたの？",
+    "en": "When was the data collected?",
+    "alternatives": ["When was the data gathered?", "When was that data collected?"],
+    "point": "「集めた」は受け身なら was collected",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 3,
+    "grammar": ["wh-questions", "passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1834dd3ba579aab0568dc1a370a010775b382c5cbe3eba8da0251539de6704cd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9n3f6y4k",
+    "ja": "画面を共有中です。",
+    "en": "I'm sharing my screen.",
+    "alternatives": ["I'm sharing the screen.", "I'm showing my screen."],
+    "point": "「〜中」は進行形。share は共有する",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef8cff5804dceeaa833be3042e7ce4bc80966141f66482411e07ddb8cc53af24",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

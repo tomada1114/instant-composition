@@ -1,5 +1,24 @@
 [
   {
+    "id": "c_2h5s9c3s",
+    "ja": "引っ越すことにしたんだ。",
+    "en": "I decided to move.",
+    "alternatives": ["I've decided to move.", "I decided to move out."],
+    "point": "「〜することにした」は decide to do",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 3,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:91b81b999d50f96a2414a3594a10e9a8ed6f8be927135c7e2ff8e85d21139103",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2h7n3d9e",
     "ja": "また連絡してね。",
     "en": "Keep in touch.",
@@ -13,6 +32,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:e3fd473b45ff97359caa989ca96112742c7a400ace3481d9428449c45e959fa5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2j3e5p9m",
+    "ja": "最近、何にハマってるの？",
+    "en": "What are you into lately?",
+    "alternatives": [
+      "What have you been into lately?",
+      "What are you into these days?"
+    ],
+    "point": "「ハマってる」は be into ～",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 3,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7174066aa2d2d15827796f50ac61ea935ff554cc07223eef93da281b20743072",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -38,6 +79,25 @@
     }
   },
   {
+    "id": "c_3s2e5q7q",
+    "ja": "今、何してるの？",
+    "en": "What are you doing?",
+    "alternatives": ["What are you up to?", "What are you doing now?"],
+    "point": "今していることは現在進行形で聞く",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 1,
+    "grammar": ["progressive-aspect", "wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8ec4d92b04df2b04ba0f77aaae536fe45958da27209c3bc54a8cb7067ebba5e7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3w3a9f2c",
     "ja": "最近どうしてたか教えて。",
     "en": "Tell me how you've been.",
@@ -57,6 +117,44 @@
     }
   },
   {
+    "id": "c_4y2z8a2u",
+    "ja": "今、猫を飼ってるよ。",
+    "en": "I have a cat.",
+    "alternatives": ["I've got a cat.", "I have a pet cat."],
+    "point": "数えられる名詞には a を付ける",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7100ba59d37030c62907b5398e955025271dad92152bae61df4604dc3dedce0b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5b2j7v6x",
+    "ja": "最近、仕事はどう？",
+    "en": "How's work these days?",
+    "alternatives": ["How's work going?", "How is work lately?"],
+    "point": "調子を聞くときは How で始める",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 2,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5d93dddfc9569e28f0ad88aaa13ea891f3904d41ba5ab8c16cb8da5ce1e2834f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_5m7q4c8y",
     "ja": "今は10キロ走れるんだ。",
     "en": "I can run 10K now.",
@@ -70,6 +168,44 @@
     "stamps": {
       "core": {
         "hash": "sha256:424f10750cc9c8bec3540e8d1ca6044ac7c7d34575a73d9862a908c301aaa8d3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5n4f6m3x",
+    "ja": "今はここに住んでる。",
+    "en": "I live here now.",
+    "alternatives": ["I'm living here now.", "Now I live here."],
+    "point": "住んでいる状態は現在形 live",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7c49aeba2c352fd19e7a70c03eb1ae3ff3571d65634d10706660fd7ed8036f86",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6q8z7n2p",
+    "ja": "ちょっと聞いてもいい？",
+    "en": "Can I ask you something?",
+    "alternatives": ["Could I ask you something?", "Can I ask you a question?"],
+    "point": "許可は Can I ～? で軽く聞ける",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e2e1c347f528278abe4c6bf435ae9f93da45f6fb2f4f38e8dd268538b65c479b",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -114,6 +250,25 @@
     "stamps": {
       "core": {
         "hash": "sha256:32ff34073c4435d8cf486414c753dcc6cc06478c369f2002b4ed63cdb83ec9d0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9r7k4t6s",
+    "ja": "最近ジョギングを始めた。",
+    "en": "I started jogging recently.",
+    "alternatives": ["I recently started jogging.", "I've taken up jogging lately."],
+    "point": "start のあとは ～ing でも to でもよい",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 3,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:905edc4f16d88b01f4232f1dacfd5992b7d8a3dbf1c1f5b1af3dfb14265a1771",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

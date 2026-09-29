@@ -1,5 +1,24 @@
 [
   {
+    "id": "c_3b9a4e7z",
+    "ja": "頭が痛いんだ。",
+    "en": "I have a headache.",
+    "alternatives": ["My head hurts.", "I've got a headache."],
+    "point": "headache は数えられる名詞なので a",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3caeb00f9f4b3877cff63b1ee1893962999158a5cede8f70f00992a42dc02c5a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3j8d7e8v",
     "ja": "頭痛に効く薬はありますか？",
     "en": "Do you have medicine for headaches?",
@@ -22,6 +41,44 @@
     }
   },
   {
+    "id": "c_5p9q8w9t",
+    "ja": "痛くなったら電話するよ。",
+    "en": "I'll call if it hurts.",
+    "alternatives": ["I'll phone you if it hurts.", "If it hurts, I'll call you."],
+    "point": "未来のことでも if 節は現在形",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 3,
+    "grammar": ["future-forms", "time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c560ed229da799e3258e2566badaea1079dc959ed53bf3eb94bed4c624aeccbb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6a2m3d2s",
+    "ja": "近くに薬局があるよ。",
+    "en": "There's a pharmacy nearby.",
+    "alternatives": ["A pharmacy is nearby.", "There's a drugstore nearby."],
+    "point": "「〜がある」は There's + 単数の名詞",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5b35e5f0211bb6b759f7578310f1010409423d553d053a8c38999e480b1256ab",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6g5z7q7k",
     "ja": "どこが痛みますか？",
     "en": "Where does it hurt?",
@@ -35,6 +92,63 @@
     "stamps": {
       "core": {
         "hash": "sha256:5a2f0c7c762c3409a7e5852ee2039be0d22fd8c2fb55c50bf709312d93247068",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6k4k5h6e",
+    "ja": "息子が咳き込んでる。",
+    "en": "My son is coughing.",
+    "alternatives": ["My son is coughing hard.", "My son keeps coughing."],
+    "point": "今起きていることは be + -ing",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a85435a4c0292001974940ebeb315be9d15f767a90cb3b45cd8d0a946539bd60",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6q8m8b2c",
+    "ja": "休むように言われたよ。",
+    "en": "I was told to rest.",
+    "alternatives": ["They told me to rest.", "I was advised to rest."],
+    "point": "「言われた」は be told + to + 動詞",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 3,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4da32bbac3ee74154ba0bb25355ab6c5e02218c7709cb7eb0f6227d49fbcc6c9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6w2f3t3r",
+    "ja": "家に帰ったら休むよ。",
+    "en": "I'll rest once I'm home.",
+    "alternatives": ["I'll rest when I get home.", "When I get home, I'll rest."],
+    "point": "未来のことでも when / once 節は現在形",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:292267a26a201122b34f4ab9c9c824e3d644c983128a4c83c10e86c5027226bc",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -82,6 +196,44 @@
     }
   },
   {
+    "id": "c_7j5t8p8k",
+    "ja": "水をたくさん飲んで。",
+    "en": "Drink lots of water.",
+    "alternatives": ["Drink plenty of water.", "Drink a lot of water."],
+    "point": "water は数えられない。lots of を使う",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ea5aae8eeb5a05fea76a437788b3f2627a06e9d29611d639d30880b325627663",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7w8e7r6a",
+    "ja": "医者に診てもらうよ。",
+    "en": "I'll see a doctor.",
+    "alternatives": ["I'm going to see a doctor.", "I'll go see a doctor."],
+    "point": "「診てもらう」は see a doctor",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0cd32f38e1e30f75a9341cdcb4cff6ef23ee80cab67ba25f4dab5662130456fd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8a6k8z2a",
     "ja": "昨日、熱が出たんだ。",
     "en": "I had a fever yesterday.",
@@ -117,6 +269,25 @@
     "stamps": {
       "core": {
         "hash": "sha256:b22f9eb8c1b7bce57d2d489adf5576bd0f1069be0f32500f57bb80efd35f2ef4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8y4z2a4a",
+    "ja": "今日は具合が悪いんだ。",
+    "en": "I'm sick today.",
+    "alternatives": ["I'm not feeling well.", "I don't feel well today."],
+    "point": "「具合が悪い」は I'm sick",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:65f075cbdec9fab73a14273b5e5a8f1973b3ae7a233a102594b63c057c6b014a",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
