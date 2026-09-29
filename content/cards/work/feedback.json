@@ -13,7 +13,13 @@
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4f3a006e4e26127f82e1ede2a30333df2638b41bdebf8776119c4d4c1b28717d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2n4p7d6n",
@@ -29,7 +35,13 @@
     "level": 5,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:92ba92ffa8d93a82bdf8f79485866771a190c3e212b6ee15555694115fbe8f66",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2q9p5z6b",
@@ -45,7 +57,13 @@
     "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:07478e9688144bace29c7a4030e751140f7fdce15a51431f181576781bfd6887",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2s5v8q9c",
@@ -61,23 +79,13 @@
     "level": 7,
     "grammar": ["causatives", "hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2u8s6f9g",
-    "ja": "指摘がなければ、間違った数字を送っていました。",
-    "en": "Without your catch, I'd have sent the wrong numbers.",
-    "alternatives": [
-      "If not for you, I'd have sent the wrong numbers.",
-      "Without you catching it, I'd have sent the wrong numbers."
-    ],
-    "point": "「〜がなければ」は without や if not for で表せる",
-    "topic": "work",
-    "subtopic": "feedback",
-    "level": 7,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6c27bc2e0329f555ff222d027f3be10e55ca24c66f0b75d2e831096ce9ee5277",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4n5j5s7q",
@@ -93,7 +101,13 @@
     "level": 4,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:32b24bc6515800cbb0ef28f4fcae2b58cd59da6f1c4262d5394517ff2e2cc590",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5q8b5b6b",
@@ -111,28 +125,11 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:5a72e41fafb1c6fd27daeeeb500111d885a1521e8ba54e96eb217c4e728bd1f3",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:214e80340600cc865f5df0142715dc5367539eaa8f1b366152a1581823bcbcb1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_5r7r3f3h",
-    "ja": "お客さんの気がかりを全部カバーしてるね。",
-    "en": "This covers everything the client worried about.",
-    "alternatives": [
-      "This covers everything the client was worried about.",
-      "This covers all the client's concerns.",
-      "You've covered all the client's concerns."
-    ],
-    "point": "「お客さんが気にした」は everything の後ろに続ける",
-    "topic": "work",
-    "subtopic": "feedback",
-    "level": 4,
-    "grammar": ["relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_6a5g7q2w",
@@ -148,7 +145,13 @@
     "level": 4,
     "grammar": ["gerunds", "present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6e1a229216185491f54bab1d1e641f5aa55b010bfb561becf9ea492db1fb36d6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6j6y2b9r",
@@ -164,7 +167,13 @@
     "level": 4,
     "grammar": ["present-perfect", "relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:271c38b2cbd63d24dac3c26a205b5cab0b737a3e834aa994ceabd2492083afbf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7y5t5j5k",
@@ -180,23 +189,13 @@
     "level": 4,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7z5h9x8h",
-    "ja": "彼は上手だけど、ゆっくり話すといい。",
-    "en": "He's good, but he should speak slower.",
-    "alternatives": [
-      "He's good, but he should slow down.",
-      "He's good but should speak more slowly."
-    ],
-    "point": "「〜するといい」は should で柔らかく助言する",
-    "topic": "work",
-    "subtopic": "feedback",
-    "level": 2,
-    "grammar": ["modal-obligation-advice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6170aa35c758ea160c1d99e4d2e014303176b9dd16b6bdc52e40e91251837a3f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8h8w5a8b",
@@ -214,9 +213,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:98b3b88644325aa19df973011d9f7c5e62fae62a8176b743f736100f096b6ab3",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:5686c544955b91a2e837a893bb41609aa0694a3336f6e967aa004decaa8512cb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -231,7 +230,13 @@
     "level": 1,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fd43b32eb863d8694f9cc3448d849195f98ce17e2b6b31f5d4cbd8bfb4818357",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9a6g4w9m",
@@ -244,6 +249,12 @@
     "level": 2,
     "grammar": ["articles-and-countability", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f67bde5913e9e5939457f06a714e52087ab6ff84c726c45b2016404ffe22ffca",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
