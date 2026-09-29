@@ -19,6 +19,7 @@ type Loaded =
  */
 export function DrillScreen({
   kind: initialKind,
+  pressed: pressedOnArrival,
   first,
   sound,
   dailySize,
@@ -26,6 +27,7 @@ export function DrillScreen({
   onKind,
 }: Readonly<{
   kind: RoundKind;
+  pressed: boolean;
   first: boolean;
   sound: boolean;
   dailySize: number;
@@ -34,6 +36,7 @@ export function DrillScreen({
 }>): ReactElement {
   const [kind, setKind] = useState(initialKind);
   const [attempt, setAttempt] = useState(0);
+  const [pressed, setPressed] = useState(pressedOnArrival);
   const [loaded, setLoaded] = useState<Loaded & { readonly attempt?: number }>({
     status: "loading",
   });
@@ -74,9 +77,11 @@ export function DrillScreen({
       key={loaded.round.id}
       round={loaded.round}
       first={first}
+      pressed={pressed}
       sound={sound}
       dailySize={dailySize}
       onNext={(next) => {
+        setPressed(true);
         onKind(next);
         setKind(next);
         setAttempt((count) => count + 1);

@@ -16,6 +16,7 @@ import {
 } from "./settings-sections";
 import { TimeZoneRow } from "./time-zone-row";
 import { useSettings } from "./use-settings";
+import { markPressed } from "../drill/pressed";
 
 /** W12: measuring again is confirmed first; Esc and "cancel" close it. */
 function RetestSheet({
@@ -124,6 +125,7 @@ export function SettingsScreen({
             setAsking(false);
           }}
           onConfirm={() => {
+            markPressed();
             void navigate({ to: "/drill", search: { kind: "placement" } });
           }}
         />
