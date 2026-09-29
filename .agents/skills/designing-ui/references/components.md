@@ -24,7 +24,7 @@ to the design's names.
 | `mix-bar`                 | —                                                          | review and new shares, either may be 0                                         |
 | `chip/choice`             | — (focus subtopic)                                         | unselected, selected (white fill + check), disabled (at the limit)             |
 | `select-card`             | —                                                          | unselected, selected (white border + filled check), locked (the last one kept) |
-| `segmented`               | — (5 / 10 / 15 / 20 / 30 cards a day; 15–60 s per card)    | one selected                                                                   |
+| `segmented`               | one row (cards a day, s per card, auto/manual); `columns`  | one selected; none (a level not yet measured)                                  |
 | `toggle`                  | —                                                          | on, off                                                                        |
 | `ring-stack`              | `concentric` (up to 4 topics), `grid` (all 5)              | with a new segment, without, empty (grooves + one line)                        |
 | `week-row`                | —                                                          | done, done today, open (can be made up), missed, upcoming                      |
@@ -38,7 +38,7 @@ to the design's names.
 | `weak-list`               | —                                                          | grammar and scenes, one of them, none ("none right now")                       |
 | `difficulty-line`         | `up`, `down`, `same`                                       | —                                                                              |
 | `info-tip`                | —                                                          | closed, open                                                                   |
-| `sheet`                   | `pause`, `confirm`                                         | —                                                                              |
+| `sheet`                   | `pause`, `confirm`, `difficulty`                           | —                                                                              |
 | `toast`                   | —                                                          | shown for 4 s                                                                  |
 | `inline-notice`           | —                                                          | unsaved records; gone once sent                                                |
 | `skeleton`                | —                                                          | when the start screen takes over 300 ms                                        |
@@ -170,7 +170,9 @@ the hit area grown by 4 above and below to 44; rows 8 apart so hit areas just to
   accepting presses.
 - `segmented`: track `bg-card`, 18 radius, 4 inset; the selected segment is
   `bg-primary text-primary-foreground` at 16 radius, figures in
-  `font-display text-action`.
+  `font-display text-action`. More options than a phone's row holds (the ten levels by
+  TOEIC) wrap into rows of `columns` (five) on the same track, 4 between rows, rather
+  than scroll or shrink below 44.
 - `toggle`: 52 × 32; on is a `bg-primary` track with a black knob at the right; off a
   `bg-raised` track with a grey knob at the left. No "on"/"off" words: position and fill
   carry the state, and the switch role says it.
