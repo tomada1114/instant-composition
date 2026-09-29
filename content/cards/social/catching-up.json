@@ -1,5 +1,18 @@
 [
   {
+    "id": "c_2h5s9c3s",
+    "ja": "引っ越すことにしたんだ。",
+    "en": "I decided to move.",
+    "alternatives": ["I've decided to move.", "I decided to move out."],
+    "point": "「〜することにした」は decide to do",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 3,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2h7n3d9e",
     "ja": "また連絡してね。",
     "en": "Keep in touch.",
@@ -17,6 +30,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_2j3e5p9m",
+    "ja": "最近、何にハマってるの？",
+    "en": "What are you into lately?",
+    "alternatives": [
+      "What have you been into lately?",
+      "What are you into these days?"
+    ],
+    "point": "「ハマってる」は be into ～",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 3,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_3g4v7q4z",
@@ -57,6 +86,19 @@
     }
   },
   {
+    "id": "c_5b2j7v6x",
+    "ja": "最近、仕事はどう？",
+    "en": "How's work these days?",
+    "alternatives": ["How's work going?", "How is work lately?"],
+    "point": "調子を聞くときは How で始める",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 2,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5m7q4c8y",
     "ja": "今は10キロ走れるんだ。",
     "en": "I can run 10K now.",
@@ -74,6 +116,32 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5n4f6m3x",
+    "ja": "今はここに住んでる。",
+    "en": "I live here now.",
+    "alternatives": ["I'm living here now.", "Now I live here."],
+    "point": "住んでいる状態は現在形 live",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6q8z7n2p",
+    "ja": "ちょっと聞いてもいい？",
+    "en": "Can I ask something?",
+    "alternatives": ["Could I ask you something?", "May I ask you something?"],
+    "point": "許可は Can I ～? で軽く聞ける",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9b2a9x6d",
@@ -118,5 +186,18 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9r7k4t6s",
+    "ja": "最近ジョギングを始めた。",
+    "en": "I started jogging recently.",
+    "alternatives": ["I recently started jogging.", "I've taken up jogging lately."],
+    "point": "start のあとは ～ing でも to でもよい",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 3,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

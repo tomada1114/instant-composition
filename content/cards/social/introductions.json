@@ -63,6 +63,19 @@
     }
   },
   {
+    "id": "c_9e2b8q3v",
+    "ja": "加藤さんに、挨拶を頼まれた。",
+    "en": "Kato asked me to say hi.",
+    "alternatives": ["Kato asked me to say hello.", "Kato wanted me to say hi."],
+    "point": "「人に〜を頼む」は ask 人 to do",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 4,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_9f9k9a9u",
     "ja": "英語を学びに来ました。",
     "en": "I came to learn English.",

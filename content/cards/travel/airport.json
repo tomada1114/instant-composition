@@ -121,5 +121,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8s9s2f8h",
+    "ja": "機内で寝るのは嫌いです。",
+    "en": "I hate sleeping on planes.",
+    "alternatives": [
+      "I don't like sleeping on planes.",
+      "I can't stand sleeping on planes."
+    ],
+    "point": "hate のあとは ～ing の形が自然",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 4,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

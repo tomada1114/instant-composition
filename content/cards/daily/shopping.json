@@ -98,6 +98,38 @@
     }
   },
   {
+    "id": "c_8g6j3g6m",
+    "ja": "Mはまだ残ってますか？",
+    "en": "Are there any Mediums left?",
+    "alternatives": [
+      "Do you still have any medium ones?",
+      "Are there any mediums still available?"
+    ],
+    "point": "「残っている」は there are ～ left",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 4,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8h9r9p6c",
+    "ja": "これ、ずっと探してたんだ。",
+    "en": "I've been looking for this.",
+    "alternatives": [
+      "I've been searching for this one.",
+      "I've been looking for this for ages."
+    ],
+    "point": "「ずっと〜してた」は have been ～ing",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 4,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_9n5g7f9w",
     "ja": "返品の期限はいつですか？",
     "en": "When is the return deadline?",

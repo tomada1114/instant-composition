@@ -44,6 +44,19 @@
     }
   },
   {
+    "id": "c_4d5j4t4z",
+    "ja": "次の電車の方が早いです。",
+    "en": "The next train is faster.",
+    "alternatives": ["The next train is quicker.", "The next one is faster."],
+    "point": "「〜の方が早い」は faster の一語",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 3,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4g2y6n8f",
     "ja": "少し助けが必要です。",
     "en": "I need a little help.",
@@ -104,6 +117,22 @@
     }
   },
   {
+    "id": "c_4n7j2g5d",
+    "ja": "予約にミスがあります。",
+    "en": "There's a booking mistake.",
+    "alternatives": [
+      "There's a mistake in my booking.",
+      "There's an error in my booking."
+    ],
+    "point": "「〜がある」は There's + 名詞",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6u4y7m6f",
     "ja": "係員が荷物を探しています。",
     "en": "They're looking for my luggage.",
@@ -124,5 +153,60 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8b6w3e6n",
+    "ja": "警察を呼んでください。",
+    "en": "Please call the police.",
+    "alternatives": ["Could you call the police?", "Can you call the police?"],
+    "point": "「警察」は the police と the をつける",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8r3s2a9j",
+    "ja": "もっと早い便はありますか？",
+    "en": "Is there an earlier flight?",
+    "alternatives": [
+      "Do you have an earlier flight?",
+      "Is there an earlier flight available?"
+    ],
+    "point": "「もっと早い」は earlier、前に an",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 4,
+    "grammar": ["comparatives-superlatives", "there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9c9m9y3w",
+    "ja": "パスポートがないです。",
+    "en": "My passport is missing.",
+    "alternatives": ["My passport's gone.", "I can't find my passport."],
+    "point": "「ない」は missing でも言える",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9y2d7b6w",
+    "ja": "財布をなくした。",
+    "en": "I lost my wallet.",
+    "alternatives": ["I've lost my wallet.", "I lost my wallet somewhere."],
+    "point": "「なくした」は lose の過去形 lost",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

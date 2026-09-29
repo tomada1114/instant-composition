@@ -115,5 +115,18 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9j5x3k3z",
+    "ja": "ここで撮影してもいいですか？",
+    "en": "May I take photos here?",
+    "alternatives": ["Can I take photos here?", "Is it okay to take photos here?"],
+    "point": "許可を求める May I ～? は丁寧",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 4,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

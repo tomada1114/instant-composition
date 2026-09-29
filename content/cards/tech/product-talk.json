@@ -1,5 +1,18 @@
 [
   {
+    "id": "c_2c8y3p5d",
+    "ja": "機能を少し減らそう。",
+    "en": "Let's cut some features.",
+    "alternatives": ["Let's trim a few features.", "Let's reduce the features a bit."],
+    "point": "「〜しよう」は Let's + 動詞",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3g9h4g4q",
     "ja": "通知を減らすのはどうかな？",
     "en": "How about reducing notifications?",
@@ -20,6 +33,45 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3k3d3t4u",
+    "ja": "もうリリースした？",
+    "en": "Have you released it yet?",
+    "alternatives": ["Have you shipped it yet?", "Have you already released it?"],
+    "point": "「もう〜した？」は Have you ～ yet?",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 3,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3k6d4e4t",
+    "ja": "こっちのほうが安い。",
+    "en": "This one is cheaper.",
+    "alternatives": ["This one costs less.", "This one is less expensive."],
+    "point": "短い形容詞は cheaper のように er",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3s8y7q7r",
+    "ja": "ユーザーが増えてるよ。",
+    "en": "Users are increasing.",
+    "alternatives": ["We're getting more users.", "The number of users is growing."],
+    "point": "変化の途中は進行形 are ～ing",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_4p8q5n7w",
@@ -63,6 +115,19 @@
     }
   },
   {
+    "id": "c_5h8a6d8f",
+    "ja": "先にユーザーに聞くべき。",
+    "en": "We should ask users first.",
+    "alternatives": ["We should ask the users first.", "We ought to ask users first."],
+    "point": "「〜すべき」は should + 動詞",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5w6x5t3z",
     "ja": "離脱防止のために作った。",
     "en": "We built it to prevent churn.",
@@ -80,6 +145,45 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6f6a7q6d",
+    "ja": "今、テストしてるよ。",
+    "en": "I'm testing it now.",
+    "alternatives": ["I'm testing it right now.", "I'm testing this now."],
+    "point": "「〜してる」は be + ～ing",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6u6v7v6n",
+    "ja": "ボタンが二つあるよ。",
+    "en": "There are two buttons.",
+    "alternatives": ["We have two buttons.", "It has two buttons."],
+    "point": "複数は There are + 複数名詞",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6y7b2x2j",
+    "ja": "これ、いい案だね。",
+    "en": "It's a good idea.",
+    "alternatives": ["That's a good idea.", "This is a good idea."],
+    "point": "idea は数えられるので a をつける",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7j3t9v8p",
@@ -124,5 +228,18 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9d9d9y8d",
+    "ja": "公開したら教えて。",
+    "en": "Tell me when it's released.",
+    "alternatives": ["Let me know when it ships.", "Tell me once it's released."],
+    "point": "when 節は未来でも現在形",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

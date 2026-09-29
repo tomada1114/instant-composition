@@ -58,6 +58,22 @@
     "stamps": {}
   },
   {
+    "id": "c_3y8z5y7p",
+    "ja": "上のグラフをご覧ください。",
+    "en": "Please see the chart above.",
+    "alternatives": [
+      "Please look at the chart above.",
+      "Please refer to the chart above."
+    ],
+    "point": "「上の」は名詞のあとに above を置く",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4y6m5j6k",
     "ja": "ご清聴に感謝します。",
     "en": "Thank you for listening.",

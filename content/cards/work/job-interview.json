@@ -212,6 +212,19 @@
     "stamps": {}
   },
   {
+    "id": "c_8w9w7e5j",
+    "ja": "大事なのは、信頼です。",
+    "en": "What matters most is trust.",
+    "alternatives": ["What matters to me is trust.", "Trust is what matters most."],
+    "point": "「〜なのは」は What ～ is の形",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 5,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_9c8n4c3x",
     "ja": "上司に応募を勧められた。",
     "en": "My boss encouraged me to apply.",

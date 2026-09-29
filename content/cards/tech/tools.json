@@ -1,5 +1,18 @@
 [
   {
+    "id": "c_2c3p5k2b",
+    "ja": "ターミナル使うのが好き。",
+    "en": "I like using the terminal.",
+    "alternatives": ["I enjoy using the terminal.", "I love using the terminal."],
+    "point": "like のあとは ～ing が自然",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 3,
+    "grammar": ["gerunds", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3c3y2j5x",
     "ja": "ボットに再試行を頼んだ。",
     "en": "I asked the bot to retry.",
@@ -17,6 +30,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3n7t5d8w",
+    "ja": "あとで更新するね。",
+    "en": "I'll update it later.",
+    "alternatives": ["I'll do the update later.", "I'm going to update it later."],
+    "point": "その場で決めた未来は will",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_4g6q5g5s",
@@ -63,6 +89,19 @@
     }
   },
   {
+    "id": "c_5d4c3d5a",
+    "ja": "このツールは無料です。",
+    "en": "This tool is free.",
+    "alternatives": ["This tool costs nothing.", "This tool is free to use."],
+    "point": "「無料」は free。形容詞なので be を使う",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5v2z4k8s",
     "ja": "自動整形するツールが好き。",
     "en": "I like tools that auto-format.",
@@ -83,6 +122,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5x8f3f8w",
+    "ja": "最新版を入れたよ。",
+    "en": "I installed the latest version.",
+    "alternatives": [
+      "I've installed the latest version.",
+      "I installed the newest version."
+    ],
+    "point": "「最新」は the latest。the をつける",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 3,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6e4w9f7h",
@@ -124,5 +179,31 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7v5k2d9e",
+    "ja": "失敗したら、教えて。",
+    "en": "Tell me if it fails.",
+    "alternatives": ["Let me know if it fails.", "Tell me if it breaks."],
+    "point": "if 節は未来でも現在形",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8f6m5r6w",
+    "ja": "バグを一つ見つけたよ。",
+    "en": "I found a bug.",
+    "alternatives": ["I've found a bug.", "I spotted a bug."],
+    "point": "「一つ」は a。数えられる名詞",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 2,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

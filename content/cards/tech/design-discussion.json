@@ -41,6 +41,22 @@
     }
   },
   {
+    "id": "c_6p5j5q8f",
+    "ja": "結局、Postgres にした。",
+    "en": "In the end, we chose Postgres.",
+    "alternatives": [
+      "We went with Postgres in the end.",
+      "We ended up choosing Postgres."
+    ],
+    "point": "「選んだ」は過去形 chose",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 5,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6u6d4z5n",
     "ja": "別案を出してもいいですか？",
     "en": "May I suggest another option?",
