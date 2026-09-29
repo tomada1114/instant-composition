@@ -439,6 +439,24 @@ describe("an unauthenticated answer", () => {
     },
   );
 
+  it("counts an answer that succeeds only after a refresh as signed in", async () => {
+    const visited = stubLocation();
+    const answers = [
+      envelope(401, "ERR_UNAUTHENTICATED"),
+      new Response(null, { status: 204 }),
+      Response.json({ settings: {} }),
+    ];
+    stubFetch(() => Promise.resolve(answers.shift() ?? envelope(500, "ERR_X")));
+    expect((await getSettings()).ok).toBe(true);
+    const expired = [
+      envelope(401, "ERR_UNAUTHENTICATED"),
+      envelope(401, "ERR_UNAUTHENTICATED"),
+    ];
+    stubFetch(() => Promise.resolve(expired.shift() ?? envelope(500, "ERR_X")));
+    expect(await staysPending(getHome(), visited)).toBe(true);
+    expect(visited).toStrictEqual([LOGIN_URL]);
+  });
+
   it("counts only a successful answer as signed in", async () => {
     const visited = stubLocation();
     const answers = [

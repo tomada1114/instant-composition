@@ -501,6 +501,24 @@ describe("a visitor who is not signed in", () => {
     ]);
   });
 
+  it("signs in on Space, whether or not the sign-in link has focus, and leaves Enter on it to the browser", async () => {
+    serveSignedOut();
+    await renderApp("/");
+    const link = screen.getByRole("link", { name: ja.Landing.signIn });
+    let presses = 0;
+    link.addEventListener("click", (event) => {
+      presses += 1;
+      event.preventDefault();
+    });
+    press(" ");
+    expect(presses).toBe(1);
+    link.focus();
+    fireEvent.keyDown(link, { key: " " });
+    expect(presses).toBe(2);
+    fireEvent.keyDown(link, { key: "Enter" });
+    expect(presses).toBe(2);
+  });
+
   it.each(["/records", "/settings", "/welcome", "/recap", "/drill?kind=today"])(
     "is sent from %s to the landing screen at /, not to sign in",
     async (path) => {
@@ -521,7 +539,7 @@ describe("a visitor who is not signed in", () => {
 describe("a session that runs out while the app is open", () => {
   it("sends the browser to sign in, and the next screen stays loading with no failure", async () => {
     const visited = stubAssign();
-    fakeApi((call) =>
+    const calls = fakeApi((call) =>
       call.url === "/api/v1/home"
         ? Response.json(homeView({ kind: "ready", streak: COUNT }))
         : refusal(401, "ERR_UNAUTHENTICATED"),
@@ -532,6 +550,14 @@ describe("a session that runs out while the app is open", () => {
     await settle(TUNING.skeletonDelayMs);
     expect(visited).toStrictEqual(["/api/v1/auth/login"]);
     expect(where()).toBe("/records");
+    expect(calls.map((call) => call.url).slice(-2)).toStrictEqual([
+      "/api/v1/records",
+      "/api/v1/auth/refresh",
+    ]);
+    // The records page's loading state: its column, and nothing in it.
+    const mains = document.querySelectorAll("main");
+    expect(mains).toHaveLength(1);
+    expect(mains[0]?.childElementCount).toBe(0);
     expect(
       screen.queryByRole("heading", { name: ja.Home.loadFailed.title }),
     ).not.toBeInTheDocument();
