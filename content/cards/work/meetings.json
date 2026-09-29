@@ -497,22 +497,6 @@
     "stamps": {}
   },
   {
-    "id": "c_8p3g7p3k",
-    "ja": "データを見ていたら、今ごろ賛成しているのに。",
-    "en": "If I'd seen the data, I'd agree now.",
-    "alternatives": [
-      "If I'd seen the data, I'd be on board now.",
-      "Had I seen the data, I'd be on board now."
-    ],
-    "point": "過去の条件＋今の結果は If 過去完了, would＋原形",
-    "topic": "work",
-    "subtopic": "meetings",
-    "level": 8,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8v5n3y7j",
     "ja": "では、会議を始めましょう。",
     "en": "Let's start the meeting.",

@@ -171,22 +171,6 @@
     }
   },
   {
-    "id": "c_4c4m4x5s",
-    "ja": "私が部長なら、フレックスタイム制を導入するのに。",
-    "en": "If I were the boss, I'd bring in flextime.",
-    "alternatives": [
-      "If I were in charge, I'd bring in flextime.",
-      "Were I the boss, I'd introduce flextime."
-    ],
-    "point": "現在の仮定は If I were、主節は would + 原形",
-    "topic": "work",
-    "subtopic": "office-life",
-    "level": 8,
-    "grammar": ["second-conditional", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5g6u2u8c",
     "ja": "昨日決まったこと、まだ聞いてないよ。",
     "en": "I haven't heard what was decided yesterday.",
@@ -441,6 +425,22 @@
     }
   },
   {
+    "id": "c_7v3g6h9u",
+    "ja": "あのとき有休を申請していれば、今ごろ旅行中なのに。",
+    "en": "If I'd requested leave then, I'd be traveling now.",
+    "alternatives": [
+      "If I'd applied for leave then, I'd be traveling now.",
+      "If I'd requested leave, I'd be traveling now."
+    ],
+    "point": "過去の仮定は had + 過去分詞、今の結果は would be",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8b7g8q5r",
     "ja": "金曜は休みを取ると、課長に伝えておいたよ。",
     "en": "I told my manager I'd be taking Friday off.",
@@ -502,22 +502,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9e6j3u4g",
-    "ja": "昨日私が会議室を予約していれば、今使えるのに。",
-    "en": "If I'd booked the room, we'd have it now.",
-    "alternatives": [
-      "Had I booked the room, we'd have it now.",
-      "If I'd reserved the room, we could use it now."
-    ],
-    "point": "過去の仮定 had + 過去分詞、今の結果は would + 原形",
-    "topic": "work",
-    "subtopic": "office-life",
-    "level": 8,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9g5y4a8f",

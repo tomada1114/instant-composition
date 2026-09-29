@@ -101,22 +101,6 @@
     }
   },
   {
-    "id": "c_3b4j6y9y",
-    "ja": "会議室からかけているので、声が反響するかも。",
-    "en": "Calling from a meeting room, my voice may echo.",
-    "alternatives": [
-      "I'm in a meeting room, so my voice may echo.",
-      "Since I'm calling from a meeting room, it may echo."
-    ],
-    "point": "同じ主語の理由は -ing で始める分詞構文にできる",
-    "topic": "work",
-    "subtopic": "phone-calls",
-    "level": 8,
-    "grammar": ["participle-clauses", "hedging-softening"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3p9d8h7c",
     "ja": "請求を担当している方に、つないでいただけますか？",
     "en": "Could you put me through to whoever handles billing?",
@@ -171,38 +155,6 @@
     "stamps": {}
   },
   {
-    "id": "c_4j3j5b2c",
-    "ja": "二回途切れたので、いったん切ってかけ直します。",
-    "en": "Having lost you twice, I'll hang up and redial.",
-    "alternatives": [
-      "After losing you twice, I'll hang up and call back.",
-      "We got cut off twice, so I'll call you back."
-    ],
-    "point": "理由は Having＋過去分詞で前に置ける",
-    "topic": "work",
-    "subtopic": "phone-calls",
-    "level": 8,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4n2v5b5m",
-    "ja": "彼が忙しくても、折り返し電話をくれるよう伝えてもらえますか？",
-    "en": "Even if he's swamped, could you have him ring me back?",
-    "alternatives": [
-      "Even if he's busy, could you get him to call me back?",
-      "Busy or not, could you have him call me back?"
-    ],
-    "point": "「〜させる」は have him + 原形。ring me back は電話の定番",
-    "topic": "work",
-    "subtopic": "phone-calls",
-    "level": 10,
-    "grammar": ["concession-contrast", "causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_4s9c3r4w",
     "ja": "今電話中の人は、部長のアシスタントです。",
     "en": "The person on the phone is the manager's assistant.",
@@ -215,6 +167,22 @@
     "subtopic": "phone-calls",
     "level": 6,
     "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4t2e5j3q",
+    "ja": "二回切れたので、いったん切ってかけ直します。",
+    "en": "We dropped twice, so I'll hang up and redial.",
+    "alternatives": [
+      "The call dropped twice, so I'll hang up and redial.",
+      "It cut out twice, so I'll hang up and redial."
+    ],
+    "point": "「切る」は hang up、「かけ直す」は redial",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 7,
+    "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -239,6 +207,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_4v7u9s2k",
+    "ja": "会議室からかけてるので、私の声が響くかも。",
+    "en": "I'm in a meeting room, so I might echo.",
+    "alternatives": [
+      "I'm calling from a meeting room, so it may echo.",
+      "I'm in a meeting room, so it might echo."
+    ],
+    "point": "「〜かも」は might / may で言う",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5e5m3r3f",
@@ -396,6 +380,22 @@
     }
   },
   {
+    "id": "c_6j8d5w5x",
+    "ja": "電話を切るまで、ミュートだったと気づかなかったよ。",
+    "en": "I didn't realize I'd been muted until I hung up.",
+    "alternatives": [
+      "I didn't realize I was muted until I hung up.",
+      "I found out I'd been on mute after I hung up."
+    ],
+    "point": "気づく前の状態は過去完了 I'd been muted",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 9,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6p7n8e5k",
     "ja": "今運転中なので、後でかけ直します。",
     "en": "I'm driving. I'll call you back.",
@@ -440,18 +440,18 @@
     }
   },
   {
-    "id": "c_6t5m2p7r",
-    "ja": "電話を切って初めて、ミュートだったと気づいたよ。",
-    "en": "Only after hanging up did I realize I'd been muted.",
+    "id": "c_6r8k2j4n",
+    "ja": "回線が悪いので、私がかけ直したほうがよさそう。",
+    "en": "The line's breaking up, so I'd better call back.",
     "alternatives": [
-      "Not until I hung up did I realize I was muted.",
-      "I didn't realize I'd been muted until I hung up."
+      "The connection's bad, so maybe I should call you back.",
+      "We're breaking up, so I'd better call you back."
     ],
-    "point": "Only after 〜 の後は疑問文の語順（did I realize）",
+    "point": "自分がしたほうがいいときは I'd better＋原形",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 10,
-    "grammar": ["inversion"],
+    "level": 7,
+    "grammar": ["modal-obligation-advice", "hedging-softening"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -551,22 +551,6 @@
     "stamps": {}
   },
   {
-    "id": "c_8f4n6c4j",
-    "ja": "私は、こんなに途切れる通話を経験したことがない。",
-    "en": "Never have I had a call this choppy.",
-    "alternatives": [
-      "I've never had a call this choppy.",
-      "Never have I been on such a choppy call."
-    ],
-    "point": "Never を文頭に出すと、have I の語順に倒置する",
-    "topic": "work",
-    "subtopic": "phone-calls",
-    "level": 9,
-    "grammar": ["inversion"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8g2g6x3z",
     "ja": "山田さんが君にも入ってほしいって。",
     "en": "Yamada wants you to join too.",
@@ -649,18 +633,18 @@
     }
   },
   {
-    "id": "c_9s5w2c5f",
-    "ja": "回線が不安定だから、かけ直したほうがいいですね。",
-    "en": "The line's unstable, so we should call back.",
+    "id": "c_9y3a2z4y",
+    "ja": "こんなに途切れる電話、初めてだ。",
+    "en": "I've never had a call this choppy.",
     "alternatives": [
-      "Since the line's unstable, we should call back.",
-      "The connection's unstable, so we'd better call back."
+      "This is the choppiest call I've ever had.",
+      "I've never been on such a choppy call."
     ],
-    "point": "「〜したほうがいい」は should か had better で言う",
+    "point": "「初めて」は I've never＋過去分詞で言う",
     "topic": "work",
     "subtopic": "phone-calls",
     "level": 7,
-    "grammar": ["modal-obligation-advice"],
+    "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   }

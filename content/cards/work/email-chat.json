@@ -67,22 +67,6 @@
     }
   },
   {
-    "id": "c_2n4d5s3c",
-    "ja": "資料をざっと見て、2 点質問があります。",
-    "en": "Having skimmed the materials, I have two questions.",
-    "alternatives": [
-      "After skimming the materials, I have two questions.",
-      "I skimmed the materials and have two questions."
-    ],
-    "point": "「〜し終えて」は Having + 過去分詞で先に言う",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 6,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2q6t8t7y",
     "ja": "確定には、金曜までに正確な数量がほしいのですが。",
     "en": "To finalize, we'd need the exact quantity by Friday.",
@@ -138,7 +122,13 @@
     "level": 9,
     "grammar": ["third-conditional", "inversion"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0e9e777f8d8a526500aaad7bf18b8dd29fe5e042fe007cc56a38bf6b1f50edc0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3t9f5v8w",
@@ -195,23 +185,13 @@
     "level": 6,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5v7r3c9s",
-    "ja": "二回催促したのに、まだ返事がありません。",
-    "en": "Although I've followed up twice, I still haven't heard back.",
-    "alternatives": [
-      "Even though I've followed up twice, there's still no reply.",
-      "I've followed up twice, but I still haven't heard back."
-    ],
-    "point": "催促する は follow up、返事をもらう は hear back",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 7,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ee8cdefb919da66b14974056558f3c2c22b5eea53cea549e17ab26f1ef9efe36",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5y8y6s3r",
@@ -268,7 +248,13 @@
     "level": 4,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:50a052a210ae39b66d854002f9ebd3badfc3337545ca0e1caed688dc644dac5c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6p3y8z5j",
@@ -284,7 +270,13 @@
     "level": 4,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bbfe94b3dc1e0a56b74604144aec32c8ab9e9758c04290c27bb352dfe0ea55d1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6p4u6b4c",
@@ -319,7 +311,13 @@
     "level": 8,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a4c7e893f047bd7ae40c38690c24b98b7efdb4935d2a455bc80254cc8babc204",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7b7w7x6x",
@@ -335,7 +333,13 @@
     "level": 4,
     "grammar": ["relative-clauses", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8dbbad82ee97134aab8873b66d813cf6f5d49a977a4a8e45e2c248bcd365baa5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7e8r2c9g",
@@ -351,7 +355,13 @@
     "level": 10,
     "grammar": ["inversion"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d13d5a1e5ffe9f2a1b5014ad3cebdceb75ae39e83ffb70d24ff270cd85b3c2e1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7h5r3t7e",
@@ -386,7 +396,13 @@
     "level": 3,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7b0230d6260ced6de196bccb21ad89906b6a1048c9f66fdebb03eee8ffb7d6e8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7w5n9f6z",
@@ -399,23 +415,13 @@
     "level": 2,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8a6k9g3v",
-    "ja": "先方が言った期限、確認してもらえる？",
-    "en": "Could you confirm the deadline they mentioned?",
-    "alternatives": [
-      "Can you confirm the deadline they gave us?",
-      "Could you double-check the deadline they mentioned?"
-    ],
-    "point": "deadline のあとの that は省略できる",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 9,
-    "grammar": ["relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c4189c150441fe47d1a365672fbc2d3cae21181fbac9390fbade1f09ddf1100a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8c6g2z7d",
@@ -494,23 +500,13 @@
     "level": 4,
     "grammar": ["time-and-if-clauses", "future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9p2b4g9a",
-    "ja": "今、開いているファイルはどれですか？",
-    "en": "Which file do you have open?",
-    "alternatives": [
-      "Which file is open right now?",
-      "Which file are you on right now?"
-    ],
-    "point": "開いている状態は「have ～ open」で言う",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 2,
-    "grammar": ["wh-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ddabb4d1692452e106a0686dfee5c0ff98c575cb6c4487b5c2241a4a15cbadeb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9s3q9p4z",
