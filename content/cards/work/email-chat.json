@@ -36,7 +36,13 @@
     "level": 7,
     "grammar": ["wishes-regrets", "modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ba76381223c36204b16a0e3717fc89f28842ac82af192bff51f2a56f44557e76",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2k2u4j9m",
@@ -61,23 +67,6 @@
     }
   },
   {
-    "id": "c_2k3d9q8p",
-    "ja": "先方が聞きたいのは、納期を変更できるかどうかです。",
-    "en": "What they're asking is whether we can reschedule.",
-    "alternatives": [
-      "What they want to know is if we can reschedule.",
-      "What they're wondering is whether we can move the date.",
-      "What they're asking is whether the deadline can change."
-    ],
-    "point": "What 節が主語、「〜かどうか」は whether で語順は平叙文",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 8,
-    "grammar": ["cleft-emphasis", "noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2q6t8t7y",
     "ja": "確定には、金曜までに正確な数量がほしいのですが。",
     "en": "To finalize, we'd need the exact quantity by Friday.",
@@ -92,7 +81,13 @@
     "level": 7,
     "grammar": ["infinitives", "hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4e5026ae410fe8cc3737d4e15e9558e23cbd8a88eaf824e49d5136673373bda0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2x6m2d2t",
@@ -133,22 +128,6 @@
     }
   },
   {
-    "id": "c_4m4h8g7b",
-    "ja": "部長が今朝、議事録を添付して全員に送りました。",
-    "en": "This morning the manager emailed everyone, attaching the minutes.",
-    "alternatives": [
-      "The manager emailed everyone this morning with the minutes attached.",
-      "The manager emailed everyone this morning, attaching the minutes."
-    ],
-    "point": "「添付して」は attaching で文の後ろにつなげる",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 7,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5d6g8t6x",
     "ja": "請求書は、経理に今週中に直してもらいます。",
     "en": "I'll have accounting fix the invoice this week.",
@@ -162,7 +141,13 @@
     "level": 6,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4c66ad1932c204bd7ae8472aba8d1efe040336533538406fdb9cefcc596e5823",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5y8y6s3r",
@@ -182,38 +167,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_6a7g7p4a",
-    "ja": "会議で決めたこと、チームのチャットに貼ってもらえますか？",
-    "en": "Could you post what we settled on to the team chat?",
-    "alternatives": [
-      "Could you post what we decided to the team chat?",
-      "Would you mind putting what we agreed on in the team chat?"
-    ],
-    "point": "「決めたこと」は what we settled on で post の目的語に",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 10,
-    "grammar": ["noun-clauses", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6d6d8r2u",
-    "ja": "君が早く言ってくれてたら、返信間に合ったのに。",
-    "en": "If you'd said earlier, I'd have replied on time.",
-    "alternatives": [
-      "If you'd told me sooner, I'd have replied in time.",
-      "If you'd said something sooner, I'd have replied on time."
-    ],
-    "point": "過去の反実仮想は if + had 過去分詞、主節は would have",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 8,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_6f8n4m2s",
@@ -298,22 +251,6 @@
     }
   },
   {
-    "id": "c_8v2u2b7w",
-    "ja": "彼女が見積もりの条件をもう確認したか分かりません。",
-    "en": "I'm not sure whether she's already checked the quote's terms.",
-    "alternatives": [
-      "I don't know if she's looked over the terms yet.",
-      "I have no idea if she's gone through the terms."
-    ],
-    "point": "間接疑問は whether / if の後を平叙文の語順にする",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 7,
-    "grammar": ["indirect-questions", "noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8y7x7h7v",
     "ja": "先方は、月曜までに送ると言っていましたよ。",
     "en": "The client said they'd send it by Monday.",
@@ -329,9 +266,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:8b309894d378ed10d385c46f68c946ddc4564599e6f425d235fb28735633c4f2",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:872629fd5720c204b1297031f577a2555c9cd3f01c484d19a54c2815b8026be2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -349,7 +286,13 @@
     "level": 6,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a6b467c4a2e006ec6970639de9db5562903602cf37b8d3012c2e868aa6eec95c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9s3q9p4z",
@@ -365,22 +308,12 @@
     "level": 9,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9x6m3e6f",
-    "ja": "山田さん、返事なし。僕のチャット見逃したかも。",
-    "en": "Yamada hasn't replied. He might have missed my chat.",
-    "alternatives": [
-      "Yamada hasn't answered, so he may have missed my chat.",
-      "No reply from Yamada. Maybe he overlooked my chat."
-    ],
-    "point": "過去の推量は might miss ではなく might have missed",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 8,
-    "grammar": ["modal-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:872a64aaca37faa379125572bea8402b24fd763b21197b2e4633a9266c71ea84",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]

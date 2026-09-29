@@ -66,22 +66,6 @@
     }
   },
   {
-    "id": "c_3p8q9u4z",
-    "ja": "入社前に、すでに5年エンジニアをしていました。",
-    "en": "I'd been an engineer for five years before joining.",
-    "alternatives": [
-      "Before joining, I'd spent five years as an engineer.",
-      "I'd already worked as an engineer for five years."
-    ],
-    "point": "入社より前のことなので had been と過去完了にする",
-    "topic": "work",
-    "subtopic": "job-interview",
-    "level": 6,
-    "grammar": ["past-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3t9g8y3r",
     "ja": "この仕事、技術より対話力が大切ですか？",
     "en": "Is communication more important than technical skill here?",
@@ -194,22 +178,6 @@
       "She has exactly the experience we're after."
     ],
     "point": "「求めているもの」は what we're looking for。for を残す",
-    "topic": "work",
-    "subtopic": "job-interview",
-    "level": 7,
-    "grammar": ["noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4m6y6m3a",
-    "ja": "応募理由は、御社の製品開発に関われることです。",
-    "en": "My reason is that I'd help develop your products.",
-    "alternatives": [
-      "I applied because I'd get to work on your products.",
-      "The main draw is being involved in product development."
-    ],
-    "point": "reason is that 〜 の形。because でつなげない",
     "topic": "work",
     "subtopic": "job-interview",
     "level": 7,
@@ -408,6 +376,38 @@
     "subtopic": "job-interview",
     "level": 9,
     "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9e8b3h6b",
+    "ja": "入社前に、すでに5年エンジニアをしていました。",
+    "en": "I'd been an engineer for five years before joining.",
+    "alternatives": [
+      "Before joining, I'd spent five years as an engineer.",
+      "I'd already been an engineer five years before joining."
+    ],
+    "point": "入社より前のことなので had been と過去完了にする",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9n3e3f6j",
+    "ja": "応募したのは、御社の製品開発に関われるからです。",
+    "en": "I applied to get involved in your product development.",
+    "alternatives": [
+      "I applied because I'd get to work on your products.",
+      "I applied because I can be involved in product development."
+    ],
+    "point": "関われる は get involved / get to work on で言う",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
     "stamps": {}
   }

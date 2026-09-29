@@ -145,11 +145,11 @@
   },
   {
     "id": "c_5b8m3j6y",
-    "ja": "部長が来たとき、休んでた？",
+    "ja": "部長が来たとき、休憩してた？",
     "en": "Were you resting when the boss came?",
     "alternatives": [
-      "Were you on break when he came?",
-      "Were you resting when he came by?"
+      "Were you resting when the manager came?",
+      "Were you resting when the boss arrived?"
     ],
     "point": "その時していた最中の動作は Were you -ing で聞く",
     "topic": "work",
@@ -283,12 +283,12 @@
   {
     "id": "c_7f9v2k8p",
     "ja": "在宅勤務なら、朝ゆっくり寝られるのに。",
-    "en": "If I worked remotely, I'd sleep in.",
+    "en": "If I worked remotely, I could sleep in.",
     "alternatives": [
-      "I'd sleep in if I worked from home.",
-      "If I worked from home, I'd sleep later."
+      "I could sleep in if I worked remotely.",
+      "If I telecommuted, I could sleep in."
     ],
-    "point": "現在の仮定は If＋過去形、主節は would",
+    "point": "「寝られるのに」は could。If＋過去形で現在の仮定",
     "topic": "work",
     "subtopic": "office-life",
     "level": 5,

@@ -36,11 +36,11 @@
   },
   {
     "id": "c_4d4y9c8j",
-    "ja": "今決めるのは、発売を延ばすかどうかですよね？",
+    "ja": "今決めるのは、発売を延ばすかどうかです。",
     "en": "What we're deciding is whether to delay the launch.",
     "alternatives": [
-      "What we need to decide is whether to delay launch.",
-      "The thing we're deciding is whether to delay the launch."
+      "What we're deciding is whether to postpone the launch.",
+      "What we're deciding is whether to push back the launch."
     ],
     "point": "「かどうか」は whether to ～、What ～ is に続ける",
     "topic": "work",
@@ -58,7 +58,7 @@
       "We have three things to discuss.",
       "There are three items to discuss."
     ],
-    "point": "discuss は他動詞なので about を付けない",
+    "point": "「話し合うこと」は things to discuss と名詞の後ろに to 不定詞を置く",
     "topic": "work",
     "subtopic": "meetings",
     "level": 3,
@@ -69,15 +69,15 @@
   {
     "id": "c_4g3y6e6z",
     "ja": "部長が反対でも、私ならやはりみんなにきちんと説明します。",
-    "en": "Even if the boss objects, I'd still walk them through it.",
+    "en": "Even if the boss objects, I'd still walk everyone through it.",
     "alternatives": [
-      "Even if the boss disagrees, I'd still explain it carefully.",
-      "Even if the boss objects, I'd still explain it properly."
+      "Even if the boss disagrees, I'd still explain it to everyone.",
+      "Even if my boss objects, I'd still brief everyone properly."
     ],
     "point": "「たとえ〜でも」は even if、主節に still を添える",
     "topic": "work",
     "subtopic": "meetings",
-    "level": 10,
+    "level": 9,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -85,10 +85,10 @@
   {
     "id": "c_4y4g3b2b",
     "ja": "すみません、最後が聞こえなくて。",
-    "en": "Sorry, I couldn't hear the end.",
+    "en": "Sorry, I couldn't hear the last part.",
     "alternatives": [
-      "Sorry, I couldn't catch the end.",
-      "Excuse me, I couldn't hear the end."
+      "Sorry, I couldn't catch the last part.",
+      "Sorry, I didn't catch the last part."
     ],
     "point": "「聞こえなかった」は didn't hear より couldn't hear",
     "topic": "work",
@@ -123,23 +123,23 @@
     "en": "Could you share any information you have?",
     "alternatives": [
       "Would you mind sharing any information you have?",
-      "If you have any information, could you share it?"
+      "Can you share whatever information you have?"
     ],
     "point": "information は数えられないので an や -s をつけない",
     "topic": "work",
     "subtopic": "meetings",
-    "level": 6,
+    "level": 4,
     "grammar": ["articles-and-countability", "requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_5c9u7k6k",
-    "ja": "予算があれば、承認するんですが。",
-    "en": "If we had the budget, we'd approve.",
+    "ja": "予算があれば、うちは承認するんですが。",
+    "en": "If we had the budget, we'd approve it.",
     "alternatives": [
       "We'd approve it if we had the budget.",
-      "If we had the funds, we'd approve."
+      "If we had the funds, we'd approve it."
     ],
     "point": "現実と違う仮定は if 節を過去形、主節は would",
     "topic": "work",
@@ -152,10 +152,10 @@
   {
     "id": "c_5f9v4s9d",
     "ja": "一番の懸念は、まだ誰が責任者か決まっていないことです。",
-    "en": "What worries me is we haven't decided who's in charge.",
+    "en": "What worries me most is nobody's decided who's in charge yet.",
     "alternatives": [
-      "What concerns me is that nobody's decided who's in charge yet.",
-      "My worry is that we still haven't decided who's in charge."
+      "My biggest worry is that nobody's decided who's in charge yet.",
+      "What concerns me most is that nobody's decided who's in charge."
     ],
     "point": "who 以下は疑問文ではなく平叙文の語順",
     "topic": "work",
@@ -200,10 +200,10 @@
   {
     "id": "c_6c9y7w9x",
     "ja": "あそこに座っている女性がリーダーです。",
-    "en": "The woman sitting there is our leader.",
+    "en": "The woman sitting over there is the leader.",
     "alternatives": [
-      "The woman sitting over there is our leader.",
-      "The lady sitting there is our team leader."
+      "The woman sitting there is the leader.",
+      "The woman seated over there is the leader."
     ],
     "point": "sitting there が後ろから woman を説明する",
     "topic": "work",
@@ -218,7 +218,7 @@
     "ja": "部長は事前に全部読み終えていた。",
     "en": "The manager had read everything beforehand.",
     "alternatives": [
-      "The manager had already read everything.",
+      "The manager had read it all in advance.",
       "The manager had read everything ahead of time."
     ],
     "point": "先に終わっていたことは had + 過去分詞",
@@ -232,8 +232,8 @@
   {
     "id": "c_6s2y4h3j",
     "ja": "私はその案に賛成です。",
-    "en": "I agree with the idea.",
-    "alternatives": ["I'm for the idea.", "I support the idea."],
+    "en": "I agree with that idea.",
+    "alternatives": ["I'm in favor of that idea.", "I support that idea."],
     "point": "agree は be 動詞なしで使う（I'm agree は誤り）",
     "topic": "work",
     "subtopic": "meetings",
@@ -313,7 +313,7 @@
     "point": "過去進行形 was wondering で柔らかい依頼に",
     "topic": "work",
     "subtopic": "meetings",
-    "level": 8,
+    "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -329,7 +329,7 @@
     "point": "未来のことでも if 節は現在形",
     "topic": "work",
     "subtopic": "meetings",
-    "level": 8,
+    "level": 7,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
