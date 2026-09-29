@@ -262,7 +262,7 @@
     },
     {
       "id": "nested-clauses",
-      "ja": "節の入れ子・長い名詞句",
+      "ja": "節の入れ子（節の中の節）",
       "minLevel": 8,
       "maxLevel": 10,
       "example": "The man who told me what you said wasn't sure."
