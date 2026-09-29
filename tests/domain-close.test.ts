@@ -462,16 +462,32 @@ describe("the level over rounds of ten new cards", () => {
     expect(playRounds(7, 8, upTo(4, "slow"))).toStrictEqual([6, 5, 4, 4, 4, 4, 4, 4]);
   });
 
+  /** Wrong, right and slow, or right and fast, a third of the time each or so. */
+  const mixedFrom = (seed: number) => {
+    const random = seededRandom(`mixed-${String(seed)}`);
+    return (): Answer => {
+      const roll = random();
+      return roll < 0.35 ? "miss" : roll < 0.7 ? "slow" : "fast";
+    };
+  };
+
   it.each(Array.from({ length: 40 }, (_, seed) => seed))(
     "moves at most one step on a round of mixed answers (seed %i)",
     (seed) => {
-      const random = seededRandom(`mixed-${String(seed)}`);
-      const mixed = (): Answer => {
-        const roll = random();
-        return roll < 0.35 ? "miss" : roll < 0.7 ? "slow" : "fast";
-      };
-      const [after] = playRounds(5, 1, mixed);
+      const [after] = playRounds(5, 1, mixedFrom(seed));
       expect(Math.abs((after ?? 0) - 5)).toBeLessThanOrEqual(1);
+    },
+  );
+
+  it.each(Array.from({ length: 40 }, (_, seed) => seed))(
+    "moves at most one step on a round of mixed answers after two steady ones (seed %i)",
+    (seed) => {
+      const mixed = mixedFrom(seed);
+      const levels = playRounds(5, 3, (card, _, round) =>
+        round < 2 ? upTo(5)(card) : mixed(),
+      );
+      expect(levels.slice(0, 2)).toStrictEqual([5, 5]);
+      expect(Math.abs((levels[2] ?? 0) - 5)).toBeLessThanOrEqual(1);
     },
   );
 });

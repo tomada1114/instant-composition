@@ -46,9 +46,10 @@ function verdictOf(answers: readonly DifficultyAnswer[]): Verdict {
  * Each card level is judged on its own answers in the window. A failed level
  * comes down to the highest level below it that has not failed; otherwise the
  * level rises to the highest cleared one above it, passing only levels too
- * thin to judge, so a held or failed level on the way stops the climb. One
- * round of ten is dealt too few cards off the level to judge two levels, so
- * it moves at most one step; a larger move needs the answers of several.
+ * thin to judge, so a held or failed level on the way stops the climb. From
+ * an empty window, one round of ten deals too few cards off the level to
+ * judge any of them, so it moves at most one step; a larger move needs the
+ * answers of several rounds.
  *
  * @param answers - First-pass answers since the level was last placed or
  * picked, across the moves the answers made since.
