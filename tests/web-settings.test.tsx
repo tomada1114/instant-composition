@@ -332,6 +332,48 @@ describe("the settings screen, W11 size and sound", () => {
     expect(toggle).toHaveAttribute("aria-checked", "true");
     expect(screen.queryByRole("alert")).not.toBeInTheDocument();
   });
+
+  it.each([
+    ["still in flight", false],
+    ["already saved", true],
+  ])(
+    "takes back only a failed save's own change when a later one is %s",
+    async (_state, laterAnswered) => {
+      const answers: { resolve(r: Response): void; reject(e: Error): void }[] = [];
+      fakeApi((call) =>
+        call.method === "GET"
+          ? Response.json(PAGE)
+          : new Promise<Response>((resolve, reject) => {
+              answers.push({ resolve, reject });
+            }),
+      );
+      await renderApp("/settings");
+      const travel = screen.getByRole("button", { name: /旅行/u });
+      const five = (): HTMLElement =>
+        screen.getByRole("radio", {
+          name: fill(ja.Settings.size.count, { count: 5 }),
+        });
+      fireEvent.click(travel);
+      await settle();
+      fireEvent.click(five());
+      await settle();
+      if (laterAnswered) {
+        answers[1]?.resolve(
+          Response.json({
+            settings: { ...SETTINGS, dailySize: 5 },
+            removedFocus: [],
+            completedToday: false,
+          } satisfies SettingsView),
+        );
+        await settle();
+      }
+      answers[0]?.reject(new TypeError("fetch failed"));
+      await settle();
+      expect(travel).toHaveAttribute("aria-pressed", "false");
+      expect(five()).toBeChecked();
+      expect(screen.getByRole("alert")).toHaveTextContent(ja.Settings.saveFailed);
+    },
+  );
 });
 
 /** The level tab's retest button. */
