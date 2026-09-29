@@ -16,7 +16,6 @@ export const TUNING = {
   pace: { baseSeconds: 4, secondsPerWord: 0.5, minSeconds: 6, maxSeconds: 20 },
   /** A correct answer flipped within this share of its card's pace is "fast". */
   fastRatio: 0.5,
-  estimateSecondsPerCard: 30,
   /** Fewer cards than this and no round is built. */
   minDeckSize: 5,
   placementSize: 10,

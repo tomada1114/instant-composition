@@ -44,7 +44,7 @@ to the design's names.
 | `toast`                   | —                                                                 | shown for 4 s                                                                  |
 | `inline-notice`           | —                                                                 | unsaved records; gone once sent                                                |
 | `skeleton`                | —                                                                 | when the start screen takes over 300 ms                                        |
-| `empty-state`             | —                                                                 | not enough cards; cards could not be loaded                                    |
+| `empty-state`             | —                                                                 | not enough cards; cards could not be loaded; no such page                      |
 | `landing`                 | — (the signed-out `/`)                                            | —                                                                              |
 
 There is no status chip. "To review", "timed out", "again" and "fast" are text with a
@@ -341,10 +341,17 @@ above and below each. Section titles are muted `label`s.
 - `info-tip`: a 44 hit area around a 16 ⓘ glyph beside a section title; pressing it
   opens one muted `caption` line under the title in place (`aria-expanded`). For a
   definition someone needs once: what counts as mastered, how the streak counts.
-- `toast`: 24 above the bottom edge; `bg-raised rounded-tile`, `text-foreground`, the
-  notice glyph; gone after 4 s. Never red. No success toast, ever.
+- `toast`: fixed across the column with its 16 gutter, 96 above the column's bottom edge
+  (plus `--column-inset` and `--safe-bottom`), so it clears the drill's bottom buttons;
+  `bg-raised rounded-tile`, padding 14 / 16, the notice glyph 12 before a
+  `text-foreground` line. Gone after 4 s (`TUNING.toastMs`), shown again for each new
+  failure; it takes no press (`pointer-events-none`) and speaks through a
+  `role="status"` region that stays mounted. Never red. No success toast, ever.
+  `apps/web/src/drill/toast.tsx` is this recipe.
 - `empty-state`: a `bg-card rounded-card` panel with a `heading`, at most one muted line
-  and one `secondary` button.
+  and one `secondary` button. A path with no screen is this panel alone, centred in the
+  column with no tab bar, its button a link home that Space and Enter press
+  (`apps/web/src/not-found.tsx`).
 - `skeleton`: after 300 ms of start-screen loading, `bg-card` blocks the size of the
   figure, the week and the panel, each with its part's radius. No text, no spinner, no
   pulsing.

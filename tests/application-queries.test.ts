@@ -169,6 +169,16 @@ describe("home", () => {
     });
   });
 
+  it("estimates the minutes at the learner's chosen limit per card", async () => {
+    const h = makeHarness();
+    await placed(h);
+    await updateSettings(h.deps, h.context(), { limitSeconds: 60 });
+
+    const view = await home(h.deps, h.context(NOON + DAY_MS));
+
+    expect(view.ok && view.value.preview).toMatchObject({ size: 10, minutes: 10 });
+  });
+
   it("names the weak grammar today's deal carries, and none after a clean record", async () => {
     const missed = makeHarness();
     await placed(missed, 10, true);

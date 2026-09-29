@@ -123,7 +123,11 @@ the `DAY#` tallies and the escaping rule above, and names the key attributes `PK
 `SK`. `PROFILE` and the identity mapping are written together by the learner directory
 when a learner first signs in ([ADR-0005](0005-identity-and-authorization.md)), each
 only while absent, and `PROFILE` is changed afterwards through the learner-bound store
-at its version; `LEVEL#` and `TITLE#` arrive with the features that write them.
+at its version. Nothing writes `LEVEL#` or `TITLE#` yet. The level, its mode and why it
+last moved (a placement, the answers, or the learner's pick), and the awarded titles,
+are kept in `STATS`; a round's move is also recorded in that round's summary, but a
+level picked by hand leaves no entry once it is replaced. `LEVEL#` and `TITLE#` arrive
+with the first feature that reads a level's history or a title's award on its own.
 
 ### Idempotency and offline sync
 
