@@ -26,7 +26,7 @@
     "point": "Thanks for の後は動詞の ing 形",
     "topic": "social",
     "subtopic": "thanks-apologies",
-    "level": 4,
+    "level": 3,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -76,19 +76,6 @@
     "subtopic": "thanks-apologies",
     "level": 6,
     "grammar": ["modal-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2y4c8s8g",
-    "ja": "もう一度説明してもらえますか？",
-    "en": "Could you explain it again?",
-    "alternatives": ["Could you say that again?", "Would you explain it once more?"],
-    "point": "丁寧な依頼は Could you + 動詞の原形",
-    "topic": "social",
-    "subtopic": "thanks-apologies",
-    "level": 3,
-    "grammar": ["requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -222,8 +209,8 @@
     "ja": "私のミスです。次は確認します。",
     "en": "My mistake. I'll double-check next time.",
     "alternatives": [
-      "Sorry, my mistake. I'll check next time.",
-      "Sorry about that. I'll check next time."
+      "That's my fault. I'll check next time.",
+      "My mistake. I'll check next time."
     ],
     "point": "その場で決めた約束は will を使う",
     "topic": "social",
@@ -252,7 +239,7 @@
   },
   {
     "id": "c_8u2a8w6p",
-    "ja": "わざわざ迎えに来てくれて、ありがとう。",
+    "ja": "迎えに来てくれて、ありがとう。",
     "en": "Thanks for coming to pick me up.",
     "alternatives": [
       "Thank you for coming to get me.",
@@ -272,7 +259,7 @@
     "en": "Your order was sent to the wrong address.",
     "alternatives": [
       "Your order was shipped to the wrong address.",
-      "The order was delivered to the wrong address."
+      "Your order got sent to the wrong address."
     ],
     "point": "「送られた」は was sent、住所は the wrong address",
     "topic": "social",
@@ -293,7 +280,7 @@
     "point": "過去の「できなかった」は couldn't で表す",
     "topic": "social",
     "subtopic": "thanks-apologies",
-    "level": 4,
+    "level": 3,
     "grammar": ["can-could-ability", "past-simple"],
     "createdAt": "2026-09-28",
     "stamps": {}

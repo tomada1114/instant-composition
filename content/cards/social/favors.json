@@ -22,6 +22,22 @@
     }
   },
   {
+    "id": "c_2y4c8s8g",
+    "ja": "もう一度説明してもらえますか？",
+    "en": "Could you explain it again?",
+    "alternatives": [
+      "Could you go over that again?",
+      "Would you explain it once more?"
+    ],
+    "point": "丁寧な依頼は Could you + 動詞の原形",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3p7q8a8j",
     "ja": "忙しいなら、無理しなくていいよ。",
     "en": "If you're busy, you don't have to.",

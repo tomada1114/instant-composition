@@ -97,11 +97,11 @@
   },
   {
     "id": "c_4m9k4n9b",
-    "ja": "旅行の写真、姉に送ってって頼んだよ。",
+    "ja": "写真、姉に送ってって頼んだよ。",
     "en": "I asked my sister to send the photos.",
     "alternatives": [
       "I asked my sister to send the pictures.",
-      "I asked my sister to send photos."
+      "I asked my sister for the photos."
     ],
     "point": "ask＋人＋to do の形で、人の後に to を置く",
     "topic": "social",
@@ -160,7 +160,7 @@
     "point": "「中止になった」は受け身で、rained out も使える",
     "topic": "social",
     "subtopic": "small-talk",
-    "level": 4,
+    "level": 6,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -168,10 +168,10 @@
   {
     "id": "c_5f9q6w3p",
     "ja": "姉が誘ってくれなかったら、今ごろキャンプにハマってないよ。",
-    "en": "If my sister hadn't asked me, I wouldn't be into camping.",
+    "en": "If my sister hadn't invited me, I wouldn't be into camping now.",
     "alternatives": [
-      "I wouldn't be into camping now if my sister hadn't asked.",
-      "Had my sister not invited me, I wouldn't be into camping."
+      "I wouldn't be into camping now if my sister hadn't invited me.",
+      "Without my sister's invite, I wouldn't be into camping now."
     ],
     "point": "誘ったのは過去で hadn't asked、ハマってないのは今で wouldn't be",
     "topic": "social",
@@ -184,15 +184,15 @@
   {
     "id": "c_5q5g3r5s",
     "ja": "暑いね。窓、開けてもいい？",
-    "en": "It's hot. May I open the window?",
+    "en": "It's hot. Can I open the window?",
     "alternatives": [
-      "It's hot. Mind if I open the window?",
-      "It's hot. Can I open the window?"
+      "It's hot. May I open the window?",
+      "It's hot. Could I open the window?"
     ],
-    "point": "May I の後は動詞の原形",
+    "point": "Can I の後は動詞の原形",
     "topic": "social",
     "subtopic": "small-talk",
-    "level": 4,
+    "level": 2,
     "grammar": ["requests-permission", "be-and-present-simple"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -203,7 +203,7 @@
     "en": "Show me photos of your house.",
     "alternatives": [
       "Show me pictures of your house.",
-      "Let me see your house photos."
+      "Show me pictures of your home."
     ],
     "point": "複数の写真は photos か pictures と複数形にする",
     "topic": "social",
@@ -247,14 +247,17 @@
   },
   {
     "id": "c_6w4g9b9k",
-    "ja": "電話のとき、犬と遊んでたんだ。",
+    "ja": "さっきは犬と遊んでたんだ。",
     "en": "I was playing with my dog.",
-    "alternatives": ["I was busy playing with my dog.", "I was playing with the dog."],
+    "alternatives": [
+      "I was playing with the dog.",
+      "I was playing with my dog earlier."
+    ],
     "point": "「〜していた」は過去進行形 was + -ing",
     "topic": "social",
     "subtopic": "small-talk",
     "level": 3,
-    "grammar": ["progressive-aspect", "past-simple"],
+    "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -269,7 +272,7 @@
     "point": "「させてあげた」は let + 人 + 動詞の原形（to は不要）",
     "topic": "social",
     "subtopic": "small-talk",
-    "level": 8,
+    "level": 7,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -340,10 +343,10 @@
   },
   {
     "id": "c_7w4s7c6h",
-    "ja": "日焼けしてる！暖かい所に行ったに違いない。",
+    "ja": "君、日焼けしてる！暖かい所に行ったに違いない。",
     "en": "You're tanned. You must have gone somewhere warm.",
     "alternatives": [
-      "You're tanned. You must have been somewhere warm.",
+      "You're so tan! You must have gone somewhere warm.",
       "You have a tan! You must've gone somewhere warm."
     ],
     "point": "過去の推量「〜したに違いない」は must have + 過去分詞",
@@ -372,12 +375,9 @@
   },
   {
     "id": "c_8n3c5c5k",
-    "ja": "したいのは、家でのんびりすること。",
+    "ja": "したいのは家でのんびりすることだよ。",
     "en": "What I want is to relax at home.",
-    "alternatives": [
-      "All I want is to relax at home.",
-      "What I'd like is to relax at home."
-    ],
+    "alternatives": ["I want to relax at home.", "What I want is to chill at home."],
     "point": "「〜したいこと」が主語。動詞は is で受ける",
     "topic": "social",
     "subtopic": "small-talk",
@@ -389,9 +389,9 @@
   {
     "id": "c_8y7c3j9j",
     "ja": "妹は毎週テニスをするよ。",
-    "en": "My sister plays tennis weekly.",
+    "en": "My sister plays tennis every week.",
     "alternatives": [
-      "My sister plays tennis every week.",
+      "My sister plays tennis weekly.",
       "My sister plays tennis each week."
     ],
     "point": "主語が三人称単数なので plays と s を付ける",
@@ -420,11 +420,11 @@
   },
   {
     "id": "c_9e5c9p8w",
-    "ja": "天気予報を見てたら、姉はキャンプを延期してたよ。",
+    "ja": "姉が天気予報を見てたら、キャンプを延期してたはず。",
     "en": "If she'd seen the forecast, she'd have postponed camping.",
     "alternatives": [
       "My sister would've put off camping if she'd checked.",
-      "Had my sister seen the forecast, she'd have postponed camping."
+      "If she'd checked the forecast, she'd have postponed camping."
     ],
     "point": "過去の仮定は if + had 過去分詞、結果は would have",
     "topic": "social",
@@ -470,12 +470,12 @@
   {
     "id": "c_9y5y7y6s",
     "ja": "今年の夏は暑いだけでなく、雨もほとんど降らなかった。",
-    "en": "Not only was summer hot, but it barely rained.",
+    "en": "Not only was it hot this summer, it barely rained.",
     "alternatives": [
       "It wasn't just hot this summer; it hardly rained either.",
-      "Not only was it hot this summer, it barely rained."
+      "Not only was it hot this summer, but it hardly rained."
     ],
-    "point": "Not only が文頭なら was summer と語順が逆になる",
+    "point": "Not only が文頭なら was it と語順が逆になる",
     "topic": "social",
     "subtopic": "small-talk",
     "level": 9,

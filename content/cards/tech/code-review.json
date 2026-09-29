@@ -2,10 +2,10 @@
   {
     "id": "c_2h5r6m4n",
     "ja": "直したコードはずっと読みやすいね。",
-    "en": "This code is much easier to read.",
+    "en": "It's much easier to read now.",
     "alternatives": [
-      "This code is much more readable.",
-      "This is much easier to read now."
+      "This is much easier to read now.",
+      "It's much more readable now."
     ],
     "point": "比較級を強めるのは very ではなく much",
     "topic": "tech",
@@ -325,10 +325,7 @@
     "id": "c_8c8q9y9n",
     "ja": "この関数、長すぎますか？",
     "en": "Is this function too long?",
-    "alternatives": [
-      "Is this function way too long?",
-      "Is this function really too long?"
-    ],
+    "alternatives": ["Is the function too long?", "Is this function too big?"],
     "point": "形容詞の疑問文は be 動詞を文頭に出す",
     "topic": "tech",
     "subtopic": "code-review",
@@ -351,7 +348,7 @@
       "The bug got introduced last week.",
       "This bug came in last week."
     ],
-    "point": "バグは「入れられた」ので was introduced と受動態にする",
+    "point": "「入り込んだ」は誰かが入れたと見て、was introduced と受動態にする",
     "topic": "tech",
     "subtopic": "code-review",
     "level": 4,

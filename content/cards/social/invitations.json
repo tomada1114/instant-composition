@@ -1,21 +1,5 @@
 [
   {
-    "id": "c_2y3d4f5m",
-    "ja": "ひまなら君をキャンプに誘うのに、仕事なんだ。",
-    "en": "If I were free, I'd invite you camping.",
-    "alternatives": [
-      "I'd ask you camping if I were free.",
-      "If I weren't working, I'd invite you camping."
-    ],
-    "point": "現在の事実に反する仮定は If I were と過去形",
-    "topic": "social",
-    "subtopic": "invitations",
-    "level": 6,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3d4t6r4s",
     "ja": "パーティーは何時に始まるの？",
     "en": "What time does the party start?",
@@ -29,24 +13,24 @@
     "stamps": {
       "core": {
         "hash": "sha256:b9e6c94fcb1de4cb1357f528210bdbeda404929915d99d1f0cd9636a61b7eda2",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
   {
-    "id": "c_3q2g5h7t",
-    "ja": "出張で送別会の誘いを断らなきゃいけなかった。",
-    "en": "I had to turn down the farewell invitation.",
+    "id": "c_3f8g9p6m",
+    "ja": "忙しくなければ、君を食事に誘うのに。",
+    "en": "I'd invite you out if I weren't busy.",
     "alternatives": [
-      "I had to decline the farewell party invitation.",
-      "I had to say no to the farewell party."
+      "If I weren't busy, I'd invite you out.",
+      "If I weren't so busy, I'd invite you out."
     ],
-    "point": "「誘いを断る」は turn down。名詞は down の後ろでも可",
+    "point": "今の事実と逆の仮定は If I weren't と過去形",
     "topic": "social",
     "subtopic": "invitations",
     "level": 6,
-    "grammar": ["phrasal-verbs", "modal-obligation-advice"],
+    "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -67,22 +51,6 @@
     "stamps": {}
   },
   {
-    "id": "c_4r7c3e8c",
-    "ja": "妹、バーベキューは来るけど遅れるかもって。",
-    "en": "My sister said she'd come but might be late.",
-    "alternatives": [
-      "My sister told me she'd come but might be late.",
-      "My sister said she's coming but may be late."
-    ],
-    "point": "「言ってた」に合わせて will ではなく would にする",
-    "topic": "social",
-    "subtopic": "invitations",
-    "level": 7,
-    "grammar": ["reported-speech"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5k4j7p3a",
     "ja": "みんなが来られるか聞いてくれる？",
     "en": "Could you ask if everyone can make it?",
@@ -96,39 +64,35 @@
     "level": 5,
     "grammar": ["indirect-questions", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ab2bb641052052d3de1658bdddd27902045a1313f68ecb1eecb2902121f3a9f0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_5p8u3u6k",
-    "ja": "カラオケ行けたらなあ。明日は早い便なんだ。",
-    "en": "I wish I could come, but I fly early tomorrow.",
+    "id": "c_5s7b3v4m",
+    "ja": "今夜の飲み会、誰が来るか教えて。",
+    "en": "Tell me who's coming to drinks tonight.",
     "alternatives": [
-      "I wish I could go, but I fly early tomorrow.",
-      "I wish I could make it. My flight's early tomorrow."
+      "Let me know who's coming tonight.",
+      "Can you tell me who's coming tonight?"
     ],
-    "point": "今の叶わない願いは I wish I could。I wish I can とは言わない",
+    "point": "「誰が来るか」は who's coming。Tell me の後は平叙文の語順",
     "topic": "social",
     "subtopic": "invitations",
-    "level": 7,
-    "grammar": ["wishes-regrets"],
+    "level": 4,
+    "grammar": ["indirect-questions", "imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5w3p2h2c",
-    "ja": "金曜に花火大会があるよ。行かない？",
-    "en": "There are fireworks Friday. Want to go?",
-    "alternatives": [
-      "Fireworks are on Friday. Want to come?",
-      "There's a fireworks show Friday. Interested?"
-    ],
-    "point": "複数の fireworks には There are。誘いは Want to go? で軽く",
-    "topic": "social",
-    "subtopic": "invitations",
-    "level": 3,
-    "grammar": ["there-is-are"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:23bcb2c74fcb28d48d3debc392a9d85434400f9484f99c82bde8507a5c1b2529",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5w7b4u5a",
@@ -176,23 +140,13 @@
     "level": 4,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5x6x6h9e",
-    "ja": "バーベキューに飲み物持ってきてくれる？",
-    "en": "Can you bring drinks to the barbecue?",
-    "alternatives": [
-      "Could you bring some drinks to the barbecue?",
-      "Would you mind bringing drinks to the barbecue?"
-    ],
-    "point": "「持ってきて」は bring。頼むときは Can you / Could you",
-    "topic": "social",
-    "subtopic": "invitations",
-    "level": 4,
-    "grammar": ["requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:538749ede798414592e17bcb8f88be759384a9a7a954dde8680c048f2fd613c4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6e7x6d9z",
@@ -208,7 +162,13 @@
     "level": 3,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b4265b4a0fa09f753be89f0dd7c392f700e7fd7d23dae7f2ec8093d219284bc1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6k3r4u3w",
@@ -243,26 +203,10 @@
     "stamps": {
       "core": {
         "hash": "sha256:5fddfc452ce8bd935b5397c22cd5386156a306b7a56ac26b1d7fe2153045fbe2",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_6u4d3c9f",
-    "ja": "遅れてもいいから、今夜ぜひ来てね。",
-    "en": "Even if you're late, please come tonight.",
-    "alternatives": [
-      "Please come tonight, even if you're late.",
-      "Do come tonight, even if you're late."
-    ],
-    "point": "「たとえ〜でも」は even if、中身は現在形",
-    "topic": "social",
-    "subtopic": "invitations",
-    "level": 5,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_6w4x9x3a",
@@ -280,41 +224,25 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:dc4232e3ef0bcf78fc5afef5cd71a0b10f722a65ce4a0f358f2bf260c02f808b",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:a871a32a1e58b159eb1a7da13badc05cfcf45e1dd7c8ec965958234376bc7dab",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
   {
-    "id": "c_7n3c7j5d",
-    "ja": "ずっと君をキャンプに誘おうと思ってた。",
-    "en": "I've been meaning to invite you camping.",
+    "id": "c_6z3b6x3d",
+    "ja": "彼女、ランチは断ったけど映画は行くって。",
+    "en": "She turned down lunch but agreed to a movie.",
     "alternatives": [
-      "I've been thinking of inviting you camping.",
-      "I've been wanting to invite you camping."
+      "She declined lunch but agreed to a movie.",
+      "She passed on lunch but agreed to a movie."
     ],
-    "point": "「ずっと〜しようと思ってた」は I've been meaning to",
-    "topic": "social",
-    "subtopic": "invitations",
-    "level": 5,
-    "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7p7u9v8d",
-    "ja": "彼女、ランチは断ったけど映画はもう OK した。",
-    "en": "She turned down lunch, but she's accepted the movie.",
-    "alternatives": [
-      "She declined lunch, but she's accepted the movie.",
-      "She declined lunch, but she's agreed to the movie."
-    ],
-    "point": "断ったのは過去形、「もう OK した」は現在完了 she's accepted",
+    "point": "「誘いを断る」は turn down、「同意する」は agree to",
     "topic": "social",
     "subtopic": "invitations",
     "level": 6,
-    "grammar": ["tense-contrast", "phrasal-verbs"],
+    "grammar": ["phrasal-verbs", "concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -334,9 +262,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:fbb37290506e9dd2831870f2f62b485d116af88024e67c7ec572436dde880795",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:531d185829954faf3fde4a22fb7d2cb1036f9acf079bfaedad08f7bdead965ca",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -350,6 +278,28 @@
     "subtopic": "invitations",
     "level": 3,
     "grammar": ["present-perfect", "passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:96ae9959a5ecb35e91fe408d96247804ba1b32acbd996efabeece4a3fb59c988",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_8a7m9w2x",
+    "ja": "妹、BBQ来るけど遅れるかもって言ってた。",
+    "en": "My sister said she'd come but might be late.",
+    "alternatives": [
+      "My sister said she's coming but may be late.",
+      "My sister told me she'd come but might be late."
+    ],
+    "point": "「言ってた」に合わせて will ではなく would にする",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 7,
+    "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -386,6 +336,22 @@
     "stamps": {}
   },
   {
+    "id": "c_8k4f3z7e",
+    "ja": "送別会の誘い、断るしかなかったんだ。",
+    "en": "I had to turn down the farewell invite.",
+    "alternatives": [
+      "I had to decline the farewell party invite.",
+      "I had to say no to the farewell party."
+    ],
+    "point": "「誘いを断る」は turn down、「〜するしかなかった」は had to",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 6,
+    "grammar": ["phrasal-verbs", "modal-obligation-advice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8p7h5s8y",
     "ja": "彼女の誕生日にケーキ持っていくね。",
     "en": "I'll bring a cake for her birthday.",
@@ -401,9 +367,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:44bd90ffa1c66f9e66b236ba7c2e1bb670a73431223b0ba2d2eb22b89aeae41b",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:0b6f6a44bf52a09c76841d6a6ff2e3a874fa8726481eae4c838822a646141e0e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -421,7 +387,13 @@
     "level": 3,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:807dab588ee13e8b3ecefd4da998c6327184b4c994f832a9db9d0e4b75f34740",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8w9z8z5r",
@@ -453,6 +425,22 @@
     "subtopic": "invitations",
     "level": 8,
     "grammar": ["mixed-conditional", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9w6e7j5j",
+    "ja": "行けたらなあ。明日は早い便なんだ。",
+    "en": "I wish I could, but my flight leaves early tomorrow.",
+    "alternatives": [
+      "I wish I could go, but my flight's early tomorrow.",
+      "I wish I could join you, but my flight's early."
+    ],
+    "point": "今の叶わない願いは I wish I could。I wish I can とは言わない",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
