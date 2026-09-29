@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // `pnpm dev`: the whole local stack in one terminal. The package script runs
 // `pnpm db:up` first, which returns once DynamoDB local passes its health
-// check; this then builds the catalog snapshot when there is none and runs the
+// check; this then rebuilds the catalog snapshot from content/ and runs the
 // API (`pnpm api`) and the web client's Vite dev server (`pnpm web`) side by
 // side. Ctrl-C stops both. DynamoDB local keeps running, and its tables with
 // it, until `pnpm db:down`.
@@ -118,26 +118,24 @@ export function assertInstalled(processes) {
 }
 
 /**
- * Build the catalog snapshot the API reads, when it reads the default one and
- * that is missing.
+ * Rebuild the catalog snapshot the API reads, when it reads the default one.
  *
  * @remarks
  * A snapshot named by `API_CATALOG_PATH` is the caller's, and is never built
- * here. One already on disk is used as it is, however old: rebuilding it is
- * `pnpm catalog:build`'s job, and the API reads a readable snapshot once per
- * start.
+ * here. The default one is rebuilt on every start, even when one is on disk:
+ * the API reads it once per start, so a snapshot older than `content/` would
+ * serve stale cards until someone remembered `pnpm catalog:build`.
  *
  * @param {Readonly<Record<string, string | undefined>>} env - The environment the API will read.
  * @param {object} [options]
  * @param {string} [options.root] - The repository root.
  * @param {() => { status: number, stderr: string }} [options.build] - Runs `pnpm catalog:build`.
- * @returns {"configured" | "present" | "built"} What was done.
+ * @returns {"configured" | "built"} What was done.
  * @throws {DevError} `ERR_DEV_CATALOG` when the build fails.
  */
 export function ensureCatalog(env, options = {}) {
   const root = options.root ?? repoRoot;
   if ((env["API_CATALOG_PATH"] ?? "").trim() !== "") return "configured";
-  if (existsSync(path.join(root, DEFAULT_CATALOG))) return "present";
   const build =
     options.build ??
     (() =>

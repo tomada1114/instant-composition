@@ -93,7 +93,7 @@ specifier. **REQUIRED:** `managing-dependencies` before adding the package itsel
 ## Running it
 
 ```sh
-pnpm dev    # DynamoDB local, the catalog snapshot if missing, the API and Vite, until Ctrl-C
+pnpm dev    # DynamoDB local, a fresh catalog snapshot, the API and Vite, until Ctrl-C
 pnpm db:down  # stop DynamoDB local afterwards; `pnpm dev` leaves it and its tables running
 ```
 

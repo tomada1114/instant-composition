@@ -100,10 +100,10 @@ target list is reviewable in `package.json` instead of retyped at a prompt each 
 
 Run a single test file with `pnpm exec vitest run tests/<name>.test.ts`.
 
-`pnpm dev` is the whole local stack in one command: it runs `pnpm db:up`, builds the
-catalog snapshot when `dist/catalog/` has none, and runs `pnpm api` and `pnpm web` side
-by side until Ctrl-C, which stops both. DynamoDB local keeps running, with its tables,
-until `pnpm db:down`.
+`pnpm dev` is the whole local stack in one command: it runs `pnpm db:up`, rebuilds the
+catalog snapshot from `content/`, and runs `pnpm api` and `pnpm web` side by side until
+Ctrl-C, which stops both. DynamoDB local keeps running, with its tables, until
+`pnpm db:down`.
 
 `pnpm check:quick` is the everyday local gate, and needs nothing running beside it;
 `pnpm check:source` adds the web build, the smoke suite, the DynamoDB suite and the
