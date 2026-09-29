@@ -15,9 +15,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:9a8e864035c229fbb840c1d34d9e798310e2d7b9eae13953b4738e7b664efe8b",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:609beb47ca615125e93cbbc14d367d2ac286c2e78e6c4697d261d352f894cf25",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -34,9 +34,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:df71807d5df49f457022bb86768a9a0165412897d378c59960243d5314c752e5",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:d59120ab066fe4f96868d02d7a6eb3a9d33a9878ccdde8dd057f7df8f4f02b0d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -54,7 +54,13 @@
     "level": 4,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4b86002ed80d5dccad18f23f6515e8e6a52980663ae7c02dd1f9e46cb3df2c13",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3h5h7a2t",
@@ -72,9 +78,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:a0356508961fda83d279eeb241635394a43a40408a69eb758db0c093d5a55dbb",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:45833a1806e452ddeee6a1e2634b2d9d864e7bf877a4cff0df0ec787c00b6872",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -111,38 +117,6 @@
     "stamps": {}
   },
   {
-    "id": "c_4s4d2k2q",
-    "ja": "兄は平気と言うけど、実は落ち込んでる。",
-    "en": "Although my brother says he's fine, he's really down.",
-    "alternatives": [
-      "My brother says he's fine, but he's really down.",
-      "Even though he says he's okay, he's feeling low."
-    ],
-    "point": "although の後は節。but と一緒には使わない",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 6,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4u4z8h9e",
-    "ja": "予定をあきらめて、がっかりしてない？",
-    "en": "Aren't you disappointed you gave up on your plans?",
-    "alternatives": [
-      "Aren't you bummed about giving up on your plans?",
-      "Aren't you disappointed about giving up on your plans?"
-    ],
-    "point": "「がっかりしてない？」は Aren't you disappointed のあとに節を続ける",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 6,
-    "grammar": ["phrasal-verbs", "noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5c2j3g6d",
     "ja": "兄は、私が誕生日を覚えていたことに大喜びした。",
     "en": "My brother was thrilled I'd remembered his birthday.",
@@ -159,22 +133,6 @@
     "stamps": {}
   },
   {
-    "id": "c_5j8d8d2g",
-    "ja": "コンサートが中止と聞いて、がっかりした。",
-    "en": "I was disappointed the concert got canceled.",
-    "alternatives": [
-      "I was bummed the concert got canceled.",
-      "I was disappointed to hear it was canceled."
-    ],
-    "point": "「中止になった」は got canceled でも言える",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 5,
-    "grammar": ["passive-voice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5s6m9b5h",
     "ja": "新しい仕事にはもう慣れたよ。",
     "en": "I've gotten used to my new job.",
@@ -185,7 +143,13 @@
     "level": 4,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ba8237d7b0e3d1e60a34108f11af677fd78f30d65b6270a7f19ad344eb042f8a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5u2g8z6q",
@@ -201,7 +165,13 @@
     "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1b29c5b3549b93063868c28535c733973e76bfb753caa751d7968168d00e76dc",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5w7s4h5p",
@@ -233,7 +203,13 @@
     "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4a6a0ae5f70837bf8eedceec142b18f8d21a826cd71cc0c77c536f3925fcdf5e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6h3t9n9y",
@@ -249,7 +225,13 @@
     "level": 6,
     "grammar": ["present-perfect-continuous", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:47a1db7d1a4aa2ce82fae5811f16da509098cf4d1d1942665a3a8b6a919588f5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6t9j4k6x",
@@ -313,7 +295,13 @@
     "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7f042e37f8579ffa9b0542bad99d2cf2435a9092e31f1d41238cb3221ac777aa",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7j2k2y9r",
@@ -376,9 +364,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:07096bf7fec243e507b4daea12b46b3f397a515e7beab0e78fa36540d7767370",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:0f4a2db9fc233dd2b5ba101d042622ffef292d0cd6f75b29a86a376d20d7256a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -396,7 +384,13 @@
     "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4c46126f29c2c8addae6ab37c8f189169b8f44f9d6e0d349605f18de84f9f6a8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9d6j6d5y",
@@ -443,22 +437,6 @@
     "subtopic": "feelings",
     "level": 8,
     "grammar": ["reported-speech", "infinitives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9p4m9u9q",
-    "ja": "課長が私の企画を褒めてくれた。嬉しい！",
-    "en": "My manager praised my proposal. I'm thrilled!",
-    "alternatives": [
-      "My manager complimented my proposal. I'm so happy!",
-      "My manager praised my plan. I'm so happy!"
-    ],
-    "point": "praise は褒める対象をそのまま目的語に取る",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 5,
-    "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
