@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2b7b2p7g",
+    "ja": "ドキュメントがまだ更新されてないよ。",
+    "en": "The docs haven't been updated yet.",
+    "alternatives": [
+      "The docs still haven't been updated.",
+      "The docs aren't updated yet."
+    ],
+    "point": "「まだ〜されてない」は haven't been + 過去分詞",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 3,
+    "grammar": ["passive-voice", "present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2h5r6m4n",
     "ja": "直したコードはずっと読みやすいね。",
     "en": "It's much easier to read now.",
@@ -66,6 +82,22 @@
     }
   },
   {
+    "id": "c_3c4z6x8r",
+    "ja": "朝からずっと、これで詰まってるんだ。",
+    "en": "I've been stuck on this all morning.",
+    "alternatives": [
+      "I've been stuck on this since morning.",
+      "I've been struggling with this all morning."
+    ],
+    "point": "「朝からずっと」は現在完了進行形 have been -ing",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3t5k5j3e",
     "ja": "レビュー頼む前に、テスト全部通してたよ。",
     "en": "I'd gotten every test passing before I asked.",
@@ -86,19 +118,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_3u6g9d3z",
-    "ja": "ドキュメントを更新しないとだめだよ。",
-    "en": "You have to update the docs.",
-    "alternatives": ["You need to update the docs.", "The docs need to be updated."],
-    "point": "「しないとだめ」は have to。主語は you",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 3,
-    "grammar": ["modal-obligation-advice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_3v2p3m7q",
@@ -188,10 +207,10 @@
   {
     "id": "c_4f2e6y3n",
     "ja": "まだ、変更を確認しているところです。",
-    "en": "I'm still reviewing your changes.",
+    "en": "I'm still reviewing the changes.",
     "alternatives": [
-      "I'm still going through your changes.",
-      "I'm still looking at your changes."
+      "I'm still going through the changes.",
+      "I'm still looking at the changes."
     ],
     "point": "「〜しているところ」は進行形。still は be 動詞の後ろ",
     "topic": "tech",
@@ -225,11 +244,11 @@
   },
   {
     "id": "c_4z7b5h3p",
-    "ja": "共通ロジックは切り出すべきです。",
+    "ja": "共通ロジックは我々で切り出すべきです。",
     "en": "We should pull out the shared logic.",
     "alternatives": [
-      "The shared logic should be pulled out.",
-      "We need to pull the common logic out."
+      "We should pull the shared logic out.",
+      "We should extract the common logic."
     ],
     "point": "pull out は「切り出す」。目的語が長いと pull out の後ろに置く",
     "topic": "tech",
@@ -282,22 +301,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_5p8f3m3f",
-    "ja": "この差分、朝からずっと見てるのに、まだ全然つかめないよ。",
-    "en": "I've been staring at this diff all morning, and I'm lost.",
-    "alternatives": [
-      "I've spent all morning on this diff and I'm still lost.",
-      "I've been on this diff since morning and I'm still lost."
-    ],
-    "point": "「朝からずっと」は現在完了進行形 have been -ing",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 10,
-    "grammar": ["tense-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_5u5e9p5z",
@@ -432,22 +435,6 @@
     }
   },
   {
-    "id": "c_8c8q5s3f",
-    "ja": "僕らが触ったファイルに、テストは要る？",
-    "en": "Do the files we touched need tests?",
-    "alternatives": [
-      "Do the files we changed need tests?",
-      "Should the files we touched get tests?"
-    ],
-    "point": "名詞の直後に we touched を置いて「触った〜」と修飾する",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 5,
-    "grammar": ["post-modification"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8c8q9y9n",
     "ja": "この関数、長すぎますか？",
     "en": "Is this function too long?",
@@ -553,6 +540,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9j8f6j5w",
+    "ja": "僕らが触ったファイルに、テストは要る？",
+    "en": "Do the files we touched need tests?",
+    "alternatives": [
+      "Do the files we changed need tests?",
+      "Do the files that we touched need tests?"
+    ],
+    "point": "名詞の直後に we touched を置いて「触った〜」と修飾する",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 4,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9k9r3r2e",

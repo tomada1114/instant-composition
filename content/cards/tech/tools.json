@@ -208,7 +208,7 @@
     "point": "先に終えた動作は Having＋過去分詞で前置きできる",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 8,
+    "level": 7,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -357,7 +357,7 @@
     "point": "「今朝から」続いているので現在完了進行形にする",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 9,
+    "level": 7,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -412,12 +412,12 @@
     "en": "The staging deploy has been hanging for a good hour.",
     "alternatives": [
       "The staging deploy's been stuck for a good hour.",
-      "The staging deploy has been stuck for over an hour now."
+      "The staging deploy's been hanging for over an hour."
     ],
     "point": "「a good hour」で「たっぷり一時間」の含みが出せる",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 9,
+    "level": 7,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -513,7 +513,7 @@
     "point": "過去の後悔は wish + 過去完了。pin は「固定する」",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 10,
+    "level": 7,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
     "stamps": {}

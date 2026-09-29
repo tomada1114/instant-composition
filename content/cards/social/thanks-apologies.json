@@ -1,21 +1,5 @@
 [
   {
-    "id": "c_2b2n2e4e",
-    "ja": "あの時君が紹介してくれなきゃ、今の仕事はないよ。",
-    "en": "If you hadn't introduced us, I wouldn't have this job.",
-    "alternatives": [
-      "I wouldn't have this job if you hadn't introduced me.",
-      "Without your introduction, I wouldn't have this job."
-    ],
-    "point": "過去の仮定→今の結果は If had+過去分詞、would+原形",
-    "topic": "social",
-    "subtopic": "thanks-apologies",
-    "level": 8,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2b4b7n3v",
     "ja": "今週末、埋め合わせさせてもらえませんか？",
     "en": "Can I make it up to you this weekend?",
@@ -114,8 +98,24 @@
     "point": "「思ったより」は 比較級 + than I expected",
     "topic": "social",
     "subtopic": "thanks-apologies",
-    "level": 4,
+    "level": 3,
     "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2r6u4d8w",
+    "ja": "お礼に夕食をおごらせてもらえませんか？",
+    "en": "Could I treat you to dinner as a thank-you?",
+    "alternatives": [
+      "Would you let me buy you dinner as thanks?",
+      "Can I take you to dinner to say thank you?"
+    ],
+    "point": "「〜させてもらえませんか」は Could I〜? で柔らかく言う",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -230,6 +230,22 @@
     }
   },
   {
+    "id": "c_4z7b8v4w",
+    "ja": "君が僕を紹介してくれなきゃ、今の仕事はないよ。",
+    "en": "If you hadn't introduced me, I'd have no job.",
+    "alternatives": [
+      "Without you introducing me, I wouldn't have this job.",
+      "I wouldn't have this job if you hadn't introduced me."
+    ],
+    "point": "過去の仮定→今の結果は If had+過去分詞、would+原形",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5d3x2h9x",
     "ja": "彼女の誕生会を欠席したこと、謝ればよかった。",
     "en": "I wish I'd apologized for missing her party.",
@@ -319,22 +335,6 @@
     }
   },
   {
-    "id": "c_6f9y5c7g",
-    "ja": "お礼に、夕食をごちそうさせてもらえないかな。",
-    "en": "I was hoping to treat you to dinner as thanks.",
-    "alternatives": [
-      "Could I treat you to dinner as a thank-you?",
-      "Would you let me treat you to dinner to say thanks?"
-    ],
-    "point": "「〜したいのですが」は I was hoping to で柔らかく言う",
-    "topic": "social",
-    "subtopic": "thanks-apologies",
-    "level": 10,
-    "grammar": ["hedging-softening"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6s4v5f7a",
     "ja": "本当に、どうお礼を言えばいいのかわかりません。",
     "en": "I honestly don't know how I can ever thank you.",
@@ -355,6 +355,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_6x4r7t5z",
+    "ja": "遅れてごめん。道路工事があった。",
+    "en": "Sorry I'm late. There was roadwork.",
+    "alternatives": [
+      "Sorry I'm late. There was construction.",
+      "Sorry I'm late. There was road construction."
+    ],
+    "point": "「〜があった」は There was を使う",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 2,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6y2g9c7u",
@@ -381,15 +397,15 @@
   {
     "id": "c_7e4a8r8s",
     "ja": "今度遅れるときは、必ず事前に連絡します。",
-    "en": "If I'm late again, I'll let you know beforehand.",
+    "en": "If I'm late again, I'll definitely warn you.",
     "alternatives": [
-      "Next time I'm running late, I'll call ahead.",
-      "If I'm going to be late again, I'll call ahead."
+      "Next time I'm late, I'll tell you beforehand.",
+      "I'll tell you in advance if I'm late."
     ],
     "point": "未来のことでも if 節は現在形（will は入れない）",
     "topic": "social",
     "subtopic": "thanks-apologies",
-    "level": 8,
+    "level": 4,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -503,22 +519,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9n4t3w3j",
-    "ja": "ごめん、遅れた。道路工事があったんだ。",
-    "en": "Sorry I'm late. There was roadwork.",
-    "alternatives": [
-      "Sorry I'm late. There was road construction.",
-      "Sorry I'm late. The road was under construction."
-    ],
-    "point": "「〜があった」は There was を使う",
-    "topic": "social",
-    "subtopic": "thanks-apologies",
-    "level": 4,
-    "grammar": ["there-is-are"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9q9t2f5m",

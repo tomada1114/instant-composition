@@ -115,7 +115,7 @@
     "topic": "tech",
     "subtopic": "product-talk",
     "level": 8,
-    "grammar": ["nested-clauses", "cleft-emphasis"],
+    "grammar": ["cleft-emphasis", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -454,22 +454,6 @@
     }
   },
   {
-    "id": "c_6d6z3z3x",
-    "ja": "スコープを削っていなかったら、今ごろまだQAで足止めだよ。",
-    "en": "If we hadn't cut scope, we'd still be stuck in QA.",
-    "alternatives": [
-      "Had we not cut scope, we'd still be stuck in QA.",
-      "If we hadn't trimmed the scope, we'd still be stuck in QA."
-    ],
-    "point": "過去の仮定は had p.p.、今の結果は would be",
-    "topic": "tech",
-    "subtopic": "product-talk",
-    "level": 10,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6d8v6v2z",
     "ja": "知りたいのは、それがいつリリースされるかです。",
     "en": "What I'd like to know is when it'll ship.",
@@ -568,8 +552,8 @@
     "point": "「遅れそう」は likely to slip。slip は予定が遅れる意味",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 9,
-    "grammar": ["nested-clauses", "reported-speech"],
+    "level": 7,
+    "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -619,16 +603,16 @@
   },
   {
     "id": "c_8c8s3u5y",
-    "ja": "営業が言ってきた時には、うちはもうスコープを固めていた。",
-    "en": "We'd already locked the scope by the time sales asked.",
+    "ja": "営業が言ってきた時、うちはもうスコープを固めてた。",
+    "en": "We'd already locked scope by the time sales spoke up.",
     "alternatives": [
       "Scope was already frozen when sales came to us.",
-      "By the time sales asked, we'd already frozen the scope."
+      "By the time sales raised it, we'd already frozen scope."
     ],
     "point": "「言ってきた時にはもう」は by the time と過去完了",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 9,
+    "level": 7,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -657,7 +641,7 @@
   },
   {
     "id": "c_8n7e3k4a",
-    "ja": "リリース前に、私が法務に承認してもらうよう動きます。",
+    "ja": "リリース前に、私が法務に承認してもらいます。",
     "en": "I'll get legal to sign off before we ship.",
     "alternatives": [
       "I'll have legal sign off before we release.",
@@ -666,7 +650,7 @@
     "point": "get + 人 + to 動詞で「〜してもらう」。sign off は承認する",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 10,
+    "level": 6,
     "grammar": ["causatives", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}

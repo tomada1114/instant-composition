@@ -4,8 +4,8 @@
     "ja": "今言えるのは、応急処置が効いているということだけです。",
     "en": "All I can say is that the workaround is holding.",
     "alternatives": [
-      "What I can say is that the workaround is holding up.",
-      "The only thing I can say is the workaround's working."
+      "All I can tell you is that the workaround's holding.",
+      "I can only say that the workaround is holding up."
     ],
     "point": "All I can say is that ～ で「言えるのは～だけ」",
     "topic": "tech",
@@ -141,7 +141,7 @@
   },
   {
     "id": "c_3p3s9k2u",
-    "ja": "復旧を焦って、確認を飛ばしてしまいました。",
+    "ja": "私たち、復旧を焦って確認を飛ばしました。",
     "en": "We rushed the fix and ended up skipping verification.",
     "alternatives": [
       "In our rush to fix it, we skipped verification.",
@@ -394,13 +394,13 @@
     "ja": "原因が分からないまま、私たちは夜通し対応しました。",
     "en": "Not knowing the cause, we worked through the night.",
     "alternatives": [
-      "Without knowing the cause, we worked all night.",
-      "Since we didn't know the cause, we worked through the night."
+      "We worked through the night without knowing the cause.",
+      "With the cause still unknown, we worked all night."
     ],
     "point": "理由を表す分詞構文は Not knowing のように否定を前に置く",
     "topic": "tech",
     "subtopic": "incidents",
-    "level": 9,
+    "level": 7,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -408,10 +408,10 @@
   {
     "id": "c_7g7u2g3a",
     "ja": "お客様が知りたいのは、影響範囲と復旧の見込みです。",
-    "en": "What customers want to know is scope and ETA.",
+    "en": "What customers want to know is the impact and ETA.",
     "alternatives": [
-      "Customers want to know the scope and the ETA.",
-      "The scope and ETA are what customers want to know."
+      "Customers want to know the impact and the ETA.",
+      "The impact and ETA are what customers want to know."
     ],
     "point": "What 節が主語のときは動詞は is",
     "topic": "tech",
@@ -443,9 +443,9 @@
   {
     "id": "c_7q2f7z9y",
     "ja": "早く戻していれば、被害は小さく済んだのに。",
-    "en": "If we'd rolled back sooner, damage would've been less.",
+    "en": "If we'd reverted sooner, the damage would've been smaller.",
     "alternatives": [
-      "Had we rolled back sooner, damage would've been smaller.",
+      "If we'd rolled back sooner, damage would've been smaller.",
       "If we'd reverted sooner, the impact would've been smaller."
     ],
     "point": "過去の仮定は if + had 過去分詞、would have 過去分詞",

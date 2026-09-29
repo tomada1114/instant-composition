@@ -46,11 +46,11 @@
   {
     "id": "c_2n6j6k5h",
     "ja": "設計の壁打ち相手が必要です。",
-    "en": "I need someone to bounce this design off.",
+    "en": "I need someone to bounce my design off.",
     "alternatives": [
-      "I need someone to run this design by.",
-      "I need someone to talk this design over with.",
-      "I need someone to brainstorm this design with."
+      "I need someone to run my design by.",
+      "I need someone to talk my design over with.",
+      "I need a sounding board for my design."
     ],
     "point": "someone to + 動詞。off や with の前置詞を忘れずに",
     "topic": "tech",
@@ -194,14 +194,14 @@
     "ja": "昨日マージしなければ、今は火消しをしていないのに。",
     "en": "If I hadn't merged yesterday, I wouldn't be firefighting now.",
     "alternatives": [
-      "Had I not merged yesterday, I wouldn't be firefighting now.",
-      "I wouldn't be firefighting now if I hadn't merged yesterday."
+      "I wouldn't be firefighting now if I hadn't merged yesterday.",
+      "If we hadn't merged yesterday, we wouldn't be firefighting now."
     ],
     "point": "過去の仮定+現在の結果は If+過去完了, would be ~ing",
     "topic": "tech",
     "subtopic": "standup",
     "level": 8,
-    "grammar": ["articles-and-countability", "mixed-conditional"],
+    "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -304,7 +304,7 @@
     "point": "継続中の動作は has been -ing。期間は for",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 7,
+    "level": 6,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -404,8 +404,8 @@
     "ja": "今日は、昨日話したバグを直します。",
     "en": "Today I'll fix the bug we discussed.",
     "alternatives": [
-      "I'll fix the bug we talked about today.",
-      "Today I'm fixing the bug we talked about."
+      "Today I'll fix the bug we talked about.",
+      "I'll fix the bug we talked about yesterday."
     ],
     "point": "「昨日話したバグ」は the bug we discussed と後ろから説明",
     "topic": "tech",

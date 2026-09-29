@@ -136,13 +136,13 @@
     "ja": "私たちには再現手順を聞くしか手がなかった。",
     "en": "Our only option was to ask for repro steps.",
     "alternatives": [
-      "We had no choice but to ask for repro steps.",
+      "We could only ask for repro steps.",
       "All we could do was ask for repro steps."
     ],
     "point": "「〜するしかない」は only option was to + 動詞",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 6,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -158,7 +158,7 @@
     "point": "seem to have + 過去分詞で「〜したようだ」",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 6,
     "grammar": ["infinitives", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -174,7 +174,7 @@
     "point": "エラーより前の行動は過去完了 Had + 過去分詞",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 7,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -231,7 +231,7 @@
     "point": "現在完了の受動：has been + 過去分詞",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 6,
     "grammar": ["passive-voice", "present-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -288,10 +288,10 @@
       "The update had overwritten the cache settings.",
       "Cache settings had been changed by the update."
     ],
-    "point": "「すでに書き換えられていた」は had been + 過去分詞",
+    "point": "「書き換えられていた」は had been + 過去分詞",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 6,
     "grammar": ["past-perfect", "passive-voice"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -339,17 +339,17 @@
   },
   {
     "id": "c_3p4k3y9t",
-    "ja": "障害は、期限切れの証明書が原因で引き起こされた。",
+    "ja": "障害は、期限切れの証明書が原因だった。",
     "en": "The outage was triggered by an expired certificate.",
     "alternatives": [
       "An expired certificate caused the outage.",
-      "The outage was brought on by an expired certificate."
+      "The outage was due to an expired certificate."
     ],
-    "point": "原因は be triggered by や be brought on by で表す",
+    "point": "原因は be triggered by や due to で表す",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
-    "grammar": ["passive-voice", "phrasal-verbs"],
+    "level": 5,
+    "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -418,22 +418,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_3y5s8g9u",
-    "ja": "調べるべきログは、まだ山ほど残っている。",
-    "en": "There are still tons of logs to go through.",
-    "alternatives": [
-      "We still have piles of logs to dig through.",
-      "Plenty of logs are still left to check."
-    ],
-    "point": "名詞を後ろから修飾する to 不定詞、go through は「精査する」",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 8,
-    "grammar": ["infinitives", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_4b3z2f9t",
@@ -544,16 +528,16 @@
   },
   {
     "id": "c_4u8m7g6c",
-    "ja": "見たときには、ログはもうローテーションされていた。",
+    "ja": "見たら、ログはもうローテーションされていた。",
     "en": "When I looked, the logs had already rotated.",
     "alternatives": [
       "By the time I looked, the logs had rotated.",
-      "When I checked, the logs had already been rotated out."
+      "When I checked, the logs had already rotated."
     ],
     "point": "見た時点で完了済みなら had + 過去分詞",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -582,16 +566,16 @@
   },
   {
     "id": "c_4v8p7t6e",
-    "ja": "あのフラグ、テスト後に戻すのを忘れていたみたい。",
+    "ja": "あのフラグ、戻すのを忘れていたみたい。",
     "en": "I seem to have forgotten to reset that flag.",
     "alternatives": [
       "Looks like I forgot to reset that flag.",
       "Apparently I forgot to turn that flag back off."
     ],
-    "point": "forget to 〜 は「〜し忘れる」、忘れたのは過去なので have forgotten",
+    "point": "「〜したみたい」は seem to have + 過去分詞、「し忘れる」は forget to + 動詞",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 7,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -657,22 +641,6 @@
     }
   },
   {
-    "id": "c_5w7z4e6y",
-    "ja": "彼女が言うには、直したはずのバグがまた出てきているらしい。",
-    "en": "She says the bug we thought we'd fixed has resurfaced.",
-    "alternatives": [
-      "Apparently the bug we thought we'd fixed has come back.",
-      "She says the bug we thought we'd squashed is back."
-    ],
-    "point": "「直したはず」は we thought we'd fixed で表す",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 10,
-    "grammar": ["tense-contrast", "noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5y9r6w5n",
     "ja": "設定が上書きされたに違いないと、彼は言っています。",
     "en": "He says the config must have been overwritten.",
@@ -727,8 +695,8 @@
     "point": "「特定する」は pin down。受動態＋現在完了で言う",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 9,
-    "grammar": ["passive-voice", "articles-and-countability"],
+    "level": 5,
+    "grammar": ["passive-voice", "present-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -998,13 +966,13 @@
     "ja": "まず確認すべきは、直近のデプロイです。",
     "en": "First thing to check is the latest deploy.",
     "alternatives": [
-      "The first thing to check is the latest deploy.",
-      "What we should check first is the latest deploy."
+      "We should check the latest deploy first.",
+      "What to check first is the latest deploy."
     ],
     "point": "「〜すべきこと」は thing to + 動詞",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 4,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -1020,7 +988,7 @@
     "point": "「その時までに」の完了は had + 過去分詞",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -1141,12 +1109,12 @@
     "en": "Symptoms had apparently started before the update.",
     "alternatives": [
       "It seems the symptoms started before the update.",
-      "Looks like it had started before the update."
+      "The symptoms seem to have started before the update."
     ],
     "point": "更新より前の出来事は had + 過去分詞",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -1162,7 +1130,7 @@
     "point": "行為者が不明なときは受動態にする",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 4,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -1200,7 +1168,7 @@
     "point": "伝聞は I hear + 現在完了の受動",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 7,
     "grammar": ["passive-voice", "present-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -1216,7 +1184,7 @@
     "point": "「立ち上げる」は fire up / start up の句動詞",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 6,
     "grammar": ["infinitives", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -1261,16 +1229,16 @@
   },
   {
     "id": "c_8x8k5c2u",
-    "ja": "再現には、キャッシュを消す必要があります。",
+    "ja": "再現には、あなたがキャッシュを消す必要がある。",
     "en": "You'll need to flush the cache to reproduce it.",
     "alternatives": [
       "To reproduce it, you have to clear the cache.",
-      "Reproducing it requires clearing the cache."
+      "You must clear the cache to reproduce it."
     ],
     "point": "目的の to 不定詞：〜するために",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 6,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -1281,12 +1249,12 @@
     "en": "This bug is a real pain to pin down.",
     "alternatives": [
       "This bug is really hard to track down.",
-      "The cause of this bug is tough to pin down."
+      "This bug's cause is tough to pin down."
     ],
-    "point": "形容詞 + to 不定詞、pin down は「突き止める」",
+    "point": "厄介・しにくいは to 不定詞で言う。pin down は「突き止める」",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 6,
     "grammar": ["infinitives", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -1296,13 +1264,13 @@
     "ja": "私の報告前に、三人が同じ症状を訴えていた。",
     "en": "Three people had reported the same symptom before me.",
     "alternatives": [
-      "Three others had reported the same symptom before I did.",
-      "Three others had complained about the same symptom before me."
+      "Three others had reported this symptom before I did.",
+      "Three others had reported it before my report."
     ],
     "point": "先に起きた出来事は had + 過去分詞",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -1318,7 +1286,7 @@
     "point": "「判明する」は turn out to be",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 6,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -1347,16 +1315,16 @@
   },
   {
     "id": "c_9n3y9n4q",
-    "ja": "絞り込むため、ログを時系列に並べ替えた。",
-    "en": "To narrow it down, I sorted logs by time.",
+    "ja": "絞り込むため、私はログを時系列に並べ替えた。",
+    "en": "To narrow it down, I sorted the logs by time.",
     "alternatives": [
-      "I sorted the logs by time to narrow it down.",
-      "To narrow it down, I ordered the logs by timestamp."
+      "I sorted the logs chronologically to narrow it down.",
+      "I sorted the logs by timestamp to narrow it down."
     ],
     "point": "文頭の To + 動詞で「〜するために」",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 7,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -1394,7 +1362,7 @@
     "point": "始まった時点は過去、pushed も過去形で揃える",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 10,
+    "level": 9,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}

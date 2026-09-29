@@ -23,16 +23,16 @@
   },
   {
     "id": "c_2m5t8a6n",
-    "ja": "うちにもう少し人手があれば、分割を勧めるけどね。",
+    "ja": "人手がもう少しあれば、分割を勧めるけどね。",
     "en": "If we had more people, I'd recommend splitting it.",
     "alternatives": [
       "If we had more hands, I'd suggest splitting it.",
-      "I'd push for a split if we had more staff."
+      "I'd suggest a split if we had more staff."
     ],
     "point": "現実と違う仮定は if + 過去形、主節は would + 原形",
     "topic": "tech",
     "subtopic": "design-discussion",
-    "level": 7,
+    "level": 6,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -127,16 +127,16 @@
   },
   {
     "id": "c_2y6s7r5k",
-    "ja": "両方の案を比べた結果、シンプルなほうでいくことにしたよ。",
-    "en": "Having weighed both options, we've settled on the simpler one.",
+    "ja": "両方比べて、シンプルなほうでいくことにしたよ。",
+    "en": "Having weighed both, we've settled on the simpler one.",
     "alternatives": [
-      "After weighing both options, we decided to go with the simpler one.",
-      "Having compared both, we opted for the simpler one."
+      "After weighing both, we chose the simpler one.",
+      "We weighed both and went with the simpler one."
     ],
     "point": "先に済んだことは Having + 過去分詞で前置き",
     "topic": "tech",
     "subtopic": "design-discussion",
-    "level": 10,
+    "level": 7,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -244,16 +244,16 @@
   },
   {
     "id": "c_4n9m4b9u",
-    "ja": "書き込みが多いサービスには、この案は向かないよ。",
-    "en": "This option won't suit a service that's write-heavy.",
+    "ja": "書き込みが多いサービスに、この案は向かないよ。",
+    "en": "This option doesn't suit a service that's write-heavy.",
     "alternatives": [
       "This option isn't a good fit for write-heavy services.",
-      "This option doesn't work well for services with heavy writes."
+      "This option doesn't work for write-heavy services."
     ],
     "point": "「向く」は suit / be a good fit。関係詞で後ろから説明",
     "topic": "tech",
     "subtopic": "design-discussion",
-    "level": 7,
+    "level": 6,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -327,15 +327,15 @@
   {
     "id": "c_5v2a4k3u",
     "ja": "キューを使う案の欠点って何ですか？",
-    "en": "What's the downside of the option using a queue?",
+    "en": "What's the downside of the option using queues?",
     "alternatives": [
       "What are the drawbacks of the queue-based option?",
-      "What's the catch with the option that uses a queue?"
+      "What's the catch with the queue option?"
     ],
     "point": "「キューを使う案」は option の後ろに using a queue",
     "topic": "tech",
     "subtopic": "design-discussion",
-    "level": 7,
+    "level": 4,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -506,7 +506,7 @@
     "point": "現実と違う仮定は If it were / I'd + 動詞",
     "topic": "tech",
     "subtopic": "design-discussion",
-    "level": 10,
+    "level": 8,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
