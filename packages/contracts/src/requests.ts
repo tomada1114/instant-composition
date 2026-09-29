@@ -4,6 +4,7 @@ import {
   answerResultSchema,
   dailySizeSchema,
   idSchema,
+  levelSchema,
   limitSecondsSchema,
   passSchema,
   roundKindSchema,
@@ -60,6 +61,16 @@ export const settingsPatchSchema = z.object({
   /** Taken by the next round dealt; the round under way keeps the limit it was dealt with. */
   limitSeconds: limitSecondsSchema.exactOptional(),
 });
+
+/**
+ * `PATCH /v1/level`: back to `auto`, which adjusts from the level as it is,
+ * or `manual` at the level picked, which no round's answers move. The level
+ * must be on the catalog's scale, which the command checks.
+ */
+export const levelChoiceSchema = z.discriminatedUnion("mode", [
+  z.object({ mode: z.literal("auto") }),
+  z.object({ mode: z.literal("manual"), level: levelSchema }),
+]);
 
 /**
  * The UI locales there is a catalog for, one per `messages/<locale>.json`.

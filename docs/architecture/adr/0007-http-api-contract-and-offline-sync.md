@@ -116,6 +116,7 @@ GET    /v1/me                          learner profile: L1, target language, tim
 PATCH  /v1/me                          change profile fields
 GET    /v1/settings                    practice settings (topics, focus, daily size, sound, time limit)
 PATCH  /v1/settings                    today's PUT /api/settings, as a partial update
+PATCH  /v1/level                       the level: back to automatic, or fixed at one picked by hand
 GET    /v1/home                        the home view (today's portion, streak, next action)
 POST   /v1/rounds                      { kind } → the round and its deck; resumes an open round of that kind
 GET    /v1/rounds/{roundId}            a round and the answers already recorded (resume, prefetch)

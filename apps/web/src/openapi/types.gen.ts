@@ -77,6 +77,15 @@ export type SettingsPatch = {
     limitSeconds?: 15 | 20 | 30 | 45 | 60;
 };
 
+export type LevelMode = 'auto' | 'manual';
+
+export type LevelChoice = {
+    mode: 'auto';
+} | {
+    mode: 'manual';
+    level: number;
+};
+
 export type ProfilePatch = {
     timeZone?: string;
     l1?: string;
@@ -193,6 +202,12 @@ export type SettingsView = {
     completedToday: boolean;
 };
 
+export type LevelView = {
+    mode: LevelMode;
+    level: number | null;
+    toeic: string | null;
+};
+
 export type Profile = {
     timeZone: string;
     l1: string;
@@ -296,6 +311,8 @@ export type RecordsView = {
     breakdown: Array<BreakdownTopic>;
     weak: WeakPoints;
     toeic: string | null;
+    levelMode: LevelMode;
+    suggestedToeic: string | null;
     streak: {
         current: number;
         longest: number;
@@ -320,6 +337,11 @@ export type SettingsPageView = {
     settings: Settings;
     topics: Array<TopicInfo>;
     toeic: string | null;
+    difficulty: LevelView;
+    levels: Array<{
+        level: number;
+        toeic: string;
+    }>;
 };
 
 export type History = {
@@ -483,6 +505,51 @@ export type UpdateSettingsResponses = {
 };
 
 export type UpdateSettingsResponse = UpdateSettingsResponses[keyof UpdateSettingsResponses];
+
+export type UpdateLevelData = {
+    body: LevelChoice;
+    path?: never;
+    query?: never;
+    url: '/v1/level';
+};
+
+export type UpdateLevelErrors = {
+    /**
+     * ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.
+     */
+    400: ErrorResponse;
+    /**
+     * ERR_UNAUTHENTICATED: The request carries no valid access token.
+     */
+    401: ErrorResponse;
+    /**
+     * ERR_FORBIDDEN: The caller may not run this operation.
+     */
+    403: ErrorResponse;
+    /**
+     * ERR_CONFLICT: Another write to the same data kept winning; send the request again.
+     */
+    409: ErrorResponse;
+    /**
+     * ERR_PAYLOAD_TOO_LARGE: The request body is too large.
+     */
+    413: ErrorResponse;
+    /**
+     * ERR_CONTENT_UNREADABLE: The card content could not be read.
+     */
+    503: ErrorResponse;
+};
+
+export type UpdateLevelError = UpdateLevelErrors[keyof UpdateLevelErrors];
+
+export type UpdateLevelResponses = {
+    /**
+     * OK
+     */
+    200: LevelView;
+};
+
+export type UpdateLevelResponse = UpdateLevelResponses[keyof UpdateLevelResponses];
 
 export type GetHomeData = {
     body?: never;

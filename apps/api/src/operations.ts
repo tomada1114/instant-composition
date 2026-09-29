@@ -9,6 +9,7 @@ import {
   roundSummary,
   settingsPage,
   startRound,
+  updateLevel,
   updateProfile,
   updateSettings,
   type ApplicationDeps,
@@ -18,6 +19,7 @@ import {
 } from "@instant-composition/application";
 import {
   answersRequestSchema,
+  levelChoiceSchema,
   profilePatchSchema,
   settingsPatchSchema,
   startRoundRequestSchema,
@@ -122,6 +124,9 @@ export const OPERATIONS: Readonly<Record<string, Operation>> = {
   getSettings: query(settingsPage),
   updateSettings: command(settingsPatchSchema, false, (deps, context, _, patch) =>
     updateSettings(deps, context, patch),
+  ),
+  updateLevel: command(levelChoiceSchema, false, (deps, context, _, choice) =>
+    updateLevel(deps, context, choice),
   ),
   getHome: query(home),
   startRound: command(startRoundRequestSchema, false, (deps, context, _, start) =>

@@ -8,6 +8,7 @@ import type { SettingsPageView } from "../openapi";
 import { Button } from "../ui/button";
 import { Sheet } from "../ui/sheet";
 import { Toggle } from "../ui/toggle";
+import { DifficultySheet } from "./difficulty-sheet";
 import {
   FocusSection,
   LimitSection,
@@ -15,6 +16,7 @@ import {
   TopicsSection,
 } from "./settings-sections";
 import { TimeZoneRow } from "./time-zone-row";
+import { useLevel } from "./use-level";
 import { useSettings } from "./use-settings";
 import { markPressed } from "../drill/pressed";
 
@@ -61,14 +63,16 @@ export function SettingsScreen({
   const records = useTranslations("Records");
   const navigate = useNavigate();
   const state = useSettings(page.settings);
+  const level = useLevel(page.difficulty, page.levels);
+  const [choosing, setChoosing] = useState(false);
   const [asking, setAsking] = useState(false);
   const [zoneFailed, setZoneFailed] = useState(false);
   const soundId = useId();
 
   return (
     <main className="mx-auto box-content flex max-w-column flex-col gap-10 px-4 pt-4 pb-10">
-      <BackHeader title={t("title")} back={t("back")} escape={!asking} />
-      {state.failed || zoneFailed ? (
+      <BackHeader title={t("title")} back={t("back")} escape={!asking && !choosing} />
+      {state.failed || level.failed || zoneFailed ? (
         <p role="alert" className="rounded-tile bg-raised px-4 py-3">
           {t("saveFailed")}
         </p>
@@ -93,19 +97,23 @@ export function SettingsScreen({
           <h2 className="flex items-baseline gap-3">
             {t("difficulty.title")}
             <span className="font-mono text-mono-sm text-muted-foreground">
-              {page.toeic === null
-                ? records("notMeasured")
-                : records("toeic", { toeic: page.toeic })}
+              {t("difficulty.state", {
+                mode: t(`difficulty.${level.view.mode}`),
+                level:
+                  level.view.toeic === null
+                    ? records("notMeasured")
+                    : records("toeic", { toeic: level.view.toeic }),
+              })}
             </span>
           </h2>
           <Button
             variant="text"
             className="-mr-3 text-foreground"
             onClick={() => {
-              setAsking(true);
+              setChoosing(true);
             }}
           >
-            {t("difficulty.retest")}
+            {t("difficulty.change")}
           </Button>
         </div>
       </section>
@@ -119,6 +127,19 @@ export function SettingsScreen({
           {t("signOut.action")}
         </Button>
       </form>
+      {choosing ? (
+        <DifficultySheet
+          level={level}
+          levels={page.levels}
+          onRetest={() => {
+            setChoosing(false);
+            setAsking(true);
+          }}
+          onClose={() => {
+            setChoosing(false);
+          }}
+        />
+      ) : null}
       {asking ? (
         <RetestSheet
           onCancel={() => {
