@@ -2,10 +2,10 @@
   {
     "id": "c_2c9j2g6j",
     "ja": "発表は顧客アンケートから始めればよかったです。",
-    "en": "I wish I'd started with the customer survey results.",
+    "en": "I wish I'd started with the customer survey.",
     "alternatives": [
-      "I should have opened with the survey results.",
-      "I wish I had begun with the customer survey."
+      "I should have started with the customer survey.",
+      "I wish I had opened with the customer survey."
     ],
     "point": "過去への後悔は wish の後を had + 過去分詞にする",
     "topic": "work",
@@ -21,13 +21,13 @@
     "en": "Would you mind explaining that in more detail?",
     "alternatives": [
       "Could you possibly explain that in more detail?",
-      "I was wondering if you could elaborate on that."
+      "Could you elaborate on that a little more?"
     ],
     "point": "Would you mind の後は動名詞（explaining）",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 7,
-    "grammar": ["hedging-softening"],
+    "level": 5,
+    "grammar": ["requests-permission", "gerunds"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -77,18 +77,18 @@
     "point": "「去年から議論されてきた」は has been discussed",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 5,
+    "level": 4,
     "grammar": ["passive-voice", "present-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_3v9y2f2p",
-    "ja": "半年、顧客データを分析してきました。",
+    "ja": "私たちは半年、顧客データを分析してます。",
     "en": "We've been analyzing customer data for six months.",
     "alternatives": [
       "For six months, we've been analyzing customer data.",
-      "We've been studying customer data for six months."
+      "We've analyzed customer data for six months."
     ],
     "point": "今も続く「ずっと〜してきた」は have been + -ing",
     "topic": "work",
@@ -109,7 +109,7 @@
     "ja": "もし予算が倍なら、皆さんは何を拡大しますか？",
     "en": "If your budget doubled, what would you expand?",
     "alternatives": [
-      "If your budget were doubled, what would you expand?",
+      "With double the budget, what would you expand?",
       "What would you expand if your budget doubled?"
     ],
     "point": "事実と違う仮定は過去形、問いは would you",
@@ -196,12 +196,12 @@
     "en": "The sales director said prices would start in April.",
     "alternatives": [
       "Prices would start in April, the sales director said.",
-      "Our sales director told us prices would begin in April."
+      "Our sales director said prices would begin in April."
     ],
     "point": "過去の発言を伝えるので will ではなく would にする",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 8,
+    "level": 6,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -265,13 +265,13 @@
     "ja": "これから示すデータは、先月の調査結果です。",
     "en": "The data I'm presenting is from last month's survey.",
     "alternatives": [
-      "The data I'll show you comes from last month's survey.",
-      "The data I'm presenting is based on last month's survey."
+      "The data I'll show comes from last month's survey.",
+      "The figures I'll show are from last month's survey."
     ],
     "point": "「私が示すデータ」は data I'm presenting と後ろに置く",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 8,
+    "level": 6,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -279,15 +279,15 @@
   {
     "id": "c_7f5d3h8v",
     "ja": "私の説明中に田中さんが質問した。",
-    "en": "Tanaka-san asked while I was explaining.",
+    "en": "Tanaka-san asked a question while I was explaining.",
     "alternatives": [
-      "While I was explaining, Tanaka-san asked something.",
-      "Tanaka-san asked a question during my explanation."
+      "Tanaka-san asked a question during my explanation.",
+      "While I was explaining, Tanaka-san asked a question."
     ],
     "point": "途中だった動作は was＋-ing、割り込んだ動作は過去形",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 3,
+    "level": 4,
     "grammar": ["progressive-aspect", "past-simple"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -319,7 +319,7 @@
     "point": "since は現在完了、last month は過去の時点",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 7,
+    "level": 6,
     "grammar": ["tense-contrast", "present-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -327,10 +327,10 @@
   {
     "id": "c_7u7a3g4j",
     "ja": "質問の前に、要点をざっと振り返ってもいいですか？",
-    "en": "Before questions, can I go over the key points?",
+    "en": "Before Q&A, can I quickly go over the key points?",
     "alternatives": [
-      "Could I quickly run through the main points first?",
-      "Can I run through the key points before questions?"
+      "Can I quickly run through the key points before Q&A?",
+      "Could I quickly recap the main points first?"
     ],
     "point": "「振り返る」は go over / run through の句動詞",
     "topic": "work",
@@ -343,15 +343,15 @@
   {
     "id": "c_8t3m6g2t",
     "ja": "資料は後で皆さんにメールします。",
-    "en": "I'll email everyone the materials afterward.",
+    "en": "I'll email everyone the materials later.",
     "alternatives": [
-      "I'll send you all the materials afterward.",
-      "Afterward, I'll email you the materials."
+      "I'll email you all the materials later.",
+      "Later, I'll email you the materials."
     ],
     "point": "email は動詞。email 人 物 の語順にできる",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 4,
+    "level": 3,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -425,11 +425,11 @@
   },
   {
     "id": "c_9g4a4q5a",
-    "ja": "去年予算が守れていたら、今デモを見せられたのに。",
-    "en": "If we'd kept funding, we'd have a demo now.",
+    "ja": "予算を維持できていたら、今デモを見せられたのに。",
+    "en": "If we'd kept our budget, we could demo it now.",
     "alternatives": [
-      "If funding hadn't been cut, we'd have a demo now.",
-      "If we hadn't lost funding, we could demo it now."
+      "If we'd kept the budget, we'd have a demo now.",
+      "If we hadn't lost the budget, we could demo now."
     ],
     "point": "過去の仮定は had 過去分詞、今の結果は would",
     "topic": "work",

@@ -13,7 +13,13 @@
     "level": 4,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9adefc6759ebd589cdd5ff98808ff33b80b3e3248d6a42d8f251ce54b44ec6e6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2g7s2p2q",
@@ -26,7 +32,13 @@
     "level": 2,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:379538754ad7fd8ef29f977e1cbb69c4213c7105e40c2682184146af4f10f883",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2k7z2g5k",
@@ -57,9 +69,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:684b6da0542d5fcf436029876c88cc6b83a3d2452762413bc58081ba589dd4b4",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:f7cbb91df84560562fe552f6f664409101703b52ff1319c9883204392b7fbf95",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -77,8 +89,8 @@
     "stamps": {
       "core": {
         "hash": "sha256:16fef6a082d7cd847406e6adb56f9aea1520f871fd9faf29bd6f0387682c3939",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -95,19 +107,6 @@
     "subtopic": "phone-calls",
     "level": 6,
     "grammar": ["reported-speech"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3c4m2q5j",
-    "ja": "どちら様か教えていただけますか？",
-    "en": "Could you tell me who's calling?",
-    "alternatives": ["May I ask who's calling?", "Could I ask who is calling?"],
-    "point": "間接疑問は疑問文の語順にせず who's calling とする",
-    "topic": "work",
-    "subtopic": "phone-calls",
-    "level": 4,
-    "grammar": ["indirect-questions", "requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -175,9 +174,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:089761d9f7c39e11a8d89cceea18e88a6ebb304c4a04e7fc85aa3f088a5eb199",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:f0548dc8c10eae456426fbb40c1a5c366681f687cd2ec692a19f365e33adbc42",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -208,7 +207,13 @@
     "level": 3,
     "grammar": ["requests-permission", "comparatives-superlatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a674382125ab2b6e85f0d3332d4c15ae572a1cd647ac213ce46f2bb3ee24b2d4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5p8c6y3c",
@@ -290,9 +295,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:870fb7a0d6f7850403a7817894442b37541610f40525783ae96a68abddc41a6a",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:04d75bf6cbe5d7b0083b65119de7110835282db86567b33c5a1716f554e2f533",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -313,8 +318,8 @@
     "stamps": {
       "core": {
         "hash": "sha256:eed5305e72efe2d9fb89a78f83574c9633142eb3f943dba8e782692acae0dddf",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -332,7 +337,13 @@
     "level": 4,
     "grammar": ["passive-voice", "present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e4e49de060e04e7924f231a07663ac799b570e39ead79c696bf89181917b0294",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7s2j3k6u",
@@ -345,7 +356,13 @@
     "level": 3,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:13551ceeb759d1366b278c12125368d4c613f57531fc35593e6b4c05ac748652",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7t5z7s3p",
@@ -395,9 +412,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:ab09239cf88d451c0ee8ac78add2f0dc0687388cceab5bc8221821db60f06d18",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:32679e3b6dbc33fe89ef567de35e55179650bce332324dadc68676d7f24594b2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -431,6 +448,12 @@
     "level": 4,
     "grammar": ["time-and-if-clauses", "imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3933c53ce375c00fa3678ba022d82f4d1572fc3bdb4a3d5eea5b29ad08aeadec",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]

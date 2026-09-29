@@ -39,7 +39,7 @@
     "point": "比較級を強めるのは very ではなく much や a lot",
     "topic": "work",
     "subtopic": "reporting",
-    "level": 3,
+    "level": 2,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -79,9 +79,12 @@
   {
     "id": "c_4v6h7c3b",
     "ja": "企画書、もう完成しています。",
-    "en": "The proposal is ready now.",
-    "alternatives": ["The proposal is finished now.", "The proposal is done now."],
-    "point": "「完成している」は be 動詞＋ready で言える",
+    "en": "The proposal is already finished.",
+    "alternatives": [
+      "The proposal is already done.",
+      "The proposal is finished already."
+    ],
+    "point": "「もう〜している」は already を入れて be 動詞＋finished",
     "topic": "work",
     "subtopic": "reporting",
     "level": 1,
@@ -100,7 +103,7 @@
     "ja": "私が早く相談していれば、遅れは防げました。",
     "en": "If I'd asked sooner, we'd have avoided delays.",
     "alternatives": [
-      "Had I asked sooner, we'd have avoided the delay.",
+      "If I'd consulted you sooner, we'd have avoided delays.",
       "If I'd asked earlier, we could've avoided the delay."
     ],
     "point": "過去の仮定は If I had 〜, would have 過去分詞",
@@ -122,7 +125,7 @@
     "point": "「〜しているところ」は現在進行形 I'm ~ing",
     "topic": "work",
     "subtopic": "reporting",
-    "level": 3,
+    "level": 2,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -199,7 +202,7 @@
       "Have you talked to the manager about this yet?",
       "Have you checked with the manager yet?"
     ],
-    "point": "「相談する」は run ~ by、疑問文の文末に yet",
+    "point": "「相談する」は run ~ by で言える",
     "topic": "work",
     "subtopic": "reporting",
     "level": 6,
@@ -210,15 +213,15 @@
   {
     "id": "c_7r3n2z9f",
     "ja": "見積もりが届いたら、すぐ共有しますね。",
-    "en": "I'll pass it on when it arrives.",
+    "en": "I'll share the quote once it arrives.",
     "alternatives": [
       "As soon as it arrives, I'll share it.",
-      "I'll send it around once it arrives."
+      "I'll send you the quote once it arrives."
     ],
     "point": "when の後は未来のことでも現在形 arrives にする",
     "topic": "work",
     "subtopic": "reporting",
-    "level": 5,
+    "level": 4,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -240,7 +243,7 @@
     "id": "c_7t4b2d7k",
     "ja": "これ、いつまでに終えればいいですか？",
     "en": "When should I finish this?",
-    "alternatives": ["When do I need to finish this?", "When is this due?"],
+    "alternatives": ["When should I finish this by?", "When do I have to finish this?"],
     "point": "「〜すればいい」は should で助言や指示を求める",
     "topic": "work",
     "subtopic": "reporting",
@@ -404,8 +407,8 @@
     "point": "「注文をさばく」は handle the orders",
     "topic": "work",
     "subtopic": "reporting",
-    "level": 5,
-    "grammar": ["can-could-ability", "articles-and-countability"],
+    "level": 4,
+    "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
     "stamps": {}
   }
