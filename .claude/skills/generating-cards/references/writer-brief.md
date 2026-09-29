@@ -1,46 +1,42 @@
-# Writer brief template
+# Writer brief
 
-Fill every `{…}` and send the result as the sub-agent's whole prompt. The writer sees
-nothing else — no repository access is needed or wanted.
+The `card-writer` agent follows this. The prompt names the plan file (default
+`tmp/cards/plan.json`, the `pnpm cards:gaps --json` output: `plan[]` of
+`{ topic, subtopic, level, count, targetGrammar }`) and the output file (default
+`tmp/cards/new.json`). A top-up prompt adds the cards that were dropped and why.
 
----
+## Gather — two tool calls
 
-You are writing cards for an instant English composition drill for Japanese learners.
-The learner sees the Japanese sentence (`ja`), says the English aloud before a timer
-runs out, then flips the card and grades themselves against the model answer (`en`) and
-the alternatives.
+1. One `cat` of `content/guides/writing.md`, `content/levels.json`,
+   `content/grammar.json`, `content/taxonomy.json` and the plan file.
+2. One Bash call that, for every cell in the plan, runs
+   `pnpm -s cards:show --cell <topic>/<subtopic> --level <n-1>-<n+1> --brief` (clamped
+   to 1–10) and `pnpm -s cards:show --tombstones --cell <topic>/<subtopic> --brief`.
+   These are exactly what `cards:add` compares a new card against: write nothing close
+   to an existing card, and never recreate a tombstoned one, or it is dropped as
+   `NEAR_DUPLICATE`.
 
-Write **{n}** new cards for this cell:
+## Write
 
-- Topic / subtopic: **{topic.ja} / {subtopic.ja}** (`{topic.id}` / `{subtopic.id}`)
-- Scene: {subtopic.scene}
-- Level: **{level.level}** — {level.summary} (TOEIC ≈ {level.toeic}, CEFR ≈
-  {level.cefr}). `en` must be **{level.words.min}–{level.words.max} words**, every
-  alternative at most **{level.words.max} words**, and `ja` at most
-  **{level.jaChars.max} characters** (whitespace not counted).
-- These caps are ceilings, not targets: write each sentence as short as its scene
+The cards are for an instant English composition drill for Japanese learners. The
+learner sees the Japanese sentence (`ja`), says the English aloud before a timer runs
+out, then flips the card and grades themselves against the model answer (`en`) and the
+alternatives. Follow every rule in `writing.md`.
+
+For each cell, write `count` cards set in the subtopic's `scene`:
+
+- `en` has the level's `words` range, every alternative at most `words.max` words, and
+  `ja` at most `jaChars.max` characters (whitespace not counted).
+- Those caps are ceilings, not targets: write each sentence as short as its scene
   allows. Make the card harder through what the level summary names — vocabulary, idioms
   and phrasal verbs, structure — never through a longer sentence.
-- Target grammar — spread these across the cards; every card uses at least one of them:
-  {for each target: `- {id}: {ja} — e.g. "{example}"`}
-- Other grammar ids valid at this level (use only for a second tag): {comma-separated
-  ids}
-
-## The writing rules
-
-{full text of content/guides/writing.md}
-
-## Already in this cell — do not write anything close to these
-
-{cards:show --brief output, or "none"}
-
-## Deleted from this cell before — do not recreate these
-
-{tombstones --brief output, or "none"}
+- Spread the cell's `targetGrammar` across its cards; every card uses at least one of
+  them. Other grammar ids valid at the level may appear only as a second tag.
 
 ## Output
 
-Return **only** a JSON array, no prose, no code fence. Each element:
+One JSON array covering every cell, written to the output file, one element per card,
+without `id`, `createdAt` or `stamps`:
 
 ```json
 {
@@ -48,16 +44,16 @@ Return **only** a JSON array, no prose, no code fence. Each element:
   "en": "…",
   "alternatives": ["…", "…"],
   "point": "…",
-  "topic": "{topic.id}",
-  "subtopic": "{subtopic.id}",
-  "level": {level.level},
+  "topic": "<topic id>",
+  "subtopic": "<subtopic id>",
+  "level": 5,
   "grammar": ["…"]
 }
 ```
 
-Before returning, check each card yourself: the word count of `en` is inside
-{level.words.min}–{level.words.max}; each alternative has at most {level.words.max}
-words; `ja` has at most {level.jaChars.max} characters, whitespace not counted; no word
-or clause could go without losing the card's point; 2 or 3 alternatives, none a mere
-contraction or punctuation variant of `en`; `grammar` has 1–2 ids from the lists above;
-`ja` pins the subject, tense, polarity and politeness of the English.
+Before writing it, check each card: the word count of `en` is inside the range; each
+alternative is within `words.max`; `ja` is within `jaChars.max`; no word or clause could
+go without losing the card's point; 2 or 3 alternatives, none a mere contraction or
+punctuation variant of `en`; `grammar` has 1–2 valid ids; `ja` pins the subject, tense,
+polarity and politeness of the English. Then confirm the file parses with
+`node -e 'JSON.parse(require("fs").readFileSync(process.argv[1], "utf8"))' <file>`.

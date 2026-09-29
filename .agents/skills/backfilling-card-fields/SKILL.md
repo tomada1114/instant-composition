@@ -45,22 +45,25 @@ cards can take the field without the drill pausing.
 
 ## Procedure
 
-1. **Branch.** Run `git status --porcelain`. If anything outside `content/` is modified,
-   stop and report it. On `main`, create `cards/<YYYY-MM-DD>` (append `-2`, `-3` … if it
-   exists) and switch to it. On a `cards/*` branch, stay on it. On any other branch,
-   stop and report — never commit anywhere but a `cards/*` branch.
-2. `pnpm cards:queue --missing <name> [range] --limit <n> --json` — cards without the
-   field, stamped cards first.
-3. Batch by 20. For each batch, one `worker` sub-agent (`generating-cards`, "Model and
-   effort") gets the field spec, `content/guides/writing.md`, and the cards; it returns
-   `[{ "id": …, "<name>": … }]`. Take the last JSON array out of the reply; if none
-   parses, re-ask once, and if it still does not, skip the batch and report it.
-4. Save to `tmp/cards/<name>-<batch>.json` and `pnpm cards:update` it — one write
-   command at a time, never in parallel (a second one fails with `ERR_CARDS_BUSY`).
-   Rejected entries are reported, not retried by hand.
-5. After all batches: run `reviewing-cards --field <name>`. **REQUIRED:**
-   `reviewing-cards`.
-6. Commit: `git add content`; if `git diff --cached --quiet` reports nothing staged,
+The filling is done by `card-writer` agents (`generating-cards`, "Who does what"), one
+per 50 cards; this session runs the commands and git.
+
+1. **Branch.** Follow `reviewing-cards`'s
+   [references/branch.md](../reviewing-cards/references/branch.md).
+2. `pnpm -s cards:queue --missing <name> [range] --limit <n> --json > tmp/cards/fill.json`
+   — cards without the field, stamped cards first. Split it into
+   `tmp/cards/fill-<b>.json` of at most 50 entries each (the same one-liner as
+   `reviewing-cards` step 3).
+3. Spawn one `card-writer` per batch, in parallel: "Fill the field `<name>` for every
+   card in `tmp/cards/fill-<b>.json`, following
+   `.claude/skills/backfilling-card-fields/references/fields/<name>.md` and
+   `content/guides/writing.md`. Output `[{ "id": …, "<name>": … }]` to
+   `tmp/cards/<name>-<b>.json`."
+4. `pnpm -s cards:update tmp/cards/<name>-<b>.json` per batch, one at a time. Rejected
+   entries are reported, not retried by hand. A missing or unparseable file gets one
+   message back to its writer; if still bad, skip the batch and report it.
+5. Commit: `git add content`; if `git diff --cached --quiet` reports nothing staged,
    skip it. Otherwise `git commit -m "feat(cards): backfill <name> on <n> cards"`.
-7. Report: filled, rejected with reasons, batches skipped for bad writer output,
-   reviewed, and what `pnpm cards:queue --missing <name> --count` still lists.
+6. Run `reviewing-cards --field <name>`. **REQUIRED:** `reviewing-cards`.
+7. Report: filled, rejected with reasons, batches skipped, the field review summary, and
+   `pnpm -s cards:queue --missing <name> --count`.

@@ -17,11 +17,12 @@ only records what Claude Code adds on top of them.
   committed; drift fails `pnpm agents:check`, `tests/sync-agents.test.ts`, and
   lefthook's pre-commit hook. The `authoring-skills` skill holds the rest, including why
   both copies are real files rather than a symlink.
-- `.claude/agents/` holds the three sub-agent tiers the skills spawn by name: `executor`
-  (Opus 5.5, low effort), `architect` (Opus 5.5, high effort) and `worker` (Sonnet 5.5,
-  medium effort, which the card skills use for every writer and reviewer). They are
-  committed so a skill such as `shipping-issues` gets the same tiers from any checkout;
-  a same-named agent in `~/.claude/agents/` is shadowed by these inside this repository.
+- `.claude/agents/` holds the sub-agents the skills spawn by name: the two tiers
+  `executor` (Opus 5.5, low effort) and `architect` (Opus 5.5, high effort), and the two
+  card roles `card-writer` and `card-reviewer` (Sonnet 5.5, medium effort, Read, Write
+  and Bash only), which the card skills start once per role per run. They are committed
+  so a skill such as `shipping-issues` gets the same agents from any checkout; a
+  same-named agent in `~/.claude/agents/` is shadowed by these inside this repository.
 - AGENTS.md's "Security and human approval" records what the committed configuration
   does declare; for Claude Code that means no permission entry is committed here or
   carried into a generated project. A personal permission allowlist (model choice, extra
