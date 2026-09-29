@@ -54,7 +54,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6ddf506c33758fddf9f407e0e59a57862dcc62a777e203527858c3be44872e6c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2r8q6k8a",
@@ -92,7 +98,13 @@
     "level": 5,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ccc98ebd238ec0b5b07324697e30cfb2be04d36eb963f5d557992ca984fb1b4a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4e7u6c3u",
@@ -108,23 +120,13 @@
     "level": 5,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4f4z2y6b",
-    "ja": "僕がシェフなら、このスープに塩を足すな。",
-    "en": "If I were the chef, I'd add salt.",
-    "alternatives": [
-      "I'd add salt if I were the chef.",
-      "If I were the chef, I'd add more."
-    ],
-    "point": "事実と違う仮定は If I were、後半は I'd で受ける",
-    "topic": "daily",
-    "subtopic": "eating-out",
-    "level": 5,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:832ee753496f9883fb53f2be1ca8ea9a6cddb0553309d2e30a328847e2a4c44a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5b6a8u2b",
@@ -140,7 +142,13 @@
     "level": 7,
     "grammar": ["hedging-softening", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dab9c25dedfb3aa659433292e723e6e9ad659b054c137255db47f61149cdf207",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5h2p8c5m",
@@ -156,7 +164,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:82ad459ccf28eb9a0c3adcceda29e446f30262fe2c6f6d63daa24fe8d542bff1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5m9x8a4t",
@@ -172,7 +186,13 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:18dd919233a89f1876613fbacf8dbb7e6509d406f2d3de5041689463c8f5010a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5p4t6f7j",
@@ -217,22 +237,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_5s6m3e6w",
-    "ja": "ステーキ、シェフにもう少し焼いてもらえますか？",
-    "en": "Could you have the chef cook this longer?",
-    "alternatives": [
-      "Would you mind having the chef cook this longer?",
-      "Could you get the chef to cook this longer?"
-    ],
-    "point": "have + 人 + 動詞の原形、get なら人の後に to が要る",
-    "topic": "daily",
-    "subtopic": "eating-out",
-    "level": 6,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_5y9w2n9g",
@@ -312,7 +316,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e89efb7c3979b566ada05e48b4fc316754a13b26422e6393eb572b578f00ad44",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6f7s2d6e",
@@ -332,22 +342,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_6g8r4t6u",
-    "ja": "私たち、窓際は埋まってると言われた。",
-    "en": "We were told the window seats were taken.",
-    "alternatives": [
-      "They told us the window seats were taken.",
-      "We were told the window seats were full."
-    ],
-    "point": "「言われた」は were told、席は were taken と受動態",
-    "topic": "daily",
-    "subtopic": "eating-out",
-    "level": 4,
-    "grammar": ["passive-voice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_6j6y8g8g",
@@ -388,22 +382,6 @@
     }
   },
   {
-    "id": "c_7d8g6f3r",
-    "ja": "着いたら、席が空いてるか見てみるね。",
-    "en": "When I arrive, I'll see if there's space.",
-    "alternatives": [
-      "I'll see if there's space when I arrive.",
-      "Once I'm there, I'll check if there's space."
-    ],
-    "point": "未来のことでも when 節は現在形の arrive",
-    "topic": "daily",
-    "subtopic": "eating-out",
-    "level": 4,
-    "grammar": ["time-and-if-clauses", "indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7q9s3s9z",
     "ja": "このパスタ、前回よりずっとおいしい。",
     "en": "This is much better than last time.",
@@ -439,39 +417,13 @@
     "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8q4x9t7f",
-    "ja": "ベビーカーを置くスペースはありますか？",
-    "en": "Is there room for a stroller?",
-    "alternatives": [
-      "Do you have space for a stroller?",
-      "Is there space for a stroller here?"
-    ],
-    "point": "「余地」の意味の room や space は数えないので a を付けない",
-    "topic": "daily",
-    "subtopic": "eating-out",
-    "level": 4,
-    "grammar": ["articles-and-countability"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9f3b3p6b",
-    "ja": "夕食、もう5人で予約しといたよ。",
-    "en": "I've already booked a table for five.",
-    "alternatives": [
-      "I've already reserved a table for five.",
-      "I already booked a table for five."
-    ],
-    "point": "予約済みの今の状態は現在完了 + already",
-    "topic": "daily",
-    "subtopic": "eating-out",
-    "level": 3,
-    "grammar": ["present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:46f8f5f0d81307f2f91960bb31213ecbe2c5b519b9f3ed52a1fdabe9b5de6677",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9g6w2q2r",
@@ -487,7 +439,13 @@
     "level": 5,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c3c3ce1f644b083466d7ee8c9d302846e8207714f1089e0abb1705a5772f861",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9r2d2v8c",
@@ -503,6 +461,12 @@
     "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:42faa9e673b69336fc04bbb4238912bcf097b0e0589727e43938bef4184d4815",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
