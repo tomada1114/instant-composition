@@ -1,16 +1,16 @@
 [
   {
     "id": "c_2j5e5f4r",
-    "ja": "あのとき予約してれば、今ごろ沖縄でのんびりなのにね。",
-    "en": "If we'd booked back then, we'd be lounging in Okinawa now.",
+    "ja": "あのとき予約してれば、今ごろ沖縄でのんびりなのに。",
+    "en": "If we'd booked then, we'd be lounging in Okinawa now.",
     "alternatives": [
-      "If we'd booked back then, we'd be relaxing in Okinawa now.",
-      "If only we'd booked, we'd be chilling in Okinawa right now."
+      "If we'd booked then, we'd be relaxing in Okinawa now.",
+      "If we'd booked then, we'd be chilling in Okinawa now."
     ],
     "point": "過去の条件と今の結果は if 節が過去完了、主節が would be",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 10,
+    "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -28,22 +28,6 @@
     "subtopic": "plans",
     "level": 6,
     "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2q8a5y3g",
-    "ja": "弟は、姉の結婚式に休みを取ればよかったと悔やんでる。",
-    "en": "My brother wishes he'd taken time off for the wedding.",
-    "alternatives": [
-      "My brother regrets not taking time off for the wedding.",
-      "My brother wishes he'd requested time off for the wedding."
-    ],
-    "point": "主語が三人称なら wishes、後悔の中身は過去完了",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 9,
-    "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -104,29 +88,13 @@
     "topic": "daily",
     "subtopic": "plans",
     "level": 3,
-    "grammar": ["wh-questions", "progressive-aspect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4f4e3k3n",
-    "ja": "父は来月、大学の友人と会うんだ。",
-    "en": "My dad's meeting college friends next month.",
-    "alternatives": [
-      "My dad's getting together with friends next month.",
-      "Dad's catching up with college friends next month."
-    ],
-    "point": "決まっている予定は現在進行形 is meeting で言える",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 5,
-    "grammar": ["future-forms"],
+    "grammar": ["wh-questions", "future-forms"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_4g6r5e3u",
-    "ja": "サラの電話の時、予定を立ててたよ。",
+    "ja": "サラが電話くれた時、予定立ててた。",
     "en": "I was making plans when Sarah called.",
     "alternatives": [
       "Sarah called while I was making plans.",
@@ -192,7 +160,7 @@
     "id": "c_5b9n5m6k",
     "ja": "日曜日に映画を見に行こう。",
     "en": "Let's see a movie Sunday.",
-    "alternatives": ["Let's go to a movie Sunday.", "Let's watch a movie on Sunday."],
+    "alternatives": ["Let's go to a movie Sunday.", "Let's go see a movie Sunday."],
     "point": "「見に行こう」は Let's see a movie でOK",
     "topic": "daily",
     "subtopic": "plans",
@@ -230,38 +198,6 @@
     }
   },
   {
-    "id": "c_5e3k4z4f",
-    "ja": "日程、全員が空いてる日がやっと見つかったよ。",
-    "en": "We've finally found a day that works for everyone.",
-    "alternatives": [
-      "We've finally found a date that suits everyone.",
-      "We've finally found a day everyone is free."
-    ],
-    "point": "「やっと見つかった」は現在完了。day を that で後ろから説明",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 7,
-    "grammar": ["present-perfect", "relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5g8u9q9n",
-    "ja": "姉が、旅行のこと、もう決めたかって聞いてるよ。",
-    "en": "My sister's asking if you've decided yet.",
-    "alternatives": [
-      "My sister wants to know if you've decided yet.",
-      "My sister's wondering whether you've made up your mind."
-    ],
-    "point": "if の後は you've decided の平叙文の語順にする",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 6,
-    "grammar": ["indirect-questions", "present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5p9y4v4m",
     "ja": "夕食に友達二人連れてきていい？",
     "en": "Mind if I bring two friends to dinner?",
@@ -282,7 +218,7 @@
     "ja": "悪いけど、必要なのは家でのんびりする時間。",
     "en": "Sorry, what I need is downtime at home.",
     "alternatives": [
-      "Sorry, what I need is time to relax.",
+      "Sorry, all I need is some downtime at home.",
       "Sorry, I just need some downtime at home."
     ],
     "point": "「〜なのは」は What I need is で始める",
@@ -294,17 +230,33 @@
     "stamps": {}
   },
   {
+    "id": "c_6b3m9h2n",
+    "ja": "行きたいのは山々だけど、もう先約があるんだ。",
+    "en": "I'd love to, but I'm already booked.",
+    "alternatives": [
+      "I'd love to come, but I already have plans.",
+      "I'd love to, but I've got other plans."
+    ],
+    "point": "I'd love to は後ろの動詞を省いて to で終えられる",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["concession-contrast", "hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6v5g9f8s",
-    "ja": "引っ越しの手伝い、友達にあと何人か頼むね。",
+    "ja": "あと何人か友達に手伝いを頼むね。",
     "en": "I'll ask a few more friends to help.",
     "alternatives": [
-      "I'll get a few more friends to help.",
-      "I'll ask a few other friends to pitch in."
+      "I'll ask a few more friends for help.",
+      "I'll ask a couple more friends to help."
     ],
     "point": "ask 人 to do の形。help の前に to を忘れない",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 7,
+    "level": 4,
     "grammar": ["infinitives", "verb-object-to-do"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -314,13 +266,13 @@
     "ja": "今めちゃ忙しいし、金曜の飲み会は休もうかな。",
     "en": "I'm swamped, so I'm thinking of skipping Friday's drinks.",
     "alternatives": [
-      "I've been so busy that I'm considering skipping Friday's drinks.",
+      "I'm swamped, so I might skip Friday's drinks.",
       "I'm slammed, so I'll probably skip Friday's drinks."
     ],
     "point": "think of の後は -ing 形。to skip にしない",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 8,
+    "level": 6,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -362,13 +314,13 @@
     "ja": "兄は、父が退院するまで帰省できないって。",
     "en": "My brother can't come home until Dad gets discharged.",
     "alternatives": [
-      "My brother can't come home till Dad's released.",
+      "My brother can't visit until Dad leaves the hospital.",
       "My brother can't make it home until Dad's discharged."
     ],
     "point": "until 節の中は未来のことでも現在形（gets）",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 8,
+    "level": 6,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -386,6 +338,22 @@
     "subtopic": "plans",
     "level": 6,
     "grammar": ["reported-speech", "passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8c4n3t4q",
+    "ja": "台風が来るし、旅行は中止にしよう。",
+    "en": "Typhoon's coming. Let's call the trip off.",
+    "alternatives": [
+      "Let's cancel the trip. A typhoon's coming.",
+      "A typhoon's coming, so let's cancel the trip."
+    ],
+    "point": "call off は「中止する」。the trip は call と off の間に入る",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -419,6 +387,22 @@
     "stamps": {}
   },
   {
+    "id": "c_8x7y3b7h",
+    "ja": "妹が行けないと言い出したのは金曜になってからだよ。",
+    "en": "Not until Friday did my sister say she couldn't come.",
+    "alternatives": [
+      "It wasn't until Friday that my sister said she couldn't come.",
+      "My sister didn't say she couldn't come until Friday."
+    ],
+    "point": "Not until を文頭に出すと、あとは疑問文の語順になる",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["inversion", "reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8z4x8r2j",
     "ja": "私たち、旅行の日程をもう三回変えたよ。",
     "en": "We've already changed our dates three times.",
@@ -437,10 +421,10 @@
   {
     "id": "c_9f6e2c4c",
     "ja": "雨でも中止にせず、うちに集まろうよ。",
-    "en": "Rain or shine, let's still get together at my place.",
+    "en": "Rain or shine, let's get together at my place.",
     "alternatives": [
       "Even if it rains, let's still meet at my place.",
-      "Even if it rains, let's still get together at mine."
+      "Rain or shine, let's meet up at my place."
     ],
     "point": "「雨でも」は rain or shine か even if。even if 節は現在形",
     "topic": "daily",
@@ -453,10 +437,10 @@
   {
     "id": "c_9n7u6v4e",
     "ja": "雨予報だし、キャンプは延期しない？",
-    "en": "Rain's forecast, so how about putting camping off?",
+    "en": "With rain forecast, how about putting off the trip?",
     "alternatives": [
-      "Rain's forecast, so why not postpone camping?",
-      "With rain forecast, how about postponing camping?"
+      "With rain coming, why not postpone the trip?",
+      "It'll rain, so how about postponing the trip?"
     ],
     "point": "how about の後は動詞の -ing 形（putting off）",
     "topic": "daily",

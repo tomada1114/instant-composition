@@ -1,21 +1,5 @@
 [
   {
-    "id": "c_2a4r3u4w",
-    "ja": "知ってたら、迎えに行ったのに。残念！",
-    "en": "If I'd known, I'd have picked you up.",
-    "alternatives": [
-      "I'd have picked you up if I'd known.",
-      "If I'd known, I would have come get you."
-    ],
-    "point": "過去の仮定は If I'd known + I'd have 過去分詞",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 6,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2k2e6b2r",
     "ja": "彼女、今朝からずっと機嫌が悪いよ。",
     "en": "She's been grumpy since this morning.",
@@ -114,7 +98,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4968bce85c1a527f1952c0d00e889942f3143a2b5cf2d9ce70fd1693cb2276df",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5c2j3g6d",
@@ -130,7 +120,13 @@
     "level": 7,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:139cf1fd73df8f9cad77acffb939eefc24bcc538259391ccca355c96bf2ee224",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5s6m9b5h",
@@ -187,7 +183,13 @@
     "level": 5,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:980964db4c84807538b6262cfecd75ec234687e80199f44eeff67833a3e88146",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5y3m7q7t",
@@ -247,7 +249,13 @@
     "level": 7,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:790829c761a78e205882bf6f89e45546be8849bd0bc8a347bc4c0fbe0a9f58b0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6u5m2a5p",
@@ -263,39 +271,13 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7b3n9n5h",
-    "ja": "彼女が私の案を気に入ったと聞いて、ほっとした。",
-    "en": "I was relieved to hear she liked my idea.",
-    "alternatives": [
-      "It was a relief to hear she liked my idea.",
-      "I felt relieved when I heard she liked my idea."
-    ],
-    "point": "聞いた内容の節は that を省いて過去形のまま続ける",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 8,
-    "grammar": ["reported-speech", "infinitives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7f6x3m3t",
-    "ja": "電話している男性に、正直イライラしています。",
-    "en": "Honestly, I'm annoyed by the man on the phone.",
-    "alternatives": [
-      "The man on the phone is really annoying me.",
-      "Honestly, the man on the phone is irritating me."
-    ],
-    "point": "「電話している男性」は the man on the phone と後ろから修飾",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 6,
-    "grammar": ["post-modification"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5a9475c4341df17e356e36651ddc56d6f571d530ba0a6c3678f83c9959c7e06e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7g8z9h8q",
@@ -333,23 +315,13 @@
     "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8c7y5h2d",
-    "ja": "姉は合格通知を見つめたまま、じっと座っていた。",
-    "en": "My sister sat staring at her acceptance letter.",
-    "alternatives": [
-      "My sister sat there, staring at her acceptance letter.",
-      "My sister kept staring at her acceptance letter, motionless."
-    ],
-    "point": "「〜したまま」は sat staring のように ing 形で続ける",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 6,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7fca15532da7ec905c9b6acf0e648063bd0402e4d146b3eef88177207e3b936b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8u4j2n3w",
@@ -393,22 +365,6 @@
     }
   },
   {
-    "id": "c_9d6j6d5y",
-    "ja": "彼が今辞めるのはもったいないよ。",
-    "en": "It'd be a waste for him to quit now.",
-    "alternatives": [
-      "It'd be a shame if he quit now.",
-      "Quitting now would be a waste."
-    ],
-    "point": "「〜するのはもったいない」は It'd be a waste for 人 to 動詞",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 7,
-    "grammar": ["infinitives", "hedging-softening"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_9e4m3m8w",
     "ja": "兄に映画を最後まで見させられて、ムッとした。",
     "en": "My brother made me finish the movie. Annoying!",
@@ -422,22 +378,12 @@
     "level": 6,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9t6s2c2c",
-    "ja": "あの日ちゃんと話していたら、今こんなに気まずくないのに。",
-    "en": "If we'd hashed it out that day, this wouldn't be awkward now.",
-    "alternatives": [
-      "Had we talked it through that day, this wouldn't be so awkward.",
-      "If we'd talked it through that day, this wouldn't be awkward now."
-    ],
-    "point": "過去の仮定は had 過去分詞、今の結果は wouldn't be と分ける",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 10,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e273045a1dbfe9371b226c120705aec6cf0ee856b786b35e41d8dcfb394d91aa",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]

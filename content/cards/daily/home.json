@@ -4,30 +4,14 @@
     "ja": "掃除機、いつもの場所に戻してくれる？",
     "en": "Could you put the vacuum back where it belongs?",
     "alternatives": [
-      "Can you put the vacuum back where it usually goes?",
-      "Could you return the vacuum to where we usually keep it?"
+      "Can you put the vacuum back where it goes?",
+      "Could you put the vacuum back in its place?"
     ],
     "point": "「〜する場所」は where + 主語 + 動詞で後ろから修飾",
     "topic": "daily",
     "subtopic": "home",
-    "level": 9,
+    "level": 6,
     "grammar": ["relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2f2w6d8r",
-    "ja": "私がやるべきは洗濯物をたたむこと。",
-    "en": "What I should do is fold the laundry.",
-    "alternatives": [
-      "What I need to do is fold laundry.",
-      "The thing I should do is fold laundry."
-    ],
-    "point": "What I should do is の後は動詞の原形で OK",
-    "topic": "daily",
-    "subtopic": "home",
-    "level": 4,
-    "grammar": ["noun-clauses", "modal-obligation-advice"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -99,17 +83,49 @@
     "stamps": {}
   },
   {
+    "id": "c_3h2w3f8t",
+    "ja": "帰る前に、おもちゃを片付けておいてね。",
+    "en": "Pick up the toys before you leave.",
+    "alternatives": [
+      "Put the toys away before you leave.",
+      "Clean up the toys before you go."
+    ],
+    "point": "片付ける は pick up / put away / clean up で言う",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 5,
+    "grammar": ["phrasal-verbs", "time-and-if-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3p7b2m3k",
+    "ja": "夫が忘れたから、もう私がゴミを出したよ。",
+    "en": "He forgot, so I've taken the trash out.",
+    "alternatives": [
+      "He forgot, so I took out the trash.",
+      "I've taken the trash out since he forgot."
+    ],
+    "point": "もう済んだ状態は現在完了 I've taken で言う",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 4,
+    "grammar": ["tense-contrast", "present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4v3k4k9b",
-    "ja": "疲れてても、お椀くらいすすいでくれる？",
+    "ja": "疲れてても、自分のお椀はすすいでね。",
     "en": "Even if you're tired, please rinse your bowl.",
     "alternatives": [
-      "Tired or not, could you rinse your bowl?",
-      "Even when you're tired, can you rinse your bowl?"
+      "Even when you're tired, please rinse your bowl.",
+      "Tired or not, please rinse your bowl."
     ],
     "point": "「〜てても」は even if。although にしない",
     "topic": "daily",
     "subtopic": "home",
-    "level": 6,
+    "level": 5,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -137,28 +153,6 @@
     }
   },
   {
-    "id": "c_6a4q7w6y",
-    "ja": "ママが電話してきた時、お風呂掃除してた。",
-    "en": "I was cleaning the bathroom when Mom called.",
-    "alternatives": [
-      "When Mom called, I was cleaning the bathroom.",
-      "Mom called while I was cleaning the bathroom."
-    ],
-    "point": "途中だった動作は過去進行形 was cleaning で言う",
-    "topic": "daily",
-    "subtopic": "home",
-    "level": 5,
-    "grammar": ["progressive-aspect", "past-simple"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:f6359f026a1a0ce6277884048309b6ffd29daccae70b469a1199aa87faf62ecf",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
-  },
-  {
     "id": "c_6b4k9b8b",
     "ja": "土曜、みんなでガレージを掃除するよ。",
     "en": "We're cleaning the garage this Saturday.",
@@ -179,14 +173,14 @@
     "ja": "兄は先週の日曜、午後ずっと草むしりしてたよ。",
     "en": "My brother spent all last Sunday afternoon pulling weeds.",
     "alternatives": [
-      "My brother was out pulling weeds all last Sunday afternoon.",
+      "My brother was weeding all last Sunday afternoon.",
       "My brother spent last Sunday afternoon weeding the yard."
     ],
     "point": "「〜して過ごした」は spent + 時間 + -ing の形",
     "topic": "daily",
     "subtopic": "home",
-    "level": 7,
-    "grammar": ["participle-clauses"],
+    "level": 6,
+    "grammar": ["gerunds", "past-simple"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -341,10 +335,10 @@
   {
     "id": "c_8c5n2c8u",
     "ja": "頭にくるのは、ルームメイトが皿はもう洗ったと言い張ること。",
-    "en": "What drives me nuts is her insisting the dishes are done.",
+    "en": "What drives me nuts is my roommate insisting the dishes are done.",
     "alternatives": [
-      "What gets to me is her insisting the dishes are done.",
-      "What really bugs me is her insisting the dishes are done."
+      "What gets to me is my roommate insisting the dishes are done.",
+      "What really bugs me is my roommate insisting the dishes are done."
     ],
     "point": "「頭にくるのは〜」は What drives me nuts is ~",
     "topic": "daily",
@@ -357,12 +351,12 @@
   {
     "id": "c_8d9h8r3e",
     "ja": "僕は料理好きだけど、片付けは本当に面倒だよ。",
-    "en": "Although I enjoy cooking, cleanup is a hassle.",
+    "en": "I love cooking, but cleanup is such a hassle.",
     "alternatives": [
-      "I like cooking, but cleaning up is a pain.",
-      "Cooking's fun, but cleaning up is such a chore."
+      "Although I love cooking, cleanup is a real hassle.",
+      "I like cooking, but cleaning up is a pain."
     ],
-    "point": "「〜だけど」は although か but。両方は重ねない",
+    "point": "「〜だけど」は but か although。両方は重ねない",
     "topic": "daily",
     "subtopic": "home",
     "level": 6,
@@ -372,11 +366,12 @@
   },
   {
     "id": "c_8m5z2r3t",
-    "ja": "もっと早く電話してれば、お湯が使えたのにね。",
+    "ja": "僕らが早く電話してれば、お湯が使えたのにね。",
     "en": "If we'd called sooner, we'd have had hot water.",
     "alternatives": [
-      "If we'd phoned earlier, we'd have had hot water.",
-      "We would've had hot water if we'd called sooner."
+      "If we'd called earlier, we'd have had hot water.",
+      "We would've had hot water if we'd called sooner.",
+      "If we'd called sooner, we could've had hot water."
     ],
     "point": "過去の仮定は if 節が had + 過去分詞、主節は would have",
     "topic": "daily",
@@ -391,13 +386,13 @@
     "ja": "父は網戸を直すと言ったのに、まだ手つかずだよ。",
     "en": "Dad said he'd fix the screen but hasn't started.",
     "alternatives": [
-      "Dad said he'd fix the window screen, but hasn't started.",
-      "Dad said he'd fix the screen, but hasn't touched it."
+      "Dad promised to fix the screen but hasn't started.",
+      "Dad said he'd fix the screen but hasn't yet."
     ],
     "point": "言ってた内容は would、「まだ」は現在完了で hasn't started",
     "topic": "daily",
     "subtopic": "home",
-    "level": 7,
+    "level": 6,
     "grammar": ["reported-speech", "tense-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -415,22 +410,6 @@
     "subtopic": "home",
     "level": 6,
     "grammar": ["passive-voice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8t3b6c9j",
-    "ja": "夫はゴミ出しを忘れたけど、もう出したよ。",
-    "en": "My husband forgot, but he's taken it out.",
-    "alternatives": [
-      "My husband forgot, but he's already done it.",
-      "My husband forgot, but it's out now."
-    ],
-    "point": "忘れたのは過去形、今は済んだ状態なので現在完了",
-    "topic": "daily",
-    "subtopic": "home",
-    "level": 4,
-    "grammar": ["tense-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -455,14 +434,30 @@
     "ja": "パパ、ガレージ何週間も後回しにしてるよ。",
     "en": "Dad, you've been putting off the garage for weeks.",
     "alternatives": [
-      "Dad, you've been avoiding the garage for weeks.",
-      "Dad, you've been putting the garage off for weeks."
+      "Dad, you've been ignoring the garage for weeks.",
+      "Dad, you've put off the garage for weeks."
     ],
     "point": "今も続く「ずっと〜してる」は have been -ing、for で期間",
     "topic": "daily",
     "subtopic": "home",
     "level": 6,
     "grammar": ["present-perfect-continuous", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9w7y8c7d",
+    "ja": "私がやらなきゃいけないのは皿洗い。",
+    "en": "What I have to do is the dishes.",
+    "alternatives": [
+      "What I need to do is wash dishes.",
+      "What I must do is wash the dishes."
+    ],
+    "point": "What I have to do is の後は名詞か動詞の原形",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 4,
+    "grammar": ["noun-clauses", "modal-obligation-advice"],
     "createdAt": "2026-09-28",
     "stamps": {}
   }

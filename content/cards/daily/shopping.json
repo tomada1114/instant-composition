@@ -149,10 +149,10 @@
   {
     "id": "c_5b5w7p7n",
     "ja": "このコート、返品か交換かで迷ってる。",
-    "en": "I'm torn between returning and exchanging it.",
+    "en": "I'm torn between returning it and exchanging it.",
     "alternatives": [
-      "I can't decide between returning and exchanging it.",
-      "I'm torn between returning it and exchanging it."
+      "I'm torn between a return and an exchange.",
+      "I can't decide whether to return or exchange."
     ],
     "point": "between の後は returning と exchanging を動名詞でそろえる",
     "topic": "daily",
@@ -200,7 +200,8 @@
     "en": "Has this model been discontinued?",
     "alternatives": [
       "Is this model discontinued?",
-      "Have they stopped making this model?"
+      "Have they stopped making this model?",
+      "Has this model already been discontinued?"
     ],
     "point": "「販売終了になった」は現在完了の受け身",
     "topic": "daily",
@@ -232,12 +233,12 @@
     "en": "I found half-price shoes online.",
     "alternatives": [
       "I found shoes online for half price.",
-      "Online, I found shoes half off."
+      "I found shoes online at half price."
     ],
     "point": "「見つけた」は過去形 found。half-price は名詞の前でつなぐ",
     "topic": "daily",
     "subtopic": "shopping",
-    "level": 3,
+    "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -248,8 +249,8 @@
     "en": "It shipped last week but hasn't arrived.",
     "alternatives": [
       "It was shipped last week but hasn't arrived.",
-      "It was sent last week but hasn't come.",
-      "It shipped last week but still hasn't come."
+      "It shipped last week but still hasn't arrived.",
+      "It shipped last week but hasn't come yet."
     ],
     "point": "発送は過去形、「まだ届かない」は現在完了 hasn't arrived",
     "topic": "daily",

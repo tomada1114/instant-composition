@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2g4k8d9n",
+    "ja": "早く出ていれば、場所取りできたのにね。",
+    "en": "If we'd left earlier, we'd have gotten a spot.",
+    "alternatives": [
+      "We'd have gotten a spot if we'd left earlier.",
+      "Had we left earlier, we'd have gotten a spot."
+    ],
+    "point": "過去の仮定は had+過去分詞、結果は would have+過去分詞",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2j8v5b7y",
     "ja": "学生のころピアノを続けとけばよかったなあ。",
     "en": "I wish I'd kept playing piano as a student.",
@@ -16,18 +32,66 @@
     "stamps": {}
   },
   {
-    "id": "c_2v5h7s6m",
-    "ja": "ギターはもうやめたの？昔はバンドにいた？",
-    "en": "Have you quit guitar? Were you in a band?",
+    "id": "c_3k9u2p4y",
+    "ja": "先週の大会で誰が優勝したか、まだ見てないんだ。",
+    "en": "I haven't seen who won last week's tournament yet.",
     "alternatives": [
-      "You've given up guitar? Were you in a band?",
-      "Did you quit guitar? Were you in a band?"
+      "I still haven't checked who won last week's tournament.",
+      "I haven't found out who won last week's tournament."
     ],
-    "point": "「昔は」は過去形 were。「もうやめた」は現在完了が自然",
+    "point": "「誰が優勝したか」は who won と肯定文の語順で続ける",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 8,
-    "grammar": ["tense-contrast"],
+    "level": 6,
+    "grammar": ["indirect-questions", "present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3q5b3s2b",
+    "ja": "父は釣り大会の列に並んだに違いない。",
+    "en": "Dad must have lined up for the fishing contest.",
+    "alternatives": [
+      "Dad must have queued up for the fishing contest.",
+      "I bet Dad lined up for the fishing contest."
+    ],
+    "point": "過去の強い推量は must have + 過去分詞で表す",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3s3y3w6q",
+    "ja": "あのカフェに弟さんのゲームあるか知ってる？",
+    "en": "Any idea if that café has your brother's game?",
+    "alternatives": [
+      "Know if that café has your brother's game?",
+      "Do you know if they have your brother's game?"
+    ],
+    "point": "「〜かどうか」は if で、後ろは平叙文の語順",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 6,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3s6d6d6k",
+    "ja": "ケンは今週末に小説を書くって言ってたけど、どうだか。",
+    "en": "Ken said he'd write a novel this weekend. Yeah, right.",
+    "alternatives": [
+      "Ken said he'd write a novel this weekend. I doubt it.",
+      "Ken claimed he'd write a novel this weekend. Yeah, sure."
+    ],
+    "point": "「言ってた」に合わせて内容の will を would にずらす",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 9,
+    "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -54,18 +118,34 @@
     }
   },
   {
-    "id": "c_5f7x5m3r",
-    "ja": "先週の大会で誰が優勝したか、まだ見てないんだ。",
-    "en": "I haven't checked who won last week's tournament yet.",
+    "id": "c_4p3t5y8w",
+    "ja": "週末がもっと長かったら、何か趣味を始める？",
+    "en": "If weekends were longer, would you start a hobby?",
     "alternatives": [
-      "I still haven't looked up who won last week's tournament.",
-      "I haven't seen who won the tournament last week yet."
+      "Would you start a hobby if weekends were longer?",
+      "With longer weekends, would you take up a hobby?"
     ],
-    "point": "「誰が優勝したか」は who won と肯定文の語順で続ける",
+    "point": "現実と違う仮定は if 節を過去形 were、主節は would に",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 7,
-    "grammar": ["indirect-questions", "present-perfect"],
+    "level": 6,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4w4t9u4g",
+    "ja": "癒されるのはヨガじゃなく、川沿いの散歩です。",
+    "en": "It's riverside walks, not yoga, that help me unwind.",
+    "alternatives": [
+      "What helps me unwind isn't yoga but river walks.",
+      "Riverside walks, not yoga, are what help me unwind."
+    ],
+    "point": "It's B, not A, that で強調。that の後の動詞は B に合わせる",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -133,22 +213,6 @@
     }
   },
   {
-    "id": "c_5z5x2r8t",
-    "ja": "弟さんが話してたゲーム、あのカフェに置いてるか知ってる？",
-    "en": "Do you know if they carry the game he mentioned?",
-    "alternatives": [
-      "Do you know whether that café has the game he mentioned?",
-      "Any idea if they have the game he mentioned?"
-    ],
-    "point": "「〜かどうか」は if/whether で、後ろは平叙文の語順",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 9,
-    "grammar": ["indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6f2u2w6k",
     "ja": "この近くにテニスコートはある？",
     "en": "Is there a tennis court nearby?",
@@ -190,18 +254,18 @@
     }
   },
   {
-    "id": "c_6u3r6y2q",
-    "ja": "早く出ていれば、場所取りできたのにね。",
-    "en": "If we'd left earlier, we'd have gotten a spot.",
+    "id": "c_6x9z4q9c",
+    "ja": "ギターやめたの？昔バンドにいた？",
+    "en": "You quit guitar? Were you in a band?",
     "alternatives": [
-      "We could have gotten a spot if we'd left earlier.",
-      "If only we'd left earlier, we'd have gotten a spot."
+      "Quit guitar? Were you in a band?",
+      "Gave up guitar? Were you in a band?"
     ],
-    "point": "過去の仮定は had+過去分詞、結果は would have+過去分詞",
+    "point": "「昔は」の質問は過去形 were で聞く",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 8,
-    "grammar": ["third-conditional"],
+    "level": 4,
+    "grammar": ["tense-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -234,38 +298,6 @@
     "subtopic": "hobbies",
     "level": 7,
     "grammar": ["articles-and-countability"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7p5a5c7k",
-    "ja": "兄は釣り大会で夜明け前から並んだに違いない。",
-    "en": "My brother must have lined up before dawn.",
-    "alternatives": [
-      "My brother must have gotten in line before dawn.",
-      "My brother must have been in line before dawn."
-    ],
-    "point": "過去の強い推量は must have + 過去分詞で表す",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 7,
-    "grammar": ["modal-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7v5w4x5q",
-    "ja": "ケンは今週末に小説を書くって言ってたけど、どうだか。",
-    "en": "Ken said he'd write a novel this weekend. Yeah, right.",
-    "alternatives": [
-      "Ken said he'd write a novel this weekend. I doubt it.",
-      "Ken told me he'd write a novel this weekend. We'll see."
-    ],
-    "point": "「言ってた」に合わせて内容の will を would にずらす",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 9,
-    "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -312,22 +344,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_8g8n5c5m",
-    "ja": "週末がもっと長かったら、何か趣味を始める？",
-    "en": "If weekends were longer, would you take up a hobby?",
-    "alternatives": [
-      "Would you pick up a hobby if weekends were longer?",
-      "If the weekend were longer, would you start a hobby?"
-    ],
-    "point": "現実と違う仮定は if 節を過去形 were、主節は would に",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 8,
-    "grammar": ["second-conditional", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_8q8j7v3c",
@@ -404,23 +420,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_8w6a8d3y",
-    "ja": "私が癒されるのはヨガじゃなくて、川沿いの散歩なんです。",
-    "en": "It's riverside walks, not yoga, that help me unwind.",
-    "alternatives": [
-      "What helps me unwind isn't yoga but walks by the river.",
-      "It's walking by the river, not yoga, that relaxes me.",
-      "Riverside walks, not yoga, are what help me unwind."
-    ],
-    "point": "It's B, not A, that で強調。that の後の動詞は B に合わせる",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 10,
-    "grammar": ["cleft-emphasis"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9d4j4f4v",
