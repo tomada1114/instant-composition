@@ -217,6 +217,22 @@
     }
   },
   {
+    "id": "c_6k7f4x3h",
+    "ja": "先週、うちはエアコンを業者に掃除してもらった。",
+    "en": "We had the AC professionally cleaned last week.",
+    "alternatives": [
+      "We got the AC professionally cleaned last week.",
+      "We had a pro clean the AC last week."
+    ],
+    "point": "have + もの + 過去分詞で「〜してもらう」",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6r4w7h6z",
     "ja": "リサイクル、出してもらってもいい？",
     "en": "Do you mind taking out the recycling?",
@@ -358,38 +374,6 @@
     "stamps": {}
   },
   {
-    "id": "c_8s2b4n9p",
-    "ja": "エアコンは先週、業者に掃除してもらったよ。",
-    "en": "The AC was cleaned by professionals last week.",
-    "alternatives": [
-      "We had the AC professionally cleaned last week.",
-      "Professionals cleaned the AC last week."
-    ],
-    "point": "エアコンを主語にするなら was cleaned と受け身にする",
-    "topic": "daily",
-    "subtopic": "home",
-    "level": 6,
-    "grammar": ["passive-voice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9c2w4u8x",
-    "ja": "ゲーム前に、子どもたちに片付けさせてる。",
-    "en": "We make the kids tidy up before gaming.",
-    "alternatives": [
-      "We have the kids tidy up before gaming.",
-      "We make our kids clean up before gaming."
-    ],
-    "point": "make + 人 + 動詞の原形。to は付けない",
-    "topic": "daily",
-    "subtopic": "home",
-    "level": 5,
-    "grammar": ["causatives", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_9g7d9c6a",
     "ja": "パパ、ガレージ何週間も後回しにしてるよ。",
     "en": "Dad, you've been putting off the garage for weeks.",
@@ -402,6 +386,22 @@
     "subtopic": "home",
     "level": 6,
     "grammar": ["present-perfect-continuous", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9j3x6b8w",
+    "ja": "うちはゲーム前に子どもに片付けさせてる。",
+    "en": "We make them tidy up before game time.",
+    "alternatives": [
+      "We have them tidy up before game time.",
+      "We make them clean up before game time."
+    ],
+    "point": "make + 人 + 動詞の原形。to は付けない",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 5,
+    "grammar": ["causatives", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
   }
