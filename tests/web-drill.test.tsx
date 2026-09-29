@@ -86,7 +86,7 @@ function where(): string {
 }
 
 /** Flips the current card and grades it with `key`, letting the next one start. */
-async function grade(key: "ArrowLeft" | "ArrowRight"): Promise<void> {
+async function grade(key: "j" | "k"): Promise<void> {
   press(" ");
   await settle(200);
   press(key);
@@ -126,7 +126,7 @@ describe("the drill, a round run to its summary", () => {
     await settle(2000);
     press(" ");
     expect(screen.getByText("answer-c1")).toBeInTheDocument();
-    press("ArrowLeft");
+    press("j");
     expect(screen.getByText("answer-c1")).toBeInTheDocument();
     await settle(200);
     press("k");
@@ -145,7 +145,7 @@ describe("the drill, a round run to its summary", () => {
 
     press(" ");
     await settle(200);
-    press("ArrowRight");
+    press("k");
     await settle(400);
     expect(screen.getByRole("heading", { name: ja.Summary.title.today })).toHaveFocus();
 
@@ -421,7 +421,7 @@ describe("the drill's pause sheet", () => {
     for (let card = 0; card < 3; card += 1) {
       press(" ");
       await settle(200);
-      press("ArrowLeft");
+      press("j");
       await settle(200);
       await settle(16);
     }
@@ -543,7 +543,7 @@ describe("the drill when answers cannot be saved", () => {
     await openRound("/drill?kind=today");
     press(" ");
     await settle(200);
-    press("ArrowRight");
+    press("k");
     await settle(400);
     expect(screen.getByText(ja.Drill.save.failed)).toBeInTheDocument();
     expect(screen.getByText("prompt-c2")).toBeInTheDocument();
@@ -563,8 +563,8 @@ describe("the drill when answers cannot be saved", () => {
       },
     });
     await openRound("/drill?kind=today");
-    await grade("ArrowRight");
-    await grade("ArrowRight");
+    await grade("k");
+    await grade("k");
     await settle(16);
     expect(
       screen.getByText(fill(ja.Drill.save.unsaved, { count: 2 })),
@@ -579,8 +579,8 @@ describe("the drill when answers cannot be saved", () => {
   it("counts the round itself as unsaved when only the finish failed", async () => {
     serve({ finish: () => new Response("down", { status: 503 }) });
     await openRound("/drill?kind=today");
-    await grade("ArrowRight");
-    await grade("ArrowRight");
+    await grade("k");
+    await grade("k");
     await settle(16);
     expect(
       screen.getByText(fill(ja.Drill.save.unsaved, { count: 1 })),
@@ -610,7 +610,7 @@ describe("the drill after a reload", () => {
   it("resumes past an answer still on its way, and sends it again under its own id", async () => {
     serve({ answers: inFlight });
     await openRound("/drill?kind=today");
-    await grade("ArrowRight");
+    await grade("k");
     expect(screen.getByText("prompt-c2")).toBeInTheDocument();
 
     const calls = await reload({});
@@ -624,7 +624,7 @@ describe("the drill after a reload", () => {
     await settle(16);
     expect(screen.getByText("prompt-c2")).toBeInTheDocument();
 
-    await grade("ArrowRight");
+    await grade("k");
     await settle(16);
     expect(
       screen.getByRole("heading", { name: ja.Summary.title.today }),
@@ -642,7 +642,7 @@ describe("the drill after a reload", () => {
     // Inside act() React has not rendered or run an effect yet: the page could go now.
     act(() => {
       window.dispatchEvent(
-        new KeyboardEvent("keydown", { key: "ArrowRight", cancelable: true }),
+        new KeyboardEvent("keydown", { key: "k", cancelable: true }),
       );
       expect(
         (
@@ -671,12 +671,12 @@ describe("the drill after a reload", () => {
       Promise.reject(new TypeError("fetch failed"));
     serve({ answers: offline });
     await openRound("/drill?kind=today");
-    await grade("ArrowRight");
+    await grade("k");
 
     const calls = await reload({ answers: offline });
     press("Enter");
     await settle(16);
-    await grade("ArrowRight");
+    await grade("k");
     await settle(16);
     expect(
       screen.getByRole("heading", { name: ja.Summary.title.today }),
@@ -690,7 +690,7 @@ describe("the drill after a reload", () => {
   it("counts an answer once when the server took it just before the reload", async () => {
     serve({ answers: inFlight });
     await openRound("/drill?kind=today");
-    await grade("ArrowRight");
+    await grade("k");
 
     const calls = await reload({ round: { ...ROUND, answered: [firstPassOf("c1")] } });
     expect(
@@ -700,7 +700,7 @@ describe("the drill after a reload", () => {
     ).toBeInTheDocument();
     press("Enter");
     await settle(16);
-    await grade("ArrowRight");
+    await grade("k");
     await settle(16);
     expect(posted(calls, FINISH).map(ids)).toStrictEqual([["round-1:f:c2"]]);
   });
@@ -708,8 +708,8 @@ describe("the drill after a reload", () => {
   it("finishes at once when the reload came after the last answer", async () => {
     serve({ answers: inFlight, finish: inFlight });
     await openRound("/drill?kind=today");
-    await grade("ArrowRight");
-    await grade("ArrowRight");
+    await grade("k");
+    await grade("k");
 
     const calls = await reload({});
     await settle(16);
@@ -724,13 +724,13 @@ describe("the drill after a reload", () => {
   it("keeps an unsaved miss for the retry pass", async () => {
     serve({ answers: inFlight });
     await openRound("/drill?kind=today");
-    await grade("ArrowLeft");
+    await grade("j");
 
     await reload({});
     press("Enter");
     await settle(16);
     expect(screen.getByText("prompt-c2")).toBeInTheDocument();
-    await grade("ArrowRight");
+    await grade("k");
     expect(screen.getByText(ja.Drill.card.again)).toBeInTheDocument();
     expect(screen.getByText("prompt-c1")).toBeInTheDocument();
   });

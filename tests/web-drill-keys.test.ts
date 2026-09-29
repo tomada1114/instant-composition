@@ -51,12 +51,12 @@ describe("keyAction", () => {
   });
 
   it.each([
-    ["ArrowRight", { type: "grade", result: "ok" }],
     ["k", { type: "grade", result: "ok" }],
     ["K", { type: "grade", result: "ok" }],
     ["f", { type: "grade", result: "ok" }],
     ["F", { type: "grade", result: "ok" }],
-    ["ArrowLeft", { type: "grade", result: "ng" }],
+    ["ArrowRight", undefined],
+    ["ArrowLeft", undefined],
     ["j", { type: "grade", result: "ng" }],
     ["J", { type: "grade", result: "ng" }],
     ["d", { type: "grade", result: "ng" }],
@@ -73,11 +73,11 @@ describe("keyAction", () => {
   it.each([
     [" ", { type: "next" }],
     ["Enter", { type: "next" }],
-    ["ArrowRight", { type: "next" }],
     ["k", { type: "next" }],
     ["K", { type: "next" }],
     ["f", { type: "next" }],
     ["F", { type: "next" }],
+    ["ArrowRight", undefined],
     ["ArrowLeft", undefined],
     ["j", undefined],
     ["J", undefined],
@@ -91,7 +91,7 @@ describe("keyAction", () => {
 
   it("only pauses during the feedback", () => {
     expect(keyAction(feedback, "Escape")).toStrictEqual({ type: "pause" });
-    expect(keyAction(feedback, "ArrowRight")).toBeUndefined();
+    expect(keyAction(feedback, "k")).toBeUndefined();
   });
 
   it("only resumes on Escape while paused, leaving other keys to the sheet", () => {

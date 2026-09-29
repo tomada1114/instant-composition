@@ -14,7 +14,7 @@ export function Kbd({
   className,
 }: Readonly<{
   children: string;
-  /** Which edge it is pinned to: a "←" hint sits at the start, so it points the way it is pressed. */
+  /** Which edge it is pinned to: a "J" hint sits at the start, on the side of the key it names. */
   side?: "start" | "end";
   className?: string;
 }>): ReactElement {
