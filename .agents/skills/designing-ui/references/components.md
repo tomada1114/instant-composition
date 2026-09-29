@@ -125,13 +125,18 @@ stays the drill's, for its ticks.
 
 ## In-page tabs (`tabs`)
 
-Records and settings are each split into tabs so that every tab fits a phone's screen
-(390 × 844) above the tab bar without the page scrolling: settings into "cards" (topics,
-focus, cards a day), "level" (the level, who moves it, measuring again, seconds per
-card) and "app" (sound, time zone, account); records into "overview" (the rings and each
-topic's breakdown), "weak" (the weak points) and "history" (the stat tiles, the calendar
-and the milestones). The owner asked for it: a hub screen is read at a glance, not
-scrolled through.
+Records and settings are each split into tabs so that every tab fits a 390 × 844 phone
+above the tab bar without the page scrolling: settings into "cards" (topics, focus,
+cards a day), "level" (the level, who moves it, measuring again, seconds per card) and
+"app" (sound, time zone, account); records into "overview" (the rings and each topic's
+breakdown), "weak" (the weak points) and "history" (the stat tiles, the calendar and the
+milestones). The owner decided it in #215: mobile-first, and a hub screen is read at a
+glance on a phone, not scrolled through.
+
+Which heights bind: 390 × 844 is the one a tab must fit with no page scroll. The PC
+column (at most 720 tall, see the foundations reference), a shorter phone and a phone on
+its side are not promised it — there a tab whose fixed parts do not fit scrolls the
+page, and every control stays reachable above the bar.
 
 - Under the screen's `heading`, 12 below it: equal cells across the column over one
   hairline (`border-b border-border`), each 44 tall, the name centred in `label`.
@@ -141,18 +146,28 @@ scrolled through.
 - A `tablist` named by the screen's heading, each cell a `tab` with `aria-selected`;
   only the current tab is in the Tab order, and ←/→ move to the previous and next tab
   (wrapping round), Home and End to the first and last, choosing it as focus lands. The
-  panel under it is the `tabpanel`, named by its tab; only the current one is rendered.
+  panel under it is the `tabpanel`, named by its tab and in the Tab order itself (the
+  global white outline); only the current one is rendered, and only the current tab
+  carries `aria-controls`.
 - The chosen tab is the URL's `?tab=` (`/settings?tab=level`), replaced rather than
-  pushed, so a reload or a link keeps it and Back leaves the screen. A missing or
-  unknown value is the first tab.
-- The screen is the column's height, less the tab bar, 24 above the heading and 24 above
-  the bar; the panel takes what is left. A list that cannot fit — the focus chips, an
-  opened breakdown, the milestones — scrolls inside its own region and nothing else
-  does. When even that is not enough (a phone shorter than 844), the page scrolls rather
-  than clip.
+  pushed, so a reload or a link keeps it and Back leaves the screen. The first tab is
+  the bare path: choosing it drops `?tab=`, and a `?tab=` naming no tab is replaced by
+  the bare path.
+- The screen is at least the column's height less the tab bar's space (its bottom
+  padding), 24 above the heading and 24 above the bar, and otherwise as tall as its
+  content — a floor, never a fixed height. The panel takes what is left. A list that
+  cannot fit — the focus chips, an opened breakdown, the milestones — grows into that
+  space and scrolls inside its own region (`SELF_SCROLL`: `contain-size`, so its rows
+  never count towards the screen's height), down to about one row; nothing else scrolls
+  inside a tab. When the rest of a tab does not fit either, the screen grows past the
+  column and the page scrolls; nothing is clipped and nothing ends under the bar.
+- A self-scrolling region is inset by 6 (`-m-1.5 p-1.5`) where its rows take focus, so
+  their outline is not clipped, and takes focus itself (`tabIndex=0`, named by its
+  section's heading) where none of its rows does — the milestones — so a keyboard can
+  scroll it.
 
 `apps/web/src/ui/tabs.tsx` is this recipe; `apps/web/src/lib/tabbed-screen.tsx` lays out
-a screen around it.
+a screen around it and exports `SELF_SCROLL`.
 
 ## Grade pair
 

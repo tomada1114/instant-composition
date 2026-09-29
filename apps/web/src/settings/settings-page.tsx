@@ -3,7 +3,7 @@ import { Navigate } from "@tanstack/react-router";
 import type { ReactElement } from "react";
 
 import { PageLoadFailed, PageLoading } from "../lib/page-shell";
-import { isSignedOut, SETTINGS_QUERY } from "../lib/queries";
+import { isSignedOut, PROFILE_QUERY, SETTINGS_QUERY } from "../lib/queries";
 import type { SettingsTab } from "../lib/screen-tabs";
 import { SettingsScreen } from "./settings-screen";
 
@@ -13,6 +13,9 @@ import { SettingsScreen } from "./settings-screen";
  */
 export function SettingsPage({ tab }: Readonly<{ tab: SettingsTab }>): ReactElement {
   const page = useQuery({ ...SETTINGS_QUERY, refetchOnMount: "always" });
+  // The time zone row's read, once per visit rather than on every opening of
+  // the app tab; nothing here waits for it.
+  useQuery({ ...PROFILE_QUERY, refetchOnMount: "always" });
 
   if (!page.isFetchedAfterMount) return <PageLoading withTabBar />;
   if (isSignedOut(page.error)) return <Navigate to="/" replace />;

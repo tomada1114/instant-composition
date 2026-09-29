@@ -20,14 +20,17 @@ function zoneChoices(current: string): readonly string[] {
 /**
  * The stored time zone, read from `GET /v1/me` and changed through
  * `PATCH /v1/me`. A change moves only the next "today": the API rewrites no
- * day already recorded. The row is left out while the profile cannot be read.
+ * day already recorded. The settings page reads the profile once per visit,
+ * so opening the app tab again reads nothing; while that read is out the row
+ * stands with its name alone, and it is left out when the profile cannot be
+ * read.
  */
 export function TimeZoneRow({
   onFailedChange,
 }: Readonly<{ onFailedChange: (failed: boolean) => void }>): ReactElement | null {
   const t = useTranslations("Settings.timeZone");
   const client = useQueryClient();
-  const profile = useQuery({ ...PROFILE_QUERY, refetchOnMount: "always" });
+  const profile = useQuery({ ...PROFILE_QUERY, refetchOnMount: false });
   const [changed, setChanged] = useState(false);
   const labelId = useId();
   const saved = useRef(profile.data);
@@ -36,7 +39,13 @@ export function TimeZoneRow({
   const zone = profile.data?.timeZone;
   const choices = useMemo(() => (zone === undefined ? [] : zoneChoices(zone)), [zone]);
 
-  if (zone === undefined) return null;
+  if (zone === undefined) {
+    return profile.isPending ? (
+      <div className="flex flex-col border-t border-border py-4">
+        <h2 className="flex min-h-8 items-center">{t("title")}</h2>
+      </div>
+    ) : null;
+  }
 
   function save(timeZone: string): void {
     if (profile.data === undefined || timeZone === zone) return;

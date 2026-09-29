@@ -2,7 +2,9 @@ import {
   createRootRoute,
   createRoute,
   createRouter,
+  Navigate,
   Outlet,
+  useRouterState,
   type SearchSchemaInput,
 } from "@tanstack/react-router";
 import type { ReactElement } from "react";
@@ -14,6 +16,7 @@ import { WelcomePage } from "./home/welcome-page";
 import {
   RECORDS_TABS,
   SETTINGS_TABS,
+  addressedTab,
   tabSearch,
   type RecordsTab,
   type SettingsTab,
@@ -56,12 +59,15 @@ const drillRoute = createRoute({
 const recordsRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "records",
-  // A missing or unknown `?tab=` is the first tab, and a link may leave it out.
+  // A missing `?tab=` is the first tab, and a link may leave it out; an
+  // unknown one is replaced by the bare path.
   validateSearch: (
     search: { tab?: RecordsTab } & SearchSchemaInput,
   ): { tab?: RecordsTab | undefined } => tabSearch(RECORDS_TABS, search.tab),
   component: function RecordsRoute(): ReactElement {
-    const { tab = RECORDS_TABS[0] } = recordsRoute.useSearch();
+    const searchStr = useRouterState({ select: (state) => state.location.searchStr });
+    const { tab, stray } = addressedTab(RECORDS_TABS, searchStr);
+    if (stray) return <Navigate to="/records" replace />;
     return <RecordsPage tab={tab} />;
   },
 });
@@ -79,7 +85,9 @@ const settingsRoute = createRoute({
     search: { tab?: SettingsTab } & SearchSchemaInput,
   ): { tab?: SettingsTab | undefined } => tabSearch(SETTINGS_TABS, search.tab),
   component: function SettingsRoute(): ReactElement {
-    const { tab = SETTINGS_TABS[0] } = settingsRoute.useSearch();
+    const searchStr = useRouterState({ select: (state) => state.location.searchStr });
+    const { tab, stray } = addressedTab(SETTINGS_TABS, searchStr);
+    if (stray) return <Navigate to="/settings" replace />;
     return <SettingsPage tab={tab} />;
   },
 });

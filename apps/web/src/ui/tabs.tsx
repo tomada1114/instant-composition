@@ -106,7 +106,11 @@ export function Tabs<T extends string>({
   );
 }
 
-/** The current tab's panel, named by its tab; the others are not rendered. */
+/**
+ * The current tab's panel, named by its tab; the others are not rendered. It
+ * takes focus itself (the ARIA tabs pattern), so Tab from the tabs lands on
+ * it with the global white outline, whatever the panel holds.
+ */
 export function TabPanel({
   id,
   value,
@@ -120,7 +124,13 @@ export function TabPanel({
 }>): ReactElement {
   const { tab, panel } = ids(id, value);
   return (
-    <div role="tabpanel" id={panel} aria-labelledby={tab} className={className}>
+    <div
+      role="tabpanel"
+      id={panel}
+      aria-labelledby={tab}
+      tabIndex={0}
+      className={className}
+    >
       {children}
     </div>
   );

@@ -1,7 +1,9 @@
 import { useId, useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
+import { SELF_SCROLL } from "../lib/tabbed-screen";
 import { TUNING } from "../lib/tuning";
+import { cn } from "../lib/utils";
 import type { Settings, SubtopicRef, TopicInfo } from "../openapi";
 import { ChoiceChip } from "../ui/choice-chip";
 import { Segmented } from "../ui/segmented";
@@ -125,7 +127,10 @@ export function FocusSection({
       <div
         role="group"
         aria-labelledby={id}
-        className="-m-1.5 flex min-h-14 flex-1 flex-wrap content-start gap-2 overflow-y-auto p-1.5"
+        className={cn(
+          "-m-1.5 flex min-h-14 flex-wrap content-start gap-2 p-1.5",
+          SELF_SCROLL,
+        )}
       >
         {offered.map((ref) => {
           const selected = focus.some((chosen) => same(chosen, ref));

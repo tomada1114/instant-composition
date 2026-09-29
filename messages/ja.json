@@ -306,7 +306,6 @@
       "retest": "測り直す",
       "auto": "自動",
       "manual": "手動",
-      "state": "{mode} · {level}",
       "mode": "決め方",
       "levels": "TOEIC の目安",
       "option": "TOEIC {toeic}",

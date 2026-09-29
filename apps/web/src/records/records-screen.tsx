@@ -2,9 +2,10 @@ import { useNavigate } from "@tanstack/react-router";
 import type { ReactElement, ReactNode } from "react";
 import { useFormatter, useTranslations } from "use-intl";
 
-import { RECORDS_TABS, type RecordsTab } from "../lib/screen-tabs";
-import { TabbedScreen } from "../lib/tabbed-screen";
+import { RECORDS_TABS, searchFor, type RecordsTab } from "../lib/screen-tabs";
+import { SELF_SCROLL, TabbedScreen } from "../lib/tabbed-screen";
 import { useEscapeHome } from "../lib/use-escape-home";
+import { cn } from "../lib/utils";
 import type { RecordsView } from "../openapi";
 import { ReachRings } from "../summary/reach-rings";
 import { InfoTip } from "../ui/info-tip";
@@ -99,16 +100,23 @@ export function RecordsScreen({
       tabs={RECORDS_TABS.map((value) => ({ value, label: t(`tabs.${value}`) }))}
       tab={tab}
       onTab={(next) => {
-        void navigate({ to: "/records", search: { tab: next }, replace: true });
+        void navigate({
+          to: "/records",
+          search: searchFor(RECORDS_TABS, next),
+          replace: true,
+        });
       }}
     >
       {tab === "overview" ? (
         <div className="flex min-h-0 flex-1 flex-col gap-3">
           <ReachRings reach={records.reach} shown={final} />
-          <div className="flex min-h-12 flex-1 flex-col overflow-y-auto border-t border-border">
-            {records.breakdown.map((topic) => (
-              <Breakdown key={topic.id} topic={topic} />
-            ))}
+          {/* Inset by 6 so the rows' focus outline is not clipped by the scroll. */}
+          <div className={cn("-m-1.5 min-h-15 p-1.5", SELF_SCROLL)}>
+            <div className="flex flex-col border-t border-border">
+              {records.breakdown.map((topic) => (
+                <Breakdown key={topic.id} topic={topic} />
+              ))}
+            </div>
           </div>
         </div>
       ) : null}

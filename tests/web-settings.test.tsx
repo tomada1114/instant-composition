@@ -346,23 +346,24 @@ function option(toeic: string): HTMLElement {
   });
 }
 
-/** The level heading's figure: the mode, then the level by its TOEIC reference. */
-function difficultyState(mode: "auto" | "manual", level: string): string {
-  return fill(ja.Settings.difficulty.state, {
-    mode: ja.Settings.difficulty[mode],
-    level,
-  });
+/** The level tab's controls as they stand: the mode chosen and the level checked. */
+function expectLevel(mode: "auto" | "manual", toeic: string): void {
+  expect(
+    within(screen.getByRole("radiogroup", { name: ja.Settings.difficulty.levels }))
+      .getAllByRole("radio")
+      .filter((radio) => radio.getAttribute("aria-checked") === "true")
+      .map((radio) => radio.textContent),
+  ).toStrictEqual([toeic]);
+  expect(
+    screen.getByRole("radio", { name: ja.Settings.difficulty[mode] }),
+  ).toHaveAttribute("aria-checked", "true");
 }
 
 describe("the settings screen, W12 measuring again", () => {
   it("asks first, and starts the placement on confirm", async () => {
     serveSettings();
     await renderApp("/settings?tab=level");
-    expect(
-      screen.getByText(
-        difficultyState("auto", fill(ja.Records.toeic, { toeic: "730" })),
-      ),
-    ).toBeInTheDocument();
+    expectLevel("auto", "730");
     fireEvent.click(retest());
     const sheet = screen.getByRole("dialog", { name: ja.Settings.retest.title });
     expect(within(sheet).getByText(ja.Settings.retest.body)).toBeInTheDocument();
@@ -373,7 +374,7 @@ describe("the settings screen, W12 measuring again", () => {
     expect(where()).toBe("/drill?kind=placement");
   });
 
-  it("says the difficulty is not measured before a placement", async () => {
+  it("shows no level chosen and no mode before a placement", async () => {
     serveSettings({
       ...PAGE,
       toeic: null,
@@ -381,8 +382,13 @@ describe("the settings screen, W12 measuring again", () => {
     });
     await renderApp("/settings?tab=level");
     expect(
-      screen.getByText(difficultyState("auto", ja.Records.notMeasured)),
-    ).toBeInTheDocument();
+      screen.queryByRole("radiogroup", { name: ja.Settings.difficulty.mode }),
+    ).not.toBeInTheDocument();
+    expect(
+      within(screen.getByRole("radiogroup", { name: ja.Settings.difficulty.levels }))
+        .getAllByRole("radio")
+        .filter((radio) => radio.getAttribute("aria-checked") === "true"),
+    ).toStrictEqual([]);
   });
 
   it("carries the one navigation, the settings current", async () => {
@@ -415,7 +421,7 @@ describe("the settings screen, W12 measuring again", () => {
 });
 
 describe("the settings screen, the difficulty", () => {
-  it("fixes a level picked by hand and says so in the heading", async () => {
+  it("fixes a level picked by hand and shows it chosen by hand", async () => {
     const { choices } = serveSettings();
     await renderApp("/settings?tab=level");
     fireEvent.click(option("800"));
@@ -426,11 +432,7 @@ describe("the settings screen, the difficulty", () => {
       screen.getByRole("radio", { name: ja.Settings.difficulty.manual }),
     ).toHaveAttribute("aria-checked", "true");
     expect(screen.getByText(ja.Settings.difficulty.manualNote)).toBeInTheDocument();
-    expect(
-      screen.getByText(
-        difficultyState("manual", fill(ja.Records.toeic, { toeic: "800" })),
-      ),
-    ).toBeInTheDocument();
+    expectLevel("manual", "800");
   });
 
   it("switches a level picked by hand back to auto, keeping the level", async () => {
@@ -439,20 +441,12 @@ describe("the settings screen, the difficulty", () => {
       difficulty: { mode: "manual", level: 5, toeic: "730" },
     });
     await renderApp("/settings?tab=level");
-    expect(
-      screen.getByText(
-        difficultyState("manual", fill(ja.Records.toeic, { toeic: "730" })),
-      ),
-    ).toBeInTheDocument();
+    expectLevel("manual", "730");
     fireEvent.click(screen.getByRole("radio", { name: ja.Settings.difficulty.auto }));
     await settle();
     expect(choices).toStrictEqual([{ mode: "auto" }]);
     expect(screen.getByText(ja.Settings.difficulty.autoNote)).toBeInTheDocument();
-    expect(
-      screen.getByText(
-        difficultyState("auto", fill(ja.Records.toeic, { toeic: "730" })),
-      ),
-    ).toBeInTheDocument();
+    expectLevel("auto", "730");
   });
 
   it("fixes the level as it is when manual is chosen without picking one", async () => {
@@ -532,11 +526,7 @@ describe("the settings screen, the difficulty", () => {
     expect(screen.getByRole("alert")).toHaveTextContent(ja.Settings.saveFailed);
     fireEvent.click(screen.getByRole("tab", { name: ja.Settings.tabs.level }));
     await settle();
-    expect(
-      screen.getByText(
-        difficultyState("auto", fill(ja.Records.toeic, { toeic: "730" })),
-      ),
-    ).toBeInTheDocument();
+    expectLevel("auto", "730");
   });
 
   it("goes back to the level as saved, and says so, when a change fails", async () => {
@@ -582,9 +572,10 @@ describe("the settings screen, its tabs", () => {
     expect(screen.queryByRole("switch")).not.toBeInTheDocument();
   });
 
-  it("switches tabs by click, keeping the choice in the address", async () => {
+  it("switches tabs by click, replacing the address rather than adding to the history", async () => {
     serveSettings();
     await renderApp("/settings");
+    const entries = window.history.length;
     fireEvent.click(screen.getByRole("tab", { name: ja.Settings.tabs.level }));
     await settle();
     expect(where()).toBe("/settings?tab=level");
@@ -602,6 +593,10 @@ describe("the settings screen, its tabs", () => {
     expect(
       screen.getByRole("button", { name: ja.Settings.signOut.action }),
     ).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("tab", { name: ja.Settings.tabs.cards }));
+    await settle();
+    expect(where()).toBe("/settings");
+    expect(window.history.length).toBe(entries);
   });
 
   it("moves between tabs with the arrow keys, wrapping round, and Home and End", async () => {
@@ -621,34 +616,67 @@ describe("the settings screen, its tabs", () => {
     expect(tab(ja.Settings.tabs.app)).toHaveFocus();
     fireEvent.keyDown(tab(ja.Settings.tabs.app), { key: "ArrowRight" });
     await settle();
-    expect(where()).toBe("/settings?tab=cards");
+    expect(where()).toBe("/settings");
     fireEvent.keyDown(tab(ja.Settings.tabs.cards), { key: "End" });
     await settle();
+    expect(where()).toBe("/settings?tab=app");
     expect(tab(ja.Settings.tabs.app)).toHaveFocus();
     fireEvent.keyDown(tab(ja.Settings.tabs.app), { key: "Home" });
     await settle();
     expect(tab(ja.Settings.tabs.cards)).toHaveFocus();
-    expect(where()).toBe("/settings?tab=cards");
+    expect(where()).toBe("/settings");
   });
 
-  it("keeps only the current tab in the Tab order", async () => {
+  it("keeps only the current tab in the Tab order, then its panel", async () => {
     serveSettings();
     await renderApp("/settings?tab=app");
     expect(
       screen.getAllByRole("tab").map((tab) => tab.getAttribute("tabindex")),
     ).toStrictEqual(["-1", "-1", "0"]);
+    expect(screen.getByRole("tabpanel")).toHaveAttribute("tabindex", "0");
+  });
+
+  it("ties the current tab and its panel to each other, and no other tab to a panel", async () => {
+    serveSettings();
+    await renderApp("/settings?tab=level");
+    const panel = screen.getByRole("tabpanel");
+    const current = screen.getByRole("tab", { name: ja.Settings.tabs.level });
+    expect(current).toHaveAttribute("aria-controls", panel.id);
+    expect(panel).toHaveAttribute("aria-labelledby", current.id);
+    expect(
+      screen
+        .getAllByRole("tab")
+        .filter((tab) => tab !== current)
+        .map((tab) => tab.getAttribute("aria-controls")),
+    ).toStrictEqual([null, null]);
+  });
+
+  it("is the column's height yet grows to fit, its self-scrolling chips left out of that", async () => {
+    serveSettings();
+    await renderApp("/settings");
+    const main = screen.getByRole("main");
+    // A floor, never a fixed height: a tab taller than the column must
+    // push the page longer, not slide under the tab bar.
+    expect(main.className).toMatch(/(^|\s)min-h-\[calc\(var\(--column-height\)/u);
+    expect(main.className).not.toMatch(/(^|\s)(h|max-h)-/u);
+    const scrolls = [...main.querySelectorAll(".overflow-y-auto")];
+    expect(scrolls).toStrictEqual([
+      screen.getByRole("group", { name: ja.Settings.focus.title }),
+    ]);
+    for (const region of scrolls) expect(region).toHaveClass("contain-size");
   });
 
   it.each([
-    ["/settings?tab=level", ja.Settings.tabs.level],
-    ["/settings?tab=app", ja.Settings.tabs.app],
-    ["/settings?tab=cards", ja.Settings.tabs.cards],
-    ["/settings?tab=nothing", ja.Settings.tabs.cards],
-  ])("opens %s on its tab", async (path, name) => {
+    ["/settings?tab=level", ja.Settings.tabs.level, "/settings?tab=level"],
+    ["/settings?tab=app", ja.Settings.tabs.app, "/settings?tab=app"],
+    ["/settings?tab=cards", ja.Settings.tabs.cards, "/settings?tab=cards"],
+    ["/settings?tab=nothing", ja.Settings.tabs.cards, "/settings"],
+  ])("opens %s on its tab", async (path, name, address) => {
     serveSettings();
     await renderApp(path);
     expect(screen.getByRole("tab", { name })).toHaveAttribute("aria-selected", "true");
     expect(screen.getByRole("tabpanel", { name })).toBeInTheDocument();
+    expect(where()).toBe(address);
   });
 });
 
@@ -719,10 +747,13 @@ describe("the settings screen, sign-out", () => {
 
 describe("the settings screen, the time zone", () => {
   /** Serves the settings page and a profile in `zone`, saving each profile patch. */
-  function serveProfile(zone: string): { readonly zones: string[] } {
+  function serveProfile(zone: string): {
+    readonly zones: string[];
+    readonly calls: ApiCall[];
+  } {
     const zones: string[] = [];
     let profile = { timeZone: zone, l1: "ja", target: "en", uiLocale: "ja" };
-    fakeApi((call) => {
+    const calls = fakeApi((call) => {
       if (call.method === "GET" && call.url === "/api/v1/settings") {
         return Response.json(PAGE);
       }
@@ -737,11 +768,43 @@ describe("the settings screen, the time zone", () => {
       }
       return undefined;
     });
-    return { zones };
+    return { zones, calls };
   }
 
   const device = new Intl.DateTimeFormat().resolvedOptions().timeZone;
   const other = device === "Pacific/Auckland" ? "Europe/London" : "Pacific/Auckland";
+
+  it("reads the profile once a visit, not again each time the app tab opens", async () => {
+    const { calls } = serveProfile(device);
+    await renderApp("/settings");
+    for (const name of [
+      ja.Settings.tabs.app,
+      ja.Settings.tabs.level,
+      ja.Settings.tabs.app,
+    ]) {
+      fireEvent.click(screen.getByRole("tab", { name }));
+      await settle();
+    }
+    expect(
+      screen.getByRole("combobox", { name: ja.Settings.timeZone.title }),
+    ).toHaveValue(device);
+    expect(
+      calls.filter((call) => call.method === "GET" && call.url === "/api/v1/me"),
+    ).toHaveLength(1);
+  });
+
+  it("stands the row by its name alone while the profile is being read", async () => {
+    fakeApi((call) =>
+      call.url === "/api/v1/settings"
+        ? Response.json(PAGE)
+        : new Promise<Response>(() => undefined),
+    );
+    await renderApp("/settings?tab=app");
+    expect(
+      screen.getByRole("heading", { name: ja.Settings.timeZone.title }),
+    ).toBeInTheDocument();
+    expect(screen.queryByRole("combobox")).not.toBeInTheDocument();
+  });
 
   it("shows the stored zone and saves one picked through PATCH /v1/me", async () => {
     const { zones } = serveProfile(device);

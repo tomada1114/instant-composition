@@ -1,6 +1,7 @@
 import { useId, useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
+import { SELF_SCROLL } from "../lib/tabbed-screen";
 import { cn } from "../lib/utils";
 import type { BreakdownTopic, Dot, TitleGroup, WeakPoints } from "../openapi";
 import { ChevronGlyph } from "../ui/glyphs";
@@ -108,7 +109,15 @@ export function MilestoneList({
       {groups.length === 0 ? (
         <p className="text-muted-foreground">{t("none")}</p>
       ) : (
-        <dl className="grid min-h-6 grid-cols-[auto_1fr] content-start gap-x-6 gap-y-1 overflow-y-auto">
+        // Focusable, so a keyboard can scroll the rows: none of them takes focus.
+        <dl
+          tabIndex={0}
+          aria-labelledby={id}
+          className={cn(
+            "grid min-h-6 grid-cols-[auto_1fr] content-start gap-x-6 gap-y-1",
+            SELF_SCROLL,
+          )}
+        >
           {groups.map((group) => (
             <div
               key={group.kind === "streak" ? "streak" : group.topic}

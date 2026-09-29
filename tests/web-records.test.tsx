@@ -197,6 +197,9 @@ describe("the records screen, W10", () => {
     expect(names).toStrictEqual([ja.Records.titles.streak, "日常"]);
     expect(within(titles).getByText("7 · 14")).toBeInTheDocument();
     expect(within(titles).getByText("10 · 25 · 50 · 100")).toBeInTheDocument();
+    const rows = titles.querySelector("dl");
+    expect(rows).toHaveAttribute("tabindex", "0");
+    expect(rows).toHaveAccessibleName(ja.Records.titles.title);
   });
 
   it("names the weak grammar and scenes, weakest first, with no count beside them", async () => {
@@ -213,6 +216,9 @@ describe("the records screen, W10", () => {
         .getAllByRole("definition")
         .map((definition) => definition.textContent),
     ).toStrictEqual(["現在完了、命令文・Let's", "家、日程調整"]);
+    expect(
+      document.querySelector(".text-accent, .bg-accent, .stroke-accent"),
+    ).toBeNull();
   });
 
   it("leaves out a kind with nothing weak in it", async () => {
@@ -344,9 +350,10 @@ describe("the records screen, its tabs", () => {
     ).not.toBeInTheDocument();
   });
 
-  it("switches tabs by click, keeping the choice in the address", async () => {
+  it("switches tabs by click, replacing the address rather than adding to the history", async () => {
     serveRecords();
     await renderApp("/records");
+    const entries = window.history.length;
     fireEvent.click(screen.getByRole("tab", { name: ja.Records.tabs.weak }));
     await settle();
     expect(where()).toBe("/records?tab=weak");
@@ -358,9 +365,13 @@ describe("the records screen, its tabs", () => {
     await settle();
     expect(where()).toBe("/records?tab=history");
     expect(screen.getByRole("img", { name: ja.Records.calendar })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("tab", { name: ja.Records.tabs.overview }));
+    await settle();
+    expect(where()).toBe("/records");
+    expect(window.history.length).toBe(entries);
   });
 
-  it("moves between tabs with the arrow keys, wrapping round", async () => {
+  it("moves between tabs with the arrow keys, wrapping round, and Home and End", async () => {
     serveRecords();
     await renderApp("/records");
     const tab = (name: string): HTMLElement => screen.getByRole("tab", { name });
@@ -378,7 +389,55 @@ describe("the records screen, its tabs", () => {
     expect(
       screen.getByRole("tabpanel", { name: ja.Records.tabs.weak }),
     ).toBeInTheDocument();
+    fireEvent.keyDown(tab(ja.Records.tabs.weak), { key: "End" });
+    await settle();
+    expect(where()).toBe("/records?tab=history");
+    expect(tab(ja.Records.tabs.history)).toHaveFocus();
+    fireEvent.keyDown(tab(ja.Records.tabs.history), { key: "Home" });
+    await settle();
+    expect(where()).toBe("/records");
+    expect(tab(ja.Records.tabs.overview)).toHaveFocus();
   });
+
+  it("keeps only the current tab in the Tab order, then its panel", async () => {
+    serveRecords();
+    await renderApp("/records?tab=weak");
+    expect(
+      screen.getAllByRole("tab").map((tab) => tab.getAttribute("tabindex")),
+    ).toStrictEqual(["-1", "0", "-1"]);
+    expect(screen.getByRole("tabpanel")).toHaveAttribute("tabindex", "0");
+  });
+
+  it("ties the current tab and its panel to each other, and no other tab to a panel", async () => {
+    serveRecords();
+    await renderApp("/records?tab=history");
+    const panel = screen.getByRole("tabpanel");
+    const current = screen.getByRole("tab", { name: ja.Records.tabs.history });
+    expect(current).toHaveAttribute("aria-controls", panel.id);
+    expect(panel).toHaveAttribute("aria-labelledby", current.id);
+    expect(
+      screen
+        .getAllByRole("tab")
+        .filter((tab) => tab !== current)
+        .map((tab) => tab.getAttribute("aria-controls")),
+    ).toStrictEqual([null, null]);
+  });
+
+  it.each(["/records", "/records?tab=history"])(
+    "is the column's height yet grows to fit at %s, its self-scrolling lists left out of that",
+    async (path) => {
+      serveRecords();
+      await renderApp(path);
+      const main = screen.getByRole("main");
+      // A floor, never a fixed height: a tab taller than the column must
+      // push the page longer, not slide under the tab bar.
+      expect(main.className).toMatch(/(^|\s)min-h-\[calc\(var\(--column-height\)/u);
+      expect(main.className).not.toMatch(/(^|\s)(h|max-h)-/u);
+      const scrolls = [...main.querySelectorAll(".overflow-y-auto")];
+      expect(scrolls).toHaveLength(1);
+      for (const region of scrolls) expect(region).toHaveClass("contain-size");
+    },
+  );
 
   it("ignores other keys on a tab, and leaves Esc going home", async () => {
     serveRecords();
@@ -394,15 +453,16 @@ describe("the records screen, its tabs", () => {
   });
 
   it.each([
-    ["/records?tab=weak", ja.Records.tabs.weak],
-    ["/records?tab=history", ja.Records.tabs.history],
-    ["/records?tab=overview", ja.Records.tabs.overview],
-    ["/records?tab=level", ja.Records.tabs.overview],
-  ])("opens %s on its tab", async (path, name) => {
+    ["/records?tab=weak", ja.Records.tabs.weak, "/records?tab=weak"],
+    ["/records?tab=history", ja.Records.tabs.history, "/records?tab=history"],
+    ["/records?tab=overview", ja.Records.tabs.overview, "/records?tab=overview"],
+    ["/records?tab=level", ja.Records.tabs.overview, "/records"],
+  ])("opens %s on its tab", async (path, name, address) => {
     serveRecords();
     await renderApp(path);
     expect(screen.getByRole("tab", { name })).toHaveAttribute("aria-selected", "true");
     expect(screen.getByRole("tabpanel", { name })).toBeInTheDocument();
+    expect(where()).toBe(address);
   });
 });
 

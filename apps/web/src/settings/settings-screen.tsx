@@ -3,14 +3,15 @@ import { useEffect, useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
 import { markPressed } from "../drill/pressed";
-import { SETTINGS_TABS, type SettingsTab } from "../lib/screen-tabs";
+import { SETTINGS_TABS, searchFor, type SettingsTab } from "../lib/screen-tabs";
 import { TabbedScreen } from "../lib/tabbed-screen";
 import { useEscapeHome } from "../lib/use-escape-home";
 import type { SettingsPageView } from "../openapi";
 import { Button } from "../ui/button";
 import { Sheet } from "../ui/sheet";
 import { AppSection } from "./app-section";
-import { LevelSection, LimitSection } from "./level-section";
+import { LevelSection } from "./level-section";
+import { LimitSection } from "./limit-section";
 import { FocusSection, SizeSection, TopicsSection } from "./settings-sections";
 import { useLevel } from "./use-level";
 import { useSettings } from "./use-settings";
@@ -73,7 +74,11 @@ export function SettingsScreen({
       tabs={SETTINGS_TABS.map((value) => ({ value, label: t(`tabs.${value}`) }))}
       tab={tab}
       onTab={(next) => {
-        void navigate({ to: "/settings", search: { tab: next }, replace: true });
+        void navigate({
+          to: "/settings",
+          search: searchFor(SETTINGS_TABS, next),
+          replace: true,
+        });
       }}
       notice={
         state.failed || level.failed || zoneFailed ? (
