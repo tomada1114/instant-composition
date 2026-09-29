@@ -1,21 +1,5 @@
 [
   {
-    "id": "c_2c4e9u2w",
-    "ja": "一週間かかってもいいので、ちゃんと直してもらえますか？",
-    "en": "Even if it takes a week, could you fix it properly?",
-    "alternatives": [
-      "It's fine if it takes a week; could you fix it properly?",
-      "Could you fix it properly, even if it takes a week?"
-    ],
-    "point": "「かかってもいい」は譲歩の Even if。頼みは could you で丁寧に",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 10,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2f8g9j9z",
     "ja": "窓口が閉まる前に来るべきだったなあ。",
     "en": "I should have come before the counter closed.",
@@ -29,7 +13,13 @@
     "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:56e287b46c7c9c8cd12ae6c6bfa30fdf4662ef0db56d1459a4cd43d815cc35c8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3a4t4p8h",
@@ -45,7 +35,13 @@
     "level": 9,
     "grammar": ["indirect-questions", "hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:444ea3325c5beb9cf26118d7615d0e78843beb63b5c41050c611a12ece7babb9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3f2p3w8y",
@@ -61,7 +57,13 @@
     "level": 9,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9688b94008b2c5bc239441089bfb0686b5fdad168e7f27dcf2d4f7f8780b6c0e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3k2p7u7d",
@@ -77,7 +79,13 @@
     "level": 6,
     "grammar": ["requests-permission", "time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6b300d8152175cac3af9af129be6e6eeb088e8f667bcc957e0d4938a41936001",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3p4p5c2v",
@@ -115,7 +123,13 @@
     "level": 3,
     "grammar": ["gerunds", "wh-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8119b913d28d17da4e00ee721866c5ed9491af5f74794a49c3bb2627a5d8fff1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5f5p5v4b",
@@ -211,7 +225,13 @@
     "level": 3,
     "grammar": ["comparatives-superlatives", "there-is-are"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bb35e3df127f6bcbaa2fe8884b217e2a51e1b470425e4720293af0dd9dda1c43",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6m9d6v8c",
@@ -246,7 +266,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:974b795ae986b8ea3ed2f800e2d62792fe57d4b6d58ced1104449d181bd19d5b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6t2c6c8x",
@@ -281,7 +307,13 @@
     "level": 4,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b667e9c70e223965af82382749d9eeb34cd8824247b751279a149165835ddb32",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6v4u3p2c",
@@ -298,7 +330,13 @@
     "level": 4,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4dd5ff5e28f41c5ca2a28d1706f8e2986c1a795ad93583eb6131ea1819037866",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7b7y5z4f",
@@ -342,22 +380,6 @@
     }
   },
   {
-    "id": "c_8u6s2z8g",
-    "ja": "窓口が空いてれば、今日中に終わるのに。",
-    "en": "If there were no line, I'd finish today.",
-    "alternatives": [
-      "I'd finish today if there were no line.",
-      "If the counter weren't busy, I'd finish today."
-    ],
-    "point": "現在の事実と逆は If + were、主節は would",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 5,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8x6b9c5f",
     "ja": "カウンターに置いてある用紙にご記入ください。",
     "en": "Please fill out the form on the counter.",
@@ -371,7 +393,13 @@
     "level": 6,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ac1a2e456747d8385eae445c9a08a0cafd83800160bf007ff9b7857f3c7cd10b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9b2y4u9p",
@@ -387,7 +415,13 @@
     "level": 6,
     "grammar": ["noun-clauses", "indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:35e33a47732a625d700a1605c9b53c397a91fd59b9e57de146170a44a8925793",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9h8h3s6q",
@@ -403,7 +437,13 @@
     "level": 6,
     "grammar": ["tense-contrast", "relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7f838ba1da4ee83674661f474f8db1cf333af594b971f2f2aa7f50140b9de056",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9x5h2b8v",
