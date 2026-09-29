@@ -62,10 +62,10 @@
   {
     "id": "c_3b9x2q2v",
     "ja": "前の仕事は安定していましたが、挑戦したかったです。",
-    "en": "Although my job was stable, I wanted a challenge.",
+    "en": "Although my last job was stable, I wanted a challenge.",
     "alternatives": [
       "My old job was stable, but I wanted a challenge.",
-      "Even though my job was stable, I wanted a challenge."
+      "My last job was stable, but I wanted a challenge."
     ],
     "point": "Although の節の後ろに but は不要",
     "topic": "work",
@@ -178,11 +178,11 @@
       "I have experience developing new markets.",
       "I've opened up new markets before."
     ],
-    "point": "experience の後ろは of ではなく -ing で続ける",
+    "point": "have experience + -ing（of も可）。「開拓する」は open up",
     "topic": "work",
     "subtopic": "job-interview",
-    "level": 7,
-    "grammar": ["post-modification", "gerunds"],
+    "level": 5,
+    "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -323,7 +323,7 @@
     "point": "look forward to の to は前置詞なので、あとは -ing 形。",
     "topic": "work",
     "subtopic": "job-interview",
-    "level": 8,
+    "level": 5,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -488,11 +488,11 @@
   },
   {
     "id": "c_7y6r7x5f",
-    "ja": "入社したら、まず私に何をしてほしいですか？",
+    "ja": "まず私に何をしてほしいですか？",
     "en": "What would you want me to tackle first?",
     "alternatives": [
       "What would you like me to work on first?",
-      "What would you have me do first?"
+      "What would you like me to start with?"
     ],
     "point": "want + 人 + to do の形。want me doing とは言わない",
     "topic": "work",
@@ -505,16 +505,16 @@
   {
     "id": "c_8e4e6g6k",
     "ja": "お客様に信頼されるよう、資格を取りました。",
-    "en": "I got certified to be someone clients trust.",
+    "en": "I got certified to earn clients' trust.",
     "alternatives": [
-      "I got a certification so clients would trust me.",
+      "I got certified so clients would trust me.",
       "I earned a certification to gain clients' trust."
     ],
-    "point": "someone の後ろに clients trust と直接つなぐ",
+    "point": "目的は to 不定詞。「信頼を得る」は earn trust",
     "topic": "work",
     "subtopic": "job-interview",
     "level": 7,
-    "grammar": ["infinitives", "post-modification"],
+    "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -543,15 +543,15 @@
   {
     "id": "c_9c8s8z5k",
     "ja": "上司に推薦してくれるよう頼みました。",
-    "en": "I asked my boss to recommend me.",
+    "en": "I asked my boss to vouch for me.",
     "alternatives": [
-      "I asked my manager to recommend me.",
-      "I asked my boss to vouch for me."
+      "I asked my boss to recommend me.",
+      "I asked my manager to vouch for me."
     ],
     "point": "ask + 人 + to do。「頼む」は ask 人 to 動詞の形",
     "topic": "work",
     "subtopic": "job-interview",
-    "level": 5,
+    "level": 4,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -559,10 +559,10 @@
   {
     "id": "c_9q8d7p8n",
     "ja": "以前は在庫管理でしたが、今は企画職を狙っています。",
-    "en": "I ran inventory before; now I'm angling for planning roles.",
+    "en": "I used to handle inventory, but now I'm aiming for planning roles.",
     "alternatives": [
-      "I used to handle inventory, but now I'm aiming for planning roles.",
-      "I used to run inventory, but now I'm going after planning work."
+      "I worked in inventory management, but now I'm going for planning roles.",
+      "I handled inventory before, but now I'm aiming for planning."
     ],
     "point": "過去の経歴は過去形、今の狙いは現在進行形で対比する",
     "topic": "work",

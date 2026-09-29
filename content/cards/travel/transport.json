@@ -247,22 +247,6 @@
     "stamps": {}
   },
   {
-    "id": "c_6s4d3b5m",
-    "ja": "最終バスを逃したと気づいて、彼女はタクシーを呼んだ。",
-    "en": "Realizing she'd missed the last bus, she called a cab.",
-    "alternatives": [
-      "She realized she'd missed the last bus and called a cab.",
-      "Realizing she had missed the last bus, she called a taxi."
-    ],
-    "point": "「気づいて」は Realizing の分詞構文で先に置く",
-    "topic": "travel",
-    "subtopic": "transport",
-    "level": 9,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6u2h8a5h",
     "ja": "電車が運休の理由、私には駅員さんの説明がよくわからなかった。",
     "en": "I couldn't follow the staff's explanation of why it was canceled.",
@@ -504,6 +488,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9f8j3y6p",
+    "ja": "最終バスがもう出ていたなんて、思いもしなかったよ。",
+    "en": "Little did I know the last bus had already left.",
+    "alternatives": [
+      "I had no idea the last bus had already left.",
+      "I never dreamed the last bus had already gone."
+    ],
+    "point": "「思いもしなかった」は Little did I know と倒置にする",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 9,
+    "grammar": ["inversion", "past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9v6w6k3g",

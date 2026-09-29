@@ -44,22 +44,6 @@
     }
   },
   {
-    "id": "c_3p4s4t4e",
-    "ja": "終電を逃して、私たちは今夜ここで足止めなんです。",
-    "en": "Having missed the last train, we're stuck here tonight.",
-    "alternatives": [
-      "We missed the last train, so we're stuck here tonight.",
-      "Since we missed the last train, we're stuck here tonight."
-    ],
-    "point": "先に起きたことは Having + 過去分詞で言える",
-    "topic": "travel",
-    "subtopic": "troubles",
-    "level": 9,
-    "grammar": ["participle-clauses", "tense-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3s5w6e8h",
     "ja": "向かいの男性が、私のバッグを持って行ったかも。",
     "en": "The man across from me may have taken my bag.",
@@ -180,6 +164,38 @@
     "subtopic": "troubles",
     "level": 5,
     "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5d2u5k6s",
+    "ja": "終電を逃して、私たち帰れなくなっちゃった。",
+    "en": "We missed the last train, so we're stuck.",
+    "alternatives": [
+      "We're stuck because we missed the last train.",
+      "We can't get home. We missed the last train."
+    ],
+    "point": "「最後の」電車は the last train、the を忘れずに",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 6,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5j7r5w4n",
+    "ja": "バッグを盗まれて、途方に暮れています。",
+    "en": "My bag was stolen, and I'm at my wits' end.",
+    "alternatives": [
+      "Someone stole my bag, and I'm at a total loss.",
+      "My bag got stolen, and I don't know what to do."
+    ],
+    "point": "途方に暮れる は at my wits' end と言える",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 9,
+    "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -348,22 +364,6 @@
     }
   },
   {
-    "id": "c_6z8a8s8z",
-    "ja": "バッグを盗まれて、途方に暮れています。",
-    "en": "Having had my bag stolen, I'm at a loss.",
-    "alternatives": [
-      "My bag got stolen, and I don't know what to do.",
-      "Since my bag was stolen, I'm at my wits' end."
-    ],
-    "point": "盗まれて は Having had 物 過去分詞 で表せる",
-    "topic": "travel",
-    "subtopic": "troubles",
-    "level": 10,
-    "grammar": ["participle-clauses", "causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7h6n2r2k",
     "ja": "盗難は、どこに届ければいいですか？",
     "en": "Where should I report a theft?",
@@ -393,22 +393,6 @@
     "stamps": {}
   },
   {
-    "id": "c_7k7v8t2k",
-    "ja": "乗り遅れたので、明日の便に替えてもらえませんか？",
-    "en": "I missed it. Would you mind rebooking me tomorrow?",
-    "alternatives": [
-      "Since I missed it, could you rebook me for tomorrow?",
-      "I missed it, so could you put me on tomorrow's?"
-    ],
-    "point": "Would you mind の後は動名詞（rebooking）",
-    "topic": "travel",
-    "subtopic": "troubles",
-    "level": 8,
-    "grammar": ["gerunds"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7q2n4p8u",
     "ja": "スーツケースが見つかりません。",
     "en": "I can't find my suitcase.",
@@ -429,22 +413,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_7z6f7w2s",
-    "ja": "着いた途端、私の部屋を他の人に回されてしまったんです。",
-    "en": "Hardly had I arrived when they gave my room away.",
-    "alternatives": [
-      "The moment I arrived, they gave my room to someone else.",
-      "As soon as I got here, they gave my room away."
-    ],
-    "point": "Hardly の後は had I arrived の倒置、次に when",
-    "topic": "travel",
-    "subtopic": "troubles",
-    "level": 9,
-    "grammar": ["inversion", "tense-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_8c7f2k4r",
@@ -527,6 +495,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9v5m7s7x",
+    "ja": "着いた途端、私の部屋を他の人に回されたんです。",
+    "en": "They gave my room away the moment I arrived.",
+    "alternatives": [
+      "My room went to someone else the moment I arrived.",
+      "They gave my room to someone else when I arrived."
+    ],
+    "point": "give away は「(人に)譲る」、the moment で「〜した途端」",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 8,
+    "grammar": ["phrasal-verbs", "time-and-if-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9w6m6g2h",

@@ -69,15 +69,15 @@
   {
     "id": "c_2n4d5s3c",
     "ja": "資料をざっと見て、2 点質問があります。",
-    "en": "Having skimmed your materials, I have two questions.",
+    "en": "Having skimmed the materials, I have two questions.",
     "alternatives": [
-      "After skimming your materials, I have two questions.",
-      "I skimmed your materials and have two questions."
+      "After skimming the materials, I have two questions.",
+      "I skimmed the materials and have two questions."
     ],
     "point": "「〜し終えて」は Having + 過去分詞で先に言う",
     "topic": "work",
     "subtopic": "email-chat",
-    "level": 10,
+    "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -203,12 +203,12 @@
     "en": "Sales replies right away, whereas accounting takes forever.",
     "alternatives": [
       "Sales answers immediately, but accounting takes forever to reply.",
-      "Sales replies instantly, while accounting is really slow to respond."
+      "Sales replies instantly, while accounting is really slow."
     ],
     "point": "対比は whereas か while でつなぐ",
     "topic": "work",
     "subtopic": "email-chat",
-    "level": 8,
+    "level": 6,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -216,15 +216,15 @@
   {
     "id": "c_5v7r3c9s",
     "ja": "二回催促したのに、まだ返事がありません。",
-    "en": "Although I've followed up twice, I haven't heard back.",
+    "en": "Although I've followed up twice, I still haven't heard back.",
     "alternatives": [
-      "Even though I chased them twice, there's still no reply.",
+      "Even though I've followed up twice, there's still no reply.",
       "I've followed up twice, but I still haven't heard back."
     ],
     "point": "催促する は follow up、返事をもらう は hear back",
     "topic": "work",
     "subtopic": "email-chat",
-    "level": 8,
+    "level": 7,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -273,16 +273,16 @@
   {
     "id": "c_6j9t7f8a",
     "ja": "この件、メールより電話のほうが早いかも。",
-    "en": "A call might be quicker than email for this.",
+    "en": "A call might be quicker than email here.",
     "alternatives": [
-      "Calling might be faster than emailing on this.",
-      "It might be quicker to call than to email."
+      "Calling might be faster than emailing here.",
+      "A phone call might be faster than email."
     ],
     "point": "短い語は quicker のように -er で比べ、than でつなぐ",
     "topic": "work",
     "subtopic": "email-chat",
-    "level": 7,
-    "grammar": ["comparatives-superlatives", "hedging-softening"],
+    "level": 4,
+    "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -291,13 +291,13 @@
     "ja": "添付ファイルの数字は、最新のものです。",
     "en": "The figures in the attached file are current.",
     "alternatives": [
-      "The numbers in the attached file are up to date.",
+      "The numbers in the file are the latest.",
       "The attached file has the latest figures."
     ],
     "point": "in the attached file で figures を後ろから説明する",
     "topic": "work",
     "subtopic": "email-chat",
-    "level": 8,
+    "level": 4,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -340,15 +340,15 @@
   {
     "id": "c_7b7w7x6x",
     "ja": "さっき話した資料、送ってもらえますか？",
-    "en": "Could you send the file we just discussed?",
+    "en": "Could you send me the document we discussed?",
     "alternatives": [
-      "Can you send me the file we discussed?",
-      "Could you email me the file we discussed?"
+      "Can you send me those materials we discussed?",
+      "Could you send over the materials we discussed?"
     ],
-    "point": "the file の後ろに we discussed をそのまま続ける（that は省略可）",
+    "point": "the document の後ろに we discussed をそのまま続ける（that は省略可）",
     "topic": "work",
     "subtopic": "email-chat",
-    "level": 5,
+    "level": 4,
     "grammar": ["relative-clauses", "requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -395,14 +395,11 @@
     "id": "c_7m8w2b4d",
     "ja": "返信は、手が空いたらで大丈夫ですよ。",
     "en": "Just reply when you get a chance.",
-    "alternatives": [
-      "Get back to me when you have a moment.",
-      "Feel free to reply when you have time."
-    ],
+    "alternatives": ["Reply whenever you have time.", "Just reply when you're free."],
     "point": "when 節は未来のことでも現在形。「手が空く」は get a chance",
     "topic": "work",
     "subtopic": "email-chat",
-    "level": 7,
+    "level": 3,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -486,15 +483,15 @@
   {
     "id": "c_9m4z9j6p",
     "ja": "先方から返信が来たら、すぐ転送します。",
-    "en": "I'll forward it once they reply.",
+    "en": "I'll forward it as soon as they reply.",
     "alternatives": [
-      "I'll forward it as soon as they reply.",
-      "I'll forward it when they reply."
+      "I'll forward it right after they reply.",
+      "Once they reply, I'll forward it right away."
     ],
     "point": "未来のことでも once / when の後は現在形（will は付けない）",
     "topic": "work",
     "subtopic": "email-chat",
-    "level": 5,
+    "level": 4,
     "grammar": ["time-and-if-clauses", "future-forms"],
     "createdAt": "2026-09-28",
     "stamps": {}

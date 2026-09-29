@@ -1,21 +1,5 @@
 [
   {
-    "id": "c_2y6s5p5c",
-    "ja": "私が早く出てたら、最終ツアーに間に合ったのに。",
-    "en": "If I'd left sooner, I'd have caught the last tour.",
-    "alternatives": [
-      "I would've caught the last tour if I'd left sooner.",
-      "If I'd left earlier, I would've made the last tour."
-    ],
-    "point": "過去の仮定は if + had 過去分詞、would have 過去分詞",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 7,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3d5n5e7c",
     "ja": "写真じゃ伝わらないのは、この滝の音の迫力だよね。",
     "en": "What photos can't capture is the roar of this waterfall.",
@@ -29,7 +13,13 @@
     "level": 9,
     "grammar": ["noun-clauses", "cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:442b82a14196d1129065cb77bfb756e8829ea53e58684154f259ac549ac20824",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3k3m4y2n",
@@ -67,7 +57,13 @@
     "level": 4,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:926a32d93b8487c4a2e3c7a3da717ab32d95d8671ef4a85b1f9b48d291699e03",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3u6x7z9k",
@@ -105,23 +101,13 @@
     "level": 2,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4a9v5n8e",
-    "ja": "彼、朝からずっと展望台で写真を撮ってるよ。",
-    "en": "He's been taking photos at the lookout all morning.",
-    "alternatives": [
-      "He's been shooting photos at the lookout all morning.",
-      "He's been taking pictures at the lookout all morning."
-    ],
-    "point": "ずっと続く動作は現在完了進行形 (has been -ing)",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 6,
-    "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c4de76c208dc5337c2f7dabb5a82e8c5726ae9687aee3ca54074b5c37ae7b31f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4c7e9w8d",
@@ -137,7 +123,13 @@
     "level": 4,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f0d74eb86a1f9020b35f477ddf0cff76cb3b7c68619462becbd74070067eef27",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4y3m2u8r",
@@ -175,7 +167,13 @@
     "level": 4,
     "grammar": ["noun-clauses", "can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:29900091889cb9863633294c3ed9fcfd218bbada109cb2ef8148f4418deef488",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5t2p3r9e",
@@ -198,22 +196,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_5v4n7r9u",
-    "ja": "ガイドを頼んでいれば、私、あれを見られたのに。",
-    "en": "If I'd hired a guide, I'd have seen it.",
-    "alternatives": [
-      "I'd have seen it if I'd hired a guide.",
-      "If I'd gotten a guide, I would've seen it."
-    ],
-    "point": "過去の仮定は if + had done、結果は would have done",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 7,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_5v6z7a3z",
@@ -380,7 +362,13 @@
     "level": 2,
     "grammar": ["articles-and-countability", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:baf789a79b8b4df314e888e6e567846f8ae8070d9607eda97fae8a26aa922b49",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6z5b8v4w",
@@ -462,7 +450,13 @@
     "level": 5,
     "grammar": ["verb-object-to-do", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ed2203a504e910ad0b6f3edd04c3dbef9f23951263f0949e2f46963be62c13d1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7k3y7t2z",
@@ -487,22 +481,6 @@
     }
   },
   {
-    "id": "c_7k4w3c3v",
-    "ja": "展望台がこんなに混んでるの、初めて見たよ。",
-    "en": "Never have I seen a lookout this packed.",
-    "alternatives": [
-      "I've never seen the lookout this packed.",
-      "This is the most packed I've ever seen the lookout."
-    ],
-    "point": "Never を文頭に出すと、have が主語 I の前に来る",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 9,
-    "grammar": ["inversion"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7m2c6w7q",
     "ja": "観光のアドバイスを少しもらえますか？",
     "en": "Could you give me some sightseeing advice?",
@@ -516,7 +494,13 @@
     "level": 4,
     "grammar": ["articles-and-countability", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:37d59c57c6a6c9239a36a5eefec3eaa18555f626cdaa9e9ad292db2038df76c0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7u3w2w9w",
@@ -554,23 +538,13 @@
     "level": 6,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7u8c6r8d",
-    "ja": "このチケットで別館に入れますか？",
-    "en": "Can this ticket get me into the annex?",
-    "alternatives": [
-      "Does this ticket get me into the annex?",
-      "Can I enter the annex with this ticket?"
-    ],
-    "point": "「入れる」は get into。場所の前には the を付ける",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 5,
-    "grammar": ["can-could-ability", "articles-and-countability"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9c13dbfa3e14ca914d961ee95e67dd176379050ae7c971e533c8b3ea958e04da",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8e5x8j3j",
@@ -652,7 +626,13 @@
     "level": 5,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:04452d45f7f5582f2036fbffd5ed8e1b753b4aa73cf958dee5824baa1dc4cf50",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9g8x8b4e",
@@ -690,6 +670,12 @@
     "level": 6,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:35f72e7d924868738b53827d980655ba0a0b75bb3683ad5f658147ba78617857",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
