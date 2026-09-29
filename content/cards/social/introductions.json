@@ -15,9 +15,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:3ef50f983e634c001d9f333352567e82d6b20d962561cef03e4aaff66ccc8bee",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:cb3eee7e8a7ce87d8e33513f614803129d682d618e8981f3f1863cf0042559f6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -34,35 +34,6 @@
     "subtopic": "introductions",
     "level": 7,
     "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2j6m3b5q",
-    "ja": "私は駅の近くで働いています。",
-    "en": "I work near the station.",
-    "alternatives": ["I work by the station.", "My job is near the station."],
-    "point": "「〜の近くで」は near か by を使う",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 2,
-    "grammar": ["be-and-present-simple"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3b3f6n9t",
-    "ja": "英語が話せたら、海外で働けるのに。",
-    "en": "If I spoke English, I could work abroad.",
-    "alternatives": [
-      "I could work abroad if I spoke English.",
-      "If I spoke English, I could work overseas."
-    ],
-    "point": "今と違う仮定は if 節を過去形にし、結果は could で言う",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 5,
-    "grammar": ["second-conditional", "can-could-ability"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -125,7 +96,13 @@
     "level": 1,
     "grammar": ["be-and-present-simple", "articles-and-countability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:442cb1db288cb76b502994cfd8c189da0e58f305e7725ff75dcf9c70517e05bc",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4y3y7p4d",
@@ -141,7 +118,13 @@
     "level": 5,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c3d35f7fd8ca4b5f9de232641f547a52690bffb7ca78d297168296e0b17404ed",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5b3y7m4d",
@@ -157,7 +140,13 @@
     "level": 4,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:37328459d47b7820b66b769b0fca2d96975dbd3a7b8a147b6fdaa7942e7e5679",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5q2q9t5f",
@@ -191,9 +180,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:6bd70c411a6c53e075ffc139dbe21258a55f16eb900f7f7d10f80018afacaaf9",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:948d16f2e79104c57017c57beb2bda8d45579af5c55e18e14a0e8259686473ea",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -227,7 +216,13 @@
     "level": 5,
     "grammar": ["phrasal-verbs", "past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d7e0c1d451de960803570f05c504aefad24dde7a9e3a02fc3d13943f40e9bf29",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7f4s2s7p",
@@ -272,7 +267,13 @@
     "level": 3,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:557d55dca1c75cc1fd41dfc1dc0743efd56e073c7e75108f0084438b52d4e06e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7u6a8s7e",
@@ -303,9 +304,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:f54ecc19525717ee38e6a743a2e9acc607db8adfb031472079d0a341d7cd488a",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:9bf9f8dc1066837239e4a175e1032d17a4cc8258dc4cccb3745e79a8a724eebb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -326,9 +327,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:7b769c10adf5d799f0634fcb02d85db3e7d05283c0b49071096613da6958bc60",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:44dbf7dcfa6d45dd63cf10d1d04e7a696596c26f3199e18fcc1464c24847232b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
