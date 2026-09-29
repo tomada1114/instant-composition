@@ -1,5 +1,5 @@
 import { act, fireEvent, screen } from "@testing-library/react";
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 import type { HomeView, RoundSummary } from "@instant-composition/web";
 
@@ -14,6 +14,7 @@ import {
   renderApp,
   settle,
   type ApiCall,
+  warmUp,
 } from "./web-harness";
 import { makeSummary } from "./web-summary-fixture";
 
@@ -70,6 +71,8 @@ function expectRecap(): void {
     screen.getByRole("heading", { level: 1, name: ja.Summary.title.recap }),
   ).toBeInTheDocument();
 }
+
+beforeAll(warmUp);
 
 beforeEach(() => {
   fakeTimers();
