@@ -198,22 +198,6 @@
     }
   },
   {
-    "id": "c_3q6e9v4m",
-    "ja": "僕らは設定を見直して、ビルド時間を半分にした。",
-    "en": "Having reworked the config, we cut build times in half.",
-    "alternatives": [
-      "After reworking the config, we halved our build times.",
-      "We reworked the config and cut build times in half."
-    ],
-    "point": "先に終えた動作は Having＋過去分詞で前置きできる",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 7,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3u8n9q3r",
     "ja": "リンターの設定を順を追って説明してもらえますか？",
     "en": "Could you walk me through your linter setup?",
@@ -325,22 +309,6 @@
     }
   },
   {
-    "id": "c_4u9e5v7h",
-    "ja": "プラグインを更新するまでは、順調に動いてたのに。",
-    "en": "Everything was humming along until I updated the plugin.",
-    "alternatives": [
-      "It all ran smoothly until I updated the plugin.",
-      "Things were fine until I updated the plugin."
-    ],
-    "point": "更新した時点は過去形、それ以前の状態は過去進行形",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 9,
-    "grammar": ["tense-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5k5q2f7t",
     "ja": "リンターは保存時、型チェックはコミット時。",
     "en": "Linting runs on save, whereas type checks run on commit.",
@@ -376,7 +344,13 @@
     "level": 7,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dc46659936b803b95fd620eacff5d9e7dd447f4a8354e43e9f07c6d0f5a35ae3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6k7d8h5x",
@@ -436,7 +410,13 @@
     "level": 7,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:77c29bd331430e8f2ae9270e9dcc892e33421f79af92c78f891dd037081d0653",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8f2k5v8h",
@@ -503,22 +483,6 @@
     }
   },
   {
-    "id": "c_9j8z2y2t",
-    "ja": "僕は、デフォルト設定をいじることはまずないね。",
-    "en": "I hardly ever mess with the default settings.",
-    "alternatives": [
-      "I almost never tinker with the default settings.",
-      "I rarely touch the default settings."
-    ],
-    "point": "hardly ever は「ほとんど〜ない」。mess with は「いじる」",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 10,
-    "grammar": ["hedging-softening"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_9m6v6x6g",
     "ja": "最初から依存のバージョンを固定しとけばよかった。",
     "en": "I wish I'd pinned the dependency versions from the start.",
@@ -532,7 +496,13 @@
     "level": 7,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c75ad72a98c92b3ef032fa3d2a3d0bed0a3363784a0ae28d59b11d9a17dd120a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9p3z5x9w",
