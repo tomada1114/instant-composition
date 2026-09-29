@@ -3,6 +3,9 @@ import { describe, expect, it } from "vitest";
 import {
   decideSettings,
   DEFAULT_SETTINGS,
+  gradeKeysOf,
+  isGradeKey,
+  isGradeKeyPair,
   withDefaults,
   type SettingsPatch,
   type TopicInfo,
@@ -71,6 +74,31 @@ describe("decideSettings", () => {
     expect(decided.ok && withDefaults(decided.value.settings).limitSeconds).toBe(30);
   });
 
+  it("saves a chosen grade key pair, and keeps it through a patch that leaves it out", () => {
+    const pair = { ok: "KeyL", ng: "KeyA" };
+    const chosen = decideSettings(CURRENT, { gradeKeys: pair }, TAXONOMY);
+    expect(chosen.ok && chosen.value.settings).toStrictEqual({
+      ...CURRENT,
+      gradeKeys: pair,
+    });
+    const kept = decideSettings(
+      { ...CURRENT, gradeKeys: pair },
+      { sound: false },
+      TAXONOMY,
+    );
+    expect(kept.ok && kept.value.settings.gradeKeys).toStrictEqual(pair);
+  });
+
+  it("leaves the grade keys unchosen until the learner chooses them, so → and ← stand in", () => {
+    const decided = decideSettings(DEFAULT_SETTINGS, { topics: ["work"] }, TAXONOMY);
+    expect(decided.ok && "gradeKeys" in decided.value.settings).toBe(false);
+    expect(decided.ok && withDefaults(decided.value.settings).gradeKeys).toStrictEqual({
+      ok: "ArrowRight",
+      ng: "ArrowLeft",
+    });
+    expect(gradeKeysOf(undefined)).toStrictEqual({ ok: "ArrowRight", ng: "ArrowLeft" });
+  });
+
   it("takes a focus named twice once", () => {
     const twice = { topic: "work", subtopic: "b" };
     const decided = decideSettings(CURRENT, { focus: [twice, twice] }, TAXONOMY);
@@ -95,10 +123,48 @@ describe("decideSettings", () => {
       "a focus outside the chosen topics",
       { topics: ["work"], focus: [{ topic: "travel", subtopic: "c" }] },
     ],
+    ["both grades on one key", { gradeKeys: { ok: "KeyJ", ng: "KeyJ" } }],
+    ["a grade on a key outside the set", { gradeKeys: { ok: "Space", ng: "KeyJ" } }],
   ])("refuses %s", (_, patch) => {
     expect(decideSettings(CURRENT, patch, TAXONOMY)).toStrictEqual({
       ok: false,
       error: { code: "ERR_BAD_REQUEST" },
     });
+  });
+});
+
+describe("the grade keys", () => {
+  it.each([
+    "ArrowUp",
+    "ArrowDown",
+    "ArrowLeft",
+    "ArrowRight",
+    "Digit0",
+    "Digit9",
+    "KeyA",
+    "KeyZ",
+  ])("takes %s", (code) => {
+    expect(isGradeKey(code)).toBe(true);
+  });
+
+  it.each([
+    ["the drill's flip", "Space"],
+    ["the drill's other flip", "Enter"],
+    ["the drill's pause", "Escape"],
+    ["the key `?` is on", "Slash"],
+    ["a keypad digit", "Numpad1"],
+    ["a function key", "F1"],
+    ["a modifier", "ShiftLeft"],
+    ["a character rather than a code", "k"],
+    ["a code with more after it", "KeyAB"],
+    ["nothing", ""],
+  ])("refuses %s (%j)", (_, code) => {
+    expect(isGradeKey(code)).toBe(false);
+  });
+
+  it("takes a pair only when its two keys differ", () => {
+    expect(isGradeKeyPair({ ok: "Digit1", ng: "Digit2" })).toBe(true);
+    expect(isGradeKeyPair({ ok: "Digit1", ng: "Digit1" })).toBe(false);
+    expect(isGradeKeyPair({ ok: "Digit1", ng: "Tab" })).toBe(false);
   });
 });

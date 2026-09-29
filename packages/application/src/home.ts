@@ -4,6 +4,7 @@ import {
   deal,
   EMPTY_STATS,
   estimateMinutes,
+  gradeKeysOf,
   homeState,
   ok,
   practiceState,
@@ -142,6 +143,7 @@ export async function home(
     todayLastRoundId: tally?.lastFinishedRound ?? undefined,
     dailySize: practice.dailySize,
     sound: settings?.value.sound ?? true,
+    gradeKeys: gradeKeysOf(settings?.value),
     contentError: unreadable,
   });
 }

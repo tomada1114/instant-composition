@@ -178,6 +178,7 @@ export function homeView(
     todayCards: 20,
     dailySize: 10,
     sound: false,
+    gradeKeys: { ok: "ArrowRight", ng: "ArrowLeft" },
     contentError: false,
     ...overrides,
   };

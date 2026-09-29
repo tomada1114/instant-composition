@@ -52,6 +52,21 @@ export const dotSchema = z.object({
   state: z.enum(["done", "gap", "missed", "upcoming"]),
 });
 
+/**
+ * A key the drill may grade with, as a `KeyboardEvent.code`: ↑ ↓ ← →, 0–9 or
+ * A–Z, which keeps Space, Enter, Esc and `?` the drill's own. The domain's
+ * `isGradeKey` states the same set; `tests/contracts-schemas.test.ts` holds
+ * the two together.
+ */
+export const gradeKeySchema = z
+  .string()
+  .regex(/^(?:Arrow(?:Up|Down|Left|Right)|Digit[0-9]|Key[A-Z])$/u);
+
+/** One key for ○ and another for ×; both on one key is refused. */
+export const gradeKeysSchema = z
+  .object({ ok: gradeKeySchema, ng: gradeKeySchema })
+  .refine((pair) => pair.ok !== pair.ng);
+
 export const settingsSchema = z.object({
   topics: z.array(z.string()),
   focus: z.array(subtopicRefSchema),
@@ -59,6 +74,8 @@ export const settingsSchema = z.object({
   sound: z.boolean(),
   /** The default until the learner chooses one. */
   limitSeconds: limitSecondsSchema,
+  /** → and ← until the learner chooses a pair. */
+  gradeKeys: gradeKeysSchema,
 });
 
 export const ringProgressSchema = z.object({

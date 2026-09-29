@@ -35,6 +35,7 @@ const SETTINGS: Settings = {
   dailySize: 10,
   sound: true,
   limitSeconds: 30,
+  gradeKeys: { ok: "ArrowRight", ng: "ArrowLeft" },
 };
 
 const LEVELS: SettingsPageView["levels"] = [

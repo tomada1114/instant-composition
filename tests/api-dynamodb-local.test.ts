@@ -6,6 +6,7 @@ import {
   profileSchema,
   roundPayloadSchema,
   roundSummarySchema,
+  settingsPageViewSchema,
 } from "@instant-composition/contracts";
 
 import {
@@ -17,8 +18,8 @@ import {
 import { NOON } from "./application-harness";
 import { localTables } from "./dynamodb-local";
 
-// The API over the DynamoDB store on DynamoDB local: the round's whole life
-// and the learner's profile through HTTP, as `pnpm api` serves it. Needs `pnpm db:up`; `pnpm
+// The API over the DynamoDB store on DynamoDB local: the round's whole life,
+// the learner's profile and the grade keys through HTTP, as `pnpm api` serves it. Needs `pnpm db:up`; `pnpm
 // test:dynamodb` runs it, never the default suite.
 
 const tables = localTables();
@@ -144,5 +145,29 @@ describe("the API on DynamoDB local", () => {
       value: la,
       version: 2,
     });
+  });
+
+  it("reads → and ← until the learner sets a pair, then the pair stored", async () => {
+    const backing = await tables.freshBacking();
+    const api = makeApi(backing);
+    const read = async () =>
+      settingsPageViewSchema.parse(await (await api.call("GET", "/v1/settings")).json())
+        .settings.gradeKeys;
+
+    expect(await read()).toStrictEqual({ ok: "ArrowRight", ng: "ArrowLeft" });
+    expect(await backing.stores.forLearner(learnerId("learner-1")).settings()).toBe(
+      undefined,
+    );
+
+    const gradeKeys = { ok: "KeyL", ng: "Digit1" };
+    expect(
+      (await api.call("PATCH", "/v1/settings", { topics: ["work"], gradeKeys })).status,
+    ).toBe(200);
+
+    expect(await read()).toStrictEqual(gradeKeys);
+    expect(
+      (await backing.stores.forLearner(learnerId("learner-1")).settings())?.value
+        .gradeKeys,
+    ).toStrictEqual(gradeKeys);
   });
 });

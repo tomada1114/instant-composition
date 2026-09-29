@@ -3,6 +3,7 @@ import * as z from "zod";
 import {
   countSchema,
   dotSchema,
+  gradeKeysSchema,
   levelModeSchema,
   levelSchema,
   reachViewSchema,
@@ -71,6 +72,8 @@ export const homeViewSchema = z.object({
   todayLastRoundId: z.string().exactOptional(),
   dailySize: countSchema,
   sound: z.boolean(),
+  /** The keys the drill grades with, the default until the learner chooses a pair. */
+  gradeKeys: gradeKeysSchema,
   contentError: z.boolean(),
 });
 

@@ -368,6 +368,62 @@ describe("the level picked by hand", () => {
   });
 });
 
+describe("the grade keys", () => {
+  const DEFAULT = { ok: "ArrowRight", ng: "ArrowLeft" };
+
+  it("reads → and ← for a learner who never chose a pair, in the settings and the home view", async () => {
+    const api = makeApi();
+    const page = await contracted(await api.call("GET", "/v1/settings"), "getSettings");
+    const home = await contracted(await api.call("GET", "/v1/home"), "getHome");
+    expect(page).toMatchObject({ settings: { gradeKeys: DEFAULT } });
+    expect(home).toMatchObject({ gradeKeys: DEFAULT });
+  });
+
+  it("saves a pair the learner sets, and reads it back from the settings and the home view", async () => {
+    const api = makeApi();
+    await api.call("PATCH", "/v1/settings", { topics: ["work"] });
+    const gradeKeys = { ok: "KeyL", ng: "Digit1" };
+    const saved = await api.call("PATCH", "/v1/settings", { gradeKeys });
+    expect(await contracted(saved, "updateSettings")).toMatchObject({
+      settings: { gradeKeys },
+    });
+    const page = await contracted(await api.call("GET", "/v1/settings"), "getSettings");
+    const home = await contracted(await api.call("GET", "/v1/home"), "getHome");
+    expect(page).toMatchObject({ settings: { gradeKeys } });
+    expect(home).toMatchObject({ gradeKeys });
+  });
+
+  it.each([
+    ["both grades on one key", { ok: "KeyJ", ng: "KeyJ" }],
+    ["a grade on Space", { ok: "Space", ng: "KeyJ" }],
+    ["a grade on Enter", { ok: "KeyK", ng: "Enter" }],
+    ["a grade on Escape", { ok: "Escape", ng: "KeyJ" }],
+    ["a grade on the key `?` is on", { ok: "KeyK", ng: "Slash" }],
+    ["a grade on a keypad digit", { ok: "Numpad1", ng: "KeyJ" }],
+    ["a grade given as a character", { ok: "k", ng: "j" }],
+    ["one grade missing", { ok: "KeyK" }],
+  ])(
+    "answers 400 ERR_BAD_REQUEST for %s, and keeps the keys it had",
+    async (_, gradeKeys) => {
+      const api = makeApi();
+      await api.call("PATCH", "/v1/settings", {
+        topics: ["work"],
+        gradeKeys: { ok: "KeyL", ng: "KeyA" },
+      });
+      expect(
+        await refusal(await api.call("PATCH", "/v1/settings", { gradeKeys })),
+      ).toStrictEqual([400, "ERR_BAD_REQUEST"]);
+      const page = await contracted(
+        await api.call("GET", "/v1/settings"),
+        "getSettings",
+      );
+      expect(page).toMatchObject({
+        settings: { gradeKeys: { ok: "KeyL", ng: "KeyA" } },
+      });
+    },
+  );
+});
+
 describe("a request the contract refuses", () => {
   function send(
     api: ApiHarness,

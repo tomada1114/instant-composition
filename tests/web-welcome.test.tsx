@@ -44,7 +44,14 @@ const TOPICS: TopicInfo[] = [
 
 function settingsPage(topics: TopicInfo[] = TOPICS): SettingsPageView {
   return {
-    settings: { topics: [], focus: [], dailySize: 10, sound: true, limitSeconds: 30 },
+    settings: {
+      topics: [],
+      focus: [],
+      dailySize: 10,
+      sound: true,
+      limitSeconds: 30,
+      gradeKeys: { ok: "ArrowRight", ng: "ArrowLeft" },
+    },
     topics,
     toeic: null,
     difficulty: { mode: "auto", level: null, toeic: null },
@@ -63,6 +70,7 @@ const SAVED: SettingsView = {
     dailySize: 10,
     sound: true,
     limitSeconds: 30,
+    gradeKeys: { ok: "ArrowRight", ng: "ArrowLeft" },
   },
   removedFocus: [],
   completedToday: false,
