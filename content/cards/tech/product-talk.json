@@ -12,9 +12,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:cabaf840c186a2c32238ff2289c35bc71284ac0b55b4d24ce85f4419769ab050",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:f88dab219a6cf9e4eef9abfcd4841b97d591367c827e4840a89a332030f129ab",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -29,7 +29,13 @@
     "level": 1,
     "grammar": ["articles-and-countability", "be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f7f3f3d6226f58c0ee49b0673548d27ddfb7c3f9076dd5461fad0e9c802e454e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2h8e2q5k",
@@ -45,7 +51,13 @@
     "level": 4,
     "grammar": ["verb-object-to-do", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:55b87f8f377d4e36516eaf58efb4b00db75b40489dc3905e25a8b0e9be29fcf8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2m2k5v6w",
@@ -90,7 +102,13 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d9183b2ee3ff410bdacf58c4f5a293b72323b4a816c8601ba2920c2500d01d68",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2x9x2b8q",
@@ -108,9 +126,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:6b1f6414fb7988213d328fa3cf13a4fcdb7fa54b81176c1af7f6ebdd57d78b11",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:158f360f2a958f4eb759f41d6d966e11a113be3c5dcd4410d29dd7ba07748d28",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -128,23 +146,13 @@
     "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3a3g5u3c",
-    "ja": "もし人手が倍なら、君は検索を作る？",
-    "en": "If staff doubled, would you build search?",
-    "alternatives": [
-      "Would you build search if staff doubled?",
-      "If we doubled staff, would you build search?"
-    ],
-    "point": "あり得ない仮定は if 節を過去形、主節を would にする",
-    "topic": "tech",
-    "subtopic": "product-talk",
-    "level": 5,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:389ea4c354f5f9a9de3746e7250890737ff260df9e5150c6aa4229a2d2a56667",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3b3n9p4q",
@@ -160,7 +168,13 @@
     "level": 2,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6a211cc43513c9b54d2b8c75dcfc4a106a34a05e56e4fe1558d7d5622d8d5b95",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3t6y2f3q",
@@ -205,7 +219,13 @@
     "level": 3,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3384d070a969986d00560b57fb0d87840986f64abb947b8119162e2de8a8d0bd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4n5b4n7a",
@@ -269,7 +289,13 @@
     "level": 5,
     "grammar": ["noun-clauses", "infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f90cec04c12170bf0b17d376562302f5bdf1a67f7db6842ec796031e91c1a992",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5f8t7k7w",
@@ -303,9 +329,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:109da5488e452690305b4bea3833c678568e0a68c5f2076ed5d32174b2b69e2e",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:cb5a7e25bc48583189a2c82e1acbbb319610d69c521a43bc6dbad7d8bba1eac2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -323,7 +349,13 @@
     "level": 5,
     "grammar": ["phrasal-verbs", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d072f13db38ecb471c338a4c2cfb68ad01df7bb85bfa0a050033e3ba5ddac9ae",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6d6m2w4f",
@@ -355,7 +387,13 @@
     "level": 3,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c5b70c53176b64d6e35f2348ecb1b9ed4b1e87f446350a19f206295559c65600",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8b4u7a7p",
@@ -403,7 +441,13 @@
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:09b04ec313f23b23ab163a5f5dfec80ba772d6047ba84d658c1910b009f620c2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9t7c3z8m",
