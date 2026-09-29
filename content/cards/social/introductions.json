@@ -44,22 +44,6 @@
     }
   },
   {
-    "id": "c_2q7w4v8z",
-    "ja": "同じ神戸出身だと知っていたら、声をかけたのに。",
-    "en": "If I'd known you're from Kobe too, I'd have said hi.",
-    "alternatives": [
-      "If I'd known we're both from Kobe, I'd have said hello.",
-      "If I'd realized you're from Kobe too, I'd have spoken up."
-    ],
-    "point": "過去の事実の反対は If + had + 過去分詞、主節は would have",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 9,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3r6q5r5q",
     "ja": "人違いかもしれませんが、前にお会いしましたよね？",
     "en": "I could be wrong, but haven't we met before?",
@@ -73,7 +57,13 @@
     "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c194c19849f7907525560a9e816a9b35bedaabc2ac6127950df195d6d1277ca2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3u5h4f9m",
@@ -196,7 +186,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0d5fe3b483bbb58b2549dfd66bd9f5bcf83c9f39601187895c54cf04e890a131",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5k6v5e7t",
@@ -212,7 +208,13 @@
     "level": 4,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e38f4d44e78aa77a865f0eafe70ea5c7eefe9190645ddca6ac8a81b30cb006bc",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5w2b4f8p",
@@ -294,7 +296,13 @@
     "level": 7,
     "grammar": ["wishes-regrets", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:95ab05a9c7a64f592e6bf14e5384ce4cf40df88f587a04f3f846254a378bf0ac",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7a5p6f8f",
@@ -329,7 +337,13 @@
     "level": 8,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a5cd33f0e9874973456bb4e0bd06be4cb85633fc443ae40b0c13991778966cbd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7e8t5u5r",
@@ -374,38 +388,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_7g7s7e5a",
-    "ja": "昨年転職して、今は広告の仕事をしています。",
-    "en": "I switched careers last year. Now I'm in advertising.",
-    "alternatives": [
-      "I changed careers last year; now I'm in advertising.",
-      "I changed jobs last year; I'm in advertising now."
-    ],
-    "point": "昨年は過去形、今の状態は現在形で切り分ける",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 6,
-    "grammar": ["tense-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7q9e6u6c",
-    "ja": "同業だったなんて、今まで気づきませんでした。",
-    "en": "I hadn't realized we were in the same field.",
-    "alternatives": [
-      "I didn't realize we worked in the same field.",
-      "I had no idea we shared a field."
-    ],
-    "point": "気づく前から同業だった。その差を過去完了で出す",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 6,
-    "grammar": ["past-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_7t7n2j2u",
@@ -552,22 +534,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_8h9n2q9d",
-    "ja": "このパーティー、ドタキャンしてたら会えなかったね。",
-    "en": "If I'd bailed on this party, we'd never have met.",
-    "alternatives": [
-      "If I'd flaked on this party, we'd never have met.",
-      "If I'd bailed on tonight's party, I'd never have met you."
-    ],
-    "point": "過去の仮定は If + had+過去分詞、would have+過去分詞",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 9,
-    "grammar": ["third-conditional", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9k7e3n7v",
