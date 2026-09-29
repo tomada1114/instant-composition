@@ -71,13 +71,13 @@
     "ja": "送ってもらった添付ファイル、開けません。",
     "en": "I can't open the attachment you sent.",
     "alternatives": [
-      "I'm unable to open the attachment you sent.",
+      "I can't open the file you sent.",
       "The attachment you sent won't open."
     ],
     "point": "「開けない」は can't open。won't open は物が主語",
     "topic": "work",
     "subtopic": "email-chat",
-    "level": 5,
+    "level": 4,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -172,13 +172,29 @@
     "alternatives": [
       "I've got to reply by tomorrow.",
       "I need to reply by tomorrow.",
-      "I must reply by tomorrow."
+      "I have to answer it by tomorrow."
     ],
     "point": "「〜しなきゃ」は have to。期限は by tomorrow",
     "topic": "work",
     "subtopic": "email-chat",
     "level": 2,
     "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4t4d9c9x",
+    "ja": "この件、田中さんにも共有しておいてもらえますか？",
+    "en": "Could you loop Tanaka in on this?",
+    "alternatives": [
+      "Could you keep Tanaka in the loop on this?",
+      "Could you fill Tanaka in on this?"
+    ],
+    "point": "loop ~ in は「~を輪に入れる」。in の位置に注意",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 8,
+    "grammar": ["phrasal-verbs", "requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -231,13 +247,13 @@
     "ja": "その件、もう先方にメールしましたか？",
     "en": "Have you emailed them about it yet?",
     "alternatives": [
-      "Have you already emailed the client about it?",
-      "Did you email the client about it yet?"
+      "Have you emailed them about that yet?",
+      "Did you email them about it already?"
     ],
     "point": "「もう〜した？」の疑問文では yet を文末に置く",
     "topic": "work",
     "subtopic": "email-chat",
-    "level": 5,
+    "level": 3,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -311,12 +327,12 @@
     "en": "Could you tell me who's handling this?",
     "alternatives": [
       "Would you mind telling me who's handling this?",
-      "Can you let me know who's in charge of this?"
+      "Can you tell me who's in charge?"
     ],
     "point": "間接疑問は who's handling のまま。do 不要",
     "topic": "work",
     "subtopic": "email-chat",
-    "level": 8,
+    "level": 4,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -385,22 +401,6 @@
     }
   },
   {
-    "id": "c_6t5c7f2b",
-    "ja": "その日程で大丈夫か、田中さんに聞いてもらえますか？",
-    "en": "Could you ask Tanaka whether that date works?",
-    "alternatives": [
-      "Could you check with Tanaka if that date works?",
-      "Would you ask Tanaka if that date is okay?"
-    ],
-    "point": "whether/if の後は平叙文の語順",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 8,
-    "grammar": ["indirect-questions", "requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7b7w7x6x",
     "ja": "さっき話した資料、送ってもらえますか？",
     "en": "Could you send me the document we discussed?",
@@ -421,6 +421,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7d8v4s7k",
+    "ja": "ご承認をいただくまで、私たちは待機中です。",
+    "en": "We're on hold until we get your approval.",
+    "alternatives": [
+      "We're holding off until we get your sign-off.",
+      "We can't move forward until you approve it."
+    ],
+    "point": "未来のことでも until 節は現在形",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 8,
+    "grammar": ["time-and-if-clauses", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7e8r2c9g",
@@ -507,13 +523,14 @@
     "en": "I meant to reply, but it slipped my mind.",
     "alternatives": [
       "I was going to reply, but I forgot.",
-      "I meant to reply, but I completely forgot."
+      "I meant to reply, but I completely forgot.",
+      "I was going to reply, but it slipped my mind."
     ],
     "point": "「つもりだった」は meant to＋動詞の原形。過去形で言う",
     "topic": "work",
     "subtopic": "email-chat",
     "level": 7,
-    "grammar": ["tense-contrast", "infinitives"],
+    "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -627,12 +644,12 @@
     "en": "Would you mind checking the attachment when you're free?",
     "alternatives": [
       "Could you check the attachment when you have time?",
-      "When you have a moment, could you check the attachment?"
+      "Could you look at the attachment when you're free?"
     ],
     "point": "Would you mind の後ろは動名詞（checking）",
     "topic": "work",
     "subtopic": "email-chat",
-    "level": 7,
+    "level": 6,
     "grammar": ["gerunds", "requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -658,21 +675,5 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9x8n4y3m",
-    "ja": "私たちが待っているのは、あなたの承認です。",
-    "en": "What we're waiting for is your approval.",
-    "alternatives": [
-      "Your approval is what we're waiting for.",
-      "It's your approval that we're waiting for."
-    ],
-    "point": "待つ対象を what 節で先に出す。for を落とさない",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 8,
-    "grammar": ["noun-clauses", "cleft-emphasis"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   }
 ]

@@ -4,30 +4,14 @@
     "ja": "チェックアウトのとき、鍵を返し忘れました。",
     "en": "I forgot to drop my key off at checkout.",
     "alternatives": [
-      "I forgot to hand my key in when I checked out.",
-      "I left without returning my key."
+      "I forgot to return my key when I left.",
+      "I forgot to give my key back at checkout."
     ],
     "point": "「返す」は drop off / hand in の句動詞で言える",
     "topic": "travel",
     "subtopic": "hotel",
-    "level": 9,
+    "level": 6,
     "grammar": ["phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2e9a4j5k",
-    "ja": "寝る前に読むものを、何か貸してもらえませんか？",
-    "en": "Could you lend me something to read before bed?",
-    "alternatives": [
-      "Could I borrow something to read before bed?",
-      "Do you have anything I could read before bed?"
-    ],
-    "point": "something to read：名詞のあとに不定詞を置く",
-    "topic": "travel",
-    "subtopic": "hotel",
-    "level": 8,
-    "grammar": ["infinitives", "requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -55,16 +39,16 @@
   },
   {
     "id": "c_2s3h4g3z",
-    "ja": "朝6時に、部屋に電話して起こしてもらえますか？",
-    "en": "Could you ring my room at six to wake me up?",
+    "ja": "朝6時に、起こしてもらえますか？",
+    "en": "Could you wake me up at six?",
     "alternatives": [
       "Could I get a wake-up call at six?",
-      "Would you give me a wake-up call at six?"
+      "Would you wake me up at six?"
     ],
     "point": "「起こす」は wake me up、代名詞は句動詞の間に入る",
     "topic": "travel",
     "subtopic": "hotel",
-    "level": 9,
+    "level": 5,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -94,15 +78,15 @@
   {
     "id": "c_3b8g8m2n",
     "ja": "安い部屋でも、せめて清潔であってほしいです。",
-    "en": "Even if it's cheap, the room should at least be clean.",
+    "en": "Even a cheap room should at least be clean.",
     "alternatives": [
-      "Even if the room's cheap, it should be clean.",
-      "Cheap as it is, the room ought to be clean."
+      "Even if a room's cheap, it should be clean.",
+      "Even cheap rooms should at least be clean."
     ],
-    "point": "「せめて」は at least、「でも」は even if",
+    "point": "「安い部屋でも」は Even a cheap room、「せめて」は at least",
     "topic": "travel",
     "subtopic": "hotel",
-    "level": 9,
+    "level": 6,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -198,15 +182,15 @@
   {
     "id": "c_3h8e7r9s",
     "ja": "私の部屋は静かなのに、妻の部屋はうるさい。",
-    "en": "Whereas my room is quiet, my wife's is noisy.",
+    "en": "My room is quiet, while my wife's is noisy.",
     "alternatives": [
-      "My room is quiet, whereas my wife's is noisy.",
-      "My wife's room is noisy, while mine is quiet."
+      "My wife's room is noisy, but mine is quiet.",
+      "Mine is quiet, but my wife's room is noisy."
     ],
-    "point": "対比は whereas か while。後ろの room は's だけで省く",
+    "point": "対比は while か but。後ろの room は 's だけで省ける",
     "topic": "travel",
     "subtopic": "hotel",
-    "level": 8,
+    "level": 6,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -278,22 +262,6 @@
     }
   },
   {
-    "id": "c_4p3n9n4w",
-    "ja": "何かあったら、内線で連絡してください。",
-    "en": "Call us if anything comes up.",
-    "alternatives": [
-      "Let us know if anything comes up.",
-      "If anything comes up, give us a call."
-    ],
-    "point": "if 節は未来のことでも現在形（comes up）",
-    "topic": "travel",
-    "subtopic": "hotel",
-    "level": 5,
-    "grammar": ["time-and-if-clauses", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_4t3p5w5t",
     "ja": "暖房が昨日からずっと効いていません。",
     "en": "The heater hasn't been working since yesterday.",
@@ -360,22 +328,6 @@
     }
   },
   {
-    "id": "c_4x3z2p7m",
-    "ja": "早いのは承知ですが、もうチェックインさせてもらえませんか？",
-    "en": "I know it's early, but any chance we could check in?",
-    "alternatives": [
-      "I know we're early, but can we check in now?",
-      "Sorry we're early, but could we check in now?"
-    ],
-    "point": "Any chance we could ~? は気軽で柔らかい頼み方",
-    "topic": "travel",
-    "subtopic": "hotel",
-    "level": 10,
-    "grammar": ["concession-contrast", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_4y3h2a9c",
     "ja": "彼女、早く予約してれば安く済んだのに。",
     "en": "If she'd booked earlier, she'd have saved money.",
@@ -416,6 +368,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5e8f4w7b",
+    "ja": "困ったら、フロントに電話してください。",
+    "en": "Call us if you run into trouble.",
+    "alternatives": [
+      "If you run into trouble, call us.",
+      "Call the front desk if you have trouble."
+    ],
+    "point": "if 節は未来のことでも現在形（run into）",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 5,
+    "grammar": ["time-and-if-clauses", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5u5m4j2q",
@@ -462,18 +430,18 @@
     }
   },
   {
-    "id": "c_6r9r8x8u",
-    "ja": "私たちをもっと静かな部屋に移していただけませんか？",
-    "en": "Would you mind moving us to a quieter room?",
+    "id": "c_6j4e9d4q",
+    "ja": "お詫びに、今夜のお部屋代はこちらで持たせてください。",
+    "en": "Please let us cover tonight's room as an apology.",
     "alternatives": [
-      "Could you move us to a quieter room?",
-      "Would it be possible to move us to a quieter room?"
+      "Please allow us to cover tonight's room as an apology.",
+      "We'd like to cover tonight's room as an apology."
     ],
-    "point": "Would you mind の後ろは -ing 形にする",
+    "point": "let us＋動詞の原形で「〜させてください」",
     "topic": "travel",
     "subtopic": "hotel",
     "level": 10,
-    "grammar": ["hedging-softening"],
+    "grammar": ["causatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -519,6 +487,22 @@
     }
   },
   {
+    "id": "c_8a5w9r2m",
+    "ja": "すみません、部屋の金庫が開かなくなってしまって。",
+    "en": "Sorry to bother you, but the room safe is jammed.",
+    "alternatives": [
+      "Sorry to trouble you, but my room safe won't open.",
+      "I'm sorry to bother you, but the safe is stuck."
+    ],
+    "point": "Sorry to bother you, but ~ で切り出すと柔らかい",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8c9u8s6w",
     "ja": "係の人が、部屋はもう使えると言ってた。",
     "en": "The clerk said the room was ready.",
@@ -541,6 +525,22 @@
     }
   },
   {
+    "id": "c_8d3b5w4n",
+    "ja": "うるさいと知ってたら、もっと静かな所にしたのに。",
+    "en": "If I'd known, I'd have booked somewhere quieter.",
+    "alternatives": [
+      "If I'd known, I'd have chosen a quieter place.",
+      "I'd have booked somewhere quieter if I'd known."
+    ],
+    "point": "過去の事実の反対は If＋過去完了、主節は would have",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8d8d4u6e",
     "ja": "朝食は何時からですか？",
     "en": "What time is breakfast?",
@@ -558,6 +558,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8e9a4y5y",
+    "ja": "隣の部屋の騒音で、一晩中眠れなかったんです。",
+    "en": "The noise next door kept me up all night.",
+    "alternatives": [
+      "I was up all night because of the noise next door.",
+      "The noise from next door kept me awake all night."
+    ],
+    "point": "keep 人 up は「(人を)寝かせない」",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 10,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8x8x4n3b",
@@ -602,22 +618,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9h5f4k3j",
-    "ja": "部屋を替えてもらえたら、ぐっすり眠れるんですが。",
-    "en": "If I could switch rooms, I'd finally get some sleep.",
-    "alternatives": [
-      "If you moved me to another room, I could sleep.",
-      "I'd sleep much better if you could change my room."
-    ],
-    "point": "実現しにくい願いは If＋過去形、主節は would",
-    "topic": "travel",
-    "subtopic": "hotel",
-    "level": 9,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9m6g9w4f",

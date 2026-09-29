@@ -119,10 +119,10 @@
   {
     "id": "c_3d7f6g3m",
     "ja": "もっと大きな声なら、聞こえるんだけど。",
-    "en": "If you spoke louder, I'd hear you.",
+    "en": "I could hear you if you spoke louder.",
     "alternatives": [
       "I could hear you if you spoke up.",
-      "If you spoke up, I could hear you."
+      "If you spoke louder, I could hear you."
     ],
     "point": "現実と違う仮定は if + 過去形、結果は would/could",
     "topic": "work",
@@ -198,7 +198,8 @@
     "en": "How about hanging up and calling back?",
     "alternatives": [
       "What about hanging up and calling again?",
-      "Why don't we hang up and call back?"
+      "Why don't we hang up and call back?",
+      "How about we hang up and call back?"
     ],
     "point": "How about の後ろは動名詞（-ing）",
     "topic": "work",
@@ -383,11 +384,11 @@
       "I'm calling to flag something.",
       "I called because I have something to flag."
     ],
-    "point": "something のあとに to 不定詞や関係詞節を置く",
+    "point": "something のあとに (that) + 主語 + 動詞を置いて後ろから説明",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 8,
-    "grammar": ["infinitives"],
+    "level": 6,
+    "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -519,7 +520,7 @@
   },
   {
     "id": "c_7e6d4s9a",
-    "ja": "向こうにマイクを近づけてもらえないかな？",
+    "ja": "向こうにマイクを近づけてもらおうか？",
     "en": "Can we get them to move the mic closer?",
     "alternatives": [
       "Could we have them move the mic closer?",
@@ -528,24 +529,8 @@
     "point": "get + 人 + to 動詞、have は to が付かない",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 8,
+    "level": 6,
     "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7f5w8x7c",
-    "ja": "私が電話に出るや否や、通話が切れた。",
-    "en": "Hardly had I picked up when the call dropped.",
-    "alternatives": [
-      "No sooner had I answered than the call dropped.",
-      "As soon as I picked up, the call dropped."
-    ],
-    "point": "Hardly を文頭に出すと had I の語順、後ろは when",
-    "topic": "work",
-    "subtopic": "phone-calls",
-    "level": 9,
-    "grammar": ["inversion"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -593,16 +578,16 @@
   {
     "id": "c_7u4p7x6d",
     "ja": "彼をすぐ電話に出しますので、少々お待ちください。",
-    "en": "Bear with me while I get him on the line.",
+    "en": "Please hold while I get him on the line.",
     "alternatives": [
-      "Hold on a moment, I'll get him on the phone.",
-      "Please hold while I get him to the phone."
+      "Just a moment, please. I'll put him on.",
+      "One moment, please. I'll get him on the phone."
     ],
-    "point": "get + 人 + 場所で「〜に出す・つなぐ」。Bear with me も便利",
+    "point": "「電話に出す」は get him on the line。while で待たせる間を表す",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 10,
-    "grammar": ["causatives", "phrasal-verbs"],
+    "level": 7,
+    "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -738,29 +723,13 @@
     "en": "I'll grab my headset to keep talking.",
     "alternatives": [
       "I'll get my headset so we can continue.",
-      "Let me get my headset so we can keep talking."
+      "Let me get my headset so we can continue."
     ],
     "point": "目的は to + 動詞の原形で言える",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 8,
+    "level": 6,
     "grammar": ["infinitives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8s2r6b2s",
-    "ja": "部長に折り返しお電話させます。",
-    "en": "I'll have the manager call you back.",
-    "alternatives": [
-      "I'll get the manager to call you back.",
-      "I'll have my manager return your call."
-    ],
-    "point": "「〜させる」は have + 人 + 動詞の原形",
-    "topic": "work",
-    "subtopic": "phone-calls",
-    "level": 8,
-    "grammar": ["causatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -790,7 +759,10 @@
     "id": "c_9v6b5y2r",
     "ja": "折り返し彼女に電話させますね。",
     "en": "I'll have her call you back.",
-    "alternatives": ["I'll get her to call you back.", "I'll have her ring you back."],
+    "alternatives": [
+      "I'll get her to call you back.",
+      "I'll have her get back to you."
+    ],
     "point": "「〜させる」は have + 人 + 動詞の原形",
     "topic": "work",
     "subtopic": "phone-calls",

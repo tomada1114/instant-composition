@@ -88,22 +88,6 @@
     }
   },
   {
-    "id": "c_2y4s6t3a",
-    "ja": "あそこで待っているバスは、空港行きですか？",
-    "en": "Is the bus waiting over there going to the airport?",
-    "alternatives": [
-      "Does the bus waiting over there go to the airport?",
-      "Is the bus standing there bound for the airport?"
-    ],
-    "point": "「待っている」は bus の直後に waiting で後ろから修飾",
-    "topic": "travel",
-    "subtopic": "transport",
-    "level": 8,
-    "grammar": ["post-modification"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3f7x2r4z",
     "ja": "ごめん、私の電車が遅れてる。",
     "en": "Sorry, my train's running late.",
@@ -221,7 +205,7 @@
     "point": "「遅れが出ている」は There is a delay で言える",
     "topic": "travel",
     "subtopic": "transport",
-    "level": 5,
+    "level": 4,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -249,6 +233,22 @@
     }
   },
   {
+    "id": "c_5c3e8j8x",
+    "ja": "あそこで待ってるバスは成田に行きますか？",
+    "en": "Is the bus waiting there going to Narita?",
+    "alternatives": [
+      "Does the bus waiting there go to Narita?",
+      "Is the bus waiting there headed for Narita?"
+    ],
+    "point": "「待ってる」は bus の直後に waiting で後ろから修飾",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5h6h9b4v",
     "ja": "ずっとタクシーを待ってるんだけど。",
     "en": "I've been waiting for a taxi forever.",
@@ -273,15 +273,15 @@
   {
     "id": "c_6u2g3e5v",
     "ja": "ホームにいる駅員さんに聞いてみたら？",
-    "en": "Why not ask the attendant on the platform?",
+    "en": "Why not ask the staff on the platform?",
     "alternatives": [
       "Try asking the staff on the platform.",
-      "You could ask the attendant on the platform."
+      "You could ask the staff on the platform."
     ],
     "point": "「ホームにいる」は名詞の後ろに on the platform",
     "topic": "travel",
     "subtopic": "transport",
-    "level": 5,
+    "level": 4,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -329,22 +329,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_6y7g6s6x",
-    "ja": "特急に乗り遅れて、私たちは待つしかなかった。",
-    "en": "Having missed the express, we could only wait.",
-    "alternatives": [
-      "Having missed the express, we had no choice but to wait.",
-      "We missed the express, so all we could do was wait."
-    ],
-    "point": "Having＋過去分詞で「〜したので」を一語で言う",
-    "topic": "travel",
-    "subtopic": "transport",
-    "level": 9,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_7a9z5p8b",
@@ -498,22 +482,6 @@
     }
   },
   {
-    "id": "c_8e3q3j5m",
-    "ja": "姉は、切符ならもう買ってあるって言ってたよ。",
-    "en": "My sister said she had already bought the tickets.",
-    "alternatives": [
-      "My sister told me she'd already bought the tickets.",
-      "My sister said the tickets were already bought."
-    ],
-    "point": "said の後は時制を一つ過去にずらす(買った→had bought)",
-    "topic": "travel",
-    "subtopic": "transport",
-    "level": 8,
-    "grammar": ["reported-speech", "past-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8s6t5y6r",
     "ja": "この切符を明日に変更できないでしょうか。",
     "en": "Could I possibly change this ticket to tomorrow?",
@@ -558,6 +526,22 @@
     }
   },
   {
+    "id": "c_8z6w9u3a",
+    "ja": "特急を逃して、私たち、待つしかなかったよ。",
+    "en": "Missing the express, we just had to wait.",
+    "alternatives": [
+      "We missed the express, so we had to wait.",
+      "Since we missed the express, we had to wait."
+    ],
+    "point": "Missing 〜, で「〜して」を前に置いて自然に言う",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9f5w2q2k",
     "ja": "電車は遅れてるけど、それでも乗り換えは間に合うよ。",
     "en": "The train's late, but we'll still make our connection.",
@@ -578,6 +562,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9p8v7g9n",
+    "ja": "姉、切符はもう買ったって言ってたよ。",
+    "en": "My sister said she'd already bought the tickets.",
+    "alternatives": [
+      "My sister told me she'd already bought tickets.",
+      "My sister said she'd bought the tickets already."
+    ],
+    "point": "said の後は一つ過去にずらす(買った→had bought)",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["reported-speech", "past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9v6w6k3g",

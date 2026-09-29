@@ -234,13 +234,13 @@
     "ja": "私の荷物がいつ出てくるか、ご存じですか？",
     "en": "Do you know when my luggage will turn up?",
     "alternatives": [
-      "Could you tell me when my luggage will turn up?",
-      "Do you know when my luggage will show up?"
+      "Do you know when my luggage will show up?",
+      "Do you know when my bags will turn up?"
     ],
     "point": "間接疑問は when のあとが平叙文の語順",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 9,
+    "level": 6,
     "grammar": ["indirect-questions", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -272,14 +272,14 @@
     "ja": "荷物紛失は誰の担当か教えてもらえますか？",
     "en": "Could you tell me who handles lost luggage?",
     "alternatives": [
-      "Can you tell me who deals with lost luggage?",
-      "Do you know who's in charge of lost luggage?"
+      "Can you tell me who handles lost luggage?",
+      "Please tell me who handles lost luggage."
     ],
     "point": "間接疑問は who＋動詞の語順。Could you の後は平叙文",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 8,
-    "grammar": ["nested-clauses", "indirect-questions"],
+    "level": 4,
+    "grammar": ["indirect-questions", "requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -435,22 +435,6 @@
     }
   },
   {
-    "id": "c_7j4u2f7y",
-    "ja": "私が着いたときには、電車はもう発車していました。",
-    "en": "By the time I arrived, the train had pulled out.",
-    "alternatives": [
-      "The train had already left when I got there.",
-      "When I got there, the train had already gone."
-    ],
-    "point": "着く前に終わっていたことは過去完了で表す",
-    "topic": "travel",
-    "subtopic": "troubles",
-    "level": 9,
-    "grammar": ["past-perfect", "tense-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7q2n4p8u",
     "ja": "スーツケースが見つかりません。",
     "en": "I can't find my suitcase.",
@@ -473,18 +457,18 @@
     }
   },
   {
-    "id": "c_8b3e5a4b",
-    "ja": "満席でも、私は席を譲りません。",
-    "en": "Even if it's full, I won't give up my seat.",
+    "id": "c_7w8t8e4h",
+    "ja": "私は搭乗口に着くまで、便の欠航を知りませんでした。",
+    "en": "Not until the gate did I learn it was canceled.",
     "alternatives": [
-      "Even if it's full, I'm not giving up my seat.",
-      "I won't give up my seat, even if it's full."
+      "I only learned the flight was canceled at the gate.",
+      "It wasn't until the gate that I learned it was canceled."
     ],
-    "point": "譲る＝give up。Even if の後は現在形",
+    "point": "Not until を文頭に出すと、あとは疑問文の語順",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 8,
-    "grammar": ["concession-contrast"],
+    "level": 9,
+    "grammar": ["inversion", "noun-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -534,17 +518,17 @@
   },
   {
     "id": "c_8n2q4s4c",
-    "ja": "私に必要なのは、金曜までの代わりのパスポートなんです。",
+    "ja": "必要なのは、金曜までの代わりのパスポートです。",
     "en": "What I need is a replacement passport by Friday.",
     "alternatives": [
       "What I need is a new passport by Friday.",
       "A replacement passport by Friday is what I need."
     ],
-    "point": "「必要なのは〜」は What I need is 〜 で強調",
+    "point": "「必要なのは〜」は What I need is 〜。what 節が主語になる",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 10,
-    "grammar": ["cleft-emphasis"],
+    "level": 6,
+    "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },

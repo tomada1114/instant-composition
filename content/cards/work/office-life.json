@@ -83,13 +83,13 @@
     "ja": "ケンは先月異動したから、もうここにはいないよ。",
     "en": "Ken transferred last month, so he's no longer here.",
     "alternatives": [
-      "Ken was transferred last month, so he isn't here anymore.",
-      "Ken got transferred last month, so he's not here now."
+      "Ken was transferred last month and isn't here anymore.",
+      "Ken got transferred last month. He's not here anymore."
     ],
     "point": "先月の出来事は過去形、今の状態は現在形",
     "topic": "work",
     "subtopic": "office-life",
-    "level": 8,
+    "level": 6,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -305,7 +305,7 @@
     "topic": "work",
     "subtopic": "office-life",
     "level": 9,
-    "grammar": ["nested-clauses"],
+    "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -461,22 +461,6 @@
     }
   },
   {
-    "id": "c_7g5a8g3k",
-    "ja": "少し席を外してもよろしいでしょうか。",
-    "en": "Would you mind if I stepped out briefly?",
-    "alternatives": [
-      "Is it okay if I step out for a bit?",
-      "May I step out for a moment, if that's okay?"
-    ],
-    "point": "Would you mind if は過去形で丁寧に許可を求める",
-    "topic": "work",
-    "subtopic": "office-life",
-    "level": 8,
-    "grammar": ["hedging-softening", "requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7j9q8d6m",
     "ja": "給湯室に誰かのお弁当がありますよ。",
     "en": "There's someone's lunch in the kitchen.",
@@ -550,7 +534,7 @@
     "point": "「発表された」は受動態。行為者は言わない",
     "topic": "work",
     "subtopic": "office-life",
-    "level": 8,
+    "level": 4,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -558,31 +542,31 @@
   {
     "id": "c_8j5w3j6m",
     "ja": "会議で決まったとはいえ、私はまだ納得してないよ。",
-    "en": "Although it was settled in the meeting, I'm not sold.",
+    "en": "Although it was decided at the meeting, I'm still unconvinced.",
     "alternatives": [
-      "It was decided at the meeting, but I'm still not convinced.",
-      "Though it's been settled, I'm still not sold."
+      "The meeting decided it, but I'm still not convinced.",
+      "Though the meeting settled it, I'm still not sold."
     ],
-    "point": "「決まった」は受動態。Although の節と主節をつなぐ",
+    "point": "「〜とはいえ」は Although の節、主節に本音を置く",
     "topic": "work",
     "subtopic": "office-life",
-    "level": 9,
-    "grammar": ["passive-voice", "concession-contrast"],
+    "level": 7,
+    "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_8m7d7x8e",
-    "ja": "手が空いたら、これを見ていただけないでしょうか。",
+    "ja": "手が空いたら、これを見ていただけますか。",
     "en": "Could you possibly look this over when you're free?",
     "alternatives": [
       "Would you mind looking this over when you're free?",
-      "I was wondering if you could look this over sometime."
+      "Could you look this over when you're free?"
     ],
     "point": "look over は「ざっと目を通す」。possibly で丁寧に",
     "topic": "work",
     "subtopic": "office-life",
-    "level": 8,
+    "level": 6,
     "grammar": ["hedging-softening", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -652,17 +636,17 @@
   },
   {
     "id": "c_9t3d4a9w",
-    "ja": "会議室のエアコン、まだ修理されてないみたいですよ。",
+    "ja": "会議室のエアコン、まだ修理されてないみたい。",
     "en": "The meeting room AC apparently hasn't been fixed yet.",
     "alternatives": [
-      "It seems the meeting room AC hasn't been repaired yet.",
+      "Seems the meeting room AC hasn't been fixed yet.",
       "Apparently, they still haven't fixed the meeting room AC."
     ],
     "point": "現在完了の受動態 hasn't been fixed。apparently で推量",
     "topic": "work",
     "subtopic": "office-life",
-    "level": 8,
-    "grammar": ["passive-voice", "hedging-softening"],
+    "level": 6,
+    "grammar": ["passive-voice", "present-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
