@@ -32,7 +32,13 @@
     "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e13ee10bf357d7622edc297ac56365b1fc679b9a86487e3958ce5a80e23b74c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2g6b4k5u",
@@ -54,38 +60,6 @@
     }
   },
   {
-    "id": "c_2y6j6v3m",
-    "ja": "総務にプロジェクター修理を頼めますか？",
-    "en": "Could you ask admin to fix the projector?",
-    "alternatives": [
-      "Can you ask admin to repair the projector?",
-      "Would you ask admin to fix the projector?"
-    ],
-    "point": "ask＋人＋to do の語順。ask that 節にしない",
-    "topic": "work",
-    "subtopic": "office-life",
-    "level": 4,
-    "grammar": ["verb-object-to-do", "requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2y7a7g3e",
-    "ja": "誰がいつも私のホッチキスを取るのか知りたい。",
-    "en": "I'd like to know who keeps taking my stapler.",
-    "alternatives": [
-      "I want to know who keeps grabbing my stapler.",
-      "I'd love to know who keeps taking my stapler."
-    ],
-    "point": "「いつも取る」への苛立ちは keeps taking で表す",
-    "topic": "work",
-    "subtopic": "office-life",
-    "level": 6,
-    "grammar": ["indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3k8q9t7k",
     "ja": "前よりずっと静かだから、つけっぱなしでいいね。",
     "en": "It's much quieter now, so we can leave it on.",
@@ -99,7 +73,13 @@
     "level": 7,
     "grammar": ["comparatives-superlatives", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:461e6bf2de98ecc4255cffd0edb78fccf4022b1186fedd8b51b6dc4d7aa9b567",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3n2x2z6q",
@@ -115,7 +95,13 @@
     "level": 6,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ccda6027febd522692fe5b9157bf9904a902533ff7fd796ab1bd15c403d5f898",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3y3a6k9d",
@@ -131,7 +117,13 @@
     "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b3d58d2950a3ee850357c8e4a81a2233b6640e95e1c2328f25a28938f8c207da",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5h2a9m9y",
@@ -148,7 +140,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:125b9d5ca62ff06749600cdd8dacd56184e7f5a47e09f68b588740ea3f8c61b1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5r9h5e2j",
@@ -205,7 +203,13 @@
     "level": 6,
     "grammar": ["modal-perfect", "articles-and-countability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bdd864845727a1dd1038cbcca4a87057b6ce47ddcfe769c5fc18926ef72b32b5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6g7e3d2e",
@@ -221,7 +225,13 @@
     "level": 7,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9da2c7216c78c548e10dcc1984e910d9c662768dbd880f28d5ecedc2273f4279",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6j3w9e9w",
@@ -237,7 +247,13 @@
     "level": 7,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0c3585e7388afca186176eba41161f87bfde373fcedd861d1f567dfedcddec04",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6w7t4a4r",
@@ -297,23 +313,13 @@
     "level": 7,
     "grammar": ["reported-speech", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8g6c8t5w",
-    "ja": "昨夜飲みすぎてなければ、彼は今眠そうじゃないのに。",
-    "en": "If he hadn't drunk so much, he wouldn't look this sleepy.",
-    "alternatives": [
-      "He wouldn't look so sleepy if he hadn't drunk so much.",
-      "If he hadn't overdone the drinking, he wouldn't seem so sleepy."
-    ],
-    "point": "if 節は過去完了、主節は今の話なので wouldn't be",
-    "topic": "work",
-    "subtopic": "office-life",
-    "level": 9,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:00d8503924435b53279f48437baaaac1682f7bf34c4783eb2017a2686ce8cae0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8h3p3k8c",
@@ -355,22 +361,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_8n6z2n3j",
-    "ja": "経費システムについてアドバイスをいただけますか？",
-    "en": "Could you give me some advice on the expense system?",
-    "alternatives": [
-      "Could I get some advice on the expense system?",
-      "Could you advise me on the expense system?"
-    ],
-    "point": "advice は数えられない。an advice や advices にしない",
-    "topic": "work",
-    "subtopic": "office-life",
-    "level": 7,
-    "grammar": ["articles-and-countability", "requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9g5y4a8f",
