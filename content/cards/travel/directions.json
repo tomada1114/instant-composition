@@ -15,9 +15,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:13f656e815e06ab9a5107cab4783ab1314678215288d3c9a25692d0d40e1899f",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:95e353a68df6227525575cc099e9d0c934fb59a3a857c77fcd7c2c3b993ef4d7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -61,18 +61,18 @@
     }
   },
   {
-    "id": "c_2r9u2b4h",
-    "ja": "彼女に地図を描くよう頼んでもらえますか？",
-    "en": "Could you ask her to draw a map?",
+    "id": "c_2u7c3h6t",
+    "ja": "この時間でも、まだバスってあったりしますかね？",
+    "en": "Any chance there's still a bus at this hour?",
     "alternatives": [
-      "Can you ask her to draw a map?",
-      "Would you ask her to draw me a map?"
+      "Is there by any chance a bus at this hour?",
+      "Do you think a bus is still running at this hour?"
     ],
-    "point": "ask 人 to do で「人に〜するよう頼む」",
+    "point": "Any chance ～? で控えめに可能性をたずねる",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 6,
-    "grammar": ["verb-object-to-do", "requests-permission"],
+    "level": 10,
+    "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -90,7 +90,13 @@
     "level": 3,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3a440354c5faeb56b29893c3c1a62b79f4a544fe30cf90f0ce88248da74ace8a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3b8h4m7x",
@@ -119,23 +125,13 @@
     "level": 2,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3e6p6u7j",
-    "ja": "さっきの人、橋は通行止めだって言ってたよ。",
-    "en": "The man said the bridge was closed.",
-    "alternatives": [
-      "He told me the bridge was closed.",
-      "The man told us the bridge was closed."
-    ],
-    "point": "時制の一致で is が was になる",
-    "topic": "travel",
-    "subtopic": "directions",
-    "level": 6,
-    "grammar": ["reported-speech"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:619ee6b4ea2e83de59b518ed10b4137947e53aa24f7496181ffe33cd6c0d9184",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3q8n2m2z",
@@ -153,9 +149,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:2df4256ef8fa0e3cb1f1afcf36f4881ece3738bf5c579f9a8c29cfe4c471964a",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:5f94777515b43529eda5cc69a4f3d1ce3d6ae5394ae5dc5f178c03368c62016a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -173,7 +169,13 @@
     "level": 5,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2bc7440b68a9077f3ca7d508de6249519918a257478af58beb9869d08c2cdfb5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3x7c9e6a",
@@ -189,7 +191,13 @@
     "level": 5,
     "grammar": ["indirect-questions", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1cafa25d45b1b18ecae390b1a72771ce17346dc80c21b01eae41b84e91bf2a86",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4n9f6k5e",
@@ -208,22 +216,6 @@
     "stamps": {}
   },
   {
-    "id": "c_5a2d9m3z",
-    "ja": "美術館は遠いけど、川沿いだから迷いませんよ。",
-    "en": "Although the museum's far, you can't miss it.",
-    "alternatives": [
-      "Even though the museum's far, you won't get lost.",
-      "The museum's far, but you can't miss it."
-    ],
-    "point": "Although を使ったら後半に but は付けない",
-    "topic": "travel",
-    "subtopic": "directions",
-    "level": 8,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5p8a6f9g",
     "ja": "その場所、地図で見せてもらえますか？",
     "en": "Can you show me on the map?",
@@ -236,25 +228,73 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:8b1e70ac411b5abbdb044d0e8b1f2a0f0239f065dd55d0613c54bbb181873d36",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:7de3592b0fd6e40ea9d00324deba25eaf4e18f1e240ee0c7e7ad7c997caaefe2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
   {
-    "id": "c_6j4s7a7d",
-    "ja": "駅員さんに聞いた道は、あなたの話と違いました。",
-    "en": "The route the attendant described differed from yours.",
+    "id": "c_5u9k6j4g",
+    "ja": "あなた、きっと入口を通り過ぎたんですよ。",
+    "en": "You must have walked past the entrance.",
     "alternatives": [
-      "The directions the attendant gave me differed from yours.",
-      "The way the attendant showed me was different from yours."
+      "You've probably walked past the entrance.",
+      "You must have gone past the entrance."
     ],
-    "point": "主語が長い名詞句でも動詞 differed を見失わない",
+    "point": "過去の確信は must have＋過去分詞",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5x4g4b5j",
+    "ja": "遠いけど、あの店は見逃しようがないですよ。",
+    "en": "Although it's far, you can't miss the shop.",
+    "alternatives": [
+      "It's far, but you really can't miss the shop.",
+      "Even though it's far, you won't miss the shop."
+    ],
+    "point": "Although を使ったら後半に but は付けない",
     "topic": "travel",
     "subtopic": "directions",
     "level": 8,
-    "grammar": ["nested-clauses", "relative-clauses"],
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6n9a9s6m",
+    "ja": "SIMカード、どこで買えるかご存じですか？",
+    "en": "Any idea where to buy a SIM card?",
+    "alternatives": [
+      "Do you know where to buy a SIM card?",
+      "Any idea where I can get a SIM card?"
+    ],
+    "point": "間接疑問は where＋to 不定詞や平叙文の語順",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 6,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6s3z7t8x",
+    "ja": "万一迷ったら、フロントに聞いてみるといいですよ。",
+    "en": "Should you get lost, ask the front desk.",
+    "alternatives": [
+      "If you should get lost, ask the front desk.",
+      "If you get lost, try asking the front desk."
+    ],
+    "point": "If you should ～ は Should you ～ と倒置できる",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 9,
+    "grammar": ["inversion"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -272,7 +312,13 @@
     "level": 4,
     "grammar": ["time-and-if-clauses", "imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1b8d8bc0db3705bf707d5398e0266ad7126e15bb8e7d0f2997bdabf941e2add7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7f2s5u9t",
@@ -285,7 +331,13 @@
     "level": 4,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:676450c8e481655d1e668a625e4f79dd713e94790e29563913f02bb74ae7c9f2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7q6y9p7v",
@@ -301,7 +353,13 @@
     "level": 3,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4b9ee7b37090286d6e039379457f285a743cfaf41f9e60880ec4c615af677e7a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7v4r9m3t",
@@ -314,23 +372,13 @@
     "level": 1,
     "grammar": ["there-is-are", "articles-and-countability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7y5a8r9r",
-    "ja": "迷ったら、フロントに地図へ印をつけてもらうといいよ。",
-    "en": "If you're lost, have the front desk mark a map.",
-    "alternatives": [
-      "Have the front desk mark a map if you're lost.",
-      "If you're lost, get the front desk to mark a map."
-    ],
-    "point": "have＋人＋動詞の原形。get なら get＋人＋to 不定詞",
-    "topic": "travel",
-    "subtopic": "directions",
-    "level": 9,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:399e9270938960846b753d4d922dfa0d61ee287fe844cf5601c27404a5d42420",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8b3s7d3k",
@@ -346,7 +394,13 @@
     "level": 5,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dd5002f845bf82d37ad9dabdb72ae40aadaee3b8e2a4883860e7af507d1d10b0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8f9s4m5k",
@@ -362,7 +416,13 @@
     "level": 2,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:560a77537d8e6597676ac8c3ad3de00f492abd9d09e6a3d4f1a1f0ae7fcd8fe8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8u4q4a7n",
@@ -429,50 +489,18 @@
     "stamps": {}
   },
   {
-    "id": "c_9q3n7a7t",
-    "ja": "SIMカードを売っているお店はありますか？",
-    "en": "Is there a store that sells SIM cards?",
+    "id": "c_9g6c9r6f",
+    "ja": "私が探してるのは、二番じゃなくて三番出口です。",
+    "en": "What I'm looking for is exit three, not two.",
     "alternatives": [
-      "Is there anywhere that sells SIM cards?",
-      "Do you know a store that sells SIM cards?"
+      "It's exit three I'm looking for, not exit two.",
+      "The one I'm after is exit three, not two."
     ],
-    "point": "店を説明する関係詞 that の後ろは sells と三単現",
+    "point": "What ～ is で「探しているのは」を強調する",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 6,
-    "grammar": ["relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9s3v8z2m",
-    "ja": "知りたいのは、この時間でもバスがあるかどうかです。",
-    "en": "What I need to know is whether there's still a bus.",
-    "alternatives": [
-      "What I want to know is whether a bus still runs.",
-      "The thing I need to know is if buses still run."
-    ],
-    "point": "「〜かどうか」は whether 節、語順は平叙文のまま",
-    "topic": "travel",
-    "subtopic": "directions",
-    "level": 10,
-    "grammar": ["noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9y9a2x5h",
-    "ja": "彼女は2回迷ったけど、もう見つけたよ。",
-    "en": "She got lost twice, but she's found it.",
-    "alternatives": [
-      "Though she got lost twice, she's found it.",
-      "She got lost twice but has found it."
-    ],
-    "point": "過去の出来事は過去形、今の結果は現在完了",
-    "topic": "travel",
-    "subtopic": "directions",
-    "level": 5,
-    "grammar": ["tense-contrast", "present-perfect"],
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
     "stamps": {}
   }

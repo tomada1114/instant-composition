@@ -26,7 +26,7 @@
     "point": "過去の後悔は I wish の後を過去完了 I'd known にする",
     "topic": "travel",
     "subtopic": "transport",
-    "level": 8,
+    "level": 7,
     "grammar": ["wishes-regrets", "noun-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -69,10 +69,10 @@
   {
     "id": "c_3n5q7e2x",
     "ja": "次のバスがいつ来るか駅員さんに聞いて。",
-    "en": "Ask staff when the next bus comes.",
+    "en": "Ask the staff when the next bus comes.",
     "alternatives": [
-      "Ask an attendant when the next bus comes.",
-      "Go ask staff when the next bus arrives."
+      "Ask the staff when the next bus arrives.",
+      "Ask an employee when the next bus comes."
     ],
     "point": "「いつ来るか」は when the next bus comes。語順は平叙文",
     "topic": "travel",
@@ -117,15 +117,15 @@
   {
     "id": "c_4d8t4r4j",
     "ja": "空港バスがどこから出るか知ってますか？",
-    "en": "Do you know where the airport bus leaves?",
+    "en": "Do you know where airport buses leave from?",
     "alternatives": [
-      "Any idea where the airport bus leaves from?",
-      "Do you know where the airport bus departs?"
+      "Do you know where airport buses depart from?",
+      "Do you know where airport buses start from?"
     ],
     "point": "疑問文を埋め込むと語順は where the bus leaves",
     "topic": "travel",
     "subtopic": "transport",
-    "level": 5,
+    "level": 4,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -244,7 +244,7 @@
     "ja": "運転手さんに、ここで止めてと頼んで。",
     "en": "Ask the driver to stop here.",
     "alternatives": [
-      "Tell the driver to stop here.",
+      "Ask the driver to pull over here.",
       "Please ask the driver to stop here."
     ],
     "point": "ask + 人 + to do で「人に〜するよう頼む」",
@@ -274,12 +274,12 @@
   {
     "id": "c_7v2w3k9b",
     "ja": "駅員さんに行き方を書いてもらった。",
-    "en": "I had the staff write down directions.",
+    "en": "I got the staff to write down directions.",
     "alternatives": [
-      "I got the staff to write down directions.",
-      "I asked the staff to write down directions."
+      "The staff wrote down directions for me.",
+      "I got the station staff to write directions."
     ],
-    "point": "have＋人＋動詞の原形で「人に〜してもらう」。get なら to が要る",
+    "point": "get＋人＋to do で「人に〜してもらう」。have なら to は不要",
     "topic": "travel",
     "subtopic": "transport",
     "level": 5,
@@ -306,10 +306,10 @@
   {
     "id": "c_8y6m6p6t",
     "ja": "この電車、渋谷に止まりますか？",
-    "en": "Does this stop at Shibuya?",
+    "en": "Does this train stop at Shibuya?",
     "alternatives": [
-      "Does this train stop at Shibuya?",
-      "Will this train stop at Shibuya?"
+      "Does this train stop in Shibuya?",
+      "Does this one stop at Shibuya?"
     ],
     "point": "「止まる」は stop at。主語が this なので does",
     "topic": "travel",
@@ -338,7 +338,7 @@
   {
     "id": "c_9h3t7d2r",
     "ja": "電車が急停止して、私たちは1時間立ち往生した。",
-    "en": "The train halted abruptly, stranding us for an hour.",
+    "en": "The train stopped suddenly, stranding us for an hour.",
     "alternatives": [
       "The train stopped short, leaving us stuck for an hour.",
       "The train stopped suddenly and stranded us for an hour."
@@ -353,16 +353,16 @@
   },
   {
     "id": "c_9m6w8x4k",
-    "ja": "運転手さん、10分も同じ所をぐるぐる回ってませんか？",
+    "ja": "運転手さん、10分も同じ所を回ってませんか？",
     "en": "Haven't we been going in circles for ten minutes?",
     "alternatives": [
       "Aren't we driving in circles? It's been ten minutes.",
-      "Haven't we been circling the same area for ten minutes?"
+      "Haven't we been circling for ten minutes?"
     ],
     "point": "続いている動作は have been going の現在完了進行形で",
     "topic": "travel",
     "subtopic": "transport",
-    "level": 9,
+    "level": 6,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -378,8 +378,8 @@
     "point": "着く前に出た電車は had already left と過去完了で",
     "topic": "travel",
     "subtopic": "transport",
-    "level": 8,
-    "grammar": ["past-perfect", "time-and-if-clauses"],
+    "level": 7,
+    "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -404,13 +404,13 @@
     "ja": "彼女の電車、大雪で運休になったよ。",
     "en": "Her train was canceled because of snow.",
     "alternatives": [
-      "Her train got canceled because of the snow.",
-      "Her train was canceled due to heavy snow."
+      "Her train got canceled because of snow.",
+      "Her train was canceled by heavy snow."
     ],
     "point": "運休「された」側なので was canceled と受動態にする",
     "topic": "travel",
     "subtopic": "transport",
-    "level": 5,
+    "level": 3,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
     "stamps": {}

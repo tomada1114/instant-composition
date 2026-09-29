@@ -113,7 +113,7 @@
   },
   {
     "id": "c_4s6t5s8s",
-    "ja": "美術館が何時に閉まるか、聞いてきてもらえる？",
+    "ja": "美術館が何時に閉まるか、聞いてくれる？",
     "en": "Could you ask what time the museum closes?",
     "alternatives": [
       "Can you find out when the museum closes?",
@@ -122,7 +122,7 @@
     "point": "what time の後は平叙文の語順で the museum closes",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 6,
+    "level": 5,
     "grammar": ["indirect-questions", "requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -144,22 +144,6 @@
     "stamps": {}
   },
   {
-    "id": "c_5m2n4a8n",
-    "ja": "チケットなしでも、庭園には入れますよ。",
-    "en": "You can enter even without a ticket.",
-    "alternatives": [
-      "Even without a ticket, you can get in.",
-      "You can still get in without a ticket."
-    ],
-    "point": "「〜なしでも」は even without ~",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 5,
-    "grammar": ["concession-contrast", "can-could-ability"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5t2p3r9e",
     "ja": "みんな作品じゃなくて、眺めが目当てで来るんですよ。",
     "en": "It's the view, not the art, that people come for.",
@@ -170,7 +154,7 @@
     "point": "強調したい部分を It's と that の間に挟む",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 9,
+    "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -210,10 +194,10 @@
   {
     "id": "c_5z5u4a7e",
     "ja": "展望台の景色、撮っておけばよかったなあ。",
-    "en": "I wish I'd taken pictures of the view.",
+    "en": "I wish I'd taken pictures from the lookout.",
     "alternatives": [
-      "I should have taken a photo of the view.",
-      "If only I'd photographed the view."
+      "I should've taken a photo from the lookout.",
+      "I wish I'd taken photos at the lookout."
     ],
     "point": "過去への後悔は I wish + had + 過去分詞",
     "topic": "travel",
@@ -242,10 +226,10 @@
   {
     "id": "c_6j8s2y6e",
     "ja": "あの人たち、最終ツアーに出たに違いない。",
-    "en": "They must have left for the last tour.",
+    "en": "They must have taken the last tour.",
     "alternatives": [
       "They must have gone on the last tour.",
-      "They must already have left on the final tour."
+      "They must have joined the last tour."
     ],
     "point": "過去の推量「〜したに違いない」は must have + 過去分詞",
     "topic": "travel",
@@ -282,7 +266,7 @@
     "point": "着く前に満員だったので had filled up と過去完了",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 8,
+    "level": 7,
     "grammar": ["past-perfect", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -306,16 +290,16 @@
   {
     "id": "c_6t3r9e5c",
     "ja": "売り場の人が言ってたツアー、まだ予約できるか知ってる？",
-    "en": "Do you know if the tour they mentioned is still open?",
+    "en": "Do you know if the tour they mentioned is still available?",
     "alternatives": [
-      "Is the tour they mentioned still open, do you know?",
-      "Do you know whether the tour they mentioned is still available?"
+      "Can we still book the tour they mentioned, do you know?",
+      "Is the tour they mentioned still bookable, do you know?"
     ],
     "point": "間接疑問は if の後を平叙文の語順にする",
     "topic": "travel",
     "subtopic": "sightseeing",
     "level": 9,
-    "grammar": ["indirect-questions", "nested-clauses"],
+    "grammar": ["indirect-questions", "relative-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -352,7 +336,7 @@
     "point": "said の後は時制を合わせて it was にする",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 8,
+    "level": 6,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -394,13 +378,13 @@
     "ja": "今朝のお寺が断トツで一番よかったね。",
     "en": "This morning's temple was by far the best.",
     "alternatives": [
-      "The temple we saw this morning was easily the best.",
-      "This morning's temple was hands down the best one."
+      "The temple this morning was easily the best.",
+      "This morning's temple was hands down the best."
     ],
     "point": "最上級の強調は by far を the best の前に置く",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 7,
+    "level": 5,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -408,12 +392,12 @@
   {
     "id": "c_8e5x8j3j",
     "ja": "ホテルで勧められた展望台って、歩いて行ける？",
-    "en": "Is the deck the hotel recommended walkable?",
+    "en": "Is the lookout the hotel recommended within walking distance?",
     "alternatives": [
-      "Can we walk to the deck the hotel recommended?",
-      "Can I walk to the deck the hotel suggested?"
+      "Can we walk to the lookout the hotel recommended?",
+      "Is the viewpoint the hotel suggested within walking distance?"
     ],
-    "point": "the deck のすぐ後ろに the hotel recommended と続ける",
+    "point": "the lookout のすぐ後ろに the hotel recommended と続ける",
     "topic": "travel",
     "subtopic": "sightseeing",
     "level": 6,
@@ -461,11 +445,11 @@
   },
   {
     "id": "c_8q8v5n8s",
-    "ja": "一番見たいのは、あの庭です。",
+    "ja": "私が見たいのは、あの庭です。",
     "en": "What I want to see is that garden.",
     "alternatives": [
-      "The garden is what I want to see.",
-      "I most want to see that garden."
+      "That garden is what I want to see.",
+      "I really want to see that garden."
     ],
     "point": "「〜なのは」は What I want to see is で主語にする",
     "topic": "travel",
@@ -486,7 +470,7 @@
     "point": "「かどうか」の後は疑問文にせず主語＋動詞の語順",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 8,
+    "level": 7,
     "grammar": ["indirect-questions", "noun-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -496,13 +480,13 @@
     "ja": "もし1日だけなら、どのツアーがいい？",
     "en": "Which tour is best for one day?",
     "alternatives": [
-      "Which tour should I take for one day?",
+      "Which tour's best for a day trip?",
       "What's the best tour for one day?"
     ],
     "point": "「どの〜」は Which + 名詞で始める",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 4,
+    "level": 3,
     "grammar": ["wh-questions"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -510,10 +494,10 @@
   {
     "id": "c_8z6k6h7f",
     "ja": "兄はツアー中ずっと写真を撮っていた。",
-    "en": "My brother was taking photos nonstop.",
+    "en": "My brother was taking photos all tour.",
     "alternatives": [
-      "My brother was constantly taking photos.",
-      "My brother was taking pictures nonstop."
+      "My brother was taking pictures all tour.",
+      "My brother was snapping photos all tour."
     ],
     "point": "「〜していた」は過去進行形 was taking",
     "topic": "travel",
@@ -540,7 +524,7 @@
     "point": "「預ける」は drop off、荷物は off の前後どちらも可",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 8,
+    "level": 6,
     "grammar": ["requests-permission", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -550,15 +534,14 @@
     "ja": "一番いい撮影スポット、知ってますか？",
     "en": "Do you know the best photo spot?",
     "alternatives": [
-      "Do you know the best spot for photos?",
-      "Where's the best spot to take photos?",
-      "Which spot is best for photos?"
+      "Know the best spot for photos?",
+      "Do you know the top photo spot?"
     ],
     "point": "the best と最上級には the を付ける",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 4,
-    "grammar": ["comparatives-superlatives", "post-modification"],
+    "level": 3,
+    "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
   }
