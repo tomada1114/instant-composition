@@ -132,22 +132,6 @@
     }
   },
   {
-    "id": "c_3s7h2z2t",
-    "ja": "ボリュームの共有方法、まだ分かってないんだ。",
-    "en": "I still haven't figured out volume sharing.",
-    "alternatives": [
-      "I haven't worked out volume sharing yet.",
-      "I still haven't figured out how to share volumes."
-    ],
-    "point": "「まだ〜ない」は still haven't、分かるは figure out",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 6,
-    "grammar": ["phrasal-verbs", "present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3u8n9q3r",
     "ja": "リンターの設定を順を追って説明してもらえますか？",
     "en": "Could you walk me through your linter setup?",
@@ -161,7 +145,13 @@
     "level": 7,
     "grammar": ["phrasal-verbs", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2f7a5a85914249ac9602a9bd6a1d259b95eb042c95ce7acaf8b15539443efb75",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4r7s5x6p",
@@ -177,7 +167,13 @@
     "level": 6,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:141b0c6234e086a29c6d694ba6cfe5114ff3dbb2856bcddd6b20efbd8d1b6364",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4u7k2v5j",
@@ -216,23 +212,13 @@
     "level": 7,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5x7k7d6q",
-    "ja": "このPCが速ければ、ビルドが一瞬なのに。",
-    "en": "If this PC were faster, builds would fly.",
-    "alternatives": [
-      "Builds would fly if this PC were faster.",
-      "If this PC were quicker, builds would fly."
-    ],
-    "point": "現実と違う仮定は if 節に were を使う",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 5,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2d12ea6821a3ce5b909a7a799f4595982a47095dd0c52d573b010b417babef44",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6k7d8h5x",
@@ -270,55 +256,13 @@
     "level": 7,
     "grammar": ["requests-permission", "hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7n7g8z5g",
-    "ja": "彼、このツールは無料だって言ってた？",
-    "en": "Did he say this tool is free?",
-    "alternatives": [
-      "Did he mention this tool is free?",
-      "Did he say this tool doesn't cost anything?"
-    ],
-    "point": "say の後の that は省ける",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 5,
-    "grammar": ["reported-speech", "noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7y7s3q6u",
-    "ja": "Docker がメモリをこんなに食うって知ってればなあ。",
-    "en": "I wish I'd known Docker ate this much memory.",
-    "alternatives": [
-      "If only I'd known Docker used this much memory.",
-      "I wish I had known Docker takes up this much memory."
-    ],
-    "point": "過去の後悔は I wish の後を過去完了 I'd known にする",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 9,
-    "grammar": ["wishes-regrets", "noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8b9y9s7f",
-    "ja": "新しい PC のセットアップ、何かアドバイスある？",
-    "en": "Any advice on setting up a new PC?",
-    "alternatives": [
-      "Got any advice on setting up a new PC?",
-      "Any tips for setting up a new PC?"
-    ],
-    "point": "advice は数えられないので an advice や advices にしない",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 6,
-    "grammar": ["articles-and-countability", "gerunds"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:36fcc930a4542ab54ab8ae0d48797876e708a7ea150ddfc2cd9dd86a5de1da0d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8g4g4u4v",
@@ -340,22 +284,6 @@
     }
   },
   {
-    "id": "c_9u7g3z8d",
-    "ja": "新人が最初に入れるべきツールの一覧、どこかにある？",
-    "en": "Is there a list of tools new hires should install?",
-    "alternatives": [
-      "Is there a list of tools newcomers should install?",
-      "Is there a list of must-have tools for new hires?"
-    ],
-    "point": "tools の後ろに関係詞なしで new hires should install を続ける",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 7,
-    "grammar": ["relative-clauses", "post-modification"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_9x3j8p2u",
     "ja": "ビルド失敗の原因は、設定じゃなく Node だったよ。",
     "en": "It was Node, not the config, that broke the build.",
@@ -369,6 +297,12 @@
     "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1451e18667683f05b1fc087a2a3307df35000be0f9e01d49c9987fba5032d06d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
