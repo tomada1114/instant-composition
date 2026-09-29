@@ -22,22 +22,6 @@
     }
   },
   {
-    "id": "c_2g6p8h6b",
-    "ja": "何か読むものをいただけますか？",
-    "en": "Could I have something to read?",
-    "alternatives": [
-      "Could I get something to read?",
-      "Might I have something to read?"
-    ],
-    "point": "something to read：「読むもの」は後ろから to 不定詞で修飾",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 4,
-    "grammar": ["infinitives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2p9s2x3m",
     "ja": "パソコンをトレーに入れてください。",
     "en": "Please put your laptop in the tray.",
@@ -95,7 +79,13 @@
     "level": 5,
     "grammar": ["indirect-questions", "passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3b947dd47d3411622c4b5c3fbacecaa23cf4df03e129f3dfa73c123277057fa2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2z6w3x5z",
@@ -118,22 +108,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_3b3q3v8d",
-    "ja": "ここで一時間もただ待たされているんです。",
-    "en": "I've been cooling my heels here for an hour.",
-    "alternatives": [
-      "I've been stuck waiting around here for a whole hour.",
-      "I've been waiting around here for an hour now."
-    ],
-    "point": "「ずっと待っている」は現在完了進行形。cool one's heels は手持ち無沙汰に待つ",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 9,
-    "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_3b7q3r7p",
@@ -171,7 +145,13 @@
     "level": 6,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:30645b43e290da26cb5185805e2dd3df3b515cde133c2d144aecf75371dbfdd6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4u4t5d5f",
@@ -228,7 +208,13 @@
     "level": 3,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:15716623cdeee1af562ba1c4487ffe2ad6f640e28a1cb43b5f0091357b5a64dc",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6j4p3s2m",
@@ -244,23 +230,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6p4d2f3n",
-    "ja": "ゲート変更と聞きましたが、掲示板は更新されていません。",
-    "en": "I heard the gate changed, but the board hasn't been updated.",
-    "alternatives": [
-      "I heard the gate changed, but the board hasn't updated yet.",
-      "They said the gate changed, but the board still says otherwise."
-    ],
-    "point": "聞いた時点は過去、掲示板の今の状態は現在完了",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 9,
-    "grammar": ["tense-contrast", "passive-voice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:aef4a4f481e2e91a96194542a3842361638d22b0ee5a07a1bde4bb2ff8d52724",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6t8n9x9b",
@@ -276,23 +252,13 @@
     "level": 5,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6w9b6r8r",
-    "ja": "寒いので、毛布をもう1枚もらえますか？",
-    "en": "Could I get another blanket to keep warm?",
-    "alternatives": [
-      "Could I have one more blanket, please?",
-      "It's cold. Could I get another blanket?"
-    ],
-    "point": "「〜するために」は to 不定詞で後ろに足す",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 4,
-    "grammar": ["infinitives", "requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:76c5cad201e5dba6d35c32e4ace6bcda1041fdc8b82a509a24550fe5f243b3ef",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7c2d9g2f",
@@ -355,22 +321,6 @@
     }
   },
   {
-    "id": "c_7t4w7x6v",
-    "ja": "ビジネスに空席が出たら、格上げしてもらえますか？",
-    "en": "If a business seat freed up, could you upgrade me?",
-    "alternatives": [
-      "Could you upgrade me if a business seat opened up?",
-      "If a seat in business became available, could you upgrade me?"
-    ],
-    "point": "起こりにくい仮定は if 節を過去形にする",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 10,
-    "grammar": ["second-conditional", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7z9m9d9q",
     "ja": "すみません、席を間違えたかもしれません。",
     "en": "Sorry, I might have taken the wrong seat.",
@@ -406,7 +356,13 @@
     "level": 8,
     "grammar": ["noun-clauses", "cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dd06c4de9f4ce6a47150f433161d2c4500987fedc6e9f2399328ba0d86a28120",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8n4z2f9d",
@@ -429,22 +385,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_8p6t2e9p",
-    "ja": "足元にもう少しゆとりがあると助かるんですが。",
-    "en": "I'd love a little more legroom, if possible.",
-    "alternatives": [
-      "I'd appreciate a little more legroom, if you have any.",
-      "It'd be great to have a bit more legroom, if possible."
-    ],
-    "point": "legroom は数えられない名詞。a bit more で量を柔らかく頼む",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 9,
-    "grammar": ["articles-and-countability", "hedging-softening"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_8s2n9h6u",
