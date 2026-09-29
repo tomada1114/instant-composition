@@ -1,5 +1,5 @@
 import { act, fireEvent, screen } from "@testing-library/react";
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 import type {
   HomeView,
@@ -21,6 +21,7 @@ import {
   renderApp,
   settle,
   type ApiCall,
+  warmUp,
 } from "./web-harness";
 
 // The welcome screen, W1, mounted as the whole app at `/welcome` over a
@@ -149,6 +150,8 @@ function level(toeic: string): HTMLElement {
     name: fill(ja.Settings.difficulty.option, { toeic }),
   });
 }
+
+beforeAll(warmUp);
 
 beforeEach(() => {
   fakeTimers();
