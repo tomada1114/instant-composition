@@ -37,7 +37,7 @@
     "en": "Could I join the team handling new ventures?",
     "alternatives": [
       "Can I join the team working on new ventures?",
-      "Any chance I could join the new ventures team?"
+      "Can I join the team running new ventures?"
     ],
     "point": "「担当するチーム」は the team handling と後ろから説明",
     "topic": "work",
@@ -88,10 +88,10 @@
   {
     "id": "c_3t9g8y3r",
     "ja": "この仕事、技術より対話力が大切ですか？",
-    "en": "Are communication skills more important than technical ones?",
+    "en": "Is communication more important than technical skill here?",
     "alternatives": [
-      "Do communication skills matter more than technical skills?",
-      "Is communication more important than technical skill here?"
+      "Does communication matter more than technical skill here?",
+      "Is communication more important than tech skills here?"
     ],
     "point": "「AよりBが大切」は B is more important than A",
     "topic": "work",
@@ -123,7 +123,7 @@
     "en": "Why did you choose our company?",
     "alternatives": [
       "Why did you pick our company?",
-      "Why have you chosen our company?"
+      "What made you choose our company?"
     ],
     "point": "did の後ろは choose（原形）で chose にしない",
     "topic": "work",
@@ -246,8 +246,8 @@
     "ja": "部下はいませんが、後輩を育ててきました。",
     "en": "I don't manage anyone, but I've mentored juniors.",
     "alternatives": [
-      "I have no subordinates, but I've mentored juniors.",
-      "I've mentored juniors, although I have no subordinates."
+      "I have no reports, but I've mentored juniors.",
+      "I've mentored juniors, though I don't manage anyone."
     ],
     "point": "ずっと続けてきたことは I've 過去分詞で表す",
     "topic": "work",
@@ -373,7 +373,10 @@
     "id": "c_7u3p3x8b",
     "ja": "英語と中国語が話せます。",
     "en": "I can speak English and Chinese.",
-    "alternatives": ["I speak English and Chinese.", "I can use English and Chinese."],
+    "alternatives": [
+      "I speak English and Chinese.",
+      "I speak both English and Chinese."
+    ],
     "point": "can の後ろは動詞の原形 speak",
     "topic": "work",
     "subtopic": "job-interview",
@@ -391,12 +394,12 @@
   {
     "id": "c_8w4u3z4n",
     "ja": "海外で働くチャンスはありますか？",
-    "en": "Are there chances to work abroad?",
+    "en": "Are there opportunities to work abroad?",
     "alternatives": [
-      "Is there a chance to work abroad?",
-      "Are there any chances to work overseas?"
+      "Are there any opportunities to work overseas?",
+      "Are there opportunities to work overseas?"
     ],
-    "point": "「働くチャンス」は chances to work と to 不定詞で後ろから",
+    "point": "「働くチャンス」は opportunities to work と to 不定詞で後ろから",
     "topic": "work",
     "subtopic": "job-interview",
     "level": 3,

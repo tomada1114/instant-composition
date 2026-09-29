@@ -21,13 +21,14 @@
     "en": "I wish I'd cc'd the client on it.",
     "alternatives": [
       "If only I'd copied the client on it.",
-      "I wish I had copied the client."
+      "I wish I had copied the client.",
+      "I should have cc'd the client on it."
     ],
     "point": "過去の後悔は wish の後に過去完了",
     "topic": "work",
     "subtopic": "email-chat",
     "level": 7,
-    "grammar": ["wishes-regrets"],
+    "grammar": ["wishes-regrets", "modal-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -53,7 +54,8 @@
     "en": "What they're asking is whether we can reschedule.",
     "alternatives": [
       "What they want to know is if we can reschedule.",
-      "What they're wondering is whether we can move the date."
+      "What they're wondering is whether we can move the date.",
+      "What they're asking is whether the deadline can change."
     ],
     "point": "What 節が主語、「〜かどうか」は whether で語順は平叙文",
     "topic": "work",
@@ -86,7 +88,8 @@
     "en": "To finalize, we'd need the exact quantity by Friday.",
     "alternatives": [
       "We'd need the exact quantity by Friday to finalize.",
-      "To finalize this, we'd need exact numbers by Friday."
+      "To finalize this, we'd need exact numbers by Friday.",
+      "I'd need the exact quantity by Friday to finalize."
     ],
     "point": "目的の「〜には」は To do で文頭に。we'd need で柔らかく",
     "topic": "work",
@@ -166,7 +169,7 @@
     "en": "This morning the manager emailed everyone, attaching the minutes.",
     "alternatives": [
       "The manager emailed everyone this morning with the minutes attached.",
-      "This morning the manager emailed the minutes to everyone."
+      "The manager emailed everyone this morning, attaching the minutes."
     ],
     "point": "「添付して」は attaching で文の後ろにつなげる",
     "topic": "work",
@@ -313,7 +316,7 @@
   },
   {
     "id": "c_8v2u2b7w",
-    "ja": "彼女が見積もりの条件をもう確認したか、分かりません。",
+    "ja": "彼女が見積もりの条件をもう確認したか分かりません。",
     "en": "I'm not sure whether she's already checked the quote's terms.",
     "alternatives": [
       "I don't know if she's looked over the terms yet.",
@@ -322,7 +325,7 @@
     "point": "間接疑問は whether / if の後を平叙文の語順にする",
     "topic": "work",
     "subtopic": "email-chat",
-    "level": 9,
+    "level": 7,
     "grammar": ["indirect-questions", "noun-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -370,13 +373,13 @@
     "ja": "うちが延長を頼んだら、先方は嫌がるかな？",
     "en": "If we asked for an extension, would they mind?",
     "alternatives": [
-      "Would the client mind if we asked for an extension?",
+      "Would they mind if we asked for an extension?",
       "Would they mind if we asked for more time?"
     ],
     "point": "仮定の話なので if 節は過去形、主節は would",
     "topic": "work",
     "subtopic": "email-chat",
-    "level": 8,
+    "level": 6,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}

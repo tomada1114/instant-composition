@@ -26,7 +26,7 @@
     "point": "「見つけた」は find の過去形 found",
     "topic": "work",
     "subtopic": "feedback",
-    "level": 3,
+    "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -58,14 +58,14 @@
     "point": "過去の後悔は I wish I had + 過去分詞",
     "topic": "work",
     "subtopic": "feedback",
-    "level": 8,
-    "grammar": ["wishes-regrets", "modal-perfect"],
+    "level": 6,
+    "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_4n5j5s7q",
-    "ja": "最近、コードをずっと丁寧に見てくれてますね。",
+    "ja": "最近、コードをすごく丁寧に見てくれるね。",
     "en": "You've been reviewing my code so carefully lately.",
     "alternatives": [
       "You've been reviewing my code really carefully recently.",
@@ -74,15 +74,15 @@
     "point": "「最近ずっと〜している」は have been doing で表す",
     "topic": "work",
     "subtopic": "feedback",
-    "level": 6,
+    "level": 4,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_5q8b5b6b",
-    "ja": "コメントは、明日の朝までに私が送ります。",
-    "en": "I'll send you my comments by tomorrow morning.",
+    "ja": "明日の朝までにコメントを送ります。",
+    "en": "I'll send my comments by tomorrow morning.",
     "alternatives": [
       "I'll send my feedback by tomorrow morning.",
       "You'll have my comments by tomorrow morning."
@@ -90,7 +90,7 @@
     "point": "「〜までに」は until ではなく by",
     "topic": "work",
     "subtopic": "feedback",
-    "level": 4,
+    "level": 2,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-23",
     "stamps": {
@@ -107,7 +107,8 @@
     "en": "This covers everything the client worried about.",
     "alternatives": [
       "This covers everything the client was worried about.",
-      "This covers all the client's concerns."
+      "This covers all the client's concerns.",
+      "You've covered all the client's concerns."
     ],
     "point": "「お客さんが気にした」は everything の後ろに続ける",
     "topic": "work",
@@ -135,27 +136,27 @@
   },
   {
     "id": "c_6j6y2b9r",
-    "ja": "指摘されたスライドは、もう全部直しました。",
+    "ja": "指摘されたスライド、もう全部直しました。",
     "en": "I've already fixed all the slides you flagged.",
     "alternatives": [
       "I've already fixed every slide you pointed out.",
       "All the slides you flagged are fixed already."
     ],
-    "point": "「もう直した」は現在完了、指摘した時点は過去形",
+    "point": "「もう直した」は現在完了、slides の後ろに you flagged を続ける",
     "topic": "work",
     "subtopic": "feedback",
-    "level": 6,
-    "grammar": ["tense-contrast"],
+    "level": 4,
+    "grammar": ["present-perfect", "relative-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_7y5t5j5k",
     "ja": "お客さんが、週報を短くしてほしいって。",
-    "en": "The client wants us to shorten the reports.",
+    "en": "The client wants us to shorten weekly reports.",
     "alternatives": [
-      "The client wants the reports to be shorter.",
-      "The client wants us to make reports shorter."
+      "The client wants the weekly reports shorter.",
+      "The client wants us to trim weekly reports."
     ],
     "point": "「〜してほしい」は want + 人 + to do で表す",
     "topic": "work",
@@ -167,16 +168,16 @@
   },
   {
     "id": "c_7z5h9x8h",
-    "ja": "彼は上手だけど、ゆっくり話すといいね。",
+    "ja": "彼は上手だけど、ゆっくり話すといい。",
     "en": "He's good, but he should speak slower.",
     "alternatives": [
-      "He's good, but he needs to slow down.",
-      "He speaks well, but he should slow down."
+      "He's good, but he should slow down.",
+      "He's good but should speak more slowly."
     ],
     "point": "「〜するといい」は should で柔らかく助言する",
     "topic": "work",
     "subtopic": "feedback",
-    "level": 4,
+    "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
     "stamps": {}

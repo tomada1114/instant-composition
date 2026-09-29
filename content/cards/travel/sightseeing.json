@@ -22,22 +22,6 @@
     }
   },
   {
-    "id": "c_3t6p8t4u",
-    "ja": "私たち、この列にもう1時間も並んでるんですよ。",
-    "en": "We've been stuck in this line for an hour now.",
-    "alternatives": [
-      "We've been waiting in this line for a whole hour.",
-      "We've been standing in line for an hour already."
-    ],
-    "point": "今も続く動作は have been -ing と for + 期間",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 9,
-    "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3u6x7z9k",
     "ja": "日の出ツアーに参加するつもりなんだ。",
     "en": "I'm going to join the sunrise tour.",
@@ -60,22 +44,6 @@
     }
   },
   {
-    "id": "c_4u7e2u2t",
-    "ja": "私たちが入った途端に、ツアーが始まったんだ。",
-    "en": "No sooner had we entered than the tour began.",
-    "alternatives": [
-      "As soon as we entered, the tour began.",
-      "Hardly had we entered when the tour began."
-    ],
-    "point": "No sooner を文頭に置くと had we と倒置、後ろは than",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 9,
-    "grammar": ["inversion"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_4y3m2u8r",
     "ja": "父はガイドさんの話に聞き入って、メモを取ってたよ。",
     "en": "My dad hung on the guide's every word, taking notes.",
@@ -89,23 +57,13 @@
     "level": 9,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5a7q5d8b",
-    "ja": "お土産店はどこにあるか、教えていただけますか？",
-    "en": "Could you tell me where the gift shop is?",
-    "alternatives": [
-      "Would you mind telling me where the gift shop is?",
-      "Can you tell me where the gift shop is?"
-    ],
-    "point": "間接疑問は where the gift shop is と平叙文の語順",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 7,
-    "grammar": ["indirect-questions", "requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e3a5fb2cb33e19f92d4255a041e4354e7027017392a2feeeedea708f33b8b111",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5t2p3r9e",
@@ -121,7 +79,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1ee199aafecea111328a7c8caf563614c19a218fe03b5cc9d830cb48a4d9def6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5v6z7a3z",
@@ -181,7 +145,13 @@
     "level": 7,
     "grammar": ["concession-contrast", "comparatives-superlatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d2811a3651d6cef0a281a9f3c4e7e9d9dc91c264fe3adbbd2b0a11f09f08b136",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5z5u4a7e",
@@ -241,23 +211,13 @@
     "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6p8h2q2p",
-    "ja": "着いたら、ツアーはもう満員。音声ガイドにしたよ。",
-    "en": "The tour had filled up, so we got audio guides.",
-    "alternatives": [
-      "The tour had sold out, so we rented audio guides.",
-      "The tour was already full, so we got audio guides."
-    ],
-    "point": "着く前に満員だったので had filled up と過去完了",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 7,
-    "grammar": ["past-perfect", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:466a01490b1656de7fcd02b25de8af0212157931e018b95ebcacdf807bae9545",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6r4b5s6x",
@@ -280,38 +240,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_6t3r9e5c",
-    "ja": "売り場の人が言ってたツアー、まだ予約できるか知ってる？",
-    "en": "Do you know if the tour they mentioned is still available?",
-    "alternatives": [
-      "Can we still book the tour they mentioned, do you know?",
-      "Is the tour they mentioned still bookable, do you know?"
-    ],
-    "point": "間接疑問は if の後を平叙文の語順にする",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 9,
-    "grammar": ["indirect-questions", "relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6w9d4g7z",
-    "ja": "三脚があったら、夜景の写真はもっとくっきり撮れたのに。",
-    "en": "If I'd had a tripod, my night shots would've been sharper.",
-    "alternatives": [
-      "If I'd brought a tripod, my night shots would've been sharper.",
-      "My night shots would've been sharper if I'd had a tripod."
-    ],
-    "point": "過去の仮定は If + had + 過去分詞、結果は would have + 過去分詞",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 9,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_6z5b8v4w",
@@ -349,7 +277,13 @@
     "level": 6,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d5b744b1629af08d56a70dd0cf713e12e65f1c4f9f1e36d490bc3f77bb35910d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7a2x2a8r",
@@ -365,7 +299,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c643bc21ab5e6d05f40ff1f47a75661999720c3b5a5fd7aafe3830acf0090f23",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7k3y7t2z",
@@ -403,7 +343,13 @@
     "level": 5,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1b54581ebb789e02e89e64181fe94248fe037aae58ba5e147a436c1d98a5459d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8e5x8j3j",
@@ -419,7 +365,13 @@
     "level": 6,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:be28ba4d3d3c597f691af97a8945d04dc7ab8741372c80892f2776abd6f6f93d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8k5q3k6p",
@@ -466,22 +418,6 @@
     }
   },
   {
-    "id": "c_8w4z8w5e",
-    "ja": "このチケットにツアーは含まれるか分かりますか？",
-    "en": "Do you know if this ticket includes the tour?",
-    "alternatives": [
-      "Do you know whether this ticket covers the tour?",
-      "Do you know if the tour comes with this ticket?"
-    ],
-    "point": "「かどうか」の後は疑問文にせず主語＋動詞の語順",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 7,
-    "grammar": ["indirect-questions", "noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_9g8x8b4e",
     "ja": "すみません、先にリュックを預けてもいいですか？",
     "en": "Is it okay to drop off my backpack first?",
@@ -495,6 +431,12 @@
     "level": 6,
     "grammar": ["requests-permission", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8dcc26d7856d4b8f5b56c164622f5b6720a2404d6212e034bb647edaa6d10641",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
