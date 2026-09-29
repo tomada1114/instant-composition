@@ -1,37 +1,5 @@
 [
   {
-    "id": "c_2f3u9w5c",
-    "ja": "仕様を私が確認していれば、今頃やり直しせずに済んだのに。",
-    "en": "If I'd checked the specs, we wouldn't be redoing this.",
-    "alternatives": [
-      "Had I checked the specs, we wouldn't be redoing this.",
-      "If I'd checked the specs, we wouldn't have to redo this."
-    ],
-    "point": "if 節は過去完了、今の結果は wouldn't＋be＋-ing",
-    "topic": "work",
-    "subtopic": "reporting",
-    "level": 9,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3j5z4v3k",
-    "ja": "新しいツールをいつ導入するか、もう決めましたか？",
-    "en": "Have you decided when we'll adopt the new tool?",
-    "alternatives": [
-      "Have you decided when we're introducing the new tool?",
-      "Have you picked a date to adopt the new tool?"
-    ],
-    "point": "when 以下は疑問文の語順にせず we'll adopt の順",
-    "topic": "work",
-    "subtopic": "reporting",
-    "level": 8,
-    "grammar": ["indirect-questions", "present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3m4d2m3h",
     "ja": "新しい方法のほうがずっと速いです。",
     "en": "The new way is much faster.",
@@ -45,18 +13,50 @@
     "stamps": {}
   },
   {
-    "id": "c_3x2y7d9h",
-    "ja": "エンジニアがもう一人いれば、今週中に終わるのに。",
-    "en": "If we had another engineer, we'd finish this week.",
+    "id": "c_3u4t8q6e",
+    "ja": "私があの時確認していれば、今ごろ慌てていないのに。",
+    "en": "If I'd checked then, I wouldn't be scrambling now.",
     "alternatives": [
-      "If we had one more engineer, we'd finish this week.",
-      "With another engineer, we could finish this week."
+      "If I'd double-checked, I wouldn't be scrambling right now.",
+      "If I'd checked then, I wouldn't be panicking now."
+    ],
+    "point": "if 節は過去完了、今の結果は wouldn't be -ing",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3w5h6n8x",
+    "ja": "あと二日あれば、私たちは終わるのに。",
+    "en": "If we had two more days, we'd finish.",
+    "alternatives": [
+      "With two more days, we could finish.",
+      "Given two more days, we'd be done."
     ],
     "point": "現実と違う仮定なので had と we'd を使う",
     "topic": "work",
     "subtopic": "reporting",
-    "level": 8,
+    "level": 6,
     "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4d7s5s2c",
+    "ja": "新人がいつ来るか、もう聞きましたか？",
+    "en": "Have you heard when the new hire starts?",
+    "alternatives": [
+      "Have you found out when the new hire starts?",
+      "Do you know yet when the new hire starts?"
+    ],
+    "point": "when 以下は疑問文の語順にせず the new hire starts",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["indirect-questions", "present-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -65,13 +65,13 @@
     "ja": "リリース前にこのバグに気づけばよかったです。",
     "en": "I wish I'd caught this bug before release.",
     "alternatives": [
-      "I wish I had noticed this bug before the release.",
+      "I wish I'd noticed this bug before release.",
       "If only I'd spotted this bug before release."
     ],
     "point": "過去の後悔は wish の後を had + 過去分詞にする",
     "topic": "work",
     "subtopic": "reporting",
-    "level": 7,
+    "level": 6,
     "grammar": ["wishes-regrets", "past-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -131,18 +131,18 @@
     "stamps": {}
   },
   {
-    "id": "c_5f7j7b9v",
-    "ja": "新システムはいつ使えるか、ご存じですか？",
-    "en": "Do you know when it'll be ready?",
+    "id": "c_5t7u3z9g",
+    "ja": "数字が怪しいので、後輩に確認してもらっています。",
+    "en": "The numbers look fishy, so I'm having a junior check.",
     "alternatives": [
-      "Do you know when we can use it?",
-      "Any idea when the system will be ready?"
+      "The numbers seem off, so I've got a junior checking them.",
+      "The figures look off, so I'm getting a junior to check."
     ],
-    "point": "when の後ろは will it ではなく主語＋動詞の順",
+    "point": "have＋人＋動詞の原形。to は付けない",
     "topic": "work",
     "subtopic": "reporting",
-    "level": 4,
-    "grammar": ["indirect-questions", "future-forms"],
+    "level": 9,
+    "grammar": ["causatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -163,22 +163,6 @@
     "stamps": {}
   },
   {
-    "id": "c_6a4v7j8q",
-    "ja": "この不具合、午前中ずっと調べてるんですか？",
-    "en": "Have you been looking into this all morning?",
-    "alternatives": [
-      "Have you been working on this since this morning?",
-      "Have you been sorting this out all morning?"
-    ],
-    "point": "「ずっと〜している」は Have you been -ing で表す",
-    "topic": "work",
-    "subtopic": "reporting",
-    "level": 6,
-    "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6h6x2w3e",
     "ja": "取引先は、部品が遅れると言いました。",
     "en": "They said the parts would be late.",
@@ -191,6 +175,22 @@
     "subtopic": "reporting",
     "level": 5,
     "grammar": ["reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6p9n5c3e",
+    "ja": "遅れるなら、早く言ってくれればよかったのに。",
+    "en": "You should've told me about the delay sooner.",
+    "alternatives": [
+      "You should have let me know sooner.",
+      "You should have given me a heads-up sooner."
+    ],
+    "point": "「〜すべきだったのに」は should have + 過去分詞",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -253,38 +253,6 @@
     "stamps": {}
   },
   {
-    "id": "c_7x3k3j2e",
-    "ja": "テストの結果が変だったので、新人に見直してもらっています。",
-    "en": "The results looked off, so I'm having our rookie recheck them.",
-    "alternatives": [
-      "Results looked odd, so I'm getting our new hire to recheck.",
-      "The results looked wrong, so I've got our rookie rechecking them."
-    ],
-    "point": "have＋人＋動詞の原形。to を付けない（get なら to が要る）",
-    "topic": "work",
-    "subtopic": "reporting",
-    "level": 10,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7y9w3r7n",
-    "ja": "残りの部品の納品は来週に延期されました。",
-    "en": "The remaining parts have been postponed until next week.",
-    "alternatives": [
-      "Delivery of the rest is postponed until next week.",
-      "The remaining parts won't arrive until next week."
-    ],
-    "point": "部品が主語なので have been postponed と受け身にする",
-    "topic": "work",
-    "subtopic": "reporting",
-    "level": 7,
-    "grammar": ["passive-voice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8m2r7h5d",
     "ja": "気になるのは、先方がまだ返事をくれないことです。",
     "en": "What worries me is that the client hasn't replied.",
@@ -297,6 +265,22 @@
     "subtopic": "reporting",
     "level": 8,
     "grammar": ["noun-clauses", "present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8y7h2b9r",
+    "ja": "納品は来週に延期されました。",
+    "en": "The delivery was pushed to next week.",
+    "alternatives": [
+      "Delivery has been postponed until next week.",
+      "The delivery was moved to next week."
+    ],
+    "point": "納品が主語なので was pushed と受け身にする",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -334,11 +318,11 @@
   },
   {
     "id": "c_9e6u5j9x",
-    "ja": "返信がないので、宛先を間違えたかもしれません。",
-    "en": "I might have used the wrong address.",
+    "ja": "私、宛先を間違えて送ったかもしれません。",
+    "en": "I might have sent it to the wrong address.",
     "alternatives": [
       "I may have sent it to the wrong address.",
-      "I might have got the address wrong."
+      "I might have gotten the address wrong."
     ],
     "point": "過去の推量は might have + 過去分詞",
     "topic": "work",
@@ -351,10 +335,10 @@
   {
     "id": "c_9r8x4g2r",
     "ja": "テストは途中ですが、金曜には間に合います。",
-    "en": "Although testing isn't done yet, we'll make Friday.",
+    "en": "Although testing isn't done, we'll be ready by Friday.",
     "alternatives": [
-      "Testing isn't done, but we'll still make Friday.",
-      "Even though testing isn't finished, we'll make Friday."
+      "Testing isn't finished, but we'll be ready by Friday.",
+      "Even though testing isn't done, we'll finish by Friday."
     ],
     "point": "although の後に but は重ねない",
     "topic": "work",

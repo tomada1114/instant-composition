@@ -26,24 +26,8 @@
     "point": "条件は if 節、未来のことでも中身は現在形",
     "topic": "work",
     "subtopic": "requests",
-    "level": 8,
+    "level": 7,
     "grammar": ["time-and-if-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3b2a6s3y",
-    "ja": "佐藤さんに朝からずっと電話してるんです。",
-    "en": "I've been calling Mr. Sato all morning.",
-    "alternatives": [
-      "I've been phoning Mr. Sato since this morning.",
-      "Since this morning, I've been calling Mr. Sato."
-    ],
-    "point": "朝から続く動作は I've been calling",
-    "topic": "work",
-    "subtopic": "requests",
-    "level": 4,
-    "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -80,12 +64,28 @@
     "stamps": {}
   },
   {
+    "id": "c_3h4r7j2s",
+    "ja": "君に手伝いを頼もうと、ずっと思ってた。",
+    "en": "I've been meaning to ask you for help.",
+    "alternatives": [
+      "I've been meaning to ask for your help.",
+      "I've been wanting to ask you for help."
+    ],
+    "point": "前から思っていた → have been meaning to + 動詞",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 4,
+    "grammar": ["present-perfect-continuous", "infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3m2q3e3r",
     "ja": "うちは予算を確認して、その仕事を受けた。",
     "en": "Having checked the budget, we accepted the job.",
     "alternatives": [
       "After checking the budget, we took the job.",
-      "Having gone over the budget, we took the job."
+      "We checked the budget, then took the job."
     ],
     "point": "先に済ませた動作は Having checked で表す",
     "topic": "work",
@@ -133,7 +133,7 @@
     "en": "I'm busy now, so I'll help later.",
     "alternatives": [
       "I'm busy right now. I'll help later.",
-      "Sorry, I'm busy. I'll help you later."
+      "I'm swamped now. I'll help later."
     ],
     "point": "その場で決めた申し出は I'll + 動詞",
     "topic": "work",
@@ -194,10 +194,10 @@
   {
     "id": "c_5y3r9m4a",
     "ja": "部長が二の足を踏んだのは、量じゃなく締め切りのせいだ。",
-    "en": "It was the deadline, not the workload, that made him balk.",
+    "en": "It was the deadline, not the workload, that made our manager balk.",
     "alternatives": [
-      "What made him balk was the deadline, not the workload.",
-      "It wasn't the workload but the deadline that made him hesitate."
+      "What made our manager balk was the deadline, not the workload.",
+      "It wasn't the workload but the deadline that made our manager hesitate."
     ],
     "point": "強調したい語を It was と that ではさむ",
     "topic": "work",
@@ -213,12 +213,12 @@
     "en": "If I had until Wednesday, I could do it.",
     "alternatives": [
       "I could handle it if I had until Wednesday.",
-      "Give me until Wednesday and I could take it on."
+      "If I had till Wednesday, I could take it."
     ],
     "point": "仮の条件は if 節を過去形、主節を could にする",
     "topic": "work",
     "subtopic": "requests",
-    "level": 8,
+    "level": 6,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -229,7 +229,7 @@
     "en": "Sorry, I can't help. I'm swamped this week.",
     "alternatives": [
       "Sorry, I'm too busy to help this week.",
-      "Sorry, I'm tied up and can't help."
+      "I'm tied up this week and can't help."
     ],
     "point": "「手伝えない」は can't help で言い切る",
     "topic": "work",
@@ -244,13 +244,13 @@
     "ja": "予算が通れば引き受けると、私は言いました。",
     "en": "I said I'd take it if the budget passed.",
     "alternatives": [
-      "I told them I'd do it if the budget passed.",
-      "I told them I'd take it provided funding's approved."
+      "I said I'd accept if the budget passed.",
+      "I said I'd do it if the budget passed."
     ],
     "point": "said の後は will を would に、時制をそろえる",
     "topic": "work",
     "subtopic": "requests",
-    "level": 8,
+    "level": 6,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -260,13 +260,13 @@
     "ja": "彼女、原稿が早く届くなら訳すって言ってたよ。",
     "en": "She said she'd translate if the draft arrives early.",
     "alternatives": [
-      "She told me she'd translate if the draft comes early.",
-      "She said she'd translate if the draft comes in early."
+      "She said she'd translate if it comes early.",
+      "She said she'd translate if the draft came early."
     ],
     "point": "言ったのは過去なので will が would (she'd) になる",
     "topic": "work",
     "subtopic": "requests",
-    "level": 8,
+    "level": 6,
     "grammar": ["reported-speech", "time-and-if-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -275,11 +275,11 @@
     "id": "c_7d7j8q9h",
     "ja": "うちは忙しすぎて、受けられません。",
     "en": "We're too busy to take that on.",
-    "alternatives": ["We're too busy to accept it.", "We're too busy to handle it."],
+    "alternatives": ["We're too busy to take it on.", "We're too busy to take it."],
     "point": "「忙しすぎて〜できない」は too busy to 動詞",
     "topic": "work",
     "subtopic": "requests",
-    "level": 3,
+    "level": 4,
     "grammar": ["infinitives", "be-and-present-simple"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -289,8 +289,8 @@
     "ja": "データ入力は来週、外注に出されます。",
     "en": "Data entry will be outsourced next week.",
     "alternatives": [
-      "Data entry is being outsourced next week.",
-      "Next week, data entry will be outsourced."
+      "Next week, data entry will be outsourced.",
+      "Data entry gets outsourced next week."
     ],
     "point": "作業が外注される側なので will be + 過去分詞",
     "topic": "work",
@@ -306,12 +306,12 @@
     "en": "Would you mind looking over the contract by Friday?",
     "alternatives": [
       "Could you look over the contract by Friday?",
-      "I was hoping you could review the contract by Friday."
+      "Would you mind reviewing the contract by Friday?"
     ],
     "point": "丁寧な依頼は Would you mind + ing",
     "topic": "work",
     "subtopic": "requests",
-    "level": 8,
+    "level": 6,
     "grammar": ["hedging-softening", "gerunds"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -337,7 +337,7 @@
     "ja": "早く頼めばよかった。締め切りは明日だ。",
     "en": "I wish I'd asked sooner. The deadline's tomorrow.",
     "alternatives": [
-      "I should've asked you sooner. The deadline's tomorrow.",
+      "I should've asked sooner. The deadline's tomorrow.",
       "If only I'd asked sooner. The deadline's tomorrow."
     ],
     "point": "過去の後悔は I wish のあとを過去完了に",
@@ -350,17 +350,17 @@
   },
   {
     "id": "c_8j9w2y3y",
-    "ja": "見積もり、まだ届いてません。今日中にいただけますか？",
+    "ja": "見積もり、まだ届いてません。今日もらえますか？",
     "en": "The quote still hasn't arrived. Could you send it today?",
     "alternatives": [
-      "I still haven't received the quote. Could you send it today?",
-      "The quote hasn't come yet. Could you send it over today?"
+      "I haven't gotten the quote. Can you send it today?",
+      "The quote hasn't come yet. Can you send it today?"
     ],
     "point": "まだ届いていない、は現在完了 hasn't arrived",
     "topic": "work",
     "subtopic": "requests",
-    "level": 9,
-    "grammar": ["tense-contrast"],
+    "level": 7,
+    "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -386,7 +386,8 @@
     "en": "I was wondering if you'd put together the materials.",
     "alternatives": [
       "Could you possibly put together the materials?",
-      "I was hoping you could put together the materials."
+      "I was hoping you could put together the materials.",
+      "I was wondering if you could put the materials together."
     ],
     "point": "was wondering if you'd で丁寧に依頼を切り出す",
     "topic": "work",
@@ -401,13 +402,13 @@
     "ja": "うちに必要なのは、確認してくれる人です。",
     "en": "What we need is someone to check it.",
     "alternatives": [
-      "What we really need is someone to check it.",
-      "The thing we need is someone to check it."
+      "What we need is somebody to check it.",
+      "We need someone to check it."
     ],
     "point": "「必要なのは〜」は What we need is で始める",
     "topic": "work",
     "subtopic": "requests",
-    "level": 6,
+    "level": 4,
     "grammar": ["noun-clauses", "infinitives"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -433,13 +434,13 @@
     "ja": "データ整理は助手にやってもらってもいいですか？",
     "en": "Can I have my assistant sort out the data?",
     "alternatives": [
-      "Could I get my assistant to sort out the data?",
-      "Could I have my assistant organize the data?"
+      "Could I have my assistant organize the data?",
+      "Can I get my assistant to sort the data?"
     ],
     "point": "人にやってもらうは have 人＋動詞の原形",
     "topic": "work",
     "subtopic": "requests",
-    "level": 8,
+    "level": 6,
     "grammar": ["causatives", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}

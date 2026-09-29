@@ -1,21 +1,5 @@
 [
   {
-    "id": "c_2c9j2g6j",
-    "ja": "発表は顧客アンケートから始めればよかったです。",
-    "en": "I wish I'd started with the customer survey.",
-    "alternatives": [
-      "I should have started with the customer survey.",
-      "I wish I had opened with the customer survey."
-    ],
-    "point": "過去への後悔は wish の後を had + 過去分詞にする",
-    "topic": "work",
-    "subtopic": "presentations",
-    "level": 7,
-    "grammar": ["wishes-regrets"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2k4r4z3k",
     "ja": "もう少し詳しく説明していただけますか？",
     "en": "Would you mind explaining that in more detail?",
@@ -44,27 +28,11 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:e8e555c49ad771782eb233c51df016fb9bcef336fd69084a1b1e3f84bf49e90e",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:e7920b10127ef3d26551750da2e10e5404522afbec14119be228ff01a1de617c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_3n5f9s6n",
-    "ja": "部長が確認していれば、今数字を直さずに済んだのに。",
-    "en": "If he'd checked, I wouldn't be fixing numbers now.",
-    "alternatives": [
-      "If my boss had checked, I wouldn't be fixing this.",
-      "If he'd checked, I wouldn't have to fix numbers now."
-    ],
-    "point": "過去の条件は had checked、今の結果は wouldn't be -ing",
-    "topic": "work",
-    "subtopic": "presentations",
-    "level": 8,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_3s6h3a2p",
@@ -80,7 +48,13 @@
     "level": 4,
     "grammar": ["passive-voice", "present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:aecc166fa7cf5e81a73cc4dbce35d1b845945c88a6fedb57e1feb273d0f063fa",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3v9y2f2p",
@@ -98,27 +72,11 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:2bbf6ed3e0819af0008aa7c550619b026ce55a8d50d3066a27f4e89f5f1c775e",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:e02b223d331863a5a7649ebfea74ed25b0e37f65d9031c9f3e40e561627853a3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_3w2d6e3w",
-    "ja": "もし予算が倍なら、皆さんは何を拡大しますか？",
-    "en": "If your budget doubled, what would you expand?",
-    "alternatives": [
-      "With double the budget, what would you expand?",
-      "What would you expand if your budget doubled?"
-    ],
-    "point": "事実と違う仮定は過去形、問いは would you",
-    "topic": "work",
-    "subtopic": "presentations",
-    "level": 6,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_3y6j7c9f",
@@ -133,22 +91,6 @@
     "subtopic": "presentations",
     "level": 9,
     "grammar": ["indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4r2p4s7b",
-    "ja": "外した機能を聞くとは、提案書の読み違いだろう。",
-    "en": "They must have misread the proposal; that feature's gone.",
-    "alternatives": [
-      "They must have misunderstood the proposal; we dropped that feature.",
-      "The client must have misread it; we'd already dropped that."
-    ],
-    "point": "過去への強い推量は must have + 過去分詞",
-    "topic": "work",
-    "subtopic": "presentations",
-    "level": 8,
-    "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -168,9 +110,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:3dc7d9f9c0d81651f1e6c0e249cd363db064d3865c3ffd56de012443f9229764",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:8ec7fbd1a959bf814156563b44c17c303f6144001209603f2e7560201c19437f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -222,9 +164,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:a81ad0d7563e01b98515c5bec3b2fedae58526e512f2ecf38452b213f01f8bb7",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:058ed4bc4d5528c08a0cbf198b5337363fa03ca7e8e480b73776b290393e780b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -242,23 +184,35 @@
     "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9c62d373473280603979856b3d6402508de1c1225206c0f27d92e2c3b1115e8e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_6p9h8t8n",
-    "ja": "試験でうまくいっても、まだ全社展開すべきではない。",
-    "en": "Even if it works, we shouldn't scale up yet.",
+    "id": "c_6y7x9j7n",
+    "ja": "私たち、デモをもう一度練習しておくべきでした。",
+    "en": "We should have rehearsed the demo once more.",
     "alternatives": [
-      "Even if the pilot succeeds, we shouldn't go company-wide yet.",
-      "Even if it succeeds, we shouldn't roll this out yet."
+      "We should've run through the demo one more time.",
+      "We ought to have practiced the demo again."
     ],
-    "point": "「〜しても」は even if、後ろは現在形",
+    "point": "「〜しておくべきだった」は should have + 過去分詞",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 8,
-    "grammar": ["concession-contrast"],
+    "level": 6,
+    "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4dc21094de2e32cab9b4056b457b8cda72e4b4cec3e5be7c09274dbf46204100",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7a7k4r4p",
@@ -273,22 +227,6 @@
     "subtopic": "presentations",
     "level": 6,
     "grammar": ["relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7f5d3h8v",
-    "ja": "私の説明中に田中さんが質問した。",
-    "en": "Tanaka-san asked a question while I was explaining.",
-    "alternatives": [
-      "Tanaka-san asked a question during my explanation.",
-      "While I was explaining, Tanaka-san asked a question."
-    ],
-    "point": "途中だった動作は was＋-ing、割り込んだ動作は過去形",
-    "topic": "work",
-    "subtopic": "presentations",
-    "level": 4,
-    "grammar": ["progressive-aspect", "past-simple"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -341,18 +279,18 @@
     "stamps": {}
   },
   {
-    "id": "c_8t3m6g2t",
-    "ja": "資料は後で皆さんにメールします。",
-    "en": "I'll email everyone the materials later.",
+    "id": "c_8c7g7k8g",
+    "ja": "削った機能を聞くなんて、先方は読み違えたんだろう。",
+    "en": "The client must have misread it.",
     "alternatives": [
-      "I'll email you all the materials later.",
-      "Later, I'll email you the materials."
+      "The client must have misunderstood.",
+      "The client must have gotten it wrong."
     ],
-    "point": "email は動詞。email 人 物 の語順にできる",
+    "point": "過去への強い推量は must have + 過去分詞",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 3,
-    "grammar": ["future-forms"],
+    "level": 8,
+    "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -369,9 +307,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:25d59b90c83e01ff162d2c60228631efbc60d73e73ff9a07fdcfb147b3fc7ffd",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:3b911909577e129cb9fbaba404ecd563b92dd505db80e0037942d4e591fd198b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -421,7 +359,13 @@
     "level": 5,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:170626923ea41eb31e65c3ef91cbfd678ce233a90f1f812bbbab2a8f41442d30",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9g4a4q5a",
@@ -453,7 +397,13 @@
     "level": 4,
     "grammar": ["gerunds", "wh-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:44f43966e59a24234efe4f1b46f3f35dffeb38d855e78922a129e1fb8bdbaac4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9h3q9h8b",
@@ -469,21 +419,27 @@
     "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fb49d0a63abc26a280c8d677ff414df337ea42d409fb010f8b8a8977599ec5f0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_9s3r4a4a",
-    "ja": "承認を得るには、他に何を用意すべきですか？",
-    "en": "What else should we prepare to get approval?",
+    "id": "c_9k3d7n5p",
+    "ja": "部長が確認していれば、今ごろ直さずに済んだのに。",
+    "en": "If my boss had checked, I wouldn't be fixing this.",
     "alternatives": [
-      "To get approval, what else should we prepare?",
-      "What else do we need to prepare for approval?"
+      "Had my boss checked, I wouldn't be fixing this.",
+      "If my boss had checked, I wouldn't be fixing it."
     ],
-    "point": "「〜するには」は目的の to + 動詞で表す",
+    "point": "過去の条件は had checked、今の結果は wouldn't be -ing",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 6,
-    "grammar": ["infinitives", "modal-obligation-advice"],
+    "level": 8,
+    "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
   }

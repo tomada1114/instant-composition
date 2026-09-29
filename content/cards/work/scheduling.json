@@ -36,13 +36,13 @@
     "ja": "あと1週間あれば、もっとテストできるのに。",
     "en": "If we had another week, we could test more.",
     "alternatives": [
-      "If we had one more week, we could test more.",
-      "With another week, we could test more thoroughly."
+      "With another week, we could test more.",
+      "Given one more week, we could test more."
     ],
     "point": "現実と違う仮定なので had と could の過去形を使う",
     "topic": "work",
     "subtopic": "scheduling",
-    "level": 8,
+    "level": 6,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -65,17 +65,16 @@
   },
   {
     "id": "c_3j6t3s8y",
-    "ja": "月曜から取引先と日程を決めようとしてるんです。",
-    "en": "I've been trying to fix a date since Monday.",
+    "ja": "月曜から、ずっと日程を決めようとしてるんです。",
+    "en": "I've been trying to set a date since Monday.",
     "alternatives": [
-      "I've been trying to set a date since Monday.",
-      "I've been trying to schedule something since Monday.",
-      "I've been trying to lock in a date since Monday."
+      "I've been trying to pick a date since Monday.",
+      "I've been trying to find a date since Monday."
     ],
     "point": "「ずっと〜しようとしている」は I've been trying to で表す",
     "topic": "work",
     "subtopic": "scheduling",
-    "level": 7,
+    "level": 6,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -91,7 +90,7 @@
     "point": "時制の一致で can は could にする",
     "topic": "work",
     "subtopic": "scheduling",
-    "level": 6,
+    "level": 5,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -210,10 +209,10 @@
   {
     "id": "c_5p2u6k8c",
     "ja": "彼女は延長を頼んだだけでなく、会議もずらした。",
-    "en": "Not only did she seek an extension, she moved meetings.",
+    "en": "Not only did she request an extension, she moved the meeting.",
     "alternatives": [
-      "She not only sought an extension but also moved meetings.",
-      "Not only did she request more time, she moved meetings."
+      "She not only requested an extension but moved the meeting.",
+      "Not only did she ask for time, she moved the meeting."
     ],
     "point": "Not only の後は did she seek と疑問文の語順",
     "topic": "work",
@@ -301,7 +300,7 @@
     "point": "変更済みの結果は has been moved の受け身で言う",
     "topic": "work",
     "subtopic": "scheduling",
-    "level": 5,
+    "level": 3,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -309,9 +308,9 @@
   {
     "id": "c_6y2q3g3t",
     "ja": "会議は、先方が空いている水曜にずらそう。",
-    "en": "Let's move it to Wednesday, when they're free.",
+    "en": "Let's move the meeting to Wednesday, when they're free.",
     "alternatives": [
-      "Let's shift it to Wednesday, when they're available.",
+      "Let's shift the meeting to Wednesday, when they're available.",
       "Let's reschedule for Wednesday, when they're free."
     ],
     "point": "曜日の補足は , when ～ で後ろから足す",
@@ -328,7 +327,7 @@
     "en": "We have to set a date today.",
     "alternatives": [
       "We need to pick a date today.",
-      "We must decide on a date today."
+      "We've got to pick a date today."
     ],
     "point": "「〜しなければならない」は have to で表す",
     "topic": "work",
@@ -356,16 +355,16 @@
   },
   {
     "id": "c_7j8k2a6n",
-    "ja": "部長は週末の出勤を避けたがっています。",
-    "en": "Our manager wants to avoid working weekends.",
+    "ja": "部長は週末の出勤を避けたがってる。",
+    "en": "The manager wants to avoid working weekends.",
     "alternatives": [
-      "Our boss wants to avoid working on weekends.",
-      "Our manager doesn't want to work weekends."
+      "The manager doesn't want to work weekends.",
+      "The manager wants to avoid weekend work."
     ],
     "point": "avoid の後は to 不定詞ではなく -ing",
     "topic": "work",
     "subtopic": "scheduling",
-    "level": 5,
+    "level": 3,
     "grammar": ["gerunds", "infinitives"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -427,26 +426,26 @@
   {
     "id": "c_8q3x7a6n",
     "ja": "頼まれても、リリースはこれ以上前倒しできません。",
-    "en": "Even if asked, we can't bring the release forward.",
+    "en": "Even if asked, we can't move the release up further.",
     "alternatives": [
       "Even if they ask, we can't move the release up.",
-      "We can't move the release up, even if asked."
+      "We can't move the release up further, even if asked."
     ],
-    "point": "「前倒し」は bring forward / move up、even if 節は現在形",
+    "point": "「前倒し」は move up、Even if asked のように if 節は主語と be を省ける",
     "topic": "work",
     "subtopic": "scheduling",
-    "level": 8,
+    "level": 7,
     "grammar": ["concession-contrast", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_9b4r6b9d",
-    "ja": "会議をずらそうかと考え中です。",
-    "en": "We're thinking of moving the meeting.",
+    "ja": "私、会議をずらそうかと考え中です。",
+    "en": "I'm thinking of moving the meeting.",
     "alternatives": [
-      "We're considering moving the meeting.",
-      "We're thinking about moving the meeting."
+      "I'm considering moving the meeting.",
+      "I'm thinking about moving the meeting."
     ],
     "point": "of や about の後ろは moving と ing 形にする",
     "topic": "work",
