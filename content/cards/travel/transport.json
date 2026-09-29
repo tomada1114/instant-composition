@@ -60,9 +60,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:9a65a6f306bd7dba465f07b1bfe5aba371e77a4a9d5eef63556a747f7e29c9d5",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:c9c3d89191e6208063795b24385b57be44088f41e401614e4034cebf99e3b713",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -80,23 +80,13 @@
     "level": 2,
     "grammar": ["imperatives", "progressive-aspect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3n5q7e2x",
-    "ja": "次のバスがいつ来るか駅員さんに聞いて。",
-    "en": "Ask the staff when the next bus comes.",
-    "alternatives": [
-      "Ask the staff when the next bus arrives.",
-      "Ask an employee when the next bus comes."
-    ],
-    "point": "「いつ来るか」は when the next bus comes。語順は平叙文",
-    "topic": "travel",
-    "subtopic": "transport",
-    "level": 4,
-    "grammar": ["indirect-questions", "imperatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b0ce1e7a6d510d3d99ee280686e169428b7e9767b0e84efeb720998f650ccf54",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4c3f3h6z",
@@ -111,22 +101,6 @@
     "subtopic": "transport",
     "level": 7,
     "grammar": ["comparatives-superlatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4d8t4r4j",
-    "ja": "空港バスがどこから出るか知ってますか？",
-    "en": "Do you know where airport buses leave from?",
-    "alternatives": [
-      "Do you know where airport buses depart from?",
-      "Do you know where airport buses start from?"
-    ],
-    "point": "疑問文を埋め込むと語順は where the bus leaves",
-    "topic": "travel",
-    "subtopic": "transport",
-    "level": 4,
-    "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -160,7 +134,13 @@
     "level": 3,
     "grammar": ["infinitives", "past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:73a93c7c8197eb758a3f116166972461ddf97e8848fe6eb00fbd6001d7931bf4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6u2h8a5h",
@@ -208,7 +188,13 @@
     "level": 2,
     "grammar": ["past-simple", "articles-and-countability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1023575fd987377bfdb3c7bad84827cbf08f9f624e8eeaf9cac5dfc12a32c7b3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7f5m6j6z",
@@ -224,7 +210,13 @@
     "level": 3,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:751d49fcbab2c080e308520be9a8779c92ab587b46bd4dce9583ba05ecf59841",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7f5x5g4z",
@@ -237,7 +229,13 @@
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c6ad8c424ea72f17db2ad792a31e8d1653216a877377494f02222511b384e5cc",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7h6a9u8u",
@@ -253,23 +251,13 @@
     "level": 3,
     "grammar": ["verb-object-to-do", "imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7v2w3k9b",
-    "ja": "駅員さんに行き方を書いてもらった。",
-    "en": "I got the staff to write down directions.",
-    "alternatives": [
-      "The staff wrote down directions for me.",
-      "I got the station staff to write directions."
-    ],
-    "point": "get＋人＋to do で「人に〜してもらう」。have なら to は不要",
-    "topic": "travel",
-    "subtopic": "transport",
-    "level": 5,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7494b4a14654b52cf197e6416d814849ef22f0f7bb37678c0eaf4925c25a519b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8s6t5y6r",
@@ -301,7 +289,13 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:af145cb399b471522b2e4d4043ddc279e513e38064e9097d5379a6c4dc0eac8b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9f5w2q2k",
@@ -332,22 +326,6 @@
     "subtopic": "transport",
     "level": 7,
     "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9j5k7a6k",
-    "ja": "切符をなくしました。再発行できますか？",
-    "en": "I lost my ticket. Can you reissue it?",
-    "alternatives": [
-      "I lost my ticket. Could I get another?",
-      "My ticket's gone. Can you replace it?"
-    ],
-    "point": "「なくした」は lost、「再発行する」は reissue",
-    "topic": "travel",
-    "subtopic": "transport",
-    "level": 5,
-    "grammar": ["past-simple", "requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -397,7 +375,13 @@
     "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e38247874acb80c4648c47743a1266689947de0e24118bfa95c8b107427ab592",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9z2t5a5t",

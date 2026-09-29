@@ -1,69 +1,5 @@
 [
   {
-    "id": "c_2c3n2h8j",
-    "ja": "閉館日だったのに、ガイドさんが中に入れてくれた。",
-    "en": "The guide let us in although it was closed.",
-    "alternatives": [
-      "Our guide let us in even though it was closed.",
-      "The guide let us go inside despite it being closed."
-    ],
-    "point": "「〜させてくれた」は let + 人 + 動詞の原形",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 7,
-    "grammar": ["causatives", "concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2u4g9v3p",
-    "ja": "英語ツアーが何時に始まるか教えていただけますか？",
-    "en": "Could you tell me when the English tour starts?",
-    "alternatives": [
-      "Can you tell me what time the English tour starts?",
-      "Would you mind telling me when the English tour begins?"
-    ],
-    "point": "間接疑問は when the tour starts と平叙文の語順",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 7,
-    "grammar": ["indirect-questions", "requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2w8b3w8n",
-    "ja": "何分前に着けばいいか、ガイドさんに聞いてもらえますか？",
-    "en": "Could you ask the guide how early we should arrive?",
-    "alternatives": [
-      "Would you ask the guide how early we ought to arrive?",
-      "Could you check with the guide how early we should arrive?"
-    ],
-    "point": "聞く内容は how early we should と平叙文の語順にする",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 9,
-    "grammar": ["indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3j9t8h2e",
-    "ja": "私たち、チケット売り場をずっと探してるんですよ。",
-    "en": "We've been hunting for the ticket office for ages.",
-    "alternatives": [
-      "We've been looking for the ticket office for ages.",
-      "We've been trying to find the ticket office forever."
-    ],
-    "point": "今も探し続けているので have been -ing を使う",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 9,
-    "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3k3m4y2n",
     "ja": "雨なら、ツアーは中止になりますか？",
     "en": "Is the tour canceled if it rains?",
@@ -84,6 +20,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3t6p8t4u",
+    "ja": "私たち、この列にもう1時間も並んでるんですよ。",
+    "en": "We've been stuck in this line for an hour now.",
+    "alternatives": [
+      "We've been waiting in this line for a whole hour.",
+      "We've been standing in line for an hour already."
+    ],
+    "point": "今も続く動作は have been -ing と for + 期間",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_3u6x7z9k",
@@ -108,18 +60,18 @@
     }
   },
   {
-    "id": "c_4d6w8w2b",
-    "ja": "川沿いを歩きながら、弟が写真を撮るのに立ち止まったよ。",
-    "en": "We strolled along the river, stopping for my brother's photos.",
+    "id": "c_4u7e2u2t",
+    "ja": "私たちが入った途端に、ツアーが始まったんだ。",
+    "en": "No sooner had we entered than the tour began.",
     "alternatives": [
-      "We walked by the river, pausing for my brother to take pictures.",
-      "We walked along the river, stopping for my brother's pictures."
+      "As soon as we entered, the tour began.",
+      "Hardly had we entered when the tour began."
     ],
-    "point": "文の後ろに , stopping と付け足して同時の動作を表す",
+    "point": "No sooner を文頭に置くと had we と倒置、後ろは than",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 10,
-    "grammar": ["participle-clauses"],
+    "level": 9,
+    "grammar": ["inversion"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -136,6 +88,22 @@
     "subtopic": "sightseeing",
     "level": 9,
     "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5a7q5d8b",
+    "ja": "お土産店はどこにあるか、教えていただけますか？",
+    "en": "Could you tell me where the gift shop is?",
+    "alternatives": [
+      "Would you mind telling me where the gift shop is?",
+      "Can you tell me where the gift shop is?"
+    ],
+    "point": "間接疑問は where the gift shop is と平叙文の語順",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 7,
+    "grammar": ["indirect-questions", "requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -200,6 +168,22 @@
     }
   },
   {
+    "id": "c_5y8c6s3h",
+    "ja": "雨だったのに、ツアーは思ったより楽しかったよ。",
+    "en": "Despite the rain, the tour was better than expected.",
+    "alternatives": [
+      "Even though it rained, the tour was better than expected.",
+      "It rained, but the tour was more fun than expected."
+    ],
+    "point": "「〜なのに」は Despite + 名詞、Even though + 文",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 7,
+    "grammar": ["concession-contrast", "comparatives-superlatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5z5u4a7e",
     "ja": "展望台の景色、撮っておけばよかったなあ。",
     "en": "I wish I'd taken pictures from the lookout.",
@@ -220,22 +204,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_6d6g4d8p",
-    "ja": "私が三脚を持ってきてたら、夜景はもっときれいに撮れたかな？",
-    "en": "If I'd brought a tripod, would it have come out better?",
-    "alternatives": [
-      "Would it have looked better if I'd brought a tripod?",
-      "If I'd had a tripod, would the photo have turned out better?"
-    ],
-    "point": "過去の仮定は had brought、結果は would have come out",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 10,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_6j8s2y6e",
@@ -326,6 +294,22 @@
     "subtopic": "sightseeing",
     "level": 9,
     "grammar": ["indirect-questions", "relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6w9d4g7z",
+    "ja": "三脚があったら、夜景の写真はもっとくっきり撮れたのに。",
+    "en": "If I'd had a tripod, my night shots would've been sharper.",
+    "alternatives": [
+      "If I'd brought a tripod, my night shots would've been sharper.",
+      "My night shots would've been sharper if I'd had a tripod."
+    ],
+    "point": "過去の仮定は If + had + 過去分詞、結果は would have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },

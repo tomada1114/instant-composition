@@ -1,16 +1,16 @@
 [
   {
     "id": "c_2e7x8v7w",
-    "ja": "昨日からずっと、先方の返信を待っています。",
+    "ja": "昨日からずっと先方の返信を待っています。",
     "en": "I've been waiting for their reply since yesterday.",
     "alternatives": [
       "I've been waiting to hear back since yesterday.",
-      "I haven't heard from them since yesterday."
+      "I've been waiting on their reply since yesterday."
     ],
     "point": "ずっと待っている は have been waiting、since で起点",
     "topic": "work",
     "subtopic": "email-chat",
-    "level": 6,
+    "level": 4,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -67,7 +67,11 @@
     "id": "c_2p9p6k5w",
     "ja": "部長は、何て返信しましたか？",
     "en": "How did the manager reply?",
-    "alternatives": ["What was the manager's reply?", "How did the manager respond?"],
+    "alternatives": [
+      "What did the manager reply?",
+      "What was the manager's reply?",
+      "How did the manager respond?"
+    ],
     "point": "過去の疑問文は did を使い、動詞は原形の reply",
     "topic": "work",
     "subtopic": "email-chat",
@@ -206,12 +210,9 @@
   },
   {
     "id": "c_5y8y6s3r",
-    "ja": "来週の金曜にうかがいます。",
-    "en": "We're visiting you next Friday.",
-    "alternatives": [
-      "We'll visit you next Friday.",
-      "We're coming to see you next Friday."
-    ],
+    "ja": "来週の金曜に、私たちがうかがいます。",
+    "en": "We're coming to see you next Friday.",
+    "alternatives": ["We'll visit you next Friday.", "We're visiting you next Friday."],
     "point": "決まった予定は be + ing で表せる",
     "topic": "work",
     "subtopic": "email-chat",
@@ -268,12 +269,12 @@
   {
     "id": "c_7k6b4e6u",
     "ja": "チャットが来たとき、私は忙しかった。",
-    "en": "I was busy when you messaged.",
+    "en": "I was busy when the message came.",
     "alternatives": [
-      "I was busy when you messaged me.",
-      "You messaged me when I was busy."
+      "I was busy when the chat came.",
+      "I was busy when the message arrived."
     ],
-    "point": "message は動詞でも使える。「〜したとき」は when",
+    "point": "「〜したとき」は when。どちらも過去形でそろえる",
     "topic": "work",
     "subtopic": "email-chat",
     "level": 2,
@@ -297,10 +298,10 @@
   {
     "id": "c_8j8r4p8f",
     "ja": "チャットより、電話で話すのはどう？",
-    "en": "How about talking by phone instead?",
+    "en": "How about talking on the phone instead?",
     "alternatives": [
-      "Why don't we talk by phone instead?",
-      "Should we just call each other instead?"
+      "Why don't we talk on the phone instead?",
+      "Why not talk on the phone instead?"
     ],
     "point": "How about の後は動詞の ing 形",
     "topic": "work",
@@ -385,8 +386,8 @@
     "ja": "先方の返信が遅くても、作業は進めて。",
     "en": "Even if they reply late, keep going.",
     "alternatives": [
-      "Keep going even if they reply late.",
-      "Even if they're slow to reply, carry on."
+      "Keep working even if they're slow to reply.",
+      "Keep going even if they reply late."
     ],
     "point": "even if 節は未来のことでも現在形",
     "topic": "work",

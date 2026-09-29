@@ -64,6 +64,22 @@
     "stamps": {}
   },
   {
+    "id": "c_3q2u5m7c",
+    "ja": "電車に乗り遅れたら、駅員に聞いてね。",
+    "en": "If you miss it, ask staff.",
+    "alternatives": [
+      "Ask staff if you miss the train.",
+      "If you miss it, talk to staff."
+    ],
+    "point": "未来のことでも if 節は現在形で言う",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 3,
+    "grammar": ["time-and-if-clauses", "imperatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3s5w6e8h",
     "ja": "向かいの男性が、私のバッグを持って行ったかも。",
     "en": "The man across from me may have taken my bag.",
@@ -160,22 +176,6 @@
     "stamps": {}
   },
   {
-    "id": "c_6v6s9d2e",
-    "ja": "知りたいのは、ツアーが中止になったかどうかです。",
-    "en": "What I want to know is whether it was canceled.",
-    "alternatives": [
-      "What I'm asking is whether the tour was canceled.",
-      "What I want to know is if it got canceled."
-    ],
-    "point": "「〜かどうか」は whether 節で、主語は What 節",
-    "topic": "travel",
-    "subtopic": "troubles",
-    "level": 8,
-    "grammar": ["cleft-emphasis", "noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6v7v8f9z",
     "ja": "財布をなくしました。助けてください。",
     "en": "I lost my wallet. Please help.",
@@ -260,19 +260,6 @@
         "at": "2026-09-23"
       }
     }
-  },
-  {
-    "id": "c_7w8h6s2x",
-    "ja": "乗り遅れたら駅員に聞くといいよ。",
-    "en": "If you miss it, ask the staff.",
-    "alternatives": ["Ask the staff if you miss it.", "If you miss it, talk to staff."],
-    "point": "if 節は未来のことでも現在形で言う",
-    "topic": "travel",
-    "subtopic": "troubles",
-    "level": 3,
-    "grammar": ["time-and-if-clauses", "imperatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_8c7f2k4r",
