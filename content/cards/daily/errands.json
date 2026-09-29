@@ -1,535 +1,121 @@
 [
   {
-    "id": "c_2f8g9j9z",
-    "ja": "窓口が閉まる前に来るべきだったなあ。",
-    "en": "I should have come before the counter closed.",
-    "alternatives": [
-      "I should've gotten here before the counter closed.",
-      "I should have gotten here before the window closed."
-    ],
-    "point": "後悔は should have + 過去分詞。「来るべきだった」",
+    "id": "c_2x3w9b6r",
+    "ja": "これに記入してください。",
+    "en": "Please fill this out.",
+    "alternatives": ["Please fill this in.", "Fill this out, please."],
+    "point": "「記入する」は fill out / fill in",
     "topic": "daily",
     "subtopic": "errands",
-    "level": 6,
-    "grammar": ["modal-perfect"],
-    "createdAt": "2026-09-28",
+    "level": 5,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:56e287b46c7c9c8cd12ae6c6bfa30fdf4662ef0db56d1459a4cd43d815cc35c8",
-        "perspectivesVersion": 2,
-        "at": "2026-09-28"
+        "hash": "sha256:f848e7273b89ab7778ea4b0ab860739a3c2cfa38147606e548afd16d5d9d11a1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
       }
     }
   },
   {
-    "id": "c_2x7r2e6y",
-    "ja": "銀行ではこれは有料ですが、郵便局では無料です。",
-    "en": "The bank charges for this, whereas the post office doesn't.",
-    "alternatives": [
-      "The bank charges for this, but the post office doesn't.",
-      "It's free at the post office but not the bank."
-    ],
-    "point": "対比は whereas。後半は doesn't で charge を省略",
+    "id": "c_3d3q6g9e",
+    "ja": "土曜に受け取れますか？",
+    "en": "Can I pick it up Saturday?",
+    "alternatives": ["Could I pick it up Saturday?", "Can I get it on Saturday?"],
+    "point": "「受け取る」は pick up",
     "topic": "daily",
     "subtopic": "errands",
-    "level": 7,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
+    "level": 5,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:e1dd31e727760adcc38fcb98a57567efe20361ee84e354c55e43040cfeac04b1",
-        "perspectivesVersion": 2,
-        "at": "2026-09-28"
+        "hash": "sha256:55d8d0dc37e40efec0c1e5f2375c8b20f742508ed92a368eca93d95d0261df13",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
       }
     }
   },
   {
-    "id": "c_3a4t4p8h",
-    "ja": "この手続き、どのくらいかかるか教えていただけますか？",
-    "en": "Would you mind telling me how long this will take?",
-    "alternatives": [
-      "Could you tell me how long this will take?",
-      "Do you happen to know how long this will take?"
-    ],
-    "point": "how long の後ろは疑問文の語順にせず this will take",
+    "id": "c_4e5y6r2k",
+    "ja": "これ、送ってもらえます？",
+    "en": "Could you send this?",
+    "alternatives": ["Can you send this?", "Would you send this for me?"],
+    "point": "丁寧な依頼は Could you 〜?",
     "topic": "daily",
     "subtopic": "errands",
-    "level": 9,
-    "grammar": ["indirect-questions", "hedging-softening"],
-    "createdAt": "2026-09-28",
+    "level": 4,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:444ea3325c5beb9cf26118d7615d0e78843beb63b5c41050c611a12ece7babb9",
-        "perspectivesVersion": 2,
-        "at": "2026-09-28"
+        "hash": "sha256:5b3d17de8e1e80ed722aaa7d9e1a3ca38a1594875f25ac0d7c664b8a6069b952",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
       }
     }
   },
   {
-    "id": "c_3f2p3w8y",
-    "ja": "私の書類を確認し終えると、窓口の人は申込書に判を押した。",
-    "en": "Having checked my documents, the clerk stamped the form.",
-    "alternatives": [
-      "After checking my documents, the clerk stamped the form.",
-      "The clerk checked my documents, then stamped the form."
-    ],
-    "point": "分詞の主語は主節の主語（the clerk）と一致させる",
+    "id": "c_4r2a9z2s",
+    "ja": "今、列に並んでるよ。",
+    "en": "I'm standing in line now.",
+    "alternatives": ["I'm waiting in line right now.", "I'm in line right now."],
+    "point": "「並ぶ」は stand in line",
     "topic": "daily",
     "subtopic": "errands",
-    "level": 9,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-28",
+    "level": 4,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:9688b94008b2c5bc239441089bfb0686b5fdad168e7f27dcf2d4f7f8780b6c0e",
-        "perspectivesVersion": 2,
-        "at": "2026-09-28"
+        "hash": "sha256:872a1ddd376443247d427b14909fae914710c4b19abd45f0678c83408d5d201d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
       }
     }
   },
   {
-    "id": "c_3k2p7u7d",
-    "ja": "修理を始める前に、見積もりをもらえますか？",
-    "en": "Could I get a quote before you start?",
+    "id": "c_8e3a2h6z",
+    "ja": "パスポートは更新済みだよ。",
+    "en": "I've already renewed my passport.",
     "alternatives": [
-      "Can you give me an estimate before starting?",
-      "Could you give me an estimate before starting repairs?"
+      "I already renewed my passport.",
+      "I've renewed my passport already."
     ],
-    "point": "before の後は未来のことでも現在形（you start）",
+    "point": "「もう」は already ＋ 現在完了",
     "topic": "daily",
     "subtopic": "errands",
-    "level": 6,
-    "grammar": ["requests-permission", "time-and-if-clauses"],
-    "createdAt": "2026-09-28",
+    "level": 4,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:6b300d8152175cac3af9af129be6e6eeb088e8f667bcc957e0d4938a41936001",
-        "perspectivesVersion": 2,
-        "at": "2026-09-28"
+        "hash": "sha256:22f8435d7d6ffb61e8f2dfa51336784e02ae9c6415382ce95d92a1c686421ec1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
       }
     }
   },
   {
-    "id": "c_3p4p5c2v",
-    "ja": "郵便局の人が小包は明日届くと言ってた。",
-    "en": "The clerk said the package would arrive tomorrow.",
+    "id": "c_8s9y7e9s",
+    "ja": "修理は金曜だと言われた。",
+    "en": "They said it'd be ready Friday.",
     "alternatives": [
-      "The clerk said the parcel would come tomorrow.",
-      "The clerk said the package will arrive tomorrow."
+      "They told me it'd be ready Friday.",
+      "I was told it'd be done Friday."
     ],
-    "point": "said の後の that 節は will を would に揃えることが多い",
+    "point": "言われた内容は時制を一つ過去にずらす",
     "topic": "daily",
     "subtopic": "errands",
     "level": 5,
     "grammar": ["reported-speech"],
-    "createdAt": "2026-09-22",
+    "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:ffbd23af794df542648525f275c3df11cce0a47258ce3dba5c7cfc5414289d95",
-        "perspectivesVersion": 2,
-        "at": "2026-09-28"
-      }
-    }
-  },
-  {
-    "id": "c_3u2r7f3u",
-    "ja": "私に必要なのは、認証済みの写しです。",
-    "en": "What I need is a certified copy.",
-    "alternatives": [
-      "A certified copy is what I need.",
-      "It's a certified copy that I need."
-    ],
-    "point": "What I need is ～ で「必要なのは～」と強調する",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 8,
-    "grammar": ["cleft-emphasis", "noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {
-      "core": {
-        "hash": "sha256:a3a312e64d0b3cd871250938c89afda37cc5554eb60d473c177228142bc4dc45",
-        "perspectivesVersion": 2,
-        "at": "2026-09-28"
-      }
-    }
-  },
-  {
-    "id": "c_4n8e5d7h",
-    "ja": "小包を送るのは、どの窓口ですか？",
-    "en": "Which counter is for mailing packages?",
-    "alternatives": [
-      "Which window is for mailing packages?",
-      "Which counter handles sending packages?"
-    ],
-    "point": "「〜するための窓口」は for のあとを動名詞にする",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 3,
-    "grammar": ["gerunds", "wh-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {
-      "core": {
-        "hash": "sha256:8119b913d28d17da4e00ee721866c5ed9491af5f74794a49c3bb2627a5d8fff1",
-        "perspectivesVersion": 2,
-        "at": "2026-09-28"
-      }
-    }
-  },
-  {
-    "id": "c_5f5p5v4b",
-    "ja": "ここに名前を書いてください。",
-    "en": "Please write your name here.",
-    "alternatives": ["Write your name here, please.", "Please put your name here."],
-    "point": "「書いてください」は Please + 動詞の原形",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 1,
-    "grammar": ["imperatives"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:95c35968432a7c03f7d43cbe526e409925c95503ceed24f734fec74435db11af",
-        "perspectivesVersion": 2,
-        "at": "2026-09-28"
-      }
-    }
-  },
-  {
-    "id": "c_5h8m8m4k",
-    "ja": "市役所は土曜日は休みです。",
-    "en": "City hall is closed Saturdays.",
-    "alternatives": [
-      "City hall is closed on Saturdays.",
-      "City hall isn't open on Saturdays."
-    ],
-    "point": "毎週のことなので Saturdays と複数形",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 1,
-    "grammar": ["be-and-present-simple"],
-    "createdAt": "2026-09-28",
-    "stamps": {
-      "core": {
-        "hash": "sha256:48c6418c71988e2f8478f25e8923a222e496589402715b1e01ed905198f24969",
-        "perspectivesVersion": 2,
-        "at": "2026-09-28"
-      }
-    }
-  },
-  {
-    "id": "c_5k7h5c8z",
-    "ja": "この申込書、手伝っていただけないかと思いまして。",
-    "en": "I was wondering if you'd help with this form.",
-    "alternatives": [
-      "Would you mind helping me with this form?",
-      "I was hoping you could help me with this form.",
-      "Could you possibly help me with this form?"
-    ],
-    "point": "丁寧な依頼は I was wondering if で過去形にして和らげる",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 7,
-    "grammar": ["hedging-softening"],
-    "createdAt": "2026-09-28",
-    "stamps": {
-      "core": {
-        "hash": "sha256:8e7dbcb8f1065f89d2c24d40c820e396404695adb695c6f9200a05436553a83f",
-        "perspectivesVersion": 2,
-        "at": "2026-09-28"
-      }
-    }
-  },
-  {
-    "id": "c_5v7n7x3d",
-    "ja": "私のカード、もう送りましたか？",
-    "en": "Have you sent my card yet?",
-    "alternatives": ["Have you mailed my card yet?", "Did you already send my card?"],
-    "point": "疑問文の「もう」は文末の yet で表す",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 3,
-    "grammar": ["present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {
-      "core": {
-        "hash": "sha256:abe20f3e3aa2b078022ef6bc71e853ae09c97a5ddc2cd50570e484304041a887",
-        "perspectivesVersion": 2,
-        "at": "2026-09-28"
-      }
-    }
-  },
-  {
-    "id": "c_5x8c9b4z",
-    "ja": "もっと速く届く方法はありますか？",
-    "en": "Is there a faster way?",
-    "alternatives": ["Is there a quicker way?", "Is there a faster shipping option?"],
-    "point": "fast の比較級は faster。more fast とは言わない",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 3,
-    "grammar": ["comparatives-superlatives", "there-is-are"],
-    "createdAt": "2026-09-28",
-    "stamps": {
-      "core": {
-        "hash": "sha256:bb35e3df127f6bcbaa2fe8884b217e2a51e1b470425e4720293af0dd9dda1c43",
-        "perspectivesVersion": 2,
-        "at": "2026-09-28"
-      }
-    }
-  },
-  {
-    "id": "c_6m9d6v8c",
-    "ja": "ATMに長い列ができています。",
-    "en": "There's a long ATM line.",
-    "alternatives": ["There's a long line at the ATM.", "The ATM has a long line."],
-    "point": "「列ができている」は There's a long line",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 2,
-    "grammar": ["there-is-are"],
-    "createdAt": "2026-09-28",
-    "stamps": {
-      "core": {
-        "hash": "sha256:48aa5e932dad6c86637f45fb2b9398a9f3b15e940d570ea6ec7d27aa2ea9065b",
-        "perspectivesVersion": 2,
-        "at": "2026-09-28"
-      }
-    }
-  },
-  {
-    "id": "c_6r7z7s2t",
-    "ja": "先週申し込んでいれば、今ごろ手元にあるのに。",
-    "en": "If I'd applied last week, I'd have it by now.",
-    "alternatives": [
-      "I'd have it by now if I'd applied last week.",
-      "If I had applied last week, I'd have it now."
-    ],
-    "point": "過去の原因と今の結果：If had+過去分詞、would+原形",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 8,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {
-      "core": {
-        "hash": "sha256:974b795ae986b8ea3ed2f800e2d62792fe57d4b6d58ced1104449d181bd19d5b",
-        "perspectivesVersion": 2,
-        "at": "2026-09-28"
-      }
-    }
-  },
-  {
-    "id": "c_6t2c6c8x",
-    "ja": "私たちは今、順番を待っています。",
-    "en": "We're waiting for our turn.",
-    "alternatives": ["We're waiting in line now.", "We're waiting in line right now."],
-    "point": "「順番を待つ」は wait for our turn",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 2,
-    "grammar": ["progressive-aspect"],
-    "createdAt": "2026-09-28",
-    "stamps": {
-      "core": {
-        "hash": "sha256:1d692bf376994dc7e65ce08efa94a153eec262de6adc249340ef3b88bbfcf881",
-        "perspectivesVersion": 2,
-        "at": "2026-09-28"
-      }
-    }
-  },
-  {
-    "id": "c_6t7n2h5q",
-    "ja": "私はもう20分、ここで待っています。",
-    "en": "I've been waiting here for twenty minutes.",
-    "alternatives": [
-      "I've already been waiting here for twenty minutes.",
-      "I've been here waiting for twenty minutes."
-    ],
-    "point": "続いている時間は現在完了進行形＋for",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 4,
-    "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {
-      "core": {
-        "hash": "sha256:b667e9c70e223965af82382749d9eeb34cd8824247b751279a149165835ddb32",
-        "perspectivesVersion": 2,
-        "at": "2026-09-28"
-      }
-    }
-  },
-  {
-    "id": "c_6v4u3p2c",
-    "ja": "明日の朝、パスポートを取りに来ます。",
-    "en": "I'll pick up my passport tomorrow morning.",
-    "alternatives": [
-      "I'll come get my passport tomorrow morning.",
-      "I'm coming back for my passport tomorrow morning.",
-      "I'll come pick up my passport tomorrow morning."
-    ],
-    "point": "取りに来る は pick up を使うと自然",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 4,
-    "grammar": ["future-forms"],
-    "createdAt": "2026-09-28",
-    "stamps": {
-      "core": {
-        "hash": "sha256:4dd5ff5e28f41c5ca2a28d1706f8e2986c1a795ad93583eb6131ea1819037866",
-        "perspectivesVersion": 2,
-        "at": "2026-09-28"
-      }
-    }
-  },
-  {
-    "id": "c_6v9y6d3s",
-    "ja": "手数料を払わずに済ませる方法はないですよね？",
-    "en": "There's no getting out of paying the fee, is there?",
-    "alternatives": [
-      "I can't get out of paying the fee, can I?",
-      "There's no way to avoid the fee, is there?"
-    ],
-    "point": "no getting out of ～ing で「～は免れない」。付加疑問は is there",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 8,
-    "grammar": ["phrasal-verbs", "gerunds"],
-    "createdAt": "2026-09-28",
-    "stamps": {
-      "core": {
-        "hash": "sha256:e29c91152562fde8166fdd26d9b9f50bd60702578f68382d9a900b2902688f7d",
-        "perspectivesVersion": 2,
-        "at": "2026-09-28"
-      }
-    }
-  },
-  {
-    "id": "c_7b7y5z4f",
-    "ja": "このペン、お借りしてもいいですか？",
-    "en": "May I borrow your pen?",
-    "alternatives": ["Could I borrow your pen?", "May I borrow this pen?"],
-    "point": "「借りる」は borrow、貸すの lend と区別",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 3,
-    "grammar": ["requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {
-      "core": {
-        "hash": "sha256:cd9a15bfdecaffb600d0b0606ae163b74c39b9b2d570d5661a7a4e77c6a40f77",
-        "perspectivesVersion": 2,
-        "at": "2026-09-28"
-      }
-    }
-  },
-  {
-    "id": "c_8g6r2n8q",
-    "ja": "なくしたカード、もう再発行してもらった。",
-    "en": "I've already had my lost card reissued.",
-    "alternatives": [
-      "I already got my lost card reissued.",
-      "I've already gotten my lost card reissued."
-    ],
-    "point": "「〜してもらう」は have + もの + 過去分詞",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 6,
-    "grammar": ["causatives", "present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {
-      "core": {
-        "hash": "sha256:1f23f39b8c191b249826672669356a125fa6606e82e4a856b824a77c3b833310",
-        "perspectivesVersion": 2,
-        "at": "2026-09-28"
-      }
-    }
-  },
-  {
-    "id": "c_8x6b9c5f",
-    "ja": "カウンターに置いてある用紙にご記入ください。",
-    "en": "Please fill out the form on the counter.",
-    "alternatives": [
-      "Please fill in the form on the counter.",
-      "Please fill out the form that's on the counter."
-    ],
-    "point": "「置いてある用紙」は the form の後ろに on the counter",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 6,
-    "grammar": ["post-modification"],
-    "createdAt": "2026-09-28",
-    "stamps": {
-      "core": {
-        "hash": "sha256:ac1a2e456747d8385eae445c9a08a0cafd83800160bf007ff9b7857f3c7cd10b",
-        "perspectivesVersion": 2,
-        "at": "2026-09-28"
-      }
-    }
-  },
-  {
-    "id": "c_9b2y4u9p",
-    "ja": "何を持ってくればいいか、教えてもらえますか？",
-    "en": "Could you tell me what I should bring?",
-    "alternatives": [
-      "Would you tell me what I should bring?",
-      "Could you tell me what to bring?"
-    ],
-    "point": "what 節は平叙文の語順：what I should bring",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 6,
-    "grammar": ["noun-clauses", "indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {
-      "core": {
-        "hash": "sha256:35e33a47732a625d700a1605c9b53c397a91fd59b9e57de146170a44a8925793",
-        "perspectivesVersion": 2,
-        "at": "2026-09-28"
-      }
-    }
-  },
-  {
-    "id": "c_9h8h3s6q",
-    "ja": "先週申請した私のパスポート、もう届いてますか？",
-    "en": "Has the passport I applied for last week arrived?",
-    "alternatives": [
-      "I applied last week. Has my passport arrived yet?",
-      "Has my passport from last week's application come in?"
-    ],
-    "point": "last week があっても、今の状況を聞くので現在完了",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 6,
-    "grammar": ["tense-contrast", "relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {
-      "core": {
-        "hash": "sha256:7f838ba1da4ee83674661f474f8db1cf333af594b971f2f2aa7f50140b9de056",
-        "perspectivesVersion": 2,
-        "at": "2026-09-28"
-      }
-    }
-  },
-  {
-    "id": "c_9x5h2b8v",
-    "ja": "妹は窓口で、もっと情報が必要だと言われました。",
-    "en": "My sister was told they needed more information.",
-    "alternatives": [
-      "The clerk told my sister they needed more information.",
-      "They told my sister they needed more information."
-    ],
-    "point": "information は数えられない名詞、informations や an は不可",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 7,
-    "grammar": ["articles-and-countability", "passive-voice"],
-    "createdAt": "2026-09-28",
-    "stamps": {
-      "core": {
-        "hash": "sha256:f9dd223ccb0b0dbf46160ca725c6b5b8aac18a6d3507b1d0508d0d6e552f0341",
-        "perspectivesVersion": 2,
-        "at": "2026-09-28"
+        "hash": "sha256:ff0a2404e637f6a01303e9e8c9a2964ae243dd7fae03df96803709b40c494029",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
       }
     }
   }
