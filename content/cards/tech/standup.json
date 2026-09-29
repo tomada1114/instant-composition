@@ -13,7 +13,13 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c7abeaa66a77516020cf743bce582378bea2821915d61cd0b893bd955c6d8c8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3x8m5x5v",
@@ -51,7 +57,13 @@
     "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1afbeea6ec523d8f512c8e7d0832e026dc0e1fb560c4e2e8fc259f65d0fd8233",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4g9x7x7f",
@@ -95,22 +107,6 @@
     }
   },
   {
-    "id": "c_4z7n2h8n",
-    "ja": "ステージング環境、午後まで使わせてもらえますか？",
-    "en": "Could you let me use staging until this afternoon?",
-    "alternatives": [
-      "Would you mind letting me use staging until this afternoon?",
-      "Could I use staging until this afternoon?"
-    ],
-    "point": "使わせて = let me use。to は付けない",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 7,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_4z9f5q4d",
     "ja": "ケンは昨日、原因を突き止めましたか？",
     "en": "Did Ken find the cause yesterday?",
@@ -131,22 +127,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_5e5e2w3k",
-    "ja": "負荷テストがどこまで必要か、教えてもらえますか？",
-    "en": "Could you tell me how much load testing we need?",
-    "alternatives": [
-      "Can you tell me how much load testing we need?",
-      "Could you tell me how much load testing is needed?"
-    ],
-    "point": "how much の後は we need の平叙文の語順にする",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 7,
-    "grammar": ["indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_5s7m8c2v",
@@ -184,23 +164,13 @@
     "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5y7f6q2m",
-    "ja": "移行で詰まってて。アドバイスをもらえますか？",
-    "en": "I'm stuck on the migration. Could I get some advice?",
-    "alternatives": [
-      "I'm stuck on the migration. Any advice?",
-      "I'm stuck on this migration. Could you help me out?"
-    ],
-    "point": "advice は数えられないので an advice ではなく some advice",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 7,
-    "grammar": ["articles-and-countability", "requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d52160a208a54eb41e44d4e32d52d19db93e8dc5b1b6ca3eeb2547d4e65d35b4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6d9g4h4c",
@@ -238,7 +208,13 @@
     "level": 10,
     "grammar": ["nested-clauses", "reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b0e80111d7e18a709c49bc4610ee66eea51b145311ebc559cc7141c4c32f5dc8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6n8g3e3p",
@@ -255,7 +231,13 @@
     "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4545204dabc757d067d3b8da524f5ed60188f92e2757e5b50529316b8e7d8305",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6v9g2x9u",
@@ -301,22 +283,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_6w9h2t9h",
-    "ja": "先週確認しておけば、今ごろ楽なのに。",
-    "en": "If I'd checked last week, things would be easier now.",
-    "alternatives": [
-      "If I'd checked last week, I'd have it easier now.",
-      "Things would be easier now if I'd checked last week."
-    ],
-    "point": "過去の仮定は had checked、今の結果は would be",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 8,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_7d4q3e7e",
@@ -376,23 +342,13 @@
     "level": 6,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7u5x9f2c",
-    "ja": "気づくと、夜間バッチがもう三回失敗していた。",
-    "en": "I noticed the nightly batch had failed three times.",
-    "alternatives": [
-      "I realized the nightly batch had failed three times.",
-      "I found the nightly batch had failed three times."
-    ],
-    "point": "気づいた時点より前の失敗なので had failed を使う",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 6,
-    "grammar": ["past-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9fe0d78b8c76b226beafee6c8304ef1f8d75892bdaf4d561eff4e9de988bb23f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8a8a9j7h",
@@ -408,7 +364,13 @@
     "level": 9,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:01ad4388244673d73568ff8cecbe4d39cba3423172dfa49c356cc723e808d67f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8c2w2r3h",
@@ -446,7 +408,13 @@
     "level": 6,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ea100eb54b582bedf359b7e9f347008e44e08d58f80254ea7f1a636fb1a7411a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8r8z5r9v",
@@ -481,7 +449,13 @@
     "level": 7,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b458621427226e58179b6e0fb22e206bd135117c7637730ab1c5cf9819d978b2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9c7m5u2j",
@@ -504,21 +478,5 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9g6k8x2u",
-    "ja": "落ちているのは、先週追加したテストだけです。",
-    "en": "Only the tests we added last week are failing.",
-    "alternatives": [
-      "The only failing tests are last week's new ones.",
-      "Only the tests added last week are failing."
-    ],
-    "point": "「先週追加した」はテストの後ろに置いて修飾する",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 6,
-    "grammar": ["post-modification", "relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   }
 ]
