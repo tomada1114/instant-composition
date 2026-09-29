@@ -19,6 +19,22 @@
     }
   },
   {
+    "id": "c_2m5a9v6e",
+    "ja": "この町は楽しい所が多い。",
+    "en": "There are many fun places here.",
+    "alternatives": [
+      "This town has lots of fun places.",
+      "This town has plenty of fun spots."
+    ],
+    "point": "「〜が多い」は There are many で言える",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 5,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4v9a4j8e",
     "ja": "無理しないほうがいいよ。",
     "en": "You shouldn't push yourself.",
@@ -38,6 +54,22 @@
     }
   },
   {
+    "id": "c_6c6d5c7h",
+    "ja": "雨でも、私は楽しかったよ。",
+    "en": "Despite the rain, I had fun.",
+    "alternatives": [
+      "Even in the rain, I had fun.",
+      "I had fun even though it rained."
+    ],
+    "point": "despite の後ろは名詞。節なら even though",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 5,
+    "grammar": ["concession-contrast", "past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7f2v2m4z",
     "ja": "もう落ち着いたよ。",
     "en": "I've calmed down now.",
@@ -55,5 +87,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7w3y4d5p",
+    "ja": "試験に受かってほっとした。",
+    "en": "I was relieved I passed.",
+    "alternatives": [
+      "I felt relieved after passing the exam.",
+      "I was relieved to pass the exam."
+    ],
+    "point": "ほっとした＝ relieved（過去の気持ち）",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 5,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2h3m7c9v",
+    "ja": "晴れたら、釣りに行くよ。",
+    "en": "If it's sunny, I'll go fishing.",
+    "alternatives": [
+      "I'll go fishing if it's sunny.",
+      "If the weather's nice, I'll go fishing."
+    ],
+    "point": "未来のことでも if 節は現在形",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 5,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3v9x4x5b",
     "ja": "私が好きなのは山登りです。",
     "en": "What I like is hiking.",
@@ -58,5 +74,37 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7v2x6k5z",
+    "ja": "週末はキャンプに行くんだ。",
+    "en": "I'm going camping this weekend.",
+    "alternatives": [
+      "I'm going to go camping this weekend.",
+      "I'm heading out camping this weekend."
+    ],
+    "point": "決まった予定は現在進行形で言える",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 5,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8r3t2s5r",
+    "ja": "祭りは毎年夏に開かれる。",
+    "en": "The festival is held every summer.",
+    "alternatives": [
+      "The festival takes place every summer.",
+      "They hold the festival every summer."
+    ],
+    "point": "「開かれる」は is held の受動態",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 5,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

@@ -41,6 +41,45 @@
     }
   },
   {
+    "id": "c_3v9m8q7k",
+    "ja": "来週のほうが都合がいいよ。",
+    "en": "Next week suits me better.",
+    "alternatives": ["Next week works better for me.", "Next week is better for me."],
+    "point": "「〜のほうが」は比較級 better",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4q6f5x4a",
+    "ja": "彼女、来られるといいな。",
+    "en": "I hope she can come.",
+    "alternatives": ["I hope she can make it.", "I hope she'll be able to come."],
+    "point": "hope の後ろの that は省ける",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 4,
+    "grammar": ["noun-clauses", "can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6g3b4s4c",
+    "ja": "土曜は行けないんだ。",
+    "en": "I can't make it Saturday.",
+    "alternatives": ["I can't come on Saturday.", "I can't go on Saturday."],
+    "point": "予定に「行ける」は can make it でも言える",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 4,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6n9p4b3x",
     "ja": "その時はもう皆帰っていた。",
     "en": "Everyone had left by then.",

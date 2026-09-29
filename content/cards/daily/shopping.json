@@ -1,0 +1,83 @@
+[
+  {
+    "id": "c_3k5h5s5f",
+    "ja": "ジャケットを返品したよ。",
+    "en": "I returned the jacket.",
+    "alternatives": ["I took the jacket back.", "I brought the jacket back."],
+    "point": "返品する＝ return / take back",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 4,
+    "grammar": ["past-simple", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3k8r7y9m",
+    "ja": "ネットで買うのが好きだ。",
+    "en": "I like buying things online.",
+    "alternatives": ["I like shopping online.", "I enjoy buying stuff online."],
+    "point": "like の後ろは -ing で「〜するのが好き」",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 4,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3w7k6w9t",
+    "ja": "もっと安いのはありますか？",
+    "en": "Do you have a cheaper one?",
+    "alternatives": ["Do you have anything cheaper?", "Is there a cheaper one?"],
+    "point": "「もっと安いの」は a cheaper one",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["comparatives-superlatives", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4p3m2x8b",
+    "ja": "紙袋はレジ袋より丈夫です。",
+    "en": "Paper bags are stronger than plastic.",
+    "alternatives": [
+      "Paper bags are sturdier than plastic.",
+      "Paper bags are tougher than plastic ones."
+    ],
+    "point": "一般論は無冠詞の複数形で言う",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["comparatives-superlatives", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7f4f4b9p",
+    "ja": "セールで靴を買ったよ。",
+    "en": "I bought shoes on sale.",
+    "alternatives": ["I got some shoes on sale.", "I picked up shoes on sale."],
+    "point": "「セールで」は on sale",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 4,
+    "grammar": ["past-simple", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9n5g7f9w",
+    "ja": "返品の期限はいつですか？",
+    "en": "When is the return deadline?",
+    "alternatives": ["What's the deadline for returns?", "Until when can I return it?"],
+    "point": "「いつ」は when、期限は deadline",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["wh-questions", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]
