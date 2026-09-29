@@ -44,6 +44,22 @@
     }
   },
   {
+    "id": "c_2f6p2r9r",
+    "ja": "返信を忘れて、ずっと気が咎めていました。",
+    "en": "I forgot to reply, and I've felt guilty since.",
+    "alternatives": [
+      "I've felt bad ever since I forgot to reply.",
+      "I never replied, and it's been weighing on me."
+    ],
+    "point": "忘れたのは過去形、今も続く気持ちは現在完了",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["tense-contrast", "present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2n7x9f3z",
     "ja": "資料をまだお返ししておらず、すみません。",
     "en": "I'm sorry I still haven't returned your documents.",
@@ -64,38 +80,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_2p7k2g9w",
-    "ja": "君に残業をお願いしてごめんね。",
-    "en": "Sorry I asked you to work late.",
-    "alternatives": [
-      "Sorry I asked you to stay late.",
-      "I'm sorry I asked you to work overtime."
-    ],
-    "point": "ask + 人 + to do の形。you の後は to work",
-    "topic": "social",
-    "subtopic": "thanks-apologies",
-    "level": 4,
-    "grammar": ["verb-object-to-do"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2q7n2a5j",
-    "ja": "君がかばってくれなかったら、僕はクビになっていたよ。",
-    "en": "If you hadn't stuck up for me, I'd have been fired.",
-    "alternatives": [
-      "If you hadn't stood up for me, I'd have lost my job.",
-      "I'd have been fired if you hadn't stuck up for me."
-    ],
-    "point": "過去の仮定は If + had 過去分詞、would have + 過去分詞",
-    "topic": "social",
-    "subtopic": "thanks-apologies",
-    "level": 10,
-    "grammar": ["third-conditional", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_2r8d3k9c",
@@ -152,6 +136,22 @@
     "stamps": {}
   },
   {
+    "id": "c_3m2m5w4y",
+    "ja": "君が味方してくれなかったら、僕はクビだったよ。",
+    "en": "If you hadn't backed me up, I'd have been fired.",
+    "alternatives": [
+      "Without you sticking up for me, I'd have been fired.",
+      "I'd have lost my job without you backing me up."
+    ],
+    "point": "過去の仮定は If + had 過去分詞、would have + 過去分詞",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 9,
+    "grammar": ["third-conditional", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4q2m5v3h",
     "ja": "もっと早く出ていれば間に合ったのに。ごめん。",
     "en": "If I'd left earlier, I'd have made it. Sorry.",
@@ -164,22 +164,6 @@
     "subtopic": "thanks-apologies",
     "level": 6,
     "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4t8h6j4r",
-    "ja": "返信を忘れてしまい、ずっと気が咎めていました。",
-    "en": "Having forgotten to reply, I've felt guilty ever since.",
-    "alternatives": [
-      "I forgot to reply, and I've felt guilty ever since.",
-      "I've felt bad about forgetting to reply all this time."
-    ],
-    "point": "先に起きたことは Having + 過去分詞で前置きする",
-    "topic": "social",
-    "subtopic": "thanks-apologies",
-    "level": 10,
-    "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -303,22 +287,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_6m3g7n5d",
-    "ja": "渋滞にはまってしまい、遅れて申し訳ありません。",
-    "en": "Having hit traffic, I apologize for being late.",
-    "alternatives": [
-      "I'm sorry I'm late. I got stuck in traffic.",
-      "I apologize for being late. Traffic was terrible."
-    ],
-    "point": "Having + 過去分詞で「〜したため」と先に起きた理由を示す",
-    "topic": "social",
-    "subtopic": "thanks-apologies",
-    "level": 7,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_6s4v5f7a",
@@ -481,6 +449,38 @@
     "subtopic": "thanks-apologies",
     "level": 6,
     "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9r2c7q9j",
+    "ja": "遅れて申し訳ありません。渋滞がひどくて。",
+    "en": "I apologize for being late. Traffic was terrible.",
+    "alternatives": [
+      "I'm sorry for being late. There was terrible traffic.",
+      "Sorry I'm late. I got stuck in heavy traffic."
+    ],
+    "point": "apologize for の後は being late のように -ing 形",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9u3g9g3u",
+    "ja": "君に残業をお願いしてごめんね。",
+    "en": "Sorry I asked you to work late.",
+    "alternatives": [
+      "Sorry I asked you to stay late.",
+      "Sorry for asking you to work overtime."
+    ],
+    "point": "ask + 人 + to do の形。you の後は to work",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },

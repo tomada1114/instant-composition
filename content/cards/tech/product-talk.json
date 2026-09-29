@@ -266,7 +266,7 @@
     "point": "「もう」の疑問は現在完了 + yet",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 7,
+    "level": 5,
     "grammar": ["present-perfect", "passive-voice"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -321,12 +321,12 @@
     "en": "We should have postponed the release.",
     "alternatives": [
       "We should have pushed the release back.",
-      "We ought to have delayed the release."
+      "We should have held off on the release."
     ],
     "point": "「〜すべきだった」は should have + 過去分詞",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 7,
+    "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -364,7 +364,7 @@
     "point": "過去の推量は might have + 過去分詞",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 7,
+    "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -375,13 +375,13 @@
     "en": "It's been in review for three weeks.",
     "alternatives": [
       "It's been under review for three weeks.",
-      "It's been stuck in review for three weeks."
+      "This has been in review for three weeks."
     ],
     "point": "継続中の状態は has been で表す（is では不可）",
     "topic": "tech",
     "subtopic": "product-talk",
     "level": 5,
-    "grammar": ["present-perfect-continuous"],
+    "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -413,7 +413,7 @@
     "en": "What I'd like to know is when it'll ship.",
     "alternatives": [
       "I'd like to know when it's going to ship.",
-      "What I'm asking is when it will be released."
+      "What I want to know is when it'll be released."
     ],
     "point": "What ～ is の強調文のあとは when it will ～ の語順",
     "topic": "tech",
@@ -431,10 +431,10 @@
       "The bug reported this morning might delay the release.",
       "The bug flagged this morning may push the release back."
     ],
-    "point": "「報告された」は reported で名詞を後ろから修飾。could で控えめに",
+    "point": "「〜された」は reported を名詞の後ろに置いて修飾する",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 9,
+    "level": 7,
     "grammar": ["post-modification", "hedging-softening"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -447,10 +447,10 @@
       "When we ship the beta, let's focus on gathering feedback.",
       "After we release the beta, let's concentrate on collecting feedback."
     ],
-    "point": "focus on の後は動名詞。once 節は未来でも現在形",
+    "point": "focus on の後は動名詞（to 不定詞ではない）",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 8,
+    "level": 7,
     "grammar": ["gerunds", "time-and-if-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -499,28 +499,12 @@
     "en": "Although the tests passed, we can't ship yet.",
     "alternatives": [
       "The tests passed, but we can't ship yet.",
-      "Even though the tests passed, we can't ship."
+      "Though the tests passed, we can't ship yet."
     ],
     "point": "Although の節のあとにカンマ、but とは併用しない",
     "topic": "tech",
     "subtopic": "product-talk",
     "level": 5,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8e2m2b5q",
-    "ja": "機能は削ったが、新UIは好評です。",
-    "en": "Although we cut features, the new UI is popular.",
-    "alternatives": [
-      "We cut features, but the new UI is popular.",
-      "Even though we cut features, the new UI is popular."
-    ],
-    "point": "Although の節には but を重ねない",
-    "topic": "tech",
-    "subtopic": "product-talk",
-    "level": 7,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -558,7 +542,7 @@
     "point": "間接疑問は when のあと平叙文の語順（can ship）",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 8,
+    "level": 7,
     "grammar": ["indirect-questions", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -584,22 +568,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9d4u3v2v",
-    "ja": "ユーザーは何年も前からその機能を切望しています。",
-    "en": "Users have been begging for that feature for years.",
-    "alternatives": [
-      "Users have been clamoring for that feature for years.",
-      "For years, users have been pleading for that feature."
-    ],
-    "point": "「ずっと〜している」は現在完了進行形。for years と相性がよい",
-    "topic": "tech",
-    "subtopic": "product-talk",
-    "level": 9,
-    "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9k4f7p9v",
@@ -645,12 +613,12 @@
     "en": "That feature has been shelved for three months.",
     "alternatives": [
       "That feature has been on hold for three months.",
-      "We've had that feature on hold for three months."
+      "That feature has been on ice for three months."
     ],
     "point": "期間を表す for と現在完了の受け身",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 7,
+    "level": 6,
     "grammar": ["present-perfect", "passive-voice"],
     "createdAt": "2026-09-28",
     "stamps": {}

@@ -22,22 +22,6 @@
     }
   },
   {
-    "id": "c_2h3c2g3d",
-    "ja": "佐藤さんに PR のレビューを頼みました。",
-    "en": "I asked Sato to review my PR.",
-    "alternatives": [
-      "I asked Sato to look at my PR.",
-      "I asked Sato to review my pull request."
-    ],
-    "point": "ask + 人 + to do。「頼む」は ask 人 to review の形",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 5,
-    "grammar": ["verb-object-to-do"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2m8v3p7m",
     "ja": "田中さんにレビューを頼みました。",
     "en": "I asked Tanaka to review it.",
@@ -75,12 +59,12 @@
     "en": "Could you check the three PRs waiting on review?",
     "alternatives": [
       "Could you look at the three PRs pending review?",
-      "Would you mind checking the three PRs awaiting review?"
+      "Could you look at three PRs waiting for review?"
     ],
     "point": "「レビュー待ちの」は PRs の後ろから waiting on で修飾",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 8,
+    "level": 6,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -90,13 +74,13 @@
     "ja": "昨日出した修正が、新しいバグを起こした。",
     "en": "The fix deployed yesterday caused a new bug.",
     "alternatives": [
-      "The fix we shipped yesterday introduced a new bug.",
-      "Yesterday's fix caused a new bug."
+      "The fix from yesterday caused a new bug.",
+      "Yesterday's fix introduced a new bug."
     ],
     "point": "名詞の後ろに過去分詞 deployed を置いて修飾する",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 6,
+    "level": 4,
     "grammar": ["post-modification", "past-simple"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -150,8 +134,8 @@
     "ja": "私は朝から、この設計で堂々巡りしています。",
     "en": "I've been going in circles on this design all morning.",
     "alternatives": [
-      "I've been spinning my wheels on this design all morning.",
-      "I've been running in circles on this design all morning."
+      "I've been going around in circles on this design.",
+      "I've been running around in circles on this all morning."
     ],
     "point": "ずっと続く動作は現在完了進行形。all morning で継続を示す",
     "topic": "tech",
@@ -302,10 +286,10 @@
       "Can anyone tell me what's causing this error?",
       "Does anyone know why this error happens?"
     ],
-    "point": "間接疑問は what's causing のように平叙文の語順",
+    "point": "疑問詞が主語のときは、Does anyone know の後ろもそのまま動詞が続く",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 5,
+    "level": 4,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -335,12 +319,12 @@
   {
     "id": "c_5w4z2k4j",
     "ja": "私が一番わかってない部分で詰まってます。",
-    "en": "I'm stuck on the part I know least.",
+    "en": "I'm stuck on the part I understand least.",
     "alternatives": [
-      "I'm stuck on the part I understand least.",
-      "I'm stuck on the least familiar part."
+      "I'm stuck on what I understand least.",
+      "I'm stuck on the bit I understand least."
     ],
-    "point": "「一番〜ない」は least。part の後ろに I know を直接置く",
+    "point": "「一番〜ない」は least。part の後ろに I understand を直接置く",
     "topic": "tech",
     "subtopic": "standup",
     "level": 4,
@@ -529,15 +513,15 @@
   {
     "id": "c_7y9c6d9m",
     "ja": "客先の電話で、朝会を先に抜けてもいいですか？",
-    "en": "Could I duck out early for a client call?",
+    "en": "Could I leave standup early for a client call?",
     "alternatives": [
-      "May I step out early for a client call?",
-      "Is it okay if I leave early? Client call."
+      "May I leave standup early for a client call?",
+      "Can I leave standup early for a client call?"
     ],
-    "point": "許可を丁寧に求める Could I。duck out は「抜ける」",
+    "point": "許可を丁寧に求める Could I。「先に抜ける」は leave early",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 7,
+    "level": 6,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -725,8 +709,8 @@
     "ja": "彼が昨日ロールバックしなかったら、今も障害中だよ。",
     "en": "If he hadn't rolled back, we'd still be down.",
     "alternatives": [
-      "If he hadn't rolled it back, we'd still be down.",
-      "Had he not rolled back, we'd still be down."
+      "If he hadn't rolled back yesterday, we'd still be down.",
+      "Without his rollback yesterday, we'd still be down."
     ],
     "point": "過去の仮定が今に影響: had + 過去分詞、would + 原形",
     "topic": "tech",

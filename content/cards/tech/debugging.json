@@ -4,13 +4,13 @@
     "ja": "あの警告が、ログにあってずっと気になっています。",
     "en": "That warning in the logs has been bothering me.",
     "alternatives": [
-      "I can't stop thinking about the warning in the logs.",
-      "That warning in the logs keeps bothering me."
+      "That warning in the logs keeps bothering me.",
+      "That warning in the logs keeps nagging at me."
     ],
     "point": "名詞の後ろに前置詞句を置いて「〜にある警告」",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 7,
     "grammar": ["post-modification", "present-perfect-continuous"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -26,7 +26,7 @@
     "point": "継続期間を聞くなら How long＋現在完了進行形",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 6,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -34,16 +34,16 @@
   {
     "id": "c_2k2x5j2r",
     "ja": "このエラーに遭遇するユーザーが、増え続けています。",
-    "en": "Users hitting this error are growing in number.",
+    "en": "The number of users hitting this error keeps growing.",
     "alternatives": [
-      "The number of users hitting this error keeps growing.",
-      "More and more users are hitting this error."
+      "More and more users are hitting this error.",
+      "The number of users hitting this error is going up."
     ],
     "point": "「〜するユーザー」は -ing で後ろから修飾",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
-    "grammar": ["post-modification", "gerunds"],
+    "level": 7,
+    "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -80,7 +80,7 @@
     "point": "spend＋時間＋ -ing、「絞り込む」は narrow down",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 6,
     "grammar": ["gerunds", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -144,33 +144,17 @@
   },
   {
     "id": "c_2y9y9j3c",
-    "ja": "彼が言うには、私たちが直したはずのバグが再発したそうです。",
+    "ja": "彼が言うには、私たちが直したはずのバグが再発した。",
     "en": "He says the bug we thought we'd fixed has resurfaced.",
     "alternatives": [
       "He says the bug we thought we'd fixed is back.",
-      "He says the bug we thought was fixed has come back."
+      "He says the bug we thought was fixed is back."
     ],
     "point": "「直したはずの」は the bug we thought we'd fixed",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 10,
+    "level": 8,
     "grammar": ["nested-clauses", "reported-speech"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3d8e9r3h",
-    "ja": "私たちが引っかかったのは、古いロックファイルでした。",
-    "en": "What tripped us up was a stale lock file.",
-    "alternatives": [
-      "We got tripped up by a stale lock file.",
-      "The thing that tripped us up was a stale lock file."
-    ],
-    "point": "What 節が主語のとき、動詞は単数の was で受ける",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 10,
-    "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -267,11 +251,11 @@
       "Memory usage has been slowly climbing since Thursday.",
       "Memory consumption has been steadily rising since Thursday."
     ],
-    "point": "変化が続いている間は has been ~ing、Memory usage は数えない名詞",
+    "point": "今も続く変化は has been ~ing で表す",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 9,
-    "grammar": ["present-perfect-continuous", "articles-and-countability"],
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -286,7 +270,7 @@
     "point": "変化が進行中なら have been getting",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 6,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -321,11 +305,11 @@
       "Can you narrow it down to one commit?",
       "Could you pin it down to a single commit?"
     ],
-    "point": "「一つ」は a single。narrow down は「絞り込む」",
+    "point": "「絞り込む」は bisect/narrow/pin it down to ~ の形",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 10,
-    "grammar": ["articles-and-countability"],
+    "level": 6,
+    "grammar": ["requests-permission", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -444,11 +428,11 @@
       "That job has been hanging on one step since morning.",
       "Since morning, that job has been stuck on one step."
     ],
-    "point": "今も続く状態は現在完了進行形＋ since",
+    "point": "今も続く状態は has been + 形容詞 + since",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
-    "grammar": ["present-perfect-continuous"],
+    "level": 7,
+    "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -473,6 +457,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5k6j8a9m",
+    "ja": "私は何時間も調べているのに、原因がまだつかめない。",
+    "en": "Hours in, I still can't pin down the cause.",
+    "alternatives": [
+      "I've spent hours and still can't pin down the cause.",
+      "Hours later, I still can't track down the cause."
+    ],
+    "point": "「突き止める」は pin down / track down を使う",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5y9r6w5n",
@@ -562,12 +562,12 @@
     "en": "Restarting it without saving the logs was a mistake.",
     "alternatives": [
       "Restarting without keeping the logs was a mistake.",
-      "I shouldn't have restarted it without saving the logs."
+      "Restarting it without keeping the logs was a mistake."
     ],
     "point": "without の後は動名詞、主語にも動名詞が使える",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 6,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -578,13 +578,45 @@
     "en": "He's having trouble tracking down the cause.",
     "alternatives": [
       "He's struggling to track down the cause.",
-      "He's having a hard time pinning down the cause."
+      "He's struggling to pin down the cause."
     ],
     "point": "have trouble の後は -ing、「突き止める」は track down",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 5,
     "grammar": ["gerunds", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6m5b6d6q",
+    "ja": "同じ手順を繰り返しても、たまにしか出ない。",
+    "en": "Even if I repeat them, it only happens sometimes.",
+    "alternatives": [
+      "Even when I repeat the steps, it only occurs occasionally.",
+      "It only happens sometimes, even if I repeat the steps."
+    ],
+    "point": "「繰り返しても」は Even if ～、で言える",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6n6t6x9w",
+    "ja": "彼が見落としたのは、たった一行の設定でした。",
+    "en": "What he overlooked was a single line of config.",
+    "alternatives": [
+      "The one thing he missed was a single config line.",
+      "He overlooked just one line of config."
+    ],
+    "point": "「見落としたのは〜」は What he missed was で強調",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -630,22 +662,6 @@
     }
   },
   {
-    "id": "c_6s6w2h6q",
-    "ja": "同じ手順を繰り返しても、たまにしか出ない。",
-    "en": "Repeating the same steps only triggers it occasionally.",
-    "alternatives": [
-      "Even repeating the steps, it only happens occasionally.",
-      "It only happens sometimes, even if I repeat the steps."
-    ],
-    "point": "「繰り返しても」は動名詞を主語にできる",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 8,
-    "grammar": ["gerunds"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6y5e8c6w",
     "ja": "誰かがインデックスを消したに違いないと思う。",
     "en": "I think someone must have deleted the index.",
@@ -678,23 +694,23 @@
     "point": "前置詞 before の後は動名詞が自然",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 4,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_7a6z4h8d",
-    "ja": "彼女は昨日から、このメモリリークを追っています。",
-    "en": "She's been chasing this memory leak since yesterday.",
+    "ja": "彼女は昨日から、メモリリークを追ってる。",
+    "en": "She's been chasing a memory leak since yesterday.",
     "alternatives": [
-      "She's been tracking down this memory leak since yesterday.",
-      "Since yesterday, she's been hunting this memory leak."
+      "She's been tracking a memory leak since yesterday.",
+      "Since yesterday, she's been chasing a memory leak."
     ],
     "point": "昨日からずっと、は since＋現在完了進行形",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 5,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -783,17 +799,17 @@
   },
   {
     "id": "c_7n3d8t5p",
-    "ja": "どの操作でデータが壊れるのか、誰か突き止めた人いる？",
+    "ja": "どの操作でデータが壊れるのか、誰か突き止めた？",
     "en": "Has anyone pinpointed which action is corrupting the data?",
     "alternatives": [
       "Has anyone figured out which action corrupts the data?",
-      "Has anyone worked out which action is corrupting the data?"
+      "Has anyone found out which action is corrupting data?"
     ],
-    "point": "which 以下は疑問文の語順にせず、主語+動詞の順にする",
+    "point": "which 以下は平叙文の語順で、do/does は使わない",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 9,
-    "grammar": ["nested-clauses", "indirect-questions"],
+    "level": 6,
+    "grammar": ["indirect-questions", "present-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -912,14 +928,30 @@
     "ja": "そのバグと、もうどれくらい格闘してるの？",
     "en": "How long have you been fighting this bug?",
     "alternatives": [
-      "How long have you been wrestling with this bug?",
+      "How long have you been wrestling with it?",
       "How long have you been battling this bug?"
     ],
     "point": "how long は現在完了進行形と相性がよい",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 5,
     "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8v3x6t2p",
+    "ja": "落ちた人が、どのプランか確認してもらえますか？",
+    "en": "Could you check which plan affected users are on?",
+    "alternatives": [
+      "Could you look up which plan those users are on?",
+      "Can you find out which plan affected users have?"
+    ],
+    "point": "which plan の後ろは平叙文の語順（are on）",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -947,16 +979,16 @@
   },
   {
     "id": "c_9a8a5r6e",
-    "ja": "昨日追加されたコードのどこかが、バグってるはず。",
+    "ja": "昨日追加されたコードのどこかがバグってるはず。",
     "en": "Something in the code added yesterday must be buggy.",
     "alternatives": [
       "The bug must be in the code added yesterday.",
-      "There must be a bug in the code added yesterday."
+      "There must be a bug in code added yesterday."
     ],
     "point": "「追加された〜」は過去分詞で名詞を後ろから修飾",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 6,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -985,49 +1017,17 @@
   },
   {
     "id": "c_9n9e6q7q",
-    "ja": "キャッシュを消しても、まったく変わらなかった。",
+    "ja": "キャッシュを消しても、変わらなかった。",
     "en": "Clearing the cache didn't make any difference.",
     "alternatives": [
       "Clearing the cache changed nothing.",
-      "Deleting the cache didn't help at all."
+      "Deleting the cache didn't change anything."
     ],
-    "point": "「〜しても」は動名詞を主語にして言える",
+    "point": "「変化なし」は didn't make any difference が定番",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 5,
     "grammar": ["gerunds"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9x2m6a4x",
-    "ja": "何時間も掘っているのに、手がかりがまだ何もない。",
-    "en": "I've been digging for hours and have no leads.",
-    "alternatives": [
-      "I've been digging for hours, but still no leads.",
-      "I've spent hours digging, with no leads."
-    ],
-    "point": "for＋期間の継続は現在完了進行形",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 8,
-    "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9z2k7g5z",
-    "ja": "ログインで固まる端末を、リストにしてもらえますか？",
-    "en": "Could you list the devices freezing at login?",
-    "alternatives": [
-      "Could you send me the devices that freeze at login?",
-      "Can you list every device that freezes on login?"
-    ],
-    "point": "「固まる端末」は devices freezing と後ろから修飾",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 8,
-    "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },

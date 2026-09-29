@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2e3c8d3e",
+    "ja": "僕が何日もつぎ込む前に、君が言ってくれてたらなあ。",
+    "en": "I wish you'd spoken up before I sank days into this.",
+    "alternatives": [
+      "If only you'd said something before I sank days into this.",
+      "I wish you'd said something before I sank days into it."
+    ],
+    "point": "過去の後悔は wish + 過去完了。speak up は「声を上げる」",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 10,
+    "grammar": ["wishes-regrets", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2h5r6m4n",
     "ja": "直したコードはずっと読みやすいね。",
     "en": "It's much easier to read now.",
@@ -148,22 +164,6 @@
     }
   },
   {
-    "id": "c_3x8x3j9t",
-    "ja": "僕が作業を積む前に、君が指摘してくれていたらなあ。",
-    "en": "I wish you'd flagged this before I built on it.",
-    "alternatives": [
-      "I wish you had caught this before I built on it.",
-      "If only you'd said something before I built on it."
-    ],
-    "point": "過去への後悔は wish + 過去完了（you'd = you had）",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 10,
-    "grammar": ["wishes-regrets"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_4c7e2d4x",
     "ja": "ここ、誤字が一つあるよ。",
     "en": "There is a typo here.",
@@ -203,6 +203,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5b3z6z3a",
+    "ja": "一応言っとくね、ブランチをリベースして強制プッシュしたよ。",
+    "en": "Heads up, I rebased and force-pushed the branch.",
+    "alternatives": [
+      "Just a heads-up, I rebased and force-pushed the branch.",
+      "Fair warning, I rebased the branch and force-pushed it."
+    ],
+    "point": "Heads up は「一応伝えとくね」と切り出す軽い前置き",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 10,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5k2z3n8n",
@@ -516,22 +532,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9s2c8x3x",
-    "ja": "僕はメインにリベースしてから、強制プッシュしました。",
-    "en": "Having rebased onto main, I force-pushed.",
-    "alternatives": [
-      "After rebasing onto main, I force-pushed.",
-      "I rebased onto main and then force-pushed."
-    ],
-    "point": "Having + 過去分詞で「〜したあとで」を短く言える",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 10,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9s8h4x5r",

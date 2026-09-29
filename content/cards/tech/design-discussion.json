@@ -32,7 +32,7 @@
     "point": "「比べるための」は名詞のあとに to compare を置く",
     "topic": "tech",
     "subtopic": "design-discussion",
-    "level": 7,
+    "level": 6,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -175,12 +175,12 @@
     "en": "If we'd added replicas, we might have prevented that.",
     "alternatives": [
       "We might have prevented that if we'd added replicas.",
-      "Had we added replicas, we might have prevented that."
+      "We could've prevented that if we'd added replicas."
     ],
     "point": "if 節は had + 過去分詞、主節は might have + 過去分詞",
     "topic": "tech",
     "subtopic": "design-discussion",
-    "level": 7,
+    "level": 6,
     "grammar": ["third-conditional", "modal-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -231,13 +231,13 @@
     "ja": "比べるためのベンチマークが要るよね。",
     "en": "We need a benchmark to compare them.",
     "alternatives": [
-      "We need to benchmark both options.",
-      "We need a benchmark to compare the two."
+      "We need a benchmark for comparison.",
+      "We'll need a benchmark to compare against."
     ],
     "point": "目的は to 不定詞。benchmark には a を付ける",
     "topic": "tech",
     "subtopic": "design-discussion",
-    "level": 5,
+    "level": 4,
     "grammar": ["infinitives", "articles-and-countability"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -380,8 +380,8 @@
     "point": "How about の後ろは動名詞（switching）にする",
     "topic": "tech",
     "subtopic": "design-discussion",
-    "level": 5,
-    "grammar": ["gerunds", "phrasal-verbs"],
+    "level": 4,
+    "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -432,15 +432,15 @@
   {
     "id": "c_7e5j5h9v",
     "ja": "新人でも読める設計にしたいんだけど。",
-    "en": "I'd like a design that even newcomers can read.",
+    "en": "I'd like a design that even newbies can follow.",
     "alternatives": [
       "I want a design even new hires can understand.",
-      "I'd prefer a design that new hires can follow."
+      "I want a design even a rookie can follow."
     ],
     "point": "「設計」を that 以下で後ろから説明する",
     "topic": "tech",
     "subtopic": "design-discussion",
-    "level": 7,
+    "level": 6,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -577,7 +577,7 @@
     "en": "Let's get QA to load-test it before deploying.",
     "alternatives": [
       "Let's have QA load-test it before we deploy.",
-      "Why don't we get QA to load-test it first?"
+      "Let's ask QA to load-test it before we deploy."
     ],
     "point": "「get + 人 + to do」で「〜してもらう」",
     "topic": "tech",

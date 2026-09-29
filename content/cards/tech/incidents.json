@@ -83,16 +83,16 @@
   },
   {
     "id": "c_3e5r3w6d",
-    "ja": "原因は多分設定変更ですが、断定するのはまだ早いです。",
-    "en": "It's probably the config change, but it's too early to say.",
+    "ja": "原因は多分設定変更ですが、断定はまだ早いです。",
+    "en": "It's probably a config change, but too early to say.",
     "alternatives": [
-      "It's likely the config change, though it's too soon to say.",
-      "My guess is the config change, but I can't confirm it yet."
+      "Probably the config change, though it's too soon to say.",
+      "I'd guess the config change, but I can't confirm yet."
     ],
     "point": "断定を避けるときは too early to say が定番",
     "topic": "tech",
     "subtopic": "incidents",
-    "level": 10,
+    "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -118,7 +118,7 @@
   },
   {
     "id": "c_3q6a8b3s",
-    "ja": "再起動しても、根本原因は残ったままです。",
+    "ja": "再起動しても、根本原因は消えません。",
     "en": "Even if we restart, the root cause remains.",
     "alternatives": [
       "A restart won't remove the root cause.",
@@ -135,12 +135,12 @@
   {
     "id": "c_3w6e4s6m",
     "ja": "直ったけど、原因はまだ不明です。",
-    "en": "Although it's fixed, the cause is still unknown.",
+    "en": "It's fixed, but the cause is still unknown.",
     "alternatives": [
-      "It's fixed, but the cause is still unknown.",
-      "Even though it's fixed, the cause is unknown."
+      "Although it's fixed, the cause is still unknown.",
+      "It's fixed, but we still don't know why."
     ],
-    "point": "Although 節の後に主節。but と同時には使わない",
+    "point": "「けど」は but で対比。Although と but は重ねない",
     "topic": "tech",
     "subtopic": "incidents",
     "level": 5,
@@ -343,13 +343,13 @@
     "ja": "私があなたなら、今すぐお客様に一報入れておきます。",
     "en": "If I were you, I'd give customers a heads-up now.",
     "alternatives": [
-      "If I were in your shoes, I'd warn customers now.",
+      "If I were you, I'd let customers know now.",
       "If it were me, I'd give customers a heads-up now."
     ],
     "point": "仮定法では If I were you。一報入れるは give a heads-up",
     "topic": "tech",
     "subtopic": "incidents",
-    "level": 9,
+    "level": 7,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -392,7 +392,7 @@
     "en": "Never before have we had an outage this widespread.",
     "alternatives": [
       "We've never had an outage this widespread before.",
-      "Never have we had an outage with such wide impact."
+      "This is the most widespread outage we've ever had."
     ],
     "point": "Never を文頭に出すと、あとは疑問文の語順になる",
     "topic": "tech",
@@ -461,17 +461,17 @@
   },
   {
     "id": "c_7y6b5w4b",
-    "ja": "先ほど復旧しましたが、原因はまだ調査中です。",
+    "ja": "先ほど復旧しましたが、まだ調査中です。",
     "en": "Service came back earlier, but we're still investigating.",
     "alternatives": [
       "Service was restored earlier, but we're still investigating.",
-      "We got service back earlier, but we're still investigating."
+      "It came back earlier, but we're still investigating."
     ],
     "point": "先ほどは過去形、今も続く調査は現在進行形",
     "topic": "tech",
     "subtopic": "incidents",
-    "level": 8,
-    "grammar": ["tense-contrast"],
+    "level": 5,
+    "grammar": ["past-simple", "progressive-aspect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -519,10 +519,10 @@
   {
     "id": "c_9c7p2h6j",
     "ja": "影響が出たのは、決済機能だけでした。",
-    "en": "It was only the payment feature that was affected.",
+    "en": "It was only payments that were affected.",
     "alternatives": [
       "Only the payment feature was affected.",
-      "The only thing affected was the payment feature."
+      "The only thing affected was payments."
     ],
     "point": "強調したい語を It was と that ではさむ",
     "topic": "tech",
