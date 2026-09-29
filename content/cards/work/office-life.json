@@ -10,7 +10,13 @@
     "level": 7,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:20c4c250dba18613713770eafbd664fbf689a710ed9e33fda363b735038d0813",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2q2x6n3t",
@@ -93,6 +99,28 @@
     }
   },
   {
+    "id": "c_3x3q5e3r",
+    "ja": "時間がなくて、昼を抜いた。",
+    "en": "Pressed for time, I skipped lunch.",
+    "alternatives": [
+      "Short on time, I skipped lunch.",
+      "Being short on time, I skipped lunch."
+    ],
+    "point": "理由は Pressed for time で先に言う分詞構文",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5c312456071550893bc38a1599674f3f66a84c03bb6f2a3ac1b813675927783d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4c3e4z2e",
     "ja": "古いけど、コピー機は動くよ。",
     "en": "Although it's old, the copier works.",
@@ -106,7 +134,13 @@
     "level": 6,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4b86e20f008c1628752227bcba2a61a135a0400327730e7c20c52bed38c1e59f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4f5t6x7d",
@@ -141,7 +175,13 @@
     "level": 6,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:270efea9702789665534982d5deadf1b3819b00ab76db08a5eaa93e5191e3970",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4t2a8k8n",
@@ -233,7 +273,13 @@
     "level": 6,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e23a63b82e37b80c33d8fe616bb17bc926c0abde8a332ea7e77e7a9a5d895bb8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6a4j2y4k",
@@ -259,11 +305,11 @@
   },
   {
     "id": "c_6b2m2k9v",
-    "ja": "上司に土曜も出勤させられた。",
+    "ja": "上司に土曜出勤させられた。",
     "en": "My boss made me work Saturday.",
     "alternatives": [
-      "I was made to come in on Saturday.",
-      "My boss made me come in Saturday."
+      "My boss made me come in Saturday.",
+      "My boss made me work on Saturday."
     ],
     "point": "強制は make + 人 + 動詞の原形。to は付けない",
     "topic": "work",
@@ -271,7 +317,13 @@
     "level": 7,
     "grammar": ["causatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a3714408c86da260d3d1742b6fdeadde002c94906e205cbe4e768d257217f2f6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6b5r6m7b",
@@ -344,7 +396,13 @@
     "level": 7,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:87b23ab092b59836d9ccffd5aa9a4e6ea13ef793bfe1cc290ebad5bdbbcb1913",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9h2q3y3e",

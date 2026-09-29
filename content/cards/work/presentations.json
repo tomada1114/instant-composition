@@ -5,7 +5,7 @@
     "en": "If I'd practiced, I'd have coped.",
     "alternatives": [
       "I'd have coped if I'd practiced.",
-      "If I had practiced, I would have coped."
+      "If I'd practiced, I'd have gotten through it."
     ],
     "point": "過去の仮定は had + 過去分詞 と would have",
     "topic": "work",
@@ -13,7 +13,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b3a776e2dd103ebdc5107b868998e314e11c1b038b1414d69b7cc05f40608357",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2p3c9j9e",
@@ -29,7 +35,13 @@
     "level": 7,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f55f3b1fdb3c88904f8473069a93760389723109646084a5574e156dbf35f0ce",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2w2d2x4h",
@@ -144,7 +156,13 @@
     "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6e1f26db2c8d2a7e6e6355e6b97372ffb9c971c4f1bcf830a717d219e4d30b99",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4t6g6a3u",
@@ -160,7 +178,13 @@
     "level": 7,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:20164b3e2535d8c0c9914e226d76e4d7ddea7346d1e28aff1616d22d2514d7e6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4y6m5j6k",
@@ -236,7 +260,13 @@
     "level": 6,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f86bcf6d36e56d47dfc95407bca27c59fd88f0beebe6f595101a4d471e7f5825",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7b5d8k8z",
@@ -372,7 +402,13 @@
     "level": 7,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6fd2bc0650e0f0effd1c3d646c62f282b0b88ff929e444d41eef4893190913f8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9n3f6y4k",

@@ -13,7 +13,13 @@
     "level": 7,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:85d9b6b866b52f502b692ad452e4e63dd729640cd6e6618cfd7c22d24bc151f0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3b2y3d6h",
@@ -29,7 +35,13 @@
     "level": 7,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0d004208d0271012f75b6bb8bf89fb01e0a7323704d4f9c623e862f71f783acb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3g5g2g3p",
@@ -94,15 +106,24 @@
   {
     "id": "c_4q6y8h8b",
     "ja": "詳しい者を呼びますね。",
-    "en": "I'll get someone who knows.",
-    "alternatives": ["Let me get someone who knows.", "I'll find someone who knows."],
+    "en": "I'll get someone who knows more.",
+    "alternatives": [
+      "Let me get someone who knows more.",
+      "I'll find someone who knows more."
+    ],
     "point": "someone の後ろに who 節をつける",
     "topic": "work",
     "subtopic": "phone-calls",
     "level": 6,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d65bbd7941e024137bf8f020f52f1a1c98a47bbadf9a21f6e09f0dd03f84fd51",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5b8b6w9m",
@@ -137,7 +158,13 @@
     "level": 6,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:56c8935ca917fda19932be37dd991efa1db3141861ed4545273eb2f8da637a91",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6t4z4z4t",
@@ -330,7 +357,13 @@
     "level": 7,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2d1672c3006bddae865770f6b1bbb7b726cff8e798f0e51e5de6c7b94c9d342f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9p7a7p7k",
@@ -346,7 +379,13 @@
     "level": 6,
     "grammar": ["causatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c737956edaf3cb3074e59e43411d568d373e549645590743ec15537aea2b5de7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9s7q2y5d",

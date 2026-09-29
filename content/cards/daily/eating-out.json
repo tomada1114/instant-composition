@@ -112,7 +112,13 @@
     "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4940ac5266de296dd082509e54cea5a584343aeff1cd06a9120c86560ecde8c4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4n2s4p6j",
@@ -185,7 +191,13 @@
     "level": 7,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f28dec2e1e31e5f446e9b2e50870217175b24388b2a3cee1ae788a06cb18641",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5y3n9k3q",
@@ -220,7 +232,13 @@
     "level": 7,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3c995e3bca601ec8dee2bfa4e44aa5882a1d9cee71004398a9ce06bf8113fd79",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6u4t4t3q",
@@ -233,20 +251,32 @@
     "level": 6,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5ec9d9d6f8f60dd48f33f269d43e06d4b4131e9a06a82633ecf03228494ea636",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7e5h5q4u",
     "ja": "塩辛すぎるかもしれません。",
     "en": "It might be too salty.",
-    "alternatives": ["It may be a little too salty.", "I think it's a bit too salty."],
-    "point": "感想は might と a bit でやわらげる",
+    "alternatives": ["It may be too salty.", "It could be a bit too salty."],
+    "point": "かもしれませんは might でやわらげる",
     "topic": "daily",
     "subtopic": "eating-out",
     "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ad665e6e86c39047d036b76046f4cccb513e5e5b979febda87c00ec8bc63f503",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7h4n7d2m",
@@ -303,7 +333,13 @@
     "level": 6,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:71795f19090425fedbfd6c122b7fc9a279cf04f0cd97bf420fef913dd05614a7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8x8x5s7g",

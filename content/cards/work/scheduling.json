@@ -102,22 +102,6 @@
     }
   },
   {
-    "id": "c_5b8m2y5u",
-    "ja": "遅れてるので、早めに集まろう。",
-    "en": "Being behind schedule, let's meet earlier.",
-    "alternatives": [
-      "Since we're behind schedule, let's meet earlier.",
-      "We're behind schedule, so let's meet sooner."
-    ],
-    "point": "理由は Being で始める分詞構文",
-    "topic": "work",
-    "subtopic": "scheduling",
-    "level": 7,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-29",
-    "stamps": {}
-  },
-  {
     "id": "c_5h2v2v6x",
     "ja": "金曜に会うのはどう？",
     "en": "How about meeting on Friday?",
@@ -141,7 +125,7 @@
     "ja": "今週ずっと会議を調整してる。",
     "en": "I've been rescheduling meetings all week.",
     "alternatives": [
-      "I've spent all week juggling meetings.",
+      "I've been coordinating meetings all week.",
       "I've been juggling the schedule all week."
     ],
     "point": "今週ずっとは現在完了進行形",
@@ -150,7 +134,13 @@
     "level": 6,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b0bd8a21f1603dc664838c27c635170e891ff48ad28c834baaa5b765a0064e7f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5m4j7y6v",
@@ -270,23 +260,35 @@
     "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3aefd1d1cf2d70e4c1992be16a2c2bccf063c2560a8295328f2e80409ed9dd51",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7w6r5k5c",
     "ja": "木曜予定の会議、ずらせる？",
-    "en": "Can we move the meeting set for Thursday?",
+    "en": "Can we push Thursday's meeting back?",
     "alternatives": [
-      "Could we reschedule the Thursday meeting?",
-      "Can we shift Thursday's meeting?"
+      "Can we move Thursday's meeting?",
+      "Could we reschedule Thursday's meeting?"
     ],
-    "point": "名詞のあとに set for で予定を説明",
+    "point": "push ~ back は「延期する」",
     "topic": "work",
     "subtopic": "scheduling",
     "level": 7,
-    "grammar": ["post-modification"],
+    "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cec23a0d24ff3ef6de75ca3e61334039486535530fd6318727f28946e2432634",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7x7r8x3q",
@@ -299,7 +301,13 @@
     "level": 6,
     "grammar": ["causatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cab3bc58671b6cca7eb82e13c353af0739a8632fd8c8380e1a7ecaad551c4888",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7y4u4x8v",
@@ -334,7 +342,13 @@
     "level": 7,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:11b02ac8bd6e3b48dfe8d08b630461e5d4f51fbc8613b9a6e50a01702308736a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8d3y5j8g",

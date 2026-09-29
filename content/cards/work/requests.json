@@ -95,7 +95,13 @@
     "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:924fa4e45a46a155ef5446ed764dd278df294206bea742ee81e94543cc6435cd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4z2b4b5p",
@@ -111,7 +117,13 @@
     "level": 7,
     "grammar": ["past-perfect", "hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d28b6d1177184c67338e12130b89a14021c7bd3c5413b78da020b74220b41833",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4z4r6d7p",
@@ -165,7 +177,13 @@
     "level": 6,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d3953bd01f7fbdd54e43c76f71aa72feaf20513ed3f85580ae6b55fecd78765a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6g9y3z8s",
@@ -197,7 +215,13 @@
     "level": 6,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ebab915e6a06bc6379cd6f95cd4e4489d300070d519e6cac6cdd116edd3e52a7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7k9u6s9m",
@@ -232,7 +256,13 @@
     "level": 7,
     "grammar": ["participle-clauses", "hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:96aa0a993c00a5544cfddd8ebbf1b4c21921ec61429077c3ea736224ea4197de",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7s7x8m4w",
@@ -378,7 +408,7 @@
     "ja": "原案はもうご覧になりましたか？",
     "en": "Have you seen the draft yet?",
     "alternatives": [
-      "Have you had time to see the draft?",
+      "Have you looked at the draft yet?",
       "Have you had a look at the draft?"
     ],
     "point": "「もう」を尋ねる yet は現在完了",
@@ -387,7 +417,13 @@
     "level": 6,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:14cd137e5a72de0e6000873de9f6625faf4ca703f9681874deda6798baba3c9d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9v2c8f6m",

@@ -13,7 +13,13 @@
     "level": 6,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d8df12a825722d124e6ebfdd6d2b3d5a9ef012e4cfeeaa2c3691493c29d1ca8a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3d3y5a9j",
@@ -39,6 +45,7 @@
     "ja": "負荷が増えたら再検討しよう。",
     "en": "We'll revisit this if load grows.",
     "alternatives": [
+      "Let's revisit this if load goes up.",
       "We'll look at this again if load grows.",
       "If load goes up, we'll revisit this."
     ],
@@ -48,7 +55,13 @@
     "level": 7,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fbb6b5bca7dc1df613acd1edc2b1ff01ff905c42137d8adfa4f8f51240a29885",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3h6a4n7j",
@@ -111,17 +124,20 @@
     "id": "c_4q6d4x8z",
     "ja": "秘密情報は金庫で保管される。",
     "en": "Secrets are kept in a vault.",
-    "alternatives": [
-      "Secrets are stored in a vault.",
-      "Secrets are held in a dedicated vault."
-    ],
+    "alternatives": ["Secrets are stored in a vault.", "Secrets are kept in a safe."],
     "point": "される側が主役なら受動態 are kept",
     "topic": "tech",
     "subtopic": "design-discussion",
     "level": 6,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fe2c21bf0e65ae1773937514222f4acf01fc31ea7e127a4aa414739dac1fa3d2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4z5h3c3p",
@@ -156,7 +172,13 @@
     "level": 6,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f3dd320c29d4c50203c9bcbfae3f4c720bfc988c9f1045e58e32990a350754ed",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5b2w8a8h",
@@ -217,7 +239,13 @@
     "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:38f24cc32fa4bc66783563031b90d9a1e3298482f2a32cb59924a32f839e0f12",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6p4x9v7n",
@@ -312,7 +340,13 @@
     "level": 7,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:32808eff3fa5533cf25a3feb9cc2b0afa6452b1c0edacd5f8c17c3e24dbf8633",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9n5x8r4x",

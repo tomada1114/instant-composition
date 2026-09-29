@@ -29,7 +29,13 @@
     "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:111fee404d345a4f3ccdf1c77a0f475dfac19f827a79ab152a244803c71f264a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2j8m7g6g",
@@ -212,7 +218,7 @@
     "alternatives": [
       "I should've booked a guide ahead.",
       "I ought to have booked a guide.",
-      "I should have hired a guide."
+      "I should have reserved a guide."
     ],
     "point": "過去の後悔・非難は should have done",
     "topic": "travel",
@@ -220,7 +226,13 @@
     "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:089d93d83dbb6bd23d69e04d20d698f3493904e4a52b09b0be41af266d6e2fdd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5f8j7f6y",
@@ -256,7 +268,13 @@
     "level": 7,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:01f5d4eb781e6e4fd7f86750194103e180baed555682671c3d0a8bf0938624c6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5n7b5p9e",
@@ -264,8 +282,7 @@
     "en": "I've been walking around since morning.",
     "alternatives": [
       "I've been on my feet since morning.",
-      "I've been walking about since morning.",
-      "I've been walking since the morning."
+      "I've been walking around all morning."
     ],
     "point": "since + 起点、ずっと続く動作は have been -ing",
     "topic": "travel",
@@ -273,7 +290,13 @@
     "level": 7,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:41faf3dbc68bbbc94b15f715857a4e3d6589f5c773efa314b8fb831699452039",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6a7a8d9k",
@@ -327,7 +350,13 @@
     "level": 6,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:07d21faa40d733826a27317e5b5b909474178f54c35acda2350962cd0057079c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7b6g7c7z",
@@ -362,7 +391,13 @@
     "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:421ba31b88a7299d28272013c232191a2dc2be9a5e043ea856193ae104eb359d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9j5x3k3z",

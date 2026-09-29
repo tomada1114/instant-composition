@@ -175,7 +175,13 @@
     "level": 7,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e3764f9524d8a24573e365b8b502d2142790126797f32f122b5cee0d0bf19a05",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5u9m9k6b",
@@ -293,7 +299,13 @@
     "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:63dabb52b4790ca21184c5df2ea34d05e8f1900bade48852359dac29794e7e01",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8a4m6d8y",
@@ -328,7 +340,13 @@
     "level": 7,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:02ef230df4ca4708216e655719b0d57cf850636d21a79159c0b2cc922a751030",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8v3n8z6z",
@@ -344,7 +362,13 @@
     "level": 6,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d3ff3e62c73bdda0c3b41bf307f1ea2a33b45ffd47f9156a6cd48b649d951a99",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8v4z4g5h",
@@ -379,14 +403,20 @@
     "level": 7,
     "grammar": ["phrasal-verbs", "present-perfect-continuous"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:387ca83ac48d2443c629c21a8f8710c2682c1a26edaafee6f9b1fc5d29ad4697",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9j2y7m4y",
     "ja": "すぐ上司に相談したほうがいい。",
-    "en": "You should tell your boss now.",
+    "en": "You should talk to your boss now.",
     "alternatives": [
-      "You'd better talk to your manager.",
+      "You'd better talk to your boss soon.",
       "You should talk to your boss right away."
     ],
     "point": "助言は should + 動詞の原形",
@@ -395,6 +425,12 @@
     "level": 6,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d7168c3596cee0e040534a67fed3b7aac3773abc411c1d6eec96c57c71e07f42",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

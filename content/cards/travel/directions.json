@@ -3,18 +3,20 @@
     "id": "c_2d7x6p5x",
     "ja": "地図を持ってくればよかった。",
     "en": "I wish I'd brought a map.",
-    "alternatives": [
-      "I should have brought a map.",
-      "If only I'd brought a map.",
-      "I wish I had brought a map."
-    ],
+    "alternatives": ["I should have brought a map.", "If only I'd brought a map."],
     "point": "過去の後悔は wish + had done",
     "topic": "travel",
     "subtopic": "directions",
     "level": 7,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8aa90d213ba4b7198324e1540a2d93c0bb4711e240c074d68e4d3a0285826fd6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2e2d4b4k",
@@ -31,7 +33,13 @@
     "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:62781bbc9c29ce58e96622366fe1c4b8a15a0e640dead480a66d183c94c250f8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2f6f7y3b",
@@ -130,7 +138,13 @@
     "level": 6,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c1cad02adb67e74fa589ed2083da8511408676db0b748b468d2dd865107459de",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3w2v6t2j",
@@ -189,7 +203,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f54fc37e3ff0c7a265db1c4832dd2fedb0bc0ec39480b09eba80bd8e7eeb82f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4h3z6z3w",
@@ -238,8 +258,8 @@
     "en": "That shop's hard to spot.",
     "alternatives": [
       "That shop is hard to find.",
-      "It's hard to spot that shop.",
-      "That shop is easy to miss."
+      "That shop isn't easy to find.",
+      "It's hard to spot that shop."
     ],
     "point": "形容詞 + to do。主語は to の後ろに繰り返さない",
     "topic": "travel",
@@ -247,7 +267,13 @@
     "level": 7,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c21edba5533a6f522791294c27b06f76721329fcfc3a3e78cbaefb9675d48a65",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5h4a2p3m",
@@ -329,23 +355,6 @@
     }
   },
   {
-    "id": "c_6q5n6r8d",
-    "ja": "右に曲がると、駅が見えますよ。",
-    "en": "Turning right, you'll see the station.",
-    "alternatives": [
-      "If you turn right, you'll see the station.",
-      "When you turn right, you'll see the station.",
-      "Once you turn right, you'll see the station."
-    ],
-    "point": "分詞構文の主語は主節の主語（you）と同じ",
-    "topic": "travel",
-    "subtopic": "directions",
-    "level": 7,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-29",
-    "stamps": {}
-  },
-  {
     "id": "c_6r3r7e5t",
     "ja": "地図を見ています。",
     "en": "I'm looking at the map.",
@@ -378,6 +387,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:6f15218d7dacc489546a05f8454333498a7bf96a9ec2882e230cfc08bb0104df",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9c2k5k2b",
+    "ja": "まっすぐ行けば、すぐ分かるよ。",
+    "en": "Go straight and you'll spot it.",
+    "alternatives": [
+      "Keep going and you can't miss it.",
+      "Just go straight and you'll find it."
+    ],
+    "point": "「〜すれば」は命令文 + and で言える",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 7,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:365fb82f938dfd96afdde15ed146c2aaa412e38e3a3c925f00ca37704941f28f",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

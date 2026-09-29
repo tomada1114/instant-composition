@@ -13,7 +13,13 @@
     "level": 6,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:75a648c89478c4b5894eb3d363d931ef1a70660d627637f1ec71272711f3ab3f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2w3u5x6a",
@@ -109,7 +115,13 @@
     "level": 7,
     "grammar": ["passive-voice", "verb-object-to-do"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e370cd202aa9cab897ab154f56ce796a036dc71edac4aef4337960913dfd2c0d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3z6e9y9x",
@@ -208,7 +220,13 @@
     "level": 7,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:08e8c7f386577510f2a42a20a016fdc8838fc81e6cd030e7b044502472bcb581",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6m5r2s3k",
@@ -246,7 +264,13 @@
     "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9822726eb9590c58f7e5868faf07345b9f76973c0962911b27a0bcf15e9f635b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7j3k3x7m",
@@ -254,7 +278,7 @@
     "en": "I'd sent the slides beforehand.",
     "alternatives": [
       "I'd already sent the slides beforehand.",
-      "The slides had gone out beforehand."
+      "I'd sent the slides before we started."
     ],
     "point": "「その前にすでに」は過去完了 had + 過去分詞",
     "topic": "work",
@@ -262,12 +286,18 @@
     "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:978d444466cda2c10d3a927c330a3dad0d8440ef713c78a860a7bbe102945cf3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7x6h7k7u",
     "ja": "議事録は後ほど回覧されます。",
-    "en": "The minutes will be circulated.",
+    "en": "The minutes will be circulated later.",
     "alternatives": [
       "The minutes will be sent around later.",
       "The minutes will be shared afterward."
@@ -278,7 +308,13 @@
     "level": 7,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c4d3745cf4037cfa6acbbec09b32d43288b31e0d86d43b7f0621d74256891e5f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7z3h6x8b",

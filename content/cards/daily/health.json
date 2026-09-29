@@ -10,7 +10,13 @@
     "level": 6,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:428a185c6cfc524b0cee85e80b4b2acabed8347d10eda24d9b49cca764fc965b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3b9a4e7z",
@@ -64,7 +70,13 @@
     "level": 7,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7f99826aea95e902f174513b2ded5363dd3bba6dd7156d91d12c7b2f33da9d83",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5p9q8w9t",
@@ -91,15 +103,21 @@
     "en": "I've had stiff shoulders for weeks.",
     "alternatives": [
       "My shoulders have been stiff for weeks.",
-      "I've had sore shoulders for weeks."
+      "I've had tight shoulders for weeks."
     ],
     "point": "for + 期間の継続は現在完了",
     "topic": "daily",
     "subtopic": "health",
-    "level": 7,
+    "level": 5,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:14484bbb49e71f2fa37aeb01cde1d081cb87fdf5ac5ddf0ade2cc4c738a5909c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5x4y5k2b",
@@ -115,7 +133,13 @@
     "level": 6,
     "grammar": ["causatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:560dd160d47555dba557f9ecb09beb1c9210ed1fdcbe7049fc999806ca1bfbae",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6a2m3d2s",
@@ -177,18 +201,24 @@
   {
     "id": "c_6q4w4w3v",
     "ja": "予約、明日に変えられますか？",
-    "en": "Can I switch to tomorrow?",
+    "en": "Can I reschedule for tomorrow?",
     "alternatives": [
       "Could I move my appointment to tomorrow?",
-      "Could I reschedule for tomorrow?"
+      "Can I change it to tomorrow?"
     ],
-    "point": "丁寧な依頼は Could you + 動詞",
+    "point": "予約の変更は reschedule / move が定番",
     "topic": "daily",
     "subtopic": "health",
     "level": 6,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b4cb983ff7da84470358467f8c1e71bc7b69dac151e63711f3e91e621ada8fa8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6q8m8b2c",
@@ -223,7 +253,13 @@
     "level": 7,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6272fe987fe32a6325fbfc2493702832c3ae601f8c3e5644fe89986d223a4977",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6w2f3t3r",

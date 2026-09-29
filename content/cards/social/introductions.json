@@ -58,7 +58,13 @@
     "level": 6,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d3d49b43c328d1fc0840cd341c6468efe1f7c0685e2a7873cd9eb2f9c2288f20",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3w6j9h2q",
@@ -104,7 +110,8 @@
     "en": "Born in Osaka, I love takoyaki.",
     "alternatives": [
       "As an Osaka native, I love takoyaki.",
-      "I love takoyaki, being from Osaka."
+      "Being from Osaka, I love takoyaki.",
+      "Coming from Osaka, I love takoyaki."
     ],
     "point": "分詞構文では Born の前の being を省ける",
     "topic": "social",
@@ -112,7 +119,13 @@
     "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f821ff38d71cfaaf6410ac8174f6a78da6e918212b7527ca62c6bd909207a9d3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5h8s6t6p",
@@ -144,7 +157,13 @@
     "level": 1,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:00360a30dcd6114ece727e12f18ddf827d94a86e831e3bfe7f313c0850197e4f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7f5g2j9b",
@@ -179,7 +198,13 @@
     "level": 7,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:eb29adec71306983764c20c300d7b99b5ba4aead0cde0430b7bafd2dce565b4b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7u9e5v5c",
@@ -192,7 +217,13 @@
     "level": 7,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a075ecd93f945e82fc87b2575e10e5affe1045b2b1f415afe068083ce40e57fe",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8n8b3n4z",
@@ -249,7 +280,13 @@
     "level": 7,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:99b205cda48aee8a842ce56b9afc01c9b63f8149896bfe2be6c5e5f025818d94",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9e2b8q3v",
@@ -341,7 +378,13 @@
     "level": 6,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:261a5de99d6850fc7238fa2ba39e8d59a43c8a5202ab438f18e46f5e07dc1434",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9x4z9n8c",

@@ -98,7 +98,13 @@
     "level": 7,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6da5ab1ed7f432016584fb4a2d78a222e0c4582a337d4f1bc33f8871377e6835",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4z7j6m2y",
@@ -275,7 +281,13 @@
     "level": 6,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5d84e6d2028ed51d4cb9198b8a35889a45d1269bf4480a9cdfc61a9d582060ec",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7t6p5j9q",
@@ -329,7 +341,13 @@
     "level": 7,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c01695c331deadb57c30c834431bd86bdeb8ea59911bf02f860fb5c94d183405",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8f9x8e4q",
@@ -345,7 +363,13 @@
     "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dc3186fd3f8fe9a8d2d4c40590ac83adbdfb151a6acad13855bea0970db21743",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8j3w8e5b",
@@ -361,13 +385,20 @@
     "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6a1c25bb8deb1f727812f99cba107ef9c60d4d5252276ca06461e809f1366bc7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8r2f8g2p",
     "ja": "なぜ失敗するか分からない。",
     "en": "I can't tell why it fails.",
     "alternatives": [
+      "I don't know why it fails.",
       "I can't figure out why it fails.",
       "I have no idea why it fails."
     ],
@@ -377,7 +408,13 @@
     "level": 7,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1e78c735064a2d27055ab1d793173a5619d133812841d3f3744828150dacee10",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9p2m9w8b",

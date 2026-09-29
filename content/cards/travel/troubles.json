@@ -3,18 +3,20 @@
     "id": "c_2k3g9z2c",
     "ja": "財布は昨日なくなりました。",
     "en": "My wallet went missing yesterday.",
-    "alternatives": [
-      "I lost my wallet yesterday.",
-      "My wallet disappeared yesterday.",
-      "My wallet was lost yesterday."
-    ],
+    "alternatives": ["I lost my wallet yesterday.", "My wallet disappeared yesterday."],
     "point": "yesterday があれば過去形（has は使えない）",
     "topic": "travel",
     "subtopic": "troubles",
     "level": 7,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1915328b6c2243f0fabbebcc04e8717c90b6b8866afde2c12e1662a83cbb305e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2u8n8r8e",
@@ -53,7 +55,13 @@
     "level": 7,
     "grammar": ["causatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6c7199d3675fbbb1e94a6cf19d4c2ebe267f144c5639f1123c5406f5c09feeeb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3m8g6f3j",
@@ -178,10 +186,10 @@
   {
     "id": "c_4p4f7x2r",
     "ja": "財布をなくさなければよかった。",
-    "en": "I wish I hadn't lost my wallet.",
+    "en": "Wish I hadn't lost my wallet.",
     "alternatives": [
+      "I wish I hadn't lost my wallet.",
       "If only I hadn't lost my wallet.",
-      "I wish I'd never lost my wallet.",
       "I shouldn't have lost my wallet."
     ],
     "point": "過去の後悔は wish + had (not) done",
@@ -190,7 +198,13 @@
     "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef2d01b53d291cea87eafc7c26410b4b39cbddf1bcdea4ac8de20f420766d6cd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5q8q6k3r",
@@ -267,7 +281,13 @@
     "level": 7,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1448c2991f148a5ccc58974ea2de825980cd820177c1140d033cf207f7955079",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8b6w3e6n",
@@ -299,7 +319,13 @@
     "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5aa00677de74a2d8069cabab783f6d84100543aea2feb8fefc29c47d9ccf098a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8r3s2a9j",
@@ -338,7 +364,13 @@
     "level": 6,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fc247541fb12fc577b9f478baaddf00f73752102faf5f182a9bc6bf4c7f4bb92",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9c9m9y3w",
@@ -397,6 +429,12 @@
     "level": 6,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:43b429544327cd327630fc615b58677eb743099dae1886517dd36936c5432902",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

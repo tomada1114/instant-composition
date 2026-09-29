@@ -65,7 +65,7 @@
     "en": "Although I'm busy, I'm doing well.",
     "alternatives": [
       "Even though I'm busy, I'm doing fine.",
-      "Busy though I am, I'm doing well."
+      "I'm doing well, even though I'm busy."
     ],
     "point": "although の後ろも文の形。but とは重ねない",
     "topic": "social",
@@ -73,20 +73,32 @@
     "level": 7,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:accb8a06c17681c06d859368418e94895a52d8af730826e11ac398f1e69b0dbb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3c3a5v9c",
     "ja": "また連絡してね。",
     "en": "Keep in touch.",
-    "alternatives": ["Stay in touch.", "Don't be a stranger."],
+    "alternatives": ["Stay in touch.", "Keep in touch, okay?"],
     "point": "「連絡を保つ」は keep in touch",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 1,
+    "level": 3,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7dd46e736e933edd3f904f691398db1b1b4ee65705c8cd0ba9153e37fa9e728c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3d4h7p7k",
@@ -102,7 +114,13 @@
     "level": 6,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:158ce42e249bdef0767bac2511f3a66c13fd63a5f581a451a7f9c920556a32d4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3g4v7q4z",
@@ -200,22 +218,6 @@
     }
   },
   {
-    "id": "c_5f2h3z5x",
-    "ja": "最後に会ったの、去年の夏？",
-    "en": "We last met last summer, right?",
-    "alternatives": [
-      "We haven't met since last summer, right?",
-      "We last saw each other last summer, right?"
-    ],
-    "point": "finished な過去の時点は過去形、since は現在完了",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 7,
-    "grammar": ["tense-contrast"],
-    "createdAt": "2026-09-29",
-    "stamps": {}
-  },
-  {
     "id": "c_5m7q4c8y",
     "ja": "今は10キロ走れるんだ。",
     "en": "I can run 10K now.",
@@ -254,6 +256,29 @@
     }
   },
   {
+    "id": "c_6f8z5v8j",
+    "ja": "最後に会ったの、去年の夏？",
+    "en": "Haven't seen you since last summer?",
+    "alternatives": [
+      "We haven't met since last summer, right?",
+      "Was the last time last summer?",
+      "Last time we met was last summer, right?"
+    ],
+    "point": "since で起点を言うなら現在完了",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a75cf9624f6ca3b6f15249a3788fe53f143d5921f3eb523bd6d677c860654b3b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6h6m9d9n",
     "ja": "京都にいる弟は、元気だよ。",
     "en": "My brother in Kyoto is fine.",
@@ -267,7 +292,13 @@
     "level": 6,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f043dc78029c21548c512e8b6144be41b995c7d7f95ce7240a5b09d7ce250147",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6q8z7n2p",
@@ -302,7 +333,13 @@
     "level": 6,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:958a91d453b0bb1d7ab39657929b254ad557ce41ba111b40a21d557f15c46a43",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9b2a9x6d",
@@ -362,7 +399,13 @@
     "level": 7,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:72629d06c4959aeeba4ee77dcc775ac135a2bc36e22e1fa74bbf64c2abd2fe52",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9r7k4t6s",

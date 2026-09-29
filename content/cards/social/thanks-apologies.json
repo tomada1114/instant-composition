@@ -24,6 +24,7 @@
     "en": "I wish I'd been more considerate.",
     "alternatives": [
       "I wish I'd been more thoughtful.",
+      "I should have been more considerate.",
       "If only I'd been more considerate."
     ],
     "point": "過去の後悔は wish + 過去完了",
@@ -32,7 +33,13 @@
     "level": 7,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:293c986f8499192b87b2dd6b4036c65d3b7a565f6b580cb53b175120d063984c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2z2w7c5k",
@@ -48,7 +55,13 @@
     "level": 6,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:914689bde192f1e7e30e8783e19b466ab7370a713c02010b1eb427ed5814a475",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3a4m4z5b",
@@ -181,7 +194,13 @@
     "level": 6,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f8a2b1deb5b4fe230bbf932761cb5f0a96074a99056edcaa7d1c4cdde184ba46",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5b3c6x7u",
@@ -260,7 +279,13 @@
     "level": 7,
     "grammar": ["causatives", "gerunds"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:06298412202f92aaa6aa35291e4e5c9551098b82b7341b346c70ae114b2624f8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6z8d2f6w",
@@ -358,15 +383,22 @@
     "level": 7,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:09bb42c1769570f768f544b679cf5769509640f7b167856ed17f00e674a608a9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9f5x2g6x",
     "ja": "寝坊して、遅れてすみません。",
-    "en": "Having overslept, I'm sorry I'm late.",
+    "en": "Sorry I'm late, having overslept.",
     "alternatives": [
+      "Sorry for being late, having overslept.",
       "I'm sorry to be late, having overslept.",
-      "Sorry I'm late, having overslept."
+      "Sorry I'm late because I overslept."
     ],
     "point": "先に起きたことは having + 過去分詞",
     "topic": "social",
@@ -374,7 +406,13 @@
     "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:659833d01b60321634b9ab45ca1eac6152bb955f223da5afac83f9b8a4264302",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9k6h7s6x",

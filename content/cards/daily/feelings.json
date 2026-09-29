@@ -54,7 +54,13 @@
     "level": 7,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b3c01fbf98341479a577c62c5308ff4ca96bff4e2e2693f28643286e938dab7e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4a5n5u4g",
@@ -187,7 +193,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bc4b4ad8dbab490008b2c4361e887a2fe6a2cb67de8779c8c1b401c93395d70e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7c4z9t7s",
@@ -203,7 +215,13 @@
     "level": 6,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d76dd7af8639c2d02cd01cdb755b34101b54d9ee8142f74b3e8b5995bebd940b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7f2v2m4z",
@@ -235,7 +253,13 @@
     "level": 7,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bc702dda73921cb6c7234b69185832ade1afad272dbc5433eff5cbdac4bf979a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7w3y4d5p",
@@ -282,14 +306,24 @@
     "id": "c_8k7e8z8f",
     "ja": "明日は絶対、緊張するだろうな。",
     "en": "I'm going to be nervous tomorrow.",
-    "alternatives": ["I'll be nervous tomorrow.", "I'm sure I'll be nervous tomorrow."],
+    "alternatives": [
+      "I'll be nervous tomorrow.",
+      "I'm sure I'll be nervous tomorrow.",
+      "I'll definitely be nervous tomorrow."
+    ],
     "point": "見込みのある未来は be going to",
     "topic": "daily",
     "subtopic": "feelings",
     "level": 6,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6c5f47cf741447465aa23ec4b7396cb5dd7bf7798a0bfe72e4ace9024d733568",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8t8g5t4q",
@@ -343,7 +377,13 @@
     "level": 7,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c29e4c5276a7571c0a5379ac4d39a88a72bbd6143ae1537a9633d1c7dc8abaf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9b9h9v7a",

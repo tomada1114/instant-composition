@@ -13,7 +13,13 @@
     "level": 6,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a6f9328ebfded018406b41f83f545dae9fcc31b7544c236cb6092457995fcd8e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3c3w6z6v",
@@ -203,7 +209,13 @@
     "level": 7,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d56f1f7b286db270ba7d81b6380ebfc09529b9ce3e1ac263b51959c125ec67f8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5n2y2p4f",
@@ -216,7 +228,13 @@
     "level": 7,
     "grammar": ["causatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6ee7b67c0b0803b21ba04079c4e9138e6cb4bea2e9cb74b5ef3449fd3baf0f6b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5s3a8d8e",
@@ -322,7 +340,7 @@
     "en": "The café by the station works.",
     "alternatives": [
       "The café near the station is fine.",
-      "Let's meet at the café by the station."
+      "The café by the station is okay."
     ],
     "point": "名詞の後ろに前置詞句を置いて説明する",
     "topic": "daily",
@@ -330,20 +348,32 @@
     "level": 6,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5429902bf4dddb9426fcec88c07af892bdc4c480709c10a0b4e63101a421e9aa",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7k5b8d3a",
     "ja": "時間があれば、行くのに。",
     "en": "If I had time, I'd go.",
-    "alternatives": ["I'd go if I had time.", "If I had the time, I'd come."],
+    "alternatives": ["I'd go if I had time.", "If I had the time, I would go."],
     "point": "現実と違う仮定は If + 過去形、would",
     "topic": "daily",
     "subtopic": "plans",
     "level": 6,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2d7077908b8186880480400a1e31bf06459d2ca05731d13a61fcca4c13697bde",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8x2v6k8x",
@@ -378,6 +408,12 @@
     "level": 7,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:12490ed807b01059c81833d08b508431139443591032f6ce4360ccfaf1ce1125",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

@@ -43,7 +43,7 @@
     "en": "I'd fixed the tests before submitting.",
     "alternatives": [
       "I had fixed the tests before I submitted.",
-      "The tests were already fixed before I submitted."
+      "I fixed the tests before submitting."
     ],
     "point": "先に起きたことは過去完了 had fixed",
     "topic": "tech",
@@ -51,7 +51,13 @@
     "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b235e7b231381c464f14abbe6f45fd99b2251c9ec924d784b7ff9666acaaab65",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2p5t9w4m",
@@ -86,7 +92,13 @@
     "level": 6,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ce535352fecf4e291807540003cefbf1c5d34552e79a2b0d6fea39934d4b40b4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2y6f8r3h",
@@ -222,7 +234,13 @@
     "level": 7,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:183c73c7e48c75b15d78609bf5f4b2b8a948c54405f929d6f63da424e57f906e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5w6q7d9e",
@@ -238,7 +256,13 @@
     "level": 7,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a9fb9fa8ec78bd6bd221a4a3476de6d70412380602c1f8192df6b0909cc4dc65",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5x6q4x8n",
@@ -295,7 +319,13 @@
     "level": 6,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:34e3d999635e85d81456ff78284e66e25e42b9f89cd2d16ab63b674fca8f7c9f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8f8x2n8k",
@@ -379,17 +409,23 @@
   {
     "id": "c_9t4c7p5x",
     "ja": "この PR、二つに分けたい。",
-    "en": "I'd like to split this PR.",
+    "en": "I want to split this PR in two.",
     "alternatives": [
-      "I want to split this PR into two.",
-      "I'd prefer to split this PR up."
+      "I'd like to split this PR in two.",
+      "I want to break this PR into two."
     ],
-    "point": "I'd like to + 動詞の原形。丁寧に希望を言う",
+    "point": "split ~ in two で「二つに分ける」。want to + 動詞の原形",
     "topic": "tech",
     "subtopic": "code-review",
     "level": 7,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:06894dd4d94584235ade0b2ee106ffb427d1d5c9e9cd37b4e6edb80d6f2514f8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

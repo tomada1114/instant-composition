@@ -27,7 +27,7 @@
     "en": "I should have cc'd my boss.",
     "alternatives": [
       "I should have copied my boss in.",
-      "I ought to have looped in my boss."
+      "I should have looped my boss in."
     ],
     "point": "後悔や反省は should have + 過去分詞",
     "topic": "work",
@@ -35,7 +35,13 @@
     "level": 7,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:896e68a9a9a0adbf0b3858d13d89c0fe56dd670ead5dc7998b2398fdb32d54df",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3t3r4v3a",
@@ -73,7 +79,13 @@
     "level": 7,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bda583c5f4cafb7584b0c9993386ea4bda94b3c409bfbc598aa2ed0c91be37bf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3x8v2d8g",
@@ -146,7 +158,13 @@
     "level": 6,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c6979878c0f80d740ff5965a1969036db475566abaf1265d3628497a4ba55ae",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7c7f8b8x",
@@ -162,7 +180,13 @@
     "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cc95d7ad26e6230a570b17569121fcb8d49fed07e360a510ee4ec2f745876047",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7j4y5n8r",
@@ -178,7 +202,13 @@
     "level": 7,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:69ded7463164842a7d50719044d41188225f87a0789c1c894e1bee248ef30720",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7u2a2h2j",
@@ -232,7 +262,13 @@
     "level": 6,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a2253655f7f56e354b7b9afe020d4fa2e220155b2ea5b191085f04064d51a16d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8j2w5z2q",

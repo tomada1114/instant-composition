@@ -2,7 +2,7 @@
   {
     "id": "c_3w8g7b8x",
     "ja": "違う鍵をもらったに違いない。",
-    "en": "I must've got the wrong key.",
+    "en": "I must've gotten the wrong key.",
     "alternatives": [
       "I must have been given the wrong key.",
       "They must have given me the wrong key."
@@ -13,7 +13,13 @@
     "level": 7,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c07b58cbc298737c34da63a0209b7effea779d0cc60dde6ab4f4e7fb940158dd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3w8r8a6w",
@@ -53,7 +59,13 @@
     "level": 6,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:783d9176cf37a85e7b90995d6f1ab0939923b9c1a8807e1bc95e9a95a1cd193b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4t5c9h2j",
@@ -99,16 +111,21 @@
     "en": "The room's smaller than I expected.",
     "alternatives": [
       "This room is smaller than I thought.",
-      "This room isn't as big as I expected.",
       "The room is smaller than I'd expected."
     ],
     "point": "than の後は I expected で十分（it は不要）",
     "topic": "travel",
     "subtopic": "hotel",
-    "level": 7,
+    "level": 5,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0322c2ab165ef78fffee1260866b080d13a029a09b4e03c65d56297b35a873ae",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5j9b9r8g",
@@ -245,7 +262,13 @@
     "level": 6,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6bad520bd8a56235ec565faa7f991119fdb18470301ec1c5fa124f22b9f22c19",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7g8s4v3r",
@@ -302,7 +325,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cc228834b8e8f40105e78b95aca6011ad737a991b37e9d3b5a8a7bfac4bdd5f5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8b8m8c9q",
@@ -395,6 +424,12 @@
     "level": 7,
     "grammar": ["wishes-regrets", "comparatives-superlatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e9239d0ad97ccb6ade2a50ca62e655f0913189fd15daf3132c2587bfe8d88011",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

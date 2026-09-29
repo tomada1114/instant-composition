@@ -13,7 +13,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9fd2224290bb46fd634c417d4b34089ff8817332f5e56765eb3985a545f7b4eb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2m3e5w6m",
@@ -81,10 +87,10 @@
   {
     "id": "c_5h2v2m2v",
     "ja": "君がいなければ失敗してた。",
-    "en": "We'd have failed without you.",
+    "en": "I'd have failed without you.",
     "alternatives": [
-      "If not for you, we'd have failed.",
-      "Without you, we would have failed."
+      "Without you, I would have failed.",
+      "If not for you, I'd have failed."
     ],
     "point": "If not for you は過去の仮定の言い方",
     "topic": "work",
@@ -92,7 +98,13 @@
     "level": 7,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a1c8f633ca481b169dbb991fabb194706e02f81742986fef798cfc215867716b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6j9f9h8c",
@@ -228,7 +240,13 @@
     "level": 6,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1eda06364f6364d25fb35b9ee0746fbca7d429fdbe8da57dee801308777e502a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7m3n9r6b",
@@ -351,38 +369,50 @@
     "id": "c_9p8q6g6r",
     "ja": "要点を絞れと言われた。",
     "en": "I was told to be concise.",
-    "alternatives": ["My boss told me to be brief.", "They asked me to keep it short."],
+    "alternatives": ["I was told to be brief.", "They asked me to keep it short."],
     "point": "tell + 人 + to do",
     "topic": "work",
     "subtopic": "feedback",
     "level": 7,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d9f1607f87a7dd2b02e18e197e8376c74585be011b920997b1254242f97b2a47",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9w8u9g3a",
     "ja": "前回の点、直してくれたね。",
-    "en": "You've fixed what I pointed out.",
+    "en": "You fixed what I flagged last time.",
     "alternatives": [
-      "You've corrected the points I raised.",
-      "You fixed the issues I mentioned last time."
+      "You fixed the points I raised last time.",
+      "You fixed what I pointed out last time."
     ],
-    "point": "今に残る結果は現在完了",
+    "point": "last time と一緒なら過去形。現在完了は使えない",
     "topic": "work",
     "subtopic": "feedback",
     "level": 6,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c275f569cc0ce6b3d14ed89fbccba3fc585fa74d9ab01d149dbebfc65e35e25c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9z9z3m3k",
     "ja": "何がまずかったか、教えて？",
-    "en": "Can you say what went wrong?",
+    "en": "Can you tell me what went wrong?",
     "alternatives": [
       "Could you tell me what went wrong?",
-      "Can you tell me what went wrong?"
+      "Can you tell me what was wrong?"
     ],
     "point": "間接疑問は主語動詞の語順のまま",
     "topic": "work",
@@ -390,6 +420,12 @@
     "level": 7,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:619060be4700efbc81ebf4e366f07517a5e96aa2d2f59e32f44040de03ef0a46",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

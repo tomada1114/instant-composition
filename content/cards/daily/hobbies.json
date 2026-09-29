@@ -92,7 +92,13 @@
     "level": 7,
     "grammar": ["concession-contrast", "time-and-if-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0e3e903c7c774d4d24549d15961c5058bf204b17c0f81e6d69d25ba02b550972",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5h3k3b7q",
@@ -184,7 +190,13 @@
     "level": 6,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bbc5d2dc8f937afc15cf463a2d1416483cb9d451911f63d782674fd3a4867c5a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6u3t3a4q",
@@ -273,13 +285,19 @@
     "ja": "開演は何時か知ってる？",
     "en": "Do you know when it starts?",
     "alternatives": ["Do you know what time it starts?", "Any idea when it starts?"],
-    "point": "間接疑問は where の後が平叙文の語順",
+    "point": "間接疑問は when の後が平叙文の語順",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 7,
+    "level": 4,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:06710871010f1a532e4eabb11327e493ff90420c62e2ea3ddf90c06f70c7d1b1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8r3t2s5r",
@@ -317,7 +335,13 @@
     "level": 6,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:266138496321d1499747da162f9e41ca824f2514182f537ae49f530af7df634c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9e4g2b2m",
@@ -330,7 +354,13 @@
     "level": 7,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0513cf437625bc690c3c5351e6ae05e059bc314dae088bbf5d83f8a9e54b1b5a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9e7q5u3z",
@@ -360,16 +390,22 @@
     "ja": "初心者でも、ギターは楽しいよ。",
     "en": "Guitar is fun, even for beginners.",
     "alternatives": [
-      "Even as a beginner, I enjoy guitar.",
+      "Guitar is fun even for a beginner.",
       "Even for a beginner, guitar is fun."
     ],
-    "point": "Even as ~ で「〜でも」の譲歩",
+    "point": "even for ~ で「〜でも」の譲歩",
     "topic": "daily",
     "subtopic": "hobbies",
     "level": 6,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:539ca72b3e7eb2baaf9e9abc9bf61d0ed578bd96c026644c08722bf463031e82",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9n3a2b4a",

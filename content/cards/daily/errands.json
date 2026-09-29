@@ -25,14 +25,20 @@
     "id": "c_2d4w3w6q",
     "ja": "数日かかるかもしれません。",
     "en": "It may take a few days.",
-    "alternatives": ["It might take a few days to fix.", "It could take a few days."],
+    "alternatives": ["It might take a few days.", "It could take a couple of days."],
     "point": "見込みは may / could でやわらげる",
     "topic": "daily",
     "subtopic": "errands",
     "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2e7f6ae29818595a537858cdcc264f9ae99d92cb993e9e42bcb7bb3083658014",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2x3w9b6r",
@@ -64,7 +70,13 @@
     "level": 6,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2e29c41c7f68ee58f6685e86688c7d0e493888dd1cab4554ad061da4d194ad99",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2y7s6s5d",
@@ -80,7 +92,13 @@
     "level": 7,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ea378988bb745d856ca1bcf74c794ae2aba8a38e7d7adc91de302bec339297fc",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3d2w6x4x",
@@ -181,17 +199,20 @@
     "id": "c_5k3b4d9b",
     "ja": "パスポートを更新しなきゃ。",
     "en": "I need to renew my passport.",
-    "alternatives": [
-      "I have to renew my passport.",
-      "I need to get my passport renewed."
-    ],
+    "alternatives": ["I have to renew my passport.", "My passport needs renewing."],
     "point": "必要なことは need to + 動詞",
     "topic": "daily",
     "subtopic": "errands",
-    "level": 6,
+    "level": 3,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a91da994c09a65e477e6e7710fccd3c0305ca2b7b4ced259532442ab1cee2942",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5m9m9z3c",
@@ -207,7 +228,13 @@
     "level": 7,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fe7603f80ebdbf5bc6668e4f25cbf7ee18de283d24cbed11ab95b49ed6cb8592",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5x9v6x2q",
@@ -235,14 +262,20 @@
     "id": "c_7f4b2z3x",
     "ja": "必要なのは、身分証明書ですね。",
     "en": "What you need is an ID.",
-    "alternatives": ["What you need is some ID.", "What you'll need is photo ID."],
+    "alternatives": ["What you need is some ID.", "What you'll need is ID."],
     "point": "What で始めて「必要なのは〜」と言う",
     "topic": "daily",
     "subtopic": "errands",
     "level": 6,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:665113b29c1a7862dd4a0fddaabbd57dbf1c477f465109804d4f99abb4cf8615",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8e3a2h6z",

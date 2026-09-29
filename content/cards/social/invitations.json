@@ -46,8 +46,7 @@
     "en": "I don't feel like going out.",
     "alternatives": [
       "I'm not really up for going out.",
-      "I'm not in the mood for going out.",
-      "I don't feel like going out tonight."
+      "I'm not in the mood to go out."
     ],
     "point": "feel like の後ろは -ing",
     "topic": "social",
@@ -55,7 +54,13 @@
     "level": 7,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:83ff099f80977200c7d57c911785ee8ca387dc0016bc2eb901b5cad60a4b8ede",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2w5c5n9u",
@@ -245,7 +250,13 @@
     "level": 6,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:18ecf54389249c36bccbea48af923949853d0fcf38a4743b99d97157a95bc7a6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4z3y6s7p",
@@ -280,7 +291,13 @@
     "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6a0b0cf7481829ef03041f9a5001dd01c72bca6388c287b6fa8322ecd2c12b2b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5a6t6q6g",
@@ -296,7 +313,13 @@
     "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:49b95da22650351ce16c642fcacccb643dc7a96760d06ac03ed4b357e3893245",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5d9w8b2q",
@@ -309,7 +332,13 @@
     "level": 7,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a5e6b25e0a2e7853b7ebe82d795f821abe51b2edc7a5733892328ff83b66a82e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5q7k2t8g",
@@ -366,7 +395,13 @@
     "level": 6,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ab7f6961583fc624200a83d79d46ec625999f5b616e2a65079e1972c4e319bfa",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8v8d5f7m",

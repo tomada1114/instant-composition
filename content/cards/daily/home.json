@@ -225,18 +225,24 @@
     "point": "過去の後悔は If + had + 過去分詞",
     "topic": "daily",
     "subtopic": "home",
-    "level": 7,
+    "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3935aba74eadd503f70aa002511f69d0060574d56d0517274c817291c6650a27",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8t2j5e9g",
     "ja": "朝からずっと片付けてるんだ。",
-    "en": "I've been tidying since morning.",
+    "en": "I've been tidying since this morning.",
     "alternatives": [
-      "I've been cleaning up all morning.",
-      "I've been tidying up since this morning."
+      "I've been tidying up since this morning.",
+      "I've been cleaning up all morning."
     ],
     "point": "since と継続中の動作は現在完了進行形",
     "topic": "daily",
@@ -244,7 +250,13 @@
     "level": 7,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b2583e77df61f7e88b7f13244fde11d4b4c3f651be22b2daf27f36d0208b0080",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8t5s7m3q",
@@ -279,7 +291,13 @@
     "level": 6,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fad9b3b0e9346dc2df7f7c87a1b24a6c084bc3d099c75ac5147c6b41f3b3f178",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8w4k2t2f",
@@ -295,7 +313,13 @@
     "level": 7,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:83f62405c0dfefddebe9f430f2d16b794c57a0ef4d9c3f1610a83659037b65aa",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8x7n3r6c",
@@ -311,7 +335,13 @@
     "level": 6,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c540c6d16abcab74582e5620647bfe132f315f1d1f34b637cfa809ab65d67ca8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9c4e8j3t",
@@ -357,18 +387,24 @@
   {
     "id": "c_9e6b7h8b",
     "ja": "食べ終わったら皿を洗うよ。",
-    "en": "I'll wash up once I've eaten.",
+    "en": "I'll do the dishes once I've eaten.",
     "alternatives": [
       "I'll do the dishes when I'm done eating.",
       "I'll wash the dishes once I finish eating."
     ],
-    "point": "as soon as の後は未来でも現在形",
+    "point": "once の後は未来でも現在形（完了形も可）",
     "topic": "daily",
     "subtopic": "home",
     "level": 6,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bac53cdaac4e2d5113f8bd0c4085ed0ce5f8b0355ccdd7f131ffbdc5c465259c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9j7a6h3t",

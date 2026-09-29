@@ -51,7 +51,13 @@
     "level": 6,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:204bbf713c05d3970ec6e493a2ae959ab2e1f6b592321301f28e38aae96391f5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2u7j4e8j",
@@ -83,7 +89,13 @@
     "level": 7,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:975a5446ed59c0556b61fcd73d7756946e22316a426958d7c03029c6079f8cbf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4d7b4u6z",
@@ -190,17 +202,20 @@
     "id": "c_5k9w7t3j",
     "ja": "鍵がどこか、心当たりある？",
     "en": "Any idea where my key is?",
-    "alternatives": [
-      "Do you know where my key is?",
-      "Can you tell me where my key is?"
-    ],
+    "alternatives": ["Do you know where my key is?", "Any idea where I left my key?"],
     "point": "間接疑問は where + 主語 + 動詞の順",
     "topic": "social",
     "subtopic": "favors",
-    "level": 6,
+    "level": 4,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fdaacf7b18880564322d549a7cc353198e2735786d088082143d912673a95fe6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5x6r9w9x",
@@ -273,7 +288,13 @@
     "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:051e2f4c13a0d80e2146b8b6b4696b020c8075bc6a6da09222a6200608a5923d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7b6a4w6z",
@@ -305,10 +326,16 @@
     "point": "過去の仮定は if + 過去完了、would have + 過去分詞",
     "topic": "social",
     "subtopic": "favors",
-    "level": 7,
+    "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b66b5f15a111e892bfa920e0ad171b23f8e264f2c929949c693d04176bad3235",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7v4r4b4x",
@@ -343,7 +370,13 @@
     "level": 7,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7db67e782ca1bce68ee2579ef6380db70f721f410ccd7823942548c4eb8284f9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9f8u8c9a",

@@ -164,15 +164,21 @@
     "alternatives": [
       "Could you tell me where security is?",
       "Can you tell me where security is?",
-      "Do you know where the security check is?"
+      "Any idea where security is?"
     ],
     "point": "where 以下は平叙文の語順（where security is）",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 6,
+    "level": 4,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:582febf17bef314bc27673572b1732eec34d433b5fadc11c1ec46862187f864b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6m3t3h7p",
@@ -229,7 +235,13 @@
     "level": 7,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cb1ca92203f52b3b4093d75c23b39f2ba6f8d27fda658049e3cbeb23e851860f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7h5r8u6j",
@@ -264,7 +276,13 @@
     "level": 6,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1b9bdc06671a19071fb664b9fe48f8e24b5e1c84bce5edd4db0335fc9da5708c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7z3p8r9n",
@@ -272,16 +290,21 @@
     "en": "What if I miss my connection?",
     "alternatives": [
       "What happens if I miss my connection?",
-      "What will happen if I miss the connection?",
       "What if I miss the connecting flight?"
     ],
     "point": "if 節は未来のことでも現在形（miss）",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 7,
+    "level": 5,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6b7cba812b61b950791c66a77925ac961973dd78dee9e910bd1968d10ad703d3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7z8w3v9p",
@@ -342,7 +365,13 @@
     "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6dd283bdbba710403891ab434aba7ad3ff4dd463816f02c2a17c757cddeb0331",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9n3w7k9b",
@@ -368,7 +397,7 @@
     "ja": "機内持ち込みには大きすぎます。",
     "en": "It's too big to carry on.",
     "alternatives": [
-      "It's too large to take on board.",
+      "It's too large for a carry-on.",
       "This is too big for carry-on.",
       "It's too big to bring on the plane."
     ],
@@ -378,7 +407,13 @@
     "level": 7,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6e667fd41d2e1e5abbd90a35ecc02ff55fe18fac63b9de5d052262f314c599c0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9y8a8b2y",

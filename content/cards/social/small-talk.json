@@ -115,7 +115,13 @@
     "level": 7,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dd55d3615aec58b28a73e7043460c1ae81852a8f81586a7c55adf851b9250e2e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4m9c8r7f",
@@ -214,7 +220,13 @@
     "level": 7,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c82fa557c0e5bb7e489b138cd8f16b7728eefab217dcb9432578cd3e29be09ba",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6a3r9v3p",
@@ -249,7 +261,13 @@
     "level": 6,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:80d46d5eaf986cd86f0c263e4594ff03bec00b5e8a10b7c2abc12c89ab21cc07",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6z3u5e5d",
@@ -274,14 +292,20 @@
     "id": "c_7a7n7k6e",
     "ja": "ケンに遊びに来いと言われた。",
     "en": "Ken told me to drop by.",
-    "alternatives": ["Ken asked me to stop by.", "Ken told me to come by."],
+    "alternatives": ["Ken told me to come by.", "Ken told me to come over."],
     "point": "tell + 人 + to do。drop by は「ちょっと寄る」",
     "topic": "social",
     "subtopic": "small-talk",
     "level": 7,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ea7dc6d38a23a5919fdd00fc9384c77ccad3cfbdf79164517b10872440145dc3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7h9g6y3g",
@@ -357,7 +381,13 @@
     "level": 6,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5c244d1c15357941742a49315cd6cf70c726721e5416b41fabf41f4424a7feb5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8t5z4n7h",
@@ -411,6 +441,12 @@
     "level": 6,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:329ce380fcea0126a2eae36c61e0db84d5b13b71c3397245b83e586a484ddd8d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]
