@@ -1,0 +1,89 @@
+[
+  {
+    "id": "c_3x2k2s9c",
+    "ja": "このグラフを見てください。",
+    "en": "Please look at this graph.",
+    "alternatives": ["Take a look at this graph.", "Have a look at this graph."],
+    "point": "「見る」は look at＋対象",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 4,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4y6m5j6k",
+    "ja": "ご清聴に感謝します。",
+    "en": "Thank you for listening.",
+    "alternatives": ["Thanks for listening.", "Thank you for your attention."],
+    "point": "for のあとは動名詞（-ing）",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 4,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6k4u5g2g",
+    "ja": "同僚に資料を見てもらった。",
+    "en": "I had a coworker check them.",
+    "alternatives": [
+      "I got a coworker to check them.",
+      "A coworker checked them for me."
+    ],
+    "point": "have＋人＋原形で「〜してもらう」",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 5,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7b5d8k8z",
+    "ja": "背景の説明から始めます。",
+    "en": "I'll start by explaining the background.",
+    "alternatives": [
+      "Let me start by explaining the background.",
+      "I'll begin by explaining the background."
+    ],
+    "point": "by のあとは動名詞（-ing）",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 5,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7f4m2h2g",
+    "ja": "利点は二つあります。",
+    "en": "There are two advantages to this.",
+    "alternatives": ["This has two advantages.", "This plan has two benefits."],
+    "point": "利点が二つなので There are",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 5,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8h4k8a6n",
+    "ja": "最近これを調べています。",
+    "en": "I've been studying this lately.",
+    "alternatives": [
+      "I've been looking into this lately.",
+      "Lately I've been researching this."
+    ],
+    "point": "今も続く動作は have been -ing",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 4,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]

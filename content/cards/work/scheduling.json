@@ -16,6 +16,22 @@
     "stamps": {}
   },
   {
+    "id": "c_6m5j9g4d",
+    "ja": "遅れても木曜で大丈夫です。",
+    "en": "Even if we're late, Thursday's fine.",
+    "alternatives": [
+      "Thursday's fine even if we run late.",
+      "Thursday works even if we're late."
+    ],
+    "point": "Even if のあとは未来のことも現在形",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6y4d7x9c",
     "ja": "月曜の会議は中止です。",
     "en": "The meeting on Monday is canceled.",
@@ -44,6 +60,35 @@
     "subtopic": "scheduling",
     "level": 4,
     "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6z6v6m5z",
+    "ja": "会議は先送りになりました。",
+    "en": "The meeting's been pushed back.",
+    "alternatives": [
+      "The meeting has been postponed.",
+      "They pushed the meeting back."
+    ],
+    "point": "push back は「延期する」の定番句動詞",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9q6y6y3q",
+    "ja": "会議室、取っておきました。",
+    "en": "I've reserved a meeting room.",
+    "alternatives": ["I booked a meeting room.", "I've booked us a room."],
+    "point": "初めて話に出る部屋なので a を使う",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
     "stamps": {}
   }

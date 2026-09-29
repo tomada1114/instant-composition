@@ -1,0 +1,89 @@
+[
+  {
+    "id": "c_3q2v6z6c",
+    "ja": "議事録は私が取ります？",
+    "en": "Shall I take the minutes?",
+    "alternatives": ["Should I take the minutes?", "Want me to take the minutes?"],
+    "point": "議事録は複数形 minutes で the を付ける",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 4,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3v3p9v2a",
+    "ja": "予算があれば増員するのに。",
+    "en": "If we had funds, we'd hire.",
+    "alternatives": [
+      "If we had the budget, we'd hire.",
+      "We'd hire if we had the budget."
+    ],
+    "point": "if 節は過去形、主節は would＋原形",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 5,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3v7k9m4n",
+    "ja": "先に部長に確認すべきです。",
+    "en": "We should ask the director first.",
+    "alternatives": [
+      "We need to ask the director first.",
+      "We'd better check with the director first."
+    ],
+    "point": "should は「〜したほうがいい」という助言",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 5,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7z3h6x8b",
+    "ja": "次の会議は私が進行します。",
+    "en": "I'll lead the next meeting.",
+    "alternatives": ["I'll run the next meeting.", "I'm going to chair the next one."],
+    "point": "その場で決めた申し出は will",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 5,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8m3s5s4j",
+    "ja": "議題は残り二つです。",
+    "en": "There are two items left.",
+    "alternatives": ["Two items are left.", "We have two items left."],
+    "point": "複数のものには There are",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 4,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8t9p7n4e",
+    "ja": "これが言っていた案です。",
+    "en": "Here's the plan I mentioned.",
+    "alternatives": [
+      "This is the plan I mentioned.",
+      "That's the plan I talked about."
+    ],
+    "point": "目的語の関係詞は省ける",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 4,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]

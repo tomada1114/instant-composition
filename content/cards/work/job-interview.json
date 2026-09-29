@@ -1,0 +1,92 @@
+[
+  {
+    "id": "c_4v2c8p6a",
+    "ja": "残業はありますか？",
+    "en": "Is there any overtime?",
+    "alternatives": ["Do you have any overtime?", "Do people work overtime here?"],
+    "point": "「残業」は数えない名詞なので any overtime",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 4,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5y9q6v6d",
+    "ja": "昨年、売上を倍にしました。",
+    "en": "I doubled our sales last year.",
+    "alternatives": [
+      "Last year, I doubled our sales.",
+      "I increased our sales twofold last year."
+    ],
+    "point": "last year があるので過去形",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 5,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6u2p2r4a",
+    "ja": "英語でメールが書けます。",
+    "en": "I can handle emails in English.",
+    "alternatives": [
+      "I can write emails in English.",
+      "I'm able to write emails in English."
+    ],
+    "point": "handle は「うまく扱える」と言うときの動詞",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 5,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7j6g3g7r",
+    "ja": "人に教えるのが得意です。",
+    "en": "I'm good at teaching others.",
+    "alternatives": [
+      "I'm good at teaching people.",
+      "Teaching others is one of my strengths."
+    ],
+    "point": "be good at のあとは動名詞（-ing）",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 4,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8r5c4r7t",
+    "ja": "勤務地を教えてください。",
+    "en": "Please tell me where I'd work.",
+    "alternatives": [
+      "Could you tell me where I'd work?",
+      "I'd like to know where I'd work."
+    ],
+    "point": "間接疑問は where のあとが平叙文の語順",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 4,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9c8n4c3x",
+    "ja": "上司に応募を勧められた。",
+    "en": "My boss encouraged me to apply.",
+    "alternatives": ["My boss told me to apply.", "My boss suggested I apply."],
+    "point": "encourage 人 to do の形",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 5,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]

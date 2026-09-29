@@ -1,0 +1,89 @@
+[
+  {
+    "id": "c_4j3a7e5g",
+    "ja": "30分も保留のままです。",
+    "en": "I've been holding for 30 minutes.",
+    "alternatives": [
+      "I've been on hold for 30 minutes.",
+      "I've been waiting for half an hour."
+    ],
+    "point": "続いている動作は have been -ing",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6t4z4z4t",
+    "ja": "もっとゆっくりお願い！",
+    "en": "Could you speak more slowly?",
+    "alternatives": ["Can you slow down a little?", "Please speak a bit slower."],
+    "point": "slowly の比較級は more slowly",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 5,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8h7h9v7u",
+    "ja": "通話は録音されています。",
+    "en": "This call is being recorded.",
+    "alternatives": ["This call is recorded.", "We're recording this call."],
+    "point": "「今〜されている」は be being＋過去分詞",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 5,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8p9h8d4n",
+    "ja": "戻ったらお電話させます。",
+    "en": "He'll call when he's back.",
+    "alternatives": [
+      "He'll call you when he returns.",
+      "When he gets back, he'll call you."
+    ],
+    "point": "when 節は未来のことでも現在形",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9e5w8d7q",
+    "ja": "回線が悪いと思います。",
+    "en": "I think the line's bad.",
+    "alternatives": [
+      "I think the connection is bad.",
+      "I think we have a bad connection."
+    ],
+    "point": "I think のあとの that 節は that を省ける",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9z4p4h6u",
+    "ja": "どなたか教えてください。",
+    "en": "May I ask who's calling?",
+    "alternatives": ["Could you tell me who's calling?", "Can I ask who this is?"],
+    "point": "電話では Who are you? でなく who's calling",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]
