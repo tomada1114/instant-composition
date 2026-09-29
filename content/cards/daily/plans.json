@@ -66,6 +66,22 @@
     }
   },
   {
+    "id": "c_3u2w3a3f",
+    "ja": "彼女が提案した日は、私が出張で不在の日なんだ。",
+    "en": "The day she suggested is when I'll be away.",
+    "alternatives": [
+      "The day she suggested is a day I'll be away.",
+      "I'll be away on the day she suggested."
+    ],
+    "point": "「日」を後ろから説明。関係詞は省略できる",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 8,
+    "grammar": ["nested-clauses", "relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3v3n5a5p",
     "ja": "幹事に頼んで、同窓会を遅らせてもらったよ。",
     "en": "I got the organizer to push the reunion back.",
@@ -149,6 +165,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_4k5c8b6d",
+    "ja": "行きたいのに。今夜先約さえなければなあ。",
+    "en": "I'd love to come. If only I weren't booked tonight.",
+    "alternatives": [
+      "I'd love to come. I wish I didn't have plans tonight.",
+      "If only I were free tonight, I'd love to come."
+    ],
+    "point": "if only の後は過去形。be動詞は I でも were",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_4t5n6u9y",
@@ -280,6 +312,22 @@
     }
   },
   {
+    "id": "c_5d9y4j7b",
+    "ja": "大事なのは、みんなが来られることだよ。",
+    "en": "What matters is that everyone can make it.",
+    "alternatives": [
+      "The important thing is that everyone can come.",
+      "All that matters is that everyone can make it."
+    ],
+    "point": "「大事なのは〜」は What matters is that 節で言える",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5j5w6p7z",
     "ja": "昨日の約束、忘れてた。ごめん！",
     "en": "Sorry, I forgot about yesterday's plan.",
@@ -300,6 +348,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5p2h9r8p",
+    "ja": "金曜のほうが都合がいいんだけど、変えられる？",
+    "en": "Friday would suit me better. Could we switch?",
+    "alternatives": [
+      "Friday works better for me. Can we change it?",
+      "Friday would be better for me. Could we move it?"
+    ],
+    "point": "「より都合がいい」は suit / work better で表す",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5p9y4v4m",
@@ -390,6 +454,22 @@
     }
   },
   {
+    "id": "c_7d2k3e5s",
+    "ja": "君が言ってた店、日曜は定休日らしいよ。",
+    "en": "The place you mentioned is closed on Sundays, apparently.",
+    "alternatives": [
+      "Apparently, the restaurant you mentioned is closed Sundays.",
+      "I hear the place you mentioned is closed on Sundays."
+    ],
+    "point": "「君が言ってた店」は関係詞 that を省いて the place you mentioned",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7f9v5y7p",
     "ja": "ごめん、土曜は約束を断らなきゃいけない。",
     "en": "Sorry, I have to back out of Saturday's plans.",
@@ -412,6 +492,22 @@
     }
   },
   {
+    "id": "c_7m2a5k6r",
+    "ja": "彼女が約束をすっぽかすなんて、夢にも思わなかった。",
+    "en": "Little did I dream she'd stand me up.",
+    "alternatives": [
+      "I never imagined she would stand me up.",
+      "Little did I imagine she'd blow off our plans."
+    ],
+    "point": "Little を文頭に置くと、did I dream の語順になる",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7p7r8b6h",
     "ja": "今めちゃ忙しいし、金曜の飲み会は休もうかな。",
     "en": "I'm swamped, so I'm thinking of skipping Friday's drinks.",
@@ -432,6 +528,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7r7n3r7a",
+    "ja": "彼女が土曜に来られないなんて、思いもしなかったよ。",
+    "en": "Little did I know she couldn't make it on Saturday.",
+    "alternatives": [
+      "I never dreamed she couldn't make it on Saturday.",
+      "I had no idea she couldn't make it on Saturday."
+    ],
+    "point": "Little を文頭に出すと did I know と倒置になる",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7x5k3e9v",
@@ -539,6 +651,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8t6j6k7p",
+    "ja": "今夜の飲み会、正直パスしたい。家にいられたらなあ。",
+    "en": "I wish I could just stay in tonight.",
+    "alternatives": [
+      "If only I could stay in tonight.",
+      "I wish I could stay home tonight."
+    ],
+    "point": "今の願いは wish のあとを過去形（could）にする",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 10,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8w9b4h4d",

@@ -104,6 +104,22 @@
     }
   },
   {
+    "id": "c_2u7w5t6d",
+    "ja": "リリースを止めているのは、法務の承認待ちです。",
+    "en": "What's holding up the launch is legal's sign-off.",
+    "alternatives": [
+      "It's legal sign-off that's holding up the launch.",
+      "The launch is being held up by legal sign-off."
+    ],
+    "point": "What 節を主語にして「止めているのは〜」を強調する",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["nested-clauses", "cleft-emphasis"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2w2r5x9h",
     "ja": "このバグが最優先です。",
     "en": "This bug is top priority.",
@@ -356,6 +372,22 @@
     }
   },
   {
+    "id": "c_5v7n5j8n",
+    "ja": "早く機能を絞っていたら、今日出せていたのに。",
+    "en": "If we'd cut scope sooner, we'd be shipping today.",
+    "alternatives": [
+      "Had we cut scope sooner, we'd be shipping today.",
+      "If we'd scoped it down earlier, we'd be live today."
+    ],
+    "point": "過去の仮定 + 今の結果は if had 過去分詞, would be -ing",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["mixed-conditional", "third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5v8k2b7w",
     "ja": "PMはその要望を見落としたのかもしれない。",
     "en": "The PM might have missed that request.",
@@ -420,6 +452,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_6d6z3z3x",
+    "ja": "スコープを削っていなかったら、今ごろまだQAで足止めだよ。",
+    "en": "If we hadn't cut scope, we'd still be stuck in QA.",
+    "alternatives": [
+      "Had we not cut scope, we'd still be stuck in QA.",
+      "If we hadn't trimmed the scope, we'd still be stuck in QA."
+    ],
+    "point": "過去の仮定は had p.p.、今の結果は would be",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 10,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6d8v6v2z",
@@ -510,6 +558,22 @@
     }
   },
   {
+    "id": "c_7g4h9b5x",
+    "ja": "誰がお客さんに、リリースが遅れそうだと伝えたの？",
+    "en": "Who told the client the release was likely to slip?",
+    "alternatives": [
+      "Who let the client know the release might slip?",
+      "Who told the client that the release would probably slip?"
+    ],
+    "point": "「遅れそう」は likely to slip。slip は予定が遅れる意味",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 9,
+    "grammar": ["nested-clauses", "reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7j5z8r8b",
     "ja": "来週出す機能に、バグがあるよ。",
     "en": "The feature shipping next week has a bug.",
@@ -554,6 +618,22 @@
     }
   },
   {
+    "id": "c_8c8s3u5y",
+    "ja": "営業が言ってきた時には、うちはもうスコープを固めていた。",
+    "en": "We'd already locked the scope by the time sales asked.",
+    "alternatives": [
+      "Scope was already frozen when sales came to us.",
+      "By the time sales asked, we'd already frozen the scope."
+    ],
+    "point": "「言ってきた時にはもう」は by the time と過去完了",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 9,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8h4c5a8q",
     "ja": "決済は来月にずれ込むかもとPMが言ってた。",
     "en": "The PM said payments might slip to next month.",
@@ -574,6 +654,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8n7e3k4a",
+    "ja": "リリース前に、私が法務に承認してもらうよう動きます。",
+    "en": "I'll get legal to sign off before we ship.",
+    "alternatives": [
+      "I'll have legal sign off before we release.",
+      "I'll get legal to approve it before launch."
+    ],
+    "point": "get + 人 + to 動詞で「〜してもらう」。sign off は承認する",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 10,
+    "grammar": ["causatives", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8r4u2t9v",

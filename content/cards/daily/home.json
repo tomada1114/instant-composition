@@ -44,6 +44,39 @@
     }
   },
   {
+    "id": "c_2h3b4d6a",
+    "ja": "妹は、脚立がどこにも見当たらないって言ってたよ。",
+    "en": "My sister said the stepladder was nowhere to be found.",
+    "alternatives": [
+      "My sister said she couldn't find the stepladder anywhere.",
+      "My sister said she couldn't find the stepladder."
+    ],
+    "point": "said の後は時制を一つ過去へ。is ではなく was",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 10,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2k9v2g8h",
+    "ja": "うちでは、食洗機を半分空のまま回すことはまずないよ。",
+    "en": "Rarely do we run the dishwasher half empty.",
+    "alternatives": [
+      "Hardly ever do we run the dishwasher half empty.",
+      "We hardly ever run the dishwasher half empty.",
+      "We almost never run the dishwasher half empty."
+    ],
+    "point": "Rarely を文頭に出すと do we の倒置になる",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2p6z7e6m",
     "ja": "彼女がうんと言ってたら、今ごろ食洗機があるのに。",
     "en": "If she'd said yes, we'd have a dishwasher now.",
@@ -64,6 +97,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3b5c9q8b",
+    "ja": "ガラクタの溜まる引き出し、ずっと整理しなきゃと思ってた。",
+    "en": "I've been meaning to clear the drawer where junk piles up.",
+    "alternatives": [
+      "I've been meaning to sort out that junk drawer for ages.",
+      "I've been meaning to tidy up the drawer full of junk."
+    ],
+    "point": "ずっと続いてる気持ちは have been meaning to で言う",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 9,
+    "grammar": ["present-perfect-continuous", "relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_3b8z5h5q",
@@ -105,6 +154,23 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3g6c7y5y",
+    "ja": "帰ったら、妹がもう皿洗いを済ませてたよ。",
+    "en": "My sister had already done the dishes.",
+    "alternatives": [
+      "My sister had already washed the dishes.",
+      "My sister had already finished the dishes.",
+      "I found my sister had already done the dishes."
+    ],
+    "point": "帰る前に済んでいたので had done（過去完了）",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_3g6w5e4d",
@@ -239,6 +305,22 @@
     }
   },
   {
+    "id": "c_5k3b3h6n",
+    "ja": "みんなを起こしたくなくて、掃除機は我慢したよ。",
+    "en": "Not wanting to wake anyone, I held off vacuuming.",
+    "alternatives": [
+      "I held off on vacuuming so I wouldn't wake anyone.",
+      "I didn't vacuum, since I didn't want to wake anyone."
+    ],
+    "point": "分詞構文は主語が主節と同じ。理由は文頭の Not wanting で",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5q6q3c8j",
     "ja": "掃除、ちょっと休憩しよう。",
     "en": "Let's take a break from cleaning.",
@@ -300,6 +382,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_6h7t7j8q",
+    "ja": "リビングの模様替え、前からやろうと思ってた。",
+    "en": "I've been meaning to rearrange the living room.",
+    "alternatives": [
+      "I've been planning to redo the living room.",
+      "I've been meaning to move the living room furniture around."
+    ],
+    "point": "「前から思ってた」は I've been meaning to。過去形にしない",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6j7s5c5k",

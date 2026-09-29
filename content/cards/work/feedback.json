@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2e6s7v8v",
+    "ja": "最後のセクション、少し削ったほうがいいかもしれません。",
+    "en": "You might want to trim down the last section.",
+    "alternatives": [
+      "The last section could be trimmed down a little.",
+      "Maybe cut the last section down a bit."
+    ],
+    "point": "削る は trim down / cut down の句動詞で柔らかく",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["phrasal-verbs", "hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2m3d9f8c",
     "ja": "どこを削ればいいか、教えてもらえますか？",
     "en": "Could you tell me what I should cut?",
@@ -264,6 +280,38 @@
     }
   },
   {
+    "id": "c_6g5n5g5j",
+    "ja": "今週ずっと指摘を考えていましたが、おっしゃる通りでした。",
+    "en": "I've been mulling over your comments all week, and you were right.",
+    "alternatives": [
+      "I've spent all week thinking over your comments, and you were right.",
+      "I've been thinking about your feedback all week, and you were right."
+    ],
+    "point": "all week の継続は現在完了進行形、結論は過去形",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6h5v2a6h",
+    "ja": "彼女、反対していた人たちまで味方につけたんだよ。すごいよね。",
+    "en": "She even won over the people who'd opposed it.",
+    "alternatives": [
+      "She even won over the ones who had been against it.",
+      "She even talked around the people who had opposed it."
+    ],
+    "point": "反対していた側は先に起きたので過去完了 had opposed",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["phrasal-verbs", "tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6j6y2b9r",
     "ja": "指摘されたスライド、もう全部直しました。",
     "en": "I've already fixed all the slides you flagged.",
@@ -410,5 +458,37 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9b5e9d3j",
+    "ja": "助言を聞いていれば、今こんなに苦労していないのに。",
+    "en": "If I'd taken your advice, I wouldn't be struggling now.",
+    "alternatives": [
+      "If I'd listened to you, I wouldn't be struggling now.",
+      "Had I taken your advice, I wouldn't be struggling now."
+    ],
+    "point": "過去の仮定 if 節に、今の結果は would be ~ing",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9s9c4k6b",
+    "ja": "どこで間違えたのか、順を追って教えてもらえますか？",
+    "en": "Could you walk me through where I went wrong?",
+    "alternatives": [
+      "Can you take me through where I went wrong?",
+      "Could you go over where I went wrong?"
+    ],
+    "point": "順を追って説明する は walk 人 through",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]

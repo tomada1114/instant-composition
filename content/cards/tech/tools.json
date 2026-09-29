@@ -198,6 +198,22 @@
     }
   },
   {
+    "id": "c_3q6e9v4m",
+    "ja": "僕らは設定を見直して、ビルド時間を半分にした。",
+    "en": "Having reworked the config, we cut build times in half.",
+    "alternatives": [
+      "After reworking the config, we halved our build times.",
+      "We reworked the config and cut build times in half."
+    ],
+    "point": "先に終えた動作は Having＋過去分詞で前置きできる",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3u8n9q3r",
     "ja": "リンターの設定を順を追って説明してもらえますか？",
     "en": "Could you walk me through your linter setup?",
@@ -331,6 +347,22 @@
     }
   },
   {
+    "id": "c_5t4k3p8r",
+    "ja": "この拡張機能、今朝からエディタを固まらせてる。",
+    "en": "This extension has been freezing my editor since this morning.",
+    "alternatives": [
+      "This extension's been making my editor freeze since this morning.",
+      "Since this morning, this extension has kept freezing my editor."
+    ],
+    "point": "「今朝から」続いているので現在完了進行形にする",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6k7d8h5x",
     "ja": "今、拡張機能を入れてるところ。",
     "en": "I'm installing an extension now.",
@@ -375,6 +407,22 @@
     }
   },
   {
+    "id": "c_8b7u8q3c",
+    "ja": "ステージングのデプロイ、もう一時間も固まってるよ。",
+    "en": "The staging deploy has been hanging for a good hour.",
+    "alternatives": [
+      "The staging deploy's been stuck for a good hour.",
+      "The staging deploy has been stuck for over an hour now."
+    ],
+    "point": "「a good hour」で「たっぷり一時間」の含みが出せる",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8f2k5v8h",
     "ja": "ターミナルで日本語が打てないんだ。",
     "en": "I can't type Japanese in the terminal.",
@@ -417,6 +465,22 @@
     }
   },
   {
+    "id": "c_8p9g6j8g",
+    "ja": "デフォルト設定をいじることは、まずないですね。",
+    "en": "Rarely do I ever touch the default settings.",
+    "alternatives": [
+      "I hardly ever touch the default settings.",
+      "I almost never change the default settings."
+    ],
+    "point": "Rarely を文頭に出すと、do I ever touch の倒置になる",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8t8j4m4d",
     "ja": "検索の一番速いやり方って何ですか？",
     "en": "What's the fastest way to search?",
@@ -437,6 +501,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9m6v6x6g",
+    "ja": "最初から依存のバージョンを固定しとけばよかった。",
+    "en": "I wish I'd pinned the dependency versions from the start.",
+    "alternatives": [
+      "If only I'd locked the dependency versions from day one.",
+      "I should have pinned the dependency versions from the beginning."
+    ],
+    "point": "過去の後悔は wish + 過去完了。pin は「固定する」",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 10,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9p3z5x9w",
@@ -460,6 +540,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9s4z6k7s",
+    "ja": "プラグインを更新するまでは、全部ちゃんと動いてたのに。",
+    "en": "Everything was working fine until I updated the plugin.",
+    "alternatives": [
+      "It all worked fine until I updated the plugin.",
+      "Everything ran smoothly until I updated the plugin."
+    ],
+    "point": "更新した時点は過去形、それ以前の状態は過去進行形",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9x3j8p2u",

@@ -22,6 +22,22 @@
     }
   },
   {
+    "id": "c_2d9n6m4r",
+    "ja": "その数字、私が事前に確認しておくべきでした。",
+    "en": "I should have vetted those figures beforehand.",
+    "alternatives": [
+      "I ought to have checked those numbers in advance.",
+      "I should have checked those numbers ahead of time."
+    ],
+    "point": "過去の後悔は should have + 過去分詞",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 8,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2m6k5y3m",
     "ja": "最後に、私が今日の決定をまとめます。",
     "en": "Finally, I'll summarize today's decisions.",
@@ -130,6 +146,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3q9b6h4y",
+    "ja": "あの数字、会議の前に私が見直しておくべきでした。",
+    "en": "I should have double-checked those figures before the meeting.",
+    "alternatives": [
+      "I should have gone over those numbers before the meeting.",
+      "I ought to have double-checked those figures before the meeting."
+    ],
+    "point": "「〜すべきだった」は should have + 過去分詞",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 9,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_3x9z5j6w",
@@ -431,6 +463,22 @@
     }
   },
   {
+    "id": "c_6w7t6g8n",
+    "ja": "前回スコープを固めていれば、今こんなに揉めていないのに。",
+    "en": "If we'd nailed scope last time, we wouldn't be arguing now.",
+    "alternatives": [
+      "If we'd settled the scope last time, we wouldn't be arguing now.",
+      "We wouldn't be arguing now if we'd nailed the scope last time."
+    ],
+    "point": "過去の仮定 + 今の結果は if 節 had done、主節 would be",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 10,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7h4t4a5m",
     "ja": "この件、もう1時間も話してますね。",
     "en": "We've been discussing this for an hour.",
@@ -517,6 +565,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8d2v4h8u",
+    "ja": "会議の前に、皆さんに一度確認しておくべきでした。",
+    "en": "I should have run it by everyone before the meeting.",
+    "alternatives": [
+      "I should have checked with everyone before the meeting.",
+      "I ought to have run it by everyone before the meeting."
+    ],
+    "point": "run it by ～ で「～に確認する」。後悔は should have + 過去分詞",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 10,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8d9k9u8f",

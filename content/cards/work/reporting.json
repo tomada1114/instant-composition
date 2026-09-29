@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2s4g7j4g",
+    "ja": "遅れの原因は、私たちの見積もりが甘かったことです。",
+    "en": "What caused the delay was our overly optimistic estimate.",
+    "alternatives": [
+      "It was our overly optimistic estimate that caused the delay.",
+      "The delay was caused by our overly optimistic estimate."
+    ],
+    "point": "What で始めて、原因を文末に置いて強調する",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3m4d2m3h",
     "ja": "新しい方法のほうがずっと速いです。",
     "en": "The new way is much faster.",
@@ -39,6 +55,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3x6f4q7j",
+    "ja": "午前中ずっと取り組んでいますが、まだ解決できていません。",
+    "en": "I've been at it all morning and can't crack it.",
+    "alternatives": [
+      "I've spent all morning on it and still can't solve it.",
+      "I've been working on it all morning without success."
+    ],
+    "point": "「ずっと〜している」は現在完了進行形。at it は「取り組んで」",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 9,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4c7u6z3t",
+    "ja": "遅れそうなら、早めに知らせてください。",
+    "en": "Tell me early if you're running late.",
+    "alternatives": [
+      "Let me know early if you're running late.",
+      "If you're late, let me know early."
+    ],
+    "point": "未来のことでも if 節は現在形（will を使わない）",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_4g8j7c8j",
@@ -151,6 +199,22 @@
     }
   },
   {
+    "id": "c_5k6p4r3m",
+    "ja": "部長、正直、この納期はかなり厳しいかと思うのですが。",
+    "en": "Honestly, I'm afraid this deadline might be a stretch.",
+    "alternatives": [
+      "To be honest, I'm afraid this deadline may be a bit tight.",
+      "Frankly, I'm not sure this deadline is realistic."
+    ],
+    "point": "I'm afraid と might で、言いにくい指摘を和らげる",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5m7k2f4w",
     "ja": "私があなたなら、今すぐ部長を巻き込みますね。",
     "en": "If I were you, I'd loop in the director now.",
@@ -195,6 +259,22 @@
     }
   },
   {
+    "id": "c_5v4x5j8p",
+    "ja": "この数字、どう出したか順に説明してもらえますか？",
+    "en": "Could you walk me through how you got this?",
+    "alternatives": [
+      "Could you go over how you got this number?",
+      "Can you take me through how you got this number?"
+    ],
+    "point": "間接疑問は how you got と平叙の語順にする",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["indirect-questions", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5y8a2g3x",
     "ja": "営業は締め切りの延長を検討中です。",
     "en": "Sales is thinking about extending the deadline.",
@@ -215,6 +295,39 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_6a4u7g3g",
+    "ja": "終わったら、状況をお伝えしますね。",
+    "en": "I'll update you when I'm done.",
+    "alternatives": [
+      "I'll let you know when I finish.",
+      "When I'm done, I'll update you.",
+      "I'll report back once I'm done."
+    ],
+    "point": "未来のことでも when 節は現在形（I'm done）",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6e2s3p3w",
+    "ja": "部下に毎日報告するよう伝えました。",
+    "en": "I told my team to report daily.",
+    "alternatives": [
+      "I told my staff to report every day.",
+      "I told them to give me daily updates."
+    ],
+    "point": "tell + 人 + to do。「〜するよう伝えた」は tell を使う",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["verb-object-to-do", "past-simple"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6h6x2w3e",
@@ -341,6 +454,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8e8p8p3k",
+    "ja": "なぜうちのチームが遅れているのか、見当もつきません。",
+    "en": "I have no clue why our team is running behind.",
+    "alternatives": [
+      "I can't figure out why our team is falling behind.",
+      "I have no idea why our team is behind schedule."
+    ],
+    "point": "間接疑問は why のあとが平叙文の語順（is our team ではない）",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 9,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8m2r7h5d",

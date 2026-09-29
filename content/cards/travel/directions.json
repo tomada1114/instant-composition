@@ -67,6 +67,22 @@
     }
   },
   {
+    "id": "c_2p3n3e2z",
+    "ja": "私があの近道を知ってたら、20分は浮いたのに。",
+    "en": "If I'd known that shortcut, I'd have saved twenty minutes.",
+    "alternatives": [
+      "Had I known about that shortcut, I'd have saved twenty minutes.",
+      "If I'd known about that shortcut, I'd have saved twenty minutes."
+    ],
+    "point": "過去の事実と逆は If + had 過去分詞、would have 過去分詞",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 9,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2v6h3m8h",
     "ja": "この辺に両替所はありますか？",
     "en": "Is there a currency exchange around here?",
@@ -391,6 +407,38 @@
     }
   },
   {
+    "id": "c_5v4p7n6w",
+    "ja": "分かれ道に出くわすまで、まっすぐ進んでください。",
+    "en": "Keep going until you come across a fork.",
+    "alternatives": [
+      "Go straight until you come to a fork.",
+      "Keep going straight till you hit a fork."
+    ],
+    "point": "until 節は未来のことでも現在形",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 8,
+    "grammar": ["phrasal-verbs", "time-and-if-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6q9d5j8k",
+    "ja": "あそこに立ってる男の人に、道を教えてもらいなよ。",
+    "en": "Get the man standing over there to show you the way.",
+    "alternatives": [
+      "Have the man standing over there show you the way.",
+      "Ask the man standing over there to show you the way."
+    ],
+    "point": "「〜してもらう」は get 人 to 動詞、standing で人を後ろから説明",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 9,
+    "grammar": ["causatives", "post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7a3t5r3x",
     "ja": "橋を渡ったら、まっすぐ進んでください。",
     "en": "Once you cross the bridge, go straight.",
@@ -584,6 +632,22 @@
     }
   },
   {
+    "id": "c_8m8h3e5w",
+    "ja": "遠回りだけど、あっちの道のほうが安全ですよ。",
+    "en": "Although it's a detour, that road is safer.",
+    "alternatives": [
+      "It's a detour, but that road is safer.",
+      "Even though it's longer, that way is safer."
+    ],
+    "point": "Although の節には but を重ねない",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8y3h7r6y",
     "ja": "彼、あの角を左に曲がれって言ってたよ。",
     "en": "He told me to turn left at that corner.",
@@ -692,6 +756,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9g6t4v5t",
+    "ja": "彼が言ってた駅への近道って、どこですか？",
+    "en": "Where's the shortcut to the station he mentioned?",
+    "alternatives": [
+      "Where is the station shortcut he mentioned?",
+      "Where's the shortcut to the station he told us about?"
+    ],
+    "point": "he mentioned は shortcut を後ろから説明する",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 8,
+    "grammar": ["nested-clauses", "relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9t3e5z3m",

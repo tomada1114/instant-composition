@@ -1,5 +1,37 @@
 [
   {
+    "id": "c_2e6p7q2e",
+    "ja": "チェックアウトのとき、鍵を返し忘れました。",
+    "en": "I forgot to drop my key off at checkout.",
+    "alternatives": [
+      "I forgot to hand my key in when I checked out.",
+      "I left without returning my key."
+    ],
+    "point": "「返す」は drop off / hand in の句動詞で言える",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2e9a4j5k",
+    "ja": "寝る前に読むものを、何か貸してもらえませんか？",
+    "en": "Could you lend me something to read before bed?",
+    "alternatives": [
+      "Could I borrow something to read before bed?",
+      "Do you have anything I could read before bed?"
+    ],
+    "point": "something to read：名詞のあとに不定詞を置く",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 8,
+    "grammar": ["infinitives", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2h7a4r2q",
     "ja": "ミニバーの料金、先に確認しておけばよかった。",
     "en": "I wish I'd checked the minibar charges first.",
@@ -22,6 +54,22 @@
     }
   },
   {
+    "id": "c_2s3h4g3z",
+    "ja": "朝6時に、部屋に電話して起こしてもらえますか？",
+    "en": "Could you ring my room at six to wake me up?",
+    "alternatives": [
+      "Could I get a wake-up call at six?",
+      "Would you give me a wake-up call at six?"
+    ],
+    "point": "「起こす」は wake me up、代名詞は句動詞の間に入る",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3a7c3u7z",
     "ja": "部屋のエアコンに問題があります。",
     "en": "There's a problem with my air conditioner.",
@@ -42,6 +90,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3b8g8m2n",
+    "ja": "安い部屋でも、せめて清潔であってほしいです。",
+    "en": "Even if it's cheap, the room should at least be clean.",
+    "alternatives": [
+      "Even if the room's cheap, it should be clean.",
+      "Cheap as it is, the room ought to be clean."
+    ],
+    "point": "「せめて」は at least、「でも」は even if",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_3b8u7h5y",
@@ -132,6 +196,22 @@
     }
   },
   {
+    "id": "c_3h8e7r9s",
+    "ja": "私の部屋は静かなのに、妻の部屋はうるさい。",
+    "en": "Whereas my room is quiet, my wife's is noisy.",
+    "alternatives": [
+      "My room is quiet, whereas my wife's is noisy.",
+      "My wife's room is noisy, while mine is quiet."
+    ],
+    "point": "対比は whereas か while。後ろの room は's だけで省く",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3r9r6q4j",
     "ja": "彼女は使ってないミニバー代を請求されたと気づいた。",
     "en": "She noticed she'd been charged for unused minibar items.",
@@ -198,6 +278,22 @@
     }
   },
   {
+    "id": "c_4p3n9n4w",
+    "ja": "何かあったら、内線で連絡してください。",
+    "en": "Call us if anything comes up.",
+    "alternatives": [
+      "Let us know if anything comes up.",
+      "If anything comes up, give us a call."
+    ],
+    "point": "if 節は未来のことでも現在形（comes up）",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 5,
+    "grammar": ["time-and-if-clauses", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4t3p5w5t",
     "ja": "暖房が昨日からずっと効いていません。",
     "en": "The heater hasn't been working since yesterday.",
@@ -262,6 +358,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_4x3z2p7m",
+    "ja": "早いのは承知ですが、もうチェックインさせてもらえませんか？",
+    "en": "I know it's early, but any chance we could check in?",
+    "alternatives": [
+      "I know we're early, but can we check in now?",
+      "Sorry we're early, but could we check in now?"
+    ],
+    "point": "Any chance we could ~? は気軽で柔らかい頼み方",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 10,
+    "grammar": ["concession-contrast", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_4y3h2a9c",
@@ -348,6 +460,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_6r9r8x8u",
+    "ja": "私たちをもっと静かな部屋に移していただけませんか？",
+    "en": "Would you mind moving us to a quieter room?",
+    "alternatives": [
+      "Could you move us to a quieter room?",
+      "Would it be possible to move us to a quieter room?"
+    ],
+    "point": "Would you mind の後ろは -ing 形にする",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6t9h3m4k",
@@ -474,6 +602,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9h5f4k3j",
+    "ja": "部屋を替えてもらえたら、ぐっすり眠れるんですが。",
+    "en": "If I could switch rooms, I'd finally get some sleep.",
+    "alternatives": [
+      "If you moved me to another room, I could sleep.",
+      "I'd sleep much better if you could change my room."
+    ],
+    "point": "実現しにくい願いは If＋過去形、主節は would",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9m6g9w4f",

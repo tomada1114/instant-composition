@@ -66,6 +66,22 @@
     }
   },
   {
+    "id": "c_2w7d4m8s",
+    "ja": "詳細を読んだ上で、この依頼はお受けできます。",
+    "en": "Having read the details, I can take this on.",
+    "alternatives": [
+      "After reading the details, I can take this on.",
+      "I've read the details, and I can take this on."
+    ],
+    "point": "「読んだ上で」は Having + 過去分詞で先行を表す",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3d7c9w9d",
     "ja": "彼は引き受ける前に、締め切りを確認すべきでした。",
     "en": "He should've checked the deadline before taking it on.",
@@ -261,6 +277,38 @@
     }
   },
   {
+    "id": "c_4p6u5y8m",
+    "ja": "予算を担当している人に、聞いてもらえますか？",
+    "en": "Could you ask the person handling the budget?",
+    "alternatives": [
+      "Could you check with the person handling the budget?",
+      "Can you ask whoever is handling the budget?"
+    ],
+    "point": "「担当している人」は the person handling と後ろから修飾",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4u4x6p8n",
+    "ja": "納期が厳しいと知りながら、彼女は引き受けてくれた。",
+    "en": "Knowing the deadline was tight, she took it on anyway.",
+    "alternatives": [
+      "Although she knew the deadline was tight, she took it on.",
+      "She took it on, even knowing the deadline was tight."
+    ],
+    "point": "「知りながら」は Knowing で始める分詞構文が自然",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 9,
+    "grammar": ["participle-clauses", "concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4x7a5d9v",
     "ja": "早く頼んでくれたら、終わらせられたのに。",
     "en": "If you'd asked sooner, I could've finished it.",
@@ -347,6 +395,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_6e9b2f8c",
+    "ja": "期限が動かないという条件で、お引き受けします。",
+    "en": "I'll take it on, provided the deadline doesn't move.",
+    "alternatives": [
+      "I'll take it, as long as the deadline stays put.",
+      "I'll do it on condition that the deadline doesn't change."
+    ],
+    "point": "provided (that) の節は未来でも現在形",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["time-and-if-clauses", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6h9t8z4r",
@@ -476,6 +540,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8f9x4n8x",
+    "ja": "手伝ってほしいのは、来週の発表の準備です。",
+    "en": "What I need help with is next week's presentation.",
+    "alternatives": [
+      "The thing I need help with is next week's presentation.",
+      "It's next week's presentation that I need help with."
+    ],
+    "point": "help with の前置詞を文末に残すのを忘れない",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["cleft-emphasis", "noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8h8u6s3j",

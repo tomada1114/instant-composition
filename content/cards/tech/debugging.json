@@ -132,6 +132,54 @@
     }
   },
   {
+    "id": "c_2u6u3a2t",
+    "ja": "私たちには再現手順を聞くしか手がなかった。",
+    "en": "Our only option was to ask for repro steps.",
+    "alternatives": [
+      "We had no choice but to ask for repro steps.",
+      "All we could do was ask for repro steps."
+    ],
+    "point": "「〜するしかない」は only option was to + 動詞",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2v2e7q5v",
+    "ja": "このバグは先週入り込んだようだ。",
+    "en": "This bug seems to have crept in last week.",
+    "alternatives": [
+      "It looks like this bug crept in last week.",
+      "This bug appears to have slipped in last week."
+    ],
+    "point": "seem to have + 過去分詞で「〜したようだ」",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["infinitives", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2x5v4w4r",
+    "ja": "エラーが出る前に、ユーザーは何か変えていましたか？",
+    "en": "Had the user changed anything before the error appeared?",
+    "alternatives": [
+      "Did the user change anything before the error showed up?",
+      "Before the error, had the user changed anything?"
+    ],
+    "point": "エラーより前の行動は過去完了 Had + 過去分詞",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2y4f2r4r",
     "ja": "もしかして、タイムゾーンのせいではないでしょうか？",
     "en": "Could it be the time zone?",
@@ -171,6 +219,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3e6r4n9p",
+    "ja": "障害の原因は、まだ特定されていないんですか？",
+    "en": "Hasn't the cause been identified yet?",
+    "alternatives": [
+      "Has the cause still not been pinned down?",
+      "Is the cause still unidentified?"
+    ],
+    "point": "現在完了の受動：has been + 過去分詞",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["passive-voice", "present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_3f2r9q9t",
@@ -217,6 +281,22 @@
     }
   },
   {
+    "id": "c_3f7d4j7e",
+    "ja": "更新でキャッシュ設定が書き換えられていた。",
+    "en": "Cache settings had been overwritten by the update.",
+    "alternatives": [
+      "The update had overwritten the cache settings.",
+      "Cache settings had been changed by the update."
+    ],
+    "point": "「すでに書き換えられていた」は had been + 過去分詞",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["past-perfect", "passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3g6j8f8m",
     "ja": "彼がエラー処理していれば、今こんなに追われてない。",
     "en": "If he'd handled the errors, we wouldn't be swamped now.",
@@ -256,6 +336,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3p4k3y9t",
+    "ja": "障害は、期限切れの証明書が原因で引き起こされた。",
+    "en": "The outage was triggered by an expired certificate.",
+    "alternatives": [
+      "An expired certificate caused the outage.",
+      "The outage was brought on by an expired certificate."
+    ],
+    "point": "原因は be triggered by や be brought on by で表す",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["passive-voice", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_3p5y8e3d",
@@ -322,6 +418,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3y5s8g9u",
+    "ja": "調べるべきログは、まだ山ほど残っている。",
+    "en": "There are still tons of logs to go through.",
+    "alternatives": [
+      "We still have piles of logs to dig through.",
+      "Plenty of logs are still left to check."
+    ],
+    "point": "名詞を後ろから修飾する to 不定詞、go through は「精査する」",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["infinitives", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_4b3z2f9t",
@@ -431,6 +543,22 @@
     }
   },
   {
+    "id": "c_4u8m7g6c",
+    "ja": "見たときには、ログはもうローテーションされていた。",
+    "en": "When I looked, the logs had already rotated.",
+    "alternatives": [
+      "By the time I looked, the logs had rotated.",
+      "When I checked, the logs had already been rotated out."
+    ],
+    "point": "見た時点で完了済みなら had + 過去分詞",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4v6w6x7m",
     "ja": "田中さんは昨日の更新後に初めて出たと言っていた。",
     "en": "Tanaka said it first appeared after yesterday's update.",
@@ -451,6 +579,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_4v8p7t6e",
+    "ja": "あのフラグ、テスト後に戻すのを忘れていたみたい。",
+    "en": "I seem to have forgotten to reset that flag.",
+    "alternatives": [
+      "Looks like I forgot to reset that flag.",
+      "Apparently I forgot to turn that flag back off."
+    ],
+    "point": "forget to 〜 は「〜し忘れる」、忘れたのは過去なので have forgotten",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4x8x8h3k",
+    "ja": "決済のどこかに競合状態がある、と私は踏んでいます。",
+    "en": "I've got a hunch there's a race condition somewhere in checkout.",
+    "alternatives": [
+      "My hunch is there's a race condition somewhere in checkout.",
+      "I suspect a race condition is lurking somewhere in checkout."
+    ],
+    "point": "「競合状態」は可算名詞なので a が必要",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 10,
+    "grammar": ["articles-and-countability", "noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5c2p6f3t",
@@ -497,6 +657,22 @@
     }
   },
   {
+    "id": "c_5w7z4e6y",
+    "ja": "彼女が言うには、直したはずのバグがまた出てきているらしい。",
+    "en": "She says the bug we thought we'd fixed has resurfaced.",
+    "alternatives": [
+      "Apparently the bug we thought we'd fixed has come back.",
+      "She says the bug we thought we'd squashed is back."
+    ],
+    "point": "「直したはず」は we thought we'd fixed で表す",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 10,
+    "grammar": ["tense-contrast", "noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5y9r6w5n",
     "ja": "設定が上書きされたに違いないと、彼は言っています。",
     "en": "He says the config must have been overwritten.",
@@ -539,6 +715,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_6e6x5p5e",
+    "ja": "根本原因はまだ特定されていません。",
+    "en": "The root cause hasn't been pinned down yet.",
+    "alternatives": [
+      "We haven't pinned down the root cause yet.",
+      "The root cause still hasn't been identified."
+    ],
+    "point": "「特定する」は pin down。受動態＋現在完了で言う",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 9,
+    "grammar": ["passive-voice", "articles-and-countability"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6g6d7u5w",
@@ -802,6 +994,38 @@
     }
   },
   {
+    "id": "c_7n4d5d5e",
+    "ja": "まず確認すべきは、直近のデプロイです。",
+    "en": "First thing to check is the latest deploy.",
+    "alternatives": [
+      "The first thing to check is the latest deploy.",
+      "What we should check first is the latest deploy."
+    ],
+    "point": "「〜すべきこと」は thing to + 動詞",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7r6e6x6t",
+    "ja": "そのころには、ディスクはもう満杯になっていた。",
+    "en": "By then, the disk had already filled up.",
+    "alternatives": [
+      "The disk had already filled up by then.",
+      "The disk was already full by then."
+    ],
+    "point": "「その時までに」の完了は had + 過去分詞",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7w7k2s3e",
     "ja": "そちらでも再現するか、試していただけないかと。",
     "en": "I was wondering if you could reproduce it too.",
@@ -912,6 +1136,38 @@
     }
   },
   {
+    "id": "c_8h2e2a2y",
+    "ja": "症状は、更新の前から出始めていたようだ。",
+    "en": "Symptoms had apparently started before the update.",
+    "alternatives": [
+      "It seems the symptoms started before the update.",
+      "Looks like it had started before the update."
+    ],
+    "point": "更新より前の出来事は had + 過去分詞",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8h6q5j8u",
+    "ja": "テスト中に本番データが誤って消された。",
+    "en": "Production data was wiped by mistake during testing.",
+    "alternatives": [
+      "Prod data was accidentally deleted during the test.",
+      "Production data got erased by accident in testing."
+    ],
+    "point": "行為者が不明なときは受動態にする",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8h6r9r8v",
     "ja": "そのバグと、もうどれくらい格闘してるの？",
     "en": "How long have you been fighting this bug?",
@@ -932,6 +1188,54 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8k9n4m4h",
+    "ja": "このバグは、すでに二度修正されたと聞いています。",
+    "en": "I hear this bug has already been fixed twice.",
+    "alternatives": [
+      "They say this bug's been patched twice already.",
+      "Apparently this bug was already fixed twice before."
+    ],
+    "point": "伝聞は I hear + 現在完了の受動",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["passive-voice", "present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8s4p3c6j",
+    "ja": "原因を調べるため、彼はデバッガーを立ち上げた。",
+    "en": "He fired up the debugger to find the cause.",
+    "alternatives": [
+      "He launched the debugger to track down the cause.",
+      "To find the cause, he started up the debugger."
+    ],
+    "point": "「立ち上げる」は fire up / start up の句動詞",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["infinitives", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8u6a7y9h",
+    "ja": "なぜ何度も失敗するのか、誰にも見当がつかない。",
+    "en": "No one has the faintest idea why it keeps failing.",
+    "alternatives": [
+      "Nobody has a clue why it keeps failing.",
+      "No one can figure out why it keeps failing."
+    ],
+    "point": "間接疑問なので why のあとは主語＋動詞の語順",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 9,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8x6y5d2c",
@@ -956,6 +1260,70 @@
     }
   },
   {
+    "id": "c_8x8k5c2u",
+    "ja": "再現には、キャッシュを消す必要があります。",
+    "en": "You'll need to flush the cache to reproduce it.",
+    "alternatives": [
+      "To reproduce it, you have to clear the cache.",
+      "Reproducing it requires clearing the cache."
+    ],
+    "point": "目的の to 不定詞：〜するために",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8z9y6u7f",
+    "ja": "この不具合、原因の特定が本当に厄介だ。",
+    "en": "This bug is a real pain to pin down.",
+    "alternatives": [
+      "This bug is really hard to track down.",
+      "The cause of this bug is tough to pin down."
+    ],
+    "point": "形容詞 + to 不定詞、pin down は「突き止める」",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["infinitives", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9b2a8q8y",
+    "ja": "私の報告前に、三人が同じ症状を訴えていた。",
+    "en": "Three people had reported the same symptom before me.",
+    "alternatives": [
+      "Three others had reported the same symptom before I did.",
+      "Three others had complained about the same symptom before me."
+    ],
+    "point": "先に起きた出来事は had + 過去分詞",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9b4j8f2e",
+    "ja": "結局、原因はキャッシュの破損だと判明した。",
+    "en": "It turned out to be a corrupted cache.",
+    "alternatives": [
+      "The cause turned out to be a corrupted cache.",
+      "In the end, a corrupted cache was to blame."
+    ],
+    "point": "「判明する」は turn out to be",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9e9f7k2n",
     "ja": "彼は明日、ログを調べる予定です。",
     "en": "He's going to check the logs tomorrow.",
@@ -978,6 +1346,22 @@
     }
   },
   {
+    "id": "c_9n3y9n4q",
+    "ja": "絞り込むため、ログを時系列に並べ替えた。",
+    "en": "To narrow it down, I sorted logs by time.",
+    "alternatives": [
+      "I sorted the logs by time to narrow it down.",
+      "To narrow it down, I ordered the logs by timestamp."
+    ],
+    "point": "文頭の To + 動詞で「〜するために」",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9n9e6q7q",
     "ja": "キャッシュを消しても、変わらなかった。",
     "en": "Clearing the cache didn't make any difference.",
@@ -998,6 +1382,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9r8g3s5f",
+    "ja": "クラッシュが出始めたのは、あのパッチを当てる前？後？",
+    "en": "Did the crashes start before or after we pushed that patch?",
+    "alternatives": [
+      "Did the crashes begin before or after we shipped that patch?",
+      "Which came first, the crashes or that patch?"
+    ],
+    "point": "始まった時点は過去、pushed も過去形で揃える",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9z3r8g3m",

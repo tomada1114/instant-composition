@@ -44,6 +44,22 @@
     }
   },
   {
+    "id": "c_2p5z4w4c",
+    "ja": "私たちはスライドを減らすべきです。",
+    "en": "We should use fewer slides.",
+    "alternatives": [
+      "We should cut some slides.",
+      "We should reduce the number of slides."
+    ],
+    "point": "「減らす」は use fewer + 数えられる名詞で表せる",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 3,
+    "grammar": ["modal-obligation-advice", "comparatives-superlatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2q7e4z9u",
     "ja": "まず、1枚目から始めましょう。",
     "en": "Let's start with slide one.",
@@ -105,6 +121,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3s8a3w3h",
+    "ja": "私たちは質問を最後にまとめて受けるべきです。",
+    "en": "We should take all questions at the end.",
+    "alternatives": [
+      "We ought to hold questions until the end.",
+      "Questions should be saved for the end."
+    ],
+    "point": "提案・助言は should + 動詞の原形",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_3t5h7h2u",
@@ -173,6 +205,54 @@
     }
   },
   {
+    "id": "c_4q4a5h2v",
+    "ja": "発表前に、リハーサルする時間を確保してください。",
+    "en": "Please make time to rehearse before the presentation.",
+    "alternatives": [
+      "Please set aside time to rehearse beforehand.",
+      "Please carve out time to rehearse before presenting."
+    ],
+    "point": "time の後ろに to 不定詞。「時間を作る」＝make time",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4s9y7x2k",
+    "ja": "皆さんに、この傾向を見逃さないでほしいのです。",
+    "en": "I don't want you to overlook this trend.",
+    "alternatives": [
+      "I'd hate for you to miss this trend.",
+      "I don't want you to miss this trend."
+    ],
+    "point": "否定は want の前。not to ではなく don't want",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4t3c8w3x",
+    "ja": "課長は、予算は据え置きになると言いました。",
+    "en": "The section head said the budget would stay flat.",
+    "alternatives": [
+      "The section head said the budget wouldn't change.",
+      "The section head told us the budget would stay put."
+    ],
+    "point": "間接話法では will が would になる",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4t3z9p3c",
     "ja": "ご質問は、話が終わるまでお待ちください。",
     "en": "Please hold your questions until I've finished.",
@@ -237,6 +317,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5h2u8t6v",
+    "ja": "彼女は、お見せする実例を探しています。",
+    "en": "She's looking for an example to show you.",
+    "alternatives": [
+      "She's hunting for an example to show you.",
+      "She's looking for an example she can show you."
+    ],
+    "point": "名詞のあとに to 不定詞で「〜するための」",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5h3g3j9s",
+    "ja": "最後に、議論を締めくくる一言だけ言わせてください。",
+    "en": "Let me say one last word to wrap up.",
+    "alternatives": [
+      "Let me add one closing remark to wrap things up.",
+      "Allow me one last word to wrap this up."
+    ],
+    "point": "締めくくる＝wrap up。目的の to 不定詞",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["infinitives", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6f5p9u7q",
@@ -372,6 +484,38 @@
     }
   },
   {
+    "id": "c_7k4v4m8e",
+    "ja": "どなたか、聞きたいことはありますか？",
+    "en": "Does anyone have something to ask?",
+    "alternatives": [
+      "Does anyone have a question?",
+      "Is there anything anyone wants to ask?"
+    ],
+    "point": "something の後ろに to ask を置いて「聞きたいこと」",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 3,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7m8g6w8v",
+    "ja": "皆さんに、この数字だけは覚えて帰ってほしいです。",
+    "en": "I want you all to remember this number.",
+    "alternatives": [
+      "I'd like everyone to remember this number.",
+      "I'd like you to remember this one number."
+    ],
+    "point": "want + 人 + to 不定詞。want that は不可",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7n7c4s8f",
     "ja": "コストだけでなく、導入期間も半分になります。",
     "en": "Not only does it cut costs, it halves rollout time.",
@@ -438,6 +582,22 @@
     }
   },
   {
+    "id": "c_8c4z8e4t",
+    "ja": "部長は、数字を見直すよう私に言いました。",
+    "en": "My manager told me to go over the numbers.",
+    "alternatives": [
+      "My manager asked me to recheck the figures.",
+      "The manager told me to review the numbers."
+    ],
+    "point": "見直す＝go over。tell + 人 + to do",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["verb-object-to-do", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8j9v3e8p",
     "ja": "私の理解が正しければ、ご質問は費用ですね？",
     "en": "If I understand correctly, you're asking about the cost?",
@@ -458,6 +618,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8k7w6w6c",
+    "ja": "皆さんに、まず結論を押さえていただきたいのです。",
+    "en": "I'd like you to grasp the conclusion first.",
+    "alternatives": [
+      "I want you to get the main conclusion first.",
+      "First, I'd like you all to take in the conclusion."
+    ],
+    "point": "want / would like + 人 + to do の語順",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8t9c6u5v",
+    "ja": "彼には、デモを短めにするよう伝えておきました。",
+    "en": "I told him to keep the demo short.",
+    "alternatives": [
+      "I told him to make the demo shorter.",
+      "I told him the demo should be short."
+    ],
+    "point": "tell + 人 + to 不定詞。him to の語順に注意",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8u5e2r5e",
@@ -567,6 +759,22 @@
     }
   },
   {
+    "id": "c_9g6z8s2c",
+    "ja": "先輩は、ゆっくり話すよう私に注意しました。",
+    "en": "A senior colleague warned me to speak slowly.",
+    "alternatives": [
+      "A colleague told me to speak more slowly.",
+      "My senior cautioned me to speak slowly."
+    ],
+    "point": "warn + 人 + to do。人を目的語に入れる",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9h3q9h8b",
     "ja": "データを見直して、予測を下方修正しました。",
     "en": "Having reviewed the data, we lowered the forecast.",
@@ -587,5 +795,21 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9r3e2w8p",
+    "ja": "時間があれば、事例をもっとお見せするのですが。",
+    "en": "If I had more time, I'd show more examples.",
+    "alternatives": [
+      "I'd show you more examples if I had time.",
+      "If there were more time, I'd share more examples."
+    ],
+    "point": "実現しにくい仮定は If + 過去形、主節は would",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["second-conditional", "hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]

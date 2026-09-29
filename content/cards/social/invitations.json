@@ -22,6 +22,22 @@
     }
   },
   {
+    "id": "c_2t9b4z7s",
+    "ja": "先週は断っちゃったから、今度は絶対行くよ。",
+    "en": "I bailed last time, so I'm definitely coming this time.",
+    "alternatives": [
+      "I turned you down last time, so I'll definitely come this time.",
+      "I said no last time, so I'm definitely in this time."
+    ],
+    "point": "先週の話は過去形、今度の予定は現在進行形で言う",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3d4t6r4s",
     "ja": "パーティーは何時に始まるの？",
     "en": "What time does the party start?",
@@ -306,6 +322,22 @@
     }
   },
   {
+    "id": "c_6s5d7j8m",
+    "ja": "兄に頼んで、君もパーティーの招待リストに入れてもらうね。",
+    "en": "I'll get my brother to put you on the guest list.",
+    "alternatives": [
+      "I'll have my brother add you to the guest list.",
+      "I'll ask my brother to put you on the guest list."
+    ],
+    "point": "get + 人 + to 動詞で「〜してもらう」",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6s9a6h8w",
     "ja": "今夜、一緒に夕食に行こうよ。",
     "en": "Let's go out for dinner tonight.",
@@ -433,6 +465,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8a6q5c9f",
+    "ja": "私を誘ってくれたのが誰か、覚えてる？",
+    "en": "Do you remember who it was that invited me?",
+    "alternatives": [
+      "Do you remember who invited me?",
+      "Remember who it was that invited me?"
+    ],
+    "point": "疑問詞の後は平叙文の語順。it was that で強調",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["nested-clauses", "cleft-emphasis"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8a7m9w2x",
@@ -565,6 +613,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8u3f9d7t",
+    "ja": "疲れてたので、二次会の誘いは丁重に断ったよ。",
+    "en": "Being exhausted, I politely turned down the after-party invite.",
+    "alternatives": [
+      "Since I was exhausted, I politely declined the after-party invite.",
+      "I was exhausted, so I politely passed on the after-party."
+    ],
+    "point": "理由は Being ~, の分詞構文で。断るは turn down",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["participle-clauses", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9j9q8v7h",

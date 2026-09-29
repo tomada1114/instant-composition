@@ -66,6 +66,38 @@
     }
   },
   {
+    "id": "c_2m6m6w8u",
+    "ja": "前職で身につけた技術が、今も役立っています。",
+    "en": "The skills I gained then still help me.",
+    "alternatives": [
+      "Skills I gained at my last job still help.",
+      "What I learned at my last job still helps."
+    ],
+    "point": "「身につけた技術」は skills の後ろに I gained と置く",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 6,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2v2j4w8z",
+    "ja": "私は前は営業でしたが、その後、採用の仕事に転向しました。",
+    "en": "I was in sales, but I've since pivoted to recruiting.",
+    "alternatives": [
+      "I used to be in sales, but I've since moved into recruiting.",
+      "I started in sales, but I've since switched to recruiting."
+    ],
+    "point": "過去の話と今に続く話は was と I've で分ける",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2v6z4k5s",
     "ja": "御社のことは、事前に調べてきました。",
     "en": "I read up on your company beforehand.",
@@ -281,6 +313,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_4q2q3y4z",
+    "ja": "御社のサイトで募集中のポジションに興味があります。",
+    "en": "I'm interested in the position posted on your website.",
+    "alternatives": [
+      "I'm interested in the role advertised on your website.",
+      "I'm interested in the job you posted on your site."
+    ],
+    "point": "「募集中の」は posted など過去分詞で後ろから名詞を修飾",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_4x6r5j9v",

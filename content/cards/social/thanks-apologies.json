@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2b2n2e4e",
+    "ja": "あの時君が紹介してくれなきゃ、今の仕事はないよ。",
+    "en": "If you hadn't introduced us, I wouldn't have this job.",
+    "alternatives": [
+      "I wouldn't have this job if you hadn't introduced me.",
+      "Without your introduction, I wouldn't have this job."
+    ],
+    "point": "過去の仮定→今の結果は If had+過去分詞、would+原形",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2b4b7n3v",
     "ja": "今週末、埋め合わせさせてもらえませんか？",
     "en": "Can I make it up to you this weekend?",
@@ -86,6 +102,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_2n8v4q7y",
+    "ja": "助かったよ。思ったより早く終わった。",
+    "en": "Thanks. It went faster than I expected.",
+    "alternatives": [
+      "Thanks. It was quicker than I expected.",
+      "Thanks, that was faster than I thought."
+    ],
+    "point": "「思ったより」は 比較級 + than I expected",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_2v9j4c9n",
@@ -287,6 +319,22 @@
     }
   },
   {
+    "id": "c_6f9y5c7g",
+    "ja": "お礼に、夕食をごちそうさせてもらえないかな。",
+    "en": "I was hoping to treat you to dinner as thanks.",
+    "alternatives": [
+      "Could I treat you to dinner as a thank-you?",
+      "Would you let me treat you to dinner to say thanks?"
+    ],
+    "point": "「〜したいのですが」は I was hoping to で柔らかく言う",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6s4v5f7a",
     "ja": "本当に、どうお礼を言えばいいのかわかりません。",
     "en": "I honestly don't know how I can ever thank you.",
@@ -329,6 +377,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7e4a8r8s",
+    "ja": "今度遅れるときは、必ず事前に連絡します。",
+    "en": "If I'm late again, I'll let you know beforehand.",
+    "alternatives": [
+      "Next time I'm running late, I'll call ahead.",
+      "If I'm going to be late again, I'll call ahead."
+    ],
+    "point": "未来のことでも if 節は現在形（will は入れない）",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7e9a6c6m",
@@ -441,6 +505,22 @@
     }
   },
   {
+    "id": "c_9n4t3w3j",
+    "ja": "ごめん、遅れた。道路工事があったんだ。",
+    "en": "Sorry I'm late. There was roadwork.",
+    "alternatives": [
+      "Sorry I'm late. There was road construction.",
+      "Sorry I'm late. The road was under construction."
+    ],
+    "point": "「〜があった」は There was を使う",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 4,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9q9t2f5m",
     "ja": "私が傷つけた同僚に、謝りたい。",
     "en": "I want to apologize to the coworker I hurt.",
@@ -506,5 +586,21 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9z4q3t8q",
+    "ja": "あの時僕が謝っていれば、今も彼と友達だったのに。",
+    "en": "If I'd apologized then, we'd still be friends.",
+    "alternatives": [
+      "We'd still be friends now if I'd apologized then.",
+      "If I'd said sorry back then, we'd still be friends."
+    ],
+    "point": "過去の条件で今の結果は If had+過去分詞、would+原形",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]

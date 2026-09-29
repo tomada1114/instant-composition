@@ -22,6 +22,38 @@
     }
   },
   {
+    "id": "c_2j6m8j3f",
+    "ja": "今日は一日中、会議の日程と格闘しています。",
+    "en": "I've been wrestling with the meeting schedule all day.",
+    "alternatives": [
+      "I've been struggling with the meeting schedule all day.",
+      "All day I've been battling the meeting schedule."
+    ],
+    "point": "続いている最中の動作は have been + -ing",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2w9k9r8j",
+    "ja": "次からは、事前に知らせてもらえますか？",
+    "en": "Could you give me notice next time?",
+    "alternatives": [
+      "Can you give me some notice next time?",
+      "Next time, could you give me advance notice?"
+    ],
+    "point": "notice は数えない名詞。a notice とは言わない",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3g2y5k5r",
     "ja": "締め切り、部長に延ばしてもらえる？",
     "en": "Can you get the manager to extend it?",
@@ -108,6 +140,54 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3z9p7t5p",
+    "ja": "問題は、全員の都合がなかなか合わないことです。",
+    "en": "The problem is that everyone's schedules never line up.",
+    "alternatives": [
+      "The issue is that everyone's schedules rarely match.",
+      "The trouble is that everyone's schedules never match up."
+    ],
+    "point": "「〜ということ」は The problem is that + 文",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4a9q7a9q",
+    "ja": "問題は、先方が金曜しか空いてないことです。",
+    "en": "The problem is that the client is only free Friday.",
+    "alternatives": [
+      "The trouble is the client can only meet on Friday.",
+      "The problem is the client is free only on Friday."
+    ],
+    "point": "「問題は〜ことだ」は The problem is that 節",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 8,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4c2h3z4d",
+    "ja": "先方が結局どの日がいいのか、誰も知りません。",
+    "en": "Nobody knows which day the client actually wants.",
+    "alternatives": [
+      "No one knows which day the client really prefers.",
+      "Nobody knows which day the client wants in the end."
+    ],
+    "point": "which 節の中は平叙文の語順（which day the client wants）",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 8,
+    "grammar": ["noun-clauses", "indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_4c4b5m7g",
@@ -300,6 +380,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_6v8c4x3p",
+    "ja": "私が決められるなら、この会議は延ばすんだけど。",
+    "en": "If it were up to me, I'd postpone this meeting.",
+    "alternatives": [
+      "If I could decide, I'd postpone this meeting.",
+      "If I were in charge, I'd delay this meeting."
+    ],
+    "point": "現実と違う仮定は If + were、帰結は would",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6w6p3h7c",
+    "ja": "私は今週ずっと、先方と日程でやりとりしてる。",
+    "en": "I've been going back and forth with them all week.",
+    "alternatives": [
+      "I've been going back and forth with them this week.",
+      "I've spent all week going back and forth with them."
+    ],
+    "point": "back and forth は「行ったり来たり」。継続中は完了進行形",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 8,
+    "grammar": ["present-perfect-continuous", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7b8u7z8g",

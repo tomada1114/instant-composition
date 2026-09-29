@@ -67,6 +67,22 @@
     }
   },
   {
+    "id": "c_2k7e6k2j",
+    "ja": "送ってもらった添付ファイル、開けません。",
+    "en": "I can't open the attachment you sent.",
+    "alternatives": [
+      "I'm unable to open the attachment you sent.",
+      "The attachment you sent won't open."
+    ],
+    "point": "「開けない」は can't open。won't open は物が主語",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 5,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2q6t8t7y",
     "ja": "確定には、金曜までに正確な数量がほしいのですが。",
     "en": "To finalize, we'd need the exact quantity by Friday.",
@@ -150,6 +166,23 @@
     }
   },
   {
+    "id": "c_4j7e3b8v",
+    "ja": "明日までに、メールに返信しなきゃ。",
+    "en": "I have to reply by tomorrow.",
+    "alternatives": [
+      "I've got to reply by tomorrow.",
+      "I need to reply by tomorrow.",
+      "I must reply by tomorrow."
+    ],
+    "point": "「〜しなきゃ」は have to。期限は by tomorrow",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5d6g8t6x",
     "ja": "請求書は、経理に今週中に直してもらいます。",
     "en": "I'll have accounting fix the invoice this week.",
@@ -192,6 +225,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5y3y9h9a",
+    "ja": "その件、もう先方にメールしましたか？",
+    "en": "Have you emailed them about it yet?",
+    "alternatives": [
+      "Have you already emailed the client about it?",
+      "Did you email the client about it yet?"
+    ],
+    "point": "「もう〜した？」の疑問文では yet を文末に置く",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 5,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5y8y6s3r",
@@ -257,6 +306,22 @@
     }
   },
   {
+    "id": "c_6m6x9f7t",
+    "ja": "この件の担当は誰か、教えてもらえますか？",
+    "en": "Could you tell me who's handling this?",
+    "alternatives": [
+      "Would you mind telling me who's handling this?",
+      "Can you let me know who's in charge of this?"
+    ],
+    "point": "間接疑問は who's handling のまま。do 不要",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 8,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6p3y8z5j",
     "ja": "添付ファイルの数字は、最新のものです。",
     "en": "The figures in the attached file are current.",
@@ -320,6 +385,22 @@
     }
   },
   {
+    "id": "c_6t5c7f2b",
+    "ja": "その日程で大丈夫か、田中さんに聞いてもらえますか？",
+    "en": "Could you ask Tanaka whether that date works?",
+    "alternatives": [
+      "Could you check with Tanaka if that date works?",
+      "Would you ask Tanaka if that date is okay?"
+    ],
+    "point": "whether/if の後は平叙文の語順",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 8,
+    "grammar": ["indirect-questions", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7b7w7x6x",
     "ja": "さっき話した資料、送ってもらえますか？",
     "en": "Could you send me the document we discussed?",
@@ -364,6 +445,22 @@
     }
   },
   {
+    "id": "c_7e8r5q6y",
+    "ja": "会議の資料は、どこにありますか？",
+    "en": "Where are the meeting materials?",
+    "alternatives": [
+      "Where are the materials for the meeting?",
+      "Where can I find the meeting materials?"
+    ],
+    "point": "資料は複数扱いなので Where is ではなく Where are",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 2,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7h5r3t7e",
     "ja": "田中さんに私へ電話するよう伝えて。",
     "en": "Please tell Mr. Tanaka to call me.",
@@ -403,6 +500,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7w2n8t6d",
+    "ja": "返信するつもりでしたが、すっかり忘れていました。",
+    "en": "I meant to reply, but it slipped my mind.",
+    "alternatives": [
+      "I was going to reply, but I forgot.",
+      "I meant to reply, but I completely forgot."
+    ],
+    "point": "「つもりだった」は meant to＋動詞の原形。過去形で言う",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 7,
+    "grammar": ["tense-contrast", "infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7w5n9f6z",
@@ -509,6 +622,22 @@
     }
   },
   {
+    "id": "c_9q6t8v2y",
+    "ja": "お手すきのときに、添付を見ていただけませんか？",
+    "en": "Would you mind checking the attachment when you're free?",
+    "alternatives": [
+      "Could you check the attachment when you have time?",
+      "When you have a moment, could you check the attachment?"
+    ],
+    "point": "Would you mind の後ろは動名詞（checking）",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 7,
+    "grammar": ["gerunds", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9s3q9p4z",
     "ja": "先方が昨日返信をくれていたら、今ごろ終わってるのに。",
     "en": "If they'd replied yesterday, we'd be done by now.",
@@ -529,5 +658,21 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9x8n4y3m",
+    "ja": "私たちが待っているのは、あなたの承認です。",
+    "en": "What we're waiting for is your approval.",
+    "alternatives": [
+      "Your approval is what we're waiting for.",
+      "It's your approval that we're waiting for."
+    ],
+    "point": "待つ対象を what 節で先に出す。for を落とさない",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 8,
+    "grammar": ["noun-clauses", "cleft-emphasis"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]

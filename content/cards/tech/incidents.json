@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2a4g2b7s",
+    "ja": "今言えるのは、応急処置が効いているということだけです。",
+    "en": "All I can say is that the workaround is holding.",
+    "alternatives": [
+      "What I can say is that the workaround is holding up.",
+      "The only thing I can say is the workaround's working."
+    ],
+    "point": "All I can say is that ～ で「言えるのは～だけ」",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2j9u7u7s",
     "ja": "昨夜から復旧作業中ですが、まだ終わっていません。",
     "en": "We've been on it since last night but aren't done.",
@@ -105,6 +121,39 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3m2w6c4j",
+    "ja": "私たちが復旧させた途端、また障害が再発しました。",
+    "en": "Hardly had we restored service when the outage recurred.",
+    "alternatives": [
+      "No sooner had we restored service than the outage recurred.",
+      "The moment we restored service, the outage happened again.",
+      "As soon as we restored service, the outage came back."
+    ],
+    "point": "Hardly を文頭に出すと had we の倒置、後ろは when",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3p3s9k2u",
+    "ja": "復旧を焦って、確認を飛ばしてしまいました。",
+    "en": "We rushed the fix and ended up skipping verification.",
+    "alternatives": [
+      "In our rush to fix it, we skipped verification.",
+      "We were so rushed that we skipped verification."
+    ],
+    "point": "end up の後ろは動名詞（ended up skipping）",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 6,
+    "grammar": ["gerunds", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_4g3a8m7c",
@@ -341,6 +390,38 @@
     }
   },
   {
+    "id": "c_7d4c5c9h",
+    "ja": "原因が分からないまま、私たちは夜通し対応しました。",
+    "en": "Not knowing the cause, we worked through the night.",
+    "alternatives": [
+      "Without knowing the cause, we worked all night.",
+      "Since we didn't know the cause, we worked through the night."
+    ],
+    "point": "理由を表す分詞構文は Not knowing のように否定を前に置く",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7g7u2g3a",
+    "ja": "お客様が知りたいのは、影響範囲と復旧の見込みです。",
+    "en": "What customers want to know is scope and ETA.",
+    "alternatives": [
+      "Customers want to know the scope and the ETA.",
+      "The scope and ETA are what customers want to know."
+    ],
+    "point": "What 節が主語のときは動詞は is",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["noun-clauses", "cleft-emphasis"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7n4d4w6p",
     "ja": "金曜までに直してもらえますか？",
     "en": "Could you fix it by Friday?",
@@ -358,6 +439,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7q2f7z9y",
+    "ja": "早く戻していれば、被害は小さく済んだのに。",
+    "en": "If we'd rolled back sooner, damage would've been less.",
+    "alternatives": [
+      "Had we rolled back sooner, damage would've been smaller.",
+      "If we'd reverted sooner, the impact would've been smaller."
+    ],
+    "point": "過去の仮定は if + had 過去分詞、would have 過去分詞",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7r4d4x8k",

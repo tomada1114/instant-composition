@@ -85,6 +85,22 @@
     }
   },
   {
+    "id": "c_2x5v4e7f",
+    "ja": "昨日私が誰と話してたか、覚えてる？",
+    "en": "Do you remember who I was talking to yesterday?",
+    "alternatives": [
+      "Do you recall who I was talking with yesterday?",
+      "Remember who I was chatting with yesterday?"
+    ],
+    "point": "間接疑問は who I was talking to と平叙文の語順",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 8,
+    "grammar": ["nested-clauses", "indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2x8p9q3m",
     "ja": "雨がやんだら、歩いて行くよ。",
     "en": "I'll walk when the rain stops.",
@@ -127,6 +143,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3f7f9b6y",
+    "ja": "最近、転職しようかどうか迷ってるんだ。",
+    "en": "I'm toying with the idea of changing jobs.",
+    "alternatives": [
+      "I'm thinking about changing jobs.",
+      "I'm considering changing jobs lately."
+    ],
+    "point": "think about / consider の後ろは to 不定詞でなく -ing",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 8,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_3t8g4k3k",
@@ -215,6 +247,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_4c7y7f3w",
+    "ja": "朝食を抜いてなければ、今こんなに腹ペコじゃないのに。",
+    "en": "If I hadn't skipped breakfast, I wouldn't be starving now.",
+    "alternatives": [
+      "I wouldn't be starving now if I'd eaten breakfast.",
+      "If I'd had breakfast, I wouldn't be famished right now."
+    ],
+    "point": "過去の仮定 + 今の結果は if had+過分, would+原形",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 10,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_4k5z6d4s",
@@ -393,6 +441,22 @@
     }
   },
   {
+    "id": "c_6w7c6f3j",
+    "ja": "昨日の映画、最後は泣かされたよ。",
+    "en": "That movie had me in tears by the end.",
+    "alternatives": [
+      "That movie made me cry at the end.",
+      "The ending of that movie made me tear up."
+    ],
+    "point": "「泣かされた」は have/make + 人 + 状態・原形",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7b3n5v2y",
     "ja": "あのとき、大阪から戻ったばかりだったよね？",
     "en": "You'd just gotten back from Osaka, right?",
@@ -415,6 +479,22 @@
     }
   },
   {
+    "id": "c_7d5k4d4r",
+    "ja": "うちの課にお土産をくれた同僚、来月結婚するんだって。",
+    "en": "Apparently the coworker who gave us souvenirs marries next month.",
+    "alternatives": [
+      "The coworker who gave us souvenirs is getting married next month, apparently.",
+      "Word is the coworker who brought us souvenirs is marrying next month."
+    ],
+    "point": "who 節で名詞を修飾し、伝聞は apparently で添える",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7e4e6q6h",
     "ja": "もうこの街に慣れた？先月はまだ迷ってたよね。",
     "en": "Found your feet yet? You were still getting lost last month.",
@@ -435,6 +515,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7k3u4w5x",
+    "ja": "引っ越してなかったら、今ごろ君と友達じゃないね。",
+    "en": "If I hadn't moved, we wouldn't be friends now.",
+    "alternatives": [
+      "Had I not moved, we wouldn't be friends now.",
+      "We wouldn't be friends now if I hadn't moved."
+    ],
+    "point": "過去の仮定は had+過去分詞、今の結果は would+原形",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7s5j6n7r",

@@ -44,6 +44,23 @@
     }
   },
   {
+    "id": "c_2n6j6k5h",
+    "ja": "設計の壁打ち相手が必要です。",
+    "en": "I need someone to bounce this design off.",
+    "alternatives": [
+      "I need someone to run this design by.",
+      "I need someone to talk this design over with.",
+      "I need someone to brainstorm this design with."
+    ],
+    "point": "someone to + 動詞。off や with の前置詞を忘れずに",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 7,
+    "grammar": ["infinitives", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3x8m5x5v",
     "ja": "ログインに、まだバグが一つあります。",
     "en": "There's still one login bug.",
@@ -173,6 +190,22 @@
     }
   },
   {
+    "id": "c_5j5j6q7u",
+    "ja": "昨日マージしなければ、今は火消しをしていないのに。",
+    "en": "If I hadn't merged yesterday, I wouldn't be firefighting now.",
+    "alternatives": [
+      "Had I not merged yesterday, I wouldn't be firefighting now.",
+      "I wouldn't be firefighting now if I hadn't merged yesterday."
+    ],
+    "point": "過去の仮定+現在の結果は If+過去完了, would be ~ing",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 8,
+    "grammar": ["articles-and-countability", "mixed-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5s3j6h3w",
     "ja": "知っていれば、もっと早く共有したのに。",
     "en": "If I'd known, I would've shared it sooner.",
@@ -259,6 +292,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_6d6k5x5r",
+    "ja": "彼女は三日間ずっと、この設定と格闘しています。",
+    "en": "She's been wrestling with this config for three days.",
+    "alternatives": [
+      "She's been struggling with this config for three days.",
+      "She's been fighting this config for three days."
+    ],
+    "point": "継続中の動作は has been -ing。期間は for",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6d9g4h4c",
@@ -349,6 +398,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_6w4g9h7y",
+    "ja": "今日は、昨日話したバグを直します。",
+    "en": "Today I'll fix the bug we discussed.",
+    "alternatives": [
+      "I'll fix the bug we talked about today.",
+      "Today I'm fixing the bug we talked about."
+    ],
+    "point": "「昨日話したバグ」は the bug we discussed と後ろから説明",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 5,
+    "grammar": ["relative-clauses", "future-forms"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6w5z8z5n",
@@ -610,6 +675,23 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9e3v3f8n",
+    "ja": "明日の朝会、私は休んでもいいですか？",
+    "en": "Is it okay if I skip tomorrow's standup?",
+    "alternatives": [
+      "Would it be okay if I skipped tomorrow's standup?",
+      "May I skip tomorrow's standup?",
+      "Could I skip tomorrow's standup?"
+    ],
+    "point": "許可を求めるときは Is it okay if I + 動詞の現在形",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 7,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9s8j2h5r",

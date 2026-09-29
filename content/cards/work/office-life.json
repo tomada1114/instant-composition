@@ -79,6 +79,22 @@
     }
   },
   {
+    "id": "c_3g3s3c6a",
+    "ja": "ケンは先月異動したから、もうここにはいないよ。",
+    "en": "Ken transferred last month, so he's no longer here.",
+    "alternatives": [
+      "Ken was transferred last month, so he isn't here anymore.",
+      "Ken got transferred last month, so he's not here now."
+    ],
+    "point": "先月の出来事は過去形、今の状態は現在形",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 8,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3k8q9t7k",
     "ja": "前よりずっと静かだから、つけっぱなしでいいね。",
     "en": "It's much quieter now, so we can leave it on.",
@@ -278,6 +294,22 @@
     }
   },
   {
+    "id": "c_6a8y9u6p",
+    "ja": "部長が言ったこと、誰にも一言も漏らしてないよ。",
+    "en": "I haven't breathed a word of what the boss said.",
+    "alternatives": [
+      "I haven't told a soul what the boss said.",
+      "I've told no one what the boss said."
+    ],
+    "point": "「一言も漏らさない」は breathe a word。what 節を続ける",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6c6q6w8k",
     "ja": "田中さんは今日お休みです。",
     "en": "Tanaka is off today.",
@@ -429,6 +461,22 @@
     }
   },
   {
+    "id": "c_7g5a8g3k",
+    "ja": "少し席を外してもよろしいでしょうか。",
+    "en": "Would you mind if I stepped out briefly?",
+    "alternatives": [
+      "Is it okay if I step out for a bit?",
+      "May I step out for a moment, if that's okay?"
+    ],
+    "point": "Would you mind if は過去形で丁寧に許可を求める",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 8,
+    "grammar": ["hedging-softening", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7j9q8d6m",
     "ja": "給湯室に誰かのお弁当がありますよ。",
     "en": "There's someone's lunch in the kitchen.",
@@ -492,6 +540,54 @@
     }
   },
   {
+    "id": "c_8h6b2n4w",
+    "ja": "在宅勤務の新ルールが今朝発表されたよ。",
+    "en": "A new remote-work policy was announced this morning.",
+    "alternatives": [
+      "They announced a new work-from-home policy this morning.",
+      "The new work-from-home rules were announced this morning."
+    ],
+    "point": "「発表された」は受動態。行為者は言わない",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 8,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8j5w3j6m",
+    "ja": "会議で決まったとはいえ、私はまだ納得してないよ。",
+    "en": "Although it was settled in the meeting, I'm not sold.",
+    "alternatives": [
+      "It was decided at the meeting, but I'm still not convinced.",
+      "Though it's been settled, I'm still not sold."
+    ],
+    "point": "「決まった」は受動態。Although の節と主節をつなぐ",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 9,
+    "grammar": ["passive-voice", "concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8m7d7x8e",
+    "ja": "手が空いたら、これを見ていただけないでしょうか。",
+    "en": "Could you possibly look this over when you're free?",
+    "alternatives": [
+      "Would you mind looking this over when you're free?",
+      "I was wondering if you could look this over sometime."
+    ],
+    "point": "look over は「ざっと目を通す」。possibly で丁寧に",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 8,
+    "grammar": ["hedging-softening", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8n6r4n6g",
     "ja": "ここにあったホッチキス、誰か見た？",
     "en": "Anyone seen the stapler that was here?",
@@ -553,6 +649,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9t3d4a9w",
+    "ja": "会議室のエアコン、まだ修理されてないみたいですよ。",
+    "en": "The meeting room AC apparently hasn't been fixed yet.",
+    "alternatives": [
+      "It seems the meeting room AC hasn't been repaired yet.",
+      "Apparently, they still haven't fixed the meeting room AC."
+    ],
+    "point": "現在完了の受動態 hasn't been fixed。apparently で推量",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 8,
+    "grammar": ["passive-voice", "hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9u4h5p9n",

@@ -44,6 +44,38 @@
     }
   },
   {
+    "id": "c_2q7w4v8z",
+    "ja": "同じ神戸出身だと知っていたら、声をかけたのに。",
+    "en": "If I'd known you were from Kobe, I'd have said hi.",
+    "alternatives": [
+      "Had I known you were from Kobe too, I'd have said hello.",
+      "If I'd realized you're from Kobe too, I'd have spoken up."
+    ],
+    "point": "過去の事実の反対は If + had + 過去分詞、主節は would have",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3r6q5r5q",
+    "ja": "人違いかもしれませんが、前にお会いしましたよね？",
+    "en": "I could be wrong, but haven't we met before?",
+    "alternatives": [
+      "Forgive me if I'm mistaken, but haven't we met somewhere?",
+      "I may be mistaken, but I think we've met before."
+    ],
+    "point": "I could be wrong, but で断定を避ける",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3u5h4f9m",
     "ja": "犬の散歩中は、いつも音楽を聴いてます。",
     "en": "I always listen to music while walking my dog.",
@@ -151,6 +183,38 @@
     }
   },
   {
+    "id": "c_5k4r6f9m",
+    "ja": "ケンが紹介してくれなかったら、私たちは出会えなかったね。",
+    "en": "If Ken hadn't introduced us, we'd never have met.",
+    "alternatives": [
+      "Had Ken not introduced us, we'd never have met.",
+      "Without Ken introducing us, we'd never have met."
+    ],
+    "point": "過去の仮定は had + 過去分詞、結果は would have met",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5k6v5e7t",
+    "ja": "祖父にちなんで名付けられたんです。",
+    "en": "I was named after my grandfather.",
+    "alternatives": [
+      "I was named for my grandfather.",
+      "I got my name from my grandfather."
+    ],
+    "point": "「名付けられた」は受動態。名前は after で由来を示す",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 7,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5w2b4f8p",
     "ja": "自己紹介しないとね。僕はトムです。",
     "en": "I should introduce myself. I'm Tom.",
@@ -217,6 +281,22 @@
     }
   },
   {
+    "id": "c_6w9d8v2m",
+    "ja": "僕がもっと社交的だったらな。初対面だと固まっちゃう。",
+    "en": "I wish I were more outgoing. I freeze up around strangers.",
+    "alternatives": [
+      "I wish I were more sociable. I freeze up around strangers.",
+      "If only I were more outgoing. I clam up around new people."
+    ],
+    "point": "現在の願望は wish + 過去形、be動詞は were",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["wishes-regrets", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7a5p6f8f",
     "ja": "僕の仕事は、アプリを設計することです。",
     "en": "What I do is design apps.",
@@ -234,6 +314,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7d4u7z3b",
+    "ja": "不躾ですが、どんなお仕事をされているんですか？",
+    "en": "Forgive my asking, but what line of work are you in?",
+    "alternatives": [
+      "I hope you don't mind my asking, but what do you do?",
+      "Sorry to be so blunt, but what do you do for work?"
+    ],
+    "point": "Forgive my asking, but で質問を和らげる",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7e8t5u5r",
@@ -278,6 +374,54 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7g7s7e5a",
+    "ja": "昨年転職して、今は広告の仕事をしています。",
+    "en": "I switched careers last year and now work in advertising.",
+    "alternatives": [
+      "Last year I changed careers; now I work in advertising.",
+      "I changed careers last year, and I'm in advertising now."
+    ],
+    "point": "昨年は過去形、今の状態は現在形で切り分ける",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7j4x9q6s",
+    "ja": "私は亡き祖父にちなんで名付けられたんです。",
+    "en": "I was named after my late grandfather.",
+    "alternatives": [
+      "I was named for my late grandfather.",
+      "I'm named after my late grandfather."
+    ],
+    "point": "「名付けられた」は受動態。「〜にちなんで」は after か for",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7q9e6u6c",
+    "ja": "同業だったなんて、今まで気づきませんでした。",
+    "en": "I hadn't realized we were in the same field.",
+    "alternatives": [
+      "I didn't realize we worked in the same field.",
+      "I had no idea we were in the same field."
+    ],
+    "point": "気づく前から同業だった。その差を過去完了で出す",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 7,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7t7n2j2u",
@@ -379,6 +523,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8d4r7b6b",
+    "ja": "今日来ていなければ、あなたとは会えていませんでしたね。",
+    "en": "Had I not come today, we'd never have met.",
+    "alternatives": [
+      "If I hadn't come today, we'd never have met.",
+      "If I hadn't come today, I'd never have met you."
+    ],
+    "point": "Had I not〜 は If I hadn't〜 の倒置形",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["third-conditional", "inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8f2j7w6x",

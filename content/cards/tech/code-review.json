@@ -88,6 +88,19 @@
     }
   },
   {
+    "id": "c_3u6g9d3z",
+    "ja": "ドキュメントを更新しないとだめだよ。",
+    "en": "You have to update the docs.",
+    "alternatives": ["You need to update the docs.", "The docs need to be updated."],
+    "point": "「しないとだめ」は have to。主語は you",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3v2p3m7q",
     "ja": "この関数、分割を検討してもらえますか？",
     "en": "Could you consider splitting this function?",
@@ -173,6 +186,22 @@
     }
   },
   {
+    "id": "c_4f2e6y3n",
+    "ja": "まだ、変更を確認しているところです。",
+    "en": "I'm still reviewing your changes.",
+    "alternatives": [
+      "I'm still going through your changes.",
+      "I'm still looking at your changes."
+    ],
+    "point": "「〜しているところ」は進行形。still は be 動詞の後ろ",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 3,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4x5m8x2m",
     "ja": "レビューは明日までに終わらせます。",
     "en": "I'll finish the review by tomorrow.",
@@ -193,6 +222,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_4z7b5h3p",
+    "ja": "共通ロジックは切り出すべきです。",
+    "en": "We should pull out the shared logic.",
+    "alternatives": [
+      "The shared logic should be pulled out.",
+      "We need to pull the common logic out."
+    ],
+    "point": "pull out は「切り出す」。目的語が長いと pull out の後ろに置く",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 5,
+    "grammar": ["phrasal-verbs", "modal-obligation-advice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5k2z3n8n",
@@ -237,6 +282,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5p8f3m3f",
+    "ja": "この差分、朝からずっと見てるのに、まだ全然つかめないよ。",
+    "en": "I've been staring at this diff all morning, and I'm lost.",
+    "alternatives": [
+      "I've spent all morning on this diff and I'm still lost.",
+      "I've been on this diff since morning and I'm still lost."
+    ],
+    "point": "「朝からずっと」は現在完了進行形 have been -ing",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5u5e9p5z",
@@ -369,6 +430,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8c8q5s3f",
+    "ja": "僕らが触ったファイルに、テストは要る？",
+    "en": "Do the files we touched need tests?",
+    "alternatives": [
+      "Do the files we changed need tests?",
+      "Should the files we touched get tests?"
+    ],
+    "point": "名詞の直後に we touched を置いて「触った〜」と修飾する",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 5,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8c8q9y9n",

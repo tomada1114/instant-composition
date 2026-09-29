@@ -132,6 +132,22 @@
     }
   },
   {
+    "id": "c_2u6v7p9n",
+    "ja": "熱を下げてくれたのは、この薬なんです。",
+    "en": "This medicine is what brought my fever down.",
+    "alternatives": [
+      "It was this medicine that brought my fever down.",
+      "What brought my fever down was this medicine."
+    ],
+    "point": "「熱を下げる」は bring 〜 down の句動詞",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 8,
+    "grammar": ["cleft-emphasis", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2v7s4g7r",
     "ja": "熱があるなら、休んでね。",
     "en": "Rest if you have a fever.",
@@ -212,6 +228,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3v9h5y5z",
+    "ja": "症状が出始めた時期を、正確に思い出せません。",
+    "en": "I can't remember exactly when the symptoms started.",
+    "alternatives": [
+      "I can't recall exactly when my symptoms began.",
+      "I don't remember exactly when the symptoms began."
+    ],
+    "point": "when 以下は疑問文の語順にしない",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 8,
+    "grammar": ["nested-clauses", "noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_3w4c4x7e",
@@ -369,6 +401,22 @@
     }
   },
   {
+    "id": "c_5a6k2x6t",
+    "ja": "私なら、その頭痛は放っておかないけどね。",
+    "en": "If I were you, I wouldn't let that headache slide.",
+    "alternatives": [
+      "If I were you, I wouldn't ignore that headache.",
+      "I wouldn't brush off that headache if I were you."
+    ],
+    "point": "現在の仮定は if 節が were、主節は would",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 9,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5e9e9v7r",
     "ja": "先生、咳が出るんです。",
     "en": "I have a cough.",
@@ -432,6 +480,22 @@
     }
   },
   {
+    "id": "c_5x8w3s3t",
+    "ja": "私があなたなら、その咳はすぐ病院で診てもらいますよ。",
+    "en": "If I were you, I'd get that cough looked at right away.",
+    "alternatives": [
+      "If I were you, I'd have that cough checked out right away.",
+      "I'd get that cough looked at soon if I were you."
+    ],
+    "point": "仮定は If I were you。診てもらうは get ~ looked at",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 10,
+    "grammar": ["second-conditional", "causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6e7t5m8g",
     "ja": "夫には明日、絶対に検査を受けさせます。",
     "en": "I'm definitely making my husband get checked out tomorrow.",
@@ -476,6 +540,22 @@
     }
   },
   {
+    "id": "c_6n2f4w9n",
+    "ja": "一週間続いた腰痛が、今朝ようやく引きました。",
+    "en": "The back pain I'd had all week finally let up this morning.",
+    "alternatives": [
+      "My back pain, which had lasted a week, finally subsided this morning.",
+      "The week-long back pain finally went away this morning."
+    ],
+    "point": "「引く」は let up。続いていた分は過去完了で",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 10,
+    "grammar": ["nested-clauses", "tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6u7z8q2g",
     "ja": "母が転んで、手首を押さえたまま動けなかった。",
     "en": "My mom fell and couldn't move, holding her wrist.",
@@ -518,6 +598,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7j5p5x8b",
+    "ja": "私があなたなら、専門医に診てもらうけどな。",
+    "en": "If I were you, I'd see a specialist.",
+    "alternatives": [
+      "I'd see a specialist if I were you.",
+      "If I were in your shoes, I'd see a specialist."
+    ],
+    "point": "仮定法過去では I ではなく were を使う",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 8,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7n7y2q7b",
@@ -606,6 +702,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8d9p6e3e",
+    "ja": "手がしびれる原因が何か、わかりますか？",
+    "en": "Do you have any idea what's causing my hands to go numb?",
+    "alternatives": [
+      "Can you tell me what's making my hands go numb?",
+      "Do you know what's behind the numbness in my hands?"
+    ],
+    "point": "疑問文の中の what は語順が平叙文のまま",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 10,
+    "grammar": ["nested-clauses", "noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8f8n2x8g",
@@ -760,6 +872,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9s4w9k6v",
+    "ja": "熱を下げるには、何をすればいいですか？",
+    "en": "What should I do to get my fever down?",
+    "alternatives": [
+      "How can I bring my fever down?",
+      "What should I do to lower my fever?"
+    ],
+    "point": "「〜するには」は to 不定詞で目的を表す",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 8,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9z9t2b6s",

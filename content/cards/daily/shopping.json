@@ -1,5 +1,37 @@
 [
   {
+    "id": "c_2f7b9c2k",
+    "ja": "安いほうにしておけばよかった。もう壊れかけてる。",
+    "en": "I should've gone with the cheaper one. It's already falling apart.",
+    "alternatives": [
+      "I should have bought the cheaper one. It's already falling apart.",
+      "I should have picked the cheaper one. It's already breaking down."
+    ],
+    "point": "「〜しておけばよかった」は should have + 過去分詞",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 10,
+    "grammar": ["modal-perfect", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2g6h4h9k",
+    "ja": "店員さんの勧めは、高すぎたから断ったよ。",
+    "en": "I turned down the clerk's suggestion as too expensive.",
+    "alternatives": [
+      "I passed on the clerk's suggestion; too pricey.",
+      "I declined the clerk's recommendation; it cost too much."
+    ],
+    "point": "「断る」は turn down。decline や pass on も自然",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 8,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2k5r6p8q",
     "ja": "この近くに文房具屋、ありますか？",
     "en": "Is there a stationery store near here?",
@@ -233,6 +265,22 @@
     }
   },
   {
+    "id": "c_4w3z6w6w",
+    "ja": "別のサイズを取り寄せてもらえますか？",
+    "en": "Could you have another size sent over?",
+    "alternatives": [
+      "Could you order in another size for me?",
+      "Would you be able to get another size in?"
+    ],
+    "point": "取り寄せは have + 物 + 過去分詞、send over など",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["phrasal-verbs", "causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4z8y4k5f",
     "ja": "妻はもう1時間、ソファを見比べてる。",
     "en": "My wife's been comparing sofas for an hour.",
@@ -364,6 +412,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_6n3v9q9g",
+    "ja": "返品期限が過ぎたと気づき、彼女はあきらめた。",
+    "en": "Realizing the return window had closed, she gave up.",
+    "alternatives": [
+      "Seeing the return period was over, she gave up.",
+      "She gave up after realizing the return window had closed."
+    ],
+    "point": "気づいた時点が先なので分詞構文は Realizing で始める",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 8,
+    "grammar": ["participle-clauses", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6n6k5y5q",
@@ -541,6 +605,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8t8a5a9r",
+    "ja": "注文する前にレビューを確認しておくべきだったな。",
+    "en": "I should have checked the reviews before ordering.",
+    "alternatives": [
+      "I should have read the reviews before I ordered.",
+      "I should've looked through the reviews before buying it."
+    ],
+    "point": "「〜すべきだった」は should have + 過去分詞",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8y7w7d4e",
+    "ja": "タグは外しちゃったけど、まだ返品できますか？",
+    "en": "I took the tags off, but can I still return it?",
+    "alternatives": [
+      "I've already taken the tags off. Can I still return it?",
+      "The tags are off already, but can I still return it?"
+    ],
+    "point": "「外す」は take ~ off。代名詞なら take it off",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 10,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8z3c6y3p",

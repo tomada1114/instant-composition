@@ -261,6 +261,22 @@
     }
   },
   {
+    "id": "c_4m9k8f9s",
+    "ja": "ここが、待つ価値があると友達が言ってた店だよ。",
+    "en": "This is the place my friend said was worth the wait.",
+    "alternatives": [
+      "This is the restaurant my friend said was worth waiting for.",
+      "This is where my friend said the wait was worth it."
+    ],
+    "point": "the place の後ろの関係代名詞は省略。said の後に主語なし",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4n9c9b4j",
     "ja": "僕らが着いたときには、もう閉店してた。",
     "en": "By the time we arrived, they'd already closed.",
@@ -415,6 +431,22 @@
     }
   },
   {
+    "id": "c_5q5v6t4v",
+    "ja": "あの店のカレー、辛すぎて涙が出たよ。",
+    "en": "That curry was so hot it made my eyes water.",
+    "alternatives": [
+      "That curry was so spicy it brought tears to my eyes.",
+      "That curry was so spicy I teared up."
+    ],
+    "point": "「涙が出る」は make my eyes water。使役の make を使う",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 9,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5r4j8d9m",
     "ja": "一度食べてから、この料理がずっと食べたかったんだ。",
     "en": "I've wanted this dish ever since I tried it.",
@@ -457,6 +489,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5y8n6e3j",
+    "ja": "ワインはソムリエに選ばせれば、まず外れないよ。",
+    "en": "Have the sommelier pick the wine and you can't go wrong.",
+    "alternatives": [
+      "If you let the sommelier choose the wine, you can't go wrong.",
+      "Get the sommelier to pick the wine and you can't go wrong."
+    ],
+    "point": "「選ばせる」は have / let / get＋人＋動詞の原形（get は to）",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5y9w2n9g",
@@ -583,6 +631,22 @@
     }
   },
   {
+    "id": "c_6k4x6f5z",
+    "ja": "姉は寿司が大好きだが、私は生魚が苦手なんだ。",
+    "en": "My sister loves sushi, whereas I can't stomach raw fish.",
+    "alternatives": [
+      "My sister adores sushi, but I can't stand raw fish.",
+      "Whereas my sister loves sushi, I can't stand raw fish."
+    ],
+    "point": "対比は whereas。「苦手」は can't stomach や can't stand",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 9,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6t8p3t2d",
     "ja": "このお店、カードで払えますか？",
     "en": "Can I pay by card here?",
@@ -666,6 +730,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8a6y7y2y",
+    "ja": "外食だと、僕はたいてい魚だけど、妻はいつも肉だね。",
+    "en": "I usually order fish, whereas my wife always goes for meat.",
+    "alternatives": [
+      "I usually order fish, but my wife always goes for meat.",
+      "I usually get fish, while my wife always orders meat."
+    ],
+    "point": "対比は whereas / while で。goes for は「を選ぶ」",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8c4z2a2z",

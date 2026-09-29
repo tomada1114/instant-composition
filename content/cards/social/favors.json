@@ -22,6 +22,22 @@
     }
   },
   {
+    "id": "c_2c5m7z5b",
+    "ja": "採用担当の人に、私のことを口添えしてもらえないかな？",
+    "en": "Could you put in a good word for me with whoever's hiring?",
+    "alternatives": [
+      "Could you vouch for me with the hiring manager?",
+      "Could you say something good about me to the person hiring?"
+    ],
+    "point": "口添えは put in a good word、誰でも採用担当は whoever",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 10,
+    "grammar": ["nested-clauses", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2q4s7c7y",
     "ja": "僕が決められるなら、喜んで手を貸すのに。",
     "en": "If it were my call, I'd gladly help.",
@@ -172,6 +188,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_4j6j5g7g",
+    "ja": "隣に座ってる彼、僕に借りがあるから、頼んでみなよ。",
+    "en": "The guy next to you owes me one. Ask him.",
+    "alternatives": [
+      "Ask the guy next to you. He owes me one.",
+      "The man beside you owes me a favor, so ask him."
+    ],
+    "point": "「隣の彼」は前置詞句で後ろから修飾する",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 9,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_4n8d2z4y",
@@ -476,6 +508,22 @@
     }
   },
   {
+    "id": "c_8k2y6b2w",
+    "ja": "手が回らないので、今回は見送らせてもらうね。",
+    "en": "Being stretched thin right now, I'll have to pass this time.",
+    "alternatives": [
+      "I'm stretched too thin, so I'll have to pass this time.",
+      "Since I'm swamped right now, I'll have to sit this one out."
+    ],
+    "point": "断りの pass、手一杯は stretched thin と言える",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 10,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8p7h3r5c",
     "ja": "田中さんにもう頼んだから、君は気にしなくていいよ。",
     "en": "I've already asked Tanaka, so you're off the hook.",
@@ -498,6 +546,22 @@
     }
   },
   {
+    "id": "c_8p9w6f6v",
+    "ja": "ちょっとした頼みが週末を丸ごと潰すとは思わなかった。",
+    "en": "Little did I know this favor would eat my whole weekend.",
+    "alternatives": [
+      "Never did I imagine this favor would eat up my whole weekend.",
+      "I never imagined this small favor would swallow my whole weekend."
+    ],
+    "point": "Little を文頭に出すと did I know の語順になる",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8t9s3t4q",
     "ja": "彼に頼まれたとき、きっぱり断っておけばよかった。",
     "en": "I should have turned him down flat when he asked.",
@@ -518,6 +582,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8x6z7k2s",
+    "ja": "一度引き受けたから、断れなかったんだ。",
+    "en": "Having said yes once, I couldn't back out.",
+    "alternatives": [
+      "I'd already said yes, so I couldn't back out.",
+      "Since I'd already agreed, I couldn't back out."
+    ],
+    "point": "「引き受けた後」は Having + 過去分詞で表す",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 8,
+    "grammar": ["participle-clauses", "past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8z3p4v9g",
@@ -625,5 +705,21 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9s6w5a2k",
+    "ja": "頼む前に、彼女のほうから代わると言ってくれた。",
+    "en": "I hadn't even asked when she offered to cover.",
+    "alternatives": [
+      "She offered to cover before I'd even asked.",
+      "Before I'd even asked, she offered to take over."
+    ],
+    "point": "「頼む前に」は過去完了 hadn't asked で表す",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 9,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]

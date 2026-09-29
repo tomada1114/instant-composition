@@ -44,6 +44,22 @@
     }
   },
   {
+    "id": "c_2q2x3p6u",
+    "ja": "乗り継ぎに間に合うか、教えていただけますか？",
+    "en": "Could you tell me whether I'll make my connection?",
+    "alternatives": [
+      "Would you let me know if I'll make my connection?",
+      "Can you tell me if I'll catch my connecting flight?"
+    ],
+    "point": "間に合う=make。埋め込み文は平叙の語順",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2y9u3t6m",
     "ja": "入国カードに記入していただけますか？",
     "en": "Could you fill out this arrival card?",
@@ -154,6 +170,70 @@
     }
   },
   {
+    "id": "c_3u2k5d8x",
+    "ja": "隣の男性は、ずっと座席を倒していた。",
+    "en": "The man next to me kept reclining his seat.",
+    "alternatives": [
+      "The guy sitting next to me kept his seat reclined.",
+      "The man beside me kept leaning his seat back."
+    ],
+    "point": "「隣の男性」は後ろから the man next to me と修飾",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3y4r3n2z",
+    "ja": "もう少し席が広ければ、ぐっすり眠れるんだけどな。",
+    "en": "If the seat were any roomier, I could actually sleep.",
+    "alternatives": [
+      "I could really sleep if this seat were a bit roomier.",
+      "If I had a bit more room, I could sleep properly."
+    ],
+    "point": "事実と逆の仮定は if 節を were、主節を could に",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 10,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3z3c6h8z",
+    "ja": "乗り継ぎ便がどこから出るか教えていただけますか？",
+    "en": "Could you tell me where my connection leaves from?",
+    "alternatives": [
+      "Could you tell me which gate my connection leaves from?",
+      "Would you mind telling me where my connection leaves from?"
+    ],
+    "point": "間接疑問は where のあとが平叙文の語順",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["indirect-questions", "nested-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4p5s7j5k",
+    "ja": "スマホを充電できる場所はありますか？",
+    "en": "Is there somewhere to charge my phone?",
+    "alternatives": [
+      "Is there a place to charge my phone?",
+      "Where can I charge my phone?"
+    ],
+    "point": "「〜できる場所」は somewhere / a place の後ろに to 不定詞",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 4,
+    "grammar": ["infinitives", "there-is-are"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4u4t5d5f",
     "ja": "私の席の下に誰かのかばんがあります。",
     "en": "There's someone's bag under my seat.",
@@ -174,6 +254,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_6b9f6v7s",
+    "ja": "一時間ここで待っているのに、搭乗がまだ始まらないんです。",
+    "en": "I've been here an hour, and boarding still hasn't started.",
+    "alternatives": [
+      "I've been waiting here an hour, and boarding hasn't begun yet.",
+      "I've waited an hour, but they still haven't started boarding."
+    ],
+    "point": "待ち続けている時間は現在完了形で言う",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6e3a9w4b",
@@ -217,6 +313,22 @@
     }
   },
   {
+    "id": "c_6e9q9r8z",
+    "ja": "私、乗り継ぎが長ければ、ゆっくり食べられるのに。",
+    "en": "If my layover were longer, I could eat properly.",
+    "alternatives": [
+      "If I had a longer layover, I could eat properly.",
+      "I could eat properly if my layover were longer."
+    ],
+    "point": "現実と違う仮定は if 節が過去形、主節は could",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 7,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6j4p3s2m",
     "ja": "パスポートを更新していたら、今ごろ搭乗中なのに。",
     "en": "If I'd renewed my passport, I'd be boarding now.",
@@ -237,6 +349,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_6n4r9u2k",
+    "ja": "もっと早い便に変えられますか？",
+    "en": "Can I take an earlier flight?",
+    "alternatives": [
+      "Can I change to an earlier flight?",
+      "Could I switch to an earlier flight?"
+    ],
+    "point": "「もっと早い」は early の比較級 earlier",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 3,
+    "grammar": ["comparatives-superlatives", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6t8n9x9b",
@@ -341,6 +469,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8f8a8g7g",
+    "ja": "誰かが通路に置いた荷物が、私の行く手をふさいでいた。",
+    "en": "The bag someone left in the aisle was in my way.",
+    "alternatives": [
+      "A bag someone left in the aisle was blocking my way.",
+      "The bag that someone left in the aisle blocked my way."
+    ],
+    "point": "名詞の直後に「誰かが置いた」を that なしで続ける",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8k8e5g2b",
+    "ja": "私があなたなら、今すぐ搭乗口に向かうよ。",
+    "en": "If I were you, I'd head to the gate now.",
+    "alternatives": [
+      "If I were in your shoes, I'd go to the gate now.",
+      "I'd go to the gate right away if I were you."
+    ],
+    "point": "現在の助言は If I were you, I'd ~ の形",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 10,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8m6t8d2e",
@@ -453,6 +613,22 @@
     }
   },
   {
+    "id": "c_9k3k6k5r",
+    "ja": "オンラインでチェックイン済みなのに、結局並んだ。",
+    "en": "Despite checking in online, I still had to queue.",
+    "alternatives": [
+      "Although I checked in online, I still had to queue.",
+      "I checked in online, but I still had to queue."
+    ],
+    "point": "のに は Despite + 動名詞でも表せる",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9n6c6e2b",
     "ja": "席を替わっていただけませんか？",
     "en": "Would you mind switching seats with me?",
@@ -473,5 +649,21 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9q9h9w9r",
+    "ja": "私たちの前にいた男性が、別室に連れて行かれた。",
+    "en": "The man who went before us got pulled aside.",
+    "alternatives": [
+      "The man who was ahead of us was taken aside.",
+      "The man in front of us got pulled aside."
+    ],
+    "point": "who 節で「前にいた男性」を後ろから説明する",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 7,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]

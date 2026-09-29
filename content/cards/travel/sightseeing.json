@@ -1,5 +1,37 @@
 [
   {
+    "id": "c_2e6e5k6k",
+    "ja": "ずっと憧れてたあの城に、やっと来られた！",
+    "en": "I finally made it to the castle I've dreamed of.",
+    "alternatives": [
+      "I'm finally at the castle I've always dreamed of.",
+      "I've finally got to see the castle I've dreamed of."
+    ],
+    "point": "憧れ続けた今への結びつきは現在完了で表す",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 8,
+    "grammar": ["present-perfect", "relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2u4b5v4c",
+    "ja": "夜のクルーズって、参加したことある？",
+    "en": "Have you ever been on the night cruise?",
+    "alternatives": [
+      "Have you ever taken the night cruise?",
+      "Have you ever gone on the night cruise?"
+    ],
+    "point": "経験は Have you ever + 過去分詞で尋ねる",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 7,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3d5n5e7c",
     "ja": "写真じゃ伝わらないのは、この滝の音の迫力だよね。",
     "en": "What photos can't capture is the roar of this waterfall.",
@@ -42,6 +74,23 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3s8m9q4s",
+    "ja": "ツアーに入ってなかったら、この穴場は見つけられなかったね。",
+    "en": "If we hadn't joined, we'd never have found this gem.",
+    "alternatives": [
+      "If we hadn't signed up, we'd never have found this gem.",
+      "Had we not joined, we'd never have found this gem.",
+      "If we hadn't taken the tour, we'd never have found this spot."
+    ],
+    "point": "過去の仮定は If + had + 過去分詞、主節は would have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 10,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_3t9f3w5z",
@@ -110,6 +159,22 @@
     }
   },
   {
+    "id": "c_4a2g4w6s",
+    "ja": "私たち、予約しておいたのに、記録がないって言われたよ。",
+    "en": "We'd booked ahead, but they said they had no record.",
+    "alternatives": [
+      "We had reserved ahead, but they said there was no record.",
+      "We'd booked in advance, yet they said there was no record."
+    ],
+    "point": "言われた時点より前の予約は過去完了 had booked",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4c7e9w8d",
     "ja": "この街の観光情報って、何かありますか？",
     "en": "Do you have any information on local sights?",
@@ -130,6 +195,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_4f8z7r9m",
+    "ja": "彼女、あの絵の前でもう30分もじっと見てるんだよ。",
+    "en": "She's been staring at that painting for thirty minutes.",
+    "alternatives": [
+      "She's been looking at that painting for half an hour.",
+      "She's been glued to that painting for half an hour."
+    ],
+    "point": "今も続く動作は has been + ing、期間は for で表す",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_4y3m2u8r",
@@ -176,6 +257,22 @@
     }
   },
   {
+    "id": "c_5s4t7g9e",
+    "ja": "私たちが予約したツアー、もう出発しましたか？",
+    "en": "Has the tour we booked already set off?",
+    "alternatives": [
+      "Has the tour we booked already left?",
+      "Did the tour we booked already leave?"
+    ],
+    "point": "「もう」を含む完了の疑問は現在完了で聞く",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 8,
+    "grammar": ["present-perfect", "post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5t2p3r9e",
     "ja": "みんな作品じゃなくて、眺めが目当てで来るんですよ。",
     "en": "It's the view, not the art, that people come for.",
@@ -218,6 +315,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5v8v9c2k",
+    "ja": "地図を持ってきてたら、この遺跡で迷わなかったのにね。",
+    "en": "If we'd brought a map, we wouldn't have gotten lost.",
+    "alternatives": [
+      "We wouldn't have gotten lost if we'd brought a map.",
+      "Had we brought a map, we wouldn't have gotten lost."
+    ],
+    "point": "「迷わなかった」は wouldn't have gotten lost。get lost を活用",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["third-conditional", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5x9y9c8b",
@@ -286,6 +399,22 @@
     }
   },
   {
+    "id": "c_6h2f5f5t",
+    "ja": "ガイドさんが絶賛してた場所は、どの地図にも載ってないよ。",
+    "en": "The place the guide raved about isn't on any map.",
+    "alternatives": [
+      "The spot the guide was raving about isn't on any map.",
+      "None of the maps show the place the guide raved about."
+    ],
+    "point": "関係詞は省略できる。rave about は「絶賛する」",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6j8s2y6e",
     "ja": "あの人たち、最終ツアーに出たに違いない。",
     "en": "They must have taken the last tour.",
@@ -330,6 +459,22 @@
     }
   },
   {
+    "id": "c_6n9s5j5n",
+    "ja": "ここ、昔は無料だったのに、今は入場料を取るんだね。",
+    "en": "It used to be free, but now they charge admission.",
+    "alternatives": [
+      "It was free once, but now there's an admission fee.",
+      "This place used to be free, but they charge now."
+    ],
+    "point": "過去の状態は used to、今は現在形で対比する",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 8,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6r4b5s6x",
     "ja": "私たち、夕日を見にここまで来たんです。",
     "en": "We came here to see the sunset.",
@@ -369,6 +514,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_6t3q9q4f",
+    "ja": "僕が早く予約してれば、特別展に入れたのに。",
+    "en": "If I'd booked earlier, I could've gotten in.",
+    "alternatives": [
+      "Had I booked earlier, I could've gotten in.",
+      "If I had booked sooner, I would've gotten in."
+    ],
+    "point": "過去の後悔は if + had + 過去分詞、could have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 7,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6z5b8v4w",
@@ -503,6 +664,22 @@
     }
   },
   {
+    "id": "c_7q7f7x3v",
+    "ja": "入口に並んでる人たちは、ツアーの参加者ですか？",
+    "en": "Are the people lined up outside on the tour?",
+    "alternatives": [
+      "Are the people queuing at the entrance tour members?",
+      "Are those people lined up outside part of the tour?"
+    ],
+    "point": "「並んでる人たち」は people の後ろに分詞を置く",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 8,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7u3w2w9w",
     "ja": "今朝のお寺が断トツで一番よかったね。",
     "en": "This morning's temple was by far the best.",
@@ -635,6 +812,22 @@
     }
   },
   {
+    "id": "c_9b8b6c7r",
+    "ja": "着いたら、最終エレベーターはもう出たあとだった。",
+    "en": "The last elevator had already left when we got there.",
+    "alternatives": [
+      "By the time we arrived, the last elevator had already gone.",
+      "We got there after the last elevator had already left."
+    ],
+    "point": "「着いた」より前に出発済み。先に起きた方は過去完了",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9g8x8b4e",
     "ja": "すみません、先にリュックを預けてもいいですか？",
     "en": "Is it okay to drop off my backpack first?",
@@ -657,6 +850,22 @@
     }
   },
   {
+    "id": "c_9j6d2y8y",
+    "ja": "入口の警備員さんに聞いてたら、わかったのに。",
+    "en": "If I'd asked the gate guard, I'd have known.",
+    "alternatives": [
+      "Had I asked the guard at the gate, I'd have known.",
+      "If I'd just asked the guard, I'd have known."
+    ],
+    "point": "過去の反対は If + had + 過去分詞、主節は would have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9m9n8j3g",
     "ja": "展望台がこんなに混むとは、思ってもみなかった。",
     "en": "I never thought the lookout would be this packed.",
@@ -677,5 +886,21 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9q8d9a4n",
+    "ja": "私、ここは三回来てるけど、塔に登ったのは去年が初めて。",
+    "en": "I've come three times, but only climbed the tower last year.",
+    "alternatives": [
+      "I've been three times, but only went up the tower last year.",
+      "I've been here three times, but only climbed the tower last year."
+    ],
+    "point": "回数は現在完了、last year のある過去は過去形",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]

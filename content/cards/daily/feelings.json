@@ -44,6 +44,22 @@
     }
   },
   {
+    "id": "c_2n4x2c6q",
+    "ja": "あなたの言葉に私がどれだけ傷ついたか、分からないでしょ。",
+    "en": "You have no idea how much your words hurt me.",
+    "alternatives": [
+      "You can't imagine how much your words hurt me.",
+      "You don't know how badly your words hurt me."
+    ],
+    "point": "how much の後は疑問文の語順にせず、主語＋動詞",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 9,
+    "grammar": ["nested-clauses", "indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2v7q4e5x",
     "ja": "私、今すごく緊張してる。",
     "en": "I'm feeling really nervous right now.",
@@ -61,6 +77,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_2y4g7x7u",
+    "ja": "彼女の話を聞いて、私は本当に胸が痛んだ。",
+    "en": "Hearing her story really broke my heart.",
+    "alternatives": [
+      "It really broke my heart to hear her story.",
+      "I was heartbroken when I heard her story."
+    ],
+    "point": "「聞いて」は Hearing ～ の分詞構文で理由を表せる",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_3a6c5f6y",
@@ -195,6 +227,22 @@
     }
   },
   {
+    "id": "c_4a7q8f8d",
+    "ja": "この部屋、前よりずっと居心地がいいね。",
+    "en": "This room feels a lot cozier now.",
+    "alternatives": [
+      "This room is much cozier than before.",
+      "This room is way more comfortable now."
+    ],
+    "point": "「ずっと」は a lot / much で比較級を強める",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 5,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4c5m2t9p",
     "ja": "母が一番喜んだのは、孫たちからの手紙でした。",
     "en": "It was the grandkids' letters that pleased my mother most.",
@@ -278,6 +326,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5v7y5q2p",
+    "ja": "上司が言っていたことは、正直ちょっと納得いかない。",
+    "en": "I'm not really convinced by what my boss said.",
+    "alternatives": [
+      "What my boss said doesn't sit well with me.",
+      "Honestly, I can't quite accept what my boss said."
+    ],
+    "point": "「言っていたこと」は what my boss said と名詞節で作る",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 8,
+    "grammar": ["nested-clauses", "noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5w7s4h5p",
@@ -501,6 +565,22 @@
     }
   },
   {
+    "id": "c_6z5w8m7d",
+    "ja": "その知らせを聞いて、思わず気が滅入ってしまった。",
+    "en": "Hearing the news, I couldn't help feeling down.",
+    "alternatives": [
+      "Having heard the news, I couldn't help feeling down.",
+      "When I heard the news, I couldn't help but feel down."
+    ],
+    "point": "「思わず〜してしまう」は couldn't help ～ing",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 10,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7g8z9h8q",
     "ja": "あの頃、もっと正直になればよかった。",
     "en": "I wish I'd been more honest back then.",
@@ -649,6 +729,22 @@
     }
   },
   {
+    "id": "c_8z5c3h9w",
+    "ja": "もう終わったから、肩の荷が下りた気分だよ。",
+    "en": "Now that it's over, I feel like a weight's been lifted.",
+    "alternatives": [
+      "Now that it's all over, it's a weight off my shoulders.",
+      "With that over, it feels like a weight has been lifted."
+    ],
+    "point": "今の気分は現在形、下りた荷は現在完了で言う",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9e4m3m8w",
     "ja": "兄に映画を最後まで見させられて、ムッとした。",
     "en": "My brother made me finish the movie. Annoying!",
@@ -669,5 +765,21 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9h5w5t5j",
+    "ja": "その知らせに、涙をこらえられなかった。",
+    "en": "I couldn't hold back my tears.",
+    "alternatives": [
+      "I couldn't help crying at the news.",
+      "I couldn't keep from crying."
+    ],
+    "point": "「こらえる」は hold back。過去の不可能は couldn't",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 5,
+    "grammar": ["can-could-ability", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]

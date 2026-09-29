@@ -41,6 +41,22 @@
     }
   },
   {
+    "id": "c_2h3e7e7n",
+    "ja": "電話がつながらなかったので、メールしました。",
+    "en": "Unable to reach you by phone, I emailed you.",
+    "alternatives": [
+      "I couldn't reach you by phone, so I emailed.",
+      "Since I couldn't reach you by phone, I emailed."
+    ],
+    "point": "理由は Unable to〜 の分詞構文で短く言える",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2k7z2g5k",
     "ja": "途切れてたのは、回線じゃなくてそちらの音声ですよ。",
     "en": "It was your audio, not the line, that cut out.",
@@ -101,6 +117,38 @@
     }
   },
   {
+    "id": "c_3d7f6g3m",
+    "ja": "もっと大きな声なら、聞こえるんだけど。",
+    "en": "If you spoke louder, I'd hear you.",
+    "alternatives": [
+      "I could hear you if you spoke up.",
+      "If you spoke up, I could hear you."
+    ],
+    "point": "現実と違う仮定は if + 過去形、結果は would/could",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 5,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3j5p7m6b",
+    "ja": "私がもしもしと言うや否や、電話が切れた。",
+    "en": "Hardly had I said hello when the line went dead.",
+    "alternatives": [
+      "I'd barely said hello when the line went dead.",
+      "No sooner had I said hello than the line went dead."
+    ],
+    "point": "Hardly のあとは had I の倒置、続きは when",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3p9d8h7c",
     "ja": "請求を担当している方に、つないでいただけますか？",
     "en": "Could you put me through to whoever handles billing?",
@@ -143,6 +191,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_4q6v5e8f",
+    "ja": "一度切ってかけ直すのはどう？",
+    "en": "How about hanging up and calling back?",
+    "alternatives": [
+      "What about hanging up and calling again?",
+      "Why don't we hang up and call back?"
+    ],
+    "point": "How about の後ろは動名詞（-ing）",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 5,
+    "grammar": ["gerunds", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4r9q6n8m",
+    "ja": "音声が途切れたせいで、彼の要点を聞き逃した。",
+    "en": "The audio dropping out made me miss his point.",
+    "alternatives": [
+      "I missed his point because the audio kept dropping.",
+      "The audio cutting out made me miss his point."
+    ],
+    "point": "無生物主語 + make + 人 + 原形で「〜のせいで」",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_4v2h9q3q",
@@ -296,6 +376,22 @@
     }
   },
   {
+    "id": "c_6e9b3q3m",
+    "ja": "一点お伝えしたいことがあり、お電話しました。",
+    "en": "I'm calling because there's something I need to flag.",
+    "alternatives": [
+      "I'm calling to flag something.",
+      "I called because I have something to flag."
+    ],
+    "point": "something のあとに to 不定詞や関係詞節を置く",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6f9h6n2b",
     "ja": "あの電話、回す前に内線を確認すべきだった。",
     "en": "I should've checked the extension before transferring that call.",
@@ -406,6 +502,54 @@
     }
   },
   {
+    "id": "c_6x2x5u8s",
+    "ja": "音声が途切れたので、田中さんにもう一度言ってもらいます。",
+    "en": "The audio cut out, so I'll have Tanaka repeat it.",
+    "alternatives": [
+      "I'll get Tanaka to say it again; the audio cut out.",
+      "The audio dropped, so I'll ask Tanaka to repeat it."
+    ],
+    "point": "have + 人 + 原形で「〜してもらう」",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 9,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7e6d4s9a",
+    "ja": "向こうにマイクを近づけてもらえないかな？",
+    "en": "Can we get them to move the mic closer?",
+    "alternatives": [
+      "Could we have them move the mic closer?",
+      "Can we ask them to move their mic closer?"
+    ],
+    "point": "get + 人 + to 動詞、have は to が付かない",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7f5w8x7c",
+    "ja": "私が電話に出るや否や、通話が切れた。",
+    "en": "Hardly had I picked up when the call dropped.",
+    "alternatives": [
+      "No sooner had I answered than the call dropped.",
+      "As soon as I picked up, the call dropped."
+    ],
+    "point": "Hardly を文頭に出すと had I の語順、後ろは when",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7g2s5j7v",
     "ja": "私が共有している画面、見えますか？",
     "en": "Can you see the screen I'm sharing?",
@@ -445,6 +589,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7u4p7x6d",
+    "ja": "彼をすぐ電話に出しますので、少々お待ちください。",
+    "en": "Bear with me while I get him on the line.",
+    "alternatives": [
+      "Hold on a moment, I'll get him on the phone.",
+      "Please hold while I get him to the phone."
+    ],
+    "point": "get + 人 + 場所で「〜に出す・つなぐ」。Bear with me も便利",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 10,
+    "grammar": ["causatives", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7u6v4n4g",
@@ -489,6 +649,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7z5t7d9d",
+    "ja": "彼は画面を共有しながら、順に説明してくれました。",
+    "en": "Sharing his screen, he walked us through it.",
+    "alternatives": [
+      "He walked us through it while sharing his screen.",
+      "He shared his screen and walked us through it."
+    ],
+    "point": "同時進行は 〜ing で始める分詞構文",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8g2g6x3z",
@@ -557,6 +733,38 @@
     }
   },
   {
+    "id": "c_8m9c7u4e",
+    "ja": "話を続けるため、ヘッドセットを取ってきます。",
+    "en": "I'll grab my headset to keep talking.",
+    "alternatives": [
+      "I'll get my headset so we can continue.",
+      "Let me get my headset so we can keep talking."
+    ],
+    "point": "目的は to + 動詞の原形で言える",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8s2r6b2s",
+    "ja": "部長に折り返しお電話させます。",
+    "en": "I'll have the manager call you back.",
+    "alternatives": [
+      "I'll get the manager to call you back.",
+      "I'll have my manager return your call."
+    ],
+    "point": "「〜させる」は have + 人 + 動詞の原形",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8t5b4c7e",
     "ja": "私の声が切れたら教えてください。",
     "en": "If my voice cuts out, please tell me.",
@@ -577,5 +785,18 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9v6b5y2r",
+    "ja": "折り返し彼女に電話させますね。",
+    "en": "I'll have her call you back.",
+    "alternatives": ["I'll get her to call you back.", "I'll have her ring you back."],
+    "point": "「〜させる」は have + 人 + 動詞の原形",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 5,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]

@@ -44,6 +44,22 @@
     }
   },
   {
+    "id": "c_2k7a9t9q",
+    "ja": "君が入院してたなんて、全然知らなかったよ。",
+    "en": "Little did I know you'd been in the hospital.",
+    "alternatives": [
+      "I had no idea you'd been in the hospital.",
+      "I never knew you'd been in the hospital."
+    ],
+    "point": "Little を文頭に置くと did I know の語順になる",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 9,
+    "grammar": ["inversion", "past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2r6t8w9u",
     "ja": "私、ここ数年で今が一番忙しいよ。",
     "en": "This is the busiest I've been in years.",
@@ -108,6 +124,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3v8a7n5v",
+    "ja": "ずっと君に連絡しなきゃと思ってたんだ。",
+    "en": "I've been meaning to get in touch with you.",
+    "alternatives": [
+      "I've been meaning to reach out to you.",
+      "I've been meaning to catch up with you for ages."
+    ],
+    "point": "「〜しようと思ってた」は been meaning to + 動詞",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["infinitives", "present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_3z3m5z4f",
@@ -262,6 +294,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5k5p5r7g",
+    "ja": "私が君の立場なら、燃え尽きてるだろうな。",
+    "en": "If I were in your shoes, I'd be burned out.",
+    "alternatives": [
+      "If I were you, I'd be burned out.",
+      "I'd be completely burned out if I were in your shoes."
+    ],
+    "point": "仮定は were、結果は would＋動詞の原形",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 9,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5x6u8j2j",
