@@ -20,6 +20,7 @@ function answer(overrides: Partial<AcceptedAnswer> = {}): AcceptedAnswer {
     result: "ok",
     elapsedMs: 6_000,
     limitMs: 10_000,
+    paceMs: 10_000,
     day: "2026-09-22",
     answeredAt: 1,
     snapshot: { topic: "work", subtopic: "a", level: 5, prompt: "文" },
@@ -52,12 +53,25 @@ describe("outcomeOf", () => {
     ["timeout", 10_000, "again"],
     ["ok", 5_000, "easy"],
     ["ok", 5_001, "good"],
-  ] as const)("maps %s in %i ms of 10 s to %s", (result, elapsedMs, outcome) => {
-    expect(outcomeOf(result, elapsedMs, 10_000)).toBe(outcome);
-  });
+  ] as const)(
+    "maps %s in %i ms against a 10 s pace to %s",
+    (result, elapsedMs, outcome) => {
+      expect(outcomeOf(result, elapsedMs, 10_000)).toBe(outcome);
+    },
+  );
 });
 
 describe("reviewAnswer", () => {
+  it("judges an easy answer against the card's pace, not the round's longer limit", () => {
+    const { entry } = reviewAnswer(
+      undefined,
+      answer({ elapsedMs: 6_000, limitMs: 30_000, paceMs: 10_000 }),
+    );
+    expect(entry.outcome).toBe("good");
+    expect(entry.after?.box).toBe(1);
+    expect(entry.detail).toMatchObject({ limitMs: 30_000, paceMs: 10_000 });
+  });
+
   it("logs the memory state before and after a first pass", () => {
     const { entry, progress } = reviewAnswer(undefined, answer());
     expect(entry).toMatchObject({

@@ -25,7 +25,10 @@ export interface DrillCard {
   readonly text: string;
   readonly alternatives: readonly string[];
   readonly explanation: string;
+  /** When the timer runs out: the limit the round was dealt with. */
   readonly limitMs: number;
+  /** What a flip is "fast" against, from the model answer's length. */
+  readonly paceMs: number;
 }
 
 export interface RoundPayload {
@@ -115,7 +118,7 @@ export interface RoundSummary {
 }
 
 export interface SettingsView {
-  readonly settings: Settings;
+  readonly settings: Required<Settings>;
   /** Focus removed because its topic was deselected. */
   readonly removedFocus: readonly SubtopicRef[];
   /** Lowering the size completed today's portion there and then. */

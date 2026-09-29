@@ -7,6 +7,7 @@ import {
   type Result,
   type Settings,
   type SettingsPatch,
+  withDefaults,
 } from "@instant-composition/domain";
 
 import { loadClose, planClose } from "./close-round";
@@ -127,6 +128,9 @@ export async function updateSettings(
       completedToday = applied.completed;
       writes.push(...applied.writes);
     }
-    return ok({ value: { settings, removedFocus, completedToday }, writes });
+    return ok({
+      value: { settings: withDefaults(settings), removedFocus, completedToday },
+      writes,
+    });
   });
 }

@@ -29,7 +29,10 @@ export const drillCardSchema = z.object({
   text: z.string(),
   alternatives: z.array(z.string()),
   explanation: z.string(),
+  /** When the timer runs out: the limit the round was dealt with. */
   limitMs: countSchema,
+  /** What a flip is "fast" against, from the model answer's length. */
+  paceMs: countSchema,
 });
 
 export const roundPayloadSchema = z.object({

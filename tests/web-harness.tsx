@@ -164,6 +164,7 @@ export function drillCard(id: string, overrides: Partial<DrillCard> = {}): Drill
     alternatives: [],
     explanation: `point-${id}`,
     limitMs: 7000,
+    paceMs: 7000,
     ...overrides,
   };
 }

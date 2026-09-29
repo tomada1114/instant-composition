@@ -7,14 +7,14 @@ import {
 } from "@instant-composition/domain";
 
 // Worked examples against TUNING's intervals [1, 2, 4, 7, 14, 30] and a
-// 10-second limit, where "fast" is 5 seconds or less.
+// 10-second pace, where "fast" is 5 seconds or less.
 
 function leitner(overrides: Partial<LeitnerAnswer> = {}): LeitnerAnswer {
   return {
     day: "2026-09-22",
     result: "ok",
     elapsedMs: 8_000,
-    limitMs: 10_000,
+    paceMs: 10_000,
     ...overrides,
   };
 }

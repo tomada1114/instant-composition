@@ -110,6 +110,7 @@ export function decideStart(
     day: today,
     portionDay: dealt.value.portionDay,
     deck: dealt.value.deck,
+    limitMs: practice.limitSeconds * 1000,
     startedAt: now,
     finishedAt: null,
     abandonedAt: null,

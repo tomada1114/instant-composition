@@ -30,8 +30,9 @@ language pairs. Pairs the owner cannot read rely on LLM review alone.
 
 ## Decision drivers
 
-- The timed drill must never wait on a model. The card timer is 6–20 seconds
-  (`src/core/tuning.ts:12`).
+- The timed drill must never wait on a model. The card timer is the learner's setting,
+  15 to 60 seconds and 30 by default (`TUNING.limitSeconds` in
+  `packages/domain/src/tuning.ts`).
 - Every model call is attributable: to a feature, a learner (through the entitlements
   ledger, [ADR-0010](0010-entitlements-and-billing.md)), a prompt version and a model.
 - Tests and evaluation can run a task against a fake, a recording or the real model with
@@ -184,8 +185,8 @@ pipeline.
   deploy role's account.
 - For pairs the owner cannot read, feedback quality in that L1 rests on LLM judgment and
   learner reports. This limit is accepted by the owner.
-- Typed input needs its own timing rules. Typing an answer within a 6–20 second speaking
-  limit is a different task.
+- Typed input needs its own timing rules. Typing an answer within a speaking limit (15
+  to 60 seconds, 30 by default) is a different task.
 
 ### Follow-ups
 

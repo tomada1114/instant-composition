@@ -1,8 +1,15 @@
 import type { PracticeError } from "./errors";
 import { err, ok, type Result } from "./result";
 import { TUNING } from "./tuning";
-import type { DailySize, Settings, SubtopicRef, TopicInfo } from "./types";
+import type {
+  DailySize,
+  LimitSeconds,
+  Settings,
+  SubtopicRef,
+  TopicInfo,
+} from "./types";
 
+/** A new learner's settings; the limit is left unchosen, so the default stands in. */
 export const DEFAULT_SETTINGS: Settings = {
   topics: [],
   focus: [],
@@ -16,6 +23,17 @@ export interface SettingsPatch {
   readonly focus?: readonly SubtopicRef[];
   readonly dailySize?: DailySize;
   readonly sound?: boolean;
+  readonly limitSeconds?: LimitSeconds;
+}
+
+/** The per-card limit the learner chose, or the default when they never chose one. */
+export function limitSecondsOf(settings: Settings | undefined): LimitSeconds {
+  return settings?.limitSeconds ?? TUNING.defaultLimitSeconds;
+}
+
+/** The settings as a client reads them: every field present, a default for one never chosen. */
+export function withDefaults(settings: Settings): Required<Settings> {
+  return { ...settings, limitSeconds: limitSecondsOf(settings) };
 }
 
 export interface SettingsDecided {
@@ -67,12 +85,14 @@ export function decideSettings(
   ) {
     return err({ code: "ERR_BAD_REQUEST" });
   }
+  const limitSeconds = patch.limitSeconds ?? current.limitSeconds;
   return ok({
     settings: {
       topics,
       focus: unique.filter((ref) => topics.includes(ref.topic)),
       dailySize: patch.dailySize ?? current.dailySize,
       sound: patch.sound ?? current.sound,
+      ...(limitSeconds === undefined ? {} : { limitSeconds }),
     },
     removedFocus: unique.filter((ref) => !topics.includes(ref.topic)),
   });

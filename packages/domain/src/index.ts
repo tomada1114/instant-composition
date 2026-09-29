@@ -117,6 +117,8 @@ export { growthOf } from "./round-growth";
 export {
   decideSettings,
   DEFAULT_SETTINGS,
+  limitSecondsOf,
+  withDefaults,
   type SettingsDecided,
   type SettingsPatch,
 } from "./settings";
@@ -144,8 +146,12 @@ export {
   countWords,
   estimateMinutes,
   isFast,
-  limitMsForWords,
-  limitSecondsForWords,
+  limitMsOf,
+  paceMsForWords,
+  paceMsOf,
+  paceOf,
+  paceSecondsForWords,
+  type Paced,
 } from "./timer";
 export { TUNING, type MilestoneSeries } from "./tuning";
 export type {
@@ -157,6 +163,7 @@ export type {
   ConceptId,
   DailySize,
   DayKey,
+  LimitSeconds,
   Pass,
   RetiredCard,
   RoundKind,

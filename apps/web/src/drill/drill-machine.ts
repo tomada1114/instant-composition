@@ -5,6 +5,7 @@ import {
   currentCard,
   FRESH_FRONT,
   limitOf,
+  paceOf,
   usedMs,
   type DrillEvent,
   type DrillPhase,
@@ -101,7 +102,7 @@ function onBack(
   if (phase.mode === "timeout") return event.type === "next" ? advance(state) : state;
   if (event.type !== "grade") return state;
   if (event.key && event.at - phase.since < TUNING.keyLockAfterFlipMs) return state;
-  const fast = event.result === "ok" && isFast(phase.elapsedMs, limitOf(state));
+  const fast = event.result === "ok" && isFast(phase.elapsedMs, paceOf(state));
   const recorded = record(state, event.result, phase.elapsedMs, event.wall);
   return {
     ...recorded,

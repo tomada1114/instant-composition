@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import {
   decideSettings,
   DEFAULT_SETTINGS,
+  withDefaults,
   type SettingsPatch,
   type TopicInfo,
 } from "@instant-composition/domain";
@@ -48,6 +49,26 @@ describe("decideSettings", () => {
       },
       removedFocus: [{ topic: "travel", subtopic: "c" }],
     });
+  });
+
+  it("saves a chosen time limit, and keeps it through a patch that leaves it out", () => {
+    const chosen = decideSettings(CURRENT, { limitSeconds: 45 }, TAXONOMY);
+    expect(chosen.ok && chosen.value.settings).toStrictEqual({
+      ...CURRENT,
+      limitSeconds: 45,
+    });
+    const kept = decideSettings(
+      { ...CURRENT, limitSeconds: 45 },
+      { sound: false },
+      TAXONOMY,
+    );
+    expect(kept.ok && kept.value.settings.limitSeconds).toBe(45);
+  });
+
+  it("leaves the limit unchosen until the learner chooses one, so the default stands in", () => {
+    const decided = decideSettings(DEFAULT_SETTINGS, { topics: ["work"] }, TAXONOMY);
+    expect(decided.ok && "limitSeconds" in decided.value.settings).toBe(false);
+    expect(decided.ok && withDefaults(decided.value.settings).limitSeconds).toBe(30);
   });
 
   it("takes a focus named twice once", () => {

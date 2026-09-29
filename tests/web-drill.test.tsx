@@ -6,6 +6,7 @@ import type { AnswerInput, HomeView, RoundPayload } from "@instant-composition/w
 import {
   COUNT,
   ROUND,
+  drillCard,
   fakeApi,
   fakeTimers,
   fill,
@@ -230,6 +231,24 @@ describe("the drill, a round run by taps", () => {
       ["timeout"],
       ["ng"],
     ]);
+  });
+
+  it("runs each front for the limit the round was dealt, not the card's pace", async () => {
+    const long = { limitMs: 30_000, paceMs: 7000 };
+    serve({
+      round: {
+        ...ROUND,
+        cards: { c1: drillCard("c1", long), c2: drillCard("c2", long) },
+      },
+    });
+    await renderApp("/drill?kind=today");
+    await settle(16);
+
+    await settle(7100);
+    expect(screen.queryByText(ja.Drill.card.timedOut)).toBeNull();
+    expect(screen.getByText("prompt-c1")).toBeInTheDocument();
+    await settle(23_000);
+    expect(screen.getByText(ja.Drill.card.timedOut)).toBeInTheDocument();
   });
 
   it("pauses from the top strip's pause button", async () => {

@@ -12,6 +12,7 @@ function state(intro = false): DrillState {
     roundId: "r",
     deck: ["c1", "c2"],
     limits: { c1: 7000, c2: 7000 },
+    paces: { c1: 7000, c2: 7000 },
     answered: [],
     retries: true,
     intro,

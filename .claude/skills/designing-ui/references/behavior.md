@@ -25,8 +25,9 @@ starts. No 3D flip, no confetti, no full-screen flash, no shake.
 | Re-reading today's summary   | No count-up; every value final; this session's accent stays                                                                                               | Same                           | none                      |
 | Page hidden                  | Stop the timer, hide the front, show the pause sheet; it is still there when the page returns                                                             | Same                           | none                      |
 
-- "Fast" is a ○ flipped within half the time limit — a starting value, kept in
-  configuration.
+- "Fast" is a ○ flipped within half the card's pace, derived from the model answer's
+  length, never within half the time limit the learner chose — a 30-second limit would
+  make almost every ○ fast. Both are starting values, kept in configuration.
 - The timer bar is information, so it keeps shrinking under reduced motion (stepping
   once a second is fine). It carries `data-motion="essential"`, the one exemption from
   the global reduced-motion rule in `globals.css`.
@@ -97,8 +98,10 @@ Screen specifics:
 - The last topic kept is `aria-disabled` rather than disabled, so it stays focusable and
   its refusal is announced through a `status` line when pressed.
 
-A stated limitation: the time limit is the core of the drill, so there is no setting
-that extends it for screen-reader users.
+The time limit is the learner's own setting, from 15 to 60 seconds and 30 by default, so
+a screen-reader user who needs longer chooses it there like anyone else. A stated
+limitation: nothing extends it past the longest choice, because the limit is the core of
+the drill.
 
 ## Implementation rules
 
@@ -114,7 +117,8 @@ that extends it for screen-reader users.
 - Load the whole day's set, and the backs a retry round needs, when "start" is pressed.
   No loading state between cards: it would distort the timer.
 - Starting values tuned by use live in configuration, never in a component: the time
-  limit formula, the "fast" threshold, ring milestones, streak milestones, milestone
-  names, and the minutes-per-card estimate on the start screen.
+  limits on offer and their default, the pace formula, the "fast" threshold, ring
+  milestones, streak milestones, milestone names, and the minutes-per-card estimate on
+  the start screen.
 - Errors are words and a glyph, never red: a failed save is a toast and is retried with
   the next answer; practice never stops for it.

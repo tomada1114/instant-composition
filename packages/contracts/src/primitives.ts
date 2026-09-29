@@ -33,6 +33,15 @@ export const dailySizeSchema = z.union([
   z.literal(30),
 ]);
 
+/** A per-card time limit on offer, in seconds: the domain's `TUNING.limitSeconds`. */
+export const limitSecondsSchema = z.union([
+  z.literal(15),
+  z.literal(20),
+  z.literal(30),
+  z.literal(45),
+  z.literal(60),
+]);
+
 export const subtopicRefSchema = z.object({ topic: idSchema, subtopic: idSchema });
 
 export const dotSchema = z.object({
@@ -45,6 +54,8 @@ export const settingsSchema = z.object({
   focus: z.array(subtopicRefSchema),
   dailySize: dailySizeSchema,
   sound: z.boolean(),
+  /** The default until the learner chooses one. */
+  limitSeconds: limitSecondsSchema,
 });
 
 export const ringProgressSchema = z.object({
