@@ -1,5 +1,18 @@
 [
   {
+    "id": "c_2g8s4t5k",
+    "ja": "仕事はどう？",
+    "en": "How's work?",
+    "alternatives": ["How's work going?", "How's your work?"],
+    "point": "調子は how で聞く",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2h5s9c3s",
     "ja": "引っ越すことにしたんだ。",
     "en": "I decided to move.",
@@ -67,6 +80,19 @@
     }
   },
   {
+    "id": "c_3s2e5q7q",
+    "ja": "今、何してるの？",
+    "en": "What are you doing?",
+    "alternatives": ["What are you up to?", "What are you doing now?"],
+    "point": "今していることは現在進行形で聞く",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 1,
+    "grammar": ["progressive-aspect", "wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3w3a9f2c",
     "ja": "最近どうしてたか教えて。",
     "en": "Tell me how you've been.",
@@ -84,6 +110,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4y2z8a2u",
+    "ja": "今、猫を飼ってるよ。",
+    "en": "I have a cat.",
+    "alternatives": ["I've got a cat.", "I have a pet cat."],
+    "point": "数えられる名詞には a を付ける",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5b2j7v6x",

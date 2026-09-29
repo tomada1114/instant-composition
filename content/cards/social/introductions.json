@@ -1,5 +1,18 @@
 [
   {
+    "id": "c_2a8k6q3a",
+    "ja": "自己紹介しなきゃね。",
+    "en": "I must introduce myself.",
+    "alternatives": ["I have to introduce myself.", "I should introduce myself."],
+    "point": "「〜しなきゃ」は must か have to",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3e2h2m8p",
     "ja": "私は大阪出身の設計士です。",
     "en": "I'm an architect from Osaka.",
@@ -39,6 +52,71 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4n6z6c2x",
+    "ja": "ピアノが弾けます。",
+    "en": "I can play piano.",
+    "alternatives": ["I play the piano.", "I can play the piano."],
+    "point": "「弾ける」は can + 動詞",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5h8s6t6p",
+    "ja": "ケンって呼んでね。",
+    "en": "Call me Ken.",
+    "alternatives": ["Just call me Ken.", "You can call me Ken."],
+    "point": "「呼んで」は call me + 名前",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7f5g2j9b",
+    "ja": "うちの課は十人います。",
+    "en": "There are ten of us.",
+    "alternatives": ["Our team has ten people.", "We're a team of ten."],
+    "point": "人数は there are ten of us と言える",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8n8b3n4z",
+    "ja": "出身は東京です。",
+    "en": "I'm from Tokyo.",
+    "alternatives": ["I come from Tokyo.", "Tokyo is my hometown."],
+    "point": "出身は be from で言う",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8t5z4n7h",
+    "ja": "近くに公園があるよ。",
+    "en": "There's a park nearby.",
+    "alternatives": ["There's a park near here.", "There's a park close by."],
+    "point": "「〜がある」は there is / there's",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8v8h7m7u",
@@ -95,6 +173,32 @@
     }
   },
   {
+    "id": "c_9k6c6y4p",
+    "ja": "料理なら少しできます。",
+    "en": "I can cook a little.",
+    "alternatives": ["I can cook a bit.", "I cook a little."],
+    "point": "a little で「少し」の控えめさが出る",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 3,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9t7c2w8f",
+    "ja": "来月、結婚するんです。",
+    "en": "I'm getting married next month.",
+    "alternatives": ["I'll get married next month.", "Next month I'm getting married."],
+    "point": "近い予定は現在進行形で言える",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 3,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_9x4z9n8c",
     "ja": "週末は映画を観て過ごす。",
     "en": "I spend my weekends watching movies.",
@@ -115,5 +219,18 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9z4f3h9s",
+    "ja": "今は東京に住んでます。",
+    "en": "I'm living in Tokyo.",
+    "alternatives": ["I live in Tokyo now.", "Now I live in Tokyo."],
+    "point": "今の暮らしは進行形でも現在形でも言える",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

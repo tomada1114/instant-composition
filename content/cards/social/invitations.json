@@ -1,5 +1,18 @@
 [
   {
+    "id": "c_2j2s8y6v",
+    "ja": "まだ席があるよ。",
+    "en": "There are still seats.",
+    "alternatives": ["There are seats left.", "We still have seats."],
+    "point": "数えられる複数なら there are",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2j5u6y9h",
     "ja": "ずっと誘おうと思ってた。",
     "en": "I've been meaning to invite you.",
@@ -20,6 +33,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_2w5c5n9u",
+    "ja": "昨日カイを誘ったよ。",
+    "en": "I invited Kai yesterday.",
+    "alternatives": ["Yesterday I invited Kai.", "I asked Kai to come yesterday."],
+    "point": "invite は規則動詞で過去形は invited",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_3k3x3g9v",
@@ -44,6 +70,19 @@
     }
   },
   {
+    "id": "c_3k4q7c3k",
+    "ja": "今夜、空いてる？",
+    "en": "Are you free tonight?",
+    "alternatives": ["Are you free this evening?", "Do you have plans tonight?"],
+    "point": "「空いてる」は be free",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3p2j4r6x",
     "ja": "今夜は友達と外食するんだ。",
     "en": "I'm eating out with friends tonight.",
@@ -66,6 +105,32 @@
     }
   },
   {
+    "id": "c_3q7g4c3d",
+    "ja": "私と一緒に来てよ。",
+    "en": "Come with me.",
+    "alternatives": ["Come along with me.", "Join me."],
+    "point": "命令文は主語を付けず動詞から始める",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3s2v2n5k",
+    "ja": "日曜にパーティーだよ。",
+    "en": "There's a party Sunday.",
+    "alternatives": ["We're having a party Sunday.", "A party is on Sunday."],
+    "point": "「〜がある」は there is",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 2,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3x9j3s3d",
     "ja": "カイに来てと頼まれた。",
     "en": "Kai asked me to come.",
@@ -85,6 +150,32 @@
     }
   },
   {
+    "id": "c_4b4p6v9g",
+    "ja": "先週、彼に誘われたよ。",
+    "en": "He invited me last week.",
+    "alternatives": ["Last week he invited me.", "He asked me last week."],
+    "point": "日本語は受け身でも英語は he を主語に",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 3,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4s4n3b8p",
+    "ja": "どこで会おうか？",
+    "en": "Where should we meet?",
+    "alternatives": ["Where shall we meet?", "Where can we meet?"],
+    "point": "場所を聞くなら where で始める",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4z3y6s7p",
     "ja": "雨が降っても、私は行くよ。",
     "en": "I'll go even if it rains.",
@@ -102,6 +193,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5q7k2t8g",
+    "ja": "ぜひ行きたいです。",
+    "en": "I'd love to go.",
+    "alternatives": ["I'd love to come.", "I'd like to go."],
+    "point": "「行きたい」は would love to + 動詞",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 3,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7b9d2e5w",
@@ -143,5 +247,18 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9y7p5c5d",
+    "ja": "早く来たほうがいいよ。",
+    "en": "You should come early.",
+    "alternatives": ["You'd better come early.", "You should get here early."],
+    "point": "「〜したほうがいい」は should",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

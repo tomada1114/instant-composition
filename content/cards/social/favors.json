@@ -19,6 +19,32 @@
     }
   },
   {
+    "id": "c_2p9u4s2f",
+    "ja": "何を手伝えばいい？",
+    "en": "What can I do?",
+    "alternatives": ["How can I help?", "What can I help with?"],
+    "point": "「手伝う」は help。what で始める",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 2,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_2u7j4e8j",
+    "ja": "できたら手伝うよ。",
+    "en": "I'll help if I can.",
+    "alternatives": ["If I can, I'll help.", "I'll help you if I can."],
+    "point": "if 節の中は現在形",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4d7b4u6z",
     "ja": "手を貸せるよ。",
     "en": "I can give you a hand.",
@@ -36,6 +62,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4n4x7p8b",
+    "ja": "彼が車で送ってくれた。",
+    "en": "He drove me.",
+    "alternatives": ["He gave me a ride.", "He drove me home."],
+    "point": "「送ってくれた」は過去形で言う",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_4z5m4c7h",
@@ -60,6 +99,19 @@
     }
   },
   {
+    "id": "c_5h2a9h7a",
+    "ja": "ペン貸して。",
+    "en": "Lend me a pen.",
+    "alternatives": ["Please lend me a pen.", "Let me borrow a pen."],
+    "point": "「貸す」は lend、「借りる」は borrow",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 1,
+    "grammar": ["articles-and-countability", "imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5k4a2e9g",
     "ja": "少しゆっくりお願いします。",
     "en": "Could you speak a little slower?",
@@ -80,6 +132,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5x6r9w9x",
+    "ja": "充電器ってある？",
+    "en": "Is there a charger?",
+    "alternatives": ["Do you have a charger?", "Got a charger?"],
+    "point": "「ある？」は Is there 〜?",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6f6n8c3z",
@@ -118,5 +183,57 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7b6a4w6z",
+    "ja": "誰が手伝ってくれる？",
+    "en": "Who will help me?",
+    "alternatives": ["Who can help me?", "Who's going to help me?"],
+    "point": "who が主語のときは倒置しない",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7v4r4b4x",
+    "ja": "ちょっとお願いがあるの。",
+    "en": "I need a favor.",
+    "alternatives": ["I have a favor to ask.", "I'd like to ask a favor."],
+    "point": "「お願い」は a favor",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 3,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9f8u8c9a",
+    "ja": "手伝ってと頼まれたよ。",
+    "en": "I was asked to help.",
+    "alternatives": ["Someone asked me to help.", "They asked me to help."],
+    "point": "「頼まれた」は was asked to",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 3,
+    "grammar": ["passive-voice", "infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9z6s7f3g",
+    "ja": "消しゴム借りるね。",
+    "en": "I'll borrow an eraser.",
+    "alternatives": ["Let me borrow an eraser.", "I'm going to borrow an eraser."],
+    "point": "母音で始まる語の前は an",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 2,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

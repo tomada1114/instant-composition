@@ -1,5 +1,18 @@
 [
   {
+    "id": "c_2d2v5f5e",
+    "ja": "遅れてごめんね。",
+    "en": "Sorry I'm late.",
+    "alternatives": ["I'm sorry I'm late.", "Sorry for being late."],
+    "point": "謝るときは sorry で始めてよい",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3a4m4z5b",
     "ja": "次は遅刻しません。",
     "en": "I won't be late again.",
@@ -17,6 +30,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3b2b6d6u",
+    "ja": "ごめん、今遅れてるよ。",
+    "en": "Sorry, I'm running late.",
+    "alternatives": ["I'm running late, sorry.", "Sorry, I'm running behind."],
+    "point": "「遅れてる」は be running late",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_3c5k4w3a",
@@ -39,6 +65,45 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4c3w4q5x",
+    "ja": "ささやかなお礼です。",
+    "en": "It's a small thank-you.",
+    "alternatives": ["Here's a little thank-you.", "Just a small thank-you."],
+    "point": "「お礼」は a thank-you と名詞にできる",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 2,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4k7t2t6a",
+    "ja": "気にしないでね。",
+    "en": "Don't worry about it.",
+    "alternatives": ["Don't worry.", "No worries."],
+    "point": "否定の命令文は Don't + 動詞",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4u4r9t6f",
+    "ja": "何かお返しできる？",
+    "en": "Can I repay you?",
+    "alternatives": ["Could I repay you?", "Can I return the favor?"],
+    "point": "「お返しする」は repay",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 2,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5b3c6x7u",
@@ -85,6 +150,19 @@
     }
   },
   {
+    "id": "c_5v4f6k6g",
+    "ja": "ここにミスがあるよ。",
+    "en": "There's a mistake here.",
+    "alternatives": ["There's an error here.", "I see a mistake here."],
+    "point": "「ミス」は a mistake。a を忘れない",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6z8d2f6w",
     "ja": "彼女に謝ったほうがいいな。",
     "en": "I should apologize to her.",
@@ -102,6 +180,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7c8t6w4t",
+    "ja": "アドバイスありがとう。",
+    "en": "Thanks for the advice.",
+    "alternatives": ["Thank you for the advice.", "I appreciate the advice."],
+    "point": "advice は数えられない名詞。a は付けない",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 3,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7r9e5e5g",
@@ -124,5 +215,34 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8g6z2k8x",
+    "ja": "昨日は本当に助かったよ。",
+    "en": "You really helped me yesterday.",
+    "alternatives": [
+      "Thanks for helping me yesterday.",
+      "You were a big help yesterday."
+    ],
+    "point": "help の過去形は helped",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 3,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9k6h7s6x",
+    "ja": "今回は許してくれる？",
+    "en": "Can you forgive me?",
+    "alternatives": ["Can you forgive me this time?", "Could you forgive me?"],
+    "point": "許しを頼むときは Can you で始める",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 3,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]
