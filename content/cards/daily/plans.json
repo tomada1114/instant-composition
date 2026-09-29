@@ -193,22 +193,6 @@
     "stamps": {}
   },
   {
-    "id": "c_4w5q7p3e",
-    "ja": "週末が空くのは珍しいから、有意義に使おうよ。",
-    "en": "Rarely do we get a free weekend, so let's make it count.",
-    "alternatives": [
-      "We rarely get a free weekend, so let's make it count.",
-      "Free weekends are rare, so let's make the most of it."
-    ],
-    "point": "Rarely を文頭に出すと do we の倒置。「有意義に」は make it count",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 10,
-    "grammar": ["inversion"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_4w6e5m4e",
     "ja": "駅の近くのカフェで会おうよ。",
     "en": "Let's meet at the café near the station.",
@@ -273,22 +257,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_4z6v3u8d",
-    "ja": "約束を断って、こんなにほっとしたのは初めてだよ。",
-    "en": "Never have I been so relieved to turn down plans.",
-    "alternatives": [
-      "I've never been so relieved to turn down plans.",
-      "Never have I felt so relieved about backing out of plans."
-    ],
-    "point": "Never を文頭に出すと、あとは have I の疑問文の語順",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 9,
-    "grammar": ["inversion"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_5b9n5m6k",
@@ -408,6 +376,22 @@
     }
   },
   {
+    "id": "c_6c6v2w4f",
+    "ja": "約束をキャンセルして、こんなにほっとしたのは初めてだよ。",
+    "en": "I've never been so relieved to back out of plans.",
+    "alternatives": [
+      "I've never felt such relief canceling plans.",
+      "It's the first time I've been this relieved to cancel plans."
+    ],
+    "point": "「初めて」は I've never + 過去分詞。back out of は「手を引く」",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["phrasal-verbs", "tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6k9w4r5g",
     "ja": "約束してる友達が、何度も予定をずらすんだ。",
     "en": "The friend I'm meeting keeps pushing our plans back.",
@@ -462,6 +446,22 @@
     }
   },
   {
+    "id": "c_6y2r8c9v",
+    "ja": "週末が空くのは珍しいから、有意義に使おうよ。",
+    "en": "We rarely get a free weekend, so let's make it count.",
+    "alternatives": [
+      "Free weekends don't come often, so let's make the most of it.",
+      "Free weekends are rare, so let's make the most of this one."
+    ],
+    "point": "「有意義に使う」は make it count。rarely は否定語なので don't 不要",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 10,
+    "grammar": ["articles-and-countability", "tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7f9v5y7p",
     "ja": "ごめん、土曜は約束を断らなきゃいけない。",
     "en": "Sorry, I have to back out of Saturday's plans.",
@@ -498,22 +498,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_7w9y6u7n",
-    "ja": "カレンダーを確認したら、今夜また連絡するね。",
-    "en": "Having checked my calendar, I'll get back to you tonight.",
-    "alternatives": [
-      "Once I've checked my calendar, I'll get back to you tonight.",
-      "I'll check my calendar and get back to you tonight."
-    ],
-    "point": "先に済ませた動作は Having + 過去分詞。「折り返す」は get back to",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 10,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_7x5k3e9v",

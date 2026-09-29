@@ -1,21 +1,5 @@
 [
   {
-    "id": "c_2g8r5p4t",
-    "ja": "この商品、いつ再入荷するか分かりますか？",
-    "en": "Do you know when this will be restocked?",
-    "alternatives": [
-      "Can you tell me when this will be restocked?",
-      "Do you know when you'll get more of these?"
-    ],
-    "point": "間接疑問は when のあとが平叙文の語順",
-    "topic": "daily",
-    "subtopic": "shopping",
-    "level": 7,
-    "grammar": ["indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2k5r6p8q",
     "ja": "この近くに文房具屋、ありますか？",
     "en": "Is there a stationery store near here?",
@@ -143,6 +127,22 @@
     }
   },
   {
+    "id": "c_3f4x3m5r",
+    "ja": "試着室が混んでても、待つよ。",
+    "en": "Even if the fitting room's packed, I'll wait.",
+    "alternatives": [
+      "I'll wait even if the fitting room's crowded.",
+      "I'll still wait if the fitting room's full."
+    ],
+    "point": "Even if の節は未来のことでも現在形で言う",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3p2q5y7a",
     "ja": "このコート、返品できないかなと思いまして。",
     "en": "I was wondering if I could return this coat.",
@@ -165,38 +165,6 @@
     }
   },
   {
-    "id": "c_3q6t8u7x",
-    "ja": "欲しい色が売り切れで、妹は別の色で妥協した。",
-    "en": "Finding her color sold out, my sister settled for another.",
-    "alternatives": [
-      "Her color was sold out, so she settled for another.",
-      "Her color sold out, so my sister settled for another."
-    ],
-    "point": "分詞構文の主語は主節と同じ人。「妥協する」は settle for",
-    "topic": "daily",
-    "subtopic": "shopping",
-    "level": 8,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3q7a9c9z",
-    "ja": "小さすぎたから、そのセーターは送り返したよ。",
-    "en": "It was too small, so I sent it back.",
-    "alternatives": [
-      "It was too small, so I returned it.",
-      "I sent it back because it was too small."
-    ],
-    "point": "「送り返す」は send back。代名詞は back の前に置く",
-    "topic": "daily",
-    "subtopic": "shopping",
-    "level": 7,
-    "grammar": ["phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_4q7d2w7d",
     "ja": "レシートなしでも返品できますか？",
     "en": "Can I return it without a receipt?",
@@ -217,6 +185,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_4q8h4e3q",
+    "ja": "小さすぎて、そのセーターは送り返した。",
+    "en": "Too small, so I sent it back.",
+    "alternatives": [
+      "It was too small, so I returned it.",
+      "I sent it back; it was too small."
+    ],
+    "point": "「送り返す」は send back。代名詞は back の前に置く",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_4s4j3a8j",
@@ -295,18 +279,18 @@
     "stamps": {}
   },
   {
-    "id": "c_5n3m7y2e",
-    "ja": "試着室が混んでても、待って試着したいな。",
-    "en": "Even if the fitting room's full, I'll wait and try it.",
+    "id": "c_5d5b5w4s",
+    "ja": "欲しい色が売り切れで、妹は別の色で妥協した。",
+    "en": "My sister settled for another color; hers was gone.",
     "alternatives": [
-      "I'll wait for a fitting room, even if it's packed.",
-      "Even if I have to queue, I'm trying this on."
+      "Hers was sold out, so my sister settled for another.",
+      "Her color was gone, so my sister settled for another."
     ],
-    "point": "Even if の節は未来のことでも現在形で言う",
+    "point": "「妥協する」は settle for。過去形で言う",
     "topic": "daily",
     "subtopic": "shopping",
-    "level": 10,
-    "grammar": ["concession-contrast"],
+    "level": 8,
+    "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -423,18 +407,18 @@
     }
   },
   {
-    "id": "c_7e7u7t9a",
-    "ja": "彼女が買ったバッグ、どこで売ってるか店員さんに聞いて。",
-    "en": "Ask the clerk where the bag she bought is sold.",
+    "id": "c_7d9c9q9f",
+    "ja": "これ、いつ再入荷するか分かりますか？",
+    "en": "Do you know when you'll restock this?",
     "alternatives": [
-      "Ask the clerk where I can get the bag she bought.",
-      "Ask the clerk where they sell the bag she bought."
+      "Do you know when you'll get more in?",
+      "Could you tell me when you'll restock it?"
     ],
-    "point": "間接疑問は where のあと肯定文の語順にする",
+    "point": "間接疑問は when のあとが平叙文の語順",
     "topic": "daily",
     "subtopic": "shopping",
-    "level": 10,
-    "grammar": ["nested-clauses"],
+    "level": 5,
+    "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -475,6 +459,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7x5m3h4m",
+    "ja": "これ、どこで売ってるか店員に聞いて。",
+    "en": "Ask the clerk where they sell this.",
+    "alternatives": [
+      "Ask the clerk where I can get this.",
+      "Ask a clerk where this is sold."
+    ],
+    "point": "間接疑問は where のあと they sell の語順にする",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8e7w6e8p",

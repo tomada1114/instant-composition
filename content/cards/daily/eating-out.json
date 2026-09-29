@@ -35,7 +35,13 @@
     "level": 4,
     "grammar": ["post-modification", "passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:50c27065ce2d69cb1214f2d8660a4628b24c13217051fecc4ad5e62a9a8db962",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2c4d3y8g",
@@ -114,23 +120,13 @@
     "level": 6,
     "grammar": ["passive-voice", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2v9y8s8r",
-    "ja": "ずっと手を挙げてたのに、誰も気づかなかった。",
-    "en": "I was holding my hand up, but nobody noticed.",
-    "alternatives": [
-      "I kept my hand up, but nobody noticed.",
-      "I had my hand up forever, but nobody noticed."
-    ],
-    "point": "その間ずっと続いていた動作は過去進行形 was waving",
-    "topic": "daily",
-    "subtopic": "eating-out",
-    "level": 6,
-    "grammar": ["progressive-aspect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:77ec924528ce594745165d7f1f85162374baaed5e5b998900703f8bfd72cc291",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3b3q9t6r",
@@ -146,7 +142,13 @@
     "level": 5,
     "grammar": ["time-and-if-clauses", "present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f4f1b78c15eba64ab979440fab1d5972fb2df6eb73ea404e0b9706185b62c738",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3p3z5r2f",
@@ -162,7 +164,13 @@
     "level": 6,
     "grammar": ["passive-voice", "hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9cbbf4159e0511191a10293f4ba5fba08522c11e1e893899ce4a7e6750a34327",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3r7f5y2y",
@@ -178,7 +186,13 @@
     "level": 4,
     "grammar": ["noun-clauses", "indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3a1c98ee69cae5dbb89f8dc7e0adca30f0bc0fbf2fb65b516ad793e98f498617",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3t2n2z5s",
@@ -216,7 +230,13 @@
     "level": 8,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:887c35d942ae10f1ce054e89da43daffbb0951ab5f42d4d1767e3b91490d3f2a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4e7u6c3u",
@@ -254,23 +274,13 @@
     "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4t7t5f5v",
-    "ja": "行列を見て、私たちは別の店にすることにした。",
-    "en": "Seeing the line, we decided to go somewhere else.",
-    "alternatives": [
-      "When we saw the line, we chose another place.",
-      "We saw the line and went somewhere else."
-    ],
-    "point": "「〜を見て」は Seeing 〜, の分詞構文で理由をつなぐ",
-    "topic": "daily",
-    "subtopic": "eating-out",
-    "level": 7,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c4aa6bf3454d87b50f4744c9acb0d5df395f5d7c7f591467171700e854c2c0db",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4v2w8d2b",
@@ -286,23 +296,13 @@
     "level": 5,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4v6x8s3b",
-    "ja": "あの店、席は取りにくいけど、行く価値は十分あるよ。",
-    "en": "Getting a table is a pain, but it's well worth it.",
-    "alternatives": [
-      "Although it's hard to get a table, it's totally worth going.",
-      "Even though tables are hard to come by, it's totally worth it."
-    ],
-    "point": "十分価値がある＝well worth it。譲歩は but や Although で",
-    "topic": "daily",
-    "subtopic": "eating-out",
-    "level": 10,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:156b95b484cc1bd752047765e81ab9a64d5a8d1cf34eafe64012c83cd68142b4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5b6a8u2b",
@@ -406,7 +406,13 @@
     "level": 7,
     "grammar": ["time-and-if-clauses", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7df45f621b59e5e55c28b61fee293d76884ec3fa145714e990fde55dcb01170",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5r4j8d9m",
@@ -422,7 +428,13 @@
     "level": 7,
     "grammar": ["tense-contrast", "present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0100dfab6efe70055a5baf28b34e0064b55db514530a7a7c11abfa1e0a51ee87",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5r6q9m5m",
@@ -625,7 +637,13 @@
     "level": 2,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:79587a64232438b2fa7b74a8e9bdb25f1d9141934dd02e5eca4c384ca68aa2de",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7w9q7z6r",
@@ -663,23 +681,13 @@
     "level": 8,
     "grammar": ["nested-clauses", "indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8q3n9u2b",
-    "ja": "彼が絶賛してた店、予約取れた？",
-    "en": "Did you manage to book the place he raved about?",
-    "alternatives": [
-      "Did you book the place he was raving about?",
-      "Were you able to book that place he raved about?"
-    ],
-    "point": "rave about は「〜を絶賛する」。前置詞を残す",
-    "topic": "daily",
-    "subtopic": "eating-out",
-    "level": 8,
-    "grammar": ["relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1e21296e104b370ca901a9a78297f277b4ae1c61003fe9cd63b551e5041b1f30",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9c5y4z6p",
@@ -695,7 +703,13 @@
     "level": 7,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:11bde12c2c29c045ff115069a4809fa8cdecc3e16985a28f13360b3d1a6e1ee9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9g6w2q2r",
@@ -733,7 +747,13 @@
     "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:97fe704770b17fc39fe6c2c94cfb8f8d13c93595dd030d41cb15747578108fdc",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9r2d2v8c",
@@ -771,6 +791,12 @@
     "level": 7,
     "grammar": ["tense-contrast", "reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4b9b6a0c917ff5b5d83ae623a56e3d4f60ef84f46596cee1b9e4e7a41f0f3bfa",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
