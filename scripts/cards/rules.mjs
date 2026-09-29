@@ -126,6 +126,46 @@ function shapeFindings(raw, id, env, options) {
 }
 
 /**
+ * Warn about a card over its level's targets. A warning never fails a
+ * command: the target is what a writer aims at and a reviewer questions,
+ * where the cap is what the lint enforces.
+ *
+ * @param {Record<string, unknown>} raw - A card.
+ * @param {string} id - How findings name it.
+ * @param {import("./store.mjs").Lists} lists - Validated lists.
+ * @returns {Finding[]} One `OVER_TARGET` finding per text over its target.
+ */
+export function targetWarnings(raw, id, lists) {
+  const { ja, en, level } = raw;
+  const levelEntry = typeof level === "number" ? lists.levels.get(level) : undefined;
+  if (levelEntry === undefined) return [];
+  /** @type {Finding[]} */
+  const warnings = [];
+  const tag = `level ${String(levelEntry.level)}`;
+  if (typeof en === "string") {
+    const words = countWords(en);
+    if (words > levelEntry.words.target) {
+      warnings.push({
+        id,
+        rule: "OVER_TARGET",
+        message: `"en" has ${String(words)} words; ${tag} aims at ${String(levelEntry.words.target)} or fewer`,
+      });
+    }
+  }
+  if (typeof ja === "string") {
+    const length = countJaChars(ja);
+    if (length > levelEntry.jaChars.target) {
+      warnings.push({
+        id,
+        rule: "OVER_TARGET",
+        message: `"ja" has ${String(length)} characters; ${tag} aims at ${String(levelEntry.jaChars.target)} or fewer`,
+      });
+    }
+  }
+  return warnings;
+}
+
+/**
  * Lint one card on its own: everything except uniqueness, tombstones and
  * which file it sits in.
  *

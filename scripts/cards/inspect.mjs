@@ -20,7 +20,7 @@ import {
 } from "./common.mjs";
 import { CardsError } from "./errors.mjs";
 import { MAX_PER_CELL, parseHistory, planGaps } from "./plan.mjs";
-import { entryLabel, lintStore } from "./rules.mjs";
+import { entryLabel, lintStore, targetWarnings } from "./rules.mjs";
 import { fieldHash, isShown, randomId, readStamp } from "./schema.mjs";
 import { findNearDuplicates } from "./similarity.mjs";
 import { compareIds, loadStore } from "./store.mjs";
@@ -119,14 +119,21 @@ export function runLint(parsed, context) {
     ids === undefined ? undefined : new Set(ids),
   );
   const checked = ids?.length ?? store.cards.length;
+  const warnings = store.cards
+    .filter((entry) => ids === undefined || ids.includes(entryLabel(entry)))
+    .flatMap((entry) => targetWarnings(entry.raw, entryLabel(entry), store.lists));
   if (flag(parsed, "json")) {
-    printJson(context, { checked, errors: findings });
+    printJson(context, { checked, errors: findings, warnings });
   } else {
     for (const finding of findings) {
       context.out(`${finding.id} ${finding.rule} ${finding.message}`);
     }
+    for (const warning of warnings) {
+      context.out(`WARN ${warning.id} ${warning.rule} ${warning.message}`);
+    }
+    const warned = warnings.length === 0 ? "" : `, ${String(warnings.length)} warnings`;
     context.out(
-      `cards:lint: ${String(checked)} cards checked, ${String(findings.length)} errors`,
+      `cards:lint: ${String(checked)} cards checked, ${String(findings.length)} errors${warned}`,
     );
   }
   if (findings.length > 0) {

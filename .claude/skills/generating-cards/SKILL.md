@@ -64,7 +64,8 @@ near-duplicate check in `cards:add`, and one full review. Watch the tombstone co
    `tmp/cards/plan.json`. Output: `tmp/cards/new.json`."
 5. **Admit.** `pnpm -s cards:add tmp/cards/new.json`. It assigns ids, rejects cards that
    fail lint or sit too close to an existing card or tombstone, and prints one line per
-   card admitted or dropped. Never hand-edit a dropped card back in.
+   card admitted or dropped, plus a `WARN … OVER_TARGET` line for an admitted card over
+   a target — the review brings those down. Never hand-edit a dropped card back in.
 6. **Top up once.** If drops left the run short, send the same writer one message
    (`SendMessage`, so its context is reused rather than a new agent started) with the
    drop lines and the missing count per cell, and output `tmp/cards/topup.json`; admit
@@ -75,8 +76,9 @@ near-duplicate check in `cards:add`, and one full review. Watch the tombstone co
 8. **Review.** Unless `--no-review`, run
    `reviewing-cards --ids <every id admitted this run>`. **REQUIRED:**
    `reviewing-cards`.
-9. **Report**: cards admitted per cell, dropped count by reason, any gaps or top-up
-   shortfall, the review summary, and `pnpm -s cards:stats --short | head -2`.
+9. **Report**: cards admitted per cell, dropped count by reason, cards admitted over a
+   target, any gaps or top-up shortfall, the review summary, and
+   `pnpm -s cards:stats --short | head -2`.
 
 ## Stop rules
 

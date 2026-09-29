@@ -12,7 +12,7 @@ import {
 } from "./common.mjs";
 import { CardsError } from "./errors.mjs";
 import { declaredField, freshIds, takenIds } from "./inspect.mjs";
-import { lintCard } from "./rules.mjs";
+import { lintCard, targetWarnings } from "./rules.mjs";
 import { CORE_FIELDS, coreHash, fieldHash } from "./schema.mjs";
 import { findNearDuplicates } from "./similarity.mjs";
 import {
@@ -92,14 +92,15 @@ function copyFiles(store) {
 
 /** @type {CommandSpec} */
 export const addSpec = {
-  usage: "<file> [--replacing <id>] [--json]",
-  flags: { replacing: "string", json: "boolean" },
+  usage: "<file> [--replacing <id>] [--dry-run] [--json]",
+  flags: { replacing: "string", "dry-run": "boolean", json: "boolean" },
   range: false,
   positionals: 1,
 };
 
 /**
- * `cards:add`: admit new cards from a writer's output.
+ * `cards:add`: admit new cards from a writer's output. `--dry-run` reports
+ * the same lines and writes nothing, so a writer can check its draft.
  *
  * @param {Parsed} parsed - Arguments.
  * @param {Context} context - Environment.
@@ -147,7 +148,7 @@ function addLocked(parsed, context) {
     .filter((tombstone) => tombstone.id !== replacing)
     .map((tombstone) => ({ ...tombstone, key: tombstone.id }));
 
-  /** @type {{ index: number, id: string, topic: string, subtopic: string, level: number }[]} */
+  /** @type {{ index: number, id: string, topic: string, subtopic: string, level: number, warnings: string[] }[]} */
   const admitted = [];
   /** @type {{ index: number, ja: string, reasons: Reason[] }[]} */
   const dropped = [];
@@ -202,6 +203,9 @@ function addLocked(parsed, context) {
           topic: typed.topic,
           subtopic: typed.subtopic,
           level: typed.level,
+          warnings: targetWarnings(card, id, env.lists).map(
+            ({ rule, message }) => `${rule} ${message}`,
+          ),
         });
         continue;
       }
@@ -216,12 +220,14 @@ function addLocked(parsed, context) {
     dropped.push({ index, ja, reasons });
   }
 
-  writeCardFiles(
-    context.root,
-    new Map([...touched].map((file) => [file, files.get(file) ?? []])),
-    optionalNames(context),
-    context.formatter,
-  );
+  if (!flag(parsed, "dry-run")) {
+    writeCardFiles(
+      context.root,
+      new Map([...touched].map((file) => [file, files.get(file) ?? []])),
+      optionalNames(context),
+      context.formatter,
+    );
+  }
 
   if (flag(parsed, "json")) {
     printJson(context, { admitted, dropped });
@@ -231,6 +237,7 @@ function addLocked(parsed, context) {
     context.out(
       `admitted ${card.id}  ${card.topic}/${card.subtopic} L${String(card.level)}`,
     );
+    for (const warning of card.warnings) context.out(`WARN ${card.id} ${warning}`);
   }
   for (const drop of dropped) {
     for (const reason of drop.reasons) {
@@ -239,8 +246,9 @@ function addLocked(parsed, context) {
       );
     }
   }
+  const warned = admitted.filter((card) => card.warnings.length > 0).length;
   context.out(
-    `cards:add: ${String(admitted.length)} admitted, ${String(dropped.length)} dropped`,
+    `cards:add: ${String(admitted.length)} admitted, ${String(dropped.length)} dropped${warned === 0 ? "" : `, ${String(warned)} over target`}`,
   );
   return 0;
 }

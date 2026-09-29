@@ -25,10 +25,10 @@ alternatives. Follow every rule in `writing.md`.
 
 For each cell, write `count` cards set in the subtopic's `scene`:
 
-- Aim `en` at `words.target` words or fewer — one or two under `words.max` — and `ja` at
-  `jaChars.target` characters or fewer (whitespace not counted). `words.max` and
-  `jaChars.max` are hard ceilings the lint enforces, never something to fill; `en` must
-  still reach `words.min`, and every alternative stays at most `words.max`.
+- Keep `en` at `words.target` words or fewer and `ja` at `jaChars.target` characters or
+  fewer (whitespace not counted). The targets are the limit you write to; `words.max`
+  and `jaChars.max` are only the lint's hard ceilings, never something to fill. `en`
+  must still reach `words.min`, and every alternative stays at most `words.max`.
 - One sentence, one idea: a core plus at most one added detail, no two statements joined
   by `and`/`but`/`so`, as `writing.md`'s "One sentence, one idea" sets out. A learner
   should say it in one breath and want to say the next one.
@@ -55,11 +55,14 @@ without `id`, `createdAt` or `stamps`:
 }
 ```
 
-Before writing it, check each card: the word count of `en` is inside the range and,
-unless the scene cannot be said shorter, at or under `words.target`; each alternative is
-within `words.max`; `ja` is within `jaChars.max` and at or under `jaChars.target`; every
-sentence is one sentence with at most one added detail; no word or clause could go
-without losing the card's point; 2 or 3 alternatives, none a mere contraction or
-punctuation variant of `en`; `grammar` has 1–2 valid ids; `ja` pins the subject, tense,
-polarity and politeness of the English. Then confirm the file parses with
-`node -e 'JSON.parse(require("fs").readFileSync(process.argv[1], "utf8"))' <file>`.
+Before writing it, check each card: every sentence is one sentence with at most one
+added detail; no word or clause could go without losing the card's point; 2 or 3
+alternatives, none a mere contraction or punctuation variant of `en`; `grammar` has 1–2
+valid ids; `ja` pins the subject, tense, polarity and politeness of the English.
+
+Then write the file and run `pnpm -s cards:add <file> --dry-run`. It writes nothing; it
+prints what `cards:add` would do — a `dropped` line for a card failing lint or too close
+to another, and a `WARN … OVER_TARGET` line for a card over a target. Rewrite every card
+it names and run it again, until it prints neither. A card may stay over a target only
+when every shorter natural sentence loses its point; name each such card and why in your
+final message.

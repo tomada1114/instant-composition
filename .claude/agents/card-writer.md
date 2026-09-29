@@ -15,6 +15,8 @@ the prompt names, following the brief file it names.
 - Gather what the brief lists in as few tool calls as you can: one `cat` of every file
   and one Bash call running every read-only `pnpm -s cards:*` command it names.
 - Run no `pnpm cards:*` write command (`add`, `update`, `tombstone`, `stamp`) and no
-  git: the session that spawned you admits the file.
+  git: the session that spawned you admits the file. The one exception is
+  `pnpm -s cards:add <file> --dry-run`, which writes nothing and checks your draft.
 - Keep working until the file is written and parses; do not stop to check in.
-- Reply with one line: the file path and how many entries it holds.
+- Reply with one line: the file path and how many entries it holds, plus any card you
+  left over a target and why.
