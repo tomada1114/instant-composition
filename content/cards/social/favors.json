@@ -35,7 +35,13 @@
     "level": 6,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d7069f99f94a965fe42a0f16c9f99c94aacbc2790f224afc19e7f58076ea0f14",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2y4c8s8g",
@@ -101,38 +107,6 @@
     }
   },
   {
-    "id": "c_3y9s2q5a",
-    "ja": "手伝ってくれた男の人に、お礼を言いそびれた。",
-    "en": "Never got to thank the guy who helped me.",
-    "alternatives": [
-      "I didn't get to thank the man who helped.",
-      "I missed thanking the guy who helped me."
-    ],
-    "point": "言いそびれた（機会を逃した）は never got to 〜",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 6,
-    "grammar": ["relative-clauses", "infinitives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4b8h7v3r",
-    "ja": "彼はめったに頼らないから、引き受けたんだ。",
-    "en": "He hardly ever asks for help, so I agreed.",
-    "alternatives": [
-      "He rarely asks for help, so I said yes.",
-      "He almost never asks for help, so I agreed."
-    ],
-    "point": "習慣は現在形、引き受けた結果は過去形。hardly ever は頻度",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 7,
-    "grammar": ["tense-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_4d6g3p6y",
     "ja": "こんなふうに君に頼るのは気が引けるんだ。",
     "en": "I feel bad about imposing on you like this.",
@@ -147,7 +121,13 @@
     "level": 6,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:924ca9fec317e3e533800243333be2b3e0baac1350531b9d227298587198b6e9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4h3e8a2y",
@@ -163,7 +143,13 @@
     "level": 6,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5dfef7d92f3cdfbe9fe2b433fcd9cc1e1e64055c99c3a822107e1498174b0ecf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4h6n3t2g",
@@ -179,7 +165,13 @@
     "level": 5,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f89b8456bbcfeda9ddd6922c9a7700864db9aeb16c11219e015d64e8dac2f60",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4n8d2z4y",
@@ -217,7 +209,13 @@
     "level": 4,
     "grammar": ["present-perfect-continuous", "imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3a031b4b175cb5a2e9ddb4ebcb2f80fe3236efb8ff674bed084e9cf3df36bf42",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4y3n8x8n",
@@ -262,22 +260,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_5f2v4v2w",
-    "ja": "先月助けてあげた男が、また頼んできたんだ。",
-    "en": "The guy I helped last month asked me again.",
-    "alternatives": [
-      "The man I helped last month came asking again.",
-      "That guy I helped last month asked again."
-    ],
-    "point": "「助けてあげた男」は the guy I helped と関係詞を省く",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 6,
-    "grammar": ["relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_5h5p8g3g",
@@ -334,7 +316,13 @@
     "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c26e799107a3135e3808a946019d87c34f43304d1f1bd2faaf56fef810582f78",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5t6d5v6u",
@@ -416,7 +404,13 @@
     "level": 4,
     "grammar": ["tense-contrast", "noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9fc9d540249a351194c501bfac6efeb37d538670de5554d3213fd685d6dd404a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7e2n4m8h",
@@ -463,22 +457,6 @@
     }
   },
   {
-    "id": "c_7w8t9j2u",
-    "ja": "代わりを頼んだ人が病欠だって聞いたよ。",
-    "en": "Heard the person I asked is out sick.",
-    "alternatives": [
-      "I hear the person I asked is sick.",
-      "I heard the person I asked called in sick."
-    ],
-    "point": "「聞いた」は heard。the person の後の I asked は関係詞省略",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 6,
-    "grammar": ["relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8a3x4u7m",
     "ja": "いいよ。箱はどこに置く？",
     "en": "Sure. Where do the boxes go?",
@@ -511,7 +489,13 @@
     "level": 7,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:db22497869ba94314c9b7e7507e7a9e8317e8e3a020a1d874f9451834ab4d5fe",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8t9s3t4q",
@@ -527,7 +511,13 @@
     "level": 7,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a4337d1c1c0e3367a32e6f672f466f09fdebd560b14c5bed6fa41adc387be975",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8z3p4v9g",
@@ -584,7 +574,13 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:27d47b72663835cabffe6c5da26248d51505594301d2d149539f03fbaca52e95",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9n5d7u3n",
