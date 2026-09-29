@@ -57,7 +57,13 @@
     "level": 7,
     "grammar": ["tense-contrast", "present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:22ca6afa16411df0abb932b81219a5fe1edbd42ec2affee41871eb6cb89cd8e9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2n7x9f3z",
@@ -80,22 +86,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_2r8d3k9c",
-    "ja": "指導してくれた先生に、お礼の手紙を書いたよ。",
-    "en": "I wrote to thank the teacher who mentored me.",
-    "alternatives": [
-      "I wrote to thank the teacher who taught me.",
-      "I wrote to thank the teacher who guided me."
-    ],
-    "point": "「お礼を言う」は say thanks to ではなく thank だけでよい",
-    "topic": "social",
-    "subtopic": "thanks-apologies",
-    "level": 6,
-    "grammar": ["relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_2v9j4c9n",
@@ -133,7 +123,13 @@
     "level": 7,
     "grammar": ["past-perfect", "noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2671f085a2ac47bea738556efd0916627d9b98cc98215cf59b7a6588d65d5e58",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3m2m5w4y",
@@ -149,23 +145,13 @@
     "level": 9,
     "grammar": ["third-conditional", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4q2m5v3h",
-    "ja": "もっと早く出ていれば間に合ったのに。ごめん。",
-    "en": "If I'd left earlier, I'd have made it. Sorry.",
-    "alternatives": [
-      "Sorry, I'd have made it if I'd left earlier.",
-      "If I'd left sooner, I'd have been on time."
-    ],
-    "point": "過去の後悔は if＋had＋過去分詞、主節は would have＋過去分詞",
-    "topic": "social",
-    "subtopic": "thanks-apologies",
-    "level": 6,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:aba27329bd4e8c4c58e5c520fef26de1000a7bca255cfffcae30eca09301d10d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4v6h7f2q",
@@ -181,7 +167,13 @@
     "level": 2,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6889ad13e6b0e86002a0dabf609dac5a51a469eb7ff09dfbdbf52f4bb340b943",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4v6m7j5w",
@@ -197,7 +189,13 @@
     "level": 4,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3c8b0385b0f2d61e9e42739190325d8782b819b2ad4816563f8d45d1061f4015",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5d3x2h9x",
@@ -302,7 +300,13 @@
     "level": 7,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ecb62c14758dcd31237fdf4de019af3328b8bea4df5e99b12123104247303a63",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6y2g9c7u",
@@ -450,23 +454,13 @@
     "level": 6,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9r2c7q9j",
-    "ja": "遅れて申し訳ありません。渋滞がひどくて。",
-    "en": "I apologize for being late. Traffic was terrible.",
-    "alternatives": [
-      "I'm sorry for being late. There was terrible traffic.",
-      "Sorry I'm late. I got stuck in heavy traffic."
-    ],
-    "point": "apologize for の後は being late のように -ing 形",
-    "topic": "social",
-    "subtopic": "thanks-apologies",
-    "level": 7,
-    "grammar": ["gerunds"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ae128338a96c2eb5d2be0e2edadf2b5e859c9f411885ec4975769d973fa7475a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9u3g9g3u",
@@ -482,7 +476,13 @@
     "level": 3,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0c22b9867d6e9e899cfdfdff7ac54617e8e6c04419f6c60f92f18d676636deac",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9x5g9a8q",
