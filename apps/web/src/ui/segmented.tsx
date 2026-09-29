@@ -1,4 +1,4 @@
-import type { ReactElement } from "react";
+import { useRef, type KeyboardEvent, type ReactElement } from "react";
 
 import { cn } from "../lib/utils";
 
@@ -6,6 +6,10 @@ import { cn } from "../lib/utils";
  * `segmented`: one choice of a few, the chosen segment white on the raised
  * track. `columns` wraps more options than a phone's width holds into rows
  * of that many; `value` null leaves every segment unchosen.
+ *
+ * Keys follow the WAI-ARIA radio group: only the chosen segment (the first
+ * when none is) sits in the tab order, and the arrows, Home and End move
+ * focus and the choice together, wrapping at either end.
  */
 export function Segmented<T extends string | number>({
   label,
@@ -24,6 +28,40 @@ export function Segmented<T extends string | number>({
   onChange: (value: T) => void;
   columns?: number;
 }>): ReactElement {
+  const buttons = useRef<(HTMLButtonElement | null)[]>([]);
+  const checked = options.findIndex((option) => option.value === value);
+  const tabStop = checked === -1 ? 0 : checked;
+
+  function onKeyDown(event: KeyboardEvent<HTMLButtonElement>, index: number): void {
+    const last = options.length - 1;
+    let next: number;
+    switch (event.key) {
+      case "ArrowRight":
+      case "ArrowDown":
+        next = index === last ? 0 : index + 1;
+        break;
+      case "ArrowLeft":
+      case "ArrowUp":
+        next = index === 0 ? last : index - 1;
+        break;
+      case "Home":
+        next = 0;
+        break;
+      case "End":
+        next = last;
+        break;
+      default:
+        return;
+    }
+    // Handled here alone: no window listener or page scroll sees the key.
+    event.preventDefault();
+    event.stopPropagation();
+    const option = options[next];
+    if (option === undefined) return;
+    buttons.current[next]?.focus();
+    if (option.value !== value) onChange(option.value);
+  }
+
   return (
     <div
       role="radiogroup"
@@ -38,9 +76,16 @@ export function Segmented<T extends string | number>({
           : { gridTemplateColumns: `repeat(${String(columns)}, minmax(0, 1fr))` }
       }
     >
-      {options.map((option) => (
+      {options.map((option, index) => (
         <button
           key={option.value}
+          ref={(element) => {
+            buttons.current[index] = element;
+          }}
+          tabIndex={index === tabStop ? 0 : -1}
+          onKeyDown={(event) => {
+            onKeyDown(event, index);
+          }}
           type="button"
           role="radio"
           aria-checked={option.value === value}

@@ -1,7 +1,8 @@
-import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { useEffect, useState } from "react";
+import { describe, expect, it, vi } from "vitest";
 
-import { Button, cn, Sheet } from "@instant-composition/web";
+import { Button, cn, Segmented, Sheet } from "@instant-composition/web";
 
 // The shadcn/ui button copied into the web client, the `cn` it calls, and the
 // sheet. What is asserted is the wiring, not the styling: that a caller's own
@@ -123,5 +124,78 @@ describe("Sheet", () => {
     expect(scrim).toContain("wide:items-center");
     expect(scrim).toContain("bg-background/70");
     expect(dialog.className.split(" ")).toContain("wide:rounded-card");
+  });
+});
+
+describe("Segmented", () => {
+  const options = [
+    { value: "a", label: "Alpha", text: "A" },
+    { value: "b", label: "Beta", text: "B" },
+    { value: "c", label: "Gamma", text: "C" },
+  ] as const;
+
+  function Harness({
+    initial,
+    onWindowKey,
+  }: Readonly<{ initial: "a" | "b" | "c" | null; onWindowKey?: () => void }>) {
+    const [value, setValue] = useState<"a" | "b" | "c" | null>(initial);
+    useEffect(() => {
+      if (onWindowKey === undefined) return;
+      window.addEventListener("keydown", onWindowKey);
+      return () => {
+        window.removeEventListener("keydown", onWindowKey);
+      };
+    }, [onWindowKey]);
+    return (
+      <Segmented label="Pick" options={options} value={value} onChange={setValue} />
+    );
+  }
+
+  function tabbable(): string[] {
+    return screen
+      .getAllByRole("radio")
+      .filter((radio) => radio.tabIndex === 0)
+      .map((radio) => radio.getAttribute("aria-label") ?? "");
+  }
+
+  it("puts only the chosen segment in the tab order", () => {
+    render(<Harness initial="b" />);
+    expect(tabbable()).toEqual(["Beta"]);
+  });
+
+  it("puts the first segment in the tab order when none is chosen", () => {
+    render(<Harness initial={null} />);
+    expect(tabbable()).toEqual(["Alpha"]);
+  });
+
+  it.each([
+    ["ArrowRight", "b", "Gamma"],
+    ["ArrowDown", "b", "Gamma"],
+    ["ArrowLeft", "b", "Alpha"],
+    ["ArrowUp", "b", "Alpha"],
+    ["ArrowRight", "c", "Alpha"],
+    ["ArrowLeft", "a", "Gamma"],
+    ["Home", "c", "Alpha"],
+    ["End", "a", "Gamma"],
+  ] as const)("moves focus and the choice on %s from %s to %s", (key, from, to) => {
+    render(<Harness initial={from} />);
+    const start = screen.getAllByRole("radio").find((radio) => radio.tabIndex === 0);
+    start?.focus();
+    fireEvent.keyDown(start ?? document.body, { key });
+    const target = screen.getByRole("radio", { name: to });
+    expect(target).toHaveAttribute("aria-checked", "true");
+    expect(document.activeElement).toBe(target);
+    expect(tabbable()).toEqual([to]);
+  });
+
+  it("keeps a handled arrow from reaching a window key listener", () => {
+    const onWindowKey = vi.fn();
+    render(<Harness initial="a" onWindowKey={onWindowKey} />);
+    fireEvent.keyDown(screen.getByRole("radio", { name: "Alpha" }), {
+      key: "ArrowRight",
+    });
+    expect(onWindowKey).not.toHaveBeenCalled();
+    fireEvent.keyDown(screen.getByRole("radio", { name: "Beta" }), { key: "Escape" });
+    expect(onWindowKey).toHaveBeenCalledOnce();
   });
 });
