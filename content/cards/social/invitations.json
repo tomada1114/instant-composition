@@ -13,7 +13,13 @@
     "level": 6,
     "grammar": ["past-perfect", "noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e63993e0ffd8620a13677194f4c631180de8ef5d3a95b70ed8fb34afdb4f8c42",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3d4t6r4s",
@@ -48,7 +54,13 @@
     "level": 6,
     "grammar": ["present-perfect-continuous", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7dbd07108056c47cb3531f7334c8cb1001af0e826d86128d456b1dce6e393670",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3f8g9p6m",
@@ -86,23 +98,13 @@
     "level": 4,
     "grammar": ["noun-clauses", "indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4m9c3g3s",
-    "ja": "部長に二次会まで付き合わされちゃったよ。",
-    "en": "My boss made me tag along to the after-party.",
-    "alternatives": [
-      "My boss dragged me along to the after-party.",
-      "My boss made me go to the after-party too."
-    ],
-    "point": "「made + 人 + 原形」。tag along は「くっついて行く」",
-    "topic": "social",
-    "subtopic": "invitations",
-    "level": 7,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2836fab1f4e937ddf49a3dabb89451c6fc8c4b79f6b302f520c4501dbf5c4848",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4z7p7f3v",
@@ -118,23 +120,13 @@
     "level": 9,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5b6m5r4p",
-    "ja": "今、みんなを飲みに誘ってるところだよ。",
-    "en": "I'm inviting everyone out for drinks now.",
-    "alternatives": [
-      "I'm asking everyone to go for drinks.",
-      "I'm asking everyone if they want drinks."
-    ],
-    "point": "「今〜しているところ」は現在進行形 (am + ing)",
-    "topic": "social",
-    "subtopic": "invitations",
-    "level": 4,
-    "grammar": ["progressive-aspect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c95bfc44170569bb6b8490fa52decb3a01e07e1f2d863de47134a0b3114747fc",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5k4j7p3a",
@@ -173,7 +165,13 @@
     "level": 4,
     "grammar": ["present-perfect-continuous", "passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d81a30ac1029e6aeeaea6151548adee644795c43809750e4f18e0fa3d8466ece",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5p9e4q9j",
@@ -189,7 +187,13 @@
     "level": 5,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:178851a403d94edc5b6b3dac60f3ed70cb9feccc6a67a794da6e2407fd949e0d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5s7b3v4m",
@@ -271,7 +275,13 @@
     "level": 6,
     "grammar": ["relative-clauses", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f00b18d1db32bf4a3e0bfefdde568eaedff478833a3bbf0af390be8e8f8c9b4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6k3r4u3w",
@@ -375,7 +385,13 @@
     "level": 7,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d255adb2d874eadde64f5786758242fc23254b2553c8abc01c37eb044bea300f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7v6p2c6w",
@@ -391,7 +407,13 @@
     "level": 6,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef59f11b864c89442c4b871db6c91cad265de2ecaa7d12c72f859507f9b71f60",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7y4p4v7r",
@@ -455,22 +477,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_8c2t3t8b",
-    "ja": "この前誘ってくれた店、もう予約しといたよ。",
-    "en": "I've already booked the place you invited me to.",
-    "alternatives": [
-      "I already booked that place you invited me to.",
-      "I've already reserved the place you invited me to."
-    ],
-    "point": "「もう〜した」は現在完了。invited me to の to を忘れずに",
-    "topic": "social",
-    "subtopic": "invitations",
-    "level": 6,
-    "grammar": ["present-perfect", "relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_8g3u2b6m",
@@ -574,7 +580,13 @@
     "level": 5,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ab558d984ee45617676d02bd53e26b6bb11583ad0794cf26c78a72bd18e53edf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9s7s5u5s",
