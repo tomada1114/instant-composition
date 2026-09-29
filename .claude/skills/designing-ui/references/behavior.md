@@ -24,6 +24,7 @@ starts. No 3D flip, no confetti, no full-screen flash, no shake.
 | "See all" opens or closes    | Height grows over 200 ms, ease-out                                                                                                                        | Instant                        | none                      |
 | Re-reading today's summary   | No count-up; every value final; this session's accent stays                                                                                               | Same                           | none                      |
 | Page hidden                  | Stop the timer, hide the front, show the pause sheet; it is still there when the page returns                                                             | Same                           | none                      |
+| A tab or Back mid-round      | Stop the timer, hide the front, show the leave sheet; "continue" restarts the timer where it stopped, "leave" goes where the tab or Back pointed          | Same                           | none                      |
 
 - "Fast" is a ○ flipped within half the card's pace, derived from the model answer's
   length, never within half the time limit the learner chose — a 30-second limit would
@@ -54,7 +55,7 @@ no applause. Browsers block autoplay, so the first "start" press unlocks audio.
 | → / K / F | —                            | ○ said it                                      | next             | —                                                                                                                                                                                           |
 | ← / J / D | —                            | × couldn't say it                              | —                | —                                                                                                                                                                                           |
 | ↑ / ↓     | —                            | scroll inside the card, only when it overflows | same             | The browser's page scroll                                                                                                                                                                   |
-| Esc       | open the pause sheet         | same                                           | same             | Close a sheet (on the pause sheet: continue). Home on records, settings, and a re-read summary; cancel on the difficulty re-test confirmation; nothing on the not-enough-cards start screen |
+| Esc       | open the pause sheet         | same                                           | same             | Close a sheet (pause, leave sheet: continue). Home on records, settings, and a re-read summary; cancel on the difficulty re-test confirmation; nothing on the not-enough-cards start screen |
 | ?         | open the pause sheet         | same                                           | same             | —                                                                                                                                                                                           |
 | Tab       | moves focus, on every screen |                                                |                  |                                                                                                                                                                                             |
 
@@ -92,8 +93,8 @@ so the list is one key away for someone who wonders.
 
 Screen specifics:
 
-- The pause sheet traps focus and lands it on "continue", including when the page
-  returns from hidden.
+- The pause and leave sheets trap focus and land it on "continue", including when the
+  page returns from hidden.
 - Summary screens put focus on the heading, announce only final values (never the
   count-up), and read several milestones in the order they appear.
 - A back that overflows makes its scroll area focusable, moved with ↑/↓.
@@ -114,6 +115,12 @@ the drill.
 - On `visibilitychange` to `hidden`, stop the timer and show the pause sheet. Coming
   back to `visible` does not resume: the sheet waits for "continue". A window `blur`
   with the page still visible does not pause.
+- From a round's first front until it closes, every navigation away — a tab, a link,
+  Back — goes through the router's navigation blocker (`useBlocker`,
+  `apps/web/src/drill/use-leave-guard.ts`): the drill pauses and the leave sheet asks.
+  The pause sheet's "stop" navigates with `ignoreBlocker`, having asked already. A
+  reload or a closed tab is not asked about (no `beforeunload` prompt): the round
+  resumes after either.
 - A session belongs to the day it started. The day turns over at 04:00; a session that
   crosses it still counts toward the day it began — today's set, the streak, and the
   "different day" rule for mastery.
