@@ -17,6 +17,8 @@ import {
   endsAsSentence,
   hasEllipsis,
   hasJapanese,
+  hasSecondSentenceEn,
+  hasSecondSentenceJa,
   normalizeEn,
   normalizeJa,
   unexpectedLatinWords,
@@ -214,6 +216,29 @@ describe("sentence punctuation checks", () => {
     ["Fine.", false],
   ])("hasEllipsis(%j) is %s", (text, expected) => {
     expect(hasEllipsis(text)).toBe(expected);
+  });
+
+  it.each([
+    ["I'm hungry. Let's eat.", true],
+    ["Wait! What?", true],
+    ['He said "Go." Then he left.', true],
+    ["Let's eat.", false],
+    ["Ask Dr. Lee.", false],
+    ["Meet me at 9 a.m. tomorrow.", false],
+    ["Is the U.S. Army here?", false],
+  ])("hasSecondSentenceEn(%j) is %s", (text, expected) => {
+    expect(hasSecondSentenceEn(text)).toBe(expected);
+  });
+
+  it.each([
+    ["お腹すいた。ランチにしよう。", true],
+    ["え？！本当？", true],
+    ["いいよ、行こう！", false],
+    ["本当？！", false],
+    ["「OK」って言った。", false],
+    ["もう一回。 ", false],
+  ])("hasSecondSentenceJa(%j) is %s", (text, expected) => {
+    expect(hasSecondSentenceJa(text)).toBe(expected);
   });
 });
 

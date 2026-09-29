@@ -109,6 +109,27 @@ export function countJaChars(ja) {
 }
 
 /**
+ * @param {string} ja - A Japanese sentence.
+ * @returns {boolean} True when a sentence ends before the text does, as in
+ *   「お腹すいた。ランチにしよう。」; a run such as 「？！」 ends one sentence.
+ */
+export function hasSecondSentenceJa(ja) {
+  return /[。？！?!]+(?![。？！?!」』）)\s]|$)/u.test(ja.trim());
+}
+
+/**
+ * Honorifics and initials are left out because their period ends no
+ * sentence ("Ask Dr. Lee.", "the U.S. Army").
+ *
+ * @param {string} en - An English sentence.
+ * @returns {boolean} True when a sentence ends before the text does, as in
+ *   "I'm hungry. Let's eat."
+ */
+export function hasSecondSentenceEn(en) {
+  return /(?<!\b(?:Mr|Mrs|Ms|Dr|St|[A-Z]))[.?!]+["'”’)]*\s+["'“‘(]*[A-Z]/u.test(en);
+}
+
+/**
  * @param {string} text - Any card text.
  * @returns {boolean} True when it contains `...` or `…`.
  */

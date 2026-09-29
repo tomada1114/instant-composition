@@ -47,8 +47,10 @@ const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/u;
 /**
  * @typedef {object} Level
  * @property {number} level
- * @property {{ min: number, max: number }} words - The `en` word range.
- * @property {{ max: number }} jaChars - The `ja` character cap.
+ * @property {{ min: number, max: number, target: number }} words - The `en`
+ *   word range, and the count a writer aims at or under.
+ * @property {{ max: number, target: number }} jaChars - The `ja` character
+ *   cap, and the count a writer aims at or under.
  * @property {string} summary
  * @property {unknown} raw - The entry as written, for briefs that quote it.
  */
@@ -231,17 +233,22 @@ export function loadLists(root) {
     const words = readKey(rawLevel, "words");
     const min = readKey(words, "min");
     const max = readKey(words, "max");
-    const jaMax = readKey(readKey(rawLevel, "jaChars"), "max");
+    const target = readKey(words, "target");
+    const jaChars = readKey(rawLevel, "jaChars");
+    const jaMax = readKey(jaChars, "max");
+    const jaTarget = readKey(jaChars, "target");
     const summary = readKey(rawLevel, "summary");
     if (
       !isInt(level) ||
       !isInt(min) ||
       !isInt(max) ||
+      !isInt(target) ||
       !isInt(jaMax) ||
+      !isInt(jaTarget) ||
       !isText(summary)
     ) {
       problems.push(
-        `levels.json: entry #${String(index)} needs an integer \`level\`, \`words.min\`, \`words.max\`, \`jaChars.max\` and a \`summary\``,
+        `levels.json: entry #${String(index)} needs an integer \`level\`, \`words.min\`, \`words.max\`, \`words.target\`, \`jaChars.max\`, \`jaChars.target\` and a \`summary\``,
       );
       continue;
     }
@@ -260,10 +267,20 @@ export function loadLists(root) {
         `levels.json: level ${String(level)} has jaChars.max ${String(jaMax)}`,
       );
     }
+    if (target < min || target > max) {
+      problems.push(
+        `levels.json: level ${String(level)} has words.target ${String(target)} outside ${String(min)}–${String(max)}`,
+      );
+    }
+    if (jaTarget < 1 || jaTarget > jaMax) {
+      problems.push(
+        `levels.json: level ${String(level)} has jaChars.target ${String(jaTarget)} outside 1–${String(jaMax)}`,
+      );
+    }
     levels.set(level, {
       level,
-      words: { min, max },
-      jaChars: { max: jaMax },
+      words: { min, max, target },
+      jaChars: { max: jaMax, target: jaTarget },
       summary,
       raw: rawLevel,
     });

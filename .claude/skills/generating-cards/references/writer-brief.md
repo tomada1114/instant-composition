@@ -25,11 +25,15 @@ alternatives. Follow every rule in `writing.md`.
 
 For each cell, write `count` cards set in the subtopic's `scene`:
 
-- `en` has the level's `words` range, every alternative at most `words.max` words, and
-  `ja` at most `jaChars.max` characters (whitespace not counted).
-- Those caps are ceilings, not targets: write each sentence as short as its scene
-  allows. Make the card harder through what the level summary names — vocabulary, idioms
-  and phrasal verbs, structure — never through a longer sentence.
+- Aim `en` at `words.target` words or fewer — one or two under `words.max` — and `ja` at
+  `jaChars.target` characters or fewer (whitespace not counted). `words.max` and
+  `jaChars.max` are hard ceilings the lint enforces, never something to fill; `en` must
+  still reach `words.min`, and every alternative stays at most `words.max`.
+- One sentence, one idea: a core plus at most one added detail, no two statements joined
+  by `and`/`but`/`so`, as `writing.md`'s "One sentence, one idea" sets out. A learner
+  should say it in one breath and want to say the next one.
+- Make the card harder through what the level summary names — vocabulary, idioms and
+  phrasal verbs, structure — never through a longer sentence.
 - Spread the cell's `targetGrammar` across its cards; every card uses at least one of
   them. Other grammar ids valid at the level may appear only as a second tag.
 
@@ -51,9 +55,11 @@ without `id`, `createdAt` or `stamps`:
 }
 ```
 
-Before writing it, check each card: the word count of `en` is inside the range; each
-alternative is within `words.max`; `ja` is within `jaChars.max`; no word or clause could
-go without losing the card's point; 2 or 3 alternatives, none a mere contraction or
+Before writing it, check each card: the word count of `en` is inside the range and,
+unless the scene cannot be said shorter, at or under `words.target`; each alternative is
+within `words.max`; `ja` is within `jaChars.max` and at or under `jaChars.target`; every
+sentence is one sentence with at most one added detail; no word or clause could go
+without losing the card's point; 2 or 3 alternatives, none a mere contraction or
 punctuation variant of `en`; `grammar` has 1–2 valid ids; `ja` pins the subject, tense,
 polarity and politeness of the English. Then confirm the file parses with
 `node -e 'JSON.parse(require("fs").readFileSync(process.argv[1], "utf8"))' <file>`.
