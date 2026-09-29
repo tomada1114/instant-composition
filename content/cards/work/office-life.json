@@ -1,5 +1,18 @@
 [
   {
+    "id": "c_2a3y3v2j",
+    "ja": "私のメール、もう見た？",
+    "en": "Have you seen my email yet?",
+    "alternatives": ["Did you see my email yet?", "Have you looked at my email yet?"],
+    "point": "「もう」を尋ねるときは yet を文末に",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2q2x6n3t",
     "ja": "ゴミは分別すべきです。",
     "en": "We should sort the trash.",
@@ -80,6 +93,22 @@
     }
   },
   {
+    "id": "c_4c3e4z2e",
+    "ja": "古いけど、コピー機は動くよ。",
+    "en": "Although it's old, the copier works.",
+    "alternatives": [
+      "Even though the copier's old, it works.",
+      "The copier works, even though it's old."
+    ],
+    "point": "譲歩は although / even though。but とは重ねない",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 6,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4f5t6x7d",
     "ja": "あの時、部長は帰ってたよ。",
     "en": "The boss had already gone home.",
@@ -100,6 +129,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4f7n6p6s",
+    "ja": "ホチキスがどこにあるか分かる？",
+    "en": "Any idea where the stapler is?",
+    "alternatives": ["Do you know where the stapler is?", "Know where the stapler is?"],
+    "point": "間接疑問は where のあとを平叙文の語順に",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 6,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_4t2a8k8n",
@@ -178,6 +220,22 @@
     }
   },
   {
+    "id": "c_5t2s9a7c",
+    "ja": "朝からずっと報告書を書いてる。",
+    "en": "I've been writing reports all morning.",
+    "alternatives": [
+      "I've been writing reports since morning.",
+      "I've been working on reports all morning."
+    ],
+    "point": "今も続く動作は have been + -ing",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6a4j2y4k",
     "ja": "プリンター、壊れたと思う。",
     "en": "I think the printer's broken.",
@@ -198,6 +256,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6b2m2k9v",
+    "ja": "上司に土曜も出勤させられた。",
+    "en": "My boss made me work Saturday.",
+    "alternatives": [
+      "I was made to come in on Saturday.",
+      "My boss made me come in Saturday."
+    ],
+    "point": "強制は make + 人 + 動詞の原形。to は付けない",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 7,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6b5r6m7b",
@@ -255,6 +329,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8w2h8w6j",
+    "ja": "頼んでくれれば、手伝ったのに。",
+    "en": "I'd have helped if you'd asked.",
+    "alternatives": [
+      "If you'd asked, I would have helped.",
+      "If you had asked me, I'd have helped."
+    ],
+    "point": "過去の事実に反する仮定は if + 過去完了、would have + 過去分詞",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 7,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9h2q3y3e",

@@ -221,6 +221,19 @@
     }
   },
   {
+    "id": "c_8q7g5m7r",
+    "ja": "電話を貸して！",
+    "en": "Lend me your phone.",
+    "alternatives": ["Let me use your phone.", "Can I borrow your phone?"],
+    "point": "命令文は主語なしで動詞から始める",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8r3s2a9j",
     "ja": "もっと早い便はありますか？",
     "en": "Is there an earlier flight?",

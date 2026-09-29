@@ -60,6 +60,19 @@
     }
   },
   {
+    "id": "c_3c3a5v9c",
+    "ja": "また連絡してね。",
+    "en": "Keep in touch.",
+    "alternatives": ["Stay in touch.", "Don't be a stranger."],
+    "point": "「連絡を保つ」は keep in touch",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3g4v7q4z",
     "ja": "近々、会わないとね。",
     "en": "We should get together soon.",

@@ -102,6 +102,19 @@
     }
   },
   {
+    "id": "c_5x8s6n4g",
+    "ja": "私は看護師です。",
+    "en": "I'm a nurse.",
+    "alternatives": ["I work as a nurse.", "I'm a nurse by profession."],
+    "point": "職業の前には a をつける",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7f5g2j9b",
     "ja": "うちの課は十人います。",
     "en": "There are ten of us.",

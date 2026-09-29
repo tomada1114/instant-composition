@@ -19,6 +19,22 @@
     }
   },
   {
+    "id": "c_3r3w8m2k",
+    "ja": "視野を広げたくて応募しました。",
+    "en": "I applied to broaden my horizons.",
+    "alternatives": [
+      "I applied in order to broaden my horizons.",
+      "I applied hoping to broaden my horizons."
+    ],
+    "point": "目的は to + 動詞。「視野を広げる」は broaden one's horizons",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4c7e9b2h",
     "ja": "営業の経験者です。",
     "en": "I'm experienced in sales.",
@@ -55,6 +71,54 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4y9z2z9a",
+    "ja": "もっと早く転職すればよかった。",
+    "en": "I wish I'd changed jobs sooner.",
+    "alternatives": [
+      "I wish I had switched jobs earlier.",
+      "I should have changed jobs sooner."
+    ],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5d5w5c3u",
+    "ja": "私の一番の強みは聞く力です。",
+    "en": "My greatest strength is listening.",
+    "alternatives": [
+      "My biggest strength is listening.",
+      "Listening is my greatest strength."
+    ],
+    "point": "「一番の強み」は最上級 greatest / biggest",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 6,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5n7w8k7x",
+    "ja": "転職するなら、教師になりたい。",
+    "en": "If I changed careers, I'd teach.",
+    "alternatives": [
+      "If I switched careers, I'd teach.",
+      "If I changed careers, I'd become a teacher."
+    ],
+    "point": "現実味の薄い仮定は if + 過去形、would で受ける",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 6,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5v3q4a8x",
@@ -245,6 +309,22 @@
     }
   },
   {
+    "id": "c_8r5u6t4g",
+    "ja": "私はチームで最年少でした。",
+    "en": "I was the team's youngest.",
+    "alternatives": [
+      "I was the youngest member of the team.",
+      "I was the youngest person on the team."
+    ],
+    "point": "最年少は the youngest。the を忘れずに",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8r7j6f5d",
     "ja": "リーダー経験があります。",
     "en": "I've been a team leader.",
@@ -284,6 +364,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9a2t4y2t",
+    "ja": "その経験が私を強くしました。",
+    "en": "That experience made me stronger.",
+    "alternatives": [
+      "That experience toughened me up.",
+      "I became stronger because of that experience."
+    ],
+    "point": "make + 人 + 形容詞「人を〜にする」",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 6,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9c8n4c3x",
