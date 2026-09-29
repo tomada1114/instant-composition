@@ -240,6 +240,44 @@ describe("useQueuedDrill", () => {
   });
 });
 
+describe("useAnswerQueue on arrival at a new round", () => {
+  it("sends what an abandoned round left queued, apart from the new round's queue", async () => {
+    sessionStorage.setItem("drill-answers:r", JSON.stringify([answer("c1")]));
+    const posted: string[] = [];
+    vi.stubGlobal("fetch", (url: string) => {
+      posted.push(url);
+      return Promise.resolve(new Response(null, { status: 204 }));
+    });
+    const { result } = renderHook(() =>
+      useAnswerQueue({ id: "next", deck: ["c1"], answered: [] }),
+    );
+    expect(result.current.unsaved).toStrictEqual([]);
+    await act(async () => {
+      await vi.runAllTimersAsync();
+    });
+    expect(posted).toHaveLength(1);
+    expect(posted[0]).toContain("/v1/rounds/r/answers");
+    expect(sessionStorage.getItem("drill-answers:r")).toBeNull();
+  });
+
+  it("clears a finished round's leftover once the server refuses it", async () => {
+    sessionStorage.setItem("drill-answers:r", JSON.stringify([answer("c1")]));
+    vi.stubGlobal("fetch", () =>
+      Promise.resolve(
+        Response.json(
+          { error: { code: "ERR_ROUND_CLOSED", message: "closed" } },
+          { status: 409 },
+        ),
+      ),
+    );
+    renderHook(() => useAnswerQueue({ id: "next", deck: ["c1"], answered: [] }));
+    await act(async () => {
+      await vi.runAllTimersAsync();
+    });
+    expect(sessionStorage.getItem("drill-answers:r")).toBeNull();
+  });
+});
+
 describe("useRoundFinish", () => {
   it("asks for the summary once finishing, and retries on demand after a failure", async () => {
     let calls = 0;
