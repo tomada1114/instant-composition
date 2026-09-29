@@ -164,7 +164,13 @@
     "level": 8,
     "grammar": ["nested-clauses", "reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:648a9f47458565b0407a71215a34afbee97632285b71ce720f61fdf550fc3ee0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3f2r9q9t",
@@ -265,7 +271,13 @@
     "level": 6,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:012d4756fb1b1c8d8da039b02e3a07cd39b57a2f279765f5da7884855371f9b7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3q9c9p6t",
@@ -325,7 +337,13 @@
     "level": 6,
     "grammar": ["requests-permission", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f2562deed73a25e56f58016da1f079e007eba372ae0031fb6b21812b8ed5f0a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4g7z6c8y",
@@ -479,22 +497,6 @@
     }
   },
   {
-    "id": "c_5k6j8a9m",
-    "ja": "私は何時間も調べているのに、原因がまだつかめない。",
-    "en": "Hours in, I still can't pin down the cause.",
-    "alternatives": [
-      "I've spent hours and still can't pin down the cause.",
-      "Hours later, I still can't track down the cause."
-    ],
-    "point": "「突き止める」は pin down / track down を使う",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 8,
-    "grammar": ["phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5y9r6w5n",
     "ja": "設定が上書きされたに違いないと、彼は言っています。",
     "en": "He says the config must have been overwritten.",
@@ -605,22 +607,6 @@
     }
   },
   {
-    "id": "c_6n6t6x9w",
-    "ja": "彼が見落としたのは、たった一行の設定でした。",
-    "en": "What he overlooked was a single line of config.",
-    "alternatives": [
-      "The one thing he missed was a single config line.",
-      "He overlooked just one line of config."
-    ],
-    "point": "「見落としたのは〜」は What he missed was で強調",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 8,
-    "grammar": ["cleft-emphasis"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6p7e8x8f",
     "ja": "このエラーはどこで出ますか？",
     "en": "Where does this error appear?",
@@ -697,7 +683,13 @@
     "level": 4,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:46ce8038c81031aabc873fc56498d36d196e3965254f331cee8527e1affc5461",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7a6z4h8d",
@@ -713,7 +705,13 @@
     "level": 5,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:523bd3eff1649bb714dfcc2fe752b28977bdad30e76959dbd6b18bedb6a20b42",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7e3a7c3u",
@@ -802,22 +800,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_7n3d8t5p",
-    "ja": "どの操作でデータが壊れるのか、誰か突き止めた？",
-    "en": "Has anyone pinpointed which action is corrupting the data?",
-    "alternatives": [
-      "Has anyone figured out which action corrupts the data?",
-      "Has anyone found out which action is corrupting data?"
-    ],
-    "point": "which 以下は平叙文の語順で、do/does は使わない",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 6,
-    "grammar": ["indirect-questions", "present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_7w7k2s3e",
@@ -943,23 +925,13 @@
     "level": 5,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8v3x6t2p",
-    "ja": "落ちた人が、どのプランか確認してもらえますか？",
-    "en": "Could you check which plan affected users are on?",
-    "alternatives": [
-      "Could you look up which plan those users are on?",
-      "Can you find out which plan affected users have?"
-    ],
-    "point": "which plan の後ろは平叙文の語順（are on）",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 8,
-    "grammar": ["indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:78a13c400a67c03cce39398ae9a9dd02a0713f3266959ef92dab54ae7e10f801",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8x6y5d2c",
@@ -982,22 +954,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9a8a5r6e",
-    "ja": "昨日追加されたコードのどこかがバグってるはず。",
-    "en": "Something in the code added yesterday must be buggy.",
-    "alternatives": [
-      "The bug must be in the code added yesterday.",
-      "There must be a bug in code added yesterday."
-    ],
-    "point": "「追加された〜」は過去分詞で名詞を後ろから修飾",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 6,
-    "grammar": ["post-modification"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9e9f7k2n",
@@ -1035,7 +991,13 @@
     "level": 5,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:19dda78352f5e4cf52bbcbe8fa11d414b468e62d70915387ae329a8277b39761",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9z3r8g3m",
