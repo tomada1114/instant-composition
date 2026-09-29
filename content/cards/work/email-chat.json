@@ -13,7 +13,13 @@
     "level": 4,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c64b1c1a9ffae2abad61557303e43fc6dba9aa4a406a23ec4bb67ee9550adf66",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2j4e9t4g",
@@ -46,7 +52,13 @@
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f102d1b751efb9271e334d48636f7c7d5cb7044e83af4e3edc7a06c4fef559ce",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2k3d9q8p",
@@ -62,23 +74,6 @@
     "subtopic": "email-chat",
     "level": 8,
     "grammar": ["cleft-emphasis", "noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2p9p6k5w",
-    "ja": "部長は、何て返信しましたか？",
-    "en": "How did the manager reply?",
-    "alternatives": [
-      "What did the manager reply?",
-      "What was the manager's reply?",
-      "How did the manager respond?"
-    ],
-    "point": "過去の疑問文は did を使い、動詞は原形の reply",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 2,
-    "grammar": ["wh-questions", "past-simple"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -126,7 +121,13 @@
     "level": 1,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:649adfb6122a6157416546ae2dda6460cc0b520202a196f83ee172afd8143dc4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3r3h9z2t",
@@ -157,9 +158,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:20d3058f12dc6a46d303a415e5450c7bac8d1811f5c365e361271b6f6085f567",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:c2ea471cbe8395079b8a97b19ef71475089eaa87b42d1d7d50587060443f7023",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -222,7 +223,13 @@
     "level": 3,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:344551f7fcd67f042ca08d2c4e0232bf640a50b7cd3e940052e4e505d30fdfe8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6f8n4m2s",
@@ -238,7 +245,13 @@
     "level": 5,
     "grammar": ["phrasal-verbs", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:69f9014c0f35f296353e916ab15cbd547d843dba4044f5eaf4eb0b42de5fe9d3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6p4u6b4c",
@@ -251,7 +264,13 @@
     "level": 3,
     "grammar": ["articles-and-countability", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f75baf6bf02356d9d65bbf7eea532bb5c05cb0112919f0c430755b9b07e7f694",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7h5r3t7e",
@@ -267,23 +286,13 @@
     "level": 4,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7k6b4e6u",
-    "ja": "チャットが来たとき、私は忙しかった。",
-    "en": "I was busy when the message came.",
-    "alternatives": [
-      "I was busy when the chat came.",
-      "I was busy when the message arrived."
-    ],
-    "point": "「〜したとき」は when。どちらも過去形でそろえる",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 2,
-    "grammar": ["past-simple"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9b7dbc7e54869a7e1c2040d94f03221c9018ed6cd418eefb30fd3bae05b6c4cf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8c6g2z7d",
@@ -296,23 +305,13 @@
     "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8j8r4p8f",
-    "ja": "チャットより、電話で話すのはどう？",
-    "en": "How about talking on the phone instead?",
-    "alternatives": [
-      "Why don't we talk on the phone instead?",
-      "Why not talk on the phone instead?"
-    ],
-    "point": "How about の後は動詞の ing 形",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 4,
-    "grammar": ["gerunds"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f2fefe3ca0fb7a8a7a9092d93553eae4c32306c46c2ed02a60f7fe3e07db8f7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8v2u2b7w",
@@ -381,22 +380,6 @@
     "subtopic": "email-chat",
     "level": 6,
     "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9y3k5v9q",
-    "ja": "先方の返信が遅くても、作業は進めて。",
-    "en": "Even if they reply late, keep going.",
-    "alternatives": [
-      "Keep working even if they're slow to reply.",
-      "Keep going even if they reply late."
-    ],
-    "point": "even if 節は未来のことでも現在形",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 5,
-    "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
   }
