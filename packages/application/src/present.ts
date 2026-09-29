@@ -89,6 +89,7 @@ export function payloadOf(
 export function reachViewOf(
   reach: RoundOutcome["reach"],
   snapshot: CatalogSnapshot,
+  pending: number | undefined,
 ): ReachView {
   const name = (topic: string): string =>
     snapshot.topics.find((info) => info.id === topic)?.name ?? topic;
@@ -108,6 +109,7 @@ export function reachViewOf(
       nearest === undefined
         ? null
         : { name: name(nearest.topic), remaining: nearest.remaining },
+    ...(pending === undefined ? {} : { pending }),
   };
 }
 
@@ -138,7 +140,7 @@ export function summaryOf(
     streak: outcome.streak,
     week: outcome.week,
     filled: outcome.filled,
-    reach: reachViewOf(outcome.reach, snapshot),
+    reach: reachViewOf(outcome.reach, snapshot, outcome.pending),
     titles: outcome.titles,
     topicNames: Object.fromEntries(
       snapshot.topics.map((topic) => [topic.id, topic.name]),

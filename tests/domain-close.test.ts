@@ -313,6 +313,30 @@ describe("decideClose", () => {
     expect(closed.stats.titles).toStrictEqual(["reach:work:10"]);
   });
 
+  it("counts the unmastered items in chosen topics said in time on exactly one day", () => {
+    const items = new Map<string, ItemProgress>([
+      ["one", makeItem({ item: { kind: "composition", id: "one" } })],
+      [
+        "two",
+        makeItem({
+          item: { kind: "composition", id: "two" },
+          okDays: ["2026-09-21", "2026-09-22"],
+          mastered: { day: "2026-09-22", sessionId: "r1" },
+        }),
+      ],
+      ["none", makeItem({ item: { kind: "composition", id: "none" }, okDays: [] })],
+      [
+        "away",
+        makeItem({
+          item: { kind: "composition", id: "away" },
+          placement: { topic: "travel", subtopic: "hotel" },
+        }),
+      ],
+    ]);
+
+    expect(decideClose(state({ items }), 50).outcome.pending).toBe(1);
+  });
+
   it("totals the fourteen days ending with the round's day", () => {
     const tallies = new Map([
       ["2026-09-22", makeDay({ answers: 3 })],

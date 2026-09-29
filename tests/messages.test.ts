@@ -466,6 +466,7 @@ const MESSAGE_KEYS = [
   "Summary.reach.nearest",
   "Summary.reach.added",
   "Summary.reach.empty",
+  "Summary.reach.pending",
   "Summary.titles.label",
   "Summary.titles.streak",
   "Summary.titles.reach",

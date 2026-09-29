@@ -49,6 +49,7 @@ export type ReachView = {
         name: string;
         remaining: number;
     } | null;
+    pending?: number;
 };
 
 export type StartRoundRequest = {
