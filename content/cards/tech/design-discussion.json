@@ -1,21 +1,5 @@
 [
   {
-    "id": "c_2b5d3k8k",
-    "ja": "先にフィードバックをいただけますか？",
-    "en": "Could you give us some feedback first?",
-    "alternatives": [
-      "Could we get your feedback first?",
-      "Can you give us some feedback first?"
-    ],
-    "point": "feedback は数えられない名詞。a feedback にしない",
-    "topic": "tech",
-    "subtopic": "design-discussion",
-    "level": 3,
-    "grammar": ["articles-and-countability"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2h2z4p9j",
     "ja": "うちは書き込みの速さを少し捨てて、整合性を選んだ。",
     "en": "We gave up some write speed for consistency.",
@@ -28,22 +12,6 @@
     "subtopic": "design-discussion",
     "level": 7,
     "grammar": ["phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2n5g6s4z",
-    "ja": "彼女が確認しなかったら、選び間違えてたよ。",
-    "en": "If she hadn't checked, we'd have chosen wrong.",
-    "alternatives": [
-      "We'd have chosen wrong if she hadn't checked.",
-      "We'd have picked wrong without her checking."
-    ],
-    "point": "過去の仮定は had 過去分詞、帰結は would have 過去分詞",
-    "topic": "tech",
-    "subtopic": "design-discussion",
-    "level": 6,
-    "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -61,7 +29,13 @@
     "level": 3,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:693c99d18fa537adeae19e82193506fff097c87487ed5f02bd2c1aea9708d775",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2q5t4x8q",
@@ -93,7 +67,13 @@
     "level": 6,
     "grammar": ["present-perfect-continuous", "tense-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:893d1a5c9e3782bdef54b95fa44d1952a1e47b4f93168aeb7acf8d1c2a183ac8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2x8s3u5s",
@@ -109,7 +89,13 @@
     "level": 6,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a59b7a2b71e14daccf61eb10ee0b04a5863d30887484623402d7bca353792c2f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3f3x5e8s",
@@ -125,7 +111,13 @@
     "level": 6,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1db9bfc096213165a997b6854c8e483913a51ed0395e4388cad9920717bb292c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3j8s6d4u",
@@ -143,9 +135,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:1a5b3126e5d1b99021374c4601ec3c9b348d2f0a18766d85b9c3fd8b782261ed",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:dae391e4fbb29d32ec75b4a75dbad5cdec84eef002259857b9fe707a6f818018",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -176,7 +168,13 @@
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a03ec3693f3329fa5225a52ee1f04a612c3738cefa3ac0b35e9904c7aef49a95",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4f4m5b3a",
@@ -242,9 +240,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:14d03ed6a7c1e66eb8f4c9a6d8fa224b8c2833a09ac068d442d4c2aea1a5881f",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:3151431307e2d41731b9b518a05e26ec13dd43c3051995487935431217bd9764",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -262,7 +260,13 @@
     "level": 2,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:09ba22bf9b02f70680012052343b2b4d71e2e85db24f2a27ca34fc15981278cd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6b4c5h2y",
@@ -294,7 +298,13 @@
     "level": 4,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8999053094bf82bf778a0209832037e8461e7e5762b2ce1950bb96e711f615ca",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6q3g6g7b",
@@ -360,9 +370,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:4ddd17c32ad2720e176d55953797207b7c9baa2325c5db3366931cdd96a6adb5",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:6206bc1bffdd15ee26495e50241c518e6b582b44578f2bdcf11c036ebaaa8a20",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -398,9 +408,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:928e29d3bf8e279f1838c525e18b29ec959e96b2d31e1a18ebb68f80d2c6b570",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:47c2c1ceb8ac8a214dab28e51c36715efaf3b3a436a59eb85f8ae1713516ed26",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -466,7 +476,13 @@
     "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f61ca86dc4e62a89a9713763eab1ff543c0257883d864b8c07414761cc091775",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9m5z8b9q",
@@ -482,7 +498,13 @@
     "level": 3,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e9640c0b24abcd4fce62adb181ab3d4182555cc084c75ce0461a06864e551997",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9z2z9q9w",
