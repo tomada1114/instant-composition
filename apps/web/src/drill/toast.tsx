@@ -26,7 +26,7 @@ export function Toast({
   return (
     <div
       role="status"
-      className="pointer-events-none fixed inset-x-0 bottom-[calc(var(--column-inset)+6rem)] z-20 mx-auto box-content max-w-column px-4"
+      className="pointer-events-none fixed inset-x-0 bottom-[calc(var(--column-inset)+var(--safe-bottom)+6rem)] z-20 mx-auto box-content max-w-column px-4"
     >
       {signal !== 0 && expired !== signal ? (
         <div className="flex items-center gap-3 rounded-tile bg-raised px-4 py-3.5">
