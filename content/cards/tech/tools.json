@@ -114,6 +114,38 @@
     }
   },
   {
+    "id": "c_2n2f5u3x",
+    "ja": "ケンが、キャッシュを消せば直るって言ってた。",
+    "en": "Ken said clearing the cache should fix it.",
+    "alternatives": [
+      "Ken told me clearing the cache would fix it.",
+      "Ken said clearing the cache would do the trick."
+    ],
+    "point": "said の後は時制を一つ過去側へ。will でなく should も可",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 6,
+    "grammar": ["reported-speech", "gerunds"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2q5v4j4x",
+    "ja": "必要なのは、もっと速いビルド環境です。",
+    "en": "What I need is a faster build setup.",
+    "alternatives": [
+      "A faster build setup is what I need.",
+      "What I need is a quicker build environment."
+    ],
+    "point": "「必要なのは〜」は What I need is 〜 で言う",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 5,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2t3z7r3m",
     "ja": "失敗した時、もうキャッシュを消してたよ。",
     "en": "I'd already cleared the cache when it failed.",
@@ -180,6 +212,22 @@
     }
   },
   {
+    "id": "c_3s4q5d6w",
+    "ja": "Node を上げてから、ビルドが通らない。",
+    "en": "Builds have failed since I upgraded Node.",
+    "alternatives": [
+      "The build's been failing since I upgraded Node.",
+      "Since upgrading Node, the build has been failing."
+    ],
+    "point": "since の前は過去形、今まで続く結果は現在完了",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 5,
+    "grammar": ["tense-contrast", "present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3u8n9q3r",
     "ja": "リンターの設定を順を追って説明してもらえますか？",
     "en": "Could you walk me through your linter setup?",
@@ -218,22 +266,6 @@
     "stamps": {}
   },
   {
-    "id": "c_4e9m5s4z",
-    "ja": "バージョンを固定して、更新を気にしなくなった。",
-    "en": "Having pinned the versions, I stopped worrying about updates.",
-    "alternatives": [
-      "After pinning the versions, I stopped worrying about updates.",
-      "I pinned the versions, so I stopped worrying about updates."
-    ],
-    "point": "先に終えた動作は Having + 過去分詞で前置きできる",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 8,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_4f6u7b6k",
     "ja": "ログをひと通り見たけど、手がかりは全然なかったよ。",
     "en": "I combed through the logs but found no clues.",
@@ -246,54 +278,6 @@
     "subtopic": "tools",
     "level": 7,
     "grammar": ["phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4g8p4b5r",
-    "ja": "私に必要なのは、もっと速いビルド環境です。",
-    "en": "What I need is a faster build setup.",
-    "alternatives": [
-      "A faster build setup is what I need.",
-      "What I need is a quicker build environment."
-    ],
-    "point": "「必要なのは〜」は What I need is 〜 で言う",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 6,
-    "grammar": ["noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4n4c8f7w",
-    "ja": "ケンが、キャッシュを消せば片づくはずって言ってたよ。",
-    "en": "Ken said clearing the cache should sort it out.",
-    "alternatives": [
-      "Ken told me clearing the cache should fix it.",
-      "Ken said the cache wipe should take care of it."
-    ],
-    "point": "said の後は時制を一つ過去側へ。will でなく should も可",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 10,
-    "grammar": ["reported-speech"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4p3n4j5d",
-    "ja": "エディタ、乗り換えようと思ってたけど、ずっと後回しなんだ。",
-    "en": "I've been meaning to switch editors, but keep putting it off.",
-    "alternatives": [
-      "I've been thinking of switching editors, but I keep putting it off.",
-      "I meant to switch editors, but I've kept putting it off."
-    ],
-    "point": "ずっと続く「後回し」は現在完了・現在進行で表す",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 10,
-    "grammar": ["tense-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -494,22 +478,6 @@
     "stamps": {}
   },
   {
-    "id": "c_9p3r6x5j",
-    "ja": "昨日 Node を上げたら、それ以来ビルドが通らないんだ。",
-    "en": "I upgraded Node yesterday, and builds have failed ever since.",
-    "alternatives": [
-      "The build's been failing since I upgraded Node yesterday.",
-      "Ever since I upgraded Node yesterday, the build has been failing."
-    ],
-    "point": "昨日は過去形、それ以来の今は現在完了",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 9,
-    "grammar": ["tense-contrast", "present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_9p3z5x9w",
     "ja": "私が入れたプラグイン、もう動いてる？",
     "en": "Is the plugin I installed working yet?",
@@ -563,5 +531,21 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9z6w9j5t",
+    "ja": "エディタ、乗り換えようと思いつつ、ずっと後回し。",
+    "en": "I've been meaning to switch editors, but keep procrastinating.",
+    "alternatives": [
+      "I keep meaning to switch editors and putting it off.",
+      "I've meant to switch editors for ages, but I keep delaying."
+    ],
+    "point": "ずっと続く「後回し」は現在完了進行や keep -ing で表す",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["present-perfect-continuous", "tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]

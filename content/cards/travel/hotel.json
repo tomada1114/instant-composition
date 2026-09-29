@@ -23,13 +23,16 @@
   },
   {
     "id": "c_2n4f9w2h",
-    "ja": "パスポートを見せなきゃいけないよ。",
+    "ja": "君はパスポートを見せなきゃだめだよ。",
     "en": "You have to show your passport.",
-    "alternatives": ["You need to show your passport.", "You must show your passport."],
+    "alternatives": [
+      "You need to show your passport.",
+      "You've got to show your passport."
+    ],
     "point": "義務は have to。must より会話でよく使う",
     "topic": "travel",
     "subtopic": "hotel",
-    "level": 5,
+    "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -59,10 +62,10 @@
   {
     "id": "c_3a8p6d9s",
     "ja": "さっきからフロントに電話してるんです。",
-    "en": "I've been calling the front desk.",
+    "en": "I've been calling the desk for a while.",
     "alternatives": [
-      "I've been trying to call the front desk.",
-      "I've been trying to reach the front desk."
+      "I've been calling the front desk for ages.",
+      "I've been calling reception for a while now."
     ],
     "point": "さっきからずっと、は現在完了進行形 have been -ing",
     "topic": "travel",
@@ -333,13 +336,13 @@
     "ja": "疲れ果てた私たちは、着くなりベッドに倒れ込んだ。",
     "en": "Exhausted, we flopped onto the bed the moment we arrived.",
     "alternatives": [
-      "Worn out, we crashed on the bed the moment we arrived.",
-      "We were wiped out and fell onto the bed on arrival."
+      "Worn out, we crashed into bed the moment we arrived.",
+      "Exhausted, we fell into bed as soon as we arrived."
     ],
     "point": "文頭の Exhausted は「疲れていたので」の分詞構文",
     "topic": "travel",
     "subtopic": "hotel",
-    "level": 9,
+    "level": 7,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -431,8 +434,8 @@
     "point": "「ベッドの上の」は名詞の後ろに on my bed を置く",
     "topic": "travel",
     "subtopic": "hotel",
-    "level": 4,
-    "grammar": ["post-modification"],
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -515,12 +518,12 @@
     "en": "Could I have my pillow swapped for a firmer one?",
     "alternatives": [
       "Could you swap my pillow for a firmer one?",
-      "Would it be possible to swap my pillow for a firmer one?"
+      "Could I get my pillow changed to a firmer one?"
     ],
     "point": "have + 物 + 過去分詞で「〜してもらう」",
     "topic": "travel",
     "subtopic": "hotel",
-    "level": 10,
+    "level": 7,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -550,7 +553,7 @@
   {
     "id": "c_9p3y3j6s",
     "ja": "満室でも、キャンセル待ちに入れてください。",
-    "en": "Even if you're full, please put me on standby.",
+    "en": "Even if you're full, please put me on the waitlist.",
     "alternatives": [
       "Even if you're booked, please add me to the waitlist.",
       "Please put me on the waitlist, even if you're full."
@@ -558,7 +561,7 @@
     "point": "「たとえ〜でも」は Even if。if 節は現在形のまま",
     "topic": "travel",
     "subtopic": "hotel",
-    "level": 8,
+    "level": 7,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -566,32 +569,16 @@
   {
     "id": "c_9p5m7x7j",
     "ja": "部屋の暖房を見てくれる人が必要です。",
-    "en": "I need someone to look at my room's heater.",
+    "en": "I need someone to look at the heater.",
     "alternatives": [
-      "Could you send someone to fix my room's heater?",
-      "I need someone to fix the heater in my room."
+      "I need someone to check the heater.",
+      "I need someone to check my room's heater."
     ],
     "point": "「〜する人」は someone to do と後ろから修飾する",
     "topic": "travel",
     "subtopic": "hotel",
-    "level": 8,
+    "level": 4,
     "grammar": ["infinitives", "post-modification"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9p6s7f7k",
-    "ja": "満室でも、キャンセル待ちに入れてもらえませんか？",
-    "en": "Even if you're booked up, could you put me on standby?",
-    "alternatives": [
-      "Could you put me on the waitlist even if you're full?",
-      "Even if you're full, could you add me to the waitlist?"
-    ],
-    "point": "Even if は「たとえ〜でも」。「満室」は booked up / full",
-    "topic": "travel",
-    "subtopic": "hotel",
-    "level": 9,
-    "grammar": ["concession-contrast", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },

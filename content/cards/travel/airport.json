@@ -174,38 +174,6 @@
     "stamps": {}
   },
   {
-    "id": "c_4b8m9y6u",
-    "ja": "万一ビジネスに空きが出たら、上げてもらえますか？",
-    "en": "If a business seat opened up, could you bump me up?",
-    "alternatives": [
-      "If a seat in business opened up, could you upgrade me?",
-      "If there were an opening in business, could you upgrade me?"
-    ],
-    "point": "起こりにくい仮定は if 節を過去形にする",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 10,
-    "grammar": ["second-conditional", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4s2w8g2p",
-    "ja": "私があの便に乗れていたら、今ごろ着いてるのに。",
-    "en": "If I'd caught that flight, I'd be there by now.",
-    "alternatives": [
-      "If I'd made that flight, I'd be there already.",
-      "Had I caught that flight, I'd be there by now."
-    ],
-    "point": "過去の仮定＋今の結果：If 過去完了, would 原形",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 8,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_4u4t5d5f",
     "ja": "私の席の下に誰かのかばんがあります。",
     "en": "There's someone's bag under my seat.",
@@ -259,6 +227,22 @@
     "subtopic": "airport",
     "level": 3,
     "grammar": ["present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6j4p3s2m",
+    "ja": "パスポートを更新していたら、今ごろ搭乗中なのに。",
+    "en": "If I'd renewed my passport, I'd be boarding now.",
+    "alternatives": [
+      "I'd be boarding now if I'd renewed my passport.",
+      "I'd be boarding right now if I'd renewed my passport."
+    ],
+    "point": "過去の仮定＋今の結果：If 過去完了, would 原形",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -369,6 +353,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7t4w7x6v",
+    "ja": "ビジネスに空席が出たら、格上げしてもらえますか？",
+    "en": "If a business seat freed up, could you upgrade me?",
+    "alternatives": [
+      "Could you upgrade me if a business seat opened up?",
+      "If a seat in business became available, could you upgrade me?"
+    ],
+    "point": "起こりにくい仮定は if 節を過去形にする",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 10,
+    "grammar": ["second-conditional", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7z9m9d9q",

@@ -115,13 +115,13 @@
     "ja": "道を聞ける人を探しているんです。",
     "en": "I'm looking for someone to ask for directions.",
     "alternatives": [
-      "I need someone to give me directions.",
-      "I'm trying to find someone to ask the way."
+      "I need someone to ask for directions.",
+      "I'm looking for someone I can ask."
     ],
     "point": "「聞ける人」は someone to ask と不定詞で後ろから修飾",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 7,
+    "level": 4,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -147,11 +147,11 @@
   },
   {
     "id": "c_3f5s9q7m",
-    "ja": "あの人、駅がどこにあるか知らないみたいだったよ。",
+    "ja": "彼、駅がどこにあるか知らないみたいだったよ。",
     "en": "He didn't seem to know where the station was.",
     "alternatives": [
-      "He didn't seem sure where the station was.",
-      "He seemed not to know where the station was."
+      "He seemed to have no idea where the station was.",
+      "He didn't seem to know where the station is."
     ],
     "point": "where 節の中は肯定文の語順で、時制も過去に合わせる",
     "topic": "travel",
@@ -230,10 +230,10 @@
   {
     "id": "c_3y6r8d8e",
     "ja": "私たち、早く聞いていれば遠回りせずに済んだのに。",
-    "en": "If we'd asked sooner, we'd have been spared the detour.",
+    "en": "If we'd asked sooner, we'd have skipped the detour.",
     "alternatives": [
-      "Had we asked sooner, we'd have avoided the detour.",
-      "If we'd asked earlier, we could have avoided the detour."
+      "If we'd asked earlier, we could have avoided the detour.",
+      "If we'd asked sooner, we wouldn't have gone the long way."
     ],
     "point": "過去の後悔は If + had 過去分詞, would have 過去分詞",
     "topic": "travel",
@@ -249,12 +249,12 @@
     "en": "The hotel where I'm staying is behind the station.",
     "alternatives": [
       "The hotel I'm staying at is behind the station.",
-      "The place I'm staying is right behind the station."
+      "The place I'm staying is behind the station."
     ],
     "point": "where の代わりに、前置詞 at を文末に残す言い方もある",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 8,
+    "level": 6,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -286,13 +286,13 @@
     "ja": "地元の人に、近道を案内してもらいたいです。",
     "en": "I'd like a local to show me a shortcut.",
     "alternatives": [
-      "I want a local to show me a shortcut.",
-      "I'd like someone local to show me a shortcut."
+      "I'd like someone local to show me a shortcut.",
+      "I'd love a local to show me a shortcut."
     ],
     "point": "would like + 人 + to do。to の前に人を置く",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 8,
+    "level": 6,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -315,7 +315,7 @@
   },
   {
     "id": "c_5n8y2g8u",
-    "ja": "大事なのは、迷ったらすぐ人に聞くことだよ。",
+    "ja": "大事なのは、迷ったら人に聞くことだよ。",
     "en": "What matters is asking someone when you get lost.",
     "alternatives": [
       "The key is to ask someone when you're lost.",
@@ -411,17 +411,16 @@
   },
   {
     "id": "c_7e3f7u2c",
-    "ja": "この先は通れないよ。引き返すべきだね。",
-    "en": "You should turn back. It's blocked.",
+    "ja": "ここは通れないよ。君は戻るべきだね。",
+    "en": "It's blocked. You should turn back.",
     "alternatives": [
-      "You'd better turn back. It's blocked.",
       "It's blocked, so you should go back.",
-      "You should go back. You can't get through."
+      "You should go back. It's blocked."
     ],
-    "point": "「〜すべき」は should＋動詞の原形。had better は強め",
+    "point": "「〜すべき」は should＋動詞の原形で言う",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 5,
+    "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -519,7 +518,7 @@
     "point": "ask + 人 + to do。「降ろす」は drop off / let off",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 8,
+    "level": 7,
     "grammar": ["verb-object-to-do", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -574,7 +573,7 @@
     "topic": "travel",
     "subtopic": "directions",
     "level": 7,
-    "grammar": ["reported-speech"],
+    "grammar": ["verb-object-to-do", "reported-speech"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -603,15 +602,15 @@
   {
     "id": "c_9d2z3p9y",
     "ja": "この辺に詳しい人が、きっと教えてくれますよ。",
-    "en": "Someone who knows the area will surely tell you.",
+    "en": "I'm sure someone who knows the area will tell you.",
     "alternatives": [
-      "Someone familiar with the area will surely tell you.",
-      "I'm sure someone who knows the area will tell you."
+      "Someone who knows the area will tell you for sure.",
+      "I'm sure someone familiar with the area will tell you."
     ],
     "point": "人を修飾する who 節。knows と三単現の s を忘れずに",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 8,
+    "level": 7,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -663,10 +662,10 @@
   {
     "id": "c_9q4x2v2u",
     "ja": "受付の人、あの路地には近づかないよう私たちに言ってたよ。",
-    "en": "The clerk warned us to steer clear of that alley.",
+    "en": "The receptionist warned us to steer clear of that alley.",
     "alternatives": [
-      "The clerk told us to stay away from that alley.",
-      "The clerk told us to keep away from that alley."
+      "The receptionist told us to stay away from that alley.",
+      "The receptionist told us to keep away from that alley."
     ],
     "point": "steer clear of は「〜に近づかない」。warn 人 to 動詞",
     "topic": "travel",
@@ -687,7 +686,7 @@
     "point": "乗り換えは change buses と複数形にする",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 8,
+    "level": 4,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -697,13 +696,13 @@
     "ja": "店員さんが、バス停はすぐそこだと教えてくれた。",
     "en": "The clerk said the bus stop was right there.",
     "alternatives": [
-      "The clerk told me the bus stop was close by.",
-      "The clerk told me the bus stop was right there."
+      "The clerk said the bus stop was close by.",
+      "The clerk told me the stop was right there."
     ],
     "point": "said の後は時制を一つ過去にずらして was",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 7,
+    "level": 6,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
     "stamps": {}

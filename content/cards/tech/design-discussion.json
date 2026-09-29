@@ -22,22 +22,6 @@
     }
   },
   {
-    "id": "c_2j2j9t8t",
-    "ja": "選ぶ前に、比べるためのデータが欲しいです。",
-    "en": "Before choosing, I need data to compare the options.",
-    "alternatives": [
-      "I'd like some data to compare before we choose.",
-      "I need data to compare these options before choosing."
-    ],
-    "point": "「比べるための」は名詞のあとに to compare を置く",
-    "topic": "tech",
-    "subtopic": "design-discussion",
-    "level": 6,
-    "grammar": ["infinitives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2q5h8n7x",
     "ja": "Redis が一番シンプルだと思う。",
     "en": "I think Redis is the simplest.",
@@ -183,7 +167,13 @@
     "level": 6,
     "grammar": ["third-conditional", "modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6b6e425a04a5b14ea4babbc4169c460a2201efe036dfc8e26a2ca4df26a4e824",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3w8r3w3g",
@@ -240,7 +230,13 @@
     "level": 4,
     "grammar": ["infinitives", "articles-and-countability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:de1de5e0a2ae4f5a3a2938d5423183807293a7556e8be4814d7ee82dc36a50ed",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5s6n2g9x",
@@ -367,7 +363,13 @@
     "level": 4,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e2a7f14be5b5d579f03d81535b444908126b16675067ca7573f0b66757f40d95",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6q3g6g7b",
@@ -412,22 +414,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_7e5j5h9v",
-    "ja": "新人でも読める設計にしたいんだけど。",
-    "en": "I'd like a design that even newbies can follow.",
-    "alternatives": [
-      "I want a design even new hires can understand.",
-      "I want a design even a rookie can follow."
-    ],
-    "point": "「設計」を that 以下で後ろから説明する",
-    "topic": "tech",
-    "subtopic": "design-discussion",
-    "level": 6,
-    "grammar": ["relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_7f9b7t8t",
@@ -487,7 +473,13 @@
     "level": 5,
     "grammar": ["infinitives", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fa29963134319757a9d18d8f047379bb6d77ef5b3f808291fcc4f92ab85015ed",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8b7s6p4d",
@@ -569,7 +561,13 @@
     "level": 6,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e8aa6e81abe241f5dc6ade9a044f8f50d46900889005582ff30c24429d5fc7b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9f6h9k8h",
@@ -636,22 +634,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9n5k3m2b",
-    "ja": "うちが作り込みすぎてなければ、もうリリースできてたのに。",
-    "en": "Had we not over-engineered it, we'd have shipped by now.",
-    "alternatives": [
-      "If we hadn't over-engineered it, we'd have shipped by now.",
-      "If we hadn't gold-plated it, we would have shipped already."
-    ],
-    "point": "Had we not ~ は If we hadn't ~ の倒置。後ろは would have + 過去分詞",
-    "topic": "tech",
-    "subtopic": "design-discussion",
-    "level": 10,
-    "grammar": ["inversion", "third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9z2z9q9w",
