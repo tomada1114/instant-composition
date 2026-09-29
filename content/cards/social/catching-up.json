@@ -44,22 +44,6 @@
     }
   },
   {
-    "id": "c_2k7a9t9q",
-    "ja": "君が入院してたなんて、全然知らなかったよ。",
-    "en": "Little did I know you'd been in the hospital.",
-    "alternatives": [
-      "I had no idea you'd been in the hospital.",
-      "I never knew you'd been in the hospital."
-    ],
-    "point": "Little を文頭に置くと did I know の語順になる",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 9,
-    "grammar": ["inversion", "past-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2r6t8w9u",
     "ja": "私、ここ数年で今が一番忙しいよ。",
     "en": "This is the busiest I've been in years.",
@@ -296,22 +280,6 @@
     }
   },
   {
-    "id": "c_5k5p5r7g",
-    "ja": "私が君の立場なら、燃え尽きてるだろうな。",
-    "en": "If I were in your shoes, I'd be burned out.",
-    "alternatives": [
-      "If I were you, I'd be burned out.",
-      "I'd be completely burned out if I were in your shoes."
-    ],
-    "point": "仮定は were、結果は would＋動詞の原形",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 9,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5x6u8j2j",
     "ja": "兄は今、カナダで英語を勉強中。",
     "en": "My brother's studying English in Canada.",
@@ -458,6 +426,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7j8h6b5r",
+    "ja": "私が君の立場なら、燃え尽きてるだろうな。",
+    "en": "If I were you, I'd be burned out.",
+    "alternatives": [
+      "I'd be burned out in your shoes.",
+      "I'd be totally burned out in your place."
+    ],
+    "point": "仮定は were、結果は would＋動詞の原形",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7m3v7e8c",
+    "ja": "君が入院してたなんて、全然知らなかったよ。",
+    "en": "I had no idea you'd been hospitalized.",
+    "alternatives": [
+      "I never knew you'd been in the hospital.",
+      "I didn't even know you'd been hospitalized."
+    ],
+    "point": "知らなかった時点より前の入院は had been",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["past-perfect", "noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7w3x3d4p",

@@ -509,22 +509,6 @@
     }
   },
   {
-    "id": "c_8d4r7b6b",
-    "ja": "今日来ていなければ、あなたとは会えていませんでしたね。",
-    "en": "Had I not come today, we'd never have met.",
-    "alternatives": [
-      "If I hadn't come today, we'd never have met.",
-      "If I hadn't come today, I'd never have met you."
-    ],
-    "point": "Had I not〜 は If I hadn't〜 の倒置形",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 9,
-    "grammar": ["third-conditional", "inversion"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8f2j7w6x",
     "ja": "田中さんから、あなたは大阪出身だと聞きました。",
     "en": "Tanaka told me you were from Osaka.",
@@ -568,6 +552,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8h9n2q9d",
+    "ja": "このパーティー、ドタキャンしてたら会えなかったね。",
+    "en": "If I'd bailed on this party, we'd never have met.",
+    "alternatives": [
+      "If I'd flaked on this party, we'd never have met.",
+      "If I'd bailed on tonight's party, I'd never have met you."
+    ],
+    "point": "過去の仮定は If + had+過去分詞、would have+過去分詞",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["third-conditional", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9k7e3n7v",

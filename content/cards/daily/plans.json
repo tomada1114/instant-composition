@@ -66,18 +66,19 @@
     }
   },
   {
-    "id": "c_3u2w3a3f",
-    "ja": "彼女が提案した日は、私が出張で不在の日なんだ。",
-    "en": "The day she suggested is when I'll be away.",
+    "id": "c_3s8f2m2f",
+    "ja": "彼女に約束をすっぽかされるなんて、夢にも思わなかった。",
+    "en": "Never did I think she'd stand me up.",
     "alternatives": [
-      "The day she suggested is a day I'll be away.",
-      "I'll be away on the day she suggested."
+      "Never would I have thought she'd stand me up.",
+      "I never dreamed she'd stand me up.",
+      "Never did I imagine she'd blow me off."
     ],
-    "point": "「日」を後ろから説明。関係詞は省略できる",
+    "point": "Never を文頭に置くと did I think の語順になる",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 8,
-    "grammar": ["nested-clauses", "relative-clauses"],
+    "level": 9,
+    "grammar": ["inversion"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -492,22 +493,6 @@
     }
   },
   {
-    "id": "c_7m2a5k6r",
-    "ja": "彼女が約束をすっぽかすなんて、夢にも思わなかった。",
-    "en": "Little did I dream she'd stand me up.",
-    "alternatives": [
-      "I never imagined she would stand me up.",
-      "Little did I imagine she'd blow off our plans."
-    ],
-    "point": "Little を文頭に置くと、did I dream の語順になる",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 9,
-    "grammar": ["inversion"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7p7r8b6h",
     "ja": "今めちゃ忙しいし、金曜の飲み会は休もうかな。",
     "en": "I'm swamped, so I'm thinking of skipping Friday's drinks.",
@@ -594,6 +579,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8k8t9x5m",
+    "ja": "彼女が提案した日、私は出張でいないんだ。",
+    "en": "I'm away on business the day she suggested.",
+    "alternatives": [
+      "The day she suggested, I'll be away on business.",
+      "I'll be traveling on business the day she suggested."
+    ],
+    "point": "「日」の後ろに she suggested を直接続けられる",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8n5r3f4m",

@@ -24,16 +24,16 @@
   {
     "id": "c_2t9b4z7s",
     "ja": "先週は断っちゃったから、今度は絶対行くよ。",
-    "en": "I bailed last time, so I'm definitely coming this time.",
+    "en": "I declined last week, so I'm definitely coming this time.",
     "alternatives": [
-      "I turned you down last time, so I'll definitely come this time.",
-      "I said no last time, so I'm definitely in this time."
+      "I passed last week, but I'm definitely coming this time.",
+      "I turned it down last week, so I'll definitely come."
     ],
     "point": "先週の話は過去形、今度の予定は現在進行形で言う",
     "topic": "social",
     "subtopic": "invitations",
-    "level": 10,
-    "grammar": ["tense-contrast"],
+    "level": 7,
+    "grammar": ["tense-contrast", "future-forms"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -323,16 +323,16 @@
   },
   {
     "id": "c_6s5d7j8m",
-    "ja": "兄に頼んで、君もパーティーの招待リストに入れてもらうね。",
-    "en": "I'll get my brother to put you on the guest list.",
+    "ja": "兄に頼んで、君も招待リストに入れてもらうね。",
+    "en": "I'll get my brother to put you on the list.",
     "alternatives": [
-      "I'll have my brother add you to the guest list.",
-      "I'll ask my brother to put you on the guest list."
+      "I'll have my brother add you to the list.",
+      "I'll ask my brother to put you on the list."
     ],
     "point": "get + 人 + to 動詞で「〜してもらう」",
     "topic": "social",
     "subtopic": "invitations",
-    "level": 10,
+    "level": 7,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -474,11 +474,11 @@
       "Do you remember who invited me?",
       "Remember who it was that invited me?"
     ],
-    "point": "疑問詞の後は平叙文の語順。it was that で強調",
+    "point": "「誰が誘ったか」を強めるなら who it was that ~ の形にする",
     "topic": "social",
     "subtopic": "invitations",
     "level": 8,
-    "grammar": ["nested-clauses", "cleft-emphasis"],
+    "grammar": ["indirect-questions", "cleft-emphasis"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },

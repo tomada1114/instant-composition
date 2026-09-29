@@ -22,22 +22,6 @@
     }
   },
   {
-    "id": "c_2c5m7z5b",
-    "ja": "採用担当の人に、私のことを口添えしてもらえないかな？",
-    "en": "Could you put in a good word for me with whoever's hiring?",
-    "alternatives": [
-      "Could you vouch for me with the hiring manager?",
-      "Could you say something good about me to the person hiring?"
-    ],
-    "point": "口添えは put in a good word、誰でも採用担当は whoever",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 10,
-    "grammar": ["nested-clauses", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2q4s7c7y",
     "ja": "僕が決められるなら、喜んで手を貸すのに。",
     "en": "If it were my call, I'd gladly help.",
@@ -80,6 +64,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3h2m6r9a",
+    "ja": "もう引き受けてたから、断れなかったんだ。",
+    "en": "I'd already said yes, so I couldn't back out.",
+    "alternatives": [
+      "I'd already agreed, so I couldn't back out.",
+      "I couldn't back out because I'd already said yes."
+    ],
+    "point": "引き受け済みは I'd already said yes、断るは back out",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["past-perfect", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_3p7q8a8j",
@@ -188,22 +188,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_4j6j5g7g",
-    "ja": "隣に座ってる彼、僕に借りがあるから、頼んでみなよ。",
-    "en": "The guy next to you owes me one. Ask him.",
-    "alternatives": [
-      "Ask the guy next to you. He owes me one.",
-      "The man beside you owes me a favor, so ask him."
-    ],
-    "point": "「隣の彼」は前置詞句で後ろから修飾する",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 9,
-    "grammar": ["post-modification"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_4n8d2z4y",
@@ -445,6 +429,22 @@
     }
   },
   {
+    "id": "c_6s2x3z3e",
+    "ja": "小さな頼みが週末を潰すとは思わなかった。",
+    "en": "I never thought a small favor would eat my weekend.",
+    "alternatives": [
+      "I never expected a small favor to eat my weekend.",
+      "I didn't think a small favor would take my weekend."
+    ],
+    "point": "「思わなかった」は I never thought + would で言う",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7e2n4m8h",
     "ja": "早く言ってくれてたら、手伝ったのに。",
     "en": "If you'd told me sooner, I'd have helped.",
@@ -508,18 +508,18 @@
     }
   },
   {
-    "id": "c_8k2y6b2w",
-    "ja": "手が回らないので、今回は見送らせてもらうね。",
-    "en": "Being stretched thin right now, I'll have to pass this time.",
+    "id": "c_8n3z8k4q",
+    "ja": "手が回らないから、今回は見送るね。",
+    "en": "I'm stretched thin, so I'll pass this time.",
     "alternatives": [
-      "I'm stretched too thin, so I'll have to pass this time.",
-      "Since I'm swamped right now, I'll have to sit this one out."
+      "I'm swamped, so I'll sit this one out.",
+      "I've got a full plate, so I'll pass this time."
     ],
-    "point": "断りの pass、手一杯は stretched thin と言える",
+    "point": "手一杯は stretched thin、断りは pass this time",
     "topic": "social",
     "subtopic": "favors",
-    "level": 10,
-    "grammar": ["participle-clauses"],
+    "level": 7,
+    "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -546,22 +546,6 @@
     }
   },
   {
-    "id": "c_8p9w6f6v",
-    "ja": "ちょっとした頼みが週末を丸ごと潰すとは思わなかった。",
-    "en": "Little did I know this favor would eat my whole weekend.",
-    "alternatives": [
-      "Never did I imagine this favor would eat up my whole weekend.",
-      "I never imagined this small favor would swallow my whole weekend."
-    ],
-    "point": "Little を文頭に出すと did I know の語順になる",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 10,
-    "grammar": ["inversion"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8t9s3t4q",
     "ja": "彼に頼まれたとき、きっぱり断っておけばよかった。",
     "en": "I should have turned him down flat when he asked.",
@@ -582,22 +566,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_8x6z7k2s",
-    "ja": "一度引き受けたから、断れなかったんだ。",
-    "en": "Having said yes once, I couldn't back out.",
-    "alternatives": [
-      "I'd already said yes, so I couldn't back out.",
-      "Since I'd already agreed, I couldn't back out."
-    ],
-    "point": "「引き受けた後」は Having + 過去分詞で表す",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 8,
-    "grammar": ["participle-clauses", "past-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_8z3p4v9g",
@@ -683,6 +651,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9p3x9p5n",
+    "ja": "採用担当に口添えしてもらえない？",
+    "en": "Could you vouch for me with the hiring manager?",
+    "alternatives": [
+      "Could you put in a good word with the recruiter?",
+      "Could you speak up for me to the hiring manager?"
+    ],
+    "point": "口添えは vouch for か put in a good word で言う",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["requests-permission", "hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9q2n2j3r",

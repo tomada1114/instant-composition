@@ -35,7 +35,13 @@
     "level": 7,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e1dd31e727760adcc38fcb98a57567efe20361ee84e354c55e43040cfeac04b1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3a4t4p8h",
@@ -139,7 +145,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis", "noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a3a312e64d0b3cd871250938c89afda37cc5554eb60d473c177228142bc4dc45",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4n8e5d7h",
@@ -384,7 +396,13 @@
     "level": 8,
     "grammar": ["phrasal-verbs", "gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e29c91152562fde8166fdd26d9b9f50bd60702578f68382d9a900b2902688f7d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7b7y5z4f",
@@ -404,22 +422,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_8e9f4r5p",
-    "ja": "彼女は窓口で言われたことを覚えていない。",
-    "en": "She doesn't remember what the clerk told her.",
-    "alternatives": [
-      "She can't remember what the clerk said.",
-      "She doesn't recall what the clerk told her."
-    ],
-    "point": "「言われたこと」は what 節。語順は平叙文のまま",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 4,
-    "grammar": ["noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_8g6r2n8q",
