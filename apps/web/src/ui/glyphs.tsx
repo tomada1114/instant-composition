@@ -63,6 +63,14 @@ export function SpeakerGlyph({
   );
 }
 
+export function HomeGlyph({ className }: GlyphProps): ReactElement {
+  return (
+    <Glyph className={className}>
+      <path d="M3.5 9L10 3.5 16.5 9v7.5h-4.25V12h-4.5v4.5H3.5z" />
+    </Glyph>
+  );
+}
+
 export function ChartGlyph({ className }: GlyphProps): ReactElement {
   return (
     <Glyph className={className}>

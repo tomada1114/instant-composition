@@ -8,6 +8,7 @@ import {
   fakeTimers,
   fill,
   ja,
+  navigations,
   press,
   renderApp,
   settle,
@@ -224,13 +225,24 @@ describe("the records screen, W10", () => {
     expect(within(weak).queryByText(ja.Records.weak.none)).toBeNull();
   });
 
-  it("goes back on ← and on Esc", async () => {
+  it("carries the one navigation, the records current", async () => {
     serveRecords();
     await renderApp("/records");
-    expect(screen.getByRole("link", { name: ja.Records.back })).toHaveAttribute(
-      "href",
-      "/",
-    );
+    expect(navigations()).toStrictEqual([
+      [
+        ["/", null],
+        ["/records", "page"],
+        ["/settings", null],
+      ],
+    ]);
+    fireEvent.click(screen.getByRole("link", { name: ja.Nav.home }));
+    await settle();
+    expect(where()).toBe("/");
+  });
+
+  it("goes home on Esc", async () => {
+    serveRecords();
+    await renderApp("/records");
     press("Escape");
     await settle();
     expect(where()).toBe("/");

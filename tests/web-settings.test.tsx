@@ -13,6 +13,7 @@ import {
   fakeTimers,
   fill,
   ja,
+  navigations,
   press,
   refusal,
   renderApp,
@@ -322,6 +323,18 @@ describe("the settings screen, W12 measuring again", () => {
     serveSettings({ ...PAGE, toeic: null });
     await renderApp("/settings");
     expect(screen.getByText(ja.Records.notMeasured)).toBeInTheDocument();
+  });
+
+  it("carries the one navigation, the settings current", async () => {
+    serveSettings();
+    await renderApp("/settings");
+    expect(navigations()).toStrictEqual([
+      [
+        ["/", null],
+        ["/records", null],
+        ["/settings", "page"],
+      ],
+    ]);
   });
 
   it("closes on cancel or Esc, and only then does Esc go back", async () => {

@@ -389,10 +389,12 @@ describe("the drill's pause sheet", () => {
     ).toBeInTheDocument();
   });
 
-  it("goes home from the sheet's stop button", async () => {
+  it("shows no navigation, so the sheet's stop button is the way home", async () => {
     serve();
     await openRound("/drill?kind=today");
+    expect(screen.queryByRole("navigation")).toBeNull();
     press("Escape");
+    expect(screen.queryByRole("navigation")).toBeNull();
     fireEvent.click(screen.getByRole("button", { name: ja.Drill.sheet.quit }));
     await settle();
     expect(where()).toBe("/");

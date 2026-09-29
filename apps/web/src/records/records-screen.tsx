@@ -1,7 +1,8 @@
 import type { ReactElement, ReactNode } from "react";
 import { useFormatter, useTranslations } from "use-intl";
 
-import { BackHeader } from "../lib/back-header";
+import { TabBar } from "../lib/tab-bar";
+import { useEscapeHome } from "../lib/use-escape-home";
 import type { RecordsView } from "../openapi";
 import { ReachRings } from "../summary/reach-rings";
 import { InfoTip } from "../ui/info-tip";
@@ -36,46 +37,50 @@ export function RecordsScreen({
 }: Readonly<{ records: RecordsView }>): ReactElement {
   const t = useTranslations("Records");
   const format = useFormatter();
+  useEscapeHome();
   return (
-    <main className="mx-auto box-content flex max-w-column flex-col gap-10 px-4 pt-4 pb-10">
-      <BackHeader title={t("title")} back={t("back")} />
-      <div className="flex flex-col gap-3">
-        <ReachRings reach={records.reach} shown={final} />
-        <div className="flex flex-col border-t border-border">
-          {records.breakdown.map((topic) => (
-            <Breakdown key={topic.id} topic={topic} />
-          ))}
+    <>
+      <main className="mx-auto box-content flex max-w-column flex-col gap-10 px-4 pt-6 pb-[calc(var(--tab-bar-height)+2.5rem)]">
+        <h1>{t("title")}</h1>
+        <div className="flex flex-col gap-3">
+          <ReachRings reach={records.reach} shown={final} />
+          <div className="flex flex-col border-t border-border">
+            {records.breakdown.map((topic) => (
+              <Breakdown key={topic.id} topic={topic} />
+            ))}
+          </div>
         </div>
-      </div>
-      <WeakList weak={records.weak} />
-      <dl className="grid grid-cols-2 gap-2">
-        <Tile
-          label={t("streakLabel")}
-          note={t("longest", { days: records.streak.longest })}
-        >
-          {records.streak.current === 0
-            ? t("restart")
-            : t("streak", { days: records.streak.current })}
-        </Tile>
-        <Tile label={t("difficulty")}>
-          {records.toeic === null
-            ? t("notMeasured")
-            : t("toeic", { toeic: records.toeic })}
-        </Tile>
-        <div className="col-span-2 grid grid-cols-3 gap-2">
-          <Tile label={t("said")}>{format.number(records.said)}</Tile>
-          <Tile label={t("days")}>{format.number(records.practicedDays)}</Tile>
-          <Tile label={t("points")}>{format.number(records.points)}</Tile>
-        </div>
-      </dl>
-      <section className="flex flex-col gap-4">
-        <div className="flex flex-wrap items-center gap-x-1">
-          <h2 className="text-muted-foreground">{t("calendar")}</h2>
-          <InfoTip label={t("rules.label")} text={t("rules.streak")} />
-        </div>
-        <DotCalendar weeks={records.calendar} />
-      </section>
-      <MilestoneList groups={records.titles} />
-    </main>
+        <WeakList weak={records.weak} />
+        <dl className="grid grid-cols-2 gap-2">
+          <Tile
+            label={t("streakLabel")}
+            note={t("longest", { days: records.streak.longest })}
+          >
+            {records.streak.current === 0
+              ? t("restart")
+              : t("streak", { days: records.streak.current })}
+          </Tile>
+          <Tile label={t("difficulty")}>
+            {records.toeic === null
+              ? t("notMeasured")
+              : t("toeic", { toeic: records.toeic })}
+          </Tile>
+          <div className="col-span-2 grid grid-cols-3 gap-2">
+            <Tile label={t("said")}>{format.number(records.said)}</Tile>
+            <Tile label={t("days")}>{format.number(records.practicedDays)}</Tile>
+            <Tile label={t("points")}>{format.number(records.points)}</Tile>
+          </div>
+        </dl>
+        <section className="flex flex-col gap-4">
+          <div className="flex flex-wrap items-center gap-x-1">
+            <h2 className="text-muted-foreground">{t("calendar")}</h2>
+            <InfoTip label={t("rules.label")} text={t("rules.streak")} />
+          </div>
+          <DotCalendar weeks={records.calendar} />
+        </section>
+        <MilestoneList groups={records.titles} />
+      </main>
+      <TabBar />
+    </>
   );
 }

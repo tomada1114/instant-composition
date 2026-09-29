@@ -191,6 +191,10 @@
 :root {
   --column-height: 100dvh;
   --column-inset: 0px;
+  /* The tab bar along the column's bottom edge (home, records, settings), its
+   * hairline included: a screen under it pads its foot by this much. 49, an
+   * iOS tab bar's height, so the tallest home panel still fits a PC's 720. */
+  --tab-bar-height: 3.0625rem;
 
   @variant wide {
     --column-height: min(100dvh, 45rem);
