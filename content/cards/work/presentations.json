@@ -13,7 +13,13 @@
     "level": 5,
     "grammar": ["requests-permission", "gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:959b9710ce40b58dd988138f59d53f01ef10eadbac9f2792bfdb53ebf33dbb5e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2q7e4z9u",
@@ -92,7 +98,13 @@
     "level": 9,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1eb5a258c833bb920fe8b238778837a5c0dfb507c131bf395c2b078a31f6352b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4t7w6b8f",
@@ -130,23 +142,13 @@
     "level": 7,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6j4b8u6q",
-    "ja": "営業部長は、価格は4月からと言っていました。",
-    "en": "The sales director said prices would start in April.",
-    "alternatives": [
-      "Prices would start in April, the sales director said.",
-      "Our sales director said prices would begin in April."
-    ],
-    "point": "過去の発言を伝えるので will ではなく would にする",
-    "topic": "work",
-    "subtopic": "presentations",
-    "level": 6,
-    "grammar": ["reported-speech"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9bd26cdff52df1a27131e6a8ece7ff5dfc4b2e34e817d7eb00e60d78a2a848b8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6k8r7r8p",
@@ -215,22 +217,6 @@
     }
   },
   {
-    "id": "c_7a7k4r4p",
-    "ja": "これから示すデータは、先月の調査結果です。",
-    "en": "The data I'm presenting is from last month's survey.",
-    "alternatives": [
-      "The data I'll show comes from last month's survey.",
-      "The figures I'll show are from last month's survey."
-    ],
-    "point": "「私が示すデータ」は data I'm presenting と後ろに置く",
-    "topic": "work",
-    "subtopic": "presentations",
-    "level": 6,
-    "grammar": ["relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7n7c4s8f",
     "ja": "コストだけでなく、導入期間も半分になります。",
     "en": "Not only does it cut costs, it halves rollout time.",
@@ -244,55 +230,13 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7n9a5e9x",
-    "ja": "その後200社増え、大半は先月契約しました。",
-    "en": "We've gained 200 clients since then, mostly last month.",
-    "alternatives": [
-      "Since then we've won 200 clients, mostly last month.",
-      "We've added 200 clients since then, mostly last month."
-    ],
-    "point": "since は現在完了、last month は過去の時点",
-    "topic": "work",
-    "subtopic": "presentations",
-    "level": 6,
-    "grammar": ["tense-contrast", "present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7u7a3g4j",
-    "ja": "質問の前に、要点をざっと振り返ってもいいですか？",
-    "en": "Before Q&A, can I quickly go over the key points?",
-    "alternatives": [
-      "Can I quickly run through the key points before Q&A?",
-      "Could I quickly recap the main points first?"
-    ],
-    "point": "「振り返る」は go over / run through の句動詞",
-    "topic": "work",
-    "subtopic": "presentations",
-    "level": 7,
-    "grammar": ["phrasal-verbs", "requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8c7g7k8g",
-    "ja": "削った機能を聞くなんて、先方は読み違えたんだろう。",
-    "en": "The client must have misread it.",
-    "alternatives": [
-      "The client must have misunderstood.",
-      "The client must have gotten it wrong."
-    ],
-    "point": "過去への強い推量は must have + 過去分詞",
-    "topic": "work",
-    "subtopic": "presentations",
-    "level": 8,
-    "grammar": ["modal-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:df7817ace24a0a3dc0867f9b3ec71fdc8119a51fb11ee0128d01e1f21b651fcb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8u5e2r5e",
@@ -327,7 +271,13 @@
     "level": 7,
     "grammar": ["noun-clauses", "indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e9ec373e6928711716a5caa80245cf447c253547ed0e44dc999a8ba4490b9e55",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8y4b2z4e",
@@ -343,7 +293,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4fe97d9dc45e0870a059bcfc6443c583f6928e6a82db6c36b35564fc090f2446",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9a7e8n7t",
@@ -366,22 +322,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9g4a4q5a",
-    "ja": "予算を維持できていたら、今デモを見せられたのに。",
-    "en": "If we'd kept our budget, we could demo it now.",
-    "alternatives": [
-      "If we'd kept the budget, we'd have a demo now.",
-      "If we hadn't lost the budget, we could demo now."
-    ],
-    "point": "過去の仮定は had 過去分詞、今の結果は would",
-    "topic": "work",
-    "subtopic": "presentations",
-    "level": 8,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9g5m3j4a",
@@ -426,21 +366,5 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9k3d7n5p",
-    "ja": "部長が確認していれば、今ごろ直さずに済んだのに。",
-    "en": "If my boss had checked, I wouldn't be fixing this.",
-    "alternatives": [
-      "Had my boss checked, I wouldn't be fixing this.",
-      "If my boss had checked, I wouldn't be fixing it."
-    ],
-    "point": "過去の条件は had checked、今の結果は wouldn't be -ing",
-    "topic": "work",
-    "subtopic": "presentations",
-    "level": 8,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   }
 ]
