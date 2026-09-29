@@ -1,21 +1,5 @@
 [
   {
-    "id": "c_2g3z6a2v",
-    "ja": "返品するのにレシートは必要ですか？",
-    "en": "Is a receipt needed to return it?",
-    "alternatives": [
-      "Do I need a receipt to return it?",
-      "Do I need a receipt for a return?"
-    ],
-    "point": "目的の「〜するのに」は to 不定詞で文末に置ける",
-    "topic": "daily",
-    "subtopic": "shopping",
-    "level": 4,
-    "grammar": ["infinitives", "passive-voice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2k5r6p8q",
     "ja": "この近くに文房具屋、ありますか？",
     "en": "Is there a stationery store near here?",
@@ -68,7 +52,7 @@
   },
   {
     "id": "c_2v8d8w6f",
-    "ja": "セールって知ってたら、二つ買ったのに。",
+    "ja": "知ってたら、二つ買ったのに。",
     "en": "If I'd known, I'd have bought two.",
     "alternatives": [
       "I'd have bought two if I'd known.",
@@ -109,14 +93,14 @@
     "point": "「届くとき」の when 節は未来のことでも現在形 arrives",
     "topic": "daily",
     "subtopic": "shopping",
-    "level": 7,
+    "level": 6,
     "grammar": ["requests-permission", "time-and-if-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_3p2q5y7a",
-    "ja": "先週買ったこのコート、返品できないかなと思いまして。",
+    "ja": "このコート、返品できないかなと思いまして。",
     "en": "I was wondering if I could return this coat.",
     "alternatives": [
       "I was hoping I could return this coat.",
@@ -125,8 +109,40 @@
     "point": "「できないかと思って」は I was wondering if で過去形にして和らげる",
     "topic": "daily",
     "subtopic": "shopping",
-    "level": 10,
+    "level": 6,
     "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4q7d2w7d",
+    "ja": "レシートなしでも返品できますか？",
+    "en": "Can I return it without a receipt?",
+    "alternatives": [
+      "Could I return it without a receipt?",
+      "Can I return it without one?"
+    ],
+    "point": "「〜なしで」は without + 名詞",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 3,
+    "grammar": ["requests-permission", "can-could-ability"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4q7s6k8v",
+    "ja": "この二つは比べにくいな。",
+    "en": "These two are hard to compare.",
+    "alternatives": [
+      "These two are difficult to compare.",
+      "It's hard to compare these two."
+    ],
+    "point": "「比べにくい」は hard to compare。主語は these two",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -173,8 +189,8 @@
     "point": "「知りつつ」は事実なので even if ではなく even though",
     "topic": "daily",
     "subtopic": "shopping",
-    "level": 10,
-    "grammar": ["concession-contrast", "reported-speech"],
+    "level": 9,
+    "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -212,22 +228,6 @@
     "stamps": {}
   },
   {
-    "id": "c_5t9c8b5p",
-    "ja": "レシートなしでも返品できますか？",
-    "en": "Can I return it without a receipt?",
-    "alternatives": [
-      "Could I return it without a receipt?",
-      "Is it okay to return it without one?"
-    ],
-    "point": "「〜なしで」は without + 名詞",
-    "topic": "daily",
-    "subtopic": "shopping",
-    "level": 5,
-    "grammar": ["requests-permission", "can-could-ability"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6e5s4a3h",
     "ja": "ネットで、半額の靴を見つけたよ。",
     "en": "I found half-price shoes online.",
@@ -240,6 +240,38 @@
     "subtopic": "shopping",
     "level": 2,
     "grammar": ["past-simple"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6e8m3b6c",
+    "ja": "返品するのにレシートは必要ですか？",
+    "en": "Do I need a receipt to return it?",
+    "alternatives": [
+      "Do I need a receipt for a return?",
+      "Do I need a receipt for returns?"
+    ],
+    "point": "目的の「〜するのに」は to 不定詞で文末に置ける",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 4,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6k5n7q6x",
+    "ja": "母はあのコートを交換してもらった。",
+    "en": "My mom got that coat exchanged.",
+    "alternatives": [
+      "My mom had that coat exchanged.",
+      "My mom got that coat swapped."
+    ],
+    "point": "「〜してもらう」は get/have + 物 + 過去分詞",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["causatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -257,38 +289,6 @@
     "subtopic": "shopping",
     "level": 5,
     "grammar": ["tense-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6s4u2q9k",
-    "ja": "母はあのコートを交換してもらった。",
-    "en": "My mom exchanged that coat.",
-    "alternatives": [
-      "My mom got that coat exchanged.",
-      "My mom swapped that coat for another."
-    ],
-    "point": "「交換した」は exchanged。過去形の -ed を忘れずに",
-    "topic": "daily",
-    "subtopic": "shopping",
-    "level": 3,
-    "grammar": ["past-simple"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6z9q2c2r",
-    "ja": "この二つ、比べられないな。",
-    "en": "I can't compare these two.",
-    "alternatives": [
-      "I can't compare these two well.",
-      "It's hard to compare these two."
-    ],
-    "point": "「比べられない」は can't compare。these two と複数形に",
-    "topic": "daily",
-    "subtopic": "shopping",
-    "level": 1,
-    "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -338,7 +338,7 @@
       "Not knowing which charger to buy, he asked a clerk.",
       "Unsure which charger to get, he asked a salesperson."
     ],
-    "point": "分詞構文は主語を省き、否定は Not や Unsure を先頭に置く",
+    "point": "分詞構文は主語と being を省く。否定なら Not knowing のように Not を先頭に",
     "topic": "daily",
     "subtopic": "shopping",
     "level": 8,
@@ -397,22 +397,6 @@
     "subtopic": "shopping",
     "level": 8,
     "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8x5e3b8h",
-    "ja": "レシートあれば返品OKです。",
-    "en": "Returns are fine with a receipt.",
-    "alternatives": [
-      "A receipt lets you return it.",
-      "It's returnable with a receipt."
-    ],
-    "point": "receipt は数えられる名詞なので a receipt と冠詞をつける",
-    "topic": "daily",
-    "subtopic": "shopping",
-    "level": 1,
-    "grammar": ["articles-and-countability", "be-and-present-simple"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },

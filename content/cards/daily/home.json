@@ -16,22 +16,6 @@
     "stamps": {}
   },
   {
-    "id": "c_2g4t5j5j",
-    "ja": "姉は洗剤を買いに行ったよ。",
-    "en": "My sister went to buy detergent.",
-    "alternatives": [
-      "My sister went out to buy detergent.",
-      "My sister went to get detergent."
-    ],
-    "point": "目的の「〜しに」は to + 動詞の原形で表す",
-    "topic": "daily",
-    "subtopic": "home",
-    "level": 3,
-    "grammar": ["infinitives", "past-simple"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2p6z7e6m",
     "ja": "彼女がうんと言ってたら、今ごろ食洗機があるのに。",
     "en": "If she'd said yes, we'd have a dishwasher now.",
@@ -60,9 +44,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:3a251507087d17d281da02ab9e2e0d7045bf753b6278be6702d7eeb1c1a4cbef",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:b4bff623b4b53f310585d021f6ad932c527674a20a6b9405b62e95495e6aca5f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -80,7 +64,13 @@
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:46280373513737f99a5652f32fa842e3f3c0c3e965465c6334a8f4de2eb6841c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3h2w3f8t",
@@ -96,23 +86,13 @@
     "level": 5,
     "grammar": ["phrasal-verbs", "time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3p7b2m3k",
-    "ja": "夫が忘れたから、もう私がゴミを出したよ。",
-    "en": "He forgot, so I've taken the trash out.",
-    "alternatives": [
-      "He forgot, so I took out the trash.",
-      "I've taken the trash out since he forgot."
-    ],
-    "point": "もう済んだ状態は現在完了 I've taken で言う",
-    "topic": "daily",
-    "subtopic": "home",
-    "level": 4,
-    "grammar": ["tense-contrast", "present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d45aa5e65a062f4203eb5449129e16cf85aac4a9212deb7bc9bff1c90005b22b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4v3k4k9b",
@@ -146,9 +126,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:a2932e6eef0260c1d44af45a12b072e6ac4f933a290ddf32a8137820c2812936",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:d49664230e65989741f040c91f9153ac06f72f02e4e7599a5706f623a6514f8f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -166,7 +146,13 @@
     "level": 2,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:26fe2bd892259666d0730952b2a14d4c21cf1b72a5a7764e9948e42fa0abbf74",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6g9q3h5k",
@@ -199,7 +185,13 @@
     "level": 3,
     "grammar": ["verb-object-to-do", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:de8e516548abf3d37af2f32aa2417d396f7f88176992b556ba5e29ef2bac5cc3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6j7y7f3g",
@@ -218,27 +210,11 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:a391f206b612289b5037971806e08f3d1db0e716db76f2796bca939a89e6a093",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:b9d8e0f3e4449ade098560153f9926a5c22bba637b5f202741ce66246627a4df",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_6m6s2j8b",
-    "ja": "洗濯機が止まったら、干してくれる？",
-    "en": "When it stops, can you hang the laundry?",
-    "alternatives": [
-      "Can you hang the laundry when it stops?",
-      "Could you hang the laundry once it stops?"
-    ],
-    "point": "when 節は未来のことでも現在形 stops のまま",
-    "topic": "daily",
-    "subtopic": "home",
-    "level": 4,
-    "grammar": ["time-and-if-clauses", "requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_6r4w7h6z",
@@ -254,7 +230,13 @@
     "level": 5,
     "grammar": ["gerunds", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:df089c991cb1922930752618f2faa7631a790170f0b083edf11429121cf7e40b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6w6j4p6s",
@@ -271,28 +253,6 @@
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
     "stamps": {}
-  },
-  {
-    "id": "c_7a5z2c2d",
-    "ja": "冷蔵庫の牛乳、賞味期限切れてるよ。",
-    "en": "The milk in the fridge has expired.",
-    "alternatives": [
-      "The milk in the fridge is expired.",
-      "That milk in the fridge is expired."
-    ],
-    "point": "「冷蔵庫の牛乳」は in the fridge を milk の後ろに置く",
-    "topic": "daily",
-    "subtopic": "home",
-    "level": 5,
-    "grammar": ["post-modification", "present-perfect"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:67c59605636447faf8b1adc850c1c0a96f9e9acaeaad2d3778a876e63710360b",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
   },
   {
     "id": "c_7f5f7t5j",
@@ -326,9 +286,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:4e63054db9396ac5c1d6e2f9cbf150abde76d1e1fd9436d74ff720d4b75b46cf",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:46f1d46b645b8e326cb9e6e242fcb92f497026458390a166c77ad68e67c20d06",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -442,22 +402,6 @@
     "subtopic": "home",
     "level": 6,
     "grammar": ["present-perfect-continuous", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9w7y8c7d",
-    "ja": "私がやらなきゃいけないのは皿洗い。",
-    "en": "What I have to do is the dishes.",
-    "alternatives": [
-      "What I need to do is wash dishes.",
-      "What I must do is wash the dishes."
-    ],
-    "point": "What I have to do is の後は名詞か動詞の原形",
-    "topic": "daily",
-    "subtopic": "home",
-    "level": 4,
-    "grammar": ["noun-clauses", "modal-obligation-advice"],
     "createdAt": "2026-09-28",
     "stamps": {}
   }
