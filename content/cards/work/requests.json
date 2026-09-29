@@ -13,7 +13,13 @@
     "level": 6,
     "grammar": ["gerunds", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6057a51d112f4453bfaf43e202b4749992f5eb921d7b7baa36d5eb2ac0804950",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2d4t3t6j",
@@ -29,7 +35,13 @@
     "level": 5,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bfe12c63a98b6c0235d20c23a9ef7784165847427c7f9f3cf55d7870ef05ee13",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2r5y8j2e",
@@ -177,7 +189,13 @@
     "level": 6,
     "grammar": ["gerunds", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:653c3b37d08723978be4c4b67643d9850d7b1100122c6bbc3dd188d1aa894e80",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3z8t2m6n",
@@ -234,23 +252,13 @@
     "level": 3,
     "grammar": ["requests-permission", "articles-and-countability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4p4e6t9e",
-    "ja": "その件、金曜までにやってもらえると思ってた。",
-    "en": "I assumed it'd be taken care of by Friday.",
-    "alternatives": [
-      "I thought you'd take care of it by Friday.",
-      "I was expecting it to be done by Friday."
-    ],
-    "point": "「片付けてもらえる」は主語を物にして it'd be taken care of と言う",
-    "topic": "work",
-    "subtopic": "requests",
-    "level": 6,
-    "grammar": ["passive-voice", "noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:00ac620167002f1cb71c80ed1939e9ef5b509a347e2c4080cc51bb85ae4fc548",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4x7a5d9v",
@@ -288,23 +296,13 @@
     "level": 2,
     "grammar": ["comparatives-superlatives", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5w8q2d6h",
-    "ja": "部長に頼まれた書類、明日までに仕上げます。",
-    "en": "I'll finish the paperwork the manager requested by tomorrow.",
-    "alternatives": [
-      "I'll finish the paperwork the manager wanted by tomorrow.",
-      "I'll finish the paperwork my boss requested by tomorrow."
-    ],
-    "point": "名詞のすぐ後ろに the manager requested と置いて修飾（that は省ける）",
-    "topic": "work",
-    "subtopic": "requests",
-    "level": 6,
-    "grammar": ["relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0b50aa13c4927812c8ebbc519789e987a951059bc632c7869060fdf9b2a6f2f0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5y3r9m4a",
@@ -449,7 +447,13 @@
     "level": 3,
     "grammar": ["passive-voice", "present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9993dd7d24daaae087c7ad6f566d0bb09cbf9d8c681bda7f3a6a0832c9e45781",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7v6n4w7h",
@@ -465,20 +469,13 @@
     "level": 4,
     "grammar": ["verb-object-to-do", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7y9x6a3a",
-    "ja": "この仕事、誰に頼めばいいですか？",
-    "en": "Who should I ask to do this?",
-    "alternatives": ["Who should I ask to handle this?", "Who can I ask to do this?"],
-    "point": "疑問詞 Who が文頭。そのあとは should I ask の語順",
-    "topic": "work",
-    "subtopic": "requests",
-    "level": 3,
-    "grammar": ["wh-questions", "modal-obligation-advice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b7a165a1a330ed291272782d84792ea8c46e61d3565d081128770e09a00cbcef",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8h8u6s3j",
@@ -561,7 +558,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:de48af752442239fdd5bedbeffddf0c9f341b45819853b636d77fcf542bb44d4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9b9k8a3n",
@@ -577,23 +580,13 @@
     "level": 6,
     "grammar": ["gerunds", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9f3e4r7s",
-    "ja": "今は手一杯なので、この依頼は見送るしかなさそうです。",
-    "en": "I'm swamped, so I'll have to pass on this.",
-    "alternatives": [
-      "I'm afraid I'll have to pass, since I'm swamped.",
-      "My plate's full, so I'll have to pass on this."
-    ],
-    "point": "pass on ~ は「~を見送る・断る」。have to で控えめに",
-    "topic": "work",
-    "subtopic": "requests",
-    "level": 9,
-    "grammar": ["phrasal-verbs", "hedging-softening"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c5c4e33a0b40603ebdd6aac5042d8e3a7c979c456370e0ebe8c8c7a58008f7b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9h6h4w7v",
@@ -638,22 +631,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9p5h2q7b",
-    "ja": "定時で帰ってもいいなら、引き受けます。",
-    "en": "I'll take it if I can leave on time.",
-    "alternatives": [
-      "If I can leave on time, I'll take it.",
-      "I'll take it provided I can leave on time."
-    ],
-    "point": "if 節は未来のことでも現在形（I can leave）",
-    "topic": "work",
-    "subtopic": "requests",
-    "level": 6,
-    "grammar": ["time-and-if-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9r5y5z7c",

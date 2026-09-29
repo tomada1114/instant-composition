@@ -32,7 +32,7 @@
     "point": "What 節を主語にして「〜なのは」と言う",
     "topic": "work",
     "subtopic": "scheduling",
-    "level": 7,
+    "level": 6,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -106,15 +106,15 @@
   {
     "id": "c_3x9t8b8b",
     "ja": "私たちは、先方の返事を先週から待っています。",
-    "en": "We've been waiting on the client since last week.",
+    "en": "We've been waiting for their reply since last week.",
     "alternatives": [
-      "We've been waiting for the client's reply since last week.",
-      "We've been waiting for the client's answer for a week."
+      "We've been waiting on their reply since last week.",
+      "We've been awaiting their reply since last week."
     ],
     "point": "続いている動作は have been -ing と since で表す",
     "topic": "work",
     "subtopic": "scheduling",
-    "level": 7,
+    "level": 6,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -312,22 +312,6 @@
     }
   },
   {
-    "id": "c_6n5s9y2s",
-    "ja": "先方の日程の返事を、朝からずっと待ってる。",
-    "en": "I've been waiting for their reply since morning.",
-    "alternatives": [
-      "I've been waiting on their answer since this morning.",
-      "I've been waiting all morning for their response."
-    ],
-    "point": "「朝からずっと」は現在完了進行形＋since",
-    "topic": "work",
-    "subtopic": "scheduling",
-    "level": 6,
-    "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6v3e7q3m",
     "ja": "火曜の会議は木曜に変更されました。",
     "en": "Tuesday's meeting has been moved to Thursday.",
@@ -426,7 +410,7 @@
     "point": "available on Thursday は直前の人を後ろから修飾する",
     "topic": "work",
     "subtopic": "scheduling",
-    "level": 7,
+    "level": 6,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -442,8 +426,8 @@
     "point": "「〜ですが」は although。but と二重にしない",
     "topic": "work",
     "subtopic": "scheduling",
-    "level": 8,
-    "grammar": ["concession-contrast", "phrasal-verbs"],
+    "level": 6,
+    "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -494,16 +478,16 @@
   {
     "id": "c_8r5a5g2f",
     "ja": "木曜予定のレビュー、金曜に動かせませんか？",
-    "en": "Could we move the review due Thursday to Friday?",
+    "en": "Could we move Thursday's review to Friday?",
     "alternatives": [
-      "Could we move the review scheduled for Thursday to Friday?",
+      "Can we push Thursday's review to Friday?",
       "Is it possible to move Thursday's review to Friday?"
     ],
-    "point": "「木曜予定の」は review の後ろに due / scheduled for で置く",
+    "point": "「木曜予定の」は Thursday's review と所有格でまとめる",
     "topic": "work",
     "subtopic": "scheduling",
-    "level": 8,
-    "grammar": ["post-modification", "requests-permission"],
+    "level": 6,
+    "grammar": ["requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -662,22 +646,6 @@
     "subtopic": "scheduling",
     "level": 6,
     "grammar": ["post-modification"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9x9n3f9g",
-    "ja": "月曜は詰まってるけど、会えますよ。",
-    "en": "Although Monday's packed, I can meet you.",
-    "alternatives": [
-      "Monday's packed, but I can see you.",
-      "Even though Monday's busy, I can meet you."
-    ],
-    "point": "although のあとに but は重ねない",
-    "topic": "work",
-    "subtopic": "scheduling",
-    "level": 5,
-    "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
   }
