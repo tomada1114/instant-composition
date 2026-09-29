@@ -44,23 +44,6 @@
     }
   },
   {
-    "id": "c_2n6j6k5h",
-    "ja": "設計の壁打ち相手が必要です。",
-    "en": "I need someone to bounce my design off.",
-    "alternatives": [
-      "I need someone to run my design by.",
-      "I need someone to talk my design over with.",
-      "I need a sounding board for my design."
-    ],
-    "point": "someone to + 動詞。off や with の前置詞を忘れずに",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 7,
-    "grammar": ["infinitives", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3x8m5x5v",
     "ja": "ログインに、まだバグが一つあります。",
     "en": "There's still one login bug.",
@@ -203,7 +186,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bc9f55ebd29bd1dc3fc16fb2ff32d8f7cb4a478ab7f71782c7466f38a2d30e1e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5s3j6h3w",
@@ -307,7 +296,13 @@
     "level": 6,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9debe5ec895ee5ada9667d40425702a2db23fa5e1d70dfd3ccd46d7ba6827fd4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6d9g4h4c",
@@ -377,22 +372,6 @@
     }
   },
   {
-    "id": "c_6v3y7m8w",
-    "ja": "うちは少し遅れ気味ですが、金曜には終わりそうです。",
-    "en": "We're a bit behind, but should finish by Friday.",
-    "alternatives": [
-      "We're slightly behind, but we should be done by Friday.",
-      "We're running a little late, but should wrap up Friday."
-    ],
-    "point": "「遅れ気味」は behind、「終わりそう」は should で和らげる",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 7,
-    "grammar": ["concession-contrast", "hedging-softening"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6v9g2x9u",
     "ja": "昨日のデプロイ、どこで止まりました？",
     "en": "Where did yesterday's deploy get stuck?",
@@ -414,22 +393,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_6w4g9h7y",
-    "ja": "今日は、昨日話したバグを直します。",
-    "en": "Today I'll fix the bug we discussed.",
-    "alternatives": [
-      "Today I'll fix the bug we talked about.",
-      "I'll fix the bug we talked about yesterday."
-    ],
-    "point": "「昨日話したバグ」は the bug we discussed と後ろから説明",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 5,
-    "grammar": ["relative-clauses", "future-forms"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_6w5z8z5n",
