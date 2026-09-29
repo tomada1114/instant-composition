@@ -1,5 +1,18 @@
 [
   {
+    "id": "c_3c3w6z6v",
+    "ja": "雨が降ったら、中止だよ。",
+    "en": "If it rains, it's canceled.",
+    "alternatives": ["It's canceled if it rains.", "If it rains, we'll cancel."],
+    "point": "if 節は現在形。canceled は米式の綴り",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3f4g3y2q",
     "ja": "食事会、金曜になったよ。",
     "en": "The dinner was moved to Friday.",
@@ -20,6 +33,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3t9j6j6z",
+    "ja": "今週末はひまだよ。",
+    "en": "I'm free this weekend.",
+    "alternatives": ["I'm not busy this weekend.", "I'm available this weekend."],
+    "point": "「ひま」は free。this weekend に前置詞は不要",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_3u8p2m9d",
@@ -60,6 +86,45 @@
     }
   },
   {
+    "id": "c_4a9b5q8q",
+    "ja": "その日は忙しいんだ。",
+    "en": "I'm busy that day.",
+    "alternatives": ["I'm booked that day.", "I'm tied up that day."],
+    "point": "that day に前置詞は不要",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4b3w7z9h",
+    "ja": "土曜日に来てね。",
+    "en": "Come on Saturday.",
+    "alternatives": ["Come over Saturday.", "Please come on Saturday."],
+    "point": "曜日の前は on。命令文は動詞から",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4m7t6v2c",
+    "ja": "映画を見に行こう。",
+    "en": "Let's see a movie.",
+    "alternatives": ["Let's go see a movie.", "Let's go to a movie."],
+    "point": "誘うときは Let's + 動詞の原形",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 1,
+    "grammar": ["articles-and-countability", "imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4q6f5x4a",
     "ja": "彼女、来られるといいな。",
     "en": "I hope she can come.",
@@ -79,6 +144,19 @@
     }
   },
   {
+    "id": "c_5s3a8d8e",
+    "ja": "行けないなら教えてね。",
+    "en": "Tell me if you can't.",
+    "alternatives": ["Let me know if you can't.", "Please tell me if you can't."],
+    "point": "if 節の中は現在形。can't のあとは省略できる",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 3,
+    "grammar": ["imperatives", "time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6g3b4s4c",
     "ja": "土曜は行けないんだ。",
     "en": "I can't make it Saturday.",
@@ -96,6 +174,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6h6v3t3h",
+    "ja": "友達が予定を変えたんだ。",
+    "en": "My friend changed the plan.",
+    "alternatives": ["My friend changed plans.", "A friend of mine changed plans."],
+    "point": "change plans は複数形。特定の予定なら the plan",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 3,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6n9p4b3x",
@@ -118,5 +209,31 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6x7m7g3p",
+    "ja": "旅行を計画したんだ。",
+    "en": "I planned a trip.",
+    "alternatives": ["I planned a vacation.", "I organized a trip."],
+    "point": "過去の出来事は動詞を過去形に",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8x2v6k8x",
+    "ja": "私たち、決めなきゃ。",
+    "en": "We have to decide.",
+    "alternatives": ["We need to decide.", "We must decide."],
+    "point": "「〜しなきゃ」は have to",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

@@ -57,6 +57,32 @@
     }
   },
   {
+    "id": "c_4g3b3p2v",
+    "ja": "ハイキングに行こう。",
+    "en": "Let's go hiking.",
+    "alternatives": ["Let's go for a hike.", "Let's go on a hike."],
+    "point": "「〜しに行く」は go + -ing",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5h3k3b7q",
+    "ja": "近くにジムがあるよ。",
+    "en": "There's a gym nearby.",
+    "alternatives": ["A gym is nearby.", "There's a gym near here."],
+    "point": "「〜がある」は There's + 単数の名詞",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5w4n2y7m",
     "ja": "撮影してもいいですか？",
     "en": "May I take pictures?",
@@ -210,6 +236,19 @@
     "subtopic": "hobbies",
     "level": 3,
     "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9n3a2b4a",
+    "ja": "私、ギター弾けるよ。",
+    "en": "I can play guitar.",
+    "alternatives": ["I can play the guitar.", "I'm able to play guitar."],
+    "point": "楽器名の前の the は付けても付けなくてもよい",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 1,
+    "grammar": ["can-could-ability"],
     "createdAt": "2026-09-29",
     "stamps": {}
   }

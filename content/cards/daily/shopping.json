@@ -1,5 +1,18 @@
 [
   {
+    "id": "c_3b3u4z8h",
+    "ja": "このシャツは安いよ。",
+    "en": "This shirt is cheap.",
+    "alternatives": ["This shirt is inexpensive.", "This shirt is a bargain."],
+    "point": "「安い」は cheap。this は近くの物",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3k5h5s5f",
     "ja": "ジャケットを返品したよ。",
     "en": "I returned the jacket.",
@@ -57,6 +70,32 @@
     }
   },
   {
+    "id": "c_4a4p8g3g",
+    "ja": "試したほうがいいよ。",
+    "en": "You should try it.",
+    "alternatives": ["You'd better try it.", "You ought to try it."],
+    "point": "「〜したほうがいい」は should + 動詞の原形",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4g7e7f4n",
+    "ja": "私は靴を探してるの。",
+    "en": "I'm looking for shoes.",
+    "alternatives": ["I'm shopping for shoes.", "I'm looking for some shoes."],
+    "point": "「探している」は be looking for",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4p3m2x8b",
     "ja": "紙袋はレジ袋より丈夫です。",
     "en": "Paper bags are stronger than plastic.",
@@ -77,6 +116,48 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5b2r9u5e",
+    "ja": "もう荷物を受け取ったよ。",
+    "en": "I've already got the package.",
+    "alternatives": [
+      "I've already received the package.",
+      "I have already gotten the package."
+    ],
+    "point": "「もう〜した」は have + 過去分詞 + already",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 3,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6h6j9s4x",
+    "ja": "レシート、取っといて。",
+    "en": "Keep the receipt.",
+    "alternatives": ["Hold on to the receipt.", "Make sure you keep the receipt."],
+    "point": "「取っておく」は keep。命令文は動詞から始める",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6v5y9u7v",
+    "ja": "これ、試してもいい？",
+    "en": "Can I try this?",
+    "alternatives": ["May I try this?", "Can I try this out?"],
+    "point": "「〜していい？」は Can I + 動詞",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7f4f4b9p",
@@ -147,5 +228,18 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9r7c4f4x",
+    "ja": "これにするよ。",
+    "en": "I'll take this one.",
+    "alternatives": ["I'll go with this one.", "I'll get this one."],
+    "point": "その場で決めたことは I'll。買うは take もよく使う",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

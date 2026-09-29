@@ -1,5 +1,73 @@
 [
   {
+    "id": "c_2e5x7f6r",
+    "ja": "父に手伝ってと頼んだよ。",
+    "en": "I asked Dad to help.",
+    "alternatives": ["I asked my dad to help.", "I asked Dad for help."],
+    "point": "ask + 人 + to + 動詞。to の位置に注意",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_2j4n5r7v",
+    "ja": "夕飯なら作れるよ。",
+    "en": "I can cook dinner.",
+    "alternatives": ["I can make dinner.", "I can make supper."],
+    "point": "「作れる」は can + 動詞の原形",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3b9g6w7j",
+    "ja": "タオルを一枚取って。",
+    "en": "Get me a towel.",
+    "alternatives": ["Grab me a towel.", "Pass me a towel."],
+    "point": "「一枚の」は a。数えられる単数には冠詞",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 1,
+    "grammar": ["articles-and-countability", "imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3s5w7x5s",
+    "ja": "何か飲むものある？",
+    "en": "Is there something to drink?",
+    "alternatives": ["Is there anything to drink?", "Do we have anything to drink?"],
+    "point": "「〜するもの」は something to + 動詞",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 3,
+    "grammar": ["infinitives", "there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4m6q9n3s",
+    "ja": "弟は掃除機をかけてる。",
+    "en": "My brother is vacuuming.",
+    "alternatives": [
+      "My little brother is vacuuming.",
+      "My brother is using the vacuum."
+    ],
+    "point": "「掃除機をかける」は vacuum を動詞で使える",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4n4a5p3j",
     "ja": "洗濯ならもう終わったよ。",
     "en": "I've already done the laundry.",
@@ -17,6 +85,32 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6e5f5q4s",
+    "ja": "庭に犬がいるよ。",
+    "en": "There's a dog outside.",
+    "alternatives": ["A dog is outside.", "There's a dog out back."],
+    "point": "「〜がいる」は There's + 単数の名詞",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6m6j2b7p",
+    "ja": "卵が全然ないよ。",
+    "en": "There are no eggs.",
+    "alternatives": ["We have no eggs.", "We're out of eggs."],
+    "point": "複数の名詞なら There are no 〜。「残り」は left",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 2,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7a7u8k3s",
@@ -58,6 +152,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7q6g3z4j",
+    "ja": "今夜、私が皿を洗うよ。",
+    "en": "I'll do the dishes tonight.",
+    "alternatives": ["I'll wash the dishes tonight.", "Tonight I'll do the dishes."],
+    "point": "「洗い物をする」は do the dishes。その場の申し出は will",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 3,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8t5s7m3q",
@@ -118,5 +225,18 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9j7a6h3t",
+    "ja": "母は夕飯を作ってる。",
+    "en": "Mom is making dinner.",
+    "alternatives": ["My mom is cooking dinner.", "Mom is cooking dinner."],
+    "point": "今やっている最中は be + -ing",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]
