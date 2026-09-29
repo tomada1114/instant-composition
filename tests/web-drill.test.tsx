@@ -1,5 +1,5 @@
 import { act, cleanup, fireEvent, screen } from "@testing-library/react";
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 import type { AnswerInput, HomeView, RoundPayload } from "@instant-composition/web";
 
@@ -17,6 +17,7 @@ import {
   renderApp,
   settle,
   type ApiCall,
+  warmUp,
 } from "./web-harness";
 import { makeSummary } from "./web-summary-fixture";
 
@@ -99,6 +100,8 @@ async function openRound(path: string): Promise<void> {
   press("Enter");
   await settle(16);
 }
+
+beforeAll(warmUp);
 
 beforeEach(() => {
   fakeTimers();

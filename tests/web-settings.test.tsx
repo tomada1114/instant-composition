@@ -1,5 +1,5 @@
 import { act, fireEvent, screen, within } from "@testing-library/react";
-import { afterEach, beforeEach, describe, expect, it } from "vitest";
+import { afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
 
 import type {
   LevelChoice,
@@ -21,6 +21,7 @@ import {
   renderApp,
   settle,
   type ApiCall,
+  warmUp,
 } from "./web-harness";
 
 // The settings screen, W11 with W12's confirmation over it, mounted as the
@@ -119,6 +120,8 @@ function serveSettings(
 function where(): string {
   return `${window.location.pathname}${window.location.search}`;
 }
+
+beforeAll(warmUp);
 
 beforeEach(() => {
   fakeTimers();

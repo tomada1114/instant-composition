@@ -1,5 +1,12 @@
-import { act, fireEvent, render, screen, within } from "@testing-library/react";
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import {
+  act,
+  cleanup,
+  fireEvent,
+  render,
+  screen,
+  within,
+} from "@testing-library/react";
+import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 import {
   CatalogProvider,
@@ -42,6 +49,18 @@ function stubReducedMotion(reduce: boolean): void {
     matches: reduce && query.includes("reduce"),
   }));
 }
+
+// Pays the one-time jsdom and role-query cost of this screen here, so the first test is timed on its own work.
+beforeAll(() => {
+  stubReducedMotion(true);
+  try {
+    renderSummary(makeSummary());
+    screen.queryAllByRole("button", { name: ja.Summary.seeAll });
+  } finally {
+    cleanup();
+    vi.unstubAllGlobals();
+  }
+});
 
 beforeEach(() => {
   onEnd.mockClear();
