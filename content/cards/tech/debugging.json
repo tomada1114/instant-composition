@@ -145,7 +145,13 @@
     "level": 6,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6d1b4ecfa8ea8539849201c33ee05d9454c16404d745af9f054d2000b64f92f9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2v2e7q5v",
@@ -161,23 +167,13 @@
     "level": 6,
     "grammar": ["infinitives", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2x5v4w4r",
-    "ja": "エラーが出る前に、ユーザーは何か変えていましたか？",
-    "en": "Had the user changed anything before the error appeared?",
-    "alternatives": [
-      "Did the user change anything before the error showed up?",
-      "Before the error, had the user changed anything?"
-    ],
-    "point": "エラーより前の行動は過去完了 Had + 過去分詞",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 7,
-    "grammar": ["past-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:adf8f975e935a04617072c159635fc8ea96747afd3b4e6009243d07ab9845bcf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2y4f2r4r",
@@ -219,22 +215,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_3e6r4n9p",
-    "ja": "障害の原因は、まだ特定されていないんですか？",
-    "en": "Hasn't the cause been identified yet?",
-    "alternatives": [
-      "Has the cause still not been pinned down?",
-      "Is the cause still unidentified?"
-    ],
-    "point": "現在完了の受動：has been + 過去分詞",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 6,
-    "grammar": ["passive-voice", "present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_3f2r9q9t",
@@ -294,7 +274,13 @@
     "level": 6,
     "grammar": ["past-perfect", "passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4166493634752ae068fd058c3d05707c4a6dee6fda4d339668afa5a4046b7b44",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3g6j8f8m",
@@ -351,7 +337,13 @@
     "level": 5,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:60f678df99410a3aa02794f301a56026d416177042ca5eb4acd9e9eeda37aa16",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3p5y8e3d",
@@ -540,7 +532,13 @@
     "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3603c52b748bed151a125810c667ba149da30540513a58c4ea474dd66adb27a3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4v6w6x7m",
@@ -563,22 +561,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_4v8p7t6e",
-    "ja": "あのフラグ、戻すのを忘れていたみたい。",
-    "en": "I seem to have forgotten to reset that flag.",
-    "alternatives": [
-      "Looks like I forgot to reset that flag.",
-      "Apparently I forgot to turn that flag back off."
-    ],
-    "point": "「〜したみたい」は seem to have + 過去分詞、「し忘れる」は forget to + 動詞",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 7,
-    "grammar": ["infinitives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_4x8x8h3k",
@@ -987,7 +969,13 @@
     "level": 4,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:24f2f64af9c1d005943aa2a77b2adb5aebaf6fd07cd9f49cc7a26a16428e774d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7r6e6x6t",
@@ -1003,7 +991,13 @@
     "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:314bb7415c79c2166bae23ec1e8a300dd660960ca538a3415ae74ba8ce98c5a0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7w7k2s3e",
@@ -1129,7 +1123,13 @@
     "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8a048d73fde7e536a46179e516cdd368a43f34c0bb8d5a79e472e6fcbd3241ec",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8h6q5j8u",
@@ -1145,7 +1145,13 @@
     "level": 4,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e444213871c1f85ce0b2ef1c8801c2a322a9388f7ef511d537ccfdd038e80135",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8h6r9r8v",
