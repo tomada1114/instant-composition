@@ -131,6 +131,22 @@
     "stamps": {}
   },
   {
+    "id": "c_3a3g5u3c",
+    "ja": "もし人手が倍なら、君は検索を作る？",
+    "en": "If staff doubled, would you build search?",
+    "alternatives": [
+      "Would you build search if staff doubled?",
+      "If we doubled staff, would you build search?"
+    ],
+    "point": "あり得ない仮定は if 節を過去形、主節を would にする",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3b3n9p4q",
     "ja": "今、うちで検索を改善しているところ。",
     "en": "We're improving search right now.",
@@ -151,8 +167,8 @@
     "ja": "エクスポートを次のスプリントに入れられませんか？",
     "en": "Could you possibly squeeze exports into the next sprint?",
     "alternatives": [
-      "Would it be possible to add export next sprint?",
-      "I was wondering if you could add export next sprint."
+      "Could we fit exports into the next sprint?",
+      "Would it be possible to add exports next sprint?"
     ],
     "point": "Could you possibly で依頼を柔らかくする",
     "topic": "tech",
@@ -167,30 +183,14 @@
     "ja": "上司は、新機能より速さが大事だと考えています。",
     "en": "My boss thinks speed matters more than new features.",
     "alternatives": [
-      "My boss believes speed is more important than new features.",
-      "My boss feels that speed matters more than new features."
+      "My boss values speed over new features.",
+      "My boss believes speed beats new features."
     ],
     "point": "think の後の that は省略できる。matter more than で比べる",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 7,
+    "level": 6,
     "grammar": ["noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4e2f7c8j",
-    "ja": "ダークモードを優先していたら、今ごろ楽だったのに。",
-    "en": "If we'd prioritized dark mode, we'd be fine now.",
-    "alternatives": [
-      "Had we prioritized dark mode, we'd be better off now.",
-      "If we'd done dark mode first, we'd be fine now."
-    ],
-    "point": "過去の仮定は had + 過去分詞、今の結果は would be",
-    "topic": "tech",
-    "subtopic": "product-talk",
-    "level": 8,
-    "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -209,16 +209,16 @@
   },
   {
     "id": "c_4n5b4n7a",
-    "ja": "検索の意見は多いのに、使い方の情報は少ない。",
-    "en": "We've got plenty of feedback but little usage information.",
+    "ja": "検索への要望は多いのに、利用データが少ない。",
+    "en": "We've got plenty of search feedback but little usage data.",
     "alternatives": [
-      "We have plenty of feedback but very little usage data.",
-      "There's a lot of feedback but not much usage information."
+      "We have lots of search feedback but little usage data.",
+      "There's plenty of search feedback but not much usage data."
     ],
-    "point": "feedback も information も数えられない名詞。s は付けない",
+    "point": "feedback も data も数えられない名詞。s は付けない",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 8,
+    "level": 7,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -226,16 +226,32 @@
   {
     "id": "c_4y4p4u7x",
     "ja": "バグが直るまで、発表は待ちましょう。",
-    "en": "Let's hold off announcing until the bug's fixed.",
+    "en": "Let's hold off on announcing until the bug is fixed.",
     "alternatives": [
       "Let's wait to announce until the bug is fixed.",
       "Why don't we hold off announcing until we fix it?"
     ],
-    "point": "until 節は未来のことでも現在形（bug's fixed）",
+    "point": "until 節は未来のことでも現在形（is fixed）",
     "topic": "tech",
     "subtopic": "product-talk",
     "level": 8,
     "grammar": ["phrasal-verbs", "time-and-if-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5b5c3q3b",
+    "ja": "ダークモードは人気だけど、うちは見送ります。",
+    "en": "Popular as it is, we're skipping dark mode.",
+    "alternatives": [
+      "Dark mode is popular, but we're skipping it.",
+      "Popular or not, we're passing on dark mode."
+    ],
+    "point": "「〜だけど」は Adj as it is、で譲歩を表せる",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -311,16 +327,16 @@
   },
   {
     "id": "c_6d6m2w4f",
-    "ja": "SSO を求めるのは、無料ユーザーでなく法人のお客さんだ。",
+    "ja": "SSOを求めるのは、無料ユーザーでなく法人客だ。",
     "en": "It's enterprise customers, not free users, who want SSO.",
     "alternatives": [
       "It's enterprise customers rather than free users who want SSO.",
-      "The ones who want SSO are enterprise customers, not free users."
+      "It's enterprise customers who want SSO, not free users."
     ],
     "point": "It's A, not B, who 〜 の強調構文で「A こそが」を表す",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 10,
+    "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -343,7 +359,7 @@
   },
   {
     "id": "c_8b4u7a7p",
-    "ja": "リリース前に、決済フローを QA にテストしてもらおう。",
+    "ja": "リリース前に決済フローをQAにテストしてもらおう。",
     "en": "Let's have QA test the checkout flow before release.",
     "alternatives": [
       "Let's get QA to test the checkout flow before release.",
@@ -352,56 +368,24 @@
     "point": "「〜してもらう」は have + 人 + 動詞の原形（to は不要）",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 9,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8c4k4c8f",
-    "ja": "要望が多くても、今回のリリースには入りません。",
-    "en": "Even if many ask, it won't make this release.",
-    "alternatives": [
-      "It won't make this release, even if many users ask.",
-      "Even with lots of requests, it won't make this release."
-    ],
-    "point": "「たとえ〜でも」は even if。「入る」は make the release",
-    "topic": "tech",
-    "subtopic": "product-talk",
     "level": 7,
-    "grammar": ["concession-contrast"],
+    "grammar": ["causatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_8h4c5a8q",
     "ja": "決済は来月にずれ込むかもとPMが言ってた。",
-    "en": "PM said payments might slip to next month.",
+    "en": "The PM said payments might slip to next month.",
     "alternatives": [
       "The PM said payments could slip to next month.",
-      "The PM said payments might not ship this month."
+      "Our PM said payments might slip into next month."
     ],
     "point": "said に合わせて may ではなく might にする",
     "topic": "tech",
     "subtopic": "product-talk",
     "level": 6,
     "grammar": ["reported-speech"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8y8r4f5a",
-    "ja": "人手が増えたら、あなたは検索を作る？",
-    "en": "If we had help, would you build search?",
-    "alternatives": [
-      "Would you build search if we had help?",
-      "If we added staff, would you build search?"
-    ],
-    "point": "仮定の話は if 節を過去形、主節を would にする",
-    "topic": "tech",
-    "subtopic": "product-talk",
-    "level": 5,
-    "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },

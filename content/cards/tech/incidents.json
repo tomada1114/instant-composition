@@ -76,6 +76,22 @@
     "stamps": {}
   },
   {
+    "id": "c_3b7g8c7x",
+    "ja": "バックアップを見ていれば、データを守れたのに。",
+    "en": "If we'd checked backups, the data would've survived.",
+    "alternatives": [
+      "Had we checked backups, we'd have saved the data.",
+      "If we'd checked backups, we could've saved the data."
+    ],
+    "point": "過去の後悔は if + had 過去分詞、主節は would have 過去分詞",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3j2n6n4j",
     "ja": "影響を受けたユーザーは何人ですか？",
     "en": "How many users are affected?",
@@ -149,6 +165,22 @@
     }
   },
   {
+    "id": "c_4j6u8v5r",
+    "ja": "仮にメインが落ちたら、予備が引き継ぐの？",
+    "en": "If main failed, would the backup take over?",
+    "alternatives": [
+      "Would the backup take over if main went down?",
+      "If main went down, would the backup kick in?"
+    ],
+    "point": "仮の話なので過去形の failed と would を使う",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 6,
+    "grammar": ["second-conditional", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4m8p3n3n",
     "ja": "今回の障害は先月より長引いた。",
     "en": "This outage lasted longer than last month's.",
@@ -202,22 +234,6 @@
     "subtopic": "incidents",
     "level": 6,
     "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4z8p4y7f",
-    "ja": "今メインが落ちたら、予備に自動で切り替わるの？",
-    "en": "If main went down, would it fail over automatically?",
-    "alternatives": [
-      "If main went down, would backup take over automatically?",
-      "Would it switch over automatically if main went down?"
-    ],
-    "point": "仮の話なので went と would、現在形にしない",
-    "topic": "tech",
-    "subtopic": "incidents",
-    "level": 6,
-    "grammar": ["second-conditional", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -386,22 +402,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_8s8x7q6a",
-    "ja": "私たちがバックアップを見ていれば、守れたのに。",
-    "en": "If we'd checked backups, we could've saved it.",
-    "alternatives": [
-      "Had we checked the backups, we'd have saved it.",
-      "If we'd looked at backups, we could've saved it."
-    ],
-    "point": "過去の後悔は if + had 過去分詞、主節は could have 過去分詞",
-    "topic": "tech",
-    "subtopic": "incidents",
-    "level": 6,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9k2k8z6e",

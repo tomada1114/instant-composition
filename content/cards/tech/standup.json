@@ -5,29 +5,13 @@
     "en": "Not only did the migration finish, but every test passed.",
     "alternatives": [
       "The migration finished, and every test passed too.",
-      "On top of the migration finishing, every test passed."
+      "The migration finished, and on top of that every test passed."
     ],
     "point": "Not only が文頭なら did the migration finish と倒置する",
     "topic": "tech",
     "subtopic": "standup",
     "level": 9,
     "grammar": ["inversion"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2h5v9g8d",
-    "ja": "昨日からテストを書いていて、半分終わりました。",
-    "en": "I've been writing tests since yesterday; I'm halfway done.",
-    "alternatives": [
-      "I started writing tests yesterday and I'm halfway done.",
-      "I'm halfway through the tests I started yesterday."
-    ],
-    "point": "「昨日から〜している」は have been + -ing",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 6,
-    "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -45,7 +29,13 @@
     "level": 2,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:62ce4e2b2406ea2da79c8b39387e90ac12f474fb55213998b12c560a1796c5bb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3z2f7j3n",
@@ -77,7 +67,13 @@
     "level": 4,
     "grammar": ["gerunds", "future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6b1cfd05dd417516f25ee18957118e66ecb16f952637fe8788e4a80598b08621",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4r3p5d8b",
@@ -90,7 +86,13 @@
     "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e659ecb412e282001f57f7c777831573f5b6abe5c24d372c6beb5134091d63e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4z7n2h8n",
@@ -98,7 +100,7 @@
     "en": "Could you let me use staging until this afternoon?",
     "alternatives": [
       "Would you mind letting me use staging until this afternoon?",
-      "Could I get staging to myself until this afternoon?"
+      "Could I use staging until this afternoon?"
     ],
     "point": "使わせて = let me use。to は付けない",
     "topic": "tech",
@@ -122,15 +124,21 @@
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c96e378a74f0cd317de1e2fd94fd4bd79f5dac3d4ae006c7214b17b00e876431",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5e5e2w3k",
     "ja": "負荷テストがどこまで必要か、教えてもらえますか？",
-    "en": "Could you say how much load testing we need?",
+    "en": "Could you tell me how much load testing we need?",
     "alternatives": [
-      "Could you tell me how much load testing we need?",
-      "Do you know how much load testing we need?"
+      "Can you tell me how much load testing we need?",
+      "Could you tell me how much load testing is needed?"
     ],
     "point": "how much の後は we need の平叙文の語順にする",
     "topic": "tech",
@@ -154,7 +162,13 @@
     "level": 2,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b2dc2eef0c11ad19c68141d1ea01dd4c3aafc62607dd55b9e1e714317791e84b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5v9t5y6q",
@@ -177,8 +191,8 @@
     "ja": "移行で詰まってて。アドバイスをもらえますか？",
     "en": "I'm stuck on the migration. Could I get some advice?",
     "alternatives": [
-      "I'm stuck on this migration. Could you advise me?",
-      "I'm stuck on the migration and need some advice."
+      "I'm stuck on the migration. Any advice?",
+      "I'm stuck on this migration. Could you help me out?"
     ],
     "point": "advice は数えられないので an advice ではなく some advice",
     "topic": "tech",
@@ -202,7 +216,13 @@
     "level": 3,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:065141c008b78a1c9975acddb3d4bad15b219e603b1c08c6203f677790efba04",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6f8a4j5a",
@@ -226,12 +246,13 @@
     "en": "I was wondering if you'd spare thirty minutes today.",
     "alternatives": [
       "Would you be able to spare thirty minutes today?",
-      "Do you think you could spare thirty minutes today?"
+      "Do you think you could spare thirty minutes today?",
+      "I was wondering if I could get thirty minutes today."
     ],
     "point": "「〜もらえないかな」は I was wondering if you could/would",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 8,
+    "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -253,9 +274,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:5023e38532f067fa31118b66cc7b1e4c676a999670844cd47bfa23a7b0a21af2",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:1ca613ef129b4d9ac1423ee21c8707b65da012bdfadf779b2a8d9a8c3d2a3840",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -273,15 +294,21 @@
     "level": 5,
     "grammar": ["passive-voice", "present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bdf96dd78ba3a8ab0b642cabeb645a1c3b638d4f23264ca79a0dab0793b18b02",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6w9h2t9h",
     "ja": "先週確認しておけば、今ごろ楽なのに。",
-    "en": "If I'd checked last week, I'd be fine now.",
+    "en": "If I'd checked last week, things would be easier now.",
     "alternatives": [
-      "If I'd checked last week, things would be easier now.",
-      "I wouldn't be struggling now if I'd checked last week."
+      "If I'd checked last week, I'd have it easier now.",
+      "Things would be easier now if I'd checked last week."
     ],
     "point": "過去の仮定は had checked、今の結果は would be",
     "topic": "tech",
@@ -305,7 +332,13 @@
     "level": 3,
     "grammar": ["time-and-if-clauses", "future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ecde2cbcf5654f1d7bfeffaa157f18d7b2654cf26f7e0be660e3cbf5b5867028",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7p6a7n7z",
@@ -323,19 +356,19 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:c94868ce0987f44a930fbdaa40b4855a3dc973d37629306a56c48c19ac054d1b",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:632d094634119b5e339f049e33f286a189e999accef3c6bfe812afaca4a1fa31",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
   {
     "id": "c_7s8s5q2m",
-    "ja": "仕様は未確定ですが、フロントに着手します。",
-    "en": "Spec's not final, but we're starting front-end work.",
+    "ja": "仕様は未定ですが、うちはフロントに着手します。",
+    "en": "The spec isn't final, but we're starting front-end work.",
     "alternatives": [
-      "The spec isn't final, but we're starting front-end work.",
-      "The spec isn't settled, but we're starting front-end work."
+      "The spec isn't settled, but we'll start front-end work.",
+      "The spec isn't decided, but we'll begin front-end work."
     ],
     "point": "「未確定だが着手する」は but で対比させる",
     "topic": "tech",
@@ -350,8 +383,8 @@
     "ja": "気づくと、夜間バッチがもう三回失敗していた。",
     "en": "I noticed the nightly batch had failed three times.",
     "alternatives": [
-      "I realized the batch had already failed three times.",
-      "I saw the nightly batch had failed three times."
+      "I realized the nightly batch had failed three times.",
+      "I found the nightly batch had failed three times."
     ],
     "point": "気づいた時点より前の失敗なので had failed を使う",
     "topic": "tech",
@@ -391,7 +424,13 @@
     "level": 4,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d0a2d9b7dccc12ded1a272bf47eb3e957acd5b2ad837bb26560c4aa6af4f227c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8p3j3z3j",
@@ -420,23 +459,13 @@
     "level": 1,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8y2e3x8k",
-    "ja": "ステージングは午後に直ると言われました。",
-    "en": "They said staging would be back this afternoon.",
-    "alternatives": [
-      "They said staging would be fixed this afternoon.",
-      "I was told staging would return this afternoon."
-    ],
-    "point": "「言った」に合わせて will ではなく would にする",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 5,
-    "grammar": ["reported-speech"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:de3c9a078308a5f9047c08d8a252f8bd6cbfc60e7fead734d54e2d1b9a320e11",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9a8s4q9v",
@@ -468,12 +497,18 @@
     "level": 5,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1708f136339ca31cd603c198fe20c19bc6968a063d498b46eac34b39102a1333",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9g6k8x2u",
     "ja": "落ちているのは、先週追加したテストだけです。",
-    "en": "Only tests we added last week are failing.",
+    "en": "Only the tests we added last week are failing.",
     "alternatives": [
       "The only failing tests are last week's new ones.",
       "Only the tests added last week are failing."

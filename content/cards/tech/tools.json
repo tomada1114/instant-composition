@@ -20,13 +20,13 @@
     "ja": "こんな便利な拡張機能、初めて見たよ。",
     "en": "I've never seen such a useful extension.",
     "alternatives": [
-      "I've never come across such a useful extension.",
+      "I've never seen such a handy extension.",
       "I've never seen an extension this useful."
     ],
     "point": "「初めて見た」は never + 現在完了で言う",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 5,
+    "level": 3,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -117,12 +117,12 @@
     "en": "Everyone installed the same editor last week.",
     "alternatives": [
       "Last week, everyone installed the same editor.",
-      "Everyone set up the same editor last week."
+      "Everybody installed the same editor last week."
     ],
     "point": "last week があるので installed と過去形にする",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 4,
+    "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -150,7 +150,7 @@
     "en": "I still haven't figured out volume sharing.",
     "alternatives": [
       "I haven't worked out volume sharing yet.",
-      "I still haven't got my head around volume sharing."
+      "I still haven't figured out how to share volumes."
     ],
     "point": "「まだ〜ない」は still haven't、分かるは figure out",
     "topic": "tech",
@@ -171,7 +171,7 @@
     "point": "walk me through ＋ 説明してほしい対象を続ける",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 8,
+    "level": 7,
     "grammar": ["phrasal-verbs", "requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -196,7 +196,11 @@
     "id": "c_4u7k2v5j",
     "ja": "テーマ設定はどこですか？",
     "en": "Where is the theme setting?",
-    "alternatives": ["Where's the theme option?", "Where do I change the theme?"],
+    "alternatives": [
+      "Where's the theme option?",
+      "Where do I change the theme?",
+      "Where are the theme settings?"
+    ],
     "point": "Where の後は is + 主語の語順にする",
     "topic": "tech",
     "subtopic": "tools",
@@ -207,16 +211,16 @@
   },
   {
     "id": "c_5k5q2f7t",
-    "ja": "リンターは保存時、型チェックはコミット時に走ります。",
+    "ja": "リンターは保存時、型チェックはコミット時。",
     "en": "Linting runs on save, whereas type checks run on commit.",
     "alternatives": [
-      "The linter runs on save, while type checks run on commit.",
-      "Linting happens on save; type checking happens on commit."
+      "Linting runs on save; type checks run on commit.",
+      "The linter runs on save, type checks on commit."
     ],
     "point": "対比は whereas で2つの設定を並べる",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 9,
+    "level": 7,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -270,7 +274,7 @@
     "point": "過去の後悔は I wish の後を過去完了 I'd known にする",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 10,
+    "level": 9,
     "grammar": ["wishes-regrets", "noun-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -298,7 +302,7 @@
     "id": "c_9c5g5y5c",
     "ja": "セットアップ用のスクリプトある？",
     "en": "Is there a setup script?",
-    "alternatives": ["Do we have a setup script?", "Does it have a setup script?"],
+    "alternatives": ["Do we have a setup script?", "Is there any setup script?"],
     "point": "「〜ある？」は Is there 〜? で主語は後ろ",
     "topic": "tech",
     "subtopic": "tools",
@@ -312,13 +316,13 @@
     "ja": "新人が最初に入れるべきツールの一覧、どこかにある？",
     "en": "Is there a list of tools new hires should install?",
     "alternatives": [
-      "Is there a list of tools new hires need to install?",
-      "Is there a list of tools new hires must install?"
+      "Is there a list of tools newcomers should install?",
+      "Is there a list of must-have tools for new hires?"
     ],
     "point": "tools の後ろに関係詞なしで new hires should install を続ける",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 9,
+    "level": 7,
     "grammar": ["relative-clauses", "post-modification"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -334,7 +338,7 @@
     "point": "It was A, not B, that 〜 で原因を強調する",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 9,
+    "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -343,7 +347,7 @@
     "id": "c_9y8v5y5g",
     "ja": "Docker が使えないんです。",
     "en": "I can't use Docker.",
-    "alternatives": ["I'm not able to use Docker.", "Docker doesn't work for me."],
+    "alternatives": ["I'm not able to use Docker.", "I can't get Docker to work."],
     "point": "can't の後の動詞は原形の use",
     "topic": "tech",
     "subtopic": "tools",
