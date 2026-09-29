@@ -436,7 +436,7 @@ describe("the built web client, served by `vite preview`", () => {
   );
 
   // The only check that sees Tailwind's output at all: a component test
-  // renders `className="p-8"` into the DOM whether or not a stylesheet was
+  // renders `className="p-5"` into the DOM whether or not a stylesheet was
   // ever generated.
   it("links a stylesheet carrying a utility the client uses", async () => {
     const document = await (await fetch(baseUrl)).text();
@@ -448,7 +448,7 @@ describe("the built web client, served by `vite preview`", () => {
 
     expect(stylesheet.status).toBe(200);
     expect(stylesheet.headers.get("content-type")).toContain("text/css");
-    await expect(stylesheet.text()).resolves.toMatch(/\.p-8\s*\{[^}]*padding:/u);
+    await expect(stylesheet.text()).resolves.toMatch(/\.p-5\s*\{[^}]*padding:/u);
   });
 });
 
