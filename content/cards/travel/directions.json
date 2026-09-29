@@ -1,0 +1,89 @@
+[
+  {
+    "id": "c_2f6f7y3b",
+    "ja": "10分歩きました。",
+    "en": "I walked for ten minutes.",
+    "alternatives": ["I walked ten minutes.", "It took me ten minutes to walk."],
+    "point": "歩いた時間は for + 時間",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 4,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3q3z6m8j",
+    "ja": "銀行の隣の店です。",
+    "en": "The shop by the bank.",
+    "alternatives": [
+      "It's the shop next to the bank.",
+      "It's the store beside the bank."
+    ],
+    "point": "場所は前置詞句で名詞の後ろに置く",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3w9u7x5v",
+    "ja": "ここ、来たことある？",
+    "en": "Have you been here before?",
+    "alternatives": ["Have you ever been here?", "Have you been to this place before?"],
+    "point": "経験は現在完了 + before",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 4,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6h7e7s9y",
+    "ja": "この店、もう二回通ったね。",
+    "en": "We've walked past this shop twice.",
+    "alternatives": [
+      "We've already passed this store twice.",
+      "We've gone by this shop twice."
+    ],
+    "point": "回数を言う「もう〜回」は現在完了",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 5,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7y5r9g5z",
+    "ja": "バスに乗るほうが早いよ。",
+    "en": "Taking the bus is faster.",
+    "alternatives": ["It's faster to take the bus.", "It's quicker to go by bus."],
+    "point": "「〜するほうが」は動名詞を主語にできる",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 5,
+    "grammar": ["gerunds", "comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9t3x8t8e",
+    "ja": "この先は封鎖されています。",
+    "en": "The road ahead is blocked off.",
+    "alternatives": [
+      "The road up ahead is closed.",
+      "The road ahead has been closed off."
+    ],
+    "point": "「封鎖されている」は be + 過去分詞",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 5,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]

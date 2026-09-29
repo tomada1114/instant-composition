@@ -1,0 +1,89 @@
+[
+  {
+    "id": "c_5m2u5n6k",
+    "ja": "昨日、予約を変更しました。",
+    "en": "I changed my reservation yesterday.",
+    "alternatives": [
+      "I modified my reservation yesterday.",
+      "I changed my booking yesterday."
+    ],
+    "point": "yesterday があるので過去形",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 5,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5x6y2k5u",
+    "ja": "エアコンが昨日から壊れてる。",
+    "en": "The AC's been broken since yesterday.",
+    "alternatives": [
+      "The AC hasn't worked since yesterday.",
+      "The AC has been out since yesterday."
+    ],
+    "point": "since と継続は現在完了",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 4,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5y6r5r9j",
+    "ja": "天井から水が漏れています。",
+    "en": "Water's leaking from the ceiling.",
+    "alternatives": ["The ceiling is leaking.", "Water is coming from the ceiling."],
+    "point": "今起きている最中は進行形",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 4,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7t6t7r8j",
+    "ja": "隣が一晩中うるさいんです。",
+    "en": "Next door's been noisy all night.",
+    "alternatives": [
+      "The neighbors have been noisy all night.",
+      "It's been noisy next door all night."
+    ],
+    "point": "「一晩中ずっと」は現在完了進行形",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8r6v7v8z",
+    "ja": "朝食は何時からですか？",
+    "en": "What time does breakfast start?",
+    "alternatives": ["What time is breakfast served?", "When does breakfast start?"],
+    "point": "「何時」は What time で始める",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 4,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9h2a6c9k",
+    "ja": "金庫を使うといいですよ。",
+    "en": "You should use the safe.",
+    "alternatives": ["You'd better use the safe.", "Using the safe is a good idea."],
+    "point": "「〜するといい」は should",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 5,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]

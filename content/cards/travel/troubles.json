@@ -1,0 +1,92 @@
+[
+  {
+    "id": "c_2u8n8r8e",
+    "ja": "運転手に止まるよう言って！",
+    "en": "Tell the driver to stop!",
+    "alternatives": [
+      "Please tell the driver to stop!",
+      "Tell the driver to pull over!"
+    ],
+    "point": "「人に〜するよう言う」は tell + 人 + to do",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3m8g6f3j",
+    "ja": "席の下の鞄がなくなった。",
+    "en": "The bag under my seat's gone.",
+    "alternatives": [
+      "My bag under the seat is gone.",
+      "The bag beneath my seat is missing."
+    ],
+    "point": "名詞の後ろに前置詞句を置いて説明する",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4g2y6n8f",
+    "ja": "少し助けが必要です。",
+    "en": "I need a little help.",
+    "alternatives": ["I need some help.", "Could I get some help?"],
+    "point": "help は数えない名詞なので a help とは言わない",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 4,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4j4v4c2y",
+    "ja": "カードを今日再発行できる？",
+    "en": "Can you reissue my card today?",
+    "alternatives": [
+      "Could you reissue my card today?",
+      "Can I get my card reissued today?"
+    ],
+    "point": "「できますか」は Can you で相手の可否を聞く",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4j5d5p2t",
+    "ja": "今どこにいるか、わからない。",
+    "en": "I don't know where I am.",
+    "alternatives": ["I have no idea where I am.", "I'm not sure where I am."],
+    "point": "間接疑問は where のあとが平叙文の語順",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 4,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6u4y7m6f",
+    "ja": "係員が荷物を探しています。",
+    "en": "They're looking for my luggage.",
+    "alternatives": [
+      "Someone is looking for my luggage.",
+      "The staff are searching for my bag."
+    ],
+    "point": "探している最中は現在進行形",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 4,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]

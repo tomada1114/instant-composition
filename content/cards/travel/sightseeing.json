@@ -1,0 +1,83 @@
+[
+  {
+    "id": "c_2c7b4f2p",
+    "ja": "並ばずに入れませんか？",
+    "en": "Can we get in without waiting?",
+    "alternatives": ["Can we skip the line?", "Could we get in without lining up?"],
+    "point": "「〜せずに」は without + 動名詞",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 5,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3g6c2w5g",
+    "ja": "大人二枚、お願いします。",
+    "en": "Two adults, please.",
+    "alternatives": ["Two adult tickets, please.", "Two tickets for adults, please."],
+    "point": "「大人二枚」は人数で頼める",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 4,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3k4a3r4k",
+    "ja": "写真を撮りに来ました。",
+    "en": "I came here to take photos.",
+    "alternatives": ["I came to take some photos.", "I'm here to take photos."],
+    "point": "「〜しに来た」は to 不定詞で目的を言う",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 5,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4s6n8p5s",
+    "ja": "ツアーは何分かかりますか？",
+    "en": "How long is the tour?",
+    "alternatives": ["How long does the tour take?", "How long will the tour last?"],
+    "point": "所要時間は How long",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 4,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5d2m2m2t",
+    "ja": "ここは人気だと聞きました。",
+    "en": "I heard it's popular here.",
+    "alternatives": [
+      "They say it's popular here.",
+      "I've heard this place is popular."
+    ],
+    "point": "heard のあとは that を省ける",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 4,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5f8j7f6y",
+    "ja": "午後のほうが空いてる？",
+    "en": "Is the afternoon less crowded?",
+    "alternatives": ["Is it quieter in the afternoon?", "Is the afternoon less busy?"],
+    "point": "「空いてる」は less crowded で言える",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 5,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]
