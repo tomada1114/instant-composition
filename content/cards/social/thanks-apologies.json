@@ -105,10 +105,10 @@
       "I wrote to thank the teacher who taught me.",
       "I wrote to thank the teacher who guided me."
     ],
-    "point": "先行詞が人なら who。「お礼を言う」は thank だけでよい",
+    "point": "「お礼を言う」は say thanks to ではなく thank だけでよい",
     "topic": "social",
     "subtopic": "thanks-apologies",
-    "level": 8,
+    "level": 6,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -138,15 +138,15 @@
   {
     "id": "c_3e8k9g5x",
     "ja": "そんなに待たせていたとは気づかず、すみません。",
-    "en": "I didn't realize I'd kept you waiting. I'm sorry.",
+    "en": "Sorry, I didn't realize I'd kept you waiting so long.",
     "alternatives": [
-      "I'm sorry, I had no idea I'd kept you waiting.",
-      "Sorry, I never realized I'd kept you waiting this long."
+      "Sorry, I didn't know I'd kept you waiting that long.",
+      "Sorry, I never realized you'd been waiting so long."
     ],
     "point": "「待たせていた」のは気づく前なので I'd kept と過去完了",
     "topic": "social",
     "subtopic": "thanks-apologies",
-    "level": 9,
+    "level": 7,
     "grammar": ["past-perfect", "noun-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -156,13 +156,13 @@
     "ja": "もっと早く出ていれば間に合ったのに。ごめん。",
     "en": "If I'd left earlier, I'd have made it. Sorry.",
     "alternatives": [
-      "Sorry, I'd have made it if I'd set off earlier.",
-      "If I'd left sooner, I would've been on time. Sorry."
+      "Sorry, I'd have made it if I'd left earlier.",
+      "If I'd left sooner, I'd have been on time."
     ],
     "point": "過去の後悔は if＋had＋過去分詞、主節は would have＋過去分詞",
     "topic": "social",
     "subtopic": "thanks-apologies",
-    "level": 8,
+    "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -194,7 +194,7 @@
     "point": "advice は数えられない名詞。an advice とは言わない",
     "topic": "social",
     "subtopic": "thanks-apologies",
-    "level": 4,
+    "level": 2,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -331,7 +331,7 @@
     "point": "how 以下は疑問文の語順にせず I can thank you の順",
     "topic": "social",
     "subtopic": "thanks-apologies",
-    "level": 9,
+    "level": 7,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -379,22 +379,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_7w3u6t3c",
-    "ja": "昨日のこと、何とお礼を言えばいいか分かりません。",
-    "en": "I don't know how to thank you for yesterday.",
-    "alternatives": [
-      "I can't thank you enough for yesterday.",
-      "I really don't know how to thank you for yesterday."
-    ],
-    "point": "how to + 動詞の原形で「どうやって〜すればいいか」",
-    "topic": "social",
-    "subtopic": "thanks-apologies",
-    "level": 7,
-    "grammar": ["indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_8h7e5s8s",
@@ -489,13 +473,13 @@
     "ja": "私が傷つけた同僚に、謝りたい。",
     "en": "I want to apologize to the coworker I hurt.",
     "alternatives": [
-      "I want to apologize to the colleague I offended.",
-      "I owe an apology to the coworker I hurt."
+      "I want to apologize to the colleague I hurt.",
+      "I'd like to apologize to the coworker I upset."
     ],
     "point": "目的格の関係詞（that / whom）は省略できる",
     "topic": "social",
     "subtopic": "thanks-apologies",
-    "level": 8,
+    "level": 6,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}

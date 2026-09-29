@@ -253,22 +253,6 @@
     }
   },
   {
-    "id": "c_5n2a5b7m",
-    "ja": "ジムに通うのをやめたら、かえって調子がいいんだ。",
-    "en": "I gave up going to the gym and feel better.",
-    "alternatives": [
-      "I stopped going to the gym, and I feel better.",
-      "Since I quit going to the gym, I feel better."
-    ],
-    "point": "give up / quit の後ろは to 不定詞でなく -ing",
-    "topic": "social",
-    "subtopic": "small-talk",
-    "level": 8,
-    "grammar": ["gerunds", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5q5g3r5s",
     "ja": "暑いね。窓、開けてもいい？",
     "en": "It's hot. Can I open the window?",
@@ -551,17 +535,17 @@
     }
   },
   {
-    "id": "c_8t2p2r3g",
+    "id": "c_8n4k6e5h",
     "ja": "先週末は上司に休日出勤させられて、散々だったよ。",
-    "en": "My boss made me come in on Saturday. Total drag.",
+    "en": "My boss made me work last weekend. Total drag.",
     "alternatives": [
-      "My boss made me work on Saturday. What a nightmare.",
-      "My boss forced me to come in Saturday. It was awful."
+      "My boss forced me to come in last weekend.",
+      "My boss made me come in last weekend. Awful."
     ],
     "point": "「〜させられた」は make + 人 + 原形（to なし）",
     "topic": "social",
     "subtopic": "small-talk",
-    "level": 10,
+    "level": 7,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -668,6 +652,22 @@
     "subtopic": "small-talk",
     "level": 4,
     "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9s3q8x3n",
+    "ja": "ジムをやめたら、かえって調子がいいよ。",
+    "en": "Quitting the gym actually did me good.",
+    "alternatives": [
+      "I quit the gym and actually feel better.",
+      "I actually feel better since quitting the gym."
+    ],
+    "point": "quit の後ろは to 不定詞でなく -ing（Quitting が主語）",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 5,
+    "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },

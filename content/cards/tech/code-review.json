@@ -325,7 +325,7 @@
     "point": "It's ~ that で強調したい部分を挟む。not ~ で対比",
     "topic": "tech",
     "subtopic": "code-review",
-    "level": 9,
+    "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -469,12 +469,12 @@
     "en": "You should add tests for this function.",
     "alternatives": [
       "You should write tests for this function.",
-      "You'd better add tests for this function."
+      "I'd add tests for this function."
     ],
     "point": "「〜したほうがいい」は should が自然。had better は強め",
     "topic": "tech",
     "subtopic": "code-review",
-    "level": 5,
+    "level": 4,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -484,7 +484,7 @@
     "ja": "ここで変更されたファイル、確認したよ。",
     "en": "I checked the files changed here.",
     "alternatives": [
-      "I've reviewed the files that were changed here.",
+      "I've checked the files changed here.",
       "I looked over the files changed here."
     ],
     "point": "「変更された」は files の後ろに changed を置いて修飾",
@@ -576,18 +576,5 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9t4y9p3k",
-    "ja": "テストを足したほうがいいですよ。",
-    "en": "You should add a test.",
-    "alternatives": ["I think you should add a test.", "You ought to add a test."],
-    "point": "助言は should。「〜したほうがいい」を had better にしない",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 3,
-    "grammar": ["modal-obligation-advice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   }
 ]

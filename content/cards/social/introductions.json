@@ -13,7 +13,13 @@
     "level": 4,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b922c4e225e9f6e6bef877095bb7a7ebf9de2d5ab1fca47fdef14734996fb92d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2c4m4a3n",
@@ -36,35 +42,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_2n5w5g8z",
-    "ja": "珍しいお名前ですね。どうして名付けられたんですか？",
-    "en": "That's an unusual name. Why were you named that?",
-    "alternatives": [
-      "That's an unusual name. Why did they name you that?",
-      "That's an unusual name. How did you get it?"
-    ],
-    "point": "「名付けられた」は受動態 were named",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 7,
-    "grammar": ["passive-voice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2v6d2p4a",
-    "ja": "私は大阪で生まれました。",
-    "en": "I was born in Osaka.",
-    "alternatives": ["Osaka is where I was born.", "My birthplace is Osaka."],
-    "point": "「生まれた」は受動態 was born。born の後に by は不要",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 3,
-    "grammar": ["passive-voice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_3u5h4f9m",
@@ -109,39 +86,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_4g2f9g4c",
-    "ja": "時間がもっとあったら、どんな趣味を始めたいですか？",
-    "en": "If you had more time, what hobby would you take up?",
-    "alternatives": [
-      "What hobby would you take up if you had more time?",
-      "If you had more time, which hobby would you start?"
-    ],
-    "point": "「趣味を始める」は take up a hobby",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 9,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4v6p6b7s",
-    "ja": "私は内気ですが、人に会うのは好きです。",
-    "en": "Though I'm shy, I like meeting people.",
-    "alternatives": [
-      "I'm shy, but I like meeting people.",
-      "I'm shy, but I love meeting new people.",
-      "Even though I'm shy, I enjoy meeting people."
-    ],
-    "point": "though は「〜だけど」。後ろに but は重ねない",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 5,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_4w9e9h8x",
@@ -207,38 +151,6 @@
     }
   },
   {
-    "id": "c_5m8n6q2c",
-    "ja": "僕が君なら、自己紹介はもっと肩の力を抜いてやるな。",
-    "en": "If I were you, I'd loosen up when introducing myself.",
-    "alternatives": [
-      "If I were you, I'd relax when I introduce myself.",
-      "If I were you, I'd be more relaxed introducing myself."
-    ],
-    "point": "仮定法では主語が I でも were を使う",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 8,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5q5y5w9a",
-    "ja": "姉が、私たちは同じ大学の卒業生だと言っていました。",
-    "en": "My sister said we were fellow alumni.",
-    "alternatives": [
-      "My sister said we went to the same university.",
-      "My sister told me we went to the same university."
-    ],
-    "point": "「同じ大学の卒業生同士」は fellow alumni",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 7,
-    "grammar": ["reported-speech"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5w2b4f8p",
     "ja": "自己紹介しないとね。僕はトムです。",
     "en": "I should introduce myself. I'm Tom.",
@@ -274,7 +186,13 @@
     "level": 9,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ca8e24543845499c667920856c6ccd6721665047d053ed83cc183d5311d04411",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6s2q2r6d",
@@ -299,22 +217,6 @@
     }
   },
   {
-    "id": "c_6x5n6u5m",
-    "ja": "お噂はかねがね伺っていたので、お会いできて嬉しいです。",
-    "en": "Having heard so much about you, I'm glad to meet you.",
-    "alternatives": [
-      "I've heard so much about you, so I'm glad to meet you.",
-      "I've heard so much about you. It's great to finally meet you."
-    ],
-    "point": "「〜していたので」は Having heard のように分詞で始められる",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 10,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7a5p6f8f",
     "ja": "僕の仕事は、アプリを設計することです。",
     "en": "What I do is design apps.",
@@ -325,7 +227,13 @@
     "level": 5,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bfb49d5ab69a1a810063c58a8e7808b772f21080430f2d82dfbe85ea8ac05283",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7e8t5u5r",
@@ -341,7 +249,13 @@
     "level": 5,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5b924228842a8a0edac6974559302cdbc53670486ad5d0515ff7336225590423",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7f4s2s7p",
@@ -439,7 +353,13 @@
     "level": 3,
     "grammar": ["wh-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e7e5b76c813e53f2314ff8e4dbfed43fa40643bd466d27df85e09d29313c4e61",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8a7y7w5f",
@@ -474,7 +394,13 @@
     "level": 6,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6b4b77b9db30e6853d41ab35ee9a5d28a174e9daa450e9b1823096f5374c26a9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8g7d4v2q",
@@ -513,6 +439,12 @@
     "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:61634e7d53724642aa12ca21ec315884f3805c21d6a538fdcf9cd0a256d3d467",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
