@@ -1,77 +1,11 @@
 [
   {
-    "id": "c_2b2t7j5y",
-    "ja": "店長が新しい企画、すごくいいって言ってくれて、めっちゃ嬉しかった。",
-    "en": "I was so happy when the manager told me the new plan was really good.",
-    "alternatives": [
-      "I was really happy when the manager said the new plan was great.",
-      "It made me so happy when the manager told me the new plan was really good."
-    ],
-    "point": "told me の後は時制を合わせて is ではなく was",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 5,
-    "grammar": ["reported-speech"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:e01734aa0b7dce42adee00b259240ad815f59e1fcbb0b27a900597f1bdb338d9",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_2c3f4d2q",
-    "ja": "上司に本当の気持ちを伝えたほうがいいと思うよ。",
-    "en": "I think you should tell your boss how you really feel.",
-    "alternatives": [
-      "I think you should tell your boss what you really think.",
-      "I think you should let your boss know how you really feel."
-    ],
-    "point": "「気持ち」は how you feel と節で表すと自然",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 4,
-    "grammar": ["modal-obligation-advice", "indirect-questions"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:492d6c323a8dd363a65f5034a20c6c2d3c81316899fe07d1ccddea0576d6ac8f",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_2g2b6q7k",
-    "ja": "最近ずっと夜よく眠れてなくて、正直ちょっと参ってきてるんだ。",
-    "en": "I haven't been sleeping well lately, and to be honest, it's kind of wearing me down.",
-    "alternatives": [
-      "I haven't been sleeping well recently, and honestly, it's kind of getting to me.",
-      "I haven't been getting much sleep lately, and to be honest, it's wearing me down a bit."
-    ],
-    "point": "「最近ずっと〜してない」は haven't been ~ing で継続を出す",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 6,
-    "grammar": ["present-perfect-continuous", "phrasal-verbs"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:1a0888b6650a17652b796770631f018dfe36700ec49efe5025274db6dbdccb52",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
     "id": "c_2k2e6b2r",
-    "ja": "彼女、今朝からずっと機嫌が悪いんだよね。",
-    "en": "She's been in a bad mood since this morning.",
+    "ja": "彼女、今朝からずっと機嫌が悪いよ。",
+    "en": "She's been grumpy since this morning.",
     "alternatives": [
-      "She has been grumpy since this morning.",
-      "She's been in a bad mood all morning."
+      "She's been moody since this morning.",
+      "She's been cranky since this morning."
     ],
     "point": "「今朝からずっと」は is ではなく has been で表す",
     "topic": "daily",
@@ -84,72 +18,6 @@
         "hash": "sha256:9a8e864035c229fbb840c1d34d9e798310e2d7b9eae13953b4738e7b664efe8b",
         "perspectivesVersion": 1,
         "at": "2026-09-23"
-      }
-    }
-  },
-  {
-    "id": "c_2n7a6a2u",
-    "ja": "彼は転職を考えているみたいだけど、今辞めるのはもったいないと私は思う。",
-    "en": "He seems to be thinking about changing jobs, but I think quitting now would be a waste.",
-    "alternatives": [
-      "It looks like he's considering changing jobs, but I think it'd be a shame to quit now.",
-      "He seems to be thinking of switching jobs, but I think quitting now would be a waste."
-    ],
-    "point": "about の後は動名詞 changing、主語の「辞めるのは」も quitting",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 7,
-    "grammar": ["gerunds", "hedging-softening"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:c0424a2672c13dfc9785bd6fda97731df1bf3d4940fbb4384ce465303f337847",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_2p2y8e3e",
-    "ja": "母がいちばん喜んだのは、孫たちからの手書きの手紙でした。",
-    "en": "It was the handwritten letters from her grandchildren that made my mother happiest.",
-    "alternatives": [
-      "What made my mother happiest was the handwritten letters from her grandchildren.",
-      "The handwritten letters from her grandchildren were what made my mother happiest."
-    ],
-    "point": "強調したい部分を It was と that で挟む",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 9,
-    "grammar": ["cleft-emphasis"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:267bf237392f851b29d0abacbf39259cac7b8a8b8914b5d1970a27e77c73548c",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_2t9k8v2j",
-    "ja": "もし宝くじで1億円当たったら、あなたは仕事を辞める？それとも続ける？",
-    "en": "If you won a hundred million yen in the lottery, would you quit your job or keep working?",
-    "alternatives": [
-      "Would you quit your job or keep working if you won a hundred million yen in the lottery?",
-      "If you won a hundred million yen in the lottery, would you quit or keep your job?"
-    ],
-    "point": "ありえない仮定は if 節を過去形、主節を would にする",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 7,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:3f2f0ca90d88bca8de709c2d3538d307cae38002301d7825e790d61cd32fb3d3",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
       }
     }
   },
@@ -173,12 +41,28 @@
     }
   },
   {
-    "id": "c_3h5h7a2t",
-    "ja": "昨日の映画、どうして気に入らなかったの？",
-    "en": "Why didn't you like the movie yesterday?",
+    "id": "c_3a6c5f6y",
+    "ja": "雨なら、家にいたほうがよくない？",
+    "en": "If it rains, shouldn't we stay home?",
     "alternatives": [
-      "Why didn't you like yesterday's movie?",
-      "Why didn't you enjoy the movie yesterday?"
+      "Shouldn't we stay home if it rains?",
+      "Wouldn't staying home be better if it rains?"
+    ],
+    "point": "未来でも if 節は現在形 it rains",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 5,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3h5h7a2t",
+    "ja": "昨日の映画、なぜ気に入らなかったの？",
+    "en": "Why didn't you like yesterday's movie?",
+    "alternatives": [
+      "Why didn't you enjoy yesterday's movie?",
+      "How come you didn't like yesterday's movie?"
     ],
     "point": "過去の否定疑問は Why didn't you のあと動詞は原形",
     "topic": "daily",
@@ -195,367 +79,312 @@
     }
   },
   {
-    "id": "c_3v6u4r2j",
-    "ja": "あんなこと言うべきじゃなかったな。彼女、きっと傷ついたと思う。",
-    "en": "I shouldn't have said that. She must have been hurt.",
+    "id": "c_3q9w6a9q",
+    "ja": "あの日ちゃんと話し合っていたら、今こんなに気まずくないのに。",
+    "en": "If we'd talked it through, this wouldn't be so awkward now.",
     "alternatives": [
-      "I shouldn't have said something like that. She must have been hurt.",
-      "I shouldn't have said that. I bet she was hurt."
-    ],
-    "point": "過去への後悔は shouldn't have、過去の推量は must have",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 6,
-    "grammar": ["modal-perfect"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:bc1045b06ad23c159adda616cd903b1a60d5e9cd588a10883b252c6557c76258",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_3x4m4b8h",
-    "ja": "正直、隣の席で電話している男の人に、ちょっとイライラしています。",
-    "en": "To be honest, I'm a bit annoyed by the man talking on the phone in the seat next to me.",
-    "alternatives": [
-      "Honestly, the man talking on the phone in the next seat is annoying me a little.",
-      "Honestly, I'm a little irritated by the guy talking on his phone in the seat next to me."
-    ],
-    "point": "「電話している男の人」は the man talking on the phone と後ろから修飾",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 8,
-    "grammar": ["post-modification"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:2240c24437699e1ba8ac0352a0bd73ddb4b90861b9454b5a59efd850ca38e8c0",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_4b7g9q3a",
-    "ja": "姉は合格通知をじっと見つめたまま、受かったのが信じられない様子で 1 時間も座っていた。",
-    "en": "My sister sat there for an hour, staring at the acceptance letter, unable to believe she'd actually gotten in.",
-    "alternatives": [
-      "My sister sat there for a whole hour staring at her acceptance letter, as if she couldn't believe she'd passed.",
-      "For an hour, my sister just sat there staring at the acceptance letter, not believing she'd gotten in."
-    ],
-    "point": "「〜したまま」は , staring のように ing 形で後ろに続ける",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 8,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:4f8088e70047655ca91f0d7423e2ed3f4dfe9963eb76cf1192f5d545a6706222",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
-  },
-  {
-    "id": "c_4j5b3s7s",
-    "ja": "前もって言ってくれていたら、空港まで迎えに行けたのに。残念だよ。",
-    "en": "If you'd told me beforehand, I could have picked you up at the airport. It's a shame.",
-    "alternatives": [
-      "If you had let me know in advance, I could've picked you up at the airport. What a shame.",
-      "It's too bad. If you'd told me ahead of time, I could have come to get you at the airport."
-    ],
-    "point": "過去の仮定は If you'd told と could have picked の形",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 6,
-    "grammar": ["third-conditional", "modal-perfect"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:326444bddfa4dfc262fec37e4331b573858be7d166c65806a5a0b47cb60a6283",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
-  },
-  {
-    "id": "c_4x4e4x9c",
-    "ja": "このお店、気に入った！また一緒に来ようよ。",
-    "en": "I love this place! Let's come back again.",
-    "alternatives": [
-      "I really like this place! Let's come back sometime.",
-      "I love this place! We should come back again."
-    ],
-    "point": "「〜しようよ」は Let's + 動詞の原形",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 1,
-    "grammar": ["imperatives"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:f823771a7e6b688841b004cfc731c1b41035aed99f0898f4d555c24426862c32",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
-  },
-  {
-    "id": "c_5g8w7y9w",
-    "ja": "正直言うと、一番がっかりしたのは誰も手伝ってくれなかったことです。",
-    "en": "To be honest, what disappointed me most was that nobody helped me.",
-    "alternatives": [
-      "Honestly, the most disappointing thing was that no one helped me.",
-      "To be honest, what let me down the most was that nobody helped me."
-    ],
-    "point": "「〜なのは」は what 節、「〜ということ」は that 節で表す",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 7,
-    "grammar": ["noun-clauses"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:d6f69751484f21358b3805dcb15f837dd9d2115ffdcdc03e876df9924f301508",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_5h4n8r5h",
-    "ja": "天気のせいで週末の予定をあきらめることになって、あなたはがっかりしてないの？",
-    "en": "Aren't you disappointed that you had to give up your weekend plans because of the weather?",
-    "alternatives": [
-      "Aren't you disappointed you had to give up your plans for the weekend because of the weather?",
-      "Don't you feel let down that the weather made you give up your weekend plans?"
-    ],
-    "point": "「あきらめる」は give up。「〜することになった」は had to で表す",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 6,
-    "grammar": ["phrasal-verbs", "noun-clauses"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:5ca78b0ff4a7bdc8cce903e156d59416ee1ed0b35bd2000720287b5b444dfe14",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_5n4b6d7g",
-    "ja": "兄は口では平気だと言っているけど、本当はかなりがっかりしていると思う。",
-    "en": "Although my brother says he's fine, I think he's actually pretty disappointed.",
-    "alternatives": [
-      "My brother says he's fine, but I think he's actually really disappointed.",
-      "Even though my brother says he's okay, I think he's actually pretty let down."
-    ],
-    "point": "although の後は節が続く。but と一緒に使わない",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 6,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:b3cd3691da684c3df26332d218807634cb530719da6f20f88bfa115b73cb8923",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_6f5q8h6b",
-    "ja": "兄に無理やりホラー映画を最後まで見させられて、正直ちょっとムッとしました。",
-    "en": "My brother made me sit through a horror movie, and honestly, I was a little annoyed.",
-    "alternatives": [
-      "My brother forced me to sit through a horror movie, and to be honest, I was a bit annoyed.",
-      "My brother made me watch a whole horror movie, and honestly, it annoyed me a little."
-    ],
-    "point": "「無理やり〜させる」は make 人 動詞の原形。sit through で最後まで耐える",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 6,
-    "grammar": ["causatives", "phrasal-verbs"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:cd2effe4c455e869c65045451333d0c1d77f138d1b67c1c83d092052b9b0b7fa",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_6t4b8u9w",
-    "ja": "コンサートが中止になったと聞いて、私はすごくがっかりしたよ。",
-    "en": "I was really disappointed to hear that the concert had been canceled.",
-    "alternatives": [
-      "I was so disappointed to hear the concert had been canceled.",
-      "It was really disappointing to hear that the concert was canceled."
-    ],
-    "point": "感情の原因は to hear、中止は受け身 had been canceled",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 5,
-    "grammar": ["infinitives", "passive-voice"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:8b2a749b837a82fbc2a21206345ceab38da051f98702d3fa720ce759eee01864",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_6x4n4t7k",
-    "ja": "昨日姉に、私が選んだ色はこの部屋に合わないって言われて、正直ちょっと傷ついた。",
-    "en": "Honestly, it hurt a little when my sister said yesterday that the color I'd picked didn't go with this room.",
-    "alternatives": [
-      "Honestly, I was a little hurt when my sister told me yesterday that the color I'd chosen didn't suit this room.",
-      "To be honest, it stung a bit when my sister said yesterday that the color I picked didn't go with this room."
-    ],
-    "point": "said に合わせて「合わない」も didn't go と過去形にする",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 8,
-    "grammar": ["nested-clauses", "reported-speech"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:2e9de90d6b688bb6972cb65cfbb27538c9cd8316c024546d0cd0bea5e6dca941",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
-  },
-  {
-    "id": "c_6z8y2c9q",
-    "ja": "兄は、自分でもすっかり忘れていた誕生日を私が覚えていたので、すごく喜んでいました。",
-    "en": "My brother was really happy that I'd remembered his birthday, which he'd completely forgotten himself.",
-    "alternatives": [
-      "My brother was so happy because I had remembered his birthday, which even he had completely forgotten.",
-      "My brother was really pleased that I'd remembered his birthday, since he'd totally forgotten it himself."
-    ],
-    "point": "喜んだ時点より前のことなので覚えていた・忘れていたは had + 過去分詞",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 7,
-    "grammar": ["past-perfect", "relative-clauses"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:58ab26a110155ff9ec14dd190cfebecf56b66392a606804f94462d67a6da65d7",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_7u3v7e5s",
-    "ja": "新しい職場でこんなに温かく迎えてもらえるなんて、夢にも思っていませんでした。",
-    "en": "Never did I imagine that I'd get such a warm welcome at my new workplace.",
-    "alternatives": [
-      "I never imagined I'd get such a warm welcome at my new workplace.",
-      "I never dreamed I'd be welcomed so warmly at my new workplace."
-    ],
-    "point": "Never を文頭に出すと did I imagine の語順になる",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 9,
-    "grammar": ["inversion"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:b0164263aa8984e48858cc779ec31d6b144d8849b9cca8510b09b18aa32ebc84",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_7x8a2p2b",
-    "ja": "このワンピース、正直な意見を聞いてもいいですか？",
-    "en": "Could I ask your honest opinion on this dress?",
-    "alternatives": [
-      "Could I ask for your honest opinion on this dress?",
-      "May I ask your honest opinion on this dress?",
-      "Can I get your honest opinion on this dress?"
-    ],
-    "point": "丁寧な許可は Could I / May I で始める",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 2,
-    "grammar": ["requests-permission"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:ba4872d2b32a36c6680bf160f057bf1a1c25f9df83ad2bcfe5464bde8f304eaa",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_8d3r4e7g",
-    "ja": "もし彼があの仕事を断っていなかったら、今ごろもっと幸せだったと思う？",
-    "en": "Do you think he'd be happier now if he hadn't turned down that job?",
-    "alternatives": [
-      "If he hadn't turned down that job, do you think he'd be happier now?",
-      "If he hadn't said no to that job, do you think he'd be happier now?"
-    ],
-    "point": "過去の仮定は hadn't turned down、今の結果は would be",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 9,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:3c0559c0e52cc00d2716d67930cd70ed05c127e2a714ac3cbc409c5d339d613d",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_8r2e8e4s",
-    "ja": "あの日ちゃんと話し合っていたら、私たち、今こんなに気まずい思いをしていないはずだよ。",
-    "en": "If we had talked things through properly that day, we wouldn't be feeling this awkward around each other now.",
-    "alternatives": [
-      "If we'd properly talked it over that day, we wouldn't feel so awkward around each other now.",
-      "If we'd talked it through properly that day, things wouldn't be this awkward between us now."
+      "Had we talked it through, things wouldn't be this awkward now.",
+      "If we'd properly talked it over, we wouldn't feel awkward now."
     ],
     "point": "過去の仮定は had talked、今の結果は wouldn't be と分ける",
     "topic": "daily",
     "subtopic": "feelings",
     "level": 10,
     "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:2310439d3d46b70c3cb3cc80d775018c1783380cafaec3dd73856dd45165a32b",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3x9h9f5v",
+    "ja": "店長が、企画いいって。めっちゃ嬉しい！",
+    "en": "She said it was great. I'm thrilled!",
+    "alternatives": [
+      "She told me it was great. I'm thrilled!",
+      "The manager said it's great. I'm so happy!"
+    ],
+    "point": "said の後は時制を合わせて was にする",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 5,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4c5m2t9p",
+    "ja": "母が一番喜んだのは、孫たちからの手紙でした。",
+    "en": "It was the grandkids' letters that pleased my mother most.",
+    "alternatives": [
+      "What pleased my mother most was the grandkids' letters.",
+      "The grandkids' letters were what pleased my mother most."
+    ],
+    "point": "強調したい部分を It was と that で挟む",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4s4d2k2q",
+    "ja": "兄は平気と言うけど、実は落ち込んでる。",
+    "en": "Although my brother says he's fine, he's upset.",
+    "alternatives": [
+      "My brother says he's fine, but he's hurting.",
+      "Even though he says he's okay, he's really upset."
+    ],
+    "point": "although の後は節。but と一緒には使わない",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4u4z8h9e",
+    "ja": "予定をあきらめて、がっかりしてない？",
+    "en": "Aren't you disappointed you gave up your plans?",
+    "alternatives": [
+      "Aren't you upset about giving up your plans?",
+      "Aren't you disappointed about giving up your plans?"
+    ],
+    "point": "「あきらめる」は give up。目的語は間に入らない",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["phrasal-verbs", "noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5c2j3g6d",
+    "ja": "兄は、私が誕生日を覚えていたことに大喜びした。",
+    "en": "My brother was thrilled I'd remembered his birthday.",
+    "alternatives": [
+      "My brother was so happy I had remembered his birthday.",
+      "My brother was delighted that I'd remembered his birthday."
+    ],
+    "point": "喜んだ時点より前のことなので覚えていたは had + 過去分詞",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5j8d8d2g",
+    "ja": "コンサートが中止と聞いて、がっかりした。",
+    "en": "I was disappointed the concert got canceled.",
+    "alternatives": [
+      "I was upset the concert got canceled.",
+      "I was disappointed to hear it was canceled."
+    ],
+    "point": "「中止になった」は got canceled でも言える",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 5,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5s6m9b5h",
+    "ja": "新しい仕事にはもう慣れたよ。",
+    "en": "I've gotten used to my new job.",
+    "alternatives": ["I'm used to my new job now.", "I've gotten used to the new job."],
+    "point": "「慣れた」は have gotten used to で現在完了",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 4,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5u2g8z6q",
+    "ja": "正直な意見、聞いてもいいですか？",
+    "en": "Could I ask your honest opinion?",
+    "alternatives": [
+      "May I ask for your honest opinion?",
+      "Could I get your honest opinion?"
+    ],
+    "point": "丁寧な許可は Could I / May I で始める",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5w7s4h5p",
+    "ja": "宝くじが当たったら、あなたは仕事を辞める？",
+    "en": "Would you quit if you won the lottery?",
+    "alternatives": [
+      "If you won the lottery, would you quit your job?",
+      "If you hit the jackpot, would you quit working?"
+    ],
+    "point": "ありえない仮定は if 節を過去形、主節を would にする",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5y3m7q7t",
+    "ja": "上司に本当のことを言ったほうがいいよ。",
+    "en": "You should tell your boss the truth.",
+    "alternatives": [
+      "You'd better tell your boss the truth.",
+      "You should be honest with your boss."
+    ],
+    "point": "「〜したほうがいい」は should + 動詞の原形",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 4,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6h3t9n9y",
+    "ja": "最近よく眠れてなくて、ちょっと参ってる。",
+    "en": "I've been sleeping badly. It's wearing me down.",
+    "alternatives": [
+      "I haven't slept well lately. It's getting to me.",
+      "I've barely been sleeping. It's wearing me out."
+    ],
+    "point": "「参ってる」は wear down / wear out で表せる",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["present-perfect-continuous", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6t9j4k6x",
+    "ja": "一番がっかりなのは、誰も手伝わなかったこと。",
+    "en": "What disappointed me most was that nobody helped.",
+    "alternatives": [
+      "Honestly, the worst part was that no one helped.",
+      "The most disappointing thing was that nobody helped."
+    ],
+    "point": "「〜なのは」は what 節、「〜ということ」は that 節で表す",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6u5m2a5p",
+    "ja": "こんなに温かく迎えられるとは、夢にも思わなかった。",
+    "en": "Never did I imagine such a warm welcome.",
+    "alternatives": [
+      "I never imagined I'd be welcomed so warmly.",
+      "I never dreamed of such a warm welcome."
+    ],
+    "point": "Never を文頭に出すと did I imagine の語順になる",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7f6x3m3t",
+    "ja": "電話している男性に、正直イライラしています。",
+    "en": "Honestly, I'm annoyed by the man on the phone.",
+    "alternatives": [
+      "The man on the phone is really annoying me.",
+      "Honestly, the man on the phone is irritating me."
+    ],
+    "point": "「電話している男性」は the man on the phone と後ろから修飾",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 8,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7g8z9h8q",
+    "ja": "あの頃、もっと正直になればよかった。",
+    "en": "I wish I'd been more honest back then.",
+    "alternatives": [
+      "If only I'd been more honest back then.",
+      "I wish I'd been more upfront back then."
+    ],
+    "point": "過去への後悔は wish の後を過去完了にする",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7j2k2y9r",
+    "ja": "彼女にあんなこと言うべきじゃなかった。",
+    "en": "I shouldn't have said that to her.",
+    "alternatives": [
+      "I never should have said that to her.",
+      "I shouldn't have told her that."
+    ],
+    "point": "過去への後悔は shouldn't have + 過去分詞",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8c7y5h2d",
+    "ja": "姉は合格通知を見つめたまま、じっと座っていた。",
+    "en": "My sister sat staring at her acceptance letter.",
+    "alternatives": [
+      "My sister sat there, staring at her acceptance letter.",
+      "My sister kept staring at her acceptance letter, motionless."
+    ],
+    "point": "「〜したまま」は sat staring のように ing 形で続ける",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8c8x2z5y",
+    "ja": "知ってたら、迎えに行ったのに。残念！",
+    "en": "If I'd known, I'd have picked you up.",
+    "alternatives": [
+      "Had I known, I'd have picked you up.",
+      "If you'd told me, I'd have picked you up."
+    ],
+    "point": "過去の仮定は If I'd known + I'd have 過去分詞",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8u4j2n3w",
-    "ja": "この服の色、派手すぎると思う？",
-    "en": "Do you think this color is too bright?",
-    "alternatives": [
-      "Do you think this color is too flashy?",
-      "Do you think this color's too loud?"
-    ],
-    "point": "Do you think の後ろは this color is と普通の語順",
+    "ja": "この服、派手すぎると思う？",
+    "en": "Do you think it's too bright?",
+    "alternatives": ["Do you think it's too flashy?", "Do you think it's too loud?"],
+    "point": "Do you think の後ろは it's と普通の語順",
     "topic": "daily",
     "subtopic": "feelings",
     "level": 3,
@@ -570,91 +399,96 @@
     }
   },
   {
-    "id": "c_8v2p7j4k",
-    "ja": "明日の朝もまだ雨が降ってたら、家にいたほうがよくない？",
-    "en": "Wouldn't it be better to stay home if it's still raining tomorrow morning?",
-    "alternatives": [
-      "If it's still raining tomorrow morning, wouldn't it be better to stay home?",
-      "Shouldn't we just stay home if it's still raining tomorrow morning?"
-    ],
-    "point": "未来でも if 節は現在形 it's still raining",
+    "id": "c_8y2a5y6k",
+    "ja": "ここ、好き！また来ようよ。",
+    "en": "Love it! Let's come back.",
+    "alternatives": ["I like it! Let's come again.", "I love it! Let's return soon."],
+    "point": "「〜しようよ」は Let's + 動詞の原形",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 5,
-    "grammar": ["time-and-if-clauses", "infinitives"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:f0c004151622dd510c5ed0720a2cdd899f127d0dd0e934b03dc0d1c69ffd1132",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_8v3y6q4y",
-    "ja": "新しい仕事、最初は緊張したけど、もう慣れたよ。",
-    "en": "I was nervous at first, but I've gotten used to my new job.",
+    "id": "c_9d6j6d5y",
+    "ja": "彼が今辞めるのはもったいないよ。",
+    "en": "It'd be a waste for him to quit now.",
     "alternatives": [
-      "My new job made me nervous at first, but I've gotten used to it.",
-      "I was nervous at first, but I'm used to my new job now."
+      "It'd be a shame if he quit now.",
+      "Quitting now would be a waste for him."
     ],
-    "point": "「最初は」は過去形、「もう慣れた」は現在完了で",
+    "point": "「〜するのはもったいない」は It'd be a waste for 人 to 動詞",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 4,
-    "grammar": ["tense-contrast"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:55d3394b873d032080d0a92fa72de351bbb0becbd0d3f9be26258f0c67791842",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
+    "level": 7,
+    "grammar": ["infinitives", "hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_8x6n4f2g",
-    "ja": "引っ越しの準備で困っていたとき、同僚が役に立つアドバイスをたくさんくれて、本当に助かりました。",
-    "en": "When I was struggling to get ready for the move, a coworker gave me a lot of useful advice, and it was a huge help.",
+    "id": "c_9e4m3m8w",
+    "ja": "兄に映画を最後まで見させられて、ムッとした。",
+    "en": "My brother made me finish the movie. Annoying!",
     "alternatives": [
-      "When I was having a hard time getting ready for the move, a coworker gave me lots of helpful advice, which really helped.",
-      "A coworker gave me a lot of useful advice when I was struggling to prepare for the move, and it really helped me out."
+      "My brother made me sit through it. So annoying!",
+      "My brother made me watch the whole movie. Annoying!"
     ],
-    "point": "advice は数えられないので advices や a advice にしない",
+    "point": "「無理やり〜させる」は make 人 + 動詞の原形",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9k9a7a4v",
+    "ja": "彼女が私の案を気に入ったと聞いて、ほっとした。",
+    "en": "I was relieved to hear she liked my idea.",
+    "alternatives": [
+      "It was a relief to hear she liked my idea.",
+      "I felt relieved when I heard she liked my idea."
+    ],
+    "point": "聞いた内容の節は that を省いて過去形のまま続ける",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 8,
+    "grammar": ["reported-speech", "infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9x4s8u9s",
+    "ja": "あの仕事を断っていなければ、彼は今もっと幸せかな？",
+    "en": "If he hadn't turned it down, would he be happier now?",
+    "alternatives": [
+      "Would he be happier now if he hadn't said no?",
+      "If he hadn't declined, would he be happier now?"
+    ],
+    "point": "過去の仮定は hadn't turned down、今の結果は would be",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9y9g5z9j",
+    "ja": "引っ越しで困っていたとき、同僚がいい助言をくれた。",
+    "en": "When I was moving, a coworker gave me great advice.",
+    "alternatives": [
+      "A coworker gave me some great advice during my move.",
+      "My coworker gave me a lot of useful advice on moving."
+    ],
+    "point": "advice は数えられないので advices や an advice にしない",
     "topic": "daily",
     "subtopic": "feelings",
     "level": 10,
     "grammar": ["articles-and-countability"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:b9706df3206596ed4a82a20c6a9614e77e437f9327dc0958f447338dfedec254",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
-  },
-  {
-    "id": "c_9w9f9c6s",
-    "ja": "あの頃、自分の気持ちにもっと正直になっていればよかったって、今でも時々思うんだ。",
-    "en": "I sometimes still wish I'd been more honest about my feelings back then.",
-    "alternatives": [
-      "I still sometimes wish I had been more honest about how I felt back then.",
-      "Sometimes I still wish I'd been more upfront about my feelings back then."
-    ],
-    "point": "過去への後悔は wish の後を過去完了（I'd been）にする",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 6,
-    "grammar": ["wishes-regrets"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:15c3f378a671afdc9410d460e449242eee67981c139322c65198bb3dfb907037",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]
