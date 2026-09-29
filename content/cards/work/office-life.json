@@ -10,7 +10,13 @@
     "level": 3,
     "grammar": ["time-and-if-clauses", "future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9f1cc1a4f5ad82e9310bda9de3f16e44a29167d8bb02b96a541f94a789ac2cc9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2c5j4r5e",
@@ -41,9 +47,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:f01de4e6767e8997e568000619215f998201fee7c17143eec34cf80d66cf3668",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:11d6ac222ff95c0f71d4ee3ea0ca11aa08a1365c1ffe8fd798134a778a25deff",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -128,22 +134,6 @@
     "stamps": {}
   },
   {
-    "id": "c_5b8m3j6y",
-    "ja": "部長が来たとき、休憩してた？",
-    "en": "Were you resting when the boss came?",
-    "alternatives": [
-      "Were you resting when the manager came?",
-      "Were you resting when the boss arrived?"
-    ],
-    "point": "その時していた最中の動作は Were you -ing で聞く",
-    "topic": "work",
-    "subtopic": "office-life",
-    "level": 3,
-    "grammar": ["progressive-aspect", "past-simple"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5h2a9m9y",
     "ja": "彼女が言ってくれたら、皆で代われたのに。",
     "en": "If she'd told us, we'd have stepped in.",
@@ -174,7 +164,13 @@
     "level": 2,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3bbe7e9e6a849cfbf129054eaefe7947af3fa0f1ae3c85a139ddd72c7e3f72ca",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6c6q6w8k",
@@ -190,8 +186,8 @@
     "stamps": {
       "core": {
         "hash": "sha256:276c31d50f6a43365070ef9bdc35a7d488d24d73d6dda81628d11e0351956559",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -260,26 +256,10 @@
     "stamps": {
       "core": {
         "hash": "sha256:c68360f7549f454f539b48e79cd91515a80e8bfa6b49f71a5f5e68e559061f37",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_7f9v2k8p",
-    "ja": "在宅勤務なら、朝ゆっくり寝られるのに。",
-    "en": "If I worked remotely, I could sleep in.",
-    "alternatives": [
-      "I could sleep in if I worked remotely.",
-      "If I telecommuted, I could sleep in."
-    ],
-    "point": "「寝られるのに」は could。If＋過去形で現在の仮定",
-    "topic": "work",
-    "subtopic": "office-life",
-    "level": 5,
-    "grammar": ["second-conditional", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_7j9q8d6m",
@@ -297,9 +277,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:b95222bbcf7de43fa7ce2c9c0b02893fbea200446a3853005ce0c9c8b93b0651",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:20a1d1f93f8c9e307401842889532a4163702030a7585e61d41b3555956aad4d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -346,7 +326,13 @@
     "level": 2,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f9a738ec1b927ff868de980ee85005b819f47e51ccc63edd51f6da44fccea36b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8n6r4n6g",
@@ -362,7 +348,13 @@
     "level": 4,
     "grammar": ["relative-clauses", "present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:187e14d3b9aa70fd2bc19d34b69de6a155992b5439140bd351d16bce798cda57",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8n6z2n3j",
@@ -394,7 +386,13 @@
     "level": 5,
     "grammar": ["past-perfect", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5fdc29bccefb86930fd771e0e123a3275edbfbb356f6a5bd3a108e246e0d283f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9m4w2q8z",
@@ -407,7 +405,13 @@
     "level": 5,
     "grammar": ["causatives", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bf01bbe0adf390bd1ffd7e484e6f88b0aff55edba9546272d9eb15fb3e0e0a73",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9u7j9f5f",
@@ -420,6 +424,12 @@
     "level": 1,
     "grammar": ["wh-questions", "articles-and-countability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:aa125ed11358c3fe894b98a45a24d1e3d060ae8ff212f023b367fa8d5a5876a9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]

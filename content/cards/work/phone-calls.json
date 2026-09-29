@@ -16,22 +16,6 @@
     "stamps": {}
   },
   {
-    "id": "c_2b7g9e5x",
-    "ja": "上司がいつ戻るか分かりますか？",
-    "en": "Do you know when my boss returns?",
-    "alternatives": [
-      "Any idea when my boss will be back?",
-      "Can you tell me when my boss returns?"
-    ],
-    "point": "間接疑問は when my boss returns の語順にする",
-    "topic": "work",
-    "subtopic": "phone-calls",
-    "level": 4,
-    "grammar": ["indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2g7s2p2q",
     "ja": "田中さん、ミュートです。",
     "en": "Mr. Tanaka, you're on mute.",
@@ -55,7 +39,7 @@
     "point": "強調したい語を It was と that で挟む",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 9,
+    "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -100,17 +84,30 @@
   },
   {
     "id": "c_3a4r7w4j",
-    "ja": "受付の人が、田中さんは会議中だと言っていました。",
+    "ja": "受付の人が、田中さんは会議中だと言ってました。",
     "en": "The receptionist said Mr. Tanaka was in a meeting.",
     "alternatives": [
-      "The receptionist told me Mr. Tanaka was in a meeting.",
-      "The front desk said Mr. Tanaka was in a meeting."
+      "Reception said Mr. Tanaka was in a meeting.",
+      "Reception told me Mr. Tanaka was in a meeting."
     ],
     "point": "said に合わせて is を was にずらす",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 7,
+    "level": 6,
     "grammar": ["reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3c4m2q5j",
+    "ja": "どちら様か教えていただけますか？",
+    "en": "Could you tell me who's calling?",
+    "alternatives": ["May I ask who's calling?", "Could I ask who is calling?"],
+    "point": "間接疑問は疑問文の語順にせず who's calling とする",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["indirect-questions", "requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -119,13 +116,13 @@
     "ja": "僕が君なら、先方にかけ直してもらうけどね。",
     "en": "If I were you, I'd have them call back.",
     "alternatives": [
-      "If I were you, I'd get them to call back.",
-      "I'd ask them to call back if I were you."
+      "I'd have them call back if I were you.",
+      "If I were you, I'd get a callback."
     ],
     "point": "「僕が君なら」は If I were you, I'd で表す",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 8,
+    "level": 6,
     "grammar": ["second-conditional", "causatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -136,12 +133,12 @@
     "en": "He said he wished he'd checked his mic.",
     "alternatives": [
       "He said he should've checked his mic.",
-      "He told me he wished he had checked his mic."
+      "He told me he wished he'd checked his mic."
     ],
     "point": "過去への後悔は wish + had 過去分詞",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 8,
+    "level": 6,
     "grammar": ["wishes-regrets", "reported-speech"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -152,12 +149,12 @@
     "en": "There's noise, so you should mute yourself.",
     "alternatives": [
       "Maybe mute yourself, since there's some noise.",
-      "We're getting noise, so you should mute yourself."
+      "You should mute yourself because there's noise."
     ],
     "point": "「〜したら？」は軽い助言なので you should が自然",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 5,
+    "level": 3,
     "grammar": ["modal-obligation-advice", "there-is-are"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -195,7 +192,7 @@
     "point": "過去の推量は might / may have + 過去分詞",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 8,
+    "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -216,7 +213,7 @@
   {
     "id": "c_5p8c6y3c",
     "ja": "映像なしでも、音声が安定してれば続けられますよ。",
-    "en": "Even without video, we can carry on if audio holds up.",
+    "en": "Even without video, we can carry on if the audio holds up.",
     "alternatives": [
       "We can keep going without video if the audio stays stable.",
       "Even without video, we can keep going if the audio holds."
@@ -256,7 +253,7 @@
     "point": "「手が離せない」は tied up が定番",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 8,
+    "level": 6,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -266,13 +263,13 @@
     "ja": "あの電話、回す前に内線を確認すべきだった。",
     "en": "I should've checked the extension before transferring that call.",
     "alternatives": [
-      "I should have confirmed the extension before putting it through.",
+      "I should've confirmed the extension before putting it through.",
       "I should've double-checked the extension before I transferred it."
     ],
     "point": "過去の後悔は should have + 過去分詞",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 8,
+    "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -353,7 +350,7 @@
   {
     "id": "c_7t5z7s3p",
     "ja": "商談前に、IT 部にマイクをテストしてもらえる？",
-    "en": "Can you have IT test mics before the meeting?",
+    "en": "Can you have IT test the mics before the meeting?",
     "alternatives": [
       "Can you get IT to test mics before the meeting?",
       "Can you have IT check the mics before the meeting?"
