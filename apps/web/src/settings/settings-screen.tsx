@@ -72,7 +72,7 @@ export function SettingsScreen({
   return (
     <main className="mx-auto box-content flex max-w-column flex-col gap-10 px-4 pt-4 pb-10">
       <BackHeader title={t("title")} back={t("back")} escape={!asking && !choosing} />
-      {state.failed || zoneFailed ? (
+      {state.failed || level.failed || zoneFailed ? (
         <p role="alert" className="rounded-tile bg-raised px-4 py-3">
           {t("saveFailed")}
         </p>

@@ -53,6 +53,8 @@ export function WelcomeScreen({
   const [saving, setSaving] = useState(false);
   const [failed, setFailed] = useState(false);
   const zoneSent = useRef(false);
+  /** A level picked earlier in this visit was saved, though the topics after it were not. */
+  const manualSaved = useRef(false);
   usePrimaryKey();
 
   async function save(topicIds: string[], picked: number | null): Promise<boolean> {
@@ -62,8 +64,13 @@ export function WelcomeScreen({
       if (!sent.ok && sent.error.code !== "ERR_BAD_REQUEST") return false;
       zoneSent.current = true;
     }
-    if (picked !== null && !(await updateLevel({ mode: "manual", level: picked })).ok) {
-      return false;
+    if (picked !== null) {
+      if (!(await updateLevel({ mode: "manual", level: picked })).ok) return false;
+      manualSaved.current = true;
+    } else if (manualSaved.current) {
+      // Measuring instead: an abandoned placement must not leave the pick fixed.
+      if (!(await updateLevel({ mode: "auto" })).ok) return false;
+      manualSaved.current = false;
     }
     return (await updateSettings({ topics: topicIds })).ok;
   }

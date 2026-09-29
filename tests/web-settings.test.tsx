@@ -498,6 +498,72 @@ describe("the settings screen, the difficulty", () => {
     ).toStrictEqual([]);
   });
 
+  it("rolls back to the newest change saved, whatever order the answers arrive in", async () => {
+    const answers: ((response: Response) => void)[] = [];
+    fakeApi((call) =>
+      call.method === "GET"
+        ? Response.json(PAGE)
+        : new Promise<Response>((resolve) => {
+            answers.push(resolve);
+          }),
+    );
+    await renderApp("/settings");
+    const sheet = openDifficulty();
+    const option = (toeic: string): HTMLElement =>
+      within(sheet).getByRole("radio", {
+        name: fill(ja.Settings.difficulty.option, { toeic }),
+      });
+    const view = (level: number, toeic: string): Response =>
+      Response.json({ mode: "manual", level, toeic } satisfies LevelView);
+
+    fireEvent.click(option("860"));
+    fireEvent.click(option("900"));
+    await settle();
+    answers[1]?.(view(8, "900"));
+    await settle();
+    answers[0]?.(view(7, "860"));
+    await settle();
+    expect(option("900")).toHaveAttribute("aria-checked", "true");
+
+    fireEvent.click(option("300"));
+    await settle();
+    answers[2]?.(refusal(409, "ERR_CONFLICT"));
+    await settle();
+    expect(within(sheet).getByRole("alert")).toHaveTextContent(ja.Settings.saveFailed);
+    expect(option("900")).toHaveAttribute("aria-checked", "true");
+  });
+
+  it("says a change failed on the screen itself when the sheet was closed before the answer", async () => {
+    const answers: ((response: Response) => void)[] = [];
+    fakeApi((call) =>
+      call.method === "GET"
+        ? Response.json(PAGE)
+        : new Promise<Response>((resolve) => {
+            answers.push(resolve);
+          }),
+    );
+    await renderApp("/settings");
+    const sheet = openDifficulty();
+    fireEvent.click(
+      within(sheet).getByRole("radio", {
+        name: fill(ja.Settings.difficulty.option, { toeic: "300" }),
+      }),
+    );
+    fireEvent.click(
+      within(sheet).getByRole("button", { name: ja.Settings.difficulty.close }),
+    );
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    await settle();
+    answers[0]?.(refusal(409, "ERR_CONFLICT"));
+    await settle();
+    expect(screen.getByRole("alert")).toHaveTextContent(ja.Settings.saveFailed);
+    expect(
+      screen.getByText(
+        difficultyState("auto", fill(ja.Records.toeic, { toeic: "730" })),
+      ),
+    ).toBeInTheDocument();
+  });
+
   it("goes back to the level as saved, and says so, when a change fails", async () => {
     fakeApi((call) => {
       if (call.method === "GET" && call.url === "/api/v1/settings") {

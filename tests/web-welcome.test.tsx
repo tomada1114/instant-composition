@@ -357,6 +357,36 @@ describe("the welcome screen, W1 picking a level", () => {
     expect(start()).toBeEnabled();
   });
 
+  it("hands a level saved this visit back to auto when the learner then measures instead", async () => {
+    let attempts = 0;
+    const calls = serveWelcome({
+      save: () => {
+        attempts += 1;
+        return attempts === 1 ? refusal(409, "ERR_CONFLICT") : Response.json(SAVED);
+      },
+    });
+    await renderApp("/welcome");
+    fireEvent.click(screen.getByRole("button", { name: /仕事/u }));
+    fireEvent.click(next());
+    fireEvent.click(screen.getByRole("button", { name: ja.Welcome.start.choose }));
+    fireEvent.click(level("730"));
+    fireEvent.click(start());
+    await settle();
+    expect(screen.getByRole("alert")).toHaveTextContent(ja.Welcome.saveFailed);
+    fireEvent.click(screen.getByRole("button", { name: ja.Welcome.back }));
+    fireEvent.click(measure());
+    await settle();
+    await settle();
+    expect(patches(calls)).toStrictEqual([
+      ["/api/v1/me", { timeZone: BROWSER_ZONE }],
+      ["/api/v1/level", { mode: "manual", level: 5 }],
+      ["/api/v1/settings", { topics: ["work"] }],
+      ["/api/v1/level", { mode: "auto" }],
+      ["/api/v1/settings", { topics: ["work"] }],
+    ]);
+    expect(where()).toBe("/drill?kind=placement");
+  });
+
   it("goes back a step at a time, keeping the topics chosen", async () => {
     const calls = serveWelcome();
     await renderApp("/welcome");

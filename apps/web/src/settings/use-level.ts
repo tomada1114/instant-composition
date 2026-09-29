@@ -11,8 +11,9 @@ export interface LevelState {
 }
 
 /**
- * Saves each change of level or mode as it is made, the way `useSettings`
- * does: shown at once, settled by the latest answer, put back on a failure.
+ * Saves each change of level or mode as it is made: shown at once, and put
+ * back on a failure to what the newest successful change saved. Answers may
+ * arrive out of order, so an older success never overwrites a newer one.
  */
 export function useLevel(
   initial: LevelView,
@@ -22,6 +23,10 @@ export function useLevel(
   const [failed, setFailed] = useState(false);
   const saved = useRef(initial);
   const latest = useRef(0);
+  /** The newest request whose success `saved` holds; 0 for the level as read. */
+  const settled = useRef(0);
+  /** The newest request failed, so the view shows `saved` rather than a pending change. */
+  const latestFailed = useRef(false);
 
   function choose(choice: LevelChoice): void {
     const request = ++latest.current;
@@ -31,15 +36,19 @@ export function useLevel(
       return { mode: "manual", level: choice.level, toeic: toeic ?? current.toeic };
     });
     setFailed(false);
+    latestFailed.current = false;
     void updateLevel(choice).then((result) => {
-      if (result.ok) saved.current = result.value;
-      if (request !== latest.current) return;
-      if (!result.ok) {
-        setView(saved.current);
-        setFailed(true);
+      if (result.ok) {
+        if (request <= settled.current) return;
+        settled.current = request;
+        saved.current = result.value;
+        if (request === latest.current || latestFailed.current) setView(result.value);
         return;
       }
-      setView(result.value);
+      if (request !== latest.current) return;
+      latestFailed.current = true;
+      setView(saved.current);
+      setFailed(true);
     });
   }
 
