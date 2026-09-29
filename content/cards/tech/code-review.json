@@ -35,7 +35,13 @@
     "level": 9,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:22ad3959ecd7909e32335caf16c67a3c9a0d47e5b4238738aa2b8f7f91c7963f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3t5k5j3e",
@@ -51,7 +57,13 @@
     "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f3517189c962d418ff7efda25ca607a5ce1d3f5d99c3f7a8af7e7598b032d1c6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3v2p3m7q",
@@ -174,7 +186,13 @@
     "level": 6,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fd1d878aa523748257a379706a80f9ec8f4d47d7d039ca9c59f357438db6c722",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5m5c7k9c",
@@ -197,38 +215,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_5n5j2f4p",
-    "ja": "見てほしいのは、ネット切断時にリトライが動くかです。",
-    "en": "What I'd like you to check is whether retries work offline.",
-    "alternatives": [
-      "Could you check whether retries work offline?",
-      "What I want you to check is if retries work offline."
-    ],
-    "point": "「見てほしいのは」は What I'd like you to check is で始める",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 9,
-    "grammar": ["cleft-emphasis", "indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5r5x8s2x",
-    "ja": "リトライがエラーを隠さないか心配でした。",
-    "en": "I was worried the retries would hide errors.",
-    "alternatives": [
-      "I was afraid the retries would mask errors.",
-      "I was worried retries might hide errors."
-    ],
-    "point": "「心配だった」は I was worried + 節で続ける",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 6,
-    "grammar": ["noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_5u5e9p5z",
@@ -266,7 +252,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:88dd052b6e284f2ba4faac8bdfca8c5578cd78d87c295f96dc0d4e993a41f7ce",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6a2a2j6d",
@@ -282,7 +274,13 @@
     "level": 8,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cdab6c78b13e61182aa47af62ccf973abf226a79374bfc941e887f55646f2cbf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6n9j8c7n",
@@ -298,7 +296,13 @@
     "level": 5,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:281567a6fa3fc3300eb8b58f4e43b72911239077a64c4cebf2ede7fc03b31f3c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7z9v9g9j",
@@ -342,22 +346,6 @@
     }
   },
   {
-    "id": "c_8w4s4r2y",
-    "ja": "変数名ごときで、話を長引かせるのはやめよう。",
-    "en": "Let's not drag this out over a variable name.",
-    "alternatives": [
-      "Let's not waste more time arguing over a variable name.",
-      "We shouldn't draw this out over a variable name."
-    ],
-    "point": "「長引かせる」は drag out（drag this out）",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 10,
-    "grammar": ["phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_9b2h4a7n",
     "ja": "見つけてくれなかったら、僕らそのまま出してた。",
     "en": "If you hadn't caught it, we'd have shipped it.",
@@ -371,7 +359,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:761f48427469e38bc54042814e94386483e176a5787f2226831af0aa8702babe",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9k9r3r2e",
@@ -396,22 +390,6 @@
     }
   },
   {
-    "id": "c_9q2z9p4s",
-    "ja": "マージしたら、僕からチームに知らせます。",
-    "en": "I'll tell the team when I merge.",
-    "alternatives": [
-      "I'll let the team know once I merge.",
-      "Once I merge, I'll tell the team."
-    ],
-    "point": "未来のことでも when 節は現在形で merge とする",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 4,
-    "grammar": ["time-and-if-clauses", "future-forms"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_9s8h4x5r",
     "ja": "きっと君、スナップショットの更新を忘れたんですね。",
     "en": "You must have forgotten to update the snapshots.",
@@ -425,7 +403,13 @@
     "level": 7,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4dcbf3acfa79caa235478bc3d1d9c5caa351c0046014d9059e1e90df627e54c6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9t3h8y3u",
@@ -441,6 +425,12 @@
     "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:914dad8e7b97614932bd19995f4e5e3b159760f365e79497b28e7542637b2579",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
