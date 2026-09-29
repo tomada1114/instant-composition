@@ -10,7 +10,13 @@
     "level": 5,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8bfe62d589e366d40a93eb0dbb0701bd4cfb71d11ba65aaa2708ddb0229869fe",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3g6c2w5g",
@@ -20,10 +26,16 @@
     "point": "「大人二枚」は人数で頼める",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 4,
+    "level": 2,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5cdcf67ddd758807f390c9295f21528f496706a0e8a24df15ec397ffe4c375f1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3k4a3r4k",
@@ -36,7 +48,13 @@
     "level": 5,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1008835b57c180722a21893bba5d336717ec2b71d71c8a507175279275a44edb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4s6n8p5s",
@@ -49,7 +67,13 @@
     "level": 4,
     "grammar": ["wh-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cf18e4e1c77181e9f81afc95d09497d0d1b1a547ae6bfc32f1882750df059c0a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5d2m2m2t",
@@ -65,7 +89,13 @@
     "level": 4,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:931a261f272bb270dce50e5af1c02414381d53c6eb3449b7a0ed1c59e9e67cc7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5f8j7f6y",
@@ -78,6 +108,12 @@
     "level": 5,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:64f20f750d063f072d8d5f23d9fefb79eae1aecd09853b3e2ff07ca370fc1bdf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

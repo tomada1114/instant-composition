@@ -1,7 +1,7 @@
 [
   {
     "id": "c_4y2j8b7z",
-    "ja": "金曜までには終えられません。",
+    "ja": "金曜までに終えられません。",
     "en": "I can't finish it by Friday.",
     "alternatives": [
       "I can't get it done by Friday.",
@@ -13,37 +13,58 @@
     "level": 5,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ebfc79894a642c3a22a18e30c607e4be1b21ed469b9dbfddb568dff7a4b463cf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5a5d9j8h",
-    "ja": "納期がいつか、ご存じですか？",
+    "ja": "納期がいつかご存じですか？",
     "en": "Do you know when it's due?",
-    "alternatives": ["Do you know when it's due by?", "Any idea when it's due?"],
+    "alternatives": [
+      "Do you know when the deadline is?",
+      "Would you know when it's due?"
+    ],
     "point": "間接疑問は when it's due の語順",
     "topic": "work",
     "subtopic": "reporting",
     "level": 4,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:09634d91ab08c2aa70840bcf3f96ad431669f72e9c1a5d9596b8e5a945a661d5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5a5w8g6s",
     "ja": "わかり次第、ご報告します。",
     "en": "I'll update you when I know.",
-    "alternatives": ["I'll update you once I know.", "I'll let you know when I know."],
+    "alternatives": ["I'll update you once I know.", "I'll tell you once I know."],
     "point": "when 節の中は未来でも現在形",
     "topic": "work",
     "subtopic": "reporting",
     "level": 5,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a03ad655901a33992fd4a18ef05b5b29734857309f5a8cb52b58a9ec72d08f84",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6u2k6a5c",
-    "ja": "売り上げは先月より好調です。",
+    "ja": "売上は先月より好調です。",
     "en": "Sales are better than last month.",
     "alternatives": [
       "Sales are up from last month.",
@@ -55,7 +76,13 @@
     "level": 4,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2fb77c7677bf82a69e173046f651d970f755ec5cfc7e570f9acb20e9155b6ebe",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8a4m6d8y",
@@ -71,7 +98,13 @@
     "level": 4,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e1bce3b4cce81e5a40b533965dedbf6949a828c912b0fb9b88c8227dc4600e9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8v4z4g5h",
@@ -87,6 +120,12 @@
     "level": 5,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:631d11d9fd2fdffbbc41d47ab15d2170b52d08379afce0cc3bd9190a6eeec105",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

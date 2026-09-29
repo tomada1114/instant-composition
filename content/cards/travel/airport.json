@@ -7,10 +7,16 @@
     "point": "場所は Where で聞く",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 4,
+    "level": 2,
     "grammar": ["wh-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:593b3386453e128ec259e4bb00e36990efde7f7d416d2c816f81f3016c515697",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4k3p5p9p",
@@ -23,7 +29,13 @@
     "level": 4,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:faf040b00b0b1c835862b2dcd70348a25a81ebb62c5ab19895e6d9a3a57ec696",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4t9p8g2r",
@@ -39,7 +51,13 @@
     "level": 5,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4e1c4b9ef4d19205860b7c42ff2613f65c70e2ed1a57e3295a2d18c2f0378c80",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6m3t3h7p",
@@ -55,7 +73,13 @@
     "level": 5,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:196ae7659f9cb7ac76d8220d7c761fef5a324e0d1376d267d934e38b66afa59f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6q8m2f9v",
@@ -68,7 +92,13 @@
     "level": 4,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c9c6ceecb87efd0cd47f4dcc97862bc5bfda2e1bc53bcbd52c3752328b7e5da4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7z8w3v9p",
@@ -84,6 +114,12 @@
     "level": 5,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2f3066f3ceca26594d8dc85b6cf73c9d7a2f7daf22b48f6986be1d3cff1809f3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

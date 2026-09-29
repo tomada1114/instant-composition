@@ -13,7 +13,13 @@
     "level": 4,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:55b1b5a779de93ed00aaacb3f80cbe3f479a7b0848e56f73e5b408c29c4fd864",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4p8q5n7w",
@@ -29,20 +35,32 @@
     "level": 5,
     "grammar": ["wh-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fd968a1768a646ce869def8f8b03cb376f30df9afb4c972605397d873521d8bd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4t4a7m7t",
     "ja": "オフラインでも使えるよ。",
     "en": "You can use it offline.",
-    "alternatives": ["You're able to use it offline.", "It works offline too."],
+    "alternatives": ["It works offline too.", "You can even use it offline."],
     "point": "「できる」は can + 動詞の原形",
     "topic": "tech",
     "subtopic": "product-talk",
     "level": 4,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c4b025571ee967c3f614d50e27e58b3c8c631a70a5b6fe8fc47ab7b29a2cd9ec",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5w6x5t3z",
@@ -55,15 +73,21 @@
     "level": 5,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:46fb9db02b2e35bd559a3327278892adcd5066aedb4b286c6e22fdc597773b8c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7j3t9v8p",
     "ja": "地味なのに人気の機能だ。",
-    "en": "Although it's minor, it's very popular.",
+    "en": "Although it's unglamorous, it's popular.",
     "alternatives": [
-      "Even though it's minor, it's popular.",
-      "This feature's minor, but it's popular."
+      "Even though it's plain, it's popular.",
+      "It's a plain feature, but it's popular."
     ],
     "point": "「〜なのに」は although / even though",
     "topic": "tech",
@@ -71,15 +95,21 @@
     "level": 5,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fed750eca52c5291ce91fc048efdabda00dbf86ff6d418fa54bc3e1ebd59e4ca",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9c3a7f2m",
     "ja": "月曜に新プランを公開する。",
-    "en": "We're launching the plan Monday.",
+    "en": "We're launching the new plan Monday.",
     "alternatives": [
-      "We're launching the new plan on Monday.",
-      "We launch the plan on Monday."
+      "We're releasing the new plan Monday.",
+      "The new plan goes live Monday."
     ],
     "point": "決まった予定は進行形で言える",
     "topic": "tech",
@@ -87,6 +117,12 @@
     "level": 4,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4717c002658f2b33cfffe81fb79b41202d5654d9e6b9c765bf87b619a3478bf4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

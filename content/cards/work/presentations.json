@@ -7,10 +7,16 @@
     "point": "「見る」は look at＋対象",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 4,
+    "level": 3,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ad059f5a723374bdbe8251916ee5b94ec203f9ed63af462025b9d0aa54a34cc5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4y6m5j6k",
@@ -23,15 +29,21 @@
     "level": 4,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:17974f709a09d60e8fc7d708f6e43b288d4619ed210186d80c118522b65b60ea",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6k4u5g2g",
     "ja": "同僚に資料を見てもらった。",
-    "en": "I had a coworker check them.",
+    "en": "I had a coworker check my slides.",
     "alternatives": [
-      "I got a coworker to check them.",
-      "A coworker checked them for me."
+      "A coworker checked my slides for me.",
+      "I had a coworker check the slides."
     ],
     "point": "have＋人＋原形で「〜してもらう」",
     "topic": "work",
@@ -39,7 +51,13 @@
     "level": 5,
     "grammar": ["causatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:967b0a574ae4a47dd5c00c8e0dc908e1388c661a30d8e02cbe5506c0a2d0d37d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7b5d8k8z",
@@ -47,7 +65,7 @@
     "en": "I'll start by explaining the background.",
     "alternatives": [
       "Let me start by explaining the background.",
-      "I'll begin by explaining the background."
+      "I'll start with the background."
     ],
     "point": "by のあとは動名詞（-ing）",
     "topic": "work",
@@ -55,7 +73,13 @@
     "level": 5,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:60ef6f1b8da75b24876e0645df8e9c34f90e825999441c2111c601c42084aa36",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7f4m2h2g",
@@ -68,7 +92,13 @@
     "level": 5,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f4eccb71bdee07e96c3012e632c4fb92ebe23de8888484f1dc4e736f083cba58",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8h4k8a6n",
@@ -84,6 +114,12 @@
     "level": 4,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:76cabba039712238113e051fffa3f49ad363cab66ec92b4df7fe5e6ae44f9928",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

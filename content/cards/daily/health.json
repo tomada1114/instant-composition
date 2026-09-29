@@ -32,7 +32,13 @@
     "level": 4,
     "grammar": ["wh-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5a2f0c7c762c3409a7e5852ee2039be0d22fd8c2fb55c50bf709312d93247068",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6z8h2v8y",
@@ -67,7 +73,13 @@
     "level": 4,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7a383f2e222438fd6de0a0e5e351c8820a828dbaa9496577069fe63815788bb7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8a6k8z2a",
@@ -80,7 +92,13 @@
     "level": 4,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0ea111c4430dd0b397f54126fa7a9f1942144f24e357bb42a85542ca597a0d28",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8b3w9y3d",

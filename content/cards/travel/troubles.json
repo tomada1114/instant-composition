@@ -13,7 +13,13 @@
     "level": 5,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:027a16447cb0553679112f2d6845c2d1cc7d08651095b97809c31d797636e6bf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3m8g6f3j",
@@ -29,20 +35,32 @@
     "level": 5,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d7129be81a64003cf10a8dc72395dcff552e293969f30086e864c587fbc9261b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4g2y6n8f",
     "ja": "少し助けが必要です。",
     "en": "I need a little help.",
-    "alternatives": ["I need some help.", "Could I get some help?"],
+    "alternatives": ["I need some help.", "I could use a little help."],
     "point": "help は数えない名詞なので a help とは言わない",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 4,
+    "level": 3,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8581d205a4fcf64a6e66cb07accca690079de0a759b23fdf178be11e75df4c6e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4j4v4c2y",
@@ -58,7 +76,13 @@
     "level": 5,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c1abb04e30593ae3fd31d5e5e9711cfc7444c524db0049fd17e404786d82edeb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4j5d5p2t",
@@ -71,7 +95,13 @@
     "level": 4,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:eaae61f10b77f885018ba17088351ed13f3cc62f7e12be075b60a3dee2347d62",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6u4y7m6f",
@@ -87,6 +117,12 @@
     "level": 4,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d8cd21512e720febe63d6ceecf747c6a559223fd6ffb183580b86384b3459f91",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

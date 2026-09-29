@@ -13,7 +13,13 @@
     "level": 5,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e33d614c01511bf7c2fc8ebf5b9615f047cde590657ab8fb1e071213e93997f7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3j7s9w3e",
@@ -29,7 +35,13 @@
     "level": 4,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2ad7cf5e256caa7ec7c8b51ede227891df246115bf6ae03c4b4c539463f0f142",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3q8f8k2x",
@@ -45,20 +57,35 @@
     "level": 5,
     "grammar": ["wh-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:43c21093b6d8eb51c7009933c81a284237fa9b78ee741c50ee2b21b81b407351",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5d3g4p8t",
     "ja": "何時間もデバッグしてるよ。",
     "en": "I've been debugging for hours.",
-    "alternatives": ["I've been debugging all day.", "I've spent hours debugging."],
+    "alternatives": [
+      "I've spent hours debugging.",
+      "I've been debugging for hours now."
+    ],
     "point": "続いている動作は have been + -ing",
     "topic": "tech",
     "subtopic": "debugging",
     "level": 4,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cf1512417b9e3b581bbef783f67ee75576b21d633ce9c81d309403f76b2f4f60",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6a5b9g7k",
@@ -74,7 +101,13 @@
     "level": 4,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b59e872bcf8c160a3aef8269a874adb354d74e17b4ff8606db4ae96df13d22cf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6d3y8u7j",
@@ -90,6 +123,12 @@
     "level": 5,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:61db43aa659c29e200971b1ff770206985d5c51b75a94acb05a69c65f117f85b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

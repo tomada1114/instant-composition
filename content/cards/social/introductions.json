@@ -13,33 +13,32 @@
     "level": 5,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:30e0d73829ffdd0806a0e07ad82732dfce392393098c673fb90df07b5cb6d0e0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3w6j9h2q",
     "ja": "こちら営業部の田中です。",
     "en": "This is Tanaka from Sales.",
-    "alternatives": ["This is Tanaka in Sales.", "Let me introduce Tanaka from Sales."],
+    "alternatives": ["This is Tanaka in Sales.", "I'm Tanaka from Sales."],
     "point": "名詞の後ろに from + 部署で説明",
     "topic": "social",
     "subtopic": "introductions",
     "level": 4,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-29",
-    "stamps": {}
-  },
-  {
-    "id": "c_3x9j3s3d",
-    "ja": "カイに来てと頼まれた。",
-    "en": "Kai asked me to come.",
-    "alternatives": ["Kai told me to come.", "Kai invited me to come."],
-    "point": "ask 人 to do で「人に〜するよう頼む」",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 4,
-    "grammar": ["verb-object-to-do"],
-    "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f0f39280423d457000933cc2c2a9db0bc2170f10bdffdd874e04782dcebd05cd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8v8h7m7u",
@@ -55,7 +54,13 @@
     "level": 5,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:69244819c24852bca9103f6c65c01af13b6962701833d709212e45f95f6a6468",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9f9k9a9u",
@@ -68,14 +73,20 @@
     "level": 4,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:af3251d2862426380d67e17fab8753fdc994628c84e9767365326fbda4d02e63",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9x4z9n8c",
-    "ja": "休みは映画を観て過ごす。",
+    "ja": "週末は映画を観て過ごす。",
     "en": "I spend my weekends watching movies.",
     "alternatives": [
-      "I spend my days off watching movies.",
+      "I spend weekends watching movies.",
       "I usually watch movies on weekends."
     ],
     "point": "spend + 時間 + -ing で「〜して過ごす」",
@@ -84,6 +95,12 @@
     "level": 5,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ff35b6b3dd12f2f85e539ebd3bc7735525ba989c4b1876720371d1a222312b77",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

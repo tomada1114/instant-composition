@@ -3,14 +3,20 @@
     "id": "c_4v2c8p6a",
     "ja": "残業はありますか？",
     "en": "Is there any overtime?",
-    "alternatives": ["Do you have any overtime?", "Do people work overtime here?"],
+    "alternatives": ["Do people work overtime here?", "Will there be any overtime?"],
     "point": "「残業」は数えない名詞なので any overtime",
     "topic": "work",
     "subtopic": "job-interview",
     "level": 4,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:35ae46b533a9a52f4a8193a8a6c580d50c23027da0b7efdc8838a272dda01c71",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5y9q6v6d",
@@ -26,23 +32,35 @@
     "level": 5,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cb4d572106d0a18ec0d0706e5812662f57f51620f8f0d20bba956055e43c7fc6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6u2p2r4a",
     "ja": "英語でメールが書けます。",
-    "en": "I can handle emails in English.",
+    "en": "I can write English emails.",
     "alternatives": [
       "I can write emails in English.",
-      "I'm able to write emails in English."
+      "I'm able to write English emails."
     ],
-    "point": "handle は「うまく扱える」と言うときの動詞",
+    "point": "「英語のメール」は English emails と前に置ける",
     "topic": "work",
     "subtopic": "job-interview",
-    "level": 5,
+    "level": 3,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a81f549582653c5beab821f2498cbc53a7c7a0a7cfa1647c988e7e0a04df5d0e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7j6g3g7r",
@@ -58,7 +76,13 @@
     "level": 4,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:79fe8927e21a7e11d2d59a21ae347d39608a2934ec5ab31c9bf2e405d23bfd2b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8r5c4r7t",
@@ -66,6 +90,7 @@
     "en": "Please tell me where I'd work.",
     "alternatives": [
       "Could you tell me where I'd work?",
+      "Could you tell me the work location?",
       "I'd like to know where I'd work."
     ],
     "point": "間接疑問は where のあとが平叙文の語順",
@@ -74,19 +99,31 @@
     "level": 4,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:eee0a2e747de0144bbae7a1581f274c6ae7fbe56944a5fb4075f03175fb94356",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9c8n4c3x",
     "ja": "上司に応募を勧められた。",
     "en": "My boss encouraged me to apply.",
-    "alternatives": ["My boss told me to apply.", "My boss suggested I apply."],
+    "alternatives": ["My boss suggested I apply.", "My boss urged me to apply."],
     "point": "encourage 人 to do の形",
     "topic": "work",
     "subtopic": "job-interview",
     "level": 5,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:66d294642c04ecc6151101acfab7b2efa3ee5bba243d3ab1b7ca28a2ad35cb09",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

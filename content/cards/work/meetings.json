@@ -10,15 +10,21 @@
     "level": 4,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1e78dce8478159d69ef60e3f6689bd4c3306caf8c54f6108664843cfd2891b1f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3v3p9v2a",
     "ja": "予算があれば増員するのに。",
-    "en": "If we had funds, we'd hire.",
+    "en": "If we had the budget, we'd hire.",
     "alternatives": [
-      "If we had the budget, we'd hire.",
-      "We'd hire if we had the budget."
+      "We'd hire if we had the budget.",
+      "If we could afford it, we'd hire."
     ],
     "point": "if 節は過去形、主節は would＋原形",
     "topic": "work",
@@ -26,15 +32,22 @@
     "level": 5,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e37bf48d2ea244051ffa925420c75db4cb2d5757b033a3d7cde0dbdbc1a7d0f0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3v7k9m4n",
     "ja": "先に部長に確認すべきです。",
     "en": "We should ask the director first.",
     "alternatives": [
-      "We need to ask the director first.",
-      "We'd better check with the director first."
+      "We'd better check with the director first.",
+      "You should check with the director first.",
+      "We should check with the director first."
     ],
     "point": "should は「〜したほうがいい」という助言",
     "topic": "work",
@@ -42,7 +55,13 @@
     "level": 5,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1393a11f1f1797c1a0dba53ce750f236de431c1f1ccb54b75e9b0f7fcd2de59e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7z3h6x8b",
@@ -55,7 +74,13 @@
     "level": 5,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f35fe79e48651cb863b6240653159da01b4e29a90985e030bcb3d0206086cfa",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8m3s5s4j",
@@ -68,7 +93,13 @@
     "level": 4,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cf96592da5b9403b727b4619c1a1d12984580a40ce2bf0d6bfb528e849f70c29",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8t9p7n4e",
@@ -84,6 +115,12 @@
     "level": 4,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:634f89ee88ba515fb6eac3b7710b8b0dc93a8b21c280056ebedfc90a347da5be",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

@@ -7,10 +7,16 @@
     "point": "返品する＝ return / take back",
     "topic": "daily",
     "subtopic": "shopping",
-    "level": 4,
-    "grammar": ["past-simple", "articles-and-countability"],
+    "level": 3,
+    "grammar": ["past-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fb36f3ca323d24d003cc77b5b2337ea204a51bf83fcaf5f9e3a1e2992c47126c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3k8r7y9m",
@@ -20,10 +26,16 @@
     "point": "like の後ろは -ing で「〜するのが好き」",
     "topic": "daily",
     "subtopic": "shopping",
-    "level": 4,
+    "level": 3,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c6fc83879ef8e18150207266c3499810873b60e371ae26b12d4c90fe4ebff512",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3w7k6w9t",
@@ -36,7 +48,13 @@
     "level": 5,
     "grammar": ["comparatives-superlatives", "articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f7ddfea89cad39a1acca0cc20cac72c50ca509640360d0ae3fef246c573ea7fa",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4p3m2x8b",
@@ -52,7 +70,13 @@
     "level": 5,
     "grammar": ["comparatives-superlatives", "articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ab9fe64ae5804d1218462559633d002f36e9f4b92e6bf4ba4bc52fd477007ba2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7f4f4b9p",
@@ -65,19 +89,31 @@
     "level": 4,
     "grammar": ["past-simple", "articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2b8c97123109d59d6fd6fc50bfd6cf0109e6c4c1f5fddf6197523147e235c272",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9n5g7f9w",
     "ja": "返品の期限はいつですか？",
     "en": "When is the return deadline?",
-    "alternatives": ["What's the deadline for returns?", "Until when can I return it?"],
+    "alternatives": ["What's the deadline for returns?", "What's the return deadline?"],
     "point": "「いつ」は when、期限は deadline",
     "topic": "daily",
     "subtopic": "shopping",
     "level": 5,
     "grammar": ["wh-questions", "articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:924ae3606e9328c80d0299287859aea7595bd4066441f0040f12481b20fd09dd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

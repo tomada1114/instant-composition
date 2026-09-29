@@ -13,7 +13,13 @@
     "level": 4,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8520341d04103cd7c52419229d738f7ccf66e7cda38e7d6515793934ddd37037",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8j2w5z2q",
@@ -29,7 +35,13 @@
     "level": 5,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ca08f40a2bce593a2d9faba3d22f1d1d27f653ac1239066f0d357c5e6caa1559",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8y5r4p9z",
@@ -42,23 +54,32 @@
     "level": 4,
     "grammar": ["wh-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1fb7d918c183e8a27f5e696837db6d0110d5a91c8031bcad33f3aefd5e5dec87",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9c7x7m2u",
     "ja": "届いたらすぐ返信します。",
-    "en": "I'll reply when I get it.",
-    "alternatives": [
-      "I'll reply once it arrives.",
-      "I'll reply as soon as it arrives."
-    ],
+    "en": "I'll reply once I get it.",
+    "alternatives": ["I'll reply when I get it.", "I'll reply as soon as it arrives."],
     "point": "when 節は未来のことでも現在形",
     "topic": "work",
     "subtopic": "email-chat",
     "level": 5,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5cec32e5eaad06d7de7a8b3a4609d982842fd4526c2b9b774ccf9173d4ec8072",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9g4w9x2f",
@@ -74,7 +95,13 @@
     "level": 5,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4d6f2353ec19407ebf44ffe026942d572414302df0544c2f59423251f6c7f3ae",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9n6p9h8t",
@@ -90,6 +117,12 @@
     "level": 4,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:205b597f3e80f719a6f876baf76323d80a90c105ce7765d067f13e557454ecef",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

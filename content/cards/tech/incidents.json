@@ -13,7 +13,13 @@
     "level": 5,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:14b431b014278eb2512e9ea6199f41dd4244e4b3df6a0a2eeeae3c4236c0b5e7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6t4f5r4q",
@@ -29,7 +35,13 @@
     "level": 5,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bdb696f1199f5c83c4d91dd073a0d24101f28837a67061c0039a51c5a62ba04c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7q7m9q2z",
@@ -42,7 +54,13 @@
     "level": 5,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7af14360e43a2e7559e7dea290a68ef648ac04aea3c5bf9e2e56921eb778ab84",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8q7q5q3d",
@@ -55,7 +73,13 @@
     "level": 4,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d212a418973bd03899aafc49d29fcd9e73ef87671a75ebd91e91532540390ed9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8y4w7b4e",
@@ -68,7 +92,13 @@
     "level": 4,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:afd1c0fd2ec7923e190f32658fd3163a7ee8760c746d05bc90ee1f23a60bce3f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9u5c5k9c",
@@ -81,6 +111,12 @@
     "level": 4,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c10866a71b6f8ae88e64824add404e201facbf9a6d28a7bb66ddc99815243599",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

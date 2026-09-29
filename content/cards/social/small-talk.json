@@ -13,7 +13,13 @@
     "level": 5,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:41fee8792592badff8921f9498a6f6141255e074e445b7c64bc2ffb856dbe3bc",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2v4y4d7e",
@@ -29,7 +35,13 @@
     "level": 5,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a9652ddda895f0b1d939234732ae4416e0623dc1fbb2469d9be27064796957e7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4m9c8r7f",
@@ -42,14 +54,20 @@
     "level": 4,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b75faacd7745b561d3a85df87158dbf6628ad8ffcaae90bf297110a93f18dc4f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5c9y3u7f",
     "ja": "傘は持っていくといいよ。",
     "en": "You should take an umbrella.",
     "alternatives": [
-      "You'd better take an umbrella.",
+      "You might want to take an umbrella.",
       "You should bring an umbrella with you."
     ],
     "point": "助言は should。had better は強め",
@@ -58,7 +76,13 @@
     "level": 4,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cd077fbca8a11ee046d81c5e09f3d49e47eaf6dd47bee8cb62ee7f337828925d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8b3a8p5v",
@@ -74,7 +98,13 @@
     "level": 5,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:df5d0236f5d09449243d2c4494848440bddf244472a05f05bfb48ba6f43a7230",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8u9x5e9k",
@@ -87,6 +117,12 @@
     "level": 4,
     "grammar": ["tense-contrast", "present-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5678ac5015421930e2998128c920f72ed35cf745bce8f9f940d7b37a1c482357",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

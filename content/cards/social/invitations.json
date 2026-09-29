@@ -1,7 +1,7 @@
 [
   {
     "id": "c_2j5u6y9h",
-    "ja": "ずっと誘いたかった。",
+    "ja": "ずっと誘おうと思ってた。",
     "en": "I've been meaning to invite you.",
     "alternatives": [
       "I've been meaning to ask you out.",
@@ -10,10 +10,16 @@
     "point": "「ずっと〜しようと思ってた」は have been meaning to",
     "topic": "social",
     "subtopic": "invitations",
-    "level": 4,
+    "level": 5,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b967b3ebced30c4c155fb2625b83fa26aa0075358ccefaf41fb5b4a07efd8999",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3k3x3g9v",
@@ -29,7 +35,13 @@
     "level": 4,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:be7b60c86462ecf682453a0a45f3254d35024b174af582022b43683d490b97d7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3p2j4r6x",
@@ -45,7 +57,32 @@
     "level": 5,
     "grammar": ["progressive-aspect", "future-forms"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:72dce28f00f1eeab663cac2a9e3b8f5bd55ac0a7daa234902fb696a592e57595",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3x9j3s3d",
+    "ja": "カイに来てと頼まれた。",
+    "en": "Kai asked me to come.",
+    "alternatives": ["Kai asked me to come over.", "I was asked by Kai to come."],
+    "point": "ask 人 to do で「人に〜するよう頼む」",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 4,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2b5e42e4fa3587870dd4eb2f453ff14c6bb7d39bc80179761a53fb609d292b44",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4z3y6s7p",
@@ -58,7 +95,13 @@
     "level": 5,
     "grammar": ["concession-contrast", "time-and-if-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ca2ae776e4600952b4168e03270d83dd5113288a4aaa87b57f77e3f00a3dc859",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7b9d2e5w",
@@ -74,19 +117,31 @@
     "level": 5,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c6d7ed985d5c37439a4e76b1a0a53f499d544fe66a0eba3218d598a21888ba92",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8v8d5f7m",
     "ja": "もう夕飯は食べたの？",
     "en": "Have you had dinner yet?",
-    "alternatives": ["Have you eaten yet?", "Did you eat dinner yet?"],
+    "alternatives": ["Have you eaten yet?", "Have you eaten dinner yet?"],
     "point": "「もう〜した？」は現在完了 + yet",
     "topic": "social",
     "subtopic": "invitations",
     "level": 4,
     "grammar": ["tense-contrast", "present-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:05665a6d8d8cebd751e90806fc0357ac14df01f25823ffa2fcb34240561a6e84",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

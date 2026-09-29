@@ -10,7 +10,13 @@
     "level": 5,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f8969a49db5c9cc5dff49c216434b668e206551e147b288c755574bfd3372ea5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4v5h9u9k",
@@ -18,7 +24,7 @@
     "en": "We've been stopped for ten minutes.",
     "alternatives": [
       "We've been stuck here for ten minutes.",
-      "We've been sitting here for ten minutes."
+      "The train's been stopped for ten minutes."
     ],
     "point": "「〜分も」続いている状態は現在完了進行形",
     "topic": "travel",
@@ -26,7 +32,13 @@
     "level": 5,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8b7bef877645a6b17b1b3a88eddce5aaa02411b952c360b539a9e9dab276daa7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5q3q2a6s",
@@ -39,7 +51,13 @@
     "level": 4,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6abaf4e9f1234b31780cbac3b6633dd1ba28ea11b165e57bc1da93d052ce80a0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5r5v8p9d",
@@ -55,20 +73,32 @@
     "level": 4,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c8c336bae219475daf66a52b548c00a9e1d6719f9dbcf0f249adf3013643d8e4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6v2u8q8x",
     "ja": "市内に行くバスはどこ？",
     "en": "Where's the bus that goes downtown?",
-    "alternatives": ["Which bus goes downtown?", "Where's the bus going downtown?"],
+    "alternatives": ["Where's the bus going downtown?", "Where's the bus to downtown?"],
     "point": "「〜するバス」は the bus that + 動詞",
     "topic": "travel",
     "subtopic": "transport",
     "level": 5,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:969fb9595fa253819890576ba054ce3ebbd173bc7bb4b7ef517067496fa410c7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7u5v4r3w",
@@ -81,6 +111,12 @@
     "level": 4,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:53eb39090c7c3db471ebd1b7673ff12ea4b6b42f03feb70e1682d320c4452b2c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

@@ -1,29 +1,22 @@
 [
   {
-    "id": "c_2k8s7y7e",
-    "ja": "サムにやり直してと頼んだ。",
-    "en": "I asked Sam to redo it.",
-    "alternatives": ["I told Sam to redo it.", "I had Sam redo it."],
-    "point": "ask + 人 + to do の語順",
-    "topic": "tech",
-    "subtopic": "design-discussion",
-    "level": 5,
-    "grammar": ["verb-object-to-do"],
-    "createdAt": "2026-09-29",
-    "stamps": {}
-  },
-  {
     "id": "c_4d3e5p8v",
     "ja": "キャッシュは外すと決めた。",
     "en": "We decided to drop the cache.",
-    "alternatives": ["We decided to remove the cache.", "We chose to drop the cache."],
+    "alternatives": ["We decided to remove the cache.", "I decided to drop the cache."],
     "point": "決めた → decided to + 動詞の原形",
     "topic": "tech",
     "subtopic": "design-discussion",
     "level": 5,
-    "grammar": ["past-simple"],
+    "grammar": ["infinitives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1d2aee2172ceb6e726230ef0f2e9d8c4fa923144ff61d4fbc66a6036617226f6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5b2w8a8h",
@@ -39,7 +32,13 @@
     "level": 4,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:74676a5943df3bb7f949980899023c2fa129b75aaf2fbe77c15ec243f2f78a41",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6u6d4z5n",
@@ -55,20 +54,32 @@
     "level": 4,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b649e8d6a04ed91370c14bd74b00df0c7fa224ed1e8647c04b1ec45c8d270121",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6x5f6z6c",
     "ja": "ミアにレビューを頼んで。",
     "en": "Ask Mia to review it.",
-    "alternatives": ["Get Mia to review it.", "Tell Mia to review it."],
+    "alternatives": ["Get Mia to review it.", "Have Mia review it."],
     "point": "ask + 人 + to do の語順",
     "topic": "tech",
     "subtopic": "design-discussion",
     "level": 4,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c8b8e4a4a2ad40a27b4fb5cbf7e28de32c03ae8d1ae9df9141910cac1680d11f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9n5x8r4x",
@@ -81,6 +92,12 @@
     "level": 5,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ccdf383735e3c0ef31fb529f16d8c9e4a47a99a2cc4fa6737ebe290fb172d3e2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

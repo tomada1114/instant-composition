@@ -32,7 +32,13 @@
     "level": 5,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:696c3b57c10fed3c019718bfb9b51602ed946d941d78a4472556f6e2b9745f55",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4v9a4j8e",
@@ -67,7 +73,13 @@
     "level": 5,
     "grammar": ["concession-contrast", "past-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d11aa42446ff15777be452b52028119a4c2a426ccbdf4e21008e4b572c7a904a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7f2v2m4z",
@@ -102,6 +114,12 @@
     "level": 5,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f0e566af67861879de2fa32ae3df5b944e31ef92cb6f315a73323341e6613c2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

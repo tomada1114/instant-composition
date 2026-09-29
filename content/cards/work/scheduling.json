@@ -13,7 +13,13 @@
     "level": 4,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b23011b4c63083881773cd91d05e65bc58e30f4d85702ae7e91a1bacb4ac127c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6m5j9g4d",
@@ -29,23 +35,32 @@
     "level": 5,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4ad30282bd1d0f27e483413b796e09831b99066061466b8714bbe46b87b8db26",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6y4d7x9c",
     "ja": "月曜の会議は中止です。",
-    "en": "The meeting on Monday is canceled.",
-    "alternatives": [
-      "The Monday meeting is canceled.",
-      "The meeting on Monday is off."
-    ],
-    "point": "どの会議かは on Monday で後ろから足す",
+    "en": "Monday's meeting is canceled.",
+    "alternatives": ["The meeting on Monday is canceled.", "Monday's meeting is off."],
+    "point": "「中止された」は be canceled の受け身",
     "topic": "work",
     "subtopic": "scheduling",
     "level": 4,
-    "grammar": ["post-modification"],
+    "grammar": ["passive-voice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:21faf05d9d6e73f6e0b4326bda7322bf4b7f53caae0647e5ded3f20c8426d8b0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6z3j5w5k",
@@ -61,7 +76,13 @@
     "level": 4,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f4fe4ed26ddd62cb52e7f28ebfa27a8aed4abdffc465374c0d3419ce931dd1d2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6z6v6m5z",
@@ -77,7 +98,13 @@
     "level": 5,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5ea1be8fa6e6e6fc9709b0fe07e33525e9ae939232368bd6d90bd5cfc6a80baa",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9q6y6y3q",
@@ -90,6 +117,12 @@
     "level": 5,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1fcfbff0a03a0da4d40fb2513f79db4677c518b8f644ca00349d95ef00aebe2d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]
