@@ -69,6 +69,16 @@
       "reload": "読み込み直す"
     }
   },
+  "Landing": {
+    "brand": "Instant Composition",
+    "title": "瞬間英作文",
+    "steps": {
+      "read": "日本語の文が出る",
+      "say": "時間内に英語で言う",
+      "grade": "めくって ○ / × をつける"
+    },
+    "signIn": "ログイン"
+  },
   "Welcome": {
     "eyebrow": "Welcome",
     "title": "どの場面で話しますか",

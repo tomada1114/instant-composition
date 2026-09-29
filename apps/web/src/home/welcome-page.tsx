@@ -3,7 +3,7 @@ import { Navigate, useNavigate } from "@tanstack/react-router";
 import type { ReactElement } from "react";
 
 import { PageLoadFailed, PageLoading } from "../lib/page-shell";
-import { HOME_QUERY, SETTINGS_QUERY } from "../lib/queries";
+import { HOME_QUERY, isSignedOut, SETTINGS_QUERY } from "../lib/queries";
 import { WelcomeScreen } from "./welcome-screen";
 
 /**
@@ -22,6 +22,9 @@ export function WelcomePage(): ReactElement {
   };
 
   if (!home.isFetchedAfterMount || !page.isFetchedAfterMount) return <PageLoading />;
+  if (isSignedOut(home.error) || isSignedOut(page.error)) {
+    return <Navigate to="/" replace />;
+  }
   if (
     home.isError ||
     page.isError ||
