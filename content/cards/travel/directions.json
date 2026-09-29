@@ -124,7 +124,13 @@
     "level": 4,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2a44cee3f9743f94646b2a1fc37fedba3a266103d3549207f2c5437986aba37d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3d9z3j4x",
@@ -159,7 +165,13 @@
     "level": 7,
     "grammar": ["infinitives", "indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3be739192690571bd8b64883e7f3d73d4c49b7ac694976e8ffffe4699d015cf6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3q8n2m2z",
@@ -228,22 +240,6 @@
     }
   },
   {
-    "id": "c_3y6r8d8e",
-    "ja": "私たち、早く聞いていれば遠回りせずに済んだのに。",
-    "en": "If we'd asked sooner, we'd have skipped the detour.",
-    "alternatives": [
-      "If we'd asked earlier, we could have avoided the detour.",
-      "If we'd asked sooner, we wouldn't have gone the long way."
-    ],
-    "point": "過去の後悔は If + had 過去分詞, would have 過去分詞",
-    "topic": "travel",
-    "subtopic": "directions",
-    "level": 9,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_4e8e7z9x",
     "ja": "私が泊まっているホテルは、駅の裏にあります。",
     "en": "The hotel where I'm staying is behind the station.",
@@ -257,7 +253,13 @@
     "level": 6,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7b6496cd76bb1e03b4a619dc3db0095d4cc0383fe11b6579e7711e9338abf49d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4n9f6k5e",
@@ -295,7 +297,13 @@
     "level": 6,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:15a069dbe50d1410c0df4ff12c0c7cd40fcd9d93f348a4b994a8da48656bba4d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5g3q5k4e",
@@ -311,7 +319,13 @@
     "level": 10,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0642ea1ddc6f2ddefd96310d7d907077e50ae37b8d6a2ac2405870bf39ac2ba0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5n8y2g8u",
@@ -327,7 +341,13 @@
     "level": 7,
     "grammar": ["noun-clauses", "gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5be068439e69383a25e46c976c7812a132bef3887622965fcb30f53bffaa0f93",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5p8a6f9g",
@@ -407,7 +427,13 @@
     "level": 5,
     "grammar": ["noun-clauses", "reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5810e8106c303f5b52d1371073641af01d8a3d916c0b7e3a046f123a01e7f09b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7e3f7u2c",
@@ -423,7 +449,13 @@
     "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bb3658c66d2e8b0708dee4f9fb998559fe30e868ba17baa94a470dbcda3115d1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7f2s5u9t",
@@ -521,7 +553,13 @@
     "level": 7,
     "grammar": ["verb-object-to-do", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9f8d17c66b3bc1847add2a2cad297dcb159cbf13109181cc32b887a027dc89b0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8f9s4m5k",
@@ -546,22 +584,6 @@
     }
   },
   {
-    "id": "c_8x8f5z7n",
-    "ja": "次の角で降ろしてもらえますか？あとは歩きます。",
-    "en": "Could you drop me off at the next corner? I'll walk.",
-    "alternatives": [
-      "Would you mind letting me out at the next corner? I'll walk.",
-      "Can you let me off at the next corner? I'll walk."
-    ],
-    "point": "「降ろす」は drop 〜 off / let 〜 off。目的語は off の前",
-    "topic": "travel",
-    "subtopic": "directions",
-    "level": 10,
-    "grammar": ["phrasal-verbs", "hedging-softening"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8y3h7r6y",
     "ja": "彼、あの角を左に曲がれって言ってたよ。",
     "en": "He told me to turn left at that corner.",
@@ -575,7 +597,13 @@
     "level": 7,
     "grammar": ["verb-object-to-do", "reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c2c9da52f2ad67d8277038ac2e3d7796c8c9c01f5f7c4d953b35cfbfd5da87ae",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9b5v9f9u",
@@ -613,7 +641,13 @@
     "level": 7,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ab850300b9ba8559465d81e49d20bcc83a293d4ef9c4cb24cc397dd7581fb81f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9g5t4d8c",
@@ -660,22 +694,6 @@
     }
   },
   {
-    "id": "c_9q4x2v2u",
-    "ja": "受付の人、あの路地には近づかないよう私たちに言ってたよ。",
-    "en": "The receptionist warned us to steer clear of that alley.",
-    "alternatives": [
-      "The receptionist told us to stay away from that alley.",
-      "The receptionist told us to keep away from that alley."
-    ],
-    "point": "steer clear of は「〜に近づかない」。warn 人 to 動詞",
-    "topic": "travel",
-    "subtopic": "directions",
-    "level": 9,
-    "grammar": ["reported-speech", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_9t3e5z3m",
     "ja": "バスを乗り換えるバス停は、どこですか？",
     "en": "Where's the stop where I change buses?",
@@ -689,7 +707,13 @@
     "level": 4,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:566eab49a5add86bd21df39e6fdf84259283a03117f49d4b704e464aa5a09dfb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9z2x4y4e",
@@ -705,6 +729,12 @@
     "level": 6,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:39882a7320b80650d8dd7dd156c144d1d54258c7df1c8020ce084f06df88d77f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]

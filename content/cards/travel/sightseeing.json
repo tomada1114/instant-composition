@@ -16,22 +16,6 @@
     "stamps": {}
   },
   {
-    "id": "c_2z8n6p3d",
-    "ja": "ガイドさんに、ゆっくり話すよう頼んでくれる？",
-    "en": "Could you ask the guide to slow down?",
-    "alternatives": [
-      "Can you ask the guide to speak more slowly?",
-      "Would you mind asking the guide to speak slowly?"
-    ],
-    "point": "ask + 人 + to do の形。to の後は動詞の原形",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 8,
-    "grammar": ["verb-object-to-do", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3d5n5e7c",
     "ja": "写真じゃ伝わらないのは、この滝の音の迫力だよね。",
     "en": "What photos can't capture is the roar of this waterfall.",
@@ -152,22 +136,6 @@
     "subtopic": "sightseeing",
     "level": 4,
     "grammar": ["articles-and-countability"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4p7g8u6n",
-    "ja": "聞いてなかったら、この穴場を見逃してたよ。",
-    "en": "If I hadn't asked, I'd have missed this spot.",
-    "alternatives": [
-      "Had I not asked, I'd have missed this hidden spot.",
-      "If I hadn't asked, I would've walked right past this place."
-    ],
-    "point": "過去の反対は if + had + 過去分詞、主節は would have + 過去分詞",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 9,
-    "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -517,6 +485,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7k4w3c3v",
+    "ja": "展望台がこんなに混んでるの、初めて見たよ。",
+    "en": "Never have I seen a lookout this packed.",
+    "alternatives": [
+      "I've never seen the lookout this packed.",
+      "This is the most packed I've ever seen the lookout."
+    ],
+    "point": "Never を文頭に出すと、have が主語 I の前に来る",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7m2c6w7q",

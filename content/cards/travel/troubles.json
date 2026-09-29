@@ -154,10 +154,10 @@
   {
     "id": "c_4z9j3j4t",
     "ja": "フロントに、予約がないと言われたんです。",
-    "en": "The desk said I had no reservation.",
+    "en": "The front desk said I had no reservation.",
     "alternatives": [
       "They told me I had no reservation.",
-      "The front desk said I wasn't booked."
+      "They said I didn't have a reservation."
     ],
     "point": "said の後の動詞は過去形（have でなく had）",
     "topic": "travel",
@@ -170,15 +170,15 @@
   {
     "id": "c_5b5h2t6b",
     "ja": "予約したのに、記録がないと言われました。",
-    "en": "Although I booked, they say there's no record.",
+    "en": "I booked, but they said there's no record.",
     "alternatives": [
-      "I made a reservation, but they have no record.",
-      "They say there's no record, though I booked."
+      "They said there's no record, though I booked.",
+      "Though I booked, they said there's no record."
     ],
     "point": "although 節と主節の対比。「言われた」は they say で表す",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 8,
+    "level": 5,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -216,7 +216,7 @@
     "point": "cash は数えられないので a を付けない。camera は a が必要",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 5,
+    "level": 4,
     "grammar": ["articles-and-countability", "passive-voice"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -495,13 +495,13 @@
     "ja": "財布を探すのに、もう1時間も使いました。",
     "en": "I've spent an hour looking for my wallet.",
     "alternatives": [
-      "I've been looking for my wallet for an hour.",
-      "I've been searching for my wallet for an hour."
+      "I've looked for my wallet for an hour.",
+      "I've spent an hour searching for my wallet."
     ],
     "point": "spend 時間 + 動名詞。継続は現在完了で表す",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 8,
+    "level": 4,
     "grammar": ["present-perfect", "gerunds"],
     "createdAt": "2026-09-28",
     "stamps": {}
