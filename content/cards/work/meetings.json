@@ -1,77 +1,11 @@
 [
   {
-    "id": "c_2b6v5d2c",
-    "ja": "昨日の会議で、もっとはっきり反対しておけばよかった。",
-    "en": "I wish I had disagreed more clearly at yesterday's meeting.",
-    "alternatives": [
-      "I should have objected more clearly at yesterday's meeting.",
-      "I wish I'd pushed back more clearly in yesterday's meeting."
-    ],
-    "point": "過去の後悔は wish の後に had＋過去分詞",
-    "topic": "work",
-    "subtopic": "meetings",
-    "level": 6,
-    "grammar": ["wishes-regrets", "past-perfect"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:0527041b3d83d27c0ab5d9929105796d3b8dab9f5b1906afad69b054f71ef184",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_2c7g2c8w",
-    "ja": "たとえ部長がこの提案に反対でも、来週の会議ではやはり私たちのデータを丁寧に説明すべきだと思います。",
-    "en": "Even if the director is against this proposal, I still think we should walk everyone through our data carefully at next week's meeting.",
-    "alternatives": [
-      "Even if the director opposes this proposal, I still think we should explain our data carefully at next week's meeting.",
-      "Even if the director doesn't like this proposal, I still think we should go through our data carefully at next week's meeting."
-    ],
-    "point": "「たとえ〜でも」は even if で、主節に still を添える",
-    "topic": "work",
-    "subtopic": "meetings",
-    "level": 10,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:4bc51a193b6324d01d266fe0f2104a04eb09315efa8555d74cbf5b8935674972",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
-  },
-  {
-    "id": "c_2d9v4s8u",
-    "ja": "会議が始まったときには、部長はもう資料を読み終えていました。",
-    "en": "The manager had already finished reading the materials when the meeting started.",
-    "alternatives": [
-      "When the meeting started, the manager had already read the materials.",
-      "By the time the meeting began, the manager had already gone through the materials."
-    ],
-    "point": "先に終わっていた方は had + 過去分詞",
-    "topic": "work",
-    "subtopic": "meetings",
-    "level": 5,
-    "grammar": ["past-perfect"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:4e2fbf2126ba783f384f19f93f060ed9088d5b0e5c0d7998b4acf5d6290762c2",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
     "id": "c_2m6k5y3m",
-    "ja": "最後に、私が今日の決定事項をまとめます。",
+    "ja": "最後に、私が今日の決定をまとめます。",
     "en": "Finally, I'll summarize today's decisions.",
     "alternatives": [
       "Lastly, I'll sum up today's decisions.",
-      "Finally, I'm going to summarize what we decided today."
+      "At the end, I'll summarize today's decisions."
     ],
     "point": "「まとめます」は I'll summarize か I'll sum up で言える",
     "topic": "work",
@@ -88,144 +22,73 @@
     }
   },
   {
-    "id": "c_2p8f7j9s",
-    "ja": "窓側に座っている女性が、新しいプロジェクトのリーダーです。",
-    "en": "The woman sitting by the window is the leader of the new project.",
-    "alternatives": [
-      "The woman sitting near the window is the new project leader.",
-      "The woman by the window is the leader of the new project."
-    ],
-    "point": "sitting by the window が後ろから woman を説明する",
+    "id": "c_3x9z5j6w",
+    "ja": "3ページを見てください。",
+    "en": "Please look at page three.",
+    "alternatives": ["Please turn to page three.", "Look at page three, please."],
+    "point": "「〜を見る」は look at。at を落とさない",
     "topic": "work",
     "subtopic": "meetings",
-    "level": 4,
-    "grammar": ["post-modification"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:ac4f02ff45b0e4b89d15c8f8fae92eab756294b7e723b16d28809a79f53607f2",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_2v7k6t3a",
-    "ja": "その件は私たちが前回の会議で話し合いましたが、それ以降状況がかなり変わっています。",
-    "en": "We discussed that issue at the last meeting, but the situation has changed quite a bit since then.",
+    "id": "c_4d4y9c8j",
+    "ja": "今決めるのは、発売を延ばすかどうかですよね？",
+    "en": "What we're deciding is whether to delay the launch.",
     "alternatives": [
-      "We talked about that at our last meeting, but things have changed a lot since then.",
-      "We went over that issue in the last meeting, but the situation has changed considerably since then."
+      "What we need to decide is whether to delay launch.",
+      "The thing we're deciding is whether to delay the launch."
     ],
-    "point": "前回は過去形、since then 以降は現在完了",
+    "point": "「かどうか」は whether to ～、What ～ is に続ける",
     "topic": "work",
     "subtopic": "meetings",
-    "level": 7,
-    "grammar": ["tense-contrast"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:7f05c1894f6d295b9403de262cb9d082d2370e5c4efd5015ce5f08ceee3c45c2",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
+    "level": 8,
+    "grammar": ["cleft-emphasis", "noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_2y3s6y8u",
-    "ja": "この件、もう1時間も話し合っていますよね。そろそろまとめませんか？",
-    "en": "We've been discussing this for an hour now, so shall we wrap it up?",
+    "id": "c_4d8n7z9p",
+    "ja": "話し合うことが三つあります。",
+    "en": "There are three things to discuss.",
     "alternatives": [
-      "We've been talking about this for an hour. Why don't we wrap it up?",
-      "We've been discussing this for an hour, so should we start wrapping up?"
+      "We have three things to discuss.",
+      "There are three items to discuss."
     ],
-    "point": "1時間ずっと続いていることは have been + -ing",
-    "topic": "work",
-    "subtopic": "meetings",
-    "level": 5,
-    "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:f50147ed3394edd2eb589611c6ba39293c1a270933ea4c3712cb0b16f49f65c3",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_3r5d8d3u",
-    "ja": "部長は先週の会議で、この案は来月までに承認されるだろうと言っていましたよ。",
-    "en": "At last week's meeting, the manager said this proposal would be approved by next month.",
-    "alternatives": [
-      "The manager said at last week's meeting that this proposal would be approved by next month.",
-      "At the meeting last week, the manager told us this proposal would get approved by next month."
-    ],
-    "point": "said の後は will を would に下げる",
-    "topic": "work",
-    "subtopic": "meetings",
-    "level": 6,
-    "grammar": ["reported-speech", "passive-voice"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:ddff9ef87b3cee1b15c543f91df0c2e85d72435cd0a5d40f7e6238d9269daff4",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_4e5m3x2z",
-    "ja": "木曜の会議でその場で決められるように、修正した数字を事前にそちらのチームから送ってもらえますか？",
-    "en": "Could you have your team send me the revised figures before Thursday's meeting so that we can make a decision on the spot?",
-    "alternatives": [
-      "Could you get your team to send me the revised numbers before Thursday's meeting so we can decide right there?",
-      "Would you have your team send me the updated figures ahead of Thursday's meeting so that we can decide on the spot?"
-    ],
-    "point": "have＋人＋動詞の原形、get なら to 不定詞",
-    "topic": "work",
-    "subtopic": "meetings",
-    "level": 9,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:f5787131861f6b52ce3fa51b78c6cc4ee639a5093169dd4064d9d3eab347ed63",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
-  },
-  {
-    "id": "c_4s9n4p5z",
-    "ja": "リーダーに、次の会議の日程を決めるよう頼んでもらえますか？",
-    "en": "Could you ask the leader to set the next meeting date?",
-    "alternatives": [
-      "Can you ask the leader to schedule the next meeting?",
-      "Could you ask the leader to decide when the next meeting is?"
-    ],
-    "point": "ask の後は「人＋to do」の語順にする",
+    "point": "discuss は他動詞なので about を付けない",
     "topic": "work",
     "subtopic": "meetings",
     "level": 3,
-    "grammar": ["verb-object-to-do", "requests-permission"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:83c3b77ed441e02d61729ab0b76a296d726e240c3a19f2d092e81b81adb1886d",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "grammar": ["there-is-are", "infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4g3y6e6z",
+    "ja": "部長が反対でも、私ならやはりみんなにきちんと説明します。",
+    "en": "Even if the boss objects, I'd still walk them through it.",
+    "alternatives": [
+      "Even if the boss disagrees, I'd still explain it carefully.",
+      "Even if the boss objects, I'd still explain it properly."
+    ],
+    "point": "「たとえ〜でも」は even if、主節に still を添える",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_4y4g3b2b",
-    "ja": "すみません、最後のところがよく聞こえませんでした。",
-    "en": "Sorry, I couldn't hear the last part very well.",
+    "ja": "すみません、最後が聞こえなくて。",
+    "en": "Sorry, I couldn't hear the end.",
     "alternatives": [
-      "Sorry, I couldn't really hear the last part.",
-      "Excuse me, I couldn't hear the last part clearly."
+      "Sorry, I couldn't catch the end.",
+      "Excuse me, I couldn't hear the end."
     ],
     "point": "「聞こえなかった」は didn't hear より couldn't hear",
     "topic": "work",
@@ -242,48 +105,129 @@
     }
   },
   {
-    "id": "c_4z6w9u7d",
-    "ja": "結局、この会議で決めなければならないのは、発売日を遅らせるかどうか、ということですよね？",
-    "en": "So what we need to decide in this meeting is whether to push back the launch date, right?",
-    "alternatives": [
-      "So the thing we have to decide in this meeting is whether to delay the launch date, right?",
-      "So what we have to decide in this meeting is whether we push back the launch date, right?"
-    ],
-    "point": "「かどうか」は whether to ～ で、What ～ is に続ける",
+    "id": "c_4y7p5w3g",
+    "ja": "彼に決めるよう頼んでくれる？",
+    "en": "Can you ask him to decide?",
+    "alternatives": ["Could you ask him to decide?", "Would you ask him to decide?"],
+    "point": "ask の後は「人＋to do」の語順にする",
     "topic": "work",
     "subtopic": "meetings",
-    "level": 8,
-    "grammar": ["cleft-emphasis", "noun-clauses"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:eceb07957f74f1426612b3f26118c1246d4edc20a934699dc5575ccdaa24a831",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "level": 3,
+    "grammar": ["verb-object-to-do", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_6a3u2x9y",
-    "ja": "次の議題に移る前に、予算の数字をもう一度確認できないかと思っていたのですが。",
-    "en": "I was wondering if we could go over the budget figures once more before we move on.",
+    "id": "c_5b8a3t6q",
+    "ja": "何か情報があれば、共有してもらえますか？",
+    "en": "Could you share any information you have?",
     "alternatives": [
-      "I was wondering whether we could go through the budget numbers again before moving on.",
-      "I was hoping we could go over the budget figures one more time before we move on."
+      "Would you mind sharing any information you have?",
+      "If you have any information, could you share it?"
     ],
-    "point": "過去進行形 was wondering で柔らかい提案に",
+    "point": "information は数えられないので an や -s をつけない",
     "topic": "work",
     "subtopic": "meetings",
-    "level": 8,
-    "grammar": ["hedging-softening", "phrasal-verbs"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:f2bd5cdc854c27de7c2e230ce11353fae5fab4d1c89a3f2cc54503e4fa3c71ce",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
+    "level": 6,
+    "grammar": ["articles-and-countability", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5c9u7k6k",
+    "ja": "予算があれば、承認するんですが。",
+    "en": "If we had the budget, we'd approve.",
+    "alternatives": [
+      "We'd approve it if we had the budget.",
+      "If we had the funds, we'd approve."
+    ],
+    "point": "現実と違う仮定は if 節を過去形、主節は would",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 5,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5f9v4s9d",
+    "ja": "一番の懸念は、まだ誰が責任者か決まっていないことです。",
+    "en": "What worries me is we haven't decided who's in charge.",
+    "alternatives": [
+      "What concerns me is that nobody's decided who's in charge yet.",
+      "My worry is that we still haven't decided who's in charge."
+    ],
+    "point": "who 以下は疑問文ではなく平叙文の語順",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 9,
+    "grammar": ["noun-clauses", "indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5q9d5m7t",
+    "ja": "意見を検討し、リリースを延期しました。",
+    "en": "Having reviewed the feedback, we delayed the launch.",
+    "alternatives": [
+      "After reviewing the feedback, we delayed the launch.",
+      "Having gone through the feedback, we postponed the launch."
+    ],
+    "point": "先に終えた動作は Having + 過去分詞で表す",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6b3g3j4y",
+    "ja": "昨日の会議で反対しておけばよかった。",
+    "en": "I wish I'd objected at yesterday's meeting.",
+    "alternatives": [
+      "I should have objected at yesterday's meeting.",
+      "I wish I had pushed back yesterday."
+    ],
+    "point": "過去の後悔は wish の後に had + 過去分詞",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["wishes-regrets", "past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6c9y7w9x",
+    "ja": "あそこに座っている女性がリーダーです。",
+    "en": "The woman sitting there is our leader.",
+    "alternatives": [
+      "The woman sitting over there is our leader.",
+      "The lady sitting there is our team leader."
+    ],
+    "point": "sitting there が後ろから woman を説明する",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6d3f3f6n",
+    "ja": "部長は事前に全部読み終えていた。",
+    "en": "The manager had read everything beforehand.",
+    "alternatives": [
+      "The manager had already read everything.",
+      "The manager had read everything ahead of time."
+    ],
+    "point": "先に終わっていたことは had + 過去分詞",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 5,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6s2y4h3j",
@@ -305,56 +249,28 @@
     }
   },
   {
-    "id": "c_7c4e9s3a",
-    "ja": "私が一番気になっているのは、このプロジェクトの最終的な責任者が誰になるのか、私たちがまだ決めていないことです。",
-    "en": "What concerns me most is that we still haven't decided who will ultimately be responsible for this project.",
+    "id": "c_7h4t4a5m",
+    "ja": "この件、もう1時間も話してますね。",
+    "en": "We've been discussing this for an hour.",
     "alternatives": [
-      "What worries me most is that we still haven't decided who'll ultimately be responsible for this project.",
-      "What bothers me most is that we haven't yet decided who will be ultimately responsible for this project."
+      "We've been talking about this for an hour.",
+      "We've been at this for an hour now."
     ],
-    "point": "What 節を主語に、who 以下は平叙文の語順",
+    "point": "ずっと続いていることは have been + -ing",
     "topic": "work",
     "subtopic": "meetings",
-    "level": 9,
-    "grammar": ["noun-clauses", "indirect-questions"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:c77c30de466aa11522c6a97efadc8629b9390c5fcccdacdbbd9032307e5dae63",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_7g9k5m7n",
-    "ja": "田中さんは先週の会議で何て言ったんですか？",
-    "en": "What did Mr. Tanaka say at last week's meeting?",
-    "alternatives": [
-      "What did Mr. Tanaka say in last week's meeting?",
-      "What did Ms. Tanaka say at last week's meeting?"
-    ],
-    "point": "過去の疑問文は did の後の動詞を原形 say に",
-    "topic": "work",
-    "subtopic": "meetings",
-    "level": 2,
-    "grammar": ["past-simple", "wh-questions"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:0a1fe58e4c240ffb4fb7dc99ddb1ad035528864e315ce35447524b8b089c7503",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7h7n8v6f",
-    "ja": "今、部長が新しい計画について説明しているところです。",
-    "en": "The manager is explaining the new plan right now.",
+    "ja": "今、部長が計画を説明しています。",
+    "en": "The manager is explaining the plan.",
     "alternatives": [
-      "Our manager is explaining the new plan now.",
-      "The manager is now explaining the new plan."
+      "Our manager is explaining the plan now.",
+      "The manager is presenting the plan."
     ],
     "point": "「今〜しているところ」は is explaining の進行形で言う",
     "topic": "work",
@@ -371,48 +287,52 @@
     }
   },
   {
-    "id": "c_7r3u9p6u",
-    "ja": "すべてのフィードバックを検討した結果、チームはリリースを来四半期に延期することに決めました。",
-    "en": "Having reviewed all the feedback, the team decided to postpone the launch until next quarter.",
+    "id": "c_7m8u7s4s",
+    "ja": "その件は前回話しましたが、状況は変わっています。",
+    "en": "We covered that last time, but things have changed.",
     "alternatives": [
-      "After reviewing all the feedback, the team decided to push the launch back to next quarter.",
-      "Having gone through all the feedback, the team decided to delay the launch until next quarter."
+      "We discussed that last time, but things have changed.",
+      "We talked about that last time, but things have changed."
     ],
-    "point": "先に終えた動作は Having + 過去分詞で表す",
+    "point": "前回は過去形、今の状況は現在完了",
     "topic": "work",
     "subtopic": "meetings",
-    "level": 6,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:042a332af2bee86482e818adea8627c123a7f9e6a08fa71389149d67ffd6454d",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_8d8g2e2q",
-    "ja": "今日の会議で話し合う議題が三つあります。",
-    "en": "There are three topics to discuss in today's meeting.",
+    "id": "c_7x4q5e3w",
+    "ja": "予算をもう一度見直せないかと思っていたのですが。",
+    "en": "I was wondering if we could revisit the budget.",
     "alternatives": [
-      "We have three topics to discuss in today's meeting.",
-      "There are three items on today's agenda."
+      "I was wondering whether we could review the budget again.",
+      "I was hoping we could go over the budget again."
     ],
-    "point": "discuss は他動詞なので about を付けない",
+    "point": "過去進行形 was wondering で柔らかい依頼に",
     "topic": "work",
     "subtopic": "meetings",
-    "level": 3,
-    "grammar": ["there-is-are", "infinitives"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:22173f1d1f8d7fd922d3558f48282a0253e57b157933876dc98f11bfea39a581",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "level": 8,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8m9x8q2v",
+    "ja": "今日中に結論が出なければ、来週続けましょう。",
+    "en": "If we don't decide today, let's revisit this next week.",
+    "alternatives": [
+      "If we can't decide today, let's continue next week.",
+      "If nothing's decided today, let's pick this up next week."
+    ],
+    "point": "未来のことでも if 節は現在形",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 8,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8v5n3y7j",
@@ -434,91 +354,51 @@
     }
   },
   {
-    "id": "c_8v7d2x4d",
-    "ja": "会議が終わるまでに結論が出なかったら、来週またこの話を続けましょう。",
-    "en": "If we don't reach a decision by the time the meeting ends, let's pick this up again next week.",
+    "id": "c_8z2w4w5z",
+    "ja": "部長は来月には承認されると言っていた。",
+    "en": "The manager said it'd be approved next month.",
     "alternatives": [
-      "If we haven't reached a decision by the end of the meeting, let's continue this next week.",
-      "If we can't come to a conclusion before the meeting ends, let's pick this up again next week."
+      "The manager said approval would come next month.",
+      "The manager told us it'd be approved next month."
     ],
-    "point": "「終わるまでに」も未来だが節の中は現在形 ends",
-    "topic": "work",
-    "subtopic": "meetings",
-    "level": 8,
-    "grammar": ["time-and-if-clauses", "phrasal-verbs"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:dcd760f4ab1468003f6f20854852e357e2f92d2c1e8e3853067824573a49672b",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_8z7h9z2n",
-    "ja": "もし予算がもっとあれば、私たちはこの案に賛成するんですが。",
-    "en": "If we had a bigger budget, we would support this proposal.",
-    "alternatives": [
-      "If we had more budget, we'd agree to this proposal.",
-      "We would support this plan if we had a bigger budget."
-    ],
-    "point": "現実と違う仮定は if 節を過去形、主節は would",
-    "topic": "work",
-    "subtopic": "meetings",
-    "level": 5,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:92add462a5b241112f4ddc73a66c426477d56f85aee6b8dffcac7aa0f7d6438b",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_9w5f9k3s",
-    "ja": "次の議題に移る前に、この件について何か情報があれば共有してもらえますか？",
-    "en": "Before we move on to the next item, could you share any information you have on this?",
-    "alternatives": [
-      "Could you share any information you have about this before we move on to the next item?",
-      "Before we go on to the next topic, could you share whatever information you have on this?"
-    ],
-    "point": "information は数えられないので an や -s をつけない",
+    "point": "said の後は will を would に下げる",
     "topic": "work",
     "subtopic": "meetings",
     "level": 6,
-    "grammar": ["articles-and-countability", "requests-permission"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:6c2f21c5d0b8c9a8d69fb4fbcceb6e630071b6d770a39159432c3f951839eb7c",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
+    "grammar": ["reported-speech", "passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_9y8t5t5k",
-    "ja": "資料の3ページを見てください。",
-    "en": "Please look at page three of the handout.",
+    "id": "c_9p5m3n8j",
+    "ja": "そちらのチームから修正した数字を送ってもらえますか？",
+    "en": "Could you have your team send me the revised numbers?",
     "alternatives": [
-      "Please take a look at page three of the handout.",
-      "Please turn to page three of the handout."
+      "Could you get your team to send me the updated figures?",
+      "Would you have your team send over the revised numbers?"
     ],
-    "point": "「〜を見る」は look at。at を落とさない",
+    "point": "have＋人＋動詞の原形、get なら to 不定詞",
     "topic": "work",
     "subtopic": "meetings",
-    "level": 1,
-    "grammar": ["imperatives"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:eb13545f9f7ccddcda89b5b07ddf6d5c56e06c603414e853cc535e577eabb737",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "level": 9,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9q7u6p6s",
+    "ja": "田中さんは会議で何て言った？",
+    "en": "What did Tanaka say at the meeting?",
+    "alternatives": [
+      "What did Tanaka say in the meeting?",
+      "What did Tanaka say during the meeting?"
+    ],
+    "point": "過去の疑問文は did の後の動詞を原形 say に",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 2,
+    "grammar": ["past-simple", "wh-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]

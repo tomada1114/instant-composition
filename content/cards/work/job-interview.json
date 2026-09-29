@@ -1,99 +1,59 @@
 [
   {
-    "id": "c_2n9b9h4p",
-    "ja": "正直に言うと、前の会社が海外事業から撤退していなかったら、私は転職を考えていなかったと思います。",
-    "en": "To be honest, if my last company hadn't pulled out of its overseas business, I don't think I'd have considered changing jobs.",
+    "id": "c_2d2u9y3y",
+    "ja": "予算無制限なら、どんな製品を作りたいですか？",
+    "en": "If money were no object, what would you build?",
     "alternatives": [
-      "Honestly, if my previous company hadn't withdrawn from its overseas business, I don't think I would have thought about changing jobs.",
-      "To be honest, I doubt I'd have considered a job change if my last company hadn't pulled out of its overseas business."
+      "What would you build if money were no object?",
+      "If budget weren't an issue, what would you build?"
     ],
-    "point": "過去の事実の反対は if + had 過去分詞、主節は would have 過去分詞",
-    "topic": "work",
-    "subtopic": "job-interview",
-    "level": 9,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:2bdbbbf87e459f152276a8ed42d4933c276f6776cbd4d078be4b60a612fe0a3f",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
-  },
-  {
-    "id": "c_2t4s3u8w",
-    "ja": "前の会社では3年間物流を担当していましたが、ここ1年はデータ分析の勉強にも力を入れてきました。",
-    "en": "I was in charge of logistics for three years at my last company, but I've also been focusing on studying data analysis over the past year.",
-    "alternatives": [
-      "I handled logistics for three years at my previous company, but for the past year I've also been concentrating on learning data analysis.",
-      "At my last company I was responsible for logistics for three years, and over the past year I've also been putting effort into studying data analysis."
-    ],
-    "point": "今も続く「ここ1年」は現在完了進行形、前職は過去形",
-    "topic": "work",
-    "subtopic": "job-interview",
-    "level": 10,
-    "grammar": ["tense-contrast"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:5ce0ef5bdc2cbfdae904f9b2e0246fb097649de6a753fc93d39fe5e2e1bda2d5",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
-  },
-  {
-    "id": "c_2x2u9b4j",
-    "ja": "もし予算の制約がまったくなかったとしたら、どんな製品を作ってみたいですか？",
-    "en": "If you had no budget constraints at all, what kind of product would you want to build?",
-    "alternatives": [
-      "If there were no budget limits at all, what kind of product would you like to make?",
-      "What kind of product would you want to build if you had no budget constraints at all?"
-    ],
-    "point": "仮定の話なので if 節は過去形 had、主節は would",
+    "point": "仮定の話なので if 節は過去形 were、主節は would",
     "topic": "work",
     "subtopic": "job-interview",
     "level": 6,
     "grammar": ["second-conditional"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:ca85a2fb437abc13231f12d4d236a02601e75d2825b8f7e69b9842dbdfde6177",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_2y7r8b8h",
-    "ja": "採用していただけたら、まずはお客様との関係づくりに力を入れるつもりです。",
-    "en": "If I'm hired, I'm going to focus on building relationships with clients first.",
+    "id": "c_2h8f9t3q",
+    "ja": "学生のうちに英語を勉強しておけばよかった。",
+    "en": "I wish I'd studied English as a student.",
     "alternatives": [
-      "If I'm hired, I'll focus on building relationships with clients first.",
-      "If you hire me, I'm going to start by focusing on building client relationships."
+      "If only I'd studied English as a student.",
+      "I wish I had studied English while in school."
     ],
-    "point": "未来のことでも if 節は現在形の受け身 I'm hired",
+    "point": "過去への後悔は wish の後を had + 過去分詞にする",
     "topic": "work",
     "subtopic": "job-interview",
-    "level": 4,
-    "grammar": ["future-forms", "time-and-if-clauses"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:04965e209269907eb1c21fc68b9f5b78d4bb757e07aaed97b5083a9eaa7c1589",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2j4p6w9f",
+    "ja": "御社で新規事業を担当するチームに入れますか？",
+    "en": "Could I join the team handling new ventures?",
+    "alternatives": [
+      "Can I join the team working on new ventures?",
+      "Any chance I could join the new ventures team?"
+    ],
+    "point": "「担当するチーム」は the team handling と後ろから説明",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 6,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_3c6q5b2b",
-    "ja": "彼女は今、転職先を探しているところです。",
-    "en": "She's looking for a new job now.",
+    "ja": "彼女は今、転職先を探しています。",
+    "en": "She's looking for a new job.",
     "alternatives": [
-      "She's currently looking for a new job.",
-      "She's looking for a new job right now."
+      "She's job hunting right now.",
+      "She's currently looking for a new job."
     ],
     "point": "今している最中のことは is looking と進行形で",
     "topic": "work",
@@ -110,48 +70,52 @@
     }
   },
   {
-    "id": "c_3d2q5g3k",
-    "ja": "このポジションでは、技術的な知識よりもコミュニケーション力のほうが大切ですか？",
-    "en": "For this position, are communication skills more important than technical knowledge?",
+    "id": "c_3p8q9u4z",
+    "ja": "入社前に、すでに5年エンジニアをしていました。",
+    "en": "I'd been an engineer for five years before joining.",
     "alternatives": [
-      "Is communication more important than technical knowledge for this position?",
-      "In this role, do communication skills matter more than technical knowledge?"
+      "Before joining, I'd spent five years as an engineer.",
+      "I'd already worked as an engineer for five years."
     ],
-    "point": "「AよりBのほうが大切」は B is more important than A",
+    "point": "入社より前のことなので had been と過去完了にする",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3t9g8y3r",
+    "ja": "この仕事、技術より対話力が大切ですか？",
+    "en": "Are communication skills more important than technical ones?",
+    "alternatives": [
+      "Do communication skills matter more than technical skills?",
+      "Is communication more important than technical skill here?"
+    ],
+    "point": "「AよりBが大切」は B is more important than A",
     "topic": "work",
     "subtopic": "job-interview",
     "level": 4,
     "grammar": ["comparatives-superlatives"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:ca42f5714b6ab9041a6c6bde54314fbc9033931fdf3bd96c9bdd5617fa0587d8",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_3m8a6m6f",
-    "ja": "10 人のエンジニアのチームをまとめてきた経験から、私はプロジェクトを予定どおりに進める方法を身につけました。",
-    "en": "Having managed a team of ten engineers, I've learned how to keep projects on schedule.",
+    "id": "c_3v6e2f9z",
+    "ja": "チームをまとめた経験で、納期を守る術を学びました。",
+    "en": "Having led a team, I've learned to hit deadlines.",
     "alternatives": [
-      "After managing a team of ten engineers, I've learned how to keep projects on schedule.",
-      "Managing a team of ten engineers taught me how to keep projects on schedule."
+      "Leading a team taught me how to meet deadlines.",
+      "After leading a team, I've learned to meet deadlines."
     ],
-    "point": "「〜してきた経験から」は Having + 過去分詞で文頭にまとめる",
+    "point": "「〜した経験から」は Having + 過去分詞で文頭に置く",
     "topic": "work",
     "subtopic": "job-interview",
     "level": 8,
     "grammar": ["participle-clauses", "present-perfect"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:1de1946a2adfb6c2db57239c176db12602493f05e70b30aef2e9d66a352e34d5",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_3w7z9s7g",
@@ -177,10 +141,10 @@
   },
   {
     "id": "c_3y3w4z6u",
-    "ja": "では、ご自分の強みを教えてください。",
-    "en": "Please tell me about your strengths.",
+    "ja": "強みを教えてください。",
+    "en": "Tell me about your strengths.",
     "alternatives": [
-      "Tell me about your strengths, please.",
+      "Please tell me about your strengths.",
       "Please tell me your strengths."
     ],
     "point": "tell me about ～ で「～について教えて」",
@@ -198,233 +162,218 @@
     }
   },
   {
-    "id": "c_4s3z5y5y",
-    "ja": "今回のポジションで御社が求めている人物像について、もう少し詳しく教えていただけますか？",
-    "en": "Could you tell me a little more about the kind of person you're looking for in this position?",
+    "id": "c_4a4d2t3a",
+    "ja": "採用されたら、顧客と信頼を築きます。",
+    "en": "If I'm hired, I'll build client trust.",
     "alternatives": [
-      "Could you tell me a bit more about what kind of person you're looking for in this role?",
-      "Could you explain a little more about the type of person you hope to hire for this position?"
+      "If you hire me, I'll build client trust.",
+      "If hired, I'll build trust with clients."
     ],
-    "point": "the kind of person you're looking for の for を落とさない",
+    "point": "未来のことでも if 節は現在形の受け身 I'm hired",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 4,
+    "grammar": ["future-forms", "time-and-if-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4k8z5n3h",
+    "ja": "彼女の経験は、まさに私たちが求めているものです。",
+    "en": "Her experience is exactly what we're looking for.",
+    "alternatives": [
+      "Her background is just what we need.",
+      "She has exactly the experience we're after."
+    ],
+    "point": "「求めているもの」は what we're looking for。for を残す",
     "topic": "work",
     "subtopic": "job-interview",
     "level": 7,
-    "grammar": ["relative-clauses", "requests-permission"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:624d86ddddfdcfb7d7941e9530e3f7f4bfde6905be3988e76878c20219b2cc7e",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_5d5f4f8b",
-    "ja": "彼女が前の職場で担当していたプロジェクトは、まさに私たちが求めている経験です。",
-    "en": "The project she was in charge of at her last job is exactly the experience we're looking for.",
+    "id": "c_4m6y6m3a",
+    "ja": "応募理由は、御社の製品開発に関われることです。",
+    "en": "My reason is that I'd help develop your products.",
     "alternatives": [
-      "The project she handled at her previous job is exactly the kind of experience we're looking for.",
-      "The project she managed at her last workplace is just the experience we want."
+      "I applied because I'd get to work on your products.",
+      "The main draw is being involved in product development."
     ],
-    "point": "「担当していた」は in charge of。関係詞節の最後に of を残す",
+    "point": "reason is that 〜 の形。because でつなげない",
     "topic": "work",
     "subtopic": "job-interview",
     "level": 7,
-    "grammar": ["relative-clauses"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:884ce255459dc82eae27ce366531a8d2ae91f2bd80976d0a2eebf1cd3d485a24",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_5m3p5g5r",
-    "ja": "私は人前で話すのが得意なので、前の職場ではよくお客様へのプレゼンを任されていました。",
-    "en": "I'm good at speaking in front of people, so I was often asked to give presentations to clients at my last job.",
+    "id": "c_5b2b9w7s",
+    "ja": "私は大阪でエンジニアをしています。",
+    "en": "I'm an engineer in Osaka.",
     "alternatives": [
-      "Since I'm good at public speaking, I often gave client presentations at my previous job.",
-      "I'm comfortable speaking in front of people, so I was often put in charge of client presentations at my last job."
+      "I work as an engineer in Osaka.",
+      "I'm an engineer based in Osaka."
     ],
-    "point": "good at の後は動詞を -ing にする。to speak は不可。",
+    "point": "職業を言うときは an engineer と冠詞をつける",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 2,
+    "grammar": ["be-and-present-simple", "articles-and-countability"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5p2y9f7k",
+    "ja": "人前で話すのが得意で、よくプレゼンを任されました。",
+    "en": "I'm good at public speaking, so I often presented.",
+    "alternatives": [
+      "Since I speak well in public, I often gave presentations.",
+      "I'm a strong public speaker, so I often presented."
+    ],
+    "point": "good at の後は動詞を -ing にする。to speak は不可",
     "topic": "work",
     "subtopic": "job-interview",
     "level": 8,
-    "grammar": ["gerunds", "passive-voice"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:88a0d2e72ec87a1eb8a9a59a9e5e5fe487e03d99d58633f7c784943b9c6673ee",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_5t4p9k2q",
-    "ja": "今振り返ると、前の会社を辞める前に、上司ともっと率直に話し合うべきだったと思います。",
-    "en": "In hindsight, I think I should have talked more openly with my manager before I left my last company.",
+    "id": "c_5t6k4r5m",
+    "ja": "部下はいませんが、後輩を育ててきました。",
+    "en": "I don't manage anyone, but I've mentored juniors.",
     "alternatives": [
-      "Looking back, I think I should have had a more honest talk with my boss before leaving my last company.",
-      "In hindsight, I should have been more open with my manager before I quit my previous job."
+      "I have no subordinates, but I've mentored juniors.",
+      "I've mentored juniors, although I have no subordinates."
     ],
-    "point": "過去への後悔は should have + 過去分詞",
+    "point": "ずっと続けてきたことは I've 過去分詞で表す",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 5,
+    "grammar": ["concession-contrast", "present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5v9s3a8q",
+    "ja": "どんな方を求めているか、教えていただけますか？",
+    "en": "Could you say what kind of person you want?",
+    "alternatives": [
+      "Can you tell me what sort of person you need?",
+      "May I ask what kind of person you want?"
+    ],
+    "point": "間接疑問は what kind of person you want の語順",
     "topic": "work",
     "subtopic": "job-interview",
     "level": 7,
-    "grammar": ["modal-perfect"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:4aebc2d91ead4d607c694857269d45cd997775f0d77474db398a8253d425595f",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
-  },
-  {
-    "id": "c_6e9s9r9z",
-    "ja": "最後に、このポジションではどんな成果が期待されているのか伺ってもよろしいですか？",
-    "en": "Lastly, may I ask what kind of results you expect from this position?",
-    "alternatives": [
-      "Finally, could I ask what kind of results are expected in this position?",
-      "Lastly, may I ask what results you'd expect from someone in this role?"
-    ],
-    "point": "ask の後は what you expect の語順。do you にしない",
-    "topic": "work",
-    "subtopic": "job-interview",
-    "level": 5,
     "grammar": ["requests-permission", "indirect-questions"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:c6cf815468f6f33dcca1d4e32b50f119b3b2ec053b32b16a634f684d71d581cb",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_7g9r2w4p",
-    "ja": "私はマネジメントの経験はあまりありませんが、後輩の指導は 3 年間ずっと担当してきました。",
-    "en": "Although I don't have much management experience, I've been mentoring junior staff for three years.",
+    "id": "c_6a3v6q9a",
+    "ja": "3年目に、チームのリーダーを任されました。",
+    "en": "I was made team leader in my third year.",
     "alternatives": [
-      "Even though I don't have much experience in management, I've been training junior colleagues for three years.",
-      "I don't have much management experience, but I've been mentoring junior staff for the past three years."
+      "I was asked to lead a team in year three.",
+      "In year three, I became the team leader."
     ],
-    "point": "続けてきたことは I've been 〜ing で表す",
-    "topic": "work",
-    "subtopic": "job-interview",
-    "level": 5,
-    "grammar": ["concession-contrast", "present-perfect-continuous"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:5d5204bec26f3a73567c52dee88ddda2748a3c52e53dd25002949157cb3b0028",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_7h3a6c3h",
-    "ja": "前の会社で、私は3年目に新しい営業チームのリーダーを任されました。",
-    "en": "At my previous company, I was put in charge of a new sales team in my third year.",
-    "alternatives": [
-      "In my third year at my last company, I was made the leader of a new sales team.",
-      "I was asked to lead a new sales team in my third year at my previous company."
-    ],
-    "point": "「任された」は受け身で was put in charge of と言う",
+    "point": "「任された」は受け身。was made / was asked to",
     "topic": "work",
     "subtopic": "job-interview",
     "level": 7,
     "grammar": ["passive-voice"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:79ba69a1bec647a34004daf2536e77a77d34680e0d10dead7caa07a2d6b3c68c",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_7j7f3z3t",
-    "ja": "御社には海外で働くチャンスはありますか？",
-    "en": "Are there any opportunities to work overseas at your company?",
+    "id": "c_6t2g6u5g",
+    "ja": "物流を3年担当し、最近はデータ分析も勉強してきました。",
+    "en": "I did logistics for three years; lately I've studied data analysis.",
     "alternatives": [
-      "Is there a chance to work overseas at your company?",
-      "Are there any chances to work abroad at your company?"
+      "I worked in logistics for three years, then took up data analysis.",
+      "Logistics was my job for three years; lately I've studied data analysis."
     ],
-    "point": "「海外で働くチャンス」は opportunities to work overseas と to 不定詞で後ろから",
+    "point": "前職は過去形、今につながる「最近」は現在完了",
     "topic": "work",
     "subtopic": "job-interview",
-    "level": 3,
-    "grammar": ["there-is-are", "infinitives"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:74a507aa3c0d82afc181091e0e15683dc33b9576fbf6cfa89ff8913022a841d1",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_7k2m7f4t",
-    "ja": "前の上司は新人にも大きな案件を任せてくれたので、早いうちから多くの経験を積めました。",
-    "en": "My previous manager let new hires handle big projects, so I got a lot of experience early on.",
+    "id": "c_7c3r5n8s",
+    "ja": "作業が遅れたとき、どう遅れを取り戻しましたか？",
+    "en": "When work fell behind, how did you catch up?",
     "alternatives": [
-      "My old manager let newcomers take on large projects, so I gained a lot of experience early.",
-      "Because my last manager let new employees handle major projects, I got plenty of experience early on."
+      "When you fell behind schedule, how did you catch up?",
+      "When the project slipped, how did you recover?"
+    ],
+    "point": "「遅れる」は fall behind、「取り戻す」は catch up",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["phrasal-verbs", "time-and-if-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7f6q3n9z",
+    "ja": "前の上司は新人にも大きな仕事を任せてくれました。",
+    "en": "My old boss let newcomers handle big projects.",
+    "alternatives": [
+      "My last manager let new hires take on big projects.",
+      "My previous boss allowed newcomers to handle major projects."
     ],
     "point": "let + 人 + 動詞の原形。to を入れない",
     "topic": "work",
     "subtopic": "job-interview",
     "level": 7,
     "grammar": ["causatives"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:80d954f618ccc1154ffa48e99e98dcb4dde8ba27dc5ee7baae1c4542844f6c22",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_7u2e4g4w",
-    "ja": "今の会社に入る前、私はすでに5年間エンジニアとして働いていました。",
-    "en": "Before I joined my current company, I had already worked as an engineer for five years.",
+    "id": "c_7h6j3x6c",
+    "ja": "期待される成果を伺ってもよろしいですか？",
+    "en": "May I ask what results you expect?",
     "alternatives": [
-      "I'd already been working as an engineer for five years before I joined my current company.",
-      "By the time I joined my current company, I'd already worked as an engineer for five years."
+      "Could I ask what results you're expecting?",
+      "Could I ask what results are expected?"
     ],
-    "point": "入社より前のことなので had worked と過去完了にする",
+    "point": "ask の後は what you expect の語順。do you にしない",
     "topic": "work",
     "subtopic": "job-interview",
-    "level": 6,
-    "grammar": ["past-perfect"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:180c7ab21a0e2b1998895902e8bdf4ba4feef519f82212ec40a5b3e4dc8f84d8",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "level": 5,
+    "grammar": ["requests-permission", "indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7j5m7a8e",
+    "ja": "今思えば、辞める前に上司と話すべきでした。",
+    "en": "In hindsight, I should've talked to my boss first.",
+    "alternatives": [
+      "Looking back, I should have spoken with my boss first.",
+      "I should have talked to my boss before quitting."
+    ],
+    "point": "過去への後悔は should have + 過去分詞",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7u3p3x8b",
     "ja": "英語と中国語が話せます。",
     "en": "I can speak English and Chinese.",
-    "alternatives": [
-      "I speak English and Chinese.",
-      "I can speak both English and Chinese."
-    ],
+    "alternatives": ["I speak English and Chinese.", "I can use English and Chinese."],
     "point": "can の後ろは動詞の原形 speak",
     "topic": "work",
     "subtopic": "job-interview",
@@ -440,113 +389,35 @@
     }
   },
   {
-    "id": "c_8s2j4p8z",
-    "ja": "私がこの職に応募した一番の理由は、御社の製品開発に直接関われることです。",
-    "en": "The main reason I applied for this job is that I'd get to work directly on your product development.",
+    "id": "c_8w4u3z4n",
+    "ja": "海外で働くチャンスはありますか？",
+    "en": "Are there chances to work abroad?",
     "alternatives": [
-      "The biggest reason I applied for this position is that I'd get to work directly on developing your products.",
-      "My main reason for applying is that I'd be directly involved in your product development."
+      "Is there a chance to work abroad?",
+      "Are there any chances to work overseas?"
     ],
-    "point": "reason is that 〜 の形。because でつなげない",
+    "point": "「働くチャンス」は chances to work と to 不定詞で後ろから",
     "topic": "work",
     "subtopic": "job-interview",
-    "level": 7,
-    "grammar": ["noun-clauses"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:aae94c0d83b6cfc244e0f19c5ba6bb051eedb60bf38084c2de0a315f49bf7802",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
+    "level": 3,
+    "grammar": ["there-is-are", "infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_9a3g6x5m",
-    "ja": "御社で、新規事業を担当しているチームに加わるチャンスはありますか？",
-    "en": "Is there a chance I could join the team working on new ventures at your company?",
+    "id": "c_9c5u6s9v",
+    "ja": "前の会社が撤退しなければ、転職しなかったでしょう。",
+    "en": "If my firm hadn't pulled out, I wouldn't have left.",
     "alternatives": [
-      "Would I have a chance to join the team in charge of new ventures here?",
-      "Would there be an opportunity to join the team handling new ventures at your company?"
+      "I wouldn't have left if my old company hadn't withdrawn.",
+      "Had my company not pulled out, I'd never have left."
     ],
-    "point": "「担当しているチーム」は the team working on と後ろから説明",
+    "point": "過去の反対は if + had 過去分詞、主節は would have 過去分詞",
     "topic": "work",
     "subtopic": "job-interview",
-    "level": 6,
-    "grammar": ["post-modification"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:0debbd469d802cc5fb98d1b116801054a89632b51a8e3baddcf6dd651ceb8d6e",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_9b3f9r9c",
-    "ja": "私は大阪の小さな会社でエンジニアをしています。",
-    "en": "I'm an engineer at a small company in Osaka.",
-    "alternatives": [
-      "I work as an engineer at a small company in Osaka.",
-      "I work as an engineer for a small company in Osaka."
-    ],
-    "point": "職業は現在形で。「会社で」は at a company",
-    "topic": "work",
-    "subtopic": "job-interview",
-    "level": 2,
-    "grammar": ["be-and-present-simple", "articles-and-countability"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:be2e862f781f13c52e4fbafec3c1ff4e982e567251f4f6d64bb6726f0770e567",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_9v3b4s4y",
-    "ja": "学生のうちに英語をもっと真剣に勉強しておけばよかったと、今でも思っています。",
-    "en": "I still wish I had studied English more seriously when I was a student.",
-    "alternatives": [
-      "I still wish I'd taken English more seriously as a student.",
-      "Even now, I wish I had studied English harder when I was a student."
-    ],
-    "point": "過去への後悔は wish の後を had + 過去分詞にする",
-    "topic": "work",
-    "subtopic": "job-interview",
-    "level": 6,
-    "grammar": ["wishes-regrets"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:10e9caf37cc20fa25267427af41cd45afdd7efefb03ae1c2a2d94d7a73bba4d0",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_9y5n3j9h",
-    "ja": "前の職場でチームの作業が予定より遅れたとき、締め切りまでにどうやって遅れを取り戻しましたか？",
-    "en": "When your team fell behind schedule at your last job, how did you catch up before the deadline?",
-    "alternatives": [
-      "At your previous job, when your team fell behind schedule, how did you make up the lost time before the deadline?",
-      "When your team got behind schedule at your last workplace, how did you get back on track before the deadline?"
-    ],
-    "point": "「遅れる」は fall behind、「取り戻す」は catch up",
-    "topic": "work",
-    "subtopic": "job-interview",
-    "level": 7,
-    "grammar": ["phrasal-verbs"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:75e2cba6b66d555d0b7b99a4a24dbb0b04a0bc0fe1ae313c41051286469c2d5a",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "level": 9,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]

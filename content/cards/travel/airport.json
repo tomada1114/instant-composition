@@ -1,231 +1,171 @@
 [
   {
-    "id": "c_2c2j9b7t",
-    "ja": "シートベルトのサインが点いているのはわかっているんですが、気分が悪いので、トイレに行ってもいいですか？",
-    "en": "I know the seatbelt sign is on, but I'm feeling sick, so would it be okay if I used the restroom?",
+    "id": "c_2b9j4u8c",
+    "ja": "窓側の席に替えてもらえますか？",
+    "en": "Can I get a window seat?",
     "alternatives": [
-      "I know the seatbelt sign is on, but I feel sick, so could I use the restroom?",
-      "I realize the seatbelt sign is on, but I'm feeling sick, so would it be all right if I went to the restroom?"
+      "Could you give me a window seat?",
+      "Could I switch to a window seat?"
     ],
-    "point": "would it be okay if の後は過去形 used にする",
+    "point": "席の希望は Can I get 〜? で気軽に頼める",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 8,
-    "grammar": ["requests-permission", "hedging-softening"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:56570d82975fdceea2dc1cbf04bbe237be5f87fccd0b8e7989a8d2ad13ec722e",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_2m2a4z5a",
-    "ja": "ノートパソコンを出して、このトレーに入れてください。",
-    "en": "Please take your laptop out and put it in this tray.",
+    "id": "c_2p9s2x3m",
+    "ja": "パソコンをトレーに入れてください。",
+    "en": "Put your laptop in the tray.",
     "alternatives": [
-      "Please take out your laptop and put it in this tray.",
-      "Take your laptop out and put it in this tray, please."
+      "Please put your laptop in the tray.",
+      "Place your laptop in the tray."
     ],
-    "point": "命令文は動詞の原形から。put it in の it を忘れない",
+    "point": "命令文は動詞の原形から。入れる場所は in the tray",
     "topic": "travel",
     "subtopic": "airport",
     "level": 3,
     "grammar": ["imperatives"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:afd89c9f2906c627b7a91f0c0f845f10f8bb0bfd0ee3a1c44f25c1e249841bb1",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_2u9k7k8p",
-    "ja": "ご迷惑でなければ、通路側の席に替えていただけないかと思いまして。",
-    "en": "I was wondering if you could possibly move me to an aisle seat, if it's not too much trouble.",
+    "id": "c_2q9z7b2w",
+    "ja": "私たちは2時間前に空港に着かないと。",
+    "en": "We must arrive two hours early.",
     "alternatives": [
-      "If it's no trouble, I was hoping you might be able to switch me to an aisle seat.",
-      "Would it be at all possible to move me to an aisle seat, if it's not too much trouble?"
+      "We have to arrive two hours early.",
+      "We need to arrive two hours early."
     ],
-    "point": "I was wondering if you could で丁寧に頼む。過去形でも今の依頼",
+    "point": "「〜しないと」は must / have to。後ろは動詞の原形",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 7,
-    "grammar": ["hedging-softening"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:a0da59d0c8a586aed5a18f3ba6dd5d0efc3bc4e7f32fdc0e3ac8999b2b067ce8",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "level": 3,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_3b4g2y2b",
-    "ja": "薬を飲みたいので、お水を一杯いただけますか？",
-    "en": "Could I have a glass of water to take my medicine with, please?",
+    "id": "c_2y9u3t6m",
+    "ja": "入国カードに記入していただけますか？",
+    "en": "Could you fill out this arrival card?",
     "alternatives": [
-      "Could I get a glass of water, please? I need to take my medicine.",
-      "May I have a glass of water so I can take my medicine?"
+      "Would you mind filling out this arrival card?",
+      "Could you fill in this arrival card, please?"
     ],
-    "point": "「薬を飲むための水」は water to take my medicine with",
+    "point": "「記入する」は fill out（fill in も可）で表す",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 5,
+    "grammar": ["phrasal-verbs", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2z6w3x5z",
+    "ja": "もっと早く来ていれば、間に合ったのに。",
+    "en": "If I'd come earlier, I'd have made it.",
+    "alternatives": [
+      "I'd have made it if I'd come earlier.",
+      "Had I come earlier, I'd have made it."
+    ],
+    "point": "過去の反対は if 節が had＋過去分詞、主節は would have",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3a9t3m7b",
+    "ja": "かばんを上の棚に上げるの、手伝ってもらえますか？",
+    "en": "Would you mind helping me stow this bag overhead?",
+    "alternatives": [
+      "Could you help me put this bag overhead?",
+      "Could you help me get this bag up there?"
+    ],
+    "point": "Would you mind の後ろは動名詞（helping）にする",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["gerunds", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3b7q3r7p",
+    "ja": "保安検査を抜けたら、何か食べようよ。",
+    "en": "Let's eat once we get through security.",
+    "alternatives": [
+      "After we get through security, let's eat.",
+      "Let's get something to eat after security."
+    ],
+    "point": "「抜けたら」は未来でも get と現在形にする",
     "topic": "travel",
     "subtopic": "airport",
     "level": 4,
-    "grammar": ["infinitives", "requests-permission"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:80a571c95ae283fe0cceffe9aa3eb8be73bb65100d11d98d8f2e48c2f249d545",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_3d6j9x9z",
-    "ja": "入国審査官に、帰りの航空券を見せる必要があるって言われたんだ。",
-    "en": "The immigration officer told me I needed to show my return ticket.",
+    "id": "c_3e3a9j6r",
+    "ja": "私たち、荷物を預けてなければ、もう空港を出てたのに。",
+    "en": "If we hadn't checked our bags, we'd be out already.",
     "alternatives": [
-      "The immigration officer said I needed to show my return ticket.",
-      "The immigration officer told me I had to show my return ticket."
+      "If we hadn't checked our bags, we'd be out by now.",
+      "We'd already be out if we hadn't checked our bags."
     ],
-    "point": "told に合わせて need も needed と過去形にする",
+    "point": "過去の仮定で今の結果を言うので、主節は would be",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 5,
-    "grammar": ["reported-speech", "infinitives"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:66bf42243d367f8d5c86fc0d2ea024d985ae05d03a6699a96875c1b1e749948c",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_3m4h7h5b",
-    "ja": "すみません、この税関申告書に何を書けばいいか教えてもらえますか？",
-    "en": "Excuse me, could you tell me what I should write on this customs form?",
+    "id": "c_3s3g9b9e",
+    "ja": "彼の英語がもっと上手なら、もっと早く済むのに。",
+    "en": "If he spoke better English, it'd be faster.",
     "alternatives": [
-      "Excuse me, could you tell me what I need to write on this customs form?",
-      "Excuse me, can you tell me what to write on this customs declaration form?"
+      "If his English were better, this wouldn't take long.",
+      "If he spoke better English, we'd be done sooner."
     ],
-    "point": "文中の疑問は what I should の語順。should I にしない",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 5,
-    "grammar": ["indirect-questions", "requests-permission"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:4f69791fbdc50e138fc7da95cefe7bd3a6f3cf6de3d309d5ce705464a9a62f96",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
-  },
-  {
-    "id": "c_3m9q6b5e",
-    "ja": "彼、もう少し英語が話せたら、入国審査でこんなに時間かからないだろうにね。",
-    "en": "If he could speak a bit more English, he wouldn't be taking so long at immigration.",
-    "alternatives": [
-      "If he spoke a little more English, he wouldn't be taking this long at immigration.",
-      "If his English were a bit better, it wouldn't be taking him so long at immigration."
-    ],
-    "point": "今の事実に反する仮定は if 節を過去形、主節は wouldn't",
+    "point": "今の事実に反する仮定は if 節を過去形、主節は would",
     "topic": "travel",
     "subtopic": "airport",
     "level": 6,
     "grammar": ["second-conditional"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:2015b16045243dcc242914840fcf6506bb3f20da176ce40ef3156df4d6480ce9",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_4d6b6t8d",
-    "ja": "すみません、前の座席の下に入れたかばんを上の棚に移したいので、手伝ってもらえますか？",
-    "en": "Excuse me, could you help me move the bag I put under the seat in front of me into the overhead bin?",
+    "id": "c_4d3u4q5y",
+    "ja": "気分が悪いんです。トイレに行ってもいいですか？",
+    "en": "I'm feeling sick. Could I use the restroom?",
     "alternatives": [
-      "Excuse me, would you mind helping me move the bag that's under the seat in front of me up to the overhead bin?",
-      "Excuse me, could you give me a hand moving the bag I put under the seat in front into the overhead bin?"
+      "I feel sick. May I use the restroom?",
+      "I'm not feeling well. Can I use the restroom?"
     ],
-    "point": "「入れたかばん」は the bag (that) I put と後ろから説明する",
+    "point": "許可を求めるときは Could I / May I で丁寧に言う",
     "topic": "travel",
     "subtopic": "airport",
     "level": 8,
-    "grammar": ["relative-clauses", "requests-permission"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:5dff2e7cf08a5dcd6f569f644122587213c8a45b57019f3143f3df053a07c559",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_4f2h8z5s",
-    "ja": "窓側の席を頼んでおけばよかったな。そうすれば着陸のときに景色が見られたのに。",
-    "en": "I wish I'd asked for a window seat so I could've seen the view as we came in to land.",
-    "alternatives": [
-      "I should have asked for a window seat so I could have seen the view when we landed.",
-      "If only I'd asked for a window seat, I could've enjoyed the view during the landing."
-    ],
-    "point": "過去の後悔は I wish I had 過去分詞。wish I asked は誤り",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 8,
-    "grammar": ["wishes-regrets", "modal-perfect"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:0ddae653855cf56009cd78dd33aa7e3f3ade7ed9cbfbadda409c99c3761524c5",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
-  },
-  {
-    "id": "c_4f4x7a6z",
-    "ja": "保安検査を通ったら、ゲートの近くで何か食べる物を買おうよ。",
-    "en": "Let's grab something to eat near the gate once we get through security.",
-    "alternatives": [
-      "Once we're through security, let's get something to eat near the gate.",
-      "Let's buy something to eat near the gate after we get through security."
-    ],
-    "point": "「通ったら」は未来でも get と現在形にする",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 4,
-    "grammar": ["time-and-if-clauses", "infinitives"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:78ff83cb65cc528c50367b691e07b2100ce50be0301dafa8f78eed8dd4b1c712",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_4u4t5d5f",
-    "ja": "すみません、私の席の下に誰かのかばんがあります。",
-    "en": "Excuse me, there's someone's bag under my seat.",
+    "ja": "私の席の下に誰かのかばんがあります。",
+    "en": "There's someone's bag under my seat.",
     "alternatives": [
-      "Excuse me, someone's bag is under my seat.",
-      "Sorry, there's somebody's bag under my seat."
+      "Someone's bag is under my seat.",
+      "Somebody's bag is under my seat."
     ],
     "point": "「〜がある」は There's で始め、場所は文末に置く",
     "topic": "travel",
@@ -242,184 +182,104 @@
     }
   },
   {
-    "id": "c_4x5x9h5y",
-    "ja": "娘の隣に座りたいので、私と席を替わっていただいてもかまいませんか？",
-    "en": "Would you mind switching seats with me so I can sit next to my daughter?",
+    "id": "c_5b2a4p6t",
+    "ja": "薬を飲むので、お水をいただけますか？",
+    "en": "Could I have water for my medicine?",
     "alternatives": [
-      "Would you mind trading seats with me so I can sit next to my daughter?",
-      "Would you mind changing seats with me so that I can sit beside my daughter?"
+      "Can I get some water for my medicine?",
+      "Could you bring me water for my medicine?"
     ],
-    "point": "mind の後は動名詞。to switch にしない",
+    "point": "「薬用の水」は water for my medicine と前置詞で表す",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 5,
-    "grammar": ["gerunds", "requests-permission"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:8c16228279de41e765cfba4de4471bfadbe9950a4f2eddf0fa2511952448f94a",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "level": 4,
+    "grammar": ["requests-permission", "articles-and-countability"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_5m4g2j5n",
-    "ja": "私たちがようやく保安検査を抜けたときには、搭乗口はもう閉まっていました。",
-    "en": "By the time we finally got through security, the boarding gate had already closed.",
+    "id": "c_6e3a9w4b",
+    "ja": "保安検査後、ゲートはもう閉まっていた。",
+    "en": "After security, the gate had already closed.",
     "alternatives": [
-      "When we finally cleared security, the boarding gate had already closed.",
-      "The gate had already closed by the time we finally got through security."
+      "When we cleared security, the gate had closed.",
+      "The gate had closed once we cleared security."
     ],
     "point": "先に起きた「閉まった」は had closed で過去より前を示す",
     "topic": "travel",
     "subtopic": "airport",
     "level": 5,
     "grammar": ["past-perfect"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:ec646c9ed32adc4154362a8ced05f2758ac7ae3d22feb28ccd835accfbf8e91b",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_5q2z7x7f",
-    "ja": "隣の席の人が咳をしていたから、私は眠れなかった。",
-    "en": "I couldn't sleep because the person next to me was coughing.",
+    "id": "c_6g3q7s4a",
+    "ja": "私が保安検査で止められたのは、水のボトルのせいだ。",
+    "en": "It was my water bottle that got me stopped.",
     "alternatives": [
-      "The person next to me was coughing, so I couldn't sleep.",
-      "I couldn't sleep because the person beside me was coughing."
+      "What got me stopped was my water bottle.",
+      "It was my water bottle that got me stopped at security."
     ],
-    "point": "続いていた動作は was coughing と過去進行形にする",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 3,
-    "grammar": ["progressive-aspect", "past-simple"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:de1e73f867db4fe128df8a6726748201e8dbeb536e6cce02ee3cc2b281015097",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_5u3q5x8k",
-    "ja": "スーツケースを預けていなかったら、私たちは今ごろもう空港を出ていたのに。",
-    "en": "If we hadn't checked our suitcases, we'd already be out of the airport by now.",
-    "alternatives": [
-      "We'd already be out of the airport by now if we hadn't checked our suitcases.",
-      "If we hadn't checked our bags, we'd be out of the airport already."
-    ],
-    "point": "過去の仮定で今の結果を言うので主節は would be",
+    "point": "強調したい語を It was と that で挟む",
     "topic": "travel",
     "subtopic": "airport",
     "level": 9,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:677af87e41bb85941c772496160f26d5de4b34f6ab1abf66b1f2879a03662f79",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_5y8s6g3t",
-    "ja": "この国に来るのは初めてではないんですが、前回来たのはもう10年以上前です。",
-    "en": "This isn't my first time visiting this country, but the last time I came was over ten years ago.",
+    "id": "c_6m3f9m2m",
+    "ja": "荷物は通しで預けられると聞いたんですが、本当ですか？",
+    "en": "I heard my bag would be checked through, right?",
     "alternatives": [
-      "I've been to this country before, but the last time I came was more than ten years ago.",
-      "It's not my first visit here, but I last came over ten years ago."
+      "I was told my bag gets checked through. Is that right?",
+      "I heard my bag can be checked through. Is that right?"
     ],
-    "point": "前回の訪問は過去の一時点なので現在完了でなく過去形 came",
+    "point": "聞いた内容は時制をずらし would be checked にする",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 10,
+    "grammar": ["reported-speech", "nested-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6p4y3v2h",
+    "ja": "あの人、パスポートを家に忘れてきたに違いない。",
+    "en": "He must have left his passport at home.",
+    "alternatives": [
+      "He must've forgotten his passport at home.",
+      "He must have forgotten to bring his passport."
+    ],
+    "point": "「〜したに違いない」は must have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6t8p5x9c",
+    "ja": "ここには来たことがあるけど、10年前です。",
+    "en": "I've been here before, but it was ten years ago.",
+    "alternatives": [
+      "I've visited before, but that was ten years ago.",
+      "It's not my first time, but the last was ten years ago."
+    ],
+    "point": "ten years ago と言う過去の一時点は現在完了でなく過去形",
     "topic": "travel",
     "subtopic": "airport",
     "level": 10,
     "grammar": ["tense-contrast"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:e13ae7a634a43b87a06e95d03395ef9e1aba18f8d89786bed9d27efb4760180b",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
-  },
-  {
-    "id": "c_6r8h7a6j",
-    "ja": "彼はパスポートを家に忘れてきたに違いない。カウンターでもう10分もかばんの中を探している。",
-    "en": "He must have left his passport at home. He's been searching his bag at the counter for ten minutes now.",
-    "alternatives": [
-      "He must have left his passport at home. He's been digging through his bag at the counter for ten minutes now.",
-      "He must've left his passport at home, because he's been looking through his bag at the counter for ten minutes."
-    ],
-    "point": "「〜したに違いない」と過去を推量するときは must have + 過去分詞",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 8,
-    "grammar": ["modal-perfect", "present-perfect-continuous"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:38a0e822383a52474c3e3dcf64d741553155e2ec7c4bf6c08222462a466ef9e9",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_6t3g9g4t",
-    "ja": "乗り継ぎ便を予約してくれた旅行会社には、荷物は最終目的地まで通しで預けられると言われたんですが、合っていますか？",
-    "en": "The travel agency that booked my connecting flight told me my bag could be checked through to my final destination. Is that right?",
-    "alternatives": [
-      "The travel agency that booked my connecting flight said my bag could be checked all the way to my final destination. Is that correct?",
-      "I was told by the travel agency that booked my connection that my bag could go through to my final destination. Is that right?"
-    ],
-    "point": "「〜に言われた」は旅行会社を主語にして told me と能動態で言う",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 10,
-    "grammar": ["nested-clauses", "reported-speech"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:af10d1512bb81ea425958e53623ed4456abfa77acae319ab71e1bfba5fbd90cb",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
-  },
-  {
-    "id": "c_6w7s6f8a",
-    "ja": "あと5分早く空港に着いていたら、私はチェックインに間に合っていたのに。",
-    "en": "If I'd gotten to the airport five minutes earlier, I would've made it in time for check-in.",
-    "alternatives": [
-      "If I had arrived at the airport five minutes earlier, I would have made it to check-in in time.",
-      "I would've made it in time for check-in if I'd gotten to the airport five minutes earlier."
-    ],
-    "point": "過去の反対は if 節が had＋過去分詞、主節は would have",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 6,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:d28ccf3f8266841017859da87a2bfcdfa125f3aa4fc4d89b445088152ba154dc",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7c2d9g2f",
-    "ja": "入国の目的ですか？観光で来ました。",
+    "ja": "観光で来ました。",
     "en": "I'm here for sightseeing.",
     "alternatives": ["I'm here on vacation.", "I'm here as a tourist."],
     "point": "入国審査では I'm here for 目的 で答える",
@@ -437,10 +297,26 @@
     }
   },
   {
+    "id": "c_7d2s2f7m",
+    "ja": "ここに何を書くか教えてもらえますか？",
+    "en": "Could you tell me what to write here?",
+    "alternatives": [
+      "Do you know what I should write here?",
+      "Can you tell me what to put here?"
+    ],
+    "point": "文中の疑問は what to write か what I should write の形",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 5,
+    "grammar": ["indirect-questions", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7f2x9m9x",
-    "ja": "すみません、10 番ゲートはどこですか？",
-    "en": "Excuse me, where is Gate 10?",
-    "alternatives": ["Sorry, where is Gate 10?", "Excuse me, which way is Gate 10?"],
+    "ja": "10番ゲートはどこですか？",
+    "en": "Where is Gate 10?",
+    "alternatives": ["Which way is Gate 10?", "Excuse me, where's Gate 10?"],
     "point": "where の後は is＋主語の語順",
     "topic": "travel",
     "subtopic": "airport",
@@ -456,157 +332,131 @@
     }
   },
   {
-    "id": "c_7f9t5g3d",
-    "ja": "お客様、着陸する前にこの入国カードに記入していただけますか？",
-    "en": "Could you fill out this arrival card before we land, please?",
+    "id": "c_7r5y7s7t",
+    "ja": "食事はいらないと言いましたが、飲み物はもらえますか？",
+    "en": "I said no meal, but could I still get a drink?",
     "alternatives": [
-      "Would you mind filling out this arrival card before we land?",
-      "Could you please fill in this arrival card before we land?"
+      "I skipped the meal, but could I still have a drink?",
+      "I know I said no meal, but could I have a drink?"
     ],
-    "point": "「記入する」は fill out（fill in も可）で表す",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 5,
-    "grammar": ["phrasal-verbs", "requests-permission"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:9707c28ed153c84728986ab570682a1eb12a206a2e96d01f5655bb498eced2dd",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
-  },
-  {
-    "id": "c_7n2k6b8t",
-    "ja": "さっき食事はいらないと言ったんですが、それでも飲み物だけいただけますか？",
-    "en": "Even though I said earlier that I didn't want a meal, could I still get just a drink?",
-    "alternatives": [
-      "I know I said earlier I didn't want a meal, but could I still have just a drink?",
-      "Although I said earlier that I didn't need a meal, could I still get something to drink?"
-    ],
-    "point": "said に合わせて「いらない」も過去形 didn't want にする",
+    "point": "but の前後で対比し、still で「それでも」を出す",
     "topic": "travel",
     "subtopic": "airport",
     "level": 10,
     "grammar": ["concession-contrast", "reported-speech"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:c0247238db4f85f5a1c365db1dd4c32e7dfef2a7046af9c83b7f3745f5e79fd3",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_7n9c4w8w",
-    "ja": "保安検査で止められた原因は、ノートパソコンじゃなくて、かばんに入れっぱなしにしてた水のボトルだったんだ。",
-    "en": "It was the water bottle I'd left in my bag, not my laptop, that got me stopped at security.",
+    "id": "c_7w3j2k3f",
+    "ja": "保安検査で聞かれたのは、パソコンの有無だけ。",
+    "en": "They only asked whether I had a laptop.",
     "alternatives": [
-      "What got me stopped at security wasn't my laptop but the water bottle I'd left in my bag.",
-      "It wasn't my laptop that got me stopped at security, it was the water bottle I'd left in my bag."
-    ],
-    "point": "強調したい語を It was と that で挟む。not ~ は途中に入れる",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 9,
-    "grammar": ["cleft-emphasis", "past-perfect"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:542379bff49a81ab606d99fc0fab2aa96e955f8393ce35c212ed310c6f688629",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_8d7s6v6j",
-    "ja": "保安検査で係員に聞かれたのは、かばんにノートパソコンが入っているかどうかだけでした。",
-    "en": "All they asked me at security was whether I had a laptop in my bag.",
-    "alternatives": [
-      "The only thing they asked me at security was whether there was a laptop in my bag.",
-      "At security, they only asked me if I had a laptop in my bag."
+      "All they asked was whether I had a laptop.",
+      "They just wanted to know if I had a laptop."
     ],
     "point": "「〜かどうか」は whether か if で名詞節にする",
     "topic": "travel",
     "subtopic": "airport",
     "level": 7,
     "grammar": ["noun-clauses", "indirect-questions"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:b9894b3de60aba0a6a7d8b00d1e71009f2ee21da50142a6e914438164a12ce7c",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_8q7q2p2y",
-    "ja": "私たちは出発の2時間前に空港に着かないといけないよ。",
-    "en": "We have to get to the airport two hours before departure.",
+    "id": "c_7z9m9d9q",
+    "ja": "すみません、席を間違えたかもしれません。",
+    "en": "Sorry, I might have taken the wrong seat.",
     "alternatives": [
-      "We need to get to the airport two hours before departure.",
-      "We must be at the airport two hours before departure."
-    ],
-    "point": "「〜しないといけない」は have to。to の後は動詞の原形",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 3,
-    "grammar": ["modal-obligation-advice"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:1110e1958702cd7dca15e277044672a0e1967dd79db799bbcb9d453cc90de2f0",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_8x7e9d9t",
-    "ja": "窓側の席に替えてもらえますか？",
-    "en": "Could you change my seat to a window seat?",
-    "alternatives": [
-      "Can you change my seat to a window seat?",
-      "Could you move me to a window seat?"
-    ],
-    "point": "丁寧な依頼は Could you で始める",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 2,
-    "grammar": ["requests-permission"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:a2e554dd1d19e8d3a203dbbb635fd6a34804901e155a175683100fca39302d3d",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_9z7n7h4s",
-    "ja": "すみません、私、座席を間違えて座ってしまったかもしれません。搭乗券を確認してもらえますか？",
-    "en": "Excuse me, I might have taken the wrong seat. Could you check my boarding pass for me?",
-    "alternatives": [
-      "Sorry, I may have sat in the wrong seat. Would you mind checking my boarding pass?",
-      "Excuse me, I think I might be in the wrong seat. Could you take a look at my boarding pass?"
+      "Sorry, I may have sat in the wrong seat.",
+      "Excuse me, I might have the wrong seat."
     ],
     "point": "過去のことの推量は might have + 過去分詞",
     "topic": "travel",
     "subtopic": "airport",
     "level": 6,
-    "grammar": ["modal-perfect", "articles-and-countability"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:46be14856ec8e88c4e28b88f205f54add25cb584f7b175d6e1ed769240eb85ba",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8n4z2f9d",
+    "ja": "窓側の席を頼んでおけばよかった。",
+    "en": "I wish I'd asked for a window seat.",
+    "alternatives": [
+      "I should have asked for a window seat.",
+      "If only I'd requested a window seat."
+    ],
+    "point": "過去の後悔は I wish I had 過去分詞",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["wishes-regrets", "modal-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8s2n9h6u",
+    "ja": "できれば通路側の席に替えてもらえませんか？",
+    "en": "Could you possibly move me to an aisle seat?",
+    "alternatives": [
+      "Would you mind moving me to an aisle seat?",
+      "Could you see about moving me to an aisle seat?"
+    ],
+    "point": "possibly を添えると、頼み方がさらに柔らかくなる",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8y4q7r2w",
+    "ja": "審査で、帰りの航空券が必要だと言われた。",
+    "en": "They said I needed a return ticket.",
+    "alternatives": [
+      "They told me I needed a return ticket.",
+      "They said a return ticket was required."
+    ],
+    "point": "said に合わせて need も needed と過去形にする",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 5,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9e5k5m6y",
+    "ja": "隣の席の人が一晩中咳をしていた。",
+    "en": "My seatmate was coughing all night.",
+    "alternatives": [
+      "The person beside me coughed all night.",
+      "My seatmate kept coughing all night."
+    ],
+    "point": "続いていた動作は was coughing と過去進行形にする",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 3,
+    "grammar": ["progressive-aspect", "past-simple"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9n6c6e2b",
+    "ja": "席を替わっていただけませんか？",
+    "en": "Would you mind switching seats with me?",
+    "alternatives": [
+      "Would you mind trading seats with me?",
+      "Could you switch seats with me, please?"
+    ],
+    "point": "mind の後は動名詞。to switch にしない",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 5,
+    "grammar": ["gerunds", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]
