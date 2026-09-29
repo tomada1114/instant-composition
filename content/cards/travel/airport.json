@@ -112,22 +112,6 @@
     "stamps": {}
   },
   {
-    "id": "c_3e3a9j6r",
-    "ja": "私たち、荷物を預けてなければ、もう空港を出てたのに。",
-    "en": "If we hadn't checked our bags, we'd be out already.",
-    "alternatives": [
-      "If we hadn't checked our bags, we'd be out by now.",
-      "We'd already be out if we hadn't checked our bags."
-    ],
-    "point": "過去の仮定で今の結果を言うので、主節は would be",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 9,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3s3g9b9e",
     "ja": "彼の英語がもっと上手なら、もっと早く済むのに。",
     "en": "If he spoke better English, we'd be done sooner.",
@@ -180,22 +164,6 @@
         "at": "2026-09-22"
       }
     }
-  },
-  {
-    "id": "c_5b2a4p6t",
-    "ja": "薬を飲むので、お水をいただけますか？",
-    "en": "Could I have water for my medicine?",
-    "alternatives": [
-      "Can I get some water for my medicine?",
-      "Could you bring me water for my medicine?"
-    ],
-    "point": "「薬用の水」は water for my medicine と前置詞で表す",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 4,
-    "grammar": ["requests-permission", "articles-and-countability"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_6e3a9w4b",
@@ -348,22 +316,6 @@
     "stamps": {}
   },
   {
-    "id": "c_7w3j2k3f",
-    "ja": "保安検査で聞かれたのは、パソコンの有無だけ。",
-    "en": "They only asked whether I had a laptop.",
-    "alternatives": [
-      "All they asked was whether I had a laptop.",
-      "They just wanted to know if I had a laptop."
-    ],
-    "point": "「〜かどうか」は whether か if で名詞節にする",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 7,
-    "grammar": ["noun-clauses", "indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7z9m9d9q",
     "ja": "すみません、席を間違えたかもしれません。",
     "en": "Sorry, I might have taken the wrong seat.",
@@ -408,6 +360,22 @@
     "subtopic": "airport",
     "level": 7,
     "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8x5y2z6t",
+    "ja": "税関でこんなに長い列は、今まで見たことがない。",
+    "en": "Never have I seen such a long line at customs.",
+    "alternatives": [
+      "I've never seen a line this long at customs.",
+      "This is the longest line I've ever seen at customs."
+    ],
+    "point": "Never を文頭に出すと、have I seen の語順に倒置する",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 9,
+    "grammar": ["inversion"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },

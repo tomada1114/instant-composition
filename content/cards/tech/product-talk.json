@@ -73,7 +73,13 @@
     "level": 10,
     "grammar": ["inversion"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d144eac6607334297f20d739278ba3a7cd38ad7d6396ae8c6fcdc8af6e3f1639",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2m6g9d2q",
@@ -89,7 +95,13 @@
     "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2cc51b3adcc47f088e39b63457878afbd9e11974a06b331274fd471ca467a6e1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2w2r5x9h",
@@ -177,38 +189,6 @@
     }
   },
   {
-    "id": "c_3t6y2f3q",
-    "ja": "エクスポートを次のスプリントに入れられませんか？",
-    "en": "Could you possibly squeeze exports into the next sprint?",
-    "alternatives": [
-      "Could we fit exports into the next sprint?",
-      "Would it be possible to add exports next sprint?"
-    ],
-    "point": "Could you possibly で依頼を柔らかくする",
-    "topic": "tech",
-    "subtopic": "product-talk",
-    "level": 7,
-    "grammar": ["hedging-softening"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4a2n8m8k",
-    "ja": "上司は、新機能より速さが大事だと考えています。",
-    "en": "My boss thinks speed matters more than new features.",
-    "alternatives": [
-      "My boss values speed over new features.",
-      "My boss believes speed beats new features."
-    ],
-    "point": "think の後の that は省略できる。matter more than で比べる",
-    "topic": "tech",
-    "subtopic": "product-talk",
-    "level": 6,
-    "grammar": ["noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_4h9r3k8f",
     "ja": "うちはもっとテストを書かないと。",
     "en": "We have to write more tests.",
@@ -226,54 +206,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_4n5b4n7a",
-    "ja": "検索への要望は多いのに、利用データが少ない。",
-    "en": "We've got plenty of search feedback but little usage data.",
-    "alternatives": [
-      "We have lots of search feedback but little usage data.",
-      "There's plenty of search feedback but not much usage data."
-    ],
-    "point": "feedback も data も数えられない名詞。s は付けない",
-    "topic": "tech",
-    "subtopic": "product-talk",
-    "level": 7,
-    "grammar": ["articles-and-countability"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4y4p4u7x",
-    "ja": "バグが直るまで、発表は待ちましょう。",
-    "en": "Let's hold off on announcing until the bug is fixed.",
-    "alternatives": [
-      "Let's wait to announce until the bug is fixed.",
-      "Why don't we hold off announcing until we fix it?"
-    ],
-    "point": "until 節は未来のことでも現在形（is fixed）",
-    "topic": "tech",
-    "subtopic": "product-talk",
-    "level": 8,
-    "grammar": ["phrasal-verbs", "time-and-if-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5b5c3q3b",
-    "ja": "ダークモードは人気だけど、うちは見送ります。",
-    "en": "Popular as it is, we're skipping dark mode.",
-    "alternatives": [
-      "Dark mode is popular, but we're skipping it.",
-      "Popular or not, we're passing on dark mode."
-    ],
-    "point": "「〜だけど」は Adj as it is、で譲歩を表せる",
-    "topic": "tech",
-    "subtopic": "product-talk",
-    "level": 7,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_5b8z7q3d",
@@ -311,7 +243,13 @@
     "level": 8,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f2e3d1bddae4027cddc6c6d201e6dbbbef58e49af63744b100eff8934de2561",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5k2c8k6a",
@@ -371,7 +309,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2343f0feb39ced5f6ae66d4ddbc73d7fdfad42712efbd1dbf0365d93098d049a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7d2f9j5n",
@@ -396,22 +340,6 @@
     }
   },
   {
-    "id": "c_8b4u7a7p",
-    "ja": "リリース前に決済フローをQAにテストしてもらおう。",
-    "en": "Let's have QA test the checkout flow before release.",
-    "alternatives": [
-      "Let's get QA to test the checkout flow before release.",
-      "Before we release, let's have QA test the checkout flow."
-    ],
-    "point": "「〜してもらう」は have + 人 + 動詞の原形（to は不要）",
-    "topic": "tech",
-    "subtopic": "product-talk",
-    "level": 7,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8h4c5a8q",
     "ja": "決済は来月にずれ込むかもとPMが言ってた。",
     "en": "The PM said payments might slip to next month.",
@@ -425,7 +353,13 @@
     "level": 6,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ae08db656b47adcc5876bbc82634c771594deb47950ffbc77a6bcbf5c139c2d2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9a8e2j6k",
@@ -463,6 +397,12 @@
     "level": 5,
     "grammar": ["relative-clauses", "passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c490443b406ce269efc24a9278d62d6152968a25ccaf09e43991b430434c571",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
