@@ -98,7 +98,20 @@ describe("the estimate on the start screen", () => {
     [20, 10],
     [30, 15],
     [7, 4],
-  ])("puts %p cards at about %p minutes", (cards, minutes) => {
-    expect(estimateMinutes(cards)).toBe(minutes);
+  ])("puts %p cards at the default limit at about %p minutes", (cards, minutes) => {
+    expect(estimateMinutes(cards, TUNING.defaultLimitSeconds)).toBe(minutes);
   });
+
+  it.each([
+    [15, 3],
+    [20, 4],
+    [30, 5],
+    [45, 8],
+    [60, 10],
+  ] as const)(
+    "puts ten cards at a %p-second limit at about %p minutes",
+    (limit, minutes) => {
+      expect(estimateMinutes(10, limit)).toBe(minutes);
+    },
+  );
 });

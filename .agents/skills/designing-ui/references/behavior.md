@@ -121,7 +121,7 @@ the drill.
   No loading state between cards: it would distort the timer.
 - Starting values tuned by use live in configuration, never in a component: the time
   limits on offer and their default, the pace formula, the "fast" threshold, ring
-  milestones, streak milestones, milestone names, and the minutes-per-card estimate on
-  the start screen.
+  milestones, streak milestones and milestone names. The start screen's minutes estimate
+  has no value of its own: it counts each card at the learner's chosen limit.
 - Errors are words and a glyph, never red: a failed save is a toast and is retried with
   the next answer; practice never stops for it.

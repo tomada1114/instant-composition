@@ -1,4 +1,5 @@
 import { TUNING } from "./tuning";
+import type { LimitSeconds } from "./types";
 
 /**
  * Words in a model answer: whitespace-separated tokens carrying a letter or
@@ -51,7 +52,11 @@ export function isFast(elapsedMs: number, paceMs: number): boolean {
   return elapsedMs <= paceMs * TUNING.fastRatio;
 }
 
-/** The start screen's "about M minutes" for `cards` cards, rounded up. */
-export function estimateMinutes(cards: number): number {
-  return Math.ceil((cards * TUNING.estimateSecondsPerCard) / 60);
+/**
+ * The start screen's "about M minutes" for `cards` cards, rounded up: each
+ * card at the per-card limit the round will be dealt with, so the estimate
+ * moves with the learner's choice rather than a figure of its own.
+ */
+export function estimateMinutes(cards: number, limitSeconds: LimitSeconds): number {
+  return Math.ceil((cards * limitSeconds) / 60);
 }
