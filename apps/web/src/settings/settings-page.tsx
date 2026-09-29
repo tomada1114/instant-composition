@@ -13,11 +13,12 @@ import { SettingsScreen } from "./settings-screen";
 export function SettingsPage(): ReactElement {
   const page = useQuery({ ...SETTINGS_QUERY, refetchOnMount: "always" });
 
-  if (!page.isFetchedAfterMount) return <PageLoading />;
+  if (!page.isFetchedAfterMount) return <PageLoading withTabBar />;
   if (isSignedOut(page.error)) return <Navigate to="/" replace />;
   if (page.isError || page.data === undefined) {
     return (
       <PageLoadFailed
+        withTabBar
         onReload={() => {
           void page.refetch();
         }}

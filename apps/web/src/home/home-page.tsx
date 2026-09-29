@@ -2,8 +2,8 @@ import { useQuery } from "@tanstack/react-query";
 import { Navigate } from "@tanstack/react-router";
 import type { ReactElement } from "react";
 
+import { PageLoadFailed } from "../lib/page-shell";
 import { HOME_QUERY, isSignedOut } from "../lib/queries";
-import { LoadFailedPanel } from "./home-empty";
 import { HomeScreen } from "./home-screen";
 import { HomeSkeleton } from "./home-skeleton";
 import { LandingScreen } from "./landing-screen";
@@ -25,11 +25,7 @@ export function HomePage(): ReactElement {
   if (!home.isFetchedAfterMount) return <HomeSkeleton />;
   if (isSignedOut(home.error)) return <LandingScreen />;
   if (home.isError || home.data === undefined) {
-    return (
-      <main className="mx-auto box-content flex min-h-[calc(var(--column-height)-4rem)] max-w-column flex-col justify-center px-4 py-8">
-        <LoadFailedPanel onReload={reload} />
-      </main>
-    );
+    return <PageLoadFailed onReload={reload} withTabBar />;
   }
   const view = home.data;
   if (view.state.kind === "onboarding") return <Navigate to="/welcome" replace />;

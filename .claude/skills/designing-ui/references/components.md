@@ -14,6 +14,7 @@ to the design's names.
 | `kbd`                     | `side`: `end` (default), `start`                           | hidden until the learner has pressed a key (`keys:` variant)                   |
 | `icon-button`             | tile (default), `plain`                                    | default, focus, pressed; sound adds `aria-pressed`                             |
 | `eyebrow`                 | —                                                          | —                                                                              |
+| `tab-bar`                 | — (home, records, settings)                                | current (`aria-current="page"`), other; focus                                  |
 | `grade-pair`              | — (× and ○ side by side)                                   | default, focus, pressed; only on a back the learner flipped                    |
 | `drill-face`              | `front`, `back-self`, `back-timeout`                       | with or without the "again" mark; during the ○ light                           |
 | `ticks`                   | —                                                          | done, current, current lit (○), upcoming; absent past 30 cards                 |
@@ -79,14 +80,47 @@ only touched the screen.
 
 - `icon-button`: 44 × 44, 12 radius, a 20 glyph in `text-foreground` on `bg-card`;
   pressed `bg-raised`. `plain` drops the tile (the drill's pause). The caller names it
-  (`aria-label`); sound carries `aria-pressed`. Home's top right is sound, records
-  (bars), settings (gear); a sub-screen's top left is ← back.
+  (`aria-label`); sound carries `aria-pressed`. Home's top right is sound alone; a
+  re-read summary's top left is ← back.
 - `eyebrow`: `font-mono text-eyebrow uppercase text-muted-foreground`, above a figure or
   a block ("Streak", "Today", "Placement", "Welcome"). Decorative when the figure beside
   it already has a Japanese name: then `aria-hidden`.
 
 Glyphs are drawn in `apps/web/src/ui/glyphs.tsx` on a 20 grid, 1.75 strokes, round ends.
 There is no icon library.
+
+## Tab bar
+
+The one navigation, on home, records and settings — their loading and failed states
+included, so switching tabs never blanks it — and nowhere else: a round is the whole
+screen (its pause sheet's "stop" is the way out), the welcome screen has its one way
+forward, and the signed-out landing has nowhere to go yet. Researched on Refero:
+learning apps keep their sections in a bottom bar at the thumb (Brilliant's home,
+courses, leagues, settings; Duolingo, BoldVoice, LookUp, Kann) and drop it for a quiz
+(Kann's kana quiz keeps dismiss and progress along the top, no bar) — so the top edge
+stays the drill's, for its ticks.
+
+- Fixed to the column's bottom edge: `bg-background`, three equal cells across the
+  column over one hairline (`border-t border-border`), each `--tab-bar-height` (49, an
+  iOS tab bar) including the hairline. It sits `--column-inset` up from the window's
+  edge on a `wide` window, or a phone's home-indicator inset up where that is larger
+  (`viewport-fit=cover` makes `env(safe-area-inset-bottom)` readable), the canvas under
+  it covering what scrolls past.
+- A cell is a link: the 20 glyph (house, bars, gear) over its name in `caption`, 4
+  apart, centred. The whole cell is the hit area.
+- Current: `text-foreground`, plus a 24 × 2 white pill on the hairline above it, so the
+  state does not rest on grey against white alone. Other: `text-muted-foreground`. Never
+  the accent, never a filled tile or a pill behind the glyph.
+- The router marks the current link `aria-current="page"`, matched on the exact path so
+  `/` is not current on every screen, and ignoring the query. The `nav` is named
+  ("menu") and is the screen's only navigation landmark.
+- Rendered after the screen's `main`, so a sheet opened inside `main` covers it. A
+  screen under it pads its foot by `--tab-bar-space` (the bar plus any inset it rises
+  by) plus its own bottom gap. Home's skeleton reserves that space but draws no bar: a
+  signed-out visitor at `/` must not see one flash before the landing.
+- Esc on records and settings still goes home.
+
+`apps/web/src/lib/tab-bar.tsx` is this recipe.
 
 ## Grade pair
 
@@ -131,10 +165,12 @@ use: keep them in configuration, not in the component.
 
 ## Home panel and mix bar
 
-The start screen is three stacked zones: the top bar (brand `eyebrow` left, icon tiles
-right), the streak block centred in the free space (`eyebrow` "Streak", the figure in
-`number-xl`, the week row), and one `bg-card rounded-card p-5` panel at the bottom that
-carries the state and its one primary action.
+The start screen is three stacked zones over the tab bar: the top bar (brand `eyebrow`
+left, the sound tile right), the streak block centred in the free space (`eyebrow`
+"Streak", the figure in `number-xl`, the week row), and one `bg-card rounded-card p-5`
+panel at the bottom that carries the state and its one primary action. The zones are at
+least 32 apart, so the tallest panel (done, with yesterday to make up) still fits a PC's
+720 column.
 
 | State       | Panel contents                                                                                                                                                                                                                                                         |
 | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -264,9 +300,9 @@ above and below each. Section titles are muted `label`s.
 
 ## Record screen parts
 
-The record screen: ← and "records" (`heading`); the rings with ⓘ and each topic's
-disclosure; the weak points with ⓘ; the stat tiles; the calendar with ⓘ; the milestones.
-Nothing is lit.
+The record screen: "records" (`heading`) and the tab bar; the rings with ⓘ and each
+topic's disclosure; the weak points with ⓘ; the stat tiles; the calendar with ⓘ; the
+milestones. Nothing is lit.
 
 | Part             | Value                                                                                                                                                                                                                           |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -282,8 +318,8 @@ Nothing is lit.
 `/` for a visitor who is not signed in: what the drill is, told the way the W2 intro
 tells the placement round, with nothing read from the API.
 
-- Top: the brand `eyebrow` over the app's name in `heading`. No icon tiles and no
-  navigation: a visitor has nowhere to go yet.
+- Top: the brand `eyebrow` over the app's name in `heading`. No sound tile and no tab
+  bar: a visitor has nowhere to go yet.
 - Centred in the free space: the drill's three moves — a Japanese prompt, said in
   English before the timer runs out, flipped and graded ○ / × — as numbered steps
   between hairlines, "01" in muted `mono-sm` and the move in `heading`, one line each.

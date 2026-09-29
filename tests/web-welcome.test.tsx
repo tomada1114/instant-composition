@@ -177,6 +177,7 @@ describe("the welcome screen, W1", () => {
     );
     expect(screen.getByText("会議・依頼")).toBeInTheDocument();
     expect(next()).toBeDisabled();
+    expect(screen.queryByRole("navigation")).toBeNull();
   });
 
   it("saves the chosen topics in the taxonomy's order and goes on to the placement", async () => {

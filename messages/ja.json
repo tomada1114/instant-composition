@@ -7,8 +7,6 @@
     "brand": "Instant Composition",
     "soundOn": "効果音 オン",
     "soundOff": "効果音 オフ",
-    "records": "記録",
-    "settings": "設定",
     "streakEyebrow": "Streak",
     "streakUnit": "日連続",
     "restartTitle": "今日から 1 日目",
@@ -68,6 +66,12 @@
       "title": "例文を読み込めませんでした",
       "reload": "読み込み直す"
     }
+  },
+  "Nav": {
+    "label": "メニュー",
+    "home": "ホーム",
+    "records": "記録",
+    "settings": "設定"
   },
   "Landing": {
     "brand": "Instant Composition",
@@ -225,7 +229,6 @@
   },
   "Records": {
     "title": "記録",
-    "back": "戻る",
     "breakdown": "{topic} の内訳",
     "difficulty": "難易度",
     "toeic": "TOEIC {toeic}",
@@ -261,7 +264,6 @@
   },
   "Settings": {
     "title": "設定",
-    "back": "戻る",
     "topics": {
       "title": "場面",
       "keepOne": "1 つは選んだままにします"

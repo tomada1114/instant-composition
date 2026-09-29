@@ -37,7 +37,9 @@ Preserve:           near-black canvas; one lime; figures in a grotesk set big an
                     shadows — depth comes only from canvas / surface / raised.
 Borrow only:        from WHOOP, big figures over a quiet data row (the home screen's
                     streak over its week); from Cron, rounded-rectangle controls
-                    (18 radius) rather than pills, and icon tiles for navigation.
+                    (18 radius) rather than pills; from the learning apps' own
+                    shells (Brilliant, Kann), one bottom tab bar across the hub
+                    screens that the drill drops.
 Role rules:         the accent marks exactly four things — a said-it (○) grade, the one
                     primary action on a screen, a running indicator (timer bar, combo),
                     and what grew in this session. Selection is white. Focus is white.
@@ -80,7 +82,8 @@ than home-made feel); "Here" marks a call made while transcribing either.
 | Key hints hidden until the learner presses a key (`data-keys`, remembered in local storage) | Redesign | A permanent "Space" on every button was noise for touch learners; whoever uses a key sees them from then on                       |
 | `?` pauses, and the pause sheet lists the keys                                              | Redesign | One place to learn the keys, reached by the key a keyboard user tries first                                                       |
 | A ○ lights the answer and the current tick, not a rim around a card                         | Redesign | With no card box there is no rim; the answer is what the learner is looking at                                                    |
-| Navigation is icon tiles (sound, records, settings); back is ←                              | Redesign | Underlined text links read as a document, not an app                                                                              |
+| Navigation is one bottom tab bar (home, records, settings) on those three screens only      | Redesign | Refero: Brilliant, Duolingo, BoldVoice and Kann keep sections in a bottom bar and drop it in a quiz; Train Fitness marks it white |
+| The sound switch stays a lone tile at home's top right                                      | Here     | Muting is wanted before a round, on the screen that starts one; settings keeps the same switch as a row                           |
 | Definitions (what counts as mastered, how the streak counts) sit behind ⓘ                   | Redesign | Needed once, read never again; a permanent paragraph taxed every visit                                                            |
 | Secondary text `#939396`; `#5C5C60` only for disabled text                                  | Here     | `#5C5C60` measures 2.97:1 on the canvas, under the text floor                                                                     |
 | One column, 420 max, 16 gutter; on a PC at most 720 tall and centered, the sheet a dialog   | Here     | Full height put ○/× ~800 below the prompt; PC lessons (Preply) keep answers by the question, PC dialogs (Linear) open centered    |
@@ -105,9 +108,9 @@ Read the one the task needs; each records what is settled, not a proposal.
   not-colour-alone rules, the three families and the type scale, spacing, shape, layout
   and the measured contrast.
 - [components.md](references/components.md) — the component inventory and every recipe:
-  button, key hint, icon button, eyebrow, grade pair, the drill's faces, ticks, timer
-  bar, selection controls, rings, week bars, summary parts, sheet, info tip, toast,
-  skeleton.
+  button, key hint, icon button, eyebrow, tab bar, grade pair, the drill's faces, ticks,
+  timer bar, selection controls, rings, week bars, summary parts, sheet, info tip,
+  toast, skeleton.
 - [behavior.md](references/behavior.md) — motion and its reduced form, sound, keys and
   key hints, accessibility and the implementation rules (timing, pause on hide, the
   session day).

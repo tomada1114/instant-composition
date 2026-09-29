@@ -12,6 +12,7 @@ import {
   fill,
   homeView,
   ja,
+  navigations,
   press,
   refusal,
   renderApp,
@@ -150,7 +151,7 @@ describe("the home screen, W3a: today's portion not started", () => {
   it("leaves Space to a focused control, and ignores held or modified keys", async () => {
     serveHome(homeView({ kind: "ready", streak: COUNT }));
     await renderApp("/");
-    const link = screen.getByRole("link", { name: ja.Home.records });
+    const link = screen.getByRole("link", { name: ja.Nav.records });
     fireEvent.keyDown(link, { key: " " });
     fireEvent.keyDown(window, { key: "Enter", repeat: true });
     fireEvent.keyDown(window, { key: "Enter", metaKey: true });
@@ -162,19 +163,41 @@ describe("the home screen, W3a: today's portion not started", () => {
     expect(where()).toBe("/drill?kind=today");
   });
 
-  it("links to the records and the settings", async () => {
+  it("carries the one navigation, home current, and follows it to the settings", async () => {
     serveHome(homeView({ kind: "ready", streak: COUNT }));
     await renderApp("/");
-    expect(screen.getByRole("link", { name: ja.Home.records })).toHaveAttribute(
-      "href",
-      "/records",
-    );
-    const settings = screen.getByRole("link", { name: ja.Home.settings });
-    expect(settings).toHaveAttribute("href", "/settings");
+    expect(navigations()).toStrictEqual([
+      [
+        ["/", "page"],
+        ["/records", null],
+        ["/settings", null],
+      ],
+    ]);
+    expect(screen.getByRole("navigation", { name: ja.Nav.label })).toBeInTheDocument();
+    const settings = screen.getByRole("link", { name: ja.Nav.settings });
     fireEvent.click(settings);
     await settle();
     expect(where()).toBe("/settings");
     expect(screen.queryByRole("heading", { name: ja.NotFound.title })).toBeNull();
+  });
+
+  it("marks home current when the address carries a query", async () => {
+    serveHome(homeView({ kind: "ready", streak: COUNT }));
+    await renderApp("/?utm_source=x");
+    expect(navigations()).toStrictEqual([
+      [
+        ["/", "page"],
+        ["/records", null],
+        ["/settings", null],
+      ],
+    ]);
+  });
+
+  it("shows no navigation until the view answers, so a visitor never sees it flash", async () => {
+    fakeApi(() => new Promise<Response>(() => undefined));
+    await renderApp("/");
+    await settle(TUNING.skeletonDelayMs);
+    expect(navigations()).toStrictEqual([]);
   });
 
   it("names the document from the catalog", async () => {
@@ -467,6 +490,13 @@ describe("the home screen before and instead of the home view", () => {
     expect(
       screen.getByRole("heading", { name: ja.Home.loadFailed.title }),
     ).toBeInTheDocument();
+    expect(navigations()).toStrictEqual([
+      [
+        ["/", "page"],
+        ["/records", null],
+        ["/settings", null],
+      ],
+    ]);
     fireEvent.click(screen.getByRole("button", { name: ja.Home.loadFailed.reload }));
     await settle();
     expect(
@@ -527,6 +557,7 @@ describe("a visitor who is not signed in", () => {
       "/api/v1/auth/login",
     );
     expect(screen.getAllByRole("link")).toHaveLength(1);
+    expect(screen.queryByRole("navigation")).toBeNull();
     expect(screen.queryByRole("button")).toBeNull();
     expect(
       screen.queryByRole("heading", { name: ja.Home.loadFailed.title }),
@@ -582,7 +613,7 @@ describe("a session that runs out while the app is open", () => {
         : refusal(401, "ERR_UNAUTHENTICATED"),
     );
     await renderApp("/");
-    fireEvent.click(screen.getByRole("link", { name: ja.Home.records }));
+    fireEvent.click(screen.getByRole("link", { name: ja.Nav.records }));
     await settle();
     await settle(TUNING.skeletonDelayMs);
     expect(visited).toStrictEqual(["/api/v1/auth/login"]);
