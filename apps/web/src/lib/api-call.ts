@@ -89,21 +89,37 @@ async function refreshSession(): Promise<boolean> {
 }
 
 /**
+ * Whether a call in this visit has been answered signed in. Until one has, a
+ * refusal the refresh cannot lift means nobody signed in before the visit
+ * began; once one has, it means the session ran out while the app was open.
+ */
+let signedIn = false;
+
+/** Starts a visit in which nobody is yet known to be signed in: each page load, and each mount of the app. */
+export function beginVisit(): void {
+  signedIn = false;
+}
+
+/**
  * Sends one call. An `ERR_UNAUTHENTICATED` answer renews the session once and
- * sends the call again; when renewal fails, or the retry is refused too, the
- * browser is sent to sign in. At most one refresh per call, so this never loops.
- * Once the browser is on its way to sign in, the call never settles, so a
- * screen stays in its loading state instead of flashing a failure before the
- * page unloads.
+ * sends the call again. When renewal fails, or the retry is refused too, the
+ * refusal is the answer if nothing in this visit was signed in yet — a visitor
+ * who is signed out, whom the screens show the landing screen — and otherwise
+ * the browser is sent to sign in. At most one refresh per call, so this never
+ * loops. Once the browser is on its way to sign in, the call never settles, so
+ * a screen stays in its loading state instead of flashing a failure before
+ * the page unloads.
  */
 export async function send(method: Method, data: OperationData): Promise<Response> {
-  const first = await request(method, data);
-  if (!(await isUnauthenticated(first))) return first;
-  if (await refreshSession()) {
-    const retry = await request(method, data);
-    if (!(await isUnauthenticated(retry))) return retry;
+  let answer = await request(method, data);
+  if ((await isUnauthenticated(answer)) && (await refreshSession())) {
+    answer = await request(method, data);
   }
-  return signIn();
+  if (!(await isUnauthenticated(answer))) {
+    if (answer.ok) signedIn = true;
+    return answer;
+  }
+  return signedIn ? signIn() : answer;
 }
 
 function signIn(): Promise<never> {

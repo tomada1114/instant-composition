@@ -50,6 +50,7 @@ export { CatalogProvider } from "./i18n/provider";
 export { createTranslator } from "use-intl";
 export {
   API_ROOT,
+  beginVisit,
   finishRound,
   getHome,
   getRecords,

@@ -3,7 +3,7 @@ import { Navigate, useNavigate } from "@tanstack/react-router";
 import type { ReactElement } from "react";
 
 import { PageLoadFailed, PageLoading } from "../lib/page-shell";
-import { errorCodeOf, HOME_QUERY, readRoundSummary } from "../lib/queries";
+import { errorCodeOf, HOME_QUERY, isSignedOut, readRoundSummary } from "../lib/queries";
 import type { RoundSummary } from "../openapi";
 import { SummaryScreen } from "./summary-screen";
 
@@ -49,6 +49,7 @@ export function RecapPage(): ReactElement {
   });
 
   if (!home.isFetchedAfterMount) return <PageLoading />;
+  if (isSignedOut(home.error)) return <Navigate to="/" replace />;
   if (home.isError) {
     return (
       <PageLoadFailed
