@@ -205,6 +205,22 @@
     }
   },
   {
+    "id": "c_4a5c6v6y",
+    "ja": "早く機能を絞っていれば、もう出せたのに。",
+    "en": "If we'd cut scope sooner, we'd have shipped already.",
+    "alternatives": [
+      "We'd have shipped already if we'd cut scope sooner.",
+      "If we'd trimmed scope earlier, we'd have released by now."
+    ],
+    "point": "過去の仮定は if + had 過去分詞、結果は would have 過去分詞",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4h9r3k8f",
     "ja": "うちはもっとテストを書かないと。",
     "en": "We have to write more tests.",
@@ -370,22 +386,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_5v7n5j8n",
-    "ja": "早く機能を絞っていたら、今日出せていたのに。",
-    "en": "If we'd cut scope sooner, we'd be shipping today.",
-    "alternatives": [
-      "Had we cut scope sooner, we'd be shipping today.",
-      "If we'd scoped it down earlier, we'd be live today."
-    ],
-    "point": "過去の仮定 + 今の結果は if had 過去分詞, would be -ing",
-    "topic": "tech",
-    "subtopic": "product-talk",
-    "level": 8,
-    "grammar": ["mixed-conditional", "third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_5v8k2b7w",

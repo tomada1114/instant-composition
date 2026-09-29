@@ -48,14 +48,14 @@
     "ja": "乗り継ぎに間に合うか、教えていただけますか？",
     "en": "Could you tell me whether I'll make my connection?",
     "alternatives": [
-      "Would you let me know if I'll make my connection?",
-      "Can you tell me if I'll catch my connecting flight?"
+      "Can you tell me if I'll make my connection?",
+      "Could you check if I'll make my connection?"
     ],
     "point": "間に合う=make。埋め込み文は平叙の語順",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 10,
-    "grammar": ["nested-clauses"],
+    "level": 6,
+    "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -257,17 +257,17 @@
   },
   {
     "id": "c_6b9f6v7s",
-    "ja": "一時間ここで待っているのに、搭乗がまだ始まらないんです。",
-    "en": "I've been here an hour, and boarding still hasn't started.",
+    "ja": "一時間待って、搭乗がまだ始まらない。",
+    "en": "I've waited an hour; boarding still hasn't started.",
     "alternatives": [
-      "I've been waiting here an hour, and boarding hasn't begun yet.",
-      "I've waited an hour, but they still haven't started boarding."
+      "I've waited an hour, but boarding hasn't begun.",
+      "Boarding hasn't started, and I've waited an hour."
     ],
     "point": "待ち続けている時間は現在完了形で言う",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 10,
-    "grammar": ["tense-contrast"],
+    "level": 4,
+    "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -353,7 +353,7 @@
   {
     "id": "c_6n4r9u2k",
     "ja": "もっと早い便に変えられますか？",
-    "en": "Can I take an earlier flight?",
+    "en": "Can I switch to an earlier flight?",
     "alternatives": [
       "Can I change to an earlier flight?",
       "Could I switch to an earlier flight?"
@@ -615,15 +615,15 @@
   {
     "id": "c_9k3k6k5r",
     "ja": "オンラインでチェックイン済みなのに、結局並んだ。",
-    "en": "Despite checking in online, I still had to queue.",
+    "en": "I checked in online, but still waited in line.",
     "alternatives": [
-      "Although I checked in online, I still had to queue.",
-      "I checked in online, but I still had to queue."
+      "Although I checked in online, I still waited in line.",
+      "I'd already checked in online, but still waited in line."
     ],
-    "point": "のに は Despite + 動名詞でも表せる",
+    "point": "「のに」は but や although で対比を表す",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 8,
+    "level": 7,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -655,13 +655,13 @@
     "ja": "私たちの前にいた男性が、別室に連れて行かれた。",
     "en": "The man who went before us got pulled aside.",
     "alternatives": [
-      "The man who was ahead of us was taken aside.",
-      "The man in front of us got pulled aside."
+      "The man in front of us got pulled aside.",
+      "The man ahead of us was taken aside."
     ],
     "point": "who 節で「前にいた男性」を後ろから説明する",
     "topic": "travel",
     "subtopic": "airport",
-    "level": 7,
+    "level": 6,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}

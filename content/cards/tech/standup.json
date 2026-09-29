@@ -377,6 +377,22 @@
     }
   },
   {
+    "id": "c_6v3y7m8w",
+    "ja": "うちは少し遅れ気味ですが、金曜には終わりそうです。",
+    "en": "We're a bit behind, but should finish by Friday.",
+    "alternatives": [
+      "We're slightly behind, but we should be done by Friday.",
+      "We're running a little late, but should wrap up Friday."
+    ],
+    "point": "「遅れ気味」は behind、「終わりそう」は should で和らげる",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 7,
+    "grammar": ["concession-contrast", "hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6v9g2x9u",
     "ja": "昨日のデプロイ、どこで止まりました？",
     "en": "Where did yesterday's deploy get stuck?",
@@ -675,23 +691,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9e3v3f8n",
-    "ja": "明日の朝会、私は休んでもいいですか？",
-    "en": "Is it okay if I skip tomorrow's standup?",
-    "alternatives": [
-      "Would it be okay if I skipped tomorrow's standup?",
-      "May I skip tomorrow's standup?",
-      "Could I skip tomorrow's standup?"
-    ],
-    "point": "許可を求めるときは Is it okay if I + 動詞の現在形",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 7,
-    "grammar": ["requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9s8j2h5r",

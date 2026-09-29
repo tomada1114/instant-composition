@@ -325,6 +325,22 @@
     }
   },
   {
+    "id": "c_4u9e5v7h",
+    "ja": "プラグインを更新するまでは、順調に動いてたのに。",
+    "en": "Everything was humming along until I updated the plugin.",
+    "alternatives": [
+      "It all ran smoothly until I updated the plugin.",
+      "Things were fine until I updated the plugin."
+    ],
+    "point": "更新した時点は過去形、それ以前の状態は過去進行形",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5k5q2f7t",
     "ja": "リンターは保存時、型チェックはコミット時。",
     "en": "Linting runs on save, whereas type checks run on commit.",
@@ -465,22 +481,6 @@
     }
   },
   {
-    "id": "c_8p9g6j8g",
-    "ja": "デフォルト設定をいじることは、まずないですね。",
-    "en": "Rarely do I ever touch the default settings.",
-    "alternatives": [
-      "I hardly ever touch the default settings.",
-      "I almost never change the default settings."
-    ],
-    "point": "Rarely を文頭に出すと、do I ever touch の倒置になる",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 10,
-    "grammar": ["inversion"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8t8j4m4d",
     "ja": "検索の一番速いやり方って何ですか？",
     "en": "What's the fastest way to search?",
@@ -501,6 +501,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9j8z2y2t",
+    "ja": "僕は、デフォルト設定をいじることはまずないね。",
+    "en": "I hardly ever mess with the default settings.",
+    "alternatives": [
+      "I almost never tinker with the default settings.",
+      "I rarely touch the default settings."
+    ],
+    "point": "hardly ever は「ほとんど〜ない」。mess with は「いじる」",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9m6v6x6g",
@@ -540,22 +556,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9s4z6k7s",
-    "ja": "プラグインを更新するまでは、全部ちゃんと動いてたのに。",
-    "en": "Everything was working fine until I updated the plugin.",
-    "alternatives": [
-      "It all worked fine until I updated the plugin.",
-      "Everything ran smoothly until I updated the plugin."
-    ],
-    "point": "更新した時点は過去形、それ以前の状態は過去進行形",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 9,
-    "grammar": ["tense-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9x3j8p2u",

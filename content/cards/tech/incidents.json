@@ -123,23 +123,6 @@
     }
   },
   {
-    "id": "c_3m2w6c4j",
-    "ja": "私たちが復旧させた途端、また障害が再発しました。",
-    "en": "Hardly had we restored service when the outage recurred.",
-    "alternatives": [
-      "No sooner had we restored service than the outage recurred.",
-      "The moment we restored service, the outage happened again.",
-      "As soon as we restored service, the outage came back."
-    ],
-    "point": "Hardly を文頭に出すと had we の倒置、後ろは when",
-    "topic": "tech",
-    "subtopic": "incidents",
-    "level": 10,
-    "grammar": ["inversion"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3p3s9k2u",
     "ja": "私たち、復旧を焦って確認を飛ばしました。",
     "en": "We rushed the fix and ended up skipping verification.",
@@ -350,6 +333,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5y5f5x4h",
+    "ja": "私たちがサービスを戻した途端、また落ちました。",
+    "en": "We'd barely brought service back up when it went down again.",
+    "alternatives": [
+      "As soon as we brought service back up, it went down again.",
+      "The moment we restored service, it went down again."
+    ],
+    "point": "barely＋過去完了のあとに when で「〜した途端」を作る",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6c6n9x9h",
