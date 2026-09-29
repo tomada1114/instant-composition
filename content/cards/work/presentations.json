@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2k2z2b6k",
+    "ja": "先月は売上が落ちましたが、もう持ち直しました。",
+    "en": "Sales dropped last month, but they've recovered.",
+    "alternatives": [
+      "Sales fell last month, but they've bounced back.",
+      "Sales dipped last month, but have picked up again."
+    ],
+    "point": "過去の出来事は過去形、今に続く結果は現在完了",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["tense-contrast", "concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2k4r4z3k",
     "ja": "もう少し詳しく説明していただけますか？",
     "en": "Would you mind explaining that in more detail?",
@@ -41,6 +57,38 @@
     }
   },
   {
+    "id": "c_2t9r7z4b",
+    "ja": "まとめは、部長にお願いしてあります。",
+    "en": "I've asked our director to give the summary.",
+    "alternatives": [
+      "I've asked the director to do the summary.",
+      "The director has been asked to give the summary."
+    ],
+    "point": "お願いしてある は現在完了 + ask + 人 + to do",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["verb-object-to-do", "present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3j5t9r7r",
+    "ja": "ごもっともですが、この点だけは譲れません。",
+    "en": "Fair point, but we can't budge on this.",
+    "alternatives": [
+      "You're right, but we won't give way on this.",
+      "That's fair, but this point is non-negotiable."
+    ],
+    "point": "譲れない は budge / give way など定番の言い方で",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["concession-contrast", "hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3s6h3a2p",
     "ja": "この問題は去年から議論されてきました。",
     "en": "This issue has been discussed since last year.",
@@ -61,6 +109,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3t5h7h2u",
+    "ja": "時間が許せば、詳細は後ほどご説明します。",
+    "en": "If time allows, I'll explain the details later.",
+    "alternatives": [
+      "If we have time, I'll go into detail later.",
+      "I'll cover the details later if time permits."
+    ],
+    "point": "if 節は未来のことでも現在形、主節は will",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["time-and-if-clauses", "future-forms"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_3v9y2f2p",
@@ -107,6 +171,54 @@
     }
   },
   {
+    "id": "c_4f8h8j2w",
+    "ja": "スタッフに、マイクの音を上げるよう頼んでくれる？",
+    "en": "Can you ask staff to turn the mic up?",
+    "alternatives": [
+      "Could you tell the staff to turn up the mic?",
+      "Can you get the staff to turn the mic up?"
+    ],
+    "point": "ask + 人 + to do の形。that 節にしない",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4s7y9p7m",
+    "ja": "少し脱線しますが、関連する事例をご紹介します。",
+    "en": "Slightly off topic, but here's a relevant example.",
+    "alternatives": [
+      "This is a bit of a tangent, but it's relevant.",
+      "Sorry for the tangent, but here's a relevant case."
+    ],
+    "point": "脱線の前置きは a bit of a tangent が自然",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["hedging-softening", "concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4t3z9p3c",
+    "ja": "ご質問は、私の話が終わるまでお待ちください。",
+    "en": "Please hold your questions until I've finished.",
+    "alternatives": [
+      "Could you save your questions until the end?",
+      "Please wait until I'm done to ask questions."
+    ],
+    "point": "until の後は未来のことでも現在形（完了形も可）",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4t7w6b8f",
     "ja": "次に、今年の売上をお見せします。",
     "en": "Next, I'll show you this year's sales.",
@@ -127,6 +239,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_4v8p7y9v",
+    "ja": "社内で試験中の新機能をご紹介します。",
+    "en": "I'll introduce a new feature currently being tested internally.",
+    "alternatives": [
+      "Let me show you a new feature we're testing in-house.",
+      "I'd like to introduce a feature now in internal testing."
+    ],
+    "point": "名詞の後ろに being tested など分詞句を置く",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["post-modification", "passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_4y5g9j5j",
@@ -151,6 +279,38 @@
     }
   },
   {
+    "id": "c_4z6n4q2d",
+    "ja": "私たちが最初に苦情に気づいた画面がこれです。",
+    "en": "This is the screen where we first spotted complaints.",
+    "alternatives": [
+      "This is where we first spotted customer complaints.",
+      "This is the screen where complaints first showed up."
+    ],
+    "point": "場所を表す名詞には where で説明を足す",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6f5p9u7q",
+    "ja": "先月私がまとめた報告書を要約します。",
+    "en": "I'll summarize the report I put together last month.",
+    "alternatives": [
+      "Let me summarize the report that I compiled last month.",
+      "I'll sum up the report I wrote last month."
+    ],
+    "point": "目的格の関係詞 that は省略でき、put together が「まとめる」",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["relative-clauses", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6k8r7r8p",
     "ja": "発表後、うちの部長が質問に答えます。",
     "en": "Our manager will answer questions afterward.",
@@ -173,6 +333,22 @@
     }
   },
   {
+    "id": "c_6m2h2p4w",
+    "ja": "一点だけ補足させていただいてもよろしいでしょうか？",
+    "en": "Would you mind if I added a quick point?",
+    "alternatives": [
+      "If I may, I'd like to add something.",
+      "Could I add a quick point here?"
+    ],
+    "point": "Would you mind if の後は過去形で丁寧に",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["hedging-softening", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6n2m9w8q",
     "ja": "プロジェクターをつけてもらえますか？",
     "en": "Could you turn on the projector?",
@@ -193,6 +369,23 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_6y5j8g7t",
+    "ja": "皆さん、私の声は聞こえますか？",
+    "en": "Can everyone hear me?",
+    "alternatives": [
+      "Can you all hear me okay?",
+      "Can you all hear me?",
+      "Is everyone able to hear me?"
+    ],
+    "point": "聞こえる（可能）は can で聞く。Do you hear は不自然",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 3,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6y7x9j7n",
@@ -237,6 +430,54 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7r5m4p8s",
+    "ja": "このスライドは昨夜私が作りました。",
+    "en": "I made these slides last night.",
+    "alternatives": [
+      "I created these slides last night.",
+      "I put these slides together last night."
+    ],
+    "point": "last night があれば過去形。make の過去形は made",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 3,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7t7r4m7j",
+    "ja": "手を挙げている女性の方、どうぞ。",
+    "en": "The woman with her hand up, go ahead please.",
+    "alternatives": [
+      "Yes, the woman with her hand raised, go ahead.",
+      "The lady with her hand up, please go ahead."
+    ],
+    "point": "with her hand up で「手を挙げている」を後ろから修飾",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8j9v3e8p",
+    "ja": "私の理解が正しければ、ご質問は費用についてですね？",
+    "en": "If I understand correctly, you're asking about the cost?",
+    "alternatives": [
+      "Am I right that you're asking about cost?",
+      "So your question is about the cost, correct?"
+    ],
+    "point": "確認は If I understand correctly で柔らかく",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["hedging-softening", "time-and-if-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8u5e2r5e",
@@ -366,5 +607,21 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9j7j2b9u",
+    "ja": "今ご覧のグラフは、先月の実績です。",
+    "en": "The graph you're looking at shows last month's results.",
+    "alternatives": [
+      "You're looking at last month's results here.",
+      "The graph on your screen shows last month's results."
+    ],
+    "point": "「今ご覧の」は you're looking at を後ろから graph に続ける",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 6,
+    "grammar": ["post-modification", "progressive-aspect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]

@@ -1,5 +1,37 @@
 [
   {
+    "id": "c_2a3e8k9r",
+    "ja": "玄関の鍵、閉めたか思い出せない。",
+    "en": "I can't remember if I locked the door.",
+    "alternatives": [
+      "I can't remember whether I locked up.",
+      "I don't remember if I locked the door."
+    ],
+    "point": "「〜かどうか」は if か whether。語順は平叙文",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 4,
+    "grammar": ["indirect-questions", "noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2e6y6g9d",
+    "ja": "これ拭くもの、何かある？",
+    "en": "Do you have something to wipe this with?",
+    "alternatives": [
+      "Is there something I can wipe this with?",
+      "Got anything I can wipe this with?"
+    ],
+    "point": "something の後ろに to 不定詞。前置詞 with を残す",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 4,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2p6z7e6m",
     "ja": "彼女がうんと言ってたら、今ごろ食洗機があるのに。",
     "en": "If she'd said yes, we'd have a dishwasher now.",
@@ -22,6 +54,22 @@
     }
   },
   {
+    "id": "c_2x9u3x6w",
+    "ja": "庭があったら、僕らは毎週末芝刈りに追われるよ。",
+    "en": "If we had a yard, we'd be mowing every weekend.",
+    "alternatives": [
+      "We'd be mowing every weekend if we had a yard.",
+      "With a yard, we'd be mowing the lawn every weekend."
+    ],
+    "point": "現実と違う仮定は if + 過去形、主節は would",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 7,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3b8z5h5q",
     "ja": "一番上の棚に届かないんだ。",
     "en": "I can't reach the top shelf.",
@@ -39,6 +87,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3e4m8e4v",
+    "ja": "誰かがブレーカーを落としたのかも。",
+    "en": "Someone might have tripped the breaker.",
+    "alternatives": [
+      "Maybe someone tripped the breaker.",
+      "Someone could have tripped the breaker."
+    ],
+    "point": "かもしれない過去は might have + 過去分詞",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_3g6w5e4d",
@@ -85,6 +149,22 @@
     }
   },
   {
+    "id": "c_3p2j4e8e",
+    "ja": "洗濯機が壊れたって聞いたよ。",
+    "en": "I heard the washing machine broke.",
+    "alternatives": [
+      "I heard that the washer broke down.",
+      "I heard our washer stopped working."
+    ],
+    "point": "heard の後の that は省ける。壊れた出来事は過去形",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 4,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4v3k4k9b",
     "ja": "疲れてても、自分のお椀はすすいでね。",
     "en": "Even if you're tired, please rinse your bowl.",
@@ -107,6 +187,38 @@
     }
   },
   {
+    "id": "c_4v9h5g6y",
+    "ja": "お皿、ためないほうがいいよ。",
+    "en": "You shouldn't let the dishes pile up.",
+    "alternatives": [
+      "You shouldn't leave the dishes piled up.",
+      "Don't let the dishes pile up."
+    ],
+    "point": "「ためる」は let 〜 pile up。助言は shouldn't",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 5,
+    "grammar": ["modal-obligation-advice", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4y7u3e7r",
+    "ja": "台所のテーブルに置いてあった請求書、もう払ったよ。",
+    "en": "I already paid the bill lying on the kitchen table.",
+    "alternatives": [
+      "I've already paid the bill left on the kitchen table.",
+      "The bill on the kitchen table? I've already paid it."
+    ],
+    "point": "「置いてあった請求書」は bill の後ろから修飾する",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 7,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4z6x8k4h",
     "ja": "フィルター、先月から掃除されてないよ。",
     "en": "The filter hasn't been cleaned since last month.",
@@ -127,6 +239,51 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5m8u5c8f",
+    "ja": "あなた、今週ずっと靴下を床に脱ぎっぱなしだよ。",
+    "en": "You've been leaving socks on the floor all week.",
+    "alternatives": [
+      "All week, you've been dropping your socks on the floor.",
+      "You've been leaving your socks on the floor all week."
+    ],
+    "point": "「ずっと〜してる」は現在完了進行形 have been -ing",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5q6q3c8j",
+    "ja": "掃除、ちょっと休憩しよう。",
+    "en": "Let's take a break from cleaning.",
+    "alternatives": ["Let's stop cleaning for a bit.", "Let's give cleaning a break."],
+    "point": "「〜しよう」は Let's + 動詞の原形。「休憩する」は take a break",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 3,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5y7h5n9m",
+    "ja": "掃除機をかけたあと、ついでに窓も拭いたよ。",
+    "en": "Having vacuumed, I wiped the windows down as well.",
+    "alternatives": [
+      "After vacuuming, I wiped down the windows too.",
+      "I vacuumed, then wiped the windows down while I was at it."
+    ],
+    "point": "「〜したあと」は Having + 過去分詞で前置きできる",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 10,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6b4k9b8b",
@@ -219,6 +376,22 @@
     }
   },
   {
+    "id": "c_6j9r7g7p",
+    "ja": "ゴミ袋を買い足すの、忘れないでね。",
+    "en": "Don't forget to buy more trash bags.",
+    "alternatives": [
+      "Remember to buy more garbage bags.",
+      "Please don't forget to get more trash bags."
+    ],
+    "point": "forget to 〜 は「〜し忘れる」。これからする行為",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 4,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6k7f4x3h",
     "ja": "先週、うちはエアコンを業者に掃除してもらった。",
     "en": "We had the AC professionally cleaned last week.",
@@ -285,6 +458,38 @@
     }
   },
   {
+    "id": "c_6z6g9t7w",
+    "ja": "私が皿を洗ってる間、弟はモップがけしてた。",
+    "en": "While I washed up, my brother was mopping.",
+    "alternatives": [
+      "My brother was mopping while I did the dishes.",
+      "I was washing up while my brother mopped."
+    ],
+    "point": "短い動作は過去形、その最中の動作は過去進行形",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["progressive-aspect", "tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7d6u8e8e",
+    "ja": "私が昨日掃除したのに、もう散らかってる。",
+    "en": "I cleaned yesterday, but it's a mess already.",
+    "alternatives": [
+      "I cleaned yesterday, and it's messy again.",
+      "I cleaned it yesterday, but it's already messy."
+    ],
+    "point": "昨日は過去形、今の状態は現在形で言い分ける",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 4,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7f5f7t5j",
     "ja": "一緒にガレージを片付けたいなと思ってて。",
     "en": "I was hoping we'd clean out the garage.",
@@ -305,6 +510,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7m6z6d3p",
+    "ja": "洗面所の蛇口、2日前からずっとポタポタ漏れてるんだよ。",
+    "en": "The bathroom faucet has been dripping for two days now.",
+    "alternatives": [
+      "The bathroom faucet's been leaking for two days now.",
+      "For two days now, the bathroom faucet has been dripping."
+    ],
+    "point": "「ずっと〜してる」は現在完了進行形。for two days を添える",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 9,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7v5a3u2e",
@@ -329,6 +550,54 @@
     }
   },
   {
+    "id": "c_8a7v3v6d",
+    "ja": "嫌なのは洗濯じゃなくて、皿洗いのほうなんだよね。",
+    "en": "It's the dishes I can't stand, not the laundry.",
+    "alternatives": [
+      "What I can't stand is the dishes, not the laundry.",
+      "It's doing the dishes I hate, not the laundry."
+    ],
+    "point": "「嫌なのは〜」は It's ~ (that) で強調し、not で対比する",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8d9y7a7g",
+    "ja": "洗濯物を干すベランダ、そろそろ掃除する頃だよね。",
+    "en": "It's about time we cleaned the balcony where we hang laundry.",
+    "alternatives": [
+      "High time we cleaned the balcony where we hang the laundry.",
+      "We're overdue for cleaning the balcony where we hang laundry."
+    ],
+    "point": "It's about time の後ろは過去形（今すべきだという含み）",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 9,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8e7g2m2r",
+    "ja": "家事を公平に分けようと、当番表を作ってみたよ。",
+    "en": "I made a chore chart to split chores fairly.",
+    "alternatives": [
+      "I made a chore chart to divide chores evenly.",
+      "I made a chore chart to make things fair."
+    ],
+    "point": "「〜するために」は to + 動詞の原形",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8m5z2r3t",
     "ja": "僕らが早く電話してれば、お湯が使えたのにね。",
     "en": "If we'd called sooner, we'd have had hot water.",
@@ -350,5 +619,34 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8u6z6j7j",
+    "ja": "私、まだ洗う皿があるんだ。",
+    "en": "I still have dishes to wash.",
+    "alternatives": ["I still have some dishes to do.", "I have more dishes to wash."],
+    "point": "「洗う皿」は dishes to wash。名詞のあとに to + 動詞",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 3,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9z6j7r2v",
+    "ja": "ごめん、今、洗濯物たたんでるとこ。",
+    "en": "Sorry, I'm folding the laundry right now.",
+    "alternatives": [
+      "Sorry, I'm in the middle of folding laundry.",
+      "Sorry, I'm busy folding the laundry."
+    ],
+    "point": "「〜してるとこ」は現在進行形。right now と相性がいい",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 5,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]

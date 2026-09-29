@@ -1,5 +1,37 @@
 [
   {
+    "id": "c_2b8w3y9f",
+    "ja": "終わったら、議事録送ってくれる？",
+    "en": "Can you send the minutes when we finish?",
+    "alternatives": [
+      "Could you send the minutes after we finish?",
+      "Can you email the minutes when we're done?"
+    ],
+    "point": "未来のことでも when 節は現在形（will を使わない）",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 5,
+    "grammar": ["time-and-if-clauses", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2m2d9r5r",
+    "ja": "話の途中ですみません、この数字は合っていません。",
+    "en": "Sorry to cut in, but these numbers don't add up.",
+    "alternatives": [
+      "Sorry to interrupt, but these numbers don't add up.",
+      "Sorry to jump in, but these figures don't add up."
+    ],
+    "point": "割り込む=cut in、辻褄が合う=add up。句動詞で言う",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 10,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2m6k5y3m",
     "ja": "最後に、私が今日の決定をまとめます。",
     "en": "Finally, I'll summarize today's decisions.",
@@ -20,6 +52,70 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_2q2s6e4k",
+    "ja": "その件、来週に延ばしたほうがいいね。",
+    "en": "We should push that to next week.",
+    "alternatives": [
+      "Let's put that off until next week.",
+      "We'd better postpone that until next week."
+    ],
+    "point": "「延ばす」は push / put off。should で提案する",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 5,
+    "grammar": ["modal-obligation-advice", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2q5p8j3p",
+    "ja": "私が心配なのは、予算ではなくスケジュールです。",
+    "en": "It's the timeline, not the budget, that worries me.",
+    "alternatives": [
+      "The timeline, not the budget, is what worries me.",
+      "What worries me is the timeline, not the budget."
+    ],
+    "point": "It's ~ that で強調。not ~ は強調する語の直後に置く",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3d2m8f8e",
+    "ja": "今の話は、要するに予算を削るべきだということですか？",
+    "en": "So what you're saying is we should cut the budget?",
+    "alternatives": [
+      "Are you saying that we should cut the budget?",
+      "So you're saying we should cut the budget?"
+    ],
+    "point": "What you're saying is 〜 で相手の発言を確認する",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 9,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3p3g2c9u",
+    "ja": "話がそれてきたので、本題に戻しましょう。",
+    "en": "We're drifting off topic. Let's get back on track.",
+    "alternatives": [
+      "The discussion is drifting, so let's refocus.",
+      "We've strayed from the point. Let's get back to it."
+    ],
+    "point": "「軌道に戻る」は get back on track という句動詞",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 8,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_3x9z5j6w",
@@ -61,6 +157,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_4k9k6u3n",
+    "ja": "佐藤さんが挙げた懸念について、どう思いますか？",
+    "en": "What do you make of the concern Sato raised?",
+    "alternatives": [
+      "What do you think about the concern that Sato raised?",
+      "How do you feel about the concern Sato raised?"
+    ],
+    "point": "目的格の関係代名詞 that は省略できる",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 8,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_4y4g3b2b",
@@ -170,6 +282,22 @@
     }
   },
   {
+    "id": "c_5w7e9n4d",
+    "ja": "彼は賛成ですが、私は待ちたいです。",
+    "en": "He's in favor, whereas I'd rather wait.",
+    "alternatives": [
+      "He supports it, but I'd rather wait.",
+      "Although he's in favor, I'd rather wait."
+    ],
+    "point": "対比は whereas。前後で主語を並べる",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6b3g3j4y",
     "ja": "昨日の会議で反対しておけばよかった。",
     "en": "I wish I'd objected at yesterday's meeting.",
@@ -231,6 +359,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_6t2t6u5p",
+    "ja": "時間がないので、次の議題に移りましょう。",
+    "en": "We're short on time, so let's move on.",
+    "alternatives": [
+      "Since we're short on time, let's move on.",
+      "We're running short on time, so let's move on."
+    ],
+    "point": "「移る」は move on。on を落とさない",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6w4a2j5f",
+    "ja": "誰に最終決定権があるのか、まだ不明確です。",
+    "en": "It's still unclear who has the final say.",
+    "alternatives": [
+      "We still don't know who has the final say.",
+      "It's not yet clear who has the final say."
+    ],
+    "point": "間接疑問は who + 動詞の語順。does は不要",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 9,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7h4t4a5m",
@@ -319,6 +479,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8d9k9u8f",
+    "ja": "部長が戻ったら、この件を詰めましょう。",
+    "en": "Let's hash this out when the director gets back.",
+    "alternatives": [
+      "Let's work this out once the director is back.",
+      "Once the director gets back, let's iron this out."
+    ],
+    "point": "未来のことでも when 節は現在形（gets back）",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 8,
+    "grammar": ["time-and-if-clauses", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8p3g7p3k",
+    "ja": "データを見ていたら、今ごろ賛成しているのに。",
+    "en": "If I'd seen the data, I'd agree now.",
+    "alternatives": [
+      "If I'd seen the data, I'd be on board now.",
+      "Had I seen the data, I'd be on board now."
+    ],
+    "point": "過去の条件＋今の結果は If 過去完了, would＋原形",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8v5n3y7j",

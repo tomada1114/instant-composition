@@ -44,6 +44,22 @@
     }
   },
   {
+    "id": "c_2y3w7u8x",
+    "ja": "遅れそうだから、8時ごろ合流するね。",
+    "en": "Running late, I'll join you around eight.",
+    "alternatives": [
+      "I'm running late, so I'll join you around eight.",
+      "I'll be late, so I'll meet you around eight."
+    ],
+    "point": "分詞構文の主語は主節と同じ人にする",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3v3n5a5p",
     "ja": "幹事に頼んで、同窓会を遅らせてもらったよ。",
     "en": "I got the organizer to push the reunion back.",
@@ -107,6 +123,22 @@
     }
   },
   {
+    "id": "c_4b5s6h5e",
+    "ja": "昨日送った日程、もう見てくれた？",
+    "en": "Have you looked at the schedule I sent yesterday?",
+    "alternatives": [
+      "Have you checked the schedule I sent yesterday?",
+      "Have you seen the schedule I sent you yesterday?"
+    ],
+    "point": "「もう」は現在完了、「昨日送った」は過去形で使い分ける",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 8,
+    "grammar": ["tense-contrast", "relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4c5q3f6t",
     "ja": "土曜、何時に集合だっけ？",
     "en": "What time are we meeting Saturday?",
@@ -127,6 +159,54 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_4t5n6u9y",
+    "ja": "着いたら、電話するね。",
+    "en": "I'll call you when I arrive.",
+    "alternatives": [
+      "I'll call you once I get there.",
+      "I'll phone you when I get there."
+    ],
+    "point": "未来のことでも when の後ろは現在形 (arrive)",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 3,
+    "grammar": ["time-and-if-clauses", "future-forms"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4u4g9k4u",
+    "ja": "私が予約したお店、あなたには遠すぎる？",
+    "en": "Is the place I booked too far for you?",
+    "alternatives": [
+      "Is the restaurant I reserved too far for you?",
+      "Is the place that I booked too far away?"
+    ],
+    "point": "the place の後ろに I booked を直接つなげる",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4w5q7p3e",
+    "ja": "週末が空くのは珍しいから、有意義に使おうよ。",
+    "en": "Rarely do we get a free weekend, so let's make it count.",
+    "alternatives": [
+      "We rarely get a free weekend, so let's make it count.",
+      "Free weekends are rare, so let's make the most of it."
+    ],
+    "point": "Rarely を文頭に出すと do we の倒置。「有意義に」は make it count",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_4w6e5m4e",
@@ -195,6 +275,22 @@
     }
   },
   {
+    "id": "c_4z6v3u8d",
+    "ja": "約束を断って、こんなにほっとしたのは初めてだよ。",
+    "en": "Never have I been so relieved to turn down plans.",
+    "alternatives": [
+      "I've never been so relieved to turn down plans.",
+      "Never have I felt so relieved about backing out of plans."
+    ],
+    "point": "Never を文頭に出すと、あとは have I の疑問文の語順",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5b9n5m6k",
     "ja": "日曜日に映画を見に行こう。",
     "en": "Let's see a movie Sunday.",
@@ -236,6 +332,38 @@
     }
   },
   {
+    "id": "c_5d4b9m9h",
+    "ja": "駅に着いたら、電話するね。",
+    "en": "I'll call you when I get there.",
+    "alternatives": [
+      "I'll give you a call when I arrive.",
+      "I'll call you as soon as I arrive."
+    ],
+    "point": "未来のことでも when の後は現在形（get）",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5j5w6p7z",
+    "ja": "昨日の約束、忘れてた。ごめん！",
+    "en": "Sorry, I forgot about yesterday's plan.",
+    "alternatives": [
+      "I'm sorry I forgot our plans yesterday.",
+      "Sorry, I forgot we had plans yesterday."
+    ],
+    "point": "「忘れた」は過去形 forgot (forget の不規則変化)",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 3,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5p9y4v4m",
     "ja": "夕食に友達二人連れてきていい？",
     "en": "Mind if I bring two friends to dinner?",
@@ -256,6 +384,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5r4t5x4c",
+    "ja": "何時に集まるのか、ちょうど気になってたんだ。",
+    "en": "I was just wondering what time we're meeting.",
+    "alternatives": [
+      "I was wondering what time we're getting together.",
+      "I was just wondering when we're meeting up."
+    ],
+    "point": "wonder の後は平叙文の語順（what time we're）",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["progressive-aspect", "noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5t5w7u6x",
+    "ja": "約束をすっかり忘れてた、ごめん！",
+    "en": "Sorry, I totally forgot about our plans.",
+    "alternatives": [
+      "I'm sorry, I completely forgot we had plans.",
+      "Sorry, our plans totally slipped my mind."
+    ],
+    "point": "「忘れてた」は過去形 forgot。forget about で「〜のことを」",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6b3m9h2n",
@@ -280,6 +440,38 @@
     }
   },
   {
+    "id": "c_6k9w4r5g",
+    "ja": "会う約束をしてる友達が、何度も予定をずらしてくるんだよ。",
+    "en": "The friend I'm meeting keeps pushing our plans back.",
+    "alternatives": [
+      "The friend I'm supposed to see keeps rescheduling on me.",
+      "The friend I'm meeting up with keeps postponing our plans."
+    ],
+    "point": "目的格の関係詞は省略でき、push back は「延期する」",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["relative-clauses", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6s4f4a3w",
+    "ja": "気がかりなのは、土曜の天気なんだよね。",
+    "en": "What worries me is Saturday's forecast.",
+    "alternatives": [
+      "What I'm worried about is Saturday's forecast.",
+      "The thing worrying me is Saturday's weather."
+    ],
+    "point": "「〜なのは」は What 節を主語にして is でつなぐ",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 8,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6v5g9f8s",
     "ja": "あと何人か友達に手伝いを頼むね。",
     "en": "I'll ask a few more friends to help.",
@@ -302,6 +494,22 @@
     }
   },
   {
+    "id": "c_7f9v5y7p",
+    "ja": "ごめん、土曜は約束を断らなきゃいけない。",
+    "en": "Sorry, I have to back out of Saturday.",
+    "alternatives": [
+      "Sorry, but I'll have to cancel on Saturday.",
+      "Sorry, I've got to bail on Saturday."
+    ],
+    "point": "断る・ドタキャンは back out of / bail on",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["modal-obligation-advice", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7p7r8b6h",
     "ja": "今めちゃ忙しいし、金曜の飲み会は休もうかな。",
     "en": "I'm swamped, so I'm thinking of skipping Friday's drinks.",
@@ -322,6 +530,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7w9y6u7n",
+    "ja": "カレンダーを確認したら、今夜また連絡するね。",
+    "en": "Having checked my calendar, I'll get back to you tonight.",
+    "alternatives": [
+      "Once I've checked my calendar, I'll get back to you tonight.",
+      "I'll check my calendar and get back to you tonight."
+    ],
+    "point": "先に済ませた動作は Having + 過去分詞。「折り返す」は get back to",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 10,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7x5k3e9v",
@@ -429,6 +653,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8w9b4h4d",
+    "ja": "ごめん、土曜は先約があって行けないんだ。",
+    "en": "Sorry, I've got a prior commitment on Saturday.",
+    "alternatives": [
+      "Sorry, I already have plans on Saturday.",
+      "Sorry, I can't make Saturday; I'm already booked."
+    ],
+    "point": "「先約」は数えられる名詞なので a が必要",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 8,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8z4x8r2j",

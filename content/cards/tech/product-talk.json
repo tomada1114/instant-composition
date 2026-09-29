@@ -208,6 +208,35 @@
     }
   },
   {
+    "id": "c_4s9h2v6h",
+    "ja": "来週出荷するしかないとしたら、あなたなら何を削る？",
+    "en": "If you had to ship next week, what would you cut?",
+    "alternatives": [
+      "What would you cut if you had to ship next week?",
+      "If you were forced to ship next week, what would you drop?"
+    ],
+    "point": "現実味の薄い仮定は if + 過去形、主節は would。cut は「削る」",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 10,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4v5g8m6r",
+    "ja": "A案は速いのに対し、B案は安全です。",
+    "en": "Plan A is fast, whereas B is safe.",
+    "alternatives": ["Plan A is fast, but B is safe.", "While A is fast, B is safe."],
+    "point": "対比は whereas / while で二つの文をつなぐ",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5b8z7q3d",
     "ja": "ベータが終わったら、出すか決めよう。",
     "en": "Let's decide whether to launch after beta.",
@@ -228,6 +257,19 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5d9t9a8e",
+    "ja": "その機能、もうロールアウトされた？",
+    "en": "Has that feature been rolled out yet?",
+    "alternatives": ["Has that feature shipped yet?", "Is that feature live yet?"],
+    "point": "「もう」の疑問は現在完了 + yet",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["present-perfect", "passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5f8t7k7w",
@@ -274,6 +316,22 @@
     }
   },
   {
+    "id": "c_5m7c4a3s",
+    "ja": "うちはリリースを延期すべきだったよ。",
+    "en": "We should have postponed the release.",
+    "alternatives": [
+      "We should have pushed the release back.",
+      "We ought to have delayed the release."
+    ],
+    "point": "「〜すべきだった」は should have + 過去分詞",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5r5v3p8t",
     "ja": "サラ、それ次のスプリントに回してくれる？",
     "en": "Sara, could you push that to next sprint?",
@@ -294,6 +352,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5v8k2b7w",
+    "ja": "PMはその要望を見落としたのかもしれない。",
+    "en": "The PM might have missed that request.",
+    "alternatives": [
+      "The PM may have overlooked that request.",
+      "Maybe the PM overlooked that request."
+    ],
+    "point": "過去の推量は might have + 過去分詞",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5x3u3b5g",
+    "ja": "これ、もう3週間レビュー中です。",
+    "en": "It's been in review for three weeks.",
+    "alternatives": [
+      "It's been under review for three weeks.",
+      "It's been stuck in review for three weeks."
+    ],
+    "point": "継続中の状態は has been で表す（is では不可）",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6d6m2w4f",
@@ -318,6 +408,54 @@
     }
   },
   {
+    "id": "c_6d8v6v2z",
+    "ja": "知りたいのは、それがいつリリースされるかです。",
+    "en": "What I'd like to know is when it'll ship.",
+    "alternatives": [
+      "I'd like to know when it's going to ship.",
+      "What I'm asking is when it will be released."
+    ],
+    "point": "What ～ is の強調文のあとは when it will ～ の語順",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["indirect-questions", "cleft-emphasis"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6j3a9z9j",
+    "ja": "今朝報告のバグで、リリースが遅れるかもしれません。",
+    "en": "The bug reported this morning could push back the release.",
+    "alternatives": [
+      "The bug reported this morning might delay the release.",
+      "The bug flagged this morning may push the release back."
+    ],
+    "point": "「報告された」は reported で名詞を後ろから修飾。could で控えめに",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 9,
+    "grammar": ["post-modification", "hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6p2t9c2t",
+    "ja": "ベータを出したら、フィードバック集めに集中しよう。",
+    "en": "Once the beta's out, let's focus on gathering feedback.",
+    "alternatives": [
+      "When we ship the beta, let's focus on gathering feedback.",
+      "After we release the beta, let's concentrate on collecting feedback."
+    ],
+    "point": "focus on の後は動名詞。once 節は未来でも現在形",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["gerunds", "time-and-if-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7d2f9j5n",
     "ja": "エクスポート機能の要望が多い。",
     "en": "There are many export requests.",
@@ -338,6 +476,54 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7j5z8r8b",
+    "ja": "来週出す機能に、バグがあるよ。",
+    "en": "The feature shipping next week has a bug.",
+    "alternatives": [
+      "The feature launching next week has a bug.",
+      "There's a bug in next week's feature."
+    ],
+    "point": "名詞の後ろに shipping などの -ing で説明を足す",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7u9t2a9n",
+    "ja": "テストは通りましたが、まだ出せません。",
+    "en": "Although the tests passed, we can't ship yet.",
+    "alternatives": [
+      "The tests passed, but we can't ship yet.",
+      "Even though the tests passed, we can't ship."
+    ],
+    "point": "Although の節のあとにカンマ、but とは併用しない",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8e2m2b5q",
+    "ja": "機能は削ったが、新UIは好評です。",
+    "en": "Although we cut features, the new UI is popular.",
+    "alternatives": [
+      "We cut features, but the new UI is popular.",
+      "Even though we cut features, the new UI is popular."
+    ],
+    "point": "Although の節には but を重ねない",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8h4c5a8q",
@@ -362,6 +548,22 @@
     }
   },
   {
+    "id": "c_8r4u2t9v",
+    "ja": "エンジニアがいつ修正を出せるか、調べてもらえる？",
+    "en": "Can you find out when engineering can ship the fix?",
+    "alternatives": [
+      "Could you check when the engineers can ship the fix?",
+      "Can you ask engineering when they can ship it?"
+    ],
+    "point": "間接疑問は when のあと平叙文の語順（can ship）",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["indirect-questions", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9a8e2j6k",
     "ja": "ユーザーは写真を共有できない。",
     "en": "Users can't share photos.",
@@ -384,6 +586,38 @@
     }
   },
   {
+    "id": "c_9d4u3v2v",
+    "ja": "ユーザーは何年も前からその機能を切望しています。",
+    "en": "Users have been begging for that feature for years.",
+    "alternatives": [
+      "Users have been clamoring for that feature for years.",
+      "For years, users have been pleading for that feature."
+    ],
+    "point": "「ずっと〜している」は現在完了進行形。for years と相性がよい",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 9,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9k4f7p9v",
+    "ja": "ユーザーはこの機能をずっと待っています。",
+    "en": "Users have been waiting for this feature.",
+    "alternatives": [
+      "Users have been waiting on this feature.",
+      "People have been waiting for this feature."
+    ],
+    "point": "「ずっと〜している」は have been -ing、待つは wait for",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9t7c3z8m",
     "ja": "客が一番求める機能は、今回入りません。",
     "en": "The feature customers want most isn't included.",
@@ -404,5 +638,21 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9y5v8e9g",
+    "ja": "その機能は三か月も棚上げされています。",
+    "en": "That feature has been shelved for three months.",
+    "alternatives": [
+      "That feature has been on hold for three months.",
+      "We've had that feature on hold for three months."
+    ],
+    "point": "期間を表す for と現在完了の受け身",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["present-perfect", "passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]

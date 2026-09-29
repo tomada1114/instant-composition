@@ -44,6 +44,22 @@
     }
   },
   {
+    "id": "c_3a5f5e8y",
+    "ja": "これ、このPRに入れるべきか迷ってます。",
+    "en": "I'm not sure this belongs in this PR.",
+    "alternatives": [
+      "I'm wondering whether this belongs in this PR.",
+      "I'm not sure whether this should be in this PR."
+    ],
+    "point": "「迷ってる」は I'm not sure + 名詞節。that は省ける",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["noun-clauses", "hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3t5k5j3e",
     "ja": "レビュー頼む前に、テスト全部通してたよ。",
     "en": "I'd gotten every test passing before I asked.",
@@ -130,6 +146,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3x8x3j9t",
+    "ja": "僕が作業を積む前に、君が指摘してくれていたらなあ。",
+    "en": "I wish you'd flagged this before I built on it.",
+    "alternatives": [
+      "I wish you had caught this before I built on it.",
+      "If only you'd said something before I built on it."
+    ],
+    "point": "過去への後悔は wish + 過去完了（you'd = you had）",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 10,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_4c7e2d4x",
@@ -283,6 +315,22 @@
     }
   },
   {
+    "id": "c_6h2r7h7q",
+    "ja": "直すべきなのはテストじゃなくて、実装のほうだよ。",
+    "en": "It's the implementation, not the test, that needs fixing.",
+    "alternatives": [
+      "What needs fixing is the implementation, not the test.",
+      "The implementation is what needs fixing, not the test."
+    ],
+    "point": "It's ~ that で強調したい部分を挟む。not ~ で対比",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6n9j8c7n",
     "ja": "リードが、この変数名わかりにくいって。",
     "en": "The lead said this name was confusing.",
@@ -346,6 +394,38 @@
     }
   },
   {
+    "id": "c_8d4k7x9t",
+    "ja": "この関数、最近使われてないよ。",
+    "en": "This function hasn't been used lately.",
+    "alternatives": [
+      "This function hasn't been used recently.",
+      "Nobody has used this function lately."
+    ],
+    "point": "「使われて」は受動態、「最近」は現在完了で表す",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 4,
+    "grammar": ["passive-voice", "present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8u8z4a8y",
+    "ja": "この PR が何を直すのか、説明します。",
+    "en": "Let me explain what this PR fixes.",
+    "alternatives": [
+      "I'll explain what this PR fixes.",
+      "I'll explain what this PR is fixing."
+    ],
+    "point": "「何を〜か」は what 節。語順は what + 主語 + 動詞",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 4,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9b2h4a7n",
     "ja": "見つけてくれなかったら、僕らそのまま出してた。",
     "en": "If you hadn't caught it, we'd have shipped it.",
@@ -368,6 +448,54 @@
     }
   },
   {
+    "id": "c_9b9v2j9t",
+    "ja": "実際に動かしてみて初めて、そのバグに気づきました。",
+    "en": "Only after running it did I notice the bug.",
+    "alternatives": [
+      "It wasn't until I ran it that I noticed the bug.",
+      "I didn't notice the bug until I actually ran it."
+    ],
+    "point": "Only after を文頭に出すと、did I notice の倒置になる",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9g2m9t6c",
+    "ja": "この関数、テストを追加したほうがいいよ。",
+    "en": "You should add tests for this function.",
+    "alternatives": [
+      "You should write tests for this function.",
+      "You'd better add tests for this function."
+    ],
+    "point": "「〜したほうがいい」は should が自然。had better は強め",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 5,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9j4q7m5k",
+    "ja": "ここで変更されたファイル、確認したよ。",
+    "en": "I checked the files changed here.",
+    "alternatives": [
+      "I've reviewed the files that were changed here.",
+      "I looked over the files changed here."
+    ],
+    "point": "「変更された」は files の後ろに changed を置いて修飾",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 5,
+    "grammar": ["post-modification", "passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9k9r3r2e",
     "ja": "田中さんにレビュー頼んでくれる？",
     "en": "Can you ask Tanaka to review it?",
@@ -388,6 +516,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9s2c8x3x",
+    "ja": "僕はメインにリベースしてから、強制プッシュしました。",
+    "en": "Having rebased onto main, I force-pushed.",
+    "alternatives": [
+      "After rebasing onto main, I force-pushed.",
+      "I rebased onto main and then force-pushed."
+    ],
+    "point": "Having + 過去分詞で「〜したあとで」を短く言える",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 10,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9s8h4x5r",
@@ -432,5 +576,18 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9t4y9p3k",
+    "ja": "テストを足したほうがいいですよ。",
+    "en": "You should add a test.",
+    "alternatives": ["I think you should add a test.", "You ought to add a test."],
+    "point": "助言は should。「〜したほうがいい」を had better にしない",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]

@@ -1,5 +1,37 @@
 [
   {
+    "id": "c_2a2e2v7d",
+    "ja": "私はあの仕事を引き受けたことを後悔していません。",
+    "en": "I don't regret taking on that job.",
+    "alternatives": [
+      "I have no regrets about taking that job on.",
+      "I'm not sorry I took that job on."
+    ],
+    "point": "regret のあとの過去の行為は動名詞（taking）",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["gerunds", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2d4t3t6j",
+    "ja": "彼に頼むより、自分でやるほうが早いね。",
+    "en": "Doing it myself is faster than asking him.",
+    "alternatives": [
+      "It's faster to do it myself than ask him.",
+      "It's quicker doing it myself than asking him."
+    ],
+    "point": "比べる二つは動名詞で揃える（Doing / asking）",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2r5y8j2e",
     "ja": "田中さんにデータの確認を頼みました。",
     "en": "I asked Tanaka to check the data.",
@@ -132,6 +164,22 @@
     }
   },
   {
+    "id": "c_3y9c3z2v",
+    "ja": "報告書を仕上げるのを手伝っていただけますか？",
+    "en": "Would you mind helping me wrap up the report?",
+    "alternatives": [
+      "Could you give me a hand wrapping up the report?",
+      "Would you be able to help me finish the report?"
+    ],
+    "point": "Would you mind のあとは動名詞（helping）",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["gerunds", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3z8t2m6n",
     "ja": "彼があの時断っていたら、今は忙しくないのに。",
     "en": "If he'd declined, he wouldn't be busy now.",
@@ -176,6 +224,39 @@
     }
   },
   {
+    "id": "c_4m9q9s2j",
+    "ja": "この件で、アドバイスをもらえますか？",
+    "en": "Could you give me some advice?",
+    "alternatives": [
+      "Can you give me some advice?",
+      "Could you advise me on this?",
+      "Could I get some advice on this?"
+    ],
+    "point": "adviceは数えられない名詞。an adviceとは言わず some を使う",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 3,
+    "grammar": ["requests-permission", "articles-and-countability"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4p4e6t9e",
+    "ja": "その件、金曜までに片付けてもらえると思ってたんだけど。",
+    "en": "I assumed it'd be taken care of by Friday.",
+    "alternatives": [
+      "I thought you'd take care of it by Friday.",
+      "I was expecting it to be done by Friday."
+    ],
+    "point": "「片付けてもらえる」は受動態 be taken care of で言える",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 9,
+    "grammar": ["passive-voice", "hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4x7a5d9v",
     "ja": "早く頼んでくれたら、終わらせられたのに。",
     "en": "If you'd asked sooner, I could've finished it.",
@@ -196,6 +277,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5u9k9w9h",
+    "ja": "これ、もう少し早く送ってもらえますか？",
+    "en": "Could you send it a little earlier?",
+    "alternatives": [
+      "Could you send it a bit sooner?",
+      "Would you mind sending it a bit earlier?"
+    ],
+    "point": "「もう少し早く」は a little earlier。比較級の前に a little",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 5,
+    "grammar": ["comparatives-superlatives", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5w8q2d6h",
+    "ja": "部長に頼まれた書類、明日までに仕上げます。",
+    "en": "I'll finish the papers the manager requested by tomorrow.",
+    "alternatives": [
+      "I'll wrap up the papers the manager requested by tomorrow.",
+      "I'll get the manager's papers done by tomorrow."
+    ],
+    "point": "名詞のすぐ後ろに the manager requested と置いて修飾",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5y3r9m4a",
@@ -327,6 +440,51 @@
     }
   },
   {
+    "id": "c_7v3j6n5r",
+    "ja": "その仕事、もう田中さんに任されたよ。",
+    "en": "That job's already been given to Tanaka.",
+    "alternatives": [
+      "Tanaka's already been assigned that job.",
+      "Tanaka has already been given that job."
+    ],
+    "point": "「任された」は been given。already は been の前に置く",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 5,
+    "grammar": ["passive-voice", "present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7v6n4w7h",
+    "ja": "先方に折り返すよう頼んでもらえますか？",
+    "en": "Could you ask the client to call me back?",
+    "alternatives": [
+      "Would you mind asking the client to call me back?",
+      "Can you have the client call me back?"
+    ],
+    "point": "ask 人 to do の形。call back は「折り返す」",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["requests-permission", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7y9x6a3a",
+    "ja": "この仕事、誰に頼めばいいですか？",
+    "en": "Who should I ask to do this?",
+    "alternatives": ["Who should I ask for this?", "Who do I ask about this job?"],
+    "point": "疑問詞 Who が文頭。そのあとは should I ask の語順",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 3,
+    "grammar": ["wh-questions", "modal-obligation-advice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8h8u6s3j",
     "ja": "早く頼めばよかった。締め切りは明日だ。",
     "en": "I wish I'd asked sooner. The deadline's tomorrow.",
@@ -394,6 +552,38 @@
     }
   },
   {
+    "id": "c_8y2a4f9b",
+    "ja": "あの案件を受けていたら、今ごろリーダーなのに。",
+    "en": "If I'd taken that project, I'd be the leader now.",
+    "alternatives": [
+      "Had I taken that project, I'd be leading it now.",
+      "If I'd accepted that project, I'd be team leader now."
+    ],
+    "point": "過去の仮定＋今の結果は If had p.p., would be",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["mixed-conditional", "post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9b9k8a3n",
+    "ja": "今は新しい仕事を引き受けるのは控えたいんです。",
+    "en": "I'd rather avoid taking on new work right now.",
+    "alternatives": [
+      "I'd rather not take on any new work right now.",
+      "I'd prefer to hold off on taking new work now."
+    ],
+    "point": "avoid のあとは動名詞（taking）",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["gerunds", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9h6h4w7v",
     "ja": "うちに必要なのは、確認してくれる人です。",
     "en": "What we need is someone to check it.",
@@ -436,6 +626,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9p5h2q7b",
+    "ja": "定時で帰ってもいいなら、引き受けます。",
+    "en": "I'll take it if it's okay to leave on time.",
+    "alternatives": [
+      "I'll do it if I can leave on time.",
+      "I'll take it provided I can leave on time."
+    ],
+    "point": "if 節は未来でも現在形（it's okay）",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["requests-permission", "time-and-if-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9r5a9j9k",
+    "ja": "今は手一杯なので、その依頼は見送らせてもらいますね。",
+    "en": "Being swamped right now, I'll have to pass on that.",
+    "alternatives": [
+      "I'm swamped right now, so I'll have to pass on that.",
+      "I'll have to pass on that, since my hands are full."
+    ],
+    "point": "断る理由は分詞構文 Being ~ で先に置ける",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 9,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9r5y5z7c",

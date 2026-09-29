@@ -22,6 +22,22 @@
     }
   },
   {
+    "id": "c_2r7m7d9g",
+    "ja": "お願いしたいのは、あと二日の延長です。",
+    "en": "What I'm asking for is a two-day extension.",
+    "alternatives": [
+      "All I'm asking for is two more days.",
+      "What I'd like is a two-day extension."
+    ],
+    "point": "What 節を主語にして「〜なのは」と言う",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3g2y5k5r",
     "ja": "締め切り、部長に延ばしてもらえる？",
     "en": "Can you get the manager to extend it?",
@@ -86,6 +102,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3x9t8b8b",
+    "ja": "私たちは、先方の返事を先週から待っています。",
+    "en": "We've been waiting on the client since last week.",
+    "alternatives": [
+      "We've been waiting for the client's reply since last week.",
+      "We've been waiting for the client's answer for a week."
+    ],
+    "point": "続いている動作は have been -ing と since で表す",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_3y2c7f4b",
@@ -280,6 +312,22 @@
     }
   },
   {
+    "id": "c_6n5s9y2s",
+    "ja": "先方の日程の返事を、朝からずっと待ってる。",
+    "en": "I've been waiting for their reply since morning.",
+    "alternatives": [
+      "I've been waiting on their answer since this morning.",
+      "I've been waiting all morning for their response."
+    ],
+    "point": "「朝からずっと」は現在完了進行形＋since",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6v3e7q3m",
     "ja": "火曜の会議は木曜に変更されました。",
     "en": "Tuesday's meeting has been moved to Thursday.",
@@ -368,6 +416,38 @@
     }
   },
   {
+    "id": "c_7v2t2b6u",
+    "ja": "木曜に空いている人は、私に知らせてください。",
+    "en": "Anyone available on Thursday, please let me know.",
+    "alternatives": [
+      "Please let me know if you're available on Thursday.",
+      "If you're free on Thursday, please let me know."
+    ],
+    "point": "available on Thursday は直前の人を後ろから修飾する",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7z9z6u6v",
+    "ja": "今週はぎっしりですが、金曜なら時間を作れます。",
+    "en": "Although my week's packed, I can make time Friday.",
+    "alternatives": [
+      "My week's packed, but I can make Friday work.",
+      "Even though I'm swamped, I can free up Friday."
+    ],
+    "point": "「〜ですが」は although。but と二重にしない",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 8,
+    "grammar": ["concession-contrast", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8b2w2q8f",
     "ja": "ずらすべきなのは、デザインではなくテストの工程です。",
     "en": "It's the testing phase, not design, that needs rescheduling.",
@@ -410,6 +490,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8r5a5g2f",
+    "ja": "木曜予定のレビュー、金曜に動かせませんか？",
+    "en": "Could we move the review due Thursday to Friday?",
+    "alternatives": [
+      "Could we move the review scheduled for Thursday to Friday?",
+      "Is it possible to move Thursday's review to Friday?"
+    ],
+    "point": "「木曜予定の」は review の後ろに due / scheduled for で置く",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 8,
+    "grammar": ["post-modification", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9b4r6b9d",
@@ -456,6 +552,22 @@
     }
   },
   {
+    "id": "c_9j7r2v9j",
+    "ja": "日程が決まったら、すぐ全員にメールします。",
+    "en": "I'll email everyone once the date is set.",
+    "alternatives": [
+      "I'll let everyone know as soon as it's decided.",
+      "Once the date's confirmed, I'll email everyone."
+    ],
+    "point": "未来のことでも once 節は現在形",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9k5w8v5w",
     "ja": "彼女は締め切りの変更を知らなかったに違いない。",
     "en": "She must not have known about the deadline change.",
@@ -476,6 +588,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9q9n3f2c",
+    "ja": "何があっても、締め切りはもう動かせません。",
+    "en": "Under no circumstances can we move the deadline again.",
+    "alternatives": [
+      "We can't move the deadline again under any circumstances.",
+      "There's no way we can push the deadline back again."
+    ],
+    "point": "Under no circumstances の後は can we と倒置",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9v8a6h8u",
@@ -520,5 +648,37 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9x3t4f7e",
+    "ja": "締め切り前の週は、みんな予定がぎっしりだ。",
+    "en": "Everyone's booked solid the week before the deadline.",
+    "alternatives": [
+      "Everyone's schedule is full the week before the deadline.",
+      "Everyone's calendar is packed the week before the deadline."
+    ],
+    "point": "「締め切り前の週」は the week before the deadline",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9x9n3f9g",
+    "ja": "月曜は詰まってるけど、会えますよ。",
+    "en": "Although Monday's packed, I can meet you.",
+    "alternatives": [
+      "Monday's packed, but I can see you.",
+      "Even though Monday's busy, I can meet you."
+    ],
+    "point": "although のあとに but は重ねない",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]

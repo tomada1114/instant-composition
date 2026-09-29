@@ -60,6 +60,19 @@
     }
   },
   {
+    "id": "c_3c3d2c6e",
+    "ja": "疲れてるね。少し休んだほうがいいよ。",
+    "en": "You should take a break.",
+    "alternatives": ["You should rest a little.", "You should take a short break."],
+    "point": "「〜したほうがいい」は should + 動詞の原形",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3k8q9t7k",
     "ja": "前よりずっと静かだから、つけっぱなしでいいね。",
     "en": "It's much quieter now, so we can leave it on.",
@@ -104,6 +117,38 @@
     }
   },
   {
+    "id": "c_3q6m8a7y",
+    "ja": "エアコンが静かなら、集中できるのに。",
+    "en": "If the AC were quieter, I'd concentrate.",
+    "alternatives": [
+      "I could focus if the AC were quieter.",
+      "I could concentrate if the AC were quieter."
+    ],
+    "point": "現在の仮定は If + were、主節は would/could",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 5,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3x9b3k2z",
+    "ja": "プリンターを詰まらせて放置した人、コーヒーおごってよ。",
+    "en": "Whoever left the printer jammed owes me a coffee.",
+    "alternatives": [
+      "Whoever jammed the printer and walked away owes me a coffee.",
+      "Whoever left the printer jammed should buy me a coffee."
+    ],
+    "point": "「〜した人は誰でも」は Whoever で主語ごと作れる",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 10,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3y3a6k9d",
     "ja": "カーディガンを持ってくればよかった。寒すぎる。",
     "en": "I wish I'd brought a cardigan. I'm freezing.",
@@ -124,6 +169,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_4c4m4x5s",
+    "ja": "私が部長なら、フレックスタイム制を導入するのに。",
+    "en": "If I were the boss, I'd bring in flextime.",
+    "alternatives": [
+      "If I were in charge, I'd bring in flextime.",
+      "Were I the boss, I'd introduce flextime."
+    ],
+    "point": "現在の仮定は If I were、主節は would + 原形",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 8,
+    "grammar": ["second-conditional", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5g6u2u8c",
+    "ja": "昨日決まったこと、まだ聞いてないよ。",
+    "en": "I haven't heard what was decided yesterday.",
+    "alternatives": [
+      "I haven't been told what was decided yesterday.",
+      "I haven't heard what got decided yesterday."
+    ],
+    "point": "「決まったこと」は what 節。yet の代わりに現在完了で言う",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 4,
+    "grammar": ["noun-clauses", "tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5h2a9m9y",
@@ -149,6 +226,22 @@
     }
   },
   {
+    "id": "c_5h3x9w5b",
+    "ja": "あそこでコピーを取っている人は誰？",
+    "en": "Who's the person making copies over there?",
+    "alternatives": [
+      "Who's that person over there making copies?",
+      "Who is the person copying over there?"
+    ],
+    "point": "「人」を後ろから making で説明する",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 5,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5r9h5e2j",
     "ja": "帰るとき、電気を消してね。",
     "en": "Turn off the lights when you leave.",
@@ -169,6 +262,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5u9h3k6f",
+    "ja": "私の好きにしていいなら、このコピー機はもう処分してるよ。",
+    "en": "If I had my way, this copier would be gone.",
+    "alternatives": [
+      "If it were up to me, this copier would be gone.",
+      "If it were my call, this copier would be scrapped."
+    ],
+    "point": "If I had my way は「思い通りにできるなら」の決まり文句",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 9,
+    "grammar": ["second-conditional", "passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6c6q6w8k",
@@ -254,6 +363,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_6j9b5w8f",
+    "ja": "ケンが辞めていなければ、今は人手不足じゃないのに。",
+    "en": "If Ken hadn't quit, we wouldn't be short-staffed now.",
+    "alternatives": [
+      "If Ken hadn't left, we wouldn't be understaffed now.",
+      "We wouldn't be short-staffed now if Ken hadn't quit."
+    ],
+    "point": "過去が原因で今の結果は wouldn't be、時制を混ぜる",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6w3t3u3k",
+    "ja": "昨日、ここに傘を忘れたんです。",
+    "en": "I left my umbrella here yesterday.",
+    "alternatives": [
+      "I forgot my umbrella here yesterday.",
+      "Yesterday, I left my umbrella here."
+    ],
+    "point": "「忘れる」は場所を言うなら forgot より left が自然",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 3,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6w7t4a4r",
@@ -363,6 +504,22 @@
     }
   },
   {
+    "id": "c_9e6j3u4g",
+    "ja": "昨日私が会議室を予約していれば、今使えるのに。",
+    "en": "If I'd booked the room, we'd have it now.",
+    "alternatives": [
+      "Had I booked the room, we'd have it now.",
+      "If I'd reserved the room, we could use it now."
+    ],
+    "point": "過去の仮定 had + 過去分詞、今の結果は would + 原形",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9g5y4a8f",
     "ja": "会社に着いたら、紙はもう切れていた。",
     "en": "The paper had run out when I arrived.",
@@ -385,6 +542,38 @@
     }
   },
   {
+    "id": "c_9j9t5h3h",
+    "ja": "早く言ってくれてたら、今ごろ会議室は取れてたのに。",
+    "en": "If you'd told me sooner, we'd have the room by now.",
+    "alternatives": [
+      "Had you told me sooner, we'd have the room by now.",
+      "If you'd let me know earlier, we'd have the room now."
+    ],
+    "point": "過去の仮定と今の結果は if 節が過去完了、主節が would",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9k8s9q7x",
+    "ja": "お忙しいところ恐縮ですが、ご確認いただけますか？",
+    "en": "Sorry to bother you, but could you review this?",
+    "alternatives": [
+      "I hate to bother you, but could you check this?",
+      "I know you're busy, but could you look this over?"
+    ],
+    "point": "「恐縮ですが」は Sorry to bother you, but で和らげる",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 8,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9m4w2q8z",
     "ja": "ITにノートPCを設定してもらった。",
     "en": "I had IT set up my laptop.",
@@ -404,6 +593,22 @@
     }
   },
   {
+    "id": "c_9u4h5p9n",
+    "ja": "惜しい、彼女なら5分前に席を外したところだよ。",
+    "en": "You just missed her; she stepped out five minutes ago.",
+    "alternatives": [
+      "You've just missed her. She stepped out five minutes ago.",
+      "You're too late; she stepped out five minutes ago."
+    ],
+    "point": "five minutes ago と結果の現在は過去形と完了形を使い分ける",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9u7j9f5f",
     "ja": "コピー用紙はどこですか？",
     "en": "Where is the copy paper?",
@@ -421,5 +626,21 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9w3u8q2q",
+    "ja": "私が頼んだ付箋、届いた？",
+    "en": "Did the sticky notes I ordered arrive?",
+    "alternatives": [
+      "Did the sticky notes I ordered come in?",
+      "Have the sticky notes I ordered arrived?"
+    ],
+    "point": "名詞のあとに「I ordered」を置いて後ろから修飾する",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 4,
+    "grammar": ["relative-clauses", "past-simple"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]

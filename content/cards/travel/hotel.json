@@ -22,6 +22,19 @@
     }
   },
   {
+    "id": "c_2n4f9w2h",
+    "ja": "パスポートを見せなきゃいけないよ。",
+    "en": "You have to show your passport.",
+    "alternatives": ["You need to show your passport.", "You must show your passport."],
+    "point": "義務は have to。must より会話でよく使う",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 5,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3a7c3u7z",
     "ja": "部屋のエアコンに問題があります。",
     "en": "There's a problem with my air conditioner.",
@@ -42,6 +55,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3a8p6d9s",
+    "ja": "さっきからフロントに電話してるんです。",
+    "en": "I've been calling the front desk.",
+    "alternatives": [
+      "I've been trying to call the front desk.",
+      "I've been trying to reach the front desk."
+    ],
+    "point": "さっきからずっと、は現在完了進行形 have been -ing",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_3b8u7h5y",
@@ -198,6 +227,22 @@
     }
   },
   {
+    "id": "c_4t3p5w5t",
+    "ja": "暖房が昨日からずっと効いていません。",
+    "en": "The heater hasn't been working since yesterday.",
+    "alternatives": [
+      "The heater's been broken since yesterday.",
+      "The heater hasn't worked since yesterday."
+    ],
+    "point": "since と一緒に使う継続は現在完了進行形",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4w6g2b2z",
     "ja": "シャトルが何時か教えてもらえますか？",
     "en": "Could you tell me when the shuttle leaves?",
@@ -284,6 +329,38 @@
     }
   },
   {
+    "id": "c_5u5m4j2q",
+    "ja": "疲れ果てた私たちは、着くなりベッドに倒れ込んだ。",
+    "en": "Exhausted, we flopped onto the bed the moment we arrived.",
+    "alternatives": [
+      "Worn out, we crashed on the bed the moment we arrived.",
+      "We were wiped out and fell onto the bed on arrival."
+    ],
+    "point": "文頭の Exhausted は「疲れていたので」の分詞構文",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5y6m4y4k",
+    "ja": "部屋に入るなり、シーツが汚れているのに気づいたんです。",
+    "en": "Upon entering the room, I found the sheets stained.",
+    "alternatives": [
+      "The moment I walked in, I noticed the sheets were dirty.",
+      "When I entered the room, I noticed stained sheets."
+    ],
+    "point": "Upon ~ing で「〜するとすぐ」を分詞構文で表せる",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6a9h3r6u",
     "ja": "対応してくれた方にお礼を伝えてください。",
     "en": "Please thank the staff member who helped us.",
@@ -347,6 +424,35 @@
     }
   },
   {
+    "id": "c_7n6n7f3h",
+    "ja": "ベッドの上のシーツが汚れています。",
+    "en": "The sheets on my bed are dirty.",
+    "alternatives": ["The sheets on the bed look dirty.", "The bed sheets are dirty."],
+    "point": "「ベッドの上の」は名詞の後ろに on my bed を置く",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8c9u8s6w",
+    "ja": "係の人が、部屋はもう使えると言ってた。",
+    "en": "The clerk said the room was ready.",
+    "alternatives": [
+      "The clerk told me the room was ready.",
+      "The staff said the room was ready."
+    ],
+    "point": "said の後は時制を一つ過去にずらす（is → was）",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 5,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8d8d4u6e",
     "ja": "朝食は何時からですか？",
     "en": "What time is breakfast?",
@@ -388,6 +494,38 @@
     }
   },
   {
+    "id": "c_9g3n9z5e",
+    "ja": "フロントは満室と言っていたのに、結局私たちを泊めてくれた。",
+    "en": "Although the desk said they were full, they squeezed us in.",
+    "alternatives": [
+      "Even though the desk said they were full, they fit us in.",
+      "The desk said they were full, but they ended up taking us."
+    ],
+    "point": "said の後は時制を一つ過去に：were full",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 10,
+    "grammar": ["concession-contrast", "reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9h3h2c3z",
+    "ja": "私の枕を、もっと硬いのに替えてもらえますか？",
+    "en": "Could I have my pillow swapped for a firmer one?",
+    "alternatives": [
+      "Could you swap my pillow for a firmer one?",
+      "Would it be possible to swap my pillow for a firmer one?"
+    ],
+    "point": "have + 物 + 過去分詞で「〜してもらう」",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9m6g9w4f",
     "ja": "ネットで予約してれば私たち今ごろくつろいでたのに。",
     "en": "If we'd booked online, we'd be relaxing by now.",
@@ -408,5 +546,69 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9p3y3j6s",
+    "ja": "満室でも、キャンセル待ちに入れてください。",
+    "en": "Even if you're full, please put me on standby.",
+    "alternatives": [
+      "Even if you're booked, please add me to the waitlist.",
+      "Please put me on the waitlist, even if you're full."
+    ],
+    "point": "「たとえ〜でも」は Even if。if 節は現在形のまま",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9p5m7x7j",
+    "ja": "部屋の暖房を見てくれる人が必要です。",
+    "en": "I need someone to look at my room's heater.",
+    "alternatives": [
+      "Could you send someone to fix my room's heater?",
+      "I need someone to fix the heater in my room."
+    ],
+    "point": "「〜する人」は someone to do と後ろから修飾する",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 8,
+    "grammar": ["infinitives", "post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9p6s7f7k",
+    "ja": "満室でも、キャンセル待ちに入れてもらえませんか？",
+    "en": "Even if you're booked up, could you put me on standby?",
+    "alternatives": [
+      "Could you put me on the waitlist even if you're full?",
+      "Even if you're full, could you add me to the waitlist?"
+    ],
+    "point": "Even if は「たとえ〜でも」。「満室」は booked up / full",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["concession-contrast", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9v7a7a7m",
+    "ja": "誰かにこの荷物を運んでもらえますか？",
+    "en": "Could you get someone to carry this?",
+    "alternatives": [
+      "Can you ask someone to carry this bag?",
+      "Could someone carry this for me, please?"
+    ],
+    "point": "get / ask + 人 + to do で「人に〜してもらう」",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 4,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]

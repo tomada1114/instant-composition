@@ -22,6 +22,22 @@
     }
   },
   {
+    "id": "c_2k4u4d6d",
+    "ja": "障害が出たとき、私はちょうどデプロイ中でした。",
+    "en": "I was deploying when the outage hit.",
+    "alternatives": [
+      "The outage hit while I was deploying.",
+      "I was mid-deploy when the outage hit."
+    ],
+    "point": "その最中の動作は過去進行形、起きた出来事は過去形",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 6,
+    "grammar": ["progressive-aspect", "past-simple"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2s2c8w7f",
     "ja": "今は再起動しないでください。",
     "en": "Please don't restart it now.",
@@ -66,6 +82,22 @@
     }
   },
   {
+    "id": "c_3e5r3w6d",
+    "ja": "原因は多分設定変更ですが、断定するのはまだ早いです。",
+    "en": "It's probably the config change, but it's too early to say.",
+    "alternatives": [
+      "It's likely the config change, though it's too soon to say.",
+      "My guess is the config change, but I can't confirm it yet."
+    ],
+    "point": "断定を避けるときは too early to say が定番",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3j2n6n4j",
     "ja": "影響を受けたユーザーは何人ですか？",
     "en": "How many users are affected?",
@@ -83,6 +115,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3q6a8b3s",
+    "ja": "再起動しても、根本原因は残ったままです。",
+    "en": "Even if we restart, the root cause remains.",
+    "alternatives": [
+      "A restart won't remove the root cause.",
+      "Even with a restart, the root cause remains."
+    ],
+    "point": "「たとえ〜でも」は Even if。although とは使い分ける",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 6,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3w6e4s6m",
+    "ja": "直ったけど、原因はまだ不明です。",
+    "en": "Although it's fixed, the cause is still unknown.",
+    "alternatives": [
+      "It's fixed, but the cause is still unknown.",
+      "Even though it's fixed, the cause is unknown."
+    ],
+    "point": "Although 節の後に主節。but と同時には使わない",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_4g3a8m7c",
@@ -192,6 +256,22 @@
     }
   },
   {
+    "id": "c_5d3x8f5a",
+    "ja": "今、原因を調べています。",
+    "en": "We're looking into the cause.",
+    "alternatives": [
+      "We're investigating the cause now.",
+      "We're checking what caused it."
+    ],
+    "point": "「調べています」は進行形。look into で「調査する」",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 3,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5g9p3q8q",
     "ja": "昨日のリリースを戻してもらえますか？",
     "en": "Could you roll back yesterday's release?",
@@ -259,6 +339,35 @@
     }
   },
   {
+    "id": "c_5v9p6z5a",
+    "ja": "私があなたなら、今すぐお客様に一報入れておきます。",
+    "en": "If I were you, I'd give customers a heads-up now.",
+    "alternatives": [
+      "If I were in your shoes, I'd warn customers now.",
+      "If it were me, I'd give customers a heads-up now."
+    ],
+    "point": "仮定法では If I were you。一報入れるは give a heads-up",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6c6n9x9h",
+    "ja": "ユーザーに再ログインするよう伝えて。",
+    "en": "Tell users to log in again.",
+    "alternatives": ["Tell the users to sign in again.", "Tell users to log back in."],
+    "point": "tell + 人 + to do。「人」は目的格で to の前に置く",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 3,
+    "grammar": ["verb-object-to-do", "imperatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6q9j2m8m",
     "ja": "ログインエラーが出ています。",
     "en": "There's a login error.",
@@ -276,6 +385,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7f4a6r7s",
+    "ja": "ここまで広範囲に影響が出た障害は初めてです。",
+    "en": "Never before have we had an outage this widespread.",
+    "alternatives": [
+      "We've never had an outage this widespread before.",
+      "Never have we had an outage with such wide impact."
+    ],
+    "point": "Never を文頭に出すと、あとは疑問文の語順になる",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7n4d4w6p",
@@ -319,6 +444,38 @@
     }
   },
   {
+    "id": "c_7r8q5m7e",
+    "ja": "再発を防ぐため、アラートを追加しました。",
+    "en": "We added alerts to prevent a recurrence.",
+    "alternatives": [
+      "To prevent a repeat, we added alerts.",
+      "We added an alert so it won't recur."
+    ],
+    "point": "目的は to 不定詞。「再発防止」は prevent a recurrence",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7y6b5w4b",
+    "ja": "先ほど復旧しましたが、原因はまだ調査中です。",
+    "en": "Service came back earlier, but we're still investigating.",
+    "alternatives": [
+      "Service was restored earlier, but we're still investigating.",
+      "We got service back earlier, but we're still investigating."
+    ],
+    "point": "先ほどは過去形、今も続く調査は現在進行形",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7z9v5d7m",
     "ja": "誰かがディスク警告に気づいてればよかった。",
     "en": "I wish someone had noticed the disk warning.",
@@ -358,6 +515,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9c7p2h6j",
+    "ja": "影響が出たのは、決済機能だけでした。",
+    "en": "It was only the payment feature that was affected.",
+    "alternatives": [
+      "Only the payment feature was affected.",
+      "The only thing affected was the payment feature."
+    ],
+    "point": "強調したい語を It was と that ではさむ",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9j3v4e2c",
+    "ja": "閾値がもっと低ければ、早く気づけるのに。",
+    "en": "If the threshold were lower, we'd notice sooner.",
+    "alternatives": [
+      "We'd notice sooner if the threshold were lower.",
+      "If the threshold were lower, we'd catch it earlier."
+    ],
+    "point": "現在の仮定は If 節が were、主節は would + 動詞",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 6,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9k2k8z6e",

@@ -66,6 +66,54 @@
     }
   },
   {
+    "id": "c_2p7k2g9w",
+    "ja": "君に残業をお願いしてごめんね。",
+    "en": "Sorry I asked you to work late.",
+    "alternatives": [
+      "Sorry I asked you to stay late.",
+      "I'm sorry I asked you to work overtime."
+    ],
+    "point": "ask + 人 + to do の形。you の後は to work",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 4,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2q7n2a5j",
+    "ja": "君がかばってくれなかったら、僕はクビになっていたよ。",
+    "en": "If you hadn't stuck up for me, I'd have been fired.",
+    "alternatives": [
+      "If you hadn't stood up for me, I'd have lost my job.",
+      "I'd have been fired if you hadn't stuck up for me."
+    ],
+    "point": "過去の仮定は If + had 過去分詞、would have + 過去分詞",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 10,
+    "grammar": ["third-conditional", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2r8d3k9c",
+    "ja": "指導してくれた先生に、お礼の手紙を書いたよ。",
+    "en": "I wrote to thank the teacher who mentored me.",
+    "alternatives": [
+      "I wrote to thank the teacher who taught me.",
+      "I wrote to thank the teacher who guided me."
+    ],
+    "point": "先行詞が人なら who。「お礼を言う」は thank だけでよい",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2v9j4c9n",
     "ja": "送る前に確認すべきでした。すみません。",
     "en": "Sorry, I should've checked before sending it.",
@@ -86,6 +134,86 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3e8k9g5x",
+    "ja": "そんなに待たせていたとは気づかず、すみません。",
+    "en": "I didn't realize I'd kept you waiting. I'm sorry.",
+    "alternatives": [
+      "I'm sorry, I had no idea I'd kept you waiting.",
+      "Sorry, I never realized I'd kept you waiting this long."
+    ],
+    "point": "「待たせていた」のは気づく前なので I'd kept と過去完了",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 9,
+    "grammar": ["past-perfect", "noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4q2m5v3h",
+    "ja": "もっと早く出ていれば間に合ったのに。ごめん。",
+    "en": "If I'd left earlier, I'd have made it. Sorry.",
+    "alternatives": [
+      "Sorry, I'd have made it if I'd set off earlier.",
+      "If I'd left sooner, I would've been on time. Sorry."
+    ],
+    "point": "過去の後悔は if＋had＋過去分詞、主節は would have＋過去分詞",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4t8h6j4r",
+    "ja": "返信を忘れてしまい、ずっと気が咎めていました。",
+    "en": "Having forgotten to reply, I've felt guilty ever since.",
+    "alternatives": [
+      "I forgot to reply, and I've felt guilty ever since.",
+      "I've felt bad about forgetting to reply all this time."
+    ],
+    "point": "先に起きたことは Having + 過去分詞で前置きする",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 10,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4v6h7f2q",
+    "ja": "アドバイス、助かったよ。ありがとう。",
+    "en": "Thanks for the advice. It really helped.",
+    "alternatives": [
+      "Thanks for the advice. It was helpful.",
+      "Your advice helped me a lot. Thanks."
+    ],
+    "point": "advice は数えられない名詞。an advice とは言わない",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 4,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4v6m7j5w",
+    "ja": "手伝ってくれている皆さん、ありがとう。",
+    "en": "Thanks to everyone helping me out.",
+    "alternatives": [
+      "Thank you all for helping me out.",
+      "Thanks to everyone who's helping me."
+    ],
+    "point": "「皆さん」の後ろに helping me out を置いて説明する",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5d3x2h9x",
@@ -177,6 +305,38 @@
     }
   },
   {
+    "id": "c_6m3g7n5d",
+    "ja": "渋滞にはまってしまい、遅れて申し訳ありません。",
+    "en": "Having hit traffic, I apologize for being late.",
+    "alternatives": [
+      "I'm sorry I'm late. I got stuck in traffic.",
+      "I apologize for being late. Traffic was terrible."
+    ],
+    "point": "Having + 過去分詞で「〜したため」と先に起きた理由を示す",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6s4v5f7a",
+    "ja": "本当に、どうお礼を言えばいいのかわかりません。",
+    "en": "I honestly don't know how I can ever thank you.",
+    "alternatives": [
+      "I honestly don't know how to thank you enough.",
+      "I can't find the words to thank you."
+    ],
+    "point": "how 以下は疑問文の語順にせず I can thank you の順",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 9,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6y2g9c7u",
     "ja": "ありがとう。一週間ずっと詰まってたんだ。",
     "en": "Thanks. I've been stuck all week.",
@@ -219,6 +379,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7w3u6t3c",
+    "ja": "昨日のこと、何とお礼を言えばいいか分かりません。",
+    "en": "I don't know how to thank you for yesterday.",
+    "alternatives": [
+      "I can't thank you enough for yesterday.",
+      "I really don't know how to thank you for yesterday."
+    ],
+    "point": "how to + 動詞の原形で「どうやって〜すればいいか」",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8h7e5s8s",
@@ -307,6 +483,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9q9t2f5m",
+    "ja": "私が傷つけた同僚に、謝りたい。",
+    "en": "I want to apologize to the coworker I hurt.",
+    "alternatives": [
+      "I want to apologize to the colleague I offended.",
+      "I owe an apology to the coworker I hurt."
+    ],
+    "point": "目的格の関係詞（that / whom）は省略できる",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9x5g9a8q",

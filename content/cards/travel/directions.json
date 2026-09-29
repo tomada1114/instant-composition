@@ -111,6 +111,22 @@
     }
   },
   {
+    "id": "c_3d7r6g3n",
+    "ja": "道を聞ける人を探しているんです。",
+    "en": "I'm looking for someone to ask for directions.",
+    "alternatives": [
+      "I need someone to give me directions.",
+      "I'm trying to find someone to ask the way."
+    ],
+    "point": "「聞ける人」は someone to ask と不定詞で後ろから修飾",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 7,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3d9z3j4x",
     "ja": "美術館はこの通りの突き当たりです。",
     "en": "It's at the end of this street.",
@@ -128,6 +144,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3f5s9q7m",
+    "ja": "あの人、駅がどこにあるか知らないみたいだったよ。",
+    "en": "He didn't seem to know where the station was.",
+    "alternatives": [
+      "He didn't seem sure where the station was.",
+      "He seemed not to know where the station was."
+    ],
+    "point": "where 節の中は肯定文の語順で、時制も過去に合わせる",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 7,
+    "grammar": ["infinitives", "indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_3q8n2m2z",
@@ -196,6 +228,38 @@
     }
   },
   {
+    "id": "c_3y6r8d8e",
+    "ja": "私たち、早く聞いていれば遠回りせずに済んだのに。",
+    "en": "If we'd asked sooner, we'd have been spared the detour.",
+    "alternatives": [
+      "Had we asked sooner, we'd have avoided the detour.",
+      "If we'd asked earlier, we could have avoided the detour."
+    ],
+    "point": "過去の後悔は If + had 過去分詞, would have 過去分詞",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 9,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4e8e7z9x",
+    "ja": "私が泊まっているホテルは、駅の裏にあります。",
+    "en": "The hotel where I'm staying is behind the station.",
+    "alternatives": [
+      "The hotel I'm staying at is behind the station.",
+      "The place I'm staying is right behind the station."
+    ],
+    "point": "where の代わりに、前置詞 at を文末に残す言い方もある",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 8,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4n9f6k5e",
     "ja": "彼女は地図を見ながら、道を教えてくれた。",
     "en": "She gave me directions, checking her map.",
@@ -216,6 +280,54 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_4w2t2k5z",
+    "ja": "地元の人に、近道を案内してもらいたいです。",
+    "en": "I'd like a local to show me a shortcut.",
+    "alternatives": [
+      "I want a local to show me a shortcut.",
+      "I'd like someone local to show me a shortcut."
+    ],
+    "point": "would like + 人 + to do。to の前に人を置く",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 8,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5g3q5k4e",
+    "ja": "私はここに20年住んでるけど、あの道ができたのは去年だよ。",
+    "en": "I've lived here twenty years, but that road only opened last year.",
+    "alternatives": [
+      "I've lived here for twenty years, yet that road opened last year.",
+      "I've been here twenty years, but that road opened just last year."
+    ],
+    "point": "期間は現在完了、去年の出来事は過去形",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5n8y2g8u",
+    "ja": "大事なのは、迷ったらすぐ人に聞くことだよ。",
+    "en": "What matters is asking someone when you get lost.",
+    "alternatives": [
+      "The key is to ask someone when you're lost.",
+      "What's important is asking for help when you're lost."
+    ],
+    "point": "What 節は「〜なこと」を表す主語で、単数扱い",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 7,
+    "grammar": ["noun-clauses", "gerunds"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5p8a6f9g",
@@ -279,6 +391,40 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7b9k2f7k",
+    "ja": "彼女は駅は右手だと言っていた。",
+    "en": "She said the station's on the right.",
+    "alternatives": [
+      "She said the station was to the right.",
+      "She told me the station's on the right.",
+      "She said it was on the right."
+    ],
+    "point": "said の後ろは that を省いて節をそのまま続ける",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 5,
+    "grammar": ["noun-clauses", "reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7e3f7u2c",
+    "ja": "この先は通れないよ。引き返すべきだね。",
+    "en": "You should turn back. It's blocked.",
+    "alternatives": [
+      "You'd better turn back. It's blocked.",
+      "It's blocked, so you should go back.",
+      "You should go back. You can't get through."
+    ],
+    "point": "「〜すべき」は should＋動詞の原形。had better は強め",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 5,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7f2s5u9t",
@@ -363,6 +509,22 @@
     }
   },
   {
+    "id": "c_8f7u8y5u",
+    "ja": "運転手さんに、ここで降ろしてくれるよう頼みました。",
+    "en": "I asked the driver to drop me off here.",
+    "alternatives": [
+      "I asked the driver to let me off here.",
+      "I asked the driver to let me out here."
+    ],
+    "point": "ask + 人 + to do。「降ろす」は drop off / let off",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 8,
+    "grammar": ["verb-object-to-do", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8f9s4m5k",
     "ja": "よかったら、そこまで案内しますよ。",
     "en": "I'll take you there if you like.",
@@ -385,6 +547,38 @@
     }
   },
   {
+    "id": "c_8v4j3d6w",
+    "ja": "この地図、描き直してもらえませんか？分かりにくくて。",
+    "en": "Could I get you to redraw this map? It's confusing.",
+    "alternatives": [
+      "Would you mind redrawing this map? It's confusing.",
+      "Could you redraw this map for me? It's confusing."
+    ],
+    "point": "「〜してもらう」は get you to + 動詞の原形",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8y3h7r6y",
+    "ja": "彼、あの角を左に曲がれって言ってたよ。",
+    "en": "He told me to turn left at that corner.",
+    "alternatives": [
+      "He said to turn left at that corner.",
+      "He said I should turn left at that corner."
+    ],
+    "point": "「〜しろと言われた」は told me to do",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 7,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9b5v9f9u",
     "ja": "私たち、左に曲がってたら今ごろ着いてるのにね。",
     "en": "If we'd turned left, we'd be there by now.",
@@ -405,6 +599,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9d2z3p9y",
+    "ja": "この辺に詳しい人が、きっと教えてくれますよ。",
+    "en": "Someone who knows the area will surely tell you.",
+    "alternatives": [
+      "Someone familiar with the area will surely tell you.",
+      "I'm sure someone who knows the area will tell you."
+    ],
+    "point": "人を修飾する who 節。knows と三単現の s を忘れずに",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 8,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9g5t4d8c",
@@ -449,5 +659,53 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9q4x2v2u",
+    "ja": "受付の人、あの路地には近づかないよう私たちに言ってたよ。",
+    "en": "The clerk warned us to steer clear of that alley.",
+    "alternatives": [
+      "The clerk told us to stay away from that alley.",
+      "The clerk told us to keep away from that alley."
+    ],
+    "point": "steer clear of は「〜に近づかない」。warn 人 to 動詞",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 9,
+    "grammar": ["reported-speech", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9t3e5z3m",
+    "ja": "バスを乗り換えるバス停は、どこですか？",
+    "en": "Where's the stop where I change buses?",
+    "alternatives": [
+      "Which stop do I change buses at?",
+      "Where's the stop where I transfer buses?"
+    ],
+    "point": "乗り換えは change buses と複数形にする",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 8,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9z2x4y4e",
+    "ja": "店員さんが、バス停はすぐそこだと教えてくれた。",
+    "en": "The clerk said the bus stop was right there.",
+    "alternatives": [
+      "The clerk told me the bus stop was close by.",
+      "The clerk told me the bus stop was right there."
+    ],
+    "point": "said の後は時制を一つ過去にずらして was",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 7,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]

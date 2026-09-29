@@ -44,6 +44,22 @@
     }
   },
   {
+    "id": "c_3p4s4t4e",
+    "ja": "終電を逃して、私たちは今夜ここで足止めなんです。",
+    "en": "Having missed the last train, we're stuck here tonight.",
+    "alternatives": [
+      "We missed the last train, so we're stuck here tonight.",
+      "Since we missed the last train, we're stuck here tonight."
+    ],
+    "point": "先に起きたことは Having + 過去分詞で言える",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 9,
+    "grammar": ["participle-clauses", "tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3s5w6e8h",
     "ja": "向かいの男性が、私のバッグを持って行ったかも。",
     "en": "The man across from me may have taken my bag.",
@@ -66,6 +82,22 @@
     }
   },
   {
+    "id": "c_3x7a3w8b",
+    "ja": "係員が、荷物を見つけると言ってました。",
+    "en": "The agent said he'd find my bag.",
+    "alternatives": [
+      "The agent told me he'd find my bag.",
+      "The agent said he would find my luggage."
+    ],
+    "point": "said の後は時制を一つ過去にずらす（will → would）",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4d3q8z9g",
     "ja": "姉の名前が載ってないんです。",
     "en": "My sister's name isn't listed.",
@@ -85,6 +117,22 @@
     }
   },
   {
+    "id": "c_4p8e4u7w",
+    "ja": "近くに遺失物取扱所はありますか？",
+    "en": "Is there a lost-and-found nearby?",
+    "alternatives": [
+      "Is there a lost property office nearby?",
+      "Is there a lost-and-found around here?"
+    ],
+    "point": "「〜はありますか」は Is there a 〜? で聞く",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4z7d7t2n",
     "ja": "私たち、空港バスに乗り遅れた。",
     "en": "We missed the airport bus.",
@@ -102,6 +150,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_4z9j3j4t",
+    "ja": "フロントに、予約がないと言われたんです。",
+    "en": "The desk said I had no reservation.",
+    "alternatives": [
+      "They told me I had no reservation.",
+      "The front desk said I wasn't booked."
+    ],
+    "point": "said の後の動詞は過去形（have でなく had）",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5b5h2t6b",
+    "ja": "予約したのに、記録がないと言われました。",
+    "en": "Although I booked, they say there's no record.",
+    "alternatives": [
+      "I made a reservation, but they have no record.",
+      "They say there's no record, though I booked."
+    ],
+    "point": "although 節と主節の対比。「言われた」は they say で表す",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5n9f5z5v",
@@ -126,6 +206,22 @@
     }
   },
   {
+    "id": "c_5u9g5h4t",
+    "ja": "盗まれたのは現金とカメラだけです。",
+    "en": "Only cash and a camera were stolen.",
+    "alternatives": [
+      "Just cash and a camera got stolen.",
+      "Only some cash and a camera were stolen."
+    ],
+    "point": "cash は数えられないので a を付けない。camera は a が必要",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["articles-and-countability", "passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6d6w5e2d",
     "ja": "ホテルの人に報告書を書いてもらいたいです。",
     "en": "I'd like to have the staff write a report.",
@@ -146,6 +242,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_6k6k5e9t",
+    "ja": "カードが使えなくて困ってるんです。",
+    "en": "I'm having trouble using my card.",
+    "alternatives": [
+      "I'm having a problem using my card.",
+      "I'm struggling to use my card."
+    ],
+    "point": "have trouble の後は to でなく ing 形（using）",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["gerunds", "progressive-aspect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6v3h2p5g",
@@ -236,6 +348,67 @@
     }
   },
   {
+    "id": "c_6z8a8s8z",
+    "ja": "バッグを盗まれて、途方に暮れています。",
+    "en": "Having had my bag stolen, I'm at a loss.",
+    "alternatives": [
+      "My bag got stolen, and I don't know what to do.",
+      "Since my bag was stolen, I'm at my wits' end."
+    ],
+    "point": "盗まれて は Having had 物 過去分詞 で表せる",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 10,
+    "grammar": ["participle-clauses", "causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7h6n2r2k",
+    "ja": "盗難は、どこに届ければいいですか？",
+    "en": "Where should I report a theft?",
+    "alternatives": ["Where do I report a theft?", "Where can I report a theft?"],
+    "point": "疑問詞は文頭。Where should I の語順に注意",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 3,
+    "grammar": ["wh-questions", "modal-obligation-advice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7h7f5b4g",
+    "ja": "大使館に電話してもらえませんか？",
+    "en": "Would you mind calling the embassy?",
+    "alternatives": [
+      "Could you call the embassy for me?",
+      "Would you call the embassy for me?"
+    ],
+    "point": "mind の後は to 不定詞でなく動名詞（calling）",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["gerunds", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7k7v8t2k",
+    "ja": "乗り遅れたので、明日の便に替えてもらえませんか？",
+    "en": "I missed it. Would you mind rebooking me tomorrow?",
+    "alternatives": [
+      "Since I missed it, could you rebook me for tomorrow?",
+      "I missed it, so could you put me on tomorrow's?"
+    ],
+    "point": "Would you mind の後は動名詞（rebooking）",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 8,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7q2n4p8u",
     "ja": "スーツケースが見つかりません。",
     "en": "I can't find my suitcase.",
@@ -256,6 +429,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7z6f7w2s",
+    "ja": "着いた途端、私の部屋を他の人に回されてしまったんです。",
+    "en": "Hardly had I arrived when they gave my room away.",
+    "alternatives": [
+      "The moment I arrived, they gave my room to someone else.",
+      "As soon as I got here, they gave my room away."
+    ],
+    "point": "Hardly の後は had I arrived の倒置、次に when",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 9,
+    "grammar": ["inversion", "tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8c7f2k4r",
@@ -300,6 +489,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8u3a9v5g",
+    "ja": "財布を探すのに、もう1時間も使いました。",
+    "en": "I've spent an hour looking for my wallet.",
+    "alternatives": [
+      "I've been looking for my wallet for an hour.",
+      "I've been searching for my wallet for an hour."
+    ],
+    "point": "spend 時間 + 動名詞。継続は現在完了で表す",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 8,
+    "grammar": ["present-perfect", "gerunds"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8v4c9z4v",

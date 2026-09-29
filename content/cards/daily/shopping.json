@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2g8r5p4t",
+    "ja": "この商品、いつ再入荷するか分かりますか？",
+    "en": "Do you know when this will be restocked?",
+    "alternatives": [
+      "Can you tell me when this will be restocked?",
+      "Do you know when you'll get more of these?"
+    ],
+    "point": "間接疑問は when のあとが平叙文の語順",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2k5r6p8q",
     "ja": "この近くに文房具屋、ありますか？",
     "en": "Is there a stationery store near here?",
@@ -63,6 +79,48 @@
     }
   },
   {
+    "id": "c_2p5y4b7j",
+    "ja": "見てるだけです、ありがとう。",
+    "en": "I'm just looking, thanks.",
+    "alternatives": ["I'm only looking, thank you.", "Just looking, thank you."],
+    "point": "「見ているだけ」は進行形で I'm just looking",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 3,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2t5e9h4d",
+    "ja": "店員に在庫を調べてほしいんだ。",
+    "en": "I want the clerk to check stock.",
+    "alternatives": [
+      "I'd like the clerk to check stock.",
+      "I want a clerk to check the stock."
+    ],
+    "point": "want + 人 + to do。want the clerk check とは言わない",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 4,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2t8z4s7a",
+    "ja": "彼女は今、レジで払ってるよ。",
+    "en": "She's paying at the register.",
+    "alternatives": ["She's paying at the checkout.", "She's paying at the counter."],
+    "point": "今している最中は be + 動詞ing。pay の ing は paying",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2v8d8w6f",
     "ja": "知ってたら、二つ買ったのに。",
     "en": "If I'd known, I'd have bought two.",
@@ -107,6 +165,38 @@
     }
   },
   {
+    "id": "c_3q6t8u7x",
+    "ja": "欲しい色が売り切れで、妹は別の色で妥協した。",
+    "en": "Finding her color sold out, my sister settled for another.",
+    "alternatives": [
+      "Her color was sold out, so she settled for another.",
+      "Her color sold out, so my sister settled for another."
+    ],
+    "point": "分詞構文の主語は主節と同じ人。「妥協する」は settle for",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3q7a9c9z",
+    "ja": "小さすぎたから、そのセーターは送り返したよ。",
+    "en": "It was too small, so I sent it back.",
+    "alternatives": [
+      "It was too small, so I returned it.",
+      "I sent it back because it was too small."
+    ],
+    "point": "「送り返す」は send back。代名詞は back の前に置く",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4q7d2w7d",
     "ja": "レシートなしでも返品できますか？",
     "en": "Can I return it without a receipt?",
@@ -127,6 +217,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_4s4j3a8j",
+    "ja": "気になるのは、このカメラの保証期間なんです。",
+    "en": "What worries me is this camera's warranty period.",
+    "alternatives": [
+      "What I'm concerned about is this camera's warranty.",
+      "The thing that worries me is the camera's warranty."
+    ],
+    "point": "「気になるのは〜」は What worries me is 〜 で言える",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_4z8y4k5f",
@@ -171,6 +277,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5c9a8w9r",
+    "ja": "昨日買ったシャツ、返品できますか？",
+    "en": "Can I return a shirt bought yesterday?",
+    "alternatives": [
+      "Can I return the shirt I bought yesterday?",
+      "Could I return the shirt I got yesterday?"
+    ],
+    "point": "「買った」は後ろから名詞を修飾。bought yesterday を後ろに置く",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 4,
+    "grammar": ["post-modification", "relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5n3m7y2e",
+    "ja": "試着室が混んでても、待って試着したいな。",
+    "en": "Even if the fitting room's full, I'll wait and try it.",
+    "alternatives": [
+      "I'll wait for a fitting room, even if it's packed.",
+      "Even if I have to queue, I'm trying this on."
+    ],
+    "point": "Even if の節は未来のことでも現在形で言う",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5p3j6r4j",
@@ -285,6 +423,38 @@
     }
   },
   {
+    "id": "c_7e7u7t9a",
+    "ja": "彼女が買ったバッグ、どこで売ってるか店員さんに聞いて。",
+    "en": "Ask the clerk where the bag she bought is sold.",
+    "alternatives": [
+      "Ask the clerk where I can get the bag she bought.",
+      "Ask the clerk where they sell the bag she bought."
+    ],
+    "point": "間接疑問は where のあと肯定文の語順にする",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7r7h4p5f",
+    "ja": "あの店員、返金を断っただけでなく謝りもしなかったんだ。",
+    "en": "Not only did the clerk refuse a refund, he never apologized.",
+    "alternatives": [
+      "The clerk not only refused a refund but never even apologized.",
+      "Not only did the clerk refuse to refund me, he didn't apologize."
+    ],
+    "point": "Not only を文頭に出すと did + 動詞原形の倒置になる",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7t9h5p2u",
     "ja": "ここで一番安い卵はどれですか？",
     "en": "Which eggs are the cheapest here?",
@@ -395,6 +565,19 @@
     }
   },
   {
+    "id": "c_9c4z9e9b",
+    "ja": "小さいの、見せて。",
+    "en": "Show me a smaller one.",
+    "alternatives": ["Let me see a smaller one.", "Show me a smaller size."],
+    "point": "命令文は動詞で始める。「小さいの」は a smaller one",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9p2u8e9f",
     "ja": "店員さんは、金曜まで入荷しないって言ってた。",
     "en": "The clerk said it wouldn't arrive until Friday.",
@@ -415,6 +598,54 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9q2c9m9f",
+    "ja": "着いたときには、もうセールは終わってた。",
+    "en": "The sale had already ended when I arrived.",
+    "alternatives": [
+      "The sale had already finished when I arrived.",
+      "The sale was already over when I arrived."
+    ],
+    "point": "着く前に終わっていた出来事は過去完了 had ended",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9s7x6w3u",
+    "ja": "この靴、サイズが合わなかったので返品しに来ました。",
+    "en": "I came to return these shoes; they didn't fit.",
+    "alternatives": [
+      "I'm here to return these shoes because they didn't fit.",
+      "These shoes didn't fit, so I came to return them."
+    ],
+    "point": "「〜しに来た」は came to + 動詞の原形",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 8,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9t5m6e6r",
+    "ja": "私は店員に在庫を調べてくれるよう頼んだ。",
+    "en": "I asked the clerk to check stock.",
+    "alternatives": [
+      "I asked a clerk to check inventory.",
+      "I asked the salesperson to check stock."
+    ],
+    "point": "ask + 人 + to do。「頼んだ」は asked、to の後は原形",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9y2t7s9v",

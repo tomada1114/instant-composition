@@ -101,6 +101,38 @@
     }
   },
   {
+    "id": "c_3b4j6y9y",
+    "ja": "会議室からかけているので、声が反響するかも。",
+    "en": "Calling from a meeting room, my voice may echo.",
+    "alternatives": [
+      "I'm in a meeting room, so my voice may echo.",
+      "Since I'm calling from a meeting room, it may echo."
+    ],
+    "point": "同じ主語の理由は -ing で始める分詞構文にできる",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["participle-clauses", "hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3p9d8h7c",
+    "ja": "請求を担当している方に、つないでいただけますか？",
+    "en": "Could you put me through to whoever handles billing?",
+    "alternatives": [
+      "Could you connect me with the person who handles billing?",
+      "Would you put me through to whoever's in charge of billing?"
+    ],
+    "point": "「担当の方」は whoever handles と現在形で言える",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 9,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3q9q4j8r",
     "ja": "彼、マイク確認しとけばよかったって言ってたよ。",
     "en": "He said he wished he'd checked his mic.",
@@ -121,6 +153,70 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3u9h6k8f",
+    "ja": "上司に確認してから、折り返しお電話します。",
+    "en": "After checking with my boss, I'll call you back.",
+    "alternatives": [
+      "I'll check with my boss and call you back.",
+      "Once I've checked with my boss, I'll call back."
+    ],
+    "point": "「〜してから」は After＋-ing でも言える",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["participle-clauses", "time-and-if-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4j3j5b2c",
+    "ja": "二回途切れたので、いったん切ってかけ直します。",
+    "en": "Having lost you twice, I'll hang up and redial.",
+    "alternatives": [
+      "After losing you twice, I'll hang up and call back.",
+      "We got cut off twice, so I'll call you back."
+    ],
+    "point": "理由は Having＋過去分詞で前に置ける",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4n2v5b5m",
+    "ja": "彼が忙しくても、折り返し電話をくれるよう伝えてもらえますか？",
+    "en": "Even if he's swamped, could you have him ring me back?",
+    "alternatives": [
+      "Even if he's busy, could you get him to call me back?",
+      "Busy or not, could you have him call me back?"
+    ],
+    "point": "「〜させる」は have him + 原形。ring me back は電話の定番",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 10,
+    "grammar": ["concession-contrast", "causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4s9c3r4w",
+    "ja": "今電話中の人は、部長のアシスタントです。",
+    "en": "The person on the phone is the manager's assistant.",
+    "alternatives": [
+      "The person talking on the phone is the manager's assistant.",
+      "The person who's on the phone is the manager's assistant."
+    ],
+    "point": "「電話中の人」は the person on the phone と後ろから直す",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_4v2h9q3q",
@@ -145,6 +241,22 @@
     }
   },
   {
+    "id": "c_5e5m3r3f",
+    "ja": "先ほど送ったリンクから会議に入ってください。",
+    "en": "Please join the meeting using the link sent earlier.",
+    "alternatives": [
+      "Please join through the link I sent you earlier.",
+      "Please use the link I sent earlier to join."
+    ],
+    "point": "「送ったリンク」は the link sent earlier と後ろから修飾",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5g5g2g9w",
     "ja": "向こうはノートPCのマイクを使ってたのかもね。",
     "en": "They might have been using a laptop mic.",
@@ -165,6 +277,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5g8n5w8w",
+    "ja": "回線が不安定でも、このまま続けていい？",
+    "en": "Even if the line's shaky, can we keep going?",
+    "alternatives": [
+      "Can we keep going even if the line is shaky?",
+      "Although the line is shaky, can we keep going?"
+    ],
+    "point": "「〜でも」は Even if。keep のあとは -ing",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["concession-contrast", "gerunds"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5n4u5n4s",
@@ -206,6 +334,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5z6p6p9e",
+    "ja": "音声は大丈夫だけど、そちらの映像は固まってるよ。",
+    "en": "Your audio's fine, whereas your video is frozen.",
+    "alternatives": [
+      "Although your audio's fine, your video is frozen.",
+      "I can hear you fine, but your video's frozen."
+    ],
+    "point": "対比は whereas か although でつなぐ",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 7,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6b5q3t4c",
@@ -296,6 +440,38 @@
     }
   },
   {
+    "id": "c_6t5m2p7r",
+    "ja": "電話を切って初めて、ミュートだったと気づいたよ。",
+    "en": "Only after hanging up did I realize I'd been muted.",
+    "alternatives": [
+      "Not until I hung up did I realize I was muted.",
+      "I didn't realize I'd been muted until I hung up."
+    ],
+    "point": "Only after 〜 の後は疑問文の語順（did I realize）",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6v2s9b9d",
+    "ja": "声は聞こえますが、映像は固まっています。",
+    "en": "I can hear you, although your video is frozen.",
+    "alternatives": [
+      "Even though I can hear you, your video is frozen.",
+      "Your video is frozen, although I can hear you fine."
+    ],
+    "point": "対比は although で。but と二重にしない",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6w7b8v7d",
     "ja": "その電話はもう営業部に回されました。",
     "en": "That call has already been transferred to Sales.",
@@ -316,6 +492,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7g2s5j7v",
+    "ja": "私が共有している画面、見えますか？",
+    "en": "Can you see the screen I'm sharing?",
+    "alternatives": [
+      "Do you see the screen I'm sharing?",
+      "Can you see the screen I'm showing?"
+    ],
+    "point": "the screen のあとに I'm sharing を続けて説明",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 5,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7s2j3k6u",
@@ -359,6 +551,38 @@
     }
   },
   {
+    "id": "c_7v8e3b6u",
+    "ja": "さっき電話してきた人、誰でしたっけ？",
+    "en": "Who was the man who just called?",
+    "alternatives": [
+      "Who was that person who called earlier?",
+      "Who was the one who just called?"
+    ],
+    "point": "「電話してきた人」は who called で人を後ろから説明",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 5,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8f4n6c4j",
+    "ja": "私は、こんなに途切れる通話を経験したことがない。",
+    "en": "Never have I had a call this choppy.",
+    "alternatives": [
+      "I've never had a call this choppy.",
+      "Never have I been on such a choppy call."
+    ],
+    "point": "Never を文頭に出すと、have I の語順に倒置する",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8g2g6x3z",
     "ja": "山田さんが君にも入ってほしいって。",
     "en": "Yamada wants you to join too.",
@@ -379,6 +603,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8k4c6m7q",
+    "ja": "声が遠いよ。マイクに近づいたほうがいい。",
+    "en": "You should get closer to your mic.",
+    "alternatives": [
+      "You should move closer to your mic.",
+      "You'd better move closer to the mic."
+    ],
+    "point": "助言は should、「近づく」は get closer to",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 5,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8m8t6q8n",
@@ -423,5 +663,21 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9s5w2c5f",
+    "ja": "回線が不安定だから、かけ直したほうがいいですね。",
+    "en": "The line's unstable, so we should call back.",
+    "alternatives": [
+      "Since the line's unstable, we should call back.",
+      "The connection's unstable, so we'd better call back."
+    ],
+    "point": "「〜したほうがいい」は should か had better で言う",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 7,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]

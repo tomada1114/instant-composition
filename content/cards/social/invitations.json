@@ -1,5 +1,37 @@
 [
   {
+    "id": "c_2q9h8m3h",
+    "ja": "自分が誘われてたなんて、知らなかったよ。",
+    "en": "I didn't know I'd been invited.",
+    "alternatives": [
+      "I had no idea I'd been invited.",
+      "Nobody told me I had been invited."
+    ],
+    "point": "知った時点より前の「誘われた」は過去完了（受け身）",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["past-perfect", "noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3c5s7u8x",
+    "ja": "誘ってくれたのは嬉しいけど、今回は見送らせて。",
+    "en": "Much as I appreciate the invitation, I'll have to pass.",
+    "alternatives": [
+      "I appreciate the invitation, but I'll have to pass this time.",
+      "Thanks for asking, but I'll sit this one out."
+    ],
+    "point": "Much as ～ は although と同じ譲歩。倒置ぎみの語順",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 9,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3d4t6r4s",
     "ja": "パーティーは何時に始まるの？",
     "en": "What time does the party start?",
@@ -17,6 +49,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3f5r9r9q",
+    "ja": "彼、先月からずっと私の誘いを断ってるんだ。",
+    "en": "He's been turning down my invitations since last month.",
+    "alternatives": [
+      "He's been declining my invitations since last month.",
+      "He's been passing on my invitations since last month."
+    ],
+    "point": "「ずっと〜してる」は現在完了進行形＋since",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 6,
+    "grammar": ["present-perfect-continuous", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_3f8g9p6m",
@@ -41,6 +89,55 @@
     }
   },
   {
+    "id": "c_3q3h5e8h",
+    "ja": "来られるかどうか、金曜までに教えて。",
+    "en": "Tell me by Friday if you're coming.",
+    "alternatives": [
+      "Let me know by Friday if you'll come.",
+      "Tell me by Friday whether you can come."
+    ],
+    "point": "「かどうか」は if / whether の名詞節。語順は平叙文",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 4,
+    "grammar": ["noun-clauses", "indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4m9c3g3s",
+    "ja": "部長に二次会まで付き合わされちゃったよ。",
+    "en": "My boss made me tag along to the after-party.",
+    "alternatives": [
+      "My boss made me come along to the after-party.",
+      "My boss made me go to the after-party too.",
+      "My boss made me stay for the after-party."
+    ],
+    "point": "「made + 人 + 原形」。tag along は「くっついて行く」",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5b6m5r4p",
+    "ja": "今、みんなを飲みに誘ってるところだよ。",
+    "en": "I'm inviting everyone out for drinks now.",
+    "alternatives": [
+      "I'm asking everyone to go for drinks.",
+      "Right now I'm asking everyone out for drinks."
+    ],
+    "point": "「今〜しているところ」は現在進行形 (am + ing)",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 5,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5k4j7p3a",
     "ja": "みんなが来られるか聞いてくれる？",
     "en": "Could you ask if everyone can make it?",
@@ -61,6 +158,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5m9a4w8a",
+    "ja": "ずっと誘われるのを待ってたんだ。",
+    "en": "I've been waiting to be invited.",
+    "alternatives": [
+      "I've been hoping you'd invite me.",
+      "I've been waiting for an invitation."
+    ],
+    "point": "待ち続けている今までの期間は現在完了進行形",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 4,
+    "grammar": ["present-perfect-continuous", "passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5p9e4q9j",
+    "ja": "誰も行かなくても、私はライブに行くよ。",
+    "en": "Even if nobody else goes, I'm going.",
+    "alternatives": [
+      "I'll go even if nobody else does.",
+      "Even if no one goes, I'll go."
+    ],
+    "point": "even if の後は、未来のことでも現在形",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 5,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5s7b3v4m",
@@ -127,6 +256,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_6k3p3b5x",
+    "ja": "みんなが行ける日を選んでもらえる？",
+    "en": "Could you pick a day that works for everyone?",
+    "alternatives": [
+      "Can you choose a date everyone can make?",
+      "Could you pick a day when everyone's free?"
+    ],
+    "point": "「みんなが行ける日」は day を後ろから修飾する関係節",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["nested-clauses", "relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6k3r4u3w",
@@ -217,6 +362,38 @@
     }
   },
   {
+    "id": "c_7u2t8z3y",
+    "ja": "彼が飲み会の誘いを断ったなんて、信じられないよ。",
+    "en": "I can't believe he turned down the invitation.",
+    "alternatives": [
+      "I can't believe he declined the invitation.",
+      "I can't believe he passed on the invitation."
+    ],
+    "point": "「信じられない」の中身は that 節。that は省略できる",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7v6p2c6w",
+    "ja": "金曜空いてるか聞こうと思って電話したんだ。",
+    "en": "I called to see if you're free Friday.",
+    "alternatives": [
+      "I'm calling to find out if you're free Friday.",
+      "I called to check if you're free on Friday."
+    ],
+    "point": "「〜するために」は to + 動詞の原形で言える",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 6,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7y4p4v7r",
     "ja": "パーティー、もう誘われた？",
     "en": "Have you been invited yet?",
@@ -278,6 +455,23 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8c2t3t8b",
+    "ja": "この前誘ってくれた店、もう予約しといたよ。",
+    "en": "I've already booked the place you invited me to.",
+    "alternatives": [
+      "I've already reserved a table at the place you invited me to.",
+      "The place you invited me to? I've already booked it.",
+      "I already booked that place you invited me to."
+    ],
+    "point": "「もう〜した」は現在完了。invited me to の to を忘れずに",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 10,
+    "grammar": ["tense-contrast", "nested-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8g3u2b6m",
@@ -366,6 +560,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9j9q8v7h",
+    "ja": "来られるか、ずっと返事を待ってるんだ。",
+    "en": "I've been waiting to hear back from you.",
+    "alternatives": [
+      "I've been waiting for your answer.",
+      "I've been waiting for you to reply."
+    ],
+    "point": "「ずっと待ってる」は have been + ing",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9s7s5u5s",

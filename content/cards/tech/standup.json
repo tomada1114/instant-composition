@@ -22,6 +22,86 @@
     }
   },
   {
+    "id": "c_2h3c2g3d",
+    "ja": "佐藤さんに PR のレビューを頼みました。",
+    "en": "I asked Sato to review my PR.",
+    "alternatives": [
+      "I asked Sato to look at my PR.",
+      "I asked Sato to review my pull request."
+    ],
+    "point": "ask + 人 + to do。「頼む」は ask 人 to review の形",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 5,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2m8v3p7m",
+    "ja": "田中さんにレビューを頼みました。",
+    "en": "I asked Tanaka to review it.",
+    "alternatives": [
+      "I asked Tanaka for a review.",
+      "I asked Tanaka to do the review."
+    ],
+    "point": "ask + 人 + to do。「頼む」の相手は ask のすぐ後ろに置く",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2s3c8y3b",
+    "ja": "私が知っていれば、もっと早く共有したのに。",
+    "en": "If I'd known, I would've shared it sooner.",
+    "alternatives": [
+      "If I had known, I'd have told you earlier.",
+      "Had I known, I would have shared it sooner."
+    ],
+    "point": "If + had 過去分詞、would have 過去分詞 で過去の反対",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2u2s5z6b",
+    "ja": "レビュー待ちの PR、三つ見てもらえますか？",
+    "en": "Could you check the three PRs waiting on review?",
+    "alternatives": [
+      "Could you look at the three PRs pending review?",
+      "Would you mind checking the three PRs awaiting review?"
+    ],
+    "point": "「レビュー待ちの」は PRs の後ろから waiting on で修飾",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 8,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3k8z5g5s",
+    "ja": "昨日出した修正が、新しいバグを起こした。",
+    "en": "The fix deployed yesterday caused a new bug.",
+    "alternatives": [
+      "The fix we shipped yesterday introduced a new bug.",
+      "Yesterday's fix caused a new bug."
+    ],
+    "point": "名詞の後ろに過去分詞 deployed を置いて修飾する",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["post-modification", "past-simple"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3x8m5x5v",
     "ja": "ログインに、まだバグが一つあります。",
     "en": "There's still one login bug.",
@@ -66,6 +146,22 @@
     }
   },
   {
+    "id": "c_4c6a4e6a",
+    "ja": "私は朝から、この設計で堂々巡りしています。",
+    "en": "I've been going in circles on this design all morning.",
+    "alternatives": [
+      "I've been spinning my wheels on this design all morning.",
+      "I've been running in circles on this design all morning."
+    ],
+    "point": "ずっと続く動作は現在完了進行形。all morning で継続を示す",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4g9x7x7f",
     "ja": "今日はドキュメントの仕上げに集中します。",
     "en": "Today I'll focus on finishing the docs.",
@@ -88,6 +184,38 @@
     }
   },
   {
+    "id": "c_4m2n5h5e",
+    "ja": "あのバグ、私が今朝やっと突き止めました。",
+    "en": "I finally tracked down that bug this morning.",
+    "alternatives": [
+      "I finally pinned down that bug this morning.",
+      "I finally nailed that bug this morning."
+    ],
+    "point": "「突き止める」は track down。今朝は過去形",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["phrasal-verbs", "past-simple"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4m9k6c3m",
+    "ja": "報告することは少ないですが、もうすぐ終わります。",
+    "en": "I have little to report, but I'm almost done.",
+    "alternatives": [
+      "There isn't much to report, but I'm almost finished.",
+      "I don't have much to report, but I'll finish soon."
+    ],
+    "point": "「報告する〜」は名詞のあとに to report を置く",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 7,
+    "grammar": ["infinitives", "concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4r3p5d8b",
     "ja": "健太は今日、デプロイしなきゃ。",
     "en": "Kenta has to deploy today.",
@@ -105,6 +233,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_4u4g5m8h",
+    "ja": "昨日の障害は復旧して、今は安定しています。",
+    "en": "Yesterday's outage was fixed, and it's stable now.",
+    "alternatives": [
+      "We fixed yesterday's outage, and things are stable now.",
+      "Yesterday's outage has been resolved; it's stable now."
+    ],
+    "point": "昨日は過去形、今の状態は現在形で使い分ける",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["tense-contrast", "passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_4z9f5q4d",
@@ -151,6 +295,22 @@
     }
   },
   {
+    "id": "c_5u7y3r4d",
+    "ja": "誰かこのエラーの原因、分かりますか？",
+    "en": "Does anyone know what's causing this error?",
+    "alternatives": [
+      "Can anyone tell me what's causing this error?",
+      "Does anyone know why this error happens?"
+    ],
+    "point": "間接疑問は what's causing のように平叙文の語順",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 5,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5v9t5y6q",
     "ja": "佐藤さんがテストを直して、CI が速くなった。",
     "en": "Sato fixed the tests, speeding up our CI.",
@@ -171,6 +331,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5w4z2k4j",
+    "ja": "私が一番わかってない部分で詰まってます。",
+    "en": "I'm stuck on the part I know least.",
+    "alternatives": [
+      "I'm stuck on the part I understand least.",
+      "I'm stuck on the least familiar part."
+    ],
+    "point": "「一番〜ない」は least。part の後ろに I know を直接置く",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["comparatives-superlatives", "post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6d9g4h4c",
@@ -351,6 +527,38 @@
     }
   },
   {
+    "id": "c_7y9c6d9m",
+    "ja": "客先の電話で、朝会を先に抜けてもいいですか？",
+    "en": "Could I duck out early for a client call?",
+    "alternatives": [
+      "May I step out early for a client call?",
+      "Is it okay if I leave early? Client call."
+    ],
+    "point": "許可を丁寧に求める Could I。duck out は「抜ける」",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 7,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7z9b9x6j",
+    "ja": "あの設定、私が見落としたのかもしれません。",
+    "en": "I may have missed that setting.",
+    "alternatives": [
+      "Maybe I overlooked that setting.",
+      "I might have overlooked that setting."
+    ],
+    "point": "過去の推量は may have + 過去分詞",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8a8a9j7h",
     "ja": "うちは障害対応に追われて、ドキュメントに手が回ってない。",
     "en": "The outage swamped us, so we haven't gotten around to docs.",
@@ -436,6 +644,22 @@
     }
   },
   {
+    "id": "c_8u3f3j2u",
+    "ja": "本番のログが見られません。",
+    "en": "I can't see the production logs.",
+    "alternatives": [
+      "I can't view the production logs.",
+      "I'm unable to see production logs."
+    ],
+    "point": "「見られない」は can't see。can't のあとは動詞の原形",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 3,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9a8s4q9v",
     "ja": "昨日レビューを頼んでおけばよかった。",
     "en": "I wish I'd asked for a review yesterday.",
@@ -478,5 +702,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9s8j2h5r",
+    "ja": "昨日直したバグが、また出ました。",
+    "en": "The bug I fixed yesterday is back.",
+    "alternatives": [
+      "The bug I fixed yesterday came back.",
+      "The bug I fixed yesterday has come back.",
+      "The bug I fixed yesterday is happening again."
+    ],
+    "point": "直した過去は fixed、今戻っている状態は現在形の is back",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["tense-contrast", "post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9t3y6j2r",
+    "ja": "彼が昨日ロールバックしなかったら、今も障害中だよ。",
+    "en": "If he hadn't rolled back, we'd still be down.",
+    "alternatives": [
+      "If he hadn't rolled it back, we'd still be down.",
+      "Had he not rolled back, we'd still be down."
+    ],
+    "point": "過去の仮定が今に影響: had + 過去分詞、would + 原形",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]

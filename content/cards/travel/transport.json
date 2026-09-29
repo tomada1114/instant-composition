@@ -1,5 +1,37 @@
 [
   {
+    "id": "c_2g8v4w6z",
+    "ja": "あなたはどのくらいここに並んでるの？",
+    "en": "How long have you been waiting in line?",
+    "alternatives": [
+      "How long have you been standing in line?",
+      "How long have you been in this line?"
+    ],
+    "point": "どのくらい続いているかは How long have you been ~ing",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2n2j4x4t",
+    "ja": "後で聞いたら、その電車は故障してたんだって。",
+    "en": "I found out later the train had broken down.",
+    "alternatives": [
+      "Later I heard the train had broken down.",
+      "I later learned the train had broken down."
+    ],
+    "point": "知った時点より前の故障は had broken down",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 8,
+    "grammar": ["past-perfect", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2v2w7m5d",
     "ja": "私たち、早く出ていればバスに乗れたのに。",
     "en": "If we'd left earlier, we'd have caught the bus.",
@@ -85,6 +117,38 @@
     }
   },
   {
+    "id": "c_3g7m9a9w",
+    "ja": "乗るはずだった電車は、もう出ていました。",
+    "en": "The train I wanted had already left.",
+    "alternatives": [
+      "The train I wanted had already gone.",
+      "The train I planned to take had left."
+    ],
+    "point": "電車を修飾する I wanted は that を省ける。出発済みは had left",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["past-perfect", "relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3j4n8w8p",
+    "ja": "この電車、いつ着くかわかりますか？",
+    "en": "Do you know when this train arrives?",
+    "alternatives": [
+      "Could you tell me when this train arrives?",
+      "Do you know when this train gets in?"
+    ],
+    "point": "間接疑問は when のあとが平叙文の語順（does は不要）",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 4,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4c3f3h6z",
     "ja": "混んでるから、タクシーより電車がたぶん早いよ。",
     "en": "Traffic's bad, so the train's probably faster than a taxi.",
@@ -149,6 +213,54 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5b6z2s6y",
+    "ja": "ごめん、ずっと待ってた？バスが遅れちゃって。",
+    "en": "Sorry, have you been waiting? The bus ran late.",
+    "alternatives": [
+      "Have you been waiting long? Sorry, my bus was late.",
+      "Sorry, have you been waiting long? My bus got delayed."
+    ],
+    "point": "待ち続けた状態は have you been waiting で聞く",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 8,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5h6h9b4v",
+    "ja": "ずっとタクシーを待ってるんだけど。",
+    "en": "I've been waiting for a taxi forever.",
+    "alternatives": [
+      "I've been waiting ages for a taxi.",
+      "I've been waiting for a cab forever."
+    ],
+    "point": "続いている動作は have been ~ing。for は期間の前に置く",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6s4d3b5m",
+    "ja": "最終バスを逃したと気づいて、彼女はタクシーを呼んだ。",
+    "en": "Realizing she'd missed the last bus, she called a cab.",
+    "alternatives": [
+      "She realized she'd missed the last bus and called a cab.",
+      "Realizing she had missed the last bus, she called a taxi."
+    ],
+    "point": "「気づいて」は Realizing の分詞構文で先に置く",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 9,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6u2h8a5h",
@@ -278,6 +390,54 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7p7a5j6s",
+    "ja": "この路線、乗ったことありますか？",
+    "en": "Have you ever taken this line?",
+    "alternatives": [
+      "Have you ridden this line before?",
+      "Have you been on this line before?"
+    ],
+    "point": "経験を聞くときは Have you ever + 過去分詞",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 4,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7t4e6r7c",
+    "ja": "私が席に座るか座らないかのうちに、バスが急発進した。",
+    "en": "Hardly had I sat down when the bus lurched forward.",
+    "alternatives": [
+      "No sooner had I sat down than the bus lurched forward.",
+      "I'd barely sat down when the bus lurched forward."
+    ],
+    "point": "Hardly を文頭に出すと had I sat の倒置。後ろは when",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7u2p6b3y",
+    "ja": "ここがタクシーがいつも待つ場所だよ。",
+    "en": "This is where taxis always wait.",
+    "alternatives": [
+      "This is the spot where taxis always wait.",
+      "Taxis always wait right here."
+    ],
+    "point": "場所を説明する where のあとは主語と動詞が続く",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8s6t5y6r",

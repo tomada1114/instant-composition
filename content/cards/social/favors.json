@@ -22,6 +22,38 @@
     }
   },
   {
+    "id": "c_2c5h5t6a",
+    "ja": "先月助けてやった男が、また頼んできたんだ。",
+    "en": "The guy I'd bailed out last month asked me again.",
+    "alternatives": [
+      "The man I had helped out last month asked me again.",
+      "That guy I'd helped out last month came asking again."
+    ],
+    "point": "先月の救済は頼まれた時点より前なので had + 過去分詞",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 9,
+    "grammar": ["past-perfect", "relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2q4s7c7y",
+    "ja": "僕の一存で決められるなら、君に喜んで手を貸すのに。",
+    "en": "If it were up to me, I'd lend you a hand.",
+    "alternatives": [
+      "If it were my call, I'd gladly help you out.",
+      "If I could decide, I'd be happy to help."
+    ],
+    "point": "現実と違う仮定は if 節に were、主節に would",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 10,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2y4c8s8g",
     "ja": "もう一度説明してもらえますか？",
     "en": "Could you explain it again?",
@@ -42,6 +74,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3m6a8g6t",
+    "ja": "代わりを頼んだ人が病気で寝込んでるって聞いたよ。",
+    "en": "I heard the person I asked to cover for me is sick.",
+    "alternatives": [
+      "Turns out the person I asked to cover for me is sick.",
+      "I heard the one I asked to cover my shift is sick."
+    ],
+    "point": "person の後の I asked は関係詞を省略した形",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_3p7q8a8j",
@@ -85,6 +133,38 @@
     }
   },
   {
+    "id": "c_4d6g3p6y",
+    "ja": "こんなふうに君に頼るのは気が引けるんだ。",
+    "en": "I feel bad about imposing on you like this.",
+    "alternatives": [
+      "I hate imposing on you like this.",
+      "I'm sorry for imposing on you like this."
+    ],
+    "point": "前置詞 about の後ろは動名詞 imposing",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 8,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4h6n3t2g",
+    "ja": "君が今頼んでる人、月曜まで休みだよ。",
+    "en": "The person you're asking is out till Monday.",
+    "alternatives": [
+      "The guy you're asking is off till Monday.",
+      "The person you're trying to ask is off until Monday."
+    ],
+    "point": "The person (whom) you're asking と関係詞は省ける",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 8,
+    "grammar": ["nested-clauses", "relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4n8d2z4y",
     "ja": "明日、猫にえさをあげに寄ってもらえない？",
     "en": "Could you swing by tomorrow and feed my cat?",
@@ -105,6 +185,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_4u8p3k2y",
+    "ja": "手伝ってくれた男の人に、お礼を言いそびれた。",
+    "en": "I forgot to thank the guy who helped me.",
+    "alternatives": [
+      "I neglected to thank the man who helped me.",
+      "I didn't get to thank the man who helped me."
+    ],
+    "point": "人を後ろから who 節で説明。forget to は「し忘れる」",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 8,
+    "grammar": ["relative-clauses", "infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_4y3n8x8n",
@@ -195,6 +291,19 @@
     }
   },
   {
+    "id": "c_5n6n2k2a",
+    "ja": "窓を開けて、お願い。",
+    "en": "Open the window, please.",
+    "alternatives": ["Please open the window.", "Open the window for me, please."],
+    "point": "頼むときの命令文は please を添えると柔らかい",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5t6d5v6u",
     "ja": "私が引っかかったのは、頼まれたことより彼の頼み方だった。",
     "en": "What bugged me was how he asked, not the favor.",
@@ -215,6 +324,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5x8q8v7j",
+    "ja": "この校正を頼まれたけど、今回は遠慮しておくよ。",
+    "en": "I was asked to proofread this, but I'll pass.",
+    "alternatives": [
+      "They asked me to proofread this, but I'll pass.",
+      "I got asked to proofread this, but I'd rather not."
+    ],
+    "point": "頼まれた側は I was asked to 〜。断りは I'll pass",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 8,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5y6b6n2p",
@@ -239,6 +364,22 @@
     }
   },
   {
+    "id": "c_6b2w4k6c",
+    "ja": "迷惑をかけたくなくて、自分でやっちゃったんだ。",
+    "en": "Not wanting to bother you, I did it myself.",
+    "alternatives": [
+      "I didn't want to bother you, so I did it.",
+      "Not wanting to trouble you, I did it myself."
+    ],
+    "point": "「〜したくなくて」は Not wanting to で始める分詞構文",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6e2b9w3e",
     "ja": "父より母のほうが頼みやすい。",
     "en": "Mom is easier to ask than Dad.",
@@ -261,6 +402,22 @@
     }
   },
   {
+    "id": "c_6e5a3p3y",
+    "ja": "昨日送ったの、もう見てくれた？",
+    "en": "Have you seen what I sent yesterday?",
+    "alternatives": [
+      "Have you looked at what I sent yesterday?",
+      "Have you checked what I sent yesterday?"
+    ],
+    "point": "「もう」は現在完了。what 節の中は yesterday なので過去形",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 4,
+    "grammar": ["tense-contrast", "noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7e2n4m8h",
     "ja": "早く言ってくれてたら、手伝ったのに。",
     "en": "If you'd told me sooner, I'd have helped.",
@@ -281,6 +438,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7p5t5b4y",
+    "ja": "頼んでおいた件、もう見てくれた？",
+    "en": "Have you had a chance to look into it yet?",
+    "alternatives": [
+      "Did you get a chance to look into my request?",
+      "Have you looked into what I asked yet?"
+    ],
+    "point": "「もう〜した？」は現在完了。have a chance で柔らかく聞く",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["tense-contrast", "present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7p7z3x9v",
@@ -322,6 +495,54 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8k8x3z4k",
+    "ja": "彼が人に頼ることはめったにないから、引き受けたんだ。",
+    "en": "Rarely does he ask for help, so I said yes.",
+    "alternatives": [
+      "He hardly ever asks for help, so I agreed.",
+      "He so rarely asks for help that I said yes."
+    ],
+    "point": "Rarely を文頭に出すと does he の倒置になる",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8p7h3r5c",
+    "ja": "田中さんにはもう頼んであるから、君は気にしなくていいよ。",
+    "en": "I've already asked Tanaka, so you're off the hook.",
+    "alternatives": [
+      "Tanaka's already on it, so you're off the hook.",
+      "I've already asked Tanaka, so you needn't worry about it."
+    ],
+    "point": "頼み済みの今の状態は現在完了、be off the hook で免除",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8t9s3t4q",
+    "ja": "彼に頼まれたとき、きっぱり断っておけばよかった。",
+    "en": "I should have turned him down flat when he asked.",
+    "alternatives": [
+      "I should have said no outright when he asked me.",
+      "I ought to have flatly refused him when he asked."
+    ],
+    "point": "断らなかった後悔は should have + 過去分詞",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 9,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8z3p4v9g",
@@ -368,6 +589,19 @@
     }
   },
   {
+    "id": "c_9m5x3m5d",
+    "ja": "ごめん、今日は忙しいんだ。",
+    "en": "Sorry, I'm busy today.",
+    "alternatives": ["I'm sorry, I'm busy today.", "Sorry, I'm too busy today."],
+    "point": "断るときは Sorry のあとに be 動詞で理由を言う",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9n5d7u3n",
     "ja": "貸したカメラ、まだ彼女が返してくれない。",
     "en": "She hasn't given my camera back yet.",
@@ -410,5 +644,21 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9y8u6k2z",
+    "ja": "1時間探してるんだ。手伝って！",
+    "en": "I've been looking for an hour. Help!",
+    "alternatives": [
+      "I've been searching for an hour. Help me!",
+      "Help me! I've been looking for an hour."
+    ],
+    "point": "「ずっと〜してる」は have been -ing。頼みは命令文で",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 4,
+    "grammar": ["present-perfect-continuous", "imperatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]

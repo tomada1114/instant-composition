@@ -41,6 +41,22 @@
     }
   },
   {
+    "id": "c_4c3w5g5q",
+    "ja": "業者に催促し続けていますが、返事がありません。",
+    "en": "I've been chasing the vendor, but there's no reply.",
+    "alternatives": [
+      "I've been following up with the vendor, but no reply.",
+      "I've been pushing the vendor, but they haven't replied."
+    ],
+    "point": "「ずっと〜している」は have been -ing。chase は催促する",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 7,
+    "grammar": ["present-perfect-continuous", "concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4g8j7c8j",
     "ja": "リリース前にこのバグに気づけばよかったです。",
     "en": "I wish I'd caught this bug before release.",
@@ -85,6 +101,22 @@
     }
   },
   {
+    "id": "c_4z4j5n3n",
+    "ja": "月曜までに、経理に数字を確認してもらう予定です。",
+    "en": "I'm getting accounting to check the figures by Monday.",
+    "alternatives": [
+      "I'm going to have accounting check the figures by Monday.",
+      "I'll have accounting check the figures by Monday."
+    ],
+    "point": "「してもらう」は get + 人 + to 動詞、have なら to なし",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 7,
+    "grammar": ["causatives", "future-forms"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4z5a8e9n",
     "ja": "私が早く相談していれば、遅れは防げました。",
     "en": "If I'd asked sooner, we'd have avoided delays.",
@@ -127,6 +159,70 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5g5t4s4b",
+    "ja": "先方に統合テストを全部やり直させられました。",
+    "en": "The client made us redo the whole integration test.",
+    "alternatives": [
+      "The client forced us to redo the whole integration test.",
+      "The client had us redo the entire integration test."
+    ],
+    "point": "「やり直させられた」は made us redo。redo は原形",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 9,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5m7k2f4w",
+    "ja": "私があなたなら、今すぐ部長を巻き込みますね。",
+    "en": "If I were you, I'd loop in the director now.",
+    "alternatives": [
+      "I'd loop the director in now if I were you.",
+      "In your position, I'd get the director involved now."
+    ],
+    "point": "仮定の if 節では I were you。loop in は「巻き込む」",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 9,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5u3y7t4s",
+    "ja": "正直、この日程だと私たちには少し厳しいかもしれません。",
+    "en": "Honestly, this timeline might be a stretch for us.",
+    "alternatives": [
+      "To be honest, this schedule may be a bit tight for us.",
+      "Frankly, this timeline could be a bit of a reach for us."
+    ],
+    "point": "断定を避けるなら might と a bit / a stretch でぼかす",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5x2x4d4h",
+    "ja": "午前中ずっと行き詰まっていて、ご相談したいです。",
+    "en": "I've been stuck all morning. Could I get advice?",
+    "alternatives": [
+      "I've been stuck all morning. Can I ask for advice?",
+      "I've been stuck all morning and could use advice."
+    ],
+    "point": "「ずっと」続く状態は have been stuck、Could I で丁寧に",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 7,
+    "grammar": ["present-perfect-continuous", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5y8a2g3x",
@@ -195,6 +291,22 @@
     }
   },
   {
+    "id": "c_6x7t7a7j",
+    "ja": "この数字がなぜ合わないのか、誰か分かりますか？",
+    "en": "Does anyone know why these numbers don't add up?",
+    "alternatives": [
+      "Can anyone tell me why these numbers don't add up?",
+      "Does anyone understand why these figures don't match?"
+    ],
+    "point": "間接疑問は why の後を平叙文の語順にする（don't は do 不要）",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7d4u5s5b",
     "ja": "この件、もう部長に相談しましたか？",
     "en": "Have you run this by the manager yet?",
@@ -215,6 +327,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7p4t9h9f",
+    "ja": "課長、プリンターに問題があります。",
+    "en": "There's a problem with the printer.",
+    "alternatives": [
+      "Something's wrong with the printer.",
+      "We have a problem with the printer."
+    ],
+    "point": "「〜に問題がある」は There's a problem with 〜",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7r6n5t7n",
@@ -255,6 +383,22 @@
     }
   },
   {
+    "id": "c_7z9y7z7w",
+    "ja": "私があなたなら、先に部長に一言入れておきますね。",
+    "en": "If I were you, I'd give the boss a heads-up first.",
+    "alternatives": [
+      "If I were you, I'd loop the boss in first.",
+      "I'd give the boss a heads-up first if I were you."
+    ],
+    "point": "If I were you 節では be 動詞は were、主節は would",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 10,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8m2r7h5d",
     "ja": "気になるのは、先方がまだ返事をくれないことです。",
     "en": "What worries me is that the client hasn't replied.",
@@ -277,6 +421,22 @@
     }
   },
   {
+    "id": "c_8u5a4g4e",
+    "ja": "課長に、今日中に報告しろと言われました。",
+    "en": "My manager told me to report today.",
+    "alternatives": [
+      "The manager told me to report today.",
+      "My manager wants me to report today."
+    ],
+    "point": "「言われた」は told me to do の形。tell + 人 + to 動詞",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["verb-object-to-do", "past-simple"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8y7h2b9r",
     "ja": "納品は来週に延期されました。",
     "en": "The delivery was pushed to next week.",
@@ -297,6 +457,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8z5s8d6c",
+    "ja": "金曜までに、私が報告書を送ります。",
+    "en": "I'll send the report by Friday.",
+    "alternatives": [
+      "I'm sending the report by Friday.",
+      "I'll email the report by Friday."
+    ],
+    "point": "「〜までに」は by、その場の約束は I'll",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 3,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9a8a2j7r",

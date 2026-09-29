@@ -67,6 +67,22 @@
     }
   },
   {
+    "id": "c_2n4d5s3c",
+    "ja": "資料をざっと見て、2 点質問があります。",
+    "en": "Having skimmed your materials, I have two questions.",
+    "alternatives": [
+      "After skimming your materials, I have two questions.",
+      "I skimmed your materials and have two questions."
+    ],
+    "point": "「〜し終えて」は Having + 過去分詞で先に言う",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 10,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2q6t8t7y",
     "ja": "確定には、金曜までに正確な数量がほしいのですが。",
     "en": "To finalize, we'd need the exact quantity by Friday.",
@@ -107,6 +123,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_2z3b3s2r",
+    "ja": "先週転送してくれたスレッド、再送してもらえますか？",
+    "en": "Could you resend the thread you forwarded me last week?",
+    "alternatives": [
+      "Could you send me the thread you forwarded last week again?",
+      "Can you resend that thread you forwarded me last week?"
+    ],
+    "point": "thread のあとの that は省略できる。you forwarded me が続く",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 9,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3n6h3k6h",
+    "ja": "送る前に誤字に気づいていれば、面目を保てたのに。",
+    "en": "Had I caught the typo before sending, I'd have saved face.",
+    "alternatives": [
+      "If I'd caught the typo before sending, I'd have saved face.",
+      "If I'd noticed the typo before sending, I'd have avoided embarrassment."
+    ],
+    "point": "If I had は Had I と倒置できる。主節は would have + 過去分詞",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 9,
+    "grammar": ["third-conditional", "inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_3t9f5v8w",
@@ -150,6 +198,38 @@
     }
   },
   {
+    "id": "c_5p6m3z3s",
+    "ja": "営業はすぐ返信をくれるのに、経理はいつも遅い。",
+    "en": "Sales replies right away, whereas accounting takes forever.",
+    "alternatives": [
+      "Sales answers immediately, but accounting takes forever to reply.",
+      "Sales replies instantly, while accounting is really slow to respond."
+    ],
+    "point": "対比は whereas か while でつなぐ",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5v7r3c9s",
+    "ja": "二回催促したのに、まだ返事がありません。",
+    "en": "Although I've followed up twice, I haven't heard back.",
+    "alternatives": [
+      "Even though I chased them twice, there's still no reply.",
+      "I've followed up twice, but I still haven't heard back."
+    ],
+    "point": "催促する は follow up、返事をもらう は hear back",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5y8y6s3r",
     "ja": "来週の金曜に、私たちがうかがいます。",
     "en": "We're coming to see you next Friday.",
@@ -191,6 +271,38 @@
     }
   },
   {
+    "id": "c_6j9t7f8a",
+    "ja": "この件、メールより電話のほうが早いかも。",
+    "en": "A call might be quicker than email for this.",
+    "alternatives": [
+      "Calling might be faster than emailing on this.",
+      "It might be quicker to call than to email."
+    ],
+    "point": "短い語は quicker のように -er で比べ、than でつなぐ",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 7,
+    "grammar": ["comparatives-superlatives", "hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6p3y8z5j",
+    "ja": "添付ファイルの数字は、最新のものです。",
+    "en": "The figures in the attached file are current.",
+    "alternatives": [
+      "The numbers in the attached file are up to date.",
+      "The attached file has the latest figures."
+    ],
+    "point": "in the attached file で figures を後ろから説明する",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 8,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6p4u6b4c",
     "ja": "ちょっとアドバイスをもらえますか？",
     "en": "Could you give me some advice?",
@@ -208,6 +320,54 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_6p6u4e9z",
+    "ja": "たとえ忙しくても、一言だけ返信をお願いします。",
+    "en": "However busy you are, please send a quick reply.",
+    "alternatives": [
+      "Even if you're swamped, please send a quick reply.",
+      "Busy or not, please at least send a quick reply."
+    ],
+    "point": "However + 形容詞 + 主語 + be で「どんなに〜でも」",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7b7w7x6x",
+    "ja": "さっき話した資料、送ってもらえますか？",
+    "en": "Could you send the file we just discussed?",
+    "alternatives": [
+      "Can you send me the file we discussed?",
+      "Could you email me the file we discussed?"
+    ],
+    "point": "the file の後ろに we discussed をそのまま続ける（that は省略可）",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 5,
+    "grammar": ["relative-clauses", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7e8r2c9g",
+    "ja": "返信をもらうまで、締め切りが変わったと気づきませんでした。",
+    "en": "Not until you replied did I realize the deadline had moved.",
+    "alternatives": [
+      "I didn't realize the deadline had moved until you replied.",
+      "It wasn't until you replied that I realized the deadline had moved."
+    ],
+    "point": "Not until を前に出すと、主節は did I realize と倒置",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7h5r3t7e",
@@ -230,6 +390,35 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7m8w2b4d",
+    "ja": "返信は、手が空いたらで大丈夫ですよ。",
+    "en": "Just reply when you get a chance.",
+    "alternatives": [
+      "Get back to me when you have a moment.",
+      "Feel free to reply when you have time."
+    ],
+    "point": "when 節は未来のことでも現在形。「手が空く」は get a chance",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 7,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7w5n9f6z",
+    "ja": "今、返信を書いているところです。",
+    "en": "I'm writing a reply now.",
+    "alternatives": ["I'm writing my reply right now.", "I'm working on a reply now."],
+    "point": "「〜しているところ」は現在進行形 am ～ing",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8c6g2z7d",
@@ -295,6 +484,22 @@
     }
   },
   {
+    "id": "c_9m4z9j6p",
+    "ja": "先方から返信が来たら、すぐ転送します。",
+    "en": "I'll forward it once they reply.",
+    "alternatives": [
+      "I'll forward it as soon as they reply.",
+      "I'll forward it when they reply."
+    ],
+    "point": "未来のことでも once / when の後は現在形（will は付けない）",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 5,
+    "grammar": ["time-and-if-clauses", "future-forms"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9s3q9p4z",
     "ja": "先方が昨日返信をくれていたら、今ごろ終わってるのに。",
     "en": "If they'd replied yesterday, we'd be done by now.",
@@ -315,5 +520,21 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9z8m9p7d",
+    "ja": "今、どのファイルを開いていますか？",
+    "en": "Which file are you opening now?",
+    "alternatives": [
+      "Which file do you have open?",
+      "What file are you opening right now?"
+    ],
+    "point": "疑問詞＋are you ～ing。which file を文頭に出す",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 2,
+    "grammar": ["wh-questions", "progressive-aspect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]

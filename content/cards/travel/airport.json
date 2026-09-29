@@ -22,6 +22,19 @@
     }
   },
   {
+    "id": "c_2g6p8h6b",
+    "ja": "何か読むものをいただけますか？",
+    "en": "Could I have something to read?",
+    "alternatives": ["Could I get something to read?", "Do you have anything to read?"],
+    "point": "something to read：「読むもの」は後ろから to 不定詞で修飾",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 4,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2p9s2x3m",
     "ja": "パソコンをトレーに入れてください。",
     "en": "Please put your laptop in the tray.",
@@ -66,6 +79,22 @@
     }
   },
   {
+    "id": "c_2z5k7g3c",
+    "ja": "入国審査で、滞在先はどこか聞かれた。",
+    "en": "I was asked where I'd be staying.",
+    "alternatives": [
+      "They asked me where I'd be staying.",
+      "The officer asked where I was staying."
+    ],
+    "point": "where の後は平叙文の語順（where I'd be）",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["noun-clauses", "passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2z6w3x5z",
     "ja": "もっと早く来ていれば、間に合ったのに。",
     "en": "If I'd come earlier, I'd have made it.",
@@ -88,6 +117,22 @@
     }
   },
   {
+    "id": "c_3b3q3v8d",
+    "ja": "ここで一時間もただ待たされているんです。",
+    "en": "I've been kicking my heels here for an hour.",
+    "alternatives": [
+      "I've been stuck waiting around here for a whole hour.",
+      "I've been waiting around here for an hour now."
+    ],
+    "point": "「ずっと待っている」は現在完了進行形。kick one's heels は手持ち無沙汰に待つ",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 9,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3b7q3r7p",
     "ja": "保安検査を抜けたら、何か食べようよ。",
     "en": "Let's eat once we get through security.",
@@ -108,6 +153,67 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3n3h3q5a",
+    "ja": "荷物はほとんどなく、機内持ち込みのバッグ一つだけです。",
+    "en": "I have hardly any luggage, just one carry-on bag.",
+    "alternatives": [
+      "I'm traveling light, with just one carry-on bag.",
+      "I've got very little luggage, only one carry-on."
+    ],
+    "point": "luggage は数えられない名詞。a luggage や luggages は不可",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 10,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3v3x8g6p",
+    "ja": "何か読むものはありますか？",
+    "en": "Do you have anything to read?",
+    "alternatives": ["Do you have something to read?", "Is there anything I can read?"],
+    "point": "「読むもの」は anything to read。名詞のあとに不定詞",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 3,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4b8m9y6u",
+    "ja": "万一ビジネスに空きが出たら、上げてもらえますか？",
+    "en": "If a business seat opened up, could you bump me up?",
+    "alternatives": [
+      "If a seat in business opened up, could you upgrade me?",
+      "If there were an opening in business, could you upgrade me?"
+    ],
+    "point": "起こりにくい仮定は if 節を過去形にする",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 10,
+    "grammar": ["second-conditional", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4s2w8g2p",
+    "ja": "私があの便に乗れていたら、今ごろ着いてるのに。",
+    "en": "If I'd caught that flight, I'd be there by now.",
+    "alternatives": [
+      "If I'd made that flight, I'd be there already.",
+      "Had I caught that flight, I'd be there by now."
+    ],
+    "point": "過去の仮定＋今の結果：If 過去完了, would 原形",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_4u4t5d5f",
@@ -152,6 +258,67 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_6e8e6g8f",
+    "ja": "もうチェックインした？",
+    "en": "Have you checked in yet?",
+    "alternatives": ["Have you already checked in?", "Did you check in yet?"],
+    "point": "「もう」の疑問は yet を文末に置き現在完了で言う",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 3,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6p4d2f3n",
+    "ja": "ゲート変更と聞きましたが、掲示板はまだ更新されていません。",
+    "en": "I heard the gate changed, but the board hasn't been updated.",
+    "alternatives": [
+      "I heard the gate was changed, yet the board hasn't updated.",
+      "They said the gate changed, but the board still says otherwise."
+    ],
+    "point": "聞いた時点は過去、掲示板の今の状態は現在完了",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 10,
+    "grammar": ["tense-contrast", "concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6t8n9x9b",
+    "ja": "保安検査で、係員に靴を脱がされた。",
+    "en": "The officer made me take off my shoes.",
+    "alternatives": [
+      "I was made to take my shoes off at security.",
+      "The security guard had me take off my shoes."
+    ],
+    "point": "make + 人 + 原形。「脱がされた」は be made to でも言える",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6w9b6r8r",
+    "ja": "寒いので、毛布をもう1枚もらえますか？",
+    "en": "Could I get another blanket to keep warm?",
+    "alternatives": [
+      "Could I have one more blanket to stay warm?",
+      "May I have an extra blanket to keep warm?"
+    ],
+    "point": "「〜するために」は to 不定詞で後ろに足す",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 7,
+    "grammar": ["infinitives", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7c2d9g2f",
@@ -236,6 +403,22 @@
     }
   },
   {
+    "id": "c_8m6t8d2e",
+    "ja": "私が頼んだのはチキンで、魚じゃありませんよ。",
+    "en": "What I ordered was the chicken, not the fish.",
+    "alternatives": [
+      "It was the chicken I ordered, not the fish.",
+      "I ordered the chicken, not the fish."
+    ],
+    "point": "What 節が主語になる。「頼んだのは」を What I ordered で",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["noun-clauses", "cleft-emphasis"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8n4z2f9d",
     "ja": "窓側の席を頼んでおけばよかった。",
     "en": "I wish I'd asked for a window seat.",
@@ -256,6 +439,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8p6t2e9p",
+    "ja": "足元にもう少しゆとりがあると助かるんですが。",
+    "en": "I could do with a bit more legroom, if possible.",
+    "alternatives": [
+      "I'd appreciate a little more legroom, if you have any.",
+      "It'd be great to have a bit more legroom, if possible."
+    ],
+    "point": "legroom は数えられない名詞。a bit more で量を柔らかく頼む",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 9,
+    "grammar": ["articles-and-countability", "hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8s2n9h6u",
@@ -300,6 +499,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9d7u8d6q",
+    "ja": "入国審査官に、滞在先はどこかと聞かれました。",
+    "en": "The officer asked me where I'd be staying.",
+    "alternatives": [
+      "The immigration officer asked where I was staying.",
+      "I was asked by the officer where I'd be staying."
+    ],
+    "point": "where の後ろは疑問文でなく平叙文の語順",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 7,
+    "grammar": ["noun-clauses", "indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9e5k5m6y",

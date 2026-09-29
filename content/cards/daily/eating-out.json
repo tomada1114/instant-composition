@@ -22,6 +22,22 @@
     }
   },
   {
+    "id": "c_2b8s2z2u",
+    "ja": "田中で予約したテーブルはどこですか？",
+    "en": "Where's the table reserved under Tanaka?",
+    "alternatives": [
+      "Where is the table booked under Tanaka?",
+      "Where's the table we reserved under Tanaka?"
+    ],
+    "point": "「予約した〜」は table のあとに reserved を置く",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 4,
+    "grammar": ["post-modification", "passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2c4d3y8g",
     "ja": "お水をもう少しいただけますか？",
     "en": "Could I have some more water?",
@@ -85,6 +101,102 @@
     }
   },
   {
+    "id": "c_2t6s7b5e",
+    "ja": "デザートは食後に出していただけますか？",
+    "en": "Could the dessert be served after the meal?",
+    "alternatives": [
+      "Could you serve dessert after the meal?",
+      "Can dessert be brought out after we eat?"
+    ],
+    "point": "出す人を言わない丁寧な頼み方は be served の受動態",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 6,
+    "grammar": ["passive-voice", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2v9y8s8r",
+    "ja": "ずっと手を挙げてたのに、誰も気づかなかった。",
+    "en": "I was waving for ages, but nobody noticed.",
+    "alternatives": [
+      "I kept waving, but nobody noticed me.",
+      "I was waving my hand, but nobody noticed."
+    ],
+    "point": "その間ずっと続いていた動作は過去進行形 was waving",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 6,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3b3q9t6r",
+    "ja": "会計が済んだら、外で合流するね。",
+    "en": "Once I've paid, I'll meet you outside.",
+    "alternatives": [
+      "I'll meet you outside after I pay.",
+      "When I'm done paying, I'll join you outside."
+    ],
+    "point": "Once 節は完了を表す現在完了、未来でも will は使わない",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["time-and-if-clauses", "present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3m9b8f5n",
+    "ja": "あの店、席は取りづらいけど、行く価値は十分あるよ。",
+    "en": "Tough as it is to get a table, it's worth it.",
+    "alternatives": [
+      "Although it's hard to get a table there, it's worth it.",
+      "Even though getting a table is a hassle, it's totally worth it."
+    ],
+    "point": "Tough as it is で「〜だけれど」の譲歩を作る",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3p3z5r2f",
+    "ja": "すみません、その席はたった今埋まりました。",
+    "en": "I'm afraid that table was just taken.",
+    "alternatives": [
+      "Sorry, that table has just been taken.",
+      "I'm sorry, but that table just got taken."
+    ],
+    "point": "「席が取られた」は受動態。I'm afraid で柔らかく断る",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 9,
+    "grammar": ["passive-voice", "hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3r7f5y2y",
+    "ja": "おすすめは何か教えてもらえますか？",
+    "en": "Could you tell me what you recommend?",
+    "alternatives": [
+      "Can you tell me what you'd recommend?",
+      "Would you mind telling me what you recommend?"
+    ],
+    "point": "what 節の中は疑問文の語順にしない（what you recommend）",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["noun-clauses", "indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3t2n2z5s",
     "ja": "店員さんが、9時に閉店だと言ってたよ。",
     "en": "The server said they close at nine.",
@@ -107,6 +219,22 @@
     }
   },
   {
+    "id": "c_4e7p8v4q",
+    "ja": "決められなくて、私は店員さんのおすすめにした。",
+    "en": "Unable to decide, I went with the server's recommendation.",
+    "alternatives": [
+      "Not being able to choose, I took the server's recommendation.",
+      "I couldn't decide, so I went with the server's pick."
+    ],
+    "point": "go with で「〜に決める」。分詞構文で理由を前に置く",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4e7u6c3u",
     "ja": "これ、ニンニク入ってるか分かりますか？",
     "en": "Do you know if this has garlic?",
@@ -127,6 +255,54 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_4n9c9b4j",
+    "ja": "僕らが着いたときには、もう閉店してた。",
+    "en": "By the time we arrived, they'd already closed.",
+    "alternatives": [
+      "They had already closed when we got there.",
+      "They'd already closed by the time we got there."
+    ],
+    "point": "着いた時点より前の出来事は過去完了で言う",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 8,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4t7t5f5v",
+    "ja": "行列を見て、私たちは別の店にすることにした。",
+    "en": "Seeing the line, we decided on another place.",
+    "alternatives": [
+      "When we saw the line, we chose another place.",
+      "Seeing the long line, we went somewhere else instead."
+    ],
+    "point": "「〜を見て」は Seeing 〜, の分詞構文で理由をつなぐ",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4v2w8d2b",
+    "ja": "席が空いたら、すぐご案内しますね。",
+    "en": "We'll seat you once a table opens up.",
+    "alternatives": [
+      "You'll be seated as soon as a table frees up.",
+      "We'll show you to a table when one opens up."
+    ],
+    "point": "未来のことでも once / when の節は現在形",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5b6a8u2b",
@@ -215,6 +391,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5p8a4x9t",
+    "ja": "私たち、遅れたら席を取っておいてもらえますか？",
+    "en": "If we're late, could you hold our table?",
+    "alternatives": [
+      "Could you hold our table if we run late?",
+      "If we run late, would you keep our table?"
+    ],
+    "point": "If 節は未来のことでも現在形。hold は「取り置く」",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["time-and-if-clauses", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5r4j8d9m",
+    "ja": "一度食べてから、この料理がずっと食べたかったんだ。",
+    "en": "I've wanted this dish ever since I tried it.",
+    "alternatives": [
+      "I've been craving this dish since I first tried it.",
+      "I haven't stopped wanting this dish since I tried it."
+    ],
+    "point": "since の主節は現在完了、since 節は過去形",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["tense-contrast", "present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5r6q9m5m",
@@ -404,6 +612,22 @@
     }
   },
   {
+    "id": "c_7v3h7p8n",
+    "ja": "私、すごく辛い料理は食べられません。",
+    "en": "I can't eat very spicy food.",
+    "alternatives": [
+      "I can't handle very spicy food.",
+      "I can't eat anything very spicy."
+    ],
+    "point": "「食べられない」は can't eat。handle も自然",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 4,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7w9q7z6r",
     "ja": "現金のみだって、先に知っていればよかった。",
     "en": "I wish I'd known it was cash only.",
@@ -424,6 +648,54 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8c4z2a2z",
+    "ja": "店員さんが押さえると言った席、どれか分かる？",
+    "en": "Do you know which table the server said he'd hold?",
+    "alternatives": [
+      "Do you know which table the waiter promised to hold?",
+      "Do you know which table the server said they'd keep?"
+    ],
+    "point": "間接疑問は which table のあとも肯定文の語順",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 8,
+    "grammar": ["nested-clauses", "indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8q3n9u2b",
+    "ja": "彼が絶賛してた店、予約取れた？",
+    "en": "Did you manage to book the place he raved about?",
+    "alternatives": [
+      "Did you get a reservation at the place he raved about?",
+      "Were you able to book that place he raved about?"
+    ],
+    "point": "rave about は「〜を絶賛する」。前置詞を残す",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9c5y4z6p",
+    "ja": "お金を気にしなくていいなら、私ならコースを頼むな。",
+    "en": "If money were no object, I'd order the full course.",
+    "alternatives": [
+      "If cost weren't an issue, I'd get the full course.",
+      "If I didn't care about the price, I'd order the course."
+    ],
+    "point": "現実と違う仮定は if + were、主節は would",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 10,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9g6w2q2r",
@@ -448,6 +720,22 @@
     }
   },
   {
+    "id": "c_9j9s9v5g",
+    "ja": "着いたら、日替わりはもう売り切れてた。",
+    "en": "The daily special had sold out when we arrived.",
+    "alternatives": [
+      "When we got there, the special had sold out.",
+      "The special was already gone when we got there."
+    ],
+    "point": "着く前に売り切れ済み。先に起きたことは had + 過去分詞",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9r2d2v8c",
     "ja": "あの店員さん、注文を聞き間違えたに違いないよ。",
     "en": "That server must have misheard our order.",
@@ -468,5 +756,21 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9u3t5b9t",
+    "ja": "この店、閉店したと聞いたけど、まだやってるじゃん。",
+    "en": "I heard this place had closed, but it's still open.",
+    "alternatives": [
+      "They said this place had closed, yet it's still open.",
+      "I was told this place had shut down, but it's open."
+    ],
+    "point": "聞いた時点より前の閉店は過去完了、今の状態は現在形",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 9,
+    "grammar": ["tense-contrast", "reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]

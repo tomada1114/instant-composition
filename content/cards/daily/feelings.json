@@ -22,6 +22,38 @@
     }
   },
   {
+    "id": "c_2m6b4k5z",
+    "ja": "言いにくいんですが、そのデザインはちょっとピンときません。",
+    "en": "I'm afraid I'm not really sold on that design.",
+    "alternatives": [
+      "I'm afraid that design doesn't really work for me.",
+      "I hate to say it, but I'm not sold on that design."
+    ],
+    "point": "I'm afraid / not really で否定意見を柔らかく伝える。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2q4j7y7s",
+    "ja": "今さら断るなんて、気が引けるよ。",
+    "en": "I feel bad about backing out now.",
+    "alternatives": [
+      "I'd feel bad backing out at this point.",
+      "I feel guilty about pulling out now."
+    ],
+    "point": "前置詞 about の後は動名詞。「断る」は back out",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 8,
+    "grammar": ["gerunds", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2v7q4e5x",
     "ja": "私、今すごく緊張してる。",
     "en": "I'm feeling really nervous right now.",
@@ -39,6 +71,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_2y3x7x9n",
+    "ja": "来月引っ越すから、この街が恋しくなるな。",
+    "en": "I'm moving next month. I'll miss this town.",
+    "alternatives": [
+      "I'm moving next month, so I'll miss this town.",
+      "I'll miss this town once I move next month."
+    ],
+    "point": "決まった予定は進行形、その場の気持ちは will",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_3a6c5f6y",
@@ -63,6 +111,38 @@
     }
   },
   {
+    "id": "c_3f8q5q7d",
+    "ja": "彼女は、待たされるのが大嫌いだと言っていたよ。",
+    "en": "She said she couldn't stand being kept waiting.",
+    "alternatives": [
+      "She told me she hated being kept waiting.",
+      "She said she hated being made to wait."
+    ],
+    "point": "言った時点に合わせて couldn't。stand の後は動名詞",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 8,
+    "grammar": ["reported-speech", "gerunds"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3g3b3p7e",
+    "ja": "プロジェクトから外されて、正直がっかり。",
+    "en": "I'm disappointed to be taken off the project.",
+    "alternatives": [
+      "I'm sad to have been taken off the project.",
+      "I'm let down that I was removed from the project."
+    ],
+    "point": "感情の形容詞＋to be＋過去分詞で「〜されて」を表す",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["passive-voice", "infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3h5h7a2t",
     "ja": "昨日の映画、なぜ気に入らなかったの？",
     "en": "Why didn't you like yesterday's movie?",
@@ -85,6 +165,38 @@
     }
   },
   {
+    "id": "c_3j9z8s7z",
+    "ja": "もっと貯金していれば、今こんなに焦らないのに。",
+    "en": "If I'd saved more, I wouldn't be panicking now.",
+    "alternatives": [
+      "I wouldn't be panicking now if I'd saved more.",
+      "If I'd saved more, I wouldn't be so stressed now."
+    ],
+    "point": "過去の仮定→今の結果は If I'd 〜, I wouldn't be 〜ing now",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3t9x7f7u",
+    "ja": "もっと早く言ってくれてれば、手伝えたのに。",
+    "en": "If you'd said something, I'd have helped.",
+    "alternatives": [
+      "I would have helped if you'd told me.",
+      "Had you told me, I'd have helped you."
+    ],
+    "point": "過去の仮定は If + had 過去分詞、would have 過去分詞",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4c5m2t9p",
     "ja": "母が一番喜んだのは、孫たちからの手紙でした。",
     "en": "It was the grandkids' letters that pleased my mother most.",
@@ -105,6 +217,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_4m9h2a8s",
+    "ja": "このプラン、どう思うか率直に教えてもらえますか？",
+    "en": "Could you tell me frankly what you think of this?",
+    "alternatives": [
+      "Could you give me your honest opinion of this plan?",
+      "Would you mind telling me what you really think of it?"
+    ],
+    "point": "tell me の後は what you think の語順。Could で丁寧に",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 9,
+    "grammar": ["indirect-questions", "hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4t9e4r2v",
+    "ja": "彼女、この結果には本当にがっかりしたって言ってたよ。",
+    "en": "She said she was really let down by the result.",
+    "alternatives": [
+      "She said the result really let her down.",
+      "She told me she was really disappointed with the result."
+    ],
+    "point": "said の後は時制を一つ過去へ。is は was に。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 10,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5c2j3g6d",
@@ -214,6 +358,22 @@
     }
   },
   {
+    "id": "c_6f3f5s8a",
+    "ja": "この案、ちょっと問題があると思うな。",
+    "en": "I think there's a problem with this.",
+    "alternatives": [
+      "There's a problem with this, I think.",
+      "I think there's something wrong with this."
+    ],
+    "point": "「問題がある」は There's a problem with 〜。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 5,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6h3t9n9y",
     "ja": "最近よく眠れてなくて、ちょっと参ってる。",
     "en": "I haven't been sleeping well. It's wearing me down.",
@@ -234,6 +394,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_6m3e9x7t",
+    "ja": "もっと早く教えてもらえるとありがたいんだけど。",
+    "en": "I'd appreciate being told earlier.",
+    "alternatives": [
+      "It would be great to be told earlier.",
+      "I'd appreciate it if you told me sooner."
+    ],
+    "point": "appreciate のあとは動名詞。受け身なら being told",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["gerunds", "passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6t3h4h8g",
+    "ja": "彼がなぜ怒ってるのか、いまいち分からないんだ。",
+    "en": "I can't quite work out why he's upset.",
+    "alternatives": [
+      "I'm not really sure why he's upset.",
+      "I honestly can't tell why he's angry."
+    ],
+    "point": "間接疑問は why he's upset の語順。疑問文の倒置にしない",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 9,
+    "grammar": ["indirect-questions", "hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6t9j4k6x",
@@ -280,6 +472,38 @@
     }
   },
   {
+    "id": "c_6y6h6s2w",
+    "ja": "私なら、その申し出を断らなかったな。",
+    "en": "I wouldn't have turned down that offer.",
+    "alternatives": [
+      "I wouldn't have said no to that offer.",
+      "In your shoes, I wouldn't have turned it down."
+    ],
+    "point": "「私なら」は if 節なしでも wouldn't have 過去分詞",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["third-conditional", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6y7t6q4s",
+    "ja": "あの電車に乗れていたら、間に合ったのにな。",
+    "en": "If I'd caught that train, I'd have made it.",
+    "alternatives": [
+      "I'd have made it if I'd caught that train.",
+      "Had I caught that train, I'd have made it."
+    ],
+    "point": "make it は「間に合う」。If 節は had caught",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["third-conditional", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7g8z9h8q",
     "ja": "あの頃、もっと正直になればよかった。",
     "en": "I wish I'd been more honest back then.",
@@ -324,6 +548,71 @@
     }
   },
   {
+    "id": "c_8e6z7b2v",
+    "ja": "疲れてるけど、この仕事は楽しいよ。",
+    "en": "Although I'm tired, I enjoy this job.",
+    "alternatives": [
+      "Even though I'm tired, I enjoy this job.",
+      "I'm tired, but I still enjoy this job."
+    ],
+    "point": "although の節に but は重ねない。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 5,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8j5y5w7g",
+    "ja": "今さら予定を変えるのは、気が引けるな。",
+    "en": "I feel bad about changing plans this late.",
+    "alternatives": [
+      "I'm reluctant to change plans at this point.",
+      "I don't feel right changing plans now."
+    ],
+    "point": "feel bad about のあとは動名詞（changing）",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8k6j9k9d",
+    "ja": "あの時留学していたら、今ごろ違う人生だったのにな。",
+    "en": "If I'd studied abroad, my life would be different now.",
+    "alternatives": [
+      "Had I studied abroad, my life would be different now.",
+      "My life would be different now if I'd studied abroad.",
+      "If I had gone overseas, I'd be leading a different life now."
+    ],
+    "point": "過去の仮定 + 今の結果は if 節 had 過去分詞、主節 would 原形。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 10,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8q6v7h5b",
+    "ja": "いいニュースがあるよ。昇進が決まったんだ。",
+    "en": "I've got good news. I got promoted.",
+    "alternatives": [
+      "I have some good news. I've been promoted.",
+      "Good news: I got promoted!"
+    ],
+    "point": "news は数えられない名詞。a news や newses は不可",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["articles-and-countability", "past-simple"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8u4j2n3w",
     "ja": "この服、派手すぎると思う？",
     "en": "Do you think it's too bright?",
@@ -363,6 +652,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9b3w6c2z",
+    "ja": "彼女の気持ちは分かるけど、私は賛成できないな。",
+    "en": "Much as I understand her feelings, I can't agree.",
+    "alternatives": [
+      "Although I understand how she feels, I can't agree.",
+      "I get where she's coming from, but I can't agree."
+    ],
+    "point": "Much as ～ は「～ではあるが」の譲歩。although に近い",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 9,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_9e4m3m8w",

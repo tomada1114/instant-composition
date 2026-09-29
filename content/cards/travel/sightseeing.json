@@ -1,5 +1,53 @@
 [
   {
+    "id": "c_2y6s5p5c",
+    "ja": "私がもっと早く出ていたら、最終ツアーに間に合ったのに。",
+    "en": "If I'd left sooner, I'd have caught the last tour.",
+    "alternatives": [
+      "If I had left earlier, I would have made the last tour.",
+      "I would've caught the last tour if I'd left sooner."
+    ],
+    "point": "過去の仮定は if + had 過去分詞、would have 過去分詞",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 10,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_2z8n6p3d",
+    "ja": "ガイドさんに、ゆっくり話すよう頼んでくれる？",
+    "en": "Could you ask the guide to slow down?",
+    "alternatives": [
+      "Can you ask the guide to speak more slowly?",
+      "Would you mind asking the guide to speak slowly?"
+    ],
+    "point": "ask + 人 + to do の形。to の後は動詞の原形",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 8,
+    "grammar": ["verb-object-to-do", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3d5n5e7c",
+    "ja": "写真じゃ伝わらないのは、この滝の音の迫力だよね。",
+    "en": "What photos can't capture is the roar of this waterfall.",
+    "alternatives": [
+      "The thing photos can't capture is the roar of this waterfall.",
+      "Photos can't capture the roar of this waterfall."
+    ],
+    "point": "What 節が主語。is の後ろに伝えたい中身を置く",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["noun-clauses", "cleft-emphasis"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3k3m4y2n",
     "ja": "雨なら、ツアーは中止になりますか？",
     "en": "Is the tour canceled if it rains?",
@@ -20,6 +68,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_3t9f3w5z",
+    "ja": "この橋を誰が建てたか、ご存じですか？",
+    "en": "Do you know who built this bridge?",
+    "alternatives": [
+      "Could you tell me who built this bridge?",
+      "Do you happen to know who built this bridge?"
+    ],
+    "point": "間接疑問は who が主語なので do を使わず built のまま",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 8,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_3u6x7z9k",
@@ -44,6 +108,70 @@
     }
   },
   {
+    "id": "c_3y5e7c5p",
+    "ja": "友達が入口で待ってるんだ。",
+    "en": "My friend is waiting at the entrance.",
+    "alternatives": [
+      "My friend's waiting by the entrance.",
+      "My friend is waiting at the gate."
+    ],
+    "point": "今している最中のことは be動詞 + 〜ing で表す",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4a9v5n8e",
+    "ja": "彼、朝からずっと展望台で写真を撮ってるよ。",
+    "en": "He's been taking photos at the lookout since morning.",
+    "alternatives": [
+      "He's been shooting photos up at the lookout all morning.",
+      "He has been taking pictures at the lookout since morning."
+    ],
+    "point": "ずっと続く動作は現在完了進行形 (has been -ing)",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4c7e9w8d",
+    "ja": "この街の観光情報って、何かありますか？",
+    "en": "Do you have any information on the local sights?",
+    "alternatives": [
+      "Could I get some information about the local sights?",
+      "Is there any information available on the local sights?"
+    ],
+    "point": "information は数えられない名詞。an や複数形は不可",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 10,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4p7g8u6n",
+    "ja": "聞いてなかったら、この穴場を見逃してたよ。",
+    "en": "If I hadn't asked, I'd have missed this spot.",
+    "alternatives": [
+      "Had I not asked, I'd have missed this hidden spot.",
+      "If I hadn't asked, I would've walked right past this place."
+    ],
+    "point": "過去の反対は if + had + 過去分詞、主節は would have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4y3m2u8r",
     "ja": "父はガイドさんの話に聞き入って、メモを取ってたよ。",
     "en": "My dad hung on the guide's every word, taking notes.",
@@ -66,6 +194,22 @@
     }
   },
   {
+    "id": "c_5k5m8s5c",
+    "ja": "ここは写真を撮れるって聞いたよ。",
+    "en": "I heard we can take photos here.",
+    "alternatives": [
+      "I was told photos are allowed here.",
+      "I heard photography is allowed here."
+    ],
+    "point": "heard の後の that は省略できる。can は「許可」も表す",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 4,
+    "grammar": ["noun-clauses", "can-could-ability"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5t2p3r9e",
     "ja": "みんな作品じゃなくて、眺めが目当てで来るんですよ。",
     "en": "It's the view, not the art, that people come for.",
@@ -86,6 +230,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5v4n7r9u",
+    "ja": "ガイドを頼んでいれば、私、あれを見られたのに。",
+    "en": "If I'd hired a guide, I'd have seen it.",
+    "alternatives": [
+      "I'd have seen it if I'd hired a guide.",
+      "Had I hired a guide, I'd have seen it."
+    ],
+    "point": "過去の仮定は if + had done、結果は would have done",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 7,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5v6z7a3z",
@@ -242,6 +402,19 @@
     }
   },
   {
+    "id": "c_6s3h4h3n",
+    "ja": "地図を一枚もらえますか？",
+    "en": "Can I have a map, please?",
+    "alternatives": ["Could I get a map, please?", "Could you give me a map?"],
+    "point": "数えられる名詞の「一枚」は a をつける",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 2,
+    "grammar": ["articles-and-countability", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6z5b8v4w",
     "ja": "この町、まず見るべき場所は？",
     "en": "What should I see first here?",
@@ -308,6 +481,22 @@
     }
   },
   {
+    "id": "c_7b3r2n5q",
+    "ja": "係員に、あそこに並ぶよう言われたんだ。",
+    "en": "The staff told us to line up over there.",
+    "alternatives": [
+      "We were told to line up over there.",
+      "A staff member told us to line up over there."
+    ],
+    "point": "tell + 人 + to do。「並ぶ」は line up",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 8,
+    "grammar": ["verb-object-to-do", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7k3y7t2z",
     "ja": "もし1日だけなら、あなたはどこ行く？",
     "en": "If you had one day, where'd you go?",
@@ -330,6 +519,22 @@
     }
   },
   {
+    "id": "c_7m2c6w7q",
+    "ja": "観光のアドバイスを少しもらえますか？",
+    "en": "Could you give me some sightseeing advice?",
+    "alternatives": [
+      "Can you give me some sightseeing tips?",
+      "Could I get some advice about sightseeing?"
+    ],
+    "point": "advice は数えられない名詞。an advice や advices は不可",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 4,
+    "grammar": ["articles-and-countability", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7u3w2w9w",
     "ja": "今朝のお寺が断トツで一番よかったね。",
     "en": "This morning's temple was by far the best.",
@@ -350,6 +555,54 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7u6m5m3d",
+    "ja": "ここが撮影禁止だなんて、知りませんでした。",
+    "en": "I had no idea that photography was prohibited here.",
+    "alternatives": [
+      "I didn't realize photography wasn't allowed in here.",
+      "I wasn't aware that you can't take photos here."
+    ],
+    "point": "知らなかった内容は that 節で続ける。photography は無冠詞",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 10,
+    "grammar": ["noun-clauses", "articles-and-countability"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7u8c6r8d",
+    "ja": "このチケットで別館にも入れますか？",
+    "en": "Can this ticket get me into the annex?",
+    "alternatives": [
+      "Does this ticket get me into the annex?",
+      "Can I enter the annex with this ticket?"
+    ],
+    "point": "「入れる」は get into。場所の前には the を付ける",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 5,
+    "grammar": ["can-could-ability", "articles-and-countability"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8e4x6k3c",
+    "ja": "私たち、もっと早く来てれば日の出に間に合ったのに。",
+    "en": "If we'd come earlier, we'd have caught the sunrise.",
+    "alternatives": [
+      "If we had arrived earlier, we would have caught the sunrise.",
+      "We'd have caught the sunrise if we'd come earlier."
+    ],
+    "point": "間に合う は catch。if 節は had + 過去分詞",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8e5x8j3j",
@@ -418,6 +671,38 @@
     }
   },
   {
+    "id": "c_9a7k2y2e",
+    "ja": "ガイドさんに写真を撮ってもらったよ。",
+    "en": "I had the guide take our photo.",
+    "alternatives": [
+      "I got the guide to take our photo.",
+      "We had the guide take our photo."
+    ],
+    "point": "「〜してもらう」は have + 人 + 原形（to は付けない）",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 5,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9e9f3h2s",
+    "ja": "ツアーのことで、少しアドバイスをもらえますか？",
+    "en": "Could you give me some advice about tours?",
+    "alternatives": [
+      "Can I get some advice about the tours?",
+      "Would you mind giving me some advice about tours?"
+    ],
+    "point": "adviceは数えられない名詞。an adviceやadvicesは不可",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 7,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9g8x8b4e",
     "ja": "すみません、先にリュックを預けてもいいですか？",
     "en": "Is it okay to drop off my backpack first?",
@@ -438,5 +723,21 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9m9n8j3g",
+    "ja": "展望台がこんなに混むなんて、思ってもみなかったよ。",
+    "en": "I never thought the deck would be this packed.",
+    "alternatives": [
+      "I never imagined the observation deck would be this crowded.",
+      "I didn't expect the deck to be this packed."
+    ],
+    "point": "thought の後ろの that は省略可。would で過去から見た未来",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]
