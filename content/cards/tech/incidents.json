@@ -1,21 +1,5 @@
 [
   {
-    "id": "c_2a4g2b7s",
-    "ja": "今言えるのは、応急処置が効いているということだけです。",
-    "en": "All I can say is that the workaround is holding.",
-    "alternatives": [
-      "All I can tell you is that the workaround's holding.",
-      "I can only say that the workaround is holding up."
-    ],
-    "point": "All I can say is that ～ で「言えるのは～だけ」",
-    "topic": "tech",
-    "subtopic": "incidents",
-    "level": 9,
-    "grammar": ["noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2j9u7u7s",
     "ja": "昨夜から復旧作業中ですが、まだ終わっていません。",
     "en": "We've been on it since last night but aren't done.",
@@ -136,7 +120,13 @@
     "level": 6,
     "grammar": ["gerunds", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:06e5a6b5f213e340dd45cba8b36adb1a032f569ae84b005d3b3ecde9aa3ec1f4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4g3a8m7c",
@@ -335,22 +325,6 @@
     }
   },
   {
-    "id": "c_5y5f5x4h",
-    "ja": "私たちがサービスを戻した途端、また落ちました。",
-    "en": "We'd barely brought service back up when it went down again.",
-    "alternatives": [
-      "As soon as we brought service back up, it went down again.",
-      "The moment we restored service, it went down again."
-    ],
-    "point": "barely＋過去完了のあとに when で「〜した途端」を作る",
-    "topic": "tech",
-    "subtopic": "incidents",
-    "level": 10,
-    "grammar": ["tense-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6c6n9x9h",
     "ja": "ユーザーに再ログインするよう伝えて。",
     "en": "Tell users to log in again.",
@@ -402,7 +376,13 @@
     "level": 7,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0126318eacf196d72e79c583263a3c22d7ee7891e2d3944ecf7bb8889fffab1f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7g7u2g3a",
@@ -418,7 +398,13 @@
     "level": 8,
     "grammar": ["noun-clauses", "cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:291420f053e47ce143af10f08d4c944d0af810f01bc3a6ee5634b064f275fc71",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7n4d4w6p",
@@ -438,22 +424,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_7q2f7z9y",
-    "ja": "早く戻していれば、被害は小さく済んだのに。",
-    "en": "If we'd reverted sooner, the damage would've been smaller.",
-    "alternatives": [
-      "If we'd rolled back sooner, damage would've been smaller.",
-      "If we'd reverted sooner, the impact would've been smaller."
-    ],
-    "point": "過去の仮定は if + had 過去分詞、would have 過去分詞",
-    "topic": "tech",
-    "subtopic": "incidents",
-    "level": 6,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_7r4d4x8k",

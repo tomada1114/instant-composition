@@ -170,54 +170,6 @@
     }
   },
   {
-    "id": "c_3u2k5d8x",
-    "ja": "隣の男性は、ずっと座席を倒していた。",
-    "en": "The man next to me kept reclining his seat.",
-    "alternatives": [
-      "The guy sitting next to me kept his seat reclined.",
-      "The man beside me kept leaning his seat back."
-    ],
-    "point": "「隣の男性」は後ろから the man next to me と修飾",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 8,
-    "grammar": ["post-modification"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3y4r3n2z",
-    "ja": "もう少し席が広ければ、ぐっすり眠れるんだけどな。",
-    "en": "If the seat were any roomier, I could actually sleep.",
-    "alternatives": [
-      "I could really sleep if this seat were a bit roomier.",
-      "If I had a bit more room, I could sleep properly."
-    ],
-    "point": "事実と逆の仮定は if 節を were、主節を could に",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 10,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3z3c6h8z",
-    "ja": "乗り継ぎ便がどこから出るか教えていただけますか？",
-    "en": "Could you tell me where my connection leaves from?",
-    "alternatives": [
-      "Could you tell me which gate my connection leaves from?",
-      "Would you mind telling me where my connection leaves from?"
-    ],
-    "point": "間接疑問は where のあとが平叙文の語順",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 8,
-    "grammar": ["indirect-questions", "nested-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_4p5s7j5k",
     "ja": "スマホを充電できる場所はありますか？",
     "en": "Is there somewhere to charge my phone?",
@@ -254,6 +206,38 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5r5b9d3g",
+    "ja": "誰かが置いたかばんが、通路をふさいでいた。",
+    "en": "The bag someone left was blocking the aisle.",
+    "alternatives": [
+      "The bag that someone left blocked the aisle.",
+      "A bag that someone left was blocking the aisle."
+    ],
+    "point": "名詞の直後に「誰かが置いた」を that なしで続ける",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5v2c8v5v",
+    "ja": "隣の男性、ずっと座席を倒したままだった。",
+    "en": "The man beside me kept his seat reclined.",
+    "alternatives": [
+      "The man beside me left his seat reclined.",
+      "The guy beside me kept his seat reclined."
+    ],
+    "point": "「隣の男性」は後ろから the man beside me と修飾",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 5,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6b9f6v7s",
@@ -311,22 +295,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_6e9q9r8z",
-    "ja": "私、乗り継ぎが長ければ、ゆっくり食べられるのに。",
-    "en": "If my layover were longer, I could eat properly.",
-    "alternatives": [
-      "If I had a longer layover, I could eat properly.",
-      "I could eat properly if my layover were longer."
-    ],
-    "point": "現実と違う仮定は if 節が過去形、主節は could",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 7,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_6j4p3s2m",
@@ -471,38 +439,6 @@
     }
   },
   {
-    "id": "c_8f8a8g7g",
-    "ja": "誰かが通路に置いた荷物が、私の行く手をふさいでいた。",
-    "en": "The bag someone left in the aisle was in my way.",
-    "alternatives": [
-      "A bag someone left in the aisle was blocking my way.",
-      "The bag that someone left in the aisle blocked my way."
-    ],
-    "point": "名詞の直後に「誰かが置いた」を that なしで続ける",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 10,
-    "grammar": ["nested-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8k8e5g2b",
-    "ja": "私があなたなら、今すぐ搭乗口に向かうよ。",
-    "en": "If I were you, I'd head to the gate now.",
-    "alternatives": [
-      "If I were in your shoes, I'd go to the gate now.",
-      "I'd go to the gate right away if I were you."
-    ],
-    "point": "現在の助言は If I were you, I'd ~ の形",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 10,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8m6t8d2e",
     "ja": "私が頼んだのはチキンで、魚じゃありませんよ。",
     "en": "What I ordered was the chicken, not the fish.",
@@ -545,6 +481,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8n8q5q6u",
+    "ja": "時間があれば、ゆっくり食べるのに。",
+    "en": "If I had time, I'd eat slowly.",
+    "alternatives": [
+      "If I had more time, I'd eat slowly.",
+      "I'd eat slowly if I had the time."
+    ],
+    "point": "現実と違う仮定は if 節が過去形、主節は would",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 5,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8s2n9h6u",
@@ -613,6 +565,22 @@
     }
   },
   {
+    "id": "c_9f6b8b9j",
+    "ja": "搭乗口はどこか教えてもらえますか？",
+    "en": "Could you tell me where the gate is?",
+    "alternatives": [
+      "Do you know where the gate is?",
+      "Would you tell me where the gate is?"
+    ],
+    "point": "間接疑問は where のあとが平叙文の語順",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 4,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9k3k6k5r",
     "ja": "オンラインでチェックイン済みなのに、結局並んだ。",
     "en": "I checked in online, but still waited in line.",
@@ -663,6 +631,22 @@
     "subtopic": "airport",
     "level": 6,
     "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9w5a6x5b",
+    "ja": "もう少し席が広ければ、ぐっすり眠れるのに。",
+    "en": "If the seat were roomier, I could sleep soundly.",
+    "alternatives": [
+      "I could sleep soundly if this seat were roomier.",
+      "If I had more room, I'd sleep like a log."
+    ],
+    "point": "事実と違う仮定は if 節を were、主節を could に",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 7,
+    "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
   }
