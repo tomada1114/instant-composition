@@ -1,6 +1,7 @@
 import type { NotEnoughCards } from "./compose";
 import { randomIndex, seededRandom } from "./random";
 import { err, ok, type Result } from "./result";
+import { paceOf, type Paced } from "./timer";
 import { TUNING } from "./tuning";
 import type { AnswerResult, CardMeta } from "./types";
 
@@ -63,22 +64,22 @@ export function choosePlacement(
   );
 }
 
-export interface PlacementAnswer {
+export interface PlacementAnswer extends Paced {
   readonly level: number;
   readonly result: AnswerResult;
   readonly elapsedMs: number;
-  readonly limitMs: number;
 }
 
 /**
  * The level a placement round sets: with k solid answers (correct, within the
- * solid share of the limit), the level of the k-th easiest card, or 1 for none.
+ * solid share of the card's pace, not of the chosen limit), the level of the
+ * k-th easiest card, or 1 for none.
  */
 export function placementLevel(answers: readonly PlacementAnswer[]): number {
   const solid = answers.filter(
     (answer) =>
       answer.result === "ok" &&
-      answer.elapsedMs <= answer.limitMs * TUNING.difficulty.placementSolidRatio,
+      answer.elapsedMs <= paceOf(answer) * TUNING.difficulty.placementSolidRatio,
   ).length;
   const levels = answers.map((answer) => answer.level).sort((a, b) => a - b);
   return solid === 0 ? 1 : (levels[solid - 1] ?? 1);

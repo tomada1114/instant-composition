@@ -6,7 +6,10 @@ import {
   type DifficultyAnswer,
 } from "@instant-composition/domain";
 
-/** `n` answers at `level`: `ok` of them correct, `fast` of those within half the limit. */
+/**
+ * `n` answers at `level` on cards with a 10-second pace, in rounds dealt with a
+ * 30-second limit: `ok` of them correct, `fast` of those within half the pace.
+ */
 function answers(
   n: number,
   ok: number,
@@ -18,7 +21,8 @@ function answers(
     level,
     result: index < ok ? "ok" : miss,
     elapsedMs: index < fast ? 4_000 : 8_000,
-    limitMs: 10_000,
+    limitMs: 30_000,
+    paceMs: 10_000,
     answeredAt: 1_000 + index,
   }));
 }
@@ -36,6 +40,25 @@ describe("adjusting the level after a round", () => {
       level: 6,
       change: "up",
     });
+  });
+
+  it("judges fast by the pace, so a long limit does not make every ok fast", () => {
+    const slow = answers(20, 20, 0);
+    expect(slow.every((answer) => answer.elapsedMs <= answer.limitMs / 2)).toBe(true);
+    expect(adjustLevel(5, slow)).toStrictEqual({ level: 5, change: "same" });
+  });
+
+  it("takes the limit as the pace for an answer logged before the limit was a setting", () => {
+    const logged = answers(20, 20, 20).map(
+      ({ level, result, elapsedMs, answeredAt }): DifficultyAnswer => ({
+        level,
+        result,
+        elapsedMs,
+        answeredAt,
+        limitMs: 8_000,
+      }),
+    );
+    expect(adjustLevel(5, logged)).toStrictEqual({ level: 6, change: "up" });
   });
 
   it("stays when the oks are mostly slow", () => {

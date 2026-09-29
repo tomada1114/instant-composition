@@ -24,7 +24,7 @@ to the design's names.
 | `mix-bar`                 | —                                                          | review and new shares, either may be 0                                         |
 | `chip/choice`             | — (focus subtopic)                                         | unselected, selected (white fill + check), disabled (at the limit)             |
 | `select-card`             | —                                                          | unselected, selected (white border + filled check), locked (the last one kept) |
-| `segmented`               | — (5 / 10 / 15 / 20 / 30 cards a day)                      | one selected                                                                   |
+| `segmented`               | — (5 / 10 / 15 / 20 / 30 cards a day; 15–60 s per card)    | one selected                                                                   |
 | `toggle`                  | —                                                          | on, off                                                                        |
 | `ring-stack`              | `concentric` (up to 4 topics), `grid` (all 5)              | with a new segment, without, empty (grooves + one line)                        |
 | `week-row`                | —                                                          | done, done today, open (can be made up), missed, upcoming                      |
@@ -121,11 +121,12 @@ strip and the timer (or the actions).
 | Combo  | From 2: the count in `figure-sm` + "in a row" in `mono-sm`, both `text-accent`                                                                                                                      |
 | Timer  | Directly above the actions: a 4-tall pill groove `bg-border`, fill `bg-accent` shrinking linearly from the limit to 0; the whole seconds left, rounded up, at its right in `figure-sm`              |
 | At 0   | The fill is gone and the figure reads "0". The color never changes — never red                                                                                                                      |
-| Limit  | 4 s + 0.5 s × English word count, rounded up, clamped to 6–20 s (6 words → 7, 12 → 10, 20 → 14, 28 → 18)                                                                                            |
+| Limit  | The learner's setting: 15, 20, 30, 45 or 60 s, 30 by default. A round keeps the limit it was dealt with; a new choice applies from the next round                                                   |
+| Pace   | What "fast" is judged by, not when the timer runs out: 4 s + 0.5 s × English word count, rounded up, clamped to 6–20 s (6 words → 7, 12 → 10, 20 → 14, 28 → 18)                                     |
 | Motion | The fill carries `data-motion="essential"` so reduced motion does not freeze it (it may step once a second)                                                                                         |
 
-The limit formula is a starting value, tuned by use: keep it in configuration, not in
-the component.
+The limits on offer, their default and the pace formula are starting values, tuned by
+use: keep them in configuration, not in the component.
 
 ## Home panel and mix bar
 
@@ -243,7 +244,10 @@ above and below each. Section titles are muted `label`s.
 - `sheet`: rises from the bottom; `bg-popover`, top corners `rounded-t-card`, a 70%
   canvas scrim behind, 28 above its title and 24 between blocks. Buttons stack
   vertically with the main action at the bottom. The pause sheet lists the drill's keys
-  between a hairline and its buttons — only in keys mode.
+  between a hairline and its buttons — only in keys mode. On a `wide` window it opens
+  centered in the window instead (`wide:items-center`), every corner rounded
+  (`wide:rounded-card`), over the same scrim: a bar at the bottom of a tall window sits
+  far from the screen it pauses.
 - `info-tip`: a 44 hit area around a 16 ⓘ glyph beside a section title; pressing it
   opens one muted `caption` line under the title in place (`aria-expanded`). For a
   definition someone needs once: what counts as mastered, how the streak counts.

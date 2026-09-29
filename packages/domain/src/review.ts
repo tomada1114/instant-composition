@@ -18,6 +18,8 @@ export interface AcceptedAnswer {
   readonly result: AnswerResult;
   readonly elapsedMs: number;
   readonly limitMs: number;
+  /** The card's pace, which "fast" is judged by. */
+  readonly paceMs: number;
   readonly day: DayKey;
   readonly answeredAt: number;
   readonly snapshot: ItemSnapshot;
@@ -27,12 +29,12 @@ export interface AcceptedAnswer {
 export function outcomeOf(
   result: AnswerResult,
   elapsedMs: number,
-  limitMs: number,
+  paceMs: number,
 ): Outcome {
   if (result !== "ok") {
     return "again";
   }
-  return isFast(elapsedMs, limitMs) ? "easy" : "good";
+  return isFast(elapsedMs, paceMs) ? "easy" : "good";
 }
 
 /**
@@ -101,7 +103,7 @@ export function reviewAnswer(
     sessionId: answer.sessionId,
     answeredAt: answer.answeredAt,
     day: answer.day,
-    outcome: outcomeOf(answer.result, answer.elapsedMs, answer.limitMs),
+    outcome: outcomeOf(answer.result, answer.elapsedMs, answer.paceMs),
     before,
     after: moves ? nextCardState(before ?? undefined, answer) : before,
     snapshot: answer.snapshot,
@@ -111,6 +113,7 @@ export function reviewAnswer(
       result: answer.result,
       elapsedMs: answer.elapsedMs,
       limitMs: answer.limitMs,
+      paceMs: answer.paceMs,
     },
   };
   return {

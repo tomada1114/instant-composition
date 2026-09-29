@@ -93,10 +93,10 @@ One table for learner data, with one partition per learner:
 ```text
 PK                    SK                                   item
 LEARNER#<learnerId>   PROFILE                              timezone, L1, target, UI locale
-LEARNER#<learnerId>   SETTINGS                             topics, focus, daily size, sound
+LEARNER#<learnerId>   SETTINGS                             topics, focus, daily size, sound, time limit
 LEARNER#<learnerId>   STATS                                points, completed days, level
 LEARNER#<learnerId>   LEVEL#<at>                           level history entry
-LEARNER#<learnerId>   ROUND#<roundId>                      kind, day, deck, status, summary
+LEARNER#<learnerId>   ROUND#<roundId>                      kind, day, deck, limit, status, summary
 LEARNER#<learnerId>   ROUND#<roundId>#ANSWER#<answerId>    log entry (ADR-0003 envelope)
 LEARNER#<learnerId>   PORTION#<day>                        target, completedAt
 LEARNER#<learnerId>   DAY#<day>                            the day's tally (projection)

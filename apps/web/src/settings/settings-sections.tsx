@@ -9,6 +9,7 @@ import { SelectCard } from "../ui/select-card";
 import type { SettingsState } from "./use-settings";
 
 type DailySize = Settings["dailySize"];
+type LimitSeconds = Settings["limitSeconds"];
 
 function Heading({
   id,
@@ -166,6 +167,32 @@ export function SizeSection({
         }}
       />
       {state.completedToday ? <p role="status">{t("completed")}</p> : null}
+    </section>
+  );
+}
+
+/** The per-card time limit, taken by the next round dealt. */
+export function LimitSection({
+  state,
+}: Readonly<{ state: SettingsState }>): ReactElement {
+  const t = useTranslations("Settings.limit");
+  const id = useId();
+  return (
+    <section className="flex flex-col gap-3">
+      <Heading id={id}>{t("title")}</Heading>
+      <Segmented<LimitSeconds>
+        label={t("title")}
+        options={TUNING.limitSeconds.map((seconds) => ({
+          value: seconds,
+          label: t("count", { seconds }),
+          text: String(seconds),
+        }))}
+        value={state.settings.limitSeconds}
+        onChange={(limitSeconds) => {
+          state.save({ limitSeconds });
+        }}
+      />
+      <p className="text-caption text-muted-foreground">{t("next")}</p>
     </section>
   );
 }

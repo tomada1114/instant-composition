@@ -42,7 +42,7 @@ export interface RetiredCard {
   readonly topic: string;
   readonly subtopic: string;
   readonly level: number;
-  /** Null for a deleted card, whose limit falls back to the shortest. */
+  /** Null for a deleted card, whose pace falls back to the shortest. */
   readonly words: number | null;
   /** The prompt as deleted; null for an edited card, whose reviewed prompt is gone. */
   readonly prompt: string | null;
@@ -84,11 +84,19 @@ export interface SubtopicRef {
 
 export type DailySize = 5 | 10 | 15 | 20 | 30;
 
+/** A per-card time limit on offer, in seconds; `TUNING.limitSeconds` lists them. */
+export type LimitSeconds = 15 | 20 | 30 | 45 | 60;
+
 export interface Settings {
   readonly topics: readonly string[];
   readonly focus: readonly SubtopicRef[];
   readonly dailySize: DailySize;
   readonly sound: boolean;
+  /**
+   * Absent until the learner chooses one, stored settings from before the
+   * limit was a setting included, so `TUNING.defaultLimitSeconds` stands in.
+   */
+  readonly limitSeconds?: LimitSeconds;
 }
 
 /** A top-level topic and its subtopics, in `content/taxonomy.json`'s order. */

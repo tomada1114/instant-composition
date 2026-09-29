@@ -25,6 +25,7 @@ const CARD: DrillCard = {
   alternatives: ["Could we move the meeting to next week?", "Can we postpone it?"],
   explanation: "push A to B",
   limitMs: 8000,
+  paceMs: 8000,
 };
 
 function renderWithMessages(element: ReactElement) {
@@ -195,7 +196,7 @@ describe("PauseSheet", () => {
       screen.getByRole("dialog", { name: ja.Drill.sheet.title }),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(fill(ja.Drill.sheet.hint, { position: 7 })),
+      screen.getByText(fill(ja.Drill.sheet.hint, { hour: 4, position: 7 })),
     ).toBeInTheDocument();
     expect(screen.getByRole("button", { name: ja.Drill.sheet.continue })).toHaveFocus();
   });

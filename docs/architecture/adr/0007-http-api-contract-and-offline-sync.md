@@ -114,7 +114,7 @@ implementation):
 ```text
 GET    /v1/me                          learner profile: L1, target language, timezone, UI locale
 PATCH  /v1/me                          change profile fields
-GET    /v1/settings                    practice settings (topics, focus, daily size, sound)
+GET    /v1/settings                    practice settings (topics, focus, daily size, sound, time limit)
 PATCH  /v1/settings                    today's PUT /api/settings, as a partial update
 GET    /v1/home                        the home view (today's portion, streak, next action)
 POST   /v1/rounds                      { kind } → the round and its deck; resumes an open round of that kind

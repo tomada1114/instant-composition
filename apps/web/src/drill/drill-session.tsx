@@ -29,6 +29,9 @@ function startDrill(round: RoundPayload): DrillState {
     limits: Object.fromEntries(
       Object.values(round.cards).map((card) => [card.id, card.limitMs]),
     ),
+    paces: Object.fromEntries(
+      Object.values(round.cards).map((card) => [card.id, card.paceMs]),
+    ),
     answered: round.answered,
     retries: round.retries,
     intro: round.kind === "placement" && round.answered.length === 0,

@@ -7,9 +7,10 @@ import {
 } from "react";
 
 /**
- * `designing-ui`'s sheet: it rises from the bottom over a 70% canvas scrim,
- * traps Tab inside itself, and puts focus on the element marked
- * `data-autofocus` when it opens.
+ * `designing-ui`'s sheet: it rises from the bottom over a 70% canvas scrim —
+ * on a `wide` window it opens centered instead, every corner rounded — traps
+ * Tab inside itself, and puts focus on the element marked `data-autofocus`
+ * when it opens.
  */
 export function Sheet({
   titleId,
@@ -39,14 +40,14 @@ export function Sheet({
   }
 
   return (
-    <div className="fixed inset-0 z-10 flex items-end justify-center bg-background/70">
+    <div className="fixed inset-0 z-10 flex items-end justify-center bg-background/70 wide:items-center">
       <div
         ref={panel}
         role="dialog"
         aria-modal="true"
         aria-labelledby={titleId}
         onKeyDown={trapTab}
-        className="box-content flex w-full max-w-column flex-col gap-6 rounded-t-card bg-popover px-4 pt-7 pb-8"
+        className="box-content flex w-full max-w-column flex-col gap-6 rounded-t-card bg-popover px-4 pt-7 pb-8 wide:rounded-card"
       >
         {children}
       </div>

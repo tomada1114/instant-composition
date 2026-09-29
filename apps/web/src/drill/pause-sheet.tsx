@@ -2,6 +2,7 @@ import { useTranslations } from "use-intl";
 import type { ReactElement } from "react";
 
 import { Button } from "../ui/button";
+import { TUNING } from "../lib/tuning";
 import { Kbd } from "../ui/kbd";
 import { Sheet } from "../ui/sheet";
 
@@ -49,7 +50,7 @@ export function PauseSheet({
           {t("title")}
         </h2>
         <p className="font-mono text-mono-sm text-muted-foreground">
-          {t("hint", { position })}
+          {t("hint", { hour: TUNING.dayBoundaryHour, position })}
         </p>
       </div>
       <KeyLegend />

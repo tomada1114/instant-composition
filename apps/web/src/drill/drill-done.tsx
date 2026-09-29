@@ -9,7 +9,7 @@ import { SummaryScreen } from "../summary/summary-screen";
 import type { FinishState } from "./use-drill";
 
 const SHELL =
-  "mx-auto box-content flex min-h-[calc(100dvh-4rem)] max-w-column flex-col gap-4 px-4 py-8";
+  "mx-auto box-content flex min-h-[calc(var(--column-height)-4rem)] max-w-column flex-col gap-4 px-4 py-8";
 
 /**
  * Where a round ends: the summary once the server has it, or the notice that

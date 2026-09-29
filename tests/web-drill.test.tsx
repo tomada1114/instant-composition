@@ -6,6 +6,7 @@ import type { AnswerInput, HomeView, RoundPayload } from "@instant-composition/w
 import {
   COUNT,
   ROUND,
+  drillCard,
   fakeApi,
   fakeTimers,
   fill,
@@ -232,6 +233,24 @@ describe("the drill, a round run by taps", () => {
     ]);
   });
 
+  it("runs each front for the limit the round was dealt, not the card's pace", async () => {
+    const long = { limitMs: 30_000, paceMs: 7000 };
+    serve({
+      round: {
+        ...ROUND,
+        cards: { c1: drillCard("c1", long), c2: drillCard("c2", long) },
+      },
+    });
+    await renderApp("/drill?kind=today");
+    await settle(16);
+
+    await settle(7100);
+    expect(screen.queryByText(ja.Drill.card.timedOut)).toBeNull();
+    expect(screen.getByText("prompt-c1")).toBeInTheDocument();
+    await settle(23_000);
+    expect(screen.getByText(ja.Drill.card.timedOut)).toBeInTheDocument();
+  });
+
   it("pauses from the top strip's pause button", async () => {
     serve();
     await renderApp("/drill?kind=today");
@@ -255,6 +274,15 @@ describe("the drill's pause sheet", () => {
     press("Escape");
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
     expect(screen.getByText("prompt-c1")).toBeInTheDocument();
+  });
+
+  it("says quitting keeps the place until the day turns at 04:00", async () => {
+    serve();
+    await renderApp("/drill?kind=today");
+    press("Escape");
+    expect(
+      screen.getByText(fill(ja.Drill.sheet.hint, { hour: 4, position: 1 })),
+    ).toBeInTheDocument();
   });
 
   it("goes home from the sheet's stop button", async () => {
@@ -293,7 +321,7 @@ describe("the drill's pause sheet", () => {
     ).toBeInTheDocument();
     press("Escape");
     expect(
-      screen.getByText(fill(ja.Drill.sheet.hint, { position: 4 })),
+      screen.getByText(fill(ja.Drill.sheet.hint, { hour: 4, position: 4 })),
     ).toBeInTheDocument();
   });
 });

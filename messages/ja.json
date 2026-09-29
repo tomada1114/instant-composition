@@ -115,7 +115,7 @@
     },
     "sheet": {
       "title": "一時停止",
-      "hint": "今日のうちなら {position} 枚目から",
+      "hint": "やめても午前 {hour} 時までなら {position} 枚目から再開",
       "quit": "やめる",
       "continue": "続ける"
     },
@@ -243,6 +243,11 @@
       "title": "1 日の枚数",
       "count": "{count} 文",
       "completed": "この枚数で今日は完了です"
+    },
+    "limit": {
+      "title": "1 文の持ち時間",
+      "count": "{seconds} 秒",
+      "next": "次のラウンドから変わります"
     },
     "sound": {
       "title": "効果音"
