@@ -4,7 +4,7 @@ import { useTranslations } from "use-intl";
 
 import type { RoundKind, RoundPayload } from "../openapi";
 import { drillReducer } from "./drill-machine";
-import { currentCard, initDrill, type DrillState } from "./drill-state";
+import { currentCard, initDrill, progress, type DrillState } from "./drill-state";
 import { CardScreen } from "./card-screen";
 import { DrillDone } from "./drill-done";
 import { IntroScreen } from "./intro-screen";
@@ -118,10 +118,6 @@ export function DrillSession({
     browserSound.play(combo >= 2 ? "combo" : phase.fast ? "okFast" : "ok");
   }, [sound, phase, combo]);
 
-  const resumeAt =
-    state.pass === "first"
-      ? round.offset + state.firstDone + state.index + 1
-      : round.offset + state.firstDone + state.queue.length + state.index + 1;
   if (
     phase.kind === "intro" &&
     (round.kind !== "placement" || round.answered.length > 0)
@@ -130,7 +126,8 @@ export function DrillSession({
       <ReadyScreen
         kind={round.kind}
         count={round.total}
-        position={resumeAt}
+        where={progress(state)}
+        offset={round.offset}
         onStart={() => {
           act({ type: "start" }, false);
         }}
@@ -160,6 +157,10 @@ export function DrillSession({
       />
     );
 
+  const resumeAt =
+    state.pass === "first"
+      ? round.offset + state.firstDone + state.index + 1
+      : round.offset + state.firstDone + state.queue.length + state.index + 1;
   return (
     <>
       <CardScreen

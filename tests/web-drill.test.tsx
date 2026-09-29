@@ -31,18 +31,26 @@ const FINISH = "/api/v1/rounds/round-1/finish";
 interface Serve {
   readonly home?: HomeView;
   readonly round?: RoundPayload | Response;
+  /** The round every later request gets, when it differs from the first. */
+  readonly next?: RoundPayload;
   readonly answers?: () => Response | Promise<Response>;
   readonly finish?: () => Response | Promise<Response>;
 }
 
 /** An API that answers the home view, the round, each answer and the finish. */
 function serve(options: Serve = {}): ApiCall[] {
+  let rounds = 0;
   return fakeApi((call) => {
     if (call.method === "GET" && call.url === "/api/v1/home") {
       return Response.json(options.home ?? READY);
     }
     if (call.method === "POST" && call.url === "/api/v1/rounds") {
-      const round = options.round ?? ROUND;
+      const asked = rounds;
+      rounds += 1;
+      const round =
+        asked > 0 && options.next !== undefined
+          ? options.next
+          : (options.round ?? ROUND);
       return round instanceof Response ? round : Response.json(round);
     }
     if (call.method === "POST" && call.url === ANSWERS) {
@@ -161,6 +169,7 @@ describe("the drill, a round run to its summary", () => {
         ...ROUND,
         answered: [firstPassOf("c1"), firstPassOf("c2")],
       },
+      next: { ...ROUND, id: "round-2", kind: "extra" },
     });
     await renderApp("/drill?kind=today");
     await settle(16);
@@ -170,10 +179,15 @@ describe("the drill, a round run to its summary", () => {
       }),
     );
     await settle();
+    await settle(16);
     expect(where()).toBe("/drill?kind=extra");
     expect(
       posted(calls, "/api/v1/rounds").map((body) => (body as { kind: string }).kind),
     ).toStrictEqual(["today", "extra"]);
+    expect(
+      screen.queryByRole("button", { name: ja.Drill.ready.start }),
+    ).not.toBeInTheDocument();
+    expect(screen.getByText("prompt-c1")).toBeInTheDocument();
   });
 
   it("goes home from the summary's end button", async () => {
@@ -249,8 +263,7 @@ describe("the drill, a round run by taps", () => {
         cards: { c1: drillCard("c1", long), c2: drillCard("c2", long) },
       },
     });
-    await renderApp("/drill?kind=today");
-    await settle(16);
+    await openRound("/drill?kind=today");
 
     await settle(7100);
     expect(screen.queryByText(ja.Drill.card.timedOut)).toBeNull();
@@ -270,6 +283,13 @@ describe("the drill, a round run by taps", () => {
   });
 });
 
+/** The text of one `select` branch of a catalog template, for a branch with no arguments. */
+function selectBranch(template: string, branch: string): string {
+  const match = new RegExp(`\\b${branch} \\{([^{}]*)\\}`, "u").exec(template);
+  if (match?.[1] === undefined) throw new Error(`no branch ${branch}`);
+  return match[1];
+}
+
 describe("the drill's start screen", () => {
   function timerBar(): Element | null {
     return document.querySelector("[data-part=fill]");
@@ -278,7 +298,12 @@ describe("the drill's start screen", () => {
   it("opens a round nobody started on a start screen, and starts the timer on its button", async () => {
     serve();
     await renderApp("/drill?kind=today");
-    expect(screen.getByRole("heading", { level: 1 })).toBeInTheDocument();
+    expect(
+      screen.getByRole("heading", {
+        level: 1,
+        name: selectBranch(ja.Drill.ready.title, "today"),
+      }),
+    ).toBeInTheDocument();
     expect(
       screen.getByText(
         fill(ja.Drill.ready.resume, { position: 1, total: ROUND.total }),
@@ -304,6 +329,26 @@ describe("the drill's start screen", () => {
     press(" ");
     await settle(16);
     expect(screen.getByText("prompt-c2")).toBeInTheDocument();
+  });
+
+  it("counts a resumed retry pass the way the card screen will", async () => {
+    const missed = (cardId: string): RoundPayload["answered"][number] => ({
+      ...firstPassOf(cardId),
+      result: "ng",
+    });
+    serve({
+      round: { ...ROUND, offset: 8, total: 10, answered: [missed("c1"), missed("c2")] },
+    });
+    await renderApp("/drill?kind=today");
+    expect(
+      screen.getByText(fill(ja.Drill.ready.resumeRetry, { position: 1, total: 2 })),
+    ).toBeInTheDocument();
+    expect(timerBar()).toBeNull();
+    press("Enter");
+    await settle(16);
+    expect(
+      screen.getByText(fill(ja.Drill.card.retryProgress, { current: 1, total: 2 })),
+    ).toBeInTheDocument();
   });
 
   it("shows the first front at once when the round starts from home's button", async () => {

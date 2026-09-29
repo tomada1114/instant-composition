@@ -4,7 +4,6 @@ import type { ApiError } from "../lib/endpoints";
 import type { RoundKind, RoundPayload } from "../openapi";
 import { DrillError } from "./drill-error";
 import { DrillSession } from "./drill-session";
-import { clearPressed, wasPressed } from "./pressed";
 import { requestRound } from "./rounds";
 
 type Loaded =
@@ -20,6 +19,7 @@ type Loaded =
  */
 export function DrillScreen({
   kind: initialKind,
+  pressed: pressedOnArrival,
   first,
   sound,
   dailySize,
@@ -27,6 +27,7 @@ export function DrillScreen({
   onKind,
 }: Readonly<{
   kind: RoundKind;
+  pressed: boolean;
   first: boolean;
   sound: boolean;
   dailySize: number;
@@ -35,8 +36,7 @@ export function DrillScreen({
 }>): ReactElement {
   const [kind, setKind] = useState(initialKind);
   const [attempt, setAttempt] = useState(0);
-  const [pressed, setPressed] = useState(wasPressed);
-  useEffect(clearPressed, []);
+  const [pressed, setPressed] = useState(pressedOnArrival);
   const [loaded, setLoaded] = useState<Loaded & { readonly attempt?: number }>({
     status: "loading",
   });
