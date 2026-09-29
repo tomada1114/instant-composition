@@ -95,8 +95,8 @@
     "point": "間接疑問は who I was talking to と平叙文の語順",
     "topic": "social",
     "subtopic": "small-talk",
-    "level": 8,
-    "grammar": ["nested-clauses", "indirect-questions"],
+    "level": 6,
+    "grammar": ["indirect-questions", "progressive-aspect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -146,16 +146,16 @@
   },
   {
     "id": "c_3f7f9b6y",
-    "ja": "最近、転職しようかどうか迷ってるんだ。",
+    "ja": "転職しようかなと、ちょっと考えてるんだ。",
     "en": "I'm toying with the idea of changing jobs.",
     "alternatives": [
       "I'm thinking about changing jobs.",
-      "I'm considering changing jobs lately."
+      "I'm considering changing jobs."
     ],
-    "point": "think about / consider の後ろは to 不定詞でなく -ing",
+    "point": "「考えてる」は toy with the idea of の後ろも -ing",
     "topic": "social",
     "subtopic": "small-talk",
-    "level": 8,
+    "level": 7,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -443,15 +443,15 @@
   {
     "id": "c_6w7c6f3j",
     "ja": "昨日の映画、最後は泣かされたよ。",
-    "en": "That movie had me in tears by the end.",
+    "en": "Yesterday's movie had me in tears by the end.",
     "alternatives": [
-      "That movie made me cry at the end.",
-      "The ending of that movie made me tear up."
+      "The movie yesterday made me cry at the end.",
+      "Yesterday's movie made me tear up at the end."
     ],
-    "point": "「泣かされた」は have/make + 人 + 状態・原形",
+    "point": "「泣かされた」は映画を主語に had me in tears / made me cry",
     "topic": "social",
     "subtopic": "small-talk",
-    "level": 10,
+    "level": 7,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -480,17 +480,17 @@
   },
   {
     "id": "c_7d5k4d4r",
-    "ja": "うちの課にお土産をくれた同僚、来月結婚するんだって。",
-    "en": "Apparently the coworker who gave us souvenirs marries next month.",
+    "ja": "お土産をくれた同僚、来月結婚するんだって。",
+    "en": "Apparently the coworker who brought souvenirs is getting married next month.",
     "alternatives": [
-      "The coworker who gave us souvenirs is getting married next month, apparently.",
-      "Word is the coworker who brought us souvenirs is marrying next month."
+      "The coworker who brought souvenirs is getting married next month, apparently.",
+      "Apparently the coworker who gave souvenirs is getting married next month."
     ],
     "point": "who 節で名詞を修飾し、伝聞は apparently で添える",
     "topic": "social",
     "subtopic": "small-talk",
-    "level": 10,
-    "grammar": ["nested-clauses"],
+    "level": 9,
+    "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -521,8 +521,8 @@
     "ja": "引っ越してなかったら、今ごろ君と友達じゃないね。",
     "en": "If I hadn't moved, we wouldn't be friends now.",
     "alternatives": [
-      "Had I not moved, we wouldn't be friends now.",
-      "We wouldn't be friends now if I hadn't moved."
+      "We wouldn't be friends now if I hadn't moved.",
+      "If I hadn't moved away, we wouldn't be friends today."
     ],
     "point": "過去の仮定は had+過去分詞、今の結果は would+原形",
     "topic": "social",

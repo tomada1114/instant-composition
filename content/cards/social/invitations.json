@@ -22,22 +22,6 @@
     }
   },
   {
-    "id": "c_2t9b4z7s",
-    "ja": "先週は断っちゃったから、今度は絶対行くよ。",
-    "en": "I declined last week, so I'm definitely coming this time.",
-    "alternatives": [
-      "I passed last week, but I'm definitely coming this time.",
-      "I turned it down last week, so I'll definitely come."
-    ],
-    "point": "先週の話は過去形、今度の予定は現在進行形で言う",
-    "topic": "social",
-    "subtopic": "invitations",
-    "level": 7,
-    "grammar": ["tense-contrast", "future-forms"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3d4t6r4s",
     "ja": "パーティーは何時に始まるの？",
     "en": "What time does the party start?",
@@ -322,22 +306,6 @@
     }
   },
   {
-    "id": "c_6s5d7j8m",
-    "ja": "兄に頼んで、君も招待リストに入れてもらうね。",
-    "en": "I'll get my brother to put you on the list.",
-    "alternatives": [
-      "I'll have my brother add you to the list.",
-      "I'll ask my brother to put you on the list."
-    ],
-    "point": "get + 人 + to 動詞で「〜してもらう」",
-    "topic": "social",
-    "subtopic": "invitations",
-    "level": 7,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6s9a6h8w",
     "ja": "今夜、一緒に夕食に行こうよ。",
     "en": "Let's go out for dinner tonight.",
@@ -480,7 +448,13 @@
     "level": 8,
     "grammar": ["indirect-questions", "cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:34f51005480129076a7bdadbe13f780c9cce4c16213b438dea04992c442b95f3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8a7m9w2x",
