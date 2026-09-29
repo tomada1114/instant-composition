@@ -86,7 +86,7 @@ function where(): string {
 }
 
 /** Flips the current card and grades it with `key`, letting the next one start. */
-async function grade(key: "j" | "k"): Promise<void> {
+async function grade(key: "j" | "k" | "ArrowLeft" | "ArrowRight"): Promise<void> {
   press(" ");
   await settle(200);
   press(key);
@@ -421,7 +421,7 @@ describe("the drill's pause sheet", () => {
     for (let card = 0; card < 3; card += 1) {
       press(" ");
       await settle(200);
-      press("j");
+      press("ArrowLeft");
       await settle(200);
       await settle(16);
     }
@@ -730,7 +730,7 @@ describe("the drill after a reload", () => {
     press("Enter");
     await settle(16);
     expect(screen.getByText("prompt-c2")).toBeInTheDocument();
-    await grade("k");
+    await grade("ArrowRight");
     expect(screen.getByText(ja.Drill.card.again)).toBeInTheDocument();
     expect(screen.getByText("prompt-c1")).toBeInTheDocument();
   });

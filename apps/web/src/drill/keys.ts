@@ -6,8 +6,8 @@ export type DrillKeyAction =
   | { readonly type: "grade"; readonly result: "ok" | "ng" }
   | { readonly type: "scroll"; readonly direction: 1 | -1 };
 
-const OK_KEYS = new Set(["k", "K", "f", "F"]);
-const NG_KEYS = new Set(["j", "J", "d", "D"]);
+const OK_KEYS = new Set(["ArrowRight", "k", "K", "f", "F"]);
+const NG_KEYS = new Set(["ArrowLeft", "j", "J", "d", "D"]);
 const PRIMARY_KEYS = new Set([" ", "Enter"]);
 const SCROLL: Readonly<Record<string, 1 | -1>> = { ArrowDown: 1, ArrowUp: -1 };
 
