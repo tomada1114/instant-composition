@@ -4,11 +4,43 @@ import {
   countWords,
   estimateMinutes,
   isFast,
-  limitMsForWords,
-  limitSecondsForWords,
+  limitMsOf,
+  limitSecondsOf,
+  paceMsForWords,
+  paceMsOf,
+  paceOf,
+  paceSecondsForWords,
+  TUNING,
 } from "@instant-composition/domain";
 
 describe("the time limit", () => {
+  it("offers 15, 20, 30, 45 and 60 seconds, and gives 30 to a learner who never chose", () => {
+    expect(TUNING.limitSeconds).toStrictEqual([15, 20, 30, 45, 60]);
+    expect(limitSecondsOf(undefined)).toBe(30);
+    expect(
+      limitSecondsOf({ topics: ["work"], focus: [], dailySize: 10, sound: true }),
+    ).toBe(30);
+  });
+
+  it("is the one the learner chose", () => {
+    expect(
+      limitSecondsOf({
+        topics: ["work"],
+        focus: [],
+        dailySize: 10,
+        sound: true,
+        limitSeconds: 45,
+      }),
+    ).toBe(45);
+  });
+
+  it("is the one a round was dealt with, or each card's pace for a round dealt before it was a setting", () => {
+    expect(limitMsOf({ limitMs: 30_000 }, 8_000)).toBe(30_000);
+    expect(limitMsOf({}, 8_000)).toBe(8_000);
+  });
+});
+
+describe("a card's pace", () => {
   it.each([
     [1, 6],
     [4, 6],
@@ -18,11 +50,16 @@ describe("the time limit", () => {
     [28, 18],
     [40, 20],
   ])("gives a %p-word answer %p seconds", (words, seconds) => {
-    expect(limitSecondsForWords(words)).toBe(seconds);
+    expect(paceSecondsForWords(words)).toBe(seconds);
   });
 
-  it("states the limit in milliseconds for the timer", () => {
-    expect(limitMsForWords(12)).toBe(10_000);
+  it("states the pace in milliseconds", () => {
+    expect(paceMsForWords(12)).toBe(10_000);
+  });
+
+  it("is the shortest for a deleted card, whose length is gone", () => {
+    expect(paceMsOf(null)).toBe(6_000);
+    expect(paceMsOf(12)).toBe(10_000);
   });
 
   it("counts words the way levels.json does, by whitespace", () => {
@@ -34,9 +71,22 @@ describe("the time limit", () => {
 });
 
 describe("a fast answer", () => {
-  it("is one flipped within half the limit", () => {
+  it("is one flipped within half the pace", () => {
     expect(isFast(5_000, 10_000)).toBe(true);
     expect(isFast(5_001, 10_000)).toBe(false);
+  });
+
+  it.each([15, 20, 30, 45, 60])(
+    "follows the length-derived pace, not a %i-second limit",
+    (seconds) => {
+      const answer = { limitMs: seconds * 1000, paceMs: 8_000 };
+      expect(isFast(4_000, paceOf(answer))).toBe(true);
+      expect(isFast(4_001, paceOf(answer))).toBe(false);
+    },
+  );
+
+  it("takes the limit as the pace for an answer logged before the limit was a setting", () => {
+    expect(paceOf({ limitMs: 8_000 })).toBe(8_000);
   });
 });
 

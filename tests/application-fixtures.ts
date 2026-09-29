@@ -47,6 +47,7 @@ export function makeRound(overrides: Partial<Round> = {}): Round {
     day: "2026-09-22",
     portionDay: "2026-09-22",
     deck: ["c1", "c2", "c3", "c4", "c5"],
+    limitMs: 30_000,
     startedAt: 1_000,
     finishedAt: null,
     abandonedAt: null,
@@ -79,6 +80,7 @@ export function makeReview(overrides: Partial<ReviewEntry> = {}): ReviewEntry {
       result: "ok",
       elapsedMs: 8_000,
       limitMs: 10_000,
+      paceMs: 10_000,
     },
     ...overrides,
   };

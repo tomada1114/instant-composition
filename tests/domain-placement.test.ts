@@ -95,8 +95,9 @@ describe("choosing the ten placement cards", () => {
   });
 });
 
+/** An answer on a card with a 10-second pace, in a round dealt with a 30-second limit. */
 function answer(level: number, result: AnswerResult, elapsedMs: number) {
-  return { level, result, elapsedMs, limitMs: 10_000 };
+  return { level, result, elapsedMs, limitMs: 30_000, paceMs: 10_000 };
 }
 
 describe("the level a placement round sets", () => {
@@ -118,8 +119,25 @@ describe("the level a placement round sets", () => {
 
   it("is 1 when nothing was solid", () => {
     expect(
-      placementLevel(levels.map((level) => answer(level, "timeout", 10_000))),
+      placementLevel(levels.map((level) => answer(level, "timeout", 30_000))),
     ).toBe(1);
+  });
+
+  it("measures solid against the card's pace, not the chosen limit, however long", () => {
+    const within = (limitMs: number, elapsedMs: number) =>
+      levels.map((level) => ({ ...answer(level, "ok", elapsedMs), limitMs }));
+    expect(placementLevel(within(60_000, 7_501))).toBe(1);
+    expect(placementLevel(within(15_000, 7_500))).toBe(10);
+  });
+
+  it("takes the limit as the pace for an answer logged before the limit was a setting", () => {
+    const logged = levels.map((level) => ({
+      level,
+      result: "ok" as const,
+      elapsedMs: 6_000,
+      limitMs: 8_000,
+    }));
+    expect(placementLevel(logged)).toBe(10);
   });
 
   it("is 10 when everything was", () => {

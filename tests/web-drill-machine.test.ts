@@ -13,6 +13,8 @@ import {
 } from "@instant-composition/web";
 
 const LIMIT = 7000;
+/** Each card's pace, which "fast" is judged by; equal to the limit unless a case says otherwise. */
+const PACE = 7000;
 /** The wall clock, in epoch ms, when the monotonic clock reads zero. */
 const WALL = 1_790_000_000_000;
 
@@ -21,6 +23,7 @@ function init(overrides: Partial<DrillInit> = {}): DrillState {
     roundId: "round-1",
     deck: ["c1", "c2", "c3"],
     limits: { c1: LIMIT, c2: LIMIT, c3: LIMIT },
+    paces: { c1: PACE, c2: PACE, c3: PACE },
     answered: [],
     retries: true,
     intro: false,
@@ -156,7 +159,7 @@ describe("grading a back", () => {
     expect(grade(back, "ok", 2001).phase.kind).toBe("feedback");
   });
 
-  it("records ○, counts the combo and marks a flip within half the limit as fast", () => {
+  it("records ○, counts the combo and marks a flip within half the pace as fast", () => {
     const state = grade(flipAfter(init(), 0, 2100), "ok", 3000);
     expect(state.phase).toStrictEqual({
       kind: "feedback",
@@ -192,9 +195,19 @@ describe("grading a back", () => {
     ]);
   });
 
-  it("does not call a flip past half the limit fast", () => {
+  it("does not call a flip past half the pace fast", () => {
     const state = grade(flipAfter(init(), 0, 3600), "ok", 4000);
     expect(state.phase).toMatchObject({ fast: false });
+  });
+
+  it("judges fast against the card's pace, not a longer limit the round was dealt with", () => {
+    const long = init({ limits: { c1: 60_000, c2: 60_000, c3: 60_000 } });
+    expect(grade(flipAfter(long, 0, 3600), "ok", 4000).phase).toMatchObject({
+      fast: false,
+    });
+    expect(grade(flipAfter(long, 0, 3500), "ok", 4000).phase).toMatchObject({
+      fast: true,
+    });
   });
 
   it("moves on to the next front once the feedback is over", () => {

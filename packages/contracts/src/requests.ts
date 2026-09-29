@@ -4,6 +4,7 @@ import {
   answerResultSchema,
   dailySizeSchema,
   idSchema,
+  limitSecondsSchema,
   passSchema,
   roundKindSchema,
   subtopicRefSchema,
@@ -56,6 +57,8 @@ export const settingsPatchSchema = z.object({
   focus: z.array(subtopicRefSchema).max(MAX_SETTINGS_LIST).exactOptional(),
   dailySize: dailySizeSchema.exactOptional(),
   sound: z.boolean().exactOptional(),
+  /** Taken by the next round dealt; the round under way keeps the limit it was dealt with. */
+  limitSeconds: limitSecondsSchema.exactOptional(),
 });
 
 /**

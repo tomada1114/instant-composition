@@ -5,6 +5,7 @@ import {
   practiceState,
   type CardMeta,
   type ItemProgress,
+  type Settings,
   type StartState,
 } from "@instant-composition/domain";
 
@@ -31,7 +32,11 @@ const CARDS: CardMeta[] = Array.from({ length: 40 }, (_, index) => ({
 
 function state(
   overrides: Partial<StartState> = {},
-  practice: { cards?: CardMeta[]; items?: ReadonlyMap<string, ItemProgress> } = {},
+  practice: {
+    cards?: CardMeta[];
+    items?: ReadonlyMap<string, ItemProgress>;
+    settings?: Settings;
+  } = {},
 ): StartState {
   const stats =
     overrides.stats ??
@@ -41,7 +46,7 @@ function state(
     practice: practiceState({
       today: TODAY,
       stats,
-      settings: makeSettings(),
+      settings: practice.settings ?? makeSettings(),
       cards: practice.cards ?? CARDS,
       items: practice.items ?? new Map(),
     }),
@@ -111,6 +116,34 @@ describe("decideStart", () => {
       stats: { openRound: { id: "t1", day: TODAY } },
     });
     expect(decided.ok && decided.value.round.deck).toHaveLength(10);
+  });
+
+  it("records 30 seconds on a round dealt to a learner who never chose a limit", () => {
+    const decided = decideStart(state(), { kind: "today", roundId: "t1" });
+    expect(decided.ok && decided.value.round.limitMs).toBe(30_000);
+  });
+
+  it.each(["placement", "today", "extra"] as const)(
+    "records the learner's chosen limit on a %s round it deals",
+    (kind) => {
+      const decided = decideStart(
+        state({}, { settings: makeSettings({ limitSeconds: 45 }) }),
+        { kind, roundId: "r1" },
+      );
+      expect(decided.ok && decided.value.round.limitMs).toBe(45_000);
+    },
+  );
+
+  it("keeps the limit a resumed round was dealt with, so a new one waits for the next round", () => {
+    const open = makeRound({ id: "t0", kind: "today", deck: ["c0", "c1", "c2"] });
+    const decided = decideStart(
+      state({ open }, { settings: makeSettings({ limitSeconds: 60 }) }),
+      { kind: "today", roundId: "t1" },
+    );
+    expect(decided.ok && decided.value).toMatchObject({
+      created: false,
+      round: { id: "t0", limitMs: 30_000 },
+    });
   });
 
   it("deals only what today's portion still lacks", () => {

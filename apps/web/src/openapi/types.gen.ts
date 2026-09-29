@@ -20,6 +20,7 @@ export type Settings = {
     focus: Array<SubtopicRef>;
     dailySize: 5 | 10 | 15 | 20 | 30;
     sound: boolean;
+    limitSeconds: 15 | 20 | 30 | 45 | 60;
 };
 
 export type Dot = {
@@ -73,6 +74,7 @@ export type SettingsPatch = {
     focus?: Array<SubtopicRef>;
     dailySize?: 5 | 10 | 15 | 20 | 30;
     sound?: boolean;
+    limitSeconds?: 15 | 20 | 30 | 45 | 60;
 };
 
 export type ProfilePatch = {
@@ -93,6 +95,7 @@ export type DrillCard = {
     alternatives: Array<string>;
     explanation: string;
     limitMs: number;
+    paceMs: number;
 };
 
 export type RoundPayload = {

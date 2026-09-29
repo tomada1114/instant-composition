@@ -10,7 +10,7 @@ import type {
 } from "./records";
 import { err, ok, type Result } from "./result";
 import { reviewAnswer } from "./review";
-import { limitMsForWords } from "./timer";
+import { limitMsOf, paceMsOf, paceOf } from "./timer";
 import { TUNING } from "./tuning";
 import type { AnswerResult, Pass } from "./types";
 
@@ -92,9 +92,9 @@ function clampAnsweredAt(
 
 /**
  * Takes checked answers into `state`, in log order, skipping ids already held.
- * The limit is worked out here rather than trusted from the client, and a
- * round crossing the day boundary keeps its own day, so an answer arriving
- * late is still taken for the day it was given on.
+ * Each is held to its round's limit, not the setting now, and judged by its
+ * card's pace, neither trusted from the client; a round crossing the day
+ * boundary keeps its own day, so a late answer is taken for the day it was given.
  */
 export function decideAnswers(
   state: AnswersState,
@@ -122,14 +122,13 @@ export function decideAnswers(
   for (const { input, answeredAt } of fresh) {
     const card = cards.get(input.cardId);
     if (card === undefined) continue;
-    const limitMs =
-      card.words === null
-        ? TUNING.timer.minSeconds * 1000
-        : limitMsForWords(card.words);
+    const paceMs = paceMsOf(card.words);
+    const limitMs = limitMsOf(round, paceMs);
     const reviewed = reviewAnswer(items.get(input.cardId), {
       ...input,
       sessionId: round.id,
       limitMs,
+      paceMs,
       elapsedMs:
         input.result === "timeout" ? limitMs : Math.min(input.elapsedMs, limitMs),
       day: round.day,
@@ -168,6 +167,7 @@ export function decideAnswers(
             result: entry.detail.result,
             elapsedMs: entry.detail.elapsedMs,
             limitMs: entry.detail.limitMs,
+            paceMs: paceOf(entry.detail),
             answeredAt: entry.answeredAt,
           }));
   return {
