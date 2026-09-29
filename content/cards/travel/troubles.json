@@ -1,5 +1,22 @@
 [
   {
+    "id": "c_2k3g9z2c",
+    "ja": "財布は昨日なくなりました。",
+    "en": "My wallet went missing yesterday.",
+    "alternatives": [
+      "I lost my wallet yesterday.",
+      "My wallet disappeared yesterday.",
+      "My wallet was lost yesterday."
+    ],
+    "point": "yesterday があれば過去形（has は使えない）",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2u8n8r8e",
     "ja": "運転手に止まるよう言って！",
     "en": "Tell the driver to stop!",
@@ -20,6 +37,23 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_2y7y5k4n",
+    "ja": "カードを止めてもらいたいです。",
+    "en": "I need my card blocked.",
+    "alternatives": [
+      "I'd like to have my card blocked.",
+      "I want my card frozen.",
+      "I need to get my card blocked."
+    ],
+    "point": "have/get/need + 物 + 過去分詞",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 7,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_3m8g6f3j",
@@ -142,6 +176,23 @@
     }
   },
   {
+    "id": "c_4p4f7x2r",
+    "ja": "財布をなくさなければよかった。",
+    "en": "I wish I hadn't lost my wallet.",
+    "alternatives": [
+      "If only I hadn't lost my wallet.",
+      "I wish I'd never lost my wallet.",
+      "I shouldn't have lost my wallet."
+    ],
+    "point": "過去の後悔は wish + had (not) done",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5q8q6k3r",
     "ja": "財布がなくなった。",
     "en": "My wallet is gone.",
@@ -202,6 +253,23 @@
     }
   },
   {
+    "id": "c_7m4e9q2s",
+    "ja": "午前中ずっと、保留にされてる。",
+    "en": "I've been on hold all morning.",
+    "alternatives": [
+      "I've been on hold since this morning.",
+      "I've been stuck on hold all morning.",
+      "I've been waiting on hold all morning."
+    ],
+    "point": "all morning と続く状態は have been",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8b6w3e6n",
     "ja": "警察を呼んでください。",
     "en": "Please call the police.",
@@ -256,6 +324,23 @@
     }
   },
   {
+    "id": "c_9c5c5w2h",
+    "ja": "荷物は明日届くと言われました。",
+    "en": "They said it would arrive tomorrow.",
+    "alternatives": [
+      "I was told it would arrive tomorrow.",
+      "They told me it would arrive tomorrow.",
+      "They said it'd be here tomorrow."
+    ],
+    "point": "said の後は will が would に変わる",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 6,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_9c9m9y3w",
     "ja": "パスポートがないです。",
     "en": "My passport is missing.",
@@ -296,5 +381,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9y8t2v5s",
+    "ja": "確かにここに置いたんです。",
+    "en": "I'm sure I left it here.",
+    "alternatives": [
+      "I know I left it here.",
+      "I'm positive I left it here.",
+      "I'm certain I left it here."
+    ],
+    "point": "sure の後は that を省略して節をつなぐ",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 6,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

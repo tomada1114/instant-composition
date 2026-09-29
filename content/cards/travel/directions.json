@@ -1,5 +1,39 @@
 [
   {
+    "id": "c_2d7x6p5x",
+    "ja": "地図を持ってくればよかった。",
+    "en": "I wish I'd brought a map.",
+    "alternatives": [
+      "I should have brought a map.",
+      "If only I'd brought a map.",
+      "I wish I had brought a map."
+    ],
+    "point": "過去の後悔は wish + had done",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_2e2d4b4k",
+    "ja": "道を間違えたと気づいた。",
+    "en": "I realized I'd gone wrong.",
+    "alternatives": [
+      "I realized I had taken a wrong turn.",
+      "I realized I'd gone the wrong way.",
+      "I realized I'd taken the wrong road."
+    ],
+    "point": "気づく前の出来事は過去完了（I'd taken）",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2f6f7y3b",
     "ja": "10分歩きました。",
     "en": "I walked for ten minutes.",
@@ -82,6 +116,23 @@
     }
   },
   {
+    "id": "c_3r6d8q7s",
+    "ja": "あれが私の泊まるホテルです。",
+    "en": "That's the hotel where I'm staying.",
+    "alternatives": [
+      "That's the hotel I'm staying at.",
+      "That's the hotel that I'm staying at.",
+      "That's where I'm staying."
+    ],
+    "point": "場所を説明する where 節",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3w2v6t2j",
     "ja": "歩いて行けるよ。",
     "en": "You can walk there.",
@@ -124,6 +175,23 @@
     }
   },
   {
+    "id": "c_3z5r6x9c",
+    "ja": "道を聞いていれば、着けたのに。",
+    "en": "If I'd asked, I'd have arrived.",
+    "alternatives": [
+      "If I had asked, I'd have made it.",
+      "I'd have made it if I'd asked.",
+      "If I'd asked, I'd have gotten there."
+    ],
+    "point": "過去の仮定は had done と would have done",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4h3z6z3w",
     "ja": "もう一度お願いします。",
     "en": "Could you repeat that?",
@@ -163,6 +231,23 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5c9a4b7x",
+    "ja": "あの店は見つけにくいですよ。",
+    "en": "That shop's hard to spot.",
+    "alternatives": [
+      "That shop is hard to find.",
+      "It's hard to spot that shop.",
+      "That shop is easy to miss."
+    ],
+    "point": "形容詞 + to do。主語は to の後ろに繰り返さない",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 7,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5h4a2p3m",
@@ -242,6 +327,23 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6q5n6r8d",
+    "ja": "右に曲がると、駅が見えますよ。",
+    "en": "Turning right, you'll see the station.",
+    "alternatives": [
+      "If you turn right, you'll see the station.",
+      "When you turn right, you'll see the station.",
+      "Once you turn right, you'll see the station."
+    ],
+    "point": "分詞構文の主語は主節の主語（you）と同じ",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6r3r7e5t",

@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_3w8g7b8x",
+    "ja": "違う鍵をもらったに違いない。",
+    "en": "I must've got the wrong key.",
+    "alternatives": [
+      "I must have been given the wrong key.",
+      "They must have given me the wrong key."
+    ],
+    "point": "過去の確信は must have done",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3w8r8a6w",
     "ja": "Wi-Fi使える？",
     "en": "Can I use Wi-Fi?",
@@ -21,6 +37,23 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4d2c8c3g",
+    "ja": "予約したのは禁煙室でした。",
+    "en": "The room I booked was non-smoking.",
+    "alternatives": [
+      "I booked a non-smoking room.",
+      "What I booked was a non-smoking room.",
+      "The one I reserved was non-smoking."
+    ],
+    "point": "room の後ろに I booked を直接つなぐ",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_4t5c9h2j",
@@ -59,6 +92,23 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5a6m7t9s",
+    "ja": "部屋が思ったより狭い。",
+    "en": "The room's smaller than I expected.",
+    "alternatives": [
+      "This room is smaller than I thought.",
+      "This room isn't as big as I expected.",
+      "The room is smaller than I'd expected."
+    ],
+    "point": "than の後は I expected で十分（it は不要）",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 7,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5j9b9r8g",
@@ -181,6 +231,23 @@
     }
   },
   {
+    "id": "c_7g6j8h2g",
+    "ja": "遅れるようなら、連絡します。",
+    "en": "I'll call if I'm running late.",
+    "alternatives": [
+      "I'll let you know if I'm late.",
+      "If I'm running late, I'll call you.",
+      "I'll give you a call if I'm delayed."
+    ],
+    "point": "if 節は未来のことでも現在形（I'm）",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7g8s4v3r",
     "ja": "朝食は無料ですか？",
     "en": "Is breakfast free?",
@@ -220,6 +287,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8b6t2x7k",
+    "ja": "予約していれば、泊まれたのに。",
+    "en": "If I'd booked, I could've stayed.",
+    "alternatives": [
+      "If I had booked, I could have stayed.",
+      "I could've stayed if I'd booked."
+    ],
+    "point": "過去の仮定は had done と could have done",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8b8m8c9q",
@@ -296,5 +379,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9p5q8y8k",
+    "ja": "もっと静かな宿がよかった。",
+    "en": "I wish I'd chosen somewhere quieter.",
+    "alternatives": [
+      "I should have picked a quieter hotel.",
+      "If only I'd chosen a quieter hotel.",
+      "I wish I'd chosen a quieter place."
+    ],
+    "point": "過去の後悔は wish + had done",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 7,
+    "grammar": ["wishes-regrets", "comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]
