@@ -13,7 +13,13 @@
     "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dd065f7d7c33b36299e6ed547112ba4d685e181348ce3c0f84eecc72cda02a77",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3a7c3u7z",
@@ -139,39 +145,13 @@
     "level": 7,
     "grammar": ["past-perfect", "passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3x4p2n6x",
-    "ja": "うるさくて、私はフロントに部屋を替えてもらった。",
-    "en": "I had the front desk change my room.",
-    "alternatives": [
-      "I got the front desk to change my room.",
-      "I had the front desk move me to another room."
-    ],
-    "point": "「替えてもらう」は have＋人＋動詞の原形",
-    "topic": "travel",
-    "subtopic": "hotel",
-    "level": 8,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3x9f9f8c",
-    "ja": "フロントは謝って、朝食を無料にしてくれた。",
-    "en": "The front desk apologized, giving us free breakfast.",
-    "alternatives": [
-      "The front desk apologized and gave us a free breakfast.",
-      "The front desk apologized, offering us a free breakfast."
-    ],
-    "point": "「謝って、〜してくれた」は apologized, giving で続ける",
-    "topic": "travel",
-    "subtopic": "hotel",
-    "level": 8,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f1a2a7bb0628adedc507c0b89fbe5793b68853bc8d1f466ab58d4be5b6fe1451",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4f8s9v3d",
@@ -187,7 +167,13 @@
     "level": 7,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:44e01dc2c1a6dcad1578836736229bd7d3a881d40efb50f4cbb0fb299bf5b714",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4g2p4j4f",
@@ -247,7 +233,13 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:08296437df91c415794c905134ba43e9ff0a6d0c68fd1f7bd81067de3e2d5164",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4y3h2a9c",
@@ -264,23 +256,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4z2v6c4e",
-    "ja": "シャワーが冷水しか出ません。誰か部屋まで来てもらえませんか？",
-    "en": "Could you send someone up? The shower only runs cold.",
-    "alternatives": [
-      "Could someone come up? The shower only runs cold.",
-      "Would you mind sending someone up? The shower only runs cold."
-    ],
-    "point": "send someone up で「人を部屋まで来させる」",
-    "topic": "travel",
-    "subtopic": "hotel",
-    "level": 10,
-    "grammar": ["phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:18a415c3ca63a73f892268ac58f22dcbed91aee5d2e02530ed9c10b633e25efa",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5c4p8f3a",
@@ -293,7 +275,13 @@
     "level": 6,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d1779c2df80972155ba15c42d17170d0b902a2daab2d541c3d87ed911aadee2b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6a9h3r6u",
@@ -309,7 +297,13 @@
     "level": 4,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d3061858f711d09cded16c4b9a4bae6623f64581180c0ffcd8c21967ba9b49c2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6t9h3m4k",
@@ -329,22 +323,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_7a4r5z8p",
-    "ja": "眺めのいい部屋を頼んだのに、駐車場しか見えません。",
-    "en": "I'd asked for a view, but it's a parking lot.",
-    "alternatives": [
-      "I requested a view, but it's a parking lot.",
-      "I'd requested a view, but this faces the lot."
-    ],
-    "point": "頼んだのは通される前なので過去完了 I'd asked",
-    "topic": "travel",
-    "subtopic": "hotel",
-    "level": 7,
-    "grammar": ["past-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_7g3f8b9z",
@@ -401,7 +379,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d7de24d6f8859ccfb7440d8560addcc2bccf24575c1b5cc16ad473fbffa41958",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9m6g9w4f",
@@ -417,6 +401,12 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a1b0f6087f8ac360616e06b29becc82bf971a8e44b6e837d565a367f270d19b6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]

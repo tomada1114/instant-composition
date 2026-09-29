@@ -10,23 +10,23 @@
     "point": "「まだ〜していない」は現在完了＋yet",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 5,
-    "grammar": ["present-perfect", "passive-voice"],
+    "level": 4,
+    "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_2g7v4j8a",
     "ja": "財布を盗まれたのは、改札のところだよ。",
-    "en": "It was at the gate that my wallet got stolen.",
+    "en": "It was at the turnstile that my wallet got stolen.",
     "alternatives": [
-      "The gate is where my wallet got stolen.",
-      "It was at the ticket gate that my wallet was stolen."
+      "The turnstile is where my wallet got stolen.",
+      "It was at the turnstiles that my wallet was stolen."
     ],
     "point": "強調したい場所を It was と that の間に挟む",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 10,
+    "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -42,7 +42,7 @@
     "point": "仮定の質問は If you were と would you で過去形にそろえる",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 7,
+    "level": 6,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -50,15 +50,15 @@
   {
     "id": "c_3d5a8s3f",
     "ja": "荷物を、もう2時間も待ってるんです。",
-    "en": "I've been waiting two hours for luggage.",
+    "en": "I've been waiting two hours for my luggage.",
     "alternatives": [
-      "I've been waiting for luggage for two hours.",
-      "I've waited two hours for my bag already."
+      "I've waited two hours for my luggage.",
+      "I've been waiting two hours for my bags."
     ],
     "point": "今も続く待機は have been waiting",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 5,
+    "level": 4,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -66,10 +66,10 @@
   {
     "id": "c_3s5w6e8h",
     "ja": "向かいの男性が、私のバッグを持って行ったかも。",
-    "en": "The man facing me may have taken my bag.",
+    "en": "The man across from me may have taken my bag.",
     "alternatives": [
       "The guy across from me might have taken my bag.",
-      "The man across from me may have taken my bag."
+      "The man opposite me might have taken my bag."
     ],
     "point": "過去の推量は may/might + have + 過去分詞",
     "topic": "travel",
@@ -122,7 +122,7 @@
     "point": "断定せず seem で柔らかく伝え、Could you で頼む",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 8,
+    "level": 7,
     "grammar": ["hedging-softening", "requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -130,10 +130,10 @@
   {
     "id": "c_6d6w5e2d",
     "ja": "ホテルの人に報告書を書いてもらいたいです。",
-    "en": "I'd like to have them write a report.",
+    "en": "I'd like to have the staff write a report.",
     "alternatives": [
-      "I'd like the staff to write a report.",
-      "Could I have the hotel write a report?"
+      "I'd like the hotel staff to write a report.",
+      "I'd like the hotel to write a report."
     ],
     "point": "have＋人＋原形、get なら get＋人＋to do",
     "topic": "travel",
@@ -209,11 +209,11 @@
   },
   {
     "id": "c_6y9p9h2a",
-    "ja": "早く出ていれば、バスに乗れたのに。",
-    "en": "If we'd left sooner, we'd have caught it.",
+    "ja": "早く出ていれば、私たちはバスに乗れたのに。",
+    "en": "If we'd left sooner, we'd have caught the bus.",
     "alternatives": [
       "We'd have caught the bus if we'd left earlier.",
-      "If we had left earlier, we'd have caught it."
+      "If we'd left earlier, we could've caught the bus."
     ],
     "point": "過去の後悔は had＋過去分詞、would have＋過去分詞",
     "topic": "travel",
@@ -226,15 +226,15 @@
   {
     "id": "c_6z9b8v9w",
     "ja": "係員に荷物を送るよう頼んでくれない？",
-    "en": "Can you ask staff to send it?",
+    "en": "Can you ask staff to send my luggage?",
     "alternatives": [
-      "Could you ask the agent to send it?",
-      "Can you get staff to send it?"
+      "Can you get staff to send my luggage?",
+      "Can you have staff send my bags?"
     ],
     "point": "「〜するよう頼む」は ask＋人＋to do",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 5,
+    "level": 4,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -276,16 +276,16 @@
   },
   {
     "id": "c_8c7f2k4r",
-    "ja": "席が二重予約です。どこに座ればいいですか？",
+    "ja": "私たちの席が二重予約です。どこに座れば？",
     "en": "Our seats are double-booked. Where should we sit?",
     "alternatives": [
-      "Our seats have been double-booked. Where do we sit?",
+      "Our seats got double-booked. Where should we sit?",
       "We've been double-booked. Where should we sit?"
     ],
     "point": "「二重予約された」は受動態 be double-booked",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 6,
+    "level": 4,
     "grammar": ["passive-voice", "modal-obligation-advice"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -324,16 +324,16 @@
   },
   {
     "id": "c_9w6m6g2h",
-    "ja": "妻は、荷物に名札を付けておけばよかったと悔やんでる。",
+    "ja": "妻は荷物に名札を付けておけばと悔やんでる。",
     "en": "My wife wishes she'd tagged our luggage.",
     "alternatives": [
       "My wife regrets not tagging our luggage.",
-      "My wife wishes she had put name tags on our bags."
+      "My wife wishes she'd put tags on our bags."
     ],
     "point": "過去の後悔は wish の後を過去完了 (had + 過去分詞) に",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 9,
+    "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
     "stamps": {}

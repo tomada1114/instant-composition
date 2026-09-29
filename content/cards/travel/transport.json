@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2d5f5t9p",
+    "ja": "こんなに混んだ電車は、生まれて初めて見たよ。",
+    "en": "Never in my life have I seen a train this packed.",
+    "alternatives": [
+      "I've never seen a train this packed in my life.",
+      "This is the most packed train I've ever seen."
+    ],
+    "point": "Never を文頭に出すと have I seen と語順が倒置する",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2v2w7m5d",
     "ja": "私たち、早く出ていればバスに乗れたのに。",
     "en": "If we'd left earlier, we'd have caught the bus.",
@@ -79,22 +95,6 @@
     "subtopic": "transport",
     "level": 4,
     "grammar": ["indirect-questions", "imperatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4a4w2p5c",
-    "ja": "バスは遅れた上に、私たちを素通りしていった。",
-    "en": "Not only was the bus late, it drove right past us.",
-    "alternatives": [
-      "The bus wasn't just late; it drove right past us.",
-      "Not only was the bus late, it didn't even stop for us."
-    ],
-    "point": "Not only の後は was the bus と語順が倒置する",
-    "topic": "travel",
-    "subtopic": "transport",
-    "level": 10,
-    "grammar": ["inversion"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -256,22 +256,6 @@
     "stamps": {}
   },
   {
-    "id": "c_7m4m7v8k",
-    "ja": "往復切符を2枚と路線図を1枚ください。",
-    "en": "Two round-trip tickets and a map, please.",
-    "alternatives": [
-      "I'd like two round-trip tickets and a map.",
-      "Can I have two round-trips and a map?"
-    ],
-    "point": "tickets は複数形、map には a を忘れずに",
-    "topic": "travel",
-    "subtopic": "transport",
-    "level": 5,
-    "grammar": ["articles-and-countability", "requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7v2w3k9b",
     "ja": "駅員さんに行き方を書いてもらった。",
     "en": "I got the staff to write down directions.",
@@ -348,6 +332,22 @@
     "subtopic": "transport",
     "level": 7,
     "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9j5k7a6k",
+    "ja": "切符をなくしました。再発行できますか？",
+    "en": "I lost my ticket. Can you reissue it?",
+    "alternatives": [
+      "I lost my ticket. Could I get another?",
+      "My ticket's gone. Can you replace it?"
+    ],
+    "point": "「なくした」は lost、「再発行する」は reissue",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["past-simple", "requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
