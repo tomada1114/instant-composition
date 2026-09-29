@@ -62,8 +62,10 @@ describe("the cards that can be dealt", () => {
   it("counts seen cards at any level and unseen ones only in the level band", () => {
     const cards = [
       makeCardMeta("seen-far", { level: 1 }),
-      makeCardMeta("new-in", { level: 6 }),
-      makeCardMeta("new-out", { level: 7 }),
+      makeCardMeta("new-below", { level: 4 }),
+      makeCardMeta("new-probe", { level: 7 }),
+      makeCardMeta("new-under", { level: 3 }),
+      makeCardMeta("new-over", { level: 8 }),
       makeCardMeta("other-topic", { topic: "travel", level: 5 }),
       makeCardMeta("excluded", { level: 5 }),
     ];
@@ -74,7 +76,7 @@ describe("the cards that can be dealt", () => {
         exclude: new Set(["excluded"]),
       }),
     );
-    expect(available).toBe(2);
+    expect(available).toBe(3);
   });
 });
 
@@ -125,14 +127,33 @@ describe("the mix of review and new cards", () => {
     expect(deck).toMatchObject({ reviewCount: 2, newCount: 8, shortage: false });
   });
 
-  it("splits new cards 60/20/20 over the level and its two neighbours", () => {
+  it("splits new cards 50/20/20/10 over the level, its two neighbours and a probe two above", () => {
     const cards = [
       ...cell("a", 10, { level: 4 }),
       ...cell("b", 10, { level: 5 }),
       ...cell("c", 10, { level: 6 }),
+      ...cell("d", 10, { level: 7 }),
+      ...cell("e", 10, { level: 8 }),
     ];
     const levels = levelsOf(composed({ cards }).cardIds, cards).sort();
-    expect(levels).toStrictEqual([4, 4, 5, 5, 5, 5, 5, 5, 6, 6]);
+    expect(levels).toStrictEqual([4, 4, 5, 5, 5, 5, 5, 6, 6, 7]);
+  });
+
+  it("deals no probe in a deck too small for a tenth of it", () => {
+    const cards = [
+      ...cell("a", 10, { level: 4 }),
+      ...cell("b", 10, { level: 5 }),
+      ...cell("c", 10, { level: 6 }),
+      ...cell("d", 10, { level: 7 }),
+    ];
+    const levels = levelsOf(composed({ size: 9, cards }).cardIds, cards);
+    expect(levels).not.toContain(7);
+  });
+
+  it("makes up the level from the probe only when the level and its neighbours run out", () => {
+    const cards = [...cell("b", 3, { level: 5 }), ...cell("d", 10, { level: 7 })];
+    const levels = levelsOf(composed({ cards }).cardIds, cards).sort();
+    expect(levels).toStrictEqual([5, 5, 5, 7, 7, 7, 7, 7, 7, 7]);
   });
 
   it("borrows a missing band's share from the level first", () => {
@@ -321,7 +342,7 @@ describe("weak grammar concepts", () => {
 
   it("draw nothing from outside the level band", () => {
     const deck = composed({
-      cards: [...plain, ...cell("w", 3, { concepts: [WEAK], level: 7 })],
+      cards: [...plain, ...cell("w", 3, { concepts: [WEAK], level: 8 })],
       weakConcepts: [WEAK],
     });
     expect(deck).toMatchObject({ weakCount: 0, weakConcepts: [] });

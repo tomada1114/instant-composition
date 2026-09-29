@@ -1,11 +1,18 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  compose,
+  decideAnswers,
   decideClose,
   decideLevel,
+  seededRandom,
+  type AnswerInput,
+  type CardFacts,
+  type CardMeta,
   type CloseState,
   type DifficultyAnswer,
   type ItemProgress,
+  type LearnerStats,
   type ReviewEntry,
 } from "@instant-composition/domain";
 
@@ -17,6 +24,7 @@ import {
   makeRound,
   makeStats,
 } from "./application-fixtures";
+import { makeCardMeta } from "./domain-fixtures";
 
 const LEVEL_5 = { level: 5, reason: "placement" as const, roundId: "p0", at: 0 };
 
@@ -137,9 +145,9 @@ describe("decideClose", () => {
     expect(again.outcome.placement).toStrictEqual({ level: 4, first: false });
   });
 
-  it("moves the level up after a window of fast correct answers, and starts the window over", () => {
+  it("moves the level up after fast correct answers a level above, keeping the window", () => {
     const window: DifficultyAnswer[] = Array.from({ length: 20 }, (_, index) => ({
-      level: 5,
+      level: 5 + (index % 2),
       result: "ok",
       elapsedMs: 1_000,
       limitMs: 8_000,
@@ -152,7 +160,23 @@ describe("decideClose", () => {
 
     expect(closed.outcome.difficulty).toStrictEqual({ change: "up", level: 6 });
     expect(closed.stats.level).toMatchObject({ level: 6, reason: "up" });
-    expect(closed.stats.levelWindow).toStrictEqual([]);
+    expect(closed.stats.levelWindow).toStrictEqual(window);
+  });
+
+  it("starts the window over when a placement measures the level", () => {
+    const levelWindow: DifficultyAnswer[] = [
+      { level: 5, result: "ok", elapsedMs: 1, limitMs: 8_000, answeredAt: 1 },
+    ];
+    const round = makeRound({ kind: "placement", deck: ["c1"], firstPass: 1 });
+    const placed = decideClose(
+      state({
+        round,
+        reviews: [first("c1", "ok", 1_000, 5)],
+        stats: makeStats({ level: LEVEL_5, levelWindow }),
+      }),
+      50,
+    );
+    expect(placed.stats.levelWindow).toStrictEqual([]);
   });
 
   it("keeps the level and its window when the window says nothing yet", () => {
@@ -173,7 +197,7 @@ describe("decideClose", () => {
   describe("with a level picked by hand", () => {
     const CHOSEN_5 = { level: 5, reason: "chosen" as const, roundId: null, at: 0 };
     const strong: DifficultyAnswer[] = Array.from({ length: 30 }, (_, index) => ({
-      level: 5,
+      level: 5 + (index % 2),
       result: "ok",
       elapsedMs: 1_000,
       limitMs: 8_000,
@@ -316,4 +340,138 @@ describe("decideClose", () => {
       ).outcome.continueToday,
     ).toBe(true);
   });
+});
+
+/** How a learner answers a card: right within half its pace, right but slower, or wrong. */
+type Answer = "fast" | "slow" | "miss";
+
+/** Forty unseen cards at each level 1..10, eight words each, so a card's pace is eight seconds. */
+const LADDER: readonly CardMeta[] = Array.from({ length: 10 }, (_, index) =>
+  Array.from({ length: 40 }, (_, n) =>
+    makeCardMeta(`L${String(index + 1)}-${String(n + 1)}`, {
+      level: index + 1,
+      subtopic: `s${String(n % 4)}`,
+    }),
+  ),
+).flat();
+const FACTS = new Map<string, CardFacts>(
+  LADDER.map((card) => [card.id, { ...card, prompt: `${card.id}の文` }]),
+);
+const HOUR = 3_600_000;
+
+/**
+ * Plays `rounds` rounds of `size` new cards from level `start`, through the
+ * real deal, answer and close, and returns the level after each round.
+ */
+function playRounds(
+  start: number,
+  rounds: number,
+  answer: (card: CardMeta, index: number, round: number) => Answer,
+  size = 10,
+): number[] {
+  let stats: LearnerStats = makeStats({
+    level: { level: start, reason: "placement", roundId: "p0", at: 0 },
+  });
+  const answered = new Set<string>();
+  const levels: number[] = [];
+  for (let index = 0; index < rounds; index += 1) {
+    const startedAt = (index + 1) * HOUR;
+    const dealt = compose({
+      size,
+      today: "2026-09-22",
+      level: stats.level?.level ?? start,
+      topics: ["work"],
+      focus: [],
+      weakConcepts: [],
+      cards: LADDER,
+      states: new Map(),
+      exclude: answered,
+      seed: `round-${String(index)}`,
+    });
+    if (!dealt.ok) throw new Error(`Round ${String(index)} could not be dealt.`);
+    const round = makeRound({
+      id: `r${String(index)}`,
+      deck: dealt.value.cardIds,
+      startedAt,
+    });
+    const inputs = dealt.value.cardIds.map((cardId, position): AnswerInput => {
+      const card = LADDER.find((candidate) => candidate.id === cardId);
+      if (card === undefined) throw new Error(`${cardId} is not on the ladder.`);
+      const given = answer(card, position, index);
+      answered.add(cardId);
+      return {
+        id: `${round.id}:${cardId}`,
+        roundId: round.id,
+        cardId,
+        pass: "first",
+        result: given === "miss" ? "ng" : "ok",
+        elapsedMs: given === "fast" ? 2_000 : 6_000,
+        answeredAt: startedAt + position + 1,
+      };
+    });
+    const now = startedAt + 60_000;
+    const taken = decideAnswers(
+      {
+        round,
+        stats,
+        portion: undefined,
+        day: undefined,
+        items: new Map(),
+        recorded: new Set(),
+      },
+      inputs,
+      FACTS,
+      now,
+    );
+    if (taken === undefined) throw new Error(`Round ${String(index)} took no answers.`);
+    stats = decideClose(
+      {
+        round: taken.round,
+        stats: taken.stats,
+        portion: undefined,
+        day: taken.day,
+        items: new Map(taken.items.map((item) => [item.item.id, item])),
+        reviews: taken.entries,
+        tallies: new Map(),
+        catalog: {
+          topicOrder: ["work"],
+          chosen: ["work"],
+          shown: new Set(FACTS.keys()),
+          placeOf: () => undefined,
+        },
+      },
+      now,
+    ).stats;
+    levels.push(stats.level?.level ?? start);
+  }
+  return levels;
+}
+
+/** Right and fast on every card up to `ability`, wrong on every card above it. */
+const upTo =
+  (ability: number, below: Answer = "fast") =>
+  (card: CardMeta): Answer =>
+    card.level <= ability ? below : "miss";
+
+describe("the level over rounds of ten new cards", () => {
+  it("climbs from 3 to a learner's level 6 within four rounds, and stays there", () => {
+    expect(playRounds(3, 8, upTo(6))).toStrictEqual([3, 4, 5, 6, 6, 6, 6, 6]);
+  });
+
+  it("comes down from 7 to the level a struggling learner clears within three rounds, and stays there", () => {
+    expect(playRounds(7, 8, upTo(4, "slow"))).toStrictEqual([6, 5, 4, 4, 4, 4, 4, 4]);
+  });
+
+  it.each(Array.from({ length: 40 }, (_, seed) => seed))(
+    "moves at most one step on a round of mixed answers (seed %i)",
+    (seed) => {
+      const random = seededRandom(`mixed-${String(seed)}`);
+      const mixed = (): Answer => {
+        const roll = random();
+        return roll < 0.35 ? "miss" : roll < 0.7 ? "slow" : "fast";
+      };
+      const [after] = playRounds(5, 1, mixed);
+      expect(Math.abs((after ?? 0) - 5)).toBeLessThanOrEqual(1);
+    },
+  );
 });

@@ -44,10 +44,16 @@ export function pickBalanced(
   return picked;
 }
 
+/** Whether a new card at `cardLevel` may be dealt at `level`: one below it up to the probe. */
+export function inLevelBand(cardLevel: number, level: number): boolean {
+  return cardLevel >= level - 1 && cardLevel <= level + TUNING.mix.probeStep;
+}
+
 /**
- * `count` new cards split over the level and its two neighbours by
- * `TUNING.mix.levelShare`, the remainder going to the level itself; a band
- * that runs short is made up from the level first, then its neighbours.
+ * `count` new cards split over the level, its two neighbours and the probe
+ * above them by `TUNING.mix.levelShare`, the remainder going to the level
+ * itself; a band that runs short is made up from the level first, then its
+ * neighbours, then the probe.
  */
 export function pickByLevel(
   pool: readonly CardMeta[],
@@ -55,13 +61,15 @@ export function pickByLevel(
   level: number,
   state: PickState,
 ): CardMeta[] {
-  const { below, above } = TUNING.mix.levelShare;
+  const { below, above, probe } = TUNING.mix.levelShare;
   const belowCount = Math.floor(count * below);
   const aboveCount = Math.floor(count * above);
+  const probeCount = Math.floor(count * probe);
   const quotas: readonly (readonly [number, number])[] = [
-    [level, count - belowCount - aboveCount],
+    [level, count - belowCount - aboveCount - probeCount],
     [level - 1, belowCount],
     [level + 1, aboveCount],
+    [level + TUNING.mix.probeStep, probeCount],
   ];
   const atLevel = (target: number): CardMeta[] =>
     pool.filter((card) => card.level === target);

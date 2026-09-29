@@ -573,8 +573,8 @@ describe("updateLevel", () => {
     const levels = Object.values(round.cards).map((card) => card.level);
     expect(round.kind).toBe("today");
     expect(levels).toHaveLength(10);
-    expect(levels.every((level) => level >= 4 && level <= 6)).toBe(true);
-    expect(levels.filter((level) => level === 5).length).toBeGreaterThanOrEqual(6);
+    expect(levels.every((level) => level >= 4 && level <= 7)).toBe(true);
+    expect(levels.filter((level) => level === 5).length).toBeGreaterThanOrEqual(5);
   });
 
   it("keeps a level picked by hand where it is after thirty answers, then adjusts from it once switched to auto", async () => {
@@ -599,10 +599,11 @@ describe("updateLevel", () => {
       ok: true,
       value: { mode: "auto", level: 5, toeic: "730" },
     });
+    // Three rounds' probes answered right and fast clear level 7 as well as 6.
     const moved = await playFast(h, "extra", "x2", NOON + 6 * MINUTE);
-    expect(moved.summary.difficulty).toStrictEqual({ change: "up", toeic: "800" });
+    expect(moved.summary.difficulty).toStrictEqual({ change: "up", toeic: "860" });
     expect((await store.stats())?.value.level).toMatchObject({
-      level: 6,
+      level: 7,
       reason: "up",
     });
   });

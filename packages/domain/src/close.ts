@@ -151,7 +151,8 @@ export function decideClose(state: CloseState, now: number): CloseChange {
       points: stats.points + earned,
       completedDays,
       level: level.entry ?? stats.level,
-      levelWindow: level.entry === null ? stats.levelWindow : [],
+      // Only a placement starts the window over: a move keeps the answers that made it.
+      levelWindow: level.placement === null ? stats.levelWindow : [],
       ...(level.mode === null ? {} : { levelMode: level.mode }),
       titles: [...stats.titles, ...titles],
       openRound: stats.openRound?.id === round.id ? null : stats.openRound,

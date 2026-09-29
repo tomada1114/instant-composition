@@ -325,7 +325,7 @@ describe("decideAnswers", () => {
     expect(change?.portion).toBeUndefined();
   });
 
-  it("keeps the newest window of first passes near the current level, and none before a level", () => {
+  it("keeps the newest window of first passes in the level's band, and none before a level", () => {
     const levelled = makeStats({
       level: { level: 4, reason: "placement", roundId: "p1", at: 1 },
       levelWindow: Array.from({ length: 30 }, (_, index) => ({
@@ -347,6 +347,18 @@ describe("decideAnswers", () => {
       CARDS,
       99,
     );
+    const at = (level: number) =>
+      decideAnswers(
+        state({
+          stats: {
+            ...levelled,
+            level: { level, reason: "placement", roundId: "p1", at: 1 },
+          },
+        }),
+        inputs,
+        CARDS,
+        99,
+      );
     const none = decideAnswers(state(), inputs, CARDS, 99);
 
     expect(near?.stats.levelWindow).toHaveLength(30);
@@ -355,6 +367,9 @@ describe("decideAnswers", () => {
     expect(far?.stats.levelWindow).toHaveLength(30);
     expect(far?.stats.levelWindow.at(-1)?.answeredAt).toBe(29);
     expect(none?.stats.levelWindow).toStrictEqual([]);
+    // Level 5 cards are the probe two above level 3, and two below level 7.
+    expect(at(3)?.stats.levelWindow.at(-1)).toMatchObject({ level: 5, answeredAt: 99 });
+    expect(at(7)?.stats.levelWindow.at(-1)?.answeredAt).toBe(29);
   });
 
   it("sorts a late answer into the window by its time, so the newest are kept", () => {

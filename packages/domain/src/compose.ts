@@ -1,4 +1,5 @@
 import {
+  inLevelBand,
   pickByLevel,
   pickFocus,
   pickWeak,
@@ -50,7 +51,7 @@ type AvailabilityInput = Pick<
   "level" | "topics" | "cards" | "states" | "exclude"
 >;
 
-/** Seen cards at any level, and unseen ones within one level of the current one. */
+/** Seen cards at any level, and unseen ones in the level's band. */
 function candidates(input: AvailabilityInput): { seen: CardMeta[]; fresh: CardMeta[] } {
   const inScope = input.cards.filter(
     (card) => input.topics.includes(card.topic) && !input.exclude.has(card.id),
@@ -58,7 +59,7 @@ function candidates(input: AvailabilityInput): { seen: CardMeta[]; fresh: CardMe
   return {
     seen: inScope.filter((card) => input.states.has(card.id)),
     fresh: inScope.filter(
-      (card) => !input.states.has(card.id) && Math.abs(card.level - input.level) <= 1,
+      (card) => !input.states.has(card.id) && inLevelBand(card.level, input.level),
     ),
   };
 }

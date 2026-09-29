@@ -31,13 +31,24 @@ export const TUNING = {
     focusShareOfNew: 0.5,
     /** Taken after the focus share, from the learner's weak grammar concepts. */
     weakShareOfNew: 0.3,
-    levelShare: { same: 0.6, below: 0.2, above: 0.2 },
+    /**
+     * New cards by level: the level, one below, one above, and a probe
+     * `probeStep` above, the only new cards that show a level past the next.
+     */
+    levelShare: { same: 0.5, below: 0.2, above: 0.2, probe: 0.1 },
+    probeStep: 2,
   },
   /** Days until the next review, indexed by box 0..5. */
   leitnerIntervalsDays: [1, 2, 4, 7, 14, 30],
+  /**
+   * The level the answers show, judged card level by card level over the
+   * newest `window` first-pass answers: a level with at least `minPerLevel` of
+   * them is cleared at `upOkRate` correct with `upFastRate` of those fast, and
+   * failed under `downOkRate` correct. See `suggestLevel`.
+   */
   difficulty: {
     window: 30,
-    minAnswers: 20,
+    minPerLevel: 3,
     upOkRate: 0.85,
     upFastRate: 0.5,
     downOkRate: 0.6,
