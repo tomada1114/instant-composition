@@ -21,7 +21,7 @@ export function HomeSkeleton(): ReactElement {
   return (
     <main
       aria-hidden
-      className="mx-auto box-content flex min-h-[calc(100dvh-1.75rem)] max-w-column flex-col gap-10 px-4 pt-4 pb-3"
+      className="mx-auto box-content flex min-h-[calc(var(--column-height)-1.75rem)] max-w-column flex-col gap-10 px-4 pt-4 pb-3"
     >
       {shown ? (
         <>

@@ -244,7 +244,10 @@ above and below each. Section titles are muted `label`s.
 - `sheet`: rises from the bottom; `bg-popover`, top corners `rounded-t-card`, a 70%
   canvas scrim behind, 28 above its title and 24 between blocks. Buttons stack
   vertically with the main action at the bottom. The pause sheet lists the drill's keys
-  between a hairline and its buttons — only in keys mode.
+  between a hairline and its buttons — only in keys mode. On a `wide` window it opens
+  centered in the window instead (`wide:items-center`), every corner rounded
+  (`wide:rounded-card`), over the same scrim: a bar at the bottom of a tall window sits
+  far from the screen it pauses.
 - `info-tip`: a 44 hit area around a 16 ⓘ glyph beside a section title; pressing it
   opens one muted `caption` line under the title in place (`aria-expanded`). For a
   definition someone needs once: what counts as mastered, how the streak counts.

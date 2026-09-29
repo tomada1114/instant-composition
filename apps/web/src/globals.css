@@ -180,6 +180,25 @@
 @custom-variant keys (&:where([data-keys] *));
 
 /*
+ * A PC or tablet window: wide and tall both. The height term is what keeps a
+ * phone on its side (about 932 × 430) on the phone layout. Above it the
+ * column stops at 720 tall and sits centered, `--column-inset` above and
+ * below, so a screen keeps a phone's shape instead of stretching to the
+ * window. A screen sizes itself from `--column-height`, never from `dvh`.
+ */
+@custom-variant wide (@media (width >= 48rem) and (height >= 40rem));
+
+:root {
+  --column-height: 100dvh;
+  --column-inset: 0px;
+
+  @variant wide {
+    --column-height: min(100dvh, 45rem);
+    --column-inset: calc((100dvh - var(--column-height)) / 2);
+  }
+}
+
+/*
  * Preflight resets headings to body text and links to `inherit`, so a bare
  * `<h1>` or `<a>` renders undifferentiated unless something restores it. Kept
  * in `@layer base` so a screen's own utilities still win. Paragraph margins
@@ -194,6 +213,7 @@
 
   body {
     @apply bg-background font-sans text-body text-foreground tabular-nums antialiased;
+    padding-block: var(--column-inset);
   }
 
   h1 {

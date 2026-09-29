@@ -36,7 +36,7 @@ export function HomeScreen({
   const streak = "streak" in state ? state.streak : undefined;
 
   return (
-    <main className="mx-auto box-content flex min-h-[calc(100dvh-1.75rem)] max-w-column flex-col gap-10 px-4 pt-4 pb-3">
+    <main className="mx-auto box-content flex min-h-[calc(var(--column-height)-1.75rem)] max-w-column flex-col gap-10 px-4 pt-4 pb-3">
       <header className="flex items-center justify-between">
         <Eyebrow>{t("brand")}</Eyebrow>
         <nav className="flex gap-2">
