@@ -123,7 +123,13 @@
     "level": 6,
     "grammar": ["infinitives", "present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4a42e5446047e2d9c4c86be4aac3820d68f32e21afaa3669f26569872710321a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3z3m5z4f",
@@ -428,22 +434,6 @@
     }
   },
   {
-    "id": "c_7j8h6b5r",
-    "ja": "私が君の立場なら、燃え尽きてるだろうな。",
-    "en": "If I were you, I'd be burned out.",
-    "alternatives": [
-      "I'd be burned out in your shoes.",
-      "I'd be totally burned out in your place."
-    ],
-    "point": "仮定は were、結果は would＋動詞の原形",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 6,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7m3v7e8c",
     "ja": "君が入院してたなんて、全然知らなかったよ。",
     "en": "I had no idea you'd been hospitalized.",
@@ -457,7 +447,13 @@
     "level": 6,
     "grammar": ["past-perfect", "noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ddf8df99755473594086ebc79963832ae118fbdd4b3d3a6cecedd9ed3fde6c90",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7w3x3d4p",
