@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_2v6m6z6w",
+    "ja": "友だちに促され、ヨガを試した。",
+    "en": "A friend got me to try yoga.",
+    "alternatives": [
+      "A friend talked me into trying yoga.",
+      "A friend pushed me to try yoga."
+    ],
+    "point": "get + 人 + to do で「〜してもらう・させる」",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 8,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:969863eb0caa5e7f74af32c744d8e3619858a201b756fd2213af1d5378bd57ca",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3g2j4g6w",
     "ja": "近くに本屋があるよ。",
     "en": "There's a bookstore nearby.",
@@ -82,6 +104,50 @@
     }
   },
   {
+    "id": "c_4k3c2c6x",
+    "ja": "続けていたら、今ごろ上手なのに。",
+    "en": "If I'd kept it up, I'd be good now.",
+    "alternatives": [
+      "If I'd kept at it, I'd be good now.",
+      "I'd be good by now if I'd kept practicing."
+    ],
+    "point": "過去の仮定 + 今の結果は had done と would do",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:04c7a040c257b6eded88572f1dd8dfac80fffb4814e0957fa7d620dd13e16cdf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4k3t7h3f",
+    "ja": "暇なら毎週ハイキングに行くのに。",
+    "en": "If I had time, I'd hike weekly.",
+    "alternatives": [
+      "If I were free, I'd go hiking every week.",
+      "I'd go hiking weekly if I had the time."
+    ],
+    "point": "if 節は過去形、主節は would + 原形",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 9,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2a904fa3d5871011465140c4cac00a844b316f9e46a14994f03d5f76e3dcec58",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_5e6y6x3z",
     "ja": "雨でも走るつもりだよ。",
     "en": "I'll run even if it rains.",
@@ -114,6 +180,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:a7bb3c7f37cbcba0d1bb5447f1dbf8a270fe66f682283fe3b8a8d6fc6f7a2790",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5r4k4y7y",
+    "ja": "今読んでる本は、めちゃ面白いよ。",
+    "en": "The book I'm reading is gripping.",
+    "alternatives": [
+      "The book I'm reading is a real page-turner.",
+      "The book I'm reading is fascinating."
+    ],
+    "point": "「読んでる本」は目的格の関係詞を省略",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 8,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:148c955e2cf3f5f1eef2bd6db714aab0f7e1d2c6390cdc450464f44a9d6c02f6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5t2e8d8p",
+    "ja": "妻に誘われて、釣りにはまった。",
+    "en": "My wife got me hooked on fishing.",
+    "alternatives": [
+      "My wife got me into fishing.",
+      "Thanks to my wife, I got hooked on fishing."
+    ],
+    "point": "get + 人 + hooked on で「はまらせる」",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 8,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7a13a9213ae520fef7572ff927816e26a15ba083e8fbcaea12cb241aa4294cd3",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -218,6 +328,28 @@
     }
   },
   {
+    "id": "c_6w2r8e3d",
+    "ja": "彼は相当練習を積んだに違いない。",
+    "en": "He must have practiced like crazy.",
+    "alternatives": [
+      "He must have put in countless hours.",
+      "He must have logged countless hours of practice."
+    ],
+    "point": "must have + 過去分詞は過去への確信。like crazy は「猛烈に」",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c981e4483db5db4a4475ecbf6ce87cd542e7904211bb94544fb2ed715d2ea780",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_7a6e6z8j",
     "ja": "先週、釣りに行ったよ。",
     "en": "I went fishing last week.",
@@ -231,6 +363,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:bba5ec506f26ebbb4284ea3193d43a4455f9bd56d1d1b6e09b8d83c490a4f8a4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7d4f8a4y",
+    "ja": "陶芸を勧めてくれたのは、姉だった。",
+    "en": "It was my sister who suggested pottery.",
+    "alternatives": [
+      "It was my sister who got me into pottery.",
+      "My sister was the one who suggested pottery."
+    ],
+    "point": "It was ~ who で「人」を強調する",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:be22b65977627c891bc5d0678c9ada020c374e3f97e521114ef74ae73f86d5b1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7n6c5a5y",
+    "ja": "知ってたら、参加したのに。",
+    "en": "If I'd known, I'd have joined.",
+    "alternatives": [
+      "If I had known, I'd have joined.",
+      "Had I known, I'd have joined in."
+    ],
+    "point": "過去の事実の逆は If＋had 過去分詞、would have 過去分詞",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 7,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:903139c6ca45bb9eae5c688e3dcefa72575b2eae2fc2e8edb253a2de8a9edeba",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -322,6 +498,50 @@
     }
   },
   {
+    "id": "c_8x3k8g2x",
+    "ja": "もっと練習してたら、勝てたのに。",
+    "en": "If I'd practiced more, I'd have won.",
+    "alternatives": [
+      "If I'd trained harder, I'd have won.",
+      "Had I practiced more, I'd have won."
+    ],
+    "point": "過去の仮定は if + had + 過去分詞",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0099367cf00eea3530a5a97a62d9c4031c6224c4dbc2516a2d973790c5e5cb41",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8x3y7z8t",
+    "ja": "誘ってくれてもよかったのに。",
+    "en": "You could've invited me along.",
+    "alternatives": [
+      "You could have at least invited me.",
+      "You might have asked me to come."
+    ],
+    "point": "could have + 過去分詞で「〜してくれてもよかった」と不満",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a8ab9fd5584ce6e0ff5742b10155c12d58ee49581de0f3592cb074d88298c2cb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8x9f8w9r",
     "ja": "日曜の陶芸教室に通ってる。",
     "en": "I take a Sunday pottery class.",
@@ -402,6 +622,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:539ca72b3e7eb2baaf9e9abc9bf61d0ed578bd96c026644c08722bf463031e82",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9k5k4x2x",
+    "ja": "私が合唱団やめたって、誰が言ったの？",
+    "en": "Who said I'd quit the choir?",
+    "alternatives": [
+      "Who told you I'd quit the choir?",
+      "Who said I had quit the choir?"
+    ],
+    "point": "quit の時制は主節に合わせて I'd quit",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1b5325276049505ef1765a70e63e52274910abb5ff1cd4dc7f407303f9fd0e83",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9k6s5y9j",
+    "ja": "もっと早く楽器を始めればよかった。",
+    "en": "I wish I'd taken up an instrument earlier.",
+    "alternatives": [
+      "If only I'd taken up an instrument sooner.",
+      "I wish I had started playing an instrument sooner."
+    ],
+    "point": "「始める」趣味は take up。過去の後悔は wish + had done",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 10,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:42f47bab8643d57355a19f42a97dfef81d7fdd967230e930e0ae6af719eb6dbd",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

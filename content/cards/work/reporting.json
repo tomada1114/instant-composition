@@ -1,5 +1,71 @@
 [
   {
+    "id": "c_2a2d3e2e",
+    "ja": "原因は彼が見つけたバグだと思う。",
+    "en": "I think it's the bug he found.",
+    "alternatives": [
+      "I think the bug he found is the cause.",
+      "I think the bug he found caused it."
+    ],
+    "point": "I think の中に the bug he found が入る",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4d407c3ac21ebc2695f8fc81efed1fa9c8780ed70bfdcae9d0596e26bd061662",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2a7q4d6p",
+    "ja": "業者が抜けて以来、遅れてます。",
+    "en": "We've slipped since the vendor left.",
+    "alternatives": [
+      "We've fallen behind since the vendor left.",
+      "We've been behind since the vendor dropped out."
+    ],
+    "point": "since の後ろは過去形、主節は現在完了",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f9690cf4c8570709426c63c1b13b69ed49998a3fccdb8e37302ff57120065076",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2e9e8s7p",
+    "ja": "私が報告してたら、こうならなかった。",
+    "en": "If I'd flagged it, this wouldn't have happened.",
+    "alternatives": [
+      "Had I flagged it, this wouldn't have happened.",
+      "If I'd reported it, this wouldn't have happened."
+    ],
+    "point": "過去の仮定は if + had + 過去分詞",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 7,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:20c6728fa286f1e67ad9bf5f12e74ab9d6557d2e993c38348ec93941473adffc",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2k3z7u4h",
     "ja": "私、問題があります。",
     "en": "I have a problem.",
@@ -19,6 +85,28 @@
     }
   },
   {
+    "id": "c_2s3k7u5f",
+    "ja": "私があなたなら、上司に話します。",
+    "en": "If I were you, I'd tell your boss.",
+    "alternatives": [
+      "If I were you, I'd talk to your boss.",
+      "I'd tell your boss, if I were you."
+    ],
+    "point": "If I were you は仮定法の定番",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 10,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:76df0ecdd4013b42ff697ec5952aad6d4c9855c9c2e7e715f433cdacac17bf3c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2v5y9f3f",
     "ja": "スライドを作成中です。",
     "en": "I'm making the slides.",
@@ -32,6 +120,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:d477dda4a5246a4d7743ad419b65f1bb7e09fd0e3262d510c777eb67aa734240",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3j2v4m3g",
+    "ja": "予算案は棚上げだと、彼女に言われた。",
+    "en": "She said the budget was shelved.",
+    "alternatives": [
+      "She told me the budget had been shelved.",
+      "She said the budget was put on ice."
+    ],
+    "point": "「棚上げ」は shelve。said の後ろは過去形にそろえる",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 7,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:90c59bd549c79ff28f1f926d8836818ebe3acdb1c02c371fdb597c113360eced",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -74,6 +184,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:bbda449dd1a247a595363854a5c7f5673002973976c67849b810808239a29be8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4d5d8n2k",
+    "ja": "未定ですが、少し遅れそうです。",
+    "en": "It looks like we might slip a little.",
+    "alternatives": [
+      "We may be running a little behind.",
+      "It seems we could fall slightly behind."
+    ],
+    "point": "might と a little で断定を避ける",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:06c67c319f1d5d4382dc687f1a0a564ad749cb3d5d3d0553ca3b9bcfa9ddaad8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4d6x5q9s",
+    "ja": "人手があれば、間に合うのに。",
+    "en": "If we had help, we'd make it.",
+    "alternatives": [
+      "If we had another person, we could make it.",
+      "We'd make it if we had more help."
+    ],
+    "point": "今の仮定は if + 過去形、would + 原形",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 9,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1f3afed417a7e3dc020f337e7451c3a8abc1d1989606a3824d82e1299753b239",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -162,6 +316,28 @@
     }
   },
   {
+    "id": "c_5g4z4j2d",
+    "ja": "法務は来週連絡すると言ってた。",
+    "en": "Legal said they'd circle back next week.",
+    "alternatives": [
+      "Legal said they'd get back to us next week.",
+      "Legal said they'd follow up next week."
+    ],
+    "point": "said の後は will が would に変わる",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9887e951accd344da0649c47650715cb97a8772bccff05469c5663124d99776b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_5h9f4k4x",
     "ja": "原因が分かったので直します。",
     "en": "Knowing the cause, I'll fix it.",
@@ -220,6 +396,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:22ce162ad3878294e750c871b9e023173cb9dd9a0a3f702c0a6523995541a90e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6h7q5x3y",
+    "ja": "報告は金曜でもいいですか？",
+    "en": "Could I report back on Friday?",
+    "alternatives": [
+      "Is it okay if I update you on Friday?",
+      "Is Friday okay for the report?"
+    ],
+    "point": "許可を求めるときは Could I 〜？ が使える",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0c6ce998ffc27b2b69152693623486a0816404fd929f1dee048db1ce1399cc93",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -330,6 +528,51 @@
     }
   },
   {
+    "id": "c_8c4u7y9r",
+    "ja": "もっと早くお伝えすればよかった。",
+    "en": "I wish I'd told you sooner.",
+    "alternatives": [
+      "I wish I had told you earlier.",
+      "I wish I'd let you know sooner.",
+      "I should have told you sooner."
+    ],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5dc498b2133a73592d6b18008d6ee4397eff373401e5245ffa780b3faf21cf92",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8f3g2j2e",
+    "ja": "先方に承認してもらった。",
+    "en": "I got the client to sign off.",
+    "alternatives": [
+      "I had the client sign off on it.",
+      "I got the client to approve it."
+    ],
+    "point": "get + 人 + to 原形。sign off は承認する",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3a486350e2616daf4642692c0f45d12bf0e708b72392ccd16703fe3c7e4772ee",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8g8j9s3b",
     "ja": "作業は順調に進んでいます。",
     "en": "Things are coming along nicely.",
@@ -428,6 +671,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:d7168c3596cee0e040534a67fed3b7aac3773abc411c1d6eec96c57c71e07f42",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9m4u9h8p",
+    "ja": "遅れても、品質は落としません。",
+    "en": "Even if we slip, quality won't suffer.",
+    "alternatives": [
+      "Even if we're late, quality won't suffer.",
+      "Even if we fall behind, we won't cut quality."
+    ],
+    "point": "Even if は「たとえ〜でも」",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7dccbc6b6d1903c2b6938281672c789abfe6036ac210f80f9d2d8e0656fd025",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

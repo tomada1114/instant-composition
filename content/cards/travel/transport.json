@@ -38,6 +38,50 @@
     }
   },
   {
+    "id": "c_2u7n3m2d",
+    "ja": "私が疲れるのは、乗り換えの多さです。",
+    "en": "It's all the transfers that wear me out.",
+    "alternatives": [
+      "What wears me out is all the transfers.",
+      "The transfers are what wear me out."
+    ],
+    "point": "It's と that で挟んで強調。wear out はへとへとにする",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:733b1210d523fea07592bbaea276d2a84a6fbb5126cc233ce0f5fa9cae5abd2f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3j2h5n9z",
+    "ja": "電車は遅れた上に、運休になった。",
+    "en": "Not only was it late, it was canceled.",
+    "alternatives": [
+      "The train was not only late but also canceled.",
+      "On top of being late, it was canceled."
+    ],
+    "point": "Not only を前に出すと was が主語の前に来る",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dc92978799a2d38fcf9c10900cb4ed1b781c0ca5a98bd67f9848e7e556d0635d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4d4d7u2a",
     "ja": "切符を二枚ください。",
     "en": "Two tickets, please.",
@@ -140,6 +184,28 @@
     }
   },
   {
+    "id": "c_5n4c7q3e",
+    "ja": "外を見ていれば、降りられたのに。",
+    "en": "If I'd looked, I'd have gotten off.",
+    "alternatives": [
+      "I'd have gotten off if I'd looked.",
+      "If I'd looked up, I'd have made my stop."
+    ],
+    "point": "if + had + 過去分詞, would have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef08ff489b6934ab6844144dea3495923cc097c0fd4bc5ca2613fa59658d5477",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_5q3q2a6s",
     "ja": "これは京都に行きますか？",
     "en": "Does this go to Kyoto?",
@@ -200,6 +266,28 @@
     }
   },
   {
+    "id": "c_5w8m2k5f",
+    "ja": "あの運転手、いつ出発か知ってるかな。",
+    "en": "I wonder if he knows when we're leaving.",
+    "alternatives": [
+      "I wonder whether the driver knows when we leave.",
+      "I wonder if the driver knows when we're leaving."
+    ],
+    "point": "wonder if の中に when 節が入る",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2879b35eeb1a767fc98cc641c096bb7034301010c51ed2c7398406eeb8367306",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6b8m2k8k",
     "ja": "駅はどこですか？",
     "en": "Where is the station?",
@@ -213,6 +301,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:32b08c9edf5c3d83c62843f9d9373dae801a2589ef8905e64b638834aad9b444",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6t5a7q5r",
+    "ja": "駅員は、この電車は運休と言った。",
+    "en": "The staff said this train was canceled.",
+    "alternatives": [
+      "A staff member said this train was canceled.",
+      "The attendant told me this train had been canceled."
+    ],
+    "point": "said の後は時制を一つ過去側にずらす",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 9,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c114eaf1456252b68bd9e4d85e123ea117aaee8a700979be1819638620b3e42d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -254,6 +364,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:b767e45afc9a7fa02669b01953ef164fd9a34af4d50e1f88951103287079526f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6y4c9d7y",
+    "ja": "今必要なのは、タクシーです。",
+    "en": "What I need now is a taxi.",
+    "alternatives": [
+      "A taxi is what I need right now.",
+      "What I need right now is a cab."
+    ],
+    "point": "What I need is に続けて「必要なのは〜」",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4c5b2f69b67f1f7d9874e6127ee9e0ba29106b5a198f312fcb777f17032edc2b",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -315,6 +447,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:53eb39090c7c3db471ebd1b7673ff12ea4b6b42f03feb70e1682d320c4452b2c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7x4u9h5t",
+    "ja": "終バス逃して、タクシーで帰った。",
+    "en": "Having missed the last bus, I cabbed home.",
+    "alternatives": [
+      "Missing the last bus, I took a cab.",
+      "After missing the last bus, I cabbed."
+    ],
+    "point": "先に起きたことは having done で表す",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6bbd978733fd60fe478d0305c0b3d70d9dc560c299f4f4260da53e944fe21f95",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8f3u7z7u",
+    "ja": "バスが遅れたら、歩いて行きます。",
+    "en": "If the bus is late, I'll walk.",
+    "alternatives": [
+      "I'll walk if the bus is late.",
+      "If the bus runs late, I'll walk."
+    ],
+    "point": "未来のことでも if 節は現在形",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 8,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ecc9b569747861acf8d388d2cc38b78901257c797134ecbcdfb2ccf60339b376",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -386,6 +562,28 @@
     }
   },
   {
+    "id": "c_8z6k2s8n",
+    "ja": "電車を間違えたかもしれません。",
+    "en": "I may have taken the wrong train.",
+    "alternatives": [
+      "I might've gotten on the wrong train.",
+      "I think I got on the wrong train."
+    ],
+    "point": "may have + 過去分詞で過去の推測をやわらげる",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 8,
+    "grammar": ["hedging-softening", "modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c92fe4cd10b3d0c7ee74596dbd89e8f5d3a551098c0356fd4cc3bc72185a9d6d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_9d3s9c7q",
     "ja": "駅を乗り過ごしたかも。",
     "en": "I might have missed my stop.",
@@ -403,6 +601,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:ad4ce2048aca5bf3a7ae544cda91cdfd7ea2b0ad5975811ab8ac82a554462eb2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9k5n5q8c",
+    "ja": "終電に間に合えばよかった。",
+    "en": "I wish I'd caught the last train.",
+    "alternatives": [
+      "If only I'd caught the last train.",
+      "I wish I hadn't missed the last train."
+    ],
+    "point": "過去の後悔は wish + had + 過去分詞",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 8,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:12d60fed9c8f7275390a3e0dd6f74c8ee4f3b7f1f0d368128214bede4f911aa6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9u6m2r3w",
+    "ja": "点検のため、運転見合わせ中です。",
+    "en": "Service is suspended pending an inspection.",
+    "alternatives": [
+      "Service has been suspended for an inspection.",
+      "Service has been halted pending an inspection."
+    ],
+    "point": "「運転見合わせ」は service is suspended",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 9,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5c6d6d0be9d75cdc8b8d333e3b6a36aa1c861a3d1e61eb8de928a43e70b30adc",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

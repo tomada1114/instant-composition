@@ -76,6 +76,28 @@
     }
   },
   {
+    "id": "c_3n5w2s4h",
+    "ja": "いいのは、返品が簡単なことだ。",
+    "en": "What's great is that returns are easy.",
+    "alternatives": [
+      "The best part is that returns are easy.",
+      "The nice thing is that returns are easy."
+    ],
+    "point": "What's great is that 節 で名詞節を作る",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 9,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9f56e37d37f8bd7fe58bedb0df09613eed594117fe1042be9c9d44333357b3ff",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3w7k6w9t",
     "ja": "もっと安いのはありますか？",
     "en": "Do you have a cheaper one?",
@@ -153,6 +175,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:ab9fe64ae5804d1218462559633d002f36e9f4b92e6bf4ba4bc52fd477007ba2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4p8v6t8k",
+    "ja": "散財してなきゃ、貯金があるのに。",
+    "en": "If I hadn't splurged, I'd have savings.",
+    "alternatives": [
+      "If I hadn't overspent, I'd have savings now.",
+      "If I hadn't splurged, I'd have money saved now."
+    ],
+    "point": "過去の原因と今の結果は if had + would 原形",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5e1b228aed9b32aad7652ab91e33bc7714578563674455d9a05a31a83ec079ee",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4x3r9z8x",
+    "ja": "青いほうを買っておけばよかった。",
+    "en": "I wish I'd bought the blue one.",
+    "alternatives": [
+      "If only I'd bought the blue one.",
+      "I should have bought the blue one."
+    ],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 9,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:42253719eb46d4dc8d94c45bbbac31243319bb8ff52e17a864fab241af051a41",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -244,6 +310,28 @@
     }
   },
   {
+    "id": "c_6n3v5k9x",
+    "ja": "もっと安ければ、買うのに。",
+    "en": "If it were cheaper, I'd buy it.",
+    "alternatives": [
+      "If it were any cheaper, I'd buy it.",
+      "Were it cheaper, I'd buy it."
+    ],
+    "point": "現在の仮定は if + 過去形、would + 原形",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 8,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3255d9d2e20d6a6821bdadc5586789224ef7abbc76e5749733d8c4fb2ecd36d0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6v5y9u7v",
     "ja": "これ、試してもいい？",
     "en": "Can I try this?",
@@ -263,6 +351,28 @@
     }
   },
   {
+    "id": "c_6z6d3r4g",
+    "ja": "決め手は、レビューの評価だった。",
+    "en": "It was the reviews that sealed it.",
+    "alternatives": [
+      "What sealed the deal was the reviews.",
+      "It was the reviews that clinched it."
+    ],
+    "point": "It was ～ that で決め手を強調。seal the deal は決着させる",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:441487272946e976b445c80edc20530bf3d311b74d556cbccab3385de65f94d7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_7f4f4b9p",
     "ja": "セールで靴を買ったよ。",
     "en": "I bought shoes on sale.",
@@ -276,6 +386,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:2b8c97123109d59d6fd6fc50bfd6cf0109e6c4c1f5fddf6197523147e235c272",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7h7q9g5s",
+    "ja": "これの黒って、ありますでしょうか？",
+    "en": "I was wondering if this comes in black.",
+    "alternatives": [
+      "Would you happen to have this in black?",
+      "Do you by any chance have this in black?"
+    ],
+    "point": "I was wondering if で押しつけがましさを和らげる",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9c2bb142c933c536f70e2a9500ff241a3603b380da2077cf9b94cac749e03b97",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8d4h6d4q",
+    "ja": "知ってたら、買わなかったのに。",
+    "en": "If I'd known, I'd have skipped it.",
+    "alternatives": [
+      "If I'd known, I wouldn't have bought it.",
+      "Had I known, I wouldn't have bought it."
+    ],
+    "point": "過去の仮定は if + 過去完了、would have + 過去分詞",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:be9bf635a7c23237c1d1bf9f742ef1c82f914b2101e5762eeaf394f2c5c7df23",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -342,6 +496,28 @@
     }
   },
   {
+    "id": "c_9g2n9s5s",
+    "ja": "高くても、それだけの価値はある。",
+    "en": "Although it's expensive, it's worth it.",
+    "alternatives": [
+      "Even though it's pricey, it's worth it.",
+      "Even if it's pricey, it's worth it."
+    ],
+    "point": "譲歩は although / even though。but は不要",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c921af1c33284467127b7f244379706f5650ad82eb462f2be9aba455786d856",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_9h9n5h8f",
     "ja": "売り切れだと店員が言ってた。",
     "en": "The clerk said it was sold out.",
@@ -358,6 +534,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:19c0797641e4e9eaa5e36dec98346e9fef6c4417d0daa1da3a3787d4e986ccca",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9j5z8x2m",
+    "ja": "彼女は在庫があるか見てくると言った。",
+    "en": "She said she'd check if it's in stock.",
+    "alternatives": [
+      "She said she'd see if it's in stock.",
+      "She told me she'd check whether it's in stock."
+    ],
+    "point": "節の中に節。if は「かどうか」で語順は平叙文",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8378e35c1ed78d1df1c40a9e2e52fa25d197696de494c7b6ad5622325c999e1e",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -396,6 +594,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:1fcfd4bcdac9b9cc03b763a3abea13bc739705271d50eb4cbb9b36c3d2dffae6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9u2b6u9m",
+    "ja": "サイズが見つからず、私は出た。",
+    "en": "Unable to find my size, I left.",
+    "alternatives": [
+      "Not finding my size, I left the store.",
+      "Since I couldn't find my size, I left."
+    ],
+    "point": "分詞構文は主語を省き、否定は Not / Unable to",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cb8eec663e70fa8f5c7cf60a9c432a44134c46140de8a7f16254855816fbb6c3",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

@@ -57,6 +57,50 @@
     }
   },
   {
+    "id": "c_3u4f9p7e",
+    "ja": "期限が延びてたとは知らなかった。",
+    "en": "I didn't know it had been extended.",
+    "alternatives": [
+      "I hadn't realized it had been extended.",
+      "I didn't know they'd extended it."
+    ],
+    "point": "知る前に済んでいたことは過去完了",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 9,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c5544d07e2cf36961b1175dd1616db5275f1708f5ea0a61646eb8b87325e5e4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3v8r2k7c",
+    "ja": "この件、来週に回してもいい？",
+    "en": "Can we bump this to next week?",
+    "alternatives": [
+      "Could we push this to next week?",
+      "Can we push this back to next week?"
+    ],
+    "point": "bump / push で「後ろに回す」",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 9,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c64cd0807c824789f6608115bd52b3f72ed632f13be48054e201a42a7418211a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4a9v2y7z",
     "ja": "会議を遅らせてもいい？",
     "en": "Can we delay it?",
@@ -80,6 +124,72 @@
     }
   },
   {
+    "id": "c_4c7b5d2m",
+    "ja": "言ってくれれば、ずらせたのに。",
+    "en": "Had you said, I could've moved it.",
+    "alternatives": [
+      "If you'd told me, I could've moved it.",
+      "If you'd warned me, I could've moved it."
+    ],
+    "point": "If を省くと Had you said ～ と倒置になる",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 9,
+    "grammar": ["third-conditional", "inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:295d57aa832f3e8551d55186da1a10a314338eeb795c37d06b7fac96886c1795",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4e9b2f6z",
+    "ja": "これ、30分前倒しにできますか？",
+    "en": "Could we move it up by 30 minutes?",
+    "alternatives": [
+      "Could we bring it forward by half an hour?",
+      "Would it be possible to move it up 30 minutes?"
+    ],
+    "point": "move up は「前倒しする」",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 10,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:76ed67cfbac58b6b6068f271b3c008ed9b2d6f2ffe2c836d58c934f8bbd7f1bd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4p9q6r4c",
+    "ja": "できれば、金曜は避けたかったんです。",
+    "en": "I was hoping to avoid Friday, if possible.",
+    "alternatives": [
+      "I'd have liked to avoid Friday, if possible.",
+      "I was hoping we could avoid Friday, if possible."
+    ],
+    "point": "I was hoping で希望を控えめに伝える",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:12d36b8b1cf1de97de926dbc05496dd6bbfb955623be98e9a780255e7e5a4646",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4u4e3x4u",
     "ja": "火曜のほうが都合いい？",
     "en": "Is Tuesday better for you?",
@@ -96,6 +206,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:b23011b4c63083881773cd91d05e65bc58e30f4d85702ae7e91a1bacb4ac127c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5g6w5f5s",
+    "ja": "全員空いてる日に決めましょう。",
+    "en": "Let's choose a day when everyone's free.",
+    "alternatives": [
+      "Let's pick a day when everyone is free.",
+      "Let's find a day that works for everyone."
+    ],
+    "point": "時を表す名詞の後ろは when で修飾",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 8,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5a8f3ed36c8e09e04e72e3dcbabb7f379ff624a659f9255b10a92deb801e9ea9",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -156,6 +288,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:43874c2cc07ed80280b1b546a124ddd6a33f39f338625b2ef8b23d0cb9661c8c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5v4q9p7z",
+    "ja": "火曜に空いてる枠はありますか？",
+    "en": "Are there any slots open Tuesday?",
+    "alternatives": [
+      "Are there any open slots on Tuesday?",
+      "Do you have any slots open Tuesday?"
+    ],
+    "point": "名詞のあとに open を置いて「空いている」",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:84dd83d9f88af014e8e7310b3ab3212eb27dc6c5cbb40b332cb92a65b0a72a4d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5z5s9u9t",
+    "ja": "彼女に、締め切りの延長を頼んだ。",
+    "en": "I asked her to extend the deadline.",
+    "alternatives": [
+      "I asked her to push the deadline back.",
+      "I asked her to give us an extension."
+    ],
+    "point": "ask + 人 + to 原形",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 8,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:34457320f07487589234f7404a697b9af2e4b8ad724d446ee22fd98887c46716",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -351,6 +527,28 @@
     }
   },
   {
+    "id": "c_8b6g5r5j",
+    "ja": "私、日にちを間違えたかも。",
+    "en": "I might have mixed up the date.",
+    "alternatives": [
+      "I may have gotten the date wrong.",
+      "I think I got the date wrong."
+    ],
+    "point": "might have + 過去分詞で過去の推量",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 8,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:391503d9d1c08cbc2421d116f9d1651d3da482ed7f879f453ea3d0e2ea4899af",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8d3y5j8g",
     "ja": "締め切りは月曜です。",
     "en": "The deadline is Monday.",
@@ -370,6 +568,28 @@
     }
   },
   {
+    "id": "c_8h2s9b3m",
+    "ja": "いつ空いてるか、教えてもらえる？",
+    "en": "Could you tell me when you're free?",
+    "alternatives": [
+      "Would you tell me when you're free?",
+      "Can you let me know when you're available?"
+    ],
+    "point": "間接疑問は when you're free の語順",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 8,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:20f85a464aaf595697f928d47bf0be88ced8785bedcb8656c61c14204db102e5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8p2d4u9a",
     "ja": "午後なら空いています。",
     "en": "I'm free in the afternoon.",
@@ -383,6 +603,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:a3d93c8206c271f5579e31a01a201eac7240795233970e815d2bd58ac14819e8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8s9d3w5z",
+    "ja": "絶対に、期限は延ばしません。",
+    "en": "Never will we extend the deadline.",
+    "alternatives": [
+      "We won't extend the deadline under any circumstances.",
+      "There's no way we'll extend the deadline."
+    ],
+    "point": "Never が文頭なら、後ろは疑問文の語順",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1555779afcb4ee71d9cc889814465630a8d347fc08a439487c0a9d04f57fe51f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8z5m9z5n",
+    "ja": "頼まれる前に、会議を動かした。",
+    "en": "I moved the meeting before anyone asked.",
+    "alternatives": [
+      "I moved the meeting before I was asked.",
+      "I rescheduled the meeting before anyone asked."
+    ],
+    "point": "before の節は単純過去。過去完了にしなくてよい",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 8,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:27a0e8c98bc736253125aa8f8fd9bb6546ea650781e6b5111d17d994756e671a",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

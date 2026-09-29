@@ -19,6 +19,28 @@
     }
   },
   {
+    "id": "c_2c2x9p2e",
+    "ja": "面倒でも、この CLI は便利だ。",
+    "en": "Although it's fiddly, this CLI is handy.",
+    "alternatives": [
+      "Fiddly as it is, this CLI is handy.",
+      "It's fiddly, but this CLI is handy."
+    ],
+    "point": "Although の後に but は不要",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ec44317c128085e80685084e5167e508bd26103bb957eb191e8e9b2ad8f92336",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2c3p5k2b",
     "ja": "ターミナル使うのが好き。",
     "en": "I like using the terminal.",
@@ -158,6 +180,28 @@
     }
   },
   {
+    "id": "c_4g6v3v2q",
+    "ja": "環境構築に丸一日かかった。",
+    "en": "Setting up my environment took all day.",
+    "alternatives": [
+      "It took all day to set up my environment.",
+      "I spent all day setting up my environment."
+    ],
+    "point": "「構築する」は set up。動名詞が主語になる",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dbd0e658c82f8c34cff68aec3e2b401acf460e298ef68a85bac4ae94c211cf05",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4g8w9p8c",
     "ja": "設定はもう消えていた。",
     "en": "The settings had already vanished.",
@@ -193,6 +237,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:8d995256167348ba1fa9f2140fe40dcf155878dd05893b66b242883d687c97ee",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5n2a6h7s",
+    "ja": "遅いのはあのプラグインだ。",
+    "en": "It's that plugin that's slowing things down.",
+    "alternatives": [
+      "That plugin is what's slowing things down.",
+      "That plugin is the one slowing things down."
+    ],
+    "point": "It's 〜 that 〜 で原因を強調する",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7debad39099c4de7cdc04273bc4e00a15d04df0abb0a9326a262fb1159305862",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5r6h8v5t",
+    "ja": "確認してれば、時短できたのに。",
+    "en": "If I'd checked, I'd have saved time.",
+    "alternatives": [
+      "I could have saved time if I'd checked.",
+      "If I had checked, I'd have saved myself time."
+    ],
+    "point": "過去の反実仮想は if + 過去完了、would have",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d5f4de7fb7c8e624ad35c0d928b35a6553c526f593801ef0f3237d5ce079a6c3",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -385,6 +473,51 @@
     }
   },
   {
+    "id": "c_8s5f3h6z",
+    "ja": "キャッシュを消せば直ると言われた。",
+    "en": "I was told clearing the cache would work.",
+    "alternatives": [
+      "Someone told me clearing the cache would work.",
+      "They said clearing the cache would fix it."
+    ],
+    "point": "言われた内容の will は would にずらす",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 10,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6446da6ef7e2b4730bad31f321a456ee2237af457f5cc882f99cb0cd6584175b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8y8e5t8y",
+    "ja": "固定してれば、今は安定なのに。",
+    "en": "If we'd pinned versions, we'd be stable.",
+    "alternatives": [
+      "If we had pinned versions, we'd be stable now.",
+      "If we'd pinned it, we'd be stable now.",
+      "Had we pinned versions, we'd be stable now."
+    ],
+    "point": "過去の仮定+今の結果。pin は「固定する」",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:48ed5f5fb5c9aafb1ccc66466fb032efb0cc305db19a201004129d87c98e385b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8z9y9r3p",
     "ja": "設定を更新してもらえませんか？",
     "en": "Would you mind updating the config?",
@@ -401,6 +534,72 @@
     "stamps": {
       "core": {
         "hash": "sha256:87fc74f847ffdef730e28667180b1e15094d9c5011ea046fc7304bd11609268c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9a7k9e6e",
+    "ja": "昨日の更新から、何も動いていない。",
+    "en": "Nothing has worked since yesterday's update.",
+    "alternatives": [
+      "Nothing's worked since yesterday's update.",
+      "Nothing has been working since yesterday's update."
+    ],
+    "point": "起点のある継続は現在完了、時点は since で示す",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:77471b4693215036cc66d0680cf8610f144adce1c431d1f8722c07e7d9a30677",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9f5x5f8w",
+    "ja": "その時初めて、ログを確認した。",
+    "en": "Only then did I check the logs.",
+    "alternatives": [
+      "Not until then did I check the logs.",
+      "It was only then that I checked the logs."
+    ],
+    "point": "Only then が文頭なら did I check の倒置",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:560a065cc432588e97beac5fbb2c0e2158f823c1d25c7c61369282431fa24f5c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9f6n6t7j",
+    "ja": "月曜からテストが不安定なんだ。",
+    "en": "The tests have been flaky since Monday.",
+    "alternatives": [
+      "Our tests have been flaky since Monday.",
+      "The tests have been unstable since Monday."
+    ],
+    "point": "「〜からずっと」は現在完了 + since",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:15566f5acda3b8095f52b3b774953c627adc2e5497f80f2486f1028648ee0c8f",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

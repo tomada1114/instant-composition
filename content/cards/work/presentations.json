@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_2k8t7r5c",
+    "ja": "大事なのは価格ではなく速さです。",
+    "en": "It's speed, not price, that matters most.",
+    "alternatives": [
+      "It's speed rather than price that matters most.",
+      "What matters most is speed, not price."
+    ],
+    "point": "It's + 強調語 + that で強調したい語を挟む",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5fce712f6c6097fbf2e4302150910c8205436d48f362279b4d8153dca1a35c59",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2p3c9j9e",
     "ja": "売上は昨年から伸びています。",
     "en": "Sales have grown since last year.",
@@ -76,6 +98,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:35a58f57163fd21fee5113492ab988aedf39f34040cc923c255a83af8d316c99",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3k4w7x8y",
+    "ja": "あの時投資してれば、今ごろ首位だよ。",
+    "en": "If we'd invested then, we'd be leading now.",
+    "alternatives": [
+      "If we had invested then, we'd be on top now.",
+      "Had we invested then, we'd be leading now."
+    ],
+    "point": "過去の仮定 + 今の結果は if + had 過去分詞, would + 原形",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 10,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:03b7bd41498dc6d9fdb638bde2a8924dd8b6ea897f00af0a4ec6a6786ab04dbc",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -137,6 +181,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:1deac470441d04cc020ca84db5d6c8a266aac99ccca500e668bf7341dc51446f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4f5g4b5k",
+    "ja": "この見積もりは、やや楽観的かも。",
+    "en": "That estimate might be a touch optimistic.",
+    "alternatives": [
+      "That estimate may be slightly optimistic.",
+      "That estimate could be a bit optimistic."
+    ],
+    "point": "a touch + 形容詞で言い切りを避ける",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e68ae1178b1ef2d48c9dabdb72949e96c01f7f47df1413541cb3690b976fcda5",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -219,6 +285,94 @@
     "stamps": {
       "core": {
         "hash": "sha256:5b2af17a5477430ab177789399d29d6ca661327fdf8dcfdf5fc6b9d37b7242e3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4y9c9p3g",
+    "ja": "その時までに、試作品は仕上げてあった。",
+    "en": "By then, we'd finished the prototype.",
+    "alternatives": [
+      "By then, we had completed the prototype.",
+      "We had already finished the prototype by then."
+    ],
+    "point": "「その時までに完了」は過去完了",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 9,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:708ced4de5fb0586c51e95a7776c9dde124a2e619c80e78e17f8c42238188c55",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5p2j6s9x",
+    "ja": "詳細を掘り下げる時間はないです。",
+    "en": "There's no time to delve into details.",
+    "alternatives": [
+      "We don't have time to go into detail.",
+      "We don't have time to dig into the details."
+    ],
+    "point": "「〜する時間」は time to do。「掘り下げる」は delve into",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cd364b90eeb1b256b4baf3b4eaddf05bca8aebc7125a2439b0e533c8eef80df5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5r9h2z9k",
+    "ja": "まず要点をざっと確認させてください。",
+    "en": "Let me run through the key points first.",
+    "alternatives": [
+      "Let me quickly go over the key points first.",
+      "Let me walk you through the key points first."
+    ],
+    "point": "run through は「ざっと確認する」の句動詞",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 10,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:29b277fcaca416c9a81e4307f5eb744a3e7fefbf79ddfda6c0d6fce41e45cb55",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5w9v7g8t",
+    "ja": "データ一点では、何も証明できません。",
+    "en": "A single data point proves nothing.",
+    "alternatives": [
+      "One data point proves nothing.",
+      "One data point can't prove anything."
+    ],
+    "point": "data point は数えられる名詞なので a が要る",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 10,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:194c583bf9098927b033b56c97b40d10a4eefa329d27834b420ebfb8b5ea88cc",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -310,6 +464,28 @@
     }
   },
   {
+    "id": "c_7r6q7y7v",
+    "ja": "後で初めてリスクに気づいた。",
+    "en": "Only later did I notice the risk.",
+    "alternatives": [
+      "It was only later that I noticed the risk.",
+      "I didn't notice the risk until later."
+    ],
+    "point": "Only later を前に出すと did + 主語 + 原形",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cdb33a6cd26c657faef4e239aa4b1c39b50dac9c7237a98ec1db9260681ec9a0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_7t6z2q3j",
     "ja": "十分間の発表です。",
     "en": "It's a ten-minute talk.",
@@ -329,6 +505,28 @@
     }
   },
   {
+    "id": "c_7y4m8k8m",
+    "ja": "ご質問のあった点を説明します。",
+    "en": "I'll explain the point you raised.",
+    "alternatives": [
+      "I'll go over the point you asked about.",
+      "I'll explain what you asked about."
+    ],
+    "point": "関係詞 that は目的語なら省ける",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a0642e19a0fe7007770df61ecb6d3877071452f071e563a54cbbbe2230c065e8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8c9a5q7r",
     "ja": "今、資料を配ってます。",
     "en": "I'm handing out copies.",
@@ -342,6 +540,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:309dd8a31b10057742fcd19f3735ee8aea57f5451a116a6efbc43ca112909440",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8f7p2e2u",
+    "ja": "大事なのは、拡張できることです。",
+    "en": "What matters is that it scales.",
+    "alternatives": [
+      "What's important is that it can scale.",
+      "The key point is that it scales."
+    ],
+    "point": "What matters is that 節で「大事なのは〜」",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 9,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:14e24da992ea8bc730c4b4a4d58f508998ce6b4688032ad17ca7b7cea94f5e48",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

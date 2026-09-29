@@ -19,6 +19,25 @@
     }
   },
   {
+    "id": "c_2n8w7a9f",
+    "ja": "タクシーの運転手に、ぼられました。",
+    "en": "A taxi driver ripped me off.",
+    "alternatives": ["I got ripped off by a taxi driver.", "The cabbie ripped me off."],
+    "point": "「ぼられる」は get ripped off",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 7,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:002b1250cf6a10546ab61744441dc047f87a1f3d5f8dc216bc2edfe2d9dac9f8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2u8n8r8e",
     "ja": "運転手に止まるよう言って！",
     "en": "Tell the driver to stop!",
@@ -80,6 +99,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:d7129be81a64003cf10a8dc72395dcff552e293969f30086e864c587fbc9261b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3t4t4v7q",
+    "ja": "バッグがなくなったみたいです。",
+    "en": "It seems my bag's gone missing.",
+    "alternatives": [
+      "I think my bag has gone missing.",
+      "It looks like my bag's missing."
+    ],
+    "point": "It seems で断定を避け、やわらかく伝える",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 8,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c023b3a4c97f2a1b5d946d9e3069782b603c8e3b23572d4d8239578d2a7a94ff",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -207,6 +248,50 @@
     }
   },
   {
+    "id": "c_4z9b2m8f",
+    "ja": "私が急げば、間に合ったのに。",
+    "en": "If I'd hurried, I'd have made it.",
+    "alternatives": [
+      "I'd have made it if I'd hurried.",
+      "If I had hurried, I would have made it."
+    ],
+    "point": "make it は「間に合う」",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a3f9438236599e4414838d5b704339cfd588837609a3ea0398580bf59c50cd24",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5d9a9y5j",
+    "ja": "確認メールが、まだ届いてません。",
+    "en": "My confirmation email hasn't arrived yet.",
+    "alternatives": [
+      "I still haven't received the confirmation email.",
+      "The confirmation email still hasn't arrived."
+    ],
+    "point": "yet は否定文で「まだ〜ない」",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 8,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:831165a0eadc7f81ae5bb02b6a9a6bf2b943172a3e4f8bbfbcaf9e78c1668555",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_5q8q6k3r",
     "ja": "財布がなくなった。",
     "en": "My wallet is gone.",
@@ -242,6 +327,72 @@
     "stamps": {
       "core": {
         "hash": "sha256:d8cd21512e720febe63d6ceecf747c6a559223fd6ffb183580b86384b3459f91",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7c4f3a3n",
+    "ja": "荷物が、別の空港に回されました。",
+    "en": "My bag was rerouted to another airport.",
+    "alternatives": [
+      "My luggage was sent to a different airport.",
+      "My bag has been sent to another airport."
+    ],
+    "point": "「回された」は受け身。reroute が自然",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 6,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3fd58b5ae84e7e9e7bd0a25b6ed327311cc685735f1ccbca9582080f54bd6640",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7f6g4y8w",
+    "ja": "パスポート、タクシーに忘れたかも。",
+    "en": "I might've left my passport in the taxi.",
+    "alternatives": [
+      "I may have left my passport in the cab.",
+      "Maybe I left my passport in the taxi."
+    ],
+    "point": "過去の可能性は might have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 10,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2adf51798aab6fc2e6f3908fcd1a20672ee124d5e37f986facb898fae4792558",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7j4w5p9q",
+    "ja": "予約に手違いがあったようです。",
+    "en": "There seems to be a booking mix-up.",
+    "alternatives": [
+      "It looks like there's a mix-up with my booking.",
+      "I think there's been a mix-up with my booking."
+    ],
+    "point": "seems to be で断定を避け、柔らかく切り出す",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 9,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e263a7cb02da098f9327de2d10f1f1df7841e598b2b7b468250c88ee520912a0",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -290,6 +441,28 @@
     }
   },
   {
+    "id": "c_7y2x4u4h",
+    "ja": "別の便に振り替えは可能ですか？",
+    "en": "Would it be possible to rebook me?",
+    "alternatives": [
+      "Is there any chance you could rebook me?",
+      "Could I possibly be rebooked on another flight?"
+    ],
+    "point": "Would it be possible to 〜 で丁寧に頼む",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 8,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fdcf6aebebeae894994084b67855fe5373aa82a97487b01c9bc2c4c24b59ed16",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8b6w3e6n",
     "ja": "警察を呼んでください。",
     "en": "Please call the police.",
@@ -303,6 +476,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:8440aadb3969a420eac9d9a43776df9331d381cac6e92c57c06c231fba453209",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8h7e9y7s",
+    "ja": "なくしたのは鞄でなくパスポート。",
+    "en": "It's my passport I lost, not my bag.",
+    "alternatives": [
+      "It was my passport I lost, not my bag.",
+      "What I lost was my passport, not my bag."
+    ],
+    "point": "It is 〜 that 〜 で「〜なのは」を強調する",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8b3b18a6cbcf45885c2c78654005ec9a167c4d46c10eb97d94b20bd3dce1a95a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8m7t5w8p",
+    "ja": "預けた荷物が届いていません。",
+    "en": "The bag I checked hasn't arrived.",
+    "alternatives": [
+      "My checked bag still hasn't arrived.",
+      "The bag I checked in hasn't arrived."
+    ],
+    "point": "目的格の that は省略できる",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:911c598f49895bf66fbf04d3896303eeb820ab8ddc077fe27c5f4b9ab1a67c9c",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -390,6 +607,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:2046f68e777221f8a839c3e2088838737efa716bfa6df33fe0a8aa9afad63892",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9n4d5f7p",
+    "ja": "私たち、急いでいれば間に合ったのに。",
+    "en": "If we'd hurried, we'd have made it.",
+    "alternatives": [
+      "We'd have made it if we'd hurried.",
+      "Had we hurried, we'd have made it."
+    ],
+    "point": "「間に合う」は make it。過去の仮定は had + 過去分詞",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 9,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:abae3f4138e16297b4ec97241b543e45f0457529912d7c5e905af1b655127218",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

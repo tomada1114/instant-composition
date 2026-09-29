@@ -23,6 +23,50 @@
     }
   },
   {
+    "id": "c_2t9p7k9j",
+    "ja": "作ったの君だって、ミカが言ってた。",
+    "en": "Mika said you're the one who made this.",
+    "alternatives": [
+      "Mika said it was you who made this.",
+      "Mika told me you made this."
+    ],
+    "point": "said の中に the one who の節。時制は文脈で選ぶ",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 7,
+    "grammar": ["reported-speech", "relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:85981092e64f5674580bc0d3c286029c9fdedef8417dcf9cb5f5fa5e8588c8f3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3d7g4c3x",
+    "ja": "私を雇ったのは、ミカさんです。",
+    "en": "It was Mika who hired me.",
+    "alternatives": [
+      "Mika is the one who hired me.",
+      "Mika was the person who hired me."
+    ],
+    "point": "It was 人 who で「〜なのは」を強調",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:43a03f6fee4a956787cbe90ae373d20103a16f67194031af7c880b736a0f19f6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3e2h2m8p",
     "ja": "私は大阪出身の設計士です。",
     "en": "I'm an architect from Osaka.",
@@ -45,6 +89,28 @@
     }
   },
   {
+    "id": "c_3j3y9x4u",
+    "ja": "ここに惹かれたのは、人の温かさ。",
+    "en": "What drew me here was the people's warmth.",
+    "alternatives": [
+      "It was the people's warmth that drew me here.",
+      "The warmth of the people is what drew me here."
+    ],
+    "point": "What ~ was で一番の理由を強調",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:18b720e15b31b20005d6750f48b9a23174b2a312b0d218f1d356cb8c9350311f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3k4x2m5d",
     "ja": "ここで働いて三年になります。",
     "en": "I've worked here for three years.",
@@ -61,6 +127,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:d3d49b43c328d1fc0840cd341c6468efe1f7c0685e2a7873cd9eb2f9c2288f20",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3n4u5s6w",
+    "ja": "弊社はこの分野で有名です。",
+    "en": "We're well known in this field.",
+    "alternatives": [
+      "Our company is well known in this field.",
+      "Our firm is well known in this industry."
+    ],
+    "point": "受動態 be well known in ~",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1d97085103f5c708649d44a2f2ba2110d82188e9545ac55b3c7fd6eb6bd264a3",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -128,6 +216,25 @@
     }
   },
   {
+    "id": "c_5c4k7p2e",
+    "ja": "もっと早く会えていればよかった。",
+    "en": "I wish we had met earlier.",
+    "alternatives": ["If only we'd met sooner.", "I wish we'd met sooner."],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:eb3db786e8577215b3d2d864ef5a52bc11fcfc6dc483e154588e86e87fc3176b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_5h8s6t6p",
     "ja": "ケンって呼んでね。",
     "en": "Call me Ken.",
@@ -147,6 +254,50 @@
     }
   },
   {
+    "id": "c_5m7s7z6r",
+    "ja": "会う前から、存じていました。",
+    "en": "I'd heard of you before we met.",
+    "alternatives": [
+      "I knew of you before we met.",
+      "I had known your name before we met."
+    ],
+    "point": "会う前のことなので過去完了",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:52f488ad1487ae4057d837fa4f26415c70afd57e2eb4d9648154d8ec8529497c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5p8f6b4s",
+    "ja": "私の仕事は、企業向けの翻訳です。",
+    "en": "What I do is translate for companies.",
+    "alternatives": [
+      "My job is translating for companies.",
+      "What I do is business translation."
+    ],
+    "point": "What I do is のあとは動詞の原形",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:77812b32f6af3c25cac221ff40c22a03fd03dcc4b41f7f0eb52050b7cb4e11ad",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_5x8s6n4g",
     "ja": "私は看護師です。",
     "en": "I'm a nurse.",
@@ -160,6 +311,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:00360a30dcd6114ece727e12f18ddf827d94a86e831e3bfe7f313c0850197e4f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6b2c5k8q",
+    "ja": "先月ここに越してきたばかりです。",
+    "en": "I only moved here last month.",
+    "alternatives": [
+      "I just moved here last month.",
+      "I've only lived here since last month."
+    ],
+    "point": "last month があれば過去形、since なら現在完了",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 6,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0dbd28bc902b4d3b574ad837127acb4f84a90fd40f9efa649537472a558d1007",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6g9a6h7j",
+    "ja": "行ってなきゃ、会えなかったね。",
+    "en": "If I hadn't gone, we'd never have met.",
+    "alternatives": [
+      "If I hadn't gone, we wouldn't have met.",
+      "Had I not gone, we'd never have met."
+    ],
+    "point": "過去の仮定は If + had + 過去分詞、would have + 過去分詞",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5b9fa7b570aa5a8b7165c04593d5f0dfbe483a20078c8af6ed217cabb0f7964f",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -267,6 +462,28 @@
     }
   },
   {
+    "id": "c_8w3u6n3s",
+    "ja": "どちらのご出身か伺えますか？",
+    "en": "May I ask where you're from?",
+    "alternatives": [
+      "Would you mind telling me where you're from?",
+      "Could I ask where you're from?"
+    ],
+    "point": "間接疑問は where you're from の語順",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 6,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:875a5bde15ac44b0e0cfc127e4ab2e4a04f2bfac244aa617c26144e075373a95",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8x7n9t3m",
     "ja": "お噂はかねがね伺っております。",
     "en": "I've heard a lot about you.",
@@ -283,6 +500,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:99b205cda48aee8a842ce56b9afc01c9b63f8149896bfe2be6c5e5f025818d94",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9c9k5e6g",
+    "ja": "時間があれば、サーフを始めるのに。",
+    "en": "If I had time, I'd take up surfing.",
+    "alternatives": [
+      "I'd take up surfing if I had time.",
+      "If I had more time, I'd take up surfing."
+    ],
+    "point": "始める趣味は take up、仮定は had と would",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["second-conditional", "phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0e35a0167fa2ca1b75209f931896cada6fb0911d8fca1df5085a92f3bb2501a9",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

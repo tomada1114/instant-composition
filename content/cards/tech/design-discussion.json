@@ -83,6 +83,28 @@
     }
   },
   {
+    "id": "c_3z4d6x5a",
+    "ja": "Kafka 導入後、遅延が減った。",
+    "en": "Latency has dropped since we adopted Kafka.",
+    "alternatives": [
+      "Since we moved to Kafka, latency has dropped.",
+      "Latency has come down since we switched to Kafka."
+    ],
+    "point": "since の後は過去形、主節は現在完了",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 9,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:625c143f426729827c05b246ebd114c8d2d01ef449b74dc923fa8c2e4e6d63c9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4d3e5p8v",
     "ja": "キャッシュは外すと決めた。",
     "en": "We decided to drop the cache.",
@@ -96,6 +118,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:1d2aee2172ceb6e726230ef0f2e9d8c4fa923144ff61d4fbc66a6036617226f6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4e8s3s4t",
+    "ja": "非正規化してれば、今は楽なのに。",
+    "en": "If we'd denormalized, we wouldn't be stuck now.",
+    "alternatives": [
+      "Had we denormalized, we wouldn't be stuck now.",
+      "If we had denormalized earlier, we wouldn't be stuck now."
+    ],
+    "point": "過去の仮定+今の結果。wouldn't be で今を述べる",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 10,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5ef251c755f26851bcef8d58ebc47923f4446cc61c308188c29e0f31f9f1c4c0",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -121,6 +165,28 @@
     }
   },
   {
+    "id": "c_4k4y8z7u",
+    "ja": "ロックを使う案は、除外しよう。",
+    "en": "Let's rule out the locking option.",
+    "alternatives": [
+      "Let's eliminate the locking option.",
+      "Let's take the locking option off the table."
+    ],
+    "point": "rule out は「選択肢から外す」",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 9,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c07eefccd331f50b512809b4274fd6b8bc5d8f2f5e25e27bedf1a5646d057c55",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4q6d4x8z",
     "ja": "秘密情報は金庫で保管される。",
     "en": "Secrets are kept in a vault.",
@@ -134,6 +200,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:fe2c21bf0e65ae1773937514222f4acf01fc31ea7e127a4aa414739dac1fa3d2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4s4k6s3w",
+    "ja": "一貫性は二択でなく、程度の問題だ。",
+    "en": "Consistency is a spectrum, not a switch.",
+    "alternatives": [
+      "Consistency is a matter of degree, not either-or.",
+      "Consistency is a sliding scale, not an on/off switch."
+    ],
+    "point": "抽象名詞は無冠詞、たとえは a spectrum",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 10,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:82b51d3157ef69a4f873009027f3f5f74220c9c72c00145826500ef0e0effc2e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4v4m6n9t",
+    "ja": "彼は、それが何をするか知らないと思う。",
+    "en": "I doubt he knows what it does.",
+    "alternatives": [
+      "I don't think he knows what it does.",
+      "I don't think he understands what it does."
+    ],
+    "point": "節の中に what 節が入る。語順は平叙文",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 8,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:afc9dd11830004b9f72a994196033300aca8a312b4edf15dc077c53f9f56ab3c",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -242,6 +352,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:38f24cc32fa4bc66783563031b90d9a1e3298482f2a32cb59924a32f839e0f12",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5y3j4x3y",
+    "ja": "キューに通せば、丈夫なのに。",
+    "en": "If we queued it, it'd be sturdier.",
+    "alternatives": [
+      "If we added a queue, it'd be sturdier.",
+      "If we put a queue in, it'd be sturdier."
+    ],
+    "point": "現在の仮定は if + 過去形、主節は would",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 8,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:74b110ca5aabbbb35649509d9679e7857f3c38b10d1174be68417982b9eef208",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6h7q5d4s",
+    "ja": "心配なのは、性能より保守だ。",
+    "en": "It's maintenance, not performance, that worries me.",
+    "alternatives": [
+      "What worries me is maintenance, not performance.",
+      "What concerns me is upkeep rather than performance."
+    ],
+    "point": "It is X that で強調したい語 X を挟む",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:36d17d724189ece736416834fdb3a61cc8e9aba00462b42593c201777679cf69",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -368,6 +522,28 @@
     }
   },
   {
+    "id": "c_9s3t9h5e",
+    "ja": "数週間、シャーディングを検討中。",
+    "en": "We've been weighing sharding for weeks.",
+    "alternatives": [
+      "We've been considering sharding for a few weeks.",
+      "We've been looking into sharding for weeks."
+    ],
+    "point": "続いている動作は have been -ing + for",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 9,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bcbef4069e54aeecf3cc28f7e58df56a0dbbd0f93160b0d4f81d4a61d3b96fb9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_9s4k8e5y",
     "ja": "トレードオフが二つある。",
     "en": "There are two trade-offs.",
@@ -419,6 +595,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:e76b7d48a8e8a3c505ab62c427e9457cdf03e710af11710410dd8dd0f85b32d7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9z3w8v5k",
+    "ja": "整合性が崩れても、私は速さを取る。",
+    "en": "Even if consistency slips, I'd take speed.",
+    "alternatives": [
+      "I'd choose speed, even if consistency slips.",
+      "Even if consistency breaks, I'd go for speed."
+    ],
+    "point": "Even if の後は現在形。譲歩の仮定を表す",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:93a25cc3f99a795095cde436ec43d7cbd41f96aa32fc7322d5854c143945deb8",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

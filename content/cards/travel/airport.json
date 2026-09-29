@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2j5g5c8g",
+    "ja": "隣の男性が、荷物を上げてくれた。",
+    "en": "The man beside me lifted my bag.",
+    "alternatives": [
+      "The man next to me lifted my bag up.",
+      "The guy next to me lifted my bag up."
+    ],
+    "point": "beside me を名詞の後ろに置いて「隣の」を表す",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f678f634f59e0e819c59064b024ae655b3a4cc73588011f45da24e6c5d814614",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2s7f3v7a",
     "ja": "彼、荷物を預けてる。",
     "en": "He's checking a bag.",
@@ -79,6 +101,28 @@
     }
   },
   {
+    "id": "c_4j4p2g5s",
+    "ja": "彼女が遅れていると言った便は、これ？",
+    "en": "Is this the flight she said was delayed?",
+    "alternatives": [
+      "Is this the one she said was delayed?",
+      "Is this the flight she said was running late?"
+    ],
+    "point": "関係詞の中に I heard が入り込む形",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5b38b1d84d486733cdda94b339dcc4f0f891d99c43c9811acd4068a68c15785b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4k3p5p9p",
     "ja": "窓側の席にしてください。",
     "en": "Please give me a window seat.",
@@ -139,6 +183,50 @@
     }
   },
   {
+    "id": "c_4w5h3y4d",
+    "ja": "乗り継ぎを、長く取るべきだった。",
+    "en": "I should've allowed a longer layover.",
+    "alternatives": [
+      "I should have booked a longer layover.",
+      "I should've left more time for the connection."
+    ],
+    "point": "後悔は should have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 9,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:be3d193c92b651588784d9b58e9f488e4b2852520464190ec001e9df4076feed",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4z9k4b5b",
+    "ja": "席を替えていただくのは、可能ですか？",
+    "en": "Would it be possible to switch seats?",
+    "alternatives": [
+      "I was wondering if we could switch seats.",
+      "Is there any chance I could switch seats?"
+    ],
+    "point": "Would it be possible to で丁寧に頼む",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8c3c67e62ac87b5b5607d221b6d98f03da25af086019379e60ac7930aa1ed880",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_5b9w5d9z",
     "ja": "トイレがありますよ。",
     "en": "There's a restroom.",
@@ -152,6 +240,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:e01523c095821a641aae17d3f9cfe64ac21850c13e196555ada518cfaa003fbf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5f6m4n3n",
+    "ja": "受付で席を変えてもらった。",
+    "en": "I got my seat changed at check-in.",
+    "alternatives": [
+      "I had my seat changed at check-in.",
+      "I had them change my seat at check-in."
+    ],
+    "point": "have/get + 物 + 過去分詞で「〜してもらう」",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4d682f328bd85571aef66379dd49760f0fe49e3f847852a1a67eee905a20f0f2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5g4d4c7y",
+    "ja": "私を足止めしたのは、ビザ確認でした。",
+    "en": "What held me up was the visa check.",
+    "alternatives": [
+      "It was the visa check that held me up.",
+      "The visa check is what held me up."
+    ],
+    "point": "hold up は「遅らせる・足止めする」",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d61bece5a666d555d86a7cb209bf620ca250b20579db3c865f93b179c60ad7f4",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -175,6 +307,51 @@
     "stamps": {
       "core": {
         "hash": "sha256:582febf17bef314bc27673572b1732eec34d433b5fadc11c1ec46862187f864b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5r2w2n5a",
+    "ja": "早く来れば、私たち乗れたのに。",
+    "en": "We'd have boarded if we'd been earlier.",
+    "alternatives": [
+      "If we'd been earlier, we'd have made it.",
+      "If we'd come earlier, we'd have made the flight."
+    ],
+    "point": "過去の仮定は had + 過去分詞 / would have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 9,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:971cd5af76b35a3b9d17b6bad5222b25adc855f684c786bb5c303b58e9f81297",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6j8v9u4v",
+    "ja": "窓側の席はございますか？",
+    "en": "Would a window seat be available?",
+    "alternatives": [
+      "Would there be a window seat available?",
+      "Is there possibly a window seat available?",
+      "Do you have any window seats available?"
+    ],
+    "point": "Would で丁寧に婉曲。Do you have より控えめ",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 6,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b0c28077d8f422406fba55a05f8f0151cedbf542840e7bdce628d5506960cea7",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -329,6 +506,28 @@
     }
   },
   {
+    "id": "c_8p9t5m3n",
+    "ja": "この用紙、書いてもらえますか？",
+    "en": "Could you fill this out?",
+    "alternatives": [
+      "Could you fill out this form?",
+      "Would you mind filling this out?"
+    ],
+    "point": "fill out は「記入する」。fill in も可",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 7,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2f639094a31315699d0c5f1854ede2c785e4858f1cdc7a664703956d2c1a9459",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8s9s2f8h",
     "ja": "機内で寝るのは嫌いです。",
     "en": "I hate sleeping on planes.",
@@ -345,6 +544,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:1a7daf5171e0c88499b71a64d3161ef98793a75a26b3b073212adc9c1a7aa2b2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8t2g3h3v",
+    "ja": "機内食が選べるなら、魚にするのにな。",
+    "en": "If I could choose, I'd have the fish.",
+    "alternatives": [
+      "I'd have the fish if I could choose.",
+      "If I got to choose, I'd go with the fish."
+    ],
+    "point": "現在の仮定は If + 過去形, would + 動詞",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 10,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cf462531d336a509ad0010cf316c60c6279cd97f5cd1de680719b404f42112cc",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -410,6 +631,29 @@
     "stamps": {
       "core": {
         "hash": "sha256:6e667fd41d2e1e5abbd90a35ecc02ff55fe18fac63b9de5d052262f314c599c0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9x3s4y8k",
+    "ja": "便が遅れた原因は、天候でした。",
+    "en": "What delayed our flight was the weather.",
+    "alternatives": [
+      "It was the weather that delayed our flight.",
+      "The weather was what delayed our flight.",
+      "The delay was caused by the weather."
+    ],
+    "point": "What で始めて「〜なのは、これだ」と強調",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c6d9534a89dd2563fc77ad90b4c4f0f73bf9b4f15f46b73333baf8010100201d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

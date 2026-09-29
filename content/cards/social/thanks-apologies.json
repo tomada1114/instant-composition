@@ -42,6 +42,28 @@
     }
   },
   {
+    "id": "c_2h7y9r4m",
+    "ja": "私が君なら、まだ怒ってるだろうな。",
+    "en": "If I were you, I'd still be furious.",
+    "alternatives": [
+      "In your shoes, I'd still be furious.",
+      "I'd still be angry if I were you."
+    ],
+    "point": "現在の仮定は If + 過去形、would。were を使う",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 6,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:63951a09d0c0a4ce0d35d01379d432f35086396258e5829e530533b30647040d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2z2w7c5k",
     "ja": "思ってた以上に助かったよ。",
     "en": "That helped more than I expected.",
@@ -124,6 +146,50 @@
     }
   },
   {
+    "id": "c_3j8m3g6r",
+    "ja": "助けてくれてなきゃ、今困ってる。",
+    "en": "If you hadn't helped, I'd be lost.",
+    "alternatives": [
+      "I'd be lost now if you hadn't helped.",
+      "If you hadn't helped then, I'd be stuck now."
+    ],
+    "point": "過去の条件と今の結果は had + 過去分詞、would + 原形",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:57d377504ed296b819cfb267b7a477bea44a4a9f9f7231c8b1aea55fc7c59b26",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3u9m7j6e",
+    "ja": "貸してくれた傘、ありがとう。",
+    "en": "Thanks for the umbrella you lent me.",
+    "alternatives": [
+      "Thanks for lending me your umbrella.",
+      "I appreciate the umbrella you lent me."
+    ],
+    "point": "the umbrella (that) you lent me と後ろから説明",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:498e7bcca3bdea7e22a289d4ea76fdda206529034dd19abfdd6c2042b3ede125",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4c3w4q5x",
     "ja": "ささやかなお礼です。",
     "en": "It's a small thank-you.",
@@ -156,6 +222,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:50bc1f015e452a192a8e5a844aa9e271b77a4f3bcdf328c13aedc83250c27537",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4m7j5a7t",
+    "ja": "君がいなければ、プレゼンは大失敗だったよ。",
+    "en": "Without you, the presentation would've been a disaster.",
+    "alternatives": [
+      "Without you, I'd have bombed the presentation.",
+      "I'd have bombed the presentation without you."
+    ],
+    "point": "Without ~ は if 節の代わりにもなる",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 10,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:99637d9b60e0afd2d7d86ccfd07bed998bcade45ebdb9a58d086b518edbd8df0",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -247,6 +335,28 @@
     }
   },
   {
+    "id": "c_5q2d9a9c",
+    "ja": "電話してれば、待たせなかった。",
+    "en": "If I'd called, you wouldn't have waited.",
+    "alternatives": [
+      "I wouldn't have kept you waiting if I'd called.",
+      "If I'd called, you wouldn't have had to wait."
+    ],
+    "point": "過去の仮定は had + 過去分詞、wouldn't have + 過去分詞",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0f45b198a8408b08f2273757055c5984c77c6ccaf245c2be28cf5a6c40b13f14",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_5v4f6k6g",
     "ja": "ここにミスがあるよ。",
     "en": "There's a mistake here.",
@@ -260,6 +370,47 @@
     "stamps": {
       "core": {
         "hash": "sha256:f2f88bfb9a3134e20876658f1fa8d3165de3c0412123cbd97c4bae4d1f02c321",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5w3k2y9q",
+    "ja": "どれだけ嬉しいか言葉にできない。",
+    "en": "I can't express how happy I am.",
+    "alternatives": ["I can't tell you how happy I am.", "I can't say how glad I am."],
+    "point": "how happy の後ろは平叙文の語順（I am）",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 6,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:51518d1466dfced7975d7a2716f277037059daabbb2a276ac56f812565235df2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5z8k3p6x",
+    "ja": "もっとこまめに連絡すべきでした。",
+    "en": "I should have kept you posted.",
+    "alternatives": [
+      "I should have updated you more often.",
+      "I should have kept you in the loop."
+    ],
+    "point": "後悔は should have + 過去分詞",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:087b8e17fdade66f07577dd195492a525ab2037830c3517fde04001adacc452a",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -282,6 +433,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:06298412202f92aaa6aa35291e4e5c9551098b82b7341b346c70ae114b2624f8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6y7z3w6x",
+    "ja": "君のしてくれたことが、沁みたよ。",
+    "en": "What you did really touched me.",
+    "alternatives": [
+      "I was really touched by what you did.",
+      "What you did meant a lot to me."
+    ],
+    "point": "What you did が主語になる名詞節",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 9,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1a879e1d47a13a3d79d5d52f4b03db3f20eb8213c8c6e17a3f2e87d875b65b8b",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -342,6 +515,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:7d47859c2105fcd2abf6e9dc10746b95150d11448de3398d033d83c7fa3b8552",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8a6x3y2t",
+    "ja": "ちょっと出しゃばりすぎたかも。",
+    "en": "I may have overstepped a little.",
+    "alternatives": [
+      "I might have overstepped a bit.",
+      "I think I overstepped a little."
+    ],
+    "point": "may have + 過去分詞で断定を避ける",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["hedging-softening", "modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:601cdb89372654d586b731c8c3c92a2301a8f5eec506b54bda6bbf7095599c22",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -415,6 +610,28 @@
     }
   },
   {
+    "id": "c_9h8y8b2r",
+    "ja": "救われたのは、君の辛抱強さだよ。",
+    "en": "It was your patience that saved me.",
+    "alternatives": [
+      "Your patience is what saved me.",
+      "What saved me was your patience."
+    ],
+    "point": "It was ~ that で感謝の中心を強調",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4594310237825a8dabc5c9889b18f49724d8105c95b58d0990d31c29054d7104",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_9k6h7s6x",
     "ja": "許してくれる？",
     "en": "Can you forgive me?",
@@ -428,6 +645,29 @@
     "stamps": {
       "core": {
         "hash": "sha256:d2364a98cdde52b1c26823b86dff6a06d77f56b80a5ee47ffb0aed50216313e7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9s4h8n6e",
+    "ja": "そこまで大変とは知らなかった。",
+    "en": "I hadn't realized it was that tough.",
+    "alternatives": [
+      "I didn't know it was that hard.",
+      "I had no idea it was that hard.",
+      "I hadn't realized how hard it was."
+    ],
+    "point": "知った時より前のことは過去完了",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 9,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f2883a17b8e2b1cc918719d017f4cf11b0d0a97ccf08f627e19a10551838f1e3",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

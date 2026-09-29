@@ -19,6 +19,28 @@
     }
   },
   {
+    "id": "c_2f5h9h6s",
+    "ja": "移行は順調に進めてきました。",
+    "en": "I've made good progress on the migration.",
+    "alternatives": [
+      "I've made solid progress on the migration.",
+      "I've made a lot of headway on the migration."
+    ],
+    "point": "progress は数えない名詞。a progress は不可",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 8,
+    "grammar": ["articles-and-countability", "present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:38e5a00cdebd92611c52908631aed192121c569bc5680dc8add5034ffe2d3f9d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3j8v3k2p",
     "ja": "今日はブロッカーが一つある。",
     "en": "There's one blocker today.",
@@ -57,6 +79,50 @@
     }
   },
   {
+    "id": "c_3v7b3r4b",
+    "ja": "今日は、ほぼ会議で潰れました。",
+    "en": "Meetings ate up most of my day.",
+    "alternatives": [
+      "Most of my day went on meetings.",
+      "I lost most of the day to meetings."
+    ],
+    "point": "meetings は複数で無冠詞。ate up で時間を奪う",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 10,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9a7f92eef3f30c2afb7ede3427e5a9ae0c2807d0ddef5e59faf6ce4effb053cf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4m4r8a9h",
+    "ja": "バグの原因、まだつかめてません。",
+    "en": "I haven't found the cause yet.",
+    "alternatives": [
+      "I still haven't found the cause.",
+      "I still haven't figured out the cause."
+    ],
+    "point": "否定の現在完了は yet を文末に置く",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 8,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:365ff92396e1b145d2d59a554916b8d86a494992706a85e200b567dd30f38fd8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4u7b5f5t",
     "ja": "バグを直してるよ。",
     "en": "I'm fixing a bug.",
@@ -70,6 +136,25 @@
     "stamps": {
       "core": {
         "hash": "sha256:8a5029efe247785b1cc0b0d4250fd0bdf3bf6510dc8d011daeb710807631ec6e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4z4x9f4f",
+    "ja": "背景を、少し教えてほしいです。",
+    "en": "I could use a bit of context.",
+    "alternatives": ["I'd like a little context.", "Could I get some context?"],
+    "point": "context は数えない名詞。a bit of / some を使う",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 9,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:301bfbd0b9dfc83559ea5739bd2724763ef95dbf240ca26f7e6f6bdd624f922b",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -158,6 +243,28 @@
     }
   },
   {
+    "id": "c_6s5r8u6y",
+    "ja": "あと一日あれば、テストも終わるのに。",
+    "en": "If I had another day, I'd finish testing.",
+    "alternatives": [
+      "If I had one more day, I'd wrap up testing.",
+      "I'd finish testing if I had another day."
+    ],
+    "point": "現在の非現実は if + 過去形、主節は would",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 10,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:588fb4a85166da970fe1e183da8c5536dfb6732b00db4f4456c45d5678382d58",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6s8r9m5z",
     "ja": "詰まったら、聞くね。",
     "en": "I'll ask if I get stuck.",
@@ -171,6 +278,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:981080e8a8833c27de7abada6940dd6e6bc57faca7d078bbb044c5951dc6977e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6t9g2u2d",
+    "ja": "今日ほしいのは、レビューだ。",
+    "en": "What I need today is a review.",
+    "alternatives": [
+      "A review is what I need today.",
+      "What I want today is a review."
+    ],
+    "point": "What 節が主語。be 動詞の後に名詞が来る",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 8,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9556ea4e01974a86c4eef32ef25a794d03a88680adc36c965518c0e9d78ebffe",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -250,6 +379,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:bdec7c86eba11577a95b9ea081f0672bc450e7a71c9e23d37179834656d2c99c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7z6k5a7u",
+    "ja": "レビュー待ちで進めません。",
+    "en": "Blocked on review, I can't proceed.",
+    "alternatives": [
+      "Waiting on review, I can't move on.",
+      "I'm stuck waiting on a review."
+    ],
+    "point": "分詞構文で理由を前に出す。主語は後ろと同じ",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4afcba3d51a8bd50d36977831185c4a4aa441dbc266b4d21d90c5d60dfc89e0c",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -354,6 +505,50 @@
     }
   },
   {
+    "id": "c_9d7k3n4m",
+    "ja": "私がもっと早く共有すべきだった。",
+    "en": "I should have flagged this sooner.",
+    "alternatives": [
+      "I should've raised this earlier.",
+      "I should have shared this sooner."
+    ],
+    "point": "should have + 過去分詞で過去の後悔",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 9,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cf9eb69277d07fd850cfea7e8de4a520e02724e8d8d4aa8fe198b2e1c793c037",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9e8d6w2f",
+    "ja": "今日中に終わるかは、微妙ですね。",
+    "en": "I wouldn't bet on finishing today.",
+    "alternatives": [
+      "I wouldn't count on finishing today.",
+      "It's touch and go whether I'll finish today."
+    ],
+    "point": "「微妙」は would を使い断定を避ける",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b93a1cc0f746ee8ca03f796ce1baa0c1cbc2f3745845fa7c657125599f8e571b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_9h3j5t8e",
     "ja": "デプロイしなきゃ。",
     "en": "I have to deploy.",
@@ -367,6 +562,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:8d9933c3c340785bec45cf8db52f90dd61c3606d6024a69279f967f8c545599d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9h9h4q3d",
+    "ja": "頼まれた修正が遅れた理由、話します。",
+    "en": "I'll explain why the fix you requested slipped.",
+    "alternatives": [
+      "Let me explain why the requested fix is late.",
+      "I'll explain why the fix you asked for is late."
+    ],
+    "point": "why 節の中に、さらに関係節が入る形",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:26fd8085ec26d03a008fea6b1e8d6eedc899744a13753092f22704949c56b093",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

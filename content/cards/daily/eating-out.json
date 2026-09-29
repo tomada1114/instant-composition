@@ -19,6 +19,50 @@
     }
   },
   {
+    "id": "c_2f2x3v7x",
+    "ja": "量は少なめでも、お腹にたまった。",
+    "en": "Though small, the portion filled me up.",
+    "alternatives": [
+      "Small as the portion was, it filled me up.",
+      "Even though the portion was small, it filled me up."
+    ],
+    "point": "Though + 形容詞 で譲歩を短く言える",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d0a3e943b4cc0ee0d61c60d14210227cc0e4f19b79ff2eac88e7955fc0acbf26",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2v5b2b3p",
+    "ja": "好きな店が潰れたと彼女が言った。",
+    "en": "She said my favorite place closed down.",
+    "alternatives": [
+      "She told me my favorite shop closed down.",
+      "She said my favorite place shut down."
+    ],
+    "point": "said の後は過去形。closed down で「閉店した」",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3637a165831e7dc62a18009c18e9f6e6e2a3660aea69ad01d15433f899c57a81",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2y3e2p3k",
     "ja": "席は空いてますか？",
     "en": "Are there any seats?",
@@ -80,6 +124,28 @@
     }
   },
   {
+    "id": "c_3q2p3h7c",
+    "ja": "がっかりしたのは接客だった。",
+    "en": "It was the service that disappointed me.",
+    "alternatives": [
+      "What disappointed me was the service.",
+      "The service was what disappointed me."
+    ],
+    "point": "It was 〜 that 節で「〜だった」を強調",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7a4cf1f54803b9b260539721caebe0b41575780269a5ee173cafeb92f3651618",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3u4r6r6z",
     "ja": "おすすめは何ですか？",
     "en": "What do you recommend?",
@@ -93,6 +159,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:3db26f946a2babbe59d260185292edba196734a8e64764f6db0bf3d85f240900",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4b5j9c3q",
+    "ja": "この料理、何が入ってるか教えて？",
+    "en": "Can you tell me what's in it?",
+    "alternatives": [
+      "Could you tell me what's in it?",
+      "Can you let me know what's in it?"
+    ],
+    "point": "間接疑問は what's in it の語順（疑問文にしない）",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 9,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5156f15e5f3417230b86d095064eb83d14dbe7aa8aae71f28db783e87528de59",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -159,6 +247,28 @@
     }
   },
   {
+    "id": "c_5g5g6s8d",
+    "ja": "私なら、日替わりにするけどね。",
+    "en": "If I were you, I'd get the special.",
+    "alternatives": [
+      "I'd go for the special if I were you.",
+      "If I were in your shoes, I'd order the special."
+    ],
+    "point": "助言の仮定は If I were you, I'd 〜",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 10,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d3eb7f9e0e58a883012439b38f609f7f692b704129c3a2483fe7f5c87b58212e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_5m9a7t2u",
     "ja": "ランチは2時までだよ。",
     "en": "Lunch is served until two.",
@@ -194,6 +304,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:8f28dec2e1e31e5f446e9b2e50870217175b24388b2a3cee1ae788a06cb18641",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5x5g4c8c",
+    "ja": "昼を抜いてたら、今ごろ腹ペコ。",
+    "en": "If I'd skipped lunch, I'd be starving.",
+    "alternatives": [
+      "If I hadn't had lunch, I'd be starving now.",
+      "If I'd skipped lunch, I'd be starving now."
+    ],
+    "point": "過去の仮定 if I'd + 今の結果 I'd be",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:edaa2c9ab7ed12abafa2834e819f115e8da3b2bbe274c4d8ceda2ede7e33066d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -301,6 +433,28 @@
     }
   },
   {
+    "id": "c_7v2x9f8j",
+    "ja": "予約を受け付けてるか、知ってる？",
+    "en": "Do you know if they take reservations?",
+    "alternatives": [
+      "Do you know whether they take reservations?",
+      "Do you know if they're taking reservations?"
+    ],
+    "point": "間接疑問は if + 平叙文の語順",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 8,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:21f861280ce8144949e913d084a91ee52b0f6fbf33191b64b256a80693c4deec",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8m5x5h8h",
     "ja": "このランチのほうが安いよ。",
     "en": "This lunch is cheaper.",
@@ -336,6 +490,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:71795f19090425fedbfd6c122b7fc9a279cf04f0cd97bf420fef913dd05614a7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8q2q5v2g",
+    "ja": "頼んだものは品切れだと言われた。",
+    "en": "They said what I ordered was sold out.",
+    "alternatives": [
+      "They told me what I ordered was sold out.",
+      "I was told what I ordered was sold out."
+    ],
+    "point": "what 節が that 節の中の主語になる入れ子",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c5165a9c0b05df3029ea77eea6352f8444623a71505eced05fe76abd40ba337c",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -397,6 +573,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:03ad8bd96f5b3ea6dddac20734571c1f7d11a4190719d28772e32f6396a5ede7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9v8u8r7b",
+    "ja": "ここは上司が勧めてくれた店だよ。",
+    "en": "This is the place my boss recommended.",
+    "alternatives": [
+      "This is the restaurant my boss recommended.",
+      "This is the place that my boss recommended."
+    ],
+    "point": "目的格の関係詞は省ける",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 9,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5043f60e7fb3d6cd189dd21c28bf9c79605ca7298b77775147b63ac100173b29",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

@@ -1,5 +1,93 @@
 [
   {
+    "id": "c_2k9z9r3x",
+    "ja": "清掃係にシーツを替えてもらった。",
+    "en": "I got housekeeping to change the sheets.",
+    "alternatives": [
+      "I had housekeeping change the sheets.",
+      "I had the sheets changed by housekeeping."
+    ],
+    "point": "get + 人 + to do / have + 人 + 動詞で依頼の結果",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 8,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:73e74f76971d6c588460d6090859611c233223981a4b419c219d32f973f1e70d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2z5q8b2j",
+    "ja": "高いとはいえ、この眺めなら納得です。",
+    "en": "Pricey as it is, the view justifies it.",
+    "alternatives": [
+      "Even though it's pricey, the view is worth it.",
+      "Expensive though it is, the view is worth it."
+    ],
+    "point": "形容詞 + as it is で「〜ではあるが」",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0dd939e97dc540a3681bf8fc1a069c57369c97f6a00abb9ff4b57cbb3974a2de",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3b5p3u9w",
+    "ja": "朝食の時間を教えてもらえますか？",
+    "en": "Could you tell me when breakfast starts?",
+    "alternatives": [
+      "Do you know what time breakfast starts?",
+      "Could you tell me what time breakfast is?"
+    ],
+    "point": "間接疑問は when breakfast starts と平叙文の語順",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:45ca937ee68bab21505940f1d935959a51f10bfa7526c11bc72eedcafef45c7d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3p8d7c2j",
+    "ja": "もっと静かなら、昨夜眠れたのに。",
+    "en": "If it were quieter, I'd have slept.",
+    "alternatives": [
+      "If it were quieter, I'd have slept last night.",
+      "I'd have slept if it were quieter."
+    ],
+    "point": "今の状態 were と過去の結果 would have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:af0469a79dcc729f9ab97e964662fb5de718d86d0da65bfc7f8f156a4e021f1c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3w8g7b8x",
     "ja": "違う鍵をもらったに違いない。",
     "en": "I must've gotten the wrong key.",
@@ -45,6 +133,28 @@
     }
   },
   {
+    "id": "c_4a2m5q5e",
+    "ja": "入るとエアコンの故障に気づいた。",
+    "en": "Walking in, I noticed the broken AC.",
+    "alternatives": [
+      "Entering the room, I noticed the AC was broken.",
+      "As I walked in, I noticed the broken AC."
+    ],
+    "point": "Walking in, で同時の動作を分詞構文にする",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7f69a99b24310f53df71aae6590301e6847013f93b48f69118f1b8037ed5e5a2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4d2c8c3g",
     "ja": "予約したのは禁煙室でした。",
     "en": "The room I booked was non-smoking.",
@@ -81,6 +191,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:1a957d90a6d070bc5610515b31acf6a1a72bc8f7400ca5a69ce304b61b1b0401",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4z6x9x8m",
+    "ja": "隣の部屋の騒音がひどいんです。",
+    "en": "The noise from next door is awful.",
+    "alternatives": [
+      "The noise coming from next door is terrible.",
+      "The noise from the next room is awful."
+    ],
+    "point": "from next door を名詞の後ろに置く",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 8,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9c314f829f5f5d5c4ca70c7110c576ebf8b3c61ccce126dab333a0abd356c3a1",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -229,6 +361,28 @@
     }
   },
   {
+    "id": "c_6e6k3j3y",
+    "ja": "こんなに狭い部屋は、見たことがない。",
+    "en": "Never have I seen such a tiny room.",
+    "alternatives": [
+      "I've never seen such a tiny room.",
+      "I've never seen a room this small."
+    ],
+    "point": "Never を前に出すと助動詞が主語の前に来る",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:123e96bed8f2867841d97a25a03783795879af9c121da5e141936d6b3617ea73",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6h6g5p7p",
     "ja": "この部屋は禁煙ですか？",
     "en": "Is this room nonsmoking?",
@@ -242,6 +396,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:505041507322829aaa9b82d0534d3be96246ea0bf99c605231b54a57103a93ff",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6j6p4a6p",
+    "ja": "遅く着いたので、夕食を逃した。",
+    "en": "Arriving late, I missed dinner.",
+    "alternatives": [
+      "Since I arrived late, I missed dinner.",
+      "I arrived late, so I missed dinner."
+    ],
+    "point": "分詞構文の主語は主節と同じ。Arriving で理由を示す",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:451ff4f3d0932f4a788efb19629ae1339bf0da41fa77d95ea63b505b098462ee",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6m2j8y6a",
+    "ja": "立地はいいが、部屋が古びている。",
+    "en": "Although it's well located, the room's dated.",
+    "alternatives": [
+      "The location's great, though the room's dated.",
+      "Although the location is great, the room is run-down."
+    ],
+    "point": "Although 節は but を重ねず、1文に収める",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d90cc0164e4a4131d1cde8f9d9f0b826f45afcd332a613d316f3b3e955e1c212",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -410,6 +608,28 @@
     }
   },
   {
+    "id": "c_9h4m6j3u",
+    "ja": "問題は、お湯が出ないことなんです。",
+    "en": "It's the hot water that isn't working.",
+    "alternatives": [
+      "What's not working is the hot water.",
+      "What's wrong is that the hot water isn't working."
+    ],
+    "point": "問題の的を絞るなら It's ～ that の形",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:119852e799530ebec61255f30b01af1a6d83b4299e7c357e42d5b76e4acfd228",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_9p5q8y8k",
     "ja": "もっと静かな宿がよかった。",
     "en": "I wish I'd chosen somewhere quieter.",
@@ -427,6 +647,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:e9239d0ad97ccb6ade2a50ca62e655f0913189fd15daf3132c2587bfe8d88011",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9t7f8g3x",
+    "ja": "もう一泊、泊まりたいのですが。",
+    "en": "I'd like to stay another night.",
+    "alternatives": [
+      "I'd like to stay one more night.",
+      "Could I stay one more night?"
+    ],
+    "point": "I'd like to + 動詞で丁寧に希望を伝える",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 4,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:18ec48d478260a9937989057971c93003994f39b4a7506613e22c9ea4d40e349",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

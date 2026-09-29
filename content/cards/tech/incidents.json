@@ -1,5 +1,49 @@
 [
   {
+    "id": "c_2c4d2t5d",
+    "ja": "今は絶対に、再デプロイ禁止だ。",
+    "en": "Under no circumstances should we redeploy now.",
+    "alternatives": [
+      "On no account should we redeploy now.",
+      "We must not redeploy under any circumstances."
+    ],
+    "point": "否定の副詞句を文頭に出すと should we の倒置",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7333472efc1f902a6d08bca945fb7fd3ac4b17f03cf82d6444ade34df6c9ad2a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2r2h5u4c",
+    "ja": "リリース、私が止めてればなあ。",
+    "en": "I wish I'd stopped that release.",
+    "alternatives": [
+      "If only I'd stopped that release.",
+      "I wish I'd held off on that release."
+    ],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5909825ea54896cd3ad12d3c762b224be176d29df1f5c26fd2008782c99ad307",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2v9b4u3r",
     "ja": "原因を、まだ追ってます。",
     "en": "We're still tracking down the cause.",
@@ -16,6 +60,94 @@
     "stamps": {
       "core": {
         "hash": "sha256:22f7b74d088392644c790537ef7b650d6780a2bdfa369dc2c2699a2dae0957e8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3g9w8j7s",
+    "ja": "警報が鳴ってれば、気づけたのに。",
+    "en": "Had the alert fired, we'd have known.",
+    "alternatives": [
+      "If the alert had fired, we'd have known.",
+      "If the alert had gone off, we'd have known."
+    ],
+    "point": "過去の反実仮想は if + 過去完了、主節は would have",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b21904c9ee2257403c5d6aae9e28309196af26a6ddde14cb2cd90d4ef4f4fd16",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3j2v6u4j",
+    "ja": "証明書が期限切れだと判明した。",
+    "en": "It turned out the certificate had expired.",
+    "alternatives": [
+      "We found out the certificate had expired.",
+      "We discovered that the certificate had expired."
+    ],
+    "point": "turn out の後ろは that 節。先の出来事は過去完了",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:128c946ae8334ca574744bf3963e9c4924475b85ea48d0b1e93399f69ee9e8c5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3r3j5q8x",
+    "ja": "午前三時から、ずっと火消しです。",
+    "en": "We've been firefighting since 3 a.m.",
+    "alternatives": [
+      "We've been putting out fires since 3 a.m.",
+      "We've been working on the outage since 3 a.m."
+    ],
+    "point": "since + 起点で続く動作は have been -ing",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9113a8d52695ed5d5fe9e7f2044a24ba39ae0e776d98f66ca3a627f74ac85859",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3s4f7h9d",
+    "ja": "何が起きたか、まだ不明です。",
+    "en": "We still don't know what happened.",
+    "alternatives": [
+      "We don't yet know what happened.",
+      "We're still unclear on what happened."
+    ],
+    "point": "know の後の what 節は平叙文の語順",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6d242c4820a821cc0bcafc12608e7afad27432193842eeb874b2b2d830630172",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -105,6 +237,28 @@
     }
   },
   {
+    "id": "c_4r7v7v8f",
+    "ja": "設定変更が引き金だったかも。",
+    "en": "The config change may have triggered it.",
+    "alternatives": [
+      "It might have been the config change that triggered it.",
+      "Perhaps the config change triggered it."
+    ],
+    "point": "may have + 過去分詞で過去の可能性を柔らかく言う",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 10,
+    "grammar": ["hedging-softening", "modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a34d5caa76bd7f82fc183135f8a9fa56712cec0db0decc4dada8912320a04038",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4v2f9t3r",
     "ja": "警報が壊れたら誰も気づかない。",
     "en": "If alerts failed, nobody would know.",
@@ -168,6 +322,28 @@
     }
   },
   {
+    "id": "c_5r2v4u2p",
+    "ja": "落ちた原因は、設定変更でした。",
+    "en": "What took us down was a config change.",
+    "alternatives": [
+      "It was a config change that took us down.",
+      "A config change is what took us down."
+    ],
+    "point": "「原因は～」を強調するなら What ～ was の形",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0084848fc872b3d6b90cc3880e9895fcd17d3ab4d56181e7518f83f8020607be",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6b6x7s5x",
     "ja": "30分後にまた報告します。",
     "en": "I'll update you in 30 minutes.",
@@ -184,6 +360,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:5d9681ed7fdebfdd25e409ec3508d148bd6ec55aee19fcf782ef8566a09fb13b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6c5b7g4f",
+    "ja": "影響は東京のユーザーだけだった。",
+    "en": "Only users in Tokyo were affected.",
+    "alternatives": [
+      "Only Tokyo users were affected.",
+      "Only users in Tokyo were impacted."
+    ],
+    "point": "users in ~ と前置詞句で後ろから修飾",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 6,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:02c82f5b2b7d84a895e05a5f4f4f2ea0ab8c7e0f886b76253bc0dbb65d90091f",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -250,6 +448,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:3a74682bf2b9f6f433d58b26b70f74c1d6892c19bd807d9939d341c8e0b47b67",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7c4h9n9c",
+    "ja": "私が閾値を早く見直してればなあ。",
+    "en": "I wish I'd revisited the thresholds sooner.",
+    "alternatives": [
+      "If only I'd reviewed the thresholds earlier.",
+      "I wish I had reviewed the thresholds sooner."
+    ],
+    "point": "wish + 過去完了。thresholds は複数形",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 10,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:deba61d8ae33687c26eef6f7ccee29545ae4e56a8a985f9e9501b671a5464192",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -352,6 +572,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:5be21f25f1f12286c321b548498a33687151844b3573fc99b2682d3e9fe9b6e9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8q5q8s6u",
+    "ja": "パッチしてれば、今は落ちてない。",
+    "en": "If we'd patched, we'd be up now.",
+    "alternatives": [
+      "If we'd applied the patch, we'd be up now.",
+      "We wouldn't be down now if we'd patched it."
+    ],
+    "point": "過去の原因 + 今の結果は had done と would be",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7dfb0d803390d5f68273f50e8ebe4067d1bfa366c5d3b7db4226305e433bf8e4",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

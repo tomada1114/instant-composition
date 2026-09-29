@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2b6g7y2d",
+    "ja": "私は、こんなお願いはめったにしない。",
+    "en": "Rarely do I ask for favors like this.",
+    "alternatives": [
+      "I rarely ask for favors like this.",
+      "I hardly ever ask for favors like this."
+    ],
+    "point": "Rarely を前に出すと do が主語の前へ",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:56e92976215051d12f0da5ce35aebdc73758540edff1f4394350d6cda3ff8470",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2k8s7y7e",
     "ja": "サムにやり直してと頼んだ。",
     "en": "I asked Sam to redo it.",
@@ -41,6 +63,28 @@
     }
   },
   {
+    "id": "c_2u4n6t9b",
+    "ja": "断っていれば、今は暇なのに。",
+    "en": "If I'd refused, I'd be free now.",
+    "alternatives": [
+      "If I'd said no, I'd be free now.",
+      "Had I said no, I'd be free now."
+    ],
+    "point": "過去の仮定 + 今の結果は would be",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:28bd5f5d52f107b554635f3c415696bee5c9cced700dee1c8fa7fea895c596db",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2v4t5q7v",
     "ja": "返事、ずっと待ってます。",
     "en": "I've been waiting for your reply.",
@@ -76,6 +120,72 @@
     "stamps": {
       "core": {
         "hash": "sha256:da3e2bc63e0f11d2a576beebcd02cbf0b4e7318479faef7a2a622f799e5fbe58",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3y9m6v5h",
+    "ja": "お言葉に甘えられたらいいのですが。",
+    "en": "I wish I could take you up on that.",
+    "alternatives": [
+      "I wish I could take you up on it.",
+      "I wish I could accept your offer."
+    ],
+    "point": "take ~ up on は申し出を受ける",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 10,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4be7c352bd835ade0539951b39a7ed8c590e533867f68bf4e333ec1d2aa6e887",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4b5z6p4b",
+    "ja": "この件を引き受ける余裕はない。",
+    "en": "I can't afford to take this on.",
+    "alternatives": [
+      "I don't have the capacity to take this on.",
+      "I don't have the bandwidth for this."
+    ],
+    "point": "can't afford to + 動詞で「〜する余裕がない」",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:474f2ccef5587a0ed12d2094331d9ee5552a8a75cdb70d33e75022f2e20d890b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4c7s9k3c",
+    "ja": "頼みたいのは、第三者の目です。",
+    "en": "What I need is fresh eyes.",
+    "alternatives": [
+      "What I'm after is a second pair of eyes.",
+      "It's a second pair of eyes I need."
+    ],
+    "point": "「別の人の目」は a second pair of eyes",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f5f71675d1f0506712eb8c15e0f4b53a75781c9b8532c303dc981b8d3c42fd3a",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -145,6 +255,28 @@
     }
   },
   {
+    "id": "c_5k6y2b6x",
+    "ja": "チームに、明日やり直させます。",
+    "en": "I'll have the team redo it tomorrow.",
+    "alternatives": [
+      "I'll get the team to redo it tomorrow.",
+      "I'll have the team do it over tomorrow."
+    ],
+    "point": "have + 人 + 原形で「させる」",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6e123904d20de64e2933f1e1784419a2de3baa225fb5cd2b5e6e8f2dc8f027d1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_5s9q8a5g",
     "ja": "報告書が昼までに必要です。",
     "en": "The report is needed by noon.",
@@ -158,6 +290,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:8a4849b225133328d0865619340de7c09c95f4bb3b44d51f44acf8dcc79bb2b0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5w5g7g8x",
+    "ja": "代わりに、これお願いできますか？",
+    "en": "Would you mind covering this for me?",
+    "alternatives": [
+      "Could you cover this for me?",
+      "Would you mind taking care of this for me?"
+    ],
+    "point": "Would you mind の後ろは -ing",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:71cd1dc7bed784408b40f0f8fbae2724cf7c57c09b930b9dcb1423559226cf0a",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -224,6 +378,28 @@
     }
   },
   {
+    "id": "c_7e7x4w4f",
+    "ja": "先に一言くれてもよかったのに。",
+    "en": "You could've given me a heads-up.",
+    "alternatives": [
+      "You could have told me beforehand.",
+      "You might have given me some warning."
+    ],
+    "point": "「〜してくれてもよかった」は could have done",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d8073905b924f9cbe732cb6d767d8699fd11bcd6781eefd2afd54be7284cc477",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_7k9u6s9m",
     "ja": "それでいいですよ。",
     "en": "That's fine with me.",
@@ -284,6 +460,51 @@
     }
   },
   {
+    "id": "c_7u2q2k2k",
+    "ja": "もっと早く頼んでほしかったな。",
+    "en": "I wish you'd asked me sooner.",
+    "alternatives": [
+      "I wish you had asked me earlier.",
+      "I wish you'd let me know earlier."
+    ],
+    "point": "過去の不満は wish + 過去完了",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:784a5cb9ba4e60aeb2bec0e21ef174bbf0a786c49de2a890ceb75518a6f13fff",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7x8h3r9p",
+    "ja": "何かあれば、連絡してください。",
+    "en": "Should anything come up, call me.",
+    "alternatives": [
+      "If anything comes up, call me.",
+      "Let me know if anything comes up.",
+      "Should anything happen, contact me."
+    ],
+    "point": "Should + 主語で if を省く倒置",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b45a4730a96e792ec72d7aa2e809864083e9262a74af2fe1c3b4c658785c5971",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8b7b3d5y",
     "ja": "それは私の仕事です。",
     "en": "That's my job.",
@@ -319,6 +540,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:1bb1dd40df8b18e6cc54a10dc4962135d8e3489f1a69d76e3294ad70226a18e3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8g4e4n7z",
+    "ja": "頼みたいのは、話を聞くことだけです。",
+    "en": "All I ask is you hear me out.",
+    "alternatives": [
+      "All I'm asking is that you hear me out.",
+      "All I want is for you to hear me out."
+    ],
+    "point": "All I ask is that ~ で「望むのは〜だけ」",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 10,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3abd3ad728acd0a86adc8bdc9e436465129a9af7e3765a10baf8190ba8e373cc",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

@@ -79,6 +79,28 @@
     }
   },
   {
+    "id": "c_2p9m5w4s",
+    "ja": "API を分けてれば、今は平気なのに。",
+    "en": "If we'd split the API, we'd be fine.",
+    "alternatives": [
+      "Had we split the API, we'd be fine now.",
+      "If we'd split it back then, we'd be fine now."
+    ],
+    "point": "過去の仮定+今の結果。主節は would be",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 10,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:94176a9f68bd156e3696792cd7b1459ac48511fd32330dcd1cf876855209b2d7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2r8u4z7b",
     "ja": "これが壊れた関数だよ。",
     "en": "This is the function that broke.",
@@ -177,6 +199,28 @@
     }
   },
   {
+    "id": "c_4v4t7r4d",
+    "ja": "引っかかるのは、この命名です。",
+    "en": "What bothers me is this naming.",
+    "alternatives": [
+      "It's the naming that bothers me.",
+      "The naming is what bothers me."
+    ],
+    "point": "What 節を主語にして「気になるのは」を強調",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e08a5ab27af173cb950c469dcf6408bf3a442a3c17da2c4ad531ab2685f93e28",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4x6m6c5y",
     "ja": "指摘された行を直した。",
     "en": "I fixed the flagged lines.",
@@ -215,6 +259,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:c82e365e2ba7a6374c0613f0d5577b1abe6033b6318d506024ec1563944fc583",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5f7q6a9a",
+    "ja": "これを読んで、懸念が二つある。",
+    "en": "Having read this, I have two concerns.",
+    "alternatives": [
+      "After reading this, I have two concerns.",
+      "Having gone through this, I have two concerns."
+    ],
+    "point": "Having + 過去分詞で「読んだ後で」を前置き",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7ff08653042aef30e2389f5c0d42f20adaaa7c6e3b7de0ceabb2fbf794ae666",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -306,6 +372,72 @@
     }
   },
   {
+    "id": "c_6c7q3f7n",
+    "ja": "テストあったら、今は安心なのに。",
+    "en": "If we'd had tests, I'd feel safer.",
+    "alternatives": [
+      "I'd feel safer now if we'd had tests.",
+      "If there had been tests, I'd feel safer now."
+    ],
+    "point": "過去の仮定+今の結果。if 節は過去完了、主節は would",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:56c0423b8ba1bdad8fdd8b696b9c00bd93edee63c0b7bfda65df870e8b633845",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7p9g2z9w",
+    "ja": "マージ前に誰か気づいてたらなあ。",
+    "en": "I wish someone had caught this before merging.",
+    "alternatives": [
+      "If only someone had caught this before the merge.",
+      "I wish this had been caught before merging."
+    ],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 10,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ddc78183ce9c98134887b6c97184005af1a0fb706d7e0221100638b267adc9b5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7r6q3p2m",
+    "ja": "これ、テストも説明もない。",
+    "en": "Not only is it untested, it's undocumented.",
+    "alternatives": [
+      "Not only does it lack tests, it lacks docs.",
+      "It's untested, and undocumented on top of that."
+    ],
+    "point": "Not only を文頭に出すと is it の倒置になる",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:38078e509e055d246355253e92bcc0ff72023fff91fa72c36890097669a3a8cc",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_7w8d5t7t",
     "ja": "これ、月曜から変わってないよ。",
     "en": "This hasn't changed since Monday.",
@@ -347,6 +479,28 @@
     }
   },
   {
+    "id": "c_8r6j2p7s",
+    "ja": "ご指摘を受けて、作り直しました。",
+    "en": "Taking your feedback on board, I reworked it.",
+    "alternatives": [
+      "Based on your feedback, I reworked it.",
+      "After considering your feedback, I reworked it."
+    ],
+    "point": "take ~ on board は「受け入れて反映する」",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 10,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d88018ad72018cea451b8d93646b0c22ab03b36f9e1cbd5d2b4a5191a0357e94",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8t2g6a2j",
     "ja": "これ、私には追えない。",
     "en": "I can't follow this.",
@@ -360,6 +514,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:a91db6980926901c83f0e2c72cf0524252aa70fb0b69b1e0c31b3c39cb57fccb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9a5g3e9x",
+    "ja": "このコード、エラー処理がないよ。",
+    "en": "This code is missing error handling.",
+    "alternatives": [
+      "There's no error handling in this code.",
+      "This code doesn't handle errors."
+    ],
+    "point": "error handling は数えない名詞。a は付けない",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7ff504e8837bdae01617c148734a262d05bddad0bd9833a1e1d3e2c9425c019",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -423,6 +599,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:06894dd4d94584235ade0b2ee106ffb427d1d5c9e9cd37b4e6edb80d6f2514f8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9v4u4w2c",
+    "ja": "この名前にした理由、教えて？",
+    "en": "Mind explaining why you chose this name?",
+    "alternatives": [
+      "Can you tell me why you chose this name?",
+      "Could you explain why you went with this name?"
+    ],
+    "point": "間接疑問は why + 主語 + 動詞の語順",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 9,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:42a17377461a9867413ca74d5c88f431f888b3df0d398ea01c75cc9b47bfd38a",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

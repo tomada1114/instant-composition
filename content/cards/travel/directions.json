@@ -102,6 +102,28 @@
     }
   },
   {
+    "id": "c_3q2c5z6w",
+    "ja": "標識がもっとあれば、見つかるのに。",
+    "en": "If there were more signs, I'd find it.",
+    "alternatives": [
+      "I'd find it if there were more signs.",
+      "If it were better signposted, I'd find it."
+    ],
+    "point": "現在の仮定は If + were, would + 動詞",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 6,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f7d056b9718e86115f67e08a969cb7902ccb483f654e467ae19211f7641a70d6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3q3z6m8j",
     "ja": "銀行の隣の店です。",
     "en": "The shop by the bank.",
@@ -212,6 +234,50 @@
     }
   },
   {
+    "id": "c_4a8v9v6d",
+    "ja": "一日中、この地図と格闘してる。",
+    "en": "I've been wrestling with this map all day.",
+    "alternatives": [
+      "I've been struggling with this map all day.",
+      "I've been fighting with this map all day."
+    ],
+    "point": "格闘は wrestle。現在完了進行形で継続を表す",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 9,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c605093ad5003a631622401bee5850f56ecb67950ff3cd9cf991b469f5b5d3aa",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4e2y2z9u",
+    "ja": "彼女は、駅はすぐそこだと言った。",
+    "en": "She said the station was right there.",
+    "alternatives": [
+      "She told me the station was right there.",
+      "She said the station was just around the corner."
+    ],
+    "point": "said の後は時制を過去側にずらす",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 9,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8480b33dc61a14558201d1926f04f31985abda870e8a84a2806a5dc8b9035d5d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4h3z6z3w",
     "ja": "もう一度お願いします。",
     "en": "Could you repeat that?",
@@ -247,6 +313,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:4dd65b6e500e9ab6d4bcbcf42a59c85dd4938d6cfdd33262dd5fc8d1b40d46a2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4y8q4c8s",
+    "ja": "彼に、案内してくれるよう頼んだ。",
+    "en": "I asked him to guide me.",
+    "alternatives": [
+      "I asked him to show me the way.",
+      "I asked him to take me there."
+    ],
+    "point": "ask + 人 + to do で「人に〜するよう頼む」",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 8,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1d9e275834417944b511969913b070b39910660405abf5da45c87eb32224abcc",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -295,6 +383,47 @@
     }
   },
   {
+    "id": "c_5j4e6u9t",
+    "ja": "彼に、地図を描いてもらった。",
+    "en": "I had him draw a map.",
+    "alternatives": ["I got him to draw me a map.", "He drew me a map."],
+    "point": "have + 人 + 動詞の原形で「〜してもらう」",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 6,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:67ce34e90786c776987c76736cd715170eaea2e4024c8287aa3e1bdbf5c5ddcd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5k2b3q4p",
+    "ja": "駅への道を教えていただけませんか？",
+    "en": "Could you possibly point me to the station?",
+    "alternatives": [
+      "Would you mind pointing me to the station?",
+      "Sorry, could you tell me the way to the station?"
+    ],
+    "point": "possibly を足すと依頼がさらに丁寧になる",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:418c2def49bddf648199a4bdcf2eefe8c1d59d56469d6da5bdec5a4336575feb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_5q9c7u3b",
     "ja": "次の角を右に曲がって。",
     "en": "Take the next right.",
@@ -333,6 +462,47 @@
     }
   },
   {
+    "id": "c_5s9x2g4r",
+    "ja": "係の人に、地図に印をつけてもらった。",
+    "en": "I got the clerk to mark my map.",
+    "alternatives": ["I had the clerk mark my map.", "The clerk marked my map for me."],
+    "point": "get + 人 + to do で「人に〜してもらう」",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c13c1f6068d6e4d68e584423e5fc6d3021967385c4b841737d345b6b6f43b5fa",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5t9e8x8p",
+    "ja": "探してる店は、パン屋があった所です。",
+    "en": "The shop you want is where the bakery was.",
+    "alternatives": [
+      "The shop you're after is where the bakery was.",
+      "You want the shop where the bakery was."
+    ],
+    "point": "The place you want の中に where 節がつながる",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 8,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9550f960420ea6f5f796256f020bea04944579ff840711a58b11f2b16a308e69",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6h7e7s9y",
     "ja": "この店、もう二回通ったね。",
     "en": "We've walked past this shop twice.",
@@ -355,6 +525,28 @@
     }
   },
   {
+    "id": "c_6q5u2k7b",
+    "ja": "信号に着いたら、左に曲がって。",
+    "en": "Turn left when you reach the light.",
+    "alternatives": [
+      "When you get to the light, turn left.",
+      "Turn left once you reach the light."
+    ],
+    "point": "when 節は未来でも現在形",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 8,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:041fb0520d236fc347b591231417d32f137e69426f1f594ee936aa3aadfccb01",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6r3r7e5t",
     "ja": "地図を見ています。",
     "en": "I'm looking at the map.",
@@ -368,6 +560,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:c0a09e4cdeb26fbd62093d9ff7b57e59be6a35a5a2895ae1d71672b7b7b91a02",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6x4s7v2t",
+    "ja": "ずっとぐるぐる回ってるんです。",
+    "en": "I've been going in circles for ages.",
+    "alternatives": [
+      "I've been walking in circles for ages.",
+      "I've been going around in circles for a while."
+    ],
+    "point": "現在完了進行形で「ずっと〜している」",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 8,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b873ea1f9f0d606b5c2120b5945be9bd982cc3468d8e2f7f1a92cdd2d898ed1b",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -431,6 +645,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:1a8e2f816f633d6f7df0df072b111714a516b8e53c5d5a92f1e4a00af645ce90",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9x9w9u7e",
+    "ja": "引き返した方が、早いですよ。",
+    "en": "You'd be better off doubling back.",
+    "alternatives": [
+      "It'd be quicker to turn back.",
+      "You're better off turning back."
+    ],
+    "point": "「引き返す」は double back / turn back",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 9,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fabb8646015f96677854ad56f4e8360894af602a3585e2fba2ae837613ad0c7b",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

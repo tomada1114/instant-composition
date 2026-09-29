@@ -41,6 +41,28 @@
     }
   },
   {
+    "id": "c_2r8d5j3n",
+    "ja": "彼はなぜ怒ってるのか分からない。",
+    "en": "I can't figure out why he's upset.",
+    "alternatives": [
+      "I don't get why he's so upset.",
+      "I have no idea why he's angry."
+    ],
+    "point": "間接疑問は why he's と平叙文の語順",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 9,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8800ff601b4a982be5e4340ff55002c389d2517fe7a0c2533bfc593d8f5971ec",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3p7z6b4w",
     "ja": "一人で歩くのは平気だよ。",
     "en": "I don't mind walking alone.",
@@ -57,6 +79,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:b3c01fbf98341479a577c62c5308ff4ca96bff4e2e2693f28643286e938dab7e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3s8h6f7m",
+    "ja": "言い返してれば、今すっきりなのに。",
+    "en": "If I'd spoken up, I'd feel better now.",
+    "alternatives": [
+      "If I had spoken up, I would feel better now.",
+      "If I'd said something, I'd feel better now."
+    ],
+    "point": "過去の仮定 + 今の結果は had done と would",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 10,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:42df784a3b6e6a36933bbc12962f657ae7929fc6534aee35a773d8db91d23060",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -95,6 +139,25 @@
     "stamps": {
       "core": {
         "hash": "sha256:cee12880a01031d9dafed664baa052956477dcc8f0f3053f4e15e552a2ef4130",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4v3j4e2d",
+    "ja": "私、彼の気分を害したかもしれない。",
+    "en": "I might have hurt his feelings.",
+    "alternatives": ["I may have hurt his feelings.", "I might have offended him."],
+    "point": "might have + 過去分詞で「かもしれなかった」",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 10,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1d26560c910a19886434c24ea29854e13727b641c31728066d3244cbba47dca8",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -158,6 +221,69 @@
     }
   },
   {
+    "id": "c_5c2t3j9q",
+    "ja": "今週ずっと、彼が心配なんだ。",
+    "en": "I've been worrying about him all week.",
+    "alternatives": [
+      "I've been worried about him all week.",
+      "He's been on my mind all week."
+    ],
+    "point": "ずっと続く気持ちは現在完了進行形",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 8,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:77af6adb156faf13fce0843ead7c2a7aa0f83747196a507192619bd64a60870e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5w9y6q8u",
+    "ja": "彼の言葉が、まだ吹っ切れない。",
+    "en": "I can't get over what he said.",
+    "alternatives": [
+      "I still can't shake what he said.",
+      "I still can't let go of what he said."
+    ],
+    "point": "get over は「乗り越える・立ち直る」",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 9,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1dc94aa619a877d6333ff5a353eb0e7b24dfb626f78b5086b896d628b602ef7d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5x6w8j8s",
+    "ja": "彼、ほっとしたって言ってたよ。",
+    "en": "He said he was relieved.",
+    "alternatives": ["He said he felt relieved.", "He told me he was relieved."],
+    "point": "said に合わせて was と過去形にずらす",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 5,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:194f686776879ad9c4ba494a3c840b378d5bfbee1c2a8f3e3089dd0730a35d37",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6c6d5c7h",
     "ja": "雨でも、私は楽しかったよ。",
     "en": "Despite the rain, I had fun.",
@@ -174,6 +300,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:d11aa42446ff15777be452b52028119a4c2a426ccbdf4e21008e4b572c7a904a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6d9d7a2u",
+    "ja": "その案には、あまり乗り気になれない。",
+    "en": "I'm not entirely sold on that idea.",
+    "alternatives": [
+      "I'm not sure I'm totally sold on that.",
+      "I can't say I'm fully sold on that idea."
+    ],
+    "point": "not entirely でやわらかく否定する",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 9,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e692f4dc5fa9e50c5bed1a2882c3840838c0c8604c3bbad628536daedf0a92f8",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -284,6 +432,28 @@
     }
   },
   {
+    "id": "c_7w7p8f5g",
+    "ja": "一番こたえたのは、彼の無関心だった。",
+    "en": "It was his indifference that stung most.",
+    "alternatives": [
+      "What really got to me was his indifference.",
+      "It was his indifference that hurt the most."
+    ],
+    "point": "It was ～ that で強調。sting は心にこたえる",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7c968464d38aabf237822e6386cda9b1831da26ca6a57ddc8a29d0c2013f796",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8e3q4j9r",
     "ja": "それを聞いて残念です。",
     "en": "I'm sorry to hear that.",
@@ -326,6 +496,25 @@
     }
   },
   {
+    "id": "c_8r6e7r8r",
+    "ja": "あの映画には、思わず泣かされた。",
+    "en": "That movie made me tear up.",
+    "alternatives": ["That movie made me cry.", "That movie got me all teary."],
+    "point": "make + 人 + 原形で「〜させる」。tear up は泣きそうになる",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 8,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:24997708063e20c399b02d21289dccf0d774969fd5bca8c4e7b750f20226c3c8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8t8g5t4q",
     "ja": "なんで泣いてるの？",
     "en": "Why are you crying?",
@@ -339,6 +528,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:a75a57063c65d4736229db2709e19e0fac253f96dbd835c344f4f84a57304768",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8v8w2c6d",
+    "ja": "早く言ってくれてもよかったのに。",
+    "en": "You could have told me sooner.",
+    "alternatives": [
+      "You should have told me sooner.",
+      "You might have told me sooner."
+    ],
+    "point": "could have + 過去分詞で「できたのに」",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 8,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5fa71830663cbbd5de4366cf67c5872bd7689fcaaa797e3b0ca183d1270b6ad9",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

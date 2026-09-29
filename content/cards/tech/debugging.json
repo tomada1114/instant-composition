@@ -1,5 +1,49 @@
 [
   {
+    "id": "c_2a4y5j7f",
+    "ja": "この設定が、テストを落としてる。",
+    "en": "This setting is making the tests fail.",
+    "alternatives": [
+      "This setting is causing the tests to fail.",
+      "This setting is what's making the tests fail."
+    ],
+    "point": "make + 目的語 + 原形。to は付けない",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 9,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:750eb8f21d9c35ad04ce77c3912b5ca624a1c961a895e3c60fdace187124d715",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2k4m6k7m",
+    "ja": "再現しない理由が、最大の謎だ。",
+    "en": "Why it won't reproduce is the real mystery.",
+    "alternatives": [
+      "The biggest mystery is why it won't reproduce.",
+      "What puzzles me most is why it won't reproduce."
+    ],
+    "point": "why 節は主語にもなる。語順は平叙文のまま",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 10,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:474cd1f07ce3aaaa4f2106afc0c2c2c168020942af8a718ca3457f9e172c677e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2t4b3c8r",
     "ja": "まず再現手順を書くべき。",
     "en": "You should write repro steps first.",
@@ -16,6 +60,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:e33d614c01511bf7c2fc8ebf5b9615f047cde590657ab8fb1e071213e93997f7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2v3w6k3u",
+    "ja": "何度やっても再現しない。",
+    "en": "However often I try, it won't reproduce.",
+    "alternatives": [
+      "Try as I might, I can't reproduce it.",
+      "I can't reproduce it, however often I try."
+    ],
+    "point": "何度やっても = However often / Try as I might",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 9,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:25aae783460516b07a47730f878246d2c5b015aca42faee204ce079fccd82603",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -79,6 +145,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:43c21093b6d8eb51c7009933c81a284237fa9b78ee741c50ee2b21b81b407351",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3x4u2t8j",
+    "ja": "ログイン失敗だと、客が言ってた。",
+    "en": "A customer said login had failed.",
+    "alternatives": [
+      "A customer told us login had failed.",
+      "A customer reported that login had failed."
+    ],
+    "point": "過去に言った内容は一つ前の時制にずらす",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cf1e58b66b795f24f3d40681457e21b8b198f76df7989cd16f86014d72e5ffd3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3z7f9k8j",
+    "ja": "ログ上は、タイムアウトだね。",
+    "en": "Judging by the logs, it's a timeout.",
+    "alternatives": [
+      "Based on the logs, it's a timeout.",
+      "From the logs, it looks like a timeout."
+    ],
+    "point": "Judging by ~ は「~から判断すると」の分詞構文",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 9,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d12327f0c5896e7824b34d2ddbb4ee851702bf0f2328d791a1d085ab646be73e",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -161,6 +271,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:8139c8f8b764f34253579e8c82952e423c1d4cf07f3a6a9a1e1f01aedec1b856",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5h9c2g7q",
+    "ja": "決済で出るエラー、再現できたよ。",
+    "en": "I reproduced the error occurring in checkout.",
+    "alternatives": [
+      "I reproduced the error that happens in checkout.",
+      "I've reproduced the error in checkout."
+    ],
+    "point": "名詞を -ing や前置詞句で後ろから修飾",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7353c6a64998134650479c0ded08d362c9a34343feca148469a34f5852748e8d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -284,6 +416,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:5d84e6d2028ed51d4cb9198b8a35889a45d1269bf4480a9cdfc61a9d582060ec",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7j5p5v5j",
+    "ja": "こんな厄介なバグ、初めて見た。",
+    "en": "Never have I seen such a nasty bug.",
+    "alternatives": [
+      "I've never seen such a nasty bug.",
+      "This is the nastiest bug I've ever seen."
+    ],
+    "point": "Never を文頭に出すと have I の倒置になる",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8dbc58c97fe9fe5bbaeeb4af5bf7771654f455182c9844e25ff4aab7fc12c634",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -417,6 +571,28 @@
     }
   },
   {
+    "id": "c_8v5f6s8p",
+    "ja": "問題は、リトライが二重に走る点。",
+    "en": "The problem is that retries run twice.",
+    "alternatives": [
+      "The issue is that the retry runs twice.",
+      "The issue is that retries are firing twice."
+    ],
+    "point": "The problem is that + 文 で原因を述べる",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c054730ad6e8fafe3be54d78f5a429fa7450dc1aeefedc5c8c96ec9b56bd23c3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_9p2m9w8b",
     "ja": "別のブラウザで試して。",
     "en": "Try another browser.",
@@ -430,6 +606,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:7a45d7f2f792a4ae61343b3f561f1a202b49a05814b0a032503f7dfe8875d25b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9r5z4a6x",
+    "ja": "ログがあれば、すぐ特定できるのに。",
+    "en": "If we had logs, I'd pinpoint it fast.",
+    "alternatives": [
+      "If there were logs, I could pinpoint it quickly.",
+      "I could pinpoint it quickly if we had logs."
+    ],
+    "point": "現在の非現実は if + 過去形、主節は would",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 10,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ee88294481052abed9d159e7cd1a3bbd1e342ebba7ac366518e6c8571a1af33e",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

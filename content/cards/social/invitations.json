@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2a5g4m9t",
+    "ja": "来られるかどうか、分かる？",
+    "en": "Do you know if you can come?",
+    "alternatives": [
+      "Do you know whether you can make it?",
+      "Have you figured out if you can come?"
+    ],
+    "point": "間接疑問の if 節は平叙文の語順",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d4fe8970825d90729408c49c7846de2f68573199784b405607aaabeca48a0661",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2j2s8y6v",
     "ja": "まだ席があるよ。",
     "en": "There are still seats.",
@@ -164,6 +186,28 @@
     }
   },
   {
+    "id": "c_3r8s5g6w",
+    "ja": "時間が許せば、あとで合流するよ。",
+    "en": "Time permitting, I'll join you later.",
+    "alternatives": [
+      "If time allows, I'll join you later.",
+      "If I have time, I'll join you later."
+    ],
+    "point": "Time permitting は「時間が許せば」の分詞構文",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fa8fc565dc09d2d20f7bb7fd2367dabda51d69ee92906ec07d27019ce517164c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3s2v2n5k",
     "ja": "日曜にパーティーだよ。",
     "en": "There's a party Sunday.",
@@ -215,6 +259,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:2cdda2ee36ee0d21ac42b593c9709dcc4bf5fb6526309b13c04d05f0506efb12",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4q4m9v4m",
+    "ja": "彼が来るか、ミカは知ってると思う？",
+    "en": "Do you think Mika knows if he's coming?",
+    "alternatives": [
+      "Do you think Mika knows whether he's coming?",
+      "Would Mika know if he's coming, do you think?"
+    ],
+    "point": "Do you think の後は平叙文の語順",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:343f385370caef32e83fdd93b3b6b4eb446fbb3c2f6c93a0fec1375d938884a9",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -322,6 +388,28 @@
     }
   },
   {
+    "id": "c_5b7e5f3a",
+    "ja": "ミカが、君も誘えって言ってたよ。",
+    "en": "Mika told me to invite you too.",
+    "alternatives": [
+      "Mika asked me to invite you too.",
+      "Mika wanted me to invite you as well."
+    ],
+    "point": "tell + 人 + to do で言われた内容を伝える",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 9,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:39b188695c71ffdbd45cdcf56465325c2e132c61f10720c7f5d6ad0c31eb5ff1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_5d9w8b2q",
     "ja": "行けたらいいのになあ。",
     "en": "I wish I could make it.",
@@ -354,6 +442,51 @@
     "stamps": {
       "core": {
         "hash": "sha256:45b63803335c9ce99635e1539d5f9d2a697b87c566832ddf905cc461769d94b7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6m8f3z4v",
+    "ja": "空いていれば、ぜひ行くんだけど。",
+    "en": "I'd love to, if I were free.",
+    "alternatives": [
+      "If I were free, I'd love to come.",
+      "If I weren't busy, I'd love to."
+    ],
+    "point": "現実と違う仮定は if + were、主節は would",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9489f4915ddcd1a4e1260c2330d365969c68e5a6ebfd1e1afec05ff0825699bd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6q7q2b7g",
+    "ja": "誘ってくれてたら、行けたのに。",
+    "en": "If you'd asked, I could've gone.",
+    "alternatives": [
+      "I could have gone if you'd asked.",
+      "Had you asked, I could have gone.",
+      "If you'd invited me, I could have gone."
+    ],
+    "point": "過去の仮定は had + 過去分詞、could have + 過去分詞",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f6df001d012bcbdcfeb3d619197cfe310a397a81d4122df045073469a99c1036",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -404,6 +537,50 @@
     }
   },
   {
+    "id": "c_7z9k6s6a",
+    "ja": "私なら、その誘いは受けるよ。",
+    "en": "If I were you, I'd say yes.",
+    "alternatives": [
+      "I'd say yes if I were you.",
+      "I'd accept the invitation if I were you."
+    ],
+    "point": "If I were you で「私なら」とアドバイス",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a5092613776345e449c12607f6542823386fdd4df7f55586c66ed934702210d3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8p3p3h2k",
+    "ja": "雨でなければ、みんなを誘ったのに。",
+    "en": "If it hadn't rained, I'd have invited everyone.",
+    "alternatives": [
+      "I'd have invited everyone if it hadn't rained.",
+      "Had it not rained, I would've invited everyone."
+    ],
+    "point": "過去の仮定は had + 過去分詞、would have + 過去分詞",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 10,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:84c54fdfa101def1195756a71633d2304a5a2214299d8ad78a1363f51edb35dd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8v8d5f7m",
     "ja": "もう夕飯は食べたの？",
     "en": "Have you had dinner yet?",
@@ -417,6 +594,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:05665a6d8d8cebd751e90806fc0357ac14df01f25823ffa2fcb34240561a6e84",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9t5g4w9v",
+    "ja": "氷とレモン一個、持ってきてくれる？",
+    "en": "Could you bring some ice and a lemon?",
+    "alternatives": [
+      "Can you bring ice and a lemon?",
+      "Could you bring a bit of ice and a lemon?"
+    ],
+    "point": "氷は数えられず、レモンは a lemon",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 10,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2d01e3e674801bdcf56ed652739bebb18160f661fea55b10591481197bdc2bf9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9w3z8t7m",
+    "ja": "駅前のあの店、行ってみようよ。",
+    "en": "Let's try the place by the station.",
+    "alternatives": [
+      "How about trying the place by the station?",
+      "Want to try the place by the station?"
+    ],
+    "point": "名詞の後ろに前置詞句を置いて修飾",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 9,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8cd52c8bc8ec24cd65e21d127912d85c739b5c5724ed6eaccc4ece4785b44f8f",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

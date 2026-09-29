@@ -44,6 +44,50 @@
     }
   },
   {
+    "id": "c_2r9b2m2r",
+    "ja": "部長は、企画が性急だと言ってたよ。",
+    "en": "Our director said the plan felt rushed.",
+    "alternatives": [
+      "The director told me the plan felt rushed.",
+      "Our director said the plan was rushed."
+    ],
+    "point": "said の後は過去形に合わせる（時制の一致）",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 8,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f7c8bf02a3b6da33928269e74c2f3b0d5a08a4f9aa3645cae6e0945af16e1761",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3m2x3b7s",
+    "ja": "構成は見直した方がいいかもね。",
+    "en": "You might want to rethink the structure.",
+    "alternatives": [
+      "You might want to rework the structure.",
+      "Maybe you could rethink the structure a bit."
+    ],
+    "point": "might want to で提案を柔らかくする",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 9,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a470cfe45983d853033039e15708447b43fa91cda5caaf659fa12a95bd92dc8b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3q5x6t3m",
     "ja": "コメント送ってもいい？",
     "en": "Can I send you comments?",
@@ -57,6 +101,72 @@
     "stamps": {
       "core": {
         "hash": "sha256:3585e93d79d0d7d5db8cf73fc435606b8f497a452c0c22afef25a127e04c8b85",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3s9s6e4x",
+    "ja": "印象的だったのは、君の冷静さだ。",
+    "en": "What struck me was your composure.",
+    "alternatives": [
+      "What impressed me was how calm you stayed.",
+      "What stood out to me was your composure."
+    ],
+    "point": "「印象に残った」は strike / stand out",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 8,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9b81e88d856a8a82fb685d986cb9e7e05ca5ba72d1096760b69813235b4e87f3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4h8e9b9p",
+    "ja": "ここ、少し分かりにくいかも。",
+    "en": "This part might be a bit unclear.",
+    "alternatives": [
+      "This part may be a little hard to follow.",
+      "This bit could be a little unclear."
+    ],
+    "point": "might と a bit で指摘を和らげる",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 8,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6edd829b727c6083aa6771bd08920eb3dcb95bb567ed8d974dbc28ca5fbddd74",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4w9z3c2r",
+    "ja": "こんな完成度の下書き、初めて見たよ。",
+    "en": "Never have I seen such a polished draft.",
+    "alternatives": [
+      "I've never seen such a polished draft.",
+      "Never have I seen a draft this polished."
+    ],
+    "point": "Never を前に出すと助動詞が主語の前に来る",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:14c83105c25015451658f41bb114542fa81ee2aaf5edd4cff473c271f9cb952d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -101,6 +211,72 @@
     "stamps": {
       "core": {
         "hash": "sha256:a1c8f633ca481b169dbb991fabb194706e02f81742986fef798cfc215867716b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5h5e3u3g",
+    "ja": "君の指摘で、やり方を見直したよ。",
+    "en": "Your comment made me rethink my approach.",
+    "alternatives": [
+      "Your feedback got me to rethink my approach.",
+      "Your point made me reconsider my approach."
+    ],
+    "point": "make + 人 + 原形で「〜させた」",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 8,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9506e885af6d635315a6404b1ca64c88f437273d69c2e7e3cd572d2ae88a8442",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5y2v9r6s",
+    "ja": "レイアウト、君の説明で納得した。",
+    "en": "You've won me over on the layout.",
+    "alternatives": [
+      "Your argument won me over on the layout.",
+      "You've convinced me about the layout."
+    ],
+    "point": "「納得させる」は win 人 over",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 7,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f0bd4ec9276500ebb08d2aab473648288182c402d0a111d80d250b0b706d9af",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6d9m4z4j",
+    "ja": "もっと早く指摘してほしかった。",
+    "en": "I wish you'd flagged that earlier.",
+    "alternatives": [
+      "I wish you'd pointed it out sooner.",
+      "I wish you had raised that earlier."
+    ],
+    "point": "過去の残念さは wish + 過去完了",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:027212288026310d61267592882f8325746119f4a74bcb01b13a8ce3c5eebbfb",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -227,6 +403,50 @@
     }
   },
   {
+    "id": "c_7f3m4n4f",
+    "ja": "例がもっとあるといいんだけど。",
+    "en": "I wish there were more examples.",
+    "alternatives": [
+      "I wish there were a few more examples.",
+      "I'd like to see more examples."
+    ],
+    "point": "今の希望は wish + 過去形。were を使う",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8c69c64e25bdc5b688a90d761fa8f47efc74a7f4e1d0993515a1f0389c22877e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7j4y4q4q",
+    "ja": "読んで、気になる点が一つあるよ。",
+    "en": "Having read it, I have one concern.",
+    "alternatives": [
+      "Having gone through it, I have one concern.",
+      "Having read it, there's one thing that concerns me."
+    ],
+    "point": "Having + 過去分詞で「読み終えて」を先に置く",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 9,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6b22a44fae882cdc1e9837365e9f32c3214e2bfe17b12bb6fdfa0c61f7ec5d71",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_7k5x5w8e",
     "ja": "具体例を足してほしいんだけど。",
     "en": "I'd like you to add examples.",
@@ -347,6 +567,28 @@
     }
   },
   {
+    "id": "c_8x7x2p5a",
+    "ja": "君が直した所、まだ変だと彼は言う。",
+    "en": "He says what you fixed still looks off.",
+    "alternatives": [
+      "He says the part you fixed is still off.",
+      "He's saying the bit you fixed still looks off."
+    ],
+    "point": "says の後ろの節の中にさらに what 節が入る",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 8,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:de4ab87b633996a60f7e3378a5c55ee9c3a24d24e7b09d6989787303360776d0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_9d7a3k8f",
     "ja": "感想をもらえますか？",
     "en": "Could I get feedback?",
@@ -360,6 +602,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:555aeddcb2cbd4179a3f844ea0f1f1c14a037f0387b30e010cb5ea916f0cc65f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9f7m5s3k",
+    "ja": "君は数か月、本当に頑張ってるね。",
+    "en": "You've been working really hard for months.",
+    "alternatives": [
+      "You've been putting in the effort for months.",
+      "You've been working so hard these past months."
+    ],
+    "point": "続いている努力は現在完了進行形",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 8,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a8e82302f27f884885274fd63b2045f5d2897716d0f83d93c342087a906ee773",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

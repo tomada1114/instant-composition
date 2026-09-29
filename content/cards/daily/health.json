@@ -19,6 +19,72 @@
     }
   },
   {
+    "id": "c_2m3d6d3d",
+    "ja": "昨日よりずっと体調がいい。",
+    "en": "I feel much better than yesterday.",
+    "alternatives": [
+      "I'm feeling a lot better than yesterday.",
+      "I feel way better than I did yesterday."
+    ],
+    "point": "better を強めるのは much / a lot。very は不可",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 7,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:905fb10fe1cbed6cf040d09a1d8e9550e197cdb460a7ad7e346176548faa460a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2v3h3b4j",
+    "ja": "医者は不調の元はストレスだと言う。",
+    "en": "The doctor says stress causes it.",
+    "alternatives": [
+      "The doctor says stress is behind it.",
+      "The doctor says it's caused by stress."
+    ],
+    "point": "「元は〜」は stress causes it や is behind it で言える",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 6,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:84f08c3e546a5fd2a13fb1ce25c0b6032a4d3dff383e53dc7e9ddb019b4ebda1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2z6p2q2h",
+    "ja": "私のは軽症だと、看護師が言った。",
+    "en": "The nurse said mine was mild.",
+    "alternatives": [
+      "The nurse told me mine wasn't serious.",
+      "The nurse said mine isn't serious."
+    ],
+    "point": "said の後ろの節は時制を過去にそろえる",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 6,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ab9d63e97979f547dba844477b0aba5be6d6bd2c1438ccd8a0e1b81dc6bbb499",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3b9a4e7z",
     "ja": "頭が痛いんだ。",
     "en": "I have a headache.",
@@ -54,6 +120,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:f0f1cf9ad9f6c36d5ba2af31ee7c9504fdf6695e2c921f16419ae2894857c95e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4c4t5t2v",
+    "ja": "腫れがいつまで続くか分かります？",
+    "en": "Any idea how long the swelling lasts?",
+    "alternatives": [
+      "Any idea how long the swelling will last?",
+      "Do you know how long the swelling lasts?"
+    ],
+    "point": "間接疑問は疑問詞のあとが平叙文の語順",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 6,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a6a7e4a2ce0bf8723c0c9ee5966733a1dafa19c51c336ca6b93cbd9399536c82",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4g8j2x4f",
+    "ja": "めまいがして、私は座り込んだ。",
+    "en": "Feeling dizzy, I sat down.",
+    "alternatives": [
+      "Because I felt dizzy, I sat down.",
+      "Since I felt dizzy, I sat down."
+    ],
+    "point": "分詞構文の主語は主節の主語と同じ",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4148dfe60e0b582009ed553cabfd29f48aa48b174a4e031efd64463bd88889f9",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -114,6 +224,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:14484bbb49e71f2fa37aeb01cde1d081cb87fdf5ac5ddf0ade2cc4c738a5909c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5v7e6p5y",
+    "ja": "朝食を抜いたので、めまいがした。",
+    "en": "Having skipped breakfast, I felt faint.",
+    "alternatives": [
+      "Since I'd skipped breakfast, I felt faint.",
+      "I felt faint because I'd skipped breakfast."
+    ],
+    "point": "先に起きたことは Having + 過去分詞",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:22b31358868528bac7929c951ad0ef436cc2f3d7b585a0e23152b9c72a510fde",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -199,6 +331,28 @@
     }
   },
   {
+    "id": "c_6k6a6n4x",
+    "ja": "君は彼からうつされたに違いない。",
+    "en": "You must have caught it from him.",
+    "alternatives": [
+      "You must have picked it up from him.",
+      "You must have gotten it from him."
+    ],
+    "point": "過去への確信は must have + 過去分詞",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 10,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2d5e5241c978ddb603f003f28ccc7854e6411fbb4c6aec3529534b322931e5e1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6q4w4w3v",
     "ja": "予約、明日に変えられますか？",
     "en": "Can I reschedule for tomorrow?",
@@ -262,6 +416,29 @@
     }
   },
   {
+    "id": "c_6r5r4v2g",
+    "ja": "この頭痛、早く治まってほしいな。",
+    "en": "I wish this headache would go away.",
+    "alternatives": [
+      "If only this headache would go away.",
+      "I wish this headache would just go away.",
+      "I hope this headache goes away soon."
+    ],
+    "point": "今への不満や願いは wish + would",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 9,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:55645334272081b8a2a48102e56e641e021eb09765e5784697d74a513a96ccb7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6w2f3t3r",
     "ja": "家に帰ったら休むよ。",
     "en": "I'll rest once I'm home.",
@@ -297,6 +474,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:ec94bcac116ca5529601de93919bdac4a1b1cb18fc30a55159113fafc1c82780",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7e4v4z2p",
+    "ja": "休んでたら、再発しなかったのに。",
+    "en": "If I'd rested, I wouldn't have relapsed.",
+    "alternatives": [
+      "If I'd taken it easy, I wouldn't have relapsed.",
+      "Had I rested, I wouldn't have relapsed."
+    ],
+    "point": "病気の「ぶり返す」は relapse",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 9,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1d91e06d7581e8e40c768c44343ccf55afc1b3c264a54508f40a6a685415753a",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -360,6 +559,28 @@
     }
   },
   {
+    "id": "c_7y7w5z7m",
+    "ja": "彼は私の症状は軽いと言った。",
+    "en": "He said my symptoms are mild.",
+    "alternatives": [
+      "He told me my symptoms were mild.",
+      "He said my condition is minor."
+    ],
+    "point": "said の後でも、今も本当なら現在形でよい",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 6,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c90d32dab63f2401b85aa06489a4fcf48e525ce1d79aab897ec248b648fd4196",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8a6k8z2a",
     "ja": "昨日、熱が出たんだ。",
     "en": "I had a fever yesterday.",
@@ -401,6 +622,47 @@
     }
   },
   {
+    "id": "c_8h8c8j4h",
+    "ja": "たっぷり寝たのに、ぐったりだ。",
+    "en": "Despite a full night's sleep, I'm wiped out.",
+    "alternatives": [
+      "Even though I slept well, I'm wiped out.",
+      "Although I slept well, I'm wiped out."
+    ],
+    "point": "Despite の後は名詞。「ぐったり」は wiped out",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9790b1d005d25ce2fb3d9625e9de5a88b5d8520ce2a497fbf1bae45126a70c80",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8y2z9m6u",
+    "ja": "風邪をひきかけてるんだ。",
+    "en": "I'm coming down with a cold.",
+    "alternatives": ["I think I'm catching a cold.", "I feel a cold coming on."],
+    "point": "「かかりかけ」は come down with",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 7,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4aa570f559a6e71a6480732561b213d3665998ff65fbbf05296ae3e7a71ed6ce",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8y4z2a4a",
     "ja": "今日は具合が悪いんだ。",
     "en": "I'm sick today.",
@@ -414,6 +676,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:65f075cbdec9fab73a14273b5e5a8f1973b3ae7a233a102594b63c057c6b014a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9r7g5z8q",
+    "ja": "もっと早く病院に行けばよかった。",
+    "en": "I wish I'd seen a doctor sooner.",
+    "alternatives": [
+      "If only I'd seen a doctor sooner.",
+      "I should have seen a doctor sooner."
+    ],
+    "point": "「医者にかかる」は see a doctor",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 8,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fced456cd653ee2a98537e3ccb6e798b82b7eb73b5f2ef3143f40589adbfd474",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

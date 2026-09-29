@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2b2t3t4g",
+    "ja": "家の鍵、かけ忘れたかも。",
+    "en": "I may have left it unlocked.",
+    "alternatives": [
+      "I might have left the door unlocked.",
+      "I may have forgotten to lock up."
+    ],
+    "point": "かも＝may have＋過去分詞。忘れた過去の推量",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c1a67d8ac0107d7af1b3edc1d3b65f9bc8504e603d73dac1cdf8b2b375470bc0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2e5x7f6r",
     "ja": "父に手伝ってと頼んだよ。",
     "en": "I asked Dad to help.",
@@ -13,6 +35,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:6c712398326b0545c9acf7089c3885d8129adc4aecddf9779b0c0170ff993c89",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2f3z5y2c",
+    "ja": "散らかしたのはケンだよ。",
+    "en": "It was Ken who made the mess.",
+    "alternatives": [
+      "Ken's the one who made the mess.",
+      "Ken is the one who left this mess."
+    ],
+    "point": "「〜したのは」は It was 〜 who の形",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5f9bb42497c088baedb723606b1ff398b2a7c1b1898de4f68aafc44327ae6ab9",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -57,6 +101,28 @@
     }
   },
   {
+    "id": "c_3q9n4z8t",
+    "ja": "早く始めてたら、もう終わり。",
+    "en": "If I'd started sooner, I'd be done.",
+    "alternatives": [
+      "If I had started earlier, I'd be done now.",
+      "If I'd begun earlier, I'd be finished now."
+    ],
+    "point": "過去の仮定 if I'd + 今の結果 I'd be",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0c100bd7997b7f149e826b526d2789aedfa6a3018b6085ee9fafe6552aa96424",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3s5w7x5s",
     "ja": "何か飲むものある？",
     "en": "Is there anything to drink?",
@@ -70,6 +136,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:4eefbdab54dfff8f62c23d4d73d0d04a775346f955e7d30b590abe2e7acf4362",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3s8f4c6p",
+    "ja": "洗濯機は前から壊れてたと彼は言い張った。",
+    "en": "He swore the washer had died ages ago.",
+    "alternatives": [
+      "He insisted the washer had broken down ages ago.",
+      "He swore the washer had broken ages ago."
+    ],
+    "point": "言った時点より前の出来事は過去完了。swear は言い張る",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 8,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:75663ee1b759c8d4e68b4f653ec9692c1d292eb2cb21fb9ecf16eba488871cf4",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -111,6 +199,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:83d40244341be2fabbe6e14ca741d1f6bc661ac04ae945d5cc2ac4a84693bef3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4y4j3f6m",
+    "ja": "嫌いとはいえ、アイロンはかける。",
+    "en": "Much as I hate ironing, I do.",
+    "alternatives": [
+      "Even though I hate ironing, I do it.",
+      "Much as I hate it, I iron."
+    ],
+    "point": "Much as 〜 は「〜だけれども」の譲歩",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 9,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:97f67569e6309d37d8dd07096fd07c5448e0c865adf8af57ac371399a371b6df",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6b7z3d3h",
+    "ja": "結局、皿は全部私が洗うことになった。",
+    "en": "I ended up washing all the dishes.",
+    "alternatives": [
+      "I wound up washing all the dishes.",
+      "In the end, I washed all the dishes myself."
+    ],
+    "point": "「結局〜することになった」は end up + -ing",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 8,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f1e571c7d33bfed66abaad693af44b98137dac3f67f354924e675eaed62a35f5",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -177,6 +309,50 @@
     }
   },
   {
+    "id": "c_7f2a7g8u",
+    "ja": "台所がもっと広ければなあ。",
+    "en": "I wish our kitchen were bigger.",
+    "alternatives": [
+      "If only our kitchen were bigger.",
+      "I wish we had a bigger kitchen."
+    ],
+    "point": "今の願望は wish + 過去形（be は were）",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:06e63e4f8434a12f0c8da831af631a61bc7cdfc43421916369f2b9a84465731b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7k9t9w5j",
+    "ja": "腹が立つのは、流しが汚いことだ。",
+    "en": "What annoys me is the dirty sink.",
+    "alternatives": [
+      "What bugs me is the dirty sink.",
+      "The thing that annoys me is the dirty sink."
+    ],
+    "point": "What 節が主語。「腹が立つのは」= What annoys me",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 9,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0673dc28feee6e5e7bdc396fcea16cfbca23b3e316933f7c1157a7154ef4b291",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_7m6s6r7c",
     "ja": "皿洗いが大嫌いなんだ。",
     "en": "I hate doing the dishes.",
@@ -190,6 +366,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:f3a03644e406aecd595311a03baf9cae25b180bee5f584c13d695dda5e2112ca",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7p4q7j9y",
+    "ja": "掃除したのに、まだ埃っぽい。",
+    "en": "Although I cleaned, it's still dusty.",
+    "alternatives": [
+      "Even though I cleaned, it's still dusty.",
+      "Despite cleaning, it's still dusty."
+    ],
+    "point": "「のに」は although。but とは並べない",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5f0b477d30224913224b7eb9155b6aa419aa84286bebaaa21ecf8c2128b4539d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -231,6 +429,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:3935aba74eadd503f70aa002511f69d0060574d56d0517274c817291c6650a27",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8k2c6u7z",
+    "ja": "昨日ゴミを出しておけばよかった。",
+    "en": "I wish I'd taken the trash out yesterday.",
+    "alternatives": [
+      "If only I'd taken the trash out yesterday.",
+      "I should have taken the trash out yesterday."
+    ],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 10,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7c1149b29b5e95869f62b4ecdfbcab0a3a9ea01b7d19bc1f13252bdc53dd2410",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8q7q9f9p",
+    "ja": "結局、片付けるのは私なんだよ。",
+    "en": "I'm the one who ends up cleaning.",
+    "alternatives": [
+      "I'm always the one who ends up tidying.",
+      "I'm the one who has to clean up."
+    ],
+    "point": "the one who で「結局私が〜する」。end up -ing が自然",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:60b0f4b5ea3970f4d209f947f8368513fe6c2a3aa97a17daafe1a68b055c4fcc",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -420,6 +662,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:7475a8714242a7c150e3e5c656c5ba4804e0abdf5bcf0fcfd0bd3fd33f8d74f5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9j7y9t2u",
+    "ja": "うちに必要なのは大きい冷蔵庫だ。",
+    "en": "What we need is a big fridge.",
+    "alternatives": [
+      "What we need is a bigger fridge.",
+      "The thing we need is a big fridge."
+    ],
+    "point": "What we need is 〜 で「必要なのは〜」を強調",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b50ec5d0829f93bf885c3b40e334c25746ee03b5c1f35616775b51c1affbefdd",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

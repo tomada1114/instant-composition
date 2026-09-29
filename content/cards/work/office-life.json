@@ -19,6 +19,50 @@
     }
   },
   {
+    "id": "c_2c3b5d2h",
+    "ja": "コピー機が速ければいいのに。",
+    "en": "I wish the copier were faster.",
+    "alternatives": [
+      "If only the copier were faster.",
+      "I wish the copier was faster."
+    ],
+    "point": "現在の願望は wish + 過去形（be は were）",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:944323e863df0cd7c08ea92d39e1d9f777f1c8d5efa2b98ab05cfe2c3e54082c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2j6b7z4s",
+    "ja": "コーヒー当番が誰か、誰も知らない。",
+    "en": "Nobody knows who's on coffee duty.",
+    "alternatives": [
+      "No one knows who has coffee duty.",
+      "Nobody's sure who's on coffee duty."
+    ],
+    "point": "who's on coffee duty は who 節。語順は平叙文",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 6,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a6b64485077863dd4a9d29c10758c4c6486bc68f1bfe7803e78b3b47b68c0bf1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2q2x6n3t",
     "ja": "ゴミは分別すべきです。",
     "en": "We should sort the trash.",
@@ -74,6 +118,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:e83c4ad612a499d8438d76703916cc416bb4024ad65d4de415e486018468129a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3b2u6w7w",
+    "ja": "経理に、領収書がまだだと言われた。",
+    "en": "Accounting told me my receipts were still missing.",
+    "alternatives": [
+      "Accounting said my receipts were still missing.",
+      "Accounting told me they hadn't received my receipts."
+    ],
+    "point": "told me の後は過去形に時制を合わせる",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 10,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:451604689f0b4555741ca8fcd97a9ffb98228a5b36fd3cf68a323c59b67b1362",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -165,6 +231,28 @@
     }
   },
   {
+    "id": "c_4f7b7m9u",
+    "ja": "お土産、買わなくてよかったのに。",
+    "en": "You needn't have bought us souvenirs.",
+    "alternatives": [
+      "You didn't need to buy us souvenirs.",
+      "You shouldn't have bought us souvenirs."
+    ],
+    "point": "needn't have + 過去分詞で「不要だったのに」",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 10,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6a7f994eb9963a1ac3e9c8725d0227eee18606f334e84f18591bb2af3bfc816d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4f7n6p6s",
     "ja": "ホチキスがどこにあるか分かる？",
     "en": "Any idea where the stapler is?",
@@ -178,6 +266,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:270efea9702789665534982d5deadf1b3819b00ab76db08a5eaa93e5191e3970",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4h9k6m6z",
+    "ja": "置いた充電器、誰が取ったか知ってる？",
+    "en": "Any idea who took the charger I left?",
+    "alternatives": [
+      "Know who took the charger I left?",
+      "Anyone know who took the charger I left?"
+    ],
+    "point": "who 節の中に、さらに charger I left が入る",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 7,
+    "grammar": ["indirect-questions", "relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3f338586d1e772987e7e53513ec0ca5a8082af394f40b3fff35e08672a513f51",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4r2a3k7g",
+    "ja": "今日は早めに上がろうかな。",
+    "en": "I might knock off early today.",
+    "alternatives": [
+      "I'm thinking of knocking off early today.",
+      "I think I'll head out early today."
+    ],
+    "point": "「仕事を切り上げる」は knock off",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 6,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b7590b5330a68f17a1731e268774d2d0188af609a1fb0cd081b0ee3b19fc8da5",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -282,6 +414,50 @@
     }
   },
   {
+    "id": "c_5t9r6q8v",
+    "ja": "課長は今日在宅だと言ってたよ。",
+    "en": "The manager said she's working from home.",
+    "alternatives": [
+      "The manager said she'd be working from home today.",
+      "The manager told me she's working from home."
+    ],
+    "point": "said のあとでも、今も続く話は現在形のままでよい",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 8,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:03859bb88202c42f8e2c614a04cce2d14b6c6f704a3596c6191f55b6da235779",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5u2q9c5y",
+    "ja": "金曜、お休みをいただきたいです。",
+    "en": "I was hoping to take Friday off.",
+    "alternatives": [
+      "I was wondering if I could take Friday off.",
+      "I was hoping to have Friday off."
+    ],
+    "point": "was hoping で頼みを柔らかくする",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 8,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e279221414d11cfc72cf4626893a95f0b3c14a7777360cbadcfc6ae04637d358",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6a4j2y4k",
     "ja": "プリンター、壊れたと思う。",
     "en": "I think the printer's broken.",
@@ -364,6 +540,50 @@
     }
   },
   {
+    "id": "c_7d3x6d3j",
+    "ja": "席替えは月曜に発表されます。",
+    "en": "Seat changes will be announced Monday.",
+    "alternatives": [
+      "They'll announce the seat changes Monday.",
+      "The seat changes will be announced Monday."
+    ],
+    "point": "will be + 過去分詞で未来の受動態",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 5,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:65fe3d4c70061f260811e82f8a481b31a55800c836e2ac5d9bf00d68ac61b684",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7d8j8s2g",
+    "ja": "遅れそうで、朝礼を逃しました。",
+    "en": "Running late, I missed the morning huddle.",
+    "alternatives": [
+      "Being late, I missed the morning huddle.",
+      "Running behind, I missed the morning huddle."
+    ],
+    "point": "分詞構文の Running late は「遅れ気味で」",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e1c00b234cae710a5b6155a0b2db00e60d339b52924603da4b3ce7947c9bc5da",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_7u6v4e6j",
     "ja": "空いてる会議室がないよ。",
     "en": "There's no free meeting room.",
@@ -377,6 +597,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:f6df5620d6ee427f7be2deab5965940af1adf19838edbde765129c06741ee72f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8e6k9k8n",
+    "ja": "上着を持ってくればよかった。",
+    "en": "I wish I'd brought a jacket.",
+    "alternatives": [
+      "If only I'd brought a jacket.",
+      "I should have brought a jacket."
+    ],
+    "point": "過去の後悔は If only / wish + 過去完了",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e68a27831154a7ee095f8f1f3c73fd1b2a78fe2711dcf22770f31ae62e5b3dd4",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -405,6 +647,28 @@
     }
   },
   {
+    "id": "c_9d5p8x5g",
+    "ja": "私、鍵を閉め忘れたかも。",
+    "en": "I might have forgotten to lock up.",
+    "alternatives": [
+      "I may have forgotten to lock up.",
+      "I may have forgotten to lock the door."
+    ],
+    "point": "might have + 過去分詞で「かもしれなかった」",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 8,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:16f8f18caaa98b71d8a50efcc9d5e8599c9a9925344a1883e9c2ad4793c0be30",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_9h2q3y3e",
     "ja": "今なら手伝えるよ。",
     "en": "I can help now.",
@@ -418,6 +682,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:4a0374b288c90bbdf2bcc1bf3820977d0c5dae66f75a03663604fbc292941d3c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9p5z5g2y",
+    "ja": "昨日休まなきゃ、今ごろ死んでる。",
+    "en": "If I hadn't rested, I'd be dead.",
+    "alternatives": [
+      "I'd be dead now if I hadn't rested.",
+      "If I hadn't rested, I'd be dead by now."
+    ],
+    "point": "過去の仮定 + 今の結果は、had done と would be",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9b857b8b5ae4ed0e8f409f6fc988720d9e77110e67cab6b0194161757888aab1",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
