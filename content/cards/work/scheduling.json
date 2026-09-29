@@ -16,22 +16,6 @@
     "stamps": {}
   },
   {
-    "id": "c_2t4k7y4d",
-    "ja": "締め切りは先月三回変わったが、今月はまだだ。",
-    "en": "The deadline changed three times last month, but hasn't since.",
-    "alternatives": [
-      "The deadline was moved three times last month; nothing since.",
-      "The deadline shifted three times last month, but hasn't since."
-    ],
-    "point": "先月は過去形、その後の「まだ」は現在完了の hasn't",
-    "topic": "work",
-    "subtopic": "scheduling",
-    "level": 7,
-    "grammar": ["tense-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3c6u7n5v",
     "ja": "あと1週間あれば、もっとテストできるのに。",
     "en": "If we had another week, we could test more.",
@@ -223,6 +207,22 @@
     "stamps": {}
   },
   {
+    "id": "c_5r9h9r6z",
+    "ja": "納期を確認するため、私が電話します。",
+    "en": "I'll call to confirm the deadline.",
+    "alternatives": [
+      "I'll phone to check the deadline.",
+      "I'll call to check the due date."
+    ],
+    "point": "「〜するために」は to 不定詞で表す",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 3,
+    "grammar": ["infinitives", "future-forms"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5x7h7p2n",
     "ja": "電話した時、彼らはもう日程を変えていた。",
     "en": "When I called, they'd already changed the date.",
@@ -274,22 +274,6 @@
     }
   },
   {
-    "id": "c_6t7k6r2n",
-    "ja": "明日、納期を確認するため電話します。",
-    "en": "We'll call tomorrow to confirm delivery.",
-    "alternatives": [
-      "I'll call tomorrow to check delivery.",
-      "We're calling tomorrow to confirm delivery."
-    ],
-    "point": "「〜するために」は to 不定詞で表す",
-    "topic": "work",
-    "subtopic": "scheduling",
-    "level": 3,
-    "grammar": ["infinitives", "future-forms"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6v3e7q3m",
     "ja": "火曜の会議は木曜に変更されました。",
     "en": "Tuesday's meeting has been moved to Thursday.",
@@ -318,6 +302,22 @@
     "subtopic": "scheduling",
     "level": 6,
     "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7b8u7z8g",
+    "ja": "先方から、延長できるか連絡は来た？",
+    "en": "Have they said if we can extend?",
+    "alternatives": [
+      "Did the client say if we can extend?",
+      "Have they told us whether we can extend?"
+    ],
+    "point": "「〜かどうか」は if / whether。語順は平叙文のまま",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["indirect-questions", "present-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -370,18 +370,18 @@
     "stamps": {}
   },
   {
-    "id": "c_7k8r9d9e",
-    "ja": "延長するか、先方から連絡は来た？",
-    "en": "Has the client said if they'll extend?",
+    "id": "c_7r7u9e2d",
+    "ja": "納期は先月三回変わったが、今月はまだ変わってない。",
+    "en": "It changed three times last month, but hasn't yet.",
     "alternatives": [
-      "Have you heard whether the client will extend?",
-      "Did the client tell us if they'll extend?"
+      "It moved three times last month, but hasn't yet.",
+      "It was changed three times last month, but not yet."
     ],
-    "point": "「〜かどうか」は if / whether。語順は平叙文のまま",
+    "point": "先月は過去形、今月まだ無しは現在完了の hasn't yet",
     "topic": "work",
     "subtopic": "scheduling",
-    "level": 5,
-    "grammar": ["indirect-questions", "present-perfect"],
+    "level": 7,
+    "grammar": ["tense-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },

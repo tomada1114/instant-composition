@@ -96,6 +96,22 @@
     "stamps": {}
   },
   {
+    "id": "c_3t6w3q9a",
+    "ja": "期限を延ばしても、この翻訳、受けてもらえますか？",
+    "en": "Even with extra time, could you handle this translation?",
+    "alternatives": [
+      "Even with an extension, could you take on this translation?",
+      "Even with more time, could you take on this translation?"
+    ],
+    "point": "「延ばしても」は Even with で譲歩を示す",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["concession-contrast", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3t9x3d8f",
     "ja": "午後なら手伝えますよ。",
     "en": "I can help this afternoon.",
@@ -108,22 +124,6 @@
     "subtopic": "requests",
     "level": 1,
     "grammar": ["can-could-ability"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3v5x6g4v",
-    "ja": "期限を延ばしても、この翻訳は引き受けられませんか？",
-    "en": "Even with an extension, could you take this on?",
-    "alternatives": [
-      "Even if we extended the deadline, could you handle this?",
-      "Even with more time, could you take on this translation?"
-    ],
-    "point": "「延ばしても」は Even with / Even if で譲歩を示す",
-    "topic": "work",
-    "subtopic": "requests",
-    "level": 8,
-    "grammar": ["concession-contrast", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },

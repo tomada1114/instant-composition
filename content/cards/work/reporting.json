@@ -32,39 +32,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3w5h6n8x",
-    "ja": "あと二日あれば、私たちは終わるのに。",
-    "en": "If we had two more days, we'd finish.",
-    "alternatives": [
-      "With two more days, we could finish.",
-      "Given two more days, we'd be done."
-    ],
-    "point": "現実と違う仮定なので had と we'd を使う",
-    "topic": "work",
-    "subtopic": "reporting",
-    "level": 6,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4d7s5s2c",
-    "ja": "新人がいつ来るか、もう聞きましたか？",
-    "en": "Have you heard when the new hire starts?",
-    "alternatives": [
-      "Have you found out when the new hire starts?",
-      "Do you know yet when the new hire starts?"
-    ],
-    "point": "when 以下は疑問文の語順にせず the new hire starts",
-    "topic": "work",
-    "subtopic": "reporting",
-    "level": 6,
-    "grammar": ["indirect-questions", "present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f388b43dfdc8369ba18bba47dfc04cf41503aae7cd4bde5d48726c77a2acca8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4g8j7c8j",
@@ -80,7 +54,13 @@
     "level": 6,
     "grammar": ["wishes-regrets", "past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:46e62ecc943361112670f84bcaacd08fd1b6f2352dc364a0b789d032173c2408",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4v6h7c3b",
@@ -147,22 +127,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_5t7u3z9g",
-    "ja": "数字が怪しいので、後輩に確認してもらっています。",
-    "en": "The numbers look fishy, so I'm having a junior check.",
-    "alternatives": [
-      "The numbers seem off, so I've got a junior checking them.",
-      "The figures look off, so I'm getting a junior to check."
-    ],
-    "point": "have＋人＋動詞の原形。to は付けない",
-    "topic": "work",
-    "subtopic": "reporting",
-    "level": 9,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_5y8a2g3x",
@@ -304,7 +268,13 @@
     "level": 8,
     "grammar": ["noun-clauses", "present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:59fa834a8f2b8ca337772bbc8f5dd239d3c62fdc0810748b6dfe990cd9fcbf3a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8y7h2b9r",
@@ -320,7 +290,13 @@
     "level": 5,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:545a87b5399673a9716a2898557a58f2c3ce15b80844b1c16ec1ab6f617c28ed",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9a8a2j7r",
@@ -336,7 +312,13 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:acf5876d575598c0b3f8be991399f2bd4242c47d571b29fd754036e1f1b75c91",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9b7s3h5y",
@@ -352,7 +334,13 @@
     "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ae2b437f99231f58f5561a600671f95e58db19a74922fc79fa9d47953e1c11b8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9e6u5j9x",
@@ -368,7 +356,13 @@
     "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1fab120d1c3acd8be33fbc50dded1780e85f8c62174f4f1d73aca76d426a802e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9r8x4g2r",
@@ -384,7 +378,13 @@
     "level": 6,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f1b558c59a544fb8634821dc143357f1addaaac134a45481da43f3843d74ab0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9u2v3e4v",
@@ -400,7 +400,13 @@
     "level": 6,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:647e32fa7ced611b05ca786dc03d90188d0b1b689af2c8f4b717cd7ee5e4c485",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9y4r3q7w",
@@ -416,7 +422,13 @@
     "level": 6,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3584efefc586e69a44482fbcd4c6382eb3a0bd968b77893c29a909ac7f84b5a8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9y7r4j9p",
