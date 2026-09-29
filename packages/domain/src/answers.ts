@@ -162,6 +162,7 @@ export function decideAnswers(
           .filter((entry) => entry.answeredAt >= level.at) // older: before this level was set
           .filter((entry) => inLevelBand(entry.snapshot.level, level.level))
           .map((entry) => ({
+            cardId: entry.item.id,
             level: entry.snapshot.level,
             result: entry.detail.result,
             elapsedMs: entry.detail.elapsedMs,

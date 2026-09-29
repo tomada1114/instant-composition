@@ -40,56 +40,71 @@ function window(
   return cells.flatMap(([level, n, ok, fast]) => answers(n, ok, fast, level));
 }
 
+/** `answers(…)` from a closing round started at `ROUND_START`, each card named. */
+function thisRound(
+  cells: readonly (readonly [number, number, number, number])[],
+): DifficultyAnswer[] {
+  return window(...cells).map((answer, index) => ({
+    ...answer,
+    cardId: `now-${String(index)}`,
+    answeredAt: ROUND_START + index,
+  }));
+}
+
+const ROUND_START = 50_000;
+const WORKED_FROM_EARLIER = window(
+  [3, 6, 6, 4],
+  [4, 12, 11, 7],
+  [5, 7, 6, 4],
+  [6, 3, 3, 2],
+  [7, 2, 0, 0],
+);
+/** A close whose round started after every answer: the whole window is earlier evidence. */
+const LATER = Number.POSITIVE_INFINITY;
+
 describe("the level the answers show", () => {
-  it("says nothing while no card level has three answers", () => {
+  it("says nothing while no card level has three cards answered", () => {
     const thin = window([4, 2, 2, 2], [5, 2, 2, 2], [6, 2, 2, 2]);
     expect(suggestLevel(5, thin)).toBeNull();
-    expect(adjustLevel(5, thin)).toStrictEqual({ level: 5, change: "same" });
+    expect(adjustLevel(5, thin, LATER)).toStrictEqual({ level: 5, change: "same" });
   });
 
   // The worked example in TUNING.difficulty's pull request: at level 4, level 3
   // and 4 clear, level 5 clears at 6 of 7 with 4 of the 6 fast, and level 6 at
-  // 3 of 3 with 2 fast, so the level goes to 6 in one close. Level 7's two
-  // misses are too few to judge.
+  // 3 of 3 with 2 fast, so the answers show level 6. Level 7's two misses are
+  // too few to judge.
+  const WORKED = WORKED_FROM_EARLIER;
+
   it("rises to the highest level cleared above it, several steps at once", () => {
-    const shown = window(
-      [3, 6, 6, 4],
-      [4, 12, 11, 7],
-      [5, 7, 6, 4],
-      [6, 3, 3, 2],
-      [7, 2, 0, 0],
-    );
-    expect(adjustLevel(4, shown)).toStrictEqual({ level: 6, change: "up" });
+    expect(suggestLevel(4, WORKED)).toBe(6);
+    expect(adjustLevel(4, WORKED, LATER)).toStrictEqual({ level: 6, change: "up" });
   });
 
   it("passes over a level too thin to judge on the way to a cleared one", () => {
-    expect(
-      adjustLevel(4, window([4, 6, 6, 6], [5, 2, 2, 2], [6, 3, 3, 3])),
-    ).toStrictEqual({ level: 6, change: "up" });
+    expect(suggestLevel(4, window([4, 6, 6, 6], [5, 2, 2, 2], [6, 3, 3, 3]))).toBe(6);
+  });
+
+  it("climbs from a level too thin to judge itself", () => {
+    expect(suggestLevel(4, window([4, 2, 1, 0], [5, 3, 3, 3]))).toBe(5);
+  });
+
+  it("stays at a level held between the bars, whatever clears above it", () => {
+    expect(suggestLevel(5, window([5, 10, 7, 5], [6, 3, 3, 3], [7, 3, 3, 3]))).toBe(5);
   });
 
   it("stops the climb at a level held between the bars", () => {
-    expect(adjustLevel(4, window([5, 7, 5, 5], [6, 3, 3, 3]))).toStrictEqual({
-      level: 4,
-      change: "same",
-    });
+    expect(suggestLevel(4, window([5, 7, 5, 5], [6, 3, 3, 3]))).toBe(4);
   });
 
   it("clears a level only when half of its correct answers are fast", () => {
-    expect(adjustLevel(5, window([6, 4, 4, 1]))).toStrictEqual({
-      level: 5,
-      change: "same",
-    });
-    expect(adjustLevel(5, window([6, 4, 4, 2]))).toStrictEqual({
-      level: 6,
-      change: "up",
-    });
+    expect(suggestLevel(5, window([6, 4, 4, 1]))).toBe(5);
+    expect(suggestLevel(5, window([6, 4, 4, 2]))).toBe(6);
   });
 
   it("judges fast by the pace, so a long limit does not make every ok fast", () => {
     const slow = answers(4, 4, 0, 6);
     expect(slow.every((answer) => answer.elapsedMs <= answer.limitMs / 2)).toBe(true);
-    expect(adjustLevel(5, slow)).toStrictEqual({ level: 5, change: "same" });
+    expect(suggestLevel(5, slow)).toBe(5);
   });
 
   it("takes the limit as the pace for an answer logged before the limit was a setting", () => {
@@ -102,61 +117,138 @@ describe("the level the answers show", () => {
         limitMs: 8_000,
       }),
     );
-    expect(adjustLevel(5, logged)).toStrictEqual({ level: 6, change: "up" });
+    expect(suggestLevel(5, logged)).toBe(6);
+  });
+
+  it("counts a card answered on several days once, by its latest answer", () => {
+    const again = (
+      cardId: string,
+      result: "ok" | "ng",
+      answeredAt: number,
+    ): DifficultyAnswer => ({
+      cardId,
+      level: 6,
+      result,
+      elapsedMs: 4_000,
+      limitMs: 30_000,
+      paceMs: 10_000,
+      answeredAt,
+    });
+    const oneHardCard = [again("h", "ng", 1), again("h", "ng", 2), again("h", "ng", 3)];
+    const relearned = [again("h", "ng", 1), again("h", "ng", 2), again("h", "ok", 3)];
+    const two = [...relearned, again("p", "ok", 4)];
+    expect(suggestLevel(6, [...oneHardCard, ...answers(4, 4, 4, 6)])).toBe(6);
+    expect(suggestLevel(6, oneHardCard)).toBeNull();
+    expect(suggestLevel(5, two)).toBeNull();
+    expect(suggestLevel(5, [...two, again("q", "ok", 5)])).toBe(6);
   });
 
   it("comes down past every failed level to the highest one that has not failed", () => {
     const struggling = window([5, 2, 0, 0], [6, 4, 2, 0], [7, 8, 3, 1], [8, 3, 0, 0]);
-    expect(adjustLevel(7, struggling)).toStrictEqual({ level: 5, change: "down" });
+    expect(suggestLevel(7, struggling)).toBe(5);
+    expect(adjustLevel(7, struggling, LATER)).toStrictEqual({
+      level: 5,
+      change: "down",
+    });
   });
 
-  it("comes down one step when the level below has too few answers to judge", () => {
-    expect(
-      adjustLevel(7, window([6, 2, 0, 0], [7, 5, 2, 0], [8, 2, 0, 0], [9, 1, 0, 0])),
-    ).toStrictEqual({ level: 6, change: "down" });
+  it("comes down one step when the level below has too few cards to judge", () => {
+    expect(suggestLevel(7, window([6, 2, 0, 0], [7, 5, 2, 0], [8, 2, 0, 0]))).toBe(6);
+  });
+
+  it("fails a level only on four cards, holding it on three", () => {
+    expect(suggestLevel(5, window([4, 3, 3, 3], [5, 3, 1, 0]))).toBe(5);
+    expect(suggestLevel(5, window([4, 3, 3, 3], [5, 4, 2, 0]))).toBe(4);
   });
 
   it("comes down from a failed level even with a cleared one above it", () => {
-    expect(adjustLevel(5, window([5, 5, 2, 0], [6, 3, 3, 3]))).toStrictEqual({
+    expect(suggestLevel(5, window([5, 5, 2, 0], [6, 3, 3, 3]))).toBe(4);
+  });
+
+  it("holds at a 60% ok rate exactly", () => {
+    expect(suggestLevel(5, window([5, 5, 3, 0]))).toBe(5);
+  });
+
+  it("stays at a level whose next one up fails", () => {
+    expect(
+      suggestLevel(6, window([5, 3, 3, 3], [6, 8, 7, 5], [7, 4, 0, 0], [8, 3, 3, 3])),
+    ).toBe(6);
+  });
+
+  it("never goes below 1 or past the highest card level answered", () => {
+    expect(suggestLevel(1, window([1, 5, 0, 0], [2, 4, 0, 0]))).toBe(1);
+    expect(suggestLevel(2, window([1, 4, 0, 0], [2, 5, 0, 0]))).toBe(1);
+    expect(suggestLevel(10, window([9, 3, 3, 3], [10, 6, 6, 6]))).toBe(10);
+  });
+});
+
+describe("moving the level at a close", () => {
+  it("moves the worked example two steps when its window comes from earlier rounds", () => {
+    expect(
+      adjustLevel(
+        4,
+        [...WORKED_FROM_EARLIER, ...thisRound([[4, 5, 5, 3]])],
+        ROUND_START,
+      ),
+    ).toStrictEqual({
+      level: 6,
+      change: "up",
+    });
+  });
+
+  // Re-placed from 7 to 5 with level-6 and level-7 reviews due: one round of
+  // reviews answered right and fast would show level 7 on its own.
+  it("moves one step when the closing round alone shows two levels up", () => {
+    const round = thisRound([
+      [5, 4, 4, 3],
+      [6, 3, 3, 3],
+      [7, 3, 3, 3],
+    ]);
+    expect(suggestLevel(5, round)).toBe(7);
+    expect(adjustLevel(5, round, ROUND_START)).toStrictEqual({
+      level: 6,
+      change: "up",
+    });
+  });
+
+  it("moves one step on a deck made up from seven probe cards", () => {
+    const round = thisRound([
+      [5, 3, 3, 3],
+      [7, 7, 7, 7],
+    ]);
+    expect(adjustLevel(5, round, ROUND_START)).toStrictEqual({
+      level: 6,
+      change: "up",
+    });
+  });
+
+  it("drops one step when the closing round alone fails the level and the one below", () => {
+    const round = thisRound([
+      [4, 4, 0, 0],
+      [5, 6, 1, 0],
+    ]);
+    expect(suggestLevel(5, round)).toBe(3);
+    expect(adjustLevel(5, round, ROUND_START)).toStrictEqual({
       level: 4,
       change: "down",
     });
   });
 
-  it("holds at a 60% ok rate exactly", () => {
-    expect(adjustLevel(5, window([5, 5, 3, 0]))).toStrictEqual({
-      level: 5,
-      change: "same",
-    });
-  });
-
-  it("stays at a level whose next one up fails", () => {
-    expect(
-      adjustLevel(6, window([5, 3, 3, 3], [6, 8, 7, 5], [7, 3, 0, 0], [8, 3, 3, 3])),
-    ).toStrictEqual({
-      level: 6,
-      change: "same",
-    });
-  });
-
-  it("never goes below 1 or past the highest card level answered", () => {
-    expect(adjustLevel(1, window([1, 5, 0, 0], [2, 3, 0, 0]))).toStrictEqual({
-      level: 1,
-      change: "same",
-    });
-    expect(adjustLevel(2, window([1, 3, 0, 0], [2, 5, 0, 0]))).toStrictEqual({
-      level: 1,
-      change: "down",
-    });
-    expect(adjustLevel(10, window([9, 3, 3, 3], [10, 6, 6, 6]))).toStrictEqual({
-      level: 10,
-      change: "same",
+  it("moves one step past what the earlier rounds showed, not more", () => {
+    const earlier = window([5, 6, 6, 6], [6, 3, 3, 3], [7, 3, 3, 3]);
+    const round = thisRound([
+      [8, 3, 3, 3],
+      [9, 3, 3, 3],
+    ]);
+    expect(suggestLevel(5, [...earlier, ...round])).toBe(9);
+    expect(adjustLevel(5, [...earlier, ...round], ROUND_START)).toStrictEqual({
+      level: 8,
+      change: "up",
     });
   });
 
   // Every way of answering one round of ten as a 10-card deal lays it out
-  // (TUNING.mix.levelShare: 2 below, 5 at, 2 above, 1 probe): right and fast,
-  // right and slow, or wrong. No level but the learner's own gets three answers.
+  // (2 below, 5 at, 2 above, 1 probe): right and fast, right and slow, or wrong.
   it("moves at most one step on any one round of ten, however it was answered", () => {
     const shape = [4, 4, 5, 5, 5, 5, 5, 6, 6, 7];
     const moves = new Set<number>();
@@ -164,26 +256,27 @@ describe("the level the answers show", () => {
       const round = shape.map((level, index): DifficultyAnswer => {
         const kind = Math.floor(code / 3 ** index) % 3;
         return {
+          cardId: `c${String(index)}`,
           level,
           result: kind === 2 ? "ng" : "ok",
           elapsedMs: kind === 0 ? 4_000 : 8_000,
           limitMs: 30_000,
           paceMs: 10_000,
-          answeredAt: index,
+          answeredAt: ROUND_START + index,
         };
       });
-      moves.add(adjustLevel(5, round).level - 5);
+      moves.add(adjustLevel(5, round, ROUND_START).level - 5);
     }
     expect([...moves].sort()).toStrictEqual([-1, 0]);
   });
 });
 
 describe("suggesting a level beside one picked by hand", () => {
-  it("says nothing while no card level has three answers", () => {
+  it("says nothing while no card level has three cards answered", () => {
     expect(suggestLevel(5, answers(2, 2, 2, 6))).toBeNull();
   });
 
-  it("points where adjusting would go, or to the level itself", () => {
+  it("points where the answers show, however far, since nothing moves", () => {
     expect(suggestLevel(5, window([5, 5, 5, 5], [6, 3, 3, 3], [7, 3, 3, 3]))).toBe(7);
     expect(suggestLevel(5, window([4, 3, 3, 0], [5, 5, 2, 0]))).toBe(4);
     expect(suggestLevel(5, window([5, 5, 3, 0]))).toBe(5);

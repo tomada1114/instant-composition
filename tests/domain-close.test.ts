@@ -1,10 +1,12 @@
 import { describe, expect, it } from "vitest";
 
 import {
-  compose,
+  addDays,
+  deal,
   decideAnswers,
   decideClose,
   decideLevel,
+  practiceState,
   seededRandom,
   type AnswerInput,
   type CardFacts,
@@ -22,6 +24,7 @@ import {
   makePortion,
   makeReview,
   makeRound,
+  makeSettings,
   makeStats,
 } from "./application-fixtures";
 import { makeCardMeta } from "./domain-fixtures";
@@ -345,7 +348,7 @@ describe("decideClose", () => {
 /** How a learner answers a card: right within half its pace, right but slower, or wrong. */
 type Answer = "fast" | "slow" | "miss";
 
-/** Forty unseen cards at each level 1..10, eight words each, so a card's pace is eight seconds. */
+/** Forty cards at each level 1..10, eight words each, so a card's pace is eight seconds. */
 const LADDER: readonly CardMeta[] = Array.from({ length: 10 }, (_, index) =>
   Array.from({ length: 40 }, (_, n) =>
     makeCardMeta(`L${String(index + 1)}-${String(n + 1)}`, {
@@ -354,51 +357,53 @@ const LADDER: readonly CardMeta[] = Array.from({ length: 10 }, (_, index) =>
     }),
   ),
 ).flat();
-const FACTS = new Map<string, CardFacts>(
-  LADDER.map((card) => [card.id, { ...card, prompt: `${card.id}の文` }]),
-);
-const HOUR = 3_600_000;
+const DAY = 86_400_000;
 
 /**
- * Plays `rounds` rounds of `size` new cards from level `start`, through the
- * real deal, answer and close, and returns the level after each round.
+ * Plays one round a day from level `start` for `days` days through the real
+ * deal, answer and close, carrying every card's Leitner state from day to day
+ * so due reviews take their share of each deck, and returns the level after
+ * each day's round.
  */
-function playRounds(
+function playDays(
   start: number,
-  rounds: number,
-  answer: (card: CardMeta, index: number, round: number) => Answer,
-  size = 10,
+  days: number,
+  answer: (card: CardMeta, day: number) => Answer,
+  { size = 10, cards = LADDER }: { size?: number; cards?: readonly CardMeta[] } = {},
 ): number[] {
+  const facts = new Map<string, CardFacts>(
+    cards.map((card) => [card.id, { ...card, prompt: `${card.id}の文` }]),
+  );
   let stats: LearnerStats = makeStats({
     level: { level: start, reason: "placement", roundId: "p0", at: 0 },
   });
-  const answered = new Set<string>();
+  const items = new Map<string, ItemProgress>();
   const levels: number[] = [];
-  for (let index = 0; index < rounds; index += 1) {
-    const startedAt = (index + 1) * HOUR;
-    const dealt = compose({
-      size,
-      today: "2026-09-22",
-      level: stats.level?.level ?? start,
-      topics: ["work"],
-      focus: [],
-      weakConcepts: [],
-      cards: LADDER,
-      states: new Map(),
-      exclude: answered,
-      seed: `round-${String(index)}`,
-    });
-    if (!dealt.ok) throw new Error(`Round ${String(index)} could not be dealt.`);
+  for (let day = 0; day < days; day += 1) {
+    const today = addDays("2026-09-01", day);
+    const startedAt = (day + 1) * DAY;
+    const dealt = deal(
+      practiceState({
+        today,
+        stats,
+        settings: makeSettings({ dailySize: 10 }),
+        cards,
+        items,
+      }),
+      { size, seed: `day-${String(day)}` },
+    );
+    if (!dealt.ok) throw new Error(`Day ${String(day)} could not be dealt.`);
     const round = makeRound({
-      id: `r${String(index)}`,
+      id: `r${String(day)}`,
+      day: today,
+      portionDay: today,
       deck: dealt.value.cardIds,
       startedAt,
     });
-    const inputs = dealt.value.cardIds.map((cardId, position): AnswerInput => {
-      const card = LADDER.find((candidate) => candidate.id === cardId);
-      if (card === undefined) throw new Error(`${cardId} is not on the ladder.`);
-      const given = answer(card, position, index);
-      answered.add(cardId);
+    const inputs = round.deck.map((cardId, position): AnswerInput => {
+      const card = cards.find((candidate) => candidate.id === cardId);
+      if (card === undefined) throw new Error(`${cardId} was never in the catalog.`);
+      const given = answer(card, day);
       return {
         id: `${round.id}:${cardId}`,
         roundId: round.id,
@@ -411,32 +416,26 @@ function playRounds(
     });
     const now = startedAt + 60_000;
     const taken = decideAnswers(
-      {
-        round,
-        stats,
-        portion: undefined,
-        day: undefined,
-        items: new Map(),
-        recorded: new Set(),
-      },
+      { round, stats, portion: undefined, day: undefined, items, recorded: new Set() },
       inputs,
-      FACTS,
+      facts,
       now,
     );
-    if (taken === undefined) throw new Error(`Round ${String(index)} took no answers.`);
+    if (taken === undefined) throw new Error(`Day ${String(day)} took no answers.`);
+    for (const item of taken.items) items.set(item.item.id, item);
     stats = decideClose(
       {
         round: taken.round,
         stats: taken.stats,
         portion: undefined,
         day: taken.day,
-        items: new Map(taken.items.map((item) => [item.item.id, item])),
+        items,
         reviews: taken.entries,
         tallies: new Map(),
         catalog: {
           topicOrder: ["work"],
           chosen: ["work"],
-          shown: new Set(FACTS.keys()),
+          shown: new Set(facts.keys()),
           placeOf: () => undefined,
         },
       },
@@ -447,19 +446,62 @@ function playRounds(
   return levels;
 }
 
-/** Right and fast on every card up to `ability`, wrong on every card above it. */
+/** Right and fast (or `upTo`'s `within`) on every card up to `ability`, wrong on every card above it. */
 const upTo =
-  (ability: number, below: Answer = "fast") =>
-  (card: CardMeta): Answer =>
-    card.level <= ability ? below : "miss";
+  (ability: number | ((day: number) => number), within: Answer = "fast") =>
+  (card: CardMeta, day: number): Answer =>
+    card.level <= (typeof ability === "number" ? ability : ability(day))
+      ? within
+      : "miss";
 
-describe("the level over rounds of ten new cards", () => {
-  it("climbs from 3 to a learner's level 6 within four rounds, and stays there", () => {
-    expect(playRounds(3, 8, upTo(6))).toStrictEqual([3, 4, 5, 6, 6, 6, 6, 6]);
+/** The first day, counted from 1, the level stood at `level`. */
+const dayReaching = (levels: readonly number[], level: number): number =>
+  levels.indexOf(level) + 1;
+
+describe("the level over a round of ten a day, reviews included", () => {
+  it("climbs from 3 to a learner's level 6 by day 4, and stays there", () => {
+    expect(playDays(3, 12, upTo(6))).toStrictEqual([
+      3, 4, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6,
+    ]);
   });
 
-  it("comes down from 7 to the level a struggling learner clears within three rounds, and stays there", () => {
-    expect(playRounds(7, 8, upTo(4, "slow"))).toStrictEqual([6, 5, 4, 4, 4, 4, 4, 4]);
+  it("comes down from 7 to the level a struggling learner clears by day 5, and stays there", () => {
+    expect(playDays(7, 12, upTo(4, "slow"))).toStrictEqual([
+      6, 5, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4,
+    ]);
+  });
+
+  // Main before this change, measured the same way: level 9 on day 18 in both
+  // runs below, and level 6 on day 7 in the one above.
+  it("climbs from 3 to a learner's level 9 before day 18", () => {
+    const levels = playDays(3, 30, upTo(9));
+    expect(dayReaching(levels, 9)).toBeGreaterThan(0);
+    expect(dayReaching(levels, 9)).toBeLessThan(18);
+    expect(levels.slice(dayReaching(levels, 9)).every((level) => level === 9)).toBe(
+      true,
+    );
+  });
+
+  it("follows a learner at 6 who reaches 9 on day 10 there before day 18", () => {
+    const levels = playDays(
+      6,
+      30,
+      upTo((day) => (day < 9 ? 6 : 9)),
+    );
+    expect(levels.slice(0, 9).every((level) => level === 6)).toBe(true);
+    expect(dayReaching(levels, 9)).toBeGreaterThan(0);
+    expect(dayReaching(levels, 9)).toBeLessThan(18);
+  });
+
+  it("moves one step on a round of thirty that alone shows two levels up", () => {
+    expect(playDays(3, 1, upTo(9), { size: 30 })).toStrictEqual([4]);
+  });
+
+  it("moves one step when the level's own cards run out and the probe makes up the deck", () => {
+    const thin = LADDER.filter(
+      (card) => ![4, 5, 6].includes(card.level) || card.id.endsWith("-1"),
+    );
+    expect(playDays(5, 1, upTo(9), { cards: thin })).toStrictEqual([6]);
   });
 
   /** Wrong, right and slow, or right and fast, a third of the time each or so. */
@@ -474,17 +516,17 @@ describe("the level over rounds of ten new cards", () => {
   it.each(Array.from({ length: 40 }, (_, seed) => seed))(
     "moves at most one step on a round of mixed answers (seed %i)",
     (seed) => {
-      const [after] = playRounds(5, 1, mixedFrom(seed));
+      const [after] = playDays(5, 1, mixedFrom(seed));
       expect(Math.abs((after ?? 0) - 5)).toBeLessThanOrEqual(1);
     },
   );
 
   it.each(Array.from({ length: 40 }, (_, seed) => seed))(
-    "moves at most one step on a round of mixed answers after two steady ones (seed %i)",
+    "moves at most one step on a round of mixed answers after two steady days (seed %i)",
     (seed) => {
       const mixed = mixedFrom(seed);
-      const levels = playRounds(5, 3, (card, _, round) =>
-        round < 2 ? upTo(5)(card) : mixed(),
+      const levels = playDays(5, 3, (card, day) =>
+        day < 2 ? upTo(5)(card, day) : mixed(),
       );
       expect(levels.slice(0, 2)).toStrictEqual([5, 5]);
       expect(Math.abs((levels[2] ?? 0) - 5)).toBeLessThanOrEqual(1);

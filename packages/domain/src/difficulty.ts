@@ -3,6 +3,8 @@ import { TUNING } from "./tuning";
 import type { AnswerResult } from "./types";
 
 export interface DifficultyAnswer extends Paced {
+  /** Absent on an answer kept before the window named its card; each counts on its own. */
+  readonly cardId?: string;
   readonly level: number;
   readonly result: AnswerResult;
   readonly elapsedMs: number;
@@ -18,14 +20,32 @@ export interface LevelAdjustment {
 
 /**
  * What the window shows of one card level: `cleared` at the up bars, `failed`
- * under the down bar, `held` between them, and `unknown` below
- * `TUNING.difficulty.minPerLevel` answers.
+ * under the down bar, `held` between them or under it on too few cards to
+ * fail, and `unknown` on fewer cards than either `TUNING.difficulty.minPerLevel`.
  */
 type Verdict = "cleared" | "held" | "failed" | "unknown";
 
-function verdictOf(answers: readonly DifficultyAnswer[]): Verdict {
+/** Each card's latest answer, so a card seen on several days counts once. */
+function latestPerCard(answers: readonly DifficultyAnswer[]): DifficultyAnswer[] {
+  const latest = new Map<string, DifficultyAnswer>();
+  const unnamed: DifficultyAnswer[] = [];
+  for (const answer of answers) {
+    if (answer.cardId === undefined) {
+      unnamed.push(answer);
+      continue;
+    }
+    const held = latest.get(answer.cardId);
+    if (held === undefined || held.answeredAt <= answer.answeredAt) {
+      latest.set(answer.cardId, answer);
+    }
+  }
+  return [...unnamed, ...latest.values()];
+}
+
+function verdictOf(all: readonly DifficultyAnswer[]): Verdict {
   const { minPerLevel, upOkRate, upFastRate, downOkRate } = TUNING.difficulty;
-  if (answers.length < minPerLevel) {
+  const answers = latestPerCard(all);
+  if (answers.length < Math.min(minPerLevel.clear, minPerLevel.fail)) {
     return "unknown";
   }
   const oks = answers.filter((answer) => answer.result === "ok");
@@ -33,23 +53,21 @@ function verdictOf(answers: readonly DifficultyAnswer[]): Verdict {
   const okRate = oks.length / answers.length;
   const fastRate = oks.length === 0 ? 0 : fast.length / oks.length;
   if (okRate < downOkRate) {
-    return "failed";
+    return answers.length < minPerLevel.fail ? "held" : "failed";
   }
   return okRate >= upOkRate && fastRate >= upFastRate ? "cleared" : "held";
 }
 
 /**
  * The level the answers show from `level`, or null while no card level has
- * enough answers to judge.
+ * enough cards answered to judge.
  *
  * @remarks
- * Each card level is judged on its own answers in the window. A failed level
- * comes down to the highest level below it that has not failed; otherwise the
- * level rises to the highest cleared one above it, passing only levels too
- * thin to judge, so a held or failed level on the way stops the climb. From
- * an empty window, one round of ten deals too few cards off the level to
- * judge any of them, so it moves at most one step; a larger move needs the
- * answers of several rounds.
+ * Each card level is judged on its own cards in the window, a card by its
+ * latest answer. A failed level comes down to the highest level below it that
+ * has not failed. A held level stays. Otherwise the level rises to the highest
+ * cleared one above it, passing only levels too thin to judge, so a held or
+ * failed level on the way stops the climb.
  *
  * @param answers - First-pass answers since the level was last placed or
  * picked, across the moves the answers made since.
@@ -78,6 +96,9 @@ export function suggestLevel(
     }
     return Math.max(1, lower);
   }
+  if (verdictAt(level) === "held") {
+    return level;
+  }
   let target = level;
   const top = Math.max(...verdicts.keys());
   for (let upper = level + 1; upper <= top; upper += 1) {
@@ -92,19 +113,31 @@ export function suggestLevel(
 }
 
 /**
- * The level after a non-placement round: where `suggestLevel` points, or
- * `level` itself while it points nowhere.
+ * The level after a non-placement round: where `suggestLevel` points, but no
+ * more than one step past where the answers before `since` already pointed,
+ * so the answers of one close alone never move the level more than a step,
+ * however its deck was made up. Evidence spanning several closes still moves
+ * it several steps at once.
+ *
+ * @param since - When the closing round started: answers from then on are its own.
  */
 export function adjustLevel(
   level: number,
   answers: readonly DifficultyAnswer[],
+  since: number,
 ): LevelAdjustment {
-  const suggested = suggestLevel(level, answers) ?? level;
-  if (suggested > level) {
-    return { level: suggested, change: "up" };
+  const earlier = answers.filter((answer) => answer.answeredAt < since);
+  const before = suggestLevel(level, earlier) ?? level;
+  const shown = suggestLevel(level, answers) ?? level;
+  const moved = Math.min(
+    Math.max(level, before) + 1,
+    Math.max(Math.min(level, before) - 1, shown),
+  );
+  if (moved > level) {
+    return { level: moved, change: "up" };
   }
-  if (suggested < level) {
-    return { level: suggested, change: "down" };
+  if (moved < level) {
+    return { level: moved, change: "down" };
   }
   return { level, change: "same" };
 }

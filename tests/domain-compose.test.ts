@@ -139,15 +139,63 @@ describe("the mix of review and new cards", () => {
     expect(levels).toStrictEqual([4, 4, 5, 5, 5, 5, 5, 6, 6, 7]);
   });
 
-  it("deals no probe in a deck too small for a tenth of it", () => {
+  it("keeps a card a level up and a probe among four new cards beside six reviews", () => {
+    const reviews = cell("r", 6, { level: 3 });
+    const states = new Map(reviews.map((card) => [card.id, due(TODAY)]));
+    const fresh = [
+      ...cell("a", 10, { level: 4 }),
+      ...cell("b", 10, { level: 5 }),
+      ...cell("c", 10, { level: 6 }),
+      ...cell("d", 10, { level: 7 }),
+    ];
+    const deck = composed({ cards: [...reviews, ...fresh], states });
+    const levels = levelsOf(
+      deck.cardIds.filter((id) => !id.startsWith("r")),
+      fresh,
+    ).sort();
+    expect(deck).toMatchObject({ reviewCount: 6, newCount: 4 });
+    expect(levels).toStrictEqual([5, 5, 6, 7]);
+  });
+
+  it.each([
+    [1, [5]],
+    [2, [5, 6]],
+    [3, [5, 6, 7]],
+    [5, [5, 5, 5, 6, 7]],
+  ])("splits %i new cards over the bands as %j", (size, expected) => {
     const cards = [
       ...cell("a", 10, { level: 4 }),
       ...cell("b", 10, { level: 5 }),
       ...cell("c", 10, { level: 6 }),
       ...cell("d", 10, { level: 7 }),
     ];
-    const levels = levelsOf(composed({ size: 9, cards }).cardIds, cards);
-    expect(levels).not.toContain(7);
+    const levels = levelsOf(
+      composed({ size, minSize: 1, cards }).cardIds,
+      cards,
+    ).sort();
+    expect(levels).toStrictEqual(expected);
+  });
+
+  it("plans the level split over the focus, weak and remaining shares together", () => {
+    const cards = [
+      ...cell("a", 10, { level: 4 }),
+      ...cell("b", 10, { level: 5 }),
+      ...cell("c", 10, { level: 6 }),
+      ...cell("d", 10, { level: 7 }),
+      ...cell("h", 10, { topic: "daily", subtopic: "home" }),
+    ];
+    const reviews = cell("r", 6, { level: 3 });
+    const deck = composed({
+      cards: [...reviews, ...cards],
+      states: new Map(reviews.map((card) => [card.id, due(TODAY)])),
+      focus: [{ topic: "daily", subtopic: "home" }],
+    });
+    const levels = levelsOf(
+      deck.cardIds.filter((id) => !id.startsWith("r")),
+      cards,
+    ).sort();
+    expect(deck.focusCount).toBe(2);
+    expect(levels).toStrictEqual([5, 5, 6, 7]);
   });
 
   it("makes up the level from the probe only when the level and its neighbours run out", () => {

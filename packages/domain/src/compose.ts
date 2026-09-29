@@ -1,5 +1,6 @@
 import {
   inLevelBand,
+  levelPlan,
   pickByLevel,
   pickFocus,
   pickWeak,
@@ -122,8 +123,8 @@ function scatter(deck: readonly CardMeta[]): CardMeta[] {
 
 /**
  * Deals one round: due reviews up to a share of the deck, then new cards (the
- * focus share first, then the weak share), then more reviews to fill whatever
- * new cards could not.
+ * focus share first, then the weak share, their levels planned over all the
+ * new cards together), then more reviews to fill whatever new cards could not.
  */
 export function compose(input: ComposeInput): Result<Composition, NotEnoughCards> {
   const { seen, fresh } = candidates(input);
@@ -147,7 +148,12 @@ export function compose(input: ComposeInput): Result<Composition, NotEnoughCards
   const reviews = dueSorted.slice(0, reviewSlots);
   const newSlots = input.size - reviewSlots;
 
-  const state: PickState = { random, counts: new Map(), taken: new Set() };
+  const state: PickState = {
+    random,
+    counts: new Map(),
+    taken: new Set(),
+    plan: levelPlan(newSlots, input.level),
+  };
   const focusQuota =
     input.focus.length === 0 ? 0 : Math.floor(newSlots * TUNING.mix.focusShareOfNew);
   const focused = pickFocus(fresh, input.focus, focusQuota, input.level, state);

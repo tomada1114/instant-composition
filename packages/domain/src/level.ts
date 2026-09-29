@@ -99,7 +99,7 @@ export function settleLevel(
   if (stats.level === null || levelModeOf(stats) === "manual") {
     return unchanged;
   }
-  const adjusted = adjustLevel(stats.level.level, stats.levelWindow);
+  const adjusted = adjustLevel(stats.level.level, stats.levelWindow, round.startedAt);
   if (adjusted.change === "same") {
     return unchanged;
   }
