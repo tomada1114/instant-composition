@@ -63,11 +63,17 @@ the commands and git, and reads the reviewer's files only as far as applying the
      `pnpm -s cards:tombstone --id <old> --reason "<reason>" --replaced-by <new id>`. If
      `cards:add` drops it, tombstone the old card with reason
      `rebuild failed: <the drop reason>`.
+   - **Rejected edits get one retry.** Send the same reviewer one message
+     (`SendMessage`, so its context is reused) with the `rejected …` lines, asking it to
+     rewrite `review-<b>-edits.json` with corrected edits for those cards only; run
+     `cards:update` on it once more. A card whose edit is still rejected is not stamped:
+     the reviewer found a problem that is still there.
 6. **Final check and stamp.** The reviewed cards still present are every queued id not
-   deleted or replaced, plus each new rebuilt id. `pnpm -s cards:lint --ids <them>`,
-   then `pnpm -s cards:stamp --ids <them>` (with `--field <name>` for a field review).
-   `cards:stamp` refuses a card that fails lint (`ERR_CARDS_STAMP_REFUSED`) and stamps
-   the rest; a refused card stays unstamped and goes in the report.
+   deleted or replaced, plus each new rebuilt id, minus any card whose edit was rejected
+   twice. `pnpm -s cards:lint --ids <them>`, then `pnpm -s cards:stamp --ids <them>`
+   (with `--field <name>` for a field review). `cards:stamp` refuses a card that fails
+   lint (`ERR_CARDS_STAMP_REFUSED`) and stamps the rest; a refused card stays unstamped
+   and goes in the report.
 7. **Commit.** `git add content`; if `git diff --cached --quiet` reports nothing staged,
    skip it. Otherwise
    `git commit -m "fix(cards): review <n> cards (<kept>/<edited>/<rebuilt>/<deleted>)"`

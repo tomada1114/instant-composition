@@ -53,7 +53,10 @@ Decide each card, using `identity.md` for edit vs. rebuild:
 
 - **keep** — nothing to change.
 - **edit** — the fix keeps the question. Every edited card must pass every check after
-  the edit.
+  the edit. The word and `jaChars` caps are the level the card ends on: when you change
+  `level`, count every sentence again against the new level's caps, and keep the old
+  level if the card cannot fit the new one. `cards:update` rejects an edit that breaks a
+  cap.
 - **rebuild** — a repair would change the question. Write the replacement yourself, in
   the same cell, following
   `.claude/skills/generating-cards/references/writer-brief.md`'s **Write** rules; it
