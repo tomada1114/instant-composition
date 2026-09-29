@@ -132,14 +132,22 @@
       "ja": "関係詞（who / which / that / where）",
       "minLevel": 4,
       "maxLevel": 9,
-      "example": "This is the café where we first met."
+      "example": "This is the café where we first met.",
+      "targetAllowance": {
+        "words": 1,
+        "jaChars": 2
+      }
     },
     {
       "id": "indirect-questions",
       "ja": "間接疑問",
       "minLevel": 4,
       "maxLevel": 9,
-      "example": "Do you know what time the store closes?"
+      "example": "Do you know what time the store closes?",
+      "targetAllowance": {
+        "words": 1,
+        "jaChars": 2
+      }
     },
     {
       "id": "post-modification",
@@ -181,7 +189,11 @@
       "ja": "仮定法過去",
       "minLevel": 5,
       "maxLevel": 10,
-      "example": "If I had time, I'd learn to cook."
+      "example": "If I had time, I'd learn to cook.",
+      "targetAllowance": {
+        "words": 1,
+        "jaChars": 2
+      }
     },
     {
       "id": "causatives",
@@ -202,7 +214,11 @@
       "ja": "話法・時制の一致",
       "minLevel": 5,
       "maxLevel": 10,
-      "example": "She said she would be a little late."
+      "example": "She said she would be a little late.",
+      "targetAllowance": {
+        "words": 1,
+        "jaChars": 2
+      }
     },
     {
       "id": "concession-contrast",
@@ -223,7 +239,11 @@
       "ja": "仮定法過去完了",
       "minLevel": 6,
       "maxLevel": 10,
-      "example": "If I had left earlier, I'd have made it."
+      "example": "If I had left earlier, I'd have made it.",
+      "targetAllowance": {
+        "words": 1,
+        "jaChars": 2
+      }
     },
     {
       "id": "participle-clauses",
@@ -251,21 +271,33 @@
       "ja": "強調構文（It is ... that / What ... is）",
       "minLevel": 8,
       "maxLevel": 10,
-      "example": "It was the price, not the design, that surprised me."
+      "example": "It was the price, not the design, that surprised me.",
+      "targetAllowance": {
+        "words": 1,
+        "jaChars": 2
+      }
     },
     {
       "id": "mixed-conditional",
       "ja": "混合仮定法",
       "minLevel": 8,
       "maxLevel": 10,
-      "example": "If I'd taken that job, I'd be rich now."
+      "example": "If I'd taken that job, I'd be rich now.",
+      "targetAllowance": {
+        "words": 1,
+        "jaChars": 2
+      }
     },
     {
       "id": "nested-clauses",
       "ja": "節の入れ子（節の中の節）",
       "minLevel": 8,
       "maxLevel": 10,
-      "example": "The man who told me what you said wasn't sure."
+      "example": "The man who told me what you said wasn't sure.",
+      "targetAllowance": {
+        "words": 1,
+        "jaChars": 2
+      }
     },
     {
       "id": "inversion",

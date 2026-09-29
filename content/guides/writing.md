@@ -35,13 +35,21 @@ close together from level 1 to level 10:
   its `words.max`.
 - `ja` stays at or under the level's `jaChars.max` characters. Whitespace does not
   count; punctuation does.
-- Stay at or under `words.target` and `jaChars.target`. The cap is a ceiling, not a
-  target: a card over the target is rewritten shorter, and stays over only when every
-  shorter natural sentence loses the card's point. If a word or a clause can go without
-  losing the point of the card, it goes.
+- Stay at or under the card's targets: the level's `words.target` and `jaChars.target`,
+  raised by the `targetAllowance` of any grammar id the card is tagged with. The cap is
+  a ceiling, not a target: a card over its target is rewritten shorter, and stays over
+  only when every shorter natural sentence loses the card's point. If a word or a clause
+  can go without losing the point of the card, it goes.
+
+A few structures need both of their clauses to exist at all — a conditional's `if`
+clause and its result, a cleft's frame, a clause nested inside another. Those grammar
+ids carry a `targetAllowance` in `content/grammar.json` (one more word, two more `ja`
+characters), so a card built on one is not pushed to cut the clause that is its point.
+The allowance never raises a cap, and it is not room for a second detail.
 
 The lint rejects a card over a cap. `cards:lint` and `cards:add` print a
-`WARN … OVER_TARGET` line for a card over a target, and the review rewrites it.
+`WARN … OVER_TARGET` line for a card over its target — naming the grammar id when an
+allowance raised it — and the review rewrites it.
 
 ## One sentence, one idea
 
@@ -124,6 +132,14 @@ The lint rejects a card over a cap. `cards:lint` and `cards:add` print a
   quickly — its structure, the tier of its vocabulary, and the idioms or phrasal verbs
   it needs, as each level's `summary` names them. Length is never a reason for a higher
   level; every level caps it.
+- A card sits at the level of its hardest element, not of its grammar tag. At levels
+  8–10 the sentence needs something a level 6–7 learner would not produce on the spot:
+  an idiom, an implication, a precise word chosen over a plain one, inversion. A high
+  structure written plainly belongs lower. For example, "Riding the train, I planned my
+  weekend." is a level 6 participle clause, and "If I had time, I'd hike weekly." is a
+  level 5 second conditional, whatever they are tagged. "Little did I know she'd quit."
+  (inversion) and "I'll take a rain check on dinner." (idiom) hold level 9 at the same
+  length.
 - `grammar`: 1–2 ids from `content/grammar.json`, the structures the card actually
   exercises. Each id's `minLevel`–`maxLevel` must include the card's level. Never shown
   to the learner.
