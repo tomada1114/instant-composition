@@ -79,7 +79,13 @@
     "level": 8,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e5a7f17798abb7bf43c5428fa1b518d1a3a32ea82e664045f15f6af2861ccb48",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3d7c9w9d",
@@ -290,7 +296,13 @@
     "level": 8,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:78f5421873190ae0bbda7e6df9f827c5ff6475c3e0961babc6d96f1454204280",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4u4x6p8n",
@@ -306,7 +318,13 @@
     "level": 9,
     "grammar": ["participle-clauses", "concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5634709d88fb0f52ace2cab6934779ed01febf9925513178eba1f5532007e64e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4x7a5d9v",
@@ -410,7 +428,13 @@
     "level": 8,
     "grammar": ["time-and-if-clauses", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:deeaade1df7e6b083665c405188c12d3b1820d5ac198f9e5dbcc30f56a65d6f9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6h9t8z4r",
@@ -555,7 +579,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis", "noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f94218b711fbdd7fb7cc731b3356dad127fd67acd893fb7d16d8a993a4ce0fb3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8h8u6s3j",

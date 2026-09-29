@@ -58,7 +58,13 @@
     "level": 5,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8ae5e2e26f980753cc20a0577e81b10aa7cf3d4c8441731e038569ce2ded8835",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3a7c3u7z",
@@ -96,7 +102,13 @@
     "level": 6,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f6db2f8238ec2447934df2ab71540a95aa3b4c5d0988a3bac871491020c2beb7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3b8u7h5y",
@@ -200,7 +212,13 @@
     "level": 6,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9c6fc035a44ecf25bccc91c66f0ebe18ae6566eac4df5e37874d178825c88abc",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3r9r6q4j",
@@ -390,7 +408,13 @@
     "level": 5,
     "grammar": ["time-and-if-clauses", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:131efd0372805de0f24b08ef25e02309429bf464cc2be229bc354cac4a313231",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5u5m4j2q",
@@ -438,7 +462,7 @@
   },
   {
     "id": "c_6j4e9d4q",
-    "ja": "お詫びに、今夜のお部屋代はこちらで持たせてください。",
+    "ja": "お詫びに、今夜のお部屋代は持たせてください。",
     "en": "Please let us cover tonight's room as an apology.",
     "alternatives": [
       "Please allow us to cover tonight's room as an apology.",
@@ -447,10 +471,16 @@
     "point": "let us＋動詞の原形で「〜させてください」",
     "topic": "travel",
     "subtopic": "hotel",
-    "level": 10,
+    "level": 7,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:030cfe6390ca58df0c6a7bed77bf34144d70ad8f5fc2e81e2a1e21244a2309a2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6t9h3m4k",
@@ -507,7 +537,13 @@
     "level": 9,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9ebb03d42fa7740700b00723b6a6a965cb1d76b580d1e64daf7b5331021897d2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8c9u8s6w",
@@ -545,7 +581,13 @@
     "level": 8,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d65b01d0c707592668974955913d4bde6ab0bc9da9cd60245fc5ced1ee951e36",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8d8d4u6e",
@@ -580,7 +622,13 @@
     "level": 10,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:02bc083048cc09a51e803cad0a5fa33df5e21802b4e441e627b2a356b6d57123",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8x8x4n3b",

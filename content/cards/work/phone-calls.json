@@ -54,7 +54,13 @@
     "level": 8,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b272f02f0a653cc939bdf5a520f4988f08f9e41f7c98d3886912bc973973c429",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2k7z2g5k",
@@ -130,7 +136,13 @@
     "level": 5,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1aa13872e8a6f614701b11205392f3d00e23bdc0f9b0d31ee509b81a3f498304",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3j5p7m6b",
@@ -146,7 +158,13 @@
     "level": 10,
     "grammar": ["inversion"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a08f48570f9e847a7f3bb9ca3e033ce6754fb5fb677d4fd9652266877b8ff5a4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3p9d8h7c",
@@ -207,7 +225,13 @@
     "level": 5,
     "grammar": ["gerunds", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f4aaf1ef7c18594a0803fc0d4df671a87e991b244586ec961823aa66b091c432",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4r9q6n8m",
@@ -223,7 +247,13 @@
     "level": 8,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:41a90b53e95adb54e48771a30b660cf0899aa00cd1c191746d97a29102bd5c64",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4v2h9q3q",
@@ -390,7 +420,13 @@
     "level": 6,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6208a35605170915ef161d9e3d7191c1d0839b73bee94d0ca5047eae03fca086",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6f9h6n2b",
@@ -516,7 +552,13 @@
     "level": 9,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2e771225a7d1eb9372d12cc8ec1b041b41d913c3a7736365f6d4b087cf1afd53",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7e6d4s9a",
@@ -532,7 +574,13 @@
     "level": 6,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2890e8d68964edd763b01ee9759cd63db1288f2be103acc70660f44ce7a03150",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7g2s5j7v",
@@ -589,7 +637,13 @@
     "level": 7,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:946fe2d70d812ffd43d8593dd1644c85d9a46e2f60a28e1abb16f82a79ff84bd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7u6v4n4g",
@@ -649,7 +703,13 @@
     "level": 8,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:592ef412e1931243683911c8de135bbf4c6ef654ce74efd3a16e970df54bb82d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8g2g6x3z",
@@ -731,7 +791,13 @@
     "level": 6,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:39f3d83f8cb18c11e9672b0c29a24962d51ee28fb5c1b4a1853720be909f0ba8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8t5b4c7e",
@@ -769,6 +835,12 @@
     "level": 5,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e52652669fc4a3e5b6d585f034598ace868836b470ca8374cf88cb924b049e1f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

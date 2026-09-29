@@ -57,7 +57,13 @@
     "level": 10,
     "grammar": ["inversion"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e16c51334c584c7d85a9a218c81b07fcc6f6e1f0fc0466c82e6e03ba86cbd4cb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3s5w6e8h",
@@ -243,7 +249,13 @@
     "level": 6,
     "grammar": ["indirect-questions", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:25dade1495069c764e9dce0600094e21bc925bea71bf4cb6b8f8ec7825efc00c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6d6w5e2d",
@@ -281,7 +293,13 @@
     "level": 4,
     "grammar": ["indirect-questions", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b5a87cfaf231030020a263a79fb1e108cfe5dcdd1942bb5e0e016fcbd7c1bc1f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6k6k5e9t",
@@ -470,7 +488,13 @@
     "level": 9,
     "grammar": ["inversion", "noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b9a1a185e10628111ae0926e155fdec69464fbaf96f64d72965c637fdbd27f47",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8c7f2k4r",
@@ -530,7 +554,13 @@
     "level": 6,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ad664a3b9fe4aaf03b48246da0eae7947376e25d881aa2d624956449363916f4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8u3a9v5g",

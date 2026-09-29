@@ -57,7 +57,13 @@
     "level": 3,
     "grammar": ["modal-obligation-advice", "comparatives-superlatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0f2abecc58fb2e3be6f0a0806b3ed8d16ea1046028f2fc097e2c90cee1f45c81",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2q7e4z9u",
@@ -136,7 +142,13 @@
     "level": 7,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b40f077dc38f288ee35681b01c43637ff6ea23cff73a0f5cb905c9cbad8a1b6c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3t5h7h2u",
@@ -218,7 +230,13 @@
     "level": 8,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6d61f4da859eb86c02f3ace326f06e02f3b4947648c4854feabbbf0dc0b81f82",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4s9y7x2k",
@@ -234,7 +252,13 @@
     "level": 8,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7bb52efa0faef9eb609187a356fe5293ce8cf9bcfbf4575575808b74f9ac1a31",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4t3c8w3x",
@@ -250,7 +274,13 @@
     "level": 8,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:615e47439ca5ead94b2eaaf7fac598e3a534400c7745b9d4aaf6e1c23e237fc0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4t3z9p3c",
@@ -332,7 +362,13 @@
     "level": 8,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b2e8f77b51a17e2a819c1150345b03c573da4a83152e6288a67830bded9f6bc1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5h3g3j9s",
@@ -348,7 +384,13 @@
     "level": 8,
     "grammar": ["infinitives", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:80c59ce104777c14f3df44199ded0569e7aa09ba05c9366e5437dc1081ebe341",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6f5p9u7q",
@@ -486,18 +528,24 @@
   {
     "id": "c_7k4v4m8e",
     "ja": "どなたか、聞きたいことはありますか？",
-    "en": "Does anyone have something to ask?",
+    "en": "Does anyone want to ask anything?",
     "alternatives": [
-      "Does anyone have a question?",
+      "Does anyone have any questions?",
       "Is there anything anyone wants to ask?"
     ],
-    "point": "something の後ろに to ask を置いて「聞きたいこと」",
+    "point": "「聞きたい」は want to ask。疑問文なので anything を使う",
     "topic": "work",
     "subtopic": "presentations",
     "level": 3,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:aa5edc8d539cd67b6449ff33ed1886f9738fefc024f55ea39591dbb693638b12",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7m8g6w8v",
@@ -513,7 +561,13 @@
     "level": 7,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1775faaf7d33f24811730ae14ed5d0859fb24fc7b7f942324c94b5bb303713bd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7n7c4s8f",
@@ -592,10 +646,16 @@
     "point": "見直す＝go over。tell + 人 + to do",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 8,
+    "level": 6,
     "grammar": ["verb-object-to-do", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f979c44769885d2d07863415d05dc618e2c1cb975c37cac992bee3b9f6e61d3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8j9v3e8p",
@@ -620,22 +680,6 @@
     }
   },
   {
-    "id": "c_8k7w6w6c",
-    "ja": "皆さんに、まず結論を押さえていただきたいのです。",
-    "en": "I'd like you to grasp the conclusion first.",
-    "alternatives": [
-      "I want you to get the main conclusion first.",
-      "First, I'd like you all to take in the conclusion."
-    ],
-    "point": "want / would like + 人 + to do の語順",
-    "topic": "work",
-    "subtopic": "presentations",
-    "level": 8,
-    "grammar": ["verb-object-to-do"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8t9c6u5v",
     "ja": "彼には、デモを短めにするよう伝えておきました。",
     "en": "I told him to keep the demo short.",
@@ -649,7 +693,13 @@
     "level": 7,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ad9cf06fb3569eb4be6803678801354dd87074ec5fd3bdc11fcf80ff2b207b61",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8u5e2r5e",
@@ -772,7 +822,13 @@
     "level": 8,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a6cfcf9ca079e55bcd006ae0cf84e7f4e79bb2603a9654692af9accebb8d6a38",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9h3q9h8b",
@@ -799,7 +855,7 @@
   {
     "id": "c_9r3e2w8p",
     "ja": "時間があれば、事例をもっとお見せするのですが。",
-    "en": "If I had more time, I'd show more examples.",
+    "en": "If I had more time, I'd show you more examples.",
     "alternatives": [
       "I'd show you more examples if I had time.",
       "If there were more time, I'd share more examples."
@@ -810,6 +866,12 @@
     "level": 7,
     "grammar": ["second-conditional", "hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9c8772beac1cbbc500bd8f7ed024e726ef42a8558fa42d5e0e559747401a96e0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

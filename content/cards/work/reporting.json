@@ -13,7 +13,13 @@
     "level": 10,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0ca3cdf154c820e5f91475eec8e32eb9ec9b82f887834bfd30b26fff66ca3d0c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3m4d2m3h",
@@ -70,7 +76,13 @@
     "level": 9,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:61f80f8b15408736a3f9d7338badd1258ac00a7b61b1998b15bf4c0faed93f93",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4c7u6z3t",
@@ -78,7 +90,7 @@
     "en": "Tell me early if you're running late.",
     "alternatives": [
       "Let me know early if you're running late.",
-      "If you're late, let me know early."
+      "Warn me early if you're running late."
     ],
     "point": "未来のことでも if 節は現在形（will を使わない）",
     "topic": "work",
@@ -86,7 +98,13 @@
     "level": 5,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:345c8ce53b56697967415efe20b6beb541ffb7b661823cf21511dc88fd9942c6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4g8j7c8j",
@@ -212,7 +230,13 @@
     "level": 10,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7b911d60fd5e7d4f07526119a6fb1e014b2bac1e8d2b65c38c7bf60651616da2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5m7k2f4w",
@@ -272,7 +296,13 @@
     "level": 8,
     "grammar": ["indirect-questions", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2a39902a4d83e48c0b92941751680053a352052fa82ebe4f4575bfeb24e9ac85",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5y8a2g3x",
@@ -311,7 +341,13 @@
     "level": 3,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:20ee67a763757d5aca0ac285ffaf8358ff38d65156916ddb2762946f35ff0e46",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6e2s3p3w",
@@ -327,7 +363,13 @@
     "level": 5,
     "grammar": ["verb-object-to-do", "past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4912d384716ea457c088fbad3278d8e548d4c5e9fe8801b4a534d502e5681f4f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6h6x2w3e",
@@ -469,7 +511,13 @@
     "level": 9,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:839259373471b1f7592b2978b73fe9c2a56f3cc1dfad58e639d8aa6b3af3d14f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8m2r7h5d",

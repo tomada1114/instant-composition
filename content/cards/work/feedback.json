@@ -13,7 +13,13 @@
     "level": 7,
     "grammar": ["phrasal-verbs", "hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0763a162a461c4940590b3bec4d07c57eb010352e2610e8c66ecc81b175805b7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2m3d9f8c",
@@ -161,7 +167,13 @@
     "level": 10,
     "grammar": ["hedging-softening", "concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9f400bbef169f4182761384ca92d5d6221c467796cdd9803b131727cba845575",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4n5j5s7q",
@@ -309,7 +321,13 @@
     "level": 9,
     "grammar": ["present-perfect-continuous", "tense-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6de8befebcf19f0cb63db122b80b5c672df5ba8ff0486a2128aed533ec0bcb49",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6h5v2a6h",
@@ -325,7 +343,13 @@
     "level": 7,
     "grammar": ["phrasal-verbs", "past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:232598d3047371b205928e12e8d80053dc7593bb3b20fae7f34a115f3f973cfe",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6j6y2b9r",
@@ -477,7 +501,7 @@
   },
   {
     "id": "c_9b5e9d3j",
-    "ja": "助言を聞いていれば、今こんなに苦労していないのに。",
+    "ja": "君の助言を聞いてれば、今こんなに苦労してないのに。",
     "en": "If I'd taken your advice, I wouldn't be struggling now.",
     "alternatives": [
       "If I'd listened to you, I wouldn't be struggling now.",
@@ -489,6 +513,12 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7623fbef118135ed963ee96eeb5572aff105e1969b6953d4f400f47c64688100",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

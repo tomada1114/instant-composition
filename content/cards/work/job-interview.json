@@ -79,7 +79,13 @@
     "level": 7,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2752b02b65a7c56e7c1c13bbfff818817b0d152db796804cceee52792a744737",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2v6z4k5s",
@@ -312,7 +318,13 @@
     "level": 6,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:408df63f842dd89f989bb887c0fb740d7eef06dd3346411debb16b6cdb168af1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4x6r5j9v",
@@ -438,7 +450,13 @@
     "level": 6,
     "grammar": ["post-modification", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:31190e7ebd71b4a02a731c4fcb9f636241071af4ebd0ad84fcfc24634f669db0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7f6q3n9z",
