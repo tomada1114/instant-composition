@@ -67,22 +67,6 @@
     }
   },
   {
-    "id": "c_2p3n3e2z",
-    "ja": "私があの近道を知ってたら、20分は浮いたのに。",
-    "en": "If I'd known about that shortcut, I'd have saved 20 minutes.",
-    "alternatives": [
-      "I could've saved 20 minutes if I'd known that shortcut.",
-      "If I'd known that shortcut, I'd have saved 20 minutes."
-    ],
-    "point": "過去の事実と逆は If + had 過去分詞、would have 過去分詞",
-    "topic": "travel",
-    "subtopic": "directions",
-    "level": 9,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2v6h3m8h",
     "ja": "この辺に両替所はありますか？",
     "en": "Is there a currency exchange around here?",
@@ -407,38 +391,6 @@
     }
   },
   {
-    "id": "c_5v4p7n6w",
-    "ja": "分かれ道まで、まっすぐ進んでください。",
-    "en": "Go straight until you come to a fork.",
-    "alternatives": [
-      "Keep going straight till you hit a fork.",
-      "Keep going straight until you reach a fork."
-    ],
-    "point": "until 節は未来のことでも現在形",
-    "topic": "travel",
-    "subtopic": "directions",
-    "level": 5,
-    "grammar": ["time-and-if-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6q9d5j8k",
-    "ja": "あそこの男の人に道を教えてもらいなよ。",
-    "en": "Get that man to show you the way.",
-    "alternatives": [
-      "Have that man show you the way.",
-      "Ask that man to show you the way."
-    ],
-    "point": "「〜してもらう」は get 人 to 動詞で言う",
-    "topic": "travel",
-    "subtopic": "directions",
-    "level": 5,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7a3t5r3x",
     "ja": "橋を渡ったら、まっすぐ進んでください。",
     "en": "Once you cross the bridge, go straight.",
@@ -632,22 +584,6 @@
     }
   },
   {
-    "id": "c_8m8h3e5w",
-    "ja": "遠回りだけど、あっちのほうが安全ですよ。",
-    "en": "It's a detour, but that way is safer.",
-    "alternatives": [
-      "Although it's a detour, that way is safer.",
-      "It's a longer way, but that road's safer."
-    ],
-    "point": "「〜だけど」は前の文と but でつなぐ",
-    "topic": "travel",
-    "subtopic": "directions",
-    "level": 5,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8y3h7r6y",
     "ja": "彼、あの角を左に曲がれって言ってたよ。",
     "en": "He told me to turn left at that corner.",
@@ -756,22 +692,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9g6t4v5t",
-    "ja": "彼が言ってた駅への近道って、どこですか？",
-    "en": "Where's the shortcut he mentioned to the station?",
-    "alternatives": [
-      "Where's that shortcut he mentioned to the station?",
-      "Where's the station shortcut he mentioned?"
-    ],
-    "point": "he mentioned は shortcut を後ろから説明する",
-    "topic": "travel",
-    "subtopic": "directions",
-    "level": 4,
-    "grammar": ["relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9t3e5z3m",
