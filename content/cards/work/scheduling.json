@@ -45,7 +45,13 @@
     "level": 5,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9f22565f2b4c7d09fd23618b307c49f66736a6737968c30be2a82d87a9cfeeae",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3j6t3s8y",
@@ -109,7 +115,13 @@
     "level": 4,
     "grammar": ["verb-object-to-do", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:68542ca26f700f18098f0ecc653b8b08acff96df820755a98e6009a84af7b795",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4c4b5m7g",
@@ -124,9 +136,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:9f4cb6294aec819fd7d96513bcca13f42d59e08389bb2cb6e8c0a6321c5409d4",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:e6308e51348886a30053159e02d85d1d080f77cb22f0c55b3b4e85c5ddb3c29b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -146,9 +158,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:ef8a67d228c0cfa094e8d907d690b4293f4cfe8296074052ef389250b2201a56",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:916d4645e247f8a2272e42be1a24b6a6b2eb5cdc28a62ac43aabad0a0ff9ee5b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -166,7 +178,13 @@
     "level": 4,
     "grammar": ["there-is-are", "relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0ccd4e596bcd33175834dcd1d5673d5a893b36f46f048c7553547f8c5fd62f2a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5k8e8z2q",
@@ -185,8 +203,8 @@
     "stamps": {
       "core": {
         "hash": "sha256:ca18d795fc96d504a332f8bf5a153d6262b96b67227efee25272d5579abdaba5",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -220,7 +238,13 @@
     "level": 3,
     "grammar": ["infinitives", "future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fe3c5ff4d75bda3533b8af18616e492f2189cd78c642c9bddb562e52b14dd054",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5x7h7p2n",
@@ -236,7 +260,13 @@
     "level": 5,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:37ea7d0c8c6a49c41bb4001df1e916e537f25abf6c45ea41580a91f3c70edba0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5y6a7g3u",
@@ -268,8 +298,8 @@
     "stamps": {
       "core": {
         "hash": "sha256:f5447d7df93f339d382a8d57e121385a406f46eb457176da9794dd98ee86a620",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -287,7 +317,13 @@
     "level": 3,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:71b34d7f548463b59065d7b4961b579ff87f654310acecea62845ee8b8f8c2de",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6y2q3g3t",
@@ -319,7 +355,13 @@
     "level": 5,
     "grammar": ["indirect-questions", "present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:91ff42782a3cc3fb46afe1cdd54576390506ecf9f01e1de31155d92cafda20d7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7d8h5t4r",
@@ -335,7 +377,13 @@
     "level": 3,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:df13f34fd6687a3e458d3fdf50c10fed586bf1774474d98da1d0feac1884c1a6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7d9s9d7d",
@@ -351,23 +399,13 @@
     "level": 4,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7j8k2a6n",
-    "ja": "部長は週末の出勤を避けたがってる。",
-    "en": "The manager wants to avoid working weekends.",
-    "alternatives": [
-      "The manager doesn't want to work weekends.",
-      "The manager wants to avoid weekend work."
-    ],
-    "point": "avoid の後は to 不定詞ではなく -ing",
-    "topic": "work",
-    "subtopic": "scheduling",
-    "level": 3,
-    "grammar": ["gerunds", "infinitives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4678013fca12d49905e1e0557302bf6d208c1465c7bd59ecb422b59fde5530a4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7r7u9e2d",
@@ -453,7 +491,13 @@
     "level": 3,
     "grammar": ["gerunds", "progressive-aspect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4e9eebc0718145fc5c1312a5b22a80c1aebc79f8a2f22016a1500de9dbb644fd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9d3s6h6u",
@@ -469,7 +513,13 @@
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bc9d84ad8446091886665e9c61e6ab4f04df75fa7c12cb5de04b01ecf7094525",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9k5w8v5w",
