@@ -9,6 +9,7 @@ export const LEARNER_OPERATIONS = [
   "recordAnswers",
   "finishRound",
   "updateSettings",
+  "updateLevel",
   "updateProfile",
   "profile",
   "home",

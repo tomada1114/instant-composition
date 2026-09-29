@@ -72,6 +72,8 @@ const RECORDS: RecordsView = {
     ],
   },
   toeic: "730",
+  levelMode: "auto",
+  suggestedToeic: null,
   streak: { current: 13, longest: 21 },
   calendar: calendar(60),
   said: 2315,
@@ -246,6 +248,32 @@ describe("the records screen, W10", () => {
     press("Escape");
     await settle();
     expect(where()).toBe("/");
+  });
+});
+
+describe("the records screen, W10 difficulty", () => {
+  it("says the level moves by itself in auto, with no suggestion beside it", async () => {
+    serveRecords();
+    await renderApp("/records");
+    expect(screen.getByText(ja.Records.auto)).toBeInTheDocument();
+    expect(screen.queryByText(ja.Records.manual)).not.toBeInTheDocument();
+  });
+
+  it("shows the level the answers suggest beside one picked by hand", async () => {
+    serveRecords({ ...RECORDS, levelMode: "manual", suggestedToeic: "800" });
+    await renderApp("/records");
+    expect(
+      screen.getByText(fill(ja.Records.toeic, { toeic: "730" })),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByText(fill(ja.Records.suggested, { toeic: "800" })),
+    ).toBeInTheDocument();
+  });
+
+  it("says only that the level is picked by hand while the answers suggest nothing", async () => {
+    serveRecords({ ...RECORDS, levelMode: "manual" });
+    await renderApp("/records");
+    expect(screen.getByText(ja.Records.manual)).toBeInTheDocument();
   });
 });
 

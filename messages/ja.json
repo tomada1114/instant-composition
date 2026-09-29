@@ -88,7 +88,19 @@
     "title": "どの場面で話しますか",
     "note": "複数選べます",
     "next": "次へ",
-    "saveFailed": "保存できませんでした。サーバーを確認してください"
+    "saveFailed": "保存できませんでした。サーバーを確認してください",
+    "back": "戻る",
+    "start": {
+      "title": "どう始めますか",
+      "note": "あとから設定で変えられます",
+      "measure": "測る（10 文）",
+      "choose": "自分で選ぶ"
+    },
+    "level": {
+      "title": "今のレベルは",
+      "note": "TOEIC の目安で選びます",
+      "start": "始める"
+    }
   },
   "NotFound": {
     "title": "ページが見つかりません",
@@ -221,6 +233,9 @@
     "difficulty": "難易度",
     "toeic": "TOEIC {toeic}",
     "notMeasured": "未測定",
+    "auto": "自動",
+    "manual": "手動",
+    "suggested": "手動 · 目安 {toeic}",
     "streakLabel": "連続",
     "streak": "{days} 日",
     "restart": "今日から 1 日目",
@@ -278,7 +293,17 @@
     },
     "difficulty": {
       "title": "難易度",
-      "retest": "測り直す"
+      "retest": "測り直す",
+      "auto": "自動",
+      "manual": "手動",
+      "state": "{mode} · {level}",
+      "change": "変える",
+      "mode": "決め方",
+      "levels": "TOEIC の目安",
+      "option": "TOEIC {toeic}",
+      "autoNote": "答えに合わせて上下します",
+      "manualNote": "選んだレベルのまま動きません",
+      "close": "閉じる"
     },
     "retest": {
       "title": "難易度を測り直しますか",

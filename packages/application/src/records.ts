@@ -1,12 +1,14 @@
 import {
   calendarDots,
   EMPTY_STATS,
+  levelModeOf,
   longestRun,
   ok,
   parseTitleKey,
   reachBySubtopic,
   reachByTopic,
   streakValue,
+  suggestedLevel,
   weaknesses,
   type ItemProgress,
   type Result,
@@ -111,6 +113,7 @@ export async function records(
   const progress = [...items.values()].map((item) => item.value);
   const where = masteredPlaces(progress, snapshot);
   const byTopic = reachByTopic(where.keys(), where);
+  const suggested = suggestedLevel(stats);
   const bySubtopic = reachBySubtopic(where.keys(), where);
   const chosen = snapshot.topics.filter((topic) =>
     (settings?.value.topics ?? []).includes(topic.id),
@@ -135,6 +138,8 @@ export async function records(
     })),
     weak: weakPoints(progress, snapshot),
     toeic: stats.level === null ? null : toeicOf(snapshot, stats.level.level),
+    levelMode: levelModeOf(stats),
+    suggestedToeic: suggested === null ? null : toeicOf(snapshot, suggested),
     streak: { current: streakValue(completed, today), longest: longestRun(completed) },
     calendar: calendarDots(completed, today, stats.firstDay ?? undefined),
     said: stats.said,

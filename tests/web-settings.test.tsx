@@ -2,6 +2,8 @@ import { act, fireEvent, screen, within } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 
 import type {
+  LevelChoice,
+  LevelView,
   Settings,
   SettingsPageView,
   SettingsPatch,
@@ -34,6 +36,19 @@ const SETTINGS: Settings = {
   limitSeconds: 30,
 };
 
+const LEVELS: SettingsPageView["levels"] = [
+  "300",
+  "400",
+  "500",
+  "600",
+  "730",
+  "800",
+  "860",
+  "900",
+  "950",
+  "990+",
+].map((toeic, index) => ({ level: index + 1, toeic }));
+
 const PAGE: SettingsPageView = {
   settings: SETTINGS,
   topics: [
@@ -50,6 +65,8 @@ const PAGE: SettingsPageView = {
     { id: "travel", name: "旅行", subtopics: [{ id: "airport", name: "空港" }] },
   ],
   toeic: "730",
+  difficulty: { mode: "auto", level: 5, toeic: "730" },
+  levels: LEVELS,
 };
 
 /**
@@ -59,10 +76,27 @@ const PAGE: SettingsPageView = {
 function serveSettings(
   page: SettingsPageView = PAGE,
   reply: Partial<SettingsView> = {},
-): { readonly patches: SettingsPatch[]; readonly calls: ApiCall[] } {
+): {
+  readonly patches: SettingsPatch[];
+  readonly choices: LevelChoice[];
+  readonly calls: ApiCall[];
+} {
   const patches: SettingsPatch[] = [];
+  const choices: LevelChoice[] = [];
   let settings = page.settings;
+  let difficulty = page.difficulty;
   const calls = fakeApi((call) => {
+    if (call.method === "PATCH" && call.url === "/api/v1/level") {
+      const choice = call.body as LevelChoice;
+      choices.push(choice);
+      const level = choice.mode === "manual" ? choice.level : difficulty.level;
+      difficulty = {
+        mode: choice.mode,
+        level,
+        toeic: LEVELS.find((option) => option.level === level)?.toeic ?? null,
+      } satisfies LevelView;
+      return Response.json(difficulty);
+    }
     if (call.method === "GET" && call.url === "/api/v1/settings") {
       return Response.json(page);
     }
@@ -79,7 +113,7 @@ function serveSettings(
     }
     return undefined;
   });
-  return { patches, calls };
+  return { patches, choices, calls };
 }
 
 function where(): string {
@@ -300,15 +334,33 @@ describe("the settings screen, W11 size and sound", () => {
   });
 });
 
+/** Opens the difficulty row's sheet. */
+function openDifficulty(): HTMLElement {
+  fireEvent.click(screen.getByRole("button", { name: ja.Settings.difficulty.change }));
+  return screen.getByRole("dialog", { name: ja.Settings.difficulty.title });
+}
+
+/** The difficulty row's figure: the mode, then the level by its TOEIC reference. */
+function difficultyState(mode: "auto" | "manual", level: string): string {
+  return fill(ja.Settings.difficulty.state, {
+    mode: ja.Settings.difficulty[mode],
+    level,
+  });
+}
+
 describe("the settings screen, W12 measuring again", () => {
   it("asks first, and starts the placement on confirm", async () => {
     serveSettings();
     await renderApp("/settings");
     expect(
-      screen.getByText(fill(ja.Records.toeic, { toeic: "730" })),
+      screen.getByText(
+        difficultyState("auto", fill(ja.Records.toeic, { toeic: "730" })),
+      ),
     ).toBeInTheDocument();
     fireEvent.click(
-      screen.getByRole("button", { name: ja.Settings.difficulty.retest }),
+      within(openDifficulty()).getByRole("button", {
+        name: ja.Settings.difficulty.retest,
+      }),
     );
     const sheet = screen.getByRole("dialog", { name: ja.Settings.retest.title });
     expect(within(sheet).getByText(ja.Settings.retest.body)).toBeInTheDocument();
@@ -320,9 +372,15 @@ describe("the settings screen, W12 measuring again", () => {
   });
 
   it("says the difficulty is not measured before a placement", async () => {
-    serveSettings({ ...PAGE, toeic: null });
+    serveSettings({
+      ...PAGE,
+      toeic: null,
+      difficulty: { mode: "auto", level: null, toeic: null },
+    });
     await renderApp("/settings");
-    expect(screen.getByText(ja.Records.notMeasured)).toBeInTheDocument();
+    expect(
+      screen.getByText(difficultyState("auto", ja.Records.notMeasured)),
+    ).toBeInTheDocument();
   });
 
   it("carries the one navigation, the settings current", async () => {
@@ -341,12 +399,16 @@ describe("the settings screen, W12 measuring again", () => {
     serveSettings();
     await renderApp("/settings");
     fireEvent.click(
-      screen.getByRole("button", { name: ja.Settings.difficulty.retest }),
+      within(openDifficulty()).getByRole("button", {
+        name: ja.Settings.difficulty.retest,
+      }),
     );
     fireEvent.click(screen.getByRole("button", { name: ja.Settings.retest.cancel }));
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
     fireEvent.click(
-      screen.getByRole("button", { name: ja.Settings.difficulty.retest }),
+      within(openDifficulty()).getByRole("button", {
+        name: ja.Settings.difficulty.retest,
+      }),
     );
     press("Escape");
     await settle();
@@ -355,6 +417,190 @@ describe("the settings screen, W12 measuring again", () => {
     press("Escape");
     await settle();
     expect(where()).toBe("/");
+  });
+});
+
+describe("the settings screen, the difficulty", () => {
+  it("fixes a level picked by hand and says so on the row", async () => {
+    const { choices } = serveSettings();
+    await renderApp("/settings");
+    const sheet = openDifficulty();
+    const picked = within(sheet).getByRole("radio", {
+      name: fill(ja.Settings.difficulty.option, { toeic: "800" }),
+    });
+    fireEvent.click(picked);
+    await settle();
+    expect(choices).toStrictEqual([{ mode: "manual", level: 6 }]);
+    expect(picked).toHaveAttribute("aria-checked", "true");
+    expect(
+      within(sheet).getByRole("radio", { name: ja.Settings.difficulty.manual }),
+    ).toHaveAttribute("aria-checked", "true");
+    expect(
+      within(sheet).getByText(ja.Settings.difficulty.manualNote),
+    ).toBeInTheDocument();
+    fireEvent.click(
+      within(sheet).getByRole("button", { name: ja.Settings.difficulty.close }),
+    );
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    expect(
+      screen.getByText(
+        difficultyState("manual", fill(ja.Records.toeic, { toeic: "800" })),
+      ),
+    ).toBeInTheDocument();
+  });
+
+  it("switches a level picked by hand back to auto, keeping the level", async () => {
+    const { choices } = serveSettings({
+      ...PAGE,
+      difficulty: { mode: "manual", level: 5, toeic: "730" },
+    });
+    await renderApp("/settings");
+    expect(
+      screen.getByText(
+        difficultyState("manual", fill(ja.Records.toeic, { toeic: "730" })),
+      ),
+    ).toBeInTheDocument();
+    const sheet = openDifficulty();
+    fireEvent.click(
+      within(sheet).getByRole("radio", { name: ja.Settings.difficulty.auto }),
+    );
+    await settle();
+    expect(choices).toStrictEqual([{ mode: "auto" }]);
+    expect(
+      within(sheet).getByText(ja.Settings.difficulty.autoNote),
+    ).toBeInTheDocument();
+    press("Escape");
+    await settle();
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    expect(where()).toBe("/settings");
+    expect(
+      screen.getByText(
+        difficultyState("auto", fill(ja.Records.toeic, { toeic: "730" })),
+      ),
+    ).toBeInTheDocument();
+  });
+
+  it("fixes the level as it is when manual is chosen without picking one", async () => {
+    const { choices } = serveSettings();
+    await renderApp("/settings");
+    fireEvent.click(
+      within(openDifficulty()).getByRole("radio", {
+        name: ja.Settings.difficulty.manual,
+      }),
+    );
+    await settle();
+    expect(choices).toStrictEqual([{ mode: "manual", level: 5 }]);
+  });
+
+  it("offers only the levels before a placement, with nothing chosen", async () => {
+    serveSettings({
+      ...PAGE,
+      toeic: null,
+      difficulty: { mode: "auto", level: null, toeic: null },
+    });
+    await renderApp("/settings");
+    const sheet = openDifficulty();
+    expect(
+      within(sheet).queryByRole("radio", { name: ja.Settings.difficulty.manual }),
+    ).not.toBeInTheDocument();
+    expect(within(sheet).getAllByRole("radio")).toHaveLength(10);
+    expect(
+      within(sheet)
+        .getAllByRole("radio")
+        .filter((radio) => radio.getAttribute("aria-checked") === "true"),
+    ).toStrictEqual([]);
+  });
+
+  it("rolls back to the newest change saved, whatever order the answers arrive in", async () => {
+    const answers: ((response: Response) => void)[] = [];
+    fakeApi((call) =>
+      call.method === "GET"
+        ? Response.json(PAGE)
+        : new Promise<Response>((resolve) => {
+            answers.push(resolve);
+          }),
+    );
+    await renderApp("/settings");
+    const sheet = openDifficulty();
+    const option = (toeic: string): HTMLElement =>
+      within(sheet).getByRole("radio", {
+        name: fill(ja.Settings.difficulty.option, { toeic }),
+      });
+    const view = (level: number, toeic: string): Response =>
+      Response.json({ mode: "manual", level, toeic } satisfies LevelView);
+
+    fireEvent.click(option("860"));
+    fireEvent.click(option("900"));
+    await settle();
+    answers[1]?.(view(8, "900"));
+    await settle();
+    answers[0]?.(view(7, "860"));
+    await settle();
+    expect(option("900")).toHaveAttribute("aria-checked", "true");
+
+    fireEvent.click(option("300"));
+    await settle();
+    answers[2]?.(refusal(409, "ERR_CONFLICT"));
+    await settle();
+    expect(within(sheet).getByRole("alert")).toHaveTextContent(ja.Settings.saveFailed);
+    expect(option("900")).toHaveAttribute("aria-checked", "true");
+  });
+
+  it("says a change failed on the screen itself when the sheet was closed before the answer", async () => {
+    const answers: ((response: Response) => void)[] = [];
+    fakeApi((call) =>
+      call.method === "GET"
+        ? Response.json(PAGE)
+        : new Promise<Response>((resolve) => {
+            answers.push(resolve);
+          }),
+    );
+    await renderApp("/settings");
+    const sheet = openDifficulty();
+    fireEvent.click(
+      within(sheet).getByRole("radio", {
+        name: fill(ja.Settings.difficulty.option, { toeic: "300" }),
+      }),
+    );
+    fireEvent.click(
+      within(sheet).getByRole("button", { name: ja.Settings.difficulty.close }),
+    );
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    await settle();
+    answers[0]?.(refusal(409, "ERR_CONFLICT"));
+    await settle();
+    expect(screen.getByRole("alert")).toHaveTextContent(ja.Settings.saveFailed);
+    expect(
+      screen.getByText(
+        difficultyState("auto", fill(ja.Records.toeic, { toeic: "730" })),
+      ),
+    ).toBeInTheDocument();
+  });
+
+  it("goes back to the level as saved, and says so, when a change fails", async () => {
+    fakeApi((call) => {
+      if (call.method === "GET" && call.url === "/api/v1/settings") {
+        return Response.json(PAGE);
+      }
+      return call.url === "/api/v1/level" ? refusal(409, "ERR_CONFLICT") : undefined;
+    });
+    await renderApp("/settings");
+    const sheet = openDifficulty();
+    fireEvent.click(
+      within(sheet).getByRole("radio", {
+        name: fill(ja.Settings.difficulty.option, { toeic: "300" }),
+      }),
+    );
+    await settle();
+    expect(within(sheet).getByRole("alert")).toHaveTextContent(ja.Settings.saveFailed);
+    expect(
+      within(sheet).getByRole("radio", {
+        name: fill(ja.Settings.difficulty.option, { toeic: "730" }),
+      }),
+    ).toHaveAttribute("aria-checked", "true");
+    expect(
+      within(sheet).getByRole("radio", { name: ja.Settings.difficulty.auto }),
+    ).toHaveAttribute("aria-checked", "true");
   });
 });
 

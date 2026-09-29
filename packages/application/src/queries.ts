@@ -1,5 +1,6 @@
 import {
   DEFAULT_SETTINGS,
+  EMPTY_STATS,
   err,
   ok,
   withDefaults,
@@ -10,7 +11,7 @@ import { snapshotOrEmpty, toeicOf, type CatalogSnapshot } from "./catalog";
 import type { RequestContext } from "./context";
 import type { ApplicationError } from "./errors";
 import { storeFor, type ApplicationDeps } from "./execute";
-import { payloadOf, summaryOf } from "./present";
+import { levelViewOf, payloadOf, summaryOf } from "./present";
 import type { History, SettingsPageView } from "./query-views";
 import type { LearnerStore } from "./store";
 import type { RoundPayload, RoundSummary } from "./views";
@@ -95,7 +96,8 @@ export async function settingsPage(
     store.settings(),
     store.stats(),
   ]);
-  const level = stats?.value.level ?? null;
+  const totals = stats?.value ?? EMPTY_STATS;
+  const level = totals.level;
   return ok({
     settings: withDefaults(settings?.value ?? DEFAULT_SETTINGS),
     topics: snapshot.topics.map((topic) => ({
@@ -104,6 +106,10 @@ export async function settingsPage(
       subtopics: topic.subtopics.map(({ id, name }) => ({ id, name })),
     })),
     toeic: level === null ? null : toeicOf(snapshot, level.level),
+    difficulty: levelViewOf(totals, snapshot),
+    levels: [...snapshot.levels]
+      .sort(([a], [b]) => a - b)
+      .map(([step, info]) => ({ level: step, toeic: info.toeic })),
   });
 }
 

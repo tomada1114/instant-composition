@@ -1,8 +1,10 @@
 import {
+  levelModeOf,
   limitMsOf,
   nearestMilestone,
   paceMsForWords,
   ringProgress,
+  type LearnerStats,
   type Portion,
   type ReviewEntry,
   type Round,
@@ -10,7 +12,23 @@ import {
 } from "@instant-composition/domain";
 
 import { toeicOf, type CatalogSnapshot } from "./catalog";
-import type { DrillCard, ReachView, RoundPayload, RoundSummary } from "./views";
+import type {
+  DrillCard,
+  LevelView,
+  ReachView,
+  RoundPayload,
+  RoundSummary,
+} from "./views";
+
+/** The level and its mode, named by the TOEIC reference the catalog gives it. */
+export function levelViewOf(stats: LearnerStats, snapshot: CatalogSnapshot): LevelView {
+  const level = stats.level?.level ?? null;
+  return {
+    mode: levelModeOf(stats),
+    level,
+    toeic: level === null ? null : toeicOf(snapshot, level),
+  };
+}
 
 /**
  * The round as the drill needs it: its cards with the limit the round was

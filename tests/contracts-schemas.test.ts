@@ -9,11 +9,13 @@ import {
   records,
   settingsPage,
   startRound,
+  updateLevel,
   updateProfile,
   updateSettings,
   type ApplicationErrorCode,
   type History,
   type HomeView,
+  type LevelView,
   type Profile,
   type ProfilePatch,
   type RecordsView,
@@ -27,6 +29,8 @@ import {
   answersRequestSchema,
   historySchema,
   homeViewSchema,
+  type levelChoiceSchema,
+  levelViewSchema,
   MAX_ROUND_ANSWERS,
   profilePatchSchema,
   profileSchema,
@@ -43,6 +47,7 @@ import {
 import {
   TUNING,
   type AnswerInput,
+  type LevelChoice,
   type SettingsPatch,
   type StartCommand,
 } from "@instant-composition/domain";
@@ -74,6 +79,11 @@ type Wire<T> = T extends readonly (infer U)[]
     : T;
 
 describe("each response schema mirrors the application view it serves", () => {
+  it("LevelView", () => {
+    expectTypeOf<Wire<LevelView>>().toExtend<z.infer<typeof levelViewSchema>>();
+    expectTypeOf<z.infer<typeof levelViewSchema>>().toExtend<Wire<LevelView>>();
+  });
+
   it("RoundPayload, RoundSummary and SettingsView", () => {
     expectTypeOf<Wire<RoundPayload>>().toExtend<z.infer<typeof roundPayloadSchema>>();
     expectTypeOf<z.infer<typeof roundPayloadSchema>>().toExtend<Wire<RoundPayload>>();
@@ -120,6 +130,11 @@ describe("each request schema carries exactly what its command takes", () => {
     type Placed = z.infer<typeof answerSchema> & { roundId: string };
     expectTypeOf<Placed>().toExtend<AnswerInput>();
     expectTypeOf<Wire<AnswerInput>>().toExtend<Placed>();
+  });
+
+  it("a level choice is the domain's choice", () => {
+    expectTypeOf<z.infer<typeof levelChoiceSchema>>().toExtend<LevelChoice>();
+    expectTypeOf<LevelChoice>().toExtend<z.infer<typeof levelChoiceSchema>>();
   });
 
   it("a settings patch is the domain's patch, absent fields left out", () => {
@@ -305,6 +320,11 @@ describe("what the application answers parses under the contract", () => {
       settingsPageViewSchema,
       await value(settingsPage(h.deps, h.context())),
     );
+    note(
+      "updateLevel",
+      levelViewSchema,
+      await value(updateLevel(h.deps, h.context(), { mode: "manual", level: 3 })),
+    );
     const placement = await value(
       startRound(h.deps, h.context(), { kind: "placement", roundId: "p0" }),
     );
@@ -367,7 +387,7 @@ describe("what the application answers parses under the contract", () => {
 
   it("for every view a day of practice produces", async () => {
     const views = await throughTheDay(makeHarness());
-    expect(views.map(([name]) => name)).toHaveLength(15);
+    expect(views.map(([name]) => name)).toHaveLength(16);
     for (const [name, schema, view] of views) {
       const parsed = schema.safeParse(wire(view));
       expect({ name, issues: parsed.error?.issues ?? [] }).toStrictEqual({

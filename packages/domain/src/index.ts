@@ -42,6 +42,7 @@ export {
 } from "./deck";
 export {
   adjustLevel,
+  suggestLevel,
   type DifficultyAnswer,
   type LevelAdjustment,
   type LevelChange,
@@ -82,7 +83,14 @@ export {
   type TitleInput,
   type TitleSeries,
 } from "./milestones";
-export { settleLevel, type LevelSettled } from "./level";
+export {
+  decideLevel,
+  levelModeOf,
+  settleLevel,
+  suggestedLevel,
+  type LevelChoice,
+  type LevelSettled,
+} from "./level";
 export {
   choosePlacement,
   placementLevel,
@@ -99,6 +107,7 @@ export type {
   ItemSnapshot,
   LearnerStats,
   LevelEntry,
+  LevelMode,
   LevelReason,
   Outcome,
   Portion,

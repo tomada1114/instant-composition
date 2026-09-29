@@ -8,8 +8,8 @@ import { WelcomeScreen } from "./welcome-screen";
 import { markPressed } from "../drill/pressed";
 
 /**
- * The `/welcome` route: the first visit's topic choice, offered from the
- * topics the settings read lists. Once topics are chosen it is the start
+ * The `/welcome` route: the first visit's topic choice, and how to start,
+ * offered from the topics and levels the settings read lists. Once topics are chosen it is the start
  * screen's, so a visit after that goes to `/`.
  */
 export function WelcomePage(): ReactElement {
@@ -38,6 +38,7 @@ export function WelcomePage(): ReactElement {
   return (
     <WelcomeScreen
       topics={page.data.topics}
+      levels={page.data.levels}
       onReload={reload}
       onSaved={() => {
         // The cached home view still says "onboarding"; the drill must read
@@ -45,6 +46,11 @@ export function WelcomePage(): ReactElement {
         queryClient.removeQueries({ queryKey: HOME_QUERY.queryKey });
         markPressed();
         void navigate({ to: "/drill", search: { kind: "placement" } });
+      }}
+      onChosen={() => {
+        // A level picked by hand needs no placement: the start screen, read afresh.
+        queryClient.removeQueries({ queryKey: HOME_QUERY.queryKey });
+        void navigate({ to: "/" });
       }}
     />
   );

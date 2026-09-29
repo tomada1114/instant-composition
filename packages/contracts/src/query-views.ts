@@ -3,11 +3,13 @@ import * as z from "zod";
 import {
   countSchema,
   dotSchema,
+  levelModeSchema,
   levelSchema,
   reachViewSchema,
   roundKindSchema,
   settingsSchema,
 } from "./primitives";
+import { levelViewSchema } from "./views";
 
 /**
  * What a query answers with: `packages/application`'s `query-views.ts`,
@@ -104,6 +106,9 @@ export const recordsViewSchema = z.object({
   breakdown: z.array(breakdownTopicSchema),
   weak: weakPointsSchema,
   toeic: z.string().nullable(),
+  levelMode: levelModeSchema,
+  /** In `manual`, the TOEIC reference of the level the answers suggest; never applied. */
+  suggestedToeic: z.string().nullable(),
   streak: z.object({ current: countSchema, longest: countSchema }),
   /** Twelve weeks, oldest first, Monday to Sunday in each. */
   calendar: z.array(z.array(dotSchema)),
@@ -123,6 +128,9 @@ export const settingsPageViewSchema = z.object({
   settings: settingsSchema,
   topics: z.array(topicInfoSchema),
   toeic: z.string().nullable(),
+  difficulty: levelViewSchema,
+  /** Every level the learner may pick, lowest first, by its TOEIC reference. */
+  levels: z.array(z.object({ level: levelSchema, toeic: z.string() })),
 });
 
 /** What the card-planning tooling reads. */

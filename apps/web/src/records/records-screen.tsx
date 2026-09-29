@@ -60,7 +60,14 @@ export function RecordsScreen({
               ? t("restart")
               : t("streak", { days: records.streak.current })}
           </Tile>
-          <Tile label={t("difficulty")}>
+          <Tile
+            label={t("difficulty")}
+            note={
+              records.suggestedToeic === null
+                ? t(records.levelMode)
+                : t("suggested", { toeic: records.suggestedToeic })
+            }
+          >
             {records.toeic === null
               ? t("notMeasured")
               : t("toeic", { toeic: records.toeic })}
