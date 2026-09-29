@@ -54,7 +54,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8726f3f2d3bdaeb7a2e4dcc7e2feb523a94a1b24f321ac00d5f191b898f97df6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2s6k7m5c",
@@ -95,38 +101,6 @@
     }
   },
   {
-    "id": "c_3a4r7w4j",
-    "ja": "受付の人が、田中さんは会議中だと言ってました。",
-    "en": "The receptionist said Mr. Tanaka was in a meeting.",
-    "alternatives": [
-      "Reception said Mr. Tanaka was in a meeting.",
-      "Reception told me Mr. Tanaka was in a meeting."
-    ],
-    "point": "said に合わせて is を was にずらす",
-    "topic": "work",
-    "subtopic": "phone-calls",
-    "level": 6,
-    "grammar": ["reported-speech"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3p8q4f2k",
-    "ja": "僕が君なら、先方にかけ直してもらうけどね。",
-    "en": "If I were you, I'd have them call back.",
-    "alternatives": [
-      "I'd have them call back if I were you.",
-      "If I were you, I'd get a callback."
-    ],
-    "point": "「僕が君なら」は If I were you, I'd で表す",
-    "topic": "work",
-    "subtopic": "phone-calls",
-    "level": 6,
-    "grammar": ["second-conditional", "causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3q9q4j8r",
     "ja": "彼、マイク確認しとけばよかったって言ってたよ。",
     "en": "He said he wished he'd checked his mic.",
@@ -140,23 +114,13 @@
     "level": 6,
     "grammar": ["wishes-regrets", "reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4v2c2q7p",
-    "ja": "雑音が入るから、ミュートにしたら？",
-    "en": "There's noise, so you should mute yourself.",
-    "alternatives": [
-      "Maybe mute yourself, since there's some noise.",
-      "You should mute yourself because there's noise."
-    ],
-    "point": "「〜したら？」は軽い助言なので you should が自然",
-    "topic": "work",
-    "subtopic": "phone-calls",
-    "level": 3,
-    "grammar": ["modal-obligation-advice", "there-is-are"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9acd9f8ed594209d9b2b23e10f03f50ccc32102b72549bb7a6574d0afbe7efea",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4v2h9q3q",
@@ -194,7 +158,13 @@
     "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:28217751f6e851b024bd017b37656a2676c82ee351012242601c2f91161d11f8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5n4u5n4s",
@@ -216,22 +186,6 @@
     }
   },
   {
-    "id": "c_5p8c6y3c",
-    "ja": "映像なしでも、音声が安定してれば続けられますよ。",
-    "en": "Even without video, we can carry on if the audio holds up.",
-    "alternatives": [
-      "We can keep going without video if the audio stays stable.",
-      "Even without video, we can keep going if the audio holds."
-    ],
-    "point": "「〜でも」は even、条件は if で足す",
-    "topic": "work",
-    "subtopic": "phone-calls",
-    "level": 10,
-    "grammar": ["concession-contrast", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5t5b3w2g",
     "ja": "接続テストしてれば、時間を無駄にしなかったのに。",
     "en": "If we'd tested the connection, we wouldn't have wasted time.",
@@ -245,7 +199,13 @@
     "level": 8,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:613de8795794ea268a338b4e2844a00415a587836d1a68fa8e3d0bc0c4824505",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6b5q3t4c",
@@ -261,7 +221,13 @@
     "level": 6,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b8fd44463aeb846acc6e1aa7efa69a969516f48fe6d9af67a2afb21134f1391d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6f9h6n2b",
@@ -277,7 +243,13 @@
     "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b12a3c900c676a320f45418be898c99776a5f5f68f6ae25c16cc9d5aefb16ff5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6p7n8e5k",
@@ -365,22 +337,6 @@
     }
   },
   {
-    "id": "c_7t5z7s3p",
-    "ja": "商談前に、IT 部にマイクをテストしてもらえる？",
-    "en": "Can you have IT test the mics before the meeting?",
-    "alternatives": [
-      "Can you get IT to test mics before the meeting?",
-      "Can you have IT check the mics before the meeting?"
-    ],
-    "point": "have＋人＋原形、get なら get＋人＋to 原形",
-    "topic": "work",
-    "subtopic": "phone-calls",
-    "level": 8,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7u6v4n4g",
     "ja": "音声が途切れてたけど、あれからヘッドセット替えた？",
     "en": "Your audio kept cutting out. Have you swapped headsets since?",
@@ -394,7 +350,13 @@
     "level": 7,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3e129c09e28c2941e97b3c6c5f485bcaa52506e8b8a81e083a9c466d2f78d59d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8g2g6x3z",
@@ -432,7 +394,13 @@
     "level": 6,
     "grammar": ["past-perfect", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:88126920c5c1edd521eba95a9e916089f493acfe31cdab345cbd3a2eff218213",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8t5b4c7e",
