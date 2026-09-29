@@ -4,8 +4,10 @@
 export { App } from "./app";
 export {
   createAnswerQueue,
+  flushEarlierRounds,
   unsavedAnswers,
   type AnswerQueue,
+  type ListedStorage,
   type QueueStorage,
 } from "./drill/answer-queue";
 export { useAnswerQueue, useQueuedDrill, type ArrivedQueue } from "./drill/answer-sync";
