@@ -19,6 +19,12 @@ extend-exclude = [
   "apps/web/src/openapi/",
 ]
 
+[default]
+# content/tombstones.jsonl is append-only, and its deletion reasons use the
+# hyphenated prefix (mis-tagged, mis-levelled). Only that form is ignored, so a
+# bare `mis` for `miss` elsewhere is still reported.
+extend-ignore-re = ["\\bmis-[a-z]+"]
+
 [default.extend-words]
 # Card points under content/cards/ name the wrong plural a learner must avoid
 # (for example, that advice never takes -s), so these misspellings are the
