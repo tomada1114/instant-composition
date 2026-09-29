@@ -13,7 +13,13 @@
     "level": 4,
     "grammar": ["verb-object-to-do", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2fa9d785526d966bdd95331b557333a79cd8220c76eecd79303ec8f754e626e3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2j6b2j8u",
@@ -29,7 +35,13 @@
     "level": 3,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:08f99d0aedb8474ec6c149b9db06f875ce434e6aabd41f0713131034b1fdf122",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2k3f8k3q",
@@ -45,7 +57,13 @@
     "level": 3,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:edc34bdb2fd36d4cc12b014014dd660fd9a418f684deb3619e4632a3bde71492",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2t3z7r3m",
@@ -61,7 +79,13 @@
     "level": 5,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fab57bc407693649572c4d577822c8f0d0a4c95109e33008d88529179480729e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3e6k4k9a",
@@ -77,7 +101,13 @@
     "level": 3,
     "grammar": ["time-and-if-clauses", "imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dba3f60719d1800a1707fb8132b3b8a2e677cabe8ca8aad020a707155d266f5a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3g7f2f6s",
@@ -93,7 +123,13 @@
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:16213cffc0ab43b6acb611bc5171dd697e693b122bf1add6b81b8b7341013e0f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3s7h2z2t",
@@ -158,7 +194,13 @@
     "level": 1,
     "grammar": ["wh-questions", "be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:055da7f1ac6ce64cc96a44a96b1a4ca4db7ead3c2bcd2eca69e7bb20a49efbb5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5k5q2f7t",
@@ -208,9 +250,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:7e6fc880d6aec39988acd12338cb1040b3c9a4891435f404bf375d3f371d96e0",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:af612900cd21cbc63eab338615448c7c062265190548c1245bbd4a56c683efc9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -291,24 +333,11 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:149c527f644b7f9eeac2c197f8c7b5361249bc540b848509186c680d8c9ae8b4",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:5f661483112ecc4a215e86f55edeeb803f556fc1ca1e964d481baab87e38db21",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9c5g5y5c",
-    "ja": "セットアップ用のスクリプトある？",
-    "en": "Is there a setup script?",
-    "alternatives": ["Do we have a setup script?", "Is there any setup script?"],
-    "point": "「〜ある？」は Is there 〜? で主語は後ろ",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 2,
-    "grammar": ["there-is-are"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9u7g3z8d",
@@ -339,19 +368,6 @@
     "subtopic": "tools",
     "level": 8,
     "grammar": ["cleft-emphasis"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9y8v5y5g",
-    "ja": "Docker が使えないんです。",
-    "en": "I can't use Docker.",
-    "alternatives": ["I'm not able to use Docker.", "I can't get Docker to work."],
-    "point": "can't の後の動詞は原形の use",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 1,
-    "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
     "stamps": {}
   }
