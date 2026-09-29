@@ -13,23 +13,13 @@
     "level": 4,
     "grammar": ["time-and-if-clauses", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2m2d9r5r",
-    "ja": "話の途中ですみません、この数字は合っていません。",
-    "en": "Sorry to cut in, but these numbers don't add up.",
-    "alternatives": [
-      "Sorry to interrupt, but these numbers don't add up.",
-      "Sorry to jump in, but these figures don't add up."
-    ],
-    "point": "割り込む=cut in、辻褄が合う=add up。句動詞で言う",
-    "topic": "work",
-    "subtopic": "meetings",
-    "level": 7,
-    "grammar": ["phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a39fe2cc81cd6ce87f97c3cc0ff53b9b36ca760bba265776ec4f650966767baf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2m6k5y3m",
@@ -67,7 +57,13 @@
     "level": 5,
     "grammar": ["modal-obligation-advice", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8fa2df4849d9899167d137499d1a518a95754f1a86db5e8a3133b186b966eeac",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2q5p8j3p",
@@ -83,7 +79,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f6f5565690974cf7fa5ea120796d6b8dd450c2bb6a6765a0509ba7cd7f029957",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3d2m8f8e",
@@ -99,7 +101,13 @@
     "level": 7,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2b7874f861a03a2c43cc5a9c9a8e50b5716529de165bcfb4474b2af9ff30fd5b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3p3g2c9u",
@@ -115,7 +123,13 @@
     "level": 6,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9a1b5b473a5c86fc36e799f4502f1970b4e62fd93fed22a217023d8a877a413e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3x9z5j6w",
@@ -172,7 +186,13 @@
     "level": 7,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7b3e17da5d6d61c58ded8d2f553f1609e86a2722c10b8d3ecf25a5a79528ad67",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4y4g3b2b",
@@ -295,7 +315,13 @@
     "level": 6,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:01373845621cd838c5f29380dfcddc62d6c5128a19486e5a6df870cc56427e8f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6b3g3j4y",
@@ -374,7 +400,13 @@
     "level": 6,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9c71fe63f0a92e6bd4c806c2726046d57d86b6c8fd8ebacb5fbfaf7b6b523dcf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6w4a2j5f",
@@ -390,7 +422,13 @@
     "level": 7,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5e96f3fdddb73eeae1de35c71bc9d7da5362754de900319a1611817954cbe5e3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7h4t4a5m",
@@ -494,7 +532,13 @@
     "level": 8,
     "grammar": ["time-and-if-clauses", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1472a35ee2945575f6a3282c4c1e402782eace2497dcab3e312418a2dd19ab46",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8v5n3y7j",

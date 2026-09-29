@@ -580,6 +580,22 @@
     "stamps": {}
   },
   {
+    "id": "c_9f3e4r7s",
+    "ja": "今は手一杯なので、この依頼は見送るしかなさそうです。",
+    "en": "I'm swamped, so I'll have to pass on this.",
+    "alternatives": [
+      "I'm afraid I'll have to pass, since I'm swamped.",
+      "My plate's full, so I'll have to pass on this."
+    ],
+    "point": "pass on ~ は「~を見送る・断る」。have to で控えめに",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 9,
+    "grammar": ["phrasal-verbs", "hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9h6h4w7v",
     "ja": "うちに必要なのは、確認してくれる人です。",
     "en": "What we need is someone to check it.",
@@ -636,22 +652,6 @@
     "subtopic": "requests",
     "level": 6,
     "grammar": ["time-and-if-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9r5a9j9k",
-    "ja": "今は手一杯なので、その依頼は見送らせてもらいますね。",
-    "en": "Being swamped right now, I'll have to pass on that.",
-    "alternatives": [
-      "I'm swamped right now, so I'll have to pass on that.",
-      "I'll have to pass on that, since my hands are full."
-    ],
-    "point": "断る理由は分詞構文 Being ~ で先に置ける",
-    "topic": "work",
-    "subtopic": "requests",
-    "level": 9,
-    "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
