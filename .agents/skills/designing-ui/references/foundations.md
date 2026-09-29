@@ -109,6 +109,7 @@ carry `lang="en"` so a screen reader voices them in English.
 | Wide window (`wide:`)                       | `(width >= 48rem) and (height >= 40rem)`: a PC, not a phone       |
 | Column height                               | The window's; on `wide` at most 720, centered in the window       |
 | Tab bar height                              | 49 (`--tab-bar-height`), hairline included                        |
+| Foot under the tab bar                      | `--tab-bar-space`: the bar plus the home-indicator inset, if any  |
 | Panel padding                               | 20 (`p-5`); a tile 16 (`p-4`)                                     |
 | Between blocks                              | 40 (`gap-10`); summary sections are 32 above and below a hairline |
 | Panel radius (home panel, sheet, milestone) | 28 (`rounded-card`)                                               |

@@ -69,7 +69,7 @@ export function SettingsScreen({
 
   return (
     <>
-      <main className="mx-auto box-content flex max-w-column flex-col gap-10 px-4 pt-6 pb-[calc(var(--tab-bar-height)+2.5rem)]">
+      <main className="mx-auto box-content flex max-w-column flex-col gap-10 px-4 pt-6 pb-[calc(var(--tab-bar-space)+2.5rem)]">
         <h1>{t("title")}</h1>
         {state.failed || zoneFailed ? (
           <p role="alert" className="rounded-tile bg-raised px-4 py-3">

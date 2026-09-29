@@ -181,6 +181,25 @@ describe("the home screen, W3a: today's portion not started", () => {
     expect(screen.queryByRole("heading", { name: ja.NotFound.title })).toBeNull();
   });
 
+  it("marks home current when the address carries a query", async () => {
+    serveHome(homeView({ kind: "ready", streak: COUNT }));
+    await renderApp("/?utm_source=x");
+    expect(navigations()).toStrictEqual([
+      [
+        ["/", "page"],
+        ["/records", null],
+        ["/settings", null],
+      ],
+    ]);
+  });
+
+  it("shows no navigation until the view answers, so a visitor never sees it flash", async () => {
+    fakeApi(() => new Promise<Response>(() => undefined));
+    await renderApp("/");
+    await settle(TUNING.skeletonDelayMs);
+    expect(navigations()).toStrictEqual([]);
+  });
+
   it("names the document from the catalog", async () => {
     serveHome(homeView({ kind: "ready", streak: COUNT }));
     document.head.innerHTML = '<meta name="description" content="" />';
@@ -471,6 +490,13 @@ describe("the home screen before and instead of the home view", () => {
     expect(
       screen.getByRole("heading", { name: ja.Home.loadFailed.title }),
     ).toBeInTheDocument();
+    expect(navigations()).toStrictEqual([
+      [
+        ["/", "page"],
+        ["/records", null],
+        ["/settings", null],
+      ],
+    ]);
     fireEvent.click(screen.getByRole("button", { name: ja.Home.loadFailed.reload }));
     await settle();
     expect(

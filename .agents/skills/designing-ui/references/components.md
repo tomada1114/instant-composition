@@ -91,9 +91,10 @@ There is no icon library.
 
 ## Tab bar
 
-The one navigation, on home, records and settings, and nowhere else: a round is the
-whole screen (its pause sheet's "stop" is the way out), the welcome screen has its one
-way forward, and the signed-out landing has nowhere to go yet. Researched on Refero:
+The one navigation, on home, records and settings — their loading and failed states
+included, so switching tabs never blanks it — and nowhere else: a round is the whole
+screen (its pause sheet's "stop" is the way out), the welcome screen has its one way
+forward, and the signed-out landing has nowhere to go yet. Researched on Refero:
 learning apps keep their sections in a bottom bar at the thumb (Brilliant's home,
 courses, leagues, settings; Duolingo, BoldVoice, LookUp, Kann) and drop it for a quiz
 (Kann's kana quiz keeps dismiss and progress along the top, no bar) — so the top edge
@@ -101,18 +102,22 @@ stays the drill's, for its ticks.
 
 - Fixed to the column's bottom edge: `bg-background`, three equal cells across the
   column over one hairline (`border-t border-border`), each `--tab-bar-height` (49, an
-  iOS tab bar) including the hairline. On a `wide` window it sits `--column-inset` up
-  from the window's edge, the canvas under it covering what scrolls past.
+  iOS tab bar) including the hairline. It sits `--column-inset` up from the window's
+  edge on a `wide` window, or a phone's home-indicator inset up where that is larger
+  (`viewport-fit=cover` makes `env(safe-area-inset-bottom)` readable), the canvas under
+  it covering what scrolls past.
 - A cell is a link: the 20 glyph (house, bars, gear) over its name in `caption`, 4
   apart, centred. The whole cell is the hit area.
 - Current: `text-foreground`, plus a 24 × 2 white pill on the hairline above it, so the
   state does not rest on grey against white alone. Other: `text-muted-foreground`. Never
   the accent, never a filled tile or a pill behind the glyph.
-- The router marks the current link `aria-current="page"`, matched exactly so `/` is not
-  current on every screen. The `nav` is named ("menu") and is the screen's only
-  navigation landmark.
+- The router marks the current link `aria-current="page"`, matched on the exact path so
+  `/` is not current on every screen, and ignoring the query. The `nav` is named
+  ("menu") and is the screen's only navigation landmark.
 - Rendered after the screen's `main`, so a sheet opened inside `main` covers it. A
-  screen under it pads its foot by `--tab-bar-height` plus its own bottom gap.
+  screen under it pads its foot by `--tab-bar-space` (the bar plus any inset it rises
+  by) plus its own bottom gap. Home's skeleton reserves that space but draws no bar: a
+  signed-out visitor at `/` must not see one flash before the landing.
 - Esc on records and settings still goes home.
 
 `apps/web/src/lib/tab-bar.tsx` is this recipe.

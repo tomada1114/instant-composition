@@ -279,7 +279,38 @@ describe("the records screen, W10 empty", () => {
   });
 });
 
-describe("the records screen when the read fails", () => {
+describe("the records screen before and instead of its read", () => {
+  it("keeps the navigation standing, over an empty column, while the read is out", async () => {
+    fakeApi(() => new Promise<Response>(() => undefined));
+    await renderApp("/records");
+    expect(navigations()).toStrictEqual([
+      [
+        ["/", null],
+        ["/records", "page"],
+        ["/settings", null],
+      ],
+    ]);
+    expect(document.querySelector("main")?.childElementCount).toBe(0);
+  });
+
+  it("keeps the navigation and Esc when the read fails", async () => {
+    fakeApi(() => Promise.reject(new TypeError("fetch failed")));
+    await renderApp("/records");
+    expect(
+      screen.getByRole("heading", { name: ja.Home.loadFailed.title }),
+    ).toBeInTheDocument();
+    expect(navigations()).toStrictEqual([
+      [
+        ["/", null],
+        ["/records", "page"],
+        ["/settings", null],
+      ],
+    ]);
+    press("Escape");
+    await settle();
+    expect(where()).toBe("/");
+  });
+
   it("says so, and reads the records again on request", async () => {
     let attempts = 0;
     const calls = fakeApi(() => {

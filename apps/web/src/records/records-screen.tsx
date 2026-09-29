@@ -40,7 +40,7 @@ export function RecordsScreen({
   useEscapeHome();
   return (
     <>
-      <main className="mx-auto box-content flex max-w-column flex-col gap-10 px-4 pt-6 pb-[calc(var(--tab-bar-height)+2.5rem)]">
+      <main className="mx-auto box-content flex max-w-column flex-col gap-10 px-4 pt-6 pb-[calc(var(--tab-bar-space)+2.5rem)]">
         <h1>{t("title")}</h1>
         <div className="flex flex-col gap-3">
           <ReachRings reach={records.reach} shown={final} />

@@ -38,7 +38,7 @@ export function HomeScreen({
 
   return (
     <>
-      <main className="mx-auto box-content flex min-h-[calc(var(--column-height)-var(--tab-bar-height)-1.75rem)] max-w-column flex-col gap-8 px-4 pt-4 pb-[calc(var(--tab-bar-height)+0.75rem)]">
+      <main className="mx-auto box-content flex min-h-[calc(var(--column-height)-var(--tab-bar-space)-1.75rem)] max-w-column flex-col gap-8 px-4 pt-4 pb-[calc(var(--tab-bar-space)+0.75rem)]">
         <header className="flex items-center justify-between">
           <Eyebrow>{t("brand")}</Eyebrow>
           <SoundToggle initial={view.sound} />
