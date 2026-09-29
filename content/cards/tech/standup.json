@@ -35,39 +35,13 @@
     "level": 3,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2u2s5z6b",
-    "ja": "レビュー待ちの PR、三つ見てもらえますか？",
-    "en": "Could you check the three PRs waiting on review?",
-    "alternatives": [
-      "Could you look at the three PRs pending review?",
-      "Could you look at three PRs waiting for review?"
-    ],
-    "point": "「レビュー待ちの」は PRs の後ろから waiting on で修飾",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 6,
-    "grammar": ["post-modification"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3k8z5g5s",
-    "ja": "昨日出した修正が、新しいバグを起こした。",
-    "en": "The fix deployed yesterday caused a new bug.",
-    "alternatives": [
-      "The fix from yesterday caused a new bug.",
-      "Yesterday's fix introduced a new bug."
-    ],
-    "point": "名詞の後ろに過去分詞 deployed を置いて修飾する",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 4,
-    "grammar": ["post-modification", "past-simple"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:02c76206c085fb06e000394667b17630559760a4c92a9ee17836b3287f071495",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3x8m5x5v",
@@ -114,22 +88,6 @@
     }
   },
   {
-    "id": "c_4c6a4e6a",
-    "ja": "私は朝から、この設計で堂々巡りしています。",
-    "en": "I've been going in circles on this design all morning.",
-    "alternatives": [
-      "I've been going around in circles on this design.",
-      "I've been running around in circles on this all morning."
-    ],
-    "point": "ずっと続く動作は現在完了進行形。all morning で継続を示す",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 7,
-    "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_4g9x7x7f",
     "ja": "今日はドキュメントの仕上げに集中します。",
     "en": "Today I'll focus on finishing the docs.",
@@ -165,7 +123,13 @@
     "level": 6,
     "grammar": ["phrasal-verbs", "past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:864eecfde166558ddd913ded3a9cc0cfb13a60194acfb0520cd3c83aba134022",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4r3p5d8b",
@@ -222,7 +186,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1558e47fd3952808bcf7dbb9b27481fbbdbca7668ff0993de3984eebf4857634",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5s7m8c2v",
@@ -260,7 +230,13 @@
     "level": 4,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:86ba573b8460a4a84c328a6c3133b05234bd66f75e1f485e7d0dec92b0f44131",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5v9t5y6q",
@@ -283,22 +259,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_5w4z2k4j",
-    "ja": "私が一番わかってない部分で詰まってます。",
-    "en": "I'm stuck on the part I understand least.",
-    "alternatives": [
-      "I'm stuck on what I understand least.",
-      "I'm stuck on the bit I understand least."
-    ],
-    "point": "「一番〜ない」は least。part の後ろに I understand を直接置く",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 4,
-    "grammar": ["comparatives-superlatives", "post-modification"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_6d9g4h4c",
@@ -413,22 +373,6 @@
     }
   },
   {
-    "id": "c_7a3d8p8h",
-    "ja": "報告することは少ないです。もうすぐ終わります。",
-    "en": "I have little to report. I'm almost done.",
-    "alternatives": [
-      "There isn't much to report. I'm almost finished.",
-      "I don't have much to report; I'll finish soon."
-    ],
-    "point": "「報告する〜」は名詞のあとに to report を置く",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 6,
-    "grammar": ["infinitives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7d4q3e7e",
     "ja": "テスト終わったら、連絡します。",
     "en": "I'll message you when tests are done.",
@@ -495,22 +439,6 @@
     }
   },
   {
-    "id": "c_7y9c6d9m",
-    "ja": "客先の電話で、朝会を先に抜けてもいいですか？",
-    "en": "Could I leave standup early for a client call?",
-    "alternatives": [
-      "May I leave standup early for a client call?",
-      "Can I leave standup early for a client call?"
-    ],
-    "point": "許可を丁寧に求める Could I。「先に抜ける」は leave early",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 6,
-    "grammar": ["requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7z9b9x6j",
     "ja": "あの設定、私が見落としたのかもしれません。",
     "en": "I may have missed that setting.",
@@ -524,7 +452,13 @@
     "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a0f201e12112607ed3e6a226c0b111221e59dc90700d3475db8f81cfffcffa42",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8a8a9j7h",
@@ -569,22 +503,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_8j8g5u6k",
-    "ja": "昨日の障害は復旧して、今は安定してます。",
-    "en": "Yesterday's outage was fixed, and it's stable now.",
-    "alternatives": [
-      "Yesterday's outage is fixed, and it's stable now.",
-      "Yesterday's outage was resolved; it's stable now."
-    ],
-    "point": "昨日は過去形、今の状態は現在形で使い分ける",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 4,
-    "grammar": ["tense-contrast", "passive-voice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_8p3j3z3j",
@@ -641,7 +559,13 @@
     "level": 3,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c139da52e6d3281ab69f0949eb43fc6f81a60547add6e86fd578bffaee90fbd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9a8s4q9v",
@@ -702,7 +626,13 @@
     "level": 4,
     "grammar": ["tense-contrast", "post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7bf04a72f6f1748ba77e978ab85e043fe505c4251e200fccd6a6bae0c64a887",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9t3y6j2r",
@@ -718,6 +648,12 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:03a2be797efd4b9e4ec8541bae38d00ffc676bf0891df51a0107e4bc33f92319",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
