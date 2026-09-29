@@ -145,7 +145,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9279167b1e82b56d0683cd72338654a69adb61b46a53fb648ffdf9f22c771983",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2v7s4g7r",
@@ -243,7 +249,13 @@
     "level": 4,
     "grammar": ["indirect-questions", "noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bfb98bc100bc52a324bbbd044944a12395d4cefb2624d8dfefbc207096b59f23",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3w4c4x7e",
@@ -401,22 +413,6 @@
     }
   },
   {
-    "id": "c_5a6k2x6t",
-    "ja": "私なら、その頭痛は放っておかないけどね。",
-    "en": "If I were you, I wouldn't let that headache slide.",
-    "alternatives": [
-      "If I were you, I wouldn't ignore that headache.",
-      "I wouldn't brush off that headache if I were you."
-    ],
-    "point": "現在の仮定は if 節が were、主節は would",
-    "topic": "daily",
-    "subtopic": "health",
-    "level": 7,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5e9e9v7r",
     "ja": "先生、咳が出るんです。",
     "en": "I have a cough.",
@@ -478,23 +474,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_5x8w3s3t",
-    "ja": "私があなたなら、その咳はすぐ診てもらいますよ。",
-    "en": "If I were you, I'd get that cough checked now.",
-    "alternatives": [
-      "If I were you, I'd have that cough checked now.",
-      "I'd get that cough looked at right away.",
-      "I'd get that cough checked now if I were you."
-    ],
-    "point": "仮定は If I were you。診てもらうは get ~ checked",
-    "topic": "daily",
-    "subtopic": "health",
-    "level": 7,
-    "grammar": ["second-conditional", "causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_6e7t5m8g",
@@ -739,22 +718,6 @@
     }
   },
   {
-    "id": "c_8p3x6p9g",
-    "ja": "手がしびれる原因、わかりますか？",
-    "en": "Do you know why my hands go numb?",
-    "alternatives": [
-      "Do you know what's making my hands numb?",
-      "Do you know what's behind my numb hands?"
-    ],
-    "point": "why のあとは平叙文の語順で go numb",
-    "topic": "daily",
-    "subtopic": "health",
-    "level": 6,
-    "grammar": ["indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8t2t3x3f",
     "ja": "この薬、処方薬と飲んでも大丈夫ですか？",
     "en": "Can I take this with my prescription?",
@@ -841,19 +804,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9s4w9k6v",
-    "ja": "熱を下げるには、何をすればいいですか？",
-    "en": "What should I do to lower my fever?",
-    "alternatives": ["How can I bring my fever down?", "How do I get my fever down?"],
-    "point": "「〜するには」は to 不定詞で目的を表す",
-    "topic": "daily",
-    "subtopic": "health",
-    "level": 5,
-    "grammar": ["infinitives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9z9t2b6s",
