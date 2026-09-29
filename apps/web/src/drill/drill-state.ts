@@ -175,7 +175,7 @@ export function initDrill(init: DrillInit): DrillState {
   };
   if (queue.length > 0) return base;
   if (init.retries && retryDone < retryPile.length) {
-    return { ...base, pass: "retry", index: retryDone, phase: FRESH_FRONT };
+    return { ...base, pass: "retry", index: retryDone, phase: base.phase };
   }
   return { ...base, phase: { kind: "finishing" } };
 }

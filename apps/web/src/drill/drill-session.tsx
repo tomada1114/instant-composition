@@ -9,6 +9,7 @@ import { CardScreen } from "./card-screen";
 import { DrillDone } from "./drill-done";
 import { IntroScreen } from "./intro-screen";
 import { PauseSheet } from "./pause-sheet";
+import { ReadyScreen } from "./ready-screen";
 import { browserSound } from "./sound";
 import { Toast } from "./toast";
 import {
@@ -22,7 +23,10 @@ import {
 /** Pixels one ↑/↓ press moves an overflowing back. */
 const SCROLL_STEP = 48;
 
-function startDrill(round: RoundPayload): DrillState {
+function startDrill({
+  round,
+  pressed,
+}: Readonly<{ round: RoundPayload; pressed: boolean }>): DrillState {
   return initDrill({
     roundId: round.id,
     deck: round.deck,
@@ -31,7 +35,7 @@ function startDrill(round: RoundPayload): DrillState {
     ),
     answered: round.answered,
     retries: round.retries,
-    intro: round.kind === "placement" && round.answered.length === 0,
+    intro: !pressed || (round.kind === "placement" && round.answered.length === 0),
   });
 }
 
@@ -51,12 +55,14 @@ function useAnnouncement(state: DrillState, round: RoundPayload): string {
 export function DrillSession({
   round,
   first,
+  pressed,
   sound,
   dailySize,
   onNext,
 }: Readonly<{
   round: RoundPayload;
   first: boolean;
+  pressed: boolean;
   sound: boolean;
   dailySize: number;
   onNext: (kind: RoundKind) => void;
@@ -66,7 +72,7 @@ export function DrillSession({
   const goHome = (): void => {
     void navigate({ to: "/" });
   };
-  const [state, dispatch] = useReducer(drillReducer, round, startDrill);
+  const [state, dispatch] = useReducer(drillReducer, { round, pressed }, startDrill);
   const [failures, setFailures] = useState(0);
   const queue = useAnswerSync(round.id, state.answers, () => {
     setFailures((count) => count + 1);
@@ -109,6 +115,25 @@ export function DrillSession({
     browserSound.play(combo >= 2 ? "combo" : phase.fast ? "okFast" : "ok");
   }, [sound, phase, combo]);
 
+  const resumeAt =
+    state.pass === "first"
+      ? round.offset + state.firstDone + state.index + 1
+      : round.offset + state.firstDone + state.queue.length + state.index + 1;
+  if (
+    phase.kind === "intro" &&
+    (round.kind !== "placement" || round.answered.length > 0)
+  ) {
+    return (
+      <ReadyScreen
+        kind={round.kind}
+        count={round.total}
+        position={resumeAt}
+        onStart={() => {
+          act({ type: "start" }, false);
+        }}
+      />
+    );
+  }
   if (phase.kind === "intro") {
     return (
       <IntroScreen
@@ -132,10 +157,6 @@ export function DrillSession({
       />
     );
 
-  const resumeAt =
-    state.pass === "first"
-      ? round.offset + state.firstDone + state.index + 1
-      : round.offset + state.firstDone + state.queue.length + state.index + 1;
   return (
     <>
       <CardScreen
