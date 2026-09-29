@@ -470,4 +470,27 @@ describe("who a request acts as", () => {
       "learner-b",
     ]);
   });
+
+  it("changes only its own level, never another learner's", async () => {
+    const a = makeApi({ authenticator: subjectAuthenticator("subject-a") });
+    await finished(a);
+    const b = makeApi({
+      stores: a.stores,
+      directory: a.directory,
+      authenticator: subjectAuthenticator("subject-b"),
+      newLearnerId: () => learnerId("learner-b"),
+    });
+    const before = await a.stores.forLearner(learnerId("learner-1")).stats();
+
+    const chosen = await b.call("PATCH", "/v1/level", { mode: "manual", level: 2 });
+
+    expect(await contracted(chosen, "updateLevel")).toMatchObject({ mode: "manual" });
+    expect(await a.stores.forLearner(learnerId("learner-1")).stats()).toStrictEqual(
+      before,
+    );
+    expect(before?.value.levelMode).toBe("auto");
+    expect(
+      (await a.stores.forLearner(learnerId("learner-b")).stats())?.value.level,
+    ).toMatchObject({ level: 2, reason: "chosen" });
+  });
 });
