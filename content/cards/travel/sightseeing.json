@@ -77,7 +77,13 @@
     "level": 3,
     "grammar": ["time-and-if-clauses", "passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c2790915d69d3cf46c20b237a0e5c742afec51fe1c2bf4291c7c9c66e661007d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3u6x7z9k",
@@ -93,7 +99,13 @@
     "level": 2,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:371ecc1098abbc0ce281d1e2229676aa9ff6ab0510fa24885b3f36e26d01c9d3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4d6w8w2b",
@@ -108,22 +120,6 @@
     "subtopic": "sightseeing",
     "level": 10,
     "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4s6t5s8s",
-    "ja": "美術館が何時に閉まるか、聞いてくれる？",
-    "en": "Could you ask what time the museum closes?",
-    "alternatives": [
-      "Can you find out when the museum closes?",
-      "Could you check what time the museum closes?"
-    ],
-    "point": "what time の後は平叙文の語順で the museum closes",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 5,
-    "grammar": ["indirect-questions", "requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -173,7 +169,13 @@
     "level": 4,
     "grammar": ["past-simple", "relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:de126d45ea262aa5b0dc6bddcaae4cc1e834f832f02637cf37f55c174a4ac25f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5x9y9c8b",
@@ -189,7 +191,13 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bddf31476e43a6c03059df92326abccbb4d99aaa480b93bef6d9f33b7ad2d879",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5z5u4a7e",
@@ -205,7 +213,13 @@
     "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fd008151f638256dde726fe56fe1a622b7fedc722f4b45b02fa09bee8308b38a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6d6g4d8p",
@@ -237,7 +251,13 @@
     "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:06fbcfe465977749f19b97f32568b7646bcc0367b32d29aba464dd062f54a7b0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6k9s2e5v",
@@ -285,7 +305,13 @@
     "level": 4,
     "grammar": ["infinitives", "past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8268e095d94cdb213cbdfa0fc8d85785efe8b36f5a237dfc275eb29115b91f8e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6t3r9e5c",
@@ -319,9 +345,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:5d108baccb8d84691b4b51b5a3a2cc906acba92558714a00f7ee85ed766d4d1b",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:6e4eee78226440205b574bce4db2b0a089484e139afd940f62300d8b284b0012",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -371,7 +397,13 @@
     "level": 5,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:491caea14c24c60d21bce06c6c83e1feaa0c6b57e178e3dffe72efbcd959e636",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7u3w2w9w",
@@ -421,9 +453,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:7636b5a5554e6ef0a92498e02b781225de81f01fe5f856cf0c596ebb04f82347",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:ef9b23b2e93d222293ec54f08b82a81505c1afce98a34ad72eda20eea5a90992",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -441,23 +473,13 @@
     "level": 3,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8q8v5n8s",
-    "ja": "私が見たいのは、あの庭です。",
-    "en": "What I want to see is that garden.",
-    "alternatives": [
-      "That garden is what I want to see.",
-      "I really want to see that garden."
-    ],
-    "point": "「〜なのは」は What I want to see is で主語にする",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 5,
-    "grammar": ["noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ceba92144e50e9ffad293cbaea1157de8a51dc1d0668fff449b1f9410f8e571f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8w4z8w5e",
@@ -476,44 +498,6 @@
     "stamps": {}
   },
   {
-    "id": "c_8z5a7p7k",
-    "ja": "もし1日だけなら、どのツアーがいい？",
-    "en": "Which tour is best for one day?",
-    "alternatives": [
-      "Which tour's best for a day trip?",
-      "What's the best tour for one day?"
-    ],
-    "point": "「どの〜」は Which + 名詞で始める",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 3,
-    "grammar": ["wh-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8z6k6h7f",
-    "ja": "兄はツアー中ずっと写真を撮っていた。",
-    "en": "My brother was taking photos all tour.",
-    "alternatives": [
-      "My brother was taking pictures all tour.",
-      "My brother was snapping photos all tour."
-    ],
-    "point": "「〜していた」は過去進行形 was taking",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 2,
-    "grammar": ["progressive-aspect"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:0dfa99fa5e45b45fbb266c586196139eadcbd66ef7f1505aed996e09d79b673e",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
-  },
-  {
     "id": "c_9g8x8b4e",
     "ja": "すみません、先にリュックを預けてもいいですか？",
     "en": "Is it okay to drop off my backpack first?",
@@ -526,22 +510,6 @@
     "subtopic": "sightseeing",
     "level": 6,
     "grammar": ["requests-permission", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9q2r8e7q",
-    "ja": "一番いい撮影スポット、知ってますか？",
-    "en": "Do you know the best photo spot?",
-    "alternatives": [
-      "Know the best spot for photos?",
-      "Do you know the top photo spot?"
-    ],
-    "point": "the best と最上級には the を付ける",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 3,
-    "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
   }
