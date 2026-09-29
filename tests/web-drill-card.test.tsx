@@ -195,7 +195,7 @@ describe("PauseSheet", () => {
       screen.getByRole("dialog", { name: ja.Drill.sheet.title }),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(fill(ja.Drill.sheet.hint, { position: 7 })),
+      screen.getByText(fill(ja.Drill.sheet.hint, { hour: 4, position: 7 })),
     ).toBeInTheDocument();
     expect(screen.getByRole("button", { name: ja.Drill.sheet.continue })).toHaveFocus();
   });
