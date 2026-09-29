@@ -60,6 +60,38 @@
     }
   },
   {
+    "id": "c_2r5u7f6w",
+    "ja": "これは優先度が少し低いかも。",
+    "en": "This might be a slightly lower priority.",
+    "alternatives": [
+      "This may be a bit lower priority.",
+      "I think this could be a slightly lower priority."
+    ],
+    "point": "might / slightly で断定をやわらげる",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 9,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_2x7s5m5n",
+    "ja": "その機能、いつ出るかわかる？",
+    "en": "Do you know when that feature ships?",
+    "alternatives": [
+      "Do you know when that feature is released?",
+      "Do you know when that feature will launch?"
+    ],
+    "point": "間接疑問は when + 主語 + 動詞の語順",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3g9h4g4q",
     "ja": "通知を減らすのはどうかな？",
     "en": "How about reducing notifications?",
@@ -137,6 +169,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4f8e8j7m",
+    "ja": "不満なのは登録の流れだよ。",
+    "en": "It's the sign-up flow users complain about.",
+    "alternatives": [
+      "It's the sign-up flow that users dislike.",
+      "The sign-up flow is what users complain about."
+    ],
+    "point": "It is 〜 that 〜 で不満の対象を強調する",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_4p8q5n7w",
@@ -241,6 +289,22 @@
     }
   },
   {
+    "id": "c_5y2x7f3g",
+    "ja": "今回は見送ったほうが無難かも。",
+    "en": "We might be better off skipping it.",
+    "alternatives": [
+      "We may be better off skipping this one.",
+      "Maybe we should skip this one for now."
+    ],
+    "point": "might be better off で控えめに提案する",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6f6a7q6d",
     "ja": "今、テストしてるよ。",
     "en": "I'm testing it now.",
@@ -279,6 +343,22 @@
     }
   },
   {
+    "id": "c_6y5p6n7y",
+    "ja": "そのバグは金曜に修正されます。",
+    "en": "The bug gets fixed on Friday.",
+    "alternatives": [
+      "The bug will be fixed on Friday.",
+      "That bug is getting fixed on Friday."
+    ],
+    "point": "修正「される」は受動態。行為者は言わない",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 9,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6y7b2x2j",
     "ja": "これ、いい案だね。",
     "en": "It's a good idea.",
@@ -296,6 +376,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6z7q9s4x",
+    "ja": "先に出せていれば、解約は少ない。",
+    "en": "If we'd shipped first, churn would be lower.",
+    "alternatives": [
+      "If we had shipped it first, churn would be lower.",
+      "Had we shipped it first, churn would be lower."
+    ],
+    "point": "過去の仮定 + 今の結果は if had + would be",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 10,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7j3t9v8p",
@@ -340,6 +436,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8n6q2f5h",
+    "ja": "CEO は来期モバイル優先と言った。",
+    "en": "The CEO said mobile comes first next quarter.",
+    "alternatives": [
+      "The CEO said mobile is the priority next quarter.",
+      "The CEO said mobile would come first next quarter."
+    ],
+    "point": "said の後は時制をずらすか、変わらない事実なら現在形",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 10,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8y7m7r5b",
@@ -403,6 +515,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9f3g4h9x",
+    "ja": "この機能は一か月先送りにしよう。",
+    "en": "Let's push this feature back a month.",
+    "alternatives": [
+      "Let's delay this feature by a month.",
+      "Let's put this feature off for a month."
+    ],
+    "point": "「先送りする」は push back / put off",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9j4s6f4p",
+    "ja": "先週届いた要望を整理しよう。",
+    "en": "Let's sort the requests received last week.",
+    "alternatives": [
+      "Let's go through the requests we received last week.",
+      "Let's sort through last week's requests."
+    ],
+    "point": "requests の後ろに received を置いて説明を足す",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 9,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9x9g4h4c",

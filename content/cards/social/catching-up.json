@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2e5g3x9f",
+    "ja": "弟が転職するって言ってたよ。",
+    "en": "My brother said he was changing jobs.",
+    "alternatives": [
+      "My brother told me he was changing jobs.",
+      "My brother said he was switching jobs."
+    ],
+    "point": "said の後は時制を一つ過去にずらす（is→was）",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 9,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2h5s9c3s",
     "ja": "引っ越すことにしたんだ。",
     "en": "I decided to move.",
@@ -98,6 +114,22 @@
     "stamps": {}
   },
   {
+    "id": "c_3b4w6e8y",
+    "ja": "残っていたら、今ごろ結婚してたかも。",
+    "en": "If I'd stayed, I might be married now.",
+    "alternatives": [
+      "If I had stayed, I might be married by now.",
+      "Had I stayed, I might be married now."
+    ],
+    "point": "過去の仮定 + 今の結果は if I'd + might be",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 10,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3c3a5v9c",
     "ja": "また連絡してね。",
     "en": "Keep in touch.",
@@ -158,6 +190,22 @@
     }
   },
   {
+    "id": "c_3s2e2u3q",
+    "ja": "こんなに忙しいのは初めてだよ。",
+    "en": "Never have I been this busy.",
+    "alternatives": [
+      "I've never been this busy.",
+      "This is the busiest I've ever been."
+    ],
+    "point": "Never を文頭に出すと have I been の語順になる",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3s2e5q7q",
     "ja": "今、何してるの？",
     "en": "What are you doing?",
@@ -208,6 +256,22 @@
     "subtopic": "catching-up",
     "level": 8,
     "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4t9u4h8v",
+    "ja": "少し痩せた気がするんだけど。",
+    "en": "You seem to have lost some weight.",
+    "alternatives": [
+      "You look like you've lost some weight.",
+      "I feel like you've lost a little weight."
+    ],
+    "point": "seem to で断定を避けて柔らかく伝える",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 10,
+    "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
     "stamps": {}
   },
@@ -300,6 +364,22 @@
     "subtopic": "catching-up",
     "level": 8,
     "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6f6s3u9h",
+    "ja": "あの旅行がなければ燃え尽きてた。",
+    "en": "Without that trip, I'd have burned out.",
+    "alternatives": [
+      "If I hadn't traveled, I'd have burned out.",
+      "But for that trip, I'd have burned out."
+    ],
+    "point": "「〜がなければ」の過去の話は would have + 過去分詞",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 9,
+    "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
     "stamps": {}
   },
@@ -432,6 +512,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9h6p5b8a",
+    "ja": "誘ってくれていれば、行ったのに。",
+    "en": "If you'd invited me, I'd have gone.",
+    "alternatives": [
+      "If you had asked me, I would have come.",
+      "I'd have come if you'd invited me."
+    ],
+    "point": "過去の仮定は had + 過去分詞、結果は would have + 過去分詞",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 10,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9j6c2b8j",

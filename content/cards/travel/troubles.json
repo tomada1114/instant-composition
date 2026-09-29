@@ -296,6 +296,38 @@
     }
   },
   {
+    "id": "c_7f6g4y8w",
+    "ja": "パスポート、タクシーに忘れたかも。",
+    "en": "I might've left my passport in the taxi.",
+    "alternatives": [
+      "I may have left my passport in the cab.",
+      "Maybe I left my passport in the taxi."
+    ],
+    "point": "過去の可能性は might have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 10,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7j4w5p9q",
+    "ja": "予約に手違いがあったようです。",
+    "en": "There seems to be a booking mix-up.",
+    "alternatives": [
+      "It looks like there's a mix-up with my booking.",
+      "I think there's been a mix-up with my booking."
+    ],
+    "point": "seems to be で断定を避け、柔らかく切り出す",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 9,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7j7y8s2d",
     "ja": "問題があります。",
     "en": "There's a problem.",
@@ -338,6 +370,22 @@
     }
   },
   {
+    "id": "c_7y2x4u4h",
+    "ja": "別の便に振り替えは可能でしょうか？",
+    "en": "Would it be possible to rebook me?",
+    "alternatives": [
+      "Is there any chance you could rebook me?",
+      "Could I possibly be rebooked on another flight?"
+    ],
+    "point": "Would it be possible to 〜 で丁寧に頼む",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8b6w3e6n",
     "ja": "警察を呼んでください。",
     "en": "Please call the police.",
@@ -355,6 +403,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8h7e9y7s",
+    "ja": "なくしたのは鞄でなくパスポート。",
+    "en": "It's my passport I lost, not my bag.",
+    "alternatives": [
+      "It was my passport I lost, not my bag.",
+      "What I lost was my passport, not my bag."
+    ],
+    "point": "It is 〜 that 〜 で「〜なのは」を強調する",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8m7t5w8p",
+    "ja": "預けた荷物が届いていません。",
+    "en": "The bag I checked in hasn't arrived.",
+    "alternatives": [
+      "The bag I checked hasn't come yet.",
+      "My checked bag still hasn't arrived."
+    ],
+    "point": "目的格の that は省略できる",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 9,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8q7g5m7r",
@@ -442,6 +522,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9n4d5f7p",
+    "ja": "急いでいれば、間に合ったのに。",
+    "en": "If we'd hurried, we'd have made it.",
+    "alternatives": [
+      "If we had hurried, we would have made it.",
+      "If we'd rushed, we'd have caught it."
+    ],
+    "point": "「間に合う」は make it。過去の仮定は had + 過去分詞",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 9,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9y2d7b6w",

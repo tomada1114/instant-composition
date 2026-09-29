@@ -174,6 +174,22 @@
     }
   },
   {
+    "id": "c_4g6v3v2q",
+    "ja": "環境構築に丸一日かかった。",
+    "en": "Setting up my environment took all day.",
+    "alternatives": [
+      "It took all day to set up my environment.",
+      "I spent all day setting up my environment."
+    ],
+    "point": "「構築する」は set up。動名詞が主語になる",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4g8w9p8c",
     "ja": "設定はもう消えていた。",
     "en": "The settings had already vanished.",
@@ -213,6 +229,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5n2a6h7s",
+    "ja": "遅いのはあのプラグインだ。",
+    "en": "It's that plugin that's slowing things down.",
+    "alternatives": [
+      "That plugin is what's slowing down the build.",
+      "That plugin is the one slowing down the build."
+    ],
+    "point": "It's 〜 that 〜 で原因を強調する",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5r6h8v5t",
@@ -417,6 +449,22 @@
     }
   },
   {
+    "id": "c_8s5f3h6z",
+    "ja": "キャッシュを消せば直ると言われた。",
+    "en": "I was told clearing the cache would work.",
+    "alternatives": [
+      "Someone told me clearing the cache would work.",
+      "They said clearing the cache would fix it."
+    ],
+    "point": "言われた内容の will は would にずらす",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 10,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8y8e5t8y",
     "ja": "固定してれば、今は安定なのに。",
     "en": "If we'd pinned versions, we'd be stable.",
@@ -453,6 +501,54 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9a7k9e6e",
+    "ja": "昨日の更新から、何も動いていない。",
+    "en": "Nothing has worked since yesterday's update.",
+    "alternatives": [
+      "Nothing's worked since yesterday's update.",
+      "Nothing has been working since yesterday's update."
+    ],
+    "point": "起点のある継続は現在完了、時点は since で示す",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9f5x5f8w",
+    "ja": "その時初めて、ログを確認した。",
+    "en": "Only then did I check the logs.",
+    "alternatives": [
+      "Not until then did I check the logs.",
+      "It was only then that I checked the logs."
+    ],
+    "point": "Only then が文頭なら did I check の倒置",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9f6n6t7j",
+    "ja": "月曜からテストが不安定なんだ。",
+    "en": "The tests have been flaky since Monday.",
+    "alternatives": [
+      "Our tests have been flaky since Monday.",
+      "The tests have been unstable since Monday."
+    ],
+    "point": "「〜からずっと」は現在完了 + since",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9r4d4b3t",
