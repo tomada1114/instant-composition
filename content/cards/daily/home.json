@@ -215,6 +215,38 @@
     }
   },
   {
+    "id": "c_7r3v3e9w",
+    "ja": "手伝ってくれれば終わったのに。",
+    "en": "If you'd helped, I'd have finished.",
+    "alternatives": [
+      "I'd have finished if you'd helped.",
+      "Had you helped, I'd have finished."
+    ],
+    "point": "過去の後悔は If + had + 過去分詞",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 7,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8t2j5e9g",
+    "ja": "朝からずっと片付けてるんだ。",
+    "en": "I've been tidying since morning.",
+    "alternatives": [
+      "I've been cleaning up all morning.",
+      "I've been tidying up since this morning."
+    ],
+    "point": "since と継続中の動作は現在完了進行形",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8t5s7m3q",
     "ja": "誰が割ったのか教えて。",
     "en": "Tell me who broke it.",
@@ -232,6 +264,54 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8t5w9e7g",
+    "ja": "うちの洗剤、切れるかも。",
+    "en": "We might run out of detergent.",
+    "alternatives": [
+      "We may run out of detergent soon.",
+      "We might be running out of detergent."
+    ],
+    "point": "かもは might / may でやわらげる",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8w4k2t2f",
+    "ja": "母は皿を洗いながら電話に出た。",
+    "en": "Washing dishes, Mom answered the phone.",
+    "alternatives": [
+      "Mom answered the phone while washing dishes.",
+      "While washing dishes, Mom took the call."
+    ],
+    "point": "ながらは分詞構文。主語は母のまま",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8x7n3r6c",
+    "ja": "粗大ゴミは水曜に回収されるよ。",
+    "en": "Bulky trash is collected Wednesdays.",
+    "alternatives": [
+      "They collect bulky trash on Wednesdays.",
+      "Bulky garbage gets picked up Wednesdays."
+    ],
+    "point": "回収するのは人ではなくゴミ。受動態で言う",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9c4e8j3t",
@@ -273,6 +353,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9e6b7h8b",
+    "ja": "食べ終わったら皿を洗うよ。",
+    "en": "I'll wash up once I've eaten.",
+    "alternatives": [
+      "I'll do the dishes when I'm done eating.",
+      "I'll wash the dishes once I finish eating."
+    ],
+    "point": "as soon as の後は未来でも現在形",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9j7a6h3t",

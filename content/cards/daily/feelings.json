@@ -41,6 +41,22 @@
     }
   },
   {
+    "id": "c_3p7z6b4w",
+    "ja": "一人で歩くのは平気だよ。",
+    "en": "I don't mind walking alone.",
+    "alternatives": [
+      "I don't mind walking by myself.",
+      "Walking alone doesn't bother me."
+    ],
+    "point": "mind の後は -ing",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4a5n5u4g",
     "ja": "ひと言いいですか？",
     "en": "May I say something?",
@@ -158,6 +174,38 @@
     }
   },
   {
+    "id": "c_6n2k9e6b",
+    "ja": "傘があれば、濡れなかったのに。",
+    "en": "An umbrella would've kept me dry.",
+    "alternatives": [
+      "I'd have stayed dry with an umbrella.",
+      "I wouldn't have gotten wet with an umbrella."
+    ],
+    "point": "過去の仮定は would have + 過去分詞",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7c4z9t7s",
+    "ja": "聞いた知らせ、嬉しかったよ。",
+    "en": "I loved the news I heard.",
+    "alternatives": [
+      "I was happy about the news I heard.",
+      "The news I heard made me happy."
+    ],
+    "point": "聞いた知らせは news の後ろに置く",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7f2v2m4z",
     "ja": "もう落ち着いたよ。",
     "en": "I've calmed down now.",
@@ -175,6 +223,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7v2b3k8z",
+    "ja": "彼の言葉に、傷ついたよ。",
+    "en": "I was hurt by his words.",
+    "alternatives": ["I was hurt by what he said.", "What he said hurt me."],
+    "point": "傷つけられたは受動態 be hurt",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7w3y4d5p",
@@ -218,6 +279,19 @@
     }
   },
   {
+    "id": "c_8k7e8z8f",
+    "ja": "明日は絶対、緊張するだろうな。",
+    "en": "I'm going to be nervous tomorrow.",
+    "alternatives": ["I'll be nervous tomorrow.", "I'm sure I'll be nervous tomorrow."],
+    "point": "見込みのある未来は be going to",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8t8g5t4q",
     "ja": "なんで泣いてるの？",
     "en": "Why are you crying?",
@@ -254,6 +328,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9a4x6y9t",
+    "ja": "終わったらほっとするよ。",
+    "en": "I'll be relieved when it's over.",
+    "alternatives": [
+      "I'll be relieved once it's over.",
+      "When it's over, I'll be so relieved."
+    ],
+    "point": "when の後は未来でも現在形",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9b9h9v7a",

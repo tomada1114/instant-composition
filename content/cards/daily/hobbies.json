@@ -82,6 +82,19 @@
     }
   },
   {
+    "id": "c_5e6y6x3z",
+    "ja": "雨でも走るつもりだよ。",
+    "en": "I'll run even if it rains.",
+    "alternatives": ["Even if it rains, I'll run.", "Rain or shine, I'll run."],
+    "point": "Even if の後は未来でも現在形",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 7,
+    "grammar": ["concession-contrast", "time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5h3k3b7q",
     "ja": "近くにジムがあるよ。",
     "en": "There's a gym nearby.",
@@ -156,6 +169,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5z3f3w2a",
+    "ja": "週末、ハイキングに行くかも。",
+    "en": "I might go hiking this weekend.",
+    "alternatives": [
+      "I may go hiking this weekend.",
+      "I might go for a hike this weekend."
+    ],
+    "point": "かもは might でやわらげる",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 6,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6u3t3a4q",
@@ -240,6 +269,19 @@
     }
   },
   {
+    "id": "c_8f6w6h6f",
+    "ja": "開演は何時か知ってる？",
+    "en": "Do you know when it starts?",
+    "alternatives": ["Do you know what time it starts?", "Any idea when it starts?"],
+    "point": "間接疑問は where の後が平叙文の語順",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 7,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8r3t2s5r",
     "ja": "祭りは毎年夏に開かれる。",
     "en": "The festival is held every summer.",
@@ -260,6 +302,35 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8x9f8w9r",
+    "ja": "日曜の陶芸教室に通ってる。",
+    "en": "I take a Sunday pottery class.",
+    "alternatives": [
+      "I go to a Sunday pottery class.",
+      "I attend a pottery class on Sundays."
+    ],
+    "point": "教室に通うは take a class が自然",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 6,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9e4g2b2m",
+    "ja": "最近、ヨガを始めたんだ。",
+    "en": "I took up yoga recently.",
+    "alternatives": ["I've taken up yoga recently.", "I recently took up yoga."],
+    "point": "趣味を始めるは take up",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 7,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9e7q5u3z",
@@ -283,6 +354,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9f7b3f7y",
+    "ja": "初心者でも、ギターは楽しいよ。",
+    "en": "Guitar is fun, even for beginners.",
+    "alternatives": [
+      "Even as a beginner, I enjoy guitar.",
+      "Even for a beginner, guitar is fun."
+    ],
+    "point": "Even as ~ で「〜でも」の譲歩",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 6,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9n3a2b4a",

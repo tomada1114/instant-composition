@@ -22,6 +22,19 @@
     }
   },
   {
+    "id": "c_2d4w3w6q",
+    "ja": "数日かかるかもしれません。",
+    "en": "It may take a few days.",
+    "alternatives": ["It might take a few days to fix.", "It could take a few days."],
+    "point": "見込みは may / could でやわらげる",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2x3w9b6r",
     "ja": "これに記入してください。",
     "en": "Please fill this out.",
@@ -39,6 +52,35 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_2y5w6n7a",
+    "ja": "銀行カードをなくしました。",
+    "en": "I've lost my bank card.",
+    "alternatives": ["I've lost my debit card.", "I seem to have lost my bank card."],
+    "point": "今も困っている過去の出来事は現在完了",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 6,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_2y7s6s5d",
+    "ja": "書類がそろったら、また来ます。",
+    "en": "I'll return once I have them.",
+    "alternatives": [
+      "I'll come back once I have the documents.",
+      "Once I have them, I'll be back."
+    ],
+    "point": "once の後は未来でも現在形",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 7,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_3d2w6x4x",
@@ -136,6 +178,38 @@
     }
   },
   {
+    "id": "c_5k3b4d9b",
+    "ja": "パスポートを更新しなきゃ。",
+    "en": "I need to renew my passport.",
+    "alternatives": [
+      "I have to renew my passport.",
+      "I need to get my passport renewed."
+    ],
+    "point": "必要なことは need to + 動詞",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 6,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5m9m9z3c",
+    "ja": "明日、荷物を受け取る予定です。",
+    "en": "I'm picking up the package tomorrow.",
+    "alternatives": [
+      "I'm going to pick up the package tomorrow.",
+      "I'm collecting the package tomorrow."
+    ],
+    "point": "決まった予定は現在進行形で言える",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 7,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5x9v6x2q",
     "ja": "荷物は明日届けられます。",
     "en": "It'll be delivered tomorrow.",
@@ -156,6 +230,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7f4b2z3x",
+    "ja": "必要なのは、身分証明書ですね。",
+    "en": "What you need is an ID.",
+    "alternatives": ["What you need is some ID.", "What you'll need is photo ID."],
+    "point": "What で始めて「必要なのは〜」と言う",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 6,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8e3a2h6z",

@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2s2f8f9b",
+    "ja": "まだ何も予定を立ててないよ。",
+    "en": "I haven't made any plans yet.",
+    "alternatives": [
+      "I haven't planned anything yet.",
+      "I still haven't made any plans."
+    ],
+    "point": "まだ〜ないは yet と現在完了",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3c3w6z6v",
     "ja": "雨が降ったら、中止だよ。",
     "en": "If it rains, it's canceled.",
@@ -174,6 +190,35 @@
     }
   },
   {
+    "id": "c_4q8n8r6b",
+    "ja": "彼女は予定を見て誘いを断った。",
+    "en": "Checking her calendar, she declined.",
+    "alternatives": [
+      "She checked her calendar and declined.",
+      "After checking her calendar, she declined."
+    ],
+    "point": "先にした動作は -ing で文頭に置ける",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5n2y2p4f",
+    "ja": "彼はいつも私たちを待たせる。",
+    "en": "He always makes us wait.",
+    "alternatives": ["He always keeps us waiting.", "He's always making us wait."],
+    "point": "make + 人 + 原形で「〜させる」",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5s3a8d8e",
     "ja": "行けないなら教えてね。",
     "en": "Tell me if you can't.",
@@ -272,6 +317,35 @@
     }
   },
   {
+    "id": "c_7b9v5s8r",
+    "ja": "駅前のカフェでいいよ。",
+    "en": "The café by the station works.",
+    "alternatives": [
+      "The café near the station is fine.",
+      "Let's meet at the café by the station."
+    ],
+    "point": "名詞の後ろに前置詞句を置いて説明する",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7k5b8d3a",
+    "ja": "時間があれば、行くのに。",
+    "en": "If I had time, I'd go.",
+    "alternatives": ["I'd go if I had time.", "If I had the time, I'd come."],
+    "point": "現実と違う仮定は If + 過去形、would",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8x2v6k8x",
     "ja": "私たち、決めなきゃ。",
     "en": "We have to decide.",
@@ -289,5 +363,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9v9n5a7e",
+    "ja": "話してた旅行、なくなったよ。",
+    "en": "The trip we discussed fell through.",
+    "alternatives": [
+      "The trip we talked about fell through.",
+      "The trip we were talking about fell through."
+    ],
+    "point": "that を省いた関係詞節で名詞を修飾",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]
