@@ -1,3 +1,4 @@
+import { inLevelBand } from "./compose-pick";
 import type { PracticeError } from "./errors";
 import { emptyTally } from "./empty";
 import type {
@@ -149,9 +150,7 @@ export function decideAnswers(
       moved.add(input.cardId);
     }
   }
-  if (entries.length === 0) {
-    return undefined;
-  }
+  if (entries.length === 0) return undefined;
   const firsts = entries.filter((entry) => entry.detail.pass === "first");
   const day = state.day ?? emptyTally(round.day);
   const { stats } = state;
@@ -160,9 +159,10 @@ export function decideAnswers(
     level === null
       ? []
       : firsts
-          .filter((entry) => entry.answeredAt >= level.at) // older: the old level's window
-          .filter((entry) => Math.abs(entry.snapshot.level - level.level) <= 1)
+          .filter((entry) => entry.answeredAt >= level.at) // older: before this level was set
+          .filter((entry) => inLevelBand(entry.snapshot.level, level.level))
           .map((entry) => ({
+            cardId: entry.item.id,
             level: entry.snapshot.level,
             result: entry.detail.result,
             elapsedMs: entry.detail.elapsedMs,

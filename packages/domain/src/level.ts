@@ -22,9 +22,9 @@ export type LevelChoice =
 
 /**
  * The stats after the learner's choice, or `stats` itself when nothing moves.
- * A picked level that differs starts a fresh window, as any level change
- * does; switching mode alone keeps the level and its window, so adjusting
- * resumes from where the learner left it.
+ * A picked level that differs starts a fresh window, as a placement does;
+ * switching mode alone keeps the level and its window, so adjusting resumes
+ * from where the learner left it.
  */
 export function decideLevel(
   stats: LearnerStats,
@@ -52,8 +52,8 @@ export function decideLevel(
 }
 
 /**
- * The level the answers suggest beside one picked by hand, or null in `auto`,
- * where the answers move the level themselves, and while there are too few.
+ * The level the answers suggest beside one picked by hand — the same estimate
+ * `auto` moves to — or null in `auto`, and while there are too few answers.
  */
 export function suggestedLevel(stats: LearnerStats): number | null {
   if (levelModeOf(stats) === "auto" || stats.level === null) {
@@ -72,9 +72,9 @@ export interface LevelSettled {
 }
 
 /**
- * The level a placement round measured, or the move after any other round,
- * judged on the first-pass answers since the level last changed. A level
- * picked by hand stays put whatever the answers say.
+ * The level a placement round measured, or the move after any other round to
+ * the level the window's first-pass answers show. A level picked by hand
+ * stays put whatever the answers say.
  */
 export function settleLevel(
   round: Round,
@@ -99,7 +99,7 @@ export function settleLevel(
   if (stats.level === null || levelModeOf(stats) === "manual") {
     return unchanged;
   }
-  const adjusted = adjustLevel(stats.level.level, stats.levelWindow);
+  const adjusted = adjustLevel(stats.level.level, stats.levelWindow, round.startedAt);
   if (adjusted.change === "same") {
     return unchanged;
   }

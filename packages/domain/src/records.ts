@@ -190,7 +190,7 @@ export interface LearnerStats {
   readonly level: LevelEntry | null;
   /** Absent in stats stored before a level could be picked, all `auto`; see `levelModeOf`. */
   readonly levelMode?: LevelMode;
-  /** First-pass answers since the level last changed, the newest `TUNING.difficulty.window`. */
+  /** First-pass answers since the level was placed or picked, the newest `TUNING.difficulty.window`. */
   readonly levelWindow: readonly DifficultyAnswer[];
   /** A learner has at most one round open at a time. */
   readonly openRound: { readonly id: string; readonly day: DayKey } | null;
