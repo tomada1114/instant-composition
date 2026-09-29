@@ -31,9 +31,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:0b8752cd6609adc226f72c1279912ebac10d1877eebe01f08da4e80912d5511d",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:26b84ff1c7a092175f50cb01f8f5ed718fe1938019010df54d2e93b33138e8bb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -141,23 +141,13 @@
     "level": 1,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3n2e3d5g",
-    "ja": "エラー、2回見たけど昨夜は見なかった。",
-    "en": "I've seen it twice, not last night.",
-    "alternatives": [
-      "I've seen it twice, but not last night.",
-      "It's come up twice, but not last night."
-    ],
-    "point": "回数は現在完了、last night は過去形で使い分ける",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 5,
-    "grammar": ["tense-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:22daa9ebc69245820bcbdd8c2cfda9b62fee67cc3cce796d850155a9b039b3d8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3w6y7f3n",
@@ -173,7 +163,13 @@
     "level": 3,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fd86e6c464b19467a336709cf4318c7d5022d59ec8478caa2e9d24224495cdc1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4g7z6c8y",
@@ -205,26 +201,10 @@
     "stamps": {
       "core": {
         "hash": "sha256:7e3efe8486c9c53d0a5b9f014923a42536c82a6d7d638c5e42647b70fb4e228e",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_4m7d7j7s",
-    "ja": "このページ、朝からずっと遅い。",
-    "en": "This page has been slow since this morning.",
-    "alternatives": [
-      "This page has been slow all morning.",
-      "The page has been slow all morning."
-    ],
-    "point": "朝から今まで続く状態は現在完了の has been で",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 4,
-    "grammar": ["present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_4m9y8p4e",
@@ -336,7 +316,13 @@
     "level": 2,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:88759c00b04084dc684189ca13b19c4959dedf10a62ff324dd137dc486ccd3b3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6k3y4g5m",
@@ -368,8 +354,8 @@
     "stamps": {
       "core": {
         "hash": "sha256:3cc211bc4c4239e27062c82150cd009cd6ea98b384f9576d928bfbed2033a2c2",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -402,22 +388,6 @@
     "subtopic": "debugging",
     "level": 7,
     "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6u7e3u3m",
-    "ja": "ユーザーが何をしたか聞いてくれる？",
-    "en": "Can you ask the user what they did?",
-    "alternatives": [
-      "Could you ask the user what they did?",
-      "Can you ask them what they did?"
-    ],
-    "point": "間接疑問は what the user did の語順で、疑問文にしない",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 4,
-    "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -531,23 +501,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8c2j2e5w",
-    "ja": "仮にライブラリなら、ステージも落ちる？",
-    "en": "If it were the library, would staging crash?",
-    "alternatives": [
-      "Were it the library, would staging crash too?",
-      "Suppose it were the library, would staging crash?"
-    ],
-    "point": "現在の仮定は were、帰結は would で言う",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 5,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c0fcfaaa293625adafcf2d5e711ea7e9df3e7a9868f6341932db49dcec3a3c20",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8c9b7g8j",
@@ -579,7 +539,13 @@
     "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e67f2c110931103fff0cf388b6096d9533453164353d81a914186d8664740cab",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8t8u8d2f",
@@ -611,7 +577,13 @@
     "level": 5,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8acaf4453c5791214b373f65cb16344c2b93323001bfa1470e0cc91ed0666d46",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9e9f7k2n",
@@ -627,7 +599,13 @@
     "level": 2,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e143f81e4d2c7085e3dc68f63cfdc89cfcceaec9c8362c57fd70ada992e507fd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9p5q3h3h",
@@ -675,6 +653,12 @@
     "level": 3,
     "grammar": ["progressive-aspect", "past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f7349cba8123b15869d7a980e20ea936f281088ca6b0cfce74e4393d24aa147e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
