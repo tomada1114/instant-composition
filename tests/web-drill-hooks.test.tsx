@@ -6,6 +6,7 @@ import {
   drillReducer,
   feedbackMs,
   initDrill,
+  useAnswerQueue,
   useAnswerSync,
   useDrillClock,
   useDrillKeys,
@@ -28,6 +29,9 @@ function fresh(): DrillState {
     intro: false,
   });
 }
+
+/** The round `r`, as far as its answer queue reads it. */
+const ROUND_R = { id: "r", deck: ["c1", "c2"], answered: [] };
 
 function answer(cardId: string): AnswerInput {
   return {
@@ -160,7 +164,7 @@ describe("useAnswerSync", () => {
     const onFailure = vi.fn();
     const { rerender } = renderHook(
       ({ answers }: { answers: readonly AnswerInput[] }) =>
-        useAnswerSync("r", answers, onFailure),
+        useAnswerSync(useAnswerQueue(ROUND_R).queue, answers, onFailure),
       { initialProps: { answers: [answer("c1")] } },
     );
     await act(async () => {
@@ -181,6 +185,30 @@ describe("useAnswerSync", () => {
       ),
     ).toStrictEqual(["c1", "c1", "c2"]);
     expect(new Set(urls)).toStrictEqual(new Set(["/api/v1/rounds/r/answers"]));
+    expect(sessionStorage.getItem("drill-answers:r")).toBeNull();
+  });
+
+  it("sends what an earlier page of the tab left unsent as soon as it mounts", async () => {
+    sessionStorage.setItem("drill-answers:r", JSON.stringify([answer("c1")]));
+    const posted: string[] = [];
+    vi.stubGlobal("fetch", (_url: string, init: RequestInit) => {
+      posted.push(init.body as string);
+      return Promise.resolve(new Response(null, { status: 204 }));
+    });
+    const { result } = renderHook(() => {
+      const arrived = useAnswerQueue(ROUND_R);
+      useAnswerSync(arrived.queue, [], vi.fn());
+      return arrived;
+    });
+    expect(result.current.unsaved).toStrictEqual([answer("c1")]);
+    await act(async () => {
+      await vi.runAllTimersAsync();
+    });
+    expect(
+      posted.map((body) =>
+        (JSON.parse(body) as { answers: AnswerInput[] }).answers.map((a) => a.id),
+      ),
+    ).toStrictEqual([["r:f:c1"]]);
     expect(sessionStorage.getItem("drill-answers:r")).toBeNull();
   });
 });

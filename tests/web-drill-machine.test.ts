@@ -10,6 +10,8 @@ import {
   initDrill,
   progress,
   remainingMs,
+  unsavedAnswers,
+  type AnswerInput,
 } from "@instant-composition/web";
 
 const LIMIT = 7000;
@@ -409,6 +411,51 @@ describe("resuming a round", () => {
   it("skips a card whose content did not arrive", () => {
     const state = init({ limits: { c2: LIMIT, c3: LIMIT } });
     expect(currentCard(state)).toStrictEqual({ cardId: "c2", pass: "first" });
+  });
+});
+
+describe("answers left unsaved by an earlier page", () => {
+  function given(cardId: string, overrides: Partial<AnswerInput> = {}): AnswerInput {
+    return {
+      id: answerId("round-1", "first", cardId),
+      roundId: "round-1",
+      cardId,
+      pass: "first",
+      result: "ok",
+      elapsedMs: 900,
+      ...overrides,
+    };
+  }
+  const round = { id: "round-1", deck: ["c1", "c2", "c3"], answered: [] };
+
+  it("keeps an answer of this round the server does not hold yet", () => {
+    expect(unsavedAnswers([given("c1")], round)).toStrictEqual([given("c1")]);
+  });
+
+  it("leaves out an answer the server already holds, so it is not counted twice", () => {
+    const held = { ...round, answered: [{ id: answerId("round-1", "first", "c1") }] };
+    expect(unsavedAnswers([given("c1"), given("c2")], held)).toStrictEqual([
+      given("c2"),
+    ]);
+  });
+
+  it("keeps the first of two answers under one id, as the server does", () => {
+    const later = given("c1", { result: "ng" });
+    expect(unsavedAnswers([given("c1"), later], round)).toStrictEqual([given("c1")]);
+  });
+
+  it.each([
+    ["another round", given("c1", { roundId: "round-0", id: "round-0:f:c1" })],
+    ["a card the round no longer deals", given("c9")],
+  ])("leaves out an answer of %s", (_, stored) => {
+    expect(unsavedAnswers([stored], round)).toStrictEqual([]);
+  });
+
+  it("resumes past them, a miss among them waiting in the retry pile", () => {
+    const unsaved = unsavedAnswers([given("c1", { result: "ng" }), given("c2")], round);
+    const state = init({ answered: unsaved });
+    expect(currentCard(state)).toStrictEqual({ cardId: "c3", pass: "first" });
+    expect(state.retryPile).toStrictEqual(["c1"]);
   });
 });
 

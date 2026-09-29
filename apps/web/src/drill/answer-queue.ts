@@ -45,6 +45,29 @@ function load(storage: QueueStorage | undefined, key: string): AnswerInput[] {
   }
 }
 
+/**
+ * What an earlier page of this tab queued in `round` that the server does not
+ * hold yet, once each: a reload resumes past these while the queue sends them
+ * again under the same ids, which the server takes only once.
+ */
+export function unsavedAnswers(
+  pending: readonly AnswerInput[],
+  round: {
+    readonly id: string;
+    readonly deck: readonly string[];
+    readonly answered: readonly { readonly id: string }[];
+  },
+): readonly AnswerInput[] {
+  const held = new Set(round.answered.map((answer) => answer.id));
+  return pending.filter((answer) => {
+    if (answer.roundId !== round.id || !round.deck.includes(answer.cardId))
+      return false;
+    if (held.has(answer.id)) return false;
+    held.add(answer.id);
+    return true;
+  });
+}
+
 /** The tab's `sessionStorage`, or nothing where reading it throws (storage blocked). */
 export function sessionStore(): QueueStorage | undefined {
   try {
