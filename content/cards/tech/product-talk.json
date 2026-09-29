@@ -38,22 +38,6 @@
     }
   },
   {
-    "id": "c_2g4j9n8z",
-    "ja": "今リリースするしかないなら、うちは何を削る？",
-    "en": "If we had to release now, what'd we cut?",
-    "alternatives": [
-      "What'd we cut if we had to release now?",
-      "If we had to release now, what'd we drop?"
-    ],
-    "point": "現実味の薄い仮定は if + 過去形、主節は would",
-    "topic": "tech",
-    "subtopic": "product-talk",
-    "level": 6,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2h8e2q5k",
     "ja": "営業に、要望をまとめるよう頼んでくれる？",
     "en": "Can you ask sales to compile the requests?",
@@ -234,7 +218,13 @@
     "level": 5,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a298be66f041643098c13c4dd185df0cd8fcd6beacaa18fb076956343964f9da",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5b8z7q3d",
@@ -269,7 +259,13 @@
     "level": 5,
     "grammar": ["present-perfect", "passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2e4ee277155e9b1a2e8debc2eb5b15389764955c70ccbf79f688f37086ebb9e6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5f8t7k7w",
@@ -329,7 +325,13 @@
     "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:11e837d2dd456fc2c8d7b0a2f635f17d96bffd6983d919ce5f2b67479cd7cce2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5r5v3p8t",
@@ -367,7 +369,13 @@
     "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6cdd9cce92a65985bc0a4652dae033c93c589ff1bbdd3953983d2e87b0788891",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5x3u3b5g",
@@ -383,7 +391,13 @@
     "level": 5,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:93be3c340549dad92b92dc1ace42b7efcb4035d1a13e540a5d06e2a58f1d6829",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6d6m2w4f",
@@ -421,7 +435,13 @@
     "level": 8,
     "grammar": ["indirect-questions", "cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bc240ae8f9ba2ee2bc4c079c968c1ecb6d4fdb4f3a12f42b5babe59b830c6602",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6j3a9z9j",
@@ -437,7 +457,13 @@
     "level": 7,
     "grammar": ["post-modification", "hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d60846534a1633282638257868c3dd55aebfe12bfa0c4fc059b512cebf5b4851",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6p2t9c2t",
@@ -453,7 +479,13 @@
     "level": 7,
     "grammar": ["gerunds", "time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:80d994cf52ae5bbb9e54384bd5191b4fa7e0f9e3949c2572696cf65ea9f3ac73",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7d2f9j5n",
@@ -491,7 +523,13 @@
     "level": 5,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:14f4a7006837c4136d72fdca81ffc2f517207d8a79c5ee9f3dd4b6e7e364ab51",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7u9t2a9n",
@@ -507,7 +545,13 @@
     "level": 5,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3ecd02d4173473470a4f4fd107e30849d6043ecb20647dda92c5811c6e3b1113",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8h4c5a8q",
@@ -545,7 +589,13 @@
     "level": 7,
     "grammar": ["indirect-questions", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1029dbc324fd51fef037d723c29e2f066f6f24cebfb67751e09397f999e82dfe",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9a8e2j6k",
@@ -583,7 +633,13 @@
     "level": 5,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b079695c023c82ce2469181f6daff7f7147f3a6570134b0186dbbb5939752c75",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9t7c3z8m",
@@ -606,21 +662,5 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9y5v8e9g",
-    "ja": "その機能は三か月も棚上げされています。",
-    "en": "That feature has been shelved for three months.",
-    "alternatives": [
-      "That feature has been on hold for three months.",
-      "That feature has been on ice for three months."
-    ],
-    "point": "期間を表す for と現在完了の受け身",
-    "topic": "tech",
-    "subtopic": "product-talk",
-    "level": 6,
-    "grammar": ["present-perfect", "passive-voice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   }
 ]
