@@ -22,22 +22,6 @@
     }
   },
   {
-    "id": "c_2r7m7d9g",
-    "ja": "お願いしたいのは、あと二日の延長です。",
-    "en": "What I'm asking for is a two-day extension.",
-    "alternatives": [
-      "All I'm asking for is two more days.",
-      "What I'd like is a two-day extension."
-    ],
-    "point": "What 節を主語にして「〜なのは」と言う",
-    "topic": "work",
-    "subtopic": "scheduling",
-    "level": 6,
-    "grammar": ["noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3g2y5k5r",
     "ja": "締め切り、部長に延ばしてもらえる？",
     "en": "Can you get the manager to extend it?",
@@ -102,22 +86,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_3x9t8b8b",
-    "ja": "私たちは、先方の返事を先週から待っています。",
-    "en": "We've been waiting for their reply since last week.",
-    "alternatives": [
-      "We've been waiting on their reply since last week.",
-      "We've been awaiting their reply since last week."
-    ],
-    "point": "続いている動作は have been -ing と since で表す",
-    "topic": "work",
-    "subtopic": "scheduling",
-    "level": 6,
-    "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_3y2c7f4b",
@@ -413,7 +381,13 @@
     "level": 6,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:097fbb479dd5464b808db6e5e4adc566b1848ca37b65b87507608b009e122fb5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7z9z6u6v",
@@ -429,7 +403,13 @@
     "level": 6,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:90d5a0b3f72e808432a67edd3391a533d455f1ceb66380210ac187805bb796c4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8b2w2q8f",
@@ -476,22 +456,6 @@
     }
   },
   {
-    "id": "c_8r5a5g2f",
-    "ja": "木曜予定のレビュー、金曜に動かせませんか？",
-    "en": "Could we move Thursday's review to Friday?",
-    "alternatives": [
-      "Can we push Thursday's review to Friday?",
-      "Is it possible to move Thursday's review to Friday?"
-    ],
-    "point": "「木曜予定の」は Thursday's review と所有格でまとめる",
-    "topic": "work",
-    "subtopic": "scheduling",
-    "level": 6,
-    "grammar": ["requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_9b4r6b9d",
     "ja": "私、会議をずらそうかと考え中です。",
     "en": "I'm thinking of moving the meeting.",
@@ -536,22 +500,6 @@
     }
   },
   {
-    "id": "c_9j7r2v9j",
-    "ja": "日程が決まったら、すぐ全員にメールします。",
-    "en": "I'll email everyone once the date is set.",
-    "alternatives": [
-      "I'll let everyone know as soon as it's decided.",
-      "Once the date's confirmed, I'll email everyone."
-    ],
-    "point": "未来のことでも once 節は現在形",
-    "topic": "work",
-    "subtopic": "scheduling",
-    "level": 6,
-    "grammar": ["time-and-if-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_9k5w8v5w",
     "ja": "彼女は締め切りの変更を知らなかったに違いない。",
     "en": "She must not have known about the deadline change.",
@@ -587,7 +535,35 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:69f0e0fc1d70938f4271402d2148da06ae9cabd4e0e91c039b7b1c22b488b83b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_9r2u4x2z",
+    "ja": "日程が固まり次第、すぐ全員にメールします。",
+    "en": "Once the date's nailed down, I'll email everyone.",
+    "alternatives": [
+      "As soon as the date's set, I'll email everyone.",
+      "I'll email everyone the moment the date's fixed."
+    ],
+    "point": "未来のことでも once 節は現在形。nail down は固める",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["time-and-if-clauses", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:267c85f9a0049a6d2eed47bf3c3c78e7a5156f72d7c81a15ef4bd53998455e53",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9v8a6h8u",
@@ -647,6 +623,12 @@
     "level": 6,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:186ef19df0cffe5ac5c6e55c0cdfdaea4b18f4197fa5a77e8ab0b37847f92de6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
