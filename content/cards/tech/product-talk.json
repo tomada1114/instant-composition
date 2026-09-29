@@ -19,6 +19,35 @@
     }
   },
   {
+    "id": "c_2n4d8c7a",
+    "ja": "ユーザーに試すよう頼んで。",
+    "en": "Ask users to try it.",
+    "alternatives": ["Get users to try it.", "Ask users to test it."],
+    "point": "ask + 人 + to 動詞。命令文でも同じ形",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_2r2h9b5a",
+    "ja": "この機能は、削るべきだった。",
+    "en": "We should have cut this feature.",
+    "alternatives": [
+      "We ought to have cut this feature.",
+      "We should've dropped this feature."
+    ],
+    "point": "過去の後悔は should have + 過去分詞",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3g9h4g4q",
     "ja": "通知を減らすのはどうかな？",
     "en": "How about reducing notifications?",
@@ -139,6 +168,22 @@
     }
   },
   {
+    "id": "c_4v2k2d8j",
+    "ja": "公開後、利用者が倍増した。",
+    "en": "Users have doubled since launch.",
+    "alternatives": [
+      "Our user count has doubled since launch.",
+      "The number of users has doubled since launch."
+    ],
+    "point": "since と結果の今への影響は現在完了",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 6,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5h8a6d8f",
     "ja": "先にユーザーに聞くべき。",
     "en": "We should ask users first.",
@@ -256,6 +301,38 @@
     }
   },
   {
+    "id": "c_7x8w3s9j",
+    "ja": "先月、ダークモードを出した。",
+    "en": "We shipped dark mode last month.",
+    "alternatives": [
+      "We released dark mode last month.",
+      "We launched dark mode last month."
+    ],
+    "point": "last month があれば過去形 shipped",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 6,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8y7m7r5b",
+    "ja": "ユーザーが望むのは速い検索。",
+    "en": "What users want is faster search.",
+    "alternatives": [
+      "What users want is quicker search.",
+      "Users want faster search, above all."
+    ],
+    "point": "What 節が主語。want の目的語は抜ける",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_9c3a7f2m",
     "ja": "月曜に新プランを公開する。",
     "en": "We're launching the new plan Monday.",
@@ -295,5 +372,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9x9g4h4c",
+    "ja": "画面を簡単に、と彼に頼んだ。",
+    "en": "I asked him to simplify it.",
+    "alternatives": [
+      "I asked him to simplify this screen.",
+      "I told him to simplify it."
+    ],
+    "point": "ask + 人 + to 動詞。that 節にしない",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 6,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

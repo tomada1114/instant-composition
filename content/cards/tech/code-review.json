@@ -38,6 +38,22 @@
     }
   },
   {
+    "id": "c_2m5x7p4c",
+    "ja": "出す前に、テストは直した。",
+    "en": "I'd fixed the tests before submitting.",
+    "alternatives": [
+      "I had fixed the tests before I submitted.",
+      "The tests were already fixed before I submitted."
+    ],
+    "point": "先に起きたことは過去完了 had fixed",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2p5t9w4m",
     "ja": "今日中に直せる？",
     "en": "Can you fix this today?",
@@ -55,6 +71,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_2r8u4z7b",
+    "ja": "これが壊れた関数だよ。",
+    "en": "This is the function that broke.",
+    "alternatives": [
+      "This is the function that failed.",
+      "This is the function which broke."
+    ],
+    "point": "物を受ける関係詞は that か which。who は人だけ",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_2y6f8r3h",
@@ -177,6 +209,38 @@
     }
   },
   {
+    "id": "c_5n6u7s8w",
+    "ja": "この PR、朝からずっと見てる。",
+    "en": "I've been reviewing this since morning.",
+    "alternatives": [
+      "I've been on this PR since morning.",
+      "I've been looking at this since this morning."
+    ],
+    "point": "続いている動作は現在完了進行形 + since",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5w6q7d9e",
+    "ja": "何を直すのか、説明して？",
+    "en": "Can you explain what this fixes?",
+    "alternatives": [
+      "Could you tell me what this fixes?",
+      "Can you walk me through what this fixes?"
+    ],
+    "point": "what 節の中は平叙文の語順で fixes",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5x6q4x8n",
     "ja": "テスト通ったらマージする。",
     "en": "I'll merge when tests pass.",
@@ -216,6 +280,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7w8d5t7t",
+    "ja": "これ、月曜から変わってないよ。",
+    "en": "This hasn't changed since Monday.",
+    "alternatives": [
+      "This has stayed the same since Monday.",
+      "Nothing has changed here since Monday."
+    ],
+    "point": "起点 since には現在完了。過去形にしない",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 6,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8f8x2n8k",
@@ -295,5 +375,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9t4c7p5x",
+    "ja": "この PR、二つに分けたい。",
+    "en": "I'd like to split this PR.",
+    "alternatives": [
+      "I want to split this PR into two.",
+      "I'd prefer to split this PR up."
+    ],
+    "point": "I'd like to + 動詞の原形。丁寧に希望を言う",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

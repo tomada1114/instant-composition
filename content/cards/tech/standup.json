@@ -1,5 +1,18 @@
 [
   {
+    "id": "c_2e8h8u6f",
+    "ja": "もう一日あればいいのに。",
+    "en": "I wish I had another day.",
+    "alternatives": ["I wish I had one more day.", "If only I had another day."],
+    "point": "今の願望は wish + 過去形。had にする",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3j8v3k2p",
     "ja": "今日はブロッカーが一つある。",
     "en": "There's one blocker today.",
@@ -120,6 +133,19 @@
     }
   },
   {
+    "id": "c_6n2r3w2e",
+    "ja": "QA のせいで足止めされてる。",
+    "en": "We're being held up by QA.",
+    "alternatives": ["We're being held up because of QA.", "QA is holding us up."],
+    "point": "進行中の受動は being + 過去分詞 held up",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 7,
+    "grammar": ["passive-voice", "phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6s8r9m5z",
     "ja": "詰まったら、聞くね。",
     "en": "I'll ask if I get stuck.",
@@ -177,6 +203,22 @@
     }
   },
   {
+    "id": "c_7s9x7j2s",
+    "ja": "知っていたら、手伝ったのに。",
+    "en": "If I'd known, I'd have helped.",
+    "alternatives": [
+      "If I had known, I would have helped.",
+      "Had I known, I'd have helped."
+    ],
+    "point": "過去の仮定は if + had 過去分詞、would have + 過去分詞",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7x4b3j2q",
     "ja": "いつ見てもらえる？",
     "en": "When can you review it?",
@@ -194,6 +236,48 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7z7g9c9z",
+    "ja": "今朝、私の PR がマージされた。",
+    "en": "My PR was merged this morning.",
+    "alternatives": ["My PR got merged this morning.", "My PR went in this morning."],
+    "point": "された側が主役なら受動態 was merged",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8j5a2t4d",
+    "ja": "今日は在宅でもいいですか？",
+    "en": "May I work from home today?",
+    "alternatives": ["Could I work from home today?", "Can I work from home today?"],
+    "point": "May I 〜? は丁寧な許可。from home に冠詞はいらない",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 7,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8p8u8b5v",
+    "ja": "あのバグ、引き続き調べます。",
+    "en": "I'll keep looking into that bug.",
+    "alternatives": [
+      "I'll continue looking into that bug.",
+      "I'll keep investigating that bug."
+    ],
+    "point": "look into は「調べる」。keep + 動名詞",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 7,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8u3s5f5t",

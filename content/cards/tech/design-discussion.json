@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2m5c2c2k",
+    "ja": "どっちが拡張向きか分かる？",
+    "en": "Do you know which scales better?",
+    "alternatives": [
+      "Do you know which one scales better?",
+      "Do you know which is easier to scale?"
+    ],
+    "point": "間接疑問は which scales の語順。does は使わない",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 6,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3d3y5a9j",
     "ja": "キャッシュできるよ。",
     "en": "We can cache it.",
@@ -17,6 +33,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3d9z3u4u",
+    "ja": "負荷が増えたら再検討しよう。",
+    "en": "We'll revisit this if load grows.",
+    "alternatives": [
+      "We'll look at this again if load grows.",
+      "If load goes up, we'll revisit this."
+    ],
+    "point": "未来のことでも if 節は現在形 grows",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 7,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_3h6a4n7j",
@@ -76,6 +108,22 @@
     }
   },
   {
+    "id": "c_4q6d4x8z",
+    "ja": "秘密情報は金庫で保管される。",
+    "en": "Secrets are kept in a vault.",
+    "alternatives": [
+      "Secrets are stored in a vault.",
+      "Secrets are held in a dedicated vault."
+    ],
+    "point": "される側が主役なら受動態 are kept",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 6,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4z5h3c3p",
     "ja": "どっちのほうが安い？",
     "en": "Which one is cheaper?",
@@ -93,6 +141,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5a8h3z4f",
+    "ja": "大事なのは何を削るかだ。",
+    "en": "What matters is what we cut.",
+    "alternatives": [
+      "What's important is what we cut.",
+      "The key is deciding what to cut."
+    ],
+    "point": "What で始まる名詞節が主語になる",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 6,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5b2w8a8h",
@@ -138,6 +202,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5h5n7n5w",
+    "ja": "これ、少し作り込みすぎかも。",
+    "en": "This may be a little overengineered.",
+    "alternatives": [
+      "This might be a bit overengineered.",
+      "This could be slightly overbuilt."
+    ],
+    "point": "may / might / a little で断定を和らげる",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6p4x9v7n",
@@ -217,6 +297,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8h9b2r9h",
+    "ja": "よく更新される表は分けたい。",
+    "en": "I'd split tables that update often.",
+    "alternatives": [
+      "I'd separate tables that change often.",
+      "I'd split up tables which update often."
+    ],
+    "point": "tables を後ろから that 節で説明する",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 7,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9n5x8r4x",
