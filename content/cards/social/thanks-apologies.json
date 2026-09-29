@@ -33,16 +33,16 @@
   },
   {
     "id": "c_2n5j6u5r",
-    "ja": "送ってくださらなければ、面接に間に合いませんでした。",
+    "ja": "車で送ってもらわなきゃ、面接に間に合わなかった。",
     "en": "If you hadn't driven me, I'd have missed the interview.",
     "alternatives": [
-      "Without your ride, I wouldn't have made it to the interview.",
+      "Without your ride, I'd have missed the interview.",
       "I would've missed the interview if you hadn't driven me."
     ],
     "point": "過去の仮定は had 過去分詞、帰結は would have 過去分詞",
     "topic": "social",
     "subtopic": "thanks-apologies",
-    "level": 9,
+    "level": 7,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -82,15 +82,15 @@
   {
     "id": "c_3n8z3h6v",
     "ja": "田中くんが気づかなきゃ、数字を間違えて送ってた。",
-    "en": "If Tanaka hadn't noticed, we'd have sent bad numbers.",
+    "en": "If Tanaka hadn't noticed, we'd have sent the wrong numbers.",
     "alternatives": [
       "Had Tanaka not noticed, we'd have sent the wrong numbers.",
-      "If Tanaka hadn't caught it, we'd have sent wrong numbers."
+      "If Tanaka hadn't noticed, I'd have sent the wrong numbers."
     ],
     "point": "過去の事実の裏は If S had done, S would have done",
     "topic": "social",
     "subtopic": "thanks-apologies",
-    "level": 8,
+    "level": 7,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -101,7 +101,8 @@
     "en": "I wish I'd apologized for missing her party.",
     "alternatives": [
       "If only I'd apologized for missing her party.",
-      "I wish I had said sorry for missing her party."
+      "I wish I had said sorry for missing her party.",
+      "I should have apologized for missing her party."
     ],
     "point": "過去への後悔は wish の後を過去完了にする",
     "topic": "social",
@@ -132,13 +133,13 @@
     "ja": "私のせいで皆に週末出勤させて、ごめん。",
     "en": "Sorry I made everyone work this weekend.",
     "alternatives": [
-      "I'm sorry I made everyone come in this weekend.",
-      "Sorry I made everybody work this weekend."
+      "I'm sorry I made everyone work this weekend.",
+      "Sorry I made you all work this weekend."
     ],
     "point": "make + 人 + 動詞の原形。to は付けない",
     "topic": "social",
     "subtopic": "thanks-apologies",
-    "level": 6,
+    "level": 5,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -160,22 +161,9 @@
     "stamps": {}
   },
   {
-    "id": "c_6g9j5p3n",
-    "ja": "引っ越しを手伝ってくれてありがとう。",
-    "en": "You helped me move. Thanks!",
-    "alternatives": ["Thanks for helping me move.", "Thank you for helping me move."],
-    "point": "「手伝った」は過去形 helped。help me move で動詞原形",
-    "topic": "social",
-    "subtopic": "thanks-apologies",
-    "level": 2,
-    "grammar": ["past-simple"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6w9d4v9n",
     "ja": "近所を案内してもらえたのが、何より嬉しかった。",
-    "en": "What meant most was you showing me around the neighborhood.",
+    "en": "What meant the most to me was you showing me around.",
     "alternatives": [
       "What I appreciated most was you showing me around the neighborhood.",
       "Nothing meant more to me than you showing me around."
@@ -184,7 +172,7 @@
     "topic": "social",
     "subtopic": "thanks-apologies",
     "level": 10,
-    "grammar": ["noun-clauses"],
+    "grammar": ["cleft-emphasis", "noun-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -222,18 +210,33 @@
   },
   {
     "id": "c_7y6m6f5b",
-    "ja": "夜遅くまで残ってくれた先輩に、ランチをおごった。",
-    "en": "I bought my senior colleague lunch for staying late.",
+    "ja": "残業してくれた先輩に、ランチをおごった。",
+    "en": "I bought my coworker lunch for staying late.",
     "alternatives": [
-      "I treated my senior colleague to lunch for staying late.",
-      "I treated my mentor to lunch for staying late.",
-      "I took my mentor out to lunch for staying late."
+      "I treated my coworker to lunch for staying late.",
+      "I bought my coworker lunch for working late."
     ],
     "point": "「おごる」は buy 人 lunch / treat 人 to lunch、理由は for + -ing",
     "topic": "social",
     "subtopic": "thanks-apologies",
-    "level": 7,
+    "level": 6,
     "grammar": ["gerunds"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8h7e5s8s",
+    "ja": "君の誕生日を忘れてごめん。",
+    "en": "Sorry, I forgot your birthday.",
+    "alternatives": [
+      "I'm sorry I forgot your birthday.",
+      "I forgot your birthday. I'm sorry."
+    ],
+    "point": "「忘れた」は過去形。forget は forgot と不規則に変わる",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 2,
+    "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -306,8 +309,8 @@
     "ja": "問題を起こしたのは、チームではなく私の確認不足でした。",
     "en": "It was my oversight, not the team's, that caused the problem.",
     "alternatives": [
-      "What caused the problem was my oversight, not the team.",
-      "The team isn't to blame; my oversight caused the problem."
+      "What caused the problem was my oversight, not the team's.",
+      "The team wasn't to blame; my oversight caused the problem."
     ],
     "point": "It was A, not B, that で「B ではなく A が」を強調",
     "topic": "social",
@@ -318,33 +321,18 @@
     "stamps": {}
   },
   {
-    "id": "c_9w3e8j2z",
-    "ja": "君が送ってくれなかったら、今もまだ待ってたよ。",
-    "en": "If you hadn't driven me, I'd still be waiting.",
-    "alternatives": [
-      "If you hadn't picked me up, I'd still be waiting.",
-      "Without your ride, I'd still be waiting there."
-    ],
-    "point": "過去の条件＋今の結果は If I had done, I'd be doing",
-    "topic": "social",
-    "subtopic": "thanks-apologies",
-    "level": 8,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_9x5g9a8q",
     "ja": "うちのせいじゃないのに、課長は謝った。",
     "en": "Even though it wasn't our fault, my manager apologized.",
     "alternatives": [
       "My manager apologized even though it wasn't our fault.",
-      "Although it wasn't our fault, my manager still apologized."
+      "Although it wasn't our fault, my manager still apologized.",
+      "It wasn't our fault, but my manager apologized anyway."
     ],
     "point": "「〜のに」は even though で対比させる",
     "topic": "social",
     "subtopic": "thanks-apologies",
-    "level": 8,
+    "level": 6,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}

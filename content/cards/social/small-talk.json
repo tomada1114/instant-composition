@@ -13,7 +13,13 @@
     "level": 6,
     "grammar": ["concession-contrast", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:05cf56be284429e9b5ce9859b56fe159d4402a0fd716430bf914f29229ef0c56",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2x8p9q3m",
@@ -51,7 +57,13 @@
     "level": 9,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5e913538ef063aadd4e7aefb5662cf3f82191f81998a22ee18f7c4e1b34a6a82",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3t8g4k3k",
@@ -67,7 +79,13 @@
     "level": 9,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a1fb07ecd586973190ab8f83fdc464b859ddbcaea48af83fa8e14aa59fb48300",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3t9t7u7r",
@@ -114,22 +132,6 @@
     }
   },
   {
-    "id": "c_4q3s3x6p",
-    "ja": "あの仕事を断ってなかったら、今ごろ大阪に住んでたかもね？",
-    "en": "If you hadn't turned it down, you might be in Osaka.",
-    "alternatives": [
-      "You might be in Osaka now if you hadn't turned it down.",
-      "If you hadn't said no, you could be in Osaka now."
-    ],
-    "point": "過去の仮定は過去完了、今の状況は might be",
-    "topic": "social",
-    "subtopic": "small-talk",
-    "level": 10,
-    "grammar": ["mixed-conditional", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_4x6v5t9u",
     "ja": "週末はどこに行ったの？",
     "en": "Where did you go this weekend?",
@@ -172,22 +174,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_5f9q6w3p",
-    "ja": "姉が誘ってくれなかったら、今ごろキャンプにハマってないよ。",
-    "en": "If my sister hadn't invited me, I wouldn't be into camping now.",
-    "alternatives": [
-      "I wouldn't be into camping now if my sister hadn't invited me.",
-      "Without my sister's invite, I wouldn't be into camping now."
-    ],
-    "point": "誘ったのは過去で hadn't asked、ハマってないのは今で wouldn't be",
-    "topic": "social",
-    "subtopic": "small-talk",
-    "level": 10,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_5q5g3r5s",
@@ -269,55 +255,35 @@
     "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bd006afe3766de624861d1cf215adc5304fbc412d088f8d3e574f982b1743ca6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_7f2y9z2p",
-    "ja": "大雨だったから、子どもたちに一日中遊ばせてあげた。",
-    "en": "It poured, so I let them play all day.",
+    "id": "c_7e4e6q6h",
+    "ja": "もうこの街に慣れた？先月はまだ迷ってたよね。",
+    "en": "Found your feet yet? You were still getting lost last month.",
     "alternatives": [
-      "It poured, so I let the kids play all day.",
-      "It was pouring, so I let them play all day."
+      "Have you settled in yet? Last month you kept getting lost.",
+      "Have you found your feet yet? You were still lost last month."
     ],
-    "point": "「させてあげた」は let + 人 + 動詞の原形（to は不要）",
-    "topic": "social",
-    "subtopic": "small-talk",
-    "level": 7,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7j8v4u4w",
-    "ja": "隣に越してきたご夫婦が、うちを家に招いてくれたよ。",
-    "en": "The couple who moved in next door invited us over.",
-    "alternatives": [
-      "The couple who moved in next door asked us over.",
-      "Our new next-door neighbors invited us over."
-    ],
-    "point": "「越してきた」は who moved in で直前の名詞を説明",
-    "topic": "social",
-    "subtopic": "small-talk",
-    "level": 8,
-    "grammar": ["relative-clauses", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7k3s4s8m",
-    "ja": "もう新しい街に慣れた？先月はまだ迷ってたよね。",
-    "en": "Have you settled in? You were still getting lost last month.",
-    "alternatives": [
-      "Have you gotten used to it? You were still lost last month.",
-      "Have you settled in yet? Last month you were still getting lost."
-    ],
-    "point": "今の状態は現在完了、先月の様子は過去進行形で分ける",
+    "point": "「慣れた？」は現在完了、先月の様子は過去進行形",
     "topic": "social",
     "subtopic": "small-talk",
     "level": 10,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:74451f2b0aafc972dae8dedcf27630c52feae7a5d7a5080688cd98cc11c20e95",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7s5j6n7r",
@@ -333,7 +299,13 @@
     "level": 6,
     "grammar": ["reported-speech", "past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a5d400acd5b287c09da5579dd2db74f36e95ab2406d2a0c6d8a4de9ffd09988c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7u9e6s4h",
@@ -371,7 +343,13 @@
     "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:154230c47a09732a31884b5f924f3ed81f10009108199b3cba2f08a31de01b96",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8f5x9x7k",
@@ -387,7 +365,13 @@
     "level": 7,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8262e1462fe0053254707f552b0be5314c57442b582cad3c8427285dcaa961c7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8n3c5c5k",
@@ -453,22 +437,6 @@
     }
   },
   {
-    "id": "c_9e5c9p8w",
-    "ja": "姉が天気予報を見てたら、キャンプを延期してたはず。",
-    "en": "If she'd seen the forecast, she'd have postponed camping.",
-    "alternatives": [
-      "My sister would've put off camping if she'd checked.",
-      "If she'd checked the forecast, she'd have postponed camping."
-    ],
-    "point": "過去の仮定は if + had 過去分詞、結果は would have",
-    "topic": "social",
-    "subtopic": "small-talk",
-    "level": 7,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_9k3t3m9j",
     "ja": "今夜は上着持っていくといいよ。",
     "en": "You should take a jacket tonight.",
@@ -505,7 +473,13 @@
     "level": 5,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0a27a80953b4db64f39a86dc1da378581740395ecbbbbec223f5c74f8c740414",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9y5y7y6s",
@@ -521,6 +495,12 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a86045ab704b0076172a985f4ccf1a2f42498631670a21c74b5feaeb791be056",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]

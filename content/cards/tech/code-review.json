@@ -43,29 +43,13 @@
     "en": "I'd gotten every test passing before I asked.",
     "alternatives": [
       "Before asking, I'd made every test pass.",
-      "All the tests had passed before I asked."
+      "I'd gotten all the tests passing before I asked."
     ],
     "point": "頼む前に済んでいたことは had + 過去分詞で表す",
     "topic": "tech",
     "subtopic": "code-review",
     "level": 6,
     "grammar": ["past-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3u9t2b4d",
-    "ja": "本物のAPIを呼ぶテストは、モックにすべきです。",
-    "en": "Tests calling the real API should use mocks instead.",
-    "alternatives": [
-      "Any test that hits the real API should be mocked.",
-      "Tests that call the real API ought to use mocks."
-    ],
-    "point": "「呼ぶテスト」は Tests calling で後ろから修飾",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 7,
-    "grammar": ["post-modification", "modal-obligation-advice"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -124,18 +108,15 @@
     }
   },
   {
-    "id": "c_4s7s9m2m",
-    "ja": "分かりやすく変数名を変えました。",
-    "en": "I renamed this to make it clearer.",
-    "alternatives": [
-      "I renamed it so it's clearer.",
-      "I renamed it to be more readable."
-    ],
-    "point": "「〜するために」は to ＋動詞の原形",
+    "id": "c_4c7e2d4x",
+    "ja": "ここ、誤字が一つあるよ。",
+    "en": "There is a typo here.",
+    "alternatives": ["I see a typo here.", "There's a typo on this line."],
+    "point": "一つなので There is、a typo と単数形に",
     "topic": "tech",
     "subtopic": "code-review",
-    "level": 3,
-    "grammar": ["infinitives", "past-simple"],
+    "level": 1,
+    "grammar": ["there-is-are"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -152,22 +133,6 @@
     "subtopic": "code-review",
     "level": 2,
     "grammar": ["future-forms"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5e5f9k5u",
-    "ja": "作成者は公開APIを変えずにキャッシュを書き直した。",
-    "en": "The author rewrote the cache without touching the public API.",
-    "alternatives": [
-      "The author rewrote the cache, leaving the public API untouched.",
-      "The author rewrote the cache but didn't touch the public API."
-    ],
-    "point": "「変えずに」は without touching で表す",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 10,
-    "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -206,12 +171,12 @@
   {
     "id": "c_5n5j2f4p",
     "ja": "見てほしいのは、ネット切断時にリトライが動くかです。",
-    "en": "What I'd like checked is whether retries work offline.",
+    "en": "What I'd like you to check is whether retries work offline.",
     "alternatives": [
-      "The main thing is whether retries still work offline.",
-      "What I'm after is whether retries work when we're offline."
+      "Could you check whether retries work offline?",
+      "What I want you to check is if retries work offline."
     ],
-    "point": "「見てほしいのは」は What I'd like checked is で始める",
+    "point": "「見てほしいのは」は What I'd like you to check is で始める",
     "topic": "tech",
     "subtopic": "code-review",
     "level": 9,
@@ -220,17 +185,33 @@
     "stamps": {}
   },
   {
+    "id": "c_5p8a9t6t",
+    "ja": "この変数を分かりやすく改名しました。",
+    "en": "I renamed the variable to clarify it.",
+    "alternatives": [
+      "I renamed this variable for clarity.",
+      "I renamed this variable to be clearer."
+    ],
+    "point": "「〜するために」は to ＋動詞の原形",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 3,
+    "grammar": ["infinitives", "past-simple"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_5r5x8s2x",
     "ja": "リトライがエラーを隠さないか心配でした。",
-    "en": "I was worried the retry logic would hide errors.",
+    "en": "I was worried the retries would hide errors.",
     "alternatives": [
-      "My concern was that retries might hide errors.",
-      "I was afraid the retries would mask errors."
+      "I was afraid the retries would mask errors.",
+      "I was worried retries might hide errors."
     ],
     "point": "「心配だった」は I was worried + 節で続ける",
     "topic": "tech",
     "subtopic": "code-review",
-    "level": 7,
+    "level": 6,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -259,11 +240,11 @@
   },
   {
     "id": "c_5y2h6s7f",
-    "ja": "あの時テストしていれば、今デバッグしてないのに。",
-    "en": "If we'd tested it then, we wouldn't be debugging now.",
+    "ja": "あの時テストしてれば、僕ら今デバッグしてないのに。",
+    "en": "If we'd tested then, we wouldn't be debugging now.",
     "alternatives": [
-      "Had we tested it then, we wouldn't be debugging now.",
-      "If we'd tested that, we wouldn't still be debugging."
+      "If we'd tested back then, we wouldn't be debugging now.",
+      "We wouldn't be debugging now if we'd tested then."
     ],
     "point": "過去の仮定は had + 過去分詞、今の結果は wouldn't be -ing",
     "topic": "tech",
@@ -357,9 +338,25 @@
     "stamps": {}
   },
   {
+    "id": "c_8w4s4r2y",
+    "ja": "変数名ごときで、話を長引かせるのはやめよう。",
+    "en": "Let's not drag this out over a variable name.",
+    "alternatives": [
+      "Let's not waste more time arguing over a variable name.",
+      "We shouldn't draw this out over a variable name."
+    ],
+    "point": "「長引かせる」は drag out（drag this out）",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 10,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9b2h4a7n",
-    "ja": "見つけてくれなかったら、そのまま出してたよ。",
-    "en": "If you hadn't caught it, we'd have shipped.",
+    "ja": "見つけてくれなかったら、僕らそのまま出してた。",
+    "en": "If you hadn't caught it, we'd have shipped it.",
     "alternatives": [
       "If you hadn't spotted it, we'd have released it.",
       "We'd have shipped it if you hadn't caught it."
@@ -399,18 +396,18 @@
     "point": "未来のことでも when 節は現在形で merge とする",
     "topic": "tech",
     "subtopic": "code-review",
-    "level": 5,
+    "level": 4,
     "grammar": ["time-and-if-clauses", "future-forms"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_9s8h4x5r",
-    "ja": "きっとスナップショットの更新を忘れたんですね。",
+    "ja": "きっと君、スナップショットの更新を忘れたんですね。",
     "en": "You must have forgotten to update the snapshots.",
     "alternatives": [
       "Looks like you forgot to update the snapshots.",
-      "I guess you forgot to update the snapshots."
+      "I bet you forgot to update the snapshots."
     ],
     "point": "過去への確信ある推量は must have + 過去分詞",
     "topic": "tech",
@@ -421,22 +418,19 @@
     "stamps": {}
   },
   {
-    "id": "c_9x6c3y7n",
-    "ja": "この PR、テストが二つある。",
-    "en": "There are two tests in it.",
-    "alternatives": ["This PR has two tests.", "It has two tests."],
-    "point": "複数なので There are、tests と複数形に",
+    "id": "c_9t3h8y3u",
+    "ja": "正直、この抽象化はやりすぎかもしれません。",
+    "en": "Honestly, this abstraction might be overkill.",
+    "alternatives": [
+      "To be honest, this abstraction may be a bit much.",
+      "Frankly, I think this abstraction is overkill."
+    ],
+    "point": "「かもしれません」は might で断定をやわらげる",
     "topic": "tech",
     "subtopic": "code-review",
-    "level": 1,
-    "grammar": ["there-is-are"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:c6ea9b62e99b4a426247f011b76338e5bad68197cc883e64f9bc8ea11e844c2b",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]
