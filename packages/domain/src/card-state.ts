@@ -10,7 +10,7 @@ export interface LeitnerAnswer {
   readonly day: DayKey;
   readonly result: AnswerResult;
   readonly elapsedMs: number;
-  readonly limitMs: number;
+  readonly paceMs: number;
 }
 
 /** A card's state after one more first-pass answer; `previous` is undefined for a new card. */
@@ -22,7 +22,7 @@ export function nextCardState(
     answer.result === "ok"
       ? Math.min(
           LAST_BOX,
-          (previous?.box ?? 0) + (isFast(answer.elapsedMs, answer.limitMs) ? 2 : 1),
+          (previous?.box ?? 0) + (isFast(answer.elapsedMs, answer.paceMs) ? 2 : 1),
         )
       : 0;
   return {

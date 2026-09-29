@@ -40,14 +40,20 @@ const TOPICS: TopicInfo[] = [
 
 function settingsPage(topics: TopicInfo[] = TOPICS): SettingsPageView {
   return {
-    settings: { topics: [], focus: [], dailySize: 10, sound: true },
+    settings: { topics: [], focus: [], dailySize: 10, sound: true, limitSeconds: 30 },
     topics,
     toeic: null,
   };
 }
 
 const SAVED: SettingsView = {
-  settings: { topics: ["work"], focus: [], dailySize: 10, sound: true },
+  settings: {
+    topics: ["work"],
+    focus: [],
+    dailySize: 10,
+    sound: true,
+    limitSeconds: 30,
+  },
   removedFocus: [],
   completedToday: false,
 };

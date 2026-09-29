@@ -30,6 +30,7 @@ const SETTINGS: Settings = {
   focus: [],
   dailySize: 10,
   sound: true,
+  limitSeconds: 30,
 };
 
 const PAGE: SettingsPageView = {
@@ -212,6 +213,35 @@ describe("the settings screen, W11 size and sound", () => {
     await settle();
     expect(patches).toStrictEqual([{ dailySize: 5 }]);
     expect(screen.getByText(ja.Settings.size.completed)).toBeInTheDocument();
+  });
+
+  it("shows the time limit saved and saves one picked, saying it applies from the next round", async () => {
+    const { patches } = serveSettings();
+    await renderApp("/settings");
+    const limits = screen.getByRole("radiogroup", { name: ja.Settings.limit.title });
+    expect(
+      within(limits)
+        .getAllByRole("radio")
+        .map((limit) => limit.textContent),
+    ).toStrictEqual(["15", "20", "30", "45", "60"]);
+    expect(
+      within(limits).getByRole("radio", {
+        name: fill(ja.Settings.limit.count, { seconds: 30 }),
+      }),
+    ).toBeChecked();
+    expect(screen.getByText(ja.Settings.limit.next)).toBeInTheDocument();
+    fireEvent.click(
+      within(limits).getByRole("radio", {
+        name: fill(ja.Settings.limit.count, { seconds: 45 }),
+      }),
+    );
+    await settle();
+    expect(patches).toStrictEqual([{ limitSeconds: 45 }]);
+    expect(
+      within(limits).getByRole("radio", {
+        name: fill(ja.Settings.limit.count, { seconds: 45 }),
+      }),
+    ).toBeChecked();
   });
 
   it("switches the sound", async () => {

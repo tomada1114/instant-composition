@@ -1,6 +1,7 @@
 import {
-  limitMsForWords,
+  limitMsOf,
   nearestMilestone,
+  paceMsForWords,
   ringProgress,
   type Portion,
   type ReviewEntry,
@@ -11,7 +12,10 @@ import {
 import { toeicOf, type CatalogSnapshot } from "./catalog";
 import type { DrillCard, ReachView, RoundPayload, RoundSummary } from "./views";
 
-/** The round as the drill needs it: its cards with their limits, and where it stands. */
+/**
+ * The round as the drill needs it: its cards with the limit the round was
+ * dealt with and each card's pace, and where it stands.
+ */
 export function payloadOf(
   round: Round,
   reviews: readonly ReviewEntry[],
@@ -26,6 +30,7 @@ export function payloadOf(
       // spread would put every field a card gains, such as its concepts, on the wire.
       const { topic, subtopic, level, words, prompt, text, alternatives, explanation } =
         card;
+      const paceMs = paceMsForWords(words);
       cards[id] = {
         id,
         topic,
@@ -36,7 +41,8 @@ export function payloadOf(
         text,
         alternatives,
         explanation,
-        limitMs: limitMsForWords(words),
+        limitMs: limitMsOf(round, paceMs),
+        paceMs,
       };
     }
   }

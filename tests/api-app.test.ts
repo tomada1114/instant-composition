@@ -187,7 +187,7 @@ describe("the commands", () => {
     );
     expect(new Set(shapes)).toStrictEqual(
       new Set([
-        "alternatives explanation id level limitMs prompt subtopic text topic words",
+        "alternatives explanation id level limitMs paceMs prompt subtopic text topic words",
       ]),
     );
   });
@@ -224,6 +224,98 @@ describe("the commands", () => {
         await api.call("POST", "/v1/rounds", { roundId: "p1", kind: "placement" }),
       ),
     ).toStrictEqual([503, "ERR_CONTENT_UNREADABLE"]);
+  });
+});
+
+describe("the per-card time limit", () => {
+  const limits = (round: RoundPayload) =>
+    Object.values(round.cards).map((card) => card.limitMs);
+
+  it("deals a new learner's round 30 seconds on every card, and says so in the settings", async () => {
+    const api = makeApi();
+    const round = await startedPlacement(api);
+    expect(limits(round).length).toBeGreaterThan(0);
+    expect(new Set(limits(round))).toStrictEqual(new Set([30_000]));
+    const page = await contracted(await api.call("GET", "/v1/settings"), "getSettings");
+    expect(page).toMatchObject({ settings: { limitSeconds: 30 } });
+  });
+
+  it("deals 45 seconds from the next round once the learner picks it, and holds the round under way to its own", async () => {
+    const api = makeApi();
+    const first = await startedPlacement(api);
+    const saved = await api.call("PATCH", "/v1/settings", { limitSeconds: 45 });
+    expect(await contracted(saved, "updateSettings")).toMatchObject({
+      settings: { limitSeconds: 45 },
+    });
+
+    const resumed = await api.call("POST", "/v1/rounds", {
+      roundId: "p1",
+      kind: "placement",
+    });
+    expect(new Set(limits((await resumed.json()) as RoundPayload))).toStrictEqual(
+      new Set([30_000]),
+    );
+
+    const next = await api.call("POST", "/v1/rounds", { roundId: "x1", kind: "extra" });
+    const dealt = (await contracted(next, "startRound")) as RoundPayload;
+    expect(limits(dealt).length).toBeGreaterThan(0);
+    expect(new Set(limits(dealt))).toStrictEqual(new Set([45_000]));
+
+    const [late] = first.deck;
+    if (late === undefined) throw new Error("No deck.");
+    const recorded = await api.call("POST", "/v1/rounds/p1/answers", {
+      answers: [
+        {
+          id: "p1:f:late",
+          cardId: late,
+          pass: "first",
+          result: "timeout",
+          elapsedMs: 1,
+        },
+      ],
+    });
+    expect(recorded.status).toBe(204);
+    const reviews = await api.stores.forLearner(learnerId("learner-1")).reviewsOf("p1");
+    expect(reviews.map((review) => review.detail)).toMatchObject([
+      { limitMs: 30_000, elapsedMs: 30_000 },
+    ]);
+  });
+
+  it("judges fast against each card's length-derived pace, whatever limit was chosen", async () => {
+    const api = makeApi();
+    await startedPlacement(api);
+    await api.call("PATCH", "/v1/settings", { limitSeconds: 60 });
+    const started = await api.call("POST", "/v1/rounds", {
+      roundId: "x1",
+      kind: "extra",
+    });
+    const round = (await started.json()) as RoundPayload;
+    const cards = Object.values(round.cards);
+    // Every flip below lands within half the 60-second limit; only the pace tells them apart.
+    const elapsed = (index: number, paceMs: number) => paceMs / 2 + (index % 2);
+    expect(cards.every((card) => card.paceMs / 2 + 1 <= card.limitMs / 2)).toBe(true);
+
+    await api.call("POST", "/v1/rounds/x1/answers", {
+      answers: cards.map((card, index) => ({
+        id: `x1:f:${card.id}`,
+        cardId: card.id,
+        pass: "first",
+        result: "ok",
+        elapsedMs: elapsed(index, card.paceMs),
+      })),
+    });
+
+    const expected = new Map(
+      cards.map((card, index) => [card.id, index % 2 === 0 ? "easy" : "good"]),
+    );
+    const reviews = await api.stores.forLearner(learnerId("learner-1")).reviewsOf("x1");
+    expect(reviews).toHaveLength(cards.length);
+    for (const review of reviews) {
+      expect([review.item.id, review.outcome]).toStrictEqual([
+        review.item.id,
+        expected.get(review.item.id),
+      ]);
+    }
   });
 });
 

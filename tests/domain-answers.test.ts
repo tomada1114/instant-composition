@@ -18,8 +18,9 @@ import {
 
 const DAY_MS = 86_400_000;
 
-// Worked examples against a 5-card round `r1` on 2026-09-22, every card eight
-// words long, so the limit is ceil(4 + 8 * 0.5) = 8 seconds.
+// Worked examples against a 5-card round `r1` on 2026-09-22 dealt with a
+// 30-second limit, every card eight words long, so the pace "fast" is judged
+// by is ceil(4 + 8 * 0.5) = 8 seconds.
 
 const CARDS: ReadonlyMap<string, CardFacts> = new Map<string, CardFacts>([
   ...["c1", "c2", "c3", "c4"].map(
@@ -113,29 +114,61 @@ describe("decideAnswers", () => {
     expect(change?.entries).toHaveLength(1);
   });
 
-  it("works the limit out itself, holds the elapsed time to it, and gives a timeout all of it", () => {
-    const change = decideAnswers(
-      state(),
-      [
-        answer({ elapsedMs: 60_000 }),
-        answer({ id: "r1:f:c2", cardId: "c2", result: "timeout", elapsedMs: 10 }),
-        answer({ id: "r1:f:c5", cardId: "c5", result: "ng", elapsedMs: 1_000 }),
-      ],
-      CARDS,
-      9,
-    );
-    expect(
-      change?.entries.map((entry) => [
-        entry.item.id,
-        entry.detail.elapsedMs,
-        entry.detail.limitMs,
-      ]),
-    ).toStrictEqual([
-      ["c1", 8_000, 8_000],
-      ["c2", 8_000, 8_000],
-      ["c5", 1_000, 6_000],
+  const HELD = [
+    answer({ elapsedMs: 60_000 }),
+    answer({ id: "r1:f:c2", cardId: "c2", result: "timeout", elapsedMs: 10 }),
+    answer({ id: "r1:f:c5", cardId: "c5", result: "ng", elapsedMs: 1_000 }),
+  ];
+
+  function held(round = makeRound()) {
+    return decideAnswers(state({ round }), HELD, CARDS, 9)?.entries.map((entry) => [
+      entry.item.id,
+      entry.detail.elapsedMs,
+      entry.detail.limitMs,
+      entry.detail.paceMs,
+    ]);
+  }
+
+  it("holds the elapsed time to the round's limit, gives a timeout all of it, and works each pace out itself", () => {
+    expect(held()).toStrictEqual([
+      ["c1", 30_000, 30_000, 8_000],
+      ["c2", 30_000, 30_000, 8_000],
+      ["c5", 1_000, 30_000, 6_000],
     ]);
   });
+
+  it("holds a late or replayed answer to the limit its round was dealt with, not the setting now", () => {
+    expect(held(makeRound({ limitMs: 45_000 }))?.map((row) => row[2])).toStrictEqual([
+      45_000, 45_000, 45_000,
+    ]);
+  });
+
+  it("holds an answer to a round dealt before the limit was a setting to each card's pace", () => {
+    const { limitMs, ...before } = makeRound();
+    expect(limitMs).toBe(30_000);
+    expect(held(before)).toStrictEqual([
+      ["c1", 8_000, 8_000, 8_000],
+      ["c2", 8_000, 8_000, 8_000],
+      ["c5", 1_000, 6_000, 6_000],
+    ]);
+  });
+
+  it.each([
+    [4_000, "easy", 2],
+    [4_001, "good", 1],
+  ] as const)(
+    "judges a %i ms ○ against the 8-second pace, not the 60-second limit: %s",
+    (elapsedMs, outcome, box) => {
+      const change = decideAnswers(
+        state({ round: makeRound({ limitMs: 60_000 }) }),
+        [answer({ elapsedMs })],
+        CARDS,
+        9,
+      );
+      expect(change?.entries[0]?.outcome).toBe(outcome);
+      expect(change?.items[0]?.memory.box).toBe(box);
+    },
+  );
 
   it("stamps each answer with the round's day and the server's time", () => {
     const round = makeRound({ day: "2026-09-21" });

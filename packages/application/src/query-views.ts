@@ -79,7 +79,7 @@ export interface RecordsView {
 
 /** The settings as saved, what can be chosen, and the difficulty now. */
 export interface SettingsPageView {
-  readonly settings: Settings;
+  readonly settings: Required<Settings>;
   readonly topics: readonly TopicInfo[];
   readonly toeic: string | null;
 }

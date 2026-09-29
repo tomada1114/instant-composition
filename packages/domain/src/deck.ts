@@ -9,10 +9,12 @@ import type {
   ConceptId,
   DailySize,
   DayKey,
+  LimitSeconds,
   RoundKind,
   Settings,
   SubtopicRef,
 } from "./types";
+import { limitSecondsOf } from "./settings";
 import { weaknesses } from "./weakness";
 
 /** What dealing a deck reads, taken once per command or query. */
@@ -22,6 +24,8 @@ export interface PracticeState {
   readonly topics: readonly string[];
   readonly focus: readonly SubtopicRef[];
   readonly dailySize: DailySize;
+  /** The per-card limit a round dealt now records. */
+  readonly limitSeconds: LimitSeconds;
   /** The weakest grammar concepts, weakest first: what the weak share draws from. */
   readonly weakConcepts: readonly ConceptId[];
   /** Only the cards a round may deal. */
@@ -46,6 +50,7 @@ export function practiceState(input: {
     topics: input.settings?.topics ?? [],
     focus: input.settings?.focus ?? [],
     dailySize: input.settings?.dailySize ?? TUNING.defaultDailySize,
+    limitSeconds: limitSecondsOf(input.settings),
     weakConcepts: weaknesses({ items, shown }).grammar.map((weak) => weak.concept),
     cards: input.cards,
     states: new Map(items.map((progress) => [progress.item.id, progress.memory])),

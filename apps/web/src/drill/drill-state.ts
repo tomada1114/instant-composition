@@ -63,7 +63,10 @@ export interface AnswerInput {
 export interface DrillInit {
   readonly roundId: string;
   readonly deck: readonly string[];
+  /** Each card's time limit: the one the round was dealt with. */
   readonly limits: Readonly<Record<string, number>>;
+  /** Each card's pace, which "fast" is judged by rather than the limit. */
+  readonly paces: Readonly<Record<string, number>>;
   readonly answered: readonly {
     readonly cardId: string;
     readonly pass: Pass;
@@ -77,6 +80,7 @@ export interface DrillState {
   readonly roundId: string;
   readonly retries: boolean;
   readonly limits: Readonly<Record<string, number>>;
+  readonly paces: Readonly<Record<string, number>>;
   /** First-pass cards still to show when this session began. */
   readonly queue: readonly string[];
   readonly firstDone: number;
@@ -132,6 +136,11 @@ export function limitOf(state: DrillState): number {
   return card === undefined ? 0 : (state.limits[card.cardId] ?? 0);
 }
 
+export function paceOf(state: DrillState): number {
+  const card = currentCard(state);
+  return card === undefined ? 0 : (state.paces[card.cardId] ?? 0);
+}
+
 export function usedMs(
   phase: Extract<DrillPhase, { kind: "front" }>,
   at: number,
@@ -163,6 +172,7 @@ export function initDrill(init: DrillInit): DrillState {
     roundId: init.roundId,
     retries: init.retries,
     limits: init.limits,
+    paces: init.paces,
     queue,
     firstDone: first.length,
     retryPile,
