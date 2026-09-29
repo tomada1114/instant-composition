@@ -512,15 +512,25 @@ async function runBatch(cards, index) {
     }),
   );
 
+  const nothingToApply = decisions.every((d) => d.action === "keep");
   const applied = await serial(() =>
     stopped
       ? null
-      : agent(applyPrompt(decisions, rebuildFiles, index + 1), {
-          ...SONNET,
-          label: `apply ${tag}`,
-          phase: "Apply",
-          schema: APPLIED,
-        }),
+      : nothingToApply
+        ? {
+            edited: [],
+            rejected: [],
+            deleted: [],
+            rebuilt: [],
+            rebuildFailed: [],
+            cards: [],
+          }
+        : agent(applyPrompt(decisions, rebuildFiles, index + 1), {
+            ...SONNET,
+            label: `apply ${tag}`,
+            phase: "Apply",
+            schema: APPLIED,
+          }),
   );
   if (!applied)
     return { tag, skipped: stopped ?? "the applier did not return", decisions };
