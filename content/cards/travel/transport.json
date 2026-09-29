@@ -1,21 +1,5 @@
 [
   {
-    "id": "c_2d5f5t9p",
-    "ja": "こんなに混んだ電車は、生まれて初めて見たよ。",
-    "en": "Never in my life have I seen a train this packed.",
-    "alternatives": [
-      "I've never seen a train this packed in my life.",
-      "This is the most packed train I've ever seen."
-    ],
-    "point": "Never を文頭に出すと have I seen と語順が倒置する",
-    "topic": "travel",
-    "subtopic": "transport",
-    "level": 10,
-    "grammar": ["inversion"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2v2w7m5d",
     "ja": "私たち、早く出ていればバスに乗れたのに。",
     "en": "If we'd left earlier, we'd have caught the bus.",
@@ -29,7 +13,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a4950037ee019e1f413f6e5366e6439880593ac69118e0bd8e972942d3d94b86",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2v4r6h6r",
@@ -45,7 +35,13 @@
     "level": 7,
     "grammar": ["wishes-regrets", "noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:93e81bf4ff07f31c879c876a2f0d51efa81b5b3cb71ddffbc6904017a7a11c6f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3f7x2r4z",
@@ -102,7 +98,13 @@
     "level": 7,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3a6705070fd71c9726fdbe1a88f9eb4f5911236f9b4c044860bbcba71deb82ec",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4j4p9r6d",
@@ -118,7 +120,13 @@
     "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bf8f03d3a35231f5f34a2fc1310e0f49eb0267e4ffa25457e497a58296e4efbe",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4s6d5g3r",
@@ -156,7 +164,13 @@
     "level": 10,
     "grammar": ["nested-clauses", "noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6a1443924d4f10f96c58099568bd6c012cc66e2b268dbd6005b91de1418d82eb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6u8q6a3j",
@@ -172,7 +186,13 @@
     "level": 6,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f4303ca16097cf47c6e45e4dafdbac50bd028a008179f82472c1c0f522cb64f3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7a9z5p8b",
@@ -273,7 +293,13 @@
     "level": 6,
     "grammar": ["hedging-softening", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c68ac3a131a41779b95a50823e6d33f831d82271b3f11987aef9424c68c4b29",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8y6m6p6t",
@@ -311,55 +337,13 @@
     "level": 7,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9h3t7d2r",
-    "ja": "電車が急停止して、私たちは1時間立ち往生した。",
-    "en": "The train stopped suddenly, stranding us for an hour.",
-    "alternatives": [
-      "The train stopped short, leaving us stuck for an hour.",
-      "The train stopped suddenly and stranded us for an hour."
-    ],
-    "point": "結果は「, stranding us」と分詞で後ろにつなぐ",
-    "topic": "travel",
-    "subtopic": "transport",
-    "level": 7,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9m6w8x4k",
-    "ja": "運転手さん、10分も同じ所を回ってませんか？",
-    "en": "Haven't we been going in circles for ten minutes?",
-    "alternatives": [
-      "Aren't we driving in circles? It's been ten minutes.",
-      "Haven't we been circling for ten minutes?"
-    ],
-    "point": "続いている動作は have been going の現在完了進行形で",
-    "topic": "travel",
-    "subtopic": "transport",
-    "level": 6,
-    "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9p3t5w9t",
-    "ja": "彼女が着いたときには、終電はもう出てしまっていた。",
-    "en": "When she arrived, the last train had already left.",
-    "alternatives": [
-      "The last train had already left when she got there.",
-      "She arrived to find the last train already gone."
-    ],
-    "point": "着く前に出た電車は had already left と過去完了で",
-    "topic": "travel",
-    "subtopic": "transport",
-    "level": 7,
-    "grammar": ["past-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d0d150b7267a5f16a4e3c7385c7737fb0ccfda505ba7a8378530ea40f296f3bd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9v6w6k3g",
@@ -397,6 +381,12 @@
     "level": 3,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a3872fb61aab373e1e8ede3393e7d53c2ac2b4ccdb05dadcfd326544e757ff0d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
