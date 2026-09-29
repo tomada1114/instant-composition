@@ -1,37 +1,5 @@
 [
   {
-    "id": "c_2f7b9c2k",
-    "ja": "安いほうにしとけばよかった。もう壊れかけてる。",
-    "en": "I should've gone cheaper. It's already falling apart.",
-    "alternatives": [
-      "I should've bought the cheaper one. It's falling apart.",
-      "I should've picked the cheaper one. It's already breaking."
-    ],
-    "point": "「〜しておけばよかった」は should have + 過去分詞",
-    "topic": "daily",
-    "subtopic": "shopping",
-    "level": 6,
-    "grammar": ["modal-perfect", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2g6h4h9k",
-    "ja": "店員さんの勧めは、高すぎたから断ったよ。",
-    "en": "I turned down the clerk's suggestion. It was too expensive.",
-    "alternatives": [
-      "I passed on the clerk's suggestion. It was too pricey.",
-      "The clerk's suggestion was too expensive, so I said no."
-    ],
-    "point": "「断る」は turn down。decline や pass on も自然",
-    "topic": "daily",
-    "subtopic": "shopping",
-    "level": 7,
-    "grammar": ["phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2k5r6p8q",
     "ja": "この近くに文房具屋、ありますか？",
     "en": "Is there a stationery store near here?",
@@ -265,22 +233,6 @@
     }
   },
   {
-    "id": "c_4w3z6w6w",
-    "ja": "別のサイズを取り寄せてもらえますか？",
-    "en": "Could you have another size sent over?",
-    "alternatives": [
-      "Could you order in another size for me?",
-      "Could you order a different size for me?"
-    ],
-    "point": "取り寄せは have + 物 + 過去分詞、send over など",
-    "topic": "daily",
-    "subtopic": "shopping",
-    "level": 5,
-    "grammar": ["phrasal-verbs", "causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_4z8y4k5f",
     "ja": "妻はもう1時間、ソファを見比べてる。",
     "en": "My wife's been comparing sofas for an hour.",
@@ -428,7 +380,13 @@
     "level": 7,
     "grammar": ["participle-clauses", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9619cf2e0606a15506895a55cf9d32c76bf7201ceca9a44f897c59fc2eede183",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6n6k5y5q",
@@ -621,23 +579,13 @@
     "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8y7w7d4e",
-    "ja": "タグは外しちゃったけど、まだ返品できますか？",
-    "en": "I took the tags off. Can I still return it?",
-    "alternatives": [
-      "I've taken the tags off. Can I still return it?",
-      "The tags are off, but can I still return it?"
-    ],
-    "point": "「外す」は take ~ off。代名詞なら take it off",
-    "topic": "daily",
-    "subtopic": "shopping",
-    "level": 7,
-    "grammar": ["phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f4e46520ab4390aa83cf9fa306c0b2b9541b26ff75df13983f5722db4c1a25c5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8z3c6y3p",
