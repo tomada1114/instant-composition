@@ -22,22 +22,6 @@
     }
   },
   {
-    "id": "c_2j5f2r6j",
-    "ja": "引っ越してから、病院向けソフト会社で働いてる。",
-    "en": "I've been working at a hospital software firm since moving.",
-    "alternatives": [
-      "Since I moved, I've worked at a hospital software firm.",
-      "I've been at a hospital software company since I moved."
-    ],
-    "point": "「ずっと〜している」は現在完了進行形＋ since",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 7,
-    "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3u5h4f9m",
     "ja": "犬の散歩中は、いつも音楽を聴いてます。",
     "en": "I always listen to music while walking my dog.",
@@ -51,7 +35,13 @@
     "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:10b7825c07a6d42e3e8b68e2ed442a93ed40ab5177a185cd0139dd23778ee887",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3w6n2h8b",
@@ -67,23 +57,13 @@
     "level": 7,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3x3y9u3a",
-    "ja": "さっき自己紹介で、料理が趣味だと言えばよかった。",
-    "en": "I wish I'd mentioned cooking when I introduced myself.",
-    "alternatives": [
-      "I should've mentioned cooking in my introduction.",
-      "If only I'd brought up cooking when I introduced myself."
-    ],
-    "point": "wish の後は過去完了 I'd mentioned にする",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 7,
-    "grammar": ["wishes-regrets", "modal-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:30918ba5850b097b5a5ed31e290c0d6921dc2793e4bfbaa7520ec10daf728c36",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4w9e9h8x",
@@ -149,22 +129,6 @@
     }
   },
   {
-    "id": "c_5q2q9t5f",
-    "ja": "出身は福岡で、昼間は編集者、夜は小説を書いてます。",
-    "en": "I'm from Fukuoka. I edit by day, write novels at night.",
-    "alternatives": [
-      "I'm from Fukuoka. I edit by day and write novels at night.",
-      "I'm from Fukuoka. I'm an editor by day, a novelist at night."
-    ],
-    "point": "「昼は〜、夜は〜」は by day / at night で対にする",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 10,
-    "grammar": ["tense-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5w2b4f8p",
     "ja": "自己紹介しないとね。僕はトムです。",
     "en": "I should introduce myself. I'm Tom.",
@@ -185,22 +149,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_6b6p3g8a",
-    "ja": "父が転勤になって、シンガポールで育ちました。",
-    "en": "Dad was transferred, so I grew up in Singapore.",
-    "alternatives": [
-      "Dad got transferred, so I grew up in Singapore.",
-      "I grew up in Singapore because Dad was transferred."
-    ],
-    "point": "「転勤になった」は受け身で was transferred と言う",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 6,
-    "grammar": ["passive-voice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_6s2q2r6d",
@@ -238,7 +186,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:93cfa48c433a6f53454359ee4c5407b9477a8c6232768a16027f266909e65fcf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7t7n2j2u",
@@ -254,7 +208,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis", "causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f4885ea253ed218c4e3f0a7318e43bdfdf1d1e59683fce6e7b304f418e5d97d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7t8v6a7p",
@@ -289,7 +249,13 @@
     "level": 6,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5d6ab965958a77033f7f498b3e0bbf9158e278d51a1e018fbc477cb604770b11",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8a7y7w5f",
@@ -332,37 +298,5 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_8v6r9a3a",
-    "ja": "ケンから聞いたけど、昔シアトルで働いてたって本当？",
-    "en": "Ken said you'd worked in Seattle. Is that true?",
-    "alternatives": [
-      "Ken told me you'd worked in Seattle. Is that right?",
-      "Ken mentioned you'd worked in Seattle. Is that true?"
-    ],
-    "point": "言っていた内容の「働いていた」は過去完了 you'd worked",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 7,
-    "grammar": ["reported-speech"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9b3w5g3e",
-    "ja": "失礼ですが、どうしてこの業界に入られたんですか？",
-    "en": "May I ask why you went into this industry?",
-    "alternatives": [
-      "Could I ask why you got into this industry?",
-      "May I ask what got you into this industry?"
-    ],
-    "point": "「どうして」は why。ask の後は why you went の語順",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 7,
-    "grammar": ["indirect-questions", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   }
 ]
