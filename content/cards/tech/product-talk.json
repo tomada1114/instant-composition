@@ -1,5 +1,22 @@
 [
   {
+    "id": "c_2b4x7g7u",
+    "ja": "新機能を、ユーザーは全く知らないよ。",
+    "en": "Users have no idea what we've launched.",
+    "alternatives": [
+      "Users don't know what we've launched.",
+      "Users haven't a clue what we've launched.",
+      "Users have no clue what we've launched."
+    ],
+    "point": "「全く知らない」は have no idea。what 節は肯定の語順",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2c8y3p5d",
     "ja": "機能を少し減らそう。",
     "en": "Let's cut some features.",
@@ -368,6 +385,23 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6c4w6w4r",
+    "ja": "これでユーザーはうちに夢中になる。",
+    "en": "That'll have users eating out of our hands.",
+    "alternatives": [
+      "That'll get users eating out of our hands.",
+      "That will make users adore us.",
+      "That'll have users hooked on us."
+    ],
+    "point": "「夢中にさせる」は have + 人 + -ing。手のひらで食べる",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6f6a7q6d",

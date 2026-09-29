@@ -196,6 +196,23 @@
     }
   },
   {
+    "id": "c_4h8w3p6k",
+    "ja": "戻しても、まだ薄氷を踏む思い。",
+    "en": "Rolled back, we're still on thin ice.",
+    "alternatives": [
+      "Having rolled back, we're still on thin ice.",
+      "Even after the rollback, we're walking on thin ice.",
+      "Even rolled back, we're still on thin ice."
+    ],
+    "point": "「薄氷を踏む」は on thin ice。分詞で先に述べる",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4j9z2s8d",
     "ja": "チームに状況を伝えて。",
     "en": "Update the team.",

@@ -44,6 +44,23 @@
     }
   },
   {
+    "id": "c_2p9y3r6n",
+    "ja": "これが私の資料なら、無駄を削るのに。",
+    "en": "If this were mine, I'd cut the fluff.",
+    "alternatives": [
+      "If this were my report, I'd trim the fat.",
+      "If it were my document, I'd cut the fluff.",
+      "If this were mine, I'd trim the fat."
+    ],
+    "point": "「無駄を削る」は cut the fluff / trim the fat",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 9,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2r9b2m2r",
     "ja": "部長は、企画が性急だと言ってたよ。",
     "en": "Our director said the plan felt rushed.",
@@ -149,6 +166,23 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4m6f2p9m",
+    "ja": "感心するのは、発想でなくやり切る力です。",
+    "en": "It's the follow-through, not the idea, that impresses me.",
+    "alternatives": [
+      "What impresses me is the follow-through, not the idea.",
+      "It's your follow-through, not your idea, that impresses me.",
+      "The follow-through impresses me more than the idea."
+    ],
+    "point": "It's〜that で強調。「やり切る力」は follow-through",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_4w9z3c2r",
@@ -505,6 +539,23 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7w8a2r5m",
+    "ja": "私なら、潔く受け止めるのに。",
+    "en": "Were it me, I'd take it on the chin.",
+    "alternatives": [
+      "If it were me, I'd take it on the chin.",
+      "If I were you, I'd take it on the chin.",
+      "If I were in your position, I'd just accept it."
+    ],
+    "point": "「潔く受け止める」は take it on the chin",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8a6r9d8a",

@@ -307,6 +307,23 @@
     }
   },
   {
+    "id": "c_6m8c6u4h",
+    "ja": "私なら、もう電車は見切りをつけるよ。",
+    "en": "If I were you, I'd bail now.",
+    "alternatives": [
+      "If I were you, I'd ditch the train.",
+      "If I were you, I'd cut my losses now.",
+      "If I were you, I'd bail on it now."
+    ],
+    "point": "「見切りをつける」は bail / cut one's losses",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 9,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6t5a7q5r",
     "ja": "駅員は、この電車は運休と言った。",
     "en": "The staff said this train was canceled.",

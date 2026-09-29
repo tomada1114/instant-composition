@@ -126,6 +126,23 @@
     }
   },
   {
+    "id": "c_3d3f6s4u",
+    "ja": "共有してくれてれば、手伝ったのに。",
+    "en": "If you'd looped me in, I'd have helped.",
+    "alternatives": [
+      "Had you looped me in, I'd have helped.",
+      "If you'd told me, I'd have helped.",
+      "If you'd kept me posted, I'd have helped."
+    ],
+    "point": "「共有する」は loop ~ in。過去の仮定は had done",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 9,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3y9m6v5h",
     "ja": "お言葉に甘えられたらいいのですが。",
     "en": "I wish I could take you up on that.",
@@ -357,6 +374,23 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6p6f9w3g",
+    "ja": "やりたいのは山々だけど無理。",
+    "en": "Much as I'd love to, I can't.",
+    "alternatives": [
+      "As much as I'd love to, I can't.",
+      "I'd love to, but I can't.",
+      "Much as I'd like to, I can't."
+    ],
+    "point": "「〜は山々だが」は Much as I'd love to",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 9,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7a3n8w9m",

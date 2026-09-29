@@ -104,6 +104,23 @@
     }
   },
   {
+    "id": "c_4e3g9c9r",
+    "ja": "私は、着任してすぐ動ける人間です。",
+    "en": "I'm someone who hits the ground running.",
+    "alternatives": [
+      "I'm a person who can hit the ground running.",
+      "I'm the type who hits the ground running.",
+      "I'm someone who can start contributing right away."
+    ],
+    "point": "「すぐ動き出す」は hit the ground running",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 9,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4k3a4y4e",
     "ja": "その時点で、チームを率いた経験があった。",
     "en": "By then, I'd already led a team.",
@@ -294,6 +311,23 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6f7x6v3w",
+    "ja": "怒ったお客様をなだめるのが得意です。",
+    "en": "I have a knack for calming upset clients.",
+    "alternatives": [
+      "I'm good at calming upset clients.",
+      "Calming upset clients is my forte.",
+      "I have a gift for soothing angry clients."
+    ],
+    "point": "「得意」は a knack for。冠詞 a を忘れない",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 10,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6j6k7d2t",

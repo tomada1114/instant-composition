@@ -576,6 +576,23 @@
     }
   },
   {
+    "id": "c_8q4d8f5k",
+    "ja": "主役を奪うのは、この夜景だね。",
+    "en": "It's the night view that steals the show.",
+    "alternatives": [
+      "What steals the show is the night view.",
+      "The night view is what steals the show.",
+      "It's the night view that really steals the show."
+    ],
+    "point": "「主役を奪う」は steal the show。It's〜that で強調",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8s5c3e7d",
     "ja": "私たち、何も触るなと言われた。",
     "en": "We were told not to touch anything.",

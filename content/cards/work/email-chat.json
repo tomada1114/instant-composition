@@ -110,6 +110,23 @@
     }
   },
   {
+    "id": "c_3s5v5u4s",
+    "ja": "私に必要なのは、事前の一言です。",
+    "en": "What I need is a heads-up first.",
+    "alternatives": [
+      "What I'd like is a heads-up beforehand.",
+      "All I need is a heads-up first.",
+      "I just need a heads-up first."
+    ],
+    "point": "What〜is の強調。「事前の一言」は a heads-up",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3t3r4v3a",
     "ja": "添付を忘れてすみません。",
     "en": "Sorry, I forgot the attachment.",

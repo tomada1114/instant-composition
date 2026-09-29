@@ -551,6 +551,23 @@
     }
   },
   {
+    "id": "c_8n6u4n2q",
+    "ja": "フロントは朝食を無料にすると言った。",
+    "en": "The front desk said they'd comp my breakfast.",
+    "alternatives": [
+      "The front desk said breakfast would be on the house.",
+      "They said they'd give me breakfast on the house.",
+      "The front desk told me they'd comp my breakfast."
+    ],
+    "point": "「無料にする」は comp。said に合わせ will は would",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 10,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8r6v7v8z",
     "ja": "朝食は何時からですか？",
     "en": "What time does breakfast start?",

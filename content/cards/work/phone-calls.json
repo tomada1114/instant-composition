@@ -211,6 +211,23 @@
     }
   },
   {
+    "id": "c_4z6r8g3z",
+    "ja": "声が途切れて、聞き取りにくいんです。",
+    "en": "Breaking up like this, you're hard to follow.",
+    "alternatives": [
+      "You keep breaking up, which makes you hard to follow.",
+      "Your voice is cutting out, so I can't follow.",
+      "You're breaking up, so you're hard to follow."
+    ],
+    "point": "音声が途切れるは break up。分詞構文で理由を添える",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 10,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5b8b6w9m",
     "ja": "音声にラグがあります。",
     "en": "There's a lag.",

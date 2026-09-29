@@ -636,6 +636,40 @@
     }
   },
   {
+    "id": "c_8w2e2h5x",
+    "ja": "私が知らせていれば、今は無事なのに。",
+    "en": "If I'd flagged it, we'd be fine now.",
+    "alternatives": [
+      "If I'd raised it, we'd be fine now.",
+      "If I'd spoken up, we'd be fine now.",
+      "Had I flagged it, we'd be fine now."
+    ],
+    "point": "過去の仮定 + 今の結果は had done / would be",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8w3j9r4w",
+    "ja": "私たちは金曜にやっと気づいた。",
+    "en": "Not until Friday did we notice it.",
+    "alternatives": [
+      "Only on Friday did we notice it.",
+      "It wasn't until Friday that we noticed it.",
+      "We didn't notice it until Friday."
+    ],
+    "point": "Not until を前に出すと、did we と倒置する",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_9g4d4a3w",
     "ja": "その件は、ずっと調べています。",
     "en": "I've been looking into it.",
@@ -697,5 +731,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9v8h2k9j",
+    "ja": "知ってれば我々は警鐘を鳴らしたのに。",
+    "en": "Had we known, we'd have sounded the alarm.",
+    "alternatives": [
+      "If we'd known, we'd have sounded the alarm.",
+      "Had we known, we'd have raised the alarm.",
+      "If we had known, we would have raised the alarm."
+    ],
+    "point": "If を省くと Had we known と倒置。警鐘は sound the alarm",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

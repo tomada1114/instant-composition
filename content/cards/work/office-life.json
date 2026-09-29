@@ -187,6 +187,23 @@
     }
   },
   {
+    "id": "c_3z5q7e7h",
+    "ja": "仕切り役の人は、今日お休みです。",
+    "en": "The person running point is out today.",
+    "alternatives": [
+      "The person in charge is out today.",
+      "Whoever is running point is off today.",
+      "The one running point is off today."
+    ],
+    "point": "「仕切り役」は run point。person の後ろから修飾",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 9,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4c3e4z2e",
     "ja": "古いけど、コピー機は動くよ。",
     "en": "Although it's old, the copier works.",
@@ -333,6 +350,23 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4u7u6f2z",
+    "ja": "噂では、彼女は部長の座を狙ってるらしい。",
+    "en": "Rumor has it she's gunning for the director's job.",
+    "alternatives": [
+      "I hear she's after the director's job.",
+      "The word is she wants the director's job.",
+      "Rumor has it she's angling for the director's job."
+    ],
+    "point": "「噂では」は Rumor has it (that) 〜",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5g7w7f7s",
@@ -582,6 +616,23 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7s2a4m3q",
+    "ja": "きっと彼、部屋を予約したの忘れてる。",
+    "en": "I'll bet he forgot he'd booked the room.",
+    "alternatives": [
+      "I bet he's forgotten he booked the room.",
+      "He probably forgot that he'd booked the room.",
+      "I'd bet he forgot he had booked the room."
+    ],
+    "point": "「きっと〜」は I'll bet。節の中に節が続く",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7u6v4e6j",

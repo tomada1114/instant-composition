@@ -102,6 +102,23 @@
     }
   },
   {
+    "id": "c_2y7x7h2y",
+    "ja": "北へ進めば、目と鼻の先ですよ。",
+    "en": "Heading north, you'll be a stone's throw away.",
+    "alternatives": [
+      "If you head north, it's a stone's throw away.",
+      "Going north, it's just a stone's throw.",
+      "Head north and it's a stone's throw from there."
+    ],
+    "point": "「目と鼻の先」は a stone's throw",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 10,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3q2c5z6w",
     "ja": "標識がもっとあれば、見つかるのに。",
     "en": "If there were more signs, I'd find it.",

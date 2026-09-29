@@ -325,6 +325,23 @@
     }
   },
   {
+    "id": "c_7r9a5a8b",
+    "ja": "遅いけど、形になってきたよ。",
+    "en": "Slow as it is, it's coming together.",
+    "alternatives": [
+      "It's slow, but it's coming together.",
+      "Although it's slow going, it's coming together.",
+      "Slow though it is, it's taking shape."
+    ],
+    "point": "「形になる」は come together。Slow as it is で譲歩",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 9,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7s9k6v6s",
     "ja": "もう移行を終わらせました。",
     "en": "I've finished the migration.",

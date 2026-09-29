@@ -609,6 +609,23 @@
     }
   },
   {
+    "id": "c_8r9z9b5v",
+    "ja": "私が決めるなら、後ろにずらすのに。",
+    "en": "If it were my call, I'd push it back.",
+    "alternatives": [
+      "If it were up to me, I'd push it back.",
+      "If the call were mine, I'd postpone it.",
+      "If I could decide, I'd push it back."
+    ],
+    "point": "「私が決める」は my call。if 節は were",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 10,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8s9d3w5z",
     "ja": "絶対に、期限は延ばしません。",
     "en": "Never will we extend the deadline.",

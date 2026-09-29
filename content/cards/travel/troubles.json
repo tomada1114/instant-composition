@@ -377,6 +377,23 @@
     }
   },
   {
+    "id": "c_7g4f7m3f",
+    "ja": "一文なしで立ち往生、助けて！",
+    "en": "Stranded without a cent, I need help.",
+    "alternatives": [
+      "I'm stranded without a cent and need help.",
+      "I'm broke and stranded, so please help me.",
+      "Stranded and penniless, I need your help."
+    ],
+    "point": "「一文なし」は without a cent。分詞構文で状況を添える",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 9,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7j4w5p9q",
     "ja": "予約に手違いがあったようです。",
     "en": "There seems to be a booking mix-up.",
@@ -565,6 +582,23 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8v8t4m3s",
+    "ja": "運転手にぼられて、返金してほしい。",
+    "en": "Fleeced by a cabbie, I want a refund.",
+    "alternatives": [
+      "Having been fleeced by a cabbie, I want a refund.",
+      "A cabbie fleeced me, so I want a refund.",
+      "Overcharged by a cabbie, I'd like a refund."
+    ],
+    "point": "「ぼられる」は be fleeced。分詞で理由を添える",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 10,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9c5c5w2h",
