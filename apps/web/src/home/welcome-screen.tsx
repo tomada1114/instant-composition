@@ -170,7 +170,7 @@ export function WelcomeScreen({
           </li>
         ))}
       </ul>
-      <div className="sticky bottom-0 -mx-4 mt-auto flex flex-col gap-3 bg-background px-4 pt-2 pb-3">
+      <div className="sticky bottom-0 -mx-4 mt-auto flex flex-col gap-3 bg-background px-4 pt-2 pb-[calc(0.75rem+var(--safe-bottom))]">
         <Button
           data-primary
           className="w-full"

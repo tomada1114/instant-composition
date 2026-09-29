@@ -47,7 +47,7 @@ export function PageLoadFailed({
           "mx-auto box-content flex max-w-column flex-col justify-center px-4 pt-8",
           withTabBar
             ? "min-h-[calc(var(--column-height)-var(--tab-bar-space)-4rem)] pb-[calc(var(--tab-bar-space)+2rem)]"
-            : "min-h-[calc(var(--column-height)-4rem)] pb-8",
+            : "min-h-[calc(var(--column-height)-4rem-var(--safe-bottom))] pb-[calc(2rem+var(--safe-bottom))]",
         )}
       >
         <LoadFailedPanel onReload={onReload} />
