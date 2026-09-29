@@ -54,7 +54,9 @@ export function DrillScreen({
   }, [kind, attempt]);
 
   if (loaded.status === "loading" || loaded.attempt !== attempt) {
-    return <main className="mx-auto box-content flex min-h-dvh max-w-column px-4" />;
+    return (
+      <main className="mx-auto box-content flex min-h-(--column-height) max-w-column px-4" />
+    );
   }
   if (loaded.status === "failed") {
     return (

@@ -23,7 +23,7 @@ export function HomePage(): ReactElement {
   if (!home.isFetchedAfterMount) return <HomeSkeleton />;
   if (home.isError || home.data === undefined) {
     return (
-      <main className="mx-auto box-content flex min-h-[calc(100dvh-4rem)] max-w-column flex-col justify-center px-4 py-8">
+      <main className="mx-auto box-content flex min-h-[calc(var(--column-height)-4rem)] max-w-column flex-col justify-center px-4 py-8">
         <LoadFailedPanel onReload={reload} />
       </main>
     );

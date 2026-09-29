@@ -7,7 +7,7 @@ import type { RoundKind } from "../openapi";
 import { DrillError } from "./drill-error";
 import { DrillScreen } from "./drill-screen";
 
-const SHELL = "mx-auto box-content flex min-h-dvh max-w-column px-4";
+const SHELL = "mx-auto box-content flex min-h-(--column-height) max-w-column px-4";
 
 /**
  * The `/drill` route: one round of the `?kind=` it names. The home view says
