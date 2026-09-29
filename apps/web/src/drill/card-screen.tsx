@@ -99,7 +99,7 @@ export function CardScreen({
   const where = progress(state);
   const first = where.pass === "first";
   return (
-    <main className="mx-auto box-content flex h-[calc(var(--column-height)-1.5rem)] max-w-column flex-col gap-3 px-4 pt-3 pb-3">
+    <main className="mx-auto box-content flex h-[calc(var(--column-height)-1.5rem-var(--safe-bottom))] max-w-column flex-col gap-3 px-4 pt-3 pb-[calc(0.75rem+var(--safe-bottom))]">
       <TopStrip
         pass={where.pass}
         current={first ? round.offset + where.position : where.position}

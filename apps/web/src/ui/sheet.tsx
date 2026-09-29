@@ -47,7 +47,7 @@ export function Sheet({
         aria-modal="true"
         aria-labelledby={titleId}
         onKeyDown={trapTab}
-        className="box-content flex w-full max-w-column flex-col gap-6 rounded-t-card bg-popover px-4 pt-7 pb-8 wide:rounded-card"
+        className="box-content flex w-full max-w-column flex-col gap-6 rounded-t-card bg-popover px-4 pt-7 pb-[calc(2rem+var(--safe-bottom))] wide:rounded-card"
       >
         {children}
       </div>
