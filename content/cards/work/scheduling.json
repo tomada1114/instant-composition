@@ -1,5 +1,57 @@
 [
   {
+    "id": "c_2d7z5x5g",
+    "ja": "金曜にしましょう。",
+    "en": "Let's make it Friday.",
+    "alternatives": ["Let's do Friday.", "Let's go with Friday."],
+    "point": "「〜しましょう」は Let's + 動詞",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3k7p2s6k",
+    "ja": "いつなら空いていますか？",
+    "en": "When are you free?",
+    "alternatives": ["When are you available?", "When would you be free?"],
+    "point": "疑問詞 When + be 動詞 + 主語の順",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 3,
+    "grammar": ["wh-questions", "be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3r8v8f5k",
+    "ja": "会議は何時ですか？",
+    "en": "What time's the meeting?",
+    "alternatives": ["When does the meeting start?", "When is the meeting?"],
+    "point": "「何時」は What time。疑問詞が文頭",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4a9v2y7z",
+    "ja": "会議を遅らせてもいい？",
+    "en": "Can we delay it?",
+    "alternatives": ["Could we delay it?", "Can we push it back?"],
+    "point": "「延期する」は push back。許可は Can we",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4u4e3x4u",
     "ja": "火曜のほうが都合いい？",
     "en": "Is Tuesday better for you?",
@@ -20,6 +72,32 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5h2v2v6x",
+    "ja": "金曜に会うのはどう？",
+    "en": "How about meeting on Friday?",
+    "alternatives": ["What about meeting on Friday?", "How about we meet on Friday?"],
+    "point": "How about の後は -ing。曜日の前は on",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 3,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5m4j7y6v",
+    "ja": "明日、空いてる？",
+    "en": "Are you free tomorrow?",
+    "alternatives": ["Are you available tomorrow?", "Do you have time tomorrow?"],
+    "point": "「空いている」は be free。疑問は Are を前に",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6m5j9g4d",
@@ -105,6 +183,45 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7y4u4x8v",
+    "ja": "何曜日がいいですか？",
+    "en": "Which day is good?",
+    "alternatives": ["Which day works for you?", "What day is good?"],
+    "point": "曜日を選ぶなら Which day。works も便利",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 2,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8d3y5j8g",
+    "ja": "締め切りは月曜です。",
+    "en": "The deadline is Monday.",
+    "alternatives": ["The deadline is on Monday.", "It's due Monday."],
+    "point": "next Monday に at や on は付けない",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8p2d4u9a",
+    "ja": "午後なら空いています。",
+    "en": "I'm free in the afternoon.",
+    "alternatives": ["I'm available in the afternoon.", "I'm free this afternoon."],
+    "point": "「午後に」は in the afternoon",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 3,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9q6y6y3q",

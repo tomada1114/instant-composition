@@ -1,5 +1,70 @@
 [
   {
+    "id": "c_2k3z7u4h",
+    "ja": "私、問題があります。",
+    "en": "I have a problem.",
+    "alternatives": ["I've got a problem.", "I have an issue."],
+    "point": "数えられる名詞の単数には a。problem は子音",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_2v5y9f3f",
+    "ja": "スライドを作成中です。",
+    "en": "I'm making the slides.",
+    "alternatives": ["I'm working on the slides.", "I'm preparing the slides."],
+    "point": "「〜中」は am + -ing。slide は複数形で",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3w4a9t5d",
+    "ja": "不具合は修正されました。",
+    "en": "The bug was fixed.",
+    "alternatives": ["The bug got fixed.", "The issue was fixed."],
+    "point": "受け身は was + 過去分詞。fix は fixed",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 3,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3y5k3x2q",
+    "ja": "もう報告書を送りました。",
+    "en": "I've already sent the report.",
+    "alternatives": ["I've sent the report already.", "I already sent the report."],
+    "point": "「もう」は already。have + 過去分詞 sent",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 3,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4m3j8y9u",
+    "ja": "何が問題ですか？",
+    "en": "What's the problem?",
+    "alternatives": ["What's the issue?", "What's wrong?"],
+    "point": "「何が」は What。特定の問題なので the",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4y2j8b7z",
     "ja": "金曜までに終えられません。",
     "en": "I can't finish it by Friday.",
@@ -63,6 +128,45 @@
     }
   },
   {
+    "id": "c_5u9m9k6b",
+    "ja": "進み具合を知らせてね。",
+    "en": "Keep me posted.",
+    "alternatives": ["Let me know your progress.", "Keep me updated."],
+    "point": "Keep me posted は「随時知らせて」の定番",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6c2h8a4f",
+    "ja": "万事予定どおりです。",
+    "en": "Everything is on schedule.",
+    "alternatives": ["Everything is going as planned.", "Everything is on track."],
+    "point": "Everything は単数扱いなので is",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6q4v4t5c",
+    "ja": "明日、ご報告します。",
+    "en": "I'll update you tomorrow.",
+    "alternatives": ["I'll report back tomorrow.", "I'm going to update you tomorrow."],
+    "point": "update + 人。「報告する」は update you が自然",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6u2k6a5c",
     "ja": "売上は先月より好調です。",
     "en": "Sales are better than last month.",
@@ -83,6 +187,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7h7q2u3y",
+    "ja": "予算がきついです。",
+    "en": "The budget is tight.",
+    "alternatives": ["The budget is limited.", "We're on a tight budget."],
+    "point": "「きつい」は tight。予算は the budget",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 3,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8a4m6d8y",

@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_3d7d3t4w",
+    "ja": "明日の朝、返信します。",
+    "en": "I'll reply tomorrow morning.",
+    "alternatives": [
+      "I'm going to reply tomorrow morning.",
+      "I'll get back tomorrow morning."
+    ],
+    "point": "その場で決めた予定は I'll。「明日の朝」は tomorrow morning",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3t3r4v3a",
     "ja": "添付を忘れてすみません。",
     "en": "Sorry, I forgot the attachment.",
@@ -22,6 +38,71 @@
     }
   },
   {
+    "id": "c_3x8v2d8g",
+    "ja": "私にも CC してください。",
+    "en": "Please CC me.",
+    "alternatives": ["Please copy me.", "Please CC me on it."],
+    "point": "命令文に Please。「私に」は me",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 3,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4s7c6j6n",
+    "ja": "ここに誤字があります。",
+    "en": "There's a typo here.",
+    "alternatives": ["There's a typo in here.", "I see a typo here."],
+    "point": "「ある」は There's + 単数。typo の前は a",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5g6s8v5u",
+    "ja": "今メール書いてます。",
+    "en": "I'm writing an email.",
+    "alternatives": ["I'm writing an email now.", "I'm typing an email."],
+    "point": "「今〜している」は am + -ing。email の前は an",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7u2a2h2j",
+    "ja": "早めに返信ください。",
+    "en": "Please reply soon.",
+    "alternatives": ["Please reply quickly.", "Reply soon, please."],
+    "point": "お願いの命令文は Please を付けて動詞から始める",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7y4c8y8e",
+    "ja": "それ、送ってくれる？",
+    "en": "Can you send it?",
+    "alternatives": ["Could you send it?", "Would you send it?"],
+    "point": "お願いは Can you / Could you。丁寧なのは Could",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8j2w5z2q",
     "ja": "メールより電話が早いよ。",
     "en": "A call is faster than email.",
@@ -42,6 +123,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8q5z3k3w",
+    "ja": "これは急ぎです。",
+    "en": "This is urgent.",
+    "alternatives": ["This is important.", "It's urgent."],
+    "point": "「急ぎ」は urgent。be 動詞は is",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8y5r4p9z",
@@ -104,6 +198,19 @@
     }
   },
   {
+    "id": "c_9g6e6m8j",
+    "ja": "添付が二つあります。",
+    "en": "There are two attachments.",
+    "alternatives": ["Two files are attached.", "I attached two files."],
+    "point": "複数なら There are。名詞は attachments",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_9n6p9h8t",
     "ja": "日程確認でご連絡しました。",
     "en": "Writing to confirm the date.",
@@ -124,5 +231,18 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9p6p8x2r",
+    "ja": "彼に返信するよう頼んだ。",
+    "en": "I asked him to reply.",
+    "alternatives": ["I asked him to write back.", "I told him to reply."],
+    "point": "ask + 人 + to do。人は him と目的格",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

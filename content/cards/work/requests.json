@@ -63,6 +63,32 @@
     }
   },
   {
+    "id": "c_2z3g5j4g",
+    "ja": "今、彼に連絡中です。",
+    "en": "I'm contacting him now.",
+    "alternatives": ["I'm reaching out to him now.", "I'm getting in touch with him."],
+    "point": "「今〜している」は am + -ing。連絡する contact",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4z4r6d7p",
+    "ja": "今、忙しいですか？",
+    "en": "Are you busy now?",
+    "alternatives": ["Are you busy right now?", "Are you free now?"],
+    "point": "疑問文は Are you の順",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5s9q8a5g",
     "ja": "報告書が昼までに必要です。",
     "en": "The report is needed by noon.",
@@ -80,6 +106,58 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6g9y3z8s",
+    "ja": "一つお願いがあります。",
+    "en": "I need a favor.",
+    "alternatives": ["I have a favor to ask.", "Could I ask you a favor?"],
+    "point": "favor は数えられる名詞。a を付ける",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 3,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7k9u6s9m",
+    "ja": "それでいいですよ。",
+    "en": "That's fine with me.",
+    "alternatives": ["That works for me.", "That's okay with me."],
+    "point": "「私はいい」は fine with me",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 3,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7s7x8m4w",
+    "ja": "昨日、彼に頼みました。",
+    "en": "I asked him yesterday.",
+    "alternatives": ["I asked him about it yesterday.", "Yesterday I asked him."],
+    "point": "ask の過去形は asked。yesterday と一緒に使う",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8b7b3d5y",
+    "ja": "それは私の仕事です。",
+    "en": "That's my job.",
+    "alternatives": ["That's my responsibility.", "That's my area."],
+    "point": "「それ」は That。That's は That is の短縮",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8e5f4f2h",
@@ -104,6 +182,32 @@
     }
   },
   {
+    "id": "c_8g7j8y4r",
+    "ja": "今、対応中です。",
+    "en": "I'm working on it.",
+    "alternatives": ["I'm handling it now.", "I'm on it."],
+    "point": "「〜中」は am + -ing。work on は「取り組む」",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8m4g6w6g",
+    "ja": "助けが必要です。",
+    "en": "I need some help.",
+    "alternatives": ["I need help.", "I need a hand."],
+    "point": "help は数えられない名詞。a は付けない",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8n2b3j5f",
     "ja": "先に彼に聞いたほうがいい。",
     "en": "You should ask him first.",
@@ -124,6 +228,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9f4p6z5s",
+    "ja": "私が明日までにやります。",
+    "en": "I'll do it by tomorrow.",
+    "alternatives": ["I'll get it done by tomorrow.", "I'll finish it by tomorrow."],
+    "point": "「〜までに」は by。その場の約束は I'll",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 3,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9v2c8f6m",

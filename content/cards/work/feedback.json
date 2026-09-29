@@ -63,6 +63,19 @@
     }
   },
   {
+    "id": "c_6n5z3z9h",
+    "ja": "いい点がありますよ。",
+    "en": "There are good points.",
+    "alternatives": ["There are some good points.", "I see some good points."],
+    "point": "複数は There are。point は複数形 points",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6n8r5e9m",
     "ja": "最近、ずいぶん上達したね。",
     "en": "You've improved a lot lately.",
@@ -83,6 +96,32 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6q8n3m3t",
+    "ja": "もっと短くできるよ。",
+    "en": "You can shorten it.",
+    "alternatives": ["You can make it shorter.", "You could shorten it."],
+    "point": "「できる」は can + 動詞の原形",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7s7t7h5w",
+    "ja": "よくやってるね。",
+    "en": "You're doing great.",
+    "alternatives": ["You're doing well.", "You're doing a great job."],
+    "point": "「今うまくやっている」は You're doing",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8a9e7h6d",
