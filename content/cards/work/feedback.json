@@ -44,6 +44,38 @@
     }
   },
   {
+    "id": "c_2r9b2m2r",
+    "ja": "部長は、企画が性急だと言ってたよ。",
+    "en": "Our director said the plan felt rushed.",
+    "alternatives": [
+      "The director told me the plan felt rushed.",
+      "Our director said the plan was rushed."
+    ],
+    "point": "said の後は過去形に合わせる（時制の一致）",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3m2x3b7s",
+    "ja": "構成は見直した方がいいかもね。",
+    "en": "You might want to rethink the structure.",
+    "alternatives": [
+      "You might want to rework the structure.",
+      "Maybe you could rethink the structure a bit."
+    ],
+    "point": "might want to で提案を柔らかくする",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 9,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3q5x6t3m",
     "ja": "コメント送ってもいい？",
     "en": "Can I send you comments?",
@@ -75,6 +107,22 @@
     "subtopic": "feedback",
     "level": 8,
     "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4w9z3c2r",
+    "ja": "こんな完成度の下書き、初めて見たよ。",
+    "en": "Never have I seen such a polished draft.",
+    "alternatives": [
+      "I've never seen such a polished draft.",
+      "Never have I seen a draft this polished."
+    ],
+    "point": "Never を前に出すと助動詞が主語の前に来る",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["inversion"],
     "createdAt": "2026-09-29",
     "stamps": {}
   },
@@ -121,6 +169,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5h5e3u3g",
+    "ja": "君の指摘で、やり方を見直したよ。",
+    "en": "Your comment made me rethink my approach.",
+    "alternatives": [
+      "Your feedback got me to rethink my approach.",
+      "Your point made me reconsider my approach."
+    ],
+    "point": "make + 人 + 原形で「〜させた」",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 9,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6d9m4z4j",
+    "ja": "もっと早く指摘してほしかった。",
+    "en": "I wish you'd flagged that earlier.",
+    "alternatives": [
+      "I wish you'd pointed it out sooner.",
+      "I wish you had raised that earlier."
+    ],
+    "point": "過去の残念さは wish + 過去完了",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6j9f9h8c",
@@ -255,6 +335,22 @@
     "subtopic": "feedback",
     "level": 8,
     "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7j4y4q4q",
+    "ja": "読んで、気になる点が一つあるよ。",
+    "en": "Having read it, I have one concern.",
+    "alternatives": [
+      "Having gone through it, I have one concern.",
+      "Having read it, there's one thing that concerns me."
+    ],
+    "point": "Having + 過去分詞で「読み終えて」を先に置く",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 9,
+    "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
     "stamps": {}
   },

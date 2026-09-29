@@ -1,5 +1,37 @@
 [
   {
+    "id": "c_2u9e5f2c",
+    "ja": "昼まで、彼は折り返さなかった。",
+    "en": "Not until noon did he call back.",
+    "alternatives": [
+      "He didn't call back until noon.",
+      "It wasn't until noon that he called back."
+    ],
+    "point": "Not until を前に出すと did + 主語 + 原形",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_2z3p7q6u",
+    "ja": "君が早くかけてれば、彼は出たよ。",
+    "en": "If you'd called earlier, he'd have answered.",
+    "alternatives": [
+      "If you had called sooner, he'd have answered.",
+      "If you'd called sooner, he'd have picked up."
+    ],
+    "point": "過去の仮定は if + had 過去分詞, would have + 過去分詞",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2z4g4w9z",
     "ja": "さっきまで、よく聞こえてたよ。",
     "en": "You were coming through fine earlier.",
@@ -44,6 +76,19 @@
     }
   },
   {
+    "id": "c_3d8e2e8h",
+    "ja": "彼、私の電話を無視したに違いない。",
+    "en": "He must have screened my call.",
+    "alternatives": ["He must have ignored my call.", "I'm sure he screened my call."],
+    "point": "must have + 過去分詞で過去の強い推量",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 10,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3g5g2g3p",
     "ja": "あとで折り返します。",
     "en": "I'll call you back later.",
@@ -80,6 +125,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4g7a2b8u",
+    "ja": "雑音はあるが、だいたい聞き取れた。",
+    "en": "Despite the static, I caught most of it.",
+    "alternatives": [
+      "Even with the static, I caught most of it.",
+      "Although there was static, I caught most of it."
+    ],
+    "point": "Despite の後ろは名詞。節なら Although",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_4j3a7e5g",
@@ -165,6 +226,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6d2n4e2d",
+    "ja": "何度も途切れるのは、音声のほうです。",
+    "en": "It's the audio that keeps cutting out.",
+    "alternatives": [
+      "It's the audio that keeps dropping out.",
+      "The audio is what keeps cutting out."
+    ],
+    "point": "It's + 強調語 + that で「途切れるのは音声」を強調",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6r5h2a7g",
+    "ja": "電話した時、彼はもう帰っていた。",
+    "en": "He'd already left when I called.",
+    "alternatives": [
+      "He had already gone home when I called.",
+      "When I called, he'd already left."
+    ],
+    "point": "電話した時より前の出来事は過去完了",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6t4z4z4t",
@@ -260,6 +353,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7q6x4n2t",
+    "ja": "経理の者におつなぎします。",
+    "en": "I'll connect you to someone in accounting.",
+    "alternatives": [
+      "I'll put you through to someone in accounting.",
+      "Let me transfer you to someone in accounting."
+    ],
+    "point": "someone の後ろに in accounting を足して絞る",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 8,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7u6u3d5z",
@@ -386,6 +495,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9r2a6z2p",
+    "ja": "かけてきたのは田中でなく鈴木。",
+    "en": "It was Suzuki, not Tanaka, who called.",
+    "alternatives": [
+      "It was Suzuki who called, not Tanaka.",
+      "Suzuki called, not Tanaka."
+    ],
+    "point": "人が強調されるときは It was + 人 + who",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9s4x7q6t",
+    "ja": "大きな声なら、聞き取れるのに。",
+    "en": "If you spoke up, I'd hear you.",
+    "alternatives": [
+      "I could hear you if you spoke up.",
+      "If you spoke louder, I'd hear you."
+    ],
+    "point": "現在の仮定は if + 過去形, could + 原形",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 9,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9s7q2y5d",

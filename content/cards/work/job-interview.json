@@ -19,6 +19,38 @@
     }
   },
   {
+    "id": "c_3c3a2q4d",
+    "ja": "学歴はないが、成果は出してきました。",
+    "en": "Though I lack a degree, I've delivered results.",
+    "alternatives": [
+      "Although I don't have a degree, I've delivered results.",
+      "I lack a degree, but I've delivered results."
+    ],
+    "point": "Though 節と主節を対比させる",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3m6n9q8j",
+    "ja": "採用なら、すぐに戦力になります。",
+    "en": "If hired, I'll hit the ground running.",
+    "alternatives": [
+      "If I'm hired, I'll hit the ground running.",
+      "Once hired, I'll hit the ground running."
+    ],
+    "point": "hit the ground running は「すぐ全力で動く」",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 8,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3r3w8m2k",
     "ja": "視野を広げたくて応募しました。",
     "en": "I applied to broaden my horizons.",
@@ -58,6 +90,54 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4k3a4y4e",
+    "ja": "当時、もうチームを率いていた。",
+    "en": "By then, I'd already led a team.",
+    "alternatives": [
+      "I had already led a team by then.",
+      "By that point, I had already led a team."
+    ],
+    "point": "「その時までに」は過去完了",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 9,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4m6x4g8h",
+    "ja": "営業で、交渉力を学びました。",
+    "en": "Working in sales, I learned to negotiate.",
+    "alternatives": [
+      "Working in sales taught me to negotiate.",
+      "Through working in sales, I learned to negotiate."
+    ],
+    "point": "分詞構文の主語は主節の主語と同じ",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4u7e3s9x",
+    "ja": "活きるのはここだと思う。",
+    "en": "I think this is where I'll thrive.",
+    "alternatives": [
+      "I believe this is where I'll thrive.",
+      "I think this is the place where I'll thrive."
+    ],
+    "point": "I think の中に where 節を入れ子にする",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_4v2c8p6a",
@@ -186,6 +266,22 @@
     }
   },
   {
+    "id": "c_6j6k7d2t",
+    "ja": "案件を担当して、次は統括したい。",
+    "en": "Having run projects, I want to lead.",
+    "alternatives": [
+      "Having managed projects, I want to lead.",
+      "Having run projects, I'd like to take the lead."
+    ],
+    "point": "Having + 過去分詞で「〜した経験を経て」",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 9,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6u2p2r4a",
     "ja": "英語でメールが書けます。",
     "en": "I can write English emails.",
@@ -287,6 +383,22 @@
     }
   },
   {
+    "id": "c_7x4g9x8h",
+    "ja": "退職してから、フリーで働いています。",
+    "en": "I've been freelancing since I left my job.",
+    "alternatives": [
+      "I've freelanced since I left my job.",
+      "I've been freelancing since I quit my job."
+    ],
+    "point": "since の後は過去形、主節は現在完了（進行形）",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8e7k8e4v",
     "ja": "来月から働き始めます。",
     "en": "I'll start next month.",
@@ -308,6 +420,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8q7g5v3n",
+    "ja": "リーダーに抜擢されたんです。",
+    "en": "I was tapped to lead the team.",
+    "alternatives": [
+      "I was picked to lead the team.",
+      "They chose me to lead the team."
+    ],
+    "point": "be tapped to do で「抜擢される」",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 8,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8r5c4r7t",
@@ -435,5 +563,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9e4x2u6j",
+    "ja": "プロダクト管理に領域を広げたいです。",
+    "en": "I want to branch out into product management.",
+    "alternatives": [
+      "I'd like to branch out into product management.",
+      "I want to expand into product management."
+    ],
+    "point": "branch out (into) は「領域を広げる」",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 10,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]
