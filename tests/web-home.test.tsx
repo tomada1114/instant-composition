@@ -6,6 +6,7 @@ import { TUNING, type HomeView } from "@instant-composition/web";
 import {
   COUNT,
   PREVIEW,
+  ROUND,
   fakeApi,
   fakeTimers,
   fill,
@@ -416,6 +417,42 @@ describe("the home screen before and instead of the home view", () => {
     await settle();
     expect(where()).toBe("/drill?kind=placement");
     expect(calls.some((call) => call.url === "/api/v1/rounds")).toBe(true);
+  });
+
+  it("opens a placement it forwards to, already under way, on the start screen", async () => {
+    fakeApi((call) => {
+      if (call.url === "/api/v1/home")
+        return Response.json(homeView({ kind: "placement" }));
+      if (call.url === "/api/v1/rounds") {
+        return Response.json({
+          ...ROUND,
+          kind: "placement",
+          retries: false,
+          answered: [
+            {
+              id: "round-1:f:c1",
+              cardId: "c1",
+              pass: "first",
+              result: "ok",
+              answeredAt: Date.UTC(2026, 8, 22, 3, 0),
+            },
+          ],
+        });
+      }
+      return undefined;
+    });
+    await renderApp("/");
+    await settle();
+    await settle(16);
+    expect(where()).toBe("/drill?kind=placement");
+    expect(
+      screen.getByRole("button", { name: ja.Drill.ready.start }),
+    ).toBeInTheDocument();
+    expect(document.querySelector("[data-part=fill]")).toBeNull();
+    press("Enter");
+    await settle(16);
+    expect(screen.getByText("prompt-c2")).toBeInTheDocument();
+    expect(document.querySelector("[data-part=fill]")).not.toBeNull();
   });
 
   it("says the view could not be read, and reads it again on request", async () => {

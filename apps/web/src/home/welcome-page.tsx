@@ -5,6 +5,7 @@ import type { ReactElement } from "react";
 import { PageLoadFailed, PageLoading } from "../lib/page-shell";
 import { HOME_QUERY, isSignedOut, SETTINGS_QUERY } from "../lib/queries";
 import { WelcomeScreen } from "./welcome-screen";
+import { markPressed } from "../drill/pressed";
 
 /**
  * The `/welcome` route: the first visit's topic choice, offered from the
@@ -42,6 +43,7 @@ export function WelcomePage(): ReactElement {
         // The cached home view still says "onboarding"; the drill must read
         // the placement it now is, so the next read starts from nothing.
         queryClient.removeQueries({ queryKey: HOME_QUERY.queryKey });
+        markPressed();
         void navigate({ to: "/drill", search: { kind: "placement" } });
       }}
     />
