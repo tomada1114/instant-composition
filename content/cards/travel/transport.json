@@ -13,7 +13,13 @@
     "level": 5,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9cbf9b985e05607d2b97bdb00f6400be8e0d7406b7a2d2b68496094acf3f7627",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2n2j4x4t",
@@ -29,7 +35,13 @@
     "level": 6,
     "grammar": ["past-perfect", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6666ec2b918d60a4763eb55758086912e8840b6eb5d5629e924faa30981010b7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2v2w7m5d",
@@ -117,22 +129,6 @@
     }
   },
   {
-    "id": "c_3g7m9a9w",
-    "ja": "乗るはずだった電車は、もう出ていました。",
-    "en": "The train I needed had already left.",
-    "alternatives": [
-      "The train I had to catch had left.",
-      "My train had already left."
-    ],
-    "point": "電車を修飾する I needed は that を省ける。出発済みは had left",
-    "topic": "travel",
-    "subtopic": "transport",
-    "level": 5,
-    "grammar": ["past-perfect", "relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3j4n8w8p",
     "ja": "この電車、いつ着くかわかりますか？",
     "en": "Do you know when this train arrives?",
@@ -146,7 +142,13 @@
     "level": 4,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3f963a31cccfb671ea7bb6d3dd60032053cda952ac41bfd2a689b708665fb13d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4c3f3h6z",
@@ -215,22 +217,6 @@
     }
   },
   {
-    "id": "c_5b6z2s6y",
-    "ja": "ごめん、ずっと待ってた？バスが遅れちゃって。",
-    "en": "Sorry, have you been waiting? The bus ran late.",
-    "alternatives": [
-      "Have you been waiting long? My bus was late.",
-      "Sorry, have you been waiting? My bus got delayed."
-    ],
-    "point": "待ち続けた状態は have you been waiting で聞く",
-    "topic": "travel",
-    "subtopic": "transport",
-    "level": 6,
-    "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5h6h9b4v",
     "ja": "ずっとタクシーを待ってるんだけど。",
     "en": "I've been waiting for a taxi forever.",
@@ -244,7 +230,13 @@
     "level": 5,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:05bf3ae3ff0a732205e4ab17b9831ee00aececeed5371333cbc9122b797c8b4c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6u2h8a5h",
@@ -389,7 +381,13 @@
     "level": 3,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7a3eb724b37eb2492f52dc597421048e5214bd1737d2e31aa7c47d146229b612",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7t4e6r7c",
@@ -405,7 +403,13 @@
     "level": 10,
     "grammar": ["inversion"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:637fea99d1f7199f16a08da2d34a2a8e13799cec02656d91cc1d0848de1db043",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7u2p6b3y",
@@ -421,7 +425,13 @@
     "level": 5,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1a5d39aed6f45a35a00b3ba9af50b6f8507a5529cbe7ae88e7cca8ef40d2310e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8s6t5y6r",
@@ -488,22 +498,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9f8j3y6p",
-    "ja": "最終バスがもう出ていたなんて、思いもしなかったよ。",
-    "en": "Little did I know the last bus had already left.",
-    "alternatives": [
-      "I had no idea the last bus had already left.",
-      "I never dreamed the last bus had already gone."
-    ],
-    "point": "「思いもしなかった」は Little did I know と倒置にする",
-    "topic": "travel",
-    "subtopic": "transport",
-    "level": 9,
-    "grammar": ["inversion", "past-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9v6w6k3g",

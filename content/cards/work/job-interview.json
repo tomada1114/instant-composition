@@ -22,6 +22,22 @@
     }
   },
   {
+    "id": "c_2h5q7r5y",
+    "ja": "転勤があっても、私は御社に長く勤めたいです。",
+    "en": "Even if I'm transferred, I'd like to stay long-term.",
+    "alternatives": [
+      "Even with a transfer, I'd like to stay long-term.",
+      "I'd like to stay long-term, even if I'm transferred."
+    ],
+    "point": "Even if の後は現在形。I'd like to で控えめに。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["concession-contrast", "hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2h8f9t3q",
     "ja": "学生のうちに英語を勉強しておけばよかった。",
     "en": "I wish I'd studied English as a student.",
@@ -107,22 +123,6 @@
     "subtopic": "job-interview",
     "level": 3,
     "grammar": ["gerunds"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3s5k7f3w",
-    "ja": "残業が多くても、この仕事を続けられますか？",
-    "en": "Even with frequent overtime, can you stay in this role?",
-    "alternatives": [
-      "Would you stay in this job despite frequent overtime?",
-      "Even if overtime is frequent, could you stay on?"
-    ],
-    "point": "Even with + 名詞 でも譲歩を表せる",
-    "topic": "work",
-    "subtopic": "job-interview",
-    "level": 7,
-    "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -329,22 +329,6 @@
     "stamps": {}
   },
   {
-    "id": "c_5q9m3f9t",
-    "ja": "給料が下がるとしても、この職にはぜひ飛びつきたいです。",
-    "en": "Even if it means a pay cut, I'd jump at this role.",
-    "alternatives": [
-      "Even with a pay cut, I'd leap at this role.",
-      "I'd jump at this role even if the pay dropped."
-    ],
-    "point": "「飛びつく」は jump at。Even if で譲歩を示す",
-    "topic": "work",
-    "subtopic": "job-interview",
-    "level": 10,
-    "grammar": ["concession-contrast", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5y2s7a8x",
     "ja": "一番速くはなくても、私は丁寧に仕事をします。",
     "en": "Even if I'm not the fastest, I'm thorough.",
@@ -383,18 +367,18 @@
     }
   },
   {
-    "id": "c_7d5k5d5e",
-    "ja": "上司に言われる前に、もう改善案を出していました。",
-    "en": "I'd already proposed improvements before my boss asked.",
+    "id": "c_7e4v6d4v",
+    "ja": "初日から、すぐに戦力になれる自信があります。",
+    "en": "I'm confident I can hit the ground running.",
     "alternatives": [
-      "Before my boss asked, I'd already suggested improvements.",
-      "I had put forward improvements before my boss even asked."
+      "I'm sure I can hit the ground running from day one.",
+      "I'm confident I'll be productive from day one."
     ],
-    "point": "先に済んだ出来事は had + 過去分詞。",
+    "point": "「即戦力」は hit the ground running。",
     "topic": "work",
     "subtopic": "job-interview",
-    "level": 8,
-    "grammar": ["past-perfect"],
+    "level": 10,
+    "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -553,6 +537,22 @@
     "subtopic": "job-interview",
     "level": 4,
     "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9p9h7w8a",
+    "ja": "あの失敗こそが、今の私をつくったんです。",
+    "en": "It's that failure that made me who I am.",
+    "alternatives": [
+      "That very failure made me who I am.",
+      "It was that failure that shaped who I am today."
+    ],
+    "point": "It's A that ~ で A を強調する。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },

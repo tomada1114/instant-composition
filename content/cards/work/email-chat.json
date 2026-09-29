@@ -125,22 +125,6 @@
     }
   },
   {
-    "id": "c_2z3b3s2r",
-    "ja": "先週転送してくれたスレッド、再送してもらえますか？",
-    "en": "Could you resend the thread you forwarded me last week?",
-    "alternatives": [
-      "Could you send me the thread you forwarded last week again?",
-      "Can you resend that thread you forwarded me last week?"
-    ],
-    "point": "thread のあとの that は省略できる。you forwarded me が続く",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 9,
-    "grammar": ["relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3n6h3k6h",
     "ja": "送る前に誤字に気づいていれば、面目を保てたのに。",
     "en": "Had I caught the typo before sending, I'd have saved face.",
@@ -418,6 +402,22 @@
     "stamps": {}
   },
   {
+    "id": "c_8a6k9g3v",
+    "ja": "先方が言った期限、確認してもらえる？",
+    "en": "Could you confirm the deadline they mentioned?",
+    "alternatives": [
+      "Can you confirm the deadline they gave us?",
+      "Could you double-check the deadline they mentioned?"
+    ],
+    "point": "deadline のあとの that は省略できる",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 9,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8c6g2z7d",
     "ja": "チャットで返信してください。",
     "en": "Please reply in the chat.",
@@ -497,6 +497,22 @@
     "stamps": {}
   },
   {
+    "id": "c_9p2b4g9a",
+    "ja": "今、開いているファイルはどれですか？",
+    "en": "Which file do you have open?",
+    "alternatives": [
+      "Which file is open right now?",
+      "Which file are you on right now?"
+    ],
+    "point": "開いている状態は「have ～ open」で言う",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 2,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9s3q9p4z",
     "ja": "先方が昨日返信をくれていたら、今ごろ終わってるのに。",
     "en": "If they'd replied yesterday, we'd be done by now.",
@@ -517,21 +533,5 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9z8m9p7d",
-    "ja": "今、どのファイルを開いていますか？",
-    "en": "Which file are you opening now?",
-    "alternatives": [
-      "Which file do you have open?",
-      "What file are you opening right now?"
-    ],
-    "point": "疑問詞＋are you ～ing。which file を文頭に出す",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 2,
-    "grammar": ["wh-questions", "progressive-aspect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   }
 ]

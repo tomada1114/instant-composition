@@ -61,7 +61,7 @@
   },
   {
     "id": "c_3c3d2c6e",
-    "ja": "疲れてるね。少し休んだほうがいいよ。",
+    "ja": "少し休憩したほうがいいよ。",
     "en": "You should take a break.",
     "alternatives": ["You should rest a little.", "You should take a short break."],
     "point": "「〜したほうがいい」は should + 動詞の原形",
@@ -119,10 +119,10 @@
   {
     "id": "c_3q6m8a7y",
     "ja": "エアコンが静かなら、集中できるのに。",
-    "en": "If the AC were quieter, I'd concentrate.",
+    "en": "If the AC were quieter, I could focus.",
     "alternatives": [
-      "I could focus if the AC were quieter.",
-      "I could concentrate if the AC were quieter."
+      "I could concentrate if the AC were quieter.",
+      "If the AC were quieter, I could concentrate."
     ],
     "point": "現在の仮定は If + were、主節は would/could",
     "topic": "work",
@@ -194,11 +194,11 @@
       "I haven't been told what was decided yesterday.",
       "I haven't heard what got decided yesterday."
     ],
-    "point": "「決まったこと」は what 節。yet の代わりに現在完了で言う",
+    "point": "「まだ聞いていない」は現在完了、「決まったこと」は what 節",
     "topic": "work",
     "subtopic": "office-life",
     "level": 4,
-    "grammar": ["noun-clauses", "tense-contrast"],
+    "grammar": ["noun-clauses", "present-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -231,7 +231,7 @@
     "en": "Who's the person making copies over there?",
     "alternatives": [
       "Who's that person over there making copies?",
-      "Who is the person copying over there?"
+      "Who's that over there at the copier?"
     ],
     "point": "「人」を後ろから making で説明する",
     "topic": "work",
@@ -275,7 +275,7 @@
     "topic": "work",
     "subtopic": "office-life",
     "level": 9,
-    "grammar": ["second-conditional", "passive-voice"],
+    "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -542,22 +542,6 @@
     }
   },
   {
-    "id": "c_9j9t5h3h",
-    "ja": "早く言ってくれてたら、今ごろ会議室は取れてたのに。",
-    "en": "If you'd told me sooner, we'd have the room by now.",
-    "alternatives": [
-      "Had you told me sooner, we'd have the room by now.",
-      "If you'd let me know earlier, we'd have the room now."
-    ],
-    "point": "過去の仮定と今の結果は if 節が過去完了、主節が would",
-    "topic": "work",
-    "subtopic": "office-life",
-    "level": 9,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_9k8s9q7x",
     "ja": "お忙しいところ恐縮ですが、ご確認いただけますか？",
     "en": "Sorry to bother you, but could you review this?",
@@ -568,8 +552,8 @@
     "point": "「恐縮ですが」は Sorry to bother you, but で和らげる",
     "topic": "work",
     "subtopic": "office-life",
-    "level": 8,
-    "grammar": ["hedging-softening"],
+    "level": 7,
+    "grammar": ["hedging-softening", "requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -595,16 +579,16 @@
   {
     "id": "c_9u4h5p9n",
     "ja": "惜しい、彼女なら5分前に席を外したところだよ。",
-    "en": "You just missed her; she stepped out five minutes ago.",
+    "en": "Just missed her; she stepped out five minutes ago.",
     "alternatives": [
-      "You've just missed her. She stepped out five minutes ago.",
-      "You're too late; she stepped out five minutes ago."
+      "Just missed her; she stepped away five minutes ago.",
+      "Too bad, she stepped out five minutes ago."
     ],
-    "point": "five minutes ago と結果の現在は過去形と完了形を使い分ける",
+    "point": "「〜したところ」でも five minutes ago があれば過去形 (stepped out)",
     "topic": "work",
     "subtopic": "office-life",
-    "level": 10,
-    "grammar": ["tense-contrast"],
+    "level": 6,
+    "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },

@@ -434,18 +434,18 @@
     }
   },
   {
-    "id": "c_9k2k8m5y",
-    "ja": "指摘は受け止めました。やり方もちょうど見直したところです。",
-    "en": "I've taken your feedback on board and just revised my approach.",
+    "id": "c_9g5z2g5f",
+    "ja": "ご指摘、しっかり受け止めました。次から活かします。",
+    "en": "I've taken that on board and will apply it next time.",
     "alternatives": [
-      "I've taken your comments on board and just reworked my approach.",
-      "I took your feedback on board and have just rethought my approach."
+      "Point taken, and I'll put it to use next time.",
+      "Your feedback is well taken, and I'll use it next time."
     ],
-    "point": "take on board は「受け止める」。ちょうど済んだ話は現在完了+just",
+    "point": "「受け止める」は take ~ on board。目的語は間に入る",
     "topic": "work",
     "subtopic": "feedback",
     "level": 10,
-    "grammar": ["tense-contrast", "phrasal-verbs"],
+    "grammar": ["phrasal-verbs", "tense-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
   }

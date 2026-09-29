@@ -122,12 +122,12 @@
     "en": "Could you put me through to whoever handles billing?",
     "alternatives": [
       "Could you connect me with the person who handles billing?",
-      "Would you put me through to whoever's in charge of billing?"
+      "Could you connect me to whoever handles billing?"
     ],
     "point": "「担当の方」は whoever handles と現在形で言える",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 9,
+    "level": 7,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -165,8 +165,8 @@
     "point": "「〜してから」は After＋-ing でも言える",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 8,
-    "grammar": ["participle-clauses", "time-and-if-clauses"],
+    "level": 6,
+    "grammar": ["gerunds", "time-and-if-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -207,13 +207,13 @@
     "ja": "今電話中の人は、部長のアシスタントです。",
     "en": "The person on the phone is the manager's assistant.",
     "alternatives": [
-      "The person talking on the phone is the manager's assistant.",
-      "The person who's on the phone is the manager's assistant."
+      "The person on the line is the manager's assistant.",
+      "The caller is the manager's assistant."
     ],
     "point": "「電話中の人」は the person on the phone と後ろから直す",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 8,
+    "level": 6,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -243,15 +243,15 @@
   {
     "id": "c_5e5m3r3f",
     "ja": "先ほど送ったリンクから会議に入ってください。",
-    "en": "Please join the meeting using the link sent earlier.",
+    "en": "Please join through the link I sent earlier.",
     "alternatives": [
-      "Please join through the link I sent you earlier.",
-      "Please use the link I sent earlier to join."
+      "Please use the link I sent earlier to join.",
+      "Please join the meeting from the link I sent."
     ],
-    "point": "「送ったリンク」は the link sent earlier と後ろから修飾",
+    "point": "「送ったリンク」は the link I sent と後ろから修飾",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 8,
+    "level": 6,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -283,13 +283,13 @@
     "ja": "回線が不安定でも、このまま続けていい？",
     "en": "Even if the line's shaky, can we keep going?",
     "alternatives": [
-      "Can we keep going even if the line is shaky?",
-      "Although the line is shaky, can we keep going?"
+      "Can we keep going even if the line's shaky?",
+      "The line's shaky, but can we keep going?"
     ],
     "point": "「〜でも」は Even if。keep のあとは -ing",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 8,
+    "level": 6,
     "grammar": ["concession-contrast", "gerunds"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -338,12 +338,12 @@
   {
     "id": "c_5z6p6p9e",
     "ja": "音声は大丈夫だけど、そちらの映像は固まってるよ。",
-    "en": "Your audio's fine, whereas your video is frozen.",
+    "en": "Your audio's fine, but your video's frozen.",
     "alternatives": [
-      "Although your audio's fine, your video is frozen.",
-      "I can hear you fine, but your video's frozen."
+      "I can hear you fine, but your video's frozen.",
+      "I can hear you, but your video is frozen."
     ],
-    "point": "対比は whereas か although でつなぐ",
+    "point": "対比は but でつなぐ。音声と映像を並べて言う",
     "topic": "work",
     "subtopic": "phone-calls",
     "level": 7,
@@ -456,22 +456,6 @@
     "stamps": {}
   },
   {
-    "id": "c_6v2s9b9d",
-    "ja": "声は聞こえますが、映像は固まっています。",
-    "en": "I can hear you, although your video is frozen.",
-    "alternatives": [
-      "Even though I can hear you, your video is frozen.",
-      "Your video is frozen, although I can hear you fine."
-    ],
-    "point": "対比は although で。but と二重にしない",
-    "topic": "work",
-    "subtopic": "phone-calls",
-    "level": 8,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6w7b8v7d",
     "ja": "その電話はもう営業部に回されました。",
     "en": "That call has already been transferred to Sales.",
@@ -499,13 +483,13 @@
     "en": "Can you see the screen I'm sharing?",
     "alternatives": [
       "Do you see the screen I'm sharing?",
-      "Can you see the screen I'm showing?"
+      "Can you see my shared screen?"
     ],
-    "point": "the screen のあとに I'm sharing を続けて説明",
+    "point": "the screen のあとに、関係詞を省略して I'm sharing を続ける",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 5,
-    "grammar": ["post-modification"],
+    "level": 4,
+    "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -553,15 +537,15 @@
   {
     "id": "c_7v8e3b6u",
     "ja": "さっき電話してきた人、誰でしたっけ？",
-    "en": "Who was the man who just called?",
+    "en": "Who was the person who just called?",
     "alternatives": [
       "Who was that person who called earlier?",
-      "Who was the one who just called?"
+      "Who was it that just called?"
     ],
     "point": "「電話してきた人」は who called で人を後ろから説明",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 5,
+    "level": 4,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -610,12 +594,12 @@
     "en": "You should get closer to your mic.",
     "alternatives": [
       "You should move closer to your mic.",
-      "You'd better move closer to the mic."
+      "Try moving closer to your mic."
     ],
     "point": "助言は should、「近づく」は get closer to",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 5,
+    "level": 4,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
     "stamps": {}
