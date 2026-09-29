@@ -38,22 +38,6 @@
     }
   },
   {
-    "id": "c_2r5t3u8h",
-    "ja": "自分たちでログをもっと仕込んでおけばよかったなあ。",
-    "en": "I wish we'd added more logging.",
-    "alternatives": [
-      "We should have added more logging.",
-      "I wish we had put in more logging."
-    ],
-    "point": "過去の後悔は I wish + had 過去分詞",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 7,
-    "grammar": ["wishes-regrets"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2s7z5w6u",
     "ja": "ログインで落ちるだけでなく、下書きまで消えます。",
     "en": "Not only does it crash on login, it even deletes drafts.",
@@ -80,7 +64,13 @@
     "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f83b06c793469e426e24c34259682bf6c6dae6746c29c9c90e7bef197f1f885e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3f2r9q9t",
@@ -96,7 +86,13 @@
     "level": 8,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1cc748e1a5efb56514ece55b4fc355d6716d5f9847a6d0f9c37d778310eedad0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3f4t5t2z",
@@ -112,7 +108,13 @@
     "level": 7,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6e1c2d1adf5f1a5e18cc30a71f945bd7e798b2e6323ee193dcd538072e2e6e03",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3g6j8f8m",
@@ -185,7 +187,13 @@
     "level": 6,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ce0ceed6b3c09d6d6c5c1f47b44bd89277cd1ef9abcec5f8e7c3d72b1c51eb11",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4j3y4r6w",
@@ -220,7 +228,13 @@
     "level": 7,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:696b66523fb3dbaf966013f15f2003c241f2a4d26e772f9652e2c1c78996ec13",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4t5w9r3g",
@@ -236,7 +250,13 @@
     "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ea8613a84bd472ad2b5fd4a0f685043f9d1516ecada0d1c4745ef201696c110a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4v6w6x7m",
@@ -252,23 +272,13 @@
     "level": 7,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5b6v8c8f",
-    "ja": "QA の誰かに、これを再現してもらえますか？",
-    "en": "Could you have someone in QA reproduce this?",
-    "alternatives": [
-      "Could you get someone in QA to reproduce this?",
-      "Can you get someone in QA to reproduce this?"
-    ],
-    "point": "have 人 do は原形、get 人 to do は to 不定詞",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 6,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d7a8cccfdd5ff55c9b99901237c37482040f87bb91ad915685538f826659b5f4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5f7b4a3n",
@@ -284,7 +294,13 @@
     "level": 7,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0425faf7449407069906da407144ace4f39505c5acf82c540f1753b06c0c4870",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5y9r6w5n",
@@ -300,7 +316,13 @@
     "level": 7,
     "grammar": ["modal-perfect", "reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a730c01570e9c1636d5686eed4f4e6f9c95ae6f1e8165b077733b9776f160a49",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6g6d7u5w",
@@ -338,7 +360,13 @@
     "level": 8,
     "grammar": ["noun-clauses", "cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:84331026e237495491493ace7d215aa2d928b2fec6c728a44821a75e569fd86d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6p7e8x8f",
@@ -376,22 +404,6 @@
     "stamps": {}
   },
   {
-    "id": "c_6t6t5r6g",
-    "ja": "うちで負荷テストしていれば、リークは防げたのに。",
-    "en": "If we'd load-tested, we could have prevented the leak.",
-    "alternatives": [
-      "Had we load-tested, we could've prevented the leak.",
-      "We could have prevented the leak if we'd load-tested."
-    ],
-    "point": "過去の仮定は had + 過去分詞、帰結は would have + 過去分詞",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 7,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6y5e8c6w",
     "ja": "誰かがインデックスを消したに違いないと思う。",
     "en": "I think someone must have deleted the index.",
@@ -405,7 +417,13 @@
     "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:430f90365ddcae02e669ef84e1944a2d7b6863825dab4b1a4795606fb66f9f26",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7k6p4k9e",

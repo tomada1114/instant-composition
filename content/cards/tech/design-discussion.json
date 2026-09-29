@@ -17,7 +17,7 @@
   },
   {
     "id": "c_2h2z4p9j",
-    "ja": "書き込みの速さを少し捨てて、整合性を選んだ。",
+    "ja": "うちは書き込みの速さを少し捨てて、整合性を選んだ。",
     "en": "We gave up some write speed for consistency.",
     "alternatives": [
       "We traded a bit of write speed for consistency.",
@@ -65,16 +65,16 @@
   },
   {
     "id": "c_2q5t4x8q",
-    "ja": "元のチームが選んだ案は、来年のトラフィックを無視している。",
+    "ja": "元のチームが選んだ案は来年のトラフィックを無視している。",
     "en": "The plan the original team chose ignores next year's traffic.",
     "alternatives": [
       "The plan that team chose doesn't account for next year's traffic.",
       "The original team's plan doesn't factor in next year's traffic."
     ],
-    "point": "主語が長くても動詞は ignores で受ける",
+    "point": "the plan the team chose のように関係代名詞を省いて名詞を後ろから説明する",
     "topic": "tech",
     "subtopic": "design-discussion",
-    "level": 10,
+    "level": 9,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -189,7 +189,7 @@
     "point": "控えめな提案は I was wondering if で始める",
     "topic": "tech",
     "subtopic": "design-discussion",
-    "level": 10,
+    "level": 9,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -205,17 +205,17 @@
     "point": "since があるので主節は現在完了 has gotten",
     "topic": "tech",
     "subtopic": "design-discussion",
-    "level": 7,
-    "grammar": ["tense-contrast"],
+    "level": 6,
+    "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_5j9c7a7t",
     "ja": "このキャッシュは遅延だけでなくDBの負荷も減らす。",
-    "en": "Not only does it cut latency, it lightens DB load.",
+    "en": "Not only does it cut latency, it also reduces DB load.",
     "alternatives": [
-      "This cache not only cuts latency but also lightens DB load.",
+      "This cache not only cuts latency but also reduces DB load.",
       "It cuts latency and takes load off the database too."
     ],
     "point": "Not only を文頭に出したら does + 主語の語順に",
@@ -266,16 +266,16 @@
   },
   {
     "id": "c_6b4c5h2y",
-    "ja": "仕様は、レビューが終わるまで確定しません。",
+    "ja": "仕様はレビューが終わるまで確定しません。",
     "en": "The spec won't be final until it's reviewed.",
     "alternatives": [
-      "The spec isn't final until the review is done.",
+      "The spec isn't final until it's reviewed.",
       "We won't finalize the spec until it's reviewed."
     ],
     "point": "until 節は未来のことでも will を使わない",
     "topic": "tech",
     "subtopic": "design-discussion",
-    "level": 6,
+    "level": 4,
     "grammar": ["passive-voice", "time-and-if-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -490,7 +490,8 @@
     "en": "Could you ask the lead to write this up?",
     "alternatives": [
       "Can you ask the lead to write it up?",
-      "Could you get the lead to write this up?"
+      "Could you get the lead to write this up?",
+      "Could you have the lead write this up?"
     ],
     "point": "「まとめる」は write up が自然。代名詞は間に入れる",
     "topic": "tech",

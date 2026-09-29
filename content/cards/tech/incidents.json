@@ -1,11 +1,11 @@
 [
   {
     "id": "c_2h5x2u2m",
-    "ja": "その時、サーバーは2時間も止まっていた。",
-    "en": "By then, it had been down two hours.",
+    "ja": "その時点でもう2時間も止まっていた。",
+    "en": "It'd been down for two hours by then.",
     "alternatives": [
-      "It had been down two hours by then.",
-      "The server had already been down two hours."
+      "The server had been down for two hours.",
+      "It had been down a full two hours."
     ],
     "point": "過去のある時点までの継続は had been で表す",
     "topic": "tech",
@@ -135,7 +135,7 @@
     "ja": "今回の障害は先月より長引いた。",
     "en": "This outage lasted longer than last month's.",
     "alternatives": [
-      "This outage took longer than the last one.",
+      "This outage took longer than last month's.",
       "This outage was longer than last month's."
     ],
     "point": "than の後ろは last month's のように名詞を省略できる",
@@ -154,7 +154,7 @@
     "point": "「できない」は can't。still は can't の前に置く",
     "topic": "tech",
     "subtopic": "incidents",
-    "level": 3,
+    "level": 2,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -245,7 +245,7 @@
     "en": "Only users in Japan are affected.",
     "alternatives": [
       "This only affects users in Japan.",
-      "Only Japanese users are affected."
+      "Just the users in Japan are affected."
     ],
     "point": "「影響を受けている」は are affected で表す",
     "topic": "tech",
@@ -263,7 +263,7 @@
   },
   {
     "id": "c_5y6p2d2r",
-    "ja": "今夜はログを監視し続けるべきですか？",
+    "ja": "私たち、今夜もログを監視し続けるべき？",
     "en": "Should we keep monitoring the logs tonight?",
     "alternatives": [
       "Should we keep watching the logs tonight?",
@@ -281,7 +281,7 @@
     "id": "c_6q9j2m8m",
     "ja": "ログインエラーが出ています。",
     "en": "There's a login error.",
-    "alternatives": ["The login page shows an error.", "Login is showing an error."],
+    "alternatives": ["I'm getting a login error.", "Login is showing an error."],
     "point": "エラー一つは There's a login error。a を忘れない",
     "topic": "tech",
     "subtopic": "incidents",
