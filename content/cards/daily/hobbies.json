@@ -45,23 +45,13 @@
     "level": 7,
     "grammar": ["hedging-softening", "indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3t8n4h3w",
-    "ja": "妹はインドア派なのに、週末はサーフィンだよ。",
-    "en": "Although she's indoorsy, my sister surfs on weekends.",
-    "alternatives": [
-      "My sister surfs on weekends despite being indoorsy.",
-      "My sister's indoorsy, but she surfs on weekends."
-    ],
-    "point": "although の節に but を重ねない。Although 〜, S V の形にする",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 6,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2e8e49998c190dc9bb7cd01cebe670d8d922db62b09b05b777774962c10bbbfb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5f7x5m3r",
@@ -93,7 +83,13 @@
     "level": 2,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:afdcfd99e0c483799faaeecf8eea1dcbff98b43cb82e77a61d54bb38b04a024a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5x9q2q6e",
@@ -109,7 +105,13 @@
     "level": 3,
     "grammar": ["progressive-aspect", "past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5463bf3ab0bedcbf558951a32421f46ba534770ae9d19ca128006e3ff1de6c9c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5z4d8a3t",
@@ -124,9 +126,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:352ea055267c0c71bcd5b3d478b27dd595d57f3d8e9a43e8e0f7b8d5c3fc4a1e",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:8a760659ad13799ea706121995a6f7f8ade23f4610fdf8fcbeb3050d7cce55f9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -162,9 +164,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:f567cb80188fc264abb8719200ef3c661836072f9c1305269530ac4e001c9214",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:a94458d7fe64ea05f0238aa5cadf406ae36c37ef7a9bd7c385df6a0383ed9fb0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -179,23 +181,13 @@
     "level": 2,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6s7n2x7q",
-    "ja": "山なら水を多めに持ってったほうがいいよ。",
-    "en": "In the mountains, you should bring extra water.",
-    "alternatives": [
-      "You should take plenty of water up there.",
-      "You should take extra water to the mountains."
-    ],
-    "point": "「〜したほうがいい」は should で表す",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 4,
-    "grammar": ["modal-obligation-advice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a30a0b09ab6eb1bb7be080cb36496c848876dee15125ae3864694d40495b69a3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6u3r6y2q",
@@ -291,7 +283,13 @@
     "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:97e50afc56b4184806407dfbe87519ce7c8917d07de72369981d46230d01e12a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8g2e5m7g",
@@ -310,8 +308,8 @@
     "stamps": {
       "core": {
         "hash": "sha256:0b6f820daf197276ab47f56b1ab05584cdf3b40c9af5af39d0db1e1f60891490",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -328,22 +326,6 @@
     "subtopic": "hobbies",
     "level": 8,
     "grammar": ["second-conditional", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8q4b6n7a",
-    "ja": "うちは結婚以来、同じ場所でキャンプしてるよ。",
-    "en": "We've camped at the same spot since we married.",
-    "alternatives": [
-      "We've gone to the same campsite since our wedding.",
-      "We've camped at the same place since getting married."
-    ],
-    "point": "since があるので現在形ではなく現在完了にする",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 6,
-    "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -377,7 +359,13 @@
     "level": 2,
     "grammar": ["wh-questions", "be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5ec0014db0e9c3fe35026e8bc514b8b59054c22bf42f97dbbb8eb4a7db8fb5be",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8v7d9n8k",
@@ -409,7 +397,13 @@
     "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:75867deae101edc30264fe5bf4349478f56b0e4c113992fad0cc2edeba9d553c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8w6a8d3y",
@@ -445,22 +439,6 @@
     "stamps": {}
   },
   {
-    "id": "c_9f7d2v8d",
-    "ja": "日曜は、たいてい友達と遊んでるよ。",
-    "en": "Sundays, I mostly hang out with friends.",
-    "alternatives": [
-      "I usually spend Sundays with friends.",
-      "On Sundays I usually see friends."
-    ],
-    "point": "「遊ぶ」は hang out with 人 で言える",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 5,
-    "grammar": ["phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_9q3j7k8n",
     "ja": "日曜は一日中、映画を観てたよ。",
     "en": "I watched movies all day Sunday.",
@@ -474,6 +452,12 @@
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c3adac984dbb50a81a8f7e0ec901f43dd053fc7856965a779b45d2670705b87c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
