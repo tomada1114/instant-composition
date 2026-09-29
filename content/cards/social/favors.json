@@ -16,18 +16,18 @@
     "stamps": {}
   },
   {
-    "id": "c_2k6u5s7h",
-    "ja": "ケンにコピー機の修理を手伝ってと頼まれた。",
-    "en": "Ken asked me to help fix the copier.",
+    "id": "c_2j9h6n7z",
+    "ja": "この件を頼めるのは、君しかいないんだ。",
+    "en": "You're the only one I can ask about this.",
     "alternatives": [
-      "Ken asked if I could help fix the copier.",
-      "Ken asked me for a hand fixing the copier."
+      "There's no one else I can ask about this.",
+      "You're the one person I can ask about this."
     ],
-    "point": "「人に〜してと頼む」は ask 人 to do",
+    "point": "「〜しかいない」は the only one + 関係詞節で言う",
     "topic": "social",
     "subtopic": "favors",
-    "level": 7,
-    "grammar": ["verb-object-to-do"],
+    "level": 8,
+    "grammar": ["post-modification", "relative-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -83,18 +83,34 @@
     }
   },
   {
-    "id": "c_4g7w3t4r",
-    "ja": "えさやりに何時に行けばいいか教えてもらえる？",
-    "en": "Could you tell me when I should come by?",
+    "id": "c_4n8d2z4y",
+    "ja": "明日、猫にえさをあげに寄ってもらえない？",
+    "en": "Could you swing by tomorrow and feed my cat?",
     "alternatives": [
-      "Can you tell me what time I should come?",
-      "Could you let me know when to stop by?"
+      "Can you drop by tomorrow and feed my cat?",
+      "Could you stop by tomorrow to feed my cat?"
     ],
-    "point": "間接疑問は when I should と平叙文の語順",
+    "point": "swing by / drop by は「ちょっと寄る」の句動詞",
     "topic": "social",
     "subtopic": "favors",
     "level": 6,
-    "grammar": ["indirect-questions", "requests-permission"],
+    "grammar": ["phrasal-verbs", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4y3n8x8n",
+    "ja": "手伝いたいのは山々だけど、今週は手が離せなくて。",
+    "en": "I'd love to help, but I'm swamped this week.",
+    "alternatives": [
+      "I'd love to, but I'm tied up this week.",
+      "I wish I could help, but I'm swamped this week."
+    ],
+    "point": "「〜たいのは山々だけど」は I'd love to, but で断る",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["concession-contrast", "hedging-softening"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -182,22 +198,6 @@
     "stamps": {}
   },
   {
-    "id": "c_5p5h9z5v",
-    "ja": "田中さんは、来週なら原稿を見ると言っていました。",
-    "en": "Ms. Tanaka said she'd review the draft next week.",
-    "alternatives": [
-      "Ms. Tanaka told me she'd review the draft next week.",
-      "Ms. Tanaka said she'd go over the draft next week."
-    ],
-    "point": "伝える側の過去に合わせて will → would",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 8,
-    "grammar": ["reported-speech"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5t6d5v6u",
     "ja": "私が引っかかったのは、頼まれたことより彼の頼み方だった。",
     "en": "What bugged me was how he asked, not the favor.",
@@ -278,6 +278,22 @@
     "stamps": {}
   },
   {
+    "id": "c_7n6a6u7s",
+    "ja": "これ組み立てるの手伝って。お昼おごるよ。",
+    "en": "Help me build it. Lunch is on me.",
+    "alternatives": [
+      "Give me a hand with this. I'll buy lunch.",
+      "Help me put this together, and I'll buy lunch."
+    ],
+    "point": "「おごる」は Lunch is on me が定番の言い方",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 6,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7p7z3x9v",
     "ja": "メモ用に紙をちょっともらえる？",
     "en": "Could I get some paper for notes?",
@@ -323,18 +339,34 @@
     "stamps": {}
   },
   {
-    "id": "c_8k6k3c5s",
-    "ja": "翻訳者さんに、私の記事を見てもらえるか聞いてくれない？",
-    "en": "Could you ask the translator if they'd check my article?",
+    "id": "c_8r2z2z7t",
+    "ja": "頼みにくいんだけど、金曜だけ代わってもらえない？",
+    "en": "I hate to ask, but could you cover for me Friday?",
     "alternatives": [
-      "Could you ask the translator whether they'd look over my article?",
-      "Would you mind asking the translator if they could check my article?"
+      "Sorry to ask, but could you take my shift Friday?",
+      "I hate to impose, but could you cover my shift Friday?"
     ],
-    "point": "「〜か聞いて」は ask + if/whether 節（語順は平叙文）",
+    "point": "頼みにくい前置きは I hate to ask, but が定番",
     "topic": "social",
     "subtopic": "favors",
     "level": 10,
-    "grammar": ["noun-clauses"],
+    "grammar": ["hedging-softening", "concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8t2z7a3k",
+    "ja": "何を頼んでも、彼は一度も嫌な顔をしなかった。",
+    "en": "Whatever I asked, not once did he look annoyed.",
+    "alternatives": [
+      "No matter what I asked, he never once looked annoyed.",
+      "No matter what I asked, never once did he look annoyed."
+    ],
+    "point": "Not once を文頭に置くと did he look と倒置になる",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 10,
+    "grammar": ["inversion", "concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -367,38 +399,6 @@
     "subtopic": "favors",
     "level": 6,
     "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9j8f5k6t",
-    "ja": "隣の奥さんに猫の世話を頼んだら、快く引き受けてくれたよ。",
-    "en": "I asked my neighbor to catsit, and she gladly agreed.",
-    "alternatives": [
-      "When I asked my neighbor to catsit, she happily said yes.",
-      "My neighbor gladly agreed to look after my cat when I asked."
-    ],
-    "point": "過去の出来事の連続は過去形でつなぐ",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 10,
-    "grammar": ["tense-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9m9u2p6w",
-    "ja": "引っ越し手伝ってもらえない？お昼おごるよ。",
-    "en": "Could you help me move? I'll buy lunch.",
-    "alternatives": [
-      "Could you help me move? Lunch is on me.",
-      "Would you mind helping me move? I'm buying lunch."
-    ],
-    "point": "「おごる」は buy lunch や Lunch is on me が自然",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 6,
-    "grammar": ["requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },

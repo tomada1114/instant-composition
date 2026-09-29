@@ -38,6 +38,51 @@
     "stamps": {}
   },
   {
+    "id": "c_2j6m3b5q",
+    "ja": "私は駅の近くで働いています。",
+    "en": "I work near the station.",
+    "alternatives": ["I work by the station.", "My job is near the station."],
+    "point": "「〜の近くで」は near か by を使う",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3b3f6n9t",
+    "ja": "英語が話せたら、海外で働けるのに。",
+    "en": "If I spoke English, I could work abroad.",
+    "alternatives": [
+      "I could work abroad if I spoke English.",
+      "If I spoke English, I could work overseas."
+    ],
+    "point": "今と違う仮定は if 節を過去形にし、結果は could で言う",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 5,
+    "grammar": ["second-conditional", "can-could-ability"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3u5h4f9m",
+    "ja": "犬の散歩中は、いつも音楽を聴いてます。",
+    "en": "I always listen to music while walking my dog.",
+    "alternatives": [
+      "I listen to music whenever I walk my dog.",
+      "While walking my dog, I always listen to music."
+    ],
+    "point": "「〜しながら」は while + -ing で、主語は省ける",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3w6n2h8b",
     "ja": "地元に恩返ししたくて、この仕事を選びました。",
     "en": "I chose this job to give back to my hometown.",
@@ -66,22 +111,6 @@
     "subtopic": "introductions",
     "level": 7,
     "grammar": ["wishes-regrets", "modal-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4h8v4t5u",
-    "ja": "英語がペラペラなら、海外で働きたい。",
-    "en": "If I were fluent, I'd work abroad.",
-    "alternatives": [
-      "If I spoke English fluently, I'd work abroad.",
-      "I'd work abroad if I were fluent."
-    ],
-    "point": "今と違う仮定は if 節に過去形、be は were を使う",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 5,
-    "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -131,26 +160,20 @@
     "stamps": {}
   },
   {
-    "id": "c_5n9q4k7k",
-    "ja": "今は駅前のカフェで働いています。",
-    "en": "I'm working at a station café.",
+    "id": "c_5q2q9t5f",
+    "ja": "出身は福岡で、昼間は編集者、夜は小説を書いてます。",
+    "en": "I'm from Fukuoka. I edit by day, write novels at night.",
     "alternatives": [
-      "Right now I'm working at a café.",
-      "Now I work at a station café."
+      "I'm from Fukuoka. I edit by day and write novels at night.",
+      "I'm from Fukuoka. I'm an editor by day, a novelist at night."
     ],
-    "point": "今の仕事は進行形 I'm working で言う",
+    "point": "「昼は〜、夜は〜」は by day / at night で対にする",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 2,
-    "grammar": ["progressive-aspect"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:25da51f2648aa80cfca93c9fca5e33e73c42f4ebcff2838b41dfe5c59207c018",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5w2b4f8p",
@@ -191,22 +214,6 @@
     "stamps": {}
   },
   {
-    "id": "c_6e5q6d3h",
-    "ja": "来日前は銀行で働いていました。",
-    "en": "I'd worked in banking before moving here.",
-    "alternatives": [
-      "I worked at a bank before moving here.",
-      "Before I came here, I worked in banking."
-    ],
-    "point": "来日より前のことは had worked で時間差を示す",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 5,
-    "grammar": ["past-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6s2q2r6d",
     "ja": "ヨガを始めて、すっかりはまりました。",
     "en": "I took up yoga and got hooked.",
@@ -219,22 +226,6 @@
     "subtopic": "introductions",
     "level": 5,
     "grammar": ["phrasal-verbs", "past-simple"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6u6d3d5n",
-    "ja": "福岡出身で、昼は編集、夜は小説を書いています。",
-    "en": "I'm from Fukuoka, editing by day and writing novels at night.",
-    "alternatives": [
-      "I'm from Fukuoka. I edit by day and write novels at night.",
-      "I'm from Fukuoka, an editor by day and a novelist by night."
-    ],
-    "point": "「〜しながら」はカンマ + -ing で文末に添えられる",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 10,
-    "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -340,22 +331,6 @@
         "at": "2026-09-22"
       }
     }
-  },
-  {
-    "id": "c_8n5q6p7y",
-    "ja": "友達が誘わなければ、サーフを始めなかった。",
-    "en": "If my friend hadn't asked, I'd never have surfed.",
-    "alternatives": [
-      "I'd never have surfed if my friend hadn't asked.",
-      "If my friend hadn't asked, I wouldn't have surfed."
-    ],
-    "point": "過去の仮定は if＋had not＋過去分詞、帰結は would have",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 6,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_8v6r9a3a",

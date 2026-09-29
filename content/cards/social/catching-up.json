@@ -13,7 +13,13 @@
     "level": 10,
     "grammar": ["cleft-emphasis", "noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:271ab325e2d2560d1f8d2dcc8ace7d65a9d0e0eccaa5db4e4cf57cc844902b31",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2h5v3w2j",
@@ -73,7 +79,13 @@
     "level": 7,
     "grammar": ["reported-speech", "passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c1e6df1ab072ce18026167d1c27f34ddaf288666cf4b67104f49d82550269494",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3z3m5z4f",
@@ -89,7 +101,13 @@
     "level": 10,
     "grammar": ["cleft-emphasis", "noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d8976ea84841d096dfe1a0644f22b477e2c0e80ab6764fa809c70c4b8927d0ae",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4f2a7y7w",
@@ -149,23 +167,13 @@
     "level": 7,
     "grammar": ["wishes-regrets", "reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5c2s8x7b",
-    "ja": "彼女は結婚しただけでなく、自分の店まで開いたんだ。",
-    "en": "Not only did she marry, but she opened her own shop.",
-    "alternatives": [
-      "She not only got married but also opened her own shop.",
-      "She got married and even opened her own shop."
-    ],
-    "point": "Not only を文頭に置くと did she marry の語順になる",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 9,
-    "grammar": ["inversion"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c4304b2a2beb291d56eb27b8061e569c6f4a98c89470b0a834e0da24be31c3f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5g4r8n4d",
@@ -181,7 +189,13 @@
     "level": 7,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b91f26e675dcd0cd00a7c37668410c4fface486ebe7f79d4d00edd119d25f41e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5j4v5h2z",
@@ -197,7 +211,13 @@
     "level": 7,
     "grammar": ["phrasal-verbs", "tense-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a303a5d9de06dc512bf3b31322165cc64072b0fa59203ba904b93bfa03e3b465",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5x6u8j2j",
@@ -222,22 +242,6 @@
     }
   },
   {
-    "id": "c_6a4g5u7w",
-    "ja": "転職したけど、前のチームが恋しいよ。",
-    "en": "I switched jobs, though I miss my old team.",
-    "alternatives": [
-      "I changed jobs, but I miss my old team.",
-      "Even though I changed jobs, I miss my old team."
-    ],
-    "point": "though は「〜だけど」。miss は「いなくて寂しい」",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 7,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6k8p4z6j",
     "ja": "あのとき留学してたら、今ごろ英語ペラペラなのに。",
     "en": "If I'd studied abroad then, I'd be fluent now.",
@@ -251,7 +255,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5463f84a8135897865a54f0de4fdbde30d0d08e140392912872679068932eb4e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6n2g7s2w",
@@ -267,23 +277,13 @@
     "level": 7,
     "grammar": ["concession-contrast", "present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6n9v8j4r",
-    "ja": "転職したんだよね。新しい職場はどうかなと思って。",
-    "en": "I was wondering how you're finding your new job.",
-    "alternatives": [
-      "I was wondering how the new job is going.",
-      "I wanted to ask how your new job is going."
-    ],
-    "point": "「〜かなと思って」は I was wondering + 疑問詞",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 7,
-    "grammar": ["hedging-softening", "indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ba8639f077eb228d6926e7d58cc8f90c2241f1ecf13b5a3bac47b2758538f7d1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6s7z6k6m",
@@ -299,7 +299,13 @@
     "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:56881b1e8ba13c47bd338f894e2f4b164e2804cf64853454916e7138c293b403",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7w3x3d4p",
@@ -378,6 +384,12 @@
     "level": 7,
     "grammar": ["hedging-softening", "passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:505c6d696a394957bbd566d2150167c23d1a3271ac5f9c553fb4d9f2423c32cc",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
