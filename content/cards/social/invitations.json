@@ -41,6 +41,23 @@
     }
   },
   {
+    "id": "c_2m5s8a9n",
+    "ja": "出かける気分じゃないんだ。",
+    "en": "I don't feel like going out.",
+    "alternatives": [
+      "I'm not really up for going out.",
+      "I'm not in the mood for going out.",
+      "I don't feel like going out tonight."
+    ],
+    "point": "feel like の後ろは -ing",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 7,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2w5c5n9u",
     "ja": "昨日カイを誘ったよ。",
     "en": "I invited Kai yesterday.",
@@ -218,6 +235,19 @@
     }
   },
   {
+    "id": "c_4w5q2z6b",
+    "ja": "今夜、うちに遊びに来ない？",
+    "en": "Why don't you come over tonight?",
+    "alternatives": ["Do you want to come over tonight?", "Want to come over tonight?"],
+    "point": "come over は「家に来る」。Why don't you ~? は誘い",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 6,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4z3y6s7p",
     "ja": "雨が降っても、私は行くよ。",
     "en": "I'll go even if it rains.",
@@ -235,6 +265,51 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4z9w8a7p",
+    "ja": "電話の時には、もう食べてた。",
+    "en": "I'd already eaten when you called.",
+    "alternatives": [
+      "I had already eaten when you called.",
+      "You called after I'd already eaten."
+    ],
+    "point": "電話より前のことは過去完了",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5a6t6q6g",
+    "ja": "来てくれたらと思ってたんだ。",
+    "en": "I was hoping you'd come along.",
+    "alternatives": [
+      "I was hoping you could join us.",
+      "I was wondering if you'd come along."
+    ],
+    "point": "was hoping で控えめな誘いになる",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5d9w8b2q",
+    "ja": "行けたらいいのになあ。",
+    "en": "I wish I could make it.",
+    "alternatives": ["If only I could make it.", "I wish I were able to come."],
+    "point": "現実と違う願いは wish + could。make it は「行ける」",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5q7k2t8g",
@@ -276,6 +351,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7t2b3s2p",
+    "ja": "前に話したバンド、観に行こう。",
+    "en": "Let's see the band I mentioned.",
+    "alternatives": [
+      "Let's go see the band I mentioned.",
+      "Let's see that band I told you about."
+    ],
+    "point": "the band の後ろに I mentioned を続ける",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8v8d5f7m",

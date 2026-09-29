@@ -60,6 +60,22 @@
     }
   },
   {
+    "id": "c_2s6s9d8k",
+    "ja": "忙しいけど、元気にやってるよ。",
+    "en": "Although I'm busy, I'm doing well.",
+    "alternatives": [
+      "Even though I'm busy, I'm doing fine.",
+      "Busy though I am, I'm doing well."
+    ],
+    "point": "although の後ろも文の形。but とは重ねない",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3c3a5v9c",
     "ja": "また連絡してね。",
     "en": "Keep in touch.",
@@ -69,6 +85,22 @@
     "subtopic": "catching-up",
     "level": 1,
     "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3d4h7p7k",
+    "ja": "前に話してた仕事、決まったよ。",
+    "en": "The job I mentioned came through.",
+    "alternatives": [
+      "I got the job I mentioned.",
+      "I landed the job I told you about."
+    ],
+    "point": "come through は「うまく決まる」",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["relative-clauses"],
     "createdAt": "2026-09-29",
     "stamps": {}
   },
@@ -168,6 +200,22 @@
     }
   },
   {
+    "id": "c_5f2h3z5x",
+    "ja": "最後に会ったの、去年の夏？",
+    "en": "We last met last summer, right?",
+    "alternatives": [
+      "We haven't met since last summer, right?",
+      "We last saw each other last summer, right?"
+    ],
+    "point": "finished な過去の時点は過去形、since は現在完了",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5m7q4c8y",
     "ja": "今は10キロ走れるんだ。",
     "en": "I can run 10K now.",
@@ -206,6 +254,22 @@
     }
   },
   {
+    "id": "c_6h6m9d9n",
+    "ja": "京都にいる弟は、元気だよ。",
+    "en": "My brother in Kyoto is fine.",
+    "alternatives": [
+      "My brother in Kyoto is doing well.",
+      "My brother who's in Kyoto is doing fine."
+    ],
+    "point": "名詞の後ろに in Kyoto を置いて説明する",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6q8z7n2p",
     "ja": "ちょっと聞いてもいい？",
     "en": "Can I ask you something?",
@@ -223,6 +287,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8a9b4g2x",
+    "ja": "前よりずっと元気そうだね。",
+    "en": "You look much better than before.",
+    "alternatives": [
+      "You look way better than last time.",
+      "You look a lot better than before."
+    ],
+    "point": "比較を強めるのは much / a lot / way",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9b2a9x6d",
@@ -267,6 +347,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9j6c2b8j",
+    "ja": "会社のそばの店、閉店したよ。",
+    "en": "The shop by my office closed.",
+    "alternatives": [
+      "The store near my office closed down.",
+      "The place near my office has closed."
+    ],
+    "point": "名詞のすぐ後ろに前置詞句で場所を足す",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9r7k4t6s",

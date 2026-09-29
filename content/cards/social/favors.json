@@ -38,6 +38,22 @@
     }
   },
   {
+    "id": "c_2t3y7b7j",
+    "ja": "ずっとお願いしたかったんだ。",
+    "en": "I've been meaning to ask you.",
+    "alternatives": [
+      "I've been wanting to ask you a favor.",
+      "I've been meaning to ask you something."
+    ],
+    "point": "「ずっと〜しようと」は have been meaning to",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2u7j4e8j",
     "ja": "できたら手伝うよ。",
     "en": "I'll help if I can.",
@@ -55,6 +71,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3j5u5t4p",
+    "ja": "誰に聞けばいいか分かりますか？",
+    "en": "Do you know who to ask?",
+    "alternatives": ["Could you tell me who to ask?", "Do you know who I should ask?"],
+    "point": "疑問詞 + to do で「誰に聞けば」",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_4d7b4u6z",
@@ -158,6 +187,22 @@
     }
   },
   {
+    "id": "c_5k9w7t3j",
+    "ja": "鍵がどこか、心当たりある？",
+    "en": "Any idea where my key is?",
+    "alternatives": [
+      "Do you know where my key is?",
+      "Can you tell me where my key is?"
+    ],
+    "point": "間接疑問は where + 主語 + 動詞の順",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 6,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5x6r9w9x",
     "ja": "充電器ってある？",
     "en": "Is there a charger?",
@@ -215,6 +260,22 @@
     }
   },
   {
+    "id": "c_6z3j3w8x",
+    "ja": "先に別の人に頼まれてたの。",
+    "en": "Someone else had asked me first.",
+    "alternatives": [
+      "I'd already been asked by someone else.",
+      "Someone else had already asked me."
+    ],
+    "point": "断る理由の「先に」は過去完了",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7b6a4w6z",
     "ja": "誰が手伝ってくれる？",
     "en": "Who will help me?",
@@ -234,6 +295,22 @@
     }
   },
   {
+    "id": "c_7q6q4t7q",
+    "ja": "言ってくれたら、手伝ったのに。",
+    "en": "If you'd asked, I'd have helped.",
+    "alternatives": [
+      "I'd have helped if you'd asked.",
+      "Had you asked, I'd have helped."
+    ],
+    "point": "過去の仮定は if + 過去完了、would have + 過去分詞",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7v4r4b4x",
     "ja": "ちょっとお願いがあるの。",
     "en": "I need a favor.",
@@ -251,6 +328,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8y5p2h6m",
+    "ja": "仕事に追われて手伝えないんだ。",
+    "en": "Swamped with work, I can't help.",
+    "alternatives": [
+      "Being swamped at work, I can't help.",
+      "I'm swamped with work, so I can't help."
+    ],
+    "point": "Swamped は「手一杯」。分詞構文で理由を添える",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9f8u8c9a",

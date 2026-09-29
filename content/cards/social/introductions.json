@@ -45,6 +45,22 @@
     }
   },
   {
+    "id": "c_3k4x2m5d",
+    "ja": "ここで働いて三年になります。",
+    "en": "I've worked here for three years.",
+    "alternatives": [
+      "I've been working here for three years.",
+      "I've been at this company for three years."
+    ],
+    "point": "「今まで続く期間」は現在完了 + for",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 6,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3w6j9h2q",
     "ja": "こちら営業部の田中です。",
     "en": "This is Tanaka from Sales.",
@@ -81,6 +97,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4t3r9n4w",
+    "ja": "大阪出身で、たこ焼き好きです。",
+    "en": "Born in Osaka, I love takoyaki.",
+    "alternatives": [
+      "As an Osaka native, I love takoyaki.",
+      "I love takoyaki, being from Osaka."
+    ],
+    "point": "分詞構文では Born の前の being を省ける",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5h8s6t6p",
@@ -134,6 +166,35 @@
     }
   },
   {
+    "id": "c_7k3d4z2k",
+    "ja": "あなたも来るとケンが言ってた。",
+    "en": "Ken said you'd be coming too.",
+    "alternatives": [
+      "Ken told me you'd be coming too.",
+      "Ken mentioned you were coming too."
+    ],
+    "point": "said の後は would。you'd は you would",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 7,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7u9e5v5c",
+    "ja": "前に会ったかもしれませんね。",
+    "en": "We might have met before.",
+    "alternatives": ["We may have met before.", "I think we might have met before."],
+    "point": "過去の推量は might have + 過去分詞",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8n8b3n4z",
     "ja": "出身は東京です。",
     "en": "I'm from Tokyo.",
@@ -173,6 +234,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8x7n9t3m",
+    "ja": "お噂はかねがね伺っております。",
+    "en": "I've heard a lot about you.",
+    "alternatives": [
+      "I've heard so much about you.",
+      "I've heard great things about you."
+    ],
+    "point": "初対面の定番は現在完了 I've heard",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 7,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9e2b8q3v",
@@ -249,6 +326,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9u5a7c7d",
+    "ja": "先日メールを差し上げた者です。",
+    "en": "I'm the one who emailed you.",
+    "alternatives": [
+      "I'm the person who emailed you.",
+      "I'm the one who sent you an email."
+    ],
+    "point": "人を説明する関係詞は who",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9x4z9n8c",

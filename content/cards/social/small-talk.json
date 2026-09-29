@@ -101,6 +101,23 @@
     }
   },
   {
+    "id": "c_4k8y9b3w",
+    "ja": "知ってたら、行ったのに。",
+    "en": "If I'd known, I'd have come.",
+    "alternatives": [
+      "I'd have come if I'd known.",
+      "Had I known, I'd have come.",
+      "If I had known, I would have come."
+    ],
+    "point": "過去の仮定は would have + 過去分詞",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 7,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4m9c8r7f",
     "ja": "土曜は映画を観たよ。",
     "en": "I saw a movie Saturday.",
@@ -184,6 +201,22 @@
     }
   },
   {
+    "id": "c_5x7s5p3h",
+    "ja": "花火、見ればよかったなあ。",
+    "en": "I wish I'd seen the fireworks.",
+    "alternatives": [
+      "If only I'd seen the fireworks.",
+      "I wish I had watched the fireworks."
+    ],
+    "point": "過去への後悔は wish + 過去完了",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6a3r9v3p",
     "ja": "私、泳ぎは得意だよ。",
     "en": "I can swim well.",
@@ -203,6 +236,22 @@
     }
   },
   {
+    "id": "c_6w6u7s6d",
+    "ja": "予報だと、晴れると言っていた。",
+    "en": "The forecast said it'd clear up.",
+    "alternatives": [
+      "The weatherman said it would clear up.",
+      "The forecast said it would be sunny."
+    ],
+    "point": "said に合わせて will は would、clear up は「晴れる」",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 6,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6z3u5e5d",
     "ja": "彼は料理が上手なんだ。",
     "en": "He's a good cook.",
@@ -220,6 +269,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7a7n7k6e",
+    "ja": "ケンに遊びに来いと言われた。",
+    "en": "Ken told me to drop by.",
+    "alternatives": ["Ken asked me to stop by.", "Ken told me to come by."],
+    "point": "tell + 人 + to do。drop by は「ちょっと寄る」",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 7,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7h9g6y3g",
@@ -282,6 +344,22 @@
     }
   },
   {
+    "id": "c_8r7w5b6p",
+    "ja": "暑くても、夏が好きなんだ。",
+    "en": "I love summer despite the heat.",
+    "alternatives": [
+      "I love summer, even though it's hot.",
+      "Even with the heat, I love summer."
+    ],
+    "point": "despite の後ろは名詞。文にするなら even though",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 6,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8t5z4n7h",
     "ja": "近くに公園があるよ。",
     "en": "There's a park nearby.",
@@ -318,5 +396,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9q9a6y3n",
+    "ja": "二人で行ったカフェ、良かった。",
+    "en": "The café we visited was great.",
+    "alternatives": [
+      "The café we went to was great.",
+      "The café that we went to was great."
+    ],
+    "point": "関係詞 that は省略できる。visited は前置詞不要",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]
