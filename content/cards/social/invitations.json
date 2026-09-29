@@ -55,13 +55,13 @@
     "ja": "妹の引っ越しを手伝う約束をしてたから、断ったんだ。",
     "en": "I'd promised to help my sister move, so I declined.",
     "alternatives": [
-      "I'd promised to help my sister move, so I said no.",
-      "Since I'd promised to help my sister move, I said no."
+      "I'd promised to help my sister move, so I passed.",
+      "I'd said I'd help my sister move, so I declined."
     ],
     "point": "先にした約束は I'd promised と過去完了で",
     "topic": "social",
     "subtopic": "invitations",
-    "level": 9,
+    "level": 7,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -117,12 +117,12 @@
   {
     "id": "c_5w3p2h2c",
     "ja": "金曜に花火大会があるよ。行かない？",
-    "en": "There's fireworks Friday. Want to go?",
+    "en": "There are fireworks Friday. Want to go?",
     "alternatives": [
-      "Want to see the fireworks Friday?",
-      "Do you want to see fireworks Friday?"
+      "Fireworks are on Friday. Want to come?",
+      "There's a fireworks show Friday. Interested?"
     ],
-    "point": "「〜がある」は There's で始め、誘いは Want to 〜? で軽く",
+    "point": "複数の fireworks には There are。誘いは Want to go? で軽く",
     "topic": "social",
     "subtopic": "invitations",
     "level": 3,
@@ -135,40 +135,40 @@
     "ja": "行きたいけど、上司に出勤させられるんだ。",
     "en": "I'd love to, but my boss is making me work.",
     "alternatives": [
-      "I'd like to, but my boss is having me work.",
-      "Sorry, I can't; my boss is making me work."
+      "I want to, but my boss is making me work.",
+      "I'd love to, but my boss has me working."
     ],
     "point": "make me work の work は原形で、to は付けない",
     "topic": "social",
     "subtopic": "invitations",
-    "level": 8,
+    "level": 7,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_5w7r8e8e",
-    "ja": "先月できたタイ料理の店、行った人はみんな絶賛してるよ。",
-    "en": "Everyone who's been to that new Thai place raves about it.",
+    "ja": "先月できたタイ料理の店、行った人みんな絶賛してる。",
+    "en": "Everyone who's tried the new Thai place raves about it.",
     "alternatives": [
-      "Everybody who's tried that new Thai place loves it.",
-      "Everyone who's eaten at that new Thai spot raves about it."
+      "Everyone who's eaten there raves about the new Thai place.",
+      "Everyone who's tried that new Thai spot loves it."
     ],
     "point": "Everyone who's been は単数扱いなので動詞は raves",
     "topic": "social",
     "subtopic": "invitations",
-    "level": 10,
-    "grammar": ["nested-clauses"],
+    "level": 7,
+    "grammar": ["relative-clauses", "present-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_5x6m4a8k",
     "ja": "試合が終わったら、ご飯行こうよ。",
-    "en": "Let's grab dinner when the game ends.",
+    "en": "Let's grab a bite when the game ends.",
     "alternatives": [
-      "Let's go eat when the game's over.",
-      "When the game ends, let's get dinner."
+      "Let's get something to eat after the game.",
+      "Let's go eat when the game's over."
     ],
     "point": "未来のことでも when 節は現在形 ends",
     "topic": "social",
@@ -199,14 +199,14 @@
     "ja": "佐藤さんちのバーベキュー、来る？",
     "en": "Are you coming to the Satos' barbecue?",
     "alternatives": [
-      "Want to come to the Satos' barbecue?",
-      "Will you be coming to the Satos' barbecue?"
+      "Are you going to the Satos' barbecue?",
+      "Will you come to the Satos' barbecue?"
     ],
     "point": "決まった予定は進行形 Are you coming? で誘える",
     "topic": "social",
     "subtopic": "invitations",
-    "level": 4,
-    "grammar": ["progressive-aspect"],
+    "level": 3,
+    "grammar": ["future-forms"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -215,8 +215,8 @@
     "ja": "私たちと夕食でもどうかなと思ってたんですが。",
     "en": "I was wondering if you'd join us for dinner.",
     "alternatives": [
-      "I was wondering if you'd like dinner with us.",
-      "I was wondering if you'd want to grab dinner."
+      "I was wondering if you could join us for dinner.",
+      "I was hoping you'd join us for dinner."
     ],
     "point": "過去進行形 I was wondering if で控えめに誘う",
     "topic": "social",
@@ -254,7 +254,7 @@
     "en": "Even if you're late, please come tonight.",
     "alternatives": [
       "Please come tonight, even if you're late.",
-      "Come tonight even if you're a bit late."
+      "Do come tonight, even if you're late."
     ],
     "point": "「たとえ〜でも」は even if、中身は現在形",
     "topic": "social",
@@ -269,8 +269,8 @@
     "ja": "ごめん、土曜日は忙しいんだ。",
     "en": "Sorry, I'm busy on Saturday.",
     "alternatives": [
-      "Sorry, I'm busy this Saturday.",
-      "Sorry, I'm not free on Saturday."
+      "Sorry, I'm not free on Saturday.",
+      "Sorry, I have plans on Saturday."
     ],
     "point": "busy は形容詞なので be 動詞が必要",
     "topic": "social",
@@ -292,7 +292,7 @@
     "en": "I've been meaning to invite you camping.",
     "alternatives": [
       "I've been thinking of inviting you camping.",
-      "I've long wanted to invite you camping."
+      "I've been wanting to invite you camping."
     ],
     "point": "「ずっと〜しようと思ってた」は I've been meaning to",
     "topic": "social",
@@ -320,11 +320,11 @@
   },
   {
     "id": "c_7p9s4g3a",
-    "ja": "来週の土曜のほうが私たちは都合いい。",
+    "ja": "来週の土曜のほうがうちは都合いい。",
     "en": "Next Saturday is better for us.",
     "alternatives": [
       "Next Saturday works better for us.",
-      "Next Saturday would be better for us."
+      "Next Saturday suits us better."
     ],
     "point": "日付を主語にして is better for us。We are better にしない",
     "topic": "social",
@@ -390,8 +390,8 @@
     "ja": "彼女の誕生日にケーキ持っていくね。",
     "en": "I'll bring a cake for her birthday.",
     "alternatives": [
-      "I'm bringing a cake for her birthday.",
-      "I'll take a cake for her birthday."
+      "I'll bring a cake to her birthday.",
+      "I'll bring a birthday cake for her."
     ],
     "point": "丸ごとのケーキは数えられるので a cake",
     "topic": "social",
@@ -410,10 +410,10 @@
   {
     "id": "c_8q8a6d5e",
     "ja": "同僚のランチの誘いを断ったんだ。",
-    "en": "I declined a coworker's lunch invite.",
+    "en": "I turned down a coworker's lunch invite.",
     "alternatives": [
-      "I turned down a coworker's lunch invite.",
-      "I declined a coworker's invitation to lunch."
+      "I declined a coworker's lunch invitation.",
+      "I turned down my coworker's lunch invitation."
     ],
     "point": "「誘いを断る」は decline か turn down。invite は名詞でも使える",
     "topic": "social",
@@ -429,13 +429,13 @@
     "en": "What time the barbecue starts is up to you.",
     "alternatives": [
       "It's up to you what time we start.",
-      "You can decide what time we start.",
+      "I'll let you decide when the barbecue starts.",
       "It's your call when the barbecue starts."
     ],
     "point": "「何時に始まるか」は what time the barbecue starts の語順",
     "topic": "social",
     "subtopic": "invitations",
-    "level": 8,
+    "level": 6,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}

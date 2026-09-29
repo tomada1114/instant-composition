@@ -22,22 +22,6 @@
     }
   },
   {
-    "id": "c_2j9h6n7z",
-    "ja": "この件を頼めるのは、君しかいないんだ。",
-    "en": "You're the only one I can ask about this.",
-    "alternatives": [
-      "There's no one else I can ask about this.",
-      "You're the one person I can ask about this."
-    ],
-    "point": "「〜しかいない」は the only one + 関係詞節で言う",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 8,
-    "grammar": ["post-modification", "relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3p7q8a8j",
     "ja": "忙しいなら、無理しなくていいよ。",
     "en": "If you're busy, you don't have to.",
@@ -92,7 +76,13 @@
     "level": 6,
     "grammar": ["phrasal-verbs", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f5f5bb90e61cf5af78285119e60174bb2a9c0403fb72ba0ddab40249055563f8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4y3n8x8n",
@@ -108,7 +98,13 @@
     "level": 7,
     "grammar": ["concession-contrast", "hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:034abba264b4cf1b1e229da7d3583b2d8b9b6df56ed06b2cf274f13b31293c00",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5a2v9z2f",
@@ -190,23 +186,13 @@
     "level": 9,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5v3f9m5q",
-    "ja": "土曜は兄の結婚式なの。日曜なら犬の世話するよ。",
-    "en": "Saturday's my brother's wedding, but I can dog-sit Sunday.",
-    "alternatives": [
-      "My brother's wedding is Saturday, but I can dog-sit Sunday.",
-      "Saturday's my brother's wedding, but I'll watch your dog Sunday."
-    ],
-    "point": "曜日の前に on を付けなくても自然に言える",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 7,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c14bb9dcdbfa85e442cd02cd3ab06ad6d99e2942bbf2690ecf825c38bee79426",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5y6b6n2p",
@@ -222,7 +208,13 @@
     "level": 7,
     "grammar": ["wishes-regrets", "reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:be94d6f93429193faf5c6f1ee8ad2ae3351b751b8a17fd0985200ae0243a0669",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6e2b9w3e",
@@ -260,23 +252,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7n6a6u7s",
-    "ja": "これ組み立てるの手伝って。お昼おごるよ。",
-    "en": "Help me build it. Lunch is on me.",
-    "alternatives": [
-      "Give me a hand with this. I'll buy lunch.",
-      "Help me put this together, and I'll buy lunch."
-    ],
-    "point": "「おごる」は Lunch is on me が定番の言い方",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 6,
-    "grammar": ["phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:777d6b8f8d5ad985bdf62bb14da0fb017463418913342e51106130607cd1affb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7p7z3x9v",
@@ -320,54 +302,6 @@
     }
   },
   {
-    "id": "c_8k3c7h4p",
-    "ja": "彼女は車を貸してくれた上に、給油までしてくれた。",
-    "en": "Not only did she lend her car, she filled it up.",
-    "alternatives": [
-      "She not only lent me her car but refueled it.",
-      "She lent me her car and even filled the tank."
-    ],
-    "point": "Not only で始めたら did she lend と語順を倒置する",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 9,
-    "grammar": ["inversion"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8r2z2z7t",
-    "ja": "頼みにくいんだけど、金曜だけ代わってもらえない？",
-    "en": "I hate to ask, but could you cover for me Friday?",
-    "alternatives": [
-      "Sorry to ask, but could you take my shift Friday?",
-      "I hate to impose, but could you cover my shift Friday?"
-    ],
-    "point": "頼みにくい前置きは I hate to ask, but が定番",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 10,
-    "grammar": ["hedging-softening", "concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8t2z7a3k",
-    "ja": "何を頼んでも、彼は一度も嫌な顔をしなかった。",
-    "en": "Whatever I asked, not once did he look annoyed.",
-    "alternatives": [
-      "No matter what I asked, he never once looked annoyed.",
-      "No matter what I asked, never once did he look annoyed."
-    ],
-    "point": "Not once を文頭に置くと did he look と倒置になる",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 10,
-    "grammar": ["inversion", "concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8z3p4v9g",
     "ja": "あのとき手伝ってくれなきゃ、今も荷解き中だよ。",
     "en": "If you hadn't helped then, I'd still be unpacking.",
@@ -381,7 +315,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:383777ebdf822961cf2a5d1c097785b8ecaacc670e5e4f2ff63a906cb66b0899",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9a8f7t3x",
@@ -397,7 +337,13 @@
     "level": 6,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7fc18ba49fb2d0250ccd8d7317d678b43eda7b690016f995c73f0d8bf7461189",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9n5d7u3n",
