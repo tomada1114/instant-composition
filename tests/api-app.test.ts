@@ -319,6 +319,55 @@ describe("the per-card time limit", () => {
   });
 });
 
+describe("the level picked by hand", () => {
+  it("fixes the level a new learner picks, shows it in the settings and sends no one to a placement", async () => {
+    const api = makeApi();
+    await api.call("PATCH", "/v1/settings", { topics: ["work"] });
+    const chosen = await api.call("PATCH", "/v1/level", { mode: "manual", level: 5 });
+    expect(await contracted(chosen, "updateLevel")).toStrictEqual({
+      mode: "manual",
+      level: 5,
+      toeic: "500",
+    });
+
+    const page = await contracted(await api.call("GET", "/v1/settings"), "getSettings");
+    expect(page).toMatchObject({
+      toeic: "500",
+      difficulty: { mode: "manual", level: 5, toeic: "500" },
+    });
+    expect((page as { levels: unknown[] }).levels).toHaveLength(10);
+    const home = await contracted(await api.call("GET", "/v1/home"), "getHome");
+    expect(home).toMatchObject({ state: { kind: "ready" } });
+    const records = await contracted(
+      await api.call("GET", "/v1/records"),
+      "getRecords",
+    );
+    expect(records).toMatchObject({
+      toeic: "500",
+      levelMode: "manual",
+      suggestedToeic: null,
+    });
+
+    const released = await api.call("PATCH", "/v1/level", { mode: "auto" });
+    expect(await contracted(released, "updateLevel")).toStrictEqual({
+      mode: "auto",
+      level: 5,
+      toeic: "500",
+    });
+  });
+
+  it.each([
+    ["a level off the scale", { mode: "manual", level: 11 }],
+    ["a level of zero", { mode: "manual", level: 0 }],
+    ["manual with no level", { mode: "manual" }],
+    ["a mode that does not exist", { mode: "goal", level: 5 }],
+  ])("answers 400 ERR_BAD_REQUEST for %s", async (_, body) => {
+    expect(
+      await refusal(await makeApi().call("PATCH", "/v1/level", body)),
+    ).toStrictEqual([400, "ERR_BAD_REQUEST"]);
+  });
+});
+
 describe("a request the contract refuses", () => {
   function send(
     api: ApiHarness,

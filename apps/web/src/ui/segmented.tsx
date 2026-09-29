@@ -2,12 +2,17 @@ import type { ReactElement } from "react";
 
 import { cn } from "../lib/utils";
 
-/** `segmented`: one choice of a few, the chosen segment white on the raised track. */
+/**
+ * `segmented`: one choice of a few, the chosen segment white on the raised
+ * track. `columns` wraps more options than a phone's width holds into rows
+ * of that many; `value` null leaves every segment unchosen.
+ */
 export function Segmented<T extends string | number>({
   label,
   options,
   value,
   onChange,
+  columns,
 }: Readonly<{
   label: string;
   options: readonly {
@@ -15,14 +20,23 @@ export function Segmented<T extends string | number>({
     readonly label: string;
     readonly text: string;
   }[];
-  value: T;
+  value: T | null;
   onChange: (value: T) => void;
+  columns?: number;
 }>): ReactElement {
   return (
     <div
       role="radiogroup"
       aria-label={label}
-      className="flex rounded-control bg-card p-1"
+      className={cn(
+        "rounded-control bg-card p-1",
+        columns === undefined ? "flex" : "grid gap-y-1",
+      )}
+      style={
+        columns === undefined
+          ? undefined
+          : { gridTemplateColumns: `repeat(${String(columns)}, minmax(0, 1fr))` }
+      }
     >
       {options.map((option) => (
         <button

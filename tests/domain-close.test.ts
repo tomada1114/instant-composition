@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import {
   decideClose,
+  decideLevel,
   type CloseState,
   type DifficultyAnswer,
   type ItemProgress,
@@ -167,6 +168,63 @@ describe("decideClose", () => {
     expect(
       decideClose(state({ stats: makeStats() }), 50).outcome.difficulty,
     ).toBeNull();
+  });
+
+  describe("with a level picked by hand", () => {
+    const CHOSEN_5 = { level: 5, reason: "chosen" as const, roundId: null, at: 0 };
+    const strong: DifficultyAnswer[] = Array.from({ length: 30 }, (_, index) => ({
+      level: 5,
+      result: "ok",
+      elapsedMs: 1_000,
+      limitMs: 8_000,
+      answeredAt: index,
+    }));
+    const manual = makeStats({
+      level: CHOSEN_5,
+      levelMode: "manual",
+      levelWindow: strong,
+    });
+
+    it("keeps it where it is after thirty answers that move an automatic one", () => {
+      const auto = decideClose(
+        state({ stats: makeStats({ level: LEVEL_5, levelWindow: strong }) }),
+        50,
+      );
+      const kept = decideClose(state({ stats: manual }), 50);
+
+      expect(auto.stats.level).toMatchObject({ level: 6, reason: "up" });
+      expect(kept.outcome.difficulty).toBeNull();
+      expect(kept.stats.level).toStrictEqual(CHOSEN_5);
+      expect(kept.stats.levelMode).toBe("manual");
+      expect(kept.stats.levelWindow).toStrictEqual(strong);
+    });
+
+    it("adjusts from it again once handed back to the answers", () => {
+      const released = decideLevel(manual, { mode: "auto" }, 40);
+      if (!released.ok) throw new Error("Switching to auto was refused.");
+      const closed = decideClose(state({ stats: released.value }), 50);
+
+      expect(closed.outcome.difficulty).toStrictEqual({ change: "up", level: 6 });
+      expect(closed.stats.level).toMatchObject({ level: 6, reason: "up" });
+      expect(closed.stats.levelMode).toBe("auto");
+    });
+
+    it("hands the level back to the answers when a placement measures it", () => {
+      const round = makeRound({ kind: "placement", deck: ["c1"], firstPass: 1 });
+      const placed = decideClose(
+        state({ round, reviews: [first("c1", "ok", 1_000, 3)], stats: manual }),
+        50,
+      );
+
+      expect(placed.stats.level).toStrictEqual({
+        level: 3,
+        reason: "placement",
+        roundId: "r1",
+        at: 50,
+      });
+      expect(placed.stats.levelMode).toBe("auto");
+      expect(placed.outcome.placement).toStrictEqual({ level: 3, first: false });
+    });
   });
 
   it("lists this round's first-pass misses in the order they were shown", () => {

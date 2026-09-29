@@ -152,6 +152,7 @@ export function decideClose(state: CloseState, now: number): CloseChange {
       completedDays,
       level: level.entry ?? stats.level,
       levelWindow: level.entry === null ? stats.levelWindow : [],
+      ...(level.mode === null ? {} : { levelMode: level.mode }),
       titles: [...stats.titles, ...titles],
       openRound: stats.openRound?.id === round.id ? null : stats.openRound,
     },

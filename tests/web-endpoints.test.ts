@@ -16,6 +16,7 @@ import {
   roundKindFrom,
   sendAnswer,
   startRound,
+  updateLevel,
   updateProfile,
   updateSettings,
   type AnswerInput,
@@ -169,6 +170,25 @@ describe("updateSettings", () => {
         url: "/api/v1/settings",
         method: "PATCH",
         body: { sound: false },
+        contentType: "application/json",
+      },
+    ]);
+  });
+});
+
+describe("updateLevel", () => {
+  it("patches /api/v1/level with the mode and the level picked, as JSON", async () => {
+    const view = { mode: "manual", level: 5, toeic: "730" };
+    const calls = stubFetch(() => Promise.resolve(Response.json(view)));
+    expect(await updateLevel({ mode: "manual", level: 5 })).toStrictEqual({
+      ok: true,
+      value: view,
+    });
+    expect(calls).toStrictEqual([
+      {
+        url: "/api/v1/level",
+        method: "PATCH",
+        body: { mode: "manual", level: 5 },
         contentType: "application/json",
       },
     ]);

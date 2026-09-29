@@ -5,7 +5,8 @@ import { paceOf, type Paced } from "./timer";
 import { TUNING } from "./tuning";
 import type { AnswerResult, CardMeta } from "./types";
 
-const MAX_LEVEL = 10;
+/** The top of the level scale `content/levels.json` defines. */
+export const MAX_LEVEL = 10;
 
 export interface PlacementInput {
   /** Only the cards that may be shown. */

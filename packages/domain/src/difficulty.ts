@@ -17,6 +17,22 @@ export interface LevelAdjustment {
 }
 
 /**
+ * The newest answers the level is judged on, or undefined while there are
+ * too few of them to judge.
+ */
+function recentAround(
+  level: number,
+  answers: readonly DifficultyAnswer[],
+): readonly DifficultyAnswer[] | undefined {
+  const { window, minAnswers } = TUNING.difficulty;
+  const recent = answers
+    .filter((answer) => Math.abs(answer.level - level) <= 1)
+    .sort((a, b) => b.answeredAt - a.answeredAt)
+    .slice(0, window);
+  return recent.length < minAnswers ? undefined : recent;
+}
+
+/**
  * The level after a non-placement round.
  *
  * @param answers - First-pass answers given since the level last changed, so
@@ -26,12 +42,9 @@ export function adjustLevel(
   level: number,
   answers: readonly DifficultyAnswer[],
 ): LevelAdjustment {
-  const { window, minAnswers, upOkRate, upFastRate, downOkRate } = TUNING.difficulty;
-  const recent = answers
-    .filter((answer) => Math.abs(answer.level - level) <= 1)
-    .sort((a, b) => b.answeredAt - a.answeredAt)
-    .slice(0, window);
-  if (recent.length < minAnswers) {
+  const { upOkRate, upFastRate, downOkRate } = TUNING.difficulty;
+  const recent = recentAround(level, answers);
+  if (recent === undefined) {
     return { level, change: "same" };
   }
 
@@ -47,4 +60,18 @@ export function adjustLevel(
     return { level: level - 1, change: "down" };
   }
   return { level, change: "same" };
+}
+
+/**
+ * The level the answers point to from `level`, the one adjusting would move
+ * to, or null while there are too few answers to say. A suggestion only: a
+ * level picked by hand is shown it and never moved to it.
+ */
+export function suggestLevel(
+  level: number,
+  answers: readonly DifficultyAnswer[],
+): number | null {
+  return recentAround(level, answers) === undefined
+    ? null
+    : adjustLevel(level, answers).level;
 }

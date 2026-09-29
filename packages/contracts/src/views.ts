@@ -5,6 +5,7 @@ import {
   countSchema,
   dayKeySchema,
   dotSchema,
+  levelModeSchema,
   levelSchema,
   passSchema,
   reachViewSchema,
@@ -128,4 +129,12 @@ export const profileSchema = z.object({
   l1: z.string(),
   target: z.string(),
   uiLocale: z.string(),
+});
+
+/** `PATCH /v1/level`, and the settings read's `difficulty`: the level now and who moves it. */
+export const levelViewSchema = z.object({
+  mode: levelModeSchema,
+  /** Null until a placement or the learner's pick sets one. */
+  level: levelSchema.nullable(),
+  toeic: z.string().nullable(),
 });

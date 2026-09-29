@@ -9,11 +9,13 @@ import {
 } from "./query-views";
 import {
   answersRequestSchema,
+  levelChoiceSchema,
   profilePatchSchema,
   settingsPatchSchema,
   startRoundRequestSchema,
 } from "./requests";
 import {
+  levelViewSchema,
   profileSchema,
   roundPayloadSchema,
   roundSummarySchema,
@@ -94,6 +96,16 @@ export const ROUTES: readonly Route[] = [
     summary: "Changes the fields the body sets.",
     requestBody: settingsPatchSchema,
     success: { status: 200, body: settingsViewSchema },
+    errors: COMMAND_ERRORS,
+  },
+  {
+    method: "patch",
+    path: "/v1/level",
+    operationId: "updateLevel",
+    summary:
+      "Hands the level to the answers (auto, adjusting from the level as it is), or fixes it at the level picked (manual), which no round moves until a placement or a switch back to auto.",
+    requestBody: levelChoiceSchema,
+    success: { status: 200, body: levelViewSchema },
     errors: COMMAND_ERRORS,
   },
   {

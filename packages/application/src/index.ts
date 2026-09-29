@@ -72,9 +72,11 @@ export {
   type LearnerStores,
   type Stored,
 } from "./store";
+export { updateLevel } from "./update-level";
 export { updateSettings } from "./update-settings";
 export type {
   DrillCard,
+  LevelView,
   ReachTopic,
   ReachView,
   RoundPayload,

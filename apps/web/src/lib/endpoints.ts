@@ -13,6 +13,8 @@ import type {
   GetSettingsData,
   GetSettingsResponses,
   HomeView,
+  LevelChoice,
+  LevelView,
   Profile,
   ProfilePatch,
   RecordAnswersData,
@@ -25,6 +27,8 @@ import type {
   StartRoundData,
   StartRoundRequest,
   StartRoundResponses,
+  UpdateLevelData,
+  UpdateLevelResponses,
   UpdateProfileData,
   UpdateProfileResponses,
   UpdateSettingsData,
@@ -77,6 +81,14 @@ export function updateSettings(
     url: "/v1/settings",
     body: patch,
   } satisfies UpdateSettingsData);
+}
+
+/** Hands the level to the answers, or fixes it at the level picked. */
+export function updateLevel(choice: LevelChoice): Promise<Result<LevelView, ApiError>> {
+  return call<UpdateLevelResponses>("PATCH", {
+    url: "/v1/level",
+    body: choice,
+  } satisfies UpdateLevelData);
 }
 
 /** The learner's profile: the time zone the practice day is counted in, and the languages. */

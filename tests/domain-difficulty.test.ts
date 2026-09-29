@@ -2,9 +2,15 @@ import { describe, expect, it } from "vitest";
 
 import {
   adjustLevel,
+  decideLevel,
+  suggestedLevel,
+  suggestLevel,
   type AnswerResult,
   type DifficultyAnswer,
+  type LearnerStats,
 } from "@instant-composition/domain";
+
+import { makeStats } from "./application-fixtures";
 
 /**
  * `n` answers at `level` on cards with a 10-second pace, in rounds dealt with a
@@ -107,5 +113,84 @@ describe("adjusting the level after a round", () => {
       level: 6,
       change: "up",
     });
+  });
+});
+
+describe("suggesting a level beside one picked by hand", () => {
+  it("says nothing before twenty answers", () => {
+    expect(suggestLevel(5, answers(19, 19, 19))).toBeNull();
+  });
+
+  it("points where adjusting would go, or to the level itself", () => {
+    expect(suggestLevel(5, answers(20, 20, 20))).toBe(6);
+    expect(suggestLevel(5, answers(20, 11, 0))).toBe(4);
+    expect(suggestLevel(5, answers(20, 12, 0))).toBe(5);
+  });
+});
+
+const PLACED: LearnerStats = makeStats({
+  level: { level: 5, reason: "placement", roundId: "p0", at: 0 },
+  levelWindow: answers(10, 10, 10),
+});
+
+describe("choosing the level", () => {
+  it("fixes a level picked by hand, starting its window over", () => {
+    const chosen = decideLevel(PLACED, { mode: "manual", level: 7 }, 50);
+    expect(chosen).toStrictEqual({
+      ok: true,
+      value: {
+        ...PLACED,
+        level: { level: 7, reason: "chosen", roundId: null, at: 50 },
+        levelMode: "manual",
+        levelWindow: [],
+      },
+    });
+  });
+
+  it("fixes the level as it is, window and all, when the pick is the level already held", () => {
+    const chosen = decideLevel(PLACED, { mode: "manual", level: 5 }, 50);
+    expect(chosen).toStrictEqual({
+      ok: true,
+      value: { ...PLACED, levelMode: "manual" },
+    });
+  });
+
+  it("hands a picked level back to the answers without moving it or its window", () => {
+    const manual = makeStats({
+      level: { level: 5, reason: "chosen", roundId: null, at: 0 },
+      levelMode: "manual",
+      levelWindow: answers(10, 10, 10),
+    });
+    expect(decideLevel(manual, { mode: "auto" }, 50)).toStrictEqual({
+      ok: true,
+      value: { ...manual, levelMode: "auto" },
+    });
+  });
+
+  it("changes nothing when the mode and level are already the ones chosen", () => {
+    const auto = decideLevel(PLACED, { mode: "auto" }, 50);
+    expect(auto.ok && auto.value).toBe(PLACED);
+    const manual = makeStats({ ...PLACED, levelMode: "manual" });
+    const again = decideLevel(manual, { mode: "manual", level: 5 }, 50);
+    expect(again.ok && again.value).toBe(manual);
+  });
+
+  it.each([0, 11, 5.5, Number.NaN])(
+    "refuses level %s, which is off the scale",
+    (level) => {
+      expect(decideLevel(PLACED, { mode: "manual", level }, 50)).toStrictEqual({
+        ok: false,
+        error: { code: "ERR_BAD_REQUEST" },
+      });
+    },
+  );
+
+  it("suggests a level only beside one picked by hand, from its window", () => {
+    const strong = answers(20, 20, 20);
+    const manual = makeStats({ ...PLACED, levelMode: "manual", levelWindow: strong });
+    expect(suggestedLevel(manual)).toBe(6);
+    expect(suggestedLevel({ ...manual, levelWindow: answers(5, 5, 5) })).toBeNull();
+    expect(suggestedLevel({ ...PLACED, levelWindow: strong })).toBeNull();
+    expect(suggestedLevel(makeStats({ levelMode: "manual" }))).toBeNull();
   });
 });
