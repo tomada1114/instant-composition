@@ -124,6 +124,7 @@ export interface RoundOutcome {
     readonly count: number;
     readonly added: number;
   }[];
+  readonly pending?: number; // Chosen topics' items one OK day short; older outcomes lack it.
   readonly titles: readonly string[];
   readonly points: { readonly earned: number; readonly total: number };
   readonly totals: {

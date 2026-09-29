@@ -5,6 +5,7 @@ import {
   longestRun,
   ok,
   parseTitleKey,
+  pendingReach,
   reachBySubtopic,
   reachByTopic,
   streakValue,
@@ -126,6 +127,11 @@ export async function records(
         added: 0,
       })),
       snapshot,
+      pendingReach(
+        progress,
+        new Set(chosen.map((topic) => topic.id)),
+        placeOf(snapshot),
+      ),
     ),
     breakdown: chosen.map((topic) => ({
       id: topic.id,

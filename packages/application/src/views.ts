@@ -70,6 +70,8 @@ export interface ReachTopic {
 export interface ReachView {
   readonly topics: readonly ReachTopic[];
   readonly nearest: { readonly name: string; readonly remaining: number } | null;
+  /** Items in the chosen topics said in time on one day and not yet mastered. */
+  readonly pending?: number;
 }
 
 export interface TotalsView {

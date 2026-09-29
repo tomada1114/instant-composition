@@ -428,6 +428,25 @@ describe("records", () => {
     ]);
   });
 
+  it.each([
+    { missed: false, pending: 10 },
+    { missed: true, pending: 0 },
+  ])(
+    "counts $pending cards one day away from reach after a placement (missed: $missed)",
+    async ({ missed, pending }) => {
+      const h = makeHarness();
+      await placed(h, 10, missed);
+      const view = await records(h.deps, h.context());
+      const summary = await roundSummary(h.deps, h.context(), "p0");
+
+      expect(
+        view.ok && view.value.reach.topics.map((topic) => topic.count),
+      ).toStrictEqual([0, 0]);
+      expect(view.ok && view.value.reach.pending).toBe(pending);
+      expect(summary.ok && summary.value.reach.pending).toBe(pending);
+    },
+  );
+
   it("counts mastered cards by topic and subtopic, and groups the titles they earned", async () => {
     const h = makeHarness();
     const now = await practiced(h, 5, true);
