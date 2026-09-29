@@ -22,22 +22,6 @@
     }
   },
   {
-    "id": "c_2v7x6u6z",
-    "ja": "最終判断をうちに任せてくれるなら、引き受けます。",
-    "en": "We'll take it if the final call is ours.",
-    "alternatives": [
-      "We'll do it if we get the final say.",
-      "We'll take it if the final decision is ours."
-    ],
-    "point": "条件は if 節、未来のことでも中身は現在形",
-    "topic": "work",
-    "subtopic": "requests",
-    "level": 7,
-    "grammar": ["time-and-if-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3d7c9w9d",
     "ja": "彼は引き受ける前に、締め切りを確認すべきでした。",
     "en": "He should've checked the deadline before taking it on.",
@@ -51,7 +35,13 @@
     "level": 7,
     "grammar": ["modal-perfect", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:08314907c2194a3631333e9a6985b8ec66dc50a13e42018171059d14d4ffe03f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3f3e3x5u",
@@ -96,22 +86,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_3t6w3q9a",
-    "ja": "期限を延ばしても、この翻訳、受けてもらえますか？",
-    "en": "Even with extra time, could you handle this translation?",
-    "alternatives": [
-      "Even with an extension, could you take on this translation?",
-      "Even with more time, could you take on this translation?"
-    ],
-    "point": "「延ばしても」は Even with で譲歩を示す",
-    "topic": "work",
-    "subtopic": "requests",
-    "level": 8,
-    "grammar": ["concession-contrast", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_3t9x3d8f",
@@ -171,7 +145,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6394ed593e7297a53249bfebe7a16be25b6e9052279135151850644f8381b64a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4c6f8r7t",
@@ -231,7 +211,13 @@
     "level": 10,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9dd60f843e418b8669c3ecf47d7a8b4b47f76792da0cee8351953977bed88a8c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6e4k4d5c",
@@ -247,7 +233,13 @@
     "level": 6,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:78b3465570f48dac6db12ebc7cceb715f29e2c1effef09f2abf69ba4fa503846",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6h9t8z4r",
@@ -272,22 +264,6 @@
     }
   },
   {
-    "id": "c_6p3m4v6y",
-    "ja": "予算が通れば引き受けると、私は言いました。",
-    "en": "I said I'd take it if the budget passed.",
-    "alternatives": [
-      "I said I'd accept if the budget passed.",
-      "I said I'd do it if the budget passed."
-    ],
-    "point": "said の後は will を would に、時制をそろえる",
-    "topic": "work",
-    "subtopic": "requests",
-    "level": 6,
-    "grammar": ["reported-speech"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6q8s7m6x",
     "ja": "彼女、原稿が早く届くなら訳すって言ってたよ。",
     "en": "She said she'd translate if the draft arrives early.",
@@ -301,7 +277,13 @@
     "level": 6,
     "grammar": ["reported-speech", "time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9193f1f63a496eb7da65279a789317d081df39a941fa4a4e3e11c23bf77e0fdf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7d7j8q9h",
@@ -323,22 +305,6 @@
     }
   },
   {
-    "id": "c_7n8r4p3j",
-    "ja": "金曜までに契約書を見ていただけないでしょうか。",
-    "en": "Would you mind looking over the contract by Friday?",
-    "alternatives": [
-      "Could you look over the contract by Friday?",
-      "Would you mind reviewing the contract by Friday?"
-    ],
-    "point": "丁寧な依頼は Would you mind + ing",
-    "topic": "work",
-    "subtopic": "requests",
-    "level": 6,
-    "grammar": ["hedging-softening", "gerunds"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7r6p3n5t",
     "ja": "彼女は引き受けただけでなく、手伝うとまで言ってくれた。",
     "en": "Not only did she agree, she offered to pitch in.",
@@ -352,7 +318,13 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:17cc3f97deaf820376f299ed86b07534c89ab14d0c0cf6edc845b08233145179",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8h8u6s3j",
@@ -375,22 +347,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_8j9w2y3y",
-    "ja": "見積もり、まだ届いてません。今日もらえますか？",
-    "en": "The quote still hasn't arrived. Could you send it today?",
-    "alternatives": [
-      "I haven't gotten the quote. Can you send it today?",
-      "The quote hasn't come yet. Can you send it today?"
-    ],
-    "point": "まだ届いていない、は現在完了 hasn't arrived",
-    "topic": "work",
-    "subtopic": "requests",
-    "level": 7,
-    "grammar": ["present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_8p3r2h3t",
@@ -429,7 +385,13 @@
     "level": 7,
     "grammar": ["hedging-softening", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0e3ee0a829c2b0e660abc1d2bb41369c28a0baf8122122c9070182fec51c8e35",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9h6h4w7v",
@@ -467,7 +429,13 @@
     "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ddc8b7f15c9568f9eab4fe4acaa4d06f0a679082dc1422aabd4a4d82a00d925f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9r5y5z7c",
@@ -483,6 +451,12 @@
     "level": 6,
     "grammar": ["causatives", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:75247b81cc49f39740298a8d9c38f58f7cead7e41c02be001268aa7184e42d77",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
