@@ -22,22 +22,6 @@
     }
   },
   {
-    "id": "c_2c5h5t6a",
-    "ja": "先月助けてやった男が、また頼んできたんだ。",
-    "en": "The guy I'd bailed out last month asked me again.",
-    "alternatives": [
-      "The man I had helped out last month asked me again.",
-      "That guy I'd helped out last month came asking again."
-    ],
-    "point": "先月の救済は頼まれた時点より前なので had + 過去分詞",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 9,
-    "grammar": ["past-perfect", "relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2q4s7c7y",
     "ja": "僕が決められるなら、喜んで手を貸すのに。",
     "en": "If it were my call, I'd gladly help.",
@@ -74,22 +58,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_3m6a8g6t",
-    "ja": "代わりを頼んだ人が病気で寝込んでるって聞いたよ。",
-    "en": "I heard the person I asked to cover for me is sick.",
-    "alternatives": [
-      "Turns out the person I asked to cover for me is sick.",
-      "I heard the one I asked to cover my shift is sick."
-    ],
-    "point": "person の後の I asked は関係詞を省略した形",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 10,
-    "grammar": ["nested-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_3p7q8a8j",
@@ -133,6 +101,38 @@
     }
   },
   {
+    "id": "c_3y9s2q5a",
+    "ja": "手伝ってくれた男の人に、お礼を言いそびれた。",
+    "en": "Never got to thank the guy who helped me.",
+    "alternatives": [
+      "I didn't get to thank the man who helped.",
+      "I missed thanking the guy who helped me."
+    ],
+    "point": "言いそびれた（機会を逃した）は never got to 〜",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 6,
+    "grammar": ["relative-clauses", "infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4b8h7v3r",
+    "ja": "彼はめったに頼らないから、引き受けたんだ。",
+    "en": "He hardly ever asks for help, so I agreed.",
+    "alternatives": [
+      "He rarely asks for help, so I said yes.",
+      "He almost never asks for help, so I agreed."
+    ],
+    "point": "習慣は現在形、引き受けた結果は過去形。hardly ever は頻度",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4d6g3p6y",
     "ja": "こんなふうに君に頼るのは気が引けるんだ。",
     "en": "I feel bad about imposing on you like this.",
@@ -146,6 +146,22 @@
     "subtopic": "favors",
     "level": 6,
     "grammar": ["gerunds"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4h3e8a2y",
+    "ja": "校正を頼まれたけど、今回はやめとくよ。",
+    "en": "Asked to proofread this, but I'll pass.",
+    "alternatives": [
+      "I was asked to proofread this, but I'll pass.",
+      "They asked me to proofread this, but I'll pass."
+    ],
+    "point": "頼まれた側は be asked to 〜。断りは I'll pass",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 6,
+    "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -188,18 +204,18 @@
     }
   },
   {
-    "id": "c_4u8p3k2y",
-    "ja": "手伝ってくれた男の人に、お礼を言いそびれた。",
-    "en": "I forgot to thank the guy who helped me.",
+    "id": "c_4p8f4j4w",
+    "ja": "ずっと探してるんだ。手伝ってよ！",
+    "en": "I've been looking for ages. Help me out!",
     "alternatives": [
-      "I neglected to thank the man who helped me.",
-      "I didn't get to thank the man who helped me."
+      "I've been searching forever. Help me out!",
+      "Help me out! I've been looking for ages."
     ],
-    "point": "人を後ろから who 節で説明。forget to は「し忘れる」",
+    "point": "「ずっと〜してる」は have been -ing。頼みは Help me out!",
     "topic": "social",
     "subtopic": "favors",
-    "level": 8,
-    "grammar": ["relative-clauses", "infinitives"],
+    "level": 4,
+    "grammar": ["present-perfect-continuous", "imperatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -246,6 +262,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5f2v4v2w",
+    "ja": "先月助けてあげた男が、また頼んできたんだ。",
+    "en": "The guy I helped last month asked me again.",
+    "alternatives": [
+      "The man I helped last month came asking again.",
+      "That guy I helped last month asked again."
+    ],
+    "point": "「助けてあげた男」は the guy I helped と関係詞を省く",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5h5p8g3g",
@@ -327,22 +359,6 @@
     }
   },
   {
-    "id": "c_5x8q8v7j",
-    "ja": "この校正を頼まれたけど、今回は遠慮しておくよ。",
-    "en": "I was asked to proofread this, but I'll pass.",
-    "alternatives": [
-      "They asked me to proofread this, but I'll pass.",
-      "I got asked to proofread this, but I'd rather not."
-    ],
-    "point": "頼まれた側は I was asked to 〜。断りは I'll pass",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 8,
-    "grammar": ["passive-voice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5y6b6n2p",
     "ja": "兄は今も、あのとき手伝えばよかったと言ってる。",
     "en": "My brother still says he wishes he'd helped me.",
@@ -363,22 +379,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_6b2w4k6c",
-    "ja": "迷惑をかけたくなくて、自分でやっちゃったんだ。",
-    "en": "Not wanting to bother you, I did it myself.",
-    "alternatives": [
-      "I didn't want to bother you, so I did it.",
-      "Not wanting to trouble you, I did it myself."
-    ],
-    "point": "「〜したくなくて」は Not wanting to で始める分詞構文",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 7,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_6e2b9w3e",
@@ -463,6 +463,22 @@
     }
   },
   {
+    "id": "c_7w8t9j2u",
+    "ja": "代わりを頼んだ人が病欠だって聞いたよ。",
+    "en": "Heard the person I asked is out sick.",
+    "alternatives": [
+      "I hear the person I asked is sick.",
+      "I heard the person I asked called in sick."
+    ],
+    "point": "「聞いた」は heard。the person の後の I asked は関係詞省略",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8a3x4u7m",
     "ja": "いいよ。箱はどこに置く？",
     "en": "Sure. Where do the boxes go?",
@@ -480,22 +496,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_8k8x3z4k",
-    "ja": "彼が人に頼ることはめったにないから、引き受けたんだ。",
-    "en": "Rarely does he ask for help, so I said yes.",
-    "alternatives": [
-      "He hardly ever asks for help, so I agreed.",
-      "He so rarely asks for help that I said yes."
-    ],
-    "point": "Rarely を文頭に出すと does he の倒置になる",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 10,
-    "grammar": ["inversion"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_8p7h3r5c",
@@ -629,21 +629,5 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9y8u6k2z",
-    "ja": "1時間探してるんだ。手伝って！",
-    "en": "I've been looking for an hour. Help!",
-    "alternatives": [
-      "I've been searching for an hour. Help me!",
-      "Help me! I've been looking for an hour."
-    ],
-    "point": "「ずっと〜してる」は have been -ing。頼みは命令文で",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 4,
-    "grammar": ["present-perfect-continuous", "imperatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   }
 ]

@@ -5,12 +5,12 @@
     "en": "I've been with this company for five years.",
     "alternatives": [
       "I've worked at this company for five years.",
-      "It's been five years since I joined this company."
+      "I've been working here for five years."
     ],
     "point": "「5年になる」は現在完了。for + 期間で継続を表す",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 7,
+    "level": 4,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -43,12 +43,12 @@
     "en": "That's an unusual name. Why were you named that?",
     "alternatives": [
       "That's an unusual name. Why did they name you that?",
-      "That's a rare name. Why were you given it?"
+      "That's an unusual name. How did you get it?"
     ],
     "point": "「名付けられた」は受動態 were named",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 9,
+    "level": 7,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -57,7 +57,7 @@
     "id": "c_2v6d2p4a",
     "ja": "私は大阪で生まれました。",
     "en": "I was born in Osaka.",
-    "alternatives": ["Osaka is where I was born.", "I was born and raised in Osaka."],
+    "alternatives": ["Osaka is where I was born.", "My birthplace is Osaka."],
     "point": "「生まれた」は受動態 was born。born の後に by は不要",
     "topic": "social",
     "subtopic": "introductions",
@@ -121,7 +121,7 @@
     "point": "「趣味を始める」は take up a hobby",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 10,
+    "level": 9,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -131,6 +131,7 @@
     "ja": "私は内気ですが、人に会うのは好きです。",
     "en": "Though I'm shy, I like meeting people.",
     "alternatives": [
+      "I'm shy, but I like meeting people.",
       "I'm shy, but I love meeting new people.",
       "Even though I'm shy, I enjoy meeting people."
     ],
@@ -211,12 +212,12 @@
     "en": "If I were you, I'd loosen up when introducing myself.",
     "alternatives": [
       "If I were you, I'd relax when I introduce myself.",
-      "I'd take it easy when introducing myself, if I were you."
+      "If I were you, I'd be more relaxed introducing myself."
     ],
     "point": "仮定法では主語が I でも were を使う",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 10,
+    "level": 8,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -226,13 +227,13 @@
     "ja": "姉が、私たちは同じ大学の卒業生だと言っていました。",
     "en": "My sister said we were fellow alumni.",
     "alternatives": [
-      "My sister said you and I went to the same university.",
+      "My sister said we went to the same university.",
       "My sister told me we went to the same university."
     ],
     "point": "「同じ大学の卒業生同士」は fellow alumni",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 10,
+    "level": 7,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -307,22 +308,6 @@
     "subtopic": "introductions",
     "level": 5,
     "grammar": ["noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7b2d7h5n",
-    "ja": "受付の方から、あなたは広報のご担当だと伺いました。",
-    "en": "The receptionist told me you were in charge of PR.",
-    "alternatives": [
-      "The receptionist said you handle PR.",
-      "I heard from the receptionist that you're in PR."
-    ],
-    "point": "told のあとは時制を一つ過去にずらす（are→were）",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 10,
-    "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -470,7 +455,7 @@
     "point": "told の後の節は時制の一致で過去形にしやすい",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 7,
+    "level": 6,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -500,16 +485,16 @@
   },
   {
     "id": "c_9k7e3n7v",
-    "ja": "前にどこかでお会いしたに違いありません。",
+    "ja": "前にどこかでお会いしているはずです。",
     "en": "We must have met somewhere before.",
     "alternatives": [
       "I'm sure we've met somewhere before.",
-      "We've definitely met somewhere before."
+      "I'm pretty sure we've met somewhere before."
     ],
     "point": "過去への確信は must have + 過去分詞",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 7,
+    "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}

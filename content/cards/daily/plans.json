@@ -57,7 +57,13 @@
     "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0d1160c1bfc02adc70cab20bceda2fb9cadd4b1860b98f63226bad601fd97975",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3v3n5a5p",
@@ -123,22 +129,6 @@
     }
   },
   {
-    "id": "c_4b5s6h5e",
-    "ja": "昨日送った日程、もう見てくれた？",
-    "en": "Have you looked at the schedule I sent yesterday?",
-    "alternatives": [
-      "Have you checked the schedule I sent yesterday?",
-      "Have you seen the schedule I sent you yesterday?"
-    ],
-    "point": "「もう」は現在完了、「昨日送った」は過去形で使い分ける",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 6,
-    "grammar": ["tense-contrast", "relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_4c5q3f6t",
     "ja": "土曜、何時に集合だっけ？",
     "en": "What time are we meeting Saturday?",
@@ -174,23 +164,13 @@
     "level": 3,
     "grammar": ["time-and-if-clauses", "future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4u4g9k4u",
-    "ja": "私が予約したお店、あなたには遠すぎる？",
-    "en": "Is the place I booked too far for you?",
-    "alternatives": [
-      "Is the restaurant I reserved too far for you?",
-      "Is the place that I booked too far away?"
-    ],
-    "point": "the place の後ろに I booked を直接つなげる",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 6,
-    "grammar": ["relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2615c8b68699464cc178892a82508d954cdd365bb4b85cf895e309f9ffbc32ff",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4w6e5m4e",
@@ -313,7 +293,13 @@
     "level": 3,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b2d8febdcedde7ff521d0e4e9eb8d7bd538e24a1bf7cf6e3b63423ca5870318a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5p9y4v4m",
@@ -351,7 +337,13 @@
     "level": 6,
     "grammar": ["indirect-questions", "hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:69a6609f4408060969f7336dc4644f24c4b7dbe12c0ee9bd8e8ed8ab27f9d20d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6b3m9h2n",
@@ -376,54 +368,6 @@
     }
   },
   {
-    "id": "c_6c6v2w4f",
-    "ja": "約束をキャンセルして、こんなにほっとしたのは初めてだよ。",
-    "en": "I've never been so relieved to back out of plans.",
-    "alternatives": [
-      "I've never felt such relief canceling plans.",
-      "It's the first time I've been this relieved to cancel plans."
-    ],
-    "point": "「初めて」は I've never + 過去分詞。back out of は「手を引く」",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 9,
-    "grammar": ["phrasal-verbs", "tense-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6k9w4r5g",
-    "ja": "約束してる友達が、何度も予定をずらすんだ。",
-    "en": "The friend I'm meeting keeps pushing our plans back.",
-    "alternatives": [
-      "The friend I'm supposed to see keeps rescheduling.",
-      "The friend I'm meeting keeps postponing our plans."
-    ],
-    "point": "目的格の関係詞は省略でき、push back は「延期する」",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 6,
-    "grammar": ["relative-clauses", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6s4f4a3w",
-    "ja": "気がかりなのは、土曜の天気なんだよね。",
-    "en": "What worries me is Saturday's forecast.",
-    "alternatives": [
-      "What I'm worried about is Saturday's forecast.",
-      "What's worrying me is Saturday's weather."
-    ],
-    "point": "「〜なのは」は What 節を主語にして is でつなぐ",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 8,
-    "grammar": ["noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6v5g9f8s",
     "ja": "あと何人か友達に手伝いを頼むね。",
     "en": "I'll ask a few more friends to help.",
@@ -446,22 +390,6 @@
     }
   },
   {
-    "id": "c_6y2r8c9v",
-    "ja": "週末が空くのは珍しいから、有意義に使おうよ。",
-    "en": "We rarely get a free weekend, so let's make it count.",
-    "alternatives": [
-      "Free weekends don't come often, so let's make the most of it.",
-      "Free weekends are rare, so let's make the most of this one."
-    ],
-    "point": "「有意義に使う」は make it count。rarely は否定語なので don't 不要",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 10,
-    "grammar": ["articles-and-countability", "tense-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7f9v5y7p",
     "ja": "ごめん、土曜は約束を断らなきゃいけない。",
     "en": "Sorry, I have to back out of Saturday's plans.",
@@ -475,7 +403,13 @@
     "level": 6,
     "grammar": ["modal-obligation-advice", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:adb18519bd9a738539176e80377af84c47987a176d076a5ec168309e4fbdd628",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7p7r8b6h",
@@ -620,7 +554,13 @@
     "level": 5,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f06bd1c4b45565bc78e0d7daa8bd698f212e65f045a3a6c7a5a108ef264f0d86",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8z4x8r2j",

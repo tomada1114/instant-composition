@@ -82,22 +82,6 @@
     }
   },
   {
-    "id": "c_3j5a4h9h",
-    "ja": "近所に越してきた同僚も、今度連れてっていい？",
-    "en": "Could I bring my coworker who just moved nearby?",
-    "alternatives": [
-      "Can I bring a coworker who just moved nearby?",
-      "May I bring along my coworker who moved nearby?"
-    ],
-    "point": "人を後ろから who 節で説明する。許可は Could I",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 7,
-    "grammar": ["requests-permission", "relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3m9g2m6g",
     "ja": "ケンが、来月大阪に転勤になるって言ってたよ。",
     "en": "Ken said he's being transferred to Osaka next month.",
@@ -268,22 +252,6 @@
     }
   },
   {
-    "id": "c_5r9h8c6q",
-    "ja": "忙しくて、会いに行けなかったんだ。",
-    "en": "I was so busy I couldn't visit.",
-    "alternatives": [
-      "I was so busy that I couldn't come.",
-      "I couldn't come see you; I was busy."
-    ],
-    "point": "過去にできなかったことは can't ではなく couldn't",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 4,
-    "grammar": ["can-could-ability"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5x6u8j2j",
     "ja": "兄は今、カナダで英語を勉強中。",
     "en": "My brother's studying English in Canada.",
@@ -363,6 +331,22 @@
     "stamps": {}
   },
   {
+    "id": "c_6r5k9w4x",
+    "ja": "海外に住んでる友達に会ったよ。",
+    "en": "I saw a friend who lives abroad.",
+    "alternatives": [
+      "I met a friend who lives overseas.",
+      "I saw a friend that lives abroad."
+    ],
+    "point": "人を後ろから who 節で説明する。who の後ろは動詞",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 4,
+    "grammar": ["relative-clauses", "past-simple"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_6s7z6k6m",
     "ja": "引っ越しのこと、もっと早く言うべきだったね。",
     "en": "I should've told you about the move sooner.",
@@ -398,18 +382,34 @@
     "stamps": {}
   },
   {
-    "id": "c_7u4w2x6q",
-    "ja": "君がこんなにくつろいでるの、初めて見たよ。",
-    "en": "Never have I seen you this relaxed.",
+    "id": "c_7h6s2m5t",
+    "ja": "パリから帰ったばかりの友達に、ばったり会ったよ。",
+    "en": "I ran into a friend just back from Paris.",
     "alternatives": [
-      "I've never seen you this relaxed before.",
-      "I've never seen you so laid-back."
+      "I bumped into a friend just back from Paris.",
+      "I ran into a friend who's just back from Paris."
     ],
-    "point": "Never を文頭に出すと、あとは疑問文の語順になる",
+    "point": "ばったり会うは run into。just back from が名詞を後ろから修飾",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["post-modification", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7h9q2d5h",
+    "ja": "君がこんなにくつろいでるの、初めて見たよ。",
+    "en": "I've never seen you this relaxed.",
+    "alternatives": [
+      "I've never seen you so laid-back.",
+      "This is the most relaxed I've seen you."
+    ],
+    "point": "「初めて見た」は現在完了の経験で never を使う",
     "topic": "social",
     "subtopic": "catching-up",
     "level": 9,
-    "grammar": ["inversion"],
+    "grammar": ["tense-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -469,22 +469,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_8k7n6a3v",
-    "ja": "パリから帰ったばかりの友達に、ばったり会ったよ。",
-    "en": "I ran into a friend just back from Paris.",
-    "alternatives": [
-      "I bumped into a friend just back from Paris.",
-      "I ran into a friend who's just back from Paris."
-    ],
-    "point": "ばったり会うは run into。just back from が名詞を後ろから修飾",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 8,
-    "grammar": ["post-modification", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_8t4j6y6j",

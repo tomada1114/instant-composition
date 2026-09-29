@@ -5,12 +5,12 @@
     "en": "I didn't know I'd been invited.",
     "alternatives": [
       "I had no idea I'd been invited.",
-      "Nobody told me I had been invited."
+      "I didn't realize I'd been invited."
     ],
     "point": "知った時点より前の「誘われた」は過去完了（受け身）",
     "topic": "social",
     "subtopic": "invitations",
-    "level": 8,
+    "level": 6,
     "grammar": ["past-perfect", "noun-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -109,14 +109,13 @@
     "ja": "部長に二次会まで付き合わされちゃったよ。",
     "en": "My boss made me tag along to the after-party.",
     "alternatives": [
-      "My boss made me come along to the after-party.",
-      "My boss made me go to the after-party too.",
-      "My boss made me stay for the after-party."
+      "My boss dragged me along to the after-party.",
+      "My boss made me go to the after-party too."
     ],
     "point": "「made + 人 + 原形」。tag along は「くっついて行く」",
     "topic": "social",
     "subtopic": "invitations",
-    "level": 10,
+    "level": 7,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -127,12 +126,12 @@
     "en": "I'm inviting everyone out for drinks now.",
     "alternatives": [
       "I'm asking everyone to go for drinks.",
-      "Right now I'm asking everyone out for drinks."
+      "I'm asking everyone if they want drinks."
     ],
     "point": "「今〜しているところ」は現在進行形 (am + ing)",
     "topic": "social",
     "subtopic": "invitations",
-    "level": 5,
+    "level": 4,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -165,7 +164,8 @@
     "en": "I've been waiting to be invited.",
     "alternatives": [
       "I've been hoping you'd invite me.",
-      "I've been waiting for an invitation."
+      "I've been waiting for an invitation.",
+      "I've been waiting for you to invite me."
     ],
     "point": "待ち続けている今までの期間は現在完了進行形",
     "topic": "social",
@@ -268,8 +268,8 @@
     "point": "「みんなが行ける日」は day を後ろから修飾する関係節",
     "topic": "social",
     "subtopic": "invitations",
-    "level": 8,
-    "grammar": ["nested-clauses", "relative-clauses"],
+    "level": 6,
+    "grammar": ["relative-clauses", "requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -372,7 +372,7 @@
     "point": "「信じられない」の中身は that 節。that は省略できる",
     "topic": "social",
     "subtopic": "invitations",
-    "level": 8,
+    "level": 7,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -382,10 +382,10 @@
     "ja": "金曜空いてるか聞こうと思って電話したんだ。",
     "en": "I called to see if you're free Friday.",
     "alternatives": [
-      "I'm calling to find out if you're free Friday.",
+      "I called to find out if you're free Friday.",
       "I called to check if you're free on Friday."
     ],
-    "point": "「〜するために」は to + 動詞の原形で言える",
+    "point": "「〜か確かめる」は see if ＋平叙文の語順。to see で目的を表す",
     "topic": "social",
     "subtopic": "invitations",
     "level": 6,
@@ -461,15 +461,14 @@
     "ja": "この前誘ってくれた店、もう予約しといたよ。",
     "en": "I've already booked the place you invited me to.",
     "alternatives": [
-      "I've already reserved a table at the place you invited me to.",
-      "The place you invited me to? I've already booked it.",
-      "I already booked that place you invited me to."
+      "I already booked that place you invited me to.",
+      "I've already reserved the place you invited me to."
     ],
     "point": "「もう〜した」は現在完了。invited me to の to を忘れずに",
     "topic": "social",
     "subtopic": "invitations",
-    "level": 10,
-    "grammar": ["tense-contrast", "nested-clauses"],
+    "level": 6,
+    "grammar": ["present-perfect", "relative-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
