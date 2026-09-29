@@ -29,8 +29,9 @@ before you look at any `en`: this is the check that `ja` pins one answer.
 1. One `cat` of `queue-<b>.json`, `content/guides/writing.md`,
    `content/guides/identity.md`, `content/guides/review-perspectives.md`,
    `content/grammar.json` and `content/taxonomy.json`.
-2. One Bash call running `pnpm -s cards:dupes --ids <every id> --json` and, for every
-   cell in the batch, `pnpm -s cards:show --cell <topic>/<subtopic> --brief`.
+2. One Bash call running `pnpm -s cards:dupes --ids <every id> --json`,
+   `pnpm -s cards:lint --ids <every id> | grep '^WARN'` (the cards over a target) and,
+   for every cell in the batch, `pnpm -s cards:show --cell <topic>/<subtopic> --brief`.
 
 ## 3. Judge every card
 
@@ -43,11 +44,12 @@ Apply every check in `review-perspectives.md` (R1–R3) and fix the lint finding
   worth adding; keep 2–3.
 - **R2.** "Grammatical but a native speaker would not say it" is a failure. `en` and
   each alternative stay within the level's `words` range and `ja` within `jaChars.max`;
-  a sentence that could lose words without losing its point gets shortened, and so does
-  one over `words.target` or `jaChars.target` unless the scene cannot be said shorter —
-  the level's difficulty comes from vocabulary, idiom and structure, never from length.
-  A sentence stacking more than one added detail, or joining two statements, is cut to
-  one idea (R2.7).
+  a sentence that could lose words without losing its point gets shortened — the level's
+  difficulty comes from vocabulary, idiom and structure, never from length. Every card
+  with a `WARN … OVER_TARGET` line gets an edit (or a rebuild) that brings it to the
+  target; keep one over only when every shorter natural sentence loses its point, and
+  list it in the summary's `overTarget`. A sentence stacking more than one added detail,
+  or joining two statements, is cut to one idea (R2.7).
 - **R3.** Judge the level by structure, vocabulary and idiom, not length. Treat the
   `cards:dupes` candidates as a lead and judge sameness against every card in the cell.
 - Think each card through before deciding.
@@ -75,7 +77,7 @@ Decide each card, using `identity.md` for edit vs. rebuild:
 - `tmp/cards/review-<b>-rebuilds.json` —
   `[{ "old": …, "reason": "<one line>", "card": { <a new card without id, createdAt or stamps> } }]`.
 - `tmp/cards/review-<b>-summary.json` —
-  `{ "kept": [ids], "guideIssues": ["<a guide that looks wrong, and why>"] }`.
+  `{ "kept": [ids], "overTarget": [{ "id": …, "reason": "<why it cannot be shorter>" }], "guideIssues": ["<a guide that looks wrong, and why>"] }`.
 
 Confirm each file parses with `node -e 'JSON.parse(…)'`. Never edit `content/` yourself.
 

@@ -35,11 +35,13 @@ close together from level 1 to level 10:
   its `words.max`.
 - `ja` stays at or under the level's `jaChars.max` characters. Whitespace does not
   count; punctuation does.
-- Aim at or under `words.target` and `jaChars.target`. The cap is a ceiling, not a
-  target: a card over the target needs the scene to demand it. If a word or a clause can
-  go without losing the point of the card, it goes.
+- Stay at or under `words.target` and `jaChars.target`. The cap is a ceiling, not a
+  target: a card over the target is rewritten shorter, and stays over only when every
+  shorter natural sentence loses the card's point. If a word or a clause can go without
+  losing the point of the card, it goes.
 
-The lint rejects a card over a cap; the review flags one over a target.
+The lint rejects a card over a cap. `cards:lint` and `cards:add` print a
+`WARN … OVER_TARGET` line for a card over a target, and the review rewrites it.
 
 ## One sentence, one idea
 
@@ -86,7 +88,7 @@ The lint rejects a card over a cap; the review flags one over a target.
 - What a fluent speaker would naturally say in that scene, at the card's level. Not the
   most literal rendering of the Japanese, and not a showcase of rare vocabulary.
 - Its length must sit inside the level's `words` range in `content/levels.json` — the
-  lint rejects it otherwise, and the card's pace depends on it. Aim at or under
+  lint rejects it otherwise, and the card's pace depends on it. Stay at or under
   `words.target`: no padding clause, no second detail the scene does not need.
 - A higher level asks for a harder word, an idiom or phrasal verb, or a harder structure
   — not for more of the sentence.

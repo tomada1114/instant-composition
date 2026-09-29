@@ -336,6 +336,30 @@ describe("cards:lint", () => {
     expect(run.out).toBe("cards:lint: 1 cards checked, 0 errors");
   });
 
+  it("warns about a card over its level's targets without failing", () => {
+    const root = makeContentRoot();
+    writeCards(root, "work/meetings.json", [
+      makeCard("c_2a2a2a2a", {
+        ja: `${"会".repeat(jaCharsMax(1) - 2)}。`,
+        en: "Let's start the whole meeting right now, please.",
+      }),
+    ]);
+    const run = runCards(root, ["lint"]);
+    expect(run.code).toBe(0);
+    expect(run.out.split("\n")).toEqual([
+      'WARN c_2a2a2a2a OVER_TARGET "en" has 8 words; level 1 aims at 7 or fewer',
+      `WARN c_2a2a2a2a OVER_TARGET "ja" has ${String(jaCharsMax(1) - 1)} characters; level 1 aims at ${String(jaCharsMax(1) - 2)} or fewer`,
+      "cards:lint: 1 cards checked, 0 errors, 2 warnings",
+    ]);
+    const json = jsonOut(runCards(root, ["lint", "--json"])) as {
+      warnings: { rule: string }[];
+    };
+    expect(json.warnings.map((warning) => warning.rule)).toEqual([
+      "OVER_TARGET",
+      "OVER_TARGET",
+    ]);
+  });
+
   it("checks grammar examples against their levels", () => {
     const root = makeContentRoot();
     writeUnder(
@@ -803,6 +827,28 @@ describe("cards:add", () => {
     expect(run.out).toMatch(/^dropped input\[5\] {2}INPUT must not carry id/mu);
     expect(run.out).toMatch(/^dropped input\[6\] {2}INPUT not a card object/mu);
     expect(run.out).toMatch(/cards:add: 1 admitted, 6 dropped$/u);
+  });
+
+  it("admits a card over its level's target with a warning", () => {
+    const root = makeContentRoot();
+    const input = writeInput(root, "add.json", [
+      makeInput({ en: "Let's start the whole meeting right now, please." }),
+    ]);
+    const run = runCards(root, ["add", input]);
+    expect(run.code).toBe(0);
+    expect(run.out).toMatch(
+      /^WARN c_\S+ OVER_TARGET "en" has 8 words; level 1 aims at 7 or fewer$/mu,
+    );
+    expect(run.out).toMatch(/cards:add: 1 admitted, 0 dropped, 1 over target$/u);
+  });
+
+  it("writes nothing under --dry-run", () => {
+    const root = makeContentRoot();
+    const input = writeInput(root, "add.json", [makeInput()]);
+    const run = runCards(root, ["add", input, "--dry-run"]);
+    expect(run.code).toBe(0);
+    expect(run.out).toMatch(/cards:add: 1 admitted, 0 dropped$/u);
+    expect(runCards(root, ["lint"]).out).toBe("cards:lint: 0 cards checked, 0 errors");
   });
 
   it("does not hold a rebuild against the card it replaces", () => {

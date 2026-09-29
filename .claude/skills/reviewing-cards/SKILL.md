@@ -73,15 +73,17 @@ the commands and git, and reads the reviewer's files only as far as applying the
    twice. `pnpm -s cards:lint --ids <them>`, then `pnpm -s cards:stamp --ids <them>`
    (with `--field <name>` for a field review). `cards:stamp` refuses a card that fails
    lint (`ERR_CARDS_STAMP_REFUSED`) and stamps the rest; a refused card stays unstamped
-   and goes in the report.
+   and goes in the report. A `WARN … OVER_TARGET` line does not block the stamp; count
+   them for the report.
 7. **Commit.** `git add content`; if `git diff --cached --quiet` reports nothing staged,
    skip it. Otherwise
    `git commit -m "fix(cards): review <n> cards (<kept>/<edited>/<rebuilt>/<deleted>)"`
    (for a field: `fix(cards): review <name> on <n> cards`). Never `--no-verify`.
 8. **Report**: cards seen; kept / edited / rebuilt / deleted counts; each deletion and
    rebuild with its reason; rejected edits; failed rebuilds; unknown ids; lint ERRORs
-   outside an `--ids` run; anything left unstamped; `guideIssues` from the summary
-   files; and `pnpm -s cards:queue --count`.
+   outside an `--ids` run; the cards still over a target, with the summary's
+   `overTarget` reasons; anything left unstamped; `guideIssues` from the summary files;
+   and `pnpm -s cards:queue --count`.
 
 ## Stop rules
 
