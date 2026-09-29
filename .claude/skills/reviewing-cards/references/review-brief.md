@@ -18,11 +18,11 @@ Before you open anything else, print only each card's position, `ja` and `level`
 node -e 'JSON.parse(require("fs").readFileSync(process.argv[1],"utf8")).forEach((q,i)=>console.log(i,q.card.level,q.card.ja))' tmp/cards/queue-<b>.json
 ```
 
-Read the `summary` and `words` range of each level in `content/levels.json`, and for
-each `ja` write 1–3 English sentences a fluent speaker would naturally say there, most
-likely first, as short as the situation allows. Write them to
-`tmp/cards/review-<b>-blind.json` as `[{ "index": …, "sentences": [...] }]` before you
-look at any `en`: this is the check that `ja` pins one answer.
+Read the `summary`, `words` range and `words.target` of each level in
+`content/levels.json`, and for each `ja` write 1–3 English sentences a fluent speaker
+would naturally say there, most likely first, as short as the situation allows. Write
+them to `tmp/cards/review-<b>-blind.json` as `[{ "index": …, "sentences": [...] }]`
+before you look at any `en`: this is the check that `ja` pins one answer.
 
 ## 2. Gather — two tool calls
 
@@ -43,8 +43,11 @@ Apply every check in `review-perspectives.md` (R1–R3) and fix the lint finding
   worth adding; keep 2–3.
 - **R2.** "Grammatical but a native speaker would not say it" is a failure. `en` and
   each alternative stay within the level's `words` range and `ja` within `jaChars.max`;
-  a sentence that could lose words without losing its point gets shortened — the level's
-  difficulty comes from vocabulary, idiom and structure, never from length.
+  a sentence that could lose words without losing its point gets shortened, and so does
+  one over `words.target` or `jaChars.target` unless the scene cannot be said shorter —
+  the level's difficulty comes from vocabulary, idiom and structure, never from length.
+  A sentence stacking more than one added detail, or joining two statements, is cut to
+  one idea (R2.7).
 - **R3.** Judge the level by structure, vocabulary and idiom, not length. Treat the
   `cards:dupes` candidates as a lead and judge sameness against every card in the cell.
 - Think each card through before deciding.

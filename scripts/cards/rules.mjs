@@ -10,6 +10,8 @@ import {
   endsAsSentence,
   hasEllipsis,
   hasJapanese,
+  hasSecondSentenceEn,
+  hasSecondSentenceJa,
   normalizeEn,
   unexpectedLatinWords,
 } from "./text.mjs";
@@ -179,6 +181,8 @@ export function lintCard(raw, id, env, options) {
       add("JAPANESE_IN_EN", `${label} contains Japanese characters`);
     if (!endsAsSentence(text))
       add("END_PUNCTUATION", `${label} must end with ".", "?" or "!"`);
+    if (hasSecondSentenceEn(text))
+      add("ONE_SENTENCE", `${label} holds more than one sentence`);
   }
 
   if (typeof ja === "string") {
@@ -192,6 +196,8 @@ export function lintCard(raw, id, env, options) {
         );
       }
     }
+    if (hasSecondSentenceJa(ja))
+      add("ONE_SENTENCE", `"ja" holds more than one sentence`);
     const words = unexpectedLatinWords(ja);
     if (words.length > 0) {
       add(

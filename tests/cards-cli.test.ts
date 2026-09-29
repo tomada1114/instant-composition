@@ -145,6 +145,9 @@ describe("cards:lint", () => {
     ["END_PUNCTUATION", { en: "Let's start the meeting" }],
     ["END_PUNCTUATION", { alternatives: ["Shall we get started", "Let's get going."] }],
     ["LATIN_IN_JA", { ja: "meeting を始めましょう。" }],
+    ["ONE_SENTENCE", { ja: "時間です。会議を始めましょう。" }],
+    ["ONE_SENTENCE", { en: "It's time. Let's start." }],
+    ["ONE_SENTENCE", { alternatives: ["It's time. Let's begin.", "Shall we begin?"] }],
     ["ELLIPSIS", { ja: "会議を…始めましょう。" }],
     ["ELLIPSIS", { en: "Let's start... the meeting." }],
     ["ELLIPSIS", { point: "Let's で..." }],
@@ -233,7 +236,7 @@ describe("cards:lint", () => {
           Object.fromEntries(
             Object.entries(first ?? {}).filter(([key]) => key !== "jaChars"),
           ),
-          { ...second, jaChars: { max: 0 } },
+          { ...second, jaChars: { max: 0, target: 0 } },
           ...rest,
         ],
       }),
@@ -242,6 +245,31 @@ describe("cards:lint", () => {
     expect(errorCode(run.err)).toBe("ERR_CARDS_CONTENT");
     expect(run.err).toContain("entry #0 needs");
     expect(run.err).toContain("level 2 has jaChars.max 0");
+  });
+
+  it("fails with ERR_CARDS_CONTENT on a target outside its level's range", () => {
+    const root = makeContentRoot();
+    const file = path.join(root, "levels.json");
+    const levels = readJson(file) as {
+      levels: { words: { max: number }; jaChars: { max: number } }[];
+    };
+    const [first, second, ...rest] = levels.levels;
+    if (first === undefined || second === undefined) throw new Error("no levels");
+    writeUnder(
+      root,
+      "levels.json",
+      JSON.stringify({
+        levels: [
+          { ...first, words: { ...first.words, target: first.words.max + 1 } },
+          { ...second, jaChars: { ...second.jaChars, target: second.jaChars.max + 1 } },
+          ...rest,
+        ],
+      }),
+    );
+    const run = runCards(root, ["lint"]);
+    expect(errorCode(run.err)).toBe("ERR_CARDS_CONTENT");
+    expect(run.err).toContain("level 1 has words.target");
+    expect(run.err).toContain("level 2 has jaChars.target");
   });
 
   it("allows an allowlisted proper noun in ja", () => {

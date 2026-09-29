@@ -15,22 +15,45 @@ worth noticing).
 Everything below follows from that: the learner has only the Japanese to go on, has
 seconds rather than minutes, and grades themselves by comparing against the back.
 
+## Why short: confidence through repetition
+
+The drill exists so a learner who wants to say something can get a short English
+sentence out at once. It does not train building long sentences. A card should come out
+in one breath, feel within reach, and be quick to say again — confidence and repetition
+are what it builds, and a card that stalls the learner costs both. Every rule below
+serves that: when two ways of writing a card are both correct, pick the shorter, simpler
+one.
+
 ## Short at every level
 
-Instant composition trains producing a sentence at once. A longer sentence is slower to
-produce, not harder in a way that trains that, so difficulty comes from vocabulary,
-idioms and phrasal verbs, and structure — never from length. Every level in
-`content/levels.json` caps length, and the caps stay close together from level 1 to
-level 10:
+A longer sentence is slower to produce, not harder in a way that trains that, so
+difficulty comes from vocabulary, idioms and phrasal verbs, and structure — never from
+length. Every level in `content/levels.json` sets a cap and a target, and both stay
+close together from level 1 to level 10:
 
 - `en` sits inside the level's `words` range, and every alternative stays at or under
   its `words.max`.
 - `ja` stays at or under the level's `jaChars.max` characters. Whitespace does not
   count; punctuation does.
+- Aim at or under `words.target` and `jaChars.target`. The cap is a ceiling, not a
+  target: a card over the target needs the scene to demand it. If a word or a clause can
+  go without losing the point of the card, it goes.
 
-The lint rejects a card over any of these. The cap is a ceiling, not a target: a
-sentence is as short as its scene allows. If a word or a clause can go without losing
-the point of the card, it goes.
+The lint rejects a card over a cap; the review flags one over a target.
+
+## One sentence, one idea
+
+- `ja`, `en` and every alternative are one sentence. The lint rejects a second one.
+- A sentence is a core — subject, verb, and object or complement — plus **at most one**
+  added detail: a time, a place, a reason, a purpose, a condition, or a clause modifying
+  a noun. The grammar item the card exercises counts as that detail when it adds one (a
+  relative clause, an `if` clause).
+- Do not join two statements with `and`, `but` or `so` (「〜けど、〜」「〜して、〜」).
+  Pick the one the card is about.
+- Stacking is the failure to
+  avoid: 「兄は今日の午後、修理に出したノートパソコンを受け取りにお店へ行く予定です。」carries
+  a time, a noun-modifying clause, a purpose and a place. Keep
+  one:「兄は修理に出したパソコンを取りに行く。」 or 「兄は午後、パソコンを取りに行く。」.
 
 ## `ja` — the front
 
@@ -45,12 +68,11 @@ the point of the card, it goes.
   a completed action, 「〜したことある？」 for experience, 「〜してもらえますか」 for a
   polite request, an explicit subject when Japanese would normally drop an ambiguous
   one.
-- **Give the situation in the sentence itself**, not in a stage direction. A sentence
-  with a concrete who/what/when is easier to remember and closer to real use than a
-  textbook sentence with no context — the most common complaint about existing
-  composition books.
-- One sentence. Two short sentences only when the second is what makes the scene
-  (「傘持ってる？雨が降りそう。」), and only within the level's `jaChars.max`.
+- **Give the situation in the sentence itself**, not in a stage direction. A concrete
+  who and what is easier to remember and closer to real use than a textbook sentence
+  with no context — the most common complaint about existing composition books. One
+  concrete detail sets the scene; a second one only slows the learner down.
+- One sentence (see "One sentence, one idea").
 - Plain punctuation: 、。？！. No 「…」 and no romaji.
 - Latin letters only for proper nouns, product names, acronyms and units, written the
   way a Japanese writer
@@ -64,8 +86,8 @@ the point of the card, it goes.
 - What a fluent speaker would naturally say in that scene, at the card's level. Not the
   most literal rendering of the Japanese, and not a showcase of rare vocabulary.
 - Its length must sit inside the level's `words` range in `content/levels.json` — the
-  lint rejects it otherwise, and the card's pace depends on it. Aim below the cap: no
-  padding clause, no second detail the scene does not need.
+  lint rejects it otherwise, and the card's pace depends on it. Aim at or under
+  `words.target`: no padding clause, no second detail the scene does not need.
 - A higher level asks for a harder word, an idiom or phrasal verb, or a harder structure
   — not for more of the sentence.
 - Contractions are fine and usually more natural in speech (`I'm`, `don't`).

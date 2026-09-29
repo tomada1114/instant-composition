@@ -1,6 +1,6 @@
 # Review perspectives
 
-perspectivesVersion: 2
+perspectivesVersion: 3
 
 The checks each independent reviewer applies. Bump `perspectivesVersion` above whenever
 a check is added or materially changed; every card stamped with an older version then
@@ -52,7 +52,13 @@ Shown `ja`, `en`, `alternatives`.
 - **R2.5** Nothing from "Things never to write" in `writing.md`.
 - **R2.6** `ja`, `en` and every alternative are as short as the scene allows (see "Short
   at every level" in `writing.md`). A card whose sentence could lose words without
-  losing its point is a `FIX`: name the words that can go.
+  losing its point is a `FIX`: name the words that can go. So is an `en` over the
+  level's `words.target` or a `ja` over its `jaChars.target`, unless the scene cannot be
+  said shorter — say why when you keep one.
+- **R2.7** Each sentence is one core plus at most one added detail, with no two
+  statements joined by `and`, `but` or `so` (see "One sentence, one idea" in
+  `writing.md`). A stacked card is a `FIX` when dropping details keeps the question, a
+  `REBUILD` when it does not.
 
 ## R3 — tags and point
 
