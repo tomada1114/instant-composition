@@ -276,6 +276,15 @@ describe("the drill's pause sheet", () => {
     expect(screen.getByText("prompt-c1")).toBeInTheDocument();
   });
 
+  it("says quitting keeps the place until the day turns at 04:00", async () => {
+    serve();
+    await renderApp("/drill?kind=today");
+    press("Escape");
+    expect(
+      screen.getByText(fill(ja.Drill.sheet.hint, { hour: 4, position: 1 })),
+    ).toBeInTheDocument();
+  });
+
   it("goes home from the sheet's stop button", async () => {
     serve();
     await renderApp("/drill?kind=today");
@@ -312,7 +321,7 @@ describe("the drill's pause sheet", () => {
     ).toBeInTheDocument();
     press("Escape");
     expect(
-      screen.getByText(fill(ja.Drill.sheet.hint, { position: 4 })),
+      screen.getByText(fill(ja.Drill.sheet.hint, { hour: 4, position: 4 })),
     ).toBeInTheDocument();
   });
 });
