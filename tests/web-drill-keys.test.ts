@@ -51,12 +51,12 @@ describe("keyAction", () => {
   });
 
   it.each([
+    ["ArrowRight", { type: "grade", result: "ok" }],
     ["k", { type: "grade", result: "ok" }],
     ["K", { type: "grade", result: "ok" }],
     ["f", { type: "grade", result: "ok" }],
     ["F", { type: "grade", result: "ok" }],
-    ["ArrowRight", undefined],
-    ["ArrowLeft", undefined],
+    ["ArrowLeft", { type: "grade", result: "ng" }],
     ["j", { type: "grade", result: "ng" }],
     ["J", { type: "grade", result: "ng" }],
     ["d", { type: "grade", result: "ng" }],
@@ -77,7 +77,7 @@ describe("keyAction", () => {
     ["K", { type: "next" }],
     ["f", { type: "next" }],
     ["F", { type: "next" }],
-    ["ArrowRight", undefined],
+    ["ArrowRight", { type: "next" }],
     ["ArrowLeft", undefined],
     ["j", undefined],
     ["J", undefined],

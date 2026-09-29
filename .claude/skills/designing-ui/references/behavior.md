@@ -47,23 +47,22 @@ no applause. Browsers block autoplay, so the first "start" press unlocks audio.
 
 ## Keys
 
-| Key   | Front                        | Back (flipped by hand)                         | Back (timed out) | Elsewhere                                                                                                                                                                                   |
-| ----- | ---------------------------- | ---------------------------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Space | flip                         | —                                              | next             | The screen's primary action on the start and summary screens                                                                                                                                |
-| Enter | flip                         | —                                              | next             | Same                                                                                                                                                                                        |
-| K / F | —                            | ○ said it                                      | next             | —                                                                                                                                                                                           |
-| J / D | —                            | × couldn't say it                              | —                | —                                                                                                                                                                                           |
-| ↑ / ↓ | —                            | scroll inside the card, only when it overflows | same             | The browser's page scroll                                                                                                                                                                   |
-| Esc   | open the pause sheet         | same                                           | same             | Close a sheet (on the pause sheet: continue). Home on records, settings, and a re-read summary; cancel on the difficulty re-test confirmation; nothing on the not-enough-cards start screen |
-| ?     | open the pause sheet         | same                                           | same             | —                                                                                                                                                                                           |
-| Tab   | moves focus, on every screen |                                                |                  |                                                                                                                                                                                             |
+| Key       | Front                        | Back (flipped by hand)                         | Back (timed out) | Elsewhere                                                                                                                                                                                   |
+| --------- | ---------------------------- | ---------------------------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Space     | flip                         | —                                              | next             | The screen's primary action on the start and summary screens                                                                                                                                |
+| Enter     | flip                         | —                                              | next             | Same                                                                                                                                                                                        |
+| → / K / F | —                            | ○ said it                                      | next             | —                                                                                                                                                                                           |
+| ← / J / D | —                            | × couldn't say it                              | —                | —                                                                                                                                                                                           |
+| ↑ / ↓     | —                            | scroll inside the card, only when it overflows | same             | The browser's page scroll                                                                                                                                                                   |
+| Esc       | open the pause sheet         | same                                           | same             | Close a sheet (on the pause sheet: continue). Home on records, settings, and a re-read summary; cancel on the difficulty re-test confirmation; nothing on the not-enough-cards start screen |
+| ?         | open the pause sheet         | same                                           | same             | —                                                                                                                                                                                           |
+| Tab       | moves focus, on every screen |                                                |                  |                                                                                                                                                                                             |
 
 - Seconds to flip run from the moment the front is drawn to the flip key or click.
 - Space on a back does nothing: a grade cannot be skipped.
 - For 150 ms after a back appears, ○/× keys are ignored, so the flip's momentum cannot
   grade the card.
-- ←/→ do nothing in the drill; K and J are the grades, the home-row keys under the
-  fingers.
+- ←/→ are grades and never scroll; K/J and F/D grade the same way from the home row.
 - On records and settings, ←/→ move between the in-page `tabs` while one of them has
   focus, and Home/End go to the first and last; nowhere else on those screens do they do
   anything.
