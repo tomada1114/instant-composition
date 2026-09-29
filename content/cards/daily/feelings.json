@@ -35,23 +35,13 @@
     "level": 10,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2q4j7y7s",
-    "ja": "今さら断るなんて、気が引けるよ。",
-    "en": "I feel bad about backing out now.",
-    "alternatives": [
-      "I'd feel bad backing out at this point.",
-      "I feel guilty about pulling out now."
-    ],
-    "point": "前置詞 about の後は動名詞。「断る」は back out",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 6,
-    "grammar": ["gerunds", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4be095c794542de88651974d2c1fd4ae99b248746949902796e79b44def6d722",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2v7q4e5x",
@@ -71,22 +61,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_2y3x7x9n",
-    "ja": "来月引っ越すから、この街が恋しくなるな。",
-    "en": "I'm moving next month. I'll miss this town.",
-    "alternatives": [
-      "I move next month. I'll miss this town.",
-      "I'm leaving next month. I'll miss this town."
-    ],
-    "point": "決まった予定は進行形、その場の気持ちは will",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 4,
-    "grammar": ["future-forms"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_3a6c5f6y",
@@ -124,7 +98,13 @@
     "level": 6,
     "grammar": ["reported-speech", "gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e13236b52be67cb545d050cad41c92375e99c4dd1d467e3ed50dcd6e716a4504",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3g3b3p7e",
@@ -140,7 +120,13 @@
     "level": 6,
     "grammar": ["passive-voice", "infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6dfca18d83f90533dd3fc591e4fd3040ca99a0264271629e00eb3c1229a938ac",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3h5h7a2t",
@@ -178,7 +164,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c163a4b16ea43dbe32146156a3a36883f87aa9c47076b8b469667a5ec938cb06",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3t9x7f7u",
@@ -194,7 +186,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a3c842db484e3a1abc44f7752c9b7cad82c97b2bea125a922b959c021342632d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4c5m2t9p",
@@ -217,54 +215,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_4j2p3h3y",
-    "ja": "彼女の立場は分かるけど、私は賛成できないな。",
-    "en": "I see where she's coming from, but I disagree.",
-    "alternatives": [
-      "I understand her position, but I can't agree.",
-      "I get her point, but I can't agree with her."
-    ],
-    "point": "where she's coming from は「彼女の言い分・立場」の口語表現",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 9,
-    "grammar": ["concession-contrast", "noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4m9h2a8s",
-    "ja": "このプラン、どう思うか率直に教えてもらえますか？",
-    "en": "Could you tell me frankly what you think of this?",
-    "alternatives": [
-      "Could you give me your honest opinion of this plan?",
-      "Could you tell me honestly what you think of this?"
-    ],
-    "point": "tell me の後は what you think の語順。Could で丁寧に",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 7,
-    "grammar": ["indirect-questions", "hedging-softening"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4t9e4r2v",
-    "ja": "彼女、結果に本当にがっかりしたって言ってた。",
-    "en": "She said she was really let down by the result.",
-    "alternatives": [
-      "She said the result really let her down.",
-      "She told me she was really disappointed with the result."
-    ],
-    "point": "said の後は時制を一つ過去へ。is は was に。",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 7,
-    "grammar": ["reported-speech"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_5c2j3g6d",
@@ -387,7 +337,13 @@
     "level": 3,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b937fe02a31470f768682b90acb4cf3936a69fd66c97b5cc2f3e42f37b1ab87c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6h3t9n9y",
@@ -426,7 +382,13 @@
     "level": 7,
     "grammar": ["gerunds", "passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bcd5676551fa1a3f3dad0712946654ca04a20bf5658b332362b2f3e46668f9b6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6t3h4h8g",
@@ -442,7 +404,13 @@
     "level": 6,
     "grammar": ["indirect-questions", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bf8644974d582ede236eca2855e33ad7e5daba2a11122c3f8e3b523b185baaf5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6t9j4k6x",
@@ -502,7 +470,13 @@
     "level": 6,
     "grammar": ["third-conditional", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0d27636e0d26786bab47bdb9c00ec8251ef542a35cba37c04dbf746dc4d5a712",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6y7t6q4s",
@@ -518,7 +492,13 @@
     "level": 6,
     "grammar": ["third-conditional", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1afb22556e03f3b90bce0f7ed08946df7cd677e5530cf91c687ac6f79157eb70",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7g8z9h8q",
@@ -578,7 +558,13 @@
     "level": 5,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:581fe61b73f4863845aaff0fcbb7530b9f65783dddbbe24d554f83ab7763f4c8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8j5y5w7g",
@@ -594,23 +580,13 @@
     "level": 7,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8k6j9k9d",
-    "ja": "あの時留学していたら、今ごろ違う人生だったのにな。",
-    "en": "If I'd studied abroad, my life would be different now.",
-    "alternatives": [
-      "Had I studied abroad, my life would be different now.",
-      "My life would be different now if I'd studied abroad."
-    ],
-    "point": "過去の仮定 + 今の結果は if 節 had 過去分詞、主節 would 原形。",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 8,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1850cbd218012b17656fd25920009bdfb10fa9b46b5f46937abb0423980120fb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8q6v7h5b",
@@ -623,7 +599,13 @@
     "level": 3,
     "grammar": ["articles-and-countability", "past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:75a8b64b83d5c2df3e4aeabad78ac6a72f2c5d3478d3afef3c3d9a3baa775160",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8u4j2n3w",
