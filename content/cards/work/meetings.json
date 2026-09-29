@@ -27,15 +27,22 @@
     "en": "I should have checked those figures beforehand.",
     "alternatives": [
       "I should have checked those numbers ahead of time.",
-      "I should've checked those numbers first."
+      "I should've checked those numbers first.",
+      "I should have double-checked those numbers."
     ],
     "point": "過去の後悔は should have + 過去分詞",
     "topic": "work",
     "subtopic": "meetings",
-    "level": 7,
+    "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8551259d349d3e608d5218e2d63e0b81bdcec51ba937b009a8c67f03f3ba262c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2m6k5y3m",

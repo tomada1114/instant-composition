@@ -13,7 +13,13 @@
     "level": 6,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8104bb8de9f4b75baaa2efa585e1ce280d6964f23af7debcecfd1c876ddee15a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2h7a4r2q",

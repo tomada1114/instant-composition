@@ -13,7 +13,13 @@
     "level": 7,
     "grammar": ["present-perfect", "relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d9b7c5ac6959481efe628ab5a02540c83801a8ac8e12f25a4739f3786590a05e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2g2v8q5u",
