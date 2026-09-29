@@ -4,13 +4,13 @@
     "ja": "映像が10分ずっと固まってますよ。",
     "en": "Your video's been freezing for ten minutes.",
     "alternatives": [
-      "Your video's been lagging for ten minutes.",
+      "Your video's been frozen for ten minutes.",
       "Your video has been stuck for ten minutes."
     ],
     "point": "続いている状態は has been freezing と現在完了進行形",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 5,
+    "level": 4,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
     "stamps": {}
