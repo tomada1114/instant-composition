@@ -1,5 +1,37 @@
 [
   {
+    "id": "c_2c4d2t5d",
+    "ja": "今は絶対に、再デプロイ禁止だ。",
+    "en": "Under no circumstances should we redeploy now.",
+    "alternatives": [
+      "On no account should we redeploy now.",
+      "We must not redeploy under any circumstances."
+    ],
+    "point": "否定の副詞句を文頭に出すと should we の倒置",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_2r2h5u4c",
+    "ja": "リリース、私が止めてればなあ。",
+    "en": "I wish I'd stopped that release.",
+    "alternatives": [
+      "If only I'd stopped that release.",
+      "I wish I had held off on that release."
+    ],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2v9b4u3r",
     "ja": "原因を、まだ追ってます。",
     "en": "We're still tracking down the cause.",
@@ -20,6 +52,70 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3g9w8j7s",
+    "ja": "警報が鳴ってれば、気づけたのに。",
+    "en": "Had the alert fired, we'd have known.",
+    "alternatives": [
+      "If the alert had fired, we'd have known.",
+      "If the alert had gone off, we'd have known."
+    ],
+    "point": "過去の反実仮想は if + 過去完了、主節は would have",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3j2v6u4j",
+    "ja": "証明書が期限切れだと判明した。",
+    "en": "It turned out the certificate had expired.",
+    "alternatives": [
+      "We found out the certificate had expired.",
+      "We discovered that the certificate had expired."
+    ],
+    "point": "turn out の後ろは that 節。先の出来事は過去完了",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3r3j5q8x",
+    "ja": "午前三時から、ずっと火消しです。",
+    "en": "We've been firefighting since 3 a.m.",
+    "alternatives": [
+      "We've been putting out fires since 3 a.m.",
+      "We've been working on the outage since 3 a.m."
+    ],
+    "point": "since + 起点で続く動作は have been -ing",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3s4f7h9d",
+    "ja": "何が起きたか、まだ不明です。",
+    "en": "We still don't know what happened.",
+    "alternatives": [
+      "We don't yet know what happened.",
+      "We're still unclear on what happened."
+    ],
+    "point": "know の後の what 節は平叙文の語順",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_4d4b2v7t",
@@ -103,6 +199,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4r7v7v8f",
+    "ja": "設定変更が引き金だったかも。",
+    "en": "The config change may have triggered it.",
+    "alternatives": [
+      "It might have been the config change that triggered it.",
+      "Perhaps the config change triggered it."
+    ],
+    "point": "may have + 過去分詞で過去の可能性を柔らかく言う",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 10,
+    "grammar": ["hedging-softening", "modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_4v2f9t3r",
@@ -190,6 +302,22 @@
     }
   },
   {
+    "id": "c_6c5b7g4f",
+    "ja": "影響は東京のユーザーだけだった。",
+    "en": "Only users in Tokyo were affected.",
+    "alternatives": [
+      "Only Tokyo users were affected.",
+      "Only users in Tokyo were impacted."
+    ],
+    "point": "users in ~ と前置詞句で後ろから修飾",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6p4s6j7a",
     "ja": "先にロールバックすべき。",
     "en": "We should roll back first.",
@@ -254,6 +382,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7c4h9n9c",
+    "ja": "私が閾値を早く見直してればなあ。",
+    "en": "I wish I'd tuned the thresholds sooner.",
+    "alternatives": [
+      "If only I'd tuned the thresholds earlier.",
+      "I wish I had revisited the thresholds sooner."
+    ],
+    "point": "wish + 過去完了。thresholds は複数形",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 10,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7q7m9q2z",

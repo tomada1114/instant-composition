@@ -19,6 +19,22 @@
     }
   },
   {
+    "id": "c_2c2x9p2e",
+    "ja": "面倒でも、この CLI は便利だ。",
+    "en": "Although it's fiddly, this CLI is handy.",
+    "alternatives": [
+      "Fiddly as it is, this CLI is handy.",
+      "It's fiddly, but this CLI is handy."
+    ],
+    "point": "Although の後に but は不要",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2c3p5k2b",
     "ja": "ターミナル使うのが好き。",
     "en": "I like using the terminal.",
@@ -197,6 +213,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5r6h8v5t",
+    "ja": "確認してれば、時短できたのに。",
+    "en": "If I'd checked, I'd have saved time.",
+    "alternatives": [
+      "Had I checked, I'd have saved time.",
+      "If I had checked, I'd have saved myself time."
+    ],
+    "point": "過去の反実仮想は if + 過去完了、would have",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5v2z4k8s",
@@ -383,6 +415,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8y8e5t8y",
+    "ja": "固定してれば、今は安定なのに。",
+    "en": "If we'd pinned versions, we'd be stable.",
+    "alternatives": [
+      "If we had pinned versions, we'd be stable now.",
+      "Had we pinned versions, we'd be stable now."
+    ],
+    "point": "過去の仮定+今の結果。pin は「固定する」",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8z9y9r3p",

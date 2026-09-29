@@ -83,6 +83,22 @@
     }
   },
   {
+    "id": "c_3z4d6x5a",
+    "ja": "Kafka 導入後、遅延が減った。",
+    "en": "Latency has dropped since we adopted Kafka.",
+    "alternatives": [
+      "Since we moved to Kafka, latency has dropped.",
+      "Latency has come down since we switched to Kafka."
+    ],
+    "point": "since の後は過去形、主節は現在完了",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 9,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4d3e5p8v",
     "ja": "キャッシュは外すと決めた。",
     "en": "We decided to drop the cache.",
@@ -100,6 +116,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4e8s3s4t",
+    "ja": "非正規化してれば、今は楽なのに。",
+    "en": "If we'd denormalized, we wouldn't be stuck now.",
+    "alternatives": [
+      "Had we denormalized, we wouldn't be stuck now.",
+      "If we had denormalized earlier, we wouldn't be stuck now."
+    ],
+    "point": "過去の仮定+今の結果。wouldn't be で今を述べる",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 10,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_4h5m5k9e",
@@ -121,6 +153,22 @@
     }
   },
   {
+    "id": "c_4k4y8z7u",
+    "ja": "ロックを使う案は、除外しよう。",
+    "en": "Let's rule out the locking option.",
+    "alternatives": [
+      "Let's eliminate the locking option.",
+      "Let's take the locking option off the table."
+    ],
+    "point": "rule out は「選択肢から外す」",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 9,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4q6d4x8z",
     "ja": "秘密情報は金庫で保管される。",
     "en": "Secrets are kept in a vault.",
@@ -138,6 +186,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4s4k6s3w",
+    "ja": "一貫性は二択でなく、程度の問題だ。",
+    "en": "Consistency is a spectrum, not a switch.",
+    "alternatives": [
+      "Consistency is a matter of degree, not either-or.",
+      "Consistency is a sliding scale, not an on/off switch."
+    ],
+    "point": "抽象名詞は無冠詞、たとえは a spectrum",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 10,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4v4m6n9t",
+    "ja": "彼は、その役割を知らないと思う。",
+    "en": "I doubt he knows what it does.",
+    "alternatives": [
+      "I don't think he knows what it does.",
+      "I don't think he understands what it does."
+    ],
+    "point": "節の中に what 節が入る。語順は平叙文",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 8,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_4z5h3c3p",
@@ -246,6 +326,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5y3j4x3y",
+    "ja": "キューに通せば、丈夫なのに。",
+    "en": "If we queued it, it'd be sturdier.",
+    "alternatives": [
+      "If we added a queue, it'd be sturdier.",
+      "If we put a queue in, it'd be sturdier."
+    ],
+    "point": "現在の仮定は if + 過去形、主節は would",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 8,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6h7q5d4s",
+    "ja": "心配なのは、性能より保守だ。",
+    "en": "It's maintenance, not speed, that worries me.",
+    "alternatives": [
+      "What worries me is maintenance, not speed.",
+      "What concerns me is upkeep rather than speed."
+    ],
+    "point": "It is X that で強調したい語 X を挟む",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6p4x9v7n",
@@ -368,6 +480,22 @@
     }
   },
   {
+    "id": "c_9s3t9h5e",
+    "ja": "数週間、シャーディングを検討中。",
+    "en": "We've been weighing up sharding for weeks.",
+    "alternatives": [
+      "We've been considering sharding for a few weeks.",
+      "We've been looking into sharding for weeks."
+    ],
+    "point": "続いている動作は have been -ing + for",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 9,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_9s4k8e5y",
     "ja": "トレードオフが二つある。",
     "en": "There are two trade-offs.",
@@ -423,5 +551,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9z3w8v5k",
+    "ja": "整合性が崩れても、私は速さを取る。",
+    "en": "Even if consistency slips, I'd take speed.",
+    "alternatives": [
+      "I'd choose speed, even if consistency slips a bit.",
+      "Although consistency may slip, I'd still go for speed."
+    ],
+    "point": "Even if の後は現在形。譲歩の仮定を表す",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

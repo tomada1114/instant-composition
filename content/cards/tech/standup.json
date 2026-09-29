@@ -19,6 +19,22 @@
     }
   },
   {
+    "id": "c_2f5h9h6s",
+    "ja": "移行は順調に進めてきました。",
+    "en": "I've made good progress on the migration.",
+    "alternatives": [
+      "I've made solid progress on the migration.",
+      "I've made a lot of headway on the migration."
+    ],
+    "point": "progress は数えない名詞。a progress は不可",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 8,
+    "grammar": ["articles-and-countability", "present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3j8v3k2p",
     "ja": "今日はブロッカーが一つある。",
     "en": "There's one blocker today.",
@@ -57,6 +73,38 @@
     }
   },
   {
+    "id": "c_3v7b3r4b",
+    "ja": "今日は、ほぼ会議で潰れました。",
+    "en": "Meetings ate up most of my day.",
+    "alternatives": [
+      "Most of my day went on meetings.",
+      "I lost most of the day to meetings."
+    ],
+    "point": "meetings は複数で無冠詞。ate up で時間を奪う",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 10,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4m4r8a9h",
+    "ja": "バグの原因、まだつかめてません。",
+    "en": "I haven't found the cause yet.",
+    "alternatives": [
+      "I still haven't found the cause.",
+      "I still haven't figured out the cause."
+    ],
+    "point": "否定の現在完了は yet を文末に置く",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 8,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4u7b5f5t",
     "ja": "バグを直してるよ。",
     "en": "I'm fixing a bug.",
@@ -74,6 +122,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4z4x9f4f",
+    "ja": "背景を、少し教えてほしいです。",
+    "en": "I could use a bit of context.",
+    "alternatives": ["I'd like a little context.", "Could I get some context?"],
+    "point": "context は数えない名詞。a bit of / some を使う",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 9,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5m5t9k5u",
@@ -158,6 +219,22 @@
     }
   },
   {
+    "id": "c_6s5r8u6y",
+    "ja": "あと一日あれば、テストも終わるのに。",
+    "en": "If I had another day, I'd finish testing.",
+    "alternatives": [
+      "If I had one more day, I'd wrap up testing.",
+      "I'd finish testing if I had another day."
+    ],
+    "point": "現在の非現実は if + 過去形、主節は would",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 10,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6s8r9m5z",
     "ja": "詰まったら、聞くね。",
     "en": "I'll ask if I get stuck.",
@@ -175,6 +252,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6t9g2u2d",
+    "ja": "今日ほしいのは、レビューだ。",
+    "en": "What I need today is a review.",
+    "alternatives": [
+      "A review is what I need today.",
+      "The thing I need today is a review."
+    ],
+    "point": "What 節が主語。be 動詞の後に名詞が来る",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 8,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7a5f6t9u",
@@ -254,6 +347,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7z6k5a7u",
+    "ja": "レビュー待ちで、先に進めません。",
+    "en": "Blocked on review, I can't move forward.",
+    "alternatives": [
+      "Waiting on review, I can't move on.",
+      "Being blocked on review, I can't move on."
+    ],
+    "point": "分詞構文で理由を前に出す。主語は後ろと同じ",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 9,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7z7g9c9z",
@@ -354,6 +463,22 @@
     }
   },
   {
+    "id": "c_9d7k3n4m",
+    "ja": "私がもっと早く共有すべきだった。",
+    "en": "I should have flagged this sooner.",
+    "alternatives": [
+      "I should've raised this earlier.",
+      "I ought to have flagged this earlier."
+    ],
+    "point": "should have + 過去分詞で過去の後悔",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 9,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_9h3j5t8e",
     "ja": "デプロイしなきゃ。",
     "en": "I have to deploy.",
@@ -371,6 +496,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9h9h4q3d",
+    "ja": "頼まれた修正が遅れた理由、話します。",
+    "en": "I'll explain why the fix you wanted slipped.",
+    "alternatives": [
+      "Let me explain why the fix you requested slipped.",
+      "I'll explain why the fix you asked for is late."
+    ],
+    "point": "why 節の中に、さらに関係節が入る形",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9p9x4j8g",

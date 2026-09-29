@@ -1,5 +1,37 @@
 [
   {
+    "id": "c_2a4y5j7f",
+    "ja": "この設定が、テストを落としてる。",
+    "en": "This setting is making the tests fail.",
+    "alternatives": [
+      "This setting is causing the tests to fail.",
+      "This setting is what's making the tests fail."
+    ],
+    "point": "make + 目的語 + 原形。to は付けない",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 9,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_2k4m6k7m",
+    "ja": "再現しない理由が、最大の謎だ。",
+    "en": "Why it won't reproduce is the real mystery.",
+    "alternatives": [
+      "The biggest mystery is why it won't reproduce.",
+      "What puzzles me most is why it won't reproduce."
+    ],
+    "point": "why 節は主語にもなる。語順は平叙文のまま",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 10,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2t4b3c8r",
     "ja": "まず再現手順を書くべき。",
     "en": "You should write repro steps first.",
@@ -20,6 +52,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_2v3w6k3u",
+    "ja": "何度やっても再現しない。",
+    "en": "However often I try, it won't reproduce.",
+    "alternatives": [
+      "Try as I might, I can't reproduce it.",
+      "Even after many tries, I can't reproduce it."
+    ],
+    "point": "何度やっても = However often / Try as I might",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 9,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_3j7s9w3e",
@@ -83,6 +131,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3x4u2t8j",
+    "ja": "ログイン失敗だと、客が言ってた。",
+    "en": "A customer said login had failed.",
+    "alternatives": [
+      "A customer told us login had failed.",
+      "A customer reported that login had failed."
+    ],
+    "point": "過去に言った内容は一つ前の時制にずらす",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3z7f9k8j",
+    "ja": "ログ上は、タイムアウトだね。",
+    "en": "Judging by the logs, it's a timeout.",
+    "alternatives": [
+      "Based on the logs, it's a timeout.",
+      "From the logs, it looks like a timeout."
+    ],
+    "point": "Judging by ~ は「~から判断すると」の分詞構文",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 9,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_4s3m9e8x",
@@ -165,6 +245,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5h9c2g7q",
+    "ja": "決済で出るエラー、再現できたよ。",
+    "en": "I reproduced the error occurring in checkout.",
+    "alternatives": [
+      "I reproduced the error that happens in checkout.",
+      "I've reproduced the error in checkout."
+    ],
+    "point": "名詞を -ing や前置詞句で後ろから修飾",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5q9n3d6a",
@@ -288,6 +384,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7j5p5v5j",
+    "ja": "こんな厄介なバグ、初めて見た。",
+    "en": "Never have I seen such a nasty bug.",
+    "alternatives": [
+      "I've never seen such a nasty bug.",
+      "This is the nastiest bug I've ever seen."
+    ],
+    "point": "Never を文頭に出すと have I の倒置になる",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7t6p5j9q",
@@ -417,6 +529,22 @@
     }
   },
   {
+    "id": "c_8v5f6s8p",
+    "ja": "問題は、リトライが二重に走る点。",
+    "en": "The problem is that retries run twice.",
+    "alternatives": [
+      "The issue is that the retry runs twice.",
+      "The issue is that retries are firing twice."
+    ],
+    "point": "The problem is that + 文 で原因を述べる",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_9p2m9w8b",
     "ja": "別のブラウザで試して。",
     "en": "Try another browser.",
@@ -434,5 +562,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9r5z4a6x",
+    "ja": "ログがあれば、すぐ特定できるのに。",
+    "en": "If we had logs, I'd nail it fast.",
+    "alternatives": [
+      "If there were logs, I could pinpoint it quickly.",
+      "I could pinpoint it quickly if we had logs."
+    ],
+    "point": "現在の非現実は if + 過去形、主節は would",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 10,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]
