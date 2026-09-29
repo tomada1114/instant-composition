@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2j5g5c8g",
+    "ja": "隣の男性が、荷物を上げてくれた。",
+    "en": "The man beside me lifted my bag.",
+    "alternatives": [
+      "The man next to me lifted my bag up.",
+      "The guy next to me lifted my bag up."
+    ],
+    "point": "beside me を名詞の後ろに置いて「隣の」を表す",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2s7f3v7a",
     "ja": "彼、荷物を預けてる。",
     "en": "He's checking a bag.",
@@ -79,6 +95,22 @@
     }
   },
   {
+    "id": "c_4j4p2g5s",
+    "ja": "遅れると彼女が言ったのは、これ？",
+    "en": "Is this what she said was late?",
+    "alternatives": [
+      "Is this the flight she said was late?",
+      "Is this the one she said was delayed?"
+    ],
+    "point": "関係詞の中に I heard が入り込む形",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4k3p5p9p",
     "ja": "窓側の席にしてください。",
     "en": "Please give me a window seat.",
@@ -139,6 +171,38 @@
     }
   },
   {
+    "id": "c_4w5h3y4d",
+    "ja": "乗り継ぎを、長く取るべきだった。",
+    "en": "I should've allowed a longer layover.",
+    "alternatives": [
+      "I should have booked a longer layover.",
+      "I should've left more time for the connection."
+    ],
+    "point": "後悔は should have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 9,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4z9k4b5b",
+    "ja": "席を替えていただくのは、可能ですか？",
+    "en": "Would it be possible to switch seats?",
+    "alternatives": [
+      "I was wondering if we could switch seats.",
+      "Is there any chance I could switch seats?"
+    ],
+    "point": "Would it be possible to で丁寧に頼む",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5b9w5d9z",
     "ja": "トイレがありますよ。",
     "en": "There's a restroom.",
@@ -156,6 +220,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5f6m4n3n",
+    "ja": "受付で席を変えてもらった。",
+    "en": "I got my seat changed at check-in.",
+    "alternatives": [
+      "I had my seat changed at check-in.",
+      "I had them change my seat at check-in."
+    ],
+    "point": "have/get + 物 + 過去分詞で「〜してもらう」",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 8,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5g4d4c7y",
+    "ja": "私を足止めしたのは、ビザ確認でした。",
+    "en": "What held me up was the visa check.",
+    "alternatives": [
+      "It was the visa check that held me up.",
+      "The visa check is what held me up."
+    ],
+    "point": "hold up は「遅らせる・足止めする」",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5q6x9v8c",
@@ -179,6 +275,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5r2w2n5a",
+    "ja": "早く来れば、私たち乗れたのに。",
+    "en": "We'd have boarded if we'd been earlier.",
+    "alternatives": [
+      "If we'd been earlier, we'd have made it.",
+      "If we'd come earlier, we'd have made the flight."
+    ],
+    "point": "過去の仮定は had + 過去分詞 / would have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 9,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6m3t3h7p",
@@ -351,6 +463,22 @@
     }
   },
   {
+    "id": "c_8t2g3h3v",
+    "ja": "機内食が選べるなら、魚にするのにな。",
+    "en": "If I could choose, I'd have the fish.",
+    "alternatives": [
+      "I'd have the fish if I could choose.",
+      "If I got to choose, I'd go with the fish."
+    ],
+    "point": "現在の仮定は If + 過去形, would + 動詞",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 10,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_9d3m2a3g",
     "ja": "着くと、搭乗は終わっていた。",
     "en": "Boarding had ended when I arrived.",
@@ -414,6 +542,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9x3s4y8k",
+    "ja": "便が遅れた原因は、天候でした。",
+    "en": "What delayed our flight was the weather.",
+    "alternatives": [
+      "It was the weather that delayed our flight.",
+      "The weather is what delayed our flight."
+    ],
+    "point": "What で始めて「〜なのは、これだ」と強調",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9y8a8b2y",

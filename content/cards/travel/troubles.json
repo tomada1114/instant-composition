@@ -86,6 +86,22 @@
     }
   },
   {
+    "id": "c_3t4t4v7q",
+    "ja": "バッグがなくなったみたいです。",
+    "en": "It seems my bag's gone missing.",
+    "alternatives": [
+      "I think my bag has gone missing.",
+      "It looks like my bag's missing."
+    ],
+    "point": "It seems で断定を避け、やわらかく伝える",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 8,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4d5j4t4z",
     "ja": "次の電車の方が早いです。",
     "en": "The next train is faster.",
@@ -205,6 +221,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4z9b2m8f",
+    "ja": "私が急げば、間に合ったのに。",
+    "en": "If I'd hurried, I'd have made it.",
+    "alternatives": [
+      "I'd have made it if I'd hurried.",
+      "If I had hurried, I would have made it."
+    ],
+    "point": "make it は「間に合う」",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5d9a9y5j",
+    "ja": "確認メールが、まだ届いてません。",
+    "en": "My confirmation email hasn't arrived yet.",
+    "alternatives": [
+      "I still haven't received the confirmation email.",
+      "The confirmation email still hasn't arrived."
+    ],
+    "point": "yet は否定文で「まだ〜ない」",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 8,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5q8q6k3r",

@@ -1,5 +1,69 @@
 [
   {
+    "id": "c_2k9z9r3x",
+    "ja": "清掃係にシーツを替えてもらった。",
+    "en": "I got housekeeping to change the sheets.",
+    "alternatives": [
+      "I had housekeeping change the sheets.",
+      "I had the sheets changed by housekeeping."
+    ],
+    "point": "get + 人 + to do / have + 人 + 動詞で依頼の結果",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_2z5q8b2j",
+    "ja": "高いとはいえ、この眺めなら納得です。",
+    "en": "Pricey as it is, the view justifies it.",
+    "alternatives": [
+      "Even though it's pricey, the view is worth it.",
+      "Expensive though it is, the view is worth it."
+    ],
+    "point": "形容詞 + as it is で「〜ではあるが」",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3b5p3u9w",
+    "ja": "朝食の時間を教えてもらえますか？",
+    "en": "Could you tell me when breakfast starts?",
+    "alternatives": [
+      "Do you know what time breakfast starts?",
+      "Could you tell me what time breakfast is?"
+    ],
+    "point": "間接疑問は when breakfast starts と平叙文の語順",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3p8d7c2j",
+    "ja": "もっと静かなら、昨夜眠れたのに。",
+    "en": "If it were quieter, I'd have slept.",
+    "alternatives": [
+      "If it were quieter, I'd have slept last night.",
+      "I'd have slept if it were quieter."
+    ],
+    "point": "今の状態 were と過去の結果 would have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3w8g7b8x",
     "ja": "違う鍵をもらったに違いない。",
     "en": "I must've gotten the wrong key.",
@@ -45,6 +109,22 @@
     }
   },
   {
+    "id": "c_4a2m5q5e",
+    "ja": "入るとエアコンの故障に気づいた。",
+    "en": "Walking in, I noticed the broken AC.",
+    "alternatives": [
+      "Entering the room, I noticed the AC was broken.",
+      "As I walked in, I noticed the broken AC."
+    ],
+    "point": "Walking in, で同時の動作を分詞構文にする",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4d2c8c3g",
     "ja": "予約したのは禁煙室でした。",
     "en": "The room I booked was non-smoking.",
@@ -85,6 +165,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4z6x9x8m",
+    "ja": "隣の部屋の騒音がひどいんです。",
+    "en": "The noise from next door is awful.",
+    "alternatives": [
+      "The noise coming from next door is terrible.",
+      "The noise from the next room is awful."
+    ],
+    "point": "from next door を名詞の後ろに置く",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 8,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_4z7j8v9f",
@@ -229,6 +325,22 @@
     }
   },
   {
+    "id": "c_6e6k3j3y",
+    "ja": "こんなに狭い部屋は、見たことがない。",
+    "en": "Never have I seen such a tiny room.",
+    "alternatives": [
+      "I've never seen such a tiny room.",
+      "Never have I stayed in such a small room."
+    ],
+    "point": "Never を前に出すと助動詞が主語の前に来る",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6h6g5p7p",
     "ja": "この部屋は禁煙ですか？",
     "en": "Is this room nonsmoking?",
@@ -246,6 +358,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6m2j8y6a",
+    "ja": "立地はいいが、部屋が古びている。",
+    "en": "Although it's well located, the room's dated.",
+    "alternatives": [
+      "The location's great, though the room's dated.",
+      "Although the location is great, the room is run-down."
+    ],
+    "point": "Although 節は but を重ねず、1文に収める",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7g6j8h2g",
@@ -431,5 +559,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9t7f8g3x",
+    "ja": "もう一泊、泊まりたいのですが。",
+    "en": "I'd like to stay another night.",
+    "alternatives": [
+      "I'd like to stay one more night.",
+      "I'd like to extend my stay by one night."
+    ],
+    "point": "I'd like to + 動詞で丁寧に希望を伝える",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 8,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2b7c7g2s",
+    "ja": "予約していれば、今は京都なのに。",
+    "en": "If I'd booked, I'd be in Kyoto now.",
+    "alternatives": [
+      "I'd be in Kyoto now if I'd booked.",
+      "If I'd booked, I'd be in Kyoto by now."
+    ],
+    "point": "過去の仮定 + 今の結果は would + 動詞の原形",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 10,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2c7b4f2p",
     "ja": "並ばずに入れませんか？",
     "en": "Can we get in without waiting?",
@@ -36,6 +52,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_2g6c5b8t",
+    "ja": "あれは、皆が写真を撮る橋だ。",
+    "en": "That's the bridge everyone takes photos of.",
+    "alternatives": [
+      "That's the bridge that everyone photographs.",
+      "That's the bridge everyone takes pictures of."
+    ],
+    "point": "関係詞は省略でき、前置詞 of が文末に残る",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 8,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_2j8m7g6g",
@@ -95,6 +127,22 @@
     }
   },
   {
+    "id": "c_3h3c5f6c",
+    "ja": "橋は昔木製だったと、ガイドが言った。",
+    "en": "The guide said the bridge was once wooden.",
+    "alternatives": [
+      "The guide said the bridge used to be wooden.",
+      "The guide told us the bridge had once been wooden."
+    ],
+    "point": "said の後は時制を過去側にずらす",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 10,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3k4a3r4k",
     "ja": "写真を撮りに来ました。",
     "en": "I came here to take photos.",
@@ -133,6 +181,22 @@
     }
   },
   {
+    "id": "c_3q6v2v8g",
+    "ja": "予約すれば、私たち入れたのに。",
+    "en": "If we'd booked, we'd have gotten in.",
+    "alternatives": [
+      "We'd have gotten in if we'd booked.",
+      "If we had reserved, we would have got in."
+    ],
+    "point": "過去の仮定は had + 過去分詞",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4s6n8p5s",
     "ja": "ツアーは何分かかりますか？",
     "en": "How long is the tour?",
@@ -169,6 +233,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4u4b4j6y",
+    "ja": "私たちが行った寺は世界遺産です。",
+    "en": "The temple we visited is UNESCO-listed.",
+    "alternatives": [
+      "The temple we visited is a World Heritage site.",
+      "The temple we went to is UNESCO-listed."
+    ],
+    "point": "関係詞 that を省いて名詞の後ろから説明する",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_4z5x5d8y",
@@ -254,6 +334,22 @@
     }
   },
   {
+    "id": "c_5g2v6c3v",
+    "ja": "何時に閉まるか、ご存じですか？",
+    "en": "Do you know when it closes?",
+    "alternatives": [
+      "Do you know what time it closes?",
+      "Do you know when this place closes?"
+    ],
+    "point": "間接疑問は when の後を平叙文の語順にする",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 8,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5g9d5t3g",
     "ja": "私は十時のツアーに出ます。",
     "en": "I'm taking the ten o'clock tour.",
@@ -316,6 +412,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6h5h7z2z",
+    "ja": "雨さえなければ、私たちは登れたのに。",
+    "en": "Without the rain, we'd have climbed it.",
+    "alternatives": [
+      "If it hadn't rained, we'd have climbed it.",
+      "But for the rain, we'd have climbed it."
+    ],
+    "point": "Without + 名詞で if 節の代わりになる",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 10,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6u3j6j8y",
@@ -400,6 +512,22 @@
     }
   },
   {
+    "id": "c_8s5c3e7d",
+    "ja": "私たち、何も触るなと言われた。",
+    "en": "We were told not to touch anything.",
+    "alternatives": [
+      "They told us not to touch anything.",
+      "We were asked not to touch anything."
+    ],
+    "point": "tell + 人 + not to do で「〜しないよう言う」",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 8,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_9j5x3k3z",
     "ja": "ここで撮ってもいいですか？",
     "en": "May I take photos here?",
@@ -417,5 +545,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9y4w7y9m",
+    "ja": "これ、いつ建てられたかわかる？",
+    "en": "Any idea when this was built?",
+    "alternatives": [
+      "Do you know when this was built?",
+      "Do you happen to know when this was built?"
+    ],
+    "point": "Any idea + 疑問詞節で気軽に尋ねる",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

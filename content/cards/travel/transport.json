@@ -38,6 +38,38 @@
     }
   },
   {
+    "id": "c_2u7n3m2d",
+    "ja": "私が疲れるのは、乗り換えの多さです。",
+    "en": "It's all the transfers that wear me out.",
+    "alternatives": [
+      "What wears me out is all the transfers.",
+      "The transfers are what wear me out."
+    ],
+    "point": "It's と that で挟んで強調。wear out はへとへとにする",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3j2h5n9z",
+    "ja": "電車は遅れた上に、運休になった。",
+    "en": "Not only was it late, it was canceled.",
+    "alternatives": [
+      "The train was not only late but also canceled.",
+      "On top of being late, it was canceled."
+    ],
+    "point": "Not only を前に出すと was が主語の前に来る",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4d4d7u2a",
     "ja": "切符を二枚ください。",
     "en": "Two tickets, please.",
@@ -140,6 +172,22 @@
     }
   },
   {
+    "id": "c_5n4c7q3e",
+    "ja": "外を見ていれば、降りられたのに。",
+    "en": "If I'd looked, I'd have gotten off.",
+    "alternatives": [
+      "I'd have gotten off if I'd looked.",
+      "If I'd looked up, I'd have made my stop."
+    ],
+    "point": "if + had + 過去分詞, would have + 過去分詞",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 9,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5q3q2a6s",
     "ja": "これは京都に行きますか？",
     "en": "Does this go to Kyoto?",
@@ -200,6 +248,22 @@
     }
   },
   {
+    "id": "c_5w8m2k5f",
+    "ja": "あの運転手、いつ出発か知ってるかな。",
+    "en": "I wonder if he knows when we're leaving.",
+    "alternatives": [
+      "I wonder whether the driver knows when we leave.",
+      "I wonder if the driver knows when we're leaving."
+    ],
+    "point": "wonder if の中に when 節が入る",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6b8m2k8k",
     "ja": "駅はどこですか？",
     "en": "Where is the station?",
@@ -217,6 +281,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6t5a7q5r",
+    "ja": "駅員は、この電車は運休と言った。",
+    "en": "The staff said this train was canceled.",
+    "alternatives": [
+      "A staff member said this train was canceled.",
+      "The attendant told me this train had been canceled."
+    ],
+    "point": "said の後は時制を一つ過去側にずらす",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 9,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6v2u8q8x",
@@ -258,6 +338,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6y4c9d7y",
+    "ja": "今必要なのは、タクシーです。",
+    "en": "What I need now is a taxi.",
+    "alternatives": [
+      "A taxi is what I need right now.",
+      "What I need right now is a cab."
+    ],
+    "point": "What I need is に続けて「必要なのは〜」",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7b2k5n5c",
@@ -319,6 +415,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8f3u7z7u",
+    "ja": "バスが遅れたら、歩いて行きます。",
+    "en": "If the bus is late, I'll walk.",
+    "alternatives": [
+      "I'll walk if the bus is late.",
+      "If the bus runs late, I'll just walk."
+    ],
+    "point": "未来のことでも if 節は現在形",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 8,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8k9m2r5h",
@@ -386,6 +498,22 @@
     }
   },
   {
+    "id": "c_8z6k2s8n",
+    "ja": "電車を間違えたかもしれません。",
+    "en": "I may have taken the wrong train.",
+    "alternatives": [
+      "I might've gotten on the wrong train.",
+      "I think I got on the wrong train."
+    ],
+    "point": "may have + 過去分詞で過去の推測をやわらげる",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 9,
+    "grammar": ["hedging-softening", "modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_9d3s9c7q",
     "ja": "駅を乗り過ごしたかも。",
     "en": "I might have missed my stop.",
@@ -407,6 +535,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9k5n5q8c",
+    "ja": "終電に間に合えばよかった。",
+    "en": "I wish I'd caught the last train.",
+    "alternatives": [
+      "If only I'd caught the last train.",
+      "I wish I hadn't missed the last train."
+    ],
+    "point": "過去の後悔は wish + had + 過去分詞",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 8,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9v5k3a8y",
