@@ -7,11 +7,12 @@ import {
   feedbackMs,
   initDrill,
   useAnswerQueue,
-  useAnswerSync,
+  useQueuedDrill,
   useDrillClock,
   useDrillKeys,
   useRoundFinish,
   type AnswerInput,
+  type DrillEvent,
   type DrillState,
 } from "@instant-composition/web";
 import { fakeTimers } from "./web-harness";
@@ -150,41 +151,67 @@ describe("useDrillKeys", () => {
   });
 });
 
-describe("useAnswerSync", () => {
-  it("sends each new answer once, and reports a failed save", async () => {
-    const posted: string[] = [];
-    const urls: string[] = [];
-    vi.stubGlobal("fetch", (url: string, init: RequestInit) => {
-      urls.push(url);
-      posted.push(init.body as string);
-      return Promise.resolve(
-        new Response(null, { status: posted.length === 1 ? 503 : 204 }),
-      );
+describe("useQueuedDrill", () => {
+  /** Shows, flips and grades the current card ○, as one burst of events. */
+  function gradeOk(dispatch: (event: DrillEvent) => void, at: number): void {
+    dispatch({ type: "shown", at });
+    dispatch({ type: "flip", at: at + 1000, wall: Date.now() });
+    dispatch({
+      type: "grade",
+      result: "ok",
+      at: at + 2000,
+      wall: Date.now(),
+      key: false,
+    });
+  }
+
+  function stored(): string[] {
+    return (
+      JSON.parse(sessionStorage.getItem("drill-answers:r") ?? "[]") as AnswerInput[]
+    ).map((a) => a.id);
+  }
+
+  it("stores an answer before React renders, delivers it once, and reports a failed save", async () => {
+    let down = true;
+    const delivered: string[] = [];
+    vi.stubGlobal("fetch", (_url: string, init: RequestInit) => {
+      if (!down) delivered.push(init.body as string);
+      return Promise.resolve(new Response(null, { status: down ? 503 : 204 }));
     });
     const onFailure = vi.fn();
-    const { rerender } = renderHook(
-      ({ answers }: { answers: readonly AnswerInput[] }) =>
-        useAnswerSync(useAnswerQueue(ROUND_R).queue, answers, onFailure),
-      { initialProps: { answers: [answer("c1")] } },
+    const { result } = renderHook(() =>
+      useQueuedDrill(useAnswerQueue(ROUND_R).queue, fresh, onFailure),
     );
+
+    act(() => {
+      gradeOk(result.current[1], 0);
+      expect(stored()).toStrictEqual(["r:f:c1"]);
+      // Graded already: the reducer ignores a second grade, so nothing is queued twice.
+      result.current[1]({ type: "grade", result: "ng", at: 2100, wall: 0, key: false });
+    });
     await act(async () => {
       await vi.runAllTimersAsync();
     });
-    expect(onFailure).toHaveBeenCalledOnce();
-    expect(JSON.parse(sessionStorage.getItem("drill-answers:r") ?? "[]")).toHaveLength(
-      1,
-    );
+    expect(onFailure).toHaveBeenCalled();
+    expect(stored()).toStrictEqual(["r:f:c1"]);
 
-    rerender({ answers: [answer("c1"), answer("c2")] });
+    down = false;
+    act(() => {
+      result.current[1]({ type: "advance", at: 3000 });
+      gradeOk(result.current[1], 4000);
+    });
     await act(async () => {
       await vi.runAllTimersAsync();
     });
     expect(
-      posted.map(
-        (body) => (JSON.parse(body) as { answers: AnswerInput[] }).answers[0]?.cardId,
+      delivered.map((body) =>
+        (JSON.parse(body) as { answers: AnswerInput[] }).answers.map((a) => a.id),
       ),
-    ).toStrictEqual(["c1", "c1", "c2"]);
-    expect(new Set(urls)).toStrictEqual(new Set(["/api/v1/rounds/r/answers"]));
+    ).toStrictEqual([["r:f:c1"], ["r:f:c2"]]);
+    expect(result.current[0].answers.map((a) => a.id)).toStrictEqual([
+      "r:f:c1",
+      "r:f:c2",
+    ]);
     expect(sessionStorage.getItem("drill-answers:r")).toBeNull();
   });
 
@@ -197,7 +224,7 @@ describe("useAnswerSync", () => {
     });
     const { result } = renderHook(() => {
       const arrived = useAnswerQueue(ROUND_R);
-      useAnswerSync(arrived.queue, [], vi.fn());
+      useQueuedDrill(arrived.queue, fresh, vi.fn());
       return arrived;
     });
     expect(result.current.unsaved).toStrictEqual([answer("c1")]);

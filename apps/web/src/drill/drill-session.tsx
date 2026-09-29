@@ -1,10 +1,9 @@
 import { useNavigate } from "@tanstack/react-router";
-import { useEffect, useReducer, useState, type ReactElement } from "react";
+import { useEffect, useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
 import type { RoundKind, RoundPayload } from "../openapi";
-import { useAnswerQueue, useAnswerSync, type ArrivedQueue } from "./answer-sync";
-import { drillReducer } from "./drill-machine";
+import { useAnswerQueue, useQueuedDrill, type ArrivedQueue } from "./answer-sync";
 import { currentCard, initDrill, progress, type DrillState } from "./drill-state";
 import { CardScreen } from "./card-screen";
 import { DrillDone } from "./drill-done";
@@ -80,15 +79,14 @@ export function DrillSession({
     void navigate({ to: "/" });
   };
   const { queue, unsaved } = useAnswerQueue(round);
-  const [state, dispatch] = useReducer(
-    drillReducer,
-    { round, pressed, unsaved },
-    startDrill,
-  );
   const [failures, setFailures] = useState(0);
-  useAnswerSync(queue, state.answers, () => {
-    setFailures((count) => count + 1);
-  });
+  const [state, dispatch] = useQueuedDrill(
+    queue,
+    () => startDrill({ round, pressed, unsaved }),
+    () => {
+      setFailures((count) => count + 1);
+    },
+  );
   const finish = useRoundFinish({
     roundId: round.id,
     finishing: state.phase.kind === "finishing",

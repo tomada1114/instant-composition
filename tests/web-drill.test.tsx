@@ -631,6 +631,38 @@ describe("the drill after a reload", () => {
     ]);
   });
 
+  it("stores a graded answer in the same moment the grade is given", async () => {
+    serve({ answers: inFlight });
+    await openRound("/drill?kind=today");
+    press(" ");
+    await settle(200);
+    // Inside act() React has not rendered or run an effect yet: the page could go now.
+    act(() => {
+      window.dispatchEvent(
+        new KeyboardEvent("keydown", { key: "ArrowRight", cancelable: true }),
+      );
+      expect(
+        (
+          JSON.parse(
+            sessionStorage.getItem("drill-answers:round-1") ?? "[]",
+          ) as AnswerInput[]
+        ).map((answer) => answer.id),
+      ).toStrictEqual(["round-1:f:c1"]);
+    });
+  });
+
+  it("stores a timed-out answer in the same moment the time runs out", async () => {
+    serve({ answers: inFlight });
+    await openRound("/drill?kind=today");
+    await settle(6900);
+    act(() => {
+      vi.advanceTimersByTime(300);
+      expect(sessionStorage.getItem("drill-answers:round-1") ?? "").toContain(
+        '"result":"timeout"',
+      );
+    });
+  });
+
   it("finishes with an answer the reloaded page could not send either", async () => {
     const offline = (): Promise<Response> =>
       Promise.reject(new TypeError("fetch failed"));

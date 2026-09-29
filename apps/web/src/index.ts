@@ -8,7 +8,7 @@ export {
   type AnswerQueue,
   type QueueStorage,
 } from "./drill/answer-queue";
-export { useAnswerQueue, useAnswerSync, type ArrivedQueue } from "./drill/answer-sync";
+export { useAnswerQueue, useQueuedDrill, type ArrivedQueue } from "./drill/answer-sync";
 export { CardBack, CardFront } from "./drill/flashcard";
 export { IntroScreen } from "./drill/intro-screen";
 export { PauseSheet } from "./drill/pause-sheet";
