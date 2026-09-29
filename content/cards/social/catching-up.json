@@ -147,12 +147,12 @@
     "en": "The man you met yesterday is my cousin.",
     "alternatives": [
       "The guy you met yesterday is my cousin.",
-      "That man you met yesterday is my cousin."
+      "The person you met yesterday is my cousin."
     ],
     "point": "会った人は the man (that) you met と後ろから説明",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 6,
+    "level": 4,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -388,7 +388,7 @@
     "id": "c_6u4g6w6g",
     "ja": "私、今はギターが弾けるよ。",
     "en": "I can play the guitar now.",
-    "alternatives": ["Now I can play the guitar.", "I'm able to play guitar now."],
+    "alternatives": ["Now I can play the guitar.", "I can play guitar now."],
     "point": "楽器は play the guitar。「弾ける」は can＋動詞",
     "topic": "social",
     "subtopic": "catching-up",
@@ -491,7 +491,7 @@
     "ja": "君が電話くれなかったら、今も落ち込んでたよ。",
     "en": "If you hadn't called, I'd still be moping around.",
     "alternatives": [
-      "If you hadn't phoned me, I'd still be feeling down.",
+      "If you hadn't called me, I'd still be feeling down.",
       "Without your call, I'd still be down."
     ],
     "point": "過去の仮定＋今への影響は If 過去完了, would be",
@@ -589,7 +589,7 @@
     "point": "I wonder の後ろは疑問文の語順にしない（what Aya's up to）",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 8,
+    "level": 6,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
     "stamps": {}

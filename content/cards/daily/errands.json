@@ -4,10 +4,10 @@
     "ja": "一週間かかってもいいので、ちゃんと直してもらえますか？",
     "en": "Even if it takes a week, could you fix it properly?",
     "alternatives": [
-      "I don't mind waiting a week if you fix it properly.",
-      "Take a week if you need to, but please fix it properly."
+      "It's fine if it takes a week; could you fix it properly?",
+      "Could you fix it properly, even if it takes a week?"
     ],
-    "point": "「〜してもいい」は Even if で譲歩、頼みは could you で丁寧に",
+    "point": "「かかってもいい」は譲歩の Even if。頼みは could you で丁寧に",
     "topic": "daily",
     "subtopic": "errands",
     "level": 10,
@@ -21,12 +21,12 @@
     "en": "I should have come before the counter closed.",
     "alternatives": [
       "I should've gotten here before the counter closed.",
-      "I ought to have come before the window closed."
+      "I should have gotten here before the window closed."
     ],
     "point": "後悔は should have + 過去分詞。「来るべきだった」",
     "topic": "daily",
     "subtopic": "errands",
-    "level": 8,
+    "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -60,6 +60,22 @@
     "subtopic": "errands",
     "level": 9,
     "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3k2p7u7d",
+    "ja": "修理を始める前に、見積もりをもらえますか？",
+    "en": "Could I get a quote before you start?",
+    "alternatives": [
+      "Can you give me an estimate before starting?",
+      "Could you give me an estimate before starting repairs?"
+    ],
+    "point": "before の後は未来のことでも現在形（you start）",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 6,
+    "grammar": ["requests-permission", "time-and-if-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -198,22 +214,6 @@
     "stamps": {}
   },
   {
-    "id": "c_6a9u8w4e",
-    "ja": "修理の依頼に、記入する用紙はありますか？",
-    "en": "Is there a form to fill out for repairs?",
-    "alternatives": [
-      "Is there a form I need to fill out?",
-      "Is there any paperwork to fill out for repairs?"
-    ],
-    "point": "form を後ろから説明する to fill out（句動詞）",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 6,
-    "grammar": ["infinitives", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6m9d6v8c",
     "ja": "ATMに長い列ができています。",
     "en": "There's a long ATM line.",
@@ -272,7 +272,7 @@
     "ja": "私はもう20分、ここで待っています。",
     "en": "I've been waiting here for twenty minutes.",
     "alternatives": [
-      "I've been waiting here twenty minutes already.",
+      "I've already been waiting here for twenty minutes.",
       "I've been here waiting for twenty minutes."
     ],
     "point": "続いている時間は現在完了進行形＋for",
@@ -289,7 +289,8 @@
     "en": "I'll pick up my passport tomorrow morning.",
     "alternatives": [
       "I'll come get my passport tomorrow morning.",
-      "I'm coming back for my passport tomorrow morning."
+      "I'm coming back for my passport tomorrow morning.",
+      "I'll come pick up my passport tomorrow morning."
     ],
     "point": "取りに来る は pick up を使うと自然",
     "topic": "daily",
@@ -343,15 +344,15 @@
   {
     "id": "c_8u6s2z8g",
     "ja": "窓口が空いてれば、今日中に終わるのに。",
-    "en": "If the counter were empty, I'd finish today.",
+    "en": "If there were no line, I'd finish today.",
     "alternatives": [
-      "If it weren't so crowded, I could finish today.",
-      "I'd be done today if the counter were empty."
+      "I'd finish today if there were no line.",
+      "If the counter weren't busy, I'd finish today."
     ],
     "point": "現在の事実と逆は If + were、主節は would",
     "topic": "daily",
     "subtopic": "errands",
-    "level": 8,
+    "level": 5,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -361,13 +362,13 @@
     "ja": "カウンターに置いてある用紙にご記入ください。",
     "en": "Please fill out the form on the counter.",
     "alternatives": [
-      "Please complete the form lying on the counter.",
-      "Fill out the form on the counter, please."
+      "Please fill in the form on the counter.",
+      "Please fill out the form that's on the counter."
     ],
     "point": "「置いてある用紙」は the form の後ろに on the counter",
     "topic": "daily",
     "subtopic": "errands",
-    "level": 8,
+    "level": 6,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
     "stamps": {}

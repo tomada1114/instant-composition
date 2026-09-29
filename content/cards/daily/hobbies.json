@@ -1,43 +1,43 @@
 [
   {
-    "id": "c_2d3r7q3n",
-    "ja": "湖のそばのあのキャビン、土曜に借りない？",
-    "en": "Want to rent that cabin by the lake on Saturday?",
+    "id": "c_2a8e2j6t",
+    "ja": "湖のそばのあのキャビン、借りようよ。",
+    "en": "Let's rent that cabin by the lake.",
     "alternatives": [
-      "Why don't we rent that lakeside cabin on Saturday?",
-      "How about renting that cabin by the lake on Saturday?"
+      "Want to rent that cabin by the lake?",
+      "How about renting that cabin by the lake?"
     ],
     "point": "「湖のそばの」は名詞の後ろに by the lake を置く",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 8,
+    "level": 4,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
-    "id": "c_2g7x3e7z",
-    "ja": "休日の一番の楽しみは、朝寝坊だよ。",
-    "en": "What I love most is sleeping in.",
+    "id": "c_2j5v7p6k",
+    "ja": "壊れたギターのネック、プロに直してもらったんだ。",
+    "en": "I had a pro fix my guitar's broken neck.",
     "alternatives": [
-      "My favorite thing is sleeping in.",
-      "What I like best is sleeping in."
+      "I got a pro to fix my guitar's broken neck.",
+      "I got my guitar's broken neck fixed by a pro."
     ],
-    "point": "「〜なのは」は What 節を主語にする",
+    "point": "have + 人 + 動詞の原形で「〜してもらう」",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 4,
-    "grammar": ["noun-clauses"],
+    "level": 9,
+    "grammar": ["causatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_2w7a6c6s",
     "ja": "野外フェス、雨で中止になったんだって。",
-    "en": "The festival was rained out.",
+    "en": "Apparently, the festival was rained out.",
     "alternatives": [
-      "The festival was called off because of rain.",
-      "They called off the festival because of rain."
+      "I heard the festival was rained out.",
+      "Apparently the festival was canceled due to rain."
     ],
     "point": "rain out は「雨で流れる」。受け身で言う",
     "topic": "daily",
@@ -48,50 +48,18 @@
     "stamps": {}
   },
   {
-    "id": "c_3f7m3f7p",
-    "ja": "あの棚のプラモデル、全部自分で作ったんだ。",
-    "en": "I built all the models on that shelf myself.",
-    "alternatives": [
-      "I made every model on that shelf myself.",
-      "Every model on that shelf, I built myself."
-    ],
-    "point": "「棚の」は on that shelf を名詞の後ろに置く",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 8,
-    "grammar": ["post-modification"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3k6y6p5j",
-    "ja": "私には、静かに充電できる週末が必要なんだ。",
+    "ja": "私には静かに充電できる週末が必要だ。",
     "en": "I need a quiet weekend to recharge.",
     "alternatives": [
-      "I need a quiet weekend to recharge my batteries.",
-      "What I need is a quiet weekend to recharge."
+      "I need a quiet weekend to unwind.",
+      "I need a peaceful weekend to recharge."
     ],
     "point": "「〜するための」は名詞のあとに to+原形",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 8,
+    "level": 5,
     "grammar": ["infinitives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3k7t6a6h",
-    "ja": "週末は、子どもたちに好きなだけゲームをさせてるんだ。",
-    "en": "I let my kids game all they want on weekends.",
-    "alternatives": [
-      "On weekends, I let the kids play as much as they like.",
-      "I let my kids play video games as much as they want."
-    ],
-    "point": "let + 人 + 動詞の原形。「〜させる」は to を付けない",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 10,
-    "grammar": ["causatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -188,6 +156,7 @@
     "ja": "時間ができたら、この本を読むよ。",
     "en": "I'll read this book when I'm free.",
     "alternatives": [
+      "I'll read this book when I have time.",
       "When I have time, I'll read this book.",
       "Once I'm free, I'll read this book."
     ],
@@ -200,18 +169,18 @@
     "stamps": {}
   },
   {
-    "id": "c_4c4g6e5f",
-    "ja": "先週、古いレコードプレーヤーを修理してもらったんだ。",
-    "en": "I had my old record player repaired last week.",
+    "id": "c_4f6z2s8r",
+    "ja": "陶芸展は混むので、早めに行くといいですよ。",
+    "en": "You might want to go early; it gets packed.",
     "alternatives": [
-      "I got my old record player fixed last week.",
-      "Last week I had someone repair my old record player."
+      "It's worth going early; the show gets packed.",
+      "Better to go early; the show gets packed."
     ],
-    "point": "have + 物 + 過去分詞で「〜してもらう」",
+    "point": "やわらかい助言は You might want to。混む=get packed",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 9,
-    "grammar": ["causatives"],
+    "level": 7,
+    "grammar": ["hedging-softening", "modal-obligation-advice"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -226,39 +195,23 @@
     "point": "未来のことでも if 節の中は現在形（will は使わない）",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 5,
+    "level": 4,
     "grammar": ["time-and-if-clauses", "future-forms"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
-    "id": "c_4n6f3u2t",
-    "ja": "休みが取れたら、すぐ旅行の計画を立てるよ。",
-    "en": "Once I get time off, I'll plan a trip.",
-    "alternatives": [
-      "When I get some time off, I'll plan a trip.",
-      "I'll plan a trip once I get time off."
-    ],
-    "point": "時を表す節は未来のことでも現在形。get time off が自然",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 8,
-    "grammar": ["time-and-if-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_4p9u6h3h",
-    "ja": "たとえ雨でも、今度の土曜は山に登るつもりだよ。",
+    "ja": "たとえ雨でも土曜はみんなで山に登るよ。",
     "en": "Even if it rains, we're hiking this Saturday.",
     "alternatives": [
-      "We're still hiking this Saturday, even if it rains.",
-      "Rain or shine, we're hiking this Saturday."
+      "Rain or shine, we're hiking this Saturday.",
+      "Even if it rains, we'll hike this Saturday."
     ],
     "point": "「たとえ〜でも」は even if。予定は進行形で言える",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 7,
+    "level": 5,
     "grammar": ["concession-contrast", "future-forms"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -286,18 +239,50 @@
     }
   },
   {
-    "id": "c_4x4f4h3w",
-    "ja": "今週末天気がもてば、キャンプに行くよ。",
-    "en": "If the weather holds up this weekend, I'm going camping.",
+    "id": "c_4x3m5c7j",
+    "ja": "週末は、子どもたちに好きなだけゲームをさせてるんだ。",
+    "en": "I let my kids game all they want on weekends.",
     "alternatives": [
-      "If it stays nice this weekend, I'll go camping.",
-      "I'll go camping this weekend if the weather holds."
+      "On weekends, I let my kids play video games all they want.",
+      "Weekends, I let my kids play games as much as they like."
     ],
-    "point": "未来のことでも if 節は現在形。天気がもつは hold up",
+    "point": "let + 人 + 動詞の原形。「〜させる」は to を付けない",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 8,
-    "grammar": ["time-and-if-clauses"],
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5a8f6x6a",
+    "ja": "あの棚のプラモデル、全部自分で作ったよ。",
+    "en": "I built every model on that shelf myself.",
+    "alternatives": [
+      "I made every model on that shelf myself.",
+      "Every model on that shelf, I built myself."
+    ],
+    "point": "「棚の」は on that shelf を名詞の後ろに置く",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5e7j7x5b",
+    "ja": "休日は、朝寝坊が一番の楽しみだよ。",
+    "en": "On days off, I love sleeping in most.",
+    "alternatives": [
+      "I like sleeping in best on days off.",
+      "On days off, I enjoy sleeping in most."
+    ],
+    "point": "「休日は」は On days off。love の後は -ing 形",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 4,
+    "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -486,40 +471,40 @@
     "point": "今の願望は wish + 過去形。be は weren't が定番",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 10,
+    "level": 7,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
-    "id": "c_7w3q4s4u",
-    "ja": "陶芸展は混むから、早めに行ったほうがいいですよ。",
-    "en": "You should go early; the pottery show gets packed.",
+    "id": "c_7z4x5c5t",
+    "ja": "ランニングを始めてなければ、今ごろ休日は退屈だ。",
+    "en": "If I'd never started running, days off would drag now.",
     "alternatives": [
-      "You'd better go early; the pottery show gets packed.",
-      "You should get there early; the pottery show gets packed."
+      "If I'd never taken up running, days off would drag.",
+      "Without running, my days off would be boring now."
     ],
-    "point": "「〜したほうがいい」は should。混む=get packed",
+    "point": "過去の仮定と今の結果は If+had 過去分詞、would+原形",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 7,
-    "grammar": ["modal-obligation-advice"],
+    "level": 8,
+    "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
-    "id": "c_7x8f3c7c",
-    "ja": "もし宝くじが当たったら、毎週末ふらっと旅に出るのにな。",
-    "en": "If I won the lottery, I'd be off traveling every weekend.",
+    "id": "c_8e8w9k8v",
+    "ja": "君が薦めてくれた小説、週末で一気に読んだよ。",
+    "en": "I binge-read that novel you recommended over the weekend.",
     "alternatives": [
-      "If I hit the jackpot, I'd travel somewhere every weekend.",
-      "Were I to win the lottery, I'd travel every weekend."
+      "I devoured the novel you recommended in one weekend.",
+      "I read that novel you recommended straight through this weekend."
     ],
-    "point": "現在の空想は if + 過去形、主節は would + 原形",
+    "point": "novel のあとの関係代名詞 that/which は省略できる",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 9,
-    "grammar": ["second-conditional"],
+    "level": 7,
+    "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -566,22 +551,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_8n8z4y9e",
-    "ja": "先週君が薦めてくれた小説、週末で一気に読んじゃったよ。",
-    "en": "I binge-read that novel you recommended last week over the weekend.",
-    "alternatives": [
-      "I devoured the novel you recommended last week in one weekend.",
-      "I read that novel you recommended straight through this weekend."
-    ],
-    "point": "novel のあとの関係代名詞 that/which は省略できる",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 10,
-    "grammar": ["nested-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_8q8j7v3c",
@@ -650,6 +619,22 @@
     }
   },
   {
+    "id": "c_8z2r6q5d",
+    "ja": "宝くじが当たったら、毎週末ふらっと旅に出るのにな。",
+    "en": "If I won the lottery, I'd jet off every weekend.",
+    "alternatives": [
+      "If I hit the jackpot, I'd be off traveling every weekend.",
+      "I'd be off somewhere every weekend if I won the lottery."
+    ],
+    "point": "現在の空想は if + 過去形、主節は would + 原形",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 9,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9d4j4f4v",
     "ja": "姉のボルダリングジム、初心者クラス始めたらしいよ。",
     "en": "Apparently my sister's bouldering gym started a beginners' class.",
@@ -692,21 +677,5 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9x2q8y3v",
-    "ja": "ランニングを始めてなければ、今ごろ休日は退屈だよ。",
-    "en": "If I hadn't started running, I'd be bored now.",
-    "alternatives": [
-      "Had I not taken up running, I'd be bored now.",
-      "If I'd never started running, I'd be bored today."
-    ],
-    "point": "過去の仮定と今の結果は If+had 過去分詞、would+原形",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 8,
-    "grammar": ["mixed-conditional", "third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   }
 ]

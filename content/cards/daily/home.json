@@ -54,18 +54,18 @@
     }
   },
   {
-    "id": "c_2x9u3x6w",
-    "ja": "庭があったら、僕らは毎週末芝刈りに追われるよ。",
-    "en": "If we had a yard, we'd be mowing every weekend.",
+    "id": "c_3a9t4f9w",
+    "ja": "ついでに、窓も拭いておいたよ。",
+    "en": "I did the windows while I was at it.",
     "alternatives": [
-      "We'd be mowing every weekend if we had a yard.",
-      "With a yard, we'd be mowing the lawn every weekend."
+      "I cleaned the windows while I was at it.",
+      "While I was at it, I wiped the windows."
     ],
-    "point": "現実と違う仮定は if + 過去形、主節は would",
+    "point": "「ついでに」は while I was at it で言える",
     "topic": "daily",
     "subtopic": "home",
-    "level": 7,
-    "grammar": ["second-conditional"],
+    "level": 6,
+    "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -149,6 +149,22 @@
     }
   },
   {
+    "id": "c_3j2b6a4r",
+    "ja": "洗濯機、朝からずっと回りっぱなしだよ。",
+    "en": "The washer's been running since this morning.",
+    "alternatives": [
+      "The washing machine has been running all morning.",
+      "The washer has been going since morning."
+    ],
+    "point": "「ずっと〜してる」は have been + ing、起点は since",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3p2j4e8e",
     "ja": "洗濯機が壊れたって聞いたよ。",
     "en": "I heard the washing machine broke.",
@@ -161,6 +177,22 @@
     "subtopic": "home",
     "level": 4,
     "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4s8q3j7k",
+    "ja": "玄関の脇の箱、僕が片付けたよ。",
+    "en": "I put away the box by the door.",
+    "alternatives": [
+      "I've put away that box by the door.",
+      "The box by the door? I put it away."
+    ],
+    "point": "「玄関の脇の箱」は box の後ろに by the door",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -203,22 +235,6 @@
     "stamps": {}
   },
   {
-    "id": "c_4y7u3e7r",
-    "ja": "台所のテーブルに置いてあった請求書、もう払ったよ。",
-    "en": "I already paid the bill lying on the kitchen table.",
-    "alternatives": [
-      "I've already paid the bill left on the kitchen table.",
-      "The bill on the kitchen table? I've already paid it."
-    ],
-    "point": "「置いてあった請求書」は bill の後ろから修飾する",
-    "topic": "daily",
-    "subtopic": "home",
-    "level": 7,
-    "grammar": ["post-modification"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_4z6x8k4h",
     "ja": "フィルター、先月から掃除されてないよ。",
     "en": "The filter hasn't been cleaned since last month.",
@@ -245,13 +261,13 @@
     "ja": "あなた、今週ずっと靴下を床に脱ぎっぱなしだよ。",
     "en": "You've been leaving socks on the floor all week.",
     "alternatives": [
-      "All week, you've been dropping your socks on the floor.",
-      "You've been leaving your socks on the floor all week."
+      "You've been leaving your socks around all week.",
+      "You keep leaving your socks on the floor."
     ],
     "point": "「ずっと〜してる」は現在完了進行形 have been -ing",
     "topic": "daily",
     "subtopic": "home",
-    "level": 7,
+    "level": 6,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -266,22 +282,6 @@
     "subtopic": "home",
     "level": 3,
     "grammar": ["imperatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5y7h5n9m",
-    "ja": "掃除機をかけたあと、ついでに窓も拭いたよ。",
-    "en": "Having vacuumed, I wiped the windows down as well.",
-    "alternatives": [
-      "After vacuuming, I wiped down the windows too.",
-      "I vacuumed, then wiped the windows down while I was at it."
-    ],
-    "point": "「〜したあと」は Having + 過去分詞で前置きできる",
-    "topic": "daily",
-    "subtopic": "home",
-    "level": 10,
-    "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -459,16 +459,16 @@
   },
   {
     "id": "c_6z6g9t7w",
-    "ja": "私が皿を洗ってる間、弟はモップがけしてた。",
-    "en": "While I washed up, my brother was mopping.",
+    "ja": "私が皿洗いの間、弟はモップがけしてた。",
+    "en": "While I washed dishes, my brother was mopping.",
     "alternatives": [
-      "My brother was mopping while I did the dishes.",
-      "I was washing up while my brother mopped."
+      "My brother was mopping while I washed dishes.",
+      "While I did the dishes, my brother mopped."
     ],
-    "point": "短い動作は過去形、その最中の動作は過去進行形",
+    "point": "while の節は過去形、同時に続いていた動作は過去進行形 was mopping",
     "topic": "daily",
     "subtopic": "home",
-    "level": 6,
+    "level": 4,
     "grammar": ["progressive-aspect", "tense-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -512,18 +512,18 @@
     }
   },
   {
-    "id": "c_7m6z6d3p",
-    "ja": "洗面所の蛇口、2日前からずっとポタポタ漏れてるんだよ。",
-    "en": "The bathroom faucet has been dripping for two days now.",
+    "id": "c_7j5d2q6h",
+    "ja": "プールがあったら、僕は掃除ばかりだよ。",
+    "en": "If we had a pool, I'd be cleaning nonstop.",
     "alternatives": [
-      "The bathroom faucet's been leaking for two days now.",
-      "For two days now, the bathroom faucet has been dripping."
+      "I'd be cleaning nonstop if we had a pool.",
+      "If we owned a pool, I'd clean it constantly."
     ],
-    "point": "「ずっと〜してる」は現在完了進行形。for two days を添える",
+    "point": "現実と違う仮定は if + 過去形、主節は would",
     "topic": "daily",
     "subtopic": "home",
-    "level": 9,
-    "grammar": ["present-perfect-continuous"],
+    "level": 6,
+    "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -560,7 +560,7 @@
     "point": "「嫌なのは〜」は It's ~ (that) で強調し、not で対比する",
     "topic": "daily",
     "subtopic": "home",
-    "level": 10,
+    "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -570,8 +570,8 @@
     "ja": "洗濯物を干すベランダ、そろそろ掃除する頃だよね。",
     "en": "It's about time we cleaned the balcony where we hang laundry.",
     "alternatives": [
-      "High time we cleaned the balcony where we hang the laundry.",
-      "We're overdue for cleaning the balcony where we hang laundry."
+      "It's time we cleaned the balcony where we hang laundry.",
+      "It's about time we cleaned the balcony we hang laundry on."
     ],
     "point": "It's about time の後ろは過去形（今すべきだという含み）",
     "topic": "daily",
@@ -583,16 +583,16 @@
   },
   {
     "id": "c_8e7g2m2r",
-    "ja": "家事を公平に分けようと、当番表を作ってみたよ。",
-    "en": "I made a chore chart to split chores fairly.",
+    "ja": "家事を公平に分けるため当番表を作ったよ。",
+    "en": "I made a chart to split chores fairly.",
     "alternatives": [
-      "I made a chore chart to divide chores evenly.",
-      "I made a chore chart to make things fair."
+      "I made a chart to divide chores evenly.",
+      "I made a schedule to share chores fairly."
     ],
     "point": "「〜するために」は to + 動詞の原形",
     "topic": "daily",
     "subtopic": "home",
-    "level": 6,
+    "level": 4,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -638,13 +638,13 @@
     "ja": "ごめん、今、洗濯物たたんでるとこ。",
     "en": "Sorry, I'm folding the laundry right now.",
     "alternatives": [
-      "Sorry, I'm in the middle of folding laundry.",
+      "Sorry, I'm folding laundry at the moment.",
       "Sorry, I'm busy folding the laundry."
     ],
     "point": "「〜してるとこ」は現在進行形。right now と相性がいい",
     "topic": "daily",
     "subtopic": "home",
-    "level": 5,
+    "level": 2,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-28",
     "stamps": {}

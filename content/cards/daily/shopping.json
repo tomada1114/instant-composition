@@ -94,9 +94,9 @@
   {
     "id": "c_2t5e9h4d",
     "ja": "店員に在庫を調べてほしいんだ。",
-    "en": "I want the clerk to check stock.",
+    "en": "I want the clerk to check the stock.",
     "alternatives": [
-      "I'd like the clerk to check stock.",
+      "I'd like the clerk to check the stock.",
       "I want a clerk to check the stock."
     ],
     "point": "want + 人 + to do。want the clerk check とは言わない",
@@ -281,12 +281,12 @@
   {
     "id": "c_5c9a8w9r",
     "ja": "昨日買ったシャツ、返品できますか？",
-    "en": "Can I return a shirt bought yesterday?",
+    "en": "Can I return this shirt I bought yesterday?",
     "alternatives": [
       "Can I return the shirt I bought yesterday?",
       "Could I return the shirt I got yesterday?"
     ],
-    "point": "「買った」は後ろから名詞を修飾。bought yesterday を後ろに置く",
+    "point": "「昨日買ったシャツ」は shirt の後ろに I bought yesterday を置く",
     "topic": "daily",
     "subtopic": "shopping",
     "level": 4,
@@ -441,10 +441,10 @@
   {
     "id": "c_7r7h4p5f",
     "ja": "あの店員、返金を断っただけでなく謝りもしなかったんだ。",
-    "en": "Not only did the clerk refuse a refund, he never apologized.",
+    "en": "Not only did the clerk refuse a refund, he didn't even apologize.",
     "alternatives": [
-      "The clerk not only refused a refund but never even apologized.",
-      "Not only did the clerk refuse to refund me, he didn't apologize."
+      "The clerk not only refused a refund but didn't even apologize.",
+      "The clerk refused a refund and didn't even apologize."
     ],
     "point": "Not only を文頭に出すと did + 動詞原形の倒置になる",
     "topic": "daily",
@@ -617,33 +617,17 @@
   },
   {
     "id": "c_9s7x6w3u",
-    "ja": "この靴、サイズが合わなかったので返品しに来ました。",
-    "en": "I came to return these shoes; they didn't fit.",
+    "ja": "この靴、合わなかったので返品しに来ました。",
+    "en": "I came to return these shoes. They didn't fit.",
     "alternatives": [
-      "I'm here to return these shoes because they didn't fit.",
-      "These shoes didn't fit, so I came to return them."
+      "I'm here to return these shoes. They didn't fit.",
+      "These shoes didn't fit. I came to return them."
     ],
     "point": "「〜しに来た」は came to + 動詞の原形",
     "topic": "daily",
     "subtopic": "shopping",
-    "level": 8,
+    "level": 6,
     "grammar": ["infinitives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9t5m6e6r",
-    "ja": "私は店員に在庫を調べてくれるよう頼んだ。",
-    "en": "I asked the clerk to check stock.",
-    "alternatives": [
-      "I asked a clerk to check inventory.",
-      "I asked the salesperson to check stock."
-    ],
-    "point": "ask + 人 + to do。「頼んだ」は asked、to の後は原形",
-    "topic": "daily",
-    "subtopic": "shopping",
-    "level": 5,
-    "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },

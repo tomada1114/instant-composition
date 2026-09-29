@@ -54,7 +54,7 @@
     "point": "分詞構文の主語は主節と同じ人にする",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 7,
+    "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -133,7 +133,7 @@
     "point": "「もう」は現在完了、「昨日送った」は過去形で使い分ける",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 8,
+    "level": 6,
     "grammar": ["tense-contrast", "relative-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -187,7 +187,7 @@
     "point": "the place の後ろに I booked を直接つなげる",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 7,
+    "level": 6,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -332,22 +332,6 @@
     }
   },
   {
-    "id": "c_5d4b9m9h",
-    "ja": "駅に着いたら、電話するね。",
-    "en": "I'll call you when I get there.",
-    "alternatives": [
-      "I'll give you a call when I arrive.",
-      "I'll call you as soon as I arrive."
-    ],
-    "point": "未来のことでも when の後は現在形（get）",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 5,
-    "grammar": ["time-and-if-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5j5w6p7z",
     "ja": "昨日の約束、忘れてた。ごめん！",
     "en": "Sorry, I forgot about yesterday's plan.",
@@ -397,23 +381,7 @@
     "topic": "daily",
     "subtopic": "plans",
     "level": 6,
-    "grammar": ["progressive-aspect", "noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5t5w7u6x",
-    "ja": "約束をすっかり忘れてた、ごめん！",
-    "en": "Sorry, I totally forgot about our plans.",
-    "alternatives": [
-      "I'm sorry, I completely forgot we had plans.",
-      "Sorry, our plans totally slipped my mind."
-    ],
-    "point": "「忘れてた」は過去形 forgot。forget about で「〜のことを」",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 5,
-    "grammar": ["past-simple"],
+    "grammar": ["indirect-questions", "hedging-softening"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -441,16 +409,16 @@
   },
   {
     "id": "c_6k9w4r5g",
-    "ja": "会う約束をしてる友達が、何度も予定をずらしてくるんだよ。",
+    "ja": "約束してる友達が、何度も予定をずらすんだ。",
     "en": "The friend I'm meeting keeps pushing our plans back.",
     "alternatives": [
-      "The friend I'm supposed to see keeps rescheduling on me.",
-      "The friend I'm meeting up with keeps postponing our plans."
+      "The friend I'm supposed to see keeps rescheduling.",
+      "The friend I'm meeting keeps postponing our plans."
     ],
     "point": "目的格の関係詞は省略でき、push back は「延期する」",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 9,
+    "level": 6,
     "grammar": ["relative-clauses", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -461,7 +429,7 @@
     "en": "What worries me is Saturday's forecast.",
     "alternatives": [
       "What I'm worried about is Saturday's forecast.",
-      "The thing worrying me is Saturday's weather."
+      "What's worrying me is Saturday's weather."
     ],
     "point": "「〜なのは」は What 節を主語にして is でつなぐ",
     "topic": "daily",
@@ -496,7 +464,7 @@
   {
     "id": "c_7f9v5y7p",
     "ja": "ごめん、土曜は約束を断らなきゃいけない。",
-    "en": "Sorry, I have to back out of Saturday.",
+    "en": "Sorry, I have to back out of Saturday's plans.",
     "alternatives": [
       "Sorry, but I'll have to cancel on Saturday.",
       "Sorry, I've got to bail on Saturday."
@@ -665,7 +633,7 @@
     "point": "「先約」は数えられる名詞なので a が必要",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 8,
+    "level": 5,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-28",
     "stamps": {}

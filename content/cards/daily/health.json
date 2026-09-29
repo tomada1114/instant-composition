@@ -57,7 +57,13 @@
     "level": 5,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef26a237ea562c7211d96d9055f7ccbca1bdbe1b9f38f7db028e565becbe6132",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2q6h7h2b",
@@ -104,36 +110,26 @@
     }
   },
   {
-    "id": "c_2r9r4w2k",
-    "ja": "先生が副作用が出やすいと言ってた薬って、これですか？",
-    "en": "Is this the drug the doctor said often causes side effects?",
-    "alternatives": [
-      "Is this the medicine the doctor said causes side effects often?",
-      "Is this the one the doctor said triggers side effects easily?"
-    ],
-    "point": "the drug の後の関係詞 that は省略できる",
-    "topic": "daily",
-    "subtopic": "health",
-    "level": 9,
-    "grammar": ["nested-clauses", "relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2t3w9z6h",
-    "ja": "母は転んだとき頭を打ったか、覚えていないんです。",
-    "en": "Mom can't remember if she hit her head when she fell.",
+    "ja": "母は、自分が頭を打ったか覚えていません。",
+    "en": "Mom can't remember if she hit her head.",
     "alternatives": [
-      "My mom can't remember whether she hit her head in the fall.",
-      "Mom doesn't remember if she hit her head when she fell."
+      "Mom doesn't remember if she hit her head.",
+      "Mom can't recall whether she hit her head."
     ],
     "point": "「〜かどうか」は if / whether。節の中は平叙文の語順",
     "topic": "daily",
     "subtopic": "health",
-    "level": 10,
-    "grammar": ["nested-clauses", "noun-clauses"],
+    "level": 5,
+    "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e44541cca3bc78267532c9abbb5b8a00a317e6cbf3288fc6828b1da0ac6001ca",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2v7s4g7r",
@@ -228,10 +224,16 @@
     "point": "「切れる」は wear off。効き目が消える時の句動詞",
     "topic": "daily",
     "subtopic": "health",
-    "level": 8,
+    "level": 6,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:524f429644ec542a805f81fca18e323326353f1255f070d66be84da009427a64",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4c2e9h9z",
@@ -247,7 +249,13 @@
     "level": 8,
     "grammar": ["gerunds", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6abba1c33d88f68a0c7b5ff6a07cf06f9a0a9552a9ffb3ed9458d4d17c09fbb5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4f6r9c7k",
@@ -319,18 +327,24 @@
   {
     "id": "c_4y4j2v3x",
     "ja": "あの荷物、持たなきゃよかった。腰が悲鳴を上げてる。",
-    "en": "I shouldn't have lifted that box; my back is killing me.",
+    "en": "I shouldn't have lifted that. My back is killing me.",
     "alternatives": [
-      "I never should have lifted that box; my back is killing me.",
-      "I wish I hadn't lifted that box. My back is killing me."
+      "I wish I hadn't carried that. My back's killing me.",
+      "I never should've lifted that. My back is killing me."
     ],
     "point": "後悔は shouldn't have + 過去分詞。痛みは is killing me",
     "topic": "daily",
     "subtopic": "health",
-    "level": 10,
+    "level": 7,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6fae1bf629632dadc3d565805904c26fd7c6bc7a77759367f54add918767d278",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4y5t6n6e",
@@ -343,26 +357,16 @@
     "point": "「言われている」は現在完了の受動態 have been told",
     "topic": "daily",
     "subtopic": "health",
-    "level": 9,
+    "level": 7,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5e4w7k2q",
-    "ja": "予約を来週に延ばしてもらえますか？",
-    "en": "Could you push my appointment back to next week?",
-    "alternatives": [
-      "Can I put my appointment off until next week?",
-      "Could you reschedule my appointment for next week?"
-    ],
-    "point": "「延ばす」は push back。目的語は back の前に置く",
-    "topic": "daily",
-    "subtopic": "health",
-    "level": 8,
-    "grammar": ["phrasal-verbs", "requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7eebaf5c5b47022c7467f3bf833ccce52659dc3823d588b62d7c016e604865e5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5e9e9v7r",
@@ -382,22 +386,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_5h2j8j8c",
-    "ja": "昨日処方された薬で、少し吐き気がします。",
-    "en": "The medicine prescribed yesterday is making me nauseous.",
-    "alternatives": [
-      "I feel nauseous from the medicine I was prescribed yesterday.",
-      "The pills the doctor prescribed yesterday are making me queasy."
-    ],
-    "point": "過去分詞 prescribed で「処方された薬」と後ろから修飾",
-    "topic": "daily",
-    "subtopic": "health",
-    "level": 8,
-    "grammar": ["post-modification", "passive-voice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_5q8x6w8j",
@@ -515,7 +503,7 @@
     "en": "Where should people with a fever wait?",
     "alternatives": [
       "Where should people who have a fever wait?",
-      "Where should feverish people wait?"
+      "Where should people running a fever wait?"
     ],
     "point": "「熱のある人」は people with a fever と後ろから修飾",
     "topic": "daily",
@@ -523,7 +511,13 @@
     "level": 5,
     "grammar": ["post-modification", "wh-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5bd51bf9ebc333f37b5ebfb8913ad62b367a8355f64d72a7c3a02aea726ba737",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7n7y2q7b",
@@ -536,10 +530,16 @@
     "point": "動名詞は主語になれる。Swallowing hurts〜",
     "topic": "daily",
     "subtopic": "health",
-    "level": 8,
+    "level": 5,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ae46d3c3d6155bbd06e7d0d92480a84bdf06aa000d1595d90b6390362c4cadf5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7q7c8z3b",
@@ -574,10 +574,16 @@
     "point": "「ひきかけ」は come down with。catch より口語的",
     "topic": "daily",
     "subtopic": "health",
-    "level": 10,
+    "level": 6,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5f8656b3fac416e34ea8c104a8e50baba0a9f23291fb2ac4192d468518a74e44",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8a4c2a5h",
@@ -602,24 +608,8 @@
     }
   },
   {
-    "id": "c_8d6v4e8c",
-    "ja": "母は、階段を上り下りするのがつらいそうです。",
-    "en": "My mother says climbing stairs is painful.",
-    "alternatives": [
-      "My mother finds climbing stairs painful.",
-      "Mom says going up and down stairs hurts."
-    ],
-    "point": "「〜するのが」は動名詞。climbing stairs が主語",
-    "topic": "daily",
-    "subtopic": "health",
-    "level": 8,
-    "grammar": ["gerunds"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8f8n2x8g",
-    "ja": "健康のために、夜食をやめました。",
+    "ja": "夜食を食べるのはやめました。",
     "en": "I stopped eating late-night snacks.",
     "alternatives": [
       "I quit eating late-night snacks.",
@@ -631,7 +621,13 @@
     "level": 3,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c273188d7702c69e8ac57f4894f13efeec2e2fe27ac0574c28207024c1eb3af8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8g8y3k5b",
@@ -644,10 +640,16 @@
     "point": "最上級のあとは I've ever had と現在完了",
     "topic": "daily",
     "subtopic": "health",
-    "level": 7,
+    "level": 6,
     "grammar": ["comparatives-superlatives", "relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4599d4894922b607f82c6a17b696c9ed54cda577a5f49e084e28f0f6cba2fcbf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8n5z3q8a",
@@ -655,28 +657,21 @@
     "en": "Could you switch me to a milder medicine?",
     "alternatives": [
       "Could I get something a little milder?",
-      "Is there a gentler medicine you could give me instead?"
+      "Could you give me a milder medicine?"
     ],
     "point": "「弱い」は weak でなく比較級 milder が自然",
     "topic": "daily",
     "subtopic": "health",
-    "level": 7,
+    "level": 5,
     "grammar": ["comparatives-superlatives", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8r3h5u4t",
-    "ja": "医者に、安静にするよう言われました。",
-    "en": "The doctor told me to rest.",
-    "alternatives": ["My doctor told me to rest.", "I was told to rest."],
-    "point": "tell + 人 + to do の形。「言われた」は told me to で表す",
-    "topic": "daily",
-    "subtopic": "health",
-    "level": 3,
-    "grammar": ["verb-object-to-do"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6fd304c12b63ce504d937ff32290578750b8f092721d0581089b698171ee9515",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8t2t3x3f",
@@ -705,16 +700,22 @@
     "ja": "この薬を飲んでから、前より少し楽です。",
     "en": "I've felt a little better since taking this medicine.",
     "alternatives": [
-      "I feel a little better since I started taking this.",
+      "I've felt a little better since I started this.",
       "I've been feeling somewhat better since taking this medicine."
     ],
-    "point": "since の後ろは taking と動名詞でも言える",
+    "point": "since 以来ずっと続く状態は現在完了 I've felt で言う",
     "topic": "daily",
     "subtopic": "health",
-    "level": 7,
-    "grammar": ["comparatives-superlatives", "gerunds"],
+    "level": 6,
+    "grammar": ["present-perfect", "gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4197649331f4da404bae9232c7483fae2d83d05ec2c2b0660b81971ad71b87a2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9m9m4t9s",
@@ -722,31 +723,43 @@
     "en": "Will this pain go away on its own?",
     "alternatives": [
       "Will this pain clear up by itself?",
-      "Is this pain going to go away by itself?"
+      "Will the pain go away by itself?"
     ],
     "point": "「自然に」は on its own / by itself",
     "topic": "daily",
     "subtopic": "health",
-    "level": 8,
+    "level": 5,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4b6a354b870efca475f0ec10f780844673784ab32e8cb9e193cda5e1e8ba5629",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9q3r6g8q",
-    "ja": "あのとき待っていたら、父は助からなかったかも。",
+    "ja": "私たちが待っていたら、父は助からなかったかも。",
     "en": "If we'd waited, Dad might not have made it.",
     "alternatives": [
       "If we had waited, my father might not have survived.",
-      "Had we waited, Dad might not have pulled through."
+      "If we'd waited, my dad might not have pulled through."
     ],
     "point": "助かる は make it。過去の仮定は had+過去分詞",
     "topic": "daily",
     "subtopic": "health",
-    "level": 9,
+    "level": 7,
     "grammar": ["third-conditional", "modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5e2ff17c32943ded83b65ec69119945bebbf557ff4f4b335c1f3516a8a3e0d50",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9z9t2b6s",

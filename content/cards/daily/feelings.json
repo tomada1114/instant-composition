@@ -48,7 +48,7 @@
     "point": "前置詞 about の後は動名詞。「断る」は back out",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 8,
+    "level": 6,
     "grammar": ["gerunds", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -77,13 +77,13 @@
     "ja": "来月引っ越すから、この街が恋しくなるな。",
     "en": "I'm moving next month. I'll miss this town.",
     "alternatives": [
-      "I'm moving next month, so I'll miss this town.",
-      "I'll miss this town once I move next month."
+      "I move next month. I'll miss this town.",
+      "I'm leaving next month. I'll miss this town."
     ],
     "point": "決まった予定は進行形、その場の気持ちは will",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 6,
+    "level": 4,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -121,7 +121,7 @@
     "point": "言った時点に合わせて couldn't。stand の後は動名詞",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 8,
+    "level": 6,
     "grammar": ["reported-speech", "gerunds"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -129,15 +129,15 @@
   {
     "id": "c_3g3b3p7e",
     "ja": "プロジェクトから外されて、正直がっかり。",
-    "en": "I'm disappointed to be taken off the project.",
+    "en": "Honestly, I'm disappointed to be taken off the project.",
     "alternatives": [
-      "I'm sad to have been taken off the project.",
-      "I'm let down that I was removed from the project."
+      "Honestly, I'm bummed they took me off the project.",
+      "Honestly, I'm disappointed about being taken off it."
     ],
     "point": "感情の形容詞＋to be＋過去分詞で「〜されて」を表す",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 7,
+    "level": 6,
     "grammar": ["passive-voice", "infinitives"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -183,12 +183,12 @@
   {
     "id": "c_3t9x7f7u",
     "ja": "もっと早く言ってくれてれば、手伝えたのに。",
-    "en": "If you'd said something, I'd have helped.",
+    "en": "If you'd told me sooner, I could have helped.",
     "alternatives": [
-      "I would have helped if you'd told me.",
-      "Had you told me, I'd have helped you."
+      "I could have helped if you'd told me earlier.",
+      "If you'd told me earlier, I'd have helped."
     ],
-    "point": "過去の仮定は If + had 過去分詞、would have 過去分詞",
+    "point": "過去の仮定は If + had 過去分詞、主節は could have 過去分詞",
     "topic": "daily",
     "subtopic": "feelings",
     "level": 6,
@@ -219,24 +219,40 @@
     }
   },
   {
+    "id": "c_4j2p3h3y",
+    "ja": "彼女の立場は分かるけど、私は賛成できないな。",
+    "en": "I see where she's coming from, but I disagree.",
+    "alternatives": [
+      "I understand her position, but I can't agree.",
+      "I get her point, but I can't agree with her."
+    ],
+    "point": "where she's coming from は「彼女の言い分・立場」の口語表現",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 9,
+    "grammar": ["concession-contrast", "noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_4m9h2a8s",
     "ja": "このプラン、どう思うか率直に教えてもらえますか？",
     "en": "Could you tell me frankly what you think of this?",
     "alternatives": [
       "Could you give me your honest opinion of this plan?",
-      "Would you mind telling me what you really think of it?"
+      "Could you tell me honestly what you think of this?"
     ],
     "point": "tell me の後は what you think の語順。Could で丁寧に",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 9,
+    "level": 7,
     "grammar": ["indirect-questions", "hedging-softening"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_4t9e4r2v",
-    "ja": "彼女、この結果には本当にがっかりしたって言ってたよ。",
+    "ja": "彼女、結果に本当にがっかりしたって言ってた。",
     "en": "She said she was really let down by the result.",
     "alternatives": [
       "She said the result really let her down.",
@@ -245,7 +261,7 @@
     "point": "said の後は時制を一つ過去へ。is は was に。",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 10,
+    "level": 7,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -368,7 +384,7 @@
     "point": "「問題がある」は There's a problem with 〜。",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 5,
+    "level": 3,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -401,7 +417,8 @@
     "en": "I'd appreciate being told earlier.",
     "alternatives": [
       "It would be great to be told earlier.",
-      "I'd appreciate it if you told me sooner."
+      "I'd appreciate it if you told me sooner.",
+      "It'd be great if you could let me know earlier."
     ],
     "point": "appreciate のあとは動名詞。受け身なら being told",
     "topic": "daily",
@@ -422,8 +439,8 @@
     "point": "間接疑問は why he's upset の語順。疑問文の倒置にしない",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 9,
-    "grammar": ["indirect-questions", "hedging-softening"],
+    "level": 6,
+    "grammar": ["indirect-questions", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -585,29 +602,25 @@
     "en": "If I'd studied abroad, my life would be different now.",
     "alternatives": [
       "Had I studied abroad, my life would be different now.",
-      "My life would be different now if I'd studied abroad.",
-      "If I had gone overseas, I'd be leading a different life now."
+      "My life would be different now if I'd studied abroad."
     ],
     "point": "過去の仮定 + 今の結果は if 節 had 過去分詞、主節 would 原形。",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 10,
+    "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_8q6v7h5b",
-    "ja": "いいニュースがあるよ。昇進が決まったんだ。",
+    "ja": "いい話があるよ。昇進が決まった。",
     "en": "I've got good news. I got promoted.",
-    "alternatives": [
-      "I have some good news. I've been promoted.",
-      "Good news: I got promoted!"
-    ],
+    "alternatives": ["I have good news. I got promoted.", "Good news: I got promoted!"],
     "point": "news は数えられない名詞。a news や newses は不可",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 6,
+    "level": 3,
     "grammar": ["articles-and-countability", "past-simple"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -652,22 +665,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9b3w6c2z",
-    "ja": "彼女の気持ちは分かるけど、私は賛成できないな。",
-    "en": "Much as I understand her feelings, I can't agree.",
-    "alternatives": [
-      "Although I understand how she feels, I can't agree.",
-      "I get where she's coming from, but I can't agree."
-    ],
-    "point": "Much as ～ は「～ではあるが」の譲歩。although に近い",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 9,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9e4m3m8w",

@@ -119,10 +119,10 @@
   {
     "id": "c_2v9y8s8r",
     "ja": "ずっと手を挙げてたのに、誰も気づかなかった。",
-    "en": "I was waving for ages, but nobody noticed.",
+    "en": "I was holding my hand up, but nobody noticed.",
     "alternatives": [
-      "I kept waving, but nobody noticed me.",
-      "I was waving my hand, but nobody noticed."
+      "I kept my hand up, but nobody noticed.",
+      "I had my hand up forever, but nobody noticed."
     ],
     "point": "その間ずっと続いていた動作は過去進行形 was waving",
     "topic": "daily",
@@ -143,24 +143,8 @@
     "point": "Once 節は完了を表す現在完了、未来でも will は使わない",
     "topic": "daily",
     "subtopic": "eating-out",
-    "level": 7,
+    "level": 5,
     "grammar": ["time-and-if-clauses", "present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3m9b8f5n",
-    "ja": "あの店、席は取りづらいけど、行く価値は十分あるよ。",
-    "en": "Tough as it is to get a table, it's worth it.",
-    "alternatives": [
-      "Although it's hard to get a table there, it's worth it.",
-      "Even though getting a table is a hassle, it's totally worth it."
-    ],
-    "point": "Tough as it is で「〜だけれど」の譲歩を作る",
-    "topic": "daily",
-    "subtopic": "eating-out",
-    "level": 10,
-    "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -175,7 +159,7 @@
     "point": "「席が取られた」は受動態。I'm afraid で柔らかく断る",
     "topic": "daily",
     "subtopic": "eating-out",
-    "level": 9,
+    "level": 6,
     "grammar": ["passive-voice", "hedging-softening"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -191,7 +175,7 @@
     "point": "what 節の中は疑問文の語順にしない（what you recommend）",
     "topic": "daily",
     "subtopic": "eating-out",
-    "level": 5,
+    "level": 4,
     "grammar": ["noun-clauses", "indirect-questions"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -223,7 +207,7 @@
     "ja": "決められなくて、私は店員さんのおすすめにした。",
     "en": "Unable to decide, I went with the server's recommendation.",
     "alternatives": [
-      "Not being able to choose, I took the server's recommendation.",
+      "I couldn't decide, so I went with the server's recommendation.",
       "I couldn't decide, so I went with the server's pick."
     ],
     "point": "go with で「〜に決める」。分詞構文で理由を前に置く",
@@ -267,7 +251,7 @@
     "point": "着いた時点より前の出来事は過去完了で言う",
     "topic": "daily",
     "subtopic": "eating-out",
-    "level": 8,
+    "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -275,10 +259,10 @@
   {
     "id": "c_4t7t5f5v",
     "ja": "行列を見て、私たちは別の店にすることにした。",
-    "en": "Seeing the line, we decided on another place.",
+    "en": "Seeing the line, we decided to go somewhere else.",
     "alternatives": [
       "When we saw the line, we chose another place.",
-      "Seeing the long line, we went somewhere else instead."
+      "We saw the line and went somewhere else."
     ],
     "point": "「〜を見て」は Seeing 〜, の分詞構文で理由をつなぐ",
     "topic": "daily",
@@ -293,14 +277,30 @@
     "ja": "席が空いたら、すぐご案内しますね。",
     "en": "We'll seat you once a table opens up.",
     "alternatives": [
-      "You'll be seated as soon as a table frees up.",
-      "We'll show you to a table when one opens up."
+      "We'll seat you when a table frees up.",
+      "We'll seat you as soon as one's free."
     ],
     "point": "未来のことでも once / when の節は現在形",
     "topic": "daily",
     "subtopic": "eating-out",
-    "level": 7,
+    "level": 5,
     "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4v6x8s3b",
+    "ja": "あの店、席は取りにくいけど、行く価値は十分あるよ。",
+    "en": "Getting a table is a pain, but it's well worth it.",
+    "alternatives": [
+      "Although it's hard to get a table, it's totally worth going.",
+      "Even though tables are hard to come by, it's totally worth it."
+    ],
+    "point": "十分価値がある＝well worth it。譲歩は but や Although で",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 10,
+    "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -622,7 +622,7 @@
     "point": "「食べられない」は can't eat。handle も自然",
     "topic": "daily",
     "subtopic": "eating-out",
-    "level": 4,
+    "level": 2,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -652,10 +652,10 @@
   {
     "id": "c_8c4z2a2z",
     "ja": "店員さんが押さえると言った席、どれか分かる？",
-    "en": "Do you know which table the server said he'd hold?",
+    "en": "Do you know which table the server said they'd hold?",
     "alternatives": [
-      "Do you know which table the waiter promised to hold?",
-      "Do you know which table the server said they'd keep?"
+      "Do you know which table the server said they'd keep?",
+      "Do you know which table the waiter said they'd save?"
     ],
     "point": "間接疑問は which table のあとも肯定文の語順",
     "topic": "daily",
@@ -670,14 +670,14 @@
     "ja": "彼が絶賛してた店、予約取れた？",
     "en": "Did you manage to book the place he raved about?",
     "alternatives": [
-      "Did you get a reservation at the place he raved about?",
+      "Did you book the place he was raving about?",
       "Were you able to book that place he raved about?"
     ],
     "point": "rave about は「〜を絶賛する」。前置詞を残す",
     "topic": "daily",
     "subtopic": "eating-out",
-    "level": 10,
-    "grammar": ["nested-clauses"],
+    "level": 8,
+    "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -687,12 +687,12 @@
     "en": "If money were no object, I'd order the full course.",
     "alternatives": [
       "If cost weren't an issue, I'd get the full course.",
-      "If I didn't care about the price, I'd order the course."
+      "If price didn't matter, I'd get the full course."
     ],
     "point": "現実と違う仮定は if + were、主節は would",
     "topic": "daily",
     "subtopic": "eating-out",
-    "level": 10,
+    "level": 7,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -763,12 +763,12 @@
     "en": "I heard this place had closed, but it's still open.",
     "alternatives": [
       "They said this place had closed, yet it's still open.",
-      "I was told this place had shut down, but it's open."
+      "I heard it had shut down, but it's still open."
     ],
     "point": "聞いた時点より前の閉店は過去完了、今の状態は現在形",
     "topic": "daily",
     "subtopic": "eating-out",
-    "level": 9,
+    "level": 7,
     "grammar": ["tense-contrast", "reported-speech"],
     "createdAt": "2026-09-28",
     "stamps": {}

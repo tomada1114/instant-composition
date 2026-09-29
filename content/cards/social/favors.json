@@ -39,16 +39,16 @@
   },
   {
     "id": "c_2q4s7c7y",
-    "ja": "僕の一存で決められるなら、君に喜んで手を貸すのに。",
-    "en": "If it were up to me, I'd lend you a hand.",
+    "ja": "僕が決められるなら、喜んで手を貸すのに。",
+    "en": "If it were my call, I'd gladly help.",
     "alternatives": [
-      "If it were my call, I'd gladly help you out.",
+      "If it were up to me, I'd gladly help.",
       "If I could decide, I'd be happy to help."
     ],
     "point": "現実と違う仮定は if 節に were、主節に would",
     "topic": "social",
     "subtopic": "favors",
-    "level": 10,
+    "level": 6,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -138,12 +138,13 @@
     "en": "I feel bad about imposing on you like this.",
     "alternatives": [
       "I hate imposing on you like this.",
-      "I'm sorry for imposing on you like this."
+      "I feel bad asking you for help like this.",
+      "I don't like imposing on you like this."
     ],
     "point": "前置詞 about の後ろは動名詞 imposing",
     "topic": "social",
     "subtopic": "favors",
-    "level": 8,
+    "level": 6,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -153,14 +154,14 @@
     "ja": "君が今頼んでる人、月曜まで休みだよ。",
     "en": "The person you're asking is out till Monday.",
     "alternatives": [
-      "The guy you're asking is off till Monday.",
-      "The person you're trying to ask is off until Monday."
+      "The person you're asking is off until Monday.",
+      "Whoever you're asking is off till Monday."
     ],
     "point": "The person (whom) you're asking と関係詞は省ける",
     "topic": "social",
     "subtopic": "favors",
-    "level": 8,
-    "grammar": ["nested-clauses", "relative-clauses"],
+    "level": 5,
+    "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -440,22 +441,6 @@
     }
   },
   {
-    "id": "c_7p5t5b4y",
-    "ja": "頼んでおいた件、もう見てくれた？",
-    "en": "Have you had a chance to look into it yet?",
-    "alternatives": [
-      "Did you get a chance to look into my request?",
-      "Have you looked into what I asked yet?"
-    ],
-    "point": "「もう〜した？」は現在完了。have a chance で柔らかく聞く",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 7,
-    "grammar": ["tense-contrast", "present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7p7z3x9v",
     "ja": "メモ用に紙をちょっともらえる？",
     "en": "Could I get some paper for notes?",
@@ -514,17 +499,17 @@
   },
   {
     "id": "c_8p7h3r5c",
-    "ja": "田中さんにはもう頼んであるから、君は気にしなくていいよ。",
+    "ja": "田中さんにもう頼んだから、君は気にしなくていいよ。",
     "en": "I've already asked Tanaka, so you're off the hook.",
     "alternatives": [
-      "Tanaka's already on it, so you're off the hook.",
-      "I've already asked Tanaka, so you needn't worry about it."
+      "I've already asked Tanaka, so don't worry about it.",
+      "I already asked Tanaka, so you're all set."
     ],
     "point": "頼み済みの今の状態は現在完了、be off the hook で免除",
     "topic": "social",
     "subtopic": "favors",
-    "level": 10,
-    "grammar": ["tense-contrast"],
+    "level": 7,
+    "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -534,12 +519,12 @@
     "en": "I should have turned him down flat when he asked.",
     "alternatives": [
       "I should have said no outright when he asked me.",
-      "I ought to have flatly refused him when he asked."
+      "I should have just said no when he asked."
     ],
     "point": "断らなかった後悔は should have + 過去分詞",
     "topic": "social",
     "subtopic": "favors",
-    "level": 9,
+    "level": 7,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
