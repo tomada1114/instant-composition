@@ -1,6 +1,7 @@
 import { useEffect, useState, type ReactElement } from "react";
 
 import type { ApiError } from "../lib/endpoints";
+import { PageLoading } from "../lib/page-shell";
 import type { GradeKeys, RoundKind, RoundPayload } from "../openapi";
 import { DrillError } from "./drill-error";
 import { DrillSession } from "./drill-session";
@@ -59,9 +60,7 @@ export function DrillScreen({
   }, [kind, attempt]);
 
   if (loaded.status === "loading" || loaded.attempt !== attempt) {
-    return (
-      <main className="mx-auto box-content flex min-h-(--column-height) max-w-column px-4" />
-    );
+    return <PageLoading withTabBar />;
   }
   if (loaded.status === "failed") {
     return (

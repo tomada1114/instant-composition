@@ -1,5 +1,24 @@
 [
   {
+    "id": "c_2k3g9z2c",
+    "ja": "財布は昨日なくなりました。",
+    "en": "My wallet went missing yesterday.",
+    "alternatives": ["I lost my wallet yesterday.", "My wallet disappeared yesterday."],
+    "point": "yesterday があれば過去形（has は使えない）",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1915328b6c2243f0fabbebcc04e8717c90b6b8866afde2c12e1662a83cbb305e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2u8n8r8e",
     "ja": "運転手に止まるよう言って！",
     "en": "Tell the driver to stop!",
@@ -22,6 +41,29 @@
     }
   },
   {
+    "id": "c_2y7y5k4n",
+    "ja": "カードを止めてもらいたいです。",
+    "en": "I need my card blocked.",
+    "alternatives": [
+      "I'd like to have my card blocked.",
+      "I want my card frozen.",
+      "I need to get my card blocked."
+    ],
+    "point": "have/get/need + 物 + 過去分詞",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 7,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6c7199d3675fbbb1e94a6cf19d4c2ebe267f144c5639f1123c5406f5c09feeeb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3m8g6f3j",
     "ja": "席の下の鞄がなくなった。",
     "en": "The bag under my seat's gone.",
@@ -38,6 +80,25 @@
     "stamps": {
       "core": {
         "hash": "sha256:d7129be81a64003cf10a8dc72395dcff552e293969f30086e864c587fbc9261b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4d5j4t4z",
+    "ja": "次の電車の方が早いです。",
+    "en": "The next train is faster.",
+    "alternatives": ["The next train is quicker.", "The next one is faster."],
+    "point": "「〜の方が早い」は faster の一語",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 3,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:30135130ab9664e3af59e026342fe5494704ec86d662d98c4bc3b596be9a0836",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -104,6 +165,67 @@
     }
   },
   {
+    "id": "c_4n7j2g5d",
+    "ja": "予約にミスがあります。",
+    "en": "There's a booking error.",
+    "alternatives": ["There's a mistake in my booking.", "My booking has a mistake."],
+    "point": "「〜がある」は There's + 名詞",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a4513ae70aa1fc63e2eb05a972d4e9af5387e9e1234bf3e5c61aa05bb4f2075c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4p4f7x2r",
+    "ja": "財布をなくさなければよかった。",
+    "en": "Wish I hadn't lost my wallet.",
+    "alternatives": [
+      "I wish I hadn't lost my wallet.",
+      "If only I hadn't lost my wallet.",
+      "I shouldn't have lost my wallet."
+    ],
+    "point": "過去の後悔は wish + had (not) done",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef2d01b53d291cea87eafc7c26410b4b39cbddf1bcdea4ac8de20f420766d6cd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5q8q6k3r",
+    "ja": "財布がなくなった。",
+    "en": "My wallet is gone.",
+    "alternatives": ["My wallet is missing.", "I lost my wallet."],
+    "point": "なくなった は is gone か is missing",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4fe5f633e43dab349431f1a3225d9dfccda760bb368a7e48533cb6d2523b76c7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6u4y7m6f",
     "ja": "係員が荷物を探しています。",
     "en": "They're looking for my luggage.",
@@ -120,6 +242,196 @@
     "stamps": {
       "core": {
         "hash": "sha256:d8cd21512e720febe63d6ceecf747c6a559223fd6ffb183580b86384b3459f91",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7j7y8s2d",
+    "ja": "問題があります。",
+    "en": "There's a problem.",
+    "alternatives": ["Something is wrong.", "We have a problem."],
+    "point": "「問題がある」は There's a problem",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:42bf8abf2be85a88efe23e6a3c5a8041d1da157167d5102d344f72fc2018c7b5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7m4e9q2s",
+    "ja": "午前中ずっと、保留にされてる。",
+    "en": "I've been on hold all morning.",
+    "alternatives": [
+      "I've been on hold since this morning.",
+      "I've been stuck on hold all morning.",
+      "I've been waiting on hold all morning."
+    ],
+    "point": "all morning と続く状態は have been",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1448c2991f148a5ccc58974ea2de825980cd820177c1140d033cf207f7955079",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8b6w3e6n",
+    "ja": "警察を呼んでください。",
+    "en": "Please call the police.",
+    "alternatives": ["Could you call the police?", "Can you call the police?"],
+    "point": "「警察」は the police と the をつける",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8440aadb3969a420eac9d9a43776df9331d381cac6e92c57c06c231fba453209",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8q7g5m7r",
+    "ja": "電話を貸して！",
+    "en": "Lend me your phone.",
+    "alternatives": ["Let me use your phone.", "Can I borrow your phone?"],
+    "point": "命令文は主語なしで動詞から始める",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5aa00677de74a2d8069cabab783f6d84100543aea2feb8fefc29c47d9ccf098a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8r3s2a9j",
+    "ja": "もっと早い便はありますか？",
+    "en": "Is there an earlier flight?",
+    "alternatives": [
+      "Do you have an earlier flight?",
+      "Is there an earlier flight available?"
+    ],
+    "point": "「もっと早い」は earlier、前に an",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 4,
+    "grammar": ["comparatives-superlatives", "there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7af0800f7de1385fbe3a06992a2178580863fc226ae339dd15aef2e26e5f540c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9c5c5w2h",
+    "ja": "荷物は明日届くと言われました。",
+    "en": "They said it would arrive tomorrow.",
+    "alternatives": [
+      "I was told it would arrive tomorrow.",
+      "They told me it would arrive tomorrow.",
+      "They said it'd be here tomorrow."
+    ],
+    "point": "said の後は will が would に変わる",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 6,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fc247541fb12fc577b9f478baaddf00f73752102faf5f182a9bc6bf4c7f4bb92",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9c9m9y3w",
+    "ja": "パスポートがないです。",
+    "en": "My passport is missing.",
+    "alternatives": [
+      "My passport's gone.",
+      "I can't find my passport.",
+      "I don't have my passport."
+    ],
+    "point": "「ない」は missing でも言える",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2046f68e777221f8a839c3e2088838737efa716bfa6df33fe0a8aa9afad63892",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9y2d7b6w",
+    "ja": "財布をなくした。",
+    "en": "I lost my wallet.",
+    "alternatives": ["I've lost my wallet.", "I lost my wallet somewhere."],
+    "point": "「なくした」は lose の過去形 lost",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:307fec3b8473d83a4698a2e9e5d4a8f40c14539ba9500e5d2b419f8b7a4a84e0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9y8t2v5s",
+    "ja": "確かにここに置いたんです。",
+    "en": "I'm sure I left it here.",
+    "alternatives": [
+      "I know I left it here.",
+      "I'm positive I left it here.",
+      "I'm certain I left it here."
+    ],
+    "point": "sure の後は that を省略して節をつなぐ",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 6,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:43b429544327cd327630fc615b58677eb743099dae1886517dd36936c5432902",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

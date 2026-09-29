@@ -12,6 +12,7 @@ import {
   fill,
   homeView,
   ja,
+  navigations,
   press,
   refusal,
   renderApp,
@@ -31,6 +32,8 @@ const FINISH = "/api/v1/rounds/round-1/finish";
 
 interface Serve {
   readonly home?: HomeView;
+  /** The home view once a round has been asked for, when it differs from `home`. */
+  readonly homeLater?: HomeView;
   readonly round?: RoundPayload | Response;
   /** The round every later request gets, when it differs from the first. */
   readonly next?: RoundPayload;
@@ -43,7 +46,8 @@ function serve(options: Serve = {}): ApiCall[] {
   let rounds = 0;
   return fakeApi((call) => {
     if (call.method === "GET" && call.url === "/api/v1/home") {
-      return Response.json(options.home ?? READY);
+      const later = rounds > 0 ? options.homeLater : undefined;
+      return Response.json(later ?? options.home ?? READY);
     }
     if (call.method === "POST" && call.url === "/api/v1/rounds") {
       const asked = rounds;
@@ -457,15 +461,14 @@ describe("the drill's pause sheet", () => {
     ).toBeInTheDocument();
   });
 
-  it("shows no navigation, so the sheet's stop button is the way home", async () => {
+  it("goes home on its stop button without asking again", async () => {
     serve();
     await openRound("/drill?kind=today");
-    expect(screen.queryByRole("navigation")).toBeNull();
     press("Escape");
-    expect(screen.queryByRole("navigation")).toBeNull();
     fireEvent.click(screen.getByRole("button", { name: ja.Drill.sheet.quit }));
     await settle();
     expect(where()).toBe("/");
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
 
   it("pauses when the page is hidden", async () => {
@@ -497,6 +500,159 @@ describe("the drill's pause sheet", () => {
     expect(
       screen.getByText(fill(ja.Drill.sheet.hint, { hour: 4, position: 4 })),
     ).toBeInTheDocument();
+  });
+});
+
+describe("the drill's tab bar", () => {
+  /** The one navigation, with no tab current: the drill is none of them. */
+  const TABS = [
+    [
+      ["/", null],
+      ["/records", null],
+      ["/settings", null],
+    ],
+  ];
+
+  function leaveSheet(): HTMLElement | null {
+    return screen.queryByRole("dialog", { name: ja.Drill.leave.title });
+  }
+
+  function chooseTab(name: string): void {
+    fireEvent.click(screen.getByRole("link", { name }));
+  }
+
+  it("is on the start screen and the card screen, the card screen's actions above it", async () => {
+    serve();
+    await renderApp("/drill?kind=today");
+    expect(navigations()).toStrictEqual(TABS);
+    press("Enter");
+    await settle(16);
+    expect(screen.getByText("prompt-c1")).toBeInTheDocument();
+    expect(navigations()).toStrictEqual(TABS);
+    const main = screen.getByRole("main");
+    expect(main.className).toContain("var(--tab-bar-space)");
+    expect(main.compareDocumentPosition(screen.getByRole("navigation"))).toBe(
+      Node.DOCUMENT_POSITION_FOLLOWING,
+    );
+  });
+
+  it("leaves the start screen at once, with nothing to lose", async () => {
+    serve();
+    await renderApp("/drill?kind=today");
+    chooseTab(ja.Nav.settings);
+    await settle();
+    expect(where()).toBe("/settings");
+    expect(leaveSheet()).toBeNull();
+  });
+
+  it("pauses the timer mid-round and asks before a tab leaves, staying on continue", async () => {
+    serve();
+    await openRound("/drill?kind=today");
+    await settle(2000);
+    chooseTab(ja.Nav.records);
+    await settle();
+    expect(leaveSheet()).toBeInTheDocument();
+    expect(
+      screen.getByText(fill(ja.Drill.sheet.hint, { hour: 4, position: 1 })),
+    ).toBeInTheDocument();
+    expect(screen.queryByText("prompt-c1")).not.toBeInTheDocument();
+    expect(where()).toBe("/drill?kind=today");
+
+    // Well past the card's 7 s while the sheet is open, and still not timed out.
+    await settle(10_000);
+    fireEvent.click(screen.getByRole("button", { name: ja.Drill.sheet.continue }));
+    await settle(16);
+    expect(leaveSheet()).toBeNull();
+    expect(where()).toBe("/drill?kind=today");
+    expect(screen.getByText("prompt-c1")).toBeInTheDocument();
+    await settle(4900);
+    expect(screen.queryByText(ja.Drill.card.timedOut)).toBeNull();
+    await settle(200);
+    expect(screen.getByText(ja.Drill.card.timedOut)).toBeInTheDocument();
+  });
+
+  it("stays on Escape, as continue does", async () => {
+    serve();
+    await openRound("/drill?kind=today");
+    chooseTab(ja.Nav.home);
+    await settle();
+    expect(leaveSheet()).toBeInTheDocument();
+    press("Escape");
+    await settle(16);
+    expect(leaveSheet()).toBeNull();
+    expect(screen.queryByRole("dialog")).toBeNull();
+    expect(where()).toBe("/drill?kind=today");
+    expect(screen.getByText("prompt-c1")).toBeInTheDocument();
+  });
+
+  it("goes to the chosen tab on leave, and home then resumes the round at the same card", async () => {
+    const calls = serve({
+      homeLater: homeView({
+        kind: "in-progress",
+        portion: "today",
+        progress: 1,
+        target: 2,
+        resumeKind: "today",
+        streak: COUNT,
+      }),
+      next: { ...ROUND, answered: [firstPassOf("c1")] },
+    });
+    await openRound("/drill?kind=today");
+    await grade("k");
+    expect(screen.getByText("prompt-c2")).toBeInTheDocument();
+
+    chooseTab(ja.Nav.settings);
+    await settle();
+    fireEvent.click(screen.getByRole("button", { name: ja.Drill.leave.go }));
+    await settle();
+    expect(where()).toBe("/settings");
+    expect(leaveSheet()).toBeNull();
+
+    chooseTab(ja.Nav.home);
+    await settle();
+    await settle(16);
+    expect(where()).toBe("/");
+    fireEvent.click(screen.getByRole("button", { name: ja.Home.progress.resume }));
+    await settle();
+    await settle(16);
+    expect(where()).toBe("/drill?kind=today");
+    expect(screen.getByText("prompt-c2")).toBeInTheDocument();
+    expect(
+      screen.getByText(fill(ja.Drill.card.progress, { current: 2, total: 2 })),
+    ).toBeInTheDocument();
+    expect(posted(calls, FINISH)).toHaveLength(0);
+  });
+
+  it("asks before Back leaves a round, and stays where it was on continue", async () => {
+    serve();
+    await renderApp("/");
+    fireEvent.click(screen.getByRole("button", { name: ja.Home.today.start }));
+    await settle();
+    await settle(16);
+    expect(screen.getByText("prompt-c1")).toBeInTheDocument();
+
+    act(() => {
+      window.history.back();
+    });
+    await settle();
+    await settle(16);
+    expect(leaveSheet()).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: ja.Drill.sheet.continue }));
+    await settle();
+    await settle(16);
+    expect(where()).toBe("/drill?kind=today");
+    expect(screen.getByText("prompt-c1")).toBeInTheDocument();
+
+    act(() => {
+      window.history.back();
+    });
+    await settle();
+    await settle(16);
+    fireEvent.click(screen.getByRole("button", { name: ja.Drill.leave.go }));
+    await settle();
+    await settle(16);
+    expect(where()).toBe("/");
+    expect(leaveSheet()).toBeNull();
   });
 });
 

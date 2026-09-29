@@ -138,10 +138,11 @@ tab too tall for them scrolls the page like any other screen.
 
 Vertical order on every screen: the main actions (start, flip, ○/×, next) sit in the
 bottom third, where a thumb reaches, on a PC too; pause, back and close sit at the top
-edge. Home, records and settings put the tab bar under everything, on the column's
-bottom edge. The card screen is fixed top to bottom — ticks and top strip (pause,
-progress, combo) → the face → timer bar → actions — and never scrolls as a page; a back
-that does not fit scrolls inside its own area.
+edge. Every screen but the signed-out landing, the welcome and a path with no screen
+puts the tab bar under everything, on the column's bottom edge. The card screen is fixed
+top to bottom — ticks and top strip (pause, progress, combo) → the face → timer bar →
+actions → the tab bar — and never scrolls as a page; a back that does not fit scrolls
+inside its own area.
 
 ## Contrast
 

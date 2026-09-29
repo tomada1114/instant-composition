@@ -1,5 +1,65 @@
 [
   {
+    "id": "c_2b6n7x8j",
+    "ja": "これが何をするのか知らない。",
+    "en": "I don't know what this does.",
+    "alternatives": ["I have no idea what this does.", "I'm not sure what this does."],
+    "point": "what 節は平叙文の語順で what this does",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 6,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ea295d17a142d5c1c38e66fd03d8a2d75830b6d4e026fdffaa94e83d7421bab7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2c3p5k2b",
+    "ja": "ターミナル使うのが好き。",
+    "en": "I like using the terminal.",
+    "alternatives": ["I enjoy using the terminal.", "I love using the terminal."],
+    "point": "like のあとは ～ing が自然",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 3,
+    "grammar": ["gerunds", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:23d9fd30e35049c90df84d82d1497b95bb1cf845e1a69e7ca1f8d998338e8dcd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3a7n4b5f",
+    "ja": "時短のため、エイリアスにした。",
+    "en": "I aliased it to save time.",
+    "alternatives": [
+      "I made it an alias to save time.",
+      "I set up an alias to save time."
+    ],
+    "point": "目的の to は「〜するために」。to save time",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 7,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9b8633af815925e19f0dcd212b2a67880c700c977b35d8ca38cf7e58ff83c4e3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3c3y2j5x",
     "ja": "ボットに再試行を頼んだ。",
     "en": "I asked the bot to retry.",
@@ -13,6 +73,63 @@
     "stamps": {
       "core": {
         "hash": "sha256:4366a2ed45effdc772b9a6cbf62561b0e7042a9569f9123d5bf693b0a83785d9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3n7t5d8w",
+    "ja": "あとで更新するね。",
+    "en": "I'll update it later.",
+    "alternatives": ["I'll do the update later.", "I'm going to update it later."],
+    "point": "その場で決めた未来は will",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a2910388af86fb5fab509babe5ebb022567f693247b65425cd2444a8573df992",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3p5j6y9k",
+    "ja": "何を使ってる？",
+    "en": "What do you use?",
+    "alternatives": ["What are you using?", "What tool do you use?"],
+    "point": "現在形の疑問は do you",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5243f0bb31d4fdac3ddde607a34fac6e3448ff982b0d14dce558c974b1c3b009",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3s8s5s7g",
+    "ja": "私、これ変えられる？",
+    "en": "Can I change this?",
+    "alternatives": ["Can I edit this?", "Can I change it?"],
+    "point": "「できる？」は Can I〜?",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9c95b8e8da22a54f0623eb25a0ce1b7809682e236ecf2422fe873fa8437fa6ab",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -63,6 +180,25 @@
     }
   },
   {
+    "id": "c_5d4c3d5a",
+    "ja": "このツールは無料です。",
+    "en": "This tool is free.",
+    "alternatives": ["This tool costs nothing.", "This tool is free to use."],
+    "point": "「無料」は free。形容詞なので be を使う",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8d995256167348ba1fa9f2140fe40dcf155878dd05893b66b242883d687c97ee",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_5v2z4k8s",
     "ja": "自動整形するツールが好き。",
     "en": "I like tools that auto-format.",
@@ -79,6 +215,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:bd82bf1f41014c911dd56e0cf63bb2920d227de9a2e8bdcae875f197d010d5fe",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5x8f3f8w",
+    "ja": "最新版を入れたよ。",
+    "en": "I installed the latest version.",
+    "alternatives": [
+      "I've installed the latest version.",
+      "I installed the newest version."
+    ],
+    "point": "「最新」は the latest。the をつける",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 3,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cf71fcaf7caf2694ed78230926776be5fd7428f5357d1e602a31769e177e8bdf",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -107,6 +265,25 @@
     }
   },
   {
+    "id": "c_6g9x7v4n",
+    "ja": "ターミナルを開いて。",
+    "en": "Open the terminal.",
+    "alternatives": ["Please open the terminal.", "Open a terminal."],
+    "point": "命令文は動詞で始める",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:552d17bf63d6ca54f7460a5d1353f4d05a2dfea5b92973d603fba2f7b9e527a2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6z2m4s6c",
     "ja": "新しい方のツールが速い。",
     "en": "The new tool is faster.",
@@ -120,6 +297,129 @@
     "stamps": {
       "core": {
         "hash": "sha256:d37b9db993e546a30066f11d1953bc899515b42eafcf71e7d4509c718aca3d74",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7a2h3q8s",
+    "ja": "Node を更新し再ビルドした。",
+    "en": "Having updated Node, I rebuilt it.",
+    "alternatives": [
+      "After updating Node, I rebuilt it.",
+      "I updated Node, then rebuilt it."
+    ],
+    "point": "先に終えた動作は Having + 過去分詞",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:be933e8a72f82607f0188d23c905f5f385659c4482b6890470ee217c7efafa56",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7v5k2d9e",
+    "ja": "失敗したら、教えて。",
+    "en": "Tell me if it fails.",
+    "alternatives": ["Let me know if it fails.", "Tell me if it breaks."],
+    "point": "if 節は未来でも現在形",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b143e2394f0be88127a1852289a43351f294b414f176bbb5b5f04fcd9823b4f2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8f6m5r6w",
+    "ja": "バグを一つ見つけたよ。",
+    "en": "I found a bug.",
+    "alternatives": ["I've found a bug.", "I spotted a bug."],
+    "point": "「一つ」は a。数えられる名詞",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 2,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a5ce3f37792107c8450ea4e8c20b317e0fbdf99b2c8738b885a4cb9729de98da",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8r7x6t8j",
+    "ja": "リンターをやめたら困るよ。",
+    "en": "If we dropped linting, we'd struggle.",
+    "alternatives": [
+      "If we quit linting, we'd struggle.",
+      "We'd struggle if we dropped linting."
+    ],
+    "point": "現在の仮定は if + 過去形、would + 原形",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 7,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a16461cf622591c1bd6934408ae85e9c3d42aa088916650161aa49aa128b678b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8z9y9r3p",
+    "ja": "設定を更新してもらえませんか？",
+    "en": "Would you mind updating the config?",
+    "alternatives": [
+      "Could you update the config?",
+      "Would you mind updating the config file?"
+    ],
+    "point": "Would you mind の後は動名詞 updating",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 7,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:87fc74f847ffdef730e28667180b1e15094d9c5011ea046fc7304bd11609268c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9r4d4b3t",
+    "ja": "試すには Docker が要るよ。",
+    "en": "You need Docker to test it.",
+    "alternatives": ["You'll need Docker to test it.", "To test it, you need Docker."],
+    "point": "目的は to + 動詞の原形。for testing ではない",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 6,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f71407954f2eb6cd417535f1a452a3cf96d5b780cff45e11805e606c2fa3fc66",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

@@ -4,6 +4,7 @@ import type { ReactElement } from "react";
 import { Link } from "@tanstack/react-router";
 
 import type { ApiError } from "../lib/endpoints";
+import { TabBar } from "../lib/tab-bar";
 import { Button } from "../ui/button";
 
 /**
@@ -24,28 +25,31 @@ export function DrillError({
   const t = useTranslations("Drill.error");
   const notEnough = error.code === "ERR_NOT_ENOUGH_CARDS";
   return (
-    <main className="mx-auto box-content flex min-h-[calc(var(--column-height)-4rem)] max-w-column flex-col justify-center px-4 py-8">
-      <div className="flex flex-col gap-5 rounded-card bg-card p-6">
-        <div className="flex flex-col gap-1">
-          <h1 className="text-heading">
-            {notEnough ? t("notEnoughTitle") : t("loadTitle")}
-          </h1>
-          {notEnough && available !== undefined ? (
-            <p className="text-muted-foreground">
-              {t("notEnough", { count: available })}
-            </p>
-          ) : null}
+    <>
+      <main className="mx-auto box-content flex min-h-[calc(var(--column-height)-var(--tab-bar-space)-4rem)] max-w-column flex-col justify-center px-4 pt-8 pb-[calc(var(--tab-bar-space)+2rem)]">
+        <div className="flex flex-col gap-5 rounded-card bg-card p-6">
+          <div className="flex flex-col gap-1">
+            <h1 className="text-heading">
+              {notEnough ? t("notEnoughTitle") : t("loadTitle")}
+            </h1>
+            {notEnough && available !== undefined ? (
+              <p className="text-muted-foreground">
+                {t("notEnough", { count: available })}
+              </p>
+            ) : null}
+          </div>
+          {notEnough ? (
+            <Button asChild variant="secondary">
+              <Link to="/settings">{t("widen")}</Link>
+            </Button>
+          ) : (
+            <Button variant="secondary" onClick={onReload}>
+              {t("reload")}
+            </Button>
+          )}
         </div>
-        {notEnough ? (
-          <Button asChild variant="secondary">
-            <Link to="/settings">{t("widen")}</Link>
-          </Button>
-        ) : (
-          <Button variant="secondary" onClick={onReload}>
-            {t("reload")}
-          </Button>
-        )}
-      </div>
-    </main>
+      </main>
+      <TabBar />
+    </>
   );
 }

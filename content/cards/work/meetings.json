@@ -1,5 +1,46 @@
 [
   {
+    "id": "c_2c9t4t4t",
+    "ja": "この件、ずっと議論してるね。",
+    "en": "We've been debating this for ages.",
+    "alternatives": [
+      "We've been discussing this for ages.",
+      "We've been going back and forth on this."
+    ],
+    "point": "続いている動作は have been + -ing",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:75a648c89478c4b5894eb3d363d931ef1a70660d627637f1ec71272711f3ab3f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2w3u5x6a",
+    "ja": "質問していいですか？",
+    "en": "May I ask a question?",
+    "alternatives": ["Can I ask a question?", "Could I ask a question?"],
+    "point": "許可を求めるなら May I / Can I。ask a question",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:43c047836c694101b8269c0ca43a7b16df8d34fdf85b6826a937fb2efd85cb6a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3q2v6z6c",
     "ja": "議事録は私が取ります？",
     "en": "Shall I take the minutes?",
@@ -64,6 +105,218 @@
     }
   },
   {
+    "id": "c_3y3e2g3n",
+    "ja": "私は総括を頼まれた。",
+    "en": "I was asked to sum up.",
+    "alternatives": ["They asked me to recap.", "I've been asked to summarize."],
+    "point": "「頼まれた」は be asked to do",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 7,
+    "grammar": ["passive-voice", "verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e370cd202aa9cab897ab154f56ce796a036dc71edac4aef4337960913dfd2c0d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3z6e9y9x",
+    "ja": "全員、これ見えます？",
+    "en": "Can everyone see this?",
+    "alternatives": ["Can you all see this?", "Can everybody see this?"],
+    "point": "「見える」は can see。see は進行形にしない",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fc646c577879e957a3557c18e0e543ac444385a53ef1ec0347364ab3c324300e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5m9b6g4c",
+    "ja": "今コピー配ってるよ。",
+    "en": "I'm handing out copies.",
+    "alternatives": ["I'm passing out copies.", "I'm giving out copies."],
+    "point": "「今〜している」は am + -ing。hand out は「配る」",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8b7073a31ed52ce5051c271704d3040389b4c558c9e7f6ad29e36f0f2715764a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5s2v9x5d",
+    "ja": "田中さんが今発表中です。",
+    "en": "Mr. Tanaka is presenting now.",
+    "alternatives": [
+      "Mr. Tanaka is speaking now.",
+      "Mr. Tanaka is presenting right now."
+    ],
+    "point": "「今〜している」は is + -ing。男性なら Mr.",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 3,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:26440ad08f59ebf8f45090f25d33602ff9e4f250bf928ce09ad1857abe66d81f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5v6e7w2x",
+    "ja": "3時に始めます。",
+    "en": "We start at three.",
+    "alternatives": [
+      "We begin at three.",
+      "We're starting at three.",
+      "We'll start at three."
+    ],
+    "point": "時刻の前は at。予定の開始は現在形でも言える",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:25e4c0302baded952d9fe7be6cb07c9dd2c1a755f3b28f9bd95d30d29088b4a5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6d9n6g2d",
+    "ja": "先ほど出た案に賛成です。",
+    "en": "I support the idea raised earlier.",
+    "alternatives": [
+      "I'm in favor of the idea mentioned earlier.",
+      "I agree with the idea brought up earlier."
+    ],
+    "point": "名詞のあとに過去分詞を置いて説明する",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 7,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:08e8c7f386577510f2a42a20a016fdc8838fc81e6cd030e7b044502472bcb581",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6m5r2s3k",
+    "ja": "昨日彼が議題を送ったよ。",
+    "en": "He sent the agenda yesterday.",
+    "alternatives": [
+      "He emailed the agenda yesterday.",
+      "He sent us the agenda yesterday."
+    ],
+    "point": "send の過去形は sent。yesterday で過去とわかる",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 3,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4124d447a9c2c62117793eaf18c7c0bee2c595e385a5305b8d66a9831f7bd3a1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7a5v8e6j",
+    "ja": "もっと早く発言すればよかった。",
+    "en": "I wish I'd spoken up sooner.",
+    "alternatives": [
+      "I wish I had said something earlier.",
+      "If only I'd spoken up sooner."
+    ],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9822726eb9590c58f7e5868faf07345b9f76973c0962911b27a0bcf15e9f635b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7j3k3x7m",
+    "ja": "私は開始前に資料を送っていた。",
+    "en": "I'd sent the slides beforehand.",
+    "alternatives": [
+      "I'd already sent the slides beforehand.",
+      "I'd sent the slides before we started."
+    ],
+    "point": "「その前にすでに」は過去完了 had + 過去分詞",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:978d444466cda2c10d3a927c330a3dad0d8440ef713c78a860a7bbe102945cf3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7x6h7k7u",
+    "ja": "議事録は後ほど回覧されます。",
+    "en": "The minutes will be circulated later.",
+    "alternatives": [
+      "The minutes will be sent around later.",
+      "The minutes will be shared afterward."
+    ],
+    "point": "議事録は minutes と複数形",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 7,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c4d3745cf4037cfa6acbbec09b32d43288b31e0d86d43b7f0621d74256891e5f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_7z3h6x8b",
     "ja": "次の会議は私が進行します。",
     "en": "I'll lead the next meeting.",
@@ -102,6 +355,28 @@
     }
   },
   {
+    "id": "c_8n3n6r3j",
+    "ja": "昨日の会議は欠席した。",
+    "en": "I missed yesterday's meeting.",
+    "alternatives": [
+      "I missed the meeting yesterday.",
+      "I wasn't at yesterday's meeting."
+    ],
+    "point": "「欠席する」は miss。過去形は missed",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:066c492a8e11263d98ba9422c97bbabadf0d685264c5aea09793687f7e4d7afe",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8t9p7n4e",
     "ja": "これが言っていた案です。",
     "en": "Here's the plan I mentioned.",
@@ -118,6 +393,44 @@
     "stamps": {
       "core": {
         "hash": "sha256:634f89ee88ba515fb6eac3b7710b8b0dc93a8b21c280056ebedfc90a347da5be",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9f5n2f9x",
+    "ja": "メモは私が取れますよ。",
+    "en": "I can take notes.",
+    "alternatives": ["I can take the notes.", "I'm happy to take notes."],
+    "point": "「メモを取る」は take notes。notes は複数形",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 2,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c80a770cd5882208411a91392eb3f6cf573f59c4431ce69c6045f16bec75884d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9x4m8r2r",
+    "ja": "部長は遅れています。",
+    "en": "The manager is late.",
+    "alternatives": ["The manager is running late.", "Our manager is late."],
+    "point": "「遅れている」は be late。is の後に動詞は不要",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f7bb8fe20c3f9449c0bcfcea138a58ef93638e78b5996b4820149dab32fecf93",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

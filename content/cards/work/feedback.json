@@ -1,5 +1,68 @@
 [
   {
+    "id": "c_2j9w8c6f",
+    "ja": "早く言ってくれたら手伝ったよ。",
+    "en": "I'd have helped if you'd asked.",
+    "alternatives": [
+      "If you'd told me earlier, I'd have helped.",
+      "If you'd said something, I'd have helped."
+    ],
+    "point": "過去の仮定は if + had + 過去分詞",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9fd2224290bb46fd634c417d4b34089ff8817332f5e56765eb3985a545f7b4eb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2m3e5w6m",
+    "ja": "今、指摘を読み返してる。",
+    "en": "I'm rereading your comments.",
+    "alternatives": [
+      "I'm going over your comments now.",
+      "I'm reading your comments again."
+    ],
+    "point": "今している最中は be + 動詞ing",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 3,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f3a3ea6eaa47074b7c58665d7b33f8d7c594f96a322b3debb8a4c57c5a6d03c1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3q5x6t3m",
+    "ja": "コメント送ってもいい？",
+    "en": "Can I send you comments?",
+    "alternatives": ["Could I send you comments?", "May I send you my comments?"],
+    "point": "send + 人 + 物 の語順。人は you",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3585e93d79d0d7d5db8cf73fc435606b8f497a452c0c22afef25a127e04c8b85",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_5d9b8j2t",
     "ja": "すばらしい発表だったよ。",
     "en": "That was a great presentation.",
@@ -16,6 +79,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:3a6d161596140e4daaf6f0088c2de76865115d4e629fe1adcf47f8cb52bcc3b1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5h2v2m2v",
+    "ja": "君がいなければ失敗してた。",
+    "en": "I'd have failed without you.",
+    "alternatives": [
+      "Without you, I would have failed.",
+      "If not for you, I'd have failed."
+    ],
+    "point": "If not for you は過去の仮定の言い方",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 7,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a1c8f633ca481b169dbb991fabb194706e02f81742986fef798cfc215867716b",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -63,6 +148,25 @@
     }
   },
   {
+    "id": "c_6n5z3z9h",
+    "ja": "いい点が二つあるよ。",
+    "en": "There are two good points.",
+    "alternatives": ["I see two good points.", "Two points are good."],
+    "point": "複数は There are。point は複数形 points",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:94db7869cdbc0756a7ffdccc48e661388c008c2cf415e87276868e73fc7a6f75",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6n8r5e9m",
     "ja": "最近、ずいぶん上達したね。",
     "en": "You've improved a lot lately.",
@@ -79,6 +183,123 @@
     "stamps": {
       "core": {
         "hash": "sha256:98b1aedd4e6b34ace71db84601341e5cd9668bc99bd58131f5db3d0772c8c130",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6q8n3m3t",
+    "ja": "もっと短くできるよ。",
+    "en": "You can shorten it.",
+    "alternatives": ["You can make it shorter.", "You could shorten it."],
+    "point": "「できる」は can + 動詞の原形",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fc08252c72e2287b90154385be30f2bff4d44efdba203256a9ee968940c37e7b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7c5q3b8n",
+    "ja": "例を足すといいよ。",
+    "en": "You should add examples.",
+    "alternatives": ["I'd add some examples.", "Try adding some examples."],
+    "point": "軽い助言は should。must は強すぎる",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8352d63059afec93edd3fd557d298ef21f51ea86ee37949c3b68e14d16a7cabd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7k5x5w8e",
+    "ja": "具体例を足してほしいんだけど。",
+    "en": "I'd like you to add examples.",
+    "alternatives": [
+      "Could you add some examples?",
+      "I'd like you to include more examples."
+    ],
+    "point": "want + 人 + to do の形",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 6,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1eda06364f6364d25fb35b9ee0746fbca7d429fdbe8da57dee801308777e502a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7m3n9r6b",
+    "ja": "君の案、採用されたよ。",
+    "en": "Your idea was accepted.",
+    "alternatives": ["Your proposal was approved.", "Your idea got accepted."],
+    "point": "された は was + 過去分詞で受け身にする",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 3,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5a69884ad2973ead3b4e1bdfefa075bc3f6c7745b71646a8896086aa70b6e7bd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7s7t7h5w",
+    "ja": "よくやってるね。",
+    "en": "You're doing great.",
+    "alternatives": ["You're doing well.", "You're doing a great job."],
+    "point": "「今うまくやっている」は You're doing",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6a1616f724026caa2b85f5858fe5076eaf91d9ebbf4526caa46cd95ed578205b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8a6r9d8a",
+    "ja": "何を直せばいいですか？",
+    "en": "What should I fix?",
+    "alternatives": ["What do I need to fix?", "What should I change?"],
+    "point": "「どうすれば」でなく what + should + 主語",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 2,
+    "grammar": ["wh-questions", "modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b286dde3949fa033369722fa3e5f64695fa85f368a3ce3f8f4b17df56cca697a",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -120,6 +341,88 @@
     "stamps": {
       "core": {
         "hash": "sha256:cc6f2788c7c37b6bbc19729a0d2f7aed9052f1c375a29c6755e2eaa1b9eef3ee",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9d7a3k8f",
+    "ja": "感想をもらえますか？",
+    "en": "Could I get feedback?",
+    "alternatives": ["Can I get some feedback?", "Could you give me feedback?"],
+    "point": "feedback は数えられない名詞。a は付けない",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 2,
+    "grammar": ["requests-permission", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:555aeddcb2cbd4179a3f844ea0f1f1c14a037f0387b30e010cb5ea916f0cc65f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9p8q6g6r",
+    "ja": "要点を絞れと言われた。",
+    "en": "I was told to be concise.",
+    "alternatives": ["I was told to be brief.", "They asked me to keep it short."],
+    "point": "tell + 人 + to do",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 7,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d9f1607f87a7dd2b02e18e197e8376c74585be011b920997b1254242f97b2a47",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9w8u9g3a",
+    "ja": "前回の点、直してくれたね。",
+    "en": "You fixed what I flagged last time.",
+    "alternatives": [
+      "You fixed the points I raised last time.",
+      "You fixed what I pointed out last time."
+    ],
+    "point": "last time と一緒なら過去形。現在完了は使えない",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 6,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c275f569cc0ce6b3d14ed89fbccba3fc585fa74d9ab01d149dbebfc65e35e25c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9z9z3m3k",
+    "ja": "何がまずかったか、教えて？",
+    "en": "Can you tell me what went wrong?",
+    "alternatives": [
+      "Could you tell me what went wrong?",
+      "Can you tell me what was wrong?"
+    ],
+    "point": "間接疑問は主語動詞の語順のまま",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 7,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:619060be4700efbc81ebf4e366f07517a5e96aa2d2f59e32f44040de03ef0a46",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

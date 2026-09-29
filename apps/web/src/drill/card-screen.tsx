@@ -91,7 +91,8 @@ function Actions({
 
 /**
  * W4 to W7: the ticks and top strip, the card, the timer under a front and
- * the actions, fixed top to bottom so the page itself never scrolls.
+ * the actions, fixed top to bottom above the tab bar so the page itself never
+ * scrolls.
  */
 export function CardScreen({
   state,
@@ -112,7 +113,7 @@ export function CardScreen({
   const where = progress(state);
   const first = where.pass === "first";
   return (
-    <main className="mx-auto box-content flex h-[calc(var(--column-height)-1.5rem-var(--safe-bottom))] max-w-column flex-col gap-3 px-4 pt-3 pb-[calc(0.75rem+var(--safe-bottom))]">
+    <main className="mx-auto box-content flex h-[calc(var(--column-height)-var(--tab-bar-space)-1.5rem)] max-w-column flex-col gap-3 px-4 pt-3 pb-[calc(var(--tab-bar-space)+0.75rem)]">
       <TopStrip
         pass={where.pass}
         current={first ? round.offset + where.position : where.position}

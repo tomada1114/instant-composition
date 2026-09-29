@@ -93,14 +93,17 @@ There is no icon library.
 
 ## Tab bar
 
-The one navigation, on home, records and settings — their loading and failed states
-included, so switching tabs never blanks it — and nowhere else: a round is the whole
-screen (its pause sheet's "stop" is the way out), the welcome screen has its one way
-forward, and the signed-out landing has nowhere to go yet. Researched on Refero:
-learning apps keep their sections in a bottom bar at the thumb (Brilliant's home,
-courses, leagues, settings; Duolingo, BoldVoice, LookUp, Kann) and drop it for a quiz
-(Kann's kana quiz keeps dismiss and progress along the top, no bar) — so the top edge
-stays the drill's, for its ticks.
+The one navigation, on every screen once a read has said who is signed in: home, records
+and settings, their loading and failed states included, so switching tabs never blanks
+it; the drill's start, card and done screens and its failed state; the summary and the
+recap. It is left off only where there is nowhere to go yet: the signed-out landing, the
+first visit's welcome with its one way forward, a path with no screen (`empty-state`),
+and a loading state before anyone is known to be signed in (home's skeleton, `/drill`
+and `/recap` waiting on the home view). Researched on Refero: learning apps keep their
+sections in a bottom bar at the thumb (Brilliant's home, courses, leagues, settings;
+Duolingo, BoldVoice, LookUp, Kann) and drop it for a quiz — the owner chose otherwise in
+#267, so a round can be left mid-way (to change a setting just noticed); the top edge
+still stays the drill's, for its ticks.
 
 - Fixed to the column's bottom edge: `bg-background`, three equal cells across the
   column over one hairline (`border-t border-border`), each `--tab-bar-height` (49, an
@@ -121,8 +124,17 @@ stays the drill's, for its ticks.
   by) plus its own bottom gap. Home's skeleton reserves that space but draws no bar: a
   signed-out visitor at `/` must not see one flash before the landing.
 - Esc on records and settings still goes home.
+- From a round's first front until it closes, choosing a tab (or Back) pauses the drill
+  and opens the leave sheet (see `sheet`); the start screen, the done screen, the
+  summary and the recap leave at once — there is nothing to lose. A round left this way
+  is resumed from home's "resume", from the card it stopped at, as the pause sheet's
+  "stop" leaves it.
+- The card screen's fixed height is the column less `--tab-bar-space`, so its actions
+  end 12 above the bar; a live summary's sticky actions rest on the bar
+  (`bottom: --tab-bar-space + --column-inset`), not on the window's edge.
 
-`apps/web/src/lib/tab-bar.tsx` is this recipe.
+`apps/web/src/lib/tab-bar.tsx` is this recipe, and
+`apps/web/src/drill/use-leave-guard.ts` the drill's question.
 
 ## In-page tabs (`tabs`)
 
@@ -346,12 +358,15 @@ above and below each. Section titles are muted `label`s.
   between a hairline and its buttons — only in keys mode. On a `wide` window it opens
   centered in the window instead (`wide:items-center`), every corner rounded
   (`wide:rounded-card`), over the same scrim: a bar at the bottom of a tall window sits
-  far from the screen it pauses.
+  far from the screen it pauses. The leave sheet, asked when a tab or Back would leave a
+  round under way, is the pause sheet's recipe with its own title ("leave the round?"),
+  the same resume hint, "leave" in place of "stop" and no key list; focus waits on
+  "continue", which Escape presses.
 - `info-tip`: a 44 hit area around a 16 ⓘ glyph beside a section title; pressing it
   opens one muted `caption` line under the title in place (`aria-expanded`). For a
   definition someone needs once: what counts as mastered, how the streak counts.
-- `toast`: fixed across the column with its 16 gutter, 96 above the column's bottom edge
-  (plus `--column-inset` and `--safe-bottom`), so it clears the drill's bottom buttons;
+- `toast`: fixed across the column with its 16 gutter, 96 above the tab bar (plus
+  `--column-inset` and `--tab-bar-space`), so it clears the drill's bottom buttons;
   `bg-raised rounded-tile`, padding 14 / 16, the notice glyph 12 before a
   `text-foreground` line. Gone after 4 s (`TUNING.toastMs`), shown again for each new
   failure; it takes no press (`pointer-events-none`) and speaks through a

@@ -1,5 +1,47 @@
 [
   {
+    "id": "c_2d7x6p5x",
+    "ja": "地図を持ってくればよかった。",
+    "en": "I wish I'd brought a map.",
+    "alternatives": ["I should have brought a map.", "If only I'd brought a map."],
+    "point": "過去の後悔は wish + had done",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8aa90d213ba4b7198324e1540a2d93c0bb4711e240c074d68e4d3a0285826fd6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2e2d4b4k",
+    "ja": "道を間違えたと気づいた。",
+    "en": "I realized I'd gone wrong.",
+    "alternatives": [
+      "I realized I had taken a wrong turn.",
+      "I realized I'd gone the wrong way.",
+      "I realized I'd taken the wrong road."
+    ],
+    "point": "気づく前の出来事は過去完了（I'd taken）",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:62781bbc9c29ce58e96622366fe1c4b8a15a0e640dead480a66d183c94c250f8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2f6f7y3b",
     "ja": "10分歩きました。",
     "en": "I walked for ten minutes.",
@@ -13,6 +55,47 @@
     "stamps": {
       "core": {
         "hash": "sha256:ad9ebd2406121830936e6999d152c20a9ad3f3489ce13bf1f61a578f28e6ca6f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2n5p2u7v",
+    "ja": "信号までまっすぐ行って。",
+    "en": "Go straight to the light.",
+    "alternatives": [
+      "Go straight until the light.",
+      "Keep going to the traffic light."
+    ],
+    "point": "命令文は主語なしで動詞から始める",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 3,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0eb85a1af42849dde08a9e12bcce83956689af7d290954bad91882bff5c7929e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2p7r4f2x",
+    "ja": "ここは行き止まりです。",
+    "en": "It's a dead end.",
+    "alternatives": ["This is a dead end.", "This road doesn't go through."],
+    "point": "行き止まりは a dead end",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dd85022cbffa665c9ef00fb07d1f8a43c5bb759e6623b209c98d06ba84efe2ef",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -41,6 +124,52 @@
     }
   },
   {
+    "id": "c_3r6d8q7s",
+    "ja": "あれが私の泊まるホテルです。",
+    "en": "That's the hotel where I'm staying.",
+    "alternatives": [
+      "That's the hotel I'm staying at.",
+      "That's the hotel that I'm staying at.",
+      "That's where I'm staying."
+    ],
+    "point": "場所を説明する where 節",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c1cad02adb67e74fa589ed2083da8511408676db0b748b468d2dd865107459de",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3w2v6t2j",
+    "ja": "歩いて行けるよ。",
+    "en": "You can walk there.",
+    "alternatives": [
+      "You can go on foot.",
+      "We can walk there.",
+      "It's within walking distance."
+    ],
+    "point": "「行ける」は can + 動詞の原形",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a5137094829212422b1d3fe05a8e185782674197cb7be1cdb4958a5c7c711843",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3w9u7x5v",
     "ja": "ここ、来たことある？",
     "en": "Have you been here before?",
@@ -54,6 +183,150 @@
     "stamps": {
       "core": {
         "hash": "sha256:1eba508930d16f81b85decb18f1a5c7b088b79285eb193cc0ce6acaa6a859c8e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3z5r6x9c",
+    "ja": "道を聞いていれば、着けたのに。",
+    "en": "If I'd asked, I'd have arrived.",
+    "alternatives": [
+      "If I had asked, I'd have made it.",
+      "I'd have made it if I'd asked.",
+      "If I'd asked, I'd have gotten there."
+    ],
+    "point": "過去の仮定は had done と would have done",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f54fc37e3ff0c7a265db1c4832dd2fedb0bc0ec39480b09eba80bd8e7eeb82f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4h3z6z3w",
+    "ja": "もう一度お願いします。",
+    "en": "Could you repeat that?",
+    "alternatives": ["Can you say that again?", "One more time, please."],
+    "point": "聞き返す丁寧な依頼は Could you 〜?",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9ffec1f9a2725e269de2c0768e130fbd56bb6b19a2965da4f3e3367c9015cc16",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4x4g7e8g",
+    "ja": "地下鉄の入口はどこ？",
+    "en": "Where is the subway entrance?",
+    "alternatives": [
+      "Which way is the subway entrance?",
+      "Where's the entrance to the subway?"
+    ],
+    "point": "入口は entrance。場所は Where で聞く",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 3,
+    "grammar": ["wh-questions", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4dd65b6e500e9ab6d4bcbcf42a59c85dd4938d6cfdd33262dd5fc8d1b40d46a2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5c9a4b7x",
+    "ja": "あの店は見つけにくいですよ。",
+    "en": "That shop's hard to spot.",
+    "alternatives": [
+      "That shop is hard to find.",
+      "That shop isn't easy to find.",
+      "It's hard to spot that shop."
+    ],
+    "point": "形容詞 + to do。主語は to の後ろに繰り返さない",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 7,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c21edba5533a6f522791294c27b06f76721329fcfc3a3e78cbaefb9675d48a65",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5h4a2p3m",
+    "ja": "駅は近いですよ。",
+    "en": "The station is close.",
+    "alternatives": ["The station is near.", "It's close by."],
+    "point": "「近い」は close か near で言える",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8fb7081c275892def5db8ebb4206edc00b5e5d5fcea9fe79d68e2a38d33c157b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5q9c7u3b",
+    "ja": "次の角を右に曲がって。",
+    "en": "Take the next right.",
+    "alternatives": ["Turn right at the next corner.", "Make the next right turn."],
+    "point": "「次の角を右」は the next right",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 3,
+    "grammar": ["imperatives", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:06aa7032a87de9cfc3801e5d182a6ce26e7e2c90714fb4c8653519eee853e229",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5r9a2r8t",
+    "ja": "ATMはある？",
+    "en": "Is there an ATM?",
+    "alternatives": ["Is there an ATM nearby?", "Do you have an ATM?"],
+    "point": "「〜はありますか」は Is there 〜?",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:71d3f81402cca035501726f0545909d89d58490b42bff03bd1849d04d976ec2f",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -82,6 +355,25 @@
     }
   },
   {
+    "id": "c_6r3r7e5t",
+    "ja": "地図を見ています。",
+    "en": "I'm looking at the map.",
+    "alternatives": ["I'm checking the map.", "I'm reading the map."],
+    "point": "今の動作は am + -ing",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c0a09e4cdeb26fbd62093d9ff7b57e59be6a35a5a2895ae1d71672b7b7b91a02",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_7y5r9g5z",
     "ja": "バスに乗るほうが早いよ。",
     "en": "Taking the bus is faster.",
@@ -95,6 +387,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:6f15218d7dacc489546a05f8454333498a7bf96a9ec2882e230cfc08bb0104df",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9c2k5k2b",
+    "ja": "まっすぐ行けば、すぐ分かるよ。",
+    "en": "Go straight and you'll spot it.",
+    "alternatives": [
+      "Keep going and you can't miss it.",
+      "Just go straight and you'll find it."
+    ],
+    "point": "「〜すれば」は命令文 + and で言える",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 7,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:365fb82f938dfd96afdde15ed146c2aaa412e38e3a3c925f00ca37704941f28f",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

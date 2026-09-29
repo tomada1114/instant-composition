@@ -1,5 +1,69 @@
 [
   {
+    "id": "c_2d2v5f5e",
+    "ja": "遅れてごめんね。",
+    "en": "Sorry I'm late.",
+    "alternatives": ["I'm sorry I'm late.", "Sorry for being late."],
+    "point": "謝るときは sorry で始めてよい",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8063d52ca40fa9d920671d8613adf83fbecc37dd876062abc90559b86b4531f0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2d5f5h2x",
+    "ja": "もっと気遣えばよかったよ。",
+    "en": "I wish I'd been more considerate.",
+    "alternatives": [
+      "I wish I'd been more thoughtful.",
+      "I should have been more considerate.",
+      "If only I'd been more considerate."
+    ],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:293c986f8499192b87b2dd6b4036c65d3b7a565f6b580cb53b175120d063984c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2z2w7c5k",
+    "ja": "思ってた以上に助かったよ。",
+    "en": "That helped more than I expected.",
+    "alternatives": [
+      "It helped more than I expected.",
+      "That was more helpful than I expected."
+    ],
+    "point": "than の後ろは I expected。過去形で言う",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 6,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:914689bde192f1e7e30e8783e19b466ab7370a713c02010b1eb427ed5814a475",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3a4m4z5b",
     "ja": "次は遅刻しません。",
     "en": "I won't be late again.",
@@ -13,6 +77,25 @@
     "stamps": {
       "core": {
         "hash": "sha256:af7969ad39c6e0f2f02fb7c06231726927fadb7a37d70a429c3ef1d18238269d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3b2b6d6u",
+    "ja": "ごめん、今遅れてるよ。",
+    "en": "Sorry, I'm running late.",
+    "alternatives": ["I'm running late, sorry.", "Sorry, I'm running behind."],
+    "point": "「遅れてる」は be running late",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c67dbb0b15a537fc45eb7da240ccfff12990b3051e1a233abb833b5b8def40e4",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -35,6 +118,85 @@
     "stamps": {
       "core": {
         "hash": "sha256:5207368c9a06390317212bc39a1c77aeb767234b110bdbd20d647011b05fbc2d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4c3w4q5x",
+    "ja": "ささやかなお礼です。",
+    "en": "It's a small thank-you.",
+    "alternatives": ["Here's a little thank-you.", "Just a small thank-you."],
+    "point": "「お礼」は a thank-you と名詞にできる",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 2,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2185ea39741c9f2967401d2839f1788889da600269ea763e2aa13e3f7257eca0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4k7t2t6a",
+    "ja": "気にしないでね。",
+    "en": "Don't worry about it.",
+    "alternatives": ["Don't worry.", "No worries."],
+    "point": "否定の命令文は Don't + 動詞",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:50bc1f015e452a192a8e5a844aa9e271b77a4f3bcdf328c13aedc83250c27537",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4u4r9t6f",
+    "ja": "何かお返しできる？",
+    "en": "Can I return the favor?",
+    "alternatives": ["Can I repay you?", "Can I do something in return?"],
+    "point": "「お返しする」は return the favor",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 2,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2b6d3c06ef8d255fb4df4381f5b14ebe8e884e06091544368d8cb421e270d011",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4z8h6g7c",
+    "ja": "忙しいのに来てくれてどうも。",
+    "en": "Thanks for coming despite being busy.",
+    "alternatives": [
+      "Thanks for coming, even though you're busy.",
+      "Thank you for coming despite your busy schedule."
+    ],
+    "point": "despite の後ろは -ing か名詞",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 6,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f8a2b1deb5b4fe230bbf932761cb5f0a96074a99056edcaa7d1c4cdde184ba46",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -85,6 +247,47 @@
     }
   },
   {
+    "id": "c_5v4f6k6g",
+    "ja": "ここにミスがあるよ。",
+    "en": "There's a mistake here.",
+    "alternatives": ["There's an error here.", "I see a mistake here."],
+    "point": "「ミス」は a mistake。a を忘れない",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f2f88bfb9a3134e20876658f1fa8d3165de3c0412123cbd97c4bae4d1f02c321",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6d3w2n5z",
+    "ja": "一晩泊めてくれてありがとう。",
+    "en": "Thanks for letting me stay overnight.",
+    "alternatives": [
+      "Thank you for putting me up.",
+      "Thanks for letting me stay the night."
+    ],
+    "point": "「泊めてくれて」は letting me stay",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["causatives", "gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:06298412202f92aaa6aa35291e4e5c9551098b82b7341b346c70ae114b2624f8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6z8d2f6w",
     "ja": "彼女に謝ったほうがいいな。",
     "en": "I should apologize to her.",
@@ -98,6 +301,25 @@
     "stamps": {
       "core": {
         "hash": "sha256:447b699fa941a8e1e0058ccf55555579d06458518b7256e9adf3db44ce865426",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7c8t6w4t",
+    "ja": "アドバイスありがとう。",
+    "en": "Thanks for the advice.",
+    "alternatives": ["Thank you for the advice.", "I appreciate the advice."],
+    "point": "advice は数えられない名詞。a は付けない",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 3,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c92ceedfada419eb4c3f121502519e019b51bc3aa9f1c3449ed2e3d22544487",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -120,6 +342,92 @@
     "stamps": {
       "core": {
         "hash": "sha256:7d47859c2105fcd2abf6e9dc10746b95150d11448de3398d033d83c7fa3b8552",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8g6z2k8x",
+    "ja": "昨日は本当に助かったよ。",
+    "en": "You really helped me yesterday.",
+    "alternatives": [
+      "Thanks for helping me yesterday.",
+      "You were a big help yesterday."
+    ],
+    "point": "help の過去形は helped",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 3,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4c4bb69c74433a3d81c4e30d77b3ccfed695626f2a76c052e57652b80806f967",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8y2c2w6h",
+    "ja": "新人なので、助かります。",
+    "en": "Being new, I appreciate the help.",
+    "alternatives": [
+      "As a newcomer, I appreciate your help.",
+      "Since I'm new, your help means a lot."
+    ],
+    "point": "Being ~ は「~なので」の分詞構文",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:09bb42c1769570f768f544b679cf5769509640f7b167856ed17f00e674a608a9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9f5x2g6x",
+    "ja": "寝坊して、遅れてすみません。",
+    "en": "Sorry I'm late, having overslept.",
+    "alternatives": [
+      "Sorry for being late, having overslept.",
+      "I'm sorry to be late, having overslept.",
+      "Sorry I'm late because I overslept."
+    ],
+    "point": "先に起きたことは having + 過去分詞",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:659833d01b60321634b9ab45ca1eac6152bb955f223da5afac83f9b8a4264302",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9k6h7s6x",
+    "ja": "許してくれる？",
+    "en": "Can you forgive me?",
+    "alternatives": ["Will you forgive me?", "Could you forgive me?"],
+    "point": "許しを頼むときは Can you で始める",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 3,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d2364a98cdde52b1c26823b86dff6a06d77f56b80a5ee47ffb0aed50216313e7",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

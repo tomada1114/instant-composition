@@ -2,12 +2,14 @@ import { useNavigate } from "@tanstack/react-router";
 import { useEffect, useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
+import { TabBar } from "../lib/tab-bar";
 import type { GradeKeys, RoundKind, RoundPayload } from "../openapi";
 import { useAnswerQueue, useQueuedDrill, type ArrivedQueue } from "./answer-sync";
 import { currentCard, initDrill, progress, type DrillState } from "./drill-state";
 import { CardScreen } from "./card-screen";
 import { DrillDone } from "./drill-done";
 import { IntroScreen } from "./intro-screen";
+import { LeaveSheet } from "./leave-sheet";
 import { PauseSheet } from "./pause-sheet";
 import { ReadyScreen } from "./ready-screen";
 import { browserSound } from "./sound";
@@ -18,6 +20,7 @@ import {
   useRoundFinish,
   type DrillAction,
 } from "./use-drill";
+import { useLeaveGuard } from "./use-leave-guard";
 
 /** Pixels one ↑/↓ press moves an overflowing back. */
 const SCROLL_STEP = 48;
@@ -78,7 +81,7 @@ export function DrillSession({
   const t = useTranslations("Drill");
   const navigate = useNavigate();
   const goHome = (): void => {
-    void navigate({ to: "/" });
+    void navigate({ to: "/", ignoreBlocker: true });
   };
   const { queue, unsaved } = useAnswerQueue(round);
   const [failures, setFailures] = useState(0);
@@ -100,6 +103,7 @@ export function DrillSession({
   });
   const announcement = useAnnouncement(state, round);
   useDrillClock(state, dispatch);
+  const leave = useLeaveGuard(state, dispatch);
 
   function act(action: DrillAction, key: boolean): void {
     const at = performance.now();
@@ -114,12 +118,16 @@ export function DrillSession({
     } else if (action.type === "flip") {
       dispatch({ type: "flip", at, wall });
     } else {
+      if (action.type === "resume") leave.stay();
       dispatch({ type: action.type, at });
     }
   }
   useDrillKeys(state, gradeKeys, (action) => {
     act(action, true);
   });
+  const resume = (): void => {
+    act({ type: "resume" }, false);
+  };
 
   const { phase, combo } = state;
   useEffect(() => {
@@ -127,31 +135,25 @@ export function DrillSession({
     browserSound.play(combo >= 2 ? "combo" : phase.fast ? "okFast" : "ok");
   }, [sound, phase, combo]);
 
-  if (
-    phase.kind === "intro" &&
-    (round.kind !== "placement" || round.answered.length + unsaved.length > 0)
-  ) {
-    return (
-      <ReadyScreen
-        kind={round.kind}
-        count={round.total}
-        where={progress(state)}
-        offset={round.offset}
-        onStart={() => {
-          act({ type: "start" }, false);
-        }}
-      />
-    );
-  }
   if (phase.kind === "intro") {
+    const start = (): void => {
+      act({ type: "start" }, false);
+    };
     return (
-      <IntroScreen
-        first={first}
-        count={round.deck.length}
-        onStart={() => {
-          act({ type: "start" }, false);
-        }}
-      />
+      <>
+        {round.kind !== "placement" || round.answered.length + unsaved.length > 0 ? (
+          <ReadyScreen
+            kind={round.kind}
+            count={round.total}
+            where={progress(state)}
+            offset={round.offset}
+            onStart={start}
+          />
+        ) : (
+          <IntroScreen first={first} count={round.deck.length} onStart={start} />
+        )}
+        <TabBar />
+      </>
     );
   }
   if (phase.kind === "finishing")
@@ -166,10 +168,8 @@ export function DrillSession({
       />
     );
 
-  const resumeAt =
-    state.pass === "first"
-      ? round.offset + state.firstDone + state.index + 1
-      : round.offset + state.firstDone + state.queue.length + state.index + 1;
+  const behind = state.pass === "first" ? 0 : state.queue.length;
+  const resumeAt = round.offset + state.firstDone + behind + state.index + 1;
   return (
     <>
       <CardScreen
@@ -180,14 +180,15 @@ export function DrillSession({
           act(action, false);
         }}
       />
-      {state.paused ? (
+      <TabBar />
+      {leave.asking ? (
+        <LeaveSheet position={resumeAt} onLeave={leave.leave} onStay={resume} />
+      ) : state.paused ? (
         <PauseSheet
           position={resumeAt}
           gradeKeys={gradeKeys}
           onQuit={goHome}
-          onContinue={() => {
-            act({ type: "resume" }, false);
-          }}
+          onContinue={resume}
         />
       ) : null}
       <Toast signal={failures} message={t("save.failed")} />

@@ -24,7 +24,8 @@ import {
  * W9 and its kin: what a round moved, top to bottom. `live` is the round
  * just finished — changed values count up and the buttons close it;
  * `recap` (W9r) re-reads today's last summary with every value final, and
- * ← and Esc (`onEnd`) go back.
+ * ← and Esc (`onEnd`) go back. Whoever renders it puts the tab bar under it,
+ * and its foot keeps clear of the bar.
  */
 export function SummaryScreen({
   summary,
@@ -81,7 +82,7 @@ export function SummaryScreen({
   const placement = summary.placement;
 
   return (
-    <main className="mx-auto box-content flex min-h-[calc(var(--column-height)-1rem)] max-w-column flex-col px-4 pt-4">
+    <main className="mx-auto box-content flex min-h-[calc(var(--column-height)-var(--tab-bar-space)-1rem)] max-w-column flex-col px-4 pt-4 pb-(--tab-bar-space)">
       <header className="flex flex-col gap-6">
         <div className="flex h-11 items-center justify-between">
           {live ? (
@@ -154,7 +155,7 @@ function SummaryActions({
 }>): ReactElement {
   const t = useTranslations("Summary");
   return (
-    <footer className="sticky bottom-0 -mx-4 mt-auto flex flex-col gap-2.5 bg-background px-4 pt-3 pb-[calc(0.75rem+var(--safe-bottom))]">
+    <footer className="sticky bottom-[calc(var(--tab-bar-space)+var(--column-inset))] -mx-4 mt-auto flex flex-col gap-2.5 bg-background px-4 pt-3 pb-3">
       {summary.yesterday ? (
         summary.todayOpen ? (
           <>

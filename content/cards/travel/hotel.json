@@ -1,5 +1,152 @@
 [
   {
+    "id": "c_3w8g7b8x",
+    "ja": "違う鍵をもらったに違いない。",
+    "en": "I must've gotten the wrong key.",
+    "alternatives": [
+      "I must have been given the wrong key.",
+      "They must have given me the wrong key."
+    ],
+    "point": "過去の確信は must have done",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c07b58cbc298737c34da63a0209b7effea779d0cc60dde6ab4f4e7fb940158dd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3w8r8a6w",
+    "ja": "Wi-Fi使える？",
+    "en": "Can I use Wi-Fi?",
+    "alternatives": [
+      "Is Wi-Fi available?",
+      "Can I connect to Wi-Fi?",
+      "Do you have Wi-Fi?"
+    ],
+    "point": "「〜できますか」は Can I 〜?",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c27354db90d7388f7aad580180dabfcfeaeb8aac49aa9c6f30120da86e7ee3de",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4d2c8c3g",
+    "ja": "予約したのは禁煙室でした。",
+    "en": "The room I booked was non-smoking.",
+    "alternatives": [
+      "I booked a non-smoking room.",
+      "What I booked was a non-smoking room.",
+      "The one I reserved was non-smoking."
+    ],
+    "point": "room の後ろに I booked を直接つなぐ",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:783d9176cf37a85e7b90995d6f1ab0939923b9c1a8807e1bc95e9a95a1cd193b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4t5c9h2j",
+    "ja": "隣の部屋がうるさいです。",
+    "en": "The next room is noisy.",
+    "alternatives": ["It's noisy next door.", "The room next door is loud."],
+    "point": "「隣の部屋」は the next room か next door",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 3,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1a957d90a6d070bc5610515b31acf6a1a72bc8f7400ca5a69ce304b61b1b0401",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4z7j8v9f",
+    "ja": "今日は掃除は結構です。",
+    "en": "Please skip cleaning today.",
+    "alternatives": ["Please don't clean my room today.", "No cleaning today, thanks."],
+    "point": "「しないで」は Don't か skip で言える",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3b2b486a37ee49c1f82a9046bef54f83f6e63ff931f5c57bf67fa7de7b2065b5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5a6m7t9s",
+    "ja": "部屋が思ったより狭い。",
+    "en": "The room's smaller than I expected.",
+    "alternatives": [
+      "This room is smaller than I thought.",
+      "The room is smaller than I'd expected."
+    ],
+    "point": "than の後は I expected で十分（it は不要）",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 5,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0322c2ab165ef78fffee1260866b080d13a029a09b4e03c65d56297b35a873ae",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5j9b9r8g",
+    "ja": "タオルを何枚かください。",
+    "en": "Some towels, please.",
+    "alternatives": ["Can I have some towels?", "I need some towels."],
+    "point": "数が決まらない複数は some towels",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e0e004a4e4926c069a0ab04786b77eefe34b9601b7a2ba5ea4597c644b283115",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_5m2u5n6k",
     "ja": "昨日、予約を変更しました。",
     "en": "I changed my reservation yesterday.",
@@ -63,6 +210,86 @@
     }
   },
   {
+    "id": "c_6c3c8q4g",
+    "ja": "少し待ってもらえますか？",
+    "en": "Do you mind waiting?",
+    "alternatives": ["Would you mind waiting a moment?", "Could you wait a moment?"],
+    "point": "mind の後ろは -ing 形",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 3,
+    "grammar": ["gerunds", "requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b6fa7229b9d0f4f853043d80161ec79f5680f69eb2e5da8a83fef75bf55a3454",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6h6g5p7p",
+    "ja": "この部屋は禁煙ですか？",
+    "en": "Is this room nonsmoking?",
+    "alternatives": ["Is this a no-smoking room?", "Is this room smoke-free?"],
+    "point": "「禁煙の」は nonsmoking か no-smoking",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:505041507322829aaa9b82d0534d3be96246ea0bf99c605231b54a57103a93ff",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7g6j8h2g",
+    "ja": "遅れるようなら、連絡します。",
+    "en": "I'll call if I'm running late.",
+    "alternatives": [
+      "I'll let you know if I'm late.",
+      "If I'm running late, I'll call you.",
+      "I'll give you a call if I'm delayed."
+    ],
+    "point": "if 節は未来のことでも現在形（I'm）",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6bad520bd8a56235ec565faa7f991119fdb18470301ec1c5fa124f22b9f22c19",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7g8s4v3r",
+    "ja": "朝食は無料ですか？",
+    "en": "Is breakfast free?",
+    "alternatives": ["Is breakfast included?", "Is the breakfast free?"],
+    "point": "無料は free。食事名に冠詞は付けない",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a53b22e4b3528c46995dd689a2df50ae142febc7f619eada03cd9785039b78fb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_7t6t7r8j",
     "ja": "隣が一晩中うるさいんです。",
     "en": "Next door's been noisy all night.",
@@ -79,6 +306,47 @@
     "stamps": {
       "core": {
         "hash": "sha256:727397c0b78b1f904c613f2ed3f02ecbd10dd60241e5d7a00696f9f6c4f810c6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8b6t2x7k",
+    "ja": "予約していれば、泊まれたのに。",
+    "en": "If I'd booked, I could've stayed.",
+    "alternatives": [
+      "If I had booked, I could have stayed.",
+      "I could've stayed if I'd booked."
+    ],
+    "point": "過去の仮定は had done と could have done",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cc228834b8e8f40105e78b95aca6011ad737a991b37e9d3b5a8a7bfac4bdd5f5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8b8m8c9q",
+    "ja": "ドライヤーください。",
+    "en": "A hair dryer, please.",
+    "alternatives": ["Could I get a hair dryer?", "I'd like a hair dryer."],
+    "point": "数えられる単数の物には a を付ける",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 2,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2cd797d611f07e77facc195cb204c4e0f0dc290b913c5c607a1e65cb97839659",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -104,6 +372,25 @@
     }
   },
   {
+    "id": "c_8y2p2q3j",
+    "ja": "窓を開けてもいいですか？",
+    "en": "May I open the window?",
+    "alternatives": ["Can I open the window?", "Could I open the window?"],
+    "point": "許可を求めるなら May I 〜?",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bad1756a78e0adb88606c701e0a78194d1f66949fe2d2345f28d482cb95f5296",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_9h2a6c9k",
     "ja": "金庫を使うといいですよ。",
     "en": "You should use the safe.",
@@ -117,6 +404,29 @@
     "stamps": {
       "core": {
         "hash": "sha256:cea0eb914ff635685cf2e3239486f39b444658a9a5ab29d70d7f47cec08520cc",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9p5q8y8k",
+    "ja": "もっと静かな宿がよかった。",
+    "en": "I wish I'd chosen somewhere quieter.",
+    "alternatives": [
+      "I should have picked a quieter hotel.",
+      "If only I'd chosen a quieter hotel.",
+      "I wish I'd chosen a quieter place."
+    ],
+    "point": "過去の後悔は wish + had done",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 7,
+    "grammar": ["wishes-regrets", "comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e9239d0ad97ccb6ade2a50ca62e655f0913189fd15daf3132c2587bfe8d88011",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

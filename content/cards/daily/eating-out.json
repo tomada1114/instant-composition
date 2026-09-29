@@ -19,6 +19,48 @@
     }
   },
   {
+    "id": "c_2y3e2p3k",
+    "ja": "席は空いてますか？",
+    "en": "Are there any seats?",
+    "alternatives": ["Do you have any seats?", "Are there any open seats?"],
+    "point": "疑問文で複数なら Are there any 〜?",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 2,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:269cdca3657585706d1500b1301c70418f334179528be9b546f5774a1e83c295",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3a2b9p5q",
+    "ja": "席を替えていいですか？",
+    "en": "Could I change seats?",
+    "alternatives": [
+      "Can I switch seats?",
+      "Can we change tables?",
+      "May I change seats?"
+    ],
+    "point": "許可を求めるなら Could I / Can I",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f67b7383917fe704e2b0e17efc002e7960dfbb275341b41f85cd0c7a20070955",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3j2w6j7m",
     "ja": "何か食べるものが欲しいな。",
     "en": "I want something to eat.",
@@ -38,6 +80,47 @@
     }
   },
   {
+    "id": "c_3u4r6r6z",
+    "ja": "おすすめは何ですか？",
+    "en": "What do you recommend?",
+    "alternatives": ["What would you recommend?", "What's good here?"],
+    "point": "「何」は What で始め、do you + 動詞を続ける",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3db26f946a2babbe59d260185292edba196734a8e64764f6db0bf3d85f240900",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4f5q7f3z",
+    "ja": "着いたら、もう閉店してた。",
+    "en": "The place had already closed.",
+    "alternatives": [
+      "The place had closed when we arrived.",
+      "When we got there, it had closed."
+    ],
+    "point": "到着より前に終わっていたことは過去完了",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4940ac5266de296dd082509e54cea5a584343aeff1cd06a9120c86560ecde8c4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4n2s4p6j",
     "ja": "ここに来たことある？",
     "en": "Have you been here before?",
@@ -51,6 +134,145 @@
     "stamps": {
       "core": {
         "hash": "sha256:b29b2f0ca89f0fd36a5d200336c182bf3e921637bbdd6336da8ca62e4bbc5293",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4v3y9t9m",
+    "ja": "お水、もらえる？",
+    "en": "Can I have some water?",
+    "alternatives": ["Can I get some water?", "Could I have some water?"],
+    "point": "頼むときは Can I have 〜?",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1354d9e69d095d1cc1a603313d33f4352f2254faeb8e5ade2abd16b1e9072071",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5m9a7t2u",
+    "ja": "ランチは2時までだよ。",
+    "en": "Lunch is served until two.",
+    "alternatives": ["Lunch is available until two.", "They serve lunch until two."],
+    "point": "料理が「出される」は be served",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 3,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c8709d1191f29cb6d2db3901fa8ad449e7793db18b42fcdff9ae47b56556f56",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5n4u7w4c",
+    "ja": "彼女はメニューを見て迷った。",
+    "en": "Reading the menu, she couldn't decide.",
+    "alternatives": [
+      "She was reading the menu, unable to decide.",
+      "She read the menu and couldn't decide."
+    ],
+    "point": "同時の動作は -ing の分詞構文で言う",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f28dec2e1e31e5f446e9b2e50870217175b24388b2a3cee1ae788a06cb18641",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5y3n9k3q",
+    "ja": "弟に注文を頼んだよ。",
+    "en": "I asked him to order.",
+    "alternatives": ["I asked my brother to order.", "I asked him to order it."],
+    "point": "ask + 人 + to + 動詞。人は目的格",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:267d7de6af8370a20676c302e16c1a2c8b23af403d2ad9e8357d32112bea3edb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6g3g4z2s",
+    "ja": "席が空き次第、お呼びします。",
+    "en": "We'll call once a table opens.",
+    "alternatives": [
+      "We'll call you once a table opens up.",
+      "We'll call you as soon as one opens."
+    ],
+    "point": "when の後は未来でも現在形",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3c995e3bca601ec8dee2bfa4e44aa5882a1d9cee71004398a9ce06bf8113fd79",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6u4t4t3q",
+    "ja": "残り、包んでもらえますか？",
+    "en": "Could you box this up, please?",
+    "alternatives": ["Could you wrap this up for me?", "Could I get this boxed up?"],
+    "point": "box up / wrap up は持ち帰りの定番句動詞",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 6,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5ec9d9d6f8f60dd48f33f269d43e06d4b4131e9a06a82633ecf03228494ea636",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7e5h5q4u",
+    "ja": "塩辛すぎるかもしれません。",
+    "en": "It might be too salty.",
+    "alternatives": ["It may be too salty.", "It could be a bit too salty."],
+    "point": "かもしれませんは might でやわらげる",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ad665e6e86c39047d036b76046f4cccb513e5e5b979febda87c00ec8bc63f503",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -98,6 +320,66 @@
     }
   },
   {
+    "id": "c_8n5n9h3y",
+    "ja": "窓際の席が空くのを待ってます。",
+    "en": "We're waiting for a window seat.",
+    "alternatives": [
+      "We're waiting for a table by the window.",
+      "We're waiting for a window table."
+    ],
+    "point": "今している最中は進行形",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 6,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:71795f19090425fedbfd6c122b7fc9a279cf04f0cd97bf420fef913dd05614a7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8x8x5s7g",
+    "ja": "メニューを見せて。",
+    "en": "Show me the menu.",
+    "alternatives": ["Let me see the menu.", "Can I see the menu?"],
+    "point": "「見せて」は Show me + 物",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6e8523a91af6c9d5ac837fa0c73b7e94dc401fe0ba7fb5f0e3f444c07527aaa6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9g8t3u5p",
+    "ja": "予約したほうがいいよ。",
+    "en": "You should book ahead.",
+    "alternatives": ["You should make a reservation.", "You should reserve a table."],
+    "point": "助言は should。「予約する」は book ahead でもよい",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e928237ac6fdb5cfbeb34fa76f80466f22c7ed80662d0e9f76ecda4db7c6c9f0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_9v3a9c7r",
     "ja": "窓際の席をお願いします。",
     "en": "A window seat, please.",
@@ -115,6 +397,25 @@
     "stamps": {
       "core": {
         "hash": "sha256:03ad8bd96f5b3ea6dddac20734571c1f7d11a4190719d28772e32f6396a5ede7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9x5t6q8h",
+    "ja": "ここで食べるの好きだよ。",
+    "en": "I like eating here.",
+    "alternatives": ["I enjoy eating here.", "I like to eat here."],
+    "point": "like のあとは -ing でも to 不定詞でもよい",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 3,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bcb4f4f80e665785c02c8a9c08eb51f3b4b072b9c7443165a3c58648e9b9b41d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

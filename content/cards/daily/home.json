@@ -1,5 +1,103 @@
 [
   {
+    "id": "c_2e5x7f6r",
+    "ja": "父に手伝ってと頼んだよ。",
+    "en": "I asked Dad to help.",
+    "alternatives": ["I asked my dad to help.", "I asked Dad for help."],
+    "point": "ask + 人 + to + 動詞。to の位置に注意",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6c712398326b0545c9acf7089c3885d8129adc4aecddf9779b0c0170ff993c89",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2j4n5r7v",
+    "ja": "夕飯なら作れるよ。",
+    "en": "I can cook dinner.",
+    "alternatives": ["I can make dinner.", "I can make supper."],
+    "point": "「作れる」は can + 動詞の原形",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f431346a06c46984dcfcb4536fe76e2584bc871a35618bbb73ffac0185262811",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3b9g6w7j",
+    "ja": "タオルを一枚取って。",
+    "en": "Get me a towel.",
+    "alternatives": ["Grab me a towel.", "Pass me a towel."],
+    "point": "「一枚の」は a。数えられる単数には冠詞",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 1,
+    "grammar": ["articles-and-countability", "imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8fd732385f3395ba0afecd30423d583eab074de5c2fffc84fcb72809ffc9dcd5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3s5w7x5s",
+    "ja": "何か飲むものある？",
+    "en": "Is there anything to drink?",
+    "alternatives": ["Is there something to drink?", "Do we have anything to drink?"],
+    "point": "「〜するもの」は something to + 動詞",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 3,
+    "grammar": ["infinitives", "there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4eefbdab54dfff8f62c23d4d73d0d04a775346f955e7d30b590abe2e7acf4362",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4m6q9n3s",
+    "ja": "弟は掃除機をかけてる。",
+    "en": "My brother is vacuuming.",
+    "alternatives": [
+      "My little brother is vacuuming.",
+      "My brother is using the vacuum."
+    ],
+    "point": "「掃除機をかける」は vacuum を動詞で使える",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c2ae9ace5af53bab8b853f56a8de63aef6ed2b78b9518d044551a664b74cda9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4n4a5p3j",
     "ja": "洗濯ならもう終わったよ。",
     "en": "I've already done the laundry.",
@@ -13,6 +111,44 @@
     "stamps": {
       "core": {
         "hash": "sha256:83d40244341be2fabbe6e14ca741d1f6bc661ac04ae945d5cc2ac4a84693bef3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6e5f5q4s",
+    "ja": "庭に犬がいるよ。",
+    "en": "There's a dog outside.",
+    "alternatives": ["A dog's in the yard.", "There's a dog out back."],
+    "point": "「〜がいる」は There's + 単数の名詞",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:37c52c29d8d4f09e5fb18a8641b752c13cb6afeb68679b0aff2ea714f3c7f4f6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6m6j2b7p",
+    "ja": "卵が全然ないよ。",
+    "en": "There are no eggs.",
+    "alternatives": ["We have no eggs.", "We're out of eggs."],
+    "point": "卵は複数形。「全然ない」は no + 複数形",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 2,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:149c14044ca064c632bd71d12212c64a00685d2ab713e6b9a089597c92cc3439",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -60,6 +196,69 @@
     }
   },
   {
+    "id": "c_7q6g3z4j",
+    "ja": "今夜、私が皿を洗うよ。",
+    "en": "I'll do the dishes tonight.",
+    "alternatives": ["I'll wash the dishes tonight.", "Tonight I'll do the dishes."],
+    "point": "「洗い物をする」は do the dishes。その場の申し出は will",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 3,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:44dc7496adcaf63ca1492407600e7bf1965cddee4333074cc33580d837a1f43a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7r3v3e9w",
+    "ja": "手伝ってくれれば終わったのに。",
+    "en": "If you'd helped, I'd have finished.",
+    "alternatives": [
+      "I'd have finished if you'd helped.",
+      "Had you helped, I'd have finished."
+    ],
+    "point": "過去の後悔は If + had + 過去分詞",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3935aba74eadd503f70aa002511f69d0060574d56d0517274c817291c6650a27",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8t2j5e9g",
+    "ja": "朝からずっと片付けてるんだ。",
+    "en": "I've been tidying since this morning.",
+    "alternatives": [
+      "I've been tidying up since this morning.",
+      "I've been cleaning up all morning."
+    ],
+    "point": "since と継続中の動作は現在完了進行形",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b2583e77df61f7e88b7f13244fde11d4b4c3f651be22b2daf27f36d0208b0080",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8t5s7m3q",
     "ja": "誰が割ったのか教えて。",
     "en": "Tell me who broke it.",
@@ -73,6 +272,72 @@
     "stamps": {
       "core": {
         "hash": "sha256:8b25b7ab8420833d8fe052478bda6decb3b2e280528985812c898803d599d7ce",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8t5w9e7g",
+    "ja": "うちの洗剤、切れるかも。",
+    "en": "We might run out of detergent.",
+    "alternatives": [
+      "We may run out of detergent soon.",
+      "We might be running out of detergent."
+    ],
+    "point": "かもは might / may でやわらげる",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fad9b3b0e9346dc2df7f7c87a1b24a6c084bc3d099c75ac5147c6b41f3b3f178",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8w4k2t2f",
+    "ja": "母は皿を洗いながら電話に出た。",
+    "en": "Washing dishes, Mom answered the phone.",
+    "alternatives": [
+      "Mom answered the phone while washing dishes.",
+      "While washing dishes, Mom took the call."
+    ],
+    "point": "ながらは分詞構文。主語は母のまま",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:83f62405c0dfefddebe9f430f2d16b794c57a0ef4d9c3f1610a83659037b65aa",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8x7n3r6c",
+    "ja": "粗大ゴミは水曜に回収されるよ。",
+    "en": "Bulky trash is collected Wednesdays.",
+    "alternatives": [
+      "They collect bulky trash on Wednesdays.",
+      "Bulky garbage gets picked up Wednesdays."
+    ],
+    "point": "回収するのは人ではなくゴミ。受動態で言う",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c540c6d16abcab74582e5620647bfe132f315f1d1f34b637cfa809ab65d67ca8",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -114,6 +379,47 @@
     "stamps": {
       "core": {
         "hash": "sha256:c5dff7daa802b469fbdaebc869bd69016f76060edf3ad469a01f372af3af4e4f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9e6b7h8b",
+    "ja": "食べ終わったら皿を洗うよ。",
+    "en": "I'll do the dishes once I've eaten.",
+    "alternatives": [
+      "I'll do the dishes when I'm done eating.",
+      "I'll wash the dishes once I finish eating."
+    ],
+    "point": "once の後は未来でも現在形（完了形も可）",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 6,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bac53cdaac4e2d5113f8bd0c4085ed0ce5f8b0355ccdd7f131ffbdc5c465259c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9j7a6h3t",
+    "ja": "母は夕飯を作ってる。",
+    "en": "Mom is making dinner.",
+    "alternatives": ["My mom is cooking dinner.", "Mom is cooking dinner."],
+    "point": "今やっている最中は be + -ing",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7475a8714242a7c150e3e5c656c5ba4804e0abdf5bcf0fcfd0bd3fd33f8d74f5",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

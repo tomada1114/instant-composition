@@ -428,6 +428,8 @@ const MESSAGE_KEYS = [
   "Drill.sheet.hint",
   "Drill.sheet.quit",
   "Drill.sheet.continue",
+  "Drill.leave.title",
+  "Drill.leave.go",
   "Drill.save.failed",
   "Drill.save.unsaved",
   "Drill.save.resend",
