@@ -1,0 +1,89 @@
+[
+  {
+    "id": "c_3e2h2m8p",
+    "ja": "私は大阪出身の設計士です。",
+    "en": "I'm an architect from Osaka.",
+    "alternatives": [
+      "I'm an architect who's from Osaka.",
+      "I'm an Osaka-born architect."
+    ],
+    "point": "「〜出身の」は名詞の後ろに from を置く",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 5,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3w6j9h2q",
+    "ja": "こちら営業部の田中です。",
+    "en": "This is Tanaka from Sales.",
+    "alternatives": ["This is Tanaka in Sales.", "Let me introduce Tanaka from Sales."],
+    "point": "名詞の後ろに from + 部署で説明",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3x9j3s3d",
+    "ja": "カイに来てと頼まれた。",
+    "en": "Kai asked me to come.",
+    "alternatives": ["Kai told me to come.", "Kai invited me to come."],
+    "point": "ask 人 to do で「人に〜するよう頼む」",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 4,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8v8h7m7u",
+    "ja": "人見知りでも話は好き。",
+    "en": "Although I'm shy, I enjoy chatting.",
+    "alternatives": [
+      "Though I'm shy, I like talking.",
+      "I'm shy, but I enjoy chatting."
+    ],
+    "point": "although の節に but は重ねない",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 5,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9f9k9a9u",
+    "ja": "英語を学びに来ました。",
+    "en": "I came to learn English.",
+    "alternatives": ["I'm here to learn English.", "I came here to study English."],
+    "point": "目的は to + 動詞",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 4,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9x4z9n8c",
+    "ja": "休みは映画を観て過ごす。",
+    "en": "I spend my weekends watching movies.",
+    "alternatives": [
+      "I spend my days off watching movies.",
+      "I usually watch movies on weekends."
+    ],
+    "point": "spend + 時間 + -ing で「〜して過ごす」",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 5,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]

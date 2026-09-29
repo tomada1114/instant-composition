@@ -1,0 +1,92 @@
+[
+  {
+    "id": "c_2j5u6y9h",
+    "ja": "ずっと誘いたかった。",
+    "en": "I've been meaning to invite you.",
+    "alternatives": [
+      "I've been meaning to ask you out.",
+      "I've been meaning to invite you over."
+    ],
+    "point": "「ずっと〜しようと思ってた」は have been meaning to",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 4,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3k3x3g9v",
+    "ja": "来るかどうか教えて。",
+    "en": "Tell me if you're coming.",
+    "alternatives": [
+      "Let me know if you can come.",
+      "Let me know whether you're coming."
+    ],
+    "point": "「かどうか」は if か whether",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 4,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3p2j4r6x",
+    "ja": "今夜は友達と外食するんだ。",
+    "en": "I'm eating out with friends tonight.",
+    "alternatives": [
+      "I'm dining out with friends tonight.",
+      "I'm meeting friends for dinner tonight."
+    ],
+    "point": "決まった予定は現在進行形で言える",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 5,
+    "grammar": ["progressive-aspect", "future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4z3y6s7p",
+    "ja": "雨が降っても、私は行くよ。",
+    "en": "I'll go even if it rains.",
+    "alternatives": ["Even if it rains, I'll go.", "I'll come even if it's raining."],
+    "point": "未来のことでも even if の後ろは現在形",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 5,
+    "grammar": ["concession-contrast", "time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7b9d2e5w",
+    "ja": "終わったら合流するよ。",
+    "en": "I'll join you when I'm done.",
+    "alternatives": [
+      "I'll meet you once I'm done.",
+      "I'll join you once I finish work."
+    ],
+    "point": "未来のことでも when 節は現在形",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 5,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8v8d5f7m",
+    "ja": "もう夕飯は食べたの？",
+    "en": "Have you had dinner yet?",
+    "alternatives": ["Have you eaten yet?", "Did you eat dinner yet?"],
+    "point": "「もう〜した？」は現在完了 + yet",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 4,
+    "grammar": ["tense-contrast", "present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]

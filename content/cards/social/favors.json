@@ -1,0 +1,83 @@
+[
+  {
+    "id": "c_2k9x6n5h",
+    "ja": "車で送らなくていいよ。",
+    "en": "No need to drive me.",
+    "alternatives": ["You don't have to drive me.", "You don't need to drive me."],
+    "point": "「〜しなくていい」は don't have to",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 4,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4d7b4u6z",
+    "ja": "よかったら、手を貸せるよ。",
+    "en": "I can give you a hand.",
+    "alternatives": ["I can lend you a hand.", "I could help you out."],
+    "point": "「手を貸す」は give a hand",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 5,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4z5m4c7h",
+    "ja": "今、料理中で手が離せない。",
+    "en": "I'm busy cooking right now.",
+    "alternatives": ["I'm in the middle of cooking.", "I'm tied up cooking right now."],
+    "point": "busy の後ろは -ing(busy cooking)",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 5,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5k4a2e9g",
+    "ja": "少しゆっくりお願いします。",
+    "en": "Could you speak a little slower?",
+    "alternatives": [
+      "Could you slow down a little?",
+      "Could you speak more slowly, please?"
+    ],
+    "point": "「もう少し〜」は a little + 比較級",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 5,
+    "grammar": ["comparatives-superlatives", "requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6f6n8c3z",
+    "ja": "頼んだ件、もう見てくれた？",
+    "en": "Have you checked it yet?",
+    "alternatives": ["Did you check it yet?", "Have you looked at it yet?"],
+    "point": "「もう〜した？」は現在完了 + yet",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 4,
+    "grammar": ["tense-contrast", "present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6q2r2g5g",
+    "ja": "ちょっとこれ持ってて。",
+    "en": "Hold this for a second.",
+    "alternatives": ["Just hold this for a second, please.", "Hold this for me a sec."],
+    "point": "頼みの命令文は please で和らぐ",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 4,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]

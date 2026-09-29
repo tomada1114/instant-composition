@@ -1,0 +1,92 @@
+[
+  {
+    "id": "c_2n7u8p8h",
+    "ja": "明日は雨だって聞いたよ。",
+    "en": "I heard it'll rain tomorrow.",
+    "alternatives": [
+      "I heard it's going to rain tomorrow.",
+      "I heard it's supposed to rain tomorrow."
+    ],
+    "point": "heard の後ろの that は省略できる",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 5,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_2v4y4d7e",
+    "ja": "今週末、花火大会があるよ。",
+    "en": "There's a fireworks show this weekend.",
+    "alternatives": [
+      "There's a fireworks festival this weekend.",
+      "They're having a fireworks show this weekend."
+    ],
+    "point": "「花火大会」は fireworks show / festival",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 5,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4m9c8r7f",
+    "ja": "土曜は映画を観たよ。",
+    "en": "I saw a movie Saturday.",
+    "alternatives": ["I saw a movie on Saturday.", "I watched a movie on Saturday."],
+    "point": "過去の日付が分かれば過去形",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 4,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5c9y3u7f",
+    "ja": "傘は持っていくといいよ。",
+    "en": "You should take an umbrella.",
+    "alternatives": [
+      "You'd better take an umbrella.",
+      "You should bring an umbrella with you."
+    ],
+    "point": "助言は should。had better は強め",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 4,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8b3a8p5v",
+    "ja": "京都はお寺で有名だよね。",
+    "en": "Kyoto is known for its temples.",
+    "alternatives": [
+      "Kyoto is famous for its temples.",
+      "Kyoto is well known for its temples."
+    ],
+    "point": "「〜で知られている」は known for",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 5,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8u9x5e9k",
+    "ja": "今週はずっと暑いね。",
+    "en": "It's been hot all week.",
+    "alternatives": ["This week has been really hot.", "It's been so hot this week."],
+    "point": "今週まで続く状態は現在完了",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 4,
+    "grammar": ["tense-contrast", "present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]
