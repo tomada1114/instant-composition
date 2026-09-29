@@ -79,23 +79,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3a9t3m7b",
-    "ja": "かばんを上の棚に上げるの、手伝ってもらえますか？",
-    "en": "Would you mind helping me get this bag up?",
-    "alternatives": [
-      "Could you help me put this bag up there?",
-      "Could you help me lift this bag up?"
-    ],
-    "point": "Would you mind の後ろは動名詞（helping）にする",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 7,
-    "grammar": ["gerunds", "requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a15920175ba81be300167a047df4ab5ed56f9e4b3eb8db65189d6490f0a39e81",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3b7q3r7p",
@@ -118,38 +108,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_3s3g9b9e",
-    "ja": "彼の英語がもっと上手なら、もっと早く済むのに。",
-    "en": "If he spoke better English, we'd be done sooner.",
-    "alternatives": [
-      "If his English were better, we'd finish sooner.",
-      "If he spoke better English, we'd finish faster."
-    ],
-    "point": "今の事実に反する仮定は if 節を過去形、主節は would",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 6,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4d3u4q5y",
-    "ja": "気分が悪いんです。トイレに行ってもいいですか？",
-    "en": "I'm feeling sick. Could I use the restroom?",
-    "alternatives": [
-      "I feel sick. May I use the restroom?",
-      "I'm not feeling well. Can I use the restroom?"
-    ],
-    "point": "許可を求めるときは Could I / May I で丁寧に言う",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 6,
-    "grammar": ["requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_4u4t5d5f",
@@ -194,70 +152,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_6g3q7s4a",
-    "ja": "私が保安検査で止められたのは、水のボトルのせいだ。",
-    "en": "It was my water bottle that got me flagged.",
-    "alternatives": [
-      "What got me flagged was my water bottle.",
-      "I got stopped because of my water bottle."
-    ],
-    "point": "強調したい語を It was と that で挟む",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 8,
-    "grammar": ["cleft-emphasis"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6m3f9m2m",
-    "ja": "荷物は通しで預けられると聞きましたが、本当ですか？",
-    "en": "I heard my bag would be checked through, right?",
-    "alternatives": [
-      "I heard my bag can be checked through. Right?",
-      "I was told it'd be checked through, right?"
-    ],
-    "point": "聞いた内容は時制をずらし would be checked にする",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 7,
-    "grammar": ["reported-speech", "passive-voice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6p4y3v2h",
-    "ja": "あの人、パスポートを家に忘れてきたに違いない。",
-    "en": "He must have left his passport at home.",
-    "alternatives": [
-      "He must've forgotten his passport at home.",
-      "He must have forgotten to bring his passport."
-    ],
-    "point": "「〜したに違いない」は must have + 過去分詞",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 6,
-    "grammar": ["modal-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6t8p5x9c",
-    "ja": "ここには来たことがあるけど、10年前です。",
-    "en": "I've been here before, but it was ten years ago.",
-    "alternatives": [
-      "I've been here before, but that was ten years ago.",
-      "I've visited before, but that was ten years ago."
-    ],
-    "point": "ten years ago と言う過去の一時点は現在完了でなく過去形",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 7,
-    "grammar": ["tense-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_7c2d9g2f",
@@ -320,22 +214,6 @@
     }
   },
   {
-    "id": "c_7r5y7s7t",
-    "ja": "食事はいらないと言いましたが、飲み物はもらえますか？",
-    "en": "I said no meal, but could I still get a drink?",
-    "alternatives": [
-      "I declined the meal, but could I get a drink?",
-      "I passed on the meal, but can I get a drink?"
-    ],
-    "point": "but の前後で対比し、still で「それでも」を出す",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 9,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7z9m9d9q",
     "ja": "すみません、席を間違えたかもしれません。",
     "en": "Sorry, I might have taken the wrong seat.",
@@ -349,7 +227,13 @@
     "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7b5357cdf098475eefcc745c01518d5e4fa5a199a2957c81bfc87272f1b242b1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8n4z2f9d",
@@ -365,7 +249,13 @@
     "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:80616244da8139cfe116c0a2392cc06c662d1ab791813ef960a7dc3c329f11fb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8s2n9h6u",
@@ -381,23 +271,13 @@
     "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8x5y2z6t",
-    "ja": "税関でこんなに長い列は、今まで見たことがない。",
-    "en": "Never have I seen such a long line at customs.",
-    "alternatives": [
-      "I've never seen a line this long at customs.",
-      "This is the longest line I've ever seen at customs."
-    ],
-    "point": "Never を文頭に出すと、have I seen の語順に倒置する",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 9,
-    "grammar": ["inversion"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4e4e547b4218eb7c181d08b891f05b2dfdb2c3a132f0691e4fb46afac48de85f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8y4q7r2w",
