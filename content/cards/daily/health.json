@@ -57,7 +57,13 @@
     "level": 9,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c0e4ec91702a4fa379df17f2bbfeffd94695fcccef11961cd92c60fee6cfa0a9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2r8q4m4z",
@@ -80,22 +86,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_2s6v4e6y",
-    "ja": "左耳がおかしいので、今日診ていただけないでしょうか？",
-    "en": "I was wondering if someone could check my left ear today.",
-    "alternatives": [
-      "Could someone possibly look at my left ear today?",
-      "Would it be possible to check my left ear today?"
-    ],
-    "point": "「〜でしょうか」は I was wondering if で柔らかく",
-    "topic": "daily",
-    "subtopic": "health",
-    "level": 9,
-    "grammar": ["hedging-softening"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_2v7s4g7r",
@@ -130,7 +120,13 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:728bdc226d0194601959fe54a39038a78d7e15a90f295dfe7d7557491064bb60",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3b2p7z9q",
@@ -165,7 +161,13 @@
     "level": 7,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8ac942fe9ffeb34bc0bbfeb367df7d14624371e33a6991919657cdeb40727aca",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4f6r9c7k",
@@ -254,22 +256,6 @@
     }
   },
   {
-    "id": "c_5n8e2r6a",
-    "ja": "症状が軽くても、病院には行くべきですか？",
-    "en": "Even if it's mild, should I see a doctor?",
-    "alternatives": [
-      "Should I see a doctor even if it's mild?",
-      "Is it worth seeing a doctor even if it's minor?"
-    ],
-    "point": "「〜ても」は even if、条件節は現在形",
-    "topic": "daily",
-    "subtopic": "health",
-    "level": 7,
-    "grammar": ["concession-contrast", "modal-obligation-advice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5q8x6w8j",
     "ja": "彼、健診を受けてたら今ごろ入院してないのに。",
     "en": "If he'd had a checkup, he wouldn't be hospitalized now.",
@@ -283,7 +269,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5e6bed2064fbfdd7d68d79ac57c7c3617709526169a6e34e12cab0e3188a5460",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5w9r9q2r",
@@ -308,22 +300,6 @@
     }
   },
   {
-    "id": "c_6a7h8b9x",
-    "ja": "昨日休んでいれば、今こんなにだるくないのに。",
-    "en": "If I'd rested yesterday, I wouldn't be so drained.",
-    "alternatives": [
-      "I wouldn't be this tired if I'd rested yesterday.",
-      "If I'd rested yesterday, I wouldn't feel this rundown now."
-    ],
-    "point": "過去の仮定と今の結果は If + had 過去分詞、would + 原形",
-    "topic": "daily",
-    "subtopic": "health",
-    "level": 8,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6e7t5m8g",
     "ja": "夫には明日、絶対に検査を受けさせます。",
     "en": "I'm definitely making my husband get checked out tomorrow.",
@@ -337,7 +313,13 @@
     "level": 7,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7dd019ec32d647326bb67bcfb1d7a1530a7a9d2e0aeae33f0c741dcfccd432af",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6f8d4x3s",
@@ -362,22 +344,6 @@
     }
   },
   {
-    "id": "c_6u6n4x8t",
-    "ja": "先生に、昨日の牡蠣が原因かもと言われました。",
-    "en": "The doctor said yesterday's oysters might've made me sick.",
-    "alternatives": [
-      "The doctor told me yesterday's oysters might've made me sick.",
-      "According to the doctor, yesterday's oysters might've made me sick."
-    ],
-    "point": "過去の推量は might have + 過去分詞",
-    "topic": "daily",
-    "subtopic": "health",
-    "level": 7,
-    "grammar": ["modal-perfect", "reported-speech"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6u7z8q2g",
     "ja": "母が転んで、手首を押さえたまま動けなかった。",
     "en": "My mom fell and couldn't move, holding her wrist.",
@@ -391,7 +357,13 @@
     "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a8778d7b05f4983ad7df9c0adb3129e87458433a754b387ce3c33cd41e83f4be",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7q7c8z3b",
@@ -407,23 +379,13 @@
     "level": 7,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7u5z8v3g",
-    "ja": "教えてくれた花粉症の薬、まだありますか？",
-    "en": "Do you still have the allergy medicine you mentioned?",
-    "alternatives": [
-      "Is that allergy medicine you mentioned still available?",
-      "Do you still carry the allergy medicine you mentioned?"
-    ],
-    "point": "medicine の直後に you mentioned をつなげる。関係詞 that は省略できる",
-    "topic": "daily",
-    "subtopic": "health",
-    "level": 6,
-    "grammar": ["relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:50992ef70875b52b9903fc9bbcb51a12dd755ee380d16a6c8d2b6733e7164876",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8a4c2a5h",
@@ -468,70 +430,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9q4p9n6m",
-    "ja": "食後の薬ですが、朝食を抜いた日も飲むべきですか？",
-    "en": "Should I still take this if I skip breakfast?",
-    "alternatives": [
-      "Do I still need this if I skip breakfast?",
-      "If I skip breakfast, should I take this anyway?"
-    ],
-    "point": "「〜も」は still、if 節は現在形",
-    "topic": "daily",
-    "subtopic": "health",
-    "level": 7,
-    "grammar": ["time-and-if-clauses", "modal-obligation-advice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9q8f7w3j",
-    "ja": "一晩高熱が続き、彼女は朝一番に受診しました。",
-    "en": "Feverish all night, she saw a doctor first thing.",
-    "alternatives": [
-      "After a feverish night, she saw a doctor first thing.",
-      "Feverish all night, she went to the doctor first thing."
-    ],
-    "point": "理由は文頭の分詞や形容詞で先に置ける",
-    "topic": "daily",
-    "subtopic": "health",
-    "level": 7,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9r5k5p5e",
-    "ja": "この薬を飲んでから、発疹が出てきたんです。",
-    "en": "I've broken out in a rash since taking this.",
-    "alternatives": [
-      "I've gotten a rash since taking this.",
-      "I've had a rash since I started this."
-    ],
-    "point": "発疹が出るは break out in a rash、since と現在完了",
-    "topic": "daily",
-    "subtopic": "health",
-    "level": 6,
-    "grammar": ["present-perfect", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9r5r3r6n",
-    "ja": "もっと早く来ていれば、症状は悪化しなかったのに。",
-    "en": "If I'd come in sooner, my symptoms wouldn't have worsened.",
-    "alternatives": [
-      "My symptoms wouldn't have worsened if I'd come in sooner.",
-      "It wouldn't have gotten worse if I'd come in earlier."
-    ],
-    "point": "過去の事実の反対は If + had + 過去分詞、結果は wouldn't have 過去分詞",
-    "topic": "daily",
-    "subtopic": "health",
-    "level": 7,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9z9t2b6s",
