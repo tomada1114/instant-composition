@@ -44,22 +44,6 @@
     }
   },
   {
-    "id": "c_2q2x3p6u",
-    "ja": "乗り継ぎに間に合うか、教えていただけますか？",
-    "en": "Could you tell me whether I'll make my connection?",
-    "alternatives": [
-      "Can you tell me if I'll make my connection?",
-      "Could you check if I'll make my connection?"
-    ],
-    "point": "間に合う=make。埋め込み文は平叙の語順",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 6,
-    "grammar": ["indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2y9u3t6m",
     "ja": "入国カードに記入していただけますか？",
     "en": "Could you fill out this arrival card?",
@@ -183,7 +167,13 @@
     "level": 4,
     "grammar": ["infinitives", "there-is-are"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7d3d3922242cb7f962e789b4397445fa9146fd20b4c18ceca2a29c47ad592187",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4u4t5d5f",
@@ -221,7 +211,13 @@
     "level": 6,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b4736704941082f483d77a8870be32b259e3166373db8fa6b54cf22a1a453b0f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5v2c8v5v",
@@ -237,23 +233,13 @@
     "level": 5,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6b9f6v7s",
-    "ja": "一時間待って、搭乗がまだ始まらない。",
-    "en": "I've waited an hour; boarding still hasn't started.",
-    "alternatives": [
-      "I've waited an hour, but boarding hasn't begun.",
-      "Boarding hasn't started, and I've waited an hour."
-    ],
-    "point": "待ち続けている時間は現在完了形で言う",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 4,
-    "grammar": ["present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:50c7bf6c935025e4d8463d2d6896aab29ddb4b4939457d3f60d527a9f22bd447",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6e3a9w4b",
@@ -332,7 +318,13 @@
     "level": 3,
     "grammar": ["comparatives-superlatives", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b9f88a28013391ae66a70440b2f43410f5c2bac5c9e76ffef2a074ad3bedcace",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6t8n9x9b",
@@ -483,22 +475,6 @@
     }
   },
   {
-    "id": "c_8n8q5q6u",
-    "ja": "時間があれば、ゆっくり食べるのに。",
-    "en": "If I had time, I'd eat slowly.",
-    "alternatives": [
-      "If I had more time, I'd eat slowly.",
-      "I'd eat slowly if I had the time."
-    ],
-    "point": "現実と違う仮定は if 節が過去形、主節は would",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 5,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8s2n9h6u",
     "ja": "できれば通路側の席に替えてもらえませんか？",
     "en": "Could you possibly move me to an aisle seat?",
@@ -578,23 +554,13 @@
     "level": 4,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9k3k6k5r",
-    "ja": "オンラインでチェックイン済みなのに、結局並んだ。",
-    "en": "I checked in online, but still waited in line.",
-    "alternatives": [
-      "Although I checked in online, I still waited in line.",
-      "I'd already checked in online, but still waited in line."
-    ],
-    "point": "「のに」は but や although で対比を表す",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 7,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:51c4b9a55db39af52c5fd3df3f597ae13e9ac8e06c40cad94dc51013d6aeb277",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9n6c6e2b",
@@ -632,7 +598,13 @@
     "level": 6,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3c8ec32bceac71ca816f2e972fe70e68d394dbe2a16ec4558bf8268edf1bb6f4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9w5a6x5b",
@@ -648,6 +620,12 @@
     "level": 7,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ee270b65618bc459b63f3be1d806f6667afdf90dcc9eeaf00e8db792d39e0b78",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
