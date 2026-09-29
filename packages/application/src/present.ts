@@ -30,6 +30,7 @@ export function payloadOf(
       // spread would put every field a card gains, such as its concepts, on the wire.
       const { topic, subtopic, level, words, prompt, text, alternatives, explanation } =
         card;
+      const paceMs = paceMsForWords(words);
       cards[id] = {
         id,
         topic,
@@ -40,8 +41,8 @@ export function payloadOf(
         text,
         alternatives,
         explanation,
-        limitMs: limitMsOf(round, paceMsForWords(words)),
-        paceMs: paceMsForWords(words),
+        limitMs: limitMsOf(round, paceMs),
+        paceMs,
       };
     }
   }
