@@ -1,21 +1,5 @@
 [
   {
-    "id": "c_2b7b2p7g",
-    "ja": "ドキュメントがまだ更新されてないよ。",
-    "en": "The docs haven't been updated yet.",
-    "alternatives": [
-      "The docs still haven't been updated.",
-      "The docs aren't updated yet."
-    ],
-    "point": "「まだ〜されてない」は haven't been + 過去分詞",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 3,
-    "grammar": ["passive-voice", "present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2h5r6m4n",
     "ja": "直したコードはずっと読みやすいね。",
     "en": "It's much easier to read now.",
@@ -80,22 +64,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_3c4z6x8r",
-    "ja": "朝からずっと、これで詰まってるんだ。",
-    "en": "I've been stuck on this all morning.",
-    "alternatives": [
-      "I've been stuck on this since morning.",
-      "I've been struggling with this all morning."
-    ],
-    "point": "「朝からずっと」は現在完了進行形 have been -ing",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 5,
-    "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_3t5k5j3e",
@@ -205,22 +173,6 @@
     }
   },
   {
-    "id": "c_4f2e6y3n",
-    "ja": "まだ、変更を確認しているところです。",
-    "en": "I'm still reviewing the changes.",
-    "alternatives": [
-      "I'm still going through the changes.",
-      "I'm still looking at the changes."
-    ],
-    "point": "「〜しているところ」は進行形。still は be 動詞の後ろ",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 3,
-    "grammar": ["progressive-aspect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_4x5m8x2m",
     "ja": "レビューは明日までに終わらせます。",
     "en": "I'll finish the review by tomorrow.",
@@ -241,22 +193,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_4z7b5h3p",
-    "ja": "共通ロジックは我々で切り出すべきです。",
-    "en": "We should pull out the shared logic.",
-    "alternatives": [
-      "We should pull the shared logic out.",
-      "We should extract the common logic."
-    ],
-    "point": "pull out は「切り出す」。目的語が長いと pull out の後ろに置く",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 5,
-    "grammar": ["phrasal-verbs", "modal-obligation-advice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_5k2z3n8n",
@@ -540,22 +476,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9j8f6j5w",
-    "ja": "僕らが触ったファイルに、テストは要る？",
-    "en": "Do the files we touched need tests?",
-    "alternatives": [
-      "Do the files we changed need tests?",
-      "Do the files that we touched need tests?"
-    ],
-    "point": "名詞の直後に we touched を置いて「触った〜」と修飾する",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 4,
-    "grammar": ["relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9k9r3r2e",
