@@ -22,22 +22,6 @@
     }
   },
   {
-    "id": "c_3c3b6b9e",
-    "ja": "休日に一人の時間が取れることなんて、めったにないんだ。",
-    "en": "Rarely do I get a weekend all to myself.",
-    "alternatives": [
-      "I hardly ever get a weekend all to myself.",
-      "It's rare for me to get a weekend to myself."
-    ],
-    "point": "Rarely を文頭に出すと do I の語順になる",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 10,
-    "grammar": ["inversion"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3k6y6p5j",
     "ja": "私には静かに充電できる週末が必要だ。",
     "en": "I need a quiet weekend to recharge.",
@@ -153,13 +137,29 @@
     "en": "If I'd started hiking sooner, I'd be fitter now.",
     "alternatives": [
       "If I'd taken up hiking earlier, I'd be fitter now.",
-      "Had I started hiking earlier, I'd be fitter now."
+      "If I'd gotten into hiking sooner, I'd be fitter now."
     ],
     "point": "過去の仮定+今の結果は if 節が had+過去分詞、主節は would be",
     "topic": "daily",
     "subtopic": "hobbies",
     "level": 8,
     "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3v4f6j5q",
+    "ja": "日曜は妻に頼まれて、結局庭仕事をするはめに。",
+    "en": "My wife asked, so I ended up gardening Sunday.",
+    "alternatives": [
+      "I ended up gardening Sunday because my wife asked.",
+      "My wife asked, so I wound up gardening Sunday."
+    ],
+    "point": "結局〜するはめに、は end up + 動詞ing",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 6,
+    "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -257,13 +257,13 @@
     "ja": "叔父が歩いたって言ってる山道、もう閉鎖されてるよ。",
     "en": "The trail my uncle says he hiked is closed now.",
     "alternatives": [
-      "The trail that my uncle says he hiked has been closed off.",
-      "My uncle says he hiked that trail, but it's closed now."
+      "That trail my uncle says he hiked has been closed.",
+      "My uncle says he hiked that trail, but it's closed."
     ],
     "point": "名詞の後ろに my uncle says he hiked と節を重ねる",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 10,
+    "level": 8,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -289,22 +289,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_4x7m5v3p",
-    "ja": "忙しくなければ、先週ハイキングに行けたのに。",
-    "en": "If I weren't busy, I'd have gone hiking last week.",
-    "alternatives": [
-      "Were I less busy, I'd have gone hiking last week.",
-      "I'd have gone hiking last week if I weren't busy."
-    ],
-    "point": "今の状態は weren't、過去の結果は would have+過去分詞",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 8,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_5a8f6x6a",
@@ -349,22 +333,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_5m2r2b2w",
-    "ja": "日曜は妻に頼まれて、庭仕事をやるはめになった。",
-    "en": "My wife got me to do the gardening on Sunday.",
-    "alternatives": [
-      "My wife had me do the gardening on Sunday.",
-      "My wife talked me into doing the gardening on Sunday."
-    ],
-    "point": "get + 人 + to 動詞、have + 人 + 動詞の原形",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 9,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_5p4c6v4v",
@@ -457,12 +425,12 @@
     "en": "If I hadn't gone, I wouldn't have taken up photography.",
     "alternatives": [
       "If I hadn't gone, I'd never have taken up photography.",
-      "Had I not gone, I wouldn't have gotten into photography."
+      "If I hadn't gone, I wouldn't have gotten into photography."
     ],
     "point": "始める は take up、過去の仮定は had+過去分詞と would have+過去分詞",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 8,
+    "level": 7,
     "grammar": ["third-conditional", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -585,7 +553,7 @@
     "point": "現在の仮定は if 節が were、主節が would + 動詞",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 9,
+    "level": 7,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -747,16 +715,16 @@
   {
     "id": "c_9a6v8x7c",
     "ja": "彼が趣味で撮った写真が賞を取るなんて、驚きだ。",
-    "en": "Amazing that photos he took for fun won a prize.",
+    "en": "I'm amazed photos he took for fun won a prize.",
     "alternatives": [
-      "I'm amazed the photos he took for fun won a prize.",
-      "I can't believe his fun snapshots won a prize."
+      "It's amazing photos he took for fun won a prize.",
+      "I can't believe his hobby photos won a prize."
     ],
     "point": "名詞のあとに he took for fun と直接つなげる",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 9,
-    "grammar": ["nested-clauses", "post-modification"],
+    "level": 7,
+    "grammar": ["relative-clauses", "noun-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -783,34 +751,50 @@
     }
   },
   {
-    "id": "c_9f9n9s3k",
-    "ja": "私たちが着くころには、花火はもう終わってた。",
-    "en": "By the time we arrived, the fireworks had ended.",
-    "alternatives": [
-      "The fireworks had already finished by the time we arrived.",
-      "By the time we got there, the fireworks had ended."
-    ],
-    "point": "着いた時点より前に終わった出来事は had+過去分詞",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 8,
-    "grammar": ["past-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_9g6y2t4b",
     "ja": "たまには、週末に何もしない自分を許してあげなよ。",
     "en": "Let yourself do nothing on weekends once in a while.",
     "alternatives": [
       "Now and then, let yourself do nothing on the weekend.",
-      "Once in a while, allow yourself to do nothing on weekends."
+      "Sometimes, allow yourself to do nothing on weekends."
     ],
     "point": "「許す」は let oneself。動詞は原形のまま続ける",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 10,
+    "level": 7,
     "grammar": ["causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9j5s6t4v",
+    "ja": "忙しくなかったら、ハイキングに行けたのに。",
+    "en": "If I hadn't been busy, I could have gone hiking.",
+    "alternatives": [
+      "I could have gone hiking if I hadn't been busy.",
+      "If I hadn't been tied up, I'd have gone hiking."
+    ],
+    "point": "過去の仮定は had+過去分詞、結果は could have+過去分詞",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9p6f9z7a",
+    "ja": "休日に一人の時間が取れることなんて、めったにないんだ。",
+    "en": "Rarely do I get time alone on my days off.",
+    "alternatives": [
+      "I hardly ever get time alone on my days off.",
+      "It's rare that I get time alone on a day off."
+    ],
+    "point": "Rarely を文頭に出すと do I の語順になる",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 9,
+    "grammar": ["inversion"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -835,5 +819,21 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_9r7d9x2k",
+    "ja": "私たちが着くころには、花火はもう終わってた。",
+    "en": "When we arrived, the fireworks had already ended.",
+    "alternatives": [
+      "The fireworks had finished by the time we arrived.",
+      "The fireworks were over when we got there."
+    ],
+    "point": "着いた時点より前に終わったことは had+過去分詞",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]

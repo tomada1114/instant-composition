@@ -1,16 +1,16 @@
 [
   {
     "id": "c_2f7b9c2k",
-    "ja": "安いほうにしておけばよかった。もう壊れかけてる。",
-    "en": "I should've gone with the cheaper one. It's already falling apart.",
+    "ja": "安いほうにしとけばよかった。もう壊れかけてる。",
+    "en": "I should've gone cheaper. It's already falling apart.",
     "alternatives": [
-      "I should have bought the cheaper one. It's already falling apart.",
-      "I should have picked the cheaper one. It's already breaking down."
+      "I should've bought the cheaper one. It's falling apart.",
+      "I should've picked the cheaper one. It's already breaking."
     ],
     "point": "「〜しておけばよかった」は should have + 過去分詞",
     "topic": "daily",
     "subtopic": "shopping",
-    "level": 10,
+    "level": 6,
     "grammar": ["modal-perfect", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -18,15 +18,15 @@
   {
     "id": "c_2g6h4h9k",
     "ja": "店員さんの勧めは、高すぎたから断ったよ。",
-    "en": "I turned down the clerk's suggestion as too expensive.",
+    "en": "I turned down the clerk's suggestion. It was too expensive.",
     "alternatives": [
-      "I passed on the clerk's suggestion; too pricey.",
-      "I declined the clerk's recommendation; it cost too much."
+      "I passed on the clerk's suggestion. It was too pricey.",
+      "The clerk's suggestion was too expensive, so I said no."
     ],
     "point": "「断る」は turn down。decline や pass on も自然",
     "topic": "daily",
     "subtopic": "shopping",
-    "level": 8,
+    "level": 7,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -270,12 +270,12 @@
     "en": "Could you have another size sent over?",
     "alternatives": [
       "Could you order in another size for me?",
-      "Would you be able to get another size in?"
+      "Could you order a different size for me?"
     ],
     "point": "取り寄せは have + 物 + 過去分詞、send over など",
     "topic": "daily",
     "subtopic": "shopping",
-    "level": 7,
+    "level": 5,
     "grammar": ["phrasal-verbs", "causatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -418,13 +418,14 @@
     "ja": "返品期限が過ぎたと気づき、彼女はあきらめた。",
     "en": "Realizing the return window had closed, she gave up.",
     "alternatives": [
-      "Seeing the return period was over, she gave up.",
-      "She gave up after realizing the return window had closed."
+      "Realizing the return deadline had passed, she gave up.",
+      "She gave up after realizing the return window had closed.",
+      "She realized the return window had passed and gave up."
     ],
     "point": "気づいた時点が先なので分詞構文は Realizing で始める",
     "topic": "daily",
     "subtopic": "shopping",
-    "level": 8,
+    "level": 7,
     "grammar": ["participle-clauses", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -608,7 +609,7 @@
   },
   {
     "id": "c_8t8a5a9r",
-    "ja": "注文する前にレビューを確認しておくべきだったな。",
+    "ja": "注文する前にレビューを確認しておくべきだった。",
     "en": "I should have checked the reviews before ordering.",
     "alternatives": [
       "I should have read the reviews before I ordered.",
@@ -617,7 +618,7 @@
     "point": "「〜すべきだった」は should have + 過去分詞",
     "topic": "daily",
     "subtopic": "shopping",
-    "level": 7,
+    "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -625,15 +626,15 @@
   {
     "id": "c_8y7w7d4e",
     "ja": "タグは外しちゃったけど、まだ返品できますか？",
-    "en": "I took the tags off, but can I still return it?",
+    "en": "I took the tags off. Can I still return it?",
     "alternatives": [
-      "I've already taken the tags off. Can I still return it?",
-      "The tags are off already, but can I still return it?"
+      "I've taken the tags off. Can I still return it?",
+      "The tags are off, but can I still return it?"
     ],
     "point": "「外す」は take ~ off。代名詞なら take it off",
     "topic": "daily",
     "subtopic": "shopping",
-    "level": 10,
+    "level": 7,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}

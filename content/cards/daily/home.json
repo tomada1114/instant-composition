@@ -54,7 +54,7 @@
     "point": "said の後は時制を一つ過去へ。is ではなく was",
     "topic": "daily",
     "subtopic": "home",
-    "level": 10,
+    "level": 7,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -71,7 +71,7 @@
     "point": "Rarely を文頭に出すと do we の倒置になる",
     "topic": "daily",
     "subtopic": "home",
-    "level": 10,
+    "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -100,17 +100,17 @@
   },
   {
     "id": "c_3b5c9q8b",
-    "ja": "ガラクタの溜まる引き出し、ずっと整理しなきゃと思ってた。",
-    "en": "I've been meaning to clear the drawer where junk piles up.",
+    "ja": "ガラクタ入れ、ずっと片付けなきゃと思ってた。",
+    "en": "I've been meaning to clean out that junk drawer.",
     "alternatives": [
-      "I've been meaning to sort out that junk drawer for ages.",
-      "I've been meaning to tidy up the drawer full of junk."
+      "I've been meaning to tidy up the junk drawer.",
+      "I've been meaning to sort out the junk drawer."
     ],
     "point": "ずっと続いてる気持ちは have been meaning to で言う",
     "topic": "daily",
     "subtopic": "home",
-    "level": 9,
-    "grammar": ["present-perfect-continuous", "relative-clauses"],
+    "level": 6,
+    "grammar": ["present-perfect-continuous", "infinitives"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -382,22 +382,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_6h7t7j8q",
-    "ja": "リビングの模様替え、前からやろうと思ってた。",
-    "en": "I've been meaning to rearrange the living room.",
-    "alternatives": [
-      "I've been planning to redo the living room.",
-      "I've been meaning to move the living room furniture around."
-    ],
-    "point": "「前から思ってた」は I've been meaning to。過去形にしない",
-    "topic": "daily",
-    "subtopic": "home",
-    "level": 7,
-    "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_6j7s5c5k",

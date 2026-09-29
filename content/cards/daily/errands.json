@@ -26,13 +26,13 @@
     "ja": "銀行ではこれは有料ですが、郵便局では無料です。",
     "en": "The bank charges for this, whereas the post office doesn't.",
     "alternatives": [
-      "The bank charges a fee for this, but the post office doesn't.",
-      "It's free at the post office, though the bank charges for it."
+      "The bank charges for this, but the post office doesn't.",
+      "It's free at the post office but not the bank."
     ],
     "point": "対比は whereas。後半は doesn't で charge を省略",
     "topic": "daily",
     "subtopic": "errands",
-    "level": 10,
+    "level": 7,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -126,18 +126,18 @@
     }
   },
   {
-    "id": "c_4a6m8v5c",
-    "ja": "私が出しに来たのは、この用紙です。",
-    "en": "It's this form I came here to drop off.",
+    "id": "c_3u2r7f3u",
+    "ja": "私に必要なのは、認証済みの写しです。",
+    "en": "What I need is a certified copy.",
     "alternatives": [
-      "This form is what I came to drop off.",
-      "What I came to drop off is this form."
+      "A certified copy is what I need.",
+      "It's a certified copy that I need."
     ],
-    "point": "It's ～ that で強調。drop off は「届ける」",
+    "point": "What I need is ～ で「必要なのは～」と強調する",
     "topic": "daily",
     "subtopic": "errands",
     "level": 8,
-    "grammar": ["cleft-emphasis", "phrasal-verbs"],
+    "grammar": ["cleft-emphasis", "noun-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -373,12 +373,12 @@
   {
     "id": "c_6v9y6d3s",
     "ja": "手数料を払わずに済ませる方法はないですよね？",
-    "en": "There's no way to get out of paying, is there?",
+    "en": "There's no getting out of paying the fee, is there?",
     "alternatives": [
       "I can't get out of paying the fee, can I?",
-      "There's no getting out of paying the fee, is there?"
+      "There's no way to avoid the fee, is there?"
     ],
-    "point": "get out of ～ing で「～を免れる」。付加疑問は is there",
+    "point": "no getting out of ～ing で「～は免れない」。付加疑問は is there",
     "topic": "daily",
     "subtopic": "errands",
     "level": 8,
@@ -406,34 +406,18 @@
     }
   },
   {
-    "id": "c_7w4w9r2w",
-    "ja": "窓口が昼休みに入る前に来ればよかった。",
-    "en": "I wish I'd gotten here before the counter closed for lunch.",
-    "alternatives": [
-      "I should have come before the counter closed for lunch.",
-      "If only I'd come before the counter closed for lunch."
-    ],
-    "point": "過去の後悔は wish + 過去完了（I wish I'd gotten）",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 10,
-    "grammar": ["wishes-regrets"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8e9f4r5p",
-    "ja": "彼女は窓口の人に言われたことを覚えていない。",
+    "ja": "彼女は窓口で言われたことを覚えていない。",
     "en": "She doesn't remember what the clerk told her.",
     "alternatives": [
-      "She can't remember what the clerk said to her.",
+      "She can't remember what the clerk said.",
       "She doesn't recall what the clerk told her."
     ],
     "point": "「言われたこと」は what 節。語順は平叙文のまま",
     "topic": "daily",
     "subtopic": "errands",
-    "level": 8,
-    "grammar": ["nested-clauses", "noun-clauses"],
+    "level": 4,
+    "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },

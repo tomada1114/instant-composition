@@ -45,7 +45,7 @@
   },
   {
     "id": "c_2n4x2c6q",
-    "ja": "あなたの言葉に私がどれだけ傷ついたか、分からないでしょ。",
+    "ja": "あなたの言葉でどれだけ傷ついたか分からないでしょ。",
     "en": "You have no idea how much your words hurt me.",
     "alternatives": [
       "You can't imagine how much your words hurt me.",
@@ -54,8 +54,8 @@
     "point": "how much の後は疑問文の語順にせず、主語＋動詞",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 9,
-    "grammar": ["nested-clauses", "indirect-questions"],
+    "level": 7,
+    "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -81,15 +81,15 @@
   {
     "id": "c_2y4g7x7u",
     "ja": "彼女の話を聞いて、私は本当に胸が痛んだ。",
-    "en": "Hearing her story really broke my heart.",
+    "en": "Hearing her story really pained me.",
     "alternatives": [
-      "It really broke my heart to hear her story.",
-      "I was heartbroken when I heard her story."
+      "It really hurt to hear her story.",
+      "My heart ached when I heard her story."
     ],
     "point": "「聞いて」は Hearing ～ の分詞構文で理由を表せる",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 8,
+    "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -237,7 +237,7 @@
     "point": "「ずっと」は a lot / much で比較級を強める",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 5,
+    "level": 4,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -329,7 +329,7 @@
   },
   {
     "id": "c_5v7y5q2p",
-    "ja": "上司が言っていたことは、正直ちょっと納得いかない。",
+    "ja": "上司の言ったこと、正直ちょっと納得いかない。",
     "en": "I'm not really convinced by what my boss said.",
     "alternatives": [
       "What my boss said doesn't sit well with me.",
@@ -338,8 +338,8 @@
     "point": "「言っていたこと」は what my boss said と名詞節で作る",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 8,
-    "grammar": ["nested-clauses", "noun-clauses"],
+    "level": 6,
+    "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -569,14 +569,14 @@
     "ja": "その知らせを聞いて、思わず気が滅入ってしまった。",
     "en": "Hearing the news, I couldn't help feeling down.",
     "alternatives": [
-      "Having heard the news, I couldn't help feeling down.",
-      "When I heard the news, I couldn't help but feel down."
+      "I couldn't help feeling down after hearing the news.",
+      "I couldn't help but feel down at the news."
     ],
     "point": "「思わず〜してしまう」は couldn't help ～ing",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 10,
-    "grammar": ["participle-clauses"],
+    "level": 7,
+    "grammar": ["gerunds", "participle-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -739,7 +739,7 @@
     "point": "今の気分は現在形、下りた荷は現在完了で言う",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 10,
+    "level": 9,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -769,10 +769,10 @@
   {
     "id": "c_9h5w5t5j",
     "ja": "その知らせに、涙をこらえられなかった。",
-    "en": "I couldn't hold back my tears.",
+    "en": "I couldn't hold back tears at the news.",
     "alternatives": [
       "I couldn't help crying at the news.",
-      "I couldn't keep from crying."
+      "I couldn't keep from crying at the news."
     ],
     "point": "「こらえる」は hold back。過去の不可能は couldn't",
     "topic": "daily",

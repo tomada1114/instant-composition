@@ -271,10 +271,16 @@
     "point": "the place の後ろの関係代名詞は省略。said の後に主語なし",
     "topic": "daily",
     "subtopic": "eating-out",
-    "level": 10,
-    "grammar": ["nested-clauses"],
+    "level": 9,
+    "grammar": ["relative-clauses", "nested-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5976a3abd6bbddd286d4f69aac1b55782fef7faad99934664e27b4aa594aa74e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4n9c9b4j",
@@ -435,16 +441,22 @@
     "ja": "あの店のカレー、辛すぎて涙が出たよ。",
     "en": "That curry was so hot it made my eyes water.",
     "alternatives": [
-      "That curry was so spicy it brought tears to my eyes.",
+      "That curry was so spicy it made me cry.",
       "That curry was so spicy I teared up."
     ],
     "point": "「涙が出る」は make my eyes water。使役の make を使う",
     "topic": "daily",
     "subtopic": "eating-out",
-    "level": 9,
+    "level": 7,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6bc48e0f147821228b9b8db8679b9d7705e1fa9c44cd5091ef69de0b8c32284d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5r4j8d9m",
@@ -495,16 +507,22 @@
     "ja": "ワインはソムリエに選ばせれば、まず外れないよ。",
     "en": "Have the sommelier pick the wine and you can't go wrong.",
     "alternatives": [
-      "If you let the sommelier choose the wine, you can't go wrong.",
-      "Get the sommelier to pick the wine and you can't go wrong."
+      "Let the sommelier choose the wine and you can't go wrong.",
+      "Leave the wine to the sommelier and you can't go wrong."
     ],
-    "point": "「選ばせる」は have / let / get＋人＋動詞の原形（get は to）",
+    "point": "「選ばせる」は have / let＋人＋動詞の原形。can't go wrong は失敗しない",
     "topic": "daily",
     "subtopic": "eating-out",
-    "level": 10,
+    "level": 9,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:98f2e50db53a09f16fbf7a89ae42669230b2ef3a6aa5db1c80c0f0f9b5b43113",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5y9w2n9g",
@@ -633,18 +651,24 @@
   {
     "id": "c_6k4x6f5z",
     "ja": "姉は寿司が大好きだが、私は生魚が苦手なんだ。",
-    "en": "My sister loves sushi, whereas I can't stomach raw fish.",
+    "en": "My sister loves sushi, but raw fish isn't my thing.",
     "alternatives": [
-      "My sister adores sushi, but I can't stand raw fish.",
-      "Whereas my sister loves sushi, I can't stand raw fish."
+      "My sister loves sushi, but I can't handle raw fish.",
+      "My sister adores sushi, but I'm not into raw fish."
     ],
-    "point": "対比は whereas。「苦手」は can't stomach や can't stand",
+    "point": "「苦手」は isn't my thing や not into。対比は but でよい",
     "topic": "daily",
     "subtopic": "eating-out",
-    "level": 9,
+    "level": 7,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b98218bf1e5ec4bd278b300b8ee7fb23e12128546c33a6e50611740114c87b5b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6t8p3t2d",
@@ -730,22 +754,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_8a6y7y2y",
-    "ja": "外食だと、僕はたいてい魚だけど、妻はいつも肉だね。",
-    "en": "I usually order fish, whereas my wife always goes for meat.",
-    "alternatives": [
-      "I usually order fish, but my wife always goes for meat.",
-      "I usually get fish, while my wife always orders meat."
-    ],
-    "point": "対比は whereas / while で。goes for は「を選ぶ」",
-    "topic": "daily",
-    "subtopic": "eating-out",
-    "level": 10,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_8c4z2a2z",
