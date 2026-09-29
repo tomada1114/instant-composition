@@ -123,6 +123,22 @@
     }
   },
   {
+    "id": "c_3x8s6n7y",
+    "ja": "偶然会ったのは、同級生なんだ。",
+    "en": "It was a classmate I bumped into.",
+    "alternatives": [
+      "It was a classmate that I ran into.",
+      "The person I ran into was a classmate."
+    ],
+    "point": "It was ～ that 型。that は省略可。bump into は偶然会う",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4k8y9b3w",
     "ja": "知ってたら、行ったのに。",
     "en": "If I'd known, I'd have come.",
@@ -293,6 +309,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5h6n2h9m",
+    "ja": "座った途端に、雨が降り出した。",
+    "en": "Hardly had we sat down when it poured.",
+    "alternatives": [
+      "No sooner had we sat down than it poured.",
+      "As soon as we sat down, it began to pour."
+    ],
+    "point": "Hardly のあとは had we の倒置。when が続く",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5x7s5p3h",

@@ -328,6 +328,22 @@
     }
   },
   {
+    "id": "c_6w2r8e3d",
+    "ja": "彼は相当練習を積んだに違いない。",
+    "en": "He must have put in countless hours.",
+    "alternatives": [
+      "He must have practiced like crazy.",
+      "He must have logged countless hours of practice."
+    ],
+    "point": "must have + 過去分詞は過去への確信。put in hours は費やす",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 10,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7a6e6z8j",
     "ja": "先週、釣りに行ったよ。",
     "en": "I went fishing last week.",
@@ -496,6 +512,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8x3y7z8t",
+    "ja": "誘ってくれてもよかったのに。",
+    "en": "You could've at least invited me along.",
+    "alternatives": [
+      "You might've at least asked me along.",
+      "You could have at least invited me."
+    ],
+    "point": "could have + 過去分詞で「〜してくれてもよかった」と不満",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 9,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8x9f8w9r",

@@ -186,6 +186,22 @@
     }
   },
   {
+    "id": "c_3r8s5g6w",
+    "ja": "時間が許せば、あとで合流するよ。",
+    "en": "Time permitting, I'll join you later.",
+    "alternatives": [
+      "If time allows, I'll join you later.",
+      "If I have time, I'll join you later."
+    ],
+    "point": "Time permitting は「時間が許せば」の分詞構文",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 9,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3s2v2n5k",
     "ja": "日曜にパーティーだよ。",
     "en": "There's a party Sunday.",

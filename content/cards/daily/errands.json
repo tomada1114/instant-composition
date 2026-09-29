@@ -369,6 +369,22 @@
     }
   },
   {
+    "id": "c_6e6a6k6n",
+    "ja": "これ、どの窓口かご存じですか？",
+    "en": "Do you know which window handles this?",
+    "alternatives": [
+      "Could you tell me which window handles this?",
+      "Any idea which window handles this?"
+    ],
+    "point": "間接疑問。which の後ろは平叙文の語順",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 9,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7e7v8x4g",
     "ja": "手数料がかかっても、今日済ませたい。",
     "en": "Even with a fee, I'd rather finish today.",

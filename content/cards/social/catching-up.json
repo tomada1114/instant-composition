@@ -208,6 +208,22 @@
     }
   },
   {
+    "id": "c_3h4g4v3j",
+    "ja": "忙しくなきゃもっと電話するのに。",
+    "en": "If I weren't swamped, I'd call more.",
+    "alternatives": [
+      "If I weren't so swamped, I'd call you more.",
+      "If I weren't slammed, I'd call more often."
+    ],
+    "point": "現在の仮定は were。swamped は忙殺されている",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 9,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3s2e2u3q",
     "ja": "こんなに忙しいのは初めてだよ。",
     "en": "Never have I been this busy.",
@@ -388,6 +404,22 @@
     }
   },
   {
+    "id": "c_5u5c2m7x",
+    "ja": "驚いたのは、彼女が辞めてたことだよ。",
+    "en": "What floored me was that she'd quit.",
+    "alternatives": [
+      "What surprised me was that she'd quit.",
+      "What blew me away was that she'd quit her job."
+    ],
+    "point": "What ～ was that で強調。floor は仰天させる",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5z3b7r7r",
     "ja": "残ってたら、今ごろ課長だよ。",
     "en": "If I'd stayed, I'd be manager now.",
@@ -494,6 +526,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6p7n2v3q",
+    "ja": "子どもに振り回されっぱなしだよ。",
+    "en": "The kids have me running around nonstop.",
+    "alternatives": [
+      "My kids have me running around all the time.",
+      "The kids keep me running around nonstop."
+    ],
+    "point": "have + 人 + -ing で「〜させられている」感じ",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 9,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6q8z7n2p",

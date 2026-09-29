@@ -42,6 +42,22 @@
     }
   },
   {
+    "id": "c_2h7y9r4m",
+    "ja": "私が君なら、まだ怒ってるだろうな。",
+    "en": "If I were you, I'd still be furious.",
+    "alternatives": [
+      "In your shoes, I'd still be furious.",
+      "If I were in your shoes, I'd still be angry."
+    ],
+    "point": "現在の仮定は If + 過去形、would。were を使う",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 10,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2z2w7c5k",
     "ja": "思ってた以上に助かったよ。",
     "en": "That helped more than I expected.",
@@ -352,6 +368,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5w3k2y9q",
+    "ja": "どれだけ嬉しいか言葉にできない。",
+    "en": "I can't say how much this means.",
+    "alternatives": [
+      "I can't tell you how much this means.",
+      "I can't express how much this means to me."
+    ],
+    "point": "how much の後ろは平叙文の語順",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 9,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5z8k3p6x",

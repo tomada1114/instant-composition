@@ -432,6 +432,22 @@
     }
   },
   {
+    "id": "c_7w7p8f5g",
+    "ja": "一番こたえたのは、彼の無関心だった。",
+    "en": "It was his indifference that stung.",
+    "alternatives": [
+      "What really got to me was his indifference.",
+      "It was his indifference that hurt the most."
+    ],
+    "point": "It was ～ that で強調。sting は心にこたえる",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8e3q4j9r",
     "ja": "それを聞いて残念です。",
     "en": "I'm sorry to hear that.",

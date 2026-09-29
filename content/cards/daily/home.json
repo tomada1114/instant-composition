@@ -142,6 +142,22 @@
     }
   },
   {
+    "id": "c_3s8f4c6p",
+    "ja": "洗濯機は前から壊れてたと彼は言い張った。",
+    "en": "He swore the washer had died ages ago.",
+    "alternatives": [
+      "He insisted the washer had broken down ages ago.",
+      "He swore the washer had broken ages ago."
+    ],
+    "point": "言った時点より前の出来事は過去完了。swear は言い張る",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 10,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4m6q9n3s",
     "ja": "弟は掃除機をかけてる。",
     "en": "My brother is vacuuming.",
@@ -433,6 +449,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8q7q9f9p",
+    "ja": "結局、片付けるのは私なんだよ。",
+    "en": "I'm the one who ends up cleaning.",
+    "alternatives": [
+      "I'm always the one who ends up tidying.",
+      "I'm the one who always has to clean up."
+    ],
+    "point": "the one who で「結局私が〜する」。end up -ing が自然",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 9,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8t2j5e9g",

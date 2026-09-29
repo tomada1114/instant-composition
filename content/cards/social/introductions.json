@@ -23,6 +23,22 @@
     }
   },
   {
+    "id": "c_2t9p7k9j",
+    "ja": "作ったの君だって、ミカが言ってた。",
+    "en": "Mika said you're the one who made this.",
+    "alternatives": [
+      "Mika told me you're the one who made this.",
+      "Mika said it was you who made this."
+    ],
+    "point": "said の中に the one who の節。時制は文脈で選ぶ",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3d7g4c3x",
     "ja": "私を雇ったのは、ミカさんです。",
     "en": "It was Mika who hired me.",
@@ -315,6 +331,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6g9a6h7j",
+    "ja": "行ってなきゃ、会えなかったね。",
+    "en": "If I hadn't gone, we'd never have met.",
+    "alternatives": [
+      "If I hadn't gone, we wouldn't have met.",
+      "Had I not gone, we'd never have met."
+    ],
+    "point": "過去の仮定は If + had + 過去分詞、would have + 過去分詞",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7f5g2j9b",

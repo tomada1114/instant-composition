@@ -123,6 +123,22 @@
     }
   },
   {
+    "id": "c_2z8g5w4k",
+    "ja": "ひょっとして、少し時間ありません？",
+    "en": "I don't suppose you'd have a minute?",
+    "alternatives": [
+      "Would you happen to have a minute?",
+      "I don't suppose you could spare a minute?"
+    ],
+    "point": "I don't suppose ～ で控えめに頼む",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 9,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3j5u5t4p",
     "ja": "誰に聞けばいいか分かりますか？",
     "en": "Do you know who to ask?",

@@ -41,6 +41,38 @@
     }
   },
   {
+    "id": "c_2v3h3b4j",
+    "ja": "医者は不調の元はストレスだと言う。",
+    "en": "The doctor says what's behind it is stress.",
+    "alternatives": [
+      "The doctor says stress is what's behind it.",
+      "The doctor says what's causing it is stress."
+    ],
+    "point": "what's behind it で「元凶」。what 節が主語になる",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_2z6p2q2h",
+    "ja": "私のは軽症だと、看護師が言った。",
+    "en": "The nurse said what I have isn't serious.",
+    "alternatives": [
+      "The nurse told me what I have isn't serious.",
+      "The nurse said what I've got isn't serious."
+    ],
+    "point": "said の中に what 節。節の中に節を入れる",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3b9a4e7z",
     "ja": "頭が痛いんだ。",
     "en": "I have a headache.",
@@ -80,6 +112,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4c4t5t2v",
+    "ja": "腫れがいつまで続くか分かります？",
+    "en": "Any idea how long the swelling lasts?",
+    "alternatives": [
+      "Do you know how long the swelling will last?",
+      "Could you tell me how long the swelling lasts?"
+    ],
+    "point": "間接疑問は疑問詞のあとが平叙文の語順",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 8,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_4g8j2x4f",
