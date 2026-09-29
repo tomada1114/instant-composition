@@ -90,6 +90,7 @@ export interface RecordsView {
 export interface SettingsPageView {
   readonly settings: Required<Settings>;
   readonly topics: readonly TopicInfo[];
+  readonly toeic: string | null;
   readonly difficulty: LevelView;
   /** Every level the learner may pick, lowest first, by its TOEIC reference. */
   readonly levels: readonly { readonly level: number; readonly toeic: string }[];

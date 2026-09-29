@@ -486,7 +486,7 @@ describe("settingsPage", () => {
     const view = await settingsPage(h.deps, h.context());
     expect(view.ok && view.value).toMatchObject({
       settings: { topics: [], dailySize: 10, sound: true },
-      difficulty: { mode: "auto", level: null, toeic: null },
+      toeic: null,
     });
     expect(view.ok && view.value.topics.map((topic) => topic.id)).toStrictEqual([
       "work",

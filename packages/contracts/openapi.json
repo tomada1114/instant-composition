@@ -1563,6 +1563,7 @@
             "type": "array",
             "items": { "$ref": "#/components/schemas/TopicInfo" }
           },
+          "toeic": { "type": ["string", "null"] },
           "difficulty": { "$ref": "#/components/schemas/LevelView" },
           "levels": {
             "type": "array",
@@ -1580,7 +1581,7 @@
             }
           }
         },
-        "required": ["settings", "topics", "difficulty", "levels"]
+        "required": ["settings", "topics", "toeic", "difficulty", "levels"]
       },
       "History": {
         "type": "object",

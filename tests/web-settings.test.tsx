@@ -65,6 +65,7 @@ const PAGE: SettingsPageView = {
     },
     { id: "travel", name: "旅行", subtopics: [{ id: "airport", name: "空港" }] },
   ],
+  toeic: "730",
   difficulty: { mode: "auto", level: 5, toeic: "730" },
   levels: LEVELS,
 };
@@ -421,6 +422,7 @@ describe("the settings screen, W12 measuring again", () => {
   it("shows no level chosen and no mode before a placement", async () => {
     serveSettings({
       ...PAGE,
+      toeic: null,
       difficulty: { mode: "auto", level: null, toeic: null },
     });
     await renderApp("/settings?tab=level");
@@ -503,6 +505,7 @@ describe("the settings screen, the difficulty", () => {
   it("offers only the levels before a placement, with nothing chosen", async () => {
     serveSettings({
       ...PAGE,
+      toeic: null,
       difficulty: { mode: "auto", level: null, toeic: null },
     });
     await renderApp("/settings?tab=level");

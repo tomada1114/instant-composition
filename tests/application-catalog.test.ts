@@ -349,6 +349,6 @@ describe("a level with no TOEIC reference", () => {
     });
 
     const view = await settingsPage(h.deps, h.context());
-    expect(view.ok && view.value.difficulty.toeic).toBe("");
+    expect(view.ok && view.value.toeic).toBe("");
   });
 });

@@ -332,9 +332,9 @@ describe("the level picked by hand", () => {
 
     const page = await contracted(await api.call("GET", "/v1/settings"), "getSettings");
     expect(page).toMatchObject({
+      toeic: "500",
       difficulty: { mode: "manual", level: 5, toeic: "500" },
     });
-    expect(page).not.toHaveProperty("toeic");
     expect((page as { levels: unknown[] }).levels).toHaveLength(10);
     const home = await contracted(await api.call("GET", "/v1/home"), "getHome");
     expect(home).toMatchObject({ state: { kind: "ready" } });
