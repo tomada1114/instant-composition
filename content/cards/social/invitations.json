@@ -32,23 +32,13 @@
     "level": 6,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4e6n3a8p",
-    "ja": "妹の引っ越しを手伝う約束をしてたから、断ったんだ。",
-    "en": "I'd promised to help my sister move, so I declined.",
-    "alternatives": [
-      "I'd promised to help my sister move, so I passed.",
-      "I'd said I'd help my sister move, so I declined."
-    ],
-    "point": "先にした約束は I'd promised と過去完了で",
-    "topic": "social",
-    "subtopic": "invitations",
-    "level": 7,
-    "grammar": ["past-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:aa1f1c34c28122fe6f68fdef5895805dd50b6d74679f156b188778d1fc8cec9c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5k4j7p3a",
@@ -93,38 +83,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_5w7b4u5a",
-    "ja": "行きたいけど、上司に出勤させられるんだ。",
-    "en": "I'd love to, but my boss is making me work.",
-    "alternatives": [
-      "I want to, but my boss is making me work.",
-      "I'd love to, but my boss has me working."
-    ],
-    "point": "make me work の work は原形で、to は付けない",
-    "topic": "social",
-    "subtopic": "invitations",
-    "level": 7,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5w7r8e8e",
-    "ja": "先月できたタイ料理の店、行った人みんな絶賛してる。",
-    "en": "Everyone who's tried the new Thai place raves about it.",
-    "alternatives": [
-      "Everyone who's eaten there raves about the new Thai place.",
-      "Everyone who's tried that new Thai spot loves it."
-    ],
-    "point": "Everyone who's been は単数扱いなので動詞は raves",
-    "topic": "social",
-    "subtopic": "invitations",
-    "level": 7,
-    "grammar": ["relative-clauses", "present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_5x6m4a8k",
@@ -184,7 +142,13 @@
     "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c7c58b0e7ba3bdf4539562c0991600014cb640d8305d704f3c4fcfe020784442",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6s9a6h8w",
@@ -229,22 +193,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_6z3b6x3d",
-    "ja": "彼女、ランチは断ったけど映画は行くって。",
-    "en": "She turned down lunch but agreed to a movie.",
-    "alternatives": [
-      "She declined lunch but agreed to a movie.",
-      "She passed on lunch but agreed to a movie."
-    ],
-    "point": "「誘いを断る」は turn down、「同意する」は agree to",
-    "topic": "social",
-    "subtopic": "invitations",
-    "level": 6,
-    "grammar": ["phrasal-verbs", "concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_7p9s4g3a",
@@ -301,7 +249,13 @@
     "level": 7,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d8f925351b0e3e40ca9fd8834848fb09c3b924d848dcc4f13e39a29d2dc51c5d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8a9w3y4q",
@@ -317,7 +271,13 @@
     "level": 5,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:effb57ef48fbdabf32c4a9586d14680aeb5c12bfe1b96dafefacb0d52974ff77",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8g3u2b6m",
@@ -333,7 +293,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3d737c94c77845f2d7725c89679a425f0b12cd5d76b06a453f121cd6da4f8720",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8k4f3z7e",
@@ -349,7 +315,13 @@
     "level": 6,
     "grammar": ["phrasal-verbs", "modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9489335432d25a243bb04aaad0b2007bb6e1799e60ebac0a0a8f9804d59bc911",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8p7h5s8y",
@@ -396,23 +368,6 @@
     }
   },
   {
-    "id": "c_8w9z8z5r",
-    "ja": "土曜のバーベキュー、始める時間は君に任せるよ。",
-    "en": "What time the barbecue starts is up to you.",
-    "alternatives": [
-      "It's up to you what time we start.",
-      "I'll let you decide when the barbecue starts.",
-      "It's your call when the barbecue starts."
-    ],
-    "point": "「何時に始まるか」は what time the barbecue starts の語順",
-    "topic": "social",
-    "subtopic": "invitations",
-    "level": 6,
-    "grammar": ["noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_9s7s5u5s",
     "ja": "あの誘い、断らなきゃ今ごろキャンプ場にいたのに。",
     "en": "If I hadn't turned it down, I'd be camping now.",
@@ -426,7 +381,13 @@
     "level": 8,
     "grammar": ["mixed-conditional", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9d5fc0f3bb3c01a75d44bcb3cf4aa034250d67de42c93fc007e679c5399f2be6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9w6e7j5j",
@@ -442,7 +403,13 @@
     "level": 7,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2a1bdf0280f08f11c1e7b859b97f45273252fa35ae21bf3b323cd72751e4bab9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9z2t3p2f",
@@ -458,6 +425,12 @@
     "level": 8,
     "grammar": ["cleft-emphasis", "indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4abc0625eaa94d72974fa872a33ea55d0692ec318bc7fde61a2dff097c03dd0a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
