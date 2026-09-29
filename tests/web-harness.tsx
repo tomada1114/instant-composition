@@ -1,4 +1,4 @@
-import { act, render, screen, within } from "@testing-library/react";
+import { act, cleanup, render, screen, within } from "@testing-library/react";
 import { vi } from "vitest";
 
 import {
@@ -114,6 +114,29 @@ export async function renderApp(path: string): Promise<void> {
   render(<App />);
   await settle();
   await settle(16);
+}
+
+/**
+ * Mounts the app once and asks it for a role, then leaves no trace. The first
+ * render and the first role query in a worker are an order of magnitude
+ * slower than every later one — code compiled and caches filled once — and
+ * that one-time cost, billed to whichever test ran first, is what pushed it
+ * past its budget on a loaded machine. Call it from a `beforeAll`, so the cost
+ * lands on the hook and every test is timed on its own work alone.
+ */
+export async function warmUp(): Promise<void> {
+  fakeTimers();
+  fakeApi(() => undefined);
+  try {
+    await renderApp("/");
+    screen.queryAllByRole("button", { name: ja.Home.loadFailed.reload });
+  } finally {
+    cleanup();
+    window.history.replaceState(null, "", "/");
+    vi.restoreAllMocks();
+    vi.unstubAllGlobals();
+    vi.useRealTimers();
+  }
 }
 
 export const COUNT: Extract<StreakView, { kind: "count" }> = {
