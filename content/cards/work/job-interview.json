@@ -35,7 +35,13 @@
     "level": 7,
     "grammar": ["concession-contrast", "hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6157e7b5d52ca6b28f8adb892066371aac054ab86da1ccf1b38aa508bae09011",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2h8f9t3q",
@@ -73,23 +79,13 @@
     "level": 5,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3b9x2q2v",
-    "ja": "前の仕事は安定していましたが、挑戦したかったです。",
-    "en": "Although my last job was stable, I wanted a challenge.",
-    "alternatives": [
-      "My old job was stable, but I wanted a challenge.",
-      "My last job was stable, but I wanted a challenge."
-    ],
-    "point": "Although の節の後ろに but は不要",
-    "topic": "work",
-    "subtopic": "job-interview",
-    "level": 7,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:712e81f0467183b01521a7e76833d44b6e62137fdf5d61c4a80aa6680ed20e78",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3c6q5b2b",
@@ -124,7 +120,13 @@
     "level": 3,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:320b419c478301530bc4a39f75ac7060088495eb796695d5cc32e5fb15e0d90c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3t9g8y3r",
@@ -184,7 +186,13 @@
     "level": 5,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c4ce8135ad318cc62acb077e75e6b01a2df8f430e480d8ff87578ff88d998db0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3w7z9s7g",
@@ -288,7 +296,13 @@
     "level": 7,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:046323163daa48f195a60ee99d44df3fdb927ff581c33be81ee5a27c076200c7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5b2b9w7s",
@@ -326,7 +340,13 @@
     "level": 5,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2767f40b8513340399907d0cc8c46b73405417dfb872457951715c4bb1d855f8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5y2s7a8x",
@@ -342,7 +362,13 @@
     "level": 6,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a9965e91987f1020ab42c1c8b412726d62be5a745c2f3032e14151a4aa7fe497",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6a3v6q9a",
@@ -365,22 +391,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_7e4v6d4v",
-    "ja": "初日から、すぐに戦力になれる自信があります。",
-    "en": "I'm confident I can hit the ground running.",
-    "alternatives": [
-      "I'm sure I can hit the ground running from day one.",
-      "I'm confident I'll be productive from day one."
-    ],
-    "point": "「即戦力」は hit the ground running。",
-    "topic": "work",
-    "subtopic": "job-interview",
-    "level": 10,
-    "grammar": ["noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_7f6q3n9z",
@@ -471,38 +481,6 @@
     }
   },
   {
-    "id": "c_7y6r7x5f",
-    "ja": "まず私に何をしてほしいですか？",
-    "en": "What would you want me to tackle first?",
-    "alternatives": [
-      "What would you like me to work on first?",
-      "What would you like me to start with?"
-    ],
-    "point": "want + 人 + to do の形。want me doing とは言わない",
-    "topic": "work",
-    "subtopic": "job-interview",
-    "level": 6,
-    "grammar": ["verb-object-to-do"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8e4e6g6k",
-    "ja": "お客様に信頼されるよう、資格を取りました。",
-    "en": "I got certified to earn clients' trust.",
-    "alternatives": [
-      "I got certified so clients would trust me.",
-      "I earned a certification to gain clients' trust."
-    ],
-    "point": "目的は to 不定詞。「信頼を得る」は earn trust",
-    "topic": "work",
-    "subtopic": "job-interview",
-    "level": 7,
-    "grammar": ["infinitives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_9c5u6s9v",
     "ja": "前の会社が撤退しなければ、転職しなかったでしょう。",
     "en": "If my firm hadn't pulled out, I wouldn't have left.",
@@ -538,7 +516,13 @@
     "level": 4,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9ebf6d081d6f4ff61bca67913353c61191ec32bb4d0d23ed4b84be5d9f9d6cd7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9p9h7w8a",
@@ -554,22 +538,12 @@
     "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9q8d7p8n",
-    "ja": "以前は在庫管理でしたが、今は企画職を狙っています。",
-    "en": "I used to handle inventory, but now I'm aiming for planning roles.",
-    "alternatives": [
-      "I worked in inventory management, but now I'm going for planning roles.",
-      "I handled inventory before, but now I'm aiming for planning."
-    ],
-    "point": "過去の経歴は過去形、今の狙いは現在進行形で対比する",
-    "topic": "work",
-    "subtopic": "job-interview",
-    "level": 10,
-    "grammar": ["tense-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fea5139853bd7db6864eeae4bed0f21df4da62a1732a177b9dda5bdd5a9f3e02",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
