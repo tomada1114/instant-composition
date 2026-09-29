@@ -586,6 +586,22 @@
     }
   },
   {
+    "id": "c_9c3a5a7w",
+    "ja": "うちは食卓でまず食べない。",
+    "en": "Seldom do we eat at the table.",
+    "alternatives": [
+      "We seldom eat at the table.",
+      "Hardly ever do we eat at the table."
+    ],
+    "point": "Seldom を文頭に出すと do we の倒置になる",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_9c4e8j3t",
     "ja": "昨日、お風呂を掃除したよ。",
     "en": "I cleaned the bathroom yesterday.",
@@ -688,5 +704,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9p5s5q9g",
+    "ja": "弟は一度も皿を洗ったことがない。",
+    "en": "Not once has my brother washed a dish.",
+    "alternatives": [
+      "My brother has never once washed a dish.",
+      "My brother has never washed a single dish."
+    ],
+    "point": "Not once を前に出すと has my brother の語順",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

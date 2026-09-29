@@ -183,6 +183,22 @@
     }
   },
   {
+    "id": "c_3e4p3g9a",
+    "ja": "知ってたら、身分証を持ってきたのに。",
+    "en": "Had I known, I'd have brought ID.",
+    "alternatives": [
+      "If I'd known, I'd have brought ID.",
+      "If I had known, I would have brought ID."
+    ],
+    "point": "If を省いて Had I known と倒置できる",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 9,
+    "grammar": ["third-conditional", "inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3n6b6v4k",
     "ja": "お待ちの方は番号札をどうぞ。",
     "en": "Anyone waiting can take a number.",

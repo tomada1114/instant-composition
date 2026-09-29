@@ -126,6 +126,35 @@
     }
   },
   {
+    "id": "c_3k5b8b8x",
+    "ja": "痛くてたまらないのは腰なんだ。",
+    "en": "It's my back that's killing me.",
+    "alternatives": ["My back is what's killing me.", "What's killing me is my back."],
+    "point": "It's ~ that で腰を強調。killing me は痛くてたまらない",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3u5e8j5b",
+    "ja": "彼女は、私の発疹はうつらないと言う。",
+    "en": "She says the rash I have isn't contagious.",
+    "alternatives": [
+      "She says the rash I've got isn't contagious.",
+      "She says my rash isn't contagious."
+    ],
+    "point": "the rash (that) I have の関係詞は省ける",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4c4t5t2v",
     "ja": "腫れがいつまで続くか分かります？",
     "en": "Any idea how long the swelling lasts?",
@@ -228,6 +257,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5t4x8u8p",
+    "ja": "食べたものが胃にもたれている気がする。",
+    "en": "I think what I ate isn't sitting well.",
+    "alternatives": [
+      "I think what I ate disagrees with me.",
+      "I think something I ate isn't agreeing with me."
+    ],
+    "point": "isn't sitting well は胃にもたれるの定番表現",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5v7e6p5y",

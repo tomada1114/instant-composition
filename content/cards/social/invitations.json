@@ -493,6 +493,22 @@
     }
   },
   {
+    "id": "c_6x2k6u6v",
+    "ja": "一番来てほしいのは、君なんだよ。",
+    "en": "It's you I'd most love to have there.",
+    "alternatives": [
+      "You're the one I'd most love to have there.",
+      "It's you I'd love to have there most."
+    ],
+    "point": "It's you (that) で人を強調。that は省ける",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7b9d2e5w",
     "ja": "終わったら合流するよ。",
     "en": "I'll join you when I'm done.",

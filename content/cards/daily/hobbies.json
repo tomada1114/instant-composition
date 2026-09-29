@@ -44,6 +44,22 @@
     }
   },
   {
+    "id": "c_3a7t2x4r",
+    "ja": "退職して初めて、私は絵を描き始めた。",
+    "en": "Only after retiring did I take up painting.",
+    "alternatives": [
+      "I didn't take up painting until I retired.",
+      "It wasn't until I retired that I took up painting."
+    ],
+    "point": "Only after を前に出すと did I の倒置",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3g2j4g6w",
     "ja": "近くに本屋があるよ。",
     "en": "There's a bookstore nearby.",
@@ -474,6 +490,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8m6m7y9p",
+    "ja": "その頃、もう陶芸は諦めていた。",
+    "en": "By then, I'd given up on pottery.",
+    "alternatives": [
+      "By that time, I had given up on pottery.",
+      "I had already given up on pottery by then."
+    ],
+    "point": "その時点より前の出来事なので had given up",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 9,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8r3t2s5r",

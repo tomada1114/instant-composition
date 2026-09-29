@@ -269,6 +269,19 @@
     }
   },
   {
+    "id": "c_4v7s3k9q",
+    "ja": "君には本当に窮地を救ってもらったよ。",
+    "en": "You really bailed me out of a jam.",
+    "alternatives": ["You really bailed me out.", "You really got me out of a jam."],
+    "point": "bail out は窮地から救い出す",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 10,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4z8h6g7c",
     "ja": "忙しいのに来てくれてどうも。",
     "en": "Thanks for coming despite being busy.",
@@ -563,6 +576,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8s2u8v8r",
+    "ja": "彼女は一生恩に着ると言った。",
+    "en": "She said she'd be forever in my debt.",
+    "alternatives": [
+      "She told me she'd be forever in my debt.",
+      "She said she owed me big time."
+    ],
+    "point": "恩に着るは in one's debt。時制は said に合わせる",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 9,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8y2c2w6h",

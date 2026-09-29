@@ -290,6 +290,22 @@
     }
   },
   {
+    "id": "c_4m3d7c8s",
+    "ja": "どうやって成し遂げたのか教えてよ。",
+    "en": "Tell me how you pulled it off.",
+    "alternatives": [
+      "I'm curious how you pulled it off.",
+      "I want to know how you pulled it off."
+    ],
+    "point": "how の後ろは平叙の語順(you pulled)",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 9,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4s6h2z5n",
     "ja": "その頃は大変だったでしょうね。",
     "en": "That must have been hard back then.",
@@ -370,6 +386,23 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5k8q4w7q",
+    "ja": "燃え尽きて、のんびりやってる。",
+    "en": "Burned out, I've been taking it easy.",
+    "alternatives": [
+      "Having burned out, I've been taking it easy.",
+      "Having burned out, I've been relaxing lately.",
+      "I burned out, so I've been taking it easy."
+    ],
+    "point": "Having + 過去分詞で先に起きた理由を示す",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 9,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5m7q4c8y",
@@ -538,6 +571,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6k6e6z4e",
+    "ja": "音沙汰がなくて、最悪を覚悟してたよ。",
+    "en": "Not hearing from you, I feared the worst.",
+    "alternatives": [
+      "Since I hadn't heard from you, I feared the worst.",
+      "When I didn't hear from you, I feared the worst."
+    ],
+    "point": "否定の分詞構文は Not hearing",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 10,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6p7n2v3q",

@@ -23,6 +23,22 @@
     }
   },
   {
+    "id": "c_2e3d8e2p",
+    "ja": "移住してなければ、今ここにいない。",
+    "en": "If I hadn't emigrated, I wouldn't be here.",
+    "alternatives": [
+      "Had I not emigrated, I wouldn't be here.",
+      "I wouldn't be here if I hadn't emigrated."
+    ],
+    "point": "過去の事実が今に響く。if 節は had、結果は would be",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2t9p7k9j",
     "ja": "作ったの君だって、ミカが言ってた。",
     "en": "Mika said you're the one who made this.",
@@ -153,6 +169,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3q9r9y8u",
+    "ja": "ミカが君は会うべき人だと言っていた。",
+    "en": "Mika told me you're someone I should meet.",
+    "alternatives": [
+      "Mika said you're someone I should meet.",
+      "Mika said I should meet you."
+    ],
+    "point": "you're someone (that) I should meet の入れ子",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_3w6j9h2q",

@@ -159,6 +159,22 @@
     }
   },
   {
+    "id": "c_4m7u3h7m",
+    "ja": "もうあの店では二度と買わない。",
+    "en": "Never again will I buy from that store.",
+    "alternatives": [
+      "I'll never buy from that store again.",
+      "I will never shop at that store again."
+    ],
+    "point": "Never again の後ろは will I の倒置",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4p3m2x8b",
     "ja": "紙袋はレジ袋より丈夫です。",
     "en": "Paper bags are stronger than plastic.",

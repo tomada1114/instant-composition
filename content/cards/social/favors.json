@@ -41,6 +41,22 @@
     }
   },
   {
+    "id": "c_2p6a3p2x",
+    "ja": "君が断ってたら、今も困ってる。",
+    "en": "If you'd said no, I'd still be stuck.",
+    "alternatives": [
+      "If you'd refused, I'd still be stuck.",
+      "Had you said no, I'd still be stuck."
+    ],
+    "point": "過去の仮定 + 今の結果は would be",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2p9u4s2f",
     "ja": "何を手伝えばいい？",
     "en": "What can I do?",

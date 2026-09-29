@@ -63,6 +63,19 @@
     }
   },
   {
+    "id": "c_3d4u9f2y",
+    "ja": "あの一言、ぐっと飲み込めばよかった。",
+    "en": "I wish I'd bitten my tongue.",
+    "alternatives": ["If only I'd bitten my tongue.", "I wish I'd kept my mouth shut."],
+    "point": "bite one's tongue は言葉をぐっと飲み込む",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 10,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3p7z6b4w",
     "ja": "一人で歩くのは平気だよ。",
     "en": "I don't mind walking alone.",
