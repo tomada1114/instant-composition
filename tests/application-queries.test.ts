@@ -493,6 +493,20 @@ describe("settingsPage", () => {
       "travel",
     ]);
   });
+
+  it("offers only the topics and subtopics that hold a shown card", async () => {
+    const snapshot = makeSnapshot();
+    const shown = new Map(
+      [...snapshot.shown].filter(
+        ([, card]) => card.topic === "work" && card.subtopic === "a",
+      ),
+    );
+    const h = makeHarness(fixedCatalog({ ...snapshot, shown }));
+    const view = await settingsPage(h.deps, h.context());
+    expect(view.ok && view.value.topics).toStrictEqual([
+      { id: "work", name: "workの話題", subtopics: [{ id: "a", name: "work/a" }] },
+    ]);
+  });
 });
 
 describe("history", () => {

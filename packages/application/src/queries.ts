@@ -81,7 +81,25 @@ export async function roundPayload(
     : snapshot;
 }
 
-/** The settings as saved (the defaults before any), the taxonomy and the difficulty. */
+/**
+ * The topics and subtopics a learner may choose: those holding at least one
+ * shown card. One with none would only lead to a round with no cards to deal.
+ */
+function offeredTopics(snapshot: CatalogSnapshot): SettingsPageView["topics"] {
+  const cells = new Set(
+    [...snapshot.shown.values()].map((card) => `${card.topic}/${card.subtopic}`),
+  );
+  return snapshot.topics.flatMap((topic) => {
+    const subtopics = topic.subtopics
+      .filter(({ id }) => cells.has(`${topic.id}/${id}`))
+      .map(({ id, name }) => ({ id, name }));
+    return subtopics.length === 0
+      ? []
+      : [{ id: topic.id, name: topic.name, subtopics }];
+  });
+}
+
+/** The settings as saved (the defaults before any), the topics with cards and the difficulty. */
 export async function settingsPage(
   deps: ApplicationDeps,
   context: RequestContext,
@@ -100,11 +118,7 @@ export async function settingsPage(
   const level = totals.level;
   return ok({
     settings: withDefaults(settings?.value ?? DEFAULT_SETTINGS),
-    topics: snapshot.topics.map((topic) => ({
-      id: topic.id,
-      name: topic.name,
-      subtopics: topic.subtopics.map(({ id, name }) => ({ id, name })),
-    })),
+    topics: offeredTopics(snapshot),
     toeic: level === null ? null : toeicOf(snapshot, level.level),
     difficulty: levelViewOf(totals, snapshot),
     levels: [...snapshot.levels]
