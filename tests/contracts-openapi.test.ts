@@ -60,6 +60,14 @@ describe("openApiDocument", () => {
     expect(document.servers).toStrictEqual([{ url: "/api" }]);
   });
 
+  it("marks the settings page's toeic deprecated while /v1 still serves it", () => {
+    const schema = document.components.schemas["SettingsPageView"];
+    expect(schema).toMatchObject({
+      properties: { toeic: { deprecated: true, type: ["string", "null"] } },
+    });
+    expect(schema?.required).toContain("toeic");
+  });
+
   it("lists exactly the operations today's commands and queries back", () => {
     const operations = Object.entries(document.paths).flatMap(([route, methods]) =>
       Object.entries(methods).map(
