@@ -384,10 +384,6 @@ export default defineConfig([
   // the same violation twice, at a path nobody may edit.
   // `.claude/worktrees/` holds full working copies created by agent sessions,
   // linted in their own checkout.
-  // `.claude/workflows/` holds Claude Code dynamic-workflow scripts: they run
-  // in the Workflow tool's own runtime, with injected globals (`agent`,
-  // `pipeline`, `args`, …) and a top-level `return`, which no ES module
-  // parser accepts. Prettier still formats them.
   // A `tests/fixtures/` file is malformed on purpose, so linting it reports
   // the very defect a test asserts on.
   // `apps/web/src/openapi/` is generated from `packages/contracts/openapi.json`
@@ -402,7 +398,6 @@ export default defineConfig([
     "coverage/",
     ".claude/skills/",
     ".claude/worktrees/",
-    ".claude/workflows/",
     "tests/fixtures/",
   ]),
   {

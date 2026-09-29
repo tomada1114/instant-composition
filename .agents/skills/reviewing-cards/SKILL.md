@@ -25,68 +25,67 @@ applied without asking; git is the undo.
 ```
 
 - No arguments: the default queue, at most 50 cards.
-- `--ids` reviews exactly those cards, stamped or not. `--note` attaches the owner's
-  observation to every listed card; every reviewer sees it.
+- `--ids` reviews exactly those cards, stamped or not. `--note` passes the owner's
+  observation to the reviewer, to check specifically.
 - `--field <name>`: review only that backfilled field.
 
-## Run it as one workflow
+## Who does what
 
-The whole run happens inside the dynamic workflow
-`.claude/workflows/reviewing-cards.js`. This session does not read the guides, run
-`pnpm cards:*` or git, or judge cards — it only starts the workflow and reports what it
-returns. This skill runs only in Claude Code; in a runtime without the Workflow tool,
-stop and say so.
+One `card-reviewer` agent (Sonnet 5.5, medium effort; `generating-cards`, "Who does
+what") reviews up to 50 cards against every perspective, decides each card, writes any
+rebuild itself, and hands back JSON files. It follows
+[references/review-brief.md](references/review-brief.md). Nothing re-reviews its work:
+one reviewer and one pass, with lint as the mechanical final check. This session runs
+the commands and git, and reads the reviewer's files only as far as applying them needs.
 
-1. Turn the arguments into `args` (a JSON object, not a string):
-   `{ topic?, subtopic?, level?, ids?: [..], note?, field?, limit? }`.
-2. Call `Workflow({ scriptPath: ".claude/workflows/reviewing-cards.js", args })` and
-   wait for its completion notice. Do nothing else meanwhile.
-3. Report from the returned object: cards seen; kept / edited / rebuilt / deleted
-   counts; each deletion and rebuild with its reason; every overruled verdict; rejected
-   edits; batches skipped; unknown ids; lint ERRORs outside an `--ids` run; anything
-   left unstamped; the commits; and `queueRemaining`. When `stop` is set, quote it and
-   do not work around it.
+## Procedure
 
-## What the workflow does
-
-All agents are Sonnet 5.5 at medium effort (`generating-cards`, "What the workflow
-does").
-
-1. **Prepare** — the branch step ([references/branch.md](references/branch.md)),
-   `pnpm cards:lint` (without `--ids`, ERROR cards join the run first), then
-   `pnpm cards:queue`: lint-ERROR cards, never-stamped cards, cards changed since their
-   stamp, cards stamped under an older `perspectivesVersion`.
-2. **Per batch of 15, batches in parallel:**
-   1. R1, R2 and R3 in parallel, each blind to the others
-      ([references/reviewer-briefs.md](references/reviewer-briefs.md)). R1 sees labels
-      and `ja` only.
-   2. One adjudicator decides keep / edit / rebuild / delete
-      ([references/adjudication.md](references/adjudication.md)).
-   3. Rebuild writers run in parallel (`generating-cards`'s
-      `references/writer-brief.md`).
-   4. The applier runs `cards:update`, `cards:tombstone` and `cards:add --replacing` —
-      every write, across all batches, strictly one at a time, since each holds
-      `content/.cards.lock`.
-   5. Second round: R1–R3 on rebuilt cards, R1 and R2 on edited ones (plus R3 when the
-      edit touched `topic`, `subtopic`, `level`, `grammar` or `point`). A card that
-      fails again is deleted. There is no third round.
-   6. `cards:lint`, `cards:stamp` on the batch's surviving cards, and a commit:
-      `fix(cards): review <n> cards (<kept>/<edited>/<rebuilt>/<deleted>)`.
-3. **Field review** (`--field`) — one reviewer per 20 cards applies the **Review**
-   section of `backfilling-card-fields`'s `references/fields/<name>.md`; the field is
-   edited or cleared with `cards:update`, never tombstoned over, and stamped with
-   `cards:stamp --field`.
-
-A batch whose reviewer or adjudicator returns nothing is skipped whole: nothing applied,
-nothing stamped, and it is reported.
+1. **Branch.** Follow [references/branch.md](references/branch.md).
+2. **Lint.** `pnpm -s cards:lint | tail -1`. Without `--ids`, ERROR cards are queued
+   first. With `--ids`, only those cards are reviewed: note how many other cards have
+   ERRORs for the report.
+3. **Queue.**
+   `pnpm -s cards:queue [range] [--ids …] [--field <name>] --limit <n> --json > tmp/cards/queue.json`
+   (`--limit` defaults to 50; an `unknown id …` line on stderr goes in the report).
+   Split it into batches of at most 50:
+   `node -e 'const q=require("./tmp/cards/queue.json");for(let b=0;b*50<q.length;b++)require("fs").writeFileSync("tmp/cards/queue-"+(b+1)+".json",JSON.stringify(q.slice(b*50,b*50+50)));console.log(q.length)'`.
+   Nothing queued: report that and stop.
+4. **Review.** Spawn one `card-reviewer` per batch, in parallel when there is more than
+   one: "Follow `.claude/skills/reviewing-cards/references/review-brief.md` for batch
+   `<b>`." Add `Field: <name>` with `--field`, and `Note: <text>` with `--note`.
+5. **Apply**, per batch, one `pnpm cards:*` write command at a time:
+   - `pnpm -s cards:update tmp/cards/review-<b>-edits.json` when it is not `[]`.
+   - Each entry of `review-<b>-deletes.json`:
+     `pnpm -s cards:tombstone --id <id> --reason "<reason>"`.
+   - Each entry of `review-<b>-rebuilds.json`: write `[<card>]` to
+     `tmp/cards/rebuild-<old>.json`, run
+     `pnpm -s cards:add tmp/cards/rebuild-<old>.json --replacing <old>`, then
+     `pnpm -s cards:tombstone --id <old> --reason "<reason>" --replaced-by <new id>`. If
+     `cards:add` drops it, tombstone the old card with reason
+     `rebuild failed: <the drop reason>`.
+6. **Final check and stamp.** The reviewed cards still present are every queued id not
+   deleted or replaced, plus each new rebuilt id. `pnpm -s cards:lint --ids <them>`,
+   then `pnpm -s cards:stamp --ids <them>` (with `--field <name>` for a field review).
+   `cards:stamp` refuses a card that fails lint (`ERR_CARDS_STAMP_REFUSED`) and stamps
+   the rest; a refused card stays unstamped and goes in the report.
+7. **Commit.** `git add content`; if `git diff --cached --quiet` reports nothing staged,
+   skip it. Otherwise
+   `git commit -m "fix(cards): review <n> cards (<kept>/<edited>/<rebuilt>/<deleted>)"`
+   (for a field: `fix(cards): review <name> on <n> cards`). Never `--no-verify`.
+8. **Report**: cards seen; kept / edited / rebuilt / deleted counts; each deletion and
+   rebuild with its reason; rejected edits; failed rebuilds; unknown ids; lint ERRORs
+   outside an `--ids` run; anything left unstamped; `guideIssues` from the summary
+   files; and `pnpm -s cards:queue --count`.
 
 ## Stop rules
 
-The workflow's agents apply these and hand back `stop` instead of pressing on:
-
-- Any `pnpm cards:*` failure other than a card-level one (`ERR_CARDS_LINT`,
-  `ERR_CARDS_STAMP_REFUSED`, a card `cards:add` dropped or `cards:update` rejected, an
-  `unknown id …` line). Later batches then apply nothing.
-- Nobody edits `content/guides/*` or `content/*.json` lists to make a card pass; a wrong
-  guide goes in the report.
-- A card is never stamped unless it was reviewed in this run.
+- Any `pnpm cards:*` failure other than a card-level one: stop and report. Card-level,
+  and so not a reason to stop: `ERR_CARDS_LINT`, `ERR_CARDS_STAMP_REFUSED`, a card
+  `cards:add` dropped or `cards:update` rejected, and an `unknown id …` line.
+- `ERR_CARDS_BUSY`: another write command holds `content/.cards.lock`. Run write
+  commands one at a time; wait and rerun.
+- A reviewer's file is missing or does not parse: send it one message quoting the error;
+  if it is still bad, apply nothing and stamp nothing for that batch, and report it.
+- Never edit `content/guides/*` or `content/*.json` lists to make a card pass. If a
+  guide is wrong, say so in the report.
+- Never stamp a card that was not reviewed in this run.
