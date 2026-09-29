@@ -15,9 +15,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:7fc23b3a3fa6a95d3f718e03073ed4931a8c65a5f82b8f9d38f921780431365f",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:b58db88c0fe00ebd25adb17e4b3d8edf9e4f05ef83091f1b7926f72c0605089c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -32,7 +32,13 @@
     "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9875b2ebd62bc02f99d07514cd80b353675154e333a56a50b77e075ae7c7d374",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4d4y9c8j",
@@ -64,7 +70,13 @@
     "level": 3,
     "grammar": ["there-is-are", "infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8e9f58f2927414997581ba05cfe7e51e6af2be77a4302d0d1a8fdc1faf4e9e44",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4g3y6e6z",
@@ -98,9 +110,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:dc385084e2736050905f8da7cd0e6befaaab47d74f752f22988f47f0a7b02b97",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:0482bc7a3bdf7ed3108e35e86d22eda53dc7d7e23b05698626ff0bfef646e3e9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -115,7 +127,13 @@
     "level": 3,
     "grammar": ["verb-object-to-do", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e58294f4c42601ea46a851fad56eedde6e6ec1a7f5852799a47506527c863184",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5b8a3t6q",
@@ -147,7 +165,13 @@
     "level": 5,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1a965b2adc5dd2224c1f95dab257be3b364417edad0345a0ca620c569e90eada",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5f9v4s9d",
@@ -211,23 +235,13 @@
     "level": 4,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6d3f3f6n",
-    "ja": "部長は事前に全部読み終えていた。",
-    "en": "The manager had read everything beforehand.",
-    "alternatives": [
-      "The manager had read it all in advance.",
-      "The manager had read everything ahead of time."
-    ],
-    "point": "先に終わっていたことは had + 過去分詞",
-    "topic": "work",
-    "subtopic": "meetings",
-    "level": 5,
-    "grammar": ["past-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5f0c73ddac89b259066b0698a66e9094ccbeff014e44713c89ab52262edf1d2d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6s2y4h3j",
@@ -242,9 +256,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:b08788343b63593b7a9ab60c7628e89407cda8eee23b75116abe76f79c8be8dd",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:6af1fcd8f7e64c12f57476ae4e17a5597b87408618fcc63c8f33fab84cf7d70c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -280,9 +294,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:ffca4c2bce4860c81304611ddb745e0abccf634b6bd9e1634eb9563fc7e1965f",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:32307ffe011b2543ad3ad05697e908880b57579e1a69eaa234def89c7188eccc",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -348,8 +362,8 @@
     "stamps": {
       "core": {
         "hash": "sha256:88b7997ab5a4aba97ab12c98a4fda3e4f81614ee3db8eea4ef8d9f264950c213",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -399,6 +413,12 @@
     "level": 2,
     "grammar": ["past-simple", "wh-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6641ea2f11e4d29523f5bbca0f8e0ff37eb8e7e7561d9bd45fd14b0d77addee6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
