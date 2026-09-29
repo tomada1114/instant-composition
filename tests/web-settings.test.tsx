@@ -252,7 +252,7 @@ describe("the settings screen, W11 size and sound", () => {
 
   it("shows the time limit saved and saves one picked, saying it applies from the next round", async () => {
     const { patches } = serveSettings();
-    await renderApp("/settings");
+    await renderApp("/settings?tab=level");
     const limits = screen.getByRole("radiogroup", { name: ja.Settings.limit.title });
     expect(
       within(limits)
@@ -281,7 +281,7 @@ describe("the settings screen, W11 size and sound", () => {
 
   it("switches the sound", async () => {
     const { patches } = serveSettings();
-    await renderApp("/settings");
+    await renderApp("/settings?tab=app");
     const toggle = screen.getByRole("switch", { name: ja.Settings.sound.title });
     expect(toggle).toHaveAttribute("aria-checked", "true");
     fireEvent.click(toggle);
@@ -296,7 +296,7 @@ describe("the settings screen, W11 size and sound", () => {
         ? Response.json(PAGE)
         : Promise.reject(new TypeError("fetch failed")),
     );
-    await renderApp("/settings");
+    await renderApp("/settings?tab=app");
     fireEvent.click(screen.getByRole("switch", { name: ja.Settings.sound.title }));
     await settle();
     expect(
@@ -314,7 +314,7 @@ describe("the settings screen, W11 size and sound", () => {
             answers.push(resolve);
           }),
     );
-    await renderApp("/settings");
+    await renderApp("/settings?tab=app");
     const toggle = screen.getByRole("switch", { name: ja.Settings.sound.title });
     fireEvent.click(toggle);
     fireEvent.click(toggle);
@@ -334,13 +334,19 @@ describe("the settings screen, W11 size and sound", () => {
   });
 });
 
-/** Opens the difficulty row's sheet. */
-function openDifficulty(): HTMLElement {
-  fireEvent.click(screen.getByRole("button", { name: ja.Settings.difficulty.change }));
-  return screen.getByRole("dialog", { name: ja.Settings.difficulty.title });
+/** The level tab's retest button. */
+function retest(): HTMLElement {
+  return screen.getByRole("button", { name: ja.Settings.difficulty.retest });
 }
 
-/** The difficulty row's figure: the mode, then the level by its TOEIC reference. */
+/** A level option by its TOEIC reference. */
+function option(toeic: string): HTMLElement {
+  return screen.getByRole("radio", {
+    name: fill(ja.Settings.difficulty.option, { toeic }),
+  });
+}
+
+/** The level heading's figure: the mode, then the level by its TOEIC reference. */
 function difficultyState(mode: "auto" | "manual", level: string): string {
   return fill(ja.Settings.difficulty.state, {
     mode: ja.Settings.difficulty[mode],
@@ -351,17 +357,13 @@ function difficultyState(mode: "auto" | "manual", level: string): string {
 describe("the settings screen, W12 measuring again", () => {
   it("asks first, and starts the placement on confirm", async () => {
     serveSettings();
-    await renderApp("/settings");
+    await renderApp("/settings?tab=level");
     expect(
       screen.getByText(
         difficultyState("auto", fill(ja.Records.toeic, { toeic: "730" })),
       ),
     ).toBeInTheDocument();
-    fireEvent.click(
-      within(openDifficulty()).getByRole("button", {
-        name: ja.Settings.difficulty.retest,
-      }),
-    );
+    fireEvent.click(retest());
     const sheet = screen.getByRole("dialog", { name: ja.Settings.retest.title });
     expect(within(sheet).getByText(ja.Settings.retest.body)).toBeInTheDocument();
     fireEvent.click(
@@ -377,7 +379,7 @@ describe("the settings screen, W12 measuring again", () => {
       toeic: null,
       difficulty: { mode: "auto", level: null, toeic: null },
     });
-    await renderApp("/settings");
+    await renderApp("/settings?tab=level");
     expect(
       screen.getByText(difficultyState("auto", ja.Records.notMeasured)),
     ).toBeInTheDocument();
@@ -385,7 +387,7 @@ describe("the settings screen, W12 measuring again", () => {
 
   it("carries the one navigation, the settings current", async () => {
     serveSettings();
-    await renderApp("/settings");
+    await renderApp("/settings?tab=level");
     expect(navigations()).toStrictEqual([
       [
         ["/", null],
@@ -397,23 +399,15 @@ describe("the settings screen, W12 measuring again", () => {
 
   it("closes on cancel or Esc, and only then does Esc go back", async () => {
     serveSettings();
-    await renderApp("/settings");
-    fireEvent.click(
-      within(openDifficulty()).getByRole("button", {
-        name: ja.Settings.difficulty.retest,
-      }),
-    );
+    await renderApp("/settings?tab=level");
+    fireEvent.click(retest());
     fireEvent.click(screen.getByRole("button", { name: ja.Settings.retest.cancel }));
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
-    fireEvent.click(
-      within(openDifficulty()).getByRole("button", {
-        name: ja.Settings.difficulty.retest,
-      }),
-    );
+    fireEvent.click(retest());
     press("Escape");
     await settle();
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
-    expect(where()).toBe("/settings");
+    expect(where()).toBe("/settings?tab=level");
     press("Escape");
     await settle();
     expect(where()).toBe("/");
@@ -421,27 +415,17 @@ describe("the settings screen, W12 measuring again", () => {
 });
 
 describe("the settings screen, the difficulty", () => {
-  it("fixes a level picked by hand and says so on the row", async () => {
+  it("fixes a level picked by hand and says so in the heading", async () => {
     const { choices } = serveSettings();
-    await renderApp("/settings");
-    const sheet = openDifficulty();
-    const picked = within(sheet).getByRole("radio", {
-      name: fill(ja.Settings.difficulty.option, { toeic: "800" }),
-    });
-    fireEvent.click(picked);
+    await renderApp("/settings?tab=level");
+    fireEvent.click(option("800"));
     await settle();
     expect(choices).toStrictEqual([{ mode: "manual", level: 6 }]);
-    expect(picked).toHaveAttribute("aria-checked", "true");
+    expect(option("800")).toHaveAttribute("aria-checked", "true");
     expect(
-      within(sheet).getByRole("radio", { name: ja.Settings.difficulty.manual }),
+      screen.getByRole("radio", { name: ja.Settings.difficulty.manual }),
     ).toHaveAttribute("aria-checked", "true");
-    expect(
-      within(sheet).getByText(ja.Settings.difficulty.manualNote),
-    ).toBeInTheDocument();
-    fireEvent.click(
-      within(sheet).getByRole("button", { name: ja.Settings.difficulty.close }),
-    );
-    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    expect(screen.getByText(ja.Settings.difficulty.manualNote)).toBeInTheDocument();
     expect(
       screen.getByText(
         difficultyState("manual", fill(ja.Records.toeic, { toeic: "800" })),
@@ -454,25 +438,16 @@ describe("the settings screen, the difficulty", () => {
       ...PAGE,
       difficulty: { mode: "manual", level: 5, toeic: "730" },
     });
-    await renderApp("/settings");
+    await renderApp("/settings?tab=level");
     expect(
       screen.getByText(
         difficultyState("manual", fill(ja.Records.toeic, { toeic: "730" })),
       ),
     ).toBeInTheDocument();
-    const sheet = openDifficulty();
-    fireEvent.click(
-      within(sheet).getByRole("radio", { name: ja.Settings.difficulty.auto }),
-    );
+    fireEvent.click(screen.getByRole("radio", { name: ja.Settings.difficulty.auto }));
     await settle();
     expect(choices).toStrictEqual([{ mode: "auto" }]);
-    expect(
-      within(sheet).getByText(ja.Settings.difficulty.autoNote),
-    ).toBeInTheDocument();
-    press("Escape");
-    await settle();
-    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
-    expect(where()).toBe("/settings");
+    expect(screen.getByText(ja.Settings.difficulty.autoNote)).toBeInTheDocument();
     expect(
       screen.getByText(
         difficultyState("auto", fill(ja.Records.toeic, { toeic: "730" })),
@@ -482,12 +457,8 @@ describe("the settings screen, the difficulty", () => {
 
   it("fixes the level as it is when manual is chosen without picking one", async () => {
     const { choices } = serveSettings();
-    await renderApp("/settings");
-    fireEvent.click(
-      within(openDifficulty()).getByRole("radio", {
-        name: ja.Settings.difficulty.manual,
-      }),
-    );
+    await renderApp("/settings?tab=level");
+    fireEvent.click(screen.getByRole("radio", { name: ja.Settings.difficulty.manual }));
     await settle();
     expect(choices).toStrictEqual([{ mode: "manual", level: 5 }]);
   });
@@ -498,14 +469,16 @@ describe("the settings screen, the difficulty", () => {
       toeic: null,
       difficulty: { mode: "auto", level: null, toeic: null },
     });
-    await renderApp("/settings");
-    const sheet = openDifficulty();
+    await renderApp("/settings?tab=level");
+    const levels = screen.getByRole("radiogroup", {
+      name: ja.Settings.difficulty.levels,
+    });
     expect(
-      within(sheet).queryByRole("radio", { name: ja.Settings.difficulty.manual }),
+      screen.queryByRole("radio", { name: ja.Settings.difficulty.manual }),
     ).not.toBeInTheDocument();
-    expect(within(sheet).getAllByRole("radio")).toHaveLength(10);
+    expect(within(levels).getAllByRole("radio")).toHaveLength(10);
     expect(
-      within(sheet)
+      within(levels)
         .getAllByRole("radio")
         .filter((radio) => radio.getAttribute("aria-checked") === "true"),
     ).toStrictEqual([]);
@@ -520,12 +493,7 @@ describe("the settings screen, the difficulty", () => {
             answers.push(resolve);
           }),
     );
-    await renderApp("/settings");
-    const sheet = openDifficulty();
-    const option = (toeic: string): HTMLElement =>
-      within(sheet).getByRole("radio", {
-        name: fill(ja.Settings.difficulty.option, { toeic }),
-      });
+    await renderApp("/settings?tab=level");
     const view = (level: number, toeic: string): Response =>
       Response.json({ mode: "manual", level, toeic } satisfies LevelView);
 
@@ -542,11 +510,11 @@ describe("the settings screen, the difficulty", () => {
     await settle();
     answers[2]?.(refusal(409, "ERR_CONFLICT"));
     await settle();
-    expect(within(sheet).getByRole("alert")).toHaveTextContent(ja.Settings.saveFailed);
+    expect(screen.getByRole("alert")).toHaveTextContent(ja.Settings.saveFailed);
     expect(option("900")).toHaveAttribute("aria-checked", "true");
   });
 
-  it("says a change failed on the screen itself when the sheet was closed before the answer", async () => {
+  it("says a change failed when another tab was opened before the answer", async () => {
     const answers: ((response: Response) => void)[] = [];
     fakeApi((call) =>
       call.method === "GET"
@@ -555,21 +523,15 @@ describe("the settings screen, the difficulty", () => {
             answers.push(resolve);
           }),
     );
-    await renderApp("/settings");
-    const sheet = openDifficulty();
-    fireEvent.click(
-      within(sheet).getByRole("radio", {
-        name: fill(ja.Settings.difficulty.option, { toeic: "300" }),
-      }),
-    );
-    fireEvent.click(
-      within(sheet).getByRole("button", { name: ja.Settings.difficulty.close }),
-    );
-    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    await renderApp("/settings?tab=level");
+    fireEvent.click(option("300"));
+    fireEvent.click(screen.getByRole("tab", { name: ja.Settings.tabs.cards }));
     await settle();
     answers[0]?.(refusal(409, "ERR_CONFLICT"));
     await settle();
     expect(screen.getByRole("alert")).toHaveTextContent(ja.Settings.saveFailed);
+    fireEvent.click(screen.getByRole("tab", { name: ja.Settings.tabs.level }));
+    await settle();
     expect(
       screen.getByText(
         difficultyState("auto", fill(ja.Records.toeic, { toeic: "730" })),
@@ -584,23 +546,109 @@ describe("the settings screen, the difficulty", () => {
       }
       return call.url === "/api/v1/level" ? refusal(409, "ERR_CONFLICT") : undefined;
     });
-    await renderApp("/settings");
-    const sheet = openDifficulty();
-    fireEvent.click(
-      within(sheet).getByRole("radio", {
-        name: fill(ja.Settings.difficulty.option, { toeic: "300" }),
-      }),
-    );
+    await renderApp("/settings?tab=level");
+    fireEvent.click(option("300"));
     await settle();
-    expect(within(sheet).getByRole("alert")).toHaveTextContent(ja.Settings.saveFailed);
+    expect(screen.getByRole("alert")).toHaveTextContent(ja.Settings.saveFailed);
+    expect(option("730")).toHaveAttribute("aria-checked", "true");
     expect(
-      within(sheet).getByRole("radio", {
-        name: fill(ja.Settings.difficulty.option, { toeic: "730" }),
-      }),
+      screen.getByRole("radio", { name: ja.Settings.difficulty.auto }),
     ).toHaveAttribute("aria-checked", "true");
+  });
+});
+
+/** The tablist the screen's heading names, as each tab's name and selection. */
+function tabs(): (readonly [string | null, string | null])[] {
+  return within(screen.getByRole("tablist", { name: ja.Settings.title }))
+    .getAllByRole("tab")
+    .map((tab) => [tab.textContent, tab.getAttribute("aria-selected")] as const);
+}
+
+describe("the settings screen, its tabs", () => {
+  it("opens on what is dealt, with no ?tab= in the address", async () => {
+    serveSettings();
+    await renderApp("/settings");
+    expect(where()).toBe("/settings");
+    expect(tabs()).toStrictEqual([
+      [ja.Settings.tabs.cards, "true"],
+      [ja.Settings.tabs.level, "false"],
+      [ja.Settings.tabs.app, "false"],
+    ]);
+    const panel = screen.getByRole("tabpanel", { name: ja.Settings.tabs.cards });
+    expect(within(panel).getByRole("button", { name: /旅行/u })).toBeInTheDocument();
     expect(
-      within(sheet).getByRole("radio", { name: ja.Settings.difficulty.auto }),
-    ).toHaveAttribute("aria-checked", "true");
+      within(panel).getByRole("radiogroup", { name: ja.Settings.size.title }),
+    ).toBeInTheDocument();
+    expect(screen.queryByRole("switch")).not.toBeInTheDocument();
+  });
+
+  it("switches tabs by click, keeping the choice in the address", async () => {
+    serveSettings();
+    await renderApp("/settings");
+    fireEvent.click(screen.getByRole("tab", { name: ja.Settings.tabs.level }));
+    await settle();
+    expect(where()).toBe("/settings?tab=level");
+    expect(retest()).toBeInTheDocument();
+    expect(
+      screen.getByRole("radiogroup", { name: ja.Settings.limit.title }),
+    ).toBeInTheDocument();
+    expect(screen.queryByRole("button", { name: /旅行/u })).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole("tab", { name: ja.Settings.tabs.app }));
+    await settle();
+    expect(where()).toBe("/settings?tab=app");
+    expect(
+      screen.getByRole("switch", { name: ja.Settings.sound.title }),
+    ).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: ja.Settings.signOut.action }),
+    ).toBeInTheDocument();
+  });
+
+  it("moves between tabs with the arrow keys, wrapping round, and Home and End", async () => {
+    serveSettings();
+    await renderApp("/settings");
+    const tab = (name: string): HTMLElement => screen.getByRole("tab", { name });
+    tab(ja.Settings.tabs.cards).focus();
+    fireEvent.keyDown(tab(ja.Settings.tabs.cards), { key: "ArrowRight" });
+    await settle();
+    expect(where()).toBe("/settings?tab=level");
+    expect(tab(ja.Settings.tabs.level)).toHaveFocus();
+    expect(tab(ja.Settings.tabs.level)).toHaveAttribute("aria-selected", "true");
+    fireEvent.keyDown(tab(ja.Settings.tabs.level), { key: "ArrowLeft" });
+    fireEvent.keyDown(tab(ja.Settings.tabs.cards), { key: "ArrowLeft" });
+    await settle();
+    expect(where()).toBe("/settings?tab=app");
+    expect(tab(ja.Settings.tabs.app)).toHaveFocus();
+    fireEvent.keyDown(tab(ja.Settings.tabs.app), { key: "ArrowRight" });
+    await settle();
+    expect(where()).toBe("/settings?tab=cards");
+    fireEvent.keyDown(tab(ja.Settings.tabs.cards), { key: "End" });
+    await settle();
+    expect(tab(ja.Settings.tabs.app)).toHaveFocus();
+    fireEvent.keyDown(tab(ja.Settings.tabs.app), { key: "Home" });
+    await settle();
+    expect(tab(ja.Settings.tabs.cards)).toHaveFocus();
+    expect(where()).toBe("/settings?tab=cards");
+  });
+
+  it("keeps only the current tab in the Tab order", async () => {
+    serveSettings();
+    await renderApp("/settings?tab=app");
+    expect(
+      screen.getAllByRole("tab").map((tab) => tab.getAttribute("tabindex")),
+    ).toStrictEqual(["-1", "-1", "0"]);
+  });
+
+  it.each([
+    ["/settings?tab=level", ja.Settings.tabs.level],
+    ["/settings?tab=app", ja.Settings.tabs.app],
+    ["/settings?tab=cards", ja.Settings.tabs.cards],
+    ["/settings?tab=nothing", ja.Settings.tabs.cards],
+  ])("opens %s on its tab", async (path, name) => {
+    serveSettings();
+    await renderApp(path);
+    expect(screen.getByRole("tab", { name })).toHaveAttribute("aria-selected", "true");
+    expect(screen.getByRole("tabpanel", { name })).toBeInTheDocument();
   });
 });
 
@@ -660,7 +708,7 @@ describe("the settings screen before and instead of its read", () => {
 describe("the settings screen, sign-out", () => {
   it("posts a top-level form to the logout endpoint", async () => {
     serveSettings();
-    await renderApp("/settings");
+    await renderApp("/settings?tab=app");
     const button = screen.getByRole("button", { name: ja.Settings.signOut.action });
     expect(button).toHaveAttribute("type", "submit");
     const form = button.closest("form");
@@ -697,7 +745,7 @@ describe("the settings screen, the time zone", () => {
 
   it("shows the stored zone and saves one picked through PATCH /v1/me", async () => {
     const { zones } = serveProfile(device);
-    await renderApp("/settings");
+    await renderApp("/settings?tab=app");
     const select = screen.getByRole("combobox", { name: ja.Settings.timeZone.title });
     expect(select).toHaveValue(device);
     expect(
@@ -716,7 +764,7 @@ describe("the settings screen, the time zone", () => {
 
   it("offers this device's zone when the stored one differs", async () => {
     const { zones } = serveProfile(other);
-    await renderApp("/settings");
+    await renderApp("/settings?tab=app");
     fireEvent.click(
       screen.getByRole("button", {
         name: fill(ja.Settings.timeZone.useDevice, { zone: device }),
@@ -752,7 +800,7 @@ describe("the settings screen, the time zone", () => {
       }
       return undefined;
     });
-    await renderApp("/settings");
+    await renderApp("/settings?tab=app");
     const [first, second] = [
       "Europe/London",
       "Pacific/Auckland",

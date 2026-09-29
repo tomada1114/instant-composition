@@ -229,6 +229,11 @@
   },
   "Records": {
     "title": "記録",
+    "tabs": {
+      "overview": "概要",
+      "weak": "苦手",
+      "history": "記録"
+    },
     "breakdown": "{topic} の内訳",
     "difficulty": "難易度",
     "toeic": "TOEIC {toeic}",
@@ -264,6 +269,11 @@
   },
   "Settings": {
     "title": "設定",
+    "tabs": {
+      "cards": "出題",
+      "level": "難易度",
+      "app": "アプリ"
+    },
     "topics": {
       "title": "場面",
       "keepOne": "1 つは選んだままにします"
@@ -297,13 +307,11 @@
       "auto": "自動",
       "manual": "手動",
       "state": "{mode} · {level}",
-      "change": "変える",
       "mode": "決め方",
       "levels": "TOEIC の目安",
       "option": "TOEIC {toeic}",
       "autoNote": "答えに合わせて上下します",
-      "manualNote": "選んだレベルのまま動きません",
-      "close": "閉じる"
+      "manualNote": "選んだレベルのまま動きません"
     },
     "retest": {
       "title": "難易度を測り直しますか",

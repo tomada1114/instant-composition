@@ -8,18 +8,21 @@ import { CheckGlyph } from "./glyphs";
  * `designing-ui`'s `select-card`: a toggle whose state shows as a white
  * border and a filled check — never the accent, never color alone. `locked`
  * keeps a selected card looking selected while refusing to turn it off.
+ * `compact` is the two-across card: shorter, its title in `label`.
  */
 export function SelectCard({
   title,
   detail,
   selected,
   locked = false,
+  compact = false,
   onToggle,
 }: Readonly<{
   title: string;
   detail: string;
   selected: boolean;
   locked?: boolean;
+  compact?: boolean;
   onToggle: () => void;
 }>): ReactElement {
   return (
@@ -29,12 +32,13 @@ export function SelectCard({
       aria-disabled={locked || undefined}
       onClick={onToggle}
       className={cn(
-        "flex min-h-18 w-full items-center gap-4 rounded-tile border-[1.5px] bg-card px-5 py-3.5 text-left",
+        "flex w-full items-center rounded-tile border-[1.5px] bg-card text-left",
+        compact ? "h-full min-h-16 gap-3 px-4 py-3" : "min-h-18 gap-4 px-5 py-3.5",
         selected ? "border-foreground" : "border-transparent active:bg-raised",
       )}
     >
       <span className="flex min-w-0 flex-1 flex-col gap-1">
-        <span className="text-action">{title}</span>
+        <span className={compact ? "text-label" : "text-action"}>{title}</span>
         <span className="truncate text-caption text-muted-foreground">{detail}</span>
       </span>
       <span

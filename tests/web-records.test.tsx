@@ -109,7 +109,7 @@ afterEach(() => {
 });
 
 describe("the records screen, W10", () => {
-  it("shows the rings, the difficulty, the run and the totals, with no accent", async () => {
+  it("shows the rings on its first tab, and the difficulty, the run and the totals on the history tab, with no accent", async () => {
     serveRecords();
     await renderApp("/records");
     expect(
@@ -119,6 +119,11 @@ describe("the records screen, W10", () => {
     expect(
       screen.getByText(fill(ja.Summary.reach.nearest, { topic: "仕事", count: 9 })),
     ).toBeInTheDocument();
+    expect(
+      document.querySelector(".text-accent, .bg-accent, .stroke-accent"),
+    ).toBeNull();
+    fireEvent.click(screen.getByRole("tab", { name: ja.Records.tabs.history }));
+    await settle();
     expect(
       screen.getByText(fill(ja.Records.toeic, { toeic: "730" })),
     ).toBeInTheDocument();
@@ -134,21 +139,22 @@ describe("the records screen, W10", () => {
     ).toBeNull();
   });
 
-  it("folds the counting rules behind their buttons until asked", async () => {
-    serveRecords();
-    await renderApp("/records");
-    for (const [label, text] of [
-      [ja.Summary.reach.infoLabel, ja.Summary.reach.info],
-      [ja.Records.weak.infoLabel, ja.Records.weak.info],
-      [ja.Records.rules.label, ja.Records.rules.streak],
-    ] as const) {
+  it.each([
+    ["overview", ja.Summary.reach.infoLabel, ja.Summary.reach.info],
+    ["weak", ja.Records.weak.infoLabel, ja.Records.weak.info],
+    ["history", ja.Records.rules.label, ja.Records.rules.streak],
+  ] as const)(
+    "folds the %s tab's counting rule behind its button until asked",
+    async (tab, label, text) => {
+      serveRecords();
+      await renderApp(`/records?tab=${tab}`);
       const button = screen.getByRole("button", { name: label });
       expect(screen.getByText(text)).not.toBeVisible();
       fireEvent.click(button);
       expect(button).toHaveAttribute("aria-expanded", "true");
       expect(screen.getByText(text)).toBeVisible();
-    }
-  });
+    },
+  );
 
   it("opens one topic's breakdown in place, bars relative to its largest subtopic", async () => {
     serveRecords();
@@ -180,7 +186,7 @@ describe("the records screen, W10", () => {
 
   it("draws twelve weeks of dots and lists the titles, streak first", async () => {
     serveRecords();
-    await renderApp("/records");
+    await renderApp("/records?tab=history");
     const dots = screen.getByRole("img", { name: ja.Records.calendar });
     expect(dots.querySelectorAll("[data-state]")).toHaveLength(84);
     expect(dots.querySelectorAll("[data-state='done']")).toHaveLength(60);
@@ -195,7 +201,7 @@ describe("the records screen, W10", () => {
 
   it("names the weak grammar and scenes, weakest first, with no count beside them", async () => {
     serveRecords();
-    await renderApp("/records");
+    await renderApp("/records?tab=weak");
     const weak = screen.getByRole("region", { name: ja.Records.weak.title });
     expect(
       within(weak)
@@ -217,7 +223,7 @@ describe("the records screen, W10", () => {
         subtopics: [{ topic: "work", subtopic: "email", name: "メール" }],
       },
     });
-    await renderApp("/records");
+    await renderApp("/records?tab=weak");
     const weak = screen.getByRole("region", { name: ja.Records.weak.title });
     expect(
       within(weak)
@@ -229,7 +235,7 @@ describe("the records screen, W10", () => {
 
   it("carries the one navigation, the records current", async () => {
     serveRecords();
-    await renderApp("/records");
+    await renderApp("/records?tab=weak");
     expect(navigations()).toStrictEqual([
       [
         ["/", null],
@@ -244,7 +250,7 @@ describe("the records screen, W10", () => {
 
   it("goes home on Esc", async () => {
     serveRecords();
-    await renderApp("/records");
+    await renderApp("/records?tab=history");
     press("Escape");
     await settle();
     expect(where()).toBe("/");
@@ -254,14 +260,14 @@ describe("the records screen, W10", () => {
 describe("the records screen, W10 difficulty", () => {
   it("says the level moves by itself in auto, with no suggestion beside it", async () => {
     serveRecords();
-    await renderApp("/records");
+    await renderApp("/records?tab=history");
     expect(screen.getByText(ja.Records.auto)).toBeInTheDocument();
     expect(screen.queryByText(ja.Records.manual)).not.toBeInTheDocument();
   });
 
   it("shows the level the answers suggest beside one picked by hand", async () => {
     serveRecords({ ...RECORDS, levelMode: "manual", suggestedToeic: "800" });
-    await renderApp("/records");
+    await renderApp("/records?tab=history");
     expect(
       screen.getByText(fill(ja.Records.toeic, { toeic: "730" })),
     ).toBeInTheDocument();
@@ -272,7 +278,7 @@ describe("the records screen, W10 difficulty", () => {
 
   it("says only that the level is picked by hand while the answers suggest nothing", async () => {
     serveRecords({ ...RECORDS, levelMode: "manual" });
-    await renderApp("/records");
+    await renderApp("/records?tab=history");
     expect(screen.getByText(ja.Records.manual)).toBeInTheDocument();
   });
 });
@@ -296,14 +302,107 @@ describe("the records screen, W10 empty", () => {
     });
     await renderApp("/records");
     expect(screen.getByText(ja.Summary.reach.empty)).toBeInTheDocument();
-    expect(screen.getByText(ja.Records.restart)).toBeInTheDocument();
-    expect(screen.getByText(ja.Records.notMeasured)).toBeInTheDocument();
-    expect(screen.getByText(ja.Records.titles.none)).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("tab", { name: ja.Records.tabs.weak }));
+    await settle();
     expect(
       within(screen.getByRole("region", { name: ja.Records.weak.title })).getByText(
         ja.Records.weak.none,
       ),
     ).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("tab", { name: ja.Records.tabs.history }));
+    await settle();
+    expect(screen.getByText(ja.Records.restart)).toBeInTheDocument();
+    expect(screen.getByText(ja.Records.notMeasured)).toBeInTheDocument();
+    expect(screen.getByText(ja.Records.titles.none)).toBeInTheDocument();
+  });
+});
+
+/** The tablist the screen's heading names, as each tab's name and selection. */
+function tabs(): (readonly [string | null, string | null])[] {
+  return within(screen.getByRole("tablist", { name: ja.Records.title }))
+    .getAllByRole("tab")
+    .map((tab) => [tab.textContent, tab.getAttribute("aria-selected")] as const);
+}
+
+describe("the records screen, its tabs", () => {
+  it("opens on the overview, with no ?tab= in the address", async () => {
+    serveRecords();
+    await renderApp("/records");
+    expect(where()).toBe("/records");
+    expect(tabs()).toStrictEqual([
+      [ja.Records.tabs.overview, "true"],
+      [ja.Records.tabs.weak, "false"],
+      [ja.Records.tabs.history, "false"],
+    ]);
+    const panel = screen.getByRole("tabpanel", { name: ja.Records.tabs.overview });
+    expect(within(panel).getByText("101")).toBeInTheDocument();
+    expect(
+      screen.queryByRole("region", { name: ja.Records.weak.title }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole("img", { name: ja.Records.calendar }),
+    ).not.toBeInTheDocument();
+  });
+
+  it("switches tabs by click, keeping the choice in the address", async () => {
+    serveRecords();
+    await renderApp("/records");
+    fireEvent.click(screen.getByRole("tab", { name: ja.Records.tabs.weak }));
+    await settle();
+    expect(where()).toBe("/records?tab=weak");
+    expect(
+      screen.getByRole("region", { name: ja.Records.weak.title }),
+    ).toBeInTheDocument();
+    expect(screen.queryByText("101")).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole("tab", { name: ja.Records.tabs.history }));
+    await settle();
+    expect(where()).toBe("/records?tab=history");
+    expect(screen.getByRole("img", { name: ja.Records.calendar })).toBeInTheDocument();
+  });
+
+  it("moves between tabs with the arrow keys, wrapping round", async () => {
+    serveRecords();
+    await renderApp("/records");
+    const tab = (name: string): HTMLElement => screen.getByRole("tab", { name });
+    tab(ja.Records.tabs.overview).focus();
+    fireEvent.keyDown(tab(ja.Records.tabs.overview), { key: "ArrowLeft" });
+    await settle();
+    expect(where()).toBe("/records?tab=history");
+    expect(tab(ja.Records.tabs.history)).toHaveFocus();
+    expect(tab(ja.Records.tabs.history)).toHaveAttribute("aria-selected", "true");
+    fireEvent.keyDown(tab(ja.Records.tabs.history), { key: "ArrowRight" });
+    fireEvent.keyDown(tab(ja.Records.tabs.overview), { key: "ArrowRight" });
+    await settle();
+    expect(where()).toBe("/records?tab=weak");
+    expect(tab(ja.Records.tabs.weak)).toHaveFocus();
+    expect(
+      screen.getByRole("tabpanel", { name: ja.Records.tabs.weak }),
+    ).toBeInTheDocument();
+  });
+
+  it("ignores other keys on a tab, and leaves Esc going home", async () => {
+    serveRecords();
+    await renderApp("/records?tab=weak");
+    fireEvent.keyDown(screen.getByRole("tab", { name: ja.Records.tabs.weak }), {
+      key: "ArrowDown",
+    });
+    await settle();
+    expect(where()).toBe("/records?tab=weak");
+    press("Escape");
+    await settle();
+    expect(where()).toBe("/");
+  });
+
+  it.each([
+    ["/records?tab=weak", ja.Records.tabs.weak],
+    ["/records?tab=history", ja.Records.tabs.history],
+    ["/records?tab=overview", ja.Records.tabs.overview],
+    ["/records?tab=level", ja.Records.tabs.overview],
+  ])("opens %s on its tab", async (path, name) => {
+    serveRecords();
+    await renderApp(path);
+    expect(screen.getByRole("tab", { name })).toHaveAttribute("aria-selected", "true");
+    expect(screen.getByRole("tabpanel", { name })).toBeInTheDocument();
   });
 });
 

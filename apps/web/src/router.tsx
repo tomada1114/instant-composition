@@ -3,6 +3,7 @@ import {
   createRoute,
   createRouter,
   Outlet,
+  type SearchSchemaInput,
 } from "@tanstack/react-router";
 import type { ReactElement } from "react";
 
@@ -10,6 +11,13 @@ import { DrillPage } from "./drill/drill-page";
 import { roundKindFrom } from "./drill/rounds";
 import { HomePage } from "./home/home-page";
 import { WelcomePage } from "./home/welcome-page";
+import {
+  RECORDS_TABS,
+  SETTINGS_TABS,
+  tabSearch,
+  type RecordsTab,
+  type SettingsTab,
+} from "./lib/screen-tabs";
 import { NotFound } from "./not-found";
 import type { RoundKind } from "./openapi";
 import { RecordsPage } from "./records/records-page";
@@ -48,7 +56,14 @@ const drillRoute = createRoute({
 const recordsRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "records",
-  component: RecordsPage,
+  // A missing or unknown `?tab=` is the first tab, and a link may leave it out.
+  validateSearch: (
+    search: { tab?: RecordsTab } & SearchSchemaInput,
+  ): { tab?: RecordsTab | undefined } => tabSearch(RECORDS_TABS, search.tab),
+  component: function RecordsRoute(): ReactElement {
+    const { tab = RECORDS_TABS[0] } = recordsRoute.useSearch();
+    return <RecordsPage tab={tab} />;
+  },
 });
 
 const recapRoute = createRoute({
@@ -60,7 +75,13 @@ const recapRoute = createRoute({
 const settingsRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "settings",
-  component: SettingsPage,
+  validateSearch: (
+    search: { tab?: SettingsTab } & SearchSchemaInput,
+  ): { tab?: SettingsTab | undefined } => tabSearch(SETTINGS_TABS, search.tab),
+  component: function SettingsRoute(): ReactElement {
+    const { tab = SETTINGS_TABS[0] } = settingsRoute.useSearch();
+    return <SettingsPage tab={tab} />;
+  },
 });
 
 const welcomeRoute = createRoute({

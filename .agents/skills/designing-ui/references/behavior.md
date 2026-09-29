@@ -63,6 +63,9 @@ no applause. Browsers block autoplay, so the first "start" press unlocks audio.
 - For 150 ms after a back appears, ○/× keys are ignored, so the flip's momentum cannot
   grade the card.
 - ←/→ are grades and never scroll.
+- On records and settings, ←/→ move between the in-page `tabs` while one of them has
+  focus, and Home/End go to the first and last; nowhere else on those screens do they do
+  anything.
 
 ### Key hints
 

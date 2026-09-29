@@ -9,9 +9,9 @@ import { SelectCard } from "../ui/select-card";
 import type { SettingsState } from "./use-settings";
 
 type DailySize = Settings["dailySize"];
-type LimitSeconds = Settings["limitSeconds"];
 
-function Heading({
+/** A section's muted name, with a figure at its right when `aside` is given. */
+export function Heading({
   id,
   children,
   aside,
@@ -53,12 +53,13 @@ export function TopicsSection({
   return (
     <section aria-labelledby={id} className="flex flex-col gap-3">
       <Heading id={id}>{t("title")}</Heading>
-      <ul className="flex flex-col gap-2">
+      <ul className="grid grid-cols-2 gap-2">
         {topics.map((topic) => {
           const selected = chosen.includes(topic.id);
           return (
             <li key={topic.id}>
               <SelectCard
+                compact
                 title={topic.name}
                 detail={topic.subtopics.map((subtopic) => subtopic.name).join("・")}
                 selected={selected}
@@ -82,7 +83,11 @@ function same(a: SubtopicRef, b: SubtopicRef): boolean {
   return a.topic === b.topic && a.subtopic === b.subtopic;
 }
 
-/** The chosen topics' subtopics as chips; two at most, then the rest stop taking presses. */
+/**
+ * The chosen topics' subtopics as chips; two at most, then the rest stop
+ * taking presses. The chips take the height the tab leaves and scroll inside
+ * it, padded so a chip's hit area and focus outline are not clipped.
+ */
 export function FocusSection({
   topics,
   state,
@@ -110,14 +115,18 @@ export function FocusSection({
       )
       .join("・");
   return (
-    <section className="flex flex-col gap-3">
+    <section className="flex min-h-0 flex-1 flex-col gap-3">
       <Heading
         id={id}
         aside={t("count", { count: focus.length, max: TUNING.maxFocus })}
       >
         {t("title")}
       </Heading>
-      <div role="group" aria-labelledby={id} className="flex flex-wrap gap-2">
+      <div
+        role="group"
+        aria-labelledby={id}
+        className="-m-1.5 flex min-h-14 flex-1 flex-wrap content-start gap-2 overflow-y-auto p-1.5"
+      >
         {offered.map((ref) => {
           const selected = focus.some((chosen) => same(chosen, ref));
           return (
@@ -167,32 +176,6 @@ export function SizeSection({
         }}
       />
       {state.completedToday ? <p role="status">{t("completed")}</p> : null}
-    </section>
-  );
-}
-
-/** The per-card time limit, taken by the next round dealt. */
-export function LimitSection({
-  state,
-}: Readonly<{ state: SettingsState }>): ReactElement {
-  const t = useTranslations("Settings.limit");
-  const id = useId();
-  return (
-    <section className="flex flex-col gap-3">
-      <Heading id={id}>{t("title")}</Heading>
-      <Segmented<LimitSeconds>
-        label={t("title")}
-        options={TUNING.limitSeconds.map((seconds) => ({
-          value: seconds,
-          label: t("count", { seconds }),
-          text: String(seconds),
-        }))}
-        value={state.settings.limitSeconds}
-        onChange={(limitSeconds) => {
-          state.save({ limitSeconds });
-        }}
-      />
-      <p className="text-caption text-muted-foreground">{t("next")}</p>
     </section>
   );
 }

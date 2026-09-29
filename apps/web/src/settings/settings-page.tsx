@@ -4,13 +4,14 @@ import type { ReactElement } from "react";
 
 import { PageLoadFailed, PageLoading } from "../lib/page-shell";
 import { isSignedOut, SETTINGS_QUERY } from "../lib/queries";
+import type { SettingsTab } from "../lib/screen-tabs";
 import { SettingsScreen } from "./settings-screen";
 
 /**
  * The `/settings` route: the settings as saved now. The screen starts from
  * what this visit read, never from a cached copy, since it saves on top of it.
  */
-export function SettingsPage(): ReactElement {
+export function SettingsPage({ tab }: Readonly<{ tab: SettingsTab }>): ReactElement {
   const page = useQuery({ ...SETTINGS_QUERY, refetchOnMount: "always" });
 
   if (!page.isFetchedAfterMount) return <PageLoading withTabBar />;
@@ -25,5 +26,5 @@ export function SettingsPage(): ReactElement {
       />
     );
   }
-  return <SettingsScreen page={page.data} />;
+  return <SettingsScreen page={page.data} tab={tab} />;
 }
