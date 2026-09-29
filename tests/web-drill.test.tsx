@@ -1,4 +1,4 @@
-import { act, fireEvent, screen } from "@testing-library/react";
+import { act, cleanup, fireEvent, screen } from "@testing-library/react";
 import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 import type { AnswerInput, HomeView, RoundPayload } from "@instant-composition/web";
@@ -584,6 +584,178 @@ describe("the drill when answers cannot be saved", () => {
     await settle(16);
     expect(
       screen.getByText(fill(ja.Drill.save.unsaved, { count: 1 })),
+    ).toBeInTheDocument();
+  });
+});
+
+describe("the drill after a reload", () => {
+  /** A send the server never answers before the page goes away. */
+  const inFlight = (): Promise<Response> => new Promise(() => undefined);
+
+  /** Leaves the page as F5 does: the tab's storage stays, everything else starts over. */
+  async function reload(
+    options: Serve,
+    path = "/drill?kind=today",
+  ): Promise<ApiCall[]> {
+    cleanup();
+    const calls = serve(options);
+    await renderApp(path);
+    return calls;
+  }
+
+  function ids(body: unknown): string[] {
+    return (body as { answers: AnswerInput[] }).answers.map((answer) => answer.id);
+  }
+
+  it("resumes past an answer still on its way, and sends it again under its own id", async () => {
+    serve({ answers: inFlight });
+    await openRound("/drill?kind=today");
+    await grade("ArrowRight");
+    expect(screen.getByText("prompt-c2")).toBeInTheDocument();
+
+    const calls = await reload({});
+    expect(
+      screen.getByText(
+        fill(ja.Drill.ready.resume, { position: 2, total: ROUND.total }),
+      ),
+    ).toBeInTheDocument();
+    expect(posted(calls, ANSWERS).map(ids)).toStrictEqual([["round-1:f:c1"]]);
+    press("Enter");
+    await settle(16);
+    expect(screen.getByText("prompt-c2")).toBeInTheDocument();
+
+    await grade("ArrowRight");
+    await settle(16);
+    expect(
+      screen.getByRole("heading", { name: ja.Summary.title.today }),
+    ).toBeInTheDocument();
+    expect(posted(calls, FINISH).map(ids)).toStrictEqual([
+      ["round-1:f:c1", "round-1:f:c2"],
+    ]);
+  });
+
+  it("stores a graded answer in the same moment the grade is given", async () => {
+    serve({ answers: inFlight });
+    await openRound("/drill?kind=today");
+    press(" ");
+    await settle(200);
+    // Inside act() React has not rendered or run an effect yet: the page could go now.
+    act(() => {
+      window.dispatchEvent(
+        new KeyboardEvent("keydown", { key: "ArrowRight", cancelable: true }),
+      );
+      expect(
+        (
+          JSON.parse(
+            sessionStorage.getItem("drill-answers:round-1") ?? "[]",
+          ) as AnswerInput[]
+        ).map((answer) => answer.id),
+      ).toStrictEqual(["round-1:f:c1"]);
+    });
+  });
+
+  it("stores a timed-out answer in the same moment the time runs out", async () => {
+    serve({ answers: inFlight });
+    await openRound("/drill?kind=today");
+    await settle(6900);
+    act(() => {
+      vi.advanceTimersByTime(300);
+      expect(sessionStorage.getItem("drill-answers:round-1") ?? "").toContain(
+        '"result":"timeout"',
+      );
+    });
+  });
+
+  it("finishes with an answer the reloaded page could not send either", async () => {
+    const offline = (): Promise<Response> =>
+      Promise.reject(new TypeError("fetch failed"));
+    serve({ answers: offline });
+    await openRound("/drill?kind=today");
+    await grade("ArrowRight");
+
+    const calls = await reload({ answers: offline });
+    press("Enter");
+    await settle(16);
+    await grade("ArrowRight");
+    await settle(16);
+    expect(
+      screen.getByRole("heading", { name: ja.Summary.title.today }),
+    ).toBeInTheDocument();
+    expect(posted(calls, FINISH).map(ids)).toStrictEqual([
+      ["round-1:f:c1", "round-1:f:c2"],
+    ]);
+    expect(sessionStorage.getItem("drill-answers:round-1")).toBeNull();
+  });
+
+  it("counts an answer once when the server took it just before the reload", async () => {
+    serve({ answers: inFlight });
+    await openRound("/drill?kind=today");
+    await grade("ArrowRight");
+
+    const calls = await reload({ round: { ...ROUND, answered: [firstPassOf("c1")] } });
+    expect(
+      screen.getByText(
+        fill(ja.Drill.ready.resume, { position: 2, total: ROUND.total }),
+      ),
+    ).toBeInTheDocument();
+    press("Enter");
+    await settle(16);
+    await grade("ArrowRight");
+    await settle(16);
+    expect(posted(calls, FINISH).map(ids)).toStrictEqual([["round-1:f:c2"]]);
+  });
+
+  it("finishes at once when the reload came after the last answer", async () => {
+    serve({ answers: inFlight, finish: inFlight });
+    await openRound("/drill?kind=today");
+    await grade("ArrowRight");
+    await grade("ArrowRight");
+
+    const calls = await reload({});
+    await settle(16);
+    expect(
+      screen.getByRole("heading", { name: ja.Summary.title.today }),
+    ).toBeInTheDocument();
+    expect(posted(calls, FINISH).map(ids)).toStrictEqual([
+      ["round-1:f:c1", "round-1:f:c2"],
+    ]);
+  });
+
+  it("keeps an unsaved miss for the retry pass", async () => {
+    serve({ answers: inFlight });
+    await openRound("/drill?kind=today");
+    await grade("ArrowLeft");
+
+    await reload({});
+    press("Enter");
+    await settle(16);
+    expect(screen.getByText("prompt-c2")).toBeInTheDocument();
+    await grade("ArrowRight");
+    expect(screen.getByText(ja.Drill.card.again)).toBeInTheDocument();
+    expect(screen.getByText("prompt-c1")).toBeInTheDocument();
+  });
+
+  it("leaves an unsaved answer of another round to that round", async () => {
+    sessionStorage.setItem(
+      "drill-answers:round-1",
+      JSON.stringify([
+        {
+          id: "round-0:f:c1",
+          roundId: "round-0",
+          cardId: "c1",
+          pass: "first",
+          result: "ok",
+          elapsedMs: 900,
+          answeredAt: Date.UTC(2026, 8, 22, 3, 0),
+        },
+      ]),
+    );
+    serve();
+    await renderApp("/drill?kind=today");
+    expect(
+      screen.getByText(
+        fill(ja.Drill.ready.resume, { position: 1, total: ROUND.total }),
+      ),
     ).toBeInTheDocument();
   });
 });

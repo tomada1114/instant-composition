@@ -1,9 +1,9 @@
 import { useNavigate } from "@tanstack/react-router";
-import { useEffect, useReducer, useState, type ReactElement } from "react";
+import { useEffect, useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
 import type { RoundKind, RoundPayload } from "../openapi";
-import { drillReducer } from "./drill-machine";
+import { useAnswerQueue, useQueuedDrill, type ArrivedQueue } from "./answer-sync";
 import { currentCard, initDrill, progress, type DrillState } from "./drill-state";
 import { CardScreen } from "./card-screen";
 import { DrillDone } from "./drill-done";
@@ -13,7 +13,6 @@ import { ReadyScreen } from "./ready-screen";
 import { browserSound } from "./sound";
 import { Toast } from "./toast";
 import {
-  useAnswerSync,
   useDrillClock,
   useDrillKeys,
   useRoundFinish,
@@ -26,7 +25,11 @@ const SCROLL_STEP = 48;
 function startDrill({
   round,
   pressed,
-}: Readonly<{ round: RoundPayload; pressed: boolean }>): DrillState {
+  unsaved,
+}: Readonly<
+  { round: RoundPayload; pressed: boolean } & Pick<ArrivedQueue, "unsaved">
+>): DrillState {
+  const answered = [...round.answered, ...unsaved];
   return initDrill({
     roundId: round.id,
     deck: round.deck,
@@ -36,9 +39,9 @@ function startDrill({
     paces: Object.fromEntries(
       Object.values(round.cards).map((card) => [card.id, card.paceMs]),
     ),
-    answered: round.answered,
+    answered,
     retries: round.retries,
-    intro: !pressed || (round.kind === "placement" && round.answered.length === 0),
+    intro: !pressed || (round.kind === "placement" && answered.length === 0),
   });
 }
 
@@ -75,15 +78,19 @@ export function DrillSession({
   const goHome = (): void => {
     void navigate({ to: "/" });
   };
-  const [state, dispatch] = useReducer(drillReducer, { round, pressed }, startDrill);
+  const { queue, unsaved } = useAnswerQueue(round);
   const [failures, setFailures] = useState(0);
-  const queue = useAnswerSync(round.id, state.answers, () => {
-    setFailures((count) => count + 1);
-  });
+  const [state, dispatch] = useQueuedDrill(
+    queue,
+    () => startDrill({ round, pressed, unsaved }),
+    () => {
+      setFailures((count) => count + 1);
+    },
+  );
   const finish = useRoundFinish({
     roundId: round.id,
     finishing: state.phase.kind === "finishing",
-    answers: state.answers,
+    answers: [...unsaved, ...state.answers],
     onDone: () => {
       queue.clear();
       if (sound) browserSound.play("closing");
@@ -120,7 +127,7 @@ export function DrillSession({
 
   if (
     phase.kind === "intro" &&
-    (round.kind !== "placement" || round.answered.length > 0)
+    (round.kind !== "placement" || round.answered.length + unsaved.length > 0)
   ) {
     return (
       <ReadyScreen

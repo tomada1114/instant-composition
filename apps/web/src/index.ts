@@ -4,9 +4,11 @@
 export { App } from "./app";
 export {
   createAnswerQueue,
+  unsavedAnswers,
   type AnswerQueue,
   type QueueStorage,
 } from "./drill/answer-queue";
+export { useAnswerQueue, useQueuedDrill, type ArrivedQueue } from "./drill/answer-sync";
 export { CardBack, CardFront } from "./drill/flashcard";
 export { IntroScreen } from "./drill/intro-screen";
 export { PauseSheet } from "./drill/pause-sheet";
@@ -36,7 +38,6 @@ export {
 } from "./drill/sound";
 export {
   feedbackMs,
-  useAnswerSync,
   useDrillClock,
   useDrillKeys,
   useRoundFinish,

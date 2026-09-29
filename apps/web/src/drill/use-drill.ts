@@ -2,14 +2,13 @@ import { useEffect, useRef, useState, type Dispatch } from "react";
 
 import { TUNING } from "../lib/tuning";
 import type { RoundSummary } from "../openapi";
-import { createAnswerQueue, sessionStore, type AnswerQueue } from "./answer-queue";
 import {
   currentCard,
   type AnswerInput,
   type DrillEvent,
   type DrillState,
 } from "./drill-state";
-import { requestFinish, sendAnswer } from "./rounds";
+import { requestFinish } from "./rounds";
 import { keyAction, type DrillKeyAction } from "./keys";
 
 /** How often the front's clock is read; also the timer bar's step. */
@@ -103,40 +102,6 @@ export function useDrillKeys(
       document.removeEventListener("visibilitychange", onVisibility);
     };
   }, []);
-}
-
-/** Sends every answer the reducer adds, once each, and calls `onFailure` when one fails to save. */
-export function useAnswerSync(
-  roundId: string,
-  answers: readonly AnswerInput[],
-  onFailure: () => void,
-): AnswerQueue {
-  const [queue] = useState(() =>
-    createAnswerQueue({
-      key: `drill-answers:${roundId}`,
-      send: sendAnswer,
-      storage: sessionStore(),
-    }),
-  );
-  const sent = useRef(0);
-  const report = useRef(onFailure);
-  useEffect(() => {
-    report.current = onFailure;
-  });
-
-  useEffect(() => {
-    const fresh = answers.slice(sent.current);
-    sent.current = answers.length;
-    const delivery =
-      fresh.length > 0 ? fresh.map((answer) => queue.enqueue(answer)) : [queue.flush()];
-    for (const delivered of delivery) {
-      void delivered.then((done) => {
-        if (!done) report.current();
-      });
-    }
-  }, [answers, queue]);
-
-  return queue;
 }
 
 export type FinishState =
