@@ -29,7 +29,13 @@
     "level": 3,
     "grammar": ["time-and-if-clauses", "future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:baeb57f17a648c08ccfe903cbd33021aa4ca027e810a0f5ff3decb025b174ad6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3e8n3t2w",
@@ -77,7 +83,13 @@
     "level": 5,
     "grammar": ["relative-clauses", "past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:da24a6453cecc66268f0b5663b517a5aaa5a2ecd7478a269b5c2cdd2c81080aa",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3u9h9b5f",
@@ -93,23 +105,13 @@
     "level": 1,
     "grammar": ["there-is-are", "articles-and-countability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4m9k4n9b",
-    "ja": "写真、姉に送ってって頼んだよ。",
-    "en": "I asked my sister to send the photos.",
-    "alternatives": [
-      "I asked my sister to send the pictures.",
-      "I asked my sister for the photos."
-    ],
-    "point": "ask＋人＋to do の形で、人の後に to を置く",
-    "topic": "social",
-    "subtopic": "small-talk",
-    "level": 4,
-    "grammar": ["verb-object-to-do", "past-simple"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b7cdb81b2c098b418b0d0ad42ff9c567c9c03f77a8a410c5aa86ce6b2b5df0d8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4q3s3x6p",
@@ -144,8 +146,8 @@
     "stamps": {
       "core": {
         "hash": "sha256:38de4ed97f9f483b9d8b173fc7562496e6bc2e5098b331dbd4987007999b207b",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -163,7 +165,13 @@
     "level": 6,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:186cfa9f61dd9bdb028c4b75741fcc65c0d2e7ecda7b39493bd55dec9c00f924",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5f9q6w3p",
@@ -195,7 +203,13 @@
     "level": 2,
     "grammar": ["requests-permission", "be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:92ac931f6f7d5b3779c0037b24c2cd325ad87ff9ca34d1eb36881053c34f1c82",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5r5q7a5z",
@@ -211,7 +225,13 @@
     "level": 1,
     "grammar": ["imperatives", "articles-and-countability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1b0ab6dc3f4e96ca6392ceb62e5283ea240e340118e1337581ef33f3ddb522a9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5u2z6b6a",
@@ -227,7 +247,13 @@
     "level": 3,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2de60f4bd5a5490c5cec719e1a0a35248bd6a00db399c8d7deb3f726f417f2c6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6t9q9n7m",
@@ -242,22 +268,6 @@
     "subtopic": "small-talk",
     "level": 8,
     "grammar": ["cleft-emphasis"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6w4g9b9k",
-    "ja": "さっきは犬と遊んでたんだ。",
-    "en": "I was playing with my dog.",
-    "alternatives": [
-      "I was playing with the dog.",
-      "I was playing with my dog earlier."
-    ],
-    "point": "「〜していた」は過去進行形 was + -ing",
-    "topic": "social",
-    "subtopic": "small-talk",
-    "level": 3,
-    "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -339,7 +349,13 @@
     "level": 5,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0ae8ea5d39fdd00fe7808eac6994a71e3c86b14807c54309112040165a014665",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7w4s7c6h",
@@ -384,7 +400,13 @@
     "level": 5,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:061cb5466e50b6910afc9939ba004ff709a4aef2f9561edfe6520818851e82fb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8y7c3j9j",
@@ -400,7 +422,13 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:640c4d64177533429acf1628fe03addf6c4e1234fe656e27dcd80b718d7125ab",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9a6u6m8y",
@@ -416,7 +444,13 @@
     "level": 4,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0409186a15bc055cc5a37aa505ee7dbbf9bdf15fd73c6fc4ada37787174452fe",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9e5c9p8w",
@@ -448,7 +482,13 @@
     "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f8067a8da3cc3032e08702b58d714fa6d5c0e681d0f05644d2ad56f9b7f22da1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9n6m9t7p",
