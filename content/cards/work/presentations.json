@@ -1,5 +1,49 @@
 [
   {
+    "id": "c_2j4f5f4h",
+    "ja": "練習してたら、乗り切れたのに。",
+    "en": "If I'd practiced, I'd have coped.",
+    "alternatives": [
+      "I'd have coped if I'd practiced.",
+      "If I'd practiced, I'd have gotten through it."
+    ],
+    "point": "過去の仮定は had + 過去分詞 と would have",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b3a776e2dd103ebdc5107b868998e314e11c1b038b1414d69b7cc05f40608357",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2p3c9j9e",
+    "ja": "売上は昨年から伸びています。",
+    "en": "Sales have grown since last year.",
+    "alternatives": [
+      "Sales have been rising since last year.",
+      "Sales have increased since last year."
+    ],
+    "point": "since と現在完了、過去の一点なら過去形",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f55f3b1fdb3c88904f8473069a93760389723109646084a5574e156dbf35f0ce",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2w2d2x4h",
     "ja": "これは何の図ですか？",
     "en": "What is this chart?",
@@ -99,6 +143,50 @@
     }
   },
   {
+    "id": "c_4n2h3t7s",
+    "ja": "よく見ると、傾向が分かります。",
+    "en": "Looking closely, you'll see a trend.",
+    "alternatives": [
+      "If you look closely, you'll see a trend.",
+      "Look closely and you'll see a trend."
+    ],
+    "point": "「〜すると」は Looking closely の分詞構文",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6e1f26db2c8d2a7e6e6355e6b97372ffb9c971c4f1bcf830a717d219e4d30b99",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4t6g6a3u",
+    "ja": "終わったら質問を受けます。",
+    "en": "I'll field questions when I finish.",
+    "alternatives": [
+      "Once I'm done, I'll take questions.",
+      "I'll take questions after I've finished."
+    ],
+    "point": "when 節の中は未来でも現在形",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:20164b3e2535d8c0c9914e226d76e4d7ddea7346d1e28aff1616d22d2514d7e6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4y6m5j6k",
     "ja": "ご清聴に感謝します。",
     "en": "Thank you for listening.",
@@ -153,6 +241,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:967b0a574ae4a47dd5c00c8e0dc908e1388c661a30d8e02cbe5506c0a2d0d37d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7b2y3n4k",
+    "ja": "部長に、発表を頼まれました。",
+    "en": "My director asked me to present.",
+    "alternatives": [
+      "I was asked by the director to present.",
+      "The director asked me to give the presentation."
+    ],
+    "point": "ask + 人 + to do",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 6,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f86bcf6d36e56d47dfc95407bca27c59fd88f0beebe6f595101a4d471e7f5825",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -273,6 +383,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:1834dd3ba579aab0568dc1a370a010775b382c5cbe3eba8da0251539de6704cd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9d5c7z2p",
+    "ja": "予行してれば、うまくいった。",
+    "en": "If I'd rehearsed, it'd have worked.",
+    "alternatives": [
+      "It would've worked if I'd rehearsed.",
+      "If I had rehearsed, it would have worked."
+    ],
+    "point": "過去の仮定は if + had + 過去分詞",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6fd2bc0650e0f0effd1c3d646c62f282b0b88ff929e444d41eef4893190913f8",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2m5c2c2k",
+    "ja": "どっちが拡張向きか分かる？",
+    "en": "Do you know which scales better?",
+    "alternatives": [
+      "Do you know which one scales better?",
+      "Do you know which is easier to scale?"
+    ],
+    "point": "間接疑問は which scales の語順。does は使わない",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 6,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d8df12a825722d124e6ebfdd6d2b3d5a9ef012e4cfeeaa2c3691493c29d1ca8a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3d3y5a9j",
     "ja": "キャッシュできるよ。",
     "en": "We can cache it.",
@@ -13,6 +35,29 @@
     "stamps": {
       "core": {
         "hash": "sha256:68617ed8992855b0ea62b8835ed29aa58a4187eed28ab8155c54c7a38533402d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3d9z3u4u",
+    "ja": "負荷が増えたら再検討しよう。",
+    "en": "We'll revisit this if load grows.",
+    "alternatives": [
+      "Let's revisit this if load goes up.",
+      "We'll look at this again if load grows.",
+      "If load goes up, we'll revisit this."
+    ],
+    "point": "未来のことでも if 節は現在形 grows",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 7,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fbb6b5bca7dc1df613acd1edc2b1ff01ff905c42137d8adfa4f8f51240a29885",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -76,6 +121,25 @@
     }
   },
   {
+    "id": "c_4q6d4x8z",
+    "ja": "秘密情報は金庫で保管される。",
+    "en": "Secrets are kept in a vault.",
+    "alternatives": ["Secrets are stored in a vault.", "Secrets are kept in a safe."],
+    "point": "される側が主役なら受動態 are kept",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 6,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fe2c21bf0e65ae1773937514222f4acf01fc31ea7e127a4aa414739dac1fa3d2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4z5h3c3p",
     "ja": "どっちのほうが安い？",
     "en": "Which one is cheaper?",
@@ -89,6 +153,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:122e3fdb4acff7621bf997b15f6ed780685b50b5ac59852089db8562e8914860",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5a8h3z4f",
+    "ja": "大事なのは何を削るかだ。",
+    "en": "What matters is what we cut.",
+    "alternatives": [
+      "What's important is what we cut.",
+      "The key is deciding what to cut."
+    ],
+    "point": "What で始まる名詞節が主語になる",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 6,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f3dd320c29d4c50203c9bcbfae3f4c720bfc988c9f1045e58e32990a350754ed",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -134,6 +220,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:a0a9e3bbe29cc8b4e6248153d3d1532bce8fa0b813bad336077669a15916f872",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5h5n7n5w",
+    "ja": "これ、少し作り込みすぎかも。",
+    "en": "This may be a little overengineered.",
+    "alternatives": [
+      "This might be a bit overengineered.",
+      "This could be slightly overbuilt."
+    ],
+    "point": "may / might / a little で断定を和らげる",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:38f24cc32fa4bc66783563031b90d9a1e3298482f2a32cb59924a32f839e0f12",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -213,6 +321,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:c8b8e4a4a2ad40a27b4fb5cbf7e28de32c03ae8d1ae9df9141910cac1680d11f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8h9b2r9h",
+    "ja": "よく更新される表は分けたい。",
+    "en": "I'd split tables that update often.",
+    "alternatives": [
+      "I'd separate tables that change often.",
+      "I'd split up tables which update often."
+    ],
+    "point": "tables を後ろから that 節で説明する",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 7,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:32808eff3fa5533cf25a3feb9cc2b0afa6452b1c0edacd5f8c17c3e24dbf8633",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

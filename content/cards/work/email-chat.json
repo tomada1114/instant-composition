@@ -22,6 +22,28 @@
     }
   },
   {
+    "id": "c_3d7j7j4v",
+    "ja": "上司をCCに入れるべきだった。",
+    "en": "I should have cc'd my boss.",
+    "alternatives": [
+      "I should have copied my boss in.",
+      "I should have looped my boss in."
+    ],
+    "point": "後悔や反省は should have + 過去分詞",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:896e68a9a9a0adbf0b3858d13d89c0fe56dd670ead5dc7998b2398fdb32d54df",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3t3r4v3a",
     "ja": "添付を忘れてすみません。",
     "en": "Sorry, I forgot the attachment.",
@@ -38,6 +60,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:8520341d04103cd7c52419229d738f7ccf66e7cda38e7d6515793934ddd37037",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3u9g4g8k",
+    "ja": "明日、彼にもう一度連絡します。",
+    "en": "I'll follow up with him tomorrow.",
+    "alternatives": [
+      "I'll circle back with him tomorrow.",
+      "I'll check in with him again tomorrow."
+    ],
+    "point": "「改めて連絡する」は follow up with",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 7,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bda583c5f4cafb7584b0c9993386ea4bda94b3c409bfbc598aa2ed0c91be37bf",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -101,6 +145,72 @@
     }
   },
   {
+    "id": "c_6g3f5f5b",
+    "ja": "Slack が朝から鳴ってる。",
+    "en": "My Slack's been pinging all morning.",
+    "alternatives": [
+      "Slack has been buzzing since this morning.",
+      "My Slack has been going off all morning."
+    ],
+    "point": "朝からずっと続く動作は現在完了進行形",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c6979878c0f80d740ff5965a1969036db475566abaf1265d3628497a4ba55ae",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7c7f8b8x",
+    "ja": "読み終えて、すぐ返信した。",
+    "en": "Having read it, I replied immediately.",
+    "alternatives": [
+      "After reading it, I replied right away.",
+      "I read it and replied right away."
+    ],
+    "point": "先に終えた動作は having + 過去分詞",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cc95d7ad26e6230a570b17569121fcb8d49fed07e360a510ee4ec2f745876047",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7j4y5n8r",
+    "ja": "宛先は先に確認したほうがいい。",
+    "en": "You should double-check the recipients first.",
+    "alternatives": [
+      "You'd better double-check the recipients first.",
+      "It's worth double-checking the recipients first."
+    ],
+    "point": "助言は should、再確認は double-check",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 7,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:69ded7463164842a7d50719044d41188225f87a0789c1c894e1bee248ef30720",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_7u2a2h2j",
     "ja": "早めに返信ください。",
     "en": "Please reply soon.",
@@ -133,6 +243,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:cea5e88079994843c2615c58bfd56c14eca36e505bac12b738d03524c01b5896",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8d3g4b5f",
+    "ja": "もっと早く返信しなくてごめん。",
+    "en": "Sorry for not replying sooner.",
+    "alternatives": [
+      "I'm sorry I didn't reply earlier.",
+      "Sorry for not getting back to you sooner."
+    ],
+    "point": "謝る理由は for + -ing、否定は not を前に",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 6,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a2253655f7f56e354b7b9afe020d4fa2e220155b2ea5b191085f04064d51a16d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

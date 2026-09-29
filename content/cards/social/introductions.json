@@ -45,6 +45,28 @@
     }
   },
   {
+    "id": "c_3k4x2m5d",
+    "ja": "ここで働いて三年になります。",
+    "en": "I've worked here for three years.",
+    "alternatives": [
+      "I've been working here for three years.",
+      "I've been at this company for three years."
+    ],
+    "point": "「今まで続く期間」は現在完了 + for",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 6,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d3d49b43c328d1fc0840cd341c6468efe1f7c0685e2a7873cd9eb2f9c2288f20",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3w6j9h2q",
     "ja": "こちら営業部の田中です。",
     "en": "This is Tanaka from Sales.",
@@ -83,6 +105,29 @@
     }
   },
   {
+    "id": "c_4t3r9n4w",
+    "ja": "大阪出身で、たこ焼き好きです。",
+    "en": "Born in Osaka, I love takoyaki.",
+    "alternatives": [
+      "As an Osaka native, I love takoyaki.",
+      "Being from Osaka, I love takoyaki.",
+      "Coming from Osaka, I love takoyaki."
+    ],
+    "point": "分詞構文では Born の前の being を省ける",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f821ff38d71cfaaf6410ac8174f6a78da6e918212b7527ca62c6bd909207a9d3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_5h8s6t6p",
     "ja": "ケンって呼んでね。",
     "en": "Call me Ken.",
@@ -102,6 +147,25 @@
     }
   },
   {
+    "id": "c_5x8s6n4g",
+    "ja": "私は看護師です。",
+    "en": "I'm a nurse.",
+    "alternatives": ["I work as a nurse.", "I'm a nurse by profession."],
+    "point": "職業の前には a をつける",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:00360a30dcd6114ece727e12f18ddf827d94a86e831e3bfe7f313c0850197e4f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_7f5g2j9b",
     "ja": "うちの課は十人います。",
     "en": "There are ten of us.",
@@ -115,6 +179,47 @@
     "stamps": {
       "core": {
         "hash": "sha256:45008578797f7d300fc2deed58fcd7a88066709e86e9479947180b02d3da255d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7k3d4z2k",
+    "ja": "あなたも来るとケンが言ってた。",
+    "en": "Ken said you'd be coming too.",
+    "alternatives": [
+      "Ken told me you'd be coming too.",
+      "Ken mentioned you were coming too."
+    ],
+    "point": "said の後は would。you'd は you would",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 7,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:eb29adec71306983764c20c300d7b99b5ba4aead0cde0430b7bafd2dce565b4b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7u9e5v5c",
+    "ja": "前に会ったかもしれませんね。",
+    "en": "We might have met before.",
+    "alternatives": ["We may have met before.", "I think we might have met before."],
+    "point": "過去の推量は might have + 過去分詞",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a075ecd93f945e82fc87b2575e10e5affe1045b2b1f415afe068083ce40e57fe",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -156,6 +261,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:69244819c24852bca9103f6c65c01af13b6962701833d709212e45f95f6a6468",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8x7n9t3m",
+    "ja": "お噂はかねがね伺っております。",
+    "en": "I've heard a lot about you.",
+    "alternatives": [
+      "I've heard so much about you.",
+      "I've heard great things about you."
+    ],
+    "point": "初対面の定番は現在完了 I've heard",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 7,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:99b205cda48aee8a842ce56b9afc01c9b63f8149896bfe2be6c5e5f025818d94",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -232,6 +359,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:6ea57e2ddac676d74679544531918fb8f7e4a0e38ecaed76b66094e1a33b8a41",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9u5a7c7d",
+    "ja": "先日メールを差し上げた者です。",
+    "en": "I'm the one who emailed you.",
+    "alternatives": [
+      "I'm the person who emailed you.",
+      "I'm the one who sent you an email."
+    ],
+    "point": "人を説明する関係詞は who",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:261a5de99d6850fc7238fa2ba39e8d59a43c8a5202ab438f18e46f5e07dc1434",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

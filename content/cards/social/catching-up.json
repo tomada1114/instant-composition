@@ -60,6 +60,69 @@
     }
   },
   {
+    "id": "c_2s6s9d8k",
+    "ja": "忙しいけど、元気にやってるよ。",
+    "en": "Although I'm busy, I'm doing well.",
+    "alternatives": [
+      "Even though I'm busy, I'm doing fine.",
+      "I'm doing well, even though I'm busy."
+    ],
+    "point": "although の後ろも文の形。but とは重ねない",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:accb8a06c17681c06d859368418e94895a52d8af730826e11ac398f1e69b0dbb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3c3a5v9c",
+    "ja": "また連絡してね。",
+    "en": "Keep in touch.",
+    "alternatives": ["Stay in touch.", "Keep in touch, okay?"],
+    "point": "「連絡を保つ」は keep in touch",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 3,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7dd46e736e933edd3f904f691398db1b1b4ee65705c8cd0ba9153e37fa9e728c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3d4h7p7k",
+    "ja": "前に話してた仕事、決まったよ。",
+    "en": "The job I mentioned came through.",
+    "alternatives": [
+      "I got the job I mentioned.",
+      "I landed the job I told you about."
+    ],
+    "point": "come through は「うまく決まる」",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:158ce42e249bdef0767bac2511f3a66c13fd63a5f581a451a7f9c920556a32d4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3g4v7q4z",
     "ja": "近々、会わないとね。",
     "en": "We should get together soon.",
@@ -193,6 +256,51 @@
     }
   },
   {
+    "id": "c_6f8z5v8j",
+    "ja": "最後に会ったの、去年の夏？",
+    "en": "Haven't seen you since last summer?",
+    "alternatives": [
+      "We haven't met since last summer, right?",
+      "Was the last time last summer?",
+      "Last time we met was last summer, right?"
+    ],
+    "point": "since で起点を言うなら現在完了",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a75cf9624f6ca3b6f15249a3788fe53f143d5921f3eb523bd6d677c860654b3b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6h6m9d9n",
+    "ja": "京都にいる弟は、元気だよ。",
+    "en": "My brother in Kyoto is fine.",
+    "alternatives": [
+      "My brother in Kyoto is doing well.",
+      "My brother who's in Kyoto is doing fine."
+    ],
+    "point": "名詞の後ろに in Kyoto を置いて説明する",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f043dc78029c21548c512e8b6144be41b995c7d7f95ce7240a5b09d7ce250147",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6q8z7n2p",
     "ja": "ちょっと聞いてもいい？",
     "en": "Can I ask you something?",
@@ -206,6 +314,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:e2e1c347f528278abe4c6bf435ae9f93da45f6fb2f4f38e8dd268538b65c479b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8a9b4g2x",
+    "ja": "前よりずっと元気そうだね。",
+    "en": "You look much better than before.",
+    "alternatives": [
+      "You look way better than last time.",
+      "You look a lot better than before."
+    ],
+    "point": "比較を強めるのは much / a lot / way",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:958a91d453b0bb1d7ab39657929b254ad557ce41ba111b40a21d557f15c46a43",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -250,6 +380,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:32ff34073c4435d8cf486414c753dcc6cc06478c369f2002b4ed63cdb83ec9d0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9j6c2b8j",
+    "ja": "会社のそばの店、閉店したよ。",
+    "en": "The shop by my office closed.",
+    "alternatives": [
+      "The store near my office closed down.",
+      "The place near my office has closed."
+    ],
+    "point": "名詞のすぐ後ろに前置詞句で場所を足す",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:72629d06c4959aeeba4ee77dcc775ac135a2bc36e22e1fa74bbf64c2abd2fe52",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

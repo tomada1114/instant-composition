@@ -19,6 +19,25 @@
     }
   },
   {
+    "id": "c_2g5a3r8g",
+    "ja": "もう少し時間があればいいのに。",
+    "en": "I wish I had more time.",
+    "alternatives": ["If only I had more time.", "I wish I had a little more time."],
+    "point": "今の願望は wish + 過去形（had）",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:111fee404d345a4f3ccdf1c77a0f475dfac19f827a79ab152a244803c71f264a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2j8m7g6g",
     "ja": "早めに行った方がいいよ。",
     "en": "You should go early.",
@@ -193,6 +212,29 @@
     }
   },
   {
+    "id": "c_5d5z4d2e",
+    "ja": "ガイドを予約すべきだった。",
+    "en": "I should have booked a guide.",
+    "alternatives": [
+      "I should've booked a guide ahead.",
+      "I ought to have booked a guide.",
+      "I should have reserved a guide."
+    ],
+    "point": "過去の後悔・非難は should have done",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:089d93d83dbb6bd23d69e04d20d698f3493904e4a52b09b0be41af266d6e2fdd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_5f8j7f6y",
     "ja": "午後のほうが空いてる？",
     "en": "Is the afternoon less crowded?",
@@ -206,6 +248,51 @@
     "stamps": {
       "core": {
         "hash": "sha256:64f20f750d063f072d8d5f23d9fefb79eae1aecd09853b3e2ff07ca370fc1bdf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5g9d5t3g",
+    "ja": "私は十時のツアーに出ます。",
+    "en": "I'm taking the ten o'clock tour.",
+    "alternatives": [
+      "I'm going on the ten o'clock tour.",
+      "I'll take the ten o'clock tour.",
+      "I'm going to take the ten o'clock tour."
+    ],
+    "point": "決まった予定は現在進行形で言える",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 7,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:01f5d4eb781e6e4fd7f86750194103e180baed555682671c3d0a8bf0938624c6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5n7b5p9e",
+    "ja": "朝からずっと歩き回っています。",
+    "en": "I've been walking around since morning.",
+    "alternatives": [
+      "I've been on my feet since morning.",
+      "I've been walking around all morning."
+    ],
+    "point": "since + 起点、ずっと続く動作は have been -ing",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:41faf3dbc68bbbc94b15f715857a4e3d6589f5c773efa314b8fb831699452039",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -250,6 +337,28 @@
     }
   },
   {
+    "id": "c_6z8y6b5a",
+    "ja": "前回来てから、変わったね。",
+    "en": "It's changed since my last visit.",
+    "alternatives": [
+      "It has changed since my last visit.",
+      "It's changed since I was last here."
+    ],
+    "point": "since と一緒なら現在完了（has changed）",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 6,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:07d21faa40d733826a27317e5b5b909474178f54c35acda2350962cd0057079c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_7b6g7c7z",
     "ja": "雨が降ったら中止です。",
     "en": "It's canceled if it rains.",
@@ -263,6 +372,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:2bb03b03845c3ac583eab305dc3f45ba805f6449b38fc54f54122b5e12026bb4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8n6w8v9x",
+    "ja": "私たちを撮ってもらえませんか？",
+    "en": "Would you mind taking our picture?",
+    "alternatives": [
+      "Could you possibly take our picture?",
+      "Would you mind taking a picture of us?"
+    ],
+    "point": "Would you mind の後は -ing",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:421ba31b88a7299d28272013c232191a2dc2be9a5e043ea856193ae104eb359d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

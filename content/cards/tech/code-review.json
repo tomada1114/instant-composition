@@ -38,6 +38,28 @@
     }
   },
   {
+    "id": "c_2m5x7p4c",
+    "ja": "出す前に、テストは直した。",
+    "en": "I'd fixed the tests before submitting.",
+    "alternatives": [
+      "I had fixed the tests before I submitted.",
+      "I fixed the tests before submitting."
+    ],
+    "point": "先に起きたことは過去完了 had fixed",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b235e7b231381c464f14abbe6f45fd99b2251c9ec924d784b7ff9666acaaab65",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2p5t9w4m",
     "ja": "今日中に直せる？",
     "en": "Can you fix this today?",
@@ -51,6 +73,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:c3ee69884ca5fcd84c56f0ae53de726940c017700d38bc74cdaded4d15d94b85",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2r8u4z7b",
+    "ja": "これが壊れた関数だよ。",
+    "en": "This is the function that broke.",
+    "alternatives": [
+      "This is the function that failed.",
+      "This is the function which broke."
+    ],
+    "point": "物を受ける関係詞は that か which。who は人だけ",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ce535352fecf4e291807540003cefbf1c5d34552e79a2b0d6fea39934d4b40b4",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -177,6 +221,50 @@
     }
   },
   {
+    "id": "c_5n6u7s8w",
+    "ja": "この PR、朝からずっと見てる。",
+    "en": "I've been reviewing this since morning.",
+    "alternatives": [
+      "I've been on this PR since morning.",
+      "I've been looking at this since this morning."
+    ],
+    "point": "続いている動作は現在完了進行形 + since",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:183c73c7e48c75b15d78609bf5f4b2b8a948c54405f929d6f63da424e57f906e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5w6q7d9e",
+    "ja": "何を直すのか、説明して？",
+    "en": "Can you explain what this fixes?",
+    "alternatives": [
+      "Could you tell me what this fixes?",
+      "Can you walk me through what this fixes?"
+    ],
+    "point": "what 節の中は平叙文の語順で fixes",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a9fb9fa8ec78bd6bd221a4a3476de6d70412380602c1f8192df6b0909cc4dc65",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_5x6q4x8n",
     "ja": "テスト通ったらマージする。",
     "en": "I'll merge when tests pass.",
@@ -212,6 +300,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:27cf9e61d998782e4956399677c29fedb544a51e7cc8d97007d43af6eb6d14d2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7w8d5t7t",
+    "ja": "これ、月曜から変わってないよ。",
+    "en": "This hasn't changed since Monday.",
+    "alternatives": [
+      "This has stayed the same since Monday.",
+      "Nothing has changed here since Monday."
+    ],
+    "point": "起点 since には現在完了。過去形にしない",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 6,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:34e3d999635e85d81456ff78284e66e25e42b9f89cd2d16ab63b674fca8f7c9f",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -291,6 +401,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:83f1070e94435fdddf365bc120c687b66739a706e51e508571453a618770efbe",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9t4c7p5x",
+    "ja": "この PR、二つに分けたい。",
+    "en": "I want to split this PR in two.",
+    "alternatives": [
+      "I'd like to split this PR in two.",
+      "I want to break this PR into two."
+    ],
+    "point": "split ~ in two で「二つに分ける」。want to + 動詞の原形",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:06894dd4d94584235ade0b2ee106ffb427d1d5c9e9cd37b4e6edb80d6f2514f8",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

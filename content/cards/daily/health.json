@@ -1,5 +1,24 @@
 [
   {
+    "id": "c_2e3k7h6j",
+    "ja": "ちょっと熱がある気がします。",
+    "en": "I might have a fever.",
+    "alternatives": ["I think I have a slight fever.", "I might be running a fever."],
+    "point": "気がするは I think / may で言い切りを避ける",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 6,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:428a185c6cfc524b0cee85e80b4b2acabed8347d10eda24d9b49cca764fc965b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3b9a4e7z",
     "ja": "頭が痛いんだ。",
     "en": "I have a headache.",
@@ -41,6 +60,25 @@
     }
   },
   {
+    "id": "c_4t5e2b4s",
+    "ja": "スマホを見るのはやめたんだ。",
+    "en": "I've quit checking my phone.",
+    "alternatives": ["I stopped checking my phone.", "I gave up checking my phone."],
+    "point": "quit / stop の後は -ing",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 7,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7f99826aea95e902f174513b2ded5363dd3bba6dd7156d91d12c7b2f33da9d83",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_5p9q8w9t",
     "ja": "痛くなったら電話するよ。",
     "en": "I'll call if it hurts.",
@@ -54,6 +92,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:c560ed229da799e3258e2566badaea1079dc959ed53bf3eb94bed4c624aeccbb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5q8r7f6v",
+    "ja": "数週間ずっと肩がこってる。",
+    "en": "I've had stiff shoulders for weeks.",
+    "alternatives": [
+      "My shoulders have been stiff for weeks.",
+      "I've had tight shoulders for weeks."
+    ],
+    "point": "for + 期間の継続は現在完了",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 5,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:14484bbb49e71f2fa37aeb01cde1d081cb87fdf5ac5ddf0ade2cc4c738a5909c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5x4y5k2b",
+    "ja": "病院で血圧を測ってもらったよ。",
+    "en": "I had my blood pressure taken.",
+    "alternatives": [
+      "I got my blood pressure checked.",
+      "I had my blood pressure checked."
+    ],
+    "point": "測ってもらうは have + 物 + 過去分詞",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 6,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:560dd160d47555dba557f9ecb09beb1c9210ed1fdcbe7049fc999806ca1bfbae",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -117,6 +199,28 @@
     }
   },
   {
+    "id": "c_6q4w4w3v",
+    "ja": "予約、明日に変えられますか？",
+    "en": "Can I reschedule for tomorrow?",
+    "alternatives": [
+      "Could I move my appointment to tomorrow?",
+      "Can I change it to tomorrow?"
+    ],
+    "point": "予約の変更は reschedule / move が定番",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 6,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b4cb983ff7da84470358467f8c1e71bc7b69dac151e63711f3e91e621ada8fa8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6q8m8b2c",
     "ja": "休むように言われたよ。",
     "en": "I was told to rest.",
@@ -130,6 +234,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:4da32bbac3ee74154ba0bb25355ab6c5e02218c7709cb7eb0f6227d49fbcc6c9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6r2c6r3w",
+    "ja": "医者に休養が必要だと言われた。",
+    "en": "The doctor said I needed rest.",
+    "alternatives": [
+      "The doctor told me I needed rest.",
+      "My doctor said I needed to rest."
+    ],
+    "point": "said の後は need も過去形に",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 7,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6272fe987fe32a6325fbfc2493702832c3ae601f8c3e5644fe89986d223a4977",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

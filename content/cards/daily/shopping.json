@@ -57,6 +57,25 @@
     }
   },
   {
+    "id": "c_3m8c5u7t",
+    "ja": "ズボンの丈を詰めてもらった。",
+    "en": "I had my pants taken up.",
+    "alternatives": ["I got my pants shortened.", "I had my pants shortened."],
+    "point": "してもらうは have + 物 + 過去分詞",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 6,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b9b9e7b2288915ee8893b1204735008c93ea3f4d45260f9ef891fb304b746ead",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3w7k6w9t",
     "ja": "もっと安いのはありますか？",
     "en": "Do you have a cheaper one?",
@@ -162,6 +181,50 @@
     }
   },
   {
+    "id": "c_5e8x2j7z",
+    "ja": "レシートを残せばよかった。",
+    "en": "I should have kept the receipt.",
+    "alternatives": [
+      "I should've held on to the receipt.",
+      "I wish I'd kept the receipt."
+    ],
+    "point": "後悔は should have + 過去分詞",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e2117a96a5deb24a30d0a90fa84086039e17e9b8f6e0e443cb45690c6fe7e1f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5y6e9y9d",
+    "ja": "いつ再入荷するか分かりますか？",
+    "en": "Do you know when it'll restock?",
+    "alternatives": [
+      "Could you tell me when it restocks?",
+      "Do you know when they'll restock?"
+    ],
+    "point": "間接疑問は when の後が平叙文の語順",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a4041db803c5bc8644fded7bfc80dfa7b1897b8dce9e0e60d644deb9b2748fd8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6h6j9s4x",
     "ja": "レシート、取っといて。",
     "en": "Keep the receipt.",
@@ -260,6 +323,47 @@
     }
   },
   {
+    "id": "c_9e7x4u6a",
+    "ja": "セールを見に行ってきたよ。",
+    "en": "I went to browse the sale.",
+    "alternatives": ["I went to check out the sale.", "I went to look at the sale."],
+    "point": "目的の「〜しに」は to + 動詞",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 6,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0bb5c7c8e494b05fd4b2fe6cbb6397394a127980f203980380acea836e9da4e2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9h9n5h8f",
+    "ja": "売り切れだと店員が言ってた。",
+    "en": "The clerk said it was sold out.",
+    "alternatives": [
+      "They said it was sold out.",
+      "The clerk told me it was sold out."
+    ],
+    "point": "said の後は時制を一つ過去にずらす",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:19c0797641e4e9eaa5e36dec98346e9fef6c4417d0daa1da3a3787d4e986ccca",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_9n5g7f9w",
     "ja": "返品の期限はいつですか？",
     "en": "When is the return deadline?",
@@ -292,6 +396,25 @@
     "stamps": {
       "core": {
         "hash": "sha256:1fcfd4bcdac9b9cc03b763a3abea13bc739705271d50eb4cbb9b36c3d2dffae6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9z7m5f2b",
+    "ja": "これ、返品したいんですが。",
+    "en": "I'd like to send this back.",
+    "alternatives": ["I'd like to return this.", "I'd like to take this back."],
+    "point": "返品は send back / take back の句動詞",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:52ae88e583459c0e01f23f54620f0c1215e3fd475e5a2cbc9d4f8045114926a3",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

@@ -1,5 +1,24 @@
 [
   {
+    "id": "c_2a3y3v2j",
+    "ja": "私のメール、もう見た？",
+    "en": "Have you seen my email yet?",
+    "alternatives": ["Did you see my email yet?", "Have you looked at my email yet?"],
+    "point": "「もう」を尋ねるときは yet を文末に",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:20c4c250dba18613713770eafbd664fbf689a710ed9e33fda363b735038d0813",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2q2x6n3t",
     "ja": "ゴミは分別すべきです。",
     "en": "We should sort the trash.",
@@ -80,6 +99,50 @@
     }
   },
   {
+    "id": "c_3x3q5e3r",
+    "ja": "時間がなくて、昼を抜いた。",
+    "en": "Pressed for time, I skipped lunch.",
+    "alternatives": [
+      "Short on time, I skipped lunch.",
+      "Being short on time, I skipped lunch."
+    ],
+    "point": "理由は Pressed for time で先に言う分詞構文",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5c312456071550893bc38a1599674f3f66a84c03bb6f2a3ac1b813675927783d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4c3e4z2e",
+    "ja": "古いけど、コピー機は動くよ。",
+    "en": "Although it's old, the copier works.",
+    "alternatives": [
+      "Even though the copier's old, it works.",
+      "The copier works, even though it's old."
+    ],
+    "point": "譲歩は although / even though。but とは重ねない",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 6,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4b86e20f008c1628752227bcba2a61a135a0400327730e7c20c52bed38c1e59f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4f5t6x7d",
     "ja": "あの時、部長は帰ってたよ。",
     "en": "The boss had already gone home.",
@@ -96,6 +159,25 @@
     "stamps": {
       "core": {
         "hash": "sha256:984281a0dd81aa4e0a0c89c89bfaf8a32e054fe66ea97b4c38322fa3a47509ed",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4f7n6p6s",
+    "ja": "ホチキスがどこにあるか分かる？",
+    "en": "Any idea where the stapler is?",
+    "alternatives": ["Do you know where the stapler is?", "Know where the stapler is?"],
+    "point": "間接疑問は where のあとを平叙文の語順に",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 6,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:270efea9702789665534982d5deadf1b3819b00ab76db08a5eaa93e5191e3970",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -178,6 +260,28 @@
     }
   },
   {
+    "id": "c_5t2s9a7c",
+    "ja": "朝からずっと報告書を書いてる。",
+    "en": "I've been writing reports all morning.",
+    "alternatives": [
+      "I've been writing reports since morning.",
+      "I've been working on reports all morning."
+    ],
+    "point": "今も続く動作は have been + -ing",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e23a63b82e37b80c33d8fe616bb17bc926c0abde8a332ea7e77e7a9a5d895bb8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6a4j2y4k",
     "ja": "プリンター、壊れたと思う。",
     "en": "I think the printer's broken.",
@@ -194,6 +298,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:2575b0d8754ac81c4a0bf87c0c165f5639522172567ef3fedb0c5b07dbaa23df",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6b2m2k9v",
+    "ja": "上司に土曜出勤させられた。",
+    "en": "My boss made me work Saturday.",
+    "alternatives": [
+      "My boss made me come in Saturday.",
+      "My boss made me work on Saturday."
+    ],
+    "point": "強制は make + 人 + 動詞の原形。to は付けない",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 7,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a3714408c86da260d3d1742b6fdeadde002c94906e205cbe4e768d257217f2f6",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -251,6 +377,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:f6df5620d6ee427f7be2deab5965940af1adf19838edbde765129c06741ee72f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8w2h8w6j",
+    "ja": "頼んでくれれば、手伝ったのに。",
+    "en": "I'd have helped if you'd asked.",
+    "alternatives": [
+      "If you'd asked, I would have helped.",
+      "If you had asked me, I'd have helped."
+    ],
+    "point": "過去の事実に反する仮定は if + 過去完了、would have + 過去分詞",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 7,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:87b23ab092b59836d9ccffd5aa9a4e6ea13ef793bfe1cc290ebad5bdbbcb1913",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

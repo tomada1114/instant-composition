@@ -19,6 +19,47 @@
     }
   },
   {
+    "id": "c_2n4d8c7a",
+    "ja": "ユーザーに試すよう頼んで。",
+    "en": "Ask users to try it.",
+    "alternatives": ["Get users to try it.", "Ask users to test it."],
+    "point": "ask + 人 + to 動詞。命令文でも同じ形",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7518a56317fb15e0a29e698178e174a5458aad7896438e46d758704f77e753bc",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2r2h9b5a",
+    "ja": "この機能は、削るべきだった。",
+    "en": "We should have cut this feature.",
+    "alternatives": [
+      "We should've dropped this feature.",
+      "We should have removed this feature."
+    ],
+    "point": "過去の後悔は should have + 過去分詞",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:79f3c5f1478de469d078d1052975ea218bbd835c450f05a052bd76a10baee447",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3g9h4g4q",
     "ja": "通知を減らすのはどうかな？",
     "en": "How about reducing notifications?",
@@ -133,6 +174,29 @@
     "stamps": {
       "core": {
         "hash": "sha256:c4b025571ee967c3f614d50e27e58b3c8c631a70a5b6fe8fc47ab7b29a2cd9ec",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4v2k2d8j",
+    "ja": "公開後、利用者が倍増した。",
+    "en": "Users have doubled since launch.",
+    "alternatives": [
+      "Our user count has doubled since launch.",
+      "The number of users has doubled since launch.",
+      "Users doubled after the launch."
+    ],
+    "point": "since と結果の今への影響は現在完了",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 6,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:833fb4950e8739f9690edaa74cfa70c34bb1de484a77d46220268974ab9e1fe7",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -256,6 +320,50 @@
     }
   },
   {
+    "id": "c_7x8w3s9j",
+    "ja": "先月、ダークモードを出した。",
+    "en": "We shipped dark mode last month.",
+    "alternatives": [
+      "We released dark mode last month.",
+      "We launched dark mode last month."
+    ],
+    "point": "last month があれば過去形 shipped",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 6,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bc4dd4e9d08ecb27c859e0fe482aa5312e365c9d29cb81eaeb6d4d56d22f45c4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8y7m7r5b",
+    "ja": "ユーザーが望むのは速い検索。",
+    "en": "What users want is fast search.",
+    "alternatives": [
+      "What users want is faster search.",
+      "Users want fast search, above all."
+    ],
+    "point": "What 節が主語。want の目的語は抜ける",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ee29b098b6b5c97e0304fc8d0b79ebf94a36aa7c3a8a05bd71e471754fb7cf29",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_9c3a7f2m",
     "ja": "月曜に新プランを公開する。",
     "en": "We're launching the new plan Monday.",
@@ -291,6 +399,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:49bf714c2e7fba4cee00c1af4b8c8de264852583e78517479d1ffb1feaf5385a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9x9g4h4c",
+    "ja": "画面を簡単に、と彼に頼んだ。",
+    "en": "I asked him to simplify the screen.",
+    "alternatives": [
+      "I asked him to simplify this screen.",
+      "I asked him to make the screen simpler."
+    ],
+    "point": "ask + 人 + to 動詞。that 節にしない",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 6,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:07f82b967d772e48afa64973fdce50b5d91f565de3221fdadc995cb3e058e1c2",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

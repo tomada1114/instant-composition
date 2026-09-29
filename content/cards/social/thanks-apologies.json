@@ -19,6 +19,51 @@
     }
   },
   {
+    "id": "c_2d5f5h2x",
+    "ja": "もっと気遣えばよかったよ。",
+    "en": "I wish I'd been more considerate.",
+    "alternatives": [
+      "I wish I'd been more thoughtful.",
+      "I should have been more considerate.",
+      "If only I'd been more considerate."
+    ],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:293c986f8499192b87b2dd6b4036c65d3b7a565f6b580cb53b175120d063984c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2z2w7c5k",
+    "ja": "思ってた以上に助かったよ。",
+    "en": "That helped more than I expected.",
+    "alternatives": [
+      "It helped more than I expected.",
+      "That was more helpful than I expected."
+    ],
+    "point": "than の後ろは I expected。過去形で言う",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 6,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:914689bde192f1e7e30e8783e19b466ab7370a713c02010b1eb427ed5814a475",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3a4m4z5b",
     "ja": "次は遅刻しません。",
     "en": "I won't be late again.",
@@ -136,6 +181,28 @@
     }
   },
   {
+    "id": "c_4z8h6g7c",
+    "ja": "忙しいのに来てくれてどうも。",
+    "en": "Thanks for coming despite being busy.",
+    "alternatives": [
+      "Thanks for coming, even though you're busy.",
+      "Thank you for coming despite your busy schedule."
+    ],
+    "point": "despite の後ろは -ing か名詞",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 6,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f8a2b1deb5b4fe230bbf932761cb5f0a96074a99056edcaa7d1c4cdde184ba46",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_5b3c6x7u",
     "ja": "ずっとお礼を言いたかった。",
     "en": "I've been wanting to thank you.",
@@ -193,6 +260,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:f2f88bfb9a3134e20876658f1fa8d3165de3c0412123cbd97c4bae4d1f02c321",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6d3w2n5z",
+    "ja": "一晩泊めてくれてありがとう。",
+    "en": "Thanks for letting me stay overnight.",
+    "alternatives": [
+      "Thank you for putting me up.",
+      "Thanks for letting me stay the night."
+    ],
+    "point": "「泊めてくれて」は letting me stay",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["causatives", "gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:06298412202f92aaa6aa35291e4e5c9551098b82b7341b346c70ae114b2624f8",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -275,6 +364,51 @@
     "stamps": {
       "core": {
         "hash": "sha256:4c4bb69c74433a3d81c4e30d77b3ccfed695626f2a76c052e57652b80806f967",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8y2c2w6h",
+    "ja": "新人なので、助かります。",
+    "en": "Being new, I appreciate the help.",
+    "alternatives": [
+      "As a newcomer, I appreciate your help.",
+      "Since I'm new, your help means a lot."
+    ],
+    "point": "Being ~ は「~なので」の分詞構文",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:09bb42c1769570f768f544b679cf5769509640f7b167856ed17f00e674a608a9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9f5x2g6x",
+    "ja": "寝坊して、遅れてすみません。",
+    "en": "Sorry I'm late, having overslept.",
+    "alternatives": [
+      "Sorry for being late, having overslept.",
+      "I'm sorry to be late, having overslept.",
+      "Sorry I'm late because I overslept."
+    ],
+    "point": "先に起きたことは having + 過去分詞",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:659833d01b60321634b9ab45ca1eac6152bb955f223da5afac83f9b8a4264302",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

@@ -19,6 +19,28 @@
     }
   },
   {
+    "id": "c_3r3w8m2k",
+    "ja": "視野を広げたくて応募しました。",
+    "en": "I applied to broaden my horizons.",
+    "alternatives": [
+      "I applied in order to broaden my horizons.",
+      "I applied hoping to broaden my horizons."
+    ],
+    "point": "目的は to + 動詞。「視野を広げる」は broaden one's horizons",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:35fc5893984cdbde2730b53a09f5d70be8faec2c1ee5755a1ce531357285fec7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4c7e9b2h",
     "ja": "営業の経験者です。",
     "en": "I'm experienced in sales.",
@@ -51,6 +73,72 @@
     "stamps": {
       "core": {
         "hash": "sha256:35ae46b533a9a52f4a8193a8a6c580d50c23027da0b7efdc8838a272dda01c71",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4y9z2z9a",
+    "ja": "もっと早く転職すればよかった。",
+    "en": "I wish I'd changed jobs sooner.",
+    "alternatives": [
+      "I wish I had switched jobs earlier.",
+      "I should have changed jobs sooner."
+    ],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:29a5a90600b75cf61b9f81ec64f2683c6a34312bc1c5f206fe26a293aade5a59",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5d5w5c3u",
+    "ja": "私の一番の強みは聞く力です。",
+    "en": "My greatest strength is listening.",
+    "alternatives": [
+      "My biggest strength is listening.",
+      "Listening is my greatest strength."
+    ],
+    "point": "「一番の強み」は最上級 greatest / biggest",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 6,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4e870c677e754b9f03f11dbde5c180c217d52824c1c9375cea5a610dae0a7e63",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5n7w8k7x",
+    "ja": "転職するなら、教師になりたい。",
+    "en": "If I changed careers, I'd teach.",
+    "alternatives": [
+      "If I switched careers, I'd teach.",
+      "If I changed careers, I'd become a teacher."
+    ],
+    "point": "現実味の薄い仮定は if + 過去形、would で受ける",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 6,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4685502677c80c0f76da40166c88b76452b5dfa94948d2761656ba1b24d84418",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -245,6 +333,28 @@
     }
   },
   {
+    "id": "c_8r5u6t4g",
+    "ja": "私はチームで最年少でした。",
+    "en": "I was the team's youngest member.",
+    "alternatives": [
+      "I was the youngest on the team.",
+      "I was the youngest person on the team."
+    ],
+    "point": "最年少は the youngest。the を忘れずに",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ccca3b5a1024453e29e8219f85cb08fba056436eaf51229b2803f75e3c6f75b1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8r7j6f5d",
     "ja": "リーダー経験があります。",
     "en": "I've been a team leader.",
@@ -280,6 +390,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:3d272b4b6fda63d2027513a5cef2f7bcf2ce3ffa102c3071357b8ff3aaa1918b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9a2t4y2t",
+    "ja": "その経験が私を強くしました。",
+    "en": "That experience made me stronger.",
+    "alternatives": [
+      "That experience toughened me up.",
+      "I became stronger because of that experience."
+    ],
+    "point": "make + 人 + 形容詞「人を〜にする」",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 6,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1d6309d3e6788e640515d9eb57ac233c34224557fb3e4487161c299497527711",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

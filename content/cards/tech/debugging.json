@@ -85,6 +85,28 @@
     }
   },
   {
+    "id": "c_4s3m9e8x",
+    "ja": "早く教えてくれてたらなあ。",
+    "en": "I wish you'd told me earlier.",
+    "alternatives": [
+      "I wish you had told me sooner.",
+      "If only you'd told me earlier."
+    ],
+    "point": "you'd は you had。過去の後悔は wish + 過去完了",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6da5ab1ed7f432016584fb4a2d78a222e0c4582a337d4f1bc33f8871377e6835",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4z7j6m2y",
     "ja": "再現する必要がある。",
     "en": "I need to reproduce it.",
@@ -246,6 +268,28 @@
     }
   },
   {
+    "id": "c_7g6a6y5h",
+    "ja": "バグは本番でしか起きなかった。",
+    "en": "The bug only happened in production.",
+    "alternatives": [
+      "The bug only occurred in production.",
+      "We only saw the bug in production."
+    ],
+    "point": "only は動詞の前。過去の出来事は happened",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 6,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5d84e6d2028ed51d4cb9198b8a35889a45d1269bf4480a9cdfc61a9d582060ec",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_7t6p5j9q",
     "ja": "ログを見てもいいですか？",
     "en": "May I check the logs?",
@@ -278,6 +322,95 @@
     "stamps": {
       "core": {
         "hash": "sha256:29baaa7a0991064864d6b2c90bb802006f9afe90c0af7cfa3e9a9efa67ff925e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8a6n3v8b",
+    "ja": "キャッシュを消したら直った。",
+    "en": "Clearing the cache fixed it.",
+    "alternatives": [
+      "Just clearing the cache fixed it.",
+      "Clearing the cache was enough to fix it."
+    ],
+    "point": "動名詞が主語になる。To clear ではなく Clearing",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 7,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c01695c331deadb57c30c834431bd86bdeb8ea59911bf02f860fb5c94d183405",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8f9x8e4q",
+    "ja": "先にログを入れればよかった。",
+    "en": "I wish I'd added logging first.",
+    "alternatives": [
+      "I wish I had added logs first.",
+      "If only I'd added logging first."
+    ],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dc3186fd3f8fe9a8d2d4c40590ac83adbdfb151a6acad13855bea0970db21743",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8j3w8e5b",
+    "ja": "ログは、もう上書きされていた。",
+    "en": "The logs had already been overwritten.",
+    "alternatives": [
+      "The logs were already overwritten by then.",
+      "The logs had been overwritten by then."
+    ],
+    "point": "見た時より前のこと。had been + 過去分詞",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6a1c25bb8deb1f727812f99cba107ef9c60d4d5252276ca06461e809f1366bc7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8r2f8g2p",
+    "ja": "なぜ失敗するか分からない。",
+    "en": "I can't tell why it fails.",
+    "alternatives": [
+      "I don't know why it fails.",
+      "I can't figure out why it fails.",
+      "I have no idea why it fails."
+    ],
+    "point": "間接疑問は why it fails の語順。why does it ではない",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 7,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1e78c735064a2d27055ab1d793173a5619d133812841d3f3744828150dacee10",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

@@ -1,5 +1,24 @@
 [
   {
+    "id": "c_2e8h8u6f",
+    "ja": "もう一日あればいいのに。",
+    "en": "I wish I had another day.",
+    "alternatives": ["I wish I had one more day.", "If only I had another day."],
+    "point": "今の願望は wish + 過去形。had にする",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0a13bdba493d853abce097dafd111ea0c8e6113e05b4bab5df6fc57a7c158fb8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3j8v3k2p",
     "ja": "今日はブロッカーが一つある。",
     "en": "There's one blocker today.",
@@ -120,6 +139,25 @@
     }
   },
   {
+    "id": "c_6n2r3w2e",
+    "ja": "QA のせいで足止めされてる。",
+    "en": "We're being held up by QA.",
+    "alternatives": ["We're being held up because of QA.", "QA is holding us up."],
+    "point": "進行中の受動は being + 過去分詞 held up",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 7,
+    "grammar": ["passive-voice", "phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c02c55a8a93cdb5395c1a7868376b5c343a2ccf580325f1f2da002a4eee2ebc",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6s8r9m5z",
     "ja": "詰まったら、聞くね。",
     "en": "I'll ask if I get stuck.",
@@ -177,6 +215,28 @@
     }
   },
   {
+    "id": "c_7s9x7j2s",
+    "ja": "知っていたら、手伝ったのに。",
+    "en": "If I'd known, I'd have helped.",
+    "alternatives": [
+      "If I had known, I would have helped.",
+      "Had I known, I'd have helped."
+    ],
+    "point": "過去の仮定は if + had 過去分詞、would have + 過去分詞",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:186cb16a99e18e469ad3dacef7478bc06e2e07deffba2626659931a00555a06c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_7x4b3j2q",
     "ja": "いつ見てもらえる？",
     "en": "When can you review it?",
@@ -190,6 +250,66 @@
     "stamps": {
       "core": {
         "hash": "sha256:bdec7c86eba11577a95b9ea081f0672bc450e7a71c9e23d37179834656d2c99c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7z7g9c9z",
+    "ja": "今朝、私の PR がマージされた。",
+    "en": "My PR was merged this morning.",
+    "alternatives": ["My PR got merged this morning.", "My PR went in this morning."],
+    "point": "された側が主役なら受動態 was merged",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d194d0d1b99baa0b9491b4d71c9ff096b809947f4d796c31d4cda8c50d6db631",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8j5a2t4d",
+    "ja": "今日は在宅でもいいですか？",
+    "en": "May I work from home today?",
+    "alternatives": ["Could I work from home today?", "Can I work from home today?"],
+    "point": "May I 〜? は丁寧な許可。from home に冠詞はいらない",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 7,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a2096bd08c974ebff941706f8b99bc639305546a30880936961ee5f721a119e6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8p8u8b5v",
+    "ja": "あのバグ、引き続き調べます。",
+    "en": "I'll keep looking into that bug.",
+    "alternatives": [
+      "I'll continue looking into that bug.",
+      "I'll keep investigating that bug."
+    ],
+    "point": "look into は「調べる」。keep + 動名詞",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 7,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ae843a3d69aff2a8363045e1b1b94befac3b737c038b4a25422c770e9dc6dc9a",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

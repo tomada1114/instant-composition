@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2c9t4t4t",
+    "ja": "この件、ずっと議論してるね。",
+    "en": "We've been debating this for ages.",
+    "alternatives": [
+      "We've been discussing this for ages.",
+      "We've been going back and forth on this."
+    ],
+    "point": "続いている動作は have been + -ing",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:75a648c89478c4b5894eb3d363d931ef1a70660d627637f1ec71272711f3ab3f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2w3u5x6a",
     "ja": "質問していいですか？",
     "en": "May I ask a question?",
@@ -77,6 +99,25 @@
     "stamps": {
       "core": {
         "hash": "sha256:1393a11f1f1797c1a0dba53ce750f236de431c1f1ccb54b75e9b0f7fcd2de59e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3y3e2g3n",
+    "ja": "私は総括を頼まれた。",
+    "en": "I was asked to sum up.",
+    "alternatives": ["They asked me to recap.", "I've been asked to summarize."],
+    "point": "「頼まれた」は be asked to do",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 7,
+    "grammar": ["passive-voice", "verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e370cd202aa9cab897ab154f56ce796a036dc71edac4aef4337960913dfd2c0d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -166,6 +207,28 @@
     }
   },
   {
+    "id": "c_6d9n6g2d",
+    "ja": "先ほど出た案に賛成です。",
+    "en": "I support the idea raised earlier.",
+    "alternatives": [
+      "I'm in favor of the idea mentioned earlier.",
+      "I agree with the idea brought up earlier."
+    ],
+    "point": "名詞のあとに過去分詞を置いて説明する",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 7,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:08e8c7f386577510f2a42a20a016fdc8838fc81e6cd030e7b044502472bcb581",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6m5r2s3k",
     "ja": "昨日彼が議題を送ったよ。",
     "en": "He sent the agenda yesterday.",
@@ -182,6 +245,72 @@
     "stamps": {
       "core": {
         "hash": "sha256:4124d447a9c2c62117793eaf18c7c0bee2c595e385a5305b8d66a9831f7bd3a1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7a5v8e6j",
+    "ja": "もっと早く発言すればよかった。",
+    "en": "I wish I'd spoken up sooner.",
+    "alternatives": [
+      "I wish I had said something earlier.",
+      "If only I'd spoken up sooner."
+    ],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9822726eb9590c58f7e5868faf07345b9f76973c0962911b27a0bcf15e9f635b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7j3k3x7m",
+    "ja": "私は開始前に資料を送っていた。",
+    "en": "I'd sent the slides beforehand.",
+    "alternatives": [
+      "I'd already sent the slides beforehand.",
+      "I'd sent the slides before we started."
+    ],
+    "point": "「その前にすでに」は過去完了 had + 過去分詞",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:978d444466cda2c10d3a927c330a3dad0d8440ef713c78a860a7bbe102945cf3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7x6h7k7u",
+    "ja": "議事録は後ほど回覧されます。",
+    "en": "The minutes will be circulated later.",
+    "alternatives": [
+      "The minutes will be sent around later.",
+      "The minutes will be shared afterward."
+    ],
+    "point": "議事録は minutes と複数形",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 7,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c4d3745cf4037cfa6acbbec09b32d43288b31e0d86d43b7f0621d74256891e5f",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

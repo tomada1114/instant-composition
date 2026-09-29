@@ -99,6 +99,28 @@
     }
   },
   {
+    "id": "c_4f5q7f3z",
+    "ja": "着いたら、もう閉店してた。",
+    "en": "The place had already closed.",
+    "alternatives": [
+      "The place had closed when we arrived.",
+      "When we got there, it had closed."
+    ],
+    "point": "到着より前に終わっていたことは過去完了",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4940ac5266de296dd082509e54cea5a584343aeff1cd06a9120c86560ecde8c4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4n2s4p6j",
     "ja": "ここに来たことある？",
     "en": "Have you been here before?",
@@ -156,6 +178,28 @@
     }
   },
   {
+    "id": "c_5n4u7w4c",
+    "ja": "彼女はメニューを見て迷った。",
+    "en": "Reading the menu, she couldn't decide.",
+    "alternatives": [
+      "She was reading the menu, unable to decide.",
+      "She read the menu and couldn't decide."
+    ],
+    "point": "同時の動作は -ing の分詞構文で言う",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f28dec2e1e31e5f446e9b2e50870217175b24388b2a3cee1ae788a06cb18641",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_5y3n9k3q",
     "ja": "弟に注文を頼んだよ。",
     "en": "I asked him to order.",
@@ -169,6 +213,66 @@
     "stamps": {
       "core": {
         "hash": "sha256:267d7de6af8370a20676c302e16c1a2c8b23af403d2ad9e8357d32112bea3edb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6g3g4z2s",
+    "ja": "席が空き次第、お呼びします。",
+    "en": "We'll call once a table opens.",
+    "alternatives": [
+      "We'll call you once a table opens up.",
+      "We'll call you as soon as one opens."
+    ],
+    "point": "when の後は未来でも現在形",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3c995e3bca601ec8dee2bfa4e44aa5882a1d9cee71004398a9ce06bf8113fd79",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6u4t4t3q",
+    "ja": "残り、包んでもらえますか？",
+    "en": "Could you box this up, please?",
+    "alternatives": ["Could you wrap this up for me?", "Could I get this boxed up?"],
+    "point": "box up / wrap up は持ち帰りの定番句動詞",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 6,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5ec9d9d6f8f60dd48f33f269d43e06d4b4131e9a06a82633ecf03228494ea636",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7e5h5q4u",
+    "ja": "塩辛すぎるかもしれません。",
+    "en": "It might be too salty.",
+    "alternatives": ["It may be too salty.", "It could be a bit too salty."],
+    "point": "かもしれませんは might でやわらげる",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ad665e6e86c39047d036b76046f4cccb513e5e5b979febda87c00ec8bc63f503",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -210,6 +314,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:62586409f964b5d2f8d646128e284997a4be0a2be8312a0ff3d87f7c357d048b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8n5n9h3y",
+    "ja": "窓際の席が空くのを待ってます。",
+    "en": "We're waiting for a window seat.",
+    "alternatives": [
+      "We're waiting for a table by the window.",
+      "We're waiting for a window table."
+    ],
+    "point": "今している最中は進行形",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 6,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:71795f19090425fedbfd6c122b7fc9a279cf04f0cd97bf420fef913dd05614a7",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

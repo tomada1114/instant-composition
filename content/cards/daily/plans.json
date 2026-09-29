@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2s2f8f9b",
+    "ja": "まだ何も予定を立ててないよ。",
+    "en": "I haven't made any plans yet.",
+    "alternatives": [
+      "I haven't planned anything yet.",
+      "I still haven't made any plans."
+    ],
+    "point": "まだ〜ないは yet と現在完了",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a6f9328ebfded018406b41f83f545dae9fcc31b7544c236cb6092457995fcd8e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3c3w6z6v",
     "ja": "雨が降ったら、中止だよ。",
     "en": "If it rains, it's canceled.",
@@ -174,6 +196,47 @@
     }
   },
   {
+    "id": "c_4q8n8r6b",
+    "ja": "彼女は予定を見て誘いを断った。",
+    "en": "Checking her calendar, she declined.",
+    "alternatives": [
+      "She checked her calendar and declined.",
+      "After checking her calendar, she declined."
+    ],
+    "point": "先にした動作は -ing で文頭に置ける",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d56f1f7b286db270ba7d81b6380ebfc09529b9ce3e1ac263b51959c125ec67f8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5n2y2p4f",
+    "ja": "彼はいつも私たちを待たせる。",
+    "en": "He always makes us wait.",
+    "alternatives": ["He always keeps us waiting.", "He's always making us wait."],
+    "point": "make + 人 + 原形で「〜させる」",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6ee7b67c0b0803b21ba04079c4e9138e6cb4bea2e9cb74b5ef3449fd3baf0f6b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_5s3a8d8e",
     "ja": "行けないなら教えてね。",
     "en": "Tell me if you can't.",
@@ -272,6 +335,47 @@
     }
   },
   {
+    "id": "c_7b9v5s8r",
+    "ja": "駅前のカフェでいいよ。",
+    "en": "The café by the station works.",
+    "alternatives": [
+      "The café near the station is fine.",
+      "The café by the station is okay."
+    ],
+    "point": "名詞の後ろに前置詞句を置いて説明する",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5429902bf4dddb9426fcec88c07af892bdc4c480709c10a0b4e63101a421e9aa",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7k5b8d3a",
+    "ja": "時間があれば、行くのに。",
+    "en": "If I had time, I'd go.",
+    "alternatives": ["I'd go if I had time.", "If I had the time, I would go."],
+    "point": "現実と違う仮定は If + 過去形、would",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2d7077908b8186880480400a1e31bf06459d2ca05731d13a61fcca4c13697bde",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8x2v6k8x",
     "ja": "私たち、決めなきゃ。",
     "en": "We have to decide.",
@@ -285,6 +389,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:344aabeb7d71ecb12715cb8fb7888a20c8ec7ba2d272232310bd85b07caea206",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9v9n5a7e",
+    "ja": "話してた旅行、なくなったよ。",
+    "en": "The trip we discussed fell through.",
+    "alternatives": [
+      "The trip we talked about fell through.",
+      "The trip we were talking about fell through."
+    ],
+    "point": "that を省いた関係詞節で名詞を修飾",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:12490ed807b01059c81833d08b508431139443591032f6ce4360ccfaf1ce1125",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

@@ -57,6 +57,29 @@
     }
   },
   {
+    "id": "c_4h5h5s9k",
+    "ja": "乗車にはカードが必要です。",
+    "en": "You need a card to board.",
+    "alternatives": [
+      "You need a card to ride.",
+      "A card is needed to board.",
+      "You can't board without a card."
+    ],
+    "point": "目的の to do「〜するために」",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 7,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c1a458264a77573522a0a1f5f82dc5cd304aa5d3672486cebd13db137f8d117a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4q8c8j9u",
     "ja": "もう電車は出ていた。",
     "en": "The train had already left.",
@@ -237,6 +260,29 @@
     }
   },
   {
+    "id": "c_7b2k5n5c",
+    "ja": "遅いものの、バスのほうが安い。",
+    "en": "Though slower, the bus is cheaper.",
+    "alternatives": [
+      "Although it's slower, the bus is cheaper.",
+      "The bus is cheaper, although it's slower.",
+      "The bus is slower, but cheaper."
+    ],
+    "point": "though は「〜だが」、but は不要",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 7,
+    "grammar": ["concession-contrast", "comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cb576840f26c4ab43db235defbd6101b684b56dee07a61673e5b3d1141cb7857",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_7s5a5q2b",
     "ja": "急行の方が速いですか？",
     "en": "Is the express faster?",
@@ -275,6 +321,52 @@
     }
   },
   {
+    "id": "c_8k9m2r5h",
+    "ja": "奈良行きのバスは満席です。",
+    "en": "The bus to Nara is full.",
+    "alternatives": [
+      "The Nara bus is full.",
+      "The bus heading to Nara is full.",
+      "The bus bound for Nara is fully booked."
+    ],
+    "point": "名詞の後ろに前置詞句 to Nara を置く",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 7,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2949499bbb74712d1e3a5640373fa6813d14eea5f31af5c7798885c4201af432",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8m3v3y7a",
+    "ja": "ここに座ってもかまいませんか？",
+    "en": "Mind if I sit here?",
+    "alternatives": [
+      "Do you mind if I sit here?",
+      "Is it okay if I sit here?",
+      "Would you mind if I sat here?"
+    ],
+    "point": "mind は「いい」なら No で答える",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 6,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:304b44ec08ec8873a8b7f0a5c1039a28fb56f5873b194cd37f6c2574ed9b5209",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8x7n5n6u",
     "ja": "電車が来ています。",
     "en": "The train is coming.",
@@ -288,6 +380,48 @@
     "stamps": {
       "core": {
         "hash": "sha256:afcca7c8f0e9cf32501dda05fefc6653ff790f98ac4f92cecfad9fcf5cbb3e60",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9d3s9c7q",
+    "ja": "駅を乗り過ごしたかも。",
+    "en": "I might have missed my stop.",
+    "alternatives": [
+      "I may have missed my stop.",
+      "I could have missed my stop.",
+      "I think I missed my stop."
+    ],
+    "point": "過去の可能性は might have done",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ad4ce2048aca5bf3a7ae544cda91cdfd7ea2b0ad5975811ab8ac82a554462eb2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9v5k3a8y",
+    "ja": "運転手に待ってもらった。",
+    "en": "I got the driver to wait.",
+    "alternatives": ["I had the driver wait.", "I asked the driver to wait."],
+    "point": "get + 人 + to do、have + 人 + 原形",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 6,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4362a40de8dfb662c156459ebe30aed0776911399d7f1671c6224bc8a1569c7d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
