@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2a5s4e7f",
+    "ja": "この窓口は月曜休みです。",
+    "en": "This counter is closed Mondays.",
+    "alternatives": [
+      "This counter is closed on Mondays.",
+      "This window is closed on Mondays."
+    ],
+    "point": "曜日の習慣は複数形 Mondays で言える",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 3,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2x3w9b6r",
     "ja": "これに記入してください。",
     "en": "Please fill this out.",
@@ -19,6 +35,19 @@
     }
   },
   {
+    "id": "c_3d2w6x4x",
+    "ja": "身分証が必要です。",
+    "en": "You'll need an ID.",
+    "alternatives": ["You need an ID.", "You have to bring an ID."],
+    "point": "ID は母音で始まる発音なので an ID",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 2,
+    "grammar": ["articles-and-countability", "modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3d3q6g9e",
     "ja": "土曜に受け取れますか？",
     "en": "Can I pick it up Saturday?",
@@ -36,6 +65,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4d9f7a4k",
+    "ja": "今日は列がないね。",
+    "en": "There's no line today.",
+    "alternatives": ["There isn't a line today.", "There's no wait today."],
+    "point": "「〜がない」は There's no + 名詞",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 2,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_4e5y6r2k",
@@ -76,6 +118,22 @@
     }
   },
   {
+    "id": "c_5x9v6x2q",
+    "ja": "荷物は明日届けられます。",
+    "en": "It'll be delivered tomorrow.",
+    "alternatives": [
+      "The package will be delivered tomorrow.",
+      "They'll deliver it tomorrow."
+    ],
+    "point": "「届けられる」は will be + 過去分詞",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 3,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8e3a2h6z",
     "ja": "パスポートは更新済みだよ。",
     "en": "I've already renewed my passport.",
@@ -98,6 +156,32 @@
     }
   },
   {
+    "id": "c_8f2m5w7d",
+    "ja": "列に並んでください。",
+    "en": "Please wait in line.",
+    "alternatives": ["Please line up.", "Please stand in line."],
+    "point": "「並ぶ」は wait in line。丁寧な命令は Please を付ける",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8h2u4w5d",
+    "ja": "番号札を取ってね。",
+    "en": "Take a number, please.",
+    "alternatives": ["Please take a number.", "Please get a ticket."],
+    "point": "「番号札」は a number。数えられる名詞なので a が要る",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 2,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8s9y7e9s",
     "ja": "修理は金曜だと言われた。",
     "en": "They said it'd be ready Friday.",
@@ -118,5 +202,44 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8y3w4m3q",
+    "ja": "ここに窓口があるよ。",
+    "en": "There's a counter here.",
+    "alternatives": ["There's a window here.", "A counter is right here."],
+    "point": "「〜がある」は There's + a + 単数名詞",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9c7a4z9k",
+    "ja": "並ぶのは苦手なんだ。",
+    "en": "I hate waiting in line.",
+    "alternatives": ["I can't stand waiting in line.", "I don't like waiting in line."],
+    "point": "hate の後は -ing。「〜するのが苦手」は hate + 動名詞",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 3,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9s6p7r5u",
+    "ja": "銀行は閉まってるよ。",
+    "en": "The bank is closed.",
+    "alternatives": ["The bank isn't open.", "The bank is shut."],
+    "point": "「閉まっている」は状態なので is closed",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

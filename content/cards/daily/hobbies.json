@@ -22,6 +22,22 @@
     }
   },
   {
+    "id": "c_3g2j4g6w",
+    "ja": "近くに本屋があるよ。",
+    "en": "There's a bookstore nearby.",
+    "alternatives": [
+      "There's a bookstore near here.",
+      "There's a bookstore around here."
+    ],
+    "point": "「〜がある」は There's + a + 単数名詞",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 2,
+    "grammar": ["there-is-are", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3v9x4x5b",
     "ja": "私が好きなのは山登りです。",
     "en": "What I like is hiking.",
@@ -41,6 +57,19 @@
     }
   },
   {
+    "id": "c_5w4n2y7m",
+    "ja": "撮影してもいいですか？",
+    "en": "May I take pictures?",
+    "alternatives": ["Could I take pictures?", "Is it okay to take pictures?"],
+    "point": "丁寧な許可は May I / Could I。take pictures で撮影",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5x5t5w6j",
     "ja": "最近、走ってるんだ。",
     "en": "I've been running lately.",
@@ -58,6 +87,48 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5x8g7j9t",
+    "ja": "ギターを買ったんだ。",
+    "en": "I bought a guitar.",
+    "alternatives": ["I got a guitar.", "I picked up a guitar."],
+    "point": "buy の過去は bought。数えられる名詞に a を付ける",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 2,
+    "grammar": ["past-simple", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6u3t3a4q",
+    "ja": "週末は休むといいよ。",
+    "en": "You should rest this weekend.",
+    "alternatives": [
+      "You'd better rest this weekend.",
+      "You ought to rest this weekend."
+    ],
+    "point": "「〜するといい」の助言は should + 動詞の原形",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7a6e6z8j",
+    "ja": "先週、釣りに行ったよ。",
+    "en": "I went fishing.",
+    "alternatives": ["I went fishing last week.", "Last week I went fishing."],
+    "point": "「行く」の過去は went。「釣りに行く」は go fishing",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7s7b6f4z",
@@ -124,5 +195,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9e7q5u3z",
+    "ja": "私の趣味は写真です。",
+    "en": "My hobby is photography.",
+    "alternatives": [
+      "Photography is my hobby.",
+      "I'm into photography.",
+      "My hobby is taking photos."
+    ],
+    "point": "趣味は My hobby is 〜。photography は a を付けない",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 3,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]
