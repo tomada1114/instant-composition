@@ -79,7 +79,13 @@
     "level": 5,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7474c8f84e1354d33d05806731d31ee01c16c7c765e183b1a22de7339b2c740b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4d3q8z9g",
@@ -114,7 +120,13 @@
     "level": 3,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:88576b9b094e331210fef901e17e132d84a2b26bea6c79db964443fcacf518fd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4z7d7t2n",
@@ -149,55 +161,13 @@
     "level": 5,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5b5h2t6b",
-    "ja": "予約したのに、記録がないと言われました。",
-    "en": "I booked, but they said there's no record.",
-    "alternatives": [
-      "They said there's no record, though I booked.",
-      "Though I booked, they said there's no record."
-    ],
-    "point": "although 節と主節の対比。「言われた」は they say で表す",
-    "topic": "travel",
-    "subtopic": "troubles",
-    "level": 5,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5d2u5k6s",
-    "ja": "終電を逃して、私たち帰れなくなっちゃった。",
-    "en": "We missed the last train, so we're stuck.",
-    "alternatives": [
-      "We're stuck because we missed the last train.",
-      "We can't get home. We missed the last train."
-    ],
-    "point": "「最後の」電車は the last train、the を忘れずに",
-    "topic": "travel",
-    "subtopic": "troubles",
-    "level": 6,
-    "grammar": ["articles-and-countability"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5j7r5w4n",
-    "ja": "バッグを盗まれて、途方に暮れています。",
-    "en": "My bag was stolen, and I'm at my wits' end.",
-    "alternatives": [
-      "Someone stole my bag, and I'm at a total loss.",
-      "My bag got stolen, and I don't know what to do."
-    ],
-    "point": "途方に暮れる は at my wits' end と言える",
-    "topic": "travel",
-    "subtopic": "troubles",
-    "level": 9,
-    "grammar": ["passive-voice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3a0ae1409d2474a9b8da8e05f02e3578eda58c45f4f196d5fdb6f1cb9cde9e4d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5n9f5z5v",
@@ -235,7 +205,13 @@
     "level": 4,
     "grammar": ["articles-and-countability", "passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2a6ffef10e94e60e8384f13a076091094dabeeb26ef2165d61f51cc6a6020072",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6d6w5e2d",
@@ -273,7 +249,13 @@
     "level": 5,
     "grammar": ["gerunds", "progressive-aspect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c5c113fe9a474f983a4f166c642497f94d99f91aad58f2f20b4d4726d9865d05",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6v3h2p5g",
@@ -374,7 +356,13 @@
     "level": 3,
     "grammar": ["wh-questions", "modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ca59cc02a55b0c224b7a63d698e4a541c1a734001de300877aa095382cf8052a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7h7f5b4g",
@@ -390,7 +378,13 @@
     "level": 5,
     "grammar": ["gerunds", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0fa92035939d208662d07f1de67d2500af87d76e23b823e0ede6998451f4de45",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7q2n4p8u",
@@ -472,7 +466,13 @@
     "level": 4,
     "grammar": ["present-perfect", "gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2ed019550274fa696f2285f18cb4b22ccef1be7136a684db8dde288351f97868",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8v4c9z4v",
@@ -495,22 +495,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9v5m7s7x",
-    "ja": "着いた途端、私の部屋を他の人に回されたんです。",
-    "en": "They gave my room away the moment I arrived.",
-    "alternatives": [
-      "My room went to someone else the moment I arrived.",
-      "They gave my room to someone else when I arrived."
-    ],
-    "point": "give away は「(人に)譲る」、the moment で「〜した途端」",
-    "topic": "travel",
-    "subtopic": "troubles",
-    "level": 8,
-    "grammar": ["phrasal-verbs", "time-and-if-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9w6m6g2h",
