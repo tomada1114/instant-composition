@@ -531,9 +531,23 @@ describe("the home screen before and instead of the home view", () => {
     expect(
       screen.getByRole("heading", { name: ja.NotFound.title }),
     ).toBeInTheDocument();
+    expect(screen.getByText(ja.NotFound.description)).toBeInTheDocument();
+    expect(navigations()).toStrictEqual([]);
     fireEvent.click(screen.getByRole("link", { name: ja.NotFound.homeLink }));
     await settle();
     await settle(16);
+    expect(
+      screen.getByRole("button", { name: ja.Home.today.start }),
+    ).toBeInTheDocument();
+  });
+
+  it("goes home from the not-found page on Space", async () => {
+    serveHome(homeView({ kind: "ready", streak: COUNT }));
+    await renderApp("/nonsense");
+    press(" ");
+    await settle();
+    await settle(16);
+    expect(where()).toBe("/");
     expect(
       screen.getByRole("button", { name: ja.Home.today.start }),
     ).toBeInTheDocument();

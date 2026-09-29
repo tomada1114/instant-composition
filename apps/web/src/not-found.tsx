@@ -2,15 +2,32 @@ import { Link } from "@tanstack/react-router";
 import type { ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
-/** A path this client has no screen for. */
+import { usePrimaryKey } from "./lib/use-primary-key";
+import { Button } from "./ui/button";
+import { Kbd } from "./ui/kbd";
+
+/**
+ * A path this client has no screen for: the `empty-state` panel, centred in
+ * the column, with home as its one way out. No tab bar: it is not a hub screen.
+ */
 export function NotFound(): ReactElement {
   const t = useTranslations("NotFound");
+  usePrimaryKey();
 
   return (
-    <main className="mx-auto flex max-w-2xl flex-col items-start gap-4 p-8">
-      <h1>{t("title")}</h1>
-      <p>{t("description")}</p>
-      <Link to="/">{t("homeLink")}</Link>
+    <main className="mx-auto box-content flex min-h-[calc(var(--column-height)-4rem)] max-w-column flex-col justify-center px-4 py-8">
+      <section className="flex flex-col gap-5 rounded-card bg-card p-5">
+        <div className="flex flex-col gap-1">
+          <h1 className="text-heading">{t("title")}</h1>
+          <p className="text-muted-foreground">{t("description")}</p>
+        </div>
+        <Button asChild variant="secondary">
+          <Link to="/" data-primary>
+            {t("homeLink")}
+            <Kbd>Space</Kbd>
+          </Link>
+        </Button>
+      </section>
     </main>
   );
 }

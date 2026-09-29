@@ -44,7 +44,7 @@ to the design's names.
 | `toast`                   | —                                                                 | shown for 4 s                                                                  |
 | `inline-notice`           | —                                                                 | unsaved records; gone once sent                                                |
 | `skeleton`                | —                                                                 | when the start screen takes over 300 ms                                        |
-| `empty-state`             | —                                                                 | not enough cards; cards could not be loaded                                    |
+| `empty-state`             | —                                                                 | not enough cards; cards could not be loaded; no such page                      |
 | `landing`                 | — (the signed-out `/`)                                            | —                                                                              |
 
 There is no status chip. "To review", "timed out", "again" and "fast" are text with a
@@ -349,7 +349,9 @@ above and below each. Section titles are muted `label`s.
   `role="status"` region that stays mounted. Never red. No success toast, ever.
   `apps/web/src/drill/toast.tsx` is this recipe.
 - `empty-state`: a `bg-card rounded-card` panel with a `heading`, at most one muted line
-  and one `secondary` button.
+  and one `secondary` button. A path with no screen is this panel alone, centred in the
+  column with no tab bar, its button a link home that Space and Enter press
+  (`apps/web/src/not-found.tsx`).
 - `skeleton`: after 300 ms of start-screen loading, `bg-card` blocks the size of the
   figure, the week and the panel, each with its part's radius. No text, no spinner, no
   pulsing.
