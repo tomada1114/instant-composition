@@ -104,22 +104,6 @@
     }
   },
   {
-    "id": "c_2u7w5t6d",
-    "ja": "リリースを止めているのは、法務の承認待ちです。",
-    "en": "What's holding up the launch is legal's sign-off.",
-    "alternatives": [
-      "It's legal sign-off that's holding up the launch.",
-      "The launch is being held up by legal sign-off."
-    ],
-    "point": "What 節を主語にして「止めているのは〜」を強調する",
-    "topic": "tech",
-    "subtopic": "product-talk",
-    "level": 8,
-    "grammar": ["cleft-emphasis", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2w2r5x9h",
     "ja": "このバグが最優先です。",
     "en": "This bug is top priority.",
@@ -203,22 +187,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_4a5c6v6y",
-    "ja": "早く機能を絞っていれば、もう出せたのに。",
-    "en": "If we'd cut scope sooner, we'd have shipped already.",
-    "alternatives": [
-      "We'd have shipped already if we'd cut scope sooner.",
-      "If we'd trimmed scope earlier, we'd have released by now."
-    ],
-    "point": "過去の仮定は if + had 過去分詞、結果は would have 過去分詞",
-    "topic": "tech",
-    "subtopic": "product-talk",
-    "level": 8,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_4h9r3k8f",
@@ -542,22 +510,6 @@
     }
   },
   {
-    "id": "c_7g4h9b5x",
-    "ja": "誰がお客さんに、リリースが遅れそうだと伝えたの？",
-    "en": "Who told the client the release was likely to slip?",
-    "alternatives": [
-      "Who let the client know the release might slip?",
-      "Who told the client that the release would probably slip?"
-    ],
-    "point": "「遅れそう」は likely to slip。slip は予定が遅れる意味",
-    "topic": "tech",
-    "subtopic": "product-talk",
-    "level": 7,
-    "grammar": ["reported-speech"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7j5z8r8b",
     "ja": "来週出す機能に、バグがあるよ。",
     "en": "The feature shipping next week has a bug.",
@@ -615,7 +567,13 @@
     "level": 7,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:52f86e0318b4c7a7ae6207526ad32b32214011c57021fcb2805c3e2005dd25eb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8h4c5a8q",
@@ -653,7 +611,13 @@
     "level": 6,
     "grammar": ["causatives", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bbdb82c8f64d1b9f08dadeea2c960f71f3ca2dd86550d6fa00837f228cd156a1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8r4u2t9v",
