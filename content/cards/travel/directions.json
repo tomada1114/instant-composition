@@ -36,7 +36,13 @@
     "level": 7,
     "grammar": ["hedging-softening", "indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d9cfd0a5eb514a87f5289a1caa36b005020e75edd890b3658ed31b06852adb62",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2n3w6k3b",
@@ -54,27 +60,11 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:7cd50c2f9c4fbdfd83333c8b634c5d84e27b7640232240aa53381067ec8acfbc",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:222635febb12155333132c732abec05f1c29b807aec42cebe1ec01bebe38f097",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_2u7c3h6t",
-    "ja": "この時間でも、まだバスってあったりしますかね？",
-    "en": "Any chance there's still a bus at this hour?",
-    "alternatives": [
-      "Is there by any chance a bus at this hour?",
-      "Do you think a bus is still running at this hour?"
-    ],
-    "point": "Any chance ～? で控えめに可能性をたずねる",
-    "topic": "travel",
-    "subtopic": "directions",
-    "level": 10,
-    "grammar": ["hedging-softening"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_2v6h3m8h",
@@ -112,7 +102,13 @@
     "level": 6,
     "grammar": ["modal-perfect", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e0f6131b67d6864eaacba73e28088373d25f897d736cb90272d8f96447af0cc1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3d9z3j4x",
@@ -213,7 +209,13 @@
     "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9ef64fac731cd49413c2a44a777723c675aeac5d9240baa54668cc646599c7e2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5p8a6f9g",
@@ -248,55 +250,13 @@
     "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5x4g4b5j",
-    "ja": "遠いけど、あの店は見逃しようがないですよ。",
-    "en": "Although it's far, you can't miss the shop.",
-    "alternatives": [
-      "It's far, but you really can't miss the shop.",
-      "Even though it's far, you won't miss the shop."
-    ],
-    "point": "Although を使ったら後半に but は付けない",
-    "topic": "travel",
-    "subtopic": "directions",
-    "level": 8,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6n9a9s6m",
-    "ja": "SIMカード、どこで買えるかご存じですか？",
-    "en": "Any idea where to buy a SIM card?",
-    "alternatives": [
-      "Do you know where to buy a SIM card?",
-      "Any idea where I can get a SIM card?"
-    ],
-    "point": "間接疑問は where＋to 不定詞や平叙文の語順",
-    "topic": "travel",
-    "subtopic": "directions",
-    "level": 6,
-    "grammar": ["indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6s3z7t8x",
-    "ja": "万一迷ったら、フロントに聞いてみるといいですよ。",
-    "en": "Should you get lost, ask the front desk.",
-    "alternatives": [
-      "If you should get lost, ask the front desk.",
-      "If you get lost, try asking the front desk."
-    ],
-    "point": "If you should ～ は Should you ～ と倒置できる",
-    "topic": "travel",
-    "subtopic": "directions",
-    "level": 9,
-    "grammar": ["inversion"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d89dc6f9eb0c7db9f4d490e1be55cf051c5fd0b36d4efd4af2662b3482e6a08f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7a3t5r3x",
@@ -425,22 +385,6 @@
     }
   },
   {
-    "id": "c_8u4q4a7n",
-    "ja": "駅員さんに聞かなきゃ、私たち迷ってたよ。",
-    "en": "If we hadn't asked, we'd have gotten lost.",
-    "alternatives": [
-      "If we hadn't asked, we'd have been lost.",
-      "If we hadn't asked, we'd have wound up lost."
-    ],
-    "point": "過去の仮定は had not asked、帰結は would have gotten",
-    "topic": "travel",
-    "subtopic": "directions",
-    "level": 6,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_9b5v9f9u",
     "ja": "私たち、左に曲がってたら今ごろ着いてるのにね。",
     "en": "If we'd turned left, we'd be there by now.",
@@ -454,23 +398,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9b6e2p6z",
-    "ja": "この辺で両替できる所、ご存じですか？",
-    "en": "Do you know where I can exchange money?",
-    "alternatives": [
-      "Do you know where I can change money?",
-      "Do you know where to exchange money?"
-    ],
-    "point": "where の後は疑問文の語順にせず、I can exchange と平叙文の語順",
-    "topic": "travel",
-    "subtopic": "directions",
-    "level": 4,
-    "grammar": ["indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7d72d497941ff35c73bf9bb031a11f7cd0d8da64ac82b7666207927344999ed3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9g5t4d8c",
@@ -486,7 +420,13 @@
     "level": 6,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:71f47364f8be8cbd1d47421fa20fb12d23fe1a8a96dbb1d65d88c6ee744aa917",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9g6c9r6f",
@@ -502,6 +442,12 @@
     "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:76b8f0b164ac9522a9748f8c344a4e9adbadc6fc7ca141ce919379a7172163d3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
