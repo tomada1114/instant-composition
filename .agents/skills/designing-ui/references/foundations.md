@@ -108,6 +108,7 @@ carry `lang="en"` so a screen reader voices them in English.
 | Side gutter                                 | 16 (`px-4`) below 452 wide                                        |
 | Wide window (`wide:`)                       | `(width >= 48rem) and (height >= 40rem)`: a PC, not a phone       |
 | Column height                               | The window's; on `wide` at most 720, centered in the window       |
+| Tab bar height                              | 49 (`--tab-bar-height`), hairline included                        |
 | Panel padding                               | 20 (`p-5`); a tile 16 (`p-4`)                                     |
 | Between blocks                              | 40 (`gap-10`); summary sections are 32 above and below a hairline |
 | Panel radius (home panel, sheet, milestone) | 28 (`rounded-card`)                                               |
@@ -130,10 +131,11 @@ anything fixed to the bottom edge adds `--column-inset`. Taller content scrolls 
 page, from the same top line.
 
 Vertical order on every screen: the main actions (start, flip, ○/×, next) sit in the
-bottom third, where a thumb reaches, on a PC too; pause, navigation and close sit at the
-top edge. The card screen is fixed top to bottom — ticks and top strip (pause, progress,
-combo) → the face → timer bar → actions — and never scrolls as a page; a back that does
-not fit scrolls inside its own area.
+bottom third, where a thumb reaches, on a PC too; pause, back and close sit at the top
+edge. Home, records and settings put the tab bar under everything, on the column's
+bottom edge. The card screen is fixed top to bottom — ticks and top strip (pause,
+progress, combo) → the face → timer bar → actions — and never scrolls as a page; a back
+that does not fit scrolls inside its own area.
 
 ## Contrast
 
