@@ -70,7 +70,13 @@
     "level": 3,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a2f6b649c344164cf561440cc71b01560dbaec6adccf97de64d996c6e94c5c31",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3k8q9t7k",
@@ -130,7 +136,13 @@
     "level": 5,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ac0f9ce22c07fd6e42609bfd9324b3cb65144d4a510c8b334d5318a700dfb6e1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3x9b3k2z",
@@ -146,7 +158,13 @@
     "level": 10,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bd42f0c5da2a7d98842cbaa29e80af965f9a3d7ac28ecacb968e34037bd944a8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3y3a6k9d",
@@ -184,7 +202,13 @@
     "level": 4,
     "grammar": ["noun-clauses", "present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8b95413ac665b465fed0b6fa7586935c11d8bfba9e0104758f3297d5d1c54247",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5h2a9m9y",
@@ -223,7 +247,13 @@
     "level": 5,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:376dc8d4622e8a2ec994951f125ee2b7e1cca0dac43327c753dfc084443b08cc",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5r9h5e2j",
@@ -246,22 +276,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_5u9h3k6f",
-    "ja": "私の好きにしていいなら、このコピー機はもう処分してるよ。",
-    "en": "If I had my way, this copier would be gone.",
-    "alternatives": [
-      "If it were up to me, this copier would be gone.",
-      "If it were my call, this copier would be scrapped."
-    ],
-    "point": "If I had my way は「思い通りにできるなら」の決まり文句",
-    "topic": "work",
-    "subtopic": "office-life",
-    "level": 9,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_6c6q6w8k",
@@ -362,7 +376,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3e11c23a0a6a22653ba8360478be8984ad6470a5065849fb2215e7c6e62f8ad2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6w3t3u3k",
@@ -378,7 +398,13 @@
     "level": 3,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:88e3b451b8fb11f8efa61cb53db9b7981af119fa7ecc738b6c782866d4e08cdf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6w7t4a4r",
@@ -423,22 +449,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_7v3g6h9u",
-    "ja": "あのとき有休を申請していれば、今ごろ旅行中なのに。",
-    "en": "If I'd requested leave then, I'd be traveling now.",
-    "alternatives": [
-      "If I'd applied for leave then, I'd be traveling now.",
-      "If I'd requested leave, I'd be traveling now."
-    ],
-    "point": "過去の仮定は had + 過去分詞、今の結果は would be",
-    "topic": "work",
-    "subtopic": "office-life",
-    "level": 8,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_8b7g8q5r",
@@ -526,22 +536,6 @@
     }
   },
   {
-    "id": "c_9k8s9q7x",
-    "ja": "お忙しいところ恐縮ですが、ご確認いただけますか？",
-    "en": "Sorry to bother you, but could you review this?",
-    "alternatives": [
-      "I hate to bother you, but could you check this?",
-      "I know you're busy, but could you look this over?"
-    ],
-    "point": "「恐縮ですが」は Sorry to bother you, but で和らげる",
-    "topic": "work",
-    "subtopic": "office-life",
-    "level": 7,
-    "grammar": ["hedging-softening", "requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_9m4w2q8z",
     "ja": "ITにノートPCを設定してもらった。",
     "en": "I had IT set up my laptop.",
@@ -574,7 +568,13 @@
     "level": 6,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c56469bde5fe55c1c675c412599119dbfa4fe731bc6d0d6cf59ebb29a7298759",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9u7j9f5f",
@@ -609,6 +609,12 @@
     "level": 4,
     "grammar": ["relative-clauses", "past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4890769c03f165f81dde6731e3fa9e4ff3cd3df527a54d3a6ef272b60725481e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
