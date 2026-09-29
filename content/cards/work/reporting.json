@@ -41,22 +41,6 @@
     }
   },
   {
-    "id": "c_4c3w5g5q",
-    "ja": "業者に催促し続けていますが、返事がありません。",
-    "en": "I've been chasing the vendor, but there's no reply.",
-    "alternatives": [
-      "I've been pushing the vendor, but they haven't replied.",
-      "We've been chasing the vendor, but haven't heard back."
-    ],
-    "point": "「ずっと〜している」は have been -ing。chase は催促する",
-    "topic": "work",
-    "subtopic": "reporting",
-    "level": 6,
-    "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_4g8j7c8j",
     "ja": "リリース前にこのバグに気づけばよかったです。",
     "en": "I wish I'd caught this bug before release.",
@@ -114,7 +98,13 @@
     "level": 7,
     "grammar": ["causatives", "future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:55fd1a54545bc57fa93989f3bc90e4633318af1959a015d6c884a96adf3aca3e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4z5a8e9n",
@@ -161,22 +151,6 @@
     }
   },
   {
-    "id": "c_5g5t4s4b",
-    "ja": "先方に統合テストを全部やり直させられました。",
-    "en": "The client made us redo the whole integration test.",
-    "alternatives": [
-      "The client forced us to redo all integration tests.",
-      "The client had us redo the entire integration test."
-    ],
-    "point": "「やり直させられた」は made us redo。redo は原形",
-    "topic": "work",
-    "subtopic": "reporting",
-    "level": 6,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5m7k2f4w",
     "ja": "私があなたなら、今すぐ部長を巻き込みますね。",
     "en": "If I were you, I'd loop in the director now.",
@@ -190,7 +164,13 @@
     "level": 7,
     "grammar": ["second-conditional", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1e269cc8ec2c023a98292270855b1a25ed53c39b58a8c811d33069d1258e1722",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5u3y7t4s",
@@ -206,23 +186,13 @@
     "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5x2x4d4h",
-    "ja": "午前中ずっと行き詰まっていて、ご相談したいです。",
-    "en": "I've been stuck all morning. Could I get your advice?",
-    "alternatives": [
-      "I've been stuck all morning. Could I ask your advice?",
-      "I've been stuck all morning and could use some advice."
-    ],
-    "point": "「ずっと」続く状態は have been stuck、Could I で丁寧に",
-    "topic": "work",
-    "subtopic": "reporting",
-    "level": 7,
-    "grammar": ["present-perfect", "requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a64dbb1d78083e0f74cc3b0aaf345e5a3aeaebe803e5c06368e270ceef0c572c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5y8a2g3x",
@@ -291,22 +261,6 @@
     }
   },
   {
-    "id": "c_6x7t7a7j",
-    "ja": "この数字がなぜ合わないのか、誰か分かりますか？",
-    "en": "Does anyone know why these numbers don't add up?",
-    "alternatives": [
-      "Does anyone understand why these figures don't match?",
-      "Does anyone know why these figures don't match?"
-    ],
-    "point": "間接疑問は why の後を平叙文の語順にする（don't は do 不要）",
-    "topic": "work",
-    "subtopic": "reporting",
-    "level": 6,
-    "grammar": ["indirect-questions", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7d4u5s5b",
     "ja": "この件、もう部長に相談しましたか？",
     "en": "Have you run this by the manager yet?",
@@ -342,7 +296,13 @@
     "level": 2,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d65d1039d2b5f3b1bd49c29fab4e23fe3eea9e4519bbdb8eec94eb35089552db",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7r6n5t7n",
@@ -405,22 +365,6 @@
     }
   },
   {
-    "id": "c_8u5a4g4e",
-    "ja": "課長に、今日中に報告しろと言われました。",
-    "en": "My manager told me to report back today.",
-    "alternatives": [
-      "I was told to report back today.",
-      "The manager told me to report back today."
-    ],
-    "point": "「言われた」は told me to do の形。tell + 人 + to 動詞",
-    "topic": "work",
-    "subtopic": "reporting",
-    "level": 4,
-    "grammar": ["verb-object-to-do", "past-simple"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8y7h2b9r",
     "ja": "納品は来週に延期されました。",
     "en": "The delivery was pushed to next week.",
@@ -456,7 +400,13 @@
     "level": 3,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:df558a96676f2a4a97c313a0b1ed202e6abd9e7ecfa3d5138e7571e8e6256e0f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9a8a2j7r",
