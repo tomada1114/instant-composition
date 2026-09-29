@@ -66,23 +66,6 @@
     }
   },
   {
-    "id": "c_3s8f2m2f",
-    "ja": "彼女に約束をすっぽかされるなんて、夢にも思わなかった。",
-    "en": "Never did I think she'd stand me up.",
-    "alternatives": [
-      "Never would I have thought she'd stand me up.",
-      "I never dreamed she'd stand me up.",
-      "Never did I imagine she'd blow me off."
-    ],
-    "point": "Never を文頭に置くと did I think の語順になる",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 9,
-    "grammar": ["inversion"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3v3n5a5p",
     "ja": "幹事に頼んで、同窓会を遅らせてもらったよ。",
     "en": "I got the organizer to push the reunion back.",
@@ -181,7 +164,13 @@
     "level": 7,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:beacf452404b47935a9af05eb2a1e3e236fed22d27aab411fa3b29a9b57af175",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4t5n6u9y",
@@ -326,7 +315,13 @@
     "level": 5,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:77e795cbee11d7810909e0292b2ec591978e38575c16abf042d366a95c682374",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5j5w6p7z",
@@ -349,22 +344,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_5p2h9r8p",
-    "ja": "金曜のほうが都合がいいんだけど、変えられる？",
-    "en": "Friday works better for me. Can we switch?",
-    "alternatives": [
-      "Friday suits me better. Can we change it?",
-      "Friday would work better. Could we move it?"
-    ],
-    "point": "「より都合がいい」は suit / work better で表す",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 6,
-    "grammar": ["comparatives-superlatives", "requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_5p9y4v4m",
@@ -453,22 +432,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_7d2k3e5s",
-    "ja": "君が言ってた店、日曜は定休日らしいよ。",
-    "en": "The place you mentioned is closed on Sundays, apparently.",
-    "alternatives": [
-      "Apparently, the restaurant you mentioned is closed Sundays.",
-      "I hear the place you mentioned closes Sundays."
-    ],
-    "point": "「君が言ってた店」は関係詞 that を省いて the place you mentioned",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 6,
-    "grammar": ["relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_7f9v5y7p",
@@ -581,22 +544,6 @@
     }
   },
   {
-    "id": "c_8k8t9x5m",
-    "ja": "彼女が提案した日、私は出張でいないんだ。",
-    "en": "I'm away on business the day she suggested.",
-    "alternatives": [
-      "The day she suggested, I'll be away on business.",
-      "I'll be traveling on business the day she suggested."
-    ],
-    "point": "「日」の後ろに she suggested を直接続けられる",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 6,
-    "grammar": ["relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8n5r3f4m",
     "ja": "兄に誘われた時、もう予定を入れてた。",
     "en": "I'd already made plans when he asked.",
@@ -636,22 +583,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_8t6j6k7p",
-    "ja": "今夜は正直、家にいられたらなあ。",
-    "en": "I wish I could just stay in tonight.",
-    "alternatives": [
-      "If only I could stay in tonight.",
-      "I wish I could stay home tonight."
-    ],
-    "point": "今の願いは wish のあとを過去形（could）にする",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 6,
-    "grammar": ["wishes-regrets"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_8w9b4h4d",

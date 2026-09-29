@@ -615,22 +615,6 @@
     }
   },
   {
-    "id": "c_8u3f9d7t",
-    "ja": "疲れてたので、二次会の誘いは丁重に断ったよ。",
-    "en": "Being exhausted, I politely turned down the after-party invite.",
-    "alternatives": [
-      "Since I was exhausted, I politely declined the after-party invite.",
-      "I was exhausted, so I politely passed on the after-party."
-    ],
-    "point": "理由は Being ~, の分詞構文で。断るは turn down",
-    "topic": "social",
-    "subtopic": "invitations",
-    "level": 8,
-    "grammar": ["participle-clauses", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_9j9q8v7h",
     "ja": "来られるか、ずっと返事を待ってるんだ。",
     "en": "I've been waiting to hear back from you.",
