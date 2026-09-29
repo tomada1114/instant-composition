@@ -32,6 +32,22 @@
     "stamps": {}
   },
   {
+    "id": "c_2p6z3f6h",
+    "ja": "私のシフトを減らすよう店長に頼んで。",
+    "en": "Ask the manager to cut my shifts.",
+    "alternatives": [
+      "Ask the manager to cut my hours.",
+      "Please ask the manager to reduce my shifts."
+    ],
+    "point": "「人に〜するよう頼む」は ask + 人 + to do の語順",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 4,
+    "grammar": ["verb-object-to-do", "imperatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_3p7q8a8j",
     "ja": "忙しいなら、無理しなくていいよ。",
     "en": "If you're busy, you don't have to.",
@@ -44,22 +60,6 @@
     "subtopic": "favors",
     "level": 4,
     "grammar": ["modal-obligation-advice", "time-and-if-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3v4e5y3y",
-    "ja": "店長にシフトを減らすよう頼んでもらえる？",
-    "en": "Could you ask the manager to cut shifts?",
-    "alternatives": [
-      "Can you ask the manager for fewer shifts?",
-      "Would you ask the manager to reduce shifts?"
-    ],
-    "point": "「人に〜するよう頼む」は ask + 人 + to do の語順",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 4,
-    "grammar": ["verb-object-to-do", "requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -182,19 +182,6 @@
     "stamps": {}
   },
   {
-    "id": "c_5m5p4c3p",
-    "ja": "兄より姉のほうが頼みやすい。",
-    "en": "My sister is easier to ask.",
-    "alternatives": ["Asking my sister is easier.", "It's easier to ask my sister."],
-    "point": "「頼みやすい」は easier to ask、to 不定詞で形容詞を修飾",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 4,
-    "grammar": ["comparatives-superlatives", "infinitives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5p5h9z5v",
     "ja": "田中さんは、来週なら原稿を見ると言っていました。",
     "en": "Ms. Tanaka said she'd review the draft next week.",
@@ -232,13 +219,13 @@
     "en": "Saturday's my brother's wedding, but I can dog-sit Sunday.",
     "alternatives": [
       "My brother's wedding is Saturday, but I can dog-sit Sunday.",
-      "Saturday's booked, but I could watch your dog Sunday."
+      "Saturday's my brother's wedding, but I'll watch your dog Sunday."
     ],
     "point": "曜日の前に on を付けなくても自然に言える",
     "topic": "social",
     "subtopic": "favors",
     "level": 7,
-    "grammar": ["future-forms", "concession-contrast"],
+    "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -255,6 +242,22 @@
     "subtopic": "favors",
     "level": 7,
     "grammar": ["wishes-regrets", "reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6e2b9w3e",
+    "ja": "父より母のほうが頼みやすい。",
+    "en": "Mom is easier to ask than Dad.",
+    "alternatives": [
+      "It's easier to ask Mom than Dad.",
+      "Asking Mom is easier than asking Dad."
+    ],
+    "point": "「頼みやすい」は easier to ask、比べる相手は than で",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 4,
+    "grammar": ["comparatives-superlatives", "infinitives"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -306,7 +309,7 @@
   {
     "id": "c_8k3c7h4p",
     "ja": "彼女は車を貸してくれた上に、給油までしてくれた。",
-    "en": "Not only did she lend me her car, she refueled.",
+    "en": "Not only did she lend her car, she filled it up.",
     "alternatives": [
       "She not only lent me her car but refueled it.",
       "She lent me her car and even filled the tank."
@@ -356,13 +359,13 @@
     "ja": "兄はピザをおごらせてから、手伝ってくれた。",
     "en": "My brother made me buy him pizza before helping.",
     "alternatives": [
-      "My brother had me buy him pizza before he'd help.",
+      "My brother made me buy pizza before helping me.",
       "My brother wouldn't help until I bought him pizza."
     ],
     "point": "「〜させる」は make 人 + 動詞の原形（to は付けない）",
     "topic": "social",
     "subtopic": "favors",
-    "level": 8,
+    "level": 6,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
     "stamps": {}

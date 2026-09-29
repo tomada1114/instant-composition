@@ -10,7 +10,7 @@
     "point": "「話せる」は can speak で言う",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 3,
+    "level": 2,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-23",
     "stamps": {
@@ -23,16 +23,16 @@
   },
   {
     "id": "c_2j5f2r6j",
-    "ja": "引っ越してから、病院向けソフトの会社で働いています。",
+    "ja": "引っ越してから、病院向けソフト会社で働いてる。",
     "en": "I've been working at a hospital software firm since moving.",
     "alternatives": [
       "Since I moved, I've worked at a hospital software firm.",
-      "I've been working for a hospital software company since I moved."
+      "I've been at a hospital software company since I moved."
     ],
     "point": "「ずっと〜している」は現在完了進行形＋ since",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 9,
+    "level": 7,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -64,7 +64,7 @@
     "point": "wish の後は過去完了 I'd mentioned にする",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 10,
+    "level": 7,
     "grammar": ["wishes-regrets", "modal-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -179,13 +179,13 @@
     "ja": "父が転勤になって、シンガポールで育ちました。",
     "en": "Dad was transferred, so I grew up in Singapore.",
     "alternatives": [
-      "My father got transferred, so I grew up in Singapore.",
-      "I grew up in Singapore because my dad was transferred."
+      "Dad got transferred, so I grew up in Singapore.",
+      "I grew up in Singapore because Dad was transferred."
     ],
     "point": "「転勤になった」は受け身で was transferred と言う",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 7,
+    "level": 6,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -243,13 +243,13 @@
     "ja": "妻と出会っていなければ、今ここにはいないよ。",
     "en": "If I'd never met my wife, I wouldn't be here.",
     "alternatives": [
-      "Had I not met my wife, I wouldn't be here.",
-      "If I hadn't met my wife, I wouldn't be here today."
+      "If I hadn't met my wife, I wouldn't be here.",
+      "I wouldn't be here if I hadn't met my wife."
     ],
     "point": "過去の仮定は過去完了、今の結果は wouldn't be",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 9,
+    "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -303,7 +303,7 @@
     "id": "c_8a7y7w5f",
     "ja": "上司に挨拶してこいと言われたんです。",
     "en": "My boss told me to say hello.",
-    "alternatives": ["My boss asked me to say hi.", "I was told to say hello."],
+    "alternatives": ["My boss told me to say hi.", "My boss told me to greet you."],
     "point": "「〜するように言われた」は told me to do で言える",
     "topic": "social",
     "subtopic": "introductions",
@@ -359,16 +359,16 @@
   },
   {
     "id": "c_8v6r9a3a",
-    "ja": "ケンが、昔シアトルで働いてたって言ってたけど、本当？",
+    "ja": "ケンから聞いたけど、昔シアトルで働いてたって本当？",
     "en": "Ken said you'd worked in Seattle. Is that true?",
     "alternatives": [
-      "Ken told me you used to work in Seattle. Is that right?",
+      "Ken told me you'd worked in Seattle. Is that right?",
       "Ken mentioned you'd worked in Seattle. Is that true?"
     ],
     "point": "言っていた内容の「働いていた」は過去完了 you'd worked",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 10,
+    "level": 7,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -376,16 +376,16 @@
   {
     "id": "c_9b3w5g3e",
     "ja": "失礼ですが、どうしてこの業界に入られたんですか？",
-    "en": "May I ask how you got into this industry?",
+    "en": "May I ask why you went into this industry?",
     "alternatives": [
-      "Could I ask how you ended up in this industry?",
-      "Mind if I ask how you got into this field?"
+      "Could I ask why you got into this industry?",
+      "May I ask what got you into this industry?"
     ],
-    "point": "「業界に入る」は get into、間接疑問は語順が平叙文",
+    "point": "「どうして」は why。ask の後は why you went の語順",
     "topic": "social",
     "subtopic": "introductions",
     "level": 7,
-    "grammar": ["hedging-softening", "phrasal-verbs"],
+    "grammar": ["indirect-questions", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
   }

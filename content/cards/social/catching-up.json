@@ -1,21 +1,5 @@
 [
   {
-    "id": "c_2a2m9v3t",
-    "ja": "職場がもっと近ければ、君にもっと会えるのにな。",
-    "en": "If work were closer, I'd see you more often.",
-    "alternatives": [
-      "If I worked closer, I could see you more often.",
-      "If my office was closer, I'd see you more."
-    ],
-    "point": "現実と違う仮定は if 節を過去形、主節は would",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 7,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2e7q2c4j",
     "ja": "引っ越しで一番きつかったのは、知り合いがいないこと。",
     "en": "What was toughest about moving was not knowing anyone.",
@@ -115,22 +99,6 @@
     "stamps": {}
   },
   {
-    "id": "c_3n2p4m5t",
-    "ja": "ケンがまだあの会社にいるか知ってる？",
-    "en": "Do you know if Ken's still at that company?",
-    "alternatives": [
-      "Do you happen to know whether Ken still works there?",
-      "Do you know whether Ken still works there?"
-    ],
-    "point": "「〜か知ってる？」は if/whether の後が平叙文の語順",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 7,
-    "grammar": ["indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3z3m5z4f",
     "ja": "君が農業を始めるって聞いて、驚いたのは決断の早さだよ。",
     "en": "What surprised me was how fast you decided to farm.",
@@ -143,22 +111,6 @@
     "subtopic": "catching-up",
     "level": 10,
     "grammar": ["cleft-emphasis", "noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4e3v3t4e",
-    "ja": "妹は結婚しただけでなく、自分の店まで開いたんだ。",
-    "en": "Not only did my sister marry, she opened a shop.",
-    "alternatives": [
-      "My sister not only got married but also opened a shop.",
-      "My sister got married and even opened her own shop."
-    ],
-    "point": "Not only を文頭に置くと did + 主語 + 原形の語順になる",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 9,
-    "grammar": ["inversion"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -207,6 +159,22 @@
     "subtopic": "catching-up",
     "level": 7,
     "grammar": ["wishes-regrets", "reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5c2s8x7b",
+    "ja": "彼女は結婚しただけでなく、自分の店まで開いたんだ。",
+    "en": "Not only did she marry, but she opened her own shop.",
+    "alternatives": [
+      "She not only got married but also opened her own shop.",
+      "She got married and even opened her own shop."
+    ],
+    "point": "Not only を文頭に置くと did she marry の語順になる",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 9,
+    "grammar": ["inversion"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -263,6 +231,22 @@
         "at": "2026-09-22"
       }
     }
+  },
+  {
+    "id": "c_6a4g5u7w",
+    "ja": "転職したけど、前のチームが恋しいよ。",
+    "en": "I switched jobs, though I miss my old team.",
+    "alternatives": [
+      "I changed jobs, but I miss my old team.",
+      "Even though I changed jobs, I miss my old team."
+    ],
+    "point": "though は「〜だけど」。miss は「いなくて寂しい」",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6f4q4j7n",
@@ -441,18 +425,18 @@
     "stamps": {}
   },
   {
-    "id": "c_9f6f9j7u",
-    "ja": "辞めてなければ、妻とは出会えなかったよ。",
-    "en": "If I hadn't quit, we'd never have met.",
+    "id": "c_8x9v7c4q",
+    "ja": "たしか、ユミは先月昇進したはずだよ。",
+    "en": "If I remember right, Yumi got promoted last month.",
     "alternatives": [
-      "If I hadn't quit, I'd never have met her.",
-      "Had I not quit, we would never have met."
+      "Yumi got promoted last month, if I remember right.",
+      "As far as I remember, Yumi was promoted last month."
     ],
-    "point": "過去の仮定は if + had 過去分詞、帰結は would have 過去分詞",
+    "point": "自信のない記憶は If I remember right で和らげる",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 6,
-    "grammar": ["third-conditional"],
+    "level": 7,
+    "grammar": ["hedging-softening", "passive-voice"],
     "createdAt": "2026-09-28",
     "stamps": {}
   }

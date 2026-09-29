@@ -1,21 +1,5 @@
 [
   {
-    "id": "c_2b2k8d5k",
-    "ja": "掃除機、いつもの場所に戻してくれる？",
-    "en": "Could you put the vacuum back where it belongs?",
-    "alternatives": [
-      "Can you put the vacuum back where it goes?",
-      "Could you put the vacuum back in its place?"
-    ],
-    "point": "「〜する場所」は where + 主語 + 動詞で後ろから修飾",
-    "topic": "daily",
-    "subtopic": "home",
-    "level": 6,
-    "grammar": ["relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2p6z7e6m",
     "ja": "彼女がうんと言ってたら、今ごろ食洗機があるのに。",
     "en": "If she'd said yes, we'd have a dishwasher now.",
@@ -29,7 +13,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:812051c5ecb12e4bd837006da9a5f57b1d2040a2157a3db4d10d3b729f734f6c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3b8z5h5q",
@@ -108,7 +98,13 @@
     "level": 5,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2bce8fff3b6a9adf793170ee0f17f45ecf986d35eb2ac2cd01a48f9fc76143bb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4z6x8k4h",
@@ -168,7 +164,13 @@
     "level": 6,
     "grammar": ["gerunds", "past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:703bf08fcf53998830ed2e1d909100c864e5e268451121e9eff9059c5f718824",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6j7s5c5k",
@@ -230,7 +232,13 @@
     "level": 6,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c6f99964d235bbdf4e17e550b63fe9578d3125adaf479e1f9e961e2c14a6d796",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6r4w7h6z",
@@ -268,7 +276,13 @@
     "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7611e957f6bd27f49d7a35dde68d39890080d67ec7f3cbfa5cb1c912525277bc",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7f5f7t5j",
@@ -284,7 +298,13 @@
     "level": 6,
     "grammar": ["hedging-softening", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4ba1c3c4cdc7740c02b38a1993a87b9f249b2cc80dc5525f296b9a64c1520b46",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7v5a3u2e",
@@ -309,38 +329,6 @@
     }
   },
   {
-    "id": "c_8c5n2c8u",
-    "ja": "頭にくるのは、ルームメイトが皿はもう洗ったと言い張ること。",
-    "en": "What drives me nuts is my roommate insisting the dishes are done.",
-    "alternatives": [
-      "What gets to me is my roommate insisting the dishes are done.",
-      "What really bugs me is my roommate insisting the dishes are done."
-    ],
-    "point": "「頭にくるのは〜」は What drives me nuts is ~",
-    "topic": "daily",
-    "subtopic": "home",
-    "level": 10,
-    "grammar": ["cleft-emphasis"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8d9h8r3e",
-    "ja": "僕は料理好きだけど、片付けは本当に面倒だよ。",
-    "en": "I love cooking, but cleanup is such a hassle.",
-    "alternatives": [
-      "Although I love cooking, cleanup is a real hassle.",
-      "I like cooking, but cleaning up is a pain."
-    ],
-    "point": "「〜だけど」は but か although。両方は重ねない",
-    "topic": "daily",
-    "subtopic": "home",
-    "level": 6,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8m5z2r3t",
     "ja": "僕らが早く電話してれば、お湯が使えたのにね。",
     "en": "If we'd called sooner, we'd have had hot water.",
@@ -355,54 +343,12 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8p5e6v2x",
-    "ja": "父は網戸を直すと言ったのに、まだ手つかずだよ。",
-    "en": "Dad said he'd fix the screen but hasn't started.",
-    "alternatives": [
-      "Dad promised to fix the screen but hasn't started.",
-      "Dad said he'd fix the screen but hasn't yet."
-    ],
-    "point": "言ってた内容は would、「まだ」は現在完了で hasn't started",
-    "topic": "daily",
-    "subtopic": "home",
-    "level": 6,
-    "grammar": ["reported-speech", "tense-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9g7d9c6a",
-    "ja": "パパ、ガレージ何週間も後回しにしてるよ。",
-    "en": "Dad, you've been putting off the garage for weeks.",
-    "alternatives": [
-      "Dad, you've been ignoring the garage for weeks.",
-      "Dad, you've put off the garage for weeks."
-    ],
-    "point": "今も続く「ずっと〜してる」は have been -ing、for で期間",
-    "topic": "daily",
-    "subtopic": "home",
-    "level": 6,
-    "grammar": ["present-perfect-continuous", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9j3x6b8w",
-    "ja": "うちはゲーム前に子どもに片付けさせてる。",
-    "en": "We make them tidy up before game time.",
-    "alternatives": [
-      "We have them tidy up before game time.",
-      "We make them clean up before game time."
-    ],
-    "point": "make + 人 + 動詞の原形。to は付けない",
-    "topic": "daily",
-    "subtopic": "home",
-    "level": 5,
-    "grammar": ["causatives", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f8243e3532f5f24865014594af135752500a3d4d9dd1c81bded940ff85f9165f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
