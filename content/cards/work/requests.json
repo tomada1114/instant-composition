@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2b6g7y2d",
+    "ja": "私は、こんなお願いはめったにしない。",
+    "en": "Rarely do I ask for favors like this.",
+    "alternatives": [
+      "I rarely ask for favors like this.",
+      "I hardly ever ask for favors like this."
+    ],
+    "point": "Rarely を前に出すと do が主語の前へ",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2k8s7y7e",
     "ja": "サムにやり直してと頼んだ。",
     "en": "I asked Sam to redo it.",
@@ -41,6 +57,22 @@
     }
   },
   {
+    "id": "c_2u4n6t9b",
+    "ja": "断っていれば、今は暇なのに。",
+    "en": "If I'd refused, I'd be free now.",
+    "alternatives": [
+      "If I'd said no, I'd be free now.",
+      "Had I said no, I'd be free now."
+    ],
+    "point": "過去の仮定 + 今の結果は would be",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2v4t5q7v",
     "ja": "返事、ずっと待ってます。",
     "en": "I've been waiting for your reply.",
@@ -80,6 +112,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3y9m6v5h",
+    "ja": "お言葉に甘えられたらいいのですが。",
+    "en": "I wish I could take you up on that.",
+    "alternatives": [
+      "I wish I could take you up on it.",
+      "I wish I could accept your offer."
+    ],
+    "point": "take ~ up on は申し出を受ける",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 10,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4b5z6p4b",
+    "ja": "この件を引き受ける余裕はない。",
+    "en": "I can't afford to take this on.",
+    "alternatives": [
+      "I don't have room to take this on.",
+      "I don't have the bandwidth for this."
+    ],
+    "point": "room to 原形で「〜する余裕」",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_4x3h9j8f",
@@ -145,6 +209,22 @@
     }
   },
   {
+    "id": "c_5k6y2b6x",
+    "ja": "チームに、明日やり直させます。",
+    "en": "I'll have the team redo it tomorrow.",
+    "alternatives": [
+      "I'll get the team to redo it tomorrow.",
+      "I'll have the team do it over tomorrow."
+    ],
+    "point": "have + 人 + 原形で「させる」",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 9,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5s9q8a5g",
     "ja": "報告書が昼までに必要です。",
     "en": "The report is needed by noon.",
@@ -162,6 +242,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5w5g7g8x",
+    "ja": "代わりに、これお願いできますか？",
+    "en": "Would you mind covering this for me?",
+    "alternatives": [
+      "Could you cover this for me?",
+      "Would you mind taking care of this for me?"
+    ],
+    "point": "Would you mind の後ろは -ing",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6d7y9z8f",
@@ -284,6 +380,38 @@
     }
   },
   {
+    "id": "c_7u2q2k2k",
+    "ja": "もっと早く頼んでほしかったな。",
+    "en": "I wish you'd asked me sooner.",
+    "alternatives": [
+      "I wish you had asked me earlier.",
+      "I wish you'd let me know earlier."
+    ],
+    "point": "過去の不満は wish + 過去完了",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 8,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7x8h3r9p",
+    "ja": "何かあれば、連絡してください。",
+    "en": "Should anything come up, call me.",
+    "alternatives": [
+      "If anything comes up, call me.",
+      "Should anything happen, contact me."
+    ],
+    "point": "Should + 主語で if を省く倒置",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8b7b3d5y",
     "ja": "それは私の仕事です。",
     "en": "That's my job.",
@@ -323,6 +451,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8g4e4n7z",
+    "ja": "頼みたいのは、話を聞くことだけです。",
+    "en": "All I ask is you hear me out.",
+    "alternatives": [
+      "All I'm asking is that you hear me out.",
+      "All I want is for you to hear me out."
+    ],
+    "point": "All I ask is that ~ で「望むのは〜だけ」",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 10,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8g7j8y4r",

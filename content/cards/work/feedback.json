@@ -63,6 +63,22 @@
     }
   },
   {
+    "id": "c_4h8e9b9p",
+    "ja": "ここ、少し分かりにくいかも。",
+    "en": "This part might be a bit unclear.",
+    "alternatives": [
+      "This part may be a little hard to follow.",
+      "This bit could be a little unclear."
+    ],
+    "point": "might と a bit で指摘を和らげる",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 8,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5d9b8j2t",
     "ja": "すばらしい発表だったよ。",
     "en": "That was a great presentation.",
@@ -227,6 +243,22 @@
     }
   },
   {
+    "id": "c_7f3m4n4f",
+    "ja": "例がもっとあるといいんだけど。",
+    "en": "I wish there were more examples.",
+    "alternatives": [
+      "I wish there were a few more examples.",
+      "I'd like to see more examples."
+    ],
+    "point": "今の希望は wish + 過去形。were を使う",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 8,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7k5x5w8e",
     "ja": "具体例を足してほしいんだけど。",
     "en": "I'd like you to add examples.",
@@ -364,6 +396,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9f7m5s3k",
+    "ja": "君は数か月、本当に頑張ってるね。",
+    "en": "You've been working really hard for months.",
+    "alternatives": [
+      "You've been putting in the effort for months.",
+      "You've been working so hard these past months."
+    ],
+    "point": "続いている努力は現在完了進行形",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 8,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9p8q6g6r",

@@ -1,5 +1,37 @@
 [
   {
+    "id": "c_2a2d3e2e",
+    "ja": "原因は彼が見つけたバグだと思う。",
+    "en": "I think it's the bug he found.",
+    "alternatives": [
+      "I think the bug he found is the cause.",
+      "I think the bug he found caused it."
+    ],
+    "point": "I think の中に the bug she found が入る",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_2e9e8s7p",
+    "ja": "報告してたら、こうならなかった。",
+    "en": "If I'd flagged it, this wouldn't have happened.",
+    "alternatives": [
+      "Had I flagged it, this wouldn't have happened.",
+      "If I had reported it, this wouldn't have happened."
+    ],
+    "point": "過去の仮定は if + had + 過去分詞",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 9,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2k3z7u4h",
     "ja": "私、問題があります。",
     "en": "I have a problem.",
@@ -17,6 +49,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_2s3k7u5f",
+    "ja": "私があなたなら、上司に話します。",
+    "en": "If I were you, I'd tell your boss.",
+    "alternatives": [
+      "If I were you, I'd talk to your boss.",
+      "I'd tell your boss, if I were you."
+    ],
+    "point": "If I were you は仮定法の定番",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 10,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_2v5y9f3f",
@@ -78,6 +126,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4d5d8n2k",
+    "ja": "未定ですが、少し遅れそうです。",
+    "en": "It looks like we might slip a little.",
+    "alternatives": [
+      "We may be running a little behind.",
+      "It seems we could fall slightly behind."
+    ],
+    "point": "might と a little で断定を避ける",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4d6x5q9s",
+    "ja": "人手があれば、間に合うのに。",
+    "en": "If we had help, we'd make it.",
+    "alternatives": [
+      "If we had another person, we could make it.",
+      "We'd make it if we had more help."
+    ],
+    "point": "今の仮定は if + 過去形、would + 原形",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 9,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_4m3j8y9u",
@@ -226,6 +306,22 @@
     }
   },
   {
+    "id": "c_6h7q5x3y",
+    "ja": "報告は金曜でもいいですか？",
+    "en": "Is it okay if I report Friday?",
+    "alternatives": [
+      "Is it okay if I update you on Friday?",
+      "Could I update you on Friday?"
+    ],
+    "point": "Is it okay if で許可を求める",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6q4v4t5c",
     "ja": "明日、ご報告します。",
     "en": "I'll update you tomorrow.",
@@ -330,6 +426,38 @@
     }
   },
   {
+    "id": "c_8c4u7y9r",
+    "ja": "もっと早くお伝えすればよかった。",
+    "en": "I wish I'd told you sooner.",
+    "alternatives": [
+      "I wish I had told you earlier.",
+      "I wish I'd let you know sooner."
+    ],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 9,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8f3g2j2e",
+    "ja": "先方に、この内容で承認してもらった。",
+    "en": "I got the client to sign off.",
+    "alternatives": [
+      "I had the client sign off on it.",
+      "I got the client to approve it."
+    ],
+    "point": "get + 人 + to 原形。sign off は承認する",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8g8j9s3b",
     "ja": "作業は順調に進んでいます。",
     "en": "Things are coming along nicely.",
@@ -432,5 +560,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9m4u9h8p",
+    "ja": "遅れても、品質は落としません。",
+    "en": "Even if we slip, quality won't suffer.",
+    "alternatives": [
+      "Even if we're late, quality won't suffer.",
+      "Even if we fall behind, we won't cut quality."
+    ],
+    "point": "Even if は「たとえ〜でも」",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

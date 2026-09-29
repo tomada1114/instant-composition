@@ -57,6 +57,38 @@
     }
   },
   {
+    "id": "c_3u4f9p7e",
+    "ja": "期限が延びてたとは知らなかった。",
+    "en": "I didn't know it had been extended.",
+    "alternatives": [
+      "I hadn't realized it had been extended.",
+      "I didn't know they'd extended it."
+    ],
+    "point": "知る前に済んでいたことは過去完了",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 9,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3v8r2k7c",
+    "ja": "この件、来週に回してもいい？",
+    "en": "Can we bump this to next week?",
+    "alternatives": [
+      "Could we push this to next week?",
+      "Can we push this back to next week?"
+    ],
+    "point": "bump / push で「後ろに回す」",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 9,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4a9v2y7z",
     "ja": "会議を遅らせてもいい？",
     "en": "Can we delay it?",
@@ -80,6 +112,38 @@
     }
   },
   {
+    "id": "c_4e9b2f6z",
+    "ja": "これ、30分前倒しにできますか？",
+    "en": "Could we move it up by 30 minutes?",
+    "alternatives": [
+      "Could we bring it forward by half an hour?",
+      "Would it be possible to move it up 30 minutes?"
+    ],
+    "point": "move up は「前倒しする」",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 10,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4p9q6r4c",
+    "ja": "できれば、金曜は避けたかったんです。",
+    "en": "I was hoping to avoid Friday, if possible.",
+    "alternatives": [
+      "I'd prefer to avoid Friday, if possible.",
+      "I was hoping we could avoid Friday, if possible."
+    ],
+    "point": "I was hoping で希望を控えめに伝える",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4u4e3x4u",
     "ja": "火曜のほうが都合いい？",
     "en": "Is Tuesday better for you?",
@@ -100,6 +164,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5g6w5f5s",
+    "ja": "全員空いてる日に決めましょう。",
+    "en": "Let's choose a day when everyone's free.",
+    "alternatives": [
+      "Let's pick a day when everyone is free.",
+      "Let's find a day that works for everyone."
+    ],
+    "point": "時を表す名詞の後ろは when で修飾",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 9,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5h2v2v6x",
@@ -160,6 +240,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5z5s9u9t",
+    "ja": "彼女に、締め切りの延長を頼んだ。",
+    "en": "I asked her to extend the deadline.",
+    "alternatives": [
+      "I asked her to push the deadline back.",
+      "I asked her to give us an extension."
+    ],
+    "point": "ask + 人 + to 原形",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 8,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6m5j9g4d",
@@ -351,6 +447,22 @@
     }
   },
   {
+    "id": "c_8b6g5r5j",
+    "ja": "私、日にちを間違えたかも。",
+    "en": "I might have mixed up the dates.",
+    "alternatives": [
+      "I may have mixed up the dates.",
+      "I could have gotten the dates mixed up."
+    ],
+    "point": "might have + 過去分詞で過去の推量",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 10,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8d3y5j8g",
     "ja": "締め切りは月曜です。",
     "en": "The deadline is Monday.",
@@ -370,6 +482,22 @@
     }
   },
   {
+    "id": "c_8h2s9b3m",
+    "ja": "いつ空いてるか、教えてもらえる？",
+    "en": "Could you tell me when you're free?",
+    "alternatives": [
+      "Would you tell me when you're free?",
+      "Can you let me know when you're available?"
+    ],
+    "point": "間接疑問は when you're free の語順",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 8,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8p2d4u9a",
     "ja": "午後なら空いています。",
     "en": "I'm free in the afternoon.",
@@ -387,6 +515,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8z5m9z5n",
+    "ja": "頼まれる前に、会議を動かした。",
+    "en": "I'd moved the meeting before being asked.",
+    "alternatives": [
+      "I had already moved the meeting before anyone asked.",
+      "I'd already moved the meeting before I was asked."
+    ],
+    "point": "それより前のことは過去完了",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 8,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9q6y6y3q",

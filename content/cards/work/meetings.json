@@ -143,6 +143,54 @@
     }
   },
   {
+    "id": "c_4s7d5g5y",
+    "ja": "資料を読んだので、次に行こう。",
+    "en": "Having read the handout, let's move on.",
+    "alternatives": [
+      "Having read it, let's go to the next item.",
+      "Now that we've read the handout, let's move on."
+    ],
+    "point": "Having + 過去分詞で「済んだので」",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5c7b7p6x",
+    "ja": "決まり次第、全員にメールします。",
+    "en": "I'll email everyone once it's decided.",
+    "alternatives": [
+      "As soon as it's decided, I'll email everyone.",
+      "I'll email everyone as soon as it's settled."
+    ],
+    "point": "未来のことでも as soon as の後は現在形",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 8,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5f2q9c3a",
+    "ja": "その件は会議のあとで詰めましょう。",
+    "en": "Let's hash that out after the meeting.",
+    "alternatives": [
+      "Let's sort that out after the meeting.",
+      "Let's iron that out after the meeting."
+    ],
+    "point": "hash out は「議論して決着をつける」",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 10,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5m9b6g4c",
     "ja": "今コピー配ってるよ。",
     "en": "I'm handing out copies.",
@@ -251,6 +299,22 @@
     }
   },
   {
+    "id": "c_6n8q9r3f",
+    "ja": "時間がないので、先へ飛ばそう。",
+    "en": "Being pressed for time, let's skip ahead.",
+    "alternatives": [
+      "Since we're pressed for time, let's skip ahead.",
+      "Short on time, let's skip ahead."
+    ],
+    "point": "Being ～ で理由を軽く添える分詞構文",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 10,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7a5v8e6j",
     "ja": "もっと早く発言すればよかった。",
     "en": "I wish I'd spoken up sooner.",
@@ -271,6 +335,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7f2b4d4f",
+    "ja": "問題は、誰が責任を持つかです。",
+    "en": "The issue is who will take ownership.",
+    "alternatives": [
+      "What matters is who takes ownership.",
+      "The issue is who's going to own this."
+    ],
+    "point": "who 以下は名詞節。語順は主語+動詞",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 9,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7j3k3x7m",
@@ -399,6 +479,22 @@
     }
   },
   {
+    "id": "c_9d5j3y7d",
+    "ja": "課長は来週で大丈夫と言ってた。",
+    "en": "She said next week would be fine.",
+    "alternatives": [
+      "She told us next week would be fine.",
+      "She said next week was fine."
+    ],
+    "point": "said の後は時制が一つ後ろにずれる",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 9,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_9f5n2f9x",
     "ja": "メモは私が取れますよ。",
     "en": "I can take notes.",
@@ -416,6 +512,54 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9j8r4n5d",
+    "ja": "失礼ですが、一点よろしいですか？",
+    "en": "Might I raise one point?",
+    "alternatives": [
+      "May I raise one point, please?",
+      "If I may, I'd like to raise a point."
+    ],
+    "point": "Might I ～? で丁寧に切り出す",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 8,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9j9t9u2a",
+    "ja": "間違いでなければ、延期でしたよね？",
+    "en": "If I'm not mistaken, it was postponed.",
+    "alternatives": [
+      "If I remember correctly, it was postponed.",
+      "It was postponed, if I'm not mistaken."
+    ],
+    "point": "If I'm not mistaken で断定を和らげる",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9q4e6t9x",
+    "ja": "その案は先週、却下されましたよ。",
+    "en": "That proposal was shot down last week.",
+    "alternatives": [
+      "That proposal got shot down last week.",
+      "That proposal was turned down last week."
+    ],
+    "point": "last week があれば過去形。現在完了は不可",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 9,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9x4m8r2r",
