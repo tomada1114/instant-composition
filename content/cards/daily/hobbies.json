@@ -145,7 +145,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8caa03d9928946e2485f5b0bc641a9cb67677c024aa4fb9dde5dac8635269b12",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3v4f6j5q",
@@ -161,7 +167,13 @@
     "level": 6,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e209bdfb4509e34f6a9f8a65625b86ba3a3e4923b54ee9ae25b1911828f055ef",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4a7w4f7f",
@@ -266,7 +278,13 @@
     "level": 8,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:28ca4c1eb960ee4f076e86be39fb3e054149acdb0d3034c6153ca87b4cb0587c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4w4t9u4g",
@@ -420,22 +438,6 @@
     }
   },
   {
-    "id": "c_6m3k8d6t",
-    "ja": "あの写真展に行ってなければ、写真は始めてなかった。",
-    "en": "If I hadn't gone, I wouldn't have taken up photography.",
-    "alternatives": [
-      "If I hadn't gone, I'd never have taken up photography.",
-      "If I hadn't gone, I wouldn't have gotten into photography."
-    ],
-    "point": "始める は take up、過去の仮定は had+過去分詞と would have+過去分詞",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 7,
-    "grammar": ["third-conditional", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6s4f3n7e",
     "ja": "ここ、漫画がたくさんあるよ。",
     "en": "There are lots of manga here.",
@@ -556,7 +558,13 @@
     "level": 7,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b64a22b3c12a0eed6ed2e7a254d941933ac156e2c93e3f474d03588d6a080c8b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7z4x5c5t",
@@ -713,22 +721,6 @@
     }
   },
   {
-    "id": "c_9a6v8x7c",
-    "ja": "彼が趣味で撮った写真が賞を取るなんて、驚きだ。",
-    "en": "I'm amazed photos he took for fun won a prize.",
-    "alternatives": [
-      "It's amazing photos he took for fun won a prize.",
-      "I can't believe his hobby photos won a prize."
-    ],
-    "point": "名詞のあとに he took for fun と直接つなげる",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 7,
-    "grammar": ["relative-clauses", "noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_9d4j4f4v",
     "ja": "姉のボルダリングジム、初心者クラス始めたらしいよ。",
     "en": "Apparently my sister's bouldering gym started a beginners' class.",
@@ -749,54 +741,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9g6y2t4b",
-    "ja": "たまには、週末に何もしない自分を許してあげなよ。",
-    "en": "Let yourself do nothing on weekends once in a while.",
-    "alternatives": [
-      "Now and then, let yourself do nothing on the weekend.",
-      "Sometimes, allow yourself to do nothing on weekends."
-    ],
-    "point": "「許す」は let oneself。動詞は原形のまま続ける",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 7,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9j5s6t4v",
-    "ja": "忙しくなかったら、ハイキングに行けたのに。",
-    "en": "If I hadn't been busy, I could have gone hiking.",
-    "alternatives": [
-      "I could have gone hiking if I hadn't been busy.",
-      "If I hadn't been tied up, I'd have gone hiking."
-    ],
-    "point": "過去の仮定は had+過去分詞、結果は could have+過去分詞",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 8,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9p6f9z7a",
-    "ja": "休日に一人の時間が取れることなんて、めったにないんだ。",
-    "en": "Rarely do I get time alone on my days off.",
-    "alternatives": [
-      "I hardly ever get time alone on my days off.",
-      "It's rare that I get time alone on a day off."
-    ],
-    "point": "Rarely を文頭に出すと do I の語順になる",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 9,
-    "grammar": ["inversion"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9q3j7k8n",
@@ -834,6 +778,12 @@
     "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5af8133bccaf43a2bdf8cceb3ac291be47ca404f90a8e47bc7e0407be7440148",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
