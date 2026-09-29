@@ -36,7 +36,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:43a03f6fee4a956787cbe90ae373d20103a16f67194031af7c880b736a0f19f6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3e2h2m8p",
@@ -63,10 +69,10 @@
   {
     "id": "c_3j3y9x4u",
     "ja": "ここに惹かれたのは、人の温かさ。",
-    "en": "What drew me here was the people.",
+    "en": "What drew me here was the people's warmth.",
     "alternatives": [
-      "It was the people that drew me here.",
-      "The people are what drew me here."
+      "It was the people's warmth that drew me here.",
+      "The warmth of the people is what drew me here."
     ],
     "point": "What ~ was で一番の理由を強調",
     "topic": "social",
@@ -74,7 +80,13 @@
     "level": 10,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:18b720e15b31b20005d6750f48b9a23174b2a312b0d218f1d356cb8c9350311f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3k4x2m5d",
@@ -112,7 +124,13 @@
     "level": 9,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1d97085103f5c708649d44a2f2ba2110d82188e9545ac55b3c7fd6eb6bd264a3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3w6j9h2q",
@@ -186,7 +204,13 @@
     "level": 10,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:eb3db786e8577215b3d2d864ef5a52bc11fcfc6dc483e154588e86e87fc3176b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5h8s6t6p",
@@ -221,23 +245,35 @@
     "level": 8,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:52f488ad1487ae4057d837fa4f26415c70afd57e2eb4d9648154d8ec8529497c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5p8f6b4s",
     "ja": "私の仕事は、企業向けの翻訳です。",
     "en": "What I do is translate for companies.",
     "alternatives": [
-      "What I do is translate for businesses.",
+      "My job is translating for companies.",
       "What I do is business translation."
     ],
     "point": "What I do is のあとは動詞の原形",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 9,
+    "level": 8,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:77812b32f6af3c25cac221ff40c22a03fd03dcc4b41f7f0eb52050b7cb4e11ad",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5x8s6n4g",
@@ -269,10 +305,16 @@
     "point": "last month があれば過去形、since なら現在完了",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 8,
+    "level": 6,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0dbd28bc902b4d3b574ad837127acb4f84a90fd40f9efa649537472a558d1007",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7f5g2j9b",
@@ -381,15 +423,21 @@
     "en": "May I ask where you're from?",
     "alternatives": [
       "Would you mind telling me where you're from?",
-      "Do you mind if I ask where you're from?"
+      "Could I ask where you're from?"
     ],
     "point": "間接疑問は where you're from の語順",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 9,
+    "level": 6,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:875a5bde15ac44b0e0cfc127e4ab2e4a04f2bfac244aa617c26144e075373a95",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8x7n9t3m",
@@ -427,7 +475,13 @@
     "level": 10,
     "grammar": ["second-conditional", "phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0e35a0167fa2ca1b75209f931896cada6fb0911d8fca1df5085a92f3bb2501a9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9e2b8q3v",

@@ -80,7 +80,7 @@
   },
   {
     "id": "c_2p9m5w4s",
-    "ja": "API を分けてれば、今は楽なのに。",
+    "ja": "API を分けてれば、今は平気なのに。",
     "en": "If we'd split the API, we'd be fine.",
     "alternatives": [
       "Had we split the API, we'd be fine now.",
@@ -92,7 +92,13 @@
     "level": 10,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:94176a9f68bd156e3696792cd7b1459ac48511fd32330dcd1cf876855209b2d7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2r8u4z7b",
@@ -206,7 +212,13 @@
     "level": 9,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e08a5ab27af173cb950c469dcf6408bf3a442a3c17da2c4ad531ab2685f93e28",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4x6m6c5y",
@@ -266,7 +278,13 @@
     "level": 8,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7ff08653042aef30e2389f5c0d42f20adaaa7c6e3b7de0ceabb2fbf794ae666",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5n6u7s8w",
@@ -358,7 +376,7 @@
     "ja": "テストあったら、今は安心なのに。",
     "en": "If we'd had tests, I'd feel safer.",
     "alternatives": [
-      "Had we had tests, I'd feel safer now.",
+      "I'd feel safer now if we'd had tests.",
       "If there had been tests, I'd feel safer now."
     ],
     "point": "過去の仮定+今の結果。if 節は過去完了、主節は would",
@@ -367,7 +385,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:56c0423b8ba1bdad8fdd8b696b9c00bd93edee63c0b7bfda65df870e8b633845",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7p9g2z9w",
@@ -383,7 +407,13 @@
     "level": 10,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ddc78183ce9c98134887b6c97184005af1a0fb706d7e0221100638b267adc9b5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7r6q3p2m",
@@ -399,7 +429,13 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:38078e509e055d246355253e92bcc0ff72023fff91fa72c36890097669a3a8cc",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7w8d5t7t",
@@ -456,7 +492,13 @@
     "level": 10,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d88018ad72018cea451b8d93646b0c22ab03b36f9e1cbd5d2b4a5191a0357e94",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8t2g6a2j",
@@ -491,7 +533,13 @@
     "level": 8,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7ff504e8837bdae01617c148734a262d05bddad0bd9833a1e1d3e2c9425c019",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9j5e2g3p",
@@ -559,7 +607,7 @@
   {
     "id": "c_9v4u4w2c",
     "ja": "この名前にした理由、教えて？",
-    "en": "Can you explain why you chose this?",
+    "en": "Mind explaining why you chose this name?",
     "alternatives": [
       "Can you tell me why you chose this name?",
       "Could you explain why you went with this name?"
@@ -570,6 +618,12 @@
     "level": 9,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:42a17377461a9867413ca74d5c88f431f888b3df0d398ea01c75cc9b47bfd38a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

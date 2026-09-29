@@ -32,23 +32,35 @@
     "level": 10,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d0a3e943b4cc0ee0d61c60d14210227cc0e4f19b79ff2eac88e7955fc0acbf26",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2v5b2b3p",
     "ja": "好きな店が潰れたと彼女が言った。",
-    "en": "She said the place we like closed.",
+    "en": "She said my favorite place closed down.",
     "alternatives": [
-      "She told me the place we like closed down.",
-      "She said the place we like shut down."
+      "She told me my favorite shop closed down.",
+      "She said my favorite place shut down."
     ],
-    "point": "節の中の節。said の後の時制に注意",
+    "point": "said の後は過去形。closed down で「閉店した」",
     "topic": "daily",
     "subtopic": "eating-out",
     "level": 9,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3637a165831e7dc62a18009c18e9f6e6e2a3660aea69ad01d15433f899c57a81",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2y3e2p3k",
@@ -125,7 +137,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7a4cf1f54803b9b260539721caebe0b41575780269a5ee173cafeb92f3651618",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3u4r6r6z",
@@ -160,7 +178,13 @@
     "level": 9,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5156f15e5f3417230b86d095064eb83d14dbe7aa8aae71f28db783e87528de59",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4f5q7f3z",
@@ -236,7 +260,13 @@
     "level": 10,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d3eb7f9e0e58a883012439b38f609f7f692b704129c3a2483fe7f5c87b58212e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5m9a7t2u",
@@ -293,7 +323,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:edaa2c9ab7ed12abafa2834e819f115e8da3b2bbe274c4d8ceda2ede7e33066d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5y3n9k3q",
@@ -402,7 +438,7 @@
     "en": "Do you know if they take reservations?",
     "alternatives": [
       "Do you know whether they take reservations?",
-      "Do you know if we can make a reservation?"
+      "Do you know if they're taking reservations?"
     ],
     "point": "間接疑問は if + 平叙文の語順",
     "topic": "daily",
@@ -410,7 +446,13 @@
     "level": 8,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:21f861280ce8144949e913d084a91ee52b0f6fbf33191b64b256a80693c4deec",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8m5x5h8h",
@@ -467,7 +509,13 @@
     "level": 10,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c5165a9c0b05df3029ea77eea6352f8444623a71505eced05fe76abd40ba337c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8x8x5s7g",
@@ -544,7 +592,13 @@
     "level": 9,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5043f60e7fb3d6cd189dd21c28bf9c79605ca7298b77775147b63ac100173b29",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9x5t6q8h",

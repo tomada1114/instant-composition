@@ -32,7 +32,13 @@
     "level": 7,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:905fb10fe1cbed6cf040d09a1d8e9550e197cdb460a7ad7e346176548faa460a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3b9a4e7z",
@@ -89,7 +95,13 @@
     "level": 8,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4148dfe60e0b582009ed553cabfd29f48aa48b174a4e031efd64463bd88889f9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4t5e2b4s",
@@ -157,15 +169,21 @@
     "en": "Having skipped breakfast, I felt faint.",
     "alternatives": [
       "Since I'd skipped breakfast, I felt faint.",
-      "Having gone without breakfast, I felt lightheaded."
+      "I felt faint because I'd skipped breakfast."
     ],
     "point": "先に起きたことは Having + 過去分詞",
     "topic": "daily",
     "subtopic": "health",
-    "level": 10,
+    "level": 7,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:22b31358868528bac7929c951ad0ef436cc2f3d7b585a0e23152b9c72a510fde",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5x4y5k2b",
@@ -260,7 +278,13 @@
     "level": 10,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2d5e5241c978ddb603f003f28ccc7854e6411fbb4c6aec3529534b322931e5e1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6q4w4w3v",
@@ -331,7 +355,8 @@
     "en": "I wish this headache would go away.",
     "alternatives": [
       "If only this headache would go away.",
-      "I wish this headache would just go away."
+      "I wish this headache would just go away.",
+      "I hope this headache goes away soon."
     ],
     "point": "今への不満や願いは wish + would",
     "topic": "daily",
@@ -339,7 +364,13 @@
     "level": 9,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:55645334272081b8a2a48102e56e641e021eb09765e5784697d74a513a96ccb7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6w2f3t3r",
@@ -396,7 +427,13 @@
     "level": 9,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1d91e06d7581e8e40c768c44343ccf55afc1b3c264a54508f40a6a685415753a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7f2p4k2t",
@@ -457,19 +494,25 @@
   },
   {
     "id": "c_7y7w5z7m",
-    "ja": "彼は、私の症状は軽いと言った。",
-    "en": "He said what I have is minor.",
+    "ja": "彼は私の症状は軽いと言った。",
+    "en": "He said my symptoms are mild.",
     "alternatives": [
-      "He told me what I have is minor.",
+      "He told me my symptoms were mild.",
       "He said my condition is minor."
     ],
-    "point": "what I have =「私の症状」の名詞節",
+    "point": "said の後でも、今も本当なら現在形でよい",
     "topic": "daily",
     "subtopic": "health",
-    "level": 9,
-    "grammar": ["nested-clauses"],
+    "level": 6,
+    "grammar": ["reported-speech"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c90d32dab63f2401b85aa06489a4fcf48e525ce1d79aab897ec248b648fd4196",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8a6k8z2a",
@@ -526,7 +569,13 @@
     "level": 10,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9790b1d005d25ce2fb3d9625e9de5a88b5d8520ce2a497fbf1bae45126a70c80",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8y2z9m6u",
@@ -536,10 +585,16 @@
     "point": "「かかりかけ」は come down with",
     "topic": "daily",
     "subtopic": "health",
-    "level": 8,
+    "level": 7,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4aa570f559a6e71a6480732561b213d3665998ff65fbbf05296ae3e7a71ed6ce",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8y4z2a4a",
@@ -574,6 +629,12 @@
     "level": 8,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fced456cd653ee2a98537e3ccb6e798b82b7eb73b5f2ef3143f40589adbfd474",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

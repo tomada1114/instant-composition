@@ -96,7 +96,13 @@
     "level": 9,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:625c143f426729827c05b246ebd114c8d2d01ef449b74dc923fa8c2e4e6d63c9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4d3e5p8v",
@@ -131,7 +137,13 @@
     "level": 10,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5ef251c755f26851bcef8d58ebc47923f4446cc61c308188c29e0f31f9f1c4c0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4h5m5k9e",
@@ -166,7 +178,13 @@
     "level": 9,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c07eefccd331f50b512809b4274fd6b8bc5d8f2f5e25e27bedf1a5646d057c55",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4q6d4x8z",
@@ -201,11 +219,17 @@
     "level": 10,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:82b51d3157ef69a4f873009027f3f5f74220c9c72c00145826500ef0e0effc2e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4v4m6n9t",
-    "ja": "彼は、その役割を知らないと思う。",
+    "ja": "彼は、それが何をするか知らないと思う。",
     "en": "I doubt he knows what it does.",
     "alternatives": [
       "I don't think he knows what it does.",
@@ -217,7 +241,13 @@
     "level": 8,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:afc9dd11830004b9f72a994196033300aca8a312b4edf15dc077c53f9f56ab3c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4z5h3c3p",
@@ -341,15 +371,21 @@
     "level": 8,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:74b110ca5aabbbb35649509d9679e7857f3c38b10d1174be68417982b9eef208",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6h7q5d4s",
     "ja": "心配なのは、性能より保守だ。",
-    "en": "It's maintenance, not speed, that worries me.",
+    "en": "It's maintenance, not performance, that worries me.",
     "alternatives": [
-      "What worries me is maintenance, not speed.",
-      "What concerns me is upkeep rather than speed."
+      "What worries me is maintenance, not performance.",
+      "What concerns me is upkeep rather than performance."
     ],
     "point": "It is X that で強調したい語 X を挟む",
     "topic": "tech",
@@ -357,7 +393,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:36d17d724189ece736416834fdb3a61cc8e9aba00462b42593c201777679cf69",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6p4x9v7n",
@@ -482,7 +524,7 @@
   {
     "id": "c_9s3t9h5e",
     "ja": "数週間、シャーディングを検討中。",
-    "en": "We've been weighing up sharding for weeks.",
+    "en": "We've been weighing sharding for weeks.",
     "alternatives": [
       "We've been considering sharding for a few weeks.",
       "We've been looking into sharding for weeks."
@@ -493,7 +535,13 @@
     "level": 9,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bcbef4069e54aeecf3cc28f7e58df56a0dbbd0f93160b0d4f81d4a61d3b96fb9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9s4k8e5y",
@@ -557,8 +605,8 @@
     "ja": "整合性が崩れても、私は速さを取る。",
     "en": "Even if consistency slips, I'd take speed.",
     "alternatives": [
-      "I'd choose speed, even if consistency slips a bit.",
-      "Although consistency may slip, I'd still go for speed."
+      "I'd choose speed, even if consistency slips.",
+      "Even if consistency breaks, I'd go for speed."
     ],
     "point": "Even if の後は現在形。譲歩の仮定を表す",
     "topic": "tech",
@@ -566,6 +614,12 @@
     "level": 10,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:93a25cc3f99a795095cde436ec43d7cbd41f96aa32fc7322d5854c143945deb8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

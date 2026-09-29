@@ -54,7 +54,13 @@
     "level": 9,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8800ff601b4a982be5e4340ff55002c389d2517fe7a0c2533bfc593d8f5971ec",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3p7z6b4w",
@@ -92,7 +98,13 @@
     "level": 10,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:42df784a3b6e6a36933bbc12962f657ae7929fc6534aee35a773d8db91d23060",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4a5n5u4g",
@@ -143,7 +155,13 @@
     "level": 10,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1d26560c910a19886434c24ea29854e13727b641c31728066d3244cbba47dca8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4v9a4j8e",
@@ -216,7 +234,13 @@
     "level": 8,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:77af6adb156faf13fce0843ead7c2a7aa0f83747196a507192619bd64a60870e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5w9y6q8u",
@@ -224,7 +248,7 @@
     "en": "I can't get over what he said.",
     "alternatives": [
       "I still can't shake what he said.",
-      "I can't get past what he said yet."
+      "I still can't let go of what he said."
     ],
     "point": "get over は「乗り越える・立ち直る」",
     "topic": "daily",
@@ -232,7 +256,13 @@
     "level": 9,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1dc94aa619a877d6333ff5a353eb0e7b24dfb626f78b5086b896d628b602ef7d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5x6w8j8s",
@@ -242,10 +272,16 @@
     "point": "said に合わせて was と過去形にずらす",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 8,
+    "level": 5,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:194f686776879ad9c4ba494a3c840b378d5bfbee1c2a8f3e3089dd0730a35d37",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6c6d5c7h",
@@ -280,10 +316,16 @@
     "point": "not entirely でやわらかく否定する",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 10,
+    "level": 9,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e692f4dc5fa9e50c5bed1a2882c3840838c0c8604c3bbad628536daedf0a92f8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6n2k9e6b",
@@ -434,15 +476,21 @@
   {
     "id": "c_8r6e7r8r",
     "ja": "あの映画には、思わず泣かされた。",
-    "en": "That movie really made me tear up.",
+    "en": "That movie made me tear up.",
     "alternatives": ["That movie made me cry.", "That movie got me all teary."],
     "point": "make + 人 + 原形で「〜させる」。tear up は泣きそうになる",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 9,
+    "level": 8,
     "grammar": ["causatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:24997708063e20c399b02d21289dccf0d774969fd5bca8c4e7b750f20226c3c8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8t8g5t4q",
@@ -477,7 +525,13 @@
     "level": 8,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5fa71830663cbbd5de4366cf67c5872bd7689fcaaa797e3b0ca183d1270b6ad9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8x6x5b9n",

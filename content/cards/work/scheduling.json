@@ -70,7 +70,13 @@
     "level": 9,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c5544d07e2cf36961b1175dd1616db5275f1708f5ea0a61646eb8b87325e5e4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3v8r2k7c",
@@ -86,7 +92,13 @@
     "level": 9,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c64cd0807c824789f6608115bd52b3f72ed632f13be48054e201a42a7418211a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4a9v2y7z",
@@ -125,14 +137,20 @@
     "level": 10,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:76ed67cfbac58b6b6068f271b3c008ed9b2d6f2ffe2c836d58c934f8bbd7f1bd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4p9q6r4c",
     "ja": "できれば、金曜は避けたかったんです。",
     "en": "I was hoping to avoid Friday, if possible.",
     "alternatives": [
-      "I'd prefer to avoid Friday, if possible.",
+      "I'd have liked to avoid Friday, if possible.",
       "I was hoping we could avoid Friday, if possible."
     ],
     "point": "I was hoping で希望を控えめに伝える",
@@ -141,7 +159,13 @@
     "level": 10,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:12d36b8b1cf1de97de926dbc05496dd6bbfb955623be98e9a780255e7e5a4646",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4u4e3x4u",
@@ -176,10 +200,16 @@
     "point": "時を表す名詞の後ろは when で修飾",
     "topic": "work",
     "subtopic": "scheduling",
-    "level": 9,
+    "level": 8,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5a8f3ed36c8e09e04e72e3dcbabb7f379ff624a659f9255b10a92deb801e9ea9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5h2v2v6x",
@@ -255,7 +285,13 @@
     "level": 7,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:84dd83d9f88af014e8e7310b3ab3212eb27dc6c5cbb40b332cb92a65b0a72a4d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5z5s9u9t",
@@ -271,7 +307,13 @@
     "level": 8,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:34457320f07487589234f7404a697b9af2e4b8ad724d446ee22fd98887c46716",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6m5j9g4d",
@@ -465,18 +507,24 @@
   {
     "id": "c_8b6g5r5j",
     "ja": "私、日にちを間違えたかも。",
-    "en": "I might have mixed up the dates.",
+    "en": "I might have mixed up the date.",
     "alternatives": [
-      "I may have mixed up the dates.",
-      "I could have gotten the dates mixed up."
+      "I may have gotten the date wrong.",
+      "I think I got the date wrong."
     ],
     "point": "might have + 過去分詞で過去の推量",
     "topic": "work",
     "subtopic": "scheduling",
-    "level": 10,
+    "level": 8,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:391503d9d1c08cbc2421d116f9d1651d3da482ed7f879f453ea3d0e2ea4899af",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8d3y5j8g",
@@ -511,7 +559,13 @@
     "level": 8,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:20f85a464aaf595697f928d47bf0be88ced8785bedcb8656c61c14204db102e5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8p2d4u9a",
@@ -535,18 +589,24 @@
   {
     "id": "c_8z5m9z5n",
     "ja": "頼まれる前に、会議を動かした。",
-    "en": "I'd moved the meeting before being asked.",
+    "en": "I moved the meeting before anyone asked.",
     "alternatives": [
-      "I had already moved the meeting before anyone asked.",
-      "I'd already moved the meeting before I was asked."
+      "I moved the meeting before I was asked.",
+      "I rescheduled the meeting before anyone asked."
     ],
-    "point": "それより前のことは過去完了",
+    "point": "before の節は単純過去。過去完了にしなくてよい",
     "topic": "work",
     "subtopic": "scheduling",
     "level": 8,
-    "grammar": ["past-perfect"],
+    "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:27a0e8c98bc736253125aa8f8fd9bb6546ea650781e6b5111d17d994756e671a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9q6y6y3q",

@@ -32,7 +32,13 @@
     "level": 10,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e87ec6c16eba4ee2838308b5833bd1c72465ddf57594e1ab4f9fa950274c3fdb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3m6n9q8j",
@@ -48,7 +54,13 @@
     "level": 8,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e2a1bf6eebc1ccf9f41b725278012fc24de4a733225a6152b473304cd647142b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3r3w8m2k",
@@ -93,7 +105,7 @@
   },
   {
     "id": "c_4k3a4y4e",
-    "ja": "当時、もうチームを率いていた。",
+    "ja": "その時点で、チームを率いた経験があった。",
     "en": "By then, I'd already led a team.",
     "alternatives": [
       "I had already led a team by then.",
@@ -105,7 +117,13 @@
     "level": 9,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8ad5a321ad1765815a77f1878df0d768b938b3cce08467aa5b749d840073b54d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4m6x4g8h",
@@ -121,11 +139,17 @@
     "level": 8,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:24eba5c311b9d2a394de48bacc323e86c9e60f42d83f33f438e2b5b03381a339",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4u7e3s9x",
-    "ja": "活きるのはここだと思う。",
+    "ja": "私が活きるのはここだと思う。",
     "en": "I think this is where I'll thrive.",
     "alternatives": [
       "I believe this is where I'll thrive.",
@@ -137,7 +161,13 @@
     "level": 9,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b87d96a6486539a076f73af5ad574a51a2acc02c89aec80a0ae6de0a458e54fe",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4v2c8p6a",
@@ -268,18 +298,24 @@
   {
     "id": "c_6j6k7d2t",
     "ja": "案件を担当して、次は統括したい。",
-    "en": "Having run projects, I want to lead.",
+    "en": "Having managed projects, I'd like to lead.",
     "alternatives": [
-      "Having managed projects, I want to lead.",
-      "Having run projects, I'd like to take the lead."
+      "Having run projects, I'd like to take the lead.",
+      "Having managed projects, I now want to lead."
     ],
     "point": "Having + 過去分詞で「〜した経験を経て」",
     "topic": "work",
     "subtopic": "job-interview",
-    "level": 9,
+    "level": 8,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:53a39132d2b332a61e6928354957805dcbc9d63bb05f81ed40c57d7e48cda49e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6u2p2r4a",
@@ -384,19 +420,25 @@
   },
   {
     "id": "c_7x4g9x8h",
-    "ja": "退職してから、フリーで働いています。",
-    "en": "I've been freelancing since I left my job.",
+    "ja": "辞めてから、フリーで働いてる。",
+    "en": "I've been freelancing since I quit.",
     "alternatives": [
-      "I've freelanced since I left my job.",
-      "I've been freelancing since I quit my job."
+      "I've freelanced since I quit my job.",
+      "I've been freelancing since I left my job."
     ],
     "point": "since の後は過去形、主節は現在完了（進行形）",
     "topic": "work",
     "subtopic": "job-interview",
-    "level": 10,
+    "level": 6,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b124003b7ee9f6662fa3630725b68847ec2eb7f12b69a1e76229700a99f71f57",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8e7k8e4v",
@@ -435,7 +477,13 @@
     "level": 8,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:54b75016de9c69196ead14d308bbd800c80c374e021cf7f0ba8d8adbcf16d48b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8r5c4r7t",
@@ -578,6 +626,12 @@
     "level": 10,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ab05429da79bf82d5d228aa49a171f2573154657d1d1e3e77efa7b7e903d776c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

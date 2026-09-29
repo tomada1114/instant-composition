@@ -54,10 +54,16 @@
     "point": "said の後は過去形に合わせる（時制の一致）",
     "topic": "work",
     "subtopic": "feedback",
-    "level": 10,
+    "level": 8,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f7c8bf02a3b6da33928269e74c2f3b0d5a08a4f9aa3645cae6e0945af16e1761",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3m2x3b7s",
@@ -73,7 +79,13 @@
     "level": 9,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a470cfe45983d853033039e15708447b43fa91cda5caaf659fa12a95bd92dc8b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3q5x6t3m",
@@ -108,7 +120,13 @@
     "level": 8,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6edd829b727c6083aa6771bd08920eb3dcb95bb567ed8d974dbc28ca5fbddd74",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4w9z3c2r",
@@ -124,7 +142,13 @@
     "level": 10,
     "grammar": ["inversion"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:14c83105c25015451658f41bb114542fa81ee2aaf5edd4cff473c271f9cb952d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5d9b8j2t",
@@ -181,10 +205,16 @@
     "point": "make + 人 + 原形で「〜させた」",
     "topic": "work",
     "subtopic": "feedback",
-    "level": 9,
+    "level": 8,
     "grammar": ["causatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9506e885af6d635315a6404b1ca64c88f437273d69c2e7e3cd572d2ae88a8442",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6d9m4z4j",
@@ -197,10 +227,16 @@
     "point": "過去の残念さは wish + 過去完了",
     "topic": "work",
     "subtopic": "feedback",
-    "level": 10,
+    "level": 7,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:027212288026310d61267592882f8325746119f4a74bcb01b13a8ce3c5eebbfb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6j9f9h8c",
@@ -333,10 +369,16 @@
     "point": "今の希望は wish + 過去形。were を使う",
     "topic": "work",
     "subtopic": "feedback",
-    "level": 8,
+    "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8c69c64e25bdc5b688a90d761fa8f47efc74a7f4e1d0993515a1f0389c22877e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7j4y4q4q",
@@ -352,7 +394,13 @@
     "level": 9,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6b22a44fae882cdc1e9837365e9f32c3214e2bfe17b12bb6fdfa0c61f7ec5d71",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7k5x5w8e",
@@ -507,7 +555,13 @@
     "level": 8,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a8e82302f27f884885274fd63b2045f5d2897716d0f83d93c342087a906ee773",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9p8q6g6r",

@@ -13,7 +13,13 @@
     "level": 10,
     "grammar": ["inversion"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:56e92976215051d12f0da5ce35aebdc73758540edff1f4394350d6cda3ff8470",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2k8s7y7e",
@@ -67,10 +73,16 @@
     "point": "過去の仮定 + 今の結果は would be",
     "topic": "work",
     "subtopic": "requests",
-    "level": 9,
+    "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:28bd5f5d52f107b554635f3c415696bee5c9cced700dee1c8fa7fea895c596db",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2v4t5q7v",
@@ -127,23 +139,35 @@
     "level": 10,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4be7c352bd835ade0539951b39a7ed8c590e533867f68bf4e333ec1d2aa6e887",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4b5z6p4b",
     "ja": "この件を引き受ける余裕はない。",
     "en": "I can't afford to take this on.",
     "alternatives": [
-      "I don't have room to take this on.",
+      "I don't have the capacity to take this on.",
       "I don't have the bandwidth for this."
     ],
-    "point": "room to 原形で「〜する余裕」",
+    "point": "can't afford to + 動詞で「〜する余裕がない」",
     "topic": "work",
     "subtopic": "requests",
     "level": 8,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:474f2ccef5587a0ed12d2094331d9ee5552a8a75cdb70d33e75022f2e20d890b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4x3h9j8f",
@@ -219,10 +243,16 @@
     "point": "have + 人 + 原形で「させる」",
     "topic": "work",
     "subtopic": "requests",
-    "level": 9,
+    "level": 8,
     "grammar": ["causatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6e123904d20de64e2933f1e1784419a2de3baa225fb5cd2b5e6e8f2dc8f027d1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5s9q8a5g",
@@ -257,7 +287,13 @@
     "level": 8,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:71cd1dc7bed784408b40f0f8fbae2724cf7c57c09b930b9dcb1423559226cf0a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6d7y9z8f",
@@ -393,7 +429,13 @@
     "level": 8,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:784a5cb9ba4e60aeb2bec0e21ef174bbf0a786c49de2a890ceb75518a6f13fff",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7x8h3r9p",
@@ -401,6 +443,7 @@
     "en": "Should anything come up, call me.",
     "alternatives": [
       "If anything comes up, call me.",
+      "Let me know if anything comes up.",
       "Should anything happen, contact me."
     ],
     "point": "Should + 主語で if を省く倒置",
@@ -409,7 +452,13 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b45a4730a96e792ec72d7aa2e809864083e9262a74af2fe1c3b4c658785c5971",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8b7b3d5y",
@@ -466,7 +515,13 @@
     "level": 10,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3abd3ad728acd0a86adc8bdc9e436465129a9af7e3765a10baf8190ba8e373cc",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8g7j8y4r",

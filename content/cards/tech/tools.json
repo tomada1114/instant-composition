@@ -32,7 +32,13 @@
     "level": 8,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ec44317c128085e80685084e5167e508bd26103bb957eb191e8e9b2ad8f92336",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2c3p5k2b",
@@ -187,7 +193,13 @@
     "level": 9,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dbd0e658c82f8c34cff68aec3e2b401acf460e298ef68a85bac4ae94c211cf05",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4g8w9p8c",
@@ -235,8 +247,8 @@
     "ja": "遅いのはあのプラグインだ。",
     "en": "It's that plugin that's slowing things down.",
     "alternatives": [
-      "That plugin is what's slowing down the build.",
-      "That plugin is the one slowing down the build."
+      "That plugin is what's slowing things down.",
+      "That plugin is the one slowing things down."
     ],
     "point": "It's 〜 that 〜 で原因を強調する",
     "topic": "tech",
@@ -244,14 +256,20 @@
     "level": 9,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7debad39099c4de7cdc04273bc4e00a15d04df0abb0a9326a262fb1159305862",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5r6h8v5t",
     "ja": "確認してれば、時短できたのに。",
     "en": "If I'd checked, I'd have saved time.",
     "alternatives": [
-      "Had I checked, I'd have saved time.",
+      "I could have saved time if I'd checked.",
       "If I had checked, I'd have saved myself time."
     ],
     "point": "過去の反実仮想は if + 過去完了、would have",
@@ -260,7 +278,13 @@
     "level": 8,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d5f4de7fb7c8e624ad35c0d928b35a6553c526f593801ef0f3237d5ce079a6c3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5v2z4k8s",
@@ -462,7 +486,13 @@
     "level": 10,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6446da6ef7e2b4730bad31f321a456ee2237af457f5cc882f99cb0cd6584175b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8y8e5t8y",
@@ -470,6 +500,7 @@
     "en": "If we'd pinned versions, we'd be stable.",
     "alternatives": [
       "If we had pinned versions, we'd be stable now.",
+      "If we'd pinned it, we'd be stable now.",
       "Had we pinned versions, we'd be stable now."
     ],
     "point": "過去の仮定+今の結果。pin は「固定する」",
@@ -478,7 +509,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:48ed5f5fb5c9aafb1ccc66466fb032efb0cc305db19a201004129d87c98e385b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8z9y9r3p",
@@ -516,7 +553,13 @@
     "level": 10,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:77471b4693215036cc66d0680cf8610f144adce1c431d1f8722c07e7d9a30677",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9f5x5f8w",
@@ -532,7 +575,13 @@
     "level": 10,
     "grammar": ["inversion"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:560a065cc432588e97beac5fbb2c0e2158f823c1d25c7c61369282431fa24f5c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9f6n6t7j",
@@ -548,7 +597,13 @@
     "level": 9,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:15566f5acda3b8095f52b3b774953c627adc2e5497f80f2486f1028648ee0c8f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9r4d4b3t",

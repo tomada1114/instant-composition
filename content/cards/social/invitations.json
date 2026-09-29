@@ -1,11 +1,11 @@
 [
   {
     "id": "c_2a5g4m9t",
-    "ja": "来られるか、もう分かる？",
-    "en": "Do you know yet if you're coming?",
+    "ja": "来られるかどうか、分かる？",
+    "en": "Do you know if you can come?",
     "alternatives": [
-      "Have you decided whether you're coming?",
-      "Do you know yet whether you can come?"
+      "Do you know whether you can make it?",
+      "Have you figured out if you can come?"
     ],
     "point": "間接疑問の if 節は平叙文の語順",
     "topic": "social",
@@ -13,7 +13,13 @@
     "level": 8,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d4fe8970825d90729408c49c7846de2f68573199784b405607aaabeca48a0661",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2j2s8y6v",
@@ -250,7 +256,13 @@
     "level": 10,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:343f385370caef32e83fdd93b3b6b4eb446fbb3c2f6c93a0fec1375d938884a9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4s4n3b8p",
@@ -367,7 +379,13 @@
     "level": 9,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:39b188695c71ffdbd45cdcf56465325c2e132c61f10720c7f5d6ad0c31eb5ff1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5d9w8b2q",
@@ -421,7 +439,13 @@
     "level": 8,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9489f4915ddcd1a4e1260c2330d365969c68e5a6ebfd1e1afec05ff0825699bd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6q7q2b7g",
@@ -429,7 +453,8 @@
     "en": "If you'd asked, I could've gone.",
     "alternatives": [
       "I could have gone if you'd asked.",
-      "Had you asked, I could have gone."
+      "Had you asked, I could have gone.",
+      "If you'd invited me, I could have gone."
     ],
     "point": "過去の仮定は had + 過去分詞、could have + 過去分詞",
     "topic": "social",
@@ -437,7 +462,13 @@
     "level": 8,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f6df001d012bcbdcfeb3d619197cfe310a397a81d4122df045073469a99c1036",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7b9d2e5w",
@@ -485,7 +516,7 @@
   },
   {
     "id": "c_7z9k6s6a",
-    "ja": "私なら、その誘いは受けるけどね。",
+    "ja": "私なら、その誘いは受けるよ。",
     "en": "If I were you, I'd say yes.",
     "alternatives": [
       "I'd say yes if I were you.",
@@ -494,10 +525,16 @@
     "point": "If I were you で「私なら」とアドバイス",
     "topic": "social",
     "subtopic": "invitations",
-    "level": 9,
+    "level": 8,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a5092613776345e449c12607f6542823386fdd4df7f55586c66ed934702210d3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8p3p3h2k",
@@ -513,7 +550,13 @@
     "level": 10,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:84c54fdfa101def1195756a71633d2304a5a2214299d8ad78a1363f51edb35dd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8v8d5f7m",
@@ -548,7 +591,13 @@
     "level": 10,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2d01e3e674801bdcf56ed652739bebb18160f661fea55b10591481197bdc2bf9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9w3z8t7m",
@@ -564,7 +613,13 @@
     "level": 9,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8cd52c8bc8ec24cd65e21d127912d85c739b5c5724ed6eaccc4ece4785b44f8f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9y7p5c5d",

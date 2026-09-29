@@ -7,29 +7,41 @@
       "I think the bug he found is the cause.",
       "I think the bug he found caused it."
     ],
-    "point": "I think の中に the bug she found が入る",
+    "point": "I think の中に the bug he found が入る",
     "topic": "work",
     "subtopic": "reporting",
     "level": 8,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4d407c3ac21ebc2695f8fc81efed1fa9c8780ed70bfdcae9d0596e26bd061662",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2e9e8s7p",
-    "ja": "報告してたら、こうならなかった。",
+    "ja": "私が報告してたら、こうならなかった。",
     "en": "If I'd flagged it, this wouldn't have happened.",
     "alternatives": [
       "Had I flagged it, this wouldn't have happened.",
-      "If I had reported it, this wouldn't have happened."
+      "If I'd reported it, this wouldn't have happened."
     ],
     "point": "過去の仮定は if + had + 過去分詞",
     "topic": "work",
     "subtopic": "reporting",
-    "level": 9,
+    "level": 7,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:20c6728fa286f1e67ad9bf5f12e74ab9d6557d2e993c38348ec93941473adffc",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2k3z7u4h",
@@ -64,7 +76,13 @@
     "level": 10,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:76df0ecdd4013b42ff697ec5952aad6d4c9855c9c2e7e715f433cdacac17bf3c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2v5y9f3f",
@@ -141,7 +159,13 @@
     "level": 10,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:06c67c319f1d5d4382dc687f1a0a564ad749cb3d5d3d0553ca3b9bcfa9ddaad8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4d6x5q9s",
@@ -157,7 +181,13 @@
     "level": 9,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1f3afed417a7e3dc020f337e7451c3a8abc1d1989606a3824d82e1299753b239",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4m3j8y9u",
@@ -308,18 +338,24 @@
   {
     "id": "c_6h7q5x3y",
     "ja": "報告は金曜でもいいですか？",
-    "en": "Is it okay if I report Friday?",
+    "en": "Could I report back on Friday?",
     "alternatives": [
       "Is it okay if I update you on Friday?",
-      "Could I update you on Friday?"
+      "Is Friday okay for the report?"
     ],
-    "point": "Is it okay if で許可を求める",
+    "point": "許可を求めるときは Could I 〜？ が使える",
     "topic": "work",
     "subtopic": "reporting",
     "level": 8,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0c6ce998ffc27b2b69152693623486a0816404fd929f1dee048db1ce1399cc93",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6q4v4t5c",
@@ -431,19 +467,26 @@
     "en": "I wish I'd told you sooner.",
     "alternatives": [
       "I wish I had told you earlier.",
-      "I wish I'd let you know sooner."
+      "I wish I'd let you know sooner.",
+      "I should have told you sooner."
     ],
     "point": "過去の後悔は wish + 過去完了",
     "topic": "work",
     "subtopic": "reporting",
-    "level": 9,
+    "level": 8,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5dc498b2133a73592d6b18008d6ee4397eff373401e5245ffa780b3faf21cf92",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8f3g2j2e",
-    "ja": "先方に、この内容で承認してもらった。",
+    "ja": "先方に承認してもらった。",
     "en": "I got the client to sign off.",
     "alternatives": [
       "I had the client sign off on it.",
@@ -452,10 +495,16 @@
     "point": "get + 人 + to 原形。sign off は承認する",
     "topic": "work",
     "subtopic": "reporting",
-    "level": 10,
+    "level": 8,
     "grammar": ["causatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3a486350e2616daf4642692c0f45d12bf0e708b72392ccd16703fe3c7e4772ee",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8g8j9s3b",
@@ -575,6 +624,12 @@
     "level": 8,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7dccbc6b6d1903c2b6938281672c789abfe6036ac210f80f9d2d8e0656fd025",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

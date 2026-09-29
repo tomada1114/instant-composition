@@ -51,7 +51,13 @@
     "level": 10,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:733b1210d523fea07592bbaea276d2a84a6fbb5126cc233ce0f5fa9cae5abd2f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3j2h5n9z",
@@ -67,7 +73,13 @@
     "level": 10,
     "grammar": ["inversion"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dc92978799a2d38fcf9c10900cb4ed1b781c0ca5a98bd67f9848e7e556d0635d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4d4d7u2a",
@@ -182,10 +194,16 @@
     "point": "if + had + 過去分詞, would have + 過去分詞",
     "topic": "travel",
     "subtopic": "transport",
-    "level": 9,
+    "level": 8,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef08ff489b6934ab6844144dea3495923cc097c0fd4bc5ca2613fa59658d5477",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5q3q2a6s",
@@ -261,7 +279,13 @@
     "level": 10,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2879b35eeb1a767fc98cc641c096bb7034301010c51ed2c7398406eeb8367306",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6b8m2k8k",
@@ -296,7 +320,13 @@
     "level": 9,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c114eaf1456252b68bd9e4d85e123ea117aaee8a700979be1819638620b3e42d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6v2u8q8x",
@@ -353,7 +383,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4c5b2f69b67f1f7d9874e6127ee9e0ba29106b5a198f312fcb777f17032edc2b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7b2k5n5c",
@@ -422,7 +458,7 @@
     "en": "If the bus is late, I'll walk.",
     "alternatives": [
       "I'll walk if the bus is late.",
-      "If the bus runs late, I'll just walk."
+      "If the bus runs late, I'll walk."
     ],
     "point": "未来のことでも if 節は現在形",
     "topic": "travel",
@@ -430,7 +466,13 @@
     "level": 8,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ecc9b569747861acf8d388d2cc38b78901257c797134ecbcdfb2ccf60339b376",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8k9m2r5h",
@@ -508,10 +550,16 @@
     "point": "may have + 過去分詞で過去の推測をやわらげる",
     "topic": "travel",
     "subtopic": "transport",
-    "level": 9,
+    "level": 8,
     "grammar": ["hedging-softening", "modal-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c92fe4cd10b3d0c7ee74596dbd89e8f5d3a551098c0356fd4cc3bc72185a9d6d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9d3s9c7q",
@@ -550,7 +598,13 @@
     "level": 8,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:12d60fed9c8f7275390a3e0dd6f74c8ee4f3b7f1f0d368128214bede4f911aa6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9v5k3a8y",

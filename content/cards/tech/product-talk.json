@@ -73,7 +73,13 @@
     "level": 9,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:68a3c5dc1e0b29ba115c364f936fc77b2ab4ea0d1ca2d1e924e699880f1260d5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2x7s5m5n",
@@ -89,7 +95,13 @@
     "level": 8,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6c5515d577f66f5d4105decf8a1b86017d001d8570d73f431209681895076824",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3g9h4g4q",
@@ -184,7 +196,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:87c60e1f190c1c0c0460cb773427a8d636b8480084b5055997821fb2698a84ed",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4p8q5n7w",
@@ -299,10 +317,16 @@
     "point": "might be better off で控えめに提案する",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 10,
+    "level": 8,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ca5884188b84f1fbd61dfceeba1a569ea9f11bb98ef64e48832194884149e89a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6f6a7q6d",
@@ -345,18 +369,21 @@
   {
     "id": "c_6y5p6n7y",
     "ja": "そのバグは金曜に修正されます。",
-    "en": "The bug gets fixed on Friday.",
-    "alternatives": [
-      "The bug will be fixed on Friday.",
-      "That bug is getting fixed on Friday."
-    ],
+    "en": "The bug will be fixed Friday.",
+    "alternatives": ["They'll fix the bug on Friday.", "The bug gets fixed on Friday."],
     "point": "修正「される」は受動態。行為者は言わない",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 9,
+    "level": 5,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e67bcb3182be315a6d0d13d9f18a17483cafd0461661c5819479bfab36ceb8f5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6y7b2x2j",
@@ -383,7 +410,7 @@
     "en": "If we'd shipped first, churn would be lower.",
     "alternatives": [
       "If we had shipped it first, churn would be lower.",
-      "Had we shipped it first, churn would be lower."
+      "If we'd shipped sooner, churn would be lower."
     ],
     "point": "過去の仮定 + 今の結果は if had + would be",
     "topic": "tech",
@@ -391,7 +418,13 @@
     "level": 10,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:40b0a0576c214d69bb7bdeee34f7a0a9ee6c24ac563f5fa0fdca554dc72a4080",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7j3t9v8p",
@@ -451,7 +484,13 @@
     "level": 10,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7bddad30597e0c7078081cdeb75fec579e266be5665a300a060ed734ad0fa79f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8y7m7r5b",
@@ -530,7 +569,13 @@
     "level": 8,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f1347b550d4379668a751f21aae9ff023ad1b5f73b42528da0ba697526ac98a6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9j4s6f4p",
@@ -546,7 +591,13 @@
     "level": 9,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0bdaefbbc01f9bdbbcc404c3afcbb640001500ee8b0b5366890ca8acc149349a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9x9g4h4c",

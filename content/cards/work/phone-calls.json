@@ -13,7 +13,13 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d8c9ee232192f6c2175fe60927d1e510f8306d073ccde5c8dd9355b2f52156b0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2z3p7q6u",
@@ -29,7 +35,13 @@
     "level": 8,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:13fbbe6772962f0a970bcb5e03b3cb2f28b0bd439277603e5203b97fcf09bc5c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2z4g4w9z",
@@ -78,15 +90,21 @@
   {
     "id": "c_3d8e2e8h",
     "ja": "彼、私の電話を無視したに違いない。",
-    "en": "He must have screened my call.",
-    "alternatives": ["He must have ignored my call.", "I'm sure he screened my call."],
+    "en": "He must have ignored my call.",
+    "alternatives": ["He must have screened my call.", "I'm sure he ignored my call."],
     "point": "must have + 過去分詞で過去の強い推量",
     "topic": "work",
     "subtopic": "phone-calls",
     "level": 10,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f661e74d86857dc4dc3bf3405d3bbc33831c2bfcd0340a6048249a179aadd2fc",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3g5g2g3p",
@@ -140,7 +158,13 @@
     "level": 10,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c627973d097602d954dc04eef494a8ef9e054eb6cc63f0d544cfdcbb8cf88528",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4j3a7e5g",
@@ -238,10 +262,16 @@
     "point": "It's + 強調語 + that で「途切れるのは音声」を強調",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 10,
+    "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7cac94157d9f0b24eb30cfc6ab3dd7cede7629c7f2d9ea2cd447097f95c0c8fb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6r5h2a7g",
@@ -257,7 +287,13 @@
     "level": 8,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bd76febce533b1e17e37d40fe027faaf4d29fc46fb443879904e57676ec1eb9c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6t4z4z4t",
@@ -368,7 +404,13 @@
     "level": 8,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3bb50ddcbb7d20926426d931609cb299a73079f983d319c821027431eff545c6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7u6u3d5z",
@@ -510,15 +552,21 @@
     "level": 9,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:665f2e1215d679f6c030c7b2b5ce879aae810bcf877e036bf9627b91c92d52ee",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9s4x7q6t",
     "ja": "大きな声なら、聞き取れるのに。",
-    "en": "If you spoke up, I'd hear you.",
+    "en": "If you spoke louder, I could hear you.",
     "alternatives": [
-      "I could hear you if you spoke up.",
-      "If you spoke louder, I'd hear you."
+      "If you spoke up, I could hear you.",
+      "I could hear you if you spoke louder."
     ],
     "point": "現在の仮定は if + 過去形, could + 原形",
     "topic": "work",
@@ -526,7 +574,13 @@
     "level": 9,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f7a459edf75b66facaefb02fad2f92f41a25915a901d43ce7efa88f0ec88bc8a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9s7q2y5d",

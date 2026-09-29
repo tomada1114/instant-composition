@@ -27,15 +27,21 @@
     "en": "A friend got me to try yoga.",
     "alternatives": [
       "A friend talked me into trying yoga.",
-      "A friend got me trying yoga."
+      "A friend pushed me to try yoga."
     ],
     "point": "get + 人 + to do で「〜してもらう・させる」",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 9,
+    "level": 8,
     "grammar": ["causatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:969863eb0caa5e7f74af32c744d8e3619858a201b756fd2213af1d5378bd57ca",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3g2j4g6w",
@@ -100,10 +106,10 @@
   {
     "id": "c_4k3c2c6x",
     "ja": "続けていたら、今ごろ上手なのに。",
-    "en": "If I'd kept up, I'd be good.",
+    "en": "If I'd kept it up, I'd be good now.",
     "alternatives": [
-      "I'd be good now if I'd kept at it.",
-      "If I'd kept practicing, I'd be good now."
+      "If I'd kept at it, I'd be good now.",
+      "I'd be good by now if I'd kept practicing."
     ],
     "point": "過去の仮定 + 今の結果は had done と would do",
     "topic": "daily",
@@ -111,7 +117,13 @@
     "level": 9,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:04c7a040c257b6eded88572f1dd8dfac80fffb4814e0957fa7d620dd13e16cdf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4k3t7h3f",
@@ -127,23 +139,13 @@
     "level": 9,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
-  },
-  {
-    "id": "c_5a4g9c3t",
-    "ja": "時間があれば、陶芸を試すのに。",
-    "en": "If I had time, I'd try pottery.",
-    "alternatives": [
-      "I'd try pottery if I had the time.",
-      "I'd give pottery a go if I had time."
-    ],
-    "point": "仮定は if + 過去形、結果は would + 原形",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 8,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2a904fa3d5871011465140c4cac00a844b316f9e46a14994f03d5f76e3dcec58",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5e6y6x3z",
@@ -197,23 +199,35 @@
     "level": 8,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:148c955e2cf3f5f1eef2bd6db714aab0f7e1d2c6390cdc450464f44a9d6c02f6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5t2e8d8p",
     "ja": "妻に誘われて、釣りにはまった。",
     "en": "My wife got me hooked on fishing.",
     "alternatives": [
-      "My wife got me addicted on fishing.",
+      "My wife got me into fishing.",
       "Thanks to my wife, I got hooked on fishing."
     ],
     "point": "get + 人 + hooked on で「はまらせる」",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 10,
+    "level": 8,
     "grammar": ["causatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7a13a9213ae520fef7572ff927816e26a15ba083e8fbcaea12cb241aa4294cd3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5w4n2y7m",
@@ -333,6 +347,28 @@
     }
   },
   {
+    "id": "c_7d4f8a4y",
+    "ja": "陶芸を勧めてくれたのは、姉だった。",
+    "en": "It was my sister who suggested pottery.",
+    "alternatives": [
+      "It was my sister who got me into pottery.",
+      "My sister was the one who suggested pottery."
+    ],
+    "point": "It was ~ who で「人」を強調する",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:be22b65977627c891bc5d0678c9ada020c374e3f97e521114ef74ae73f86d5b1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_7n6c5a5y",
     "ja": "知ってたら、参加したのに。",
     "en": "If I'd known, I'd have joined.",
@@ -346,7 +382,13 @@
     "level": 7,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:903139c6ca45bb9eae5c688e3dcefa72575b2eae2fc2e8edb253a2de8a9edeba",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7s7b6f4z",
@@ -447,7 +489,13 @@
     "level": 8,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0099367cf00eea3530a5a97a62d9c4031c6224c4dbc2516a2d973790c5e5cb41",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8x9f8w9r",
@@ -538,10 +586,10 @@
   {
     "id": "c_9k5k4x2x",
     "ja": "私が合唱団やめたって、誰が言ったの？",
-    "en": "Who told you I'd quit the choir?",
+    "en": "Who said I'd quit the choir?",
     "alternatives": [
-      "Who said I'd quit the choir?",
-      "Who's telling you I quit the choir?"
+      "Who told you I'd quit the choir?",
+      "Who said I had quit the choir?"
     ],
     "point": "quit の時制は主節に合わせて I'd quit",
     "topic": "daily",
@@ -549,7 +597,13 @@
     "level": 10,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1b5325276049505ef1765a70e63e52274910abb5ff1cd4dc7f407303f9fd0e83",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9k6s5y9j",
@@ -565,7 +619,13 @@
     "level": 10,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:42f47bab8643d57355a19f42a97dfef81d7fdd967230e930e0ae6af719eb6dbd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9n3a2b4a",

@@ -32,7 +32,13 @@
     "level": 8,
     "grammar": ["articles-and-countability", "present-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:38e5a00cdebd92611c52908631aed192121c569bc5680dc8add5034ffe2d3f9d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3j8v3k2p",
@@ -86,7 +92,13 @@
     "level": 10,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9a7f92eef3f30c2afb7ede3427e5a9ae0c2807d0ddef5e59faf6ce4effb053cf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4m4r8a9h",
@@ -102,7 +114,13 @@
     "level": 8,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:365ff92396e1b145d2d59a554916b8d86a494992706a85e200b567dd30f38fd8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4u7b5f5t",
@@ -134,7 +152,13 @@
     "level": 9,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:301bfbd0b9dfc83559ea5739bd2724763ef95dbf240ca26f7e6f6bdd624f922b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5m5t9k5u",
@@ -232,7 +256,13 @@
     "level": 10,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:588fb4a85166da970fe1e183da8c5536dfb6732b00db4f4456c45d5678382d58",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6s8r9m5z",
@@ -259,7 +289,7 @@
     "en": "What I need today is a review.",
     "alternatives": [
       "A review is what I need today.",
-      "The thing I need today is a review."
+      "What I want today is a review."
     ],
     "point": "What 節が主語。be 動詞の後に名詞が来る",
     "topic": "tech",
@@ -267,7 +297,13 @@
     "level": 8,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9556ea4e01974a86c4eef32ef25a794d03a88680adc36c965518c0e9d78ebffe",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7a5f6t9u",
@@ -350,19 +386,25 @@
   },
   {
     "id": "c_7z6k5a7u",
-    "ja": "レビュー待ちで、先に進めません。",
-    "en": "Blocked on review, I can't move forward.",
+    "ja": "レビュー待ちで進めません。",
+    "en": "Blocked on review, I can't proceed.",
     "alternatives": [
       "Waiting on review, I can't move on.",
-      "Being blocked on review, I can't move on."
+      "I'm stuck waiting on a review."
     ],
     "point": "分詞構文で理由を前に出す。主語は後ろと同じ",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 9,
+    "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4afcba3d51a8bd50d36977831185c4a4aa441dbc266b4d21d90c5d60dfc89e0c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7z7g9c9z",
@@ -468,7 +510,7 @@
     "en": "I should have flagged this sooner.",
     "alternatives": [
       "I should've raised this earlier.",
-      "I ought to have flagged this earlier."
+      "I should have shared this sooner."
     ],
     "point": "should have + 過去分詞で過去の後悔",
     "topic": "tech",
@@ -476,7 +518,13 @@
     "level": 9,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cf9eb69277d07fd850cfea7e8de4a520e02724e8d8d4aa8fe198b2e1c793c037",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9h3j5t8e",
@@ -500,9 +548,9 @@
   {
     "id": "c_9h9h4q3d",
     "ja": "頼まれた修正が遅れた理由、話します。",
-    "en": "I'll explain why the fix you wanted slipped.",
+    "en": "I'll explain why the fix you requested slipped.",
     "alternatives": [
-      "Let me explain why the fix you requested slipped.",
+      "Let me explain why the requested fix is late.",
       "I'll explain why the fix you asked for is late."
     ],
     "point": "why 節の中に、さらに関係節が入る形",
@@ -511,7 +559,13 @@
     "level": 10,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:26fd8085ec26d03a008fea6b1e8d6eedc899744a13753092f22704949c56b093",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9p9x4j8g",

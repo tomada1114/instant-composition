@@ -13,7 +13,13 @@
     "level": 8,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:51d63311bb2cb2ff015644754341050cdda5bd202a005edf85094706f25e83a7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3c8w9s7r",
@@ -29,7 +35,13 @@
     "level": 9,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bc72c727b562e316ffa91301a272b59458c8989fdaf286d0a28bd1f85acaa4c0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3d7d3t4w",
@@ -89,7 +101,13 @@
     "level": 10,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:876b085e53f6c7df29b98e92dcd25ea709dda5b4e0775219364332a02c4c191b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3t3r4v3a",
@@ -138,10 +156,11 @@
   {
     "id": "c_3w9j5h6q",
     "ja": "これ、法務にも見てもらってください。",
-    "en": "Please get legal to look this over.",
+    "en": "Please get legal to look at this too.",
     "alternatives": [
       "Please get legal to review this too.",
-      "Please have legal look this over."
+      "Please have legal look at this too.",
+      "Please get legal to look this over too."
     ],
     "point": "get + 人 + to 原形、have + 人 + 原形",
     "topic": "work",
@@ -149,7 +168,13 @@
     "level": 10,
     "grammar": ["causatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cf2ccade802c75c1a2833d3569bffd8ca5531a3c1d6aa6f2ee4577f70f8b0217",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3x8v2d8g",
@@ -203,7 +228,13 @@
     "level": 10,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:17b28f226d948c61c2fbf3c16823d4ad65d42d59bdcf5fa108c0247ea7bcfeea",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5g6s8v5u",
@@ -301,10 +332,16 @@
     "point": "have + 人 + 原形。get は to が必要",
     "topic": "work",
     "subtopic": "email-chat",
-    "level": 8,
+    "level": 6,
     "grammar": ["causatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2db21f88e683e9499613c7b569b74ddc4f0a2d70bae89f64579071f8df6904f7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7u2a2h2j",
@@ -355,10 +392,16 @@
     "point": "if + 過去完了、would have + 過去分詞",
     "topic": "work",
     "subtopic": "email-chat",
-    "level": 9,
+    "level": 8,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:09d0d17c45676a7ed1d3e342cbebf360e575427294521db294e4586d6e87527a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8d3g4b5f",
@@ -557,15 +600,21 @@
     "level": 9,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ea9013bf1e792007d7080ba27e604e2cc92ef4724a0ab953e06146da7fc79339",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9y3f2c4n",
     "ja": "忙しいとは思うけど、確認お願い。",
-    "en": "Although you're busy, could you check this?",
+    "en": "I know you're busy, but please check.",
     "alternatives": [
-      "Even though you're busy, could you take a look?",
-      "I know you're busy, but could you check this?"
+      "I know you're busy, but could you check this?",
+      "Although you're busy, could you check this?"
     ],
     "point": "Although の節に but は重ねない",
     "topic": "work",
@@ -573,6 +622,12 @@
     "level": 8,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0b2765358c7cdd42868a0857f1d552420631b915cf261e0ced7aec26e04f52fe",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

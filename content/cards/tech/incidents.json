@@ -13,7 +13,13 @@
     "level": 10,
     "grammar": ["inversion"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7333472efc1f902a6d08bca945fb7fd3ac4b17f03cf82d6444ade34df6c9ad2a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2r2h5u4c",
@@ -21,15 +27,21 @@
     "en": "I wish I'd stopped that release.",
     "alternatives": [
       "If only I'd stopped that release.",
-      "I wish I had held off on that release."
+      "I wish I'd held off on that release."
     ],
     "point": "過去の後悔は wish + 過去完了",
     "topic": "tech",
     "subtopic": "incidents",
-    "level": 9,
+    "level": 7,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5909825ea54896cd3ad12d3c762b224be176d29df1f5c26fd2008782c99ad307",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2v9b4u3r",
@@ -67,7 +79,13 @@
     "level": 8,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b21904c9ee2257403c5d6aae9e28309196af26a6ddde14cb2cd90d4ef4f4fd16",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3j2v6u4j",
@@ -83,7 +101,13 @@
     "level": 8,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:128c946ae8334ca574744bf3963e9c4924475b85ea48d0b1e93399f69ee9e8c5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3r3j5q8x",
@@ -99,7 +123,13 @@
     "level": 9,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9113a8d52695ed5d5fe9e7f2044a24ba39ae0e776d98f66ca3a627f74ac85859",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3s4f7h9d",
@@ -115,7 +145,13 @@
     "level": 9,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6d242c4820a821cc0bcafc12608e7afad27432193842eeb874b2b2d830630172",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4d4b2v7t",
@@ -214,7 +250,13 @@
     "level": 10,
     "grammar": ["hedging-softening", "modal-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a34d5caa76bd7f82fc183135f8a9fa56712cec0db0decc4dada8912320a04038",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4v2f9t3r",
@@ -312,10 +354,16 @@
     "point": "users in ~ と前置詞句で後ろから修飾",
     "topic": "tech",
     "subtopic": "incidents",
-    "level": 8,
+    "level": 6,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:02c82f5b2b7d84a895e05a5f4f4f2ea0ab8c7e0f886b76253bc0dbb65d90091f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6p4s6j7a",
@@ -386,10 +434,10 @@
   {
     "id": "c_7c4h9n9c",
     "ja": "私が閾値を早く見直してればなあ。",
-    "en": "I wish I'd tuned the thresholds sooner.",
+    "en": "I wish I'd revisited the thresholds sooner.",
     "alternatives": [
-      "If only I'd tuned the thresholds earlier.",
-      "I wish I had revisited the thresholds sooner."
+      "If only I'd reviewed the thresholds earlier.",
+      "I wish I had reviewed the thresholds sooner."
     ],
     "point": "wish + 過去完了。thresholds は複数形",
     "topic": "tech",
@@ -397,7 +445,13 @@
     "level": 10,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:deba61d8ae33687c26eef6f7ccee29545ae4e56a8a985f9e9501b671a5464192",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7q7m9q2z",

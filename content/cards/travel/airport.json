@@ -13,7 +13,13 @@
     "level": 8,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f678f634f59e0e819c59064b024ae655b3a4cc73588011f45da24e6c5d814614",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2s7f3v7a",
@@ -96,11 +102,11 @@
   },
   {
     "id": "c_4j4p2g5s",
-    "ja": "遅れると彼女が言ったのは、これ？",
-    "en": "Is this what she said was late?",
+    "ja": "彼女が遅れていると言った便は、これ？",
+    "en": "Is this the flight she said was delayed?",
     "alternatives": [
-      "Is this the flight she said was late?",
-      "Is this the one she said was delayed?"
+      "Is this the one she said was delayed?",
+      "Is this the flight she said was running late?"
     ],
     "point": "関係詞の中に I heard が入り込む形",
     "topic": "travel",
@@ -108,7 +114,13 @@
     "level": 8,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5b38b1d84d486733cdda94b339dcc4f0f891d99c43c9811acd4068a68c15785b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4k3p5p9p",
@@ -184,7 +196,13 @@
     "level": 9,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:be3d193c92b651588784d9b58e9f488e4b2852520464190ec001e9df4076feed",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4z9k4b5b",
@@ -200,7 +218,13 @@
     "level": 10,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8c3c67e62ac87b5b5607d221b6d98f03da25af086019379e60ac7930aa1ed880",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5b9w5d9z",
@@ -235,7 +259,13 @@
     "level": 8,
     "grammar": ["causatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4d682f328bd85571aef66379dd49760f0fe49e3f847852a1a67eee905a20f0f2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5g4d4c7y",
@@ -251,7 +281,13 @@
     "level": 10,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d61bece5a666d555d86a7cb209bf620ca250b20579db3c865f93b179c60ad7f4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5q6x9v8c",
@@ -290,7 +326,13 @@
     "level": 9,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:971cd5af76b35a3b9d17b6bad5222b25adc855f684c786bb5c303b58e9f81297",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6j8v9u4v",
@@ -298,7 +340,8 @@
     "en": "Would a window seat be available?",
     "alternatives": [
       "Would there be a window seat available?",
-      "Is there possibly a window seat available?"
+      "Is there possibly a window seat available?",
+      "Do you have any window seats available?"
     ],
     "point": "Would で丁寧に婉曲。Do you have より控えめ",
     "topic": "travel",
@@ -306,7 +349,13 @@
     "level": 6,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b0c28077d8f422406fba55a05f8f0151cedbf542840e7bdce628d5506960cea7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6m3t3h7p",
@@ -470,7 +519,13 @@
     "level": 7,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2f639094a31315699d0c5f1854ede2c785e4858f1cdc7a664703956d2c1a9459",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8s9s2f8h",
@@ -508,7 +563,13 @@
     "level": 10,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cf462531d336a509ad0010cf316c60c6279cd97f5cd1de680719b404f42112cc",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9d3m2a3g",
@@ -581,7 +642,8 @@
     "en": "What delayed our flight was the weather.",
     "alternatives": [
       "It was the weather that delayed our flight.",
-      "The weather is what delayed our flight."
+      "The weather was what delayed our flight.",
+      "The delay was caused by the weather."
     ],
     "point": "What で始めて「〜なのは、これだ」と強調",
     "topic": "travel",
@@ -589,7 +651,13 @@
     "level": 9,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c6d9534a89dd2563fc77ad90b4c4f0f73bf9b4f15f46b73333baf8010100201d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9y8a8b2y",

@@ -35,7 +35,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5fce712f6c6097fbf2e4302150910c8205436d48f362279b4d8153dca1a35c59",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2p3c9j9e",
@@ -111,7 +117,13 @@
     "level": 10,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:03b7bd41498dc6d9fdb638bde2a8924dd8b6ea897f00af0a4ec6a6786ab04dbc",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3x2k2s9c",
@@ -188,7 +200,13 @@
     "level": 8,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e68ae1178b1ef2d48c9dabdb72949e96c01f7f47df1413541cb3690b976fcda5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4n2h3t7s",
@@ -274,7 +292,7 @@
   },
   {
     "id": "c_4y9c9p3g",
-    "ja": "その頃、試作品を仕上げていた。",
+    "ja": "その時までに、試作品は仕上げてあった。",
     "en": "By then, we'd finished the prototype.",
     "alternatives": [
       "By then, we had completed the prototype.",
@@ -286,7 +304,13 @@
     "level": 9,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:708ced4de5fb0586c51e95a7776c9dde124a2e619c80e78e17f8c42238188c55",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5r9h2z9k",
@@ -302,7 +326,13 @@
     "level": 10,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:29b277fcaca416c9a81e4307f5eb744a3e7fefbf79ddfda6c0d6fce41e45cb55",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5w9v7g8t",
@@ -318,7 +348,13 @@
     "level": 10,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:194c583bf9098927b033b56c97b40d10a4eefa329d27834b420ebfb8b5ea88cc",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6k4u5g2g",
@@ -419,7 +455,13 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cdb33a6cd26c657faef4e239aa4b1c39b50dac9c7237a98ec1db9260681ec9a0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7t6z2q3j",
@@ -443,18 +485,24 @@
   {
     "id": "c_7y4m8k8m",
     "ja": "ご質問のあった点を説明します。",
-    "en": "I'll explain the points you asked about.",
+    "en": "I'll explain the point you raised.",
     "alternatives": [
-      "I'll go over the points you asked about.",
-      "I'll explain the points that you raised."
+      "I'll go over the point you asked about.",
+      "I'll explain what you asked about."
     ],
     "point": "関係詞 that は目的語なら省ける",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 8,
+    "level": 6,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a0642e19a0fe7007770df61ecb6d3877071452f071e563a54cbbbe2230c065e8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8c9a5q7r",
@@ -489,7 +537,13 @@
     "level": 9,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:14e24da992ea8bc730c4b4a4d58f508998ce6b4688032ad17ca7b7cea94f5e48",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8h4k8a6n",

@@ -13,7 +13,13 @@
     "level": 8,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ffb4c64a81c1ae23e51044e5ffcddbe867dd38a53e803e353025e90ca89d197d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2n7u8p8h",
@@ -161,7 +167,7 @@
   {
     "id": "c_4p3w4t2f",
     "ja": "君が言ってたお店、閉店したらしいよ。",
-    "en": "I hear the place you mentioned closed.",
+    "en": "I hear the place you mentioned closed down.",
     "alternatives": [
       "Apparently the place you mentioned has closed.",
       "I heard the restaurant you told me about closed."
@@ -172,7 +178,13 @@
     "level": 10,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c32a060b833714175774e134365a795f162a3960ca52289ceb956f31a9435648",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4x3j3p7r",
@@ -188,7 +200,13 @@
     "level": 8,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d1d56be51dd17d1934818baa024006587bc20da964a19da659c721eb68d7edea",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4x4p9d6k",
@@ -268,7 +286,13 @@
     "level": 9,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:903fb38ca8d070519ee0c8ed3dd9abe8a9caf90a8e4a4f5b6c2d369e223a66ff",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5x7s5p3h",
@@ -392,19 +416,22 @@
   },
   {
     "id": "c_7y4k2u5t",
-    "ja": "やっと髪を短くしてもらった。",
-    "en": "I finally had my hair cut short.",
-    "alternatives": [
-      "I finally got my hair cut short.",
-      "I finally got a short haircut."
-    ],
+    "ja": "やっと髪を切ってもらった。",
+    "en": "I finally had my hair cut.",
+    "alternatives": ["I finally got my hair cut.", "I finally got a haircut."],
     "point": "have + 物 + 過去分詞「〜してもらう」",
     "topic": "social",
     "subtopic": "small-talk",
-    "level": 10,
+    "level": 6,
     "grammar": ["causatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:046521ad3050a292a9abd36227072568ba07e61b3d4e293ce72c8d20ae7fbf11",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8b3a8p5v",
@@ -483,7 +510,13 @@
     "level": 8,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:625f67be66c1b2c29b33e5c583a3dab07ccad74bd14a7041588fc9de8443c794",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8t5z4n7h",
@@ -526,18 +559,24 @@
   {
     "id": "c_9c4h9n8u",
     "ja": "週末はハイキングでもと思ってて。",
-    "en": "I was thinking of going hiking.",
+    "en": "I was thinking of hiking this weekend.",
     "alternatives": [
-      "I thought I might go hiking.",
-      "I'm thinking about maybe going hiking."
+      "I thought I might go hiking this weekend.",
+      "I'm thinking about maybe going hiking this weekend."
     ],
     "point": "was thinking で決めつけずに柔らかく言う",
     "topic": "social",
     "subtopic": "small-talk",
-    "level": 9,
+    "level": 8,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:db675de78cee37013b884060a93a37b86244624effce679e6ee8cceeba597c61",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9d8n3t8d",
@@ -553,7 +592,13 @@
     "level": 9,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7fdee7a51768ae4317d966292a4280e28f081d077edc457418f247557006b11b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9q9a6y3n",
@@ -583,7 +628,7 @@
     "en": "You must have gotten soaked without an umbrella.",
     "alternatives": [
       "You must have been drenched without an umbrella.",
-      "You must have got soaked with no umbrella."
+      "Without an umbrella, you must have been soaked."
     ],
     "point": "過去の強い推量は must have + 過去分詞",
     "topic": "social",
@@ -591,6 +636,12 @@
     "level": 10,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e048b7004b6b16d1f9deac720659ac27130d147f20def252b79cda736e2a51f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

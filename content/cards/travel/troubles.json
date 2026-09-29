@@ -99,7 +99,13 @@
     "level": 8,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c023b3a4c97f2a1b5d946d9e3069782b603c8e3b23572d4d8239578d2a7a94ff",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4d5j4t4z",
@@ -236,7 +242,13 @@
     "level": 8,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a3f9438236599e4414838d5b704339cfd588837609a3ea0398580bf59c50cd24",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5d9a9y5j",
@@ -252,7 +264,13 @@
     "level": 8,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:831165a0eadc7f81ae5bb02b6a9a6bf2b943172a3e4f8bbfbcaf9e78c1668555",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5q8q6k3r",
@@ -309,7 +327,13 @@
     "level": 10,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2adf51798aab6fc2e6f3908fcd1a20672ee124d5e37f986facb898fae4792558",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7j4w5p9q",
@@ -325,7 +349,13 @@
     "level": 9,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e263a7cb02da098f9327de2d10f1f1df7841e598b2b7b468250c88ee520912a0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7j7y8s2d",
@@ -371,7 +401,7 @@
   },
   {
     "id": "c_7y2x4u4h",
-    "ja": "別の便に振り替えは可能でしょうか？",
+    "ja": "別の便に振り替えは可能ですか？",
     "en": "Would it be possible to rebook me?",
     "alternatives": [
       "Is there any chance you could rebook me?",
@@ -380,10 +410,16 @@
     "point": "Would it be possible to 〜 で丁寧に頼む",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 10,
+    "level": 8,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fdcf6aebebeae894994084b67855fe5373aa82a97487b01c9bc2c4c24b59ed16",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8b6w3e6n",
@@ -418,23 +454,35 @@
     "level": 10,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8b3b18a6cbcf45885c2c78654005ec9a167c4d46c10eb97d94b20bd3dce1a95a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8m7t5w8p",
     "ja": "預けた荷物が届いていません。",
-    "en": "The bag I checked in hasn't arrived.",
+    "en": "The bag I checked hasn't arrived.",
     "alternatives": [
-      "The bag I checked hasn't come yet.",
-      "My checked bag still hasn't arrived."
+      "My checked bag still hasn't arrived.",
+      "The bag I checked in hasn't arrived."
     ],
     "point": "目的格の that は省略できる",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 9,
+    "level": 6,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:911c598f49895bf66fbf04d3896303eeb820ab8ddc077fe27c5f4b9ab1a67c9c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8q7g5m7r",
@@ -525,11 +573,11 @@
   },
   {
     "id": "c_9n4d5f7p",
-    "ja": "急いでいれば、間に合ったのに。",
+    "ja": "私たち、急いでいれば間に合ったのに。",
     "en": "If we'd hurried, we'd have made it.",
     "alternatives": [
-      "If we had hurried, we would have made it.",
-      "If we'd rushed, we'd have caught it."
+      "We'd have made it if we'd hurried.",
+      "Had we hurried, we'd have made it."
     ],
     "point": "「間に合う」は make it。過去の仮定は had + 過去分詞",
     "topic": "travel",
@@ -537,7 +585,13 @@
     "level": 9,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:abae3f4138e16297b4ec97241b543e45f0457529912d7c5e905af1b655127218",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9y2d7b6w",

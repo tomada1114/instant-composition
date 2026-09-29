@@ -10,10 +10,16 @@
     "point": "人を後ろから説明する who 節",
     "topic": "social",
     "subtopic": "favors",
-    "level": 9,
+    "level": 8,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c1ffdd2c3ed8014d30035a216e603cbd53e6fdf461510566ca2130f83882b272",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2k9x6n5h",
@@ -108,7 +114,13 @@
     "level": 10,
     "grammar": ["inversion", "nested-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cb093f69fd9f51e0ae5f2924930725d811925963452cb8d6176592caf886daf8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3j5u5t4p",
@@ -143,7 +155,13 @@
     "level": 8,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0a2bf9c34299e953027e71021c641241316fff5bc24e01ecb9d43bb2f9a3c74b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4c3x4q4d",
@@ -159,7 +177,13 @@
     "level": 10,
     "grammar": ["cleft-emphasis", "phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c5809c579e3b8329c33cde6a1249beefcdb94536b0103842df0dbf05afebfc89",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4d7b4u6z",
@@ -235,7 +259,13 @@
     "level": 9,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bff6815d227fd0f5b733642e5b5117037b719a4eb8e03109cc30c83fbddb2be4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5h2a9h7a",
@@ -311,7 +341,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e1d507e751f1fb3825904b2a128fd76b19608323a779a5b323b641596a219bf6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5x6r9w9x",
@@ -381,7 +417,13 @@
     "level": 8,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2b156bbde600a80f71a09ecd56e3a2f3276ce7f682a7955ff3825aefe66ad53f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6z3j3w8x",
@@ -460,20 +502,32 @@
     "level": 9,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:932dfa6015daca7cef87fced02943184927f5d5cb81051b185b86a25394636a8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7u8r3n4t",
-    "ja": "彼に頼んで送ってもらった。",
+    "ja": "彼に頼んで、車で送ってもらった。",
     "en": "I got him to drive me.",
-    "alternatives": ["I had him drive me.", "I asked him to drive me."],
+    "alternatives": ["I asked him to drive me.", "I got him to give me a ride."],
     "point": "get 人 to do は説得して〜してもらう。have は to なし",
     "topic": "social",
     "subtopic": "favors",
     "level": 7,
     "grammar": ["causatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:857ccf4993d393deed9200176f786f8b26c96c71796cb74dd2d9a397aa3c5efe",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7v4r4b4x",
@@ -497,15 +551,24 @@
   {
     "id": "c_8d4x3z2v",
     "ja": "頼みを断ることは、めったにないんだ。",
-    "en": "Rarely do I turn down a favor.",
-    "alternatives": ["I rarely turn down a favor.", "I hardly ever turn down a favor."],
+    "en": "Rarely do I turn down a request.",
+    "alternatives": [
+      "I rarely turn down a request.",
+      "I hardly ever say no to a request."
+    ],
     "point": "Rarely を前に出すと主語と助動詞が倒置",
     "topic": "social",
     "subtopic": "favors",
     "level": 10,
     "grammar": ["inversion", "phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c45a6729a8abf6d8f34759212cdec19de7c0cd1ff6073081e10ad88cd583969a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8y5p2h6m",

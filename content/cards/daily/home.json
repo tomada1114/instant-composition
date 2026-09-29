@@ -13,7 +13,13 @@
     "level": 7,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c1a67d8ac0107d7af1b3edc1d3b65f9bc8504e603d73dac1cdf8b2b375470bc0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2e5x7f6r",
@@ -48,7 +54,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5f9bb42497c088baedb723606b1ff398b2a7c1b1898de4f68aafc44327ae6ab9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2j4n5r7v",
@@ -102,7 +114,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0c100bd7997b7f149e826b526d2789aedfa6a3018b6085ee9fafe6552aa96424",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3s5w7x5s",
@@ -178,7 +196,13 @@
     "level": 9,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:97f67569e6309d37d8dd07096fd07c5448e0c865adf8af57ac371399a371b6df",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6b7z3d3h",
@@ -191,10 +215,16 @@
     "point": "「結局〜することになった」は end up + -ing",
     "topic": "daily",
     "subtopic": "home",
-    "level": 10,
+    "level": 8,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f1e571c7d33bfed66abaad693af44b98137dac3f67f354924e675eaed62a35f5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6e5f5q4s",
@@ -267,10 +297,16 @@
     "point": "今の願望は wish + 過去形（be は were）",
     "topic": "daily",
     "subtopic": "home",
-    "level": 9,
+    "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:06e63e4f8434a12f0c8da831af631a61bc7cdfc43421916369f2b9a84465731b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7k9t9w5j",
@@ -286,7 +322,13 @@
     "level": 9,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0673dc28feee6e5e7bdc396fcea16cfbca23b3e316933f7c1157a7154ef4b291",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7m6s6r7c",
@@ -321,7 +363,13 @@
     "level": 8,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5f0b477d30224913224b7eb9155b6aa419aa84286bebaaa21ecf8c2128b4539d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7q6g3z4j",
@@ -378,7 +426,13 @@
     "level": 10,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7c1149b29b5e95869f62b4ecdfbcab0a3a9ea01b7d19bc1f13252bdc53dd2410",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8t2j5e9g",
@@ -583,6 +637,12 @@
     "level": 10,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b50ec5d0829f93bf885c3b40e334c25746ee03b5c1f35616775b51c1affbefdd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

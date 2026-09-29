@@ -13,7 +13,13 @@
     "level": 10,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0b9820ddeb113813e93f9a5248880bdec2dc8954f08f0ae43d145b77c5d5f9fe",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2c7b4f2p",
@@ -67,7 +73,13 @@
     "level": 8,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f4d3b53a35a16341b1f60a1870c565042c7be31d13d077baa050826777535c60",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2j8m7g6g",
@@ -140,7 +152,13 @@
     "level": 10,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7333ad693d7147bb31ebee01636dd6ba9fb7d51c005c6ac53e99eb0cb4d06efc",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3k4a3r4k",
@@ -194,7 +212,13 @@
     "level": 9,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:77b0a2548cf106af4bb19175587edef5baee1f1ff76b53456542000d726d11ee",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4s6n8p5s",
@@ -248,7 +272,13 @@
     "level": 9,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9316511ab2c1e17152edf665524219161e678d5e6f483d1e7ccfbd37f898e572",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4z5x5d8y",
@@ -347,7 +377,13 @@
     "level": 8,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:219ee0cd61e149b585b3b7a703aa004acfb642999c03a819c2bf097de7b79386",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5g9d5t3g",
@@ -424,10 +460,16 @@
     "point": "Without + 名詞で if 節の代わりになる",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 10,
+    "level": 8,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d0947845e615ac698a2a52cfdc4be8338aea06098b6d876136a7c10fa9c55826",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6u3j6j8y",
@@ -525,7 +567,13 @@
     "level": 8,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:64beac0656235336f9e54dd7cee9ddb43fb171f1c5ad0379a7f77fb53b58cbfa",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9j5x3k3z",
@@ -560,6 +608,12 @@
     "level": 9,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9d5471eed0df90707504ff2fd6dfe393e7f467664c34fae82301c2aa140908c1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

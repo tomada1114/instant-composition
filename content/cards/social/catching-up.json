@@ -10,10 +10,16 @@
     "point": "said の後は時制を一つ過去にずらす（is→was）",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 9,
+    "level": 8,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a08d8ca3d693b793fae40a79e0a3f5403c01298f77b26237e238ac7dca0a0d62",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2h5s9c3s",
@@ -111,7 +117,13 @@
     "level": 8,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6b6a2d844575d3a1f544ae76e29ab97c6f89fbbad42671eb786cb8fb3b80a9d0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3b4w6e8y",
@@ -127,7 +139,13 @@
     "level": 10,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5d7cc063b648c2ccb76bf727c4a7d657fd8eaac610ba37c075cb2eb0801cf02d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3c3a5v9c",
@@ -203,7 +221,13 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:41fe8716d75e2dd052fcdb71a68fd8ec4b0d9153f70d2209ea615526c67bed7a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3s2e5q7q",
@@ -246,10 +270,10 @@
   {
     "id": "c_4s6h2z5n",
     "ja": "その頃は大変だったでしょうね。",
-    "en": "That must have been hard for you.",
+    "en": "That must have been hard back then.",
     "alternatives": [
-      "That must have been tough for you.",
-      "It must have been hard back then."
+      "It must have been tough back then.",
+      "Things must have been hard back then."
     ],
     "point": "過去の推量は must have + 過去分詞",
     "topic": "social",
@@ -257,11 +281,17 @@
     "level": 8,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:de620283067c469519532129ed7bad8bbf8a5c4ec266dff6c99ef2129c4d082a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4t9u4h8v",
-    "ja": "少し痩せた気がするんだけど。",
+    "ja": "君、少し痩せた気がするんだけど。",
     "en": "You seem to have lost some weight.",
     "alternatives": [
       "You look like you've lost some weight.",
@@ -273,7 +303,13 @@
     "level": 10,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bd326002bb31ef376df1a952df6e1077545f6f66e80d138950d69d6e5a0e40ea",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4y2z8a2u",
@@ -357,7 +393,7 @@
     "en": "If I'd stayed, I'd be manager now.",
     "alternatives": [
       "I'd be manager now if I'd stayed.",
-      "Had I stayed, I'd be manager by now."
+      "If I'd stayed on, I'd be manager by now."
     ],
     "point": "過去の条件は had + 過去分詞、今の結果は would + 原形",
     "topic": "social",
@@ -365,7 +401,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b65c1cac501ff1feb401098056fcee2abb9fa6fe766d46c6450e8e73ff1bc9b0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6d7k2v4g",
@@ -378,23 +420,35 @@
     "level": 1,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b9256559e1886d73c7d961972e1dba30dd983d2b80c21e18fef235e175e7fad3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6f6s3u9h",
     "ja": "あの旅行がなければ燃え尽きてた。",
     "en": "Without that trip, I'd have burned out.",
     "alternatives": [
-      "If I hadn't traveled, I'd have burned out.",
+      "I'd have burned out without that trip.",
       "But for that trip, I'd have burned out."
     ],
     "point": "「〜がなければ」の過去の話は would have + 過去分詞",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 9,
+    "level": 8,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:517783eeee6d793669886acffa8ed59b75b52ffbfb6c32f319b95d9b19648974",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6f8z5v8j",
@@ -531,16 +585,22 @@
     "ja": "誘ってくれていれば、行ったのに。",
     "en": "If you'd invited me, I'd have gone.",
     "alternatives": [
-      "If you had asked me, I would have come.",
-      "I'd have come if you'd invited me."
+      "I'd have gone if you'd invited me.",
+      "Had you invited me, I would have gone."
     ],
     "point": "過去の仮定は had + 過去分詞、結果は would have + 過去分詞",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 10,
+    "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:054652f3572e8a8ea735edb7c19f8f11369f98e7a7e452a0d6388c29dafe7000",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9j6c2b8j",

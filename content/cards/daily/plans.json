@@ -10,7 +10,13 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7ae5ea7327cf4219944f07857eab1d6fe0d20c9b2c1ae7a516e2b4ac36e25674",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2s2f8f9b",
@@ -37,10 +43,10 @@
   {
     "id": "c_2y9u4h7j",
     "ja": "約束してなきゃ、家にいるのに。",
-    "en": "If I hadn't agreed, I'd be home.",
+    "en": "If I hadn't promised, I'd be home.",
     "alternatives": [
-      "If I hadn't promised, I'd be at home now.",
-      "If I hadn't said yes, I'd be home now."
+      "If I hadn't made plans, I'd be home now.",
+      "I'd be home now if I hadn't promised."
     ],
     "point": "過去の仮定 had + 今の結果 would be",
     "topic": "daily",
@@ -48,7 +54,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7a5926a6b074229c1aff086b486475282560e42c75d5ac13b7b287d83d2086f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3c3w6z6v",
@@ -105,7 +117,13 @@
     "level": 8,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:20e32dbb84e4ec4caa298495c13fd5d2232dc759b65e9de2153df7d040854326",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3t9j6j6z",
@@ -276,7 +294,13 @@
     "level": 10,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:915725163c5fcc8ae869c40d6e9de070fa99b15fea4cc1dee59f9734d887b2f5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5n2y2p4f",
@@ -368,7 +392,13 @@
     "level": 9,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:81149a0769f67a5483569da25c3781ea679e583a34097b10d99091c24750b9da",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6n9p4b3x",
@@ -436,10 +466,10 @@
   {
     "id": "c_7d3h3y3n",
     "ja": "病気しなかったら、今ごろ行けたのに。",
-    "en": "If I hadn't gotten sick, I'd be there.",
+    "en": "If I hadn't gotten sick, I'd be there now.",
     "alternatives": [
-      "If I hadn't come down with something, I'd be there.",
-      "If I hadn't fallen ill, I'd be there now."
+      "If I hadn't fallen ill, I'd be there now.",
+      "If I hadn't been sick, I'd be there now."
     ],
     "point": "過去の仮定 had + 今の結果 would be",
     "topic": "daily",
@@ -447,7 +477,13 @@
     "level": 10,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dbd5a56d390d5bc5c6b233c0ae5c290bb457ed3a87215232ace62265cae175e9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7k5b8d3a",
@@ -482,7 +518,13 @@
     "level": 10,
     "grammar": ["inversion"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:38713047c3fb421188601b4b07964cf8258cb07bb17e991b1d4316c0b1238734",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7w6t8z5w",
@@ -498,7 +540,13 @@
     "level": 9,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7e59b36448650f7c554b91bc2e76fba7117cc3f9694b68d68ef297c223656f5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8d2a5e4k",
@@ -514,7 +562,13 @@
     "level": 8,
     "grammar": ["tense-contrast", "noun-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:facdb85dd56955fae98db28003f8984677603ea320e6de6a51bbdc66390b1670",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8x2v6k8x",

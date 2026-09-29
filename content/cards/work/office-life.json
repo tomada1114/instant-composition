@@ -29,10 +29,16 @@
     "point": "現在の願望は wish + 過去形（be は were）",
     "topic": "work",
     "subtopic": "office-life",
-    "level": 8,
+    "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:944323e863df0cd7c08ea92d39e1d9f777f1c8d5efa2b98ab05cfe2c3e54082c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2q2x6n3t",
@@ -109,7 +115,13 @@
     "level": 10,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:451604689f0b4555741ca8fcd97a9ffb98228a5b36fd3cf68a323c59b67b1362",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3s3k3s3u",
@@ -210,7 +222,13 @@
     "level": 10,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6a7f994eb9963a1ac3e9c8725d0227eee18606f334e84f18591bb2af3bfc816d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4f7n6p6s",
@@ -332,18 +350,24 @@
   {
     "id": "c_5t9r6q8v",
     "ja": "課長は今日在宅だと言ってたよ。",
-    "en": "The manager said she'd work from home.",
+    "en": "The manager said she's working from home.",
     "alternatives": [
-      "Our manager said she'd be working from home today.",
-      "The manager told me she'd work from home today."
+      "The manager said she'd be working from home today.",
+      "The manager told me she's working from home."
     ],
-    "point": "said の後は would に時制を合わせる",
+    "point": "said のあとでも、今も続く話は現在形のままでよい",
     "topic": "work",
     "subtopic": "office-life",
-    "level": 9,
+    "level": 8,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:03859bb88202c42f8e2c614a04cce2d14b6c6f704a3596c6191f55b6da235779",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5u2q9c5y",
@@ -359,7 +383,13 @@
     "level": 8,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e279221414d11cfc72cf4626893a95f0b3c14a7777360cbadcfc6ae04637d358",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6a4j2y4k",
@@ -448,16 +478,22 @@
     "ja": "席替えは月曜に発表されます。",
     "en": "Seat changes will be announced Monday.",
     "alternatives": [
-      "The seat changes will be announced on Monday.",
-      "They'll announce the seat changes Monday."
+      "They'll announce the seat changes Monday.",
+      "The seat changes will be announced Monday."
     ],
     "point": "will be + 過去分詞で未来の受動態",
     "topic": "work",
     "subtopic": "office-life",
-    "level": 9,
+    "level": 5,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:65fe3d4c70061f260811e82f8a481b31a55800c836e2ac5d9bf00d68ac61b684",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7d8j8s2g",
@@ -470,10 +506,16 @@
     "point": "分詞構文の Running late は「遅れ気味で」",
     "topic": "work",
     "subtopic": "office-life",
-    "level": 10,
+    "level": 8,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e1c00b234cae710a5b6155a0b2db00e60d339b52924603da4b3ce7947c9bc5da",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7u6v4e6j",
@@ -497,15 +539,24 @@
   {
     "id": "c_8e6k9k8n",
     "ja": "上着を持ってくればよかった。",
-    "en": "If only I'd brought a jacket.",
-    "alternatives": ["I wish I'd brought a jacket.", "I wish I had brought a jacket."],
+    "en": "I wish I'd brought a jacket.",
+    "alternatives": [
+      "If only I'd brought a jacket.",
+      "I should have brought a jacket."
+    ],
     "point": "過去の後悔は If only / wish + 過去完了",
     "topic": "work",
     "subtopic": "office-life",
-    "level": 9,
+    "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e68a27831154a7ee095f8f1f3c73fd1b2a78fe2711dcf22770f31ae62e5b3dd4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8w2h8w6j",
@@ -533,14 +584,23 @@
     "id": "c_9d5p8x5g",
     "ja": "私、鍵を閉め忘れたかも。",
     "en": "I might have forgotten to lock up.",
-    "alternatives": ["I may have forgotten to lock up.", "I might not have locked up."],
+    "alternatives": [
+      "I may have forgotten to lock up.",
+      "I may have forgotten to lock the door."
+    ],
     "point": "might have + 過去分詞で「かもしれなかった」",
     "topic": "work",
     "subtopic": "office-life",
     "level": 8,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:16f8f18caaa98b71d8a50efcc9d5e8599c9a9925344a1883e9c2ad4793c0be30",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9h2q3y3e",

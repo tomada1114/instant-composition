@@ -81,7 +81,7 @@
     "en": "What's great is that returns are easy.",
     "alternatives": [
       "The best part is that returns are easy.",
-      "What's great is returns are easy."
+      "The nice thing is that returns are easy."
     ],
     "point": "What's great is that 節 で名詞節を作る",
     "topic": "daily",
@@ -89,7 +89,13 @@
     "level": 9,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9f56e37d37f8bd7fe58bedb0df09613eed594117fe1042be9c9d44333357b3ff",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3w7k6w9t",
@@ -188,7 +194,13 @@
     "level": 9,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5e1b228aed9b32aad7652ab91e33bc7714578563674455d9a05a31a83ec079ee",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4x3r9z8x",
@@ -204,7 +216,13 @@
     "level": 9,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:42253719eb46d4dc8d94c45bbbac31243319bb8ff52e17a864fab241af051a41",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5b2r9u5e",
@@ -305,7 +323,13 @@
     "level": 8,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3255d9d2e20d6a6821bdadc5586789224ef7abbc76e5749733d8c4fb2ecd36d0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6v5y9u7v",
@@ -359,7 +383,13 @@
     "level": 10,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9c2bb142c933c536f70e2a9500ff241a3603b380da2077cf9b94cac749e03b97",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8d4h6d4q",
@@ -375,7 +405,13 @@
     "level": 8,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:be9bf635a7c23237c1d1bf9f742ef1c82f914b2101e5762eeaf394f2c5c7df23",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8g6j3g6m",
@@ -443,15 +479,21 @@
     "en": "Although it's expensive, it's worth it.",
     "alternatives": [
       "Even though it's pricey, it's worth it.",
-      "Pricey as it is, it's worth it."
+      "Even if it's pricey, it's worth it."
     ],
     "point": "譲歩は although / even though。but は不要",
     "topic": "daily",
     "subtopic": "shopping",
-    "level": 10,
+    "level": 5,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c921af1c33284467127b7f244379706f5650ad82eb462f2be9aba455786d856",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9h9n5h8f",
@@ -489,7 +531,13 @@
     "level": 10,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8378e35c1ed78d1df1c40a9e2e52fa25d197696de494c7b6ad5622325c999e1e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9n5g7f9w",
@@ -543,7 +591,13 @@
     "level": 8,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cb8eec663e70fa8f5c7cf60a9c432a44134c46140de8a7f16254855816fbb6c3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9z7m5f2b",

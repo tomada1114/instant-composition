@@ -10,10 +10,16 @@
     "point": "get + 人 + to do / have + 人 + 動詞で依頼の結果",
     "topic": "travel",
     "subtopic": "hotel",
-    "level": 10,
+    "level": 8,
     "grammar": ["causatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:73e74f76971d6c588460d6090859611c233223981a4b419c219d32f973f1e70d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2z5q8b2j",
@@ -29,7 +35,13 @@
     "level": 10,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0dd939e97dc540a3681bf8fc1a069c57369c97f6a00abb9ff4b57cbb3974a2de",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3b5p3u9w",
@@ -45,7 +57,13 @@
     "level": 9,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:45ca937ee68bab21505940f1d935959a51f10bfa7526c11bc72eedcafef45c7d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3p8d7c2j",
@@ -61,7 +79,13 @@
     "level": 9,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:af0469a79dcc729f9ab97e964662fb5de718d86d0da65bfc7f8f156a4e021f1c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3w8g7b8x",
@@ -122,7 +146,13 @@
     "level": 9,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7f69a99b24310f53df71aae6590301e6847013f93b48f69118f1b8037ed5e5a2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4d2c8c3g",
@@ -180,7 +210,13 @@
     "level": 8,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9c314f829f5f5d5c4ca70c7110c576ebf8b3c61ccce126dab333a0abd356c3a1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4z7j8v9f",
@@ -330,7 +366,7 @@
     "en": "Never have I seen such a tiny room.",
     "alternatives": [
       "I've never seen such a tiny room.",
-      "Never have I stayed in such a small room."
+      "I've never seen a room this small."
     ],
     "point": "Never を前に出すと助動詞が主語の前に来る",
     "topic": "travel",
@@ -338,7 +374,13 @@
     "level": 10,
     "grammar": ["inversion"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:123e96bed8f2867841d97a25a03783795879af9c121da5e141936d6b3617ea73",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6h6g5p7p",
@@ -373,7 +415,13 @@
     "level": 7,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:451ff4f3d0932f4a788efb19629ae1339bf0da41fa77d95ea63b505b098462ee",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6m2j8y6a",
@@ -389,7 +437,13 @@
     "level": 8,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d90cc0164e4a4131d1cde8f9d9f0b826f45afcd332a613d316f3b3e955e1c212",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7g6j8h2g",
@@ -582,14 +636,20 @@
     "en": "I'd like to stay another night.",
     "alternatives": [
       "I'd like to stay one more night.",
-      "I'd like to extend my stay by one night."
+      "Could I stay one more night?"
     ],
     "point": "I'd like to + 動詞で丁寧に希望を伝える",
     "topic": "travel",
     "subtopic": "hotel",
-    "level": 8,
+    "level": 4,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:18ec48d478260a9937989057971c93003994f39b4a7506613e22c9ea4d40e349",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

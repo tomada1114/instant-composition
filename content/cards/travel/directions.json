@@ -107,15 +107,21 @@
     "en": "If there were more signs, I'd find it.",
     "alternatives": [
       "I'd find it if there were more signs.",
-      "If there were more signs, I could find it."
+      "If it were better signposted, I'd find it."
     ],
     "point": "現在の仮定は If + were, would + 動詞",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 10,
+    "level": 6,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f7d056b9718e86115f67e08a969cb7902ccb483f654e467ae19211f7641a70d6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3q3z6m8j",
@@ -230,10 +236,10 @@
   {
     "id": "c_4a8v9v6d",
     "ja": "一日中、この地図と格闘してる。",
-    "en": "I've been wrestling this map all day.",
+    "en": "I've been wrestling with this map all day.",
     "alternatives": [
       "I've been struggling with this map all day.",
-      "I've been wrestling with this map all day."
+      "I've been fighting with this map all day."
     ],
     "point": "格闘は wrestle。現在完了進行形で継続を表す",
     "topic": "travel",
@@ -241,7 +247,13 @@
     "level": 9,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c605093ad5003a631622401bee5850f56ecb67950ff3cd9cf991b469f5b5d3aa",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4e2y2z9u",
@@ -257,7 +269,13 @@
     "level": 9,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8480b33dc61a14558201d1926f04f31985abda870e8a84a2806a5dc8b9035d5d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4h3z6z3w",
@@ -314,7 +332,13 @@
     "level": 8,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1d9e275834417944b511969913b070b39910660405abf5da45c87eb32224abcc",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5c9a4b7x",
@@ -361,15 +385,21 @@
   {
     "id": "c_5j4e6u9t",
     "ja": "彼に、地図を描いてもらった。",
-    "en": "I had him draw me a map.",
-    "alternatives": ["I got him to draw me a map.", "I had him sketch me a map."],
+    "en": "I had him draw a map.",
+    "alternatives": ["I got him to draw me a map.", "He drew me a map."],
     "point": "have + 人 + 動詞の原形で「〜してもらう」",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 9,
+    "level": 6,
     "grammar": ["causatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:67ce34e90786c776987c76736cd715170eaea2e4024c8287aa3e1bdbf5c5ddcd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5k2b3q4p",
@@ -385,7 +415,13 @@
     "level": 10,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:418c2def49bddf648199a4bdcf2eefe8c1d59d56469d6da5bdec5a4336575feb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5q9c7u3b",
@@ -436,7 +472,13 @@
     "level": 10,
     "grammar": ["causatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c13c1f6068d6e4d68e584423e5fc6d3021967385c4b841737d345b6b6f43b5fa",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6h7e7s9y",
@@ -474,7 +516,13 @@
     "level": 8,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:041fb0520d236fc347b591231417d32f137e69426f1f594ee936aa3aadfccb01",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6r3r7e5t",
@@ -509,7 +557,13 @@
     "level": 8,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b873ea1f9f0d606b5c2120b5945be9bd982cc3468d8e2f7f1a92cdd2d898ed1b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7y5r9g5z",
