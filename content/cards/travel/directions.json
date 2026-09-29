@@ -26,13 +26,14 @@
     "ja": "駅行きのバスがあるかどうか、伺いたいのですが。",
     "en": "I was wondering if buses go to the station.",
     "alternatives": [
+      "I was wondering if there's a bus to the station.",
       "Would you know if a bus goes to the station?",
       "Could you tell me if buses go to the station?"
     ],
     "point": "I was wondering if で柔らかく尋ねる",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 8,
+    "level": 7,
     "grammar": ["hedging-softening", "indirect-questions"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -42,13 +43,13 @@
     "ja": "出発前に地図アプリを入れておけばよかった。",
     "en": "I wish I'd downloaded a map app before leaving.",
     "alternatives": [
-      "If only I had downloaded a map app before leaving.",
+      "If only I'd downloaded a map app before leaving.",
       "I should have downloaded a map app before leaving."
     ],
     "point": "過去への後悔は I wish の後を過去完了 had done にする",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 7,
+    "level": 6,
     "grammar": ["wishes-regrets", "past-perfect"],
     "createdAt": "2026-09-22",
     "stamps": {
@@ -81,12 +82,12 @@
     "en": "Is there a currency exchange around here?",
     "alternatives": [
       "Is there an exchange office near here?",
-      "Is there a place to exchange money nearby?"
+      "Is there a money exchange nearby?"
     ],
     "point": "初めて話題にする両替所は a",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 6,
+    "level": 3,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -102,7 +103,7 @@
     "point": "過去にすべきだったことは should have + 過去分詞",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 8,
+    "level": 6,
     "grammar": ["modal-perfect", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -140,7 +141,10 @@
     "id": "c_3q8n2m2z",
     "ja": "近くにコンビニはありますか？",
     "en": "Is there a convenience store nearby?",
-    "alternatives": ["Is there a store near here?", "Is there a shop around here?"],
+    "alternatives": [
+      "Is there a nearby convenience store?",
+      "Any convenience stores nearby?"
+    ],
     "point": "「ありますか」は Is there で始める",
     "topic": "travel",
     "subtopic": "directions",
@@ -190,15 +194,15 @@
   {
     "id": "c_4n9f6k5e",
     "ja": "彼女は地図を見ながら、道を教えてくれた。",
-    "en": "She explained the way, checking her map.",
+    "en": "She gave me directions, checking her map.",
     "alternatives": [
-      "She checked her map as she explained the way.",
+      "She checked her map as she gave me directions.",
       "While checking her map, she gave me directions."
     ],
     "point": "「〜しながら」は文末に , checking のように -ing を添える",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 7,
+    "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -348,7 +352,10 @@
     "id": "c_8f9s4m5k",
     "ja": "よかったら、そこまで案内しますよ。",
     "en": "I'll take you there if you like.",
-    "alternatives": ["I'll take you there, if you want.", "Let me take you there."],
+    "alternatives": [
+      "I'll take you there, if you want.",
+      "I'll walk you there if you like."
+    ],
     "point": "その場で決めた申し出は will を使う",
     "topic": "travel",
     "subtopic": "directions",
@@ -358,33 +365,17 @@
     "stamps": {}
   },
   {
-    "id": "c_8j4c2x3v",
-    "ja": "すみません、この住所がどこか教えてもらえますか？",
-    "en": "Could you tell me where this address is?",
-    "alternatives": [
-      "Excuse me, do you know where this address is?",
-      "Would you mind telling me where this address is?"
-    ],
-    "point": "where this address is の語順。is を前に出さない",
-    "topic": "travel",
-    "subtopic": "directions",
-    "level": 7,
-    "grammar": ["indirect-questions", "requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_8u4q4a7n",
     "ja": "駅員さんに聞かなきゃ、私たち迷ってたよ。",
     "en": "If we hadn't asked, we'd have gotten lost.",
     "alternatives": [
-      "Had we not asked, we'd have gotten lost.",
+      "If we hadn't asked, we'd have been lost.",
       "If we hadn't asked, we'd have wound up lost."
     ],
     "point": "過去の仮定は had not asked、帰結は would have gotten",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 8,
+    "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -410,13 +401,13 @@
     "ja": "この辺で両替できる所、ご存じですか？",
     "en": "Do you know where I can exchange money?",
     "alternatives": [
-      "Could you tell me where to exchange money around here?",
-      "Is there a place nearby where I can change money?"
+      "Do you know where I can change money?",
+      "Do you know where to exchange money?"
     ],
-    "point": "where の後は I can の語順。is にしない",
+    "point": "where の後は疑問文の語順にせず、I can exchange と平叙文の語順",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 7,
+    "level": 4,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -427,12 +418,12 @@
     "en": "If my phone worked, I'd find the station myself.",
     "alternatives": [
       "I'd find the station myself if my phone worked.",
-      "If my phone were working, I'd find the station myself."
+      "With a working phone, I'd find the station myself."
     ],
     "point": "今の事実に反する仮定なので worked と I'd を使う",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 8,
+    "level": 6,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -475,7 +466,7 @@
     "en": "She got lost twice, but she's found it.",
     "alternatives": [
       "Though she got lost twice, she's found it.",
-      "She got lost twice but finally found it."
+      "She got lost twice but has found it."
     ],
     "point": "過去の出来事は過去形、今の結果は現在完了",
     "topic": "travel",

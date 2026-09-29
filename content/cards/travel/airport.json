@@ -13,7 +13,13 @@
     "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:18cdfa0cf826fe7a9f69b7c62ea4b820d47ebd493eb85307bc3b9a47d517e0d9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2p9s2x3m",
@@ -29,23 +35,13 @@
     "level": 2,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2q9z7b2w",
-    "ja": "私たちは2時間前に空港に着かないと。",
-    "en": "We need to arrive two hours early.",
-    "alternatives": [
-      "We have to arrive two hours early.",
-      "We've got to arrive two hours early."
-    ],
-    "point": "「〜しないと」は need to / have to。後ろは動詞の原形",
-    "topic": "travel",
-    "subtopic": "airport",
-    "level": 3,
-    "grammar": ["modal-obligation-advice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:22c0a52424ee90234afbbd3ae2551fca600ca3955146a7eac5f394f408eb788d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2y9u3t6m",
@@ -61,7 +57,13 @@
     "level": 5,
     "grammar": ["phrasal-verbs", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2fc965291e72d14181e858d82868009599fa221befffbd21f1d23c36c388fc84",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2z6w3x5z",
@@ -109,7 +111,13 @@
     "level": 4,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:db0aff4dfe5da7f5e5775a13a95d2f423f105cc9f85d2e452de328d2c8d51058",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3s3g9b9e",
@@ -159,9 +167,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:da2c8373cc9993f42734a663e4b24a455f583c9a91b0d078936a5f2d51a11e35",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:014841a049ecc4eec3a2c93c0b530e4b56236f94b279147462c36cdf22ad8a2b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -179,7 +187,13 @@
     "level": 5,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c2170bdb3db0493dbd3d40e3bb23f9e60b2b1ba5f133a849f6d132a7cb8f4166",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6g3q7s4a",
@@ -258,9 +272,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:0035b528897000a5a7c5bc7315e8650325d3a2c415c6013bb699356c8c1410ed",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:78c49fd2c4905134e2ddbf4a42adbd0d90bd196bb24ad6847ef68d539fc98061",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -278,7 +292,13 @@
     "level": 5,
     "grammar": ["indirect-questions", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:222ac4e88c481835d069e032bc5f915920a81b035b05aa99ab7daaa4fcfe5281",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7f2x9m9x",
@@ -293,9 +313,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:10af481061fe8514a338741d5e1a2ddf02e8968e547da3154d99d0cfacc16e02",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:5c8ca855c5f8abe5aa478863d506a3a29236a1eca30eec445c75336563a0800f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -393,7 +413,13 @@
     "level": 5,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:40cfd09964137d9c11d079ddad660b4786ce5bb914c185d899a92de7a31cf069",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9e5k5m6y",
@@ -409,7 +435,13 @@
     "level": 3,
     "grammar": ["progressive-aspect", "past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:098ff2cfadc6db956aabd38dd5db94d81ceaa74e229ce4c04f093e20c8ce487f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9n6c6e2b",
@@ -425,6 +457,12 @@
     "level": 5,
     "grammar": ["gerunds", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2290b28c56bc67b2a1ad432f942aecbed11cd5c3286793d77ccc42d8564f8923",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]

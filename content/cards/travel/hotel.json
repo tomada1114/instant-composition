@@ -69,7 +69,7 @@
     "en": "What time should I check out by?",
     "alternatives": [
       "What time do I need to leave by?",
-      "By what time should I check out?"
+      "When do I need to check out by?"
     ],
     "point": "「〜までに」の by を文末に置き忘れない",
     "topic": "travel",
@@ -104,9 +104,9 @@
   {
     "id": "c_3b8u7h5y",
     "ja": "タオルを頼んだのに、まだ来ていません。",
-    "en": "I requested towels, but they haven't come.",
+    "en": "I asked for towels, but they haven't arrived.",
     "alternatives": [
-      "I asked for towels, but they haven't arrived.",
+      "I asked for towels, but they haven't come.",
       "I asked for towels, but nothing has arrived."
     ],
     "point": "頼んだのは過去形、「まだ来ない」は現在完了",
@@ -144,13 +144,13 @@
     "ja": "荷物を夕方まで預かってもらえますか？",
     "en": "Could you keep my bags until evening?",
     "alternatives": [
-      "Can you hold my luggage until this evening?",
-      "Could you store my bags until the evening?"
+      "Can you hold my luggage until evening?",
+      "Could you hold my bags till evening?"
     ],
-    "point": "「預かる」は keep / hold。until の後に冠詞は不要",
+    "point": "「預かる」は keep / hold で言う",
     "topic": "travel",
     "subtopic": "hotel",
-    "level": 4,
+    "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -166,7 +166,7 @@
     "point": "「少し広い」は slightly / a little を比較級の前に置く",
     "topic": "travel",
     "subtopic": "hotel",
-    "level": 5,
+    "level": 3,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -176,7 +176,7 @@
     "ja": "隣の人が何時間も音楽をかけてます。",
     "en": "The neighbors have been playing music for hours.",
     "alternatives": [
-      "Next door has been playing music for hours.",
+      "My neighbor's been playing music for hours.",
       "Someone next door's been playing music for hours."
     ],
     "point": "今も続く「ずっと〜している」は have been + ing",
