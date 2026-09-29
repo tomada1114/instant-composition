@@ -13,7 +13,13 @@
     "level": 7,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b6d145b2a6731aee6a554decd9ef1105539af9988caccdb9ff46608200adc9d9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2q5h8n7x",
@@ -38,20 +44,26 @@
     }
   },
   {
-    "id": "c_2q5t4x8q",
-    "ja": "元のチームが選んだ案は来年のトラフィックを無視している。",
-    "en": "The plan the original team chose ignores next year's traffic.",
+    "id": "c_2u2v8b4q",
+    "ja": "分割したらレイテンシがどれだけ増えるか分かる？",
+    "en": "Do you know how much latency splitting would add?",
     "alternatives": [
-      "The plan that team chose doesn't account for next year's traffic.",
-      "The original team's plan doesn't factor in next year's traffic."
+      "Any idea how much latency a split would add?",
+      "Do you know how much latency splitting adds?"
     ],
-    "point": "the plan the team chose のように関係代名詞を省いて名詞を後ろから説明する",
+    "point": "間接疑問は how much latency の後を平叙文の語順に",
     "topic": "tech",
     "subtopic": "design-discussion",
-    "level": 9,
-    "grammar": ["nested-clauses"],
+    "level": 6,
+    "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4ec15518340fb74ab7bbc2c8f4102e386e33befc645f28a03c84f75a7bee2bda",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2x8n8m4t",
@@ -142,22 +154,6 @@
     }
   },
   {
-    "id": "c_3k3n9b8u",
-    "ja": "分割したらレイテンシがどれだけ増えるか分かる？",
-    "en": "Do you know how much latency splitting would add?",
-    "alternatives": [
-      "Any idea how much latency splitting would add?",
-      "Do you know how much latency a split would add?"
-    ],
-    "point": "間接疑問は how much latency の後を平叙文の語順に",
-    "topic": "tech",
-    "subtopic": "design-discussion",
-    "level": 7,
-    "grammar": ["indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3w8r3w3g",
     "ja": "後から機能を追加できますか？",
     "en": "Can we add features later?",
@@ -177,38 +173,6 @@
     }
   },
   {
-    "id": "c_4f4m5b3a",
-    "ja": "課金部分の切り出しを、ご検討いただけないかと思って。",
-    "en": "I was wondering if you'd consider splitting billing out.",
-    "alternatives": [
-      "I was hoping you might consider splitting billing out.",
-      "Would you be open to splitting billing out?"
-    ],
-    "point": "控えめな提案は I was wondering if で始める",
-    "topic": "tech",
-    "subtopic": "design-discussion",
-    "level": 9,
-    "grammar": ["hedging-softening"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4m9h2v6t",
-    "ja": "GraphQL にしてから、開発は速くなった？",
-    "en": "Has development gotten faster since we adopted GraphQL?",
-    "alternatives": [
-      "Has development sped up since we switched to GraphQL?",
-      "Has development gotten any faster since we chose GraphQL?"
-    ],
-    "point": "since があるので主節は現在完了 has gotten",
-    "topic": "tech",
-    "subtopic": "design-discussion",
-    "level": 6,
-    "grammar": ["present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5j9c7a7t",
     "ja": "このキャッシュは遅延だけでなくDBの負荷も減らす。",
     "en": "Not only does it cut latency, it also reduces DB load.",
@@ -222,7 +186,13 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ab9f9b41874e4d6592ce08e2e9ae287911a25de7625730f8cea2834996c47527",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5s6n2g9x",
@@ -282,7 +252,35 @@
     "level": 4,
     "grammar": ["passive-voice", "time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1fa70f3f50272b7c27d7bde1642434c905ba4661e703d96c57d6b0706a81344c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_6d6j2v4r",
+    "ja": "障害が広がらない設計にできないでしょうか？",
+    "en": "Couldn't we design it so failures don't spread?",
+    "alternatives": [
+      "Could we design it so failures don't spread?",
+      "Is there a way to keep failures from spreading?"
+    ],
+    "point": "so の後ろに「〜しないように」の結果を続ける",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 6,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4dd25e4c3165307afa189bf52bb11152d6ccf5fb76b0861e9ef639d591a95060",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6g3q9k2h",
@@ -320,7 +318,13 @@
     "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3378104db222dcbc2bd1d78e6e2e5368c6841da065e2516ad1a96abcc772cecf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7a7t3t3z",
@@ -336,7 +340,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:073a6ca5fd01c4f8a129eba0f3daa6f7dfdc08b091496974578a68b2168c11d9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7f9b7t8t",
@@ -352,7 +362,13 @@
     "level": 7,
     "grammar": ["modal-perfect", "noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fc8d725c8f96b6613263a00d616d851e1fdc0a995bca01943a20ec4e696484ad",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7q6w6u3n",
@@ -390,7 +406,13 @@
     "level": 7,
     "grammar": ["wishes-regrets", "past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8eae4a16152c6161e929693bd1b91d1a0f86dbd280e8e1d666e80b906ec18347",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8c3f7q7u",
@@ -428,23 +450,13 @@
     "level": 8,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8v6j9x8f",
-    "ja": "障害が広がらない設計にできないでしょうか？",
-    "en": "Couldn't we design something where failures stay contained?",
-    "alternatives": [
-      "Could we design it so failures don't spread?",
-      "Couldn't we design it so failures stay contained?"
-    ],
-    "point": "where で「どんな設計か」を後ろから説明する",
-    "topic": "tech",
-    "subtopic": "design-discussion",
-    "level": 6,
-    "grammar": ["relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dbeeda5cc1bb01a3ec3bfb516a52cce3a539e9c3d435a066b9dad798d5066d51",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9f6h9k8h",
@@ -460,7 +472,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cfb568d26fd765746062ac591e52c95baf13d2338cff101d271c6ae9a7c3c6bb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9f7w4h5z",
@@ -521,6 +539,12 @@
     "level": 6,
     "grammar": ["verb-object-to-do", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f022f669f418172d41f69229312804c9c82f6cfe4c6f0f4118b76ca1a783a383",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]

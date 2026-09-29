@@ -34,15 +34,15 @@
   {
     "id": "c_2h8e2q5k",
     "ja": "営業に、要望をまとめるよう頼んでくれる？",
-    "en": "Can you ask sales to combine requests?",
+    "en": "Can you ask sales to compile the requests?",
     "alternatives": [
-      "Could you ask sales to merge their requests?",
+      "Could you ask sales to consolidate their requests?",
       "Could you have sales put their requests together?"
     ],
     "point": "ask + 人 + to do の語順。that 節にしない",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 5,
+    "level": 4,
     "grammar": ["verb-object-to-do", "requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -119,23 +119,23 @@
     "ja": "まず、ログインのバグを直すべきです。",
     "en": "We should fix the login bug first.",
     "alternatives": [
-      "We need to fix the login bug first.",
+      "First, we should fix the login bug.",
       "The login bug should be fixed first."
     ],
     "point": "should の後は動詞の原形。主語は we を補う",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 5,
+    "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_3b3n9p4q",
-    "ja": "今、検索を改善しているところ。",
+    "ja": "今、うちで検索を改善しているところ。",
     "en": "We're improving search right now.",
     "alternatives": [
-      "We're working on search now.",
+      "We're making search better right now.",
       "Our team is improving search now."
     ],
     "point": "「今〜しているところ」は be + -ing にする",
@@ -198,7 +198,7 @@
     "id": "c_4h9r3k8f",
     "ja": "うちはもっとテストを書かないと。",
     "en": "We have to write more tests.",
-    "alternatives": ["We need to write more tests.", "We must write more tests."],
+    "alternatives": ["We need to write more tests.", "We've got to write more tests."],
     "point": "「〜しないと」は have to。we を主語に立てる",
     "topic": "tech",
     "subtopic": "product-talk",

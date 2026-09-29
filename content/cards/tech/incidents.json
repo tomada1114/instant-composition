@@ -18,10 +18,10 @@
   {
     "id": "c_2j9u7u7s",
     "ja": "昨夜から復旧作業中ですが、まだ終わっていません。",
-    "en": "We've been on it since last night, not finished.",
+    "en": "We've been on it since last night but aren't done.",
     "alternatives": [
-      "We've been working on it overnight, and aren't done yet.",
-      "Work started last night, and we still aren't done."
+      "We've been fixing it since last night and aren't finished.",
+      "We started last night and still aren't done."
     ],
     "point": "昨夜から続く作業は have been と since で表す",
     "topic": "tech",
@@ -54,6 +54,22 @@
     }
   },
   {
+    "id": "c_2x7w9a5c",
+    "ja": "ネットワークの問題は除外しました。",
+    "en": "We've ruled out a network issue.",
+    "alternatives": [
+      "We ruled out the network as the cause.",
+      "A network issue has been ruled out."
+    ],
+    "point": "「除外する」は exclude より句動詞 rule out が自然",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["phrasal-verbs", "present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2z6d5b6n",
     "ja": "金曜までに報告書をまとめていただけませんか？",
     "en": "Would you mind putting together the report by Friday?",
@@ -64,8 +80,8 @@
     "point": "Would you mind の後は動詞の -ing 形",
     "topic": "tech",
     "subtopic": "incidents",
-    "level": 8,
-    "grammar": ["hedging-softening", "phrasal-verbs"],
+    "level": 6,
+    "grammar": ["gerunds", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -85,7 +101,7 @@
   {
     "id": "c_3m4c7r3h",
     "ja": "ログインできないだけでなく、設定も消えた人がいました。",
-    "en": "Not only were users locked out, some lost their settings.",
+    "en": "Not only were users locked out, but some lost their settings.",
     "alternatives": [
       "Users couldn't log in, and some even lost their settings.",
       "Some users were locked out and even lost their settings."
@@ -101,15 +117,15 @@
   {
     "id": "c_4e3t4t6m",
     "ja": "復旧しましたが、念のため監視を続けます。",
-    "en": "Though it's recovered, we'll keep monitoring to be safe.",
+    "en": "Though it's fixed, we'll keep monitoring to be safe.",
     "alternatives": [
-      "Even though it's recovered, we'll keep an eye on it.",
-      "Although it's back up, we'll keep monitoring as a precaution."
+      "Although it's fixed, we'll keep watching just in case.",
+      "It's fixed, but we'll keep monitoring to be safe."
     ],
     "point": "Though の節と主節を but では重ねない",
     "topic": "tech",
     "subtopic": "incidents",
-    "level": 8,
+    "level": 6,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -194,10 +210,10 @@
   {
     "id": "c_5b2b5y3n",
     "ja": "本番前に、負荷テストをもっと回すべきだったね。",
-    "en": "We should've run load tests longer before launch.",
+    "en": "We should've run more load tests before launch.",
     "alternatives": [
-      "We should've tested under load longer before launch.",
-      "Before launch, we should've run the load test longer."
+      "We should've done more load testing before launch.",
+      "Before launch, we should've run more load tests."
     ],
     "point": "過去の後悔は should have + 過去分詞（run はそのまま）",
     "topic": "tech",
@@ -229,7 +245,8 @@
     "en": "Infra said payments would be back by 9.",
     "alternatives": [
       "Infra told us payments would be restored by 9.",
-      "Infra said payments would be up again by 9."
+      "Infra said payments would be up again by 9.",
+      "Infra said payments would be back at 9."
     ],
     "point": "said の後は will ではなく would にする",
     "topic": "tech",
@@ -287,22 +304,6 @@
     "subtopic": "incidents",
     "level": 1,
     "grammar": ["there-is-are", "articles-and-countability"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6z5t6d5z",
-    "ja": "開発チームはもう原因を特定しましたか？",
-    "en": "Have the developers found the cause yet?",
-    "alternatives": [
-      "Has the dev team identified the cause yet?",
-      "Do the developers know the cause yet?"
-    ],
-    "point": "疑問文の「もう」は already ではなく yet を文末に",
-    "topic": "tech",
-    "subtopic": "incidents",
-    "level": 5,
-    "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -394,7 +395,7 @@
       "We don't know why the alert didn't go off.",
       "We can't tell why the alert never went off."
     ],
-    "point": "why 以下は疑問文の語順にしない。「鳴る」は go off",
+    "point": "why の後は疑問文にせず、主語＋動詞の語順にする",
     "topic": "tech",
     "subtopic": "incidents",
     "level": 8,
@@ -408,6 +409,7 @@
     "en": "What caused it was an expired certificate, not the database.",
     "alternatives": [
       "It was an expired certificate, not the database, that caused it.",
+      "The cause was an expired certificate, not the database.",
       "It wasn't the database; an expired certificate caused it."
     ],
     "point": "What caused it was ~ で原因を強調する",

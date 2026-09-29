@@ -18,10 +18,10 @@
   {
     "id": "c_2h5v9g8d",
     "ja": "昨日からテストを書いていて、半分終わりました。",
-    "en": "I've been writing tests since yesterday, halfway through.",
+    "en": "I've been writing tests since yesterday; I'm halfway done.",
     "alternatives": [
-      "Since yesterday I've been writing tests, and I'm halfway.",
-      "I've been on the tests since yesterday, halfway done."
+      "I started writing tests yesterday and I'm halfway done.",
+      "I'm halfway through the tests I started yesterday."
     ],
     "point": "「昨日から〜している」は have been + -ing",
     "topic": "tech",
@@ -35,11 +35,14 @@
     "id": "c_3x8m5x5v",
     "ja": "ログインに、まだバグが一つあります。",
     "en": "There's still one login bug.",
-    "alternatives": ["There is still a login bug.", "There's still one bug in login."],
+    "alternatives": [
+      "We still have one login bug.",
+      "There's still one bug with the login."
+    ],
     "point": "「〜がある」は There is で始める",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 3,
+    "level": 2,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -80,7 +83,7 @@
     "id": "c_4r3p5d8b",
     "ja": "健太は今日、デプロイしなきゃ。",
     "en": "Kenta has to deploy today.",
-    "alternatives": ["Kenta needs to deploy today.", "Kenta must deploy today."],
+    "alternatives": ["Kenta needs to deploy today.", "Kenta's got to deploy today."],
     "point": "主語が三人称単数なので have to ではなく has to",
     "topic": "tech",
     "subtopic": "standup",
@@ -111,12 +114,12 @@
     "en": "Did Ken find the cause yesterday?",
     "alternatives": [
       "Did Ken figure out the cause yesterday?",
-      "Was Ken able to find the cause yesterday?"
+      "Did Ken track down the cause yesterday?"
     ],
     "point": "昨日のことなので Has ではなく Did で聞く",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 4,
+    "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -238,8 +241,9 @@
     "ja": "昨日のデプロイ、どこで止まりました？",
     "en": "Where did yesterday's deploy get stuck?",
     "alternatives": [
-      "Where did the deploy stop yesterday?",
-      "Where did yesterday's deploy fail?"
+      "Where did yesterday's deploy stop?",
+      "Where did yesterday's deploy stall?",
+      "Where did the deploy get stuck yesterday?"
     ],
     "point": "過去の疑問なので did を使い、動詞は原形に戻す",
     "topic": "tech",
@@ -423,8 +427,8 @@
     "ja": "ステージングは午後に直ると言われました。",
     "en": "They said staging would be back this afternoon.",
     "alternatives": [
-      "They said staging should be back this afternoon.",
-      "We heard staging would be back this afternoon."
+      "They said staging would be fixed this afternoon.",
+      "I was told staging would return this afternoon."
     ],
     "point": "「言った」に合わせて will ではなく would にする",
     "topic": "tech",
