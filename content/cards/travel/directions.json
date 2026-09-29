@@ -481,6 +481,22 @@
     }
   },
   {
+    "id": "c_5t9e8x8p",
+    "ja": "探してる店は、パン屋があった所です。",
+    "en": "The place you want is where the bakery was.",
+    "alternatives": [
+      "The shop you want is where the bakery was.",
+      "The place you're looking for is where the bakery was."
+    ],
+    "point": "The place you want の中に where 節がつながる",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6h7e7s9y",
     "ja": "この店、もう二回通ったね。",
     "en": "We've walked past this shop twice.",
@@ -627,5 +643,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9x9w9u7e",
+    "ja": "引き返した方が、早いですよ。",
+    "en": "You'd be better off doubling back.",
+    "alternatives": [
+      "It'd be quicker to turn back.",
+      "You're better off going back the way you came."
+    ],
+    "point": "「引き返す」は double back / turn back",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 9,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

@@ -344,6 +344,22 @@
     }
   },
   {
+    "id": "c_7s5m5c7g",
+    "ja": "送った提案書、何か返事はある？",
+    "en": "Any word on the proposal I sent?",
+    "alternatives": [
+      "Have you heard anything about the proposal I sent?",
+      "Any update on the proposal I sent?"
+    ],
+    "point": "「何か返事は？」は Any word on ～? が定番",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 9,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7u2a2h2j",
     "ja": "早めに返信ください。",
     "en": "Please reply soon.",

@@ -107,6 +107,22 @@
     }
   },
   {
+    "id": "c_3s9s6e4x",
+    "ja": "印象的だったのは、君の冷静さだ。",
+    "en": "What struck me was your composure.",
+    "alternatives": [
+      "What impressed me was how calm you stayed.",
+      "What stood out to me was your composure."
+    ],
+    "point": "「印象に残った」は strike / stand out",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 9,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4h8e9b9p",
     "ja": "ここ、少し分かりにくいかも。",
     "en": "This part might be a bit unclear.",
@@ -215,6 +231,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5y2v9r6s",
+    "ja": "レイアウト、君の説明で納得した。",
+    "en": "You've won me over on the layout.",
+    "alternatives": [
+      "You've talked me round on the layout.",
+      "Your argument won me over on the layout."
+    ],
+    "point": "「納得させる」は win 人 over",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6d9m4z4j",
@@ -521,6 +553,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8x7x2p5a",
+    "ja": "君が直した所、まだ変だと彼は言う。",
+    "en": "He says what you fixed still looks off.",
+    "alternatives": [
+      "He says the part you fixed is still off.",
+      "He's saying the bit you fixed still looks off."
+    ],
+    "point": "says の後ろの節の中にさらに what 節が入る",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9d7a3k8f",

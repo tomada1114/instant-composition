@@ -41,6 +41,22 @@
     }
   },
   {
+    "id": "c_2j6b7z4s",
+    "ja": "コーヒー当番が誰か、誰も知らない。",
+    "en": "Nobody knows whose turn it is on coffee.",
+    "alternatives": [
+      "Nobody's sure whose turn it is to make coffee.",
+      "No one knows whose turn it is to make coffee."
+    ],
+    "point": "whose turn it is は間接疑問なので語順は平叙文",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2q2x6n3t",
     "ja": "ゴミは分別すべきです。",
     "en": "We should sort the trash.",
@@ -248,6 +264,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4h9k6m6z",
+    "ja": "置いた充電器、誰が取ったか知ってる？",
+    "en": "Any idea who took the charger I left?",
+    "alternatives": [
+      "Do you know who took the charger I left?",
+      "Know who picked up the charger I left?"
+    ],
+    "point": "who 節の中に、さらに charger I left が入る",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4r2a3k7g",
+    "ja": "今日は早めに上がろうかな。",
+    "en": "I might knock off early today.",
+    "alternatives": [
+      "I'm thinking of knocking off early today.",
+      "I think I'll head out early today."
+    ],
+    "point": "「仕事を切り上げる」は knock off",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 9,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_4t2a8k8n",
@@ -620,6 +668,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9p5z5g2y",
+    "ja": "昨日休まなきゃ、今ごろ死んでる。",
+    "en": "If I hadn't rested, I'd be dead.",
+    "alternatives": [
+      "I'd be dead now if I hadn't rested.",
+      "Had I not rested, I'd be a wreck now."
+    ],
+    "point": "過去の仮定 + 今の結果は、had done と would be",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9r6u9v4z",

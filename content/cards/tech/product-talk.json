@@ -104,6 +104,22 @@
     }
   },
   {
+    "id": "c_2z4y9x8d",
+    "ja": "私が決めるなら、それは廃止するね。",
+    "en": "If it were my call, I'd scrap it.",
+    "alternatives": [
+      "If it were up to me, I'd scrap it.",
+      "If I had the final say, I'd scrap it."
+    ],
+    "point": "「私が決めるなら」は If it were up to me",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 10,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3g9h4g4q",
     "ja": "通知を減らすのはどうかな？",
     "en": "How about reducing notifications?",
@@ -286,6 +302,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5n5s5y8j",
+    "ja": "皆ずっとダークモードを求めてる。",
+    "en": "Everyone's been clamoring for dark mode.",
+    "alternatives": [
+      "Everyone's been begging for dark mode.",
+      "Everyone's been asking for dark mode for ages."
+    ],
+    "point": "「ずっと〜してる」は have been doing",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 9,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5w6x5t3z",

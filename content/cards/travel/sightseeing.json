@@ -345,6 +345,22 @@
     }
   },
   {
+    "id": "c_5d9w5k8u",
+    "ja": "ガイドは、私たちを笑い転げさせた。",
+    "en": "The guide had us in stitches.",
+    "alternatives": [
+      "The guide had us all cracking up.",
+      "The guide kept us in stitches."
+    ],
+    "point": "have 人 in stitches は「人を大笑いさせる」",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5f8j7f6y",
     "ja": "午後のほうが空いてる？",
     "en": "Is the afternoon less crowded?",

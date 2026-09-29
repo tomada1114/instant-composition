@@ -313,6 +313,22 @@
     }
   },
   {
+    "id": "c_5p2j6s9x",
+    "ja": "詳細を掘り下げる時間はないです。",
+    "en": "There's no time to delve into details.",
+    "alternatives": [
+      "We don't have time to go into detail.",
+      "We don't have time to dig into the details."
+    ],
+    "point": "「〜する時間」は time to do。「掘り下げる」は delve into",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5r9h2z9k",
     "ja": "まず要点をざっと確認させてください。",
     "en": "Let me run through the key points first.",

@@ -124,6 +124,22 @@
     }
   },
   {
+    "id": "c_4c7b5d2m",
+    "ja": "言ってくれれば、ずらせたのに。",
+    "en": "Had you told me, I could've moved it.",
+    "alternatives": [
+      "If you'd told me, I could've moved it.",
+      "If you'd given me a heads-up, I could've moved it."
+    ],
+    "point": "If を省くと Had you told ～ と倒置になる",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 10,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4e9b2f6z",
     "ja": "これ、30分前倒しにできますか？",
     "en": "Could we move it up by 30 minutes?",
@@ -585,6 +601,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8s9d3w5z",
+    "ja": "絶対に、期限は延ばしません。",
+    "en": "Under no circumstances will we extend the deadline.",
+    "alternatives": [
+      "We won't extend the deadline under any circumstances.",
+      "There's no way we'll extend the deadline."
+    ],
+    "point": "否定の副詞句が文頭なら、後ろは疑問文の語順",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8z5m9z5n",

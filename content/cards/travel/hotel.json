@@ -608,6 +608,22 @@
     }
   },
   {
+    "id": "c_9h4m6j3u",
+    "ja": "問題は、お湯が出ないことなんです。",
+    "en": "It's the hot water that isn't working.",
+    "alternatives": [
+      "What's not working is the hot water.",
+      "What's wrong is that the hot water isn't working."
+    ],
+    "point": "問題の的を絞るなら It's ～ that の形",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_9p5q8y8k",
     "ja": "もっと静かな宿がよかった。",
     "en": "I wish I'd chosen somewhere quieter.",

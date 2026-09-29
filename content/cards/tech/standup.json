@@ -527,6 +527,22 @@
     }
   },
   {
+    "id": "c_9e8d6w2f",
+    "ja": "今日中に終わるかは、微妙ですね。",
+    "en": "I wouldn't bet on finishing today.",
+    "alternatives": [
+      "I wouldn't count on finishing today.",
+      "It's touch and go whether I'll finish today."
+    ],
+    "point": "「微妙」は would を使い断定を避ける",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 9,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_9h3j5t8e",
     "ja": "デプロイしなきゃ。",
     "en": "I have to deploy.",

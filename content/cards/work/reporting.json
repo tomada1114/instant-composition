@@ -22,6 +22,22 @@
     }
   },
   {
+    "id": "c_2a7q4d6p",
+    "ja": "業者が抜けて以来、遅れてます。",
+    "en": "We've slipped since the vendor pulled out.",
+    "alternatives": [
+      "We've been falling behind since the vendor pulled out.",
+      "We've been behind schedule since the vendor dropped out."
+    ],
+    "point": "since の後ろは過去形、主節は現在完了",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 9,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2e9e8s7p",
     "ja": "私が報告してたら、こうならなかった。",
     "en": "If I'd flagged it, this wouldn't have happened.",
@@ -102,6 +118,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3j2v4m3g",
+    "ja": "予算案は棚上げだと、彼女に言われた。",
+    "en": "She told me the budget had been shelved.",
+    "alternatives": [
+      "She said the budget had been put on ice.",
+      "She let me know the budget had been shelved."
+    ],
+    "point": "「棚上げ」は shelve。聞いた時点より前なので過去完了",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 10,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_3w4a9t5d",
@@ -270,6 +302,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5g4z4j2d",
+    "ja": "法務は来週連絡すると言ってた。",
+    "en": "Legal said they'd circle back next week.",
+    "alternatives": [
+      "Legal said they'd get back to us next week.",
+      "Legal said they'd follow up next week."
+    ],
+    "point": "said の後は will が would に変わる",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 9,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5h9f4k4x",

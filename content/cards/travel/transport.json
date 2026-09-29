@@ -453,6 +453,22 @@
     }
   },
   {
+    "id": "c_7x4u9h5t",
+    "ja": "終バス逃して、タクシーで帰った。",
+    "en": "Having missed the last bus, we cabbed home.",
+    "alternatives": [
+      "After missing the last bus, we took a cab.",
+      "Having missed the last bus, we took a cab."
+    ],
+    "point": "先に起きたことは having done で表す",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 9,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8f3u7z7u",
     "ja": "バスが遅れたら、歩いて行きます。",
     "en": "If the bus is late, I'll walk.",
@@ -605,6 +621,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9u6m2r3w",
+    "ja": "点検のため、運転見合わせ中です。",
+    "en": "Service is suspended pending an inspection.",
+    "alternatives": [
+      "Service has been suspended for an inspection.",
+      "Service has been halted pending an inspection."
+    ],
+    "point": "「運転見合わせ」は service is suspended",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 9,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9v5k3a8y",

@@ -19,6 +19,22 @@
     }
   },
   {
+    "id": "c_2n8w7a9f",
+    "ja": "タクシーの運転手に、ぼられました。",
+    "en": "I got ripped off by a taxi driver.",
+    "alternatives": [
+      "A taxi driver ripped me off.",
+      "I was ripped off by a cab driver."
+    ],
+    "point": "「ぼられる」は get ripped off",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 10,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2u8n8r8e",
     "ja": "運転手に止まるよう言って！",
     "en": "Tell the driver to stop!",
@@ -312,6 +328,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7c4f3a3n",
+    "ja": "荷物が、別の空港に回されました。",
+    "en": "My bag was rerouted to another airport.",
+    "alternatives": [
+      "My luggage was sent to a different airport.",
+      "My bag has been sent to another airport."
+    ],
+    "point": "「回された」は受け身。reroute が自然",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 9,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7f6g4y8w",

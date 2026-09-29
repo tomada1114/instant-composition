@@ -170,6 +170,22 @@
     }
   },
   {
+    "id": "c_4c7s9k3c",
+    "ja": "頼みたいのは、第三者の目です。",
+    "en": "What I need is fresh eyes.",
+    "alternatives": [
+      "What I'm after is a second pair of eyes.",
+      "It's a second pair of eyes I need."
+    ],
+    "point": "「別の人の目」は a second pair of eyes",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4x3h9j8f",
     "ja": "よければ、手伝ってもらえない？",
     "en": "I don't suppose you could help?",
@@ -354,6 +370,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7e7x4w4f",
+    "ja": "先に一言くれてもよかったのに。",
+    "en": "You could've given me a heads-up.",
+    "alternatives": [
+      "You could have told me beforehand.",
+      "You might have given me some warning."
+    ],
+    "point": "「〜してくれてもよかった」は could have done",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 9,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7k9u6s9m",

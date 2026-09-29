@@ -322,6 +322,22 @@
     }
   },
   {
+    "id": "c_5r2v4u2p",
+    "ja": "落ちた原因は、設定変更でした。",
+    "en": "What took us down was a config change.",
+    "alternatives": [
+      "It was a config change that took us down.",
+      "A config change is what took us down."
+    ],
+    "point": "「原因は～」を強調するなら What ～ was の形",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6b6x7s5x",
     "ja": "30分後にまた報告します。",
     "en": "I'll update you in 30 minutes.",
@@ -554,6 +570,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8q5q8s6u",
+    "ja": "パッチしてれば、今は落ちてないよ。",
+    "en": "If we'd patched, we'd be up now.",
+    "alternatives": [
+      "If we'd applied the patch, we'd be up now.",
+      "We wouldn't be down now if we'd patched it."
+    ],
+    "point": "過去の原因 + 今の結果は had done と would be",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8q7q5q3d",

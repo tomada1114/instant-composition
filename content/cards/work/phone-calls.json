@@ -274,6 +274,19 @@
     }
   },
   {
+    "id": "c_6q2c8g6q",
+    "ja": "そっちの声、さっきから途切れてるよ。",
+    "en": "You've been cutting out on me.",
+    "alternatives": ["You keep breaking up.", "Your audio keeps cutting out."],
+    "point": "声や音が途切れるは cut out / break up",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 10,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6r5h2a7g",
     "ja": "電話した時、彼はもう帰っていた。",
     "en": "He'd already left when I called.",
