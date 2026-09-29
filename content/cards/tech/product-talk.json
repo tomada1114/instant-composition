@@ -12,9 +12,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:cabaf840c186a2c32238ff2289c35bc71284ac0b55b4d24ce85f4419769ab050",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:f88dab219a6cf9e4eef9abfcd4841b97d591367c827e4840a89a332030f129ab",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -29,23 +29,35 @@
     "level": 1,
     "grammar": ["articles-and-countability", "be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f7f3f3d6226f58c0ee49b0673548d27ddfb7c3f9076dd5461fad0e9c802e454e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2h8e2q5k",
     "ja": "営業に、要望をまとめるよう頼んでくれる？",
-    "en": "Can you ask sales to combine requests?",
+    "en": "Can you ask sales to compile the requests?",
     "alternatives": [
-      "Could you ask sales to merge their requests?",
+      "Could you ask sales to consolidate their requests?",
       "Could you have sales put their requests together?"
     ],
     "point": "ask + 人 + to do の語順。that 節にしない",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 5,
+    "level": 4,
     "grammar": ["verb-object-to-do", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:55b87f8f377d4e36516eaf58efb4b00db75b40489dc3905e25a8b0e9be29fcf8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2m2k5v6w",
@@ -61,7 +73,13 @@
     "level": 10,
     "grammar": ["inversion"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d144eac6607334297f20d739278ba3a7cd38ad7d6396ae8c6fcdc8af6e3f1639",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2m6g9d2q",
@@ -77,7 +95,13 @@
     "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2cc51b3adcc47f088e39b63457878afbd9e11974a06b331274fd471ca467a6e1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2w2r5x9h",
@@ -90,7 +114,13 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d9183b2ee3ff410bdacf58c4f5a293b72323b4a816c8601ba2920c2500d01d68",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2x9x2b8q",
@@ -108,9 +138,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:6b1f6414fb7988213d328fa3cf13a4fcdb7fa54b81176c1af7f6ebdd57d78b11",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:158f360f2a958f4eb759f41d6d966e11a113be3c5dcd4410d29dd7ba07748d28",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -119,23 +149,29 @@
     "ja": "まず、ログインのバグを直すべきです。",
     "en": "We should fix the login bug first.",
     "alternatives": [
-      "We need to fix the login bug first.",
+      "First, we should fix the login bug.",
       "The login bug should be fixed first."
     ],
     "point": "should の後は動詞の原形。主語は we を補う",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 5,
+    "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:389ea4c354f5f9a9de3746e7250890737ff260df9e5150c6aa4229a2d2a56667",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3b3n9p4q",
-    "ja": "今、検索を改善しているところ。",
+    "ja": "今、うちで検索を改善しているところ。",
     "en": "We're improving search right now.",
     "alternatives": [
-      "We're working on search now.",
+      "We're making search better right now.",
       "Our team is improving search now."
     ],
     "point": "「今〜しているところ」は be + -ing にする",
@@ -144,100 +180,51 @@
     "level": 2,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3t6y2f3q",
-    "ja": "エクスポートを次のスプリントに入れられませんか？",
-    "en": "Could you possibly squeeze exports into the next sprint?",
-    "alternatives": [
-      "Would it be possible to add export next sprint?",
-      "I was wondering if you could add export next sprint."
-    ],
-    "point": "Could you possibly で依頼を柔らかくする",
-    "topic": "tech",
-    "subtopic": "product-talk",
-    "level": 7,
-    "grammar": ["hedging-softening"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4a2n8m8k",
-    "ja": "上司は、新機能より速さが大事だと考えています。",
-    "en": "My boss thinks speed matters more than new features.",
-    "alternatives": [
-      "My boss believes speed is more important than new features.",
-      "My boss feels that speed matters more than new features."
-    ],
-    "point": "think の後の that は省略できる。matter more than で比べる",
-    "topic": "tech",
-    "subtopic": "product-talk",
-    "level": 7,
-    "grammar": ["noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4e2f7c8j",
-    "ja": "ダークモードを優先していたら、今ごろ楽だったのに。",
-    "en": "If we'd prioritized dark mode, we'd be fine now.",
-    "alternatives": [
-      "Had we prioritized dark mode, we'd be better off now.",
-      "If we'd done dark mode first, we'd be fine now."
-    ],
-    "point": "過去の仮定は had + 過去分詞、今の結果は would be",
-    "topic": "tech",
-    "subtopic": "product-talk",
-    "level": 8,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6a211cc43513c9b54d2b8c75dcfc4a106a34a05e56e4fe1558d7d5622d8d5b95",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4h9r3k8f",
     "ja": "うちはもっとテストを書かないと。",
     "en": "We have to write more tests.",
-    "alternatives": ["We need to write more tests.", "We must write more tests."],
+    "alternatives": ["We need to write more tests.", "We've got to write more tests."],
     "point": "「〜しないと」は have to。we を主語に立てる",
     "topic": "tech",
     "subtopic": "product-talk",
     "level": 3,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3384d070a969986d00560b57fb0d87840986f64abb947b8119162e2de8a8d0bd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_4n5b4n7a",
-    "ja": "検索の意見は多いのに、使い方の情報は少ない。",
-    "en": "We've got plenty of feedback but little usage information.",
-    "alternatives": [
-      "We have plenty of feedback but very little usage data.",
-      "There's a lot of feedback but not much usage information."
-    ],
-    "point": "feedback も information も数えられない名詞。s は付けない",
+    "id": "c_4v5g8m6r",
+    "ja": "A案は速いのに対し、B案は安全です。",
+    "en": "Plan A is fast, whereas B is safe.",
+    "alternatives": ["Plan A is fast, but B is safe.", "While A is fast, B is safe."],
+    "point": "対比は whereas / while で二つの文をつなぐ",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 8,
-    "grammar": ["articles-and-countability"],
+    "level": 5,
+    "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4y4p4u7x",
-    "ja": "バグが直るまで、発表は待ちましょう。",
-    "en": "Let's hold off announcing until the bug's fixed.",
-    "alternatives": [
-      "Let's wait to announce until the bug is fixed.",
-      "Why don't we hold off announcing until we fix it?"
-    ],
-    "point": "until 節は未来のことでも現在形（bug's fixed）",
-    "topic": "tech",
-    "subtopic": "product-talk",
-    "level": 8,
-    "grammar": ["phrasal-verbs", "time-and-if-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a298be66f041643098c13c4dd185df0cd8fcd6beacaa18fb076956343964f9da",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5b8z7q3d",
@@ -253,7 +240,32 @@
     "level": 5,
     "grammar": ["noun-clauses", "infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f90cec04c12170bf0b17d376562302f5bdf1a67f7db6842ec796031e91c1a992",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_5d9t9a8e",
+    "ja": "その機能、もうロールアウトされた？",
+    "en": "Has that feature been rolled out yet?",
+    "alternatives": ["Has that feature shipped yet?", "Is that feature live yet?"],
+    "point": "「もう」の疑問は現在完了 + yet",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["present-perfect", "passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2e4ee277155e9b1a2e8debc2eb5b15389764955c70ccbf79f688f37086ebb9e6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5f8t7k7w",
@@ -269,7 +281,13 @@
     "level": 8,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f2e3d1bddae4027cddc6c6d201e6dbbbef58e49af63744b100eff8934de2561",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5k2c8k6a",
@@ -287,9 +305,31 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:109da5488e452690305b4bea3833c678568e0a68c5f2076ed5d32174b2b69e2e",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:cb5a7e25bc48583189a2c82e1acbbb319610d69c521a43bc6dbad7d8bba1eac2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_5m7c4a3s",
+    "ja": "うちはリリースを延期すべきだったよ。",
+    "en": "We should have postponed the release.",
+    "alternatives": [
+      "We should have pushed the release back.",
+      "We should have held off on the release."
+    ],
+    "point": "「〜すべきだった」は should have + 過去分詞",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:11e837d2dd456fc2c8d7b0a2f635f17d96bffd6983d919ce5f2b67479cd7cce2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -307,23 +347,145 @@
     "level": 5,
     "grammar": ["phrasal-verbs", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d072f13db38ecb471c338a4c2cfb68ad01df7bb85bfa0a050033e3ba5ddac9ae",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_5v8k2b7w",
+    "ja": "PMはその要望を見落としたのかもしれない。",
+    "en": "The PM might have missed that request.",
+    "alternatives": [
+      "The PM may have overlooked that request.",
+      "Maybe the PM overlooked that request."
+    ],
+    "point": "過去の推量は might have + 過去分詞",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6cdd9cce92a65985bc0a4652dae033c93c589ff1bbdd3953983d2e87b0788891",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_5x3u3b5g",
+    "ja": "これ、もう3週間レビュー中です。",
+    "en": "It's been in review for three weeks.",
+    "alternatives": [
+      "It's been under review for three weeks.",
+      "This has been in review for three weeks."
+    ],
+    "point": "継続中の状態は has been で表す（is では不可）",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:93be3c340549dad92b92dc1ace42b7efcb4035d1a13e540a5d06e2a58f1d6829",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6d6m2w4f",
-    "ja": "SSO を求めるのは、無料ユーザーでなく法人のお客さんだ。",
+    "ja": "SSOを求めるのは、無料ユーザーでなく法人客だ。",
     "en": "It's enterprise customers, not free users, who want SSO.",
     "alternatives": [
       "It's enterprise customers rather than free users who want SSO.",
-      "The ones who want SSO are enterprise customers, not free users."
+      "It's enterprise customers who want SSO, not free users."
     ],
     "point": "It's A, not B, who 〜 の強調構文で「A こそが」を表す",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 10,
+    "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2343f0feb39ced5f6ae66d4ddbc73d7fdfad42712efbd1dbf0365d93098d049a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_6d8v6v2z",
+    "ja": "知りたいのは、それがいつリリースされるかです。",
+    "en": "What I'd like to know is when it'll ship.",
+    "alternatives": [
+      "I'd like to know when it's going to ship.",
+      "What I want to know is when it'll be released."
+    ],
+    "point": "What ～ is の強調文のあとは when it will ～ の語順",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 8,
+    "grammar": ["indirect-questions", "cleft-emphasis"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bc240ae8f9ba2ee2bc4c079c968c1ecb6d4fdb4f3a12f42b5babe59b830c6602",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_6j3a9z9j",
+    "ja": "今朝報告のバグで、リリースが遅れるかもしれません。",
+    "en": "The bug reported this morning could push back the release.",
+    "alternatives": [
+      "The bug reported this morning might delay the release.",
+      "The bug flagged this morning may push the release back."
+    ],
+    "point": "「〜された」は reported を名詞の後ろに置いて修飾する",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["post-modification", "hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d60846534a1633282638257868c3dd55aebfe12bfa0c4fc059b512cebf5b4851",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_6p2t9c2t",
+    "ja": "ベータを出したら、フィードバック集めに集中しよう。",
+    "en": "Once the beta's out, let's focus on gathering feedback.",
+    "alternatives": [
+      "When we ship the beta, let's focus on gathering feedback.",
+      "After we release the beta, let's concentrate on collecting feedback."
+    ],
+    "point": "focus on の後は動名詞（to 不定詞ではない）",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["gerunds", "time-and-if-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:80d994cf52ae5bbb9e54384bd5191b4fa7e0f9e3949c2572696cf65ea9f3ac73",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7d2f9j5n",
@@ -339,47 +501,87 @@
     "level": 3,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c5b70c53176b64d6e35f2348ecb1b9ed4b1e87f446350a19f206295559c65600",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_8b4u7a7p",
-    "ja": "リリース前に、決済フローを QA にテストしてもらおう。",
-    "en": "Let's have QA test the checkout flow before release.",
+    "id": "c_7j5z8r8b",
+    "ja": "来週出す機能に、バグがあるよ。",
+    "en": "The feature shipping next week has a bug.",
     "alternatives": [
-      "Let's get QA to test the checkout flow before release.",
-      "Before we release, let's have QA test the checkout flow."
+      "The feature launching next week has a bug.",
+      "There's a bug in next week's feature."
     ],
-    "point": "「〜してもらう」は have + 人 + 動詞の原形（to は不要）",
+    "point": "名詞の後ろに shipping などの -ing で説明を足す",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 9,
-    "grammar": ["causatives"],
+    "level": 5,
+    "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:14f4a7006837c4136d72fdca81ffc2f517207d8a79c5ee9f3dd4b6e7e364ab51",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_8c4k4c8f",
-    "ja": "要望が多くても、今回のリリースには入りません。",
-    "en": "Even if many ask, it won't make this release.",
+    "id": "c_7u9t2a9n",
+    "ja": "テストは通りましたが、まだ出せません。",
+    "en": "Although the tests passed, we can't ship yet.",
     "alternatives": [
-      "It won't make this release, even if many users ask.",
-      "Even with lots of requests, it won't make this release."
+      "The tests passed, but we can't ship yet.",
+      "Though the tests passed, we can't ship yet."
     ],
-    "point": "「たとえ〜でも」は even if。「入る」は make the release",
+    "point": "Although の節のあとにカンマ、but とは併用しない",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3ecd02d4173473470a4f4fd107e30849d6043ecb20647dda92c5811c6e3b1113",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_8c8s3u5y",
+    "ja": "営業が言ってきた時、うちはもうスコープを固めてた。",
+    "en": "We'd already locked scope by the time sales spoke up.",
+    "alternatives": [
+      "Scope was already frozen when sales came to us.",
+      "By the time sales raised it, we'd already frozen scope."
+    ],
+    "point": "「言ってきた時にはもう」は by the time と過去完了",
     "topic": "tech",
     "subtopic": "product-talk",
     "level": 7,
-    "grammar": ["concession-contrast"],
+    "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:52f86e0318b4c7a7ae6207526ad32b32214011c57021fcb2805c3e2005dd25eb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8h4c5a8q",
     "ja": "決済は来月にずれ込むかもとPMが言ってた。",
-    "en": "PM said payments might slip to next month.",
+    "en": "The PM said payments might slip to next month.",
     "alternatives": [
       "The PM said payments could slip to next month.",
-      "The PM said payments might not ship this month."
+      "Our PM said payments might slip into next month."
     ],
     "point": "said に合わせて may ではなく might にする",
     "topic": "tech",
@@ -387,23 +589,57 @@
     "level": 6,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ae08db656b47adcc5876bbc82634c771594deb47950ffbc77a6bcbf5c139c2d2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_8y8r4f5a",
-    "ja": "人手が増えたら、あなたは検索を作る？",
-    "en": "If we had help, would you build search?",
+    "id": "c_8n7e3k4a",
+    "ja": "リリース前に、私が法務に承認してもらいます。",
+    "en": "I'll get legal to sign off before we ship.",
     "alternatives": [
-      "Would you build search if we had help?",
-      "If we added staff, would you build search?"
+      "I'll have legal sign off before we release.",
+      "I'll get legal to approve it before launch."
     ],
-    "point": "仮定の話は if 節を過去形、主節を would にする",
+    "point": "get + 人 + to 動詞で「〜してもらう」。sign off は承認する",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 5,
-    "grammar": ["second-conditional"],
+    "level": 6,
+    "grammar": ["causatives", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bbdb82c8f64d1b9f08dadeea2c960f71f3ca2dd86550d6fa00837f228cd156a1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_8r4u2t9v",
+    "ja": "エンジニアがいつ修正を出せるか、調べてもらえる？",
+    "en": "Can you find out when engineering can ship the fix?",
+    "alternatives": [
+      "Could you check when the engineers can ship the fix?",
+      "Can you ask engineering when they can ship it?"
+    ],
+    "point": "間接疑問は when のあと平叙文の語順（can ship）",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["indirect-questions", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1029dbc324fd51fef037d723c29e2f066f6f24cebfb67751e09397f999e82dfe",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9a8e2j6k",
@@ -419,7 +655,35 @@
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:09b04ec313f23b23ab163a5f5dfec80ba772d6047ba84d658c1910b009f620c2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_9k4f7p9v",
+    "ja": "ユーザーはこの機能をずっと待っています。",
+    "en": "Users have been waiting for this feature.",
+    "alternatives": [
+      "Users have been waiting on this feature.",
+      "People have been waiting for this feature."
+    ],
+    "point": "「ずっと〜している」は have been -ing、待つは wait for",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b079695c023c82ce2469181f6daff7f7147f3a6570134b0186dbbb5939752c75",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9t7c3z8m",
@@ -435,6 +699,12 @@
     "level": 5,
     "grammar": ["relative-clauses", "passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c490443b406ce269efc24a9278d62d6152968a25ccaf09e43991b430434c571",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]

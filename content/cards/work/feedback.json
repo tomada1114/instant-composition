@@ -1,19 +1,41 @@
 [
   {
-    "id": "c_2h2d3c9f",
-    "ja": "田中さんに読みにくいと言われて、変数名を見直しました。",
-    "en": "Tanaka said it was hard to read, so I renamed variables.",
+    "id": "c_2e6s7v8v",
+    "ja": "最後のセクション、少し削るといいかもしれません。",
+    "en": "You might want to trim down the last section.",
     "alternatives": [
-      "Tanaka told me it was hard to read, so I renamed variables.",
-      "Tanaka said it was tough to read, so I renamed the variables."
+      "The last section could be trimmed down a little.",
+      "Maybe cut the last section down a bit."
     ],
-    "point": "said の後は時制の一致で was と過去形に",
+    "point": "削る は trim down / cut down の句動詞で柔らかく",
     "topic": "work",
     "subtopic": "feedback",
-    "level": 10,
-    "grammar": ["reported-speech"],
+    "level": 7,
+    "grammar": ["phrasal-verbs", "hedging-softening"],
     "createdAt": "2026-09-28",
     "stamps": {}
+  },
+  {
+    "id": "c_2m3d9f8c",
+    "ja": "どこを削ればいいか、教えてもらえますか？",
+    "en": "Could you tell me what I should cut?",
+    "alternatives": [
+      "Can you tell me which parts to cut?",
+      "Would you tell me what to trim?"
+    ],
+    "point": "間接疑問は what I should cut の語順。What should I にしない",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 5,
+    "grammar": ["indirect-questions", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f700367a48b8be0297340809b72ce6b2295bdd7477cfdcfb7b5a66ade52a6fee",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2n4f7k5x",
@@ -26,10 +48,16 @@
     "point": "「見つけた」は find の過去形 found",
     "topic": "work",
     "subtopic": "feedback",
-    "level": 3,
+    "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4f3a006e4e26127f82e1ede2a30333df2638b41bdebf8776119c4d4c1b28717d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2n4p7d6n",
@@ -45,7 +73,13 @@
     "level": 5,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:92ba92ffa8d93a82bdf8f79485866771a190c3e212b6ee15555694115fbe8f66",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2q9p5z6b",
@@ -58,14 +92,80 @@
     "point": "過去の後悔は I wish I had + 過去分詞",
     "topic": "work",
     "subtopic": "feedback",
-    "level": 8,
-    "grammar": ["wishes-regrets", "modal-perfect"],
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:07478e9688144bace29c7a4030e751140f7fdce15a51431f181576781bfd6887",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_2s5v8q9c",
+    "ja": "次の提案書、出す前に誰かに見てもらうといいかも。",
+    "en": "Maybe have someone review the next proposal before submitting.",
+    "alternatives": [
+      "Maybe get someone to check the next proposal before sending.",
+      "You could have someone check the next proposal before sending."
+    ],
+    "point": "have + 人 + 動詞の原形で「人に〜してもらう」",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 7,
+    "grammar": ["causatives", "hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6c27bc2e0329f555ff222d027f3be10e55ca24c66f0b75d2e831096ce9ee5277",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_3g9f4j9v",
+    "ja": "企画が通ったのは、君の粘りのおかげだよ。",
+    "en": "The plan was approved thanks to your persistence.",
+    "alternatives": [
+      "Your persistence is why the plan got approved.",
+      "Your persistence got the plan approved."
+    ],
+    "point": "「通った」は受動態 was approved。おかげは thanks to",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 5,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:00aabb9fb9a5cb3019f8d326c95ff7088afc40c62d027c16689f5b04f058151c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_3k4v8s5u",
+    "ja": "悪くないけど、もう一押し欲しいところだね。",
+    "en": "It's not bad, but it could use a little more polish.",
+    "alternatives": [
+      "Not bad, but it could use a bit more work.",
+      "It's not bad, but it's still a bit rough around the edges."
+    ],
+    "point": "もう少し手が要る は could use 〜",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["hedging-softening", "concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_4n5j5s7q",
-    "ja": "最近、コードをずっと丁寧に見てくれてますね。",
+    "ja": "最近、コードをすごく丁寧に見てくれるね。",
     "en": "You've been reviewing my code so carefully lately.",
     "alternatives": [
       "You've been reviewing my code really carefully recently.",
@@ -74,15 +174,65 @@
     "point": "「最近ずっと〜している」は have been doing で表す",
     "topic": "work",
     "subtopic": "feedback",
-    "level": 6,
+    "level": 4,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:32b24bc6515800cbb0ef28f4fcae2b58cd59da6f1c4262d5394517ff2e2cc590",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_4v6p4d2b",
+    "ja": "君の助けがなければ、案件は失敗していたよ。",
+    "en": "Without your help, the project would have failed.",
+    "alternatives": [
+      "If you hadn't helped, the project would have failed.",
+      "The project would have failed without your help."
+    ],
+    "point": "過去の仮定は would have + 過去分詞",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:06e94a799b1522aea6e1337aba26dc7e9a6b78a5e387f9f3bd249df137ce0f3d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_5h4q3k6v",
+    "ja": "私が直すべき点を教えてください。",
+    "en": "Please tell me what I should fix.",
+    "alternatives": [
+      "Could you tell me what I should fix?",
+      "Please point out what I should fix."
+    ],
+    "point": "間接疑問は what I should fix の語順にする",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 4,
+    "grammar": ["indirect-questions", "modal-obligation-advice"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bb4d2157e11880cdecfc09c3463d06a12d3dfc86d3cc60b02a5ba00dfc7d4244",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5q8b5b6b",
-    "ja": "コメントは、明日の朝までに私が送ります。",
-    "en": "I'll send you my comments by tomorrow morning.",
+    "ja": "明日の朝までにコメントを送ります。",
+    "en": "I'll send my comments by tomorrow morning.",
     "alternatives": [
       "I'll send my feedback by tomorrow morning.",
       "You'll have my comments by tomorrow morning."
@@ -90,32 +240,38 @@
     "point": "「〜までに」は until ではなく by",
     "topic": "work",
     "subtopic": "feedback",
-    "level": 4,
+    "level": 2,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:5a72e41fafb1c6fd27daeeeb500111d885a1521e8ba54e96eb217c4e728bd1f3",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:214e80340600cc865f5df0142715dc5367539eaa8f1b366152a1581823bcbcb1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
   {
-    "id": "c_5r7r3f3h",
-    "ja": "お客さんの気がかりを全部カバーしてるね。",
-    "en": "This covers everything the client worried about.",
+    "id": "c_5s5t3s9r",
+    "ja": "レポートを読み終えたら、感想を送るね。",
+    "en": "I'll send comments when I finish reading.",
     "alternatives": [
-      "This covers everything the client was worried about.",
-      "This covers all the client's concerns."
+      "I'll send my thoughts after I finish reading.",
+      "Once I finish reading, I'll send my thoughts."
     ],
-    "point": "「お客さんが気にした」は everything の後ろに続ける",
+    "point": "未来のことでも when 節は現在形",
     "topic": "work",
     "subtopic": "feedback",
     "level": 4,
-    "grammar": ["relative-clauses"],
+    "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:07c4bfe6bb7a57d54a85e973c8ce2987b5fa96da84ba20e61c59ec9e38cf5c18",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6a5g7q2w",
@@ -131,31 +287,97 @@
     "level": 4,
     "grammar": ["gerunds", "present-perfect"],
     "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6e1a229216185491f54bab1d1e641f5aa55b010bfb561becf9ea492db1fb36d6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_6g5n5g5j",
+    "ja": "今週ずっと指摘を考えていましたが、おっしゃる通りでした。",
+    "en": "I've been mulling over your comments all week. You were right.",
+    "alternatives": [
+      "I've been thinking about your feedback all week. You were right.",
+      "I've spent all week thinking over your comments. You were right."
+    ],
+    "point": "all week の継続は現在完了進行形、結論は過去形",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 9,
+    "grammar": ["present-perfect-continuous", "tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6h5v2a6h",
+    "ja": "彼女、反対していた人たちまで味方につけたんだよ。",
+    "en": "She even won over the people who'd opposed it.",
+    "alternatives": [
+      "She even won over the people who were against it.",
+      "She even brought around the people who'd opposed it."
+    ],
+    "point": "反対していた側は先に起きたので過去完了 had opposed",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 7,
+    "grammar": ["phrasal-verbs", "past-perfect"],
+    "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_6j6y2b9r",
-    "ja": "指摘されたスライドは、もう全部直しました。",
+    "ja": "指摘されたスライド、もう全部直しました。",
     "en": "I've already fixed all the slides you flagged.",
     "alternatives": [
       "I've already fixed every slide you pointed out.",
       "All the slides you flagged are fixed already."
     ],
-    "point": "「もう直した」は現在完了、指摘した時点は過去形",
+    "point": "「もう直した」は現在完了、slides の後ろに you flagged を続ける",
     "topic": "work",
     "subtopic": "feedback",
-    "level": 6,
-    "grammar": ["tense-contrast"],
+    "level": 4,
+    "grammar": ["present-perfect", "relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:271c38b2cbd63d24dac3c26a205b5cab0b737a3e834aa994ceabd2492083afbf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_7n4h8y7k",
+    "ja": "終わったら、また見てもらえますか？",
+    "en": "Could you recheck it when I'm done?",
+    "alternatives": [
+      "Can you look again when I'm done?",
+      "Could you check again once I finish?"
+    ],
+    "point": "未来のことでも when 節は現在形（I'm done）",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 3,
+    "grammar": ["time-and-if-clauses", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9744335130b7aef87f9b937b7f36e2c59b3caf929397ae0937dfc96eda39b369",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7y5t5j5k",
     "ja": "お客さんが、週報を短くしてほしいって。",
-    "en": "The client wants us to shorten the reports.",
+    "en": "The client wants us to shorten weekly reports.",
     "alternatives": [
-      "The client wants the reports to be shorter.",
-      "The client wants us to make reports shorter."
+      "The client wants the weekly reports shorter.",
+      "The client wants us to trim weekly reports."
     ],
     "point": "「〜してほしい」は want + 人 + to do で表す",
     "topic": "work",
@@ -163,23 +385,13 @@
     "level": 4,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7z5h9x8h",
-    "ja": "彼は上手だけど、ゆっくり話すといいね。",
-    "en": "He's good, but he should speak slower.",
-    "alternatives": [
-      "He's good, but he needs to slow down.",
-      "He speaks well, but he should slow down."
-    ],
-    "point": "「〜するといい」は should で柔らかく助言する",
-    "topic": "work",
-    "subtopic": "feedback",
-    "level": 4,
-    "grammar": ["modal-obligation-advice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6170aa35c758ea160c1d99e4d2e014303176b9dd16b6bdc52e40e91251837a3f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8h8w5a8b",
@@ -197,27 +409,11 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:98b3b88644325aa19df973011d9f7c5e62fae62a8176b743f736100f096b6ab3",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:5686c544955b91a2e837a893bb41609aa0694a3336f6e967aa004decaa8512cb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_8k7s4h7w",
-    "ja": "いい資料ですが、グラフをもう少し大きくしてもらえませんか？",
-    "en": "Nice deck, but could you make the charts a bit bigger?",
-    "alternatives": [
-      "It's a good deck, but could you make the charts larger?",
-      "Nice deck, though I was wondering if you could enlarge the charts."
-    ],
-    "point": "褒めてから but で頼むと、依頼が柔らかくなる",
-    "topic": "work",
-    "subtopic": "feedback",
-    "level": 10,
-    "grammar": ["hedging-softening"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_8s6u7s7j",
@@ -230,7 +426,35 @@
     "level": 1,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fd43b32eb863d8694f9cc3448d849195f98ce17e2b6b31f5d4cbd8bfb4818357",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_8t9v8c6r",
+    "ja": "下書きを読み終えて、提案がいくつかあります。",
+    "en": "Having read your draft, I have some suggestions.",
+    "alternatives": [
+      "After reading your draft, I have some suggestions.",
+      "I've read your draft and have a few suggestions."
+    ],
+    "point": "「読み終えて」は Having + 過去分詞で言える",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8a0a748975d647a4aa32e793ca09c2eb818ab21612120030685176684c165745",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9a6g4w9m",
@@ -243,37 +467,27 @@
     "level": 2,
     "grammar": ["articles-and-countability", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f67bde5913e9e5939457f06a714e52087ab6ff84c726c45b2016404ffe22ffca",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_9f2d6h2u",
-    "ja": "次の提案書、出す前に先輩に見てもらうといいかもしれません。",
-    "en": "You might want to have a senior look it over first.",
+    "id": "c_9b5e9d3j",
+    "ja": "助言を聞いていれば、今こんなに苦労していないのに。",
+    "en": "If I'd taken your advice, I wouldn't be struggling now.",
     "alternatives": [
-      "Maybe get a senior colleague to look it over first.",
-      "It might be worth having someone senior look it over first."
+      "If I'd listened to you, I wouldn't be struggling now.",
+      "Had I taken your advice, I wouldn't be struggling now."
     ],
-    "point": "have + 人 + 動詞の原形で「人に〜してもらう」",
+    "point": "過去の仮定 if 節に、今の結果は would be ~ing",
     "topic": "work",
     "subtopic": "feedback",
-    "level": 10,
-    "grammar": ["causatives", "hedging-softening"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9n6d9p9e",
-    "ja": "指摘がなければ、間違った数字を送っていました。",
-    "en": "If you hadn't caught it, I'd have sent wrong numbers.",
-    "alternatives": [
-      "Had you not caught it, I'd have sent wrong numbers.",
-      "Without your catch, I'd have sent the wrong numbers."
-    ],
-    "point": "過去の仮定は had + 過去分詞、結果は would have + 過去分詞",
-    "topic": "work",
-    "subtopic": "feedback",
-    "level": 7,
-    "grammar": ["third-conditional"],
+    "level": 8,
+    "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
   }

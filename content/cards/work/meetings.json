@@ -1,5 +1,43 @@
 [
   {
+    "id": "c_2b8w3y9f",
+    "ja": "終わったら、議事録送ってくれる？",
+    "en": "Can you send the minutes when we finish?",
+    "alternatives": [
+      "Could you send the minutes after we finish?",
+      "Can you email the minutes when we're done?"
+    ],
+    "point": "未来のことでも when 節は現在形（will を使わない）",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 4,
+    "grammar": ["time-and-if-clauses", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a39fe2cc81cd6ce87f97c3cc0ff53b9b36ca760bba265776ec4f650966767baf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_2d9n6m4r",
+    "ja": "その数字、私が事前に確認しておくべきでした。",
+    "en": "I should have checked those figures beforehand.",
+    "alternatives": [
+      "I should have checked those numbers ahead of time.",
+      "I should've checked those numbers first."
+    ],
+    "point": "過去の後悔は should have + 過去分詞",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2m6k5y3m",
     "ja": "最後に、私が今日の決定をまとめます。",
     "en": "Finally, I'll summarize today's decisions.",
@@ -15,9 +53,97 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:7fc23b3a3fa6a95d3f718e03073ed4931a8c65a5f82b8f9d38f921780431365f",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:b58db88c0fe00ebd25adb17e4b3d8edf9e4f05ef83091f1b7926f72c0605089c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_2q2s6e4k",
+    "ja": "その件、来週に延ばしたほうがいいね。",
+    "en": "We should push that to next week.",
+    "alternatives": [
+      "Let's put that off until next week.",
+      "We'd better postpone that until next week."
+    ],
+    "point": "「延ばす」は push / put off。should で提案する",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 5,
+    "grammar": ["modal-obligation-advice", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8fa2df4849d9899167d137499d1a518a95754f1a86db5e8a3133b186b966eeac",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_2q5p8j3p",
+    "ja": "私が心配なのは、予算ではなくスケジュールです。",
+    "en": "It's the timeline, not the budget, that worries me.",
+    "alternatives": [
+      "The timeline, not the budget, is what worries me.",
+      "What worries me is the timeline, not the budget."
+    ],
+    "point": "It's ~ that で強調。not ~ は強調する語の直後に置く",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f6f5565690974cf7fa5ea120796d6b8dd450c2bb6a6765a0509ba7cd7f029957",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_3d2m8f8e",
+    "ja": "つまり、予算を削るべきだということですか？",
+    "en": "So what you're saying is we should cut the budget?",
+    "alternatives": [
+      "Are you saying that we should cut the budget?",
+      "So you're saying we should cut the budget?"
+    ],
+    "point": "What you're saying is 〜 で相手の発言を確認する",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 7,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2b7874f861a03a2c43cc5a9c9a8e50b5716529de165bcfb4474b2af9ff30fd5b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_3p3g2c9u",
+    "ja": "話がそれてきたので、本題に戻しましょう。",
+    "en": "We're drifting off topic. Let's get back on track.",
+    "alternatives": [
+      "The discussion is drifting, so let's refocus.",
+      "We've strayed off topic. Let's get back to it."
+    ],
+    "point": "「軌道に戻る」は get back on track という句動詞",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9a1b5b473a5c86fc36e799f4502f1970b4e62fd93fed22a217023d8a877a413e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -32,23 +158,13 @@
     "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4d4y9c8j",
-    "ja": "今決めるのは、発売を延ばすかどうかですよね？",
-    "en": "What we're deciding is whether to delay the launch.",
-    "alternatives": [
-      "What we need to decide is whether to delay launch.",
-      "The thing we're deciding is whether to delay the launch."
-    ],
-    "point": "「かどうか」は whether to ～、What ～ is に続ける",
-    "topic": "work",
-    "subtopic": "meetings",
-    "level": 8,
-    "grammar": ["cleft-emphasis", "noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9875b2ebd62bc02f99d07514cd80b353675154e333a56a50b77e075ae7c7d374",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4d8n7z9p",
@@ -58,37 +174,49 @@
       "We have three things to discuss.",
       "There are three items to discuss."
     ],
-    "point": "discuss は他動詞なので about を付けない",
+    "point": "「話し合うこと」は things to discuss と名詞の後ろに to 不定詞を置く",
     "topic": "work",
     "subtopic": "meetings",
     "level": 3,
     "grammar": ["there-is-are", "infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8e9f58f2927414997581ba05cfe7e51e6af2be77a4302d0d1a8fdc1faf4e9e44",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_4g3y6e6z",
-    "ja": "部長が反対でも、私ならやはりみんなにきちんと説明します。",
-    "en": "Even if the boss objects, I'd still walk them through it.",
+    "id": "c_4k9k6u3n",
+    "ja": "佐藤さんが挙げた懸念について、どう思いますか？",
+    "en": "What do you make of the concern Sato raised?",
     "alternatives": [
-      "Even if the boss disagrees, I'd still explain it carefully.",
-      "Even if the boss objects, I'd still explain it properly."
+      "What do you think about the concern that Sato raised?",
+      "How do you feel about the concern Sato raised?"
     ],
-    "point": "「たとえ〜でも」は even if、主節に still を添える",
+    "point": "「どう思う」は What do you make of ~? で聞ける。目的格の that は省略可。",
     "topic": "work",
     "subtopic": "meetings",
-    "level": 10,
-    "grammar": ["concession-contrast"],
+    "level": 7,
+    "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7b3e17da5d6d61c58ded8d2f553f1609e86a2722c10b8d3ecf25a5a79528ad67",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4y4g3b2b",
     "ja": "すみません、最後が聞こえなくて。",
-    "en": "Sorry, I couldn't hear the end.",
+    "en": "Sorry, I couldn't hear the last part.",
     "alternatives": [
-      "Sorry, I couldn't catch the end.",
-      "Excuse me, I couldn't hear the end."
+      "Sorry, I couldn't catch the last part.",
+      "Sorry, I didn't catch the last part."
     ],
     "point": "「聞こえなかった」は didn't hear より couldn't hear",
     "topic": "work",
@@ -98,9 +226,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:dc385084e2736050905f8da7cd0e6befaaab47d74f752f22988f47f0a7b02b97",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:0482bc7a3bdf7ed3108e35e86d22eda53dc7d7e23b05698626ff0bfef646e3e9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -115,7 +243,13 @@
     "level": 3,
     "grammar": ["verb-object-to-do", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e58294f4c42601ea46a851fad56eedde6e6ec1a7f5852799a47506527c863184",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5b8a3t6q",
@@ -123,23 +257,29 @@
     "en": "Could you share any information you have?",
     "alternatives": [
       "Would you mind sharing any information you have?",
-      "If you have any information, could you share it?"
+      "Can you share whatever information you have?"
     ],
     "point": "information は数えられないので an や -s をつけない",
     "topic": "work",
     "subtopic": "meetings",
-    "level": 6,
+    "level": 4,
     "grammar": ["articles-and-countability", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0b26bb76bd397af3160b1068c7b390cb45e7e7bdc1f89d65f6da4a7698a4eda5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5c9u7k6k",
-    "ja": "予算があれば、承認するんですが。",
-    "en": "If we had the budget, we'd approve.",
+    "ja": "予算があれば、うちは承認するんですが。",
+    "en": "If we had the budget, we'd approve it.",
     "alternatives": [
       "We'd approve it if we had the budget.",
-      "If we had the funds, we'd approve."
+      "If we had the funds, we'd approve it."
     ],
     "point": "現実と違う仮定は if 節を過去形、主節は would",
     "topic": "work",
@@ -147,23 +287,13 @@
     "level": 5,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5f9v4s9d",
-    "ja": "一番の懸念は、まだ誰が責任者か決まっていないことです。",
-    "en": "What worries me is we haven't decided who's in charge.",
-    "alternatives": [
-      "What concerns me is that nobody's decided who's in charge yet.",
-      "My worry is that we still haven't decided who's in charge."
-    ],
-    "point": "who 以下は疑問文ではなく平叙文の語順",
-    "topic": "work",
-    "subtopic": "meetings",
-    "level": 9,
-    "grammar": ["noun-clauses", "indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1a965b2adc5dd2224c1f95dab257be3b364417edad0345a0ca620c569e90eada",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5q9d5m7t",
@@ -179,7 +309,35 @@
     "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f0d2dad79be2daf0c4b0aa36e794838018ba435eec1df3c7eb3f90fbced156e5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_5w7e9n4d",
+    "ja": "彼は賛成ですが、私は待ちたいです。",
+    "en": "He's in favor, whereas I'd rather wait.",
+    "alternatives": [
+      "He supports it, but I'd rather wait.",
+      "Although he's in favor, I'd rather wait."
+    ],
+    "point": "対比は whereas。前後で主語を並べる",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:01373845621cd838c5f29380dfcddc62d6c5128a19486e5a6df870cc56427e8f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6b3g3j4y",
@@ -195,15 +353,21 @@
     "level": 6,
     "grammar": ["wishes-regrets", "past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1b99a64124f723621ec0e85f8d2898d6721315f36c15cea7f6b48f5b406dbe55",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6c9y7w9x",
     "ja": "あそこに座っている女性がリーダーです。",
-    "en": "The woman sitting there is our leader.",
+    "en": "The woman sitting over there is the leader.",
     "alternatives": [
-      "The woman sitting over there is our leader.",
-      "The lady sitting there is our team leader."
+      "The woman sitting there is the leader.",
+      "The woman seated over there is the leader."
     ],
     "point": "sitting there が後ろから woman を説明する",
     "topic": "work",
@@ -211,29 +375,19 @@
     "level": 4,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6d3f3f6n",
-    "ja": "部長は事前に全部読み終えていた。",
-    "en": "The manager had read everything beforehand.",
-    "alternatives": [
-      "The manager had already read everything.",
-      "The manager had read everything ahead of time."
-    ],
-    "point": "先に終わっていたことは had + 過去分詞",
-    "topic": "work",
-    "subtopic": "meetings",
-    "level": 5,
-    "grammar": ["past-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5f0c73ddac89b259066b0698a66e9094ccbeff014e44713c89ab52262edf1d2d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6s2y4h3j",
     "ja": "私はその案に賛成です。",
-    "en": "I agree with the idea.",
-    "alternatives": ["I'm for the idea.", "I support the idea."],
+    "en": "I agree with that idea.",
+    "alternatives": ["I'm in favor of that idea.", "I support that idea."],
     "point": "agree は be 動詞なしで使う（I'm agree は誤り）",
     "topic": "work",
     "subtopic": "meetings",
@@ -242,11 +396,71 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:b08788343b63593b7a9ab60c7628e89407cda8eee23b75116abe76f79c8be8dd",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:6af1fcd8f7e64c12f57476ae4e17a5597b87408618fcc63c8f33fab84cf7d70c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_6t2t6u5p",
+    "ja": "時間がないので、次の議題に移りましょう。",
+    "en": "We're short on time, so let's move on.",
+    "alternatives": [
+      "Since we're short on time, let's move on.",
+      "We're running short on time, so let's move on."
+    ],
+    "point": "「移る」は move on。on を落とさない",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 6,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9c71fe63f0a92e6bd4c806c2726046d57d86b6c8fd8ebacb5fbfaf7b6b523dcf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_6w4a2j5f",
+    "ja": "誰に最終決定権があるのか、まだ不明確です。",
+    "en": "It's still unclear who has the final say.",
+    "alternatives": [
+      "We still don't know who has the final say.",
+      "It's not yet clear who has the final say."
+    ],
+    "point": "間接疑問は who + 動詞の語順。does は不要",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 7,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5e96f3fdddb73eeae1de35c71bc9d7da5362754de900319a1611817954cbe5e3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_6w7t6g8n",
+    "ja": "前回スコープを固めていれば、今こんなに揉めていないのに。",
+    "en": "If we'd nailed down the scope before, we wouldn't be arguing now.",
+    "alternatives": [
+      "If we'd settled the scope last time, we wouldn't be arguing now.",
+      "We wouldn't be arguing now if we'd settled the scope last time."
+    ],
+    "point": "過去の仮定 + 今の結果は if 節 had done、主節 would be",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 10,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7h4t4a5m",
@@ -262,7 +476,13 @@
     "level": 5,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7ae7f2a01ffeb6a9ab0eb8682680dff0e7a5e36ed794fd2159b767fef770dc01",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7h7n8v6f",
@@ -280,9 +500,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:ffca4c2bce4860c81304611ddb745e0abccf634b6bd9e1634eb9563fc7e1965f",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:32307ffe011b2543ad3ad05697e908880b57579e1a69eaa234def89c7188eccc",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -300,7 +520,13 @@
     "level": 7,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:590a3430f71f154d90b1553ad709134a633cab1fc4811482dbe275241ab29888",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7x4q5e3w",
@@ -313,26 +539,54 @@
     "point": "過去進行形 was wondering で柔らかい依頼に",
     "topic": "work",
     "subtopic": "meetings",
-    "level": 8,
+    "level": 7,
     "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:983a699938853f6edddf8875e546ba2b24efbd0bf3c93289d478ed884534cae9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_8d2v4h8u",
+    "ja": "会議の前に、皆さんに一度確認しておくべきでした。",
+    "en": "I should have run it by everyone before the meeting.",
+    "alternatives": [
+      "I should have checked with everyone before the meeting.",
+      "I should've checked with everyone first."
+    ],
+    "point": "run it by ～ で「～に確認する」。後悔は should have + 過去分詞",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 7,
+    "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
-    "id": "c_8m9x8q2v",
-    "ja": "今日中に結論が出なければ、来週続けましょう。",
-    "en": "If we don't decide today, let's revisit this next week.",
+    "id": "c_8d9k9u8f",
+    "ja": "部長が戻ったら、この件を詰めましょう。",
+    "en": "Let's hash this out when the director gets back.",
     "alternatives": [
-      "If we can't decide today, let's continue next week.",
-      "If nothing's decided today, let's pick this up next week."
+      "Let's work this out once the director is back.",
+      "Once the director gets back, let's iron this out."
     ],
-    "point": "未来のことでも if 節は現在形",
+    "point": "「詰める」は hash out / iron out。when 節は未来でも現在形。",
     "topic": "work",
     "subtopic": "meetings",
     "level": 8,
-    "grammar": ["time-and-if-clauses"],
+    "grammar": ["time-and-if-clauses", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1472a35ee2945575f6a3282c4c1e402782eace2497dcab3e312418a2dd19ab46",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8v5n3y7j",
@@ -348,8 +602,8 @@
     "stamps": {
       "core": {
         "hash": "sha256:88b7997ab5a4aba97ab12c98a4fda3e4f81614ee3db8eea4ef8d9f264950c213",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -367,7 +621,13 @@
     "level": 6,
     "grammar": ["reported-speech", "passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c5f87be57016e87974607d9e0bbee9632c1212310ac1ab12b61efc8d8724d5c8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9p5m3n8j",
@@ -383,7 +643,13 @@
     "level": 9,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b23ed07fce092c061bfb49641f3fd7918eefe17047ee3e17f09de7026225a367",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9q7u6p6s",
@@ -399,6 +665,12 @@
     "level": 2,
     "grammar": ["past-simple", "wh-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6641ea2f11e4d29523f5bbca0f8e0ff37eb8e7e7561d9bd45fd14b0d77addee6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]

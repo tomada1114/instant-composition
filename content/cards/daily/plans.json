@@ -1,19 +1,25 @@
 [
   {
     "id": "c_2j5e5f4r",
-    "ja": "あのとき予約してれば、今ごろ沖縄でのんびりなのにね。",
-    "en": "If we'd booked back then, we'd be lounging in Okinawa now.",
+    "ja": "あのとき予約してれば、今ごろ沖縄でのんびりなのに。",
+    "en": "If we'd booked then, we'd be lounging in Okinawa now.",
     "alternatives": [
-      "If we'd booked back then, we'd be relaxing in Okinawa now.",
-      "If only we'd booked, we'd be chilling in Okinawa right now."
+      "If we'd booked then, we'd be relaxing in Okinawa now.",
+      "If we'd booked then, we'd be chilling in Okinawa now."
     ],
     "point": "過去の条件と今の結果は if 節が過去完了、主節が would be",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 10,
+    "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f078b21d7f559881896326a84d79c0d42fa4aaa2fe3a3a84302185d2723425ac",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2k6m7e9h",
@@ -29,23 +35,35 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a83219ad548b6c3f600b3c11ea244aee622f197ca74417a072c7d90c7bdbeedd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_2q8a5y3g",
-    "ja": "弟は、姉の結婚式に休みを取ればよかったと悔やんでる。",
-    "en": "My brother wishes he'd taken time off for the wedding.",
+    "id": "c_2y3w7u8x",
+    "ja": "遅れそうだから、8時ごろ合流するね。",
+    "en": "Running late, I'll join you around eight.",
     "alternatives": [
-      "My brother regrets not taking time off for the wedding.",
-      "My brother wishes he'd requested time off for the wedding."
+      "I'm running late, so I'll join you around eight.",
+      "I'll be late, so I'll meet you around eight."
     ],
-    "point": "主語が三人称なら wishes、後悔の中身は過去完了",
+    "point": "分詞構文の主語は主節と同じ人にする",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 9,
-    "grammar": ["wishes-regrets"],
+    "level": 6,
+    "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0d1160c1bfc02adc70cab20bceda2fb9cadd4b1860b98f63226bad601fd97975",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3v3n5a5p",
@@ -61,7 +79,13 @@
     "level": 7,
     "grammar": ["causatives", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fc00a924de1fc9409028b56b82ffc9e2a93e9aef99c6be3fe1f7b8f8ef60e6c4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3v4n5y7v",
@@ -77,7 +101,13 @@
     "level": 4,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4ea6dfbf52f544c81baa635b2a17c24decf03dcd8348cc9b3817b56aa0da3b38",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3z8r6m8v",
@@ -90,7 +120,13 @@
     "level": 2,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e643db05a7ff4a21e03fd83c78f87e4b7c3817bf710cf2a83eb2b3744f3f6ac1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4c5q3f6t",
@@ -104,41 +140,59 @@
     "topic": "daily",
     "subtopic": "plans",
     "level": 3,
-    "grammar": ["wh-questions", "progressive-aspect"],
+    "grammar": ["wh-questions", "future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e8330812dadc5551a6abceef0afcab2a8d86b8f6c3e8ed611fc82c9cdb442c6f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_4f4e3k3n",
-    "ja": "父は来月、大学の友人と会うんだ。",
-    "en": "My dad's meeting college friends next month.",
+    "id": "c_4k5c8b6d",
+    "ja": "行きたいのに。今夜先約さえなければなあ。",
+    "en": "I'd love to come. If only I weren't booked tonight.",
     "alternatives": [
-      "My dad's getting together with friends next month.",
-      "Dad's catching up with college friends next month."
+      "I'd love to come. I wish I weren't busy tonight.",
+      "If only I were free tonight, I'd love to come."
     ],
-    "point": "決まっている予定は現在進行形 is meeting で言える",
+    "point": "if only の後は過去形。be動詞は I でも were",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 5,
-    "grammar": ["future-forms"],
+    "level": 7,
+    "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:beacf452404b47935a9af05eb2a1e3e236fed22d27aab411fa3b29a9b57af175",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_4g6r5e3u",
-    "ja": "サラの電話の時、予定を立ててたよ。",
-    "en": "I was making plans when Sarah called.",
+    "id": "c_4t5n6u9y",
+    "ja": "着いたら、電話するね。",
+    "en": "I'll call you when I arrive.",
     "alternatives": [
-      "Sarah called while I was making plans.",
-      "I was planning things when Sarah called."
+      "I'll call you once I get there.",
+      "I'll phone you when I get there."
     ],
-    "point": "していた最中は過去進行形、電話は過去形 called",
+    "point": "未来のことでも when の後ろは現在形 (arrive)",
     "topic": "daily",
     "subtopic": "plans",
     "level": 3,
-    "grammar": ["progressive-aspect", "past-simple"],
+    "grammar": ["time-and-if-clauses", "future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2615c8b68699464cc178892a82508d954cdd365bb4b85cf895e309f9ffbc32ff",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4w6e5m4e",
@@ -154,7 +208,13 @@
     "level": 4,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8de34e6f7973260eca64dda3146ff55eadce0b08cc4e5a5378fc897951e2d530",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4w6x3d2j",
@@ -170,7 +230,13 @@
     "level": 7,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:746193ce6aab46ef515949a0f3b78ef3df98c954e479af6bc2d132dbcbd85ebe",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4y8c9d6c",
@@ -186,13 +252,19 @@
     "level": 7,
     "grammar": ["hedging-softening", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ea1d8e3129ed0dcc7252b73b561fd382688dc0677525758324329dcb2d3352c5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5b9n5m6k",
     "ja": "日曜日に映画を見に行こう。",
     "en": "Let's see a movie Sunday.",
-    "alternatives": ["Let's go to a movie Sunday.", "Let's watch a movie on Sunday."],
+    "alternatives": ["Let's go to a movie Sunday.", "Let's go see a movie Sunday."],
     "point": "「見に行こう」は Let's see a movie でOK",
     "topic": "daily",
     "subtopic": "plans",
@@ -201,9 +273,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:b7df5dfd84cfa1e9c2e4cc6352d6b39ac1b26e380d824cdd046eae56f38c2c79",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:4845f3ccb166c1d7cecfa5ea3898ebe48e4a6d12cead5f2e3ebb0931f2bc9660",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -223,43 +295,55 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:9800e6a594a7e93a38f45a61c8fe17b8670be4e4152703f19e646eb6590e8514",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:6bafd6cd8ac37a2c58a9bb8af2904e6ea12bd4e5c47a64591049ca0cf4cebda5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
   {
-    "id": "c_5e3k4z4f",
-    "ja": "日程、全員が空いてる日がやっと見つかったよ。",
-    "en": "We've finally found a day that works for everyone.",
+    "id": "c_5d9y4j7b",
+    "ja": "大事なのは、みんなが来られることだよ。",
+    "en": "What matters is that everyone can make it.",
     "alternatives": [
-      "We've finally found a date that suits everyone.",
-      "We've finally found a day everyone is free."
+      "The important thing is that everyone can come.",
+      "The main thing is that everyone can come."
     ],
-    "point": "「やっと見つかった」は現在完了。day を that で後ろから説明",
+    "point": "「大事なのは〜」は What matters is that 節で言える",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 7,
-    "grammar": ["present-perfect", "relative-clauses"],
+    "level": 5,
+    "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:77e795cbee11d7810909e0292b2ec591978e38575c16abf042d366a95c682374",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_5g8u9q9n",
-    "ja": "姉が、旅行のこと、もう決めたかって聞いてるよ。",
-    "en": "My sister's asking if you've decided yet.",
+    "id": "c_5j5w6p7z",
+    "ja": "昨日の約束、忘れてた。ごめん！",
+    "en": "Sorry, I forgot about yesterday's plan.",
     "alternatives": [
-      "My sister wants to know if you've decided yet.",
-      "My sister's wondering whether you've made up your mind."
+      "I'm sorry I forgot our plans yesterday.",
+      "Sorry, I forgot we had plans yesterday."
     ],
-    "point": "if の後は you've decided の平叙文の語順にする",
+    "point": "「忘れた」は過去形 forgot (forget の不規則変化)",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 6,
-    "grammar": ["indirect-questions", "present-perfect"],
+    "level": 3,
+    "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b2d8febdcedde7ff521d0e4e9eb8d7bd538e24a1bf7cf6e3b63423ca5870318a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5p9y4v4m",
@@ -275,55 +359,123 @@
     "level": 5,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5492470bef48b765ac84fce955730a5aa6630dbcdbd170255608b0d0097fd0f5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_5u6r8v2m",
-    "ja": "悪いけど、必要なのは家でのんびりする時間。",
-    "en": "Sorry, what I need is downtime at home.",
+    "id": "c_5r4t5x4c",
+    "ja": "何時に集まるのか、ちょうど気になってたんだ。",
+    "en": "I was just wondering what time we're meeting.",
     "alternatives": [
-      "Sorry, what I need is time to relax.",
-      "Sorry, I just need some downtime at home."
+      "I was wondering what time we're getting together.",
+      "I was just wondering when we're meeting up."
     ],
-    "point": "「〜なのは」は What I need is で始める",
+    "point": "wonder の後は平叙文の語順（what time we're）",
     "topic": "daily",
     "subtopic": "plans",
     "level": 6,
-    "grammar": ["noun-clauses"],
+    "grammar": ["indirect-questions", "hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:69a6609f4408060969f7336dc4644f24c4b7dbe12c0ee9bd8e8ed8ab27f9d20d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_6b3m9h2n",
+    "ja": "行きたいのは山々だけど、もう先約があるんだ。",
+    "en": "I'd love to, but I'm already booked.",
+    "alternatives": [
+      "I'd love to come, but I already have plans.",
+      "I'd love to, but I've got other plans."
+    ],
+    "point": "I'd love to は後ろの動詞を省いて to で終えられる",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["concession-contrast", "hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ac10b42ebfc78955934d67de81164203c683b311d973342e83d50d48cc339d26",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6v5g9f8s",
-    "ja": "引っ越しの手伝い、友達にあと何人か頼むね。",
+    "ja": "あと何人か友達に手伝いを頼むね。",
     "en": "I'll ask a few more friends to help.",
     "alternatives": [
-      "I'll get a few more friends to help.",
-      "I'll ask a few other friends to pitch in."
+      "I'll ask a few more friends for help.",
+      "I'll ask a couple more friends to help."
     ],
     "point": "ask 人 to do の形。help の前に to を忘れない",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 7,
+    "level": 4,
     "grammar": ["infinitives", "verb-object-to-do"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1784238ef2d5a2f2f4f57d8f048130e4da891e11937f64566b70381a6857a09b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_7f9v5y7p",
+    "ja": "ごめん、土曜は約束を断らなきゃいけない。",
+    "en": "Sorry, I have to back out of Saturday's plans.",
+    "alternatives": [
+      "Sorry, but I'll have to cancel on Saturday.",
+      "Sorry, I've got to bail on Saturday."
+    ],
+    "point": "断る・ドタキャンは back out of / bail on",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 6,
+    "grammar": ["modal-obligation-advice", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:adb18519bd9a738539176e80377af84c47987a176d076a5ec168309e4fbdd628",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7p7r8b6h",
     "ja": "今めちゃ忙しいし、金曜の飲み会は休もうかな。",
     "en": "I'm swamped, so I'm thinking of skipping Friday's drinks.",
     "alternatives": [
-      "I've been so busy that I'm considering skipping Friday's drinks.",
+      "I'm swamped, so I might skip Friday's drinks.",
       "I'm slammed, so I'll probably skip Friday's drinks."
     ],
     "point": "think of の後は -ing 形。to skip にしない",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 8,
+    "level": 6,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9c95c591b015a6a92ff8614ece24488ff5a058926f824cd1c57bdde98dd6c421",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7x5k3e9v",
@@ -339,7 +491,13 @@
     "level": 6,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c3e424907eab3da1f7972d231044ce92c14d7693c8580e75e4a7cf2899aded04",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7x9f4a6j",
@@ -355,23 +513,13 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7y9s4f5s",
-    "ja": "兄は、父が退院するまで帰省できないって。",
-    "en": "My brother can't come home until Dad gets discharged.",
-    "alternatives": [
-      "My brother can't come home till Dad's released.",
-      "My brother can't make it home until Dad's discharged."
-    ],
-    "point": "until 節の中は未来のことでも現在形（gets）",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 8,
-    "grammar": ["time-and-if-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6420d1085cd85a4272409cee26caaef5deea3f52aa408b079b6a357fbbb12540",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8a9d9p3j",
@@ -387,7 +535,13 @@
     "level": 6,
     "grammar": ["reported-speech", "passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e55e2d6a3f7e9ead83dfd4b8f2da07c30939eb6afea5bc6faf08f1c5945f8dd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8n5r3f4m",
@@ -403,7 +557,13 @@
     "level": 5,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e258e8728d3c68e9cc9616562ab111ab27e14ebc0358c49251be727862c38ef",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8s8j4h2h",
@@ -416,7 +576,35 @@
     "level": 5,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:009cf33ce826df7fd6f3ae32afe53fe7ea1b4e55449d94ac664d48c4373a5589",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_8w9b4h4d",
+    "ja": "ごめん、土曜は先約があって行けないんだ。",
+    "en": "Sorry, I've got a prior commitment on Saturday.",
+    "alternatives": [
+      "Sorry, I already have plans on Saturday.",
+      "Sorry, I can't make Saturday; I'm already booked."
+    ],
+    "point": "「先約」は数えられる名詞なので a が必要",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f06bd1c4b45565bc78e0d7daa8bd698f212e65f045a3a6c7a5a108ef264f0d86",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8z4x8r2j",
@@ -432,39 +620,13 @@
     "level": 4,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9f6e2c4c",
-    "ja": "雨でも中止にせず、うちに集まろうよ。",
-    "en": "Rain or shine, let's still get together at my place.",
-    "alternatives": [
-      "Even if it rains, let's still meet at my place.",
-      "Even if it rains, let's still get together at mine."
-    ],
-    "point": "「雨でも」は rain or shine か even if。even if 節は現在形",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 8,
-    "grammar": ["concession-contrast", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9n7u6v4e",
-    "ja": "雨予報だし、キャンプは延期しない？",
-    "en": "Rain's forecast, so how about putting camping off?",
-    "alternatives": [
-      "Rain's forecast, so why not postpone camping?",
-      "With rain forecast, how about postponing camping?"
-    ],
-    "point": "how about の後は動詞の -ing 形（putting off）",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 6,
-    "grammar": ["gerunds", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ca179c861f3fa0e25bc7a038bd921408dd2b4a3d0c4e3aa3b9415ce5751675c1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9p6a2h9q",
@@ -480,7 +642,13 @@
     "level": 4,
     "grammar": ["indirect-questions", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d22ced4d56d17868eef2480824b2cb7d46389261297ba20005787bb68bad19a4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9z8u3z4z",
@@ -496,6 +664,12 @@
     "level": 5,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1888867c6f7f4405caac69d8aae051bd2bcb94e873b2b4dde57e6a700b462972",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]

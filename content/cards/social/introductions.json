@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2a2b5b8p",
+    "ja": "私、この会社で働いて5年になります。",
+    "en": "I've been with this company for five years.",
+    "alternatives": [
+      "I've worked at this company for five years.",
+      "I've been working here for five years."
+    ],
+    "point": "「5年になる」は現在完了。for + 期間で継続を表す",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 4,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b922c4e225e9f6e6bef877095bb7a7ebf9de2d5ab1fca47fdef14734996fb92d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
     "id": "c_2c4m4a3n",
     "ja": "彼女、日本語と韓国語が話せるよ。",
     "en": "She can speak Japanese and Korean.",
@@ -10,32 +32,60 @@
     "point": "「話せる」は can speak で言う",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 3,
+    "level": 2,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:3ef50f983e634c001d9f333352567e82d6b20d962561cef03e4aaff66ccc8bee",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:cb3eee7e8a7ce87d8e33513f614803129d682d618e8981f3f1863cf0042559f6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
   {
-    "id": "c_2j5f2r6j",
-    "ja": "引っ越してから、病院向けソフトの会社で働いています。",
-    "en": "I've been working at a hospital software firm since moving.",
+    "id": "c_3r6q5r5q",
+    "ja": "人違いかもしれませんが、前にお会いしましたよね？",
+    "en": "I could be wrong, but haven't we met before?",
     "alternatives": [
-      "Since I moved, I've worked at a hospital software firm.",
-      "I've been working for a hospital software company since I moved."
+      "Sorry if I'm wrong, but haven't we met before?",
+      "I may be mistaken, but I think we've met before."
     ],
-    "point": "「ずっと〜している」は現在完了進行形＋ since",
+    "point": "I could be wrong, but で断定を避ける",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 9,
-    "grammar": ["present-perfect-continuous"],
+    "level": 7,
+    "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c194c19849f7907525560a9e816a9b35bedaabc2ac6127950df195d6d1277ca2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_3u5h4f9m",
+    "ja": "犬の散歩中は、いつも音楽を聴いてます。",
+    "en": "I always listen to music while walking my dog.",
+    "alternatives": [
+      "I listen to music whenever I walk my dog.",
+      "While walking my dog, I always listen to music."
+    ],
+    "point": "「〜しながら」は while + -ing で、主語は省ける",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:10b7825c07a6d42e3e8b68e2ed442a93ed40ab5177a185cd0139dd23778ee887",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3w6n2h8b",
@@ -51,39 +101,13 @@
     "level": 7,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3x3y9u3a",
-    "ja": "さっき自己紹介で、料理が趣味だと言えばよかった。",
-    "en": "I wish I'd mentioned cooking when I introduced myself.",
-    "alternatives": [
-      "I should've mentioned cooking in my introduction.",
-      "If only I'd brought up cooking when I introduced myself."
-    ],
-    "point": "wish の後は過去完了 I'd mentioned にする",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 10,
-    "grammar": ["wishes-regrets", "modal-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4h8v4t5u",
-    "ja": "英語がペラペラなら、海外で働きたい。",
-    "en": "If I were fluent, I'd work abroad.",
-    "alternatives": [
-      "If I spoke English fluently, I'd work abroad.",
-      "I'd work abroad if I were fluent."
-    ],
-    "point": "今と違う仮定は if 節に過去形、be は were を使う",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 5,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:30918ba5850b097b5a5ed31e290c0d6921dc2793e4bfbaa7520ec10daf728c36",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4w9e9h8x",
@@ -96,7 +120,13 @@
     "level": 1,
     "grammar": ["be-and-present-simple", "articles-and-countability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:442cb1db288cb76b502994cfd8c189da0e58f305e7725ff75dcf9c70517e05bc",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4y3y7p4d",
@@ -112,7 +142,13 @@
     "level": 5,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c3d35f7fd8ca4b5f9de232641f547a52690bffb7ca78d297168296e0b17404ed",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5b3y7m4d",
@@ -128,27 +164,55 @@
     "level": 4,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5n9q4k7k",
-    "ja": "今は駅前のカフェで働いています。",
-    "en": "I'm working at a station café.",
-    "alternatives": [
-      "Right now I'm working at a café.",
-      "Now I work at a station café."
-    ],
-    "point": "今の仕事は進行形 I'm working で言う",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 2,
-    "grammar": ["progressive-aspect"],
-    "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:25da51f2648aa80cfca93c9fca5e33e73c42f4ebcff2838b41dfe5c59207c018",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:37328459d47b7820b66b769b0fca2d96975dbd3a7b8a147b6fdaa7942e7e5679",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_5k4r6f9m",
+    "ja": "ケンが紹介してくれなかったら、会えなかったね。",
+    "en": "If Ken hadn't introduced us, we'd never have met.",
+    "alternatives": [
+      "We'd never have met if Ken hadn't introduced us.",
+      "Without Ken introducing us, we'd never have met."
+    ],
+    "point": "過去の仮定は had + 過去分詞、結果は would have met",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0d5fe3b483bbb58b2549dfd66bd9f5bcf83c9f39601187895c54cf04e890a131",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_5k6v5e7t",
+    "ja": "祖父にちなんで名付けられたんです。",
+    "en": "I was named after my grandfather.",
+    "alternatives": [
+      "I was named for my grandfather.",
+      "I got my name from my grandfather."
+    ],
+    "point": "「名付けられた」は受動態。名前は after で由来を示す",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 4,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e38f4d44e78aa77a865f0eafe70ea5c7eefe9190645ddca6ac8a81b30cb006bc",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -168,43 +232,33 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:6bd70c411a6c53e075ffc139dbe21258a55f16eb900f7f7d10f80018afacaaf9",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:948d16f2e79104c57017c57beb2bda8d45579af5c55e18e14a0e8259686473ea",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
   {
-    "id": "c_6b6p3g8a",
-    "ja": "父が転勤になって、シンガポールで育ちました。",
-    "en": "Dad was transferred, so I grew up in Singapore.",
+    "id": "c_5y4v5x7f",
+    "ja": "私の仕事は、ひと言では説明しにくいんです。",
+    "en": "What I do is hard to sum up in one word.",
     "alternatives": [
-      "My father got transferred, so I grew up in Singapore.",
-      "I grew up in Singapore because my dad was transferred."
+      "My job is hard to sum up in one word.",
+      "It's hard to sum up what I do in a word."
     ],
-    "point": "「転勤になった」は受け身で was transferred と言う",
+    "point": "「私の仕事」は What I do。what 節が主語になる",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 7,
-    "grammar": ["passive-voice"],
+    "level": 9,
+    "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6e5q6d3h",
-    "ja": "来日前は銀行で働いていました。",
-    "en": "I'd worked in banking before moving here.",
-    "alternatives": [
-      "I worked at a bank before moving here.",
-      "Before I came here, I worked in banking."
-    ],
-    "point": "来日より前のことは had worked で時間差を示す",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 5,
-    "grammar": ["past-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ca8e24543845499c667920856c6ccd6721665047d053ed83cc183d5311d04411",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6s2q2r6d",
@@ -220,39 +274,120 @@
     "level": 5,
     "grammar": ["phrasal-verbs", "past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d7e0c1d451de960803570f05c504aefad24dde7a9e3a02fc3d13943f40e9bf29",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_6u6d3d5n",
-    "ja": "福岡出身で、昼は編集、夜は小説を書いています。",
-    "en": "I'm from Fukuoka, editing by day and writing novels at night.",
+    "id": "c_6w9d8v2m",
+    "ja": "僕が社交的だったらな。初対面だと固まっちゃう。",
+    "en": "I wish I were outgoing. I freeze up around strangers.",
     "alternatives": [
-      "I'm from Fukuoka. I edit by day and write novels at night.",
-      "I'm from Fukuoka, an editor by day and a novelist by night."
+      "I wish I were sociable. I freeze up around strangers.",
+      "If only I were outgoing. I clam up around strangers."
     ],
-    "point": "「〜しながら」はカンマ + -ing で文末に添えられる",
+    "point": "現在の願望は wish + 過去形、be動詞は were",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 10,
-    "grammar": ["participle-clauses"],
+    "level": 7,
+    "grammar": ["wishes-regrets", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:95ab05a9c7a64f592e6bf14e5384ce4cf40df88f587a04f3f846254a378bf0ac",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_7a5p6f8f",
+    "ja": "僕の仕事は、アプリを設計することです。",
+    "en": "What I do is design apps.",
+    "alternatives": ["I design apps for a living.", "My job is designing apps."],
+    "point": "What I do is の後は動詞の原形でも言える",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 5,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bfb49d5ab69a1a810063c58a8e7808b772f21080430f2d82dfbe85ea8ac05283",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_7d4u7z3b",
+    "ja": "不躾ですが、どんなお仕事をされているんですか？",
+    "en": "Forgive my asking, but what do you do?",
+    "alternatives": [
+      "Pardon my asking, but what do you do for work?",
+      "Sorry to be blunt, but what do you do?"
+    ],
+    "point": "Forgive my asking, but で質問を和らげる",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a5cd33f0e9874973456bb4e0bd06be4cb85633fc443ae40b0c13991778966cbd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_7e8t5u5r",
+    "ja": "もし選べたら、あなたはどこに住みたい？",
+    "en": "Where would you live if you could?",
+    "alternatives": [
+      "If you could choose, where would you live?",
+      "If you could pick, where would you live?"
+    ],
+    "point": "if 節は過去形、主節は would + 原形",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 5,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5b924228842a8a0edac6974559302cdbc53670486ad5d0515ff7336225590423",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7f4s2s7p",
     "ja": "妻と出会っていなければ、今ここにはいないよ。",
     "en": "If I'd never met my wife, I wouldn't be here.",
     "alternatives": [
-      "Had I not met my wife, I wouldn't be here.",
-      "If I hadn't met my wife, I wouldn't be here today."
+      "If I hadn't met my wife, I wouldn't be here.",
+      "I wouldn't be here if I hadn't met my wife."
     ],
     "point": "過去の仮定は過去完了、今の結果は wouldn't be",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 9,
+    "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:93cfa48c433a6f53454359ee4c5407b9477a8c6232768a16027f266909e65fcf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7t7n2j2u",
@@ -268,7 +403,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis", "causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f4885ea253ed218c4e3f0a7318e43bdfdf1d1e59683fce6e7b304f418e5d97d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7t8v6a7p",
@@ -281,7 +422,13 @@
     "level": 3,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:557d55dca1c75cc1fd41dfc1dc0743efd56e073c7e75108f0084438b52d4e06e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7u6a8s7e",
@@ -297,13 +444,38 @@
     "level": 6,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5d6ab965958a77033f7f498b3e0bbf9158e278d51a1e018fbc477cb604770b11",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_7v9d6n4h",
+    "ja": "お仕事は何をされているんですか？",
+    "en": "What do you do for a living?",
+    "alternatives": ["What kind of work do you do?", "What line of work are you in?"],
+    "point": "職業は What do you do? で聞く。do が二回続く",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 3,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e7e5b76c813e53f2314ff8e4dbfed43fa40643bd466d27df85e09d29313c4e61",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8a7y7w5f",
     "ja": "上司に挨拶してこいと言われたんです。",
     "en": "My boss told me to say hello.",
-    "alternatives": ["My boss asked me to say hi.", "I was told to say hello."],
+    "alternatives": ["My boss told me to say hi.", "My boss told me to greet you."],
     "point": "「〜するように言われた」は told me to do で言える",
     "topic": "social",
     "subtopic": "introductions",
@@ -312,9 +484,31 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:f54ecc19525717ee38e6a743a2e9acc607db8adfb031472079d0a341d7cd488a",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:9bf9f8dc1066837239e4a175e1032d17a4cc8258dc4cccb3745e79a8a724eebb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_8f2j7w6x",
+    "ja": "田中さんから、あなたは大阪出身だと聞きました。",
+    "en": "Tanaka told me you were from Osaka.",
+    "alternatives": [
+      "Tanaka mentioned you were from Osaka.",
+      "I heard from Tanaka that you're from Osaka."
+    ],
+    "point": "told の後の節は時制の一致で過去形にしやすい",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 6,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6b4b77b9db30e6853d41ab35ee9a5d28a174e9daa450e9b1823096f5374c26a9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -335,58 +529,32 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:7b769c10adf5d799f0634fcb02d85db3e7d05283c0b49071096613da6958bc60",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:44dbf7dcfa6d45dd63cf10d1d04e7a696596c26f3199e18fcc1464c24847232b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
   {
-    "id": "c_8n5q6p7y",
-    "ja": "友達が誘わなければ、サーフを始めなかった。",
-    "en": "If my friend hadn't asked, I'd never have surfed.",
+    "id": "c_9k7e3n7v",
+    "ja": "前にどこかでお会いしているはずです。",
+    "en": "We must have met somewhere before.",
     "alternatives": [
-      "I'd never have surfed if my friend hadn't asked.",
-      "If my friend hadn't asked, I wouldn't have surfed."
+      "I'm sure we've met somewhere before.",
+      "I'm pretty sure we've met somewhere before."
     ],
-    "point": "過去の仮定は if＋had not＋過去分詞、帰結は would have",
+    "point": "過去への確信は must have + 過去分詞",
     "topic": "social",
     "subtopic": "introductions",
     "level": 6,
-    "grammar": ["third-conditional"],
+    "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8v6r9a3a",
-    "ja": "ケンが、昔シアトルで働いてたって言ってたけど、本当？",
-    "en": "Ken said you'd worked in Seattle. Is that true?",
-    "alternatives": [
-      "Ken told me you used to work in Seattle. Is that right?",
-      "Ken mentioned you'd worked in Seattle. Is that true?"
-    ],
-    "point": "言っていた内容の「働いていた」は過去完了 you'd worked",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 10,
-    "grammar": ["reported-speech"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9b3w5g3e",
-    "ja": "失礼ですが、どうしてこの業界に入られたんですか？",
-    "en": "May I ask how you got into this industry?",
-    "alternatives": [
-      "Could I ask how you ended up in this industry?",
-      "Mind if I ask how you got into this field?"
-    ],
-    "point": "「業界に入る」は get into、間接疑問は語順が平叙文",
-    "topic": "social",
-    "subtopic": "introductions",
-    "level": 7,
-    "grammar": ["hedging-softening", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:61634e7d53724642aa12ca21ec315884f3805c21d6a538fdcf9cd0a256d3d467",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]

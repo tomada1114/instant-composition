@@ -1,5 +1,49 @@
 [
   {
+    "id": "c_2g8v4w6z",
+    "ja": "あなたはどのくらいここに並んでるの？",
+    "en": "How long have you been waiting in line?",
+    "alternatives": [
+      "How long have you been standing in line?",
+      "How long have you been in this line?"
+    ],
+    "point": "どのくらい続いているかは How long have you been ~ing",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9cbf9b985e05607d2b97bdb00f6400be8e0d7406b7a2d2b68496094acf3f7627",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_2n2j4x4t",
+    "ja": "後で聞いたら、その電車は故障してたんだって。",
+    "en": "I found out later the train had broken down.",
+    "alternatives": [
+      "Later I heard the train had broken down.",
+      "I later learned the train had broken down."
+    ],
+    "point": "知った時点より前の故障は had broken down",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 6,
+    "grammar": ["past-perfect", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6666ec2b918d60a4763eb55758086912e8840b6eb5d5629e924faa30981010b7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
     "id": "c_2v2w7m5d",
     "ja": "私たち、早く出ていればバスに乗れたのに。",
     "en": "If we'd left earlier, we'd have caught the bus.",
@@ -13,7 +57,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a4950037ee019e1f413f6e5366e6439880593ac69118e0bd8e972942d3d94b86",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2v4r6h6r",
@@ -26,10 +76,16 @@
     "point": "過去の後悔は I wish の後を過去完了 I'd known にする",
     "topic": "travel",
     "subtopic": "transport",
-    "level": 8,
+    "level": 7,
     "grammar": ["wishes-regrets", "noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:93e81bf4ff07f31c879c876a2f0d51efa81b5b3cb71ddffbc6904017a7a11c6f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3f7x2r4z",
@@ -44,9 +100,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:9a65a6f306bd7dba465f07b1bfe5aba371e77a4a9d5eef63556a747f7e29c9d5",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:c9c3d89191e6208063795b24385b57be44088f41e401614e4034cebf99e3b713",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -64,39 +120,35 @@
     "level": 2,
     "grammar": ["imperatives", "progressive-aspect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b0ce1e7a6d510d3d99ee280686e169428b7e9767b0e84efeb720998f650ccf54",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_3n5q7e2x",
-    "ja": "次のバスがいつ来るか駅員さんに聞いて。",
-    "en": "Ask staff when the next bus comes.",
+    "id": "c_3j4n8w8p",
+    "ja": "この電車、いつ着くかわかりますか？",
+    "en": "Do you know when this train arrives?",
     "alternatives": [
-      "Ask an attendant when the next bus comes.",
-      "Go ask staff when the next bus arrives."
+      "Could you tell me when this train arrives?",
+      "Do you know when this train gets in?"
     ],
-    "point": "「いつ来るか」は when the next bus comes。語順は平叙文",
+    "point": "間接疑問は when のあとが平叙文の語順（does は不要）",
     "topic": "travel",
     "subtopic": "transport",
     "level": 4,
-    "grammar": ["indirect-questions", "imperatives"],
+    "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4a4w2p5c",
-    "ja": "バスは遅れた上に、私たちを素通りしていった。",
-    "en": "Not only was the bus late, it drove right past us.",
-    "alternatives": [
-      "The bus wasn't just late; it drove right past us.",
-      "Not only was the bus late, it didn't even stop for us."
-    ],
-    "point": "Not only の後は was the bus と語順が倒置する",
-    "topic": "travel",
-    "subtopic": "transport",
-    "level": 10,
-    "grammar": ["inversion"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3f963a31cccfb671ea7bb6d3dd60032053cda952ac41bfd2a689b708665fb13d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4c3f3h6z",
@@ -112,23 +164,13 @@
     "level": 7,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4d8t4r4j",
-    "ja": "空港バスがどこから出るか知ってますか？",
-    "en": "Do you know where the airport bus leaves?",
-    "alternatives": [
-      "Any idea where the airport bus leaves from?",
-      "Do you know where the airport bus departs?"
-    ],
-    "point": "疑問文を埋め込むと語順は where the bus leaves",
-    "topic": "travel",
-    "subtopic": "transport",
-    "level": 5,
-    "grammar": ["indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3a6705070fd71c9726fdbe1a88f9eb4f5911236f9b4c044860bbcba71deb82ec",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4j4p9r6d",
@@ -143,6 +185,28 @@
     "subtopic": "transport",
     "level": 6,
     "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bf8f03d3a35231f5f34a2fc1310e0f49eb0267e4ffa25457e497a58296e4efbe",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_4s5x5c4m",
+    "ja": "事故で電車に遅れが出てるよ。",
+    "en": "There's a delay because of an accident.",
+    "alternatives": [
+      "The trains are delayed because of an accident.",
+      "There's been a delay due to an accident."
+    ],
+    "point": "「遅れが出ている」は There is a delay で言える",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 4,
+    "grammar": ["there-is-are"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -160,6 +224,66 @@
     "level": 3,
     "grammar": ["infinitives", "past-simple"],
     "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:73a93c7c8197eb758a3f116166972461ddf97e8848fe6eb00fbd6001d7931bf4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_5c3e8j8x",
+    "ja": "あそこで待ってるバスは成田に行きますか？",
+    "en": "Is the bus waiting there going to Narita?",
+    "alternatives": [
+      "Does the bus waiting there go to Narita?",
+      "Is the bus waiting there headed for Narita?"
+    ],
+    "point": "「待ってる」は bus の直後に waiting で後ろから修飾",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5h6h9b4v",
+    "ja": "ずっとタクシーを待ってるんだけど。",
+    "en": "I've been waiting for a taxi forever.",
+    "alternatives": [
+      "I've been waiting ages for a taxi.",
+      "I've been waiting for a cab forever."
+    ],
+    "point": "ずっと続いている待機は have been ~ing。待つ対象は wait for + 名詞",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:05bf3ae3ff0a732205e4ab17b9831ee00aececeed5371333cbc9122b797c8b4c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_6u2g3e5v",
+    "ja": "ホームにいる駅員さんに聞いてみたら？",
+    "en": "Why not ask the staff on the platform?",
+    "alternatives": [
+      "Try asking the staff on the platform.",
+      "You could ask the staff on the platform."
+    ],
+    "point": "「ホームにいる」は名詞の後ろに on the platform",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
@@ -176,7 +300,13 @@
     "level": 10,
     "grammar": ["nested-clauses", "noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6a1443924d4f10f96c58099568bd6c012cc66e2b268dbd6005b91de1418d82eb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6u8q6a3j",
@@ -192,7 +322,13 @@
     "level": 6,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f4303ca16097cf47c6e45e4dafdbac50bd028a008179f82472c1c0f522cb64f3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7a9z5p8b",
@@ -208,7 +344,13 @@
     "level": 2,
     "grammar": ["past-simple", "articles-and-countability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1023575fd987377bfdb3c7bad84827cbf08f9f624e8eeaf9cac5dfc12a32c7b3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7f5m6j6z",
@@ -224,7 +366,13 @@
     "level": 3,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:751d49fcbab2c080e308520be9a8779c92ab587b46bd4dce9583ba05ecf59841",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7f5x5g4z",
@@ -237,14 +385,20 @@
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c6ad8c424ea72f17db2ad792a31e8d1653216a877377494f02222511b384e5cc",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7h6a9u8u",
     "ja": "運転手さんに、ここで止めてと頼んで。",
     "en": "Ask the driver to stop here.",
     "alternatives": [
-      "Tell the driver to stop here.",
+      "Ask the driver to pull over here.",
       "Please ask the driver to stop here."
     ],
     "point": "ask + 人 + to do で「人に〜するよう頼む」",
@@ -253,39 +407,79 @@
     "level": 3,
     "grammar": ["verb-object-to-do", "imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7494b4a14654b52cf197e6416d814849ef22f0f7bb37678c0eaf4925c25a519b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_7m4m7v8k",
-    "ja": "往復切符を2枚と路線図を1枚ください。",
-    "en": "Two round-trip tickets and a map, please.",
+    "id": "c_7p7a5j6s",
+    "ja": "この路線、乗ったことありますか？",
+    "en": "Have you ever taken this line?",
     "alternatives": [
-      "I'd like two round-trip tickets and a map.",
-      "Can I have two round-trips and a map?"
+      "Have you ridden this line before?",
+      "Have you been on this line before?"
     ],
-    "point": "tickets は複数形、map には a を忘れずに",
+    "point": "経験を聞くときは Have you ever + 過去分詞",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 3,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7a3eb724b37eb2492f52dc597421048e5214bd1737d2e31aa7c47d146229b612",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_7t4e6r7c",
+    "ja": "私が席に座るか座らないかのうちに、バスが急発進した。",
+    "en": "Hardly had I sat down when the bus lurched forward.",
+    "alternatives": [
+      "No sooner had I sat down than the bus lurched forward.",
+      "I'd barely sat down when the bus lurched forward."
+    ],
+    "point": "Hardly を文頭に出すと had I sat の倒置。後ろは when",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:637fea99d1f7199f16a08da2d34a2a8e13799cec02656d91cc1d0848de1db043",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_7u2p6b3y",
+    "ja": "ここがタクシーがいつも待つ場所だよ。",
+    "en": "This is where taxis always wait.",
+    "alternatives": [
+      "This is the spot where taxis always wait.",
+      "Taxis always wait right here."
+    ],
+    "point": "場所を説明する where のあとは主語と動詞が続く",
     "topic": "travel",
     "subtopic": "transport",
     "level": 5,
-    "grammar": ["articles-and-countability", "requests-permission"],
+    "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7v2w3k9b",
-    "ja": "駅員さんに行き方を書いてもらった。",
-    "en": "I had the staff write down directions.",
-    "alternatives": [
-      "I got the staff to write down directions.",
-      "I asked the staff to write down directions."
-    ],
-    "point": "have＋人＋動詞の原形で「人に〜してもらう」。get なら to が要る",
-    "topic": "travel",
-    "subtopic": "transport",
-    "level": 5,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1a5d39aed6f45a35a00b3ba9af50b6f8507a5529cbe7ae88e7cca8ef40d2310e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8s6t5y6r",
@@ -301,21 +495,49 @@
     "level": 6,
     "grammar": ["hedging-softening", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c68ac3a131a41779b95a50823e6d33f831d82271b3f11987aef9424c68c4b29",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8y6m6p6t",
     "ja": "この電車、渋谷に止まりますか？",
-    "en": "Does this stop at Shibuya?",
+    "en": "Does this train stop at Shibuya?",
     "alternatives": [
-      "Does this train stop at Shibuya?",
-      "Will this train stop at Shibuya?"
+      "Does this train stop in Shibuya?",
+      "Does this one stop at Shibuya?"
     ],
     "point": "「止まる」は stop at。主語が this なので does",
     "topic": "travel",
     "subtopic": "transport",
     "level": 1,
     "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:af145cb399b471522b2e4d4043ddc279e513e38064e9097d5379a6c4dc0eac8b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_8z6w9u3a",
+    "ja": "特急を逃して、私たち、待つしかなかったよ。",
+    "en": "Missing the express, we just had to wait.",
+    "alternatives": [
+      "We missed the express, so we had to wait.",
+      "Since we missed the express, we had to wait."
+    ],
+    "point": "Missing 〜, で「〜して」を前に置いて自然に言う",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 6,
+    "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -333,53 +555,27 @@
     "level": 7,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d0d150b7267a5f16a4e3c7385c7737fb0ccfda505ba7a8378530ea40f296f3bd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_9h3t7d2r",
-    "ja": "電車が急停止して、私たちは1時間立ち往生した。",
-    "en": "The train halted abruptly, stranding us for an hour.",
+    "id": "c_9p8v7g9n",
+    "ja": "姉、切符はもう買ったって言ってたよ。",
+    "en": "My sister said she'd already bought the tickets.",
     "alternatives": [
-      "The train stopped short, leaving us stuck for an hour.",
-      "The train stopped suddenly and stranded us for an hour."
+      "My sister told me she'd already bought tickets.",
+      "My sister said she'd bought the tickets already."
     ],
-    "point": "結果は「, stranding us」と分詞で後ろにつなぐ",
+    "point": "said の後は一つ過去にずらす(買った→had bought)",
     "topic": "travel",
     "subtopic": "transport",
-    "level": 7,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9m6w8x4k",
-    "ja": "運転手さん、10分も同じ所をぐるぐる回ってませんか？",
-    "en": "Haven't we been going in circles for ten minutes?",
-    "alternatives": [
-      "Aren't we driving in circles? It's been ten minutes.",
-      "Haven't we been circling the same area for ten minutes?"
-    ],
-    "point": "続いている動作は have been going の現在完了進行形で",
-    "topic": "travel",
-    "subtopic": "transport",
-    "level": 9,
-    "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9p3t5w9t",
-    "ja": "彼女が着いたときには、終電はもう出てしまっていた。",
-    "en": "When she arrived, the last train had already left.",
-    "alternatives": [
-      "The last train had already left when she got there.",
-      "She arrived to find the last train already gone."
-    ],
-    "point": "着く前に出た電車は had already left と過去完了で",
-    "topic": "travel",
-    "subtopic": "transport",
-    "level": 8,
-    "grammar": ["past-perfect", "time-and-if-clauses"],
+    "level": 5,
+    "grammar": ["reported-speech", "past-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -397,22 +593,34 @@
     "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e38247874acb80c4648c47743a1266689947de0e24118bfa95c8b107427ab592",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9z2t5a5t",
     "ja": "彼女の電車、大雪で運休になったよ。",
     "en": "Her train was canceled because of snow.",
     "alternatives": [
-      "Her train got canceled because of the snow.",
-      "Her train was canceled due to heavy snow."
+      "Her train got canceled because of snow.",
+      "Her train was canceled by heavy snow."
     ],
     "point": "運休「された」側なので was canceled と受動態にする",
     "topic": "travel",
     "subtopic": "transport",
-    "level": 5,
+    "level": 3,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a3872fb61aab373e1e8ede3393e7d53c2ac2b4ccdb05dadcfd326544e757ff0d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]

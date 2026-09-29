@@ -13,7 +13,35 @@
     "level": 6,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:827cb5d8ec65662805977f460b717a7fae809bcb20f226d5c61a5ef7963ad017",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_2h5q7r5y",
+    "ja": "転勤があっても、私は御社に長く勤めたいです。",
+    "en": "Even if I'm transferred, I'd like to stay long-term.",
+    "alternatives": [
+      "Even with a transfer, I'd like to stay long-term.",
+      "I'd like to stay long-term, even if I'm transferred."
+    ],
+    "point": "Even if の後は現在形。I'd like to で控えめに。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["concession-contrast", "hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6157e7b5d52ca6b28f8adb892066371aac054ab86da1ccf1b38aa508bae09011",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2h8f9t3q",
@@ -29,23 +57,51 @@
     "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a0e672bb80e324e377bc00432cbaf282adf3783f13e42bab9c990d98af52312f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_2v2j4w8z",
+    "ja": "前は営業でしたが、その後、採用に転向しました。",
+    "en": "I was in sales, but I've since pivoted to recruiting.",
+    "alternatives": [
+      "I was in sales before, but I've switched to recruiting.",
+      "I used to work in sales, then switched to recruiting."
+    ],
+    "point": "過去の話と今に続く話は was と I've で分ける",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
-    "id": "c_2j4p6w9f",
-    "ja": "御社で新規事業を担当するチームに入れますか？",
-    "en": "Could I join the team handling new ventures?",
+    "id": "c_2v6z4k5s",
+    "ja": "御社のことは、事前に調べてきました。",
+    "en": "I read up on your company beforehand.",
     "alternatives": [
-      "Can I join the team working on new ventures?",
-      "Any chance I could join the new ventures team?"
+      "I looked into your company beforehand.",
+      "I did some research on your company."
     ],
-    "point": "「担当するチーム」は the team handling と後ろから説明",
+    "point": "「調べる」は read up on / look into などの句動詞",
     "topic": "work",
     "subtopic": "job-interview",
-    "level": 6,
-    "grammar": ["post-modification"],
+    "level": 5,
+    "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:712e81f0467183b01521a7e76833d44b6e62137fdf5d61c4a80aa6680ed20e78",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3c6q5b2b",
@@ -63,35 +119,38 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:3b97422b33f9737fd97320b030d8f45949f6ea26ca179560a4315e8790db782f",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:0f330bfa1d5cc15855a14e6441ba9c072f9c2df17886f8b5b0ce1dfc6a935abf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
   {
-    "id": "c_3p8q9u4z",
-    "ja": "入社前に、すでに5年エンジニアをしていました。",
-    "en": "I'd been an engineer for five years before joining.",
-    "alternatives": [
-      "Before joining, I'd spent five years as an engineer.",
-      "I'd already worked as an engineer for five years."
-    ],
-    "point": "入社より前のことなので had been と過去完了にする",
+    "id": "c_3g6y5v6a",
+    "ja": "私は人と話すのが好きです。",
+    "en": "I enjoy talking with people.",
+    "alternatives": ["I like talking to people.", "I love speaking with people."],
+    "point": "enjoy の後ろは to 不定詞ではなく -ing 形",
     "topic": "work",
     "subtopic": "job-interview",
-    "level": 6,
-    "grammar": ["past-perfect"],
+    "level": 3,
+    "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:320b419c478301530bc4a39f75ac7060088495eb796695d5cc32e5fb15e0d90c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3t9g8y3r",
     "ja": "この仕事、技術より対話力が大切ですか？",
-    "en": "Are communication skills more important than technical ones?",
+    "en": "Is communication more important than technical skill here?",
     "alternatives": [
-      "Do communication skills matter more than technical skills?",
-      "Is communication more important than technical skill here?"
+      "Does communication matter more than technical skill here?",
+      "Is communication more important than tech skills here?"
     ],
     "point": "「AよりBが大切」は B is more important than A",
     "topic": "work",
@@ -99,7 +158,13 @@
     "level": 4,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:82c62b5f9253377d7ceb77a2fe0b19183d8d96512c4e58f6312671bae5fd6a52",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3v6e2f9z",
@@ -115,7 +180,35 @@
     "level": 8,
     "grammar": ["participle-clauses", "present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d153d88b3614c2b8df44ded48749de11aa1ebeaa8c6f277e6ce7a67e8498a58b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_3v6n9p8n",
+    "ja": "私は新しい市場を開拓した経験があります。",
+    "en": "I have experience opening up new markets.",
+    "alternatives": [
+      "I have experience developing new markets.",
+      "I've opened up new markets before."
+    ],
+    "point": "have experience + -ing（of も可）。「開拓する」は open up",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 5,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c4ce8135ad318cc62acb077e75e6b01a2df8f430e480d8ff87578ff88d998db0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3w7z9s7g",
@@ -123,7 +216,7 @@
     "en": "Why did you choose our company?",
     "alternatives": [
       "Why did you pick our company?",
-      "Why have you chosen our company?"
+      "What made you choose our company?"
     ],
     "point": "did の後ろは choose（原形）で chose にしない",
     "topic": "work",
@@ -133,9 +226,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:9251245d76b8012998334d5785b734a1c1db69252434164cae18565a4945b165",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:5808f8d2725aeb9be207c9fc4d1e7c1c3fee5d9456e4312de18a830f95f63cf3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -155,9 +248,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:dff2c798e6f517916e2f6d086f54629292f13de5e77b0b21102650c0fe46b29e",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:ec37ce409b02bdeea88b9ac28dc33ba08628a4b79101ff431d3c67647175ec0d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -175,7 +268,13 @@
     "level": 4,
     "grammar": ["future-forms", "time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4559d533feb29e3452c1565691b7fa1adc5b1d2d5c955a2e92e65629f581b7d6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4k8z5n3h",
@@ -191,23 +290,51 @@
     "level": 7,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c60b5b4101dc75911c90277b39ca44bb78dc0b7ac7306637b018a9e25ab48a7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_4q2q3y4z",
+    "ja": "御社サイトで募集中の職種に興味があります。",
+    "en": "I'm interested in the position posted on your website.",
+    "alternatives": [
+      "I'm interested in the role advertised on your website.",
+      "I'm interested in the job posted on your site."
+    ],
+    "point": "「募集中の」は posted など過去分詞で後ろから名詞を修飾",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 6,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
-    "id": "c_4m6y6m3a",
-    "ja": "応募理由は、御社の製品開発に関われることです。",
-    "en": "My reason is that I'd help develop your products.",
+    "id": "c_4x6r5j9v",
+    "ja": "経験は浅いですが、学ぶのは早いです。",
+    "en": "Though my experience is limited, I learn fast.",
     "alternatives": [
-      "I applied because I'd get to work on your products.",
-      "The main draw is being involved in product development."
+      "Even though I have little experience, I learn fast.",
+      "I may lack experience, but I learn fast."
     ],
-    "point": "reason is that 〜 の形。because でつなげない",
+    "point": "Though は「〜だが」。but と二重にしない",
     "topic": "work",
     "subtopic": "job-interview",
     "level": 7,
-    "grammar": ["noun-clauses"],
+    "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:046323163daa48f195a60ee99d44df3fdb927ff581c33be81ee5a27c076200c7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5b2b9w7s",
@@ -223,55 +350,57 @@
     "level": 2,
     "grammar": ["be-and-present-simple", "articles-and-countability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:098a880886ea4a2321734470ca12894d7dbcf6dc6fff070fce10c7d9d1aad4a7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_5p2y9f7k",
-    "ja": "人前で話すのが得意で、よくプレゼンを任されました。",
-    "en": "I'm good at public speaking, so I often presented.",
+    "id": "c_5j5s3d7k",
+    "ja": "御社のチームに貢献するのが楽しみです。",
+    "en": "I'm looking forward to contributing to your team.",
     "alternatives": [
-      "Since I speak well in public, I often gave presentations.",
-      "I'm a strong public speaker, so I often presented."
+      "I can't wait to contribute to your team.",
+      "I'm excited to contribute to your team."
     ],
-    "point": "good at の後は動詞を -ing にする。to speak は不可",
-    "topic": "work",
-    "subtopic": "job-interview",
-    "level": 8,
-    "grammar": ["gerunds"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5t6k4r5m",
-    "ja": "部下はいませんが、後輩を育ててきました。",
-    "en": "I don't manage anyone, but I've mentored juniors.",
-    "alternatives": [
-      "I have no subordinates, but I've mentored juniors.",
-      "I've mentored juniors, although I have no subordinates."
-    ],
-    "point": "ずっと続けてきたことは I've 過去分詞で表す",
+    "point": "look forward to の to は前置詞なので、あとは -ing 形。",
     "topic": "work",
     "subtopic": "job-interview",
     "level": 5,
-    "grammar": ["concession-contrast", "present-perfect"],
+    "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2767f40b8513340399907d0cc8c46b73405417dfb872457951715c4bb1d855f8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_5v9s3a8q",
-    "ja": "どんな方を求めているか、教えていただけますか？",
-    "en": "Could you say what kind of person you want?",
+    "id": "c_5y2s7a8x",
+    "ja": "一番速くはなくても、私は丁寧に仕事をします。",
+    "en": "Even if I'm not the fastest, I'm thorough.",
     "alternatives": [
-      "Can you tell me what sort of person you need?",
-      "May I ask what kind of person you want?"
+      "Although I'm not the fastest, I'm thorough.",
+      "I may not be the fastest, but I'm thorough."
     ],
-    "point": "間接疑問は what kind of person you want の語順",
+    "point": "Even if の後は現在形。not the fastest と最上級に the を付ける",
     "topic": "work",
     "subtopic": "job-interview",
-    "level": 7,
-    "grammar": ["requests-permission", "indirect-questions"],
+    "level": 6,
+    "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a9965e91987f1020ab42c1c8b412726d62be5a745c2f3032e14151a4aa7fe497",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6a3v6q9a",
@@ -287,37 +416,27 @@
     "level": 7,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:355855e0f1de65c641315e189f42a8893594106aaba3ada04fce253482f6ac44",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_6t2g6u5g",
-    "ja": "物流を3年担当し、最近はデータ分析も勉強してきました。",
-    "en": "I did logistics for three years; lately I've studied data analysis.",
+    "id": "c_6q7t9b9p",
+    "ja": "これまで培った粘り強さが、私の強みです。",
+    "en": "The persistence I've built up is my strength.",
     "alternatives": [
-      "I worked in logistics for three years, then took up data analysis.",
-      "Logistics was my job for three years; lately I've studied data analysis."
+      "My strength is the persistence I've built up.",
+      "The tenacity I've developed is my greatest strength."
     ],
-    "point": "前職は過去形、今につながる「最近」は現在完了",
+    "point": "「培った粘り強さ」は persistence の後ろに I've built up と置く",
     "topic": "work",
     "subtopic": "job-interview",
-    "level": 10,
-    "grammar": ["tense-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7c3r5n8s",
-    "ja": "作業が遅れたとき、どう遅れを取り戻しましたか？",
-    "en": "When work fell behind, how did you catch up?",
-    "alternatives": [
-      "When you fell behind schedule, how did you catch up?",
-      "When the project slipped, how did you recover?"
-    ],
-    "point": "「遅れる」は fall behind、「取り戻す」は catch up",
-    "topic": "work",
-    "subtopic": "job-interview",
-    "level": 7,
-    "grammar": ["phrasal-verbs", "time-and-if-clauses"],
+    "level": 6,
+    "grammar": ["post-modification", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -335,7 +454,13 @@
     "level": 7,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b430c29936261f4ce88a8356ffd8e9b8ca5b66cd56f52baa20fd87b5429a8acc",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7h6j3x6c",
@@ -351,7 +476,13 @@
     "level": 5,
     "grammar": ["requests-permission", "indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:72be94ba9cd96e885a117adf0e0b222e5886a96cf9c80cf5f3a4c4e78d107157",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7j5m7a8e",
@@ -367,13 +498,22 @@
     "level": 7,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dfc5c2dfe76c4c55a9e5d08fe5559494f10d75aef11c05c721bbd402305ff0fa",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7u3p3x8b",
     "ja": "英語と中国語が話せます。",
     "en": "I can speak English and Chinese.",
-    "alternatives": ["I speak English and Chinese.", "I can use English and Chinese."],
+    "alternatives": [
+      "I speak English and Chinese.",
+      "I speak both English and Chinese."
+    ],
     "point": "can の後ろは動詞の原形 speak",
     "topic": "work",
     "subtopic": "job-interview",
@@ -382,27 +522,11 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:357ee74054e06554b929216acc47722742c4285d64674e3a5634e6ee76874f20",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:2031286a86d0e0916219f91e0052707eed40bfbe814f4243d25cf17ceee18415",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_8w4u3z4n",
-    "ja": "海外で働くチャンスはありますか？",
-    "en": "Are there chances to work abroad?",
-    "alternatives": [
-      "Is there a chance to work abroad?",
-      "Are there any chances to work overseas?"
-    ],
-    "point": "「働くチャンス」は chances to work と to 不定詞で後ろから",
-    "topic": "work",
-    "subtopic": "job-interview",
-    "level": 3,
-    "grammar": ["there-is-are", "infinitives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9c5u6s9v",
@@ -418,6 +542,56 @@
     "level": 9,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d239ba50cdfc5a39d0bf1b6daab9ab5796a19d0c68ff0fb0a3aa42b1d3a400a8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_9c8s8z5k",
+    "ja": "上司に推薦してくれるよう頼みました。",
+    "en": "I asked my boss to vouch for me.",
+    "alternatives": [
+      "I asked my boss to recommend me.",
+      "I asked my manager to vouch for me."
+    ],
+    "point": "ask + 人 + to do。「頼む」は ask 人 to 動詞の形",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 4,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9ebf6d081d6f4ff61bca67913353c61191ec32bb4d0d23ed4b84be5d9f9d6cd7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_9p9h7w8a",
+    "ja": "あの失敗こそが、今の私をつくったんです。",
+    "en": "It's that failure that made me who I am.",
+    "alternatives": [
+      "That very failure made me who I am.",
+      "It was that failure that shaped who I am today."
+    ],
+    "point": "It's A that ~ で A を強調する。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fea5139853bd7db6864eeae4bed0f21df4da62a1732a177b9dda5bdd5a9f3e02",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]

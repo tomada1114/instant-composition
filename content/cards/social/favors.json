@@ -2,34 +2,68 @@
   {
     "id": "c_2b6k7r8d",
     "ja": "彼女は今週もう3回、代わってくれたんだ。",
-    "en": "She's already covered for me three times.",
+    "en": "She's covered for me three times this week.",
     "alternatives": [
-      "She's already taken my shift three times.",
-      "She's covered for me three times already."
+      "She's covered my shift three times this week.",
+      "She's subbed for me three times this week."
     ],
-    "point": "「もう3回」は現在完了、already は have の後ろ",
+    "point": "「今週もう3回」は今週がまだ続くので現在完了で言う",
     "topic": "social",
     "subtopic": "favors",
     "level": 5,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:aeed8b6321c4c8e1079b2a52218c56d59b0b371d623b65f6495830193995ec6f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_2k6u5s7h",
-    "ja": "ケンにコピー機の修理を手伝ってと頼まれた。",
-    "en": "Ken asked me to help fix the copier.",
+    "id": "c_2q4s7c7y",
+    "ja": "僕が決められるなら、喜んで手を貸すのに。",
+    "en": "If it were my call, I'd gladly help.",
     "alternatives": [
-      "Ken asked if I could help fix the copier.",
-      "Ken asked me for a hand fixing the copier."
+      "If it were up to me, I'd gladly help.",
+      "If I could decide, I'd be happy to help."
     ],
-    "point": "「人に〜してと頼む」は ask 人 to do",
+    "point": "現実と違う仮定は if 節に were、主節に would",
     "topic": "social",
     "subtopic": "favors",
-    "level": 7,
-    "grammar": ["verb-object-to-do"],
+    "level": 6,
+    "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d7069f99f94a965fe42a0f16c9f99c94aacbc2790f224afc19e7f58076ea0f14",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_2y4c8s8g",
+    "ja": "もう一度説明してもらえますか？",
+    "en": "Could you explain it again?",
+    "alternatives": [
+      "Could you go over that again?",
+      "Would you explain it once more?"
+    ],
+    "point": "丁寧な依頼は Could you + 動詞の原形",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8d50b2752e31d1dac2555f1e21695fcffd88d1e08f8d9552b6b44cb1b8089642",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3p7q8a8j",
@@ -45,23 +79,13 @@
     "level": 4,
     "grammar": ["modal-obligation-advice", "time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3v4e5y3y",
-    "ja": "店長にシフトを減らすよう頼んでもらえる？",
-    "en": "Could you ask the manager to cut shifts?",
-    "alternatives": [
-      "Can you ask the manager for fewer shifts?",
-      "Would you ask the manager to reduce shifts?"
-    ],
-    "point": "「人に〜するよう頼む」は ask + 人 + to do の語順",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 4,
-    "grammar": ["verb-object-to-do", "requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:248132a3417d7d037e08fb0b46e17f0c877e9279ca9ac17ee27a8a7ffc5512a0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3y5m8w5p",
@@ -76,27 +100,144 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:ea1b0e658a4b7c157bf1e1f8078dc1cc49d82222e0c05b82a047157c168191da",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:3815ec802c86980081658c1def9e82a2c411b58dcec6e3019f4086102ce55212",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
   {
-    "id": "c_4g7w3t4r",
-    "ja": "えさやりに何時に行けばいいか教えてもらえる？",
-    "en": "Could you tell me when I should come by?",
+    "id": "c_4d6g3p6y",
+    "ja": "こんなふうに君に頼るのは気が引けるんだ。",
+    "en": "I feel bad about imposing on you like this.",
     "alternatives": [
-      "Can you tell me what time I should come?",
-      "Could you let me know when to stop by?"
+      "I hate imposing on you like this.",
+      "I feel bad asking you for help like this.",
+      "I don't like imposing on you like this."
     ],
-    "point": "間接疑問は when I should と平叙文の語順",
+    "point": "前置詞 about の後ろは動名詞 imposing",
     "topic": "social",
     "subtopic": "favors",
     "level": 6,
-    "grammar": ["indirect-questions", "requests-permission"],
+    "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:924ca9fec317e3e533800243333be2b3e0baac1350531b9d227298587198b6e9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_4h3e8a2y",
+    "ja": "校正を頼まれたけど、今回はやめとくよ。",
+    "en": "Asked to proofread this, but I'll pass.",
+    "alternatives": [
+      "I was asked to proofread this, but I'll pass.",
+      "They asked me to proofread this, but I'll pass."
+    ],
+    "point": "頼まれた側は be asked to 〜。断りは I'll pass",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 6,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5dfef7d92f3cdfbe9fe2b433fcd9cc1e1e64055c99c3a822107e1498174b0ecf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_4h6n3t2g",
+    "ja": "君が今頼んでる人、月曜まで休みだよ。",
+    "en": "The person you're asking is out till Monday.",
+    "alternatives": [
+      "The person you're asking is off until Monday.",
+      "Whoever you're asking is off till Monday."
+    ],
+    "point": "The person (whom) you're asking と関係詞は省ける",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 5,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f89b8456bbcfeda9ddd6922c9a7700864db9aeb16c11219e015d64e8dac2f60",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_4n8d2z4y",
+    "ja": "明日、猫にえさをあげに寄ってもらえない？",
+    "en": "Could you swing by tomorrow and feed my cat?",
+    "alternatives": [
+      "Can you drop by tomorrow and feed my cat?",
+      "Could you stop by tomorrow to feed my cat?"
+    ],
+    "point": "swing by / drop by は「ちょっと寄る」の句動詞",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 6,
+    "grammar": ["phrasal-verbs", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f5f5bb90e61cf5af78285119e60174bb2a9c0403fb72ba0ddab40249055563f8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_4p8f4j4w",
+    "ja": "ずっと探してるんだ。手伝ってよ！",
+    "en": "I've been looking for ages. Help me out!",
+    "alternatives": [
+      "I've been searching forever. Help me out!",
+      "Help me out! I've been looking for ages."
+    ],
+    "point": "「ずっと〜してる」は have been -ing。頼みは Help me out!",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 4,
+    "grammar": ["present-perfect-continuous", "imperatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3a031b4b175cb5a2e9ddb4ebcb2f80fe3236efb8ff674bed084e9cf3df36bf42",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_4y3n8x8n",
+    "ja": "手伝いたいのは山々だけど、今週は手が離せなくて。",
+    "en": "I'd love to help, but I'm swamped this week.",
+    "alternatives": [
+      "I'd love to, but I'm tied up this week.",
+      "I wish I could help, but I'm swamped this week."
+    ],
+    "point": "「〜たいのは山々だけど」は I'd love to, but で断る",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 7,
+    "grammar": ["concession-contrast", "hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:034abba264b4cf1b1e229da7d3583b2d8b9b6df56ed06b2cf274f13b31293c00",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5a2v9z2f",
@@ -114,9 +255,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:6ff4a2a1af448bfa41682cf655860096aecda9c8dca0b482479146db860f836c",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:a46b172d3282ba046f7a3a4f3ad9262297e80fccd1121e68b1b57ab6cd8784d1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -131,33 +272,14 @@
     "point": "「散歩させる」は walk を他動詞で使い walk your dog とする",
     "topic": "social",
     "subtopic": "favors",
-    "level": 3,
+    "level": 2,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:2f8990be62d17b334b4ae9c8b2da7cd03a38e69d174d4ae08715ffa93e4dba73",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_5j7z9s4b",
-    "ja": "今、忙しい？お願いがあるの。",
-    "en": "Busy? I need a favor.",
-    "alternatives": ["Are you busy? I need help.", "Are you free? I need help."],
-    "point": "「忙しい？」は Are you busy? と be 動詞で聞く",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 1,
-    "grammar": ["be-and-present-simple"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:04c7423550290f0ef6349ba763212aab8c2d0372ff737fc019dc609625660838",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:ae0c288bcf2eca58a9a6f8e823d44dc0b4c0d8bc19d79a7dea2518cf2a7c60be",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -175,36 +297,32 @@
     "level": 5,
     "grammar": ["time-and-if-clauses", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c90fed9792058423192683515c99f7fd34dd7f06f96bc7adddb0d8e7598302bf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_5m5p4c3p",
-    "ja": "兄より姉のほうが頼みやすい。",
-    "en": "My sister is easier to ask.",
-    "alternatives": ["Asking my sister is easier.", "It's easier to ask my sister."],
-    "point": "「頼みやすい」は easier to ask、to 不定詞で形容詞を修飾",
+    "id": "c_5n6n2k2a",
+    "ja": "窓を開けて、お願い。",
+    "en": "Open the window, please.",
+    "alternatives": ["Please open the window.", "Open the window for me, please."],
+    "point": "頼むときの命令文は please を添えると柔らかい",
     "topic": "social",
     "subtopic": "favors",
-    "level": 4,
-    "grammar": ["comparatives-superlatives", "infinitives"],
+    "level": 1,
+    "grammar": ["imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5p5h9z5v",
-    "ja": "田中さんは、来週なら原稿を見ると言っていました。",
-    "en": "Ms. Tanaka said she'd review the draft next week.",
-    "alternatives": [
-      "Ms. Tanaka told me she'd review the draft next week.",
-      "Ms. Tanaka said she'd go over the draft next week."
-    ],
-    "point": "伝える側の過去に合わせて will → would",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 8,
-    "grammar": ["reported-speech"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c26e799107a3135e3808a946019d87c34f43304d1f1bd2faaf56fef810582f78",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5t6d5v6u",
@@ -220,23 +338,13 @@
     "level": 9,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5v3f9m5q",
-    "ja": "土曜は兄の結婚式なの。日曜なら犬の世話するよ。",
-    "en": "Saturday's my brother's wedding, but I can dog-sit Sunday.",
-    "alternatives": [
-      "My brother's wedding is Saturday, but I can dog-sit Sunday.",
-      "Saturday's booked, but I could watch your dog Sunday."
-    ],
-    "point": "曜日の前に on を付けなくても自然に言える",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 7,
-    "grammar": ["future-forms", "concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c14bb9dcdbfa85e442cd02cd3ab06ad6d99e2942bbf2690ecf825c38bee79426",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5y6b6n2p",
@@ -252,7 +360,57 @@
     "level": 7,
     "grammar": ["wishes-regrets", "reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:be94d6f93429193faf5c6f1ee8ad2ae3351b751b8a17fd0985200ae0243a0669",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_6e2b9w3e",
+    "ja": "父より母のほうが頼みやすい。",
+    "en": "Mom is easier to ask than Dad.",
+    "alternatives": [
+      "It's easier to ask Mom than Dad.",
+      "Asking Mom is easier than asking Dad."
+    ],
+    "point": "「頼みやすい」は easier to ask、比べる相手は than で",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 4,
+    "grammar": ["comparatives-superlatives", "infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d36076e7be69aec52fe17bc5eba64760347f2c4c5000105cf1ab449ba062a278",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_6e5a3p3y",
+    "ja": "昨日送ったの、もう見てくれた？",
+    "en": "Have you seen what I sent yesterday?",
+    "alternatives": [
+      "Have you looked at what I sent yesterday?",
+      "Have you checked what I sent yesterday?"
+    ],
+    "point": "「もう」は現在完了。what 節の中は yesterday なので過去形",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 4,
+    "grammar": ["tense-contrast", "noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9fc9d540249a351194c501bfac6efeb37d538670de5554d3213fd685d6dd404a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7e2n4m8h",
@@ -268,7 +426,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:777d6b8f8d5ad985bdf62bb14da0fb017463418913342e51106130607cd1affb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7p7z3x9v",
@@ -284,7 +448,13 @@
     "level": 3,
     "grammar": ["articles-and-countability", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:88eb58958cb931a33423183fdd309ad22743e0d358eb6ddd672e063ae883fc97",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8a3x4u7m",
@@ -297,39 +467,57 @@
     "level": 1,
     "grammar": ["wh-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7d61c211f7c7f8f3910f062ac37c2c4b99b4357c97776cf2749ca1204576fb19",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_8k3c7h4p",
-    "ja": "彼女は車を貸してくれた上に、給油までしてくれた。",
-    "en": "Not only did she lend me her car, she refueled.",
+    "id": "c_8p7h3r5c",
+    "ja": "田中さんにもう頼んだから、君は気にしなくていいよ。",
+    "en": "I've already asked Tanaka, so you're off the hook.",
     "alternatives": [
-      "She not only lent me her car but refueled it.",
-      "She lent me her car and even filled the tank."
+      "I've already asked Tanaka, so don't worry about it.",
+      "I already asked Tanaka, so you're all set."
     ],
-    "point": "Not only で始めたら did she lend と語順を倒置する",
+    "point": "頼み済みの今の状態は現在完了、be off the hook で免除",
     "topic": "social",
     "subtopic": "favors",
-    "level": 9,
-    "grammar": ["inversion"],
+    "level": 7,
+    "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:db22497869ba94314c9b7e7507e7a9e8317e8e3a020a1d874f9451834ab4d5fe",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_8k6k3c5s",
-    "ja": "翻訳者さんに、私の記事を見てもらえるか聞いてくれない？",
-    "en": "Could you ask the translator if they'd check my article?",
+    "id": "c_8t9s3t4q",
+    "ja": "彼に頼まれたとき、きっぱり断っておけばよかった。",
+    "en": "I should have turned him down flat when he asked.",
     "alternatives": [
-      "Could you ask the translator whether they'd look over my article?",
-      "Would you mind asking the translator if they could check my article?"
+      "I should have said no outright when he asked me.",
+      "I should have just said no when he asked."
     ],
-    "point": "「〜か聞いて」は ask + if/whether 節（語順は平叙文）",
+    "point": "断らなかった後悔は should have + 過去分詞",
     "topic": "social",
     "subtopic": "favors",
-    "level": 10,
-    "grammar": ["noun-clauses"],
+    "level": 7,
+    "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a4337d1c1c0e3367a32e6f672f466f09fdebd560b14c5bed6fa41adc387be975",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8z3p4v9g",
@@ -345,55 +533,54 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:383777ebdf822961cf2a5d1c097785b8ecaacc670e5e4f2ff63a906cb66b0899",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9a8f7t3x",
     "ja": "兄はピザをおごらせてから、手伝ってくれた。",
     "en": "My brother made me buy him pizza before helping.",
     "alternatives": [
-      "My brother had me buy him pizza before he'd help.",
+      "My brother made me buy pizza before helping me.",
       "My brother wouldn't help until I bought him pizza."
     ],
     "point": "「〜させる」は make 人 + 動詞の原形（to は付けない）",
     "topic": "social",
     "subtopic": "favors",
-    "level": 8,
+    "level": 6,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7fc18ba49fb2d0250ccd8d7317d678b43eda7b690016f995c73f0d8bf7461189",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_9j8f5k6t",
-    "ja": "隣の奥さんに猫の世話を頼んだら、快く引き受けてくれたよ。",
-    "en": "I asked my neighbor to catsit, and she gladly agreed.",
-    "alternatives": [
-      "When I asked my neighbor to catsit, she happily said yes.",
-      "My neighbor gladly agreed to look after my cat when I asked."
-    ],
-    "point": "過去の出来事の連続は過去形でつなぐ",
+    "id": "c_9m5x3m5d",
+    "ja": "ごめん、今日は忙しいんだ。",
+    "en": "Sorry, I'm busy today.",
+    "alternatives": ["I'm sorry, I'm busy today.", "Sorry, I'm too busy today."],
+    "point": "断るときは Sorry のあとに be 動詞で理由を言う",
     "topic": "social",
     "subtopic": "favors",
-    "level": 10,
-    "grammar": ["tense-contrast"],
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9m9u2p6w",
-    "ja": "引っ越し手伝ってもらえない？お昼おごるよ。",
-    "en": "Could you help me move? I'll buy lunch.",
-    "alternatives": [
-      "Could you help me move? Lunch is on me.",
-      "Would you mind helping me move? I'm buying lunch."
-    ],
-    "point": "「おごる」は buy lunch や Lunch is on me が自然",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 6,
-    "grammar": ["requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:27d47b72663835cabffe6c5da26248d51505594301d2d149539f03fbaca52e95",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9n5d7u3n",
@@ -401,7 +588,7 @@
     "en": "She hasn't given my camera back yet.",
     "alternatives": [
       "She still hasn't returned my camera.",
-      "I still haven't gotten my camera back."
+      "She still hasn't given it back."
     ],
     "point": "まだ返っていない今の状態は現在完了 hasn't + 過去分詞",
     "topic": "social",
@@ -409,19 +596,56 @@
     "level": 5,
     "grammar": ["present-perfect", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:460b7af50c40cb374f5442e0ec7e256f84f1d168e5f39c1d46d9c17367a64ca3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9q2n2j3r",
     "ja": "友達に引っ越しの手伝いを頼まれた。",
     "en": "A friend asked me to help move.",
-    "alternatives": ["A friend wants me to help move.", "I was asked to help move."],
+    "alternatives": [
+      "My friend asked me to help move.",
+      "A friend asked for my help moving."
+    ],
     "point": "「人に〜するよう頼む」は ask 人 to do で表す",
     "topic": "social",
     "subtopic": "favors",
     "level": 3,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7800486ca52d2ce1509468406dd0170068200bbe90ee255ef086a313ed5c622f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_9s6w5a2k",
+    "ja": "頼む前に、彼女のほうから代わると言ってくれた。",
+    "en": "I hadn't even asked when she offered to cover.",
+    "alternatives": [
+      "She offered to cover before I'd even asked.",
+      "Before I'd even asked, she offered to take over."
+    ],
+    "point": "「頼む前に」は過去完了 hadn't asked で表す",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:acc50c91bc7c59954a051cc71a90f6ebc9c8329b48ed537bd0cd8af2488ec033",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]

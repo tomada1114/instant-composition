@@ -15,9 +15,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:13f656e815e06ab9a5107cab4783ab1314678215288d3c9a25692d0d40e1899f",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:95e353a68df6227525575cc099e9d0c934fb59a3a857c77fcd7c2c3b993ef4d7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -26,54 +26,45 @@
     "ja": "駅行きのバスがあるかどうか、伺いたいのですが。",
     "en": "I was wondering if buses go to the station.",
     "alternatives": [
+      "I was wondering if there's a bus to the station.",
       "Would you know if a bus goes to the station?",
       "Could you tell me if buses go to the station?"
     ],
     "point": "I was wondering if で柔らかく尋ねる",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 8,
+    "level": 7,
     "grammar": ["hedging-softening", "indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d9cfd0a5eb514a87f5289a1caa36b005020e75edd890b3658ed31b06852adb62",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2n3w6k3b",
     "ja": "出発前に地図アプリを入れておけばよかった。",
     "en": "I wish I'd downloaded a map app before leaving.",
     "alternatives": [
-      "If only I had downloaded a map app before leaving.",
+      "If only I'd downloaded a map app before leaving.",
       "I should have downloaded a map app before leaving."
     ],
     "point": "過去への後悔は I wish の後を過去完了 had done にする",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 7,
+    "level": 6,
     "grammar": ["wishes-regrets", "past-perfect"],
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:7cd50c2f9c4fbdfd83333c8b634c5d84e27b7640232240aa53381067ec8acfbc",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:222635febb12155333132c732abec05f1c29b807aec42cebe1ec01bebe38f097",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_2r9u2b4h",
-    "ja": "彼女に地図を描くよう頼んでもらえますか？",
-    "en": "Could you ask her to draw a map?",
-    "alternatives": [
-      "Can you ask her to draw a map?",
-      "Would you ask her to draw me a map?"
-    ],
-    "point": "ask 人 to do で「人に〜するよう頼む」",
-    "topic": "travel",
-    "subtopic": "directions",
-    "level": 6,
-    "grammar": ["verb-object-to-do", "requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_2v6h3m8h",
@@ -81,15 +72,21 @@
     "en": "Is there a currency exchange around here?",
     "alternatives": [
       "Is there an exchange office near here?",
-      "Is there a place to exchange money nearby?"
+      "Is there a money exchange nearby?"
     ],
     "point": "初めて話題にする両替所は a",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 6,
+    "level": 3,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3a440354c5faeb56b29893c3c1a62b79f4a544fe30cf90f0ce88248da74ace8a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3b8h4m7x",
@@ -102,10 +99,38 @@
     "point": "過去にすべきだったことは should have + 過去分詞",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 8,
+    "level": 6,
     "grammar": ["modal-perfect", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e0f6131b67d6864eaacba73e28088373d25f897d736cb90272d8f96447af0cc1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_3d7r6g3n",
+    "ja": "道を聞ける人を探しているんです。",
+    "en": "I'm looking for someone to ask for directions.",
+    "alternatives": [
+      "I need someone to ask for directions.",
+      "I'm looking for someone I can ask."
+    ],
+    "point": "「聞ける人」は someone to ask と不定詞で後ろから修飾",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 4,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2a44cee3f9743f94646b2a1fc37fedba3a266103d3549207f2c5437986aba37d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3d9z3j4x",
@@ -118,29 +143,44 @@
     "level": 2,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:619ee6b4ea2e83de59b518ed10b4137947e53aa24f7496181ffe33cd6c0d9184",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_3e6p6u7j",
-    "ja": "さっきの人、橋は通行止めだって言ってたよ。",
-    "en": "The man said the bridge was closed.",
+    "id": "c_3f5s9q7m",
+    "ja": "彼、駅がどこにあるか知らないみたいだったよ。",
+    "en": "He didn't seem to know where the station was.",
     "alternatives": [
-      "He told me the bridge was closed.",
-      "The man told us the bridge was closed."
+      "He seemed to have no idea where the station was.",
+      "He didn't seem to know where the station is."
     ],
-    "point": "時制の一致で is が was になる",
+    "point": "where 節の中は肯定文の語順で、時制も過去に合わせる",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 6,
-    "grammar": ["reported-speech"],
+    "level": 7,
+    "grammar": ["infinitives", "indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3be739192690571bd8b64883e7f3d73d4c49b7ac694976e8ffffe4699d015cf6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3q8n2m2z",
     "ja": "近くにコンビニはありますか？",
     "en": "Is there a convenience store nearby?",
-    "alternatives": ["Is there a store near here?", "Is there a shop around here?"],
+    "alternatives": [
+      "Is there a nearby convenience store?",
+      "Any convenience stores nearby?"
+    ],
     "point": "「ありますか」は Is there で始める",
     "topic": "travel",
     "subtopic": "directions",
@@ -149,9 +189,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:2df4256ef8fa0e3cb1f1afcf36f4881ece3738bf5c579f9a8c29cfe4c471964a",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:5f94777515b43529eda5cc69a4f3d1ce3d6ae5394ae5dc5f178c03368c62016a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -169,7 +209,13 @@
     "level": 5,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2bc7440b68a9077f3ca7d508de6249519918a257478af58beb9869d08c2cdfb5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3x7c9e6a",
@@ -185,39 +231,123 @@
     "level": 5,
     "grammar": ["indirect-questions", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1cafa25d45b1b18ecae390b1a72771ce17346dc80c21b01eae41b84e91bf2a86",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_4e8e7z9x",
+    "ja": "私が泊まっているホテルは、駅の裏にあります。",
+    "en": "The hotel where I'm staying is behind the station.",
+    "alternatives": [
+      "The hotel I'm staying at is behind the station.",
+      "The place I'm staying is behind the station."
+    ],
+    "point": "where の代わりに、前置詞 at を文末に残す言い方もある",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7b6496cd76bb1e03b4a619dc3db0095d4cc0383fe11b6579e7711e9338abf49d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4n9f6k5e",
     "ja": "彼女は地図を見ながら、道を教えてくれた。",
-    "en": "She explained the way, checking her map.",
+    "en": "She gave me directions, checking her map.",
     "alternatives": [
-      "She checked her map as she explained the way.",
+      "She checked her map as she gave me directions.",
       "While checking her map, she gave me directions."
     ],
     "point": "「〜しながら」は文末に , checking のように -ing を添える",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 7,
+    "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9ef64fac731cd49413c2a44a777723c675aeac5d9240baa54668cc646599c7e2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_5a2d9m3z",
-    "ja": "美術館は遠いけど、川沿いだから迷いませんよ。",
-    "en": "Although the museum's far, you can't miss it.",
+    "id": "c_4w2t2k5z",
+    "ja": "地元の人に、近道を案内してもらいたいです。",
+    "en": "I'd like a local to show me a shortcut.",
     "alternatives": [
-      "Even though the museum's far, you won't get lost.",
-      "The museum's far, but you can't miss it."
+      "I'd like someone local to show me a shortcut.",
+      "I'd love a local to show me a shortcut."
     ],
-    "point": "Although を使ったら後半に but は付けない",
+    "point": "would like + 人 + to do。to の前に人を置く",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 8,
-    "grammar": ["concession-contrast"],
+    "level": 6,
+    "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:15a069dbe50d1410c0df4ff12c0c7cd40fcd9d93f348a4b994a8da48656bba4d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_5g3q5k4e",
+    "ja": "私はここに20年住んでるけど、あの道ができたのは去年だよ。",
+    "en": "I've lived here twenty years, but that road only opened last year.",
+    "alternatives": [
+      "I've lived here for twenty years, yet that road opened last year.",
+      "I've been here twenty years, but that road opened just last year."
+    ],
+    "point": "期間は現在完了、去年の出来事は過去形",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0642ea1ddc6f2ddefd96310d7d907077e50ae37b8d6a2ac2405870bf39ac2ba0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_5n8y2g8u",
+    "ja": "大事なのは、迷ったら人に聞くことだよ。",
+    "en": "What matters is asking someone when you get lost.",
+    "alternatives": [
+      "The key is to ask someone when you're lost.",
+      "What's important is asking for help when you're lost."
+    ],
+    "point": "What 節は「〜なこと」を表す主語で、単数扱い",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 7,
+    "grammar": ["noun-clauses", "gerunds"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5be068439e69383a25e46c976c7812a132bef3887622965fcb30f53bffaa0f93",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5p8a6f9g",
@@ -232,27 +362,33 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:8b1e70ac411b5abbdb044d0e8b1f2a0f0239f065dd55d0613c54bbb181873d36",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:7de3592b0fd6e40ea9d00324deba25eaf4e18f1e240ee0c7e7ad7c997caaefe2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
   {
-    "id": "c_6j4s7a7d",
-    "ja": "駅員さんに聞いた道は、あなたの話と違いました。",
-    "en": "The route the attendant described differed from yours.",
+    "id": "c_5u9k6j4g",
+    "ja": "あなた、きっと入口を通り過ぎたんですよ。",
+    "en": "You must have walked past the entrance.",
     "alternatives": [
-      "The directions the attendant gave me differed from yours.",
-      "The way the attendant showed me was different from yours."
+      "You've probably walked past the entrance.",
+      "You must have gone past the entrance."
     ],
-    "point": "主語が長い名詞句でも動詞 differed を見失わない",
+    "point": "過去の確信は must have＋過去分詞",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 8,
-    "grammar": ["nested-clauses", "relative-clauses"],
+    "level": 6,
+    "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d89dc6f9eb0c7db9f4d490e1be55cf051c5fd0b36d4efd4af2662b3482e6a08f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7a3t5r3x",
@@ -268,7 +404,58 @@
     "level": 4,
     "grammar": ["time-and-if-clauses", "imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1b8d8bc0db3705bf707d5398e0266ad7126e15bb8e7d0f2997bdabf941e2add7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_7b9k2f7k",
+    "ja": "彼女は駅は右手だと言っていた。",
+    "en": "She said the station's on the right.",
+    "alternatives": [
+      "She said the station was to the right.",
+      "She told me the station's on the right.",
+      "She said it was on the right."
+    ],
+    "point": "said の後ろは that を省いて節をそのまま続ける",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 5,
+    "grammar": ["noun-clauses", "reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5810e8106c303f5b52d1371073641af01d8a3d916c0b7e3a046f123a01e7f09b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_7e3f7u2c",
+    "ja": "ここは通れないよ。君は戻るべきだね。",
+    "en": "It's blocked. You should turn back.",
+    "alternatives": [
+      "It's blocked, so you should go back.",
+      "You should go back. It's blocked."
+    ],
+    "point": "「〜すべき」は should＋動詞の原形で言う",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bb3658c66d2e8b0708dee4f9fb998559fe30e868ba17baa94a470dbcda3115d1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7f2s5u9t",
@@ -281,7 +468,13 @@
     "level": 4,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:676450c8e481655d1e668a625e4f79dd713e94790e29563913f02bb74ae7c9f2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7q6y9p7v",
@@ -297,7 +490,13 @@
     "level": 3,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4b9ee7b37090286d6e039379457f285a743cfaf41f9e60880ec4c615af677e7a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7v4r9m3t",
@@ -310,23 +509,13 @@
     "level": 1,
     "grammar": ["there-is-are", "articles-and-countability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7y5a8r9r",
-    "ja": "迷ったら、フロントに地図へ印をつけてもらうといいよ。",
-    "en": "If you're lost, have the front desk mark a map.",
-    "alternatives": [
-      "Have the front desk mark a map if you're lost.",
-      "If you're lost, get the front desk to mark a map."
-    ],
-    "point": "have＋人＋動詞の原形。get なら get＋人＋to 不定詞",
-    "topic": "travel",
-    "subtopic": "directions",
-    "level": 9,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:399e9270938960846b753d4d922dfa0d61ee287fe844cf5601c27404a5d42420",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8b3s7d3k",
@@ -342,52 +531,79 @@
     "level": 5,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dd5002f845bf82d37ad9dabdb72ae40aadaee3b8e2a4883860e7af507d1d10b0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_8f7u8y5u",
+    "ja": "運転手さんに、ここで降ろしてくれるよう頼みました。",
+    "en": "I asked the driver to drop me off here.",
+    "alternatives": [
+      "I asked the driver to let me off here.",
+      "I asked the driver to let me out here."
+    ],
+    "point": "ask + 人 + to do。「降ろす」は drop off / let off",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 7,
+    "grammar": ["verb-object-to-do", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9f8d17c66b3bc1847add2a2cad297dcb159cbf13109181cc32b887a027dc89b0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8f9s4m5k",
     "ja": "よかったら、そこまで案内しますよ。",
     "en": "I'll take you there if you like.",
-    "alternatives": ["I'll take you there, if you want.", "Let me take you there."],
+    "alternatives": [
+      "I'll take you there, if you want.",
+      "I'll walk you there if you like."
+    ],
     "point": "その場で決めた申し出は will を使う",
     "topic": "travel",
     "subtopic": "directions",
     "level": 2,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:560a77537d8e6597676ac8c3ad3de00f492abd9d09e6a3d4f1a1f0ae7fcd8fe8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_8j4c2x3v",
-    "ja": "すみません、この住所がどこか教えてもらえますか？",
-    "en": "Could you tell me where this address is?",
+    "id": "c_8y3h7r6y",
+    "ja": "彼、あの角を左に曲がれって言ってたよ。",
+    "en": "He told me to turn left at that corner.",
     "alternatives": [
-      "Excuse me, do you know where this address is?",
-      "Would you mind telling me where this address is?"
+      "He said to turn left at that corner.",
+      "He said I should turn left at that corner."
     ],
-    "point": "where this address is の語順。is を前に出さない",
+    "point": "「〜しろと言われた」は told me to do",
     "topic": "travel",
     "subtopic": "directions",
     "level": 7,
-    "grammar": ["indirect-questions", "requests-permission"],
+    "grammar": ["verb-object-to-do", "reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8u4q4a7n",
-    "ja": "駅員さんに聞かなきゃ、私たち迷ってたよ。",
-    "en": "If we hadn't asked, we'd have gotten lost.",
-    "alternatives": [
-      "Had we not asked, we'd have gotten lost.",
-      "If we hadn't asked, we'd have wound up lost."
-    ],
-    "point": "過去の仮定は had not asked、帰結は would have gotten",
-    "topic": "travel",
-    "subtopic": "directions",
-    "level": 8,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c2c9da52f2ad67d8277038ac2e3d7796c8c9c01f5f7c4d953b35cfbfd5da87ae",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9b5v9f9u",
@@ -403,23 +619,35 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7d72d497941ff35c73bf9bb031a11f7cd0d8da64ac82b7666207927344999ed3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_9b6e2p6z",
-    "ja": "この辺で両替できる所、ご存じですか？",
-    "en": "Do you know where I can exchange money?",
+    "id": "c_9d2z3p9y",
+    "ja": "この辺に詳しい人が、きっと教えてくれますよ。",
+    "en": "I'm sure someone who knows the area will tell you.",
     "alternatives": [
-      "Could you tell me where to exchange money around here?",
-      "Is there a place nearby where I can change money?"
+      "Someone who knows the area will tell you for sure.",
+      "I'm sure someone familiar with the area will tell you."
     ],
-    "point": "where の後は I can の語順。is にしない",
+    "point": "人を修飾する who 節。knows と三単現の s を忘れずに",
     "topic": "travel",
     "subtopic": "directions",
     "level": 7,
-    "grammar": ["indirect-questions"],
+    "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ab850300b9ba8559465d81e49d20bcc83a293d4ef9c4cb24cc397dd7581fb81f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9g5t4d8c",
@@ -427,62 +655,86 @@
     "en": "If my phone worked, I'd find the station myself.",
     "alternatives": [
       "I'd find the station myself if my phone worked.",
-      "If my phone were working, I'd find the station myself."
+      "With a working phone, I'd find the station myself."
     ],
     "point": "今の事実に反する仮定なので worked と I'd を使う",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 8,
+    "level": 6,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:71f47364f8be8cbd1d47421fa20fb12d23fe1a8a96dbb1d65d88c6ee744aa917",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_9q3n7a7t",
-    "ja": "SIMカードを売っているお店はありますか？",
-    "en": "Is there a store that sells SIM cards?",
+    "id": "c_9g6c9r6f",
+    "ja": "私が探してるのは、二番じゃなくて三番出口です。",
+    "en": "What I'm looking for is exit three, not two.",
     "alternatives": [
-      "Is there anywhere that sells SIM cards?",
-      "Do you know a store that sells SIM cards?"
+      "It's exit three I'm looking for, not exit two.",
+      "The one I'm after is exit three, not two."
     ],
-    "point": "店を説明する関係詞 that の後ろは sells と三単現",
+    "point": "What ～ is で「探しているのは」を強調する",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:76b8f0b164ac9522a9748f8c344a4e9adbadc6fc7ca141ce919379a7172163d3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_9t3e5z3m",
+    "ja": "バスを乗り換えるバス停は、どこですか？",
+    "en": "Where's the stop where I change buses?",
+    "alternatives": [
+      "Which stop do I change buses at?",
+      "Where's the stop where I transfer buses?"
+    ],
+    "point": "乗り換えは change buses と複数形にする",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 4,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:566eab49a5add86bd21df39e6fdf84259283a03117f49d4b704e464aa5a09dfb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_9z2x4y4e",
+    "ja": "店員さんが、バス停はすぐそこだと教えてくれた。",
+    "en": "The clerk said the bus stop was right there.",
+    "alternatives": [
+      "The clerk said the bus stop was close by.",
+      "The clerk told me the stop was right there."
+    ],
+    "point": "said の後は時制を一つ過去にずらして was",
     "topic": "travel",
     "subtopic": "directions",
     "level": 6,
-    "grammar": ["relative-clauses"],
+    "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9s3v8z2m",
-    "ja": "知りたいのは、この時間でもバスがあるかどうかです。",
-    "en": "What I need to know is whether there's still a bus.",
-    "alternatives": [
-      "What I want to know is whether a bus still runs.",
-      "The thing I need to know is if buses still run."
-    ],
-    "point": "「〜かどうか」は whether 節、語順は平叙文のまま",
-    "topic": "travel",
-    "subtopic": "directions",
-    "level": 10,
-    "grammar": ["noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9y9a2x5h",
-    "ja": "彼女は2回迷ったけど、もう見つけたよ。",
-    "en": "She got lost twice, but she's found it.",
-    "alternatives": [
-      "Though she got lost twice, she's found it.",
-      "She got lost twice but finally found it."
-    ],
-    "point": "過去の出来事は過去形、今の結果は現在完了",
-    "topic": "travel",
-    "subtopic": "directions",
-    "level": 5,
-    "grammar": ["tense-contrast", "present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:39882a7320b80650d8dd7dd156c144d1d54258c7df1c8020ce084f06df88d77f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]

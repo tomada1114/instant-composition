@@ -1,37 +1,5 @@
 [
   {
-    "id": "c_2g2r8x6s",
-    "ja": "盗まれたカメラ、まだ届けてないんです。",
-    "en": "I haven't reported my stolen camera yet.",
-    "alternatives": [
-      "I still haven't reported my stolen camera.",
-      "I haven't reported my camera as stolen yet."
-    ],
-    "point": "「まだ〜していない」は現在完了＋yet",
-    "topic": "travel",
-    "subtopic": "troubles",
-    "level": 5,
-    "grammar": ["present-perfect", "passive-voice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2g7v4j8a",
-    "ja": "財布を盗まれたのは、改札のところだよ。",
-    "en": "It was at the gate that my wallet got stolen.",
-    "alternatives": [
-      "The gate is where my wallet got stolen.",
-      "It was at the ticket gate that my wallet was stolen."
-    ],
-    "point": "強調したい場所を It was と that の間に挟む",
-    "topic": "travel",
-    "subtopic": "troubles",
-    "level": 10,
-    "grammar": ["cleft-emphasis"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2q5b4z9t",
     "ja": "私の立場なら、なくしたカードを止めますか？",
     "en": "If you were me, would you cancel the card?",
@@ -42,34 +10,62 @@
     "point": "仮定の質問は If you were と would you で過去形にそろえる",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 7,
+    "level": 6,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c39034c61fbbefc090fc4f2cfa0ca4fe134465c6a397dc96662a08a972e7090",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3d5a8s3f",
     "ja": "荷物を、もう2時間も待ってるんです。",
-    "en": "I've been waiting two hours for luggage.",
+    "en": "I've been waiting two hours for my luggage.",
     "alternatives": [
-      "I've been waiting for luggage for two hours.",
-      "I've waited two hours for my bag already."
+      "I've waited two hours for my luggage.",
+      "I've been waiting two hours for my bags."
     ],
     "point": "今も続く待機は have been waiting",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 5,
+    "level": 4,
     "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fc46bca67c65996ab69248e2028b95c55427b30d24773c014828eddb2cc15e66",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_3q2y7q2m",
+    "ja": "私たちは、チェックインして初めて二重予約に気づいたんです。",
+    "en": "Only after checking in did we notice the double booking.",
+    "alternatives": [
+      "We didn't notice the double booking until we'd checked in.",
+      "It wasn't until we checked in that we noticed the double booking."
+    ],
+    "point": "Only after を文頭に置くと did we の倒置になる",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 10,
+    "grammar": ["inversion"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_3s5w6e8h",
     "ja": "向かいの男性が、私のバッグを持って行ったかも。",
-    "en": "The man facing me may have taken my bag.",
+    "en": "The man across from me may have taken my bag.",
     "alternatives": [
       "The guy across from me might have taken my bag.",
-      "The man across from me may have taken my bag."
+      "The man opposite me might have taken my bag."
     ],
     "point": "過去の推量は may/might + have + 過去分詞",
     "topic": "travel",
@@ -77,7 +73,35 @@
     "level": 7,
     "grammar": ["modal-perfect", "post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1d6b743bbd9e68ff16e6831546e0a523df1e382331025afe6a3d23e63e9184e3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_3x7a3w8b",
+    "ja": "係員が、荷物を見つけると言ってました。",
+    "en": "The agent said he'd find my bag.",
+    "alternatives": [
+      "The agent told me he'd find my bag.",
+      "The agent said he would find my luggage."
+    ],
+    "point": "said の後は時制を一つ過去にずらす（will → would）",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7474c8f84e1354d33d05806731d31ee01c16c7c765e183b1a22de7339b2c740b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4d3q8z9g",
@@ -92,9 +116,31 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:1eac7de465bd1c9af7f2d8d2fb0d43253b4623a5bcaa21cce778151a440396c0",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:f41550b7eee00303934a00f6955c893b54054b3c714af882b2399053597dc736",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_4p8e4u7w",
+    "ja": "近くに遺失物取扱所はありますか？",
+    "en": "Is there a lost-and-found nearby?",
+    "alternatives": [
+      "Is there a lost property office nearby?",
+      "Is there a lost-and-found around here?"
+    ],
+    "point": "「〜はありますか」は Is there a 〜? で聞く",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:88576b9b094e331210fef901e17e132d84a2b26bea6c79db964443fcacf518fd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -109,7 +155,35 @@
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:395068fac3c275696ed32fabef21442e869e49b07c251baef277efeb4565e9fb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_4z9j3j4t",
+    "ja": "フロントに、予約がないと言われたんです。",
+    "en": "The front desk said I had no reservation.",
+    "alternatives": [
+      "They told me I had no reservation.",
+      "They said I didn't have a reservation."
+    ],
+    "point": "said の後の動詞は過去形（have でなく had）",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3a0ae1409d2474a9b8da8e05f02e3578eda58c45f4f196d5fdb6f1cb9cde9e4d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5n9f5z5v",
@@ -122,18 +196,62 @@
     "point": "断定せず seem で柔らかく伝え、Could you で頼む",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 8,
+    "level": 7,
     "grammar": ["hedging-softening", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bb3d265ae5e771330127b5f27b572466e63d67ff71b4a06c95f7aee99f763f90",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_5u9g5h4t",
+    "ja": "盗まれたのは現金とカメラだけです。",
+    "en": "Only cash and a camera were stolen.",
+    "alternatives": [
+      "Just cash and a camera got stolen.",
+      "Only some cash and a camera were stolen."
+    ],
+    "point": "cash は数えられないので a を付けない。camera は a が必要",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 4,
+    "grammar": ["articles-and-countability", "passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2a6ffef10e94e60e8384f13a076091094dabeeb26ef2165d61f51cc6a6020072",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_6a5r7z7b",
+    "ja": "私の荷物がいつ出てくるか、ご存じですか？",
+    "en": "Do you know when my luggage will turn up?",
+    "alternatives": [
+      "Do you know when my luggage will show up?",
+      "Do you know when my bags will turn up?"
+    ],
+    "point": "間接疑問は when のあとが平叙文の語順",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 6,
+    "grammar": ["indirect-questions", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_6d6w5e2d",
     "ja": "ホテルの人に報告書を書いてもらいたいです。",
-    "en": "I'd like to have them write a report.",
+    "en": "I'd like to have the staff write a report.",
     "alternatives": [
-      "I'd like the staff to write a report.",
-      "Could I have the hotel write a report?"
+      "I'd like the hotel staff to write a report.",
+      "I'd like the hotel to write a report."
     ],
     "point": "have＋人＋原形、get なら get＋人＋to do",
     "topic": "travel",
@@ -141,7 +259,51 @@
     "level": 6,
     "grammar": ["causatives", "verb-object-to-do"],
     "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3ffcb9dab08c2f2d5cdd75e269fe9046c85d64e090cb48a02cad698d2e2e967c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_6e4c9z2t",
+    "ja": "荷物紛失は誰の担当か教えてもらえますか？",
+    "en": "Could you tell me who handles lost luggage?",
+    "alternatives": [
+      "Can you tell me who handles lost luggage?",
+      "Please tell me who handles lost luggage."
+    ],
+    "point": "間接疑問は who＋動詞の語順。Could you の後は平叙文",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 4,
+    "grammar": ["indirect-questions", "requests-permission"],
+    "createdAt": "2026-09-28",
     "stamps": {}
+  },
+  {
+    "id": "c_6k6k5e9t",
+    "ja": "カードが使えなくて困ってるんです。",
+    "en": "I'm having trouble using my card.",
+    "alternatives": [
+      "I'm having a problem using my card.",
+      "I'm struggling to use my card."
+    ],
+    "point": "have trouble の後は to でなく ing 形（using）",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["gerunds", "progressive-aspect"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c5c113fe9a474f983a4f166c642497f94d99f91aad58f2f20b4d4726d9865d05",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6v3h2p5g",
@@ -157,23 +319,13 @@
     "level": 3,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6v6s9d2e",
-    "ja": "知りたいのは、ツアーが中止になったかどうかです。",
-    "en": "What I want to know is whether it was canceled.",
-    "alternatives": [
-      "What I'm asking is whether the tour was canceled.",
-      "What I want to know is if it got canceled."
-    ],
-    "point": "「〜かどうか」は whether 節で、主語は What 節",
-    "topic": "travel",
-    "subtopic": "troubles",
-    "level": 8,
-    "grammar": ["cleft-emphasis", "noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:eb6c3d021d470e9913aeaf2038b5eb07c25184314cd69a66c509095e3032cdfb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6v7v8f9z",
@@ -189,7 +341,13 @@
     "level": 2,
     "grammar": ["past-simple", "imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b5c0202c772e49cfd3515e07707520accfcabcf309cb39240d06175a3387f805",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6w5w3c6k",
@@ -205,15 +363,21 @@
     "level": 4,
     "grammar": ["relative-clauses", "be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:317813337a949782c021923b05464bbc312669eeecd13a6fa8e96c267f0e4abd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6y9p9h2a",
-    "ja": "早く出ていれば、バスに乗れたのに。",
-    "en": "If we'd left sooner, we'd have caught it.",
+    "ja": "早く出ていれば、私たちはバスに乗れたのに。",
+    "en": "If we'd left sooner, we'd have caught the bus.",
     "alternatives": [
       "We'd have caught the bus if we'd left earlier.",
-      "If we had left earlier, we'd have caught it."
+      "If we'd left earlier, we could've caught the bus."
     ],
     "point": "過去の後悔は had＋過去分詞、would have＋過去分詞",
     "topic": "travel",
@@ -221,23 +385,54 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:17ef171e219bcabc40cddeead212fcf466cd853fd8301627b937776f89175721",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_6z9b8v9w",
-    "ja": "係員に荷物を送るよう頼んでくれない？",
-    "en": "Can you ask staff to send it?",
+    "id": "c_7h6n2r2k",
+    "ja": "盗難は、どこに届ければいいですか？",
+    "en": "Where should I report a theft?",
+    "alternatives": ["Where do I report a theft?", "Where can I report a theft?"],
+    "point": "疑問詞は文頭。Where should I の語順に注意",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 3,
+    "grammar": ["wh-questions", "modal-obligation-advice"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ca59cc02a55b0c224b7a63d698e4a541c1a734001de300877aa095382cf8052a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_7h7f5b4g",
+    "ja": "大使館に電話してもらえませんか？",
+    "en": "Would you mind calling the embassy?",
     "alternatives": [
-      "Could you ask the agent to send it?",
-      "Can you get staff to send it?"
+      "Could you call the embassy for me?",
+      "Would you call the embassy for me?"
     ],
-    "point": "「〜するよう頼む」は ask＋人＋to do",
+    "point": "mind の後は to 不定詞でなく動名詞（calling）",
     "topic": "travel",
     "subtopic": "troubles",
     "level": 5,
-    "grammar": ["verb-object-to-do"],
+    "grammar": ["gerunds", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0fa92035939d208662d07f1de67d2500af87d76e23b823e0ede6998451f4de45",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7q2n4p8u",
@@ -255,40 +450,49 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:109285cf126dfd916dd7f3dca0ca54337a261820220611fe2a9f432ee1283aec",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:2be49f703810e0acadbe50a563bb97e9df6837c69c050d47bc30f153b617aeee",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
   {
-    "id": "c_7w8h6s2x",
-    "ja": "乗り遅れたら駅員に聞くといいよ。",
-    "en": "If you miss it, ask the staff.",
-    "alternatives": ["Ask the staff if you miss it.", "If you miss it, talk to staff."],
-    "point": "if 節は未来のことでも現在形で言う",
+    "id": "c_7w8t8e4h",
+    "ja": "私は搭乗口に着くまで、便の欠航を知りませんでした。",
+    "en": "Not until the gate did I learn it was canceled.",
+    "alternatives": [
+      "I only learned the flight was canceled at the gate.",
+      "It wasn't until the gate that I learned it was canceled."
+    ],
+    "point": "Not until を文頭に出すと、あとは疑問文の語順",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 3,
-    "grammar": ["time-and-if-clauses", "imperatives"],
+    "level": 9,
+    "grammar": ["inversion", "noun-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_8c7f2k4r",
-    "ja": "席が二重予約です。どこに座ればいいですか？",
+    "ja": "私たちの席が二重予約です。どこに座れば？",
     "en": "Our seats are double-booked. Where should we sit?",
     "alternatives": [
-      "Our seats have been double-booked. Where do we sit?",
+      "Our seats got double-booked. Where should we sit?",
       "We've been double-booked. Where should we sit?"
     ],
     "point": "「二重予約された」は受動態 be double-booked",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 6,
+    "level": 4,
     "grammar": ["passive-voice", "modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f2055f3266541c63473a782c77f3e0d8cc52b035cd9ddb2bc2cf49e120efb37e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8d4k7r2j",
@@ -304,7 +508,51 @@
     "level": 6,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4093b24fc1ae93e6d99bc6e1815e810370b708193b90524ed036a8bc22d79a68",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_8n2q4s4c",
+    "ja": "必要なのは、金曜までの代わりのパスポートです。",
+    "en": "What I need is a replacement passport by Friday.",
+    "alternatives": [
+      "What I need is a new passport by Friday.",
+      "A replacement passport by Friday is what I need."
+    ],
+    "point": "「必要なのは〜」は What I need is 〜。what 節が主語になる",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 6,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-28",
     "stamps": {}
+  },
+  {
+    "id": "c_8u3a9v5g",
+    "ja": "財布を探すのに、もう1時間も使いました。",
+    "en": "I've spent an hour looking for my wallet.",
+    "alternatives": [
+      "I've looked for my wallet for an hour.",
+      "I've spent an hour searching for my wallet."
+    ],
+    "point": "spend 時間 + 動名詞。継続は現在完了で表す",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 4,
+    "grammar": ["present-perfect", "gerunds"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2ed019550274fa696f2285f18cb4b22ccef1be7136a684db8dde288351f97868",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8v4c9z4v",
@@ -320,22 +568,34 @@
     "level": 4,
     "grammar": ["noun-clauses", "past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4fa6d96501557c5cb82ae9b6c0dd750274710e450616d59b003be7b9aa9c17b0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9w6m6g2h",
-    "ja": "妻は、荷物に名札を付けておけばよかったと悔やんでる。",
+    "ja": "妻は荷物に名札を付けておけばと悔やんでる。",
     "en": "My wife wishes she'd tagged our luggage.",
     "alternatives": [
       "My wife regrets not tagging our luggage.",
-      "My wife wishes she had put name tags on our bags."
+      "My wife wishes she'd put tags on our bags."
     ],
     "point": "過去の後悔は wish の後を過去完了 (had + 過去分詞) に",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 9,
+    "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f3f4242c0c302e1f61b4a5f68c2fdadc4b51df57fbe1ec20292de1fc19bbd272",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]

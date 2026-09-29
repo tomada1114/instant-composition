@@ -1,23 +1,7 @@
 [
   {
-    "id": "c_2b5d3k8k",
-    "ja": "先にフィードバックをいただけますか？",
-    "en": "Could you give us some feedback first?",
-    "alternatives": [
-      "Could we get some feedback from you first?",
-      "Would you mind giving us some feedback first?"
-    ],
-    "point": "feedback は数えられない名詞。a feedback にしない",
-    "topic": "tech",
-    "subtopic": "design-discussion",
-    "level": 5,
-    "grammar": ["articles-and-countability"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2h2z4p9j",
-    "ja": "書き込みの速さを少し捨てて、整合性を選んだ。",
+    "ja": "うちは書き込みの速さを少し捨てて、整合性を選んだ。",
     "en": "We gave up some write speed for consistency.",
     "alternatives": [
       "We traded a bit of write speed for consistency.",
@@ -29,23 +13,13 @@
     "level": 7,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2n5g6s4z",
-    "ja": "彼女が確認しなかったら、選び間違えてたよ。",
-    "en": "If she hadn't checked, we'd have chosen wrong.",
-    "alternatives": [
-      "We'd have chosen wrong if she hadn't checked.",
-      "Without her check, we'd have chosen wrong."
-    ],
-    "point": "過去の仮定は had 過去分詞、帰結は would have 過去分詞",
-    "topic": "tech",
-    "subtopic": "design-discussion",
-    "level": 6,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b6d145b2a6731aee6a554decd9ef1105539af9988caccdb9ff46608200adc9d9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2q5h8n7x",
@@ -61,23 +35,35 @@
     "level": 3,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:693c99d18fa537adeae19e82193506fff097c87487ed5f02bd2c1aea9708d775",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_2q5t4x8q",
-    "ja": "元のチームが選んだ案は、来年のトラフィックを無視している。",
-    "en": "The plan the original team chose ignores next year's traffic.",
+    "id": "c_2u2v8b4q",
+    "ja": "分割したらレイテンシがどれだけ増えるか分かる？",
+    "en": "Do you know how much latency splitting would add?",
     "alternatives": [
-      "The plan that team chose doesn't account for next year's traffic.",
-      "The original team's plan doesn't factor in next year's traffic."
+      "Any idea how much latency a split would add?",
+      "Do you know how much latency splitting adds?"
     ],
-    "point": "主語が長くても動詞は ignores で受ける",
+    "point": "間接疑問は how much latency の後を平叙文の語順に",
     "topic": "tech",
     "subtopic": "design-discussion",
-    "level": 10,
-    "grammar": ["nested-clauses"],
+    "level": 6,
+    "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4ec15518340fb74ab7bbc2c8f4102e386e33befc645f28a03c84f75a7bee2bda",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2x8n8m4t",
@@ -93,7 +79,13 @@
     "level": 6,
     "grammar": ["present-perfect-continuous", "tense-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:893d1a5c9e3782bdef54b95fa44d1952a1e47b4f93168aeb7acf8d1c2a183ac8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2x8s3u5s",
@@ -109,7 +101,13 @@
     "level": 6,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a59b7a2b71e14daccf61eb10ee0b04a5863d30887484623402d7bca353792c2f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3f3x5e8s",
@@ -125,7 +123,13 @@
     "level": 6,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1db9bfc096213165a997b6854c8e483913a51ed0395e4388cad9920717bb292c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3j8s6d4u",
@@ -143,27 +147,55 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:1a5b3126e5d1b99021374c4601ec3c9b348d2f0a18766d85b9c3fd8b782261ed",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:dae391e4fbb29d32ec75b4a75dbad5cdec84eef002259857b9fe707a6f818018",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
   {
-    "id": "c_3k3n9b8u",
-    "ja": "分割したらレイテンシがどれだけ増えるか分かる？",
-    "en": "Do you know how much latency splitting would add?",
+    "id": "c_3s8b3q8z",
+    "ja": "レプリカを増やしてれば、あれは防げたかもね。",
+    "en": "If we'd added replicas, we might have prevented that.",
     "alternatives": [
-      "Any idea how much latency splitting would add?",
-      "Do you know how much latency a split would add?"
+      "We might have prevented that if we'd added replicas.",
+      "We could've prevented that if we'd added replicas."
     ],
-    "point": "間接疑問は how much latency の後を平叙文の語順に",
+    "point": "if 節は had + 過去分詞、主節は might have + 過去分詞",
     "topic": "tech",
     "subtopic": "design-discussion",
-    "level": 7,
-    "grammar": ["indirect-questions"],
+    "level": 6,
+    "grammar": ["third-conditional", "modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6b6e425a04a5b14ea4babbc4169c460a2201efe036dfc8e26a2ca4df26a4e824",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_3u9z7b7t",
+    "ja": "トレードオフが分かる図、私が描いとくよ。",
+    "en": "I'll sketch a diagram that shows trade-offs.",
+    "alternatives": [
+      "I'll draw a diagram of the trade-offs.",
+      "I'll sketch out a diagram showing the trade-offs."
+    ],
+    "point": "「図」を that shows で後ろから説明。その場の申し出は will",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 5,
+    "grammar": ["future-forms", "relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e01332f3abc083af90f8e04185f5b78ce0e1fc7126d25b3f2c49d9ec3136c91e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3w8r3w3g",
@@ -176,46 +208,20 @@
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4f4m5b3a",
-    "ja": "課金部分の切り出しを、ご検討いただけないかと思って。",
-    "en": "I was wondering if you'd consider splitting billing out.",
-    "alternatives": [
-      "I was hoping you might consider splitting billing out.",
-      "Would you be open to splitting billing out?"
-    ],
-    "point": "控えめな提案は I was wondering if で始める",
-    "topic": "tech",
-    "subtopic": "design-discussion",
-    "level": 10,
-    "grammar": ["hedging-softening"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4m9h2v6t",
-    "ja": "GraphQL にしてから、開発は速くなった？",
-    "en": "Has development gotten faster since we adopted GraphQL?",
-    "alternatives": [
-      "Has development sped up since we switched to GraphQL?",
-      "Has development gotten any faster since we chose GraphQL?"
-    ],
-    "point": "since があるので主節は現在完了 has gotten",
-    "topic": "tech",
-    "subtopic": "design-discussion",
-    "level": 7,
-    "grammar": ["tense-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a03ec3693f3329fa5225a52ee1f04a612c3738cefa3ac0b35e9904c7aef49a95",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5j9c7a7t",
     "ja": "このキャッシュは遅延だけでなくDBの負荷も減らす。",
-    "en": "Not only does it cut latency, it lightens DB load.",
+    "en": "Not only does it cut latency, it also reduces DB load.",
     "alternatives": [
-      "This cache not only cuts latency but also lightens DB load.",
+      "This cache not only cuts latency but also reduces DB load.",
       "It cuts latency and takes load off the database too."
     ],
     "point": "Not only を文頭に出したら does + 主語の語順に",
@@ -224,7 +230,35 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ab9f9b41874e4d6592ce08e2e9ae287911a25de7625730f8cea2834996c47527",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_5s4c2y3k",
+    "ja": "比べるためのベンチマークが要るよね。",
+    "en": "We need a benchmark to compare them.",
+    "alternatives": [
+      "We need a benchmark for comparison.",
+      "We'll need a benchmark to compare against."
+    ],
+    "point": "目的は to 不定詞。benchmark には a を付ける",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 4,
+    "grammar": ["infinitives", "articles-and-countability"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:de1de5e0a2ae4f5a3a2938d5423183807293a7556e8be4814d7ee82dc36a50ed",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5s6n2g9x",
@@ -242,9 +276,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:14d03ed6a7c1e66eb8f4c9a6d8fa224b8c2833a09ac068d442d4c2aea1a5881f",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:3151431307e2d41731b9b518a05e26ec13dd43c3051995487935431217bd9764",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -262,23 +296,57 @@
     "level": 2,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:09ba22bf9b02f70680012052343b2b4d71e2e85db24f2a27ca34fc15981278cd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6b4c5h2y",
-    "ja": "仕様は、レビューが終わるまで確定しません。",
+    "ja": "仕様はレビューが終わるまで確定しません。",
     "en": "The spec won't be final until it's reviewed.",
     "alternatives": [
-      "The spec isn't final until the review is done.",
+      "The spec isn't final until it's reviewed.",
       "We won't finalize the spec until it's reviewed."
     ],
     "point": "until 節は未来のことでも will を使わない",
     "topic": "tech",
     "subtopic": "design-discussion",
-    "level": 6,
+    "level": 4,
     "grammar": ["passive-voice", "time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1fa70f3f50272b7c27d7bde1642434c905ba4661e703d96c57d6b0706a81344c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_6d6j2v4r",
+    "ja": "障害が広がらない設計にできないでしょうか？",
+    "en": "Couldn't we design it so failures don't spread?",
+    "alternatives": [
+      "Could we design it so failures don't spread?",
+      "Is there a way to keep failures from spreading?"
+    ],
+    "point": "so の後ろに「〜しないように」の結果を続ける",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 6,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4dd25e4c3165307afa189bf52bb11152d6ccf5fb76b0861e9ef639d591a95060",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6g3q9k2h",
@@ -294,7 +362,36 @@
     "level": 4,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8999053094bf82bf778a0209832037e8461e7e5762b2ce1950bb96e711f615ca",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_6m7j7s4k",
+    "ja": "Postgres に乗り換えるのはどう？",
+    "en": "How about switching to Postgres?",
+    "alternatives": [
+      "What about switching to Postgres?",
+      "Why don't we switch to Postgres?",
+      "How about moving over to Postgres?"
+    ],
+    "point": "How about の後ろは動名詞（switching）にする",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 4,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e2a7f14be5b5d579f03d81535b444908126b16675067ca7573f0b66757f40d95",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6q3g6g7b",
@@ -310,7 +407,13 @@
     "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3378104db222dcbc2bd1d78e6e2e5368c6841da065e2516ad1a96abcc772cecf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7a7t3t3z",
@@ -326,7 +429,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:073a6ca5fd01c4f8a129eba0f3daa6f7dfdc08b091496974578a68b2168c11d9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7f9b7t8t",
@@ -342,7 +451,13 @@
     "level": 7,
     "grammar": ["modal-perfect", "noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fc8d725c8f96b6613263a00d616d851e1fdc0a995bca01943a20ec4e696484ad",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7q6w6u3n",
@@ -360,9 +475,31 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:4ddd17c32ad2720e176d55953797207b7c9baa2325c5db3366931cdd96a6adb5",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:6206bc1bffdd15ee26495e50241c518e6b582b44578f2bdcf11c036ebaaa8a20",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_7s3j4u4b",
+    "ja": "この案、見直す時間がほしいんですが。",
+    "en": "I'd like time to go over this.",
+    "alternatives": [
+      "I need some time to look this over.",
+      "Could I get some time to review this?"
+    ],
+    "point": "time は数えない名詞なので a は付けない。go over は見直す",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 5,
+    "grammar": ["infinitives", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fa29963134319757a9d18d8f047379bb6d77ef5b3f808291fcc4f92ab85015ed",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -380,7 +517,13 @@
     "level": 7,
     "grammar": ["wishes-regrets", "past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8eae4a16152c6161e929693bd1b91d1a0f86dbd280e8e1d666e80b906ec18347",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8c3f7q7u",
@@ -398,9 +541,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:928e29d3bf8e279f1838c525e18b29ec959e96b2d31e1a18ebb68f80d2c6b570",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:47c2c1ceb8ac8a214dab28e51c36715efaf3b3a436a59eb85f8ae1713516ed26",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -418,23 +561,35 @@
     "level": 8,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dbeeda5cc1bb01a3ec3bfb516a52cce3a539e9c3d435a066b9dad798d5066d51",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_8v6j9x8f",
-    "ja": "障害が広がらない設計にできないでしょうか？",
-    "en": "Couldn't we design something where failures stay contained?",
+    "id": "c_8x2b8z3n",
+    "ja": "デプロイ前にQAに負荷テストしてもらおうよ。",
+    "en": "Let's get QA to load-test it before deploying.",
     "alternatives": [
-      "Could we design it so failures don't spread?",
-      "Couldn't we design it so failures stay contained?"
+      "Let's have QA load-test it before we deploy.",
+      "Let's ask QA to load-test it before we deploy."
     ],
-    "point": "where で「どんな設計か」を後ろから説明する",
+    "point": "「get + 人 + to do」で「〜してもらう」",
     "topic": "tech",
     "subtopic": "design-discussion",
     "level": 6,
-    "grammar": ["relative-clauses"],
+    "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e8aa6e81abe241f5dc6ade9a044f8f50d46900889005582ff30c24429d5fc7b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9f6h9k8h",
@@ -450,7 +605,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cfb568d26fd765746062ac591e52c95baf13d2338cff101d271c6ae9a7c3c6bb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9f7w4h5z",
@@ -458,31 +619,65 @@
     "en": "Can I explain the trade-offs?",
     "alternatives": [
       "May I explain the trade-offs?",
-      "Is it okay if I explain the trade-offs?"
+      "Could I explain the trade-offs?"
     ],
     "point": "「〜してもいい？」は Can I 〜? か May I 〜?",
     "topic": "tech",
     "subtopic": "design-discussion",
-    "level": 4,
+    "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f61ca86dc4e62a89a9713763eab1ff543c0257883d864b8c07414761cc091775",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_9h9y7e9z",
+    "ja": "私たちは、その案はもう除外したよ。",
+    "en": "We've already ruled out that option.",
+    "alternatives": [
+      "We already ruled that option out.",
+      "We've already dismissed that option."
+    ],
+    "point": "rule out は「除外する」。目的語が代名詞なら rule it out",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 5,
+    "grammar": ["present-perfect", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e9d5671bbf3741d9a9cac27d3d7e5749c4511276004bd09a10e5f9d5e63f7eba",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9m5z8b9q",
     "ja": "コストの都合で、それはやめました。",
     "en": "We dropped it because of cost.",
     "alternatives": [
-      "We gave up on it over cost.",
+      "We ruled it out because of cost.",
       "We decided against it because of cost."
     ],
-    "point": "案を「やめた」は stopped ではなく dropped や gave up on",
+    "point": "案を「やめた」は stopped ではなく dropped や ruled out",
     "topic": "tech",
     "subtopic": "design-discussion",
     "level": 3,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e9640c0b24abcd4fce62adb181ab3d4182555cc084c75ce0461a06864e551997",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9z2z9q9w",
@@ -490,7 +685,8 @@
     "en": "Could you ask the lead to write this up?",
     "alternatives": [
       "Can you ask the lead to write it up?",
-      "Could you get the lead to write this up?"
+      "Could you get the lead to write this up?",
+      "Could you have the lead write this up?"
     ],
     "point": "「まとめる」は write up が自然。代名詞は間に入れる",
     "topic": "tech",
@@ -498,22 +694,12 @@
     "level": 6,
     "grammar": ["verb-object-to-do", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9z5h7h8d",
-    "ja": "設計担当に確認を頼んでもらえますか？",
-    "en": "Could you ask the designer to check it?",
-    "alternatives": [
-      "Can you ask the designer to check it?",
-      "Could you get the designer to check it?"
-    ],
-    "point": "ask 人 to 動詞。to の後は原形",
-    "topic": "tech",
-    "subtopic": "design-discussion",
-    "level": 5,
-    "grammar": ["verb-object-to-do"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f022f669f418172d41f69229312804c9c82f6cfe4c6f0f4118b76ca1a783a383",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]

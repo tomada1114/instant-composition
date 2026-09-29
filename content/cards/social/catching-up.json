@@ -1,27 +1,11 @@
 [
   {
-    "id": "c_2a2m9v3t",
-    "ja": "職場がもっと近ければ、君にもっと会えるのにな。",
-    "en": "If work were closer, I'd see you more often.",
-    "alternatives": [
-      "If I worked closer, I could see you more often.",
-      "If my office was closer, I'd see you more."
-    ],
-    "point": "現実と違う仮定は if 節を過去形、主節は would",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 7,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2e7q2c4j",
     "ja": "引っ越しで一番きつかったのは、知り合いがいないこと。",
     "en": "What was toughest about moving was not knowing anyone.",
     "alternatives": [
       "The toughest part of moving was not knowing a soul.",
-      "What I struggled with most after moving was knowing no one."
+      "The hardest thing about moving was not knowing anyone."
     ],
     "point": "What was toughest で主語を作り、was の後に動名詞",
     "topic": "social",
@@ -29,17 +13,23 @@
     "level": 10,
     "grammar": ["cleft-emphasis", "noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:271ab325e2d2560d1f8d2dcc8ace7d65a9d0e0eccaa5db4e4cf57cc844902b31",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2h5v3w2j",
     "ja": "最近、週末は何をしてるの？",
-    "en": "What do you do on weekends lately?",
+    "en": "What do you do weekends these days?",
     "alternatives": [
-      "What are you doing on weekends lately?",
-      "How do you spend weekends these days?"
+      "How do you spend weekends these days?",
+      "What do you usually do on weekends?"
     ],
-    "point": "習慣は現在形 do。「最近」は lately や these days",
+    "point": "習慣は現在形 do。「最近」は these days",
     "topic": "social",
     "subtopic": "catching-up",
     "level": 2,
@@ -47,9 +37,31 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:97e60bcddae00f4a59f57534bee7d654509af4689ea6498854197e0284f35b89",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:e6cceb6c3204d3f7e83baf22cdb7c33216cf4d487e34b7c242f815d866eead9d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_2r6t8w9u",
+    "ja": "私、ここ数年で今が一番忙しいよ。",
+    "en": "This is the busiest I've been in years.",
+    "alternatives": [
+      "I haven't been this busy in years.",
+      "I'm busier now than I've been in years."
+    ],
+    "point": "最上級のあとは I've been と現在完了で続ける",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["comparatives-superlatives", "present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5df643bf396da223fade04663c6681202758c43965ff4c181fe05f7656749f17",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -67,39 +79,13 @@
     "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3a5q3u5n",
-    "ja": "新しい仕事は前よりずっと楽だよ。",
-    "en": "My new job's much easier than before.",
-    "alternatives": [
-      "My new job is a lot easier than before.",
-      "My current job is a lot easier than before."
-    ],
-    "point": "比較級の強調は very ではなく much / a lot",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 6,
-    "grammar": ["comparatives-superlatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3e8z4v7h",
-    "ja": "君の昔の家の隣のラーメン屋、まだある？",
-    "en": "Is the ramen shop next door still open?",
-    "alternatives": [
-      "Is that ramen place next door still open?",
-      "Is the ramen place next door still around?"
-    ],
-    "point": "「隣の」は next door を名詞の後ろに置く",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 4,
-    "grammar": ["post-modification"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:de62e6df84b29f67d744facf6594d4d0d5711b996ec406874f20a0ed20133241",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3m9g2m6g",
@@ -115,23 +101,35 @@
     "level": 7,
     "grammar": ["reported-speech", "passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c1e6df1ab072ce18026167d1c27f34ddaf288666cf4b67104f49d82550269494",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_3n2p4m5t",
-    "ja": "ケンがまだあの会社にいるか知ってる？",
-    "en": "Do you know if Ken's still at that company?",
+    "id": "c_3v8a7n5v",
+    "ja": "ずっと君に連絡しなきゃと思ってたんだ。",
+    "en": "I've been meaning to get in touch with you.",
     "alternatives": [
-      "Do you happen to know whether Ken still works there?",
-      "Do you know whether Ken still works there?"
+      "I've been meaning to reach out to you.",
+      "I've been meaning to contact you."
     ],
-    "point": "「〜か知ってる？」は if/whether の後が平叙文の語順",
+    "point": "「〜しようと思ってた」は been meaning to + 動詞",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 7,
-    "grammar": ["indirect-questions"],
+    "level": 6,
+    "grammar": ["infinitives", "present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4a42e5446047e2d9c4c86be4aac3820d68f32e21afaa3669f26569872710321a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3z3m5z4f",
@@ -147,23 +145,35 @@
     "level": 10,
     "grammar": ["cleft-emphasis", "noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d8976ea84841d096dfe1a0644f22b477e2c0e80ab6764fa809c70c4b8927d0ae",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_4e3v3t4e",
-    "ja": "妹は結婚しただけでなく、自分の店まで開いたんだ。",
-    "en": "Not only did my sister marry, she opened a shop.",
+    "id": "c_4a8h2j6h",
+    "ja": "昨日君が会った人、僕のいとこなんだ。",
+    "en": "The man you met yesterday is my cousin.",
     "alternatives": [
-      "My sister not only got married but also opened a shop.",
-      "My sister got married and even opened her own shop."
+      "The guy you met yesterday is my cousin.",
+      "The person you met yesterday is my cousin."
     ],
-    "point": "Not only を文頭に置くと did + 主語 + 原形の語順になる",
+    "point": "会った人は the man (that) you met と後ろから説明",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 9,
-    "grammar": ["inversion"],
+    "level": 4,
+    "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e02cc8baca79dcab5b6fce18931a20eacd1049d06a6255b471d988d45d3cb9d0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4f2a7y7w",
@@ -179,7 +189,13 @@
     "level": 5,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:be8885b90804a3ef47b467667257402f8092cc89e4583c2581b71ca6c196cea2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4r9u7s3d",
@@ -195,23 +211,35 @@
     "level": 5,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1169e9795a1b5701262edd7b7391e80b5f6504c5b20a0fbe954ccb5aef611cf6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4u7d5t7j",
     "ja": "兄、最近よく英語やっとけばよかったって言うんだ。",
     "en": "My brother keeps saying he wishes he'd studied English.",
     "alternatives": [
-      "My brother often says he wishes he'd studied English more.",
-      "My brother keeps saying if only he'd studied English."
+      "My brother often says he wishes he'd studied English.",
+      "My brother keeps saying he should've studied English."
     ],
     "point": "過去を悔やむ wish の後は had + 過去分詞",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 8,
+    "level": 7,
     "grammar": ["wishes-regrets", "reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c4304b2a2beb291d56eb27b8061e569c6f4a98c89470b0a834e0da24be31c3f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5g4r8n4d",
@@ -219,7 +247,7 @@
     "en": "Apparently, my sister abroad is getting some good advice.",
     "alternatives": [
       "I hear my sister abroad is getting some good advice.",
-      "My sister, studying abroad, is reportedly getting good advice."
+      "My sister who's studying abroad is apparently getting good advice."
     ],
     "point": "advice は数えられない名詞。advices にしない",
     "topic": "social",
@@ -227,7 +255,13 @@
     "level": 7,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b91f26e675dcd0cd00a7c37668410c4fface486ebe7f79d4d00edd119d25f41e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5j4v5h2z",
@@ -243,7 +277,13 @@
     "level": 7,
     "grammar": ["phrasal-verbs", "tense-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a303a5d9de06dc512bf3b31322165cc64072b0fa59203ba904b93bfa03e3b465",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5x6u8j2j",
@@ -261,35 +301,19 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:0e185dde859e49a7710ce1e7521c6e2e40183b45fa89f182f86ce1439afc20e6",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:52bce8d086a995a8e0e9984369508107b9d439bbd4d8cd9caceabd3352bb9764",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_6f4q4j7n",
-    "ja": "父は最近、医者に毎日歩かされてるんだ。",
-    "en": "The doctor's been making my dad walk daily.",
-    "alternatives": [
-      "My dad's doctor has him walking every day.",
-      "Lately my dad's doctor makes him walk daily."
-    ],
-    "point": "make + 人 + 動詞の原形。to は付けない",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 6,
-    "grammar": ["causatives", "present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_6k8p4z6j",
     "ja": "あのとき留学してたら、今ごろ英語ペラペラなのに。",
     "en": "If I'd studied abroad then, I'd be fluent now.",
     "alternatives": [
-      "Had I studied abroad then, I'd be fluent now.",
-      "If I'd gone abroad to study, I'd be fluent now."
+      "If I'd studied abroad back then, I'd be fluent now.",
+      "If I'd studied abroad then, I'd be fluent by now."
     ],
     "point": "過去の仮定は had+過去分詞、今の結果は would+動詞の原形",
     "topic": "social",
@@ -297,7 +321,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5463f84a8135897865a54f0de4fdbde30d0d08e140392912872679068932eb4e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6n2g7s2w",
@@ -313,68 +343,117 @@
     "level": 7,
     "grammar": ["concession-contrast", "present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ba8639f077eb228d6926e7d58cc8f90c2241f1ecf13b5a3bac47b2758538f7d1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_6n9v8j4r",
-    "ja": "転職したんだよね。新しい職場はどうかなと思って。",
-    "en": "I was wondering how you're finding your new job.",
-    "alternatives": [
-      "I was wondering how the new job is going.",
-      "I'd love to know how you're finding the new job."
-    ],
-    "point": "「〜かなと思って」は I was wondering + 疑問詞",
+    "id": "c_6n4g2x4n",
+    "ja": "今度、電話してもいい？",
+    "en": "May I call you sometime?",
+    "alternatives": ["Can I call you sometime?", "Is it okay to call you sometime?"],
+    "point": "許可を求めるときは May I / Can I。「今度」は sometime",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 7,
-    "grammar": ["hedging-softening", "indirect-questions"],
+    "level": 2,
+    "grammar": ["requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:39b62e4a039c6b05b93f6365cf16f48b1538c75f37818744476c9d786d4d9a0f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_6r5k9w4x",
+    "ja": "海外に住んでる友達に会ったよ。",
+    "en": "I saw a friend who lives abroad.",
+    "alternatives": [
+      "I met a friend who lives overseas.",
+      "I saw a friend that lives abroad."
+    ],
+    "point": "人を後ろから who 節で説明する。who の後ろは動詞",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 4,
+    "grammar": ["relative-clauses", "past-simple"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:30f9b6d5ac88e8cd0bc4556128a74818064dcc6514f0fa473984e28bf41422ba",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6s7z6k6m",
     "ja": "引っ越しのこと、もっと早く言うべきだったね。",
     "en": "I should've told you about the move sooner.",
     "alternatives": [
-      "I should have let you know about my move earlier.",
-      "I really should have told you I'd moved sooner."
+      "I should have told you about the move earlier.",
+      "I should've mentioned the move sooner."
     ],
     "point": "「すべきだったのに」は should have + 過去分詞",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 8,
+    "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:56881b1e8ba13c47bd338f894e2f4b164e2804cf64853454916e7138c293b403",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_6y4p6z7u",
-    "ja": "一緒に働いてたタカシ、カナダにいるらしいよ。",
-    "en": "Takashi, who worked with me, is in Canada.",
-    "alternatives": [
-      "Apparently Takashi, who worked with me, is in Canada.",
-      "I hear Takashi, my old coworker, lives in Canada."
-    ],
-    "point": "人の説明は who でつなぎ、主語の直後に入れる",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 6,
-    "grammar": ["relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7b8w6f6g",
-    "ja": "毎朝6時に起きなきゃいけないんだ。",
-    "en": "I have to get up at six.",
-    "alternatives": ["I have to wake up at six.", "I've got to get up at six."],
-    "point": "義務は have to + 動詞の原形",
+    "id": "c_6u4g6w6g",
+    "ja": "私、今はギターが弾けるよ。",
+    "en": "I can play the guitar now.",
+    "alternatives": ["Now I can play the guitar.", "I can play guitar now."],
+    "point": "楽器は play the guitar。「弾ける」は can＋動詞",
     "topic": "social",
     "subtopic": "catching-up",
     "level": 2,
-    "grammar": ["modal-obligation-advice"],
+    "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:206a9fe185007c3443e430329797fc7149ac62d1d981f4627250cc7547456e12",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_7m3v7e8c",
+    "ja": "君が入院してたなんて、全然知らなかったよ。",
+    "en": "I had no idea you'd been hospitalized.",
+    "alternatives": [
+      "I never knew you'd been in the hospital.",
+      "I didn't even know you'd been hospitalized."
+    ],
+    "point": "知らなかった時点より前の入院は had been",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["past-perfect", "noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ddf8df99755473594086ebc79963832ae118fbdd4b3d3a6cecedd9ed3fde6c90",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7w3x3d4p",
@@ -390,27 +469,33 @@
     "level": 4,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7z6c8v8a",
-    "ja": "赤ちゃんの写真、見せてもらえますか？",
-    "en": "Could you show me baby photos?",
-    "alternatives": [
-      "Can you show me baby pictures?",
-      "Could you show me your baby photos?"
-    ],
-    "point": "丁寧な依頼は Could you + 動詞の原形",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 2,
-    "grammar": ["requests-permission"],
-    "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:3b9faad4bb4019acb581c8e2c52f4cd085bb4852efec0903c1dae573c98b6295",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:c14e7c45f31778c2e9b063213da983e241b60ccc14c5a545697956f6aa4dbffd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_8c5q6t7e",
+    "ja": "隣の人、結婚したらしいよ。",
+    "en": "I hear the guy next door tied the knot.",
+    "alternatives": [
+      "Apparently the man next door got married.",
+      "I heard the guy next door got married."
+    ],
+    "point": "「隣の人」は the guy next door と名詞の後ろに置く",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5922e610b613cfb95fc4279d86efd30c01833fc305201e2dce6e461cc1bb9434",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -425,7 +510,35 @@
     "level": 3,
     "grammar": ["verb-object-to-do", "past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e8beed96491707296b70da597a9a28e94e020ab6f8347ef405b1a8f4085046e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_8t4j6y6j",
+    "ja": "君が電話くれなかったら、今も落ち込んでたよ。",
+    "en": "If you hadn't called, I'd still be moping around.",
+    "alternatives": [
+      "If you hadn't called me, I'd still be feeling down.",
+      "Without your call, I'd still be down."
+    ],
+    "point": "過去の仮定＋今への影響は If 過去完了, would be",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["mixed-conditional", "third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:89780ae490b95d507110948566a499d5681d9cc361e1ae3683765ceff73467f7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8w8w7u5w",
@@ -441,22 +554,122 @@
     "level": 5,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a0f2e61c336baa4e0a1a1ceba8e57d308185e5eb7b2092863202e4ef6c94bffb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_9f6f9j7u",
-    "ja": "辞めてなければ、妻とは出会えなかったよ。",
-    "en": "If I hadn't quit, we'd never have met.",
+    "id": "c_8x9v7c4q",
+    "ja": "たしか、ユミは先月昇進したはずだよ。",
+    "en": "If I remember right, Yumi got promoted last month.",
     "alternatives": [
-      "If I hadn't quit, I'd never have met her.",
-      "Had I not quit, we would never have met."
+      "Yumi got promoted last month, if I remember right.",
+      "As far as I remember, Yumi was promoted last month."
     ],
-    "point": "過去の仮定は if + had 過去分詞、帰結は would have 過去分詞",
+    "point": "自信のない記憶は If I remember right で和らげる",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["hedging-softening", "passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:505c6d696a394957bbd566d2150167c23d1a3271ac5f9c553fb4d9f2423c32cc",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_9g3c4z6u",
+    "ja": "先月やっと、キッチンをリフォームしてもらったんだ。",
+    "en": "I finally had my kitchen remodeled last month.",
+    "alternatives": [
+      "I finally got my kitchen remodeled last month.",
+      "Last month, I finally got the kitchen redone."
+    ],
+    "point": "「〜してもらう」は have / get + 物 + 過去分詞",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:91fe1b6c330a9abee2ec0e63c9d2ee53017bf66b973a4979ca7011b4a6417cd6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_9q4d9u6f",
+    "ja": "最近何してるのか教えてよ。",
+    "en": "Tell me what you've been up to.",
+    "alternatives": [
+      "Let me know what you've been up to.",
+      "Tell me what you've been doing lately."
+    ],
+    "point": "what 以下は疑問文の語順にせず、what you've been の順にする",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 4,
+    "grammar": ["imperatives", "indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b3cf15c0a55b34de3b75a418b5f6c42635690437347ae2ec32a54b13cee219b5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_9v2d2u7w",
+    "ja": "疲れてるね。もっと寝たほうがいいよ。",
+    "en": "You look tired. You should sleep more.",
+    "alternatives": [
+      "You look tired. You need more sleep.",
+      "You look tired. Try to sleep more."
+    ],
+    "point": "「〜したほうがいい」は should＋動詞の原形",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d508a02c0425fcf3acfb860edb2b1d4e33b111f0cd495890383e29a0e04f4bb2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_9y7x8d3u",
+    "ja": "学生時代に知り合った人と、今も会ってる？",
+    "en": "Do you still see anyone you knew in school?",
+    "alternatives": [
+      "Are you still in touch with anyone from school?",
+      "Do you still see anyone from your school days?"
+    ],
+    "point": "anyone のあとに you knew を続けて説明する",
     "topic": "social",
     "subtopic": "catching-up",
     "level": 6,
-    "grammar": ["third-conditional"],
+    "grammar": ["relative-clauses", "post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b1c0c3487212cacb6b9178b7c2013babdec6a609ba655192f3e548b811369137",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]

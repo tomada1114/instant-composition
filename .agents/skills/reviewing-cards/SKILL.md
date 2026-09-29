@@ -69,7 +69,10 @@ vs. rebuild), `content/guides/review-perspectives.md` (the checks and the curren
       with `en`: a different skeleton means fix `ja` or add an alternative; a natural,
       likely same-skeleton answer missing from `alternatives` is worth adding (keep
       2–3). A `low`-confidence finding with no second reviewer agreeing may be
-      dismissed. Record every overruled `REBUILD`/`DROP` with a one-line reason.
+      dismissed. Record every overruled `REBUILD`/`DROP` with a one-line reason. On a
+      large run you may delegate adjudication, one batch per sub-agent, to a `worker`
+      given the cards, the three replies and these rules; spot-check its decisions
+      yourself before applying them.
    5. **Apply**, one `pnpm cards:*` write command at a time — never in parallel: each
       holds a lock on `content/`, and a second one fails with `ERR_CARDS_BUSY`.
       - Edit in place: write `[{ "id": …, <changed fields> }]` to

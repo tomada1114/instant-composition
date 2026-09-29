@@ -1,19 +1,25 @@
 [
   {
-    "id": "c_2c9j2g6j",
-    "ja": "発表は顧客アンケートから始めればよかったです。",
-    "en": "I wish I'd started with the customer survey results.",
+    "id": "c_2k2z2b6k",
+    "ja": "先月売上が落ちましたが、もう戻りました。",
+    "en": "Sales dropped last month, but they've recovered.",
     "alternatives": [
-      "I should have opened with the survey results.",
-      "I wish I had begun with the customer survey."
+      "Sales fell last month, but they've bounced back.",
+      "Sales dipped last month, but they've rebounded."
     ],
-    "point": "過去への後悔は wish の後を had + 過去分詞にする",
+    "point": "過去の出来事は過去形、今に続く結果は現在完了",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 7,
-    "grammar": ["wishes-regrets"],
+    "level": 5,
+    "grammar": ["tense-contrast", "present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f611ebb29710a2905108cc88f049eed8da00f3d679f534474400e7e7339de96a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2k4r4z3k",
@@ -21,13 +27,35 @@
     "en": "Would you mind explaining that in more detail?",
     "alternatives": [
       "Could you possibly explain that in more detail?",
-      "I was wondering if you could elaborate on that."
+      "Could you elaborate on that a little more?"
     ],
     "point": "Would you mind の後は動名詞（explaining）",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 7,
-    "grammar": ["hedging-softening"],
+    "level": 5,
+    "grammar": ["requests-permission", "gerunds"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:959b9710ce40b58dd988138f59d53f01ef10eadbac9f2792bfdb53ebf33dbb5e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_2p5z4w4c",
+    "ja": "私たちはスライドを減らすべきです。",
+    "en": "We should use fewer slides.",
+    "alternatives": [
+      "We should cut some slides.",
+      "We should reduce the number of slides."
+    ],
+    "point": "「減らす」は use fewer + 数えられる名詞で表せる",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 3,
+    "grammar": ["modal-obligation-advice", "comparatives-superlatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -44,27 +72,33 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:e8e555c49ad771782eb233c51df016fb9bcef336fd69084a1b1e3f84bf49e90e",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:e7920b10127ef3d26551750da2e10e5404522afbec14119be228ff01a1de617c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
   {
-    "id": "c_3n5f9s6n",
-    "ja": "部長が確認していれば、今数字を直さずに済んだのに。",
-    "en": "If he'd checked, I wouldn't be fixing numbers now.",
+    "id": "c_3j5t9r7r",
+    "ja": "ごもっともですが、私たちはこの点だけは譲れません。",
+    "en": "Fair point, but we can't budge on this.",
     "alternatives": [
-      "If my boss had checked, I wouldn't be fixing this.",
-      "If he'd checked, I wouldn't have to fix numbers now."
+      "You're right, but we can't give in on this.",
+      "That's fair, but this point is non-negotiable."
     ],
-    "point": "過去の条件は had checked、今の結果は wouldn't be -ing",
+    "point": "譲れない は budge / give way など定番の言い方で",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 8,
-    "grammar": ["mixed-conditional"],
+    "level": 7,
+    "grammar": ["concession-contrast", "hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e3cdfe40ecf92582ecbe3b04b52491225b6f5a25fe040bd4991b8e4ee1f73856",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3s6h3a2p",
@@ -77,18 +111,62 @@
     "point": "「去年から議論されてきた」は has been discussed",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 5,
+    "level": 4,
     "grammar": ["passive-voice", "present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:aecc166fa7cf5e81a73cc4dbce35d1b845945c88a6fedb57e1feb273d0f063fa",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_3s8a3w3h",
+    "ja": "私たちは質問を最後にまとめて受けるべきです。",
+    "en": "We should take all questions at the end.",
+    "alternatives": [
+      "We ought to hold questions until the end.",
+      "Questions should be saved for the end."
+    ],
+    "point": "提案・助言は should + 動詞の原形",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
+    "id": "c_3t5h7h2u",
+    "ja": "時間が許せば、詳細は後ほどご説明します。",
+    "en": "If time allows, I'll explain the details later.",
+    "alternatives": [
+      "If there's time, I'll go into detail later.",
+      "I'll cover the details later if time permits."
+    ],
+    "point": "if 節は未来のことでも現在形、主節は will",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 4,
+    "grammar": ["time-and-if-clauses", "future-forms"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c85086ecf8afc5ff3e9702e261ac2be78dbd4528b8f3991b4d993b0557cd9602",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
     "id": "c_3v9y2f2p",
-    "ja": "半年、顧客データを分析してきました。",
+    "ja": "私たちは半年、顧客データを分析してます。",
     "en": "We've been analyzing customer data for six months.",
     "alternatives": [
       "For six months, we've been analyzing customer data.",
-      "We've been studying customer data for six months."
+      "We've analyzed customer data for six months."
     ],
     "point": "今も続く「ずっと〜してきた」は have been + -ing",
     "topic": "work",
@@ -98,27 +176,11 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:2bbf6ed3e0819af0008aa7c550619b026ce55a8d50d3066a27f4e89f5f1c775e",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:e02b223d331863a5a7649ebfea74ed25b0e37f65d9031c9f3e40e561627853a3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_3w2d6e3w",
-    "ja": "もし予算が倍なら、皆さんは何を拡大しますか？",
-    "en": "If your budget doubled, what would you expand?",
-    "alternatives": [
-      "If your budget were doubled, what would you expand?",
-      "What would you expand if your budget doubled?"
-    ],
-    "point": "事実と違う仮定は過去形、問いは would you",
-    "topic": "work",
-    "subtopic": "presentations",
-    "level": 6,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_3y6j7c9f",
@@ -134,23 +196,83 @@
     "level": 9,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1eb5a258c833bb920fe8b238778837a5c0dfb507c131bf395c2b078a31f6352b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_4r2p4s7b",
-    "ja": "外した機能を聞くとは、提案書の読み違いだろう。",
-    "en": "They must have misread the proposal; that feature's gone.",
+    "id": "c_4q4a5h2v",
+    "ja": "発表前に、リハーサルする時間を確保してください。",
+    "en": "Please make time to rehearse before the presentation.",
     "alternatives": [
-      "They must have misunderstood the proposal; we dropped that feature.",
-      "The client must have misread it; we'd already dropped that."
+      "Please set aside time to rehearse beforehand.",
+      "Please carve out time to rehearse before presenting."
     ],
-    "point": "過去への強い推量は must have + 過去分詞",
+    "point": "time の後ろに to 不定詞。「時間を作る」＝make time",
     "topic": "work",
     "subtopic": "presentations",
     "level": 8,
-    "grammar": ["modal-perfect"],
+    "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
     "stamps": {}
+  },
+  {
+    "id": "c_4s9y7x2k",
+    "ja": "皆さんに、この傾向を見逃さないでほしいのです。",
+    "en": "I don't want you to overlook this trend.",
+    "alternatives": [
+      "I'd hate for you to miss this trend.",
+      "I don't want you to miss this trend."
+    ],
+    "point": "否定は want の前。not to ではなく don't want",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4t3c8w3x",
+    "ja": "課長は、予算は据え置きになると言いました。",
+    "en": "The section head said the budget would stay flat.",
+    "alternatives": [
+      "The section head said the budget wouldn't change.",
+      "The section head told us the budget would stay put."
+    ],
+    "point": "間接話法では will が would になる",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4t3z9p3c",
+    "ja": "ご質問は、話が終わるまでお待ちください。",
+    "en": "Please hold your questions until I've finished.",
+    "alternatives": [
+      "Could you save your questions until the end?",
+      "Please wait until I'm done to ask questions."
+    ],
+    "point": "until の後は未来のことでも現在形（完了形も可）",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 5,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:30bd7dd0b6c1ee541e958e8fde2bf036209cb43b49c994b4cdc5bc2ceae9e2db",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4t7w6b8f",
@@ -168,9 +290,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:3dc7d9f9c0d81651f1e6c0e249cd363db064d3865c3ffd56de012443f9229764",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:8ec7fbd1a959bf814156563b44c17c303f6144001209603f2e7560201c19437f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -188,23 +310,67 @@
     "level": 7,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9bd26cdff52df1a27131e6a8ece7ff5dfc4b2e34e817d7eb00e60d78a2a848b8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_6j4b8u6q",
-    "ja": "営業部長は、価格は4月からと言っていました。",
-    "en": "The sales director said prices would start in April.",
+    "id": "c_5h2u8t6v",
+    "ja": "彼女は、お見せする実例を探しています。",
+    "en": "She's looking for an example to show you.",
     "alternatives": [
-      "Prices would start in April, the sales director said.",
-      "Our sales director told us prices would begin in April."
+      "She's hunting for an example to show you.",
+      "She's looking for an example she can show you."
     ],
-    "point": "過去の発言を伝えるので will ではなく would にする",
+    "point": "名詞のあとに to 不定詞で「〜するための」",
     "topic": "work",
     "subtopic": "presentations",
     "level": 8,
-    "grammar": ["reported-speech"],
+    "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
     "stamps": {}
+  },
+  {
+    "id": "c_5h3g3j9s",
+    "ja": "最後に、議論を締めくくる一言だけ言わせてください。",
+    "en": "Let me say one last word to wrap up.",
+    "alternatives": [
+      "Let me add one closing remark to wrap things up.",
+      "Allow me one last word to wrap this up."
+    ],
+    "point": "締めくくる＝wrap up。目的の to 不定詞",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["infinitives", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_6f5p9u7q",
+    "ja": "先月私がまとめた報告書を要約します。",
+    "en": "I'll summarize the report I put together last month.",
+    "alternatives": [
+      "Let me summarize the report I compiled last month.",
+      "I'll sum up the report I wrote last month."
+    ],
+    "point": "まとめる は put together（compile より口語的）",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 6,
+    "grammar": ["relative-clauses", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0a1c784f32ae8190ac9a381fc334270d845da1f545ab8d30eccfbe49db4820a6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6k8r7r8p",
@@ -222,9 +388,31 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:a81ad0d7563e01b98515c5bec3b2fedae58526e512f2ecf38452b213f01f8bb7",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:058ed4bc4d5528c08a0cbf198b5337363fa03ca7e8e480b73776b290393e780b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_6m2h2p4w",
+    "ja": "一点だけ補足させてもよろしいでしょうか？",
+    "en": "Would you mind if I added a quick point?",
+    "alternatives": [
+      "If I may, I'd like to add something.",
+      "Could I add a quick point here?"
+    ],
+    "point": "Would you mind if の後は過去形で丁寧に",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 6,
+    "grammar": ["hedging-softening", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7d3a1d3189473b1bdf969c6bd834bbb2b81ad164ee0afb585227b012cfbb3b9e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -242,53 +430,88 @@
     "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9c62d373473280603979856b3d6402508de1c1225206c0f27d92e2c3b1115e8e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_6p9h8t8n",
-    "ja": "試験でうまくいっても、まだ全社展開すべきではない。",
-    "en": "Even if it works, we shouldn't scale up yet.",
+    "id": "c_6y5j8g7t",
+    "ja": "皆さん、私の声は聞こえますか？",
+    "en": "Can everyone hear me?",
     "alternatives": [
-      "Even if the pilot succeeds, we shouldn't go company-wide yet.",
-      "Even if it succeeds, we shouldn't roll this out yet."
+      "Can you all hear me okay?",
+      "Can you all hear me?",
+      "Is everyone able to hear me?"
     ],
-    "point": "「〜しても」は even if、後ろは現在形",
+    "point": "聞こえる（可能）は can で聞く。Do you hear は不自然",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 8,
-    "grammar": ["concession-contrast"],
+    "level": 2,
+    "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f87fcb74ede0969b889226f7f75f8c59ed4ce5a0aab613f87584612b760dadbe",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_7a7k4r4p",
-    "ja": "これから示すデータは、先月の調査結果です。",
-    "en": "The data I'm presenting is from last month's survey.",
+    "id": "c_6y7x9j7n",
+    "ja": "私たち、デモをもう一度練習しておくべきでした。",
+    "en": "We should have rehearsed the demo once more.",
     "alternatives": [
-      "The data I'll show you comes from last month's survey.",
-      "The data I'm presenting is based on last month's survey."
+      "We should've run through the demo one more time.",
+      "We ought to have practiced the demo again."
     ],
-    "point": "「私が示すデータ」は data I'm presenting と後ろに置く",
+    "point": "「〜しておくべきだった」は should have + 過去分詞",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 8,
-    "grammar": ["relative-clauses"],
+    "level": 6,
+    "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4dc21094de2e32cab9b4056b457b8cda72e4b4cec3e5be7c09274dbf46204100",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_7f5d3h8v",
-    "ja": "私の説明中に田中さんが質問した。",
-    "en": "Tanaka-san asked while I was explaining.",
+    "id": "c_7k4v4m8e",
+    "ja": "どなたか、聞きたいことはありますか？",
+    "en": "Does anyone have something to ask?",
     "alternatives": [
-      "While I was explaining, Tanaka-san asked something.",
-      "Tanaka-san asked a question during my explanation."
+      "Does anyone have a question?",
+      "Is there anything anyone wants to ask?"
     ],
-    "point": "途中だった動作は was＋-ing、割り込んだ動作は過去形",
+    "point": "something の後ろに to ask を置いて「聞きたいこと」",
     "topic": "work",
     "subtopic": "presentations",
     "level": 3,
-    "grammar": ["progressive-aspect", "past-simple"],
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7m8g6w8v",
+    "ja": "皆さんに、この数字だけは覚えて帰ってほしいです。",
+    "en": "I want you all to remember this number.",
+    "alternatives": [
+      "I'd like everyone to remember this number.",
+      "I'd like you to remember this one number."
+    ],
+    "point": "want + 人 + to 不定詞。want that は不可",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 7,
+    "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -306,53 +529,125 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:df7817ace24a0a3dc0867f9b3ec71fdc8119a51fb11ee0128d01e1f21b651fcb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_7n9a5e9x",
-    "ja": "その後200社増え、大半は先月契約しました。",
-    "en": "We've gained 200 clients since then, mostly last month.",
+    "id": "c_7r5m4p8s",
+    "ja": "このスライドは昨夜私が作りました。",
+    "en": "I made this slide last night.",
     "alternatives": [
-      "Since then we've won 200 clients, mostly last month.",
-      "We've added 200 clients since then, mostly last month."
+      "I created this slide last night.",
+      "I put this slide together last night."
     ],
-    "point": "since は現在完了、last month は過去の時点",
+    "point": "last night があれば過去形。make の過去形は made",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 7,
-    "grammar": ["tense-contrast", "present-perfect"],
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:92bb1b5e7c192fbd70b18919cb0a0a3176924dd0c0b21c14ae5ec9cb983fb702",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_7t7r4m7j",
+    "ja": "手を挙げている女性の方、どうぞ。",
+    "en": "The woman with her hand up, please go ahead.",
+    "alternatives": [
+      "Yes, the woman with her hand raised, go ahead.",
+      "Yes, the woman with her hand raised, please."
+    ],
+    "point": "with her hand up で「手を挙げている」を後ろから修飾",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 6,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:83d4f890ef3135cf041d1ad63f7490d4b76d200565a4f8659d73817602b5a6d9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_8c4z8e4t",
+    "ja": "部長は、数字を見直すよう私に言いました。",
+    "en": "My manager told me to go over the numbers.",
+    "alternatives": [
+      "My manager asked me to recheck the figures.",
+      "The manager told me to review the numbers."
+    ],
+    "point": "見直す＝go over。tell + 人 + to do",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["verb-object-to-do", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
-    "id": "c_7u7a3g4j",
-    "ja": "質問の前に、要点をざっと振り返ってもいいですか？",
-    "en": "Before questions, can I go over the key points?",
+    "id": "c_8j9v3e8p",
+    "ja": "私の理解が正しければ、ご質問は費用ですね？",
+    "en": "If I understand correctly, you're asking about the cost?",
     "alternatives": [
-      "Could I quickly run through the main points first?",
-      "Can I run through the key points before questions?"
+      "Am I right that you're asking about cost?",
+      "So your question is about the cost, correct?"
     ],
-    "point": "「振り返る」は go over / run through の句動詞",
+    "point": "確認は If I understand correctly で柔らかく",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 7,
-    "grammar": ["phrasal-verbs", "requests-permission"],
+    "level": 6,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f10de6d78e97078a7f735f4794d1ea0f49fae00e01b18a2e15ac964748e28240",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_8k7w6w6c",
+    "ja": "皆さんに、まず結論を押さえていただきたいのです。",
+    "en": "I'd like you to grasp the conclusion first.",
+    "alternatives": [
+      "I want you to get the main conclusion first.",
+      "First, I'd like you all to take in the conclusion."
+    ],
+    "point": "want / would like + 人 + to do の語順",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
-    "id": "c_8t3m6g2t",
-    "ja": "資料は後で皆さんにメールします。",
-    "en": "I'll email everyone the materials afterward.",
+    "id": "c_8t9c6u5v",
+    "ja": "彼には、デモを短めにするよう伝えておきました。",
+    "en": "I told him to keep the demo short.",
     "alternatives": [
-      "I'll send you all the materials afterward.",
-      "Afterward, I'll email you the materials."
+      "I told him to make the demo shorter.",
+      "I told him the demo should be short."
     ],
-    "point": "email は動詞。email 人 物 の語順にできる",
+    "point": "tell + 人 + to 不定詞。him to の語順に注意",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 4,
-    "grammar": ["future-forms"],
+    "level": 7,
+    "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -369,9 +664,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:25d59b90c83e01ff162d2c60228631efbc60d73e73ff9a07fdcfb147b3fc7ffd",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:3b911909577e129cb9fbaba404ecd563b92dd505db80e0037942d4e591fd198b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -389,7 +684,13 @@
     "level": 7,
     "grammar": ["noun-clauses", "indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e9ec373e6928711716a5caa80245cf447c253547ed0e44dc999a8ba4490b9e55",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8y4b2z4e",
@@ -405,7 +706,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4fe97d9dc45e0870a059bcfc6443c583f6928e6a82db6c36b35564fc090f2446",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9a7e8n7t",
@@ -421,23 +728,13 @@
     "level": 5,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9g4a4q5a",
-    "ja": "去年予算が守れていたら、今デモを見せられたのに。",
-    "en": "If we'd kept funding, we'd have a demo now.",
-    "alternatives": [
-      "If funding hadn't been cut, we'd have a demo now.",
-      "If we hadn't lost funding, we could demo it now."
-    ],
-    "point": "過去の仮定は had 過去分詞、今の結果は would",
-    "topic": "work",
-    "subtopic": "presentations",
-    "level": 8,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:170626923ea41eb31e65c3ef91cbfd678ce233a90f1f812bbbab2a8f41442d30",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9g5m3j4a",
@@ -452,6 +749,28 @@
     "subtopic": "presentations",
     "level": 4,
     "grammar": ["gerunds", "wh-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:44f43966e59a24234efe4f1b46f3f35dffeb38d855e78922a129e1fb8bdbaac4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_9g6z8s2c",
+    "ja": "先輩は、ゆっくり話すよう私に注意しました。",
+    "en": "A senior colleague warned me to speak slowly.",
+    "alternatives": [
+      "A colleague told me to speak more slowly.",
+      "My senior cautioned me to speak slowly."
+    ],
+    "point": "warn + 人 + to do。人を目的語に入れる",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -469,21 +788,27 @@
     "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fb49d0a63abc26a280c8d677ff414df337ea42d409fb010f8b8a8977599ec5f0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_9s3r4a4a",
-    "ja": "承認を得るには、他に何を用意すべきですか？",
-    "en": "What else should we prepare to get approval?",
+    "id": "c_9r3e2w8p",
+    "ja": "時間があれば、事例をもっとお見せするのですが。",
+    "en": "If I had more time, I'd show more examples.",
     "alternatives": [
-      "To get approval, what else should we prepare?",
-      "What else do we need to prepare for approval?"
+      "I'd show you more examples if I had time.",
+      "If there were more time, I'd share more examples."
     ],
-    "point": "「〜するには」は目的の to + 動詞で表す",
+    "point": "実現しにくい仮定は If + 過去形、主節は would",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 6,
-    "grammar": ["infinitives", "modal-obligation-advice"],
+    "level": 7,
+    "grammar": ["second-conditional", "hedging-softening"],
     "createdAt": "2026-09-28",
     "stamps": {}
   }

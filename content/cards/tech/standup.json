@@ -5,7 +5,7 @@
     "en": "Not only did the migration finish, but every test passed.",
     "alternatives": [
       "The migration finished, and every test passed too.",
-      "On top of the migration finishing, every test passed."
+      "The migration finished, and on top of that every test passed."
     ],
     "point": "Not only が文頭なら did the migration finish と倒置する",
     "topic": "tech",
@@ -13,36 +13,57 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c7abeaa66a77516020cf743bce582378bea2821915d61cd0b893bd955c6d8c8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_2h5v9g8d",
-    "ja": "昨日からテストを書いていて、半分終わりました。",
-    "en": "I've been writing tests since yesterday, halfway through.",
+    "id": "c_2m8v3p7m",
+    "ja": "田中さんにレビューを頼みました。",
+    "en": "I asked Tanaka to review it.",
     "alternatives": [
-      "Since yesterday I've been writing tests, and I'm halfway.",
-      "I've been on the tests since yesterday, halfway done."
+      "I asked Tanaka for a review.",
+      "I asked Tanaka to do the review."
     ],
-    "point": "「昨日から〜している」は have been + -ing",
+    "point": "ask + 人 + to do。「頼む」の相手は ask のすぐ後ろに置く",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 6,
-    "grammar": ["present-perfect-continuous"],
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:02c76206c085fb06e000394667b17630559760a4c92a9ee17836b3287f071495",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3x8m5x5v",
     "ja": "ログインに、まだバグが一つあります。",
     "en": "There's still one login bug.",
-    "alternatives": ["There is still a login bug.", "There's still one bug in login."],
+    "alternatives": [
+      "We still have one login bug.",
+      "There's still one bug with the login."
+    ],
     "point": "「〜がある」は There is で始める",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 3,
+    "level": 2,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:62ce4e2b2406ea2da79c8b39387e90ac12f474fb55213998b12c560a1796c5bb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3z2f7j3n",
@@ -58,7 +79,13 @@
     "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1afbeea6ec523d8f512c8e7d0832e026dc0e1fb560c4e2e8fc259f65d0fd8233",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4g9x7x7f",
@@ -74,36 +101,54 @@
     "level": 4,
     "grammar": ["gerunds", "future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6b1cfd05dd417516f25ee18957118e66ecb16f952637fe8788e4a80598b08621",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_4m2n5h5e",
+    "ja": "あのバグ、私が今朝やっと突き止めました。",
+    "en": "I finally tracked down that bug this morning.",
+    "alternatives": [
+      "I finally pinned down that bug this morning.",
+      "I finally nailed that bug this morning."
+    ],
+    "point": "「突き止める」は track down。今朝は過去形",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["phrasal-verbs", "past-simple"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:864eecfde166558ddd913ded3a9cc0cfb13a60194acfb0520cd3c83aba134022",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4r3p5d8b",
     "ja": "健太は今日、デプロイしなきゃ。",
     "en": "Kenta has to deploy today.",
-    "alternatives": ["Kenta needs to deploy today.", "Kenta must deploy today."],
+    "alternatives": ["Kenta needs to deploy today.", "Kenta's got to deploy today."],
     "point": "主語が三人称単数なので have to ではなく has to",
     "topic": "tech",
     "subtopic": "standup",
     "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4z7n2h8n",
-    "ja": "ステージング環境、午後まで使わせてもらえますか？",
-    "en": "Could you let me use staging until this afternoon?",
-    "alternatives": [
-      "Would you mind letting me use staging until this afternoon?",
-      "Could I get staging to myself until this afternoon?"
-    ],
-    "point": "使わせて = let me use。to は付けない",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 7,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e659ecb412e282001f57f7c777831573f5b6abe5c24d372c6beb5134091d63e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4z9f5q4d",
@@ -111,31 +156,65 @@
     "en": "Did Ken find the cause yesterday?",
     "alternatives": [
       "Did Ken figure out the cause yesterday?",
-      "Was Ken able to find the cause yesterday?"
+      "Did Ken track down the cause yesterday?"
     ],
     "point": "昨日のことなので Has ではなく Did で聞く",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 4,
+    "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c96e378a74f0cd317de1e2fd94fd4bd79f5dac3d4ae006c7214b17b00e876431",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_5e5e2w3k",
-    "ja": "負荷テストがどこまで必要か、教えてもらえますか？",
-    "en": "Could you say how much load testing we need?",
+    "id": "c_5j5j6q7u",
+    "ja": "昨日マージしなければ、今は火消しをしていないのに。",
+    "en": "If I hadn't merged yesterday, I wouldn't be firefighting now.",
     "alternatives": [
-      "Could you tell me how much load testing we need?",
-      "Do you know how much load testing we need?"
+      "I wouldn't be firefighting now if I hadn't merged yesterday.",
+      "If we hadn't merged yesterday, we wouldn't be firefighting now."
     ],
-    "point": "how much の後は we need の平叙文の語順にする",
+    "point": "過去の仮定+現在の結果は If+過去完了, would be ~ing",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 7,
-    "grammar": ["indirect-questions"],
+    "level": 8,
+    "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bc9f55ebd29bd1dc3fc16fb2ff32d8f7cb4a478ab7f71782c7466f38a2d30e1e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_5s3j6h3w",
+    "ja": "知っていれば、もっと早く共有したのに。",
+    "en": "If I'd known, I would've shared it sooner.",
+    "alternatives": [
+      "If I had known, I'd have shared it earlier.",
+      "I would have shared it sooner if I'd known."
+    ],
+    "point": "If + had 過去分詞、would have 過去分詞 で過去の反対",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1558e47fd3952808bcf7dbb9b27481fbbdbca7668ff0993de3984eebf4857634",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5s7m8c2v",
@@ -151,7 +230,35 @@
     "level": 2,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b2dc2eef0c11ad19c68141d1ea01dd4c3aafc62607dd55b9e1e714317791e84b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_5u7y3r4d",
+    "ja": "誰かこのエラーの原因、分かりますか？",
+    "en": "Does anyone know what's causing this error?",
+    "alternatives": [
+      "Can anyone tell me what's causing this error?",
+      "Does anyone know why this error happens?"
+    ],
+    "point": "疑問詞が主語のときは、Does anyone know の後ろもそのまま動詞が続く",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:86ba573b8460a4a84c328a6c3133b05234bd66f75e1f485e7d0dec92b0f44131",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5v9t5y6q",
@@ -167,23 +274,35 @@
     "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d52160a208a54eb41e44d4e32d52d19db93e8dc5b1b6ca3eeb2547d4e65d35b4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_5y7f6q2m",
-    "ja": "移行で詰まってて。アドバイスをもらえますか？",
-    "en": "I'm stuck on the migration. Could I get some advice?",
+    "id": "c_6d6k5x5r",
+    "ja": "彼女は三日間ずっと、この設定と格闘しています。",
+    "en": "She's been wrestling with this config for three days.",
     "alternatives": [
-      "I'm stuck on this migration. Could you advise me?",
-      "I'm stuck on the migration and need some advice."
+      "She's been struggling with this config for three days.",
+      "She's been fighting this config for three days."
     ],
-    "point": "advice は数えられないので an advice ではなく some advice",
+    "point": "継続中の動作は has been -ing。期間は for",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 7,
-    "grammar": ["articles-and-countability", "requests-permission"],
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9debe5ec895ee5ada9667d40425702a2db23fa5e1d70dfd3ccd46d7ba6827fd4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6d9g4h4c",
@@ -199,7 +318,13 @@
     "level": 3,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:065141c008b78a1c9975acddb3d4bad15b219e603b1c08c6203f677790efba04",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6f8a4j5a",
@@ -215,7 +340,13 @@
     "level": 10,
     "grammar": ["nested-clauses", "reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b0e80111d7e18a709c49bc4610ee66eea51b145311ebc559cc7141c4c32f5dc8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6n8g3e3p",
@@ -223,23 +354,31 @@
     "en": "I was wondering if you'd spare thirty minutes today.",
     "alternatives": [
       "Would you be able to spare thirty minutes today?",
-      "Do you think you could spare thirty minutes today?"
+      "Do you think you could spare thirty minutes today?",
+      "I was wondering if I could get thirty minutes today."
     ],
     "point": "「〜もらえないかな」は I was wondering if you could/would",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 8,
+    "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4545204dabc757d067d3b8da524f5ed60188f92e2757e5b50529316b8e7d8305",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6v9g2x9u",
     "ja": "昨日のデプロイ、どこで止まりました？",
     "en": "Where did yesterday's deploy get stuck?",
     "alternatives": [
-      "Where did the deploy stop yesterday?",
-      "Where did yesterday's deploy fail?"
+      "Where did yesterday's deploy stop?",
+      "Where did yesterday's deploy stall?",
+      "Where did the deploy get stuck yesterday?"
     ],
     "point": "過去の疑問なので did を使い、動詞は原形に戻す",
     "topic": "tech",
@@ -249,9 +388,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:5023e38532f067fa31118b66cc7b1e4c676a999670844cd47bfa23a7b0a21af2",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:1ca613ef129b4d9ac1423ee21c8707b65da012bdfadf779b2a8d9a8c3d2a3840",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -269,23 +408,13 @@
     "level": 5,
     "grammar": ["passive-voice", "present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6w9h2t9h",
-    "ja": "先週確認しておけば、今ごろ楽なのに。",
-    "en": "If I'd checked last week, I'd be fine now.",
-    "alternatives": [
-      "If I'd checked last week, things would be easier now.",
-      "I wouldn't be struggling now if I'd checked last week."
-    ],
-    "point": "過去の仮定は had checked、今の結果は would be",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 8,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bdf96dd78ba3a8ab0b642cabeb645a1c3b638d4f23264ca79a0dab0793b18b02",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7d4q3e7e",
@@ -301,7 +430,13 @@
     "level": 3,
     "grammar": ["time-and-if-clauses", "future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ecde2cbcf5654f1d7bfeffaa157f18d7b2654cf26f7e0be660e3cbf5b5867028",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7p6a7n7z",
@@ -319,19 +454,19 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:c94868ce0987f44a930fbdaa40b4855a3dc973d37629306a56c48c19ac054d1b",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:632d094634119b5e339f049e33f286a189e999accef3c6bfe812afaca4a1fa31",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
   {
     "id": "c_7s8s5q2m",
-    "ja": "仕様は未確定ですが、フロントに着手します。",
-    "en": "Spec's not final, but we're starting front-end work.",
+    "ja": "仕様は未定ですが、うちはフロントに着手します。",
+    "en": "The spec isn't final, but we're starting front-end work.",
     "alternatives": [
-      "The spec isn't final, but we're starting front-end work.",
-      "The spec isn't settled, but we're starting front-end work."
+      "The spec isn't settled, but we'll start front-end work.",
+      "The spec isn't decided, but we'll begin front-end work."
     ],
     "point": "「未確定だが着手する」は but で対比させる",
     "topic": "tech",
@@ -339,23 +474,35 @@
     "level": 6,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9fe0d78b8c76b226beafee6c8304ef1f8d75892bdaf4d561eff4e9de988bb23f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_7u5x9f2c",
-    "ja": "気づくと、夜間バッチがもう三回失敗していた。",
-    "en": "I noticed the nightly batch had failed three times.",
+    "id": "c_7z9b9x6j",
+    "ja": "あの設定、私が見落としたのかもしれません。",
+    "en": "I may have missed that setting.",
     "alternatives": [
-      "I realized the batch had already failed three times.",
-      "I saw the nightly batch had failed three times."
+      "Maybe I overlooked that setting.",
+      "I might have overlooked that setting."
     ],
-    "point": "気づいた時点より前の失敗なので had failed を使う",
+    "point": "過去の推量は may have + 過去分詞",
     "topic": "tech",
     "subtopic": "standup",
     "level": 6,
-    "grammar": ["past-perfect"],
+    "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a0f201e12112607ed3e6a226c0b111221e59dc90700d3475db8f81cfffcffa42",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8a8a9j7h",
@@ -371,7 +518,13 @@
     "level": 9,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:01ad4388244673d73568ff8cecbe4d39cba3423172dfa49c356cc723e808d67f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8c2w2r3h",
@@ -387,7 +540,13 @@
     "level": 4,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d0a2d9b7dccc12ded1a272bf47eb3e957acd5b2ad837bb26560c4aa6af4f227c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8p3j3z3j",
@@ -403,7 +562,13 @@
     "level": 6,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ea100eb54b582bedf359b7e9f347008e44e08d58f80254ea7f1a636fb1a7411a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8r8z5r9v",
@@ -416,23 +581,35 @@
     "level": 1,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:de3c9a078308a5f9047c08d8a252f8bd6cbfc60e7fead734d54e2d1b9a320e11",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_8y2e3x8k",
-    "ja": "ステージングは午後に直ると言われました。",
-    "en": "They said staging would be back this afternoon.",
+    "id": "c_8u3f3j2u",
+    "ja": "本番のログが見られません。",
+    "en": "I can't see the production logs.",
     "alternatives": [
-      "They said staging should be back this afternoon.",
-      "We heard staging would be back this afternoon."
+      "I can't view the production logs.",
+      "I'm unable to see production logs."
     ],
-    "point": "「言った」に合わせて will ではなく would にする",
+    "point": "「見られない」は can't see。can't のあとは動詞の原形",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 5,
-    "grammar": ["reported-speech"],
+    "level": 3,
+    "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c139da52e6d3281ab69f0949eb43fc6f81a60547add6e86fd578bffaee90fbd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9a8s4q9v",
@@ -448,7 +625,13 @@
     "level": 7,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b458621427226e58179b6e0fb22e206bd135117c7637730ab1c5cf9819d978b2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9c7m5u2j",
@@ -464,22 +647,57 @@
     "level": 5,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1708f136339ca31cd603c198fe20c19bc6968a063d498b46eac34b39102a1333",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_9g6k8x2u",
-    "ja": "落ちているのは、先週追加したテストだけです。",
-    "en": "Only tests we added last week are failing.",
+    "id": "c_9s8j2h5r",
+    "ja": "昨日直したバグが、また出ました。",
+    "en": "The bug I fixed yesterday is back.",
     "alternatives": [
-      "The only failing tests are last week's new ones.",
-      "Only the tests added last week are failing."
+      "The bug I fixed yesterday came back.",
+      "The bug I fixed yesterday has come back.",
+      "The bug I fixed yesterday is happening again."
     ],
-    "point": "「先週追加した」はテストの後ろに置いて修飾する",
+    "point": "直した過去は fixed、今戻っている状態は現在形の is back",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 6,
-    "grammar": ["post-modification", "relative-clauses"],
+    "level": 4,
+    "grammar": ["tense-contrast", "post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7bf04a72f6f1748ba77e978ab85e043fe505c4251e200fccd6a6bae0c64a887",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_9t3y6j2r",
+    "ja": "彼が昨日ロールバックしなかったら、今も障害中だよ。",
+    "en": "If he hadn't rolled back, we'd still be down.",
+    "alternatives": [
+      "If he hadn't rolled back yesterday, we'd still be down.",
+      "Without his rollback yesterday, we'd still be down."
+    ],
+    "point": "過去の仮定が今に影響: had + 過去分詞、would + 原形",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:03a2be797efd4b9e4ec8541bae38d00ffc676bf0891df51a0107e4bc33f92319",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]

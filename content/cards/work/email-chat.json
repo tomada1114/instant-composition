@@ -1,19 +1,25 @@
 [
   {
     "id": "c_2e7x8v7w",
-    "ja": "昨日からずっと、先方の返信を待っています。",
+    "ja": "昨日からずっと先方の返信を待っています。",
     "en": "I've been waiting for their reply since yesterday.",
     "alternatives": [
       "I've been waiting to hear back since yesterday.",
-      "I haven't heard from them since yesterday."
+      "I've been waiting on their reply since yesterday."
     ],
     "point": "ずっと待っている は have been waiting、since で起点",
     "topic": "work",
     "subtopic": "email-chat",
-    "level": 6,
+    "level": 4,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c64b1c1a9ffae2abad61557303e43fc6dba9aa4a406a23ec4bb67ee9550adf66",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2j4e9t4g",
@@ -21,15 +27,22 @@
     "en": "I wish I'd cc'd the client on it.",
     "alternatives": [
       "If only I'd copied the client on it.",
-      "I wish I had copied the client."
+      "I wish I had copied the client.",
+      "I should have cc'd the client on it."
     ],
     "point": "過去の後悔は wish の後に過去完了",
     "topic": "work",
     "subtopic": "email-chat",
     "level": 7,
-    "grammar": ["wishes-regrets"],
+    "grammar": ["wishes-regrets", "modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ba76381223c36204b16a0e3717fc89f28842ac82af192bff51f2a56f44557e76",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2k2u4j9m",
@@ -45,34 +58,27 @@
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f102d1b751efb9271e334d48636f7c7d5cb7044e83af4e3edc7a06c4fef559ce",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_2k3d9q8p",
-    "ja": "先方が聞きたいのは、納期を変更できるかどうかです。",
-    "en": "What they're asking is whether we can reschedule.",
+    "id": "c_2k7e6k2j",
+    "ja": "送ってもらった添付ファイル、開けません。",
+    "en": "I can't open the attachment you sent.",
     "alternatives": [
-      "What they want to know is if we can reschedule.",
-      "What they're wondering is whether we can move the date."
+      "I can't open the file you sent.",
+      "The attachment you sent won't open."
     ],
-    "point": "What 節が主語、「〜かどうか」は whether で語順は平叙文",
+    "point": "「開けない」は can't open。won't open は物が主語",
     "topic": "work",
     "subtopic": "email-chat",
-    "level": 8,
-    "grammar": ["cleft-emphasis", "noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2p9p6k5w",
-    "ja": "部長は、何て返信しましたか？",
-    "en": "How did the manager reply?",
-    "alternatives": ["What was the manager's reply?", "How did the manager respond?"],
-    "point": "過去の疑問文は did を使い、動詞は原形の reply",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 2,
-    "grammar": ["wh-questions", "past-simple"],
+    "level": 4,
+    "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -82,7 +88,8 @@
     "en": "To finalize, we'd need the exact quantity by Friday.",
     "alternatives": [
       "We'd need the exact quantity by Friday to finalize.",
-      "To finalize this, we'd need exact numbers by Friday."
+      "To finalize this, we'd need exact numbers by Friday.",
+      "I'd need the exact quantity by Friday to finalize."
     ],
     "point": "目的の「〜には」は To do で文頭に。we'd need で柔らかく",
     "topic": "work",
@@ -90,23 +97,13 @@
     "level": 7,
     "grammar": ["infinitives", "hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2u7r3m5u",
-    "ja": "先方が昨日返信をくれていたら、今ごろ終わってるのに。",
-    "en": "If they'd replied yesterday, we'd be done by now.",
-    "alternatives": [
-      "Had they replied yesterday, we'd be finished by now.",
-      "If they'd gotten back to us yesterday, we'd be done now."
-    ],
-    "point": "過去の仮定は had replied、今の結果は would be で時制を分ける",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 9,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4e5026ae410fe8cc3737d4e15e9558e23cbd8a88eaf824e49d5136673373bda0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2x6m2d2t",
@@ -119,23 +116,35 @@
     "level": 1,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:649adfb6122a6157416546ae2dda6460cc0b520202a196f83ee172afd8143dc4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_3r3h9z2t",
-    "ja": "山田さん、返事がない。チャット見落としたかも。",
-    "en": "Yamada hasn't replied. He might have missed my chat.",
+    "id": "c_3n6h3k6h",
+    "ja": "送る前に誤字に気づいていれば、面目を保てたのに。",
+    "en": "Had I caught the typo before sending, I'd have saved face.",
     "alternatives": [
-      "Yamada hasn't answered, so he may have missed my chat.",
-      "No reply from Yamada. Maybe he overlooked my chat."
+      "If I'd caught the typo before sending, I'd have saved face.",
+      "If I'd noticed the typo before sending, I'd have avoided embarrassment."
     ],
-    "point": "過去の推量は might miss ではなく might have missed",
+    "point": "If I had は Had I と倒置できる。主節は would have + 過去分詞",
     "topic": "work",
     "subtopic": "email-chat",
-    "level": 8,
-    "grammar": ["modal-perfect"],
+    "level": 9,
+    "grammar": ["third-conditional", "inversion"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0e9e777f8d8a526500aaad7bf18b8dd29fe5e042fe007cc56a38bf6b1f50edc0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3t9f5v8w",
@@ -150,41 +159,42 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:20d3058f12dc6a46d303a415e5450c7bac8d1811f5c365e361271b6f6085f567",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:c2ea471cbe8395079b8a97b19ef71475089eaa87b42d1d7d50587060443f7023",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
   {
-    "id": "c_4m4h8g7b",
-    "ja": "部長が今朝、議事録を添付して全員に送りました。",
-    "en": "This morning the manager emailed everyone, attaching the minutes.",
+    "id": "c_4j7e3b8v",
+    "ja": "明日までに、メールに返信しなきゃ。",
+    "en": "I have to reply by tomorrow.",
     "alternatives": [
-      "The manager emailed everyone this morning with the minutes attached.",
-      "This morning the manager emailed the minutes to everyone."
+      "I've got to reply by tomorrow.",
+      "I need to reply by tomorrow.",
+      "I have to answer it by tomorrow."
     ],
-    "point": "「添付して」は attaching で文の後ろにつなげる",
+    "point": "「〜しなきゃ」は have to。期限は by tomorrow",
     "topic": "work",
     "subtopic": "email-chat",
-    "level": 7,
-    "grammar": ["participle-clauses"],
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
-    "id": "c_5a5q6r7w",
-    "ja": "君が早く言ってくれてたら、返信は間に合ったのに。",
-    "en": "If you'd said earlier, I'd have replied on time.",
+    "id": "c_4t4d9c9x",
+    "ja": "この件、田中さんにも共有しておいてもらえますか？",
+    "en": "Could you loop Tanaka in on this?",
     "alternatives": [
-      "Had you told me sooner, I'd have replied on time.",
-      "If you'd told me sooner, I could've replied on time."
+      "Could you keep Tanaka in the loop on this?",
+      "Could you fill Tanaka in on this?"
     ],
-    "point": "過去の反実仮想は if + had 過去分詞、主節は would have",
+    "point": "loop ~ in は「~を輪に入れる」。in の位置に注意",
     "topic": "work",
     "subtopic": "email-chat",
     "level": 8,
-    "grammar": ["third-conditional"],
+    "grammar": ["phrasal-verbs", "requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -202,23 +212,70 @@
     "level": 6,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4c66ad1932c204bd7ae8472aba8d1efe040336533538406fdb9cefcc596e5823",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_5p6m3z3s",
+    "ja": "営業はすぐ返信をくれるのに、経理はいつも遅い。",
+    "en": "Sales replies right away, whereas accounting takes forever.",
+    "alternatives": [
+      "Sales answers immediately, but accounting takes forever to reply.",
+      "Sales replies instantly, while accounting is really slow."
+    ],
+    "point": "対比は whereas か while でつなぐ",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 6,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ee8cdefb919da66b14974056558f3c2c22b5eea53cea549e17ab26f1ef9efe36",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_5y3y9h9a",
+    "ja": "その件、もう先方にメールしましたか？",
+    "en": "Have you emailed them about it yet?",
+    "alternatives": [
+      "Have you emailed them about that yet?",
+      "Did you email them about it already?"
+    ],
+    "point": "「もう〜した？」の疑問文では yet を文末に置く",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 3,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_5y8y6s3r",
-    "ja": "来週の金曜にうかがいます。",
-    "en": "We're visiting you next Friday.",
-    "alternatives": [
-      "We'll visit you next Friday.",
-      "We're coming to see you next Friday."
-    ],
+    "ja": "来週の金曜に、私たちがうかがいます。",
+    "en": "We're coming to see you next Friday.",
+    "alternatives": ["We'll visit you next Friday.", "We're visiting you next Friday."],
     "point": "決まった予定は be + ing で表せる",
     "topic": "work",
     "subtopic": "email-chat",
     "level": 3,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:344551f7fcd67f042ca08d2c4e0232bf640a50b7cd3e940052e4e505d30fdfe8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6f8n4m2s",
@@ -234,7 +291,73 @@
     "level": 5,
     "grammar": ["phrasal-verbs", "requests-permission"],
     "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:69f9014c0f35f296353e916ab15cbd547d843dba4044f5eaf4eb0b42de5fe9d3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_6j9t7f8a",
+    "ja": "この件、メールより電話のほうが早いかも。",
+    "en": "A call might be quicker than email here.",
+    "alternatives": [
+      "Calling might be faster than emailing here.",
+      "A phone call might be faster than email."
+    ],
+    "point": "短い語は quicker のように -er で比べ、than でつなぐ",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:50a052a210ae39b66d854002f9ebd3badfc3337545ca0e1caed688dc644dac5c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_6m6x9f7t",
+    "ja": "この件の担当は誰か、教えてもらえますか？",
+    "en": "Could you tell me who's handling this?",
+    "alternatives": [
+      "Would you mind telling me who's handling this?",
+      "Can you tell me who's in charge?"
+    ],
+    "point": "間接疑問は who's handling のまま。do 不要",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 4,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-28",
     "stamps": {}
+  },
+  {
+    "id": "c_6p3y8z5j",
+    "ja": "添付ファイルの数字は、最新のものです。",
+    "en": "The figures in the attached file are current.",
+    "alternatives": [
+      "The numbers in the file are the latest.",
+      "The attached file has the latest figures."
+    ],
+    "point": "in the attached file で figures を後ろから説明する",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bbfe94b3dc1e0a56b74604144aec32c8ab9e9758c04290c27bb352dfe0ea55d1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6p4u6b4c",
@@ -246,6 +369,110 @@
     "subtopic": "email-chat",
     "level": 3,
     "grammar": ["articles-and-countability", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f75baf6bf02356d9d65bbf7eea532bb5c05cb0112919f0c430755b9b07e7f694",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_6p6u4e9z",
+    "ja": "たとえ忙しくても、一言だけ返信をお願いします。",
+    "en": "However busy you are, please send a quick reply.",
+    "alternatives": [
+      "Even if you're swamped, please send a quick reply.",
+      "Busy or not, please at least send a quick reply."
+    ],
+    "point": "However + 形容詞 + 主語 + be で「どんなに〜でも」",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a4c7e893f047bd7ae40c38690c24b98b7efdb4935d2a455bc80254cc8babc204",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_7b7w7x6x",
+    "ja": "さっき話した資料、送ってもらえますか？",
+    "en": "Could you send me the document we discussed?",
+    "alternatives": [
+      "Can you send me those materials we discussed?",
+      "Could you send over the materials we discussed?"
+    ],
+    "point": "the document の後ろに we discussed をそのまま続ける（that は省略可）",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 4,
+    "grammar": ["relative-clauses", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8dbbad82ee97134aab8873b66d813cf6f5d49a977a4a8e45e2c248bcd365baa5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_7d8v4s7k",
+    "ja": "ご承認をいただくまで、私たちは待機中です。",
+    "en": "We're on hold until we get your approval.",
+    "alternatives": [
+      "We're holding off until we get your sign-off.",
+      "We can't move forward until you approve it."
+    ],
+    "point": "未来のことでも until 節は現在形",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 8,
+    "grammar": ["time-and-if-clauses", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7e8r2c9g",
+    "ja": "返信をもらうまで、締め切りが変わったと気づきませんでした。",
+    "en": "Not until you replied did I realize the deadline had moved.",
+    "alternatives": [
+      "I didn't realize the deadline had moved until you replied.",
+      "It wasn't until you replied that I realized the deadline had moved."
+    ],
+    "point": "Not until を前に出すと、主節は did I realize と倒置",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d13d5a1e5ffe9f2a1b5014ad3cebdceb75ae39e83ffb70d24ff270cd85b3c2e1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_7e8r5q6y",
+    "ja": "会議の資料は、どこにありますか？",
+    "en": "Where are the meeting materials?",
+    "alternatives": [
+      "Where are the materials for the meeting?",
+      "Where can I find the meeting materials?"
+    ],
+    "point": "資料は複数扱いなので Where is ではなく Where are",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 2,
+    "grammar": ["wh-questions"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -263,23 +490,68 @@
     "level": 4,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9b7dbc7e54869a7e1c2040d94f03221c9018ed6cd418eefb30fd3bae05b6c4cf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_7m8w2b4d",
+    "ja": "返信は、手が空いたらで大丈夫ですよ。",
+    "en": "Just reply when you get a chance.",
+    "alternatives": ["Reply whenever you have time.", "Just reply when you're free."],
+    "point": "when 節は未来のことでも現在形。「手が空く」は get a chance",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7b0230d6260ced6de196bccb21ad89906b6a1048c9f66fdebb03eee8ffb7d6e8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_7w2n8t6d",
+    "ja": "返信するつもりでしたが、すっかり忘れていました。",
+    "en": "I meant to reply, but it slipped my mind.",
+    "alternatives": [
+      "I was going to reply, but I forgot.",
+      "I meant to reply, but I completely forgot.",
+      "I was going to reply, but it slipped my mind."
+    ],
+    "point": "「つもりだった」は meant to＋動詞の原形。過去形で言う",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 7,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
-    "id": "c_7k6b4e6u",
-    "ja": "チャットが来たとき、私は忙しかった。",
-    "en": "I was busy when you messaged.",
-    "alternatives": [
-      "I was busy when you messaged me.",
-      "You messaged me when I was busy."
-    ],
-    "point": "message は動詞でも使える。「〜したとき」は when",
+    "id": "c_7w5n9f6z",
+    "ja": "今、返信を書いているところです。",
+    "en": "I'm writing a reply now.",
+    "alternatives": ["I'm writing my reply right now.", "I'm working on a reply now."],
+    "point": "「〜しているところ」は現在進行形 am ～ing",
     "topic": "work",
     "subtopic": "email-chat",
     "level": 2,
-    "grammar": ["past-simple"],
+    "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c4189c150441fe47d1a365672fbc2d3cae21181fbac9390fbade1f09ddf1100a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8c6g2z7d",
@@ -292,39 +564,13 @@
     "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8j8r4p8f",
-    "ja": "チャットより、電話で話すのはどう？",
-    "en": "How about talking by phone instead?",
-    "alternatives": [
-      "Why don't we talk by phone instead?",
-      "Should we just call each other instead?"
-    ],
-    "point": "How about の後は動詞の ing 形",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 4,
-    "grammar": ["gerunds"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8v2u2b7w",
-    "ja": "彼女が見積もりの条件をもう確認したか、分かりません。",
-    "en": "I'm not sure whether she's already checked the quote's terms.",
-    "alternatives": [
-      "I don't know if she's looked over the terms yet.",
-      "I have no idea if she's gone through the terms."
-    ],
-    "point": "間接疑問は whether / if の後を平叙文の語順にする",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 9,
-    "grammar": ["indirect-questions", "noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f2fefe3ca0fb7a8a7a9092d93553eae4c32306c46c2ed02a60f7fe3e07db8f7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8y7x7h7v",
@@ -342,58 +588,92 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:8b309894d378ed10d385c46f68c946ddc4564599e6f425d235fb28735633c4f2",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:872629fd5720c204b1297031f577a2555c9cd3f01c484d19a54c2815b8026be2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9a9u9r5w",
-    "ja": "会議の決定事項、今日中にチャットで共有してもらえますか？",
-    "en": "Could you share what we decided in chat today?",
-    "alternatives": [
-      "Would you mind sharing what was decided in chat today?",
-      "Can you post what we decided in the chat today?"
-    ],
-    "point": "「決まったこと」は what we decided でまとめて share の目的語に",
-    "topic": "work",
-    "subtopic": "email-chat",
-    "level": 10,
-    "grammar": ["noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9f3v7j5h",
     "ja": "うちが延長を頼んだら、先方は嫌がるかな？",
     "en": "If we asked for an extension, would they mind?",
     "alternatives": [
-      "Would the client mind if we asked for an extension?",
+      "Would they mind if we asked for an extension?",
       "Would they mind if we asked for more time?"
     ],
     "point": "仮定の話なので if 節は過去形、主節は would",
     "topic": "work",
     "subtopic": "email-chat",
-    "level": 8,
+    "level": 6,
     "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a6b467c4a2e006ec6970639de9db5562903602cf37b8d3012c2e868aa6eec95c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_9m4z9j6p",
+    "ja": "先方から返信が来たら、すぐ転送します。",
+    "en": "I'll forward it as soon as they reply.",
+    "alternatives": [
+      "I'll forward it right after they reply.",
+      "Once they reply, I'll forward it right away."
+    ],
+    "point": "未来のことでも once / when の後は現在形（will は付けない）",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 4,
+    "grammar": ["time-and-if-clauses", "future-forms"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ddabb4d1692452e106a0686dfee5c0ff98c575cb6c4487b5c2241a4a15cbadeb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_9q6t8v2y",
+    "ja": "お手すきのときに、添付を見ていただけませんか？",
+    "en": "Would you mind checking the attachment when you're free?",
+    "alternatives": [
+      "Could you check the attachment when you have time?",
+      "Could you look at the attachment when you're free?"
+    ],
+    "point": "Would you mind の後ろは動名詞（checking）",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 6,
+    "grammar": ["gerunds", "requests-permission"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
-    "id": "c_9y3k5v9q",
-    "ja": "先方の返信が遅くても、作業は進めて。",
-    "en": "Even if they reply late, keep going.",
+    "id": "c_9s3q9p4z",
+    "ja": "先方が昨日返信をくれていたら、今ごろ終わってるのに。",
+    "en": "If they'd replied yesterday, we'd be done by now.",
     "alternatives": [
-      "Keep going even if they reply late.",
-      "Even if they're slow to reply, carry on."
+      "If they'd gotten back to us yesterday, we'd be finished.",
+      "If they'd written back yesterday, we'd be finished by now."
     ],
-    "point": "even if 節は未来のことでも現在形",
+    "point": "過去の仮定は had replied、今の結果は would be で時制を分ける",
     "topic": "work",
     "subtopic": "email-chat",
-    "level": 5,
-    "grammar": ["concession-contrast"],
+    "level": 9,
+    "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:872a64aaca37faa379125572bea8402b24fd763b21197b2e4633a9266c71ea84",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]

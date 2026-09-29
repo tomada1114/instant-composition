@@ -2,10 +2,10 @@
   {
     "id": "c_2h5r6m4n",
     "ja": "直したコードはずっと読みやすいね。",
-    "en": "This code is much easier to read.",
+    "en": "It's much easier to read now.",
     "alternatives": [
-      "This code is much more readable.",
-      "This is much easier to read now."
+      "This is much easier to read now.",
+      "It's much more readable now."
     ],
     "point": "比較級を強めるのは very ではなく much",
     "topic": "tech",
@@ -15,9 +15,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:da3e08563eee4ec8832595b3f3f861512eca89240a690421c8c5f2ffdb719bb3",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:b52bc7b29549377a412250a041cb0bd7c441796eb8fb68fc902fb5f3805dcf58",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -35,7 +35,35 @@
     "level": 9,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:22ad3959ecd7909e32335caf16c67a3c9a0d47e5b4238738aa2b8f7f91c7963f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_3a5f5e8y",
+    "ja": "これ、このPRに入れるべきか迷ってます。",
+    "en": "I'm not sure this belongs in this PR.",
+    "alternatives": [
+      "I'm wondering whether this belongs in this PR.",
+      "I'm not sure whether this should be in this PR."
+    ],
+    "point": "「迷ってる」は I'm not sure + 名詞節。that は省ける",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["noun-clauses", "hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1fbbbaaf7c34465c4501187bce4afd44dac9210ae0f5cd51a81ef1bb6151c34a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3t5k5j3e",
@@ -43,7 +71,7 @@
     "en": "I'd gotten every test passing before I asked.",
     "alternatives": [
       "Before asking, I'd made every test pass.",
-      "All the tests had passed before I asked."
+      "I'd gotten all the tests passing before I asked."
     ],
     "point": "頼む前に済んでいたことは had + 過去分詞で表す",
     "topic": "tech",
@@ -51,23 +79,13 @@
     "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3u9t2b4d",
-    "ja": "本物のAPIを呼ぶテストは、モックにすべきです。",
-    "en": "Tests calling the real API should use mocks instead.",
-    "alternatives": [
-      "Any test that hits the real API should be mocked.",
-      "Tests that call the real API ought to use mocks."
-    ],
-    "point": "「呼ぶテスト」は Tests calling で後ろから修飾",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 7,
-    "grammar": ["post-modification", "modal-obligation-advice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f3517189c962d418ff7efda25ca607a5ce1d3f5d99c3f7a8af7e7598b032d1c6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3v2p3m7q",
@@ -83,7 +101,13 @@
     "level": 4,
     "grammar": ["gerunds", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c7cf79e36f63e5f6b6abf97064087044ac5b78124dc093cce6207008fe0acea7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3w5f6y6n",
@@ -99,7 +123,13 @@
     "level": 3,
     "grammar": ["imperatives", "time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4ce35301bc0a4f540c10da3469d858779376950666f91f932abed48074edb9a7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3w5x5t4h",
@@ -117,27 +147,30 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:5689f5d17b14fbc1d4f63ce82cd2c25b92096a98764f7585c14ac54d14f06b0e",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:794b283e553dee07109d8694008b88135397263f83217e0c17ff2f22225d0d5a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
   {
-    "id": "c_4s7s9m2m",
-    "ja": "分かりやすく変数名を変えました。",
-    "en": "I renamed this to make it clearer.",
-    "alternatives": [
-      "I renamed it so it's clearer.",
-      "I renamed it to be more readable."
-    ],
-    "point": "「〜するために」は to ＋動詞の原形",
+    "id": "c_4c7e2d4x",
+    "ja": "ここ、誤字が一つあるよ。",
+    "en": "There is a typo here.",
+    "alternatives": ["I see a typo here.", "There's a typo on this line."],
+    "point": "一つなので There is、a typo と単数形に",
     "topic": "tech",
     "subtopic": "code-review",
-    "level": 3,
-    "grammar": ["infinitives", "past-simple"],
+    "level": 1,
+    "grammar": ["there-is-are"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4aeda6d16e44fcb3971c30bd41371db046c3f58a09eb9e6d432fb2bff4616eb7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4x5m8x2m",
@@ -153,23 +186,13 @@
     "level": 2,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5e5f9k5u",
-    "ja": "作成者は公開APIを変えずにキャッシュを書き直した。",
-    "en": "The author rewrote the cache without touching the public API.",
-    "alternatives": [
-      "The author rewrote the cache, leaving the public API untouched.",
-      "The author rewrote the cache but didn't touch the public API."
-    ],
-    "point": "「変えずに」は without touching で表す",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 10,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b63f086084146a4a35c4b4968611c7ccaf88fa6fdce0f8b1bdb8df2ffd0d2cf8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5k2z3n8n",
@@ -185,7 +208,13 @@
     "level": 6,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fd1d878aa523748257a379706a80f9ec8f4d47d7d039ca9c59f357438db6c722",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5m5c7k9c",
@@ -201,39 +230,13 @@
     "level": 4,
     "grammar": ["articles-and-countability", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5n5j2f4p",
-    "ja": "見てほしいのは、ネット切断時にリトライが動くかです。",
-    "en": "What I'd like checked is whether retries work offline.",
-    "alternatives": [
-      "The main thing is whether retries still work offline.",
-      "What I'm after is whether retries work when we're offline."
-    ],
-    "point": "「見てほしいのは」は What I'd like checked is で始める",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 9,
-    "grammar": ["cleft-emphasis", "indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5r5x8s2x",
-    "ja": "リトライがエラーを隠さないか心配でした。",
-    "en": "I was worried the retry logic would hide errors.",
-    "alternatives": [
-      "My concern was that retries might hide errors.",
-      "I was afraid the retries would mask errors."
-    ],
-    "point": "「心配だった」は I was worried + 節で続ける",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 7,
-    "grammar": ["noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d6ff0a168e1c93ff4da35cd4b38c1de4aa288259408a40b3a0930896f7936539",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5u5e9p5z",
@@ -251,19 +254,19 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:9e05829c9c82c6358d0a0a9bbc279d96ba54bdf7b6ca864fd69d9e4c81f72de4",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:618e2f05cb65b848ab03b13e3b386268811e5249d20545ef7857ef9045015d0a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
   {
     "id": "c_5y2h6s7f",
-    "ja": "あの時テストしていれば、今デバッグしてないのに。",
-    "en": "If we'd tested it then, we wouldn't be debugging now.",
+    "ja": "あの時テストしてれば、僕ら今デバッグしてないのに。",
+    "en": "If we'd tested then, we wouldn't be debugging now.",
     "alternatives": [
-      "Had we tested it then, we wouldn't be debugging now.",
-      "If we'd tested that, we wouldn't still be debugging."
+      "If we'd tested back then, we wouldn't be debugging now.",
+      "We wouldn't be debugging now if we'd tested then."
     ],
     "point": "過去の仮定は had + 過去分詞、今の結果は wouldn't be -ing",
     "topic": "tech",
@@ -271,7 +274,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:88dd052b6e284f2ba4faac8bdfca8c5578cd78d87c295f96dc0d4e993a41f7ce",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6a2a2j6d",
@@ -287,7 +296,35 @@
     "level": 8,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cdab6c78b13e61182aa47af62ccf973abf226a79374bfc941e887f55646f2cbf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_6h2r7h7q",
+    "ja": "直すべきなのはテストじゃなくて、実装のほうだよ。",
+    "en": "It's the implementation, not the test, that needs fixing.",
+    "alternatives": [
+      "What needs fixing is the implementation, not the test.",
+      "The implementation is what needs fixing, not the test."
+    ],
+    "point": "It's ~ that で強調したい部分を挟む。not ~ で対比",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:eb94ea95b6665ac14b6090d21be3f5f6834ee6cfb5113ac4593bd5036da7e716",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6n9j8c7n",
@@ -303,7 +340,13 @@
     "level": 5,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:281567a6fa3fc3300eb8b58f4e43b72911239077a64c4cebf2ede7fc03b31f3c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7z9v9g9j",
@@ -319,16 +362,19 @@
     "level": 2,
     "grammar": ["can-could-ability", "past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:716b71e2d165ab1ce1e892001d6bda95cfd41302033fbd03fc28179158fa1682",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8c8q9y9n",
     "ja": "この関数、長すぎますか？",
     "en": "Is this function too long?",
-    "alternatives": [
-      "Is this function way too long?",
-      "Is this function really too long?"
-    ],
+    "alternatives": ["Is the function too long?", "Is this function too big?"],
     "point": "形容詞の疑問文は be 動詞を文頭に出す",
     "topic": "tech",
     "subtopic": "code-review",
@@ -337,32 +383,60 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:ad3024ec2f8a55d7a283cd6f3c18e6a4f4cc0f0d6ac1d105f78f0b7ee22604bb",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:9c7fdd371ace269360a2a872bf51e9266eee41cee543908210a663fd3a1f4fbe",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
   {
-    "id": "c_8n2p3j9r",
-    "ja": "このバグ、先週入り込んだんだね。",
-    "en": "This bug was introduced last week.",
+    "id": "c_8d4k7x9t",
+    "ja": "この関数、最近使われてないよ。",
+    "en": "This function hasn't been used lately.",
     "alternatives": [
-      "The bug got introduced last week.",
-      "This bug came in last week."
+      "This function hasn't been used recently.",
+      "Nobody has used this function lately."
     ],
-    "point": "バグは「入れられた」ので was introduced と受動態にする",
+    "point": "「使われて」は受動態、「最近」は現在完了で表す",
     "topic": "tech",
     "subtopic": "code-review",
     "level": 4,
-    "grammar": ["passive-voice"],
+    "grammar": ["passive-voice", "present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2175cc2f7f2c5705367ce1f252518d323d2ab2de220bdaa929bb0ed31ab8f3ee",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_8u8z4a8y",
+    "ja": "この PR が何を直すのか、説明します。",
+    "en": "Let me explain what this PR fixes.",
+    "alternatives": [
+      "I'll explain what this PR fixes.",
+      "I'll explain what this PR is fixing."
+    ],
+    "point": "「何を〜か」は what 節。語順は what + 主語 + 動詞",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 4,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a45f0e67dfd0677ba50189a927ddcdaf6f6edad493c1aa49fd192d031bee449b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9b2h4a7n",
-    "ja": "見つけてくれなかったら、そのまま出してたよ。",
-    "en": "If you hadn't caught it, we'd have shipped.",
+    "ja": "見つけてくれなかったら、僕らそのまま出してた。",
+    "en": "If you hadn't caught it, we'd have shipped it.",
     "alternatives": [
       "If you hadn't spotted it, we'd have released it.",
       "We'd have shipped it if you hadn't caught it."
@@ -373,7 +447,35 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:761f48427469e38bc54042814e94386483e176a5787f2226831af0aa8702babe",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_9b9v2j9t",
+    "ja": "実際に動かしてみて初めて、そのバグに気づきました。",
+    "en": "Only after running it did I notice the bug.",
+    "alternatives": [
+      "It wasn't until I ran it that I noticed the bug.",
+      "I didn't notice the bug until I actually ran it."
+    ],
+    "point": "Only after を文頭に出すと、did I notice の倒置になる",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c468d84c1ac0343c2509b408be26e2b50486405f9e1fd0a826a155813a221377",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9k9r3r2e",
@@ -389,31 +491,21 @@
     "level": 3,
     "grammar": ["verb-object-to-do", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9q2z9p4s",
-    "ja": "マージしたら、僕からチームに知らせます。",
-    "en": "I'll tell the team when I merge.",
-    "alternatives": [
-      "I'll let the team know once I merge.",
-      "Once I merge, I'll tell the team."
-    ],
-    "point": "未来のことでも when 節は現在形で merge とする",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 5,
-    "grammar": ["time-and-if-clauses", "future-forms"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cf410e13034f7b392c79bdc6f10607c9d3f1077c9e3a94e84a698224a75a9129",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9s8h4x5r",
-    "ja": "きっとスナップショットの更新を忘れたんですね。",
+    "ja": "きっと君、スナップショットの更新を忘れたんですね。",
     "en": "You must have forgotten to update the snapshots.",
     "alternatives": [
       "Looks like you forgot to update the snapshots.",
-      "I guess you forgot to update the snapshots."
+      "I bet you forgot to update the snapshots."
     ],
     "point": "過去への確信ある推量は must have + 過去分詞",
     "topic": "tech",
@@ -421,24 +513,33 @@
     "level": 7,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9x6c3y7n",
-    "ja": "この PR、テストが二つある。",
-    "en": "There are two tests in it.",
-    "alternatives": ["This PR has two tests.", "It has two tests."],
-    "point": "複数なので There are、tests と複数形に",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 1,
-    "grammar": ["there-is-are"],
-    "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:c6ea9b62e99b4a426247f011b76338e5bad68197cc883e64f9bc8ea11e844c2b",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:4dcbf3acfa79caa235478bc3d1d9c5caa351c0046014d9059e1e90df627e54c6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_9t3h8y3u",
+    "ja": "正直、この抽象化はやりすぎかもしれません。",
+    "en": "Honestly, this abstraction might be overkill.",
+    "alternatives": [
+      "To be honest, this abstraction may be a bit much.",
+      "Frankly, I think this abstraction is overkill."
+    ],
+    "point": "「かもしれません」は might で断定をやわらげる",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:914dad8e7b97614932bd19995f4e5e3b159760f365e79497b28e7542637b2579",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   }

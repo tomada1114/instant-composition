@@ -1,35 +1,113 @@
 [
   {
-    "id": "c_2j8v5b7y",
-    "ja": "学生のころピアノを続けとけばよかったなあ。",
-    "en": "I wish I'd kept playing piano as a student.",
+    "id": "c_2w7a6c6s",
+    "ja": "野外フェス、雨で中止になったんだって。",
+    "en": "Apparently, the festival was rained out.",
     "alternatives": [
-      "If only I'd stuck with the piano back then.",
-      "I wish I hadn't quit piano as a student."
+      "I heard the festival was rained out.",
+      "Apparently the festival was canceled due to rain."
     ],
-    "point": "過去の後悔は wish + had 過去分詞",
+    "point": "rain out は「雨で流れる」。受け身で言う",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 8,
-    "grammar": ["wishes-regrets"],
+    "level": 5,
+    "grammar": ["passive-voice", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:25c45dc1c7ed7e5e238a581a7178edcafce65e5e196f2ff9f20358e350727e39",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_2v5h7s6m",
-    "ja": "ギターはもうやめたの？昔はバンドにいた？",
-    "en": "Have you quit guitar? Were you in a band?",
+    "id": "c_3k6y6p5j",
+    "ja": "私には静かに充電できる週末が必要だ。",
+    "en": "I need a quiet weekend to recharge.",
     "alternatives": [
-      "You've given up guitar? Were you in a band?",
-      "Did you quit guitar? Were you in a band?"
+      "I need a quiet weekend to unwind.",
+      "I need a peaceful weekend to recharge."
     ],
-    "point": "「昔は」は過去形 were。「もうやめた」は現在完了が自然",
+    "point": "「〜するための」は名詞のあとに to+原形",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 8,
-    "grammar": ["tense-contrast"],
+    "level": 5,
+    "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:915db578e57656f47805f0b61607d5a69b3be91675a72784f8e7095ba8b0bbc5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_3q5b3s2b",
+    "ja": "父は釣り大会の列に並んだに違いない。",
+    "en": "Dad must have lined up for the fishing contest.",
+    "alternatives": [
+      "Dad must have queued up for the fishing contest.",
+      "I bet Dad lined up for the fishing contest."
+    ],
+    "point": "過去の強い推量は must have + 過去分詞で表す",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5dc8a18073cd697756252d202134f4e7968de8360eaf0e19caaacdde2f58319d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_3s3y3w6q",
+    "ja": "あのカフェに弟さんのゲームあるか知ってる？",
+    "en": "Any idea if that café has your brother's game?",
+    "alternatives": [
+      "Know if that café has your brother's game?",
+      "Do you know if they have your brother's game?"
+    ],
+    "point": "「〜かどうか」は if で、後ろは平叙文の語順",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 6,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:25ad71f5926b78a0080274367ca462efc6cda4c70d6f2d109aa1b32ce2ab774a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_3s6d6d6k",
+    "ja": "ケンは今週末に小説を書くって言ってたけど、どうだか。",
+    "en": "Ken said he'd write a novel this weekend. Yeah, right.",
+    "alternatives": [
+      "Ken said he'd write a novel this weekend. I doubt it.",
+      "Ken claimed he'd write a novel this weekend. Yeah, sure."
+    ],
+    "point": "「言ってた」に合わせて内容の will を would にずらす",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 9,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c191682604944260a333ed21135935754a51067a82b486c4ba89af8b924f52dd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3s7n3y5h",
@@ -45,52 +123,234 @@
     "level": 7,
     "grammar": ["hedging-softening", "indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2e8e49998c190dc9bb7cd01cebe670d8d922db62b09b05b777774962c10bbbfb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_3t8n4h3w",
-    "ja": "妹はインドア派なのに、週末はサーフィンだよ。",
-    "en": "Although she's indoorsy, my sister surfs on weekends.",
+    "id": "c_3u3f9k6t",
+    "ja": "早く登山を始めていれば、今ごろ体力があるのに。",
+    "en": "If I'd started hiking sooner, I'd be fitter now.",
     "alternatives": [
-      "My sister surfs on weekends despite being indoorsy.",
-      "My sister's indoorsy, but she surfs on weekends."
+      "If I'd taken up hiking earlier, I'd be fitter now.",
+      "If I'd gotten into hiking sooner, I'd be fitter now."
     ],
-    "point": "go surfing は to を付けない。although と but は併用しない",
+    "point": "過去の仮定+今の結果は if 節が had+過去分詞、主節は would be",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8caa03d9928946e2485f5b0bc641a9cb67677c024aa4fb9dde5dac8635269b12",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_3v4f6j5q",
+    "ja": "日曜は妻に頼まれて、結局庭仕事をするはめに。",
+    "en": "My wife asked, so I ended up gardening Sunday.",
+    "alternatives": [
+      "I ended up gardening Sunday because my wife asked.",
+      "My wife asked, so I wound up gardening Sunday."
+    ],
+    "point": "結局〜するはめに、は end up + 動詞ing",
     "topic": "daily",
     "subtopic": "hobbies",
     "level": 6,
-    "grammar": ["concession-contrast"],
+    "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e209bdfb4509e34f6a9f8a65625b86ba3a3e4923b54ee9ae25b1911828f055ef",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_4q9n7z3r",
-    "ja": "私がしたいのは、家にいることだけ。",
-    "en": "What I want is to stay home.",
-    "alternatives": ["All I want to do is stay home.", "I just want to stay home."],
-    "point": "「〜したいこと」は What I want を主語にする",
+    "id": "c_4a7w4f7f",
+    "ja": "時間ができたら、この本を読むよ。",
+    "en": "I'll read this book when I'm free.",
+    "alternatives": [
+      "I'll read this book when I have time.",
+      "When I have time, I'll read this book.",
+      "Once I'm free, I'll read this book."
+    ],
+    "point": "未来のことでも when 節は現在形（will を使わない）",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 5,
-    "grammar": ["noun-clauses"],
+    "level": 4,
+    "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b8d58b78873afe8738ed8c321972dd057c1c800a999e3c8f6f05c1bacba2d06a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_5f7x5m3r",
-    "ja": "先週の大会で誰が優勝したか、まだ見てないんだ。",
-    "en": "I haven't checked who won last week's tournament yet.",
+    "id": "c_4f6z2s8r",
+    "ja": "陶芸展は混むので、早めに行くといいですよ。",
+    "en": "You might want to go early; it gets packed.",
     "alternatives": [
-      "I still haven't looked up who won last week's tournament.",
-      "I haven't seen who won the tournament last week yet."
+      "It's worth going early; the show gets packed.",
+      "Better to go early; the show gets packed."
     ],
-    "point": "「誰が優勝したか」は who won と肯定文の語順で続ける",
+    "point": "やわらかい助言は You might want to。混む=get packed",
     "topic": "daily",
     "subtopic": "hobbies",
     "level": 7,
-    "grammar": ["indirect-questions", "present-perfect"],
+    "grammar": ["hedging-softening", "modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:224b57ec4f030d1b44a1053c462ef0b51ce11fb230c8ea93a8d270616c0064fd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_4f7y9d7d",
+    "ja": "晴れたら日曜はサイクリングに行くよ。",
+    "en": "If it's sunny, I'll go cycling Sunday.",
+    "alternatives": [
+      "I'll go cycling Sunday if it's sunny.",
+      "If the weather's nice Sunday, I'm going cycling."
+    ],
+    "point": "未来のことでも if 節の中は現在形（will は使わない）",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 4,
+    "grammar": ["time-and-if-clauses", "future-forms"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5ff15dd2bcad0be86e2ec6e149f8605274e10c88de7329c45bce1d36dc9a368e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_4p9u6h3h",
+    "ja": "たとえ雨でも土曜はみんなで山に登るよ。",
+    "en": "Even if it rains, we're hiking this Saturday.",
+    "alternatives": [
+      "Rain or shine, we're hiking this Saturday.",
+      "Even if it rains, we'll hike this Saturday."
+    ],
+    "point": "「たとえ〜でも」は even if。予定は進行形で言える",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 5,
+    "grammar": ["concession-contrast", "future-forms"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f23969f3b62a1cefcde9dfacdcf16151f5c2a75f5d783acb7520c13d0b9c0aa9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_4s5x2s2r",
+    "ja": "叔父が歩いたって言ってる山道、もう閉鎖されてるよ。",
+    "en": "The trail my uncle says he hiked is closed now.",
+    "alternatives": [
+      "That trail my uncle says he hiked has been closed.",
+      "My uncle says he hiked that trail, but it's closed."
+    ],
+    "point": "名詞の後ろに my uncle says he hiked と節を重ねる",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 8,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:28ca4c1eb960ee4f076e86be39fb3e054149acdb0d3034c6153ca87b4cb0587c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_4w4t9u4g",
+    "ja": "癒されるのはヨガじゃなく、川沿いの散歩です。",
+    "en": "It's riverside walks, not yoga, that help me unwind.",
+    "alternatives": [
+      "What helps me unwind isn't yoga but river walks.",
+      "Riverside walks, not yoga, are what help me unwind."
+    ],
+    "point": "It's B, not A, that で強調。that の後の動詞は B に合わせる",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e18830b99f9980fbd65c37f4812d97d7e8b35681d5818bffb69b5623e8a4b458",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_5a8f6x6a",
+    "ja": "あの棚のプラモデル、全部自分で作ったよ。",
+    "en": "I built every model on that shelf myself.",
+    "alternatives": [
+      "I made every model on that shelf myself.",
+      "Every model on that shelf, I built myself."
+    ],
+    "point": "「棚の」は on that shelf を名詞の後ろに置く",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f98238b1244830ae4b78e8873cbdf2cc7944a29967eac1982c96475b0970966",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_5k2h6f8v",
+    "ja": "買ったばかりの自転車に乗ってきたよ。",
+    "en": "I rode the bike I just bought.",
+    "alternatives": [
+      "I rode the bike that I just bought.",
+      "I went out on my new bike."
+    ],
+    "point": "bike の後ろに I just bought を直接続ける",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 4,
+    "grammar": ["relative-clauses", "post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:71e8565f588d9f92faaf654b164852c392f577bb4906bf3ea40699d47163a776",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5p4c6v4v",
@@ -103,10 +363,16 @@
     "point": "習慣は現在形、主語が三人称単数なので does",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 3,
+    "level": 2,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:afdcfd99e0c483799faaeecf8eea1dcbff98b43cb82e77a61d54bb38b04a024a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5x9q2q6e",
@@ -114,15 +380,21 @@
     "en": "I was gardening when you called.",
     "alternatives": [
       "When you called, I was gardening.",
-      "I was in the garden when you called."
+      "I was gardening when you phoned."
     ],
     "point": "途中だった動作は過去進行形、割り込んだ出来事は過去形",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 4,
-    "grammar": ["progressive-aspect", "time-and-if-clauses"],
+    "level": 3,
+    "grammar": ["progressive-aspect", "past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5463bf3ab0bedcbf558951a32421f46ba534770ae9d19ca128006e3ff1de6c9c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5z4d8a3t",
@@ -137,47 +409,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:352ea055267c0c71bcd5b3d478b27dd595d57f3d8e9a43e8e0f7b8d5c3fc4a1e",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
-  },
-  {
-    "id": "c_5z5x2r8t",
-    "ja": "弟さんが話してたゲーム、あのカフェに置いてるか知ってる？",
-    "en": "Do you know if they carry the game he mentioned?",
-    "alternatives": [
-      "Do you know whether that café has the game he mentioned?",
-      "Any idea if they have the game he mentioned?"
-    ],
-    "point": "「〜かどうか」は if/whether で、後ろは平叙文の語順",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 9,
-    "grammar": ["indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5z7k4m4y",
-    "ja": "新しいボルダリングジム、もう行ってみた？",
-    "en": "Have you tried the new bouldering gym yet?",
-    "alternatives": [
-      "Have you been to the new bouldering gym yet?",
-      "Have you checked out the new bouldering gym?"
-    ],
-    "point": "「もう〜した？」は現在完了の疑問文＋ yet",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 6,
-    "grammar": ["present-perfect"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:f70faf7b847e2126c347e4f9f43a88b21ddfbf3623cdc015d4bafc378977ef93",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:8a760659ad13799ea706121995a6f7f8ade23f4610fdf8fcbeb3050d7cce55f9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -197,9 +431,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:f567cb80188fc264abb8719200ef3c661836072f9c1305269530ac4e001c9214",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:a94458d7fe64ea05f0238aa5cadf406ae36c37ef7a9bd7c385df6a0383ed9fb0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -214,103 +448,189 @@
     "level": 2,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a30a0b09ab6eb1bb7be080cb36496c848876dee15125ae3864694d40495b69a3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_6s7n2x7q",
-    "ja": "山なら水を多めに持ってったほうがいいよ。",
-    "en": "In the mountains, you should bring extra water.",
+    "id": "c_6v3u3y3s",
+    "ja": "私はインドア派で、彼はいつも山に出かけてるの。",
+    "en": "I'm a homebody, whereas he's always out hiking.",
     "alternatives": [
-      "You should take plenty of water up there.",
-      "Bring extra water if you go hiking."
+      "I'm an indoor person, while he's always out hiking.",
+      "I stay in, whereas he's always out in the mountains."
     ],
-    "point": "「〜したほうがいい」は should で表す",
+    "point": "対比は whereas / while。インドア派=homebody",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 7,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:409da90e88336f1d441145f88289f635f87f56e6e561e43cc158eb5729770090",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_6z8e3x5v",
+    "ja": "今までで一番楽しかった趣味は何？",
+    "en": "What's the most fun hobby you've had?",
+    "alternatives": [
+      "What hobby has been the most fun?",
+      "Which hobby did you enjoy the most?"
+    ],
+    "point": "最上級 + you've had で「今までで」を表す",
     "topic": "daily",
     "subtopic": "hobbies",
     "level": 4,
-    "grammar": ["modal-obligation-advice"],
+    "grammar": ["comparatives-superlatives", "post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6u3r6y2q",
-    "ja": "早く出ていれば、場所取りできたのにね。",
-    "en": "If we'd left earlier, we'd have gotten a spot.",
-    "alternatives": [
-      "We could have gotten a spot if we'd left earlier.",
-      "If only we'd left earlier, we'd have gotten a spot."
-    ],
-    "point": "過去の仮定は had+過去分詞、結果は would have+過去分詞",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 8,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:50660aaa14641eb97336940ad431fe71b0a840528ea80f0b19d04fcc8b976da5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7a4q6w4p",
     "ja": "夫は日曜、ラジオを聞きながら庭いじりしてます。",
     "en": "My husband gardens on Sundays, listening to the radio.",
     "alternatives": [
-      "My husband spends Sundays gardening and listening to the radio.",
+      "My husband gardens on Sundays while the radio plays.",
       "On Sundays, my husband gardens with the radio on."
     ],
     "point": "「〜しながら」は文の後ろに -ing 形をつなげて表せる",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 7,
+    "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:81bdb7df332f183783e52700fb5d7d2eeb13307a8964f335c916bd16e94de699",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_7h3p6p5q",
-    "ja": "兄はキャンプ道具を磨くだけで、めったに使わない。",
-    "en": "My brother polishes his gear but rarely uses it.",
+    "id": "c_7f4j8a5a",
+    "ja": "週末、こんなにぐうたらじゃなければいいのに。",
+    "en": "I wish I weren't such a couch potato on weekends.",
     "alternatives": [
-      "My brother polishes his camping gear but seldom uses it.",
-      "My brother polishes his gear but hardly ever uses it."
+      "I wish I didn't laze around so much on weekends.",
+      "If only I weren't such a couch potato on weekends."
     ],
-    "point": "gear は数えられない名詞なので gears としない",
+    "point": "今の願望は wish + 過去形。be は weren't が定番",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:428e019baea46f0ea9bb4aca16b790d8ffcc12c20e12df325c2fed03073fa668",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_7q8m7e8u",
+    "ja": "こんなに忙しくなければ、陶芸教室に通うのにな。",
+    "en": "If I weren't so swamped, I'd be taking pottery classes.",
+    "alternatives": [
+      "If I weren't so busy, I'd take a pottery class.",
+      "I'd take pottery classes if I weren't so swamped."
+    ],
+    "point": "現在の仮定は if 節が were、主節が would + 動詞",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 7,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b64a22b3c12a0eed6ed2e7a254d941933ac156e2c93e3f474d03588d6a080c8b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_7z4x5c5t",
+    "ja": "ランニングを始めてなければ、今ごろ休日は退屈だ。",
+    "en": "If I'd never started running, days off would drag now.",
+    "alternatives": [
+      "If I'd never taken up running, days off would drag.",
+      "Without running, my days off would be boring now."
+    ],
+    "point": "過去の仮定と今の結果は If+had 過去分詞、would+原形",
     "topic": "daily",
     "subtopic": "hobbies",
     "level": 8,
-    "grammar": ["articles-and-countability"],
+    "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:db607a821acb57486a0856f23b10134d0092b101f55384180176355c5f3232a5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_7p5a5c7k",
-    "ja": "兄は釣り大会で夜明け前から並んだに違いない。",
-    "en": "My brother must have lined up before dawn.",
+    "id": "c_8e8w9k8v",
+    "ja": "君が薦めてくれた小説、週末で一気に読んだよ。",
+    "en": "I binge-read that novel you recommended over the weekend.",
     "alternatives": [
-      "My brother must have gotten in line before dawn.",
-      "My brother must have been in line before dawn."
+      "I devoured the novel you recommended in one weekend.",
+      "I read that novel you recommended straight through this weekend."
     ],
-    "point": "過去の強い推量は must have + 過去分詞で表す",
+    "point": "novel のあとの関係代名詞 that/which は省略できる",
     "topic": "daily",
     "subtopic": "hobbies",
     "level": 7,
-    "grammar": ["modal-perfect"],
+    "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1adbb2c288d6410900cd61183501c89a546a67dc3342fa142306ae9bc5aeea36",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_7v5w4x5q",
-    "ja": "ケンは今週末に小説を書くって言ってたけど、どうだか。",
-    "en": "Ken said he'd write a novel this weekend. Yeah, right.",
+    "id": "c_8f9p8x7m",
+    "ja": "君も昨日の釣り、来ればよかったのに。",
+    "en": "You should have come fishing yesterday.",
     "alternatives": [
-      "Ken said he'd write a novel this weekend. I doubt it.",
-      "Ken told me he'd write a novel this weekend. We'll see."
+      "You should have come fishing with us yesterday.",
+      "I wish you'd come fishing yesterday."
     ],
-    "point": "「言ってた」に合わせて内容の will を would にずらす",
+    "point": "「〜すればよかったのに」は should have + 過去分詞",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 9,
-    "grammar": ["reported-speech"],
+    "level": 6,
+    "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:97e50afc56b4184806407dfbe87519ce7c8917d07de72369981d46230d01e12a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8g2e5m7g",
@@ -329,42 +649,10 @@
     "stamps": {
       "core": {
         "hash": "sha256:0b6f820daf197276ab47f56b1ab05584cdf3b40c9af5af39d0db1e1f60891490",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_8g8n5c5m",
-    "ja": "週末がもっと長かったら、何か趣味を始める？",
-    "en": "If weekends were longer, would you take up a hobby?",
-    "alternatives": [
-      "Would you pick up a hobby if weekends were longer?",
-      "If the weekend were longer, would you start a hobby?"
-    ],
-    "point": "現実と違う仮定は if 節を過去形 were、主節は would に",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 8,
-    "grammar": ["second-conditional", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8q4b6n7a",
-    "ja": "うちは結婚以来、同じ場所でキャンプしてるよ。",
-    "en": "We've camped at the same place since marrying.",
-    "alternatives": [
-      "We've gone to the same campsite since our wedding.",
-      "We've been camping at the same place since marrying."
-    ],
-    "point": "since があるので現在形ではなく現在完了にする",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 6,
-    "grammar": ["present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_8q8j7v3c",
@@ -377,10 +665,16 @@
     "point": "「はまる」は get into。今の状態は現在完了で言う",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 10,
-    "grammar": ["phrasal-verbs"],
+    "level": 6,
+    "grammar": ["phrasal-verbs", "present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5ae9b9e15ca86477f6bf3e7490c198db7310fc32d6c1eb1c07d6524b428796c0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8r3w6n5c",
@@ -396,23 +690,13 @@
     "level": 2,
     "grammar": ["wh-questions", "be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8v7d9n8k",
-    "ja": "バイクを持って行った店が、もう閉店していたんだよ。",
-    "en": "The shop where I took my bike had closed.",
-    "alternatives": [
-      "The shop I took my bike to had closed.",
-      "The shop I'd taken my bike to had closed down."
-    ],
-    "point": "行った時点より前の出来事は過去完了 had closed",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 8,
-    "grammar": ["past-perfect", "relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5ec0014db0e9c3fe35026e8bc514b8b59054c22bf42f97dbbb8eb4a7db8fb5be",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8v9m4w2r",
@@ -428,24 +712,13 @@
     "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8w6a8d3y",
-    "ja": "私が癒されるのはヨガじゃなくて、川沿いの散歩なんです。",
-    "en": "It's riverside walks, not yoga, that help me unwind.",
-    "alternatives": [
-      "What helps me unwind isn't yoga but walks by the river.",
-      "It's walking by the river, not yoga, that relaxes me.",
-      "Riverside walks, not yoga, are what help me unwind."
-    ],
-    "point": "It's B, not A, that で強調。that の後の動詞は B に合わせる",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 10,
-    "grammar": ["cleft-emphasis"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:75867deae101edc30264fe5bf4349478f56b0e4c113992fad0cc2edeba9d553c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9d4j4f4v",
@@ -458,18 +731,24 @@
     "point": "「らしい」は apparently や I hear で伝聞のニュアンスを出す",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 9,
+    "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e611f6aeaba930c2c509c54e23297df2816c2b70cdf1a8d7d2c19b622763ee3f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9q3j7k8n",
     "ja": "日曜は一日中、映画を観てたよ。",
     "en": "I watched movies all day Sunday.",
     "alternatives": [
-      "I watched movies all day last Sunday.",
-      "I spent all day Sunday watching movies."
+      "I spent all day Sunday watching movies.",
+      "I watched movies all day on Sunday."
     ],
     "point": "「一日中」は all day。the や a をつけない",
     "topic": "daily",
@@ -477,6 +756,34 @@
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c3adac984dbb50a81a8f7e0ec901f43dd053fc7856965a779b45d2670705b87c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_9r7d9x2k",
+    "ja": "私たちが着くころには、花火はもう終わってた。",
+    "en": "When we arrived, the fireworks had already ended.",
+    "alternatives": [
+      "The fireworks had finished by the time we arrived.",
+      "The fireworks were over when we got there."
+    ],
+    "point": "着いた時点より前に終わったことは had+過去分詞",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5af8133bccaf43a2bdf8cceb3ac291be47ca404f90a8e47bc7e0407be7440148",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]

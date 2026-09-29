@@ -1,21 +1,5 @@
 [
   {
-    "id": "c_2g3z6a2v",
-    "ja": "返品するのにレシートは必要ですか？",
-    "en": "Is a receipt needed to return it?",
-    "alternatives": [
-      "Do I need a receipt to return it?",
-      "Do I need a receipt for a return?"
-    ],
-    "point": "目的の「〜するのに」は to 不定詞で文末に置ける",
-    "topic": "daily",
-    "subtopic": "shopping",
-    "level": 4,
-    "grammar": ["infinitives", "passive-voice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2k5r6p8q",
     "ja": "この近くに文房具屋、ありますか？",
     "en": "Is there a stationery store near here?",
@@ -31,9 +15,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:3ecc3280fbe710dfefcb2a1660b0a04b67302efe0c4b0e4a3fe9569e5de5fac8",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:c25a232d0395505359f159525075c584e55b7b3e353e60c6fcdd97fa01c510bc",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -51,7 +35,13 @@
     "level": 7,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a9b63470dd9ab7742d284014d83127038ba72e792851467a9761c616fe3258f3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2n2p4e4w",
@@ -64,11 +54,77 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:03f399c4d97c90b8ff40a3351756488d5b67e09fb3d9077e62f8e90c4fee64d6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_2p5y4b7j",
+    "ja": "見てるだけです、ありがとう。",
+    "en": "I'm just looking, thanks.",
+    "alternatives": ["I'm only looking, thank you.", "Just looking, thank you."],
+    "point": "「見ているだけ」は進行形で I'm just looking",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 3,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ebb1b2d3ff5f061ea695a48a7d859f815e66ac3e5244397740eb123ddc08ce4b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_2t5e9h4d",
+    "ja": "店員に在庫を調べてほしいんだ。",
+    "en": "I want the clerk to check the stock.",
+    "alternatives": [
+      "I'd like the clerk to check the stock.",
+      "I want a clerk to check the stock."
+    ],
+    "point": "want + 人 + to do。want the clerk check とは言わない",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 4,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dadbff839d6169bc5fb3e7f22b84a09cf21126f27d345a98a395f89f08cf880f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_2t8z4s7a",
+    "ja": "彼女は今、レジで払ってるよ。",
+    "en": "She's paying at the register.",
+    "alternatives": ["She's paying at the checkout.", "She's paying at the counter."],
+    "point": "今している最中は be + 動詞ing。pay の ing は paying",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e84098cc4febb7a1080b5da181fbbeda17f497e2ef11e1d5a24215fb24eb434f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2v8d8w6f",
-    "ja": "セールって知ってたら、二つ買ったのに。",
+    "ja": "知ってたら、二つ買ったのに。",
     "en": "If I'd known, I'd have bought two.",
     "alternatives": [
       "I'd have bought two if I'd known.",
@@ -80,43 +136,39 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a849bb77d576e47fa6a212736ca24e1f95044c8a0e86f7bca38d0744fc071afb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_2w6s5t4z",
-    "ja": "先にこのスニーカー、履いてみてもいいですか？",
-    "en": "Could I try these sneakers on first?",
+    "id": "c_3f4x3m5r",
+    "ja": "試着室が混んでても、待つよ。",
+    "en": "Even if the fitting room's packed, I'll wait.",
     "alternatives": [
-      "Is it okay if I try these sneakers on?",
-      "Can I try on these sneakers first?"
+      "I'll wait even if the fitting room's crowded.",
+      "I'll still wait if the fitting room's full."
     ],
-    "point": "「試しに履く」は try on。代名詞なら try them on の語順",
+    "point": "Even if の節は未来のことでも現在形で言う",
     "topic": "daily",
     "subtopic": "shopping",
-    "level": 7,
-    "grammar": ["phrasal-verbs", "requests-permission"],
+    "level": 5,
+    "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3h6f4e4s",
-    "ja": "土曜に冷蔵庫が届くから、誰か家にいてくれる？",
-    "en": "Could someone be home Saturday when the fridge arrives?",
-    "alternatives": [
-      "Can somebody be home when the fridge arrives Saturday?",
-      "Could someone stay home Saturday for the fridge delivery?"
-    ],
-    "point": "「届くとき」の when 節は未来のことでも現在形 arrives",
-    "topic": "daily",
-    "subtopic": "shopping",
-    "level": 7,
-    "grammar": ["requests-permission", "time-and-if-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f4b3e6201a877171369b4f4e926c46946b757bc15d7156092b91aeabbe289c5f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3p2q5y7a",
-    "ja": "先週買ったこのコート、返品できないかなと思いまして。",
+    "ja": "このコート、返品できないかなと思いまして。",
     "en": "I was wondering if I could return this coat.",
     "alternatives": [
       "I was hoping I could return this coat.",
@@ -125,10 +177,60 @@
     "point": "「できないかと思って」は I was wondering if で過去形にして和らげる",
     "topic": "daily",
     "subtopic": "shopping",
-    "level": 10,
+    "level": 6,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:850ffe48465eab7c8e2ef1a853f0ebd0e97d82b06ab10a9df956581518f9c6b3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_4q7d2w7d",
+    "ja": "レシートなしでも返品できますか？",
+    "en": "Can I return it without a receipt?",
+    "alternatives": [
+      "Could I return it without a receipt?",
+      "Can I return it without one?"
+    ],
+    "point": "「〜なしで」は without + 名詞",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 3,
+    "grammar": ["requests-permission", "can-could-ability"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6ebb3cad7de0219f54cf35ee3ba9b029561a4bb48e65fab446e9e618956196e1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_4s4j3a8j",
+    "ja": "気になるのは、このカメラの保証期間なんです。",
+    "en": "What worries me is this camera's warranty period.",
+    "alternatives": [
+      "What I'm concerned about is this camera's warranty.",
+      "The thing that worries me is the camera's warranty."
+    ],
+    "point": "「気になるのは〜」は What worries me is 〜 で言える",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4c90b5ff1c201799e250911ff47e9d147e489eb3b890a59504c2f3747bb33fe5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4z8y4k5f",
@@ -144,15 +246,21 @@
     "level": 6,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:428f601e7ca495c7dde2d4940829574923fde0b4cb49c8c5a2e32d982b71f33f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5b5w7p7n",
     "ja": "このコート、返品か交換かで迷ってる。",
-    "en": "I'm torn between returning and exchanging it.",
+    "en": "I'm torn between returning it and exchanging it.",
     "alternatives": [
-      "I can't decide between returning and exchanging it.",
-      "I'm torn between returning it and exchanging it."
+      "I'm torn between a return and an exchange.",
+      "I can't decide whether to return or exchange."
     ],
     "point": "between の後は returning と exchanging を動名詞でそろえる",
     "topic": "daily",
@@ -160,23 +268,35 @@
     "level": 5,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a2ba5d3ef3571d40848e5c781eb9cb55eee7244716ecf88ca0cf6b14c724b510",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_5g2n5m3v",
-    "ja": "ネットのほうが安いと知りつつ、父は近所の店で買うと言う。",
-    "en": "Even though it's cheaper online, my dad says he'll buy locally.",
+    "id": "c_5c9a8w9r",
+    "ja": "昨日買ったシャツ、返品できますか？",
+    "en": "Can I return this shirt I bought yesterday?",
     "alternatives": [
-      "My dad says he'll buy locally, even though it's cheaper online.",
-      "My dad knows it's cheaper online, but says he'll buy locally."
+      "Can I return the shirt I bought yesterday?",
+      "Could I return the shirt I got yesterday?"
     ],
-    "point": "「知りつつ」は事実なので even if ではなく even though",
+    "point": "「昨日買ったシャツ」は shirt の後ろに I bought yesterday を置く",
     "topic": "daily",
     "subtopic": "shopping",
-    "level": 10,
-    "grammar": ["concession-contrast", "reported-speech"],
+    "level": 4,
+    "grammar": ["post-modification", "relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ed0b584b2a4fd765ac687791da2e8c90f40fa0f1ffe834d8feb78129fad7845c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5p3j6r4j",
@@ -192,7 +312,13 @@
     "level": 7,
     "grammar": ["articles-and-countability", "time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c069b5bdce06808cc2f6a2f3251960bfe572a349fc32bc501a1a061d3be6c1fe",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5q3z8a7y",
@@ -200,7 +326,8 @@
     "en": "Has this model been discontinued?",
     "alternatives": [
       "Is this model discontinued?",
-      "Have they stopped making this model?"
+      "Have they stopped making this model?",
+      "Has this model already been discontinued?"
     ],
     "point": "「販売終了になった」は現在完了の受け身",
     "topic": "daily",
@@ -208,23 +335,13 @@
     "level": 5,
     "grammar": ["passive-voice", "present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5t9c8b5p",
-    "ja": "レシートなしでも返品できますか？",
-    "en": "Can I return it without a receipt?",
-    "alternatives": [
-      "Could I return it without a receipt?",
-      "Is it okay to return it without one?"
-    ],
-    "point": "「〜なしで」は without + 名詞",
-    "topic": "daily",
-    "subtopic": "shopping",
-    "level": 5,
-    "grammar": ["requests-permission", "can-could-ability"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3323c4ba2979946a0ea58162fbad6b3f4fa1fbbe8426dfe7b1b1d125abfaa23c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6e5s4a3h",
@@ -232,15 +349,44 @@
     "en": "I found half-price shoes online.",
     "alternatives": [
       "I found shoes online for half price.",
-      "Online, I found shoes half off."
+      "I found shoes online at half price."
     ],
     "point": "「見つけた」は過去形 found。half-price は名詞の前でつなぐ",
     "topic": "daily",
     "subtopic": "shopping",
-    "level": 3,
+    "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:76bf41c299b47c3804cbb104068cc4483c0796239b89b8cd43179da6b578df3b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_6n3v9q9g",
+    "ja": "返品期限が過ぎたと気づき、彼女はあきらめた。",
+    "en": "Realizing the return window had closed, she gave up.",
+    "alternatives": [
+      "Realizing the return deadline had passed, she gave up.",
+      "She gave up after realizing the return window had closed.",
+      "She realized the return window had passed and gave up."
+    ],
+    "point": "気づいた時点が先なので分詞構文は Realizing で始める",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["participle-clauses", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9619cf2e0606a15506895a55cf9d32c76bf7201ceca9a44f897c59fc2eede183",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6n6k5y5q",
@@ -248,8 +394,8 @@
     "en": "It shipped last week but hasn't arrived.",
     "alternatives": [
       "It was shipped last week but hasn't arrived.",
-      "It was sent last week but hasn't come.",
-      "It shipped last week but still hasn't come."
+      "It shipped last week but still hasn't arrived.",
+      "It shipped last week but hasn't come yet."
     ],
     "point": "発送は過去形、「まだ届かない」は現在完了 hasn't arrived",
     "topic": "daily",
@@ -257,39 +403,13 @@
     "level": 5,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6s4u2q9k",
-    "ja": "母はあのコートを交換してもらった。",
-    "en": "My mom exchanged that coat.",
-    "alternatives": [
-      "My mom got that coat exchanged.",
-      "My mom swapped that coat for another."
-    ],
-    "point": "「交換した」は exchanged。過去形の -ed を忘れずに",
-    "topic": "daily",
-    "subtopic": "shopping",
-    "level": 3,
-    "grammar": ["past-simple"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6z9q2c2r",
-    "ja": "この二つ、比べられないな。",
-    "en": "I can't compare these two.",
-    "alternatives": [
-      "I can't compare these two well.",
-      "It's hard to compare these two."
-    ],
-    "point": "「比べられない」は can't compare。these two と複数形に",
-    "topic": "daily",
-    "subtopic": "shopping",
-    "level": 1,
-    "grammar": ["can-could-ability"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:59bf91c145b04695fc2e17916102cb3935da8c0b74d30a13c5c47dbc3e97bde7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7a3v9n6k",
@@ -305,7 +425,35 @@
     "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:64de18ce7d53cb438370d4f2b9d6b884a4cd1ae9a5d40caf34130337e0dca891",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_7r7h4p5f",
+    "ja": "あの店員、返金を断っただけでなく謝りもしなかったんだ。",
+    "en": "Not only did the clerk refuse a refund, he didn't even apologize.",
+    "alternatives": [
+      "The clerk not only refused a refund but didn't even apologize.",
+      "The clerk refused a refund and didn't even apologize."
+    ],
+    "point": "Not only を文頭に出すと did + 動詞原形の倒置になる",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:497cd8c0345c6d0a3e2e92ba7c14926b2bd00138acd962db32c816dfa1733b56",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7t9h5p2u",
@@ -323,31 +471,31 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:0257afb1a1d030d19a845ea31e4496e1309bbf6b59ef97741546a7bd8f8952d4",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:46377755130e0c02057b9fb49a9afb0915f01d3ce2605f88050142d98c042083",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
   {
-    "id": "c_8b7s9n6p",
-    "ja": "どの充電器か分からず、彼は店員に聞いてみた。",
-    "en": "Unsure which charger to buy, he asked a clerk.",
+    "id": "c_7x5m3h4m",
+    "ja": "これ、どこで売ってるか店員に聞いて。",
+    "en": "Ask the clerk where they sell this.",
     "alternatives": [
-      "Not knowing which charger to buy, he asked a clerk.",
-      "Unsure which charger to get, he asked a salesperson."
+      "Ask the clerk where I can get this.",
+      "Ask a clerk where this is sold."
     ],
-    "point": "分詞構文は主語を省き、否定は Not や Unsure を先頭に置く",
+    "point": "間接疑問は where のあと they sell の語順にする",
     "topic": "daily",
     "subtopic": "shopping",
-    "level": 8,
-    "grammar": ["participle-clauses", "indirect-questions"],
-    "createdAt": "2026-09-22",
+    "level": 5,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-28",
     "stamps": {
       "core": {
-        "hash": "sha256:622efccd63b531ceeead7f068010f95c52ba2b7381fc09ff7a7e183e11b03ea1",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:ef9ff59cfdf0abf24a88667a8e6228aaa2e8770c92216129f7401e6417e5abd4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -365,7 +513,13 @@
     "level": 5,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b781b1c5f331b42a5b4382f8410a1d32a119e70e216ac1081d888b5efe8a86dc",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8s9n3v4v",
@@ -381,7 +535,13 @@
     "level": 7,
     "grammar": ["requests-permission", "post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:345011a0b3fc71fe9a22bea92c7a94cb7d55336807195eeec5e479e028371030",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8t7s4r7b",
@@ -397,23 +557,35 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:900012073c83101a8805587b138bc20fb3f64a6af3c5a9a282b6c6dae6376489",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_8x5e3b8h",
-    "ja": "レシートあれば返品OKです。",
-    "en": "Returns are fine with a receipt.",
+    "id": "c_8t8a5a9r",
+    "ja": "注文する前にレビューを確認しておくべきだった。",
+    "en": "I should have checked the reviews before ordering.",
     "alternatives": [
-      "A receipt lets you return it.",
-      "It's returnable with a receipt."
+      "I should have read the reviews before I ordered.",
+      "I should've looked through the reviews before buying it."
     ],
-    "point": "receipt は数えられる名詞なので a receipt と冠詞をつける",
+    "point": "「〜すべきだった」は should have + 過去分詞",
     "topic": "daily",
     "subtopic": "shopping",
-    "level": 1,
-    "grammar": ["articles-and-countability", "be-and-present-simple"],
+    "level": 6,
+    "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f4e46520ab4390aa83cf9fa306c0b2b9541b26ff75df13983f5722db4c1a25c5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8z3c6y3p",
@@ -429,7 +601,32 @@
     "level": 9,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7eeb11e970e4840490ff5dcc23f7bf906763d7945d03ce82b6623c30aa617f9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_9c4z9e9b",
+    "ja": "小さいの、見せて。",
+    "en": "Show me a smaller one.",
+    "alternatives": ["Let me see a smaller one.", "Show me a smaller size."],
+    "point": "命令文は動詞で始める。「小さいの」は a smaller one",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6001e491b1d63c7332f0f2d8002a5babcf0f4205f06abdd582a51ae22e818065",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9p2u8e9f",
@@ -445,7 +642,57 @@
     "level": 6,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:643d1823b9b8b4e724aa2226271c9e8f6234ef4bff54a763c0e1b209934a9b82",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_9q2c9m9f",
+    "ja": "着いたときには、もうセールは終わってた。",
+    "en": "The sale had already ended when I arrived.",
+    "alternatives": [
+      "The sale had already finished when I arrived.",
+      "The sale was already over when I arrived."
+    ],
+    "point": "着く前に終わっていた出来事は過去完了 had ended",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 5,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0e61f5b68eb2ddcac707bc8b732e99c4697c435cc875e7758a76baf50d22a281",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_9s7x6w3u",
+    "ja": "この靴、合わなかったので返品しに来ました。",
+    "en": "I came to return these shoes. They didn't fit.",
+    "alternatives": [
+      "I'm here to return these shoes. They didn't fit.",
+      "These shoes didn't fit. I came to return them."
+    ],
+    "point": "「〜しに来た」は came to + 動詞の原形",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 6,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bb232be16f2b4cc95a8682bdbd4642d7db4d3ea1926ec4ed77ecbda78acd3813",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9y2t7s9v",
@@ -462,6 +709,12 @@
     "level": 5,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2e509b8f552e1b521878950901749a44ed5e63af9ea36faeb35ad841925623a2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]

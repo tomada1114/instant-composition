@@ -1,19 +1,47 @@
 [
   {
-    "id": "c_2e6s6p8s",
-    "ja": "壊したのは更新じゃなくて鍵の入れ替え、で合ってる？",
-    "en": "Was it the key swap, not the upgrade, that broke it?",
+    "id": "c_2c9b8n9k",
+    "ja": "あの警告が、ログにあってずっと気になっています。",
+    "en": "That warning in the logs has been bothering me.",
     "alternatives": [
-      "Are you sure the key swap broke it, not the upgrade?",
-      "Was it the key swap rather than the upgrade that broke it?"
+      "That warning in the logs keeps bothering me.",
+      "That warning in the logs keeps nagging at me."
     ],
-    "point": "It was A, not B, that で原因を強調する",
+    "point": "名詞の後ろに前置詞句を置いて「〜にある警告」",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 10,
-    "grammar": ["cleft-emphasis"],
+    "level": 7,
+    "grammar": ["post-modification", "present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:aef401fdd334a2fca8c1b5a813b1395cdb0f7d7f7596b9d9feaf51d474b27b8f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_2k2x5j2r",
+    "ja": "このエラーに遭遇するユーザーが、増え続けています。",
+    "en": "The number of users hitting this error keeps growing.",
+    "alternatives": [
+      "More and more users are hitting this error.",
+      "The number of users hitting this error is going up."
+    ],
+    "point": "「〜するユーザー」は -ing で後ろから修飾",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 7,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:491ba36c6cf4f64d0c91893db48b9c629ca2c80aa3a90cd2a6c833cf8ac839ea",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2q9z3j2c",
@@ -31,32 +59,38 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:0b8752cd6609adc226f72c1279912ebac10d1877eebe01f08da4e80912d5511d",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:26b84ff1c7a092175f50cb01f8f5ed718fe1938019010df54d2e93b33138e8bb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
   {
-    "id": "c_2r5t3u8h",
-    "ja": "ログをもっと仕込んでおけばよかったなあ。",
-    "en": "I wish we'd added more logging.",
+    "id": "c_2s3r9j9u",
+    "ja": "私は再現手順の絞り込みに、丸一日かけた。",
+    "en": "I spent all day narrowing down the repro steps.",
     "alternatives": [
-      "We should have added more logging.",
-      "I wish we had put in more logging."
+      "Narrowing down the repro steps took me all day.",
+      "I spent a whole day narrowing down the steps."
     ],
-    "point": "過去の後悔は I wish + had 過去分詞",
+    "point": "spend＋時間＋ -ing、「絞り込む」は narrow down",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
-    "grammar": ["wishes-regrets"],
+    "level": 6,
+    "grammar": ["gerunds", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:713909b8ebedb911cc158438d376913c38a70e12d78ec45d40ba54c1f38e21e8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2s7z5w6u",
     "ja": "ログインで落ちるだけでなく、下書きまで消えます。",
-    "en": "Not only does it crash on login, it deletes drafts.",
+    "en": "Not only does it crash on login, it even deletes drafts.",
     "alternatives": [
       "Not only does it crash at login, but drafts vanish too.",
       "It doesn't just crash on login; it also deletes drafts."
@@ -67,39 +101,120 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e579e902255fc4c3e6a8d73ce0c28395651b656bcfd7b73c194d41651a69ddda",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_2t6s6z7g",
-    "ja": "彼女によると、画像を上げるとデータが一部消える。",
-    "en": "She says some data disappears when she uploads images.",
+    "id": "c_2t6p5e6u",
+    "ja": "報告した人に、もう一度試すよう頼んで。",
+    "en": "Ask the person who reported it to retry.",
     "alternatives": [
-      "According to her, some data vanishes after uploading images.",
-      "She says some data gets lost when she uploads images."
+      "Ask whoever reported it to try again.",
+      "Please ask the reporter to try again."
     ],
-    "point": "data は数えられないので some data に単数動詞",
+    "point": "「頼む」は ask + 人 + to do。that ではない",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
-    "grammar": ["articles-and-countability"],
+    "level": 4,
+    "grammar": ["verb-object-to-do", "relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b46ec90007d218466b3bc63c15175f289afec3cabc417fff205b3f71c974705f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_2u6u3a2t",
+    "ja": "私たちには再現手順を聞くしか手がなかった。",
+    "en": "Our only option was to ask for repro steps.",
+    "alternatives": [
+      "We could only ask for repro steps.",
+      "All we could do was ask for repro steps."
+    ],
+    "point": "「〜するしかない」は only option was to + 動詞",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 6,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6d1b4ecfa8ea8539849201c33ee05d9454c16404d745af9f054d2000b64f92f9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_2v2e7q5v",
+    "ja": "このバグは先週入り込んだようだ。",
+    "en": "This bug seems to have crept in last week.",
+    "alternatives": [
+      "It looks like this bug crept in last week.",
+      "This bug appears to have slipped in last week."
+    ],
+    "point": "seem to have + 過去分詞で「〜したようだ」",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 6,
+    "grammar": ["infinitives", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:adf8f975e935a04617072c159635fc8ea96747afd3b4e6009243d07ab9845bcf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2y4f2r4r",
     "ja": "もしかして、タイムゾーンのせいではないでしょうか？",
-    "en": "Could it possibly be the time zone?",
-    "alternatives": [
-      "Is it possible that it's the time zone?",
-      "Might the time zone be the cause?"
-    ],
+    "en": "Could it be the time zone?",
+    "alternatives": ["Maybe it's the time zone?", "Is it the time zone, maybe?"],
     "point": "「もしかして」は Could it be で柔らかく切り出す",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f83b06c793469e426e24c34259682bf6c6dae6746c29c9c90e7bef197f1f885e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_2y9y9j3c",
+    "ja": "彼が言うには、私たちが直したはずのバグが再発した。",
+    "en": "He says the bug we thought we'd fixed has resurfaced.",
+    "alternatives": [
+      "He says the bug we thought we'd fixed is back.",
+      "He says the bug we thought was fixed is back."
+    ],
+    "point": "「直したはずの」は the bug we thought we'd fixed",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["nested-clauses", "reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:648a9f47458565b0407a71215a34afbee97632285b71ce720f61fdf550fc3ee0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3f2r9q9t",
@@ -115,7 +230,13 @@
     "level": 8,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1cc748e1a5efb56514ece55b4fc355d6716d5f9847a6d0f9c37d778310eedad0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3f4t5t2z",
@@ -128,14 +249,42 @@
     "point": "結果は leaving a blank screen と分詞で後ろにつなぐ",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 7,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6e1c2d1adf5f1a5e18cc30a71f945bd7e798b2e6323ee193dcd538072e2e6e03",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_3f7d4j7e",
+    "ja": "更新でキャッシュ設定が書き換えられていた。",
+    "en": "Cache settings had been overwritten by the update.",
+    "alternatives": [
+      "The update had overwritten the cache settings.",
+      "Cache settings had been changed by the update."
+    ],
+    "point": "「書き換えられていた」は had been + 過去分詞",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 6,
+    "grammar": ["past-perfect", "passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4166493634752ae068fd058c3d05707c4a6dee6fda4d339668afa5a4046b7b44",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3g6j8f8m",
-    "ja": "彼がエラー処理をしていれば、今こんなに追われていない。",
+    "ja": "彼がエラー処理していれば、今こんなに追われてない。",
     "en": "If he'd handled the errors, we wouldn't be swamped now.",
     "alternatives": [
       "We wouldn't be swamped now if he'd handled the errors.",
@@ -144,10 +293,16 @@
     "point": "過去の仮定と今の結果は had done と would be ~ed",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 10,
+    "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1d1cbafa5c695219bd241499bf258e557557e156406781f2ecc94ff57066c0c4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3j7f3q8z",
@@ -160,23 +315,79 @@
     "level": 1,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:22daa9ebc69245820bcbdd8c2cfda9b62fee67cc3cce796d850155a9b039b3d8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_3s8q3r2c",
-    "ja": "もしライブラリのせいなら、ステージでも落ちるよね？",
-    "en": "If it were the library, staging would crash too.",
+    "id": "c_3p4k3y9t",
+    "ja": "障害は、期限切れの証明書が原因だった。",
+    "en": "The outage was triggered by an expired certificate.",
     "alternatives": [
-      "If the library were to blame, staging would crash too.",
-      "If it were the library, wouldn't staging crash too?"
+      "An expired certificate caused the outage.",
+      "The outage was due to an expired certificate."
     ],
-    "point": "現在の仮定は were、帰結は would で言う",
+    "point": "原因は be triggered by や due to で表す",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 7,
-    "grammar": ["second-conditional"],
+    "level": 5,
+    "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:60f678df99410a3aa02794f301a56026d416177042ca5eb4acd9e9eeda37aa16",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_3p5y8e3d",
+    "ja": "メモリ使用量が木曜からじわじわ増え続けてる。",
+    "en": "Memory usage has been creeping up since Thursday.",
+    "alternatives": [
+      "Memory usage has been slowly climbing since Thursday.",
+      "Memory consumption has been steadily rising since Thursday."
+    ],
+    "point": "今も続く変化は has been ~ing で表す",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:012d4756fb1b1c8d8da039b02e3a07cd39b57a2f279765f5da7884855371f9b7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_3q9c9p6t",
+    "ja": "月曜から、テストが不安定になってきている。",
+    "en": "Tests have been getting flaky since Monday.",
+    "alternatives": [
+      "Since Monday, the tests have been getting unreliable.",
+      "Tests have been getting unstable since Monday."
+    ],
+    "point": "変化が進行中なら have been getting",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:36e2d973e4395b284be12b4d207ad2c59fba0e8553e4ff60a4df8bf7656d91c8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3w6y7f3n",
@@ -192,23 +403,35 @@
     "level": 3,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fd86e6c464b19467a336709cf4318c7d5022d59ec8478caa2e9d24224495cdc1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_4b9w6t9f",
-    "ja": "このエラー、3回出たけど昨夜は出なかった。",
-    "en": "This error's happened three times, but not last night.",
+    "id": "c_4b3z2f9t",
+    "ja": "原因のコミットを一つに絞り込んでもらえますか？",
+    "en": "Could you bisect it down to a single commit?",
     "alternatives": [
-      "We've had this error three times, but not last night.",
-      "I've seen this error three times, but not last night."
+      "Can you narrow it down to one commit?",
+      "Could you pin it down to a single commit?"
     ],
-    "point": "回数は現在完了、last night は過去の時点なので使い分ける",
+    "point": "「絞り込む」は bisect/narrow/pin it down to ~ の形",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 7,
-    "grammar": ["tense-contrast"],
+    "level": 6,
+    "grammar": ["requests-permission", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f2562deed73a25e56f58016da1f079e007eba372ae0031fb6b21812b8ed5f0a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4g7z6c8y",
@@ -221,10 +444,16 @@
     "point": "見直すは go over、絞り込むは narrow down",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 6,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ce0ceed6b3c09d6d6c5c1f47b44bd89277cd1ef9abcec5f8e7c3d72b1c51eb11",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4j3y4r6w",
@@ -240,26 +469,10 @@
     "stamps": {
       "core": {
         "hash": "sha256:7e3efe8486c9c53d0a5b9f014923a42536c82a6d7d638c5e42647b70fb4e228e",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_4m7d7j7s",
-    "ja": "このページ、朝からずっと遅い。",
-    "en": "This page has been slow since morning.",
-    "alternatives": [
-      "This page has been slow all morning.",
-      "The page has been slow since this morning."
-    ],
-    "point": "朝から今まで続く状態は現在完了の has been で",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 4,
-    "grammar": ["present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_4m9y8p4e",
@@ -275,7 +488,13 @@
     "level": 7,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:696b66523fb3dbaf966013f15f2003c241f2a4d26e772f9652e2c1c78996ec13",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4t5w9r3g",
@@ -288,10 +507,38 @@
     "point": "過去の後悔は wish の後を過去完了 I'd checked に",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 7,
+    "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ea8613a84bd472ad2b5fd4a0f685043f9d1516ecada0d1c4745ef201696c110a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_4u8m7g6c",
+    "ja": "見たら、ログはもうローテーションされていた。",
+    "en": "When I looked, the logs had already rotated.",
+    "alternatives": [
+      "By the time I looked, the logs had rotated.",
+      "When I checked, the logs had already rotated."
+    ],
+    "point": "見た時点で完了済みなら had + 過去分詞",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3603c52b748bed151a125810c667ba149da30540513a58c4ea474dd66adb27a3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4v6w6x7m",
@@ -307,23 +554,57 @@
     "level": 7,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d7a8cccfdd5ff55c9b99901237c37482040f87bb91ad915685538f826659b5f4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_5b6v8c8f",
-    "ja": "QA の誰かに、これを再現してもらえますか？",
-    "en": "Could you have someone in QA reproduce this?",
+    "id": "c_4x8x8h3k",
+    "ja": "決済のどこかに競合状態がある、と私は踏んでいます。",
+    "en": "I've got a hunch there's a race condition somewhere in checkout.",
     "alternatives": [
-      "Could you get someone in QA to reproduce this?",
-      "Can you get QA to try reproducing this?"
+      "My hunch is there's a race condition somewhere in checkout.",
+      "I suspect a race condition is lurking somewhere in checkout."
     ],
-    "point": "have 人 do は原形、get 人 to do は to 不定詞",
+    "point": "「競合状態」は可算名詞なので a が必要",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
-    "grammar": ["causatives"],
+    "level": 10,
+    "grammar": ["articles-and-countability", "noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d1f8b15295285e23759fdd61cde6038e127c224cc58347e96a33db4050753bc2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_5c2p6f3t",
+    "ja": "あのジョブ、朝から同じ工程で止まったままなんだ。",
+    "en": "That job's been stuck on one step since morning.",
+    "alternatives": [
+      "That job has been hanging on one step since morning.",
+      "Since morning, that job has been stuck on one step."
+    ],
+    "point": "今も続く状態は has been + 形容詞 + since",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 7,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:32c6841f4c9af331f2f80dc8e2660ec4502ac60b4b5ba4d897d04a25c4a8e1e9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5f7b4a3n",
@@ -339,7 +620,13 @@
     "level": 7,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0425faf7449407069906da407144ace4f39505c5acf82c540f1753b06c0c4870",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5y9r6w5n",
@@ -352,10 +639,60 @@
     "point": "過去の確信は must have been + 過去分詞",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 7,
     "grammar": ["modal-perfect", "reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a730c01570e9c1636d5686eed4f4e6f9c95ae6f1e8165b077733b9776f160a49",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_6b4g3w7d",
+    "ja": "また落ちたら、ログを送ってください。",
+    "en": "If it crashes again, send me the log.",
+    "alternatives": [
+      "Send me the log if it crashes again.",
+      "Send me the log if it happens again."
+    ],
+    "point": "未来のことでも if 節は現在形（will は不要）",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 4,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ec0de0862080ea2de3655548b054aa7e567ac83b69864be8be06a7903e82f636",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_6e6x5p5e",
+    "ja": "根本原因はまだ特定されていません。",
+    "en": "The root cause hasn't been pinned down yet.",
+    "alternatives": [
+      "We haven't pinned down the root cause yet.",
+      "The root cause still hasn't been identified."
+    ],
+    "point": "「特定する」は pin down。受動態＋現在完了で言う",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 5,
+    "grammar": ["passive-voice", "present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:eee6b20f0f41560a45d21e57cbced1f54a7661b123e070e515738351c3142efa",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6g6d7u5w",
@@ -371,7 +708,13 @@
     "level": 2,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:88759c00b04084dc684189ca13b19c4959dedf10a62ff324dd137dc486ccd3b3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6k3y4g5m",
@@ -387,7 +730,35 @@
     "level": 8,
     "grammar": ["noun-clauses", "cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:84331026e237495491493ace7d215aa2d928b2fec6c728a44821a75e569fd86d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_6m2n2y5r",
+    "ja": "彼は原因を突き止めるのに苦労している。",
+    "en": "He's having trouble tracking down the cause.",
+    "alternatives": [
+      "He's struggling to track down the cause.",
+      "He's struggling to pin down the cause."
+    ],
+    "point": "have trouble の後は -ing、「突き止める」は track down",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 5,
+    "grammar": ["gerunds", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d9cbcdf1241e723ba5d2036a492d2df4d754d2e537ea954f2c5518bcbfecd2f1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6p7e8x8f",
@@ -403,74 +774,120 @@
     "stamps": {
       "core": {
         "hash": "sha256:3cc211bc4c4239e27062c82150cd009cd6ea98b384f9576d928bfbed2033a2c2",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
   {
     "id": "c_6s5g4n5c",
-    "ja": "不思議なのは、移行前のユーザーだけエラーになること。",
+    "ja": "不思議なのは、移行前のユーザーだけエラーなこと。",
     "en": "What puzzles me is that only pre-migration users get errors.",
     "alternatives": [
-      "What I find odd is that only pre-migration users are affected.",
-      "The odd thing is that only pre-migration users see this failure."
+      "What's odd is that only pre-migration users are affected.",
+      "The odd thing is only pre-migration users get errors."
     ],
     "point": "「不思議なのは」は What puzzles me is that で始める",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 9,
+    "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6t6t5r6g",
-    "ja": "うちで負荷テストしていれば、リークは防げたのに。",
-    "en": "If we'd load-tested, we'd have caught the leak.",
-    "alternatives": [
-      "Had we load-tested, we'd have caught the leak.",
-      "If we'd run a load test, we'd have caught it."
-    ],
-    "point": "過去の仮定は had + 過去分詞、帰結は would have + 過去分詞",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 8,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6u7e3u3m",
-    "ja": "ユーザーが何をしたか聞いてくれる？",
-    "en": "Can you ask what the user did?",
-    "alternatives": [
-      "Can you ask the user what they did?",
-      "Can you find out what the user did?"
-    ],
-    "point": "間接疑問は what the user did の語順で、疑問文にしない",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 4,
-    "grammar": ["indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f43499451874d6f4343869b9d96a2f03fc470ac98728bb4a56b0ec9af4a6c745",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6y5e8c6w",
     "ja": "誰かがインデックスを消したに違いないと思う。",
     "en": "I think someone must have deleted the index.",
     "alternatives": [
-      "Someone must have deleted the index, I think.",
+      "I think someone must've dropped the index.",
       "I'm guessing someone must have deleted the index."
     ],
     "point": "「〜したに違いない」は must have + 過去分詞",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:430f90365ddcae02e669ef84e1944a2d7b6863825dab4b1a4795606fb66f9f26",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_7a3j3a9q",
+    "ja": "再起動する前に、まずログを確認してみて。",
+    "en": "Try checking the logs before restarting it.",
+    "alternatives": [
+      "Check the logs first, before you restart it.",
+      "Before restarting it, try looking at the logs."
+    ],
+    "point": "前置詞 before の後は動名詞が自然",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 4,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:46ce8038c81031aabc873fc56498d36d196e3965254f331cee8527e1affc5461",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_7a6z4h8d",
+    "ja": "彼女は昨日から、メモリリークを追ってる。",
+    "en": "She's been chasing a memory leak since yesterday.",
+    "alternatives": [
+      "She's been tracking a memory leak since yesterday.",
+      "Since yesterday, she's been chasing a memory leak."
+    ],
+    "point": "昨日からずっと、は since＋現在完了進行形",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:523bd3eff1649bb714dfcc2fe752b28977bdad30e76959dbd6b18bedb6a20b42",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_7e3a7c3u",
+    "ja": "サーバーが昼からずっと落ち続けてる。",
+    "en": "The server has been crashing since noon.",
+    "alternatives": [
+      "The server's been going down since noon.",
+      "The server has kept crashing since noon."
+    ],
+    "point": "「ずっと〜し続けている」は has been -ing",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 4,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1d80db9abe9de4a4f755fca0919bfd8980c7e52cc51ed78a5e98b113ee4f1e13",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7k6p4k9e",
@@ -478,15 +895,21 @@
     "en": "Even if I clear the cache, it stays blank.",
     "alternatives": [
       "Clearing the cache doesn't help; the screen stays blank.",
-      "The screen stays blank even if I clear the cache."
+      "Even after clearing the cache, it stays blank."
     ],
     "point": "「たとえ〜ても」は even if、節の中は現在形",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 6,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0ff4b82a64ea0b24ee146c581541dec0f58b317da7c95c03e0db91c7a01fecb8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7k7k8z8b",
@@ -502,55 +925,79 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5f85f984fb2d771871d8bd8cfa7fd41591efe3074f62fe30549365187391793a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7m8v2e7y",
     "ja": "ユーザーは落ちると言うのに、ログは空っぽです。",
     "en": "Although users say it crashes, the logs are empty.",
     "alternatives": [
-      "Users say it crashes, yet the logs are completely empty.",
+      "Users say it crashes, yet the logs are empty.",
       "Even though users report crashes, the logs are empty."
     ],
     "point": "「〜のに」は although で1文にまとめ、but と重ねない",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 6,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7cbacc5b5489d0640fa62e20b6943b1f201462641f1ba1c119741281679749a0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_7s9w3v8e",
-    "ja": "本番データが使えたら、この再現も楽なのに。",
-    "en": "If we could use production data, this'd be easier.",
+    "id": "c_7n4d5d5e",
+    "ja": "まず確認すべきは、直近のデプロイです。",
+    "en": "First thing to check is the latest deploy.",
     "alternatives": [
-      "If we had production data, reproducing it would be easier.",
-      "If we could use real data, we'd reproduce it faster."
+      "We should check the latest deploy first.",
+      "What to check first is the latest deploy."
     ],
-    "point": "実際はできないので could と would で仮定を表す",
+    "point": "「〜すべきこと」は thing to + 動詞",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
-    "grammar": ["second-conditional"],
+    "level": 4,
+    "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:24f2f64af9c1d005943aa2a77b2adb5aebaf6fd07cd9f49cc7a26a16428e774d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_7u6b9a7z",
-    "ja": "再現手順とスクリーンショットを送ってもらえますか？",
-    "en": "Could you send me repro steps and a screenshot?",
+    "id": "c_7r6e6x6t",
+    "ja": "そのころには、ディスクはもう満杯になっていた。",
+    "en": "By then, the disk had already filled up.",
     "alternatives": [
-      "Can you send me the repro steps and a screenshot?",
-      "Could you share the steps and a screenshot with me?"
+      "The disk had already filled up by then.",
+      "The disk was already full by then."
     ],
-    "point": "steps や screenshot は数えられるので a や複数形",
+    "point": "「その時までに」の完了は had + 過去分詞",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
-    "grammar": ["articles-and-countability"],
+    "level": 6,
+    "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:314bb7415c79c2166bae23ec1e8a300dd660960ca538a3415ae74ba8ce98c5a0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7w7k2s3e",
@@ -558,31 +1005,43 @@
     "en": "I was wondering if you could reproduce it too.",
     "alternatives": [
       "Would you mind trying to reproduce it too?",
-      "Could you possibly try to reproduce it on your end?"
+      "Could you try reproducing it on your end?"
     ],
     "point": "控えめな依頼は I was wondering if you could で過去形にする",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 6,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5c2dd72d900b598f38de43fdbd96421c348d9c58fefeb710bdc5f15b264e6b15",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8a4e3q2u",
     "ja": "金曜にバグが入り、以来問い合わせが急増中です。",
     "en": "The bug slipped in Friday; tickets have spiked since.",
     "alternatives": [
-      "The bug got in Friday, and tickets have spiked since.",
-      "This bug was introduced Friday, and tickets have surged since."
+      "The bug shipped Friday, and tickets have surged since.",
+      "The bug appeared Friday, and tickets have surged since."
     ],
     "point": "入り込んだ時点は過去形、それ以来は現在完了",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 6,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8184acd1af86bc5b596a3c6928d28617bea12aa231bb0c80f40299444f35159b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8a9f6c9k",
@@ -590,7 +1049,7 @@
     "en": "If we hadn't reverted, this wouldn't have happened.",
     "alternatives": [
       "This wouldn't have happened if we hadn't reverted.",
-      "Had we not reverted, this wouldn't have happened."
+      "This wouldn't have happened if we hadn't rolled back."
     ],
     "point": "過去の仮定は hadn't + 過去分詞、結論は wouldn't have + 過去分詞",
     "topic": "tech",
@@ -598,7 +1057,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c0fcfaaa293625adafcf2d5e711ea7e9df3e7a9868f6341932db49dcec3a3c20",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8c9b7g8j",
@@ -614,7 +1079,13 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:120aed0531cb9673b75ea35e15acad31a82e5fb3d62e5e664714ec6ae168b9ee",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8f2t4x4b",
@@ -622,7 +1093,7 @@
     "en": "He wishes he'd tested it before the release.",
     "alternatives": [
       "He regrets not testing it before the release.",
-      "If only he'd tested it before the release."
+      "He wishes he'd tested it before release."
     ],
     "point": "過去への後悔は wish の後を had + 過去分詞に",
     "topic": "tech",
@@ -630,23 +1101,123 @@
     "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e67f2c110931103fff0cf388b6096d9533453164353d81a914186d8664740cab",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_8t8u8d2f",
-    "ja": "あのお客さん、どのブラウザを使ってたか覚えてる？",
-    "en": "Do you remember which browser that customer was using?",
+    "id": "c_8h2e2a2y",
+    "ja": "症状は、更新の前から出始めていたようだ。",
+    "en": "Symptoms had apparently started before the update.",
     "alternatives": [
-      "Do you remember what browser that customer was on?",
-      "Can you recall which browser that customer used?"
+      "It seems the symptoms started before the update.",
+      "The symptoms seem to have started before the update."
     ],
-    "point": "間接疑問は which browser + 主語 + 動詞の語順",
+    "point": "更新より前の出来事は had + 過去分詞",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8a048d73fde7e536a46179e516cdd368a43f34c0bb8d5a79e472e6fcbd3241ec",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_8h6q5j8u",
+    "ja": "テスト中に本番データが誤って消された。",
+    "en": "Production data was wiped by mistake during testing.",
+    "alternatives": [
+      "Prod data was accidentally deleted during the test.",
+      "Production data got erased by accident in testing."
+    ],
+    "point": "行為者が不明なときは受動態にする",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 4,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e444213871c1f85ce0b2ef1c8801c2a322a9388f7ef511d537ccfdd038e80135",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_8h6r9r8v",
+    "ja": "そのバグと、もうどれくらい格闘してるの？",
+    "en": "How long have you been fighting this bug?",
+    "alternatives": [
+      "How long have you been wrestling with it?",
+      "How long have you been battling this bug?"
+    ],
+    "point": "how long は現在完了進行形と相性がよい",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:78a13c400a67c03cce39398ae9a9dd02a0713f3266959ef92dab54ae7e10f801",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_8s4p3c6j",
+    "ja": "原因を調べるため、彼はデバッガーを立ち上げた。",
+    "en": "He fired up the debugger to find the cause.",
+    "alternatives": [
+      "He launched the debugger to track down the cause.",
+      "To find the cause, he started up the debugger."
+    ],
+    "point": "「立ち上げる」は fire up / start up の句動詞",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 6,
+    "grammar": ["infinitives", "phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:056ca2ad4c8ee6f24b0f631a4c36d756668b64a979521f2ecd70bd305b5aa590",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_8u6a7y9h",
+    "ja": "なぜ何度も失敗するのか、誰にも見当がつかない。",
+    "en": "No one has the faintest idea why it keeps failing.",
+    "alternatives": [
+      "Nobody has a clue why it keeps failing.",
+      "No one can figure out why it keeps failing."
+    ],
+    "point": "間接疑問なので why のあとは主語＋動詞の語順",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 9,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c68ec60a04a8d13296582d6aa6df55d045ac32457fe9bc31e9a0404f272aa691",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8x6y5d2c",
@@ -662,7 +1233,13 @@
     "level": 5,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8acaf4453c5791214b373f65cb16344c2b93323001bfa1470e0cc91ed0666d46",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9e9f7k2n",
@@ -678,23 +1255,35 @@
     "level": 2,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e143f81e4d2c7085e3dc68f63cfdc89cfcceaec9c8362c57fd70ada992e507fd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_9p5q3h3h",
-    "ja": "今朝の報告、前に直したバグと同じか見てもらえる？",
-    "en": "Can you check if it's the bug you fixed?",
+    "id": "c_9n9e6q7q",
+    "ja": "キャッシュを消しても、変わらなかった。",
+    "en": "Clearing the cache didn't make any difference.",
     "alternatives": [
-      "Could you check whether it's the bug you fixed earlier?",
-      "Can you see if it's the same bug you fixed?"
+      "Clearing the cache changed nothing.",
+      "Deleting the cache didn't change anything."
     ],
-    "point": "the bug you fixed と節を名詞に続けて入れ子にする",
+    "point": "「変化なし」は didn't make any difference が定番",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 8,
-    "grammar": ["nested-clauses", "relative-clauses"],
+    "level": 5,
+    "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:19dda78352f5e4cf52bbcbe8fa11d414b468e62d70915387ae329a8277b39761",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9z3r8g3m",
@@ -710,14 +1299,20 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e190b13173d7eaa25235da8a356821dbac0b6a867b2c6b08f167681dcc3e67f0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9z6z7s6s",
     "ja": "彼が保存中に、アプリが落ちました。",
-    "en": "It crashed while he was saving.",
+    "en": "The app crashed while he was saving.",
     "alternatives": [
-      "He was saving when it crashed.",
+      "He was saving when the app crashed.",
       "The app crashed while he saved."
     ],
     "point": "途中の動作は was saving、落ちたのは過去形 crashed",
@@ -726,6 +1321,12 @@
     "level": 3,
     "grammar": ["progressive-aspect", "past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f7349cba8123b15869d7a980e20ea936f281088ca6b0cfce74e4393d24aa147e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]

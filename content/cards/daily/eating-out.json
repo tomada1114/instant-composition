@@ -13,7 +13,35 @@
     "level": 3,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d4a7cbdd1c23bd5373acffdb8251126d8049d65e04738d13f4b779558e872da7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_2b8s2z2u",
+    "ja": "田中で予約したテーブルはどこですか？",
+    "en": "Where's the table reserved under Tanaka?",
+    "alternatives": [
+      "Where is the table booked under Tanaka?",
+      "Where's the table we reserved under Tanaka?"
+    ],
+    "point": "「予約した〜」は table のあとに reserved を置く",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 4,
+    "grammar": ["post-modification", "passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:50c27065ce2d69cb1214f2d8660a4628b24c13217051fecc4ad5e62a9a8db962",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2c4d3y8g",
@@ -28,9 +56,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:a3dfabf71468ac85f27eda6e31e63a1331696d933a4de083df03d7c2fb290557",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:1e267940e58e58ac7d9a32a8f1f368daedd985c6ebd9fc0667cbd9365642d61f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -48,39 +76,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2k9f2y6c",
-    "ja": "シェフが仕入れた魚、二人分まだ頼める？",
-    "en": "Can we still order the fish the chef bought, for two?",
-    "alternatives": [
-      "Is the fish the chef bought still available for two?",
-      "Can we still get two orders of the fish the chef bought?"
-    ],
-    "point": "the fish の後ろに the chef bought をそのままつなぐ",
-    "topic": "daily",
-    "subtopic": "eating-out",
-    "level": 10,
-    "grammar": ["nested-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2n6k2q5w",
-    "ja": "6人で予約したいのですが、ベビーカーは置けますか？",
-    "en": "I'd like to book for six; is there room for a stroller?",
-    "alternatives": [
-      "I'd like to reserve for six. Is there space for a stroller?",
-      "Can I book for six? Is there room for a stroller?"
-    ],
-    "point": "「余地」の意味の room や space は数えないので a を付けない",
-    "topic": "daily",
-    "subtopic": "eating-out",
-    "level": 10,
-    "grammar": ["articles-and-countability"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6ddf506c33758fddf9f407e0e59a57862dcc62a777e203527858c3be44872e6c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2r8q6k8a",
@@ -98,48 +100,236 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:c4dd106e5b42b44c2987392cc5e8674cb308806869c82b0dadcdf2fb1e8aa2cd",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:02470c46d8058568eca22c4337266cc25e280888b441f7caad8bafcce44f8c43",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
   {
-    "id": "c_3h9k4j8w",
-    "ja": "メニューを見て、彼女はいつものにした。",
-    "en": "Having read the menu, she ordered her usual.",
+    "id": "c_2t6s7b5e",
+    "ja": "デザートは食後に出していただけますか？",
+    "en": "Could the dessert be served after the meal?",
     "alternatives": [
-      "After looking at the menu, she ordered her usual.",
-      "Having looked over the menu, she ordered her usual."
+      "Could you serve dessert after the meal?",
+      "Can dessert be brought out after we eat?"
     ],
-    "point": "先に終えた動作は Having + 過去分詞 で前に出す",
+    "point": "出す人を言わない丁寧な頼み方は be served の受動態",
     "topic": "daily",
     "subtopic": "eating-out",
     "level": 6,
-    "grammar": ["participle-clauses"],
+    "grammar": ["passive-voice", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:77ec924528ce594745165d7f1f85162374baaed5e5b998900703f8bfd72cc291",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_4f4z2y6b",
-    "ja": "僕がシェフなら、このスープに塩を足すな。",
-    "en": "If I were the chef, I'd add salt.",
+    "id": "c_3b3q9t6r",
+    "ja": "会計が済んだら、外で合流するね。",
+    "en": "Once I've paid, I'll meet you outside.",
     "alternatives": [
-      "If I were the chef, I'd salt it more.",
-      "I'd add more salt if I were the chef."
+      "I'll meet you outside after I pay.",
+      "When I'm done paying, I'll join you outside."
     ],
-    "point": "事実と違う仮定は If I were、後半は I'd で受ける",
+    "point": "Once 節は完了を表す現在完了、未来でも will は使わない",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["time-and-if-clauses", "present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f4f1b78c15eba64ab979440fab1d5972fb2df6eb73ea404e0b9706185b62c738",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_3p3z5r2f",
+    "ja": "すみません、その席はたった今埋まりました。",
+    "en": "I'm afraid that table was just taken.",
+    "alternatives": [
+      "Sorry, that table has just been taken.",
+      "I'm sorry, but that table just got taken."
+    ],
+    "point": "「席が取られた」は受動態。I'm afraid で柔らかく断る",
     "topic": "daily",
     "subtopic": "eating-out",
     "level": 6,
-    "grammar": ["second-conditional"],
+    "grammar": ["passive-voice", "hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9cbbf4159e0511191a10293f4ba5fba08522c11e1e893899ce4a7e6750a34327",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_3r7f5y2y",
+    "ja": "おすすめは何か教えてもらえますか？",
+    "en": "Could you tell me what you recommend?",
+    "alternatives": [
+      "Can you tell me what you'd recommend?",
+      "Would you mind telling me what you recommend?"
+    ],
+    "point": "what 節の中は疑問文の語順にしない（what you recommend）",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 4,
+    "grammar": ["noun-clauses", "indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3a1c98ee69cae5dbb89f8dc7e0adca30f0bc0fbf2fb65b516ad793e98f498617",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_3t2n2z5s",
+    "ja": "店員さんが、9時に閉店だと言ってたよ。",
+    "en": "The server said they close at nine.",
+    "alternatives": [
+      "The waiter said they close at nine.",
+      "The server told us they close at nine."
+    ],
+    "point": "said の後でも今も変わらない事実は現在形でよい",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ccc98ebd238ec0b5b07324697e30cfb2be04d36eb963f5d557992ca984fb1b4a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_4e7p8v4q",
+    "ja": "決められなくて、私は店員さんのおすすめにした。",
+    "en": "Unable to decide, I went with the server's recommendation.",
+    "alternatives": [
+      "I couldn't decide, so I went with the server's recommendation.",
+      "I couldn't decide, so I went with the server's pick."
+    ],
+    "point": "go with で「〜に決める」。分詞構文で理由を前に置く",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:887c35d942ae10f1ce054e89da43daffbb0951ab5f42d4d1767e3b91490d3f2a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_4e7u6c3u",
+    "ja": "これ、ニンニク入ってるか分かりますか？",
+    "en": "Do you know if this has garlic?",
+    "alternatives": [
+      "Can you tell me if this has garlic?",
+      "Do you know whether this contains garlic?"
+    ],
+    "point": "知りたい内容は if 節で続け、語順は平叙文",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:832ee753496f9883fb53f2be1ca8ea9a6cddb0553309d2e30a328847e2a4c44a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_4m9k8f9s",
+    "ja": "ここが、待つ価値があると友達が言ってた店だよ。",
+    "en": "This is the place my friend said was worth the wait.",
+    "alternatives": [
+      "This is the restaurant my friend said was worth waiting for.",
+      "This is where my friend said the wait was worth it."
+    ],
+    "point": "the place の後ろの関係代名詞は省略。said の後に主語なし",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 9,
+    "grammar": ["relative-clauses", "nested-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5976a3abd6bbddd286d4f69aac1b55782fef7faad99934664e27b4aa594aa74e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_4n9c9b4j",
+    "ja": "僕らが着いたときには、もう閉店してた。",
+    "en": "By the time we arrived, they'd already closed.",
+    "alternatives": [
+      "They had already closed when we got there.",
+      "They'd already closed by the time we got there."
+    ],
+    "point": "着いた時点より前の出来事は過去完了で言う",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c4aa6bf3454d87b50f4744c9acb0d5df395f5d7c7f591467171700e854c2c0db",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_4v2w8d2b",
+    "ja": "席が空いたら、すぐご案内しますね。",
+    "en": "We'll seat you once a table opens up.",
+    "alternatives": [
+      "We'll seat you when a table frees up.",
+      "We'll seat you as soon as one's free."
+    ],
+    "point": "未来のことでも once / when の節は現在形",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:156b95b484cc1bd752047765e81ab9a64d5a8d1cf34eafe64012c83cd68142b4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5b6a8u2b",
     "ja": "私たち、窓際の席に移らせてもらえないでしょうか？",
-    "en": "I was wondering if we could move by the window.",
+    "en": "I was wondering if we could move to the window.",
     "alternatives": [
       "Would it be possible to move to a window table?",
       "Could we possibly move to a window table?"
@@ -150,23 +340,35 @@
     "level": 7,
     "grammar": ["hedging-softening", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dab9c25dedfb3aa659433292e723e6e9ad659b054c137255db47f61149cdf207",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_5m5x7n3f",
-    "ja": "僕の好きなカフェ、予約は電話だけらしい。",
-    "en": "The café I like only takes phone reservations.",
+    "id": "c_5h2p8c5m",
+    "ja": "クーポンを使っていれば、もっと安かったのにね。",
+    "en": "If we'd used the coupon, it'd have been cheaper.",
     "alternatives": [
-      "The café I like only takes phone bookings.",
-      "The café I like only accepts phone reservations."
+      "It would've been cheaper if we'd used the coupon.",
+      "We'd have saved money with that coupon."
     ],
-    "point": "「好きなカフェ」は the café I like と後ろから説明する",
+    "point": "過去の仮定は if + had 過去分詞、結果は would have",
     "topic": "daily",
     "subtopic": "eating-out",
-    "level": 4,
-    "grammar": ["relative-clauses"],
+    "level": 6,
+    "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:82ad459ccf28eb9a0c3adcceda29e446f30262fe2c6f6d63daa24fe8d542bff1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5m9x8a4t",
@@ -182,7 +384,13 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:18dd919233a89f1876613fbacf8dbb7e6509d406f2d3de5041689463c8f5010a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5p4t6f7j",
@@ -198,7 +406,79 @@
     "level": 1,
     "grammar": ["imperatives", "articles-and-countability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a935f779ce3b32be9ae4654ce5cfa3ec3494947583374d83e21648170f12d8c1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_5p8a4x9t",
+    "ja": "私たち、遅れたら席を取っておいてもらえますか？",
+    "en": "If we're late, could you hold our table?",
+    "alternatives": [
+      "Could you hold our table if we run late?",
+      "If we run late, would you keep our table?"
+    ],
+    "point": "If 節は未来のことでも現在形。hold は「取り置く」",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["time-and-if-clauses", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7df45f621b59e5e55c28b61fee293d76884ec3fa145714e990fde55dcb01170",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_5q5v6t4v",
+    "ja": "あの店のカレー、辛すぎて涙が出たよ。",
+    "en": "That curry was so hot it made my eyes water.",
+    "alternatives": [
+      "That curry was so spicy it made me cry.",
+      "That curry was so spicy I teared up."
+    ],
+    "point": "「涙が出る」は make my eyes water。使役の make を使う",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6bc48e0f147821228b9b8db8679b9d7705e1fa9c44cd5091ef69de0b8c32284d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_5r4j8d9m",
+    "ja": "一度食べてから、この料理がずっと食べたかったんだ。",
+    "en": "I've wanted this dish ever since I tried it.",
+    "alternatives": [
+      "I've been craving this dish since I first tried it.",
+      "I haven't stopped wanting this dish since I tried it."
+    ],
+    "point": "since の主節は現在完了、since 節は過去形",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["tense-contrast", "present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0100dfab6efe70055a5baf28b34e0064b55db514530a7a7c11abfa1e0a51ee87",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5r6q9m5m",
@@ -211,26 +491,38 @@
     "point": "「もう〜した？」は現在完了の疑問文＋ yet",
     "topic": "daily",
     "subtopic": "eating-out",
-    "level": 5,
+    "level": 4,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e9190fb546bbbc50324f9b6825ba1f02e762d320d9ffec64e2e33f7dfb9a69a3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_5s6m3e6w",
-    "ja": "このステーキ、シェフにもう少し焼いてもらえますか？",
-    "en": "Could you have the chef cook this a bit longer?",
+    "id": "c_5y8n6e3j",
+    "ja": "ワインはソムリエに選ばせれば、まず外れないよ。",
+    "en": "Have the sommelier pick the wine and you can't go wrong.",
     "alternatives": [
-      "Would you mind having the chef cook this longer?",
-      "Could you get the chef to cook this longer?"
+      "Let the sommelier choose the wine and you can't go wrong.",
+      "Leave the wine to the sommelier and you can't go wrong."
     ],
-    "point": "have + 人 + 動詞の原形、get なら人の後に to が要る",
+    "point": "「選ばせる」は have / let＋人＋動詞の原形。can't go wrong は失敗しない",
     "topic": "daily",
     "subtopic": "eating-out",
-    "level": 8,
+    "level": 9,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:98f2e50db53a09f16fbf7a89ae42669230b2ef3a6aa5db1c80c0f0f9b5b43113",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5y9w2n9g",
@@ -245,9 +537,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:f357eab8e382e3b4198fc73534d0298eae62c9d265de2e13bd7400da2cd363e1",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:21f715ec01a260652bd1f26f98b224b85f4d1e83f640eecd51f062aae493eda1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -265,7 +557,13 @@
     "level": 3,
     "grammar": ["verb-object-to-do", "imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d6765f440e3ccfd17b8d600358692d7bdf533bda60837f039489374ac8d9df3c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6a8u6w4m",
@@ -273,7 +571,7 @@
     "en": "We've been waiting half an hour already.",
     "alternatives": [
       "We've been waiting for thirty minutes now.",
-      "It's been half an hour since we ordered."
+      "We've already waited half an hour."
     ],
     "point": "待ち続けている今の状態は have been -ing",
     "topic": "daily",
@@ -281,23 +579,13 @@
     "level": 5,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6c9r6p4k",
-    "ja": "昨夜、兄がラーメンに連れてってくれた。",
-    "en": "My brother took me for ramen last night.",
-    "alternatives": [
-      "My brother took me out for ramen yesterday.",
-      "Last night my brother took me for ramen."
-    ],
-    "point": "「連れて行ってくれた」は took me で過去形",
-    "topic": "daily",
-    "subtopic": "eating-out",
-    "level": 5,
-    "grammar": ["past-simple"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8994ac78b8bba31ecc3aa7834b66300d2724002076b5abd030b3443724bc4021",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6e5e4y6e",
@@ -314,7 +602,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e89efb7c3979b566ada05e48b4fc316754a13b26422e6393eb572b578f00ad44",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6f7s2d6e",
@@ -327,36 +621,54 @@
     "level": 3,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6g8r4t6u",
-    "ja": "私たち、窓際は埋まってると言われた。",
-    "en": "We were told the window seats were taken.",
-    "alternatives": [
-      "They told us the window seats were taken.",
-      "We were told the window seats were full."
-    ],
-    "point": "「言われた」は were told、席は were taken と受動態",
-    "topic": "daily",
-    "subtopic": "eating-out",
-    "level": 6,
-    "grammar": ["passive-voice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f4758781072f976d9ff19c867902ad911661a7cfc83f7b887d1b736384c5dcae",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6j6y8g8g",
     "ja": "私たちは、ここのケーキを食べに来た。",
-    "en": "We came to try your cake.",
-    "alternatives": ["We came here to try your cake.", "We came to taste your cake."],
+    "en": "We came here to eat the cake.",
+    "alternatives": ["We came to try the cake here.", "We came here for the cake."],
     "point": "「食べるために」は to 不定詞で目的を表す",
     "topic": "daily",
     "subtopic": "eating-out",
     "level": 3,
     "grammar": ["infinitives", "past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2f09adfed3a4880364eeeb565254dea5ed0c87f5c769cdf1ecf60cfef3725022",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_6k4x6f5z",
+    "ja": "姉は寿司が大好きだが、私は生魚が苦手なんだ。",
+    "en": "My sister loves sushi, but raw fish isn't my thing.",
+    "alternatives": [
+      "My sister loves sushi, but I can't handle raw fish.",
+      "My sister adores sushi, but I'm not into raw fish."
+    ],
+    "point": "「苦手」は isn't my thing や not into。対比は but でよい",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 7,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b98218bf1e5ec4bd278b300b8ee7fb23e12128546c33a6e50611740114c87b5b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6t8p3t2d",
@@ -367,143 +679,169 @@
     "topic": "daily",
     "subtopic": "eating-out",
     "level": 1,
-    "grammar": ["can-could-ability"],
+    "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:ecd2e7303db6b5af8a6ba2d96145e685687ef28794889e4d07f3ac5dbdd647ed",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:9072bdd4106ae59abaac603b83f0c252d8efdbe6fc50d6a63b703bdf71a04943",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_7d8g6f3r",
-    "ja": "着いたら、席が空いてるか見てみるね。",
-    "en": "When I arrive, I'll see if there's space.",
-    "alternatives": [
-      "I'll see if there's space when I arrive.",
-      "Once I'm there, I'll check if there's space."
-    ],
-    "point": "未来のことでも when 節は現在形の arrive",
-    "topic": "daily",
-    "subtopic": "eating-out",
-    "level": 6,
-    "grammar": ["time-and-if-clauses", "indirect-questions"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_7q9s3s9z",
     "ja": "このパスタ、前回よりずっとおいしい。",
     "en": "This is much better than last time.",
     "alternatives": [
-      "This pasta is way better than last time.",
+      "This is way better than last time.",
       "This tastes much better than last time."
     ],
     "point": "「ずっと」は比較級の前に much や way を置く",
     "topic": "daily",
     "subtopic": "eating-out",
-    "level": 4,
+    "level": 2,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:897c7a449974e41832ddb1eb34aa3b5ab44220d631fc130039d1013506be8b7d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_7s6s2x5x",
-    "ja": "これ、ニンニク抜きで作れるか知りたいんです。",
-    "en": "I'd like to know whether you can omit the garlic.",
+    "id": "c_7v3h7p8n",
+    "ja": "私、すごく辛い料理は食べられません。",
+    "en": "I can't eat very spicy food.",
     "alternatives": [
-      "Could you tell me if this can be made without garlic?",
-      "I was wondering if you could make this without garlic."
+      "I can't handle very spicy food.",
+      "I can't eat anything very spicy."
     ],
-    "point": "知りたい内容は whether / if 節で続け、語順は平叙文",
+    "point": "「食べられない」は can't eat。handle も自然",
     "topic": "daily",
     "subtopic": "eating-out",
-    "level": 9,
-    "grammar": ["indirect-questions", "noun-clauses"],
+    "level": 2,
+    "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:79587a64232438b2fa7b74a8e9bdb25f1d9141934dd02e5eca4c384ca68aa2de",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7w9q7z6r",
     "ja": "現金のみだって、先に知っていればよかった。",
     "en": "I wish I'd known it was cash only.",
     "alternatives": [
-      "I wish I had known earlier they only take cash.",
+      "I wish I'd known earlier it was cash only.",
       "If only I'd known they only take cash."
     ],
     "point": "過去への後悔は wish の後を had + 過去分詞にする",
     "topic": "daily",
     "subtopic": "eating-out",
-    "level": 8,
+    "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:46f8f5f0d81307f2f91960bb31213ecbe2c5b519b9f3ed52a1fdabe9b5de6677",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_8e9a6q5d",
-    "ja": "父は駅前のカフェの話ばかりしてる。",
-    "en": "Dad keeps talking about that station café.",
+    "id": "c_8c4z2a2z",
+    "ja": "店員さんが押さえると言った席、どれか分かる？",
+    "en": "Do you know which table the server said they'd hold?",
     "alternatives": [
-      "My dad won't stop talking about that café.",
-      "Dad still talks about that station café."
+      "Do you know which table the server said they'd keep?",
+      "Do you know which table the waiter said they'd save?"
     ],
-    "point": "「話ばかりしてる」は keep + -ing で表す",
+    "point": "間接疑問は which table のあとも肯定文の語順",
     "topic": "daily",
     "subtopic": "eating-out",
-    "level": 5,
-    "grammar": ["gerunds"],
+    "level": 8,
+    "grammar": ["nested-clauses", "indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1e21296e104b370ca901a9a78297f277b4ae1c61003fe9cd63b551e5041b1f30",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_8h4d7q7e",
-    "ja": "ここのオムライス、食べたことある？",
-    "en": "Have you tried the omelet rice here?",
+    "id": "c_9c5y4z6p",
+    "ja": "お金を気にしなくていいなら、私ならコースを頼むな。",
+    "en": "If money were no object, I'd order the full course.",
     "alternatives": [
-      "Have you ever had the omelet rice here?",
-      "Have you ever eaten the omelet rice here?"
+      "If cost weren't an issue, I'd get the full course.",
+      "If price didn't matter, I'd get the full course."
     ],
-    "point": "経験を聞くときは Have you (ever) + 過去分詞",
-    "topic": "daily",
-    "subtopic": "eating-out",
-    "level": 5,
-    "grammar": ["present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8m9f5q9c",
-    "ja": "クーポンを使っていれば、お金を節約できたのにね。",
-    "en": "If we'd used the coupon, we'd have saved money.",
-    "alternatives": [
-      "We'd have saved money if we'd used the coupon.",
-      "If we'd remembered the coupon, we'd have saved money."
-    ],
-    "point": "過去の仮定は if + had 過去分詞、結果は would have",
+    "point": "現実と違う仮定は if + were、主節は would",
     "topic": "daily",
     "subtopic": "eating-out",
     "level": 7,
-    "grammar": ["third-conditional"],
+    "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:11bde12c2c29c045ff115069a4809fa8cdecc3e16985a28f13360b3d1a6e1ee9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_9f3b3p6b",
-    "ja": "夕食、もう5人で予約しといたよ。",
-    "en": "I've already booked a table for five.",
+    "id": "c_9g6w2q2r",
+    "ja": "私たち二人で分けられる料理はありますか？",
+    "en": "Is there a dish we can share?",
     "alternatives": [
-      "I've already reserved a table for five.",
-      "I already booked us a table for five."
+      "Do you have a dish we can share?",
+      "Is there something we can split?"
     ],
-    "point": "予約済みの今の状態は現在完了 + already",
+    "point": "a dish の後ろに we can share をそのままつなぐ",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c3c3ce1f644b083466d7ee8c9d302846e8207714f1089e0abb1705a5772f861",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
+  },
+  {
+    "id": "c_9j9s9v5g",
+    "ja": "着いたら、日替わりはもう売り切れてた。",
+    "en": "The daily special had sold out when we arrived.",
+    "alternatives": [
+      "When we got there, the special had sold out.",
+      "The special was already gone when we got there."
+    ],
+    "point": "着く前に売り切れ済み。先に起きたことは had + 過去分詞",
     "topic": "daily",
     "subtopic": "eating-out",
     "level": 6,
-    "grammar": ["present-perfect"],
+    "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:97fe704770b17fc39fe6c2c94cfb8f8d13c93595dd030d41cb15747578108fdc",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9r2d2v8c",
@@ -516,25 +854,37 @@
     "point": "過去の確信ある推量は must have + 過去分詞",
     "topic": "daily",
     "subtopic": "eating-out",
-    "level": 7,
+    "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:42faa9e673b69336fc04bbb4238912bcf097b0e0589727e43938bef4184d4815",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
-    "id": "c_9r9a7p8z",
-    "ja": "店員さん、ラストオーダーは閉店30分前だって。",
-    "en": "Staff said last orders are 30 minutes before closing.",
+    "id": "c_9u3t5b9t",
+    "ja": "この店、閉店したと聞いたけど、まだやってるじゃん。",
+    "en": "I heard this place had closed, but it's still open.",
     "alternatives": [
-      "The server said last call is 30 minutes before closing.",
-      "Staff told me last orders are 30 minutes before closing."
+      "They said this place had closed, yet it's still open.",
+      "I heard it had shut down, but it's still open."
     ],
-    "point": "said の後でも今も変わらない事実は現在形でよい",
+    "point": "聞いた時点より前の閉店は過去完了、今の状態は現在形",
     "topic": "daily",
     "subtopic": "eating-out",
     "level": 7,
-    "grammar": ["reported-speech"],
+    "grammar": ["tense-contrast", "reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4b9b6a0c917ff5b5d83ae623a56e3d4f60ef84f46596cee1b9e4e7a41f0f3bfa",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]

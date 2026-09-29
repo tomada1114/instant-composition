@@ -43,10 +43,12 @@ once per session. `content/levels.json`, `content/grammar.json` and
 <!-- derived from orchestrating-models §2 -->
 
 Every sub-agent the three card skills spawn — writers, rebuild writers, the reviewers
-R1, R2 and R3, and field fillers — is the `worker` agent in Claude Code: Sonnet 5.5 at
-medium effort, fixed by `.claude/agents/worker.md`. Where no such agent exists (Codex
-CLI), a general-purpose sub-agent does the same job. Spawn it by name: its own default
-effort is `high`, and a spawn that names only the model takes the session's effort.
+R1, R2 and R3, adjudicators when adjudication is delegated, and field fillers — is the
+`worker` agent in Claude Code: Sonnet 5.5 at medium effort, fixed by
+`.claude/agents/worker.md`. No card job goes to `executor` or `architect`. Where no such
+agent exists (Codex CLI), a general-purpose sub-agent does the same job. Spawn it by
+name: its own default effort is `high`, and a spawn that names only the model takes the
+session's effort.
 
 - Each job is one reply to a complete brief, with no tool calls. Sonnet 5.5 costs half
   of Opus 5.5 per token, and its weakness at medium — stopping to check in during long
