@@ -1,0 +1,83 @@
+[
+  {
+    "id": "c_2a5d9v8h",
+    "ja": "先週、そこで食べたよ。",
+    "en": "I ate there last week.",
+    "alternatives": ["I had a meal there last week.", "I ate at that place last week."],
+    "point": "last week があれば過去形",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3j2w6j7m",
+    "ja": "何か食べるものが欲しいな。",
+    "en": "I want something to eat.",
+    "alternatives": ["I need something to eat.", "I'd like something to eat."],
+    "point": "something ＋ to 不定詞で「〜するもの」",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 4,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4n2s4p6j",
+    "ja": "ここに来たことある？",
+    "en": "Have you been here before?",
+    "alternatives": ["Have you ever been here?", "Have you ever come here?"],
+    "point": "経験は Have you (ever) 〜?",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7h4n7d2m",
+    "ja": "私たち、20分待ってる。",
+    "en": "We've been waiting for twenty minutes.",
+    "alternatives": [
+      "We've been waiting twenty minutes now.",
+      "We've waited twenty minutes already."
+    ],
+    "point": "待ち続けている時間は for ＋ 期間",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8m5x5h8h",
+    "ja": "このランチのほうが安いよ。",
+    "en": "This lunch is cheaper.",
+    "alternatives": ["This lunch costs less.", "This lunch is less expensive."],
+    "point": "安い → cheaper で比べる",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9v3a9c7r",
+    "ja": "窓際の席をお願いします。",
+    "en": "A table by the window, please.",
+    "alternatives": ["Could we sit by the window?", "We'd like a table by the window."],
+    "point": "「窓際の」は名詞の後ろに by the window",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]

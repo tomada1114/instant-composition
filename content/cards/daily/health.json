@@ -1,0 +1,50 @@
+[
+  {
+    "id": "c_3j8d7e8v",
+    "ja": "頭痛に効く薬はありますか？",
+    "en": "Do you have medicine for headaches?",
+    "alternatives": [
+      "Do you have anything for a headache?",
+      "Is there any medicine for headaches?"
+    ],
+    "point": "「〜に効く薬」は medicine for 〜",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 5,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6z8h2v8y",
+    "ja": "薬局はもう閉まってた。",
+    "en": "The pharmacy had already closed.",
+    "alternatives": [
+      "The pharmacy was already closed.",
+      "The pharmacy had closed by then."
+    ],
+    "point": "過去のある時点より前は had ＋ 過去分詞",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 5,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8b3w9y3d",
+    "ja": "三日間ずっと咳が出てる。",
+    "en": "I've been coughing for three days.",
+    "alternatives": [
+      "I've had a cough for three days.",
+      "I've been coughing nonstop for three days."
+    ],
+    "point": "今も続く動作は have been ＋ -ing",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]

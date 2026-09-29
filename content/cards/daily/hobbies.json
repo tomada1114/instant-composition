@@ -1,0 +1,44 @@
+[
+  {
+    "id": "c_3v9x4x5b",
+    "ja": "私が好きなのは山登りです。",
+    "en": "What I like is hiking.",
+    "alternatives": ["Hiking is what I like.", "The thing I like is hiking."],
+    "point": "「〜なのは」は What 節で主語にする",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 4,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5x5t5w6j",
+    "ja": "最近、走ってるんだ。",
+    "en": "I've been running lately.",
+    "alternatives": ["I've been jogging lately.", "I've been into running lately."],
+    "point": "最近ずっとは have been ＋ -ing ＋ lately",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 4,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7s7b6f4z",
+    "ja": "弟は今ゲームをしているよ。",
+    "en": "My brother's playing games now.",
+    "alternatives": [
+      "My brother is playing a video game.",
+      "My brother is playing games right now."
+    ],
+    "point": "今の動作は is ＋ -ing",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 4,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "c_2x3w9b6r",
+    "ja": "これに記入してください。",
+    "en": "Please fill this out.",
+    "alternatives": ["Please fill this in.", "Fill this out, please."],
+    "point": "「記入する」は fill out / fill in",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 5,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3d3q6g9e",
+    "ja": "土曜に受け取れますか？",
+    "en": "Can I pick it up Saturday?",
+    "alternatives": ["Could I pick it up Saturday?", "Can I get it on Saturday?"],
+    "point": "「受け取る」は pick up",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 5,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4e5y6r2k",
+    "ja": "これ、送ってもらえます？",
+    "en": "Could you send this?",
+    "alternatives": ["Can you send this?", "Would you send this for me?"],
+    "point": "丁寧な依頼は Could you 〜?",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 4,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4r2a9z2s",
+    "ja": "今、列に並んでるよ。",
+    "en": "I'm standing in line now.",
+    "alternatives": ["I'm waiting in line right now.", "I'm in line right now."],
+    "point": "「並ぶ」は stand in line",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 4,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8e3a2h6z",
+    "ja": "パスポートは更新済みだよ。",
+    "en": "I've already renewed my passport.",
+    "alternatives": [
+      "I already renewed my passport.",
+      "I've renewed my passport already."
+    ],
+    "point": "「もう」は already ＋ 現在完了",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 4,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8s9y7e9s",
+    "ja": "修理は金曜だと言われた。",
+    "en": "They said it'd be ready Friday.",
+    "alternatives": [
+      "They told me it'd be ready Friday.",
+      "I was told it'd be done Friday."
+    ],
+    "point": "言われた内容は時制を一つ過去にずらす",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 5,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]

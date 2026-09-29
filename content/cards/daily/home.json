@@ -1,0 +1,83 @@
+[
+  {
+    "id": "c_4n4a5p3j",
+    "ja": "洗濯ならもう終わったよ。",
+    "en": "I've already done the laundry.",
+    "alternatives": ["The laundry's already done.", "I already did the laundry."],
+    "point": "今の結果に関わる完了は現在完了",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 5,
+    "grammar": ["tense-contrast", "present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7a7u8k3s",
+    "ja": "ゴミを出さなきゃいけない。",
+    "en": "The trash has to go out.",
+    "alternatives": ["I have to take out the trash.", "I need to take out the trash."],
+    "point": "義務は have to",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 5,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7m6s6r7c",
+    "ja": "皿洗いが大嫌いなんだ。",
+    "en": "I hate doing the dishes.",
+    "alternatives": ["I can't stand washing dishes.", "I hate washing the dishes."],
+    "point": "hate の後は -ing 形",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 5,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8t5s7m3q",
+    "ja": "誰が割ったのか教えて。",
+    "en": "Tell me who broke it.",
+    "alternatives": ["Let me know who broke it.", "I want to know who broke it."],
+    "point": "「誰が〜したか」は疑問詞の後に普通の語順",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 4,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9c4e8j3t",
+    "ja": "昨日、お風呂を掃除したよ。",
+    "en": "I cleaned the bathroom yesterday.",
+    "alternatives": [
+      "I cleaned the bath yesterday.",
+      "I scrubbed the bathroom yesterday."
+    ],
+    "point": "yesterday があれば過去形",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 4,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9d8m7w8m",
+    "ja": "窓を開けてもいい？",
+    "en": "Can I open the window?",
+    "alternatives": ["May I open the window?", "Could I open the window?"],
+    "point": "許可を求めるときは Can / May I 〜?",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 4,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]

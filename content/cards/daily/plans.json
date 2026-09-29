@@ -1,0 +1,47 @@
+[
+  {
+    "id": "c_3f4g3y2q",
+    "ja": "食事会、金曜になったよ。",
+    "en": "The dinner was moved to Friday.",
+    "alternatives": [
+      "The dinner has been moved to Friday.",
+      "The dinner got moved to Friday."
+    ],
+    "point": "変更された、は was moved",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3u8p2m9d",
+    "ja": "何時に集合しようか？",
+    "en": "What time should we meet?",
+    "alternatives": ["What time shall we meet?", "What time do you want to meet?"],
+    "point": "時刻は What time で始める",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6n9p4b3x",
+    "ja": "その時はもう皆帰っていた。",
+    "en": "Everyone had left by then.",
+    "alternatives": [
+      "Everyone had already gone by then.",
+      "Everyone had gone home by then."
+    ],
+    "point": "過去より前のことは had ＋ 過去分詞",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]

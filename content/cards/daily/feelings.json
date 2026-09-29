@@ -1,0 +1,41 @@
+[
+  {
+    "id": "c_2m3c8c9u",
+    "ja": "彼は緊張してると思う。",
+    "en": "I think he's nervous.",
+    "alternatives": ["I guess he's nervous.", "I'd say he's nervous."],
+    "point": "「〜と思う」は I think ＋ 文",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 4,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4v9a4j8e",
+    "ja": "無理しないほうがいいよ。",
+    "en": "You shouldn't push yourself.",
+    "alternatives": ["You shouldn't overdo it.", "You'd better not push yourself."],
+    "point": "「〜しないほうがいい」は shouldn't",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 4,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7f2v2m4z",
+    "ja": "もう落ち着いたよ。",
+    "en": "I've calmed down now.",
+    "alternatives": ["I've settled down now.", "I'm calm now."],
+    "point": "今の状態につながる完了は現在完了",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 4,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]
