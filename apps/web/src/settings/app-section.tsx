@@ -18,7 +18,7 @@ export function AppSection({
   const t = useTranslations("Settings");
   const soundId = useId();
   return (
-    <div className="flex flex-col border-y border-border">
+    <div className="flex flex-col border-b border-border">
       <div className="flex min-h-16 items-center justify-between gap-4">
         <h2 id={soundId}>{t("sound.title")}</h2>
         <Toggle
