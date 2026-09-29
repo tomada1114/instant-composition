@@ -29,7 +29,13 @@
     "level": 3,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:da59f94a0ab288957ce2509fe5788f756ed842116d6d46a82b362e89ec4a4ffd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2n5j6u5r",
@@ -61,7 +67,13 @@
     "level": 5,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4f54f5f4ea7a4395f62ddff2d6e034ca4033e9db4098ec469d5dbbb087a6aac2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2v9j4c9n",
@@ -77,7 +89,13 @@
     "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0b9a15234c3a87c0894d90f1fd82b7d378d9f8b5d1743b38be6e381def0109e5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3n8z3h6v",
@@ -126,7 +144,13 @@
     "level": 3,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ee3bebfcab3cb117aed8b2eb8985f923f6c12edd9970ffa844e207502a707b7c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5w8r4y7v",
@@ -190,7 +214,13 @@
     "level": 5,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1e885b54bcbfcc95148e5ae79757652e5b5793a6cd1aca2857fda20830e6f2a7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7e9a6c6m",
@@ -206,7 +236,13 @@
     "level": 2,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f3a2f9e6441ed93ff9e5f1edb57073eb880656b07eb6ca48f0e1a769dec35c9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7y6m6f5b",
@@ -238,23 +274,13 @@
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8u2a8w6p",
-    "ja": "迎えに来てくれて、ありがとう。",
-    "en": "Thanks for coming to pick me up.",
-    "alternatives": [
-      "Thank you for coming to get me.",
-      "Thanks for coming out to pick me up."
-    ],
-    "point": "「迎えに行く・来る」は pick ~ up の句動詞",
-    "topic": "social",
-    "subtopic": "thanks-apologies",
-    "level": 5,
-    "grammar": ["phrasal-verbs", "infinitives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:75cde79b436d521b5d11ff924c5f49d18f727b510be1c56325263accfbbc1548",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9a6c8h4e",
@@ -270,7 +296,13 @@
     "level": 4,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:53e9ce390252333635a2c9bea8b2a7deb173b8bccd1870ca0c7d479b8ec82d4f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9b8q2e8y",
@@ -286,7 +318,13 @@
     "level": 3,
     "grammar": ["can-could-ability", "past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ecf042a2c174e4a24c07af7883894b00b8fb594a85b171b5a19af655446d408d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9n4k2m3t",
@@ -302,7 +340,13 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:69bd69ad694ae9f5ebb087bb1ef866d072cb7b453e77826d299266459031b605",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9t5j3w2b",

@@ -35,7 +35,13 @@
     "level": 3,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8d50b2752e31d1dac2555f1e21695fcffd88d1e08f8d9552b6b44cb1b8089642",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3p7q8a8j",
