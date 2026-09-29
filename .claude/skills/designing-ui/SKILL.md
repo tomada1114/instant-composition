@@ -38,8 +38,8 @@ Preserve:           near-black canvas; one lime; figures in a grotesk set big an
 Borrow only:        from WHOOP, big figures over a quiet data row (the home screen's
                     streak over its week); from Cron, rounded-rectangle controls
                     (18 radius) rather than pills; from the learning apps' own
-                    shells (Brilliant, Kann), one bottom tab bar across the hub
-                    screens that the drill drops.
+                    shells (Brilliant, Kann), one bottom tab bar — which, at the
+                    owner's call, the drill keeps too.
 Role rules:         the accent marks exactly four things — a said-it (○) grade, the one
                     primary action on a screen, a running indicator (timer bar, combo),
                     and what grew in this session. Selection is white. Focus is white.
@@ -52,8 +52,9 @@ Reject:             a card box around the drill prompt; pills that look pressabl
                     hints shown to someone who has not used a key; mascots, confetti,
                     full-screen flashes, shakes, 3D flips, praise and exclamation marks,
                     red, a colour per topic, a light theme.
-Memorable move:     the drill is the whole screen — ticks across the top, the prompt
-                    set large on the canvas, a lime line running out above the thumb.
+Memorable move:     the drill owns the column above the tab bar — ticks across the
+                    top, the prompt set large on the canvas, a lime line running out
+                    above the thumb.
 ```
 
 Four principles decide what the lock does not: **only what moved lights up** (a value
@@ -83,7 +84,7 @@ a call the owner made in an issue, named beside it.
 | Key hints hidden until the learner presses a key (`data-keys`, remembered in local storage)       | Redesign     | A permanent "Space" on every button was noise for touch learners; whoever uses a key sees them from then on                                                       |
 | `?` pauses, and the pause sheet lists the keys                                                    | Redesign     | One place to learn the keys, reached by the key a keyboard user tries first                                                                                       |
 | A ○ lights the answer and the current tick, not a rim around a card                               | Redesign     | With no card box there is no rim; the answer is what the learner is looking at                                                                                    |
-| Navigation is one bottom tab bar (home, records, settings) on those three screens only            | Redesign     | Refero: Brilliant, Duolingo, BoldVoice and Kann keep sections in a bottom bar and drop it in a quiz; Train Fitness marks it white                                 |
+| Navigation is one bottom tab bar (home, records, settings) on all but the 404, landing, welcome   | Owner (#267) | The owner wants to leave a round mid-way, e.g. to change a setting; a tab or Back mid-round pauses and asks first. Overrides Redesign's drop-it-in-a-quiz call    |
 | Records and settings split into in-page tabs; each must fit a 390 × 844 phone with no page scroll | Owner (#215) | Mobile-first: a hub screen is read at a glance on a phone. A list that cannot fit scrolls in its own region; the PC column and shorter phones may scroll the page |
 | The sound switch stays a lone tile at home's top right                                            | Here         | Muting is wanted before a round, on the screen that starts one; settings keeps the same switch as a row                                                           |
 | Definitions (what counts as mastered, how the streak counts) sit behind ⓘ                         | Redesign     | Needed once, read never again; a permanent paragraph taxed every visit                                                                                            |

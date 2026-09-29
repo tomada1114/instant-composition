@@ -4,16 +4,18 @@ import type { ReactElement } from "react";
 import { Button } from "../ui/button";
 import { NoticeGlyph } from "../ui/glyphs";
 
+import { TabBar } from "../lib/tab-bar";
 import type { RoundKind } from "../openapi";
 import { SummaryScreen } from "../summary/summary-screen";
 import type { FinishState } from "./use-drill";
 
 const SHELL =
-  "mx-auto box-content flex min-h-[calc(var(--column-height)-4rem)] max-w-column flex-col gap-4 px-4 py-8";
+  "mx-auto box-content flex min-h-[calc(var(--column-height)-var(--tab-bar-space)-4rem)] max-w-column flex-col gap-4 px-4 pt-8 pb-[calc(var(--tab-bar-space)+2rem)]";
 
 /**
  * Where a round ends: the summary once the server has it, or the notice that
- * the records are not saved yet with a way to send them again.
+ * the records are not saved yet with a way to send them again. The round is
+ * closed, so the tab bar under it leaves at once.
  */
 export function DrillDone({
   finish,
@@ -29,28 +31,30 @@ export function DrillDone({
   onEnd: () => void;
 }>): ReactElement {
   const t = useTranslations("Drill");
-
-  if (finish.status === "failed") {
-    return (
-      <main className={SHELL}>
-        <div className="flex items-center gap-3 rounded-tile bg-raised px-4 py-3">
-          <NoticeGlyph />
-          <p className="flex-1">{t("save.unsaved", { count: unsaved })}</p>
-          <Button variant="text" className="px-2" onClick={finish.retry}>
-            {t("save.resend")}
-          </Button>
-        </div>
-      </main>
-    );
-  }
-  if (finish.status !== "done") return <main className={SHELL} />;
   return (
-    <SummaryScreen
-      summary={finish.summary}
-      mode="live"
-      dailySize={dailySize}
-      onNext={onNext}
-      onEnd={onEnd}
-    />
+    <>
+      {finish.status === "failed" ? (
+        <main className={SHELL}>
+          <div className="flex items-center gap-3 rounded-tile bg-raised px-4 py-3">
+            <NoticeGlyph />
+            <p className="flex-1">{t("save.unsaved", { count: unsaved })}</p>
+            <Button variant="text" className="px-2" onClick={finish.retry}>
+              {t("save.resend")}
+            </Button>
+          </div>
+        </main>
+      ) : finish.status === "done" ? (
+        <SummaryScreen
+          summary={finish.summary}
+          mode="live"
+          dailySize={dailySize}
+          onNext={onNext}
+          onEnd={onEnd}
+        />
+      ) : (
+        <main className={SHELL} />
+      )}
+      <TabBar />
+    </>
   );
 }
