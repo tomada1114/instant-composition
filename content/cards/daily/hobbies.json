@@ -375,6 +375,22 @@
     }
   },
   {
+    "id": "c_5u2r3g7g",
+    "ja": "趣味が仕事になるなんて、当時は知る由もなかった。",
+    "en": "Little did I know my hobby would become my job.",
+    "alternatives": [
+      "I never dreamed my hobby would become my job.",
+      "Back then, I had no clue my hobby would become my job."
+    ],
+    "point": "Little を文頭に出すと did I know の倒置になる",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5x9q2q6e",
     "ja": "電話をくれた時、庭仕事をしてたよ。",
     "en": "I was gardening when you called.",
@@ -543,6 +559,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_7g8x7w5c",
+    "ja": "弟は休みのたびに、バンドの練習に私を付き合わせるんだ。",
+    "en": "My brother makes me sit through his band practice every day off.",
+    "alternatives": [
+      "My brother makes me come to band practice every day off.",
+      "My brother drags me to his band practice every day off."
+    ],
+    "point": "make + 人 + 原形。sit through は最後まで付き合う",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7q8m7e8u",
