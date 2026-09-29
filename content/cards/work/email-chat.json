@@ -80,7 +80,13 @@
     "level": 4,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:72f6392a6eb5fbdd81dd240d5637d19146e8dfe9b808def9e774a51034ea9d2b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2q6t8t7y",
@@ -180,7 +186,13 @@
     "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4c1014117669eebe5bb0c9d4f2230f499fb5e305fbb895ddfe11888de25cfc25",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4t4d9c9x",
@@ -196,7 +208,13 @@
     "level": 8,
     "grammar": ["phrasal-verbs", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c507cb5f2f0d56f8f604e989391a232f36fd8a7b0cd705a71cc84e488d714974",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5d6g8t6x",
@@ -256,7 +274,13 @@
     "level": 3,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2dc3d993bcbb9ec6e251d39343690ef8f360041d3db7a3b5c3eac2471de02a6f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5y8y6s3r",
@@ -335,7 +359,13 @@
     "level": 4,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:52a009a6df4329f1378f3337c5b0019c834e314370af72806d33bb5c39f57649",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6p3y8z5j",
@@ -436,7 +466,13 @@
     "level": 8,
     "grammar": ["time-and-if-clauses", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:25bd97fd67c317fbfe775df06c5f38a4de6ae5b2f059c71db654317a203c1b2f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7e8r2c9g",
@@ -474,7 +510,13 @@
     "level": 2,
     "grammar": ["wh-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9647bb0b82b59e2e4ed64b7fba3fab94d4c2f36f12c0fb0de7d5aa0550c83c5d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7h5r3t7e",
@@ -532,7 +574,13 @@
     "level": 7,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:55557a17004c9ae963765f59417e1bf438a5a84f0974e7070c2fa4267ff3829d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7w5n9f6z",
@@ -652,7 +700,13 @@
     "level": 6,
     "grammar": ["gerunds", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:63a3b790d31c22072076f866893f33bb885d8a4ae92cd3d1db61b6fb71246aba",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9s3q9p4z",

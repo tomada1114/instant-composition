@@ -92,7 +92,13 @@
     "level": 6,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8a17fe998f5aaa4383b7a1cf8d927b9183a36e23c73ae98437a4cf43c09da9e9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3k8q9t7k",
@@ -307,7 +313,13 @@
     "level": 9,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2eaa68f4d69a860c2f38edbc40dfb17a2387b1b670b353c06e7a99532f3714fb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6c6q6w8k",
@@ -537,7 +549,13 @@
     "level": 4,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9c36df694c2171ae6480bb33cd5ccfd458c66190592c9fb6604a1fc831839dcf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8j5w3j6m",
@@ -553,7 +571,13 @@
     "level": 7,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d30889e4ed6042fe83a50e0b1b9c36b29dd75500fb9bb929458deaf995c76823",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8m7d7x8e",
@@ -569,7 +593,13 @@
     "level": 6,
     "grammar": ["hedging-softening", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4dbd7b89b757a05d9a6a09a6f80658a7809fe4740c75fb655c392489b402cffe",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8n6r4n6g",
@@ -648,7 +678,13 @@
     "level": 6,
     "grammar": ["passive-voice", "present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9b385e7d15fe854dfc7576ad40af0d626e61a43fde4f3ed0abc16a6b67f5fe3b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9u4h5p9n",

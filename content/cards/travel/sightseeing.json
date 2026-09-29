@@ -36,7 +36,13 @@
     "level": 7,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:78a56bce971ef28d18c3bfafe7f3c1972ef44c267e23f561132276fe12ba6c28",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2u4b5v4c",
@@ -53,7 +59,13 @@
     "level": 4,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ebbf35365a1405a2763d2b4d499cac00bbb8fcc8d4f361dc124f6ef57c2de07e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3d3p9s6p",
@@ -69,7 +81,13 @@
     "level": 10,
     "grammar": ["nested-clauses", "reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c5fd679927d38b2f810c16361efec4970ade0d8e5c6f9a0c636c32e676f0f761",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3d5n5e7c",
@@ -129,7 +147,13 @@
     "level": 10,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6217a23eaed08e36083fcbdf09914c8e7e682369333c7dde2b5bb61792ff3759",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3t9f3w5z",
@@ -432,7 +456,13 @@
     "level": 7,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ea43cf7a86c09d3e4791cc10cc4566ee1ee2b0548b33fec4ea9b562cf2ad30cb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6r4b5s6x",
@@ -489,7 +519,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:86b2efe4cc9b002b4d43891da6a090ef71e5cc5cc1c4e97c8dd06cedbeb778cd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6z5b8v4w",
@@ -593,7 +629,13 @@
     "level": 9,
     "grammar": ["third-conditional", "inversion"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c40a1acb1612681786fb8c70ada8cfa28918cfb9da179c9828acffcc62c8cdf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7k3y7t2z",
@@ -653,7 +695,13 @@
     "level": 9,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f6a8b5061b3ae798af721ca59e828dda949bcaf75367f0c160a2ee408137544",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7q7f7x3v",
@@ -669,7 +717,13 @@
     "level": 7,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7eb400182ecaf1f64cce0e6dafee499d8bbadc5b306a52f4902379bcff4e4d8b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7u3w2w9w",
@@ -773,7 +827,13 @@
     "level": 9,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d547037b53d611d7dac3beb39b93837bce83fb9c2b9cbe3393bb9745d98a4571",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8p5j5h6h",
@@ -855,7 +915,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:feff909074848219b32944d5017f2020ecc4f0abde63454420ab46a3ec8f822c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9m9n8j3g",
@@ -893,7 +959,13 @@
     "level": 10,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ab079f7636cd20ea6c78bc490a75f17564a00e5773ad0c22137bb68dbb12f873",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9w6y5t6c",
@@ -906,9 +978,15 @@
     "point": "「もう」を含む完了の疑問は現在完了で聞く",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 8,
+    "level": 4,
     "grammar": ["present-perfect", "relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5fcabcd5a1042b646089f0b3ee2f46d4c514509f2208ab6063a16fc8cf8a667b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]
