@@ -323,7 +323,7 @@ const FINAL = {
     },
     commit: {
       type: "string",
-      description: "the commit hash, or empty when nothing was staged",
+      description: "the short commit hash only, or empty when nothing was staged",
     },
     ...STOP,
   },

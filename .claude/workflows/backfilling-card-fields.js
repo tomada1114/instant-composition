@@ -137,7 +137,13 @@ if (updated.length) {
       phase: "Commit",
       schema: {
         type: "object",
-        properties: { commit: { type: "string" }, ...STOP },
+        properties: {
+          commit: {
+            type: "string",
+            description: "the short commit hash only, or empty when nothing was staged",
+          },
+          ...STOP,
+        },
         required: ["commit"],
       },
     },

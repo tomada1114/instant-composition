@@ -206,7 +206,13 @@ if (ids.length) {
       phase: "Commit",
       schema: {
         type: "object",
-        properties: { commit: { type: "string" }, ...STOP },
+        properties: {
+          commit: {
+            type: "string",
+            description: "the short commit hash only, or empty when nothing was staged",
+          },
+          ...STOP,
+        },
         required: ["commit"],
       },
     },
@@ -229,7 +235,7 @@ if (ids.length && !a.noReview && !stopped) {
 }
 
 const stats = await agent(
-  "Run `pnpm -s cards:stats --short` and return its output verbatim.",
+  "Run `pnpm -s cards:stats --short` and return only its `cards:` line and its `cells:` line, verbatim; leave out the tombstone reasons.",
   {
     ...SONNET,
     label: "stats",
