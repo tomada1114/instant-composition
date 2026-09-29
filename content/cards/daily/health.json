@@ -60,6 +60,22 @@
     }
   },
   {
+    "id": "c_4g8j2x4f",
+    "ja": "めまいがして、私は座り込んだ。",
+    "en": "Feeling dizzy, I sat down.",
+    "alternatives": [
+      "Because I felt dizzy, I sat down.",
+      "Since I felt dizzy, I sat down."
+    ],
+    "point": "分詞構文の主語は主節の主語と同じ",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4t5e2b4s",
     "ja": "スマホを見るのはやめたんだ。",
     "en": "I've quit checking my phone.",
@@ -118,6 +134,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5v7e6p5y",
+    "ja": "朝食を抜いたので、めまいがした。",
+    "en": "Having skipped breakfast, I felt faint.",
+    "alternatives": [
+      "Since I'd skipped breakfast, I felt faint.",
+      "Having gone without breakfast, I felt lightheaded."
+    ],
+    "point": "先に起きたことは Having + 過去分詞",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 10,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5x4y5k2b",
@@ -199,6 +231,22 @@
     }
   },
   {
+    "id": "c_6k6a6n4x",
+    "ja": "君は彼からうつされたに違いない。",
+    "en": "You must have caught it from him.",
+    "alternatives": [
+      "You must have picked it up from him.",
+      "You must have gotten it from him."
+    ],
+    "point": "過去への確信は must have + 過去分詞",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 10,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6q4w4w3v",
     "ja": "予約、明日に変えられますか？",
     "en": "Can I reschedule for tomorrow?",
@@ -262,6 +310,22 @@
     }
   },
   {
+    "id": "c_6r5r4v2g",
+    "ja": "この頭痛、早く治まってほしいな。",
+    "en": "I wish this headache would go away.",
+    "alternatives": [
+      "If only this headache would go away.",
+      "I wish this headache would just go away."
+    ],
+    "point": "今への不満や願いは wish + would",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 9,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6w2f3t3r",
     "ja": "家に帰ったら休むよ。",
     "en": "I'll rest once I'm home.",
@@ -301,6 +365,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7e4v4z2p",
+    "ja": "休んでたら、再発しなかったのに。",
+    "en": "If I'd rested, I wouldn't have relapsed.",
+    "alternatives": [
+      "If I'd taken it easy, I wouldn't have relapsed.",
+      "Had I rested, I wouldn't have relapsed."
+    ],
+    "point": "病気の「ぶり返す」は relapse",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 9,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7f2p4k2t",
@@ -360,6 +440,22 @@
     }
   },
   {
+    "id": "c_7y7w5z7m",
+    "ja": "彼は、私の症状は軽いと言った。",
+    "en": "He said what I have is minor.",
+    "alternatives": [
+      "He told me what I have is minor.",
+      "He said my condition is minor."
+    ],
+    "point": "what I have =「私の症状」の名詞節",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8a6k8z2a",
     "ja": "昨日、熱が出たんだ。",
     "en": "I had a fever yesterday.",
@@ -401,6 +497,35 @@
     }
   },
   {
+    "id": "c_8h8c8j4h",
+    "ja": "たっぷり寝たのに、ぐったりだ。",
+    "en": "Despite a full night's sleep, I'm wiped out.",
+    "alternatives": [
+      "Even though I slept well, I'm wiped out.",
+      "Although I slept well, I'm wiped out."
+    ],
+    "point": "Despite の後は名詞。「ぐったり」は wiped out",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8y2z9m6u",
+    "ja": "風邪をひきかけてるんだ。",
+    "en": "I'm coming down with a cold.",
+    "alternatives": ["I think I'm catching a cold.", "I feel a cold coming on."],
+    "point": "「かかりかけ」は come down with",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 8,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8y4z2a4a",
     "ja": "今日は具合が悪いんだ。",
     "en": "I'm sick today.",
@@ -418,5 +543,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9r7g5z8q",
+    "ja": "もっと早く病院に行けばよかった。",
+    "en": "I wish I'd seen a doctor sooner.",
+    "alternatives": [
+      "If only I'd seen a doctor sooner.",
+      "I should have seen a doctor sooner."
+    ],
+    "point": "「医者にかかる」は see a doctor",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 8,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

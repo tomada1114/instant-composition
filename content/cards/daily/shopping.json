@@ -76,6 +76,22 @@
     }
   },
   {
+    "id": "c_3n5w2s4h",
+    "ja": "いいのは、返品が簡単なことだ。",
+    "en": "What's great is that returns are easy.",
+    "alternatives": [
+      "The best part is that returns are easy.",
+      "What's great is returns are easy."
+    ],
+    "point": "What's great is that 節 で名詞節を作る",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 9,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3w7k6w9t",
     "ja": "もっと安いのはありますか？",
     "en": "Do you have a cheaper one?",
@@ -157,6 +173,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4p8v6t8k",
+    "ja": "散財してなきゃ、貯金があるのに。",
+    "en": "If I hadn't splurged, I'd have savings.",
+    "alternatives": [
+      "If I hadn't overspent, I'd have savings now.",
+      "If I hadn't splurged, I'd have money saved now."
+    ],
+    "point": "過去の原因と今の結果は if had + would 原形",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 9,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4x3r9z8x",
+    "ja": "青いほうを買っておけばよかった。",
+    "en": "I wish I'd bought the blue one.",
+    "alternatives": [
+      "If only I'd bought the blue one.",
+      "I should have bought the blue one."
+    ],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 9,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5b2r9u5e",
@@ -244,6 +292,22 @@
     }
   },
   {
+    "id": "c_6n3v5k9x",
+    "ja": "もっと安ければ、買うのに。",
+    "en": "If it were cheaper, I'd buy it.",
+    "alternatives": [
+      "If it were any cheaper, I'd buy it.",
+      "Were it cheaper, I'd buy it."
+    ],
+    "point": "現在の仮定は if + 過去形、would + 原形",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 8,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6v5y9u7v",
     "ja": "これ、試してもいい？",
     "en": "Can I try this?",
@@ -280,6 +344,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7h7q9g5s",
+    "ja": "これの黒って、ありますでしょうか？",
+    "en": "I was wondering if this comes in black.",
+    "alternatives": [
+      "Would you happen to have this in black?",
+      "Do you by any chance have this in black?"
+    ],
+    "point": "I was wondering if で押しつけがましさを和らげる",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8d4h6d4q",
+    "ja": "知ってたら、買わなかったのに。",
+    "en": "If I'd known, I'd have skipped it.",
+    "alternatives": [
+      "If I'd known, I wouldn't have bought it.",
+      "Had I known, I wouldn't have bought it."
+    ],
+    "point": "過去の仮定は if + 過去完了、would have + 過去分詞",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8g6j3g6m",
@@ -342,6 +438,22 @@
     }
   },
   {
+    "id": "c_9g2n9s5s",
+    "ja": "高くても、それだけの価値はある。",
+    "en": "Although it's expensive, it's worth it.",
+    "alternatives": [
+      "Even though it's pricey, it's worth it.",
+      "Pricey as it is, it's worth it."
+    ],
+    "point": "譲歩は although / even though。but は不要",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_9h9n5h8f",
     "ja": "売り切れだと店員が言ってた。",
     "en": "The clerk said it was sold out.",
@@ -362,6 +474,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9j5z8x2m",
+    "ja": "彼女は在庫があるか見てくると言った。",
+    "en": "She said she'd check if it's in stock.",
+    "alternatives": [
+      "She said she'd see if it's in stock.",
+      "She told me she'd check whether it's in stock."
+    ],
+    "point": "節の中に節。if は「かどうか」で語順は平叙文",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9n5g7f9w",
@@ -400,6 +528,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9u2b6u9m",
+    "ja": "サイズが見つからず、私は出た。",
+    "en": "Unable to find my size, I left.",
+    "alternatives": [
+      "Not finding my size, I left the store.",
+      "Since I couldn't find my size, I left."
+    ],
+    "point": "分詞構文は主語を省き、否定は Not / Unable to",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9z7m5f2b",

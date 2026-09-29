@@ -19,6 +19,22 @@
     }
   },
   {
+    "id": "c_2f3z5y2c",
+    "ja": "散らかしたのはケンだよ。",
+    "en": "It was Ken who made the mess.",
+    "alternatives": [
+      "Ken's the one who made the mess.",
+      "Ken is the one who left this mess."
+    ],
+    "point": "「〜したのは」は It was 〜 who の形",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2j4n5r7v",
     "ja": "夕飯なら作れるよ。",
     "en": "I can cook dinner.",
@@ -55,6 +71,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3q9n4z8t",
+    "ja": "早く始めてたら、もう終わり。",
+    "en": "If I'd started sooner, I'd be done.",
+    "alternatives": [
+      "If I had started earlier, I'd be done now.",
+      "If I'd begun earlier, I'd be finished now."
+    ],
+    "point": "過去の仮定 if I'd + 今の結果 I'd be",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_3s5w7x5s",
@@ -117,6 +149,38 @@
     }
   },
   {
+    "id": "c_4y4j3f6m",
+    "ja": "嫌いとはいえ、アイロンはかける。",
+    "en": "Much as I hate ironing, I do.",
+    "alternatives": [
+      "Even though I hate ironing, I do it.",
+      "Much as I hate it, I iron."
+    ],
+    "point": "Much as 〜 は「〜だけれども」の譲歩",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 9,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6b7z3d3h",
+    "ja": "結局、皿は全部私が洗うことになった。",
+    "en": "I ended up washing all the dishes.",
+    "alternatives": [
+      "I wound up washing all the dishes.",
+      "In the end, I washed all the dishes myself."
+    ],
+    "point": "「結局〜することになった」は end up + -ing",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 10,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6e5f5q4s",
     "ja": "庭に犬がいるよ。",
     "en": "There's a dog outside.",
@@ -177,6 +241,38 @@
     }
   },
   {
+    "id": "c_7f2a7g8u",
+    "ja": "台所がもっと広ければなあ。",
+    "en": "I wish our kitchen were bigger.",
+    "alternatives": [
+      "If only our kitchen were bigger.",
+      "I wish we had a bigger kitchen."
+    ],
+    "point": "今の願望は wish + 過去形（be は were）",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 9,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7k9t9w5j",
+    "ja": "腹が立つのは、流しが汚いことだ。",
+    "en": "What annoys me is the dirty sink.",
+    "alternatives": [
+      "What bugs me is the dirty sink.",
+      "The thing that annoys me is the dirty sink."
+    ],
+    "point": "What 節が主語。「腹が立つのは」= What annoys me",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 9,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7m6s6r7c",
     "ja": "皿洗いが大嫌いなんだ。",
     "en": "I hate doing the dishes.",
@@ -194,6 +290,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7p4q7j9y",
+    "ja": "掃除したのに、まだ埃っぽい。",
+    "en": "Although I cleaned, it's still dusty.",
+    "alternatives": [
+      "Even though I cleaned, it's still dusty.",
+      "Despite cleaning, it's still dusty."
+    ],
+    "point": "「のに」は although。but とは並べない",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 8,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7q6g3z4j",
@@ -235,6 +347,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8k2c6u7z",
+    "ja": "昨日ゴミを出しておけばよかった。",
+    "en": "I wish I'd taken the trash out yesterday.",
+    "alternatives": [
+      "If only I'd taken the trash out yesterday.",
+      "I should have taken the trash out yesterday."
+    ],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 10,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8t2j5e9g",
@@ -424,5 +552,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9j7y9t2u",
+    "ja": "うちに必要なのは大きい冷蔵庫だ。",
+    "en": "What we need is a big fridge.",
+    "alternatives": [
+      "What we need is a bigger fridge.",
+      "The thing we need is a big fridge."
+    ],
+    "point": "What we need is 〜 で「必要なのは〜」を強調",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

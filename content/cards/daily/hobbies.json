@@ -82,6 +82,22 @@
     }
   },
   {
+    "id": "c_5a4g9c3t",
+    "ja": "時間があれば、陶芸を試すのに。",
+    "en": "If I had time, I'd try pottery.",
+    "alternatives": [
+      "I'd try pottery if I had the time.",
+      "I'd give pottery a go if I had time."
+    ],
+    "point": "仮定は if + 過去形、結果は would + 原形",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 8,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5e6y6x3z",
     "ja": "雨でも走るつもりだよ。",
     "en": "I'll run even if it rains.",
@@ -118,6 +134,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5r4k4y7y",
+    "ja": "今読んでる本は、めちゃ面白いよ。",
+    "en": "The book I'm reading is gripping.",
+    "alternatives": [
+      "The book I'm reading is a real page-turner.",
+      "The book I'm reading is fascinating."
+    ],
+    "point": "「読んでる本」は目的格の関係詞を省略",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 8,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5w4n2y7m",
@@ -320,6 +352,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8x3k8g2x",
+    "ja": "もっと練習してたら、勝てたのに。",
+    "en": "If I'd practiced more, I'd have won.",
+    "alternatives": [
+      "If I'd trained harder, I'd have won.",
+      "Had I practiced more, I'd have won."
+    ],
+    "point": "過去の仮定は if + had + 過去分詞",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8x9f8w9r",

@@ -1,5 +1,18 @@
 [
   {
+    "id": "c_2e5j3g5m",
+    "ja": "金曜まで、彼女は返信しなかった。",
+    "en": "Not until Friday did she reply.",
+    "alternatives": ["Only on Friday did she reply.", "She didn't reply until Friday."],
+    "point": "Not until を前に出すと did she reply の倒置",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2s2f8f9b",
     "ja": "まだ何も予定を立ててないよ。",
     "en": "I haven't made any plans yet.",
@@ -20,6 +33,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_2y9u4h7j",
+    "ja": "約束してなきゃ、家にいるのに。",
+    "en": "If I hadn't agreed, I'd be home.",
+    "alternatives": [
+      "If I hadn't promised, I'd be at home now.",
+      "If I hadn't said yes, I'd be home now."
+    ],
+    "point": "過去の仮定 had + 今の結果 would be",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_3c3w6z6v",
@@ -61,6 +90,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3h2u3x4x",
+    "ja": "直前のキャンセルでごめんね。",
+    "en": "Sorry to cancel at the last minute.",
+    "alternatives": [
+      "I'm sorry to cancel at the last minute.",
+      "Sorry to bail at the last minute."
+    ],
+    "point": "謝る理由は Sorry to + 動詞",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 8,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_3t9j6j6z",
@@ -218,6 +263,22 @@
     }
   },
   {
+    "id": "c_4x9h7w9g",
+    "ja": "早く言ってくれればよかったのに。",
+    "en": "You could have told me sooner.",
+    "alternatives": [
+      "You should have told me sooner.",
+      "You might have told me sooner."
+    ],
+    "point": "「〜できたのに」は could have + 過去分詞",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 10,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5n2y2p4f",
     "ja": "彼はいつも私たちを待たせる。",
     "en": "He always makes us wait.",
@@ -294,6 +355,22 @@
     }
   },
   {
+    "id": "c_6m2m3r9n",
+    "ja": "私に都合がいいのは金曜だよ。",
+    "en": "It's Friday that works best for me.",
+    "alternatives": [
+      "Friday is the day that works best for me.",
+      "It's Friday that suits me best."
+    ],
+    "point": "It's 〜 that 節で「金曜こそ」を強調",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6n9p4b3x",
     "ja": "その時はもう皆帰っていた。",
     "en": "Everyone had left by then.",
@@ -357,6 +434,22 @@
     }
   },
   {
+    "id": "c_7d3h3y3n",
+    "ja": "病気しなかったら、今ごろ行けたのに。",
+    "en": "If I hadn't gotten sick, I'd be there.",
+    "alternatives": [
+      "If I hadn't come down with something, I'd be there.",
+      "If I hadn't fallen ill, I'd be there now."
+    ],
+    "point": "過去の仮定 had + 今の結果 would be",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 10,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7k5b8d3a",
     "ja": "時間があれば、行くのに。",
     "en": "If I had time, I'd go.",
@@ -374,6 +467,54 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7t7r9d5q",
+    "ja": "うちは空いた週末などめったにない。",
+    "en": "Rarely do we get a free weekend.",
+    "alternatives": [
+      "Seldom do we have a free weekend.",
+      "We rarely get a free weekend."
+    ],
+    "point": "Rarely を前に出すと do we get の倒置",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7w6t8z5w",
+    "ja": "その約束、金曜に延期できる？",
+    "en": "Can we push it back to Friday?",
+    "alternatives": [
+      "Can we put it off until Friday?",
+      "Could we reschedule for Friday?"
+    ],
+    "point": "「延期する」は push back / put off",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8d2a5e4k",
+    "ja": "もう彼には行けないと伝えたよ。",
+    "en": "I've already told him I can't come.",
+    "alternatives": [
+      "I've already let him know I can't come.",
+      "I already told him I can't make it."
+    ],
+    "point": "「もう〜した」は現在完了 + already",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 8,
+    "grammar": ["tense-contrast", "noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8x2v6k8x",
