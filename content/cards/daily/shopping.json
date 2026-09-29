@@ -15,9 +15,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:3ecc3280fbe710dfefcb2a1660b0a04b67302efe0c4b0e4a3fe9569e5de5fac8",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:c25a232d0395505359f159525075c584e55b7b3e353e60c6fcdd97fa01c510bc",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -48,7 +48,13 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:03f399c4d97c90b8ff40a3351756488d5b67e09fb3d9077e62f8e90c4fee64d6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2v8d8w6f",
@@ -112,23 +118,13 @@
     "level": 3,
     "grammar": ["requests-permission", "can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4q7s6k8v",
-    "ja": "この二つは比べにくいな。",
-    "en": "These two are hard to compare.",
-    "alternatives": [
-      "These two are difficult to compare.",
-      "It's hard to compare these two."
-    ],
-    "point": "「比べにくい」は hard to compare。主語は these two",
-    "topic": "daily",
-    "subtopic": "shopping",
-    "level": 1,
-    "grammar": ["be-and-present-simple"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6ebb3cad7de0219f54cf35ee3ba9b029561a4bb48e65fab446e9e618956196e1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4z8y4k5f",
@@ -160,7 +156,13 @@
     "level": 5,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a2ba5d3ef3571d40848e5c781eb9cb55eee7244716ecf88ca0cf6b14c724b510",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5g2n5m3v",
@@ -209,7 +211,13 @@
     "level": 5,
     "grammar": ["passive-voice", "present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3323c4ba2979946a0ea58162fbad6b3f4fa1fbbe8426dfe7b1b1d125abfaa23c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6e5s4a3h",
@@ -225,39 +233,13 @@
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6e8m3b6c",
-    "ja": "返品するのにレシートは必要ですか？",
-    "en": "Do I need a receipt to return it?",
-    "alternatives": [
-      "Do I need a receipt for a return?",
-      "Do I need a receipt for returns?"
-    ],
-    "point": "目的の「〜するのに」は to 不定詞で文末に置ける",
-    "topic": "daily",
-    "subtopic": "shopping",
-    "level": 4,
-    "grammar": ["infinitives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6k5n7q6x",
-    "ja": "母はあのコートを交換してもらった。",
-    "en": "My mom got that coat exchanged.",
-    "alternatives": [
-      "My mom had that coat exchanged.",
-      "My mom got that coat swapped."
-    ],
-    "point": "「〜してもらう」は get/have + 物 + 過去分詞",
-    "topic": "daily",
-    "subtopic": "shopping",
-    "level": 5,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:76bf41c299b47c3804cbb104068cc4483c0796239b89b8cd43179da6b578df3b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6n6k5y5q",
@@ -274,7 +256,13 @@
     "level": 5,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:59bf91c145b04695fc2e17916102cb3935da8c0b74d30a13c5c47dbc3e97bde7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7a3v9n6k",
@@ -290,7 +278,13 @@
     "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:64de18ce7d53cb438370d4f2b9d6b884a4cd1ae9a5d40caf34130337e0dca891",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7t9h5p2u",
@@ -308,9 +302,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:0257afb1a1d030d19a845ea31e4496e1309bbf6b59ef97741546a7bd8f8952d4",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:46377755130e0c02057b9fb49a9afb0915f01d3ce2605f88050142d98c042083",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -350,7 +344,13 @@
     "level": 5,
     "grammar": ["causatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b781b1c5f331b42a5b4382f8410a1d32a119e70e216ac1081d888b5efe8a86dc",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8s9n3v4v",
