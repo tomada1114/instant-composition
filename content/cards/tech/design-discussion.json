@@ -1,0 +1,86 @@
+[
+  {
+    "id": "c_2k8s7y7e",
+    "ja": "サムにやり直してと頼んだ。",
+    "en": "I asked Sam to redo it.",
+    "alternatives": ["I told Sam to redo it.", "I had Sam redo it."],
+    "point": "ask + 人 + to do の語順",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 5,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4d3e5p8v",
+    "ja": "キャッシュは外すと決めた。",
+    "en": "We decided to drop the cache.",
+    "alternatives": ["We decided to remove the cache.", "We chose to drop the cache."],
+    "point": "決めた → decided to + 動詞の原形",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 5,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5b2w8a8h",
+    "ja": "先に要件を確認すべきです。",
+    "en": "We should confirm requirements first.",
+    "alternatives": [
+      "We should check the requirements first.",
+      "We ought to confirm requirements first."
+    ],
+    "point": "「すべき」は should + 動詞の原形",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 4,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6u6d4z5n",
+    "ja": "別案を出してもいいですか？",
+    "en": "May I suggest another option?",
+    "alternatives": [
+      "Can I suggest another option?",
+      "Could I suggest another option?"
+    ],
+    "point": "丁寧に許可を求めるなら May I",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 4,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6x5f6z6c",
+    "ja": "ミアにレビューを頼んで。",
+    "en": "Ask Mia to review it.",
+    "alternatives": ["Get Mia to review it.", "Tell Mia to review it."],
+    "point": "ask + 人 + to do の語順",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 4,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9n5x8r4x",
+    "ja": "もう誰かが作ってたんだ。",
+    "en": "Someone had already built it.",
+    "alternatives": ["Somebody had already made it.", "Someone had built it already."],
+    "point": "すでに済んでいた → had already + 過去分詞",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 5,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]

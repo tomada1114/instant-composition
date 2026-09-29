@@ -1,0 +1,86 @@
+[
+  {
+    "id": "c_3j8v3k2p",
+    "ja": "今日は障害が一つある。",
+    "en": "There's one blocker today.",
+    "alternatives": ["I've got one blocker today.", "I have one blocker today."],
+    "point": "「〜がある」は There is + 単数",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3r3j5t5x",
+    "ja": "PR はサムに見てもらう。",
+    "en": "I'll have Sam review my PR.",
+    "alternatives": ["I'll get Sam to review my PR.", "I'm having Sam review my PR."],
+    "point": "have + 人 + 動詞の原形で「〜してもらう」",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 5,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5m5t9k5u",
+    "ja": "昨日テストを三つ足した。",
+    "en": "I added three tests yesterday.",
+    "alternatives": [
+      "I added three new tests yesterday.",
+      "Yesterday I added three tests."
+    ],
+    "point": "yesterday があれば過去形",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6h2v7r4n",
+    "ja": "誰か、なぜ落ちるか分かる？",
+    "en": "Does anyone know why it's failing?",
+    "alternatives": [
+      "Does anybody know why it keeps failing?",
+      "Anyone know why it's failing?"
+    ],
+    "point": "間接疑問は why + 主語 + 動詞",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 5,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7a5f6t9u",
+    "ja": "ログインのバグを直した。",
+    "en": "I fixed a bug in login.",
+    "alternatives": ["I fixed a login bug.", "I fixed a bug in the login."],
+    "point": "「〜の」は前置詞句で後ろから足す",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 5,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7s9k6v6s",
+    "ja": "もう移行を終わらせました。",
+    "en": "I've finished the migration.",
+    "alternatives": ["I've already finished the migration.", "The migration's done."],
+    "point": "「もう」の完了は現在完了",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]

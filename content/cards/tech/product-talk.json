@@ -1,0 +1,92 @@
+[
+  {
+    "id": "c_3g9h4g4q",
+    "ja": "通知を減らすのはどうかな？",
+    "en": "How about reducing notifications?",
+    "alternatives": [
+      "What about reducing notifications?",
+      "Why not reduce notifications?"
+    ],
+    "point": "How about の後は -ing",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 4,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4p8q5n7w",
+    "ja": "結局、誰向けの機能？",
+    "en": "Who is this feature actually for?",
+    "alternatives": [
+      "Who's this feature really for?",
+      "Who is this feature meant for?"
+    ],
+    "point": "前置詞 for は文末に残せる",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4t4a7m7t",
+    "ja": "オフラインでも使えるよ。",
+    "en": "You can use it offline.",
+    "alternatives": ["You're able to use it offline.", "It works offline too."],
+    "point": "「できる」は can + 動詞の原形",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 4,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5w6x5t3z",
+    "ja": "離脱防止のために作った。",
+    "en": "We built it to prevent churn.",
+    "alternatives": ["We made it to prevent churn.", "We built this to reduce churn."],
+    "point": "目的は to + 動詞の原形",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7j3t9v8p",
+    "ja": "地味なのに人気の機能だ。",
+    "en": "Although it's minor, it's very popular.",
+    "alternatives": [
+      "Even though it's minor, it's popular.",
+      "This feature's minor, but it's popular."
+    ],
+    "point": "「〜なのに」は although / even though",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 5,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9c3a7f2m",
+    "ja": "月曜に新プランを公開する。",
+    "en": "We're launching the plan Monday.",
+    "alternatives": [
+      "We're launching the new plan on Monday.",
+      "We launch the plan on Monday."
+    ],
+    "point": "決まった予定は進行形で言える",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 4,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]

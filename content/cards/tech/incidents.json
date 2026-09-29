@@ -1,0 +1,86 @@
+[
+  {
+    "id": "c_4p8a8d3k",
+    "ja": "障害は公開前に始まってた。",
+    "en": "The outage had started before release.",
+    "alternatives": [
+      "It had started before release.",
+      "The outage began before we released."
+    ],
+    "point": "「前から」の過去は had + 過去分詞",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6t4f5r4q",
+    "ja": "原因を特定できなかった。",
+    "en": "We couldn't pinpoint the cause.",
+    "alternatives": [
+      "We weren't able to pinpoint the cause.",
+      "We couldn't identify the cause."
+    ],
+    "point": "pinpoint は原因を特定する定番語",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7q7m9q2z",
+    "ja": "エラー数が急増している。",
+    "en": "There's a spike in errors.",
+    "alternatives": ["There's been a spike in errors.", "Errors are spiking."],
+    "point": "急増は a spike in ~",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8q7q5q3d",
+    "ja": "これが効いた修正です。",
+    "en": "It's the fix that worked.",
+    "alternatives": ["It's the fix which worked.", "Here's the fix that worked."],
+    "point": "物を説明する関係代名詞は that",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 4,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8y4w7b4e",
+    "ja": "昼からずっと止まってる。",
+    "en": "It's been down since noon.",
+    "alternatives": ["It has been down since noon.", "It's been offline since noon."],
+    "point": "since + 時点には現在完了",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 4,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9u5c5k9c",
+    "ja": "再起動していいですか？",
+    "en": "Can I restart it?",
+    "alternatives": ["May I restart it?", "Is it okay to restart it?"],
+    "point": "許可を求めるなら Can I / May I",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 4,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  }
+]
