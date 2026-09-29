@@ -13,7 +13,13 @@
     "level": 4,
     "grammar": ["indirect-questions", "noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d5933bbd2c25e98d611a436a167d001c5a33b93ae755880a7f3e322f28f13042",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2e6y6g9d",
@@ -29,7 +35,13 @@
     "level": 4,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4726347655bd0911fb9cd81591b92024e8df52503b3c5ebce9306cd1d64ba255",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2p6z7e6m",
@@ -52,22 +64,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_3a9t4f9w",
-    "ja": "ついでに、窓も拭いておいたよ。",
-    "en": "I did the windows while I was at it.",
-    "alternatives": [
-      "I cleaned the windows while I was at it.",
-      "While I was at it, I wiped the windows."
-    ],
-    "point": "「ついでに」は while I was at it で言える",
-    "topic": "daily",
-    "subtopic": "home",
-    "level": 6,
-    "grammar": ["time-and-if-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_3b8z5h5q",
@@ -102,7 +98,13 @@
     "level": 7,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9a87fab0b98221ad6cc9ba1f63dd6165854916179ebbe56523aad97860399b3f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3g6w5e4d",
@@ -149,22 +151,6 @@
     }
   },
   {
-    "id": "c_3j2b6a4r",
-    "ja": "洗濯機、朝からずっと回りっぱなしだよ。",
-    "en": "The washer's been running since this morning.",
-    "alternatives": [
-      "The washing machine has been running all morning.",
-      "The washer has been going since morning."
-    ],
-    "point": "「ずっと〜してる」は have been + ing、起点は since",
-    "topic": "daily",
-    "subtopic": "home",
-    "level": 6,
-    "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3p2j4e8e",
     "ja": "洗濯機が壊れたって聞いたよ。",
     "en": "I heard the washing machine broke.",
@@ -178,23 +164,13 @@
     "level": 4,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4s8q3j7k",
-    "ja": "玄関の脇の箱、僕が片付けたよ。",
-    "en": "I put away the box by the door.",
-    "alternatives": [
-      "I've put away that box by the door.",
-      "The box by the door? I put it away."
-    ],
-    "point": "「玄関の脇の箱」は box の後ろに by the door",
-    "topic": "daily",
-    "subtopic": "home",
-    "level": 6,
-    "grammar": ["post-modification"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d23e25952d1469262bc6205d107491d31701cbab1cd4da2d8929e9bced738997",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4v3k4k9b",
@@ -232,7 +208,13 @@
     "level": 5,
     "grammar": ["modal-obligation-advice", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:121b61141e8811990b94280bcaf245d0d706918ab3cdeaafd00c59f70bdc121c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4z6x8k4h",
@@ -257,22 +239,6 @@
     }
   },
   {
-    "id": "c_5m8u5c8f",
-    "ja": "あなた、今週ずっと靴下を床に脱ぎっぱなしだよ。",
-    "en": "You've been leaving socks on the floor all week.",
-    "alternatives": [
-      "You've been leaving your socks around all week.",
-      "You keep leaving your socks on the floor."
-    ],
-    "point": "「ずっと〜してる」は現在完了進行形 have been -ing",
-    "topic": "daily",
-    "subtopic": "home",
-    "level": 6,
-    "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5q6q3c8j",
     "ja": "掃除、ちょっと休憩しよう。",
     "en": "Let's take a break from cleaning.",
@@ -283,7 +249,13 @@
     "level": 3,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6ca766e21e81c27c1d672d72359953e1f7e528ca5d4dbb0e48e3930038d4cc23",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6b4k9b8b",
@@ -389,7 +361,13 @@
     "level": 4,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:48ec179e6b820ddb4bbc7e6b3a892161f5e6f21341aab4c1318e93c5c343e958",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6k7f4x3h",
@@ -471,7 +449,13 @@
     "level": 4,
     "grammar": ["progressive-aspect", "tense-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ea7f5a7082a711058279e313e799db6f2d7ed7992386354d53e09da7bf7763c1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7d6u8e8e",
@@ -487,7 +471,13 @@
     "level": 4,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b5475561f5229eef60a60045d7a092f413074cbcd5b0c8e62799771244835bf2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7f5f7t5j",
@@ -525,7 +515,13 @@
     "level": 6,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5ba3be2b8e7e23b5fcaf205062ee1cb37c45239a06a5d75f704cf61224fb6f24",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7v5a3u2e",
@@ -563,23 +559,13 @@
     "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8d9y7a7g",
-    "ja": "洗濯物を干すベランダ、そろそろ掃除する頃だよね。",
-    "en": "It's about time we cleaned the balcony where we hang laundry.",
-    "alternatives": [
-      "It's time we cleaned the balcony where we hang laundry.",
-      "It's about time we cleaned the balcony we hang laundry on."
-    ],
-    "point": "It's about time の後ろは過去形（今すべきだという含み）",
-    "topic": "daily",
-    "subtopic": "home",
-    "level": 9,
-    "grammar": ["relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2ff5aedc5dc24cc955bd10d88aadfdea0d87f73f4ef0c52d8aa0cf8d61c77f8a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8e7g2m2r",
@@ -595,7 +581,13 @@
     "level": 4,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4e2d8d9021f39f900a320e907ec592719262f7d6c87cc0d3e0807b3795d384d8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8m5z2r3t",
@@ -631,7 +623,13 @@
     "level": 3,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ac031de49827a6a41fa84eba1b3bb2008f6466268c7572199046f15ea80e44a8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9z6j7r2v",
@@ -647,6 +645,12 @@
     "level": 2,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0bfbc1a6c036142f318cf632c1f8f5d3e59c0901c95a9eb5312b3ebd355ab520",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
