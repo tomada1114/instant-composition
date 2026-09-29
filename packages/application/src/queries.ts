@@ -7,7 +7,7 @@ import {
   type Result,
 } from "@instant-composition/domain";
 
-import { snapshotOrEmpty, toeicOf, type CatalogSnapshot } from "./catalog";
+import { snapshotOrEmpty, type CatalogSnapshot } from "./catalog";
 import type { RequestContext } from "./context";
 import type { ApplicationError } from "./errors";
 import { storeFor, type ApplicationDeps } from "./execute";
@@ -97,7 +97,6 @@ export async function settingsPage(
     store.stats(),
   ]);
   const totals = stats?.value ?? EMPTY_STATS;
-  const level = totals.level;
   return ok({
     settings: withDefaults(settings?.value ?? DEFAULT_SETTINGS),
     topics: snapshot.topics.map((topic) => ({
@@ -105,7 +104,6 @@ export async function settingsPage(
       name: topic.name,
       subtopics: topic.subtopics.map(({ id, name }) => ({ id, name })),
     })),
-    toeic: level === null ? null : toeicOf(snapshot, level.level),
     difficulty: levelViewOf(totals, snapshot),
     levels: [...snapshot.levels]
       .sort(([a], [b]) => a - b)

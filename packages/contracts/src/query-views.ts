@@ -127,7 +127,6 @@ export const topicInfoSchema = z.object({
 export const settingsPageViewSchema = z.object({
   settings: settingsSchema,
   topics: z.array(topicInfoSchema),
-  toeic: z.string().nullable(),
   difficulty: levelViewSchema,
   /** Every level the learner may pick, lowest first, by its TOEIC reference. */
   levels: z.array(z.object({ level: levelSchema, toeic: z.string() })),

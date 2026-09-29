@@ -336,7 +336,6 @@ export type TopicInfo = {
 export type SettingsPageView = {
     settings: Settings;
     topics: Array<TopicInfo>;
-    toeic: string | null;
     difficulty: LevelView;
     levels: Array<{
         level: number;

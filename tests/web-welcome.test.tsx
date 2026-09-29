@@ -46,7 +46,6 @@ function settingsPage(topics: TopicInfo[] = TOPICS): SettingsPageView {
   return {
     settings: { topics: [], focus: [], dailySize: 10, sound: true, limitSeconds: 30 },
     topics,
-    toeic: null,
     difficulty: { mode: "auto", level: null, toeic: null },
     levels: ["300", "400", "500", "600", "730", "800", "860", "900", "950", "990+"].map(
       (toeic, index) => ({ level: index + 1, toeic }),
