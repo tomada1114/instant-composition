@@ -1,4 +1,4 @@
-import { act, render } from "@testing-library/react";
+import { act, render, screen, within } from "@testing-library/react";
 import { vi } from "vitest";
 
 import {
@@ -88,6 +88,21 @@ export function press(key: string): void {
   act(() => {
     window.dispatchEvent(new KeyboardEvent("keydown", { key, cancelable: true }));
   });
+}
+
+/**
+ * Every navigation landmark on the screen, each as its links' targets and
+ * `aria-current` values, in order.
+ */
+export function navigations(): (readonly [string | null, string | null])[][] {
+  return screen.queryAllByRole("navigation").map((nav) =>
+    within(nav)
+      .getAllByRole("link")
+      .map(
+        (link) =>
+          [link.getAttribute("href"), link.getAttribute("aria-current")] as const,
+      ),
+  );
 }
 
 /** Mounts the whole app at `path`, and lets its first reads answer. */
