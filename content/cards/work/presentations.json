@@ -13,7 +13,13 @@
     "level": 5,
     "grammar": ["tense-contrast", "present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f611ebb29710a2905108cc88f049eed8da00f3d679f534474400e7e7339de96a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2k4r4z3k",
@@ -57,22 +63,6 @@
     }
   },
   {
-    "id": "c_2t9r7z4b",
-    "ja": "まとめは、私が部長にお願いしてあります。",
-    "en": "I've asked our manager to give the summary.",
-    "alternatives": [
-      "I've asked the department head to summarize.",
-      "I've asked the director to do the summary."
-    ],
-    "point": "お願いしてある は現在完了 + ask + 人 + to do",
-    "topic": "work",
-    "subtopic": "presentations",
-    "level": 4,
-    "grammar": ["verb-object-to-do", "present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3j5t9r7r",
     "ja": "ごもっともですが、私たちはこの点だけは譲れません。",
     "en": "Fair point, but we can't budge on this.",
@@ -86,7 +76,13 @@
     "level": 7,
     "grammar": ["concession-contrast", "hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e3cdfe40ecf92582ecbe3b04b52491225b6f5a25fe040bd4991b8e4ee1f73856",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3s6h3a2p",
@@ -124,7 +120,13 @@
     "level": 4,
     "grammar": ["time-and-if-clauses", "future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c85086ecf8afc5ff3e9702e261ac2be78dbd4528b8f3991b4d993b0557cd9602",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3v9y2f2p",
@@ -171,38 +173,6 @@
     }
   },
   {
-    "id": "c_4f8h8j2w",
-    "ja": "スタッフに、マイクの音を上げるよう頼んでくれる？",
-    "en": "Can you ask the staff to turn the mic up?",
-    "alternatives": [
-      "Could you ask the staff to turn up the mic?",
-      "Can you get the staff to turn the mic up?"
-    ],
-    "point": "ask + 人 + to do の形。that 節にしない",
-    "topic": "work",
-    "subtopic": "presentations",
-    "level": 7,
-    "grammar": ["verb-object-to-do"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4s7y9p7m",
-    "ja": "少し脱線しますが、関連する事例をご紹介します。",
-    "en": "A bit off topic, but here's a relevant example.",
-    "alternatives": [
-      "This is a tangent, but here's a related case.",
-      "I'll go off topic briefly with a related example."
-    ],
-    "point": "脱線の前置きは a bit off topic や tangent が自然",
-    "topic": "work",
-    "subtopic": "presentations",
-    "level": 8,
-    "grammar": ["hedging-softening", "concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_4t3z9p3c",
     "ja": "ご質問は、話が終わるまでお待ちください。",
     "en": "Please hold your questions until I've finished.",
@@ -216,7 +186,13 @@
     "level": 5,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:30bd7dd0b6c1ee541e958e8fde2bf036209cb43b49c994b4cdc5bc2ceae9e2db",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4t7w6b8f",
@@ -241,22 +217,6 @@
     }
   },
   {
-    "id": "c_4v8p7y9v",
-    "ja": "社内で試験中の新機能をご紹介します。",
-    "en": "I'll introduce a new feature currently being tested internally.",
-    "alternatives": [
-      "Let me show you a new feature we're testing in-house.",
-      "I'd like to introduce a new feature in internal testing."
-    ],
-    "point": "名詞の後ろに being tested など分詞句を置く",
-    "topic": "work",
-    "subtopic": "presentations",
-    "level": 8,
-    "grammar": ["post-modification", "passive-voice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_4y5g9j5j",
     "ja": "君が指摘してくれなかったら、恥をかいていたよ。",
     "en": "If you hadn't caught it, I'd have been embarrassed.",
@@ -279,22 +239,6 @@
     }
   },
   {
-    "id": "c_4z6n4q2d",
-    "ja": "私たちが最初に苦情に気づいた画面がこれです。",
-    "en": "This is the screen where we first spotted complaints.",
-    "alternatives": [
-      "This is the screen where we noticed complaints first.",
-      "Here's the screen where we first spotted complaints."
-    ],
-    "point": "場所を表す名詞には where で説明を足す",
-    "topic": "work",
-    "subtopic": "presentations",
-    "level": 6,
-    "grammar": ["relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6f5p9u7q",
     "ja": "先月私がまとめた報告書を要約します。",
     "en": "I'll summarize the report I put together last month.",
@@ -308,7 +252,13 @@
     "level": 6,
     "grammar": ["relative-clauses", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0a1c784f32ae8190ac9a381fc334270d845da1f545ab8d30eccfbe49db4820a6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6k8r7r8p",
@@ -346,7 +296,13 @@
     "level": 6,
     "grammar": ["hedging-softening", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7d3a1d3189473b1bdf969c6bd834bbb2b81ad164ee0afb585227b012cfbb3b9e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6n2m9w8q",
@@ -385,7 +341,13 @@
     "level": 2,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f87fcb74ede0969b889226f7f75f8c59ed4ce5a0aab613f87584612b760dadbe",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6y7x9j7n",
@@ -445,7 +407,13 @@
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:92bb1b5e7c192fbd70b18919cb0a0a3176924dd0c0b21c14ae5ec9cb983fb702",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7t7r4m7j",
@@ -461,7 +429,13 @@
     "level": 6,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:83d4f890ef3135cf041d1ad63f7490d4b76d200565a4f8659d73817602b5a6d9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8j9v3e8p",
@@ -477,7 +451,13 @@
     "level": 6,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f10de6d78e97078a7f735f4794d1ea0f49fae00e01b18a2e15ac964748e28240",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8u5e2r5e",
@@ -607,21 +587,5 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9j7j2b9u",
-    "ja": "今ご覧のグラフは、先月の実績です。",
-    "en": "The graph you're seeing shows last month's results.",
-    "alternatives": [
-      "You're looking at last month's results here.",
-      "This graph shows last month's results."
-    ],
-    "point": "「今ご覧の」は you're seeing を graph の後ろに続ける",
-    "topic": "work",
-    "subtopic": "presentations",
-    "level": 4,
-    "grammar": ["post-modification", "progressive-aspect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   }
 ]
