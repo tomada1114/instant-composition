@@ -13,7 +13,13 @@
     "level": 5,
     "grammar": ["indirect-questions", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f700367a48b8be0297340809b72ce6b2295bdd7477cfdcfb7b5a66ade52a6fee",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2n4f7k5x",
@@ -117,55 +123,13 @@
     "level": 5,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3p2y8s6a",
-    "ja": "彼女、あの案件をやり遂げたね。客も感心してたよ。",
-    "en": "She pulled it off, and the client was really impressed.",
-    "alternatives": [
-      "She nailed that, and the client was impressed too.",
-      "She handled that well, and the client was impressed too."
-    ],
-    "point": "pull off は「うまくやってのける」。過去の出来事は過去形で",
-    "topic": "work",
-    "subtopic": "feedback",
-    "level": 7,
-    "grammar": ["phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3r4u3r9d",
-    "ja": "この資料、よく作られてるね。",
-    "en": "This document is really well made.",
-    "alternatives": [
-      "This document is very well done.",
-      "This is a really well-made document."
-    ],
-    "point": "「作られている」は be + 過去分詞（受動態）で言う",
-    "topic": "work",
-    "subtopic": "feedback",
-    "level": 3,
-    "grammar": ["passive-voice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3v9j5u8m",
-    "ja": "山田さん、私の資料をどう思うか言ってた？",
-    "en": "Did Yamada say what he thought of my materials?",
-    "alternatives": [
-      "Did Yamada say how he felt about my materials?",
-      "Did Yamada mention what he made of my materials?"
-    ],
-    "point": "間接疑問は語順が平叙文。what he thought で過去に揃える",
-    "topic": "work",
-    "subtopic": "feedback",
-    "level": 6,
-    "grammar": ["indirect-questions", "reported-speech"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:00aabb9fb9a5cb3019f8d326c95ff7088afc40c62d027c16689f5b04f058151c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4n5j5s7q",
@@ -203,7 +167,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:06e94a799b1522aea6e1337aba26dc7e9a6b78a5e387f9f3bd249df137ce0f3d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5h4q3k6v",
@@ -219,7 +189,13 @@
     "level": 4,
     "grammar": ["indirect-questions", "modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bb4d2157e11880cdecfc09c3463d06a12d3dfc86d3cc60b02a5ba00dfc7d4244",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5q8b5b6b",
@@ -257,7 +233,13 @@
     "level": 4,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:07c4bfe6bb7a57d54a85e973c8ce2987b5fa96da84ba20e61c59ec9e38cf5c18",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6a5g7q2w",
@@ -304,22 +286,6 @@
     }
   },
   {
-    "id": "c_7c7k2x5v",
-    "ja": "課長にはっきり言われた、見直したほうがいいって。",
-    "en": "My manager told me bluntly that I should rethink it.",
-    "alternatives": [
-      "My manager said flat out that I should rethink it.",
-      "My boss said bluntly that I should rethink it."
-    ],
-    "point": "told me straight that + 主語 + should。時制は言われた時点で揃える",
-    "topic": "work",
-    "subtopic": "feedback",
-    "level": 7,
-    "grammar": ["reported-speech"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7n4h8y7k",
     "ja": "終わったら、また見てもらえますか？",
     "en": "Could you recheck it when I'm done?",
@@ -333,7 +299,13 @@
     "level": 3,
     "grammar": ["time-and-if-clauses", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9744335130b7aef87f9b937b7f36e2c59b3caf929397ae0937dfc96eda39b369",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7y5t5j5k",
@@ -412,7 +384,13 @@
     "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8a0a748975d647a4aa32e793ca09c2eb818ab21612120030685176684c165745",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9a6g4w9m",
@@ -432,21 +410,5 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9g5z2g5f",
-    "ja": "ご指摘、しっかり受け止めました。次から活かします。",
-    "en": "I've taken that on board and will apply it next time.",
-    "alternatives": [
-      "Point taken, and I'll put it to use next time.",
-      "Your feedback is well taken, and I'll use it next time."
-    ],
-    "point": "「受け止める」は take ~ on board。目的語は間に入る",
-    "topic": "work",
-    "subtopic": "feedback",
-    "level": 10,
-    "grammar": ["phrasal-verbs", "tense-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   }
 ]
