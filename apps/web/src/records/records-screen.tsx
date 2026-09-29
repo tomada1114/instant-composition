@@ -1,7 +1,11 @@
+import { useNavigate } from "@tanstack/react-router";
 import type { ReactElement, ReactNode } from "react";
 import { useFormatter, useTranslations } from "use-intl";
 
-import { BackHeader } from "../lib/back-header";
+import { RECORDS_TABS, searchFor, type RecordsTab } from "../lib/screen-tabs";
+import { SELF_SCROLL, TabbedScreen } from "../lib/tabbed-screen";
+import { useEscapeHome } from "../lib/use-escape-home";
+import { cn } from "../lib/utils";
 import type { RecordsView } from "../openapi";
 import { ReachRings } from "../summary/reach-rings";
 import { InfoTip } from "../ui/info-tip";
@@ -30,24 +34,15 @@ function Tile({
   );
 }
 
-/** W10: the long view. Nothing here was just earned, so nothing is lit. */
-export function RecordsScreen({
-  records,
-}: Readonly<{ records: RecordsView }>): ReactElement {
+/**
+ * The run, the level and the totals as tiles, then the calendar and the
+ * milestones; the milestones scroll inside what is left of the tab.
+ */
+function History({ records }: Readonly<{ records: RecordsView }>): ReactElement {
   const t = useTranslations("Records");
   const format = useFormatter();
   return (
-    <main className="mx-auto box-content flex max-w-column flex-col gap-10 px-4 pt-4 pb-10">
-      <BackHeader title={t("title")} back={t("back")} />
-      <div className="flex flex-col gap-3">
-        <ReachRings reach={records.reach} shown={final} />
-        <div className="flex flex-col border-t border-border">
-          {records.breakdown.map((topic) => (
-            <Breakdown key={topic.id} topic={topic} />
-          ))}
-        </div>
-      </div>
-      <WeakList weak={records.weak} />
+    <>
       <dl className="grid grid-cols-2 gap-2">
         <Tile
           label={t("streakLabel")}
@@ -57,7 +52,14 @@ export function RecordsScreen({
             ? t("restart")
             : t("streak", { days: records.streak.current })}
         </Tile>
-        <Tile label={t("difficulty")}>
+        <Tile
+          label={t("difficulty")}
+          note={
+            records.suggestedToeic === null
+              ? t(records.levelMode)
+              : t("suggested", { toeic: records.suggestedToeic })
+          }
+        >
           {records.toeic === null
             ? t("notMeasured")
             : t("toeic", { toeic: records.toeic })}
@@ -76,6 +78,50 @@ export function RecordsScreen({
         <DotCalendar weeks={records.calendar} />
       </section>
       <MilestoneList groups={records.titles} />
-    </main>
+    </>
+  );
+}
+
+/**
+ * W10: the long view, under three tabs that each fit a phone — how far each
+ * topic has come, the weak points, and the run and the totals. Nothing here
+ * was just earned, so nothing is lit. The tab is the URL's `?tab=`.
+ */
+export function RecordsScreen({
+  records,
+  tab,
+}: Readonly<{ records: RecordsView; tab: RecordsTab }>): ReactElement {
+  const t = useTranslations("Records");
+  const navigate = useNavigate();
+  useEscapeHome();
+  return (
+    <TabbedScreen
+      title={t("title")}
+      tabs={RECORDS_TABS.map((value) => ({ value, label: t(`tabs.${value}`) }))}
+      tab={tab}
+      onTab={(next) => {
+        void navigate({
+          to: "/records",
+          search: searchFor(RECORDS_TABS, next),
+          replace: true,
+        });
+      }}
+    >
+      {tab === "overview" ? (
+        <div className="flex min-h-0 flex-1 flex-col gap-3">
+          <ReachRings reach={records.reach} shown={final} />
+          {/* Inset by 6 so the rows' focus outline is not clipped by the scroll. */}
+          <div className={cn("-m-1.5 min-h-15 p-1.5", SELF_SCROLL)}>
+            <div className="flex flex-col border-t border-border">
+              {records.breakdown.map((topic) => (
+                <Breakdown key={topic.id} topic={topic} />
+              ))}
+            </div>
+          </div>
+        </div>
+      ) : null}
+      {tab === "weak" ? <WeakList weak={records.weak} /> : null}
+      {tab === "history" ? <History records={records} /> : null}
+    </TabbedScreen>
   );
 }

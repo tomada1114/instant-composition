@@ -2,9 +2,11 @@ import { describe, expect, it } from "vitest";
 
 import {
   finishRound,
+  home,
   learnerId,
   recordAnswers,
   startRound,
+  updateLevel,
   updateSettings,
   type LearnerStore,
   type RoundPayload,
@@ -521,6 +523,147 @@ describe("updateSettings", () => {
     const store = h.stores.forLearner(h.learner);
     expect((await store.round(round.id))?.value.deck).toHaveLength(5);
     expect((await store.portion("2026-09-23"))?.value.target).toBe(5);
+  });
+});
+
+describe("updateLevel", () => {
+  /** The fixture's cards under the TOEIC references `content/levels.json` gives each level. */
+  const TOEIC = ["300", "400", "500", "600", "730", "800", "860", "900", "950", "990+"];
+  const withToeic = () => {
+    const snapshot = makeSnapshot();
+    return makeHarness(
+      fixedCatalog({
+        ...snapshot,
+        levels: new Map(
+          TOEIC.map((toeic, index) => [index + 1, { cefr: "B1", toeic }] as const),
+        ),
+      }),
+    );
+  };
+  const MINUTE = 60_000;
+
+  /** Starts a round of `kind` and finishes it with every first pass correct and fast. */
+  async function playFast(
+    h: Harness,
+    kind: "today" | "extra",
+    roundId: string,
+    now: number,
+  ) {
+    const round = await start(h, kind, roundId, now);
+    const finished = await finishRound(h.deps, h.context(now + MINUTE), {
+      roundId: round.id,
+      answers: answersFor(round, () => "ok", 1_000),
+    });
+    if (!finished.ok) throw new Error(`Finishing ${roundId} failed.`);
+    return { round, summary: finished.value };
+  }
+
+  it("deals a learner who picks TOEIC 730 at onboarding level-5 decks, and never a placement", async () => {
+    const h = withToeic();
+    await onboard(h);
+    const chosen = await updateLevel(h.deps, h.context(), { mode: "manual", level: 5 });
+    expect(chosen).toStrictEqual({
+      ok: true,
+      value: { mode: "manual", level: 5, toeic: "730" },
+    });
+
+    const view = await home(h.deps, h.context());
+    expect(view.ok && view.value.state.kind).toBe("ready");
+    const round = await start(h, "today", "t1");
+    const levels = Object.values(round.cards).map((card) => card.level);
+    expect(round.kind).toBe("today");
+    expect(levels).toHaveLength(10);
+    expect(levels.every((level) => level >= 4 && level <= 7)).toBe(true);
+    expect(levels.filter((level) => level === 5).length).toBeGreaterThanOrEqual(5);
+  });
+
+  it("keeps a level picked by hand where it is after thirty answers, then adjusts from it once switched to auto", async () => {
+    const h = withToeic();
+    await onboard(h, 15);
+    await updateLevel(h.deps, h.context(), { mode: "manual", level: 5 });
+    const store = h.stores.forLearner(h.learner);
+
+    const today = await playFast(h, "today", "t1", NOON + MINUTE);
+    const extra = await playFast(h, "extra", "x1", NOON + 3 * MINUTE);
+    const kept = (await store.stats())?.value;
+    expect(today.summary.difficulty).toBeNull();
+    expect(extra.summary.difficulty).toBeNull();
+    expect(kept?.levelWindow).toHaveLength(30);
+    expect(kept?.level).toMatchObject({ level: 5, reason: "chosen" });
+    expect(kept?.levelMode).toBe("manual");
+
+    const released = await updateLevel(h.deps, h.context(NOON + 5 * MINUTE), {
+      mode: "auto",
+    });
+    expect(released).toStrictEqual({
+      ok: true,
+      value: { mode: "auto", level: 5, toeic: "730" },
+    });
+    // Three rounds' probes answered right and fast clear level 7 as well as 6.
+    const moved = await playFast(h, "extra", "x2", NOON + 6 * MINUTE);
+    expect(moved.summary.difficulty).toStrictEqual({ change: "up", toeic: "860" });
+    expect((await store.stats())?.value.level).toMatchObject({
+      level: 7,
+      reason: "up",
+    });
+  });
+
+  it("puts a learner in auto when a placement measures the level", async () => {
+    const h = withToeic();
+    await onboard(h);
+    await updateLevel(h.deps, h.context(), { mode: "manual", level: 2 });
+    const round = await start(h, "placement", "p1");
+    const finished = await finishRound(h.deps, h.context(), {
+      roundId: round.id,
+      answers: answersFor(round),
+    });
+
+    expect(finished.ok && finished.value.placement).toStrictEqual({
+      level: 10,
+      toeic: "990+",
+      first: false,
+    });
+    const stats = (await h.stores.forLearner(h.learner).stats())?.value;
+    expect(stats?.levelMode).toBe("auto");
+    expect(stats?.level).toMatchObject({ level: 10, reason: "placement" });
+  });
+
+  it("writes nothing when the level is already held the way chosen", async () => {
+    const h = withToeic();
+    await placed(h);
+    const store = h.stores.forLearner(h.learner);
+    const before = await everything(store);
+
+    const auto = await updateLevel(h.deps, h.context(), { mode: "auto" });
+
+    expect(auto).toStrictEqual({
+      ok: true,
+      value: { mode: "auto", level: 10, toeic: "990+" },
+    });
+    expect(await everything(store)).toStrictEqual(before);
+  });
+
+  it("refuses a level off the catalog's scale and writes nothing", async () => {
+    const h = withToeic();
+    expect(
+      await updateLevel(h.deps, h.context(), { mode: "manual", level: 11 }),
+    ).toStrictEqual({ ok: false, error: { code: "ERR_BAD_REQUEST" } });
+    expect(await h.stores.forLearner(h.learner).stats()).toBeUndefined();
+  });
+
+  it("refuses an agent that was not granted the command", async () => {
+    const h = makeHarness();
+    const context = {
+      ...h.context(),
+      actor: {
+        kind: "agent" as const,
+        onBehalfOf: h.learner,
+        grants: ["home" as const],
+      },
+    };
+    expect(
+      await updateLevel(h.deps, context, { mode: "manual", level: 5 }),
+    ).toStrictEqual({ ok: false, error: { code: "ERR_FORBIDDEN" } });
   });
 });
 

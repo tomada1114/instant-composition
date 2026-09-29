@@ -54,7 +54,7 @@ no applause. Browsers block autoplay, so the first "start" press unlocks audio.
 | → / K / F | —                            | ○ said it                                      | next             | —                                                                                                                                                                                           |
 | ← / J / D | —                            | × couldn't say it                              | —                | —                                                                                                                                                                                           |
 | ↑ / ↓     | —                            | scroll inside the card, only when it overflows | same             | The browser's page scroll                                                                                                                                                                   |
-| Esc       | open the pause sheet         | same                                           | same             | Close a sheet (on the pause sheet: continue). Back on record, settings and the re-read summary; cancel on the difficulty re-test confirmation; nothing on the not-enough-cards start screen |
+| Esc       | open the pause sheet         | same                                           | same             | Close a sheet (on the pause sheet: continue). Home on records, settings, and a re-read summary; cancel on the difficulty re-test confirmation; nothing on the not-enough-cards start screen |
 | ?         | open the pause sheet         | same                                           | same             | —                                                                                                                                                                                           |
 | Tab       | moves focus, on every screen |                                                |                  |                                                                                                                                                                                             |
 
@@ -63,6 +63,9 @@ no applause. Browsers block autoplay, so the first "start" press unlocks audio.
 - For 150 ms after a back appears, ○/× keys are ignored, so the flip's momentum cannot
   grade the card.
 - ←/→ are grades and never scroll.
+- On records and settings, ←/→ move between the in-page `tabs` while one of them has
+  focus, and Home/End go to the first and last; nowhere else on those screens do they do
+  anything.
 
 ### Key hints
 
@@ -84,7 +87,7 @@ so the list is one key away for someone who wonders.
 | Reduced motion     | the OS setting     | The reduced column above. No in-app toggle                                                                                                                                                                                                                                      |
 | Not by color alone | —                  | The foundations reference                                                                                                                                                                                                                                                       |
 | Announcements      | state changes      | `aria-live="polite"`: on a front, "front, the prompt, n seconds"; on timeout, "timed out, to review"; on ○, "said it"; on ×, "to review". Never the seconds ticking                                                                                                             |
-| Names              | every glyph button | Sound: "on"/"off" with `aria-pressed`. Pause (Ⅱ) on card screens, ✕ "close" on summaries, ← "back", the records and settings tiles by name. "See all", ⓘ and the record breakdowns use `aria-expanded`. After a break, read "day 1 from today, longest n days" — never "0 days" |
+| Names              | every glyph button | Sound: "on"/"off" with `aria-pressed`. Pause (Ⅱ) on card screens, ✕ "close" on summaries, ← "back", the tab bar's links by their own names. "See all", ⓘ and the record breakdowns use `aria-expanded`. After a break, read "day 1 from today, longest n days" — never "0 days" |
 | Hit targets        | 44 × 44            | Buttons are 60 tall; icon tiles 44                                                                                                                                                                                                                                              |
 
 Screen specifics:

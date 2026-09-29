@@ -1,20 +1,19 @@
 import { useNavigate } from "@tanstack/react-router";
-import { useEffect, useId, useState, type ReactElement } from "react";
+import { useEffect, useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
-import { BackHeader } from "../lib/back-header";
-import { LOGOUT_URL } from "../lib/endpoints";
+import { markPressed } from "../drill/pressed";
+import { SETTINGS_TABS, searchFor, type SettingsTab } from "../lib/screen-tabs";
+import { TabbedScreen } from "../lib/tabbed-screen";
+import { useEscapeHome } from "../lib/use-escape-home";
 import type { SettingsPageView } from "../openapi";
 import { Button } from "../ui/button";
 import { Sheet } from "../ui/sheet";
-import { Toggle } from "../ui/toggle";
-import {
-  FocusSection,
-  LimitSection,
-  SizeSection,
-  TopicsSection,
-} from "./settings-sections";
-import { TimeZoneRow } from "./time-zone-row";
+import { AppSection } from "./app-section";
+import { LevelSection } from "./level-section";
+import { LimitSection } from "./limit-section";
+import { FocusSection, SizeSection, TopicsSection } from "./settings-sections";
+import { useLevel } from "./use-level";
 import { useSettings } from "./use-settings";
 
 /** W12: measuring again is confirmed first; Esc and "cancel" close it. */
@@ -52,82 +51,76 @@ function RetestSheet({
   );
 }
 
-/** W11: every change saves as it is made and says in one line what it does. */
+/**
+ * W11: every change saves as it is made and says in one line what it does,
+ * under three tabs that each fit a phone — what is dealt, the level and the
+ * seconds per card, and the app itself. The tab is the URL's `?tab=`.
+ */
 export function SettingsScreen({
   page,
-}: Readonly<{ page: SettingsPageView }>): ReactElement {
+  tab,
+}: Readonly<{ page: SettingsPageView; tab: SettingsTab }>): ReactElement {
   const t = useTranslations("Settings");
-  const records = useTranslations("Records");
   const navigate = useNavigate();
   const state = useSettings(page.settings);
+  const level = useLevel(page.difficulty, page.levels);
   const [asking, setAsking] = useState(false);
   const [zoneFailed, setZoneFailed] = useState(false);
-  const soundId = useId();
+  useEscapeHome(!asking);
 
   return (
-    <main className="mx-auto box-content flex max-w-column flex-col gap-10 px-4 pt-4 pb-10">
-      <BackHeader title={t("title")} back={t("back")} escape={!asking} />
-      {state.failed || zoneFailed ? (
-        <p role="alert" className="rounded-tile bg-raised px-4 py-3">
-          {t("saveFailed")}
-        </p>
+    <TabbedScreen
+      title={t("title")}
+      tabs={SETTINGS_TABS.map((value) => ({ value, label: t(`tabs.${value}`) }))}
+      tab={tab}
+      onTab={(next) => {
+        void navigate({
+          to: "/settings",
+          search: searchFor(SETTINGS_TABS, next),
+          replace: true,
+        });
+      }}
+      notice={
+        state.failed || level.failed || zoneFailed ? (
+          <p role="alert" className="rounded-tile bg-raised px-4 py-3">
+            {t("saveFailed")}
+          </p>
+        ) : null
+      }
+    >
+      {tab === "cards" ? (
+        <>
+          <TopicsSection topics={page.topics} state={state} />
+          <FocusSection topics={page.topics} state={state} />
+          <SizeSection state={state} />
+        </>
       ) : null}
-      <TopicsSection topics={page.topics} state={state} />
-      <FocusSection topics={page.topics} state={state} />
-      <SizeSection state={state} />
-      <LimitSection state={state} />
-      <section className="flex flex-col border-y border-border">
-        <div className="flex min-h-16 items-center justify-between gap-4">
-          <h2 id={soundId}>{t("sound.title")}</h2>
-          <Toggle
-            labelledBy={soundId}
-            on={state.settings.sound}
-            onChange={(sound) => {
-              state.save({ sound });
-            }}
-          />
-        </div>
-        <TimeZoneRow onFailedChange={setZoneFailed} />
-        <div className="flex min-h-16 items-center justify-between gap-4 border-t border-border">
-          <h2 className="flex items-baseline gap-3">
-            {t("difficulty.title")}
-            <span className="font-mono text-mono-sm text-muted-foreground">
-              {page.toeic === null
-                ? records("notMeasured")
-                : records("toeic", { toeic: page.toeic })}
-            </span>
-          </h2>
-          <Button
-            variant="text"
-            className="-mr-3 text-foreground"
-            onClick={() => {
+      {tab === "level" ? (
+        <>
+          <LevelSection
+            level={level}
+            levels={page.levels}
+            onRetest={() => {
               setAsking(true);
             }}
-          >
-            {t("difficulty.retest")}
-          </Button>
-        </div>
-      </section>
-      <form
-        method="post"
-        action={LOGOUT_URL}
-        className="flex min-h-16 items-center justify-between gap-4 border-b border-border"
-      >
-        <h2>{t("signOut.title")}</h2>
-        <Button type="submit" variant="text" className="-mr-3 text-foreground">
-          {t("signOut.action")}
-        </Button>
-      </form>
+          />
+          <LimitSection state={state} />
+        </>
+      ) : null}
+      {tab === "app" ? (
+        <AppSection state={state} onZoneFailedChange={setZoneFailed} />
+      ) : null}
       {asking ? (
         <RetestSheet
           onCancel={() => {
             setAsking(false);
           }}
           onConfirm={() => {
+            markPressed();
             void navigate({ to: "/drill", search: { kind: "placement" } });
           }}
         />
       ) : null}
-    </main>
+    </TabbedScreen>
   );
 }

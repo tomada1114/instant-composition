@@ -89,7 +89,11 @@ export interface ItemProgress {
   readonly previous: FirstPassMark | null;
 }
 
-export type LevelReason = "placement" | "up" | "down";
+/** Why the level last moved: measured, adjusted by the answers, or picked by hand. */
+export type LevelReason = "placement" | "up" | "down" | "chosen";
+
+/** Who moves the level: the answers (`auto`), or only the learner (`manual`). */
+export type LevelMode = "auto" | "manual";
 
 export interface LevelEntry {
   readonly level: number;
@@ -184,7 +188,9 @@ export interface LearnerStats {
   readonly said: number;
   readonly practicedDays: number;
   readonly level: LevelEntry | null;
-  /** First-pass answers since the level last changed, the newest `TUNING.difficulty.window`. */
+  /** Absent in stats stored before a level could be picked, all `auto`; see `levelModeOf`. */
+  readonly levelMode?: LevelMode;
+  /** First-pass answers since the level was placed or picked, the newest `TUNING.difficulty.window`. */
   readonly levelWindow: readonly DifficultyAnswer[];
   /** A learner has at most one round open at a time. */
   readonly openRound: { readonly id: string; readonly day: DayKey } | null;

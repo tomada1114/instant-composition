@@ -50,6 +50,7 @@ export { CatalogProvider } from "./i18n/provider";
 export { createTranslator } from "use-intl";
 export {
   API_ROOT,
+  beginVisit,
   finishRound,
   getHome,
   getRecords,
@@ -61,6 +62,7 @@ export {
   REFRESH_URL,
   recordAnswers,
   startRound,
+  updateLevel,
   updateProfile,
   updateSettings,
   type ApiError,
@@ -78,6 +80,8 @@ export type {
   HomePreview,
   HomeState,
   HomeView,
+  LevelChoice,
+  LevelView,
   Pass,
   Profile,
   ProfilePatch,

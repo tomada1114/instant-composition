@@ -8,41 +8,44 @@ to the design's names.
 
 ## Inventory
 
-| Part                      | Variants                                                   | States                                                                         |
-| ------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| `button`                  | `primary` (accent fill), `secondary` (raised fill), `text` | default, focus, pressed, disabled                                              |
-| `kbd`                     | `side`: `end` (default), `start`                           | hidden until the learner has pressed a key (`keys:` variant)                   |
-| `icon-button`             | tile (default), `plain`                                    | default, focus, pressed; sound adds `aria-pressed`                             |
-| `eyebrow`                 | —                                                          | —                                                                              |
-| `grade-pair`              | — (× and ○ side by side)                                   | default, focus, pressed; only on a back the learner flipped                    |
-| `drill-face`              | `front`, `back-self`, `back-timeout`                       | with or without the "again" mark; during the ○ light                           |
-| `ticks`                   | —                                                          | done, current, current lit (○), upcoming; absent past 30 cards                 |
-| `timer-bar`               | —                                                          | running; at 0 (fill gone)                                                      |
-| `progress`                | —                                                          | "7 / 10" in mono; during the retry round "again 2 / 3"                         |
-| `streak-counter`          | — (combo)                                                  | shown from 2; disappears when broken                                           |
-| `home-panel`              | ready, in progress, done, recover, not enough, load failed | —                                                                              |
-| `mix-bar`                 | —                                                          | review and new shares, either may be 0                                         |
-| `chip/choice`             | — (focus subtopic)                                         | unselected, selected (white fill + check), disabled (at the limit)             |
-| `select-card`             | —                                                          | unselected, selected (white border + filled check), locked (the last one kept) |
-| `segmented`               | — (5 / 10 / 15 / 20 / 30 cards a day; 15–60 s per card)    | one selected                                                                   |
-| `toggle`                  | —                                                          | on, off                                                                        |
-| `ring-stack`              | `concentric` (up to 4 topics), `grid` (all 5)              | with a new segment, without, empty (grooves + one line)                        |
-| `week-row`                | —                                                          | done, done today, open (can be made up), missed, upcoming                      |
-| `dot-calendar`            | — (last 12 weeks)                                          | the `week-row` states, without the accent                                      |
-| `stat`                    | `xl`, `lg`, `md`, `tile`                                   | grew this session, unchanged, after a break ("day 1 from today")               |
-| `growth-list`             | —                                                          | faster, × → ○, sent to review, empty; "see all" open/closed                    |
-| `disclosure` + `bar-list` | —                                                          | closed, open (a topic's breakdown on the record screen)                        |
-| `bar-chart`               | — (last 14 days)                                           | today's bar grew, unchanged                                                    |
-| `milestone-card`          | —                                                          | only in the session that reached it; stacked when several                      |
-| `milestone-list`          | —                                                          | some earned, none ("none yet")                                                 |
-| `weak-list`               | —                                                          | grammar and scenes, one of them, none ("none right now")                       |
-| `difficulty-line`         | `up`, `down`, `same`                                       | —                                                                              |
-| `info-tip`                | —                                                          | closed, open                                                                   |
-| `sheet`                   | `pause`, `confirm`                                         | —                                                                              |
-| `toast`                   | —                                                          | shown for 4 s                                                                  |
-| `inline-notice`           | —                                                          | unsaved records; gone once sent                                                |
-| `skeleton`                | —                                                          | when the start screen takes over 300 ms                                        |
-| `empty-state`             | —                                                          | not enough cards; cards could not be loaded                                    |
+| Part                      | Variants                                                          | States                                                                         |
+| ------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| `button`                  | `primary` (accent fill), `secondary` (raised fill), `text`        | default, focus, pressed, disabled                                              |
+| `kbd`                     | `side`: `end` (default), `start`                                  | hidden until the learner has pressed a key (`keys:` variant)                   |
+| `icon-button`             | tile (default), `plain`                                           | default, focus, pressed; sound adds `aria-pressed`                             |
+| `eyebrow`                 | —                                                                 | —                                                                              |
+| `tab-bar`                 | — (home, records, settings)                                       | current (`aria-current="page"`), other; focus                                  |
+| `tabs`                    | — (settings: cards, level, app; records: overview, weak, history) | current (`aria-selected`), other; focus                                        |
+| `grade-pair`              | — (× and ○ side by side)                                          | default, focus, pressed; only on a back the learner flipped                    |
+| `drill-face`              | `front`, `back-self`, `back-timeout`                              | with or without the "again" mark; during the ○ light                           |
+| `ticks`                   | —                                                                 | done, current, current lit (○), upcoming; absent past 30 cards                 |
+| `timer-bar`               | —                                                                 | running; at 0 (fill gone)                                                      |
+| `progress`                | —                                                                 | "7 / 10" in mono; during the retry round "again 2 / 3"                         |
+| `streak-counter`          | — (combo)                                                         | shown from 2; disappears when broken                                           |
+| `home-panel`              | ready, in progress, done, recover, not enough, load failed        | —                                                                              |
+| `mix-bar`                 | —                                                                 | review and new shares, either may be 0                                         |
+| `chip/choice`             | — (focus subtopic)                                                | unselected, selected (white fill + check), disabled (at the limit)             |
+| `select-card`             | one column (default), `compact` (two across)                      | unselected, selected (white border + filled check), locked (the last one kept) |
+| `segmented`               | one row (cards a day, s per card, auto/manual); `columns`         | one selected; none (a level not yet measured)                                  |
+| `toggle`                  | —                                                                 | on, off                                                                        |
+| `ring-stack`              | `concentric` (up to 4 topics), `grid` (all 5)                     | with a new segment, without, empty (grooves + one line)                        |
+| `week-row`                | —                                                                 | done, done today, open (can be made up), missed, upcoming                      |
+| `dot-calendar`            | — (last 12 weeks)                                                 | the `week-row` states, without the accent                                      |
+| `stat`                    | `xl`, `lg`, `md`, `tile`                                          | grew this session, unchanged, after a break ("day 1 from today")               |
+| `growth-list`             | —                                                                 | faster, × → ○, sent to review, empty; "see all" open/closed                    |
+| `disclosure` + `bar-list` | —                                                                 | closed, open (a topic's breakdown on the record screen)                        |
+| `bar-chart`               | — (last 14 days)                                                  | today's bar grew, unchanged                                                    |
+| `milestone-card`          | —                                                                 | only in the session that reached it; stacked when several                      |
+| `milestone-list`          | —                                                                 | some earned, none ("none yet")                                                 |
+| `weak-list`               | —                                                                 | grammar and scenes, one of them, none ("none right now")                       |
+| `difficulty-line`         | `up`, `down`, `same`                                              | —                                                                              |
+| `info-tip`                | —                                                                 | closed, open                                                                   |
+| `sheet`                   | `pause`, `confirm`                                                | —                                                                              |
+| `toast`                   | —                                                                 | shown for 4 s                                                                  |
+| `inline-notice`           | —                                                                 | unsaved records; gone once sent                                                |
+| `skeleton`                | —                                                                 | when the start screen takes over 300 ms                                        |
+| `empty-state`             | —                                                                 | not enough cards; cards could not be loaded                                    |
+| `landing`                 | — (the signed-out `/`)                                            | —                                                                              |
 
 There is no status chip. "To review", "timed out", "again" and "fast" are text with a
 glyph: a pill reads as something to press.
@@ -78,14 +81,93 @@ only touched the screen.
 
 - `icon-button`: 44 × 44, 12 radius, a 20 glyph in `text-foreground` on `bg-card`;
   pressed `bg-raised`. `plain` drops the tile (the drill's pause). The caller names it
-  (`aria-label`); sound carries `aria-pressed`. Home's top right is sound, records
-  (bars), settings (gear); a sub-screen's top left is ← back.
+  (`aria-label`); sound carries `aria-pressed`. Home's top right is sound alone; a
+  re-read summary's top left is ← back.
 - `eyebrow`: `font-mono text-eyebrow uppercase text-muted-foreground`, above a figure or
   a block ("Streak", "Today", "Placement", "Welcome"). Decorative when the figure beside
   it already has a Japanese name: then `aria-hidden`.
 
 Glyphs are drawn in `apps/web/src/ui/glyphs.tsx` on a 20 grid, 1.75 strokes, round ends.
 There is no icon library.
+
+## Tab bar
+
+The one navigation, on home, records and settings — their loading and failed states
+included, so switching tabs never blanks it — and nowhere else: a round is the whole
+screen (its pause sheet's "stop" is the way out), the welcome screen has its one way
+forward, and the signed-out landing has nowhere to go yet. Researched on Refero:
+learning apps keep their sections in a bottom bar at the thumb (Brilliant's home,
+courses, leagues, settings; Duolingo, BoldVoice, LookUp, Kann) and drop it for a quiz
+(Kann's kana quiz keeps dismiss and progress along the top, no bar) — so the top edge
+stays the drill's, for its ticks.
+
+- Fixed to the column's bottom edge: `bg-background`, three equal cells across the
+  column over one hairline (`border-t border-border`), each `--tab-bar-height` (49, an
+  iOS tab bar) including the hairline. It sits `--column-inset` up from the window's
+  edge on a `wide` window, or a phone's home-indicator inset up where that is larger
+  (`viewport-fit=cover` makes `env(safe-area-inset-bottom)` readable), the canvas under
+  it covering what scrolls past.
+- A cell is a link: the 20 glyph (house, bars, gear) over its name in `caption`, 4
+  apart, centred. The whole cell is the hit area.
+- Current: `text-foreground`, plus a 24 × 2 white pill on the hairline above it, so the
+  state does not rest on grey against white alone. Other: `text-muted-foreground`. Never
+  the accent, never a filled tile or a pill behind the glyph.
+- The router marks the current link `aria-current="page"`, matched on the exact path so
+  `/` is not current on every screen, and ignoring the query. The `nav` is named
+  ("menu") and is the screen's only navigation landmark.
+- Rendered after the screen's `main`, so a sheet opened inside `main` covers it. A
+  screen under it pads its foot by `--tab-bar-space` (the bar plus any inset it rises
+  by) plus its own bottom gap. Home's skeleton reserves that space but draws no bar: a
+  signed-out visitor at `/` must not see one flash before the landing.
+- Esc on records and settings still goes home.
+
+`apps/web/src/lib/tab-bar.tsx` is this recipe.
+
+## In-page tabs (`tabs`)
+
+Records and settings are each split into tabs so that every tab fits a 390 × 844 phone
+above the tab bar without the page scrolling: settings into "cards" (topics, focus,
+cards a day), "level" (the level, who moves it, measuring again, seconds per card) and
+"app" (sound, time zone, account); records into "overview" (the rings and each topic's
+breakdown), "weak" (the weak points) and "history" (the stat tiles, the calendar and the
+milestones). The owner decided it in #215: mobile-first, and a hub screen is read at a
+glance on a phone, not scrolled through.
+
+Which heights bind: 390 × 844 is the one a tab must fit with no page scroll. The PC
+column (at most 720 tall, see the foundations reference), a shorter phone and a phone on
+its side are not promised it — there a tab whose fixed parts do not fit scrolls the
+page, and every control stays reachable above the bar.
+
+- Under the screen's `heading`, 12 below it: equal cells across the column over one
+  hairline (`border-b border-border`), each 44 tall, the name centred in `label`.
+- Current: `text-foreground` with a 2px white line along the hairline under the whole
+  cell; other: `text-muted-foreground`. The same white mark the tab bar uses, never the
+  accent, never a filled segment — that shape is `segmented`, a setting's value.
+- A `tablist` named by the screen's heading, each cell a `tab` with `aria-selected`;
+  only the current tab is in the Tab order, and ←/→ move to the previous and next tab
+  (wrapping round), Home and End to the first and last, choosing it as focus lands. The
+  panel under it is the `tabpanel`, named by its tab and in the Tab order itself (the
+  global white outline); only the current one is rendered, and only the current tab
+  carries `aria-controls`.
+- The chosen tab is the URL's `?tab=` (`/settings?tab=level`), replaced rather than
+  pushed, so a reload or a link keeps it and Back leaves the screen. The first tab is
+  the bare path: choosing it drops `?tab=`, and a `?tab=` naming no tab is replaced by
+  the bare path.
+- The screen is at least the column's height less the tab bar's space (its bottom
+  padding), 24 above the heading and 24 above the bar, and otherwise as tall as its
+  content — a floor, never a fixed height. The panel takes what is left. A list that
+  cannot fit — the focus chips, an opened breakdown, the milestones — grows into that
+  space and scrolls inside its own region (`SELF_SCROLL`: `contain-size`, so its rows
+  never count towards the screen's height), down to about one row; nothing else scrolls
+  inside a tab. When the rest of a tab does not fit either, the screen grows past the
+  column and the page scrolls; nothing is clipped and nothing ends under the bar.
+- A self-scrolling region is inset by 6 (`-m-1.5 p-1.5`) where its rows take focus, so
+  their outline is not clipped, and takes focus itself (`tabIndex=0`, named by its
+  section's heading) where none of its rows does — the milestones — so a keyboard can
+  scroll it.
+
+`apps/web/src/ui/tabs.tsx` is this recipe; `apps/web/src/lib/tabbed-screen.tsx` lays out
+a screen around it and exports `SELF_SCROLL`.
 
 ## Grade pair
 
@@ -130,10 +212,12 @@ use: keep them in configuration, not in the component.
 
 ## Home panel and mix bar
 
-The start screen is three stacked zones: the top bar (brand `eyebrow` left, icon tiles
-right), the streak block centred in the free space (`eyebrow` "Streak", the figure in
-`number-xl`, the week row), and one `bg-card rounded-card p-5` panel at the bottom that
-carries the state and its one primary action.
+The start screen is three stacked zones over the tab bar: the top bar (brand `eyebrow`
+left, the sound tile right), the streak block centred in the free space (`eyebrow`
+"Streak", the figure in `number-xl`, the week row), and one `bg-card rounded-card p-5`
+panel at the bottom that carries the state and its one primary action. The zones are at
+least 32 apart, so the tallest panel (done, with yesterday to make up) still fits a PC's
+720 column.
 
 | State       | Panel contents                                                                                                                                                                                                                                                         |
 | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -165,16 +249,22 @@ the hit area grown by 4 above and below to 44; rows 8 apart so hit areas just to
   ring unselected, white fill with a black check selected, plus a white 1.5px border.
   Never the accent. `locked` (the last topic kept) keeps the selected look and refuses
   the press with `aria-disabled`; the refusal is said on the press, in a `status` line.
+  `compact` sets two cards across, 8 apart, 64 tall at least, 16 across and 12 between
+  the text and the disc, the title in `label` so the longest topic name holds one line
+  at a phone's width: settings' "cards" tab lists its five topics in three rows this
+  way, where one column would leave the focus chips no room.
 - Focus subtopics use `chip/choice`. The section heading carries "1 / 2" in `mono-sm` at
   its right; at the limit every unselected chip turns `text-disabled` and stops
   accepting presses.
 - `segmented`: track `bg-card`, 18 radius, 4 inset; the selected segment is
   `bg-primary text-primary-foreground` at 16 radius, figures in
-  `font-display text-action`.
+  `font-display text-action`. More options than a phone's row holds (the ten levels by
+  TOEIC) wrap into rows of `columns` (five) on the same track, 4 between rows, rather
+  than scroll or shrink below 44.
 - `toggle`: 52 × 32; on is a `bg-primary` track with a black knob at the right; off a
   `bg-raised` track with a grey knob at the left. No "on"/"off" words: position and fill
   carry the state, and the switch role says it.
-- Settings rows without a control of their own (sound, difficulty) sit between
+- Settings rows without a control of their own (sound, time zone, account) sit between
   hairlines, 64 tall, name left and control right.
 
 ## Progress rings (`ring-stack`)
@@ -261,9 +351,9 @@ above and below each. Section titles are muted `label`s.
 
 ## Record screen parts
 
-The record screen: ← and "records" (`heading`); the rings with ⓘ and each topic's
-disclosure; the weak points with ⓘ; the stat tiles; the calendar with ⓘ; the milestones.
-Nothing is lit.
+The record screen: "records" (`heading`), its `tabs` and the tab bar; under "overview"
+the rings with ⓘ and each topic's disclosure; under "weak" the weak points with ⓘ; under
+"history" the stat tiles, the calendar with ⓘ and the milestones. Nothing is lit.
 
 | Part             | Value                                                                                                                                                                                                                           |
 | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -273,3 +363,18 @@ Nothing is lit.
 | `dot-calendar`   | Last 12 weeks, one column per week (oldest left), rows Monday to Sunday. Dots 12 across, 6 apart. The `week-row` states with a solid hairline ring for upcoming, but never the accent — nothing grows here                      |
 | `milestone-list` | A muted `label` title, then per row the subject (`label`, muted) and the milestones earned ("7 · 14 · 30", `mono-sm`, white). Streak first, then topic order. Empty: "none yet", muted `body`                                   |
 | `weak-list`      | A muted `label` title with ⓘ; per row the kind (`label`, muted) and its names (`body`, white, "、" between), weakest first. No row for an empty kind; neither: "none right now". No count, no rate, no accent                   |
+
+## Landing
+
+`/` for a visitor who is not signed in: what the drill is, told the way the W2 intro
+tells the placement round, with nothing read from the API.
+
+- Top: the brand `eyebrow` over the app's name in `heading`. No sound tile and no tab
+  bar: a visitor has nowhere to go yet.
+- Centred in the free space: the drill's three moves — a Japanese prompt, said in
+  English before the timer runs out, flipped and graded ○ / × — as numbered steps
+  between hairlines, "01" in muted `mono-sm` and the move in `heading`, one line each.
+- Bottom: "sign in" as the one `primary`, a link (`Button asChild`) to the API's sign-in
+  redirect, led on by → with its Space hint.
+- No illustration, no sample card, no feature paragraphs, no second action. The accent
+  is the sign-in alone.

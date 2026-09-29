@@ -1,11 +1,12 @@
 import { useQuery } from "@tanstack/react-query";
-import { useNavigate } from "@tanstack/react-router";
-import type { ReactElement } from "react";
+import { Navigate, useNavigate } from "@tanstack/react-router";
+import { useEffect, useState, type ReactElement } from "react";
 
-import { ApiRequestError, HOME_QUERY } from "../lib/queries";
+import { ApiRequestError, HOME_QUERY, isSignedOut } from "../lib/queries";
 import type { RoundKind } from "../openapi";
 import { DrillError } from "./drill-error";
 import { DrillScreen } from "./drill-screen";
+import { clearPressed, wasPressed } from "./pressed";
 
 const SHELL = "mx-auto box-content flex min-h-(--column-height) max-w-column px-4";
 
@@ -18,8 +19,12 @@ const SHELL = "mx-auto box-content flex min-h-(--column-height) max-w-column px-
 export function DrillPage({ kind }: Readonly<{ kind: RoundKind }>): ReactElement {
   const home = useQuery(HOME_QUERY);
   const navigate = useNavigate();
+  // Spent on arrival, whatever this page shows next, so no later visit inherits it.
+  const [pressed] = useState(wasPressed);
+  useEffect(clearPressed, []);
 
   if (home.isPending) return <main className={SHELL} />;
+  if (isSignedOut(home.error)) return <Navigate to="/" replace />;
   if (home.isError) {
     return (
       <DrillError
@@ -37,6 +42,7 @@ export function DrillPage({ kind }: Readonly<{ kind: RoundKind }>): ReactElement
   return (
     <DrillScreen
       kind={kind}
+      pressed={pressed}
       first={view.state.kind === "placement"}
       sound={view.sound}
       dailySize={view.dailySize}

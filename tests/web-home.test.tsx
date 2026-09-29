@@ -6,11 +6,13 @@ import { TUNING, type HomeView } from "@instant-composition/web";
 import {
   COUNT,
   PREVIEW,
+  ROUND,
   fakeApi,
   fakeTimers,
   fill,
   homeView,
   ja,
+  navigations,
   press,
   refusal,
   renderApp,
@@ -37,6 +39,32 @@ function serveHome(view: HomeView): ApiCall[] {
 
 function where(): string {
   return `${window.location.pathname}${window.location.search}`;
+}
+
+/** Records every URL the app hands `location.assign`, leaving the browser where it is. */
+function stubAssign(): string[] {
+  const visited: string[] = [];
+  const real = window.location;
+  const assign = (url: string): void => {
+    visited.push(url);
+  };
+  vi.stubGlobal(
+    "location",
+    // A proxy over the real Location would break the invariant its
+    // non-configurable `assign` imposes, so it wraps an empty target.
+    new Proxy(
+      {},
+      {
+        get: (_, key) => {
+          if (key === "assign") return assign;
+          const value: unknown = Reflect.get(real, key);
+          const read: unknown = typeof value === "function" ? value.bind(real) : value;
+          return read;
+        },
+      },
+    ),
+  );
+  return visited;
 }
 
 beforeEach(() => {
@@ -123,7 +151,7 @@ describe("the home screen, W3a: today's portion not started", () => {
   it("leaves Space to a focused control, and ignores held or modified keys", async () => {
     serveHome(homeView({ kind: "ready", streak: COUNT }));
     await renderApp("/");
-    const link = screen.getByRole("link", { name: ja.Home.records });
+    const link = screen.getByRole("link", { name: ja.Nav.records });
     fireEvent.keyDown(link, { key: " " });
     fireEvent.keyDown(window, { key: "Enter", repeat: true });
     fireEvent.keyDown(window, { key: "Enter", metaKey: true });
@@ -135,19 +163,41 @@ describe("the home screen, W3a: today's portion not started", () => {
     expect(where()).toBe("/drill?kind=today");
   });
 
-  it("links to the records and the settings", async () => {
+  it("carries the one navigation, home current, and follows it to the settings", async () => {
     serveHome(homeView({ kind: "ready", streak: COUNT }));
     await renderApp("/");
-    expect(screen.getByRole("link", { name: ja.Home.records })).toHaveAttribute(
-      "href",
-      "/records",
-    );
-    const settings = screen.getByRole("link", { name: ja.Home.settings });
-    expect(settings).toHaveAttribute("href", "/settings");
+    expect(navigations()).toStrictEqual([
+      [
+        ["/", "page"],
+        ["/records", null],
+        ["/settings", null],
+      ],
+    ]);
+    expect(screen.getByRole("navigation", { name: ja.Nav.label })).toBeInTheDocument();
+    const settings = screen.getByRole("link", { name: ja.Nav.settings });
     fireEvent.click(settings);
     await settle();
     expect(where()).toBe("/settings");
     expect(screen.queryByRole("heading", { name: ja.NotFound.title })).toBeNull();
+  });
+
+  it("marks home current when the address carries a query", async () => {
+    serveHome(homeView({ kind: "ready", streak: COUNT }));
+    await renderApp("/?utm_source=x");
+    expect(navigations()).toStrictEqual([
+      [
+        ["/", "page"],
+        ["/records", null],
+        ["/settings", null],
+      ],
+    ]);
+  });
+
+  it("shows no navigation until the view answers, so a visitor never sees it flash", async () => {
+    fakeApi(() => new Promise<Response>(() => undefined));
+    await renderApp("/");
+    await settle(TUNING.skeletonDelayMs);
+    expect(navigations()).toStrictEqual([]);
   });
 
   it("names the document from the catalog", async () => {
@@ -392,6 +442,42 @@ describe("the home screen before and instead of the home view", () => {
     expect(calls.some((call) => call.url === "/api/v1/rounds")).toBe(true);
   });
 
+  it("opens a placement it forwards to, already under way, on the start screen", async () => {
+    fakeApi((call) => {
+      if (call.url === "/api/v1/home")
+        return Response.json(homeView({ kind: "placement" }));
+      if (call.url === "/api/v1/rounds") {
+        return Response.json({
+          ...ROUND,
+          kind: "placement",
+          retries: false,
+          answered: [
+            {
+              id: "round-1:f:c1",
+              cardId: "c1",
+              pass: "first",
+              result: "ok",
+              answeredAt: Date.UTC(2026, 8, 22, 3, 0),
+            },
+          ],
+        });
+      }
+      return undefined;
+    });
+    await renderApp("/");
+    await settle();
+    await settle(16);
+    expect(where()).toBe("/drill?kind=placement");
+    expect(
+      screen.getByRole("button", { name: ja.Drill.ready.start }),
+    ).toBeInTheDocument();
+    expect(document.querySelector("[data-part=fill]")).toBeNull();
+    press("Enter");
+    await settle(16);
+    expect(screen.getByText("prompt-c2")).toBeInTheDocument();
+    expect(document.querySelector("[data-part=fill]")).not.toBeNull();
+  });
+
   it("says the view could not be read, and reads it again on request", async () => {
     let attempts = 0;
     fakeApi(() => {
@@ -404,48 +490,18 @@ describe("the home screen before and instead of the home view", () => {
     expect(
       screen.getByRole("heading", { name: ja.Home.loadFailed.title }),
     ).toBeInTheDocument();
+    expect(navigations()).toStrictEqual([
+      [
+        ["/", "page"],
+        ["/records", null],
+        ["/settings", null],
+      ],
+    ]);
     fireEvent.click(screen.getByRole("button", { name: ja.Home.loadFailed.reload }));
     await settle();
     expect(
       screen.getByRole("button", { name: ja.Home.today.start }),
     ).toBeInTheDocument();
-  });
-
-  it("stays loading, with no failure, while the browser goes to sign in", async () => {
-    const visited: string[] = [];
-    const real = window.location;
-    const assign = (url: string): void => {
-      visited.push(url);
-    };
-    vi.stubGlobal(
-      "location",
-      // A proxy over the real Location would break the invariant its
-      // non-configurable `assign` imposes, so it wraps an empty target.
-      new Proxy(
-        {},
-        {
-          get: (_, key) => {
-            if (key === "assign") return assign;
-            const value: unknown = Reflect.get(real, key);
-            const read: unknown =
-              typeof value === "function" ? value.bind(real) : value;
-            return read;
-          },
-        },
-      ),
-    );
-    fakeApi((call) =>
-      call.url === "/api/v1/home" || call.url === "/api/v1/auth/refresh"
-        ? refusal(401, "ERR_UNAUTHENTICATED")
-        : undefined,
-    );
-    await renderApp("/");
-    await settle(TUNING.skeletonDelayMs);
-    expect(visited).toStrictEqual(["/api/v1/auth/login"]);
-    expect(
-      screen.queryByRole("heading", { name: ja.Home.loadFailed.title }),
-    ).not.toBeInTheDocument();
-    expect(document.querySelector("main")?.childElementCount).toBe(3);
   });
 
   it("says the cards could not be read, and reads the view again on request", async () => {
@@ -478,6 +534,104 @@ describe("the home screen before and instead of the home view", () => {
     expect(
       screen.getByRole("button", { name: ja.Home.today.start }),
     ).toBeInTheDocument();
+  });
+});
+
+describe("a visitor who is not signed in", () => {
+  /** An API that refuses every read and every refresh, as it does with no session cookie. */
+  function serveSignedOut(): ApiCall[] {
+    return fakeApi(() => refusal(401, "ERR_UNAUTHENTICATED"));
+  }
+
+  it("sees the landing screen at /, with sign-in as its one action, and is not sent away", async () => {
+    const visited = stubAssign();
+    const calls = serveSignedOut();
+    await renderApp("/");
+    await settle(TUNING.skeletonDelayMs);
+    expect(screen.getByRole("heading", { name: ja.Landing.title })).toBeInTheDocument();
+    for (const step of Object.values(ja.Landing.steps)) {
+      expect(screen.getByText(step)).toBeInTheDocument();
+    }
+    expect(screen.getByRole("link", { name: ja.Landing.signIn })).toHaveAttribute(
+      "href",
+      "/api/v1/auth/login",
+    );
+    expect(screen.getAllByRole("link")).toHaveLength(1);
+    expect(screen.queryByRole("navigation")).toBeNull();
+    expect(screen.queryByRole("button")).toBeNull();
+    expect(
+      screen.queryByRole("heading", { name: ja.Home.loadFailed.title }),
+    ).not.toBeInTheDocument();
+    expect(visited).toStrictEqual([]);
+    expect(calls.map((call) => call.url)).toStrictEqual([
+      "/api/v1/home",
+      "/api/v1/auth/refresh",
+    ]);
+  });
+
+  it("signs in on Space, whether or not the sign-in link has focus, and leaves Enter on it to the browser", async () => {
+    serveSignedOut();
+    await renderApp("/");
+    const link = screen.getByRole("link", { name: ja.Landing.signIn });
+    let presses = 0;
+    link.addEventListener("click", (event) => {
+      presses += 1;
+      event.preventDefault();
+    });
+    press(" ");
+    expect(presses).toBe(1);
+    link.focus();
+    fireEvent.keyDown(link, { key: " " });
+    expect(presses).toBe(2);
+    fireEvent.keyDown(link, { key: "Enter" });
+    expect(presses).toBe(2);
+  });
+
+  it.each(["/records", "/settings", "/welcome", "/recap", "/drill?kind=today"])(
+    "is sent from %s to the landing screen at /, not to sign in",
+    async (path) => {
+      const visited = stubAssign();
+      serveSignedOut();
+      await renderApp(path);
+      await settle();
+      await settle(16);
+      expect(where()).toBe("/");
+      expect(
+        screen.getByRole("heading", { name: ja.Landing.title }),
+      ).toBeInTheDocument();
+      expect(visited).toStrictEqual([]);
+    },
+  );
+});
+
+describe("a session that runs out while the app is open", () => {
+  it("sends the browser to sign in, and the next screen stays loading with no failure", async () => {
+    const visited = stubAssign();
+    const calls = fakeApi((call) =>
+      call.url === "/api/v1/home"
+        ? Response.json(homeView({ kind: "ready", streak: COUNT }))
+        : refusal(401, "ERR_UNAUTHENTICATED"),
+    );
+    await renderApp("/");
+    fireEvent.click(screen.getByRole("link", { name: ja.Nav.records }));
+    await settle();
+    await settle(TUNING.skeletonDelayMs);
+    expect(visited).toStrictEqual(["/api/v1/auth/login"]);
+    expect(where()).toBe("/records");
+    expect(calls.map((call) => call.url).slice(-2)).toStrictEqual([
+      "/api/v1/records",
+      "/api/v1/auth/refresh",
+    ]);
+    // The records page's loading state: its column, and nothing in it.
+    const mains = document.querySelectorAll("main");
+    expect(mains).toHaveLength(1);
+    expect(mains[0]?.childElementCount).toBe(0);
+    expect(
+      screen.queryByRole("heading", { name: ja.Home.loadFailed.title }),
+    ).not.toBeInTheDocument();
+    expect(
+      screen.queryByRole("heading", { name: ja.Landing.title }),
+    ).not.toBeInTheDocument();
   });
 });
 

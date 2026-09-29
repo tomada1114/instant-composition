@@ -31,13 +31,30 @@ export const TUNING = {
     focusShareOfNew: 0.5,
     /** Taken after the focus share, from the learner's weak grammar concepts. */
     weakShareOfNew: 0.3,
-    levelShare: { same: 0.6, below: 0.2, above: 0.2 },
+    /**
+     * A deck's new cards by level, planned over all of them (`levelPlan`): the
+     * level, one below, one above, and a probe `probeStep` above, the only new
+     * cards that show a level past the next. From `offLevelFrom` new cards on,
+     * at least one goes a level up and one to the probe, so a deck mostly of
+     * reviews still brings the answers the level climbs on.
+     */
+    levelShare: { same: 0.5, below: 0.2, above: 0.2, probe: 0.1 },
+    probeStep: 2,
+    offLevelFrom: { above: 2, probe: 3 },
   },
   /** Days until the next review, indexed by box 0..5. */
   leitnerIntervalsDays: [1, 2, 4, 7, 14, 30],
+  /**
+   * The level the answers show, judged card level by card level over the
+   * newest `window` first-pass answers, each card by its latest: a level is
+   * cleared on at least `minPerLevel.clear` cards at `upOkRate` correct with
+   * `upFastRate` of those fast, and failed on at least `minPerLevel.fail` under
+   * `downOkRate` correct. A close moves at most one step past what the answers
+   * before it showed. See `suggestLevel` and `adjustLevel`.
+   */
   difficulty: {
     window: 30,
-    minAnswers: 20,
+    minPerLevel: { clear: 3, fail: 4 },
     upOkRate: 0.85,
     upFastRate: 0.5,
     downOkRate: 0.6,

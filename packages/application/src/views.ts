@@ -3,6 +3,7 @@ import type {
   DayKey,
   Dot,
   Growth,
+  LevelMode,
   Pass,
   ReviewRow,
   RingProgress,
@@ -123,4 +124,12 @@ export interface SettingsView {
   readonly removedFocus: readonly SubtopicRef[];
   /** Lowering the size completed today's portion there and then. */
   readonly completedToday: boolean;
+}
+
+/** The level now and who moves it, as the settings screen shows it. */
+export interface LevelView {
+  readonly mode: LevelMode;
+  /** Null until a placement or the learner's pick sets one. */
+  readonly level: number | null;
+  readonly toeic: string | null;
 }

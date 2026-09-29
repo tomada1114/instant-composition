@@ -207,6 +207,78 @@
         }
       }
     },
+    "/v1/level": {
+      "patch": {
+        "operationId": "updateLevel",
+        "summary": "Hands the level to the answers (auto, adjusting from the level as it is), or fixes it at the level picked (manual), which no round moves until a placement or a switch back to auto.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/LevelChoice" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/LevelView" }
+              }
+            }
+          },
+          "400": {
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "401": {
+            "description": "ERR_UNAUTHENTICATED: The request carries no valid access token.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "403": {
+            "description": "ERR_FORBIDDEN: The caller may not run this operation.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "409": {
+            "description": "ERR_CONFLICT: Another write to the same data kept winning; send the request again.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "413": {
+            "description": "ERR_PAYLOAD_TOO_LARGE: The request body is too large.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "503": {
+            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/home": {
       "get": {
         "operationId": "getHome",
@@ -832,6 +904,24 @@
           }
         }
       },
+      "LevelMode": { "type": "string", "enum": ["auto", "manual"] },
+      "LevelChoice": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": { "mode": { "type": "string", "const": "auto" } },
+            "required": ["mode"]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "mode": { "type": "string", "const": "manual" },
+              "level": { "type": "integer", "minimum": 1, "maximum": 9007199254740991 }
+            },
+            "required": ["mode", "level"]
+          }
+        ]
+      },
       "ProfilePatch": {
         "type": "object",
         "properties": {
@@ -1103,6 +1193,20 @@
           "completedToday": { "type": "boolean" }
         },
         "required": ["settings", "removedFocus", "completedToday"]
+      },
+      "LevelView": {
+        "type": "object",
+        "properties": {
+          "mode": { "$ref": "#/components/schemas/LevelMode" },
+          "level": {
+            "anyOf": [
+              { "type": "integer", "minimum": 1, "maximum": 9007199254740991 },
+              { "type": "null" }
+            ]
+          },
+          "toeic": { "type": ["string", "null"] }
+        },
+        "required": ["mode", "level", "toeic"]
       },
       "Profile": {
         "type": "object",
@@ -1380,6 +1484,8 @@
           },
           "weak": { "$ref": "#/components/schemas/WeakPoints" },
           "toeic": { "type": ["string", "null"] },
+          "levelMode": { "$ref": "#/components/schemas/LevelMode" },
+          "suggestedToeic": { "type": ["string", "null"] },
           "streak": {
             "type": "object",
             "properties": {
@@ -1420,6 +1526,8 @@
           "breakdown",
           "weak",
           "toeic",
+          "levelMode",
+          "suggestedToeic",
           "streak",
           "calendar",
           "said",
@@ -1455,9 +1563,25 @@
             "type": "array",
             "items": { "$ref": "#/components/schemas/TopicInfo" }
           },
-          "toeic": { "type": ["string", "null"] }
+          "toeic": { "type": ["string", "null"] },
+          "difficulty": { "$ref": "#/components/schemas/LevelView" },
+          "levels": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "level": {
+                  "type": "integer",
+                  "minimum": 1,
+                  "maximum": 9007199254740991
+                },
+                "toeic": { "type": "string" }
+              },
+              "required": ["level", "toeic"]
+            }
+          }
         },
-        "required": ["settings", "topics", "toeic"]
+        "required": ["settings", "topics", "toeic", "difficulty", "levels"]
       },
       "History": {
         "type": "object",

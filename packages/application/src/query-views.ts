@@ -1,6 +1,12 @@
-import type { Dot, HomeState, Settings, TopicInfo } from "@instant-composition/domain";
+import type {
+  Dot,
+  HomeState,
+  LevelMode,
+  Settings,
+  TopicInfo,
+} from "@instant-composition/domain";
 
-import type { ReachView } from "./views";
+import type { LevelView, ReachView } from "./views";
 
 /** What a query hands back to a client, in the shapes the screens read. */
 
@@ -67,6 +73,9 @@ export interface RecordsView {
   readonly breakdown: readonly BreakdownTopic[];
   readonly weak: WeakPoints;
   readonly toeic: string | null;
+  readonly levelMode: LevelMode;
+  /** In `manual`, the TOEIC reference of the level the answers suggest; never applied. */
+  readonly suggestedToeic: string | null;
   /** `current` 0 stands for "day 1 from today" and is never shown as 0. */
   readonly streak: { readonly current: number; readonly longest: number };
   /** Twelve weeks, oldest first, Monday to Sunday in each. */
@@ -82,6 +91,9 @@ export interface SettingsPageView {
   readonly settings: Required<Settings>;
   readonly topics: readonly TopicInfo[];
   readonly toeic: string | null;
+  readonly difficulty: LevelView;
+  /** Every level the learner may pick, lowest first, by its TOEIC reference. */
+  readonly levels: readonly { readonly level: number; readonly toeic: string }[];
 }
 
 /** The shape `pnpm cards:gaps --history` reads. */

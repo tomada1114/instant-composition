@@ -3,6 +3,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import type {
   HomeView,
+  LevelView,
   Profile,
   SettingsPageView,
   SettingsView,
@@ -13,6 +14,7 @@ import {
   COUNT,
   fakeApi,
   fakeTimers,
+  fill,
   homeView,
   ja,
   refusal,
@@ -24,7 +26,8 @@ import {
 // The welcome screen, W1, mounted as the whole app at `/welcome` over a
 // stand-in API: a first visit picks its topics from the settings read, sends
 // the browser's time zone and saves the topics, and goes on to the placement
-// round; any later visit is the start screen's.
+// round or, with a level picked by hand, to the start screen; any later visit
+// is the start screen's.
 
 const TOPICS: TopicInfo[] = [
   {
@@ -43,8 +46,14 @@ function settingsPage(topics: TopicInfo[] = TOPICS): SettingsPageView {
     settings: { topics: [], focus: [], dailySize: 10, sound: true, limitSeconds: 30 },
     topics,
     toeic: null,
+    difficulty: { mode: "auto", level: null, toeic: null },
+    levels: ["300", "400", "500", "600", "730", "800", "860", "900", "950", "990+"].map(
+      (toeic, index) => ({ level: index + 1, toeic }),
+    ),
   };
 }
+
+const CHOSEN: LevelView = { mode: "manual", level: 5, toeic: "730" };
 
 const SAVED: SettingsView = {
   settings: {
@@ -70,7 +79,8 @@ const PROFILE: Profile = {
 
 /**
  * An API for a learner who has chosen no topics yet: the home view is
- * onboarding until a patch is saved, and placement after it.
+ * onboarding until a patch is saved, and after it placement, or ready once a
+ * level was picked.
  */
 function serveWelcome(
   options: {
@@ -78,13 +88,19 @@ function serveWelcome(
     readonly home?: HomeView;
     readonly save?: () => Response | Promise<Response>;
     readonly profile?: () => Response | Promise<Response>;
+    readonly level?: () => Response | Promise<Response>;
   } = {},
 ): ApiCall[] {
   let saved = false;
+  let leveled = false;
   return fakeApi((call) => {
     if (call.method === "GET" && call.url === "/api/v1/home") {
+      if (options.home !== undefined) return Response.json(options.home);
+      if (!saved) return Response.json(homeView({ kind: "onboarding" }));
       return Response.json(
-        options.home ?? homeView({ kind: saved ? "placement" : "onboarding" }),
+        leveled
+          ? homeView({ kind: "ready", streak: COUNT })
+          : homeView({ kind: "placement" }),
       );
     }
     if (call.method === "GET" && call.url === "/api/v1/settings") {
@@ -96,6 +112,11 @@ function serveWelcome(
     }
     if (call.method === "PATCH" && call.url === "/api/v1/me") {
       return options.profile?.() ?? Response.json(PROFILE);
+    }
+    if (call.method === "PATCH" && call.url === "/api/v1/level") {
+      if (options.level !== undefined) return options.level();
+      leveled = true;
+      return Response.json(CHOSEN);
     }
     return undefined;
   });
@@ -113,6 +134,20 @@ function where(): string {
 
 function next(): HTMLElement {
   return screen.getByRole("button", { name: ja.Welcome.next });
+}
+
+function measure(): HTMLElement {
+  return screen.getByRole("button", { name: ja.Welcome.start.measure });
+}
+
+function start(): HTMLElement {
+  return screen.getByRole("button", { name: ja.Welcome.level.start });
+}
+
+function level(toeic: string): HTMLElement {
+  return screen.getByRole("radio", {
+    name: fill(ja.Settings.difficulty.option, { toeic }),
+  });
 }
 
 beforeEach(() => {
@@ -142,6 +177,7 @@ describe("the welcome screen, W1", () => {
     );
     expect(screen.getByText("会議・依頼")).toBeInTheDocument();
     expect(next()).toBeDisabled();
+    expect(screen.queryByRole("navigation")).toBeNull();
   });
 
   it("saves the chosen topics in the taxonomy's order and goes on to the placement", async () => {
@@ -155,6 +191,9 @@ describe("the welcome screen, W1", () => {
     );
     expect(next()).toBeEnabled();
     fireEvent.click(next());
+    await settle();
+    expect(patches(calls)).toStrictEqual([]);
+    fireEvent.click(measure());
     await settle();
     await settle();
     expect(where()).toBe("/drill?kind=placement");
@@ -186,6 +225,10 @@ describe("the welcome screen, W1", () => {
     await renderApp("/welcome");
     fireEvent.click(screen.getByRole("button", { name: /日常/u }));
     fireEvent.keyDown(window, { key: "Enter" });
+    expect(
+      screen.getByRole("heading", { name: ja.Welcome.start.title }),
+    ).toBeInTheDocument();
+    fireEvent.keyDown(window, { key: "Enter" });
     await settle();
     await settle();
     expect(where()).toBe("/drill?kind=placement");
@@ -196,10 +239,11 @@ describe("the welcome screen, W1", () => {
     await renderApp("/welcome");
     fireEvent.click(screen.getByRole("button", { name: /日常/u }));
     fireEvent.click(next());
+    fireEvent.click(measure());
     await settle();
     expect(screen.getByRole("alert")).toHaveTextContent(ja.Welcome.saveFailed);
     expect(where()).toBe("/welcome");
-    expect(next()).toBeEnabled();
+    expect(measure()).toBeEnabled();
   });
 
   it("goes on with the profile's own time zone when the API does not know the browser's", async () => {
@@ -207,6 +251,7 @@ describe("the welcome screen, W1", () => {
     await renderApp("/welcome");
     fireEvent.click(screen.getByRole("button", { name: /日常/u }));
     fireEvent.click(next());
+    fireEvent.click(measure());
     await settle();
     await settle();
     expect(where()).toBe("/drill?kind=placement");
@@ -223,6 +268,7 @@ describe("the welcome screen, W1", () => {
     await renderApp("/welcome");
     fireEvent.click(screen.getByRole("button", { name: /日常/u }));
     fireEvent.click(next());
+    fireEvent.click(measure());
     await settle();
     expect(screen.getByRole("alert")).toHaveTextContent(ja.Welcome.saveFailed);
     expect(where()).toBe("/welcome");
@@ -240,9 +286,10 @@ describe("the welcome screen, W1", () => {
     await renderApp("/welcome");
     fireEvent.click(screen.getByRole("button", { name: /日常/u }));
     fireEvent.click(next());
+    fireEvent.click(measure());
     await settle();
     expect(screen.getByRole("alert")).toHaveTextContent(ja.Welcome.saveFailed);
-    fireEvent.click(next());
+    fireEvent.click(measure());
     await settle();
     await settle();
     expect(where()).toBe("/drill?kind=placement");
@@ -265,6 +312,98 @@ describe("the welcome screen, W1", () => {
     fireEvent.click(screen.getByRole("button", { name: ja.Home.loadFailed.reload }));
     await settle();
     expect(calls.filter((call) => call.url === "/api/v1/settings")).toHaveLength(2);
+  });
+});
+
+describe("the welcome screen, W1 picking a level", () => {
+  it("saves a level picked by hand before the topics and goes to the start screen, not the placement", async () => {
+    const calls = serveWelcome();
+    await renderApp("/welcome");
+    fireEvent.click(screen.getByRole("button", { name: /仕事/u }));
+    fireEvent.click(next());
+    fireEvent.click(screen.getByRole("button", { name: ja.Welcome.start.choose }));
+    expect(
+      screen.getByRole("heading", { name: ja.Welcome.level.title }),
+    ).toBeInTheDocument();
+    expect(start()).toBeDisabled();
+    expect(screen.getAllByRole("radio")).toHaveLength(10);
+    fireEvent.click(level("730"));
+    expect(level("730")).toHaveAttribute("aria-checked", "true");
+    fireEvent.click(start());
+    await settle();
+    await settle();
+    expect(patches(calls)).toStrictEqual([
+      ["/api/v1/me", { timeZone: BROWSER_ZONE }],
+      ["/api/v1/level", { mode: "manual", level: 5 }],
+      ["/api/v1/settings", { topics: ["work"] }],
+    ]);
+    expect(where()).toBe("/");
+  });
+
+  it("stays and saves no topics when the level cannot be saved", async () => {
+    const calls = serveWelcome({ level: () => refusal(409, "ERR_CONFLICT") });
+    await renderApp("/welcome");
+    fireEvent.click(screen.getByRole("button", { name: /仕事/u }));
+    fireEvent.click(next());
+    fireEvent.click(screen.getByRole("button", { name: ja.Welcome.start.choose }));
+    fireEvent.click(level("990+"));
+    fireEvent.click(start());
+    await settle();
+    expect(screen.getByRole("alert")).toHaveTextContent(ja.Welcome.saveFailed);
+    expect(where()).toBe("/welcome");
+    expect(patches(calls).map(([url]) => url)).toStrictEqual([
+      "/api/v1/me",
+      "/api/v1/level",
+    ]);
+    expect(start()).toBeEnabled();
+  });
+
+  it("hands a level saved this visit back to auto when the learner then measures instead", async () => {
+    let attempts = 0;
+    const calls = serveWelcome({
+      save: () => {
+        attempts += 1;
+        return attempts === 1 ? refusal(409, "ERR_CONFLICT") : Response.json(SAVED);
+      },
+    });
+    await renderApp("/welcome");
+    fireEvent.click(screen.getByRole("button", { name: /仕事/u }));
+    fireEvent.click(next());
+    fireEvent.click(screen.getByRole("button", { name: ja.Welcome.start.choose }));
+    fireEvent.click(level("730"));
+    fireEvent.click(start());
+    await settle();
+    expect(screen.getByRole("alert")).toHaveTextContent(ja.Welcome.saveFailed);
+    fireEvent.click(screen.getByRole("button", { name: ja.Welcome.back }));
+    fireEvent.click(measure());
+    await settle();
+    await settle();
+    expect(patches(calls)).toStrictEqual([
+      ["/api/v1/me", { timeZone: BROWSER_ZONE }],
+      ["/api/v1/level", { mode: "manual", level: 5 }],
+      ["/api/v1/settings", { topics: ["work"] }],
+      ["/api/v1/level", { mode: "auto" }],
+      ["/api/v1/settings", { topics: ["work"] }],
+    ]);
+    expect(where()).toBe("/drill?kind=placement");
+  });
+
+  it("goes back a step at a time, keeping the topics chosen", async () => {
+    const calls = serveWelcome();
+    await renderApp("/welcome");
+    fireEvent.click(screen.getByRole("button", { name: /日常/u }));
+    fireEvent.click(next());
+    fireEvent.click(screen.getByRole("button", { name: ja.Welcome.start.choose }));
+    fireEvent.click(screen.getByRole("button", { name: ja.Welcome.back }));
+    expect(
+      screen.getByRole("heading", { name: ja.Welcome.start.title }),
+    ).toBeInTheDocument();
+    fireEvent.click(screen.getByRole("button", { name: ja.Welcome.back }));
+    expect(screen.getByRole("button", { name: /日常/u })).toHaveAttribute(
+      "aria-pressed",
+      "true",
+    );
+    expect(patches(calls)).toStrictEqual([]);
   });
 });
 

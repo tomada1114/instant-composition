@@ -19,6 +19,9 @@ export const countSchema = z.int().min(0);
 /** A card level on the catalog's scale, starting at 1. */
 export const levelSchema = z.int().min(1);
 
+/** Who moves the level: the answers, or nobody but the learner. */
+export const levelModeSchema = z.enum(["auto", "manual"]);
+
 export const roundKindSchema = z.enum(["placement", "today", "yesterday", "extra"]);
 
 export const passSchema = z.enum(["first", "retry"]);

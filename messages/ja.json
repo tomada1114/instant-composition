@@ -7,8 +7,6 @@
     "brand": "Instant Composition",
     "soundOn": "効果音 オン",
     "soundOff": "効果音 オフ",
-    "records": "記録",
-    "settings": "設定",
     "streakEyebrow": "Streak",
     "streakUnit": "日連続",
     "restartTitle": "今日から 1 日目",
@@ -69,12 +67,40 @@
       "reload": "読み込み直す"
     }
   },
+  "Nav": {
+    "label": "メニュー",
+    "home": "ホーム",
+    "records": "記録",
+    "settings": "設定"
+  },
+  "Landing": {
+    "brand": "Instant Composition",
+    "title": "瞬間英作文",
+    "steps": {
+      "read": "日本語の文が出る",
+      "say": "時間内に英語で言う",
+      "grade": "めくって ○ / × をつける"
+    },
+    "signIn": "ログイン"
+  },
   "Welcome": {
     "eyebrow": "Welcome",
     "title": "どの場面で話しますか",
     "note": "複数選べます",
     "next": "次へ",
-    "saveFailed": "保存できませんでした。サーバーを確認してください"
+    "saveFailed": "保存できませんでした。サーバーを確認してください",
+    "back": "戻る",
+    "start": {
+      "title": "どう始めますか",
+      "note": "あとから設定で変えられます",
+      "measure": "測る（10 文）",
+      "choose": "自分で選ぶ"
+    },
+    "level": {
+      "title": "今のレベルは",
+      "note": "TOEIC の目安で選びます",
+      "start": "始める"
+    }
   },
   "NotFound": {
     "title": "ページが見つかりません",
@@ -89,6 +115,13 @@
       "say": "英語で言う",
       "flip": "めくる",
       "grade": "自分で ○ / ×",
+      "start": "始める"
+    },
+    "ready": {
+      "eyebrow": "{kind, select, today {Today} yesterday {Yesterday} extra {Extra} other {Placement}}",
+      "title": "{kind, select, today {今日の分} yesterday {昨日の分} extra {もう {count} 文} other {難易度の測定}}",
+      "resume": "{position} 枚目から ・ 全 {total} 枚",
+      "resumeRetry": "もう一度 {position} 枚目から ・ 全 {total} 枚",
       "start": "始める"
     },
     "card": {
@@ -196,11 +229,18 @@
   },
   "Records": {
     "title": "記録",
-    "back": "戻る",
+    "tabs": {
+      "overview": "概要",
+      "weak": "苦手",
+      "history": "記録"
+    },
     "breakdown": "{topic} の内訳",
     "difficulty": "難易度",
     "toeic": "TOEIC {toeic}",
     "notMeasured": "未測定",
+    "auto": "自動",
+    "manual": "手動",
+    "suggested": "手動 · 目安 {toeic}",
     "streakLabel": "連続",
     "streak": "{days} 日",
     "restart": "今日から 1 日目",
@@ -229,7 +269,11 @@
   },
   "Settings": {
     "title": "設定",
-    "back": "戻る",
+    "tabs": {
+      "cards": "出題",
+      "level": "難易度",
+      "app": "アプリ"
+    },
     "topics": {
       "title": "場面",
       "keepOne": "1 つは選んだままにします"
@@ -259,7 +303,14 @@
     },
     "difficulty": {
       "title": "難易度",
-      "retest": "測り直す"
+      "retest": "測り直す",
+      "auto": "自動",
+      "manual": "手動",
+      "mode": "決め方",
+      "levels": "TOEIC の目安",
+      "option": "TOEIC {toeic}",
+      "autoNote": "答えに合わせて上下します",
+      "manualNote": "選んだレベルのまま動きません"
     },
     "retest": {
       "title": "難易度を測り直しますか",

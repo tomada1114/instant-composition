@@ -35,6 +35,15 @@ export function errorCodeOf(error: unknown): string {
 }
 
 /**
+ * Whether a read was refused because the visitor is signed out: `send` lets
+ * that refusal through only while nothing in the visit was signed in, and
+ * sends the browser to sign in once a session has run out instead.
+ */
+export function isSignedOut(error: unknown): boolean {
+  return errorCodeOf(error) === "ERR_UNAUTHENTICATED";
+}
+
+/**
  * `GET /v1/home`, which both screens read: the home screen for itself, the
  * drill for the sound switch, the daily size and whether this is the
  * placement.
