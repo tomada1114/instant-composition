@@ -1,5 +1,5 @@
 import { act, fireEvent, screen } from "@testing-library/react";
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 import { TUNING, type HomeView } from "@instant-composition/web";
 
@@ -18,6 +18,7 @@ import {
   renderApp,
   settle,
   type ApiCall,
+  warmUp,
   withoutPreview,
 } from "./web-harness";
 
@@ -66,6 +67,8 @@ function stubAssign(): string[] {
   );
   return visited;
 }
+
+beforeAll(warmUp);
 
 beforeEach(() => {
   fakeTimers();
