@@ -16,22 +16,6 @@
     "stamps": {}
   },
   {
-    "id": "c_2p8u8b5e",
-    "ja": "何時までに出ればいいですか？",
-    "en": "What time should I check out by?",
-    "alternatives": [
-      "What time do I need to leave by?",
-      "When do I need to check out by?"
-    ],
-    "point": "「〜までに」の by を文末に置き忘れない",
-    "topic": "travel",
-    "subtopic": "hotel",
-    "level": 4,
-    "grammar": ["wh-questions", "modal-obligation-advice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3a7c3u7z",
     "ja": "部屋のエアコンに問題があります。",
     "en": "There's a problem with my air conditioner.",
@@ -47,9 +31,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:c3870913af91458400723f67d88a37a077576a0b5aea936689f8166283919748",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:930b16cd692be2d74ad3c215808ea580fd87527d8a5429220a8b28ec73a596a1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -67,7 +51,13 @@
     "level": 4,
     "grammar": ["tense-contrast", "present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7c34bb2cbf9b592b9f808329be9396c492088ad4ff55f4aad0e7c1757113bf93",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3c5m7u2k",
@@ -85,9 +75,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:9495243302d0adf69957eba272797b0d8b55aa56d8529689a2ab9b488136c06d",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:dce7dac9ffd1e369734d8344c22a88f5e225e59d1e92762d52d6e489f67c18e7",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -105,7 +95,13 @@
     "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7b29446ce56eccfaf1ff7592608705902a6db72702352ea7583a86970fe40dfb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3h2f8z3u",
@@ -121,23 +117,13 @@
     "level": 3,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3r4j8b5n",
-    "ja": "隣の人が何時間も音楽をかけてます。",
-    "en": "The neighbors have been playing music for hours.",
-    "alternatives": [
-      "My neighbor's been playing music for hours.",
-      "Someone next door's been playing music for hours."
-    ],
-    "point": "今も続く「ずっと〜している」は have been + ing",
-    "topic": "travel",
-    "subtopic": "hotel",
-    "level": 5,
-    "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:92610ad6b9c999a45bc6b00de9dc08acf0f5569f987421daf669e2a9b72d5fd2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3r9r6q4j",
@@ -217,7 +203,13 @@
     "level": 3,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4aa30c42dac135e9956761b114969aff10e6d806dee88fd6cc7ca631d4a83fa0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4w6g2b2z",
@@ -233,7 +225,13 @@
     "level": 5,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6855df49a62e3913fad38686f1bc3937dcdd7b507b9345fbdb46f634dfe2f5aa",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4x2u9v8w",
@@ -324,7 +322,13 @@
     "level": 2,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d9f00f5da9c1e7aa975548f102cf5bc899741467483c530dd5b9e5620a714790",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7a4r5z8p",
@@ -356,7 +360,13 @@
     "level": 2,
     "grammar": ["requests-permission", "articles-and-countability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:15528d221671a74e47594c9455d2a7903760cb71e4eaad3cb645f36d55e45754",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8d8d4u6e",
@@ -372,26 +382,10 @@
     "stamps": {
       "core": {
         "hash": "sha256:5dc0f781a8893b3f03775dff0067269cfc5ba18cc04d53f4061a2f844061a0b2",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_8q5s4u4x",
-    "ja": "シャワー中に、お湯が急に止まった。",
-    "en": "The hot water stopped while I showered.",
-    "alternatives": [
-      "The hot water stopped mid-shower.",
-      "Hot water stopped while I was showering."
-    ],
-    "point": "「〜中に」は while、お湯は hot water",
-    "topic": "travel",
-    "subtopic": "hotel",
-    "level": 3,
-    "grammar": ["past-simple", "time-and-if-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_8x8x4n3b",
