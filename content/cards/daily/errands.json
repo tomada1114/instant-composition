@@ -1,21 +1,5 @@
 [
   {
-    "id": "c_2d9z8s5z",
-    "ja": "兄が郵便局に間に合ってたら、受け取れたのに。",
-    "en": "My brother could've gotten it if he'd made it.",
-    "alternatives": [
-      "If he'd made it, my brother could've gotten it.",
-      "My brother could've received it if he'd made it."
-    ],
-    "point": "過去の仮定は had＋過去分詞、結果は could have＋過去分詞",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 6,
-    "grammar": ["third-conditional", "modal-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3p4p5c2v",
     "ja": "郵便局の人が小包は明日届くと言ってた。",
     "en": "The clerk said the package would arrive tomorrow.",
@@ -31,9 +15,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:f6fd1f93bd28d9e1b1cb9d621557812cc3d80cf2938d6c31b1d78bcaae66e820",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:ffbd23af794df542648525f275c3df11cce0a47258ce3dba5c7cfc5414289d95",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -50,9 +34,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:717b4220f81b6ab54e15d68ca8247db71274501a03c09e96c0f7fed21df2138d",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:95c35968432a7c03f7d43cbe526e409925c95503ceed24f734fec74435db11af",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -70,7 +54,13 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:48c6418c71988e2f8478f25e8923a222e496589402715b1e01ed905198f24969",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5k7h5c8z",
@@ -87,7 +77,13 @@
     "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8e7dbcb8f1065f89d2c24d40c820e396404695adb695c6f9200a05436553a83f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5v7n7x3d",
@@ -100,39 +96,13 @@
     "level": 3,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5w9n2c8x",
-    "ja": "もしキャッシュカードをなくしたら、銀行に電話する？",
-    "en": "If you lost your card, would you call the bank?",
-    "alternatives": [
-      "Would you call your bank if you lost your card?",
-      "If you lost your card, would you call your bank?"
-    ],
-    "point": "仮の話なので if 節は過去形 lost、主節は would you",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 7,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5y5b8x4t",
-    "ja": "母はもう30分も待っています。",
-    "en": "My mom has waited thirty minutes already.",
-    "alternatives": [
-      "Mom has been waiting for thirty minutes.",
-      "My mom's been waiting half an hour."
-    ],
-    "point": "今も続く待ち時間は現在完了で言う",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 4,
-    "grammar": ["present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:abe20f3e3aa2b078022ef6bc71e853ae09c97a5ddc2cd50570e484304041a887",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6m9d6v8c",
@@ -145,7 +115,13 @@
     "level": 2,
     "grammar": ["there-is-are"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:48aa5e932dad6c86637f45fb2b9398a9f3b15e940d570ea6ec7d27aa2ea9065b",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6t2c6c8x",
@@ -158,23 +134,13 @@
     "level": 2,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6z8w6p3j",
-    "ja": "修理の人はスマホは金曜に直ると言ってた。",
-    "en": "The repairman said it'd be ready Friday.",
-    "alternatives": [
-      "The repairman told me it'd be ready Friday.",
-      "The repair guy said it'd be ready Friday."
-    ],
-    "point": "said の後は would で時制を合わせる",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 5,
-    "grammar": ["reported-speech"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1d692bf376994dc7e65ce08efa94a153eec262de6adc249340ef3b88bbfcf881",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7b7y5z4f",
@@ -187,23 +153,13 @@
     "level": 3,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8e8s6q2c",
-    "ja": "終わったら電話してもらえますか？",
-    "en": "Could you call me when it's done?",
-    "alternatives": [
-      "Can you call me when it's ready?",
-      "Would you call me when it's finished?"
-    ],
-    "point": "when 節は未来のことでも現在形",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 3,
-    "grammar": ["time-and-if-clauses", "requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cd9a15bfdecaffb600d0b0606ae163b74c39b9b2d570d5661a7a4e77c6a40f77",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8g6r2n8q",
@@ -219,55 +175,13 @@
     "level": 6,
     "grammar": ["causatives", "present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8r2k4t4h",
-    "ja": "修理に出したのは、画面じゃなくてバッテリーですよ。",
-    "en": "It was the battery I brought in, not the screen.",
-    "alternatives": [
-      "What I brought in was the battery, not the screen.",
-      "The battery is what I brought in, not the screen."
-    ],
-    "point": "強調したい語を It was と that の間に挟む",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 8,
-    "grammar": ["cleft-emphasis"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8v4d5y2s",
-    "ja": "窓口の人が、書類の遅れは住所のせいかもと言った。",
-    "en": "The clerk said my address might delay the documents.",
-    "alternatives": [
-      "The clerk told me my address might delay the documents.",
-      "According to the clerk, my address might delay the documents."
-    ],
-    "point": "might を使うと「かも」と断定を避けて伝えられる",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 7,
-    "grammar": ["reported-speech", "hedging-softening"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9s3a8q5p",
-    "ja": "兄は今日、ノートPCを取りに行きます。",
-    "en": "My brother's picking up his laptop today.",
-    "alternatives": [
-      "My brother will pick up his laptop today.",
-      "My brother's going to pick up his laptop."
-    ],
-    "point": "「取りに行く」は pick up。予定は進行形でも言える",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 5,
-    "grammar": ["future-forms", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1f23f39b8c191b249826672669356a125fa6606e82e4a856b824a77c3b833310",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9x5h2b8v",
@@ -283,6 +197,12 @@
     "level": 7,
     "grammar": ["articles-and-countability", "passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f9dd223ccb0b0dbf46160ca725c6b5b8aac18a6d3507b1d0508d0d6e552f0341",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
