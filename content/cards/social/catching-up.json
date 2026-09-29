@@ -31,9 +31,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:97e60bcddae00f4a59f57534bee7d654509af4689ea6498854197e0284f35b89",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:e6cceb6c3204d3f7e83baf22cdb7c33216cf4d487e34b7c242f815d866eead9d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -51,36 +51,13 @@
     "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3a5q3u5n",
-    "ja": "新しい仕事は前よりずっと楽だよ。",
-    "en": "My new job's much easier than before.",
-    "alternatives": ["My new job is way easier now.", "My new job's a lot easier."],
-    "point": "比較級の強調は very ではなく much / a lot",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 3,
-    "grammar": ["comparatives-superlatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3e8z4v7h",
-    "ja": "隣にあったラーメン屋、まだある？",
-    "en": "Is the ramen shop next door still there?",
-    "alternatives": [
-      "Is that ramen place next door still around?",
-      "Does that ramen shop next door still exist?"
-    ],
-    "point": "「隣の」は next door を名詞の後ろに置く",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 4,
-    "grammar": ["post-modification"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:de62e6df84b29f67d744facf6594d4d0d5711b996ec406874f20a0ed20133241",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3m9g2m6g",
@@ -128,7 +105,13 @@
     "level": 5,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:be8885b90804a3ef47b467667257402f8092cc89e4583c2581b71ca6c196cea2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4r9u7s3d",
@@ -144,7 +127,13 @@
     "level": 5,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1169e9795a1b5701262edd7b7391e80b5f6504c5b20a0fbe954ccb5aef611cf6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4u7d5t7j",
@@ -226,9 +215,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:0e185dde859e49a7710ce1e7521c6e2e40183b45fa89f182f86ce1439afc20e6",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:52bce8d086a995a8e0e9984369508107b9d439bbd4d8cd9caceabd3352bb9764",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -245,22 +234,6 @@
     "subtopic": "catching-up",
     "level": 7,
     "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6f4q4j7n",
-    "ja": "父は最近、医者に毎日歩かされてるんだ。",
-    "en": "The doctor's been making my dad walk every day.",
-    "alternatives": [
-      "My dad's doctor has him walking every day.",
-      "Lately my dad's doctor makes him walk every day."
-    ],
-    "point": "make + 人 + 動詞の原形。to は付けない",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 6,
-    "grammar": ["causatives", "present-perfect-continuous"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -329,35 +302,6 @@
     "stamps": {}
   },
   {
-    "id": "c_6y4p6z7u",
-    "ja": "一緒に働いてたタカシ、カナダにいるらしいよ。",
-    "en": "Apparently Takashi, who worked with me, is in Canada.",
-    "alternatives": [
-      "Apparently Takashi, my old coworker, is in Canada.",
-      "I heard Takashi, my ex-coworker, is in Canada."
-    ],
-    "point": "人の説明は who でつなぎ、主語の直後に入れる",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 6,
-    "grammar": ["relative-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7b8w6f6g",
-    "ja": "朝6時に起きなきゃいけないんだ。",
-    "en": "I have to get up at six.",
-    "alternatives": ["I have to wake up at six.", "I've got to get up at six."],
-    "point": "義務は have to + 動詞の原形",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 2,
-    "grammar": ["modal-obligation-advice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7w3x3d4p",
     "ja": "彼女、最近ギターにはまってるらしいよ。",
     "en": "I hear she's into playing guitar lately.",
@@ -371,27 +315,11 @@
     "level": 4,
     "grammar": ["gerunds"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7z6c8v8a",
-    "ja": "赤ちゃんの写真、見せてもらえますか？",
-    "en": "Could you show me your baby's photos?",
-    "alternatives": [
-      "Can you show me your baby's pictures?",
-      "Could I see your baby's photos?"
-    ],
-    "point": "丁寧な依頼は Could you + 動詞の原形",
-    "topic": "social",
-    "subtopic": "catching-up",
-    "level": 2,
-    "grammar": ["requests-permission"],
-    "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:3b9faad4bb4019acb581c8e2c52f4cd085bb4852efec0903c1dae573c98b6295",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:c14e7c45f31778c2e9b063213da983e241b60ccc14c5a545697956f6aa4dbffd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -406,7 +334,13 @@
     "level": 3,
     "grammar": ["verb-object-to-do", "past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e8beed96491707296b70da597a9a28e94e020ab6f8347ef405b1a8f4085046e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8w8w7u5w",
@@ -422,7 +356,13 @@
     "level": 5,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a0f2e61c336baa4e0a1a1ceba8e57d308185e5eb7b2092863202e4ef6c94bffb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8x9v7c4q",
