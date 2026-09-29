@@ -2,6 +2,7 @@ import { Link, useNavigate } from "@tanstack/react-router";
 import type { ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
+import { markPressed } from "../drill/pressed";
 import { browserSound } from "../drill/sound";
 import { usePrimaryKey } from "../lib/use-primary-key";
 import type { HomeView, RoundKind } from "../openapi";
@@ -29,6 +30,7 @@ export function HomeScreen({
 
   function go(kind: RoundKind): void {
     browserSound.unlock();
+    markPressed();
     void navigate({ to: "/drill", search: { kind } });
   }
 

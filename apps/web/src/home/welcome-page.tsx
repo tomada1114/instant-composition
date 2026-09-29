@@ -3,8 +3,9 @@ import { Navigate, useNavigate } from "@tanstack/react-router";
 import type { ReactElement } from "react";
 
 import { PageLoadFailed, PageLoading } from "../lib/page-shell";
-import { HOME_QUERY, SETTINGS_QUERY } from "../lib/queries";
+import { HOME_QUERY, isSignedOut, SETTINGS_QUERY } from "../lib/queries";
 import { WelcomeScreen } from "./welcome-screen";
+import { markPressed } from "../drill/pressed";
 
 /**
  * The `/welcome` route: the first visit's topic choice, and how to start,
@@ -22,6 +23,9 @@ export function WelcomePage(): ReactElement {
   };
 
   if (!home.isFetchedAfterMount || !page.isFetchedAfterMount) return <PageLoading />;
+  if (isSignedOut(home.error) || isSignedOut(page.error)) {
+    return <Navigate to="/" replace />;
+  }
   if (
     home.isError ||
     page.isError ||
@@ -40,6 +44,7 @@ export function WelcomePage(): ReactElement {
         // The cached home view still says "onboarding"; the drill must read
         // the placement it now is, so the next read starts from nothing.
         queryClient.removeQueries({ queryKey: HOME_QUERY.queryKey });
+        markPressed();
         void navigate({ to: "/drill", search: { kind: "placement" } });
       }}
       onChosen={() => {

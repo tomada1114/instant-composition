@@ -1,7 +1,8 @@
-import { describe, expect, it, vi } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 
 import {
   API_ROOT,
+  beginVisit,
   finishRound,
   getHome,
   getRecords,
@@ -389,6 +390,16 @@ describe("an unauthenticated answer", () => {
     return !settled;
   }
 
+  /** A call answered signed in, which is what makes a later refusal a session that ran out. */
+  async function answeredSignedIn(): Promise<void> {
+    stubFetch(() => Promise.resolve(Response.json({ settings: {} })));
+    expect((await getSettings()).ok).toBe(true);
+  }
+
+  beforeEach(() => {
+    beginVisit();
+  });
+
   it("refreshes the session once and sends the call again", async () => {
     const visited = stubLocation();
     const answers = [
@@ -413,9 +424,10 @@ describe("an unauthenticated answer", () => {
     ["refused", () => envelope(401, "ERR_UNAUTHENTICATED")],
     ["not served (no user pool)", () => new Response("", { status: 404 })],
   ] as const)(
-    "sends the browser to sign in, and never settles, when the refresh is %s",
+    "sends the browser to sign in, and never settles, when the refresh is %s after a call was answered signed in",
     async (_, refresh) => {
       const visited = stubLocation();
+      await answeredSignedIn();
       const answers = [envelope(401, "ERR_UNAUTHENTICATED"), refresh()];
       const calls = stubFetch(() =>
         Promise.resolve(answers.shift() ?? envelope(500, "ERR_X")),
@@ -430,8 +442,70 @@ describe("an unauthenticated answer", () => {
     },
   );
 
+  it.each([
+    ["refused", () => envelope(401, "ERR_UNAUTHENTICATED")],
+    ["not served (no user pool)", () => new Response("", { status: 404 })],
+  ] as const)(
+    "answers the refusal, and leaves the browser where it is, when the refresh is %s before anything was answered signed in",
+    async (_, refresh) => {
+      const visited = stubLocation();
+      const answers = [envelope(401, "ERR_UNAUTHENTICATED"), refresh()];
+      stubFetch(() => Promise.resolve(answers.shift() ?? envelope(500, "ERR_X")));
+      expect(await getHome()).toStrictEqual({
+        ok: false,
+        error: { code: "ERR_UNAUTHENTICATED" },
+      });
+      expect(visited).toStrictEqual([]);
+    },
+  );
+
+  it("counts an answer that succeeds only after a refresh as signed in", async () => {
+    const visited = stubLocation();
+    const answers = [
+      envelope(401, "ERR_UNAUTHENTICATED"),
+      new Response(null, { status: 204 }),
+      Response.json({ settings: {} }),
+    ];
+    stubFetch(() => Promise.resolve(answers.shift() ?? envelope(500, "ERR_X")));
+    expect((await getSettings()).ok).toBe(true);
+    const expired = [
+      envelope(401, "ERR_UNAUTHENTICATED"),
+      envelope(401, "ERR_UNAUTHENTICATED"),
+    ];
+    stubFetch(() => Promise.resolve(expired.shift() ?? envelope(500, "ERR_X")));
+    expect(await staysPending(getHome(), visited)).toBe(true);
+    expect(visited).toStrictEqual([LOGIN_URL]);
+  });
+
+  it("counts only a successful answer as signed in", async () => {
+    const visited = stubLocation();
+    const answers = [
+      envelope(503, "ERR_CONTENT_UNREADABLE"),
+      envelope(401, "ERR_UNAUTHENTICATED"),
+      envelope(401, "ERR_UNAUTHENTICATED"),
+    ];
+    stubFetch(() => Promise.resolve(answers.shift() ?? envelope(500, "ERR_X")));
+    await getHome();
+    expect((await getHome()).ok).toBe(false);
+    expect(visited).toStrictEqual([]);
+  });
+
+  it("starts each visit with nobody signed in", async () => {
+    const visited = stubLocation();
+    await answeredSignedIn();
+    beginVisit();
+    const answers = [
+      envelope(401, "ERR_UNAUTHENTICATED"),
+      envelope(401, "ERR_UNAUTHENTICATED"),
+    ];
+    stubFetch(() => Promise.resolve(answers.shift() ?? envelope(500, "ERR_X")));
+    expect((await getHome()).ok).toBe(false);
+    expect(visited).toStrictEqual([]);
+  });
+
   it("refreshes at most once when the retry is refused too", async () => {
     const visited = stubLocation();
+    await answeredSignedIn();
     const answers = [
       envelope(401, "ERR_UNAUTHENTICATED"),
       new Response(null, { status: 204 }),

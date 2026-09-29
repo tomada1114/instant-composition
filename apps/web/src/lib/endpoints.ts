@@ -39,6 +39,7 @@ import type { Result } from "./result";
 
 export {
   API_ROOT,
+  beginVisit,
   LOGIN_URL,
   LOGOUT_URL,
   REFRESH_URL,

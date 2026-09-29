@@ -94,6 +94,8 @@ than home-made feel); "Here" marks a call made while transcribing either.
 | Focus is a global white 2px outline, 2px offset, in the base layer                          | Here     | On every control; one rule cannot be forgotten per component                                                                      |
 | Reduced motion spares `data-motion="essential"`                                             | Here     | The timer bar keeps shrinking under reduced motion; the global collapse would freeze it                                           |
 | `index.html` declares `color-scheme: dark` and a `#0A0A0B` `theme-color`                    | Here     | Browser controls and a phone's toolbar match the canvas before the stylesheet loads                                               |
+| Signed out, `/` is a landing: the brand, a heading, W2's three steps and one sign-in link   | Here     | Refero welcome screens (Nooka, HYPE): name on top, one wide action at the thumb; their prose and art are what the lock rejects    |
+| Sign-in is a link dressed as the `primary` button                                           | Here     | A full-page navigation to the managed login: a link says where it goes, and Space still presses it (`data-primary`)               |
 
 ## References
 

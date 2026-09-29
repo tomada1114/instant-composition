@@ -43,6 +43,7 @@ to the design's names.
 | `inline-notice`           | —                                                          | unsaved records; gone once sent                                                |
 | `skeleton`                | —                                                          | when the start screen takes over 300 ms                                        |
 | `empty-state`             | —                                                          | not enough cards; cards could not be loaded                                    |
+| `landing`                 | — (the signed-out `/`)                                     | —                                                                              |
 
 There is no status chip. "To review", "timed out", "again" and "fast" are text with a
 glyph: a pill reads as something to press.
@@ -275,3 +276,18 @@ Nothing is lit.
 | `dot-calendar`   | Last 12 weeks, one column per week (oldest left), rows Monday to Sunday. Dots 12 across, 6 apart. The `week-row` states with a solid hairline ring for upcoming, but never the accent — nothing grows here                      |
 | `milestone-list` | A muted `label` title, then per row the subject (`label`, muted) and the milestones earned ("7 · 14 · 30", `mono-sm`, white). Streak first, then topic order. Empty: "none yet", muted `body`                                   |
 | `weak-list`      | A muted `label` title with ⓘ; per row the kind (`label`, muted) and its names (`body`, white, "、" between), weakest first. No row for an empty kind; neither: "none right now". No count, no rate, no accent                   |
+
+## Landing
+
+`/` for a visitor who is not signed in: what the drill is, told the way the W2 intro
+tells the placement round, with nothing read from the API.
+
+- Top: the brand `eyebrow` over the app's name in `heading`. No icon tiles and no
+  navigation: a visitor has nowhere to go yet.
+- Centred in the free space: the drill's three moves — a Japanese prompt, said in
+  English before the timer runs out, flipped and graded ○ / × — as numbered steps
+  between hairlines, "01" in muted `mono-sm` and the move in `heading`, one line each.
+- Bottom: "sign in" as the one `primary`, a link (`Button asChild`) to the API's sign-in
+  redirect, led on by → with its Space hint.
+- No illustration, no sample card, no feature paragraphs, no second action. The accent
+  is the sign-in alone.

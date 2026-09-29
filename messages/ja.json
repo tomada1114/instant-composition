@@ -69,6 +69,16 @@
       "reload": "読み込み直す"
     }
   },
+  "Landing": {
+    "brand": "Instant Composition",
+    "title": "瞬間英作文",
+    "steps": {
+      "read": "日本語の文が出る",
+      "say": "時間内に英語で言う",
+      "grade": "めくって ○ / × をつける"
+    },
+    "signIn": "ログイン"
+  },
   "Welcome": {
     "eyebrow": "Welcome",
     "title": "どの場面で話しますか",
@@ -101,6 +111,13 @@
       "say": "英語で言う",
       "flip": "めくる",
       "grade": "自分で ○ / ×",
+      "start": "始める"
+    },
+    "ready": {
+      "eyebrow": "{kind, select, today {Today} yesterday {Yesterday} extra {Extra} other {Placement}}",
+      "title": "{kind, select, today {今日の分} yesterday {昨日の分} extra {もう {count} 文} other {難易度の測定}}",
+      "resume": "{position} 枚目から ・ 全 {total} 枚",
+      "resumeRetry": "もう一度 {position} 枚目から ・ 全 {total} 枚",
       "start": "始める"
     },
     "card": {

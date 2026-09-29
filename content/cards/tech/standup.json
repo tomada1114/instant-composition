@@ -1,407 +1,245 @@
 [
   {
-    "id": "c_2p3k7m4b",
-    "ja": "佐藤さんが先週直したと言っていたバグがまだ本番で起きているので、今日は彼女と一緒に原因を調べます。",
-    "en": "The bug that Sato said she'd fixed last week is still happening in production, so I'm going to dig into the cause with her today.",
+    "id": "c_2a9c2d6a",
+    "ja": "移行が終わっただけでなく、テストも全部通った。",
+    "en": "Not only did the migration finish, but every test passed.",
     "alternatives": [
-      "The bug Sato told us she had fixed last week is still showing up in production, so I'll look into the cause with her today.",
-      "The bug that Sato said she fixed last week is still occurring in production, so today I'm going to investigate the cause with her."
-    ],
-    "point": "主語は The bug that Sato said she'd fixed で、動詞 is まで長い",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 10,
-    "grammar": ["nested-clauses", "reported-speech"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:497da71edfc5f4707859084afce988fa40b3c27071dd901a069e8e83611dba09",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
-  },
-  {
-    "id": "c_2x6h8a6n",
-    "ja": "ステージング環境、今日の午後まで私に使わせてもらえませんか？負荷テストをやり直したいんです。",
-    "en": "Could you let me use the staging environment until this afternoon? I want to rerun the load test.",
-    "alternatives": [
-      "Would you let me use the staging environment until this afternoon? I'd like to redo the load test.",
-      "Could you let me have the staging environment until this afternoon? I need to run the load test again."
-    ],
-    "point": "使わせて = let me use。to use にしない",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 7,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:25798d37697cdad39a613d951d1682c59df7a2656beea3f358807b609d68be8c",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_2z5c4h2w",
-    "ja": "データ移行が夜のうちに終わっただけでなく、テストも全部通りました。",
-    "en": "Not only did the data migration finish overnight, but all the tests passed as well.",
-    "alternatives": [
-      "Not only did the data migration complete overnight, but every test passed too.",
-      "The data migration finished overnight, and all the tests passed too."
+      "The migration finished, and every test passed too.",
+      "On top of the migration finishing, every test passed."
     ],
     "point": "Not only が文頭なら did the migration finish と倒置する",
     "topic": "tech",
     "subtopic": "standup",
     "level": 9,
     "grammar": ["inversion"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:08d4084fe1b7d11ec8bc6b73eca2fd4328467c910aa03d53b876e2ae68c081bf",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_3u2c6x7v",
-    "ja": "ケンは昨日、キャッシュの不具合の原因を突き止められましたか？",
-    "en": "Did Ken find the cause of the caching bug yesterday?",
+    "id": "c_2h5v9g8d",
+    "ja": "昨日からテストを書いていて、半分終わりました。",
+    "en": "I've been writing tests since yesterday, halfway through.",
     "alternatives": [
-      "Was Ken able to find what caused the caching bug yesterday?",
-      "Did Ken figure out the cause of the caching bug yesterday?"
+      "Since yesterday I've been writing tests, and I'm halfway.",
+      "I've been on the tests since yesterday, halfway done."
+    ],
+    "point": "「昨日から〜している」は have been + -ing",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3x8m5x5v",
+    "ja": "ログインに、まだバグが一つあります。",
+    "en": "There's still one login bug.",
+    "alternatives": ["There is still a login bug.", "There's still one bug in login."],
+    "point": "「〜がある」は There is で始める",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_3z2f7j3n",
+    "ja": "誰かが環境変数を消したに違いありません。",
+    "en": "Someone must have deleted an environment variable.",
+    "alternatives": [
+      "Someone must have removed an environment variable.",
+      "Somebody must have deleted an environment variable."
+    ],
+    "point": "過去の確信ある推量は must have + 過去分詞",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4g9x7x7f",
+    "ja": "今日はドキュメントの仕上げに集中します。",
+    "en": "Today I'll focus on finishing the docs.",
+    "alternatives": [
+      "I'll focus on finishing the docs today.",
+      "Today I'm focusing on finishing the docs."
+    ],
+    "point": "focus on の後は動名詞 finishing、to finish にしない",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["gerunds", "future-forms"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4r3p5d8b",
+    "ja": "健太は今日、デプロイしなきゃ。",
+    "en": "Kenta has to deploy today.",
+    "alternatives": ["Kenta needs to deploy today.", "Kenta must deploy today."],
+    "point": "主語が三人称単数なので have to ではなく has to",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4z7n2h8n",
+    "ja": "ステージング環境、午後まで使わせてもらえますか？",
+    "en": "Could you let me use staging until this afternoon?",
+    "alternatives": [
+      "Would you mind letting me use staging until this afternoon?",
+      "Could I get staging to myself until this afternoon?"
+    ],
+    "point": "使わせて = let me use。to は付けない",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 7,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_4z9f5q4d",
+    "ja": "ケンは昨日、原因を突き止めましたか？",
+    "en": "Did Ken find the cause yesterday?",
+    "alternatives": [
+      "Did Ken figure out the cause yesterday?",
+      "Was Ken able to find the cause yesterday?"
     ],
     "point": "昨日のことなので Has ではなく Did で聞く",
     "topic": "tech",
     "subtopic": "standup",
     "level": 4,
     "grammar": ["past-simple"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:51dd4db4eedda38af4d65a5d882ce7055b9fb063cc0f1f9861c46b872a5d8257",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_3w4r9q2c",
-    "ja": "今日私がやらなきゃいけないのは、昨日見つかったログイン画面のバグを直すことです。",
-    "en": "What I need to do today is fix the login bug we found yesterday.",
+    "id": "c_5e5e2w3k",
+    "ja": "負荷テストがどこまで必要か、教えてもらえますか？",
+    "en": "Could you say how much load testing we need?",
     "alternatives": [
-      "What I have to do today is fix the login bug we found yesterday.",
-      "The thing I need to do today is fix the login bug we found yesterday."
+      "Could you tell me how much load testing we need?",
+      "Do you know how much load testing we need?"
     ],
-    "point": "What I need to do is の後は動詞の原形でよい",
+    "point": "how much の後は we need の平叙文の語順にする",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 5,
-    "grammar": ["noun-clauses", "relative-clauses"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:487cf8825943a60e65a8e92da48035db28bfc5a304804ea0e6d8bd3dcced122c",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
+    "level": 7,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_4d2w5r8a",
-    "ja": "昨日の午後に私が気づいたときには、夜間バッチがもう三回も失敗していました。",
-    "en": "By the time I noticed it yesterday afternoon, the nightly batch job had already failed three times.",
+    "id": "c_5s7m8c2v",
+    "ja": "みんなでテスト結果を確認しましょう。",
+    "en": "Let's all check the test results.",
     "alternatives": [
-      "When I noticed it yesterday afternoon, the nightly batch had already failed three times.",
-      "The nightly batch job had already failed three times by the time I noticed it yesterday afternoon."
+      "Let's all review the test results.",
+      "Let's go over the test results together."
     ],
-    "point": "気づいた時点より前の失敗なので had failed を使う",
+    "point": "「〜しましょう」は Let's の後に動詞の原形",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_5v9t5y6q",
+    "ja": "佐藤さんがテストを直して、CI が速くなった。",
+    "en": "Sato fixed the tests, speeding up our CI.",
+    "alternatives": [
+      "Sato fixed the tests, which sped up our CI.",
+      "Sato fixed the tests, and our CI got faster."
+    ],
+    "point": "結果は、speeding up のように -ing で続けられる",
     "topic": "tech",
     "subtopic": "standup",
     "level": 6,
-    "grammar": ["past-perfect"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:b71da72b1cf1d860e67f83d6902a8c3b4cc4964d8c8f8fdfc990435767800f70",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_4f9q9w6c",
-    "ja": "今日はログイン画面のバグを直しています。",
-    "en": "I'm fixing the login page bug today.",
+    "id": "c_5y7f6q2m",
+    "ja": "移行で詰まってて。アドバイスをもらえますか？",
+    "en": "I'm stuck on the migration. Could I get some advice?",
     "alternatives": [
-      "Today I'm fixing the bug on the login page.",
-      "I'm working on the login page bug today."
+      "I'm stuck on this migration. Could you advise me?",
+      "I'm stuck on the migration and need some advice."
     ],
-    "point": "今やっている作業は進行形 I'm fixing で言う",
+    "point": "advice は数えられないので an advice ではなく some advice",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 1,
-    "grammar": ["progressive-aspect"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:3070c8339cc04777ca9d1185511e8e893c5c54e43d90cb0dd0016fa297d6f652",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "level": 7,
+    "grammar": ["articles-and-countability", "requests-permission"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_4k4g6x8d",
-    "ja": "インフラチームは、ステージング環境は今日の午後には復旧すると言っていました。",
-    "en": "The infrastructure team told us the staging environment would be back up by this afternoon.",
+    "id": "c_6d9g4h4c",
+    "ja": "インフラは昨日、DBを移行中でした。",
+    "en": "Infra was migrating the database yesterday.",
     "alternatives": [
-      "The infrastructure team said the staging environment would be back up by this afternoon.",
-      "The infrastructure team said staging should be back up by this afternoon."
-    ],
-    "point": "「言っていた」に合わせて will ではなく would にする",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 5,
-    "grammar": ["reported-speech"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:2bf981df72dd7a5b5b025685434f099516c9ce6834960caa507804be8cbb43e1",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
-  },
-  {
-    "id": "c_4n8b9j7t",
-    "ja": "ログイン画面の修正はもうレビューされましたか？今日中にマージしたいんです。",
-    "en": "Has the login page fix been reviewed yet? I'd like to get it merged today.",
-    "alternatives": [
-      "Has anyone reviewed the login page fix yet? I want to get it merged today.",
-      "Has the fix for the login screen been reviewed yet? I'd like to merge it today."
-    ],
-    "point": "「もうされた？」は Has the fix been reviewed yet? の形",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 5,
-    "grammar": ["passive-voice", "present-perfect"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:bdf4d0d8eeb2cd6b6fb9d3dbe29fc6187d88b951ead5a8c96d79a388f15c4dad",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_4r3d2g3k",
-    "ja": "インフラチームは昨日、ずっとデータベースの移行作業をしていました。",
-    "en": "The infra team was migrating the database all day yesterday.",
-    "alternatives": [
-      "The infra team was working on the database migration all day yesterday.",
-      "Yesterday the infra team was migrating the database all day."
+      "Yesterday, infra was migrating the database.",
+      "Infra was busy migrating the database yesterday."
     ],
     "point": "チームは単数扱いで was＋-ing の過去進行形",
     "topic": "tech",
     "subtopic": "standup",
     "level": 3,
     "grammar": ["progressive-aspect"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:5cfe7e5676dc9109fc5f03c984b80c6980a0d39471227efb746fcf234d996994",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_4u4z3r9w",
-    "ja": "API の仕様はまだ固まっていませんが、私たちのチームは今日からフロント側の実装に着手します。",
-    "en": "Although the API spec hasn't been finalized yet, our team is starting on the front end today.",
+    "id": "c_6f8a4j5a",
+    "ja": "佐藤さんが直したと言ったバグ、まだ本番で起きてるよ。",
+    "en": "The bug Sato said she'd fixed is still happening in production.",
     "alternatives": [
-      "Even though the API spec isn't final yet, our team will start working on the front end today.",
-      "The API spec still isn't finalized, but our team is starting the front-end work today."
+      "The bug Sato said she fixed is still occurring in production.",
+      "That bug Sato said she'd fixed is still showing up in prod."
     ],
-    "point": "「まだ固まっていない」は hasn't been finalized yet",
+    "point": "主語は The bug Sato said she'd fixed で、動詞 is まで長い",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 6,
-    "grammar": ["concession-contrast", "passive-voice"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:4233788bab616747c01cc2921dc4e8c7523adfee7df73c2d162166a5b66e6309",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
+    "level": 10,
+    "grammar": ["nested-clauses", "reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_4w7s6n3x",
-    "ja": "昨日のデプロイが何の警告もなく失敗したので、誰かが環境変数を消してしまったに違いありません。",
-    "en": "Yesterday's deploy failed without any warning, so someone must have deleted an environment variable.",
+    "id": "c_6n8g3e3p",
+    "ja": "今日30分、時間をもらえないかなと思って。",
+    "en": "I was wondering if you'd spare thirty minutes today.",
     "alternatives": [
-      "Since yesterday's deploy failed without any warning, someone must have removed an environment variable.",
-      "Yesterday's deployment failed with no warning, so somebody must have deleted an environment variable."
+      "Would you be able to spare thirty minutes today?",
+      "Do you think you could spare thirty minutes today?"
     ],
-    "point": "過去の推量は must have + 過去分詞",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 6,
-    "grammar": ["modal-perfect"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:cd87384d8a189f1bf6d7144eb63135460510422128d562cad39176a512184a98",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_5b3p3e7v",
-    "ja": "決済 API のテストで落ちているのは、先週追加したテストだけです。",
-    "en": "The only tests failing in the payment API suite are the ones we added last week.",
-    "alternatives": [
-      "The only failing tests in the payment API are the ones we added last week.",
-      "Only the tests we added last week are failing in the payment API suite."
-    ],
-    "point": "failing や we added last week を名詞の後ろに置く",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 6,
-    "grammar": ["post-modification", "relative-clauses"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:19b0e783b9784ca09cc11671c9c7fd58128dbff9c11fa708402e5ffbb4890295",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_5d9e4e3z",
-    "ja": "ログイン画面に、まだバグが一つ残っています。",
-    "en": "There's still one bug on the login screen.",
-    "alternatives": [
-      "There is still a bug on the login screen.",
-      "There's still one bug left on the login screen."
-    ],
-    "point": "「〜がある」は There is で始める",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 3,
-    "grammar": ["there-is-are"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:2202763fe4129d60e839e68eda96b0d8303e732fd1d5211bc2d23f6abbbce12f",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_5k2y7f8d",
-    "ja": "健太さんは、今日中にリリースノートを書かないといけません。",
-    "en": "Kenta has to write the release notes today.",
-    "alternatives": [
-      "Kenta needs to write the release notes today.",
-      "Kenta must write the release notes today."
-    ],
-    "point": "主語が三人称単数なので have to ではなく has to",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 2,
-    "grammar": ["modal-obligation-advice"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:71599c2ef573deb7e53f8e7c034582bf31e7c94efc6ff69f1a449a27b20a985b",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
-  },
-  {
-    "id": "c_5m2b7k7m",
-    "ja": "先週キャッシュの設定をちゃんと確認していたら、今こんなにこのバグで苦労していないはずです。",
-    "en": "If I had checked the cache settings properly last week, I wouldn't be struggling with this bug now.",
-    "alternatives": [
-      "If I'd properly checked the cache settings last week, I wouldn't be having so much trouble with this bug now.",
-      "If I'd checked the cache config carefully last week, I wouldn't be fighting this bug right now."
-    ],
-    "point": "過去の仮定は had checked、今の結果は wouldn't be -ing",
+    "point": "「〜もらえないかな」は I was wondering if you could/would",
     "topic": "tech",
     "subtopic": "standup",
     "level": 8,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:0847c67a751e1552ff3bcddc067f606b8c4f2897c771746122114a7cb43d5343",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_5s8j6f2k",
-    "ja": "今日はインターンの人にテストケースを書いてもらって、私はレビューに集中するつもりです。",
-    "en": "Today I'm going to have our intern write the test cases so I can focus on reviews.",
-    "alternatives": [
-      "Today I'll have our intern write the test cases so that I can concentrate on reviewing.",
-      "Today I'm getting our intern to write the test cases so I can focus on reviews."
-    ],
-    "point": "have + 人 + 動詞の原形。to は付けない",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 6,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:a81f38c5ac89278529a592e417e4d27ae50322d813e1db661bb8cd77c2ff5028",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_6b7y2x5c",
-    "ja": "昨日デプロイが失敗したんですが、もう私が直しました。",
-    "en": "The deployment failed yesterday, but I've already fixed it.",
-    "alternatives": [
-      "Yesterday's deployment failed, but I've fixed it now.",
-      "The deploy failed yesterday, but I've already fixed it."
-    ],
-    "point": "昨日の失敗は過去形、「もう直した」は現在完了で分ける",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 4,
-    "grammar": ["tense-contrast"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:cd66e49e5e7655378ab851625d06d37551aca580bf0b50b4ed29970e59cf67a8",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_6v9g2x9u",
-    "ja": "昨日のデプロイ、どこで止まったんですか？",
+    "ja": "昨日のデプロイ、どこで止まりました？",
     "en": "Where did yesterday's deploy get stuck?",
     "alternatives": [
       "Where did the deploy stop yesterday?",
-      "Where did yesterday's deployment fail?"
+      "Where did yesterday's deploy fail?"
     ],
     "point": "過去の疑問なので did を使い、動詞は原形に戻す",
     "topic": "tech",
@@ -418,56 +256,60 @@
     }
   },
   {
-    "id": "c_7b7x3d6d",
-    "ja": "佐藤さんが昨日、決済まわりのテストを全部書き直してくれて、そのおかげで CI がかなり速くなりました。",
-    "en": "Sato rewrote all the payment tests yesterday, making our CI run a lot faster.",
+    "id": "c_6w5z8z5n",
+    "ja": "ログインの修正、もうレビューされた？",
+    "en": "Has the login fix been reviewed yet?",
     "alternatives": [
-      "Sato rewrote all the payment tests yesterday, which made our CI much faster.",
-      "Yesterday Sato rewrote every payment test, and that made our CI run much faster."
+      "Has anyone reviewed the login fix yet?",
+      "Has the login fix been looked at yet?"
     ],
-    "point": "結果は, making で続け、make + 目的語 + 原形 run にする",
+    "point": "「もう〜された？」は yet 付きの Has been reviewed の形",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 6,
-    "grammar": ["participle-clauses", "causatives"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:1140b84dff9aaa9b6b3c2504a98ff6c6d5d6a5b48cd6da8ab13ee6532448aded",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
+    "level": 5,
+    "grammar": ["passive-voice", "present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_7h9z9q6d",
-    "ja": "今日は API のドキュメントを書き終えることに集中します。",
-    "en": "Today I'll focus on finishing the API documentation.",
+    "id": "c_6w9h2t9h",
+    "ja": "先週確認しておけば、今ごろ楽なのに。",
+    "en": "If I'd checked last week, I'd be fine now.",
     "alternatives": [
-      "I'm going to focus on finishing the API docs today.",
-      "Today I'm focusing on finishing the API documentation."
+      "If I'd checked last week, things would be easier now.",
+      "I wouldn't be struggling now if I'd checked last week."
     ],
-    "point": "focus on の後は動名詞 finishing、to finish にしない",
+    "point": "過去の仮定は had checked、今の結果は would be",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 4,
-    "grammar": ["gerunds", "future-forms"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:17b9624f5649960d0e11d5c6239238323a3dd10f82dba7eec2924bd5417820e4",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7d4q3e7e",
+    "ja": "テスト終わったら、連絡します。",
+    "en": "I'll message you when tests are done.",
+    "alternatives": [
+      "I'll tell you when tests are done.",
+      "I'll let you know when tests finish."
+    ],
+    "point": "未来のことでも when 節は現在形（are done）",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 3,
+    "grammar": ["time-and-if-clauses", "future-forms"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_7p6a7n7z",
-    "ja": "テストサーバーがまだ遅いんです。",
-    "en": "The test server is still slow.",
+    "ja": "テストサーバー、まだ遅いです。",
+    "en": "The test server's still slow.",
     "alternatives": [
-      "The test server is still running slow.",
-      "Our test server is still slow."
+      "Our test server is still slow.",
+      "The test server still runs slow."
     ],
     "point": "「遅い」は形容詞なので be 動詞 is を忘れない",
     "topic": "tech",
@@ -484,179 +326,160 @@
     }
   },
   {
-    "id": "c_7t3d9h6z",
-    "ja": "今日のうちに、みんなでテスト結果を確認しましょう。",
-    "en": "Let's all check the test results today.",
+    "id": "c_7s8s5q2m",
+    "ja": "仕様は未確定ですが、フロントに着手します。",
+    "en": "Spec's not final, but we're starting front-end work.",
     "alternatives": [
-      "Let's go over the test results together today.",
-      "Let's all review the test results today."
+      "The spec isn't final, but we're starting front-end work.",
+      "The spec isn't settled, but we're starting front-end work."
     ],
-    "point": "「〜しましょう」は Let's の後に動詞の原形",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 2,
-    "grammar": ["imperatives"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:d5d67c7e6325efa171aa2c14630d6f552433f4dfe0ab8ebc9022d4d42cd6dedc",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
-  },
-  {
-    "id": "c_7v4h4n3s",
-    "ja": "負荷テストをどこまでやればリリースしていいのか、今日中に誰か教えてもらえませんか？",
-    "en": "Could someone let me know today how much load testing we need to do before we can release?",
-    "alternatives": [
-      "Could someone tell me today how much load testing we need before we can release?",
-      "Could anyone let me know today how much load testing is needed before we release?"
-    ],
-    "point": "how much の後は we need の平叙文の語順にする",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 7,
-    "grammar": ["indirect-questions"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:622a5cf71a3c8122a31fa4dc2955e158524b18e3f1bb0d8038a334d469da4c14",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
-  },
-  {
-    "id": "c_7y5r9x7z",
-    "ja": "昨日から決済 API のテストを書いているんですが、まだ半分くらいしか終わっていません。",
-    "en": "I've been writing tests for the payment API since yesterday, but I've only finished about half.",
-    "alternatives": [
-      "I've been working on the payment API tests since yesterday, but I've only gotten through about half of them.",
-      "Since yesterday I've been writing tests for the payment API, but only about half are done so far."
-    ],
-    "point": "「昨日から〜している」は現在完了進行形、「終わった」は現在完了",
+    "point": "「未確定だが着手する」は but で対比させる",
     "topic": "tech",
     "subtopic": "standup",
     "level": 6,
-    "grammar": ["present-perfect", "present-perfect-continuous"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:b77a5a4de9366565e2a940e758a75f5c5b76fd42ae88a2e9f96904bbc3211823",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_8x6y4c3t",
-    "ja": "テストが終わったら、私から Slack で知らせますね。",
-    "en": "I'll let you know on Slack when the tests are done.",
+    "id": "c_7u5x9f2c",
+    "ja": "気づくと、夜間バッチがもう三回失敗していた。",
+    "en": "I noticed the nightly batch had failed three times.",
     "alternatives": [
-      "I'll tell you on Slack when the tests are finished.",
-      "When the tests are done, I'll let you know on Slack."
+      "I realized the batch had already failed three times.",
+      "I saw the nightly batch had failed three times."
     ],
-    "point": "未来のことでも when 節は現在形（are done）",
+    "point": "気づいた時点より前の失敗なので had failed を使う",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 3,
-    "grammar": ["time-and-if-clauses", "future-forms"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:e48c711e10af48166cf614e0c34bf6cbc71e8cf893821cf07a50053937fe963e",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_8z2b7a4k",
-    "ja": "インフラチームの誰か、データベース移行について少しアドバイスをもらえますか？そこで詰まっています。",
-    "en": "Could someone on the infra team give me some advice on the database migration? I'm stuck on it.",
+    "id": "c_8a8a9j7h",
+    "ja": "うちは障害対応に追われて、ドキュメントに手が回ってない。",
+    "en": "The outage swamped us, so we haven't gotten around to docs.",
     "alternatives": [
-      "Can anyone on the infra team give me some advice about the database migration? I'm stuck on it.",
-      "Could someone from the infra team give me a few tips on the database migration? I'm stuck on that part."
+      "The outage kept us busy, so we haven't touched the docs.",
+      "We've been tied up with the outage, so no docs yet."
     ],
-    "point": "advice は数えられないので an advice ではなく some advice",
+    "point": "「まだ手を付けていない」は haven't gotten around to ~",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 7,
-    "grammar": ["articles-and-countability", "requests-permission"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:3d6ff73be7b43f4714db3069a14c8a9f973adff244e38b9d055d5171d0da5a7c",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
+    "level": 9,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_9c6q9x7e",
-    "ja": "今日どこかで30分ほど、ステージング環境のエラーを一緒に見てもらえないかなと思っているんですが。",
-    "en": "I was wondering if you could spare about thirty minutes sometime today to look at the staging errors with me.",
+    "id": "c_8c2w2r3h",
+    "ja": "デプロイの失敗、もう私が直しました。",
+    "en": "I've already fixed the deployment failure.",
     "alternatives": [
-      "Would you be able to spend about thirty minutes with me sometime today looking at the staging errors?",
-      "Do you think you could find thirty minutes today to go over the staging errors with me?"
+      "I already fixed the failed deployment.",
+      "I've fixed the deploy failure already."
     ],
-    "point": "「〜してもらえないかな」は I was wondering if you could",
+    "point": "「もう直した」は already と現在完了でよく使う",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 8,
-    "grammar": ["hedging-softening"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:b8bb63d458515054cd7183235f952be113eb18cd53b6a9a0fb26ad2ba4b73a78",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
+    "level": 4,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_9k7v9j7u",
-    "ja": "昨日のうちにレビューをお願いしておけばよかったです。今日中にマージできないかもしれません。",
-    "en": "I wish I'd asked for a review yesterday. I might not be able to merge it today.",
+    "id": "c_8p3j3z3j",
+    "ja": "私はインターンにテストを書いてもらいます。",
+    "en": "I'm having our intern write the tests.",
     "alternatives": [
-      "I should have asked for a review yesterday. Now I might not be able to merge it today.",
-      "I wish I had asked someone to review it yesterday. I may not get it merged today."
+      "I'll have our intern write the tests.",
+      "I'm getting our intern to write the tests."
+    ],
+    "point": "have + 人 + 動詞の原形。to は付けない",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8r8z5r9v",
+    "ja": "ログインのバグを直しています。",
+    "en": "I'm fixing the login bug.",
+    "alternatives": ["I'm working on the login bug.", "I'm fixing the login bug now."],
+    "point": "今やっている作業は進行形 I'm fixing で言う",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_8y2e3x8k",
+    "ja": "ステージングは午後に直ると言われました。",
+    "en": "They said staging would be back this afternoon.",
+    "alternatives": [
+      "They said staging should be back this afternoon.",
+      "We heard staging would be back this afternoon."
+    ],
+    "point": "「言った」に合わせて will ではなく would にする",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 5,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9a8s4q9v",
+    "ja": "昨日レビューを頼んでおけばよかった。",
+    "en": "I wish I'd asked for a review yesterday.",
+    "alternatives": [
+      "I should have asked for a review yesterday.",
+      "I wish I had asked someone to review it yesterday."
     ],
     "point": "過去の後悔は wish の後を過去完了 I'd asked にする",
     "topic": "tech",
     "subtopic": "standup",
     "level": 7,
     "grammar": ["wishes-regrets"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:7ec340c40313af4eb44e369592f3ad23fd2dc4195e59ba6dffb304e945494aed",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
-    "id": "c_9x6y5t2t",
-    "ja": "私たちは昨日の障害対応に追われて、ドキュメントの更新にまだ手を付けられていません。",
-    "en": "We got tied up with yesterday's outage, so we haven't gotten around to updating the docs yet.",
+    "id": "c_9c7m5u2j",
+    "ja": "私が今日直すのは、ログインのバグです。",
+    "en": "What I'll fix today is the login bug.",
     "alternatives": [
-      "We were caught up dealing with yesterday's outage, so we haven't gotten to the documentation updates yet.",
-      "Yesterday's outage kept us busy, so we still haven't started on updating the docs."
+      "The login bug is what I'll fix today.",
+      "What I'm fixing today is the login bug."
     ],
-    "point": "「まだ手を付けていない」は haven't gotten around to ~ing",
+    "point": "What で始めると「〜するのは」の文になる",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 9,
-    "grammar": ["phrasal-verbs"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:3b97c03d82c5ba65059b3a98274240b6cf7627c002237002625790d22c92705f",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
+    "level": 5,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9g6k8x2u",
+    "ja": "落ちているのは、先週追加したテストだけです。",
+    "en": "Only tests we added last week are failing.",
+    "alternatives": [
+      "The only failing tests are last week's new ones.",
+      "Only the tests added last week are failing."
+    ],
+    "point": "「先週追加した」はテストの後ろに置いて修飾する",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["post-modification", "relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   }
 ]
