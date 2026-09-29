@@ -124,6 +124,38 @@
     }
   },
   {
+    "id": "c_3j8m3g6r",
+    "ja": "あの時助けてくれなきゃ、今ごろ困ってる。",
+    "en": "If you hadn't helped, I'd be lost now.",
+    "alternatives": [
+      "I'd be lost now if you hadn't helped.",
+      "If you hadn't helped then, I'd be stuck now."
+    ],
+    "point": "過去の条件と今の結果は had + 過去分詞、would + 原形",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3u9m7j6e",
+    "ja": "貸してくれた傘、ありがとう。",
+    "en": "Thanks for the umbrella you lent me.",
+    "alternatives": [
+      "Thanks for lending me your umbrella.",
+      "I appreciate the umbrella you lent me."
+    ],
+    "point": "the umbrella (that) you lent me と後ろから説明",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4c3w4q5x",
     "ja": "ささやかなお礼です。",
     "en": "It's a small thank-you.",
@@ -160,6 +192,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4m7j5a7t",
+    "ja": "君なしじゃ、プレゼンは大失敗だった。",
+    "en": "Without you, I'd have blown the presentation.",
+    "alternatives": [
+      "I'd have bombed the presentation without you.",
+      "If it hadn't been for you, I'd have bombed it."
+    ],
+    "point": "Without ~ は if 節の代わりにもなる",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 10,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_4u4r9t6f",
@@ -247,6 +295,22 @@
     }
   },
   {
+    "id": "c_5q2d9a9c",
+    "ja": "電話してれば、待たせなかった。",
+    "en": "If I'd called, you wouldn't have waited.",
+    "alternatives": [
+      "I wouldn't have kept you waiting if I'd called.",
+      "Had I called, you wouldn't have waited."
+    ],
+    "point": "過去の仮定は had + 過去分詞、wouldn't have + 過去分詞",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5v4f6k6g",
     "ja": "ここにミスがあるよ。",
     "en": "There's a mistake here.",
@@ -264,6 +328,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5z8k3p6x",
+    "ja": "もっとこまめに連絡すべきでした。",
+    "en": "I should have kept you posted.",
+    "alternatives": [
+      "I should have updated you more often.",
+      "I ought to have kept you in the loop."
+    ],
+    "point": "後悔は should have + 過去分詞",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 9,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6d3w2n5z",
@@ -286,6 +366,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6y7z3w6x",
+    "ja": "君のしてくれたことが、沁みたよ。",
+    "en": "What you did really touched me.",
+    "alternatives": [
+      "I was really touched by what you did.",
+      "What you did meant a lot to me."
+    ],
+    "point": "What you did が主語になる名詞節",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 9,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6z8d2f6w",
@@ -346,6 +442,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8a6x3y2t",
+    "ja": "ちょっと出しゃばりすぎたかも。",
+    "en": "I may have overstepped a little.",
+    "alternatives": [
+      "I might have overstepped a bit.",
+      "I think I overstepped a little."
+    ],
+    "point": "may have + 過去分詞で断定を避ける",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 10,
+    "grammar": ["hedging-softening", "modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8g6z2k8x",
@@ -415,6 +527,22 @@
     }
   },
   {
+    "id": "c_9h8y8b2r",
+    "ja": "救われたのは、君の辛抱強さだよ。",
+    "en": "It was your patience that saved me.",
+    "alternatives": [
+      "Your patience is what saved me.",
+      "What saved me was your patience."
+    ],
+    "point": "It was ~ that で感謝の中心を強調",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_9k6h7s6x",
     "ja": "許してくれる？",
     "en": "Can you forgive me?",
@@ -432,5 +560,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9s4h8n6e",
+    "ja": "そこまで大変とは知らなかった。",
+    "en": "I hadn't realized it was that bad.",
+    "alternatives": [
+      "I had no idea it was that hard.",
+      "I hadn't realized how hard it was."
+    ],
+    "point": "知った時より前のことは過去完了",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 9,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

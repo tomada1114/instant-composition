@@ -82,6 +82,22 @@
     }
   },
   {
+    "id": "c_2w3e5v8q",
+    "ja": "最近、ジムに全然行けてない。",
+    "en": "I haven't been to the gym lately.",
+    "alternatives": [
+      "I haven't gone to the gym at all lately.",
+      "I haven't made it to the gym lately."
+    ],
+    "point": "lately とは現在完了を使う",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3c3a5v9c",
     "ja": "また連絡してね。",
     "en": "Keep in touch.",
@@ -180,6 +196,22 @@
     }
   },
   {
+    "id": "c_4s6h2z5n",
+    "ja": "その頃は大変だったでしょうね。",
+    "en": "That must have been hard for you.",
+    "alternatives": [
+      "That must have been tough for you.",
+      "It must have been hard back then."
+    ],
+    "point": "過去の推量は must have + 過去分詞",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4y2z8a2u",
     "ja": "今、猫を飼ってるよ。",
     "en": "I have a cat.",
@@ -254,6 +286,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5z3b7r7r",
+    "ja": "残ってたら、今ごろ課長だよ。",
+    "en": "If I'd stayed, I'd be manager now.",
+    "alternatives": [
+      "I'd be manager now if I'd stayed.",
+      "Had I stayed, I'd be manager by now."
+    ],
+    "point": "過去の条件は had + 過去分詞、今の結果は would + 原形",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6f8z5v8j",

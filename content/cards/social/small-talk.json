@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2k5s5d3f",
+    "ja": "週末は、家でのんびりしてたよ。",
+    "en": "I spent the weekend just lounging around.",
+    "alternatives": [
+      "I just lounged around at home all weekend.",
+      "I spent the weekend relaxing at home."
+    ],
+    "point": "spend + 時間 + 〜ing の形",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 8,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2n7u8p8h",
     "ja": "明日は雨だって聞いたよ。",
     "en": "I heard it'll rain tomorrow.",
@@ -143,6 +159,38 @@
     }
   },
   {
+    "id": "c_4p3w4t2f",
+    "ja": "君が言ってたお店、閉店したらしいよ。",
+    "en": "I hear the place you mentioned closed.",
+    "alternatives": [
+      "Apparently the place you mentioned has closed.",
+      "I heard the restaurant you told me about closed."
+    ],
+    "point": "名詞の後の that は省略できる",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4x3j3p7r",
+    "ja": "今日、ちょっと蒸し暑くない？",
+    "en": "Doesn't it feel a bit muggy today?",
+    "alternatives": [
+      "Isn't it a little humid today?",
+      "Don't you think it's kind of muggy?"
+    ],
+    "point": "a bit と否定疑問で柔らかく同意を誘う",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 8,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4x4p9d6k",
     "ja": "今日は天気がいいね。",
     "en": "It's a nice day.",
@@ -205,6 +253,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5f2u2c7d",
+    "ja": "暖かければ、外で食べるのに。",
+    "en": "If it were warmer, we'd eat outside.",
+    "alternatives": [
+      "We'd have lunch outside if it were warmer.",
+      "If it were any warmer, we'd eat outside."
+    ],
+    "point": "if 節は were、主節は would + 動詞",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 9,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5x7s5p3h",
@@ -327,6 +391,22 @@
     }
   },
   {
+    "id": "c_7y4k2u5t",
+    "ja": "やっと髪を短くしてもらった。",
+    "en": "I finally had my hair cut short.",
+    "alternatives": [
+      "I finally got my hair cut short.",
+      "I finally got a short haircut."
+    ],
+    "point": "have + 物 + 過去分詞「〜してもらう」",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8b3a8p5v",
     "ja": "京都はお寺で有名だよね。",
     "en": "Kyoto is known for its temples.",
@@ -390,6 +470,22 @@
     }
   },
   {
+    "id": "c_8s4z9g9v",
+    "ja": "お昼までには、雨は止んでいたよ。",
+    "en": "The rain had stopped by noon.",
+    "alternatives": [
+      "By noon, the rain had stopped.",
+      "It had stopped raining by noon."
+    ],
+    "point": "「〜までには」の時点より前は過去完了",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 8,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8t5z4n7h",
     "ja": "近くに公園があるよ。",
     "en": "There's a park nearby.",
@@ -428,6 +524,38 @@
     }
   },
   {
+    "id": "c_9c4h9n8u",
+    "ja": "週末はハイキングでもと思ってて。",
+    "en": "I was thinking of going hiking.",
+    "alternatives": [
+      "I thought I might go hiking.",
+      "I'm thinking about maybe going hiking."
+    ],
+    "point": "was thinking で決めつけずに柔らかく言う",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 9,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9d8n3t8d",
+    "ja": "電車で、週末の計画を立てたよ。",
+    "en": "Riding the train, I planned my weekend.",
+    "alternatives": [
+      "I planned my weekend while riding the train.",
+      "While on the train, I planned out my weekend."
+    ],
+    "point": "分詞構文の主語は主節の主語と同じ",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 9,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_9q9a6y3n",
     "ja": "二人で行ったカフェ、良かった。",
     "en": "The café we visited was great.",
@@ -448,5 +576,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9v6f5d8j",
+    "ja": "傘なしで、きっとびしょ濡れだったね。",
+    "en": "You must have gotten soaked without an umbrella.",
+    "alternatives": [
+      "You must have been drenched without an umbrella.",
+      "You must have got soaked with no umbrella."
+    ],
+    "point": "過去の強い推量は must have + 過去分詞",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 10,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

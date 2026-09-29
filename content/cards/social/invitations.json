@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2a5g4m9t",
+    "ja": "来られるか、もう分かる？",
+    "en": "Do you know yet if you're coming?",
+    "alternatives": [
+      "Have you decided whether you're coming?",
+      "Do you know yet whether you can come?"
+    ],
+    "point": "間接疑問の if 節は平叙文の語順",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2j2s8y6v",
     "ja": "まだ席があるよ。",
     "en": "There are still seats.",
@@ -221,6 +237,22 @@
     }
   },
   {
+    "id": "c_4q4m9v4m",
+    "ja": "彼が来るか、ミカは知ってると思う？",
+    "en": "Do you think Mika knows if he's coming?",
+    "alternatives": [
+      "Do you think Mika knows whether he's coming?",
+      "Would Mika know if he's coming, do you think?"
+    ],
+    "point": "Do you think の後は平叙文の語順",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4s4n3b8p",
     "ja": "どこで会おうか？",
     "en": "Where should we meet?",
@@ -322,6 +354,22 @@
     }
   },
   {
+    "id": "c_5b7e5f3a",
+    "ja": "ミカが、君も誘えって言ってたよ。",
+    "en": "Mika told me to invite you too.",
+    "alternatives": [
+      "Mika asked me to invite you too.",
+      "Mika wanted me to invite you as well."
+    ],
+    "point": "tell + 人 + to do で言われた内容を伝える",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 9,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5d9w8b2q",
     "ja": "行けたらいいのになあ。",
     "en": "I wish I could make it.",
@@ -358,6 +406,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6m8f3z4v",
+    "ja": "空いていれば、ぜひ行くんだけど。",
+    "en": "I'd love to, if I were free.",
+    "alternatives": [
+      "If I were free, I'd love to come.",
+      "If I weren't busy, I'd love to."
+    ],
+    "point": "現実と違う仮定は if + were、主節は would",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6q7q2b7g",
+    "ja": "誘ってくれてたら、行けたのに。",
+    "en": "If you'd asked, I could've gone.",
+    "alternatives": [
+      "I could have gone if you'd asked.",
+      "Had you asked, I could have gone."
+    ],
+    "point": "過去の仮定は had + 過去分詞、could have + 過去分詞",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 8,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7b9d2e5w",
@@ -404,6 +484,38 @@
     }
   },
   {
+    "id": "c_7z9k6s6a",
+    "ja": "私なら、その誘いは受けるけどね。",
+    "en": "If I were you, I'd say yes.",
+    "alternatives": [
+      "I'd say yes if I were you.",
+      "I'd accept the invitation if I were you."
+    ],
+    "point": "If I were you で「私なら」とアドバイス",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 9,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8p3p3h2k",
+    "ja": "雨でなければ、みんなを誘ったのに。",
+    "en": "If it hadn't rained, I'd have invited everyone.",
+    "alternatives": [
+      "I'd have invited everyone if it hadn't rained.",
+      "Had it not rained, I would've invited everyone."
+    ],
+    "point": "過去の仮定は had + 過去分詞、would have + 過去分詞",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 10,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8v8d5f7m",
     "ja": "もう夕飯は食べたの？",
     "en": "Have you had dinner yet?",
@@ -421,6 +533,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9t5g4w9v",
+    "ja": "氷とレモン一個、持ってきてくれる？",
+    "en": "Could you bring some ice and a lemon?",
+    "alternatives": [
+      "Can you bring ice and a lemon?",
+      "Could you bring a bit of ice and a lemon?"
+    ],
+    "point": "氷は数えられず、レモンは a lemon",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 10,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9w3z8t7m",
+    "ja": "駅前のあの店、行ってみようよ。",
+    "en": "Let's try the place by the station.",
+    "alternatives": [
+      "How about trying the place by the station?",
+      "Want to try the place by the station?"
+    ],
+    "point": "名詞の後ろに前置詞句を置いて修飾",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 9,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9y7p5c5d",

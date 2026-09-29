@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2e9g2q8s",
+    "ja": "手伝ってくれた友達に頼むよ。",
+    "en": "I'll ask the friend who helped me.",
+    "alternatives": [
+      "I'll ask my friend who helped me.",
+      "I'll ask the friend who helped me out."
+    ],
+    "point": "人を後ろから説明する who 節",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 9,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2k9x6n5h",
     "ja": "車で送らなくていいよ。",
     "en": "No need to drive me.",
@@ -79,6 +95,22 @@
     }
   },
   {
+    "id": "c_2w8d5g2e",
+    "ja": "彼が頼むなんて、夢にも思わなかった。",
+    "en": "Never would I have thought he'd ask me.",
+    "alternatives": [
+      "I never imagined he'd ask me.",
+      "I'd never have thought he'd ask me."
+    ],
+    "point": "Never を文頭に出すと would I の倒置",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 10,
+    "grammar": ["inversion", "nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3j5u5t4p",
     "ja": "誰に聞けばいいか分かりますか？",
     "en": "Do you know who to ask?",
@@ -96,6 +128,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3r9t8j7k",
+    "ja": "頼む相手は、彼女が知ってるかも。",
+    "en": "She might know who I should ask.",
+    "alternatives": [
+      "Maybe she knows who I should ask.",
+      "She may know who I ought to ask."
+    ],
+    "point": "who の後は平叙文の語順",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 8,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4c3x4q4d",
+    "ja": "彼の代わりを務めたのは、私なんだよ。",
+    "en": "It was me who covered for him.",
+    "alternatives": [
+      "I'm the one who covered for him.",
+      "I was the one who filled in for him."
+    ],
+    "point": "cover for は「〜の代わりを務める」",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 10,
+    "grammar": ["cleft-emphasis", "phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_4d7b4u6z",
@@ -158,6 +222,22 @@
     }
   },
   {
+    "id": "c_5g8d4a2n",
+    "ja": "悪いけど、今回は降りるしかない。",
+    "en": "I'm afraid I'll have to bow out.",
+    "alternatives": [
+      "Sorry, I'll have to sit this one out.",
+      "I'm afraid I have to back out."
+    ],
+    "point": "断りは bow out / back out で柔らかく",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 9,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5h2a9h7a",
     "ja": "ペン貸して。",
     "en": "Lend me a pen.",
@@ -218,6 +298,22 @@
     }
   },
   {
+    "id": "c_5t7y6r4w",
+    "ja": "頼みは、ざっと見るだけ。",
+    "en": "What I need is a quick look.",
+    "alternatives": [
+      "All I need is a quick look.",
+      "What I'm asking for is a quick look."
+    ],
+    "point": "What I need is ~ で頼みの中心を強調",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5x6r9w9x",
     "ja": "充電器ってある？",
     "en": "Is there a charger?",
@@ -273,6 +369,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6w8v4w2c",
+    "ja": "ちょっとカバンを預かってくれる？",
+    "en": "Could you hang on to my bag?",
+    "alternatives": ["Can you hold on to my bag?", "Could you keep an eye on my bag?"],
+    "point": "預かるは hang on to / hold on to",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 8,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6z3j3w8x",
@@ -338,6 +447,22 @@
     }
   },
   {
+    "id": "c_7t3c7m3j",
+    "ja": "ミカは私の頼みを忘れたかも。",
+    "en": "Mika might have forgotten my request.",
+    "alternatives": [
+      "Maybe Mika forgot what I asked her.",
+      "Mika may have forgotten my request."
+    ],
+    "point": "過去の可能性は might have + 過去分詞",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 9,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7v4r4b4x",
     "ja": "ちょっとお願いがあるの。",
     "en": "I need a favor.",
@@ -355,6 +480,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8d4x3z2v",
+    "ja": "頼みを断ることは、めったにないんだ。",
+    "en": "Rarely do I turn down a favor.",
+    "alternatives": ["I rarely turn down a favor.", "I hardly ever turn down a favor."],
+    "point": "Rarely を前に出すと主語と助動詞が倒置",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 10,
+    "grammar": ["inversion", "phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8y5p2h6m",

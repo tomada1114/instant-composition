@@ -23,6 +23,22 @@
     }
   },
   {
+    "id": "c_3d7g4c3x",
+    "ja": "私を雇ったのは、ミカさんです。",
+    "en": "It was Mika who hired me.",
+    "alternatives": [
+      "Mika is the one who hired me.",
+      "Mika was the person who hired me."
+    ],
+    "point": "It was 人 who で「〜なのは」を強調",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3e2h2m8p",
     "ja": "私は大阪出身の設計士です。",
     "en": "I'm an architect from Osaka.",
@@ -45,6 +61,22 @@
     }
   },
   {
+    "id": "c_3j3y9x4u",
+    "ja": "ここに惹かれたのは、人の温かさ。",
+    "en": "What drew me here was the people.",
+    "alternatives": [
+      "It was the people that drew me here.",
+      "The people are what drew me here."
+    ],
+    "point": "What ~ was で一番の理由を強調",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3k4x2m5d",
     "ja": "ここで働いて三年になります。",
     "en": "I've worked here for three years.",
@@ -65,6 +97,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3n4u5s6w",
+    "ja": "弊社はこの分野で有名です。",
+    "en": "We're well known in this field.",
+    "alternatives": [
+      "Our company is well known in this field.",
+      "Our firm is well known in this industry."
+    ],
+    "point": "受動態 be well known in ~",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_3w6j9h2q",
@@ -128,6 +176,19 @@
     }
   },
   {
+    "id": "c_5c4k7p2e",
+    "ja": "もっと早く会えていればよかった。",
+    "en": "I wish we had met earlier.",
+    "alternatives": ["If only we'd met sooner.", "I wish we'd met sooner."],
+    "point": "過去の後悔は wish + 過去完了",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5h8s6t6p",
     "ja": "ケンって呼んでね。",
     "en": "Call me Ken.",
@@ -147,6 +208,38 @@
     }
   },
   {
+    "id": "c_5m7s7z6r",
+    "ja": "会う前から、存じていました。",
+    "en": "I'd heard of you before we met.",
+    "alternatives": [
+      "I knew of you before we met.",
+      "I had known your name before we met."
+    ],
+    "point": "会う前のことなので過去完了",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5p8f6b4s",
+    "ja": "私の仕事は、企業向けの翻訳です。",
+    "en": "What I do is translate for companies.",
+    "alternatives": [
+      "What I do is translate for businesses.",
+      "What I do is business translation."
+    ],
+    "point": "What I do is のあとは動詞の原形",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5x8s6n4g",
     "ja": "私は看護師です。",
     "en": "I'm a nurse.",
@@ -164,6 +257,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6b2c5k8q",
+    "ja": "先月ここに越してきたばかりです。",
+    "en": "I only moved here last month.",
+    "alternatives": [
+      "I just moved here last month.",
+      "I've only lived here since last month."
+    ],
+    "point": "last month があれば過去形、since なら現在完了",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7f5g2j9b",
@@ -267,6 +376,22 @@
     }
   },
   {
+    "id": "c_8w3u6n3s",
+    "ja": "どちらのご出身か伺えますか？",
+    "en": "May I ask where you're from?",
+    "alternatives": [
+      "Would you mind telling me where you're from?",
+      "Do you mind if I ask where you're from?"
+    ],
+    "point": "間接疑問は where you're from の語順",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8x7n9t3m",
     "ja": "お噂はかねがね伺っております。",
     "en": "I've heard a lot about you.",
@@ -287,6 +412,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9c9k5e6g",
+    "ja": "時間があれば、サーフを始めるのに。",
+    "en": "If I had time, I'd take up surfing.",
+    "alternatives": [
+      "I'd take up surfing if I had time.",
+      "If I had more time, I'd take up surfing."
+    ],
+    "point": "始める趣味は take up、仮定は had と would",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 10,
+    "grammar": ["second-conditional", "phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9e2b8q3v",
