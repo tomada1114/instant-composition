@@ -9,6 +9,7 @@ import {
   fakeTimers,
   homeView,
   ja,
+  navigations,
   press,
   refusal,
   renderApp,
@@ -150,6 +151,23 @@ describe("the recap screen, W9r: re-reading today", () => {
     fireEvent.click(back);
     await settle();
     expect(where()).toBe("/");
+  });
+
+  it("carries the tab bar, no tab current, and leaves at once on a tab", async () => {
+    serveRecap();
+    await renderApp("/recap");
+    expectRecap();
+    expect(navigations()).toStrictEqual([
+      [
+        ["/", null],
+        ["/records", null],
+        ["/settings", null],
+      ],
+    ]);
+    fireEvent.click(screen.getByRole("link", { name: ja.Nav.settings }));
+    await settle();
+    expect(where()).toBe("/settings");
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
 
   it("goes back on Esc", async () => {

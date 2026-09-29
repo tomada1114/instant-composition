@@ -3,6 +3,7 @@ import { Navigate, useNavigate } from "@tanstack/react-router";
 import type { ReactElement } from "react";
 
 import { PageLoadFailed, PageLoading } from "../lib/page-shell";
+import { TabBar } from "../lib/tab-bar";
 import { errorCodeOf, HOME_QUERY, isSignedOut, readRoundSummary } from "../lib/queries";
 import type { RoundSummary } from "../openapi";
 import { SummaryScreen } from "./summary-screen";
@@ -11,21 +12,27 @@ function ignore(): void {
   // W9r has no buttons below, so nothing asks for another round.
 }
 
-/** W9r: a finished round's summary read back from the server, every value final. */
+/**
+ * W9r: a finished round's summary read back from the server, every value
+ * final, over the tab bar.
+ */
 export function RecapScreen({
   summary,
 }: Readonly<{ summary: RoundSummary }>): ReactElement {
   const navigate = useNavigate();
   return (
-    <SummaryScreen
-      summary={summary}
-      mode="recap"
-      dailySize={0}
-      onNext={ignore}
-      onEnd={() => {
-        void navigate({ to: "/" });
-      }}
-    />
+    <>
+      <SummaryScreen
+        summary={summary}
+        mode="recap"
+        dailySize={0}
+        onNext={ignore}
+        onEnd={() => {
+          void navigate({ to: "/" });
+        }}
+      />
+      <TabBar />
+    </>
   );
 }
 
@@ -53,6 +60,7 @@ export function RecapPage(): ReactElement {
   if (home.isError) {
     return (
       <PageLoadFailed
+        withTabBar
         onReload={() => {
           void home.refetch();
         }}
@@ -60,13 +68,14 @@ export function RecapPage(): ReactElement {
     );
   }
   if (roundId === undefined) return <Navigate to="/" replace />;
-  if (summary.isPending) return <PageLoading />;
+  if (summary.isPending) return <PageLoading withTabBar />;
   if (summary.isError) {
     if (NOTHING_TO_READ.includes(errorCodeOf(summary.error))) {
       return <Navigate to="/" replace />;
     }
     return (
       <PageLoadFailed
+        withTabBar
         onReload={() => {
           void summary.refetch();
         }}

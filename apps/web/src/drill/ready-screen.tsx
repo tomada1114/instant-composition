@@ -25,7 +25,7 @@ export function ReadyScreen({
   const t = useTranslations("Drill.ready");
   // The same place and count the card screen's top strip shows for this pass.
   return (
-    <main className="mx-auto box-content flex min-h-[calc(var(--column-height)-2rem)] max-w-column flex-col px-4 pt-8 pb-3">
+    <main className="mx-auto box-content flex min-h-[calc(var(--column-height)-var(--tab-bar-space)-2.75rem)] max-w-column flex-col px-4 pt-8 pb-[calc(var(--tab-bar-space)+0.75rem)]">
       <div className="my-auto flex flex-col gap-3">
         <Eyebrow aria-hidden>{t("eyebrow", { kind })}</Eyebrow>
         <h1 className="text-heading">{t("title", { kind, count })}</h1>

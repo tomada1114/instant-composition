@@ -13,7 +13,18 @@ import {
   SummaryScreen,
   type RoundSummary,
 } from "@instant-composition/web";
-import { fill, ja } from "./web-harness";
+import {
+  COUNT,
+  ROUND,
+  fakeApi,
+  fakeTimers,
+  fill,
+  homeView,
+  ja,
+  navigations,
+  renderApp,
+  settle,
+} from "./web-harness";
 import { makeSummary } from "./web-summary-fixture";
 
 const onNext = vi.fn();
@@ -327,5 +338,57 @@ describe("SummaryScreen difficulty and reach variants", () => {
       }),
     );
     expect(screen.getByText(ja.Summary.restartTitle)).toBeInTheDocument();
+  });
+});
+
+describe("SummaryScreen after a round, over the tab bar", () => {
+  afterEach(() => {
+    act(() => {
+      window.history.replaceState(null, "", "/");
+    });
+    sessionStorage.clear();
+    vi.useRealTimers();
+  });
+
+  it("carries the tab bar with its actions above it, and leaves at once on a tab", async () => {
+    fakeTimers();
+    const answered = ROUND.deck.map((cardId) => ({
+      id: `round-1:f:${cardId}`,
+      cardId,
+      pass: "first" as const,
+      result: "ok" as const,
+      answeredAt: Date.UTC(2026, 8, 22, 3, 0),
+    }));
+    fakeApi((call) => {
+      if (call.url === "/api/v1/home") {
+        return Response.json(homeView({ kind: "ready", streak: COUNT }));
+      }
+      if (call.url === "/api/v1/rounds") return Response.json({ ...ROUND, answered });
+      if (call.url === "/api/v1/rounds/round-1/finish") {
+        return Response.json(makeSummary({ roundId: "round-1" }));
+      }
+      return undefined;
+    });
+    await renderApp("/drill?kind=today");
+    await settle(16);
+    expect(
+      screen.getByRole("heading", { level: 1, name: ja.Summary.title.today }),
+    ).toBeInTheDocument();
+    expect(navigations()).toStrictEqual([
+      [
+        ["/", null],
+        ["/records", null],
+        ["/settings", null],
+      ],
+    ]);
+    const actions = screen
+      .getByRole("button", { name: ja.Summary.actions.end })
+      .closest("footer");
+    expect(actions?.className).toContain("bottom-[calc(var(--tab-bar-space)");
+
+    fireEvent.click(screen.getByRole("link", { name: ja.Nav.records }));
+    await settle();
+    expect(window.location.pathname).toBe("/records");
+    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
 });
