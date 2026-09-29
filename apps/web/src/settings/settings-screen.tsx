@@ -1,25 +1,20 @@
 import { useNavigate } from "@tanstack/react-router";
-import { useEffect, useId, useState, type ReactElement } from "react";
+import { useEffect, useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
-import { TabBar } from "../lib/tab-bar";
+import { markPressed } from "../drill/pressed";
+import { SETTINGS_TABS, searchFor, type SettingsTab } from "../lib/screen-tabs";
+import { TabbedScreen } from "../lib/tabbed-screen";
 import { useEscapeHome } from "../lib/use-escape-home";
-import { LOGOUT_URL } from "../lib/endpoints";
 import type { SettingsPageView } from "../openapi";
 import { Button } from "../ui/button";
 import { Sheet } from "../ui/sheet";
-import { Toggle } from "../ui/toggle";
-import { DifficultySheet } from "./difficulty-sheet";
-import {
-  FocusSection,
-  LimitSection,
-  SizeSection,
-  TopicsSection,
-} from "./settings-sections";
-import { TimeZoneRow } from "./time-zone-row";
+import { AppSection } from "./app-section";
+import { LevelSection } from "./level-section";
+import { LimitSection } from "./limit-section";
+import { FocusSection, SizeSection, TopicsSection } from "./settings-sections";
 import { useLevel } from "./use-level";
 import { useSettings } from "./use-settings";
-import { markPressed } from "../drill/pressed";
 
 /** W12: measuring again is confirmed first; Esc and "cancel" close it. */
 function RetestSheet({
@@ -56,106 +51,76 @@ function RetestSheet({
   );
 }
 
-/** W11: every change saves as it is made and says in one line what it does. */
+/**
+ * W11: every change saves as it is made and says in one line what it does,
+ * under three tabs that each fit a phone — what is dealt, the level and the
+ * seconds per card, and the app itself. The tab is the URL's `?tab=`.
+ */
 export function SettingsScreen({
   page,
-}: Readonly<{ page: SettingsPageView }>): ReactElement {
+  tab,
+}: Readonly<{ page: SettingsPageView; tab: SettingsTab }>): ReactElement {
   const t = useTranslations("Settings");
-  const records = useTranslations("Records");
   const navigate = useNavigate();
   const state = useSettings(page.settings);
   const level = useLevel(page.difficulty, page.levels);
-  const [choosing, setChoosing] = useState(false);
   const [asking, setAsking] = useState(false);
   const [zoneFailed, setZoneFailed] = useState(false);
-  const soundId = useId();
-  useEscapeHome(!asking && !choosing);
+  useEscapeHome(!asking);
 
   return (
-    <>
-      <main className="mx-auto box-content flex max-w-column flex-col gap-10 px-4 pt-6 pb-[calc(var(--tab-bar-space)+2.5rem)]">
-        <h1>{t("title")}</h1>
-        {state.failed || level.failed || zoneFailed ? (
+    <TabbedScreen
+      title={t("title")}
+      tabs={SETTINGS_TABS.map((value) => ({ value, label: t(`tabs.${value}`) }))}
+      tab={tab}
+      onTab={(next) => {
+        void navigate({
+          to: "/settings",
+          search: searchFor(SETTINGS_TABS, next),
+          replace: true,
+        });
+      }}
+      notice={
+        state.failed || level.failed || zoneFailed ? (
           <p role="alert" className="rounded-tile bg-raised px-4 py-3">
             {t("saveFailed")}
           </p>
-        ) : null}
-        <TopicsSection topics={page.topics} state={state} />
-        <FocusSection topics={page.topics} state={state} />
-        <SizeSection state={state} />
-        <LimitSection state={state} />
-        <section className="flex flex-col border-y border-border">
-          <div className="flex min-h-16 items-center justify-between gap-4">
-            <h2 id={soundId}>{t("sound.title")}</h2>
-            <Toggle
-              labelledBy={soundId}
-              on={state.settings.sound}
-              onChange={(sound) => {
-                state.save({ sound });
-              }}
-            />
-          </div>
-          <TimeZoneRow onFailedChange={setZoneFailed} />
-          <div className="flex min-h-16 items-center justify-between gap-4 border-t border-border">
-            <h2 className="flex items-baseline gap-3">
-              {t("difficulty.title")}
-              <span className="font-mono text-mono-sm text-muted-foreground">
-                {t("difficulty.state", {
-                  mode: t(`difficulty.${level.view.mode}`),
-                  level:
-                    level.view.toeic === null
-                      ? records("notMeasured")
-                      : records("toeic", { toeic: level.view.toeic }),
-                })}
-              </span>
-            </h2>
-            <Button
-              variant="text"
-              className="-mr-3 text-foreground"
-              onClick={() => {
-                setChoosing(true);
-              }}
-            >
-              {t("difficulty.change")}
-            </Button>
-          </div>
-        </section>
-        <form
-          method="post"
-          action={LOGOUT_URL}
-          className="flex min-h-16 items-center justify-between gap-4 border-b border-border"
-        >
-          <h2>{t("signOut.title")}</h2>
-          <Button type="submit" variant="text" className="-mr-3 text-foreground">
-            {t("signOut.action")}
-          </Button>
-        </form>
-        {choosing ? (
-          <DifficultySheet
+        ) : null
+      }
+    >
+      {tab === "cards" ? (
+        <>
+          <TopicsSection topics={page.topics} state={state} />
+          <FocusSection topics={page.topics} state={state} />
+          <SizeSection state={state} />
+        </>
+      ) : null}
+      {tab === "level" ? (
+        <>
+          <LevelSection
             level={level}
             levels={page.levels}
             onRetest={() => {
-              setChoosing(false);
               setAsking(true);
             }}
-            onClose={() => {
-              setChoosing(false);
-            }}
           />
-        ) : null}
-        {asking ? (
-          <RetestSheet
-            onCancel={() => {
-              setAsking(false);
-            }}
-            onConfirm={() => {
-              markPressed();
-              void navigate({ to: "/drill", search: { kind: "placement" } });
-            }}
-          />
-        ) : null}
-      </main>
-      <TabBar />
-    </>
+          <LimitSection state={state} />
+        </>
+      ) : null}
+      {tab === "app" ? (
+        <AppSection state={state} onZoneFailedChange={setZoneFailed} />
+      ) : null}
+      {asking ? (
+        <RetestSheet
+          onCancel={() => {
+            setAsking(false);
+          }}
+          onConfirm={() => {
+            markPressed();
+            void navigate({ to: "/drill", search: { kind: "placement" } });
+          }}
+        />
+      ) : null}
+    </TabbedScreen>
   );
 }

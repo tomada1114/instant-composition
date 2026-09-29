@@ -129,7 +129,10 @@ its prompt and its actions a window apart; 452 × 720 is about 5:8, a phone brow
 visible area. The height term is what keeps a phone on its side (about 932 × 430) on the
 phone layout. A screen sizes itself from `--column-height`, never from `dvh`, and
 anything fixed to the bottom edge adds `--column-inset`. Taller content scrolls as the
-page, from the same top line.
+page, from the same top line. Records and settings are split into `tabs` so that each
+tab fits a 390 × 844 phone with no page scroll, a list that cannot fit scrolling inside
+its own region; the 452 × 720 PC column and shorter phones get no such promise, and a
+tab too tall for them scrolls the page like any other screen.
 
 Vertical order on every screen: the main actions (start, flip, ○/×, next) sit in the
 bottom third, where a thumb reaches, on a PC too; pause, back and close sit at the top
