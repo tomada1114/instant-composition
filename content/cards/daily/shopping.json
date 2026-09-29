@@ -35,7 +35,13 @@
     "level": 7,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a9b63470dd9ab7742d284014d83127038ba72e792851467a9761c616fe3258f3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2n2p4e4w",
@@ -70,23 +76,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3h6f4e4s",
-    "ja": "土曜に冷蔵庫が届くから、誰か家にいてくれる？",
-    "en": "Could someone be home Saturday when the fridge arrives?",
-    "alternatives": [
-      "Can somebody be home when the fridge arrives Saturday?",
-      "Could someone stay home Saturday for the fridge delivery?"
-    ],
-    "point": "「届くとき」の when 節は未来のことでも現在形 arrives",
-    "topic": "daily",
-    "subtopic": "shopping",
-    "level": 6,
-    "grammar": ["requests-permission", "time-and-if-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a849bb77d576e47fa6a212736ca24e1f95044c8a0e86f7bca38d0744fc071afb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3p2q5y7a",
@@ -102,7 +98,13 @@
     "level": 6,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:850ffe48465eab7c8e2ef1a853f0ebd0e97d82b06ab10a9df956581518f9c6b3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4q7d2w7d",
@@ -140,7 +142,13 @@
     "level": 6,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:428f601e7ca495c7dde2d4940829574923fde0b4cb49c8c5a2e32d982b71f33f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5b5w7p7n",
@@ -165,22 +173,6 @@
     }
   },
   {
-    "id": "c_5g2n5m3v",
-    "ja": "ネットのほうが安いと知りつつ、父は近所の店で買うと言う。",
-    "en": "Even though it's cheaper online, my dad says he'll buy locally.",
-    "alternatives": [
-      "My dad says he'll buy locally, even though it's cheaper online.",
-      "My dad knows it's cheaper online, but says he'll buy locally."
-    ],
-    "point": "「知りつつ」は事実なので even if ではなく even though",
-    "topic": "daily",
-    "subtopic": "shopping",
-    "level": 9,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5p3j6r4j",
     "ja": "ネットで家具を買う前に、もう少し情報が欲しいな。",
     "en": "Before I buy furniture online, I'd like more information.",
@@ -194,7 +186,13 @@
     "level": 7,
     "grammar": ["articles-and-countability", "time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c069b5bdce06808cc2f6a2f3251960bfe572a349fc32bc501a1a061d3be6c1fe",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5q3z8a7y",
@@ -309,28 +307,6 @@
     }
   },
   {
-    "id": "c_8b7s9n6p",
-    "ja": "どの充電器か分からず、彼は店員に聞いてみた。",
-    "en": "Unsure which charger to buy, he asked a clerk.",
-    "alternatives": [
-      "Not knowing which charger to buy, he asked a clerk.",
-      "Unsure which charger to get, he asked a salesperson."
-    ],
-    "point": "分詞構文は主語と being を省く。否定なら Not knowing のように Not を先頭に",
-    "topic": "daily",
-    "subtopic": "shopping",
-    "level": 8,
-    "grammar": ["participle-clauses", "indirect-questions"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:622efccd63b531ceeead7f068010f95c52ba2b7381fc09ff7a7e183e11b03ea1",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
     "id": "c_8e7w6e8p",
     "ja": "姉はスカートを直してもらった。",
     "en": "My sister had her skirt altered.",
@@ -366,7 +342,13 @@
     "level": 7,
     "grammar": ["requests-permission", "post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:345011a0b3fc71fe9a22bea92c7a94cb7d55336807195eeec5e479e028371030",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8t7s4r7b",
@@ -382,7 +364,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:900012073c83101a8805587b138bc20fb3f64a6af3c5a9a282b6c6dae6376489",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8z3c6y3p",
@@ -398,7 +386,13 @@
     "level": 9,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7eeb11e970e4840490ff5dcc23f7bf906763d7945d03ce82b6623c30aa617f9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9p2u8e9f",
@@ -414,7 +408,13 @@
     "level": 6,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:643d1823b9b8b4e724aa2226271c9e8f6234ef4bff54a763c0e1b209934a9b82",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9y2t7s9v",
@@ -431,6 +431,12 @@
     "level": 5,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2e509b8f552e1b521878950901749a44ed5e63af9ea36faeb35ad841925623a2",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
