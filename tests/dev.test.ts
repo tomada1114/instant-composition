@@ -117,14 +117,14 @@ describe("the catalog snapshot pnpm dev starts the API with", () => {
     expect(build).not.toHaveBeenCalled();
   });
 
-  it("uses the default snapshot as it is when it is on disk", () => {
+  it("rebuilds the default snapshot even when one is on disk", () => {
     const root = makeRoot();
     mkdirSync(path.join(root, path.dirname(DEFAULT_CATALOG)), { recursive: true });
     writeFileSync(path.join(root, DEFAULT_CATALOG), "{}");
     const build = vi.fn(() => ({ status: 0, stderr: "" }));
 
-    expect(ensureCatalog({ API_CATALOG_PATH: " " }, { root, build })).toBe("present");
-    expect(build).not.toHaveBeenCalled();
+    expect(ensureCatalog({ API_CATALOG_PATH: " " }, { root, build })).toBe("built");
+    expect(build).toHaveBeenCalledOnce();
   });
 
   it("builds the default snapshot when it is missing", () => {

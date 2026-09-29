@@ -26,19 +26,17 @@ pnpm install
 pnpm dev
 ```
 
-`pnpm dev` starts DynamoDB local, builds the catalog snapshot from `content/` when there
-is none yet, and runs the API and the web client together. Open <http://127.0.0.1:5173>
-— the UI ships in Japanese only. A first visit goes on to picking topics and the
-placement round; after that `/` is the start screen. The text on every screen comes from
-`messages/ja.json`. Ctrl-C stops the API and the web client; `pnpm db:down` stops
-DynamoDB local, and your progress with it, since the container keeps its tables in
-memory.
+`pnpm dev` starts DynamoDB local, rebuilds the catalog snapshot from `content/`, and
+runs the API and the web client together. Open <http://127.0.0.1:5173> — the UI ships in
+Japanese only. A first visit goes on to picking topics and the placement round; after
+that `/` is the start screen. The text on every screen comes from `messages/ja.json`.
+Ctrl-C stops the API and the web client; `pnpm db:down` stops DynamoDB local, and your
+progress with it, since the container keeps its tables in memory.
 
-The snapshot is built only when there is none: after `content/` changes, run
-`pnpm catalog:build` and restart `pnpm dev`, since the API reads a snapshot once per
-start. The variables a local run reads are listed with empty values in `.env.example`;
-every one has a default or is optional. Without `API_COGNITO_*`, every request is one
-local learner, with no sign-in; with all four set,
+The API reads the snapshot once per start, so after `content/` changes, restart
+`pnpm dev` to see them. The variables a local run reads are listed with empty values in
+`.env.example`; every one has a default or is optional. Without `API_COGNITO_*`, every
+request is one local learner, with no sign-in; with all four set,
 <http://127.0.0.1:5173/api/v1/auth/login> signs a browser in through the user pool's
 managed login. For example, `API_CATALOG_PATH` points the API at another snapshot, and
 `API_TABLE_NAME` at a fresh table, without touching your own progress:
