@@ -1,21 +1,5 @@
 [
   {
-    "id": "c_2g2r8x6s",
-    "ja": "盗まれたカメラ、まだ届けてないんです。",
-    "en": "I haven't reported my stolen camera yet.",
-    "alternatives": [
-      "I still haven't reported my stolen camera.",
-      "I haven't reported my camera as stolen yet."
-    ],
-    "point": "「まだ〜していない」は現在完了＋yet",
-    "topic": "travel",
-    "subtopic": "troubles",
-    "level": 4,
-    "grammar": ["present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2g7v4j8a",
     "ja": "財布を盗まれたのは、改札のところだよ。",
     "en": "It was at the turnstile that my wallet got stolen.",
@@ -61,23 +45,13 @@
     "level": 4,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3q2u5m7c",
-    "ja": "電車に乗り遅れたら、駅員に聞いてね。",
-    "en": "If you miss it, ask staff.",
-    "alternatives": [
-      "Ask staff if you miss the train.",
-      "If you miss it, talk to staff."
-    ],
-    "point": "未来のことでも if 節は現在形で言う",
-    "topic": "travel",
-    "subtopic": "troubles",
-    "level": 3,
-    "grammar": ["time-and-if-clauses", "imperatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fc46bca67c65996ab69248e2028b95c55427b30d24773c014828eddb2cc15e66",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3s5w6e8h",
@@ -108,9 +82,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:1eac7de465bd1c9af7f2d8d2fb0d43253b4623a5bcaa21cce778151a440396c0",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:f41550b7eee00303934a00f6955c893b54054b3c714af882b2399053597dc736",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -125,7 +99,13 @@
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:395068fac3c275696ed32fabef21442e869e49b07c251baef277efeb4565e9fb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5n9f5z5v",
@@ -173,7 +153,13 @@
     "level": 3,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:eb6c3d021d470e9913aeaf2038b5eb07c25184314cd69a66c509095e3032cdfb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6v7v8f9z",
@@ -189,7 +175,13 @@
     "level": 2,
     "grammar": ["past-simple", "imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b5c0202c772e49cfd3515e07707520accfcabcf309cb39240d06175a3387f805",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6w5w3c6k",
@@ -205,7 +197,13 @@
     "level": 4,
     "grammar": ["relative-clauses", "be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:317813337a949782c021923b05464bbc312669eeecd13a6fa8e96c267f0e4abd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6y9p9h2a",
@@ -220,22 +218,6 @@
     "subtopic": "troubles",
     "level": 6,
     "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6z9b8v9w",
-    "ja": "係員に荷物を送るよう頼んでくれない？",
-    "en": "Can you ask staff to send my luggage?",
-    "alternatives": [
-      "Can you get staff to send my luggage?",
-      "Can you have staff send my bags?"
-    ],
-    "point": "「〜するよう頼む」は ask＋人＋to do",
-    "topic": "travel",
-    "subtopic": "troubles",
-    "level": 4,
-    "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -255,9 +237,9 @@
     "createdAt": "2026-09-23",
     "stamps": {
       "core": {
-        "hash": "sha256:109285cf126dfd916dd7f3dca0ca54337a261820220611fe2a9f432ee1283aec",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
+        "hash": "sha256:2be49f703810e0acadbe50a563bb97e9df6837c69c050d47bc30f153b617aeee",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -307,7 +289,13 @@
     "level": 4,
     "grammar": ["noun-clauses", "past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4fa6d96501557c5cb82ae9b6c0dd750274710e450616d59b003be7b9aa9c17b0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9w6m6g2h",
