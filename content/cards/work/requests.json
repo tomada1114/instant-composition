@@ -13,7 +13,13 @@
     "level": 3,
     "grammar": ["verb-object-to-do", "past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ac0b769dee3236f742e33de6d94aa093f403e748d903c5d49241a0ba154a1bb8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2v7x6u6z",
@@ -61,7 +67,13 @@
     "level": 5,
     "grammar": ["past-perfect", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b73ba113b97233145abe2556f5d6795bbcebae1bf1b69dc1082abf9d3bfb38be",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3h4r7j2s",
@@ -77,23 +89,13 @@
     "level": 4,
     "grammar": ["present-perfect-continuous", "infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3m2q3e3r",
-    "ja": "うちは予算を確認して、その仕事を受けた。",
-    "en": "Having checked the budget, we accepted the job.",
-    "alternatives": [
-      "After checking the budget, we took the job.",
-      "We checked the budget, then took the job."
-    ],
-    "point": "先に済ませた動作は Having checked で表す",
-    "topic": "work",
-    "subtopic": "requests",
-    "level": 6,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e4ad3231c60f00a8be673afc364cf7c7eb8752ac3efd5dcce54b6cd7fbe06caa",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3t6w3q9a",
@@ -125,7 +127,13 @@
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c6a98166023e9999b61124b3e3e0cefb014d8cd6969d103fc6baf846778cf253",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3w4u6p8w",
@@ -141,7 +149,13 @@
     "level": 2,
     "grammar": ["future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:02863e008b2898c39d3b5abde29da3de984c845065e96cbeac8b9bef7bfb9d6d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3z8t2m6n",
@@ -173,7 +187,13 @@
     "level": 4,
     "grammar": ["modal-obligation-advice", "relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9d939321b9d5a62260dbab0eec4e3fea414cc8ac1de215515b4a6f65d6bfae8d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4x7a5d9v",
@@ -189,7 +209,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ab58a71534e7e4233d084a83e4c6d02aad545afccaeba75f3bc10a1db395678f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5y3r9m4a",
@@ -237,7 +263,13 @@
     "level": 5,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6e477b14cb16ec872e319b45d869eafbb22afe7877ddf409a1dccdcc1343c7a5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6p3m4v6y",
@@ -282,23 +314,13 @@
     "level": 4,
     "grammar": ["infinitives", "be-and-present-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_7d9c9u9a",
-    "ja": "データ入力は来週、外注に出されます。",
-    "en": "Data entry will be outsourced next week.",
-    "alternatives": [
-      "Next week, data entry will be outsourced.",
-      "Data entry gets outsourced next week."
-    ],
-    "point": "作業が外注される側なので will be + 過去分詞",
-    "topic": "work",
-    "subtopic": "requests",
-    "level": 5,
-    "grammar": ["passive-voice", "future-forms"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2890589cc32ec8dbf32ab06823b43b65719c66dc7d55fcbdcb30bf362e91e3b9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7n8r4p3j",
@@ -346,7 +368,13 @@
     "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6fb0d6d6f6e2946b225af9fdb50dd5688933f484fb639f8cc836c6c349026546",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8j9w2y3y",
@@ -378,7 +406,13 @@
     "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e506353dc6876ae4c838cc4fcb05c87eab7e24eabc7d28ec92b7a1f42fb06d34",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8r5m2n9y",
@@ -411,7 +445,13 @@
     "level": 4,
     "grammar": ["noun-clauses", "infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3aa27f1e018924b81adf620e7278b4338b88cafd648141f9eb515707ac02b684",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9k2m5f2d",
