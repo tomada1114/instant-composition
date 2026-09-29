@@ -1,0 +1,125 @@
+[
+  {
+    "id": "c_5m2u5n6k",
+    "ja": "昨日、予約を変更しました。",
+    "en": "I changed my reservation yesterday.",
+    "alternatives": [
+      "I modified my reservation yesterday.",
+      "I changed my booking yesterday."
+    ],
+    "point": "yesterday があるので過去形",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 5,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e2f65527cf6667228732b12e9adb719c540852107645845bf8f455743168955a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5x6y2k5u",
+    "ja": "エアコンが昨日から壊れてる。",
+    "en": "The AC's been broken since yesterday.",
+    "alternatives": [
+      "The AC hasn't worked since yesterday.",
+      "The AC has been out since yesterday."
+    ],
+    "point": "since と継続は現在完了",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 4,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b7e2d41565fdb24f7f0b2226aee061c7dfe850abca5739debdd85a68bd51be30",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5y6r5r9j",
+    "ja": "天井から水が漏れています。",
+    "en": "Water's leaking from the ceiling.",
+    "alternatives": ["The ceiling is leaking.", "Water is coming from the ceiling."],
+    "point": "今起きている最中は進行形",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 4,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cc090cda7bc14d28eee7e6c54548d2da085de7c5c6457c85fa358f803afbe5d7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7t6t7r8j",
+    "ja": "隣が一晩中うるさいんです。",
+    "en": "Next door's been noisy all night.",
+    "alternatives": [
+      "The neighbors have been noisy all night.",
+      "It's been noisy next door all night."
+    ],
+    "point": "「一晩中ずっと」は現在完了進行形",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:727397c0b78b1f904c613f2ed3f02ecbd10dd60241e5d7a00696f9f6c4f810c6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8r6v7v8z",
+    "ja": "朝食は何時からですか？",
+    "en": "What time does breakfast start?",
+    "alternatives": ["What time is breakfast served?", "When does breakfast start?"],
+    "point": "「何時」は What time で始める",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 4,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9ebb279f48cc984b3a7c3a280f24b21d4d0a1ce55d6b5952a3526d86e4d95224",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9h2a6c9k",
+    "ja": "金庫を使うといいですよ。",
+    "en": "You should use the safe.",
+    "alternatives": ["You'd better use the safe.", "Using the safe is a good idea."],
+    "point": "「〜するといい」は should",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 5,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cea0eb914ff635685cf2e3239486f39b444658a9a5ab29d70d7f47cec08520cc",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

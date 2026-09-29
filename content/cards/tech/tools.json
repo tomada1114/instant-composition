@@ -1,0 +1,128 @@
+[
+  {
+    "id": "c_3c3y2j5x",
+    "ja": "ボットに再試行を頼んだ。",
+    "en": "I asked the bot to retry.",
+    "alternatives": ["I asked the bot to try again.", "I asked the bot to rerun it."],
+    "point": "「人に〜するよう頼む」は ask + 人 + to do",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 5,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4366a2ed45effdc772b9a6cbf62561b0e7042a9569f9123d5bf693b0a83785d9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4g6q5g5s",
+    "ja": "先月、CIを乗り換えた。",
+    "en": "We switched CI tools last month.",
+    "alternatives": [
+      "We changed CI tools last month.",
+      "We changed our CI last month."
+    ],
+    "point": "「乗り換える」は switch",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 5,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:46af6350137f34df1c0c69a706510dd805a15ccc49fb6e5caeb03d0b22422ecf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4g8w9p8c",
+    "ja": "設定はもう消えていた。",
+    "en": "The settings had already vanished.",
+    "alternatives": [
+      "The settings were already gone.",
+      "The settings had already disappeared."
+    ],
+    "point": "見つけた時点より前は had + 過去分詞",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 5,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c2fbe77a8151877e2574234d4cf46125118e6eef410c78dbe330b9d330132f49",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5v2z4k8s",
+    "ja": "自動整形するツールが好き。",
+    "en": "I like tools that auto-format.",
+    "alternatives": [
+      "I like tools which auto-format.",
+      "I like tools that format automatically."
+    ],
+    "point": "人以外の関係代名詞は that",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 4,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bd82bf1f41014c911dd56e0cf63bb2920d227de9a2e8bdcae875f197d010d5fe",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6e4w9f7h",
+    "ja": "Vim は何年も使ってる。",
+    "en": "I've used Vim for years.",
+    "alternatives": [
+      "I've been using Vim for years.",
+      "I've used Vim for a long time."
+    ],
+    "point": "期間 for + 現在完了",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 4,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:701f6cd62d2b73d7b0468e147504e3374b5c2b1536f7e2144d3f7bc08a9805da",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6z2m4s6c",
+    "ja": "新しい方のツールが速い。",
+    "en": "The new tool is faster.",
+    "alternatives": ["The newer tool is faster.", "The new one is faster."],
+    "point": "比較級は -er",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d37b9db993e546a30066f11d1953bc899515b42eafcf71e7d4509c718aca3d74",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

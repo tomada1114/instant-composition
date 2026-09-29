@@ -1,0 +1,125 @@
+[
+  {
+    "id": "c_2f6f7y3b",
+    "ja": "10分歩きました。",
+    "en": "I walked for ten minutes.",
+    "alternatives": ["I walked ten minutes.", "It took me ten minutes to walk."],
+    "point": "歩いた時間は for + 時間",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 4,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ad9ebd2406121830936e6999d152c20a9ad3f3489ce13bf1f61a578f28e6ca6f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3q3z6m8j",
+    "ja": "銀行の隣の店です。",
+    "en": "The shop by the bank.",
+    "alternatives": [
+      "It's the shop next to the bank.",
+      "It's the store beside the bank."
+    ],
+    "point": "場所は前置詞句で名詞の後ろに置く",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5bdd46f49817197707f72ddcc8b52d5a5c33bd8f92fb70b7e1e9e922d8223864",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3w9u7x5v",
+    "ja": "ここ、来たことある？",
+    "en": "Have you been here before?",
+    "alternatives": ["Have you ever been here?", "Have you been to this place before?"],
+    "point": "経験は現在完了 + before",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 4,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1eba508930d16f81b85decb18f1a5c7b088b79285eb193cc0ce6acaa6a859c8e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6h7e7s9y",
+    "ja": "この店、もう二回通ったね。",
+    "en": "We've walked past this shop twice.",
+    "alternatives": [
+      "We've already passed this store twice.",
+      "We've gone by this shop twice."
+    ],
+    "point": "回数を言う「もう〜回」は現在完了",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 5,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fb043c962fc6e7d4997f4a5801c6ec251313527b7fc11533fc188aacc2eb6fc5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7y5r9g5z",
+    "ja": "バスに乗るほうが早いよ。",
+    "en": "Taking the bus is faster.",
+    "alternatives": ["It's faster to take the bus.", "It's quicker to go by bus."],
+    "point": "「〜するほうが」は動名詞を主語にできる",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 5,
+    "grammar": ["gerunds", "comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f15218d7dacc489546a05f8454333498a7bf96a9ec2882e230cfc08bb0104df",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9t3x8t8e",
+    "ja": "この先は封鎖されています。",
+    "en": "The road ahead is blocked off.",
+    "alternatives": [
+      "The road up ahead is closed.",
+      "The road ahead has been closed off."
+    ],
+    "point": "「封鎖されている」は be + 過去分詞",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 5,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1a8e2f816f633d6f7df0df072b111714a516b8e53c5d5a92f1e4a00af645ce90",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

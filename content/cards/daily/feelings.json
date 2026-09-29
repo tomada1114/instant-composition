@@ -19,6 +19,28 @@
     }
   },
   {
+    "id": "c_2m5a9v6e",
+    "ja": "この町は楽しい所が多い。",
+    "en": "There are many fun places here.",
+    "alternatives": [
+      "This town has lots of fun places.",
+      "This town has plenty of fun spots."
+    ],
+    "point": "「〜が多い」は There are many で言える",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 5,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:696c3b57c10fed3c019718bfb9b51602ed946d941d78a4472556f6e2b9745f55",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4v9a4j8e",
     "ja": "無理しないほうがいいよ。",
     "en": "You shouldn't push yourself.",
@@ -38,6 +60,28 @@
     }
   },
   {
+    "id": "c_6c6d5c7h",
+    "ja": "雨でも、私は楽しかったよ。",
+    "en": "Despite the rain, I had fun.",
+    "alternatives": [
+      "Even in the rain, I had fun.",
+      "I had fun even though it rained."
+    ],
+    "point": "despite の後ろは名詞。節なら even though",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 5,
+    "grammar": ["concession-contrast", "past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d11aa42446ff15777be452b52028119a4c2a426ccbdf4e21008e4b572c7a904a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_7f2v2m4z",
     "ja": "もう落ち着いたよ。",
     "en": "I've calmed down now.",
@@ -51,6 +95,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:4a93ffbe61a1130cd7f5fe90d026c9da13dff226ba13357bbd7e4009107cb06f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7w3y4d5p",
+    "ja": "試験に受かってほっとした。",
+    "en": "I was relieved I passed.",
+    "alternatives": [
+      "I felt relieved after passing the exam.",
+      "I was relieved to pass the exam."
+    ],
+    "point": "ほっとした＝ relieved（過去の気持ち）",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 5,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f0e566af67861879de2fa32ae3df5b944e31ef92cb6f315a73323341e6613c2",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

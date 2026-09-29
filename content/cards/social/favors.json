@@ -1,0 +1,122 @@
+[
+  {
+    "id": "c_2k9x6n5h",
+    "ja": "車で送らなくていいよ。",
+    "en": "No need to drive me.",
+    "alternatives": ["You don't have to drive me.", "You don't need to drive me."],
+    "point": "「〜しなくていい」は No need to / don't have to",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 4,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a5cfdb90eace5050c1aac966aee17529bb39b57141ec56da54cb816d7a473200",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4d7b4u6z",
+    "ja": "手を貸せるよ。",
+    "en": "I can give you a hand.",
+    "alternatives": ["I can lend you a hand.", "I could help you out."],
+    "point": "「手を貸す」は give a hand",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 5,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a39e9f678089dd8034f09c941cee3118a5a8f364316f4dacb86d6c8da036f2fd",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4z5m4c7h",
+    "ja": "今、料理中で手が離せない。",
+    "en": "I'm busy cooking right now.",
+    "alternatives": [
+      "I'm in the middle of cooking.",
+      "I'm busy cooking at the moment."
+    ],
+    "point": "busy の後ろは -ing(busy cooking)",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 5,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:80261d22e55d20e6a2f40ba8cf4e9fe36f9d54689fccb4a61404ae0e1229b708",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5k4a2e9g",
+    "ja": "少しゆっくりお願いします。",
+    "en": "Could you speak a little slower?",
+    "alternatives": [
+      "Could you slow down a little?",
+      "Could you speak more slowly, please?"
+    ],
+    "point": "「もう少し〜」は a little + 比較級",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 5,
+    "grammar": ["comparatives-superlatives", "requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:34b6cec240fca2ba71aaa66a33b7292e2d6cae3b2f90e5409162a013d93ee695",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6f6n8c3z",
+    "ja": "頼んだ件、もう見てくれた？",
+    "en": "Have you checked it yet?",
+    "alternatives": ["Did you check it yet?", "Have you looked at it yet?"],
+    "point": "「もう〜した？」は現在完了 + yet",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 4,
+    "grammar": ["tense-contrast", "present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4c2b1c7e82c418351b0bb91f990a0024adb635eb631287f4fd54c50542f88d6a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6q2r2g5g",
+    "ja": "ちょっとこれ持ってて。",
+    "en": "Hold this for a second.",
+    "alternatives": ["Just hold this for a second, please.", "Hold this for me a sec."],
+    "point": "頼みの命令文は please で和らぐ",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 4,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:58b254477ebd1236efb14402b1e37165e6dfd608e8cd9aba23ac6eedfa6a0337",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

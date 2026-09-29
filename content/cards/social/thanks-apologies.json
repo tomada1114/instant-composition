@@ -1,0 +1,128 @@
+[
+  {
+    "id": "c_3a4m4z5b",
+    "ja": "次は遅刻しません。",
+    "en": "I won't be late again.",
+    "alternatives": ["I'll be on time next time.", "I won't be late next time."],
+    "point": "約束は will not(won't)",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 4,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:af7969ad39c6e0f2f02fb7c06231726927fadb7a37d70a429c3ef1d18238269d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3c5k4w3a",
+    "ja": "お待たせしてすみません。",
+    "en": "Sorry to keep you waiting.",
+    "alternatives": [
+      "I'm sorry to keep you waiting.",
+      "I apologize for keeping you waiting."
+    ],
+    "point": "謝る理由は sorry to + 動詞",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 5,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5207368c9a06390317212bc39a1c77aeb767234b110bdbd20d647011b05fbc2d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5b3c6x7u",
+    "ja": "ずっとお礼を言いたかった。",
+    "en": "I've been wanting to thank you.",
+    "alternatives": [
+      "I've always wanted to thank you.",
+      "I've been wanting to say thank you."
+    ],
+    "point": "続いている願望は have been wanting",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:222db3531db4b88f08690d40e8cc0d8f2d953dc7c4d2f89a9bba11f00bd5d038",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5d4a7b7k",
+    "ja": "お礼に夕飯おごってもいい？",
+    "en": "Can I buy you dinner as thanks?",
+    "alternatives": [
+      "May I buy you dinner as thanks?",
+      "Can I buy you a thank-you dinner?"
+    ],
+    "point": "「おごる」は buy 人 物 か treat",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 4,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ce74d9a7a783c09b1b9d18283cc28acb8f99249ef5d1bed0b59d8457b705a5ad",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6z8d2f6w",
+    "ja": "彼女に謝ったほうがいいな。",
+    "en": "I should apologize to her.",
+    "alternatives": ["I'd better apologize to her.", "I ought to apologize to her."],
+    "point": "「〜に謝る」は apologize to",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 4,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:447b699fa941a8e1e0058ccf55555579d06458518b7256e9adf3db44ce865426",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7r9e5e5g",
+    "ja": "お気遣いに感動しました。",
+    "en": "I was touched by your kindness.",
+    "alternatives": [
+      "Your kindness really touched me.",
+      "I was moved by your thoughtfulness."
+    ],
+    "point": "感動したは be touched(受け身)",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 5,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7d47859c2105fcd2abf6e9dc10746b95150d11448de3398d033d83c7fa3b8552",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

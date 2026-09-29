@@ -1,0 +1,125 @@
+[
+  {
+    "id": "c_4g6k5b7t",
+    "ja": "12番ゲートはどこですか？",
+    "en": "Where is gate 12?",
+    "alternatives": ["Which way is gate 12?", "Where can I find gate 12?"],
+    "point": "場所は Where で聞く",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 2,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:593b3386453e128ec259e4bb00e36990efde7f7d416d2c816f81f3016c515697",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4k3p5p9p",
+    "ja": "窓側の席にしてください。",
+    "en": "Please give me a window seat.",
+    "alternatives": ["A window seat, please.", "Please make it a window seat."],
+    "point": "頼むときは Please で始める命令文",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 4,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:faf040b00b0b1c835862b2dcd70348a25a81ebb62c5ab19895e6d9a3a57ec696",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4t9p8g2r",
+    "ja": "ゲートが変わったと聞いた。",
+    "en": "I heard the gate had changed.",
+    "alternatives": [
+      "They said the gate had changed.",
+      "I was told the gate had changed."
+    ],
+    "point": "言った時点より前のことは過去完了",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 5,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4e1c4b9ef4d19205860b7c42ff2613f65c70e2ed1a57e3295a2d18c2f0378c80",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6m3t3h7p",
+    "ja": "満席でも、私は待ちます。",
+    "en": "Even if it's full, I'll wait.",
+    "alternatives": [
+      "Even if it's booked up, I'll wait.",
+      "I'll wait even if it's full."
+    ],
+    "point": "Even if のあとは未来でも現在形",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 5,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:196ae7659f9cb7ac76d8220d7c761fef5a324e0d1376d267d934e38b66afa59f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6q8m2f9v",
+    "ja": "ここが私の席だと思います。",
+    "en": "I think it's my seat.",
+    "alternatives": ["I believe this is my seat.", "I think this seat is mine."],
+    "point": "think のあとは that 節",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 4,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c9c6ceecb87efd0cd47f4dcc97862bc5bfda2e1bc53bcbd52c3752328b7e5da4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7z8w3v9p",
+    "ja": "もう30分も待っています。",
+    "en": "I've been waiting for thirty minutes.",
+    "alternatives": [
+      "I've been waiting half an hour already.",
+      "I've been waiting for half an hour."
+    ],
+    "point": "ずっと続いている動作は現在完了進行形",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2f3066f3ceca26594d8dc85b6cf73c9d7a2f7daf22b48f6986be1d3cff1809f3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

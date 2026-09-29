@@ -1,0 +1,134 @@
+[
+  {
+    "id": "c_2t4b3c8r",
+    "ja": "まず再現手順を書くべき。",
+    "en": "You should write repro steps first.",
+    "alternatives": [
+      "You should write down repro steps first.",
+      "First, you should write repro steps."
+    ],
+    "point": "助言は should + 動詞の原形",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 5,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e33d614c01511bf7c2fc8ebf5b9615f047cde590657ab8fb1e071213e93997f7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3j7s9w3e",
+    "ja": "今回が一番厄介なバグだ。",
+    "en": "It's the trickiest bug yet.",
+    "alternatives": [
+      "This is the toughest bug so far.",
+      "This is the trickiest bug yet."
+    ],
+    "point": "最上級は the + -est",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2ad7cf5e256caa7ec7c8b51ede227891df246115bf6ae03c4b4c539463f0f142",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3q8f8k2x",
+    "ja": "このエラー、いつから？",
+    "en": "When did this error start?",
+    "alternatives": [
+      "When did this error first show up?",
+      "When did we start seeing this error?"
+    ],
+    "point": "疑問詞の後は did + 主語 + 原形",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 5,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:43c21093b6d8eb51c7009933c81a284237fa9b78ee741c50ee2b21b81b407351",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5d3g4p8t",
+    "ja": "何時間もデバッグしてるよ。",
+    "en": "I've been debugging for hours.",
+    "alternatives": [
+      "I've spent hours debugging.",
+      "I've been debugging for hours now."
+    ],
+    "point": "続いている動作は have been + -ing",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 4,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cf1512417b9e3b581bbef783f67ee75576b21d633ce9c81d309403f76b2f4f60",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6a5b9g7k",
+    "ja": "明日、再現手順を送ります。",
+    "en": "I'll send repro steps tomorrow.",
+    "alternatives": [
+      "I'm going to send repro steps tomorrow.",
+      "I'll send the repro steps tomorrow."
+    ],
+    "point": "その場で決めた予定は will",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 4,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b59e872bcf8c160a3aef8269a874adb354d74e17b4ff8606db4ae96df13d22cf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6d3y8u7j",
+    "ja": "前回の公開から失敗続き。",
+    "en": "It's been failing since last deploy.",
+    "alternatives": [
+      "It's failed since the last deploy.",
+      "It's been failing since the deploy."
+    ],
+    "point": "since + 過去の時点は現在完了",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 5,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:61db43aa659c29e200971b1ff770206985d5c51b75a94acb05a69c65f117f85b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

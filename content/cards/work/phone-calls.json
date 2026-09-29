@@ -1,0 +1,125 @@
+[
+  {
+    "id": "c_4j3a7e5g",
+    "ja": "30分も保留のままです。",
+    "en": "I've been holding for 30 minutes.",
+    "alternatives": [
+      "I've been on hold for 30 minutes.",
+      "I've been on hold 30 minutes now."
+    ],
+    "point": "続いている動作は have been -ing",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3ff53e1b832a0064957b7f0481238ee08cd6c4dc6f20656070fcd5329f81b4a7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6t4z4z4t",
+    "ja": "もっとゆっくりお願い！",
+    "en": "Could you speak more slowly?",
+    "alternatives": ["Can you slow down a little?", "Please speak a bit slower."],
+    "point": "slowly の比較級は more slowly",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 5,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e176498af079c6f0d7213aefb690349a16749023f557ec552a9f4692376cda17",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8h7h9v7u",
+    "ja": "通話は録音されています。",
+    "en": "This call is being recorded.",
+    "alternatives": ["This call is recorded.", "We're recording this call."],
+    "point": "「今〜されている」は be being＋過去分詞",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 5,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3c3c9da00b09135c190918d6971a8ad4647c5d32d380abb6bf9c442c4bde0a3d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8p9h8d4n",
+    "ja": "戻ったら彼が電話します。",
+    "en": "He'll call when he's back.",
+    "alternatives": [
+      "He'll call you when he returns.",
+      "When he gets back, he'll call you."
+    ],
+    "point": "when 節は未来のことでも現在形",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:30e9b358863cd72e98ba6d581da0eee8b0960c1134f5a3614cf937d6e4df5323",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9e5w8d7q",
+    "ja": "回線が悪いと思います。",
+    "en": "I think the line's bad.",
+    "alternatives": [
+      "I think the connection is bad.",
+      "I think we have a bad connection."
+    ],
+    "point": "I think のあとの that 節は that を省ける",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:72821b93bf3f9fc8bc6620a25bda49dffe4af08dd713a8d4af273b3b4ab6add8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9z4p4h6u",
+    "ja": "お電話ですが、どなたですか？",
+    "en": "May I ask who's calling?",
+    "alternatives": ["Could you tell me who's calling?", "Can I ask who this is?"],
+    "point": "電話では Who are you? でなく who's calling",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 4,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f8b8330aa993d655a25163c08a9108b6eb8ca31d4a8314e925eeb58774826cc",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

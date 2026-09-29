@@ -1,0 +1,126 @@
+[
+  {
+    "id": "c_3q2v6z6c",
+    "ja": "議事録は私が取ります？",
+    "en": "Shall I take the minutes?",
+    "alternatives": ["Should I take the minutes?", "Want me to take the minutes?"],
+    "point": "議事録は複数形 minutes で the を付ける",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 4,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1e78dce8478159d69ef60e3f6689bd4c3306caf8c54f6108664843cfd2891b1f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3v3p9v2a",
+    "ja": "予算があれば増員するのに。",
+    "en": "If we had the budget, we'd hire.",
+    "alternatives": [
+      "We'd hire if we had the budget.",
+      "If we could afford it, we'd hire."
+    ],
+    "point": "if 節は過去形、主節は would＋原形",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 5,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e37bf48d2ea244051ffa925420c75db4cb2d5757b033a3d7cde0dbdbc1a7d0f0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3v7k9m4n",
+    "ja": "先に部長に確認すべきです。",
+    "en": "We should ask the director first.",
+    "alternatives": [
+      "We'd better check with the director first.",
+      "You should check with the director first.",
+      "We should check with the director first."
+    ],
+    "point": "should は「〜したほうがいい」という助言",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 5,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1393a11f1f1797c1a0dba53ce750f236de431c1f1ccb54b75e9b0f7fcd2de59e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7z3h6x8b",
+    "ja": "次の会議は私が進行します。",
+    "en": "I'll lead the next meeting.",
+    "alternatives": ["I'll run the next meeting.", "I'm going to chair the next one."],
+    "point": "その場で決めた申し出は will",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 5,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f35fe79e48651cb863b6240653159da01b4e29a90985e030bcb3d0206086cfa",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8m3s5s4j",
+    "ja": "議題は残り二つです。",
+    "en": "There are two items left.",
+    "alternatives": ["Two items are left.", "We have two items left."],
+    "point": "複数のものには There are",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 4,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cf96592da5b9403b727b4619c1a1d12984580a40ce2bf0d6bfb528e849f70c29",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8t9p7n4e",
+    "ja": "これが言っていた案です。",
+    "en": "Here's the plan I mentioned.",
+    "alternatives": [
+      "This is the plan I mentioned.",
+      "That's the plan I talked about."
+    ],
+    "point": "目的語の関係詞は省ける",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 4,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:634f89ee88ba515fb6eac3b7710b8b0dc93a8b21c280056ebedfc90a347da5be",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

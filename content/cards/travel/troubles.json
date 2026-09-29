@@ -1,0 +1,128 @@
+[
+  {
+    "id": "c_2u8n8r8e",
+    "ja": "運転手に止まるよう言って！",
+    "en": "Tell the driver to stop!",
+    "alternatives": [
+      "Please tell the driver to stop!",
+      "Tell the driver to pull over!"
+    ],
+    "point": "「人に〜するよう言う」は tell + 人 + to do",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:027a16447cb0553679112f2d6845c2d1cc7d08651095b97809c31d797636e6bf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3m8g6f3j",
+    "ja": "席の下の鞄がなくなった。",
+    "en": "The bag under my seat's gone.",
+    "alternatives": [
+      "My bag under the seat is gone.",
+      "The bag beneath my seat is missing."
+    ],
+    "point": "名詞の後ろに前置詞句を置いて説明する",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d7129be81a64003cf10a8dc72395dcff552e293969f30086e864c587fbc9261b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4g2y6n8f",
+    "ja": "少し助けが必要です。",
+    "en": "I need a little help.",
+    "alternatives": ["I need some help.", "I could use a little help."],
+    "point": "help は数えない名詞なので a help とは言わない",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 3,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8581d205a4fcf64a6e66cb07accca690079de0a759b23fdf178be11e75df4c6e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4j4v4c2y",
+    "ja": "カードを今日再発行できる？",
+    "en": "Can you reissue my card today?",
+    "alternatives": [
+      "Could you reissue my card today?",
+      "Can I get my card reissued today?"
+    ],
+    "point": "「できますか」は Can you で相手の可否を聞く",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 5,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c1abb04e30593ae3fd31d5e5e9711cfc7444c524db0049fd17e404786d82edeb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4j5d5p2t",
+    "ja": "今どこにいるか、わからない。",
+    "en": "I don't know where I am.",
+    "alternatives": ["I have no idea where I am.", "I'm not sure where I am."],
+    "point": "間接疑問は where のあとが平叙文の語順",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 4,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:eaae61f10b77f885018ba17088351ed13f3cc62f7e12be075b60a3dee2347d62",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6u4y7m6f",
+    "ja": "係員が荷物を探しています。",
+    "en": "They're looking for my luggage.",
+    "alternatives": [
+      "Someone is looking for my luggage.",
+      "The staff are searching for my bag."
+    ],
+    "point": "探している最中は現在進行形",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 4,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d8cd21512e720febe63d6ceecf747c6a559223fd6ffb183580b86384b3459f91",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

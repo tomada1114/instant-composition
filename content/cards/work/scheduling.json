@@ -1,0 +1,128 @@
+[
+  {
+    "id": "c_4u4e3x4u",
+    "ja": "火曜のほうが都合いい？",
+    "en": "Is Tuesday better for you?",
+    "alternatives": [
+      "Would Tuesday work better for you?",
+      "Is Tuesday more convenient for you?"
+    ],
+    "point": "都合がいいは better for you",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b23011b4c63083881773cd91d05e65bc58e30f4d85702ae7e91a1bacb4ac127c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6m5j9g4d",
+    "ja": "遅れても木曜で大丈夫です。",
+    "en": "Even if we're late, Thursday's fine.",
+    "alternatives": [
+      "Thursday's fine even if we run late.",
+      "Thursday works even if we're late."
+    ],
+    "point": "Even if のあとは未来のことも現在形",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4ad30282bd1d0f27e483413b796e09831b99066061466b8714bbe46b87b8db26",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6y4d7x9c",
+    "ja": "月曜の会議は中止です。",
+    "en": "Monday's meeting is canceled.",
+    "alternatives": ["The meeting on Monday is canceled.", "Monday's meeting is off."],
+    "point": "「中止された」は be canceled の受け身",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 4,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:21faf05d9d6e73f6e0b4326bda7322bf4b7f53caae0647e5ded3f20c8426d8b0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6z3j5w5k",
+    "ja": "会議、もう金曜に移したよ。",
+    "en": "I've moved it to Friday.",
+    "alternatives": [
+      "I've already moved it to Friday.",
+      "I've moved the meeting to Friday."
+    ],
+    "point": "もう〜した は already + 現在完了",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 4,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f4fe4ed26ddd62cb52e7f28ebfa27a8aed4abdffc465374c0d3419ce931dd1d2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6z6v6m5z",
+    "ja": "会議は先送りになりました。",
+    "en": "The meeting's been pushed back.",
+    "alternatives": [
+      "The meeting has been postponed.",
+      "They pushed the meeting back."
+    ],
+    "point": "push back は「延期する」の定番句動詞",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5ea1be8fa6e6e6fc9709b0fe07e33525e9ae939232368bd6d90bd5cfc6a80baa",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9q6y6y3q",
+    "ja": "会議室、取っておきました。",
+    "en": "I've reserved a meeting room.",
+    "alternatives": ["I booked a meeting room.", "I've booked us a room."],
+    "point": "初めて話に出る部屋なので a を使う",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 5,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1fcfbff0a03a0da4d40fb2513f79db4677c518b8f644ca00349d95ef00aebe2d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2h3m7c9v",
+    "ja": "晴れたら、釣りに行くよ。",
+    "en": "If it's sunny, I'll go fishing.",
+    "alternatives": [
+      "I'll go fishing if it's sunny.",
+      "If the weather's nice, I'll go fishing."
+    ],
+    "point": "未来のことでも if 節は現在形",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 5,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8b82d742187f5c043338703fb0a1ef8b5dfbd603339cb01f3b349c7459811291",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3v9x4x5b",
     "ja": "私が好きなのは山登りです。",
     "en": "What I like is hiking.",
@@ -54,6 +76,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:b6a03581591d1176e4d5695bd9305bb5e7c7428962da3e2b23b24111e052d12e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7v2x6k5z",
+    "ja": "週末はキャンプに行くんだ。",
+    "en": "I'm going camping this weekend.",
+    "alternatives": [
+      "I'm going to go camping this weekend.",
+      "I'm heading out camping this weekend."
+    ],
+    "point": "決まった予定は現在進行形で言える",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 5,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f8dd87e2bc9147ab41f95a79c06639d195ddb17db0c1efb409c9935053d0677e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8r3t2s5r",
+    "ja": "祭りは毎年夏に開かれる。",
+    "en": "The festival is held every summer.",
+    "alternatives": [
+      "The festival takes place every summer.",
+      "They hold the festival every summer."
+    ],
+    "point": "「開かれる」は is held の受動態",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 5,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ffdf85addad507a4c5d898916d9cff3ef7904169d9610f5272d1d6d3b2d7f93f",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

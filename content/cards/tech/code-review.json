@@ -1,0 +1,128 @@
+[
+  {
+    "id": "c_2b3j6p3e",
+    "ja": "処理を切り出すのはどう？",
+    "en": "How about extracting the logic?",
+    "alternatives": ["What about extracting the logic?", "Why not extract the logic?"],
+    "point": "How about の後は -ing",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 5,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c454b988a2fc6a8f422ee405f0d2a81ad38dbe5da8f6aefdfeeccbbf3f8ab63",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2h4h2z6x",
+    "ja": "命名が紛らわしいと思った。",
+    "en": "I found the naming confusing.",
+    "alternatives": ["I thought the naming was confusing.", "The naming confused me."],
+    "point": "find + 目的語 + 形容詞",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 5,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:164d548ea8746640ea1ec46a9321e316554058a2ddb8fd46a62e36d01e90ea9a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4x6m6c5y",
+    "ja": "指摘された行を直した。",
+    "en": "I fixed the flagged lines.",
+    "alternatives": [
+      "I fixed the lines you flagged.",
+      "I fixed the lines you pointed out."
+    ],
+    "point": "過去分詞で名詞を後ろから修飾",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 5,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b79930287c2d4c14dbae30543e0866458aa3e188386aab0937e7abf72af1ed2b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5d7n8g4f",
+    "ja": "この関数は他でも使われる。",
+    "en": "This function is used elsewhere.",
+    "alternatives": [
+      "This function is used in other places.",
+      "This function is also used elsewhere."
+    ],
+    "point": "「使われる」は is used",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 4,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c82e365e2ba7a6374c0613f0d5577b1abe6033b6318d506024ec1563944fc583",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5x6q4x8n",
+    "ja": "テスト通ったらマージする。",
+    "en": "I'll merge when tests pass.",
+    "alternatives": [
+      "I'll merge once the tests pass.",
+      "I'll merge if the tests pass."
+    ],
+    "point": "when 節の中は未来でも現在形",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 4,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:84d4d1cd0022ac96795108871fc9f8a5d5e98fabb04c833c38c5a4bdcd35eaae",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9k4k6r2e",
+    "ja": "今夜、PR を更新するね。",
+    "en": "I'll update the PR tonight.",
+    "alternatives": [
+      "I'm going to update the PR tonight.",
+      "I'm updating the PR tonight."
+    ],
+    "point": "今夜 → tonight（this night ではない）",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 4,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:83f1070e94435fdddf365bc120c687b66739a706e51e508571453a618770efbe",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

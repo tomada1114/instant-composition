@@ -1,0 +1,122 @@
+[
+  {
+    "id": "c_3j8v3k2p",
+    "ja": "今日はブロッカーが一つある。",
+    "en": "There's one blocker today.",
+    "alternatives": ["I've got one blocker today.", "I have one blocker today."],
+    "point": "「〜がある」は There is + 単数",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cd9d009edebca3f6e53194e92bedd8c2bdd56b7a82ab9613aa1e37a9b6974ca2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3r3j5t5x",
+    "ja": "PR はサムに見てもらう。",
+    "en": "I'll have Sam review my PR.",
+    "alternatives": ["I'll get Sam to review my PR.", "I'm having Sam review my PR."],
+    "point": "have + 人 + 動詞の原形で「〜してもらう」",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 5,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5d697929978c9dd6069c42fb596967fea36e4e110cf1e3217960fe563242ac24",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5m5t9k5u",
+    "ja": "昨日テストを三つ足した。",
+    "en": "I added three tests yesterday.",
+    "alternatives": [
+      "I added three new tests yesterday.",
+      "Yesterday I added three tests."
+    ],
+    "point": "yesterday があれば過去形",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c50865b19f19fdf3d837a3743e73a75cceb6e91d1817f5f9dcaa455d139b6b34",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6h2v7r4n",
+    "ja": "誰か、なぜ落ちるか分かる？",
+    "en": "Does anyone know why it's crashing?",
+    "alternatives": [
+      "Does anybody know why it keeps crashing?",
+      "Anyone know why it's failing?"
+    ],
+    "point": "間接疑問は why + 主語 + 動詞",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 5,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:edd46f91bc51035e04381bb07278759862ba39429eacf4ba04ce69872e59bc68",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7a5f6t9u",
+    "ja": "ログインのバグを直した。",
+    "en": "I fixed a bug in login.",
+    "alternatives": ["I fixed a login bug.", "I fixed a bug in the login."],
+    "point": "「〜の」は前置詞句で後ろから足す",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 5,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6cdb6808df19d70511051b0b0bce6ed68a8f2823caa17519bef21dd088c4e4d0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7s9k6v6s",
+    "ja": "もう移行を終わらせました。",
+    "en": "I've finished the migration.",
+    "alternatives": ["I've already finished the migration.", "The migration's done."],
+    "point": "「もう」の完了は現在完了",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1d3703a6d09a79828a8c72a6901133c475f68868f2eb2da4a3609af0d3c2eab1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

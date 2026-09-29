@@ -1,0 +1,122 @@
+[
+  {
+    "id": "c_4f5t6x7d",
+    "ja": "あの時、部長は帰ってたよ。",
+    "en": "The boss had already gone home.",
+    "alternatives": [
+      "The boss had left for the day.",
+      "The manager had already gone home."
+    ],
+    "point": "その時点より前の出来事は had + 過去分詞",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 5,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:984281a0dd81aa4e0a0c89c89bfaf8a32e054fe66ea97b4c38322fa3a47509ed",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4t2a8k8n",
+    "ja": "今日は五時に上がります。",
+    "en": "I'm leaving at five today.",
+    "alternatives": ["I'm going home at five today.", "I'm heading out at five today."],
+    "point": "決まった予定は進行形で言える",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 4,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4f5931c37a27b8b161f851f9aed86e99f6d96c3ded603a5da6f6a99e410de61e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5r7n4r5v",
+    "ja": "先週の金曜は休んだよ。",
+    "en": "I took last Friday off.",
+    "alternatives": ["I was off last Friday.", "I took a day off last Friday."],
+    "point": "休みを取るは take ~ off",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 4,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:aa80ec2eacb1afad9f976f39c20b1828b48566ac45e1bc3cf5a5a3388394dd65",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5r8g2u7a",
+    "ja": "ちょうど君の話をしてた。",
+    "en": "We were just talking about you.",
+    "alternatives": ["We were just discussing you.", "We were just mentioning you."],
+    "point": "その時していた最中の動作は過去進行形",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 5,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ed1a72a3d0ddcadae2404d5312bf198b48c5f65ad6687d2d524ec23c1e4e1653",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6a4j2y4k",
+    "ja": "プリンター、壊れたと思う。",
+    "en": "I think the printer's broken.",
+    "alternatives": [
+      "I think the printer has broken down.",
+      "I think the printer isn't working."
+    ],
+    "point": "I think の後ろに文をそのまま続ける",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 4,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2575b0d8754ac81c4a0bf87c0c165f5639522172567ef3fedb0c5b07dbaa23df",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6k5e4d5g",
+    "ja": "時間があれば手伝うのに。",
+    "en": "If I had time, I'd help.",
+    "alternatives": ["I'd help if I had time.", "If I weren't so busy, I'd help."],
+    "point": "現実と違う仮定は if + 過去形、主節は would",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 5,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:69a24d481c197d7937ec0aa9f2bcc61a171f5c28f3a93b52ab415bcd2764338d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

@@ -1,0 +1,147 @@
+[
+  {
+    "id": "c_2k8s7y7e",
+    "ja": "サムにやり直してと頼んだ。",
+    "en": "I asked Sam to redo it.",
+    "alternatives": ["I asked Sam to do it again.", "I asked Sam to try again."],
+    "point": "ask + 人 + to do の語順",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 5,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e6791a6f487400729123d67445fd25f993663e625fae37da5b5b4adfa545bed0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2t9n3b2w",
+    "ja": "明日、代わりに出られる？",
+    "en": "Can you cover for me tomorrow?",
+    "alternatives": [
+      "Could you cover for me tomorrow?",
+      "Can you fill in for me tomorrow?"
+    ],
+    "point": "代わりを務めるは cover for ~",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 5,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cb6e51e1b551a24bbc3ace4275443aa811e243c4b806aedee98525e595cb19c8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2v4t5q7v",
+    "ja": "返事、ずっと待ってます。",
+    "en": "I've been waiting for your reply.",
+    "alternatives": [
+      "I've been waiting to hear back.",
+      "I've been waiting on your reply."
+    ],
+    "point": "続いている動作は have been ~ing",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e6aa5b4e164953d7ceff10937ebcc4f3a8f8221641714b89f021e452ab7738ec",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5s9q8a5g",
+    "ja": "報告書が昼までに必要です。",
+    "en": "The report is needed by noon.",
+    "alternatives": ["We need the report by noon.", "I need the report by noon."],
+    "point": "期限は until ではなく by noon",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 5,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8a4849b225133328d0865619340de7c09c95f4bb3b44d51f44acf8dcc79bb2b0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8e5f4f2h",
+    "ja": "話した資料、送ってね。",
+    "en": "Send the file I mentioned.",
+    "alternatives": [
+      "Please send the file I mentioned.",
+      "Send me the file we talked about."
+    ],
+    "point": "file の後ろに I mentioned を置いて資料を特定する",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 4,
+    "grammar": ["relative-clauses", "requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1bb1dd40df8b18e6cc54a10dc4962135d8e3489f1a69d76e3294ad70226a18e3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8n2b3j5f",
+    "ja": "先に彼に聞いたほうがいい。",
+    "en": "You should ask him first.",
+    "alternatives": [
+      "You'd better ask him first.",
+      "I think you should ask him first."
+    ],
+    "point": "助言は should。first は文末に置く",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 4,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:879dbb10cca3695e7f782938f72037d355a98cccd4e3c26f7fcb429335d9a1d9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9v2c8f6m",
+    "ja": "早退してもいいですか？",
+    "en": "May I leave early?",
+    "alternatives": ["Is it okay if I leave early?", "Can I head out early?"],
+    "point": "許可を求めるときは May I / Is it okay if",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 4,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:29faa0590392630b0c1f0d7351631aec95a92513e9f439ebbe4d096e3905fad2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

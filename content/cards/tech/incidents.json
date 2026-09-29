@@ -1,0 +1,122 @@
+[
+  {
+    "id": "c_4p8a8d3k",
+    "ja": "障害は公開前に始まってた。",
+    "en": "The outage had started before release.",
+    "alternatives": [
+      "It had started before release.",
+      "The outage began before we released."
+    ],
+    "point": "「前から」の過去は had + 過去分詞",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:14b431b014278eb2512e9ea6199f41dd4244e4b3df6a0a2eeeae3c4236c0b5e7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6t4f5r4q",
+    "ja": "原因を特定できなかった。",
+    "en": "We couldn't pinpoint the cause.",
+    "alternatives": [
+      "We weren't able to pinpoint the cause.",
+      "We couldn't identify the cause."
+    ],
+    "point": "pinpoint は原因を特定する定番語",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bdb696f1199f5c83c4d91dd073a0d24101f28837a67061c0039a51c5a62ba04c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7q7m9q2z",
+    "ja": "エラー数が急増している。",
+    "en": "There's a spike in errors.",
+    "alternatives": ["There's been a spike in errors.", "Errors are spiking."],
+    "point": "急増は a spike in ~",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 5,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7af14360e43a2e7559e7dea290a68ef648ac04aea3c5bf9e2e56921eb778ab84",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8q7q5q3d",
+    "ja": "これが効いた修正です。",
+    "en": "It's the fix that worked.",
+    "alternatives": ["It's the fix which worked.", "Here's the fix that worked."],
+    "point": "物を説明する関係代名詞は that",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 4,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d212a418973bd03899aafc49d29fcd9e73ef87671a75ebd91e91532540390ed9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8y4w7b4e",
+    "ja": "昼からずっと止まってる。",
+    "en": "It's been down since noon.",
+    "alternatives": ["It has been down since noon.", "It's been offline since noon."],
+    "point": "since + 時点には現在完了",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 4,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:afd1c0fd2ec7923e190f32658fd3163a7ee8760c746d05bc90ee1f23a60bce3f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9u5c5k9c",
+    "ja": "再起動していいですか？",
+    "en": "Can I restart it?",
+    "alternatives": ["May I restart it?", "Is it okay to restart it?"],
+    "point": "許可を求めるなら Can I / May I",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 4,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c10866a71b6f8ae88e64824add404e201facbf9a6d28a7bb66ddc99815243599",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]

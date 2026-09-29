@@ -22,6 +22,25 @@
     }
   },
   {
+    "id": "c_6g5z7q7k",
+    "ja": "どこが痛みますか？",
+    "en": "Where does it hurt?",
+    "alternatives": ["Where is the pain?", "Where do you feel pain?"],
+    "point": "「痛む」は hurt。疑問詞＋ does it",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 4,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5a2f0c7c762c3409a7e5852ee2039be0d22fd8c2fb55c50bf709312d93247068",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6z8h2v8y",
     "ja": "薬局はもう閉まってた。",
     "en": "The pharmacy had already closed.",
@@ -38,6 +57,44 @@
     "stamps": {
       "core": {
         "hash": "sha256:ec94bcac116ca5529601de93919bdac4a1b1cb18fc30a55159113fafc1c82780",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7f2p4k2t",
+    "ja": "今日は休んだほうがいいよ。",
+    "en": "You should rest today.",
+    "alternatives": ["You'd better rest today.", "You should take today off."],
+    "point": "アドバイスは should",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 4,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7a383f2e222438fd6de0a0e5e351c8820a828dbaa9496577069fe63815788bb7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8a6k8z2a",
+    "ja": "昨日、熱が出たんだ。",
+    "en": "I had a fever yesterday.",
+    "alternatives": ["I got a fever yesterday.", "I ran a fever yesterday."],
+    "point": "熱が「ある・出る」は have / get a fever",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 4,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0ea111c4430dd0b397f54126fa7a9f1942144f24e357bb42a85542ca597a0d28",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

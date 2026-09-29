@@ -1,0 +1,128 @@
+[
+  {
+    "id": "c_5d9b8j2t",
+    "ja": "すばらしい発表だったよ。",
+    "en": "That was a great presentation.",
+    "alternatives": [
+      "That was an excellent presentation.",
+      "That was a really great presentation."
+    ],
+    "point": "単数の可算名詞には a が必要",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 5,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3a6d161596140e4daaf6f0088c2de76865115d4e629fe1adcf47f8cb52bcc3b1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6j9f9h8c",
+    "ja": "冒頭がすごくよかったよ。",
+    "en": "Your opening was really good.",
+    "alternatives": ["I really liked your opening.", "Your opening was great."],
+    "point": "過去の評価は was で言う",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 4,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:134b384caa76efbdcbbb7dfd7c2848d1a8dde184d23b9699d171f337ab443e14",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6k9s4k2p",
+    "ja": "やや長いものの、いい出来。",
+    "en": "It's good, though a bit long.",
+    "alternatives": [
+      "It's good, although it's a bit long.",
+      "It's a bit long, but it's good."
+    ],
+    "point": "though は文末や途中に添えて対比を出せる",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 5,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:903e2b3f86cefcb9a292b79b939527a0505fcd1977c84c3d5a863b0f1ef19a20",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6n8r5e9m",
+    "ja": "最近、ずいぶん上達したね。",
+    "en": "You've improved a lot lately.",
+    "alternatives": [
+      "You've gotten a lot better lately.",
+      "You've improved so much lately."
+    ],
+    "point": "最近の変化は現在完了で言う",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 5,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:98b1aedd4e6b34ace71db84601341e5cd9668bc99bd58131f5db3d0772c8c130",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8a9e7h6d",
+    "ja": "指摘の点、すぐ直します。",
+    "en": "I'll fix that right away.",
+    "alternatives": ["I'll fix that immediately.", "I'll correct that right away."],
+    "point": "その場で決めた対応は will",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 4,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:26267d0fba155754004c4fedd7eac2b6f686d1c288d83152f813e41c56b19fe5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8x3r6w3y",
+    "ja": "原稿、見てくれてありがと。",
+    "en": "Thanks for reviewing my draft.",
+    "alternatives": [
+      "Thank you for reviewing my draft.",
+      "Thanks for looking over my draft."
+    ],
+    "point": "for の後ろは ~ing",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 4,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cc6f2788c7c37b6bbc19729a0d2f7aed9052f1c375a29c6755e2eaa1b9eef3ee",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  }
+]
