@@ -24,103 +24,60 @@ never authorizes a push, a pull request, or a merge.
 /generating-cards <count> [topic=<id>[,<id>]] [subtopic=<topic>/<id>] [level=<n>|<n>-<m>] [new] [--no-review]
 ```
 
-- `count` — cards to add this run. Keep it at 50 or below; a larger request is run as
-  several invocations, each with its own review and commit.
+- `count` — cards to add this run, at most 50. A larger request is run as several
+  invocations, one after another, each with its own review and commits.
 - A range narrows the cells. Without one, every cell is eligible.
 - `new` — only together with `subtopic=`: add that subtopic to `content/taxonomy.json`
   first. Without `new`, an unknown subtopic is an error, never an invitation to add one.
 - `--no-review` — stop after writing. The cards stay unstamped, so the app never shows
   them until `reviewing-cards` runs.
 
-## Read first
+## Run it as one workflow
 
-`content/guides/writing.md` is the yardstick every writer and reviewer uses. Read it
-once per session. `content/levels.json`, `content/grammar.json` and
-`content/taxonomy.json` are the only valid tag values.
+The whole run happens inside the dynamic workflow
+`.claude/workflows/generating-cards.js`. This session does not read the guides, plan,
+brief writers, run `pnpm cards:*` or git, or judge cards — it only starts the workflow
+and reports what it returns. This skill runs only in Claude Code; in a runtime without
+the Workflow tool, stop and say so.
 
-## Model and effort
+1. Turn the arguments into `args` (a JSON object, not a string):
+   `{ count, topic?, subtopic?, level?, isNew?, noReview? }` — `topic` and `level` as
+   written (`"work,travel"`, `"5-6"`), `subtopic` as `"<topic>/<id>"`.
+2. Call `Workflow({ scriptPath: ".claude/workflows/generating-cards.js", args })` and
+   wait for its completion notice. Do nothing else meanwhile.
+3. Report from the returned object: cards admitted per cell, drop reasons, cells whose
+   writer failed, the gaps and top-up shortfalls, the commit, the review summary, any
+   `stop`, and `stats`. When `stop` is set, quote it and do not work around it.
 
-<!-- derived from orchestrating-models §2 -->
+## What the workflow does
 
-Every sub-agent the three card skills spawn — writers, rebuild writers, the reviewers
-R1, R2 and R3, adjudicators when adjudication is delegated, and field fillers — is the
-`worker` agent in Claude Code: Sonnet 5.5 at medium effort, fixed by
-`.claude/agents/worker.md`. No card job goes to `executor` or `architect`. Where no such
-agent exists (Codex CLI), a general-purpose sub-agent does the same job. Spawn it by
-name: its own default effort is `high`, and a spawn that names only the model takes the
-session's effort.
+All agents are Sonnet 5.5 at medium effort. Quality rests on the pipeline, not on one
+model: lint, the near-duplicate check, three independent reviewers, and a second round
+that deletes whatever fails again. Watch the tombstone count in `pnpm cards:stats`; if
+the share deleted per run climbs, raise R2 first, since it judges naturalness.
 
-- Each job is one reply to a complete brief, with no tool calls. Sonnet 5.5 costs half
-  of Opus 5.5 per token, and its weakness at medium — stopping to check in during long
-  agentic work — never comes up.
-- Quality rests on the pipeline, not on one model: lint, the near-duplicate check, three
-  independent reviewers, and a second round that deletes whatever fails again. Watch the
-  tombstone count in `pnpm cards:stats`; if the share deleted per run climbs, raise R2
-  first, since it judges naturalness.
-- At medium, Sonnet 5.5 sometimes writes a draft before its final JSON, so every reply
-  is read by taking its last JSON array.
-
-## Procedure
-
-1. **Branch.** Run `git status --porcelain`. If anything outside `content/` is modified,
-   stop and report it. On `main`, create `cards/<YYYY-MM-DD>` (append `-2`, `-3` … if it
-   exists) and switch to it. On a `cards/*` branch, stay on it. On any other branch,
-   stop and report — never commit anywhere but a `cards/*` branch.
-2. **New subtopic** (only with `new`). Add `{ id, ja, scene }` under the topic in
-   `content/taxonomy.json`. `scene` is one or two Japanese sentences saying where the
-   sentences happen. Run `pnpm cards:lint` to confirm the taxonomy still parses.
-3. **Plan.** `pnpm cards:gaps <count> [range] --json` returns
-   `{ plan, requested, planned, shortfall }`: the cells (`topic/subtopic × level`), how
-   many cards each gets (at most 3), and 2–3 target grammar ids per cell. Do not
-   second-guess the plan; it already weighs what is thin. A `shortfall` above 0 (also
-   warned on stderr) means the range has too few cells; carry it into the report.
-4. **Write, one writer per cell, in parallel.** Each writer is a separate `worker`
-   sub-agent (see [Model and effort](#model-and-effort)). Build the brief from
-   [references/writer-brief.md](references/writer-brief.md), filling in:
-   - the full text of `content/guides/writing.md`;
-   - the level's entry from `content/levels.json`, including its `words` range and its
-     `jaChars` cap;
-   - the target grammar entries from `content/grammar.json`, plus the ids of every other
-     grammar item valid at that level;
-   - the subtopic's `ja` and `scene`;
-   - `pnpm cards:show --cell <topic>/<subtopic> --level <n-1>-<n+1> --brief` (clamped to
-     1–10) and `pnpm cards:show --tombstones --cell <topic>/<subtopic> --brief` —
-     exactly what `cards:add` compares a new card against, so the writer can avoid it;
-   - how many cards to write. Each writer returns a JSON array of cards without `id`,
-     `createdAt` or `stamps`.
-5. **Admit, one command at a time.** Take the last JSON array out of each writer's
-   reply, never the span from the first `[` to the last `]` (see
-   [Model and effort](#model-and-effort)). If none parses as a JSON array, re-ask that
-   writer once, quoting the parse error; if the second reply is bad too, drop the cell
-   and report it. Save the array to `tmp/cards/<topic>-<subtopic>-<level>.json` (`tmp/`
-   is gitignored scratch) and run `pnpm cards:add <that file>`. It assigns ids, rejects
-   cards that fail lint or sit too close to an existing card or tombstone, and prints
-   what it dropped and why (a lint rule, or `NEAR_DUPLICATE` with the card or tombstone
-   it resembles). Do not hand-edit a dropped card back in. Writers run in parallel, but
-   `pnpm cards:*` write commands (`add`, `update`, `tombstone`, `stamp`) run one at a
-   time, never in parallel: each holds a lock on `content/`, and a second one fails with
-   `ERR_CARDS_BUSY`.
-6. **Top up once.** If drops left the run short, re-brief only the short cells for only
-   the missing count, telling the writer why the previous ones were dropped. Admit
-   again. If still short, stop and report the shortfall — never loop further.
-7. **Review.** Unless `--no-review`, run `reviewing-cards` with
-   `--ids <every id admitted this run>` and wait for it to finish. **REQUIRED:**
-   `reviewing-cards`.
-8. **Commit** (if review did not already commit everything): `git add content`; if
-   `git diff --cached --quiet` reports nothing staged, skip the commit. Otherwise
-   `git commit -m "feat(cards): add <n> cards (<cells>)"`. Never `--no-verify`.
-9. **Report**: cards admitted per cell, dropped count by reason, cells dropped for bad
-   writer output, any `gaps` or top-up shortfall, the review summary, and
-   `pnpm cards:stats --short`.
+1. **Prepare** — the branch step (`reviewing-cards`'s `references/branch.md`), the new
+   subtopic when `new`, then `pnpm cards:gaps <count> [range] --json`: the cells, how
+   many cards each gets (at most 3), and 2–3 target grammar ids per cell.
+2. **Write** — one writer per cell, in parallel, each following
+   [references/writer-brief.md](references/writer-brief.md) and writing
+   `tmp/cards/<topic>-<subtopic>-<level>.json`.
+3. **Admit** — `pnpm cards:add <file>` per cell as each writer finishes, strictly one at
+   a time: every write command holds `content/.cards.lock`, and a second one fails with
+   `ERR_CARDS_BUSY`. A cell left short gets one top-up writer for the missing count,
+   told why the previous cards were dropped; never a second.
+4. **Commit** the admitted cards: `feat(cards): add <n> cards (<cells>)`.
+5. **Review** — unless `--no-review`, the `reviewing-cards` workflow runs as a child on
+   every admitted id and commits its own fixes.
 
 ## Stop rules
 
-- Any `pnpm cards:*` command fails with an `ERR_*` other than a card-level one: stop and
-  report it; do not patch the script or the data to get past it. Card-level, and so not
-  a reason to stop: `ERR_CARDS_LINT`, `ERR_CARDS_STAMP_REFUSED`, a card `cards:add`
-  dropped or `cards:update` rejected, and an `unknown id …` line.
-- `ERR_CARDS_BUSY`: another write command is running. Wait for it and rerun; it means a
-  write was started in parallel, which this skill never does.
-- `pnpm cards:lint` reports an ERROR in a card you did not write this run: leave it for
+The workflow's agents apply these and hand back `stop` instead of pressing on:
+
+- A `pnpm cards:*` command fails with an `ERR_*` other than a card-level one
+  (card-level: `ERR_CARDS_LINT`, `ERR_CARDS_STAMP_REFUSED`, a card `cards:add` dropped
+  or `cards:update` rejected, an `unknown id …` line). Nobody patches the script or the
+  data to get past it.
+- A pre-commit hook fails on something outside what the run wrote.
+- `pnpm cards:lint` ERRORs in cards this run did not write are left for
   `reviewing-cards`, which fixes lint errors first.
-- A pre-commit hook fails: fix the cause in `content/` if it is yours, otherwise stop.

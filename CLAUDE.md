@@ -17,11 +17,17 @@ only records what Claude Code adds on top of them.
   committed; drift fails `pnpm agents:check`, `tests/sync-agents.test.ts`, and
   lefthook's pre-commit hook. The `authoring-skills` skill holds the rest, including why
   both copies are real files rather than a symlink.
-- `.claude/agents/` holds the three sub-agent tiers the skills spawn by name: `executor`
-  (Opus 5.5, low effort), `architect` (Opus 5.5, high effort) and `worker` (Sonnet 5.5,
-  medium effort, which the card skills use for every writer and reviewer). They are
-  committed so a skill such as `shipping-issues` gets the same tiers from any checkout;
-  a same-named agent in `~/.claude/agents/` is shadowed by these inside this repository.
+- `.claude/agents/` holds the two sub-agent tiers the skills spawn by name: `executor`
+  (Opus 5.5, low effort) and `architect` (Opus 5.5, high effort). They are committed so
+  a skill such as `shipping-issues` gets the same tiers from any checkout; a same-named
+  agent in `~/.claude/agents/` is shadowed by these inside this repository.
+- `.claude/workflows/` holds the dynamic-workflow scripts the three card skills run
+  (`generating-cards`, `reviewing-cards`, `backfilling-card-fields`). The whole card run
+  — branch, writers, reviewers, `pnpm cards:*`, commits — happens inside the workflow,
+  every agent on Sonnet 5.5 at medium effort; the session that invoked the skill only
+  starts it and reports its result. They are hand-written, not mirrored, and ESLint
+  ignores them because no module parser accepts the Workflow runtime's top-level
+  `return`.
 - AGENTS.md's "Security and human approval" records what the committed configuration
   does declare; for Claude Code that means no permission entry is committed here or
   carried into a generated project. A personal permission allowlist (model choice, extra

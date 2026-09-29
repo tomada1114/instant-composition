@@ -20,13 +20,16 @@ never authorizes a push, a pull request, or a merge.
 
 ## Preconditions
 
-Stop and say which is missing if either is:
+The workflow checks both and stops, naming the missing one:
 
 1. The field is declared, with its value check, in `OPTIONAL_FIELDS` in
    `scripts/cards/schema.mjs`, so `pnpm cards:lint` accepts a card that has it.
 2. `references/fields/<name>.md` exists with four sections: **What it holds**,
    **Length**, **Examples** (at least three, good and bad), **Review** (the checks a
-   reviewer applies). Write it with the owner first if it does not exist.
+   reviewer applies).
+
+Writing that spec is the one step that stays in this session, with the owner, before the
+workflow runs: it is a decision, not batch work.
 
 ## Arguments
 
@@ -43,24 +46,31 @@ A card's `stamps.core` covers only the core fields, and a backfilled field gets 
 shown; the app displays the new field only once its own stamp matches. Ten thousand
 cards can take the field without the drill pausing.
 
-## Procedure
+## Run it as one workflow
 
-1. **Branch.** Run `git status --porcelain`. If anything outside `content/` is modified,
-   stop and report it. On `main`, create `cards/<YYYY-MM-DD>` (append `-2`, `-3` … if it
-   exists) and switch to it. On a `cards/*` branch, stay on it. On any other branch,
-   stop and report — never commit anywhere but a `cards/*` branch.
-2. `pnpm cards:queue --missing <name> [range] --limit <n> --json` — cards without the
-   field, stamped cards first.
-3. Batch by 20. For each batch, one `worker` sub-agent (`generating-cards`, "Model and
-   effort") gets the field spec, `content/guides/writing.md`, and the cards; it returns
-   `[{ "id": …, "<name>": … }]`. Take the last JSON array out of the reply; if none
-   parses, re-ask once, and if it still does not, skip the batch and report it.
-4. Save to `tmp/cards/<name>-<batch>.json` and `pnpm cards:update` it — one write
-   command at a time, never in parallel (a second one fails with `ERR_CARDS_BUSY`).
-   Rejected entries are reported, not retried by hand.
-5. After all batches: run `reviewing-cards --field <name>`. **REQUIRED:**
-   `reviewing-cards`.
-6. Commit: `git add content`; if `git diff --cached --quiet` reports nothing staged,
-   skip it. Otherwise `git commit -m "feat(cards): backfill <name> on <n> cards"`.
-7. Report: filled, rejected with reasons, batches skipped for bad writer output,
-   reviewed, and what `pnpm cards:queue --missing <name> --count` still lists.
+The run happens inside the dynamic workflow
+`.claude/workflows/backfilling-card-fields.js`. This session only starts it and reports
+what it returns. This skill runs only in Claude Code; in a runtime without the Workflow
+tool, stop and say so.
+
+1. Call `Workflow({ scriptPath: ".claude/workflows/backfilling-card-fields.js", args })`
+   with `args` as a JSON object `{ field, topic?, level?, limit? }`, and wait for its
+   completion notice.
+2. Report from the returned object: filled, rejected with reasons, batches skipped, the
+   commit, the field review summary, any `stop` (quoted, not worked around), and
+   `stillMissing`.
+
+## What the workflow does
+
+All agents are Sonnet 5.5 at medium effort (`generating-cards`, "What the workflow
+does").
+
+1. **Prepare** — the preconditions, the branch step (`reviewing-cards`'s
+   `references/branch.md`), then `pnpm cards:queue --missing <name>`, stamped cards
+   first.
+2. **Fill** — one filler per 20 cards, in parallel, given the field spec and
+   `content/guides/writing.md`, writing `tmp/cards/<name>-<batch>.json`.
+3. **Apply** — `pnpm cards:update` per batch, strictly one at a time (each holds
+   `content/.cards.lock`). Rejected entries are reported, not retried by hand.
+4. **Commit** — `feat(cards): backfill <name> on <n> cards`.
+5. **Review** — the `reviewing-cards` workflow runs as a child with `field`.
