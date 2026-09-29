@@ -310,6 +310,7 @@
       "levels": "TOEIC の目安",
       "option": "TOEIC {toeic}",
       "autoNote": "答えに合わせて上下します",
+      "autoAt": "今は TOEIC {toeic} 前後。答えに合わせて上下します",
       "manualNote": "選んだレベルのまま動きません"
     },
     "retest": {
