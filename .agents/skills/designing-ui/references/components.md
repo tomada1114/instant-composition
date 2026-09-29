@@ -342,7 +342,7 @@ above and below each. Section titles are muted `label`s.
   opens one muted `caption` line under the title in place (`aria-expanded`). For a
   definition someone needs once: what counts as mastered, how the streak counts.
 - `toast`: fixed across the column with its 16 gutter, 96 above the column's bottom edge
-  (plus `--column-inset`), so it clears the drill's bottom buttons;
+  (plus `--column-inset` and `--safe-bottom`), so it clears the drill's bottom buttons;
   `bg-raised rounded-tile`, padding 14 / 16, the notice glyph 12 before a
   `text-foreground` line. Gone after 4 s (`TUNING.toastMs`), shown again for each new
   failure; it takes no press (`pointer-events-none`) and speaks through a
