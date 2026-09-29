@@ -63,7 +63,7 @@ function Actions({
       >
         <CloseGlyph className="size-4.5" />
         {t("notSaid")}
-        <Kbd side="start">J</Kbd>
+        <Kbd side="start">←</Kbd>
       </Button>
       <Button
         onClick={() => {
@@ -72,7 +72,7 @@ function Actions({
       >
         <RingGlyph className="size-4.5" />
         {t("said")}
-        <Kbd>K</Kbd>
+        <Kbd>→</Kbd>
       </Button>
     </div>
   );
