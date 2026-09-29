@@ -618,10 +618,16 @@
     "point": "問題の的を絞るなら It's ～ that の形",
     "topic": "travel",
     "subtopic": "hotel",
-    "level": 10,
+    "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:119852e799530ebec61255f30b01af1a6d83b4299e7c357e42d5b76e4acfd228",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9p5q8y8k",

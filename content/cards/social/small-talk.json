@@ -133,10 +133,16 @@
     "point": "It was ～ that 型。that は省略可。bump into は偶然会う",
     "topic": "social",
     "subtopic": "small-talk",
-    "level": 9,
+    "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:07be4b85df7e03926892efc950d9f6a4c287c45ad43d4a57050921c760b93360",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4k8y9b3w",
@@ -312,7 +318,7 @@
   },
   {
     "id": "c_5h6n2h9m",
-    "ja": "座った途端に、雨が降り出した。",
+    "ja": "私たちが座った途端、雨が降り出した。",
     "en": "Hardly had we sat down when it poured.",
     "alternatives": [
       "No sooner had we sat down than it poured.",
@@ -324,7 +330,13 @@
     "level": 10,
     "grammar": ["inversion"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9108e1313d5f71dcf053ab8ac2602e553b592be8aeb02cf7875de1d8cb096ce4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5x7s5p3h",

@@ -196,10 +196,16 @@
     "point": "Time permitting は「時間が許せば」の分詞構文",
     "topic": "social",
     "subtopic": "invitations",
-    "level": 9,
+    "level": 8,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fa8fc565dc09d2d20f7bb7fd2367dabda51d69ee92906ec07d27019ce517164c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3s2v2n5k",

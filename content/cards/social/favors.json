@@ -133,10 +133,16 @@
     "point": "I don't suppose ～ で控えめに頼む",
     "topic": "social",
     "subtopic": "favors",
-    "level": 9,
+    "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b5a8964bc86bea08f0667ab8800ef9397373fa933ddda988cd7e27f93f7482d1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3j5u5t4p",

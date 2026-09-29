@@ -117,10 +117,16 @@
     "point": "「印象に残った」は strike / stand out",
     "topic": "work",
     "subtopic": "feedback",
-    "level": 9,
+    "level": 8,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9b81e88d856a8a82fb685d986cb9e7e05ca5ba72d1096760b69813235b4e87f3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4h8e9b9p",
@@ -237,16 +243,22 @@
     "ja": "レイアウト、君の説明で納得した。",
     "en": "You've won me over on the layout.",
     "alternatives": [
-      "You've talked me round on the layout.",
-      "Your argument won me over on the layout."
+      "Your argument won me over on the layout.",
+      "You've convinced me about the layout."
     ],
     "point": "「納得させる」は win 人 over",
     "topic": "work",
     "subtopic": "feedback",
-    "level": 10,
+    "level": 7,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f0bd4ec9276500ebb08d2aab473648288182c402d0a111d80d250b0b706d9af",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6d9m4z4j",
@@ -565,10 +577,16 @@
     "point": "says の後ろの節の中にさらに what 節が入る",
     "topic": "work",
     "subtopic": "feedback",
-    "level": 10,
+    "level": 8,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:de4ab87b633996a60f7e3378a5c55ee9c3a24d24e7b09d6989787303360776d0",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9d7a3k8f",

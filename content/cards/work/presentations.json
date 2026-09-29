@@ -326,7 +326,13 @@
     "level": 8,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cd364b90eeb1b256b4baf3b4eaddf05bca8aebc7125a2439b0e533c8eef80df5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5r9h2z9k",

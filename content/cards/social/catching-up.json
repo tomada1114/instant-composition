@@ -212,16 +212,22 @@
     "ja": "忙しくなきゃもっと電話するのに。",
     "en": "If I weren't swamped, I'd call more.",
     "alternatives": [
-      "If I weren't so swamped, I'd call you more.",
-      "If I weren't slammed, I'd call more often."
+      "I'd call more if I weren't swamped.",
+      "If I weren't busy, I'd call more."
     ],
     "point": "現在の仮定は were。swamped は忙殺されている",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 9,
+    "level": 6,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d31dba5feeb6bfe13cbdfd7e46ea8166be6b97bbac59764ed6d96f83a1d40635",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3s2e2u3q",
@@ -405,19 +411,25 @@
   },
   {
     "id": "c_5u5c2m7x",
-    "ja": "驚いたのは、彼女が辞めてたことだよ。",
+    "ja": "驚いたのは、彼女が辞めてたこと。",
     "en": "What floored me was that she'd quit.",
     "alternatives": [
       "What surprised me was that she'd quit.",
-      "What blew me away was that she'd quit her job."
+      "What shocked me was that she'd quit."
     ],
     "point": "What ～ was that で強調。floor は仰天させる",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 10,
+    "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7ce43f027b7ed4fec24eff1cb578127a52f20031dcf2b2e918110150d50c7ba1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5z3b7r7r",
@@ -538,10 +550,16 @@
     "point": "have + 人 + -ing で「〜させられている」感じ",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 9,
+    "level": 8,
     "grammar": ["causatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3b04d4019b5f3a35b523f3043b72d64ac8d8e8e8cfb41bdff43c9b3fea0a8528",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6q8z7n2p",

@@ -107,17 +107,20 @@
     "id": "c_2z4y9x8d",
     "ja": "私が決めるなら、それは廃止するね。",
     "en": "If it were my call, I'd scrap it.",
-    "alternatives": [
-      "If it were up to me, I'd scrap it.",
-      "If I had the final say, I'd scrap it."
-    ],
+    "alternatives": ["If I decided, I'd scrap it.", "If I had the say, I'd scrap it."],
     "point": "「私が決めるなら」は If it were up to me",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 10,
+    "level": 6,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:32b2e165e1516dfb171a21566eaeb8b94b2b9c06ee9fab57231839d464097319",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3g9h4g4q",
@@ -314,10 +317,16 @@
     "point": "「ずっと〜してる」は have been doing",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 9,
+    "level": 8,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8204a04572e98953e915dc79d12da8da32aa7052f7980f462050a7a8c74b8542",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5w6x5t3z",

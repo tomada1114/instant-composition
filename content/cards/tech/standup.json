@@ -537,10 +537,16 @@
     "point": "「微妙」は would を使い断定を避ける",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 9,
+    "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b93a1cc0f746ee8ca03f796ce1baa0c1cbc2f3745845fa7c657125599f8e571b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9h3j5t8e",

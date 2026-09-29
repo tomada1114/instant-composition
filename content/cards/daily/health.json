@@ -43,34 +43,46 @@
   {
     "id": "c_2v3h3b4j",
     "ja": "医者は不調の元はストレスだと言う。",
-    "en": "The doctor says what's behind it is stress.",
+    "en": "The doctor says stress causes it.",
     "alternatives": [
-      "The doctor says stress is what's behind it.",
-      "The doctor says what's causing it is stress."
+      "The doctor says stress is behind it.",
+      "The doctor says it's caused by stress."
     ],
-    "point": "what's behind it で「元凶」。what 節が主語になる",
+    "point": "「元は〜」は stress causes it や is behind it で言える",
     "topic": "daily",
     "subtopic": "health",
-    "level": 10,
-    "grammar": ["nested-clauses"],
+    "level": 6,
+    "grammar": ["noun-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:84f08c3e546a5fd2a13fb1ce25c0b6032a4d3dff383e53dc7e9ddb019b4ebda1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2z6p2q2h",
     "ja": "私のは軽症だと、看護師が言った。",
-    "en": "The nurse said what I have isn't serious.",
+    "en": "The nurse said mine was mild.",
     "alternatives": [
-      "The nurse told me what I have isn't serious.",
-      "The nurse said what I've got isn't serious."
+      "The nurse told me mine wasn't serious.",
+      "The nurse said mine isn't serious."
     ],
-    "point": "said の中に what 節。節の中に節を入れる",
+    "point": "said の後ろの節は時制を過去にそろえる",
     "topic": "daily",
     "subtopic": "health",
-    "level": 9,
-    "grammar": ["nested-clauses"],
+    "level": 6,
+    "grammar": ["reported-speech"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ab9d63e97979f547dba844477b0aba5be6d6bd2c1438ccd8a0e1b81dc6bbb499",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3b9a4e7z",
@@ -118,16 +130,22 @@
     "ja": "腫れがいつまで続くか分かります？",
     "en": "Any idea how long the swelling lasts?",
     "alternatives": [
-      "Do you know how long the swelling will last?",
-      "Could you tell me how long the swelling lasts?"
+      "Any idea how long the swelling will last?",
+      "Do you know how long the swelling lasts?"
     ],
     "point": "間接疑問は疑問詞のあとが平叙文の語順",
     "topic": "daily",
     "subtopic": "health",
-    "level": 8,
+    "level": 6,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a6a7e4a2ce0bf8723c0c9ee5966733a1dafa19c51c336ca6b93cbd9399536c82",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4g8j2x4f",

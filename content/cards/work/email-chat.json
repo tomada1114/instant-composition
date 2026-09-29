@@ -348,16 +348,22 @@
     "ja": "送った提案書、何か返事はある？",
     "en": "Any word on the proposal I sent?",
     "alternatives": [
-      "Have you heard anything about the proposal I sent?",
-      "Any update on the proposal I sent?"
+      "Any update on the proposal I sent?",
+      "Heard anything on the proposal I sent?"
     ],
     "point": "「何か返事は？」は Any word on ～? が定番",
     "topic": "work",
     "subtopic": "email-chat",
-    "level": 9,
+    "level": 6,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1faf09a45d79d1e7ffe0cebddba38c20b2a6ad87c8e898004c9a5a6143981867",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7u2a2h2j",

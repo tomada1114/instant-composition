@@ -455,18 +455,24 @@
   {
     "id": "c_7x4u9h5t",
     "ja": "終バス逃して、タクシーで帰った。",
-    "en": "Having missed the last bus, we cabbed home.",
+    "en": "Having missed the last bus, I cabbed home.",
     "alternatives": [
-      "After missing the last bus, we took a cab.",
-      "Having missed the last bus, we took a cab."
+      "Missing the last bus, I took a cab.",
+      "After missing the last bus, I cabbed."
     ],
     "point": "先に起きたことは having done で表す",
     "topic": "travel",
     "subtopic": "transport",
-    "level": 9,
+    "level": 7,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6bbd978733fd60fe478d0305c0b3d70d9dc560c299f4f4260da53e944fe21f95",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8f3u7z7u",
@@ -636,7 +642,13 @@
     "level": 9,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5c6d6d0be9d75cdc8b8d333e3b6a36aa1c861a3d1e61eb8de928a43e70b30adc",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9v5k3a8y",

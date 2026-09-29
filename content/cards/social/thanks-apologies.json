@@ -47,15 +47,21 @@
     "en": "If I were you, I'd still be furious.",
     "alternatives": [
       "In your shoes, I'd still be furious.",
-      "If I were in your shoes, I'd still be angry."
+      "I'd still be angry if I were you."
     ],
     "point": "現在の仮定は If + 過去形、would。were を使う",
     "topic": "social",
     "subtopic": "thanks-apologies",
-    "level": 10,
+    "level": 6,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:63951a09d0c0a4ce0d35d01379d432f35086396258e5829e530533b30647040d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2z2w7c5k",
@@ -372,18 +378,21 @@
   {
     "id": "c_5w3k2y9q",
     "ja": "どれだけ嬉しいか言葉にできない。",
-    "en": "I can't say how much this means.",
-    "alternatives": [
-      "I can't tell you how much this means.",
-      "I can't express how much this means to me."
-    ],
-    "point": "how much の後ろは平叙文の語順",
+    "en": "I can't express how happy I am.",
+    "alternatives": ["I can't tell you how happy I am.", "I can't say how glad I am."],
+    "point": "how happy の後ろは平叙文の語順（I am）",
     "topic": "social",
     "subtopic": "thanks-apologies",
-    "level": 9,
+    "level": 6,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:51518d1466dfced7975d7a2716f277037059daabbb2a276ac56f812565235df2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5z8k3p6x",

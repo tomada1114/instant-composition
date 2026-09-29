@@ -27,16 +27,22 @@
     "ja": "作ったの君だって、ミカが言ってた。",
     "en": "Mika said you're the one who made this.",
     "alternatives": [
-      "Mika told me you're the one who made this.",
-      "Mika said it was you who made this."
+      "Mika said it was you who made this.",
+      "Mika told me you made this."
     ],
     "point": "said の中に the one who の節。時制は文脈で選ぶ",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 9,
-    "grammar": ["nested-clauses"],
+    "level": 7,
+    "grammar": ["reported-speech", "relative-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:85981092e64f5674580bc0d3c286029c9fdedef8417dcf9cb5f5fa5e8588c8f3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3d7g4c3x",
@@ -343,10 +349,16 @@
     "point": "過去の仮定は If + had + 過去分詞、would have + 過去分詞",
     "topic": "social",
     "subtopic": "introductions",
-    "level": 9,
+    "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5b9fa7b570aa5a8b7165c04593d5f0dfbe483a20078c8af6ed217cabb0f7964f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7f5g2j9b",

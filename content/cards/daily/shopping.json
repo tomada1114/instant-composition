@@ -353,7 +353,7 @@
   {
     "id": "c_6z6d3r4g",
     "ja": "決め手は、レビューの評価だった。",
-    "en": "It was the reviews that sealed the deal.",
+    "en": "It was the reviews that sealed it.",
     "alternatives": [
       "What sealed the deal was the reviews.",
       "It was the reviews that clinched it."
@@ -361,10 +361,16 @@
     "point": "It was ～ that で決め手を強調。seal the deal は決着させる",
     "topic": "daily",
     "subtopic": "shopping",
-    "level": 10,
+    "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:441487272946e976b445c80edc20530bf3d311b74d556cbccab3385de65f94d7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7f4f4b9p",

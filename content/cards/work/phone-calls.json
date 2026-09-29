@@ -281,10 +281,16 @@
     "point": "声や音が途切れるは cut out / break up",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 10,
+    "level": 6,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fe7d6903c6f83da31c31de6c7e7f2f5d6af8734422b554d241896b250800f062",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6r5h2a7g",

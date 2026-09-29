@@ -330,18 +330,24 @@
   {
     "id": "c_6w2r8e3d",
     "ja": "彼は相当練習を積んだに違いない。",
-    "en": "He must have put in countless hours.",
+    "en": "He must have practiced like crazy.",
     "alternatives": [
-      "He must have practiced like crazy.",
+      "He must have put in countless hours.",
       "He must have logged countless hours of practice."
     ],
-    "point": "must have + 過去分詞は過去への確信。put in hours は費やす",
+    "point": "must have + 過去分詞は過去への確信。like crazy は「猛烈に」",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 10,
+    "level": 7,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c981e4483db5db4a4475ecbf6ce87cd542e7904211bb94544fb2ed715d2ea780",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7a6e6z8j",
@@ -516,18 +522,24 @@
   {
     "id": "c_8x3y7z8t",
     "ja": "誘ってくれてもよかったのに。",
-    "en": "You could've at least invited me along.",
+    "en": "You could've invited me along.",
     "alternatives": [
-      "You might've at least asked me along.",
-      "You could have at least invited me."
+      "You could have at least invited me.",
+      "You might have asked me to come."
     ],
     "point": "could have + 過去分詞で「〜してくれてもよかった」と不満",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 9,
+    "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a8ab9fd5584ce6e0ff5742b10155c12d58ee49581de0f3592cb074d88298c2cb",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8x9f8w9r",

@@ -355,10 +355,16 @@
     "point": "have 人 in stitches は「人を大笑いさせる」",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 10,
+    "level": 8,
     "grammar": ["causatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:430c95ff5001aea9562b77dd29710f624d348f594be9599792da7aa8fb5da438",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5f8j7f6y",

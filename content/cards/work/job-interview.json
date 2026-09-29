@@ -410,10 +410,16 @@
     "point": "「～こそが」は It is ～ that で強調",
     "topic": "work",
     "subtopic": "job-interview",
-    "level": 10,
+    "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5b32317aaee09befe8d83a8eb763d22febb0b90e586c462b10a0d1883dd169ad",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7u2m8x2p",
@@ -576,10 +582,16 @@
     "point": "「反対する」は push back。後悔は should have done",
     "topic": "work",
     "subtopic": "job-interview",
-    "level": 9,
+    "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bf5b0789eeb8b83626904f7997c75cab6c498c07d6ce389d96bb69bed9a4e790",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8w9w7e5j",

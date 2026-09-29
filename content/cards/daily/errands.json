@@ -379,10 +379,16 @@
     "point": "間接疑問。which の後ろは平叙文の語順",
     "topic": "daily",
     "subtopic": "errands",
-    "level": 9,
+    "level": 6,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:46abd431b923871c673074ca013fdb3e40874aa57170c07a528223cc0d18b75f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7e7v8x4g",

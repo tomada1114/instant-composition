@@ -24,18 +24,24 @@
   {
     "id": "c_2a7q4d6p",
     "ja": "業者が抜けて以来、遅れてます。",
-    "en": "We've slipped since the vendor pulled out.",
+    "en": "We've slipped since the vendor left.",
     "alternatives": [
-      "We've been falling behind since the vendor pulled out.",
-      "We've been behind schedule since the vendor dropped out."
+      "We've fallen behind since the vendor left.",
+      "We've been behind since the vendor dropped out."
     ],
     "point": "since の後ろは過去形、主節は現在完了",
     "topic": "work",
     "subtopic": "reporting",
-    "level": 9,
+    "level": 7,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f9690cf4c8570709426c63c1b13b69ed49998a3fccdb8e37302ff57120065076",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2e9e8s7p",
@@ -122,18 +128,24 @@
   {
     "id": "c_3j2v4m3g",
     "ja": "予算案は棚上げだと、彼女に言われた。",
-    "en": "She told me the budget had been shelved.",
+    "en": "She said the budget was shelved.",
     "alternatives": [
-      "She said the budget had been put on ice.",
-      "She let me know the budget had been shelved."
+      "She told me the budget had been shelved.",
+      "She said the budget was put on ice."
     ],
-    "point": "「棚上げ」は shelve。聞いた時点より前なので過去完了",
+    "point": "「棚上げ」は shelve。said の後ろは過去形にそろえる",
     "topic": "work",
     "subtopic": "reporting",
-    "level": 10,
+    "level": 7,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:90c59bd549c79ff28f1f926d8836818ebe3acdb1c02c371fdb597c113360eced",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3w4a9t5d",
@@ -314,10 +326,16 @@
     "point": "said の後は will が would に変わる",
     "topic": "work",
     "subtopic": "reporting",
-    "level": 9,
+    "level": 8,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9887e951accd344da0649c47650715cb97a8772bccff05469c5663124d99776b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5h9f4k4x",

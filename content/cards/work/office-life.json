@@ -43,18 +43,24 @@
   {
     "id": "c_2j6b7z4s",
     "ja": "コーヒー当番が誰か、誰も知らない。",
-    "en": "Nobody knows whose turn it is on coffee.",
+    "en": "Nobody knows who's on coffee duty.",
     "alternatives": [
-      "Nobody's sure whose turn it is to make coffee.",
-      "No one knows whose turn it is to make coffee."
+      "No one knows who has coffee duty.",
+      "Nobody's sure who's on coffee duty."
     ],
-    "point": "whose turn it is は間接疑問なので語順は平叙文",
+    "point": "who's on coffee duty は who 節。語順は平叙文",
     "topic": "work",
     "subtopic": "office-life",
-    "level": 10,
-    "grammar": ["nested-clauses"],
+    "level": 6,
+    "grammar": ["indirect-questions"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a6b64485077863dd4a9d29c10758c4c6486bc68f1bfe7803e78b3b47b68c0bf1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2q2x6n3t",
@@ -270,16 +276,22 @@
     "ja": "置いた充電器、誰が取ったか知ってる？",
     "en": "Any idea who took the charger I left?",
     "alternatives": [
-      "Do you know who took the charger I left?",
-      "Know who picked up the charger I left?"
+      "Know who took the charger I left?",
+      "Anyone know who took the charger I left?"
     ],
     "point": "who 節の中に、さらに charger I left が入る",
     "topic": "work",
     "subtopic": "office-life",
-    "level": 9,
-    "grammar": ["nested-clauses"],
+    "level": 7,
+    "grammar": ["indirect-questions", "relative-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3f338586d1e772987e7e53513ec0ca5a8082af394f40b3fff35e08672a513f51",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4r2a3k7g",
@@ -292,10 +304,16 @@
     "point": "「仕事を切り上げる」は knock off",
     "topic": "work",
     "subtopic": "office-life",
-    "level": 9,
+    "level": 6,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b7590b5330a68f17a1731e268774d2d0188af609a1fb0cd081b0ee3b19fc8da5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4t2a8k8n",
@@ -675,7 +693,7 @@
     "en": "If I hadn't rested, I'd be dead.",
     "alternatives": [
       "I'd be dead now if I hadn't rested.",
-      "Had I not rested, I'd be a wreck now."
+      "If I hadn't rested, I'd be dead by now."
     ],
     "point": "過去の仮定 + 今の結果は、had done と would be",
     "topic": "work",
@@ -683,7 +701,13 @@
     "level": 9,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9b857b8b5ae4ed0e8f409f6fc988720d9e77110e67cab6b0194161757888aab1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9r6u9v4z",

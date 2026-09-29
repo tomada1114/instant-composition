@@ -180,10 +180,16 @@
     "point": "「別の人の目」は a second pair of eyes",
     "topic": "work",
     "subtopic": "requests",
-    "level": 9,
+    "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f5f71675d1f0506712eb8c15e0f4b53a75781c9b8532c303dc981b8d3c42fd3a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4x3h9j8f",
@@ -382,10 +388,16 @@
     "point": "「〜してくれてもよかった」は could have done",
     "topic": "work",
     "subtopic": "requests",
-    "level": 9,
+    "level": 6,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d8073905b924f9cbe732cb6d767d8699fd11bcd6781eefd2afd54be7284cc477",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7k9u6s9m",

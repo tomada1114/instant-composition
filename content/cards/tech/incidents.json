@@ -332,10 +332,16 @@
     "point": "「原因は～」を強調するなら What ～ was の形",
     "topic": "tech",
     "subtopic": "incidents",
-    "level": 9,
+    "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0084848fc872b3d6b90cc3880e9895fcd17d3ab4d56181e7518f83f8020607be",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6b6x7s5x",
@@ -573,7 +579,7 @@
   },
   {
     "id": "c_8q5q8s6u",
-    "ja": "パッチしてれば、今は落ちてないよ。",
+    "ja": "パッチしてれば、今は落ちてない。",
     "en": "If we'd patched, we'd be up now.",
     "alternatives": [
       "If we'd applied the patch, we'd be up now.",
@@ -585,7 +591,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7dfb0d803390d5f68273f50e8ebe4067d1bfa366c5d3b7db4226305e433bf8e4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8q7q5q3d",

@@ -21,18 +21,21 @@
   {
     "id": "c_2n8w7a9f",
     "ja": "タクシーの運転手に、ぼられました。",
-    "en": "I got ripped off by a taxi driver.",
-    "alternatives": [
-      "A taxi driver ripped me off.",
-      "I was ripped off by a cab driver."
-    ],
+    "en": "A taxi driver ripped me off.",
+    "alternatives": ["I got ripped off by a taxi driver.", "The cabbie ripped me off."],
     "point": "「ぼられる」は get ripped off",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 10,
+    "level": 7,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:002b1250cf6a10546ab61744441dc047f87a1f3d5f8dc216bc2edfe2d9dac9f8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2u8n8r8e",
@@ -340,10 +343,16 @@
     "point": "「回された」は受け身。reroute が自然",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 9,
+    "level": 6,
     "grammar": ["passive-voice"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3fd58b5ae84e7e9e7bd0a25b6ed327311cc685735f1ccbca9582080f54bd6640",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7f6g4y8w",

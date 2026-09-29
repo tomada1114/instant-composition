@@ -126,18 +126,24 @@
   {
     "id": "c_4c7b5d2m",
     "ja": "言ってくれれば、ずらせたのに。",
-    "en": "Had you told me, I could've moved it.",
+    "en": "Had you said, I could've moved it.",
     "alternatives": [
       "If you'd told me, I could've moved it.",
-      "If you'd given me a heads-up, I could've moved it."
+      "If you'd warned me, I could've moved it."
     ],
-    "point": "If を省くと Had you told ～ と倒置になる",
+    "point": "If を省くと Had you said ～ と倒置になる",
     "topic": "work",
     "subtopic": "scheduling",
-    "level": 10,
-    "grammar": ["third-conditional"],
+    "level": 9,
+    "grammar": ["third-conditional", "inversion"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:295d57aa832f3e8551d55186da1a10a314338eeb795c37d06b7fac96886c1795",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4e9b2f6z",
@@ -605,18 +611,24 @@
   {
     "id": "c_8s9d3w5z",
     "ja": "絶対に、期限は延ばしません。",
-    "en": "Under no circumstances will we extend the deadline.",
+    "en": "Never will we extend the deadline.",
     "alternatives": [
       "We won't extend the deadline under any circumstances.",
       "There's no way we'll extend the deadline."
     ],
-    "point": "否定の副詞句が文頭なら、後ろは疑問文の語順",
+    "point": "Never が文頭なら、後ろは疑問文の語順",
     "topic": "work",
     "subtopic": "scheduling",
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1555779afcb4ee71d9cc889814465630a8d347fc08a439487c0a9d04f57fe51f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8z5m9z5n",
