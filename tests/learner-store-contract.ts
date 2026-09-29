@@ -271,6 +271,32 @@ export function describeLearnerStoreContract(
       ]);
     });
 
+    it("keeps the settings' optional choices through a write and a read, and none where none were stored", async () => {
+      expect(await store.settings()).toBeUndefined();
+      const chosen = makeSettings({
+        limitSeconds: 45,
+        gradeKeys: { ok: "KeyL", ng: "Digit1" },
+      });
+      await store.commit({
+        puts: [{ type: "settings", value: makeSettings() }],
+        updates: [],
+        expect: [],
+      });
+      expect(await store.settings()).toStrictEqual({
+        value: makeSettings(),
+        version: 1,
+      });
+
+      const written = await store.commit({
+        puts: [],
+        updates: [{ entry: { type: "settings", value: chosen }, version: 1 }],
+        expect: [],
+      });
+
+      expect(written.ok).toBe(true);
+      expect(await store.settings()).toStrictEqual({ value: chosen, version: 2 });
+    });
+
     it("finds only the days that have a tally", async () => {
       await store.commit({ puts: oneOfEach(), updates: [], expect: [] });
 

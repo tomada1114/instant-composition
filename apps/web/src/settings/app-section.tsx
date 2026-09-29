@@ -4,10 +4,14 @@ import { useTranslations } from "use-intl";
 import { LOGOUT_URL } from "../lib/endpoints";
 import { Button } from "../ui/button";
 import { Toggle } from "../ui/toggle";
+import { GradeKeysRow } from "./grade-keys-row";
 import { TimeZoneRow } from "./time-zone-row";
 import type { SettingsState } from "./use-settings";
 
-/** The app's own rows between hairlines: the sound, the time zone and signing out. */
+/**
+ * The app's own rows between hairlines: the sound, the drill's grade keys,
+ * the time zone and signing out.
+ */
 export function AppSection({
   state,
   onZoneFailedChange,
@@ -29,6 +33,7 @@ export function AppSection({
           }}
         />
       </div>
+      <GradeKeysRow state={state} />
       <TimeZoneRow onFailedChange={onZoneFailedChange} />
       <form
         method="post"

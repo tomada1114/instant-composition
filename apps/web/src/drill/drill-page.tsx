@@ -12,9 +12,9 @@ const SHELL = "mx-auto box-content flex min-h-(--column-height) max-w-column px-
 
 /**
  * The `/drill` route: one round of the `?kind=` it names. The home view says
- * whether this is the first placement, whether sound is on and how big "one
- * more" is; it is read before the round starts, because starting it changes
- * what the home view says.
+ * whether this is the first placement, whether sound is on, which keys grade
+ * and how big "one more" is; it is read before the round starts, because
+ * starting it changes what the home view says.
  */
 export function DrillPage({ kind }: Readonly<{ kind: RoundKind }>): ReactElement {
   const home = useQuery(HOME_QUERY);
@@ -45,6 +45,7 @@ export function DrillPage({ kind }: Readonly<{ kind: RoundKind }>): ReactElement
       pressed={pressed}
       first={view.state.kind === "placement"}
       sound={view.sound}
+      gradeKeys={view.gradeKeys}
       dailySize={view.dailySize}
       available={view.state.kind === "not-enough" ? view.state.available : undefined}
       onKind={(next) => {

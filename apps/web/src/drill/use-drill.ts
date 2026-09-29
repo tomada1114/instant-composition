@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type Dispatch } from "react";
 
 import { TUNING } from "../lib/tuning";
-import type { RoundSummary } from "../openapi";
+import type { GradeKeys, RoundSummary } from "../openapi";
 import {
   currentCard,
   type AnswerInput,
@@ -70,23 +70,25 @@ export function useDrillClock(state: DrillState, dispatch: Dispatch<DrillEvent>)
 }
 
 /**
- * Routes the drill's keys to `onAction`, and pauses when the page is hidden.
- * A page shown again stays paused: the sheet waits for "continue".
+ * Routes the drill's keys to `onAction`, grading with `gradeKeys`, and pauses
+ * when the page is hidden. A page shown again stays paused: the sheet waits
+ * for "continue".
  */
 export function useDrillKeys(
   state: DrillState,
+  gradeKeys: GradeKeys,
   onAction: (action: DrillAction) => void,
 ): void {
-  const latest = useRef({ state, onAction });
+  const latest = useRef({ state, gradeKeys, onAction });
   useEffect(() => {
-    latest.current = { state, onAction };
+    latest.current = { state, gradeKeys, onAction };
   });
 
   useEffect(() => {
     function onKey(event: KeyboardEvent): void {
       if (event.repeat || event.isComposing) return;
       if (event.metaKey || event.ctrlKey || event.altKey) return;
-      const action = keyAction(latest.current.state, event.key);
+      const action = keyAction(latest.current.state, event, latest.current.gradeKeys);
       if (action === undefined) return;
       event.preventDefault();
       latest.current.onAction(action);

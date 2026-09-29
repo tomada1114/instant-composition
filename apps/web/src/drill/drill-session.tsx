@@ -3,7 +3,7 @@ import { useEffect, useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
 import { TabBar } from "../lib/tab-bar";
-import type { RoundKind, RoundPayload } from "../openapi";
+import type { GradeKeys, RoundKind, RoundPayload } from "../openapi";
 import { useAnswerQueue, useQueuedDrill, type ArrivedQueue } from "./answer-sync";
 import { currentCard, initDrill, progress, type DrillState } from "./drill-state";
 import { CardScreen } from "./card-screen";
@@ -66,6 +66,7 @@ export function DrillSession({
   first,
   pressed,
   sound,
+  gradeKeys,
   dailySize,
   onNext,
 }: Readonly<{
@@ -73,6 +74,7 @@ export function DrillSession({
   first: boolean;
   pressed: boolean;
   sound: boolean;
+  gradeKeys: GradeKeys;
   dailySize: number;
   onNext: (kind: RoundKind) => void;
 }>): ReactElement {
@@ -120,7 +122,7 @@ export function DrillSession({
       dispatch({ type: action.type, at });
     }
   }
-  useDrillKeys(state, (action) => {
+  useDrillKeys(state, gradeKeys, (action) => {
     act(action, true);
   });
   const resume = (): void => {
@@ -166,15 +168,14 @@ export function DrillSession({
       />
     );
 
-  const resumeAt =
-    state.pass === "first"
-      ? round.offset + state.firstDone + state.index + 1
-      : round.offset + state.firstDone + state.queue.length + state.index + 1;
+  const behind = state.pass === "first" ? 0 : state.queue.length;
+  const resumeAt = round.offset + state.firstDone + behind + state.index + 1;
   return (
     <>
       <CardScreen
         state={state}
         round={round}
+        gradeKeys={gradeKeys}
         onAction={(action) => {
           act(action, false);
         }}
@@ -183,7 +184,12 @@ export function DrillSession({
       {leave.asking ? (
         <LeaveSheet position={resumeAt} onLeave={leave.leave} onStay={resume} />
       ) : state.paused ? (
-        <PauseSheet position={resumeAt} onQuit={goHome} onContinue={resume} />
+        <PauseSheet
+          position={resumeAt}
+          gradeKeys={gradeKeys}
+          onQuit={goHome}
+          onContinue={resume}
+        />
       ) : null}
       <Toast signal={failures} message={t("save.failed")} />
       <p aria-live="polite" className="sr-only">

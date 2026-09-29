@@ -29,7 +29,7 @@ export {
   type DrillPhase,
   type DrillState,
 } from "./drill/drill-state";
-export { keyAction, type DrillKeyAction } from "./drill/keys";
+export { keyAction, type DrillKeyAction, type KeyPress } from "./drill/keys";
 export { playMotion, prefersReducedMotion } from "./drill/motion";
 export { requestFinish, requestRound, roundKindFrom, sendAnswer } from "./drill/rounds";
 export {
@@ -71,6 +71,7 @@ export {
   type ApiError,
   type SendOutcome,
 } from "./lib/endpoints";
+export { isDefaultGradeKeys, isGradeKey, keyLabel } from "./lib/grade-keys";
 export { KeyMode } from "./lib/key-mode";
 export { isFast, TUNING } from "./lib/tuning";
 export { cn } from "./lib/utils";
@@ -79,6 +80,7 @@ export type {
   AnswerResult,
   Dot,
   DrillCard,
+  GradeKeys,
   Growth,
   HomePreview,
   HomeState,

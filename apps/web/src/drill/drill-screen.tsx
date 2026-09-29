@@ -2,7 +2,7 @@ import { useEffect, useState, type ReactElement } from "react";
 
 import type { ApiError } from "../lib/endpoints";
 import { PageLoading } from "../lib/page-shell";
-import type { RoundKind, RoundPayload } from "../openapi";
+import type { GradeKeys, RoundKind, RoundPayload } from "../openapi";
 import { DrillError } from "./drill-error";
 import { DrillSession } from "./drill-session";
 import { requestRound } from "./rounds";
@@ -23,6 +23,7 @@ export function DrillScreen({
   pressed: pressedOnArrival,
   first,
   sound,
+  gradeKeys,
   dailySize,
   available,
   onKind,
@@ -31,6 +32,7 @@ export function DrillScreen({
   pressed: boolean;
   first: boolean;
   sound: boolean;
+  gradeKeys: GradeKeys;
   dailySize: number;
   available: number | undefined;
   onKind: (kind: RoundKind) => void;
@@ -78,6 +80,7 @@ export function DrillScreen({
       first={first}
       pressed={pressed}
       sound={sound}
+      gradeKeys={gradeKeys}
       dailySize={dailySize}
       onNext={(next) => {
         setPressed(true);

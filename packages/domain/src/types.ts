@@ -87,6 +87,18 @@ export type DailySize = 5 | 10 | 15 | 20 | 30;
 /** A per-card time limit on offer, in seconds; `TUNING.limitSeconds` lists them. */
 export type LimitSeconds = 15 | 20 | 30 | 45 | 60;
 
+/**
+ * The keys the drill grades a flipped card with, as `KeyboardEvent.code`
+ * values, so a choice holds whatever the keyboard layout or input method.
+ * `isGradeKeyPair` says which pairs are allowed.
+ */
+export interface GradeKeys {
+  /** ○, said it. */
+  readonly ok: string;
+  /** ×, not yet. */
+  readonly ng: string;
+}
+
 export interface Settings {
   readonly topics: readonly string[];
   readonly focus: readonly SubtopicRef[];
@@ -97,6 +109,8 @@ export interface Settings {
    * limit was a setting included, so `TUNING.defaultLimitSeconds` stands in.
    */
   readonly limitSeconds?: LimitSeconds;
+  /** Absent until the learner chooses a pair, so `TUNING.defaultGradeKeys` stands in. */
+  readonly gradeKeys?: GradeKeys;
 }
 
 /** A top-level topic and its subtopics, in `content/taxonomy.json`'s order. */

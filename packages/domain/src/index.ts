@@ -127,6 +127,9 @@ export { growthOf } from "./round-growth";
 export {
   decideSettings,
   DEFAULT_SETTINGS,
+  gradeKeysOf,
+  isGradeKey,
+  isGradeKeyPair,
   limitSecondsOf,
   withDefaults,
   type SettingsDecided,
@@ -173,6 +176,7 @@ export type {
   ConceptId,
   DailySize,
   DayKey,
+  GradeKeys,
   LimitSeconds,
   Pass,
   RetiredCard,

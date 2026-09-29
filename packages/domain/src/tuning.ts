@@ -24,6 +24,8 @@ export const TUNING = {
   /** The per-card time limits the settings offer, in seconds. */
   limitSeconds: [15, 20, 30, 45, 60],
   defaultLimitSeconds: 30,
+  /** The drill's grade keys until the learner chooses others, as `KeyboardEvent.code`. */
+  defaultGradeKeys: { ok: "ArrowRight", ng: "ArrowLeft" },
   maxFocus: 2,
   mix: {
     reviewShareMax: 0.6,

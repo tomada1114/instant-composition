@@ -3,6 +3,7 @@ import * as z from "zod";
 import {
   answerResultSchema,
   dailySizeSchema,
+  gradeKeysSchema,
   idSchema,
   levelSchema,
   limitSecondsSchema,
@@ -60,6 +61,8 @@ export const settingsPatchSchema = z.object({
   sound: z.boolean().exactOptional(),
   /** Taken by the next round dealt; the round under way keeps the limit it was dealt with. */
   limitSeconds: limitSecondsSchema.exactOptional(),
+  /** Both keys at once, so the pair is judged whole. */
+  gradeKeys: gradeKeysSchema.exactOptional(),
 });
 
 /**

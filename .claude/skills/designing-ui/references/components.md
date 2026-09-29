@@ -28,6 +28,7 @@ to the design's names.
 | `select-card`             | one column (default), `compact` (two across)                      | unselected, selected (white border + filled check), locked (the last one kept) |
 | `segmented`               | one row (cards a day, s per card, auto/manual); `columns`         | one selected; none (a level not yet measured)                                  |
 | `toggle`                  | —                                                                 | on, off                                                                        |
+| `key-picker`              | — (settings: the ○ and × keys)                                    | showing its key; waiting (white fill, "press a key"); refused (status line)    |
 | `ring-stack`              | `concentric` (up to 4 topics), `grid` (all 5)                     | with a new segment, without, empty (grooves + one line)                        |
 | `week-row`                | —                                                                 | done, done today, open (can be made up), missed, upcoming                      |
 | `dot-calendar`            | — (last 12 weeks)                                                 | the `week-row` states, without the accent                                      |
@@ -183,10 +184,11 @@ a screen around it and exports `SELF_SCROLL`.
 
 ## Grade pair
 
-× on the left (`secondary`, ✕ glyph, "not yet", hint "←" at the start), ○ on the right
-(`primary`, ○ glyph, "said it", hint "→" at the end), half the width each with a 10 gap.
-Shown only on a back the learner flipped; a timed-out back shows a single `primary`
-"next" instead.
+× on the left (`secondary`, ✕ glyph, "not yet"), ○ on the right (`primary`, ○ glyph,
+"said it"), half the width each with a 10 gap. Each hint is the learner's key for that
+grade, "←" and "→" by default: a "←" sits at the start edge, any other at the end. Shown
+only on a back the learner flipped; a timed-out back shows a single `primary` "next"
+instead.
 
 ## Drill faces
 
@@ -276,8 +278,15 @@ the hit area grown by 4 above and below to 44; rows 8 apart so hit areas just to
 - `toggle`: 52 × 32; on is a `bg-primary` track with a black knob at the right; off a
   `bg-raised` track with a grey knob at the left. No "on"/"off" words: position and fill
   carry the state, and the switch role says it.
-- Settings rows without a control of their own (sound, time zone, account) sit between
-  hairlines, 64 tall, name left and control right.
+- Settings rows without a control of their own (sound, grade keys, time zone, account)
+  sit between hairlines, 64 tall, name left and control right.
+- `key-picker`: the × key then the ○ key, 8 apart, each a 44-tall `rounded-tile`
+  `bg-raised` tile at least 64 wide with its grade's glyph and the key in `mono-sm` (an
+  arrow as the arrow, a digit or letter as itself). Pressed, it takes focus and waits:
+  `bg-primary text-primary-foreground` with "press a key" in `label`, white because it
+  is a selection, never the accent. The next key pressed becomes that grade's key and
+  saves; one outside ↑ ↓ ← →, 0–9 and A–Z, or the other grade's, is refused in the row's
+  `status` line and the tile keeps waiting. Esc or leaving the tile gives up.
 
 ## Progress rings (`ring-stack`)
 

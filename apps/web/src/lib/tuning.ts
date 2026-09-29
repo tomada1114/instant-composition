@@ -2,7 +2,7 @@
  * Every tunable value the web client reads.
  *
  * @remarks
- * `dayBoundaryHour`, `fastRatio`, `dailySizes`, `limitSeconds` and `maxFocus` belong to the
+ * `dayBoundaryHour`, `fastRatio`, `dailySizes`, `limitSeconds`, `maxFocus` and `defaultGradeKeys` belong to the
  * practice rules, whose source is `packages/domain`'s `TUNING`. The web client
  * imports no workspace package, so they are written out here and
  * `tests/web-tuning.test.ts` holds them to the domain's. The rest — the feedback hold, the key lock, the
@@ -20,6 +20,8 @@ export const TUNING = {
   limitSeconds: [15, 20, 30, 45, 60],
   /** At most this many focus subtopics are kept. */
   maxFocus: 2,
+  /** The drill's grade keys until the learner chooses others, as `KeyboardEvent.code`. */
+  defaultGradeKeys: { ok: "ArrowRight", ng: "ArrowLeft" },
   feedbackMaxMs: 320,
   keyLockAfterFlipMs: 150,
   skeletonDelayMs: 300,

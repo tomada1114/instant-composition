@@ -1,5 +1,6 @@
 import type {
   Dot,
+  GradeKeys,
   HomeState,
   LevelMode,
   Settings,
@@ -33,6 +34,7 @@ export interface HomeView {
   /** The size an extra round is dealt at: "one more N". */
   readonly dailySize: number;
   readonly sound: boolean;
+  readonly gradeKeys: GradeKeys;
   readonly contentError: boolean;
 }
 

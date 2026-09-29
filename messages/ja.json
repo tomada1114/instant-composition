@@ -301,6 +301,14 @@
     "sound": {
       "title": "効果音"
     },
+    "keys": {
+      "title": "採点のキー",
+      "ok": "言えた {key}",
+      "ng": "まだ {key}",
+      "waiting": "キーを押す",
+      "notAllowed": "矢印・数字・英字のキーから選べます",
+      "taken": "もう一方と同じキーです"
+    },
     "timeZone": {
       "title": "タイムゾーン",
       "useDevice": "この端末の {zone} にする",

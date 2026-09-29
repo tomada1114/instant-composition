@@ -3,6 +3,7 @@ import { err, ok, type Result } from "./result";
 import { TUNING } from "./tuning";
 import type {
   DailySize,
+  GradeKeys,
   LimitSeconds,
   Settings,
   SubtopicRef,
@@ -24,6 +25,30 @@ export interface SettingsPatch {
   readonly dailySize?: DailySize;
   readonly sound?: boolean;
   readonly limitSeconds?: LimitSeconds;
+  /** Both keys at once, so the pair is judged whole. */
+  readonly gradeKeys?: GradeKeys;
+}
+
+/**
+ * The `KeyboardEvent.code` values a grade may take: ↑ ↓ ← →, 0–9 and A–Z.
+ * Space, Enter, Esc and `?` (`Slash`) fall outside it, which keeps the drill's
+ * own keys out of reach. The contract's `gradeKeySchema` states the same set.
+ */
+const GRADE_KEY = /^(?:Arrow(?:Up|Down|Left|Right)|Digit[0-9]|Key[A-Z])$/u;
+
+/** Whether the drill may grade with `code`. */
+export function isGradeKey(code: string): boolean {
+  return GRADE_KEY.test(code);
+}
+
+/** Two keys the drill may grade with, a different one for each grade. */
+export function isGradeKeyPair(pair: GradeKeys): boolean {
+  return isGradeKey(pair.ok) && isGradeKey(pair.ng) && pair.ok !== pair.ng;
+}
+
+/** The grade keys the learner chose, or the default when they never chose any. */
+export function gradeKeysOf(settings: Settings | undefined): GradeKeys {
+  return settings?.gradeKeys ?? TUNING.defaultGradeKeys;
 }
 
 /** The per-card limit the learner chose, or the default when they never chose one. */
@@ -33,7 +58,11 @@ export function limitSecondsOf(settings: Settings | undefined): LimitSeconds {
 
 /** The settings as a client reads them: every field present, a default for one never chosen. */
 export function withDefaults(settings: Settings): Required<Settings> {
-  return { ...settings, limitSeconds: limitSecondsOf(settings) };
+  return {
+    ...settings,
+    limitSeconds: limitSecondsOf(settings),
+    gradeKeys: gradeKeysOf(settings),
+  };
 }
 
 export interface SettingsDecided {
@@ -55,8 +84,8 @@ function isKnownRef(taxonomy: readonly TopicInfo[], ref: SubtopicRef): boolean {
 
 /**
  * The settings after `patch`. The last topic cannot be removed, at most
- * `TUNING.maxFocus` focus subtopics are kept, and removing a topic removes its
- * focus too.
+ * `TUNING.maxFocus` focus subtopics are kept, removing a topic removes its
+ * focus too, and a grade key pair must pass `isGradeKeyPair`.
  */
 export function decideSettings(
   current: Settings,
@@ -85,7 +114,11 @@ export function decideSettings(
   ) {
     return err({ code: "ERR_BAD_REQUEST" });
   }
+  if (patch.gradeKeys !== undefined && !isGradeKeyPair(patch.gradeKeys)) {
+    return err({ code: "ERR_BAD_REQUEST" });
+  }
   const limitSeconds = patch.limitSeconds ?? current.limitSeconds;
+  const gradeKeys = patch.gradeKeys ?? current.gradeKeys;
   return ok({
     settings: {
       topics,
@@ -93,6 +126,7 @@ export function decideSettings(
       dailySize: patch.dailySize ?? current.dailySize,
       sound: patch.sound ?? current.sound,
       ...(limitSeconds === undefined ? {} : { limitSeconds }),
+      ...(gradeKeys === undefined ? {} : { gradeKeys }),
     },
     removedFocus: unique.filter((ref) => !topics.includes(ref.topic)),
   });

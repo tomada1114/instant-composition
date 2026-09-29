@@ -11,6 +11,8 @@ export {
   answerResultSchema,
   dayKeySchema,
   dotSchema,
+  gradeKeySchema,
+  gradeKeysSchema,
   idSchema,
   levelModeSchema,
   passSchema,

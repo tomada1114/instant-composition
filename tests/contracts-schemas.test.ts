@@ -27,6 +27,7 @@ import {
 import {
   answerSchema,
   answersRequestSchema,
+  gradeKeySchema,
   historySchema,
   homeViewSchema,
   type levelChoiceSchema,
@@ -45,6 +46,7 @@ import {
   type ErrorCode,
 } from "@instant-composition/contracts";
 import {
+  isGradeKey,
   TUNING,
   type AnswerInput,
   type LevelChoice,
@@ -230,12 +232,42 @@ describe("request bounds", () => {
     expect(settingsPatchSchema.safeParse({ limitSeconds: 30_000 }).success).toBe(false);
   });
 
+  it("takes a grade key pair of an arrow, a digit or a letter each", () => {
+    for (const gradeKeys of [
+      { ok: "ArrowRight", ng: "ArrowLeft" },
+      { ok: "ArrowUp", ng: "ArrowDown" },
+      { ok: "KeyK", ng: "KeyJ" },
+      { ok: "Digit1", ng: "Digit0" },
+    ]) {
+      expect(settingsPatchSchema.parse({ gradeKeys })).toStrictEqual({ gradeKeys });
+    }
+  });
+
+  it("holds the grade keys to the set the domain allows", () => {
+    const codes = [
+      ..."ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("").map((letter) => `Key${letter}`),
+      ..."0123456789".split("").map((digit) => `Digit${digit}`),
+      ...["Up", "Down", "Left", "Right"].map((way) => `Arrow${way}`),
+      ...["Space", "Enter", "Escape", "Slash", "Tab", "Numpad1", "F1", "ShiftLeft"],
+      ...["Keya", "KeyAB", "Digit10", "ArrowUpLeft", "k", "→", " KeyA", ""],
+    ];
+    expect(
+      codes.map((code) => [code, gradeKeySchema.safeParse(code).success]),
+    ).toStrictEqual(codes.map((code) => [code, isGradeKey(code)]));
+    expect(codes.filter((code) => isGradeKey(code))).toHaveLength(40);
+  });
+
   it.each([
     ["a daily size not on offer", { dailySize: 7 }],
     ["an empty topic id", { topics: [""] }],
     ["51 topics", { topics: Array.from({ length: 51 }, (_, i) => `t${String(i)}`) }],
     ["a focus without a subtopic", { focus: [{ topic: "work" }] }],
     ["an explicit undefined", { sound: undefined }],
+    ["both grades on one key", { gradeKeys: { ok: "KeyJ", ng: "KeyJ" } }],
+    ["a grade on Space", { gradeKeys: { ok: "Space", ng: "KeyJ" } }],
+    ["a grade on the key `?` is on", { gradeKeys: { ok: "KeyK", ng: "Slash" } }],
+    ["a grade given as a character", { gradeKeys: { ok: "k", ng: "j" } }],
+    ["one grade key alone", { gradeKeys: { ok: "KeyK" } }],
   ])("refuses a settings patch with %s", (_, patch) => {
     expect(settingsPatchSchema.safeParse(patch).success).toBe(false);
   });

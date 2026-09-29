@@ -2,6 +2,7 @@ import { errorResponseSchema } from "./errors";
 import {
   answerResultSchema,
   dotSchema,
+  gradeKeysSchema,
   levelModeSchema,
   passSchema,
   reachTopicSchema,
@@ -56,6 +57,7 @@ export const COMPONENTS = {
   Pass: passSchema,
   AnswerResult: answerResultSchema,
   SubtopicRef: subtopicRefSchema,
+  GradeKeys: gradeKeysSchema,
   Settings: settingsSchema,
   Dot: dotSchema,
   RingProgress: ringProgressSchema,

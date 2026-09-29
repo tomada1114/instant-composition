@@ -15,12 +15,18 @@ export type SubtopicRef = {
     subtopic: string;
 };
 
+export type GradeKeys = {
+    ok: string;
+    ng: string;
+};
+
 export type Settings = {
     topics: Array<string>;
     focus: Array<SubtopicRef>;
     dailySize: 5 | 10 | 15 | 20 | 30;
     sound: boolean;
     limitSeconds: 15 | 20 | 30 | 45 | 60;
+    gradeKeys: GradeKeys;
 };
 
 export type Dot = {
@@ -76,6 +82,7 @@ export type SettingsPatch = {
     dailySize?: 5 | 10 | 15 | 20 | 30;
     sound?: boolean;
     limitSeconds?: 15 | 20 | 30 | 45 | 60;
+    gradeKeys?: GradeKeys;
 };
 
 export type LevelMode = 'auto' | 'manual';
@@ -272,6 +279,7 @@ export type HomeView = {
     todayLastRoundId?: string;
     dailySize: number;
     sound: boolean;
+    gradeKeys: GradeKeys;
     contentError: boolean;
 };
 

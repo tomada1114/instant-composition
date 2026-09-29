@@ -84,9 +84,10 @@ export async function settle(ms = 0): Promise<void> {
   });
 }
 
-export function press(key: string): void {
+/** Presses `key` on the window; `code` is the physical key, which a chosen grade key is read by. */
+export function press(key: string, code = ""): void {
   act(() => {
-    window.dispatchEvent(new KeyboardEvent("keydown", { key, cancelable: true }));
+    window.dispatchEvent(new KeyboardEvent("keydown", { key, code, cancelable: true }));
   });
 }
 
@@ -178,6 +179,7 @@ export function homeView(
     todayCards: 20,
     dailySize: 10,
     sound: false,
+    gradeKeys: { ok: "ArrowRight", ng: "ArrowLeft" },
     contentError: false,
     ...overrides,
   };
