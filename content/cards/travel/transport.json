@@ -1,5 +1,44 @@
 [
   {
+    "id": "c_2n4h3y9f",
+    "ja": "私がタクシーを呼ぶよ。",
+    "en": "I'll call a taxi.",
+    "alternatives": ["I'm going to call a taxi.", "I'll get us a taxi."],
+    "point": "その場で決めた申し出は I'll 〜",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_2n4p6t6f",
+    "ja": "バスを待つのは嫌いです。",
+    "en": "I hate waiting for buses.",
+    "alternatives": ["I hate waiting for the bus.", "I can't stand waiting for buses."],
+    "point": "hate の後は -ing。待つは wait for",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 3,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4d4d7u2a",
+    "ja": "切符を二枚ください。",
+    "en": "Two tickets, please.",
+    "alternatives": ["Can I have two tickets?", "I'd like two tickets, please."],
+    "point": "数字の後は複数形の tickets",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4q8c8j9u",
     "ja": "もう電車は出ていた。",
     "en": "The train had already left.",
@@ -39,6 +78,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5g4x3w5w",
+    "ja": "往復を一枚ください。",
+    "en": "A round-trip ticket, please.",
+    "alternatives": ["One round-trip ticket, please.", "I'd like a round-trip ticket."],
+    "point": "一枚は a か one。往復は round-trip",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 2,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5q3q2a6s",
@@ -82,6 +134,32 @@
     }
   },
   {
+    "id": "c_5s3q6n5b",
+    "ja": "電車に乗り遅れました。",
+    "en": "I missed my train.",
+    "alternatives": ["I missed the train.", "I was late for my train."],
+    "point": "乗り遅れるは miss。過去形は missed",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6b8m2k8k",
+    "ja": "駅はどこですか？",
+    "en": "Where is the station?",
+    "alternatives": ["Which way is the station?", "Which way to the station?"],
+    "point": "場所は Where is 〜? で聞く",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6v2u8q8x",
     "ja": "市内に行くバスはどこ？",
     "en": "Where's the bus that goes downtown?",
@@ -101,6 +179,35 @@
     }
   },
   {
+    "id": "c_6w5s2p6m",
+    "ja": "昨日、電車が遅れました。",
+    "en": "The train was late yesterday.",
+    "alternatives": [
+      "The train ran late yesterday.",
+      "My train was delayed yesterday."
+    ],
+    "point": "「遅れた」は was late か ran late",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 3,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7s5a5q2b",
+    "ja": "急行の方が速いですか？",
+    "en": "Is the express faster?",
+    "alternatives": ["Is the express train quicker?", "Does the express go faster?"],
+    "point": "速い の比較級は faster。than は不要",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 3,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7u5v4r3w",
     "ja": "カードで払えますか？",
     "en": "Can I pay by card?",
@@ -118,5 +225,18 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8x7n5n6u",
+    "ja": "電車が来ています。",
+    "en": "The train is coming.",
+    "alternatives": ["Our train is coming.", "The train's arriving now."],
+    "point": "今近づいている最中は進行形",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

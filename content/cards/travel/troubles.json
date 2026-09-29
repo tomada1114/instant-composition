@@ -1,5 +1,22 @@
 [
   {
+    "id": "c_2p8f4r5f",
+    "ja": "警察を呼んで！",
+    "en": "Call the police!",
+    "alternatives": [
+      "Please call the police!",
+      "Somebody call the police!",
+      "Can you call the police?"
+    ],
+    "point": "police は the を付けて複数扱い",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2u8n8r8e",
     "ja": "運転手に止まるよう言って！",
     "en": "Tell the driver to stop!",
@@ -133,6 +150,19 @@
     "stamps": {}
   },
   {
+    "id": "c_5q8q6k3r",
+    "ja": "財布がなくなった。",
+    "en": "My wallet is gone.",
+    "alternatives": ["My wallet is missing.", "I lost my wallet."],
+    "point": "なくなった は is gone か is missing",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6u4y7m6f",
     "ja": "係員が荷物を探しています。",
     "en": "They're looking for my luggage.",
@@ -153,6 +183,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7j7y8s2d",
+    "ja": "問題があります。",
+    "en": "There's a problem.",
+    "alternatives": ["Something is wrong.", "We have a problem."],
+    "point": "「問題がある」は There's a problem",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8b6w3e6n",

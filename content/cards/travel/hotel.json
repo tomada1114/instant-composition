@@ -1,5 +1,60 @@
 [
   {
+    "id": "c_3w8r8a6w",
+    "ja": "Wi-Fi使える？",
+    "en": "Can I use Wi-Fi?",
+    "alternatives": ["Is Wi-Fi available?", "Can I connect to Wi-Fi?"],
+    "point": "「〜できますか」は Can I 〜?",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4t5c9h2j",
+    "ja": "隣の部屋がうるさいです。",
+    "en": "The next room is noisy.",
+    "alternatives": ["It's noisy next door.", "The room next door is loud."],
+    "point": "「隣の部屋」は the next room か next door",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 3,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4z7j8v9f",
+    "ja": "今日は掃除は結構です。",
+    "en": "Please skip cleaning today.",
+    "alternatives": [
+      "Please don't clean my room today.",
+      "Don't clean the room today, please."
+    ],
+    "point": "「しないで」は Don't か skip で言える",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5j9b9r8g",
+    "ja": "タオルをください。",
+    "en": "Some towels, please.",
+    "alternatives": ["Can I have some towels?", "I need some towels."],
+    "point": "数が決まらない複数は some towels",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5m2u5n6k",
     "ja": "昨日、予約を変更しました。",
     "en": "I changed my reservation yesterday.",
@@ -63,6 +118,45 @@
     }
   },
   {
+    "id": "c_6c3c8q4g",
+    "ja": "少し待ってもらえますか？",
+    "en": "Do you mind waiting?",
+    "alternatives": ["Would you mind waiting a moment?", "Could you wait a moment?"],
+    "point": "mind の後ろは -ing 形",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 3,
+    "grammar": ["gerunds", "requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6h6g5p7p",
+    "ja": "この部屋は禁煙ですか？",
+    "en": "Is this room nonsmoking?",
+    "alternatives": ["Is this a no-smoking room?", "Is smoking banned in this room?"],
+    "point": "「禁煙の」は nonsmoking か no-smoking",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7g8s4v3r",
+    "ja": "朝食は無料ですか？",
+    "en": "Is breakfast free?",
+    "alternatives": ["Is breakfast included?", "Is the breakfast free?"],
+    "point": "無料は free。食事名に冠詞は付けない",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7t6t7r8j",
     "ja": "隣が一晩中うるさいんです。",
     "en": "Next door's been noisy all night.",
@@ -85,6 +179,19 @@
     }
   },
   {
+    "id": "c_8b8m8c9q",
+    "ja": "ドライヤーください。",
+    "en": "A hair dryer, please.",
+    "alternatives": ["Could I get a hair dryer?", "I'd like a hair dryer."],
+    "point": "数えられる単数の物には a を付ける",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 2,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8r6v7v8z",
     "ja": "朝食は何時からですか？",
     "en": "What time does breakfast start?",
@@ -102,6 +209,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8y2p2q3j",
+    "ja": "窓を開けてもいいですか？",
+    "en": "May I open the window?",
+    "alternatives": ["Can I open the window?", "Could I open the window?"],
+    "point": "許可を求めるなら May I 〜?",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9h2a6c9k",

@@ -19,6 +19,35 @@
     }
   },
   {
+    "id": "c_2n5p2u7v",
+    "ja": "信号までまっすぐ行って。",
+    "en": "Go straight to the light.",
+    "alternatives": [
+      "Go straight until the light.",
+      "Keep going to the traffic light."
+    ],
+    "point": "命令文は主語なしで動詞から始める",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 3,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_2p7r4f2x",
+    "ja": "ここは行き止まりです。",
+    "en": "It's a dead end.",
+    "alternatives": ["This is a dead end.", "This road doesn't go through."],
+    "point": "行き止まりは a dead end",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3q3z6m8j",
     "ja": "銀行の隣の店です。",
     "en": "The shop by the bank.",
@@ -41,6 +70,19 @@
     }
   },
   {
+    "id": "c_3w2v6t2j",
+    "ja": "歩いて行けるよ。",
+    "en": "You can walk there.",
+    "alternatives": ["You can go on foot.", "It's within walking distance."],
+    "point": "「行ける」は can + 動詞の原形",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3w9u7x5v",
     "ja": "ここ、来たことある？",
     "en": "Have you been here before?",
@@ -58,6 +100,74 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4h3z6z3w",
+    "ja": "もう一度お願いします。",
+    "en": "Could you repeat that?",
+    "alternatives": ["Can you say that again?", "Would you mind repeating that?"],
+    "point": "聞き返す丁寧な依頼は Could you 〜?",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4x4g7e8g",
+    "ja": "地下鉄の入口はどこ？",
+    "en": "Where is the subway entrance?",
+    "alternatives": [
+      "Which way is the subway entrance?",
+      "Where do I enter the subway?"
+    ],
+    "point": "入口は entrance。場所は Where で聞く",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 3,
+    "grammar": ["wh-questions", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5h4a2p3m",
+    "ja": "駅は近いですよ。",
+    "en": "The station is near.",
+    "alternatives": ["The station is close.", "It's close by."],
+    "point": "近い は near か close",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5q9c7u3b",
+    "ja": "次の角を右に曲がって。",
+    "en": "Take the next right.",
+    "alternatives": ["Turn right at the next corner.", "Make the next right turn."],
+    "point": "「次の角を右」は the next right",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 3,
+    "grammar": ["imperatives", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5r9a2r8t",
+    "ja": "ATMはある？",
+    "en": "Is there an ATM?",
+    "alternatives": ["Is there an ATM nearby?", "Does it have an ATM?"],
+    "point": "「〜はありますか」は Is there 〜?",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6h7e7s9y",
@@ -80,6 +190,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6r3r7e5t",
+    "ja": "地図を見ています。",
+    "en": "I'm checking the map.",
+    "alternatives": ["I'm looking at a map.", "I'm reading the map."],
+    "point": "今の動作は am + -ing",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7y5r9g5z",

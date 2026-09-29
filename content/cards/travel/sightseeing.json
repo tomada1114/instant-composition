@@ -19,6 +19,32 @@
     }
   },
   {
+    "id": "c_2j8m7g6g",
+    "ja": "早めに行った方がいいよ。",
+    "en": "You should go early.",
+    "alternatives": ["You'd better go early.", "It's best to go early."],
+    "point": "助言は should + 動詞の原形",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_2q3r9a8f",
+    "ja": "撮影はご遠慮ください。",
+    "en": "Please don't take pictures here.",
+    "alternatives": ["Please don't take photos here.", "Please don't take photos."],
+    "point": "禁止のお願いは Please don't 〜",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 3,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3g6c2w5g",
     "ja": "大人二枚、お願いします。",
     "en": "Two adults, please.",
@@ -57,6 +83,19 @@
     }
   },
   {
+    "id": "c_3p6v8u7q",
+    "ja": "近くに公園がある。",
+    "en": "There's a park nearby.",
+    "alternatives": ["A park is nearby.", "You'll find a park nearby."],
+    "point": "「〜がある」は There's + 単数名詞",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4s6n8p5s",
     "ja": "ツアーは何分かかりますか？",
     "en": "How long is the tour?",
@@ -74,6 +113,32 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4s8j7h3f",
+    "ja": "足元に気をつけて。",
+    "en": "Watch your step.",
+    "alternatives": ["Mind the steps.", "Be careful on the stairs."],
+    "point": "足元に気をつけては Watch your step",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4z5x5d8y",
+    "ja": "写真お願いします。",
+    "en": "Take a photo, please.",
+    "alternatives": ["Please take a picture.", "Can you take a photo?"],
+    "point": "お願いの命令文は please を添える",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5d2m2m2t",
@@ -115,6 +180,45 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6a7a8d9k",
+    "ja": "展望台はありますか？",
+    "en": "Is there a lookout?",
+    "alternatives": ["Is there an observation deck?", "Does it have a lookout?"],
+    "point": "母音で始まる語の前は an",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 2,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6u3j6j8y",
+    "ja": "彼、写真撮ってる。",
+    "en": "He's taking photos.",
+    "alternatives": ["He is taking pictures.", "He's snapping pictures."],
+    "point": "撮っている最中は is taking",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7b6g7c7z",
+    "ja": "雨が降ったら中止です。",
+    "en": "It's canceled if it rains.",
+    "alternatives": ["If it rains, it's canceled.", "They cancel it if it rains."],
+    "point": "未来のことでも if 節は現在形",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9j5x3k3z",

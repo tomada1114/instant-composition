@@ -1,5 +1,47 @@
 [
   {
+    "id": "c_2s7f3v7a",
+    "ja": "彼、荷物を預けてる。",
+    "en": "He's checking a bag.",
+    "alternatives": ["He is checking his bag.", "He's checking in a bag."],
+    "point": "荷物を預ける は check a bag。今の動作は進行形",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3x7d4c3g",
+    "ja": "あの便は今、搭乗中です。",
+    "en": "That flight is boarding now.",
+    "alternatives": [
+      "They're boarding that flight now.",
+      "Boarding for that flight has started."
+    ],
+    "point": "「搭乗中」は is boarding。進行形で今を表す",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 3,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4b6b2y2f",
+    "ja": "ベルトは外すべきですか？",
+    "en": "Should I remove my belt?",
+    "alternatives": ["Should I take my belt off?", "Do I take my belt off?"],
+    "point": "「外す」は remove か take off。should で確認",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4g6k5b7t",
     "ja": "12番ゲートはどこですか？",
     "en": "Where is gate 12?",
@@ -38,6 +80,19 @@
     }
   },
   {
+    "id": "c_4p3y2y8r",
+    "ja": "毛布をもう一枚ください。",
+    "en": "Could I have another blanket?",
+    "alternatives": ["Can I get another blanket?", "May I have one more blanket?"],
+    "point": "「もう一枚」は another + 単数名詞",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4t9p8g2r",
     "ja": "ゲートが変わったと聞いた。",
     "en": "I heard the gate had changed.",
@@ -58,6 +113,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5b9w5d9z",
+    "ja": "トイレがありますよ。",
+    "en": "There's a restroom.",
+    "alternatives": ["We have a restroom here.", "You'll find a restroom."],
+    "point": "「〜がある」は There's + 単数名詞",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6m3t3h7p",
@@ -101,6 +169,19 @@
     }
   },
   {
+    "id": "c_7h5r8u6j",
+    "ja": "機内にWi-Fiある？",
+    "en": "Is there Wi-Fi onboard?",
+    "alternatives": ["Does the plane have Wi-Fi?", "Is Wi-Fi available on board?"],
+    "point": "Wi-Fi は数えない名詞。a を付けない",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 2,
+    "grammar": ["there-is-are", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7z8w3v9p",
     "ja": "もう30分も待っています。",
     "en": "I've been waiting for thirty minutes.",
@@ -135,6 +216,32 @@
     "subtopic": "airport",
     "level": 4,
     "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9n3w7k9b",
+    "ja": "母が外で待っています。",
+    "en": "Mom's waiting outside.",
+    "alternatives": ["My mother is waiting outside.", "Mom is waiting out front."],
+    "point": "今待っている最中は is waiting",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9y8a8b2y",
+    "ja": "私のパスポートです。",
+    "en": "This is my passport.",
+    "alternatives": ["Here's my passport.", "My passport is right here."],
+    "point": "「これが」は This is。物を差し出すときの定番",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-29",
     "stamps": {}
   }
