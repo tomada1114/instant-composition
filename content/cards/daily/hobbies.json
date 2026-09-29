@@ -1,37 +1,5 @@
 [
   {
-    "id": "c_2a8e2j6t",
-    "ja": "湖のそばのあのキャビン、借りようよ。",
-    "en": "Let's rent that cabin by the lake.",
-    "alternatives": [
-      "Want to rent that cabin by the lake?",
-      "How about renting that cabin by the lake?"
-    ],
-    "point": "「湖のそばの」は名詞の後ろに by the lake を置く",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 4,
-    "grammar": ["post-modification"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2j5v7p6k",
-    "ja": "壊れたギターのネック、プロに直してもらったんだ。",
-    "en": "I had a pro fix my guitar's broken neck.",
-    "alternatives": [
-      "I got a pro to fix my guitar's broken neck.",
-      "I got my guitar's broken neck fixed by a pro."
-    ],
-    "point": "have + 人 + 動詞の原形で「〜してもらう」",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 9,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2w7a6c6s",
     "ja": "野外フェス、雨で中止になったんだって。",
     "en": "Apparently, the festival was rained out.",
@@ -45,7 +13,13 @@
     "level": 5,
     "grammar": ["passive-voice", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:25c45dc1c7ed7e5e238a581a7178edcafce65e5e196f2ff9f20358e350727e39",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3k6y6p5j",
@@ -61,7 +35,13 @@
     "level": 5,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:915db578e57656f47805f0b61607d5a69b3be91675a72784f8e7095ba8b0bbc5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3q5b3s2b",
@@ -166,7 +146,13 @@
     "level": 4,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b8d58b78873afe8738ed8c321972dd057c1c800a999e3c8f6f05c1bacba2d06a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4f6z2s8r",
@@ -182,7 +168,13 @@
     "level": 7,
     "grammar": ["hedging-softening", "modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:224b57ec4f030d1b44a1053c462ef0b51ce11fb230c8ea93a8d270616c0064fd",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4f7y9d7d",
@@ -198,7 +190,13 @@
     "level": 4,
     "grammar": ["time-and-if-clauses", "future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5ff15dd2bcad0be86e2ec6e149f8605274e10c88de7329c45bce1d36dc9a368e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4p9u6h3h",
@@ -214,7 +212,13 @@
     "level": 5,
     "grammar": ["concession-contrast", "future-forms"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f23969f3b62a1cefcde9dfacdcf16151f5c2a75f5d783acb7520c13d0b9c0aa9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4w4t9u4g",
@@ -239,22 +243,6 @@
     }
   },
   {
-    "id": "c_4x3m5c7j",
-    "ja": "週末は、子どもたちに好きなだけゲームをさせてるんだ。",
-    "en": "I let my kids game all they want on weekends.",
-    "alternatives": [
-      "On weekends, I let my kids play video games all they want.",
-      "Weekends, I let my kids play games as much as they like."
-    ],
-    "point": "let + 人 + 動詞の原形。「〜させる」は to を付けない",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 10,
-    "grammar": ["causatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_5a8f6x6a",
     "ja": "あの棚のプラモデル、全部自分で作ったよ。",
     "en": "I built every model on that shelf myself.",
@@ -268,23 +256,13 @@
     "level": 4,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_5e7j7x5b",
-    "ja": "休日は、朝寝坊が一番の楽しみだよ。",
-    "en": "On days off, I love sleeping in most.",
-    "alternatives": [
-      "I like sleeping in best on days off.",
-      "On days off, I enjoy sleeping in most."
-    ],
-    "point": "「休日は」は On days off。love の後は -ing 形",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 4,
-    "grammar": ["gerunds"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f98238b1244830ae4b78e8873cbdf2cc7944a29967eac1982c96475b0970966",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5k2h6f8v",
@@ -300,7 +278,13 @@
     "level": 4,
     "grammar": ["relative-clauses", "post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:71e8565f588d9f92faaf654b164852c392f577bb4906bf3ea40699d47163a776",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5p4c6v4v",
@@ -420,7 +404,13 @@
     "level": 7,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:409da90e88336f1d441145f88289f635f87f56e6e561e43cc158eb5729770090",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6z8e3x5v",
@@ -436,7 +426,13 @@
     "level": 4,
     "grammar": ["comparatives-superlatives", "post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:50660aaa14641eb97336940ad431fe71b0a840528ea80f0b19d04fcc8b976da5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7a4q6w4p",
@@ -474,7 +470,13 @@
     "level": 7,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:428e019baea46f0ea9bb4aca16b790d8ffcc12c20e12df325c2fed03073fa668",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7z4x5c5t",
@@ -490,7 +492,13 @@
     "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:db607a821acb57486a0856f23b10134d0092b101f55384180176355c5f3232a5",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8e8w9k8v",
@@ -506,7 +514,13 @@
     "level": 7,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1adbb2c288d6410900cd61183501c89a546a67dc3342fa142306ae9bc5aeea36",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8f9p8x7m",
@@ -617,22 +631,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_8z2r6q5d",
-    "ja": "宝くじが当たったら、毎週末ふらっと旅に出るのにな。",
-    "en": "If I won the lottery, I'd jet off every weekend.",
-    "alternatives": [
-      "If I hit the jackpot, I'd be off traveling every weekend.",
-      "I'd be off somewhere every weekend if I won the lottery."
-    ],
-    "point": "現在の空想は if + 過去形、主節は would + 原形",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 9,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_9d4j4f4v",
