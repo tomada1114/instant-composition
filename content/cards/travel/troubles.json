@@ -1,21 +1,5 @@
 [
   {
-    "id": "c_2g7v4j8a",
-    "ja": "財布を盗まれたのは、改札のところだよ。",
-    "en": "It was at the turnstile that my wallet got stolen.",
-    "alternatives": [
-      "The turnstile is where my wallet got stolen.",
-      "It was at the turnstiles that my wallet was stolen."
-    ],
-    "point": "強調したい場所を It was と that の間に挟む",
-    "topic": "travel",
-    "subtopic": "troubles",
-    "level": 8,
-    "grammar": ["cleft-emphasis"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2q5b4z9t",
     "ja": "私の立場なら、なくしたカードを止めますか？",
     "en": "If you were me, would you cancel the card?",
@@ -29,7 +13,13 @@
     "level": 6,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c39034c61fbbefc090fc4f2cfa0ca4fe134465c6a397dc96662a08a972e7090",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3d5a8s3f",
@@ -67,7 +57,13 @@
     "level": 7,
     "grammar": ["modal-perfect", "post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1d6b743bbd9e68ff16e6831546e0a523df1e382331025afe6a3d23e63e9184e3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4d3q8z9g",
@@ -121,7 +117,13 @@
     "level": 7,
     "grammar": ["hedging-softening", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bb3d265ae5e771330127b5f27b572466e63d67ff71b4a06c95f7aee99f763f90",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6d6w5e2d",
@@ -137,7 +139,13 @@
     "level": 6,
     "grammar": ["causatives", "verb-object-to-do"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3ffcb9dab08c2f2d5cdd75e269fe9046c85d64e090cb48a02cad698d2e2e967c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6v3h2p5g",
@@ -219,7 +227,13 @@
     "level": 6,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:17ef171e219bcabc40cddeead212fcf466cd853fd8301627b937776f89175721",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7q2n4p8u",
@@ -257,7 +271,13 @@
     "level": 4,
     "grammar": ["passive-voice", "modal-obligation-advice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f2055f3266541c63473a782c77f3e0d8cc52b035cd9ddb2bc2cf49e120efb37e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8d4k7r2j",
@@ -273,7 +293,13 @@
     "level": 6,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4093b24fc1ae93e6d99bc6e1815e810370b708193b90524ed036a8bc22d79a68",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8v4c9z4v",
@@ -311,6 +337,12 @@
     "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f3f4242c0c302e1f61b4a5f68c2fdadc4b51df57fbe1ec20292de1fc19bbd272",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
