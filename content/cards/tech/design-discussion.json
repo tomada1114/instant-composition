@@ -309,22 +309,6 @@
     }
   },
   {
-    "id": "c_6b6k4g7z",
-    "ja": "今の段階だと、拡張性よりシンプルさのほうが大事だよ。",
-    "en": "At this stage, simplicity trumps scalability.",
-    "alternatives": [
-      "Simplicity matters more than scalability at this point.",
-      "Right now, simplicity outweighs scalability."
-    ],
-    "point": "抽象名詞は無冠詞。trump は「〜に勝る」",
-    "topic": "tech",
-    "subtopic": "design-discussion",
-    "level": 10,
-    "grammar": ["articles-and-countability"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6d6j2v4r",
     "ja": "障害が広がらない設計にできないでしょうか？",
     "en": "Couldn't we design it so failures don't spread?",
@@ -654,18 +638,18 @@
     }
   },
   {
-    "id": "c_9x6m2k5z",
-    "ja": "まず、リードにこの案の妥当性を確認してもらおう。",
-    "en": "Let's have the lead sanity-check this design first.",
+    "id": "c_9n5k3m2b",
+    "ja": "うちが作り込みすぎてなければ、もうリリースできてたのに。",
+    "en": "Had we not over-engineered it, we'd have shipped by now.",
     "alternatives": [
-      "Let's get the lead to sanity-check this design first.",
-      "First, let's get the lead to vet this design."
+      "If we hadn't over-engineered it, we'd have shipped by now.",
+      "If we hadn't gold-plated it, we would have shipped already."
     ],
-    "point": "have + 人 + 原形で「〜してもらう」。get は to が要る",
+    "point": "Had we not ~ は If we hadn't ~ の倒置。後ろは would have + 過去分詞",
     "topic": "tech",
     "subtopic": "design-discussion",
     "level": 10,
-    "grammar": ["causatives"],
+    "grammar": ["inversion", "third-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },

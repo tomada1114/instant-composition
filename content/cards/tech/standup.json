@@ -38,22 +38,6 @@
     "stamps": {}
   },
   {
-    "id": "c_2s3c8y3b",
-    "ja": "私が知っていれば、もっと早く共有したのに。",
-    "en": "If I'd known, I would've shared it sooner.",
-    "alternatives": [
-      "If I had known, I'd have told you earlier.",
-      "Had I known, I would have shared it sooner."
-    ],
-    "point": "If + had 過去分詞、would have 過去分詞 で過去の反対",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 6,
-    "grammar": ["third-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2u2s5z6b",
     "ja": "レビュー待ちの PR、三つ見てもらえますか？",
     "en": "Could you check the three PRs waiting on review?",
@@ -184,22 +168,6 @@
     "stamps": {}
   },
   {
-    "id": "c_4m9k6c3m",
-    "ja": "報告することは少ないですが、もうすぐ終わります。",
-    "en": "I have little to report, but I'm almost done.",
-    "alternatives": [
-      "There isn't much to report, but I'm almost finished.",
-      "I don't have much to report, but I'll finish soon."
-    ],
-    "point": "「報告する〜」は名詞のあとに to report を置く",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 7,
-    "grammar": ["infinitives", "concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_4r3p5d8b",
     "ja": "健太は今日、デプロイしなきゃ。",
     "en": "Kenta has to deploy today.",
@@ -217,22 +185,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_4u4g5m8h",
-    "ja": "昨日の障害は復旧して、今は安定しています。",
-    "en": "Yesterday's outage was fixed, and it's stable now.",
-    "alternatives": [
-      "We fixed yesterday's outage, and things are stable now.",
-      "Yesterday's outage has been resolved; it's stable now."
-    ],
-    "point": "昨日は過去形、今の状態は現在形で使い分ける",
-    "topic": "tech",
-    "subtopic": "standup",
-    "level": 6,
-    "grammar": ["tense-contrast", "passive-voice"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_4z9f5q4d",
@@ -255,6 +207,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_5s3j6h3w",
+    "ja": "知っていれば、もっと早く共有したのに。",
+    "en": "If I'd known, I would've shared it sooner.",
+    "alternatives": [
+      "If I had known, I'd have shared it earlier.",
+      "I would have shared it sooner if I'd known."
+    ],
+    "point": "If + had 過去分詞、would have 過去分詞 で過去の反対",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_5s7m8c2v",
@@ -445,6 +413,22 @@
     }
   },
   {
+    "id": "c_7a3d8p8h",
+    "ja": "報告することは少ないです。もうすぐ終わります。",
+    "en": "I have little to report. I'm almost done.",
+    "alternatives": [
+      "There isn't much to report. I'm almost finished.",
+      "I don't have much to report; I'll finish soon."
+    ],
+    "point": "「報告する〜」は名詞のあとに to report を置く",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 6,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7d4q3e7e",
     "ja": "テスト終わったら、連絡します。",
     "en": "I'll message you when tests are done.",
@@ -585,6 +569,22 @@
         "at": "2026-09-28"
       }
     }
+  },
+  {
+    "id": "c_8j8g5u6k",
+    "ja": "昨日の障害は復旧して、今は安定してます。",
+    "en": "Yesterday's outage was fixed, and it's stable now.",
+    "alternatives": [
+      "Yesterday's outage is fixed, and it's stable now.",
+      "Yesterday's outage was resolved; it's stable now."
+    ],
+    "point": "昨日は過去形、今の状態は現在形で使い分ける",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 4,
+    "grammar": ["tense-contrast", "passive-voice"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
   },
   {
     "id": "c_8p3j3z3j",

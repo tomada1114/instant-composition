@@ -4,13 +4,13 @@
     "ja": "この設定、ずっと探してるのに見つからないんだ。",
     "en": "I've been hunting for this setting forever, with no luck.",
     "alternatives": [
-      "I've been searching for this setting for ages without any luck.",
-      "I've been digging for this setting forever and found nothing."
+      "I've been searching for this setting for ages, no luck.",
+      "I can't find this setting, and I've been looking forever."
     ],
     "point": "「ずっと〜している」は現在完了進行形 have been -ing",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 9,
+    "level": 7,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -40,9 +40,9 @@
   {
     "id": "c_2e3f5v3b",
     "ja": "ログが出ない理由がわからないんです。",
-    "en": "I don't know why nothing's logging.",
+    "en": "I don't know why logs aren't showing up.",
     "alternatives": [
-      "I can't figure out why nothing's logged.",
+      "I can't figure out why logs aren't appearing.",
       "I don't know why the logs are missing."
     ],
     "point": "why の後ろは疑問文の語順にしない",
@@ -77,17 +77,17 @@
   },
   {
     "id": "c_2k2x2k5h",
-    "ja": "設定を保存したら、エディタを再起動してね。",
-    "en": "After saving the settings, restart the editor.",
+    "ja": "保存したら、エディタを再起動してね。",
+    "en": "After saving, restart the editor.",
     "alternatives": [
-      "Once you've saved the settings, restart the editor.",
-      "Save the settings, then restart the editor."
+      "Once you save, restart the editor.",
+      "Save it, then restart the editor."
     ],
-    "point": "「〜したら」を After + 〜ing の分詞構文で言える",
+    "point": "「〜したら」は After + 〜ing で短く言える（命令文が続く）。",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 6,
-    "grammar": ["participle-clauses"],
+    "level": 3,
+    "grammar": ["time-and-if-clauses", "imperatives"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -236,16 +236,16 @@
   {
     "id": "c_4f6u7b6k",
     "ja": "ログをひと通り見たけど、手がかりは全然なかったよ。",
-    "en": "I combed through the logs but found no clues whatsoever.",
+    "en": "I combed through the logs but found no clues.",
     "alternatives": [
-      "I went through the logs and found no clues at all.",
-      "I looked through the logs, but nothing gave me a clue."
+      "I went through the logs but found no clues.",
+      "I looked through the logs, but found nothing useful."
     ],
-    "point": "comb through は「くまなく調べる」。clues は複数形",
+    "point": "comb through は「くまなく調べる」（look through より徹底的）。",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 9,
-    "grammar": ["articles-and-countability"],
+    "level": 7,
+    "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -387,22 +387,6 @@
     }
   },
   {
-    "id": "c_6t7a3h6w",
-    "ja": "僕に必要なのは、キャッシュを消す方法だよ。",
-    "en": "What I need is a way to purge caches.",
-    "alternatives": [
-      "What I need is a way to clear the cache.",
-      "The thing I need is a way to clear caches."
-    ],
-    "point": "What で始めて「必要なのは」を強調、a way to + 動詞で「方法」",
-    "topic": "tech",
-    "subtopic": "tools",
-    "level": 8,
-    "grammar": ["infinitives", "cleft-emphasis"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7a4s9r8c",
     "ja": "ビルドの設定を変えてもいいですか？",
     "en": "Would you mind if I changed the build settings?",
@@ -426,32 +410,33 @@
   },
   {
     "id": "c_7a6x9t2x",
-    "ja": "この設定の形式について、ドキュメントか何かありますか？",
-    "en": "Do you happen to have any documentation on this config format?",
+    "ja": "この設定の形式、ドキュメントか何かありますか？",
+    "en": "Do you happen to have documentation on this config format?",
     "alternatives": [
       "Is there any documentation on this config format?",
-      "Could you point me to some documentation on this config format?"
+      "Could you point me to documentation on this format?",
+      "Do you have docs or anything on this config format?"
     ],
     "point": "documentation は数えられない名詞。a も -s も付けない",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 9,
-    "grammar": ["articles-and-countability"],
+    "level": 7,
+    "grammar": ["hedging-softening", "articles-and-countability"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_7n7c7u7f",
     "ja": "先週入れた拡張機能、もう消しちゃったの？",
-    "en": "Wait, you've already ditched that extension you installed last week?",
+    "en": "Have you already deleted the extension you installed last week?",
     "alternatives": [
       "You've already removed the extension you installed last week?",
-      "Did you already drop the extension you installed last week?"
+      "Did you already uninstall the extension from last week?"
     ],
     "point": "「もう〜したの」は already。last week は過去形とセット",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 9,
+    "level": 7,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -461,13 +446,14 @@
     "ja": "ターミナルで日本語が打てないんだ。",
     "en": "I can't type Japanese in the terminal.",
     "alternatives": [
-      "I'm unable to type Japanese in the terminal.",
-      "The terminal won't let me type Japanese."
+      "I can't type Japanese into the terminal.",
+      "The terminal won't let me type Japanese.",
+      "I can't enter Japanese in the terminal."
     ],
     "point": "「打てない」は can't type。前置詞は in the terminal",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 5,
+    "level": 2,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -502,8 +488,8 @@
     "point": "最上級には the が必要：the fastest way",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 4,
-    "grammar": ["comparatives-superlatives", "post-modification"],
+    "level": 3,
+    "grammar": ["comparatives-superlatives", "infinitives"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -528,24 +514,25 @@
     "ja": "私が入れたプラグイン、もう動いてる？",
     "en": "Is the plugin I installed working yet?",
     "alternatives": [
-      "Does the plugin I installed work yet?",
-      "Has the plugin I installed started working?"
+      "Is the plugin I added working yet?",
+      "Has the plugin I installed started working?",
+      "Is the plugin I installed running yet?"
     ],
     "point": "入れたプラグイン = the plugin I installed（that は省ける）",
     "topic": "tech",
     "subtopic": "tools",
     "level": 4,
-    "grammar": ["relative-clauses", "tense-contrast"],
+    "grammar": ["relative-clauses", "progressive-aspect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_9q8k2c2d",
     "ja": "ビルド、ずっと待ってるんだけど。",
-    "en": "I've been waiting for this build.",
+    "en": "I've been waiting on the build forever.",
     "alternatives": [
-      "I've been waiting on this build.",
-      "I've been waiting for the build to finish."
+      "I've been waiting for the build forever.",
+      "I've been waiting for the build for ages."
     ],
     "point": "「ずっと〜してる」は have been -ing。for は待つ対象",
     "topic": "tech",

@@ -13,23 +13,13 @@
     "level": 7,
     "grammar": ["post-modification", "present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_2g9y7u8w",
-    "ja": "このエラー、いつから出続けているんですか？",
-    "en": "How long has this error been showing up?",
-    "alternatives": [
-      "Since when has this error been happening?",
-      "How long has this error been occurring?"
-    ],
-    "point": "継続期間を聞くなら How long＋現在完了進行形",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 6,
-    "grammar": ["present-perfect-continuous"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:aef401fdd334a2fca8c1b5a813b1395cdb0f7d7f7596b9d9feaf51d474b27b8f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2k2x5j2r",
@@ -45,7 +35,13 @@
     "level": 7,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:491ba36c6cf4f64d0c91893db48b9c629ca2c80aa3a90cd2a6c833cf8ac839ea",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2q9z3j2c",
@@ -83,7 +79,13 @@
     "level": 6,
     "grammar": ["gerunds", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:713909b8ebedb911cc158438d376913c38a70e12d78ec45d40ba54c1f38e21e8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2s7z5w6u",
@@ -121,7 +123,13 @@
     "level": 4,
     "grammar": ["verb-object-to-do", "relative-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b46ec90007d218466b3bc63c15175f289afec3cabc417fff205b3f71c974705f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2y4f2r4r",
@@ -273,7 +281,13 @@
     "level": 6,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:36e2d973e4395b284be12b4d207ad2c59fba0e8553e4ff60a4df8bf7656d91c8",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3w6y7f3n",
@@ -434,7 +448,13 @@
     "level": 7,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:32c6841f4c9af331f2f80dc8e2660ec4502ac60b4b5ba4d897d04a25c4a8e1e9",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5f7b4a3n",
@@ -510,7 +530,13 @@
     "level": 4,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ec0de0862080ea2de3655548b054aa7e567ac83b69864be8be06a7903e82f636",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6g6d7u5w",
@@ -557,22 +583,6 @@
     }
   },
   {
-    "id": "c_6k8d8t6c",
-    "ja": "ログを残さずに再起動したのは、失敗だった。",
-    "en": "Restarting it without saving the logs was a mistake.",
-    "alternatives": [
-      "Restarting without keeping the logs was a mistake.",
-      "Restarting it without keeping the logs was a mistake."
-    ],
-    "point": "without の後は動名詞、主語にも動名詞が使える",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 6,
-    "grammar": ["gerunds"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6m2n2y5r",
     "ja": "彼は原因を突き止めるのに苦労している。",
     "en": "He's having trouble tracking down the cause.",
@@ -586,23 +596,13 @@
     "level": 5,
     "grammar": ["gerunds", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6m5b6d6q",
-    "ja": "同じ手順を繰り返しても、たまにしか出ない。",
-    "en": "Even if I repeat them, it only happens sometimes.",
-    "alternatives": [
-      "Even when I repeat the steps, it only occurs occasionally.",
-      "It only happens sometimes, even if I repeat the steps."
-    ],
-    "point": "「繰り返しても」は Even if ～、で言える",
-    "topic": "tech",
-    "subtopic": "debugging",
-    "level": 8,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d9cbcdf1241e723ba5d2036a492d2df4d754d2e537ea954f2c5518bcbfecd2f1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6n6t6x9w",
@@ -729,7 +729,13 @@
     "level": 4,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1d80db9abe9de4a4f755fca0919bfd8980c7e52cc51ed78a5e98b113ee4f1e13",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7k6p4k9e",

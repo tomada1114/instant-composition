@@ -22,22 +22,6 @@
     }
   },
   {
-    "id": "c_2k4u4d6d",
-    "ja": "障害が出たとき、私はちょうどデプロイ中でした。",
-    "en": "I was deploying when the outage hit.",
-    "alternatives": [
-      "The outage hit while I was deploying.",
-      "I was mid-deploy when the outage hit."
-    ],
-    "point": "その最中の動作は過去進行形、起きた出来事は過去形",
-    "topic": "tech",
-    "subtopic": "incidents",
-    "level": 6,
-    "grammar": ["progressive-aspect", "past-simple"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2s2c8w7f",
     "ja": "今は再起動しないでください。",
     "en": "Please don't restart it now.",

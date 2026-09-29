@@ -38,6 +38,22 @@
     }
   },
   {
+    "id": "c_2g4j9n8z",
+    "ja": "今リリースするしかないなら、うちは何を削る？",
+    "en": "If we had to release now, what'd we cut?",
+    "alternatives": [
+      "What'd we cut if we had to release now?",
+      "If we had to release now, what'd we drop?"
+    ],
+    "point": "現実味の薄い仮定は if + 過去形、主節は would",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 6,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2h8e2q5k",
     "ja": "営業に、要望をまとめるよう頼んでくれる？",
     "en": "Can you ask sales to compile the requests?",
@@ -206,22 +222,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_4s9h2v6h",
-    "ja": "来週出荷するしかないとしたら、あなたなら何を削る？",
-    "en": "If you had to ship next week, what would you cut?",
-    "alternatives": [
-      "What would you cut if you had to ship next week?",
-      "If you were forced to ship next week, what would you drop?"
-    ],
-    "point": "現実味の薄い仮定は if + 過去形、主節は would。cut は「削る」",
-    "topic": "tech",
-    "subtopic": "product-talk",
-    "level": 10,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_4v5g8m6r",
