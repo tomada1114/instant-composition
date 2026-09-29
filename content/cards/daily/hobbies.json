@@ -10,7 +10,7 @@
     "point": "過去の後悔は wish + had 過去分詞",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 8,
+    "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -218,13 +218,13 @@
     "ja": "夫は日曜、ラジオを聞きながら庭いじりしてます。",
     "en": "My husband gardens on Sundays, listening to the radio.",
     "alternatives": [
-      "My husband spends Sundays gardening and listening to the radio.",
+      "My husband gardens on Sundays while the radio plays.",
       "On Sundays, my husband gardens with the radio on."
     ],
     "point": "「〜しながら」は文の後ろに -ing 形をつなげて表せる",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 7,
+    "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -240,7 +240,7 @@
     "point": "gear は数えられない名詞なので gears としない",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 8,
+    "level": 7,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -358,8 +358,8 @@
     "point": "「はまる」は get into。今の状態は現在完了で言う",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 10,
-    "grammar": ["phrasal-verbs"],
+    "level": 6,
+    "grammar": ["phrasal-verbs", "present-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -390,7 +390,7 @@
     "point": "行った時点より前の出来事は過去完了 had closed",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 8,
+    "level": 7,
     "grammar": ["past-perfect", "relative-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -439,7 +439,7 @@
     "point": "「らしい」は apparently や I hear で伝聞のニュアンスを出す",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 9,
+    "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
     "stamps": {}

@@ -37,7 +37,7 @@
     "en": "My sister went to buy detergent.",
     "alternatives": [
       "My sister went out to buy detergent.",
-      "My sister just went to get detergent."
+      "My sister went to get detergent."
     ],
     "point": "目的の「〜しに」は to + 動詞の原形で表す",
     "topic": "daily",
@@ -86,7 +86,10 @@
     "id": "c_3g6w5e4d",
     "ja": "弟はもうアイロンがけできるよ。",
     "en": "My brother can iron now.",
-    "alternatives": ["Now my brother can iron.", "My brother can iron clothes now."],
+    "alternatives": [
+      "My brother can iron clothes now.",
+      "My brother can already iron."
+    ],
     "point": "can の後ろは動詞の原形で irons にしない",
     "topic": "daily",
     "subtopic": "home",
@@ -230,10 +233,10 @@
   {
     "id": "c_6m6s2j8b",
     "ja": "洗濯機が止まったら、干してくれる？",
-    "en": "When it stops, can you hang it out?",
+    "en": "When it stops, can you hang the laundry?",
     "alternatives": [
-      "Can you hang it out when it stops?",
-      "Could you hang it out once it stops?"
+      "Can you hang the laundry when it stops?",
+      "Could you hang the laundry once it stops?"
     ],
     "point": "when 節は未来のことでも現在形 stops のまま",
     "topic": "daily",
@@ -281,7 +284,7 @@
     "en": "The milk in the fridge has expired.",
     "alternatives": [
       "The milk in the fridge is expired.",
-      "The fridge milk has already expired."
+      "That milk in the fridge is expired."
     ],
     "point": "「冷蔵庫の牛乳」は in the fridge を milk の後ろに置く",
     "topic": "daily",

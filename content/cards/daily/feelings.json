@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2a4r3u4w",
+    "ja": "知ってたら、迎えに行ったのに。残念！",
+    "en": "If I'd known, I'd have picked you up.",
+    "alternatives": [
+      "I'd have picked you up if I'd known.",
+      "If I'd known, I would have come get you."
+    ],
+    "point": "過去の仮定は If I'd known + I'd have 過去分詞",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_2k2e6b2r",
     "ja": "彼女、今朝からずっと機嫌が悪いよ。",
     "en": "She's been grumpy since this morning.",
@@ -83,22 +99,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_3q9w6a9q",
-    "ja": "あの日ちゃんと話し合っていたら、今こんなに気まずくないのに。",
-    "en": "If we'd talked it through, this wouldn't be so awkward now.",
-    "alternatives": [
-      "Had we talked it through, things wouldn't be this awkward now.",
-      "If we'd properly talked it over, we wouldn't feel awkward now."
-    ],
-    "point": "過去の仮定は had talked、今の結果は wouldn't be と分ける",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 10,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_4c5m2t9p",
@@ -266,6 +266,22 @@
     "stamps": {}
   },
   {
+    "id": "c_7b3n9n5h",
+    "ja": "彼女が私の案を気に入ったと聞いて、ほっとした。",
+    "en": "I was relieved to hear she liked my idea.",
+    "alternatives": [
+      "It was a relief to hear she liked my idea.",
+      "I felt relieved when I heard she liked my idea."
+    ],
+    "point": "聞いた内容の節は that を省いて過去形のまま続ける",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 8,
+    "grammar": ["reported-speech", "infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_7f6x3m3t",
     "ja": "電話している男性に、正直イライラしています。",
     "en": "Honestly, I'm annoyed by the man on the phone.",
@@ -332,22 +348,6 @@
     "subtopic": "feelings",
     "level": 6,
     "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_8c8x2z5y",
-    "ja": "知ってたら、迎えに行ったのに。残念！",
-    "en": "If I'd known, I'd have picked you up.",
-    "alternatives": [
-      "Had I known, I'd have picked you up.",
-      "If you'd told me, I'd have picked you up."
-    ],
-    "point": "過去の仮定は If I'd known + I'd have 過去分詞",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 6,
-    "grammar": ["third-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -425,50 +425,18 @@
     "stamps": {}
   },
   {
-    "id": "c_9k9a7a4v",
-    "ja": "彼女が私の案を気に入ったと聞いて、ほっとした。",
-    "en": "I was relieved to hear she liked my idea.",
+    "id": "c_9t6s2c2c",
+    "ja": "あの日ちゃんと話していたら、今こんなに気まずくないのに。",
+    "en": "If we'd hashed it out that day, this wouldn't be awkward now.",
     "alternatives": [
-      "It was a relief to hear she liked my idea.",
-      "I felt relieved when I heard she liked my idea."
+      "Had we talked it through that day, this wouldn't be so awkward.",
+      "If we'd talked it through that day, this wouldn't be awkward now."
     ],
-    "point": "聞いた内容の節は that を省いて過去形のまま続ける",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 8,
-    "grammar": ["reported-speech", "infinitives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9x4s8u9s",
-    "ja": "あの仕事を断っていなければ、彼は今もっと幸せかな？",
-    "en": "If he hadn't turned it down, would he be happier now?",
-    "alternatives": [
-      "Would he be happier now if he hadn't said no?",
-      "If he hadn't declined, would he be happier now?"
-    ],
-    "point": "過去の仮定は hadn't turned down、今の結果は would be",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 9,
-    "grammar": ["mixed-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9y9g5z9j",
-    "ja": "引っ越しで困っていたとき、同僚がいい助言をくれた。",
-    "en": "When I was moving, a coworker gave me great advice.",
-    "alternatives": [
-      "A coworker gave me some great advice during my move.",
-      "My coworker gave me a lot of useful advice on moving."
-    ],
-    "point": "advice は数えられないので advices や an advice にしない",
+    "point": "過去の仮定は had 過去分詞、今の結果は wouldn't be と分ける",
     "topic": "daily",
     "subtopic": "feelings",
     "level": 10,
-    "grammar": ["articles-and-countability"],
+    "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
   }
