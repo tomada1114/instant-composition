@@ -5,7 +5,9 @@ import { cn } from "../lib/utils";
 /**
  * `segmented`: one choice of a few, the chosen segment white on the raised
  * track. `columns` wraps more options than a phone's width holds into rows
- * of that many; `value` null leaves every segment unchosen.
+ * of that many; `value` null leaves every segment unchosen. `disabled`
+ * shows the value without offering the others: the chosen segment keeps its
+ * fill, the rest turn `text-disabled`, and none of them responds.
  *
  * Keys follow the WAI-ARIA radio group: only the chosen segment (the first
  * when none is) sits in the tab order, and the arrows, Home and End move
@@ -17,6 +19,7 @@ export function Segmented<T extends string | number>({
   value,
   onChange,
   columns,
+  disabled = false,
 }: Readonly<{
   label: string;
   options: readonly {
@@ -27,6 +30,7 @@ export function Segmented<T extends string | number>({
   value: T | null;
   onChange: (value: T) => void;
   columns?: number;
+  disabled?: boolean;
 }>): ReactElement {
   const buttons = useRef<(HTMLButtonElement | null)[]>([]);
   const checked = options.findIndex((option) => option.value === value);
@@ -66,6 +70,7 @@ export function Segmented<T extends string | number>({
     <div
       role="radiogroup"
       aria-label={label}
+      aria-disabled={disabled || undefined}
       className={cn(
         "rounded-control bg-card p-1",
         columns === undefined ? "flex" : "grid gap-y-1",
@@ -87,6 +92,7 @@ export function Segmented<T extends string | number>({
             onKeyDown(event, index);
           }}
           type="button"
+          disabled={disabled}
           role="radio"
           aria-checked={option.value === value}
           aria-label={option.label}
@@ -97,7 +103,9 @@ export function Segmented<T extends string | number>({
             "h-11 flex-1 rounded-tile font-display text-action",
             option.value === value
               ? "bg-primary text-primary-foreground"
-              : "text-foreground",
+              : disabled
+                ? "text-disabled"
+                : "text-foreground",
           )}
         >
           {option.text}

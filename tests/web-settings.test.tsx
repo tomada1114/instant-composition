@@ -70,6 +70,12 @@ const PAGE: SettingsPageView = {
   levels: LEVELS,
 };
 
+/** The same page with the level fixed by hand, where the levels are offered. */
+const MANUAL: SettingsPageView = {
+  ...PAGE,
+  difficulty: { mode: "manual", level: 5, toeic: "730" },
+};
+
 /**
  * An API that answers `page` for the settings read and saves every patch,
  * answering with `reply`'s extras; the patches it was sent are returned.
@@ -466,31 +472,49 @@ describe("the settings screen, W12 measuring again", () => {
 });
 
 describe("the settings screen, the difficulty", () => {
-  it("fixes a level picked by hand and shows it chosen by hand", async () => {
+  it("shows the level auto has reached without offering the others", async () => {
     const { choices } = serveSettings();
     await renderApp("/settings?tab=level");
+    expectLevel("auto", "730");
+    for (const radio of within(
+      screen.getByRole("radiogroup", { name: ja.Settings.difficulty.levels }),
+    ).getAllByRole("radio")) {
+      expect(radio).toBeDisabled();
+    }
     fireEvent.click(option("800"));
     await settle();
-    expect(choices).toStrictEqual([{ mode: "manual", level: 6 }]);
-    expect(option("800")).toHaveAttribute("aria-checked", "true");
+    expect(choices).toStrictEqual([]);
     expect(
-      screen.getByRole("radio", { name: ja.Settings.difficulty.manual }),
-    ).toHaveAttribute("aria-checked", "true");
+      screen.getByText(fill(ja.Settings.difficulty.autoAt, { toeic: "730" })),
+    ).toBeInTheDocument();
+  });
+
+  it("offers the levels once manual is chosen, and fixes the one picked", async () => {
+    const { choices } = serveSettings();
+    await renderApp("/settings?tab=level");
+    fireEvent.click(screen.getByRole("radio", { name: ja.Settings.difficulty.manual }));
+    await settle();
+    expect(option("800")).toBeEnabled();
+    fireEvent.click(option("800"));
+    await settle();
+    expect(choices).toStrictEqual([
+      { mode: "manual", level: 5 },
+      { mode: "manual", level: 6 },
+    ]);
     expect(screen.getByText(ja.Settings.difficulty.manualNote)).toBeInTheDocument();
     expectLevel("manual", "800");
   });
 
   it("switches a level picked by hand back to auto, keeping the level", async () => {
-    const { choices } = serveSettings({
-      ...PAGE,
-      difficulty: { mode: "manual", level: 5, toeic: "730" },
-    });
+    const { choices } = serveSettings(MANUAL);
     await renderApp("/settings?tab=level");
     expectLevel("manual", "730");
     fireEvent.click(screen.getByRole("radio", { name: ja.Settings.difficulty.auto }));
     await settle();
     expect(choices).toStrictEqual([{ mode: "auto" }]);
-    expect(screen.getByText(ja.Settings.difficulty.autoNote)).toBeInTheDocument();
+    expect(
+      screen.getByText(fill(ja.Settings.difficulty.autoAt, { toeic: "730" })),
+    ).toBeInTheDocument();
     expectLevel("auto", "730");
   });
 
@@ -527,7 +551,7 @@ describe("the settings screen, the difficulty", () => {
     const answers: ((response: Response) => void)[] = [];
     fakeApi((call) =>
       call.method === "GET"
-        ? Response.json(PAGE)
+        ? Response.json(MANUAL)
         : new Promise<Response>((resolve) => {
             answers.push(resolve);
           }),
@@ -557,7 +581,7 @@ describe("the settings screen, the difficulty", () => {
     const answers: ((response: Response) => void)[] = [];
     fakeApi((call) =>
       call.method === "GET"
-        ? Response.json(PAGE)
+        ? Response.json(MANUAL)
         : new Promise<Response>((resolve) => {
             answers.push(resolve);
           }),
@@ -571,13 +595,13 @@ describe("the settings screen, the difficulty", () => {
     expect(screen.getByRole("alert")).toHaveTextContent(ja.Settings.saveFailed);
     fireEvent.click(screen.getByRole("tab", { name: ja.Settings.tabs.level }));
     await settle();
-    expectLevel("auto", "730");
+    expectLevel("manual", "730");
   });
 
   it("goes back to the level as saved, and says so, when a change fails", async () => {
     fakeApi((call) => {
       if (call.method === "GET" && call.url === "/api/v1/settings") {
-        return Response.json(PAGE);
+        return Response.json(MANUAL);
       }
       return call.url === "/api/v1/level" ? refusal(409, "ERR_CONFLICT") : undefined;
     });
@@ -585,10 +609,7 @@ describe("the settings screen, the difficulty", () => {
     fireEvent.click(option("300"));
     await settle();
     expect(screen.getByRole("alert")).toHaveTextContent(ja.Settings.saveFailed);
-    expect(option("730")).toHaveAttribute("aria-checked", "true");
-    expect(
-      screen.getByRole("radio", { name: ja.Settings.difficulty.auto }),
-    ).toHaveAttribute("aria-checked", "true");
+    expectLevel("manual", "730");
   });
 });
 

@@ -9,7 +9,8 @@ import { Heading } from "./settings-sections";
 import type { LevelState } from "./use-level";
 
 /**
- * The level: who moves it, the level itself — a pick fixes it by hand — and
+ * The level: who moves it, the level itself — a pick fixes it by hand, so
+ * the levels are offered only in manual or before a placement — and
  * measuring again. Each change saves as it is made, and the controls
  * themselves show the mode and the level as they stand.
  */
@@ -48,12 +49,17 @@ export function LevelSection({
       <LevelPicker
         levels={levels}
         value={current}
+        disabled={view.mode === "auto" && current !== null}
         onChange={(picked) => {
           level.choose({ mode: "manual", level: picked });
         }}
       />
       <p className="text-caption text-muted-foreground">
-        {view.mode === "auto" ? t("autoNote") : t("manualNote")}
+        {view.mode === "manual"
+          ? t("manualNote")
+          : view.toeic === null
+            ? t("autoNote")
+            : t("autoAt", { toeic: view.toeic })}
       </p>
       <Button variant="secondary" className="w-full" onClick={onRetest}>
         {t("retest")}

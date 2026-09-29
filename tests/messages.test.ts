@@ -528,6 +528,7 @@ const MESSAGE_KEYS = [
   "Settings.difficulty.title",
   "Settings.difficulty.retest",
   "Settings.difficulty.auto",
+  "Settings.difficulty.autoAt",
   "Settings.difficulty.manual",
   "Settings.difficulty.mode",
   "Settings.difficulty.levels",
