@@ -57,7 +57,13 @@
     "level": 7,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b2b0708c5bc909af65524c86c46088e5455ae5ad11ec63694ba1306b477d5465",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2v7q4e5x",
@@ -77,22 +83,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_2y4g7x7u",
-    "ja": "彼女の話を聞いて、私は本当に胸が痛んだ。",
-    "en": "Hearing her story really pained me.",
-    "alternatives": [
-      "It really hurt to hear her story.",
-      "My heart ached when I heard her story."
-    ],
-    "point": "「聞いて」は Hearing ～ の分詞構文で理由を表せる",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 6,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_3a6c5f6y",
@@ -240,7 +230,13 @@
     "level": 4,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0534e1447ccae1ec4d9f7d2c307c7735aae613f52b70d74396c9adbc256304c6",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4c5m2t9p",
@@ -326,22 +322,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_5v7y5q2p",
-    "ja": "上司の言ったこと、正直ちょっと納得いかない。",
-    "en": "I'm not really convinced by what my boss said.",
-    "alternatives": [
-      "What my boss said doesn't sit well with me.",
-      "Honestly, I can't quite accept what my boss said."
-    ],
-    "point": "「言っていたこと」は what my boss said と名詞節で作る",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 6,
-    "grammar": ["noun-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_5w7s4h5p",
@@ -565,22 +545,6 @@
     }
   },
   {
-    "id": "c_6z5w8m7d",
-    "ja": "その知らせを聞いて、思わず気が滅入ってしまった。",
-    "en": "Hearing the news, I couldn't help feeling down.",
-    "alternatives": [
-      "I couldn't help feeling down after hearing the news.",
-      "I couldn't help but feel down at the news."
-    ],
-    "point": "「思わず〜してしまう」は couldn't help ～ing",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 7,
-    "grammar": ["gerunds", "participle-clauses"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_7g8z9h8q",
     "ja": "あの頃、もっと正直になればよかった。",
     "en": "I wish I'd been more honest back then.",
@@ -729,22 +693,6 @@
     }
   },
   {
-    "id": "c_8z5c3h9w",
-    "ja": "もう終わったから、肩の荷が下りた気分だよ。",
-    "en": "Now that it's over, I feel like a weight's been lifted.",
-    "alternatives": [
-      "Now that it's all over, it's a weight off my shoulders.",
-      "With that over, it feels like a weight has been lifted."
-    ],
-    "point": "今の気分は現在形、下りた荷は現在完了で言う",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 9,
-    "grammar": ["tense-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_9e4m3m8w",
     "ja": "兄に映画を最後まで見させられて、ムッとした。",
     "en": "My brother made me finish the movie. Annoying!",
@@ -765,21 +713,5 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_9h5w5t5j",
-    "ja": "その知らせに、涙をこらえられなかった。",
-    "en": "I couldn't hold back tears at the news.",
-    "alternatives": [
-      "I couldn't help crying at the news.",
-      "I couldn't keep from crying at the news."
-    ],
-    "point": "「こらえる」は hold back。過去の不可能は couldn't",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 5,
-    "grammar": ["can-could-ability", "phrasal-verbs"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   }
 ]
