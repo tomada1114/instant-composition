@@ -100,7 +100,7 @@ interface ReviewEntry {
   readonly before: MemoryState | null;
   readonly after: MemoryState;
   readonly snapshot: ItemSnapshot; // topic, level, prompt text at answer time
-  readonly payload: unknown; // activity-specific: pass, elapsedMs, limitMs, typed text
+  readonly payload: unknown; // activity-specific: pass, elapsedMs, limitMs, paceMs, typed text
 }
 ```
 
