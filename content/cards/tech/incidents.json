@@ -1,21 +1,5 @@
 [
   {
-    "id": "c_2h5x2u2m",
-    "ja": "その時点でもう2時間も止まっていた。",
-    "en": "It'd been down for two hours by then.",
-    "alternatives": [
-      "The server had been down for two hours.",
-      "It had been down a full two hours."
-    ],
-    "point": "過去のある時点までの継続は had been で表す",
-    "topic": "tech",
-    "subtopic": "incidents",
-    "level": 5,
-    "grammar": ["past-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_2j9u7u7s",
     "ja": "昨夜から復旧作業中ですが、まだ終わっていません。",
     "en": "We've been on it since last night but aren't done.",
@@ -47,9 +31,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:58eb86163b408a46c6684f3e667a72537865c0ace559fc75c13008b2fce7c7dc",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:76587114323eb93955ac1c2db2d59e111edc298fd1bc1964143c807e0c1472a4",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -67,7 +51,13 @@
     "level": 5,
     "grammar": ["phrasal-verbs", "present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f84678fc447b78a07d826bb7723f48d65b87fb72d354bffcbbdd7ab7c44b260d",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2z6d5b6n",
@@ -96,7 +86,13 @@
     "level": 3,
     "grammar": ["wh-questions", "passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7849528a36ed0d55d106c55a2108286bbd56332feecd27627b794bfe30ff1d12",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3m4c7r3h",
@@ -144,7 +140,13 @@
     "level": 4,
     "grammar": ["relative-clauses", "passive-voice"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9037274c802aad21ff4e59e361999802110e0951f9ae296096119afcd3466b74",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4m8p3n3n",
@@ -160,7 +162,13 @@
     "level": 4,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d4b28f25a63c7e7e5e07dd33792e0daddd467bceb750a4f0c263b9c1e554c5b3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4n4v3u6g",
@@ -173,7 +181,13 @@
     "level": 2,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:53d30665df0b93d690661e658753a41c1699679d733ac3a857dca6da5b8e9a0a",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_4q4d6d3w",
@@ -237,7 +251,13 @@
     "level": 5,
     "grammar": ["phrasal-verbs", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cde59275628fa0ae34eaee9fe472cccce259f6ea0bb85835db63363cb1a36e6c",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5q7n5m8z",
@@ -272,27 +292,11 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:097cb60aebbb5b4514806642b5afb1d491228dfcafdfda20427a389cbb3576f3",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:443913e674def315f96f38f58507701f86ca72b4045128b9746f64ead55e9fc0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_5y6p2d2r",
-    "ja": "私たち、今夜もログを監視し続けるべき？",
-    "en": "Should we keep monitoring the logs tonight?",
-    "alternatives": [
-      "Should we keep watching the logs tonight?",
-      "Should we continue monitoring the logs tonight?"
-    ],
-    "point": "keep の後は動詞の ing 形にする",
-    "topic": "tech",
-    "subtopic": "incidents",
-    "level": 5,
-    "grammar": ["modal-obligation-advice", "gerunds"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_6q9j2m8m",
@@ -305,7 +309,13 @@
     "level": 1,
     "grammar": ["there-is-are", "articles-and-countability"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4163072948cad320dfb158d911163d77b3ea15b4112124f700ff4347ce019041",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7n4d4w6p",
@@ -318,7 +328,13 @@
     "level": 3,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b399d85d62cc1d202cbed1208c3c5d84927c59c8d6f8f70cb5e0a39ef7cc5e57",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7r4d4x8k",
@@ -365,9 +381,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:7b3016582d6c3043beb2926580ec887acd871741384fbe27dfde279ac1b860b0",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:af0f58d54d1469edc6672aa8b1619901b10773317ec19ad1cd8d4a37918aca80",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -434,6 +450,12 @@
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:60ae26fff75a01f0046c6718718e0b9ecbcf235f06a41234ac8008e09b430486",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
