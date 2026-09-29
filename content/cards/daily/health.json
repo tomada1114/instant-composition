@@ -21,9 +21,9 @@
     "en": "Should I avoid alcohol on this medicine?",
     "alternatives": [
       "Should I avoid drinking while taking this medicine?",
-      "Must I avoid alcohol with this medicine?"
+      "Should I avoid alcohol while taking this?"
     ],
-    "point": "avoid の後ろは名詞か動名詞で、to 不定詞は使えない",
+    "point": "「服用中」は on this medicine と短く言える（avoid の後は名詞か -ing）",
     "topic": "daily",
     "subtopic": "health",
     "level": 4,
@@ -68,13 +68,13 @@
     "ja": "左耳がおかしいので、今日診ていただけないでしょうか？",
     "en": "I was wondering if someone could check my left ear today.",
     "alternatives": [
-      "Is there any chance someone could look at my left ear today?",
-      "Could someone possibly take a look at my left ear today?"
+      "Could someone possibly look at my left ear today?",
+      "Would it be possible to check my left ear today?"
     ],
     "point": "「〜でしょうか」は I was wondering if で柔らかく",
     "topic": "daily",
     "subtopic": "health",
-    "level": 10,
+    "level": 9,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -132,10 +132,10 @@
     "ja": "薬を飲んで3日、頭痛が前よりひどい気がします。",
     "en": "Three days on this medicine, my headaches feel worse.",
     "alternatives": [
-      "It's been three days, and my headaches feel worse.",
+      "After three days on it, my headaches feel worse.",
       "I've taken it for three days, but my headache's worse."
     ],
-    "point": "「前よりひどい」は worse で言える",
+    "point": "「薬を飲んで3日」は Three days on this medicine, と文頭に置ける",
     "topic": "daily",
     "subtopic": "health",
     "level": 7,
@@ -148,13 +148,13 @@
     "ja": "薬剤師さんによると、胃薬は抗生物質を弱めるかも。",
     "en": "The pharmacist said my stomach medicine might weaken the antibiotics.",
     "alternatives": [
-      "According to the pharmacist, my stomach pills could weaken the antibiotics.",
-      "The pharmacist told me my stomach medicine might weaken the antibiotics."
+      "The pharmacist said my stomach pills might weaken the antibiotics.",
+      "The pharmacist warned my stomach medicine could weaken the antibiotics."
     ],
     "point": "said の後は時制を一つ下げて might にする",
     "topic": "daily",
     "subtopic": "health",
-    "level": 10,
+    "level": 7,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -181,12 +181,12 @@
     "en": "Have you ever had side effects from this?",
     "alternatives": [
       "Has this medicine ever given you side effects?",
-      "Did this ever give you side effects?"
+      "Have you had any side effects from this?"
     ],
     "point": "経験を聞くので Have you ever had、「〜で」は from",
     "topic": "daily",
     "subtopic": "health",
-    "level": 5,
+    "level": 4,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -197,12 +197,12 @@
     "en": "I want to know if surgery's necessary.",
     "alternatives": [
       "I'd like to know whether I need surgery.",
-      "I want to know whether I need an operation."
+      "I'd like to know if I need surgery."
     ],
     "point": "「〜かどうか」は if / whether で、語順は平叙文のまま",
     "topic": "daily",
     "subtopic": "health",
-    "level": 6,
+    "level": 4,
     "grammar": ["noun-clauses", "indirect-questions"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -213,7 +213,8 @@
     "en": "I've been coughing nonstop for two days.",
     "alternatives": [
       "I've been coughing for two days straight.",
-      "My cough hasn't stopped in two days."
+      "My cough hasn't stopped in two days.",
+      "I've had this cough for two days."
     ],
     "point": "今も続いている症状は I've been ＋ -ing ＋ for で言う",
     "topic": "daily",
@@ -263,8 +264,8 @@
     "ja": "彼、健診を受けてたら今ごろ入院してないのに。",
     "en": "If he'd had a checkup, he wouldn't be hospitalized now.",
     "alternatives": [
-      "Had he gotten a checkup, he wouldn't be hospitalized now.",
-      "If he'd been checked, he wouldn't be hospitalized now."
+      "If he'd gotten a checkup, he wouldn't be hospitalized now.",
+      "He wouldn't be hospitalized now if he'd had a checkup."
     ],
     "point": "過去の仮定は had+過去分詞、今の結果は wouldn't be",
     "topic": "daily",
@@ -308,13 +309,13 @@
   },
   {
     "id": "c_6f8d4x3s",
-    "ja": "先生に、薬の後は一日安静って言われた。",
+    "ja": "先生に、一日安静って言われた。",
     "en": "The doctor said to rest for a day.",
     "alternatives": [
       "My doctor said I should rest for a day.",
       "The doctor told me to rest for a day."
     ],
-    "point": "指示を伝えるときは told me to ＋ 動詞の原形",
+    "point": "「言われた」の指示は said to ＋動詞の原形（told me to も可）",
     "topic": "daily",
     "subtopic": "health",
     "level": 6,
@@ -341,10 +342,10 @@
   {
     "id": "c_6u6n4x8t",
     "ja": "先生に、昨日の牡蠣が原因かもと言われました。",
-    "en": "The doctor said the oysters might've made me sick.",
+    "en": "The doctor said yesterday's oysters might've made me sick.",
     "alternatives": [
-      "The doctor told me the oysters might've made me sick.",
-      "According to the doctor, the oysters might've made me sick."
+      "The doctor told me yesterday's oysters might've made me sick.",
+      "According to the doctor, yesterday's oysters might've made me sick."
     ],
     "point": "過去の推量は might have + 過去分詞",
     "topic": "daily",
@@ -360,12 +361,12 @@
     "en": "My mom fell and couldn't move, holding her wrist.",
     "alternatives": [
       "My mother fell and couldn't move, clutching her wrist.",
-      "Mom fell and was stuck there, gripping her wrist."
+      "My mom fell, clutching her wrist, unable to move."
     ],
     "point": "「押さえたまま」は文末に holding を添える",
     "topic": "daily",
     "subtopic": "health",
-    "level": 8,
+    "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -389,15 +390,15 @@
   {
     "id": "c_7q7c8z3b",
     "ja": "妹は熱があるのに、試験を受けると言い張ってる。",
-    "en": "Despite her fever, she insists on taking the exam.",
+    "en": "Despite her fever, my sister insists on taking the exam.",
     "alternatives": [
       "My sister insists on taking the exam despite her fever.",
-      "My sister's sick, but she insists on taking the exam."
+      "My sister's feverish but insists on taking the exam."
     ],
     "point": "insist は on + 動名詞、「のに」は Despite で前に出す",
     "topic": "daily",
     "subtopic": "health",
-    "level": 8,
+    "level": 7,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -407,15 +408,30 @@
     "ja": "教えてくれた花粉症の薬、まだありますか？",
     "en": "Do you still have the allergy medicine you mentioned?",
     "alternatives": [
-      "Is the allergy medicine you told me about still available?",
-      "Have you still got the allergy medicine you mentioned?",
-      "Is the allergy medicine you recommended still in stock?"
+      "Is that allergy medicine you mentioned still available?",
+      "Do you still carry the allergy medicine you mentioned?"
     ],
     "point": "medicine の直後に you mentioned をつなげる。関係詞 that は省略できる",
     "topic": "daily",
     "subtopic": "health",
-    "level": 8,
+    "level": 6,
     "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_7x6f5k7t",
+    "ja": "咳で昨夜は眠れなかった。",
+    "en": "Coughing kept me up last night.",
+    "alternatives": [
+      "My cough kept me awake last night.",
+      "I couldn't sleep last night from coughing."
+    ],
+    "point": "「眠れない原因」は無生物主語の keep me up/awake で言える",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 3,
+    "grammar": ["past-simple", "gerunds"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -468,24 +484,8 @@
     "point": "「処方薬」は my prescription と短く言える",
     "topic": "daily",
     "subtopic": "health",
-    "level": 5,
+    "level": 4,
     "grammar": ["requests-permission"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_9m3v3u9j",
-    "ja": "熱が出て、昨夜は眠れなかった。",
-    "en": "I couldn't sleep with a fever.",
-    "alternatives": [
-      "A fever kept me up all night.",
-      "I had a fever and couldn't sleep."
-    ],
-    "point": "「眠れなかった」は couldn't sleep で表す",
-    "topic": "daily",
-    "subtopic": "health",
-    "level": 3,
-    "grammar": ["past-simple", "can-could-ability"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -494,14 +494,14 @@
     "ja": "食後の薬ですが、朝食を抜いた日も飲むべきですか？",
     "en": "Should I still take this if I skip breakfast?",
     "alternatives": [
-      "Do I still need to take this if I skip breakfast?",
+      "Do I still need this if I skip breakfast?",
       "If I skip breakfast, should I take this anyway?"
     ],
     "point": "「〜も」は still、if 節は現在形",
     "topic": "daily",
     "subtopic": "health",
-    "level": 9,
-    "grammar": ["concession-contrast"],
+    "level": 7,
+    "grammar": ["time-and-if-clauses", "modal-obligation-advice"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -510,8 +510,8 @@
     "ja": "一晩高熱が続き、彼女は朝一番に受診しました。",
     "en": "Feverish all night, she saw a doctor first thing.",
     "alternatives": [
-      "Having run a fever all night, she saw a doctor.",
-      "After a feverish night, she saw a doctor first thing."
+      "After a feverish night, she saw a doctor first thing.",
+      "Feverish all night, she went to the doctor first thing."
     ],
     "point": "理由は文頭の分詞や形容詞で先に置ける",
     "topic": "daily",
@@ -526,14 +526,14 @@
     "ja": "この薬を飲んでから、発疹が出てきたんです。",
     "en": "I've broken out in a rash since taking this.",
     "alternatives": [
-      "Since I started taking this, I've broken out in a rash.",
-      "I've come out in a rash since I started this medicine."
+      "I've gotten a rash since taking this.",
+      "I've had a rash since I started this."
     ],
     "point": "発疹が出るは break out in a rash、since と現在完了",
     "topic": "daily",
     "subtopic": "health",
-    "level": 9,
-    "grammar": ["phrasal-verbs", "tense-contrast"],
+    "level": 6,
+    "grammar": ["present-perfect", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },

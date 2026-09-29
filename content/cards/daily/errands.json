@@ -2,32 +2,32 @@
   {
     "id": "c_2d9z8s5z",
     "ja": "兄が郵便局に間に合ってたら、受け取れたのに。",
-    "en": "If he'd made it, my brother could've collected it.",
+    "en": "My brother could've gotten it if he'd made it.",
     "alternatives": [
-      "My brother could've picked it up if he'd made it.",
-      "Had my brother made it, he could've collected it."
+      "If he'd made it, my brother could've gotten it.",
+      "My brother could've received it if he'd made it."
     ],
     "point": "過去の仮定は had＋過去分詞、結果は could have＋過去分詞",
     "topic": "daily",
     "subtopic": "errands",
-    "level": 8,
+    "level": 6,
     "grammar": ["third-conditional", "modal-perfect"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_3p4p5c2v",
-    "ja": "郵便局の人が、小包は明日届くと言っていたよ。",
+    "ja": "郵便局の人が小包は明日届くと言ってた。",
     "en": "The clerk said the package would arrive tomorrow.",
     "alternatives": [
-      "The clerk told me the package would arrive tomorrow.",
+      "The clerk said the parcel would come tomorrow.",
       "The clerk said the package will arrive tomorrow."
     ],
     "point": "said の後の that 節は will を would に揃えることが多い",
     "topic": "daily",
     "subtopic": "errands",
-    "level": 6,
-    "grammar": ["noun-clauses", "reported-speech"],
+    "level": 5,
+    "grammar": ["reported-speech"],
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
@@ -107,47 +107,30 @@
     "ja": "もしキャッシュカードをなくしたら、銀行に電話する？",
     "en": "If you lost your card, would you call the bank?",
     "alternatives": [
-      "If you lost your card, would you phone the bank?",
       "Would you call your bank if you lost your card?",
-      "If your card got lost, would you call the bank?"
+      "If you lost your card, would you call your bank?"
     ],
     "point": "仮の話なので if 節は過去形 lost、主節は would you",
     "topic": "daily",
     "subtopic": "errands",
-    "level": 8,
+    "level": 7,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_5y5b8x4t",
-    "ja": "母は郵便局でもう30分も待っています。",
+    "ja": "母はもう30分も待っています。",
     "en": "My mom has waited thirty minutes already.",
     "alternatives": [
       "Mom has been waiting for thirty minutes.",
-      "My mom has waited half an hour already."
+      "My mom's been waiting half an hour."
     ],
     "point": "今も続く待ち時間は現在完了で言う",
     "topic": "daily",
     "subtopic": "errands",
     "level": 4,
     "grammar": ["present-perfect"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6g8n2m3k",
-    "ja": "兄は今日、ノートPCを取りに行きます。",
-    "en": "My brother's picking up his laptop today.",
-    "alternatives": [
-      "My brother is collecting his laptop today.",
-      "My brother will pick up his laptop today."
-    ],
-    "point": "「取りに行く」は pick up。予定は進行形でも言える",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 5,
-    "grammar": ["future-forms", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -161,22 +144,6 @@
     "subtopic": "errands",
     "level": 2,
     "grammar": ["there-is-are"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_6s2f4j2v",
-    "ja": "窓口の人によると、書類が届かないのは住所のせいかも。",
-    "en": "The clerk said my address might be why they haven't arrived.",
-    "alternatives": [
-      "The clerk told me my address might be why they haven't arrived.",
-      "According to the clerk, my address could be why they haven't arrived."
-    ],
-    "point": "said の後は時制を一つ過去側へ、might で断定を避ける",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 10,
-    "grammar": ["nested-clauses", "reported-speech"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -195,16 +162,16 @@
   },
   {
     "id": "c_6z8w6p3j",
-    "ja": "修理の人は、スマホは金曜に直ると言ってた。",
+    "ja": "修理の人はスマホは金曜に直ると言ってた。",
     "en": "The repairman said it'd be ready Friday.",
     "alternatives": [
       "The repairman told me it'd be ready Friday.",
-      "He said the phone would be fixed by Friday."
+      "The repair guy said it'd be ready Friday."
     ],
     "point": "said の後は would で時制を合わせる",
     "topic": "daily",
     "subtopic": "errands",
-    "level": 6,
+    "level": 5,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -213,7 +180,7 @@
     "id": "c_7b7y5z4f",
     "ja": "このペン、お借りしてもいいですか？",
     "en": "May I borrow your pen?",
-    "alternatives": ["Could I borrow your pen?", "Can I use your pen?"],
+    "alternatives": ["Could I borrow your pen?", "May I borrow this pen?"],
     "point": "「借りる」は borrow、貸すの lend と区別",
     "topic": "daily",
     "subtopic": "errands",
@@ -225,10 +192,10 @@
   {
     "id": "c_8e8s6q2c",
     "ja": "終わったら電話してもらえますか？",
-    "en": "Could you call when it's ready?",
+    "en": "Could you call me when it's done?",
     "alternatives": [
       "Can you call me when it's ready?",
-      "Would you call me when it's done?"
+      "Would you call me when it's finished?"
     ],
     "point": "when 節は未来のことでも現在形",
     "topic": "daily",
@@ -265,24 +232,40 @@
     "point": "強調したい語を It was と that の間に挟む",
     "topic": "daily",
     "subtopic": "errands",
-    "level": 9,
+    "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
-    "id": "c_9k3v4g2s",
-    "ja": "早めにパスポートを更新してたら、今待ってないのに。",
-    "en": "If I'd renewed my passport sooner, I wouldn't be waiting.",
+    "id": "c_8v4d5y2s",
+    "ja": "窓口の人が、書類の遅れは住所のせいかもと言った。",
+    "en": "The clerk said my address might delay the documents.",
     "alternatives": [
-      "Had I renewed my passport earlier, I wouldn't be waiting.",
-      "I wouldn't be waiting if I'd renewed my passport sooner."
+      "The clerk told me my address might delay the documents.",
+      "According to the clerk, my address might delay the documents."
     ],
-    "point": "過去の条件は had 過去分詞、今の結果は would be 〜ing",
+    "point": "might を使うと「かも」と断定を避けて伝えられる",
     "topic": "daily",
     "subtopic": "errands",
-    "level": 8,
-    "grammar": ["mixed-conditional"],
+    "level": 7,
+    "grammar": ["reported-speech", "hedging-softening"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9s3a8q5p",
+    "ja": "兄は今日、ノートPCを取りに行きます。",
+    "en": "My brother's picking up his laptop today.",
+    "alternatives": [
+      "My brother will pick up his laptop today.",
+      "My brother's going to pick up his laptop."
+    ],
+    "point": "「取りに行く」は pick up。予定は進行形でも言える",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 5,
+    "grammar": ["future-forms", "phrasal-verbs"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },

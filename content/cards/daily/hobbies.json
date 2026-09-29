@@ -55,24 +55,11 @@
       "My sister surfs on weekends despite being indoorsy.",
       "My sister's indoorsy, but she surfs on weekends."
     ],
-    "point": "go surfing は to を付けない。although と but は併用しない",
+    "point": "although の節に but を重ねない。Although 〜, S V の形にする",
     "topic": "daily",
     "subtopic": "hobbies",
     "level": 6,
     "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_4q9n7z3r",
-    "ja": "私がしたいのは、家にいることだけ。",
-    "en": "What I want is to stay home.",
-    "alternatives": ["All I want to do is stay home.", "I just want to stay home."],
-    "point": "「〜したいこと」は What I want を主語にする",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 5,
-    "grammar": ["noun-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -103,7 +90,7 @@
     "point": "習慣は現在形、主語が三人称単数なので does",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 3,
+    "level": 2,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -114,13 +101,13 @@
     "en": "I was gardening when you called.",
     "alternatives": [
       "When you called, I was gardening.",
-      "I was in the garden when you called."
+      "I was gardening when you phoned."
     ],
     "point": "途中だった動作は過去進行形、割り込んだ出来事は過去形",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 4,
-    "grammar": ["progressive-aspect", "time-and-if-clauses"],
+    "level": 3,
+    "grammar": ["progressive-aspect", "past-simple"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
@@ -158,28 +145,6 @@
     "grammar": ["indirect-questions"],
     "createdAt": "2026-09-28",
     "stamps": {}
-  },
-  {
-    "id": "c_5z7k4m4y",
-    "ja": "新しいボルダリングジム、もう行ってみた？",
-    "en": "Have you tried the new bouldering gym yet?",
-    "alternatives": [
-      "Have you been to the new bouldering gym yet?",
-      "Have you checked out the new bouldering gym?"
-    ],
-    "point": "「もう〜した？」は現在完了の疑問文＋ yet",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 6,
-    "grammar": ["present-perfect"],
-    "createdAt": "2026-09-23",
-    "stamps": {
-      "core": {
-        "hash": "sha256:f70faf7b847e2126c347e4f9f43a88b21ddfbf3623cdc015d4bafc378977ef93",
-        "perspectivesVersion": 1,
-        "at": "2026-09-23"
-      }
-    }
   },
   {
     "id": "c_6f2u2w6k",
@@ -222,7 +187,7 @@
     "en": "In the mountains, you should bring extra water.",
     "alternatives": [
       "You should take plenty of water up there.",
-      "Bring extra water if you go hiking."
+      "You should take extra water to the mountains."
     ],
     "point": "「〜したほうがいい」は should で表す",
     "topic": "daily",
@@ -313,6 +278,22 @@
     "stamps": {}
   },
   {
+    "id": "c_8f9p8x7m",
+    "ja": "君も昨日の釣り、来ればよかったのに。",
+    "en": "You should have come fishing yesterday.",
+    "alternatives": [
+      "You should have come fishing with us yesterday.",
+      "I wish you'd come fishing yesterday."
+    ],
+    "point": "「〜すればよかったのに」は should have + 過去分詞",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 6,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_8g2e5m7g",
     "ja": "ギターって、いつから習ってるの？",
     "en": "How long have you been learning the guitar?",
@@ -353,10 +334,10 @@
   {
     "id": "c_8q4b6n7a",
     "ja": "うちは結婚以来、同じ場所でキャンプしてるよ。",
-    "en": "We've camped at the same place since marrying.",
+    "en": "We've camped at the same spot since we married.",
     "alternatives": [
       "We've gone to the same campsite since our wedding.",
-      "We've been camping at the same place since marrying."
+      "We've camped at the same place since getting married."
     ],
     "point": "since があるので現在形ではなく現在完了にする",
     "topic": "daily",
@@ -464,12 +445,28 @@
     "stamps": {}
   },
   {
+    "id": "c_9f7d2v8d",
+    "ja": "日曜は、たいてい友達と遊んでるよ。",
+    "en": "Sundays, I mostly hang out with friends.",
+    "alternatives": [
+      "I usually spend Sundays with friends.",
+      "On Sundays I usually see friends."
+    ],
+    "point": "「遊ぶ」は hang out with 人 で言える",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 5,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
     "id": "c_9q3j7k8n",
     "ja": "日曜は一日中、映画を観てたよ。",
     "en": "I watched movies all day Sunday.",
     "alternatives": [
-      "I watched movies all day last Sunday.",
-      "I spent all day Sunday watching movies."
+      "I spent all day Sunday watching movies.",
+      "I watched movies all day on Sunday."
     ],
     "point": "「一日中」は all day。the や a をつけない",
     "topic": "daily",

@@ -25,7 +25,7 @@
     "id": "c_2v7q4e5x",
     "ja": "私、今すごく緊張してる。",
     "en": "I'm feeling really nervous right now.",
-    "alternatives": ["I'm getting really nervous now.", "I'm so nervous right now."],
+    "alternatives": ["I'm really nervous right now.", "I'm so nervous right now."],
     "point": "「今〜な気分」は feel を進行形にして I'm feeling とできる",
     "topic": "daily",
     "subtopic": "feelings",
@@ -51,7 +51,7 @@
     "point": "未来でも if 節は現在形 it rains",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 5,
+    "level": 4,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -95,22 +95,6 @@
     "stamps": {}
   },
   {
-    "id": "c_3x9h9f5v",
-    "ja": "店長が、企画いいって。めっちゃ嬉しい！",
-    "en": "She said it was great. I'm thrilled!",
-    "alternatives": [
-      "She told me it was great. I'm thrilled!",
-      "The manager said it's great. I'm so happy!"
-    ],
-    "point": "said の後は時制を合わせて was にする",
-    "topic": "daily",
-    "subtopic": "feelings",
-    "level": 5,
-    "grammar": ["reported-speech"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_4c5m2t9p",
     "ja": "母が一番喜んだのは、孫たちからの手紙でした。",
     "en": "It was the grandkids' letters that pleased my mother most.",
@@ -121,7 +105,7 @@
     "point": "強調したい部分を It was と that で挟む",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 9,
+    "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -129,10 +113,10 @@
   {
     "id": "c_4s4d2k2q",
     "ja": "兄は平気と言うけど、実は落ち込んでる。",
-    "en": "Although my brother says he's fine, he's upset.",
+    "en": "Although my brother says he's fine, he's really down.",
     "alternatives": [
-      "My brother says he's fine, but he's hurting.",
-      "Even though he says he's okay, he's really upset."
+      "My brother says he's fine, but he's really down.",
+      "Even though he says he's okay, he's feeling low."
     ],
     "point": "although の後は節。but と一緒には使わない",
     "topic": "daily",
@@ -145,12 +129,12 @@
   {
     "id": "c_4u4z8h9e",
     "ja": "予定をあきらめて、がっかりしてない？",
-    "en": "Aren't you disappointed you gave up your plans?",
+    "en": "Aren't you disappointed you gave up on your plans?",
     "alternatives": [
-      "Aren't you upset about giving up your plans?",
-      "Aren't you disappointed about giving up your plans?"
+      "Aren't you bummed about giving up on your plans?",
+      "Aren't you disappointed about giving up on your plans?"
     ],
-    "point": "「あきらめる」は give up。目的語は間に入らない",
+    "point": "「がっかりしてない？」は Aren't you disappointed のあとに節を続ける",
     "topic": "daily",
     "subtopic": "feelings",
     "level": 6,
@@ -179,7 +163,7 @@
     "ja": "コンサートが中止と聞いて、がっかりした。",
     "en": "I was disappointed the concert got canceled.",
     "alternatives": [
-      "I was upset the concert got canceled.",
+      "I was bummed the concert got canceled.",
       "I was disappointed to hear it was canceled."
     ],
     "point": "「中止になった」は got canceled でも言える",
@@ -194,7 +178,7 @@
     "id": "c_5s6m9b5h",
     "ja": "新しい仕事にはもう慣れたよ。",
     "en": "I've gotten used to my new job.",
-    "alternatives": ["I'm used to my new job now.", "I've gotten used to the new job."],
+    "alternatives": ["I'm used to my new job now.", "I've settled into my new job."],
     "point": "「慣れた」は have gotten used to で現在完了",
     "topic": "daily",
     "subtopic": "feelings",
@@ -221,32 +205,32 @@
   },
   {
     "id": "c_5w7s4h5p",
-    "ja": "宝くじが当たったら、あなたは仕事を辞める？",
+    "ja": "宝くじが当たったら、君は仕事辞める？",
     "en": "Would you quit if you won the lottery?",
     "alternatives": [
-      "If you won the lottery, would you quit your job?",
-      "If you hit the jackpot, would you quit working?"
+      "If you won the lottery, would you quit?",
+      "If you hit the jackpot, would you quit?"
     ],
     "point": "ありえない仮定は if 節を過去形、主節を would にする",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 7,
+    "level": 5,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
   {
     "id": "c_5y3m7q7t",
-    "ja": "上司に本当のことを言ったほうがいいよ。",
+    "ja": "上司に本当のこと言ったほうがいいよ。",
     "en": "You should tell your boss the truth.",
     "alternatives": [
-      "You'd better tell your boss the truth.",
-      "You should be honest with your boss."
+      "You should be honest with your boss.",
+      "I'd tell your boss the truth."
     ],
     "point": "「〜したほうがいい」は should + 動詞の原形",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 4,
+    "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -254,10 +238,10 @@
   {
     "id": "c_6h3t9n9y",
     "ja": "最近よく眠れてなくて、ちょっと参ってる。",
-    "en": "I've been sleeping badly. It's wearing me down.",
+    "en": "I haven't been sleeping well. It's wearing me down.",
     "alternatives": [
-      "I haven't slept well lately. It's getting to me.",
-      "I've barely been sleeping. It's wearing me out."
+      "I haven't slept well lately. It's wearing me out.",
+      "I haven't slept well lately. It's getting to me."
     ],
     "point": "「参ってる」は wear down / wear out で表せる",
     "topic": "daily",
@@ -310,7 +294,7 @@
     "point": "「電話している男性」は the man on the phone と後ろから修飾",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 8,
+    "level": 6,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -358,7 +342,7 @@
     "point": "「〜したまま」は sat staring のように ing 形で続ける",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 8,
+    "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-28",
     "stamps": {}
@@ -402,7 +386,10 @@
     "id": "c_8y2a5y6k",
     "ja": "ここ、好き！また来ようよ。",
     "en": "Love it! Let's come back.",
-    "alternatives": ["I like it! Let's come again.", "I love it! Let's return soon."],
+    "alternatives": [
+      "I love it! Let's come again.",
+      "Love this place! Let's come again."
+    ],
     "point": "「〜しようよ」は Let's + 動詞の原形",
     "topic": "daily",
     "subtopic": "feelings",
@@ -417,7 +404,7 @@
     "en": "It'd be a waste for him to quit now.",
     "alternatives": [
       "It'd be a shame if he quit now.",
-      "Quitting now would be a waste for him."
+      "Quitting now would be a waste."
     ],
     "point": "「〜するのはもったいない」は It'd be a waste for 人 to 動詞",
     "topic": "daily",
@@ -432,8 +419,8 @@
     "ja": "兄に映画を最後まで見させられて、ムッとした。",
     "en": "My brother made me finish the movie. Annoying!",
     "alternatives": [
-      "My brother made me sit through it. So annoying!",
-      "My brother made me watch the whole movie. Annoying!"
+      "My brother made me watch the whole movie. Annoying!",
+      "My brother made me finish the film. Ugh!"
     ],
     "point": "「無理やり〜させる」は make 人 + 動詞の原形",
     "topic": "daily",
@@ -456,6 +443,22 @@
     "subtopic": "feelings",
     "level": 8,
     "grammar": ["reported-speech", "infinitives"],
+    "createdAt": "2026-09-28",
+    "stamps": {}
+  },
+  {
+    "id": "c_9p4m9u9q",
+    "ja": "課長が私の企画を褒めてくれた。嬉しい！",
+    "en": "My manager praised my proposal. I'm thrilled!",
+    "alternatives": [
+      "My manager complimented my proposal. I'm so happy!",
+      "My manager praised my plan. I'm so happy!"
+    ],
+    "point": "praise は褒める対象をそのまま目的語に取る",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 5,
+    "grammar": ["past-simple"],
     "createdAt": "2026-09-28",
     "stamps": {}
   },
