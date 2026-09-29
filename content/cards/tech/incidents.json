@@ -79,7 +79,13 @@
     "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:76c77d6becedafe14bed11c7ad9693bad5158e4a61cd6889c4019e3e4a414ad0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3j2n6n4j",
@@ -99,38 +105,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_3q6a8b3s",
-    "ja": "再起動しても、根本原因は消えません。",
-    "en": "Even if we restart, the root cause remains.",
-    "alternatives": [
-      "A restart won't remove the root cause.",
-      "Even with a restart, the root cause remains."
-    ],
-    "point": "「たとえ〜でも」は Even if。although とは使い分ける",
-    "topic": "tech",
-    "subtopic": "incidents",
-    "level": 6,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
-    "id": "c_3w6e4s6m",
-    "ja": "直ったけど、原因はまだ不明です。",
-    "en": "It's fixed, but the cause is still unknown.",
-    "alternatives": [
-      "Although it's fixed, the cause is still unknown.",
-      "It's fixed, but we still don't know why."
-    ],
-    "point": "「けど」は but で対比。Although と but は重ねない",
-    "topic": "tech",
-    "subtopic": "incidents",
-    "level": 5,
-    "grammar": ["concession-contrast"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_4g3a8m7c",
@@ -253,7 +227,13 @@
     "level": 3,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7729c41097913c6bcabe705422fa3094af27bde6346e124f4a3bf17c8b93a7cb",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5g9p3q8q",
@@ -323,22 +303,6 @@
     }
   },
   {
-    "id": "c_5v9p6z5a",
-    "ja": "私があなたなら、今すぐお客様に一報入れておきます。",
-    "en": "If I were you, I'd give customers a heads-up now.",
-    "alternatives": [
-      "If I were you, I'd let customers know now.",
-      "If it were me, I'd give customers a heads-up now."
-    ],
-    "point": "仮定法では If I were you。一報入れるは give a heads-up",
-    "topic": "tech",
-    "subtopic": "incidents",
-    "level": 7,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_6c6n9x9h",
     "ja": "ユーザーに再ログインするよう伝えて。",
     "en": "Tell users to log in again.",
@@ -349,7 +313,13 @@
     "level": 3,
     "grammar": ["verb-object-to-do", "imperatives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9f14e04eb1ab02bdb18b0f518c5d53488c3d1ea958edc3405d7a9942fcd4a93e",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_6q9j2m8m",
@@ -369,22 +339,6 @@
         "at": "2026-09-28"
       }
     }
-  },
-  {
-    "id": "c_7f4a6r7s",
-    "ja": "ここまで広範囲に影響が出た障害は初めてです。",
-    "en": "Never before have we had an outage this widespread.",
-    "alternatives": [
-      "We've never had an outage this widespread before.",
-      "This is the most widespread outage we've ever had."
-    ],
-    "point": "Never を文頭に出すと、あとは疑問文の語順になる",
-    "topic": "tech",
-    "subtopic": "incidents",
-    "level": 10,
-    "grammar": ["inversion"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
   },
   {
     "id": "c_7n4d4w6p",
@@ -441,7 +395,13 @@
     "level": 5,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:202b1261efc83736535647b6e86f9b1ded58525b3689e18532f69067d33fef94",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7y6b5w4b",
@@ -457,7 +417,13 @@
     "level": 5,
     "grammar": ["past-simple", "progressive-aspect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:75abd27b414a4aed533f9bcf8b8f5fb9df880fbe3825d87b4965e1f237b43f81",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7z9v5d7m",
@@ -501,22 +467,6 @@
     }
   },
   {
-    "id": "c_9c7p2h6j",
-    "ja": "影響が出たのは、決済機能だけでした。",
-    "en": "It was only payments that were affected.",
-    "alternatives": [
-      "Only the payment feature was affected.",
-      "The only thing affected was payments."
-    ],
-    "point": "強調したい語を It was と that ではさむ",
-    "topic": "tech",
-    "subtopic": "incidents",
-    "level": 8,
-    "grammar": ["cleft-emphasis"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_9j3v4e2c",
     "ja": "閾値がもっと低ければ、早く気づけるのに。",
     "en": "If the threshold were lower, we'd notice sooner.",
@@ -530,7 +480,13 @@
     "level": 6,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:885939773c6e5eee417c04c815ddb4916a2470239e1b893e1d45f5dd7f4683d0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9k2k8z6e",
