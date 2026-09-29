@@ -13,7 +13,13 @@
     "level": 5,
     "grammar": ["present-perfect"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:aeed8b6321c4c8e1079b2a52218c56d59b0b371d623b65f6495830193995ec6f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_2j9h6n7z",
@@ -32,22 +38,6 @@
     "stamps": {}
   },
   {
-    "id": "c_2p6z3f6h",
-    "ja": "私のシフトを減らすよう店長に頼んで。",
-    "en": "Ask the manager to cut my shifts.",
-    "alternatives": [
-      "Ask the manager to cut my hours.",
-      "Please ask the manager to reduce my shifts."
-    ],
-    "point": "「人に〜するよう頼む」は ask + 人 + to do の語順",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 4,
-    "grammar": ["verb-object-to-do", "imperatives"],
-    "createdAt": "2026-09-28",
-    "stamps": {}
-  },
-  {
     "id": "c_3p7q8a8j",
     "ja": "忙しいなら、無理しなくていいよ。",
     "en": "If you're busy, you don't have to.",
@@ -61,7 +51,13 @@
     "level": 4,
     "grammar": ["modal-obligation-advice", "time-and-if-clauses"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:248132a3417d7d037e08fb0b46e17f0c877e9279ca9ac17ee27a8a7ffc5512a0",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_3y5m8w5p",
@@ -76,9 +72,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:ea1b0e658a4b7c157bf1e1f8078dc1cc49d82222e0c05b82a047157c168191da",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:3815ec802c86980081658c1def9e82a2c411b58dcec6e3019f4086102ce55212",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -130,9 +126,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:6ff4a2a1af448bfa41682cf655860096aecda9c8dca0b482479146db860f836c",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:a46b172d3282ba046f7a3a4f3ad9262297e80fccd1121e68b1b57ab6cd8784d1",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -152,32 +148,9 @@
     "createdAt": "2026-09-22",
     "stamps": {
       "core": {
-        "hash": "sha256:2f8990be62d17b334b4ae9c8b2da7cd03a38e69d174d4ae08715ffa93e4dba73",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
-      }
-    }
-  },
-  {
-    "id": "c_5j7z9s4b",
-    "ja": "今、忙しい？お願いがあるの。",
-    "en": "Busy? I need a favor.",
-    "alternatives": [
-      "You busy? I need a favor.",
-      "Busy now? I need a favor.",
-      "Are you busy? I need help."
-    ],
-    "point": "「お願いがある」は I need a favor、a を忘れずに",
-    "topic": "social",
-    "subtopic": "favors",
-    "level": 1,
-    "grammar": ["be-and-present-simple"],
-    "createdAt": "2026-09-22",
-    "stamps": {
-      "core": {
-        "hash": "sha256:04c7423550290f0ef6349ba763212aab8c2d0372ff737fc019dc609625660838",
-        "perspectivesVersion": 1,
-        "at": "2026-09-22"
+        "hash": "sha256:ae0c288bcf2eca58a9a6f8e823d44dc0b4c0d8bc19d79a7dea2518cf2a7c60be",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
       }
     }
   },
@@ -195,7 +168,13 @@
     "level": 5,
     "grammar": ["time-and-if-clauses", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c90fed9792058423192683515c99f7fd34dd7f06f96bc7adddb0d8e7598302bf",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_5t6d5v6u",
@@ -259,7 +238,13 @@
     "level": 4,
     "grammar": ["comparatives-superlatives", "infinitives"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d36076e7be69aec52fe17bc5eba64760347f2c4c5000105cf1ab449ba062a278",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_7e2n4m8h",
@@ -307,7 +292,13 @@
     "level": 3,
     "grammar": ["articles-and-countability", "requests-permission"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:88eb58958cb931a33423183fdd309ad22743e0d358eb6ddd672e063ae883fc97",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8a3x4u7m",
@@ -320,7 +311,13 @@
     "level": 1,
     "grammar": ["wh-questions"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7d61c211f7c7f8f3910f062ac37c2c4b99b4357c97776cf2749ca1204576fb19",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_8k3c7h4p",
@@ -416,7 +413,13 @@
     "level": 5,
     "grammar": ["present-perfect", "phrasal-verbs"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:460b7af50c40cb374f5442e0ec7e256f84f1d168e5f39c1d46d9c17367a64ca3",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   },
   {
     "id": "c_9q2n2j3r",
@@ -432,6 +435,12 @@
     "level": 3,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-09-28",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7800486ca52d2ce1509468406dd0170068200bbe90ee255ef086a313ed5c622f",
+        "perspectivesVersion": 2,
+        "at": "2026-09-28"
+      }
+    }
   }
 ]
