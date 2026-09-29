@@ -185,8 +185,8 @@ pipeline.
   deploy role's account.
 - For pairs the owner cannot read, feedback quality in that L1 rests on LLM judgment and
   learner reports. This limit is accepted by the owner.
-- Typed input needs its own timing rules. Typing an answer within a 6–20 second speaking
-  limit is a different task.
+- Typed input needs its own timing rules. Typing an answer within a speaking limit (15
+  to 60 seconds, 30 by default) is a different task.
 
 ### Follow-ups
 
