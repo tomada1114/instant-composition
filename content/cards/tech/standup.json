@@ -38,6 +38,19 @@
     }
   },
   {
+    "id": "c_4u7b5f5t",
+    "ja": "バグを直してるよ。",
+    "en": "I'm fixing a bug.",
+    "alternatives": ["I'm working on a bug.", "I'm fixing a bug now."],
+    "point": "今していることは be + ing",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5m5t9k5u",
     "ja": "昨日テストを三つ足した。",
     "en": "I added three tests yesterday.",
@@ -60,6 +73,32 @@
     }
   },
   {
+    "id": "c_5w5n7r5x",
+    "ja": "詰まったら、聞くべき。",
+    "en": "You should ask.",
+    "alternatives": ["You should ask for help.", "You ought to ask."],
+    "point": "助言は should + 動詞の原形",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5w7g4s7j",
+    "ja": "今日ケンはリモート。",
+    "en": "Ken is remote today.",
+    "alternatives": ["Ken is working remotely today.", "Ken is working from home."],
+    "point": "三人称単数は is",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6h2v7r4n",
     "ja": "誰か、なぜ落ちるか分かる？",
     "en": "Does anyone know why it's crashing?",
@@ -80,6 +119,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6s8r9m5z",
+    "ja": "詰まったら、聞くね。",
+    "en": "I'll ask if I'm stuck.",
+    "alternatives": ["If I'm stuck, I'll ask.", "I'll ask when I get stuck."],
+    "point": "if 節は未来でも現在形",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_7a5f6t9u",
@@ -118,5 +170,70 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7x4b3j2q",
+    "ja": "いつ見てもらえる？",
+    "en": "When can you review it?",
+    "alternatives": ["When could you review it?", "When can you look at it?"],
+    "point": "時は When で始める",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 3,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8u3s5f5t",
+    "ja": "ミアの PR を見てます。",
+    "en": "I'm reviewing Mia's PR.",
+    "alternatives": ["I'm looking at Mia's PR.", "I'm reviewing a PR from Mia."],
+    "point": "今の動作は be + ing",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 2,
+    "grammar": ["progressive-aspect", "be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9h3j5t8e",
+    "ja": "デプロイしなきゃ。",
+    "en": "I have to deploy.",
+    "alternatives": ["I need to deploy.", "I've got to deploy."],
+    "point": "「しなきゃ」は have to",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9p9x4j8g",
+    "ja": "ケンに手伝ってほしい。",
+    "en": "I want Ken to help.",
+    "alternatives": ["I'd like Ken to help.", "I need Ken to help me."],
+    "point": "want + 人 + to 動詞",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9w4n4b3u",
+    "ja": "今、何してるの？",
+    "en": "What are you doing?",
+    "alternatives": ["What are you working on?", "What are you up to?"],
+    "point": "今の動作は疑問詞 + be + ing",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 1,
+    "grammar": ["wh-questions", "progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

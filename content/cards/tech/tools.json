@@ -45,6 +45,32 @@
     "stamps": {}
   },
   {
+    "id": "c_3p5j6y9k",
+    "ja": "何を使ってる？",
+    "en": "What do you use?",
+    "alternatives": ["What are you using?", "What tool do you use?"],
+    "point": "現在形の疑問は do you",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3s8s5s7g",
+    "ja": "私、これ変えられる？",
+    "en": "Can I change this?",
+    "alternatives": ["Can I edit this?", "May I change this?"],
+    "point": "「できる？」は Can I〜?",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4g6q5g5s",
     "ja": "先月、CIを乗り換えた。",
     "en": "We switched CI tools last month.",
@@ -160,6 +186,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6g9x7v4n",
+    "ja": "ターミナルを開いて。",
+    "en": "Open the terminal.",
+    "alternatives": ["Please open the terminal.", "Open a terminal."],
+    "point": "命令文は動詞で始める",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6z2m4s6c",

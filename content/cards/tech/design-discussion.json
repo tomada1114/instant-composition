@@ -1,5 +1,31 @@
 [
   {
+    "id": "c_3d3y5a9j",
+    "ja": "キャッシュできるよ。",
+    "en": "We can cache it.",
+    "alternatives": ["It can be cached.", "We can cache this."],
+    "point": "できるは can + 動詞の原形",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3h6a4n7j",
+    "ja": "まず選択肢を挙げよう。",
+    "en": "Let's list the options.",
+    "alternatives": ["Let's write out the options.", "First, let's list our options."],
+    "point": "「〜しよう」は Let's + 動詞",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4d3e5p8v",
     "ja": "キャッシュは外すと決めた。",
     "en": "We decided to drop the cache.",
@@ -17,6 +43,32 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4h5m5k9e",
+    "ja": "こっちのほうが楽だよ。",
+    "en": "This is easier.",
+    "alternatives": ["This one is easier.", "This is simpler."],
+    "point": "easy は easier に変える",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 3,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4z5h3c3p",
+    "ja": "どっちのほうが安い？",
+    "en": "Which one is cheaper?",
+    "alternatives": ["Which is cheaper?", "Which option costs less?"],
+    "point": "選択は which を使う",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 2,
+    "grammar": ["wh-questions", "comparatives-superlatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5b2w8a8h",
@@ -39,6 +91,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6p4x9v7n",
+    "ja": "何を設計してるの？",
+    "en": "What are you designing?",
+    "alternatives": ["What are you designing now?", "What are you building?"],
+    "point": "今の動作は疑問詞 + be + ing",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 1,
+    "grammar": ["progressive-aspect", "wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6p5j5q8f",
@@ -79,6 +144,19 @@
     }
   },
   {
+    "id": "c_6v6u8k7v",
+    "ja": "分割するのはどう？",
+    "en": "How about splitting it?",
+    "alternatives": ["What about splitting it?", "Why not split it?"],
+    "point": "How about のあとは -ing",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 3,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6x5f6z6c",
     "ja": "ミアにレビューを頼んで。",
     "en": "Ask Mia to review it.",
@@ -115,5 +193,44 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9s4k8e5y",
+    "ja": "トレードオフが二つある。",
+    "en": "There are two trade-offs.",
+    "alternatives": ["We have two trade-offs.", "I see two trade-offs."],
+    "point": "複数名詞には There are",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9t3p5m5j",
+    "ja": "なぜ DB を分けるの？",
+    "en": "Why split the database?",
+    "alternatives": ["Why separate the database?", "Why split the database up?"],
+    "point": "理由は Why + do you + 動詞",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9u3s2u4p",
+    "ja": "他に選択肢はある？",
+    "en": "Are there other options?",
+    "alternatives": ["Do we have other options?", "Is there another option?"],
+    "point": "複数を尋ねるときは Are there",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 2,
+    "grammar": ["there-is-are", "wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

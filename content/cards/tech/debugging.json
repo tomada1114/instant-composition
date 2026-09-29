@@ -44,6 +44,19 @@
     }
   },
   {
+    "id": "c_3m4f5k9u",
+    "ja": "君の環境で試していい？",
+    "en": "Can I try yours?",
+    "alternatives": ["May I try your setup?", "Can I try it on yours?"],
+    "point": "許可は Can I〜? / May I〜?",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3q8f8k2x",
     "ja": "このエラー、いつから？",
     "en": "When did this error start?",
@@ -64,6 +77,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4z7j6m2y",
+    "ja": "再現する必要がある。",
+    "en": "I need to reproduce it.",
+    "alternatives": ["I have to reproduce it.", "I must reproduce it first."],
+    "point": "「〜する必要」は need to + 動詞",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 3,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5d3g4p8t",
@@ -88,6 +114,32 @@
     }
   },
   {
+    "id": "c_5e7q2q5b",
+    "ja": "ログを見せて。",
+    "en": "Show me the logs.",
+    "alternatives": ["Let me see the logs.", "Please show me the logs."],
+    "point": "命令文は動詞で始める",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 1,
+    "grammar": ["imperatives", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_5q9n3d6a",
+    "ja": "ページを更新して。",
+    "en": "Reload the page.",
+    "alternatives": ["Refresh the page.", "Please reload the page."],
+    "point": "「まず」は first を文末か文頭に",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 1,
+    "grammar": ["imperatives", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6a5b9g7k",
     "ja": "明日、再現手順を送ります。",
     "en": "I'll send repro steps tomorrow.",
@@ -110,6 +162,19 @@
     }
   },
   {
+    "id": "c_6c9t2n7h",
+    "ja": "エラーが一つあるよ。",
+    "en": "There's one error.",
+    "alternatives": ["I see one error.", "One error is showing."],
+    "point": "数えられる名詞に単数の There's",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6d3y8u7j",
     "ja": "前回の公開から失敗続き。",
     "en": "It's been failing since last deploy.",
@@ -130,5 +195,57 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6x8u8k2m",
+    "ja": "キャッシュを消して。",
+    "en": "Clear the cache.",
+    "alternatives": ["Please clear the cache.", "Delete the cache."],
+    "point": "特定のものには the をつける",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 2,
+    "grammar": ["imperatives", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7t6p5j9q",
+    "ja": "ログを見てもいいですか？",
+    "en": "May I check the logs?",
+    "alternatives": ["Could I check the logs?", "Can I check the logs?"],
+    "point": "丁寧な許可は May I / Could I",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7x6k3t5y",
+    "ja": "失敗テストが二つある。",
+    "en": "There are two failing tests.",
+    "alternatives": ["Two tests are failing.", "I see two failing tests."],
+    "point": "複数名詞には There are",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9p2m9w8b",
+    "ja": "別のブラウザで試して。",
+    "en": "Try another browser.",
+    "alternatives": ["Try a different browser.", "Use another browser."],
+    "point": "another + 単数名詞。a を重ねない",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 2,
+    "grammar": ["imperatives", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]
