@@ -1,5 +1,31 @@
 [
   {
+    "id": "c_2q4q6w2f",
+    "ja": "何でも聞いて。",
+    "en": "Ask me anything.",
+    "alternatives": ["Please ask me anything.", "Feel free to ask me."],
+    "point": "命令文は主語なしで動詞から始める",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_4c7e9b2h",
+    "ja": "営業の経験者です。",
+    "en": "I'm experienced in sales.",
+    "alternatives": ["I have sales experience.", "I've done sales work."],
+    "point": "経験者は experienced。前置詞は in",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4v2c8p6a",
     "ja": "残業はありますか？",
     "en": "Is there any overtime?",
@@ -17,6 +43,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5v3q4a8x",
+    "ja": "メモしてもいいですか？",
+    "en": "May I take notes?",
+    "alternatives": ["Can I take notes?", "Is it okay to take notes?"],
+    "point": "「メモを取る」は take notes と複数形",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5y9q6v6d",
@@ -63,6 +102,19 @@
     }
   },
   {
+    "id": "c_7d7a4h7f",
+    "ja": "私は新卒です。",
+    "en": "I'm a new graduate.",
+    "alternatives": ["I'm a recent graduate.", "I just graduated."],
+    "point": "新卒は new / recent graduate。a を付ける",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7j6g3g7r",
     "ja": "人に教えるのが得意です。",
     "en": "I'm good at teaching others.",
@@ -83,6 +135,45 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7p6y2e6c",
+    "ja": "初日はいつですか？",
+    "en": "When is day one?",
+    "alternatives": ["When is my first day?", "When do I start?"],
+    "point": "疑問詞 when を文頭に置く",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 1,
+    "grammar": ["wh-questions", "be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7u2m8x2p",
+    "ja": "今、転職活動中です。",
+    "en": "I'm looking for jobs.",
+    "alternatives": ["I'm job hunting.", "I'm searching for a new job."],
+    "point": "今の状態は進行形。活動中は look for",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8e7k8e4v",
+    "ja": "来月から働き始めます。",
+    "en": "I'll start next month.",
+    "alternatives": ["I'm starting next month.", "I'm going to start next month."],
+    "point": "これからの意思は will。next に前置詞は不要",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 3,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8r5c4r7t",
@@ -106,6 +197,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8r7j6f5d",
+    "ja": "リーダー経験があります。",
+    "en": "I've been a team leader.",
+    "alternatives": ["I have leadership experience.", "I've led teams before."],
+    "point": "経験は現在完了 have + 過去分詞",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 3,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9c8n4c3x",

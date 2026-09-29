@@ -1,5 +1,34 @@
 [
   {
+    "id": "c_2m3e5w6m",
+    "ja": "今、指摘を読み返してる。",
+    "en": "I'm rereading your comments.",
+    "alternatives": [
+      "I'm going over your comments now.",
+      "I'm reading your comments again."
+    ],
+    "point": "今している最中は be + 動詞ing",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 3,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3q5x6t3m",
+    "ja": "コメント送ってもいい？",
+    "en": "Can I send you comments?",
+    "alternatives": ["Could I send you comments?", "May I send you my comments?"],
+    "point": "send + 人 + 物 の語順。人は you",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5d9b8j2t",
     "ja": "すばらしい発表だったよ。",
     "en": "That was a great presentation.",
@@ -111,6 +140,32 @@
     "stamps": {}
   },
   {
+    "id": "c_7c5q3b8n",
+    "ja": "例を足すといいよ。",
+    "en": "You should add examples.",
+    "alternatives": ["I'd add some examples.", "Try adding some examples."],
+    "point": "軽い助言は should。must は強すぎる",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7m3n9r6b",
+    "ja": "君の案、採用されたよ。",
+    "en": "Your idea was accepted.",
+    "alternatives": ["Your proposal was approved.", "Your idea got accepted."],
+    "point": "された は was + 過去分詞で受け身にする",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 3,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7s7t7h5w",
     "ja": "よくやってるね。",
     "en": "You're doing great.",
@@ -120,6 +175,19 @@
     "subtopic": "feedback",
     "level": 1,
     "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8a6r9d8a",
+    "ja": "何を直せばいいですか？",
+    "en": "What should I fix?",
+    "alternatives": ["What do I need to fix?", "What should I change?"],
+    "point": "「どうすれば」でなく what + should + 主語",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 2,
+    "grammar": ["wh-questions", "modal-obligation-advice"],
     "createdAt": "2026-09-29",
     "stamps": {}
   },
@@ -163,5 +231,18 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9d7a3k8f",
+    "ja": "感想をもらえますか？",
+    "en": "Could I get feedback?",
+    "alternatives": ["Can I get some feedback?", "Could you give me feedback?"],
+    "point": "feedback は数えられない名詞。a は付けない",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 2,
+    "grammar": ["requests-permission", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

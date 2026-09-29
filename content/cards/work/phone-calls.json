@@ -1,5 +1,31 @@
 [
   {
+    "id": "c_3g5g2g3p",
+    "ja": "あとで折り返します。",
+    "en": "I'll call you back later.",
+    "alternatives": ["I'll get back to you later.", "I'm going to call you back."],
+    "point": "折り返しは call back。目的語は間に入れる",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 3,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3w5n2w4v",
+    "ja": "受付にお客様がいます。",
+    "en": "There's a visitor at reception.",
+    "alternatives": ["There is a guest at reception.", "A visitor is at reception."],
+    "point": "いる は There's + 単数。a を忘れない",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 3,
+    "grammar": ["there-is-are", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4j3a7e5g",
     "ja": "30分も保留のままです。",
     "en": "I've been holding for 30 minutes.",
@@ -22,6 +48,19 @@
     }
   },
   {
+    "id": "c_5b8b6w9m",
+    "ja": "音声にラグがあります。",
+    "en": "There's a lag.",
+    "alternatives": ["There's a delay.", "I'm hearing a lag."],
+    "point": "ラグは a lag。There's + 単数名詞",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 2,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6t4z4z4t",
     "ja": "もっとゆっくりお願い！",
     "en": "Could you speak more slowly?",
@@ -39,6 +78,71 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6v8h4f5y",
+    "ja": "伝言、承ります。",
+    "en": "I'll take a message.",
+    "alternatives": ["Let me take a message.", "I can take a message."],
+    "point": "「伝言を預かる」は take a message",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6y3e3t8s",
+    "ja": "雑音が入ってます。",
+    "en": "There's some static.",
+    "alternatives": ["There's some noise.", "I'm hearing static."],
+    "point": "ある・入っている は There's。static は雑音",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 1,
+    "grammar": ["there-is-are", "articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_6y5a6a6g",
+    "ja": "今おつなぎしています。",
+    "en": "I'm connecting you now.",
+    "alternatives": ["I'm putting you through.", "I'm transferring your call."],
+    "point": "電話をつなぐは connect / put through",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7j6g6x4b",
+    "ja": "もう一回言ってもらえる？",
+    "en": "Could you say that again?",
+    "alternatives": ["Could you repeat that?", "Can you say that again?"],
+    "point": "聞き返しの依頼は Could you〜？",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7u6u3d5z",
+    "ja": "お名前は何ですか？",
+    "en": "What's your name?",
+    "alternatives": ["Could I get your name?", "May I have your name?"],
+    "point": "電話で丁寧に聞くなら May I have〜？も使える",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8h7h9v7u",
@@ -102,6 +206,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9s7q2y5d",
+    "ja": "ゆっくり話して。",
+    "en": "Please speak slowly.",
+    "alternatives": ["Speak slowly, please.", "Please slow down."],
+    "point": "命令文は動詞から始め、please で和らげる",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9z4p4h6u",

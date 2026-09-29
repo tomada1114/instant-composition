@@ -1,5 +1,31 @@
 [
   {
+    "id": "c_2w2d2x4h",
+    "ja": "これは何の図ですか？",
+    "en": "What is this chart?",
+    "alternatives": ["What does this chart show?", "What's this chart about?"],
+    "point": "疑問詞 what を文頭に。「図」は chart",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_3d8e3y6h",
+    "ja": "詳細は後で共有されます。",
+    "en": "Details will be shared later.",
+    "alternatives": ["We'll share the details later.", "You'll get the details later."],
+    "point": "未来の受け身は will be + 過去分詞",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 3,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3x2k2s9c",
     "ja": "このグラフを見てください。",
     "en": "Please look at this graph.",
@@ -19,6 +45,19 @@
     }
   },
   {
+    "id": "c_3x2p9y9m",
+    "ja": "これが当社製品です。",
+    "en": "This is our product.",
+    "alternatives": ["Here is our product.", "This is what we make."],
+    "point": "「弊社の」は our。this で手元のものを示す",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4y6m5j6k",
     "ja": "ご清聴に感謝します。",
     "en": "Thank you for listening.",
@@ -36,6 +75,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4y6p9k2j",
+    "ja": "先に進んでもいい？",
+    "en": "Can I move on?",
+    "alternatives": ["May I move on?", "Is it okay to move on?"],
+    "point": "move on で「先へ進む」。許可は Can I / May I",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_6k4u5g2g",
@@ -101,6 +153,32 @@
     }
   },
   {
+    "id": "c_7t6z2q3j",
+    "ja": "十分間の発表です。",
+    "en": "It's a ten-minute talk.",
+    "alternatives": ["The talk is ten minutes long.", "This talk takes ten minutes."],
+    "point": "ten-minute は単数形でハイフンでつなぐ",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_8c9a5q7r",
+    "ja": "今、資料を配ってます。",
+    "en": "I'm handing out handouts.",
+    "alternatives": ["I'm passing out handouts.", "I'm handing out the copies."],
+    "point": "hand out は「配る」。今の動作は進行形",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8h4k8a6n",
     "ja": "最近これを調べています。",
     "en": "I've been studying this lately.",
@@ -121,5 +199,31 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8u2p8h9b",
+    "ja": "データはいつ集めたの？",
+    "en": "When was the data collected?",
+    "alternatives": ["When did you collect the data?", "When did you gather the data?"],
+    "point": "「集めた」は受け身なら was collected",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 3,
+    "grammar": ["wh-questions", "passive-voice"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_9n3f6y4k",
+    "ja": "画面を共有中です。",
+    "en": "I'm sharing my screen.",
+    "alternatives": ["I'm sharing the screen.", "I'm showing my screen."],
+    "point": "「〜中」は進行形。share は共有する",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]
