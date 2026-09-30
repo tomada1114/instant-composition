@@ -28,6 +28,12 @@ export const passSchema = z.enum(["first", "retry"]);
 
 export const answerResultSchema = z.enum(["ok", "ng", "timeout"]);
 
+/**
+ * How a round's answers are given: said aloud against the timer, or typed with
+ * none. A round keeps the mode it was dealt with (ADR-0011).
+ */
+export const answerModeSchema = z.enum(["spoken", "typed"]);
+
 export const dailySizeSchema = z.union([
   z.literal(5),
   z.literal(10),
@@ -76,6 +82,8 @@ export const settingsSchema = z.object({
   limitSeconds: limitSecondsSchema,
   /** → and ← until the learner chooses a pair. */
   gradeKeys: gradeKeysSchema,
+  /** `spoken` until the learner chooses one; the next round dealt takes it. */
+  answerMode: answerModeSchema,
 });
 
 export const ringProgressSchema = z.object({

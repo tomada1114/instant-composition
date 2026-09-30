@@ -16,6 +16,7 @@ import {
 
 import { toeicOf, type CatalogSnapshot } from "./catalog";
 import type {
+  AnsweredRow,
   DrillCard,
   LevelView,
   ReachView,
@@ -36,9 +37,24 @@ export function levelViewOf(stats: LearnerStats, snapshot: CatalogSnapshot): Lev
 
 /** The settings as a client reads them, picked field by field for the reason `payloadOf` gives. */
 export function shownSettingsOf(settings: Settings): ShownSettings {
-  const { topics, focus, dailySize, sound, limitSeconds, gradeKeys } =
+  const { topics, focus, dailySize, sound, limitSeconds, gradeKeys, answerMode } =
     withDefaults(settings);
-  return { topics, focus, dailySize, sound, limitSeconds, gradeKeys };
+  return { topics, focus, dailySize, sound, limitSeconds, gradeKeys, answerMode };
+}
+
+/** A round's answers as a client reads them back, each with the text typed for it. */
+function answeredOf(reviews: readonly ReviewEntry[]): AnsweredRow[] {
+  return reviews.map((review) => {
+    const { pass, result, text } = review.detail;
+    return {
+      id: review.id,
+      cardId: review.item.id,
+      pass,
+      result,
+      answeredAt: review.answeredAt,
+      ...(text === undefined ? {} : { text }),
+    };
+  });
 }
 
 /**
@@ -82,15 +98,10 @@ export function payloadOf(
     kind: round.kind,
     day: round.day,
     portionDay: round.portionDay,
+    answerMode: mode,
     deck: round.deck,
     cards,
-    answered: reviews.map((review) => ({
-      id: review.id,
-      cardId: review.item.id,
-      pass: review.detail.pass,
-      result: review.detail.result,
-      answeredAt: review.answeredAt,
-    })),
+    answered: answeredOf(reviews),
     offset: counted ? portion.progress - round.firstPass : 0,
     total: counted ? portion.target : round.deck.length,
     retries: round.kind !== "placement",
@@ -125,16 +136,22 @@ export function reachViewOf(
   };
 }
 
-/** A finished round's end screen: its kept outcome, named from the catalog. */
+/**
+ * A finished round's end screen: its kept outcome, named from the catalog, and
+ * its answers read from the log, which holds what was typed only once.
+ */
 export function summaryOf(
   round: Round,
   outcome: RoundOutcome,
+  reviews: readonly ReviewEntry[],
   snapshot: CatalogSnapshot,
 ): RoundSummary {
   return {
     roundId: round.id,
     kind: round.kind,
     day: round.day,
+    answerMode: answerModeOf(round),
+    answered: answeredOf(reviews),
     yesterday: round.kind === "yesterday",
     placement:
       outcome.placement === null

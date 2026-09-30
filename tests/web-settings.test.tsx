@@ -36,6 +36,7 @@ const SETTINGS: Settings = {
   sound: true,
   limitSeconds: 30,
   gradeKeys: { ok: "ArrowRight", ng: "ArrowLeft" },
+  answerMode: "spoken",
 };
 
 const LEVELS: SettingsPageView["levels"] = [

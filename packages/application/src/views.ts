@@ -1,4 +1,5 @@
 import type {
+  AnswerMode,
   AnswerResult,
   DayKey,
   Dot,
@@ -26,10 +27,23 @@ export interface DrillCard {
   readonly text: string;
   readonly alternatives: readonly string[];
   readonly explanation: string;
-  /** When the timer runs out: the limit the round was dealt with. */
+  /** When the timer runs out: the limit the round was dealt with; the cap in a typed round, which runs none. */
   readonly limitMs: number;
-  /** What a flip is "fast" against, from the model answer's length. */
+  /** What a flip is "fast" against, from the model answer's length and the round's mode. */
   readonly paceMs: number;
+}
+
+/** One answer a round holds, as a client reads it back. */
+export interface AnsweredRow {
+  /** The answer's own id, so a client can tell which of its queued answers are held. */
+  readonly id: string;
+  readonly cardId: string;
+  readonly pass: Pass;
+  readonly result: AnswerResult;
+  /** As stored: the client's time, held between the round's start and the server's. */
+  readonly answeredAt: number;
+  /** What the learner typed, on an answer of a typed round that carried one. */
+  readonly text?: string;
 }
 
 export interface RoundPayload {
@@ -37,20 +51,14 @@ export interface RoundPayload {
   readonly kind: RoundKind;
   readonly day: DayKey;
   readonly portionDay: DayKey | null;
+  /** The mode the round was dealt with, whatever the setting says now. */
+  readonly answerMode: AnswerMode;
   /** First-pass card ids in order. */
   readonly deck: readonly string[];
   /** Every shown card the deck and its retries may show, keyed by id; a card edited since its review is left out. */
   readonly cards: Readonly<Record<string, DrillCard>>;
   /** What was already answered, oldest first, so a resumed round picks up after it. */
-  readonly answered: readonly {
-    /** The answer's own id, so a client can tell which of its queued answers are held. */
-    readonly id: string;
-    readonly cardId: string;
-    readonly pass: Pass;
-    readonly result: AnswerResult;
-    /** As stored: the client's time, held between the round's start and the server's. */
-    readonly answeredAt: number;
-  }[];
+  readonly answered: readonly AnsweredRow[];
   /** The progress counter reads `offset + position / total`. */
   readonly offset: number;
   readonly total: number;
@@ -86,6 +94,9 @@ export interface RoundSummary {
   readonly roundId: string;
   readonly kind: RoundKind;
   readonly day: DayKey;
+  readonly answerMode: AnswerMode;
+  /** Every answer the round holds, oldest first, each with the text typed for it. */
+  readonly answered: readonly AnsweredRow[];
   /** Made up yesterday rather than today. */
   readonly yesterday: boolean;
   readonly placement: {
@@ -120,11 +131,8 @@ export interface RoundSummary {
   readonly continueToday: boolean;
 }
 
-/**
- * The settings as a client reads them: every field present, a default for one
- * never chosen. The answer mode is left out until the `/v1` contract carries it.
- */
-export type ShownSettings = Omit<Required<Settings>, "answerMode">;
+/** The settings as a client reads them: every field present, a default for one never chosen. */
+export type ShownSettings = Required<Settings>;
 
 export interface SettingsView {
   readonly settings: ShownSettings;

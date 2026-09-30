@@ -75,6 +75,7 @@ export {
 export { updateLevel } from "./update-level";
 export { updateSettings } from "./update-settings";
 export type {
+  AnsweredRow,
   DrillCard,
   LevelView,
   ReachTopic,

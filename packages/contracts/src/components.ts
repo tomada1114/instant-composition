@@ -1,5 +1,6 @@
 import { errorResponseSchema } from "./errors";
 import {
+  answerModeSchema,
   answerResultSchema,
   dotSchema,
   gradeKeysSchema,
@@ -34,6 +35,7 @@ import {
   startRoundRequestSchema,
 } from "./requests";
 import {
+  answeredRowSchema,
   drillCardSchema,
   growthRowSchema,
   growthSchema,
@@ -56,6 +58,7 @@ export const COMPONENTS = {
   RoundKind: roundKindSchema,
   Pass: passSchema,
   AnswerResult: answerResultSchema,
+  AnswerMode: answerModeSchema,
   SubtopicRef: subtopicRefSchema,
   GradeKeys: gradeKeysSchema,
   Settings: settingsSchema,
@@ -71,6 +74,7 @@ export const COMPONENTS = {
   LevelChoice: levelChoiceSchema,
   ProfilePatch: profilePatchSchema,
   DrillCard: drillCardSchema,
+  AnsweredRow: answeredRowSchema,
   RoundPayload: roundPayloadSchema,
   GrowthRow: growthRowSchema,
   Growth: growthSchema,

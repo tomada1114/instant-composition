@@ -36,7 +36,16 @@ export async function finishRound(
       return err({ code: "ERR_ROUND_NOT_FOUND" });
     }
     const { outcome } = round.value;
-    return outcome === null ? undefined : ok(summaryOf(round.value, outcome, catalog));
+    return outcome === null
+      ? undefined
+      : ok(
+          summaryOf(
+            round.value,
+            outcome,
+            await store.reviewsOf(command.roundId),
+            catalog,
+          ),
+        );
   };
   const before = await kept();
   if (before !== undefined) {
@@ -54,8 +63,9 @@ export async function finishRound(
       return err({ code: "ERR_ROUND_NOT_FOUND" });
     }
     if (round.value.outcome !== null) {
+      const reviews = await store.reviewsOf(command.roundId);
       return ok({
-        value: summaryOf(round.value, round.value.outcome, catalog),
+        value: summaryOf(round.value, round.value.outcome, reviews, catalog),
         writes: [],
       });
     }
