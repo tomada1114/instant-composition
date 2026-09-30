@@ -3,7 +3,6 @@ import {
   EMPTY_STATS,
   err,
   ok,
-  withDefaults,
   type Result,
 } from "@instant-composition/domain";
 
@@ -11,7 +10,7 @@ import { snapshotOrEmpty, toeicOf, type CatalogSnapshot } from "./catalog";
 import type { RequestContext } from "./context";
 import type { ApplicationError } from "./errors";
 import { storeFor, type ApplicationDeps } from "./execute";
-import { levelViewOf, payloadOf, summaryOf } from "./present";
+import { levelViewOf, payloadOf, shownSettingsOf, summaryOf } from "./present";
 import type { History, SettingsPageView } from "./query-views";
 import type { LearnerStore } from "./store";
 import type { RoundPayload, RoundSummary } from "./views";
@@ -117,7 +116,7 @@ export async function settingsPage(
   const totals = stats?.value ?? EMPTY_STATS;
   const level = totals.level;
   return ok({
-    settings: withDefaults(settings?.value ?? DEFAULT_SETTINGS),
+    settings: shownSettingsOf(settings?.value ?? DEFAULT_SETTINGS),
     topics: offeredTopics(snapshot),
     toeic: level === null ? null : toeicOf(snapshot, level.level),
     difficulty: levelViewOf(totals, snapshot),

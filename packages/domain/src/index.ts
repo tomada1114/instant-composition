@@ -1,14 +1,8 @@
 // The pure rules of the application: no I/O, no clock, no process state. Time,
 // the learner's time zone and randomness arrive as arguments.
-export {
-  checkAnswers,
-  decideAnswers,
-  type AnswerInput,
-  type AnswersChange,
-  type AnswersState,
-  type CardFacts,
-} from "./answers";
+export { decideAnswers, type AnswersChange, type AnswersState } from "./answers";
 export { nextCardState, type LeitnerAnswer } from "./card-state";
+export { checkAnswers, type AnswerInput, type CardFacts } from "./check-answers";
 export {
   decideClose,
   streakValue,
@@ -114,8 +108,8 @@ export type {
   Portion,
   ReviewEntry,
   Round,
-  RoundOutcome,
 } from "./records";
+export type { RoundOutcome } from "./round-outcome";
 export {
   logOrder,
   outcomeOf,
@@ -156,6 +150,7 @@ export {
   type StreakStatus,
 } from "./streak";
 export {
+  answerModeOf,
   countWords,
   estimateMinutes,
   isFast,
@@ -168,6 +163,7 @@ export {
 } from "./timer";
 export { TUNING, type MilestoneSeries } from "./tuning";
 export type {
+  AnswerMode,
   AnswerRecord,
   AnswerResult,
   CardContent,

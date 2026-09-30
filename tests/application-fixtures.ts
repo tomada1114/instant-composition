@@ -40,21 +40,28 @@ export function makeStats(overrides: Partial<LearnerStats> = {}): LearnerStats {
   };
 }
 
-export function makeRound(overrides: Partial<Round> = {}): Round {
+function roundBase(): Omit<Round, "limitMs" | "answerMode"> {
   return {
     id: "r1",
     kind: "today",
     day: "2026-09-22",
     portionDay: "2026-09-22",
     deck: ["c1", "c2", "c3", "c4", "c5"],
-    limitMs: 30_000,
     startedAt: 1_000,
     finishedAt: null,
     abandonedAt: null,
     firstPass: 0,
     outcome: null,
-    ...overrides,
   };
+}
+
+export function makeRound(overrides: Partial<Round> = {}): Round {
+  return { ...roundBase(), limitMs: 30_000, ...overrides };
+}
+
+/** Round `r1` as a typed round is dealt: the typed mode, and no limit to record. */
+export function makeTypedRound(overrides: Partial<Round> = {}): Round {
+  return { ...roundBase(), answerMode: "typed", ...overrides };
 }
 
 /** A first-pass `ok` review of `c1` in round `r1`, overridable field by field. */

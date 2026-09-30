@@ -3,11 +3,10 @@ import type {
   GradeKeys,
   HomeState,
   LevelMode,
-  Settings,
   TopicInfo,
 } from "@instant-composition/domain";
 
-import type { LevelView, ReachView } from "./views";
+import type { LevelView, ReachView, ShownSettings } from "./views";
 
 /** What a query hands back to a client, in the shapes the screens read. */
 
@@ -90,7 +89,7 @@ export interface RecordsView {
 
 /** The settings as saved, what can be chosen, and the difficulty now. */
 export interface SettingsPageView {
-  readonly settings: Required<Settings>;
+  readonly settings: ShownSettings;
   readonly topics: readonly TopicInfo[];
   /** The same value as `difficulty.toeic`; deprecated in the /v1 contract and dropped at /v2. */
   readonly toeic: string | null;

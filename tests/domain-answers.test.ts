@@ -14,6 +14,7 @@ import {
   makePortion,
   makeRound,
   makeStats,
+  makeTypedRound,
 } from "./application-fixtures";
 
 const DAY_MS = 86_400_000;
@@ -95,6 +96,44 @@ describe("checkAnswers", () => {
     });
   });
 
+  const TYPED = makeTypedRound();
+
+  it("refuses a timeout in a typed round, which runs no timer", () => {
+    expect(
+      checkAnswers(TYPED, [answer(), answer({ result: "timeout" })], CARDS, new Set()),
+    ).toStrictEqual({ ok: false, error: { code: "ERR_BAD_REQUEST" } });
+  });
+
+  it.each([
+    ["a spoken round", makeRound({ answerMode: "spoken" })],
+    ["a round dealt before the mode existed", makeRound()],
+  ])("refuses a text in %s, and takes its timeout", (_, round) => {
+    expect(
+      checkAnswers(round, [answer({ text: "Let's start." })], CARDS, new Set()),
+    ).toStrictEqual({ ok: false, error: { code: "ERR_BAD_REQUEST" } });
+    expect(checkAnswers(round, [answer({ text: "" })], CARDS, new Set()).ok).toBe(
+      false,
+    );
+    expect(
+      checkAnswers(round, [answer({ result: "timeout" })], CARDS, new Set()).ok,
+    ).toBe(true);
+  });
+
+  it.each([
+    ["no text", answer()],
+    ["an empty text", answer({ text: "" })],
+    ["a text of 300 characters", answer({ text: "a".repeat(300) })],
+    ["an ng with its text", answer({ result: "ng", text: "I don't know." })],
+  ])("takes an answer with %s in a typed round", (_, typed) => {
+    expect(checkAnswers(TYPED, [typed], CARDS, new Set()).ok).toBe(true);
+  });
+
+  it("refuses a text of 301 characters in a typed round", () => {
+    expect(
+      checkAnswers(TYPED, [answer({ text: "a".repeat(301) })], CARDS, new Set()),
+    ).toStrictEqual({ ok: false, error: { code: "ERR_BAD_REQUEST" } });
+  });
+
   it("accepts an abandoned round, whose answers still count", () => {
     expect(
       checkAnswers(makeRound({ abandonedAt: 5 }), [answer()], CARDS, new Set()).ok,
@@ -151,6 +190,131 @@ describe("decideAnswers", () => {
       ["c2", 8_000, 8_000, 8_000],
       ["c5", 1_000, 6_000, 6_000],
     ]);
+  });
+
+  it("records the spoken mode on each answer of a spoken round, and no text", () => {
+    const change = decideAnswers(
+      state({ round: makeRound({ answerMode: "spoken" }) }),
+      HELD,
+      CARDS,
+      9,
+    );
+    expect(change?.entries.map((entry) => entry.detail)).toStrictEqual([
+      {
+        activity: "composition",
+        pass: "first",
+        result: "ok",
+        elapsedMs: 30_000,
+        limitMs: 30_000,
+        paceMs: 8_000,
+        answerMode: "spoken",
+      },
+      {
+        activity: "composition",
+        pass: "first",
+        result: "timeout",
+        elapsedMs: 30_000,
+        limitMs: 30_000,
+        paceMs: 8_000,
+        answerMode: "spoken",
+      },
+      {
+        activity: "composition",
+        pass: "first",
+        result: "ng",
+        elapsedMs: 1_000,
+        limitMs: 30_000,
+        paceMs: 6_000,
+        answerMode: "spoken",
+      },
+    ]);
+  });
+
+  describe("in a typed round", () => {
+    // Eight words at the typed pace: ceil(6 + 8 * 2) = 22 seconds, clamped to 10..60.
+    const round = makeTypedRound();
+
+    it("holds the elapsed time only to the ten-minute cap, and judges it by the typed pace", () => {
+      const change = decideAnswers(
+        state({ round }),
+        [
+          answer({ elapsedMs: 60_000 }),
+          answer({ id: "r1:f:c2", cardId: "c2", elapsedMs: 900_000 }),
+          answer({ id: "r1:f:c5", cardId: "c5", result: "ng", elapsedMs: 1_000 }),
+        ],
+        CARDS,
+        9,
+      );
+      expect(
+        change?.entries.map((entry) => [
+          entry.item.id,
+          entry.detail.elapsedMs,
+          entry.detail.limitMs,
+          entry.detail.paceMs,
+          entry.detail.answerMode,
+        ]),
+      ).toStrictEqual([
+        ["c1", 60_000, 600_000, 22_000, "typed"],
+        ["c2", 600_000, 600_000, 22_000, "typed"],
+        ["c5", 1_000, 600_000, 10_000, "typed"],
+      ]);
+    });
+
+    it("stores the text with the answer that carried one, and none with one that did not", () => {
+      const change = decideAnswers(
+        state({ round }),
+        [
+          answer({ text: "Let's get started." }),
+          answer({ id: "r1:f:c2", cardId: "c2" }),
+        ],
+        CARDS,
+        9,
+      );
+      expect(change?.entries[0]?.detail.text).toBe("Let's get started.");
+      expect(change?.entries[1] && "text" in change.entries[1].detail).toBe(false);
+    });
+
+    it.each([
+      [11_000, "easy", 2],
+      [11_001, "good", 1],
+    ] as const)(
+      "judges a %i ms ○ against the 22-second typed pace: %s",
+      (elapsedMs, outcome, box) => {
+        const change = decideAnswers(
+          state({ round }),
+          [answer({ elapsedMs })],
+          CARDS,
+          9,
+        );
+        expect(change?.entries[0]?.outcome).toBe(outcome);
+        expect(change?.items[0]?.memory.box).toBe(box);
+      },
+    );
+
+    it("puts the typed pace in the level's window, which the level is judged by", () => {
+      const change = decideAnswers(
+        state({
+          round,
+          stats: makeStats({
+            level: { level: 5, reason: "placement", roundId: "p1", at: 1 },
+          }),
+        }),
+        [answer({ elapsedMs: 11_000 })],
+        CARDS,
+        99,
+      );
+      expect(change?.stats.levelWindow).toStrictEqual([
+        {
+          cardId: "c1",
+          level: 5,
+          result: "ok",
+          elapsedMs: 11_000,
+          limitMs: 600_000,
+          paceMs: 22_000,
+          answeredAt: 99,
+        },
+      ]);
+    });
   });
 
   it.each([

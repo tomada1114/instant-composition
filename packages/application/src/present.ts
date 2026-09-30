@@ -1,4 +1,5 @@
 import {
+  answerModeOf,
   levelModeOf,
   limitMsOf,
   nearestMilestone,
@@ -9,6 +10,8 @@ import {
   type ReviewEntry,
   type Round,
   type RoundOutcome,
+  type Settings,
+  withDefaults,
 } from "@instant-composition/domain";
 
 import { toeicOf, type CatalogSnapshot } from "./catalog";
@@ -18,6 +21,7 @@ import type {
   ReachView,
   RoundPayload,
   RoundSummary,
+  ShownSettings,
 } from "./views";
 
 /** The level and its mode, named by the TOEIC reference the catalog gives it. */
@@ -30,9 +34,16 @@ export function levelViewOf(stats: LearnerStats, snapshot: CatalogSnapshot): Lev
   };
 }
 
+/** The settings as a client reads them, picked field by field for the reason `payloadOf` gives. */
+export function shownSettingsOf(settings: Settings): ShownSettings {
+  const { topics, focus, dailySize, sound, limitSeconds, gradeKeys } =
+    withDefaults(settings);
+  return { topics, focus, dailySize, sound, limitSeconds, gradeKeys };
+}
+
 /**
  * The round as the drill needs it: its cards with the limit the round was
- * dealt with and each card's pace, and where it stands.
+ * dealt with and each card's pace in the round's mode, and where it stands.
  */
 export function payloadOf(
   round: Round,
@@ -41,6 +52,7 @@ export function payloadOf(
   snapshot: CatalogSnapshot,
 ): RoundPayload {
   const cards: Record<string, DrillCard> = {};
+  const mode = answerModeOf(round);
   for (const id of round.deck) {
     const card = snapshot.shown.get(id);
     if (card !== undefined) {
@@ -48,7 +60,7 @@ export function payloadOf(
       // spread would put every field a card gains, such as its concepts, on the wire.
       const { topic, subtopic, level, words, prompt, text, alternatives, explanation } =
         card;
-      const paceMs = paceMsForWords(words);
+      const paceMs = paceMsForWords(words, mode);
       cards[id] = {
         id,
         topic,

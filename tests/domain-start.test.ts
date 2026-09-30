@@ -146,6 +146,40 @@ describe("decideStart", () => {
     });
   });
 
+  it("records the spoken mode and the limit on a round dealt to a learner who never chose a mode", () => {
+    const decided = decideStart(state(), { kind: "today", roundId: "t1" });
+    expect(decided.ok && decided.value.round).toMatchObject({
+      answerMode: "spoken",
+      limitMs: 30_000,
+    });
+  });
+
+  it.each(["placement", "today", "extra"] as const)(
+    "records the typed mode and no limit on a %s round dealt from typed settings",
+    (kind) => {
+      const decided = decideStart(
+        state(
+          {},
+          { settings: makeSettings({ answerMode: "typed", limitSeconds: 45 }) },
+        ),
+        { kind, roundId: "r1" },
+      );
+      expect(decided.ok && decided.value.round.answerMode).toBe("typed");
+      expect(decided.ok && "limitMs" in decided.value.round).toBe(false);
+    },
+  );
+
+  it("keeps the mode a resumed round was dealt with, so a new one waits for the next round", () => {
+    const open = makeRound({ id: "t0", kind: "today", deck: ["c0", "c1", "c2"] });
+    const decided = decideStart(
+      state({ open }, { settings: makeSettings({ answerMode: "typed" }) }),
+      { kind: "today", roundId: "t1" },
+    );
+    expect(decided.ok && decided.value.created).toBe(false);
+    expect(decided.ok && decided.value.round.limitMs).toBe(30_000);
+    expect(decided.ok && "answerMode" in decided.value.round).toBe(false);
+  });
+
   it("deals only what today's portion still lacks", () => {
     const portions = new Map([
       [TODAY, makePortion({ day: TODAY, target: 10, progress: 7 })],

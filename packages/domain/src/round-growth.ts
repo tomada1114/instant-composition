@@ -3,8 +3,9 @@ import type { ItemProgress, ReviewEntry } from "./records";
 import { TUNING } from "./tuning";
 
 /**
- * This round's first-pass answers against each item's previous first pass from
- * an earlier round, read off the item's projection rather than the whole log.
+ * This round's first-pass answers against each item's previous first pass in
+ * the same mode from an earlier round, read off the item's projection rather
+ * than the whole log: `ItemProgress.previous` is kept within `last`'s mode.
  *
  * @remarks
  * An item a later round has already answered again no longer holds this

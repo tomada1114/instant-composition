@@ -7,9 +7,9 @@ import type {
   LevelMode,
   ReviewEntry,
   Round,
-  RoundOutcome,
 } from "./records";
 import { err, ok, type Result } from "./result";
+import type { RoundOutcome } from "./round-outcome";
 
 /** Who moves the level; stats stored before a level could be picked were all `auto`. */
 export function levelModeOf(stats: LearnerStats): LevelMode {
