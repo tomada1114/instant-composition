@@ -423,6 +423,22 @@
     }
   },
   {
+    "id": "c_7k7u8w3t",
+    "ja": "プリヤは木曜を仮押さえすると言った。",
+    "en": "Priya said she'd pencil in Thursday.",
+    "alternatives": [
+      "Priya said she would pencil Thursday in.",
+      "Priya said she'd tentatively hold Thursday."
+    ],
+    "point": "仮押さえは pencil in。said の後は時制を一つ下げる",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 10,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7v6m8a2q",
     "ja": "確認したら、金曜は大丈夫です。",
     "en": "Having checked, I'm free on Friday.",

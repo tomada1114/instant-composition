@@ -105,6 +105,22 @@
     }
   },
   {
+    "id": "c_2s6t8z9v",
+    "ja": "あの機能、早く切ればよかった。",
+    "en": "I wish we'd axed that feature sooner.",
+    "alternatives": [
+      "I wish we'd killed that feature earlier.",
+      "I wish we'd pulled the plug on that feature sooner."
+    ],
+    "point": "「切る」は axe。過去の後悔は wish + 過去完了",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 10,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2x7s5m5n",
     "ja": "その機能、いつ出るかわかる？",
     "en": "Do you know when that feature ships?",

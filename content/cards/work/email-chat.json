@@ -471,6 +471,22 @@
     }
   },
   {
+    "id": "c_8f3e2a9n",
+    "ja": "あの返信、寝かせとけばよかった。",
+    "en": "I wish I'd sat on that reply.",
+    "alternatives": [
+      "I wish I'd waited before sending that reply.",
+      "I wish I'd held off on sending that reply."
+    ],
+    "point": "「寝かせる」は sit on。過去の後悔は wish + 過去完了",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 9,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8j2w5z2q",
     "ja": "メールより電話が早いよ。",
     "en": "A call is faster than email.",

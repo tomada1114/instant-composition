@@ -22,6 +22,22 @@
     }
   },
   {
+    "id": "c_2y3w4q8b",
+    "ja": "恐縮ですが、声が少し途切れています。",
+    "en": "I'm afraid you're breaking up a bit.",
+    "alternatives": [
+      "I'm afraid the line's breaking up a little.",
+      "Sorry, but you seem to be breaking up a little."
+    ],
+    "point": "I'm afraid と a bit で角を丸める。途切れる = break up",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2z3p7q6u",
     "ja": "君が早くかけてれば、彼は出たよ。",
     "en": "If you'd called earlier, he'd have answered.",

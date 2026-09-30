@@ -146,6 +146,22 @@
     }
   },
   {
+    "id": "c_3c9r9h6r",
+    "ja": "何があっても、温度設定は触らないで。",
+    "en": "Under no circumstances should you touch the thermostat.",
+    "alternatives": [
+      "On no account should you touch the thermostat.",
+      "Whatever you do, don't touch the thermostat."
+    ],
+    "point": "否定句が文頭に来ると should you の語順に倒置",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 10,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3s3k3s3u",
     "ja": "もう戻らなきゃ。",
     "en": "I must get back.",

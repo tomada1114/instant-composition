@@ -215,6 +215,22 @@
     }
   },
   {
+    "id": "c_4e2x7p2k",
+    "ja": "彼が無理と言ったら、こっそり教えて。",
+    "en": "Tip me off if he says he can't.",
+    "alternatives": [
+      "Give me a heads-up if he says he can't.",
+      "Let me know early if he says he can't."
+    ],
+    "point": "「こっそり知らせる」は tip off。if 節の中に says 節",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4x3h9j8f",
     "ja": "よければ、手伝ってもらえない？",
     "en": "I don't suppose you could help?",

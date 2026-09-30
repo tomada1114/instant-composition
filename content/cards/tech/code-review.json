@@ -394,6 +394,22 @@
     }
   },
   {
+    "id": "c_6p9s7x8d",
+    "ja": "ブランチ、リベースしてもいい？",
+    "en": "Mind if I rebase this branch?",
+    "alternatives": [
+      "Would you mind if I rebased this branch?",
+      "Is it okay if I rebase this branch?"
+    ],
+    "point": "Mind if I は Do you mind if I の省略。許可を求める",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7p9g2z9w",
     "ja": "マージ前に誰か気づいてたらなあ。",
     "en": "I wish someone had caught this before merging.",
@@ -540,6 +556,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9h8z5w2d",
+    "ja": "これ、マージしていい？",
+    "en": "Can I merge this?",
+    "alternatives": ["May I merge this?", "Is it OK to merge?"],
+    "point": "許可を求めるときは Can I / May I",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9j5e2g3p",

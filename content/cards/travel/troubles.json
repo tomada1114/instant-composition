@@ -127,6 +127,22 @@
     }
   },
   {
+    "id": "c_3w9t2t2m",
+    "ja": "パスポートが、どこにもなかった。",
+    "en": "Nowhere could I find my passport.",
+    "alternatives": [
+      "I couldn't find my passport anywhere.",
+      "My passport was nowhere to be found."
+    ],
+    "point": "Nowhere を文頭に出すと could I の語順に倒置",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4d5j4t4z",
     "ja": "次の電車の方が早いです。",
     "en": "The next train is faster.",

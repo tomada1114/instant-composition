@@ -657,6 +657,22 @@
     }
   },
   {
+    "id": "c_9j7n3t6w",
+    "ja": "変更を戻したので、様子見です。",
+    "en": "Having rolled back the change, we're monitoring.",
+    "alternatives": [
+      "With the change rolled back, we're monitoring.",
+      "Since we rolled back the change, we're monitoring."
+    ],
+    "point": "Having + 過去分詞で「もう〜したので」を短く言う",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 9,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_9u5c5k9c",
     "ja": "再起動していいですか？",
     "en": "Can I restart it?",

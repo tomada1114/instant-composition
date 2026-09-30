@@ -648,5 +648,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9z5r2j8j",
+    "ja": "彼は、こけたらどうするのかと聞いた。",
+    "en": "He asked what we'd do if it flopped.",
+    "alternatives": [
+      "He asked what we'd do if it bombed.",
+      "He asked us what we'd do if it flopped."
+    ],
+    "point": "間接疑問は平叙の語順。asked の後で would に下げる",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 9,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   }
 ]

@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2d5y9r3g",
+    "ja": "迷っても、川沿いに歩けば大丈夫。",
+    "en": "Even if you're turned around, follow the river.",
+    "alternatives": [
+      "Even if you get lost, just follow the river.",
+      "Even if you lose your bearings, follow the river."
+    ],
+    "point": "turned around = 方向を見失う。Even if の後は現在形",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2d7x6p5x",
     "ja": "地図を持ってくればよかった。",
     "en": "I wish I'd brought a map.",

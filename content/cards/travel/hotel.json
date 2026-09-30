@@ -323,6 +323,22 @@
     }
   },
   {
+    "id": "c_5y5b5b6e",
+    "ja": "予約した部屋と、ずいぶん違いますね。",
+    "en": "It's a far cry from what we booked.",
+    "alternatives": [
+      "This room is nothing like what we booked.",
+      "This is not at all what we booked."
+    ],
+    "point": "a far cry from = 大違い。what 節が前置詞の目的語",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 10,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5y6r5r9j",
     "ja": "天井から水が漏れています。",
     "en": "Water's leaking from the ceiling.",

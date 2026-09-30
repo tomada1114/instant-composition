@@ -383,6 +383,22 @@
     }
   },
   {
+    "id": "c_6a5y5y9c",
+    "ja": "足を引っ張っているのは、引き継ぎです。",
+    "en": "What's holding us back is the handoff.",
+    "alternatives": [
+      "It's the handoff that's holding us back.",
+      "The handoff is what's holding us back."
+    ],
+    "point": "足を引っ張る = hold back。What 節で焦点を後ろへ置く",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6c2h8a4f",
     "ja": "万事予定どおりです。",
     "en": "Everything is on schedule.",

@@ -576,6 +576,22 @@
     }
   },
   {
+    "id": "c_8p4f3j2x",
+    "ja": "彼は、皆が撮る場所は期待外れだと言った。",
+    "en": "He said the spot everyone photographs is a letdown.",
+    "alternatives": [
+      "He told me the spot everyone photographs is a letdown.",
+      "He said the place everyone photographs is disappointing."
+    ],
+    "point": "said の後の that は省ける。spot を everyone photographs が修飾",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8q4d8f5k",
     "ja": "主役を奪うのは、この夜景だね。",
     "en": "It's the night view that steals the show.",

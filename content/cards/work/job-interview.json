@@ -85,6 +85,22 @@
     }
   },
   {
+    "id": "c_3r6w5x2b",
+    "ja": "即断が要る仕事に惹かれます。",
+    "en": "I'm drawn to jobs demanding snap decisions.",
+    "alternatives": [
+      "I'm attracted to roles that demand quick decisions.",
+      "I'm drawn to roles requiring split-second decisions."
+    ],
+    "point": "jobs の後ろに -ing で修飾。惹かれる = be drawn to",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 9,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4c7e9b2h",
     "ja": "営業の経験者です。",
     "en": "I'm experienced in sales.",

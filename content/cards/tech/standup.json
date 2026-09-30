@@ -142,6 +142,19 @@
     }
   },
   {
+    "id": "c_4x2c3y9b",
+    "ja": "私、ケンを手伝える。",
+    "en": "I can help Ken.",
+    "alternatives": ["I can help Ken out.", "I'm able to help Ken."],
+    "point": "できるは can + 動詞の原形",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_4z4x9f4f",
     "ja": "背景を、少し教えてほしいです。",
     "en": "I could use a bit of context.",
