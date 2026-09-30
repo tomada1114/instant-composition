@@ -193,3 +193,29 @@ describe("keyAction", () => {
     });
   });
 });
+
+describe("keyAction on a typed front", () => {
+  const typedFront = drillReducer(
+    initDrill({
+      roundId: "r",
+      deck: ["c1"],
+      limits: { c1: 600_000 },
+      paces: { c1: 7000 },
+      answered: [],
+      retries: true,
+      intro: false,
+      typed: true,
+    }),
+    { type: "shown", at: 0 },
+  );
+
+  it.each([" ", "Enter"])("leaves %p to the field rather than flipping", (key) => {
+    expect(keyAction(typedFront, on(key), DEFAULT)).toBeUndefined();
+  });
+
+  it("still pauses on Escape", () => {
+    expect(keyAction(typedFront, on("Escape"), DEFAULT)).toStrictEqual({
+      type: "pause",
+    });
+  });
+});

@@ -35,18 +35,20 @@ export function requestRound(
   return startRound({ roundId, kind });
 }
 
-/** The batch body's answer: the round travels in the path, not in the answer. */
+/**
+ * The batch body's answer: the round travels in the path, not in the answer.
+ * Only a typed round's answer carries a text, which a spoken one's never does.
+ */
 function answerOf(input: AnswerInput): Answer {
-  const answer: Answer = {
+  return {
     id: input.id,
     cardId: input.cardId,
     pass: input.pass,
     result: input.result,
     elapsedMs: input.elapsedMs,
+    ...(input.answeredAt === undefined ? {} : { answeredAt: input.answeredAt }),
+    ...(input.text === undefined ? {} : { text: input.text }),
   };
-  return input.answeredAt === undefined
-    ? answer
-    : { ...answer, answeredAt: input.answeredAt };
 }
 
 /** Finishes the round, answering with the summary it keeps. */

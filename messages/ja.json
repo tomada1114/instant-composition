@@ -131,6 +131,9 @@
       "comboLabel": "連続",
       "again": "もう一度",
       "flip": "めくる",
+      "typed": "英語で入力",
+      "submit": "答え合わせ",
+      "yours": "あなたの答え",
       "point": "要点",
       "seconds": "{seconds, number, ::.0} 秒",
       "said": "言えた",
@@ -142,6 +145,7 @@
     },
     "announce": {
       "front": "表。{ja}。持ち時間 {seconds} 秒",
+      "frontTyped": "表。{ja}",
       "timeout": "時間切れ。復習へ",
       "said": "言えた",
       "review": "復習へ"

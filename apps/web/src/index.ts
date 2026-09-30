@@ -20,7 +20,6 @@ export { drillReducer } from "./drill/drill-machine";
 export {
   answerId,
   currentCard,
-  initDrill,
   progress,
   remainingMs,
   type AnswerInput,
@@ -28,7 +27,9 @@ export {
   type DrillInit,
   type DrillPhase,
   type DrillState,
+  type Submission,
 } from "./drill/drill-state";
+export { initDrill } from "./drill/drill-init";
 export { keyAction, type DrillKeyAction, type KeyPress } from "./drill/keys";
 export { playMotion, prefersReducedMotion } from "./drill/motion";
 export { requestFinish, requestRound, roundKindFrom, sendAnswer } from "./drill/rounds";
