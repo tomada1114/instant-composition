@@ -61,6 +61,10 @@ no applause. Browsers block autoplay, so the first "start" press unlocks audio.
 
 - Seconds to flip run from the moment the front is drawn to the flip key or click.
 - Space on a back does nothing: a grade cannot be skipped.
+- A typed round's front is the field's: every key but Esc types into it, and Enter in it
+  submits (never the Enter confirming an input method's conversion), timed from the
+  front being drawn. The field leaves with the front, so the grade keys work on the back
+  as above. No clock runs and nothing times out; the pause sheet lists Enter for Space.
 - For 150 ms after a back appears, ○/× keys are ignored, so the flip's momentum cannot
   grade the card.
 - The ○ and × keys are the learner's, set on settings' "app" tab and stored on the

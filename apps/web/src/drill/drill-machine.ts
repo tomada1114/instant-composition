@@ -34,6 +34,7 @@ function record(
   result: AnswerResult,
   elapsedMs: number,
   wall: number,
+  text?: string,
 ): DrillState {
   const card = currentCard(state);
   if (card === undefined) return state;
@@ -52,6 +53,7 @@ function record(
         result,
         elapsedMs: Math.round(elapsedMs),
         answeredAt: wall,
+        ...(text === undefined ? {} : { text }),
       },
     ],
   };
@@ -64,6 +66,29 @@ function timeout(state: DrillState, at: number, wall: number): DrillState {
     ...recorded,
     phase: { kind: "back", mode: "timeout", elapsedMs: limit, since: at },
   };
+}
+
+/**
+ * A typed front has no clock to run out: Enter turns it over with what was
+ * typed, timed from the front being drawn and held to the round's cap. Text
+ * that is only blank is not an answer's text.
+ */
+function onTypedFront(
+  state: DrillState,
+  phase: Extract<DrillPhase, { kind: "front" }>,
+  event: DrillEvent,
+): DrillState {
+  if (event.type === "shown" && phase.runningSince === null)
+    return { ...state, phase: { ...phase, runningSince: event.at, now: event.at } };
+  if (event.type !== "submit" || phase.runningSince === null) return state;
+  const text = event.text.trim();
+  const back = {
+    kind: "back",
+    mode: "self",
+    elapsedMs: Math.min(usedMs(phase, event.at), limitOf(state)),
+    since: event.at,
+  } as const;
+  return { ...state, phase: text === "" ? back : { ...back, text } };
 }
 
 function onFront(
@@ -103,10 +128,16 @@ function onBack(
   if (event.type !== "grade") return state;
   if (event.key && event.at - phase.since < TUNING.keyLockAfterFlipMs) return state;
   const fast = event.result === "ok" && isFast(phase.elapsedMs, paceOf(state));
-  const recorded = record(state, event.result, phase.elapsedMs, event.wall);
+  const recorded = record(state, event.result, phase.elapsedMs, event.wall, phase.text);
+  const feedback = {
+    kind: "feedback",
+    result: event.result,
+    fast,
+    elapsedMs: phase.elapsedMs,
+  } as const;
   return {
     ...recorded,
-    phase: { kind: "feedback", result: event.result, fast, elapsedMs: phase.elapsedMs },
+    phase: phase.text === undefined ? feedback : { ...feedback, text: phase.text },
   };
 }
 
@@ -144,7 +175,9 @@ export function drillReducer(state: DrillState, event: DrillEvent): DrillState {
     case "intro":
       return event.type === "start" ? { ...state, phase: FRESH_FRONT } : state;
     case "front":
-      return onFront(state, phase, event);
+      return state.typed
+        ? onTypedFront(state, phase, event)
+        : onFront(state, phase, event);
     case "back":
       return onBack(state, phase, event);
     case "feedback":

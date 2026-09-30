@@ -11,12 +11,16 @@ import { Sheet } from "../ui/sheet";
 /**
  * The drill's keys, listed only once the learner has used one (`keys`
  * variant): the default pair with the letters beside it, or the pair chosen.
+ * A typed round turns a card over with Enter rather than Space.
  */
-function KeyLegend({ gradeKeys }: Readonly<{ gradeKeys: GradeKeys }>): ReactElement {
+function KeyLegend({
+  gradeKeys,
+  typed,
+}: Readonly<{ gradeKeys: GradeKeys; typed: boolean }>): ReactElement {
   const t = useTranslations("Drill.card");
   const fallback = isDefaultGradeKeys(gradeKeys);
   const rows = [
-    ["Space", t("flip")],
+    typed ? ["Enter", t("submit")] : ["Space", t("flip")],
     [fallback ? "→  K  F" : keyLabel(gradeKeys.ok), t("said")],
     [fallback ? "←  J  D" : keyLabel(gradeKeys.ng), t("notSaid")],
     ["Esc  ?", t("pause")],
@@ -42,11 +46,13 @@ function KeyLegend({ gradeKeys }: Readonly<{ gradeKeys: GradeKeys }>): ReactElem
 export function PauseSheet({
   position,
   gradeKeys,
+  typed = false,
   onQuit,
   onContinue,
 }: Readonly<{
   position: number;
   gradeKeys: GradeKeys;
+  typed?: boolean;
   onQuit: () => void;
   onContinue: () => void;
 }>): ReactElement {
@@ -61,7 +67,7 @@ export function PauseSheet({
           {t("hint", { hour: TUNING.dayBoundaryHour, position })}
         </p>
       </div>
-      <KeyLegend gradeKeys={gradeKeys} />
+      <KeyLegend gradeKeys={gradeKeys} typed={typed} />
       <div className="flex flex-col gap-2.5">
         <Button variant="secondary" className="w-full" onClick={onQuit}>
           {t("quit")}

@@ -2,9 +2,10 @@ import { isDefaultGradeKeys } from "../lib/grade-keys";
 import type { GradeKeys } from "../openapi";
 import type { DrillState } from "./drill-state";
 
-/** What a key asks of the drill; the caller stamps it with the time. */
+/** What a key or a control asks of the drill; the caller stamps it with the time. */
 export type DrillKeyAction =
   | { readonly type: "start" | "flip" | "next" | "pause" | "resume" }
+  | { readonly type: "submit"; readonly text: string }
   | { readonly type: "grade"; readonly result: "ok" | "ng" }
   | { readonly type: "scroll"; readonly direction: 1 | -1 };
 
@@ -37,7 +38,8 @@ function gradeOf(press: KeyPress, keys: GradeKeys): "ok" | "ng" | undefined {
  * the learner's grade keys. While paused only Escape is taken, so Space and
  * Enter reach the sheet's focused button as a native press. `?` pauses too:
  * the pause sheet is where the keys are listed. A grade key never scrolls,
- * so ↑ or ↓ chosen as one leaves the card to the other arrow.
+ * so ↑ or ↓ chosen as one leaves the card to the other arrow. A typed front
+ * is turned over by Enter in its field, never by a key here.
  */
 export function keyAction(
   state: DrillState,
@@ -52,7 +54,7 @@ export function keyAction(
     return PRIMARY_KEYS.has(key) ? { type: "start" } : undefined;
   if (key === "Escape" || key === "?") return { type: "pause" };
   if (phase.kind === "front")
-    return PRIMARY_KEYS.has(key) ? { type: "flip" } : undefined;
+    return PRIMARY_KEYS.has(key) && !state.typed ? { type: "flip" } : undefined;
   if (phase.kind !== "back") return undefined;
 
   const grade = gradeOf(press, keys);

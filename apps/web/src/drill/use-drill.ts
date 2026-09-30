@@ -28,14 +28,16 @@ export function feedbackMs(feedback: {
 
 /**
  * Feeds the reducer its clock: `shown` on the frame the front is drawn, a
- * tick while it runs, and `advance` once a grade's feedback is over.
+ * tick while it runs — never in a typed round, which has no clock to run out —
+ * and `advance` once a grade's feedback is over.
  */
 export function useDrillClock(state: DrillState, dispatch: Dispatch<DrillEvent>): void {
   const { phase, paused } = state;
   const card = currentCard(state);
   const cardKey = card === undefined ? "" : `${card.pass}:${card.cardId}`;
   const waiting = phase.kind === "front" && phase.runningSince === null && !paused;
-  const running = phase.kind === "front" && phase.runningSince !== null && !paused;
+  const running =
+    phase.kind === "front" && phase.runningSince !== null && !paused && !state.typed;
   const hold = phase.kind === "feedback" ? feedbackMs(phase) : undefined;
 
   useEffect(() => {
@@ -69,6 +71,15 @@ export function useDrillClock(state: DrillState, dispatch: Dispatch<DrillEvent>)
   }, [hold, cardKey, dispatch]);
 }
 
+/** A key typed into a field is text, not the drill's; only Escape still pauses from one. */
+function inField(event: KeyboardEvent): boolean {
+  return (
+    event.key !== "Escape" &&
+    event.target instanceof Element &&
+    event.target.closest("input, textarea") !== null
+  );
+}
+
 /**
  * Routes the drill's keys to `onAction`, grading with `gradeKeys`, and pauses
  * when the page is hidden. A page shown again stays paused: the sheet waits
@@ -87,7 +98,7 @@ export function useDrillKeys(
   useEffect(() => {
     function onKey(event: KeyboardEvent): void {
       if (event.repeat || event.isComposing) return;
-      if (event.metaKey || event.ctrlKey || event.altKey) return;
+      if (event.metaKey || event.ctrlKey || event.altKey || inField(event)) return;
       const action = keyAction(latest.current.state, event, latest.current.gradeKeys);
       if (action === undefined) return;
       event.preventDefault();

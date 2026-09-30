@@ -4,8 +4,10 @@ import { useTranslations } from "use-intl";
 
 import { TabBar } from "../lib/tab-bar";
 import type { GradeKeys, RoundKind, RoundPayload } from "../openapi";
+import { sessionStore } from "./answer-queue";
 import { useAnswerQueue, useQueuedDrill, type ArrivedQueue } from "./answer-sync";
-import { currentCard, initDrill, progress, type DrillState } from "./drill-state";
+import { initDrill } from "./drill-init";
+import { progress, type DrillState } from "./drill-state";
 import { CardScreen } from "./card-screen";
 import { DrillDone } from "./drill-done";
 import { IntroScreen } from "./intro-screen";
@@ -14,6 +16,8 @@ import { PauseSheet } from "./pause-sheet";
 import { ReadyScreen } from "./ready-screen";
 import { browserSound } from "./sound";
 import { Toast } from "./toast";
+import { loadSubmission, useKeptSubmission } from "./typed-submission";
+import { useAnnouncement } from "./use-announcement";
 import {
   useDrillClock,
   useDrillKeys,
@@ -45,19 +49,9 @@ function startDrill({
     answered,
     retries: round.retries,
     intro: !pressed || (round.kind === "placement" && answered.length === 0),
+    typed: round.answerMode === "typed",
+    submitted: loadSubmission(sessionStore(), round.id),
   });
-}
-
-/** What a screen reader hears as the drill moves: never the seconds ticking. */
-function useAnnouncement(state: DrillState, round: RoundPayload): string {
-  const t = useTranslations("Drill.announce");
-  const card = currentCard(state);
-  const content = card === undefined ? undefined : round.cards[card.cardId];
-  const { phase } = state;
-  if (content === undefined) return "";
-  if (phase.kind === "feedback") return phase.result === "ok" ? t("said") : t("review");
-  if (phase.kind === "back" && phase.mode === "timeout") return t("timeout");
-  return t("front", { ja: content.prompt, seconds: content.limitMs / 1000 });
 }
 
 /** One round, from its first front to its summary, driven by the drill reducer. */
@@ -102,6 +96,7 @@ export function DrillSession({
     },
   });
   const announcement = useAnnouncement(state, round);
+  useKeptSubmission(state, sessionStore());
   useDrillClock(state, dispatch);
   const leave = useLeaveGuard(state, dispatch);
 
@@ -117,6 +112,8 @@ export function DrillSession({
       dispatch({ type: "grade", result: action.result, at, wall, key });
     } else if (action.type === "flip") {
       dispatch({ type: "flip", at, wall });
+    } else if (action.type === "submit") {
+      dispatch({ type: "submit", text: action.text, at });
     } else {
       if (action.type === "resume") leave.stay();
       dispatch({ type: action.type, at });
@@ -187,6 +184,7 @@ export function DrillSession({
         <PauseSheet
           position={resumeAt}
           gradeKeys={gradeKeys}
+          typed={state.typed}
           onQuit={goHome}
           onContinue={resume}
         />
