@@ -293,7 +293,8 @@ listed under [Unverified](#unverified) instead of being stated as fact.
   - AWS Shield
   - Bedrock's global and geographic cross-Region inference: "Global cross-Region
     inference and Geographic cross-Region inference are not supported". ADR-0011's `jp.`
-    geographic profile is one, so grading cannot run on a Free plan account. Checked
+    geographic profile is one, so grading as that ADR plans it cannot run on a Free plan
+    account (inferred from this page and the model card, not tested). Checked
     2026-09-29.
 
   Organizations, IAM Identity Center and Control Tower are not supported at all. The
