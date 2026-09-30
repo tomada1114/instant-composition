@@ -18,6 +18,14 @@ export {
   PARAMETERS_EXTENSION_LAYER_ARN,
   type ApiFunctionProps,
 } from "./api-function";
+export {
+  addBedrockBudget,
+  BEDROCK_DENIED_ACTIONS,
+  BEDROCK_MONTHLY_LIMIT_USD,
+  bedrockBudgetName,
+  roleOf,
+  type BedrockBudgetProps,
+} from "./bedrock-budget";
 export { WEB_DIST_CONTEXT } from "./spa-deployment";
 export { parseStage, STAGES, UnknownStageError, type Stage } from "./stage";
 export {

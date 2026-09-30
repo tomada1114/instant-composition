@@ -1,4 +1,4 @@
-import { Duration, type Stack } from "aws-cdk-lib";
+import { Aws, Duration, type Stack } from "aws-cdk-lib";
 import { type HttpApi } from "aws-cdk-lib/aws-apigatewayv2";
 import {
   Alarm,
@@ -10,6 +10,7 @@ import {
   TreatMissingData,
 } from "aws-cdk-lib/aws-cloudwatch";
 import { SnsAction } from "aws-cdk-lib/aws-cloudwatch-actions";
+import { PolicyStatement, ServicePrincipal } from "aws-cdk-lib/aws-iam";
 import { type IFunction } from "aws-cdk-lib/aws-lambda";
 import { Topic } from "aws-cdk-lib/aws-sns";
 import { EmailSubscription } from "aws-cdk-lib/aws-sns-subscriptions";
@@ -61,6 +62,21 @@ export function addObservability(
   if (alarmEmail !== undefined) {
     topic.addSubscription(new EmailSubscription(alarmEmail));
   }
+  // A topic policy replaces SNS's default one, and the Bedrock budget adds
+  // one, so this stack's alarms are admitted by name.
+  topic.addToResourcePolicy(
+    new PolicyStatement({
+      principals: [new ServicePrincipal("cloudwatch.amazonaws.com")],
+      actions: ["sns:Publish"],
+      resources: [topic.topicArn],
+      conditions: {
+        StringEquals: { "aws:SourceAccount": Aws.ACCOUNT_ID },
+        ArnLike: {
+          "aws:SourceArn": `arn:${Aws.PARTITION}:cloudwatch:${scope.region}:${Aws.ACCOUNT_ID}:alarm:*`,
+        },
+      },
+    }),
+  );
   const action = new SnsAction(topic);
 
   const requests = api.metricCount({ statistic: "Sum", period: PERIOD });
