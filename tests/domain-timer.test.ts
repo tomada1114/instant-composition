@@ -134,7 +134,7 @@ describe("the estimate on the start screen", () => {
     [30, 15],
     [7, 4],
   ])("puts %p cards at the default limit at about %p minutes", (cards, minutes) => {
-    expect(estimateMinutes(cards, TUNING.defaultLimitSeconds)).toBe(minutes);
+    expect(estimateMinutes(cards, TUNING.defaultLimitSeconds, "spoken")).toBe(minutes);
   });
 
   it.each([
@@ -146,7 +146,18 @@ describe("the estimate on the start screen", () => {
   ] as const)(
     "puts ten cards at a %p-second limit at about %p minutes",
     (limit, minutes) => {
-      expect(estimateMinutes(10, limit)).toBe(minutes);
+      expect(estimateMinutes(10, limit, "spoken")).toBe(minutes);
+    },
+  );
+
+  it.each([
+    [5, 15, 5],
+    [7, 30, 7],
+    [10, 60, 10],
+  ] as const)(
+    "puts %p typed cards at 60 seconds each, the typed pace's longest, whatever the %p-second limit: %p minutes",
+    (cards, limit, minutes) => {
+      expect(estimateMinutes(cards, limit, "typed")).toBe(minutes);
     },
   );
 });

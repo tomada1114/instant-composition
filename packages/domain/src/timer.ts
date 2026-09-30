@@ -76,10 +76,16 @@ export function isFast(elapsedMs: number, paceMs: number): boolean {
 }
 
 /**
- * The start screen's "about M minutes" for `cards` cards, rounded up: each
- * card at the per-card limit the round will be dealt with, so the estimate
- * moves with the learner's choice rather than a figure of its own.
+ * The start screen's "about M minutes" for `cards` cards in `mode`, rounded
+ * up: each spoken card at the per-card limit the round will be dealt with, so
+ * the estimate moves with the learner's choice rather than a figure of its own.
  */
-export function estimateMinutes(cards: number, limitSeconds: LimitSeconds): number {
-  return Math.ceil((cards * limitSeconds) / 60);
+export function estimateMinutes(
+  cards: number,
+  limitSeconds: LimitSeconds,
+  mode: AnswerMode,
+): number {
+  // An upper bound either way: a typed card has no limit, so its pace's longest stands in.
+  const perCard = mode === "typed" ? TUNING.typedPace.maxSeconds : limitSeconds;
+  return Math.ceil((cards * perCard) / 60);
 }
