@@ -4,6 +4,13 @@ export type DayKey = string;
 /** How the learner graded a card, or `timeout` when the timer ran out first. */
 export type AnswerResult = "ok" | "ng" | "timeout";
 
+/**
+ * How a round's answers are given: said aloud against the per-card limit, or
+ * typed with no limit. Anything stored before the mode existed was spoken, so
+ * `answerModeOf` reads a missing mode as `spoken`.
+ */
+export type AnswerMode = "spoken" | "typed";
+
 /** The first pass through a round's deck, or the retry of what it missed. */
 export type Pass = "first" | "retry";
 
@@ -59,6 +66,8 @@ export interface AnswerRecord {
   /** Until the flip; `limitMs` for a timeout. */
   readonly elapsedMs: number;
   readonly limitMs: number;
+  /** The round's mode; absent on an answer given before the mode existed. */
+  readonly answerMode?: AnswerMode;
   /** The round's day, not the wall-clock day of the answer. */
   readonly day: DayKey;
   readonly answeredAt: number;
@@ -111,6 +120,8 @@ export interface Settings {
   readonly limitSeconds?: LimitSeconds;
   /** Absent until the learner chooses a pair, so `TUNING.defaultGradeKeys` stands in. */
   readonly gradeKeys?: GradeKeys;
+  /** The mode the next round is dealt with; absent until the learner chooses one. */
+  readonly answerMode?: AnswerMode;
 }
 
 /** A top-level topic and its subtopics, in `content/taxonomy.json`'s order. */

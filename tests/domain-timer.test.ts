@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  answerModeOf,
   countWords,
   estimateMinutes,
   isFast,
@@ -37,6 +38,22 @@ describe("the time limit", () => {
   it("is the one a round was dealt with, or each card's pace for a round dealt before it was a setting", () => {
     expect(limitMsOf({ limitMs: 30_000 }, 8_000)).toBe(30_000);
     expect(limitMsOf({}, 8_000)).toBe(8_000);
+    expect(limitMsOf({ limitMs: 30_000, answerMode: "spoken" }, 8_000)).toBe(30_000);
+  });
+
+  it("is none in a typed round, whose answers are held only to the ten-minute cap", () => {
+    expect(limitMsOf({ answerMode: "typed" }, 22_000)).toBe(600_000);
+  });
+});
+
+describe("the answer mode", () => {
+  it("reads as spoken for settings, a round or an answer from before the mode existed", () => {
+    expect(answerModeOf(undefined)).toBe("spoken");
+    expect(answerModeOf({})).toBe("spoken");
+  });
+
+  it.each(["spoken", "typed"] as const)("reads a recorded %s as itself", (mode) => {
+    expect(answerModeOf({ answerMode: mode })).toBe(mode);
   });
 });
 
@@ -50,16 +67,34 @@ describe("a card's pace", () => {
     [28, 18],
     [40, 20],
   ])("gives a %p-word answer %p seconds", (words, seconds) => {
-    expect(paceSecondsForWords(words)).toBe(seconds);
+    expect(paceSecondsForWords(words, "spoken")).toBe(seconds);
   });
 
   it("states the pace in milliseconds", () => {
-    expect(paceMsForWords(12)).toBe(10_000);
+    expect(paceMsForWords(12, "spoken")).toBe(10_000);
   });
 
   it("is the shortest for a deleted card, whose length is gone", () => {
-    expect(paceMsOf(null)).toBe(6_000);
-    expect(paceMsOf(12)).toBe(10_000);
+    expect(paceMsOf(null, "spoken")).toBe(6_000);
+    expect(paceMsOf(12, "spoken")).toBe(10_000);
+  });
+
+  it.each([
+    [1, 10],
+    [2, 10],
+    [5, 16],
+    [8, 22],
+    [12, 30],
+    [27, 60],
+    [40, 60],
+  ])("gives a %p-word answer %p seconds in a typed round", (words, seconds) => {
+    expect(paceSecondsForWords(words, "typed")).toBe(seconds);
+    expect(paceMsForWords(words, "typed")).toBe(seconds * 1_000);
+  });
+
+  it("is the typed pace's shortest for a deleted card in a typed round", () => {
+    expect(paceMsOf(null, "typed")).toBe(10_000);
+    expect(paceMsOf(12, "typed")).toBe(30_000);
   });
 
   it("counts words the way levels.json does, by whitespace", () => {

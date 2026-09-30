@@ -1,7 +1,7 @@
 import type { DifficultyAnswer } from "./difficulty";
-import type { Growth, ReviewRow } from "./growth";
-import type { Dot } from "./streak";
+import type { RoundOutcome } from "./round-outcome";
 import type {
+  AnswerMode,
   AnswerResult,
   CardState,
   DayKey,
@@ -42,8 +42,15 @@ export interface CompositionDetail {
   readonly elapsedMs: number;
   /** The round's limit, which the timer ran out at. */
   readonly limitMs: number;
-  /** The card's pace, which "fast" is judged by; see `Paced` for an entry without one. */
+  /**
+   * The card's pace in the round's mode, which "fast" is judged by; see
+   * `Paced` for an entry without one.
+   */
   readonly paceMs?: number;
+  /** The round's mode; absent on an entry logged before the mode existed. */
+  readonly answerMode?: AnswerMode;
+  /** What the learner typed, at most 300 characters; only ever in a typed round. */
+  readonly text?: string;
 }
 
 /** One entry of the review log. Never updated once written. */
@@ -73,6 +80,8 @@ export interface FirstPassMark {
   readonly result: AnswerResult;
   readonly elapsedMs: number;
   readonly answeredAt: number;
+  /** Absent on a mark kept before the answer mode existed, when every pass was spoken. */
+  readonly answerMode?: AnswerMode;
 }
 
 /** One item's projection: its memory state and what mastery and growth read. */
@@ -85,8 +94,13 @@ export interface ItemProgress {
   /** The placement on the latest review, for an item the catalog no longer holds. */
   readonly placement: SubtopicRef;
   readonly last: FirstPassMark | null;
-  /** The latest first pass from a session before `last`'s. */
+  /** The latest first pass in `last`'s mode from a session before `last`'s. */
   readonly previous: FirstPassMark | null;
+  /**
+   * The latest first pass in the mode `last` is not in, which a pass in that
+   * mode is compared with next. Absent on progress kept before the mode existed.
+   */
+  readonly otherMode?: FirstPassMark | null;
 }
 
 /** Why the level last moved: measured, adjusted by the answers, or picked by hand. */
@@ -102,42 +116,6 @@ export interface LevelEntry {
   readonly at: number;
 }
 
-/** Everything a finished round's summary shows that the catalog does not supply. */
-export interface RoundOutcome {
-  readonly placement: { readonly level: number; readonly first: boolean } | null;
-  readonly difficulty: {
-    readonly change: "up" | "down";
-    readonly level: number;
-  } | null;
-  readonly growth: Growth;
-  readonly review: readonly ReviewRow[];
-  readonly streak: {
-    readonly value: number;
-    readonly restart: boolean;
-    readonly changed: boolean;
-  };
-  readonly week: readonly Dot[];
-  readonly filled: DayKey | null;
-  /** Mastered items per topic after the round, and how many the round added. */
-  readonly reach: readonly {
-    readonly topic: string;
-    readonly count: number;
-    readonly added: number;
-  }[];
-  readonly pending?: number; // Chosen topics' items one OK day short; older outcomes lack it.
-  readonly titles: readonly string[];
-  readonly points: { readonly earned: number; readonly total: number };
-  readonly totals: {
-    readonly said: number;
-    readonly practicedDays: number;
-    readonly last14: readonly { readonly day: DayKey; readonly count: number }[];
-    readonly added: number;
-  };
-  readonly portionCompleted: boolean;
-  readonly todayOpen: boolean;
-  readonly continueToday: boolean;
-}
-
 export interface Round {
   readonly id: string;
   readonly kind: RoundKind;
@@ -151,6 +129,8 @@ export interface Round {
    * to whatever the setting says later; see `limitMsOf` for a round without one.
    */
   readonly limitMs?: number;
+  /** The mode the round was dealt with; a typed round records no limit. */
+  readonly answerMode?: AnswerMode;
   readonly startedAt: number;
   readonly finishedAt: number | null;
   readonly abandonedAt: number | null;

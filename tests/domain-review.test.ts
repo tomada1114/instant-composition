@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  growthOf,
   outcomeOf,
   replayItems,
   reviewAnswer,
@@ -10,6 +11,7 @@ import {
 } from "@instant-composition/domain";
 
 import { makeReview } from "./application-fixtures";
+import { makeItemProgress } from "./domain-fixtures";
 
 function answer(overrides: Partial<AcceptedAnswer> = {}): AcceptedAnswer {
   return {
@@ -21,6 +23,7 @@ function answer(overrides: Partial<AcceptedAnswer> = {}): AcceptedAnswer {
     elapsedMs: 6_000,
     limitMs: 10_000,
     paceMs: 10_000,
+    answerMode: "spoken",
     day: "2026-09-22",
     answeredAt: 1,
     snapshot: { topic: "work", subtopic: "a", level: 5, prompt: "文" },
@@ -189,12 +192,107 @@ describe("reviewAnswer", () => {
       result: "ok",
       elapsedMs: 4_000,
       answeredAt: 3,
+      answerMode: "spoken",
     });
     expect(progress?.previous).toStrictEqual({
       sessionId: "r2",
       result: "ng",
       elapsedMs: 6_000,
       answeredAt: 2,
+      answerMode: "spoken",
+    });
+  });
+});
+
+describe("a pass's comparison within its answer mode", () => {
+  const spoken1 = answer({ elapsedMs: 9_000 });
+  const typed2 = answer({
+    id: "a2",
+    sessionId: "r2",
+    answerMode: "typed",
+    elapsedMs: 20_000,
+    paceMs: 22_000,
+    answeredAt: 2,
+  });
+  const spoken3 = answer({
+    id: "a3",
+    sessionId: "r3",
+    elapsedMs: 4_000,
+    answeredAt: 3,
+  });
+
+  it("compares a pass with the latest earlier one in its mode, past one in the other", () => {
+    const progress = fold([spoken1, typed2, spoken3]);
+    expect(progress?.last).toMatchObject({ sessionId: "r3", answerMode: "spoken" });
+    expect(progress?.previous).toStrictEqual({
+      sessionId: "r1",
+      result: "ok",
+      elapsedMs: 9_000,
+      answeredAt: 1,
+      answerMode: "spoken",
+    });
+    expect(progress?.otherMode).toMatchObject({ sessionId: "r2", answerMode: "typed" });
+  });
+
+  it("has nothing to compare the first pass in a mode with", () => {
+    const progress = fold([spoken1, typed2]);
+    expect(progress?.last).toMatchObject({ sessionId: "r2", answerMode: "typed" });
+    expect(progress?.previous).toBeNull();
+    expect(progress?.otherMode).toMatchObject({
+      sessionId: "r1",
+      answerMode: "spoken",
+    });
+  });
+
+  it("rebuilds the same comparison from the log alone", () => {
+    const { progress, log } = folded([spoken1, typed2, spoken3]);
+    expect(replayItems([...log].reverse()).get("c1")).toStrictEqual(progress);
+  });
+
+  it("reads progress kept before the mode existed as spoken", () => {
+    const kept = makeItemProgress("c1", "ok", {
+      previous: { sessionId: "r0", result: "ng", elapsedMs: 9_000, answeredAt: 1_000 },
+    });
+    const later = { day: "2026-09-23", answeredAt: 3_000 };
+
+    const typed = reviewAnswer(
+      kept,
+      answer({ ...later, sessionId: "r2", answerMode: "typed" }),
+    ).progress;
+    const spoken = reviewAnswer(kept, answer({ ...later, sessionId: "r2" })).progress;
+
+    expect(typed?.previous).toBeNull();
+    expect(typed?.otherMode).toStrictEqual(kept.last);
+    expect(spoken?.previous).toStrictEqual(kept.last);
+    expect(spoken?.otherMode).toBeNull();
+  });
+
+  it("records the mode and the typed text with the entry", () => {
+    const { entry } = reviewAnswer(
+      undefined,
+      answer({ answerMode: "typed", text: "Let's begin." }),
+    );
+    expect(entry.detail).toMatchObject({ answerMode: "typed", text: "Let's begin." });
+  });
+
+  it("gives a round's growth against the previous round in its mode, not the one between", () => {
+    const { log } = folded([spoken1, typed2, spoken3]);
+    const items = replayItems(log);
+    expect(growthOf("r3", log, items, new Set(["c1"]))).toStrictEqual({
+      faster: 1,
+      fixed: 0,
+      compared: 1,
+      firstTime: 0,
+      rows: [{ cardId: "c1", prompt: "文", kind: "faster", deltaMs: 5_000 }],
+    });
+  });
+
+  it("counts a round's card with no earlier pass in its mode as a first time", () => {
+    const { log } = folded([spoken1, typed2]);
+    expect(growthOf("r2", log, replayItems(log), new Set(["c1"]))).toMatchObject({
+      compared: 0,
+      firstTime: 1,
+      rows: [],
     });
   });
 });

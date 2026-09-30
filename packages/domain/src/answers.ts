@@ -1,5 +1,5 @@
+import type { AnswerInput, CardFacts } from "./check-answers";
 import { inLevelBand } from "./compose-pick";
-import type { PracticeError } from "./errors";
 import { emptyTally } from "./empty";
 import type {
   DayTally,
@@ -9,56 +9,9 @@ import type {
   ReviewEntry,
   Round,
 } from "./records";
-import { err, ok, type Result } from "./result";
 import { reviewAnswer } from "./review";
-import { limitMsOf, paceMsOf, paceOf } from "./timer";
+import { answerModeOf, limitMsOf, paceMsOf, paceOf } from "./timer";
 import { TUNING } from "./tuning";
-import type { AnswerResult, Pass } from "./types";
-
-/** One answer as the client sends it. */
-export interface AnswerInput {
-  /** Made by the client; a repeated id is ignored, which is what makes a resend safe. */
-  readonly id: string;
-  readonly roundId: string;
-  readonly cardId: string;
-  readonly pass: Pass;
-  readonly result: AnswerResult;
-  readonly elapsedMs: number;
-  /** Epoch ms on the client's clock; absent, the server's time is taken. */
-  readonly answeredAt?: number;
-}
-
-/** What the catalog knows of a card, shown or retired; see `RetiredCard` for the nulls. */
-export interface CardFacts {
-  readonly topic: string;
-  readonly subtopic: string;
-  readonly level: number;
-  readonly prompt: string | null;
-  readonly words: number | null;
-}
-
-/**
- * Refuses the whole batch when any answer names another round or an unknown
- * card. A finished round refuses only a batch carrying an id it does not hold,
- * so a replayed batch stays safe after finish.
- */
-export function checkAnswers(
-  round: Round,
-  inputs: readonly AnswerInput[],
-  cards: ReadonlyMap<string, CardFacts>,
-  recorded: ReadonlySet<string>,
-): Result<undefined, PracticeError> {
-  if (round.finishedAt !== null && inputs.some((input) => !recorded.has(input.id))) {
-    return err({ code: "ERR_ROUND_CLOSED" });
-  }
-  const valid = inputs.every(
-    (input) =>
-      input.roundId === round.id &&
-      round.deck.includes(input.cardId) &&
-      cards.has(input.cardId),
-  );
-  return valid ? ok(undefined) : err({ code: "ERR_BAD_REQUEST" });
-}
 
 export interface AnswersState {
   readonly round: Round;
@@ -94,7 +47,8 @@ function clampAnsweredAt(
 /**
  * Takes checked answers into `state`, in log order, skipping ids already held.
  * Each is held to its round's limit, not the setting now, and judged by its
- * card's pace, neither trusted from the client; a round crossing the day
+ * card's pace in its round's mode, neither trusted from the client; a typed
+ * round has no limit, so only the cap clamps its time. A round crossing the day
  * boundary keeps its own day, so a late answer is taken for the day it was given.
  */
 export function decideAnswers(
@@ -104,6 +58,7 @@ export function decideAnswers(
   now: number,
 ): AnswersChange | undefined {
   const { round } = state;
+  const answerMode = answerModeOf(round);
   const fresh = inputs
     .filter(
       (input, index) =>
@@ -123,11 +78,12 @@ export function decideAnswers(
   for (const { input, answeredAt } of fresh) {
     const card = cards.get(input.cardId);
     if (card === undefined) continue;
-    const paceMs = paceMsOf(card.words);
+    const paceMs = paceMsOf(card.words, answerMode);
     const limitMs = limitMsOf(round, paceMs);
     const reviewed = reviewAnswer(items.get(input.cardId), {
       ...input,
       sessionId: round.id,
+      answerMode,
       limitMs,
       paceMs,
       elapsedMs:

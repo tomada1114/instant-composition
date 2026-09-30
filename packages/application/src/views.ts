@@ -120,8 +120,14 @@ export interface RoundSummary {
   readonly continueToday: boolean;
 }
 
+/**
+ * The settings as a client reads them: every field present, a default for one
+ * never chosen. The answer mode is left out until the `/v1` contract carries it.
+ */
+export type ShownSettings = Omit<Required<Settings>, "answerMode">;
+
 export interface SettingsView {
-  readonly settings: Required<Settings>;
+  readonly settings: ShownSettings;
   /** Focus removed because its topic was deselected. */
   readonly removedFocus: readonly SubtopicRef[];
   /** Lowering the size completed today's portion there and then. */

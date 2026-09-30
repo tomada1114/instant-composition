@@ -7,7 +7,6 @@ import {
   type Result,
   type Settings,
   type SettingsPatch,
-  withDefaults,
 } from "@instant-composition/domain";
 
 import { loadClose, planClose } from "./close-round";
@@ -15,6 +14,7 @@ import type { RequestContext } from "./context";
 import type { ApplicationError } from "./errors";
 import { committed, storeFor, type ApplicationDeps, type Write } from "./execute";
 import { loadPractice, statsOf, type PracticeLoad } from "./practice";
+import { shownSettingsOf } from "./present";
 import type { LearnerStore } from "./store";
 import type { SettingsView } from "./views";
 
@@ -129,7 +129,7 @@ export async function updateSettings(
       writes.push(...applied.writes);
     }
     return ok({
-      value: { settings: withDefaults(settings), removedFocus, completedToday },
+      value: { settings: shownSettingsOf(settings), removedFocus, completedToday },
       writes,
     });
   });

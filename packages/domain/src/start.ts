@@ -104,13 +104,16 @@ export function decideStart(
   if (!dealt.ok) {
     return dealt;
   }
+  const { answerMode } = practice;
   const round: Round = {
     id: command.roundId,
     kind: dealt.value.kind,
     day: today,
     portionDay: dealt.value.portionDay,
     deck: dealt.value.deck,
-    limitMs: practice.limitSeconds * 1000,
+    // A typed round runs no timer, so it records no limit.
+    ...(answerMode === "typed" ? {} : { limitMs: practice.limitSeconds * 1000 }),
+    answerMode,
     startedAt: now,
     finishedAt: null,
     abandonedAt: null,

@@ -11,9 +11,9 @@ import type {
   Portion,
   ReviewEntry,
   Round,
-  RoundOutcome,
 } from "./records";
 import { growthOf } from "./round-growth";
+import type { RoundOutcome } from "./round-outcome";
 import { streakStatus, weekDots, type CompletedDays } from "./streak";
 import type { DayKey, SubtopicRef } from "./types";
 
