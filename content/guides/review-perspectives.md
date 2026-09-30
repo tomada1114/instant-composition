@@ -53,9 +53,10 @@ Shown `ja`, `en`, `alternatives`.
 - **R2.6** `ja`, `en` and every alternative are as short as the scene allows (see "Short
   at every level" in `writing.md`). A card whose sentence could lose words without
   losing its point is a `FIX`: name the words that can go. So is every card `cards:lint`
-  warns about as `OVER_TARGET` (an `en` over the level's `words.target`, a `ja` over its
-  `jaChars.target`): the fix brings it to the target. Keep one over only when every
-  shorter natural sentence loses the card's point, and say which.
+  warns about as `OVER_TARGET` (an `en` or a `ja` over the card's target: the level's
+  `words.target` or `jaChars.target`, plus any `targetAllowance` of its grammar ids):
+  the fix brings it to the target. Keep one over only when every shorter natural
+  sentence loses the card's point, and say which.
 - **R2.7** Each sentence is one core plus at most one added detail, with no two
   statements joined by `and`, `but` or `so` (see "One sentence, one idea" in
   `writing.md`). A stacked card is a `FIX` when dropping details keeps the question, a

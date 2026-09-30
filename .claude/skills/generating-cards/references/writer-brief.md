@@ -26,9 +26,16 @@ alternatives. Follow every rule in `writing.md`.
 For each cell, write `count` cards set in the subtopic's `scene`:
 
 - Keep `en` at `words.target` words or fewer and `ja` at `jaChars.target` characters or
-  fewer (whitespace not counted). The targets are the limit you write to; `words.max`
-  and `jaChars.max` are only the lint's hard ceilings, never something to fill. `en`
-  must still reach `words.min`, and every alternative stays at most `words.max`.
+  fewer (whitespace not counted), raised by the `targetAllowance` of a grammar id the
+  card is tagged with, as `writing.md`'s "Short at every level" explains. The targets
+  are the limit you write to; `words.max` and `jaChars.max` are only the lint's hard
+  ceilings, never something to fill. `en` must still reach `words.min`, and every
+  alternative stays at most `words.max`.
+- At levels 8–10, give every card the element that makes it that level — an idiom, an
+  implication, a precise word, inversion — as the `level` entry under `writing.md`'s
+  "Tags" shows. A reviewer moves a card whose hardest element is plain down to the level
+  that element belongs to, so a high grammar tag written plainly does not fill a high
+  cell.
 - One sentence, one idea: a core plus at most one added detail, no two statements joined
   by `and`/`but`/`so`, as `writing.md`'s "One sentence, one idea" sets out. A learner
   should say it in one breath and want to say the next one.
