@@ -113,10 +113,16 @@
     "point": "「目と鼻の先」は a stone's throw",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 10,
+    "level": 9,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3d5b96e8a35a730c6832424d280dc0c8ff2856229985752dbe7402c64c7c1d5b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3q2c5z6w",
@@ -261,12 +267,12 @@
     "point": "格闘は wrestle。現在完了進行形で継続を表す",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 9,
+    "level": 8,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:c605093ad5003a631622401bee5850f56ecb67950ff3cd9cf991b469f5b5d3aa",
+        "hash": "sha256:4d843a924fc0a4253d32b55c09216fc227d27c29f1f0dfa85f7399f18fb676c4",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -566,8 +572,8 @@
   {
     "id": "c_6r3r7e5t",
     "ja": "地図を見ています。",
-    "en": "I'm looking at the map.",
-    "alternatives": ["I'm checking the map.", "I'm reading the map."],
+    "en": "I'm checking the map.",
+    "alternatives": ["I'm looking at the map.", "I'm reading the map."],
     "point": "今の動作は am + -ing",
     "topic": "travel",
     "subtopic": "directions",
@@ -576,7 +582,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:c0a09e4cdeb26fbd62093d9ff7b57e59be6a35a5a2895ae1d71672b7b7b91a02",
+        "hash": "sha256:78eda6ab3db2b4f5448788adac837e431bb2d8ffc61e78a1b2a6aa6aa76ffd79",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

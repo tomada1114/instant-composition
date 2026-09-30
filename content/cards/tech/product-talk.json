@@ -1,20 +1,26 @@
 [
   {
     "id": "c_2b4x7g7u",
-    "ja": "新機能を、ユーザーは全く知らないよ。",
+    "ja": "うちの新機能を、ユーザーは知らないよ。",
     "en": "Users have no idea what we've launched.",
     "alternatives": [
       "Users don't know what we've launched.",
       "Users haven't a clue what we've launched.",
       "Users have no clue what we've launched."
     ],
-    "point": "「全く知らない」は have no idea。what 節は肯定の語順",
+    "point": "「知らない」は have no idea で強める。what 節は肯定の語順",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 9,
+    "level": 8,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ee129b0ad4297b40b0b9797598a55bdc6d56f025ed5ba3e3b20839b4531afaf5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2c8y3p5d",
@@ -389,19 +395,24 @@
   {
     "id": "c_6c4w6w4r",
     "ja": "これでユーザーはうちに夢中になる。",
-    "en": "That'll have users eating out of our hands.",
+    "en": "That'll get users hooked on us.",
     "alternatives": [
-      "That'll get users eating out of our hands.",
-      "That will make users adore us.",
-      "That'll have users hooked on us."
+      "That'll have users hooked on us.",
+      "That'll make users obsessed with us."
     ],
-    "point": "「夢中にさせる」は have + 人 + -ing。手のひらで食べる",
+    "point": "「夢中にさせる」は get / have + 人 + hooked",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 10,
+    "level": 9,
     "grammar": ["causatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0a39975243590b8303f516b518ebe299477396346da0d93bb236beb6b9b174b9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6f6a7q6d",
@@ -443,7 +454,7 @@
   },
   {
     "id": "c_6y5p6n7y",
-    "ja": "そのバグは金曜に修正されます。",
+    "ja": "バグは金曜に修正されます。",
     "en": "The bug will be fixed Friday.",
     "alternatives": ["They'll fix the bug on Friday.", "The bug gets fixed on Friday."],
     "point": "修正「される」は受動態。行為者は言わない",
@@ -454,7 +465,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:e67bcb3182be315a6d0d13d9f18a17483cafd0461661c5819479bfab36ceb8f5",
+        "hash": "sha256:412af34d47bbc3611f3c6330985daeaace1c11f54ebe839fcc6b22a6508d1b90",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

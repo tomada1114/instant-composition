@@ -20,7 +20,7 @@
   },
   {
     "id": "c_2n8w7a9f",
-    "ja": "タクシーの運転手に、ぼられました。",
+    "ja": "タクシー運転手に、ぼられた。",
     "en": "A taxi driver ripped me off.",
     "alternatives": ["I got ripped off by a taxi driver.", "The cabbie ripped me off."],
     "point": "「ぼられる」は get ripped off",
@@ -31,7 +31,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:002b1250cf6a10546ab61744441dc047f87a1f3d5f8dc216bc2edfe2d9dac9f8",
+        "hash": "sha256:93814bae59fb9ba00b96932327ed93c5d677b19f2f742445400b44fd365cca4f",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -334,7 +334,7 @@
   },
   {
     "id": "c_7c4f3a3n",
-    "ja": "荷物が、別の空港に回されました。",
+    "ja": "荷物が別の空港に回されました。",
     "en": "My bag was rerouted to another airport.",
     "alternatives": [
       "My luggage was sent to a different airport.",
@@ -348,7 +348,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:3fd58b5ae84e7e9e7bd0a25b6ed327311cc685735f1ccbca9582080f54bd6640",
+        "hash": "sha256:194825ed9bd708228b269c3ab4fa474cbe745972626136b62d1ba6966aeff28b",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -382,16 +382,22 @@
     "en": "Stranded without a cent, I need help.",
     "alternatives": [
       "I'm stranded without a cent and need help.",
-      "I'm broke and stranded, so please help me.",
-      "Stranded and penniless, I need your help."
+      "Stranded and penniless, I need your help.",
+      "Stranded and broke, please help me."
     ],
     "point": "「一文なし」は without a cent。分詞構文で状況を添える",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 9,
+    "level": 8,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:110d8bcdcbb31ce378d331fbeebfb7239fc3bd2b7a8b3d35e3b366f41d4cb5e2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7j4w5p9q",
@@ -598,7 +604,13 @@
     "level": 10,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:adb2ee86cbc4b0740f00449b36402c471938f305055316dabdedac459dded24d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9c5c5w2h",

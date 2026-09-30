@@ -118,25 +118,31 @@
     "level": 9,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5816cb0fd989ccbd68207939c1c61de97109c36bd433f6660f6b973fb4431892",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4k3a4y4e",
-    "ja": "その時点で、チームを率いた経験があった。",
-    "en": "By then, I'd already led a team.",
+    "ja": "当時すでにチームを率いてた。",
+    "en": "By then, I'd led a team.",
     "alternatives": [
-      "I had already led a team by then.",
-      "By that point, I had already led a team."
+      "I'd already led a team by then.",
+      "By that point, I'd already led a team."
     ],
     "point": "「その時までに」は過去完了",
     "topic": "work",
     "subtopic": "job-interview",
-    "level": 9,
+    "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:8ad5a321ad1765815a77f1878df0d768b938b3cce08467aa5b749d840073b54d",
+        "hash": "sha256:e35fc64cf3657e8fae9938b0332a91ce42d4afba515c787c3e195ef7d9e501de",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -327,7 +333,13 @@
     "level": 10,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b7ee3ec8a4036dcbcafe5095d82c568ed1b108a0f5c2be98936f81916b4a85a1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6j6k7d2t",
@@ -607,7 +619,7 @@
   },
   {
     "id": "c_8t6y9x7g",
-    "ja": "もっと強く異を唱えるべきでした。",
+    "ja": "もっと強く異を唱えるべきだった。",
     "en": "I should have pushed back harder.",
     "alternatives": [
       "I ought to have pushed back harder.",
@@ -621,7 +633,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:bf5b0789eeb8b83626904f7997c75cab6c498c07d6ce389d96bb69bed9a4e790",
+        "hash": "sha256:7e45634172d5e9ad7dc4f75e939a9d5a6147d8eb0ef322f71953b7d794643517",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

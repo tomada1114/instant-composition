@@ -83,7 +83,7 @@
   },
   {
     "id": "c_4g6k5b7t",
-    "ja": "12番ゲートはどこですか？",
+    "ja": "12番ゲートはどちら？",
     "en": "Where is gate 12?",
     "alternatives": ["Which way is gate 12?", "Where can I find gate 12?"],
     "point": "場所は Where で聞く",
@@ -94,7 +94,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:593b3386453e128ec259e4bb00e36990efde7f7d416d2c816f81f3016c515697",
+        "hash": "sha256:550502dba44b60aa9290bed50c00c89772db9a8cfc129642cdce4b788bb63c4d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -463,7 +463,7 @@
   },
   {
     "id": "c_7z3p8r9n",
-    "ja": "乗り継ぎを逃したらどうなる？",
+    "ja": "乗り継ぎ逃したらどうなる？",
     "en": "What if I miss my connection?",
     "alternatives": [
       "What happens if I miss my connection?",
@@ -477,7 +477,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:6b7cba812b61b950791c66a77925ac961973dd78dee9e910bd1968d10ad703d3",
+        "hash": "sha256:860629c829613165da5ea8dbe13cdc9ce152585963b6b8b08a3d50355aae26c4",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

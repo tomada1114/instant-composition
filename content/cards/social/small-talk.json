@@ -472,7 +472,13 @@
     "level": 9,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:783d648bd1d1b5d5e13a22a323cfadc02b4fd9c1bb4093f1c59e3ef2915fc45a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7y4k2u5t",

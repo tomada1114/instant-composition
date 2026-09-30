@@ -212,20 +212,26 @@
   },
   {
     "id": "c_4z6r8g3z",
-    "ja": "声が途切れて、聞き取りにくいんです。",
-    "en": "Breaking up like this, you're hard to follow.",
+    "ja": "声が途切れて聞き取りにくいです。",
+    "en": "Breaking up, you're hard to follow.",
     "alternatives": [
-      "You keep breaking up, which makes you hard to follow.",
+      "You keep breaking up, so you're hard to follow.",
       "Your voice is cutting out, so I can't follow.",
-      "You're breaking up, so you're hard to follow."
+      "You're breaking up, so I can't follow you."
     ],
     "point": "音声が途切れるは break up。分詞構文で理由を添える",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 10,
+    "level": 8,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1a8313ed46aa3c25a18320de13ea17c9e90791920ff80badb3ebfb5fa7cf0796",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5b8b6w9m",
@@ -292,7 +298,7 @@
   },
   {
     "id": "c_6q2c8g6q",
-    "ja": "そっちの声、さっきから途切れてるよ。",
+    "ja": "さっきから声が途切れてるよ。",
     "en": "You've been cutting out on me.",
     "alternatives": ["You keep breaking up.", "Your audio keeps cutting out."],
     "point": "声や音が途切れるは cut out / break up",
@@ -303,7 +309,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:fe7d6903c6f83da31c31de6c7e7f2f5d6af8734422b554d241896b250800f062",
+        "hash": "sha256:ce8d6d8d8a1ea959e39648152c800f400424805eff7e0a439c421fff03bcac6e",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

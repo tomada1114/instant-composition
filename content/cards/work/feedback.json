@@ -58,7 +58,13 @@
     "level": 9,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f93c3189da862a82873c6757c7d124112420f5bc31480ee06a12f18cf4159f0b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2r9b2m2r",
@@ -182,7 +188,13 @@
     "level": 10,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1782f6e4206d0f08da26e23ae265dbcfd56111afd4bac1d29422797ffe02d8b5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4w9z3c2r",
@@ -274,7 +286,7 @@
   },
   {
     "id": "c_5y2v9r6s",
-    "ja": "レイアウト、君の説明で納得した。",
+    "ja": "レイアウト、君の話で納得した。",
     "en": "You've won me over on the layout.",
     "alternatives": [
       "Your argument won me over on the layout.",
@@ -288,7 +300,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:8f0bd4ec9276500ebb08d2aab473648288182c402d0a111d80d250b0b706d9af",
+        "hash": "sha256:6dccde0a31f41897a599bfe667e68153307d8939db9079e3b3c3446bbcfb57d9",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -555,7 +567,13 @@
     "level": 10,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1bb175b53879cc48e92a928fffbef1b62213bbbb9350e6895afb000362549f2a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8a6r9d8a",

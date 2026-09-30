@@ -228,7 +228,7 @@
   },
   {
     "id": "c_6b7z3d3h",
-    "ja": "結局、皿は全部私が洗うことになった。",
+    "ja": "結局、皿は全部私が洗った。",
     "en": "I ended up washing all the dishes.",
     "alternatives": [
       "I wound up washing all the dishes.",
@@ -242,7 +242,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:f1e571c7d33bfed66abaad693af44b98137dac3f67f354924e675eaed62a35f5",
+        "hash": "sha256:7a0e95b0953f547f35714e9abbbfb909589eb2e674dc97c2c4f91f7000a7357e",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -599,7 +599,13 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4d984808332fa29d7bdf307b26da9c7a746ba1eedef8dedc0d4e6cbb970f1ad3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9c4e8j3t",
@@ -645,20 +651,20 @@
   {
     "id": "c_9e6b7h8b",
     "ja": "食べ終わったら皿を洗うよ。",
-    "en": "I'll do the dishes once I've eaten.",
+    "en": "I'll do dishes once I've eaten.",
     "alternatives": [
-      "I'll do the dishes when I'm done eating.",
-      "I'll wash the dishes once I finish eating."
+      "I'll do the dishes when I'm done.",
+      "I'll wash the dishes after I eat."
     ],
     "point": "once の後は未来でも現在形（完了形も可）",
     "topic": "daily",
     "subtopic": "home",
-    "level": 6,
+    "level": 5,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:bac53cdaac4e2d5113f8bd0c4085ed0ce5f8b0355ccdd7f131ffbdc5c465259c",
+        "hash": "sha256:0a7614d5fdae0b32621846f2506fbd0379edf246e7afda4d5405c6e770b56890",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -708,17 +714,23 @@
   {
     "id": "c_9p5s5q9g",
     "ja": "弟は一度も皿を洗ったことがない。",
-    "en": "Not once has my brother washed a dish.",
+    "en": "Never has my brother washed a dish.",
     "alternatives": [
       "My brother has never once washed a dish.",
       "My brother has never washed a single dish."
     ],
-    "point": "Not once を前に出すと has my brother の語順",
+    "point": "Never を前に出すと、has my brother の語順",
     "topic": "daily",
     "subtopic": "home",
-    "level": 10,
+    "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dec35c34e863cdabb6cc109a7f27cc5f9764c7a78dc3d8fe5f72b815697c6ad9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

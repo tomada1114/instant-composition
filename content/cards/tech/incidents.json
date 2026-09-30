@@ -196,23 +196,6 @@
     }
   },
   {
-    "id": "c_4h8w3p6k",
-    "ja": "戻しても、まだ薄氷を踏む思い。",
-    "en": "Rolled back, we're still on thin ice.",
-    "alternatives": [
-      "Having rolled back, we're still on thin ice.",
-      "Even after the rollback, we're walking on thin ice.",
-      "Even rolled back, we're still on thin ice."
-    ],
-    "point": "「薄氷を踏む」は on thin ice。分詞で先に述べる",
-    "topic": "tech",
-    "subtopic": "incidents",
-    "level": 9,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-09-29",
-    "stamps": {}
-  },
-  {
     "id": "c_4j9z2s8d",
     "ja": "チームに状況を伝えて。",
     "en": "Update the team.",
@@ -384,7 +367,7 @@
   },
   {
     "id": "c_6c5b7g4f",
-    "ja": "影響は東京のユーザーだけだった。",
+    "ja": "影響は東京ユーザーのみだった。",
     "en": "Only users in Tokyo were affected.",
     "alternatives": [
       "Only Tokyo users were affected.",
@@ -398,7 +381,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:02c82f5b2b7d84a895e05a5f4f4f2ea0ab8c7e0f886b76253bc0dbb65d90091f",
+        "hash": "sha256:b245f4827f50fee10439f41d4cb9cfbcf6ff6babd20bd4600591c33851d84940",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

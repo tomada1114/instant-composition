@@ -161,7 +161,7 @@
   {
     "id": "c_4m7u3h7m",
     "ja": "もうあの店では二度と買わない。",
-    "en": "Never again will I buy from that store.",
+    "en": "Never again will I shop there.",
     "alternatives": [
       "I'll never buy from that store again.",
       "I will never shop at that store again."
@@ -169,10 +169,16 @@
     "point": "Never again の後ろは will I の倒置",
     "topic": "daily",
     "subtopic": "shopping",
-    "level": 10,
+    "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8978c63aaa741bb13ba9fae5af777adb7b3c968ef56774978ec36511f6ecb4e2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4p3m2x8b",
@@ -513,7 +519,7 @@
   },
   {
     "id": "c_9g2n9s5s",
-    "ja": "高くても、それだけの価値はある。",
+    "ja": "高くても、その価値はある。",
     "en": "Although it's expensive, it's worth it.",
     "alternatives": [
       "Even though it's pricey, it's worth it.",
@@ -527,7 +533,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:2c921af1c33284467127b7f244379706f5650ad82eb462f2be9aba455786d856",
+        "hash": "sha256:51c3bd0b04d100d8826d74e240cfcf39c52d6b19dd1106346cb1f9b5421d5374",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

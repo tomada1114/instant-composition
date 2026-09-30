@@ -121,10 +121,16 @@
     "point": "What〜is の強調。「事前の一言」は a heads-up",
     "topic": "work",
     "subtopic": "email-chat",
-    "level": 9,
+    "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f927d83a0ceb3d5ad187ec899c08f3714e7143b6762efe19d763f5ff83149148",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3t3r4v3a",

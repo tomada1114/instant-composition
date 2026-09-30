@@ -201,7 +201,13 @@
     "level": 9,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:07d843187b04ea02c68a075b86c72b78f78396767a69122755a02202294f8b2d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4c3e4z2e",
@@ -290,10 +296,10 @@
   },
   {
     "id": "c_4h9k6m6z",
-    "ja": "置いた充電器、誰が取ったか知ってる？",
-    "en": "Any idea who took the charger I left?",
+    "ja": "置いた充電器、誰が取ったか分かる？",
+    "en": "Know who took the charger I left?",
     "alternatives": [
-      "Know who took the charger I left?",
+      "Any idea who took the charger I left?",
       "Anyone know who took the charger I left?"
     ],
     "point": "who 節の中に、さらに charger I left が入る",
@@ -304,7 +310,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:3f338586d1e772987e7e53513ec0ca5a8082af394f40b3fff35e08672a513f51",
+        "hash": "sha256:e0146df10df7fdd0bfa4ebb38b74e0b998e5150f17cc774c1df6623458613b73",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -353,7 +359,7 @@
   },
   {
     "id": "c_4u7u6f2z",
-    "ja": "噂では、彼女は部長の座を狙ってるらしい。",
+    "ja": "噂では、彼女は部長の座を狙ってる。",
     "en": "Rumor has it she's gunning for the director's job.",
     "alternatives": [
       "I hear she's after the director's job.",
@@ -363,10 +369,16 @@
     "point": "「噂では」は Rumor has it (that) 〜",
     "topic": "work",
     "subtopic": "office-life",
-    "level": 10,
+    "level": 9,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:279e3b4222b0483dc6108c3ee2f8e2328c1151955a122f94b8462ba6b3af2796",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5g7w7f7s",
@@ -575,7 +587,7 @@
   },
   {
     "id": "c_7d3x6d3j",
-    "ja": "席替えは月曜に発表されます。",
+    "ja": "席替えは月曜に発表される。",
     "en": "Seat changes will be announced Monday.",
     "alternatives": [
       "They'll announce the seat changes Monday.",
@@ -589,7 +601,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:65fe3d4c70061f260811e82f8a481b31a55800c836e2ac5d9bf00d68ac61b684",
+        "hash": "sha256:f5327fe6222107c87a1ca806c48cad54134e3e6c2daca591294fb6aca5a9f10b",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -620,19 +632,25 @@
   {
     "id": "c_7s2a4m3q",
     "ja": "きっと彼、部屋を予約したの忘れてる。",
-    "en": "I'll bet he forgot he'd booked the room.",
+    "en": "I bet he's forgotten he booked the room.",
     "alternatives": [
-      "I bet he's forgotten he booked the room.",
+      "I'll bet he forgot he'd booked the room.",
       "He probably forgot that he'd booked the room.",
-      "I'd bet he forgot he had booked the room."
+      "He's probably forgotten he booked the room."
     ],
     "point": "「きっと〜」は I'll bet。節の中に節が続く",
     "topic": "work",
     "subtopic": "office-life",
-    "level": 9,
+    "level": 8,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ffe0aa58166709b48e90f8368fd0d98a7f4d4772b6cb8223f0afe3ae8324fd21",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7u6v4e6j",

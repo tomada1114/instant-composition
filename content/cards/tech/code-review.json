@@ -162,7 +162,7 @@
   },
   {
     "id": "c_3y8j9k4h",
-    "ja": "この PR は前より小さい。",
+    "ja": "PR は前より小さい。",
     "en": "It's smaller than before.",
     "alternatives": ["The PR is smaller than before.", "This PR is smaller now."],
     "point": "比較は形容詞 + er",
@@ -173,7 +173,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:6f452b4fb34e9506bf370dfc590810e5a8e222d39fd01fb9a283cdac8c88c68a",
+        "hash": "sha256:13164bda320fbc40b3767f24b56a283ff33cd062f2d8857223bd594cf139caeb",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -543,18 +543,18 @@
   },
   {
     "id": "c_9j5e2g3p",
-    "ja": "私ならもっと速くできるよ。",
+    "ja": "私ならもっと速くできる。",
     "en": "I can make it faster.",
     "alternatives": ["I can speed it up.", "I can do it faster."],
     "point": "「速くできる」は can make it faster",
     "topic": "tech",
     "subtopic": "code-review",
-    "level": 2,
+    "level": 3,
     "grammar": ["can-could-ability", "comparatives-superlatives"],
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:18926a1d5aaa6d0c9620655c2e05a88f6b399542193b423b67ba974aff11f922",
+        "hash": "sha256:b355e873191024c669623221781e9213ff27686e7cf64d6cb3dfdc5f07bc0b5e",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -584,21 +584,18 @@
   },
   {
     "id": "c_9t4c7p5x",
-    "ja": "この PR、二つに分けたい。",
-    "en": "I want to split this PR in two.",
-    "alternatives": [
-      "I'd like to split this PR in two.",
-      "I want to break this PR into two."
-    ],
-    "point": "split ~ in two で「二つに分ける」。want to + 動詞の原形",
+    "ja": "この PR、分けたい。",
+    "en": "I want to split this PR.",
+    "alternatives": ["I'd like to split this PR up.", "I want to break this PR up."],
+    "point": "split は「分ける」。want to + 動詞の原形",
     "topic": "tech",
     "subtopic": "code-review",
-    "level": 7,
+    "level": 5,
     "grammar": ["infinitives"],
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:06894dd4d94584235ade0b2ee106ffb427d1d5c9e9cd37b4e6edb80d6f2514f8",
+        "hash": "sha256:13fe0a0a9e7df82db52bd037ced6a655e942c82c008b4fe7e11f17c35a40d392",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

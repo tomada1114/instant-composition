@@ -45,19 +45,25 @@
   },
   {
     "id": "c_3a7t2x4r",
-    "ja": "退職して初めて、私は絵を描き始めた。",
-    "en": "Only after retiring did I take up painting.",
+    "ja": "退職して初めて、絵を描き始めた。",
+    "en": "Only after retiring did I start painting.",
     "alternatives": [
       "I didn't take up painting until I retired.",
-      "It wasn't until I retired that I took up painting."
+      "Not until I retired did I start painting."
     ],
     "point": "Only after を前に出すと did I の倒置",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 10,
+    "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:95cf21dced8463c550dd38dc168bcea21e613d8993e43a2a094db94f0078bb3d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3g2j4g6w",
@@ -122,7 +128,7 @@
   {
     "id": "c_4k3c2c6x",
     "ja": "続けていたら、今ごろ上手なのに。",
-    "en": "If I'd kept it up, I'd be good now.",
+    "en": "If I'd kept going, I'd be good now.",
     "alternatives": [
       "If I'd kept at it, I'd be good now.",
       "I'd be good by now if I'd kept practicing."
@@ -130,12 +136,12 @@
     "point": "過去の仮定 + 今の結果は had done と would do",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 9,
+    "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:04c7a040c257b6eded88572f1dd8dfac80fffb4814e0957fa7d620dd13e16cdf",
+        "hash": "sha256:3e4cbe9713a62ab533ec3d6aaa54fc57495a37c9a028dcf4ac83bf1bb1156329",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -345,7 +351,7 @@
   },
   {
     "id": "c_6w2r8e3d",
-    "ja": "彼は相当練習を積んだに違いない。",
+    "ja": "彼は相当練習したに違いない。",
     "en": "He must have practiced like crazy.",
     "alternatives": [
       "He must have put in countless hours.",
@@ -359,7 +365,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:c981e4483db5db4a4475ecbf6ce87cd542e7904211bb94544fb2ed715d2ea780",
+        "hash": "sha256:d9ff7cb058793a74f565fbca3987253e7590c19578237e6c310a5fc65ee7cb63",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -496,16 +502,22 @@
     "ja": "その頃、もう陶芸は諦めていた。",
     "en": "By then, I'd given up on pottery.",
     "alternatives": [
-      "By that time, I had given up on pottery.",
-      "I had already given up on pottery by then."
+      "By that point, I'd given up on pottery.",
+      "I'd already given up on pottery by then."
     ],
     "point": "その時点より前の出来事なので had given up",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 9,
+    "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d96a106ab927bc29cea30a51ae09675ec60e58476dbc65ed2067866bb951b0a1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8r3t2s5r",

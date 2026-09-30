@@ -121,7 +121,7 @@
   },
   {
     "id": "c_3g6c2w5g",
-    "ja": "大人二枚、お願いします。",
+    "ja": "大人二枚お願いします。",
     "en": "Two adults, please.",
     "alternatives": ["Two adult tickets, please.", "Two tickets for adults, please."],
     "point": "「大人二枚」は人数で頼める",
@@ -132,7 +132,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:5cdcf67ddd758807f390c9295f21528f496706a0e8a24df15ec397ffe4c375f1",
+        "hash": "sha256:bff6c4bfcecfd6b9222b492ea8d85f19f87dfb9a412aecf532031f78dbb23ca4",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -346,7 +346,7 @@
   },
   {
     "id": "c_5d9w5k8u",
-    "ja": "ガイドは、私たちを笑い転げさせた。",
+    "ja": "ガイドは私たちを笑い転げさせた。",
     "en": "The guide had us in stitches.",
     "alternatives": [
       "The guide had us all cracking up.",
@@ -360,7 +360,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:430c95ff5001aea9562b77dd29710f624d348f594be9599792da7aa8fb5da438",
+        "hash": "sha256:34ed3c67b3cdd508854f405ec3cbcfa67cf9ee7193c1b7cc08df75c0da782930",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -455,9 +455,9 @@
   {
     "id": "c_6a7a8d9k",
     "ja": "展望台はありますか？",
-    "en": "Is there an observation deck?",
-    "alternatives": ["Is there a lookout?", "Is there a viewing platform?"],
-    "point": "母音で始まる語の前は an",
+    "en": "Is there a lookout?",
+    "alternatives": ["Is there an observation deck?", "Is there a viewing platform?"],
+    "point": "「〜はありますか」は Is there + a と単数形",
     "topic": "travel",
     "subtopic": "sightseeing",
     "level": 2,
@@ -465,7 +465,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:76c60e4153d03b098820cd2422976612830eb5b4f8159ecfc28b075d82e48da4",
+        "hash": "sha256:6754b9c32b8fd8a487cb4298256a8db23f1e6d05bdc2c3e8461efb16bc050d08",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -587,10 +587,16 @@
     "point": "「主役を奪う」は steal the show。It's〜that で強調",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 10,
+    "level": 9,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b72bd9129cd2f90aea2b71252c3e304cc08a4677094f9fb9f5b8b43fd7163c05",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8s5c3e7d",

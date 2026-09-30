@@ -137,10 +137,16 @@
     "point": "「共有する」は loop ~ in。過去の仮定は had done",
     "topic": "work",
     "subtopic": "requests",
-    "level": 9,
+    "level": 8,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:59ca022fa4c28e60e457f54b44ac187d8ab5d19c07b432c7df57916ed95d4e2a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3y9m6v5h",
@@ -390,7 +396,13 @@
     "level": 9,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:51c5a04a264ad7c66000acf80603902337cc294b6e7f5c0d0c156db73052bac9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7a3n8w9m",

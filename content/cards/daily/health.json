@@ -42,7 +42,7 @@
   },
   {
     "id": "c_2v3h3b4j",
-    "ja": "医者は不調の元はストレスだと言う。",
+    "ja": "医者曰く、原因はストレスだ。",
     "en": "The doctor says stress causes it.",
     "alternatives": [
       "The doctor says stress is behind it.",
@@ -56,7 +56,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:84f08c3e546a5fd2a13fb1ce25c0b6032a4d3dff383e53dc7e9ddb019b4ebda1",
+        "hash": "sha256:5dca0694df199f13be9434b11b9b388fcebbe83145f1102a9cc6f275fe897e08",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -136,23 +136,35 @@
     "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cbbaccb12d4b8d176a31dca1ca43653141d07a6ed77a5920d0be234cb8deb863",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3u5e8j5b",
-    "ja": "彼女は、私の発疹はうつらないと言う。",
-    "en": "She says the rash I have isn't contagious.",
+    "ja": "彼女は私の発疹はうつらないと言う。",
+    "en": "She says my rash isn't contagious.",
     "alternatives": [
-      "She says the rash I've got isn't contagious.",
-      "She says my rash isn't contagious."
+      "She told me my rash isn't contagious.",
+      "She says my rash isn't catching."
     ],
-    "point": "the rash (that) I have の関係詞は省ける",
+    "point": "She says の後ろは平叙の節。「うつる」は contagious",
     "topic": "daily",
     "subtopic": "health",
-    "level": 9,
-    "grammar": ["nested-clauses"],
+    "level": 7,
+    "grammar": ["reported-speech"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d15507fdff31022ab6d509fed72af02792fa3f5c69981f3cdba7ebc3b86b91ef",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4c4t5t2v",
@@ -260,23 +272,29 @@
   },
   {
     "id": "c_5t4x8u8p",
-    "ja": "食べたものが胃にもたれている気がする。",
+    "ja": "食べたものが胃にもたれてる気がする。",
     "en": "I think what I ate isn't sitting well.",
     "alternatives": [
       "I think what I ate disagrees with me.",
-      "I think something I ate isn't agreeing with me."
+      "I think something I ate disagrees with me."
     ],
     "point": "isn't sitting well は胃にもたれるの定番表現",
     "topic": "daily",
     "subtopic": "health",
-    "level": 10,
+    "level": 9,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:166e345cfc020663dd557be3e1a463354b18f332be4edf5e0e2f650e355eff5e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5v7e6p5y",
-    "ja": "朝食を抜いたので、めまいがした。",
+    "ja": "朝食を抜いて、めまいがした。",
     "en": "Having skipped breakfast, I felt faint.",
     "alternatives": [
       "Since I'd skipped breakfast, I felt faint.",
@@ -290,7 +308,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:22b31358868528bac7929c951ad0ef436cc2f3d7b585a0e23152b9c72a510fde",
+        "hash": "sha256:35eddfc46f32b153d6a1f36763328c9f65b7b2f021af1a9173273bd005c4ad5f",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

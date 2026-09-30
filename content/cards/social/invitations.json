@@ -495,18 +495,24 @@
   {
     "id": "c_6x2k6u6v",
     "ja": "一番来てほしいのは、君なんだよ。",
-    "en": "It's you I'd most love to have there.",
+    "en": "It's you I most want to come.",
     "alternatives": [
-      "You're the one I'd most love to have there.",
-      "It's you I'd love to have there most."
+      "You're the one I most want to come.",
+      "You're the one I'd most love to see there."
     ],
     "point": "It's you (that) で人を強調。that は省ける",
     "topic": "social",
     "subtopic": "invitations",
-    "level": 9,
+    "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ecc06a34ab887111a4766f3c751be1ae909890762e5aaa3d4b0c13eb07d35513",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7b9d2e5w",
