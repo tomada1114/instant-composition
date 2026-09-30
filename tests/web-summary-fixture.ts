@@ -11,6 +11,8 @@ export function makeSummary(overrides: Partial<RoundSummary> = {}): RoundSummary
     roundId: "r1",
     kind: "today",
     day: "2026-09-23",
+    answerMode: "spoken",
+    answered: [],
     yesterday: false,
     placement: null,
     growth: {

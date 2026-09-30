@@ -1,14 +1,18 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  finishRound,
   recordAnswers,
+  roundPayload,
+  roundSummary,
+  settingsPage,
   startRound,
   updateSettings,
   type RoundPayload,
 } from "@instant-composition/application";
 import type { AnswerMode } from "@instant-composition/domain";
 
-import { answersFor, makeHarness, type Harness } from "./application-harness";
+import { answersFor, makeHarness, NOON, type Harness } from "./application-harness";
 
 // Every card of the harness's catalog is eight words long: a spoken pace of
 // ceil(4 + 8 * 0.5) = 8 seconds, a typed one of ceil(6 + 8 * 2) = 22 seconds.
@@ -188,15 +192,125 @@ describe("a spoken round", () => {
 });
 
 describe("the settings view", () => {
-  it("keeps to the /v1 contract, which carries no answer mode yet", async () => {
+  it("shows the mode chosen, and spoken to a learner who never chose one", async () => {
     const h = makeHarness();
-    const saved = await updateSettings(h.deps, h.context(), {
-      topics: ["work"],
-      answerMode: "typed",
+    await onboard(h);
+    const before = await settingsPage(h.deps, h.context());
+    const saved = await updateSettings(h.deps, h.context(), { answerMode: "typed" });
+    const after = await settingsPage(h.deps, h.context());
+
+    expect(before.ok && before.value.settings.answerMode).toBe("spoken");
+    expect(saved.ok && saved.value.settings.answerMode).toBe("typed");
+    expect(after.ok && after.value.settings.answerMode).toBe("typed");
+  });
+});
+
+describe("a round read back", () => {
+  it("carries the mode it was dealt with and the text typed for each answer, after the setting changed", async () => {
+    const h = makeHarness();
+    await onboard(h, "typed");
+    const round = await start(h);
+    const [first, second] = answersFor(round);
+    if (first === undefined || second === undefined) {
+      throw new Error("The deck is too small.");
+    }
+    await recordAnswers(h.deps, h.context(), {
+      roundId: round.id,
+      answers: [{ ...first, text: "Let's get started." }, second],
     });
-    expect(saved.ok && "answerMode" in saved.value.settings).toBe(false);
-    expect((await h.stores.forLearner(h.learner).settings())?.value.answerMode).toBe(
-      "typed",
+    await updateSettings(h.deps, h.context(), { answerMode: "spoken" });
+
+    const read = await roundPayload(h.deps, h.context(), round.id);
+
+    expect(round.answerMode).toBe("typed");
+    expect(read.ok && read.value.answerMode).toBe("typed");
+    // Both were given at NOON, so the log orders them by id.
+    const byId = <T extends { readonly id: string }>(rows: readonly T[]): T[] =>
+      [...rows].sort((a, b) => a.id.localeCompare(b.id));
+    expect(read.ok && byId(read.value.answered)).toStrictEqual(
+      byId([
+        {
+          id: first.id,
+          cardId: first.cardId,
+          pass: "first",
+          result: "ok",
+          answeredAt: NOON,
+          text: "Let's get started.",
+        },
+        {
+          id: second.id,
+          cardId: second.cardId,
+          pass: "first",
+          result: "ok",
+          answeredAt: NOON,
+        },
+      ]),
     );
+  });
+
+  it("carries the spoken mode for a round dealt before the mode existed", async () => {
+    const h = makeHarness();
+    await onboard(h);
+    const round = await start(h);
+    const store = h.stores.forLearner(h.learner);
+    const stored = await store.round(round.id);
+    if (stored === undefined) {
+      throw new Error("The round was not stored.");
+    }
+    const before = { ...stored.value };
+    Reflect.deleteProperty(before, "answerMode");
+    await store.commit({
+      puts: [],
+      updates: [{ entry: { type: "round", value: before }, version: stored.version }],
+      expect: [],
+    });
+
+    const read = await roundPayload(h.deps, h.context(), round.id);
+
+    expect(read.ok && read.value.answerMode).toBe("spoken");
+  });
+});
+
+describe("a typed round's summary", () => {
+  it("carries the mode and the text typed, the same when finished again and when read", async () => {
+    const h = makeHarness();
+    await onboard(h, "typed");
+    const round = await start(h);
+    const answers = answersFor(round, (_, index) => (index === 0 ? "ng" : "ok")).map(
+      (answer, index) => (index === 0 ? { ...answer, text: "Let start." } : answer),
+    );
+
+    const finished = await finishRound(h.deps, h.context(), {
+      roundId: round.id,
+      answers,
+    });
+    const again = await finishRound(h.deps, h.context(), {
+      roundId: round.id,
+      answers,
+    });
+    const read = await roundSummary(h.deps, h.context(), round.id);
+
+    if (!finished.ok) {
+      throw new Error(`Finishing failed with ${finished.error.code}.`);
+    }
+    expect(finished.value.answerMode).toBe("typed");
+    const [missed] = answers;
+    const typed = finished.value.answered.filter((row) => row.id === missed?.id);
+    expect(typed).toStrictEqual([
+      {
+        id: missed?.id,
+        cardId: missed?.cardId,
+        pass: "first",
+        result: "ng",
+        answeredAt: NOON,
+        text: "Let start.",
+      },
+    ]);
+    expect(
+      finished.value.answered.filter((row) => "text" in row).map((row) => row.id),
+    ).toStrictEqual([missed?.id]);
+    expect(finished.value.answered).toHaveLength(answers.length);
+    expect(again).toStrictEqual(finished);
+    expect(read).toStrictEqual(finished);
   });
 });

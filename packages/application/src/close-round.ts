@@ -91,7 +91,7 @@ export function planClose(
     writes.push([{ type: "portion", value: kept }, load.portion]);
   }
   return {
-    summary: summaryOf(finished, change.outcome, snapshot),
+    summary: summaryOf(finished, change.outcome, load.reviews, snapshot),
     stats: change.stats,
     writes,
   };

@@ -21,11 +21,14 @@ async function keptSummary(
   roundId: string,
   snapshot: CatalogSnapshot,
 ): Promise<RoundSummary | undefined> {
-  const round = await store.round(roundId);
+  const [round, reviews] = await Promise.all([
+    store.round(roundId),
+    store.reviewsOf(roundId),
+  ]);
   const outcome = round?.value.outcome ?? null;
   return round === undefined || outcome === null
     ? undefined
-    : summaryOf(round.value, outcome, snapshot);
+    : summaryOf(round.value, outcome, reviews, snapshot);
 }
 
 /**
