@@ -147,7 +147,7 @@ export function DrillSession({
             onStart={start}
           />
         ) : (
-          <IntroScreen first={first} count={round.deck.length} onStart={start} />
+          <IntroScreen first={first} round={round} onStart={start} />
         )}
         <TabBar />
       </>

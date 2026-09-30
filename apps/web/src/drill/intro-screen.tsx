@@ -1,19 +1,28 @@
 import { useTranslations } from "use-intl";
 import type { ReactElement } from "react";
 
+import type { RoundPayload } from "../openapi";
 import { Button } from "../ui/button";
 import { Eyebrow } from "../ui/eyebrow";
 import { ArrowGlyph } from "../ui/glyphs";
 import { Kbd } from "../ui/kbd";
 
-/** W2: the three moves of a card, once, before the placement round. */
+/** W2: the three moves of a card, once, before the placement round, in the round's answer mode. */
 export function IntroScreen({
   first,
-  count,
+  round,
   onStart,
-}: Readonly<{ first: boolean; count: number; onStart: () => void }>): ReactElement {
+}: Readonly<{
+  first: boolean;
+  round: Pick<RoundPayload, "deck" | "answerMode">;
+  onStart: () => void;
+}>): ReactElement {
   const t = useTranslations("Drill.intro");
-  const steps = [t("say"), t("flip"), t("grade")];
+  const count = round.deck.length;
+  const steps =
+    round.answerMode === "typed"
+      ? [t("type"), t("check"), t("grade")]
+      : [t("say"), t("flip"), t("grade")];
   return (
     <main className="mx-auto box-content flex min-h-[calc(var(--column-height)-var(--tab-bar-space)-2.75rem)] max-w-column flex-col px-4 pt-8 pb-[calc(var(--tab-bar-space)+0.75rem)]">
       <div className="flex flex-col gap-3">

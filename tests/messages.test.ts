@@ -399,6 +399,8 @@ const MESSAGE_KEYS = [
   "Drill.intro.titleAgain",
   "Drill.intro.say",
   "Drill.intro.flip",
+  "Drill.intro.type",
+  "Drill.intro.check",
   "Drill.intro.grade",
   "Drill.intro.start",
   "Drill.ready.eyebrow",

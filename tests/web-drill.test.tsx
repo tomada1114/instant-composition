@@ -673,6 +673,15 @@ describe("the drill's placement round", () => {
     expect(screen.getByText("prompt-c1")).toBeInTheDocument();
   });
 
+  it("explains a typed placement round with the typed card's moves", async () => {
+    serve({
+      round: { ...ROUND, kind: "placement", retries: false, answerMode: "typed" },
+    });
+    await renderApp("/drill?kind=placement");
+    expect(screen.getByText(ja.Drill.intro.type)).toBeInTheDocument();
+    expect(screen.queryByText(ja.Drill.intro.flip)).toBeNull();
+  });
+
   it("calls a later placement a re-measure", async () => {
     serve({ round: { ...ROUND, kind: "placement", retries: false } });
     await renderApp("/drill?kind=placement");
