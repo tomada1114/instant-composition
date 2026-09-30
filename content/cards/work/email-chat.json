@@ -476,15 +476,22 @@
     "en": "I wish I'd sat on that reply.",
     "alternatives": [
       "I wish I'd waited before sending that reply.",
-      "I wish I'd held off on sending that reply."
+      "I wish I'd held off on sending that reply.",
+      "I should have sat on that reply."
     ],
     "point": "「寝かせる」は sit on。過去の後悔は wish + 過去完了",
     "topic": "work",
     "subtopic": "email-chat",
-    "level": 9,
+    "level": 8,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:452ff16bc01c59cce9c2d313c7e9edb45d088afe58883f0834470abcad49e7b4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8j2w5z2q",

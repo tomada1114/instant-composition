@@ -2,18 +2,24 @@
   {
     "id": "c_2d5y9r3g",
     "ja": "迷っても、川沿いに歩けば大丈夫。",
-    "en": "Even if you're turned around, follow the river.",
+    "en": "Even if you're lost, follow the river.",
     "alternatives": [
-      "Even if you get lost, just follow the river.",
-      "Even if you lose your bearings, follow the river."
+      "Even if you get lost, follow the river.",
+      "Even if you're turned around, follow the river."
     ],
-    "point": "turned around = 方向を見失う。Even if の後は現在形",
+    "point": "Even if の後は現在形。lost は「道に迷った」状態",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 10,
+    "level": 7,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dde517e548b6663bbde9b1729679ed11a80adfebd000187620ca7996aa3a802e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2d7x6p5x",

@@ -433,10 +433,16 @@
     "point": "仮押さえは pencil in。said の後は時制を一つ下げる",
     "topic": "work",
     "subtopic": "scheduling",
-    "level": 10,
+    "level": 8,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6bd4d8fd2a8ba64490ac2590646a5e82685e6b3183efe6a04bbf094552ef79ed",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7v6m8a2q",

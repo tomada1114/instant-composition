@@ -272,10 +272,16 @@
     "point": "say one's piece は「言いたいことを言う」。Having + 過去分詞",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 10,
+    "level": 9,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8401bff9cfc36ed22c5c46058f4f217637c6ecdd45b2e740e8093dccf804107f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5w9y6q8u",

@@ -657,10 +657,16 @@
     "point": "Who'd have thought 〜? は「誰が思っただろう」",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 10,
+    "level": 9,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8d2e233892a3589cd619140bac11e55ea72f9e5bab6fbb4bfbe5dc37f4f83148",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7m5r8g3d",
@@ -676,7 +682,13 @@
     "level": 9,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ad25522883c7eede11723a1c3768737c281288bfb64b4a305760f218f1b37d72",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8a9b4g2x",

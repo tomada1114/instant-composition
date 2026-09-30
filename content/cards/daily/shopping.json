@@ -2,18 +2,24 @@
   {
     "id": "c_2g9z5s9f",
     "ja": "3月からずっとこれ狙ってたんだ。",
-    "en": "I've had my eye on it since March.",
+    "en": "I've been eyeing it since March.",
     "alternatives": [
-      "I've been eyeing it since March.",
-      "I've had my sights set on it since March."
+      "I've had my eye on it since March.",
+      "I've been after it since March."
     ],
-    "point": "have one's eye on 〜 で「目をつけている」。since は現在完了",
+    "point": "eye は「狙う」。since と現在完了進行形で「3月からずっと」",
     "topic": "daily",
     "subtopic": "shopping",
-    "level": 10,
+    "level": 7,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:27a83c1e10292642b8ba2bbda171ad74758c6c06c0983c113192a9eb53fb0808",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3b3u4z8h",

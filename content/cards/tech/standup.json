@@ -152,7 +152,13 @@
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0a05c7e92a2388ea14c9b30232cf1c0655f74e7cf88247aa7e0c44fdf04f356f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4z4x9f4f",

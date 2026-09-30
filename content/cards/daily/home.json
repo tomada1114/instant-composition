@@ -468,10 +468,16 @@
     "point": "doubt の後の that は省け、節の中に節が入る",
     "topic": "daily",
     "subtopic": "home",
-    "level": 10,
+    "level": 8,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1a600741c5c964c64574a8b9f1e93cc4cf14ecea714928585bf5ab2009deda96",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8q7q9f9p",

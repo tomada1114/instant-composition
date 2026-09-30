@@ -156,10 +156,16 @@
     "point": "否定句が文頭に来ると should you の語順に倒置",
     "topic": "work",
     "subtopic": "office-life",
-    "level": 10,
+    "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7bd50170ca9984f8c296e57cefd4162a58db057267e2dfc6aeb783b052ef6ccf",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_3s3k3s3u",

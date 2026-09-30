@@ -333,10 +333,16 @@
     "point": "a far cry from = 大違い。what 節が前置詞の目的語",
     "topic": "travel",
     "subtopic": "hotel",
-    "level": 10,
+    "level": 9,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:58edd933f7f09ee5933442aceeddaf72d59309ea7a1bb7f0c3107106fa0bd2f1",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5y6r5r9j",

@@ -110,15 +110,21 @@
     "en": "I wish we'd axed that feature sooner.",
     "alternatives": [
       "I wish we'd killed that feature earlier.",
-      "I wish we'd pulled the plug on that feature sooner."
+      "I wish we'd cut that feature sooner."
     ],
     "point": "「切る」は axe。過去の後悔は wish + 過去完了",
     "topic": "tech",
     "subtopic": "product-talk",
-    "level": 10,
+    "level": 8,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:16c43dd7e985a1b9a5b019aa2b7f425a8ca7ed9df81dc6810ec53a99c01d5686",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2x7s5m5n",

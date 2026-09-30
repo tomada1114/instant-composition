@@ -32,10 +32,16 @@
     "point": "make + 人 + 原形。twist one's arm は強引に説得する",
     "topic": "social",
     "subtopic": "invitations",
-    "level": 9,
+    "level": 8,
     "grammar": ["causatives"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a346ed2c13fd6d1c62f219239520addcc38ff29814726771cef16fec1b6d2330",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2j2s8y6v",

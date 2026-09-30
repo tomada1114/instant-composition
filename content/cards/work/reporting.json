@@ -393,10 +393,16 @@
     "point": "足を引っ張る = hold back。What 節で焦点を後ろへ置く",
     "topic": "work",
     "subtopic": "reporting",
-    "level": 10,
+    "level": 8,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f7237ce40c08d905a7cc7e25ef30922d7b13941cac6b2d1ac3f9b308861efec5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6c2h8a4f",

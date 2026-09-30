@@ -667,10 +667,16 @@
     "point": "Having + 過去分詞で「もう〜したので」を短く言う",
     "topic": "tech",
     "subtopic": "incidents",
-    "level": 9,
+    "level": 7,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e198cd018a63b54452b2f0f5ec28ce6b8049820c3c24dfa0f2d8c456b36b0bb9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9u5c5k9c",

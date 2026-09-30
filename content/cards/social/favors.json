@@ -86,16 +86,22 @@
     "ja": "代わってもらえたら、一つ借りだね。",
     "en": "If you could cover, I'd owe you one.",
     "alternatives": [
-      "If you could cover, I'd owe you big.",
-      "If you covered for me, I'd owe you one."
+      "If you covered for me, I'd owe you one.",
+      "If you could cover, I'd owe you big."
     ],
     "point": "owe you one は「借りができる」。if 節は過去形",
     "topic": "social",
     "subtopic": "favors",
-    "level": 9,
+    "level": 8,
     "grammar": ["second-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d7144102d97b3f408338a8d2ce2a4a4e786f96896771d7e417fa189eaf970db6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2t3y7b7j",

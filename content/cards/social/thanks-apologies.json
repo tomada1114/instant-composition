@@ -353,18 +353,24 @@
   {
     "id": "c_5g7k8r7x",
     "ja": "ちゃんとお礼、言ってなかったよね。",
-    "en": "I never did thank you properly, did I?",
+    "en": "I never thanked you properly, did I?",
     "alternatives": [
-      "I never thanked you properly, did I?",
+      "I never did thank you properly, did I?",
       "I don't think I ever thanked you properly."
     ],
-    "point": "過去の never did は「結局しなかった」を強める",
+    "point": "never + 過去形で「一度もしなかった」。否定文の付加疑問は did I?",
     "topic": "social",
     "subtopic": "thanks-apologies",
-    "level": 10,
+    "level": 8,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6d0424229cfa02d83a1d8a75c158326d493eefc1fb06a76e7609c5a56f514c63",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_5q2d9a9c",
@@ -629,10 +635,16 @@
     "point": "like yours が kindness を後ろから修飾する",
     "topic": "social",
     "subtopic": "thanks-apologies",
-    "level": 9,
+    "level": 6,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6ddad236fb7a62dbc0ac26f72f3f2f7c91537e668dffea5220f1e0f117d953a2",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8y2c2w6h",

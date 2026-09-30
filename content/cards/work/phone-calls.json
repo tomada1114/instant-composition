@@ -27,15 +27,21 @@
     "en": "I'm afraid you're breaking up a bit.",
     "alternatives": [
       "I'm afraid the line's breaking up a little.",
-      "Sorry, but you seem to be breaking up a little."
+      "Sorry, but you're breaking up a bit."
     ],
     "point": "I'm afraid と a bit で角を丸める。途切れる = break up",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 10,
+    "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5019b662e7feb6f02e4301437ff653bb9484b516d7b06e39cb857392ef0654ce",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_2z3p7q6u",

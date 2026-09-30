@@ -95,10 +95,16 @@
     "point": "jobs の後ろに -ing で修飾。惹かれる = be drawn to",
     "topic": "work",
     "subtopic": "job-interview",
-    "level": 9,
+    "level": 8,
     "grammar": ["post-modification"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9b685b2824d4a13606bfffea90b7f49dc5541b74b7e489bd22dd74b822c401d8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4c7e9b2h",

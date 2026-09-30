@@ -578,18 +578,24 @@
   {
     "id": "c_8p4f3j2x",
     "ja": "彼は、皆が撮る場所は期待外れだと言った。",
-    "en": "He said the spot everyone photographs is a letdown.",
+    "en": "He said the place everyone photographs is disappointing.",
     "alternatives": [
-      "He told me the spot everyone photographs is a letdown.",
-      "He said the place everyone photographs is disappointing."
+      "He said the spot everyone photographs is a letdown.",
+      "He told me the place everyone photographs is disappointing."
     ],
-    "point": "said の後の that は省ける。spot を everyone photographs が修飾",
+    "point": "said の後の that は省ける。place を everyone photographs が修飾",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 10,
+    "level": 8,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:36042aabf844e3da524701a43308a14f25282e24bebd87741a71ecb718a74dd4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_8q4d8f5k",

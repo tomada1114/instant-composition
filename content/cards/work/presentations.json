@@ -660,9 +660,15 @@
     "point": "間接疑問は平叙の語順。asked の後で would に下げる",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 9,
+    "level": 8,
     "grammar": ["reported-speech"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:481de7ca1f1ec0faa33cbf0fa9e4f2f4fe35830a4c30569cf0dee940916650c3",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   }
 ]

@@ -418,18 +418,24 @@
   {
     "id": "c_6p5v5z6k",
     "ja": "休んでれば、今ごろ回復してるのに。",
-    "en": "If I'd rested, I'd be on the mend now.",
+    "en": "If I'd rested, I'd be better by now.",
     "alternatives": [
-      "If I had rested, I'd be on the mend.",
-      "If I'd rested, I'd be getting better by now."
+      "If I'd rested, I'd be on the mend now.",
+      "If I had rested, I'd be better by now."
     ],
-    "point": "過去の if 節と今の結果：would be、on the mend は回復中",
+    "point": "過去の if 節と今の結果：would be。better by now は「今ごろは回復」",
     "topic": "daily",
     "subtopic": "health",
-    "level": 10,
+    "level": 8,
     "grammar": ["mixed-conditional"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:261051e88759b57456faf06958d96fc61c8d9f5fb22f2600e77b37652bbca2ce",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_6q4w4w3v",

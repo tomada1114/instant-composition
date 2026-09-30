@@ -225,10 +225,16 @@
     "point": "「こっそり知らせる」は tip off。if 節の中に says 節",
     "topic": "work",
     "subtopic": "requests",
-    "level": 9,
+    "level": 8,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:86cf7ddd4a4f7f4851917d62938cee8781c211cf322d6e9e55c6429a2748e10a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4x3h9j8f",

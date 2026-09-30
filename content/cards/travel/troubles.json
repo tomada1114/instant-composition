@@ -140,7 +140,13 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f3968bf10e53a8db35beba9ca7a01aafaa403ea34e67d02b100f019e4871e7aa",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_4d5j4t4z",

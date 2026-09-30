@@ -407,7 +407,13 @@
     "level": 7,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:844c05a6acc73f7e9f0cf71f9a46b12224852d4d29d9fb39fe3b4177402f32dc",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_7p9g2z9w",
@@ -561,14 +567,20 @@
     "id": "c_9h8z5w2d",
     "ja": "これ、マージしていい？",
     "en": "Can I merge this?",
-    "alternatives": ["May I merge this?", "Is it OK to merge?"],
+    "alternatives": ["Is it okay to merge this?", "Is it OK to merge?"],
     "point": "許可を求めるときは Can I / May I",
     "topic": "tech",
     "subtopic": "code-review",
     "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-09-29",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7f1782a21d4673a8468917899688495b67b2d4569e1758afd3926465bfc5a0ea",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
   },
   {
     "id": "c_9j5e2g3p",
