@@ -41,6 +41,28 @@
     }
   },
   {
+    "id": "c_2p6a3p2x",
+    "ja": "君が断ってたら、今も困ってる。",
+    "en": "If you'd said no, I'd still be stuck.",
+    "alternatives": [
+      "If you'd refused, I'd still be stuck.",
+      "Had you said no, I'd still be stuck."
+    ],
+    "point": "過去の仮定 + 今の結果は would be",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2be4c1de9836681857de164773b15e9c9cd90e040d55f27082e0e922b7cceeea",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2p9u4s2f",
     "ja": "何を手伝えばいい？",
     "en": "What can I do?",
@@ -54,6 +76,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:65cdd7966439232cedfdfbd0a3ab05a91ba1cbe4dc94317afdec065c50081c4f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2s7k6t6r",
+    "ja": "代わってもらえたら、一つ借りだね。",
+    "en": "If you could cover, I'd owe you one.",
+    "alternatives": [
+      "If you covered for me, I'd owe you one.",
+      "If you could cover, I'd owe you big."
+    ],
+    "point": "owe you one は「借りができる」。if 節は過去形",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 8,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d7144102d97b3f408338a8d2ce2a4a4e786f96896771d7e417fa189eaf970db6",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -124,13 +168,13 @@
   },
   {
     "id": "c_2z8g5w4k",
-    "ja": "ひょっとして、少し時間ありません？",
-    "en": "I don't suppose you'd have a minute?",
+    "ja": "もしかして、お時間ありません？",
+    "en": "Would you happen to have time?",
     "alternatives": [
-      "Would you happen to have a minute?",
-      "I don't suppose you could spare a minute?"
+      "I don't suppose you'd have a minute?",
+      "Do you happen to have a minute?"
     ],
-    "point": "I don't suppose ～ で控えめに頼む",
+    "point": "Would you happen to ～? で控えめに頼む",
     "topic": "social",
     "subtopic": "favors",
     "level": 7,
@@ -138,7 +182,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:b5a8964bc86bea08f0667ab8800ef9397373fa933ddda988cd7e27f93f7482d1",
+        "hash": "sha256:47038abbcb4a04054d3338b9e6633e953ccf53c087da1e107f18ce452b4da7c5",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -534,18 +578,18 @@
   },
   {
     "id": "c_7u8r3n4t",
-    "ja": "彼に頼んで、車で送ってもらった。",
+    "ja": "彼に頼んで送ってもらった。",
     "en": "I got him to drive me.",
-    "alternatives": ["I asked him to drive me.", "I got him to give me a ride."],
+    "alternatives": ["I asked him to drive me.", "I got him to take me."],
     "point": "get 人 to do は説得して〜してもらう。have は to なし",
     "topic": "social",
     "subtopic": "favors",
-    "level": 7,
+    "level": 5,
     "grammar": ["causatives"],
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:857ccf4993d393deed9200176f786f8b26c96c71796cb74dd2d9a397aa3c5efe",
+        "hash": "sha256:d7657d87a75232c3cb21a1dd6cc40198e924247bec263dd145e4d057582b77a2",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

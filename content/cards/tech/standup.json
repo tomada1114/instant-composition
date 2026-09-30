@@ -42,7 +42,7 @@
   },
   {
     "id": "c_3j8v3k2p",
-    "ja": "今日はブロッカーが一つある。",
+    "ja": "今日はブロッカー一つある。",
     "en": "There's one blocker today.",
     "alternatives": ["I've got one blocker today.", "I have one blocker today."],
     "point": "「〜がある」は There is + 単数",
@@ -53,7 +53,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:cd9d009edebca3f6e53194e92bedd8c2bdd56b7a82ab9613aa1e37a9b6974ca2",
+        "hash": "sha256:8caa1da90bf18cd8ec5893fed988da05ab5067712cfd9f371ae6f4c7a3dde16b",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -136,6 +136,25 @@
     "stamps": {
       "core": {
         "hash": "sha256:8a5029efe247785b1cc0b0d4250fd0bdf3bf6510dc8d011daeb710807631ec6e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4x2c3y9b",
+    "ja": "私、ケンを手伝える。",
+    "en": "I can help Ken.",
+    "alternatives": ["I can help Ken out.", "I'm able to help Ken."],
+    "point": "できるは can + 動詞の原形",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0a05c7e92a2388ea14c9b30232cf1c0655f74e7cf88247aa7e0c44fdf04f356f",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -325,6 +344,29 @@
     }
   },
   {
+    "id": "c_7r9a5a8b",
+    "ja": "遅いけど、形になってきたよ。",
+    "en": "Slow as it is, it's coming together.",
+    "alternatives": [
+      "It's slow, but it's coming together.",
+      "Although it's slow going, it's coming together.",
+      "Slow though it is, it's taking shape."
+    ],
+    "point": "「形になる」は come together。Slow as it is で譲歩",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 9,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a82b1fc6ea874db3ac7c5d13c605418bac1a1b663719b0ee3cbb9dec8f96eeb8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_7s9k6v6s",
     "ja": "もう移行を終わらせました。",
     "en": "I've finished the migration.",
@@ -493,12 +535,12 @@
     "point": "「何の作業中？」は What are you working on? 前置詞 on は最後に残す",
     "topic": "tech",
     "subtopic": "standup",
-    "level": 1,
+    "level": 3,
     "grammar": ["wh-questions", "progressive-aspect"],
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:7915261a81a74a762c8447c87cbbb0ed632bf2125a9fbe572b2822d531beabbb",
+        "hash": "sha256:da204bd7e3943562e541af0e7ea71bc7afb547910aaeab231e189ebdde2a58d1",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -528,7 +570,7 @@
   },
   {
     "id": "c_9e8d6w2f",
-    "ja": "今日中に終わるかは、微妙ですね。",
+    "ja": "今日中に終わるかは微妙ですね。",
     "en": "I wouldn't bet on finishing today.",
     "alternatives": [
       "I wouldn't count on finishing today.",
@@ -542,7 +584,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:b93a1cc0f746ee8ca03f796ce1baa0c1cbc2f3745845fa7c657125599f8e571b",
+        "hash": "sha256:341f55116563e995103797b93e2f4831c81e7b9f9ad7952ec7d870011699fe28",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

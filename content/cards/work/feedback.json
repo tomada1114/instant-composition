@@ -44,6 +44,29 @@
     }
   },
   {
+    "id": "c_2p9y3r6n",
+    "ja": "これが私の資料なら、無駄を削るのに。",
+    "en": "If this were mine, I'd cut the fluff.",
+    "alternatives": [
+      "If this were my report, I'd trim the fat.",
+      "If it were my document, I'd cut the fluff.",
+      "If this were mine, I'd trim the fat."
+    ],
+    "point": "「無駄を削る」は cut the fluff / trim the fat",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 9,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f93c3189da862a82873c6757c7d124112420f5bc31480ee06a12f18cf4159f0b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2r9b2m2r",
     "ja": "部長は、企画が性急だと言ってたよ。",
     "en": "Our director said the plan felt rushed.",
@@ -151,6 +174,29 @@
     }
   },
   {
+    "id": "c_4m6f2p9m",
+    "ja": "感心するのは、発想でなくやり切る力です。",
+    "en": "It's the follow-through, not the idea, that impresses me.",
+    "alternatives": [
+      "What impresses me is the follow-through, not the idea.",
+      "It's your follow-through, not your idea, that impresses me.",
+      "The follow-through impresses me more than the idea."
+    ],
+    "point": "It's〜that で強調。「やり切る力」は follow-through",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1782f6e4206d0f08da26e23ae265dbcfd56111afd4bac1d29422797ffe02d8b5",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4w9z3c2r",
     "ja": "こんな完成度の下書き、初めて見たよ。",
     "en": "Never have I seen such a polished draft.",
@@ -240,7 +286,7 @@
   },
   {
     "id": "c_5y2v9r6s",
-    "ja": "レイアウト、君の説明で納得した。",
+    "ja": "レイアウト、君の話で納得した。",
     "en": "You've won me over on the layout.",
     "alternatives": [
       "Your argument won me over on the layout.",
@@ -254,7 +300,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:8f0bd4ec9276500ebb08d2aab473648288182c402d0a111d80d250b0b706d9af",
+        "hash": "sha256:6dccde0a31f41897a599bfe667e68153307d8939db9079e3b3c3446bbcfb57d9",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -501,6 +547,29 @@
     "stamps": {
       "core": {
         "hash": "sha256:6a1616f724026caa2b85f5858fe5076eaf91d9ebbf4526caa46cd95ed578205b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7w8a2r5m",
+    "ja": "私なら、潔く受け止めるのに。",
+    "en": "Were it me, I'd take it on the chin.",
+    "alternatives": [
+      "If it were me, I'd take it on the chin.",
+      "If I were you, I'd take it on the chin.",
+      "If I were in your position, I'd just accept it."
+    ],
+    "point": "「潔く受け止める」は take it on the chin",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1bb175b53879cc48e92a928fffbef1b62213bbbb9350e6895afb000362549f2a",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

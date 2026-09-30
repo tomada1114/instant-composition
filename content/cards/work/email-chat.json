@@ -110,6 +110,29 @@
     }
   },
   {
+    "id": "c_3s5v5u4s",
+    "ja": "私に必要なのは、事前の一言です。",
+    "en": "What I need is a heads-up first.",
+    "alternatives": [
+      "What I'd like is a heads-up beforehand.",
+      "All I need is a heads-up first.",
+      "I just need a heads-up first."
+    ],
+    "point": "What〜is の強調。「事前の一言」は a heads-up",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f927d83a0ceb3d5ad187ec899c08f3714e7143b6762efe19d763f5ff83149148",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3t3r4v3a",
     "ja": "添付を忘れてすみません。",
     "en": "Sorry, I forgot the attachment.",
@@ -442,6 +465,29 @@
     "stamps": {
       "core": {
         "hash": "sha256:a2253655f7f56e354b7b9afe020d4fa2e220155b2ea5b191085f04064d51a16d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8f3e2a9n",
+    "ja": "あの返信、寝かせとけばよかった。",
+    "en": "I wish I'd sat on that reply.",
+    "alternatives": [
+      "I wish I'd waited before sending that reply.",
+      "I wish I'd held off on sending that reply.",
+      "I should have sat on that reply."
+    ],
+    "point": "「寝かせる」は sit on。過去の後悔は wish + 過去完了",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 8,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:452ff16bc01c59cce9c2d313c7e9edb45d088afe58883f0834470abcad49e7b4",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

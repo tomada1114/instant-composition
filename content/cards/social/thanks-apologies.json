@@ -44,12 +44,12 @@
   {
     "id": "c_2h7y9r4m",
     "ja": "私が君なら、まだ怒ってるだろうな。",
-    "en": "If I were you, I'd still be furious.",
+    "en": "In your shoes, I'd still be furious.",
     "alternatives": [
-      "In your shoes, I'd still be furious.",
+      "If I were you, I'd still be furious.",
       "I'd still be angry if I were you."
     ],
-    "point": "現在の仮定は If + 過去形、would。were を使う",
+    "point": "「私が君なら」は In your shoes / If I were you",
     "topic": "social",
     "subtopic": "thanks-apologies",
     "level": 6,
@@ -57,7 +57,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:63951a09d0c0a4ce0d35d01379d432f35086396258e5829e530533b30647040d",
+        "hash": "sha256:e34a8f7e5fcd00246c275cb7eb51e7a88bfc5ddcf4ad903f51db027b745503e5",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -229,7 +229,7 @@
   },
   {
     "id": "c_4m7j5a7t",
-    "ja": "君がいなければ、プレゼンは大失敗だったよ。",
+    "ja": "君がいなければ、発表は大失敗だった。",
     "en": "Without you, the presentation would've been a disaster.",
     "alternatives": [
       "Without you, I'd have bombed the presentation.",
@@ -238,12 +238,12 @@
     "point": "Without ~ は if 節の代わりにもなる",
     "topic": "social",
     "subtopic": "thanks-apologies",
-    "level": 10,
+    "level": 8,
     "grammar": ["third-conditional"],
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:99637d9b60e0afd2d7d86ccfd07bed998bcade45ebdb9a58d086b518edbd8df0",
+        "hash": "sha256:7c32711d5401c67cef708f28681279d6f5981474bb6baa0351b6e66803ba0f9d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -252,9 +252,9 @@
   {
     "id": "c_4u4r9t6f",
     "ja": "何かお返しできる？",
-    "en": "Can I return the favor?",
-    "alternatives": ["Can I repay you?", "Can I do something in return?"],
-    "point": "「お返しする」は return the favor",
+    "en": "Can I repay you?",
+    "alternatives": ["Can I return the favor?", "Can I do something in return?"],
+    "point": "「お返しする」は repay や return the favor",
     "topic": "social",
     "subtopic": "thanks-apologies",
     "level": 2,
@@ -262,7 +262,26 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:2b6d3c06ef8d255fb4df4381f5b14ebe8e884e06091544368d8cb421e270d011",
+        "hash": "sha256:adf77bafb4f37b625f52811a0b2a58ea5d3621019abcab77203c428607895c39",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4v7s3k9q",
+    "ja": "君には本当に窮地を救ってもらったよ。",
+    "en": "You really bailed me out of a jam.",
+    "alternatives": ["You really bailed me out.", "You really got me out of a jam."],
+    "point": "bail out は窮地から救い出す",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 10,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4f2f3ba4afcd8f1615c5c52842d7a8f8450996ba40c137a39ebb1734ae8059d8",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -314,12 +333,9 @@
   },
   {
     "id": "c_5d4a7b7k",
-    "ja": "お礼に夕飯おごってもいい？",
-    "en": "Can I buy you dinner as thanks?",
-    "alternatives": [
-      "May I buy you dinner as thanks?",
-      "Can I buy you a thank-you dinner?"
-    ],
+    "ja": "夕飯おごってもいい？",
+    "en": "Can I buy you dinner?",
+    "alternatives": ["May I buy you dinner?", "Can I treat you to dinner?"],
     "point": "「おごる」は buy 人 物 か treat",
     "topic": "social",
     "subtopic": "thanks-apologies",
@@ -328,7 +344,29 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:ce74d9a7a783c09b1b9d18283cc28acb8f99249ef5d1bed0b59d8457b705a5ad",
+        "hash": "sha256:cec678f88b5d92541af65fcad46efc1584c4f347c71259c323d161299a2e36e9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5g7k8r7x",
+    "ja": "ちゃんとお礼、言ってなかったよね。",
+    "en": "I never thanked you properly, did I?",
+    "alternatives": [
+      "I never did thank you properly, did I?",
+      "I don't think I ever thanked you properly."
+    ],
+    "point": "never + 過去形で「一度もしなかった」。否定文の付加疑問は did I?",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6d0424229cfa02d83a1d8a75c158326d493eefc1fb06a76e7609c5a56f514c63",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -396,7 +434,7 @@
   },
   {
     "id": "c_5z8k3p6x",
-    "ja": "もっとこまめに連絡すべきでした。",
+    "ja": "こまめに連絡すべきでした。",
     "en": "I should have kept you posted.",
     "alternatives": [
       "I should have updated you more often.",
@@ -410,7 +448,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:087b8e17fdade66f07577dd195492a525ab2037830c3517fde04001adacc452a",
+        "hash": "sha256:af63c8fd84bfe9216e0a76127496827380d6b069aa029a182d8685de346d41c2",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -559,6 +597,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:4c4bb69c74433a3d81c4e30d77b3ccfed695626f2a76c052e57652b80806f967",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8s2u8v8r",
+    "ja": "彼女は一生恩に着ると言った。",
+    "en": "She said she'd be forever in my debt.",
+    "alternatives": [
+      "She told me she'd be forever in my debt.",
+      "She said she owed me big time."
+    ],
+    "point": "恩に着るは in one's debt。時制は said に合わせる",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 8,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3a6f733f6a54c216b7eec3af5a40f3445da985a12b5c515523cad643eee7818e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8x3a8t8e",
+    "ja": "君のような優しさは忘れないよ。",
+    "en": "I'll never forget kindness like yours.",
+    "alternatives": [
+      "I won't forget kindness like yours.",
+      "Kindness like yours won't be forgotten."
+    ],
+    "point": "like yours が kindness を後ろから修飾する",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 6,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6ddad236fb7a62dbc0ac26f72f3f2f7c91537e668dffea5220f1e0f117d953a2",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

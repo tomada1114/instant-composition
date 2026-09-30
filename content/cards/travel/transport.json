@@ -307,6 +307,29 @@
     }
   },
   {
+    "id": "c_6m8c6u4h",
+    "ja": "私なら、もう電車には見切りをつけるよ。",
+    "en": "If I were you, I'd bail on the train.",
+    "alternatives": [
+      "If I were you, I'd ditch the train.",
+      "If I were you, I'd give up on it.",
+      "If I were you, I'd cut my losses now."
+    ],
+    "point": "「見切りをつける」は bail on / give up on",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 9,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7ea3f5637f11560de94d64e512cecc0ce351db805ab20c1073d310fb49318479",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6t5a7q5r",
     "ja": "駅員は、この電車は運休と言った。",
     "en": "The staff said this train was canceled.",
@@ -454,7 +477,7 @@
   },
   {
     "id": "c_7x4u9h5t",
-    "ja": "終バス逃して、タクシーで帰った。",
+    "ja": "終バス逃してタクシーで帰った。",
     "en": "Having missed the last bus, I cabbed home.",
     "alternatives": [
       "Missing the last bus, I took a cab.",
@@ -468,7 +491,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:6bbd978733fd60fe478d0305c0b3d70d9dc560c299f4f4260da53e944fe21f95",
+        "hash": "sha256:88fbf3e3030cef76a637d92599f424e722f0d01203d3be0cf4f2afffe055a339",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

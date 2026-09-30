@@ -423,6 +423,28 @@
     }
   },
   {
+    "id": "c_7k7u8w3t",
+    "ja": "プリヤは木曜を仮押さえすると言った。",
+    "en": "Priya said she'd pencil in Thursday.",
+    "alternatives": [
+      "Priya said she would pencil Thursday in.",
+      "Priya said she'd tentatively hold Thursday."
+    ],
+    "point": "仮押さえは pencil in。said の後は時制を一つ下げる",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 8,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6bd4d8fd2a8ba64490ac2590646a5e82685e6b3183efe6a04bbf094552ef79ed",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_7v6m8a2q",
     "ja": "確認したら、金曜は大丈夫です。",
     "en": "Having checked, I'm free on Friday.",
@@ -603,6 +625,29 @@
     "stamps": {
       "core": {
         "hash": "sha256:a3d93c8206c271f5579e31a01a201eac7240795233970e815d2bd58ac14819e8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8r9z9b5v",
+    "ja": "私が決めるなら、後ろにずらすのに。",
+    "en": "If it were my call, I'd delay it.",
+    "alternatives": [
+      "If it were up to me, I'd delay it.",
+      "If I could decide, I'd push it back.",
+      "If the call were mine, I'd postpone it."
+    ],
+    "point": "「私が決める」は my call。if 節は were",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 8,
+    "grammar": ["second-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e88d0816cb710024c562b43e0a879ea54b61591c470139c06a981a5c864d1ddc",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

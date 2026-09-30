@@ -85,6 +85,28 @@
     }
   },
   {
+    "id": "c_3r6w5x2b",
+    "ja": "即断が要る仕事に惹かれます。",
+    "en": "I'm drawn to jobs demanding snap decisions.",
+    "alternatives": [
+      "I'm attracted to roles that demand quick decisions.",
+      "I'm drawn to roles requiring split-second decisions."
+    ],
+    "point": "jobs の後ろに -ing で修飾。惹かれる = be drawn to",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 8,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9b685b2824d4a13606bfffea90b7f49dc5541b74b7e489bd22dd74b822c401d8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4c7e9b2h",
     "ja": "営業の経験者です。",
     "en": "I'm experienced in sales.",
@@ -104,22 +126,45 @@
     }
   },
   {
-    "id": "c_4k3a4y4e",
-    "ja": "その時点で、チームを率いた経験があった。",
-    "en": "By then, I'd already led a team.",
+    "id": "c_4e3g9c9r",
+    "ja": "私は、着任してすぐ動ける人間です。",
+    "en": "I'm someone who hits the ground running.",
     "alternatives": [
-      "I had already led a team by then.",
-      "By that point, I had already led a team."
+      "I'm a person who can hit the ground running.",
+      "I'm the type who hits the ground running.",
+      "I'm someone who can start contributing right away."
+    ],
+    "point": "「すぐ動き出す」は hit the ground running",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 9,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5816cb0fd989ccbd68207939c1c61de97109c36bd433f6660f6b973fb4431892",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4k3a4y4e",
+    "ja": "当時すでにチームを率いてた。",
+    "en": "By then, I'd led a team.",
+    "alternatives": [
+      "I'd already led a team by then.",
+      "By that point, I'd already led a team."
     ],
     "point": "「その時までに」は過去完了",
     "topic": "work",
     "subtopic": "job-interview",
-    "level": 9,
+    "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:8ad5a321ad1765815a77f1878df0d768b938b3cce08467aa5b749d840073b54d",
+        "hash": "sha256:e35fc64cf3657e8fae9938b0332a91ce42d4afba515c787c3e195ef7d9e501de",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -290,6 +335,29 @@
     "stamps": {
       "core": {
         "hash": "sha256:cb4d572106d0a18ec0d0706e5812662f57f51620f8f0d20bba956055e43c7fc6",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6f7x6v3w",
+    "ja": "怒ったお客様をなだめるのが得意です。",
+    "en": "I have a knack for calming upset clients.",
+    "alternatives": [
+      "I'm good at calming upset clients.",
+      "Calming upset clients is my forte.",
+      "I have a gift for soothing angry clients."
+    ],
+    "point": "「得意」は a knack for。冠詞 a を忘れない",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 10,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b7ee3ec8a4036dcbcafe5095d82c568ed1b108a0f5c2be98936f81916b4a85a1",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -573,7 +641,7 @@
   },
   {
     "id": "c_8t6y9x7g",
-    "ja": "もっと強く異を唱えるべきでした。",
+    "ja": "もっと強く異を唱えるべきだった。",
     "en": "I should have pushed back harder.",
     "alternatives": [
       "I ought to have pushed back harder.",
@@ -587,7 +655,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:bf5b0789eeb8b83626904f7997c75cab6c498c07d6ce389d96bb69bed9a4e790",
+        "hash": "sha256:7e45634172d5e9ad7dc4f75e939a9d5a6147d8eb0ef322f71953b7d794643517",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

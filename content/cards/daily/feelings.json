@@ -63,6 +63,25 @@
     }
   },
   {
+    "id": "c_3d4u9f2y",
+    "ja": "あの一言、飲み込めばよかった。",
+    "en": "I wish I'd bitten my tongue.",
+    "alternatives": ["If only I'd bitten my tongue.", "I wish I'd kept my mouth shut."],
+    "point": "bite one's tongue は言葉をぐっと飲み込む",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 9,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fef345a7bbbc43bda1fb2437fa69bb750fd853d7c8200716e409d19efc2c65e7",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3p7z6b4w",
     "ja": "一人で歩くのは平気だよ。",
     "en": "I don't mind walking alone.",
@@ -243,6 +262,28 @@
     }
   },
   {
+    "id": "c_5n3s9g4y",
+    "ja": "言いたいことを言って、少し気が楽だ。",
+    "en": "Having said my piece, I feel lighter.",
+    "alternatives": [
+      "Having said my piece, I feel a bit better.",
+      "Having spoken my mind, I feel lighter."
+    ],
+    "point": "say one's piece は「言いたいことを言う」。Having + 過去分詞",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 9,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8401bff9cfc36ed22c5c46058f4f217637c6ecdd45b2e740e8093dccf804107f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_5w9y6q8u",
     "ja": "彼の言葉が、まだ吹っ切れない。",
     "en": "I can't get over what he said.",
@@ -307,7 +348,7 @@
   },
   {
     "id": "c_6d9d7a2u",
-    "ja": "その案には、あまり乗り気になれない。",
+    "ja": "その案、あまり乗り気になれない。",
     "en": "I'm not entirely sold on that idea.",
     "alternatives": [
       "I'm not sure I'm totally sold on that.",
@@ -316,12 +357,12 @@
     "point": "not entirely でやわらかく否定する",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 9,
+    "level": 8,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:e692f4dc5fa9e50c5bed1a2882c3840838c0c8604c3bbad628536daedf0a92f8",
+        "hash": "sha256:97e73876d540ac423126ffbf7df2eba97930c20ad661864b7bd586492e5a7ea4",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

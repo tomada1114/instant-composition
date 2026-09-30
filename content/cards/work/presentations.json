@@ -127,7 +127,7 @@
   },
   {
     "id": "c_3x2k2s9c",
-    "ja": "このグラフを見てください。",
+    "ja": "このグラフ見てください。",
     "en": "Please look at this graph.",
     "alternatives": ["Take a look at this graph.", "Have a look at this graph."],
     "point": "「見る」は look at＋対象",
@@ -138,7 +138,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:ad059f5a723374bdbe8251916ee5b94ec203f9ed63af462025b9d0aa54a34cc5",
+        "hash": "sha256:b8051fea5f3304fc419e3acf7bd940294cb7b1e5b7f59c42d7d6cac72af11af5",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -292,7 +292,7 @@
   },
   {
     "id": "c_4y9c9p3g",
-    "ja": "その時までに、試作品は仕上げてあった。",
+    "ja": "それまでに試作品は仕上げてた。",
     "en": "By then, we'd finished the prototype.",
     "alternatives": [
       "By then, we had completed the prototype.",
@@ -301,12 +301,12 @@
     "point": "「その時までに完了」は過去完了",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 9,
+    "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:708ced4de5fb0586c51e95a7776c9dde124a2e619c80e78e17f8c42238188c55",
+        "hash": "sha256:07d8c9564ed79eab3118e431fe8eec930c02bc38f2242996a3a6b5d7c482d5b0",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -591,7 +591,7 @@
   },
   {
     "id": "c_8u2p8h9b",
-    "ja": "データはいつ集められたの？",
+    "ja": "データいつ集められたの？",
     "en": "When was the data collected?",
     "alternatives": ["When was the data gathered?", "When was that data collected?"],
     "point": "「集めた」は受け身なら was collected",
@@ -602,7 +602,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:1834dd3ba579aab0568dc1a370a010775b382c5cbe3eba8da0251539de6704cd",
+        "hash": "sha256:3a34b66a69db6e16a0688cf82214b30bc7b4b53566271c08ea8d47c931e2a857",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -644,6 +644,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:ef8cff5804dceeaa833be3042e7ce4bc80966141f66482411e07ddb8cc53af24",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9z5r2j8j",
+    "ja": "彼は、こけたらどうするのかと聞いた。",
+    "en": "He asked what we'd do if it flopped.",
+    "alternatives": [
+      "He asked what we'd do if it bombed.",
+      "He asked us what we'd do if it flopped."
+    ],
+    "point": "間接疑問は平叙の語順。asked の後で would に下げる",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 8,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:481de7ca1f1ec0faa33cbf0fa9e4f2f4fe35830a4c30569cf0dee940916650c3",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

@@ -459,6 +459,28 @@
     }
   },
   {
+    "id": "c_7m2d4g9y",
+    "ja": "昼ごろにやっと雨が上がった。",
+    "en": "The rain finally let up around noon.",
+    "alternatives": [
+      "The rain finally eased off around noon.",
+      "The rain finally stopped around noon."
+    ],
+    "point": "let up は雨や勢いが弱まる・やむ",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 9,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:783d648bd1d1b5d5e13a22a323cfadc02b4fd9c1bb4093f1c59e3ef2915fc45a",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_7y4k2u5t",
     "ja": "やっと髪を切ってもらった。",
     "en": "I finally had my hair cut.",

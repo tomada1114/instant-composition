@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2d5y9r3g",
+    "ja": "迷っても、川沿いに歩けば大丈夫。",
+    "en": "Even if you're lost, follow the river.",
+    "alternatives": [
+      "Even if you get lost, follow the river.",
+      "Even if you're turned around, follow the river."
+    ],
+    "point": "Even if の後は現在形。lost は「道に迷った」状態",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 7,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:dde517e548b6663bbde9b1729679ed11a80adfebd000187620ca7996aa3a802e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2d7x6p5x",
     "ja": "地図を持ってくればよかった。",
     "en": "I wish I'd brought a map.",
@@ -96,6 +118,29 @@
     "stamps": {
       "core": {
         "hash": "sha256:dd85022cbffa665c9ef00fb07d1f8a43c5bb759e6623b209c98d06ba84efe2ef",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_2y7x7h2y",
+    "ja": "北へ進めば、目と鼻の先ですよ。",
+    "en": "Heading north, you'll be a stone's throw away.",
+    "alternatives": [
+      "If you head north, it's a stone's throw away.",
+      "Going north, it's just a stone's throw.",
+      "Head north and it's a stone's throw from there."
+    ],
+    "point": "「目と鼻の先」は a stone's throw",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 9,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3d5b96e8a35a730c6832424d280dc0c8ff2856229985752dbe7402c64c7c1d5b",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -244,12 +289,12 @@
     "point": "格闘は wrestle。現在完了進行形で継続を表す",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 9,
+    "level": 8,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:c605093ad5003a631622401bee5850f56ecb67950ff3cd9cf991b469f5b5d3aa",
+        "hash": "sha256:4d843a924fc0a4253d32b55c09216fc227d27c29f1f0dfa85f7399f18fb676c4",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -549,8 +594,8 @@
   {
     "id": "c_6r3r7e5t",
     "ja": "地図を見ています。",
-    "en": "I'm looking at the map.",
-    "alternatives": ["I'm checking the map.", "I'm reading the map."],
+    "en": "I'm checking the map.",
+    "alternatives": ["I'm looking at the map.", "I'm reading the map."],
     "point": "今の動作は am + -ing",
     "topic": "travel",
     "subtopic": "directions",
@@ -559,7 +604,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:c0a09e4cdeb26fbd62093d9ff7b57e59be6a35a5a2895ae1d71672b7b7b91a02",
+        "hash": "sha256:78eda6ab3db2b4f5448788adac837e431bb2d8ffc61e78a1b2a6aa6aa76ffd79",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
