@@ -1,5 +1,27 @@
 [
   {
+    "id": "c_2g9z5s9f",
+    "ja": "3月からずっとこれ狙ってたんだ。",
+    "en": "I've been eyeing it since March.",
+    "alternatives": [
+      "I've had my eye on it since March.",
+      "I've been after it since March."
+    ],
+    "point": "eye は「狙う」。since と現在完了進行形で「3月からずっと」",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 7,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:27a83c1e10292642b8ba2bbda171ad74758c6c06c0983c113192a9eb53fb0808",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3b3u4z8h",
     "ja": "このシャツは安いよ。",
     "en": "This shirt is cheap.",
@@ -153,6 +175,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:b71f632f4cf2cd2f8b0de41cfd8af2514143c0e95ae691a52ad5124af69b5775",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_4m7u3h7m",
+    "ja": "もうあの店では二度と買わない。",
+    "en": "Never again will I shop there.",
+    "alternatives": [
+      "I'll never buy from that store again.",
+      "I will never shop at that store again."
+    ],
+    "point": "Never again の後ろは will I の倒置",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8978c63aaa741bb13ba9fae5af777adb7b3c968ef56774978ec36511f6ecb4e2",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -497,7 +541,7 @@
   },
   {
     "id": "c_9g2n9s5s",
-    "ja": "高くても、それだけの価値はある。",
+    "ja": "高くても、その価値はある。",
     "en": "Although it's expensive, it's worth it.",
     "alternatives": [
       "Even though it's pricey, it's worth it.",
@@ -511,7 +555,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:2c921af1c33284467127b7f244379706f5650ad82eb462f2be9aba455786d856",
+        "hash": "sha256:51c3bd0b04d100d8826d74e240cfcf39c52d6b19dd1106346cb1f9b5421d5374",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

@@ -45,7 +45,7 @@
   },
   {
     "id": "c_2e9e8s7p",
-    "ja": "私が報告してたら、こうならなかった。",
+    "ja": "私が伝えてたら、こうならなかった。",
     "en": "If I'd flagged it, this wouldn't have happened.",
     "alternatives": [
       "Had I flagged it, this wouldn't have happened.",
@@ -59,7 +59,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:20c6728fa286f1e67ad9bf5f12e74ab9d6557d2e993c38348ec93941473adffc",
+        "hash": "sha256:7a60ed725bde4ed8f69213f33cfd680b2e4fbd7fc0054be3d6a2c73512bdb78d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -127,7 +127,7 @@
   },
   {
     "id": "c_3j2v4m3g",
-    "ja": "予算案は棚上げだと、彼女に言われた。",
+    "ja": "予算案は棚上げだと彼女に言われた。",
     "en": "She said the budget was shelved.",
     "alternatives": [
       "She told me the budget had been shelved.",
@@ -141,7 +141,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:90c59bd549c79ff28f1f926d8836818ebe3acdb1c02c371fdb597c113360eced",
+        "hash": "sha256:dbca709cdef01a7cd9981288a7e2360fc461e83a9da6147ff382c8af5c575286",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -377,6 +377,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:3025ecb36bc75a6d77a722a7c40c25b2e47d0dd0dc637ad72ab06295b4ffb009",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6a5y5y9c",
+    "ja": "足を引っ張っているのは、引き継ぎです。",
+    "en": "What's holding us back is the handoff.",
+    "alternatives": [
+      "It's the handoff that's holding us back.",
+      "The handoff is what's holding us back."
+    ],
+    "point": "足を引っ張る = hold back。What 節で焦点を後ろへ置く",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f7237ce40c08d905a7cc7e25ef30922d7b13941cac6b2d1ac3f9b308861efec5",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -636,6 +658,52 @@
     }
   },
   {
+    "id": "c_8w2e2h5x",
+    "ja": "私が知らせていれば、今は無事なのに。",
+    "en": "If I'd raised it, we'd be fine now.",
+    "alternatives": [
+      "If I'd flagged it, we'd be fine now.",
+      "If I'd spoken up, we'd be fine now.",
+      "Had I raised it, we'd be fine now."
+    ],
+    "point": "過去の仮定 + 今の結果は had done / would be",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3d94cee2aec3374c8589c69e8cf8ff2d38b4d78fd5faf292dcff3faf1fbcb104",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8w3j9r4w",
+    "ja": "私たちは金曜にやっと気づいた。",
+    "en": "Not until Friday did we notice it.",
+    "alternatives": [
+      "Only on Friday did we notice it.",
+      "It wasn't until Friday that we noticed it.",
+      "We didn't notice it until Friday."
+    ],
+    "point": "Not until を前に出すと、did we と倒置する",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fac7cf2992a99046ee924f813f9afd241acaf04e31671794fa2d1373a6e79e53",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_9g4d4a3w",
     "ja": "その件は、ずっと調べています。",
     "en": "I've been looking into it.",
@@ -657,7 +725,7 @@
   {
     "id": "c_9j2y7m4y",
     "ja": "すぐ上司に相談したほうがいい。",
-    "en": "You should talk to your boss now.",
+    "en": "You should consult your boss now.",
     "alternatives": [
       "You'd better talk to your boss soon.",
       "You should talk to your boss right away."
@@ -670,7 +738,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:d7168c3596cee0e040534a67fed3b7aac3773abc411c1d6eec96c57c71e07f42",
+        "hash": "sha256:760ab3ffe0a0fc3609f2c1133a68e590d8463a83acd1c502d0590cc232f51452",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -693,6 +761,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:a7dccbc6b6d1903c2b6938281672c789abfe6036ac210f80f9d2d8e0656fd025",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9v8h2k9j",
+    "ja": "知ってれば我々は警鐘を鳴らしたのに。",
+    "en": "Had we known, we'd have sounded the alarm.",
+    "alternatives": [
+      "If we'd known, we'd have sounded the alarm.",
+      "Had we known, we'd have raised the alarm."
+    ],
+    "point": "If を省くと Had we known と倒置。警鐘は sound the alarm",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e3d9f1348cff76a61c860a3f9a80d547a618e90bec5cd11d2f4af423776dd2b7",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

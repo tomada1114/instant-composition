@@ -230,7 +230,7 @@
   {
     "id": "c_4v3y9t9m",
     "ja": "お水、もらえる？",
-    "en": "Can I have some water?",
+    "en": "Can I have water?",
     "alternatives": ["Can I get some water?", "Could I have some water?"],
     "point": "頼むときは Can I have 〜?",
     "topic": "daily",
@@ -240,7 +240,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:1354d9e69d095d1cc1a603313d33f4352f2254faeb8e5ade2abd16b1e9072071",
+        "hash": "sha256:3cbc2e6d930013cf2a47f05b622d3b29e07cc5b8159d1be3a4152e50b0099e3a",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

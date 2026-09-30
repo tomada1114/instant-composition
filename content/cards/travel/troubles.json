@@ -20,7 +20,7 @@
   },
   {
     "id": "c_2n8w7a9f",
-    "ja": "タクシーの運転手に、ぼられました。",
+    "ja": "タクシー運転手に、ぼられた。",
     "en": "A taxi driver ripped me off.",
     "alternatives": ["I got ripped off by a taxi driver.", "The cabbie ripped me off."],
     "point": "「ぼられる」は get ripped off",
@@ -31,7 +31,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:002b1250cf6a10546ab61744441dc047f87a1f3d5f8dc216bc2edfe2d9dac9f8",
+        "hash": "sha256:93814bae59fb9ba00b96932327ed93c5d677b19f2f742445400b44fd365cca4f",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -121,6 +121,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:c023b3a4c97f2a1b5d946d9e3069782b603c8e3b23572d4d8239578d2a7a94ff",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3w9t2t2m",
+    "ja": "パスポートが、どこにもなかった。",
+    "en": "Nowhere could I find my passport.",
+    "alternatives": [
+      "I couldn't find my passport anywhere.",
+      "My passport was nowhere to be found."
+    ],
+    "point": "Nowhere を文頭に出すと could I の語順に倒置",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f3968bf10e53a8db35beba9ca7a01aafaa403ea34e67d02b100f019e4871e7aa",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -334,7 +356,7 @@
   },
   {
     "id": "c_7c4f3a3n",
-    "ja": "荷物が、別の空港に回されました。",
+    "ja": "荷物が別の空港に回されました。",
     "en": "My bag was rerouted to another airport.",
     "alternatives": [
       "My luggage was sent to a different airport.",
@@ -348,7 +370,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:3fd58b5ae84e7e9e7bd0a25b6ed327311cc685735f1ccbca9582080f54bd6640",
+        "hash": "sha256:194825ed9bd708228b269c3ab4fa474cbe745972626136b62d1ba6966aeff28b",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -371,6 +393,29 @@
     "stamps": {
       "core": {
         "hash": "sha256:2adf51798aab6fc2e6f3908fcd1a20672ee124d5e37f986facb898fae4792558",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7g4f7m3f",
+    "ja": "一文なしで立ち往生、助けて！",
+    "en": "Stranded without a cent, I need help.",
+    "alternatives": [
+      "I'm stranded without a cent and need help.",
+      "Stranded and penniless, I need your help.",
+      "Stranded and broke, please help me."
+    ],
+    "point": "「一文なし」は without a cent。分詞構文で状況を添える",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 8,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:110d8bcdcbb31ce378d331fbeebfb7239fc3bd2b7a8b3d35e3b366f41d4cb5e2",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -561,6 +606,29 @@
     "stamps": {
       "core": {
         "hash": "sha256:7af0800f7de1385fbe3a06992a2178580863fc226ae339dd15aef2e26e5f540c",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_8v8t4m3s",
+    "ja": "運転手にぼられて、返金してほしい。",
+    "en": "Fleeced by a cabbie, I want a refund.",
+    "alternatives": [
+      "Having been fleeced by a cabbie, I want a refund.",
+      "A cabbie fleeced me, so I want a refund.",
+      "Overcharged by a cabbie, I'd like a refund."
+    ],
+    "point": "「ぼられる」は be fleeced。分詞で理由を添える",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 10,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:adb2ee86cbc4b0740f00449b36402c471938f305055316dabdedac459dded24d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

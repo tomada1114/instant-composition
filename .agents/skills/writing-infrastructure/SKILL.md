@@ -81,12 +81,13 @@ a second design.
   local run, which reads them with `aws cloudformation describe-stacks`. No client
   secret is ever an output.
 - **`app`** (`dev` only) holds what is rebuilt often: the distribution, the SPA bucket,
-  the HTTP API, the API function, the hosted web app client and its secret, and the
-  alarms. It depends on `foundation` for deploy order alone, never the reverse. The
-  hosted client lives here, not in `foundation`, because its redirect URLs are the
-  distribution's, and `foundation` must never depend on `app` (owner, 2026-09-28,
-  ADR-0009). Read [references/app-stack.md](references/app-stack.md) before changing any
-  construct in it: each holds a decision a plausible edit would undo.
+  the HTTP API, the API function, the hosted web app client and its secret, the alarms,
+  and the Bedrock budget with its action (`infra/src/bedrock-budget.ts`). It depends on
+  `foundation` for deploy order alone, never the reverse. The hosted client lives here,
+  not in `foundation`, because its redirect URLs are the distribution's, and
+  `foundation` must never depend on `app` (owner, 2026-09-28, ADR-0009). Read
+  [references/app-stack.md](references/app-stack.md) before changing any construct in
+  it: each holds a decision a plausible edit would undo.
 - **`deploy-access`** (`dev` only) holds the GitHub OIDC identity provider and the
   deploy role. The owner deployed it once by hand, with
   `pnpm cdk deploy -c stage=dev deploy-access`, because the workflow needs the role

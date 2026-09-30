@@ -261,7 +261,7 @@
   },
   {
     "id": "c_5j9b9r8g",
-    "ja": "タオルを何枚かください。",
+    "ja": "タオル数枚ください。",
     "en": "Some towels, please.",
     "alternatives": ["Can I have some towels?", "I need some towels."],
     "point": "数が決まらない複数は some towels",
@@ -272,7 +272,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:e0e004a4e4926c069a0ab04786b77eefe34b9601b7a2ba5ea4597c644b283115",
+        "hash": "sha256:86f47ddf0f93f2e14096b1185b00cc701f896b2cdb87cb7a617a6434bc049169",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -302,7 +302,7 @@
   },
   {
     "id": "c_5x6y2k5u",
-    "ja": "エアコンが昨日から壊れてる。",
+    "ja": "エアコン昨日から壊れてる。",
     "en": "The AC's been broken since yesterday.",
     "alternatives": [
       "The AC hasn't worked since yesterday.",
@@ -316,7 +316,29 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:b7e2d41565fdb24f7f0b2226aee061c7dfe850abca5739debdd85a68bd51be30",
+        "hash": "sha256:83e9e6cb8b7fdf5eba2a3c68da790b27312c2fff08c981bcf0aa78d82da028c9",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5y5b5b6e",
+    "ja": "予約した部屋と、ずいぶん違いますね。",
+    "en": "It's a far cry from what we booked.",
+    "alternatives": [
+      "This room is nothing like what we booked.",
+      "This is not at all what we booked."
+    ],
+    "point": "a far cry from = 大違い。what 節が前置詞の目的語",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:58edd933f7f09ee5933442aceeddaf72d59309ea7a1bb7f0c3107106fa0bd2f1",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -551,6 +573,29 @@
     }
   },
   {
+    "id": "c_8n6u4n2q",
+    "ja": "フロントは朝食を無料にすると言った。",
+    "en": "The front desk said they'd comp my breakfast.",
+    "alternatives": [
+      "They said breakfast would be on the house.",
+      "They said they'd give me breakfast on the house.",
+      "The front desk told me they'd comp my breakfast."
+    ],
+    "point": "「無料にする」は comp。said に合わせ will は would",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 9,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3899f821b53bd2fa8a02bbcfedf5200a828ef7d97385ab68b2250db1d79023c8",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_8r6v7v8z",
     "ja": "朝食は何時からですか？",
     "en": "What time does breakfast start?",
@@ -654,7 +699,7 @@
   },
   {
     "id": "c_9t7f8g3x",
-    "ja": "もう一泊、泊まりたいのですが。",
+    "ja": "もう一泊したいのですが。",
     "en": "I'd like to stay another night.",
     "alternatives": [
       "I'd like to stay one more night.",
@@ -668,7 +713,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:18ec48d478260a9937989057971c93003994f39b4a7506613e22c9ea4d40e349",
+        "hash": "sha256:f3373d8eb1fc14b05b469ab80d9e0b7d001155fd8e7d765f5f897c1021da8509",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

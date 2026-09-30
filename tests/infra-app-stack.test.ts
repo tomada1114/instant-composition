@@ -91,7 +91,7 @@ function webUrl(path?: string): { "Fn::Join": [string, unknown[]] } {
 // ADR-0009's cost guard: nothing billed by the hour whether used or not —
 // no NAT gateway, load balancer, interface endpoint or database instance.
 describe("the dev app stack's resources", () => {
-  it("are only the bucket, the distribution, the HTTP API, the function, their alarms and the web client", () => {
+  it("are only the bucket, the distribution, the HTTP API, the function, their alarms, the web client and the Bedrock budget", () => {
     // The CLI adds its own AWS::CDK::Metadata, which bills nothing.
     const types = new Set(
       Object.values(TEMPLATE.toJSON()["Resources"] as Record<string, { Type: string }>)
@@ -104,6 +104,8 @@ describe("the dev app stack's resources", () => {
         "AWS::ApiGatewayV2::Integration",
         "AWS::ApiGatewayV2::Route",
         "AWS::ApiGatewayV2::Stage",
+        "AWS::Budgets::Budget",
+        "AWS::Budgets::BudgetsAction",
         "AWS::CloudFront::Distribution",
         "AWS::CloudFront::Function",
         "AWS::CloudFront::OriginAccessControl",
@@ -111,6 +113,7 @@ describe("the dev app stack's resources", () => {
         "AWS::CloudWatch::Dashboard",
         "AWS::Cognito::ManagedLoginBranding",
         "AWS::Cognito::UserPoolClient",
+        "AWS::IAM::ManagedPolicy",
         "AWS::IAM::Policy",
         "AWS::IAM::Role",
         "AWS::Lambda::Function",
@@ -119,6 +122,7 @@ describe("the dev app stack's resources", () => {
         "AWS::S3::Bucket",
         "AWS::S3::BucketPolicy",
         "AWS::SNS::Topic",
+        "AWS::SNS::TopicPolicy",
         "Custom::WebClientSecret",
       ].sort(),
     );

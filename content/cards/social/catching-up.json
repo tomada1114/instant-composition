@@ -290,6 +290,28 @@
     }
   },
   {
+    "id": "c_4m3d7c8s",
+    "ja": "どうやって成し遂げたのか教えてよ。",
+    "en": "Tell me how you pulled it off.",
+    "alternatives": [
+      "I'm curious how you pulled it off.",
+      "I want to know how you pulled it off."
+    ],
+    "point": "how の後ろは平叙の語順(you pulled)",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 8,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ed5b6a71cc591773a45ef078d95a1d00f240931455d3e112b9a4da4ca6c7f4e4",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_4s6h2z5n",
     "ja": "その頃は大変だったでしょうね。",
     "en": "That must have been hard back then.",
@@ -366,6 +388,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:5d93dddfc9569e28f0ad88aaa13ea891f3904d41ba5ab8c16cb8da5ce1e2834f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5k8q4w7q",
+    "ja": "燃え尽きて、のんびりやってる。",
+    "en": "Burned out, I'm taking it easy.",
+    "alternatives": [
+      "Having burned out, I'm taking it easy.",
+      "Having burned out, I've been relaxing lately."
+    ],
+    "point": "Having + 過去分詞で先に起きた理由を示す",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:626a447bbadf49fd2acbc15dfbf24f137d352a705f43cdedb25a5cf720bec08d",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -540,6 +584,28 @@
     }
   },
   {
+    "id": "c_6k6e6z4e",
+    "ja": "音沙汰なくて、最悪を覚悟してた。",
+    "en": "Hearing nothing, I feared the worst.",
+    "alternatives": [
+      "Not hearing from you, I feared the worst.",
+      "When I heard nothing, I feared the worst."
+    ],
+    "point": "否定の分詞構文は Not hearing",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 9,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:924709172628bfa8871e01499264561787d000cac0b0771865193f7d64d9b23d",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_6p7n2v3q",
     "ja": "子どもに振り回されっぱなしだよ。",
     "en": "The kids have me running around nonstop.",
@@ -575,6 +641,50 @@
     "stamps": {
       "core": {
         "hash": "sha256:e2e1c347f528278abe4c6bf435ae9f93da45f6fb2f4f38e8dd268538b65c479b",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7f8s7c6b",
+    "ja": "まさか君がベルリンに落ち着くとはね。",
+    "en": "Who'd have thought you'd end up in Berlin?",
+    "alternatives": [
+      "Who would have imagined you'd end up in Berlin?",
+      "Who'd have guessed you'd end up in Berlin?"
+    ],
+    "point": "Who'd have thought 〜? は「誰が思っただろう」",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8d2e233892a3589cd619140bac11e55ea72f9e5bab6fbb4bfbe5dc37f4f83148",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7m5r8g3d",
+    "ja": "昇進したの君だって噂だよ。",
+    "en": "Word is you're the one who got promoted.",
+    "alternatives": [
+      "Word has it you're the one who got promoted.",
+      "I hear you're the one who got promoted."
+    ],
+    "point": "Word is 〜 は「噂では」。that は省ける",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ad25522883c7eede11723a1c3768737c281288bfb64b4a305760f218f1b37d72",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

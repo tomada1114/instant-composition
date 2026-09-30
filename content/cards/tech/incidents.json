@@ -367,7 +367,7 @@
   },
   {
     "id": "c_6c5b7g4f",
-    "ja": "影響は東京のユーザーだけだった。",
+    "ja": "影響は東京ユーザーのみだった。",
     "en": "Only users in Tokyo were affected.",
     "alternatives": [
       "Only Tokyo users were affected.",
@@ -381,7 +381,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:02c82f5b2b7d84a895e05a5f4f4f2ea0ab8c7e0f886b76253bc0dbb65d90091f",
+        "hash": "sha256:b245f4827f50fee10439f41d4cb9cfbcf6ff6babd20bd4600591c33851d84940",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -651,6 +651,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:3c12cd1692aae440e59dfe220126f74d2d3798c63ffe04b49fe9706dead17036",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9j7n3t6w",
+    "ja": "変更を戻したので、様子見です。",
+    "en": "Having rolled back the change, we're monitoring.",
+    "alternatives": [
+      "With the change rolled back, we're monitoring.",
+      "Since we rolled back the change, we're monitoring."
+    ],
+    "point": "Having + 過去分詞で「もう〜したので」を短く言う",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e198cd018a63b54452b2f0f5ec28ce6b8049820c3c24dfa0f2d8c456b36b0bb9",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

@@ -183,6 +183,28 @@
     }
   },
   {
+    "id": "c_3e4p3g9a",
+    "ja": "知ってたら、身分証を持ってきたのに。",
+    "en": "Had I known, I'd have brought ID.",
+    "alternatives": [
+      "If I'd known, I'd have brought ID.",
+      "If I had known, I would have brought ID."
+    ],
+    "point": "If を省いて Had I known と倒置できる",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 9,
+    "grammar": ["third-conditional", "inversion"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:df1329a3f4ef16c2aadb7c2c4e95b5d938764f33eada471b4c4a86333ec4457e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3n6b6v4k",
     "ja": "お待ちの方は番号札をどうぞ。",
     "en": "Anyone waiting can take a number.",
@@ -285,7 +307,7 @@
   },
   {
     "id": "c_5k3b4d9b",
-    "ja": "パスポートを更新しなきゃ。",
+    "ja": "パスポート更新しなきゃ。",
     "en": "I need to renew my passport.",
     "alternatives": ["I have to renew my passport.", "My passport needs renewing."],
     "point": "必要なことは need to + 動詞",
@@ -296,7 +318,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:a91da994c09a65e477e6e7710fccd3c0305ca2b7b4ced259532442ab1cee2942",
+        "hash": "sha256:3e51bbc9698b7ff0ad072514b1b92f46025d41896e36802a68fb82fc61e2bd5b",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }

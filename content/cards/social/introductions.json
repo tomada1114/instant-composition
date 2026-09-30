@@ -23,6 +23,28 @@
     }
   },
   {
+    "id": "c_2e3d8e2p",
+    "ja": "移住してなければ、今ここにいない。",
+    "en": "If I hadn't emigrated, I wouldn't be here.",
+    "alternatives": [
+      "Had I not emigrated, I wouldn't be here.",
+      "I wouldn't be here if I hadn't emigrated."
+    ],
+    "point": "過去の事実が今に響く。if 節は had、結果は would be",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ff0991c953040e0e76500c09a6947d9a7bd31a193cb41b51bc6d404c4b9fe15e",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_2t9p7k9j",
     "ja": "作ったの君だって、ミカが言ってた。",
     "en": "Mika said you're the one who made this.",
@@ -155,6 +177,28 @@
     }
   },
   {
+    "id": "c_3q9r9y8u",
+    "ja": "ミカが君は会うべき人だと言っていた。",
+    "en": "Mika told me you're someone I should meet.",
+    "alternatives": [
+      "Mika said you're someone I should meet.",
+      "Mika said I should meet you."
+    ],
+    "point": "you're someone (that) I should meet の入れ子",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f7b96fb577d0c27ecd2db7dbf19f9773ee71dd67ea1cf53bfc5c8ccfa244ef12",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
     "id": "c_3w6j9h2q",
     "ja": "こちら営業部の田中です。",
     "en": "This is Tanaka from Sales.",
@@ -176,9 +220,9 @@
   {
     "id": "c_4n6z6c2x",
     "ja": "ピアノが弾けます。",
-    "en": "I can play the piano.",
-    "alternatives": ["I can play piano.", "I'm able to play piano."],
-    "point": "「弾ける」は can + 動詞。楽器には the を付ける",
+    "en": "I can play piano.",
+    "alternatives": ["I can play the piano.", "I'm able to play piano."],
+    "point": "「弾ける」は can + 動詞。楽器には the を付けても付けなくてもよい",
     "topic": "social",
     "subtopic": "introductions",
     "level": 1,
@@ -186,7 +230,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:71e459d6970bf7fa59e6526e1e2eef746608ab7db61cf5607e963170f5e40128",
+        "hash": "sha256:cfc288e1dd53f17ffb812f8ac21b96c71bf4a238a9c607662ee6928d7a59f2c6",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -318,7 +362,7 @@
   },
   {
     "id": "c_6b2c5k8q",
-    "ja": "先月ここに越してきたばかりです。",
+    "ja": "先月ここに越したばかりです。",
     "en": "I only moved here last month.",
     "alternatives": [
       "I just moved here last month.",
@@ -332,7 +376,7 @@
     "createdAt": "2026-09-29",
     "stamps": {
       "core": {
-        "hash": "sha256:0dbd28bc902b4d3b574ad837127acb4f84a90fd40f9efa649537472a558d1007",
+        "hash": "sha256:db20c0028bd41761f2fd2b626df418c6263a33410a6066365b4f423d991f29c8",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -355,6 +399,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:5b9fa7b570aa5a8b7165c04593d5f0dfbe483a20078c8af6ed217cabb0f7964f",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_6h7t9m9z",
+    "ja": "仕事で、出張ばかりさせられてる。",
+    "en": "Work has me living out of suitcases.",
+    "alternatives": [
+      "My job has me living out of a suitcase.",
+      "My job has me traveling constantly."
+    ],
+    "point": "have + 人 + 〜ing で「〜させられている」状態を表す",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 8,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fc9a2dd64c87504bea9b7c61b3f7d4915672ef4f914e947df6698caef463dd39",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
@@ -560,6 +626,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:af3251d2862426380d67e17fab8753fdc994628c84e9767365326fbda4d02e63",
+        "perspectivesVersion": 4,
+        "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_9h6d9c2a",
+    "ja": "まあ、何でも屋みたいなものです。",
+    "en": "I'm something of a jack-of-all-trades.",
+    "alternatives": [
+      "You could say I'm a jack-of-all-trades.",
+      "I'm a bit of a jack-of-all-trades."
+    ],
+    "point": "something of a 〜 で断定をやわらげる",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b56b3e1555d2acfdefb572717f19dc36691436496cd61a1b5eba7766f3e74dab",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
       }
