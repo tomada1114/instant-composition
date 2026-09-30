@@ -126,9 +126,47 @@ function shapeFindings(raw, id, env, options) {
 }
 
 /**
- * Warn about a card over its level's targets. A warning never fails a
- * command: the target is what a writer aims at and a reviewer questions,
- * where the cap is what the lint enforces.
+ * A card's targets: its level's, raised by the largest `targetAllowance` among
+ * its grammar ids and never past the level's caps.
+ *
+ * @param {Record<string, unknown>} raw - A card.
+ * @param {import("./store.mjs").Level} levelEntry - The card's level.
+ * @param {import("./store.mjs").Lists} lists - Validated lists.
+ * @returns {{ words: number, jaChars: number, wordsBy: string, jaCharsBy: string }}
+ *   The targets, and the grammar id behind each raise ("" for none).
+ */
+function cardTargets(raw, levelEntry, lists) {
+  let words = 0;
+  let wordsBy = "";
+  let jaChars = 0;
+  let jaCharsBy = "";
+  const rawGrammar = readKey(raw, "grammar");
+  const grammar = Array.isArray(rawGrammar) ? rawGrammar : [];
+  for (const grammarId of grammar) {
+    const item =
+      typeof grammarId === "string" ? lists.grammarById.get(grammarId) : undefined;
+    if (item === undefined) continue;
+    if (item.targetAllowance.words > words) {
+      words = item.targetAllowance.words;
+      wordsBy = item.id;
+    }
+    if (item.targetAllowance.jaChars > jaChars) {
+      jaChars = item.targetAllowance.jaChars;
+      jaCharsBy = item.id;
+    }
+  }
+  return {
+    words: Math.min(levelEntry.words.target + words, levelEntry.words.max),
+    jaChars: Math.min(levelEntry.jaChars.target + jaChars, levelEntry.jaChars.max),
+    wordsBy,
+    jaCharsBy,
+  };
+}
+
+/**
+ * Warn about a card over its targets. A warning never fails a command: the
+ * target is what a writer aims at and a reviewer questions, where the cap is
+ * what the lint enforces.
  *
  * @param {Record<string, unknown>} raw - A card.
  * @param {string} id - How findings name it.
@@ -139,26 +177,29 @@ export function targetWarnings(raw, id, lists) {
   const { ja, en, level } = raw;
   const levelEntry = typeof level === "number" ? lists.levels.get(level) : undefined;
   if (levelEntry === undefined) return [];
+  const targets = cardTargets(raw, levelEntry, lists);
   /** @type {Finding[]} */
   const warnings = [];
   const tag = `level ${String(levelEntry.level)}`;
+  /** @param {string} by */
+  const withGrammar = (by) => (by === "" ? "" : ` with ${by}`);
   if (typeof en === "string") {
     const words = countWords(en);
-    if (words > levelEntry.words.target) {
+    if (words > targets.words) {
       warnings.push({
         id,
         rule: "OVER_TARGET",
-        message: `"en" has ${String(words)} words; ${tag} aims at ${String(levelEntry.words.target)} or fewer`,
+        message: `"en" has ${String(words)} words; ${tag}${withGrammar(targets.wordsBy)} aims at ${String(targets.words)} or fewer`,
       });
     }
   }
   if (typeof ja === "string") {
     const length = countJaChars(ja);
-    if (length > levelEntry.jaChars.target) {
+    if (length > targets.jaChars) {
       warnings.push({
         id,
         rule: "OVER_TARGET",
-        message: `"ja" has ${String(length)} characters; ${tag} aims at ${String(levelEntry.jaChars.target)} or fewer`,
+        message: `"ja" has ${String(length)} characters; ${tag}${withGrammar(targets.jaCharsBy)} aims at ${String(targets.jaChars)} or fewer`,
       });
     }
   }

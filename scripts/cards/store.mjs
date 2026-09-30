@@ -62,7 +62,14 @@ const SLUG = /^[a-z0-9]+(?:-[a-z0-9]+)*$/u;
  * @property {number} minLevel
  * @property {number} maxLevel
  * @property {string} example
+ * @property {{ words: number, jaChars: number }} targetAllowance - What a card
+ *   using this item may add to its level's targets, because the structure itself
+ *   needs the room (both clauses of a conditional, a cleft's frame). Zero when
+ *   the list gives none; the caps never move.
  */
+
+/** The most `targetAllowance` may add, so it cannot quietly replace the targets. */
+const MAX_ALLOWANCE = { words: 2, jaChars: 4 };
 
 /**
  * @typedef {object} Lists
@@ -323,7 +330,28 @@ export function loadLists(root) {
         `grammar.json: "${id}" has levels ${String(minLevel)}–${String(maxLevel)}, expected 1 ≤ min ≤ max ≤ 10`,
       );
     }
-    const item = { id, ja, minLevel, maxLevel, example };
+    const rawAllowance = readKey(rawItem, "targetAllowance");
+    const targetAllowance = { words: 0, jaChars: 0 };
+    if (rawAllowance !== undefined) {
+      const words = readKey(rawAllowance, "words");
+      const jaChars = readKey(rawAllowance, "jaChars");
+      if (
+        !isInt(words) ||
+        !isInt(jaChars) ||
+        words < 0 ||
+        jaChars < 0 ||
+        words > MAX_ALLOWANCE.words ||
+        jaChars > MAX_ALLOWANCE.jaChars
+      ) {
+        problems.push(
+          `grammar.json: "${id}" has a \`targetAllowance\` that is not integer \`words\` 0–${String(MAX_ALLOWANCE.words)} and \`jaChars\` 0–${String(MAX_ALLOWANCE.jaChars)}`,
+        );
+      } else {
+        targetAllowance.words = words;
+        targetAllowance.jaChars = jaChars;
+      }
+    }
+    const item = { id, ja, minLevel, maxLevel, example, targetAllowance };
     grammar.push(item);
     grammarById.set(id, item);
   }

@@ -67,10 +67,12 @@ issue's labels answer the three questions a backlog is scanned for: which phase
 - An issue outside every phase — a follow-up nobody has placed yet — carries none. It is
   placed, link and label together, the next time the roadmap is steered.
 - An issue labelled `improvement` carries none on purpose, and is not waiting to be
-  placed. It is a small change the owner asked for after using the app — a key binding,
-  a default, a tuning value, copy or layout within the design lock — shipped whenever it
-  is ready. `improvement` is a lane, not a type: the issue still takes `enhancement` or
-  `bug`, and a priority. `steering-the-roadmap` decides what qualifies.
+  placed. It is any change that was not planned as a phase, however large — a key
+  binding, a default, copy, a new screen, or a change that needs AWS or owes an ADR —
+  shipped whenever it is ready. Only a change that cannot be built until a later phase's
+  work exists takes that phase's label instead. `improvement` is a lane, not a type: the
+  issue still takes `enhancement` or `bug`, and a priority. `steering-the-roadmap`
+  decides what qualifies.
 - A phase label never stands in for readiness or priority; it is not a tier.
 
 `steering-the-roadmap` applies and moves them, because it owns which phase an issue is

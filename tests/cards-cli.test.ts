@@ -13,6 +13,7 @@ import {
   makeInput,
   removeContentRoots,
   runCards,
+  GRAMMAR,
   TAXONOMY,
   writeCards,
   writeInput,
@@ -358,6 +359,54 @@ describe("cards:lint", () => {
       "OVER_TARGET",
       "OVER_TARGET",
     ]);
+  });
+
+  it("raises a card's targets by its grammar's allowance, never past the caps", () => {
+    const root = makeContentRoot();
+    writeUnder(
+      root,
+      "grammar.json",
+      JSON.stringify({
+        ...GRAMMAR,
+        items: GRAMMAR.items.map((item) =>
+          item.id === "imperatives"
+            ? { ...item, targetAllowance: { words: 2, jaChars: 1 } }
+            : item,
+        ),
+      }),
+    );
+    writeCards(root, "work/meetings.json", [
+      makeCard("c_2a2a2a2a", {
+        ja: `${"会".repeat(jaCharsMax(1) - 2)}。`,
+        en: "Let's start the whole meeting right now, please.",
+      }),
+      makeCard("c_3b3b3b3b", { ja: `${"会".repeat(jaCharsMax(1) - 1)}。` }),
+    ]);
+    const run = runCards(root, ["lint"]);
+    expect(run.code).toBe(0);
+    expect(run.out.split("\n")).toEqual([
+      `WARN c_3b3b3b3b OVER_TARGET "ja" has ${String(jaCharsMax(1))} characters; level 1 with imperatives aims at ${String(jaCharsMax(1) - 1)} or fewer`,
+      "cards:lint: 2 cards checked, 0 errors, 1 warnings",
+    ]);
+  });
+
+  it("fails with ERR_CARDS_CONTENT on a targetAllowance out of range", () => {
+    const root = makeContentRoot();
+    writeUnder(
+      root,
+      "grammar.json",
+      JSON.stringify({
+        ...GRAMMAR,
+        items: GRAMMAR.items.map((item) =>
+          item.id === "imperatives"
+            ? { ...item, targetAllowance: { words: 3, jaChars: 1 } }
+            : item,
+        ),
+      }),
+    );
+    const run = runCards(root, ["lint"]);
+    expect(errorCode(run.err)).toBe("ERR_CARDS_CONTENT");
+    expect(run.err).toContain('"imperatives" has a `targetAllowance`');
   });
 
   it("checks grammar examples against their levels", () => {

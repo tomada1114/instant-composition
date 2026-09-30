@@ -40,15 +40,16 @@ tracker in step.
 - **Phase labels.** The parent and each work item carry `phase: N`, so the phase reads
   off an issue listing beside its priority and its `blocked:` labels.
 - **No dates.** There are no due dates and no schedule. Only the order is recorded.
-- **Improvements beside the phases.** A small change the owner asks for after using the
-  app — a key binding, a default, a tuning value, copy or layout within the design lock
-  — is an issue labelled `improvement`, with no phase label and no parent. It ships
-  whenever it is ready, ahead of phase work, and no phase's exit waits on it. A request
-  that needs AWS, touches an ADR decision or overlaps a later phase's scope goes into
-  that phase instead.
-- **Issues are cut when a phase comes within reach.** Phases 0 through 5 have work items
-  now. A later phase is split when it starts, against the code, skills and ADRs that
-  exist by then.
+- **Improvements beside the phases.** This page holds the work that was planned as
+  phases, and nothing else. Any change that was not planned as a phase — however large,
+  and whether or not it needs AWS or touches the API contract or a persistence shape —
+  is an issue labelled `improvement`, with no phase label and no parent. It ships
+  whenever it is ready, ahead of phase work, and no phase's exit waits on it. Only a
+  change that cannot be built until a later phase's work exists goes into that phase. An
+  improvement that owes an ADR under AGENTS.md's rule writes it in its own pull request.
+- **Issues are cut when a phase comes within reach.** Phases 0 through 6 have work items
+  now. A later phase is split when it comes within reach — the phase before it is nearly
+  done, or the owner asks — against the code, skills and ADRs that exist by then.
 - **The Paid plan is the owner's.** The owner upgrades the `dev` account before the Free
   plan's six months or its credits run out, and that upgrade is not an issue. Only a
   feature that needs a service or setting the Free plan does not allow gets an upgrade
@@ -331,18 +332,22 @@ was observed, on 2026-09-28:
   - idempotent replay;
   - `GET /v1/rounds/{roundId}`, so a client resumes a round with the answers already
     recorded.
-- Optionally, typed answers captured alongside self-grades.
-  - They are the labels a grading evaluation will need later.
-  - The timer (the learner's per-card limit, 15 to 60 seconds and 30 by default) is set
-    for speaking, not typing, so this needs its own timing rule.
-  - It was not cut into work items with the rest of the phase, and the exit does not
-    wait on it.
 - Changing the profile after onboarding: the settings screen shows the stored time zone
   and lets the learner replace it, through `PATCH /v1/me`. Onboarding sets it once from
   the browser; nothing changes it afterwards yet.
 
 **Exit.** Weak points visibly change what a round deals; a batch of answers replayed
 twice changes nothing the second time.
+
+**Landed** at `3756d30` (#183, #184, #185, #186, #187, #188, #189, #190). How each exit
+was observed, on 2026-09-29:
+
+- `tests/domain-compose.test.ts`'s weak grammar concepts cases steer the same seed to a
+  different deck holding weak-tagged new cards, and split the weak share between the top
+  two concepts. `tests/application-queries.test.ts` names the weak grammar in the home
+  preview and in the records view, and the home and records screens show it (#190).
+- `tests/application-commands.test.ts` sends a batch of answers again, both during the
+  round and after it is finished, and asserts that nothing changes.
 
 **AWS.** No new services.
 
@@ -355,6 +360,9 @@ twice changes nothing the second time.
 
 **Scope.**
 
+- A typed-answer mode, chosen by the learner beside the spoken drill, with no time
+  limit. The owner uses it before grading exists, and the self-graded typed answers it
+  records seed the evaluation set.
 - LLM grading of typed answers:
   - a task port and structured output;
   - per-call telemetry;
