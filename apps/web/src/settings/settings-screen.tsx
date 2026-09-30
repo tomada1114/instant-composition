@@ -11,7 +11,7 @@ import { Button } from "../ui/button";
 import { Sheet } from "../ui/sheet";
 import { AppSection } from "./app-section";
 import { LevelSection } from "./level-section";
-import { LimitSection } from "./limit-section";
+import { AnswerSection, LimitSection } from "./limit-section";
 import { FocusSection, SizeSection, TopicsSection } from "./settings-sections";
 import { useLevel } from "./use-level";
 import { useSettings } from "./use-settings";
@@ -104,6 +104,7 @@ export function SettingsScreen({
               setAsking(true);
             }}
           />
+          <AnswerSection state={state} />
           <LimitSection state={state} />
         </>
       ) : null}

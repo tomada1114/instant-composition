@@ -296,6 +296,15 @@
     "limit": {
       "title": "1 文の持ち時間",
       "count": "{seconds} 秒",
+      "next": "次のラウンドから変わります",
+      "spokenOnly": "話して答えるときだけ使います"
+    },
+    "answer": {
+      "title": "答え方",
+      "spoken": "話して答える",
+      "typed": "入力して答える",
+      "spokenText": "話す",
+      "typedText": "入力",
       "next": "次のラウンドから変わります"
     },
     "sound": {
