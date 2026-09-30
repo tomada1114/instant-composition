@@ -5,9 +5,10 @@ description: >
   GitHub phase issues ("Phase N — …" parents and their sub-issues) in step with the
   owner's intent. Use when asked which issue or phase to take on next, before invoking
   shipping-issues, when the owner wants to reorder phases or add, drop, defer or reshape
-  a feature, when a phase starts and needs its work items cut, when a phase's work items
-  are all closed, when the owner asks for a small change after using the app (a key
-  binding, a default, a tuning value), or when asked for the project's status or plan.
+  a feature, when a phase comes within reach and needs its work items cut, when a
+  phase's work items are all closed, when the owner asks for a change after using the
+  app (a key binding, a default, a tuning value), or when asked for the project's status
+  or plan.
 ---
 
 # Steering the Roadmap
@@ -51,7 +52,7 @@ has gone stale.
 Reason in this order, and say which step decided the pick:
 
 1. **Improvements first.** A ready `improvement` issue goes ahead of phase work. It is
-   small, and it is friction the owner meets every day; the owner chose this order.
+   what the owner asked for after using the app; the owner chose this order.
 2. **Phase order.**
    - Phases 0–4 are fixed. So are 10–13.
    - The owner orders 5, 6, 8 and 9 as they use the app; 7 follows 6.
@@ -156,15 +157,18 @@ owner asks.
 
 ## Improvements from daily use
 
-When the owner asks for a small change after using the app:
+When the owner asks for a change after using the app:
 
-1. **Classify it.**
-   - **An improvement** stays inside the existing design: a key binding, a default, a
-     tuning value, copy, a layout within `designing-ui`'s lock, a small change to how an
-     existing screen behaves.
-   - **Phase work** needs AWS or `infra/`, touches an ADR decision (a boundary, a
-     persistence shape, the API contract, a provider, the security model), or overlaps a
-     later phase's scope. Take it through "When the plan changes" instead.
+1. **Classify it.** The roadmap holds the work that was planned as phases, and nothing
+   else.
+   - **An improvement** is any change that was not planned as a phase, however large: a
+     key binding, a default, a tuning value, copy, a new screen, or a change that needs
+     AWS or `infra/` or touches the API contract or a persistence shape.
+   - **Phase work** is only a change that cannot be built until a later phase's work
+     exists. Take it through "When the plan changes" instead.
+   - A change that touches an ADR decision (a boundary, a persistence shape, the API
+     contract, a provider, the security model) is still an improvement; it writes its
+     ADR in its own pull request. **REQUIRED:** `recording-architecture-decisions`.
    - A change against the design lock goes to `designing-ui` first. When the call is
      close, say which way it leans and why, and ask.
 2. **File it without asking.** The owner's request authorizes creating the issue, and
@@ -177,7 +181,8 @@ When the owner asks for a small change after using the app:
    off to `shipping-issues`".
 
 The lane has no exit criteria and never gates a phase. An improvement that turns out to
-need an ADR or AWS loses the label and is placed in a phase, link and label together.
+need an ADR or AWS keeps the label. Only one that turns out to wait on a later phase's
+work loses it and is placed in that phase, link and label together.
 
 ## Talking with the owner
 
