@@ -24,6 +24,7 @@ import { StringParameter } from "aws-cdk-lib/aws-ssm";
 import { type Construct } from "constructs";
 
 import { addApiFunction } from "./api-function";
+import { addBedrockBudget, roleOf } from "./bedrock-budget";
 import { addObservability } from "./observability";
 import { addSpaDeployment } from "./spa-deployment";
 import {
@@ -137,7 +138,8 @@ export class AppStack extends Stack {
       integration: new HttpLambdaIntegration("ApiIntegration", handler),
     });
 
-    addObservability(this, { stage, api, handler, tableName, alarmEmail });
+    const sns = addObservability(this, { stage, api, handler, tableName, alarmEmail });
+    addBedrockBudget(this, { stage, roles: [roleOf(handler)], topic: sns });
     if (webDist !== undefined) {
       // The same `isWebsite` mismatch addDistribution explains.
       addSpaDeployment(this, { bucket: bucket as IBucket, distribution, webDist });

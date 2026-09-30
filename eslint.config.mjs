@@ -242,6 +242,7 @@ const INFRA_NPM_EDGES = [
   "aws-cdk-lib",
   "aws-cdk-lib/aws-apigatewayv2",
   "aws-cdk-lib/aws-apigatewayv2-integrations",
+  "aws-cdk-lib/aws-budgets",
   "aws-cdk-lib/aws-cloudfront",
   "aws-cdk-lib/aws-cloudfront-origins",
   "aws-cdk-lib/aws-cloudwatch",
