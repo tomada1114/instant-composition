@@ -647,6 +647,38 @@
     }
   },
   {
+    "id": "c_7f8s7c6b",
+    "ja": "まさか君がベルリンに落ち着くとはね。",
+    "en": "Who'd have thought you'd end up in Berlin?",
+    "alternatives": [
+      "Who would have imagined you'd end up in Berlin?",
+      "Who'd have guessed you'd end up in Berlin?"
+    ],
+    "point": "Who'd have thought 〜? は「誰が思っただろう」",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
+    "id": "c_7m5r8g3d",
+    "ja": "昇進したの君だって噂だよ。",
+    "en": "Word is you're the one who got promoted.",
+    "alternatives": [
+      "Word has it you're the one who got promoted.",
+      "I hear you're the one who got promoted."
+    ],
+    "point": "Word is 〜 は「噂では」。that は省ける",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8a9b4g2x",
     "ja": "前よりずっと元気そうだね。",
     "en": "You look much better than before.",

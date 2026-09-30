@@ -416,6 +416,22 @@
     }
   },
   {
+    "id": "c_6p5v5z6k",
+    "ja": "休んでれば、今ごろ回復してるのに。",
+    "en": "If I'd rested, I'd be on the mend now.",
+    "alternatives": [
+      "If I had rested, I'd be on the mend.",
+      "If I'd rested, I'd be getting better by now."
+    ],
+    "point": "過去の if 節と今の結果：would be、on the mend は回復中",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 10,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_6q4w4w3v",
     "ja": "予約、明日に変えられますか？",
     "en": "Can I reschedule for tomorrow?",

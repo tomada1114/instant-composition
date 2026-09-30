@@ -457,6 +457,23 @@
     }
   },
   {
+    "id": "c_8q3d2d5r",
+    "ja": "水漏れ直したの、彼は気づいてないと思う。",
+    "en": "I doubt he noticed I'd fixed the leak.",
+    "alternatives": [
+      "I doubt he noticed that I fixed the leak.",
+      "I don't think he noticed I fixed the leak.",
+      "I doubt he realized I'd fixed the leak."
+    ],
+    "point": "doubt の後の that は省け、節の中に節が入る",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_8q7q9f9p",
     "ja": "結局、片付けるのは私なんだよ。",
     "en": "I'm the one who ends up cleaning.",

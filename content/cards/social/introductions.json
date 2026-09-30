@@ -405,6 +405,22 @@
     }
   },
   {
+    "id": "c_6h7t9m9z",
+    "ja": "仕事で、出張ばかりさせられてる。",
+    "en": "Work has me living out of suitcases.",
+    "alternatives": [
+      "My job has me living out of a suitcase.",
+      "My boss has me living out of a suitcase."
+    ],
+    "point": "have + 人 + 〜ing で「〜させられている」状態を表す",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_7f5g2j9b",
     "ja": "うちの課は十人います。",
     "en": "There are ten of us.",
@@ -608,6 +624,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9h6d9c2a",
+    "ja": "まあ、何でも屋みたいなものです。",
+    "en": "I'm something of a jack-of-all-trades.",
+    "alternatives": [
+      "You could say I'm a jack-of-all-trades.",
+      "I'm a bit of a jack-of-all-trades."
+    ],
+    "point": "something of a 〜 で断定をやわらげる",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 9,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_9k6c6y4p",

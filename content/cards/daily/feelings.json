@@ -262,6 +262,22 @@
     }
   },
   {
+    "id": "c_5n3s9g4y",
+    "ja": "言いたいことを言って、少し気が楽だ。",
+    "en": "Having said my piece, I feel lighter.",
+    "alternatives": [
+      "Having said my piece, I feel a bit better.",
+      "Having spoken my mind, I feel lighter."
+    ],
+    "point": "say one's piece は「言いたいことを言う」。Having + 過去分詞",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 10,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5w9y6q8u",
     "ja": "彼の言葉が、まだ吹っ切れない。",
     "en": "I can't get over what he said.",

@@ -208,6 +208,22 @@
     }
   },
   {
+    "id": "c_5p5p5j3w",
+    "ja": "ヨガ始めてから、はまってる。",
+    "en": "I've been hooked since I started yoga.",
+    "alternatives": [
+      "I've been hooked on yoga since I started.",
+      "I've been hooked ever since I started yoga."
+    ],
+    "point": "since 節は過去形、主節は現在完了",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 9,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5r4k4y7y",
     "ja": "今読んでる本は、めちゃ面白いよ。",
     "en": "The book I'm reading is gripping.",
@@ -307,6 +323,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5y8z5m8k",
+    "ja": "先生に、私は飲み込みが早いって言われた。",
+    "en": "My teacher told me I'm a quick study.",
+    "alternatives": [
+      "My teacher said I'm a quick study.",
+      "My teacher told me I pick things up fast."
+    ],
+    "point": "a quick study は「飲み込みが早い人」の慣用句",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 10,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_5z3f3w2a",

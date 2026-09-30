@@ -22,6 +22,22 @@
     }
   },
   {
+    "id": "c_2h3z4d2j",
+    "ja": "ねえ、無理に誘わせないでよ。",
+    "en": "Don't make me twist your arm.",
+    "alternatives": [
+      "Don't make me beg you to come.",
+      "Don't make me pressure you into coming."
+    ],
+    "point": "make + 人 + 原形。twist one's arm は強引に説得する",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 9,
+    "grammar": ["causatives"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_2j2s8y6v",
     "ja": "まだ席があるよ。",
     "en": "There are still seats.",

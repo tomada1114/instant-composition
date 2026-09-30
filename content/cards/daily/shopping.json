@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2g9z5s9f",
+    "ja": "3月からずっとこれ狙ってたんだ。",
+    "en": "I've had my eye on it since March.",
+    "alternatives": [
+      "I've been eyeing it since March.",
+      "I've had my sights set on it since March."
+    ],
+    "point": "have one's eye on 〜 で「目をつけている」。since は現在完了",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_3b3u4z8h",
     "ja": "このシャツは安いよ。",
     "en": "This shirt is cheap.",

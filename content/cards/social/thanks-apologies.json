@@ -351,6 +351,22 @@
     }
   },
   {
+    "id": "c_5g7k8r7x",
+    "ja": "ちゃんとお礼、言ってなかったよね。",
+    "en": "I never did thank you properly, did I?",
+    "alternatives": [
+      "I never thanked you properly, did I?",
+      "I don't think I ever thanked you properly."
+    ],
+    "point": "過去の never did は「結局しなかった」を強める",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
+  },
+  {
     "id": "c_5q2d9a9c",
     "ja": "電話してれば、待たせなかった。",
     "en": "If I'd called, you wouldn't have waited.",
@@ -601,6 +617,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8x3a8t8e",
+    "ja": "君のような優しさは忘れないよ。",
+    "en": "I'll never forget kindness like yours.",
+    "alternatives": [
+      "I won't forget kindness like yours.",
+      "Kindness like yours won't be forgotten."
+    ],
+    "point": "like yours が kindness を後ろから修飾する",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 9,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-09-29",
+    "stamps": {}
   },
   {
     "id": "c_8y2c2w6h",
