@@ -103,5 +103,13 @@ How the API reads the secret at run time is `authenticating-learners`'.
   minute without traffic produces — counts as not breaching.
 - Every alarm notifies one SNS topic. Its email subscription exists only when a deploy
   passes `alarm-email`; the address is never committed ("Deploying" in `SKILL.md`).
+- The topic carries a topic policy, which replaces SNS's default one. It admits
+  CloudWatch alarms and AWS Budgets by name, one statement each, so a new publisher
+  needs its own statement or its messages are dropped.
+- The Bedrock budget (`addBedrockBudget` in `infra/src/bedrock-budget.ts`, ADR-0010)
+  notifies the same topic and, once actual Bedrock spend reaches the limit, attaches a
+  policy denying model invocation to every role in its `roles`. Any function that calls
+  Bedrock joins `roles` — #279's worker role among them — or the backstop does not stop
+  it.
 - The table's metrics are dimensioned by the name read from Parameter Store, so the
   alarms stay in `app` although the table is `foundation`'s.

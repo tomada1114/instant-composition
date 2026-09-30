@@ -291,6 +291,10 @@ listed under [Unverified](#unverified) instead of being stated as fact.
   - S3 cross-Region replication
   - multi-Region KMS keys
   - AWS Shield
+  - Bedrock's global and geographic cross-Region inference: "Global cross-Region
+    inference and Geographic cross-Region inference are not supported". ADR-0011's `jp.`
+    geographic profile is one, so grading cannot run on a Free plan account. Checked
+    2026-09-29.
 
   Organizations, IAM Identity Center and Control Tower are not supported at all. The
   page does not mention DynamoDB point-in-time recovery or deletion protection. It
@@ -395,8 +399,19 @@ listed under [Unverified](#unverified) instead of being stated as fact.
   - The profiles `jp.anthropic.claude-haiku-4-5-20251001-v1:0` and `global.` exist, and
     Sonnet 4.5 has `jp.` and `global.` profiles.
   - On-demand invocation requires a geo or global profile.
+  - Claude on Bedrock is sold through AWS Marketplace, and its charges appear in Cost
+    Explorer "under the model provider (not under Amazon Bedrock)". The Bedrock budget's
+    filter in `infra/src/bedrock-budget.ts` rests on this; checked 2026-09-29.
 
   Checked 2026-09-23.
+
+- [Request access to models](https://docs.aws.amazon.com/bedrock/latest/userguide/model-access.html)
+  — covers:
+  - Anthropic's models need a one-time first-time-use form before the first invocation.
+  - Marketplace-sold models also need the AWS Marketplace permissions to subscribe, and
+    the account needs a valid payment method.
+
+  Checked 2026-09-29.
 
 - [Global cross-region inference for the latest Claude models](https://aws.amazon.com/blogs/machine-learning/global-cross-region-inference-for-latest-anthropic-claude-opus-sonnet-and-haiku-models-on-amazon-bedrock-in-thailand-malaysia-singapore-indonesia-and-taiwan/)
   — `global.anthropic.claude-sonnet-4-6` exists. Checked 2026-09-23.
