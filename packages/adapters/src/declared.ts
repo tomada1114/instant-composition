@@ -5,6 +5,8 @@ import type {
   ItemProgress,
   Round,
   Settings,
+  Talk,
+  Turn,
 } from "@instant-composition/domain";
 
 /**
@@ -63,6 +65,28 @@ const MARK = {
   answeredAt: true,
 } as const satisfies Fields<FirstPassMark>;
 
+const TALK = {
+  id: true,
+  status: true,
+  startedAt: true,
+  endedAt: true,
+  expiresAt: true,
+  scene: true,
+  opening: true,
+  turns: true,
+  model: true,
+} as const satisfies Fields<Talk>;
+
+const TURN = {
+  n: true,
+  partnerLine: true,
+  japanese: true,
+  english: true,
+  judgment: true,
+  reply: true,
+  revealCount: true,
+} as const satisfies Fields<Turn>;
+
 function declared<T extends object>(value: T, fields: Fields<T>): T {
   return Object.fromEntries(
     Object.entries(value).filter(([key]) => Object.hasOwn(fields, key)),
@@ -92,6 +116,11 @@ export function declaredValue(entry: Entry): Entry["value"] {
         ...declared(entry.value, ITEM),
         last: markOf(entry.value.last),
         previous: markOf(entry.value.previous),
+      };
+    case "talk":
+      return {
+        ...declared(entry.value, TALK),
+        turns: entry.value.turns.map((turn) => declared(turn, TURN)),
       };
     case "profile":
     case "stats":

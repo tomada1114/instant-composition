@@ -17,7 +17,7 @@ import {
   type LearnerStore,
 } from "@instant-composition/application";
 
-import { makeReview, makeStats } from "./application-fixtures";
+import { makeReview, makeStats, makeTalk, without } from "./application-fixtures";
 
 // The DynamoDB store's side of the wire, against a fake DynamoDB on a loopback
 // port: what each call asks for, and how each answer is read. The contract
@@ -132,6 +132,33 @@ describe("a commit", () => {
       PK: { S: "LEARNER#learner-a" },
       SK: { S: "ROUND#r1" },
     });
+  });
+
+  it("writes an open talk's expiry beside its value as the TTL attribute, and a kept talk without one", async () => {
+    await storeOf().commit({
+      puts: [
+        { type: "talk", value: makeTalk({ id: "t#1", expiresAt: 1_790_000_000 }) },
+      ],
+      updates: [
+        {
+          entry: { type: "talk", value: without(makeTalk({ id: "t2" }), "expiresAt") },
+          version: 1,
+        },
+      ],
+      expect: [],
+    });
+
+    const items = calls[0]?.body["TransactItems"] as Record<
+      string,
+      Record<string, Record<string, unknown>>
+    >[];
+    expect(items[0]?.["Put"]?.["Item"]).toMatchObject({
+      SK: { S: "TALK#t%231" },
+      type: { S: "talk" },
+      expiresAt: { N: "1790000000" },
+    });
+    expect(items[1]?.["Put"]?.["Item"]?.["SK"]).toStrictEqual({ S: "TALK#t2" });
+    expect(items[1]?.["Put"]?.["Item"]).not.toHaveProperty("expiresAt");
   });
 
   it("sends nothing when it names nothing", async () => {

@@ -74,6 +74,20 @@ export const TUNING = {
   weakness: { minSeen: 3, minRate: 0.4, prior: { misses: 1, seen: 3 }, top: 2 },
 } as const;
 
+/** Every tunable value the talk rules and commands read, kept apart from the drill's. */
+export const TALK_TUNING = {
+  /** Turns in a talk; the last one's reply closes the scene. */
+  turns: 6,
+  /** The most characters the learner's Japanese or English may hold, each. */
+  maxChars: 300,
+  /** How long an open talk lives before it reads as absent and the table's TTL deletes it. */
+  expiresAfterMs: 86_400_000,
+  /** The bound on each model call. */
+  modelTimeoutMs: 12_000,
+  /** The share of scenes about the learner themselves; the rest are an errand or a small trouble. */
+  selfShare: 2 / 3,
+} as const;
+
 /** A milestone series: the listed values, then every `step` past the last one. */
 export interface MilestoneSeries {
   readonly fixed: readonly number[];

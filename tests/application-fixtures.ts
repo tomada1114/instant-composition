@@ -7,6 +7,8 @@ import type {
   ReviewEntry,
   Round,
   Settings,
+  Talk,
+  Turn,
 } from "@instant-composition/domain";
 
 // Factories for the packages/application suites. Nothing here asserts.
@@ -122,6 +124,51 @@ export function makeItem(overrides: Partial<ItemProgress> = {}): ItemProgress {
   };
 }
 
+/** A first turn of talk `t1`, judged `corrected` and answered. */
+export function makeTurn(overrides: Partial<Turn> = {}): Turn {
+  return {
+    n: 1,
+    partnerLine: "Hi! Are you new around here?",
+    japanese: "先週引っ越してきました。",
+    english: "I moved here last week.",
+    judgment: {
+      verdict: "corrected",
+      modelAnswer: "I just moved here last week.",
+      point: "「引っ越してきた」→ just moved here",
+    },
+    reply: "Oh, welcome! How do you like it so far?",
+    ...overrides,
+  };
+}
+
+/** An open talk `t1` with no turn yet, expiring a day after it started. */
+export function makeTalk(overrides: Partial<Talk> = {}): Talk {
+  return {
+    id: "t1",
+    status: "open",
+    startedAt: 1_000,
+    expiresAt: 86_401,
+    scene: {
+      partner: "近所の人",
+      place: "マンションのエレベーター",
+      relation: "初対面の隣人",
+      description: "引っ越してきたばかりのあなたに、隣人が話しかけてきた。",
+    },
+    opening: "Hi! Are you new around here?",
+    turns: [],
+    model: {
+      provider: "stand-in",
+      modelId: "stand-in",
+      prompts: {
+        "talk-scene": "talk-scene@1",
+        "talk-teacher": "talk-teacher@1",
+        "talk-partner": "talk-partner@1",
+      },
+    },
+    ...overrides,
+  };
+}
+
 /**
  * `value` with fields its type no longer declares, as an item written while the
  * typed-answer mode existed holds them.
@@ -151,5 +198,6 @@ export function oneOfEach(): Entry[] {
     { type: "portion", value: makePortion() },
     { type: "day", value: makeDay() },
     { type: "item", value: makeItem() },
+    { type: "talk", value: makeTalk({ turns: [makeTurn()] }) },
   ];
 }

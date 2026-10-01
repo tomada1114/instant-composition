@@ -27,6 +27,17 @@ function atVersion(version: number) {
 }
 
 /**
+ * The table's TTL attribute for an entry that lapses: a talk not yet kept.
+ * It sits beside `value`, where the TTL reads it, and a talk written without
+ * one drops it, since every write replaces the whole item.
+ */
+function expiryOf(entry: Entry): { readonly expiresAt?: number } {
+  return entry.type === "talk" && entry.value.expiresAt !== undefined
+    ? { expiresAt: entry.value.expiresAt }
+    : {};
+}
+
+/**
  * The one TransactWriteItems a commit becomes, in the learner's partition:
  * each put and update a conditional `Put`, each expectation a `ConditionCheck`.
  * An update replaces the whole entry, since every entry is written whole.
@@ -45,6 +56,7 @@ export function transactItemsOf(
     type: entry.type,
     version,
     value: entry.value,
+    ...expiryOf(entry),
   });
   return [
     ...commit.puts.map((entry) => ({

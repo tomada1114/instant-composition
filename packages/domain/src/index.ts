@@ -42,7 +42,7 @@ export {
   type LevelChange,
 } from "./difficulty";
 export { EMPTY_STATS, emptyTally } from "./empty";
-export type { PracticeError } from "./errors";
+export type { PracticeError, TalkError } from "./errors";
 export {
   reviewList,
   roundGrowth,
@@ -149,6 +149,11 @@ export {
   type DotState,
   type StreakStatus,
 } from "./streak";
+export type { Judgment, Scene, SceneKind, Talk, TalkTask, Turn } from "./talk";
+export { decideEnd, decideRecital, decideReply, withReply } from "./talk-close";
+export { isClosing, liveTalk, openTalk, sceneKindOf } from "./talk-start";
+export { decideTurn, keepTurn, type TeacherJudgment } from "./talk-turn";
+export type { TurnCommand } from "./talk-turn";
 export {
   countWords,
   estimateMinutes,
@@ -160,7 +165,7 @@ export {
   paceSecondsForWords,
   type Paced,
 } from "./timer";
-export { TUNING, type MilestoneSeries } from "./tuning";
+export { TALK_TUNING, TUNING, type MilestoneSeries } from "./tuning";
 export type {
   AnswerRecord,
   AnswerResult,

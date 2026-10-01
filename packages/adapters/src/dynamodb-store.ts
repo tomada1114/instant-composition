@@ -142,6 +142,7 @@ function dynamoDbStore(
           .map((stored) => [stored.value.item.id, stored]),
       );
     },
+    talk: (id) => get({ type: "talk", id }),
     async commit(commit) {
       checkShape(commit);
       const items = transactItemsOf(table, partition, commit);
