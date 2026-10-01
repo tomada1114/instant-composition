@@ -1,14 +1,18 @@
 import {
   createMemoryDirectory,
   createMemoryStores,
+  type StandInModel,
 } from "@instant-composition/adapters";
 import {
   API_ROOT,
   createApp,
   localAuthenticator,
+  standInTalkModel,
   type ApiApp,
   type Authenticator,
   type LogLine,
+  type ModelCallLine,
+  type ServedModel,
   type WebSession,
 } from "@instant-composition/api";
 import {
@@ -24,15 +28,19 @@ import { ok } from "@instant-composition/domain";
 import { fixedCatalog, NOON } from "./application-harness";
 
 // The API app over the in-memory store and directory — the directory keeping
-// its profiles in those stores, as the DynamoDB one does — and the fixture catalog,
-// with a clock that stands still, numbered request and learner ids and a
-// recording log. Nothing here asserts.
+// its profiles in those stores, as the DynamoDB one does — the fixture catalog
+// and the stand-in talk model a keyless local run serves, with a clock that
+// stands still, numbered request and learner ids and a recording log, its
+// request lines and its model-call lines kept apart. Nothing here asserts.
 
 export interface ApiHarness {
   readonly app: ApiApp;
   readonly stores: LearnerStores;
   readonly directory: LearnerDirectory;
   readonly lines: LogLine[];
+  readonly modelCalls: ModelCallLine[];
+  /** The stand-in behind the default model, which a case may tell to fail. */
+  readonly model: StandInModel;
   /** Moves the clock the app reads; it stands still otherwise. */
   readonly advance: (ms: number) => void;
   readonly call: (method: string, path: string, body?: unknown) => Promise<Response>;
@@ -50,6 +58,10 @@ export interface ApiHarnessOptions {
   readonly headers?: Readonly<Record<string, string>>;
   /** The web sign-in endpoints, when the app is to serve them. */
   readonly webSession?: WebSession;
+  /** The model talks are served by; the stand-in in {@link ApiHarness.model} by default. */
+  readonly servedModel?: ServedModel;
+  /** The stand-in to serve talks with, such as one a second app shares. */
+  readonly standIn?: StandInModel;
 }
 
 /** An authenticator that makes every request `subject`, as a verified token would. */
@@ -61,6 +73,8 @@ export function makeApi(options: ApiHarnessOptions = {}): ApiHarness {
   const stores = options.stores ?? createMemoryStores();
   const directory = options.directory ?? createMemoryDirectory(stores);
   const lines: LogLine[] = [];
+  const modelCalls: ModelCallLine[] = [];
+  const model = options.standIn ?? standInTalkModel();
   let now = options.now ?? NOON;
   let issued = 0;
   let registered = 0;
@@ -81,15 +95,22 @@ export function makeApi(options: ApiHarnessOptions = {}): ApiHarness {
       return `req-${String(issued)}`;
     },
     log: (line) => {
-      lines.push(line);
+      if ("kind" in line) {
+        modelCalls.push(line);
+      } else {
+        lines.push(line);
+      }
     },
     webSession: options.webSession,
+    model: options.servedModel ?? { provider: "stand-in", modelId: "stand-in", model },
   });
   return {
     app,
     stores,
     directory,
     lines,
+    modelCalls,
+    model,
     advance: (ms) => {
       now += ms;
     },

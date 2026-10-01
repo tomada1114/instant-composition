@@ -89,7 +89,50 @@ describe("openApiDocument", () => {
       "POST /v1/rounds startRound",
       "POST /v1/rounds/{roundId}/answers recordAnswers",
       "POST /v1/rounds/{roundId}/finish finishRound",
+      "POST /v1/talks startTalk",
+      "POST /v1/talks/{talkId}/end endTalk",
+      "POST /v1/talks/{talkId}/reply retryReply",
+      "POST /v1/talks/{talkId}/turns sendTurn",
+      "POST /v1/talks/{talkId}/turns/{turn}/recital recordRecital",
     ]);
+  });
+
+  it("validates a recital's {talkId} as an id and its {turn} as 1 to 6", () => {
+    const operation =
+      document.paths["/v1/talks/{talkId}/turns/{turn}/recital"]?.["post"];
+    expect(operation?.parameters).toStrictEqual([
+      {
+        name: "talkId",
+        in: "path",
+        required: true,
+        schema: { type: "string", minLength: 1, maxLength: 64 },
+      },
+      {
+        name: "turn",
+        in: "path",
+        required: true,
+        schema: {
+          type: "integer",
+          minimum: 1,
+          maximum: 6,
+        },
+      },
+    ]);
+    expect(operation?.responses["204"]).toStrictEqual({
+      description: "Done; no body.",
+    });
+  });
+
+  it("answers a scene or a reply that could not be had with 503 ERR_MODEL_UNAVAILABLE", () => {
+    for (const path of ["/v1/talks", "/v1/talks/{talkId}/reply"]) {
+      expect(document.paths[path]?.["post"]?.responses["503"]?.description).toMatch(
+        /^ERR_MODEL_UNAVAILABLE: /,
+      );
+    }
+    expect(
+      document.paths["/v1/talks/{talkId}/turns"]?.["post"]?.responses["404"]
+        ?.description,
+    ).toMatch(/^ERR_TALK_NOT_FOUND: /);
   });
 
   it("resolves every $ref to a component it carries", () => {
@@ -155,7 +198,7 @@ describe("openApiDocument", () => {
 
   it("builds a route it is handed rather than only the shipped table", () => {
     expect(Object.keys(openApiDocument([probe]).paths)).toStrictEqual(["/v1/probe"]);
-    expect(ROUTES).toHaveLength(13);
+    expect(ROUTES).toHaveLength(18);
   });
 
   it.each([

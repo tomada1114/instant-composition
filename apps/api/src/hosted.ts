@@ -10,19 +10,21 @@ import { cognitoWebSession } from "./cognito-web-session";
 import { clientSecret } from "./env-values";
 import type { HostedEnv } from "./env-settings";
 import { readSecureString, SecretParameterError } from "./parameters-extension";
+import { hostedModel } from "./served-model";
 import type { Fetch } from "./token-endpoint";
 import type { WebSession, WebSessionAnswer } from "./web-session";
 
 /**
- * What the hosted app is handed beside its configuration. The authenticator
- * and the web sign-in endpoints are not among them: the hosted app builds the
- * Cognito ones from {@link HostedEnv} itself, so nothing can wire the stand-in.
+ * What the hosted app is handed beside its configuration. The authenticator,
+ * the web sign-in endpoints and the model are not among them: the hosted app
+ * builds Cognito's and the configured provider's from {@link HostedEnv}
+ * itself, so nothing can wire a stand-in.
  */
 export interface HostedDependencies extends Omit<
   ApiDependencies,
-  "authenticator" | "webSession"
+  "authenticator" | "webSession" | "model"
 > {
-  /** Reaches the user pool's domain and the Parameters and Secrets extension. */
+  /** Reaches the user pool's domain, the model provider and the Parameters and Secrets extension. */
   readonly fetch: Fetch;
   /** The pool's key set, when already known; a test's, so no JWKS is fetched. */
   readonly keySet?: CognitoAuthenticatorOptions["keySet"];
@@ -71,8 +73,9 @@ function hostedWebSession(env: HostedEnv, fetch: Fetch): WebSession {
 
 /**
  * The API as the hosted entry serves it: Cognito's authenticator, never the
- * stand-in, admitting the web origins {@link HostedEnv} names, and the web
- * sign-in endpoints over the web app client.
+ * stand-in, admitting the web origins {@link HostedEnv} names, the web
+ * sign-in endpoints over the web app client, and the configured model, whose
+ * key is read only when a talk calls it.
  */
 export function hostedApp(env: HostedEnv, deps: HostedDependencies): ApiApp {
   const { fetch, keySet, ...shared } = deps;
@@ -85,6 +88,7 @@ export function hostedApp(env: HostedEnv, deps: HostedDependencies): ApiApp {
       ...(keySet === undefined ? {} : { keySet }),
     }),
     webSession: hostedWebSession(env, fetch),
+    model: hostedModel(env.model, env.extension, fetch),
   });
 }
 

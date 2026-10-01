@@ -11,7 +11,11 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 
 import { deleteLearnerTable, localDynamoDbClient } from "@instant-composition/adapters";
 import { API_ENV_NAMES } from "@instant-composition/api";
-import { historySchema, roundPayloadSchema } from "@instant-composition/contracts";
+import {
+  historySchema,
+  roundPayloadSchema,
+  talkOpenedSchema,
+} from "@instant-composition/contracts";
 
 import { buildCatalog } from "../scripts/catalog/build.mjs";
 import { coreHash } from "../scripts/cards/schema.mjs";
@@ -369,8 +373,13 @@ beforeAll(async () => {
         "",
       ]),
     ),
+    // Talks are served by the stand-in model whatever key the shell exports,
+    // so no run of this suite reaches OpenRouter.
+    API_OPENROUTER_API_KEY: "",
+    API_MODEL_ID: "",
   };
-  // Exactly the command `pnpm api` runs.
+  // The command `pnpm api` runs, less its `--env-file-if-exists=.env.local`:
+  // no test reads a developer's own environment file.
   const api = startServer(
     "api",
     ["--import", "./scripts/ts-hooks.mjs", "apps/api/src/main.ts"],
@@ -517,5 +526,22 @@ describe("the API behind the client's own origin", () => {
 
   it("names the stand-in authenticator in its start-up line", () => {
     expect(apiOutput()).toContain('"authenticator":"local"');
+  });
+
+  it("starts a talk on the stand-in model, logging the call without its text", async () => {
+    const started = await send("/v1/talks", "POST", { talkId: "smoke-talk" });
+
+    expect(started.status).toBe(200);
+    const opened = talkOpenedSchema.parse(await started.json());
+    expect(opened.talkId).toBe("smoke-talk");
+    expect(apiOutput()).toContain(
+      '"model":{"provider":"stand-in","modelId":"stand-in"}',
+    );
+    const calls = apiOutput()
+      .split("\n")
+      .filter((line) => line.includes('"kind":"model-call"'));
+    expect(calls).toHaveLength(1);
+    expect(calls[0]).toContain('"task":"talk-scene"');
+    expect(calls[0]).not.toContain(opened.opening);
   });
 });

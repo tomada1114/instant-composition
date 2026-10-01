@@ -28,11 +28,14 @@ export {
   type HttpApiEvent,
   type HttpApiHandler,
 } from "./hosted";
+export { DEFAULT_MODEL_ID } from "./env-model";
 export type {
   ApiEnv,
   CognitoSettings,
   HostedCognitoSettings,
   HostedEnv,
+  HostedModelSettings,
+  LocalModelSettings,
   ParametersExtension,
   WebSignInSettings,
 } from "./env-settings";
@@ -46,15 +49,27 @@ export {
   type LocalRunAuthenticator,
 } from "./local-run-authenticator";
 export { ensureTable } from "./local-table";
-export { jsonLines, type LogLine, type LogSink, type RequestOutcome } from "./log";
+export {
+  jsonLines,
+  type LogLine,
+  type LogSink,
+  type ModelCallLine,
+  type ModelCallOutcome,
+  type RequestOutcome,
+} from "./log";
+export { loggedModel, type ModelCallLog, type ServedModel } from "./model-log";
 export {
   OPERATIONS,
   type BodySchema,
   type Operation,
+  type OperationDeps,
   type OperationInput,
   type Outcome,
+  type PathParam,
+  type PathValues,
 } from "./operations";
 export { readSecureString, SecretParameterError } from "./parameters-extension";
+export { hostedModel, localModel, standInTalkModel } from "./served-model";
 export {
   TokenEndpointError,
   type CognitoClient,

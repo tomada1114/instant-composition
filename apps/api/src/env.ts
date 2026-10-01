@@ -17,9 +17,16 @@ import {
   userPoolId,
   type Source,
 } from "./env-values";
+import {
+  HOSTED_MODEL_NAMES,
+  hostedModelSettings,
+  LOCAL_MODEL_NAMES,
+  localModelSettings,
+} from "./env-model";
 import type { ApiEnv, HostedEnv } from "./env-settings";
 
-// The only module in `apps/api` that reads `process.env`; no `.env` file is loaded.
+// The only module in `apps/api` that reads `process.env`, which Node may have
+// filled from `.env.local` (`pnpm api`'s `--env-file-if-exists`); no file is read here.
 
 /** The variables naming the user pool: all set, or none. */
 const COGNITO_NAMES = [
@@ -36,6 +43,7 @@ export const API_ENV_NAMES = [
   "API_TABLE_NAME",
   "API_CATALOG_PATH",
   ...COGNITO_NAMES,
+  ...LOCAL_MODEL_NAMES,
 ] as const;
 
 /**
@@ -55,6 +63,8 @@ const HOSTED_MARKERS = [
  *
  * The four `API_COGNITO_*` names are set together or not at all: all set wire
  * the Cognito authenticator and the web sign-in endpoints, none the stand-in.
+ * `API_OPENROUTER_API_KEY` wires OpenRouter as the talk model, and its absence
+ * the stand-in model.
  *
  * @throws {@link ApiEnvError} `ERR_API_ENV_INVALID` naming every variable that
  * holds no value its setting accepts — or that is unset while another
@@ -69,8 +79,9 @@ export function readApiEnv(source: Source = process.env): ApiEnv {
       "The local API serves only a process on this machine; it refuses to start where AWS runs it.",
     );
   }
-  const { read, invalid } = envReader(source);
-  const env: Omit<ApiEnv, "cognito"> = {
+  const reader = envReader(source);
+  const { read, invalid } = reader;
+  const env: Omit<ApiEnv, "cognito" | "model"> = {
     port: read("API_PORT", port) ?? 8787,
     dynamoDbEndpoint: read("API_DYNAMODB_ENDPOINT", httpUrl) ?? "http://localhost:8000",
     tableName: read("API_TABLE_NAME", tableName) ?? "instant-composition-local",
@@ -83,11 +94,13 @@ export function readApiEnv(source: Source = process.env): ApiEnv {
   if (COGNITO_NAMES.some((name) => !blank(source, name))) {
     invalid.push(...COGNITO_NAMES.filter((name) => blank(source, name)));
   }
+  const model = localModelSettings(reader);
   if (invalid.length > 0) {
     throw invalidVariables(invalid);
   }
   return {
     ...env,
+    model,
     cognito:
       pool === undefined ||
       client === undefined ||
@@ -98,7 +111,10 @@ export function readApiEnv(source: Source = process.env): ApiEnv {
   };
 }
 
-/** Every variable {@link readHostedEnv} reads; `API_COGNITO_CLIENT_SECRET` only to refuse it. */
+/**
+ * Every variable {@link readHostedEnv} reads; `API_COGNITO_CLIENT_SECRET` and
+ * `API_OPENROUTER_API_KEY` only to refuse them.
+ */
 export const HOSTED_ENV_NAMES = [
   "AWS_REGION",
   "AWS_SESSION_TOKEN",
@@ -113,20 +129,23 @@ export const HOSTED_ENV_NAMES = [
   "API_WEB_ORIGINS",
   "API_WEB_CALLBACK_URL",
   "API_WEB_SIGN_OUT_URL",
+  ...HOSTED_MODEL_NAMES,
 ] as const;
 
 /**
  * Reads and validates the hosted entry's environment, once, when the function
  * starts. Every name is required but the extension's port; the user pool is
  * never optional here, because the hosted entry has no stand-in to fall back
- * to. `API_COGNITO_CLIENT_SECRET` is refused: the secret enters through the
- * Parameters and Secrets extension alone, never as a plain variable.
+ * to. `API_COGNITO_CLIENT_SECRET` and `API_OPENROUTER_API_KEY` are refused:
+ * each secret enters through the Parameters and Secrets extension alone,
+ * never as a plain variable.
  *
  * @throws {@link ApiEnvError} `ERR_API_ENV_INVALID` naming every variable that
  * is unset, holds no value its setting accepts, or is the refused one.
  */
 export function readHostedEnv(source: Source = process.env): HostedEnv {
-  const { read, required, invalid } = envReader(source);
+  const reader = envReader(source);
+  const { read, required, invalid } = reader;
   const region = required("AWS_REGION", awsRegion);
   const sessionToken = required("AWS_SESSION_TOKEN", text);
   const extensionPort = read("PARAMETERS_SECRETS_EXTENSION_HTTP_PORT", port) ?? 2773;
@@ -145,6 +164,7 @@ export function readHostedEnv(source: Source = process.env): HostedEnv {
   const origins = required("API_WEB_ORIGINS", httpsOrigins);
   const callbackUrl = required("API_WEB_CALLBACK_URL", httpsUrl);
   const signOutUrl = required("API_WEB_SIGN_OUT_URL", httpsUrl);
+  const model = hostedModelSettings(source, reader);
   if (
     invalid.length > 0 ||
     region === undefined ||
@@ -157,7 +177,8 @@ export function readHostedEnv(source: Source = process.env): HostedEnv {
     secretParameter === undefined ||
     origins === undefined ||
     callbackUrl === undefined ||
-    signOutUrl === undefined
+    signOutUrl === undefined ||
+    model === undefined
   ) {
     // `required` has named each of these that is undefined, so `invalid` is never empty here.
     throw invalidVariables(invalid);
@@ -174,5 +195,6 @@ export function readHostedEnv(source: Source = process.env): HostedEnv {
     },
     web: { origins, callbackUrl, signOutUrl },
     extension: { port: extensionPort, sessionToken },
+    model,
   };
 }

@@ -368,6 +368,55 @@ export type History = {
     estimatedLevel: number;
 };
 
+export type StartTalkRequest = {
+    talkId: string;
+};
+
+export type TurnRequest = {
+    turn: number;
+    japanese: string;
+    english: string | null;
+};
+
+export type RecitalRequest = {
+    revealCount: number;
+};
+
+export type Scene = {
+    partner: string;
+    place: string;
+    relation: string;
+    description: string;
+};
+
+export type TalkOpened = {
+    talkId: string;
+    scene: Scene;
+    opening: string;
+};
+
+export type Verdict = 'fine' | 'corrected' | 'failed';
+
+export type Judgment = {
+    verdict: Verdict;
+    modelAnswer: string;
+    point: string;
+};
+
+export type PartnerReply = {
+    line: string;
+    closing: boolean;
+};
+
+export type TurnResult = {
+    judgment: Judgment;
+    reply: PartnerReply | null;
+};
+
+export type TalkEnded = {
+    kept: boolean;
+};
+
 export type ErrorResponse = {
     error: {
         code: string;
@@ -413,7 +462,7 @@ export type UpdateProfileData = {
 
 export type UpdateProfileErrors = {
     /**
-     * ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.
+     * ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.
      */
     400: ErrorResponse;
     /**
@@ -487,7 +536,7 @@ export type UpdateSettingsData = {
 
 export type UpdateSettingsErrors = {
     /**
-     * ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.
+     * ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.
      */
     400: ErrorResponse;
     /**
@@ -532,7 +581,7 @@ export type UpdateLevelData = {
 
 export type UpdateLevelErrors = {
     /**
-     * ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.
+     * ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.
      */
     400: ErrorResponse;
     /**
@@ -606,7 +655,7 @@ export type StartRoundData = {
 
 export type StartRoundErrors = {
     /**
-     * ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.
+     * ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.
      */
     400: ErrorResponse;
     /**
@@ -653,7 +702,7 @@ export type GetRoundData = {
 
 export type GetRoundErrors = {
     /**
-     * ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.
+     * ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.
      */
     400: ErrorResponse;
     /**
@@ -696,7 +745,7 @@ export type RecordAnswersData = {
 
 export type RecordAnswersErrors = {
     /**
-     * ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.
+     * ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.
      */
     400: ErrorResponse;
     /**
@@ -747,7 +796,7 @@ export type FinishRoundData = {
 
 export type FinishRoundErrors = {
     /**
-     * ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.
+     * ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.
      */
     400: ErrorResponse;
     /**
@@ -798,7 +847,7 @@ export type GetRoundSummaryData = {
 
 export type GetRoundSummaryErrors = {
     /**
-     * ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.
+     * ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.
      */
     400: ErrorResponse;
     /**
@@ -883,3 +932,233 @@ export type GetHistoryResponses = {
 };
 
 export type GetHistoryResponse = GetHistoryResponses[keyof GetHistoryResponses];
+
+export type StartTalkData = {
+    body: StartTalkRequest;
+    path?: never;
+    query?: never;
+    url: '/v1/talks';
+};
+
+export type StartTalkErrors = {
+    /**
+     * ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.
+     */
+    400: ErrorResponse;
+    /**
+     * ERR_UNAUTHENTICATED: The request carries no valid access token.
+     */
+    401: ErrorResponse;
+    /**
+     * ERR_FORBIDDEN: The caller may not run this operation.
+     */
+    403: ErrorResponse;
+    /**
+     * ERR_CONFLICT: Another write to the same data kept winning; send the request again.
+     */
+    409: ErrorResponse;
+    /**
+     * ERR_PAYLOAD_TOO_LARGE: The request body is too large.
+     */
+    413: ErrorResponse;
+    /**
+     * ERR_MODEL_UNAVAILABLE: The language model gave no usable answer; send the request again.
+     */
+    503: ErrorResponse;
+};
+
+export type StartTalkError = StartTalkErrors[keyof StartTalkErrors];
+
+export type StartTalkResponses = {
+    /**
+     * OK
+     */
+    200: TalkOpened;
+};
+
+export type StartTalkResponse = StartTalkResponses[keyof StartTalkResponses];
+
+export type SendTurnData = {
+    body: TurnRequest;
+    path: {
+        talkId: string;
+    };
+    query?: never;
+    url: '/v1/talks/{talkId}/turns';
+};
+
+export type SendTurnErrors = {
+    /**
+     * ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.
+     */
+    400: ErrorResponse;
+    /**
+     * ERR_UNAUTHENTICATED: The request carries no valid access token.
+     */
+    401: ErrorResponse;
+    /**
+     * ERR_FORBIDDEN: The caller may not run this operation.
+     */
+    403: ErrorResponse;
+    /**
+     * ERR_TALK_NOT_FOUND: No talk has that id.
+     */
+    404: ErrorResponse;
+    /**
+     * ERR_CONFLICT: Another write to the same data kept winning; send the request again. ERR_TALK_CLOSED: That talk has finished or ended and takes no more turns.
+     */
+    409: ErrorResponse;
+    /**
+     * ERR_PAYLOAD_TOO_LARGE: The request body is too large.
+     */
+    413: ErrorResponse;
+};
+
+export type SendTurnError = SendTurnErrors[keyof SendTurnErrors];
+
+export type SendTurnResponses = {
+    /**
+     * OK
+     */
+    200: TurnResult;
+};
+
+export type SendTurnResponse = SendTurnResponses[keyof SendTurnResponses];
+
+export type RetryReplyData = {
+    body?: never;
+    path: {
+        talkId: string;
+    };
+    query?: never;
+    url: '/v1/talks/{talkId}/reply';
+};
+
+export type RetryReplyErrors = {
+    /**
+     * ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.
+     */
+    400: ErrorResponse;
+    /**
+     * ERR_UNAUTHENTICATED: The request carries no valid access token.
+     */
+    401: ErrorResponse;
+    /**
+     * ERR_FORBIDDEN: The caller may not run this operation.
+     */
+    403: ErrorResponse;
+    /**
+     * ERR_TALK_NOT_FOUND: No talk has that id.
+     */
+    404: ErrorResponse;
+    /**
+     * ERR_CONFLICT: Another write to the same data kept winning; send the request again. ERR_TALK_CLOSED: That talk has finished or ended and takes no more turns.
+     */
+    409: ErrorResponse;
+    /**
+     * ERR_MODEL_UNAVAILABLE: The language model gave no usable answer; send the request again.
+     */
+    503: ErrorResponse;
+};
+
+export type RetryReplyError = RetryReplyErrors[keyof RetryReplyErrors];
+
+export type RetryReplyResponses = {
+    /**
+     * OK
+     */
+    200: PartnerReply;
+};
+
+export type RetryReplyResponse = RetryReplyResponses[keyof RetryReplyResponses];
+
+export type RecordRecitalData = {
+    body: RecitalRequest;
+    path: {
+        talkId: string;
+        turn: number;
+    };
+    query?: never;
+    url: '/v1/talks/{talkId}/turns/{turn}/recital';
+};
+
+export type RecordRecitalErrors = {
+    /**
+     * ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.
+     */
+    400: ErrorResponse;
+    /**
+     * ERR_UNAUTHENTICATED: The request carries no valid access token.
+     */
+    401: ErrorResponse;
+    /**
+     * ERR_FORBIDDEN: The caller may not run this operation.
+     */
+    403: ErrorResponse;
+    /**
+     * ERR_TALK_NOT_FOUND: No talk has that id.
+     */
+    404: ErrorResponse;
+    /**
+     * ERR_CONFLICT: Another write to the same data kept winning; send the request again.
+     */
+    409: ErrorResponse;
+    /**
+     * ERR_PAYLOAD_TOO_LARGE: The request body is too large.
+     */
+    413: ErrorResponse;
+};
+
+export type RecordRecitalError = RecordRecitalErrors[keyof RecordRecitalErrors];
+
+export type RecordRecitalResponses = {
+    /**
+     * Done; no body.
+     */
+    204: void;
+};
+
+export type RecordRecitalResponse = RecordRecitalResponses[keyof RecordRecitalResponses];
+
+export type EndTalkData = {
+    body?: never;
+    path: {
+        talkId: string;
+    };
+    query?: never;
+    url: '/v1/talks/{talkId}/end';
+};
+
+export type EndTalkErrors = {
+    /**
+     * ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.
+     */
+    400: ErrorResponse;
+    /**
+     * ERR_UNAUTHENTICATED: The request carries no valid access token.
+     */
+    401: ErrorResponse;
+    /**
+     * ERR_FORBIDDEN: The caller may not run this operation.
+     */
+    403: ErrorResponse;
+    /**
+     * ERR_TALK_NOT_FOUND: No talk has that id.
+     */
+    404: ErrorResponse;
+    /**
+     * ERR_CONFLICT: Another write to the same data kept winning; send the request again.
+     */
+    409: ErrorResponse;
+};
+
+export type EndTalkError = EndTalkErrors[keyof EndTalkErrors];
+
+export type EndTalkResponses = {
+    /**
+     * OK
+     */
+    200: TalkEnded;
+};
+
+export type EndTalkResponse = EndTalkResponses[keyof EndTalkResponses];

@@ -10,7 +10,20 @@ export interface ApiEnv {
   readonly catalogPath: string;
   /** The user pool whose access tokens the API accepts; `null` runs the stand-in authenticator. */
   readonly cognito: CognitoSettings | null;
+  /** The model the talk activity calls: OpenRouter with `API_OPENROUTER_API_KEY`, the stand-in without. */
+  readonly model: LocalModelSettings;
 }
+
+/** A local run's talk model: OpenRouter when a key is set, the scripted stand-in otherwise. */
+export type LocalModelSettings =
+  | {
+      readonly provider: "openrouter";
+      /** The OpenRouter model id, such as `anthropic/claude-haiku-4.5`. */
+      readonly modelId: string;
+      /** A credential: it goes to OpenRouter's endpoint and nowhere else. */
+      readonly apiKey: string;
+    }
+  | { readonly provider: "stand-in" };
 
 /**
  * The Cognito user pool a local run verifies access tokens against, and the
@@ -44,6 +57,19 @@ export interface HostedEnv {
   readonly cognito: HostedCognitoSettings;
   readonly web: WebSignInSettings;
   readonly extension: ParametersExtension;
+  readonly model: HostedModelSettings;
+}
+
+/**
+ * The hosted entry's talk model. The key stays in Parameter Store, named by
+ * `keyParameter`, and is read through the extension on every call.
+ */
+export interface HostedModelSettings {
+  readonly provider: "openrouter";
+  /** The OpenRouter model id, such as `anthropic/claude-haiku-4.5`. */
+  readonly modelId: string;
+  /** The `SecureString` parameter holding the OpenRouter API key: its name, never its value. */
+  readonly keyParameter: string;
 }
 
 /** The user pool whose access tokens the hosted API accepts, and the web app client. */

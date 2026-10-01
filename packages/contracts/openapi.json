@@ -55,7 +55,7 @@
             }
           },
           "400": {
-            "description": "ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.",
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.",
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
@@ -157,7 +157,7 @@
             }
           },
           "400": {
-            "description": "ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.",
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.",
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
@@ -229,7 +229,7 @@
             }
           },
           "400": {
-            "description": "ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.",
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.",
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
@@ -333,7 +333,7 @@
             }
           },
           "400": {
-            "description": "ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.",
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.",
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
@@ -405,7 +405,7 @@
             }
           },
           "400": {
-            "description": "ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.",
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.",
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
@@ -470,7 +470,7 @@
         "responses": {
           "204": { "description": "Done; no body." },
           "400": {
-            "description": "ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.",
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.",
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
@@ -558,7 +558,7 @@
             }
           },
           "400": {
-            "description": "ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.",
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.",
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
@@ -638,7 +638,7 @@
             }
           },
           "400": {
-            "description": "ERR_BAD_REQUEST: The request does not fit the round, the settings or the profile it names.",
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.",
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
@@ -727,6 +727,373 @@
           },
           "403": {
             "description": "ERR_FORBIDDEN: The caller may not run this operation.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/talks": {
+      "post": {
+        "operationId": "startTalk",
+        "summary": "Starts a talk: one model call makes the scene and the partner's opening line. A retried start with the same talkId answers the talk it made without calling the model.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/StartTalkRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/TalkOpened" }
+              }
+            }
+          },
+          "400": {
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "401": {
+            "description": "ERR_UNAUTHENTICATED: The request carries no valid access token.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "403": {
+            "description": "ERR_FORBIDDEN: The caller may not run this operation.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "409": {
+            "description": "ERR_CONFLICT: Another write to the same data kept winning; send the request again.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "413": {
+            "description": "ERR_PAYLOAD_TOO_LARGE: The request body is too large.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "503": {
+            "description": "ERR_MODEL_UNAVAILABLE: The language model gave no usable answer; send the request again.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/talks/{talkId}/turns": {
+      "post": {
+        "operationId": "sendTurn",
+        "summary": "Keeps the next turn, judged by the teacher and answered by the partner in parallel: a teacher that answered nothing keeps the verdict failed, a partner that answered nothing keeps reply null. A resent kept turn answers as kept, without a model call; any turn but the next is ERR_CONFLICT.",
+        "parameters": [
+          {
+            "name": "talkId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string", "minLength": 1, "maxLength": 64 }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/TurnRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/TurnResult" }
+              }
+            }
+          },
+          "400": {
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "401": {
+            "description": "ERR_UNAUTHENTICATED: The request carries no valid access token.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "403": {
+            "description": "ERR_FORBIDDEN: The caller may not run this operation.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "404": {
+            "description": "ERR_TALK_NOT_FOUND: No talk has that id.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "409": {
+            "description": "ERR_CONFLICT: Another write to the same data kept winning; send the request again. ERR_TALK_CLOSED: That talk has finished or ended and takes no more turns.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "413": {
+            "description": "ERR_PAYLOAD_TOO_LARGE: The request body is too large.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/talks/{talkId}/reply": {
+      "post": {
+        "operationId": "retryReply",
+        "summary": "Asks the partner again for the latest turn's reply, once a turn was kept without one; a reply already kept is answered without a model call.",
+        "parameters": [
+          {
+            "name": "talkId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string", "minLength": 1, "maxLength": 64 }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/PartnerReply" }
+              }
+            }
+          },
+          "400": {
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "401": {
+            "description": "ERR_UNAUTHENTICATED: The request carries no valid access token.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "403": {
+            "description": "ERR_FORBIDDEN: The caller may not run this operation.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "404": {
+            "description": "ERR_TALK_NOT_FOUND: No talk has that id.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "409": {
+            "description": "ERR_CONFLICT: Another write to the same data kept winning; send the request again. ERR_TALK_CLOSED: That talk has finished or ended and takes no more turns.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "503": {
+            "description": "ERR_MODEL_UNAVAILABLE: The language model gave no usable answer; send the request again.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/talks/{talkId}/turns/{turn}/recital": {
+      "post": {
+        "operationId": "recordRecital",
+        "summary": "Keeps how often the learner looked at a kept turn's model answer again while reciting it; sending the same count again writes nothing.",
+        "parameters": [
+          {
+            "name": "talkId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string", "minLength": 1, "maxLength": 64 }
+          },
+          {
+            "name": "turn",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer", "minimum": 1, "maximum": 6 }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/RecitalRequest" }
+            }
+          }
+        },
+        "responses": {
+          "204": { "description": "Done; no body." },
+          "400": {
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "401": {
+            "description": "ERR_UNAUTHENTICATED: The request carries no valid access token.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "403": {
+            "description": "ERR_FORBIDDEN: The caller may not run this operation.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "404": {
+            "description": "ERR_TALK_NOT_FOUND: No talk has that id.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "409": {
+            "description": "ERR_CONFLICT: Another write to the same data kept winning; send the request again.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "413": {
+            "description": "ERR_PAYLOAD_TOO_LARGE: The request body is too large.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/talks/{talkId}/end": {
+      "post": {
+        "operationId": "endTalk",
+        "summary": "Ends the talk: kept as a record when it holds a turn, discarded to expire when it holds none. Ending it again answers the same kept.",
+        "parameters": [
+          {
+            "name": "talkId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string", "minLength": 1, "maxLength": 64 }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/TalkEnded" }
+              }
+            }
+          },
+          "400": {
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "401": {
+            "description": "ERR_UNAUTHENTICATED: The request carries no valid access token.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "403": {
+            "description": "ERR_FORBIDDEN: The caller may not run this operation.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "404": {
+            "description": "ERR_TALK_NOT_FOUND: No talk has that id.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "409": {
+            "description": "ERR_CONFLICT: Another write to the same data kept winning; send the request again.",
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
@@ -1628,6 +1995,93 @@
           }
         },
         "required": ["seenIds", "topics", "focusSubtopics", "estimatedLevel"]
+      },
+      "StartTalkRequest": {
+        "type": "object",
+        "properties": {
+          "talkId": { "type": "string", "minLength": 1, "maxLength": 64 }
+        },
+        "required": ["talkId"]
+      },
+      "TurnRequest": {
+        "type": "object",
+        "properties": {
+          "turn": { "type": "integer", "minimum": 1, "maximum": 6 },
+          "japanese": { "type": "string", "minLength": 1, "maxLength": 300 },
+          "english": {
+            "anyOf": [
+              { "type": "string", "minLength": 1, "maxLength": 300 },
+              { "type": "null" }
+            ]
+          }
+        },
+        "required": ["turn", "japanese", "english"]
+      },
+      "RecitalRequest": {
+        "type": "object",
+        "properties": {
+          "revealCount": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          }
+        },
+        "required": ["revealCount"]
+      },
+      "Scene": {
+        "type": "object",
+        "properties": {
+          "partner": { "type": "string" },
+          "place": { "type": "string" },
+          "relation": { "type": "string" },
+          "description": { "type": "string" }
+        },
+        "required": ["partner", "place", "relation", "description"]
+      },
+      "TalkOpened": {
+        "type": "object",
+        "properties": {
+          "talkId": { "type": "string" },
+          "scene": { "$ref": "#/components/schemas/Scene" },
+          "opening": { "type": "string" }
+        },
+        "required": ["talkId", "scene", "opening"]
+      },
+      "Verdict": { "type": "string", "enum": ["fine", "corrected", "failed"] },
+      "Judgment": {
+        "type": "object",
+        "properties": {
+          "verdict": { "$ref": "#/components/schemas/Verdict" },
+          "modelAnswer": { "type": "string" },
+          "point": { "type": "string" }
+        },
+        "required": ["verdict", "modelAnswer", "point"]
+      },
+      "PartnerReply": {
+        "type": "object",
+        "properties": {
+          "line": { "type": "string" },
+          "closing": { "type": "boolean" }
+        },
+        "required": ["line", "closing"]
+      },
+      "TurnResult": {
+        "type": "object",
+        "properties": {
+          "judgment": { "$ref": "#/components/schemas/Judgment" },
+          "reply": {
+            "anyOf": [
+              { "$ref": "#/components/schemas/PartnerReply" },
+              { "type": "null" }
+            ]
+          }
+        },
+        "required": ["judgment", "reply"]
+      },
+      "TalkEnded": {
+        "type": "object",
+        "properties": { "kept": { "type": "boolean" } },
+        "required": ["kept"]
       },
       "ErrorResponse": {
         "type": "object",

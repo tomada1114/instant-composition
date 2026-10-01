@@ -41,6 +41,22 @@ export {
 } from "./requests";
 export { ROUTES, type Route } from "./routes";
 export {
+  judgmentSchema,
+  MAX_TALK_TEXT,
+  partnerReplySchema,
+  recitalRequestSchema,
+  sceneSchema,
+  startTalkRequestSchema,
+  TALK_TURNS,
+  talkEndedSchema,
+  talkIdParamSchema,
+  talkOpenedSchema,
+  turnRequestSchema,
+  turnResultSchema,
+  turnSchema,
+  verdictSchema,
+} from "./talk";
+export {
   levelViewSchema,
   profileSchema,
   roundPayloadSchema,

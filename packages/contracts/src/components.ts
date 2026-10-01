@@ -34,6 +34,18 @@ import {
   startRoundRequestSchema,
 } from "./requests";
 import {
+  judgmentSchema,
+  partnerReplySchema,
+  recitalRequestSchema,
+  sceneSchema,
+  startTalkRequestSchema,
+  talkEndedSchema,
+  talkOpenedSchema,
+  turnRequestSchema,
+  turnResultSchema,
+  verdictSchema,
+} from "./talk";
+import {
   answeredRowSchema,
   drillCardSchema,
   growthRowSchema,
@@ -93,5 +105,15 @@ export const COMPONENTS = {
   TopicInfo: topicInfoSchema,
   SettingsPageView: settingsPageViewSchema,
   History: historySchema,
+  StartTalkRequest: startTalkRequestSchema,
+  TurnRequest: turnRequestSchema,
+  RecitalRequest: recitalRequestSchema,
+  Scene: sceneSchema,
+  TalkOpened: talkOpenedSchema,
+  Verdict: verdictSchema,
+  Judgment: judgmentSchema,
+  PartnerReply: partnerReplySchema,
+  TurnResult: turnResultSchema,
+  TalkEnded: talkEndedSchema,
   ErrorResponse: errorResponseSchema,
 } as const;

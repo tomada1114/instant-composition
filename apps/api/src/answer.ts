@@ -4,12 +4,14 @@ import {
   type ApplicationDeps,
   type SignInDeps,
 } from "@instant-composition/application";
-import { roundIdParamSchema, type Route } from "@instant-composition/contracts";
+import type { Route } from "@instant-composition/contracts";
 
 import type { Authenticator } from "./authenticator";
 import { failure, readJsonBody } from "./http";
 import type { LogLine, LogSink, RequestOutcome } from "./log";
+import { loggedModel, type ServedModel } from "./model-log";
 import type { Operation } from "./operations";
+import { readPath } from "./routes";
 import type { WebSession } from "./web-session";
 
 /**
@@ -21,7 +23,10 @@ export interface ApiDependencies extends ApplicationDeps, SignInDeps {
   /** Epoch milliseconds: the request's `now`, and both ends of its duration. */
   readonly now: () => number;
   readonly requestId: () => string;
+  /** Each request's line and each model call's. */
   readonly log: LogSink;
+  /** The model the talk operations call, each call logged against its request. */
+  readonly model: ServedModel;
   /**
    * The web sign-in endpoints under `/v1/auth/`, served only when given: a run
    * with no user pool has nothing to sign a browser in to.
@@ -72,13 +77,9 @@ export async function answer(
   if (!context.ok) {
     return refused(context.error.code, learnerId);
   }
-  let roundId = "";
-  if (operation.roundPath) {
-    const parsed = roundIdParamSchema.safeParse(params["roundId"]);
-    if (!parsed.success) {
-      return refused("ERR_BAD_REQUEST", learnerId);
-    }
-    roundId = parsed.data;
+  const path = readPath(operation.params, params);
+  if (path === undefined) {
+    return refused("ERR_BAD_REQUEST", learnerId);
   }
   let body: unknown = undefined;
   if (operation.body !== null) {
@@ -89,9 +90,15 @@ export async function answer(
     body = read.value;
   }
   const outcome = await operation.handle({
-    deps: { stores: deps.stores, catalog: deps.catalog },
+    deps: {
+      stores: deps.stores,
+      catalog: deps.catalog,
+      model: loggedModel(deps.model, { requestId, log: deps.log, now: deps.now }),
+      // Each model call ends at its bound, or when the caller hangs up.
+      deadline: (ms) => AbortSignal.any([request.signal, AbortSignal.timeout(ms)]),
+    },
     context: context.value,
-    roundId,
+    path,
     body,
   });
   if (!outcome.ok) {

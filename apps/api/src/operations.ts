@@ -16,6 +16,7 @@ import {
   type ApplicationError,
   type CatalogUnreadable,
   type RequestContext,
+  type TalkDeps,
 } from "@instant-composition/application";
 import {
   answersRequestSchema,
@@ -26,6 +27,8 @@ import {
   type ErrorCode,
 } from "@instant-composition/contracts";
 import { err, type Result } from "@instant-composition/domain";
+
+import { TALK_OPERATIONS } from "./talk-operations";
 
 /** The part of a contract schema a handler uses: validation, and the value it yields. */
 export interface BodySchema<T> {
@@ -41,12 +44,26 @@ export type Outcome = Result<
   }
 >;
 
+/** The path parameters a contract path may name, each validated before an operation runs. */
+export interface PathValues {
+  /** The `{roundId}` of a round path; `""` on a path without one. */
+  readonly roundId: string;
+  /** The `{talkId}` of a talk path; `""` on a path without one. */
+  readonly talkId: string;
+  /** The `{turn}` of a recital path, 1 to 6; `0` on a path without one. */
+  readonly turn: number;
+}
+
+export type PathParam = keyof PathValues;
+
+/** What every operation is handed: the drill's dependencies and the talk's. */
+export interface OperationDeps extends ApplicationDeps, TalkDeps {}
+
 /** What an operation is handed once the request is authenticated and its path checked. */
 export interface OperationInput {
-  readonly deps: ApplicationDeps;
+  readonly deps: OperationDeps;
   readonly context: RequestContext;
-  /** The validated `{roundId}` of a round path; `""` on a path without one. */
-  readonly roundId: string;
+  readonly path: PathValues;
   /** The body as JSON, not yet validated: the operation checks it with its own schema. */
   readonly body: unknown;
 }
@@ -57,11 +74,11 @@ export interface OperationInput {
  * @remarks
  * `body` is the very contracts schema the operation validates with, so
  * `bindRoutes` can hold it to the route's `requestBody` by identity;
- * `roundPath` says whether the route's path names a `{roundId}`.
+ * `params` names every parameter the route's path holds.
  */
 export interface Operation {
   readonly body: BodySchema<unknown> | null;
-  readonly roundPath: boolean;
+  readonly params: readonly PathParam[];
   handle(input: OperationInput): Promise<Outcome>;
 }
 
@@ -74,7 +91,7 @@ type Run<A extends unknown[]> = (
 function query(run: Run<[]>): Operation {
   return {
     body: null,
-    roundPath: false,
+    params: [],
     handle: ({ deps, context }) => run(deps, context),
   };
 }
@@ -82,23 +99,23 @@ function query(run: Run<[]>): Operation {
 function roundQuery(run: Run<[roundId: string]>): Operation {
   return {
     body: null,
-    roundPath: true,
-    handle: ({ deps, context, roundId }) => run(deps, context, roundId),
+    params: ["roundId"],
+    handle: ({ deps, context, path }) => run(deps, context, path.roundId),
   };
 }
 
 function command<T>(
   schema: BodySchema<T>,
-  roundPath: boolean,
-  run: Run<[roundId: string, body: T]>,
+  params: readonly PathParam[],
+  run: Run<[path: PathValues, body: T]>,
 ): Operation {
   return {
     body: schema,
-    roundPath,
-    async handle({ deps, context, roundId, body }) {
+    params,
+    async handle({ deps, context, path, body }) {
       const parsed = schema.safeParse(body);
       return parsed.success
-        ? run(deps, context, roundId, parsed.data)
+        ? run(deps, context, path, parsed.data)
         : err({ code: "ERR_BAD_REQUEST" });
     },
   };
@@ -118,31 +135,41 @@ function answersOf<A extends object>(
  */
 export const OPERATIONS: Readonly<Record<string, Operation>> = {
   getProfile: query(profile),
-  updateProfile: command(profilePatchSchema, false, (deps, context, _, patch) =>
+  updateProfile: command(profilePatchSchema, [], (deps, context, _, patch) =>
     updateProfile(deps, context, patch),
   ),
   getSettings: query(settingsPage),
-  updateSettings: command(settingsPatchSchema, false, (deps, context, _, patch) =>
+  updateSettings: command(settingsPatchSchema, [], (deps, context, _, patch) =>
     updateSettings(deps, context, patch),
   ),
-  updateLevel: command(levelChoiceSchema, false, (deps, context, _, choice) =>
+  updateLevel: command(levelChoiceSchema, [], (deps, context, _, choice) =>
     updateLevel(deps, context, choice),
   ),
   getHome: query(home),
-  startRound: command(startRoundRequestSchema, false, (deps, context, _, start) =>
+  startRound: command(startRoundRequestSchema, [], (deps, context, _, start) =>
     startRound(deps, context, start),
   ),
   getRound: roundQuery(roundPayload),
-  recordAnswers: command(answersRequestSchema, true, (deps, context, roundId, batch) =>
-    recordAnswers(deps, context, {
-      roundId,
-      answers: answersOf(roundId, batch.answers),
-    }),
+  recordAnswers: command(
+    answersRequestSchema,
+    ["roundId"],
+    (deps, context, { roundId }, batch) =>
+      recordAnswers(deps, context, {
+        roundId,
+        answers: answersOf(roundId, batch.answers),
+      }),
   ),
-  finishRound: command(answersRequestSchema, true, (deps, context, roundId, batch) =>
-    finishRound(deps, context, { roundId, answers: answersOf(roundId, batch.answers) }),
+  finishRound: command(
+    answersRequestSchema,
+    ["roundId"],
+    (deps, context, { roundId }, batch) =>
+      finishRound(deps, context, {
+        roundId,
+        answers: answersOf(roundId, batch.answers),
+      }),
   ),
   getRoundSummary: roundQuery(roundSummary),
   getRecords: query(records),
   getHistory: query(history),
+  ...TALK_OPERATIONS,
 };

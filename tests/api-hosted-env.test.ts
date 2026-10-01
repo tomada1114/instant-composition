@@ -8,8 +8,9 @@ import {
 } from "@instant-composition/api";
 
 // The hosted entry's environment: every name is required but the extension's
-// port, the user pool is never optional, the client secret is never taken as
-// a plain variable, and a value its setting refuses is named — never quoted.
+// port, the user pool and the model are never optional, neither the client
+// secret nor the model key is taken as a plain variable, and a value its
+// setting refuses is named — never quoted.
 
 /** A whole hosted configuration, well formed. None of these is a real value. */
 const HOSTED = {
@@ -24,6 +25,9 @@ const HOSTED = {
   API_WEB_ORIGINS: "https://app.example.com",
   API_WEB_CALLBACK_URL: "https://app.example.com/api/v1/auth/callback",
   API_WEB_SIGN_OUT_URL: "https://app.example.com/",
+  API_MODEL_PROVIDER: "openrouter",
+  API_MODEL_ID: "anthropic/claude-haiku-4.5",
+  API_OPENROUTER_KEY_PARAMETER: "/instant-composition/dev/app/openrouter-api-key",
 };
 
 const READ: HostedEnv = {
@@ -42,6 +46,11 @@ const READ: HostedEnv = {
     signOutUrl: "https://app.example.com/",
   },
   extension: { port: 2773, sessionToken: "session-token-for-tests" },
+  model: {
+    provider: "openrouter",
+    modelId: "anthropic/claude-haiku-4.5",
+    keyParameter: "/instant-composition/dev/app/openrouter-api-key",
+  },
 };
 
 function refusedWith(source: Record<string, string>): ApiEnvError {
@@ -84,7 +93,8 @@ describe("readHostedEnv", () => {
       HOSTED_ENV_NAMES.filter(
         (name) =>
           name !== "PARAMETERS_SECRETS_EXTENSION_HTTP_PORT" &&
-          name !== "API_COGNITO_CLIENT_SECRET",
+          name !== "API_COGNITO_CLIENT_SECRET" &&
+          name !== "API_OPENROUTER_API_KEY",
       ),
     );
   });
@@ -106,6 +116,14 @@ describe("readHostedEnv", () => {
     expect(error.message).not.toContain(secret);
   });
 
+  it("refuses the model key as a plain variable, never quoting it", () => {
+    const key = "dummy-not-a-real-value";
+    const error = refusedWith({ ...HOSTED, API_OPENROUTER_API_KEY: key });
+    expect(error.code).toBe("ERR_API_ENV_INVALID");
+    expect(error.names).toStrictEqual(["API_OPENROUTER_API_KEY"]);
+    expect(error.message).not.toContain(key);
+  });
+
   it.each([
     ["AWS_REGION", "dummy-not-a-real-value"],
     ["AWS_REGION", "Tokyo"],
@@ -125,6 +143,10 @@ describe("readHostedEnv", () => {
     ["API_WEB_CALLBACK_URL", "http://app.example.com/api/v1/auth/callback"],
     ["API_WEB_CALLBACK_URL", "https://user:pw@app.example.com/api/v1/auth/callback"],
     ["API_WEB_SIGN_OUT_URL", "https://app.example.com/#signed-out"],
+    ["API_MODEL_PROVIDER", "stand-in"],
+    ["API_MODEL_PROVIDER", "bedrock"],
+    ["API_MODEL_ID", "claude haiku"],
+    ["API_OPENROUTER_KEY_PARAMETER", "openrouter api key"],
   ])("refuses %s=%s by naming it", (name, value) => {
     const error = refusedWith({ ...HOSTED, [name]: value });
     expect(error.code).toBe("ERR_API_ENV_INVALID");
