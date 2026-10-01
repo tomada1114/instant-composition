@@ -1,5 +1,5 @@
 // The adapters behind packages/application's ports: the stores, the learner
-// directory and the catalog.
+// directory, the catalog and the language model.
 export {
   createLearnerTable,
   deleteLearnerTable,
@@ -11,4 +11,14 @@ export { createDynamoDbStores, type DynamoDbStoresOptions } from "./dynamodb-sto
 export { MAX_COMMIT_ITEMS } from "./keys";
 export { createMemoryDirectory } from "./memory-directory";
 export { createMemoryStores, type MemoryStores } from "./memory-store";
+export {
+  createOpenRouterModel,
+  type Fetch,
+  type OpenRouterOptions,
+} from "./openrouter-model";
 export { snapshotCatalog } from "./snapshot-catalog";
+export {
+  createStandInModel,
+  type StandInModel,
+  type StandInScript,
+} from "./stand-in-model";
