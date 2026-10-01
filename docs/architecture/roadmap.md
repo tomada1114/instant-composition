@@ -356,18 +356,16 @@ was observed, on 2026-09-29:
 
 ## Phase 6 — LLM feedback
 
-**Goal.** LLM feedback on typed answers, with quality and cost both measurable.
+**Goal.** LLM feedback on typed answers, with every call's cost traceable.
 
 **Scope.**
 
 - A typed-answer mode, chosen by the learner beside the spoken drill, with no time
-  limit. The owner uses it before grading exists, and the self-graded typed answers it
-  records seed the evaluation set.
+  limit. The owner uses it before grading exists.
 - LLM grading of typed answers:
   - a task port and structured output;
   - per-call telemetry;
   - an SQS worker, with results keyed by answer id.
-- The evaluation harness and its CI gate.
 - A per-feature cost dashboard.
 - The limit held on the provider side: a Budgets action that denies Bedrock
   ([ADR-0010](adr/0010-entitlements-and-billing.md), sequencing step 1).
@@ -375,7 +373,6 @@ was observed, on 2026-09-29:
 **Exit.**
 
 - A graded answer shows its cost, model and prompt version in the logs.
-- A prompt change that lowers agreement with the gold set fails CI.
 - The budget action is armed.
 
 **AWS.** Bedrock, SQS, a Budgets action.

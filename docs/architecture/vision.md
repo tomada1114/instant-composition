@@ -41,17 +41,15 @@ operating work and the cost.
 Each principle is here because it changes a concrete decision. A principle that did not
 would be decoration.
 
-### Evaluation sits at the center of every LLM feature
+### What the owner cannot read is measured before it is trusted
 
-An LLM feature is not done when it works on a demo; it is done when its quality can be
-stated as a number and a change that lowers that number fails CI. Here that means an
-in-repository evaluation harness per LLM task, gold sets built from assets that already
-exist (2,052 reviewed alternative answers, 324 deleted cards with the reason each was
-rejected), agreement with human labels and the rate at which repeated grading of the
-same input flips, and a CI gate on any change to a prompt, schema or model setting
-([ADR-0011](adr/0011-llm-integration-and-evaluation.md)). It also sets the order: no
-language pair launches until its automated review gate passes, because the owner cannot
-read every language the platform will teach.
+Grading of typed answers is judged by the owner, who reads every grade while using the
+app; the owner decided on 2026-09-30 to build no evaluation harness or CI gate for it
+([ADR-0011](adr/0011-llm-integration-and-evaluation.md)). Card review is different,
+because the owner cannot read every language the platform will teach: no language pair
+launches until its automated review gate passes, and that reviewer is first measured
+against the owner's own ja→en decisions (1,020 stamped cards, 324 deleted cards with the
+reason each was rejected).
 
 ### Delegated authority is explicit and tested
 
@@ -102,8 +100,8 @@ Learner text is data, never instructions: it is passed in a delimited field, the
 has no tools, and its output is constrained by schema, so a successful injection can at
 worst misgrade the attacker's own answer. The larger risk is cost abuse, which input
 limits and the entitlement ledger bound. Adversarial inputs — injections hidden in an
-answer, off-language answers, empty or oversized ones — are part of every evaluation
-set, not an afterthought.
+answer, off-language answers, empty or oversized ones — are test cases for every LLM
+task, not an afterthought.
 
 ### What breaks often is separated from what must never be lost
 
