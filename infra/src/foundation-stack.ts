@@ -82,6 +82,9 @@ export class FoundationStack extends Stack {
       partitionKey: { name: "PK", type: AttributeType.STRING },
       sortKey: { name: "SK", type: AttributeType.STRING },
       billingMode: BillingMode.PAY_PER_REQUEST,
+      // An in-place update: an item whose `expiresAt` (epoch seconds) has
+      // passed, such as an abandoned talk, is deleted by DynamoDB.
+      timeToLiveAttribute: "expiresAt",
       // `Retain` on delete and on replacement in every stage: the owner's own
       // learning history accumulates in `dev` too.
       removalPolicy: RemovalPolicy.RETAIN,

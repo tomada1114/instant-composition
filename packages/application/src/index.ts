@@ -52,6 +52,17 @@ export type {
   TitleGroup,
   WeakPoints,
 } from "./query-views";
+export type {
+  AbortSignalLike,
+  JsonSchemaObject,
+  JsonValue,
+  LanguageModel,
+  ModelCall,
+  ModelFailure,
+  ModelMessage,
+  ModelReply,
+  ModelRequest,
+} from "./language-model";
 export { recordAnswers, type RecordAnswersCommand } from "./record-answers";
 export { records } from "./records";
 export {
