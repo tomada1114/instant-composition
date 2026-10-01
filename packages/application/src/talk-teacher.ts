@@ -35,16 +35,27 @@ const TEACHER_SCHEMA = {
   additionalProperties: false,
 } as const satisfies JsonSchemaObject;
 
-/** The teacher task's output narrowed: a known verdict, and two strings. */
-function readJudgment(value: unknown): TeacherJudgment | undefined {
-  const texts = textsOf(value, TEACHER_SCHEMA.required);
-  if (texts === undefined) {
-    return undefined;
-  }
-  const { verdict, modelAnswer, point } = texts;
-  return verdict === "fine" || verdict === "corrected"
-    ? { verdict, modelAnswer, point }
-    : undefined;
+/**
+ * The teacher task's output narrowed: a known verdict, a correction that holds
+ * both a model answer and a point, and never `fine` for a give-up, which has
+ * no English to pass.
+ */
+function judgmentReader(
+  gaveUp: boolean,
+): (value: unknown) => TeacherJudgment | undefined {
+  return (value) => {
+    const texts = textsOf(value, TEACHER_SCHEMA.required, []);
+    if (texts === undefined) {
+      return undefined;
+    }
+    const { verdict, modelAnswer, point } = texts;
+    if (verdict === "fine") {
+      return gaveUp ? undefined : { verdict, modelAnswer, point };
+    }
+    return verdict === "corrected" && modelAnswer !== "" && point !== ""
+      ? { verdict, modelAnswer, point }
+      : undefined;
+  };
 }
 
 /** The request that judges one turn's English, or answers a give-up from the Japanese. */
@@ -64,7 +75,11 @@ export function teacherRequest(turn: {
     promptVersion: TALK_PROMPTS["talk-teacher"],
     system: SYSTEM,
     messages: [{ role: "user", text }],
-    output: { name: "talk_teacher", schema: TEACHER_SCHEMA, read: readJudgment },
+    output: {
+      name: "talk_teacher",
+      schema: TEACHER_SCHEMA,
+      read: judgmentReader(turn.english === null),
+    },
     temperature: 0.2,
     maxOutputTokens: 300,
   };

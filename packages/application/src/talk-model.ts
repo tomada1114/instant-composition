@@ -83,11 +83,13 @@ export function learnerBlock(japanese: string, english: string | null): string {
 /**
  * `value`'s `keys` as strings, trimmed, or `undefined` when `value` is not an
  * object holding a string at each of them and nothing else — the shape its
- * schema states. Length and content rules are the prompt's to keep.
+ * schema states — or when one of the `filled` keys is blank, which the step
+ * cannot show. Length rules are the prompt's to keep.
  */
 export function textsOf<K extends string>(
   value: unknown,
   keys: readonly K[],
+  filled: readonly K[],
 ): Readonly<Record<K, string>> | undefined {
   if (typeof value !== "object" || value === null || Array.isArray(value)) {
     return undefined;
@@ -96,7 +98,9 @@ export function textsOf<K extends string>(
     const text: unknown = Reflect.get(value, key);
     return typeof text === "string" ? [[key, text.trim()] as const] : [];
   });
-  return texts.length === keys.length && Object.keys(value).length === keys.length
+  const whole =
+    texts.length === keys.length && Object.keys(value).length === keys.length;
+  return whole && !texts.some(([key, text]) => text === "" && filled.includes(key))
     ? (Object.fromEntries(texts) as Record<K, string>)
     : undefined;
 }

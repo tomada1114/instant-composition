@@ -32,9 +32,9 @@ const PARTNER_SCHEMA = {
   additionalProperties: false,
 } as const satisfies JsonSchemaObject;
 
-/** The partner task's output narrowed: one line. */
+/** The partner task's output narrowed: one line that is not blank. */
 function readLine(value: unknown): string | undefined {
-  return textsOf(value, PARTNER_SCHEMA.required)?.line;
+  return textsOf(value, PARTNER_SCHEMA.required, PARTNER_SCHEMA.required)?.line;
 }
 
 /**

@@ -111,6 +111,19 @@ describe("startTalk", () => {
     expect(await stored()).toBeUndefined();
   });
 
+  it.each([
+    ["a blank opening", { ...SCENE, opening: "" }],
+    ["a blank scene field", { ...SCENE, place: " " }],
+  ])("answers ERR_MODEL_UNAVAILABLE and keeps nothing for %s", async (_, scene) => {
+    h.scene = scene;
+
+    expect(await startTalk(h.talkDeps, h.context(), { talkId: "t1" })).toStrictEqual({
+      ok: false,
+      error: { code: "ERR_MODEL_UNAVAILABLE", reason: "malformed" },
+    });
+    expect(await stored()).toBeUndefined();
+  });
+
   it("starts afresh over an expired talk with the same id", async () => {
     await started();
     await sentThrough(1);
@@ -154,17 +167,38 @@ describe("sendTurn", () => {
     ]);
   });
 
-  it("sends no English to the teacher on a give-up, and keeps the judgment corrected", async () => {
-    h.teacher = { verdict: "fine", modelAnswer: "", point: "" };
-
+  it("sends no English to the teacher on a give-up, and keeps its correction", async () => {
     const sent = await sendTurn(h.talkDeps, h.context(), { ...TURN, english: null });
 
     const teacher = h.model.requests.find((request) => request.task === "talk-teacher");
     expect(teacher?.messages.map((message) => message.text).join("\n")).not.toContain(
       "<english>",
     );
-    expect(sent.ok && sent.value.judgment.verdict).toBe("corrected");
+    expect(sent.ok && sent.value.judgment).toStrictEqual(JUDGMENT);
   });
+
+  it.each([
+    ["fine on a give-up", { verdict: "fine", modelAnswer: "", point: "" }, null],
+    [
+      "corrected with a blank model answer",
+      { ...JUDGMENT, modelAnswer: "  " },
+      TURN.english,
+    ],
+    ["corrected with a blank point", { ...JUDGMENT, point: "" }, TURN.english],
+  ])(
+    "keeps a turn whose teacher answered %s as failed, never as an empty correction",
+    async (_, answer, english) => {
+      h.teacher = answer;
+
+      const sent = await sendTurn(h.talkDeps, h.context(), { ...TURN, english });
+
+      expect(sent.ok && sent.value.judgment).toStrictEqual({
+        verdict: "failed",
+        modelAnswer: "",
+        point: "",
+      });
+    },
+  );
 
   it("keeps a turn whose teacher failed as failed, and still answers the reply", async () => {
     h.failing.add("talk-teacher");
@@ -191,6 +225,23 @@ describe("sendTurn", () => {
       value: { judgment: JUDGMENT, reply: null },
     });
     expect((await stored())?.value.turns[0]).not.toHaveProperty("reply");
+  });
+
+  it("keeps no blank reply, so a retry asks the partner again", async () => {
+    h.partnerLine = "   ";
+
+    const sent = await sendTurn(h.talkDeps, h.context(), TURN);
+    const kept = (await stored())?.value.turns[0];
+    h.partnerLine = undefined;
+    const retried = await retryReply(h.talkDeps, h.context(), { talkId: "t1" });
+
+    expect(sent.ok && sent.value.reply).toBeNull();
+    expect(kept).not.toHaveProperty("reply");
+    expect(retried).toStrictEqual({
+      ok: true,
+      value: { line: "Reply after 3 messages.", closing: false },
+    });
+    expect(tasksOf(h.model).filter((task) => task === "talk-partner")).toHaveLength(2);
   });
 
   it("answers a resent turn as it was kept, with no model call", async () => {

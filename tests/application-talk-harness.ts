@@ -32,8 +32,11 @@ export interface TalkHarness extends Harness {
   readonly deadlines: number[];
   /** Tasks whose next calls answer what no `read` accepts. */
   readonly failing: Set<string>;
-  /** What the teacher answers while it is not failing. */
+  /** What the scene and the teacher answer while they are not failing. */
+  scene: unknown;
   teacher: unknown;
+  /** The partner's line while set, in place of the numbered one. */
+  partnerLine: string | undefined;
   context(now?: number): RequestContext;
   /** The same deps over another model, such as one that races a write in. */
   withModel(model: LanguageModel): TalkDeps;
@@ -49,16 +52,22 @@ export function makeTalkHarness(): TalkHarness {
     ...base,
     failing,
     deadlines,
+    scene: SCENE,
     teacher: JUDGMENT,
+    partnerLine: undefined,
     model: createStandInModel({
-      "talk-scene": answer("talk-scene", () => SCENE),
+      "talk-scene": answer("talk-scene", () => harness.scene),
       "talk-teacher": answer("talk-teacher", () => harness.teacher),
       // The partner numbers its line by the messages it was sent, so a reply
       // shows which turn it answered.
       "talk-partner": (request) =>
         failing.has("talk-partner")
           ? null
-          : { line: `Reply after ${String(request.messages.length)} messages.` },
+          : {
+              line:
+                harness.partnerLine ??
+                `Reply after ${String(request.messages.length)} messages.`,
+            },
     }),
     get talkDeps() {
       return harness.withModel(harness.model);

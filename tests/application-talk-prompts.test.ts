@@ -111,54 +111,68 @@ describe("the talk tasks", () => {
     },
   );
 
-  const EXAMPLES = {
+  const SCENE_OK = {
+    partner: "近所の人",
+    place: "エレベーター",
+    relation: "隣人",
+    description: "隣人が話しかけてきた。",
+    opening: "Hi!",
+  };
+  const CORRECTED = {
+    verdict: "corrected",
+    modelAnswer: "I'm swamped.",
+    point: "「詰まってて」→ swamped",
+  };
+
+  /** Each example, and whether the read takes it: the turn-1 teacher had English. */
+  const EXAMPLES: Record<(typeof TASKS)[number][0], readonly [unknown, boolean][]> = {
     "talk-scene": [
-      {
-        partner: "近所の人",
-        place: "エレベーター",
-        relation: "隣人",
-        description: "隣人が話しかけてきた。",
-        opening: "Hi!",
-      },
-      {
-        partner: "近所の人",
-        place: "エレベーター",
-        relation: "隣人",
-        description: "隣人が話しかけてきた。",
-      },
-      { partner: 1, place: "", relation: "", description: "", opening: "" },
+      [SCENE_OK, true],
+      [{ ...SCENE_OK, opening: undefined }, false],
+      [{ ...SCENE_OK, partner: 1 }, false],
+      [{ ...SCENE_OK, opening: "  " }, false],
+      [{ ...SCENE_OK, description: "" }, false],
     ],
     "talk-teacher": [
-      { verdict: "fine", modelAnswer: "", point: "" },
-      {
-        verdict: "corrected",
-        modelAnswer: "I'm swamped.",
-        point: "「詰まってて」→ swamped",
-      },
-      { verdict: "great", modelAnswer: "", point: "" },
-      { verdict: "fine", modelAnswer: "" },
-      { verdict: "fine", modelAnswer: "", point: "", praise: "Well done!" },
+      [{ verdict: "fine", modelAnswer: "", point: "" }, true],
+      [CORRECTED, true],
+      [{ ...CORRECTED, modelAnswer: "" }, false],
+      [{ ...CORRECTED, point: " " }, false],
+      [{ verdict: "great", modelAnswer: "", point: "" }, false],
+      [{ verdict: "fine", modelAnswer: "" }, false],
+      [{ verdict: "fine", modelAnswer: "", point: "", praise: "Well done!" }, false],
     ],
     "talk-partner": [
-      { line: "Oh, nice." },
-      { line: "" },
-      { line: ["Oh", "nice"] },
-      { reply: "Oh, nice." },
-      "Oh, nice.",
-      null,
+      [{ line: "Oh, nice." }, true],
+      [{ line: "" }, false],
+      [{ line: " " }, false],
+      [{ line: ["Oh", "nice"] }, false],
+      [{ reply: "Oh, nice." }, false],
+      ["Oh, nice.", false],
+      [null, false],
     ],
-  } as const satisfies Record<(typeof TASKS)[number][0], readonly unknown[]>;
+  };
 
   it.each(Object.entries(EXAMPLES))(
-    "holds %s's read to its schema over the same examples",
+    "takes from %s only what its schema allows, and no blank where the step needs text",
     (task, examples) => {
       const { schema, read } = requestOf(task).output;
 
-      expect(examples.map((example) => read(example) !== undefined)).toStrictEqual(
-        examples.map((example) => meets(schema, example)),
+      expect(examples.map(([example]) => read(example) !== undefined)).toStrictEqual(
+        examples.map(([, taken]) => taken),
       );
+      expect(
+        examples.every(([example, taken]) => !taken || meets(schema, example)),
+      ).toBe(true);
     },
   );
+
+  it("refuses fine for a give-up, which has no English to pass", () => {
+    const { read } = requestOf("talk-teacher", 1).output;
+
+    expect(read({ verdict: "fine", modelAnswer: "", point: "" })).toBeUndefined();
+    expect(read(CORRECTED)).toStrictEqual(CORRECTED);
+  });
 });
 
 describe("the learner's words", () => {

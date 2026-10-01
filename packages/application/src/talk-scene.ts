@@ -36,9 +36,9 @@ const SCENE_SCHEMA = {
   additionalProperties: false,
 } as const satisfies JsonSchemaObject;
 
-/** The scene task's output narrowed: every field a string. */
+/** The scene task's output narrowed: every field a string, none of them blank. */
 function readScene(value: unknown): SceneAnswer | undefined {
-  const texts = textsOf(value, SCENE_SCHEMA.required);
+  const texts = textsOf(value, SCENE_SCHEMA.required, SCENE_SCHEMA.required);
   return texts === undefined
     ? undefined
     : {
