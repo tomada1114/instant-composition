@@ -27,7 +27,6 @@ export {
   type DrillInit,
   type DrillPhase,
   type DrillState,
-  type Submission,
 } from "./drill/drill-state";
 export { initDrill } from "./drill/drill-init";
 export { keyAction, type DrillKeyAction, type KeyPress } from "./drill/keys";

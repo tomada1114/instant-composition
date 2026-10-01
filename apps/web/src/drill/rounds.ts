@@ -37,7 +37,7 @@ export function requestRound(
 
 /**
  * The batch body's answer: the round travels in the path, not in the answer.
- * Only a typed round's answer carries a text, which a spoken one's never does.
+ * It never carries a text: every round is spoken.
  */
 function answerOf(input: AnswerInput): Answer {
   return {
@@ -47,7 +47,6 @@ function answerOf(input: AnswerInput): Answer {
     result: input.result,
     elapsedMs: input.elapsedMs,
     ...(input.answeredAt === undefined ? {} : { answeredAt: input.answeredAt }),
-    ...(input.text === undefined ? {} : { text: input.text }),
   };
 }
 

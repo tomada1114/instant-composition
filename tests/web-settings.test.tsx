@@ -279,9 +279,6 @@ describe("the settings screen, W11 size and sound", () => {
     expect(section).not.toBeNull();
     if (section !== null) {
       expect(within(section).getByText(ja.Settings.limit.next)).toBeInTheDocument();
-      expect(
-        within(section).getByText(ja.Settings.limit.spokenOnly),
-      ).toBeInTheDocument();
     }
     fireEvent.click(
       within(limits).getByRole("radio", {
@@ -297,26 +294,18 @@ describe("the settings screen, W11 size and sound", () => {
     ).toBeChecked();
   });
 
-  it.each([
-    { from: "spoken", to: "typed" },
-    { from: "typed", to: "spoken" },
-  ] as const)("saves the $to answer mode picked over $from", async ({ from, to }) => {
-    const { patches } = serveSettings({
-      ...PAGE,
-      settings: { ...SETTINGS, answerMode: from },
-    });
+  it("offers the time limit alone, with no answer mode, even over typed settings", async () => {
+    serveSettings({ ...PAGE, settings: { ...SETTINGS, answerMode: "typed" } });
     await renderApp("/settings?tab=level");
-    const modes = screen.getByRole("radiogroup", { name: ja.Settings.answer.title });
     expect(
-      within(modes).getByRole("radio", { name: ja.Settings.answer[from] }),
-    ).toBeChecked();
-    expect(screen.getByText(ja.Settings.limit.spokenOnly)).toBeInTheDocument();
-    fireEvent.click(within(modes).getByRole("radio", { name: ja.Settings.answer[to] }));
-    await settle();
-    expect(patches).toStrictEqual([{ answerMode: to }]);
-    expect(
-      within(modes).getByRole("radio", { name: ja.Settings.answer[to] }),
-    ).toBeChecked();
+      screen
+        .getAllByRole("radiogroup")
+        .map((group) => group.getAttribute("aria-label")),
+    ).toStrictEqual([
+      ja.Settings.difficulty.mode,
+      ja.Settings.difficulty.levels,
+      ja.Settings.limit.title,
+    ]);
   });
 
   it("switches the sound", async () => {

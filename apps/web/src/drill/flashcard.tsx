@@ -7,7 +7,6 @@ import { ReturnGlyph } from "../ui/glyphs";
 
 import type { DrillCard } from "../openapi";
 import { playMotion } from "./motion";
-import { TypedText } from "./typed-answer";
 
 /** Past this many characters a prompt runs to a fourth line at `front`, so it drops to `front-long`. */
 const FRONT_LONG_AFTER = 36;
@@ -103,8 +102,8 @@ function BackFooter({
 }
 
 /**
- * W5, W6 and W7: the answer to read, top to bottom — the whole prompt, what
- * was typed in a typed round, the model answer, the alternates between
+ * W5, W6 and W7: the answer to read, top to bottom — the whole prompt, the
+ * model answer, the alternates between
  * hairlines, the key point. Only this
  * area scrolls when it does not fit; it then takes focus, and ↑/↓ scroll it
  * by `data-part`.
@@ -115,13 +114,10 @@ export function CardBack({
   elapsedMs,
   feedback,
   hidden = false,
-  text,
 }: Readonly<{
   card: DrillCard;
   mode: "self" | "timeout";
   elapsedMs: number;
-  /** What the learner typed, shown over the model answer. */
-  text?: string | undefined;
   feedback?: { readonly result: "ok" | "ng"; readonly fast: boolean };
   hidden?: boolean;
 }>): ReactElement {
@@ -147,7 +143,6 @@ export function CardBack({
         )}
       >
         <p className="text-point text-muted-foreground">{card.prompt}</p>
-        {text === undefined ? null : <TypedText text={text} />}
         <p
           lang="en"
           className={cn(

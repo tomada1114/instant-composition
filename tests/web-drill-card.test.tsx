@@ -284,21 +284,14 @@ describe("PauseSheet", () => {
 });
 
 /** A placement round of ten cards, as the intro reads it. */
-function introRound(
-  answerMode: "spoken" | "typed",
-): Pick<RoundPayload, "deck" | "answerMode"> {
-  return {
-    deck: Array.from({ length: 10 }, (_, index) => `c${String(index)}`),
-    answerMode,
-  };
+function introRound(): Pick<RoundPayload, "deck"> {
+  return { deck: Array.from({ length: 10 }, (_, index) => `c${String(index)}`) };
 }
 
 describe("IntroScreen", () => {
   it("names the three moves of a card and starts on the button", () => {
     const onStart = vi.fn();
-    renderWithMessages(
-      <IntroScreen first round={introRound("spoken")} onStart={onStart} />,
-    );
+    renderWithMessages(<IntroScreen first round={introRound()} onStart={onStart} />);
     expect(
       screen.getByRole("heading", {
         name: fill(ja.Drill.intro.titleFirst, { count: 10 }),
@@ -315,28 +308,9 @@ describe("IntroScreen", () => {
     expect(onStart).toHaveBeenCalledOnce();
   });
 
-  it("names a typed card's moves in a typed round, with no flip", () => {
-    renderWithMessages(
-      <IntroScreen first round={introRound("typed")} onStart={() => undefined} />,
-    );
-    for (const step of [
-      ja.Drill.intro.type,
-      ja.Drill.intro.check,
-      ja.Drill.intro.grade,
-    ]) {
-      expect(screen.getByText(step)).toBeInTheDocument();
-    }
-    expect(screen.queryByText(ja.Drill.intro.say)).toBeNull();
-    expect(screen.queryByText(ja.Drill.intro.flip)).toBeNull();
-  });
-
   it("changes only the heading for a re-measure", () => {
     renderWithMessages(
-      <IntroScreen
-        first={false}
-        round={introRound("spoken")}
-        onStart={() => undefined}
-      />,
+      <IntroScreen first={false} round={introRound()} onStart={() => undefined} />,
     );
     expect(
       screen.getByRole("heading", {
