@@ -179,7 +179,9 @@ interface ModelFailure {
 - **Timeouts.** Each call is bounded by an `AbortSignal` (`TALK_TUNING.modelTimeoutMs`,
   12 s to start with). `sendTurn` runs its two calls together, so a turn waits for the
   slower one. The function timeout rises from 10 s to 25 s, under API Gateway's 30 s and
-  CloudFront's default 30 s origin timeout.
+  CloudFront's default 30 s origin timeout. `packages/application` compiles with no DOM
+  and no Node types, so the port's parameter is `AbortSignalLike`, the members of an
+  `AbortSignal` it reads; any `AbortSignal` is one.
 - **Telemetry.** Every call writes one log line of its own, beside the request line:
   `kind: "model-call"`, `requestId`, `task`, `promptVersion`, `provider`, `modelId`,
   `outcome`, `inputTokens`, `outputTokens`, `latencyMs`, `costUsd`. Never a prompt, a
