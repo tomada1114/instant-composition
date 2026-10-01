@@ -41,7 +41,6 @@ export interface BedrockBudgetProps {
   readonly stage: Stage;
   /**
    * Every role that calls Bedrock: the deny policy is attached to each of them.
-   * The API function's now; the SQS worker's joins it when the worker lands (#279).
    */
   readonly roles: readonly [IRole, ...IRole[]];
   /** Where Budgets reports that the action ran. */

@@ -36,9 +36,10 @@ a second design.
   (on in `prod`, off in `dev` by the owner's choice), the user pool's self sign-up
   (`SELF_SIGN_UP`: off in `dev`, where only an administrator creates users), the local
   web app client and its sign-in domain (`WEB_CLIENT`: `dev` only, with `127.0.0.1:5173`
-  redirects; `prod` gets one once it has a URL), and the `deploy-access`, `edge` and
-  `app` stacks, which only `dev` builds (`buildApp` in `infra/src/app.ts`): `prod` is
-  not hosted until the production-guard phase, so it builds `foundation` alone.
+  redirects; `prod` gets one once it has a URL), the talk model's key parameter
+  (`TALK_MODEL`: each stage names its own), and the `deploy-access`, `edge` and `app`
+  stacks, which only `dev` builds (`buildApp` in `infra/src/app.ts`): `prod` is not
+  hosted until the production-guard phase, so it builds `foundation` alone.
 - Every stage deploys to `ap-northeast-1` (`REGION`), except `edge`, which holds what
   CloudFront can take from us-east-1 alone (`EDGE_REGION`). No stack reads
   `process.env`: `infra/tsconfig.json` loads no Node types, so a setting that is not in
@@ -58,19 +59,23 @@ a second design.
 ## The stacks
 
 - **`foundation`** holds what keeps state and rarely changes: the learner table and the
-  Cognito user pool. Each resource that holds state has `RemovalPolicy.RETAIN`, which
-  sets `DeletionPolicy` and `UpdateReplacePolicy` to `Retain` in every stage, `dev`
-  included, because the owner's own learning history lives there. The user pool also has
-  deletion protection in every stage: a new pool issues new `sub`s, which strands every
-  learner's data. Its sign-in settings (email as the username, case-insensitive) cannot
-  change without replacing it. In `dev` the pool also has the local checkout's
-  confidential web app client (`webClientOptions`: code grant, `openid`, refresh-token
-  rotation, an empty `ExplicitAuthFlows` so `ALLOW_REFRESH_TOKEN_AUTH` stays off), a
-  prefix domain for managed login whose prefix carries the stack id's first group so it
-  is unique in the region, and the client's Cognito-provided managed login style,
-  without which managed login shows no page. Keep a logical id stable once deployed,
-  because a changed id replaces the resource. Let CloudFormation name the resources, so
-  that a replacement never collides with a name in use.
+  Cognito user pool. The table expires an item whose `expiresAt` (epoch seconds) has
+  passed, such as an abandoned talk; enabling TTL was an in-place update, and a change
+  to its key schema or logical id would replace the table, so check the template diff
+  before any table change. Each resource that holds state has `RemovalPolicy.RETAIN`,
+  which sets `DeletionPolicy` and `UpdateReplacePolicy` to `Retain` in every stage,
+  `dev` included, because the owner's own learning history lives there. The user pool
+  also has deletion protection in every stage: a new pool issues new `sub`s, which
+  strands every learner's data. Its sign-in settings (email as the username,
+  case-insensitive) cannot change without replacing it. In `dev` the pool also has the
+  local checkout's confidential web app client (`webClientOptions`: code grant,
+  `openid`, refresh-token rotation, an empty `ExplicitAuthFlows` so
+  `ALLOW_REFRESH_TOKEN_AUTH` stays off), a prefix domain for managed login whose prefix
+  carries the stack id's first group so it is unique in the region, and the client's
+  Cognito-provided managed login style, without which managed login shows no page. Keep
+  a logical id stable once deployed, because a changed id replaces the resource. Let
+  CloudFormation name the resources, so that a replacement never collides with a name in
+  use.
 - **The hand-off.** `foundation` publishes its identifiers as free standard-tier
   `String` parameters under `/instant-composition/<stage>/foundation/`
   (`FOUNDATION_PARAMETERS` in `infra/src/foundation-parameters.ts` names them), and

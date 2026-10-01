@@ -1,5 +1,5 @@
 import { CfnOutput, Stack, type StackProps } from "aws-cdk-lib";
-import { HttpApi } from "aws-cdk-lib/aws-apigatewayv2";
+import { CfnStage, HttpApi, HttpMethod } from "aws-cdk-lib/aws-apigatewayv2";
 import { HttpLambdaIntegration } from "aws-cdk-lib/aws-apigatewayv2-integrations";
 import {
   BlockPublicAccess,
@@ -10,7 +10,7 @@ import {
 import { StringParameter } from "aws-cdk-lib/aws-ssm";
 import { type Construct } from "constructs";
 
-import { addApiFunction } from "./api-function";
+import { addApiFunction, TALK_MODEL } from "./api-function";
 import { addBedrockBudget, roleOf } from "./bedrock-budget";
 import { addDistribution } from "./distribution";
 import { addObservability } from "./observability";
@@ -40,6 +40,18 @@ export const DISTRIBUTION_ID_OUTPUT = "DistributionId";
 export function webClientSecretParameterName(stage: Stage): string {
   return `/instant-composition/${stage}/app/web-client-secret`;
 }
+
+/** The talk operations' routes, on the same integration as every other path. */
+export const TALK_ROUTE_PATHS = ["/api/v1/talks", "/api/v1/talks/{proxy+}"] as const;
+
+/**
+ * Each talk route's throttle on the `$default` stage, in CloudFormation's own
+ * casing: `RouteSettings` is untyped JSON, which the CDK passes through as is.
+ */
+export const TALK_ROUTE_THROTTLE = {
+  ThrottlingRateLimit: 2,
+  ThrottlingBurstLimit: 10,
+} as const;
 
 export interface AppStackProps extends StackProps {
   readonly stage: Stage;
@@ -117,13 +129,26 @@ export class AppStack extends Stack {
       signInDomainUrl: foundation(FOUNDATION_PARAMETERS.signInDomainUrl),
       clientSecretParameter: webClientSecretParameterName(stage),
       webUrl,
+      talkModel: TALK_MODEL[stage],
     });
     // A replaced client's function never starts before its secret is written.
     handler.node.addDependency(webClient.secretWritten);
-    api.addRoutes({
-      path: "/{proxy+}",
-      integration: new HttpLambdaIntegration("ApiIntegration", handler),
-    });
+    const integration = new HttpLambdaIntegration("ApiIntegration", handler);
+    api.addRoutes({ path: "/{proxy+}", integration });
+    const talkRoutes = TALK_ROUTE_PATHS.flatMap((path) =>
+      api.addRoutes({ path, methods: [HttpMethod.ANY], integration }),
+    );
+    // Every talk turn bills the model provider, so its routes are throttled
+    // at the stage (AGENTS.md's "Rate limiting"); the stage may only name a
+    // route that already exists.
+    const defaultStage = api.defaultStage?.node.defaultChild;
+    if (!(defaultStage instanceof CfnStage)) {
+      throw new TypeError(`${api.node.path} has no default stage`);
+    }
+    defaultStage.routeSettings = Object.fromEntries(
+      TALK_ROUTE_PATHS.map((path) => [`ANY ${path}`, TALK_ROUTE_THROTTLE]),
+    );
+    for (const route of talkRoutes) defaultStage.node.addDependency(route);
 
     const sns = addObservability(this, { stage, api, handler, tableName, alarmEmail });
     addBedrockBudget(this, { stage, roles: [roleOf(handler)], topic: sns });

@@ -39,10 +39,20 @@ only the reasons an edit would otherwise undo.
 
 ## The HTTP API and the function
 
-- The HTTP API has one route, `/{proxy+}` for every method, integrated with the function
-  as a payload format 2.0 proxy on the auto-deployed `$default` stage. Routing is the
-  app's own (`serving-the-api`), so an operation added to the contract needs no infra
-  change. Only this HTTP API may invoke the function.
+- The HTTP API's catch-all route, `/{proxy+}` for every method, is integrated with the
+  function as a payload format 2.0 proxy on the auto-deployed `$default` stage. Routing
+  is the app's own (`serving-the-api`), so an operation added to the contract needs no
+  infra change. Only this HTTP API may invoke the function.
+- **The talk routes** (`TALK_ROUTE_PATHS`: `/api/v1/talks` and `/api/v1/talks/{proxy+}`,
+  any method) sit on the same integration only so the `$default` stage can throttle
+  them, at `TALK_ROUTE_THROTTLE` (rate 2 per second, burst 10): every talk turn bills
+  the model provider, which AGENTS.md's "Rate limiting" puts behind a gateway.
+  `RouteSettings` is untyped JSON the CDK passes through, so its keys are written in
+  CloudFormation's casing, and the stage depends on the routes it names, since a deploy
+  refuses a setting for a route that does not exist yet.
+- **The timeout** is `API_FUNCTION_TIMEOUT_SECONDS`, 25 s: a talk turn waits on two
+  model calls, and it stays under API Gateway's 30 s integration limit and CloudFront's
+  30 s origin timeout, past which the caller sees a gateway error instead of the app's.
 - **The bundle** (`infra/src/api-function.ts`): `NodejsFunction` builds
   `apps/api/src/lambda.ts` with esbuild, which is a root devDependency because the
   construct runs it in the project root it is given — the repository root — and falls
@@ -54,15 +64,19 @@ only the reasons an edit would otherwise undo.
 - **The environment.** The function is given every hosted name `readHostedEnv` requires
   but the ones Lambda sets itself. The client id is the hosted client's, not
   `foundation`'s `web-client-id` parameter; the secret enters only as its parameter's
-  name.
+  name. The talk model is a stage setting, `TALK_MODEL` in `infra/src/api-function.ts`:
+  `API_MODEL_PROVIDER`, `API_MODEL_ID` and `API_OPENROUTER_KEY_PARAMETER`, the last
+  again a `SecureString`'s name only. The owner creates that parameter by hand; the
+  stack only names it.
 - **The Parameters and Secrets extension layer is pinned by ARN**
   (`PARAMETERS_EXTENSION_LAYER_ARN`), because aws-cdk-lib's own version table stops at a
   2023 release. The layer must match the function's architecture and Region. Bumping it
   means checking AWS's published list for `ap-northeast-1` arm64 and updating the date
   in its TSDoc.
-- **Its role** may read and write the learner table, `ssm:GetParameter` the one secret
-  parameter, and `kms:Decrypt` only through Parameter Store for that one parameter's
-  encryption context; beyond that, only writing its own logs. Nothing runs in a VPC.
+- **Its role** may read and write the learner table, `ssm:GetParameter` each of its two
+  secret parameters (the client secret and the model key), and `kms:Decrypt` only
+  through Parameter Store for each one's encryption context, one statement per
+  parameter; beyond that, only writing its own logs. Nothing runs in a VPC.
 - The function waits on the secret writer (`handler.node.addDependency`), so a replaced
   client's function never starts before its new secret is in Parameter Store.
 
@@ -112,6 +126,6 @@ How the API reads the secret at run time is `authenticating-learners`'.
 - The Bedrock budget (`addBedrockBudget` in `infra/src/bedrock-budget.ts`) notifies the
   same topic and, once actual Bedrock spend reaches the limit, attaches a policy denying
   model invocation to every role in its `roles`. Any function that calls Bedrock joins
-  `roles` — #279's worker role among them — or the backstop does not stop it.
+  `roles`, or the backstop does not stop it.
 - The table's metrics are dimensioned by the name read from Parameter Store, so the
   alarms stay in `app` although the table is `foundation`'s.

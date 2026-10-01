@@ -10,6 +10,7 @@ import {
   LAMBDA_CATALOG_PATH,
   PARAMETERS_EXTENSION_LAYER_ARN,
   SPA_BUCKET_NAME_OUTPUT,
+  TALK_MODEL,
   WEB_ACL_ARN_OUTPUT,
   WEB_URL_OUTPUT,
   webClientSecretParameterName,
@@ -374,22 +375,55 @@ describe("the dev app stack's HTTP API", () => {
     expect(propertiesOf("AWS::ApiGatewayV2::Api")).toMatchObject({
       ProtocolType: "HTTP",
     });
-    expect(propertiesOf("AWS::ApiGatewayV2::Stage")).toStrictEqual({
-      ApiId: { Ref: api },
+    const routes = Object.values(
+      TEMPLATE.findResources("AWS::ApiGatewayV2::Route") as Record<
+        string,
+        { Properties: { RouteKey: string } }
+      >,
+    );
+    expect(routes.map(({ Properties: properties }) => properties)).toStrictEqual(
+      ["ANY /{proxy+}", "ANY /api/v1/talks", "ANY /api/v1/talks/{proxy+}"].map(
+        (routeKey) => ({
+          ApiId: { Ref: api },
+          RouteKey: routeKey,
+          AuthorizationType: "NONE",
+          Target: {
+            "Fn::Join": [
+              "",
+              ["integrations/", { Ref: logicalIdOf("AWS::ApiGatewayV2::Integration") }],
+            ],
+          },
+        }),
+      ),
+    );
+  });
+
+  it("throttles the talk routes on the $default stage at 2 requests per second, burst 10", () => {
+    const stage = TEMPLATE.findResources("AWS::ApiGatewayV2::Stage");
+    const [definition] = Object.values(stage);
+    expect(definition?.["Properties"]).toStrictEqual({
+      ApiId: { Ref: logicalIdOf("AWS::ApiGatewayV2::Api") },
       StageName: "$default",
       AutoDeploy: true,
-    });
-    expect(propertiesOf("AWS::ApiGatewayV2::Route")).toStrictEqual({
-      ApiId: { Ref: api },
-      RouteKey: "ANY /{proxy+}",
-      AuthorizationType: "NONE",
-      Target: {
-        "Fn::Join": [
-          "",
-          ["integrations/", { Ref: logicalIdOf("AWS::ApiGatewayV2::Integration") }],
-        ],
+      RouteSettings: {
+        "ANY /api/v1/talks": { ThrottlingRateLimit: 2, ThrottlingBurstLimit: 10 },
+        "ANY /api/v1/talks/{proxy+}": {
+          ThrottlingRateLimit: 2,
+          ThrottlingBurstLimit: 10,
+        },
       },
     });
+    // The stage names the routes, so it is created after them.
+    const talkRoutes = Object.entries(
+      TEMPLATE.findResources("AWS::ApiGatewayV2::Route") as Record<
+        string,
+        { Properties: { RouteKey: string } }
+      >,
+    )
+      .filter(([, route]) => route.Properties.RouteKey.startsWith("ANY /api/v1/talks"))
+      .map(([id]) => id);
+    expect(talkRoutes).toHaveLength(2);
+    expect(definition?.["DependsOn"]).toStrictEqual(expect.arrayContaining(talkRoutes));
   });
 
   it("hands each request to the function as a payload format 2.0 proxy event", () => {
@@ -419,6 +453,10 @@ describe("the dev app stack's function", () => {
     );
   });
 
+  it("times out after 25 s, under API Gateway's and CloudFront's 30 s", () => {
+    expect(propertiesOf("AWS::Lambda::Function", API_FUNCTION)["Timeout"]).toBe(25);
+  });
+
   it("is configured with foundation's identifiers, the dev URL's client, the bundled catalog and the dev URL", () => {
     const variables = (
       propertiesOf("AWS::Lambda::Function", API_FUNCTION)["Environment"] as {
@@ -437,7 +475,12 @@ describe("the dev app stack's function", () => {
       API_WEB_CALLBACK_URL: webUrl("/api/v1/auth/callback"),
       API_WEB_SIGN_OUT_URL: webUrl("/"),
       PARAMETERS_SECRETS_EXTENSION_HTTP_PORT: "2773",
+      API_MODEL_PROVIDER: "openrouter",
+      API_MODEL_ID: "anthropic/claude-haiku-4.5",
+      API_OPENROUTER_KEY_PARAMETER: "/instant-composition/dev/app/openrouter-api-key",
     });
+    expect(TALK_MODEL.dev.keyParameter).toBe(variables["API_OPENROUTER_KEY_PARAMETER"]);
+    expect(variables).not.toHaveProperty("API_OPENROUTER_API_KEY");
     expect(webClientSecretParameterName("dev")).toBe(
       variables["API_COGNITO_CLIENT_SECRET_PARAMETER"],
     );
@@ -447,18 +490,22 @@ describe("the dev app stack's function", () => {
 });
 
 describe("the dev app stack's function role", () => {
-  const secretArn = {
-    "Fn::Join": [
-      "",
-      [
-        "arn:",
-        { Ref: "AWS::Partition" },
-        ":ssm:ap-northeast-1:",
-        { Ref: "AWS::AccountId" },
-        ":parameter/instant-composition/dev/app/web-client-secret",
+  function parameterArn(name: string): unknown {
+    return {
+      "Fn::Join": [
+        "",
+        [
+          "arn:",
+          { Ref: "AWS::Partition" },
+          ":ssm:ap-northeast-1:",
+          { Ref: "AWS::AccountId" },
+          `:parameter${name}`,
+        ],
       ],
-    ],
-  };
+    };
+  }
+  const secretArn = parameterArn("/instant-composition/dev/app/web-client-secret");
+  const keyArn = parameterArn("/instant-composition/dev/app/openrouter-api-key");
 
   /**
    * Every action the policy allows, one entry per action and resource, so the
@@ -496,7 +543,7 @@ describe("the dev app stack's function role", () => {
       .sort();
   }
 
-  it("may use the learner table, read the secret parameter, and decrypt it through Parameter Store only", () => {
+  it("may use the learner table, read the client secret and the model key parameters, and decrypt each through Parameter Store only", () => {
     const policy = propertiesOf("AWS::IAM::Policy", API_FUNCTION);
     expect(policy["Roles"]).toStrictEqual([
       { Ref: logicalIdOf("AWS::IAM::Role", API_FUNCTION) },
@@ -535,20 +582,25 @@ describe("the dev app stack's function role", () => {
             ],
             Resource: table,
           },
-          { Effect: "Allow", Action: "ssm:GetParameter", Resource: secretArn },
-          {
-            Effect: "Allow",
-            Action: "kms:Decrypt",
-            Resource: kms,
-            Condition: {
-              StringEquals: {
-                "kms:ViaService": {
-                  "Fn::Join": ["", ["ssm.ap-northeast-1.", { Ref: "AWS::URLSuffix" }]],
+          ...[secretArn, keyArn].flatMap((arn) => [
+            { Effect: "Allow", Action: "ssm:GetParameter", Resource: arn },
+            {
+              Effect: "Allow",
+              Action: "kms:Decrypt",
+              Resource: kms,
+              Condition: {
+                StringEquals: {
+                  "kms:ViaService": {
+                    "Fn::Join": [
+                      "",
+                      ["ssm.ap-northeast-1.", { Ref: "AWS::URLSuffix" }],
+                    ],
+                  },
+                  "kms:EncryptionContext:PARAMETER_ARN": arn,
                 },
-                "kms:EncryptionContext:PARAMETER_ARN": secretArn,
               },
             },
-          },
+          ]),
         ],
       }),
     );
