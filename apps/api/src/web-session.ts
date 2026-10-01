@@ -10,7 +10,7 @@ type Endpoint = (request: Request) => Promise<WebSessionAnswer>;
 
 /**
  * The endpoints that keep a browser's tokens in HttpOnly cookies, so page
- * scripts never hold one (ADR-0005, Web). Each is named as its log line's
+ * scripts never hold one. Each is named as its log line's
  * `operation`.
  */
 export interface WebSession {

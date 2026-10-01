@@ -48,7 +48,7 @@ export interface ApiFunctionProps {
 /**
  * The hosted entry, `apps/api/src/lambda.ts`, bundled with esbuild and the
  * catalog snapshot, and allowed the learner table and the one secret
- * parameter it reads (ADR-0009): nothing in a VPC, and nothing else in IAM
+ * parameter it reads: nothing in a VPC, and nothing else in IAM
  * but writing its own logs.
  */
 export function addApiFunction(

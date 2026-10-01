@@ -31,7 +31,7 @@ const ACTORS: Readonly<Record<string, Actor>> = {
   },
 };
 
-/** Every actor against every operation: the table ADR-0005 asks for. */
+/** Every actor against every operation. */
 const ALLOWED: Readonly<Record<string, readonly OperationKind[]>> = {
   learner: LEARNER_OPERATIONS,
   "rebuild job": ["rebuildProjections"],

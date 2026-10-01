@@ -357,7 +357,7 @@ export type SettingsPageView = {
     settings: Settings;
     topics: Array<TopicInfo>;
     /**
-     * The same value as `difficulty.toeic`, which a client reads instead. Kept for /v1 (ADR-0007); removed in /v2.
+     * The same value as `difficulty.toeic`, which a client reads instead. Kept for /v1; removed in /v2.
      *
      * @deprecated
      */

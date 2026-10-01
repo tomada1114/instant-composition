@@ -109,9 +109,9 @@ rename unchanged and is most of what starting from this template buys:
 
 ## The locale decision
 
-The app ships one catalog, `messages/ja.json`, and keeps the locale out of the URL
-(ADR-0008). Keeping it is the default. An app whose learners read another language
-replaces it rather than adding a second, and that touches:
+The app ships one catalog, `messages/ja.json`, and keeps the locale out of the URL.
+Keeping it is the default. An app whose learners read another language replaces it
+rather than adding a second, and that touches:
 
 - `messages/ja.json`, replaced by `messages/<locale>.json` translating every key.
 - `apps/web/src/i18n/messages.ts` — the static import of the catalog and `LOCALE`.
@@ -131,7 +131,7 @@ pnpm typecheck
 ```
 
 A second locale beside the first is not part of starting an app: where the choice
-between them comes from is the open part of ADR-0008. **BACKGROUND:** `localizing-ui`.
+between them comes from is still open. **BACKGROUND:** `localizing-ui`.
 
 ## Settling the design direction
 

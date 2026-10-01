@@ -15,10 +15,10 @@ description: >
 **Owns:** the decisions this repository has made about its AWS infrastructure and how
 `infra/` expresses them. **Does not own:** general CDK and CloudFormation knowledge (the
 vendor's `aws-cdk` skill and AWS documentation); why the topology is what it is
-(ADR-0009, **BACKGROUND:** `recording-architecture-decisions`); the code the API
-function runs and the names it reads (`serving-the-api`); how the client secret is read
-and a learner signed in (`authenticating-learners`); workflow lint rules (**REQUIRED:**
-`changing-gates` for any edit to `deploy-dev.yml`).
+(**BACKGROUND:** `mapping-the-architecture`); the code the API function runs and the
+names it reads (`serving-the-api`); how the client secret is read and a learner signed
+in (`authenticating-learners`); workflow lint rules (**REQUIRED:** `changing-gates` for
+any edit to `deploy-dev.yml`).
 
 ## One app, two stages
 
@@ -30,8 +30,8 @@ a second design.
 
 - A stage setting lives next to the construct it changes, as a `Record<Stage, …>` —
   `TABLE_PROTECTED` in `infra/src/foundation-stack.ts` is the pattern. A new stage
-  difference must come from ADR-0009's Stages table; one that is not there owes the ADR
-  an amendment first.
+  difference is an architecture change: update `mapping-the-architecture` in the same
+  pull request.
 - What differs today: the learner table's point-in-time recovery and deletion protection
   (on in `prod`, off in `dev` by the owner's choice), the user pool's self sign-up
   (`SELF_SIGN_UP`: off in `dev`, where only an administrator creates users), the local
@@ -75,10 +75,10 @@ a second design.
   `String` parameters under `/instant-composition/<stage>/foundation/`
   (`FOUNDATION_PARAMETERS` in `infra/src/foundation-parameters.ts` names them), and
   `app` resolves them by name at deploy time. Never an export: an imported export locks
-  the exporting value (ADR-0009). Parameter Store is regional, so `edge`'s web ACL ARN
-  is the one value `app` reads with `Fn::GetStackOutput`, naming us-east-1 and `edge`'s
-  `WebAclArn` output. `tests/infra-app-stack.test.ts` fails on an export and on any
-  other `Fn::GetStackOutput`. CDK's own cross-stack references are never used: the tests
+  the exporting value. Parameter Store is regional, so `edge`'s web ACL ARN is the one
+  value `app` reads with `Fn::GetStackOutput`, naming us-east-1 and `edge`'s `WebAclArn`
+  output. `tests/infra-app-stack.test.ts` fails on an export and on any other
+  `Fn::GetStackOutput`. CDK's own cross-stack references are never used: the tests
   synthesize without `cdk.json`'s context, so they would build a different template than
   a deploy. The stack outputs (`LearnerTableName`, `UserPoolId`, `WebClientId`,
   `SignInDomainUrl`; `app`'s `WebUrl`, `SpaBucketName`, `DistributionId`) carry no
@@ -89,16 +89,16 @@ a second design.
   and the Bedrock budget with its action (`infra/src/bedrock-budget.ts`). It depends on
   `foundation` for deploy order alone, never the reverse. The hosted client lives here,
   not in `foundation`, because its redirect URLs are the distribution's, and
-  `foundation` must never depend on `app` (owner, 2026-09-28, ADR-0009). Read
+  `foundation` must never depend on `app` (owner, 2026-09-28). Read
   [references/app-stack.md](references/app-stack.md) before changing any construct in
   it: each holds a decision a plausible edit would undo.
 - **`edge`** (`dev` only, us-east-1) holds the `CLOUDFRONT`-scope WAF web ACL that the
   distribution's flat-rate plan requires and no other Region can hold. It allows every
-  request and has no rule, since ADR-0009 gives `dev` none; a rule counts against the
-  Free plan's five, and a rule group of our own blocks the plan. `app` depends on it for
-  deploy order alone. us-east-1 has its own CDK bootstrap, run once by hand from
-  `infra/` (`pnpm cdk bootstrap aws://<account-id>/us-east-1`); a stack in a new Region
-  needs the same before its first deploy.
+  request and has no rule, since `dev` needs none; a rule counts against the Free plan's
+  five, and a rule group of our own blocks the plan. `app` depends on it for deploy
+  order alone. us-east-1 has its own CDK bootstrap, run once by hand from `infra/`
+  (`pnpm cdk bootstrap aws://<account-id>/us-east-1`); a stack in a new Region needs the
+  same before its first deploy.
 - **`deploy-access`** (`dev` only) holds the GitHub OIDC identity provider and the
   deploy role. The owner deployed it once by hand, with
   `pnpm cdk deploy -c stage=dev deploy-access`, because the workflow needs the role
@@ -177,10 +177,9 @@ a second design.
 
 ## What needs the owner's OK
 
-A resource an ADR or an issue already plans is created in `dev` without asking. A
-resource with a fixed monthly cost of about $10 or more needs the owner's OK before the
-change that adds it: an RDS instance, a NAT gateway, a load balancer, an interface
-endpoint, or anything billed by the hour whether used or not. Check the price and write
-it in the PR. `prod`, the account's plan, Organizations and IAM access keys stay the
-owner's. AGENTS.md's "Security and human approval" holds that rule; this is where it
-bites.
+A resource an issue already plans is created in `dev` without asking. A resource with a
+fixed monthly cost of about $10 or more needs the owner's OK before the change that adds
+it: an RDS instance, a NAT gateway, a load balancer, an interface endpoint, or anything
+billed by the hour whether used or not. Check the price and write it in the PR. `prod`,
+the account's plan, Organizations and IAM access keys stay the owner's. AGENTS.md's
+"Security and human approval" holds that rule; this is where it bites.

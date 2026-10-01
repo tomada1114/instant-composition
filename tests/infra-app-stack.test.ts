@@ -76,7 +76,7 @@ function foundationReference(parameter: FoundationParameter): { Ref: string } {
   return { Ref: matches[0]?.[0] ?? "" };
 }
 
-// The edge stack's web ACL, read across Regions by output name (ADR-0009).
+// The edge stack's web ACL, read across Regions by output name.
 const WEB_ACL_ARN = {
   "Fn::GetStackOutput": {
     StackName: "instant-composition-dev-edge",
@@ -99,7 +99,7 @@ function webUrl(path?: string): { "Fn::Join": [string, unknown[]] } {
   };
 }
 
-// ADR-0009's cost guard: nothing billed by the hour whether used or not —
+// The cost guard: nothing billed by the hour whether used or not —
 // no NAT gateway, load balancer, interface endpoint or database instance.
 describe("the dev app stack's resources", () => {
   it("are only the bucket, the distribution and its plan, the HTTP API, the function, their alarms, the web client and the Bedrock budget", () => {
@@ -306,7 +306,7 @@ describe("the dev app stack's distribution", () => {
   });
 });
 
-// ADR-0009, Stages: dev's distribution is on the flat-rate Free plan (#173).
+// dev's distribution is on the flat-rate Free plan (#173).
 describe("the dev app stack's pricing plan", () => {
   it("subscribes the distribution and its web ACL to CloudFront's flat-rate Free plan", () => {
     expect(CLOUDFRONT_PLAN_TIER).toBe("FREE");

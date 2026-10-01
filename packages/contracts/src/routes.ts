@@ -59,7 +59,7 @@ const COMMAND_ERRORS = [
   "ERR_CONTENT_UNREADABLE",
 ] as const;
 
-/** The `/v1` operations the commands and queries in `packages/application` back (ADR-0007). */
+/** The `/v1` operations the commands and queries in `packages/application` back. */
 export const ROUTES: readonly Route[] = [
   {
     method: "get",

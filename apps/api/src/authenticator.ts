@@ -17,7 +17,7 @@ export interface AuthFailure {
 
 /**
  * The port identity enters through, once per request, before anything reads a
- * learner's data (ADR-0005). It says only who the caller is: the learner that
+ * learner's data. It says only who the caller is: the learner that
  * subject maps to, and their profile, come from the learner directory.
  * `cognitoAuthenticator` is the real one; `localAuthenticator` stands in for it
  * on a local run with no user pool configured.

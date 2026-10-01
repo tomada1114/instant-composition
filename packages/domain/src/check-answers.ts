@@ -28,7 +28,7 @@ export interface CardFacts {
   readonly words: number | null;
 }
 
-/** The input length cap ADR-0011 sets on a typed answer, which grading will read. */
+/** The input length cap on a typed answer, which grading will read. */
 const MAX_TEXT_LENGTH = 300;
 
 /**

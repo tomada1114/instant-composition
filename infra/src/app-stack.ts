@@ -60,7 +60,7 @@ export interface AppStackProps extends StackProps {
 }
 
 /**
- * What is rebuilt often (ADR-0009): CloudFront in front of the SPA bucket
+ * What is rebuilt often: CloudFront in front of the SPA bucket
  * and, under `/api/*`, API Gateway's HTTP API and the API on Lambda.
  *
  * @remarks

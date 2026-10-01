@@ -19,8 +19,8 @@ error types and what they may carry (`designing-errors`); the API's handler tabl
 (`serving-the-api`); the credential paths, cookies and sign-in endpoints, and which
 authenticator runs where (`authenticating-learners`); the shape of commands and ports
 (`designing-application-core`); how a test case is written (`writing-tests`); secrets
-and `.env*` (AGENTS.md "Security and human approval"). The decisions are ADR-0005, 0006
-and 0012 under `docs/architecture/adr/`.
+and `.env*` (AGENTS.md "Security and human approval"). The architecture behind them is
+`mapping-the-architecture`.
 
 AGENTS.md's "Security and human approval" carries the prohibition itself, because an
 agent meets it while working on something else. This skill holds the reasoning and the
@@ -49,7 +49,7 @@ filter.
 - Verify every Cognito access token against the user pool's JWKS with `aws-jwt-verify`,
   with `tokenUse: "access"` and the expected `clientId`. Never decode a token without
   verifying it: the AgentCore sample that reads claims unverified is safe only because
-  Runtime verified the token first (ADR-0012), and is not a pattern to copy.
+  Runtime verified the token first, and is not a pattern to copy.
 - `LearnerId` is internal. Map Cognito's `sub` to it at sign-in and use the LearnerId in
   keys, logs and URLs, so a new identity provider or a linked account never rewrites
   data.
@@ -104,4 +104,4 @@ filter.
   error may carry.
 - Text a learner wrote, such as a typed answer, goes to a language model as delimited
   data, never as instructions. The grader has no tools, so a successful injection can
-  only change its author's own grade (ADR-0011).
+  only change its author's own grade.

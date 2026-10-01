@@ -1,4 +1,4 @@
-// The hosted entry: the app on Lambda behind API Gateway's HTTP API (ADR-0009),
+// The hosted entry: the app on Lambda behind API Gateway's HTTP API,
 // against the learner table in the function's Region and the catalog snapshot
 // bundled with it. `readHostedEnv` validates the environment once, here, when
 // the function starts, and throws — failing the start — without the user pool

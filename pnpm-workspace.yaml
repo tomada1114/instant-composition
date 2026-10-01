@@ -1,5 +1,5 @@
 # The workspace: the tests and the repository automation at the root, the
-# packages ADR-0002 lays out under `packages/`, the deployable apps under
+# packages under `packages/`, the deployable apps under
 # `apps/` (the API and the web client), and the CDK app under `infra/`.
 #
 # The rest of this file is the pnpm supply-chain policy, declared in one

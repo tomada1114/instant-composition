@@ -16,7 +16,7 @@ import { afterAll, describe, expect, it } from "vitest";
 //
 // Only the `@hey-api/typescript` plugin runs. The SDK plugin needs the
 // generator's bundled fetch client, whose source does not compile under this
-// repository's `exactOptionalPropertyTypes` (ADR-0008); `apps/web/src/lib/
+// repository's `exactOptionalPropertyTypes`; `apps/web/src/lib/
 // endpoints.ts` makes the calls, typed by what this writes.
 
 const repoRoot = fileURLToPath(new URL("..", import.meta.url));

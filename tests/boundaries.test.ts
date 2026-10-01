@@ -202,7 +202,7 @@ function inZone(resolved: string, tree: string): boolean {
  * import.
  *
  * @remarks
- * ADR-0002's `application → domain` and `domain → nothing`, written as a
+ * the `application → domain` and `domain → nothing`, written as a
  * table. `eslint.config.mjs`'s `WORKSPACE_EDGES` states the same edges; the
  * two are checked independently, so an entry deleted there still fails here.
  * A package added under `packages/` has to be given a row before this suite
@@ -219,7 +219,7 @@ const WORKSPACE_EDGES: Readonly<Record<string, readonly string[]>> = {
 };
 
 /**
- * The npm packages each workspace package may import, by exact name: ADR-0002's
+ * The npm packages each workspace package may import, by exact name: the
  * `contracts → (zod only)`, and the AWS SDK plus zod for `adapters`.
  * `eslint.config.mjs`'s `NPM_EDGES` states the same. A package's manifest
  * declares each at the root's own range where the root declares it too, so
@@ -506,7 +506,7 @@ describe("packages/ imports run one way, adapters → application → domain", (
 
 /**
  * Every app under `apps/` that holds source, and the workspace packages it may
- * import: ADR-0002's `apps/* → application, adapters, contracts`, plus
+ * import: the `apps/* → application, adapters, contracts`, plus
  * `domain`. `web` imports none: it reaches the API over HTTP. `eslint.config.mjs`'s
  * `APP_WORKSPACE_EDGES` states the same.
  */
@@ -602,7 +602,7 @@ function toolRange(
   );
 }
 
-describe("apps/ imports only the packages ADR-0002 allows", () => {
+describe("apps/ imports only the packages its boundary table allows", () => {
   const directories = readdirSync(path.join(repoRoot, "apps"), { withFileTypes: true })
     .filter((entry) => entry.isDirectory())
     .map((entry) => entry.name)

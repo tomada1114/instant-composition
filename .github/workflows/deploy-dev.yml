@@ -1,6 +1,6 @@
 name: Deploy dev
 
-# ADR-0009: `dev` deploys on every merge to main, with no approval. The job
+# `dev` deploys on every merge to main, with no approval. The job
 # assumes the deploy role from infra/'s `deploy-access` stack through GitHub's
 # OIDC token, so no AWS access key exists anywhere; that role may only assume
 # the CDK bootstrap roles, which do the deploying. Its ARN is the repository

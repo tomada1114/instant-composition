@@ -47,7 +47,7 @@ function tableMetric(tableName: string, metricName: string): Metric {
 }
 
 /**
- * ADR-0009's observability baseline, sized to CloudWatch's free tier: five
+ * The observability baseline, sized to CloudWatch's free tier: five
  * single-metric alarms (the API's 5xx, the function's errors and throttles,
  * the table's read and write throttles) notifying one SNS topic, and one
  * dashboard of traffic, errors and latency.

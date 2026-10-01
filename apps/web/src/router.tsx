@@ -28,7 +28,7 @@ import { SettingsPage } from "./settings/settings-page";
 import { RecapPage } from "./summary/recap-page";
 
 /**
- * The route tree, written as code rather than generated from files (ADR-0008):
+ * The route tree, written as code rather than generated from files:
  * each route names its parent and its screen, and nothing runs at build time
  * to produce it.
  */

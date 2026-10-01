@@ -22,8 +22,7 @@ import { webClientOptions, type WebClientUrls } from "./web-client";
 
 /**
  * Whether the learner table is protected by point-in-time recovery and
- * deletion protection. `dev` goes without both until `prod` exists
- * (ADR-0009, Stages).
+ * deletion protection. `dev` goes without both until `prod` exists.
  */
 const TABLE_PROTECTED: Readonly<Record<Stage, boolean>> = {
   dev: false,
@@ -32,7 +31,7 @@ const TABLE_PROTECTED: Readonly<Record<Stage, boolean>> = {
 
 /**
  * Whether a learner may sign themselves up. In `dev` only an administrator
- * creates users (`AllowAdminCreateUserOnly`, ADR-0009, Stages).
+ * creates users (`AllowAdminCreateUserOnly`).
  */
 const SELF_SIGN_UP: Readonly<Record<Stage, boolean>> = {
   dev: false,
@@ -69,8 +68,8 @@ export interface FoundationStackProps extends StackProps {
 }
 
 /**
- * The stateful resources, rarely changed and retained on delete (ADR-0009):
- * the learner table ADR-0006 lays out, and the Cognito user pool ADR-0005
+ * The stateful resources, rarely changed and retained on delete:
+ * the learner table, and the Cognito user pool the API
  * signs learners in against.
  */
 export class FoundationStack extends Stack {
@@ -103,8 +102,7 @@ export class FoundationStack extends Stack {
       autoVerify: { email: true },
       accountRecovery: AccountRecovery.EMAIL_ONLY,
       mfa: Mfa.OFF,
-      // `prod` moves to SES with the production-guard phase (ADR-0009, Email),
-      // once a verified sending identity exists; until then no stage has one.
+      // Cognito's own sender until a verified SES identity exists; no stage has one.
       email: UserPoolEmail.withCognito(),
       removalPolicy: RemovalPolicy.RETAIN,
       deletionProtection: true,
@@ -119,7 +117,7 @@ export class FoundationStack extends Stack {
 
   /**
    * The confidential app client the API's `/v1/auth/*` endpoints sign the
-   * browser in with (ADR-0005, Web), and the domain serving managed login.
+   * browser in with, and the domain serving managed login.
    */
   private addWebSignIn(userPool: UserPool, stage: Stage, urls: WebClientUrls): void {
     const client = userPool.addClient("WebClient", webClientOptions(urls));
@@ -144,7 +142,7 @@ export class FoundationStack extends Stack {
     branding.node.addDependency(domain);
 
     // The client secret is never an output: the API reads it from the
-    // secret store at startup (ADR-0009, Configuration and secrets).
+    // secret store at startup.
     new CfnOutput(this, WEB_CLIENT_ID_OUTPUT, { value: client.userPoolClientId });
     new CfnOutput(this, SIGN_IN_DOMAIN_URL_OUTPUT, { value: domain.baseUrl() });
     this.publish(stage, FOUNDATION_PARAMETERS.webClientId, client.userPoolClientId);

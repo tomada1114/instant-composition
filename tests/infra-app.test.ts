@@ -24,7 +24,7 @@ const SYNTHESIZED = new Map(
 
 describe("the CDK app", () => {
   // Only `dev` has a deploy role, since `prod`'s deploy waits behind an
-  // approval, and only `dev` is hosted until the production phases.
+  // approval, and only `dev` is hosted for now.
   const STACKS = {
     dev: ["deploy-access", "edge", "foundation", "app"],
     prod: ["foundation"],
@@ -56,7 +56,7 @@ describe("the CDK app", () => {
     );
   });
 
-  // ADR-0009: `app` reads foundation's identifiers and edge's web ACL by
+  // `app` reads foundation's identifiers and edge's web ACL by
   // name, so the order is a deploy order alone, and neither waits on `app`.
   it("deploys the dev app stack after foundation and edge, never the reverse", () => {
     const stacks = SYNTHESIZED.get("dev")?.stacks ?? [];

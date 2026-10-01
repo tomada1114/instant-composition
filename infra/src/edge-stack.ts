@@ -15,14 +15,14 @@ export interface EdgeStackProps extends StackProps {
 }
 
 /**
- * What CloudFront needs from us-east-1 (ADR-0009): the `CLOUDFRONT`-scope AWS
+ * What CloudFront needs from us-east-1: the `CLOUDFRONT`-scope AWS
  * WAF web ACL the distribution's flat-rate plan requires, which can exist in
  * no other Region.
  *
  * @remarks
  * The web ACL allows every request and holds no rule. A plan needs one
  * associated with its distribution for as long as the subscription lasts, and
- * ADR-0009 gives `dev` no WAF rules. A rule added later counts against the
+ * `dev` has no WAF rules. A rule added later counts against the
  * Free plan's five, and a rule group of our own (`AWS::WAFv2::RuleGroup`) is
  * a configuration no plan admits.
  */

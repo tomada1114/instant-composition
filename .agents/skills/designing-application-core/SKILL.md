@@ -17,24 +17,17 @@ what must stay pure, how a command and a query flow, where a port may exist, and
 patterns are deliberately not adopted. **Does not own:** TypeScript idiom
 (`writing-typescript`); the HTTP edge (`serving-the-api`) and the web client
 (`building-web-screens`); error types and codes (`designing-errors`); who may touch
-whose data (`isolating-learner-data`); the decisions themselves, which are ADR-0001,
-0002, 0003 and 0006 under `docs/architecture/adr/`.
+whose data (`isolating-learner-data`); the system map — which packages, contexts, tables
+and services exist and why (`mapping-the-architecture`).
 
 ## Where the code is
 
-The layout is the one
-`docs/architecture/adr/0002-architecture-style-and-repository-layout.md` (Accepted) sets
-out: `packages/domain` (the rules) → `packages/application` (commands, queries, ports,
-the request context and authorization) → `packages/adapters` (the DynamoDB and in-memory
-stores, the catalog snapshot), with `packages/contracts` holding the HTTP schemas beside
-them, and `apps/api` wiring adapters to the application. `apps/web` imports none of
-them: it reaches the API over HTTP. A worker joins `apps/` when there is one. The edges
-between them are `eslint.config.mjs`'s tables, asserted again by
-`tests/boundaries.test.ts`; read them there.
-
-Where an ADR is still Proposed, follow it and raise a disagreement in the pull request
-rather than inventing a third shape. Values an ADR owns (a key layout, an endpoint list)
-are read there, not restated here.
+`packages/domain` holds the rules, `packages/application` the commands, queries, ports,
+request context and authorization, and `packages/adapters` the stores and the catalog;
+`apps/api` wires adapters to the application. The packages and their edges are
+AGENTS.md's "Architecture" and `eslint.config.mjs`'s tables, asserted again by
+`tests/boundaries.test.ts`; read them there. Which context lives where, the key layout
+and the endpoint list: **BACKGROUND:** `mapping-the-architecture`.
 
 ## Dependencies run one way
 
@@ -72,39 +65,37 @@ written under.
 - A read is a **query** answered from projections — item memory, learner totals —
   maintained on write, never by replaying the whole history per request.
 - Append-only logs (answers, reviews) are what projections are rebuilt from. Keep them:
-  fitting FSRS parameters, switching from Leitner to FSRS, and replaying an evaluation
-  all need the history. Each entry keeps the state before and after and a snapshot of
-  the item's metadata, as `AnswerRecord` does, so it outlives the item.
-- Commands are data so that one command serves the HTTP API, a queued job and, later, an
-  agent's tool, behind one authorization check.
+  changing the scheduler or rebuilding a projection replays the history. Each entry
+  keeps the state before and after and a snapshot of the item, as `ReviewEntry` does, so
+  it outlives the item.
+- Commands are data so that any entry point — the HTTP API now, a job or a tool if one
+  is added — runs the same command behind one authorization check.
 
 ## Idempotency
 
 - A command that can be retried carries an identity the client made (an answer id, a
-  round id) or an `Idempotency-Key`, and the commit's condition turns a repeat into a
-  no-op that returns the first result. An answer whose client-made id a round already
-  holds is skipped (`packages/domain/src/answers.ts`), and finishing a finished round
-  answers with the summary it kept (`packages/application/src/finish-round.ts`).
-- For non-deterministic work, such as a language-model grade, idempotency means storing
-  the first result under the job's key and returning it — not expecting the same output
-  twice.
+  round id), and the commit's condition turns a repeat into a no-op that returns the
+  first result. An answer whose client-made id a round already holds is skipped
+  (`packages/domain/src/answers.ts`), and finishing a finished round answers with the
+  summary it kept (`packages/application/src/finish-round.ts`).
+- For non-deterministic work, idempotency means storing the first result under the
+  work's key and returning it — not expecting the same output twice.
 - Offline clients send late. Accept an answer for an older round, take its day from the
   round, and bound a client timestamp by the round's start and the server's clock.
 
 ## Ports and contexts
 
-- A port exists only where two or more real implementations do: the store (in-memory for
-  tests, DynamoDB), the catalog (files in development, a build-time snapshot in
-  production), the authenticator (Cognito, locally signed test tokens), the clock and
-  ids; later language-model tasks, the job runner and the entitlements ledger. A pure
-  rule is not a port — swap the function.
+- A port exists only where two or more real implementations do: the store and the
+  learner directory (in-memory, DynamoDB), the catalog (the snapshot file, an in-memory
+  snapshot in tests), the authenticator (Cognito, the local stand-in, locally signed
+  test tokens), the clock and ids. A pure rule is not a port — swap the function.
 - Ports are async even where an implementation is synchronous.
-- A context (identity, catalog, practice-composition, learning-record and the rest in
-  ADR-0003) is a module with one surface. Another context is reached through that
-  surface, and data it needs is passed or copied, never read from its storage.
+- A context (the list is `mapping-the-architecture`'s) is a module with one surface.
+  Another context is reached through that surface, and data it needs is passed or
+  copied, never read from its storage.
 - A consistency boundary decides what one commit may touch: a round with its answers, a
-  day's portion, one item's memory, the settings, one ledger entry. A command that needs
-  two is a sign it should be two commands.
+  day's portion, one item's memory, the settings. A command that needs two is a sign it
+  should be two commands.
 
 ## Deliberately not adopted
 
@@ -112,12 +103,12 @@ written under.
 | ------------------------------------------------------ | ---------------------------------------------------------------------------------------------- |
 | Use-case interactor classes, presenters, per-layer DTO | A function per command or query already is the use case; copies between layers add no consumer |
 | Entity classes, a repository per entity, value objects | Plain data and pure functions test more easily; branded types and zod carry the safety         |
-| A domain event bus or a command bus framework          | Direct calls; an event appears only when an async consumer does, recorded in an ADR            |
+| A domain event bus or a command bus framework          | Direct calls; an event appears only when an async consumer does                                |
 | Full event sourcing                                    | Logs are kept only where history has a named use; everything else is state                     |
-| Microservices                                          | One core behind several entry points; a single owner cannot run distributed operations         |
 
-Adopting one needs an ADR naming the problem the current shape cannot solve.
-**REQUIRED:** `recording-architecture-decisions`.
+Adopting one is an architecture change: the pull request names the problem the current
+shape cannot solve and updates `mapping-the-architecture`, whose own table covers the
+system-level patterns not adopted (microservices among them).
 
 ## Testing the shape
 

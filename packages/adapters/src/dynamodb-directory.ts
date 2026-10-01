@@ -35,8 +35,7 @@ function valueOf(row: Readonly<Record<string, unknown>> | undefined): unknown {
 }
 
 /**
- * The identity context's records on the learner table, as ADR-0006 lays them
- * out: `IDENTITY#<sub> / LEARNER` maps a subject to its LearnerId, and
+ * The identity context's records on the learner table: `IDENTITY#<sub> / LEARNER` maps a subject to its LearnerId, and
  * `LEARNER#<id> / PROFILE` holds the profile inside the learner's own
  * partition. A registration writes both in one TransactWriteItems.
  */

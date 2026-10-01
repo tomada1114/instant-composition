@@ -96,8 +96,8 @@ export interface ClientSecretProps {
 
 /**
  * Copies a confidential client's secret into a `SecureString` parameter on
- * every create and update, which CloudFormation cannot write itself
- * (ADR-0009, Configuration and secrets). A replaced client changes
+ * every create and update, which CloudFormation cannot write itself.
+ * A replaced client changes
  * `ClientId`, so its new secret is written in the same deploy.
  *
  * @remarks

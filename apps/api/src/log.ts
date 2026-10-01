@@ -9,7 +9,7 @@ import type { ErrorCode } from "@instant-composition/contracts";
 export type RequestOutcome = "ok" | ErrorCode | "unmatched" | "failed";
 
 /**
- * The one line written per request (ADR-0009's observability baseline).
+ * The one line written per request.
  *
  * @remarks
  * Every field is present on every line, `null` where it does not apply, so a

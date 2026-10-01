@@ -133,7 +133,7 @@ export const settingsPageViewSchema = z.object({
   toeic: z.string().nullable().meta({
     deprecated: true,
     description:
-      "The same value as `difficulty.toeic`, which a client reads instead. Kept for /v1 (ADR-0007); removed in /v2.",
+      "The same value as `difficulty.toeic`, which a client reads instead. Kept for /v1; removed in /v2.",
   }),
   difficulty: levelViewSchema,
   /** Every level the learner may pick, lowest first, by its TOEIC reference. */

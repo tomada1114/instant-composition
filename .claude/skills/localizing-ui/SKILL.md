@@ -130,20 +130,19 @@ out of step, or the string was read under a namespace that does not hold it. Run
 
 A path names a screen and nothing else — `/records`, never `/ja/records` — and nothing
 negotiates a locale: no `Accept-Language`, no cookie, no stored preference. `ja` is the
-only catalog, so there is nothing to choose between. ADR-0008 records that, and records
-that the locale will come from the learner's profile once a second one exists. Do not
-describe a negotiation that is not there, and do not add a locale segment to a route.
+only catalog, so there is nothing to choose between. Once a second one exists, the
+locale is expected to come from the learner's profile. Do not describe a negotiation
+that is not there, and do not add a locale segment to a route.
 
 ## Adding a locale
 
 This app ships `ja` only, and a second locale is an architecture change rather than a
 catalog edit: `LOCALE` becomes a list, `MESSAGES` a record keyed by it,
 `CatalogProvider` has to be told which one to use, and where that choice comes from is
-the open part of ADR-0008. Take it through an ADR first. **REQUIRED:**
-`recording-architecture-decisions`. The catalog half is then a new
-`messages/<locale>.json` translating every key `ja.json` holds, and the `LOCALES` list
-at the top of `tests/messages.test.ts`, which already compares every catalog's keys and
-ICU arguments against `ja`.
+still open. Settle it with the owner and update `mapping-the-architecture` in the same
+pull request. The catalog half is then a new `messages/<locale>.json` translating every
+key `ja.json` holds, and the `LOCALES` list at the top of `tests/messages.test.ts`,
+which already compares every catalog's keys and ICU arguments against `ja`.
 
 ## What to run
 

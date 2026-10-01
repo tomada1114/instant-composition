@@ -27,7 +27,7 @@ export interface SpaDeploymentProps {
 /**
  * Upload the web build to the SPA bucket through CloudFormation, which the
  * CDK bootstrap roles run, so the deploy role needs no S3 or CloudFront
- * permission of its own (ADR-0009).
+ * permission of its own.
  *
  * @remarks
  * Two uploads of the same build. The fingerprinted `assets/` go first, cached

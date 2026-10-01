@@ -23,20 +23,19 @@ only the reasons an edit would otherwise undo.
 - **The `dev` URL is the distribution's default domain.** No custom domain or
   certificate exists; the `WebUrl` output carries it, and the API function's web origin
   and the hosted client's redirect URLs are derived from it in the same template.
-- **On the flat-rate Free plan** (ADR-0009, Stages; #173).
-  `AWS::PricingPlanManager::Subscription` covers the distribution and `edge`'s web ACL,
-  which the distribution's `WebACLId` names. The subscription references the
-  distribution, so CloudFormation creates it after the distribution and deletes it
-  first: a subscribed distribution cannot be deleted. CloudFormation refuses a tier
-  change on an existing subscription, so moving to Pro happens outside the stack first
-  and `CLOUDFRONT_PLAN_TIER` follows.
+- **On the flat-rate Free plan** (#173). `AWS::PricingPlanManager::Subscription` covers
+  the distribution and `edge`'s web ACL, which the distribution's `WebACLId` names. The
+  subscription references the distribution, so CloudFormation creates it after the
+  distribution and deletes it first: a subscribed distribution cannot be deleted.
+  CloudFormation refuses a tier change on an existing subscription, so moving to Pro
+  happens outside the stack first and `CLOUDFRONT_PLAN_TIER` follows.
 - **Only what the Free plan admits** — AWS-managed cache and origin request policies,
   origin access control, one CloudFront Function, at most five cache behaviors — and
   never a custom cache, origin request or response headers policy, an origin access
   identity, legacy `ForwardedValues` or a real-time log config. The function and the web
   ACL serve this distribution alone. `tests/infra-app-stack.test.ts` holds that list. A
-  change that needs one of them breaks the subscription, so it owes ADR-0009 an
-  amendment and the owner's OK first.
+  change that needs one of them breaks the subscription, so it needs the owner's OK
+  first and an update to `mapping-the-architecture` in the same pull request.
 
 ## The HTTP API and the function
 
@@ -98,12 +97,11 @@ How the API reads the secret at run time is `authenticating-learners`'.
 
 ## The alarms
 
-- ADR-0009's baseline, sized to CloudWatch's free tier (ADR-0009's cost table holds the
-  limits): single-metric alarms on the HTTP API's 5xx, the function's errors and
-  throttles, and the table's read and write throttles, and one dashboard of traffic,
-  errors and latency. `tests/infra-observability.test.ts` holds the count and that no
-  alarm is a metric-math one, so a new alarm or dashboard is weighed against the free
-  tier before that test changes.
+- The baseline, sized to CloudWatch's free tier: single-metric alarms on the HTTP API's
+  5xx, the function's errors and throttles, and the table's read and write throttles,
+  and one dashboard of traffic, errors and latency. `tests/infra-observability.test.ts`
+  holds the count and that no alarm is a metric-math one, so a new alarm or dashboard is
+  weighed against the free tier before that test changes.
 - Each alarm fires on a single event in one one-minute period, and missing data — what a
   minute without traffic produces — counts as not breaching.
 - Every alarm notifies one SNS topic. Its email subscription exists only when a deploy
@@ -111,10 +109,9 @@ How the API reads the secret at run time is `authenticating-learners`'.
 - The topic carries a topic policy, which replaces SNS's default one. It admits
   CloudWatch alarms and AWS Budgets by name, one statement each, so a new publisher
   needs its own statement or its messages are dropped.
-- The Bedrock budget (`addBedrockBudget` in `infra/src/bedrock-budget.ts`, ADR-0010)
-  notifies the same topic and, once actual Bedrock spend reaches the limit, attaches a
-  policy denying model invocation to every role in its `roles`. Any function that calls
-  Bedrock joins `roles` — #279's worker role among them — or the backstop does not stop
-  it.
+- The Bedrock budget (`addBedrockBudget` in `infra/src/bedrock-budget.ts`) notifies the
+  same topic and, once actual Bedrock spend reaches the limit, attaches a policy denying
+  model invocation to every role in its `roles`. Any function that calls Bedrock joins
+  `roles` — #279's worker role among them — or the backstop does not stop it.
 - The table's metrics are dimensioned by the name read from Parameter Store, so the
   alarms stay in `app` although the table is `foundation`'s.

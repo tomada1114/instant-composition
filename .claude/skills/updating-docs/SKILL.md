@@ -62,19 +62,19 @@ another's content.
 - `.env.example` — every environment name a local run reads (`apps/api/src/env.ts`'s
   `API_ENV_NAMES`), shipped with an empty value. It is the file to open when the
   question is what exists.
-- `docs/architecture/` — the architecture record: vision, current state, roadmap,
-  references and the ADRs. `recording-architecture-decisions` owns when a change owes an
-  ADR there and how one is written.
+- `mapping-the-architecture` — the current architecture and adopted patterns. A change
+  to a context boundary, a persistence shape, the HTTP contract, a provider or AWS
+  service, or the security model updates it in the same pull request.
 - TSDoc in `packages/*/src/**` and `apps/*/src/**` — a published symbol's contract. An
   interface several implementations share is where this matters most: it is what an
   implementer reads instead of reading the implementation that happens to ship.
   `writing-typescript` owns what the comment says; this skill owns only whether one is
   owed.
 
-There is no `CHANGELOG.md` here, and `docs/` holds only the architecture record. A pull
-request explains itself in a line or two, and `.github/PULL_REQUEST_TEMPLATE.md` owns
-that — do not reinstate a changelog, and do not grow `docs/` a second tree beside
-`docs/architecture/`.
+There is no `CHANGELOG.md` here, and no `docs/` tree. A pull request explains itself in
+a line or two, and `.github/PULL_REQUEST_TEMPLATE.md` owns that — do not reinstate a
+changelog, and do not start a `docs/` tree: an architecture change lands in
+`mapping-the-architecture`.
 
 ## A skill is documentation; editing one is usually not a doc change
 

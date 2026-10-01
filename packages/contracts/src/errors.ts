@@ -13,7 +13,7 @@ import * as z from "zod";
  * first — cards dealt or the catalog repaired: `ERR_NOT_ENOUGH_CARDS`,
  * `ERR_CONTENT_UNREADABLE`.
  *
- * New codes may appear within `/v1` (ADR-0007), which is why the envelope's
+ * New codes may appear within `/v1`, which is why the envelope's
  * `code` is a string rather than this list as an enum: a client generated from
  * the document keeps a default branch instead of failing to decode.
  */

@@ -46,12 +46,13 @@ typeface or a layout by taste to get a screen done, and never add a light theme.
 
 ## Before changing the architecture
 
-The architecture follows the target recorded in `docs/architecture/` — start at its
-`README.md`, whose ADRs say what is decided and what is only proposed. Domain and
+`mapping-the-architecture` holds the architecture as it stands and the patterns it
+adopts; read it before a change that crosses a package or touches AWS. Domain and
 application code lives in `packages/` and takes the shape `designing-application-core`
 describes. A change to a context boundary, a persistence shape, an external contract, a
-provider, or the security model owes an ADR, as `recording-architecture-decisions` sets
-out.
+provider, or the security model updates `mapping-the-architecture` in the same pull
+request. There is no ADR record and no roadmap: the app runs in the `dev` AWS account
+for the owner alone, and what to build next is decided with the owner as they use it.
 
 ## Quick reference
 
@@ -184,37 +185,34 @@ own package or app and by the package's name from outside it; there is no path a
 
 The repository is a pnpm workspace: the root package holds the tests and the repository
 automation, and `pnpm-workspace.yaml` adds each directory under `apps/` and `packages/`,
-and `infra/`. These are the packages and apps
-`docs/architecture/adr/0002-architecture-style-and-repository-layout.md` lays out.
-`packages/domain` holds the pure rules, with the practice day computed in the learner's
-time zone, and the pure `decide` functions behind each command. `packages/application`
-holds the request context, the authorization policy, the practice commands as load,
-decide, commit, the queries each screen reads from projections alone, and the ports they
-need: the learner-bound store, the learner directory and the catalog.
-`packages/adapters` implements those ports: the DynamoDB store on ADR-0006's single
-table, each commit one `TransactWriteItems`; the in-memory store; a DynamoDB and an
-in-memory learner directory; and the catalog that reads one `pnpm catalog:build`
-snapshot. Both stores run the contract suite in `tests/learner-store-contract.ts`,
-isolation included, and both directories the one in
-`tests/learner-directory-contract.ts` — the in-memory ones in `pnpm test`, the DynamoDB
-ones against DynamoDB local in `pnpm test:dynamodb`. `packages/contracts` holds the
-`/v1` request and response schemas and the OpenAPI 3.1 document built from them,
-committed as `packages/contracts/openapi.json`; `tests/contracts-openapi.test.ts` fails
-when the file differs from what the schemas generate, and `pnpm contracts:openapi`
-rewrites it (ADR-0013). `apps/api` serves every route in contracts' `ROUTES` under
-`/api` by calling `packages/application`, signing each request in through the learner
-directory: the subject comes from a Cognito access token, as a Bearer header or the web
-session cookie, when `API_COGNITO_*` name a user pool, and from a stand-in naming one
-local subject otherwise. With a pool it also serves the web sign-in endpoints under
-`/api/v1/auth/`, outside `ROUTES`, which keep a browser's tokens in HttpOnly cookies;
-`authenticating-learners` holds how. `apps/web` is the browser client ADR-0008
-describes: a Vite + React SPA with TanStack Router, TanStack Query and use-intl over
+and `infra/`. `packages/domain` holds the pure rules, with the practice day computed in
+the learner's time zone, and the pure `decide` functions behind each command.
+`packages/application` holds the request context, the authorization policy, the practice
+commands as load, decide, commit, the queries each screen reads from projections alone,
+and the ports they need: the learner-bound store, the learner directory and the catalog.
+`packages/adapters` implements those ports: the DynamoDB store on one single table, each
+commit one `TransactWriteItems`; the in-memory store; a DynamoDB and an in-memory
+learner directory; and the catalog that reads one `pnpm catalog:build` snapshot. Both
+stores run the contract suite in `tests/learner-store-contract.ts`, isolation included,
+and both directories the one in `tests/learner-directory-contract.ts` — the in-memory
+ones in `pnpm test`, the DynamoDB ones against DynamoDB local in `pnpm test:dynamodb`.
+`packages/contracts` holds the `/v1` request and response schemas and the OpenAPI 3.1
+document built from them, committed as `packages/contracts/openapi.json`;
+`tests/contracts-openapi.test.ts` fails when the file differs from what the schemas
+generate, and `pnpm contracts:openapi` rewrites it. `apps/api` serves every route in
+contracts' `ROUTES` under `/api` by calling `packages/application`, signing each request
+in through the learner directory: the subject comes from a Cognito access token, as a
+Bearer header or the web session cookie, when `API_COGNITO_*` name a user pool, and from
+a stand-in naming one local subject otherwise. With a pool it also serves the web
+sign-in endpoints under `/api/v1/auth/`, outside `ROUTES`, which keep a browser's tokens
+in HttpOnly cookies; `authenticating-learners` holds how. `apps/web` is the browser
+client: a Vite + React SPA with TanStack Router, TanStack Query and use-intl over
 `messages/ja.json`, which reaches the API only over HTTP under `/api`, typed by what
 @hey-api/openapi-ts generates from `packages/contracts/openapi.json` into
 `apps/web/src/openapi/`. That tree is committed, `tests/web-openapi-client.test.ts`
 fails when it differs from a fresh generation, and `pnpm web:client` rewrites it.
-`infra/` is the CDK app ADR-0009 describes: one app builds either stage from its `stage`
-context value (`dev` | `prod`), and an unknown or missing stage fails synthesis;
+`infra/` is the CDK app: one app builds either stage from its `stage` context value
+(`dev` | `prod`), and an unknown or missing stage fails synthesis;
 `tests/infra-*.test.ts` synthesize it, so the everyday gate fails when synthesis does.
 
 - **The edges.** `adapters` → `application` and `domain`, the AWS SDK's DynamoDB
@@ -320,35 +318,34 @@ with `ERR_CARDS_BUSY`. The tag lists and guides are edited by hand, and
 Each skill owns one kind of change. Load the one whose subject you are working on; each
 names its own boundary with its neighbours.
 
-| Skill                              | Load it when you are working on                                                                                                           |
-| ---------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| `building-web-screens`             | a screen, route, query or API call under `apps/web/src/`, or regenerating the client after a contract change                              |
-| `localizing-ui`                    | a catalog under `messages/`, a module under `apps/web/src/i18n/`, or adding a UI string                                                   |
-| `writing-typescript`               | a `.ts` module or a `.tsx` component under `packages/*/src/` or `apps/*/src/`                                                             |
-| `designing-errors`                 | an error type or an `ERR_*` code, in `packages/`, `apps/` or `scripts/`                                                                   |
-| `writing-tests`                    | the body of a test under `tests/`                                                                                                         |
-| `placing-tests`                    | a new test file, a vitest project, or a coverage floor                                                                                    |
-| `type-testing`                     | an `expectTypeOf` assertion or a `@ts-expect-error` inside a test                                                                         |
-| `writing-repo-scripts`             | a `.mjs` under `scripts/`                                                                                                                 |
-| `authoring-skills`                 | a skill under `.agents/skills/`                                                                                                           |
-| `changing-gates`                   | a CI workflow, `lefthook.yml`, or a tool config                                                                                           |
-| `managing-dependencies`            | adding, bumping, or removing a package by hand, or pinning `.mcp.json`'s MCP server versions (an open bot PR is `merge-dependabot`)       |
-| `merge-dependabot`                 | landing open Dependabot or Renovate pull requests                                                                                         |
-| `updating-docs`                    | `README.md`, `CONTRIBUTING.md`, `AGENTS.md`, or whether a change owes a doc at all                                                        |
-| `triaging-issues`                  | filing, labelling, or ranking a GitHub issue                                                                                              |
-| `designing-ui`                     | the design direction, the theme tokens in `apps/web/src/globals.css`, a shadcn/ui component, or styling any screen                        |
-| `shipping-issues`                  | ranking open issues and shipping the top one (or all) through PR, CI, and merge                                                           |
-| `steering-the-roadmap`             | choosing what to work on next, reordering phases or scope, cutting a phase into issues, or the project's status; before `shipping-issues` |
-| `generating-cards`                 | writing new cards into `content/cards/`, filling thin cells, or adding a subtopic                                                         |
-| `reviewing-cards`                  | reviewing, fixing, deleting or stamping cards; `pnpm cards:lint` errors or a non-empty `pnpm cards:queue`                                 |
-| `backfilling-card-fields`          | filling a newly declared optional card field across existing cards                                                                        |
-| `starting-an-app`                  | turning this template into a new app: the rename, the locales, the design direction                                                       |
-| `recording-architecture-decisions` | `docs/architecture/`, or whether a change owes an ADR: a boundary, persistence shape, external contract, provider, or security model      |
-| `designing-application-core`       | domain rules, commands, queries, ports and adapters, projections, idempotency, or code that reads the clock or a timezone                 |
-| `isolating-learner-data`           | an endpoint, store method, session or token handling, job, or model tool that touches a learner's data                                    |
-| `authenticating-learners`          | sign-in, refresh or sign-out, a credential or cookie, the stand-in authenticator, or `API_COGNITO_*` and the client secret                |
-| `serving-the-api`                  | an operation handler, the request log's fields, the local run or the Lambda entry under `apps/api/`                                       |
-| `writing-infrastructure`           | a stack, construct or stage setting under `infra/`, `pnpm cdk`, the deploy role, or `.github/workflows/deploy-dev.yml`                    |
+| Skill                        | Load it when you are working on                                                                                                                        |
+| ---------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `building-web-screens`       | a screen, route, query or API call under `apps/web/src/`, or regenerating the client after a contract change                                           |
+| `localizing-ui`              | a catalog under `messages/`, a module under `apps/web/src/i18n/`, or adding a UI string                                                                |
+| `writing-typescript`         | a `.ts` module or a `.tsx` component under `packages/*/src/` or `apps/*/src/`                                                                          |
+| `designing-errors`           | an error type or an `ERR_*` code, in `packages/`, `apps/` or `scripts/`                                                                                |
+| `writing-tests`              | the body of a test under `tests/`                                                                                                                      |
+| `placing-tests`              | a new test file, a vitest project, or a coverage floor                                                                                                 |
+| `type-testing`               | an `expectTypeOf` assertion or a `@ts-expect-error` inside a test                                                                                      |
+| `writing-repo-scripts`       | a `.mjs` under `scripts/`                                                                                                                              |
+| `authoring-skills`           | a skill under `.agents/skills/`                                                                                                                        |
+| `changing-gates`             | a CI workflow, `lefthook.yml`, or a tool config                                                                                                        |
+| `managing-dependencies`      | adding, bumping, or removing a package by hand, or pinning `.mcp.json`'s MCP server versions (an open bot PR is `merge-dependabot`)                    |
+| `merge-dependabot`           | landing open Dependabot or Renovate pull requests                                                                                                      |
+| `updating-docs`              | `README.md`, `CONTRIBUTING.md`, `AGENTS.md`, or whether a change owes a doc at all                                                                     |
+| `triaging-issues`            | filing, labelling, or ranking a GitHub issue                                                                                                           |
+| `designing-ui`               | the design direction, the theme tokens in `apps/web/src/globals.css`, a shadcn/ui component, or styling any screen                                     |
+| `shipping-issues`            | ranking open issues and shipping the top one (or all) through PR, CI, and merge                                                                        |
+| `generating-cards`           | writing new cards into `content/cards/`, filling thin cells, or adding a subtopic                                                                      |
+| `reviewing-cards`            | reviewing, fixing, deleting or stamping cards; `pnpm cards:lint` errors or a non-empty `pnpm cards:queue`                                              |
+| `backfilling-card-fields`    | filling a newly declared optional card field across existing cards                                                                                     |
+| `starting-an-app`            | turning this template into a new app: the rename, the locales, the design direction                                                                    |
+| `mapping-the-architecture`   | the architecture as it stands and the patterns it adopts, or a change to a boundary, persistence shape, external contract, provider, or security model |
+| `designing-application-core` | domain rules, commands, queries, ports and adapters, projections, idempotency, or code that reads the clock or a timezone                              |
+| `isolating-learner-data`     | an endpoint, store method, session or token handling, job, or model tool that touches a learner's data                                                 |
+| `authenticating-learners`    | sign-in, refresh or sign-out, a credential or cookie, the stand-in authenticator, or `API_COGNITO_*` and the client secret                             |
+| `serving-the-api`            | an operation handler, the request log's fields, the local run or the Lambda entry under `apps/api/`                                                    |
+| `writing-infrastructure`     | a stack, construct or stage setting under `infra/`, `pnpm cdk`, the deploy role, or `.github/workflows/deploy-dev.yml`                                 |
 
 ## Security and human approval
 
@@ -364,11 +361,11 @@ names its own boundary with its neighbours.
   `backfilling-card-fields` is the owner's authorization to **commit** on a `cards/*`
   branch, and only there. It never authorizes a push, a pull request, or a merge, and
   never `--no-verify`.
-- In the `dev` AWS account, creating and deploying the resources an ADR or an issue
-  already plans needs no further ask; the owner prefers speed there. A resource with a
-  fixed monthly cost of about $10 or more (an RDS instance, a NAT gateway, a load
-  balancer) needs the owner's OK before the change that adds it, and `prod`, the
-  account's plan, Organizations and IAM access keys always stay the owner's.
+- In the `dev` AWS account, creating and deploying the resources an issue or the owner's
+  request already calls for needs no further ask; the owner prefers speed there. A
+  resource with a fixed monthly cost of about $10 or more (an RDS instance, a NAT
+  gateway, a load balancer) needs the owner's OK before the change that adds it, and
+  `prod`, the account's plan, Organizations and IAM access keys always stay the owner's.
 - Never take a learner id from a request body, a path, a query string, or a
   language-model tool argument, and never read or write learner data through a store
   that is not bound to the authenticated learner. `isolating-learner-data` holds the
