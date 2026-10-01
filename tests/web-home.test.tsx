@@ -172,6 +172,7 @@ describe("the home screen, W3a: today's portion not started", () => {
     expect(navigations()).toStrictEqual([
       [
         ["/", "page"],
+        ["/talk", null],
         ["/records", null],
         ["/settings", null],
       ],
@@ -184,12 +185,30 @@ describe("the home screen, W3a: today's portion not started", () => {
     expect(screen.queryByRole("heading", { name: ja.NotFound.title })).toBeNull();
   });
 
+  it("follows the talk tab to /talk, which marks it current and is no missing page", async () => {
+    serveHome(homeView({ kind: "ready", streak: COUNT }));
+    await renderApp("/");
+    fireEvent.click(screen.getByRole("link", { name: ja.Nav.talk }));
+    await settle();
+    expect(where()).toBe("/talk");
+    expect(navigations()).toStrictEqual([
+      [
+        ["/", null],
+        ["/talk", "page"],
+        ["/records", null],
+        ["/settings", null],
+      ],
+    ]);
+    expect(screen.queryByRole("heading", { name: ja.NotFound.title })).toBeNull();
+  });
+
   it("marks home current when the address carries a query", async () => {
     serveHome(homeView({ kind: "ready", streak: COUNT }));
     await renderApp("/?utm_source=x");
     expect(navigations()).toStrictEqual([
       [
         ["/", "page"],
+        ["/talk", null],
         ["/records", null],
         ["/settings", null],
       ],
@@ -496,6 +515,7 @@ describe("the home screen before and instead of the home view", () => {
     expect(navigations()).toStrictEqual([
       [
         ["/", "page"],
+        ["/talk", null],
         ["/records", null],
         ["/settings", null],
       ],

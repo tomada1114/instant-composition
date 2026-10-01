@@ -2,7 +2,17 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { useEffect, useState } from "react";
 import { describe, expect, it, vi } from "vitest";
 
-import { Button, cn, Segmented, Sheet } from "@instant-composition/web";
+import {
+  ANSWER_FIELD_MAX,
+  AnswerField,
+  Button,
+  cn,
+  HiddenAnswer,
+  Segmented,
+  Sheet,
+  TalkLine,
+  WaitingLine,
+} from "@instant-composition/web";
 
 // The shadcn/ui button copied into the web client, the `cn` it calls, and the
 // sheet. What is asserted is the wiring, not the styling: that a caller's own
@@ -197,5 +207,111 @@ describe("Segmented", () => {
     expect(onWindowKey).not.toHaveBeenCalled();
     fireEvent.keyDown(screen.getByRole("radio", { name: "Beta" }), { key: "Escape" });
     expect(onWindowKey).toHaveBeenCalledOnce();
+  });
+});
+
+describe("AnswerField", () => {
+  function Field({ onSend }: Readonly<{ onSend: () => void }>) {
+    const [value, setValue] = useState("");
+    return (
+      <AnswerField label="Answer" value={value} onChange={setValue} onSend={onSend} />
+    );
+  }
+
+  it("sends on Enter instead of breaking the line", () => {
+    const onSend = vi.fn();
+    render(<Field onSend={onSend} />);
+    const field = screen.getByRole("textbox", { name: "Answer" });
+    fireEvent.change(field, { target: { value: "I was swamped." } });
+    const enter = fireEvent.keyDown(field, { key: "Enter" });
+    expect(onSend).toHaveBeenCalledOnce();
+    expect(enter).toBe(false);
+    expect(field).toHaveValue("I was swamped.");
+  });
+
+  it("does not send on an Enter the browser marks as composing", () => {
+    const onSend = vi.fn();
+    render(<Field onSend={onSend} />);
+    fireEvent.keyDown(screen.getByRole("textbox"), { key: "Enter", isComposing: true });
+    expect(onSend).not.toHaveBeenCalled();
+  });
+
+  it("does not send while an input method's composition is open", () => {
+    const onSend = vi.fn();
+    render(<Field onSend={onSend} />);
+    const field = screen.getByRole("textbox");
+    fireEvent.compositionStart(field);
+    fireEvent.keyDown(field, { key: "Enter" });
+    expect(onSend).not.toHaveBeenCalled();
+  });
+
+  it("does not send on the Enter that arrives just after a composition ends, as Safari's does", () => {
+    const onSend = vi.fn();
+    render(<Field onSend={onSend} />);
+    const field = screen.getByRole("textbox");
+    fireEvent.compositionStart(field);
+    fireEvent.compositionEnd(field);
+    fireEvent.keyDown(field, { key: "Enter" });
+    expect(onSend).not.toHaveBeenCalled();
+  });
+
+  it("ignores keys other than Enter", () => {
+    const onSend = vi.fn();
+    render(<Field onSend={onSend} />);
+    fireEvent.keyDown(screen.getByRole("textbox"), { key: "a" });
+    expect(onSend).not.toHaveBeenCalled();
+  });
+
+  it("stops input at 300 characters, with no spell checking", () => {
+    render(<Field onSend={vi.fn()} />);
+    const field = screen.getByRole("textbox");
+    expect(ANSWER_FIELD_MAX).toBe(300);
+    expect(field).toHaveAttribute("maxlength", "300");
+    expect(field).toHaveAttribute("spellcheck", "false");
+    expect(field).toHaveAttribute("autocorrect", "off");
+  });
+});
+
+describe("TalkLine and WaitingLine", () => {
+  it("puts the speaker over the body, and marks only the current turn", () => {
+    render(
+      <ul>
+        <TalkLine speaker="Partner">Long time no see.</TalkLine>
+        <TalkLine speaker="You" current>
+          I was swamped.
+        </TalkLine>
+      </ul>,
+    );
+    const [earlier, current] = screen.getAllByRole("listitem");
+    expect(earlier).toHaveTextContent("PartnerLong time no see.");
+    expect(earlier).not.toHaveAttribute("data-current");
+    expect(current).toHaveAttribute("data-current");
+  });
+
+  it("shows the next speaker over a still ellipsis a screen reader skips", () => {
+    render(
+      <ul>
+        <WaitingLine speaker="Teacher" />
+      </ul>,
+    );
+    const line = screen.getByRole("listitem");
+    expect(line).toHaveTextContent("Teacher…");
+    expect(screen.getByText("…")).toHaveAttribute("aria-hidden", "true");
+  });
+});
+
+describe("HiddenAnswer", () => {
+  it("draws one bar per word, as wide as the word, and reads only its label", () => {
+    const { container } = render(
+      <HiddenAnswer answer="I've been  swamped" label="Hidden" />,
+    );
+    const bars = container.querySelectorAll("[data-slot=hidden-word]");
+    expect([...bars].map((bar) => (bar as HTMLElement).style.width)).toEqual([
+      "4ch",
+      "4ch",
+      "7ch",
+    ]);
+    expect(container).toHaveTextContent(/^Hidden$/u);
+    expect(container.textContent).not.toContain("swamped");
   });
 });

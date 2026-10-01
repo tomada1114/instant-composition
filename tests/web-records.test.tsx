@@ -245,6 +245,7 @@ describe("the records screen, W10", () => {
     expect(navigations()).toStrictEqual([
       [
         ["/", null],
+        ["/talk", null],
         ["/records", "page"],
         ["/settings", null],
       ],
@@ -473,6 +474,7 @@ describe("the records screen before and instead of its read", () => {
     expect(navigations()).toStrictEqual([
       [
         ["/", null],
+        ["/talk", null],
         ["/records", "page"],
         ["/settings", null],
       ],
@@ -489,6 +491,7 @@ describe("the records screen before and instead of its read", () => {
     expect(navigations()).toStrictEqual([
       [
         ["/", null],
+        ["/talk", null],
         ["/records", "page"],
         ["/settings", null],
       ],

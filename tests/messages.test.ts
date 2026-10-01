@@ -370,6 +370,7 @@ const MESSAGE_KEYS = [
   "Home.loadFailed.reload",
   "Nav.label",
   "Nav.home",
+  "Nav.talk",
   "Nav.records",
   "Nav.settings",
   "Landing.brand",

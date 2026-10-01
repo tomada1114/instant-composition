@@ -425,7 +425,7 @@ describe("the built web client, served by `vite preview`", () => {
   // Every route is the client's: the host answers any path with the same
   // document, and the router decides what it shows — a page it does not know
   // included.
-  it.each(["/records", "/drill", "/no-such-page"])(
+  it.each(["/records", "/talk", "/drill", "/no-such-page"])(
     "answers the client route %s with the same document",
     async (route) => {
       const response = await fetch(`${baseUrl}${route}`);
