@@ -14,7 +14,7 @@ to the design's names.
 | `kbd`                     | `side`: `end` (default), `start`                                  | hidden until the learner has pressed a key (`keys:` variant)                   |
 | `icon-button`             | tile (default), `plain`                                           | default, focus, pressed; sound adds `aria-pressed`                             |
 | `eyebrow`                 | —                                                                 | —                                                                              |
-| `tab-bar`                 | — (home, records, settings)                                       | current (`aria-current="page"`), other; focus                                  |
+| `tab-bar`                 | — (home, talk, records, settings)                                 | current (`aria-current="page"`), other; focus                                  |
 | `tabs`                    | — (settings: cards, level, app; records: overview, weak, history) | current (`aria-selected`), other; focus                                        |
 | `grade-pair`              | — (× and ○ side by side)                                          | default, focus, pressed; only on a back the learner flipped                    |
 | `drill-face`              | `front`, `back-self`, `back-timeout`                              | with or without the "again" mark; during the ○ light                           |
@@ -28,6 +28,10 @@ to the design's names.
 | `select-card`             | one column (default), `compact` (two across)                      | unselected, selected (white border + filled check), locked (the last one kept) |
 | `segmented`               | one row (cards a day, s per card, auto/manual); `columns`         | one selected; none (a level not yet measured)                                  |
 | `toggle`                  | —                                                                 | on, off                                                                        |
+| `answer-field`            | — (the talk's Japanese and English fields)                        | empty (placeholder), typing, focus (white underline), disabled                 |
+| `talk-line`               | — (partner, you, teacher)                                         | current (white), earlier (muted)                                               |
+| `waiting-line`            | —                                                                 | whoever speaks next, over a still "…"                                          |
+| `hidden-answer`           | — (W3f)                                                           | —                                                                              |
 | `key-picker`              | — (settings: the ○ and × keys)                                    | showing its key; waiting (white fill, "press a key"); refused (status line)    |
 | `ring-stack`              | `concentric` (up to 4 topics), `grid` (all 5)                     | with a new segment, without, empty (grooves + one line)                        |
 | `week-row`                | —                                                                 | done, done today, open (can be made up), missed, upcoming                      |
@@ -105,14 +109,14 @@ Duolingo, BoldVoice, LookUp, Kann) and drop it for a quiz — the owner chose ot
 #267, so a round can be left mid-way (to change a setting just noticed); the top edge
 still stays the drill's, for its ticks.
 
-- Fixed to the column's bottom edge: `bg-background`, three equal cells across the
-  column over one hairline (`border-t border-border`), each `--tab-bar-height` (49, an
-  iOS tab bar) including the hairline. It sits `--column-inset` up from the window's
-  edge on a `wide` window, or a phone's home-indicator inset up where that is larger
+- Fixed to the column's bottom edge: `bg-background`, four equal cells across the column
+  over one hairline (`border-t border-border`), each `--tab-bar-height` (49, an iOS tab
+  bar) including the hairline. It sits `--column-inset` up from the window's edge on a
+  `wide` window, or a phone's home-indicator inset up where that is larger
   (`viewport-fit=cover` makes `env(safe-area-inset-bottom)` readable), the canvas under
   it covering what scrolls past.
-- A cell is a link: the 20 glyph (house, bars, gear) over its name in `caption`, 4
-  apart, centred. The whole cell is the hit area.
+- A cell is a link: the 20 glyph (house, speech bubble, bars, gear) over its name in
+  `caption`, 4 apart, centred. The whole cell is the hit area.
 - Current: `text-foreground`, plus a 24 × 2 white pill on the hairline above it, so the
   state does not rest on grey against white alone. Other: `text-muted-foreground`. Never
   the accent, never a filled tile or a pill behind the glyph.
@@ -135,6 +139,35 @@ still stays the drill's, for its ticks.
 
 `apps/web/src/lib/tab-bar.tsx` is this recipe, and
 `apps/web/src/drill/use-leave-guard.ts` the drill's question.
+
+The four tabs, in order: home (`/`), talk (`/talk`), records, settings — the owner's
+call in #322, recorded in the ledger. The talk glyph is a speech bubble's outline drawn
+like the others.
+
+## Talk parts
+
+Built for the talk screen (`building-the-talk-activity`'s `ux-screens.md`), from the
+tokens the drill already uses.
+
+- **`answer-field`.** A `textarea` with no border and no fill: one
+  `border-b border-border` underline that turns `border-foreground` on focus,
+  `text-body` on the canvas, its placeholder `text-muted-foreground`. It starts one line
+  tall (at least the 44 touch height) and grows with its text. It takes at most 300
+  characters — input stops there — with spell checking, auto-correct and
+  auto-capitalising off. Enter sends and never breaks the line; the Enter that confirms
+  an input method's conversion (`isComposing`, or `keyCode` 229 on Safari) does not
+  send. Named by its step's label.
+- **`talk-line`.** One turn: the speaker's `eyebrow` over the body in `text-body`. No
+  frame, no bubble, no fill; lines in the list are parted by a hairline
+  (`border-t border-border`, none above the first) with 12 above and below. The current
+  turn is `text-foreground`; earlier turns drop to `text-muted-foreground`.
+- **`waiting-line`.** The `talk-line` shape with whoever speaks next as the eyebrow and
+  a still "…" in `text-muted-foreground` as the body, hidden from a screen reader. No
+  spinner, blink or skeleton.
+- **`hidden-answer`.** Where the model answer stood once it is hidden (W3f): one 2-tall
+  `bg-muted-foreground` pill per word, each as wide as its word in `ch`, wrapping like
+  the sentence did, so its shape stays as a cue while its words do not. A screen reader
+  hears only its label ("hidden").
 
 ## In-page tabs (`tabs`)
 

@@ -71,6 +71,15 @@ export function HomeGlyph({ className }: GlyphProps): ReactElement {
   );
 }
 
+/** A speech bubble: the talk tab. */
+export function TalkGlyph({ className }: GlyphProps): ReactElement {
+  return (
+    <Glyph className={className}>
+      <path d="M4.5 4h11a1.5 1.5 0 011.5 1.5v6.5a1.5 1.5 0 01-1.5 1.5H9l-3.75 3v-3H4.5A1.5 1.5 0 013 12V5.5A1.5 1.5 0 014.5 4z" />
+    </Glyph>
+  );
+}
+
 export function ChartGlyph({ className }: GlyphProps): ReactElement {
   return (
     <Glyph className={className}>

@@ -70,6 +70,7 @@
   "Nav": {
     "label": "メニュー",
     "home": "ホーム",
+    "talk": "会話",
     "records": "記録",
     "settings": "設定"
   },
