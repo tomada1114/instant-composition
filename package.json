@@ -34,7 +34,7 @@
     "test:related": "vitest related --run --project=unit --project=component --project=automation",
     "db:up": "docker compose up --detach --wait dynamodb",
     "db:down": "docker compose down",
-    "api": "node --import ./scripts/ts-hooks.mjs apps/api/src/main.ts",
+    "api": "node --env-file-if-exists=.env.local --import ./scripts/ts-hooks.mjs apps/api/src/main.ts",
     "agents:sync": "node scripts/sync-agents.mjs",
     "agents:check": "node scripts/sync-agents.mjs --check",
     "repo:labels": "node scripts/sync-labels.mjs",

@@ -66,6 +66,11 @@ describe("the processes pnpm dev runs", () => {
     );
   });
 
+  it("hands `.env.local` to the API alone, through Node's own optional loader", () => {
+    expect(api?.args).toContain("--env-file-if-exists=.env.local");
+    expect(web?.args.some((arg) => arg.includes("env-file"))).toBe(false);
+  });
+
   it("runs the web client's own Vite, from its own directory, as `pnpm web` does", () => {
     const webRoot = path.join(repoRoot, "apps", "web");
     expect(script(path.join(webRoot, "package.json"), "dev")).toBe("vite");
