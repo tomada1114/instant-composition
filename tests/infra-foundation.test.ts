@@ -37,7 +37,7 @@ function foundationTemplate(stage: Stage): Template {
 // are its `LEARNER_TABLE_KEY`, which infra/ may not import.
 describe("the foundation stack's learner table", () => {
   it.each<Stage>(["dev", "prod"])(
-    "is one on-demand table keyed by PK and SK in %s",
+    "is one on-demand table keyed by PK and SK, expiring items by expiresAt, in %s",
     (stage) => {
       const template = foundationTemplate(stage);
       expect(Object.keys(template.findResources("AWS::DynamoDB::Table"))).toHaveLength(
@@ -54,6 +54,7 @@ describe("the foundation stack's learner table", () => {
             { AttributeName: "SK", AttributeType: "S" },
           ],
           BillingMode: "PAY_PER_REQUEST",
+          TimeToLiveSpecification: { AttributeName: "expiresAt", Enabled: true },
         }),
       ).not.toThrow();
     },

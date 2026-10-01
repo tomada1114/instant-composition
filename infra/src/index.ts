@@ -10,14 +10,19 @@ export {
   AppStack,
   DISTRIBUTION_ID_OUTPUT,
   SPA_BUCKET_NAME_OUTPUT,
+  TALK_ROUTE_PATHS,
+  TALK_ROUTE_THROTTLE,
   WEB_URL_OUTPUT,
   webClientSecretParameterName,
   type AppStackProps,
 } from "./app-stack";
 export {
+  API_FUNCTION_TIMEOUT_SECONDS,
   LAMBDA_CATALOG_PATH,
   PARAMETERS_EXTENSION_LAYER_ARN,
+  TALK_MODEL,
   type ApiFunctionProps,
+  type TalkModelSetting,
 } from "./api-function";
 export {
   addBedrockBudget,
