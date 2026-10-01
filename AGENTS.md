@@ -23,12 +23,15 @@ checked.
 Instant Composition is a Japanese→English instant-composition drill for Japanese
 learners of English: a card shows a Japanese sentence and the learner says it in English
 before the timer runs out, then checks the answer. Cards are pre-generated JSON under
-`content/`, written ahead of time by Claude Code skills, so the application calls no
-language model at runtime. It is a pnpm workspace in ESM-only TypeScript: a React
-single-page app under `apps/web` (Vite, Tailwind v4, components derived from shadcn/ui)
-calls an HTTP API under `apps/api` (Hono), which keeps progress in DynamoDB through the
-packages under `packages/` — DynamoDB local, in a container, on a checkout. It was
-started from a template whose language-model layer was removed whole.
+`content/`, written ahead of time by Claude Code skills, so the drill calls no language
+model at runtime; the talk activity, a short scripted conversation, does — the server
+asks a model for the scene, the judgment and the partner's reply inside the request,
+OpenRouter today, a scripted stand-in on a run with no key. It is a pnpm workspace in
+ESM-only TypeScript: a React single-page app under `apps/web` (Vite, Tailwind v4,
+components derived from shadcn/ui) calls an HTTP API under `apps/api` (Hono), which
+keeps progress in DynamoDB through the packages under `packages/` — DynamoDB local, in a
+container, on a checkout. It was started from a template whose language-model layer was
+removed whole.
 
 It is private: nothing here is packed, published, or consumed as a tarball, so there is
 no published `engines.node` floor — `.node-version` and `devEngines.runtime` carry the

@@ -63,8 +63,9 @@ step (W3a) calls nothing: the client sends the Japanese and the English together
   `ERR_MODEL_UNAVAILABLE` (503), which W2 and W3g answer with 「もう一度」.
 - `recordRecital` is fire-and-forget for the client: 「言えた」 shows the held reply at
   once, and a failed recital record is dropped rather than shown.
-- `bindRoutes` in `apps/api/src/routes.ts` takes only `{roundId}` today; these routes
-  need `{talkId}` and `{turn}`, validated the same way.
+- `bindRoutes` in `apps/api/src/routes.ts` holds each handler to the path parameters its
+  route names — `{roundId}`, `{talkId}` and `{turn}` — and each is validated with its
+  contracts schema before the command runs.
 
 ## Data
 
