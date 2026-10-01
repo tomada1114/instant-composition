@@ -576,6 +576,7 @@ describe("the settings screen, W12 measuring again", () => {
     expect(navigations()).toStrictEqual([
       [
         ["/", null],
+        ["/talk", null],
         ["/records", null],
         ["/settings", "page"],
       ],
@@ -881,6 +882,7 @@ describe("the settings screen before and instead of its read", () => {
     expect(navigations()).toStrictEqual([
       [
         ["/", null],
+        ["/talk", null],
         ["/records", null],
         ["/settings", "page"],
       ],
@@ -897,6 +899,7 @@ describe("the settings screen before and instead of its read", () => {
     expect(navigations()).toStrictEqual([
       [
         ["/", null],
+        ["/talk", null],
         ["/records", null],
         ["/settings", "page"],
       ],

@@ -26,6 +26,7 @@ import type { RoundKind } from "./openapi";
 import { RecordsPage } from "./records/records-page";
 import { SettingsPage } from "./settings/settings-page";
 import { RecapPage } from "./summary/recap-page";
+import { TalkPage } from "./talk/talk-page";
 
 /**
  * The route tree, written as code rather than generated from files:
@@ -92,6 +93,12 @@ const settingsRoute = createRoute({
   },
 });
 
+const talkRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: "talk",
+  component: TalkPage,
+});
+
 const welcomeRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: "welcome",
@@ -104,6 +111,7 @@ const routeTree = rootRoute.addChildren([
   recordsRoute,
   recapRoute,
   settingsRoute,
+  talkRoute,
   welcomeRoute,
 ]);
 

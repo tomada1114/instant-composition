@@ -160,6 +160,7 @@ describe("the recap screen, W9r: re-reading today", () => {
     expect(navigations()).toStrictEqual([
       [
         ["/", null],
+        ["/talk", null],
         ["/records", null],
         ["/settings", null],
       ],

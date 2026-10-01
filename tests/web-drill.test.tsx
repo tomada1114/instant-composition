@@ -508,6 +508,7 @@ describe("the drill's tab bar", () => {
   const TABS = [
     [
       ["/", null],
+      ["/talk", null],
       ["/records", null],
       ["/settings", null],
     ],

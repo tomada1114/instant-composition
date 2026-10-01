@@ -396,6 +396,7 @@ describe("SummaryScreen after a round, over the tab bar", () => {
     expect(navigations()).toStrictEqual([
       [
         ["/", null],
+        ["/talk", null],
         ["/records", null],
         ["/settings", null],
       ],
