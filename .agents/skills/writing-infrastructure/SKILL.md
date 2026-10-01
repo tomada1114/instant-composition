@@ -36,15 +36,16 @@ a second design.
   (on in `prod`, off in `dev` by the owner's choice), the user pool's self sign-up
   (`SELF_SIGN_UP`: off in `dev`, where only an administrator creates users), the local
   web app client and its sign-in domain (`WEB_CLIENT`: `dev` only, with `127.0.0.1:5173`
-  redirects; `prod` gets one once it has a URL), and the `deploy-access` and `app`
-  stacks, which only `dev` builds (`buildApp` in `infra/src/app.ts`): `prod` is not
-  hosted until the production-guard phase, so it builds `foundation` alone.
-- Every stage deploys to `ap-northeast-1` (`REGION`). No stack reads `process.env`:
-  `infra/tsconfig.json` loads no Node types, so a setting that is not in the CDK context
-  fails to compile.
+  redirects; `prod` gets one once it has a URL), and the `deploy-access`, `edge` and
+  `app` stacks, which only `dev` builds (`buildApp` in `infra/src/app.ts`): `prod` is
+  not hosted until the production-guard phase, so it builds `foundation` alone.
+- Every stage deploys to `ap-northeast-1` (`REGION`), except `edge`, which holds what
+  CloudFront can take from us-east-1 alone (`EDGE_REGION`). No stack reads
+  `process.env`: `infra/tsconfig.json` loads no Node types, so a setting that is not in
+  the CDK context fails to compile.
 - A stack's construct id is the same in every stage (`foundation`, `deploy-access`,
-  `app`), so a CLI command names it the same way. Its CloudFormation name carries the
-  stage: `instant-composition-<stage>-<id>`.
+  `edge`, `app`), so a CLI command names it the same way. Its CloudFormation name
+  carries the stage: `instant-composition-<stage>-<id>`.
 - The CDK CLI's usage telemetry is off for this app: `infra/cdk.json`'s `context` sets
   `"cli-telemetry": false`, so neither a local `pnpm cdk` run nor `Deploy dev` reports
   it. `pnpm cdk cli-telemetry --status` from `infra/` confirms it.
@@ -73,13 +74,16 @@ a second design.
 - **The hand-off.** `foundation` publishes its identifiers as free standard-tier
   `String` parameters under `/instant-composition/<stage>/foundation/`
   (`FOUNDATION_PARAMETERS` in `infra/src/foundation-parameters.ts` names them), and
-  `app` resolves them by name at deploy time. Never an export or `Fn::GetStackOutput`:
-  an imported export locks the exporting value (ADR-0009), and
-  `tests/infra-app-stack.test.ts` fails on either. The stack outputs
-  (`LearnerTableName`, `UserPoolId`, `WebClientId`, `SignInDomainUrl`; `app`'s `WebUrl`,
-  `SpaBucketName`, `DistributionId`) carry no `exportName` and are for people and a
-  local run, which reads them with `aws cloudformation describe-stacks`. No client
-  secret is ever an output.
+  `app` resolves them by name at deploy time. Never an export: an imported export locks
+  the exporting value (ADR-0009). Parameter Store is regional, so `edge`'s web ACL ARN
+  is the one value `app` reads with `Fn::GetStackOutput`, naming us-east-1 and `edge`'s
+  `WebAclArn` output. `tests/infra-app-stack.test.ts` fails on an export and on any
+  other `Fn::GetStackOutput`. CDK's own cross-stack references are never used: the tests
+  synthesize without `cdk.json`'s context, so they would build a different template than
+  a deploy. The stack outputs (`LearnerTableName`, `UserPoolId`, `WebClientId`,
+  `SignInDomainUrl`; `app`'s `WebUrl`, `SpaBucketName`, `DistributionId`) carry no
+  `exportName` and are for people and a local run, which reads them with
+  `aws cloudformation describe-stacks`. No client secret is ever an output.
 - **`app`** (`dev` only) holds what is rebuilt often: the distribution, the SPA bucket,
   the HTTP API, the API function, the hosted web app client and its secret, the alarms,
   and the Bedrock budget with its action (`infra/src/bedrock-budget.ts`). It depends on
@@ -88,6 +92,13 @@ a second design.
   `foundation` must never depend on `app` (owner, 2026-09-28, ADR-0009). Read
   [references/app-stack.md](references/app-stack.md) before changing any construct in
   it: each holds a decision a plausible edit would undo.
+- **`edge`** (`dev` only, us-east-1) holds the `CLOUDFRONT`-scope WAF web ACL that the
+  distribution's flat-rate plan requires and no other Region can hold. It allows every
+  request and has no rule, since ADR-0009 gives `dev` none; a rule counts against the
+  Free plan's five, and a rule group of our own blocks the plan. `app` depends on it for
+  deploy order alone. us-east-1 has its own CDK bootstrap, run once by hand from
+  `infra/` (`pnpm cdk bootstrap aws://<account-id>/us-east-1`); a stack in a new Region
+  needs the same before its first deploy.
 - **`deploy-access`** (`dev` only) holds the GitHub OIDC identity provider and the
   deploy role. The owner deployed it once by hand, with
   `pnpm cdk deploy -c stage=dev deploy-access`, because the workflow needs the role
@@ -106,7 +117,8 @@ a second design.
   subject.
 - **Permission:** only `sts:AssumeRole` on this account's `cdk-*` bootstrap roles, which
   carry the deploy permissions themselves. The owner chose this scope over administrator
-  access. A new resource type needs no change to the role.
+  access. A new resource type needs no change to the role, and neither does a new
+  Region: a bootstrap role's name carries its Region, so `cdk-*` matches every one.
 - The role's ARN reaches the workflow as the repository **variable**
   `AWS_DEPLOY_ROLE_ARN`, never as a secret and never in the tree. No long-lived AWS
   access key exists anywhere, for a person or for CI.
@@ -139,10 +151,10 @@ a second design.
 
 - `.github/workflows/deploy-dev.yml` runs on every push to `main`, with no approval
   step. It runs `pnpm web:build`, assumes the deploy role, and deploys `foundation`,
-  then `app`, each with `--exclusively` so neither command drags in the other. Deploys
-  queue in merge order and are never cancelled. `deploy-access` is never deployed from
-  CI. Deploying another stack from CI is a change to those commands, made per
-  `changing-gates`.
+  then `edge`, then `app`, each with `--exclusively` so no command drags in another.
+  Deploys queue in merge order and are never cancelled. `deploy-access` is never
+  deployed from CI. Deploying another stack from CI is a change to those commands, made
+  per `changing-gates`.
 - The web build reaches the SPA bucket through the `app` stack, never through `aws s3`:
   `-c web-dist=<apps/web/dist>` adds two `BucketDeployment`s (`spa-deployment.ts`), run
   by the bootstrap roles, so the deploy role keeps its one permission. Fingerprinted

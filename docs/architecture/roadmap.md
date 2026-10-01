@@ -274,8 +274,8 @@ exit was observed:
 **Scope.**
 
 - The `app` stack in `dev`:
-  - CloudFront on pay-as-you-go pricing, with settings the flat-rate Free plan admits,
-    until the account leaves the Free Tier, and on that plan afterwards (#173,
+  - CloudFront on the flat-rate Free plan, with its web ACL in a us-east-1 `edge` stack;
+    pay-as-you-go until the account moved to the Paid plan on 2026-09-30 (#173,
     [ADR-0009](adr/0009-aws-topology-environments-and-operations.md));
   - S3 for the SPA;
   - an API Gateway HTTP API;
