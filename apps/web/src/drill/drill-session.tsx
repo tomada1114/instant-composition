@@ -4,7 +4,6 @@ import { useTranslations } from "use-intl";
 
 import { TabBar } from "../lib/tab-bar";
 import type { GradeKeys, RoundKind, RoundPayload } from "../openapi";
-import { sessionStore } from "./answer-queue";
 import { useAnswerQueue, useQueuedDrill, type ArrivedQueue } from "./answer-sync";
 import { initDrill } from "./drill-init";
 import { progress, type DrillState } from "./drill-state";
@@ -16,7 +15,6 @@ import { PauseSheet } from "./pause-sheet";
 import { ReadyScreen } from "./ready-screen";
 import { browserSound } from "./sound";
 import { Toast } from "./toast";
-import { loadSubmission, useKeptSubmission } from "./typed-submission";
 import { useAnnouncement } from "./use-announcement";
 import {
   useDrillClock,
@@ -49,8 +47,6 @@ function startDrill({
     answered,
     retries: round.retries,
     intro: !pressed || (round.kind === "placement" && answered.length === 0),
-    typed: round.answerMode === "typed",
-    submitted: loadSubmission(sessionStore(), round.id),
   });
 }
 
@@ -96,7 +92,6 @@ export function DrillSession({
     },
   });
   const announcement = useAnnouncement(state, round);
-  useKeptSubmission(state, sessionStore());
   useDrillClock(state, dispatch);
   const leave = useLeaveGuard(state, dispatch);
 
@@ -112,8 +107,6 @@ export function DrillSession({
       dispatch({ type: "grade", result: action.result, at, wall, key });
     } else if (action.type === "flip") {
       dispatch({ type: "flip", at, wall });
-    } else if (action.type === "submit") {
-      dispatch({ type: "submit", text: action.text, at });
     } else {
       if (action.type === "resume") leave.stay();
       dispatch({ type: action.type, at });
@@ -184,7 +177,6 @@ export function DrillSession({
         <PauseSheet
           position={resumeAt}
           gradeKeys={gradeKeys}
-          typed={state.typed}
           onQuit={goHome}
           onContinue={resume}
         />

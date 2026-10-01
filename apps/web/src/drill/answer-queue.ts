@@ -30,8 +30,7 @@ function isAnswer(value: unknown): value is AnswerInput {
     PASSES.includes(entry.pass) &&
     RESULTS.includes(entry.result) &&
     Number.isInteger(entry.elapsedMs) &&
-    (entry.answeredAt === undefined || Number.isInteger(entry.answeredAt)) &&
-    (entry.text === undefined || typeof entry.text === "string")
+    (entry.answeredAt === undefined || Number.isInteger(entry.answeredAt))
   );
 }
 

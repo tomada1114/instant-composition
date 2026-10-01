@@ -18,7 +18,6 @@ import { CardBack, CardFront } from "./flashcard";
 import type { DrillKeyAction } from "./keys";
 import { TimerBar } from "./timer-bar";
 import { TopStrip } from "./top-strip";
-import { TypedAnswer } from "./typed-answer";
 
 type OnAction = (action: DrillKeyAction) => void;
 
@@ -93,8 +92,7 @@ function Actions({
 /**
  * W4 to W7: the ticks and top strip, the card, the timer under a front and
  * the actions, fixed top to bottom above the tab bar so the page itself never
- * scrolls. A typed round's front has a field and its submit button there
- * instead, and no timer.
+ * scrolls.
  */
 export function CardScreen({
   state,
@@ -131,51 +129,29 @@ export function CardScreen({
           card={content}
           retry={card.pass === "retry"}
           hidden={state.paused}
-          {...(state.typed
-            ? {}
-            : {
-                onFlip: () => {
-                  onAction({ type: "flip" });
-                },
-              })}
+          onFlip={() => {
+            onAction({ type: "flip" });
+          }}
         />
       ) : phase.kind === "back" ? (
-        <CardBack
-          card={content}
-          mode={phase.mode}
-          elapsedMs={phase.elapsedMs}
-          text={phase.text}
-        />
+        <CardBack card={content} mode={phase.mode} elapsedMs={phase.elapsedMs} />
       ) : phase.kind === "feedback" ? (
         <CardBack
           card={content}
           mode="self"
           elapsedMs={phase.elapsedMs}
           feedback={phase}
-          text={phase.text}
         />
       ) : null}
-      {phase.kind === "front" && state.typed ? (
-        <TypedAnswer
-          key={`${card.pass}:${card.cardId}`}
-          hidden={state.paused}
-          onSubmit={(text) => {
-            onAction({ type: "submit", text });
-          }}
-        />
-      ) : (
-        <>
-          <div className="h-7">
-            {phase.kind === "front" ? (
-              <TimerBar
-                remainingMs={remainingMs(state) ?? content.limitMs}
-                limitMs={content.limitMs}
-              />
-            ) : null}
-          </div>
-          <Actions phase={phase} gradeKeys={gradeKeys} onAction={onAction} />
-        </>
-      )}
+      <div className="h-7">
+        {phase.kind === "front" ? (
+          <TimerBar
+            remainingMs={remainingMs(state) ?? content.limitMs}
+            limitMs={content.limitMs}
+          />
+        ) : null}
+      </div>
+      <Actions phase={phase} gradeKeys={gradeKeys} onAction={onAction} />
     </main>
   );
 }

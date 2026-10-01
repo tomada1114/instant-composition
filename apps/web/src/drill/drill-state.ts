@@ -21,15 +21,12 @@ export type DrillPhase =
       readonly elapsedMs: number;
       /** When the back appeared, for the grade-key lock. */
       readonly since: number;
-      /** What the learner typed in a typed round, when they typed anything. */
-      readonly text?: string;
     }
   | {
       readonly kind: "feedback";
       readonly result: "ok" | "ng";
       readonly fast: boolean;
       readonly elapsedMs: number;
-      readonly text?: string;
     }
   | { readonly kind: "finishing" };
 
@@ -42,7 +39,6 @@ export type DrillEvent =
   | { readonly type: "start" | "shown" | "next"; readonly at: number }
   | { readonly type: "tick" | "flip"; readonly at: number; readonly wall: number }
   | { readonly type: "advance" | "pause" | "hide" | "resume"; readonly at: number }
-  | { readonly type: "submit"; readonly text: string; readonly at: number }
   | {
       readonly type: "grade";
       readonly result: "ok" | "ng";
@@ -62,15 +58,6 @@ export interface AnswerInput {
   readonly elapsedMs: number;
   /** Epoch ms on the wall clock; one stored by an earlier build of the queue may lack it. */
   readonly answeredAt?: number;
-  readonly text?: string;
-}
-
-/** A typed card's answer submitted but not yet graded, which a resumed round opens on. */
-export interface Submission {
-  readonly cardId: string;
-  readonly pass: Pass;
-  readonly elapsedMs: number;
-  readonly text?: string;
 }
 
 export interface DrillInit {
@@ -87,15 +74,11 @@ export interface DrillInit {
   }[];
   readonly retries: boolean;
   readonly intro: boolean;
-  /** A typed round runs no clock out and takes each answer as text; spoken when absent. */
-  readonly typed?: boolean;
-  readonly submitted?: Submission | undefined;
 }
 
 export interface DrillState {
   readonly roundId: string;
   readonly retries: boolean;
-  readonly typed: boolean;
   readonly limits: Readonly<Record<string, number>>;
   readonly paces: Readonly<Record<string, number>>;
   /** First-pass cards still to show when this session began. */

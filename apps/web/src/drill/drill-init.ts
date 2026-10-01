@@ -1,11 +1,4 @@
-import {
-  currentCard,
-  FRESH_FRONT,
-  limitOf,
-  type DrillInit,
-  type DrillState,
-  type Submission,
-} from "./drill-state";
+import { FRESH_FRONT, type DrillInit, type DrillState } from "./drill-state";
 
 function dealt(init: DrillInit): DrillState {
   const shown = (id: string): boolean => init.limits[id] !== undefined;
@@ -19,7 +12,6 @@ function dealt(init: DrillInit): DrillState {
   const base: DrillState = {
     roundId: init.roundId,
     retries: init.retries,
-    typed: init.typed ?? false,
     limits: init.limits,
     paces: init.paces,
     queue,
@@ -39,24 +31,7 @@ function dealt(init: DrillInit): DrillState {
   return { ...base, phase: { kind: "finishing" } };
 }
 
-/** Opens a typed round on the back of the card it stopped at, when that card was submitted and not yet graded. */
-function reopened(state: DrillState, submitted: Submission | undefined): DrillState {
-  const card = currentCard(state);
-  if (!state.typed || submitted === undefined || card === undefined) return state;
-  if (card.cardId !== submitted.cardId || card.pass !== submitted.pass) return state;
-  const back = {
-    kind: "back",
-    mode: "self",
-    elapsedMs: Math.min(submitted.elapsedMs, limitOf(state)),
-    since: 0,
-  } as const;
-  return {
-    ...state,
-    phase: submitted.text === undefined ? back : { ...back, text: submitted.text },
-  };
-}
-
 /** The drill a round opens on, past what the server and this tab's queue already hold. */
 export function initDrill(init: DrillInit): DrillState {
-  return reopened(dealt(init), init.submitted);
+  return dealt(init);
 }

@@ -114,8 +114,6 @@
       "titleAgain": "{count} 文で測り直します",
       "say": "英語で言う",
       "flip": "めくる",
-      "type": "英語で入力",
-      "check": "答え合わせ",
       "grade": "自分で ○ / ×",
       "start": "始める"
     },
@@ -133,9 +131,6 @@
       "comboLabel": "連続",
       "again": "もう一度",
       "flip": "めくる",
-      "typed": "英語で入力",
-      "submit": "答え合わせ",
-      "yours": "あなたの答え",
       "point": "要点",
       "seconds": "{seconds, number, ::.0} 秒",
       "said": "言えた",
@@ -147,7 +142,6 @@
     },
     "announce": {
       "front": "表。{ja}。持ち時間 {seconds} 秒",
-      "frontTyped": "表。{ja}",
       "timeout": "時間切れ。復習へ",
       "said": "言えた",
       "review": "復習へ"
@@ -302,15 +296,6 @@
     "limit": {
       "title": "1 文の持ち時間",
       "count": "{seconds} 秒",
-      "next": "次のラウンドから変わります",
-      "spokenOnly": "話して答えるときだけ使います"
-    },
-    "answer": {
-      "title": "答え方",
-      "spoken": "話して答える",
-      "typed": "入力して答える",
-      "spokenText": "話す",
-      "typedText": "入力",
       "next": "次のラウンドから変わります"
     },
     "sound": {
