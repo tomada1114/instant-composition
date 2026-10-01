@@ -102,6 +102,6 @@ filter.
   no token, no cookie, no `Authorization` header. Log the LearnerId and the command's
   name, never a request body or an email. **REQUIRED:** `designing-errors` for what an
   error may carry.
-- Text a learner wrote, such as a typed answer, goes to a language model as delimited
-  data, never as instructions. The grader has no tools, so a successful injection can
-  only change its author's own grade.
+- Text a learner wrote goes to a language model as delimited data, never as
+  instructions. The grader has no tools, so a successful injection can only change its
+  author's own grade.

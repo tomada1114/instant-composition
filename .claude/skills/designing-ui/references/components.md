@@ -17,8 +17,7 @@ to the design's names.
 | `tab-bar`                 | — (home, records, settings)                                       | current (`aria-current="page"`), other; focus                                  |
 | `tabs`                    | — (settings: cards, level, app; records: overview, weak, history) | current (`aria-selected`), other; focus                                        |
 | `grade-pair`              | — (× and ○ side by side)                                          | default, focus, pressed; only on a back the learner flipped                    |
-| `drill-face`              | `front`, `back-self`, `back-timeout`; typed: `front`, `back-self` | with or without the "again" mark; during the ○ light                           |
-| `answer-field`            | — (a typed round's front)                                         | empty (placeholder), typing, focus; kept while paused                          |
+| `drill-face`              | `front`, `back-self`, `back-timeout`                              | with or without the "again" mark; during the ○ light                           |
 | `ticks`                   | —                                                                 | done, current, current lit (○), upcoming; absent past 30 cards                 |
 | `timer-bar`               | —                                                                 | running; at 0 (fill gone)                                                      |
 | `progress`                | —                                                                 | "7 / 10" in mono; during the retry round "again 2 / 3"                         |
@@ -202,17 +201,6 @@ strip and the timer (or the actions).
 | `back-self`    | the whole prompt (`point`, muted, wrapped — never truncated) → the model answer (`answer`) → the alternates as a list between hairlines (`alt`, `text-soft`, 12 above and below each) → the key point (`point`, muted, led by a white "point" `label`) → seconds to flip at the right (`figure-sm`, "2.8 s") |
 | `back-timeout` | as `back-self`, with the return glyph and "timed out · to review" (`label`, muted) in place of the seconds                                                                                                                                                                                                   |
 
-- A typed round's faces: the `front` has no timer; the `answer-field` sits in the
-  timer's place and a `secondary` "check" button (hint "Enter") in the flip's. Its
-  `back-self` adds what was typed between the prompt and the model answer — "yours"
-  (`label`, muted) over the text (`alt`, white, `lang="en"`) — and leaves the row out
-  when nothing was typed. There is no `back-timeout`: a typed card never runs out.
-- `answer-field`: an English line on the canvas, no box — `font-latin text-alt` over a
-  hairline (`border-b border-border`), 12 above and below the text, full width;
-  placeholder "type in English" in `text-muted-foreground`; focus is the global white
-  outline. At most 300 characters (the API's cap), no spelling check or correction: what
-  was typed is what is graded. Enter submits, except the Enter that confirms an input
-  method's conversion.
 - A ○ turns the answer `text-accent` (160 ms) and lights the current tick; a × fades the
   answer to `text-muted-foreground`.
 - A fast ○ shows "fast 2.1 s" in `figure-sm text-accent` rising into place.
