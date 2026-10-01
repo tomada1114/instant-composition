@@ -7,6 +7,9 @@ import {
   roundPayloadSchema,
   roundSummarySchema,
   settingsPageViewSchema,
+  talkEndedSchema,
+  talkOpenedSchema,
+  turnResultSchema,
 } from "@instant-composition/contracts";
 
 import {
@@ -33,6 +36,40 @@ afterAll(async () => {
 });
 
 describe("the API on DynamoDB local", () => {
+  it("runs a talk to its last turn and keeps it, never found by another learner", async () => {
+    const backing = await tables.freshBacking();
+    const a = makeApi({ ...backing, authenticator: subjectAuthenticator("subject-a") });
+    const b = makeApi({
+      ...backing,
+      authenticator: subjectAuthenticator("subject-b"),
+      newLearnerId: () => learnerId("learner-b"),
+    });
+
+    const opened = talkOpenedSchema.parse(
+      await (await a.call("POST", "/v1/talks", { talkId: "t1" })).json(),
+    );
+    for (const turn of [1, 2, 3, 4, 5, 6]) {
+      const sent = await a.call("POST", "/v1/talks/t1/turns", {
+        turn,
+        japanese: "こんにちは",
+        english: turn === 2 ? null : "Hello.",
+      });
+      expect(turnResultSchema.parse(await sent.json()).reply?.closing).toBe(turn === 6);
+    }
+    const stored = await a.stores.forLearner(learnerId("learner-1")).talk("t1");
+    const other = await b.call("POST", "/v1/talks/t1/end");
+    const ended = await a.call("POST", "/v1/talks/t1/end");
+
+    expect(opened.talkId).toBe("t1");
+    expect(other.status).toBe(404);
+    expect(talkEndedSchema.parse(await ended.json())).toStrictEqual({ kept: true });
+    expect(stored?.value.status).toBe("finished");
+    expect(stored?.value.expiresAt).toBeUndefined();
+    expect(await a.stores.forLearner(learnerId("learner-1")).talk("t1")).toStrictEqual(
+      stored,
+    );
+  });
+
   it("registers the learner, then starts, records, finishes and reads back a round", async () => {
     const api = makeApi(await tables.freshBacking());
     const round = await startedPlacement(api);

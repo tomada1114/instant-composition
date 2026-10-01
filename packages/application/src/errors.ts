@@ -28,7 +28,9 @@ export type ApplicationErrorCode = ApplicationError["code"];
  * be had, which the caller may ask for again.
  *
  * @remarks
- * Kept apart from `ApplicationError` until the HTTP edge gives these codes a
- * status; `ApplicationError` is what the contract's code list must cover.
+ * Kept apart from `ApplicationError`, so a drill command's failure type names
+ * no talk code; `tests/contracts-schemas.test.ts` holds both inside the
+ * contract's code list. A `ModelFailure`'s `reason` may reach a log, never a
+ * response.
  */
 export type TalkCommandError = ApplicationError | TalkError | ModelFailure;

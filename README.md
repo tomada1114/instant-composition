@@ -10,10 +10,12 @@ the timer runs out.
 A flashcard drill for Japanese learners of English: each card shows a Japanese sentence,
 and you say it in English before the timer runs out, then check yourself against the
 answer. The cards are pre-generated JSON under `content/`, written ahead of time by
-Claude Code skills, so the app itself calls no language model at runtime. It is a React
-single-page app (`apps/web`, built with Vite and styled with Tailwind v4) talking to an
-HTTP API (`apps/api`, on Hono) that keeps progress in DynamoDB, ESM-only TypeScript
-throughout. Locally the API runs against DynamoDB local in a container.
+Claude Code skills, so the drill calls no language model at runtime; the talk activity,
+a short role-played conversation, does, through OpenRouter when a key is set and a
+scripted stand-in otherwise. It is a React single-page app (`apps/web`, built with Vite
+and styled with Tailwind v4) talking to an HTTP API (`apps/api`, on Hono) that keeps
+progress in DynamoDB, ESM-only TypeScript throughout. Locally the API runs against
+DynamoDB local in a container.
 
 `AGENTS.md` describes the architecture and the rules; this file is the tour.
 
@@ -35,11 +37,14 @@ progress with it, since the container keeps its tables in memory.
 
 The API reads the snapshot once per start, so after `content/` changes, restart
 `pnpm dev` to see them. The variables a local run reads are listed with empty values in
-`.env.example`; every one has a default or is optional. Without `API_COGNITO_*`, every
-request is one local learner, with no sign-in; with all four set,
-<http://127.0.0.1:5173/api/v1/auth/login> signs a browser in through the user pool's
-managed login. For example, `API_CATALOG_PATH` points the API at another snapshot, and
-`API_TABLE_NAME` at a fresh table, without touching your own progress:
+`.env.example`; every one has a default or is optional. Set them in the shell, or in a
+gitignored `.env.local`, which `pnpm api` and `pnpm dev`'s API process load and nothing
+else does. Without `API_COGNITO_*`, every request is one local learner, with no sign-in;
+with all four set, <http://127.0.0.1:5173/api/v1/auth/login> signs a browser in through
+the user pool's managed login. Without `API_OPENROUTER_API_KEY`, a talk is answered by a
+scripted stand-in model and nothing is called; with it, by OpenRouter. For example,
+`API_CATALOG_PATH` points the API at another snapshot, and `API_TABLE_NAME` at a fresh
+table, without touching your own progress:
 
 ```sh
 API_TABLE_NAME=scratch pnpm dev

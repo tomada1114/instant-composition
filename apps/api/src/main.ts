@@ -3,7 +3,10 @@
 // serves the web sign-in endpoints, when `API_COGNITO_*` name a user pool,
 // and otherwise serves the one stand-in subject. Either way it listens on the
 // loopback interface only and `readApiEnv` refuses to start inside AWS,
-// because the stand-in lets every request in. Kept thin: what it wires is tested where it is defined.
+// because the stand-in lets every request in. Talks are served by OpenRouter
+// when `API_OPENROUTER_API_KEY` is set — `pnpm api` lets Node read it from
+// `.env.local` — and by the scripted stand-in model otherwise.
+// Kept thin: what it wires is tested where it is defined.
 import path from "node:path";
 
 import { serve } from "@hono/node-server";
@@ -21,6 +24,7 @@ import { readApiEnv } from "./env";
 import { localRunAuthenticator, localRunWebSession } from "./local-run-authenticator";
 import { ensureTable } from "./local-table";
 import { jsonLines } from "./log";
+import { localModel } from "./served-model";
 
 const LOOPBACK = "127.0.0.1";
 
@@ -33,6 +37,7 @@ const created = await ensureTable(() => createLearnerTable(client, env.tableName
 const catalog = snapshotCatalog(path.resolve(env.catalogPath));
 const table = { client, tableName: env.tableName };
 const { kind, authenticator } = localRunAuthenticator(env.cognito);
+const model = localModel(env.model, (request) => fetch(request));
 const app = createApp({
   stores: createDynamoDbStores(table),
   catalog,
@@ -43,6 +48,7 @@ const app = createApp({
   requestId: () => crypto.randomUUID(),
   log: jsonLines(write),
   webSession: localRunWebSession(env.cognito, (request) => fetch(request)),
+  model,
 });
 const readable = (await catalog.snapshot()).ok;
 
@@ -52,6 +58,7 @@ serve({ fetch: app.fetch, port: env.port, hostname: LOOPBACK }, (info) => {
       event: "listening",
       url: `http://${LOOPBACK}:${String(info.port)}${API_ROOT}`,
       authenticator: kind,
+      model: { provider: model.provider, modelId: model.modelId },
       table: { name: env.tableName, created },
       // `false` until `pnpm catalog:build` has written the snapshot; the
       // catalog is read again on the next request that needs it.

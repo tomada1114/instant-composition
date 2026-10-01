@@ -162,6 +162,7 @@ describe("the import scanner the edge assertions run on", () => {
         "./local-run-authenticator",
         "./local-table",
         "./log",
+        "./served-model",
       ],
     ],
     [

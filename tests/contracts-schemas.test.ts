@@ -14,6 +14,13 @@ import {
   updateSettings,
   type ApplicationErrorCode,
   type History,
+  type PartnerReply,
+  type RecitalCommand,
+  type SendTurnCommand,
+  type TalkCommandError,
+  type TalkEnded,
+  type TalkOpened,
+  type TurnResult,
   type HomeView,
   type LevelView,
   type Profile,
@@ -43,10 +50,20 @@ import {
   settingsPatchSchema,
   settingsViewSchema,
   startRoundRequestSchema,
+  MAX_TALK_TEXT,
+  type partnerReplySchema,
+  recitalRequestSchema,
+  startTalkRequestSchema,
+  TALK_TURNS,
+  type talkEndedSchema,
+  type talkOpenedSchema,
+  turnRequestSchema,
+  type turnResultSchema,
   type ErrorCode,
 } from "@instant-composition/contracts";
 import {
   isGradeKey,
+  TALK_TUNING,
   TUNING,
   type AnswerInput,
   type LevelChoice,
@@ -115,6 +132,17 @@ describe("each response schema mirrors the application view it serves", () => {
     expectTypeOf<z.infer<typeof profileSchema>>().toExtend<Wire<Profile>>();
   });
 
+  it("TalkOpened, TurnResult, PartnerReply and TalkEnded", () => {
+    expectTypeOf<Wire<TalkOpened>>().toExtend<z.infer<typeof talkOpenedSchema>>();
+    expectTypeOf<z.infer<typeof talkOpenedSchema>>().toExtend<Wire<TalkOpened>>();
+    expectTypeOf<Wire<TurnResult>>().toExtend<z.infer<typeof turnResultSchema>>();
+    expectTypeOf<z.infer<typeof turnResultSchema>>().toExtend<Wire<TurnResult>>();
+    expectTypeOf<Wire<PartnerReply>>().toExtend<z.infer<typeof partnerReplySchema>>();
+    expectTypeOf<z.infer<typeof partnerReplySchema>>().toExtend<Wire<PartnerReply>>();
+    expectTypeOf<Wire<TalkEnded>>().toExtend<z.infer<typeof talkEndedSchema>>();
+    expectTypeOf<z.infer<typeof talkEndedSchema>>().toExtend<Wire<TalkEnded>>();
+  });
+
   it("does not pass by construction: a view missing a field fails the check", () => {
     type Short = Omit<Wire<History>, "estimatedLevel">;
     expectTypeOf<Short>().not.toExtend<z.infer<typeof historySchema>>();
@@ -151,8 +179,74 @@ describe("each request schema carries exactly what its command takes", () => {
     >();
   });
 
-  it("gives every code the application reports a status", () => {
+  it("a turn carries the command but the talk, which the path names", () => {
+    type Placed = z.infer<typeof turnRequestSchema> & { talkId: string };
+    expectTypeOf<Placed>().toExtend<SendTurnCommand>();
+    expectTypeOf<SendTurnCommand>().toExtend<Placed>();
+    expectTypeOf<z.infer<typeof startTalkRequestSchema>>().toEqualTypeOf<{
+      talkId: string;
+    }>();
+  });
+
+  it("a recital carries the count; the talk and the turn come from the path", () => {
+    type Placed = z.infer<typeof recitalRequestSchema> & {
+      talkId: string;
+      turn: number;
+    };
+    expectTypeOf<Placed>().toExtend<RecitalCommand>();
+    expectTypeOf<RecitalCommand>().toExtend<Placed>();
+  });
+
+  it("gives every code the application reports a status, the talk commands' included", () => {
     expectTypeOf<ApplicationErrorCode>().toExtend<ErrorCode>();
+    expectTypeOf<TalkCommandError["code"]>().toExtend<ErrorCode>();
+  });
+});
+
+describe("talk request bounds", () => {
+  const body = { turn: 1, japanese: "こんにちは", english: "Hello." };
+
+  it("holds the talk's bounds to the domain's", () => {
+    expect(MAX_TALK_TEXT).toBe(TALK_TUNING.maxChars);
+    expect(TALK_TURNS).toBe(TALK_TUNING.turns);
+  });
+
+  it("takes a turn of 1 to 6, texts of 1 to 300 characters, and a give-up's null", () => {
+    for (const turn of [1, 6]) {
+      expect(turnRequestSchema.safeParse({ ...body, turn }).success).toBe(true);
+    }
+    expect(
+      turnRequestSchema.safeParse({
+        ...body,
+        japanese: "あ".repeat(300),
+        english: "a".repeat(300),
+      }).success,
+    ).toBe(true);
+    expect(turnRequestSchema.safeParse({ ...body, english: null }).success).toBe(true);
+  });
+
+  it.each([
+    ["turn 0", { ...body, turn: 0 }],
+    ["turn 7", { ...body, turn: 7 }],
+    ["a fractional turn", { ...body, turn: 1.5 }],
+    ["an empty Japanese", { ...body, japanese: "" }],
+    ["a Japanese of 301 characters", { ...body, japanese: "あ".repeat(301) }],
+    ["an empty English", { ...body, english: "" }],
+    ["an English of 301 characters", { ...body, english: "a".repeat(301) }],
+    ["no English field", { turn: 1, japanese: "こんにちは" }],
+  ])("refuses a turn with %s", (_, value) => {
+    expect(turnRequestSchema.safeParse(value).success).toBe(false);
+  });
+
+  it.each([[-1], [1.5], ["2"]])("refuses a recital count of %j", (revealCount) => {
+    expect(recitalRequestSchema.safeParse({ revealCount }).success).toBe(false);
+  });
+
+  it("refuses a talk id the round id would refuse", () => {
+    expect(startTalkRequestSchema.safeParse({ talkId: "" }).success).toBe(false);
+    expect(startTalkRequestSchema.safeParse({ talkId: "x".repeat(65) }).success).toBe(
+      false,
+    );
   });
 });
 

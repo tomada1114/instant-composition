@@ -84,6 +84,18 @@ export const awsRegion: Parse<string> = (value) =>
 export const parameterName: Parse<string> = (value) =>
   /^[\w./-]{1,1011}$/.test(value) ? value : undefined;
 
+/** A model id as a provider names it, such as `anthropic/claude-haiku-4.5`. */
+export const modelId: Parse<string> = (value) =>
+  /^[\w.:/-]{1,128}$/.test(value) ? value : undefined;
+
+/** A provider's API key: printable ASCII with no space, as every provider issues one. */
+export const apiKey: Parse<string> = (value) =>
+  /^[\x21-\x7e]{1,256}$/.test(value) ? value : undefined;
+
+/** The providers the hosted entry serves the talk activity with. */
+export const modelProvider: Parse<"openrouter"> = (value) =>
+  value === "openrouter" ? value : undefined;
+
 export function blank(source: Source, name: string): boolean {
   return (source[name]?.trim() ?? "") === "";
 }

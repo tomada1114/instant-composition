@@ -34,7 +34,11 @@ owns how to change it.
   `apps/api`'s `createApp` takes every dependency as an argument; `main.ts` (`pnpm api`)
   and `lambda.ts` (hosted) wire it. No worker, queue or second deployable exists. Only
   the talk context calls a language model, through the `LanguageModel` port, once per
-  step and inside the request that asked; the drill calls none.
+  step and inside the request that asked; the drill calls none. The provider is
+  OpenRouter, reached over HTTPS with the key from Parameter Store when hosted and from
+  `API_OPENROUTER_API_KEY` locally; a local run with no key, and every test, gets a
+  scripted stand-in. The edge wraps the model per request and logs one line per call,
+  never its text (`serving-the-api`).
 
 ## Layers and contexts
 
@@ -173,7 +177,8 @@ browser ─► CloudFront (flat-rate Free plan, WAF web ACL from `edge`)
              └─ /api/*  ─► API Gateway HTTP API ─► Lambda: the Hono app via lambda.ts
                                                      ├─► DynamoDB learner table
                                                      ├─► Cognito user pool
-                                                     └─► Parameter Store (client secret, model key)
+                                                     ├─► Parameter Store (client secret, model key)
+                                                     └─► OpenRouter (talk model calls, HTTPS)
 ```
 
 - One AWS account, `ap-northeast-1`, except the web ACL CloudFront takes from us-east-1
@@ -204,6 +209,7 @@ browser ─► CloudFront (flat-rate Free plan, WAF web ACL from `edge`)
 | A service per context, microservices           | Every cross-context call would become a network failure mode for one operator             |
 | A web server of its own (server rendering)     | Behind sign-in it buys nothing, and it would be a second place requests are authenticated |
 | A model or an agent on the drill's path        | The drill is timed; a model call adds latency and per-answer cost                         |
+| A model choosing a talk's next step            | The server fixes the step order; a model that chose it would be an agent loop to bound    |
 | A VPC, NAT gateway or always-on compute        | Hourly cost with no idle use                                                              |
 | GraphQL, gRPC, or an OpenAPI tool tied to Hono | A few fixed commands over REST; the contract must not depend on the server framework      |
 | A relational database                          | The partition per learner is what isolation follows from; no VPC or connection to manage  |

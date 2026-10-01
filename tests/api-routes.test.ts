@@ -5,6 +5,7 @@ import {
   createApp,
   OPERATIONS,
   RouteTableError,
+  standInTalkModel,
   type Operation,
 } from "@instant-composition/api";
 import {
@@ -37,6 +38,7 @@ function buildWith(
         now: () => 0,
         requestId: () => "req",
         log: () => undefined,
+        model: { provider: "unused", modelId: "unused", model: standInTalkModel() },
       },
       routes,
       operations,
@@ -69,7 +71,7 @@ const route = (overrides: Partial<Route>): Route => ({
 
 const handler = (overrides: Partial<Operation> = {}): Operation => ({
   body: null,
-  roundPath: false,
+  params: [],
   handle: () => Promise.resolve({ ok: true, value: {} }),
   ...overrides,
 });
@@ -86,7 +88,10 @@ describe("the route table", () => {
     "answers %s under /api at the contract's method and path",
     async (operationId, entry) => {
       const api = makeApi();
-      const path = entry.path.replace("{roundId}", "r-missing");
+      const path = entry.path
+        .replace("{roundId}", "r-missing")
+        .replace("{talkId}", "t-missing")
+        .replace("{turn}", "1");
       await api.call(
         entry.method.toUpperCase(),
         path,
@@ -125,8 +130,25 @@ describe("the route table", () => {
       ),
     ).toStrictEqual(["probe: the handler and the path disagree on {roundId}"]);
     expect(
-      problemsOf(buildWith([route({})], { probe: handler({ roundPath: true }) })),
+      problemsOf(buildWith([route({})], { probe: handler({ params: ["roundId"] }) })),
     ).toStrictEqual(["probe: the handler and the path disagree on {roundId}"]);
+  });
+
+  it("refuses a handler and a path that disagree on {talkId} or {turn}", () => {
+    expect(
+      problemsOf(
+        buildWith([route({ path: "/v1/talks/{talkId}/turns/{turn}" })], {
+          probe: handler({ params: ["talkId"] }),
+        }),
+      ),
+    ).toStrictEqual(["probe: the handler and the path disagree on {turn}"]);
+    expect(
+      problemsOf(
+        buildWith([route({ path: "/v1/talks/{talkId}" })], {
+          probe: handler({ params: ["talkId", "turn"] }),
+        }),
+      ),
+    ).toStrictEqual(["probe: the handler and the path disagree on {turn}"]);
   });
 
   it("refuses a path parameter no handler reads", () => {

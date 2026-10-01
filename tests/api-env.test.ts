@@ -3,6 +3,7 @@ import { describe, expect, it } from "vitest";
 import {
   API_ENV_NAMES,
   ApiEnvError,
+  DEFAULT_MODEL_ID,
   readApiEnv,
   type ApiEnv,
 } from "@instant-composition/api";
@@ -16,6 +17,7 @@ const DEFAULTS: ApiEnv = {
   tableName: "instant-composition-local",
   catalogPath: "dist/catalog/en/ja.json",
   cognito: null,
+  model: { provider: "stand-in" },
 };
 
 /** A whole user pool configuration, well formed. */
@@ -69,7 +71,48 @@ describe("readApiEnv", () => {
         clientSecret: "1example2secret3456789abcdef",
         domain: "https://example.auth.ap-northeast-1.amazoncognito.com",
       },
+      model: { provider: "stand-in" },
     });
+  });
+
+  it("serves talks with OpenRouter at the default model once a key is set", () => {
+    expect(
+      readApiEnv({ API_OPENROUTER_API_KEY: " dummy-not-a-real-value " }),
+    ).toStrictEqual({
+      ...DEFAULTS,
+      model: {
+        provider: "openrouter",
+        modelId: DEFAULT_MODEL_ID,
+        apiKey: "dummy-not-a-real-value",
+      },
+    });
+    expect(DEFAULT_MODEL_ID).toBe("anthropic/claude-haiku-4.5");
+  });
+
+  it("takes the model id the environment names, and keeps the stand-in without a key", () => {
+    expect(
+      readApiEnv({
+        API_OPENROUTER_API_KEY: "dummy-not-a-real-value",
+        API_MODEL_ID: "openai/gpt-5-mini",
+      }).model,
+    ).toStrictEqual({
+      provider: "openrouter",
+      modelId: "openai/gpt-5-mini",
+      apiKey: "dummy-not-a-real-value",
+    });
+    expect(readApiEnv({ API_MODEL_ID: "openai/gpt-5-mini" }).model).toStrictEqual({
+      provider: "stand-in",
+    });
+  });
+
+  it.each([
+    ["API_OPENROUTER_API_KEY", "two words"],
+    ["API_MODEL_ID", "claude haiku"],
+  ])("refuses %s=%j by naming it, never quoting it", (name, value) => {
+    const error = refusedWith({ [name]: value });
+    expect(error.code).toBe("ERR_API_ENV_INVALID");
+    expect(error.names).toStrictEqual([name]);
+    expect(error.message).not.toContain(value);
   });
 
   it.each(Object.keys(COGNITO))(

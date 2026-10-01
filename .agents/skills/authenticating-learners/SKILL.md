@@ -120,10 +120,11 @@ the page's. `LOCAL_SIGN_IN_URLS` must stay equal to `dev`'s `WEB_CLIENT` in
 ## A local run against the dev pool
 
 The four `API_COGNITO_*` names are set together or not at all; a partial set stops the
-start with `ERR_API_ENV_INVALID` naming the blank ones. No `.env` file is loaded, so
-they are exported in the shell that runs `pnpm dev` or `pnpm api`. Three are outputs of
-the `dev` foundation stack; the client secret is never an output and comes from Cognito
-itself, straight into the variable so it is never printed:
+start with `ERR_API_ENV_INVALID` naming the blank ones. They are exported in the shell
+that runs `pnpm dev` or `pnpm api`, or kept in the gitignored `.env.local`, which those
+two let Node load (`--env-file-if-exists`). Three are outputs of the `dev` foundation
+stack; the client secret is never an output and comes from Cognito itself, straight into
+the variable so it is never printed:
 
 ```sh
 stack=instant-composition-dev-foundation

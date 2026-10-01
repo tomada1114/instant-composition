@@ -28,6 +28,9 @@ const HOSTED = {
   API_WEB_ORIGINS: "https://app.example.com",
   API_WEB_CALLBACK_URL: "https://app.example.com/api/v1/auth/callback",
   API_WEB_SIGN_OUT_URL: "https://app.example.com/",
+  API_MODEL_PROVIDER: "openrouter",
+  API_MODEL_ID: "anthropic/claude-haiku-4.5",
+  API_OPENROUTER_KEY_PARAMETER: "/instant-composition/dev/app/openrouter-api-key",
 };
 
 describe("the API's source on Node's type stripping", () => {
@@ -53,6 +56,12 @@ describe("the API's source on Node's type stripping", () => {
       "without the user pool, refusing to start",
       { ...HOSTED, API_COGNITO_USER_POOL_ID: "", API_COGNITO_CLIENT_ID: "" },
       "ERR_API_ENV_INVALID API_COGNITO_USER_POOL_ID,API_COGNITO_CLIENT_ID",
+      "",
+    ],
+    [
+      "without the model provider, refusing to start",
+      { ...HOSTED, API_MODEL_PROVIDER: "" },
+      "ERR_API_ENV_INVALID API_MODEL_PROVIDER",
       "",
     ],
   ])("loads the hosted entry %s", (_, env, stdout, stderr) => {

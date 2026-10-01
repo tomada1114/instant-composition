@@ -39,8 +39,9 @@ const STOP_GRACE_MS = 5_000;
  */
 
 /**
- * The processes `pnpm dev` runs: the API as `pnpm api` starts it, and the web
- * client's Vite dev server as `pnpm web` starts it.
+ * The processes `pnpm dev` runs: the API as `pnpm api` starts it, `.env.local`
+ * loaded by Node when it exists, and the web client's Vite dev server as
+ * `pnpm web` starts it.
  *
  * @param {string} [root] - The repository root.
  * @returns {StackProcess[]} The API first, then the web client.
@@ -53,7 +54,14 @@ export function stackProcesses(root = repoRoot) {
     {
       name: "api",
       entry: api,
-      args: ["--import", "./scripts/ts-hooks.mjs", "apps/api/src/main.ts"],
+      // Node reads `.env.local` itself, so the owner's model key reaches the
+      // API alone; the web client's dev server is never handed it.
+      args: [
+        "--env-file-if-exists=.env.local",
+        "--import",
+        "./scripts/ts-hooks.mjs",
+        "apps/api/src/main.ts",
+      ],
       cwd: root,
     },
     { name: "web", entry: vite, args: [vite], cwd: web },

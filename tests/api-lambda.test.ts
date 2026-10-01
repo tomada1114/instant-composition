@@ -16,6 +16,7 @@ import {
   type HttpApiEvent,
   type HttpApiHandler,
   type LogLine,
+  type ModelCallLine,
 } from "@instant-composition/api";
 import { learnerId } from "@instant-composition/application";
 import { errorResponseSchema } from "@instant-composition/contracts";
@@ -32,6 +33,9 @@ import { CLIENT_SECRET, DOMAIN, fakeCognito, POOL_KEY } from "./web-session-harn
 const WEB_ORIGIN = "https://app.example.com";
 const SESSION_TOKEN = "session-token-for-tests";
 const PARAMETER = "/instant-composition/dev/web-client-secret";
+const KEY_PARAMETER = "/instant-composition/dev/app/openrouter-api-key";
+/** Not a real key: the fake OpenRouter only checks it arrives. */
+const MODEL_KEY = "sk-or-v1-key-for-tests";
 
 const ENV: HostedEnv = {
   region: "ap-northeast-1",
@@ -49,7 +53,27 @@ const ENV: HostedEnv = {
     signOutUrl: `${WEB_ORIGIN}/`,
   },
   extension: { port: 2773, sessionToken: SESSION_TOKEN },
+  model: {
+    provider: "openrouter",
+    modelId: "anthropic/claude-haiku-4.5",
+    keyParameter: KEY_PARAMETER,
+  },
 };
+
+const SCENE = {
+  partner: "Neighbor",
+  place: "Elevator",
+  relation: "First meeting",
+  description: "A neighbor says hello.",
+  opening: "Hi! Are you new around here?",
+};
+
+/** A chat completion carrying `content`, as OpenRouter answers one. */
+const completion = (content: unknown): Response =>
+  Response.json({
+    choices: [{ message: { content: JSON.stringify(content) } }],
+    usage: { prompt_tokens: 120, completion_tokens: 40, cost: 0.0002 },
+  });
 
 interface EventOptions {
   readonly headers?: Readonly<Record<string, string>>;
@@ -112,16 +136,26 @@ const parameter = (type: string, value: string): Response =>
 function hosted() {
   const cognito = fakeCognito(POOL_KEY);
   const extensionCalls: Request[] = [];
+  const modelCalls: Request[] = [];
   let secretAnswer = (): Response => parameter("SecureString", CLIENT_SECRET);
+  let keyAnswer = (): Response => parameter("SecureString", MODEL_KEY);
   const fetch: Fetch = (request) => {
-    if (new URL(request.url).origin !== "http://localhost:2773") {
+    const url = new URL(request.url);
+    if (url.origin === "https://openrouter.ai") {
+      modelCalls.push(request);
+      return Promise.resolve(completion(SCENE));
+    }
+    if (url.origin !== "http://localhost:2773") {
       return cognito.fetch(request);
     }
     extensionCalls.push(request);
-    return Promise.resolve(secretAnswer());
+    return Promise.resolve(
+      url.searchParams.get("name") === KEY_PARAMETER ? keyAnswer() : secretAnswer(),
+    );
   };
   const stores = createMemoryStores();
   const lines: LogLine[] = [];
+  const calls: ModelCallLine[] = [];
   let issued = 0;
   const handler = hostedHandler(ENV, {
     stores,
@@ -131,7 +165,11 @@ function hosted() {
     now: () => NOON,
     requestId: () => "req",
     log: (line) => {
-      lines.push(line);
+      if ("kind" in line) {
+        calls.push(line);
+      } else {
+        lines.push(line);
+      }
     },
     fetch,
     keySet: keySetOf(POOL_KEY),
@@ -140,9 +178,14 @@ function hosted() {
     handler,
     cognito,
     lines,
+    calls,
     extensionCalls,
+    modelCalls,
     answerSecretWith: (answer: () => Response) => {
       secretAnswer = answer;
+    },
+    answerKeyWith: (answer: () => Response) => {
+      keyAnswer = answer;
     },
   };
 }
@@ -306,8 +349,79 @@ describe("the hosted entry's handler", () => {
     expect(JSON.stringify(lines)).not.toContain(CLIENT_SECRET);
   });
 
-  it("takes no authenticator and no web session from its caller", () => {
+  it("starts a talk on OpenRouter, the key read through the extension for the call", async () => {
+    const { handler, extensionCalls, modelCalls, calls, lines } = hosted();
+
+    const result = await handler(
+      event("POST", "/api/v1/talks", {
+        headers: bearer("subject-a"),
+        body: { talkId: "t1" },
+      }),
+    );
+
+    expect(result.statusCode).toBe(200);
+    expect(JSON.parse(result.body)).toMatchObject({
+      talkId: "t1",
+      opening: SCENE.opening,
+    });
+    expect(
+      extensionCalls.map((request) => new URL(request.url).searchParams.get("name")),
+    ).toStrictEqual([KEY_PARAMETER]);
+    expect(
+      modelCalls.map((request) => request.headers.get("authorization")),
+    ).toStrictEqual([`Bearer ${MODEL_KEY}`]);
+    expect(calls).toStrictEqual<ModelCallLine[]>([
+      {
+        kind: "model-call",
+        requestId: "req",
+        task: "talk-scene",
+        promptVersion: "talk-scene@1",
+        provider: "openrouter",
+        modelId: "anthropic/claude-haiku-4.5",
+        outcome: "ok",
+        inputTokens: 120,
+        outputTokens: 40,
+        latencyMs: expect.any(Number) as number,
+        costUsd: 0.0002,
+      },
+    ]);
+    expect(JSON.stringify([...lines, ...calls])).not.toContain(MODEL_KEY);
+  });
+
+  it("fails a talk with a bare 500 while the key's parameter is missing, and serves the drill", async () => {
+    const { handler, answerKeyWith, modelCalls, calls, lines } = hosted();
+    answerKeyWith(() =>
+      Response.json({ message: "ParameterNotFound" }, { status: 400 }),
+    );
+
+    const talk = await handler(
+      event("POST", "/api/v1/talks", {
+        headers: bearer("subject-a"),
+        body: { talkId: "t1" },
+      }),
+    );
+    const home = await handler(
+      event("GET", "/api/v1/home", { headers: bearer("subject-a") }),
+    );
+
+    expect(talk.statusCode).toBe(500);
+    expect(talk.body).toBe("");
+    expect(home.statusCode).toBe(200);
+    expect(modelCalls).toStrictEqual([]);
+    expect(
+      lines.map(({ operation, outcome, fault }) => ({ operation, outcome, fault })),
+    ).toStrictEqual([
+      { operation: "startTalk", outcome: "failed", fault: "SecretParameterError" },
+      { operation: "getHome", outcome: "ok", fault: null },
+    ]);
+    expect(calls.map(({ task, outcome }) => ({ task, outcome }))).toStrictEqual([
+      { task: "talk-scene", outcome: "failed" },
+    ]);
+  });
+
+  it("takes no authenticator, no web session and no model from its caller", () => {
     expectTypeOf<HostedDependencies>().not.toHaveProperty("authenticator");
     expectTypeOf<HostedDependencies>().not.toHaveProperty("webSession");
+    expectTypeOf<HostedDependencies>().not.toHaveProperty("model");
   });
 });

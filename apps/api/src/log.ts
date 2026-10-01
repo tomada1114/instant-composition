@@ -1,4 +1,4 @@
-import type { CatalogUnreadable } from "@instant-composition/application";
+import type { CatalogUnreadable, ModelFailure } from "@instant-composition/application";
 import type { ErrorCode } from "@instant-composition/contracts";
 
 /**
@@ -37,8 +37,40 @@ export interface LogLine {
   readonly reason: CatalogUnreadable["reason"] | null;
 }
 
+/**
+ * How one model call ended: `ok`, the `ModelFailure` reason it produced no
+ * answer for, or `failed` when the adapter threw — a key that could not be read.
+ */
+export type ModelCallOutcome = "ok" | ModelFailure["reason"] | "failed";
+
+/**
+ * The line written per model call, beside its request's line, which it joins
+ * by `requestId`.
+ *
+ * @remarks
+ * Every field is present on every line. A line never carries a prompt, a
+ * learner's text or the model's output: what was asked is named by `task` and
+ * `promptVersion` alone. The counts and the cost are `null` when the call
+ * produced no answer; `latencyMs` is the provider's measure on an answer and
+ * the edge's own otherwise.
+ */
+export interface ModelCallLine {
+  readonly kind: "model-call";
+  readonly requestId: string;
+  readonly task: string;
+  readonly promptVersion: string;
+  readonly provider: string;
+  readonly modelId: string;
+  readonly outcome: ModelCallOutcome;
+  readonly inputTokens: number | null;
+  readonly outputTokens: number | null;
+  readonly latencyMs: number;
+  /** In US dollars; `null` when the provider reported none or the call produced no answer. */
+  readonly costUsd: number | null;
+}
+
 /** Where log lines go: stdout on a local run, a recording array in a test. */
-export type LogSink = (line: LogLine) => void;
+export type LogSink = (line: LogLine | ModelCallLine) => void;
 
 /** A sink writing each line as one line of JSON to `write`. */
 export function jsonLines(write: (text: string) => void): LogSink {
