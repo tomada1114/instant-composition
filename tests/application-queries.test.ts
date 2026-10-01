@@ -179,19 +179,6 @@ describe("home", () => {
     expect(view.ok && view.value.preview).toMatchObject({ size: 10, minutes: 10 });
   });
 
-  it("estimates a typed round's minutes at the typed pace's longest per card, whatever the limit", async () => {
-    const h = makeHarness();
-    await placed(h);
-    await updateSettings(h.deps, h.context(), {
-      limitSeconds: 15,
-      answerMode: "typed",
-    });
-
-    const view = await home(h.deps, h.context(NOON + DAY_MS));
-
-    expect(view.ok && view.value.preview).toMatchObject({ size: 10, minutes: 10 });
-  });
-
   it("names the weak grammar today's deal carries, and none after a clean record", async () => {
     const missed = makeHarness();
     await placed(missed, 10, true);

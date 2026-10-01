@@ -150,7 +150,6 @@ export {
   type StreakStatus,
 } from "./streak";
 export {
-  answerModeOf,
   countWords,
   estimateMinutes,
   isFast,
@@ -163,7 +162,6 @@ export {
 } from "./timer";
 export { TUNING, type MilestoneSeries } from "./tuning";
 export type {
-  AnswerMode,
   AnswerRecord,
   AnswerResult,
   CardContent,

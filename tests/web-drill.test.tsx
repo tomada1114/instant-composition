@@ -673,19 +673,6 @@ describe("the drill's placement round", () => {
     expect(screen.getByText("prompt-c1")).toBeInTheDocument();
   });
 
-  it("runs a round dealt in the old typed mode as the spoken drill", async () => {
-    serve({
-      round: { ...ROUND, kind: "placement", retries: false, answerMode: "typed" },
-    });
-    await renderApp("/drill?kind=placement");
-    expect(screen.getByText(ja.Drill.intro.say)).toBeInTheDocument();
-    expect(screen.getByText(ja.Drill.intro.flip)).toBeInTheDocument();
-    press("Enter");
-    await settle(16);
-    expect(screen.getByText("prompt-c1")).toBeInTheDocument();
-    expect(screen.queryByRole("textbox")).toBeNull();
-  });
-
   it("calls a later placement a re-measure", async () => {
     serve({ round: { ...ROUND, kind: "placement", retries: false } });
     await renderApp("/drill?kind=placement");

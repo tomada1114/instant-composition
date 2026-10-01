@@ -214,7 +214,6 @@ export const ROUND: RoundPayload = {
   kind: "today",
   day: "2026-09-22",
   portionDay: "2026-09-22",
-  answerMode: "spoken",
   deck: ["c1", "c2"],
   cards: { c1: drillCard("c1"), c2: drillCard("c2") },
   answered: [],

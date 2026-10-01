@@ -40,28 +40,21 @@ export function makeStats(overrides: Partial<LearnerStats> = {}): LearnerStats {
   };
 }
 
-function roundBase(): Omit<Round, "limitMs" | "answerMode"> {
+export function makeRound(overrides: Partial<Round> = {}): Round {
   return {
     id: "r1",
     kind: "today",
     day: "2026-09-22",
     portionDay: "2026-09-22",
     deck: ["c1", "c2", "c3", "c4", "c5"],
+    limitMs: 30_000,
     startedAt: 1_000,
     finishedAt: null,
     abandonedAt: null,
     firstPass: 0,
     outcome: null,
+    ...overrides,
   };
-}
-
-export function makeRound(overrides: Partial<Round> = {}): Round {
-  return { ...roundBase(), limitMs: 30_000, ...overrides };
-}
-
-/** Round `r1` as a typed round is dealt: the typed mode, and no limit to record. */
-export function makeTypedRound(overrides: Partial<Round> = {}): Round {
-  return { ...roundBase(), answerMode: "typed", ...overrides };
 }
 
 /** A first-pass `ok` review of `c1` in round `r1`, overridable field by field. */
@@ -127,6 +120,24 @@ export function makeItem(overrides: Partial<ItemProgress> = {}): ItemProgress {
     previous: null,
     ...overrides,
   };
+}
+
+/**
+ * `value` with fields its type no longer declares, as an item written while the
+ * typed-answer mode existed holds them.
+ */
+export function withRetired<T extends object>(
+  value: T,
+  retired: Readonly<Record<string, unknown>>,
+): T {
+  return { ...value, ...retired };
+}
+
+/** A copy of `value` without `key`. */
+export function without<T extends object>(value: T, key: keyof T): T {
+  const copy = { ...value };
+  Reflect.deleteProperty(copy, key);
+  return copy;
 }
 
 /** One entry of every type, so a suite over them covers the whole store. */

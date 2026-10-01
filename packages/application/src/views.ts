@@ -1,5 +1,4 @@
 import type {
-  AnswerMode,
   AnswerResult,
   DayKey,
   Dot,
@@ -27,9 +26,9 @@ export interface DrillCard {
   readonly text: string;
   readonly alternatives: readonly string[];
   readonly explanation: string;
-  /** When the timer runs out: the limit the round was dealt with; the cap in a typed round, which runs none. */
+  /** When the timer runs out: the limit the round was dealt with. */
   readonly limitMs: number;
-  /** What a flip is "fast" against, from the model answer's length and the round's mode. */
+  /** What a flip is "fast" against, from the model answer's length. */
   readonly paceMs: number;
 }
 
@@ -42,8 +41,6 @@ export interface AnsweredRow {
   readonly result: AnswerResult;
   /** As stored: the client's time, held between the round's start and the server's. */
   readonly answeredAt: number;
-  /** What the learner typed, on an answer of a typed round that carried one. */
-  readonly text?: string;
 }
 
 export interface RoundPayload {
@@ -51,8 +48,6 @@ export interface RoundPayload {
   readonly kind: RoundKind;
   readonly day: DayKey;
   readonly portionDay: DayKey | null;
-  /** The mode the round was dealt with, whatever the setting says now. */
-  readonly answerMode: AnswerMode;
   /** First-pass card ids in order. */
   readonly deck: readonly string[];
   /** Every shown card the deck and its retries may show, keyed by id; a card edited since its review is left out. */
@@ -94,8 +89,7 @@ export interface RoundSummary {
   readonly roundId: string;
   readonly kind: RoundKind;
   readonly day: DayKey;
-  readonly answerMode: AnswerMode;
-  /** Every answer the round holds, oldest first, each with the text typed for it. */
+  /** Every answer the round holds, oldest first. */
   readonly answered: readonly AnsweredRow[];
   /** Made up yesterday rather than today. */
   readonly yesterday: boolean;

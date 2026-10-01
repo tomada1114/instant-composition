@@ -56,11 +56,7 @@ function preview(
     weakNames: dealt.value.weakConcepts.map((concept) =>
       conceptName(snapshot, concept),
     ),
-    minutes: estimateMinutes(
-      twoPortions ? size * 2 : size,
-      practice.limitSeconds,
-      practice.answerMode,
-    ),
+    minutes: estimateMinutes(twoPortions ? size * 2 : size, practice.limitSeconds),
   };
 }
 

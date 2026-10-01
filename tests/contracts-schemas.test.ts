@@ -32,7 +32,6 @@ import {
   homeViewSchema,
   type levelChoiceSchema,
   levelViewSchema,
-  MAX_ANSWER_TEXT,
   MAX_ROUND_ANSWERS,
   profilePatchSchema,
   profileSchema,
@@ -190,9 +189,6 @@ describe("request bounds", () => {
     ["a negative answeredAt", { ...answer, answeredAt: -1 }],
     ["a fractional answeredAt", { ...answer, answeredAt: 1.5 }],
     ["an answeredAt that is not a number", { ...answer, answeredAt: "2026-09-22" }],
-    ["a text of 301 characters", { ...answer, text: "x".repeat(301) }],
-    ["a text that is not a string", { ...answer, text: 42 }],
-    ["a text given as an explicit undefined", { ...answer, text: undefined }],
   ])("refuses an answer with %s", (_, value) => {
     expect(answerSchema.safeParse(value).success).toBe(false);
   });
@@ -215,7 +211,7 @@ describe("request bounds", () => {
   });
 
   it.each([[600_001], [3_600_000]])(
-    "takes an elapsedMs of %i, over the cap, for the server to clamp rather than refuse",
+    "takes an elapsedMs of %i, over ten minutes, for the server to clamp rather than refuse",
     (elapsedMs) => {
       expect(answerSchema.parse({ ...answer, elapsedMs })).toStrictEqual({
         ...answer,
@@ -224,14 +220,10 @@ describe("request bounds", () => {
     },
   );
 
-  it("holds a typed answer's text to 300 characters, an empty one included", () => {
-    expect(MAX_ANSWER_TEXT).toBe(300);
-    for (const text of ["", "Let's get started.", "x".repeat(300)]) {
-      expect(answerSchema.parse({ ...answer, text })).toStrictEqual({
-        ...answer,
-        text,
-      });
-    }
+  it("drops a text from an answer, as it drops any field the contract does not name", () => {
+    expect(answerSchema.parse({ ...answer, text: "Let's get started." })).toStrictEqual(
+      answer,
+    );
   });
 
   it.each([["" as const], ["x".repeat(65)]])("refuses the roundId %j", (roundId) => {
@@ -255,12 +247,11 @@ describe("request bounds", () => {
     expect(settingsPatchSchema.safeParse({ limitSeconds: 30_000 }).success).toBe(false);
   });
 
-  it.each([["spoken" as const], ["typed" as const]])(
-    "takes the answer mode %s",
-    (answerMode) => {
-      expect(settingsPatchSchema.parse({ answerMode })).toStrictEqual({ answerMode });
-    },
-  );
+  it("drops an answer mode from a settings patch, as it drops any field the contract does not name", () => {
+    expect(
+      settingsPatchSchema.parse({ sound: false, answerMode: "typed" }),
+    ).toStrictEqual({ sound: false });
+  });
 
   it("takes a grade key pair of an arrow, a digit or a letter each", () => {
     for (const gradeKeys of [
@@ -298,7 +289,6 @@ describe("request bounds", () => {
     ["a grade on the key `?` is on", { gradeKeys: { ok: "KeyK", ng: "Slash" } }],
     ["a grade given as a character", { gradeKeys: { ok: "k", ng: "j" } }],
     ["one grade key alone", { gradeKeys: { ok: "KeyK" } }],
-    ["an answer mode the app does not ship", { answerMode: "voice" }],
   ])("refuses a settings patch with %s", (_, patch) => {
     expect(settingsPatchSchema.safeParse(patch).success).toBe(false);
   });
@@ -458,41 +448,6 @@ describe("what the application answers parses under the contract", () => {
         issues: [],
       });
     }
-  });
-
-  it("including a typed round's, which carry its mode and each text typed", async () => {
-    const h = makeHarness();
-    const settings = await value(
-      updateSettings(h.deps, h.context(), { topics: ["work"], answerMode: "typed" }),
-    );
-    const round = await value(
-      startRound(h.deps, h.context(), { kind: "placement", roundId: "p0" }),
-    );
-    const answers = answersFor(round).map((answer, index) =>
-      index === 0 ? { ...answer, text: "Let's get started." } : answer,
-    );
-    await value(
-      recordAnswers(h.deps, h.context(), {
-        roundId: round.id,
-        answers: answers.slice(0, 1),
-      }),
-    );
-    const read = await value(roundPayload(h.deps, h.context(), round.id));
-    const summary = await value(
-      finishRound(h.deps, h.context(), { roundId: round.id, answers }),
-    );
-
-    expect(settingsViewSchema.parse(wire(settings)).settings.answerMode).toBe("typed");
-    expect(roundPayloadSchema.parse(wire(round)).answerMode).toBe("typed");
-    expect(roundPayloadSchema.parse(wire(read)).answered[0]?.text).toBe(
-      "Let's get started.",
-    );
-    const kept = roundSummarySchema.parse(wire(summary));
-    expect(kept.answerMode).toBe("typed");
-    expect(
-      kept.answered.filter((row) => row.text !== undefined).map((row) => row.id),
-    ).toStrictEqual([answers[0]?.id]);
-    expect(kept.answered).toHaveLength(answers.length);
   });
 
   it("including a home with no preview and no finished round, which leaves both fields out", async () => {

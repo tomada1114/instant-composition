@@ -36,7 +36,6 @@ const SETTINGS: Settings = {
   sound: true,
   limitSeconds: 30,
   gradeKeys: { ok: "ArrowRight", ng: "ArrowLeft" },
-  answerMode: "spoken",
 };
 
 const LEVELS: SettingsPageView["levels"] = [
@@ -294,8 +293,8 @@ describe("the settings screen, W11 size and sound", () => {
     ).toBeChecked();
   });
 
-  it("offers the time limit alone, with no answer mode, even over typed settings", async () => {
-    serveSettings({ ...PAGE, settings: { ...SETTINGS, answerMode: "typed" } });
+  it("offers the time limit alone, with no answer mode", async () => {
+    serveSettings();
     await renderApp("/settings?tab=level");
     expect(
       screen

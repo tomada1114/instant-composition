@@ -1,7 +1,6 @@
 import * as z from "zod";
 
 import {
-  answerModeSchema,
   answerResultSchema,
   dailySizeSchema,
   gradeKeysSchema,
@@ -21,11 +20,6 @@ import {
  */
 export const MAX_ROUND_ANSWERS = 60;
 
-/**
- * The most characters a typed answer's text may hold: the input length cap, which the domain holds a typed round's answers to as well.
- */
-export const MAX_ANSWER_TEXT = 300;
-
 /** The most topics or focus subtopics one settings patch may name. */
 const MAX_SETTINGS_LIST = 50;
 
@@ -43,8 +37,7 @@ export const startRoundRequestSchema = z.object({
  * learner answered, in epoch milliseconds on the client's clock: the server
  * holds it between the round's start and its own time rather than refusing
  * it, and takes its own time when it is absent. `elapsedMs` is held the same
- * way: to the round's limit in a spoken round and to 600 000 ms in a typed
- * one, never refused for running over.
+ * way, to the round's limit, never refused for running over.
  */
 export const answerSchema = z.object({
   /** Made by the client; a repeated id is ignored, which is what makes a resend safe. */
@@ -54,8 +47,6 @@ export const answerSchema = z.object({
   result: answerResultSchema,
   elapsedMs: z.int().min(0),
   answeredAt: z.int().min(0).exactOptional(),
-  /** What the learner typed: taken only in a typed round, refused in a spoken one. */
-  text: z.string().max(MAX_ANSWER_TEXT).exactOptional(),
 });
 
 /** `POST /v1/rounds/{roundId}/answers` and `…/finish`: a batch, so a replay is the same call. */
@@ -73,8 +64,6 @@ export const settingsPatchSchema = z.object({
   limitSeconds: limitSecondsSchema.exactOptional(),
   /** Both keys at once, so the pair is judged whole. */
   gradeKeys: gradeKeysSchema.exactOptional(),
-  /** Taken by the next round dealt, like `limitSeconds`. */
-  answerMode: answerModeSchema.exactOptional(),
 });
 
 /**

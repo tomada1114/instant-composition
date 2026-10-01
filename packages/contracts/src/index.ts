@@ -8,7 +8,6 @@ export {
 } from "./errors";
 export { openApiDocument, type OpenApiDocument } from "./openapi";
 export {
-  answerModeSchema,
   answerResultSchema,
   dayKeySchema,
   dotSchema,
@@ -33,7 +32,6 @@ export {
   answerSchema,
   answersRequestSchema,
   levelChoiceSchema,
-  MAX_ANSWER_TEXT,
   MAX_ROUND_ANSWERS,
   profilePatchSchema,
   roundIdParamSchema,

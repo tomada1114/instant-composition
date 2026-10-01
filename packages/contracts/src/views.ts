@@ -1,7 +1,6 @@
 import * as z from "zod";
 
 import {
-  answerModeSchema,
   answerResultSchema,
   countSchema,
   dayKeySchema,
@@ -31,13 +30,9 @@ export const drillCardSchema = z.object({
   text: z.string(),
   alternatives: z.array(z.string()),
   explanation: z.string(),
-  /**
-   * When the timer runs out: the limit the round was dealt with. A typed round
-   * runs no timer, and this is then only the 600 000 ms its answers are held
-   * to; the round's `answerMode` is what says whether a timer runs.
-   */
+  /** When the timer runs out: the limit the round was dealt with. */
   limitMs: countSchema,
-  /** What a flip is "fast" against, from the model answer's length and the round's mode. */
+  /** What a flip is "fast" against, from the model answer's length. */
   paceMs: countSchema,
 });
 
@@ -50,8 +45,6 @@ export const answeredRowSchema = z.object({
   result: answerResultSchema,
   /** When it was answered, in epoch milliseconds, as the server holds it. */
   answeredAt: z.int().min(0),
-  /** What the learner typed, on an answer of a typed round that carried one. */
-  text: z.string().exactOptional(),
 });
 
 export const roundPayloadSchema = z.object({
@@ -59,8 +52,6 @@ export const roundPayloadSchema = z.object({
   kind: roundKindSchema,
   day: dayKeySchema,
   portionDay: dayKeySchema.nullable(),
-  /** The mode the round was dealt with, whatever the setting says now. */
-  answerMode: answerModeSchema,
   deck: z.array(z.string()),
   cards: z.record(z.string(), drillCardSchema),
   answered: z.array(answeredRowSchema),
@@ -100,8 +91,7 @@ export const roundSummarySchema = z.object({
   roundId: z.string(),
   kind: roundKindSchema,
   day: dayKeySchema,
-  answerMode: answerModeSchema,
-  /** Every answer the round holds, oldest first, each with the text typed for it. */
+  /** Every answer the round holds, oldest first. */
   answered: z.array(answeredRowSchema),
   yesterday: z.boolean(),
   placement: z
