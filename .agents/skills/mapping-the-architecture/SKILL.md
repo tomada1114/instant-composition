@@ -32,8 +32,9 @@ owns how to change it.
   entry point (a job, a tool) would meet the same checks.
 - The server is a modular monolith: one application core behind one API function.
   `apps/api`'s `createApp` takes every dependency as an argument; `main.ts` (`pnpm api`)
-  and `lambda.ts` (hosted) wire it. No worker, queue or second deployable exists, and no
-  language model is called at runtime.
+  and `lambda.ts` (hosted) wire it. No worker, queue or second deployable exists. Only
+  the talk context calls a language model, through the `LanguageModel` port, once per
+  step and inside the request that asked; the drill calls none.
 
 ## Layers and contexts
 
@@ -52,10 +53,16 @@ their own:
 | practice-composition | rounds, day portions, placement, level, deck composition     | domain's `compose*`, `deck`, `start*`, `placement`, `difficulty`; application's round and settings commands |
 | learning-record      | the append-only review log and each item's memory projection | domain's `records.ts` and `card-state.ts`                                                                   |
 | learner-model (v0)   | weak grammar concepts and subtopics                          | domain's `weakness.ts`, derived when read                                                                   |
+| talk                 | a talk's scene and turns, and its three model tasks          | domain's `talk*.ts`; application's `start-talk.ts`, `send-turn.ts`, `end-talk.ts` and `talk-*.ts`           |
 
 - Streak, points and titles live inside practice-composition while it is the one
   activity. Items cross contexts only as an `ItemRef` (`kind` plus `id`), so a second
   activity adds a `kind` rather than changing composition.
+- The talk shares no data with the drill; the streak, the points and the records stay
+  the drill's. The server runs a talk's steps in a fixed order and refuses one out of
+  order; the scene, teacher and partner tasks — each a versioned prompt, a JSON Schema
+  and a `read` — are the application's, shared by every model adapter. **REQUIRED:**
+  `building-the-talk-activity`.
 - The learner model stores nothing: it is a pure pass over item projections the reads
   already load. Grammar weaknesses feed the deck; subtopic weaknesses are only shown.
 - Scheduling is Leitner boxes. Each review logs a common outcome (`again`, `good`,
@@ -109,9 +116,13 @@ LEARNER#<id>  ROUND#<round>                         a round
 LEARNER#<id>  ROUND#<round>#ANSWER#<answer>         the review log, append-only
 LEARNER#<id>  PORTION#<day> | DAY#<day>             a day's portion and tally
 LEARNER#<id>  ITEM#<kind>#<item>                    an item's memory projection
+LEARNER#<id>  TALK#<talk>                           a talk with its turns; expiresAt until kept
 IDENTITY#<sub> LEARNER                              the identity mapping
 ```
 
+- A talk is written with `expiresAt` beside its value while it is open or discarded, and
+  without it once finished or ended, so only a talk never kept lapses. TTL deletes late,
+  so the commands read a talk past its `expiresAt` as absent.
 - Every id in a key is escaped with `encodeURIComponent`, so none reaches across a `#`.
   A round and its answers are one prefix `Query`; there is no secondary index.
 - Each command commits as one `TransactWriteItems`, puts conditioned on absence and
@@ -122,9 +133,9 @@ IDENTITY#<sub> LEARNER                              the identity mapping
   same contract suite. **REQUIRED:** `designing-application-core` for the commit shape.
 - Nothing migrates stored items. A field a record gains is optional and read with its
   default when absent; a field a type drops stays in old items, and both stores read
-  settings, rounds, review details and item progress through the fields their types
-  declare (`packages/adapters/src/declared.ts`), so it is neither returned nor written
-  back.
+  settings, rounds, review details, item progress and talks through the fields their
+  types declare (`packages/adapters/src/declared.ts`), so it is neither returned nor
+  written back.
 
 ## The HTTP contract
 
