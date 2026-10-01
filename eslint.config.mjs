@@ -87,7 +87,7 @@ function zonePatterns(name) {
 
 /**
  * Each workspace package under `packages/`, and the workspace packages it may
- * import. ADR-0002's `application → domain` and `domain → nothing`, as a
+ * import: the `application → domain` and `domain → nothing`, as a
  * table the `boundaries/packages/*` blocks below are generated from.
  *
  * @remarks
@@ -103,7 +103,7 @@ const WORKSPACE_EDGES = /** @type {const} */ ({
 });
 
 /**
- * The npm packages each workspace package may import, by exact name: ADR-0002's
+ * The npm packages each workspace package may import, by exact name: the
  * `contracts → (zod only)`, and the AWS SDK plus zod for `adapters`, the one
  * package that performs I/O. Every other package imports none.
  *
@@ -161,10 +161,10 @@ const NO_RELATIVE_PACKAGE_IMPORT = {
 
 /**
  * Each deployable app under `apps/` that holds source, and the workspace
- * packages it may import: ADR-0002's `apps/* → application, adapters,
+ * packages it may import: the `apps/* → application, adapters,
  * contracts`, plus `domain` for the `Result` vocabulary and the tuning the
  * API reads. `apps/web` imports none: it reaches the API over HTTP, through
- * types generated from the contract's OpenAPI document (ADR-0008).
+ * types generated from the contract's OpenAPI document.
  *
  * @remarks
  * `tests/boundaries.test.ts` holds the same tables.
@@ -536,7 +536,7 @@ export default defineConfig([
   },
   // --- workspace package boundaries ----------------------------------------
   //
-  // The import order between the packages and apps ADR-0002 lays out. Each
+  // The import order between the packages and apps. Each
   // block matches only its own package's files, so they stay disjoint from
   // each other: `no-restricted-imports` options replace rather than merge
   // across config objects, exactly like `no-restricted-syntax` (see
@@ -553,7 +553,7 @@ export default defineConfig([
   ),
   workspacePackageBoundary(
     "application",
-    "packages/application imports @instant-composition/domain and nothing else outside itself. Reach another package by its name once ADR-0002 allows the edge and this package's manifest declares it; never by a relative path into its directory.",
+    "packages/application imports @instant-composition/domain and nothing else outside itself. Reach another package by its name once the boundary tables allow the edge and this package's manifest declares it; never by a relative path into its directory.",
   ),
   workspacePackageBoundary(
     "adapters",

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 // `pnpm catalog:build`: turns content/ into one catalog snapshot per language
-// pair, in the shape ADR-0004 decides — items anchored on the target sentence,
+// pair, in this shape — items anchored on the target sentence,
 // prompts and explanations as localizations keyed by first language, CEFR
 // levels, and concept ids namespaced by the target. The snapshot is build
 // output under dist/, never committed; `catalogSnapshotOf` in
@@ -33,8 +33,7 @@ export const FORMAT = 1;
 /**
  * The language pairs content/ holds. Its cards are written with the prompt
  * and the explanation in Japanese (`ja`, `point`) and the model answer in
- * English (`en`); a second pair arrives with the card-schema rewrite ADR-0004
- * lists as a follow-up.
+ * English (`en`).
  */
 const PAIRS = /** @type {const} */ ([{ target: "en", l1: "ja" }]);
 

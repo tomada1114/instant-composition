@@ -41,7 +41,7 @@ describe("the dev edge stack", () => {
     expect(types).toStrictEqual(["AWS::WAFv2::WebACL"]);
   });
 
-  // ADR-0009 gives dev no WAF rules; the plan needs only the web ACL to exist
+  // dev has no WAF rules; the plan needs only the web ACL to exist
   // and stay associated. A rule group of our own is a configuration no
   // flat-rate plan admits.
   it("is a CLOUDFRONT-scope web ACL that allows every request and holds no rule", () => {

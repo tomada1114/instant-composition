@@ -7,7 +7,7 @@ import type { AuthFailure, Authenticator, Principal } from "./authenticator";
 import { cookieValue } from "./cookies";
 
 /**
- * The cookie the web session carries its access token in (ADR-0005). The
+ * The cookie the web session carries its access token in. The
  * `__Host-` prefix makes a browser accept it only when set `Secure`, with
  * `Path=/` and no `Domain`, so no sibling host can plant one; the endpoints
  * that set it use this same name.
@@ -50,7 +50,7 @@ function fixedJwksCache(keySet: Jwks): SimpleJwksCache {
 }
 
 /**
- * The authenticator ADR-0005 decides: a Cognito access token, carried either
+ * The hosted authenticator: a Cognito access token, carried either
  * as `Authorization: Bearer <token>` (native clients) or in
  * {@link SESSION_COOKIE} (the web client), verified with `aws-jwt-verify`
  * against the pool's key set, `token_use` `access` and the expected client

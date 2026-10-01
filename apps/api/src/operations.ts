@@ -104,7 +104,7 @@ function command<T>(
   };
 }
 
-/** A batch's answers carry no round; the path names it (ADR-0007). */
+/** A batch's answers carry no round; the path names it. */
 function answersOf<A extends object>(
   roundId: string,
   answers: readonly A[],

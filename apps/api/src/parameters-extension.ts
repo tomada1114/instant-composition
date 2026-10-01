@@ -43,14 +43,14 @@ function isParameterAnswer(body: unknown): body is ParameterAnswer {
 
 /**
  * The decrypted value of the `SecureString` parameter `name`, read through the
- * AWS Parameters and Secrets Lambda extension on localhost (ADR-0009). The
+ * AWS Parameters and Secrets Lambda extension on localhost. The
  * extension keeps each value in its own cache for at most 300 seconds, so a
  * caller asks it on every use rather than holding the value itself: a rotated
  * secret then reaches a running function within that bound.
  *
  * @throws {@link SecretParameterError} when the extension cannot be reached,
  * answers anything but 200 with a parameter, or the parameter is stored as
- * plain text, which ADR-0009 does not allow for a secret.
+ * plain text, since a secret is only ever stored encrypted.
  */
 export async function readSecureString(
   extension: ParametersExtension,

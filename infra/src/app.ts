@@ -8,7 +8,7 @@ import { ALARM_EMAIL_CONTEXT } from "./observability";
 import { WEB_DIST_CONTEXT } from "./spa-deployment";
 import { parseStage, type Stage } from "./stage";
 
-/** Where every stage deploys (ADR-0009), but for what CloudFront needs from {@link EDGE_REGION}. */
+/** Where every stage deploys, but for what CloudFront needs from {@link EDGE_REGION}. */
 export const REGION = "ap-northeast-1";
 
 /** The one Region a `CLOUDFRONT`-scope web ACL can be created in. */
@@ -64,10 +64,9 @@ export function buildApp(context: Readonly<Record<string, unknown>> = {}): Stage
     stackName: `instant-composition-${stage}-foundation`,
     env: { region: REGION },
   });
-  // `prod`'s deploy waits behind a manual approval (ADR-0009), which this
-  // role's trust does not express, and `prod` is not hosted until the
-  // production phases, so only `dev` has the deploy role or the hosted stacks
-  // until then.
+  // `prod`'s deploy waits behind a manual approval, which this
+  // role's trust does not express, and `prod` is not hosted yet, so only `dev` has the deploy role or the
+  // hosted stacks.
   if (stage === "dev") {
     new DeployAccessStack(app, "deploy-access", {
       stage,

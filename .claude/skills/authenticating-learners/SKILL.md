@@ -19,8 +19,8 @@ Cognito. **Does not own:** the isolation rules identity serves — verify before
 the internal `LearnerId`, 404 for another learner's resource (`isolating-learner-data`);
 the handler table, log line and environment rules of `apps/api` (`serving-the-api`); the
 user pool, the local and hosted web app clients, the secret's parameter and their stage
-settings (`writing-infrastructure`); why Cognito and a backend-for-frontend (ADR-0005,
-and ADR-0009 for secrets). General Cognito and OAuth knowledge stays with AWS's
+settings (`writing-infrastructure`); why Cognito and a backend-for-frontend
+(`mapping-the-architecture`). General Cognito and OAuth knowledge stays with AWS's
 documentation and AWS's own skills.
 
 ## Two credentials, one authenticator
@@ -144,8 +144,8 @@ learner there is one an administrator created (`writing-infrastructure`).
 2026-09-28). Safari does not keep a `Secure` cookie over plain `http://127.0.0.1`, so
 `__Host-sign-in` is gone when the managed login sends the browser back and the callback
 answers `ERR_FORBIDDEN`. That is the `state` check working, not a defect to route
-around: never drop `Secure` or the `__Host-` prefix for a local run. Safari is checked
-on the HTTPS dev URL in Phase 4 (#160).
+around: never drop `Secure` or the `__Host-` prefix for a local run. Safari works on the
+HTTPS dev URL.
 
 ## The hosted entry's configuration
 

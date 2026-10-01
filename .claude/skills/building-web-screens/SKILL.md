@@ -16,12 +16,14 @@ description: >
 screen it renders, the calls to the API, the local run, and what each check can see.
 **Does not own:** the look of a screen and its components (`designing-ui`); the strings
 it renders (`localizing-ui`); the HTTP contract and the API behind the proxy
-(`serving-the-api`, and `packages/contracts` under ADR-0007 and ADR-0013); how a test
-case is written (`writing-tests`) and which project it joins (`placing-tests`);
-TypeScript idiom (`writing-typescript`).
+(`serving-the-api`, and `packages/contracts`); how a test case is written
+(`writing-tests`) and which project it joins (`placing-tests`); TypeScript idiom
+(`writing-typescript`).
 
-ADR-0008 is why the client is a static SPA that reaches the API over HTTP; read it
-before proposing server rendering, a second data layer or a route generator.
+The client is a static SPA that reaches the API over HTTP, so it stays one client of the
+API rather than a second backend, with no server to run, patch or pay for. Read
+`mapping-the-architecture` before proposing server rendering, a second data layer or a
+route generator.
 
 ## A screen is a route, a page and a screen
 

@@ -54,58 +54,6 @@
   color: cccccc
   description: "Not implementable as filed, or parked pending something outside the tracker."
 
-# Phase labels: which roadmap phase (docs/architecture/roadmap.md) an issue
-# belongs to, matching the "Phase N — …" parent it is a sub-issue of.
-- name: "phase: 0"
-  color: 0e8a16
-  description: "Belongs to Phase 0 of docs/architecture/roadmap.md."
-- name: "phase: 1"
-  color: 0e8a16
-  description: "Belongs to Phase 1 of docs/architecture/roadmap.md."
-- name: "phase: 2"
-  color: 0e8a16
-  description: "Belongs to Phase 2 of docs/architecture/roadmap.md."
-- name: "phase: 3"
-  color: 0e8a16
-  description: "Belongs to Phase 3 of docs/architecture/roadmap.md."
-- name: "phase: 4"
-  color: 0e8a16
-  description: "Belongs to Phase 4 of docs/architecture/roadmap.md."
-- name: "phase: 5"
-  color: 0e8a16
-  description: "Belongs to Phase 5 of docs/architecture/roadmap.md."
-- name: "phase: 6"
-  color: 0e8a16
-  description: "Belongs to Phase 6 of docs/architecture/roadmap.md."
-- name: "phase: 7"
-  color: 0e8a16
-  description: "Belongs to Phase 7 of docs/architecture/roadmap.md."
-- name: "phase: 8"
-  color: 0e8a16
-  description: "Belongs to Phase 8 of docs/architecture/roadmap.md."
-- name: "phase: 9"
-  color: 0e8a16
-  description: "Belongs to Phase 9 of docs/architecture/roadmap.md."
-- name: "phase: 10"
-  color: 0e8a16
-  description: "Belongs to Phase 10 of docs/architecture/roadmap.md."
-- name: "phase: 11"
-  color: 0e8a16
-  description: "Belongs to Phase 11 of docs/architecture/roadmap.md."
-- name: "phase: 12"
-  color: 0e8a16
-  description: "Belongs to Phase 12 of docs/architecture/roadmap.md."
-- name: "phase: 13"
-  color: 0e8a16
-  description: "Belongs to Phase 13 of docs/architecture/roadmap.md."
-
-# Lane label: any change not planned as a phase, however large, shipped
-# whenever it is ready rather than in a phase. It carries no `phase: N` label
-# and is no phase parent's sub-issue. A lane, not a type: the issue keeps its type label.
-- name: improvement
-  color: 1d76db
-  description: "A change not planned as a phase, shipped outside the phase plan."
-
 # Labels applied by .github/workflows/pr-label.yml from a PR's Conventional
 # Commit type. Never used for issue triage.
 - name: dependencies

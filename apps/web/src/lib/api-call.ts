@@ -3,7 +3,7 @@
 import { err, ok, type Result } from "./result";
 
 /**
- * The API's root on the SPA's own origin (ADR-0008): `openapi.json`'s
+ * The API's root on the SPA's own origin: `openapi.json`'s
  * `servers` entry, which the Vite dev server proxies to the local API.
  */
 export const API_ROOT = "/api";

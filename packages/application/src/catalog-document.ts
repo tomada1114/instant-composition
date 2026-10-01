@@ -9,8 +9,7 @@ import {
 import type { CatalogSnapshot, LevelInfo } from "./catalog";
 
 /**
- * The file `pnpm catalog:build` writes for one language pair, as ADR-0004 lays
- * it out: items anchored on the target sentence, with what the learner reads
+ * The file `pnpm catalog:build` writes for one language pair: items anchored on the target sentence, with what the learner reads
  * localized by first language. Checking that a file has this shape is the
  * adapter's job; everything here assumes it does.
  */

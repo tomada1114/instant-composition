@@ -1611,7 +1611,7 @@
           },
           "toeic": {
             "deprecated": true,
-            "description": "The same value as `difficulty.toeic`, which a client reads instead. Kept for /v1 (ADR-0007); removed in /v2.",
+            "description": "The same value as `difficulty.toeic`, which a client reads instead. Kept for /v1; removed in /v2.",
             "type": ["string", "null"]
           },
           "difficulty": { "$ref": "#/components/schemas/LevelView" },

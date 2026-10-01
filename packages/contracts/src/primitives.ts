@@ -30,7 +30,7 @@ export const answerResultSchema = z.enum(["ok", "ng", "timeout"]);
 
 /**
  * How a round's answers are given: said aloud against the timer, or typed with
- * none. A round keeps the mode it was dealt with (ADR-0011).
+ * none. A round keeps the mode it was dealt with.
  */
 export const answerModeSchema = z.enum(["spoken", "typed"]);
 

@@ -6,7 +6,7 @@ import { defineConfig, loadEnv } from "vite";
 const DEFAULT_API_PORT = "8787";
 
 /**
- * The static SPA (ADR-0008): `vite build` writes it to `dist/`, and the dev
+ * The static SPA: `vite build` writes it to `dist/`, and the dev
  * server proxies `/api` to the local API so the client calls its own origin,
  * as it will behind CloudFront.
  *

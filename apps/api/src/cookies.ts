@@ -1,7 +1,7 @@
 /**
  * The attributes every cookie the API sets carries. `Secure`, `Path=/` and no
  * `Domain` are what the `__Host-` prefix of each name requires, or a browser
- * drops the cookie; `HttpOnly` keeps it from page scripts (ADR-0005).
+ * drops the cookie; `HttpOnly` keeps it from page scripts.
  */
 const ATTRIBUTES = "Path=/; HttpOnly; Secure; SameSite=Lax";
 

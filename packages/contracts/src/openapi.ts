@@ -47,8 +47,8 @@ const PATH_PARAMETERS: Readonly<Record<string, z.ZodType>> = {
 /**
  * `io: "input"` describes what the server accepts, and leaves objects open:
  * an output-mode schema closes every object with `additionalProperties: false`,
- * which would make a generated client reject the fields ADR-0007 lets `/v1`
- * add. The `$schema` and `$id` each converted schema carries are dropped,
+ * which would make a generated client reject the fields `/v1`
+ * may add. The `$schema` and `$id` each converted schema carries are dropped,
  * since a component is placed by its key and the document fixes the dialect.
  */
 function placed(schema: JsonSchema): JsonSchema {
@@ -148,8 +148,8 @@ function operationOf(route: Route): Operation {
 
 /**
  * The OpenAPI 3.1 document for `routes`, built from zod's own
- * `z.toJSONSchema()` (ADR-0013). Paths are relative to the `/api` server, so a
- * client calls `/api/v1/...` (ADR-0007).
+ * `z.toJSONSchema()`. Paths are relative to the `/api` server, so a
+ * client calls `/api/v1/...`.
  */
 export function openApiDocument(routes: readonly Route[] = ROUTES): OpenApiDocument {
   const paths: Record<string, Record<string, Operation>> = {};

@@ -15,7 +15,7 @@ description: >
 **Owns:** how `apps/api` turns the contract into HTTP — the handler table, the order a
 request is checked in, the log line, the hosted entry's wiring, the environment and the
 local run. **Does not own:** the schemas and the `ROUTES` table themselves
-(`packages/contracts`, ADR-0007 and ADR-0013); the commands and queries a handler calls
+(`packages/contracts`); the commands and queries a handler calls
 (`designing-application-core`); which authenticator runs, the credentials, the cookies
 and the `/v1/auth/*` endpoints (`authenticating-learners`); who may reach whose data
 (`isolating-learner-data`); the `ERR_*` vocabulary (`designing-errors`); the web client
@@ -66,9 +66,9 @@ says where that belongs.
 ## The log line
 
 `createApp` writes one line per request, matched or not, to the `log` sink it is handed;
-`pnpm api` writes each as one line of JSON on stdout. The fields are ADR-0009's baseline
-plus what an operator needs to act on it, and every one is present on every line (`null`
-where it does not apply):
+`pnpm api` writes each as one line of JSON on stdout. The fields are the operational
+baseline plus what an operator needs to act on it, and every one is present on every
+line (`null` where it does not apply):
 
 | Field        | Value                                                                           |
 | ------------ | ------------------------------------------------------------------------------- |
@@ -98,9 +98,9 @@ names, and `isolating-learner-data` before touching either authenticator.
 
 ## The hosted entry
 
-`apps/api/src/lambda.ts` is the Lambda handler behind API Gateway's HTTP API (ADR-0009),
-the one module besides `main.ts` that wires AWS: the DynamoDB stores and directory in
-the function's Region (`regionalDynamoDbClient`), the catalog snapshot bundled with the
+`apps/api/src/lambda.ts` is the Lambda handler behind API Gateway's HTTP API, the one
+module besides `main.ts` that wires AWS: the DynamoDB stores and directory in the
+function's Region (`regionalDynamoDbClient`), the catalog snapshot bundled with the
 function, and `hostedHandler` from `apps/api/src/hosted.ts`, which runs the app through
 `hono/aws-lambda`'s `handle` and puts every `Set-Cookie` in the result's `cookies`.
 `hostedApp` builds Cognito's authenticator and the web sign-in endpoints itself from

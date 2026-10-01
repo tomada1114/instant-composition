@@ -164,7 +164,7 @@ function dynamoDbStore(
 }
 
 /**
- * The learner stores on ADR-0006's single table: one partition per learner,
+ * The learner stores on the single learner table: one partition per learner,
  * reads made strongly consistent, each commit one TransactWriteItems.
  */
 export function createDynamoDbStores(options: DynamoDbStoresOptions): LearnerStores {

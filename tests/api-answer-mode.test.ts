@@ -10,7 +10,7 @@ import {
   type ApiHarness,
 } from "./api-harness";
 
-// ADR-0011's typed-answer mode over `/v1`, driven with `new Request(…)` over
+// The typed-answer mode over `/v1`, driven with `new Request(…)` over
 // the in-memory store: the settings carry the mode, a round the mode it was
 // dealt with, and an answer the text typed for it, read back from the round
 // and its summary and from no other learner's calls, nor from the log.

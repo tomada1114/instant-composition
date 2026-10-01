@@ -22,8 +22,7 @@ import {
 export const MAX_ROUND_ANSWERS = 60;
 
 /**
- * The most characters a typed answer's text may hold: ADR-0011's input length
- * cap, which the domain holds a typed round's answers to as well.
+ * The most characters a typed answer's text may hold: the input length cap, which the domain holds a typed round's answers to as well.
  */
 export const MAX_ANSWER_TEXT = 300;
 

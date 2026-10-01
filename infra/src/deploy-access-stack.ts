@@ -32,7 +32,7 @@ export interface DeployAccessStackProps extends StackProps {
 
 /**
  * GitHub Actions' way into the account: the GitHub OIDC identity provider and
- * one deploy role, so no long-lived access key exists (ADR-0009, Deploys).
+ * one deploy role, so no long-lived access key exists.
  *
  * @remarks
  * The role may do one thing, assume the CDK bootstrap roles (`cdk-*`), which

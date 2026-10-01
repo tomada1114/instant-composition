@@ -18,7 +18,7 @@ export interface WebClientUrls {
 }
 
 /**
- * A confidential web app client's settings (ADR-0005, Web), the same for
+ * A confidential web app client's settings, the same for
  * foundation's local client and the `app` stack's hosted one: only the URLs
  * Cognito redirects to differ.
  */
@@ -27,8 +27,7 @@ export function webClientOptions(urls: WebClientUrls): UserPoolClientOptions {
     generateSecret: true,
     // Every direct flow named false, so the list is empty rather than
     // absent: an absent one gets Cognito's default, ALLOW_REFRESH_TOKEN_AUTH
-    // included, which refresh-token rotation cannot run with (ADR-0005,
-    // Refresh). The browser signs in through managed login alone.
+    // included, which refresh-token rotation cannot run with. The browser signs in through managed login alone.
     authFlows: {
       user: false,
       userSrp: false,
@@ -71,7 +70,7 @@ export interface HostedWebClient {
  * The `dev` URL's own web app client, on foundation's user pool, with the
  * managed login style it needs to show a page, and its secret copied into
  * Parameter Store. The client lives here rather than in `foundation`, which
- * never depends on this stack's distribution (ADR-0009).
+ * never depends on this stack's distribution.
  */
 export function addHostedWebClient(
   scope: Construct,

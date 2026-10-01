@@ -154,7 +154,7 @@ export async function exchangeCode(
 /**
  * Renews a session through `/oauth2/token`'s `refresh_token` grant. With
  * refresh-token rotation on, the answer carries a new refresh token that
- * replaces the one sent (ADR-0005, Refresh).
+ * replaces the one sent.
  */
 export function refreshTokens(
   client: CognitoClient,

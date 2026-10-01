@@ -3,7 +3,7 @@ import { type Stage } from "./stage";
 /**
  * The foundation identifiers published to SSM Parameter Store, by the last
  * segment of each parameter's name. The `app` stack reads them by name rather
- * than through stack exports, so either stack updates on its own (ADR-0009).
+ * than through stack exports, so either stack updates on its own.
  */
 export const FOUNDATION_PARAMETERS = {
   learnerTableName: "learner-table-name",

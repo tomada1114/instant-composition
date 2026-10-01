@@ -1,12 +1,12 @@
 ---
 name: triaging-issues
 description: >
-  Covers this repository's issue vocabulary: the type, priority, `phase: N` and
-  `improvement` label taxonomy in .github/labels.yml, what `blocked: design`, `blocked:
-  dependency`, `blocked: external` and `on hold` mean, and what an issue body must
-  contain (a `path:line`, an observable close condition, a `Depends on: #N` line). Use
-  when filing a GitHub issue, including a change the owner wants after using the app,
-  triaging or re-prioritizing the backlog, picking a `priority: P0`-`P3` or a
+  Covers this repository's issue vocabulary: the type and priority label taxonomy in
+  .github/labels.yml, what `blocked: design`, `blocked: dependency`, `blocked: external`
+  and `on hold` mean, and what an issue body must contain (a `path:line`, an observable
+  close condition, a `Depends on: #N` line). Use when filing a GitHub issue, including a
+  change the owner wants after using the app, triaging or re-prioritizing the backlog,
+  picking a `priority: P0`-`P3` or a
   `bug`/`enhancement`/`documentation`/`chore`/`security` label, or running `pnpm
   repo:labels`.
 ---
@@ -23,10 +23,10 @@ left untiered; triage adds the priority.
 
 ## A request from daily use
 
-When the owner asks for a change they noticed while using the app, decide its lane
-before filing: an `improvement`, or phase work under a parent. **REQUIRED:**
-`steering-the-roadmap`, which classifies the request and files it; this skill then
-supplies its labels and body.
+Work is decided with the owner as they use the app; there is no plan an issue has to be
+placed in. When the owner asks for a change, file it as an issue with a type label and a
+priority (`priority: P2` by default), and stop there — the request authorizes filing,
+not shipping.
 
 ## Priority labels
 
@@ -39,7 +39,7 @@ supplies its labels and body.
 | `blocked: design`     | Applies when the approach has real, unresolved alternatives a human must choose between — not simply that no one has looked at it yet. It still gets a priority tier (see below); readiness and priority are independent judgments.                                                                                                                                                                                                                                                                            |
 | `blocked: dependency` | Applies only alongside a `Depends on: #N` line in the body (see Ordering constraints below) — the label without a named blocker can't be verified or cleared automatically.                                                                                                                                                                                                                                                                                                                                    |
 | `blocked: external`   | A step only a person can take: signing in as an account's root user or registering an MFA device, a purchase or a paid plan, accepting legal terms, a signing identity, or a credential only the owner holds. Not for anything an agent can do with its own tools — code, a CLI with configured credentials, an MCP server such as AWS's, or `gh`. Put the agent-doable remainder in its own issue when it is large. Automated shipping never picks the issue up. Clear the label once the human step is done. |
-| `on hold`             | A container/epic issue that isn't itself a unit of work, or something genuinely parked on a decision outside the tracker. Distinct from `blocked: design`: there the block is a decision still pending inside the tracker; here there may be no in-tracker decision to make at all.                                                                                                                                                                                                                            |
+| `on hold`             | Something genuinely parked on a decision outside the tracker, not a unit of work anyone should pick up now. Distinct from `blocked: design`: there the block is a decision still pending inside the tracker; here there may be no in-tracker decision to make at all.                                                                                                                                                                                                                                          |
 
 Priority ranks impact on the rest of the backlog, not how interesting the work is. Do
 not tier an issue by how appealing it is to implement.
@@ -52,31 +52,6 @@ re-derived later without redoing the judgement.
 A label that turns out to be wrong gets corrected, not worked around. Ranking around a
 stale label in your head leaves the next reader to make the same mistake — fix the label
 instead of mentally overriding it.
-
-## Phase labels
-
-`phase: 0` through `phase: 13` say which phase of `docs/architecture/roadmap.md` an
-issue belongs to, so a listing shows it without opening the issue. Read together, an
-issue's labels answer the three questions a backlog is scanned for: which phase
-(`phase: N`), how much it matters (`priority: *`), and whether it can start
-(`blocked: *`, `on hold`).
-
-- A phase's parent and each of its sub-issues carry that phase's label, and exactly one
-  phase label. The sub-issue link is the membership; the label is how it reads at a
-  glance, so the two move together.
-- An issue outside every phase — a follow-up nobody has placed yet — carries none. It is
-  placed, link and label together, the next time the roadmap is steered.
-- An issue labelled `improvement` carries none on purpose, and is not waiting to be
-  placed. It is any change that was not planned as a phase, however large — a key
-  binding, a default, copy, a new screen, or a change that needs AWS or owes an ADR —
-  shipped whenever it is ready. Only a change that cannot be built until a later phase's
-  work exists takes that phase's label instead. `improvement` is a lane, not a type: the
-  issue still takes `enhancement` or `bug`, and a priority. `steering-the-roadmap`
-  decides what qualifies.
-- A phase label never stands in for readiness or priority; it is not a tier.
-
-`steering-the-roadmap` applies and moves them, because it owns which phase an issue is
-in.
 
 ## Type labels
 

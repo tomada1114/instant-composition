@@ -1,4 +1,4 @@
-/** Every stage the one CDK app builds (ADR-0009, Stages). */
+/** Every stage the one CDK app builds. */
 export const STAGES = ["dev", "prod"] as const;
 
 export type Stage = (typeof STAGES)[number];

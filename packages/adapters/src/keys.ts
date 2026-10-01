@@ -7,7 +7,7 @@ import {
 
 /**
  * The attribute names of the learner table's primary key: one partition per
- * learner, one sort key per entry, as ADR-0006 lays the table out.
+ * learner, one sort key per entry.
  */
 export const LEARNER_TABLE_KEY = { partition: "PK", sort: "SK" } as const;
 
@@ -49,7 +49,7 @@ export const IDENTITY_SORT_KEY = {
 } as const;
 
 /**
- * Where an entry sits inside its learner's partition. ADR-0006's layout, plus
+ * Where an entry sits inside its learner's partition, plus
  * `DAY#<day>` for the day tallies it does not list. A review sorts under its
  * round, so a round's reviews are one prefix and no round id can match it.
  */

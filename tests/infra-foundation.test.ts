@@ -33,7 +33,7 @@ function foundationTemplate(stage: Stage): Template {
   return TEMPLATES[stage];
 }
 
-// ADR-0006's single table, as packages/adapters writes it: `PK` and `SK`
+// The single learner table, as packages/adapters writes it: `PK` and `SK`
 // are its `LEARNER_TABLE_KEY`, which infra/ may not import.
 describe("the foundation stack's learner table", () => {
   it.each<Stage>(["dev", "prod"])(
@@ -99,8 +99,7 @@ describe("the foundation stack's learner table", () => {
   });
 });
 
-// ADR-0005's user pool, with the stage differences ADR-0009's Stages table
-// names: self sign-up off and Cognito's own sender in `dev`.
+// The user pool, with its stage differences: self sign-up off and Cognito's own sender in `dev`.
 describe("the foundation stack's user pool", () => {
   it.each<Stage>(["dev", "prod"])(
     "is one Essentials pool signed in to by email in %s",
@@ -162,7 +161,7 @@ function logicalIdOf(template: Template, type: string): string {
   return id;
 }
 
-// ADR-0005's web sign-in: a confidential client the API's `/v1/auth/*`
+// The web sign-in: a confidential client the API's `/v1/auth/*`
 // endpoints use, and a domain serving managed login, in `dev` only.
 describe("the foundation stack's web sign-in", () => {
   it("has one confidential web client limited to the code grant and openid in dev", () => {
@@ -258,7 +257,7 @@ describe("the foundation stack's web sign-in", () => {
 });
 
 // A local run reads these from `aws cloudformation describe-stacks` rather
-// than from this repository (ADR-0005, Follow-ups).
+// than from this repository.
 describe("the foundation stack's sign-in outputs", () => {
   it.each<Stage>(["dev", "prod"])("exports the user pool's id in %s", (stage) => {
     const template = foundationTemplate(stage);
@@ -311,7 +310,7 @@ describe("the foundation stack's sign-in outputs", () => {
   );
 });
 
-// The app stack reads these by name, never through an export (ADR-0009).
+// The app stack reads these by name, never through an export.
 describe("the foundation stack's Parameter Store identifiers", () => {
   function parametersOf(template: Template): Record<string, unknown> {
     const byName: Record<string, unknown> = {};

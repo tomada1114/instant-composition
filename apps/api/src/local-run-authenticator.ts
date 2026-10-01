@@ -33,7 +33,7 @@ export interface LocalRunAuthenticator {
 
 /**
  * Cognito's verifier when a user pool is configured (`API_COGNITO_*`), and
- * the stand-in otherwise (ADR-0005's Local development).
+ * the stand-in otherwise.
  */
 export function localRunAuthenticator(
   cognito: CognitoSettings | null,

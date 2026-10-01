@@ -224,7 +224,7 @@ describe("request bounds", () => {
     },
   );
 
-  it("holds a typed answer's text to ADR-0011's 300 characters, an empty one included", () => {
+  it("holds a typed answer's text to 300 characters, an empty one included", () => {
     expect(MAX_ANSWER_TEXT).toBe(300);
     for (const text of ["", "Let's get started.", "x".repeat(300)]) {
       expect(answerSchema.parse({ ...answer, text })).toStrictEqual({

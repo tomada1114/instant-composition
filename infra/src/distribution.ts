@@ -34,8 +34,8 @@ const SPA_FALLBACK = `function handler(event) {
 }`;
 
 /**
- * The CloudFront flat-rate plan tier the distribution is subscribed to
- * (ADR-0009, Stages). CloudFormation refuses a tier change on an existing
+ * The CloudFront flat-rate plan tier the distribution is subscribed to.
+ * CloudFormation refuses a tier change on an existing
  * subscription, so moving to Pro is done outside the stack first and this
  * value follows it.
  */

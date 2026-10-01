@@ -20,7 +20,7 @@ export const BEDROCK_MONTHLY_LIMIT_USD = 10;
  * What the deny policy refuses. `bedrock:InvokeModel*` is what stops Converse
  * and ConverseStream too, since those are authorized as `InvokeModel` and
  * `InvokeModelWithResponseStream`; `bedrock:Converse*` is kept beside it for
- * ADR-0010's wording and for any Converse action IAM names later.
+ * explicitness and for any Converse action IAM names later.
  */
 export const BEDROCK_DENIED_ACTIONS = ["bedrock:InvokeModel*", "bedrock:Converse*"];
 
@@ -49,7 +49,7 @@ export interface BedrockBudgetProps {
 }
 
 /**
- * ADR-0010's account-level backstop: a monthly budget on Bedrock spend whose
+ * The account-level backstop: a monthly budget on Bedrock spend whose
  * action attaches a policy denying model invocation to `roles`, automatically,
  * once actual spend reaches {@link BEDROCK_MONTHLY_LIMIT_USD}. Budgets detaches
  * it again when the next month starts.

@@ -25,7 +25,7 @@ import {
   type WebHarness,
 } from "./web-session-harness";
 
-// The web sign-in endpoints ADR-0005 has the API host, driven through the app
+// The web sign-in endpoints the API hosts, driven through the app
 // against a fake user pool domain (tests/web-session-harness.ts): Cognito is
 // never called.
 
