@@ -10,8 +10,6 @@ export type Pass = 'first' | 'retry';
 
 export type AnswerResult = 'ok' | 'ng' | 'timeout';
 
-export type AnswerMode = 'spoken' | 'typed';
-
 export type SubtopicRef = {
     topic: string;
     subtopic: string;
@@ -29,7 +27,6 @@ export type Settings = {
     sound: boolean;
     limitSeconds: 15 | 20 | 30 | 45 | 60;
     gradeKeys: GradeKeys;
-    answerMode: AnswerMode;
 };
 
 export type Dot = {
@@ -73,7 +70,6 @@ export type Answer = {
     result: AnswerResult;
     elapsedMs: number;
     answeredAt?: number;
-    text?: string;
 };
 
 export type AnswersRequest = {
@@ -87,7 +83,6 @@ export type SettingsPatch = {
     sound?: boolean;
     limitSeconds?: 15 | 20 | 30 | 45 | 60;
     gradeKeys?: GradeKeys;
-    answerMode?: AnswerMode;
 };
 
 export type LevelMode = 'auto' | 'manual';
@@ -126,7 +121,6 @@ export type AnsweredRow = {
     pass: Pass;
     result: AnswerResult;
     answeredAt: number;
-    text?: string;
 };
 
 export type RoundPayload = {
@@ -134,7 +128,6 @@ export type RoundPayload = {
     kind: RoundKind;
     day: string;
     portionDay: string | null;
-    answerMode: AnswerMode;
     deck: Array<string>;
     cards: {
         [key: string]: DrillCard;
@@ -179,7 +172,6 @@ export type RoundSummary = {
     roundId: string;
     kind: RoundKind;
     day: string;
-    answerMode: AnswerMode;
     answered: Array<AnsweredRow>;
     yesterday: boolean;
     placement: {

@@ -1,5 +1,4 @@
 import {
-  answerModeOf,
   levelModeOf,
   limitMsOf,
   nearestMilestone,
@@ -37,29 +36,25 @@ export function levelViewOf(stats: LearnerStats, snapshot: CatalogSnapshot): Lev
 
 /** The settings as a client reads them, picked field by field for the reason `payloadOf` gives. */
 export function shownSettingsOf(settings: Settings): ShownSettings {
-  const { topics, focus, dailySize, sound, limitSeconds, gradeKeys, answerMode } =
+  const { topics, focus, dailySize, sound, limitSeconds, gradeKeys } =
     withDefaults(settings);
-  return { topics, focus, dailySize, sound, limitSeconds, gradeKeys, answerMode };
+  return { topics, focus, dailySize, sound, limitSeconds, gradeKeys };
 }
 
-/** A round's answers as a client reads them back, each with the text typed for it. */
+/** A round's answers as a client reads them back. */
 function answeredOf(reviews: readonly ReviewEntry[]): AnsweredRow[] {
-  return reviews.map((review) => {
-    const { pass, result, text } = review.detail;
-    return {
-      id: review.id,
-      cardId: review.item.id,
-      pass,
-      result,
-      answeredAt: review.answeredAt,
-      ...(text === undefined ? {} : { text }),
-    };
-  });
+  return reviews.map((review) => ({
+    id: review.id,
+    cardId: review.item.id,
+    pass: review.detail.pass,
+    result: review.detail.result,
+    answeredAt: review.answeredAt,
+  }));
 }
 
 /**
  * The round as the drill needs it: its cards with the limit the round was
- * dealt with and each card's pace in the round's mode, and where it stands.
+ * dealt with and each card's pace, and where it stands.
  */
 export function payloadOf(
   round: Round,
@@ -68,7 +63,6 @@ export function payloadOf(
   snapshot: CatalogSnapshot,
 ): RoundPayload {
   const cards: Record<string, DrillCard> = {};
-  const mode = answerModeOf(round);
   for (const id of round.deck) {
     const card = snapshot.shown.get(id);
     if (card !== undefined) {
@@ -76,7 +70,7 @@ export function payloadOf(
       // spread would put every field a card gains, such as its concepts, on the wire.
       const { topic, subtopic, level, words, prompt, text, alternatives, explanation } =
         card;
-      const paceMs = paceMsForWords(words, mode);
+      const paceMs = paceMsForWords(words);
       cards[id] = {
         id,
         topic,
@@ -98,7 +92,6 @@ export function payloadOf(
     kind: round.kind,
     day: round.day,
     portionDay: round.portionDay,
-    answerMode: mode,
     deck: round.deck,
     cards,
     answered: answeredOf(reviews),
@@ -138,7 +131,7 @@ export function reachViewOf(
 
 /**
  * A finished round's end screen: its kept outcome, named from the catalog, and
- * its answers read from the log, which holds what was typed only once.
+ * its answers read from the log.
  */
 export function summaryOf(
   round: Round,
@@ -150,7 +143,6 @@ export function summaryOf(
     roundId: round.id,
     kind: round.kind,
     day: round.day,
-    answerMode: answerModeOf(round),
     answered: answeredOf(reviews),
     yesterday: round.kind === "yesterday",
     placement:

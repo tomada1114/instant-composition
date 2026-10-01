@@ -1,9 +1,7 @@
 import type { PracticeError } from "./errors";
 import { err, ok, type Result } from "./result";
-import { answerModeOf } from "./timer";
 import { TUNING } from "./tuning";
 import type {
-  AnswerMode,
   DailySize,
   GradeKeys,
   LimitSeconds,
@@ -29,8 +27,6 @@ export interface SettingsPatch {
   readonly limitSeconds?: LimitSeconds;
   /** Both keys at once, so the pair is judged whole. */
   readonly gradeKeys?: GradeKeys;
-  /** Taken by the next round dealt; the round under way keeps its own. */
-  readonly answerMode?: AnswerMode;
 }
 
 /**
@@ -66,7 +62,6 @@ export function withDefaults(settings: Settings): Required<Settings> {
     ...settings,
     limitSeconds: limitSecondsOf(settings),
     gradeKeys: gradeKeysOf(settings),
-    answerMode: answerModeOf(settings),
   };
 }
 
@@ -124,7 +119,6 @@ export function decideSettings(
   }
   const limitSeconds = patch.limitSeconds ?? current.limitSeconds;
   const gradeKeys = patch.gradeKeys ?? current.gradeKeys;
-  const answerMode = patch.answerMode ?? current.answerMode;
   return ok({
     settings: {
       topics,
@@ -133,7 +127,6 @@ export function decideSettings(
       sound: patch.sound ?? current.sound,
       ...(limitSeconds === undefined ? {} : { limitSeconds }),
       ...(gradeKeys === undefined ? {} : { gradeKeys }),
-      ...(answerMode === undefined ? {} : { answerMode }),
     },
     removedFocus: unique.filter((ref) => !topics.includes(ref.topic)),
   });

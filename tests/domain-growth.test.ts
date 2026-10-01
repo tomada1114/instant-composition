@@ -81,69 +81,6 @@ describe("today's growth", () => {
     expect(growth).toMatchObject({ faster: 0, compared: 1 });
   });
 
-  it("compares only with the latest earlier first pass in the same answer mode", () => {
-    const typedBefore = {
-      roundId: "typed",
-      day: "2026-09-21",
-      answerMode: "typed",
-    } as const;
-    const growth = roundGrowth({
-      roundId: "r",
-      existing: new Set(["c1"]),
-      answers: [
-        makeAnswer({ ...before, cardId: "c1", elapsedMs: 8_000, answeredAt: 1 }),
-        makeAnswer({ ...typedBefore, cardId: "c1", elapsedMs: 20_000, answeredAt: 2 }),
-        makeAnswer({
-          ...now,
-          answerMode: "spoken",
-          cardId: "c1",
-          elapsedMs: 6_000,
-          answeredAt: 10,
-        }),
-      ],
-    });
-    expect(growth).toMatchObject({ faster: 1, compared: 1, firstTime: 0 });
-    expect(growth.rows[0]).toMatchObject({ kind: "faster", deltaMs: 2_000 });
-  });
-
-  it("counts a typed answer as a first time when the card was only ever spoken", () => {
-    const growth = roundGrowth({
-      roundId: "r",
-      existing: new Set(["c1"]),
-      answers: [
-        makeAnswer({ ...before, cardId: "c1", result: "ng", answeredAt: 1 }),
-        makeAnswer({ ...now, answerMode: "typed", cardId: "c1", answeredAt: 10 }),
-      ],
-    });
-    expect(growth).toMatchObject({ fixed: 0, compared: 0, firstTime: 1, rows: [] });
-  });
-
-  it("counts a typed miss fixed by a later typed answer", () => {
-    const growth = roundGrowth({
-      roundId: "r",
-      existing: new Set(["c1"]),
-      answers: [
-        makeAnswer({
-          ...before,
-          answerMode: "typed",
-          cardId: "c1",
-          result: "ng",
-          elapsedMs: 30_000,
-          answeredAt: 1,
-        }),
-        makeAnswer({
-          ...now,
-          answerMode: "typed",
-          cardId: "c1",
-          elapsedMs: 15_000,
-          answeredAt: 10,
-        }),
-      ],
-    });
-    expect(growth).toMatchObject({ fixed: 1, compared: 1 });
-    expect(growth.rows[0]).toMatchObject({ kind: "fixed", deltaMs: 15_000 });
-  });
-
   it("counts cards with nothing to compare against as first-timers", () => {
     const growth = roundGrowth({
       roundId: "r",

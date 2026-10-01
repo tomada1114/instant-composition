@@ -1,4 +1,3 @@
-import { answerModeOf } from "./timer";
 import { TUNING } from "./tuning";
 import type { AnswerRecord } from "./types";
 
@@ -29,8 +28,7 @@ export interface Growth {
 
 /**
  * This round's first-pass answers against each card's previous first-pass
- * answer in the same mode from an earlier round, on any day. One with no
- * earlier first pass in its mode is seen for the first time.
+ * answer from an earlier round, on any day.
  */
 export function roundGrowth(input: GrowthInput): Growth {
   const firstPass = input.answers
@@ -48,8 +46,7 @@ export function roundGrowth(input: GrowthInput): Growth {
       (candidate) =>
         candidate.cardId === answer.cardId &&
         candidate.roundId !== input.roundId &&
-        candidate.answeredAt < answer.answeredAt &&
-        answerModeOf(candidate) === answerModeOf(answer),
+        candidate.answeredAt < answer.answeredAt,
     );
     if (previous === undefined) {
       firstTime += 1;

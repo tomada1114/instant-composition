@@ -18,8 +18,9 @@ import {
   makeRound,
   makeSettings,
   makeStats,
-  makeTypedRound,
   oneOfEach,
+  withRetired,
+  without,
 } from "./application-fixtures";
 
 // The contract every LearnerStores adapter runs: the in-memory one and the
@@ -49,15 +50,6 @@ const READS: Readonly<Record<Exclude<keyof LearnerStore, "commit">, Read>> = {
   days: (store) => store.days(["2026-09-22"]),
   items: (store) => store.items(),
 };
-
-/** A typed round's answer as the log keeps it: its mode, and the text the learner typed. */
-function typedReview(text: string) {
-  const review = makeReview({ id: "a2" });
-  return makeReview({
-    id: "a2",
-    detail: { ...review.detail, limitMs: 600_000, answerMode: "typed", text },
-  });
-}
 
 function isNothing(value: unknown): boolean {
   if (value === undefined) return true;
@@ -122,25 +114,6 @@ export function describeLearnerStoreContract(
       expect((await stores.forLearner(B).settings())?.value.topics).toStrictEqual([
         "travel",
       ]);
-    });
-
-    it("keeps A's typed text from B, and A's own when B writes the same answer with another", async () => {
-      const mine = typedReview("Let's get started.");
-      const theirs = typedReview("Let's begin.");
-      await stores
-        .forLearner(A)
-        .commit({ puts: [{ type: "review", value: mine }], updates: [], expect: [] });
-
-      expect(await stores.forLearner(B).reviewsOf("r1")).toStrictEqual([]);
-      const written = await stores
-        .forLearner(B)
-        .commit({ puts: [{ type: "review", value: theirs }], updates: [], expect: [] });
-
-      expect(written.ok).toBe(true);
-      expect(
-        (await stores.forLearner(A).reviewsOf("r1")).map((review) => review.detail),
-      ).toStrictEqual([makeReview().detail, mine.detail]);
-      expect(await stores.forLearner(B).reviews()).toStrictEqual([theirs]);
     });
 
     it("refuses B an update of A's entry at A's version", async () => {
@@ -326,37 +299,61 @@ export function describeLearnerStoreContract(
       expect(await store.settings()).toStrictEqual({ value: chosen, version: 2 });
     });
 
-    it("keeps a typed round's mode, and its answer's mode and text, through a write and a read", async () => {
-      const round = makeTypedRound();
-      const review = typedReview("Let's get started. — ここで始めよう 🚀");
-      const settings = makeSettings({ answerMode: "typed" });
-
+    it("reads what was stored in the retired typed mode as spoken, without the mode or the text", async () => {
+      // A typed round recorded no limit; a spoken round without one runs against each card's pace.
+      const dealt = without(makeRound(), "limitMs");
+      const review = makeReview();
+      const mark = {
+        sessionId: "r1",
+        result: "ok",
+        elapsedMs: 8_000,
+        answeredAt: 2_000,
+      } as const;
       const written = await store.commit({
         puts: [
-          { type: "round", value: round },
-          { type: "review", value: review },
-          { type: "settings", value: settings },
+          { type: "round", value: withRetired(dealt, { answerMode: "typed" }) },
+          {
+            type: "review",
+            value: {
+              ...review,
+              detail: withRetired(review.detail, {
+                answerMode: "typed",
+                text: "Let's get started.",
+              }),
+            },
+          },
+          {
+            type: "settings",
+            value: withRetired(makeSettings(), { answerMode: "typed" }),
+          },
+          {
+            type: "item",
+            value: withRetired(
+              makeItem({
+                last: withRetired(mark, { answerMode: "typed" }),
+                previous: withRetired(mark, { answerMode: "spoken" }),
+              }),
+              { otherMode: withRetired(mark, { answerMode: "spoken" }) },
+            ),
+          },
         ],
         updates: [],
         expect: [],
       });
 
       expect(written.ok).toBe(true);
-      expect(await store.round("r1")).toStrictEqual({ value: round, version: 1 });
+      expect(await store.round("r1")).toStrictEqual({ value: dealt, version: 1 });
       expect(await store.reviewsOf("r1")).toStrictEqual([review]);
       expect(await store.reviews()).toStrictEqual([review]);
-      expect(await store.settings()).toStrictEqual({ value: settings, version: 1 });
-    });
-
-    it("keeps a text of the full 300 characters", async () => {
-      const review = typedReview("x".repeat(300));
-      await store.commit({
-        puts: [{ type: "review", value: review }],
-        updates: [],
-        expect: [],
+      expect(await store.settings()).toStrictEqual({
+        value: makeSettings(),
+        version: 1,
       });
-
-      expect((await store.reviewsOf("r1"))[0]?.detail.text).toHaveLength(300);
+      expect(await store.items()).toStrictEqual(
+        new Map([
+          ["c1", { value: makeItem({ last: mark, previous: mark }), version: 1 }],
+        ]),
+      );
     });
 
     it("finds only the days that have a tally", async () => {

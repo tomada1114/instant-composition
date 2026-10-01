@@ -1,6 +1,5 @@
 import { errorResponseSchema } from "./errors";
 import {
-  answerModeSchema,
   answerResultSchema,
   dotSchema,
   gradeKeysSchema,
@@ -58,7 +57,6 @@ export const COMPONENTS = {
   RoundKind: roundKindSchema,
   Pass: passSchema,
   AnswerResult: answerResultSchema,
-  AnswerMode: answerModeSchema,
   SubtopicRef: subtopicRefSchema,
   GradeKeys: gradeKeysSchema,
   Settings: settingsSchema,

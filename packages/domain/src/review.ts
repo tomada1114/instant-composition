@@ -6,8 +6,8 @@ import type {
   Outcome,
   ReviewEntry,
 } from "./records";
-import { answerModeOf, isFast } from "./timer";
-import type { AnswerMode, AnswerResult, CardState, DayKey, Pass } from "./types";
+import { isFast } from "./timer";
+import type { AnswerResult, CardState, DayKey, Pass } from "./types";
 
 /** Everything known of one answer once it is accepted into a round. */
 export interface AcceptedAnswer {
@@ -18,11 +18,8 @@ export interface AcceptedAnswer {
   readonly result: AnswerResult;
   readonly elapsedMs: number;
   readonly limitMs: number;
-  /** The card's pace in the round's mode, which "fast" is judged by. */
+  /** The card's pace, which "fast" is judged by. */
   readonly paceMs: number;
-  readonly answerMode: AnswerMode;
-  /** What the learner typed, in a typed round. */
-  readonly text?: string;
   readonly day: DayKey;
   readonly answeredAt: number;
   readonly snapshot: ItemSnapshot;
@@ -55,31 +52,6 @@ function isLate(progress: ItemProgress | undefined, answer: AcceptedAnswer): boo
   );
 }
 
-/**
- * The first passes `mark` is compared with next: the latest one in its mode
- * from an earlier session, and the latest one in the other mode.
- */
-function comparedWith(
-  progress: ItemProgress | undefined,
-  mark: FirstPassMark,
-): Pick<ItemProgress, "previous" | "otherMode"> {
-  const last = progress?.last ?? null;
-  if (last === null) {
-    return { previous: null, otherMode: null };
-  }
-  if (answerModeOf(last) === answerModeOf(mark)) {
-    return {
-      previous: last.sessionId !== mark.sessionId ? last : (progress?.previous ?? null),
-      otherMode: progress?.otherMode ?? null,
-    };
-  }
-  const same = progress?.otherMode ?? null;
-  return {
-    previous: same !== null && same.sessionId !== mark.sessionId ? same : null,
-    otherMode: last,
-  };
-}
-
 /** The item after a first-pass answer that moves it. */
 function advance(progress: ItemProgress | undefined, entry: ReviewEntry): ItemProgress {
   const { detail } = entry;
@@ -96,8 +68,8 @@ function advance(progress: ItemProgress | undefined, entry: ReviewEntry): ItemPr
     result: detail.result,
     elapsedMs: detail.elapsedMs,
     answeredAt: entry.answeredAt,
-    answerMode: answerModeOf(detail),
   };
+  const last = progress?.last ?? null;
   return {
     item: entry.item,
     memory,
@@ -107,7 +79,10 @@ function advance(progress: ItemProgress | undefined, entry: ReviewEntry): ItemPr
       (okDays.length >= 2 ? { day: entry.day, sessionId: entry.sessionId } : null),
     placement: { topic: entry.snapshot.topic, subtopic: entry.snapshot.subtopic },
     last: mark,
-    ...comparedWith(progress, mark),
+    previous:
+      last !== null && last.sessionId !== entry.sessionId
+        ? last
+        : (progress?.previous ?? null),
   };
 }
 
@@ -139,8 +114,6 @@ export function reviewAnswer(
       elapsedMs: answer.elapsedMs,
       limitMs: answer.limitMs,
       paceMs: answer.paceMs,
-      answerMode: answer.answerMode,
-      ...(answer.text === undefined ? {} : { text: answer.text }),
     },
   };
   return {

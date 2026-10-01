@@ -99,29 +99,6 @@ describe("decideSettings", () => {
     expect(gradeKeysOf(undefined)).toStrictEqual({ ok: "ArrowRight", ng: "ArrowLeft" });
   });
 
-  it("saves a chosen answer mode, and keeps it through a patch that leaves it out", () => {
-    const chosen = decideSettings(CURRENT, { answerMode: "typed" }, TAXONOMY);
-    expect(chosen.ok && chosen.value.settings).toStrictEqual({
-      ...CURRENT,
-      answerMode: "typed",
-    });
-    const kept = decideSettings(
-      { ...CURRENT, answerMode: "typed" },
-      { sound: false },
-      TAXONOMY,
-    );
-    expect(kept.ok && kept.value.settings.answerMode).toBe("typed");
-  });
-
-  it("leaves the answer mode unchosen until the learner chooses one, so spoken stands in", () => {
-    const decided = decideSettings(DEFAULT_SETTINGS, { topics: ["work"] }, TAXONOMY);
-    expect(decided.ok && "answerMode" in decided.value.settings).toBe(false);
-    expect(decided.ok && withDefaults(decided.value.settings).answerMode).toBe(
-      "spoken",
-    );
-    expect(withDefaults({ ...CURRENT, answerMode: "typed" }).answerMode).toBe("typed");
-  });
-
   it("takes a focus named twice once", () => {
     const twice = { topic: "work", subtopic: "b" };
     const decided = decideSettings(CURRENT, { focus: [twice, twice] }, TAXONOMY);

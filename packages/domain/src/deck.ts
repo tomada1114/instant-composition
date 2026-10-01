@@ -2,10 +2,8 @@ import { compose, countAvailable, type Composition } from "./compose";
 import type { PracticeError } from "./errors";
 import type { ItemProgress, LearnerStats, Round } from "./records";
 import { err, ok, type Result } from "./result";
-import { answerModeOf } from "./timer";
 import { TUNING } from "./tuning";
 import type {
-  AnswerMode,
   CardMeta,
   CardState,
   ConceptId,
@@ -28,8 +26,6 @@ export interface PracticeState {
   readonly dailySize: DailySize;
   /** The per-card limit a round dealt now records. */
   readonly limitSeconds: LimitSeconds;
-  /** The answer mode a round dealt now records. */
-  readonly answerMode: AnswerMode;
   /** The weakest grammar concepts, weakest first: what the weak share draws from. */
   readonly weakConcepts: readonly ConceptId[];
   /** Only the cards a round may deal. */
@@ -55,7 +51,6 @@ export function practiceState(input: {
     focus: input.settings?.focus ?? [],
     dailySize: input.settings?.dailySize ?? TUNING.defaultDailySize,
     limitSeconds: limitSecondsOf(input.settings),
-    answerMode: answerModeOf(input.settings),
     weakConcepts: weaknesses({ items, shown }).grammar.map((weak) => weak.concept),
     cards: input.cards,
     states: new Map(items.map((progress) => [progress.item.id, progress.memory])),

@@ -14,11 +14,6 @@ export const TUNING = {
    * timer runs out; the learner's chosen limit does.
    */
   pace: { baseSeconds: 4, secondsPerWord: 0.5, minSeconds: 6, maxSeconds: 20 },
-  /**
-   * The pace of a typed round, in the same form. A guess until tuned in use:
-   * half of it is a few seconds' thought plus typing at about 50 words a minute.
-   */
-  typedPace: { baseSeconds: 6, secondsPerWord: 2, minSeconds: 10, maxSeconds: 60 },
   /** A correct answer flipped within this share of its card's pace is "fast". */
   fastRatio: 0.5,
   /** Fewer cards than this and no round is built. */

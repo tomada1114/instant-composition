@@ -205,6 +205,7 @@ describe("a read", () => {
           id: { S: id },
           sessionId: { S: "r1" },
           answeredAt: { N: id === "a" ? "2" : "1" },
+          detail: { M: {} },
         },
       },
     });
@@ -245,7 +246,9 @@ describe("a read", () => {
           {
             type: { S: "review" },
             version: { N: "1" },
-            value: { M: { id: { S: "a1" }, answeredAt: { N: "5" } } },
+            value: {
+              M: { id: { S: "a1" }, answeredAt: { N: "5" }, detail: { M: {} } },
+            },
           },
         ],
       },
@@ -268,7 +271,11 @@ describe("a read", () => {
             type: { S: "item" },
             version: { N: "7" },
             value: {
-              M: { item: { M: { kind: { S: "composition" }, id: { S: "c9" } } } },
+              M: {
+                item: { M: { kind: { S: "composition" }, id: { S: "c9" } } },
+                last: { NULL: true },
+                previous: { NULL: true },
+              },
             },
           },
         ],
