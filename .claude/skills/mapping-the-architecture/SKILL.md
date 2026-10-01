@@ -119,6 +119,11 @@ IDENTITY#<sub> LEARNER                              the identity mapping
   because one transaction holds at most `MAX_COMMIT_ITEMS` (`keys.ts`) actions and a
   long round with resends would not fit. The in-memory store and DynamoDB local run the
   same contract suite. **REQUIRED:** `designing-application-core` for the commit shape.
+- Nothing migrates stored items. A field a record gains is optional and read with its
+  default when absent; a field a type drops stays in old items, and both stores read
+  settings, rounds, review details and item progress through the fields their types
+  declare (`packages/adapters/src/declared.ts`), so it is neither returned nor written
+  back.
 
 ## The HTTP contract
 
@@ -130,7 +135,9 @@ IDENTITY#<sub> LEARNER                              the identity mapping
 - Errors are `{ error: { code, message } }`, `code` a string rather than an enum, and
   objects stay open (input-mode conversion): a client branches on `code` with a default
   branch and ignores unknown fields. Changes within `/v1` are additive, because an open
-  tab on an older bundle, and the answers it queued, still meet the new API.
+  tab on an older bundle, and the answers it queued, still meet the new API. A field
+  leaves `/v1` only once no client reads it; request objects strip fields they do not
+  name, so a queued body still carrying it is taken without it.
 - Writes are safe to resend: rounds and answers carry client-made ids, a repeated answer
   is skipped, and finishing a finished round returns its kept summary.
 - Answers travel in batches, so a live answer and a resent one take the same call; the

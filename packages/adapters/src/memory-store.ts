@@ -9,6 +9,7 @@ import {
 } from "@instant-composition/application";
 import { err, ok, type ReviewEntry } from "@instant-composition/domain";
 
+import { declaredValue } from "./declared";
 import { checkShape, sortKeyOf } from "./keys";
 
 interface Slot {
@@ -34,14 +35,14 @@ function memoryStore(slots: Map<string, Slot>, counted: () => void): LearnerStor
     const slot = slots.get(sortKeyOf(key));
     return slot === undefined
       ? undefined
-      : { value: copy(slot.entry.value) as ValueOf<T>, version: slot.version };
+      : { value: declaredValue(copy(slot.entry)) as ValueOf<T>, version: slot.version };
   }
 
   function all<T extends Entry["type"]>(type: T): Stored<ValueOf<T>>[] {
     return [...slots.values()]
       .filter((slot) => slot.entry.type === type)
       .map((slot) => ({
-        value: copy(slot.entry.value) as ValueOf<T>,
+        value: declaredValue(copy(slot.entry)) as ValueOf<T>,
         version: slot.version,
       }));
   }

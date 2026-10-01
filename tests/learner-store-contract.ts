@@ -19,6 +19,8 @@ import {
   makeSettings,
   makeStats,
   oneOfEach,
+  withRetired,
+  without,
 } from "./application-fixtures";
 
 // The contract every LearnerStores adapter runs: the in-memory one and the
@@ -295,6 +297,63 @@ export function describeLearnerStoreContract(
 
       expect(written.ok).toBe(true);
       expect(await store.settings()).toStrictEqual({ value: chosen, version: 2 });
+    });
+
+    it("reads what was stored in the retired typed mode as spoken, without the mode or the text", async () => {
+      // A typed round recorded no limit; a spoken round without one runs against each card's pace.
+      const dealt = without(makeRound(), "limitMs");
+      const review = makeReview();
+      const mark = {
+        sessionId: "r1",
+        result: "ok",
+        elapsedMs: 8_000,
+        answeredAt: 2_000,
+      } as const;
+      const written = await store.commit({
+        puts: [
+          { type: "round", value: withRetired(dealt, { answerMode: "typed" }) },
+          {
+            type: "review",
+            value: {
+              ...review,
+              detail: withRetired(review.detail, {
+                answerMode: "typed",
+                text: "Let's get started.",
+              }),
+            },
+          },
+          {
+            type: "settings",
+            value: withRetired(makeSettings(), { answerMode: "typed" }),
+          },
+          {
+            type: "item",
+            value: withRetired(
+              makeItem({
+                last: withRetired(mark, { answerMode: "typed" }),
+                previous: withRetired(mark, { answerMode: "spoken" }),
+              }),
+              { otherMode: withRetired(mark, { answerMode: "spoken" }) },
+            ),
+          },
+        ],
+        updates: [],
+        expect: [],
+      });
+
+      expect(written.ok).toBe(true);
+      expect(await store.round("r1")).toStrictEqual({ value: dealt, version: 1 });
+      expect(await store.reviewsOf("r1")).toStrictEqual([review]);
+      expect(await store.reviews()).toStrictEqual([review]);
+      expect(await store.settings()).toStrictEqual({
+        value: makeSettings(),
+        version: 1,
+      });
+      expect(await store.items()).toStrictEqual(
+        new Map([
+          ["c1", { value: makeItem({ last: mark, previous: mark }), version: 1 }],
+        ]),
+      );
     });
 
     it("finds only the days that have a tally", async () => {

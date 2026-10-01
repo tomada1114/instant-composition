@@ -12,14 +12,9 @@ import type {
   LearnerStores,
   Stored,
 } from "@instant-composition/application";
-import {
-  err,
-  ok,
-  type DayTally,
-  type ItemProgress,
-  type ReviewEntry,
-} from "@instant-composition/domain";
+import { err, ok, type ReviewEntry } from "@instant-composition/domain";
 
+import { declaredValue } from "./declared";
 import { isConflict, transactItemsOf } from "./dynamodb-commit";
 import {
   checkShape,
@@ -42,13 +37,16 @@ export interface DynamoDbStoresOptions {
 type Row = Readonly<Record<string, unknown>>;
 type ValueOf<T extends Entry["type"]> = Extract<Entry, { type: T }>["value"];
 
-/** A row as the port hands it back. Only this adapter writes the table, so the value is trusted. */
-function storedOf<T>(row: Row): Stored<T> {
+/**
+ * A row of `type` as the port hands it back. Only this adapter writes the
+ * table, so the value is trusted beyond holding only its declared fields.
+ */
+function storedOf<T extends Entry["type"]>(type: T, row: Row): Stored<ValueOf<T>> {
   const { value, version } = row;
   if (typeof version !== "number" || typeof value !== "object" || value === null) {
     throw new TypeError("A learner table item has no value or no version.");
   }
-  return { value: value as T, version };
+  return { value: declaredValue({ type, value } as Entry) as ValueOf<T>, version };
 }
 
 function byTime(a: ReviewEntry, b: ReviewEntry): number {
@@ -73,7 +71,7 @@ function dynamoDbStore(
         ConsistentRead: true,
       }),
     );
-    return Item === undefined ? undefined : storedOf<ValueOf<T>>(Item);
+    return Item === undefined ? undefined : storedOf(key.type, Item);
   }
 
   /** Every row of the partition whose sort key meets `condition`, across pages. */
@@ -105,7 +103,7 @@ function dynamoDbStore(
     const rows = await query("begins_with(#sk, :prefix)", { ":prefix": prefix });
     return rows
       .filter((row) => row["type"] === "review")
-      .map((row) => storedOf<ReviewEntry>(row).value)
+      .map((row) => storedOf("review", row).value)
       .sort(byTime);
   }
 
@@ -131,7 +129,7 @@ function dynamoDbStore(
       const wanted = new Set(days);
       return new Map(
         rows
-          .map((row) => storedOf<DayTally>(row))
+          .map((row) => storedOf("day", row))
           .filter((stored) => wanted.has(stored.value.day))
           .map((stored) => [stored.value.day, stored]),
       );
@@ -140,7 +138,7 @@ function dynamoDbStore(
       const rows = await query("begins_with(#sk, :prefix)", { ":prefix": "ITEM#" });
       return new Map(
         rows
-          .map((row) => storedOf<ItemProgress>(row))
+          .map((row) => storedOf("item", row))
           .map((stored) => [stored.value.item.id, stored]),
       );
     },
