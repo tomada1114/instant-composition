@@ -6,7 +6,8 @@
   Paid-plan upgrade is the owner's and is tracked only when a feature needs it); amended
   2026-09-28 (the hosted `dev` URL's web app client lives in the `app` stack; `dev`'s
   distribution runs on pay-as-you-go pricing until the account leaves the Free Tier);
-  amended 2026-09-30 (the account is on the Paid plan)
+  amended 2026-09-30 (the account is on the Paid plan, and `dev`'s distribution is on
+  the flat-rate Free plan)
 - Date: 2026-09-23
 - Deciders: the owner
 
@@ -111,8 +112,8 @@ learner ──► CloudFront (flat-rate plan: WAF, DDoS protection, bot manageme
 
 - A CloudFront flat-rate plan, starting on Free and moving to Pro when traffic warrants.
 - WAF rules, including throughput limits, live on the distribution, as AGENTS.md
-  requires.
-- Unverified: which rules, including rate-based rules, each plan tier allows.
+  requires. The Free plan allows five WAF rules, managed rules included, and IP-based
+  rate limiting; Pro allows 25 (checked 2026-09-30).
 
 **Accounts.**
 
@@ -166,8 +167,10 @@ learner ──► CloudFront (flat-rate plan: WAF, DDoS protection, bot manageme
 ```text
 foundation  stateful, rarely changed, retained on delete:
             Cognito user pool, DynamoDB tables (PITR, deletion protection), S3 buckets
-app         rebuilt often: API Gateway, Lambda, CloudFront distribution, SPA asset bucket,
-            the web app client of the distribution's URL; later SQS and the worker Lambda
+edge        us-east-1: the CLOUDFRONT-scope WAF web ACL the distribution's plan requires
+app         rebuilt often: API Gateway, Lambda, CloudFront distribution and its plan
+            subscription, SPA asset bucket, the web app client of the distribution's URL;
+            later SQS and the worker Lambda
 agents      later, only if ADR-0012's conditions are met
 ```
 
@@ -178,6 +181,15 @@ CloudFormation refuses to modify that value or delete the exporting stack (check
 2026-09-23) — the coupling the parameter-name approach avoids. CloudFormation's newer
 `Fn::GetStackOutput` creates a weak reference without an export and is an alternative to
 evaluate when the CDK app is written.
+
+The `edge` stack is the exception, because Parameter Store is regional: `app` in
+`ap-northeast-1` cannot resolve a parameter written in us-east-1. So `app` reads the web
+ACL's ARN from `edge`'s output with `Fn::GetStackOutput`, naming the Region, which
+CloudFormation resolves at each deploy without an export (checked 2026-09-30). CDK's
+default cross-Region reference was rejected: it adds custom resources that copy the
+value into Parameter Store in the consuming Region, and keeps the producing stack from
+being deleted while it is read, the coupling an export brings (checked 2026-09-30).
+`app` depends on `edge` for deploy order alone, and nothing else crosses between them.
 
 A web app client's callback and sign-out URLs are the URL it serves, and the hosted
 one's is the distribution's, which exists only once the `app` stack does. So the owner
@@ -190,18 +202,18 @@ its domain and the client for a local checkout. Both clients have the same setti
 thing, deployed with the prod stage", not a second design. The stage decides only these
 settings:
 
-| Setting                                           | `dev`                                                                                                      | `prod`                                                          |
-| ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| DynamoDB retain on delete and on replacement      | On — the owner's own learning history accumulates here for years                                           | On                                                              |
-| DynamoDB deletion protection                      | Off (below)                                                                                                | On                                                              |
-| DynamoDB point-in-time recovery                   | Off (below)                                                                                                | On; the period is set in the production-guard phase (1–35 days) |
-| Cognito self sign-up                              | Off: only an administrator creates users (`AllowAdminCreateUserOnly`)                                      | On                                                              |
-| Cognito user pool deletion protection             | On                                                                                                         | On                                                              |
-| Cognito web app client and sign-in domain         | A confidential client redirecting to `http://127.0.0.1:5173`; managed login on a prefix domain             | None until `prod` has a URL (production-guard phase)            |
-| Hosted web app client, in the `app` stack         | A confidential client redirecting to the distribution's `https://` URL                                     | None until `prod` is hosted (production-guard phase)            |
-| CloudFront flat-rate plan                         | None while the account is on the Free Tier: pay-as-you-go with plan-compatible settings (below); then Free | Free, then Pro when traffic warrants                            |
-| WAF rate-based rules, SES for authentication mail | None; Cognito's own sender is enough for admin-created users                                               | Yes                                                             |
-| Deploy                                            | On every merge to `main`                                                                                   | Behind a manual approval                                        |
+| Setting                                           | `dev`                                                                                          | `prod`                                                          |
+| ------------------------------------------------- | ---------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| DynamoDB retain on delete and on replacement      | On — the owner's own learning history accumulates here for years                               | On                                                              |
+| DynamoDB deletion protection                      | Off (below)                                                                                    | On                                                              |
+| DynamoDB point-in-time recovery                   | Off (below)                                                                                    | On; the period is set in the production-guard phase (1–35 days) |
+| Cognito self sign-up                              | Off: only an administrator creates users (`AllowAdminCreateUserOnly`)                          | On                                                              |
+| Cognito user pool deletion protection             | On                                                                                             | On                                                              |
+| Cognito web app client and sign-in domain         | A confidential client redirecting to `http://127.0.0.1:5173`; managed login on a prefix domain | None until `prod` has a URL (production-guard phase)            |
+| Hosted web app client, in the `app` stack         | A confidential client redirecting to the distribution's `https://` URL                         | None until `prod` is hosted (production-guard phase)            |
+| CloudFront flat-rate plan                         | Free (below)                                                                                   | Free, then Pro when traffic warrants                            |
+| WAF rate-based rules, SES for authentication mail | None; Cognito's own sender is enough for admin-created users                                   | Yes                                                             |
+| Deploy                                            | On every merge to `main`                                                                       | Behind a manual approval                                        |
 
 The `dev` table has neither point-in-time recovery nor deletion protection, for as long
 as `dev` is the only environment. The owner decided this on 2026-09-27: until `prod`
@@ -212,16 +224,27 @@ console or the API. The CloudFormation `Retain` deletion and update-replace poli
 which need no plan feature, still keep the table through any change made to the stack.
 Both protections are on in `prod` from the table's creation.
 
-The `dev` distribution is not subscribed to the flat-rate Free plan while the account is
-on the Free Tier. The owner decided this on 2026-09-28, when the `app` stack was built:
-Free Tier accounts cannot use CloudFront flat-rate plans, and a subscription also needs
-a `CLOUDFRONT`-scope WAF web ACL, which lives in us-east-1 and stays associated with the
-distribution (checked 2026-09-28; sources below). Until the owner's Paid-plan upgrade,
-the distribution runs on pay-as-you-go pricing. At `dev` traffic that costs about $0,
-because the CloudFront Free Tier includes 1 TB of transfer and 10 million requests a
-month. It uses only settings a plan admits (managed cache and origin request policies,
-origin access control, one CloudFront Function), so the subscription is a later
-addition, not a rebuild (#173).
+The `dev` distribution is on the flat-rate Free plan. Free Tier accounts cannot use
+CloudFront flat-rate plans, so the owner decided on 2026-09-28 to run it on
+pay-as-you-go pricing until the account's Paid-plan upgrade, which came on 2026-09-30;
+the subscription followed (#173). It is an `AWS::PricingPlanManager::Subscription` in
+the `app` stack, covering the distribution and a `CLOUDFRONT`-scope WAF web ACL. That
+web ACL can exist only in us-east-1, and a plan needs it associated with the
+distribution for as long as the subscription lasts (checked 2026-09-30; sources below).
+So it sits in the `edge` stack there, and in `dev` it allows every request and holds no
+rule, since `dev` has no WAF rules (above).
+
+The plan's limits shape what the distribution may use. It admits only managed cache,
+origin request and response headers policies, origin access control, at most five cache
+behaviors and five WAF rules, and no rule group of our own, legacy cache settings,
+origin access identity or real-time logs; a CloudFront Function or web ACL on it may
+serve no other distribution. A change that needs more owes this ADR an amendment and the
+owner's OK first. An account may hold three Free plans. The Free plan includes 1 million
+requests and 100 GB a month with no overage charge, against the pay-as-you-go Free
+Tier's 10 million requests and 1 TB; `dev` has one user, the owner. A subscribed
+distribution cannot be deleted until its plan is cancelled, and a Free plan's
+cancellation takes effect at once, so CloudFormation removes the subscription first when
+it deletes the stack (checked 2026-09-30).
 
 Point-in-time recovery is priced by table size whatever the recovery period. In `prod`
 the period also bounds how long a deleted learner's data stays restorable, which the
@@ -344,8 +367,6 @@ Prices are as of 2026-09-23. A region appears only where the source states one.
 
 - Unverified: Tokyo unit prices for API Gateway HTTP API, Lambda, DynamoDB on-demand and
   PITR, NAT, ALB and interface endpoints.
-- Unverified: the WAF rule set and rate-based rules available on each CloudFront
-  flat-rate tier.
 - Unverified: Cognito's built-in email limits.
 - Whether option 3 (Function URL plus an origin secret) is worth its rotation burden
   once real traffic prices API Gateway.
@@ -360,6 +381,16 @@ Prices are as of 2026-09-23. A region appears only where the source states one.
 - CloudFront OAC for Lambda Function URLs (`x-amz-content-sha256` on POST/PUT), checked
   2026-09-23:
   https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/private-content-restricting-access-to-lambda.html
+- The flat-rate plan subscription resource, its `FREE` tier and the us-east-1 web ACL it
+  needs; the Free plan's limits, its quota of three per account, and its WAF rules;
+  `Fn::GetStackOutput` across Regions, and CDK's cross-Region references, checked
+  2026-09-30:
+  https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-pricingplanmanager-subscription.html,
+  https://docs.aws.amazon.com/PricingPlanManager/latest/UserGuide/getting-started-pricingplanmanager-api.html,
+  https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/flat-rate-pricing-plan.html,
+  https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/intrinsic-function-reference-getstackoutput.html,
+  https://github.com/aws/aws-cdk/blob/main/packages/aws-cdk-lib/cx-api/FEATURE_FLAGS.md
+  (`@aws-cdk/core:defaultCrossStackReferences`)
 - CloudFront flat-rate plan eligibility and prerequisites, checked 2026-09-28:
   https://docs.aws.amazon.com/PricingPlanManager/latest/UserGuide/plans.html,
   https://docs.aws.amazon.com/PricingPlanManager/latest/UserGuide/getting-started-pricingplanmanager-api.html,

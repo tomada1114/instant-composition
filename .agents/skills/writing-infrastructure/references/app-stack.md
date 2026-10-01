@@ -23,15 +23,20 @@ only the reasons an edit would otherwise undo.
 - **The `dev` URL is the distribution's default domain.** No custom domain or
   certificate exists; the `WebUrl` output carries it, and the API function's web origin
   and the hosted client's redirect URLs are derived from it in the same template.
-- **Pay-as-you-go, with plan-compatible settings.** The owner decided on 2026-09-28 that
-  the `dev` distribution is not subscribed to a flat-rate plan while the account is on
-  the Free Tier (ADR-0009, Stages; the later subscription is #173). So it uses only what
-  the Free plan admits — AWS-managed cache and origin request policies, origin access
-  control, one CloudFront Function — and never a custom cache, origin request or
-  response headers policy, an origin access identity, legacy `ForwardedValues` or a
-  real-time log config. `tests/infra-app-stack.test.ts` holds that list. A change that
-  needs one of them would block the subscription, so it owes ADR-0009 an amendment and
-  the owner's OK first.
+- **On the flat-rate Free plan** (ADR-0009, Stages; #173).
+  `AWS::PricingPlanManager::Subscription` covers the distribution and `edge`'s web ACL,
+  which the distribution's `WebACLId` names. The subscription references the
+  distribution, so CloudFormation creates it after the distribution and deletes it
+  first: a subscribed distribution cannot be deleted. CloudFormation refuses a tier
+  change on an existing subscription, so moving to Pro happens outside the stack first
+  and `CLOUDFRONT_PLAN_TIER` follows.
+- **Only what the Free plan admits** — AWS-managed cache and origin request policies,
+  origin access control, one CloudFront Function, at most five cache behaviors — and
+  never a custom cache, origin request or response headers policy, an origin access
+  identity, legacy `ForwardedValues` or a real-time log config. The function and the web
+  ACL serve this distribution alone. `tests/infra-app-stack.test.ts` holds that list. A
+  change that needs one of them breaks the subscription, so it owes ADR-0009 an
+  amendment and the owner's OK first.
 
 ## The HTTP API and the function
 

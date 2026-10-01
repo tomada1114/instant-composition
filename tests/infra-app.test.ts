@@ -1,5 +1,6 @@
 import {
   buildApp,
+  EDGE_REGION,
   MissingRepositoryRootError,
   REGION,
   REPOSITORY_ROOT_CONTEXT,
@@ -25,11 +26,17 @@ describe("the CDK app", () => {
   // Only `dev` has a deploy role, since `prod`'s deploy waits behind an
   // approval, and only `dev` is hosted until the production phases.
   const STACKS = {
-    dev: ["deploy-access", "foundation", "app"],
+    dev: ["deploy-access", "edge", "foundation", "app"],
     prod: ["foundation"],
   } as const;
 
-  it.each(STAGES)("synthesizes the %s stage's stacks in the one region", (stage) => {
+  // A CLOUDFRONT-scope web ACL can only be created in us-east-1, so `edge`
+  // is the one stack outside the stages' Region.
+  function regionOf(id: string): string {
+    return id === "edge" ? EDGE_REGION : REGION;
+  }
+
+  it.each(STAGES)("synthesizes the %s stage's stacks in their regions", (stage) => {
     const synthesized = SYNTHESIZED.get(stage);
     if (synthesized === undefined) throw new TypeError(`no ${stage} synthesis`);
     const { built, stacks } = synthesized;
@@ -44,14 +51,14 @@ describe("the CDK app", () => {
       STACKS[stage].map((id) => ({
         id,
         stackName: `instant-composition-${stage}-${id}`,
-        region: REGION,
+        region: regionOf(id),
       })),
     );
   });
 
-  // ADR-0009: `app` reads foundation's identifiers by name, so the order is
-  // a deploy order alone, and nothing in `foundation` waits on `app`.
-  it("deploys the dev app stack after foundation, never the reverse", () => {
+  // ADR-0009: `app` reads foundation's identifiers and edge's web ACL by
+  // name, so the order is a deploy order alone, and neither waits on `app`.
+  it("deploys the dev app stack after foundation and edge, never the reverse", () => {
     const stacks = SYNTHESIZED.get("dev")?.stacks ?? [];
     const ids = new Set(stacks.map(({ id }) => id));
     // Each stack also depends on its own asset manifest, which is no stack.
@@ -64,7 +71,8 @@ describe("the CDK app", () => {
     expect(dependencies).toStrictEqual({
       "deploy-access": [],
       foundation: [],
-      app: ["foundation"],
+      edge: [],
+      app: ["foundation", "edge"],
     });
   });
 

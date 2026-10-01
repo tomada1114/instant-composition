@@ -2,19 +2,6 @@ import { CfnOutput, Stack, type StackProps } from "aws-cdk-lib";
 import { HttpApi } from "aws-cdk-lib/aws-apigatewayv2";
 import { HttpLambdaIntegration } from "aws-cdk-lib/aws-apigatewayv2-integrations";
 import {
-  AllowedMethods,
-  CachePolicy,
-  Distribution,
-  Function as EdgeFunction,
-  FunctionCode,
-  FunctionEventType,
-  FunctionRuntime,
-  OriginProtocolPolicy,
-  OriginRequestPolicy,
-  ViewerProtocolPolicy,
-} from "aws-cdk-lib/aws-cloudfront";
-import { HttpOrigin, S3BucketOrigin } from "aws-cdk-lib/aws-cloudfront-origins";
-import {
   BlockPublicAccess,
   Bucket,
   BucketEncryption,
@@ -25,6 +12,7 @@ import { type Construct } from "constructs";
 
 import { addApiFunction } from "./api-function";
 import { addBedrockBudget, roleOf } from "./bedrock-budget";
+import { addDistribution } from "./distribution";
 import { addObservability } from "./observability";
 import { addSpaDeployment } from "./spa-deployment";
 import {
@@ -34,21 +22,6 @@ import {
 } from "./foundation-parameters";
 import { type Stage } from "./stage";
 import { addHostedWebClient } from "./web-client";
-
-/**
- * The CloudFront Function that sends a client route to the SPA's entry: a
- * path whose last segment has no extension is a route, never a file Vite
- * emitted. A distribution-wide error response would do the same by status
- * code, but it would also rewrite the API's own 403 and 404 answers.
- */
-const SPA_FALLBACK = `function handler(event) {
-  var request = event.request;
-  var last = request.uri.split("/").pop();
-  if (last.indexOf(".") === -1) {
-    request.uri = "/index.html";
-  }
-  return request;
-}`;
 
 /** The stack output the `dev` URL is read from. */
 export const WEB_URL_OUTPUT = "WebUrl";
@@ -79,6 +52,11 @@ export interface AppStackProps extends StackProps {
   readonly alarmEmail?: string | undefined;
   /** The web client's build to upload, from deploy-time context; nothing is uploaded without it. */
   readonly webDist?: string | undefined;
+  /**
+   * The `CLOUDFRONT`-scope web ACL the distribution's plan requires, which
+   * only us-east-1 can hold, so it arrives from the `edge` stack.
+   */
+  readonly webAclArn: string;
 }
 
 /**
@@ -88,13 +66,14 @@ export interface AppStackProps extends StackProps {
  * @remarks
  * Foundation's identifiers are read from Parameter Store by name when the
  * stack deploys, never through a CloudFormation export, so either stack
- * updates on its own and `foundation` knows nothing of this one.
+ * updates on its own and `foundation` knows nothing of this one. The `edge`
+ * stack's web ACL arrives as `webAclArn`, read across Regions by output name.
  */
 export class AppStack extends Stack {
   constructor(
     scope: Construct,
     id: string,
-    { stage, repositoryRoot, alarmEmail, webDist, ...props }: AppStackProps,
+    { stage, repositoryRoot, alarmEmail, webDist, webAclArn, ...props }: AppStackProps,
   ) {
     super(scope, id, props);
     const foundation = (parameter: FoundationParameter): string =>
@@ -111,7 +90,15 @@ export class AppStack extends Stack {
     const api = new HttpApi(this, "HttpApi", {
       description: `instant-composition ${stage}: the API behind CloudFront's /api/*`,
     });
-    const distribution = this.addDistribution(bucket, api, stage);
+    // `Bucket` declares `isWebsite` optional where `IBucket` requires it, which
+    // exactOptionalPropertyTypes refuses; the value is the same object.
+    const origin: IBucket = bucket as IBucket;
+    const distribution = addDistribution(this, {
+      stage,
+      bucket: origin,
+      api,
+      webAclArn,
+    });
     const webUrl = `https://${distribution.distributionDomainName}`;
     const webClient = addHostedWebClient(this, {
       userPoolId: foundation(FOUNDATION_PARAMETERS.userPoolId),
@@ -141,60 +128,13 @@ export class AppStack extends Stack {
     const sns = addObservability(this, { stage, api, handler, tableName, alarmEmail });
     addBedrockBudget(this, { stage, roles: [roleOf(handler)], topic: sns });
     if (webDist !== undefined) {
-      // The same `isWebsite` mismatch addDistribution explains.
-      addSpaDeployment(this, { bucket: bucket as IBucket, distribution, webDist });
+      addSpaDeployment(this, { bucket: origin, distribution, webDist });
     }
 
     new CfnOutput(this, WEB_URL_OUTPUT, { value: webUrl });
     new CfnOutput(this, SPA_BUCKET_NAME_OUTPUT, { value: bucket.bucketName });
     new CfnOutput(this, DISTRIBUTION_ID_OUTPUT, {
       value: distribution.distributionId,
-    });
-  }
-
-  /**
-   * `/*` from the bucket, `/api/*` uncached from the HTTP API. Only managed
-   * cache and origin request policies, and one function this distribution
-   * alone uses: what the flat-rate Free plan admits.
-   */
-  private addDistribution(bucket: Bucket, api: HttpApi, stage: Stage): Distribution {
-    // `Bucket` declares `isWebsite` optional where `IBucket` requires it, which
-    // exactOptionalPropertyTypes refuses; the value is the same object.
-    const origin: IBucket = bucket as IBucket;
-    return new Distribution(this, "Distribution", {
-      comment: `instant-composition ${stage}`,
-      defaultRootObject: "index.html",
-      defaultBehavior: {
-        origin: S3BucketOrigin.withOriginAccessControl(origin),
-        viewerProtocolPolicy: ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
-        cachePolicy: CachePolicy.CACHING_OPTIMIZED,
-        functionAssociations: [
-          {
-            eventType: FunctionEventType.VIEWER_REQUEST,
-            function: new EdgeFunction(this, "SpaFallback", {
-              code: FunctionCode.fromInline(SPA_FALLBACK),
-              runtime: FunctionRuntime.JS_2_0,
-              comment: "Serves index.html for a client route",
-            }),
-          },
-        ],
-      },
-      additionalBehaviors: {
-        // Every viewer header but Host goes through: the cookie path's Origin
-        // check and the sign-in callback read Origin, Cookie, Authorization
-        // and the query string. The app matches `/api/...` on the raw path,
-        // so the path goes through unchanged.
-        "/api/*": {
-          origin: new HttpOrigin(
-            `${api.apiId}.execute-api.${this.region}.${this.urlSuffix}`,
-            { protocolPolicy: OriginProtocolPolicy.HTTPS_ONLY },
-          ),
-          viewerProtocolPolicy: ViewerProtocolPolicy.HTTPS_ONLY,
-          allowedMethods: AllowedMethods.ALLOW_ALL,
-          cachePolicy: CachePolicy.CACHING_DISABLED,
-          originRequestPolicy: OriginRequestPolicy.ALL_VIEWER_EXCEPT_HOST_HEADER,
-        },
-      },
     });
   }
 }

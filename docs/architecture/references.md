@@ -128,8 +128,16 @@ listed under [Unverified](#unverified) instead of being stated as fact.
   - Each plan includes WAF, DDoS protection, bot management and Route 53 DNS.
   - There are no overage charges, and blocked requests do not count against the
     allowance.
+  - The Free plan allows five WAF rules, managed rules included, five cache behaviors,
+    and IP-based rate limiting; Pro allows 25 WAF rules.
+  - An account may hold three Free plans and 100 plans in all.
+  - A rule group of one's own, real-time logs, an origin access identity and legacy
+    cache settings block a subscription, and a plan's CloudFront Function or web ACL may
+    serve no other distribution.
+  - A subscribed distribution cannot be deleted until the plan is cancelled; a Free
+    plan's cancellation is immediate.
 
-  Checked 2026-09-23.
+  Checked 2026-09-23; the Free plan's limits, quotas and blockers checked 2026-09-30.
 
 - [AWS WAF with CloudFront](https://docs.aws.amazon.com/waf/latest/developerguide/cloudfront-features.html)
   — a web ACL must stay associated with a distribution on a flat-rate plan. Checked
@@ -140,6 +148,20 @@ listed under [Unverified](#unverified) instead of being stated as fact.
   — Free Tier accounts cannot use CloudFront flat-rate plans, and a plan subscription
   needs the distribution and a `CLOUDFRONT`-scope web ACL to exist first. Checked
   2026-09-28.
+- [`AWS::PricingPlanManager::Subscription`](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/aws-resource-pricingplanmanager-subscription.html)
+  — a flat-rate plan subscription as a CloudFormation resource: plan family
+  `CloudFront`, tier `FREE` activated at once, `ResourceArns` holding the distribution's
+  ARN and a `CLOUDFRONT`-scope web ACL's ARN from us-east-1; a tier change through a
+  stack update is refused. Checked 2026-09-30.
+- [`Fn::GetStackOutput`](https://docs.aws.amazon.com/AWSCloudFormation/latest/TemplateReference/intrinsic-function-reference-getstackoutput.html)
+  — reads another stack's output in the same account across Regions when `Region` is
+  given, resolved at each create or update, with no export and no lock on the producer.
+  Checked 2026-09-30.
+- [CDK feature flags](https://github.com/aws/aws-cdk/blob/main/packages/aws-cdk-lib/cx-api/FEATURE_FLAGS.md)
+  — `@aws-cdk/core:defaultCrossStackReferences`: a strong cross-Region reference copies
+  the value into Parameter Store in the consuming Region through custom resources and
+  keeps the producing stack from being deleted while consumers exist. Checked
+  2026-09-30.
 - [CloudFront FAQs](https://aws.amazon.com/cloudfront/faqs/) — the pay-as-you-go
   CloudFront Free Tier includes 1 TB of data transfer and 10 million requests a month.
   Checked 2026-09-28.
@@ -637,8 +659,6 @@ on it.
     in-Region and through JP profiles.
   - API Gateway HTTP API, Lambda, and DynamoDB on-demand and PITR.
 - **Amplify Hosting:** support for Next.js 16.
-- **CloudFront flat-rate plans:** which WAF rules each tier allows, including rate-based
-  rules.
 - **Bedrock Guardrails:** availability in Tokyo, and the current price per text unit.
 - **Claude on JP profiles:** which models newer than Sonnet 4.5 have a `jp.` inference
   profile.

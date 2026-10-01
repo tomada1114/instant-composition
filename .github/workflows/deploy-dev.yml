@@ -22,10 +22,11 @@ concurrency:
 
 jobs:
   deploy:
-    name: Deploy the dev foundation and app stacks
+    name: Deploy the dev foundation, edge and app stacks
     runs-on: ubuntu-latest
-    # Two stacks now, and `app` waits on CloudFront twice: for the
-    # distribution itself and for the upload's invalidation.
+    # Three stacks now, and `app` waits on CloudFront twice: for the
+    # distribution itself and for the upload's invalidation. `edge` holds one
+    # web ACL and is quick.
     timeout-minutes: 45
     permissions:
       contents: read
@@ -57,11 +58,19 @@ jobs:
           aws-region: ap-northeast-1
 
       # --exclusively deploys the named stack alone; without it, deploying
-      # `app` would deploy its dependency `foundation` a second time.
+      # `app` would deploy its dependencies `foundation` and `edge` a second
+      # time.
       - name: Deploy the foundation stack
         run: pnpm cdk deploy -c stage=dev foundation --exclusively --require-approval never
 
-      # `app` reads foundation's parameters as it deploys, so it goes second.
+      # `edge` is the one stack in us-east-1, where a CLOUDFRONT-scope web ACL
+      # has to live; the CLI deploys it there through us-east-1's bootstrap
+      # roles, whatever aws-region above says.
+      - name: Deploy the edge stack
+        run: pnpm cdk deploy -c stage=dev edge --exclusively --require-approval never
+
+      # `app` reads foundation's parameters and edge's web ACL output as it
+      # deploys, so it goes last.
       # ALARM_EMAIL is a secret so the address stays masked in the run's log;
       # a deploy without it removes the alarm topic's subscription, so its
       # absence is reported rather than silent.

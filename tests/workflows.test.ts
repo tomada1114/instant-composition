@@ -2940,8 +2940,9 @@ describe("the workflows in .github/workflows", () => {
   });
 
   // #157: a merge reaches the dev URL with no manual step. The build comes
-  // before the deploys, and `app` after `foundation`, whose parameters it reads.
-  it("builds the web client, then deploys foundation and app, each alone, in that order", () => {
+  // before the deploys, and `app` after `foundation`, whose parameters it
+  // reads, and `edge`, whose web ACL output it reads (#173).
+  it("builds the web client, then deploys foundation, edge and app, each alone, in that order", () => {
     const commands = runCommands(workflowSource("deploy-dev.yml")).map(
       ({ command }) => command,
     );
@@ -2949,12 +2950,16 @@ describe("the workflows in .github/workflows", () => {
     const foundation = commands.findIndex((command) =>
       command.includes("pnpm cdk deploy -c stage=dev foundation --exclusively"),
     );
+    const edge = commands.findIndex((command) =>
+      command.includes("pnpm cdk deploy -c stage=dev edge --exclusively"),
+    );
     const app = commands.findIndex((command) =>
       command.includes('pnpm cdk deploy "${context[@]}" app --exclusively'),
     );
     expect(build).toBeGreaterThanOrEqual(0);
     expect(foundation).toBeGreaterThan(build);
-    expect(app).toBeGreaterThan(foundation);
+    expect(edge).toBeGreaterThan(foundation);
+    expect(app).toBeGreaterThan(edge);
     expect(commands[app]).toContain('-c "web-dist=$GITHUB_WORKSPACE/apps/web/dist"');
   });
 
