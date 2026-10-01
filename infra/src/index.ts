@@ -1,5 +1,6 @@
 export {
   buildApp,
+  EDGE_REGION,
   MissingRepositoryRootError,
   REGION,
   REPOSITORY_ROOT_CONTEXT,
@@ -26,6 +27,8 @@ export {
   roleOf,
   type BedrockBudgetProps,
 } from "./bedrock-budget";
+export { CLOUDFRONT_PLAN_TIER } from "./distribution";
+export { EdgeStack, WEB_ACL_ARN_OUTPUT, type EdgeStackProps } from "./edge-stack";
 export { WEB_DIST_CONTEXT } from "./spa-deployment";
 export { parseStage, STAGES, UnknownStageError, type Stage } from "./stage";
 export {

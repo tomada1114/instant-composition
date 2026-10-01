@@ -1,14 +1,18 @@
-import { App } from "aws-cdk-lib";
+import { App, Fn } from "aws-cdk-lib";
 
 import { AppStack } from "./app-stack";
 import { DeployAccessStack } from "./deploy-access-stack";
+import { EdgeStack, WEB_ACL_ARN_OUTPUT } from "./edge-stack";
 import { FoundationStack } from "./foundation-stack";
 import { ALARM_EMAIL_CONTEXT } from "./observability";
 import { WEB_DIST_CONTEXT } from "./spa-deployment";
 import { parseStage, type Stage } from "./stage";
 
-/** Where every stage deploys (ADR-0009). */
+/** Where every stage deploys (ADR-0009), but for what CloudFront needs from {@link EDGE_REGION}. */
 export const REGION = "ap-northeast-1";
+
+/** The one Region a `CLOUDFRONT`-scope web ACL can be created in. */
+export const EDGE_REGION = "us-east-1";
 
 /**
  * The context key naming the repository's root, absolute or relative to the
@@ -46,6 +50,11 @@ export interface StagedApp {
  * Each stack's construct id is the same in every stage, so a CLI command
  * names it the same way (`pnpm cdk deploy -c stage=dev foundation`); its
  * CloudFormation name carries the stage.
+ *
+ * `app` reads the `edge` stack's web ACL ARN with `Fn::GetStackOutput`, the
+ * one value that crosses Regions: Parameter Store, which carries
+ * foundation's identifiers, is regional, and a CDK cross-Region reference
+ * would add a custom resource to each stack.
  */
 export function buildApp(context: Readonly<Record<string, unknown>> = {}): StagedApp {
   const app = new App({ context: { ...context } });
@@ -57,7 +66,8 @@ export function buildApp(context: Readonly<Record<string, unknown>> = {}): Stage
   });
   // `prod`'s deploy waits behind a manual approval (ADR-0009), which this
   // role's trust does not express, and `prod` is not hosted until the
-  // production phases, so only `dev` has either stack until then.
+  // production phases, so only `dev` has the deploy role or the hosted stacks
+  // until then.
   if (stage === "dev") {
     new DeployAccessStack(app, "deploy-access", {
       stage,
@@ -70,18 +80,25 @@ export function buildApp(context: Readonly<Record<string, unknown>> = {}): Stage
     }
     const alarmEmail: unknown = app.node.tryGetContext(ALARM_EMAIL_CONTEXT);
     const webDist: unknown = app.node.tryGetContext(WEB_DIST_CONTEXT);
+    const edge = new EdgeStack(app, "edge", {
+      stage,
+      stackName: `instant-composition-${stage}-edge`,
+      env: { region: EDGE_REGION },
+    });
     const hosted = new AppStack(app, "app", {
       stage,
       repositoryRoot,
+      webAclArn: Fn.getStackOutput(edge.stackName, WEB_ACL_ARN_OUTPUT, EDGE_REGION),
       alarmEmail:
         typeof alarmEmail === "string" && alarmEmail !== "" ? alarmEmail : undefined,
       webDist: typeof webDist === "string" && webDist !== "" ? webDist : undefined,
       stackName: `instant-composition-${stage}-app`,
       env: { region: REGION },
     });
-    // Deploy order only: `app` reads foundation's parameters by name, so no
-    // value crosses between the two templates.
+    // Deploy order only: `app` reads foundation's parameters and edge's
+    // output by name, so no reference ties the templates together.
     hosted.addStackDependency(foundation);
+    hosted.addStackDependency(edge);
   }
   return { app, stage };
 }

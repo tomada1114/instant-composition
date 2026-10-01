@@ -3,12 +3,14 @@ import { runInNewContext } from "node:vm";
 import {
   AppStack,
   buildApp,
+  CLOUDFRONT_PLAN_TIER,
   DISTRIBUTION_ID_OUTPUT,
   FOUNDATION_PARAMETERS,
   foundationParameterName,
   LAMBDA_CATALOG_PATH,
   PARAMETERS_EXTENSION_LAYER_ARN,
   SPA_BUCKET_NAME_OUTPUT,
+  WEB_ACL_ARN_OUTPUT,
   WEB_URL_OUTPUT,
   webClientSecretParameterName,
   type FoundationParameter,
@@ -74,6 +76,15 @@ function foundationReference(parameter: FoundationParameter): { Ref: string } {
   return { Ref: matches[0]?.[0] ?? "" };
 }
 
+// The edge stack's web ACL, read across Regions by output name (ADR-0009).
+const WEB_ACL_ARN = {
+  "Fn::GetStackOutput": {
+    StackName: "instant-composition-dev-edge",
+    Region: "us-east-1",
+    OutputName: WEB_ACL_ARN_OUTPUT,
+  },
+};
+
 const DOMAIN_NAME = {
   "Fn::GetAtt": [logicalIdOf("AWS::CloudFront::Distribution"), "DomainName"],
 };
@@ -91,7 +102,7 @@ function webUrl(path?: string): { "Fn::Join": [string, unknown[]] } {
 // ADR-0009's cost guard: nothing billed by the hour whether used or not —
 // no NAT gateway, load balancer, interface endpoint or database instance.
 describe("the dev app stack's resources", () => {
-  it("are only the bucket, the distribution, the HTTP API, the function, their alarms, the web client and the Bedrock budget", () => {
+  it("are only the bucket, the distribution and its plan, the HTTP API, the function, their alarms, the web client and the Bedrock budget", () => {
     // The CLI adds its own AWS::CDK::Metadata, which bills nothing.
     const types = new Set(
       Object.values(TEMPLATE.toJSON()["Resources"] as Record<string, { Type: string }>)
@@ -119,6 +130,7 @@ describe("the dev app stack's resources", () => {
         "AWS::Lambda::Function",
         "AWS::Lambda::Permission",
         "AWS::Logs::LogGroup",
+        "AWS::PricingPlanManager::Subscription",
         "AWS::S3::Bucket",
         "AWS::S3::BucketPolicy",
         "AWS::SNS::Topic",
@@ -134,10 +146,14 @@ describe("the dev app stack's resources", () => {
     expect(TEMPLATE.findResources("AWS::SSM::Parameter")).toStrictEqual({});
   });
 
-  it("read foundation by parameter name, never through a CloudFormation export", () => {
+  // Parameter Store is regional, so the edge stack's web ACL in us-east-1 is
+  // the one value read with Fn::GetStackOutput; foundation's never are.
+  it("read foundation by parameter name, and only edge's web ACL by stack output, never through an export", () => {
     const template = JSON.stringify(TEMPLATE.toJSON());
     expect(template).not.toContain("Fn::ImportValue");
-    expect(template).not.toContain("Fn::GetStackOutput");
+    const references = template.match(/\{"Fn::GetStackOutput":\{[^}]*\}\}/g) ?? [];
+    expect(references.length).toBeGreaterThan(0);
+    expect(new Set(references)).toStrictEqual(new Set([JSON.stringify(WEB_ACL_ARN)]));
   });
 });
 
@@ -278,6 +294,43 @@ describe("the dev app stack's distribution", () => {
       expect(TEMPLATE.findResources(type)).toStrictEqual({});
     }
     expect(JSON.stringify(config())).not.toContain("ForwardedValues");
+    // The Free plan's cap on cache behaviors, the default one included.
+    const behaviors = (config()["CacheBehaviors"] as unknown[] | undefined) ?? [];
+    expect(behaviors.length + 1).toBeLessThanOrEqual(5);
+  });
+
+  // A plan needs a CLOUDFRONT-scope web ACL associated with the distribution
+  // for as long as the subscription lasts.
+  it("is associated with the edge stack's web ACL", () => {
+    expect(config()["WebACLId"]).toStrictEqual(WEB_ACL_ARN);
+  });
+});
+
+// ADR-0009, Stages: dev's distribution is on the flat-rate Free plan (#173).
+describe("the dev app stack's pricing plan", () => {
+  it("subscribes the distribution and its web ACL to CloudFront's flat-rate Free plan", () => {
+    expect(CLOUDFRONT_PLAN_TIER).toBe("FREE");
+    expect(propertiesOf("AWS::PricingPlanManager::Subscription")).toStrictEqual({
+      PlanFamily: "CloudFront",
+      PlanTier: "FREE",
+      UsageLevel: "DEFAULT",
+      ResourceArns: [
+        {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              { Ref: "AWS::Partition" },
+              ":cloudfront::",
+              { Ref: "AWS::AccountId" },
+              ":distribution/",
+              { Ref: logicalIdOf("AWS::CloudFront::Distribution") },
+            ],
+          ],
+        },
+        WEB_ACL_ARN,
+      ],
+    });
   });
 });
 

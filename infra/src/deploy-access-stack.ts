@@ -37,8 +37,10 @@ export interface DeployAccessStackProps extends StackProps {
  * @remarks
  * The role may do one thing, assume the CDK bootstrap roles (`cdk-*`), which
  * carry the deploy permissions themselves; the owner chose that scope over
- * administrator access. Deployed by hand once, since the workflow needs it
- * before it can deploy anything.
+ * administrator access. A bootstrap role's name carries its Region, so
+ * `cdk-*` covers us-east-1's, which the `edge` stack deploys with, as well as
+ * Tokyo's. Deployed by hand once, since the workflow needs it before it can
+ * deploy anything.
  */
 export class DeployAccessStack extends Stack {
   constructor(
