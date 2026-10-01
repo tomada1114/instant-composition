@@ -18,6 +18,11 @@ export const LEARNER_OPERATIONS = [
   "recap",
   "settings",
   "history",
+  "startTalk",
+  "sendTurn",
+  "retryReply",
+  "recordRecital",
+  "endTalk",
 ] as const;
 
 /** Operations only a system job runs. */

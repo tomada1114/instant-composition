@@ -9,6 +9,7 @@ import type {
   ReviewEntry,
   Round,
   Settings,
+  Talk,
 } from "@instant-composition/domain";
 
 import type { LearnerId, Profile } from "./context";
@@ -22,7 +23,8 @@ export type Entry =
   | { readonly type: "review"; readonly value: ReviewEntry }
   | { readonly type: "portion"; readonly value: Portion }
   | { readonly type: "day"; readonly value: DayTally }
-  | { readonly type: "item"; readonly value: ItemProgress };
+  | { readonly type: "item"; readonly value: ItemProgress }
+  | { readonly type: "talk"; readonly value: Talk };
 
 /** Where an entry lives inside the learner's own data; no key names a learner. */
 export type Key =
@@ -33,7 +35,8 @@ export type Key =
   | { readonly type: "review"; readonly sessionId: string; readonly id: string }
   | { readonly type: "portion"; readonly day: DayKey }
   | { readonly type: "day"; readonly day: DayKey }
-  | { readonly type: "item"; readonly item: ItemRef };
+  | { readonly type: "item"; readonly item: ItemRef }
+  | { readonly type: "talk"; readonly id: string };
 
 export function keyOf(entry: Entry): Key {
   switch (entry.type) {
@@ -50,6 +53,8 @@ export function keyOf(entry: Entry): Key {
       return { type: entry.type, day: entry.value.day };
     case "item":
       return { type: "item", item: entry.value.item };
+    case "talk":
+      return { type: "talk", id: entry.value.id };
   }
 }
 
@@ -98,6 +103,12 @@ export interface LearnerStore {
   days(days: readonly DayKey[]): Promise<ReadonlyMap<DayKey, Stored<DayTally>>>;
   /** Every item the learner has progress on, keyed by item id. */
   items(): Promise<ReadonlyMap<string, Stored<ItemProgress>>>;
+  /**
+   * The talk with that id, as stored: one past its `expiresAt` is still
+   * returned until the table's TTL deletes it, so a command reads it through
+   * the domain's `liveTalk`.
+   */
+  talk(id: string): Promise<Stored<Talk> | undefined>;
   commit(commit: Commit): Promise<Result<undefined, CommitConflict>>;
 }
 

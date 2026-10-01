@@ -255,7 +255,10 @@ Japanese.
   English delimited.
 - Over-long output is not refused: the length rules are the prompt's to keep, and a
   `read` refuses only a wrong shape. A model answer that runs long is worth seeing in
-  use before it is worth a failure.
+  use before it is worth a failure. A blank where the step needs text — the partner's
+  line, the opening, a scene field, a correction's model answer or point — and `fine` on
+  a give-up are wrong answers, not long ones: a `read` refuses them as `malformed`, so
+  the scene or reply is asked for again and a teacher's turn is kept as `failed`.
 
 ## The web client
 

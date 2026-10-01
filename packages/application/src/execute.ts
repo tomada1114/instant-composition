@@ -4,7 +4,13 @@ import type { Catalog } from "./catalog";
 import type { RequestContext } from "./context";
 import type { ApplicationError } from "./errors";
 import { authorize, type OperationKind } from "./operations";
-import type { Commit, Entry, LearnerStore, LearnerStores } from "./store";
+import type {
+  Commit,
+  CommitConflict,
+  Entry,
+  LearnerStore,
+  LearnerStores,
+} from "./store";
 
 /** What every command and query is handed besides its context. */
 export interface ApplicationDeps {
@@ -39,10 +45,10 @@ const MAX_ATTEMPTS = 3;
  * Commits what `plan` decides, loading and deciding again whenever a condition
  * of the commit no longer held. A plan that writes nothing commits nothing.
  */
-export async function committed<T>(
+export async function committed<T, E = ApplicationError>(
   store: LearnerStore,
-  plan: () => Promise<Result<Planned<T>, ApplicationError>>,
-): Promise<Result<T, ApplicationError>> {
+  plan: () => Promise<Result<Planned<T>, E>>,
+): Promise<Result<T, E | CommitConflict>> {
   for (let attempt = 0; attempt < MAX_ATTEMPTS; attempt += 1) {
     const planned = await plan();
     if (!planned.ok) {
@@ -61,7 +67,7 @@ export async function committed<T>(
 
 /** The learner's store, once the actor is allowed to run `kind`. */
 export function storeFor(
-  deps: ApplicationDeps,
+  deps: { readonly stores: LearnerStores },
   context: RequestContext,
   kind: OperationKind,
 ): Result<LearnerStore, ApplicationError> {

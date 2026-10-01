@@ -30,8 +30,13 @@ export {
   type TopicEntry,
   type WithdrawnItem,
 } from "./catalog-document";
-export type { ApplicationError, ApplicationErrorCode } from "./errors";
+export type {
+  ApplicationError,
+  ApplicationErrorCode,
+  TalkCommandError,
+} from "./errors";
 export { type ApplicationDeps } from "./execute";
+export { endTalk, recordRecital, type RecitalCommand } from "./end-talk";
 export { finishRound } from "./finish-round";
 export { home } from "./home";
 export {
@@ -72,7 +77,9 @@ export {
   type Registration,
   type SignInDeps,
 } from "./sign-in";
+export { retryReply, sendTurn, type SendTurnCommand } from "./send-turn";
 export { startRound } from "./start-round";
+export { startTalk } from "./start-talk";
 export {
   keyOf,
   type Commit,
@@ -83,6 +90,8 @@ export {
   type LearnerStores,
   type Stored,
 } from "./store";
+export { TALK_PROMPTS, type TalkDeps, type TalkRequest } from "./talk-model";
+export type { PartnerReply, TalkEnded, TalkOpened, TurnResult } from "./talk-views";
 export { updateLevel } from "./update-level";
 export { updateSettings } from "./update-settings";
 export type {

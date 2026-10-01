@@ -100,6 +100,10 @@ function memoryStore(slots: Map<string, Slot>, counted: () => void): LearnerStor
         new Map(all("item").map((stored) => [stored.value.item.id, stored])),
       );
     },
+    talk(id) {
+      counted();
+      return Promise.resolve(read({ type: "talk", id }));
+    },
     commit(commit) {
       checkShape(commit);
       const writes = [

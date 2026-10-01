@@ -1,6 +1,7 @@
-import type { PracticeError } from "@instant-composition/domain";
+import type { PracticeError, TalkError } from "@instant-composition/domain";
 
 import type { CatalogUnreadable } from "./catalog";
+import type { ModelFailure } from "./language-model";
 import type { CommitConflict } from "./store";
 
 /**
@@ -20,3 +21,14 @@ export type ApplicationError =
   | PracticeError;
 
 export type ApplicationErrorCode = ApplicationError["code"];
+
+/**
+ * The failures a talk command reports: the application's own, the talk rules'
+ * (`TalkError`), and `ERR_MODEL_UNAVAILABLE` when a scene or a reply could not
+ * be had, which the caller may ask for again.
+ *
+ * @remarks
+ * Kept apart from `ApplicationError` until the HTTP edge gives these codes a
+ * status; `ApplicationError` is what the contract's code list must cover.
+ */
+export type TalkCommandError = ApplicationError | TalkError | ModelFailure;

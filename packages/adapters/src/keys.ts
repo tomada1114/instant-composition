@@ -71,6 +71,8 @@ export function sortKeyOf(key: Key): string {
       return `DAY#${part(key.day)}`;
     case "item":
       return `ITEM#${part(key.item.kind)}#${part(key.item.id)}`;
+    case "talk":
+      return `TALK#${part(key.id)}`;
   }
 }
 

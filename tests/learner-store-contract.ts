@@ -18,6 +18,8 @@ import {
   makeRound,
   makeSettings,
   makeStats,
+  makeTalk,
+  makeTurn,
   oneOfEach,
   withRetired,
   without,
@@ -49,6 +51,7 @@ const READS: Readonly<Record<Exclude<keyof LearnerStore, "commit">, Read>> = {
   portion: (store) => store.portion("2026-09-22"),
   days: (store) => store.days(["2026-09-22"]),
   items: (store) => store.items(),
+  talk: (store) => store.talk("t1"),
 };
 
 function isNothing(value: unknown): boolean {
@@ -385,6 +388,37 @@ export function describeLearnerStoreContract(
       expect(await store.items()).toStrictEqual(
         new Map([["c1", { value: makeItem(), version: 1 }]]),
       );
+      expect(await store.talk("t1")).toStrictEqual({
+        value: makeTalk({ turns: [makeTurn()] }),
+        version: 1,
+      });
+    });
+
+    it("keeps a talk's turns as written, and drops its expiry once it is kept", async () => {
+      const open = makeTalk({ turns: [without(makeTurn(), "reply")] });
+      await store.commit({
+        puts: [{ type: "talk", value: open }],
+        updates: [],
+        expect: [],
+      });
+      expect(await store.talk("t1")).toStrictEqual({ value: open, version: 1 });
+
+      const kept = without(
+        makeTalk({
+          status: "ended",
+          endedAt: 9_000,
+          turns: [makeTurn({ revealCount: 2 }), makeTurn({ n: 2, english: null })],
+        }),
+        "expiresAt",
+      );
+      const updated = await store.commit({
+        puts: [],
+        updates: [{ entry: { type: "talk", value: kept }, version: 1 }],
+        expect: [],
+      });
+
+      expect(updated.ok).toBe(true);
+      expect(await store.talk("t1")).toStrictEqual({ value: kept, version: 2 });
     });
 
     it("rejects a resent answer by its id and changes nothing", async () => {
