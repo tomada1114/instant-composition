@@ -1,6 +1,7 @@
 # ADR-0011: LLM integration and evaluation
 
-- Status: Proposed. Accepted: the typed-answer mode (the owner, 2026-09-29).
+- Status: Proposed. Accepted: the typed-answer mode (the owner, 2026-09-29) and the
+  grading model, Kimi K2.5 (the owner, 2026-09-30).
 - Date: 2026-09-23
 - Deciders: the owner
 
@@ -104,8 +105,13 @@ evaluation set.
   profile, tagged for cost allocation. Cost Explorer then splits Bedrock spend by
   feature.
 - **Models.**
-  - `jp.anthropic.claude-haiku-4-5-20251001-v1:0` for grading. The JP geo profile keeps
-    processing within Tokyo and Osaka.
+  - `moonshotai.kimi-k2.5`, Moonshot AI's Kimi K2.5, for grading, called in-Region in
+    `ap-northeast-1`. It has no geo or global profile, so processing stays in Tokyo. The
+    owner chose it over Claude Haiku 4.5 (`jp.` profile) on quality for its price,
+    without an evaluation: about $0.72 input and $3.60 output per 1M tokens in Tokyo,
+    against Haiku's $1.10 and $5.50, as the Bedrock console's model catalog showed them
+    on 2026-09-30. The evaluation below is what can overturn the choice, and swapping it
+    is a configuration change.
   - A Sonnet-class model through its `jp.` profile, where one exists, for heavier
     offline work such as card generation.
 
@@ -244,7 +250,7 @@ request log, which carries no request body, never holds it.
 
 ### Follow-ups
 
-- Measure Converse latency and cost for Haiku 4.5 on the JP profile with a spike before
+- Measure Converse latency and cost for Kimi K2.5 in Tokyo with a spike before
   committing to per-answer versus per-round grading.
 
 ## Open questions
@@ -253,6 +259,8 @@ request log, which carries no request body, never holds it.
   may lower cost, but one failure then affects every answer in the round.
 - Unverified: which Claude models newer than Sonnet 4.5 have a `jp.` inference profile.
   Sonnet 4.6 is confirmed only with a `global.` profile.
+- Unverified: whether Kimi K2.5 emits reasoning text before its answer by default, and
+  whether Converse can turn it off. Reasoning would add output tokens to every call.
 - Unverified: whether Converse returns `metrics.latencyMs`. Until confirmed, latency is
   measured by the adapter.
 - Unverified: whether Bedrock Guardrails is available in Tokyo, and its current price
@@ -270,6 +278,9 @@ All checked 2026-09-23.
   https://aws.amazon.com/blogs/machine-learning/structured-outputs-on-amazon-bedrock-schema-compliant-ai-responses/
 - JP cross-region inference for Claude Sonnet 4.5 and Haiku 4.5:
   https://aws.amazon.com/blogs/machine-learning/introducing-amazon-bedrock-cross-region-inference-for-claude-sonnet-4-5-and-haiku-4-5-in-japan-and-australia/
+- Kimi K2.5 model card (in-Region only, Tokyo listed, Converse and structured outputs on
+  `bedrock-runtime`; checked 2026-09-30):
+  https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k2-5.html
 - Model cards (profiles required for on-demand invocation):
   https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-anthropic-claude-haiku-4-5.html,
   https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-anthropic-claude-sonnet-4-5.html

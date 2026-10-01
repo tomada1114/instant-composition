@@ -5,7 +5,8 @@
   2026-09-27 (no point-in-time recovery or deletion protection on the `dev` table; the
   Paid-plan upgrade is the owner's and is tracked only when a feature needs it); amended
   2026-09-28 (the hosted `dev` URL's web app client lives in the `app` stack; `dev`'s
-  distribution runs on pay-as-you-go pricing until the account leaves the Free Tier)
+  distribution runs on pay-as-you-go pricing until the account leaves the Free Tier);
+  amended 2026-09-30 (the account is on the Paid plan)
 - Date: 2026-09-23
 - Deciders: the owner
 
@@ -38,8 +39,10 @@ The owner also set the timing. Until the planned features exist (LLM feedback,
 vocabulary, more languages), the owner is the only user, on a `dev` environment.
 Production comes one to two years out, after a phase that adds the production guards
 ([roadmap](../roadmap.md)). What is hard to add later is built early; what can be added
-later waits for that phase. The owner's AWS account is new and on the Free plan, and
-anything that would end its credits early is deferred.
+later waits for that phase. The owner's AWS account is new and started on the Free plan;
+anything that would end its credits early is deferred. The owner moved it to the Paid
+plan on 2026-09-30, because the Free plan leaves out the AWS Marketplace offer behind
+[ADR-0011](0011-llm-integration-and-evaluation.md)'s grading model.
 
 Keeping the credits is not the same as staying on the Free plan. A Free plan ends after
 six months or when its credits run out, and an account that has not upgraded to the Paid
@@ -330,7 +333,7 @@ Prices are as of 2026-09-23. A region appears only where the source states one.
 - The owner upgrades the account to the Paid plan before the Free plan's six months end
   or its credits run out, untracked; leaving it on the Free plan past that point closes
   the account. A feature that needs a service or setting the Free plan does not allow
-  gets its own `blocked: external` upgrade issue first (see Context).
+  gets its own `blocked: external` upgrade issue first (see Context). Done 2026-09-30.
 - Write the `foundation` stack first, and add to it what each phase first needs: the
   learner table in Phase 2, the Cognito user pool in Phase 3, where local development
   needs it before anything is hosted.
@@ -346,8 +349,6 @@ Prices are as of 2026-09-23. A region appears only where the source states one.
 - Unverified: Cognito's built-in email limits.
 - Whether option 3 (Function URL plus an origin secret) is worth its rotation burden
   once real traffic prices API Gateway.
-- Unverified: whether the Free plan allows every feature `dev` needs. Every service is
-  on its list ([references](../references.md#operations-and-cost), checked 2026-09-24).
 - The `prod` point-in-time recovery period, weighed against how long a deleted learner's
   data may stay restorable.
 - Whether `/api/*` or a separate API hostname is better for native apps. A separate

@@ -276,8 +276,13 @@ listed under [Unverified](#unverified) instead of being stated as fact.
   - A Free plan leaves out services and features that could use up the credits, such as
     Savings Plans and Reserved Instances. For the services it does include, the page
     points to the AWS Free Tier page.
+  - Among what it leaves out are "certain AWS Marketplace offers that can incur
+    charges". Checked 2026-09-30.
 
-  Checked 2026-09-23; the last point checked 2026-09-24.
+  Checked 2026-09-23; the fourth point checked 2026-09-24. The owner moved the `dev`
+  account to the Paid plan on 2026-09-30, for the Marketplace-sold grading model
+  [ADR-0011](adr/0011-llm-integration-and-evaluation.md) picks, so none of the Free
+  plan's limits below applies to it any longer.
 
 - [Supported AWS services for Sign up for AWS (new)](https://docs.aws.amazon.com/accounts/latest/reference/supported-services-sign-up-new.html)
   — lists which services the Free plan includes. Every service Phase 2 uses is on the
@@ -293,9 +298,9 @@ listed under [Unverified](#unverified) instead of being stated as fact.
   - AWS Shield
   - Bedrock's global and geographic cross-Region inference: "Global cross-Region
     inference and Geographic cross-Region inference are not supported". ADR-0011's `jp.`
-    geographic profile is one, so grading as that ADR plans it cannot run on a Free plan
-    account (inferred from this page and the model card, not tested). Checked
-    2026-09-29.
+    geographic profile was one, so grading as that ADR then planned it could not run on
+    a Free plan account (inferred from this page and the model card, not tested).
+    Checked 2026-09-29.
 
   Organizations, IAM Identity Center and Control Tower are not supported at all. The
   page does not mention DynamoDB point-in-time recovery or deletion protection. It
@@ -405,6 +410,29 @@ listed under [Unverified](#unverified) instead of being stated as fact.
     filter in `infra/src/bedrock-budget.ts` rests on this; checked 2026-09-29.
 
   Checked 2026-09-23.
+
+- [Kimi K2.5 model card](https://docs.aws.amazon.com/bedrock/latest/userguide/model-card-moonshot-ai-kimi-k2-5.html)
+  — covers:
+  - The model id is `moonshotai.kimi-k2.5`, with no geo or global inference profile, so
+    it is called in-Region; `ap-northeast-1` is among its Regions.
+  - On `bedrock-runtime` it supports Converse and structured outputs.
+  - Its context window is 256K tokens and its output at most 16K.
+
+  Checked 2026-09-30. The Bedrock console's model catalog showed its Tokyo price as
+  $0.72 input and $3.60 output per 1M tokens on 2026-09-30, beside Claude Haiku 4.5 at
+  $1.10 and $5.50; the console calls these an example and points to the pricing page.
+
+- [Resolving AWS Marketplace permission errors for third-party models](https://repost.aws/knowledge-center/bedrock-resolve-marketplace-permission)
+  — covers:
+  - The first invocation of a third-party model starts its AWS Marketplace subscription
+    automatically, and needs a caller with `aws-marketplace:Subscribe` and
+    `aws-marketplace:ViewSubscriptions`. After that, every role in the account can
+    invoke it without those permissions.
+  - Amazon, DeepSeek, Mistral AI, Meta, Qwen and OpenAI models are not sold through AWS
+    Marketplace. Moonshot AI is not on that list, so Kimi K2.5 is taken to be
+    Marketplace-sold (inferred, not stated).
+
+  Checked 2026-09-30.
 
 - [Request access to models](https://docs.aws.amazon.com/bedrock/latest/userguide/model-access.html)
   — covers:
@@ -605,7 +633,8 @@ on it.
   quote other regions or unstated regions:
   - NAT gateway, ALB, VPC interface endpoints, OpenSearch Serverless OCU, Aurora ACU and
     S3 Vectors.
-  - Amazon Transcribe streaming, and Bedrock on-demand prices through JP profiles.
+  - Amazon Transcribe streaming, and Bedrock on-demand prices on the pricing page,
+    in-Region and through JP profiles.
   - API Gateway HTTP API, Lambda, and DynamoDB on-demand and PITR.
 - **Amplify Hosting:** support for Next.js 16.
 - **CloudFront flat-rate plans:** which WAF rules each tier allows, including rate-based
@@ -613,6 +642,8 @@ on it.
 - **Bedrock Guardrails:** availability in Tokyo, and the current price per text unit.
 - **Claude on JP profiles:** which models newer than Sonnet 4.5 have a `jp.` inference
   profile.
+- **Kimi K2.5 reasoning:** whether it emits reasoning text before its answer by default,
+  and whether Converse can turn it off.
 - **Converse latency:** whether the response includes `metrics.latencyMs`.
 - **Cognito email:** the limits of the built-in email sender, as opposed to Amazon SES.
 - **App stores:**
