@@ -99,8 +99,9 @@ How a context exposes its surface: **REQUIRED:** `designing-application-core`.
 
 ## Persistence
 
-- One DynamoDB table, on-demand, one partition per learner. The key shapes are
-  `packages/adapters/src/keys.ts`'s; the map today:
+- One DynamoDB table, on-demand, one partition per learner, with TTL on `expiresAt`
+  (epoch seconds) for records that should lapse, such as an abandoned talk. The key
+  shapes are `packages/adapters/src/keys.ts`'s; the map today:
 
 ```text
 LEARNER#<id>  PROFILE | SETTINGS | STATS            single records
@@ -161,7 +162,7 @@ browser ─► CloudFront (flat-rate Free plan, WAF web ACL from `edge`)
              └─ /api/*  ─► API Gateway HTTP API ─► Lambda: the Hono app via lambda.ts
                                                      ├─► DynamoDB learner table
                                                      ├─► Cognito user pool
-                                                     └─► Parameter Store (client secret)
+                                                     └─► Parameter Store (client secret, model key)
 ```
 
 - One AWS account, `ap-northeast-1`, except the web ACL CloudFront takes from us-east-1
@@ -172,13 +173,18 @@ browser ─► CloudFront (flat-rate Free plan, WAF web ACL from `edge`)
   (everything rebuilt often, alarms included) and `deploy-access` (GitHub OIDC). `app`
   reads `foundation` by Parameter Store name, never by export. A merge to `main` deploys
   through OIDC; no long-lived key exists.
+- The function's timeout is 25 s, under API Gateway's and CloudFront's 30 s, because a
+  talk turn waits on two model calls. The talk routes, `/api/v1/talks` and below, are
+  throttled on the HTTP API's stage at 2 requests per second, burst 10, since each turn
+  bills the model provider.
 - An AWS Budgets action attaches a deny policy for Bedrock invocation to the API
   function's role once the month's Bedrock or Marketplace spend reaches its limit
   (`infra/src/bedrock-budget.ts`): an account-level backstop, since nothing calls
   Bedrock today.
 - The CDK app's `stage` context accepts `dev` and `prod`; only `dev` is deployed.
 - **REQUIRED:** `writing-infrastructure` for every construct, stage setting and deploy.
-  Caller throughput limits belong at the edge: AGENTS.md "Rate limiting".
+  Caller throughput limits belong at the edge or the gateway, never in the app:
+  AGENTS.md "Rate limiting".
 
 ## Deliberately not adopted
 
