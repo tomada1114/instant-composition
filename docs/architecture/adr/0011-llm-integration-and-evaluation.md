@@ -1,7 +1,8 @@
 # ADR-0011: LLM integration and evaluation
 
 - Status: Proposed. Accepted: the typed-answer mode (the owner, 2026-09-29) and the
-  grading model, Kimi K2.5 (the owner, 2026-09-30).
+  grading model, Kimi K2.5 (the owner, 2026-09-30). Amended 2026-09-30 (no evaluation
+  harness and no CI gate on grading quality).
 - Date: 2026-09-23
 - Deciders: the owner
 
@@ -18,12 +19,12 @@ grading and feedback on **typed** answers. Voice comes later. This ADR fixes the
 of that integration now, so the earlier phases leave the right seams. It builds nothing
 yet.
 
-The guiding principles make evaluation the center of the design:
+The guiding principles:
 
-- Quality is stated as numbers.
-- A change that lowers quality is stopped in CI.
 - Every call's tokens, latency and cost can be traced.
 - Model output arrives as validated JSON, never as free text to parse.
+- Grading quality is judged by the owner in use, not measured in the repository (see
+  [Evaluation](#evaluation)).
 
 The content is multi-language by design
 ([ADR-0004](0004-multi-language-content-model.md)). The owner can review only some
@@ -36,18 +37,18 @@ language pairs. Pairs the owner cannot read rely on LLM review alone.
   `packages/domain/src/tuning.ts`).
 - Every model call is attributable: to a feature, a learner (through the entitlements
   ledger, [ADR-0010](0010-entitlements-and-billing.md)), a prompt version and a model.
-- Tests and evaluation can run a task against a fake, a recording or the real model with
-  the same code.
+- Tests run a task against a fake or a recorded response, and a manual run reaches the
+  real model, with the same code.
 - Running the same job twice must not call the model twice or charge twice.
-- Each language pair is evaluated on its own, because rubrics and feedback language
-  differ per pair.
+- Each language pair has its own prompt and rubric, because rubrics and feedback
+  language differ per pair.
 
 ## Considered options
 
 1. **Task-level ports with one Bedrock Converse adapter underneath.**
 2. One generic `complete(prompt)` port. It is easy to add, but every caller has to own
-   its prompt, schema and parsing. Evaluation then has no unit to attach to, and cost
-   attribution depends on each caller remembering to tag.
+   its prompt, schema and parsing. Tests and telemetry then have no unit to attach to,
+   and cost attribution depends on each caller remembering to tag.
 3. An agent framework for every LLM use. Grading, feedback and card generation are
    fixed-step workflows with typed input and output. An agent loop adds cost and
    variance without adding a capability ([ADR-0012](0012-agents-and-agentcore.md)).
@@ -91,8 +92,7 @@ interface Graded {
 }
 ```
 
-Each task owns four things: its prompt, its output schema, its rubric version and its
-evaluation set.
+Each task owns three things: its prompt, its output schema and its rubric version.
 
 **Adapter.** One Bedrock Converse adapter serves every task.
 
@@ -110,7 +110,7 @@ evaluation set.
     owner chose it over Claude Haiku 4.5 (`jp.` profile) on quality for its price,
     without an evaluation: about $0.72 input and $3.60 output per 1M tokens in Tokyo,
     against Haiku's $1.10 and $5.50, as the Bedrock console's model catalog showed them
-    on 2026-09-30. The evaluation below is what can overturn the choice, and swapping it
+    on 2026-09-30. The owner's own use is what can overturn the choice, and swapping it
     is a configuration change.
   - A Sonnet-class model through its `jp.` profile, where one exists, for heavier
     offline work such as card generation.
@@ -128,33 +128,18 @@ evaluation set.
 - Every job reserves its cost in the entitlements ledger before it calls the model,
   under the same key.
 
-**Evaluation.** An evaluation harness lives in the repository, one suite per task and
-language pair.
+**Evaluation.** None in the repository. The owner decided on 2026-09-30 to build no
+evaluation harness, no gold set and no CI gate on grading quality. The owner is the only
+learner until production, judges each grade while using the app, and reports what is
+wrong.
 
-- **Datasets.**
-  - Positives from the existing content: 2,052 alternative answers across 1,020 reviewed
-    cards.
-  - Negatives made by perturbing references in ways that correspond to known error tags.
-  - Typed answers that learners graded themselves: the `text` a typed round stores with
-    each self-graded answer (see [Typed-answer mode](#typed-answer-mode)).
-  - An adversarial set: instructions injected into the answer field, off-task text, and
-    the wrong language.
-- **Metrics.**
-  - Agreement with gold labels.
-  - Flip rate: how often the verdict changes when the same input is graded N times.
-  - Precision, recall and F1 for error tags.
-  - Cost and latency per graded answer.
-- **CI gate.**
-  - A pull request that changes a prompt, an output schema or model configuration runs a
-    small subset against the real model, under a spend cap. It fails when a metric falls
-    below its recorded baseline.
-  - Full runs are manual or nightly.
-  - Everything else tests against fakes and recordings.
-  - The gate is a CI change, so it goes through `changing-gates` and the owner's
-    approval.
-- **Bedrock's evaluation feature** (LLM-as-a-judge, custom metrics, bring-your-own
-  responses) supplements the harness. It is not the gate, because the gate's thresholds
-  must live in this repository.
+- Tests run each task against a fake and a recorded response, so the adapter's parsing,
+  validation and telemetry are covered with no network.
+- Adversarial inputs — instructions injected into the answer, off-task text, the wrong
+  language — are recorded-response test cases for the adapter.
+- What this gives up: a prompt, schema or model change that makes grades worse is found
+  only in use, and no number compares two models. A harness can be added later, as its
+  own decision, when a learner other than the owner relies on the grades.
 
 **Defenses.**
 
@@ -228,18 +213,17 @@ request log, which carries no request body, never holds it.
 ### Positive
 
 - Self-graded typed answers collect in the learning log from the day typed input ships,
-  before grading exists, and become the evaluation set's learner data.
-- Every model call has an owner, a schema, a version, a cost and an evaluation. The
-  question "did this change make grading worse?" has a numeric answer before merge.
+  before grading exists.
+- Every model call has an owner, a schema, a version and a cost.
+- No CI job calls Bedrock, so CI needs no AWS credentials for grading and spends
+  nothing.
 - Duplicate or replayed jobs cost nothing extra.
-- Swapping a model is a configuration change, gated by the same evaluation.
+- Swapping a model is a configuration change.
 
 ### Negative
 
-- Evaluation data needs care. Gold labels for grading must be produced, first by the
-  owner for ja→en.
-- CI runs that call Bedrock cost money and need AWS credentials in CI, through the OIDC
-  deploy role's account.
+- Nothing measures grading quality. A change that makes grades worse is caught only by
+  the owner in use, after merge.
 - For pairs the owner cannot read, feedback quality in that L1 rests on LLM judgment and
   learner reports. This limit is accepted by the owner.
 - "Fast" in a typed round rests on a typed pace that starts as a guess. Until it is
@@ -296,9 +280,6 @@ All checked 2026-09-23.
   https://docs.aws.amazon.com/bedrock/latest/userguide/cost-mgmt-application-inference-profiles.html
 - ApplyGuardrail as a standalone API:
   https://docs.aws.amazon.com/bedrock/latest/userguide/guardrails-use-independent-api.html
-- LLM-as-a-judge and custom metrics:
-  https://docs.aws.amazon.com/bedrock/latest/userguide/evaluation-judge.html,
-  https://docs.aws.amazon.com/bedrock/latest/userguide/model-evaluation-custom-metrics-create-job.html
 - Step Functions and Bedrock:
   https://docs.aws.amazon.com/step-functions/latest/dg/connect-bedrock.html
 

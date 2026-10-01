@@ -118,7 +118,8 @@ client ──(Cognito access token)──► AgentCore Runtime (CUSTOM_JWT inbou
     commands its grants allow.
 - **Evaluation.**
   - AgentCore Evaluations (online and on-demand) scores agent sessions in production.
-  - The repository's harness (ADR-0011) remains the pre-merge gate.
+  - Nothing gates an agent's quality before merge: ADR-0011 builds no evaluation harness
+    (amended 2026-09-30). An agent feature that needs one decides it in its own ADR.
 - **Language.**
   - Agent code is TypeScript on the Strands Agents TypeScript SDK and AgentCore's
     TypeScript SDK.
