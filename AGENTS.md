@@ -346,6 +346,7 @@ names its own boundary with its neighbours.
 | `authenticating-learners`    | sign-in, refresh or sign-out, a credential or cookie, the stand-in authenticator, or `API_COGNITO_*` and the client secret                             |
 | `serving-the-api`            | an operation handler, the request log's fields, the local run or the Lambda entry under `apps/api/`                                                    |
 | `writing-infrastructure`     | a stack, construct or stage setting under `infra/`, `pnpm cdk`, the deploy role, or `.github/workflows/deploy-dev.yml`                                 |
+| `building-the-talk-activity` | the talk activity: its requirements, screens, `/v1/talks` operations, stored talks, model prompts, or the language-model port and its providers        |
 
 ## Security and human approval
 
