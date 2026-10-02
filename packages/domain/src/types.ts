@@ -1,10 +1,15 @@
 /** A practice day, `YYYY-MM-DD`, shifted by the day boundary. Only `day.ts` makes one. */
 export type DayKey = string;
 
-/** How the learner graded a card, or `timeout` when the timer ran out first. */
+/**
+ * What an answer counts as in the drill's figures: `ok` said in time (graded
+ * hard or good before the timer ran out), `ng` graded again, `timeout` the
+ * timer ran out first, whatever the grade. An older client sends it in place
+ * of a grade; see `gradedOf`.
+ */
 export type AnswerResult = "ok" | "ng" | "timeout";
 
-/** The first pass through a round's deck, or the retry of what it missed. */
+/** A card's first showing in a round, or a re-ask of it later in the round. */
 export type Pass = "first" | "retry";
 
 /** What a round is for; see `compose.ts` and `placement.ts` for how each is built. */
@@ -69,7 +74,10 @@ export interface AnswerRecord {
   readonly prompt: string | null;
 }
 
-/** Where a card sits in the Leitner boxes, derived from its first-pass answers. */
+/**
+ * Where a card sat in the Leitner boxes the drill scheduled with before FSRS.
+ * Items and reviews logged then keep it; nothing schedules by it any more.
+ */
 export interface CardState {
   readonly box: number;
   readonly dueDay: DayKey;
@@ -90,14 +98,22 @@ export type LimitSeconds = 15 | 20 | 30 | 45 | 60;
 /**
  * The keys the drill grades a flipped card with, as `KeyboardEvent.code`
  * values, so a choice holds whatever the keyboard layout or input method.
- * `isGradeKeyPair` says which pairs are allowed.
+ * `isGradeKeyPair` says which keys are allowed.
  */
 export interface GradeKeys {
-  /** ○, said it. */
+  /** ○ 覚えてた, good. */
   readonly ok: string;
-  /** ×, not yet. */
+  /** × 忘れた, again. */
   readonly ng: string;
+  /** △ 微妙, hard. Absent in a pair stored before three grades: `gradeKeysOf` derives it. */
+  readonly hard?: string;
 }
+
+/** New drill cards a day may bring; `TUNING.newPerDay` lists them. */
+export type DrillNewPerDay = 0 | 3 | 5 | 10 | 15;
+
+/** Drill reviews a day may bring, `null` for no limit; `TUNING.reviewsPerDay` lists them. */
+export type DrillReviewsPerDay = 10 | 20 | 30 | 50 | null;
 
 /** New vocabulary cards a day may bring; `VOCAB_TUNING.newPerDay` lists them. */
 export type VocabNewPerDay = 0 | 5 | 10 | 15 | 20 | 30;
@@ -108,6 +124,7 @@ export type VocabReviewsPerDay = 50 | 100 | 200 | null;
 export interface Settings {
   readonly topics: readonly string[];
   readonly focus: readonly SubtopicRef[];
+  /** Read and written for the clients that still show it; it no longer sizes a deal. */
   readonly dailySize: DailySize;
   readonly sound: boolean;
   /**
@@ -115,8 +132,12 @@ export interface Settings {
    * limit was a setting included, so `TUNING.defaultLimitSeconds` stands in.
    */
   readonly limitSeconds?: LimitSeconds;
-  /** Absent until the learner chooses a pair, so `TUNING.defaultGradeKeys` stands in. */
+  /** Absent until the learner chooses keys, so `TUNING.defaultGradeKeys` stands in. */
   readonly gradeKeys?: GradeKeys;
+  /** Absent until the learner chooses one, so `TUNING.defaultNewPerDay` stands in. */
+  readonly newPerDay?: DrillNewPerDay;
+  /** Absent until the learner chooses one, so `TUNING.defaultReviewsPerDay` stands in. */
+  readonly reviewsPerDay?: DrillReviewsPerDay;
   /** Absent until the learner chooses one, so `VOCAB_TUNING.defaultNewPerDay` stands in. */
   readonly vocabNewPerDay?: VocabNewPerDay;
   /** Absent until the learner chooses one, so `VOCAB_TUNING.defaultReviewsPerDay` stands in. */

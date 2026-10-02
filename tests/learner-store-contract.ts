@@ -12,6 +12,7 @@ import {
 import {
   makeDay,
   makeItem,
+  makeLeitnerReview,
   makePortion,
   makeProfile,
   makeReview,
@@ -483,6 +484,66 @@ export function describeLearnerStoreContract(
       });
 
       expect(await store.settings()).toStrictEqual({ value: chosen, version: 1 });
+    });
+
+    it("keeps the drill's limits and a key for hard through a write and a read", async () => {
+      const chosen = makeSettings({
+        newPerDay: 0,
+        reviewsPerDay: null,
+        gradeKeys: { ok: "KeyK", ng: "KeyJ", hard: "KeyL" },
+      });
+      await store.commit({
+        puts: [{ type: "settings", value: chosen }],
+        updates: [],
+        expect: [],
+      });
+
+      expect(await store.settings()).toStrictEqual({ value: chosen, version: 1 });
+    });
+
+    it("reads an item and an answer stored before FSRS beside ones stored after, each as written", async () => {
+      const memory = {
+        box: 3,
+        dueDay: "2026-09-21",
+        lastDay: "2026-09-14",
+        seenCount: 3,
+      };
+      const { fsrs, ...older } = makeItem({
+        item: { kind: "composition", id: "c0" },
+        memory,
+      });
+      const leitner = makeLeitnerReview();
+      const reset = makeReview({
+        id: "a2",
+        before: memory,
+        after: memory,
+        fsrs: { before: null, after: fsrs ?? null },
+        detail: {
+          ...makeReview().detail,
+          grade: "hard",
+          timedOut: true,
+          result: "timeout",
+        },
+      });
+      await store.commit({
+        puts: [
+          { type: "item", value: older },
+          { type: "item", value: makeItem({ memory }) },
+          { type: "review", value: leitner },
+          { type: "review", value: reset },
+        ],
+        updates: [],
+        expect: [],
+      });
+
+      expect(await store.items()).toStrictEqual(
+        new Map([
+          ["c0", { value: older, version: 1 }],
+          ["c1", { value: makeItem({ memory }), version: 1 }],
+        ]),
+      );
+      expect(await store.reviewsOf("r0")).toStrictEqual([leitner]);
+      expect(await store.reviewsOf("r1")).toStrictEqual([reset]);
     });
 
     it("keeps a talk's turns as written, and drops its expiry once it is kept", async () => {

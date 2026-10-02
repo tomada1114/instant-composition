@@ -3,6 +3,7 @@ import * as z from "zod";
 import {
   countSchema,
   dayKeySchema,
+  gradeIntervalsSchema,
   gradeSchema,
   idSchema,
   levelSchema,
@@ -70,13 +71,6 @@ export const vocabHubSchema = z.object({
   tomorrow: countSchema,
 });
 
-/** Days until the card is due again after each grade, were it given now. */
-export const vocabIntervalsSchema = z.object({
-  again: countSchema,
-  hard: countSchema,
-  good: countSchema,
-});
-
 export const vocabCardSchema = z.object({
   id: z.string(),
   category: vocabCategorySchema,
@@ -88,7 +82,7 @@ export const vocabCardSchema = z.object({
   /** In the learner's first language. */
   meaning: z.string(),
   example2: z.string(),
-  intervals: vocabIntervalsSchema,
+  intervals: gradeIntervalsSchema,
   isNew: z.boolean(),
 });
 

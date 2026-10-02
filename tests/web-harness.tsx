@@ -187,7 +187,7 @@ export function homeView(
     todayCards: 20,
     dailySize: 10,
     sound: false,
-    gradeKeys: { ok: "ArrowRight", ng: "ArrowLeft" },
+    gradeKeys: { ok: "ArrowRight", ng: "ArrowLeft", hard: "Digit2" },
     contentError: false,
     ...overrides,
   };
@@ -213,6 +213,8 @@ export function drillCard(id: string, overrides: Partial<DrillCard> = {}): Drill
     explanation: `point-${id}`,
     limitMs: 7000,
     paceMs: 7000,
+    intervals: { again: 1, hard: 2, good: 3 },
+    isNew: true,
     ...overrides,
   };
 }

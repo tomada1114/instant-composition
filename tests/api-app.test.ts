@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import { MAX_REQUEST_BODY_BYTES } from "@instant-composition/api";
 import { learnerId, type RoundPayload } from "@instant-composition/application";
+import { addDays, isFast } from "@instant-composition/domain";
 import {
   errorResponseSchema,
   MESSAGE_BY_CODE,
@@ -108,6 +109,8 @@ describe("reading a round back", () => {
           cardId,
           pass,
           result,
+          grade: "good",
+          timedOut: false,
           answeredAt,
         }))
         .reverse(),
@@ -187,7 +190,7 @@ describe("the commands", () => {
     );
     expect(new Set(shapes)).toStrictEqual(
       new Set([
-        "alternatives explanation id level limitMs paceMs prompt subtopic text topic words",
+        "alternatives explanation id intervals isNew level limitMs paceMs prompt subtopic text topic words",
       ]),
     );
   });
@@ -305,13 +308,13 @@ describe("the per-card time limit", () => {
       })),
     });
 
-    const expected = new Map(
-      cards.map((card, index) => [card.id, index % 2 === 0 ? "easy" : "good"]),
-    );
+    const expected = new Map(cards.map((card, index) => [card.id, index % 2 === 0]));
     const reviews = await api.stores.forLearner(learnerId("learner-1")).reviewsOf("x1");
     expect(reviews).toHaveLength(cards.length);
     for (const review of reviews) {
-      expect([review.item.id, review.outcome]).toStrictEqual([
+      const { elapsedMs, paceMs, limitMs } = review.detail;
+      expect(limitMs).toBe(60_000);
+      expect([review.item.id, isFast(elapsedMs, paceMs ?? limitMs)]).toStrictEqual([
         review.item.id,
         expected.get(review.item.id),
       ]);
@@ -369,7 +372,7 @@ describe("the level picked by hand", () => {
 });
 
 describe("the grade keys", () => {
-  const DEFAULT = { ok: "ArrowRight", ng: "ArrowLeft" };
+  const DEFAULT = { ok: "ArrowRight", ng: "ArrowLeft", hard: "Digit2" };
 
   it("reads → and ← for a learner who never chose a pair, in the settings and the home view", async () => {
     const api = makeApi();
@@ -393,7 +396,40 @@ describe("the grade keys", () => {
     expect(home).toMatchObject({ gradeKeys });
   });
 
+  it("saves a pair an older client sets and reads hard on the first of 2, S and ↓ it leaves free", async () => {
+    const api = makeApi();
+    await api.call("PATCH", "/v1/settings", { topics: ["work"] });
+    const saved = await api.call("PATCH", "/v1/settings", {
+      gradeKeys: { ok: "KeyK", ng: "KeyJ" },
+    });
+    const gradeKeys = { ok: "KeyK", ng: "KeyJ", hard: "Digit2" };
+    expect(await contracted(saved, "updateSettings")).toMatchObject({
+      settings: { gradeKeys },
+    });
+    const home = await contracted(await api.call("GET", "/v1/home"), "getHome");
+    expect(home).toMatchObject({ gradeKeys });
+    const taken = await api.call("PATCH", "/v1/settings", {
+      gradeKeys: { ok: "Digit2", ng: "KeyJ" },
+    });
+    expect(await contracted(taken, "updateSettings")).toMatchObject({
+      settings: { gradeKeys: { ok: "Digit2", ng: "KeyJ", hard: "KeyS" } },
+    });
+  });
+
+  it("saves a key for hard the learner sets beside the pair", async () => {
+    const api = makeApi();
+    await api.call("PATCH", "/v1/settings", { topics: ["work"] });
+    const gradeKeys = { ok: "KeyL", ng: "KeyJ", hard: "KeyK" };
+    const saved = await api.call("PATCH", "/v1/settings", { gradeKeys });
+    expect(await contracted(saved, "updateSettings")).toMatchObject({
+      settings: { gradeKeys },
+    });
+  });
+
   it.each([
+    ["hard on the key ok is on", { ok: "KeyK", ng: "KeyJ", hard: "KeyK" }],
+    ["hard on the key ng is on", { ok: "KeyK", ng: "KeyJ", hard: "KeyJ" }],
+    ["hard on Enter", { ok: "KeyK", ng: "KeyJ", hard: "Enter" }],
     ["both grades on one key", { ok: "KeyJ", ng: "KeyJ" }],
     ["a grade on Space", { ok: "Space", ng: "KeyJ" }],
     ["a grade on Enter", { ok: "KeyK", ng: "Enter" }],
@@ -422,6 +458,209 @@ describe("the grade keys", () => {
       });
     },
   );
+});
+
+describe("the drill on FSRS", () => {
+  const items = (api: ApiHarness, learner = "learner-1") =>
+    api.stores.forLearner(learnerId(learner)).items();
+
+  it("deals a new card with the days each grade would schedule it for", async () => {
+    const api = makeApi();
+    const round = await startedPlacement(api);
+    const cards = Object.values(round.cards);
+    expect(cards.length).toBeGreaterThan(0);
+    for (const { intervals, isNew } of cards) {
+      expect({ intervals, isNew }).toStrictEqual({
+        intervals: { again: 1, hard: 2, good: 3 },
+        isNew: true,
+      });
+    }
+  });
+
+  it("schedules an answer by its grade, logging the grade and the timeout, and reads them back", async () => {
+    const api = makeApi();
+    const round = await startedPlacement(api);
+    const [cardId] = round.deck;
+    if (cardId === undefined) throw new Error("No deck.");
+    const answer = {
+      id: `p1:f:${cardId}`,
+      cardId,
+      pass: "first",
+      grade: "hard",
+      timedOut: true,
+      elapsedMs: 30_000,
+    };
+    expect(
+      (await api.call("POST", "/v1/rounds/p1/answers", { answers: [answer] })).status,
+    ).toBe(204);
+
+    const [review] = await api.stores
+      .forLearner(learnerId("learner-1"))
+      .reviewsOf("p1");
+    expect(review?.detail).toMatchObject({
+      grade: "hard",
+      timedOut: true,
+      result: "timeout",
+    });
+    expect((await items(api)).get(cardId)?.value.fsrs?.dueDay).toBe(
+      addDays(round.day, 2),
+    );
+    const read = await contracted(await api.call("GET", "/v1/rounds/p1"), "getRound");
+    expect(read).toMatchObject({
+      answered: [
+        { id: answer.id, cardId, result: "timeout", grade: "hard", timedOut: true },
+      ],
+    });
+  });
+
+  it("reads an older client's timeout as again, timed out, due the next day", async () => {
+    const api = makeApi();
+    const round = await startedPlacement(api);
+    const [cardId] = round.deck;
+    if (cardId === undefined) throw new Error("No deck.");
+    await api.call("POST", "/v1/rounds/p1/answers", {
+      answers: [
+        {
+          id: `p1:f:${cardId}`,
+          cardId,
+          pass: "first",
+          result: "timeout",
+          elapsedMs: 30_000,
+        },
+      ],
+    });
+    const [review] = await api.stores
+      .forLearner(learnerId("learner-1"))
+      .reviewsOf("p1");
+    expect(review?.detail).toMatchObject({
+      grade: "again",
+      timedOut: true,
+      result: "timeout",
+    });
+    expect((await items(api)).get(cardId)?.value.fsrs?.dueDay).toBe(
+      addDays(round.day, 1),
+    );
+  });
+
+  it("logs a re-ask the same day with its grade, and leaves the due day the first answer set", async () => {
+    const api = makeApi();
+    await finished(api);
+    await api.call("PATCH", "/v1/settings", { newPerDay: 5 });
+    const started = await api.call("POST", "/v1/rounds", {
+      roundId: "t1",
+      kind: "today",
+    });
+    const round = (await contracted(started, "startRound")) as RoundPayload;
+    const [cardId] = round.deck;
+    if (cardId === undefined) throw new Error("No deck.");
+    await api.call("POST", "/v1/rounds/t1/answers", {
+      answers: [
+        {
+          id: `t1:f:${cardId}`,
+          cardId,
+          pass: "first",
+          grade: "again",
+          elapsedMs: 4_000,
+        },
+      ],
+    });
+    const due = (await items(api)).get(cardId)?.value.fsrs;
+    await api.call("POST", "/v1/rounds/t1/answers", {
+      answers: [
+        {
+          id: `t1:r:${cardId}`,
+          cardId,
+          pass: "retry",
+          grade: "good",
+          elapsedMs: 4_000,
+        },
+      ],
+    });
+    const reviews = await api.stores.forLearner(learnerId("learner-1")).reviewsOf("t1");
+    expect(
+      reviews.map((review) => [review.detail.pass, review.detail.grade]),
+    ).toStrictEqual([
+      ["first", "again"],
+      ["retry", "good"],
+    ]);
+    expect(due?.dueDay).toBe(addDays(round.day, 1));
+    expect((await items(api)).get(cardId)?.value.fsrs).toStrictEqual(due);
+  });
+
+  it("answers 400 ERR_BAD_REQUEST for an answer with neither a grade nor a result", async () => {
+    const api = makeApi();
+    const round = await startedPlacement(api);
+    const [cardId] = round.deck;
+    expect(
+      await refusal(
+        await api.call("POST", "/v1/rounds/p1/answers", {
+          answers: [{ id: "p1:f:x", cardId, pass: "first", elapsedMs: 3_000 }],
+        }),
+      ),
+    ).toStrictEqual([400, "ERR_BAD_REQUEST"]);
+  });
+
+  it("reads 5 new cards and 20 reviews a day until the learner chooses, and saves a choice", async () => {
+    const api = makeApi();
+    await api.call("PATCH", "/v1/settings", { topics: ["work"] });
+    const page = await contracted(await api.call("GET", "/v1/settings"), "getSettings");
+    expect(page).toMatchObject({ settings: { newPerDay: 5, reviewsPerDay: 20 } });
+    const saved = await api.call("PATCH", "/v1/settings", {
+      newPerDay: 15,
+      reviewsPerDay: null,
+    });
+    expect(await contracted(saved, "updateSettings")).toMatchObject({
+      settings: { newPerDay: 15, reviewsPerDay: null },
+    });
+    for (const patch of [{ newPerDay: 7 }, { reviewsPerDay: 100 }]) {
+      expect(
+        await refusal(await api.call("PATCH", "/v1/settings", patch)),
+      ).toStrictEqual([400, "ERR_BAD_REQUEST"]);
+    }
+  });
+
+  it("schedules and sets only the learner's own cards and limits, never another learner's", async () => {
+    const a = makeApi({ authenticator: subjectAuthenticator("subject-a") });
+    const round = await startedPlacement(a);
+    const b = makeApi({
+      stores: a.stores,
+      directory: a.directory,
+      authenticator: subjectAuthenticator("subject-b"),
+      newLearnerId: () => learnerId("learner-b"),
+    });
+    const before = await items(a);
+    const settings = await a.call("GET", "/v1/settings");
+    const [cardId] = round.deck;
+    if (cardId === undefined) throw new Error("No deck.");
+
+    await b.call("PATCH", "/v1/settings", {
+      topics: ["work"],
+      newPerDay: 0,
+      reviewsPerDay: 10,
+      gradeKeys: { ok: "KeyK", ng: "KeyJ", hard: "KeyL" },
+    });
+    expect(
+      await refusal(
+        await b.call("POST", "/v1/rounds/p1/answers", {
+          answers: [
+            {
+              id: `p1:f:${cardId}`,
+              cardId,
+              pass: "first",
+              grade: "good",
+              elapsedMs: 1,
+            },
+          ],
+        }),
+      ),
+    ).toStrictEqual([404, "ERR_ROUND_NOT_FOUND"]);
+
+    expect(await items(a)).toStrictEqual(before);
+    expect(await (await a.call("GET", "/v1/settings")).json()).toStrictEqual(
+      await settings.json(),
+    );
+    expect((await items(b, "learner-b")).size).toBe(0);
+  });
 });
 
 describe("a request the contract refuses", () => {

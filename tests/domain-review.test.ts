@@ -1,15 +1,15 @@
 import { describe, expect, it } from "vitest";
 
 import {
-  outcomeOf,
   replayItems,
   reviewAnswer,
+  scheduleCard,
   type AcceptedAnswer,
   type ItemProgress,
   type ReviewEntry,
 } from "@instant-composition/domain";
 
-import { makeReview } from "./application-fixtures";
+import { FIRST_GOOD, makeLeitnerReview, makeReview } from "./application-fixtures";
 
 function answer(overrides: Partial<AcceptedAnswer> = {}): AcceptedAnswer {
   return {
@@ -17,7 +17,8 @@ function answer(overrides: Partial<AcceptedAnswer> = {}): AcceptedAnswer {
     sessionId: "r1",
     cardId: "c1",
     pass: "first",
-    result: "ok",
+    grade: "good",
+    timedOut: false,
     elapsedMs: 6_000,
     limitMs: 10_000,
     paceMs: 10_000,
@@ -47,67 +48,75 @@ function fold(answers: readonly AcceptedAnswer[]): ItemProgress | undefined {
   return folded(answers).progress;
 }
 
-describe("outcomeOf", () => {
-  it.each([
-    ["ng", 1_000, "again"],
-    ["timeout", 10_000, "again"],
-    ["ok", 5_000, "easy"],
-    ["ok", 5_001, "good"],
-  ] as const)(
-    "maps %s in %i ms against a 10 s pace to %s",
-    (result, elapsedMs, outcome) => {
-      expect(outcomeOf(result, elapsedMs, 10_000)).toBe(outcome);
-    },
-  );
-});
-
 describe("reviewAnswer", () => {
-  it("judges an easy answer against the card's pace, not the round's longer limit", () => {
-    const { entry } = reviewAnswer(
-      undefined,
-      answer({ elapsedMs: 6_000, limitMs: 30_000, paceMs: 10_000 }),
-    );
-    expect(entry.outcome).toBe("good");
-    expect(entry.after?.box).toBe(1);
-    expect(entry.detail).toMatchObject({ limitMs: 30_000, paceMs: 10_000 });
-  });
-
-  it("logs the memory state before and after a first pass", () => {
+  it("logs the grade, whether it timed out, and the FSRS state before and after a first pass", () => {
     const { entry, progress } = reviewAnswer(undefined, answer());
+    const after = scheduleCard(undefined, "good", "2026-09-22", "c1").state;
     expect(entry).toMatchObject({
       item: { kind: "composition", id: "c1" },
       outcome: "good",
       before: null,
-      after: { box: 1, dueDay: "2026-09-24", lastDay: "2026-09-22", seenCount: 1 },
-      detail: { activity: "composition", pass: "first", result: "ok" },
+      after: null,
+      fsrs: { before: null, after },
+      detail: {
+        activity: "composition",
+        pass: "first",
+        result: "ok",
+        grade: "good",
+        timedOut: false,
+        elapsedMs: 6_000,
+      },
+    });
+    expect(after).toMatchObject({
+      reps: 1,
+      lastDay: "2026-09-22",
+      dueDay: "2026-09-25",
     });
     expect(progress).toMatchObject({
-      memory: entry.after,
+      fsrs: after,
       okDays: ["2026-09-22"],
       mastered: null,
     });
+    expect(progress).not.toHaveProperty("memory");
   });
 
-  it("logs a retry with the state unchanged, and leaves the item as it was", () => {
-    const before = fold([answer({ result: "ng" })]);
+  it.each([
+    ["again", false, "ng", "2026-09-23"],
+    ["hard", false, "ok", "2026-09-24"],
+    ["good", false, "ok", "2026-09-25"],
+    ["again", true, "timeout", "2026-09-23"],
+    ["hard", true, "timeout", "2026-09-24"],
+    ["good", true, "timeout", "2026-09-25"],
+  ] as const)(
+    "schedules a new card graded %s (timed out: %s) by the grade, and counts it %s",
+    (grade, timedOut, result, dueDay) => {
+      const { entry, progress } = reviewAnswer(undefined, answer({ grade, timedOut }));
+      expect(entry.detail).toMatchObject({ grade, timedOut, result });
+      expect(progress?.fsrs?.dueDay).toBe(dueDay);
+      expect(progress?.okDays).toStrictEqual(result === "ok" ? ["2026-09-22"] : []);
+      expect(progress?.last?.result).toBe(result);
+    },
+  );
+
+  it("logs a re-ask with the state unchanged, and leaves the item as it was", () => {
+    const before = fold([answer({ grade: "again" })]);
     const { entry, progress } = reviewAnswer(
       before,
-      answer({ id: "a2", pass: "retry" }),
+      answer({ id: "a2", pass: "retry", grade: "hard" }),
     );
-    expect(entry.before).toStrictEqual(before?.memory);
-    expect(entry.after).toStrictEqual(before?.memory);
+    expect(entry.fsrs).toStrictEqual({ before: before?.fsrs, after: before?.fsrs });
+    expect(entry.detail.grade).toBe("hard");
     expect(progress).toBe(before);
   });
 
-  it("logs a first pass older than the item's latest with the state unchanged, and leaves the item", () => {
-    const before = fold([answer({ id: "a2", sessionId: "r2", answeredAt: 9 })]);
+  it("logs a second first pass the same day with the state unchanged, and leaves the item", () => {
+    const before = fold([answer({ answeredAt: 1 })]);
     const { entry, progress } = reviewAnswer(
       before,
-      answer({ result: "ng", answeredAt: 5 }),
+      answer({ id: "a2", sessionId: "r2", grade: "again", answeredAt: 9 }),
     );
-    expect(entry).toMatchObject({ outcome: "again", answeredAt: 5 });
-    expect(entry.before).toStrictEqual(before?.memory);
-    expect(entry.after).toStrictEqual(before?.memory);
+    expect(entry).toMatchObject({ outcome: "again", answeredAt: 9 });
+    expect(entry.fsrs).toStrictEqual({ before: before?.fsrs, after: before?.fsrs });
     expect(progress).toBe(before);
   });
 
@@ -120,7 +129,44 @@ describe("reviewAnswer", () => {
     expect(progress).toBe(before);
   });
 
-  it("masters an item correct on its first pass on two different days", () => {
+  it("moves an item on a later day's first pass whenever it was answered", () => {
+    const before = fold([answer({ answeredAt: 50 })]);
+    const { progress } = reviewAnswer(
+      before,
+      answer({ id: "a2", sessionId: "r2", day: "2026-09-25", answeredAt: 20 }),
+    );
+    expect(progress?.fsrs).toStrictEqual(
+      scheduleCard(before?.fsrs, "good", "2026-09-25", "c1").state,
+    );
+  });
+
+  it("schedules a card seen only under Leitner as a new card, keeping its Leitner state as it was", () => {
+    const memory = {
+      box: 3,
+      dueDay: "2026-09-21",
+      lastDay: "2026-09-14",
+      seenCount: 3,
+    };
+    const seen: ItemProgress = {
+      item: { kind: "composition", id: "c1" },
+      memory,
+      okDays: ["2026-09-10", "2026-09-14"],
+      mastered: { day: "2026-09-14", sessionId: "r0" },
+      placement: { topic: "work", subtopic: "a" },
+      last: { sessionId: "r0", result: "ok", elapsedMs: 3_000, answeredAt: 0 },
+      previous: null,
+    };
+    const { entry, progress } = reviewAnswer(seen, answer());
+    expect(entry).toMatchObject({ before: memory, after: memory });
+    expect(entry.fsrs).toStrictEqual({ before: null, after: progress?.fsrs });
+    expect(progress).toMatchObject({
+      memory,
+      fsrs: { reps: 1, lapses: 0, dueDay: "2026-09-25" },
+      mastered: { day: "2026-09-14", sessionId: "r0" },
+    });
+  });
+
+  it("masters an item said in time on its first pass on two different days", () => {
     const progress = fold([
       answer(),
       answer({ id: "a2", sessionId: "r2", answeredAt: 2 }),
@@ -131,15 +177,14 @@ describe("reviewAnswer", () => {
     expect(progress?.mastered).toStrictEqual({ day: "2026-09-23", sessionId: "r3" });
   });
 
-  it("leaves an item never seen unseen after a retry", () => {
+  it("leaves an item never seen unseen after a re-ask", () => {
     const { entry, progress } = reviewAnswer(undefined, answer({ pass: "retry" }));
     expect(progress).toBeUndefined();
-    expect(entry.before).toBeNull();
-    expect(entry.after).toBeNull();
+    expect(entry.fsrs).toStrictEqual({ before: null, after: null });
     expect(replayItems([entry]).has("c1")).toBe(false);
   });
 
-  it("does not count a correct retry toward mastery", () => {
+  it("does not count a re-ask said in time toward mastery", () => {
     const progress = fold([
       answer({ day: "2026-09-20", answeredAt: 1 }),
       answer({
@@ -154,13 +199,14 @@ describe("reviewAnswer", () => {
     expect(progress?.mastered).toBeNull();
   });
 
-  it("keeps an earlier correct day through a timeout and a miss", () => {
+  it("keeps an earlier day said in time through a timeout and a miss", () => {
     const progress = fold([
       answer({ day: "2026-09-18", answeredAt: 1 }),
       answer({
         id: "a2",
         sessionId: "r2",
-        result: "timeout",
+        grade: "good",
+        timedOut: true,
         elapsedMs: 10_000,
         day: "2026-09-19",
         answeredAt: 2,
@@ -168,7 +214,7 @@ describe("reviewAnswer", () => {
       answer({
         id: "a3",
         sessionId: "r3",
-        result: "ng",
+        grade: "again",
         day: "2026-09-20",
         answeredAt: 3,
       }),
@@ -181,8 +227,20 @@ describe("reviewAnswer", () => {
   it("keeps the latest first pass and the one from the session before it", () => {
     const progress = fold([
       answer({ elapsedMs: 9_000 }),
-      answer({ id: "a2", sessionId: "r2", result: "ng", answeredAt: 2 }),
-      answer({ id: "a3", sessionId: "r3", elapsedMs: 4_000, answeredAt: 3 }),
+      answer({
+        id: "a2",
+        sessionId: "r2",
+        grade: "again",
+        day: "2026-09-23",
+        answeredAt: 2,
+      }),
+      answer({
+        id: "a3",
+        sessionId: "r3",
+        elapsedMs: 4_000,
+        day: "2026-09-24",
+        answeredAt: 3,
+      }),
     ]);
     expect(progress?.last).toStrictEqual({
       sessionId: "r3",
@@ -200,28 +258,51 @@ describe("reviewAnswer", () => {
 });
 
 describe("replayItems", () => {
-  it("rebuilds from the log in time order whatever order it is handed", () => {
+  it("rebuilds from the log in time order whatever order it is handed, copying each state it logged", () => {
+    const moved = {
+      ...FIRST_GOOD,
+      reps: 2,
+      lastDay: "2026-09-23",
+      dueDay: "2026-10-03",
+    };
     const later = makeReview({
       id: "b",
       answeredAt: 9,
       day: "2026-09-23",
-      before: null,
-      after: { box: 3, dueDay: "2026-09-30", lastDay: "2026-09-23", seenCount: 2 },
+      fsrs: { before: FIRST_GOOD, after: moved },
     });
     const earlier = makeReview({ id: "a", answeredAt: 1 });
     const retry = makeReview({
       id: "c",
       answeredAt: 5,
+      fsrs: { before: FIRST_GOOD, after: FIRST_GOOD },
       detail: { ...earlier.detail, pass: "retry" },
     });
 
     const items = replayItems([later, retry, earlier]);
 
     expect(items.get("c1")).toMatchObject({
-      memory: later.after,
+      fsrs: moved,
       okDays: ["2026-09-22", "2026-09-23"],
       mastered: { day: "2026-09-23", sessionId: "r1" },
       last: { answeredAt: 9 },
+    });
+  });
+
+  it("carries a Leitner history into the item an FSRS review then schedules", () => {
+    const leitner = makeLeitnerReview();
+    const first = makeReview({
+      before: leitner.after,
+      after: leitner.after,
+      fsrs: { before: null, after: FIRST_GOOD },
+    });
+
+    const items = replayItems([first, leitner]);
+
+    expect(items.get("c1")).toMatchObject({
+      memory: leitner.after,
+      fsrs: FIRST_GOOD,
+      okDays: ["2026-09-20", "2026-09-22"],
     });
   });
 
@@ -234,17 +315,17 @@ describe("replayItems", () => {
         id: "a4",
         sessionId: "r4",
         day: "2026-09-25",
-        result: "ng",
+        grade: "again",
         answeredAt: 40,
       }),
     ]);
 
-    expect(progress?.memory.lastDay).toBe("2026-09-25");
+    expect(progress?.fsrs?.lastDay).toBe("2026-09-25");
     expect(progress?.okDays).toStrictEqual(["2026-09-22", "2026-09-24"]);
     expect(replayItems([...log].reverse()).get("c1")).toStrictEqual(progress);
   });
 
-  it("refuses a first pass logged without a memory state", () => {
-    expect(() => replayItems([makeReview({ after: null })])).toThrow(RangeError);
+  it("refuses a first pass logged with no state at all", () => {
+    expect(() => replayItems([makeLeitnerReview({ after: null })])).toThrow(RangeError);
   });
 });

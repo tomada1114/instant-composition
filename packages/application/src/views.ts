@@ -1,6 +1,7 @@
 import type {
   AnswerResult,
   DayKey,
+  FsrsGrade,
   Dot,
   Growth,
   LevelMode,
@@ -8,7 +9,7 @@ import type {
   ReviewRow,
   RingProgress,
   RoundKind,
-  Settings,
+  ShownSettings as DomainShownSettings,
   SubtopicRef,
 } from "@instant-composition/domain";
 
@@ -30,7 +31,14 @@ export interface DrillCard {
   readonly limitMs: number;
   /** What a flip is "fast" against, from the model answer's length. */
   readonly paceMs: number;
+  /** Days until each grade of its first answer today brings the card back. */
+  readonly intervals: GradeIntervals;
+  /** Never answered in the drill when dealt; a card seen before FSRS is not new. */
+  readonly isNew: boolean;
 }
+
+/** Days until a card is due again after each grade, were it given now. */
+export type GradeIntervals = Readonly<Record<FsrsGrade, number>>;
 
 /** One answer a round holds, as a client reads it back. */
 export interface AnsweredRow {
@@ -38,7 +46,10 @@ export interface AnsweredRow {
   readonly id: string;
   readonly cardId: string;
   readonly pass: Pass;
+  /** What the figures count it as: `ok` is graded hard or good in time. */
   readonly result: AnswerResult;
+  readonly grade: FsrsGrade;
+  readonly timedOut: boolean;
   /** As stored: the client's time, held between the round's start and the server's. */
   readonly answeredAt: number;
 }
@@ -57,7 +68,7 @@ export interface RoundPayload {
   /** The progress counter reads `offset + position / total`. */
   readonly offset: number;
   readonly total: number;
-  /** A placement round has no retry pass. */
+  /** Whether the round re-asks a card; a placement round does not. */
   readonly retries: boolean;
 }
 
@@ -126,13 +137,13 @@ export interface RoundSummary {
 }
 
 /** The settings as a client reads them: every field present, a default for one never chosen. */
-export type ShownSettings = Required<Settings>;
+export type ShownSettings = DomainShownSettings;
 
 export interface SettingsView {
   readonly settings: ShownSettings;
   /** Focus removed because its topic was deselected. */
   readonly removedFocus: readonly SubtopicRef[];
-  /** Lowering the size completed today's portion there and then. */
+  /** Lowering a daily limit completed today's portion there and then. */
   readonly completedToday: boolean;
 }
 

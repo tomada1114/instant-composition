@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  reviewAnswer,
   TUNING,
   weaknesses,
   type AnswerResult,
@@ -93,6 +94,43 @@ describe("a grammar concept is weak", () => {
     const group = practised("p", [PAST], ["ok", "ok", "ok"]);
     const items = group.items.map((item) => ({ ...item, previous: earlierMiss }));
     expect(judge({ cards: group.cards, items }).grammar).toStrictEqual([]);
+  });
+});
+
+describe("a graded answer", () => {
+  const grades = [
+    ["again", false],
+    ["hard", true],
+    ["good", true],
+    ["hard", false],
+    ["good", false],
+  ] as const;
+
+  it("is a miss graded again, or timed out with any grade, and said in time graded hard or good", () => {
+    const cards = grades.map((_, index) =>
+      makeCardMeta(`g${String(index + 1)}`, { concepts: [PAST] }),
+    );
+    const items = grades.flatMap(([grade, timedOut], index) => {
+      const cardId = `g${String(index + 1)}`;
+      const reviewed = reviewAnswer(undefined, {
+        id: `r1:f:${cardId}`,
+        sessionId: "r1",
+        cardId,
+        pass: "first",
+        grade,
+        timedOut,
+        elapsedMs: timedOut ? 10_000 : 4_000,
+        limitMs: 10_000,
+        paceMs: 8_000,
+        day: "2026-09-22",
+        answeredAt: index,
+        snapshot: { topic: "work", subtopic: "meetings", level: 5, prompt: "文" },
+      });
+      return reviewed.progress === undefined ? [] : [reviewed.progress];
+    });
+    expect(judge({ cards, items }).grammar).toStrictEqual([
+      { concept: PAST, seen: 5, misses: 3, rate: 0.5 },
+    ]);
   });
 });
 
