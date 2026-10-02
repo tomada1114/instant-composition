@@ -227,19 +227,6 @@
     }
   },
   {
-    "id": "c_3u5h3z8h",
-    "ja": "私は先生に聞いてほしい。",
-    "en": "I'd like you to listen.",
-    "alternatives": ["I want you to listen.", "Please listen to me."],
-    "point": "like + 人 + to で相手にしてほしいことを伝える。",
-    "topic": "daily",
-    "subtopic": "health",
-    "level": 3,
-    "grammar": ["verb-object-to-do"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_4c4t5t2v",
     "ja": "腫れがいつまで続くか分かります？",
     "en": "Any idea how long the swelling lasts?",
@@ -916,7 +903,13 @@
     "level": 3,
     "grammar": ["infinitives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e0c80ae7e802e3567d8cd7388cedf29269c630ed7ee93a251cb96794b57b844f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8h8c8j4h",

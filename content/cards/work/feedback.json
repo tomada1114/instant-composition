@@ -118,10 +118,16 @@
     "point": "use の命令形で使うよう依頼する。",
     "topic": "work",
     "subtopic": "feedback",
-    "level": 2,
+    "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ab409be220bce7dcade6e28fa3b48e7a7d3ca198cedcad8f262f8f74b4693f7c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3m2x3b7s",
@@ -330,7 +336,13 @@
     "level": 2,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f341074ad65b26975d860d906515e4e69e5a30bc6125ef19cccc7460e5124a47",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5y2v9r6s",
@@ -663,11 +675,11 @@
   },
   {
     "id": "c_8m2d3j8t",
-    "ja": "君の文章は更に滑らかだ。",
-    "en": "Your prose flows more smoothly now.",
+    "ja": "君の文章は前より滑らかだ。",
+    "en": "Your prose flows more smoothly.",
     "alternatives": [
-      "Your writing flows more smoothly now.",
-      "Your prose reads even more smoothly."
+      "Your writing flows more smoothly.",
+      "Your prose reads more smoothly."
     ],
     "point": "flows more smoothly は文章の流れが更に自然なこと。",
     "topic": "work",
@@ -675,7 +687,13 @@
     "level": 5,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f48a4cc93c8ba35d5482dbddd88146fb12537dce10d905a95ce07f2f89b0214e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8t8w9r6j",
@@ -685,10 +703,16 @@
     "point": "helps は図が理解を助けるという意味。",
     "topic": "work",
     "subtopic": "feedback",
-    "level": 2,
+    "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b38fded32d237803995d1027d1a754e8339d72de3f1287b51fa1dd5e6bfb47dc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8x3r6w3y",
@@ -811,7 +835,13 @@
     "level": 5,
     "grammar": ["infinitives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2f3159201ac96cc0e2489b58e60ecb234d66d2c4512d67f55554e1fe301eb826",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9k5h9e5t",
@@ -859,16 +889,22 @@
     "ja": "要点が埋もれたら私が言う。",
     "en": "I'll flag points if they're buried.",
     "alternatives": [
-      "I'll flag any buried key points.",
-      "I'll point out any buried key points."
+      "I'll highlight key points if they're buried.",
+      "I'll mention key points if they're buried."
     ],
-    "point": "get buried は大事な点が他の情報に埋もれる。",
+    "point": "if 節は未来の条件でも現在形にする。",
     "topic": "work",
     "subtopic": "feedback",
     "level": 5,
-    "grammar": ["time-and-if-clauses", "phrasal-verbs"],
+    "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4e1cb0bca2d29d65f964bbe62f1c6d83cac20d2b7a20044203b61da674d70644",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9w8u9g3a",

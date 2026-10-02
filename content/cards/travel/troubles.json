@@ -124,22 +124,6 @@
     }
   },
   {
-    "id": "c_2z2j7w6w",
-    "ja": "私たちが失ったのは切符より頼みの綱だ。",
-    "en": "What we've lost is our fallback, not merely tickets.",
-    "alternatives": [
-      "It's our fallback we've lost, not just tickets.",
-      "Our loss is our fallback, not simply the tickets."
-    ],
-    "point": "what の強調で切符以上に失った代替手段を際立たせる。",
-    "topic": "travel",
-    "subtopic": "troubles",
-    "level": 10,
-    "grammar": ["cleft-emphasis"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_2z4r8z2f",
     "ja": "足止めでも私は卑屈にならない。",
     "en": "Though stranded, I won't grovel.",
@@ -326,22 +310,6 @@
     }
   },
   {
-    "id": "c_4e3b3v7g",
-    "ja": "彼らは私たちを期待させてたのかも。",
-    "en": "They might've been stringing us along.",
-    "alternatives": [
-      "They may have been deliberately giving us false hope.",
-      "They could've been keeping us waiting with empty promises."
-    ],
-    "point": "might have been と string along で過去の思わせぶりを推測する。",
-    "topic": "travel",
-    "subtopic": "troubles",
-    "level": 10,
-    "grammar": ["modal-perfect", "phrasal-verbs"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_4g2y6n8f",
     "ja": "少し助けが必要です。",
     "en": "I need a little help.",
@@ -512,15 +480,21 @@
     "en": "Had I kept receipts, I'd have recourse.",
     "alternatives": [
       "If I'd kept receipts, I'd have recourse now.",
-      "I'd have grounds to challenge this with those receipts."
+      "Keeping the receipts would've given me recourse."
     ],
-    "point": "過去の保存と今の対抗手段を混合仮定法で結ぶ。",
+    "point": "Had I kept は if を省く倒置で、今の対抗手段を仮定する。",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 10,
+    "level": 9,
     "grammar": ["mixed-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0d888a7cfe4ddb5f2a08d9e7298c86054177921d9a95ff60027779e2efb0428a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5q8q6k3r",

@@ -1,18 +1,5 @@
 [
   {
-    "id": "c_2b2p2e8c",
-    "ja": "浴室に水が出ない。",
-    "en": "There's no running water.",
-    "alternatives": ["The water is off.", "We have no running water."],
-    "point": "水が出ないときは no running water。",
-    "topic": "travel",
-    "subtopic": "hotel",
-    "level": 2,
-    "grammar": ["there-is-are"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_2d8s2s4u",
     "ja": "私もちょっと騒音に閉口してます。",
     "en": "I'm slightly put out by the noise too.",
@@ -70,7 +57,13 @@
     "level": 3,
     "grammar": ["present-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4f00a45f38bffc83b3b3b081ee48b4850c2a315cfe6cd39fd5c4a7e1cef90ef6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2z5q8b2j",
@@ -258,7 +251,13 @@
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:329ecb06f93933406c4858af18c79bf39806858f273de4085bad4924f4910fed",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4t5c9h2j",
@@ -561,7 +560,13 @@
     "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:43bb14f6eaf3502e7078404aca2078b038326abdc9259b30e5c2c066cc338a93",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6j6p4a6p",
@@ -675,14 +680,20 @@
     "id": "c_7n8e6t5h",
     "ja": "ここに虫がいます。",
     "en": "There's a bug here.",
-    "alternatives": ["A bug is here.", "We have a bug here."],
+    "alternatives": ["There's an insect here.", "We have a bug here."],
     "point": "虫が一匹いるなら there is a bug。",
     "topic": "travel",
     "subtopic": "hotel",
-    "level": 3,
+    "level": 1,
     "grammar": ["there-is-are"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9fdb0d3526539d3a21ab13e82cb35b9771761369b13abfd04793f28b022c7028",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7t6t7r8j",
@@ -919,14 +930,20 @@
   {
     "id": "c_9x9f4x4c",
     "ja": "私は係員に来てほしい。",
-    "en": "I want someone to come.",
-    "alternatives": ["I'd like someone to come.", "I want someone sent here."],
-    "point": "want + 人 + to come で来てほしいと伝える。",
+    "en": "I want an attendant to come.",
+    "alternatives": ["I'd like an attendant to come.", "I want an attendant here."],
+    "point": "want + 人 + to come で係員に来てほしいと伝える。",
     "topic": "travel",
     "subtopic": "hotel",
     "level": 3,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9ebb3fd76d91d0a8b4889cde5b82f7d9a49c208758ca5b5346945e024cd9353f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   }
 ]

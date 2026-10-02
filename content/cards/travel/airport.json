@@ -22,17 +22,20 @@
     "id": "c_2b4r5k4b",
     "ja": "私は搭乗券を見せなきゃ？",
     "en": "Must I show my pass?",
-    "alternatives": [
-      "Must I present my boarding pass?",
-      "Is showing my boarding pass required?"
-    ],
-    "point": "must I で必要かどうかを聞く。",
+    "alternatives": ["Is my boarding pass required?", "Do you need my boarding pass?"],
+    "point": "Must I で必要か尋ねるが、会話では Do you need も自然。",
     "topic": "travel",
     "subtopic": "airport",
     "level": 3,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:42783eebc0eb765fcfa3b4721db8ef1d76b300fd8c6ab960977f912aaa77053c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2j5g5c8g",
@@ -370,7 +373,13 @@
     "level": 3,
     "grammar": ["present-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e59ee27105f02c70b8d09c2e072bf7bcff670fc3a89f9ef025cdf06964ea5c53",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4z9k4b5b",
@@ -718,14 +727,20 @@
     "id": "c_8a6d9g3y",
     "ja": "鞄から靴を出して。",
     "en": "Remove shoes from your bag.",
-    "alternatives": ["Take shoes out of your bag.", "Get shoes out of your bag."],
-    "point": "take + 物 + from で中から取り出す。",
+    "alternatives": ["Take shoes from your bag.", "Get shoes from your bag."],
+    "point": "remove A from B で B から A を取り出す。",
     "topic": "travel",
     "subtopic": "airport",
     "level": 3,
     "grammar": ["imperatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d3945a3a8ecf7575307ff4138947d6a89d0cfa94228ceadd00f1dbee794ecf36",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8p9t5m3n",

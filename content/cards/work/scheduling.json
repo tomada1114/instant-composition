@@ -23,16 +23,22 @@
     "ja": "私は締切の再交渉を避けたい。",
     "en": "I'm keen to avoid renegotiating deadlines.",
     "alternatives": [
-      "I'd really like to avoid reopening deadline negotiations.",
-      "I don't want to negotiate deadlines again."
+      "I want to avoid renegotiating deadlines.",
+      "I'd rather not renegotiate deadlines."
     ],
     "point": "avoid の後は renegotiating のように動名詞。",
     "topic": "work",
     "subtopic": "scheduling",
-    "level": 7,
+    "level": 6,
     "grammar": ["gerunds"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:74019741746928eca6808d9a55feaf51c7b545139824db64162da69fdf6571d4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3k7p2s6k",
@@ -235,10 +241,16 @@
     "point": "under negotiation で日程を後ろから修飾する。",
     "topic": "work",
     "subtopic": "scheduling",
-    "level": 7,
+    "level": 6,
     "grammar": ["post-modification"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:deb8620d71c5806226ce8220bd6e9a88f0e82fa5849c8cafb6ad47cf70d3f0b6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4j7b3c9e",
@@ -620,7 +632,7 @@
   },
   {
     "id": "c_7c6s3n5d",
-    "ja": "私は余裕を持たせて組んだ。",
+    "ja": "私は日程に余裕を持たせた。",
     "en": "I've built slack into the schedule.",
     "alternatives": [
       "I've allowed extra time in the schedule.",
@@ -629,10 +641,16 @@
     "point": "slack は遅れを吸収できる時間の余裕。",
     "topic": "work",
     "subtopic": "scheduling",
-    "level": 7,
+    "level": 6,
     "grammar": ["present-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:137889b595def49f51d0d3261c8a701afba2bca1015f706884be9e53d044b61f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7k7u8w3t",

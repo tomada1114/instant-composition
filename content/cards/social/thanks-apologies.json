@@ -439,14 +439,20 @@
     "id": "c_5c2p3f4a",
     "ja": "私からお詫びしてもいい？",
     "en": "May I offer an apology?",
-    "alternatives": ["Could I offer you an apology?", "Would it be okay to apologize?"],
+    "alternatives": ["Can I offer an apology?", "May I apologize?"],
     "point": "offer an apology で丁寧にお詫びを申し出る。",
     "topic": "social",
     "subtopic": "thanks-apologies",
     "level": 4,
     "grammar": ["requests-permission"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e08a799f5d6e56e8ba3e378525a8df3e28fdb41f2f817c8d1c199a7c56adf0fb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5d4a7b7k",
@@ -576,8 +582,8 @@
     "ja": "お礼の品をもう選びました。",
     "en": "I've picked a thank-you gift.",
     "alternatives": [
-      "I've chosen a gift of thanks.",
-      "I've selected a gift to thank you."
+      "I've chosen a thank-you gift.",
+      "I've selected a thank-you gift."
     ],
     "point": "thank-you を名詞の前に置いてお礼用と伝える。",
     "topic": "social",
@@ -585,7 +591,13 @@
     "level": 4,
     "grammar": ["present-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f6bc53d3c3e28333a2dd75151c45afd9d4f6de4f40f7c175f88bc92ecaaa46e5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5z8k3p6x",
@@ -876,10 +888,16 @@
     "point": "make amends は過ちの埋め合わせをする。",
     "topic": "social",
     "subtopic": "thanks-apologies",
-    "level": 4,
+    "level": 6,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:659bb0a0c8e9ee1e152ba97c80801bbe92bcdd59fb5ea8821f5a4bc17bed05d5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8s2u8v8r",

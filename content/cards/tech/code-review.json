@@ -350,19 +350,6 @@
     }
   },
   {
-    "id": "c_4u3y4w3q",
-    "ja": "空の一覧があります。",
-    "en": "There's an empty list.",
-    "alternatives": ["We have an empty list.", "An empty list is present."],
-    "point": "母音で始まる empty の前は an。",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 2,
-    "grammar": ["articles-and-countability"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_4v4t7r4d",
     "ja": "引っかかるのは、この命名です。",
     "en": "What bothers me is this naming.",
@@ -600,7 +587,7 @@
   },
   {
     "id": "c_6q5p8n5z",
-    "ja": "私は名前を変えるよ。",
+    "ja": "私がその名前を変える。",
     "en": "I'll change the name.",
     "alternatives": ["I'll pick another name.", "I'll use a different name."],
     "point": "will で修正を引き受ける意思を表す。",
@@ -609,7 +596,13 @@
     "level": 2,
     "grammar": ["future-forms"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3762ad1cc00cf92f77344f290c5190105e8000e0fc4edd190904021e54089f59",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6v9w2u8n",
@@ -704,10 +697,16 @@
     "point": "keep でコードの行を消さずに残す。",
     "topic": "tech",
     "subtopic": "code-review",
-    "level": 2,
+    "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9f47b829778506602e15d651067fe230259c038f13bd3d8059fcf41101c53002",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8f8x2n8k",

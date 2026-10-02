@@ -172,18 +172,21 @@
   {
     "id": "c_3q7p6p8k",
     "ja": "私は再会が楽しみ。",
-    "en": "I'm excited about meeting again.",
-    "alternatives": [
-      "I look forward to meeting again.",
-      "I'm looking forward to our reunion."
-    ],
-    "point": "look forward to の後は動名詞。",
+    "en": "I'm excited about our reunion.",
+    "alternatives": ["I look forward to our reunion.", "I'm eager for our reunion."],
+    "point": "look forward to の to の後には名詞や動名詞。",
     "topic": "daily",
     "subtopic": "plans",
     "level": 3,
     "grammar": ["gerunds"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f31836bbd054469fee1563bd76accac9bd9f950503baf5704acf43c43ffc7224",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3t9j6j6z",
@@ -348,10 +351,16 @@
     "point": "will はその場で引き受ける意思にも使う。",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 3,
+    "level": 2,
     "grammar": ["future-forms"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:08229a54080bbe13a7cf66ce5b71ea345e66f3d4ffe86b973afd4aa930be1c88",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4x9h7w9g",
@@ -389,23 +398,35 @@
     "level": 6,
     "grammar": ["gerunds"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:17ee6f427bb5187e739b54085489afa8faec7d80843504c4c53b63db63f8a6ad",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5h8n9h6b",
-    "ja": "私は家族の予定を調整するよ。",
+    "ja": "私は家族と予定を調整する。",
     "en": "I'll coordinate plans with my family.",
     "alternatives": [
-      "I'll align plans with my family.",
-      "I'll work out plans with my family."
+      "I'll work out plans with my family.",
+      "I'll arrange plans with my family."
     ],
     "point": "coordinate は複数人の予定を調整する。",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 6,
+    "level": 5,
     "grammar": ["future-forms"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dd31359fcd902df22c883e38c73e0342a1ef628308c64aee86d3c5a5927339ab",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5n2y2p4f",
@@ -611,19 +632,6 @@
         "at": "2026-10-02"
       }
     }
-  },
-  {
-    "id": "c_7a7y6p3g",
-    "ja": "私は彼に日程の融通を頼んだ。",
-    "en": "I asked him to accommodate us.",
-    "alternatives": ["I asked him to adjust for us.", "I asked him to fit us in."],
-    "point": "accommodate は相手の都合に合わせて調整する。",
-    "topic": "daily",
-    "subtopic": "plans",
-    "level": 6,
-    "grammar": ["verb-object-to-do"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
   },
   {
     "id": "c_7b9v5s8r",
@@ -872,7 +880,13 @@
     "level": 3,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c6c5f49a6b07a7f163ba709499bfd801336ec40d4554fa9f4ef88c72c9f934fd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8q8p2b7z",

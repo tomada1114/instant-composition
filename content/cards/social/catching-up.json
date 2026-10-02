@@ -385,7 +385,13 @@
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0e704aa769e0f0343fac29e315145852d7cf03c3f351ff7b42983816837d9241",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4y2z8a2u",
@@ -789,27 +795,39 @@
     "id": "c_7v9p5a2q",
     "ja": "私は今歩いてる。",
     "en": "I'm walking now.",
-    "alternatives": ["I'm out walking now.", "I'm taking a walk now."],
+    "alternatives": ["I'm walking right now.", "I'm walking at the moment."],
     "point": "今進んでいる動作は am + walking。",
     "topic": "social",
     "subtopic": "catching-up",
     "level": 1,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1ac1ffe94c4f48b842e88e010216f69e99b7ea261fb5c190cd42024d2cf209cf",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7y5x7k6w",
-    "ja": "私に新しい友達がいる",
+    "ja": "新しい友達が数人いる。",
     "en": "I've got new friends.",
-    "alternatives": ["I have new friends.", "I have some new friends."],
+    "alternatives": ["I have new friends.", "I've made some new friends."],
     "point": "複数の友達には friends を使う。",
     "topic": "social",
     "subtopic": "catching-up",
     "level": 1,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3e6d34a137db7f787ac8f882d5bbc940fa103f5cc6faf51253bdce6c2b4d7f0e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8a9b4g2x",

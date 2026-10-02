@@ -193,10 +193,16 @@
     "point": "forward my mail は郵便を別の住所へ転送する。",
     "topic": "daily",
     "subtopic": "errands",
-    "level": 5,
+    "level": 4,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2b818f66c73ff94512e27326df500c6ce2e68220399eff7f5bacf4c175439b5b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3d2w6x4x",
@@ -291,7 +297,13 @@
     "level": 5,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:47291334714beda5e9586407d842725e91311fbbfa911414691152511c403dcc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4a3h4t5w",
@@ -854,8 +866,8 @@
     "ja": "私は口座を既に解約してた。",
     "en": "I'd already closed the account.",
     "alternatives": [
-      "I had already shut the account.",
-      "The account was already closed by me."
+      "I'd already shut down the account.",
+      "I'd already canceled the account."
     ],
     "point": "had already closed で過去の時点より前の完了。",
     "topic": "daily",
@@ -863,7 +875,13 @@
     "level": 5,
     "grammar": ["past-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f3dfea7a2ef4b4c2a767ca719fab00036d25380b23300b8f119ee9667488494b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9p2s8f9t",

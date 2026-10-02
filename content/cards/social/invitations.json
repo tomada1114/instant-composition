@@ -126,30 +126,23 @@
     }
   },
   {
-    "id": "c_2z4t8z9d",
-    "ja": "私たちは君を歓迎。",
-    "en": "We welcome you.",
-    "alternatives": ["You're welcome with us.", "You're welcome to join."],
-    "point": "welcome を動詞にして歓迎を伝える。",
-    "topic": "social",
-    "subtopic": "invitations",
-    "level": 1,
-    "grammar": ["be-and-present-simple"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_3a6a9b5e",
     "ja": "みんな、遊びに来て。",
     "en": "Everyone, come visit me.",
     "alternatives": ["Everyone, come over.", "Everyone, come see me."],
-    "point": "come to my place は私の家に来る。",
+    "point": "come visit me は私に会いに来てという誘い。",
     "topic": "social",
     "subtopic": "invitations",
     "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d1c134bf7cc7765427d7cb1f1373c2a7fb97ed060a4b4f646363f4cee51fbc1d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3d7x9r3m",
@@ -157,7 +150,7 @@
     "en": "I'd rather bow out this time.",
     "alternatives": [
       "I'd prefer to decline this time.",
-      "I'd sooner sit this one out."
+      "I'd rather sit this one out."
     ],
     "point": "would rather と bow out で辞退の希望を柔らかく伝える。",
     "topic": "social",
@@ -165,7 +158,13 @@
     "level": 7,
     "grammar": ["hedging-softening", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8e70feb8fbb91193646d87958547b7e0c4d65441c92d9a6d3603390562acf075",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3k3x3g9v",
@@ -233,15 +232,24 @@
   {
     "id": "c_3q2d6w2s",
     "ja": "私はその誘いを見送るよ。",
-    "en": "I'll give that invitation a miss.",
-    "alternatives": ["I'll pass on that invitation.", "I'll sit that invitation out."],
-    "point": "give something a miss は今回は参加を見送る。",
+    "en": "I'll pass on that invitation.",
+    "alternatives": [
+      "I'll decline that invitation.",
+      "I'll turn down that invitation."
+    ],
+    "point": "pass on an invitation は誘いを見送る。",
     "topic": "social",
     "subtopic": "invitations",
-    "level": 7,
-    "grammar": ["future-forms"],
+    "level": 5,
+    "grammar": ["future-forms", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8d7f711dc029347cadcf2336d87a4fd6c76637feda90039622fcdd9402c58156",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3q7g4c3d",
@@ -389,14 +397,20 @@
     "id": "c_4j9q9m5w",
     "ja": "君は誰を誘ってる？",
     "en": "Who are you inviting?",
-    "alternatives": ["Who are you asking?", "Who gets your invitation?"],
+    "alternatives": ["Who are you asking along?", "Who are you inviting over?"],
     "point": "who で招待する相手を尋ねる。",
     "topic": "social",
     "subtopic": "invitations",
-    "level": 1,
+    "level": 2,
     "grammar": ["wh-questions", "progressive-aspect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:56db1a1b4edb71599144f3ee72e4fed7b35a28d743812e15523c6e4eb20fefa4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4q4m9v4m",
@@ -673,15 +687,21 @@
     "en": "I wish I hadn't overlooked you.",
     "alternatives": [
       "I wish I'd remembered to invite you.",
-      "If only I hadn't forgotten your invitation."
+      "If only I'd remembered to invite you."
     ],
-    "point": "wish + 過去完了で招待し忘れたことを悔やむ。",
+    "point": "wish + 過去完了で、招待し忘れた過去を悔やむ。",
     "topic": "social",
     "subtopic": "invitations",
-    "level": 7,
+    "level": 6,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8305f1c96053303329fa7c185a0f8676d48b3287f54688191b2984bd20123b16",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6x2k6u6v",
