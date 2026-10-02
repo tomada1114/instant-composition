@@ -303,6 +303,22 @@ describe("AnswerField", () => {
     );
   }
 
+  it("passes its enterKeyHint to the field", () => {
+    render(
+      <AnswerField
+        label="Answer"
+        value=""
+        onChange={() => undefined}
+        onSend={() => undefined}
+        enterKeyHint="send"
+      />,
+    );
+    expect(screen.getByRole("textbox", { name: "Answer" })).toHaveAttribute(
+      "enterkeyhint",
+      "send",
+    );
+  });
+
   it("sends on Enter instead of breaking the line", () => {
     const onSend = vi.fn();
     render(<Field onSend={onSend} />);

@@ -148,6 +148,16 @@ Firefox, Samsung Internet and tablets only keep working.
   `visualViewport` reading, no `interactive-widget`. The learner scrolls the
   conversation above the keyboard (#398 R3, D1 — the owner chose this over the lift's
   complexity and the iOS bugs it could bring).
+- Settings hides the grade-keys row where `(pointer: coarse) and (hover: none)` matches,
+  read through `matchMedia` and following its `change` event: a touch-only device's
+  software keyboard sends no key the row could take, so a tapped key button would wait
+  forever (#398 R4).
+- The time-zone `<select>` is `text-body` at every width, like every other field, so iOS
+  never zooms the page when it opens.
+- The toggle keeps its 32-tall track and takes a `before:` overlay that makes its hit
+  area at least 44 × 44, as `choice-chip` does, so a finger finds it.
+- The talk fields set `enterKeyHint` — `next` at W3a, `send` at W3b — so the software
+  keyboard's return key says what Enter does there.
 
 ## Implementation rules
 

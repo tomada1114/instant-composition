@@ -1,5 +1,5 @@
 import { act, fireEvent, screen, within } from "@testing-library/react";
-import { afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
+import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
 
 import type {
   LevelChoice,
@@ -326,6 +326,15 @@ describe("the settings screen, W11 size and sound", () => {
     ]);
   });
 
+  it("gives the sound toggle a hit area beyond its track", async () => {
+    serveSettings();
+    await renderApp("/settings");
+    expect(screen.getByRole("switch", { name: ja.Settings.sound.title })).toHaveClass(
+      "before:absolute",
+      "before:-inset-y-2",
+    );
+  });
+
   it("switches the sound", async () => {
     const { patches } = serveSettings();
     await renderApp("/settings");
@@ -449,6 +458,58 @@ function expectLevel(mode: "auto" | "manual", toeic: string): void {
 }
 
 describe("the settings screen, the grade keys", () => {
+  /** Stubs `matchMedia` with a device that is touch-only while `touch.only` is true. */
+  function stubDevice(only: boolean): { flip: (only: boolean) => void } {
+    const touch = { only };
+    const listeners = new Set<() => void>();
+    vi.stubGlobal("matchMedia", (query: string) => ({
+      get matches() {
+        return query === "(pointer: coarse) and (hover: none)" && touch.only;
+      },
+      addEventListener: (_type: string, listener: () => void) => {
+        listeners.add(listener);
+      },
+      removeEventListener: (_type: string, listener: () => void) => {
+        listeners.delete(listener);
+      },
+    }));
+    return {
+      flip: (next) => {
+        touch.only = next;
+        for (const listener of listeners) listener();
+      },
+    };
+  }
+
+  afterEach(() => {
+    vi.unstubAllGlobals();
+  });
+
+  it("hides the row on a touch-only device and shows it again when that changes", async () => {
+    const device = stubDevice(true);
+    serveSettings();
+    await renderApp("/settings");
+    expect(screen.queryByRole("group", { name: ja.Settings.keys.title })).toBeNull();
+    expect(
+      screen.getByRole("switch", { name: ja.Settings.sound.title }),
+    ).toBeInTheDocument();
+    act(() => {
+      device.flip(false);
+    });
+    expect(
+      screen.getByRole("group", { name: ja.Settings.keys.title }),
+    ).toBeInTheDocument();
+  });
+
+  it("shows the row on a device with a fine pointer", async () => {
+    stubDevice(false);
+    serveSettings();
+    await renderApp("/settings");
+    expect(
+      screen.getByRole("group", { name: ja.Settings.keys.title }),
+    ).toBeInTheDocument();
+  });
+
   /** The grade key button for `grade`, named by the key it shows now. */
   function keyButton(grade: "ok" | "ng", key: string): HTMLElement {
     return screen.getByRole("button", { name: fill(ja.Settings.keys[grade], { key }) });
@@ -982,6 +1043,14 @@ describe("the settings screen, the time zone", () => {
 
   const device = new Intl.DateTimeFormat().resolvedOptions().timeZone;
   const other = device === "Pacific/Auckland" ? "Europe/London" : "Pacific/Auckland";
+
+  it("sets the select at 16, so iOS does not zoom on it", async () => {
+    serveProfile(device);
+    await renderApp("/settings");
+    expect(
+      screen.getByRole("combobox", { name: ja.Settings.timeZone.title }),
+    ).toHaveClass("text-body");
+  });
 
   it("reads the profile once a visit, not again each time the app section is chosen", async () => {
     const { calls } = serveProfile(device);

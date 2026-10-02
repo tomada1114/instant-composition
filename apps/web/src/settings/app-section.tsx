@@ -1,4 +1,4 @@
-import { useId, type ReactElement } from "react";
+import { useId, useSyncExternalStore, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
 import { LOGOUT_URL } from "../lib/endpoints";
@@ -8,7 +8,24 @@ import { GradeKeysRow } from "./grade-keys-row";
 import { TimeZoneRow } from "./time-zone-row";
 import type { SettingsState } from "./use-settings";
 
-/** The app's own rows: the sound, the drill's grade keys and the time zone. */
+// A touch-only device: its software keyboard sends no key the grade keys
+// could take, so the row would only wait forever.
+const TOUCH_ONLY = "(pointer: coarse) and (hover: none)";
+
+function subscribeTouchOnly(onChange: () => void): () => void {
+  if (typeof matchMedia !== "function") return () => undefined;
+  const query = matchMedia(TOUCH_ONLY);
+  query.addEventListener("change", onChange);
+  return () => {
+    query.removeEventListener("change", onChange);
+  };
+}
+
+function isTouchOnly(): boolean {
+  return typeof matchMedia === "function" && matchMedia(TOUCH_ONLY).matches;
+}
+
+/** The app's own rows: the sound, the drill's grade keys (not on a touch-only device) and the time zone. */
 export function AppRows({
   state,
   onZoneFailedChange,
@@ -18,6 +35,7 @@ export function AppRows({
 }>): ReactElement {
   const t = useTranslations("Settings");
   const soundId = useId();
+  const touchOnly = useSyncExternalStore(subscribeTouchOnly, isTouchOnly);
   return (
     <>
       <div className="flex min-h-16 items-center justify-between gap-4">
@@ -30,7 +48,7 @@ export function AppRows({
           }}
         />
       </div>
-      <GradeKeysRow state={state} />
+      {touchOnly ? null : <GradeKeysRow state={state} />}
       <TimeZoneRow onFailedChange={onZoneFailedChange} />
     </>
   );

@@ -180,6 +180,22 @@ describe("the talk tab's read", () => {
 });
 
 describe("one turn", () => {
+  it("labels the keyboard's Enter next at the Japanese and send at the English", async () => {
+    serveTalk();
+    await renderApp("/talk");
+    await begin();
+    expect(
+      screen.getByRole("textbox", { name: ja.Talk.step.japanese }),
+    ).toHaveAttribute("enterkeyhint", "next");
+    write(ja.Talk.step.japanese, "仕事が詰まってて");
+    key("Enter");
+    await settle();
+    expect(screen.getByRole("textbox", { name: ja.Talk.step.english })).toHaveAttribute(
+      "enterkeyhint",
+      "send",
+    );
+  });
+
   it("cannot send an empty Japanese, and sends nothing until the English goes with it", async () => {
     const calls = serveTalk();
     await renderApp("/talk");
