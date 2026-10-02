@@ -20,6 +20,9 @@ import {
   makeStats,
   makeTalk,
   makeTurn,
+  makeVocabProgress,
+  makeVocabReview,
+  makeVocabSession,
   oneOfEach,
   withRetired,
   without,
@@ -52,6 +55,9 @@ const READS: Readonly<Record<Exclude<keyof LearnerStore, "commit">, Read>> = {
   days: (store) => store.days(["2026-09-22"]),
   items: (store) => store.items(),
   talk: (store) => store.talk("t1"),
+  vocabItems: (store) => store.vocabItems(),
+  vocabSession: (store) => store.vocabSession("s1"),
+  vocabReviewsOf: (store) => store.vocabReviewsOf("s1"),
 };
 
 function isNothing(value: unknown): boolean {
@@ -392,6 +398,91 @@ export function describeLearnerStoreContract(
         value: makeTalk({ turns: [makeTurn()] }),
         version: 1,
       });
+      expect(await store.vocabItems()).toStrictEqual(
+        new Map([["v1", { value: makeVocabProgress(), version: 1 }]]),
+      );
+      expect(await store.vocabSession("s1")).toStrictEqual({
+        value: makeVocabSession(),
+        version: 1,
+      });
+      expect(await store.vocabReviewsOf("s1")).toStrictEqual([makeVocabReview()]);
+    });
+
+    it("keeps the drill's items, rounds and answers apart from the vocabulary's", async () => {
+      const shared = "shared";
+      const written = await store.commit({
+        puts: [
+          {
+            type: "item",
+            value: makeItem({ item: { kind: "composition", id: shared } }),
+          },
+          { type: "vocabItem", value: makeVocabProgress({ cardId: shared }) },
+          { type: "round", value: makeRound({ id: shared }) },
+          { type: "vocabSession", value: makeVocabSession({ id: shared }) },
+          { type: "review", value: makeReview({ sessionId: shared, id: shared }) },
+          {
+            type: "vocabReview",
+            value: makeVocabReview({ sessionId: shared, id: shared }),
+          },
+        ],
+        updates: [],
+        expect: [],
+      });
+
+      expect(written.ok).toBe(true);
+      expect([...(await store.items()).values()].map((s) => s.value)).toStrictEqual([
+        makeItem({ item: { kind: "composition", id: shared } }),
+      ]);
+      expect(
+        [...(await store.vocabItems()).values()].map((s) => s.value),
+      ).toStrictEqual([makeVocabProgress({ cardId: shared })]);
+      expect(await store.reviewsOf(shared)).toStrictEqual([
+        makeReview({ sessionId: shared, id: shared }),
+      ]);
+      expect(await store.reviews()).toStrictEqual([
+        makeReview({ sessionId: shared, id: shared }),
+      ]);
+      expect(await store.vocabReviewsOf(shared)).toStrictEqual([
+        makeVocabReview({ sessionId: shared, id: shared }),
+      ]);
+      expect((await store.vocabSession(shared))?.value).toStrictEqual(
+        makeVocabSession({ id: shared }),
+      );
+    });
+
+    it("reads a vocabulary session's answers by time and then by id, its own alone", async () => {
+      const reviews = [
+        makeVocabReview({ id: "b", answeredAt: 5 }),
+        makeVocabReview({ id: "c", answeredAt: 3 }),
+        makeVocabReview({ id: "a", answeredAt: 5 }),
+        makeVocabReview({ id: "d", sessionId: "s#ANSWER#x", answeredAt: 1 }),
+      ];
+      await store.commit({
+        puts: reviews.map((value) => ({ type: "vocabReview" as const, value })),
+        updates: [],
+        expect: [],
+      });
+
+      expect((await store.vocabReviewsOf("s1")).map((r) => r.id)).toStrictEqual([
+        "c",
+        "a",
+        "b",
+      ]);
+      expect((await store.vocabReviewsOf("s")).map((r) => r.id)).toStrictEqual([]);
+      expect((await store.vocabReviewsOf("s#ANSWER#x")).map((r) => r.id)).toStrictEqual(
+        ["d"],
+      );
+    });
+
+    it("keeps the vocabulary limits through a write and a read, an unlimited one included", async () => {
+      const chosen = makeSettings({ vocabNewPerDay: 0, vocabReviewsPerDay: null });
+      await store.commit({
+        puts: [{ type: "settings", value: chosen }],
+        updates: [],
+        expect: [],
+      });
+
+      expect(await store.settings()).toStrictEqual({ value: chosen, version: 1 });
     });
 
     it("keeps a talk's turns as written, and drops its expiry once it is kept", async () => {
@@ -540,9 +631,10 @@ export function describeLearnerStoreContract(
       ).rejects.toThrow(RangeError);
     });
 
-    it("refuses an update of a review entry", async () => {
-      const entry: Entry = { type: "review", value: makeReview() };
-
+    it.each([
+      ["review", { type: "review", value: makeReview() }],
+      ["vocabulary review", { type: "vocabReview", value: makeVocabReview() }],
+    ] as const)("refuses an update of a %s entry", async (_, entry: Entry) => {
       await expect(async () =>
         store.commit({ puts: [], updates: [{ entry, version: 1 }], expect: [] }),
       ).rejects.toThrow(RangeError);

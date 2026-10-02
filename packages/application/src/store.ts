@@ -10,6 +10,9 @@ import type {
   Round,
   Settings,
   Talk,
+  VocabProgress,
+  VocabReview,
+  VocabSession,
 } from "@instant-composition/domain";
 
 import type { LearnerId, Profile } from "./context";
@@ -24,7 +27,10 @@ export type Entry =
   | { readonly type: "portion"; readonly value: Portion }
   | { readonly type: "day"; readonly value: DayTally }
   | { readonly type: "item"; readonly value: ItemProgress }
-  | { readonly type: "talk"; readonly value: Talk };
+  | { readonly type: "talk"; readonly value: Talk }
+  | { readonly type: "vocabItem"; readonly value: VocabProgress }
+  | { readonly type: "vocabSession"; readonly value: VocabSession }
+  | { readonly type: "vocabReview"; readonly value: VocabReview };
 
 /** Where an entry lives inside the learner's own data; no key names a learner. */
 export type Key =
@@ -36,7 +42,10 @@ export type Key =
   | { readonly type: "portion"; readonly day: DayKey }
   | { readonly type: "day"; readonly day: DayKey }
   | { readonly type: "item"; readonly item: ItemRef }
-  | { readonly type: "talk"; readonly id: string };
+  | { readonly type: "talk"; readonly id: string }
+  | { readonly type: "vocabItem"; readonly cardId: string }
+  | { readonly type: "vocabSession"; readonly id: string }
+  | { readonly type: "vocabReview"; readonly sessionId: string; readonly id: string };
 
 export function keyOf(entry: Entry): Key {
   switch (entry.type) {
@@ -54,7 +63,16 @@ export function keyOf(entry: Entry): Key {
     case "item":
       return { type: "item", item: entry.value.item };
     case "talk":
-      return { type: "talk", id: entry.value.id };
+    case "vocabSession":
+      return { type: entry.type, id: entry.value.id };
+    case "vocabItem":
+      return { type: "vocabItem", cardId: entry.value.cardId };
+    case "vocabReview":
+      return {
+        type: "vocabReview",
+        sessionId: entry.value.sessionId,
+        id: entry.value.id,
+      };
   }
 }
 
@@ -71,7 +89,8 @@ export interface Stored<T> {
  * `puts` create entries that must not exist yet; `updates` replace entries
  * still at the version they were read at; `expect` states what must still hold
  * of entries read but not written — a version, or `null` for "still absent".
- * Review entries are only ever put: the log is append-only.
+ * Review entries, the drill's and the vocabulary's, are only ever put: the
+ * logs are append-only.
  */
 export interface Commit {
   readonly puts: readonly Entry[];
@@ -109,6 +128,11 @@ export interface LearnerStore {
    * the domain's `liveTalk`.
    */
   talk(id: string): Promise<Stored<Talk> | undefined>;
+  /** Every vocabulary card the learner has progress on, keyed by card id. */
+  vocabItems(): Promise<ReadonlyMap<string, Stored<VocabProgress>>>;
+  vocabSession(id: string): Promise<Stored<VocabSession> | undefined>;
+  /** A vocabulary session's answers, ordered by `answeredAt` and then by id. */
+  vocabReviewsOf(sessionId: string): Promise<readonly VocabReview[]>;
   commit(commit: Commit): Promise<Result<undefined, CommitConflict>>;
 }
 

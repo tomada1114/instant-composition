@@ -18,10 +18,12 @@ import { declaredValue } from "./declared";
 import { isConflict, transactItemsOf } from "./dynamodb-commit";
 import {
   checkShape,
+  itemsPrefix,
   LEARNER_TABLE_KEY,
   partitionKeyOf,
   reviewsPrefix,
   sortKeyOf,
+  vocabReviewsPrefix,
 } from "./keys";
 
 export interface DynamoDbStoresOptions {
@@ -49,7 +51,10 @@ function storedOf<T extends Entry["type"]>(type: T, row: Row): Stored<ValueOf<T>
   return { value: declaredValue({ type, value } as Entry) as ValueOf<T>, version };
 }
 
-function byTime(a: ReviewEntry, b: ReviewEntry): number {
+/** The fields both logs sort by. */
+type Timed = Pick<ReviewEntry, "answeredAt" | "id">;
+
+function byTime(a: Timed, b: Timed): number {
   return a.answeredAt - b.answeredAt || a.id.localeCompare(b.id);
 }
 
@@ -99,8 +104,12 @@ function dynamoDbStore(
     return rows;
   }
 
+  function prefixed(prefix: string): Promise<Row[]> {
+    return query("begins_with(#sk, :prefix)", { ":prefix": prefix });
+  }
+
   async function reviews(prefix: string): Promise<readonly ReviewEntry[]> {
-    const rows = await query("begins_with(#sk, :prefix)", { ":prefix": prefix });
+    const rows = await prefixed(prefix);
     return rows
       .filter((row) => row["type"] === "review")
       .map((row) => storedOf("review", row).value)
@@ -135,7 +144,8 @@ function dynamoDbStore(
       );
     },
     async items() {
-      const rows = await query("begins_with(#sk, :prefix)", { ":prefix": "ITEM#" });
+      // The drill's kind alone: a vocabulary card's progress is another shape.
+      const rows = await prefixed(itemsPrefix("composition"));
       return new Map(
         rows
           .map((row) => storedOf("item", row))
@@ -143,6 +153,20 @@ function dynamoDbStore(
       );
     },
     talk: (id) => get({ type: "talk", id }),
+    async vocabItems() {
+      const rows = await prefixed(itemsPrefix("vocab"));
+      return new Map(
+        rows
+          .map((row) => storedOf("vocabItem", row))
+          .map((stored) => [stored.value.cardId, stored]),
+      );
+    },
+    vocabSession: (id) => get({ type: "vocabSession", id }),
+    async vocabReviewsOf(sessionId) {
+      const rows = await prefixed(vocabReviewsPrefix(sessionId));
+      // The prefix holds the session's answers alone, not the session itself.
+      return rows.map((row) => storedOf("vocabReview", row).value).sort(byTime);
+    },
     async commit(commit) {
       checkShape(commit);
       const items = transactItemsOf(table, partition, commit);

@@ -27,6 +27,8 @@ export type Settings = {
     sound: boolean;
     limitSeconds: 15 | 20 | 30 | 45 | 60;
     gradeKeys: GradeKeys;
+    vocabNewPerDay: VocabNewPerDay;
+    vocabReviewsPerDay: VocabReviewsPerDay;
 };
 
 export type Dot = {
@@ -83,6 +85,8 @@ export type SettingsPatch = {
     sound?: boolean;
     limitSeconds?: 15 | 20 | 30 | 45 | 60;
     gradeKeys?: GradeKeys;
+    vocabNewPerDay?: VocabNewPerDay;
+    vocabReviewsPerDay?: VocabReviewsPerDay;
 };
 
 export type LevelMode = 'auto' | 'manual';
@@ -416,6 +420,99 @@ export type TurnResult = {
 
 export type TalkEnded = {
     kept: boolean;
+};
+
+export type Grade = 'again' | 'hard' | 'good';
+
+export type VocabCategory = 'word' | 'idiom' | 'phrasal-verb' | 'phrase';
+
+export type VocabNewPerDay = 0 | 5 | 10 | 15 | 20 | 30;
+
+export type VocabReviewsPerDay = 50 | 100 | 200 | null;
+
+export type VocabSessionKind = 'today' | 'extra' | 'weak';
+
+export type StartVocabSessionRequest = {
+    sessionId: string;
+    kind: VocabSessionKind;
+    category?: VocabCategory;
+};
+
+export type VocabAnswer = {
+    id: string;
+    cardId: string;
+    pass: Pass;
+    grade: Grade;
+    elapsedMs: number;
+    answeredAt?: number;
+};
+
+export type VocabAnswersRequest = {
+    answers: Array<VocabAnswer>;
+};
+
+export type VocabCategoryView = {
+    category: VocabCategory;
+    due: number;
+    new: number;
+    learning: number;
+    total: number;
+};
+
+export type VocabHub = {
+    empty: boolean;
+    today: {
+        due: number;
+        new: number;
+        minutes: number;
+    };
+    categories: Array<VocabCategoryView>;
+    weak: number;
+    tomorrow: number;
+};
+
+export type VocabIntervals = {
+    again: number;
+    hard: number;
+    good: number;
+};
+
+export type VocabCard = {
+    id: string;
+    category: VocabCategory;
+    level: number;
+    definition: string;
+    example: string;
+    headword: string;
+    meaning: string;
+    example2: string;
+    intervals: VocabIntervals;
+    isNew: boolean;
+};
+
+export type VocabSession = {
+    sessionId: string;
+    kind: VocabSessionKind;
+    category: VocabCategory | null;
+    day: string;
+    cards: Array<VocabCard>;
+};
+
+export type VocabAgainRow = {
+    cardId: string;
+    headword: string;
+    meaning: string;
+};
+
+export type VocabSummary = {
+    sessionId: string;
+    kind: VocabSessionKind;
+    category: VocabCategory | null;
+    day: string;
+    answered: number;
+    new: number;
+    again: Array<VocabAgainRow>;
+    tomorrow: number;
 };
 
 export type ErrorResponse = {
@@ -933,6 +1030,186 @@ export type GetHistoryResponses = {
 };
 
 export type GetHistoryResponse = GetHistoryResponses[keyof GetHistoryResponses];
+
+export type GetVocabData = {
+    body?: never;
+    path?: never;
+    query?: never;
+    url: '/v1/vocab';
+};
+
+export type GetVocabErrors = {
+    /**
+     * ERR_UNAUTHENTICATED: The request carries no valid access token.
+     */
+    401: ErrorResponse;
+    /**
+     * ERR_FORBIDDEN: The caller may not run this operation.
+     */
+    403: ErrorResponse;
+    /**
+     * ERR_CONTENT_UNREADABLE: The card content could not be read.
+     */
+    503: ErrorResponse;
+};
+
+export type GetVocabError = GetVocabErrors[keyof GetVocabErrors];
+
+export type GetVocabResponses = {
+    /**
+     * OK
+     */
+    200: VocabHub;
+};
+
+export type GetVocabResponse = GetVocabResponses[keyof GetVocabResponses];
+
+export type StartVocabSessionData = {
+    body: StartVocabSessionRequest;
+    path?: never;
+    query?: never;
+    url: '/v1/vocab/sessions';
+};
+
+export type StartVocabSessionErrors = {
+    /**
+     * ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.
+     */
+    400: ErrorResponse;
+    /**
+     * ERR_UNAUTHENTICATED: The request carries no valid access token.
+     */
+    401: ErrorResponse;
+    /**
+     * ERR_FORBIDDEN: The caller may not run this operation.
+     */
+    403: ErrorResponse;
+    /**
+     * ERR_CONFLICT: Another write to the same data kept winning; send the request again.
+     */
+    409: ErrorResponse;
+    /**
+     * ERR_PAYLOAD_TOO_LARGE: The request body is too large.
+     */
+    413: ErrorResponse;
+    /**
+     * ERR_CONTENT_UNREADABLE: The card content could not be read.
+     */
+    503: ErrorResponse;
+};
+
+export type StartVocabSessionError = StartVocabSessionErrors[keyof StartVocabSessionErrors];
+
+export type StartVocabSessionResponses = {
+    /**
+     * OK
+     */
+    200: VocabSession;
+};
+
+export type StartVocabSessionResponse = StartVocabSessionResponses[keyof StartVocabSessionResponses];
+
+export type RecordVocabAnswersData = {
+    body: VocabAnswersRequest;
+    path: {
+        sessionId: string;
+    };
+    query?: never;
+    url: '/v1/vocab/sessions/{sessionId}/answers';
+};
+
+export type RecordVocabAnswersErrors = {
+    /**
+     * ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.
+     */
+    400: ErrorResponse;
+    /**
+     * ERR_UNAUTHENTICATED: The request carries no valid access token.
+     */
+    401: ErrorResponse;
+    /**
+     * ERR_FORBIDDEN: The caller may not run this operation.
+     */
+    403: ErrorResponse;
+    /**
+     * ERR_SESSION_NOT_FOUND: No vocabulary session has that id.
+     */
+    404: ErrorResponse;
+    /**
+     * ERR_CONFLICT: Another write to the same data kept winning; send the request again. ERR_SESSION_CLOSED: That vocabulary session has finished and takes no new answer.
+     */
+    409: ErrorResponse;
+    /**
+     * ERR_PAYLOAD_TOO_LARGE: The request body is too large.
+     */
+    413: ErrorResponse;
+    /**
+     * ERR_CONTENT_UNREADABLE: The card content could not be read.
+     */
+    503: ErrorResponse;
+};
+
+export type RecordVocabAnswersError = RecordVocabAnswersErrors[keyof RecordVocabAnswersErrors];
+
+export type RecordVocabAnswersResponses = {
+    /**
+     * Done; no body.
+     */
+    204: void;
+};
+
+export type RecordVocabAnswersResponse = RecordVocabAnswersResponses[keyof RecordVocabAnswersResponses];
+
+export type FinishVocabSessionData = {
+    body: VocabAnswersRequest;
+    path: {
+        sessionId: string;
+    };
+    query?: never;
+    url: '/v1/vocab/sessions/{sessionId}/finish';
+};
+
+export type FinishVocabSessionErrors = {
+    /**
+     * ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.
+     */
+    400: ErrorResponse;
+    /**
+     * ERR_UNAUTHENTICATED: The request carries no valid access token.
+     */
+    401: ErrorResponse;
+    /**
+     * ERR_FORBIDDEN: The caller may not run this operation.
+     */
+    403: ErrorResponse;
+    /**
+     * ERR_SESSION_NOT_FOUND: No vocabulary session has that id.
+     */
+    404: ErrorResponse;
+    /**
+     * ERR_CONFLICT: Another write to the same data kept winning; send the request again. ERR_SESSION_CLOSED: That vocabulary session has finished and takes no new answer.
+     */
+    409: ErrorResponse;
+    /**
+     * ERR_PAYLOAD_TOO_LARGE: The request body is too large.
+     */
+    413: ErrorResponse;
+    /**
+     * ERR_CONTENT_UNREADABLE: The card content could not be read.
+     */
+    503: ErrorResponse;
+};
+
+export type FinishVocabSessionError = FinishVocabSessionErrors[keyof FinishVocabSessionErrors];
+
+export type FinishVocabSessionResponses = {
+    /**
+     * OK
+     */
+    200: VocabSummary;
+};
+
+export type FinishVocabSessionResponse = FinishVocabSessionResponses[keyof FinishVocabSessionResponses];
 
 export type StartTalkData = {
     body: StartTalkRequest;

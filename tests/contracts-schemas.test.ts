@@ -30,6 +30,15 @@ import {
   type RoundSummary,
   type SettingsPageView,
   type SettingsView,
+  finishVocabSession,
+  recordVocabAnswers,
+  startVocabSession,
+  vocabHub,
+  type StartVocabSessionCommand,
+  type VocabAnswersCommand,
+  type VocabHub,
+  type VocabSessionView,
+  type VocabSummary,
 } from "@instant-composition/application";
 import {
   answerSchema,
@@ -60,11 +69,21 @@ import {
   turnRequestSchema,
   type turnResultSchema,
   type ErrorCode,
+  sessionIdParamSchema,
+  startVocabSessionRequestSchema,
+  vocabAnswerSchema,
+  vocabAnswersRequestSchema,
+  vocabHubSchema,
+  vocabNewPerDaySchema,
+  vocabReviewsPerDaySchema,
+  vocabSessionSchema,
+  vocabSummarySchema,
 } from "@instant-composition/contracts";
 import {
   isGradeKey,
   TALK_TUNING,
   TUNING,
+  VOCAB_TUNING,
   type AnswerInput,
   type LevelChoice,
   type SettingsPatch,
@@ -76,8 +95,11 @@ import type * as z from "zod";
 import {
   answersFor,
   DAY_MS,
+  fixedCatalog,
   makeHarness,
+  makeSnapshot,
   NOON,
+  vocabItem,
   type Harness,
 } from "./application-harness";
 
@@ -143,6 +165,19 @@ describe("each response schema mirrors the application view it serves", () => {
     expectTypeOf<z.infer<typeof talkEndedSchema>>().toExtend<Wire<TalkEnded>>();
   });
 
+  it("VocabHub, VocabSessionView and VocabSummary", () => {
+    expectTypeOf<Wire<VocabHub>>().toExtend<z.infer<typeof vocabHubSchema>>();
+    expectTypeOf<z.infer<typeof vocabHubSchema>>().toExtend<Wire<VocabHub>>();
+    expectTypeOf<Wire<VocabSessionView>>().toExtend<
+      z.infer<typeof vocabSessionSchema>
+    >();
+    expectTypeOf<z.infer<typeof vocabSessionSchema>>().toExtend<
+      Wire<VocabSessionView>
+    >();
+    expectTypeOf<Wire<VocabSummary>>().toExtend<z.infer<typeof vocabSummarySchema>>();
+    expectTypeOf<z.infer<typeof vocabSummarySchema>>().toExtend<Wire<VocabSummary>>();
+  });
+
   it("does not pass by construction: a view missing a field fails the check", () => {
     type Short = Omit<Wire<History>, "estimatedLevel">;
     expectTypeOf<Short>().not.toExtend<z.infer<typeof historySchema>>();
@@ -160,6 +195,21 @@ describe("each request schema carries exactly what its command takes", () => {
     type Placed = z.infer<typeof answerSchema> & { roundId: string };
     expectTypeOf<Placed>().toExtend<AnswerInput>();
     expectTypeOf<Wire<AnswerInput>>().toExtend<Placed>();
+  });
+
+  it("a vocabulary start carries the command whole", () => {
+    expectTypeOf<
+      z.infer<typeof startVocabSessionRequestSchema>
+    >().toExtend<StartVocabSessionCommand>();
+    expectTypeOf<Wire<StartVocabSessionCommand>>().toExtend<
+      z.infer<typeof startVocabSessionRequestSchema>
+    >();
+  });
+
+  it("a vocabulary batch carries the command but the session, which the path names", () => {
+    type Placed = z.infer<typeof vocabAnswersRequestSchema> & { sessionId: string };
+    expectTypeOf<Placed>().toExtend<VocabAnswersCommand>();
+    expectTypeOf<Wire<VocabAnswersCommand>>().toExtend<Placed>();
   });
 
   it("a level choice is the domain's choice", () => {
@@ -419,6 +469,80 @@ describe("request bounds", () => {
   });
 });
 
+describe("vocabulary request bounds", () => {
+  const answer = {
+    id: "a1",
+    cardId: "v_word-3-0",
+    pass: "first",
+    grade: "good",
+    elapsedMs: 3_000,
+  } as const;
+
+  it("holds the limits the settings offer to the domain's", () => {
+    expect(
+      [-1, 0, 5, 7, 10, 15, 20, 30, 50].filter(
+        (value) => vocabNewPerDaySchema.safeParse(value).success,
+      ),
+    ).toStrictEqual([...VOCAB_TUNING.newPerDay]);
+    expect(
+      [null, 0, 50, 75, 100, 200, 500].filter(
+        (value) => vocabReviewsPerDaySchema.safeParse(value).success,
+      ),
+    ).toStrictEqual([null, ...VOCAB_TUNING.reviewsPerDay.filter((v) => v !== null)]);
+  });
+
+  it("holds a batch to the round's bound", () => {
+    const batch = (size: number) =>
+      vocabAnswersRequestSchema.safeParse({
+        answers: Array.from({ length: size }, (_, index) => ({
+          ...answer,
+          id: `a${String(index)}`,
+        })),
+      }).success;
+    expect([
+      batch(0),
+      batch(MAX_ROUND_ANSWERS),
+      batch(MAX_ROUND_ANSWERS + 1),
+    ]).toStrictEqual([true, true, false]);
+  });
+
+  it.each([
+    ["the grade easy, which no card is given", { ...answer, grade: "easy" }],
+    [
+      "a drill result in place of a grade",
+      { ...answer, grade: undefined, result: "ok" },
+    ],
+    ["a negative elapsedMs", { ...answer, elapsedMs: -1 }],
+    ["an empty card id", { ...answer, cardId: "" }],
+  ])("refuses an answer with %s", (_, value) => {
+    expect(vocabAnswerSchema.safeParse(value).success).toBe(false);
+  });
+
+  it.each([
+    ["no kind", { sessionId: "s1" }],
+    ["an unknown kind", { sessionId: "s1", kind: "review" }],
+    ["an unknown category", { sessionId: "s1", kind: "today", category: "verb" }],
+    ["a session id of 65 characters", { sessionId: "x".repeat(65), kind: "today" }],
+  ])("refuses a start with %s", (_, value) => {
+    expect(startVocabSessionRequestSchema.safeParse(value).success).toBe(false);
+  });
+
+  it("takes a start with or without a category, and validates the path's id the same way", () => {
+    expect(
+      startVocabSessionRequestSchema.parse({ sessionId: "s1", kind: "weak" }),
+    ).toStrictEqual({ sessionId: "s1", kind: "weak" });
+    expect(
+      startVocabSessionRequestSchema.parse({
+        sessionId: "s1",
+        kind: "today",
+        category: "phrasal-verb",
+      }),
+    ).toMatchObject({ category: "phrasal-verb" });
+    expect(sessionIdParamSchema.safeParse("x".repeat(64)).success).toBe(true);
+    expect(sessionIdParamSchema.safeParse("").success).toBe(false);
+  });
+});
+
 /** Fails the test with the application's code when a command or query refused. */
 async function value<T>(
   result: Promise<{ ok: true; value: T } | { ok: false; error: { code: string } }>,
@@ -529,12 +653,50 @@ describe("what the application answers parses under the contract", () => {
     note("home done", homeViewSchema, await value(home(h.deps, h.context(later))));
     note("records", recordsViewSchema, await value(records(h.deps, h.context(later))));
     note("history", historySchema, await value(history(h.deps, h.context(later))));
+    note("vocabHub", vocabHubSchema, await value(vocabHub(h.deps, h.context(later))));
+    const session = await value(
+      startVocabSession(h.deps, h.context(later), { sessionId: "s1", kind: "today" }),
+    );
+    note("startVocabSession", vocabSessionSchema, session);
+    const [card, ...rest] = session.cards;
+    if (card === undefined) throw new Error("No vocabulary card was dealt.");
+    const graded = (id: string, cardId: string, grade: "again" | "good") => ({
+      id,
+      cardId,
+      pass: "first" as const,
+      grade,
+      elapsedMs: 2_000,
+    });
+    await value(
+      recordVocabAnswers(h.deps, h.context(later), {
+        sessionId: "s1",
+        answers: [graded("v1", card.id, "again")],
+      }),
+    );
+    note(
+      "finishVocabSession",
+      vocabSummarySchema,
+      await value(
+        finishVocabSession(h.deps, h.context(later), {
+          sessionId: "s1",
+          answers: rest.map((other, index) =>
+            graded(`v${String(index + 2)}`, other.id, "good"),
+          ),
+        }),
+      ),
+    );
     return views;
   }
 
   it("for every view a day of practice produces", async () => {
-    const views = await throughTheDay(makeHarness());
-    expect(views.map(([name]) => name)).toHaveLength(16);
+    // A word at every level, so whatever level the placement lands on deals one.
+    const vocab = Array.from({ length: 10 }, (_, level) =>
+      vocabItem("word", level + 1, 0),
+    );
+    const views = await throughTheDay(
+      makeHarness(fixedCatalog(makeSnapshot({ vocab }))),
+    );
+    expect(views.map(([name]) => name)).toHaveLength(19);
     for (const [name, schema, view] of views) {
       const parsed = schema.safeParse(wire(view));
       expect({ name, issues: parsed.error?.issues ?? [] }).toStrictEqual({

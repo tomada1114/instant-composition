@@ -42,7 +42,7 @@ export {
   type LevelChange,
 } from "./difficulty";
 export { EMPTY_STATS, emptyTally } from "./empty";
-export type { PracticeError, TalkError } from "./errors";
+export type { PracticeError, TalkError, VocabError } from "./errors";
 export { previewGrades, retrievability, scheduleCard } from "./fsrs";
 export type { FsrsGrade, FsrsState, GradePreview, Scheduled } from "./fsrs";
 export {
@@ -169,7 +169,7 @@ export {
   paceSecondsForWords,
   type Paced,
 } from "./timer";
-export { TALK_TUNING, TUNING, type MilestoneSeries } from "./tuning";
+export { TALK_TUNING, TUNING, VOCAB_TUNING, type MilestoneSeries } from "./tuning";
 export type {
   AnswerRecord,
   AnswerResult,
@@ -188,6 +188,8 @@ export type {
   SubtopicRef,
   TopicInfo,
 } from "./types";
+export type { VocabAnswer, VocabProgress, VocabReview, VocabSession } from "./vocab";
+export { dealVocab, decideVocabAnswers, vocabFigures } from "./vocab-study";
 export {
   weaknesses,
   type ConceptWeakness,

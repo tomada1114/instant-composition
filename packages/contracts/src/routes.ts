@@ -15,6 +15,7 @@ import {
   startRoundRequestSchema,
 } from "./requests";
 import { TALK_ROUTES } from "./talk-routes";
+import { VOCAB_ROUTES } from "./vocab-routes";
 import {
   levelViewSchema,
   profileSchema,
@@ -60,7 +61,10 @@ const COMMAND_ERRORS = [
   "ERR_CONTENT_UNREADABLE",
 ] as const;
 
-/** The `/v1` operations the commands and queries in `packages/application` back, the talk's last. */
+/**
+ * The `/v1` operations the commands and queries in `packages/application`
+ * back: the drill's, the vocabulary's, then the talk's.
+ */
 export const ROUTES: readonly Route[] = [
   {
     method: "get",
@@ -187,5 +191,6 @@ export const ROUTES: readonly Route[] = [
     success: { status: 200, body: historySchema },
     errors: QUERY_ERRORS,
   },
+  ...VOCAB_ROUTES,
   ...TALK_ROUTES,
 ];

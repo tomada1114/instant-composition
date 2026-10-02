@@ -153,7 +153,12 @@ describe("snapshotCatalog", () => {
     const withoutVocab = await snapshotCatalog(file).snapshot();
 
     expect(vocab).not.toHaveLength(0);
-    expect(withoutVocab).toStrictEqual(withVocab);
+    if (!withVocab.ok) throw new Error(withVocab.error.code);
+    expect(withVocab.value.vocab.size).toBe(vocab.length);
+    expect(withoutVocab).toStrictEqual({
+      ok: true,
+      value: { ...withVocab.value, vocab: new Map() },
+    });
   });
 
   it("reads the file once and serves every later call from that read", async () => {

@@ -202,9 +202,22 @@ describe("a snapshot for one first language", () => {
   });
 
   it("deals the drill the same cards whether or not the document holds vocabulary", () => {
-    expect(catalogSnapshotOf(makeDocument({ vocab: [] }), "ja")).toStrictEqual(
-      snapshot,
-    );
+    expect(catalogSnapshotOf(makeDocument({ vocab: [] }), "ja")).toStrictEqual({
+      ...snapshot,
+      vocab: new Map(),
+    });
+  });
+
+  it("carries the vocabulary cards for the document's own first language", () => {
+    expect([...snapshot.vocab.keys()]).toStrictEqual(["v_2a"]);
+    expect(snapshot.vocab.get("v_2a")).toMatchObject({
+      headword: "give up",
+      meaning: "あきらめる",
+    });
+  });
+
+  it("carries no vocabulary card for another first language, its meaning being in the document's", () => {
+    expect(catalogSnapshotOf(makeDocument(), "es").vocab.size).toBe(0);
   });
 
   it("shows nothing to a first language no item is localized for", () => {

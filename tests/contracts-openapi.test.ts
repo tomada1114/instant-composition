@@ -83,6 +83,7 @@ describe("openApiDocument", () => {
       "GET /v1/rounds/{roundId} getRound",
       "GET /v1/rounds/{roundId}/summary getRoundSummary",
       "GET /v1/settings getSettings",
+      "GET /v1/vocab getVocab",
       "PATCH /v1/level updateLevel",
       "PATCH /v1/me updateProfile",
       "PATCH /v1/settings updateSettings",
@@ -94,6 +95,9 @@ describe("openApiDocument", () => {
       "POST /v1/talks/{talkId}/reply retryReply",
       "POST /v1/talks/{talkId}/turns sendTurn",
       "POST /v1/talks/{talkId}/turns/{turn}/recital recordRecital",
+      "POST /v1/vocab/sessions startVocabSession",
+      "POST /v1/vocab/sessions/{sessionId}/answers recordVocabAnswers",
+      "POST /v1/vocab/sessions/{sessionId}/finish finishVocabSession",
     ]);
   });
 
@@ -121,6 +125,24 @@ describe("openApiDocument", () => {
     expect(operation?.responses["204"]).toStrictEqual({
       description: "Done; no body.",
     });
+  });
+
+  it("validates a vocabulary session's {sessionId} as an id, and answers another learner's 404", () => {
+    for (const end of ["answers", "finish"]) {
+      const operation =
+        document.paths[`/v1/vocab/sessions/{sessionId}/${end}`]?.["post"];
+      expect(operation?.parameters).toStrictEqual([
+        {
+          name: "sessionId",
+          in: "path",
+          required: true,
+          schema: { type: "string", minLength: 1, maxLength: 64 },
+        },
+      ]);
+      expect(operation?.responses["404"]?.description).toMatch(
+        /^ERR_SESSION_NOT_FOUND: /,
+      );
+    }
   });
 
   it("answers a scene or a reply that could not be had with 503 ERR_MODEL_UNAVAILABLE", () => {
@@ -198,7 +220,7 @@ describe("openApiDocument", () => {
 
   it("builds a route it is handed rather than only the shipped table", () => {
     expect(Object.keys(openApiDocument([probe]).paths)).toStrictEqual(["/v1/probe"]);
-    expect(ROUTES).toHaveLength(18);
+    expect(ROUTES).toHaveLength(22);
   });
 
   it.each([

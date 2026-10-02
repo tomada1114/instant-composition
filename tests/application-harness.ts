@@ -7,6 +7,8 @@ import {
   type LearnerId,
   type RequestContext,
   type RoundPayload,
+  type VocabCategory,
+  type VocabItem,
 } from "@instant-composition/application";
 import type { AnswerInput, CardContent } from "@instant-composition/domain";
 
@@ -44,6 +46,47 @@ export interface SnapshotOptions {
   readonly perLevel?: number;
   /** Handed out in turn by a card's index within its level; one concept unless given. */
   readonly concepts?: readonly string[];
+  /** The vocabulary cards; {@link makeVocab}'s forty unless given. */
+  readonly vocab?: readonly VocabItem[];
+}
+
+const CATEGORIES: readonly VocabCategory[] = [
+  "word",
+  "idiom",
+  "phrasal-verb",
+  "phrase",
+];
+
+/** One vocabulary card, its fields derived from its id. */
+export function vocabItem(
+  category: VocabCategory,
+  level: number,
+  index: number,
+): VocabItem {
+  const id = `v_${category}-${String(level)}-${String(index)}`;
+  return {
+    id,
+    target: "en",
+    category,
+    level,
+    headword: `headword ${id}`,
+    definition: `What ${id} means.`,
+    example: `An example of {{headword}} for ${id}.`,
+    example2: `Another example for ${id}.`,
+    meaning: `${id}の意味`,
+  };
+}
+
+/**
+ * Forty vocabulary cards laid out as the starter cards are: ten per category,
+ * two at each level from 3 to 7, in id order as the catalog build sorts them.
+ */
+export function makeVocab(): VocabItem[] {
+  return CATEGORIES.flatMap((category) =>
+    [3, 4, 5, 6, 7].flatMap((level) =>
+      [0, 1].map((index) => vocabItem(category, level, index)),
+    ),
+  ).sort((a, b) => a.id.localeCompare(b.id));
 }
 
 /** Two topics of two subtopics, three cards at every level from 1 to 10 in each. */
@@ -88,6 +131,7 @@ export function makeSnapshot(options: SnapshotOptions = {}): CatalogSnapshot {
     ),
     shown: byId,
     retired: new Map(),
+    vocab: new Map((options.vocab ?? makeVocab()).map((item) => [item.id, item])),
   };
 }
 

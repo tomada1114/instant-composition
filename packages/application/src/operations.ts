@@ -23,6 +23,10 @@ export const LEARNER_OPERATIONS = [
   "retryReply",
   "recordRecital",
   "endTalk",
+  "vocab",
+  "startVocabSession",
+  "recordVocabAnswers",
+  "finishVocabSession",
 ] as const;
 
 /** Operations only a system job runs. */

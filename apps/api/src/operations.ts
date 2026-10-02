@@ -13,7 +13,6 @@ import {
   updateProfile,
   updateSettings,
   type ApplicationDeps,
-  type ApplicationError,
   type CatalogUnreadable,
   type RequestContext,
   type TalkDeps,
@@ -26,9 +25,11 @@ import {
   startRoundRequestSchema,
   type ErrorCode,
 } from "@instant-composition/contracts";
-import { err, type Result } from "@instant-composition/domain";
+import type { Result } from "@instant-composition/domain";
 
+import { command, query, roundQuery } from "./handlers";
 import { TALK_OPERATIONS } from "./talk-operations";
+import { VOCAB_OPERATIONS } from "./vocab-operations";
 
 /** The part of a contract schema a handler uses: validation, and the value it yields. */
 export interface BodySchema<T> {
@@ -52,6 +53,8 @@ export interface PathValues {
   readonly talkId: string;
   /** The `{turn}` of a recital path, 1 to 6; `0` on a path without one. */
   readonly turn: number;
+  /** The `{sessionId}` of a vocabulary session path; `""` on a path without one. */
+  readonly sessionId: string;
 }
 
 export type PathParam = keyof PathValues;
@@ -80,45 +83,6 @@ export interface Operation {
   readonly body: BodySchema<unknown> | null;
   readonly params: readonly PathParam[];
   handle(input: OperationInput): Promise<Outcome>;
-}
-
-type Run<A extends unknown[]> = (
-  deps: ApplicationDeps,
-  context: RequestContext,
-  ...args: A
-) => Promise<Result<unknown, ApplicationError>>;
-
-function query(run: Run<[]>): Operation {
-  return {
-    body: null,
-    params: [],
-    handle: ({ deps, context }) => run(deps, context),
-  };
-}
-
-function roundQuery(run: Run<[roundId: string]>): Operation {
-  return {
-    body: null,
-    params: ["roundId"],
-    handle: ({ deps, context, path }) => run(deps, context, path.roundId),
-  };
-}
-
-function command<T>(
-  schema: BodySchema<T>,
-  params: readonly PathParam[],
-  run: Run<[path: PathValues, body: T]>,
-): Operation {
-  return {
-    body: schema,
-    params,
-    async handle({ deps, context, path, body }) {
-      const parsed = schema.safeParse(body);
-      return parsed.success
-        ? run(deps, context, path, parsed.data)
-        : err({ code: "ERR_BAD_REQUEST" });
-    },
-  };
 }
 
 /** A batch's answers carry no round; the path names it. */
@@ -171,5 +135,6 @@ export const OPERATIONS: Readonly<Record<string, Operation>> = {
   getRoundSummary: roundQuery(roundSummary),
   getRecords: query(records),
   getHistory: query(history),
+  ...VOCAB_OPERATIONS,
   ...TALK_OPERATIONS,
 };

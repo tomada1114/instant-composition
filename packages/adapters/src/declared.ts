@@ -7,6 +7,9 @@ import type {
   Settings,
   Talk,
   Turn,
+  VocabProgress,
+  VocabReview,
+  VocabSession,
 } from "@instant-composition/domain";
 
 /**
@@ -23,6 +26,8 @@ const SETTINGS = {
   sound: true,
   limitSeconds: true,
   gradeKeys: true,
+  vocabNewPerDay: true,
+  vocabReviewsPerDay: true,
 } as const satisfies Fields<Settings>;
 
 const ROUND = {
@@ -87,6 +92,38 @@ const TURN = {
   revealCount: true,
 } as const satisfies Fields<Turn>;
 
+const VOCAB_ITEM = {
+  cardId: true,
+  source: true,
+  state: true,
+  firstDay: true,
+} as const satisfies Fields<VocabProgress>;
+
+const VOCAB_SESSION = {
+  id: true,
+  kind: true,
+  category: true,
+  day: true,
+  deck: true,
+  startedAt: true,
+  finishedAt: true,
+  tomorrow: true,
+} as const satisfies Fields<VocabSession>;
+
+const VOCAB_REVIEW = {
+  id: true,
+  sessionId: true,
+  cardId: true,
+  answeredAt: true,
+  day: true,
+  pass: true,
+  grade: true,
+  elapsedMs: true,
+  before: true,
+  after: true,
+  snapshot: true,
+} as const satisfies Fields<VocabReview>;
+
 function declared<T extends object>(value: T, fields: Fields<T>): T {
   return Object.fromEntries(
     Object.entries(value).filter(([key]) => Object.hasOwn(fields, key)),
@@ -122,6 +159,12 @@ export function declaredValue(entry: Entry): Entry["value"] {
         ...declared(entry.value, TALK),
         turns: entry.value.turns.map((turn) => declared(turn, TURN)),
       };
+    case "vocabItem":
+      return declared(entry.value, VOCAB_ITEM);
+    case "vocabSession":
+      return declared(entry.value, VOCAB_SESSION);
+    case "vocabReview":
+      return declared(entry.value, VOCAB_REVIEW);
     case "profile":
     case "stats":
     case "portion":

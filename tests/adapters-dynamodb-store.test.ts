@@ -289,7 +289,7 @@ describe("a read", () => {
     });
   });
 
-  it("keys items by their id, versions kept", async () => {
+  it("keys the drill's items by their id, versions kept, reading their kind alone", async () => {
     answers.push({
       status: 200,
       body: {
@@ -315,7 +315,7 @@ describe("a read", () => {
       ["c9", 7],
     ]);
     expect(calls[0]?.body["ExpressionAttributeValues"]).toMatchObject({
-      ":prefix": { S: "ITEM#" },
+      ":prefix": { S: "ITEM#composition#" },
     });
   });
 

@@ -29,3 +29,17 @@ export type TalkError =
   | { readonly code: "ERR_CONFLICT" }
   | { readonly code: "ERR_TALK_NOT_FOUND" }
   | { readonly code: "ERR_TALK_CLOSED" };
+
+/**
+ * The failures a vocabulary rule reports rather than throws.
+ *
+ * @remarks
+ * Grouped by what a caller can do: `ERR_BAD_REQUEST` (a card the session did
+ * not deal) and `ERR_SESSION_NOT_FOUND` (unknown, or another learner's) are the
+ * caller's mistake; `ERR_SESSION_CLOSED` means the session has finished and
+ * takes no new answer, so the caller should start another.
+ */
+export type VocabError =
+  | { readonly code: "ERR_BAD_REQUEST" }
+  | { readonly code: "ERR_SESSION_NOT_FOUND" }
+  | { readonly code: "ERR_SESSION_CLOSED" };

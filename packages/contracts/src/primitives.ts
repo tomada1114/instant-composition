@@ -67,6 +67,30 @@ export const gradeKeysSchema = z
   .object({ ok: gradeKeySchema, ng: gradeKeySchema })
   .refine((pair) => pair.ok !== pair.ng);
 
+/** The three self-grades: forgot, unsure and remembered. There is no easy. */
+export const gradeSchema = z.enum(["again", "hard", "good"]);
+
+/** The four kinds of vocabulary card, in the order the hub lists them. */
+export const vocabCategorySchema = z.enum(["word", "idiom", "phrasal-verb", "phrase"]);
+
+/** New vocabulary cards a day may bring: the domain's `VOCAB_TUNING.newPerDay`. */
+export const vocabNewPerDaySchema = z.union([
+  z.literal(0),
+  z.literal(5),
+  z.literal(10),
+  z.literal(15),
+  z.literal(20),
+  z.literal(30),
+]);
+
+/** Vocabulary reviews a day may bring, `null` for no limit: `VOCAB_TUNING.reviewsPerDay`. */
+export const vocabReviewsPerDaySchema = z.union([
+  z.literal(50),
+  z.literal(100),
+  z.literal(200),
+  z.null(),
+]);
+
 export const settingsSchema = z.object({
   topics: z.array(z.string()),
   focus: z.array(subtopicRefSchema),
@@ -76,6 +100,10 @@ export const settingsSchema = z.object({
   limitSeconds: limitSecondsSchema,
   /** → and ← until the learner chooses a pair. */
   gradeKeys: gradeKeysSchema,
+  /** 10 until the learner chooses another. */
+  vocabNewPerDay: vocabNewPerDaySchema,
+  /** 100 until the learner chooses another; `null` is no limit. */
+  vocabReviewsPerDay: vocabReviewsPerDaySchema,
 });
 
 export const ringProgressSchema = z.object({

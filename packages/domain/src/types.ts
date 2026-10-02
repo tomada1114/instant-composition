@@ -99,6 +99,12 @@ export interface GradeKeys {
   readonly ng: string;
 }
 
+/** New vocabulary cards a day may bring; `VOCAB_TUNING.newPerDay` lists them. */
+export type VocabNewPerDay = 0 | 5 | 10 | 15 | 20 | 30;
+
+/** Vocabulary reviews a day may bring, `null` for no limit; `VOCAB_TUNING.reviewsPerDay` lists them. */
+export type VocabReviewsPerDay = 50 | 100 | 200 | null;
+
 export interface Settings {
   readonly topics: readonly string[];
   readonly focus: readonly SubtopicRef[];
@@ -111,6 +117,10 @@ export interface Settings {
   readonly limitSeconds?: LimitSeconds;
   /** Absent until the learner chooses a pair, so `TUNING.defaultGradeKeys` stands in. */
   readonly gradeKeys?: GradeKeys;
+  /** Absent until the learner chooses one, so `VOCAB_TUNING.defaultNewPerDay` stands in. */
+  readonly vocabNewPerDay?: VocabNewPerDay;
+  /** Absent until the learner chooses one, so `VOCAB_TUNING.defaultReviewsPerDay` stands in. */
+  readonly vocabReviewsPerDay?: VocabReviewsPerDay;
 }
 
 /** A top-level topic and its subtopics, in `content/taxonomy.json`'s order. */

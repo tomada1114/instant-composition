@@ -736,6 +736,287 @@
         }
       }
     },
+    "/v1/vocab": {
+      "get": {
+        "operationId": "getVocab",
+        "summary": "The vocabulary hub: today's reviews and new cards and the minutes they take, each category's share of them with its cards in learning and in all, the weak cards and tomorrow's reviews.",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/VocabHub" }
+              }
+            }
+          },
+          "401": {
+            "description": "ERR_UNAUTHENTICATED: The request carries no valid access token.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "403": {
+            "description": "ERR_FORBIDDEN: The caller may not run this operation.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "503": {
+            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/vocab/sessions": {
+      "post": {
+        "operationId": "startVocabSession",
+        "summary": "Deals a session of today's queue, the extra cards past it or the weak cards, restricted to a category when one is named, and answers its cards in order, each with the interval every grade would set; a retried start with the same sessionId answers the session it made.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/StartVocabSessionRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/VocabSession" }
+              }
+            }
+          },
+          "400": {
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "401": {
+            "description": "ERR_UNAUTHENTICATED: The request carries no valid access token.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "403": {
+            "description": "ERR_FORBIDDEN: The caller may not run this operation.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "409": {
+            "description": "ERR_CONFLICT: Another write to the same data kept winning; send the request again.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "413": {
+            "description": "ERR_PAYLOAD_TOO_LARGE: The request body is too large.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "503": {
+            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/vocab/sessions/{sessionId}/answers": {
+      "post": {
+        "operationId": "recordVocabAnswers",
+        "summary": "Records a batch of a session's answers; ids it already holds are ignored, so a batch of those alone answers 204 even after finish, and one with a new id for a finished session answers ERR_SESSION_CLOSED. Only a card's first answer of the session's day moves its schedule.",
+        "parameters": [
+          {
+            "name": "sessionId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string", "minLength": 1, "maxLength": 64 }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/VocabAnswersRequest" }
+            }
+          }
+        },
+        "responses": {
+          "204": { "description": "Done; no body." },
+          "400": {
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "401": {
+            "description": "ERR_UNAUTHENTICATED: The request carries no valid access token.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "403": {
+            "description": "ERR_FORBIDDEN: The caller may not run this operation.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "404": {
+            "description": "ERR_SESSION_NOT_FOUND: No vocabulary session has that id.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "409": {
+            "description": "ERR_CONFLICT: Another write to the same data kept winning; send the request again. ERR_SESSION_CLOSED: That vocabulary session has finished and takes no new answer.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "413": {
+            "description": "ERR_PAYLOAD_TOO_LARGE: The request body is too large.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "503": {
+            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/vocab/sessions/{sessionId}/finish": {
+      "post": {
+        "operationId": "finishVocabSession",
+        "summary": "Records the session's last answers and closes it, answering the done summary; a finished session answers the summary it kept.",
+        "parameters": [
+          {
+            "name": "sessionId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string", "minLength": 1, "maxLength": 64 }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/VocabAnswersRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/VocabSummary" }
+              }
+            }
+          },
+          "400": {
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "401": {
+            "description": "ERR_UNAUTHENTICATED: The request carries no valid access token.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "403": {
+            "description": "ERR_FORBIDDEN: The caller may not run this operation.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "404": {
+            "description": "ERR_SESSION_NOT_FOUND: No vocabulary session has that id.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "409": {
+            "description": "ERR_CONFLICT: Another write to the same data kept winning; send the request again. ERR_SESSION_CLOSED: That vocabulary session has finished and takes no new answer.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "413": {
+            "description": "ERR_PAYLOAD_TOO_LARGE: The request body is too large.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "503": {
+            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/talks": {
       "post": {
         "operationId": "startTalk",
@@ -1161,7 +1442,9 @@
               { "type": "number", "const": 60 }
             ]
           },
-          "gradeKeys": { "$ref": "#/components/schemas/GradeKeys" }
+          "gradeKeys": { "$ref": "#/components/schemas/GradeKeys" },
+          "vocabNewPerDay": { "$ref": "#/components/schemas/VocabNewPerDay" },
+          "vocabReviewsPerDay": { "$ref": "#/components/schemas/VocabReviewsPerDay" }
         },
         "required": [
           "topics",
@@ -1169,7 +1452,9 @@
           "dailySize",
           "sound",
           "limitSeconds",
-          "gradeKeys"
+          "gradeKeys",
+          "vocabNewPerDay",
+          "vocabReviewsPerDay"
         ]
       },
       "Dot": {
@@ -1292,7 +1577,9 @@
               { "type": "number", "const": 60 }
             ]
           },
-          "gradeKeys": { "$ref": "#/components/schemas/GradeKeys" }
+          "gradeKeys": { "$ref": "#/components/schemas/GradeKeys" },
+          "vocabNewPerDay": { "$ref": "#/components/schemas/VocabNewPerDay" },
+          "vocabReviewsPerDay": { "$ref": "#/components/schemas/VocabReviewsPerDay" }
         }
       },
       "LevelMode": { "type": "string", "enum": ["auto", "manual"] },
@@ -2084,6 +2371,194 @@
         "type": "object",
         "properties": { "kept": { "type": "boolean" } },
         "required": ["kept"]
+      },
+      "Grade": { "type": "string", "enum": ["again", "hard", "good"] },
+      "VocabCategory": {
+        "type": "string",
+        "enum": ["word", "idiom", "phrasal-verb", "phrase"]
+      },
+      "VocabNewPerDay": {
+        "anyOf": [
+          { "type": "number", "const": 0 },
+          { "type": "number", "const": 5 },
+          { "type": "number", "const": 10 },
+          { "type": "number", "const": 15 },
+          { "type": "number", "const": 20 },
+          { "type": "number", "const": 30 }
+        ]
+      },
+      "VocabReviewsPerDay": {
+        "anyOf": [
+          { "type": "number", "const": 50 },
+          { "type": "number", "const": 100 },
+          { "type": "number", "const": 200 },
+          { "type": "null" }
+        ]
+      },
+      "VocabSessionKind": { "type": "string", "enum": ["today", "extra", "weak"] },
+      "StartVocabSessionRequest": {
+        "type": "object",
+        "properties": {
+          "sessionId": { "type": "string", "minLength": 1, "maxLength": 64 },
+          "kind": { "$ref": "#/components/schemas/VocabSessionKind" },
+          "category": { "$ref": "#/components/schemas/VocabCategory" }
+        },
+        "required": ["sessionId", "kind"]
+      },
+      "VocabAnswer": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string", "minLength": 1, "maxLength": 64 },
+          "cardId": { "type": "string", "minLength": 1, "maxLength": 64 },
+          "pass": { "$ref": "#/components/schemas/Pass" },
+          "grade": { "$ref": "#/components/schemas/Grade" },
+          "elapsedMs": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
+          "answeredAt": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 }
+        },
+        "required": ["id", "cardId", "pass", "grade", "elapsedMs"]
+      },
+      "VocabAnswersRequest": {
+        "type": "object",
+        "properties": {
+          "answers": {
+            "maxItems": 60,
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/VocabAnswer" }
+          }
+        },
+        "required": ["answers"]
+      },
+      "VocabCategoryView": {
+        "type": "object",
+        "properties": {
+          "category": { "$ref": "#/components/schemas/VocabCategory" },
+          "due": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
+          "new": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
+          "learning": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
+          "total": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 }
+        },
+        "required": ["category", "due", "new", "learning", "total"]
+      },
+      "VocabHub": {
+        "type": "object",
+        "properties": {
+          "empty": { "type": "boolean" },
+          "today": {
+            "type": "object",
+            "properties": {
+              "due": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
+              "new": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
+              "minutes": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              }
+            },
+            "required": ["due", "new", "minutes"]
+          },
+          "categories": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/VocabCategoryView" }
+          },
+          "weak": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
+          "tomorrow": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 }
+        },
+        "required": ["empty", "today", "categories", "weak", "tomorrow"]
+      },
+      "VocabIntervals": {
+        "type": "object",
+        "properties": {
+          "again": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
+          "hard": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
+          "good": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 }
+        },
+        "required": ["again", "hard", "good"]
+      },
+      "VocabCard": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "category": { "$ref": "#/components/schemas/VocabCategory" },
+          "level": { "type": "integer", "minimum": 1, "maximum": 9007199254740991 },
+          "definition": { "type": "string" },
+          "example": { "type": "string" },
+          "headword": { "type": "string" },
+          "meaning": { "type": "string" },
+          "example2": { "type": "string" },
+          "intervals": { "$ref": "#/components/schemas/VocabIntervals" },
+          "isNew": { "type": "boolean" }
+        },
+        "required": [
+          "id",
+          "category",
+          "level",
+          "definition",
+          "example",
+          "headword",
+          "meaning",
+          "example2",
+          "intervals",
+          "isNew"
+        ]
+      },
+      "VocabSession": {
+        "type": "object",
+        "properties": {
+          "sessionId": { "type": "string" },
+          "kind": { "$ref": "#/components/schemas/VocabSessionKind" },
+          "category": {
+            "anyOf": [
+              { "$ref": "#/components/schemas/VocabCategory" },
+              { "type": "null" }
+            ]
+          },
+          "day": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+          "cards": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/VocabCard" }
+          }
+        },
+        "required": ["sessionId", "kind", "category", "day", "cards"]
+      },
+      "VocabAgainRow": {
+        "type": "object",
+        "properties": {
+          "cardId": { "type": "string" },
+          "headword": { "type": "string" },
+          "meaning": { "type": "string" }
+        },
+        "required": ["cardId", "headword", "meaning"]
+      },
+      "VocabSummary": {
+        "type": "object",
+        "properties": {
+          "sessionId": { "type": "string" },
+          "kind": { "$ref": "#/components/schemas/VocabSessionKind" },
+          "category": {
+            "anyOf": [
+              { "$ref": "#/components/schemas/VocabCategory" },
+              { "type": "null" }
+            ]
+          },
+          "day": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+          "answered": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
+          "new": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
+          "again": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/VocabAgainRow" }
+          },
+          "tomorrow": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 }
+        },
+        "required": [
+          "sessionId",
+          "kind",
+          "category",
+          "day",
+          "answered",
+          "new",
+          "again",
+          "tomorrow"
+        ]
       },
       "ErrorResponse": {
         "type": "object",

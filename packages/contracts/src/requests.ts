@@ -10,6 +10,8 @@ import {
   passSchema,
   roundKindSchema,
   subtopicRefSchema,
+  vocabNewPerDaySchema,
+  vocabReviewsPerDaySchema,
 } from "./primitives";
 
 /**
@@ -64,6 +66,10 @@ export const settingsPatchSchema = z.object({
   limitSeconds: limitSecondsSchema.exactOptional(),
   /** Both keys at once, so the pair is judged whole. */
   gradeKeys: gradeKeysSchema.exactOptional(),
+  /** Taken by the next vocabulary deal. */
+  vocabNewPerDay: vocabNewPerDaySchema.exactOptional(),
+  /** Taken by the next vocabulary deal; `null` is no limit. */
+  vocabReviewsPerDay: vocabReviewsPerDaySchema.exactOptional(),
 });
 
 /**

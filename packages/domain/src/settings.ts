@@ -1,6 +1,6 @@
 import type { PracticeError } from "./errors";
 import { err, ok, type Result } from "./result";
-import { TUNING } from "./tuning";
+import { TUNING, VOCAB_TUNING } from "./tuning";
 import type {
   DailySize,
   GradeKeys,
@@ -8,6 +8,8 @@ import type {
   Settings,
   SubtopicRef,
   TopicInfo,
+  VocabNewPerDay,
+  VocabReviewsPerDay,
 } from "./types";
 
 /** A new learner's settings; the limit is left unchosen, so the default stands in. */
@@ -27,6 +29,8 @@ export interface SettingsPatch {
   readonly limitSeconds?: LimitSeconds;
   /** Both keys at once, so the pair is judged whole. */
   readonly gradeKeys?: GradeKeys;
+  readonly vocabNewPerDay?: VocabNewPerDay;
+  readonly vocabReviewsPerDay?: VocabReviewsPerDay;
 }
 
 /**
@@ -56,13 +60,43 @@ export function limitSecondsOf(settings: Settings | undefined): LimitSeconds {
   return settings?.limitSeconds ?? TUNING.defaultLimitSeconds;
 }
 
+/** The vocabulary's daily limits the learner chose, or the defaults for those never chosen. */
+export function vocabLimitsOf(settings: Settings | undefined): {
+  readonly newPerDay: VocabNewPerDay;
+  readonly reviewsPerDay: VocabReviewsPerDay;
+} {
+  return {
+    newPerDay: settings?.vocabNewPerDay ?? VOCAB_TUNING.defaultNewPerDay,
+    reviewsPerDay:
+      settings?.vocabReviewsPerDay === undefined
+        ? VOCAB_TUNING.defaultReviewsPerDay
+        : settings.vocabReviewsPerDay,
+  };
+}
+
 /** The settings as a client reads them: every field present, a default for one never chosen. */
 export function withDefaults(settings: Settings): Required<Settings> {
+  const vocab = vocabLimitsOf(settings);
   return {
     ...settings,
     limitSeconds: limitSecondsOf(settings),
     gradeKeys: gradeKeysOf(settings),
+    vocabNewPerDay: vocab.newPerDay,
+    vocabReviewsPerDay: vocab.reviewsPerDay,
   };
+}
+
+/** Whether each vocabulary limit `patch` sets is one the settings offer. */
+function offersVocabLimits(patch: SettingsPatch): boolean {
+  const { vocabNewPerDay, vocabReviewsPerDay } = patch;
+  return (
+    (vocabNewPerDay === undefined ||
+      (VOCAB_TUNING.newPerDay as readonly number[]).includes(vocabNewPerDay)) &&
+    (vocabReviewsPerDay === undefined ||
+      (VOCAB_TUNING.reviewsPerDay as readonly (number | null)[]).includes(
+        vocabReviewsPerDay,
+      ))
+  );
 }
 
 export interface SettingsDecided {
@@ -85,7 +119,8 @@ function isKnownRef(taxonomy: readonly TopicInfo[], ref: SubtopicRef): boolean {
 /**
  * The settings after `patch`. The last topic cannot be removed, at most
  * `TUNING.maxFocus` focus subtopics are kept, removing a topic removes its
- * focus too, and a grade key pair must pass `isGradeKeyPair`.
+ * focus too, a grade key pair must pass `isGradeKeyPair`, and each vocabulary
+ * limit must be one `VOCAB_TUNING` offers.
  */
 export function decideSettings(
   current: Settings,
@@ -114,11 +149,19 @@ export function decideSettings(
   ) {
     return err({ code: "ERR_BAD_REQUEST" });
   }
-  if (patch.gradeKeys !== undefined && !isGradeKeyPair(patch.gradeKeys)) {
+  if (
+    (patch.gradeKeys !== undefined && !isGradeKeyPair(patch.gradeKeys)) ||
+    !offersVocabLimits(patch)
+  ) {
     return err({ code: "ERR_BAD_REQUEST" });
   }
   const limitSeconds = patch.limitSeconds ?? current.limitSeconds;
   const gradeKeys = patch.gradeKeys ?? current.gradeKeys;
+  const vocabNewPerDay = patch.vocabNewPerDay ?? current.vocabNewPerDay;
+  const vocabReviewsPerDay =
+    patch.vocabReviewsPerDay === undefined
+      ? current.vocabReviewsPerDay
+      : patch.vocabReviewsPerDay;
   return ok({
     settings: {
       topics,
@@ -127,6 +170,8 @@ export function decideSettings(
       sound: patch.sound ?? current.sound,
       ...(limitSeconds === undefined ? {} : { limitSeconds }),
       ...(gradeKeys === undefined ? {} : { gradeKeys }),
+      ...(vocabNewPerDay === undefined ? {} : { vocabNewPerDay }),
+      ...(vocabReviewsPerDay === undefined ? {} : { vocabReviewsPerDay }),
     },
     removedFocus: unique.filter((ref) => !topics.includes(ref.topic)),
   });

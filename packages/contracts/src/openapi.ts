@@ -5,6 +5,7 @@ import { MESSAGE_BY_CODE, STATUS_BY_CODE, type ErrorCode } from "./errors";
 import { roundIdParamSchema } from "./requests";
 import { ROUTES, type Route } from "./routes";
 import { talkIdParamSchema, turnSchema } from "./talk";
+import { sessionIdParamSchema } from "./vocab";
 
 type JsonSchema = z.core.JSONSchema.BaseSchema;
 
@@ -45,6 +46,7 @@ const PATH_PARAMETERS: Readonly<Record<string, z.ZodType>> = {
   roundId: roundIdParamSchema,
   talkId: talkIdParamSchema,
   turn: turnSchema,
+  sessionId: sessionIdParamSchema,
 };
 
 /**
