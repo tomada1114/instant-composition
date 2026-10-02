@@ -128,12 +128,12 @@ interface Turn {
 interface LanguageModel {
   generate<T>(
     request: ModelRequest<T>,
-    signal: AbortSignal,
+    signal: AbortSignalLike,
   ): Promise<Result<ModelReply<T>, ModelFailure>>;
 }
 
 interface ModelRequest<T> {
-  task: TalkTask; // "talk-scene" | "talk-teacher" | "talk-partner"
+  task: string; // TalkRequest narrows it to TalkTask: "talk-scene" | "talk-teacher" | "talk-partner"
   promptVersion: string;
   system: string;
   messages: readonly { role: "user" | "assistant"; text: string }[];
