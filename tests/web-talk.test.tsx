@@ -277,6 +277,44 @@ describe("resuming on this browser", () => {
     expect(posted(calls, /^\/api\/v1\/talks$/u)).toHaveLength(1);
   });
 
+  it("ignores an unmounted start's late answer and resumes the newer talk", async () => {
+    let firstId = "";
+    let resolve: ((response: Response) => void) | undefined;
+    const calls = serveTalk({
+      start: (talkId, asked) => {
+        if (asked > 0) return Response.json(opened(talkId));
+        firstId = talkId;
+        return new Promise<Response>((deliver) => {
+          resolve = deliver;
+        });
+      },
+      read: (talkId) => Response.json(talkView(talkId, 0)),
+    });
+    await renderApp("/talk");
+    press(ja.Talk.start.go);
+    await settle();
+    cleanup();
+    await renderApp("/talk");
+    await begin();
+    const current = localStorage.getItem(TALK_STORAGE_KEY);
+    expect(current).toBeTypeOf("string");
+    expect(current).not.toBe(firstId);
+    if (resolve === undefined) throw new Error("The first start must be pending.");
+    resolve(Response.json(opened(firstId)));
+    await settle();
+    expect(localStorage.getItem(TALK_STORAGE_KEY)).toBe(current);
+    cleanup();
+    await renderApp("/talk");
+    expect(
+      calls
+        .filter((call) => call.method === "GET" && call.url.includes("/talks/"))
+        .map((call) => call.url),
+    ).toStrictEqual([`/api/v1/talks/${String(current)}`]);
+    expect(
+      screen.getByRole("textbox", { name: ja.Talk.step.japanese }),
+    ).toBeInTheDocument();
+  });
+
   it("ignores an older mount's late missing response without clearing a new talk", async () => {
     savedTalk("old");
     let resolve: ((response: Response) => void) | undefined;
