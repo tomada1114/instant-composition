@@ -144,3 +144,19 @@ the drill.
   has no value of its own: it counts each card at the learner's chosen limit.
 - Errors are words and a glyph, never red: a failed save is a toast and is retried with
   the next answer; practice never stops for it.
+- iOS Safari never resizes the layout for its keyboard, so a screen sized from
+  `--column-height` sits under it. While a talk field has focus and the visual viewport
+  (`visualViewport.height`) is shorter than the layout one (the root's `clientHeight`;
+  iOS's `innerHeight` follows the visual one) by a keyboard (more than 100), the talk
+  screen fills what is left visible instead: `useKeyboardLift` (`apps/web/src/talk/`)
+  writes `visualViewport`'s offset and height onto its `main` as `--visible-top` and
+  `--visible-height`, the tab bar hides, the bottom panel rests on the keyboard, and the
+  conversation scrolls in the height left, kept at its bottom. A button pressed there
+  keeps the field's focus, so the screen does not drop between the press and its click.
+  On blur the tab bar returns. A desktop, and Android under `index.html`'s
+  `interactive-widget=resizes-content`, resize the layout viewport themselves, so the
+  two viewports agree and nothing changes. The drill has no field.
+- A text field is at least 16 (`text-alt` for `answer-field`), so iOS Safari never zooms
+  the page in on focus — a zoom it keeps after blur, and which pushes the column past
+  the screen's edges. Never `maximum-scale` or `user-scalable` in the viewport instead:
+  they take pinch zoom away too.

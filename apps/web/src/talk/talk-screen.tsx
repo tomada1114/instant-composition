@@ -1,7 +1,8 @@
-import type { ReactElement } from "react";
+import type { ReactElement, RefObject } from "react";
 import { useTranslations } from "use-intl";
 
 import { Ticks } from "../drill/top-strip";
+import { cn } from "../lib/utils";
 import { CloseGlyph } from "../ui/glyphs";
 import { IconButton } from "../ui/icon-button";
 import { Conversation } from "./conversation";
@@ -49,14 +50,31 @@ function TalkStrip({
 /**
  * W3: the strip and the bottom panel fixed, the conversation scrolling
  * between them, the whole column above the tab bar so the page never scrolls.
+ * While `lifted` (`useKeyboardLift`), the column fills what a keyboard
+ * leaves visible instead, the panel resting on the keyboard and the tab bar gone.
  */
 export function TalkScreen({
   talk,
   actions,
   onClose,
-}: Readonly<{ talk: Talk; actions: TalkActions; onClose: () => void }>): ReactElement {
+  main,
+  lifted,
+}: Readonly<{
+  talk: Talk;
+  actions: TalkActions;
+  onClose: () => void;
+  main: RefObject<HTMLElement | null>;
+  lifted: boolean;
+}>): ReactElement {
   return (
-    <main className="mx-auto box-content flex h-[calc(var(--column-height)-var(--tab-bar-space)-1.5rem)] max-w-column flex-col gap-3 px-4 pt-3 pb-[calc(var(--tab-bar-space)+0.75rem)]">
+    <main
+      ref={main}
+      className={cn(
+        "mx-auto box-content flex h-[calc(var(--column-height)-var(--tab-bar-space)-1.5rem)] max-w-column flex-col gap-3 px-4 pt-3 pb-[calc(var(--tab-bar-space)+0.75rem)]",
+        lifted &&
+          "fixed inset-x-0 top-(--visible-top) h-[calc(var(--visible-height)-1.5rem)] pb-3",
+      )}
+    >
       <TalkStrip talk={talk} onClose={onClose} />
       <Conversation talk={talk} />
       <div className="flex flex-col gap-3 border-t border-border pt-3 empty:hidden">
