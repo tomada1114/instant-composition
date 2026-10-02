@@ -174,7 +174,8 @@ under the drill's card, at most 560 wide; a summary's actions under its hero, in
 first view — never pinned to the window's bottom edge, where a tall window would set
 them far from what they act on. A screen sizes itself from its content and `100dvh`,
 never from a per-screen height sum. Below `pc` every grid falls to one column in reading
-order; nothing is phone-specific, and nothing scrolls sideways at any width.
+order, and the same layout serves a phone's browser; phone-specific code goes only where
+behavior.md's "Phone browsers" lists it, and nothing scrolls sideways at any width.
 
 ## Contrast
 

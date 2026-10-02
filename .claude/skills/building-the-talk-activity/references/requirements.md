@@ -68,7 +68,6 @@ below is not a priority order.
 | Choosing the scene: scenes that follow a roadmap, multiple-choice scenes                                                                         | The first version checks whether random is enough                                                                          | When random does not keep the learner going                                                                       |
 | Detecting "the same phrasing every time" across talks, and a coach that builds practice from weak points                                         | It waits for accumulated records. A candidate for a design where the model chooses its own next step (an agent, AgentCore) | Decided as the app is used                                                                                        |
 | A path and metrics (such as an IELTS Speaking guide)                                                                                             | How to measure is not decided                                                                                              | Decided as the app is used                                                                                        |
-| An iOS app                                                                                                                                       | Confirm the value on the web first                                                                                         | Decided as the app is used                                                                                        |
 | Switching the native language (other than Japanese)                                                                                              | The first user speaks only Japanese                                                                                        | When others use the app                                                                                           |
 
 ### Out of scope
@@ -86,6 +85,7 @@ below is not a priority order.
 - **A score or grade for the whole talk.** The app focuses on correcting on the spot.
 - **Real-time full-duplex voice conversation (interruptions, backchannels while
   speaking).** Even when voice is added, alternating turns are enough.
+- **An iOS app.** Too high a hurdle; phones use the app in Safari or Chrome (#398).
 - **Pronunciation assessment.** The app focuses on practice in putting what the learner
   wants to say into English.
 
