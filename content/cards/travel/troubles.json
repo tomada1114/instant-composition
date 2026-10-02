@@ -79,6 +79,22 @@
     }
   },
   {
+    "id": "c_2v4e8y4r",
+    "ja": "彼は旅の危うさを知らないかも。",
+    "en": "I doubt he grasps how precarious this is.",
+    "alternatives": [
+      "I'm unsure he understands how risky this is.",
+      "He may not appreciate how precarious our situation is."
+    ],
+    "point": "doubt の中に grasps、その中に how 節、precarious は危うい。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2y7y5k4n",
     "ja": "カードを止めてもらいたいです。",
     "en": "I need my card blocked.",
@@ -100,6 +116,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_2z4r8z2f",
+    "ja": "足止めでも私は卑屈にならない。",
+    "en": "Though stranded, I won't grovel.",
+    "alternatives": [
+      "Though stranded, I won't plead submissively.",
+      "Being stranded won't make me abase myself."
+    ],
+    "point": "grovel は卑屈に振る舞って頼む。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 9,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_3m8g6f3j",
@@ -223,6 +255,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_4c5b3q8m",
+    "ja": "私は既に口上を鵜呑みにした。",
+    "en": "I'd already swallowed their spiel.",
+    "alternatives": [
+      "I'd already uncritically believed their sales pitch.",
+      "I'd already accepted their patter at face value."
+    ],
+    "point": "swallow a spiel は口上を鵜呑みにする。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 9,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4d5j4t4z",

@@ -374,6 +374,22 @@
     }
   },
   {
+    "id": "c_4v8h4b4q",
+    "ja": "手軽でも登録は暗黙の強制に当たる。",
+    "en": "Though frictionless, sign-up amounts to tacit coercion.",
+    "alternatives": [
+      "Despite its ease, signing up involves implicit coercion.",
+      "Though easy, sign-up is effectively subtle coercion."
+    ],
+    "point": "tacit は暗黙の、coercion は強制。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5h8a6d8f",
     "ja": "先にユーザーに聞くべき。",
     "en": "We should ask users first.",
@@ -766,6 +782,38 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_8w7y7m5m",
+    "ja": "彼女は露出を裏付けと偽るなと言った。",
+    "en": "She said visibility shouldn't masquerade as validation.",
+    "alternatives": [
+      "She said exposure shouldn't pass for validation.",
+      "She said visibility shouldn't be misrepresented as validation."
+    ],
+    "point": "masquerade as は別のものになりすます、validation は裏付け。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 10,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_8x7u4k4p",
+    "ja": "私たちが折れてたら今は客が激減だ。",
+    "en": "Had we capitulated, we'd now be hemorrhaging customers.",
+    "alternatives": [
+      "If we'd given in, we'd now be losing customers rapidly.",
+      "We'd now be shedding customers fast if we'd capitulated."
+    ],
+    "point": "過去の仮定で今の結果を表す、hemorrhage は大量に失う。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8y7m7r5b",

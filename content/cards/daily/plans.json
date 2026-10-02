@@ -637,6 +637,19 @@
     }
   },
   {
+    "id": "c_7m8m4s4r",
+    "ja": "日程がかち合ってる。",
+    "en": "There's a scheduling clash.",
+    "alternatives": ["The timing clashes.", "The schedules overlap."],
+    "point": "a scheduling clash は日程が重なること。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7t7r9d5q",
     "ja": "うちは空いた週末などめったにない。",
     "en": "Rarely do we get a free weekend.",
@@ -725,6 +738,19 @@
     }
   },
   {
+    "id": "c_8b4x4e3m",
+    "ja": "私は週末の予定を詰めてる。",
+    "en": "I'm sorting out our weekend.",
+    "alternatives": ["I'm arranging our weekend plans.", "I'm organizing our weekend."],
+    "point": "sort out は予定を整理して決める。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_8d2a5e4k",
     "ja": "もう彼には行けないと伝えたよ。",
     "en": "I've already told him I can't come.",
@@ -786,6 +812,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9p7g7r8v",
+    "ja": "金曜の仮予定でいい？",
+    "en": "Could we pencil in Friday?",
+    "alternatives": [
+      "Could we tentatively schedule Friday?",
+      "Can we put Friday down provisionally?"
+    ],
+    "point": "pencil in は変更の余地を残して予定に入れる。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 5,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9v9n5a7e",

@@ -403,6 +403,19 @@
     }
   },
   {
+    "id": "c_5c9x6z4y",
+    "ja": "プリンターは紙切れだ。",
+    "en": "The printer's out of paper.",
+    "alternatives": ["The printer has no paper.", "The printer's paper has run out."],
+    "point": "out of paper は紙を使い切った状態。",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 3,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5g7w7f7s",
     "ja": "新しい椅子が届いた。",
     "en": "The new chair arrived.",
@@ -780,6 +793,32 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_8h6s6r3a",
+    "ja": "この椅子の方が楽だ。",
+    "en": "This chair is more comfortable.",
+    "alternatives": ["This chair feels comfier.", "This chair is less uncomfortable."],
+    "point": "more comfortable はより座り心地がよい。",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 3,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_8q7h9u5v",
+    "ja": "昼食後は私に電話して。",
+    "en": "Call me when lunch ends.",
+    "alternatives": ["Phone me when lunch is over.", "Ring me after lunch."],
+    "point": "未来の昼食後でも when 節は現在形。",
+    "topic": "work",
+    "subtopic": "office-life",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8w2h8w6j",

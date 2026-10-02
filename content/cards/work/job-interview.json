@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2c3a4u4g",
+    "ja": "私はもっと責任を担いたい。",
+    "en": "I'm eager to shoulder more responsibility.",
+    "alternatives": [
+      "I'm keen to take on more responsibility.",
+      "I'd like to assume greater responsibility."
+    ],
+    "point": "shoulder responsibility は責任を担う。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2q4q6w2f",
     "ja": "何でも聞いて。",
     "en": "Ask me anything.",
@@ -17,6 +33,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_2r7s2n3w",
+    "ja": "私は現実派と言えるかも。",
+    "en": "I'd describe myself as pragmatic.",
+    "alternatives": [
+      "I'd say I'm a practical thinker.",
+      "I see myself as a pragmatist."
+    ],
+    "point": "I'd describe myself で自己評価を控えめにする。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_3c3a2q4d",
@@ -742,6 +774,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8u4a9p7p",
+    "ja": "私はずっと事業拡大を率いてる。",
+    "en": "I've been spearheading our expansion.",
+    "alternatives": [
+      "I've been leading our expansion efforts.",
+      "I've been heading up our expansion."
+    ],
+    "point": "spearhead は先頭に立って推進する。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8w9w7e5j",

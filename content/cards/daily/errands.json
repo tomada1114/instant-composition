@@ -328,6 +328,19 @@
     }
   },
   {
+    "id": "c_4j5e6a7w",
+    "ja": "ここに判を押してもらえる？",
+    "en": "Could you stamp here?",
+    "alternatives": ["Could you put your stamp here?", "Would you stamp this spot?"],
+    "point": "stamp は判を押すという動詞でも使う。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 4,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4r2a9z2s",
     "ja": "今、列に並んでるよ。",
     "en": "I'm standing in line now.",
@@ -345,6 +358,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5a9p7a8p",
+    "ja": "私は書類を揃えている。",
+    "en": "I'm gathering the documents.",
+    "alternatives": [
+      "I'm putting the documents together.",
+      "I'm assembling the paperwork."
+    ],
+    "point": "gather は必要なものを集める。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 4,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5k3b4d9b",
@@ -680,6 +709,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8t7q4a8d",
+    "ja": "私はもう申請書を出した。",
+    "en": "I've already submitted the application.",
+    "alternatives": [
+      "I've already handed in the application.",
+      "I've already filed the application."
+    ],
+    "point": "submit は窓口などに正式に提出する。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 4,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8y3w4m3q",

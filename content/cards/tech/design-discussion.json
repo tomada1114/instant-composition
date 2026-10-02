@@ -22,6 +22,38 @@
     }
   },
   {
+    "id": "c_2d6s5q4x",
+    "ja": "私は抽象化を万能薬と誤認した。",
+    "en": "I mistook abstraction for a panacea.",
+    "alternatives": [
+      "I wrongly saw abstraction as a cure-all.",
+      "I wrongly treated abstraction as a universal remedy."
+    ],
+    "point": "mistook A for B は A を B と誤認した、panacea は万能薬。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 9,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_2h2b7v8r",
+    "ja": "私は彼女に表分割を頼んだ。",
+    "en": "I asked her to split tables.",
+    "alternatives": [
+      "I requested that she divide tables.",
+      "I asked her to divide tables."
+    ],
+    "point": "ask 人 to do で表を分割するよう頼む。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 5,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2m5c2c2k",
     "ja": "どっちが拡張向きか分かる？",
     "en": "Do you know which scales better?",
@@ -401,6 +433,22 @@
     }
   },
   {
+    "id": "c_4z2c9t4v",
+    "ja": "私は案を既に比較してた。",
+    "en": "I'd already weighed the options.",
+    "alternatives": [
+      "I'd already considered the alternatives.",
+      "I'd already assessed our options."
+    ],
+    "point": "weigh the options は選択肢を比較検討する。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 5,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4z5h3c3p",
     "ja": "どっちのほうが安い？",
     "en": "Which one is cheaper?",
@@ -676,6 +724,22 @@
     }
   },
   {
+    "id": "c_7u7z6m3b",
+    "ja": "私は設計の全体像を描いた。",
+    "en": "I mapped out the architecture.",
+    "alternatives": [
+      "I sketched the overall architecture.",
+      "I drew up the architecture."
+    ],
+    "point": "map out は全体の構成を描いて整理する。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 5,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_8h9b2r9h",
     "ja": "よく更新される表は分けたい。",
     "en": "I'd split tables that update often.",
@@ -736,6 +800,22 @@
     }
   },
   {
+    "id": "c_9h8f7g7c",
+    "ja": "私は高くついた勝利を悔やむ。",
+    "en": "I wish I'd forgone that Pyrrhic victory.",
+    "alternatives": [
+      "I regret securing that ruinously costly victory.",
+      "If only I'd avoided that ruinously costly win."
+    ],
+    "point": "a Pyrrhic victory は代償が大きく利益が帳消しになる勝利。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 9,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_9n5x8r4x",
     "ja": "もう誰かが作ってたんだ。",
     "en": "Someone had already built it.",
@@ -753,6 +833,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9p7p7r7x",
+    "ja": "私は設計の袋小路を予想せず。",
+    "en": "Little did I foresee this design's deadlock.",
+    "alternatives": [
+      "I never anticipated this design's deadlock.",
+      "I didn't foresee this design becoming a dead end."
+    ],
+    "point": "Little を先頭にすると did I の語順、foresee は予見する。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9s3t9h5e",

@@ -263,6 +263,22 @@
     }
   },
   {
+    "id": "c_4z2z6e9j",
+    "ja": "私はもうカードに入金した。",
+    "en": "I've already topped up my card.",
+    "alternatives": [
+      "I've already refilled my travel card.",
+      "I've already loaded money onto my card."
+    ],
+    "point": "top up は残高を追加する。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5f9d2u3t",
     "ja": "この時刻表は頼れない。",
     "en": "This timetable isn't reliable.",
@@ -467,6 +483,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6n8j8x9z",
+    "ja": "私は彼女に乗換を頼んだ。",
+    "en": "I asked her to change trains.",
+    "alternatives": [
+      "I requested that she switch trains.",
+      "I asked her to switch trains."
+    ],
+    "point": "ask 人 to do は行動を頼む。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6t5a7q5r",
@@ -744,6 +776,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8t2v5g6t",
+    "ja": "バスはもう発車していた。",
+    "en": "The bus had already pulled away.",
+    "alternatives": [
+      "The bus had already departed.",
+      "The bus had already driven off."
+    ],
+    "point": "had pulled away はその時より前に発車したこと。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 5,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8x3u4t6n",

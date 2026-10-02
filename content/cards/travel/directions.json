@@ -715,6 +715,19 @@
     }
   },
   {
+    "id": "c_5w7c8t2e",
+    "ja": "この歩道の方が空いてる。",
+    "en": "This path is less crowded.",
+    "alternatives": ["This path has fewer people.", "This path isn't as crowded."],
+    "point": "less crowded は人がより少なく混雑していない。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 3,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6h7e7s9y",
     "ja": "この店、もう二回通ったね。",
     "en": "We've walked past this shop twice.",
@@ -798,6 +811,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7h6r5u2m",
+    "ja": "この道はどこに続く？",
+    "en": "Where does this trail lead?",
+    "alternatives": ["Where does this path go?", "Where is this trail headed?"],
+    "point": "lead は道がある場所へ続くこと。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 3,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7y5r9g5z",

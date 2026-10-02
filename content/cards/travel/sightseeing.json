@@ -139,6 +139,32 @@
     }
   },
   {
+    "id": "c_2v8k4j5k",
+    "ja": "日焼け止めは持つべき。",
+    "en": "You should pack sunscreen.",
+    "alternatives": ["You ought to bring sunscreen.", "It's best to take sunscreen."],
+    "point": "sunscreen は日焼け止め。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_3a7x8h7b",
+    "ja": "私は遺跡が見える。",
+    "en": "I can see ruins.",
+    "alternatives": ["Ruins are visible to me.", "I have ruins in view."],
+    "point": "can see は目に入って見えること。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 3,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3g6c2w5g",
     "ja": "大人二枚お願いします。",
     "en": "Two adults, please.",
@@ -703,6 +729,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6j4u6q2z",
+    "ja": "私は寺巡りが好き。",
+    "en": "I enjoy visiting temples.",
+    "alternatives": ["I like touring temples.", "Visiting temples appeals to me."],
+    "point": "enjoy の後は visiting の形。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 3,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6u3j6j8y",

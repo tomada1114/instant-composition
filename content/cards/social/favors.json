@@ -41,6 +41,19 @@
     }
   },
   {
+    "id": "c_2n7c7d8n",
+    "ja": "空いてる椅子がある。",
+    "en": "There's a free chair.",
+    "alternatives": ["One chair is available.", "There's an unused chair."],
+    "point": "a free chair は今使われていない椅子。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2p6a3p2x",
     "ja": "君が断ってたら、今も困ってる。",
     "en": "If you'd said no, I'd still be stuck.",
@@ -252,6 +265,22 @@
     }
   },
   {
+    "id": "c_3s3d4m9z",
+    "ja": "借りた工具は返すべき。",
+    "en": "You should return borrowed tools.",
+    "alternatives": [
+      "You ought to return borrowed tools.",
+      "You should give borrowed tools back."
+    ],
+    "point": "borrowed tools は借りている工具。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 3,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3v6f2x8k",
     "ja": "僕を君の防波堤に使わないで。",
     "en": "Don't have me run interference for you.",
@@ -272,6 +301,19 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_3w5f3n8n",
+    "ja": "この箱は壊れやすい。",
+    "en": "This box is fragile.",
+    "alternatives": ["This box breaks easily.", "The box is easily damaged."],
+    "point": "fragile は壊れやすい。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 3,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_3y8p9u8g",
@@ -444,6 +486,19 @@
     }
   },
   {
+    "id": "c_5a3t4m6s",
+    "ja": "私のバッグが重い。",
+    "en": "My bag is heavy.",
+    "alternatives": ["My bag's a heavy one.", "Mine's a heavy bag."],
+    "point": "heavy は持ち運ぶのが大変な重さ。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5g8d4a2n",
     "ja": "悪いけど、今回は降りるしかない。",
     "en": "I'm afraid I'll have to bow out.",
@@ -526,6 +581,19 @@
     }
   },
   {
+    "id": "c_5m7y4p3b",
+    "ja": "私、荷物を運んでる。",
+    "en": "I'm carrying bags.",
+    "alternatives": ["I'm transporting the bags.", "I'm moving the bags."],
+    "point": "進行形で今荷物を運んでいると伝える。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5p7h4r5p",
     "ja": "受けてたら私は今知らずに操られてる。",
     "en": "Had I agreed, I'd be an unwitting pawn.",
@@ -546,6 +614,19 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_5s4g9r3v",
+    "ja": "父が呼んだら私が手伝う。",
+    "en": "I'll help when Dad calls.",
+    "alternatives": ["I'll assist when Dad calls.", "I'll help once Dad calls."],
+    "point": "未来の呼びかけでも when 節は現在形。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5t7y6r4w",

@@ -603,6 +603,19 @@
     }
   },
   {
+    "id": "c_6t7g8k5w",
+    "ja": "解決してくれてありがとう。",
+    "en": "Thanks, you've sorted this out.",
+    "alternatives": ["Thanks for resolving this.", "I appreciate your solving this."],
+    "point": "sort out は問題を整理して解決する。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 5,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6y7z3w6x",
     "ja": "君のしてくれたことが、沁みたよ。",
     "en": "What you did really touched me.",
@@ -661,6 +674,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7n4q8p7u",
+    "ja": "頭が冷えたら私は謝るよ。",
+    "en": "I'll apologize once I cool off.",
+    "alternatives": [
+      "Once I'm calm, I'll apologize.",
+      "I'll apologize after cooling off."
+    ],
+    "point": "cool off は怒りが静まる、once 節は現在形。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 5,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7r9e5e5g",
@@ -924,6 +953,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9k9v5d3k",
+    "ja": "誘ってくれてありがとう。",
+    "en": "Thanks for asking me to join.",
+    "alternatives": ["Thanks for inviting me along.", "I appreciate your invitation."],
+    "point": "ask 人 to do で参加するよう誘う。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 5,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9s4h8n6e",

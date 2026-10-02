@@ -149,6 +149,19 @@
     }
   },
   {
+    "id": "c_3c3v8h5a",
+    "ja": "皿二枚持ってきてね。",
+    "en": "Please bring two plates.",
+    "alternatives": ["Please fetch two plates.", "Two plates here, please."],
+    "point": "bring は話し手の所へ持ってくる。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3d3d4x5t",
     "ja": "売ってるパンはいい香りだ。",
     "en": "The bread for sale smells great.",
@@ -169,6 +182,19 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_3d9g6a4f",
+    "ja": "私は魚を食べられる。",
+    "en": "I can eat fish.",
+    "alternatives": ["I'm able to eat fish.", "I can have fish."],
+    "point": "can eat で食べることに問題がないと伝える。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_3e7f8s3f",
@@ -275,6 +301,19 @@
     }
   },
   {
+    "id": "c_3q8w4u9f",
+    "ja": "私は外で食事する方がいい。",
+    "en": "I prefer to dine outside.",
+    "alternatives": ["I'd rather eat outside.", "Eating outdoors is my preference."],
+    "point": "prefer to はこちらの方がよいという選択。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 4,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3u4r6r6z",
     "ja": "おすすめは何ですか？",
     "en": "What do you recommend?",
@@ -314,6 +353,19 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_3y2e8n2p",
+    "ja": "この料理の方が腹にたまる。",
+    "en": "This dish is more filling.",
+    "alternatives": ["This dish fills you up more.", "You get fuller from this dish."],
+    "point": "filling は食べるとお腹が満たされる。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4b5j9c3q",
@@ -647,6 +699,19 @@
     }
   },
   {
+    "id": "c_6x7v8z7t",
+    "ja": "このソースは何？",
+    "en": "What's this sauce?",
+    "alternatives": ["What sauce is this?", "Which sauce is this?"],
+    "point": "what でソースの種類や名前を尋ねる。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7d4r3r2m",
     "ja": "請求額に私は頭に血が上った。",
     "en": "The bill had me seeing red.",
@@ -705,6 +770,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7m6t9r6m",
+    "ja": "外のテーブルは予約済みだ。",
+    "en": "The table outside is reserved.",
+    "alternatives": [
+      "The outdoor table is booked.",
+      "Someone has reserved the outside table."
+    ],
+    "point": "outside は table を後ろから説明する。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7v2x9f8j",
