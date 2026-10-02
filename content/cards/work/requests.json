@@ -250,7 +250,13 @@
     "level": 4,
     "grammar": ["there-is-are"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1e1ce29160595b8f2036010fbd7821dec617ebaa178c8ab23c356d4b9ca4a5c2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4x3h9j8f",
@@ -348,7 +354,13 @@
     "level": 4,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:37ccc068d3d65dbb48d26abc7bc6256c0cf4418125ffd790a8a1ce0708b8516f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5k6y2b6x",
@@ -771,18 +783,24 @@
   {
     "id": "c_9b7p3z2d",
     "ja": "顧客の修正依頼を優先して。",
-    "en": "Prioritize the client's revised request.",
+    "en": "Prioritize the client's requested revisions.",
     "alternatives": [
-      "Give the client's updated request priority.",
-      "Put the client's revised request first."
+      "Address the client's requested edits first.",
+      "Put the client's requested edits first."
     ],
-    "point": "revised は修正を加えたもの。",
+    "point": "prioritize は優先順位を上げること。",
     "topic": "work",
     "subtopic": "requests",
     "level": 4,
-    "grammar": ["imperatives", "post-modification"],
+    "grammar": ["imperatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f66420ef30f11d8773397745dc0ecbfb8eed367e359d6f4c9aa610a5527d16d1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9f4p6z5s",

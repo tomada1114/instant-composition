@@ -150,8 +150,8 @@
     "ja": "日程が動くと彼らは分かってないと思う。",
     "en": "I doubt they grasp how fluid our schedule is.",
     "alternatives": [
-      "I don't think they understand how changeable our schedule is.",
-      "They probably don't appreciate how unsettled our schedule is."
+      "I doubt they realize our schedule can change.",
+      "They probably don't grasp how changeable our schedule is."
     ],
     "point": "fluid は予定がまだ動き得る状態。",
     "topic": "work",
@@ -159,7 +159,13 @@
     "level": 10,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:775d2e6fcb45457ef250402f4b428ca2607483d7f2fe8ea66a9a9deda5595f19",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4e9b2f6z",
@@ -440,11 +446,11 @@
   },
   {
     "id": "c_6z9a2g5x",
-    "ja": "私たちが日程に余白を残せてたらなあ。",
-    "en": "I wish we'd built some float into scheduling.",
+    "ja": "私たちが日程に余裕を残してたらな。",
+    "en": "I wish we'd built float into the schedule.",
     "alternatives": [
-      "I wish we'd allowed some leeway in the schedule.",
-      "If only we'd left some slack in scheduling."
+      "I wish we'd allowed leeway in the schedule.",
+      "If only we'd left slack in the schedule."
     ],
     "point": "float は日程に組み込む余裕時間。",
     "topic": "work",
@@ -452,7 +458,13 @@
     "level": 10,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0423ef7e53119fa2f7eaf2b6c9fed3d18ca82c8eee1ab8d131dad9fcea468d40",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7k7u8w3t",
@@ -623,7 +635,7 @@
   },
   {
     "id": "c_8f6d5b6j",
-    "ja": "仕事を前倒ししてれば今は余裕があるのに。",
+    "ja": "仕事を前倒ししてたら今我々は余裕なのに。",
     "en": "Had we front-loaded work, we'd have slack now.",
     "alternatives": [
       "If we'd done more upfront, we'd have leeway now.",
@@ -633,9 +645,15 @@
     "topic": "work",
     "subtopic": "scheduling",
     "level": 10,
-    "grammar": ["mixed-conditional"],
+    "grammar": ["mixed-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:414367f55ec7afbc62f9fbfa7ac69a1031105d85f3c0fd45498fb7ac8a76849c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8h2s9b3m",

@@ -142,7 +142,13 @@
     "level": 10,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:79bd37bb7ee0f35344a6c1a22d559b79df8f986c87d291a605e846c26d4e6fe6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4g3b3p2v",
@@ -208,6 +214,28 @@
     }
   },
   {
+    "id": "c_5b7d6u9m",
+    "ja": "写真を加工しなければよかったな。",
+    "en": "If only I'd left that photo untouched.",
+    "alternatives": [
+      "I wish I hadn't edited that photo.",
+      "I wish I'd kept that photo unchanged."
+    ],
+    "point": "leave untouched は手を加えずそのままにすること。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 8,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:337be2359777b4ba6cbd155019f0220f14f70f4e671c9fc06dedb1abbe4074f4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_5c5p6v9r",
     "ja": "彼が絵で食えるとは思えない。",
     "en": "I doubt what he paints pays the bills.",
@@ -228,22 +256,6 @@
         "at": "2026-10-02"
       }
     }
-  },
-  {
-    "id": "c_5e4f5p5r",
-    "ja": "私は良い写真を飾りすぎなければなあ。",
-    "en": "I wish I hadn't gilded the lily.",
-    "alternatives": [
-      "I wish I hadn't overembellished my good photos.",
-      "If only I'd left my good photos unembellished."
-    ],
-    "point": "gild the lily は良いものに不要な飾りを足す。",
-    "topic": "daily",
-    "subtopic": "hobbies",
-    "level": 10,
-    "grammar": ["wishes-regrets"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
   },
   {
     "id": "c_5e6y6x3z",
@@ -512,10 +524,10 @@
   },
   {
     "id": "c_7a8p8q4u",
-    "ja": "こんな抑えた哀感は私は滅多に見ない。",
+    "ja": "私は抑えた哀感を滅多に見たことがない。",
     "en": "Rarely have I seen such understated pathos.",
     "alternatives": [
-      "I've rarely seen such subtly conveyed sorrow.",
+      "I've rarely seen such understated sorrow.",
       "I've seldom seen sadness expressed with such restraint."
     ],
     "point": "understated pathos は大げさに表さない哀感。",
@@ -524,7 +536,13 @@
     "level": 10,
     "grammar": ["inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:af57ea47c412afe2b854de41c70e560ca4868ab95b41bc5c8250f2a3f9998ae5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7d4f8a4y",

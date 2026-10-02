@@ -377,15 +377,21 @@
     "en": "I've been fiddling with the configuration.",
     "alternatives": [
       "I've been tinkering with the settings.",
-      "I've been making little adjustments to the configuration."
+      "I've been tweaking the settings."
     ],
     "point": "fiddle with は細かくいじる感じを含む。",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 9,
+    "level": 7,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:65608b84f9f12035ff3c1a9f1f9dc5aaf1818b59e60bedc3b74494566e57f798",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6z2m4s6c",
@@ -431,18 +437,24 @@
   {
     "id": "c_7p8t5b5a",
     "ja": "継ぎはぎしたこのツールは脆い。",
-    "en": "This tool, cobbled together, is brittle.",
+    "en": "This cobbled-together tool is brittle.",
     "alternatives": [
-      "This cobbled-together tool is fragile.",
-      "This tool, pieced together, breaks easily."
+      "This makeshift tool is fragile.",
+      "This patched-together tool breaks easily."
     ],
     "point": "cobbled together は間に合わせで継ぎはぎした。",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 9,
-    "grammar": ["post-modification"],
+    "level": 8,
+    "grammar": ["articles-and-countability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b491b5c1a8f9583bcb6b3aebaf770933981bd246c2ad406b80551e7279eeba0c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7v5k2d9e",

@@ -345,8 +345,8 @@
     "ja": "上司は私なら重責も担えると言った。",
     "en": "My boss said I could shoulder serious responsibility.",
     "alternatives": [
-      "My manager said I could handle major responsibilities.",
-      "My boss said I was capable of taking responsibility."
+      "My boss said I could handle major responsibilities.",
+      "My manager said I could take on heavy responsibilities."
     ],
     "point": "shoulder responsibility は責任を引き受け担う。",
     "topic": "work",
@@ -354,7 +354,13 @@
     "level": 9,
     "grammar": ["reported-speech"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:20cfdb1943c6340626058ba8fa928132aa99fd28d7b1404afab13ec38cc6d221",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6c4c6a3k",
@@ -368,9 +374,15 @@
     "topic": "work",
     "subtopic": "job-interview",
     "level": 9,
-    "grammar": ["mixed-conditional"],
+    "grammar": ["mixed-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8294e92d9ba6769b8896112b81255fcda8ba63509b27046ab35bb1b137b8d277",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6f7x6v3w",
@@ -790,8 +802,14 @@
     "topic": "work",
     "subtopic": "job-interview",
     "level": 9,
-    "grammar": ["third-conditional"],
+    "grammar": ["third-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e0c2bc44cd6ad9ca9fa69113ad41c8069b84e7d4710e848f9873cbf26554fe17",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   }
 ]

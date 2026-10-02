@@ -130,7 +130,13 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a78f3faeb13a246c4e8e80ce2258da2586215594693f60f667c8dc7098318e03",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3g6c2w5g",
@@ -520,7 +526,13 @@
     "level": 1,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:54cc3c1c64cc3da813c43a1834dd4971dc4579a2a949cee10e5d5a1f993ce394",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5y6s5w3p",
@@ -533,7 +545,13 @@
     "level": 1,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d38412293882df85e3b63e7f2cb9147fd6d07f76c7a36c1072f250e668b32423",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6a7a8d9k",
@@ -568,7 +586,13 @@
     "level": 5,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d45b241670763a5fd4d5fcdb902ff2d950b8b7d0922cd38fe65115ac6029a824",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6h5h7z2z",
@@ -663,14 +687,20 @@
     "point": "tour は観光目的で見て回る。",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 5,
+    "level": 4,
     "grammar": ["present-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:08de734a4a2fc869b9afe12a9facb4762c226b0a3cc964642ab485b687f0b8c1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8f3x5y2u",
-    "ja": "この塔は修復されました。",
+    "ja": "この塔は修復済みです。",
     "en": "This tower has been restored.",
     "alternatives": [
       "They've restored this tower.",
@@ -679,10 +709,16 @@
     "point": "restore は古い建物を元の状態に戻す。",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 5,
+    "level": 4,
     "grammar": ["passive-voice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1a819dcb998b05eb21230d9b8974a38fe80e32ef3d53a988da65290da47675f2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8n6w8v9x",

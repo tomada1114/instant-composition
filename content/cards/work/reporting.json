@@ -364,8 +364,8 @@
     "ja": "遅延で我々は現状維持だけでも必死だ。",
     "en": "Delays have us running to stand still.",
     "alternatives": [
-      "The delays make us struggle just to stay afloat.",
-      "Delays leave us working hard merely to hold ground."
+      "Delays leave us barely holding our ground.",
+      "With delays, we're barely treading water."
     ],
     "point": "run to stand still は努力しても現状維持が精いっぱい。",
     "topic": "work",
@@ -373,7 +373,13 @@
     "level": 10,
     "grammar": ["causatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1405ce519554b9429838dc75b23b60e5ee2d22eda749a223cba583f954a1aac7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5u9m9k6b",
@@ -504,7 +510,7 @@
   },
   {
     "id": "c_6y3u4n9d",
-    "ja": "私たちは問題を取り繕ってるのかも。",
+    "ja": "私たちは問題を取り繕ってるかも。",
     "en": "We may be papering over the cracks.",
     "alternatives": [
       "We might be glossing over the problems.",
@@ -513,10 +519,16 @@
     "point": "paper over the cracks は根本を直さず取り繕う。",
     "topic": "work",
     "subtopic": "reporting",
-    "level": 10,
+    "level": 9,
     "grammar": ["hedging-softening", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:42c90203d6dfcdd3dd6d9507b53acd00bc9bcd7237944e12e1d1b67d8ce15970",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7h7q2u3y",
@@ -640,7 +652,13 @@
     "level": 10,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bcb05e83330558613592745ed3a0ce423b975c41d210bafaafad5c0f335cfdc7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8g8j9s3b",

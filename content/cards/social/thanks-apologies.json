@@ -1,7 +1,7 @@
 [
   {
     "id": "c_2a6t7d7t",
-    "ja": "失言を寛大に見逃していただいた。",
+    "ja": "私の失言は寛大に見逃された。",
     "en": "My slip was graciously overlooked.",
     "alternatives": [
       "You kindly let my slip pass.",
@@ -10,10 +10,16 @@
     "point": "graciously は寛大に受け止めた好意を表す。",
     "topic": "social",
     "subtopic": "thanks-apologies",
-    "level": 9,
+    "level": 7,
     "grammar": ["passive-voice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fa87dcb5d6b7f22ca53798654776311845d80624910d10c3297db59615099e47",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2d2v5f5e",
@@ -144,16 +150,22 @@
     "ja": "君の手間を甘く見てた、ごめん。",
     "en": "Sorry, I'd underestimated your efforts.",
     "alternatives": [
-      "Sorry, I hadn't appreciated the effort you'd made.",
-      "I'm sorry I'd taken your efforts too lightly."
+      "Sorry, I'd taken your efforts too lightly.",
+      "I'm sorry I'd undervalued your efforts."
     ],
-    "point": "go to trouble はわざわざ手間をかける。",
+    "point": "underestimate は手間や努力を少なく見積もること。",
     "topic": "social",
     "subtopic": "thanks-apologies",
-    "level": 9,
+    "level": 8,
     "grammar": ["past-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2598c65dd5ed301b532fce211f6e9b6583fc8bd42bdd4ceb529f7dff6cc3ec37",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3c5k4w3a",
@@ -640,15 +652,21 @@
     "en": "I'm grateful you looked the other way.",
     "alternatives": [
       "I appreciate that you chose to overlook it.",
-      "Thank you for turning a blind eye."
+      "Thank you for letting it slide."
     ],
-    "point": "turn a blind eye はあえて見逃す。",
+    "point": "look the other way はあえて見逃すこと。",
     "topic": "social",
     "subtopic": "thanks-apologies",
     "level": 9,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:90b1bbc8f8d84eaa97cdd8c7af3ea18d68bb9623bfba228a1df43430fb9bc3c0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7y6e2m5j",

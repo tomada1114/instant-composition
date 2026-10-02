@@ -67,19 +67,25 @@
   },
   {
     "id": "c_2t8p6d6x",
-    "ja": "拡大すれば私たちの利幅は薄くなる。",
-    "en": "If we scaled up, our margins would shrink.",
+    "ja": "拡大したら私たちの利幅は薄まる。",
+    "en": "If we expanded, our margins would shrink.",
     "alternatives": [
-      "Our profit margins would narrow if we expanded.",
-      "If we grew, we'd have thinner profit margins."
+      "Our margins would shrink if we expanded.",
+      "If we grew, our margins would narrow."
     ],
     "point": "margins は金額そのものではなく利幅。",
     "topic": "work",
     "subtopic": "presentations",
-    "level": 9,
+    "level": 7,
     "grammar": ["second-conditional"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b02b5b6e21d2fd10a8bfe267d334eee9b187fd87a6cbcc4761381705ef8d9776",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2w2d2x4h",
@@ -120,22 +126,6 @@
     }
   },
   {
-    "id": "c_3j7j7w7x",
-    "ja": "この数字の隠れた問題が分かりますか？",
-    "en": "Can you see where these figures fall short?",
-    "alternatives": [
-      "Do you see the shortcomings in these figures?",
-      "Can you identify the weakness in these numbers?"
-    ],
-    "point": "fall short は数字が期待や基準に届かないこと。",
-    "topic": "work",
-    "subtopic": "presentations",
-    "level": 9,
-    "grammar": ["indirect-questions"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_3k4w7x8y",
     "ja": "あの時投資してれば、今ごろ首位だよ。",
     "en": "If we'd invested then, we'd be leading now.",
@@ -154,6 +144,28 @@
         "hash": "sha256:03b7bd41498dc6d9fdb638bde2a8924dd8b6ea897f00af0a4ec6a6786ab04dbc",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_3r6q7j6d",
+    "ja": "この数字が何を隠すか分かりますか？",
+    "en": "Can you see what these figures obscure?",
+    "alternatives": [
+      "Can you tell what these figures hide?",
+      "Do you see what these numbers conceal?"
+    ],
+    "point": "obscure は大事なことを見えにくくすること。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 9,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cf3cc4d5fe7bb706bb505ff1c73feb0ce49209b9c3e71b929772993a857f3ed1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -654,7 +666,13 @@
     "level": 9,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:29352ec8dede16d1c83fcc6e060eb33b0b2cc14e708317e0e7ee1ed4efa7a743",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9d5c7z2p",

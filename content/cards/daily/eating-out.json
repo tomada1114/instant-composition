@@ -41,12 +41,12 @@
     }
   },
   {
-    "id": "c_2u6p6d8f",
+    "id": "c_2j4r6s6k",
     "ja": "食後、私は損した気分だった。",
-    "en": "I left the meal feeling shortchanged.",
+    "en": "I felt shortchanged after eating.",
     "alternatives": [
-      "The meal left me feeling cheated.",
-      "I finished the meal feeling ripped off."
+      "I felt ripped off after the meal.",
+      "I felt cheated after eating."
     ],
     "point": "shortchanged は十分な価値を得られず損した感じ。",
     "topic": "daily",
@@ -54,7 +54,13 @@
     "level": 7,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7f20aa25d2110361b4a1e7fba9ab814ea5d8c1703ea33ee93d19994b3180c09a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2v5b2b3p",
@@ -166,8 +172,8 @@
     "ja": "私は軽い前菜にしておきます。",
     "en": "I'll stick to a light appetizer.",
     "alternatives": [
-      "I'll just have a light starter.",
-      "I'm going to stick to a light appetizer."
+      "I'll just have a light appetizer.",
+      "I'll just order a light appetizer."
     ],
     "point": "stick to はそれだけにとどめる。",
     "topic": "daily",
@@ -175,7 +181,13 @@
     "level": 7,
     "grammar": ["future-forms"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:056a94f385c5ceb29be7e84c1f8428fc42cf9862d9334e954e0faeef269bc778",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3u4r6r6z",
@@ -303,7 +315,7 @@
   {
     "id": "c_5m4q7q7s",
     "ja": "彼らは注文を取り違えたのかも。",
-    "en": "They might have mixed up orders.",
+    "en": "They might've mixed up the orders.",
     "alternatives": [
       "They may have confused the orders.",
       "Perhaps they got the orders mixed up."
@@ -314,7 +326,13 @@
     "level": 7,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:011e309f19021492e4ab1baec2b879d79918b60f75ed4b32d572407d730ad6b9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5m9a7t2u",

@@ -232,10 +232,10 @@
   {
     "id": "c_3y8p9u8g",
     "ja": "君の負担が増えるのが心配だ。",
-    "en": "I worry that this burdens you.",
+    "en": "I worry this increases your burden.",
     "alternatives": [
-      "I'm concerned this adds to your burden.",
-      "I'm worried this puts more pressure on you."
+      "I'm concerned this increases your workload.",
+      "I'm worried this increases your burden."
     ],
     "point": "burden は相手に負担をかける動詞にもなる。",
     "topic": "social",
@@ -243,15 +243,21 @@
     "level": 7,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bd3de80642e7ba69580bc9a900870f68aebb25a695e4e6685fa4236102b5b61e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4a2x9c9j",
-    "ja": "私は頼みを断って心苦しい。",
+    "ja": "私は君の頼みを断り心苦しい。",
     "en": "I regret turning down your request.",
     "alternatives": [
-      "I feel bad about turning down your request.",
-      "I'm sorry I've declined your request."
+      "I feel bad about declining your request.",
+      "I'm sorry I declined your request."
     ],
     "point": "regret doing はその行為を心苦しく思う。",
     "topic": "social",
@@ -259,7 +265,13 @@
     "level": 7,
     "grammar": ["gerunds"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9d5293af17dfc9aaec3de7f961b1e640e769a77fec9df118635793c5ae37bb14",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4c3x4q4d",
@@ -540,7 +552,13 @@
     "level": 7,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:84adf2bb4efcc5eae9a25aa6e65dfc5485ff80a860d5b301807956b6387ef23d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6q2r2g5g",

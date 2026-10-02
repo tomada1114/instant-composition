@@ -83,11 +83,11 @@
   },
   {
     "id": "c_3f4v3u5m",
-    "ja": "彼が軽んじられたと思うのは分かる。",
+    "ja": "彼が軽んじられたと思う訳は分かる。",
     "en": "I get why he feels he's been slighted.",
     "alternatives": [
       "I understand why he thinks he's been disrespected.",
-      "I see why he feels he's been treated dismissively."
+      "I get why he feels slighted."
     ],
     "point": "slighted は軽んじられたと感じること。",
     "topic": "daily",
@@ -95,15 +95,21 @@
     "level": 10,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:210e0f1bbd93383363bdf6054f1b0dc368e40a496383138a2765a862f1ffbc89",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3h3f3q3b",
-    "ja": "私ならその案を弱く褒めて遠回しにけなす。",
+    "ja": "君の立場なら控えめな賛辞で案をけなす。",
     "en": "In your shoes, I'd damn it with faint praise.",
     "alternatives": [
-      "If I were you, I'd criticize with lukewarm praise.",
-      "I'd use tepid praise to criticize it in your place."
+      "In your place, I'd criticize it with faint praise.",
+      "I'd give it faint praise in your place."
     ],
     "point": "damn with faint praise は弱い賛辞で逆にけなす。",
     "topic": "daily",
@@ -111,7 +117,13 @@
     "level": 10,
     "grammar": ["second-conditional"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:13f6139a625e0f7a9aab86a4b05cae0ab7a3a61e5524e56a9d117fca5036ce62",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3h8z7g4e",
@@ -119,7 +131,7 @@
     "en": "Little did I imagine I'd harbor such resentment.",
     "alternatives": [
       "I never imagined I'd nurse such a grudge.",
-      "I hadn't imagined I'd feel such lasting bitterness."
+      "I never thought I'd resent it this much."
     ],
     "point": "harbor resentment は恨みを心に抱き続ける。",
     "topic": "daily",
@@ -127,7 +139,13 @@
     "level": 10,
     "grammar": ["inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a8a2b839fd33f89e256c9302d9dc180304012fb90927f77c1e06166ba5d6c5fd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3p7z6b4w",

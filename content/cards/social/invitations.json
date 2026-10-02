@@ -273,15 +273,21 @@
     "en": "Had I declined, I'd be left out now.",
     "alternatives": [
       "If I'd declined, I'd be excluded now.",
-      "I'd be out of the loop had I declined."
+      "I'd be excluded now if I'd declined."
     ],
     "point": "過去の辞退が今の仲間外れにつながる仮定。",
     "topic": "social",
     "subtopic": "invitations",
     "level": 9,
-    "grammar": ["mixed-conditional"],
+    "grammar": ["mixed-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1d4535ffc3636245bbad4be5216f5fb8d53cba92789287ae44eb44af651cb6ca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4b4p6v9g",
@@ -566,7 +572,13 @@
     "level": 9,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2b254bef8b55165d67c249a8f1c4973947cde5372c20c2f7ab8b4fb17595df5b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7b9d2e5w",
@@ -604,7 +616,13 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3fd25a0beb6770c7868bb9b033242647e1d1ceca80f40cd00d6811a5c7f05176",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7t2b3s2p",

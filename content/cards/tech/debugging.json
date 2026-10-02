@@ -45,35 +45,47 @@
   },
   {
     "id": "c_2s5t6p7r",
-    "ja": "問題なのは、その修正が脆いことだ。",
-    "en": "What worries me is how brittle that fix is.",
+    "ja": "私が心配なのは修正の脆さだ。",
+    "en": "What worries me is that fix's brittleness.",
     "alternatives": [
-      "It's the fragility of that fix that worries me.",
-      "My concern is that the fix breaks too easily."
+      "It's that fix's brittleness that worries me.",
+      "That fix's brittleness is what worries me."
     ],
     "point": "brittle は小さな変化で壊れやすい実装。",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 10,
+    "level": 9,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6b9bb3848fb98fb67ab862ca765f933cee793a25d277ff1df9ded01767f7530e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2t2s6c9z",
-    "ja": "我々が依存を切ってたら今は特定できる。",
+    "ja": "依存を切ってたら我々は今原因が分かる。",
     "en": "Had we decoupled it, we'd pinpoint the cause now.",
     "alternatives": [
-      "If we'd removed dependencies, we could isolate the cause now.",
-      "We'd pinpoint the cause now had we removed dependencies."
+      "If we'd decoupled it, we could identify the cause now.",
+      "We'd pinpoint the cause now had we decoupled it."
     ],
     "point": "decouple は他の部分との依存を切り離す。",
     "topic": "tech",
     "subtopic": "debugging",
     "level": 10,
-    "grammar": ["mixed-conditional"],
+    "grammar": ["mixed-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2b9c4eb5223e15f31677505ce68bd0f69e9d5ef6dc08152423bfeacdc00539e4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2t4b3c8r",
@@ -133,7 +145,13 @@
     "level": 10,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b946272ad4d393664fe19ce5379c47fbed3bbb94af70f2e87db5e2da65bf82db",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3j7s9w3e",

@@ -145,18 +145,24 @@
   {
     "id": "c_4e6w9b6v",
     "ja": "私たちはもう懸念を解消した。",
-    "en": "We've already addressed the concerns.",
+    "en": "We've already allayed the concerns.",
     "alternatives": [
-      "We've already resolved the concerns.",
-      "We've already dealt with the concerns."
+      "We've already dispelled those concerns.",
+      "We've already put those concerns to rest."
     ],
-    "point": "address concerns は懸念に対処する。",
+    "point": "allay concerns は懸念を和らげて解消すること。",
     "topic": "work",
     "subtopic": "meetings",
-    "level": 6,
+    "level": 8,
     "grammar": ["present-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c924c15c6d633bd78180844496a41947e941cff71d23749f1111665b0bb8baf1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4s7d5g5y",
@@ -445,10 +451,10 @@
   {
     "id": "c_7x9h8s9p",
     "ja": "私は議論を脱線させたくない。",
-    "en": "I want to avoid derailing discussion.",
+    "en": "I want to avoid derailing the discussion.",
     "alternatives": [
       "I don't want to derail the discussion.",
-      "I'd rather not send the discussion off track."
+      "I'd rather not derail the discussion."
     ],
     "point": "avoid の後は動名詞、derail は脱線させる。",
     "topic": "work",
@@ -456,7 +462,13 @@
     "level": 6,
     "grammar": ["gerunds"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:734bcc0c0bd1b2284b0744e6d36d28de06c406104a651dc6984f5ee3f953b8a4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7z3h6x8b",
@@ -554,7 +566,13 @@
     "level": 6,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f1341deafbe5a9e467ab6209aca72b079016756556300c566d6513ab4559aac9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9d5j3y7d",
