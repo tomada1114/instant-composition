@@ -1,5 +1,19 @@
 [
   {
+    "id": "v_2c6v6j6y",
+    "category": "idiom",
+    "level": 9,
+    "headword": "read between the lines",
+    "definition": "to understand a hidden meaning that is not said directly",
+    "example": "If you {{read}} {{between}} {{the}} {{lines}}, she's unhappy.",
+    "example2": "His email was polite, but I could read between the lines.",
+    "meanings": {
+      "ja": "行間を読む"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_2g2x4g7n",
     "category": "idiom",
     "level": 8,
@@ -150,6 +164,20 @@
     }
   },
   {
+    "id": "v_3m7t5v5s",
+    "category": "idiom",
+    "level": 7,
+    "headword": "call it a day",
+    "definition": "to stop working because you have done enough",
+    "example": "We're all tired, so let's {{call}} {{it}} {{a}} {{day}}.",
+    "example2": "After ten hours of painting, they called it a day.",
+    "meanings": {
+      "ja": "今日はここまでにする"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_3n7g2u6g",
     "category": "idiom",
     "level": 1,
@@ -275,6 +303,20 @@
     }
   },
   {
+    "id": "v_5b2t3h3b",
+    "category": "idiom",
+    "level": 2,
+    "headword": "at first",
+    "definition": "in the beginning, before things changed",
+    "example": "{{At}} {{first}}, I didn't like coffee.",
+    "example2": "At first, the new school felt big and scary.",
+    "meanings": {
+      "ja": "最初は"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_5k3u6k7k",
     "category": "idiom",
     "level": 9,
@@ -300,6 +342,62 @@
     }
   },
   {
+    "id": "v_5m2t2p5q",
+    "category": "idiom",
+    "level": 2,
+    "headword": "a lot of",
+    "definition": "many or much",
+    "example": "She has {{a}} {{lot}} {{of}} friends in Osaka.",
+    "example2": "We had a lot of rain last week.",
+    "meanings": {
+      "ja": "たくさんの"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_5s4d6h3c",
+    "category": "idiom",
+    "level": 7,
+    "headword": "beat around the bush",
+    "definition": "to avoid saying the main point directly",
+    "example": "Stop {{beating}} {{around}} {{the}} {{bush}} and tell me.",
+    "example2": "He didn't beat around the bush when he quit.",
+    "meanings": {
+      "ja": "遠回しに言う"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_5s7e3a5g",
+    "category": "idiom",
+    "level": 2,
+    "headword": "at home",
+    "definition": "in the place where you live",
+    "example": "I stay {{at}} {{home}} on Sundays.",
+    "example2": "Is your mother at home now?",
+    "meanings": {
+      "ja": "家で・在宅で"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_5t9f3m2t",
+    "category": "idiom",
+    "level": 5,
+    "headword": "in the long run",
+    "definition": "when you think about what will happen much later",
+    "example": "Saving money now will help you {{in}} {{the}} {{long}} {{run}}.",
+    "example2": "Cheap shoes cost more in the long run.",
+    "meanings": {
+      "ja": "長い目で見れば"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_5u7p4w6v",
     "category": "idiom",
     "level": 9,
@@ -323,6 +421,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_5w2d6t6t",
+    "category": "idiom",
+    "level": 9,
+    "headword": "a double-edged sword",
+    "definition": "something that has both good and bad results",
+    "example": "Social media is {{a}} {{double-edged}} {{sword}} for teenagers.",
+    "example2": "Fame can be a double-edged sword.",
+    "meanings": {
+      "ja": "諸刃の剣"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_6h4j7q3t",
@@ -375,6 +487,20 @@
     }
   },
   {
+    "id": "v_6r5h4d5z",
+    "category": "idiom",
+    "level": 3,
+    "headword": "as usual",
+    "definition": "in the normal way, like most other times",
+    "example": "{{As}} {{usual}}, the morning train was late.",
+    "example2": "He ordered a black coffee, as usual.",
+    "meanings": {
+      "ja": "いつものように"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_7e5j5f8p",
     "category": "idiom",
     "level": 6,
@@ -398,6 +524,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_7g4s2g5b",
+    "category": "idiom",
+    "level": 9,
+    "headword": "have a chip on one's shoulder",
+    "definition": "to stay angry about past unfair treatment",
+    "example": "He still {{has}} {{a}} {{chip}} {{on}} his {{shoulder}} about being passed over.",
+    "example2": "She had a chip on her shoulder after the layoffs.",
+    "meanings": {
+      "ja": "不満をくすぶらせている"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_7p4a6d5z",
@@ -475,6 +615,48 @@
     }
   },
   {
+    "id": "v_7w6a5q8r",
+    "category": "idiom",
+    "level": 7,
+    "headword": "go the extra mile",
+    "definition": "to make more effort than people expect",
+    "example": "The hotel staff {{went}} {{the}} {{extra}} {{mile}} for us.",
+    "example2": "She always goes the extra mile for her clients.",
+    "meanings": {
+      "ja": "人一倍努力する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_7w7m9y9r",
+    "category": "idiom",
+    "level": 5,
+    "headword": "out of the blue",
+    "definition": "suddenly and without any warning",
+    "example": "My old friend called me {{out}} {{of}} {{the}} {{blue}} yesterday.",
+    "example2": "The news came out of the blue.",
+    "meanings": {
+      "ja": "突然・藪から棒に"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_7w8w6p5x",
+    "category": "idiom",
+    "level": 3,
+    "headword": "by the way",
+    "definition": "said when you add a new topic to a conversation",
+    "example": "{{By}} {{the}} {{way}}, where did you park the car?",
+    "example2": "By the way, I really like your new haircut.",
+    "meanings": {
+      "ja": "ところで"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_8p7b4b4m",
     "category": "idiom",
     "level": 4,
@@ -500,6 +682,20 @@
     }
   },
   {
+    "id": "v_8p9k5w7j",
+    "category": "idiom",
+    "level": 3,
+    "headword": "for example",
+    "definition": "used to introduce something that shows what you mean",
+    "example": "I like sports, {{for}} {{example}}, tennis and swimming.",
+    "example2": "Some cities, for example Kyoto, are famous for temples.",
+    "meanings": {
+      "ja": "例えば"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_8x7z4w3f",
     "category": "idiom",
     "level": 1,
@@ -523,6 +719,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_9a5u4n8v",
+    "category": "idiom",
+    "level": 5,
+    "headword": "at the last minute",
+    "definition": "very close to the time when something must happen",
+    "example": "He changed his flight {{at}} {{the}} {{last}} {{minute}}.",
+    "example2": "Don't leave your homework until the last minute.",
+    "meanings": {
+      "ja": "ぎりぎりになって"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_9d4r6s3h",

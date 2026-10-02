@@ -1,5 +1,47 @@
 [
   {
+    "id": "v_2c8w3e7z",
+    "category": "phrasal-verb",
+    "level": 2,
+    "headword": "turn on",
+    "definition": "to make a light or machine start working",
+    "example": "Please {{turn}} the light {{on}}; it's dark in here.",
+    "example2": "Can you turn on the TV?",
+    "meanings": {
+      "ja": "(電気などを)つける"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_2g5n7r3s",
+    "category": "phrasal-verb",
+    "level": 9,
+    "headword": "wade through",
+    "definition": "to slowly deal with a large, boring amount of material",
+    "example": "I spent all weekend {{wading}} {{through}} legal documents.",
+    "example2": "Customers must wade through pages of terms before signing up.",
+    "meanings": {
+      "ja": "苦労して読み進める"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_2j6k8k2m",
+    "category": "phrasal-verb",
+    "level": 9,
+    "headword": "brush off",
+    "definition": "to refuse to take someone's warning or idea seriously",
+    "example": "He {{brushed}} my warning {{off}} and kept driving fast.",
+    "example2": "She brushed off the criticism with a smile.",
+    "meanings": {
+      "ja": "軽くあしらう"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_2n4y6u6d",
     "category": "phrasal-verb",
     "level": 1,
@@ -23,6 +65,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_3a3k2t7d",
+    "category": "phrasal-verb",
+    "level": 3,
+    "headword": "take off",
+    "definition": "when a plane leaves the ground",
+    "example": "The plane {{took}} {{off}} ten minutes late.",
+    "example2": "Please turn off your phone before we take off.",
+    "meanings": {
+      "ja": "離陸する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_3j7k7u6m",
@@ -75,6 +131,20 @@
     }
   },
   {
+    "id": "v_3w7w6g8x",
+    "category": "phrasal-verb",
+    "level": 6,
+    "headword": "back up",
+    "definition": "to copy computer files so they are not lost",
+    "example": "Remember to {{back}} {{up}} your files every week.",
+    "example2": "I backed up all my photos before the update.",
+    "meanings": {
+      "ja": "バックアップを取る"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_3x9g6t5x",
     "category": "phrasal-verb",
     "level": 7,
@@ -100,6 +170,90 @@
     }
   },
   {
+    "id": "v_3y3b2d7j",
+    "category": "phrasal-verb",
+    "level": 6,
+    "headword": "come across",
+    "definition": "to find or meet something by chance",
+    "example": "I {{came}} {{across}} my old diary while cleaning.",
+    "example2": "You might come across some odd words in this book.",
+    "meanings": {
+      "ja": "偶然見つける"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_4e5g9a9h",
+    "category": "phrasal-verb",
+    "level": 3,
+    "headword": "get up",
+    "definition": "to leave your bed after sleeping",
+    "example": "I {{get}} {{up}} early on weekdays.",
+    "example2": "He got up and made some tea.",
+    "meanings": {
+      "ja": "起きる・起床する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_4e8y2w2p",
+    "category": "phrasal-verb",
+    "level": 6,
+    "headword": "look into",
+    "definition": "to examine a problem to learn its cause",
+    "example": "The manager promised to {{look}} {{into}} the complaint.",
+    "example2": "Police are looking into the missing money.",
+    "meanings": {
+      "ja": "調査する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_4f3u2w7f",
+    "category": "phrasal-verb",
+    "level": 2,
+    "headword": "wake up",
+    "definition": "to stop sleeping in the morning",
+    "example": "I {{wake}} {{up}} at six every weekday.",
+    "example2": "Don't wake up the baby.",
+    "meanings": {
+      "ja": "目が覚める・起きる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_4y8x4c6f",
+    "category": "phrasal-verb",
+    "level": 4,
+    "headword": "find out",
+    "definition": "to learn a fact that you did not know",
+    "example": "I'll {{find}} {{out}} when the store opens.",
+    "example2": "She found out the truth from her sister.",
+    "meanings": {
+      "ja": "調べて知る・突き止める"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_5b6p8a8u",
+    "category": "phrasal-verb",
+    "level": 4,
+    "headword": "carry on",
+    "definition": "to keep doing something without stopping",
+    "example": "Please {{carry}} {{on}}; I didn't mean to interrupt.",
+    "example2": "He carried on working despite the noise.",
+    "meanings": {
+      "ja": "続ける"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_5b9z8r6s",
     "category": "phrasal-verb",
     "level": 3,
@@ -123,6 +277,48 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_5g8w8x4k",
+    "category": "phrasal-verb",
+    "level": 3,
+    "headword": "look for",
+    "definition": "to try to find something",
+    "example": "I'm {{looking}} {{for}} my keys.",
+    "example2": "They are looking for a new apartment.",
+    "meanings": {
+      "ja": "探す"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_5m4z9h7n",
+    "category": "phrasal-verb",
+    "level": 2,
+    "headword": "put on",
+    "definition": "to wear a piece of clothing",
+    "example": "It's cold, so {{put}} {{on}} your coat.",
+    "example2": "He put on his shoes and left.",
+    "meanings": {
+      "ja": "身につける・着る"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_5s2y8k4t",
+    "category": "phrasal-verb",
+    "level": 9,
+    "headword": "pan out",
+    "definition": "to end up happening in a particular way, good or bad",
+    "example": "Things didn't {{pan}} {{out}} the way we had planned.",
+    "example2": "We'll see how the new project pans out.",
+    "meanings": {
+      "ja": "結果として〜になる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_5t9r9a3k",
@@ -373,6 +569,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_9e4y6u6f",
+    "category": "phrasal-verb",
+    "level": 4,
+    "headword": "set up",
+    "definition": "to start something such as a company or an account",
+    "example": "They {{set}} {{up}} a small company last year.",
+    "example2": "Can you help me set up my new phone?",
+    "meanings": {
+      "ja": "設立する・設定する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_9g3u2b3u",

@@ -175,6 +175,20 @@
     }
   },
   {
+    "id": "v_3u5x5d9x",
+    "category": "phrase",
+    "level": 4,
+    "headword": "can't complain",
+    "definition": "a reply meaning that things are going fine for you",
+    "example": "A: How's work these days?\nB: {{Can't}} {{complain}}.",
+    "example2": "A: How have you been?\nB: Can't complain. You?",
+    "meanings": {
+      "ja": "まあまあ順調だよ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_3y9n7g8h",
     "category": "phrase",
     "level": 5,
@@ -198,6 +212,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_4a3e7s3b",
+    "category": "phrase",
+    "level": 3,
+    "headword": "take care",
+    "definition": "said when saying goodbye, hoping the person stays safe",
+    "example": "A: I have to go now.\nB: Okay, {{take}} {{care}}!",
+    "example2": "A: Thanks for visiting.\nB: Take care on the way home.",
+    "meanings": {
+      "ja": "気をつけてね"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_4f9e9y7f",
@@ -275,6 +303,20 @@
     }
   },
   {
+    "id": "v_5b2z6p6n",
+    "category": "phrase",
+    "level": 8,
+    "headword": "for what it's worth",
+    "definition": "said before you give an opinion you are not sure will help",
+    "example": "A: Should I take the job?\nB: {{For}} {{what}} {{it's}} {{worth}}, I think you should.",
+    "example2": "For what it's worth, I liked your presentation.",
+    "meanings": {
+      "ja": "参考までに言うと"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_5h8n5c2k",
     "category": "phrase",
     "level": 1,
@@ -348,6 +390,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_5x2s5g7j",
+    "category": "phrase",
+    "level": 8,
+    "headword": "suit yourself",
+    "definition": "said when you accept someone's choice but do not agree with it",
+    "example": "A: I think I'll skip the party.\nB: {{Suit}} {{yourself}}.",
+    "example2": "A: I'm walking home.\nB: Suit yourself. It's raining, though.",
+    "meanings": {
+      "ja": "お好きにどうぞ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_5x3t6s2x",
@@ -475,6 +531,20 @@
     }
   },
   {
+    "id": "v_7b4b4d7z",
+    "category": "phrase",
+    "level": 3,
+    "headword": "good luck",
+    "definition": "said to wish someone success before something hard",
+    "example": "A: My interview is tomorrow.\nB: {{Good}} {{luck}}!",
+    "example2": "A: I'm taking my driving test today.\nB: Good luck!",
+    "meanings": {
+      "ja": "頑張ってね"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_7p7s3s5b",
     "category": "phrase",
     "level": 2,
@@ -550,6 +620,34 @@
     }
   },
   {
+    "id": "v_8j5m5p5d",
+    "category": "phrase",
+    "level": 4,
+    "headword": "go ahead",
+    "definition": "said to give someone permission to start doing something",
+    "example": "A: Do you mind if I open the window?\nB: {{Go}} {{ahead}}.",
+    "example2": "A: Can I ask a question?\nB: Sure, go ahead.",
+    "meanings": {
+      "ja": "どうぞ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_8k6v5z4h",
+    "category": "phrase",
+    "level": 4,
+    "headword": "that's too bad",
+    "definition": "said to show sympathy when someone tells you disappointing news",
+    "example": "A: I missed my train and was late for work.\nB: {{That's}} {{too}} {{bad}}.",
+    "example2": "A: Our trip was canceled.\nB: Oh, that's too bad.",
+    "meanings": {
+      "ja": "それは残念だね"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_9j2q5h8n",
     "category": "phrase",
     "level": 3,
@@ -623,5 +721,19 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_9r6b3c8p",
+    "category": "phrase",
+    "level": 8,
+    "headword": "that rings a bell",
+    "definition": "said when a name or fact seems slightly familiar to you",
+    "example": "A: Do you remember a guy called Marcus?\nB: {{That}} {{rings}} {{a}} {{bell}}.",
+    "example2": "A: We met at the 2019 conference.\nB: Hmm, that rings a bell.",
+    "meanings": {
+      "ja": "聞き覚えがあるな"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   }
 ]

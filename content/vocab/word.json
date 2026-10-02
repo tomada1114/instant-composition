@@ -200,6 +200,20 @@
     }
   },
   {
+    "id": "v_4z5f3e5m",
+    "category": "word",
+    "level": 3,
+    "headword": "prepare",
+    "definition": "to get something ready before it is needed",
+    "example": "I need to {{prepare}} dinner before the guests arrive.",
+    "example2": "Are you prepared for tomorrow's test?",
+    "meanings": {
+      "ja": "準備する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_5a7q4w2p",
     "category": "word",
     "level": 5,
@@ -298,6 +312,34 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_5r9k8u5s",
+    "category": "word",
+    "level": 7,
+    "headword": "feasible",
+    "definition": "possible to do and likely to work in practice",
+    "example": "The plan sounds good, but is it {{feasible}}?",
+    "example2": "A feasible schedule leaves time for mistakes.",
+    "meanings": {
+      "ja": "実現可能な"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_5t8h9a3g",
+    "category": "word",
+    "level": 7,
+    "headword": "inevitable",
+    "definition": "certain to happen and impossible to avoid",
+    "example": "With so much snow, delays were {{inevitable}}.",
+    "example2": "Change is inevitable in any growing company.",
+    "meanings": {
+      "ja": "避けられない"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_5w3g2d4h",
@@ -425,6 +467,20 @@
     }
   },
   {
+    "id": "v_7c9k6r9d",
+    "category": "word",
+    "level": 9,
+    "headword": "scrutinize",
+    "definition": "to examine something very carefully to find any mistakes",
+    "example": "Auditors {{scrutinize}} every receipt in the report.",
+    "example2": "Voters scrutinized the candidate's past statements.",
+    "meanings": {
+      "ja": "詳しく調べる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_7d8k6k2w",
     "category": "word",
     "level": 6,
@@ -475,6 +531,20 @@
     }
   },
   {
+    "id": "v_7k9b2j9r",
+    "category": "word",
+    "level": 5,
+    "headword": "involve",
+    "definition": "to have something as a necessary part",
+    "example": "The job will {{involve}} some travel abroad.",
+    "example2": "Cooking for fifty people involves a lot of planning.",
+    "meanings": {
+      "ja": "伴う・含む"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_7p3u5z4y",
     "category": "word",
     "level": 10,
@@ -498,6 +568,90 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_8b8f4n7f",
+    "category": "word",
+    "level": 9,
+    "headword": "ephemeral",
+    "definition": "lasting for only a very brief time",
+    "example": "Fame can be {{ephemeral}}, so save your money.",
+    "example2": "The beauty of cherry blossoms is ephemeral.",
+    "meanings": {
+      "ja": "はかない・つかの間の"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_8d6e9w8z",
+    "category": "word",
+    "level": 3,
+    "headword": "decide",
+    "definition": "to choose something after thinking about it",
+    "example": "We couldn't {{decide}} where to eat, so we ordered pizza.",
+    "example2": "Have you decided what to wear?",
+    "meanings": {
+      "ja": "決める"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_8s5n5k7b",
+    "category": "word",
+    "level": 5,
+    "headword": "achieve",
+    "definition": "to reach something you wanted by working hard",
+    "example": "She worked for years to {{achieve}} her dream.",
+    "example2": "We achieved good results this quarter.",
+    "meanings": {
+      "ja": "達成する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_9a5j9t4w",
+    "category": "word",
+    "level": 7,
+    "headword": "substantial",
+    "definition": "large in amount or importance",
+    "example": "The company made a {{substantial}} profit this year.",
+    "example2": "They received a substantial amount of help.",
+    "meanings": {
+      "ja": "かなりの・相当な"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_9e2q6p8a",
+    "category": "word",
+    "level": 3,
+    "headword": "improve",
+    "definition": "to become or to make something better",
+    "example": "She practices every day to {{improve}} her English.",
+    "example2": "The weather should improve this afternoon.",
+    "meanings": {
+      "ja": "上達する・改善する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_9g2u6c7t",
+    "category": "word",
+    "level": 5,
+    "headword": "reliable",
+    "definition": "able to be trusted to work or act well",
+    "example": "My car is old, but it's very {{reliable}}.",
+    "example2": "Is this website a reliable source of news?",
+    "meanings": {
+      "ja": "頼りになる・信頼できる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_9h7e2z7v",
@@ -548,5 +702,19 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_9y9q6a5b",
+    "category": "word",
+    "level": 9,
+    "headword": "pragmatic",
+    "definition": "dealing with problems in a practical way, not by theory",
+    "example": "She took a {{pragmatic}} approach to the budget.",
+    "example2": "Let's be pragmatic and choose the cheaper option.",
+    "meanings": {
+      "ja": "実利的な・現実的な"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   }
 ]
