@@ -1,5 +1,19 @@
 [
   {
+    "id": "v_2a7q3s6m",
+    "category": "idiom",
+    "level": 5,
+    "headword": "in the same boat",
+    "definition": "sharing a bad situation with other people",
+    "example": "Don't worry; we're all {{in}} {{the}} {{same}} {{boat}} this week.",
+    "example2": "Both of us lost our jobs, so we're in the same boat.",
+    "meanings": {
+      "ja": "同じ境遇にいる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_2c6v6j6y",
     "category": "idiom",
     "level": 7,
@@ -350,6 +364,20 @@
     }
   },
   {
+    "id": "v_3z7r6q5j",
+    "category": "idiom",
+    "level": 10,
+    "headword": "a bitter pill to swallow",
+    "definition": "a hard truth or loss that is painful to accept",
+    "example": "Losing the final in overtime was {{a}} {{bitter}} {{pill}} {{to}} {{swallow}}.",
+    "example2": "The pay cut was a bitter pill to swallow.",
+    "meanings": {
+      "ja": "受け入れがたい現実"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_3z8k7a8p",
     "category": "idiom",
     "level": 7,
@@ -523,6 +551,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_4x3g4s8y",
+    "category": "idiom",
+    "level": 5,
+    "headword": "keep an eye on",
+    "definition": "to check on someone or something now and then so nothing goes wrong",
+    "example": "Could you {{keep}} {{an}} {{eye}} {{on}} my bag for a minute?",
+    "example2": "I'm keeping an eye on the weather before the trip.",
+    "meanings": {
+      "ja": "見張る・注意しておく"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_5b2t3h3b",
@@ -1300,6 +1342,20 @@
     }
   },
   {
+    "id": "v_8m7r5p3z",
+    "category": "idiom",
+    "level": 10,
+    "headword": "the pot calling the kettle black",
+    "definition": "said when someone criticizes a fault that they also have",
+    "example": "Honestly, that is {{the}} {{pot}} {{calling}} {{the}} {{kettle}} {{black}}, because you are messy too.",
+    "example2": "Him calling me lazy is the pot calling the kettle black.",
+    "meanings": {
+      "ja": "目くそ鼻くそを笑う"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_8p7b4b4m",
     "category": "idiom",
     "level": 4,
@@ -1450,6 +1506,20 @@
     }
   },
   {
+    "id": "v_9e4h8z9j",
+    "category": "idiom",
+    "level": 5,
+    "headword": "see eye to eye",
+    "definition": "to share someone's opinion about something, without arguing",
+    "example": "My sister and I never {{see}} {{eye}} {{to}} {{eye}} about money.",
+    "example2": "The two managers finally saw eye to eye on the budget.",
+    "meanings": {
+      "ja": "意見が一致する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_9j2q9w6r",
     "category": "idiom",
     "level": 1,
@@ -1498,6 +1568,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_9r4g7b8t",
+    "category": "idiom",
+    "level": 10,
+    "headword": "a storm in a teacup",
+    "definition": "a lot of angry talk over something trivial",
+    "example": "The whole row turned out to be {{a}} {{storm}} {{in}} {{a}} {{teacup}}.",
+    "example2": "Don't panic; this is just a storm in a teacup.",
+    "meanings": {
+      "ja": "取るに足らない大騒ぎ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_9w4n5z3w",

@@ -1,5 +1,19 @@
 [
   {
+    "id": "v_2b5s6m7d",
+    "category": "phrase",
+    "level": 4,
+    "headword": "it's no big deal",
+    "definition": "said to tell someone that a minor mistake does not bother you",
+    "example": "A: Sorry, I spilled a little coffee on your desk.\nB: {{It's}} {{no}} {{big}} {{deal}}.",
+    "example2": "Don't worry about the late fee; it's no big deal.",
+    "meanings": {
+      "ja": "たいしたことないよ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_2b6n6t8p",
     "category": "phrase",
     "level": 8,
@@ -25,6 +39,20 @@
     }
   },
   {
+    "id": "v_2b6s2s8b",
+    "category": "phrase",
+    "level": 5,
+    "headword": "let me think about it",
+    "definition": "said when you want more time before deciding",
+    "example": "A: Do you want to buy the extended warranty?\nB: {{Let}} {{me}} {{think}} {{about}} {{it}}.",
+    "example2": "A: Will you join our club?\nB: Let me think about it.",
+    "meanings": {
+      "ja": "ちょっと考えさせて"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_2k6g3h6b",
     "category": "phrase",
     "level": 9,
@@ -48,6 +76,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_2s3n7x9k",
+    "category": "phrase",
+    "level": 5,
+    "headword": "I'll get back to you",
+    "definition": "said when you will answer someone later, not now",
+    "example": "A: Can you review this report by Friday?\nB: Maybe. {{I'll}} {{get}} {{back}} {{to}} {{you}} tomorrow.",
+    "example2": "A: What's the price?\nB: I'll get back to you.",
+    "meanings": {
+      "ja": "後で連絡するね"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_2u2e6m2v",
@@ -325,6 +367,20 @@
     }
   },
   {
+    "id": "v_3s9j5m7a",
+    "category": "phrase",
+    "level": 4,
+    "headword": "help yourself",
+    "definition": "said to invite a guest to take food or drink freely",
+    "example": "A: Can I try one of these cookies?\nB: Sure, {{help}} {{yourself}}.",
+    "example2": "There's coffee in the kitchen, so help yourself.",
+    "meanings": {
+      "ja": "ご自由にどうぞ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_3u3u4r8k",
     "category": "phrase",
     "level": 7,
@@ -398,6 +454,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_3x4x8p2a",
+    "category": "phrase",
+    "level": 4,
+    "headword": "I'm on my way",
+    "definition": "said on the phone to tell someone you are travelling to them now",
+    "example": "A: Where are you? We're all waiting.\nB: {{I'm}} {{on}} {{my}} {{way}}.",
+    "example2": "She called to say she was on her way.",
+    "meanings": {
+      "ja": "今向かってるよ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_3y9n7g8h",
@@ -725,6 +795,20 @@
     }
   },
   {
+    "id": "v_5a7m6p6u",
+    "category": "phrase",
+    "level": 8,
+    "headword": "I couldn't care less",
+    "definition": "said to show you are completely uninterested in something",
+    "example": "A: Did you hear who won the office quiz?\nB: {{I}} {{couldn't}} {{care}} {{less}}.",
+    "example2": "Honestly, I couldn't care less what they think.",
+    "meanings": {
+      "ja": "どうでもいいよ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_5b2z6p6n",
     "category": "phrase",
     "level": 7,
@@ -773,6 +857,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_5h7k5j9r",
+    "category": "phrase",
+    "level": 5,
+    "headword": "don't mention it",
+    "definition": "a polite reply when someone thanks you for a small favor",
+    "example": "A: Thanks for driving me home.\nB: {{Don't}} {{mention}} {{it}}.",
+    "example2": "A: Thank you for the notes.\nB: Don't mention it.",
+    "meanings": {
+      "ja": "どういたしまして"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_5h8n5c2k",
@@ -1250,6 +1348,20 @@
     }
   },
   {
+    "id": "v_8d5w9q9y",
+    "category": "phrase",
+    "level": 8,
+    "headword": "I'll take that as a compliment",
+    "definition": "said with a smile when you choose to hear a remark as praise",
+    "example": "A: You're surprisingly good at karaoke.\nB: {{I'll}} {{take}} {{that}} {{as}} {{a}} {{compliment}}.",
+    "example2": "A: You're stubborn.\nB: I'll take that as a compliment.",
+    "meanings": {
+      "ja": "ほめ言葉と受け取るよ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_8f4u7s9y",
     "category": "phrase",
     "level": 5,
@@ -1498,5 +1610,19 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_9u6p4j7m",
+    "category": "phrase",
+    "level": 8,
+    "headword": "come to think of it",
+    "definition": "said when you suddenly remember something relevant to the talk",
+    "example": "A: Did Mia say when she's arriving?\nB: No. {{Come}} {{to}} {{think}} {{of}} {{it}}, she never replied.",
+    "example2": "Come to think of it, I haven't seen him all week.",
+    "meanings": {
+      "ja": "そういえば"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   }
 ]

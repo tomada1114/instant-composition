@@ -75,6 +75,20 @@
     }
   },
   {
+    "id": "v_2f5j3b8d",
+    "category": "word",
+    "level": 1,
+    "headword": "teacher",
+    "definition": "a person who works at a school and helps students learn",
+    "example": "My {{teacher}} is very kind.",
+    "example2": "The teacher writes a word on the board.",
+    "meanings": {
+      "ja": "先生"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_2q8b5j5e",
     "category": "word",
     "level": 1,
@@ -125,6 +139,34 @@
     }
   },
   {
+    "id": "v_2w4x2e6r",
+    "category": "word",
+    "level": 7,
+    "headword": "negotiate",
+    "definition": "to discuss something formally to reach a deal",
+    "example": "They {{negotiated}} for weeks before signing the contract.",
+    "example2": "We're negotiating a lower price with the supplier.",
+    "meanings": {
+      "ja": "交渉する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_2x6t7p6k",
+    "category": "word",
+    "level": 5,
+    "headword": "recommend",
+    "definition": "to tell someone that something is good and worth trying",
+    "example": "Can you {{recommend}} a good dentist near here?",
+    "example2": "The doctor recommended more rest and plenty of water.",
+    "meanings": {
+      "ja": "勧める"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_2z9j4n3j",
     "category": "word",
     "level": 2,
@@ -148,6 +190,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_3d7k6k5q",
+    "category": "word",
+    "level": 9,
+    "headword": "tangible",
+    "definition": "real enough to be seen, touched or clearly measured",
+    "example": "The new tool brought {{tangible}} benefits within a month.",
+    "example2": "There is no tangible proof of the claim.",
+    "meanings": {
+      "ja": "具体的な・目に見える"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_3e8m9d3e",
@@ -273,6 +329,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_4m6b3a6p",
+    "category": "word",
+    "level": 9,
+    "headword": "disparate",
+    "definition": "made up of parts that seem to have nothing in common",
+    "example": "The team merged {{disparate}} ideas into one clear plan.",
+    "example2": "She studied disparate fields, from music to biology.",
+    "meanings": {
+      "ja": "異質な・かけ離れた"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_4n2d2m6s",
@@ -575,6 +645,20 @@
     }
   },
   {
+    "id": "v_5v2h8b9s",
+    "category": "word",
+    "level": 7,
+    "headword": "accountable",
+    "definition": "expected to explain your decisions and accept the results",
+    "example": "Managers are {{accountable}} for their team's mistakes.",
+    "example2": "Who will be held accountable for the delay?",
+    "meanings": {
+      "ja": "説明責任がある"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_5w3g2d4h",
     "category": "word",
     "level": 8,
@@ -600,6 +684,20 @@
     }
   },
   {
+    "id": "v_6a7b8b9k",
+    "category": "word",
+    "level": 4,
+    "headword": "suggest",
+    "definition": "to offer an idea or plan for someone to consider",
+    "example": "Can I {{suggest}} a different time for the meeting?",
+    "example2": "She suggested that we take the train.",
+    "meanings": {
+      "ja": "提案する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_6j2x4p6q",
     "category": "word",
     "level": 8,
@@ -623,6 +721,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_6j4d9e4e",
+    "category": "word",
+    "level": 1,
+    "headword": "breakfast",
+    "definition": "the meal you eat in the morning",
+    "example": "I eat {{breakfast}} at seven every day.",
+    "example2": "Do you want toast for breakfast?",
+    "meanings": {
+      "ja": "朝食"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_6m7e7d5r",
@@ -800,6 +912,20 @@
     }
   },
   {
+    "id": "v_7a4y7h5q",
+    "category": "word",
+    "level": 6,
+    "headword": "obstacle",
+    "definition": "something that blocks your way or makes a goal hard to reach",
+    "example": "Lack of money was the biggest {{obstacle}} to opening the cafe.",
+    "example2": "A fallen tree was an obstacle on the road.",
+    "meanings": {
+      "ja": "障害・妨げ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_7c9k6r9d",
     "category": "word",
     "level": 9,
@@ -923,6 +1049,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_7h5y9t5h",
+    "category": "word",
+    "level": 4,
+    "headword": "customer",
+    "definition": "a person who buys things or services from a shop",
+    "example": "The {{customer}} asked for a refund at the counter.",
+    "example2": "Our customers love the new menu.",
+    "meanings": {
+      "ja": "客"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_7k9b2j9r",
@@ -1175,6 +1315,48 @@
     }
   },
   {
+    "id": "v_8g8y7z8s",
+    "category": "word",
+    "level": 6,
+    "headword": "genuine",
+    "definition": "not fake, but exactly what it is said to be",
+    "example": "Is this bag made of {{genuine}} leather?",
+    "example2": "Make sure the parts you buy are genuine.",
+    "meanings": {
+      "ja": "本物の"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_8j8b8y4f",
+    "category": "word",
+    "level": 7,
+    "headword": "overlook",
+    "definition": "to fail to see something that is there",
+    "example": "I {{overlooked}} a typo in the final report.",
+    "example2": "Please don't overlook the small details.",
+    "meanings": {
+      "ja": "見落とす"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_8p6n3j3k",
+    "category": "word",
+    "level": 4,
+    "headword": "comfortable",
+    "definition": "pleasant to wear or sit in, with nothing tight or hard",
+    "example": "These shoes are really {{comfortable}}, even after a long walk.",
+    "example2": "This sofa is very comfortable for reading.",
+    "meanings": {
+      "ja": "心地よい"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_8s5n5k7b",
     "category": "word",
     "level": 5,
@@ -1198,6 +1380,34 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_8s8q2u8d",
+    "category": "word",
+    "level": 5,
+    "headword": "attitude",
+    "definition": "a person's general feelings about something, shown in how they act",
+    "example": "Her positive {{attitude}} made the long project easier.",
+    "example2": "I don't like his attitude toward customers.",
+    "meanings": {
+      "ja": "態度"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_8v5n9u8y",
+    "category": "word",
+    "level": 9,
+    "headword": "nuance",
+    "definition": "a very small difference in meaning, tone or feeling",
+    "example": "The translation missed the subtle {{nuance}} of her joke.",
+    "example2": "He explained every nuance of the contract.",
+    "meanings": {
+      "ja": "微妙な違い"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_8y2y6c4y",
@@ -1398,6 +1608,34 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_9m4t3d3b",
+    "category": "word",
+    "level": 6,
+    "headword": "restrict",
+    "definition": "to use rules to keep an activity or amount small",
+    "example": "The city will {{restrict}} cars in the old town on weekends.",
+    "example2": "Doctors restrict his sugar intake.",
+    "meanings": {
+      "ja": "制限する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_9t9b3h5d",
+    "category": "word",
+    "level": 5,
+    "headword": "afford",
+    "definition": "to have enough money to pay for something",
+    "example": "We can't {{afford}} a new car this year.",
+    "example2": "Can you afford to take a month off?",
+    "meanings": {
+      "ja": "買う余裕がある"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_9y9q6a5b",

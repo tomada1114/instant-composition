@@ -50,6 +50,20 @@
     }
   },
   {
+    "id": "v_2f3x3g6z",
+    "category": "phrasal-verb",
+    "level": 5,
+    "headword": "work out",
+    "definition": "to exercise your body to get stronger",
+    "example": "I {{work}} {{out}} at the gym three times a week.",
+    "example2": "She works out every morning before breakfast.",
+    "meanings": {
+      "ja": "運動する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_2g5n7r3s",
     "category": "phrasal-verb",
     "level": 8,
@@ -250,6 +264,20 @@
     }
   },
   {
+    "id": "v_3j7a5k5m",
+    "category": "phrasal-verb",
+    "level": 5,
+    "headword": "call off",
+    "definition": "to decide that a planned event will not happen",
+    "example": "They {{called}} {{off}} the picnic because of the rain.",
+    "example2": "The company called off the trip.",
+    "meanings": {
+      "ja": "中止する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_3j7k7u6m",
     "category": "phrasal-verb",
     "level": 8,
@@ -273,6 +301,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_3s5k4f3x",
+    "category": "phrasal-verb",
+    "level": 3,
+    "headword": "grow up",
+    "definition": "to change from a child into an adult",
+    "example": "I {{grew}} {{up}} in a small town by the sea.",
+    "example2": "What do you want to be when you grow up?",
+    "meanings": {
+      "ja": "育つ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_3s7m4s5f",
@@ -400,6 +442,20 @@
     }
   },
   {
+    "id": "v_4a7q7m5z",
+    "category": "phrasal-verb",
+    "level": 1,
+    "headword": "hurry up",
+    "definition": "to move or act faster because there is little time",
+    "example": "{{Hurry}} {{up}}, or we'll miss the bus!",
+    "example2": "Please hurry up so we are not late.",
+    "meanings": {
+      "ja": "急ぐ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_4c9y8r9c",
     "category": "phrasal-verb",
     "level": 4,
@@ -500,6 +556,34 @@
     }
   },
   {
+    "id": "v_4j8q5q3g",
+    "category": "phrasal-verb",
+    "level": 7,
+    "headword": "step down",
+    "definition": "to leave an important job or position by choice",
+    "example": "The CEO will {{step}} {{down}} at the end of the year.",
+    "example2": "She stepped down after ten years as chair.",
+    "meanings": {
+      "ja": "辞任する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_4q8q2u9s",
+    "category": "phrasal-verb",
+    "level": 8,
+    "headword": "factor in",
+    "definition": "to include something as a part of what you consider or calculate",
+    "example": "You should {{factor}} {{in}} travel time when planning the trip.",
+    "example2": "Did you factor the tax in?",
+    "meanings": {
+      "ja": "考慮に入れる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_4t7z6j4t",
     "category": "phrasal-verb",
     "level": 9,
@@ -550,6 +634,20 @@
     }
   },
   {
+    "id": "v_5a8m9r2c",
+    "category": "phrasal-verb",
+    "level": 1,
+    "headword": "get off",
+    "definition": "to leave a bus, train or plane",
+    "example": "Please {{get}} {{off}} at the next stop.",
+    "example2": "She got off the train in Osaka.",
+    "meanings": {
+      "ja": "降りる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_5b9z8r6s",
     "category": "phrasal-verb",
     "level": 3,
@@ -573,6 +671,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_5g5c4t2c",
+    "category": "phrasal-verb",
+    "level": 5,
+    "headword": "catch up",
+    "definition": "to reach someone who is ahead of you by moving faster",
+    "example": "Walk slowly, and I'll {{catch}} {{up}} with you.",
+    "example2": "He ran to catch up with the group.",
+    "meanings": {
+      "ja": "追いつく"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_5g8w8x4k",
@@ -648,6 +760,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_5s9p3x3m",
+    "category": "phrasal-verb",
+    "level": 8,
+    "headword": "fall through",
+    "definition": "to fail to happen after being planned or agreed",
+    "example": "Our plans to buy the house {{fell}} {{through}}.",
+    "example2": "The deal fell through at the last minute.",
+    "meanings": {
+      "ja": "頓挫する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_5t4p3q2n",
@@ -750,6 +876,20 @@
     }
   },
   {
+    "id": "v_6d6g6e7t",
+    "category": "phrasal-verb",
+    "level": 3,
+    "headword": "show up",
+    "definition": "to arrive at a place where people expect you",
+    "example": "He didn't {{show}} {{up}} for the meeting.",
+    "example2": "She showed up an hour late.",
+    "meanings": {
+      "ja": "現れる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_6f7h4h6g",
     "category": "phrasal-verb",
     "level": 6,
@@ -775,6 +915,20 @@
     }
   },
   {
+    "id": "v_6g3h5d3u",
+    "category": "phrasal-verb",
+    "level": 6,
+    "headword": "end up",
+    "definition": "to finally be in a place or situation you did not plan",
+    "example": "We got lost and {{ended}} {{up}} in a tiny village.",
+    "example2": "If you don't study, you'll end up failing the test.",
+    "meanings": {
+      "ja": "結局〜になる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_6m4v5a9v",
     "category": "phrasal-verb",
     "level": 2,
@@ -798,6 +952,48 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_6n8w6h6d",
+    "category": "phrasal-verb",
+    "level": 6,
+    "headword": "break down",
+    "definition": "to stop working, as a machine or vehicle does",
+    "example": "Our car {{broke}} {{down}} on the highway.",
+    "example2": "The washing machine broke down again last night.",
+    "meanings": {
+      "ja": "故障する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_6u9z6p3t",
+    "category": "phrasal-verb",
+    "level": 6,
+    "headword": "turn out",
+    "definition": "to prove to be a certain way, often unexpectedly",
+    "example": "Everyone worried, but the party {{turned}} {{out}} great.",
+    "example2": "It turned out that he was my neighbor.",
+    "meanings": {
+      "ja": "結果的に〜になる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_7c9k5h3k",
+    "category": "phrasal-verb",
+    "level": 8,
+    "headword": "single out",
+    "definition": "to choose one person from a group for special attention",
+    "example": "The teacher {{singled}} {{out}} Ken for his excellent essay.",
+    "example2": "I don't want to single anyone out.",
+    "meanings": {
+      "ja": "選び出す"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_7f8d7x7c",
@@ -898,6 +1094,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_8c8m4r6s",
+    "category": "phrasal-verb",
+    "level": 3,
+    "headword": "hang out",
+    "definition": "to spend relaxed time with friends without a plan",
+    "example": "We usually {{hang}} {{out}} at the park on Sundays.",
+    "example2": "Do you want to hang out tonight?",
+    "meanings": {
+      "ja": "ぶらぶら過ごす・遊ぶ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_8d6q6b5b",
@@ -1100,6 +1310,34 @@
     }
   },
   {
+    "id": "v_8z6v4b8b",
+    "category": "phrasal-verb",
+    "level": 7,
+    "headword": "back out",
+    "definition": "to decide not to do something you had agreed to",
+    "example": "He {{backed}} {{out}} of the deal at the last minute.",
+    "example2": "Don't back out now.",
+    "meanings": {
+      "ja": "手を引く"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_9b6s9h2g",
+    "category": "phrasal-verb",
+    "level": 1,
+    "headword": "go back",
+    "definition": "to return to a place you were in before",
+    "example": "I forgot my bag, so I must {{go}} {{back}}.",
+    "example2": "Let's go back to the hotel.",
+    "meanings": {
+      "ja": "戻る"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_9b6u2z3u",
     "category": "phrasal-verb",
     "level": 5,
@@ -1148,6 +1386,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_9c8j4p6b",
+    "category": "phrasal-verb",
+    "level": 7,
+    "headword": "bring about",
+    "definition": "to make an important change or result happen",
+    "example": "The new law {{brought}} {{about}} a real shift in how schools work.",
+    "example2": "What brought about the decision to close?",
+    "meanings": {
+      "ja": "もたらす"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_9e4y6u6f",
