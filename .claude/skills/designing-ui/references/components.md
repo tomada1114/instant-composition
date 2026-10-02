@@ -127,6 +127,8 @@ still stays the drill's, for its ticks.
   screen under it pads its foot by `--tab-bar-space` (the bar plus any inset it rises
   by) plus its own bottom gap. Home's skeleton reserves that space but draws no bar: a
   signed-out visitor at `/` must not see one flash before the landing.
+- On the talk screen it hides while a keyboard covers a focused field, and returns on
+  blur (the behavior reference's implementation rules).
 - Esc on records and settings still goes home.
 - From a round's first front until it closes, choosing a tab (or Back) pauses the drill
   and opens the leave sheet (see `sheet`); the start screen, the done screen, the

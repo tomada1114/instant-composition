@@ -201,6 +201,12 @@
   --safe-bottom: max(0px, env(safe-area-inset-bottom) - var(--column-inset));
   /* What a screen under the bar pads its foot by. */
   --tab-bar-space: calc(var(--tab-bar-height) + var(--safe-bottom));
+  /* The part of the layout viewport an on-screen keyboard leaves visible,
+   * which iOS Safari never resizes the layout for: the talk screen's
+   * `useKeyboardLift` writes the real values onto its `main` while a field
+   * there has focus, and the screen sizes itself from them instead. */
+  --visible-top: 0px;
+  --visible-height: var(--column-height);
 
   @variant wide {
     --column-height: min(100dvh, 45rem);
