@@ -43,6 +43,8 @@ export {
 } from "./difficulty";
 export { EMPTY_STATS, emptyTally } from "./empty";
 export type { PracticeError, TalkError } from "./errors";
+export { previewGrades, retrievability, scheduleCard } from "./fsrs";
+export type { FsrsGrade, FsrsState, GradePreview, Scheduled } from "./fsrs";
 export {
   reviewList,
   roundGrowth,
