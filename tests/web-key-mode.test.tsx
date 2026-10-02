@@ -1,5 +1,5 @@
 import { fireEvent, render } from "@testing-library/react";
-import { afterEach, describe, expect, it } from "vitest";
+import { afterEach, describe, expect, it, vi } from "vitest";
 
 import { KeyMode } from "@instant-composition/web";
 
@@ -12,7 +12,14 @@ function keysOn(): boolean {
 afterEach(() => {
   document.documentElement.removeAttribute("data-keys");
   localStorage.clear();
+  vi.unstubAllGlobals();
 });
+
+function stubDevice(touchOnly: boolean): void {
+  vi.stubGlobal("matchMedia", (query: string) => ({
+    matches: touchOnly && query === "(pointer: coarse) and (hover: none)",
+  }));
+}
 
 describe("KeyMode", () => {
   it("keeps key hints hidden until a key is pressed", () => {
@@ -37,5 +44,32 @@ describe("KeyMode", () => {
     localStorage.setItem(STORAGE_KEY, "1");
     render(<KeyMode />);
     expect(keysOn()).toBe(true);
+  });
+
+  it("leaves them off on a touch-only device, whose software keyboard fires keydown too", () => {
+    stubDevice(true);
+    render(<KeyMode />);
+    fireEvent.keyDown(window, { key: "a" });
+    expect(keysOn()).toBe(false);
+    expect(localStorage.getItem(STORAGE_KEY)).toBeNull();
+  });
+
+  it("turns them on at the first key on a fine pointer", () => {
+    stubDevice(false);
+    render(<KeyMode />);
+    fireEvent.keyDown(window, { key: "a" });
+    expect(keysOn()).toBe(true);
+  });
+
+  it.each([
+    ["Process", { isComposing: true }],
+    ["Process", {}],
+    ["Unidentified", {}],
+    ["a", { isComposing: true }],
+  ])("does not count a composing %s as using the keys", (key, init) => {
+    render(<KeyMode />);
+    fireEvent.keyDown(window, { key, ...init });
+    expect(keysOn()).toBe(false);
+    expect(localStorage.getItem(STORAGE_KEY)).toBeNull();
   });
 });
