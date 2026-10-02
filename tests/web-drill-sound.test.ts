@@ -14,7 +14,7 @@ interface Scheduled {
 }
 
 /** A stand-in for `AudioContext` that records the tones scheduled on it. */
-function fakeContext(state: "running" | "suspended" = "suspended") {
+function fakeContext(state: ToneContext["state"] = "suspended") {
   const tones: Scheduled[] = [];
   let resumed = 0;
   const param = () => ({
@@ -23,7 +23,7 @@ function fakeContext(state: "running" | "suspended" = "suspended") {
     linearRampToValueAtTime: () => undefined,
     exponentialRampToValueAtTime: () => undefined,
   });
-  const context: ToneContext & { state: string } = {
+  const context: ToneContext & { state: ToneContext["state"] } = {
     state,
     currentTime: 10,
     destination: {},
@@ -68,6 +68,26 @@ describe("createSoundPlayer", () => {
     player.unlock();
     expect(created).toBe(1);
     expect(fake.resumed()).toBe(1);
+  });
+
+  it("resumes a context iOS left interrupted on the next unlock", () => {
+    const fake = fakeContext("running");
+    const player = createSoundPlayer(() => fake.context);
+    player.unlock();
+    expect(fake.resumed()).toBe(0);
+
+    fake.context.state = "interrupted";
+    player.unlock();
+    expect(fake.resumed()).toBe(1);
+    expect(fake.context.state).toBe("running");
+  });
+
+  it("does not resume a context that is already running", () => {
+    const fake = fakeContext("running");
+    const player = createSoundPlayer(() => fake.context);
+    player.unlock();
+    player.unlock();
+    expect(fake.resumed()).toBe(0);
   });
 
   it("plays one short tone for ○, a step higher when fast", () => {

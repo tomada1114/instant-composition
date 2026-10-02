@@ -158,6 +158,11 @@ Firefox, Samsung Internet and tablets only keep working.
   area at least 44 × 44, as `choice-chip` does, so a finger finds it.
 - The talk fields set `enterKeyHint` — `next` at W3a, `send` at W3b — so the software
   keyboard's return key says what Enter does there.
+- The tone context is resumed on every unlock whose state is anything but `"running"`
+  (`apps/web/src/drill/sound.ts`): iOS moves an `AudioContext` to `"interrupted"`, not
+  `"suspended"`, after a call, Siri or an app switch, and leaves it silent until a
+  gesture resumes it (#398 R5). The silent switch still mutes the tones: no
+  `navigator.audioSession` change.
 
 ## Implementation rules
 
