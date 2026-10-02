@@ -1830,7 +1830,7 @@ const PHRASE = {
   level: 3,
   headword: "no worries",
   definition: "said to tell someone that something is not a problem",
-  example: "A: Sorry, I forgot to call you back.\nB: {{No worries}}.",
+  example: "A: Sorry, I forgot to call you back.\nB: {{No}} {{worries}}.",
   example2: "A: Thanks for waiting.\nB: No worries, I just got here.",
   meanings: { ja: "気にしないで" },
 };
@@ -1865,7 +1865,7 @@ describe("the command line with --kind", () => {
     const root = makeContentRoot();
     writeCards(root, "work/meetings.json", [makeCard("c_2a2a2a2a")]);
     writeVocab(root, "phrase.json", [
-      makeVocabCard("v_2a2a2a2a", { ...PHRASE, example: "{{No worries}}." }),
+      makeVocabCard("v_2a2a2a2a", { ...PHRASE, example: "{{No}} {{worries}}." }),
     ]);
     const run = runCards(root, ["lint"]);
     expect(run.code).toBe(0);
@@ -1888,7 +1888,7 @@ describe("cards:lint --kind vocab", () => {
     writeVocab(root, "phrase.json", [
       makeVocabCard("v_2a2a2a2a", {
         ...PHRASE,
-        example: "{{No worries}}, it happens.",
+        example: "{{No}} {{worries}}, it happens.",
       }),
     ]);
     const run = vocab(root, ["lint"]);
@@ -1916,10 +1916,11 @@ describe("cards:lint --kind vocab", () => {
     ["BLANK", { example: "She was so tired that she gave up halfway." }],
     ["BLANK", { example: "She was so tired that she {{gave up halfway." }],
     ["BLANK", { example: "She was so tired that she {{took}} {{up}} halfway." }],
+    ["BLANK", { example: "She was so tired that she {{gave up}} halfway." }],
     ["END_PUNCTUATION", { example: "She was so tired that she {{gave}} {{up}}" }],
     ["ONE_SENTENCE", { example: "She was tired. She {{gave}} {{up}}." }],
     ["ONE_LINE", { example: "She was tired.\nShe {{gave}} {{up}}." }],
-    ["DIALOGUE", { ...PHRASE, example: "B: Sorry.\nA: {{No worries}}." }],
+    ["DIALOGUE", { ...PHRASE, example: "B: Sorry.\nA: {{No}} {{worries}}." }],
     [
       "WORD_COUNT",
       {
@@ -1983,7 +1984,7 @@ describe("cards:lint --kind vocab", () => {
       makeVocabCard("v_3a3a3a3a", {
         ...PHRASE,
         headword: "never mind",
-        example: "A: I lost it.\nB: {{Never mind}}.",
+        example: "A: I lost it.\nB: {{Never}} {{mind}}.",
         example2: "B: Thanks.\nA: Never mind.",
       }),
     ]);
@@ -2515,7 +2516,7 @@ describe("cards:show --kind vocab", () => {
       "v_3a3a3a3a  phrase L3  unstamped",
       "  headword: no worries",
       "  definition: said to tell someone that something is not a problem",
-      "  example: A: Sorry, I forgot to call you back. / B: {{No worries}}.",
+      "  example: A: Sorry, I forgot to call you back. / B: {{No}} {{worries}}.",
       "  example2: A: Thanks for waiting. / B: No worries, I just got here.",
       '  meanings: {"ja":"気にしないで"}',
       "2 vocab cards",

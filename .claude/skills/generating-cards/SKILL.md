@@ -2,18 +2,19 @@
 name: generating-cards
 description: >
   Use when asked to generate, write, or add instant-composition cards (Japanese prompt,
-  English model answer) under content/cards/, to fill thin topic/subtopic/level cells,
-  to add a new subtopic to content/taxonomy.json, or when running /generating-cards with
-  a count and an optional range such as topic=work level=5-6.
+  English model answer) under content/cards/ or vocabulary cards (word, idiom, phrasal
+  verb, set phrase) under content/vocab/, to fill thin cells, to add a new subtopic to
+  content/taxonomy.json, or when running /generating-cards with a count and an optional
+  range such as topic=work level=5-6 or kind=vocab category=idiom level=5.
 ---
 
 # Generating Cards
 
-**Owns:** writing new cards into `content/cards/` — choosing which cells to fill,
-briefing the writer, and admitting what it returns. **Does not own:** judging a card's
-quality or fixing one (`reviewing-cards`); filling a new field on existing cards
-(`backfilling-card-fields`); changing what the `pnpm cards:*` commands check
-(`writing-repo-scripts`).
+**Owns:** writing new cards into `content/cards/`, and vocabulary cards into
+`content/vocab/` — choosing which cells to fill, briefing the writer, and admitting what
+it returns. **Does not own:** judging a card's quality or fixing one
+(`reviewing-cards`); filling a new field on existing cards (`backfilling-card-fields`);
+changing what the `pnpm cards:*` commands check (`writing-repo-scripts`).
 
 Invoking this skill is the owner's authorization to **commit** on a `cards/*` branch. It
 never authorizes a push, a pull request, or a merge.
@@ -22,6 +23,7 @@ never authorizes a push, a pull request, or a merge.
 
 ```
 /generating-cards <count> [topic=<id>[,<id>]] [subtopic=<topic>/<id>] [level=<n>|<n>-<m>] [new] [--no-review]
+/generating-cards <count> kind=vocab [category=<id>[,<id>]] [level=<n>|<n>-<m>] [--no-review]
 ```
 
 - `count` — cards to add this run, at most 50. A larger request is run as several
@@ -31,6 +33,8 @@ never authorizes a push, a pull request, or a merge.
   first. Without `new`, an unknown subtopic is an error, never an invitation to add one.
 - `--no-review` — stop after writing. The cards stay unstamped, so the app never shows
   them until `reviewing-cards` runs.
+- `kind=vocab` — vocabulary cards; see "Vocabulary cards" below. Without it, the run
+  writes the drill's cards, as it always has.
 
 ## Who does what
 
@@ -79,6 +83,23 @@ near-duplicate check in `cards:add`, and one full review. Watch the tombstone co
 9. **Report**: cards admitted per cell, dropped count by reason, cards admitted over a
    target, any gaps or top-up shortfall, the review summary, and
    `pnpm -s cards:stats --short | head -2`.
+
+## Vocabulary cards (`kind=vocab`)
+
+The procedure above, with these changes and no others:
+
+- Every `pnpm cards:*` command takes `--kind vocab`: `cards:gaps --kind vocab`,
+  `cards:add --kind vocab`, `cards:stats --kind vocab`.
+- **Range.** `category=` (`word`, `idiom`, `phrasal-verb`, `phrase`) and `level=`;
+  `topic=`, `subtopic=` and `new` do not apply. The plan's cells are category × level.
+- **Write.** The writer's brief is
+  `.claude/skills/generating-cards/references/vocab-writer-brief.md`, and its guide
+  `content/guides/vocab-writing.md`.
+- **Admit.** `cards:add --kind vocab` drops a card that fails lint, or whose normalized
+  headword a card or tombstone in its category already has (`DUPLICATE`). It prints no
+  `OVER_TARGET` line: vocabulary has caps, not targets.
+- **Commit** `feat(cards): add <n> vocab cards (<cells>)`.
+- **Review** with `reviewing-cards kind=vocab --ids <every id admitted this run>`.
 
 ## Stop rules
 

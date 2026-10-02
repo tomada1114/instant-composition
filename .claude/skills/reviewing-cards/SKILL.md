@@ -2,9 +2,10 @@
 name: reviewing-cards
 description: >
   Use when asked to review, check, proofread, fix, or stamp instant-composition cards
-  under content/cards/, when pnpm cards:lint reports errors, when unreviewed or changed
-  cards are waiting in pnpm cards:queue, when a single card looks wrong while using the
-  app, or when content/guides/review-perspectives.md changed its perspectivesVersion.
+  under content/cards/ or vocabulary cards under content/vocab/ (kind=vocab), when pnpm
+  cards:lint reports errors, when unreviewed or changed cards are waiting in pnpm
+  cards:queue, when a single card looks wrong while using the app, or when
+  content/guides/review-perspectives.md changed its perspectivesVersion.
 ---
 
 # Reviewing Cards
@@ -22,12 +23,15 @@ applied without asking; git is the undo.
 
 ```
 /reviewing-cards [topic=…] [subtopic=…] [level=…] [--ids <id,id,…>] [--note "<text>"] [--field <name>] [--limit <n>]
+/reviewing-cards kind=vocab [category=…] [level=…] [--ids <id,id,…>] [--note "<text>"] [--field meanings.<lang>] [--limit <n>]
 ```
 
 - No arguments: the default queue, at most 50 cards.
 - `--ids` reviews exactly those cards, stamped or not. `--note` passes the owner's
   observation to the reviewer, to check specifically.
 - `--field <name>`: review only that backfilled field.
+- `kind=vocab` reviews vocabulary cards; see "Vocabulary cards" below. Without it, the
+  run reviews the drill's cards.
 
 ## Who does what
 
@@ -84,6 +88,28 @@ the commands and git, and reads the reviewer's files only as far as applying the
    outside an `--ids` run; the cards still over a target, with the summary's
    `overTarget` reasons; anything left unstamped; `guideIssues` from the summary files;
    and `pnpm -s cards:queue --count`.
+
+## Vocabulary cards (`kind=vocab`)
+
+The procedure above, with these changes and no others:
+
+- Every `pnpm cards:*` command takes `--kind vocab`, and the range is `category=` and
+  `level=`.
+- **Review.** The reviewer's brief is
+  `.claude/skills/reviewing-cards/references/vocab-review-brief.md`, and it checks
+  against `content/guides/vocab-review-perspectives.md`.
+- **Apply.** Rebuilds use `cards:add --kind vocab … --replacing <old>`, so the new card
+  may keep the old headword, then `cards:tombstone --kind vocab … --replaced-by <new>`.
+  A vocabulary tombstone line carries `"kind": "vocab"`.
+- **Stamp.** `cards:stamp --kind vocab --ids <them>` stamps the core and every meaning
+  the card holds; there is no `OVER_TARGET` to count.
+- **`--field meanings.<lang>`** reviews one meaning. `cards:queue --kind vocab` takes
+  neither `--field` nor `--missing`, so queue the cards by `--ids` (the ids
+  `backfilling-card-fields` filled), pass `Field: meanings.<lang>` to the reviewer, and
+  stamp with `cards:stamp --kind vocab --ids <them> --field meanings.<lang>`, which
+  leaves the core stamp alone.
+- **Commit** `fix(cards): review <n> vocab cards (<kept>/<edited>/<rebuilt>/<deleted>)`
+  (for a meaning: `fix(cards): review meanings.<lang> on <n> vocab cards`).
 
 ## Stop rules
 

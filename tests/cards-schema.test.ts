@@ -9,6 +9,7 @@ import {
   randomId,
   readStamp,
 } from "../scripts/cards/schema.mjs";
+import { loadLists } from "../scripts/cards/store.mjs";
 import { findNearDuplicates, isNearDuplicate } from "../scripts/cards/similarity.mjs";
 import {
   blanksMatch,
@@ -16,6 +17,7 @@ import {
   fillBlanks,
   findHeadwordDuplicates,
   isFormOf,
+  lintVocabCard,
   normalizeHeadword,
   wordsOf,
 } from "../scripts/cards/vocab-rules.mjs";
@@ -531,6 +533,34 @@ describe("the blanks in an example", () => {
       expect(blanksOf(text).wellFormed).toBe(false);
     },
   );
+
+  it("rejects a mark that holds more than one word, and keeps a contraction as one", () => {
+    const card = {
+      category: "phrasal-verb",
+      level: 4,
+      headword: "figure out",
+      definition: "to understand something by thinking",
+      example: "I can't {{figure out}} how to turn off this alarm.",
+      example2: "I finally figured it out.",
+      meanings: { ja: "理解する" },
+      createdAt: "2026-09-10",
+      stamps: {},
+    };
+    const codes = (example: string, headword = card.headword) =>
+      lintVocabCard(
+        { ...card, headword, example },
+        "v_2a2a2a2a",
+        loadLists("content"),
+        {
+          requireStored: false,
+        },
+      ).map((finding) => finding.rule);
+    expect(codes(card.example)).toContain("BLANK");
+    expect(
+      codes("I can't {{figure}} {{out}} how to turn off this alarm."),
+    ).not.toContain("BLANK");
+    expect(codes("I {{can't}} {{figure}} it.", "can't figure")).not.toContain("BLANK");
+  });
 
   it("splits English into lower-case words, keeping inner apostrophes and hyphens", () => {
     expect(wordsOf("“It’s a well-known {{rule}},” she said.")).toEqual([

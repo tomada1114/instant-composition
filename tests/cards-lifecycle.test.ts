@@ -179,7 +179,7 @@ describe("a card set's life through the cards:* commands", () => {
         level: 3,
         headword: "no worries",
         definition: "said to tell someone that something is not a problem",
-        example: "A: Sorry, I forgot to call you back.\nB: {{No worries}}.",
+        example: "A: Sorry, I forgot to call you back.\nB: {{No}} {{worries}}.",
         example2: "A: Thanks for waiting.\nB: No worries, I just got here.",
         meanings: { ja: "気にしないで" },
       }),
