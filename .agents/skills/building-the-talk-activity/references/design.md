@@ -263,11 +263,12 @@ Japanese.
 
 ## The web client
 
-- The route is `/talk`, the fourth tab 「会話」 with a speech-bubble glyph; the tab bar
-  becomes four equal cells. The screen holds the step it is on in React state: a reload
-  loses the talk, as requirements §3.1 asks.
-- New parts go into designing-ui's inventory first (ux-flows §4.1): the four tabs, the
-  talk line, the waiting line, the hidden model answer, and the underline field rebuilt.
+- The route is `/talk`, the navigation's second section 「会話」 with a speech-bubble
+  glyph. The screen holds the step it is on in React state: a reload loses the talk, as
+  requirements §3.1 asks.
+- New parts go into designing-ui's inventory first (ux-flows §4.1): the fourth section,
+  the talk line, the waiting line, the hidden model answer, and the underline field
+  rebuilt.
 - Requests follow the operations above: 「始める」 → `startTalk`; 「送る」 on the
   English or「わからない」 → `sendTurn`; the held reply shows after 「言えた」 or with
   the ○; W3g's「もう一度」 → `retryReply`; W4's 「終える」 → `endTalk`. Leaving mid-talk
