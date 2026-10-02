@@ -170,6 +170,67 @@
       "reload": "読み込み直す"
     }
   },
+  "Talk": {
+    "start": {
+      "title": "会話",
+      "turns": "ターン",
+      "scene": "場面はおまかせ",
+      "go": "始める",
+      "preparing": "用意しています",
+      "failed": "始められませんでした",
+      "retry": "もう一度"
+    },
+    "strip": {
+      "close": "会話を終える",
+      "progress": "{current} / {total}"
+    },
+    "speaker": {
+      "scene": "場面",
+      "partner": "相手",
+      "you": "あなた",
+      "teacher": "先生"
+    },
+    "step": {
+      "japanese": "日本語で",
+      "japaneseHint": "1 つのことを、短く",
+      "english": "英語で",
+      "englishHint": "言える語で言い切る",
+      "notEnglish": "英語で入力してください",
+      "send": "送る",
+      "giveUp": "わからない"
+    },
+    "teacher": {
+      "point": "要点",
+      "aloud": "声に出して",
+      "hidden": "隠しました",
+      "hide": "隠して言う",
+      "lookAgain": "もう一度見る",
+      "said": "言えた"
+    },
+    "reply": {
+      "failed": "返事を受け取れませんでした",
+      "retry": "もう一度"
+    },
+    "end": {
+      "mark": "おわり",
+      "again": "新しい会話"
+    },
+    "leave": {
+      "title": "会話を終えますか",
+      "kept": "ここまでの {count} ターンは残ります",
+      "lost": "この会話は残りません",
+      "end": "終える",
+      "stay": "続ける"
+    },
+    "toast": {
+      "judgment": "判定できなかったので、先へ進みます",
+      "save": "記録を保存できませんでした"
+    },
+    "announce": {
+      "line": "{speaker}、{text}",
+      "fine": "○、直しなし"
+    }
+  },
   "Summary": {
     "title": {
       "today": "今日は完了",

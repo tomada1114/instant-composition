@@ -12,9 +12,10 @@ const MAX_TICKS = 30;
 
 /**
  * One tick per card of the pass: done in white, the current one dimmed —
- * lit with the accent the moment it is said — and the rest grooves.
+ * lit with the accent the moment it is said — and the rest grooves. The talk
+ * screen draws one per turn the same way.
  */
-function Ticks({
+export function Ticks({
   current,
   total,
   lit,

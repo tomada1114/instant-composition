@@ -85,8 +85,10 @@ export type {
   HomePreview,
   HomeState,
   HomeView,
+  Judgment,
   LevelChoice,
   LevelView,
+  PartnerReply,
   Pass,
   Profile,
   ProfilePatch,
@@ -100,7 +102,10 @@ export type {
   SettingsPatch,
   SettingsView,
   StreakView,
+  TalkOpened,
   TopicInfo,
+  TurnResult,
+  Verdict,
 } from "./openapi";
 export { countUpPlan, valueAt, type CountUp } from "./summary/count-up";
 export { SummaryScreen } from "./summary/summary-screen";
@@ -111,3 +116,9 @@ export { HiddenAnswer } from "./ui/hidden-answer";
 export { Sheet } from "./ui/sheet";
 export { Segmented } from "./ui/segmented";
 export { TalkLine, WaitingLine } from "./ui/talk-line";
+export {
+  IDLE as TALK_IDLE,
+  talkReducer,
+  type TalkEvent,
+  type TalkState,
+} from "./talk/talk-state";

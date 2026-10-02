@@ -30,7 +30,7 @@ export type SendOutcome = "sent" | "rejected" | "failed";
  */
 export interface OperationData {
   readonly url: string;
-  readonly path?: Readonly<Record<string, string>>;
+  readonly path?: Readonly<Record<string, string | number>>;
   readonly body?: unknown;
 }
 
@@ -39,7 +39,7 @@ export type Method = "GET" | "POST" | "PATCH";
 /** `data.url` under {@link API_ROOT}, each `{name}` filled with its encoded path parameter. */
 export function operationUrl(data: OperationData): string {
   const filled = data.url.replace(/\{(\w+)\}/gu, (_, name: string) =>
-    encodeURIComponent(data.path?.[name] ?? ""),
+    encodeURIComponent(String(data.path?.[name] ?? "")),
   );
   return `${API_ROOT}${filled}`;
 }
