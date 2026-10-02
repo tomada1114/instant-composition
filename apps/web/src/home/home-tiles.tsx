@@ -28,7 +28,7 @@ function Tile({
         {title}
       </h2>
       <div className="flex flex-1 flex-col gap-3">{children}</div>
-      <div className="-mx-3 -mb-2 flex">{foot}</div>
+      <div className="flex">{foot}</div>
     </section>
   );
 }
@@ -37,7 +37,7 @@ function Tile({
 function SeeRecords(): ReactElement {
   const t = useTranslations("Home.tiles");
   return (
-    <Button asChild variant="text">
+    <Button asChild variant="text" className="-mx-3 -mb-2">
       <Link to="/records">
         {t("seeRecords")}
         <ArrowGlyph className="size-4" />
@@ -160,7 +160,7 @@ export function HomeTiles(): ReactElement {
       <Tile
         title={t("talk")}
         foot={
-          <Button asChild variant="secondary" className="mx-3 mb-2 w-full">
+          <Button asChild variant="secondary" className="w-full">
             <Link to="/talk">{t("talkStart")}</Link>
           </Button>
         }

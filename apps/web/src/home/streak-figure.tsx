@@ -51,7 +51,8 @@ const DISC: Readonly<Record<DiscState, string>> = {
  * `week-row`: Monday to Sunday as seven 32 discs, each over its weekday —
  * done (an `energy` disc with a check), today not yet done (an ink ring),
  * open (a solid ring, can still be made up), missed (a `raised` disc), ahead
- * (a dashed ring). The API sends today undone as `upcoming`, so `today`
+ * (a dashed ring). A tile narrower than the row's 272 shrinks the discs
+ * rather than overflowing. The API sends today undone as `upcoming`, so `today`
  * names it. `lit` is a day a round just completed, drawn done.
  */
 export function WeekRow({
@@ -65,7 +66,7 @@ export function WeekRow({
 }>): ReactElement {
   const t = useTranslations("Home.week");
   return (
-    <ol className="flex gap-2">
+    <ol className="flex w-full max-w-68 gap-2">
       {dots.map((dot, index) => {
         const state: DiscState =
           dot.day === lit
@@ -74,14 +75,17 @@ export function WeekRow({
               ? "today"
               : dot.state;
         return (
-          <li key={dot.day} className="flex flex-col items-center gap-1.5">
+          <li
+            key={dot.day}
+            className="flex min-w-0 flex-1 flex-col items-center gap-1.5"
+          >
             <span className="text-caption text-muted-foreground">
               {t(WEEKDAYS[index] ?? "sun")}
             </span>
             <span
               data-state={state}
               className={cn(
-                "flex size-8 items-center justify-center rounded-full",
+                "flex aspect-square w-full max-w-8 items-center justify-center rounded-full",
                 DISC[state],
               )}
             >
