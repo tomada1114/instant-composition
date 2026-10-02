@@ -204,14 +204,25 @@
     "category": "word",
     "level": 3,
     "headword": "prepare",
-    "definition": "to get something ready before it is needed",
-    "example": "I need to {{prepare}} dinner before the guests arrive.",
+    "definition": "to get ready for something that will happen soon",
+    "example": "I need to {{prepare}} for tomorrow's big meeting.",
     "example2": "Are you prepared for tomorrow's test?",
     "meanings": {
       "ja": "準備する"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7598e82a6d29247ec06977a40a0513ca77232b76c3b911fb0aa49ab2f1b7cf5c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:9d3990fe693b4f52e0b4c264fdb478670ebd4b172286c0dcb29bad8488a81b4a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5a7q4w2p",
@@ -325,21 +336,43 @@
       "ja": "実現可能な"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c872d239db5b470f083ad28021409eb5374db1c5f6d65f41b3847617a26622ba",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:e9e58ee75283f97b761190df32f4a21a94e1df6b12ea6c2b696c055d34595e19",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5t8h9a3g",
     "category": "word",
     "level": 7,
     "headword": "inevitable",
-    "definition": "certain to happen and impossible to avoid",
+    "definition": "certain to happen, whatever anyone does to stop it",
     "example": "With so much snow, delays were {{inevitable}}.",
     "example2": "Change is inevitable in any growing company.",
     "meanings": {
       "ja": "避けられない"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1d71ee430eafff669d8429d601a1988efe60f9c980ff09b8c25e0bf5ed680796",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:f7dd21a8ab002871e3b806bbb1c2f8ed1434544e4289ed37ffefbece77e86e96",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5w3g2d4h",
@@ -478,7 +511,18 @@
       "ja": "詳しく調べる"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8b79337d01ff83095497b673acf34b33f03c09fbdae8a04610d8c44a4dda680b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:f652d8dd1500c242c32f49bea0bb46835c1e8655bc0ac31a9b25749301319684",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7d8k6k2w",
@@ -542,7 +586,18 @@
       "ja": "伴う・含む"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5a523f48879464cd9d0135632a8ddf654d76c22eabeefe18c4210a447faedb79",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:752223804006c1a99a649cab28833103338ab1c2e4be273f310d4dd918d53313",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7p3u5z4y",
@@ -581,21 +636,43 @@
       "ja": "はかない・つかの間の"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:924dca5dbfe0f868172df08a8141e624c583c2033d46cd04e1db77752c3945c1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:6f7fba430ed8df8629a7a3f95a1e16fc51f3adae32a6e5089cf609d07f98ce36",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8d6e9w8z",
     "category": "word",
     "level": 3,
     "headword": "decide",
-    "definition": "to choose something after thinking about it",
+    "definition": "to reach a final answer about what to do, after thinking",
     "example": "We couldn't {{decide}} where to eat, so we ordered pizza.",
     "example2": "Have you decided what to wear?",
     "meanings": {
       "ja": "決める"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c8ef35b2bee867a07bfd27b4e5b628232cc433562359608d927e899da47c6f76",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:75153eca453af864e81727fdaf75f3f7c9aecb7a2f45c6574d76a9d0cec6f8d6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8s5n5k7b",
@@ -609,35 +686,68 @@
       "ja": "達成する"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cd7d3d6fae43cc0f165d3ef8050ec44da6c8442365503ff72b3637bd19e74c36",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:e7ea4fc4f56e5142554c9b27fbc57d8979aa79462c07d4b34e15905da99782a4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9a5j9t4w",
     "category": "word",
     "level": 7,
     "headword": "substantial",
-    "definition": "large in amount or importance",
+    "definition": "much more than a small amount, enough to matter",
     "example": "The company made a {{substantial}} profit this year.",
     "example2": "They received a substantial amount of help.",
     "meanings": {
       "ja": "かなりの・相当な"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8c56b40b9f0b207ff3742147f3e3575adb8a727f63e8a0765cbdb9d5209def39",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:b8e9f85b71ceb811fd537c8fc51efad1bdfff26a394add1dc3821c2c849be8cd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9e2q6p8a",
     "category": "word",
     "level": 3,
     "headword": "improve",
-    "definition": "to become or to make something better",
+    "definition": "to raise the quality of something, or to become higher in quality",
     "example": "She practices every day to {{improve}} her English.",
     "example2": "The weather should improve this afternoon.",
     "meanings": {
       "ja": "上達する・改善する"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c4f6c7dd798e9f9eed2e606c6d2ceb10c984427c51762a5227acaa3ea3c62325",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:01f88786551722c049ae8877d99ea335267d2c808ae1b7be1f84d7aa695e8358",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9g2u6c7t",
@@ -651,7 +761,18 @@
       "ja": "頼りになる・信頼できる"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6e42d2c3f4833f489d61998e40efaa8edc7bc549b24c71b6742b8d171bb44508",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:0d2ff4d58d0603ecf7230af15b277cdc2b1b249bfe09336a738207f05e37e494",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9h7e2z7v",
@@ -706,15 +827,26 @@
   {
     "id": "v_9y9q6a5b",
     "category": "word",
-    "level": 9,
+    "level": 8,
     "headword": "pragmatic",
-    "definition": "dealing with problems in a practical way, not by theory",
+    "definition": "caring more about what works than about ideals or theory",
     "example": "She took a {{pragmatic}} approach to the budget.",
     "example2": "Let's be pragmatic and choose the cheaper option.",
     "meanings": {
       "ja": "実利的な・現実的な"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c14ad65c1465465816a36f41dd2f4a8851e402684ce6522dfa403690acddbfde",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:cb4fcda06fd0434514ffe07d7e694778c9a8d88cd4685713b0429a8bf884449a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   }
 ]

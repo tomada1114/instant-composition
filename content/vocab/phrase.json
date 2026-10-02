@@ -179,14 +179,25 @@
     "category": "phrase",
     "level": 4,
     "headword": "can't complain",
-    "definition": "a reply meaning that things are going fine for you",
+    "definition": "said in reply to a greeting, meaning nothing is wrong enough to mention",
     "example": "A: How's work these days?\nB: {{Can't}} {{complain}}.",
     "example2": "A: How have you been?\nB: Can't complain. You?",
     "meanings": {
       "ja": "まあまあ順調だよ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7a14f4ab8ee6528ef7922ccf4595e0f13a8bcb8f5e2817316154d03496b0a66c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:d5df2921bdbdf2a4977dd07fc0cf6cf5f4edfe05c9948917e9bd805ccf24e4e0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3y9n7g8h",
@@ -225,7 +236,18 @@
       "ja": "気をつけてね"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d7b9039ab17ddddecad02d7e76271007757f820d6ee0a3dd3ef57be158c65dc1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:8a75a914c1e4a3907c4291459076bc1312744018cdabef637c6531fad17258db",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4f9e9y7f",
@@ -305,7 +327,7 @@
   {
     "id": "v_5b2z6p6n",
     "category": "phrase",
-    "level": 8,
+    "level": 7,
     "headword": "for what it's worth",
     "definition": "said before you give an opinion you are not sure will help",
     "example": "A: Should I take the job?\nB: {{For}} {{what}} {{it's}} {{worth}}, I think you should.",
@@ -314,7 +336,18 @@
       "ja": "参考までに言うと"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b36eef90f44fd6715f9ed046988f77eb37cd66d7168658de354aed6b998aee83",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:8cf264aa92248c5b518a8f8d3c2b8a7151271fa61b19470d49213adf09b04dec",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5h8n5c2k",
@@ -394,7 +427,7 @@
   {
     "id": "v_5x2s5g7j",
     "category": "phrase",
-    "level": 8,
+    "level": 6,
     "headword": "suit yourself",
     "definition": "said when you accept someone's choice but do not agree with it",
     "example": "A: I think I'll skip the party.\nB: {{Suit}} {{yourself}}.",
@@ -403,7 +436,18 @@
       "ja": "お好きにどうぞ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ca5c55fafc09ad6f6990cbcaf9057f13fbfe9be2955d4d76a2050cb4bd6de4c4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:58b9124037ef300b5c2332269f32e234616e16ac512b363380d726a90b717903",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5x3t6s2x",
@@ -542,7 +586,18 @@
       "ja": "頑張ってね"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3748e8b4405fe243a4dffa9f11622dc825b3ea658dd02897a87f29e54a9a83c3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:ecb8493c67243a5eb00850da46d162fe5a14d284606f1da74f512c86da44167b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7p7s3s5b",
@@ -631,7 +686,18 @@
       "ja": "どうぞ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:842610e6d5c33e5b979ae07a388f7b6ca6e6950dc54208a04d2577217d2dd8a8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:81670190374da89b5db7e2a88b326886b6b8c0bb49d27db968a7a94c78d4a79a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8k6v5z4h",
@@ -645,7 +711,18 @@
       "ja": "それは残念だね"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:636abbf28089bb6d699d75d0eb890e0063cabcf437178f79aca752ee128aecef",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:ed679d862ea2ea9bade588462ddf2377fbaecec9b1839b806923396b10db5d87",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9j2q5h8n",
@@ -734,6 +811,17 @@
       "ja": "聞き覚えがあるな"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c7734ce9b1d8444cfbb082479bd9d12a7de5b6015ddb1090d5a19bb376823ebe",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:9b20efa907f16ffe33161688d381b4bcb0f4870ad6b5df725bc8f8752747b129",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   }
 ]

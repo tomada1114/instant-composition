@@ -11,12 +11,23 @@
       "ja": "(電気などを)つける"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:17784031003a2a204db4852586013db3a6953b52ca65826a28d078979f836a63",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:af7d80b780ecf33243c7ead8b50b5c9edc878b2fa000f15351bdcd8f09357b4f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_2g5n7r3s",
     "category": "phrasal-verb",
-    "level": 9,
+    "level": 8,
     "headword": "wade through",
     "definition": "to slowly deal with a large, boring amount of material",
     "example": "I spent all weekend {{wading}} {{through}} legal documents.",
@@ -25,21 +36,43 @@
       "ja": "苦労して読み進める"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d8d41b1f22f2b67e7d0716bedc358ee203b4bf4eacc32238846a0054b74e2e10",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c3b34a9a65bf4c16131c46fbfcd98baf7cf0b9e4c9fd99a14d420a7089a5baa8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_2j6k8k2m",
     "category": "phrasal-verb",
-    "level": 9,
+    "level": 8,
     "headword": "brush off",
     "definition": "to refuse to take someone's warning or idea seriously",
     "example": "He {{brushed}} my warning {{off}} and kept driving fast.",
     "example2": "She brushed off the criticism with a smile.",
     "meanings": {
-      "ja": "軽くあしらう"
+      "ja": "軽くあしらう・受け流す"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:038d94bf22627631f6a10c2897442c20e82191fe33e369a5ccc55a437a1f0fa4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:b987b425a65f8c86183ed0dbca696c5accaca55ead6f9f7bb647b6dd2826fb26",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_2n4y6u6d",
@@ -71,14 +104,25 @@
     "category": "phrasal-verb",
     "level": 3,
     "headword": "take off",
-    "definition": "when a plane leaves the ground",
+    "definition": "to leave the ground and begin to fly, as a plane does",
     "example": "The plane {{took}} {{off}} ten minutes late.",
     "example2": "Please turn off your phone before we take off.",
     "meanings": {
       "ja": "離陸する"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a6266404d781f333abfb23f5427eb029b26627593ecdecf575a06a52b267c929",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:57d1a71644d19b3af480ed3a1c7e680f61c5e27f826c8706f8966a1b3e7c614b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3j7k7u6m",
@@ -142,7 +186,18 @@
       "ja": "バックアップを取る"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7bc4fc4b47f4466441a9d3173ce90b8680f0323a8ce90e975fbb934a276f99a0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:48eb0daae29d7ad7eeef08ed4ff2aba1b9566ea00c3122137af2b8192f8a9a89",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3x9g6t5x",
@@ -181,7 +236,18 @@
       "ja": "偶然見つける"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5f716656b72a3fedadf39d75215d7d9c9cfebd20e235a401cfead714cd95bf65",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:3c9b500ccffd31d18c327b28f4d35023a55d7701bccd6b88e7ed503ffb6a4974",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4e5g9a9h",
@@ -189,13 +255,24 @@
     "level": 3,
     "headword": "get up",
     "definition": "to leave your bed after sleeping",
-    "example": "I {{get}} {{up}} early on weekdays.",
+    "example": "She was already awake but didn't want to {{get}} {{up}} yet.",
     "example2": "He got up and made some tea.",
     "meanings": {
       "ja": "起きる・起床する"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f7ba43d53169ee95f13546ef02ba735d247787a6bf5e8c83abd604a4b8b5b6ab",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:09a837527692a14dc1028bb6d43dd972a1f1f0340a15fb8ee7cbf46074729159",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4e8y2w2p",
@@ -209,21 +286,43 @@
       "ja": "調査する"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4ae645828d821c2762a4c0b7888b6870726b0f6c789ebe39181c112ca3d6e203",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c27dea713af54f0cd50e762c3b1188af57859e9e5f99a68827a093bd16714ef6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4f3u2w7f",
     "category": "phrasal-verb",
     "level": 2,
     "headword": "wake up",
-    "definition": "to stop sleeping in the morning",
-    "example": "I {{wake}} {{up}} at six every weekday.",
+    "definition": "to stop being asleep",
+    "example": "I usually {{wake}} {{up}} before my alarm rings.",
     "example2": "Don't wake up the baby.",
     "meanings": {
-      "ja": "目が覚める・起きる"
+      "ja": "目が覚める"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:04489e6e35523a23b5d5c05b00b1ce9ffe8fb7329c06be0c65fe478295530703",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:90bb748b02f1cc35a6162d9c2a3d0ccc68104bf793c5a35179681f6f600ec8ca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4y8x4c6f",
@@ -237,21 +336,18 @@
       "ja": "調べて知る・突き止める"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
-    "id": "v_5b6p8a8u",
-    "category": "phrasal-verb",
-    "level": 4,
-    "headword": "carry on",
-    "definition": "to keep doing something without stopping",
-    "example": "Please {{carry}} {{on}}; I didn't mean to interrupt.",
-    "example2": "He carried on working despite the noise.",
-    "meanings": {
-      "ja": "続ける"
-    },
-    "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:20b821d5b2a604f8e3337a0cba1154f0a849b0341828cdf9f751de25c028327c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:bd93b04cbeb95a95437e3d1b1969e9c2cd3c4bdc1f8d66b7d64116735b00acd3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5b9z8r6s",
@@ -290,35 +386,43 @@
       "ja": "探す"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f23102e13e8340e5d1d4602cd30a8985cc050c577dbac5dfda13536a5608b516",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:6a66982a0773f170927af788fcc6eec863d71002aaebb36ada278d114af93b1e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5m4z9h7n",
     "category": "phrasal-verb",
     "level": 2,
     "headword": "put on",
-    "definition": "to wear a piece of clothing",
+    "definition": "to start wearing a piece of clothing",
     "example": "It's cold, so {{put}} {{on}} your coat.",
     "example2": "He put on his shoes and left.",
     "meanings": {
       "ja": "身につける・着る"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
-    "id": "v_5s2y8k4t",
-    "category": "phrasal-verb",
-    "level": 9,
-    "headword": "pan out",
-    "definition": "to end up happening in a particular way, good or bad",
-    "example": "Things didn't {{pan}} {{out}} the way we had planned.",
-    "example2": "We'll see how the new project pans out.",
-    "meanings": {
-      "ja": "結果として〜になる"
-    },
-    "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:98f7951cb3dc3dfc6198bb1285f051913415e66feae9a9e47229e7f1c827c152",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:48ef2cf5873f14902e18dd8af6de518779dc93fa187e525c8fb2406988829be6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5t9r9a3k",
@@ -575,14 +679,25 @@
     "category": "phrasal-verb",
     "level": 4,
     "headword": "set up",
-    "definition": "to start something such as a company or an account",
+    "definition": "to start something, or get it ready to use, such as a company or phone",
     "example": "They {{set}} {{up}} a small company last year.",
     "example2": "Can you help me set up my new phone?",
     "meanings": {
       "ja": "設立する・設定する"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f33eea53e488b022946934f85ac2448e3f2bdd4f5f6c662baf9f9a540846f440",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:265b3dd03a0d9e8330020932422bee8164e0276af4212c2eedd4658193ab0cb3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9g3u2b3u",

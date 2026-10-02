@@ -2,7 +2,7 @@
   {
     "id": "v_2c6v6j6y",
     "category": "idiom",
-    "level": 9,
+    "level": 7,
     "headword": "read between the lines",
     "definition": "to understand a hidden meaning that is not said directly",
     "example": "If you {{read}} {{between}} {{the}} {{lines}}, she's unhappy.",
@@ -11,7 +11,18 @@
       "ja": "行間を読む"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:12cd80571a76333e1a5a149505f3a4a7ff036f40205d02c1907dc8df6b915ef9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:49523fa75070237604b43d33f8630c1c13957954023fc2565906a9bda9f2b5b8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_2g2x4g7n",
@@ -166,7 +177,7 @@
   {
     "id": "v_3m7t5v5s",
     "category": "idiom",
-    "level": 7,
+    "level": 6,
     "headword": "call it a day",
     "definition": "to stop working because you have done enough",
     "example": "We're all tired, so let's {{call}} {{it}} {{a}} {{day}}.",
@@ -175,7 +186,18 @@
       "ja": "今日はここまでにする"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d0e57d9e7033e7058d6d77fc9fc8b6e8c23399b8ae5b58af9af68fbdcd64a624",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:a168f5808fe29f8d95c5b497984b683d7ce0e498f6ee57cef1a4f9203db63e0d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3n7g2u6g",
@@ -308,13 +330,24 @@
     "level": 2,
     "headword": "at first",
     "definition": "in the beginning, before things changed",
-    "example": "{{At}} {{first}}, I didn't like coffee.",
+    "example": "{{At}} {{first}}, I didn't like coffee, but now I love it.",
     "example2": "At first, the new school felt big and scary.",
     "meanings": {
       "ja": "最初は"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:08710a447985dd258a6c4cbb5cbe9f14bbc5a3ef84f74ff99d813913d4af95d5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:948cd0eb793f547ba6f04d6d21a4dd1b6d651a30ba8c9b9e538e3a7da6d3e8d3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5k3u6k7k",
@@ -353,7 +386,18 @@
       "ja": "たくさんの"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c591ccfc110cb5e9faf7de6a96c00aa5b11acdacac10a1174983460b7fc85834",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:74de11f07a14259bc1f3998445aff114396f58b435f6d5eadf8ca4b04bc49cbd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5s4d6h3c",
@@ -367,21 +411,18 @@
       "ja": "遠回しに言う"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
-    "id": "v_5s7e3a5g",
-    "category": "idiom",
-    "level": 2,
-    "headword": "at home",
-    "definition": "in the place where you live",
-    "example": "I stay {{at}} {{home}} on Sundays.",
-    "example2": "Is your mother at home now?",
-    "meanings": {
-      "ja": "家で・在宅で"
-    },
-    "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f610c6edb4a65c3b0957827e77c3ac3ddb87e5df6d52c36fbfa67a6189fbc241",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:8d302f8c5e225939aacf24fada6ceab29ddbf442ae9f297000e491814c0e619a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5t9f3m2t",
@@ -395,7 +436,18 @@
       "ja": "長い目で見れば"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2df510a044099bf4a609e0fdc86e69ce038e5d088a1829c9128f77248c1a35fb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:816be7ed34a2853658ff383815d9dc0a0694d9fe2616f8cb39dd5c57a0ab5766",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5u7p4w6v",
@@ -425,16 +477,27 @@
   {
     "id": "v_5w2d6t6t",
     "category": "idiom",
-    "level": 9,
+    "level": 8,
     "headword": "a double-edged sword",
-    "definition": "something that has both good and bad results",
+    "definition": "something helpful that can also cause serious harm",
     "example": "Social media is {{a}} {{double-edged}} {{sword}} for teenagers.",
     "example2": "Fame can be a double-edged sword.",
     "meanings": {
       "ja": "諸刃の剣"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:29508222eeddd54470edb06f3dce42c19ae8c8557153cae6d369ac882ccd9809",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:199e26482ab9e34c124aa13cfa3e1e8c4cfab56d7a66f5281f7dc1864efb669c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6h4j7q3t",
@@ -498,7 +561,18 @@
       "ja": "いつものように"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d325e1e41d9dfc957612cadb465cefa046b65f668f893446c7b3cb9dffe7283f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:f980cd91193915ff3203de71cb6390274a22107c5c112714d519ba1f10cc4e4a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7e5j5f8p",
@@ -537,7 +611,18 @@
       "ja": "不満をくすぶらせている"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2525907343a7fbb69583c41a70ed1b0492eed068a536e61b3ccf5b64faeef0d0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:fc9fb4ab6e2c303f4ed0d2806768bedc345dbc37c0f52df4b903812b18070c90",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7p4a6d5z",
@@ -619,14 +704,25 @@
     "category": "idiom",
     "level": 7,
     "headword": "go the extra mile",
-    "definition": "to make more effort than people expect",
+    "definition": "to do more than is required in order to help someone",
     "example": "The hotel staff {{went}} {{the}} {{extra}} {{mile}} for us.",
     "example2": "She always goes the extra mile for her clients.",
     "meanings": {
-      "ja": "人一倍努力する"
+      "ja": "期待以上に尽くす"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6af96b23fc1254b24752be093a923d5d4840fbd626a2d09991ba31914825d5c9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:dafb9f15e9e00834402499e36caf05f8a8a10dbf7240a5a3b366ef863f020f8e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7w7m9y9r",
@@ -640,7 +736,18 @@
       "ja": "突然・藪から棒に"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d6528f750d342354f4f351f272f500ea81ecfa84216a68e88a116a75c349ecbf",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:cb2418f9458cc58f179f1b2cba0ab2f2573634b8167dad5fbafbe984ebe87a13",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7w8w6p5x",
@@ -654,7 +761,18 @@
       "ja": "ところで"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:024e2e24e7f6c2b0d491fbc8dca7f86a8ba59f9f8d40c4ea62e4fc2b17cc28dc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:005d3bac175c376475f1ee19fe55169093090f9724487ee5b15bd78046045e77",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8p7b4b4m",
@@ -693,7 +811,18 @@
       "ja": "例えば"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:928e71a8731130e06156011ea2d5290d80ed3257ea8df803a23ce6a1cb541c97",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:9684978b295ebf05f6a1a43525a1f8c02e44442c8a915d28ecdf2681a9e808a7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8x7z4w3f",
@@ -732,7 +861,18 @@
       "ja": "ぎりぎりになって"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:497e2d49fe69216032cdc082424b5a4bbd2aa538bdf882c35712ca2726be19c1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:81a5eb3000431e3ca0b1af532a95f9ce41bf7223776fea40b8f0ce15d7d017f6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9d4r6s3h",
