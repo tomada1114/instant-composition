@@ -148,6 +148,11 @@ Firefox, Samsung Internet and tablets only keep working.
   `visualViewport` reading, no `interactive-widget`. The learner scrolls the
   conversation above the keyboard (#398 R3, D1 — the owner chose this over the lift's
   complexity and the iOS bugs it could bring).
+- The tone context is resumed on every unlock whose state is anything but `"running"`
+  (`apps/web/src/drill/sound.ts`): iOS moves an `AudioContext` to `"interrupted"`, not
+  `"suspended"`, after a call, Siri or an app switch, and leaves it silent until a
+  gesture resumes it (#398 R5). The silent switch still mutes the tones: no
+  `navigator.audioSession` change.
 
 ## Implementation rules
 

@@ -11,7 +11,8 @@ interface Node {
 }
 
 export interface ToneContext {
-  readonly state: string;
+  /** iOS Safari adds `"interrupted"` after a call, Siri or an app switch. */
+  readonly state: AudioContextState | "interrupted";
   readonly currentTime: number;
   readonly destination: object;
   resume(): Promise<void>;
@@ -98,7 +99,8 @@ export function createSoundPlayer(create: () => ToneContext | undefined): SoundP
         unlocked = true;
         context = create();
       }
-      if (context?.state === "suspended") void context.resume();
+      // iOS leaves the context "interrupted", not "suspended", after a call or an app switch.
+      if (context !== undefined && context.state !== "running") void context.resume();
     },
     play(name) {
       if (context === undefined) return;
