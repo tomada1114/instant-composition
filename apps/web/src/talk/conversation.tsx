@@ -89,7 +89,10 @@ export function Conversation({ talk }: Readonly<{ talk: Talk }>): ReactElement {
   const count = useRef(0);
   const ended = talk.step === "ended";
   const last = talk.turns.at(-1);
-  const closing = ended && last?.reply?.closing === true ? last.reply.line : undefined;
+  const closing =
+    ended && talk.closed === true && last?.reply?.closing === true
+      ? last.reply.line
+      : undefined;
 
   useEffect(() => {
     const lines = list.current?.children.length ?? 0;
