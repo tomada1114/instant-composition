@@ -12,6 +12,18 @@ export interface SettingsState {
   save(patch: SettingsPatch): void;
 }
 
+/** `settings` with `patch` laid over it; a patch of two grade keys keeps the third shown. */
+function overlaid(settings: Settings, patch: SettingsPatch): Settings {
+  const { gradeKeys, ...rest } = patch;
+  return {
+    ...settings,
+    ...rest,
+    ...(gradeKeys === undefined
+      ? {}
+      : { gradeKeys: { ...settings.gradeKeys, ...gradeKeys } }),
+  };
+}
+
 /**
  * Saves each change as it is made. The screen shows the last settings the
  * server answered with, and every save still in flight laid over them in the
@@ -31,7 +43,7 @@ export function useSettings(initial: Settings): SettingsState {
 
   function show(): void {
     let next = saved.current;
-    for (const patch of pending.current.values()) next = { ...next, ...patch };
+    for (const patch of pending.current.values()) next = overlaid(next, patch);
     setSettings(next);
   }
 

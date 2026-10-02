@@ -16,19 +16,33 @@ export const TUNING = {
   pace: { baseSeconds: 4, secondsPerWord: 0.5, minSeconds: 6, maxSeconds: 20 },
   /** A correct answer flipped within this share of its card's pace is "fast". */
   fastRatio: 0.5,
-  /** Fewer cards than this and no round is built. */
+  /**
+   * Fewer cards than this and no portion is dealt; today's queue under it is
+   * topped up with cards not yet due.
+   */
   minDeckSize: 5,
   placementSize: 10,
+  /** The daily sizes a client may still show and set; none of them sizes a deal. */
   dailySizes: [5, 10, 15, 20, 30],
   defaultDailySize: 10,
+  /** New cards a day may bring, as the settings offer them. */
+  newPerDay: [0, 3, 5, 10, 15],
+  defaultNewPerDay: 5,
+  /** Reviews a day may bring; `null` is no limit. */
+  reviewsPerDay: [10, 20, 30, 50, null],
+  defaultReviewsPerDay: 20,
+  /** Cards one extra round deals past today's queue: "one more 5". */
+  extraSize: 5,
   /** The per-card time limits the settings offer, in seconds. */
   limitSeconds: [15, 20, 30, 45, 60],
   defaultLimitSeconds: 30,
   /** The drill's grade keys until the learner chooses others, as `KeyboardEvent.code`. */
   defaultGradeKeys: { ok: "ArrowRight", ng: "ArrowLeft" },
+  /** △'s key when none was chosen: the first of these the other two keys leave free. */
+  hardKeys: ["Digit2", "KeyS", "ArrowDown"],
   maxFocus: 2,
+  /** How a deal's new cards are chosen; how many comes from the daily limits. */
   mix: {
-    reviewShareMax: 0.6,
     focusShareOfNew: 0.5,
     /** Taken after the focus share, from the learner's weak grammar concepts. */
     weakShareOfNew: 0.3,
@@ -43,8 +57,6 @@ export const TUNING = {
     probeStep: 2,
     offLevelFrom: { above: 2, probe: 3 },
   },
-  /** Days until the next review, indexed by box 0..5. */
-  leitnerIntervalsDays: [1, 2, 4, 7, 14, 30],
   /**
    * FSRS-6's long-term schedule (`fsrs.ts`): ts-fsrs 5.4.2's 21 default
    * weights, the recall probability an interval aims at, and the longest

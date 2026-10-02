@@ -10,8 +10,8 @@ import {
 import type { RequestContext } from "./context";
 import type { ApplicationError } from "./errors";
 import { committed, storeFor, type ApplicationDeps, type Write } from "./execute";
-import { loadPractice, statsOf } from "./practice";
-import { payloadOf } from "./present";
+import { itemValues, loadPractice, statsOf } from "./practice";
+import { payloadOf } from "./round-payload";
 import type { RoundPayload } from "./views";
 
 /**
@@ -107,6 +107,7 @@ export async function startRound(
       : round.id === open?.value.id
         ? openReviews
         : await store.reviewsOf(round.id);
-    return ok({ value: payloadOf(round, reviews, portion, snapshot), writes });
+    const items = itemValues(loaded.value.items);
+    return ok({ value: payloadOf(round, reviews, portion, snapshot, items), writes });
   });
 }

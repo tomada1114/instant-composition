@@ -2,20 +2,27 @@ import { describe, expect, it } from "vitest";
 
 import {
   compose,
+  composeExtra,
   countAvailable,
   deal,
   EMPTY_STATS,
+  portionSize,
   practiceState,
+  retrievability,
+  wantedToday,
   type CardMeta,
-  type CardState,
   type ComposeInput,
+  type FsrsState,
   type ItemProgress,
+  type SeenCard,
 } from "@instant-composition/domain";
+
+import { makeSettings } from "./application-fixtures";
 import { makeCardMeta, makeItemProgress } from "./domain-fixtures";
 
 const TODAY = "2026-09-22";
 
-/** `count` unseen cards named `<prefix>1..n` in one cell. */
+/** `count` cards named `<prefix>1..n` in one cell. */
 function cell(
   prefix: string,
   count: number,
@@ -26,8 +33,35 @@ function cell(
   );
 }
 
-function due(dueDay: string, box = 1, lastDay = "2026-09-20"): CardState {
-  return { box, dueDay, lastDay, seenCount: 1 };
+/** A card scheduled under FSRS, due on `dueDay`, last answered on `lastDay`. */
+function scheduled(
+  dueDay: string,
+  {
+    stability = 3,
+    lastDay = "2026-09-19",
+  }: { stability?: number; lastDay?: string } = {},
+): SeenCard {
+  const state: FsrsState = {
+    stability,
+    difficulty: 5,
+    reps: 2,
+    lapses: 0,
+    lastDay,
+    dueDay,
+  };
+  return { state, lastAnsweredAt: 0 };
+}
+
+/** A card answered only under Leitner, last at `lastAnsweredAt`. */
+function leitner(lastAnsweredAt: number): SeenCard {
+  return { state: null, lastAnsweredAt };
+}
+
+function seenAll(
+  cards: readonly CardMeta[],
+  seen: (card: CardMeta, index: number) => SeenCard,
+): Map<string, SeenCard> {
+  return new Map(cards.map((card, index) => [card.id, seen(card, index)]));
 }
 
 function input(overrides: Partial<ComposeInput> = {}): ComposeInput {
@@ -39,7 +73,11 @@ function input(overrides: Partial<ComposeInput> = {}): ComposeInput {
     focus: [],
     weakConcepts: [],
     cards: [],
-    states: new Map(),
+    seen: new Map(),
+    answeredToday: new Set(),
+    newLimit: 10,
+    reviewLimit: 20,
+    newAnsweredToday: 0,
     exclude: new Set(),
     seed: `${TODAY}:today:0`,
     ...overrides,
@@ -58,100 +96,282 @@ function levelsOf(ids: readonly string[], cards: readonly CardMeta[]): number[] 
   return ids.map((id) => cards.find((card) => card.id === id)?.level ?? 0);
 }
 
-describe("the cards that can be dealt", () => {
-  it("counts seen cards at any level and unseen ones only in the level band", () => {
-    const cards = [
-      makeCardMeta("seen-far", { level: 1 }),
-      makeCardMeta("new-below", { level: 4 }),
-      makeCardMeta("new-probe", { level: 7 }),
-      makeCardMeta("new-under", { level: 3 }),
-      makeCardMeta("new-over", { level: 8 }),
-      makeCardMeta("other-topic", { topic: "travel", level: 5 }),
-      makeCardMeta("excluded", { level: 5 }),
-    ];
-    const available = countAvailable(
-      input({
-        cards,
-        states: new Map([["seen-far", due("2026-10-30")]]),
-        exclude: new Set(["excluded"]),
-      }),
+describe("today's queue under the daily limits", () => {
+  it("deals twenty reviews and no new card when twenty-six are due under limits of 5 and 20", () => {
+    const reviews = cell("r", 26);
+    const queue = input({
+      cards: [...reviews, ...cell("n", 10)],
+      seen: seenAll(reviews, () => scheduled("2026-09-20")),
+      newLimit: 5,
+      reviewLimit: 20,
+      size: 40,
+    });
+    expect(portionSize(queue, 0)).toBe(20);
+    const deck = composed(queue);
+    expect(deck).toMatchObject({ reviewCount: 20, newCount: 0 });
+    expect(deck.cardIds.every((id) => id.startsWith("r"))).toBe(true);
+  });
+
+  it("brings new cards up to the new limit beside a few reviews", () => {
+    const reviews = cell("r", 3);
+    const deck = composed({
+      cards: [...reviews, ...cell("n", 10)],
+      seen: seenAll(reviews, () => scheduled(TODAY)),
+      newLimit: 5,
+      size: 20,
+    });
+    expect(deck).toMatchObject({ reviewCount: 3, newCount: 5, shortage: true });
+  });
+
+  it("holds new cards back as far as reviews fill the review limit", () => {
+    const reviews = cell("r", 18);
+    const deck = composed({
+      cards: [...reviews, ...cell("n", 10)],
+      seen: seenAll(reviews, () => scheduled(TODAY)),
+      newLimit: 5,
+      reviewLimit: 20,
+      size: 30,
+    });
+    expect(deck).toMatchObject({ reviewCount: 18, newCount: 2 });
+  });
+
+  it("deals every due review with no review limit", () => {
+    const reviews = cell("r", 40);
+    const deck = composed({
+      cards: [...reviews, ...cell("n", 10)],
+      seen: seenAll(reviews, () => scheduled(TODAY)),
+      newLimit: 5,
+      reviewLimit: "unlimited",
+      size: 60,
+    });
+    expect(deck).toMatchObject({ reviewCount: 40, newCount: 5 });
+  });
+
+  it("takes the new cards answered today off the new limit", () => {
+    const deck = composed({
+      cards: cell("n", 20),
+      newLimit: 10,
+      newAnsweredToday: 7,
+      size: 10,
+      minSize: 1,
+    });
+    expect(deck).toMatchObject({ newCount: 3, reviewCount: 0 });
+  });
+
+  it("deals the reviews least likely recalled first, the new cards spread among them", () => {
+    const reviews = cell("r", 4);
+    const stabilities = [9, 1, 30, 3];
+    const seen = seenAll(reviews, (_, index) =>
+      scheduled("2026-09-20", { stability: stabilities[index] ?? 1 }),
     );
-    expect(available).toBe(3);
+    const deck = composed({
+      cards: [...reviews, ...cell("n", 4)],
+      seen,
+      newLimit: 2,
+    });
+    expect(deck.cardIds.filter((id) => id.startsWith("r"))).toStrictEqual([
+      "r2",
+      "r4",
+      "r1",
+      "r3",
+    ]);
+    expect(deck.cardIds.map((id) => id[0])).toStrictEqual([
+      "r",
+      "r",
+      "n",
+      "r",
+      "r",
+      "n",
+    ]);
+    const recall = (id: string) => {
+      const state = seen.get(id)?.state;
+      return state === null || state === undefined ? 1 : retrievability(state, TODAY);
+    };
+    expect(recall("r2")).toBeLessThan(recall("r4"));
+  });
+
+  it("deals a card seen only under Leitner as a review, after the scheduled ones, the longest unseen first", () => {
+    const reviews = cell("r", 2);
+    const old = cell("l", 3);
+    const deck = composed({
+      cards: [...reviews, ...old, ...cell("n", 10)],
+      seen: new Map([
+        ...seenAll(reviews, () => scheduled(TODAY)),
+        ["l1", leitner(300)],
+        ["l2", leitner(100)],
+        ["l3", leitner(200)],
+      ]),
+      newLimit: 0,
+    });
+    expect(deck.cardIds).toStrictEqual(["r1", "r2", "l2", "l3", "l1"]);
+    expect(deck).toMatchObject({ reviewCount: 5, newCount: 0 });
+  });
+
+  it("counts cards seen only under Leitner against the review limit, which holds new cards back", () => {
+    const old = cell("l", 20);
+    const queue = input({
+      cards: [...old, ...cell("n", 10)],
+      seen: seenAll(old, (_, index) => leitner(index)),
+      newLimit: 5,
+      reviewLimit: 20,
+      size: 30,
+    });
+    expect(composed(queue)).toMatchObject({ reviewCount: 20, newCount: 0 });
+    expect(wantedToday(queue)).toBe(20);
+  });
+
+  it("never deals a card not yet due while the queue holds five or more", () => {
+    const reviews = cell("r", 3);
+    const later = cell("l", 5);
+    const queue = input({
+      cards: [...reviews, ...later, ...cell("n", 10)],
+      seen: new Map([
+        ...seenAll(reviews, () => scheduled(TODAY)),
+        ...seenAll(later, () => scheduled("2026-09-30")),
+      ]),
+      newLimit: 5,
+    });
+    expect(portionSize(queue, 0)).toBe(8);
+    const deck = composed({ ...queue, size: 8 });
+    expect(deck.cardIds.some((id) => id.startsWith("l"))).toBe(false);
+    expect(deck.cardIds).toHaveLength(8);
   });
 });
 
-describe("the mix of review and new cards", () => {
-  it("caps reviews at 60% and takes the earliest due first", () => {
-    const reviews = cell("r", 10);
-    const states = new Map(
-      reviews.map((card, index) => [card.id, due(`2026-09-${String(10 + index)}`)]),
+describe("a portion under five", () => {
+  const later = cell("l", 6);
+  const stabilities = [20, 2, 8, 4, 30, 1];
+  const seen = seenAll(later, (_, index) =>
+    scheduled("2026-09-30", { stability: stabilities[index] ?? 1 }),
+  );
+
+  it("is topped up with cards not yet due, the least likely recalled first", () => {
+    const queue = input({
+      cards: [...later, ...cell("n", 2)],
+      seen,
+      newLimit: 2,
+    });
+    expect(portionSize(queue, 0)).toBe(5);
+    const deck = composed({ ...queue, size: 5 });
+    expect(deck.cardIds.filter((id) => id.startsWith("l"))).toStrictEqual([
+      "l6",
+      "l2",
+      "l4",
+    ]);
+    expect(deck).toMatchObject({ newCount: 2, reviewCount: 3, shortage: false });
+  });
+
+  it("is not enough when even the cards not yet due leave it under five", () => {
+    const queue = input({
+      cards: [...later.slice(0, 2), ...cell("n", 2)],
+      seen,
+      newLimit: 2,
+    });
+    expect(portionSize(queue, 0)).toBe(4);
+    expect(countAvailable(queue)).toBe(4);
+    expect(compose({ ...queue, size: 4 })).toStrictEqual({
+      ok: false,
+      error: { available: 4 },
+    });
+  });
+
+  it("counts what is done toward the five, never sizing a portion below it", () => {
+    const queue = input({ cards: cell("n", 10), newLimit: 3, newAnsweredToday: 3 });
+    expect(portionSize(queue, 3)).toBe(3);
+    expect(portionSize(input({ cards: cell("n", 10), newLimit: 3 }), 0)).toBe(3);
+  });
+
+  it("deals below five when the caller lowers the floor, as a top-up does", () => {
+    const deck = composed({ size: 2, minSize: 1, cards: cell("n", 3), newLimit: 3 });
+    expect(deck.cardIds).toHaveLength(2);
+  });
+});
+
+describe("cards already in a deck", () => {
+  it("count against today's limits, and the deal goes on after them", () => {
+    const reviews = cell("r", 4);
+    const queue = input({
+      cards: [...reviews, ...cell("n", 10)],
+      seen: seenAll(reviews, () => scheduled(TODAY)),
+      newLimit: 2,
+      reviewLimit: 10,
+    });
+    const whole = composed(queue).cardIds;
+    const first = whole.slice(0, 3);
+    const rest = composed({ ...queue, exclude: new Set(first), size: 10, minSize: 1 });
+    expect(whole).toHaveLength(6);
+    const reviewsIn = (ids: readonly string[]) =>
+      ids.filter((id) => id.startsWith("r"));
+    expect(first).toStrictEqual(["r1", "r2", "n4"]);
+    expect(rest).toMatchObject({ reviewCount: 2, newCount: 1 });
+    expect(rest.cardIds.some((id) => first.includes(id))).toBe(false);
+    expect([...reviewsIn(first), ...reviewsIn(rest.cardIds)]).toStrictEqual(
+      reviewsIn(whole),
     );
-    const deck = composed({ cards: [...reviews, ...cell("n", 10)], states });
-    expect(deck.reviewCount).toBe(6);
-    expect(deck.newCount).toBe(4);
-    expect(deck.cardIds.filter((id) => id.startsWith("r")).sort()).toStrictEqual([
-      "r1",
-      "r2",
-      "r3",
-      "r4",
-      "r5",
-      "r6",
-    ]);
   });
+});
 
-  it("orders ties in due day by the smaller box, then the older last day", () => {
-    const cards = cell("r", 3);
-    const states = new Map([
-      ["r1", due("2026-09-20", 3, "2026-09-10")],
-      ["r2", due("2026-09-20", 1, "2026-09-18")],
-      ["r3", due("2026-09-20", 1, "2026-09-12")],
-    ]);
-    // floor(3 * 0.6) = 1 review slot, and five new cards leave nothing to back-fill.
-    const deck = composed({
-      size: 3,
-      minSize: 1,
-      cards: [...cards, ...cell("n", 5)],
-      states,
+describe("an extra round", () => {
+  it("deals due reviews past the review limit first, then new cards past the new limit", () => {
+    const reviews = cell("r", 23);
+    const extra = composeExtra({
+      ...input({
+        cards: [...reviews, ...cell("n", 10), ...cell("l", 3)],
+        seen: new Map([
+          ...seenAll(reviews, () => scheduled(TODAY)),
+          ...seenAll(cell("l", 3), () => scheduled("2026-09-30")),
+        ]),
+        newLimit: 5,
+        reviewLimit: 20,
+      }),
     });
-    expect(deck.cardIds.filter((id) => id.startsWith("r"))).toStrictEqual(["r3"]);
+    expect(extra.ok && extra.value).toMatchObject({ reviewCount: 3, newCount: 2 });
+    expect(extra.ok && extra.value.cardIds.some((id) => id.startsWith("l"))).toBe(
+      false,
+    );
   });
 
-  it("fills the rest with new cards when few reviews are due", () => {
-    const deck = composed({
-      cards: [...cell("r", 2), ...cell("n", 20)],
-      states: new Map([
-        ["r1", due(TODAY)],
-        ["r2", due("2026-09-01")],
-      ]),
-    });
-    expect(deck).toMatchObject({ reviewCount: 2, newCount: 8, shortage: false });
+  it("deals five new cards once today's queue is done", () => {
+    const extra = composeExtra(
+      input({ cards: cell("n", 20), newLimit: 5, newAnsweredToday: 5 }),
+    );
+    expect(extra.ok && extra.value).toMatchObject({ reviewCount: 0, newCount: 5 });
   });
 
-  it("splits new cards 50/20/20/10 over the level, its two neighbours and a probe two above", () => {
-    const cards = [
-      ...cell("a", 10, { level: 4 }),
-      ...cell("b", 10, { level: 5 }),
-      ...cell("c", 10, { level: 6 }),
-      ...cell("d", 10, { level: 7 }),
-      ...cell("e", 10, { level: 8 }),
-    ];
+  it("is not enough with nothing past today's queue but cards not yet due", () => {
+    const later = cell("l", 8);
+    expect(
+      composeExtra(
+        input({ cards: later, seen: seenAll(later, () => scheduled("2026-09-30")) }),
+      ),
+    ).toStrictEqual({ ok: false, error: { available: 0 } });
+  });
+});
+
+describe("the levels of the new cards", () => {
+  const band = [
+    ...cell("a", 10, { level: 4 }),
+    ...cell("b", 10, { level: 5 }),
+    ...cell("c", 10, { level: 6 }),
+    ...cell("d", 10, { level: 7 }),
+  ];
+
+  it("split 50/20/20/10 over the level, its two neighbours and a probe two above", () => {
+    const cards = [...band, ...cell("e", 10, { level: 8 })];
     const levels = levelsOf(composed({ cards }).cardIds, cards).sort();
     expect(levels).toStrictEqual([4, 4, 5, 5, 5, 5, 5, 6, 6, 7]);
   });
 
-  it("keeps a card a level up and a probe among four new cards beside six reviews", () => {
+  it("keep a card a level up and a probe among four new cards beside six reviews", () => {
     const reviews = cell("r", 6, { level: 3 });
-    const states = new Map(reviews.map((card) => [card.id, due(TODAY)]));
-    const fresh = [
-      ...cell("a", 10, { level: 4 }),
-      ...cell("b", 10, { level: 5 }),
-      ...cell("c", 10, { level: 6 }),
-      ...cell("d", 10, { level: 7 }),
-    ];
-    const deck = composed({ cards: [...reviews, ...fresh], states });
+    const deck = composed({
+      cards: [...reviews, ...band],
+      seen: seenAll(reviews, () => scheduled(TODAY)),
+      newLimit: 4,
+    });
     const levels = levelsOf(
       deck.cardIds.filter((id) => !id.startsWith("r")),
-      fresh,
+      band,
     ).sort();
     expect(deck).toMatchObject({ reviewCount: 6, newCount: 4 });
     expect(levels).toStrictEqual([5, 5, 6, 7]);
@@ -159,35 +379,23 @@ describe("the mix of review and new cards", () => {
 
   it.each([
     [1, [5]],
-    [2, [5, 6]],
     [3, [5, 6, 7]],
     [5, [5, 5, 5, 6, 7]],
-  ])("splits %i new cards over the bands as %j", (size, expected) => {
-    const cards = [
-      ...cell("a", 10, { level: 4 }),
-      ...cell("b", 10, { level: 5 }),
-      ...cell("c", 10, { level: 6 }),
-      ...cell("d", 10, { level: 7 }),
-    ];
+  ])("split %i new cards over the bands as %j", (count, expected) => {
     const levels = levelsOf(
-      composed({ size, minSize: 1, cards }).cardIds,
-      cards,
+      composed({ newLimit: count, minSize: 1, cards: band }).cardIds,
+      band,
     ).sort();
     expect(levels).toStrictEqual(expected);
   });
 
-  it("plans the level split over the focus, weak and remaining shares together", () => {
-    const cards = [
-      ...cell("a", 10, { level: 4 }),
-      ...cell("b", 10, { level: 5 }),
-      ...cell("c", 10, { level: 6 }),
-      ...cell("d", 10, { level: 7 }),
-      ...cell("h", 10, { topic: "daily", subtopic: "home" }),
-    ];
+  it("are planned over the focus, weak and remaining shares together", () => {
     const reviews = cell("r", 6, { level: 3 });
+    const cards = [...band, ...cell("h", 10, { topic: "daily", subtopic: "home" })];
     const deck = composed({
       cards: [...reviews, ...cards],
-      states: new Map(reviews.map((card) => [card.id, due(TODAY)])),
+      seen: seenAll(reviews, () => scheduled(TODAY)),
+      newLimit: 4,
       focus: [{ topic: "daily", subtopic: "home" }],
     });
     const levels = levelsOf(
@@ -198,22 +406,21 @@ describe("the mix of review and new cards", () => {
     expect(levels).toStrictEqual([5, 5, 6, 7]);
   });
 
-  it("makes up the level from the probe only when the level and its neighbours run out", () => {
+  it("make up the level from the probe only when the level and its neighbours run out", () => {
     const cards = [...cell("b", 3, { level: 5 }), ...cell("d", 10, { level: 7 })];
     const levels = levelsOf(composed({ cards }).cardIds, cards).sort();
     expect(levels).toStrictEqual([5, 5, 5, 7, 7, 7, 7, 7, 7, 7]);
   });
 
-  it("borrows a missing band's share from the level first", () => {
-    const cards = [...cell("a", 10, { level: 4 }), ...cell("b", 10, { level: 5 })];
-    const levels = levelsOf(composed({ cards }).cardIds, cards).sort();
-    expect(levels).toStrictEqual([4, 4, 5, 5, 5, 5, 5, 5, 5, 5]);
-  });
-
-  it("borrows from a neighbour when the level itself runs out", () => {
-    const cards = [...cell("a", 10, { level: 4 }), ...cell("b", 2, { level: 5 })];
-    const levels = levelsOf(composed({ cards }).cardIds, cards).sort();
-    expect(levels).toStrictEqual([4, 4, 4, 4, 4, 4, 4, 4, 5, 5]);
+  it("never come from outside the level band or a topic not chosen", () => {
+    const cards = [
+      ...cell("x", 10, { level: 9 }),
+      ...cell("t", 10, { topic: "travel" }),
+      ...cell("n", 3),
+    ];
+    const deck = composed({ cards, minSize: 1 });
+    expect(deck.cardIds).toStrictEqual(expect.arrayContaining(["n1", "n2", "n3"]));
+    expect(deck.cardIds).toHaveLength(3);
   });
 });
 
@@ -254,65 +461,7 @@ describe("focus subtopics", () => {
   });
 });
 
-describe("filling a short deck", () => {
-  it("adds more due reviews when new cards run short", () => {
-    const reviews = cell("r", 10);
-    const states = new Map(reviews.map((card) => [card.id, due("2026-09-20")]));
-    const deck = composed({ cards: [...reviews, ...cell("n", 1)], states });
-    expect(deck).toMatchObject({ reviewCount: 9, newCount: 1, shortage: false });
-  });
-
-  it("then adds seen cards not yet due, nearest due day first", () => {
-    const cards = cell("s", 12);
-    const states = new Map(
-      cards.map((card, index) => [card.id, due(`2026-10-${String(10 + index)}`)]),
-    );
-    const deck = composed({ cards, states });
-    expect(deck.reviewCount).toBe(10);
-    expect([...deck.cardIds].sort()).toStrictEqual([
-      "s1",
-      "s10",
-      "s2",
-      "s3",
-      "s4",
-      "s5",
-      "s6",
-      "s7",
-      "s8",
-      "s9",
-    ]);
-  });
-
-  it("deals what there is, marked short, when at least five are available", () => {
-    const deck = composed({ cards: cell("n", 7) });
-    expect(deck.cardIds).toHaveLength(7);
-    expect(deck.shortage).toBe(true);
-  });
-
-  it("refuses to deal fewer than five, reporting how many there were", () => {
-    expect(compose(input({ cards: cell("n", 4) }))).toStrictEqual({
-      ok: false,
-      error: { available: 4 },
-    });
-  });
-
-  it("deals below five when the caller lowers the floor, as a top-up does", () => {
-    const deck = composed({ size: 2, minSize: 1, cards: cell("n", 3) });
-    expect(deck.cardIds).toHaveLength(2);
-  });
-});
-
-describe("what never enters a deck", () => {
-  it("leaves out excluded cards and topics not chosen", () => {
-    const cards = [...cell("n", 10), ...cell("t", 10, { topic: "travel" })];
-    const deck = composed({ cards, exclude: new Set(["n1", "n2"]), size: 8 });
-    expect(deck.cardIds).not.toContain("n1");
-    expect(deck.cardIds).not.toContain("n2");
-    expect(deck.cardIds.some((id) => id.startsWith("t"))).toBe(false);
-  });
-});
-
-describe("the order of a deck", () => {
+describe("the same deal", () => {
   const cards = [
     ...cell("m", 10, { subtopic: "meetings" }),
     ...cell("q", 10, { subtopic: "requests" }),
@@ -323,17 +472,9 @@ describe("the order of a deck", () => {
   });
 
   it("changes with the seed", () => {
-    expect(composed({ cards, seed: "a" }).cardIds).not.toStrictEqual(
-      composed({ cards, seed: "b" }).cardIds,
+    expect(composed({ cards, seed: "a", newLimit: 5 }).cardIds).not.toStrictEqual(
+      composed({ cards, seed: "b", newLimit: 5 }).cardIds,
     );
-  });
-
-  it("keeps the same subtopic from sitting side by side when it can", () => {
-    const ids = composed({ cards }).cardIds;
-    const adjacent = ids
-      .slice(1)
-      .filter((id, index) => id.startsWith(ids[index]?.[0] ?? "-"));
-    expect(adjacent).toStrictEqual([]);
   });
 });
 
@@ -395,31 +536,6 @@ describe("weak grammar concepts", () => {
     });
     expect(deck).toMatchObject({ weakCount: 0, weakConcepts: [] });
   });
-
-  it("put a weak review first among reviews due the same day", () => {
-    const cards = [
-      makeCardMeta("r1", { concepts: [OTHER] }),
-      makeCardMeta("r2", { concepts: [WEAK] }),
-      makeCardMeta("r3", { concepts: [OTHER] }),
-    ];
-    const states = new Map([
-      ["r1", due("2026-09-20", 1, "2026-09-12")],
-      ["r2", due("2026-09-20", 3, "2026-09-18")],
-      ["r3", due("2026-09-19", 4, "2026-09-18")],
-    ]);
-    // floor(4 * 0.6) = 2 review slots: the earlier due day first, then the weak tie.
-    const deck = composed({
-      size: 4,
-      minSize: 1,
-      cards: [...cards, ...cell("n", 5, { concepts: [OTHER] })],
-      states,
-      weakConcepts: [WEAK],
-    });
-    expect(deck.cardIds.filter((id) => id.startsWith("r")).sort()).toStrictEqual([
-      "r2",
-      "r3",
-    ]);
-  });
 });
 
 describe("the dealing state", () => {
@@ -432,14 +548,18 @@ describe("the dealing state", () => {
     ["w1", "w2", "w3"].map((id) => [id, makeItemProgress(id, "ng")] as const),
   );
 
-  function stateWith(items: ReadonlyMap<string, ItemProgress>) {
+  function stateWith(
+    items: ReadonlyMap<string, ItemProgress>,
+    today = TODAY,
+    settings = makeSettings({ newPerDay: 10 }),
+  ) {
     return practiceState({
-      today: TODAY,
+      today,
       stats: {
         ...EMPTY_STATS,
         level: { level: 5, reason: "placement", roundId: null, at: 0 },
       },
-      settings: { topics: ["work"], focus: [], dailySize: 10, sound: true },
+      settings,
       cards,
       items,
     });
@@ -451,9 +571,73 @@ describe("the dealing state", () => {
   });
 
   it("hands them to every deal, which takes the three unseen weak cards", () => {
-    const dealt = deal(stateWith(missed), { size: 10, seed: "s" });
+    const dealt = deal(stateWith(missed, "2026-09-23"), { size: 13, seed: "s" });
     expect(
       dealt.ok && dealt.value.cardIds.filter((id) => id.startsWith("w")).sort(),
-    ).toStrictEqual(["w4", "w5", "w6"]);
+    ).toStrictEqual(["w1", "w2", "w3", "w4", "w5", "w6"]);
+  });
+
+  it("takes the drill's daily limits from the settings, five and twenty unless chosen", () => {
+    expect(stateWith(new Map(), TODAY, makeSettings())).toMatchObject({
+      newLimit: 5,
+      reviewLimit: 20,
+    });
+    expect(
+      stateWith(new Map(), TODAY, makeSettings({ newPerDay: 0, reviewsPerDay: null })),
+    ).toMatchObject({ newLimit: 0, reviewLimit: "unlimited" });
+  });
+
+  it("counts today's answers against the limits: new ones off the new limit, the rest off the review limit", () => {
+    const fresh = makeItemProgress("n1", "ok");
+    const reviewed = makeItemProgress("n2", "ok", {
+      fsrs: {
+        ...fresh.fsrs,
+        reps: 2,
+        lastDay: TODAY,
+        dueDay: "2026-10-01",
+      } as FsrsState,
+    });
+    const reset = makeItemProgress("n3", "ok", {
+      memory: { box: 2, dueDay: TODAY, lastDay: "2026-09-18", seenCount: 2 },
+    });
+    const yesterday = makeItemProgress("n4", "ok", {
+      fsrs: { ...fresh.fsrs, lastDay: "2026-09-21", dueDay: "2026-09-24" } as FsrsState,
+    });
+    const items = new Map(
+      [fresh, reviewed, reset, yesterday].map((item) => [item.item.id, item] as const),
+    );
+    expect(stateWith(items)).toMatchObject({
+      answeredToday: new Set(["n1", "n2", "n3"]),
+      newAnsweredToday: 1,
+      newLimit: 10,
+      reviewLimit: 18,
+    });
+  });
+
+  it("sees an item with Leitner history and no FSRS state as a review with no schedule", () => {
+    const { fsrs, ...rest } = makeItemProgress("n1", "ok");
+    expect(fsrs).toBeDefined();
+    const old: ItemProgress = {
+      ...rest,
+      memory: { box: 3, dueDay: "2026-10-01", lastDay: "2026-09-10", seenCount: 3 },
+    };
+    expect(stateWith(new Map([["n1", old]])).seen.get("n1")).toStrictEqual({
+      state: null,
+      lastAnsweredAt: 2_000,
+    });
+  });
+
+  it("never deals again today a card answered today under Leitner, counting it a review", () => {
+    const { fsrs, ...rest } = makeItemProgress("n1", "ok");
+    expect(fsrs).toBeDefined();
+    const old: ItemProgress = {
+      ...rest,
+      memory: { box: 2, dueDay: "2026-09-24", lastDay: TODAY, seenCount: 2 },
+    };
+    expect(stateWith(new Map([["n1", old]]))).toMatchObject({
+      answeredToday: new Set(["n1"]),
+      newAnsweredToday: 0,
+      reviewLimit: 19,
+    });
   });
 });

@@ -263,6 +263,38 @@ describe("decideClose", () => {
     ]);
   });
 
+  it("lists the first passes graded again, not those graded hard or good that timed out", () => {
+    const graded = (
+      cardId: string,
+      grade: "again" | "hard" | "good",
+      timedOut: boolean,
+    ): ReviewEntry => {
+      const entry = first(cardId, "ok");
+      return {
+        ...entry,
+        outcome: grade,
+        detail: {
+          ...entry.detail,
+          result: timedOut ? "timeout" : grade === "again" ? "ng" : "ok",
+          grade,
+          timedOut,
+        },
+      };
+    };
+    const round = makeRound({ deck: ["c1", "c2", "c3", "c4"], firstPass: 4 });
+    const older = first("c4", "ok");
+    const reviews = [
+      graded("c1", "again", true),
+      graded("c2", "hard", true),
+      graded("c3", "good", true),
+      { ...older, detail: { ...older.detail, result: "timeout" as const } },
+    ];
+    expect(decideClose(state({ round, reviews }), 50).outcome.review).toStrictEqual([
+      { cardId: "c1", prompt: "c1の文" },
+      { cardId: "c4", prompt: "c4の文" },
+    ]);
+  });
+
   it("compares each first pass with the item's previous one from an earlier round", () => {
     const item = (
       id: string,
@@ -385,9 +417,10 @@ const DAY = 86_400_000;
 
 /**
  * Plays one round a day from level `start` for `days` days through the real
- * deal, answer and close, carrying every card's Leitner state from day to day
- * so due reviews take their share of each deck, and returns the level after
- * each day's round.
+ * deal, answer and close, carrying every card's schedule from day to day so
+ * due reviews take their share of each deck, and returns the level after each
+ * day's round. A round of ten is dealt under ten new cards a day, a larger
+ * one under fifteen.
  */
 function playDays(
   start: number,
@@ -410,7 +443,7 @@ function playDays(
       practiceState({
         today,
         stats,
-        settings: makeSettings({ dailySize: 10 }),
+        settings: makeSettings({ newPerDay: size > 10 ? 15 : 10 }),
         cards,
         items,
       }),
@@ -483,15 +516,15 @@ const dayReaching = (levels: readonly number[], level: number): number =>
   levels.indexOf(level) + 1;
 
 describe("the level over a round of ten a day, reviews included", () => {
-  it("climbs from 3 to a learner's level 6 by day 4, and stays there", () => {
+  it("climbs from 3 to a learner's level 6 by day 8, and stays there", () => {
     expect(playDays(3, 12, upTo(6))).toStrictEqual([
-      3, 4, 5, 6, 6, 6, 6, 6, 6, 6, 6, 6,
+      3, 4, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6,
     ]);
   });
 
   it("comes down from 7 to the level a struggling learner clears by day 5, and stays there", () => {
     expect(playDays(7, 12, upTo(4, "slow"))).toStrictEqual([
-      6, 5, 5, 4, 4, 4, 4, 4, 4, 4, 4, 4,
+      6, 5, 5, 5, 4, 4, 4, 4, 4, 4, 4, 4,
     ]);
   });
 

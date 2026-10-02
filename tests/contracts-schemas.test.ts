@@ -309,8 +309,8 @@ describe("request bounds", () => {
     elapsedMs: 3_000,
   } as const;
 
-  it("holds a batch to two passes over the largest deck", () => {
-    expect(MAX_ROUND_ANSWERS).toBe(Math.max(...TUNING.dailySizes) * 2);
+  it("holds a batch to the most answers one request carries, 60", () => {
+    expect(MAX_ROUND_ANSWERS).toBe(60);
     const batch = (size: number) =>
       answersRequestSchema.safeParse({
         answers: Array.from({ length: size }, (_, index) => ({
@@ -330,6 +330,16 @@ describe("request bounds", () => {
     ["a fractional elapsedMs", { ...answer, elapsedMs: 1.5 }],
     ["an unknown pass", { ...answer, pass: "third" }],
     ["an unknown result", { ...answer, result: "skip" }],
+    ["an unknown grade", { ...answer, grade: "easy" }],
+    ["a timedOut that is not a boolean", { ...answer, grade: "good", timedOut: "yes" }],
+    [
+      "neither a grade nor a result",
+      { id: "a1", cardId: "c1", pass: "first", elapsedMs: 1 },
+    ],
+    [
+      "a timedOut alone",
+      { id: "a1", cardId: "c1", pass: "first", elapsedMs: 1, timedOut: true },
+    ],
     ["a negative answeredAt", { ...answer, answeredAt: -1 }],
     ["a fractional answeredAt", { ...answer, answeredAt: 1.5 }],
     ["an answeredAt that is not a number", { ...answer, answeredAt: "2026-09-22" }],
@@ -345,6 +355,49 @@ describe("request bounds", () => {
       ...answer,
       answeredAt: 1_790_000_000_000,
     });
+  });
+
+  it("takes a grade with or without timedOut, a result alone as an older client sends, or both", () => {
+    const { result, ...bare } = answer;
+    expect(result).toBe("ok");
+    for (const value of [
+      { ...bare, grade: "hard" },
+      { ...bare, grade: "again", timedOut: true },
+      { ...bare, grade: "good", timedOut: false },
+      answer,
+      { ...answer, grade: "good" },
+    ]) {
+      expect(answerSchema.parse(value)).toStrictEqual(value);
+    }
+  });
+
+  it("takes the drill's daily limits the domain offers, and only those", () => {
+    for (const newPerDay of TUNING.newPerDay) {
+      expect(settingsPatchSchema.parse({ newPerDay })).toStrictEqual({ newPerDay });
+    }
+    for (const reviewsPerDay of TUNING.reviewsPerDay) {
+      expect(settingsPatchSchema.parse({ reviewsPerDay })).toStrictEqual({
+        reviewsPerDay,
+      });
+    }
+    for (const patch of [
+      { newPerDay: 7 },
+      { newPerDay: null },
+      { reviewsPerDay: 100 },
+      { reviewsPerDay: 0 },
+    ]) {
+      expect(settingsPatchSchema.safeParse(patch).success).toBe(false);
+    }
+  });
+
+  it("takes grade keys with or without a key for hard", () => {
+    for (const gradeKeys of [
+      { ok: "KeyK", ng: "KeyJ" },
+      { ok: "KeyK", ng: "KeyJ", hard: "KeyL" },
+      { ok: "ArrowRight", ng: "ArrowLeft", hard: "ArrowDown" },
+    ]) {
+      expect(settingsPatchSchema.parse({ gradeKeys })).toStrictEqual({ gradeKeys });
+    }
   });
 
   it("takes an id of 64 characters and ten minutes exactly", () => {
@@ -433,6 +486,15 @@ describe("request bounds", () => {
     ["a grade on the key `?` is on", { gradeKeys: { ok: "KeyK", ng: "Slash" } }],
     ["a grade given as a character", { gradeKeys: { ok: "k", ng: "j" } }],
     ["one grade key alone", { gradeKeys: { ok: "KeyK" } }],
+    [
+      "hard on the key ok is on",
+      { gradeKeys: { ok: "KeyK", ng: "KeyJ", hard: "KeyK" } },
+    ],
+    [
+      "hard on the key ng is on",
+      { gradeKeys: { ok: "KeyK", ng: "KeyJ", hard: "KeyJ" } },
+    ],
+    ["hard on Space", { gradeKeys: { ok: "KeyK", ng: "KeyJ", hard: "Space" } }],
   ])("refuses a settings patch with %s", (_, patch) => {
     expect(settingsPatchSchema.safeParse(patch).success).toBe(false);
   });

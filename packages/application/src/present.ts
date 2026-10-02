@@ -1,11 +1,8 @@
 import {
   levelModeOf,
-  limitMsOf,
   nearestMilestone,
-  paceMsForWords,
   ringProgress,
   type LearnerStats,
-  type Portion,
   type ReviewEntry,
   type Round,
   type RoundOutcome,
@@ -14,15 +11,8 @@ import {
 } from "@instant-composition/domain";
 
 import { toeicOf, type CatalogSnapshot } from "./catalog";
-import type {
-  AnsweredRow,
-  DrillCard,
-  LevelView,
-  ReachView,
-  RoundPayload,
-  RoundSummary,
-  ShownSettings,
-} from "./views";
+import { answeredOf } from "./round-payload";
+import type { LevelView, ReachView, RoundSummary, ShownSettings } from "./views";
 
 /** The level and its mode, named by the TOEIC reference the catalog gives it. */
 export function levelViewOf(stats: LearnerStats, snapshot: CatalogSnapshot): LevelView {
@@ -38,70 +28,11 @@ export function levelViewOf(stats: LearnerStats, snapshot: CatalogSnapshot): Lev
 export function shownSettingsOf(settings: Settings): ShownSettings {
   const shown = withDefaults(settings);
   const { topics, focus, dailySize, sound, limitSeconds, gradeKeys } = shown;
-  const { vocabNewPerDay, vocabReviewsPerDay } = shown;
+  const { newPerDay, reviewsPerDay, vocabNewPerDay, vocabReviewsPerDay } = shown;
   return {
-    ...{ topics, focus, dailySize, sound, limitSeconds, gradeKeys },
-    ...{ vocabNewPerDay, vocabReviewsPerDay },
-  };
-}
-
-/** A round's answers as a client reads them back. */
-function answeredOf(reviews: readonly ReviewEntry[]): AnsweredRow[] {
-  return reviews.map((review) => ({
-    id: review.id,
-    cardId: review.item.id,
-    pass: review.detail.pass,
-    result: review.detail.result,
-    answeredAt: review.answeredAt,
-  }));
-}
-
-/**
- * The round as the drill needs it: its cards with the limit the round was
- * dealt with and each card's pace, and where it stands.
- */
-export function payloadOf(
-  round: Round,
-  reviews: readonly ReviewEntry[],
-  portion: Portion | undefined,
-  snapshot: CatalogSnapshot,
-): RoundPayload {
-  const cards: Record<string, DrillCard> = {};
-  for (const id of round.deck) {
-    const card = snapshot.shown.get(id);
-    if (card !== undefined) {
-      // Picked field by field: the response is not stripped to the contract, so a
-      // spread would put every field a card gains, such as its concepts, on the wire.
-      const { topic, subtopic, level, words, prompt, text, alternatives, explanation } =
-        card;
-      const paceMs = paceMsForWords(words);
-      cards[id] = {
-        id,
-        topic,
-        subtopic,
-        level,
-        words,
-        prompt,
-        text,
-        alternatives,
-        explanation,
-        limitMs: limitMsOf(round, paceMs),
-        paceMs,
-      };
-    }
-  }
-  const counted = round.kind !== "placement" && portion !== undefined;
-  return {
-    id: round.id,
-    kind: round.kind,
-    day: round.day,
-    portionDay: round.portionDay,
-    deck: round.deck,
-    cards,
-    answered: answeredOf(reviews),
-    offset: counted ? portion.progress - round.firstPass : 0,
-    total: counted ? portion.target : round.deck.length,
-    retries: round.kind !== "placement",
+    ...{ topics, focus, dailySize, sound, limitSeconds },
+    gradeKeys: { ok: gradeKeys.ok, ng: gradeKeys.ng, hard: gradeKeys.hard },
+    ...{ newPerDay, reviewsPerDay, vocabNewPerDay, vocabReviewsPerDay },
   };
 }
 

@@ -76,6 +76,8 @@ function firstPassOf(cardId: string): RoundPayload["answered"][number] {
     cardId,
     pass: "first",
     result: "ok",
+    grade: "good",
+    timedOut: false,
     answeredAt: Date.UTC(2026, 8, 22, 3, 0),
   };
 }
@@ -223,7 +225,7 @@ describe("the drill, a round run to its summary", () => {
 describe("the drill's grade keys", () => {
   const CHOSEN = homeView(
     { kind: "ready", streak: COUNT },
-    { gradeKeys: { ok: "KeyL", ng: "Digit1" } },
+    { gradeKeys: { ok: "KeyL", ng: "Digit1", hard: "Digit2" } },
   );
 
   /** The text of the grade button named `label`, its key hint included. */

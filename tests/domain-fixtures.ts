@@ -50,7 +50,14 @@ export function makeItemProgress(
 ): ItemProgress {
   return {
     item: { kind: "composition", id },
-    memory: { box: 1, dueDay: "2026-09-23", lastDay: "2026-09-22", seenCount: 1 },
+    fsrs: {
+      stability: result === "ok" ? 2.3065 : 0.212,
+      difficulty: result === "ok" ? 2.118 : 6.4133,
+      reps: 1,
+      lapses: 0,
+      lastDay: "2026-09-22",
+      dueDay: result === "ok" ? "2026-09-25" : "2026-09-23",
+    },
     okDays: result === "ok" ? ["2026-09-22"] : [],
     mastered: null,
     placement: { topic: "work", subtopic: "meetings" },

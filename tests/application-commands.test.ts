@@ -11,6 +11,7 @@ import {
   type LearnerStore,
   type RoundPayload,
 } from "@instant-composition/application";
+import type { DrillNewPerDay } from "@instant-composition/domain";
 
 import {
   answersFor,
@@ -23,13 +24,10 @@ import {
   type Harness,
 } from "./application-harness";
 
-async function onboard(
-  h: Harness,
-  dailySize: 5 | 10 | 15 | 20 | 30 = 10,
-): Promise<void> {
+async function onboard(h: Harness, newPerDay: DrillNewPerDay = 5): Promise<void> {
   const saved = await updateSettings(h.deps, h.context(), {
     topics: ["work", "travel"],
-    dailySize,
+    newPerDay,
   });
   expect(saved.ok).toBe(true);
 }
@@ -186,6 +184,81 @@ describe("startRound", () => {
   });
 });
 
+describe("a learner whose cards were scheduled under Leitner", () => {
+  /** Placed on 2026-09-22, then every item rewritten as stored before FSRS: box 3, no state. */
+  async function leitnerEra(h: Harness): Promise<readonly string[]> {
+    await placed(h);
+    const store = h.stores.forLearner(h.learner);
+    const items = await store.items();
+    const written = await store.commit({
+      puts: [],
+      updates: [...items.values()].map(({ value, version }) => {
+        const { fsrs, ...rest } = value;
+        expect(fsrs).toBeDefined();
+        return {
+          entry: {
+            type: "item" as const,
+            value: {
+              ...rest,
+              memory: {
+                box: 3,
+                dueDay: "2026-09-29",
+                lastDay: "2026-09-22",
+                seenCount: 3,
+              },
+            },
+          },
+          version,
+        };
+      }),
+      expect: [],
+    });
+    expect(written.ok).toBe(true);
+    return [...items.keys()];
+  }
+
+  it("deals those cards in the review quota as not new, with a new card's 1, 2 and 3 days", async () => {
+    const h = makeHarness();
+    const old = await leitnerEra(h);
+    const round = await start(h, "today", "t1", NOON + DAY_MS);
+    const dealt = old.filter((id) => round.deck.includes(id));
+    expect(dealt).toStrictEqual(old);
+    for (const id of old) {
+      expect(round.cards[id]).toMatchObject({
+        isNew: false,
+        intervals: { again: 1, hard: 2, good: 3 },
+      });
+    }
+    expect(round.deck.filter((id) => round.cards[id]?.isNew === true)).toHaveLength(5);
+  });
+
+  it("schedules one graded good due in 3 days, keeping its Leitner state unread", async () => {
+    const h = makeHarness();
+    const [cardId] = await leitnerEra(h);
+    if (cardId === undefined) throw new Error("No items.");
+    await start(h, "today", "t1", NOON + DAY_MS);
+    const recorded = await recordAnswers(h.deps, h.context(NOON + DAY_MS), {
+      roundId: "t1",
+      answers: [
+        {
+          id: `t1:f:${cardId}`,
+          roundId: "t1",
+          cardId,
+          pass: "first",
+          grade: "good",
+          elapsedMs: 3_000,
+        },
+      ],
+    });
+    expect(recorded.ok).toBe(true);
+    const item = (await h.stores.forLearner(h.learner).items()).get(cardId)?.value;
+    expect(item).toMatchObject({
+      memory: { box: 3, dueDay: "2026-09-29" },
+      fsrs: { reps: 1, lapses: 0, lastDay: "2026-09-23", dueDay: "2026-09-26" },
+    });
+  });
+});
+
 describe("startRound after misses on one grammar concept", () => {
   const WEAK = "en:grammar/passive";
   const snapshot = makeSnapshot({
@@ -202,14 +275,14 @@ describe("startRound after misses on one grammar concept", () => {
     snapshot.shown.get(cardId)?.concepts.includes(WEAK) ?? false;
 
   /**
-   * Placed, then two extra rounds that miss every `WEAK` card or none, then a
-   * third. All on one day, so the third deals only unseen cards: a missed card
-   * coming back as a review cannot account for the difference.
+   * Placed, then four extra rounds of five that miss every `WEAK` card or
+   * none, then a fifth. All on one day, so the fifth deals only unseen cards:
+   * a missed card coming back as a review cannot account for the difference.
    */
-  async function thirdExtra(missWeak: boolean): Promise<RoundPayload> {
+  async function fifthExtra(missWeak: boolean): Promise<RoundPayload> {
     const h = makeHarness(fixedCatalog(snapshot));
     await placed(h);
-    for (const roundId of ["e1", "e2"]) {
+    for (const roundId of ["e1", "e2", "e3", "e4"]) {
       const round = await start(h, "extra", roundId);
       const finished = await finishRound(h.deps, h.context(), {
         roundId,
@@ -219,12 +292,12 @@ describe("startRound after misses on one grammar concept", () => {
       });
       expect(finished.ok).toBe(true);
     }
-    return start(h, "extra", "e3");
+    return start(h, "extra", "e5");
   }
 
   it("deals more cards of that concept than the same history without the misses", async () => {
-    const missed = await thirdExtra(true);
-    const clean = await thirdExtra(false);
+    const missed = await fifthExtra(true);
+    const clean = await fifthExtra(false);
 
     expect(missed.deck.filter(isWeak).length).toBeGreaterThan(
       clean.deck.filter(isWeak).length,
@@ -381,8 +454,8 @@ describe("recordAnswers", () => {
       expect(items.get(cardId)?.value).toStrictEqual(moved.get(cardId));
     }
     for (const cardId of only) {
-      expect(items.get(cardId)?.value.memory).toMatchObject({
-        box: 0,
+      expect(items.get(cardId)?.value.fsrs).toMatchObject({
+        reps: 1,
         lastDay: "2026-09-23",
         dueDay: "2026-09-24",
       });
@@ -392,8 +465,9 @@ describe("recordAnswers", () => {
   it("takes in a batch larger than one commit may hold", async () => {
     const h = makeHarness();
     await placed(h);
-    await updateSettings(h.deps, h.context(), { dailySize: 30 });
-    const round = await start(h, "today", "t1");
+    await updateSettings(h.deps, h.context(), { newPerDay: 15 });
+    const tomorrow = NOON + DAY_MS;
+    const round = await start(h, "today", "t1", tomorrow);
     const firsts = answersFor(round, () => "ng");
     const retries = firsts.map((answer) => ({
       ...answer,
@@ -402,11 +476,12 @@ describe("recordAnswers", () => {
       result: "ok" as const,
     }));
 
-    const finished = await finishRound(h.deps, h.context(), {
+    const finished = await finishRound(h.deps, h.context(tomorrow), {
       roundId: round.id,
       answers: [...firsts, ...retries],
     });
 
+    expect(firsts).toHaveLength(15);
     expect(finished.ok && finished.value.totals.added).toBe(firsts.length * 2);
   });
 });
@@ -486,9 +561,10 @@ describe("updateSettings", () => {
     });
   });
 
-  it("completes today's portion there and then when the new size is already met", async () => {
+  it("completes today's portion there and then when a lower limit is already met", async () => {
     const h = makeHarness();
     await placed(h);
+    await updateSettings(h.deps, h.context(), { newPerDay: 10 });
     const tomorrow = NOON + DAY_MS;
     const round = await start(h, "today", "t2", tomorrow);
     await recordAnswers(h.deps, h.context(tomorrow), {
@@ -496,7 +572,7 @@ describe("updateSettings", () => {
       answers: answersFor(round).slice(0, 5),
     });
 
-    const saved = await updateSettings(h.deps, h.context(tomorrow), { dailySize: 5 });
+    const saved = await updateSettings(h.deps, h.context(tomorrow), { newPerDay: 5 });
 
     expect(saved.ok && saved.value.completedToday).toBe(true);
     const store = h.stores.forLearner(h.learner);
@@ -507,17 +583,19 @@ describe("updateSettings", () => {
     ]);
   });
 
-  it("cuts the open round's deck when the new size is not yet met", async () => {
+  it("cuts the open round's deck when a lower limit is not yet met", async () => {
     const h = makeHarness();
     await placed(h);
+    await updateSettings(h.deps, h.context(), { newPerDay: 10 });
     const tomorrow = NOON + DAY_MS;
     const round = await start(h, "today", "t2", tomorrow);
+    expect(round.deck).toHaveLength(10);
     await recordAnswers(h.deps, h.context(tomorrow), {
       roundId: round.id,
       answers: answersFor(round).slice(0, 2),
     });
 
-    const saved = await updateSettings(h.deps, h.context(tomorrow), { dailySize: 5 });
+    const saved = await updateSettings(h.deps, h.context(tomorrow), { newPerDay: 5 });
 
     expect(saved.ok && saved.value.completedToday).toBe(false);
     const store = h.stores.forLearner(h.learner);
@@ -567,6 +645,7 @@ describe("updateLevel", () => {
       value: { mode: "manual", level: 5, toeic: "730" },
     });
 
+    await updateSettings(h.deps, h.context(), { newPerDay: 10 });
     const view = await home(h.deps, h.context());
     expect(view.ok && view.value.state.kind).toBe("ready");
     const round = await start(h, "today", "t1");
@@ -583,16 +662,24 @@ describe("updateLevel", () => {
     await updateLevel(h.deps, h.context(), { mode: "manual", level: 5 });
     const store = h.stores.forLearner(h.learner);
 
+    // Fifteen new cards today, then three extra rounds of five.
     const today = await playFast(h, "today", "t1", NOON + MINUTE);
-    const extra = await playFast(h, "extra", "x1", NOON + 3 * MINUTE);
+    const extras = [];
+    for (const [index, roundId] of ["x1", "x3", "x4"].entries()) {
+      extras.push(await playFast(h, "extra", roundId, NOON + (2 + index) * MINUTE));
+    }
     const kept = (await store.stats())?.value;
     expect(today.summary.difficulty).toBeNull();
-    expect(extra.summary.difficulty).toBeNull();
+    expect(extras.map((extra) => extra.summary.difficulty)).toStrictEqual([
+      null,
+      null,
+      null,
+    ]);
     expect(kept?.levelWindow).toHaveLength(30);
     expect(kept?.level).toMatchObject({ level: 5, reason: "chosen" });
     expect(kept?.levelMode).toBe("manual");
 
-    const released = await updateLevel(h.deps, h.context(NOON + 5 * MINUTE), {
+    const released = await updateLevel(h.deps, h.context(NOON + 5 * MINUTE + 1), {
       mode: "auto",
     });
     expect(released).toStrictEqual({

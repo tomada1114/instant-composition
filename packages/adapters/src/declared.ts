@@ -26,6 +26,8 @@ const SETTINGS = {
   sound: true,
   limitSeconds: true,
   gradeKeys: true,
+  newPerDay: true,
+  reviewsPerDay: true,
   vocabNewPerDay: true,
   vocabReviewsPerDay: true,
 } as const satisfies Fields<Settings>;
@@ -48,6 +50,8 @@ const DETAIL = {
   activity: true,
   pass: true,
   result: true,
+  grade: true,
+  timedOut: true,
   elapsedMs: true,
   limitMs: true,
   paceMs: true,
@@ -56,6 +60,7 @@ const DETAIL = {
 const ITEM = {
   item: true,
   memory: true,
+  fsrs: true,
   okDays: true,
   mastered: true,
   placement: true,

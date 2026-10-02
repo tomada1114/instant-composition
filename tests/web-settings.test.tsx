@@ -36,7 +36,9 @@ const SETTINGS: Settings = {
   dailySize: 10,
   sound: true,
   limitSeconds: 30,
-  gradeKeys: { ok: "ArrowRight", ng: "ArrowLeft" },
+  gradeKeys: { ok: "ArrowRight", ng: "ArrowLeft", hard: "Digit2" },
+  newPerDay: 5,
+  reviewsPerDay: 20,
   vocabNewPerDay: 10,
   vocabReviewsPerDay: 100,
 };
@@ -114,7 +116,11 @@ function serveSettings(
     if (call.method === "PATCH" && call.url === "/api/v1/settings") {
       const patch = call.body as SettingsPatch;
       patches.push(patch);
-      settings = { ...settings, ...patch };
+      settings = {
+        ...settings,
+        ...patch,
+        gradeKeys: { ...settings.gradeKeys, ...patch.gradeKeys },
+      };
       return Response.json({
         settings,
         removedFocus: [],

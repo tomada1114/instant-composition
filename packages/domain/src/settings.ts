@@ -1,8 +1,11 @@
 import type { PracticeError } from "./errors";
+import { gradeKeysOf, isGradeKeyPair } from "./grade-keys";
 import { err, ok, type Result } from "./result";
 import { TUNING, VOCAB_TUNING } from "./tuning";
 import type {
   DailySize,
+  DrillNewPerDay,
+  DrillReviewsPerDay,
   GradeKeys,
   LimitSeconds,
   Settings,
@@ -27,32 +30,26 @@ export interface SettingsPatch {
   readonly dailySize?: DailySize;
   readonly sound?: boolean;
   readonly limitSeconds?: LimitSeconds;
-  /** Both keys at once, so the pair is judged whole. */
+  /** Every key at once, so they are judged together; without `hard`, it is derived. */
   readonly gradeKeys?: GradeKeys;
+  readonly newPerDay?: DrillNewPerDay;
+  readonly reviewsPerDay?: DrillReviewsPerDay;
   readonly vocabNewPerDay?: VocabNewPerDay;
   readonly vocabReviewsPerDay?: VocabReviewsPerDay;
 }
 
-/**
- * The `KeyboardEvent.code` values a grade may take: ↑ ↓ ← →, 0–9 and A–Z.
- * Space, Enter, Esc and `?` (`Slash`) fall outside it, which keeps the drill's
- * own keys out of reach. The contract's `gradeKeySchema` states the same set.
- */
-const GRADE_KEY = /^(?:Arrow(?:Up|Down|Left|Right)|Digit[0-9]|Key[A-Z])$/u;
-
-/** Whether the drill may grade with `code`. */
-export function isGradeKey(code: string): boolean {
-  return GRADE_KEY.test(code);
-}
-
-/** Two keys the drill may grade with, a different one for each grade. */
-export function isGradeKeyPair(pair: GradeKeys): boolean {
-  return isGradeKey(pair.ok) && isGradeKey(pair.ng) && pair.ok !== pair.ng;
-}
-
-/** The grade keys the learner chose, or the default when they never chose any. */
-export function gradeKeysOf(settings: Settings | undefined): GradeKeys {
-  return settings?.gradeKeys ?? TUNING.defaultGradeKeys;
+/** The drill's daily limits the learner chose, or the defaults for those never chosen. */
+export function drillLimitsOf(settings: Settings | undefined): {
+  readonly newPerDay: DrillNewPerDay;
+  readonly reviewsPerDay: DrillReviewsPerDay;
+} {
+  return {
+    newPerDay: settings?.newPerDay ?? TUNING.defaultNewPerDay,
+    reviewsPerDay:
+      settings?.reviewsPerDay === undefined
+        ? TUNING.defaultReviewsPerDay
+        : settings.reviewsPerDay,
+  };
 }
 
 /** The per-card limit the learner chose, or the default when they never chose one. */
@@ -75,27 +72,36 @@ export function vocabLimitsOf(settings: Settings | undefined): {
 }
 
 /** The settings as a client reads them: every field present, a default for one never chosen. */
-export function withDefaults(settings: Settings): Required<Settings> {
+export type ShownSettings = Required<Omit<Settings, "gradeKeys">> & {
+  readonly gradeKeys: Required<GradeKeys>;
+};
+
+/** The settings with a default in every field never chosen; see {@link ShownSettings}. */
+export function withDefaults(settings: Settings): ShownSettings {
+  const drill = drillLimitsOf(settings);
   const vocab = vocabLimitsOf(settings);
   return {
     ...settings,
     limitSeconds: limitSecondsOf(settings),
     gradeKeys: gradeKeysOf(settings),
+    newPerDay: drill.newPerDay,
+    reviewsPerDay: drill.reviewsPerDay,
     vocabNewPerDay: vocab.newPerDay,
     vocabReviewsPerDay: vocab.reviewsPerDay,
   };
 }
 
-/** Whether each vocabulary limit `patch` sets is one the settings offer. */
-function offersVocabLimits(patch: SettingsPatch): boolean {
-  const { vocabNewPerDay, vocabReviewsPerDay } = patch;
+function offered<T>(options: readonly T[], value: T | undefined): boolean {
+  return value === undefined || options.includes(value);
+}
+
+/** Whether each daily limit `patch` sets, the drill's and the vocabulary's, is on offer. */
+function offersLimits(patch: SettingsPatch): boolean {
   return (
-    (vocabNewPerDay === undefined ||
-      (VOCAB_TUNING.newPerDay as readonly number[]).includes(vocabNewPerDay)) &&
-    (vocabReviewsPerDay === undefined ||
-      (VOCAB_TUNING.reviewsPerDay as readonly (number | null)[]).includes(
-        vocabReviewsPerDay,
-      ))
+    offered<number>(TUNING.newPerDay, patch.newPerDay) &&
+    offered<number | null>(TUNING.reviewsPerDay, patch.reviewsPerDay) &&
+    offered<number>(VOCAB_TUNING.newPerDay, patch.vocabNewPerDay) &&
+    offered<number | null>(VOCAB_TUNING.reviewsPerDay, patch.vocabReviewsPerDay)
   );
 }
 
@@ -119,8 +125,8 @@ function isKnownRef(taxonomy: readonly TopicInfo[], ref: SubtopicRef): boolean {
 /**
  * The settings after `patch`. The last topic cannot be removed, at most
  * `TUNING.maxFocus` focus subtopics are kept, removing a topic removes its
- * focus too, a grade key pair must pass `isGradeKeyPair`, and each vocabulary
- * limit must be one `VOCAB_TUNING` offers.
+ * focus too, the grade keys must pass `isGradeKeyPair`, and each daily limit
+ * must be one `TUNING` or `VOCAB_TUNING` offers.
  */
 export function decideSettings(
   current: Settings,
@@ -151,12 +157,15 @@ export function decideSettings(
   }
   if (
     (patch.gradeKeys !== undefined && !isGradeKeyPair(patch.gradeKeys)) ||
-    !offersVocabLimits(patch)
+    !offersLimits(patch)
   ) {
     return err({ code: "ERR_BAD_REQUEST" });
   }
   const limitSeconds = patch.limitSeconds ?? current.limitSeconds;
   const gradeKeys = patch.gradeKeys ?? current.gradeKeys;
+  const newPerDay = patch.newPerDay ?? current.newPerDay;
+  const reviewsPerDay =
+    patch.reviewsPerDay === undefined ? current.reviewsPerDay : patch.reviewsPerDay;
   const vocabNewPerDay = patch.vocabNewPerDay ?? current.vocabNewPerDay;
   const vocabReviewsPerDay =
     patch.vocabReviewsPerDay === undefined
@@ -170,6 +179,8 @@ export function decideSettings(
       sound: patch.sound ?? current.sound,
       ...(limitSeconds === undefined ? {} : { limitSeconds }),
       ...(gradeKeys === undefined ? {} : { gradeKeys }),
+      ...(newPerDay === undefined ? {} : { newPerDay }),
+      ...(reviewsPerDay === undefined ? {} : { reviewsPerDay }),
       ...(vocabNewPerDay === undefined ? {} : { vocabNewPerDay }),
       ...(vocabReviewsPerDay === undefined ? {} : { vocabReviewsPerDay }),
     },

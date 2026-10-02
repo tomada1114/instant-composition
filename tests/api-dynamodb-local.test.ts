@@ -188,14 +188,18 @@ describe("the API on DynamoDB local", () => {
     });
   });
 
-  it("reads → and ← until the learner sets a pair, then the pair stored", async () => {
+  it("reads → and ← and 2 for hard until the learner sets a pair, then the pair stored and hard derived", async () => {
     const backing = await tables.freshBacking();
     const api = makeApi(backing);
     const read = async () =>
       settingsPageViewSchema.parse(await (await api.call("GET", "/v1/settings")).json())
         .settings.gradeKeys;
 
-    expect(await read()).toStrictEqual({ ok: "ArrowRight", ng: "ArrowLeft" });
+    expect(await read()).toStrictEqual({
+      ok: "ArrowRight",
+      ng: "ArrowLeft",
+      hard: "Digit2",
+    });
     expect(await backing.stores.forLearner(learnerId("learner-1")).settings()).toBe(
       undefined,
     );
@@ -205,7 +209,7 @@ describe("the API on DynamoDB local", () => {
       (await api.call("PATCH", "/v1/settings", { topics: ["work"], gradeKeys })).status,
     ).toBe(200);
 
-    expect(await read()).toStrictEqual(gradeKeys);
+    expect(await read()).toStrictEqual({ ...gradeKeys, hard: "Digit2" });
     expect(
       (await backing.stores.forLearner(learnerId("learner-1")).settings())?.value
         .gradeKeys,

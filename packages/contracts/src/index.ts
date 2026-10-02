@@ -11,8 +11,13 @@ export {
   answerResultSchema,
   dayKeySchema,
   dotSchema,
+  drillNewPerDaySchema,
+  drillReviewsPerDaySchema,
+  gradeIntervalsSchema,
   gradeKeySchema,
+  gradeKeysPatchSchema,
   gradeKeysSchema,
+  gradeKeyTrioSchema,
   gradeSchema,
   idSchema,
   levelModeSchema,
@@ -61,6 +66,8 @@ export {
   verdictSchema,
 } from "./talk";
 export {
+  answeredRowSchema,
+  drillCardSchema,
   levelViewSchema,
   profileSchema,
   roundPayloadSchema,

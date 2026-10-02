@@ -7,8 +7,11 @@ import {
   gradeKeysOf,
   homeState,
   ok,
+  portionSize,
   practiceState,
   seedFor,
+  TUNING,
+  wantedToday,
   weekDots,
   type DayKey,
   type PortionProgress,
@@ -37,8 +40,7 @@ function preview(
   roundsStarted: number,
   twoPortions: boolean,
 ): HomePreview | undefined {
-  const setting = practice.dailySize;
-  const size = portionTarget ?? Math.min(setting, availableFor(practice));
+  const size = portionTarget ?? portionSize(practice, 0);
   const dealt = deal(practice, {
     size,
     seed: seedFor(practice.today, "today", roundsStarted),
@@ -46,10 +48,11 @@ function preview(
   if (!dealt.ok) {
     return undefined;
   }
+  const wanted = wantedToday(practice);
   return {
     size,
-    setting,
-    shortage: size < setting,
+    setting: wanted,
+    shortage: size < wanted,
     reviewCount: dealt.value.reviewCount,
     newCount: dealt.value.newCount,
     focusNames: (settings?.focus ?? []).map((ref) => subtopicName(snapshot, ref)),
@@ -142,7 +145,7 @@ export async function home(
     todayRounds: tally?.roundsFinished ?? 0,
     todayCards: tally?.firstPass ?? 0,
     todayLastRoundId: tally?.lastFinishedRound ?? undefined,
-    dailySize: practice.dailySize,
+    dailySize: TUNING.extraSize,
     sound: settings?.value.sound ?? true,
     gradeKeys: gradeKeysOf(settings?.value),
     contentError: unreadable,

@@ -10,7 +10,11 @@ import {
   type VocabCategory,
   type VocabItem,
 } from "@instant-composition/application";
-import type { AnswerInput, CardContent } from "@instant-composition/domain";
+import type {
+  AnswerInput,
+  AnswerResult,
+  CardContent,
+} from "@instant-composition/domain";
 
 // A catalog, a clock and a learner for the packages/application command suites.
 // Nothing here asserts.
@@ -184,7 +188,7 @@ export function makeHarness(catalog: Catalog = fixedCatalog()): Harness {
 /** Answers for every card of the deck's first pass, each graded by `grade`. */
 export function answersFor(
   round: RoundPayload,
-  grade: (cardId: string, index: number) => AnswerInput["result"] = () => "ok",
+  grade: (cardId: string, index: number) => AnswerResult = () => "ok",
   elapsedMs = 3_000,
 ): AnswerInput[] {
   return round.deck.map((cardId, index) => ({

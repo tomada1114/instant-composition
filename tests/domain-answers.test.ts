@@ -3,12 +3,15 @@ import { describe, expect, it } from "vitest";
 import {
   checkAnswers,
   decideAnswers,
+  scheduleCard,
   type AnswerInput,
+  type AnswerResult,
   type AnswersState,
   type CardFacts,
 } from "@instant-composition/domain";
 
 import {
+  FIRST_GOOD,
   makeDay,
   makeItem,
   makePortion,
@@ -42,15 +45,21 @@ const CARDS: ReadonlyMap<string, CardFacts> = new Map<string, CardFacts>([
   ],
 ]);
 
-function answer(overrides: Partial<AnswerInput> = {}): AnswerInput {
+/** An answer an older client sends, `result: "ok"`; `result: undefined` leaves it out. */
+function answer(
+  overrides: Omit<Partial<AnswerInput>, "result"> & {
+    readonly result?: AnswerResult | undefined;
+  } = {},
+): AnswerInput {
+  const { result, ...rest } = { result: "ok" as const, ...overrides };
   return {
     id: "r1:f:c1",
     roundId: "r1",
     cardId: "c1",
     pass: "first",
-    result: "ok",
     elapsedMs: 3_000,
-    ...overrides,
+    ...rest,
+    ...(result === undefined ? {} : { result }),
   };
 }
 
@@ -87,6 +96,7 @@ describe("checkAnswers", () => {
     ["another round", answer({ roundId: "r2" })],
     ["a card outside the deck", answer({ cardId: "c9" })],
     ["a card the catalog does not know", answer({ cardId: "c5" })],
+    ["no grade and no result", answer({ result: undefined })],
   ])("refuses a batch holding an answer for %s", (_, bad) => {
     const cards = new Map([...CARDS].filter(([id]) => id !== "c5"));
     expect(checkAnswers(makeRound(), [answer(), bad], cards, new Set())).toStrictEqual({
@@ -153,22 +163,110 @@ describe("decideAnswers", () => {
     ]);
   });
 
-  it.each([
-    [4_000, "easy", 2],
-    [4_001, "good", 1],
-  ] as const)(
-    "judges a %i ms ○ against the 8-second pace, not the 60-second limit: %s",
-    (elapsedMs, outcome, box) => {
+  it.each([4_000, 4_001])(
+    "schedules a ○ flipped in %i ms by its grade alone, fast against the pace or not",
+    (elapsedMs) => {
       const change = decideAnswers(
         state({ round: makeRound({ limitMs: 60_000 }) }),
         [answer({ elapsedMs })],
         CARDS,
         9,
       );
-      expect(change?.entries[0]?.outcome).toBe(outcome);
-      expect(change?.items[0]?.memory.box).toBe(box);
+      expect(change?.entries[0]).toMatchObject({
+        outcome: "good",
+        detail: { result: "ok", grade: "good", timedOut: false, paceMs: 8_000 },
+      });
+      expect(change?.items[0]?.fsrs).toStrictEqual(
+        scheduleCard(undefined, "good", "2026-09-22", "c1").state,
+      );
     },
   );
+
+  it("takes an older client's timeout as again, timed out, due the next day", () => {
+    const change = decideAnswers(
+      state(),
+      [answer({ result: "timeout", elapsedMs: 0 })],
+      CARDS,
+      9,
+    );
+    expect(change?.entries[0]).toMatchObject({
+      outcome: "again",
+      fsrs: { before: null, after: { lastDay: "2026-09-22", dueDay: "2026-09-23" } },
+      detail: { result: "timeout", grade: "again", timedOut: true, elapsedMs: 30_000 },
+    });
+    expect(change?.items[0]).toMatchObject({ okDays: [], last: { result: "timeout" } });
+  });
+
+  it.each([
+    ["ok", "good", "2026-09-25"],
+    ["ng", "again", "2026-09-23"],
+  ] as const)(
+    "takes an older client's %s as %s, not timed out",
+    (result, grade, dueDay) => {
+      const change = decideAnswers(state(), [answer({ result })], CARDS, 9);
+      expect(change?.entries[0]?.detail).toMatchObject({
+        result,
+        grade,
+        timedOut: false,
+      });
+      expect(change?.items[0]?.fsrs?.dueDay).toBe(dueDay);
+    },
+  );
+
+  it("schedules hard timed out by its grade, and counts it neither said in time nor a hit", () => {
+    const change = decideAnswers(
+      state(),
+      [answer({ result: undefined, grade: "hard", timedOut: true, elapsedMs: 9_000 })],
+      CARDS,
+      9,
+    );
+    expect(change?.entries[0]).toMatchObject({
+      outcome: "hard",
+      detail: { result: "timeout", grade: "hard", timedOut: true, elapsedMs: 30_000 },
+    });
+    expect(change?.items[0]).toMatchObject({
+      fsrs: { reps: 1, lastDay: "2026-09-22", dueDay: "2026-09-24" },
+      okDays: [],
+      last: { result: "timeout" },
+    });
+  });
+
+  it("takes a grade over a result an answer also carries", () => {
+    const change = decideAnswers(
+      state(),
+      [answer({ result: "ng", grade: "good" })],
+      CARDS,
+      9,
+    );
+    expect(change?.entries[0]?.detail).toMatchObject({ result: "ok", grade: "good" });
+  });
+
+  it("schedules a card seen only under Leitner as new from its first answer, keeping its Leitner state", () => {
+    const memory = {
+      box: 3,
+      dueDay: "2026-09-20",
+      lastDay: "2026-09-13",
+      seenCount: 4,
+    };
+    const { fsrs, ...seen } = makeItem({ okDays: ["2026-09-10", "2026-09-13"] });
+    expect(fsrs).toBeDefined();
+    const leitner = { ...seen, memory };
+    const change = decideAnswers(
+      state({ items: new Map([["c1", leitner]]) }),
+      [answer()],
+      CARDS,
+      9,
+    );
+    expect(change?.entries[0]).toMatchObject({
+      before: memory,
+      after: memory,
+      fsrs: { before: null, after: { reps: 1, lapses: 0, dueDay: "2026-09-25" } },
+    });
+    expect(change?.items[0]).toMatchObject({
+      memory,
+      fsrs: { reps: 1, dueDay: "2026-09-25" },
+    });
+  });
 
   it("stamps each answer with the round's day and the server's time", () => {
     const round = makeRound({ day: "2026-09-21" });
@@ -231,46 +329,43 @@ describe("decideAnswers", () => {
     );
     expect(change?.entries[0]).toMatchObject({ day: "2026-09-21", answeredAt: 2_500 });
     expect(change?.day.day).toBe("2026-09-21");
-    expect(change?.items[0]?.memory).toMatchObject({
+    expect(change?.items[0]?.fsrs).toMatchObject({
       lastDay: "2026-09-21",
-      dueDay: "2026-09-25",
+      dueDay: "2026-09-24",
     });
   });
 
   it.each([
-    ["answered before the item's latest first pass", 2_500, "2026-09-22"],
-    ["answered no later than the item's latest first pass", 3_000, "2026-09-22"],
-    ["given for a day before the one the item last moved on", 5_000, "2026-09-23"],
-  ])(
-    "logs a stale answer %s, leaving the item's schedule as it was",
-    (_, at, lastDay) => {
-      const item = makeItem({
-        memory: { box: 3, dueDay: "2026-09-30", lastDay, seenCount: 4 },
-        last: { sessionId: "r2", result: "ok", elapsedMs: 2_000, answeredAt: 3_000 },
-      });
-      const change = decideAnswers(
-        state({ items: new Map([["c1", item]]) }),
-        [answer({ result: "ng", answeredAt: at })],
-        CARDS,
-        9_000,
-      );
-      expect(change?.items).toStrictEqual([]);
-      expect(change?.entries[0]).toMatchObject({
-        day: "2026-09-22",
-        answeredAt: at,
-        outcome: "again",
-        before: item.memory,
-        after: item.memory,
-      });
-      expect(change?.round.firstPass).toBe(1);
-      expect(change?.day.firstPass).toBe(1);
-    },
-  );
+    ["given later on the day the item last moved on", "2026-09-22"],
+    ["given for a day before the one the item last moved on", "2026-09-23"],
+  ])("logs a stale answer %s, leaving the item's schedule as it was", (_, lastDay) => {
+    const item = makeItem({
+      fsrs: { ...FIRST_GOOD, reps: 3, lastDay, dueDay: "2026-09-30" },
+      last: { sessionId: "r2", result: "ok", elapsedMs: 2_000, answeredAt: 3_000 },
+    });
+    const change = decideAnswers(
+      state({ items: new Map([["c1", item]]) }),
+      [answer({ result: "ng", answeredAt: 5_000 })],
+      CARDS,
+      9_000,
+    );
+    expect(change?.items).toStrictEqual([]);
+    expect(change?.entries[0]).toMatchObject({
+      day: "2026-09-22",
+      answeredAt: 5_000,
+      outcome: "again",
+      before: null,
+      after: null,
+      fsrs: { before: item.fsrs, after: item.fsrs },
+      detail: { grade: "again" },
+    });
+    expect(change?.round.firstPass).toBe(1);
+    expect(change?.day.firstPass).toBe(1);
+  });
 
   it("moves an item on a first pass, and leaves it on a retry", () => {
-    const item = makeItem({
-      memory: { box: 2, dueDay: "2026-09-24", lastDay: "2026-09-20", seenCount: 2 },
-    });
+    const fsrs = { ...FIRST_GOOD, lastDay: "2026-09-20", dueDay: "2026-09-23" };
+    const item = makeItem({ fsrs });
     const change = decideAnswers(
       state({ items: new Map([["c1", item]]) }),
       [answer({ id: "r1:r:c2", cardId: "c2", pass: "retry" }), answer()],
@@ -278,11 +373,34 @@ describe("decideAnswers", () => {
       9_000,
     );
     expect(change?.items.map((progress) => progress.item.id)).toStrictEqual(["c1"]);
-    expect(change?.items[0]?.memory).toStrictEqual({
-      box: 4,
-      dueDay: "2026-10-06",
-      lastDay: "2026-09-22",
-      seenCount: 3,
+    expect(change?.items[0]?.fsrs).toStrictEqual(
+      scheduleCard(fsrs, "good", "2026-09-22", "c1").state,
+    );
+    expect(change?.items[0]?.fsrs).toMatchObject({ reps: 2, dueDay: "2026-10-02" });
+  });
+
+  it("logs a re-ask the same day with its grade, and leaves the card's due day as the first answer set it", () => {
+    const change = decideAnswers(
+      state(),
+      [
+        answer({ answeredAt: 2_000 }),
+        answer({
+          id: "r1:r:c1",
+          pass: "retry",
+          result: undefined,
+          grade: "again",
+          answeredAt: 3_000,
+        }),
+      ],
+      CARDS,
+      9_000,
+    );
+    const moved = scheduleCard(undefined, "good", "2026-09-22", "c1").state;
+    expect(change?.items.map((progress) => progress.fsrs)).toStrictEqual([moved]);
+    expect(change?.entries[1]).toMatchObject({
+      outcome: "again",
+      fsrs: { before: moved, after: moved },
+      detail: { pass: "retry", grade: "again", result: "ng" },
     });
   });
 

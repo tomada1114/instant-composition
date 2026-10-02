@@ -89,14 +89,76 @@ describe("decideSettings", () => {
     expect(kept.ok && kept.value.settings.gradeKeys).toStrictEqual(pair);
   });
 
-  it("leaves the grade keys unchosen until the learner chooses them, so → and ← stand in", () => {
+  it("leaves the grade keys unchosen until the learner chooses them, so →, ← and 2 stand in", () => {
     const decided = decideSettings(DEFAULT_SETTINGS, { topics: ["work"] }, TAXONOMY);
     expect(decided.ok && "gradeKeys" in decided.value.settings).toBe(false);
-    expect(decided.ok && withDefaults(decided.value.settings).gradeKeys).toStrictEqual({
-      ok: "ArrowRight",
-      ng: "ArrowLeft",
+    const defaults = { ok: "ArrowRight", ng: "ArrowLeft", hard: "Digit2" };
+    expect(decided.ok && withDefaults(decided.value.settings).gradeKeys).toStrictEqual(
+      defaults,
+    );
+    expect(gradeKeysOf(undefined)).toStrictEqual(defaults);
+  });
+
+  it("stores an older client's pair as it is, and reads △ as 2", () => {
+    const pair = { ok: "KeyK", ng: "KeyJ" };
+    const decided = decideSettings(CURRENT, { gradeKeys: pair }, TAXONOMY);
+    expect(decided.ok && decided.value.settings.gradeKeys).toStrictEqual(pair);
+    expect(decided.ok && gradeKeysOf(decided.value.settings)).toStrictEqual({
+      ...pair,
+      hard: "Digit2",
     });
-    expect(gradeKeysOf(undefined)).toStrictEqual({ ok: "ArrowRight", ng: "ArrowLeft" });
+  });
+
+  it.each([
+    [{ ok: "Digit2", ng: "Digit1" }, "KeyS"],
+    [{ ok: "Digit2", ng: "KeyS" }, "ArrowDown"],
+    [{ ok: "KeyS", ng: "Digit2" }, "ArrowDown"],
+  ])("gives △ the first key a stored pair %j leaves free: %s", (pair, hard) => {
+    expect(gradeKeysOf({ ...CURRENT, gradeKeys: pair })).toStrictEqual({
+      ...pair,
+      hard,
+    });
+  });
+
+  it("saves three chosen keys whole, and a later pair replaces them, △ derived again", () => {
+    const three = { ok: "ArrowRight", ng: "ArrowLeft", hard: "ArrowUp" };
+    const chosen = decideSettings(CURRENT, { gradeKeys: three }, TAXONOMY);
+    expect(chosen.ok && gradeKeysOf(chosen.value.settings)).toStrictEqual(three);
+    const pair = decideSettings(
+      { ...CURRENT, gradeKeys: three },
+      { gradeKeys: { ok: "KeyK", ng: "KeyJ" } },
+      TAXONOMY,
+    );
+    expect(pair.ok && gradeKeysOf(pair.value.settings)).toStrictEqual({
+      ok: "KeyK",
+      ng: "KeyJ",
+      hard: "Digit2",
+    });
+  });
+
+  it("leaves the drill's daily limits unchosen until chosen, so 5 and 20 stand in", () => {
+    const decided = decideSettings(DEFAULT_SETTINGS, { topics: ["work"] }, TAXONOMY);
+    expect(decided.ok && "newPerDay" in decided.value.settings).toBe(false);
+    expect(decided.ok && withDefaults(decided.value.settings)).toMatchObject({
+      newPerDay: 5,
+      reviewsPerDay: 20,
+    });
+  });
+
+  it.each<[SettingsPatch]>([
+    [{ newPerDay: 0 }],
+    [{ newPerDay: 3 }],
+    [{ newPerDay: 15 }],
+    [{ reviewsPerDay: 10 }],
+    [{ reviewsPerDay: 50 }],
+    [{ reviewsPerDay: null }],
+  ])("saves a drill limit on offer: %j", (patch) => {
+    const decided = decideSettings(CURRENT, patch, TAXONOMY);
+    expect(decided.ok && decided.value.settings).toStrictEqual({
+      ...CURRENT,
+      ...patch,
+    });
+    expect(decided.ok && withDefaults(decided.value.settings)).toMatchObject(patch);
   });
 
   it("takes a focus named twice once", () => {
@@ -125,6 +187,14 @@ describe("decideSettings", () => {
     ],
     ["both grades on one key", { gradeKeys: { ok: "KeyJ", ng: "KeyJ" } }],
     ["a grade on a key outside the set", { gradeKeys: { ok: "Space", ng: "KeyJ" } }],
+    ["△ on ○'s key", { gradeKeys: { ok: "KeyK", ng: "KeyJ", hard: "KeyK" } }],
+    ["△ on ×'s key", { gradeKeys: { ok: "KeyK", ng: "KeyJ", hard: "KeyJ" } }],
+    [
+      "△ on a key outside the set",
+      { gradeKeys: { ok: "KeyK", ng: "KeyJ", hard: "Tab" } },
+    ],
+    ["new cards a day off the list", { newPerDay: 7 as 5 }],
+    ["reviews a day off the list", { reviewsPerDay: 100 as 50 }],
   ])("refuses %s", (_, patch) => {
     expect(decideSettings(CURRENT, patch, TAXONOMY)).toStrictEqual({
       ok: false,
@@ -166,5 +236,11 @@ describe("the grade keys", () => {
     expect(isGradeKeyPair({ ok: "Digit1", ng: "Digit2" })).toBe(true);
     expect(isGradeKeyPair({ ok: "Digit1", ng: "Digit1" })).toBe(false);
     expect(isGradeKeyPair({ ok: "Digit1", ng: "Tab" })).toBe(false);
+  });
+
+  it("takes three keys only when all three differ", () => {
+    expect(isGradeKeyPair({ ok: "Digit3", ng: "Digit1", hard: "Digit2" })).toBe(true);
+    expect(isGradeKeyPair({ ok: "Digit3", ng: "Digit1", hard: "Digit1" })).toBe(false);
+    expect(isGradeKeyPair({ ok: "Digit3", ng: "Digit1", hard: "Digit3" })).toBe(false);
   });
 });

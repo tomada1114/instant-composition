@@ -1,3 +1,4 @@
+import { gradeOf } from "./card-state";
 import { addDays } from "./day";
 import { settleLevel } from "./level";
 import { pendingReach, reachByTopic } from "./mastery";
@@ -108,8 +109,12 @@ export function decideClose(state: CloseState, now: number): CloseChange {
   });
   const earned = roundPoints(round.firstPass, completing);
   const shownOrder = new Map(round.deck.map((id, index) => [id, index]));
+  // 「復習に回った文」: the first answers graded again, timed out or not.
   const misses = state.reviews
-    .filter((review) => review.detail.pass === "first" && review.detail.result !== "ok")
+    .filter(
+      (review) =>
+        review.detail.pass === "first" && gradeOf(review.detail).grade === "again",
+    )
     .map((review) => ({ cardId: review.item.id, prompt: review.snapshot.prompt }));
   const outcome: RoundOutcome = {
     placement: level.placement,

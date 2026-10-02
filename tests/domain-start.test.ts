@@ -100,15 +100,18 @@ describe("decideStart", () => {
     });
     expect(decided.ok && decided.value.portion).toMatchObject({
       day: "2026-09-21",
-      target: 10,
+      target: 5,
     });
   });
 
-  it("opens today's portion at the daily size and counts the round started", () => {
-    const decided = decideStart(state({ tally: makeDay({ roundsStarted: 2 }) }), {
-      kind: "today",
-      roundId: "t1",
-    });
+  it("opens today's portion at today's queue under the daily limits and counts the round started", () => {
+    const decided = decideStart(
+      state(
+        { tally: makeDay({ roundsStarted: 2 }) },
+        { settings: makeSettings({ newPerDay: 10 }) },
+      ),
+      { kind: "today", roundId: "t1" },
+    );
     expect(decided.ok && decided.value).toMatchObject({
       created: true,
       portion: { day: TODAY, target: 10, progress: 0 },
@@ -262,11 +265,22 @@ describe("decideStart", () => {
         card.id,
         makeItem({
           item: { kind: "composition", id: card.id },
-          memory: { box: 1, dueDay: "2026-09-23", lastDay: TODAY, seenCount: 1 },
+          fsrs: {
+            stability: 3,
+            difficulty: 5,
+            reps: 2,
+            lapses: 0,
+            lastDay: TODAY,
+            dueDay: "2026-09-25",
+          },
         }),
       ]),
     );
-    const decided = decideStart(state({}, { items }), { kind: "extra", roundId: "e1" });
+    const settings = makeSettings({ newPerDay: 15, reviewsPerDay: null });
+    const decided = decideStart(state({}, { items, settings }), {
+      kind: "today",
+      roundId: "t1",
+    });
     expect(decided).toStrictEqual({
       ok: false,
       error: { code: "ERR_NOT_ENOUGH_CARDS", available: 2 },

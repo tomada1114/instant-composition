@@ -1,97 +1,132 @@
 import { describe, expect, it } from "vitest";
 
 import {
-  nextCardState,
-  type CardState,
-  type LeitnerAnswer,
+  gradedOf,
+  gradeOf,
+  intervalsOf,
+  movesItem,
+  resultOf,
+  scheduleCard,
+  type FsrsGrade,
+  type ItemProgress,
 } from "@instant-composition/domain";
 
-// Worked examples against TUNING's intervals [1, 2, 4, 7, 14, 30] and a
-// 10-second pace, where "fast" is 5 seconds or less.
+import { FIRST_GOOD, makeItem, makeLeitnerReview } from "./application-fixtures";
 
-function leitner(overrides: Partial<LeitnerAnswer> = {}): LeitnerAnswer {
-  return {
-    day: "2026-09-22",
-    result: "ok",
-    elapsedMs: 8_000,
-    paceMs: 10_000,
-    ...overrides,
-  };
-}
+// The drill's card on FSRS: what an answer's grade is, what the figures count
+// it as, which answers move the schedule, and the intervals a card is dealt
+// with. A new card's first grade gives 1, 2 and 3 days under the default weights.
 
-function stepThrough(answers: readonly LeitnerAnswer[]): CardState | undefined {
-  let state: CardState | undefined;
-  for (const next of answers) {
-    state = nextCardState(state, next);
-  }
-  return state;
-}
-
-describe("the first answer to a new card", () => {
+describe("an answer's grade", () => {
   it.each([
-    ["ok", 8_000, 1, "2026-09-24"],
-    ["ok", 5_000, 2, "2026-09-26"],
-    ["ok", 5_001, 1, "2026-09-24"],
-    ["ng", 3_000, 0, "2026-09-23"],
-    ["timeout", 10_000, 0, "2026-09-23"],
+    ["ok", "good", false],
+    ["ng", "again", false],
+    ["timeout", "again", true],
   ] as const)(
-    "puts a %s in %p ms into box %p, due %s",
-    (result, elapsedMs, box, dueDay) => {
-      expect(nextCardState(undefined, leitner({ result, elapsedMs }))).toStrictEqual({
-        box,
-        lastDay: "2026-09-22",
-        dueDay,
-        seenCount: 1,
-      });
+    "takes an older client's %s as %s, timed out: %s",
+    (result, grade, timedOut) => {
+      expect(gradedOf({ result })).toStrictEqual({ grade, timedOut });
     },
   );
+
+  it("takes a grade as given, not timed out unless it says so, over any result", () => {
+    expect(gradedOf({ grade: "hard" })).toStrictEqual({
+      grade: "hard",
+      timedOut: false,
+    });
+    expect(gradedOf({ grade: "hard", timedOut: true, result: "ok" })).toStrictEqual({
+      grade: "hard",
+      timedOut: true,
+    });
+  });
+
+  it("finds none in an answer carrying neither", () => {
+    expect(gradedOf({})).toBeUndefined();
+  });
+
+  it("reads a review logged before three grades from its result", () => {
+    const leitner = makeLeitnerReview();
+    expect(gradeOf(leitner.detail)).toStrictEqual({ grade: "good", timedOut: false });
+    expect(gradeOf({ ...leitner.detail, result: "timeout" })).toStrictEqual({
+      grade: "again",
+      timedOut: true,
+    });
+    expect(
+      gradeOf({ ...leitner.detail, result: "timeout", grade: "hard", timedOut: true }),
+    ).toStrictEqual({ grade: "hard", timedOut: true });
+  });
 });
 
-describe("a later answer", () => {
-  it("moves an ok up one box and a fast ok up two", () => {
-    expect(
-      stepThrough([
-        leitner({ day: "2026-09-01" }),
-        leitner({ day: "2026-09-02" }),
-        leitner({ day: "2026-09-04", elapsedMs: 2_000 }),
-      ]),
-    ).toStrictEqual({
-      box: 4,
-      lastDay: "2026-09-04",
-      dueDay: "2026-09-18",
-      seenCount: 3,
+describe("what the figures count an answer as", () => {
+  it.each<[FsrsGrade, boolean, string]>([
+    ["again", false, "ng"],
+    ["hard", false, "ok"],
+    ["good", false, "ok"],
+    ["again", true, "timeout"],
+    ["hard", true, "timeout"],
+    ["good", true, "timeout"],
+  ])("counts %s, timed out: %s, as %s", (grade, timedOut, result) => {
+    expect(resultOf({ grade, timedOut })).toBe(result);
+  });
+});
+
+describe("which answers move the schedule", () => {
+  const moved = makeItem();
+
+  it("moves a new card, and a card seen only under Leitner, on its first pass", () => {
+    const { fsrs, ...leitner } = makeItem({
+      memory: { box: 3, dueDay: "2026-09-20", lastDay: "2026-09-13", seenCount: 3 },
     });
+    expect(fsrs).toBeDefined();
+    expect(movesItem(undefined, "first", "2026-09-22")).toBe(true);
+    expect(movesItem(leitner, "first", "2026-09-22")).toBe(true);
   });
 
-  it("stops at the last box", () => {
-    const answers = ["01", "02", "03", "04", "05"].map((dd) =>
-      leitner({ day: `2026-09-${dd}`, elapsedMs: 1_000 }),
-    );
-    expect(stepThrough(answers)).toStrictEqual({
-      box: 5,
-      lastDay: "2026-09-05",
-      dueDay: "2026-10-05",
-      seenCount: 5,
-    });
+  it("moves a card on the first pass of a later day", () => {
+    expect(movesItem(moved, "first", "2026-09-23")).toBe(true);
   });
 
   it.each([
-    ["ng", 3_000],
-    ["timeout", 10_000],
-  ] as const)(
-    "drops a %s back to box 0, due the next day, and still counts it as seen",
-    (result, elapsedMs) => {
-      expect(
-        stepThrough([
-          leitner({ day: "2026-09-01", elapsedMs: 1_000 }),
-          leitner({ day: "2026-09-03", result, elapsedMs }),
-        ]),
-      ).toStrictEqual({
-        box: 0,
-        lastDay: "2026-09-03",
-        dueDay: "2026-09-04",
-        seenCount: 2,
-      });
-    },
-  );
+    ["a re-ask", "retry", "2026-09-23"],
+    ["a later first pass the same day", "first", "2026-09-22"],
+    ["a first pass for an earlier day", "first", "2026-09-21"],
+  ] as const)("leaves the schedule on %s", (_, pass, day) => {
+    expect(movesItem(moved, pass, day)).toBe(false);
+  });
+});
+
+describe("the intervals a card is dealt with", () => {
+  it("gives a new card 1, 2 and 3 days", () => {
+    expect(intervalsOf(undefined, "2026-09-22", "c1")).toStrictEqual({
+      again: 1,
+      hard: 2,
+      good: 3,
+    });
+  });
+
+  it("gives a card in box 3 under Leitner a new card's intervals; graded good, it is due in 3 days", () => {
+    const { fsrs, ...rest } = makeItem({
+      memory: { box: 3, dueDay: "2026-09-21", lastDay: "2026-09-14", seenCount: 3 },
+    });
+    const leitner: ItemProgress = rest;
+    expect(fsrs).toBeDefined();
+    expect(movesItem(leitner, "first", "2026-09-22")).toBe(true);
+    expect(intervalsOf(leitner.fsrs, "2026-09-22", "c1")).toStrictEqual({
+      again: 1,
+      hard: 2,
+      good: 3,
+    });
+    expect(scheduleCard(leitner.fsrs, "good", "2026-09-22", "c1").state.dueDay).toBe(
+      "2026-09-25",
+    );
+  });
+
+  it("gives a card already scheduled the intervals its state and the days since give", () => {
+    const intervals = intervalsOf(FIRST_GOOD, "2026-09-25", "c1");
+    expect(intervals.again).toBe(1);
+    expect(intervals.hard).toBeLessThan(intervals.good);
+    expect(intervals.good).toBe(
+      scheduleCard(FIRST_GOOD, "good", "2026-09-25", "c1").intervalDays,
+    );
+  });
 });

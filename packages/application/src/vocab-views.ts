@@ -1,6 +1,7 @@
 import type { DayKey, VocabSession } from "@instant-composition/domain";
 
 import type { VocabCategory } from "./vocab-item";
+import type { GradeIntervals } from "./views";
 
 /** One category's row on the hub. */
 export interface VocabCategoryView {
@@ -29,13 +30,6 @@ export interface VocabHub {
   readonly tomorrow: number;
 }
 
-/** Days until the card is due again after each grade, were it given now. */
-export interface VocabIntervals {
-  readonly again: number;
-  readonly hard: number;
-  readonly good: number;
-}
-
 /** A dealt card: its front, its back, and what each grade would do. */
 export interface VocabCardView {
   readonly id: string;
@@ -48,7 +42,7 @@ export interface VocabCardView {
   readonly headword: string;
   readonly meaning: string;
   readonly example2: string;
-  readonly intervals: VocabIntervals;
+  readonly intervals: GradeIntervals;
   /** Never answered before: its first answer introduces it. */
   readonly isNew: boolean;
 }

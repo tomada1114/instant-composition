@@ -1,4 +1,5 @@
-import { availableFor, deal } from "./deck";
+import { portionSize } from "./compose";
+import { availableFor, deal, dealExtraDeck } from "./deck";
 import type { PracticeError } from "./errors";
 import { choosePlacement } from "./placement";
 import type { Portion } from "./records";
@@ -7,7 +8,10 @@ import type { StartState } from "./start";
 import { TUNING } from "./tuning";
 import type { DayKey, RoundKind } from "./types";
 
-/** How each kind of round is dealt, and the portion it opens or retargets. */
+/**
+ * How each kind of round is dealt, and the portion it opens or retargets: a
+ * portion is today's queue under the daily limits, sized when it opens.
+ */
 
 export type Dealt = Result<
   {
@@ -23,8 +27,9 @@ function newPortion(day: DayKey, target: number): Portion {
   return { day, target, progress: 0, completedAt: null, completedRound: null };
 }
 
+/** "One more 5": the cards past today's queue. */
 export function dealExtra(state: StartState, seed: string): Dealt {
-  const dealt = deal(state.practice, { size: state.practice.dailySize, seed });
+  const dealt = dealExtraDeck(state.practice, seed);
   return dealt.ok
     ? ok({ deck: dealt.value.cardIds, portionDay: null, kind: "extra" })
     : dealt;
@@ -40,7 +45,7 @@ export function dealPlacement(
     cards: practice.cards,
     topics: practice.topics,
     exclude: practice.answeredToday,
-    seen: new Set(practice.states.keys()),
+    seen: new Set(practice.seen.keys()),
     seed,
   });
   if (!chosen.ok) {
@@ -51,10 +56,8 @@ export function dealPlacement(
   if (completed.has(today) || (existing?.progress ?? 0) > 0) {
     return ok({ deck: chosen.value, portionDay: null, kind: "placement" });
   }
-  const target = Math.min(
-    practice.dailySize,
-    Math.max(availableFor(practice), chosen.value.length),
-  );
+  // Placement answers take today's limits like any others; the portion holds them all.
+  const target = Math.max(portionSize(practice, 0), chosen.value.length);
   return ok({
     deck: chosen.value,
     portion:
@@ -73,8 +76,7 @@ export function dealPortion(
   const { practice } = state;
   const existing = state.portions.get(creditDay);
   const available = availableFor(practice);
-  const portion =
-    existing ?? newPortion(creditDay, Math.min(practice.dailySize, available));
+  const portion = existing ?? newPortion(creditDay, portionSize(practice, 0));
   if (existing === undefined && portion.target < TUNING.minDeckSize) {
     return err({ code: "ERR_NOT_ENOUGH_CARDS", available });
   }
