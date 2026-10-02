@@ -1017,6 +1017,71 @@
         }
       }
     },
+    "/v1/vocab/cards/{cardId}": {
+      "delete": {
+        "operationId": "deleteVocabCard",
+        "summary": "Deletes one of the learner's own cards, made from a talk, and its progress; the answers logged for it stay. A catalog card is ERR_CARD_NOT_PERSONAL; an unknown card, one already deleted or another learner's, ERR_CARD_NOT_FOUND.",
+        "parameters": [
+          {
+            "name": "cardId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string", "minLength": 1, "maxLength": 64 }
+          }
+        ],
+        "responses": {
+          "204": { "description": "Done; no body." },
+          "400": {
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "401": {
+            "description": "ERR_UNAUTHENTICATED: The request carries no valid access token.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "403": {
+            "description": "ERR_FORBIDDEN: The caller may not run this operation. ERR_CARD_NOT_PERSONAL: That card is the catalog's; only a card made from a talk can be deleted.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "404": {
+            "description": "ERR_CARD_NOT_FOUND: No vocabulary card of the learner's own has that id.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "409": {
+            "description": "ERR_CONFLICT: Another write to the same data kept winning; send the request again.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "503": {
+            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/talks": {
       "post": {
         "operationId": "startTalk",
@@ -1375,6 +1440,166 @@
           },
           "409": {
             "description": "ERR_CONFLICT: Another write to the same data kept winning; send the request again.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/talks/{talkId}/candidates": {
+      "post": {
+        "operationId": "makeCandidates",
+        "summary": "The vocabulary card candidates at a kept talk's end, at most one per corrected turn: one model call, its answer kept on the talk, so a resend answers the same candidates without a call. A talk with no corrected turn answers none without a call; one still open is ERR_CONFLICT. A candidate whose headword a catalog card, or one of the learner's own, holds is answered as that card.",
+        "parameters": [
+          {
+            "name": "talkId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string", "minLength": 1, "maxLength": 64 }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/CardCandidates" }
+              }
+            }
+          },
+          "400": {
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "401": {
+            "description": "ERR_UNAUTHENTICATED: The request carries no valid access token.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "403": {
+            "description": "ERR_FORBIDDEN: The caller may not run this operation.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "404": {
+            "description": "ERR_TALK_NOT_FOUND: No talk has that id.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "409": {
+            "description": "ERR_CONFLICT: Another write to the same data kept winning; send the request again.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "503": {
+            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read. ERR_MODEL_UNAVAILABLE: The language model gave no usable answer; send the request again.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v1/talks/{talkId}/cards": {
+      "post": {
+        "operationId": "addCards",
+        "summary": "Adds the picked candidates to the learner's vocabulary, as new and weak cards: a matched card is marked as from the talk and kept as it stands, any other becomes a personal card. A candidate already added is not added again. Answers the candidates as they now stand; before the candidates were made it is ERR_CONFLICT, and an index past the list ERR_BAD_REQUEST.",
+        "parameters": [
+          {
+            "name": "talkId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string", "minLength": 1, "maxLength": 64 }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/AddCardsRequest" }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/CardCandidates" }
+              }
+            }
+          },
+          "400": {
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "401": {
+            "description": "ERR_UNAUTHENTICATED: The request carries no valid access token.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "403": {
+            "description": "ERR_FORBIDDEN: The caller may not run this operation.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "404": {
+            "description": "ERR_TALK_NOT_FOUND: No talk has that id.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "409": {
+            "description": "ERR_CONFLICT: Another write to the same data kept winning; send the request again.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "413": {
+            "description": "ERR_PAYLOAD_TOO_LARGE: The request body is too large.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "503": {
+            "description": "ERR_CONTENT_UNREADABLE: The card content could not be read.",
             "content": {
               "application/json": {
                 "schema": { "$ref": "#/components/schemas/ErrorResponse" }
@@ -2448,6 +2673,59 @@
         "properties": { "kept": { "type": "boolean" } },
         "required": ["kept"]
       },
+      "AddCardsRequest": {
+        "type": "object",
+        "properties": {
+          "candidates": {
+            "minItems": 1,
+            "maxItems": 6,
+            "type": "array",
+            "items": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 }
+          }
+        },
+        "required": ["candidates"]
+      },
+      "CardCandidate": {
+        "type": "object",
+        "properties": {
+          "index": { "type": "integer", "minimum": 0, "maximum": 9007199254740991 },
+          "turn": { "type": "integer", "minimum": 1, "maximum": 6 },
+          "cardId": { "type": ["string", "null"] },
+          "catalog": { "type": "boolean" },
+          "category": { "$ref": "#/components/schemas/VocabCategory" },
+          "headword": { "type": "string" },
+          "definition": { "type": "string" },
+          "example": { "type": "string" },
+          "example2": { "type": "string" },
+          "meaning": { "type": "string" },
+          "inLearning": { "type": "boolean" },
+          "added": { "type": "boolean" }
+        },
+        "required": [
+          "index",
+          "turn",
+          "cardId",
+          "catalog",
+          "category",
+          "headword",
+          "definition",
+          "example",
+          "example2",
+          "meaning",
+          "inLearning",
+          "added"
+        ]
+      },
+      "CardCandidates": {
+        "type": "object",
+        "properties": {
+          "candidates": {
+            "type": "array",
+            "items": { "$ref": "#/components/schemas/CardCandidate" }
+          }
+        },
+        "required": ["candidates"]
+      },
       "Grade": { "type": "string", "enum": ["again", "hard", "good"] },
       "GradeIntervals": {
         "type": "object",
@@ -2562,7 +2840,8 @@
           "meaning": { "type": "string" },
           "example2": { "type": "string" },
           "intervals": { "$ref": "#/components/schemas/GradeIntervals" },
-          "isNew": { "type": "boolean" }
+          "isNew": { "type": "boolean" },
+          "personal": { "type": "boolean" }
         },
         "required": [
           "id",
@@ -2574,7 +2853,8 @@
           "meaning",
           "example2",
           "intervals",
-          "isNew"
+          "isNew",
+          "personal"
         ]
       },
       "VocabSession": {

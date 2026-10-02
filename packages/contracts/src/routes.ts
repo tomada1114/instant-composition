@@ -25,7 +25,7 @@ import {
 } from "./views";
 
 export interface Route {
-  readonly method: "get" | "post" | "patch";
+  readonly method: "get" | "post" | "patch" | "delete";
   /** Relative to the `/api` root: a client calls `/api` + this path. */
   readonly path: string;
   readonly operationId: string;

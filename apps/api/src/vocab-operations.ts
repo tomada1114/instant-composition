@@ -1,4 +1,5 @@
 import {
+  deleteVocabCard,
   finishVocabSession,
   recordVocabAnswers,
   startVocabSession,
@@ -9,12 +10,22 @@ import {
   vocabAnswersRequestSchema,
 } from "@instant-composition/contracts";
 
-import { command, query } from "./handlers";
+import { command, query, type Run } from "./handlers";
 import type { Operation } from "./operations";
+
+/** An operation on one card the path names, with no body. */
+function cardAction(run: Run<[cardId: string]>): Operation {
+  return {
+    body: null,
+    params: ["cardId"],
+    handle: ({ deps, context, path }) => run(deps, context, path.cardId),
+  };
+}
 
 /**
  * The vocabulary activity's operations, keyed by `operationId`; a session's
- * id comes from the path, and the learner from the request context alone.
+ * or a card's id comes from the path, and the learner from the request
+ * context alone.
  */
 export const VOCAB_OPERATIONS: Readonly<Record<string, Operation>> = {
   getVocab: query(vocabHub),
@@ -34,5 +45,8 @@ export const VOCAB_OPERATIONS: Readonly<Record<string, Operation>> = {
     ["sessionId"],
     (deps, context, { sessionId }, batch) =>
       finishVocabSession(deps, context, { sessionId, answers: batch.answers }),
+  ),
+  deleteVocabCard: cardAction((deps, context, cardId) =>
+    deleteVocabCard(deps, context, { cardId }),
   ),
 };

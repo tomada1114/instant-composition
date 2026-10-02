@@ -1,6 +1,6 @@
 import * as z from "zod";
 
-import { idSchema } from "./primitives";
+import { idSchema, vocabCategorySchema } from "./primitives";
 
 /**
  * The talk activity's request and response schemas. This package imports only
@@ -77,3 +77,44 @@ export const turnResultSchema = z.object({
 
 /** `POST /v1/talks/{talkId}/end`: whether the talk is kept as a record. */
 export const talkEndedSchema = z.object({ kept: z.boolean() });
+
+/**
+ * `POST /v1/talks/{talkId}/cards`: the candidates to add, by their index in
+ * the list; one already added is not added again.
+ */
+export const addCardsRequestSchema = z.object({
+  candidates: z.array(z.int().min(0)).min(1).max(TALK_TURNS),
+});
+
+/** One card a talk's end offers, as the learner picks it. */
+export const cardCandidateSchema = z.object({
+  /** What `…/cards` names it by. */
+  index: z.int().min(0),
+  /** The corrected turn it came from. */
+  turn: turnSchema,
+  /**
+   * The card it is answered as — a catalog card or one of the learner's own
+   * holding the same headword — or the card it became once added; null for a
+   * new one not added yet.
+   */
+  cardId: z.string().nullable(),
+  /** The text is a catalog card's rather than the model's. */
+  catalog: z.boolean(),
+  category: vocabCategorySchema,
+  headword: z.string(),
+  definition: z.string(),
+  /** Its blanks marked `{{…}}`, as a vocabulary card's. */
+  example: z.string(),
+  example2: z.string(),
+  /** In the learner's first language. */
+  meaning: z.string(),
+  /** Its card has been answered at least once: 学習中. */
+  inLearning: z.boolean(),
+  /** Added from this talk: 追加済み. */
+  added: z.boolean(),
+});
+
+/** `POST /v1/talks/{talkId}/candidates` and `…/cards`: the talk's candidates, in order. */
+export const cardCandidatesSchema = z.object({
+  candidates: z.array(cardCandidateSchema),
+});

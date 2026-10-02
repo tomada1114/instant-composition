@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 
 import {
+  deleteVocabCard,
   finishVocabSession,
   learnerId,
   recordVocabAnswers,
@@ -12,7 +13,7 @@ import {
 } from "@instant-composition/application";
 import type { VocabAnswer } from "@instant-composition/domain";
 
-import { makeStats } from "./application-fixtures";
+import { makePersonalCard, makeStats, makeVocabProgress } from "./application-fixtures";
 import {
   DAY_MS,
   fixedCatalog,
@@ -156,6 +157,7 @@ describe("a session of today's queue", () => {
       example2: "Another example for v_word-3-0.",
       intervals: { again: 1, hard: 2, good: 3 },
       isNew: true,
+      personal: false,
     });
   });
 
@@ -449,5 +451,133 @@ describe("what a vocabulary command refuses", () => {
     ).toStrictEqual(forbidden);
     expect(await recordVocabAnswers(h.deps, context, command)).toStrictEqual(forbidden);
     expect(await finishVocabSession(h.deps, context, command)).toStrictEqual(forbidden);
+    expect(
+      await deleteVocabCard(h.deps, context, { cardId: "p_card00000001" }),
+    ).toStrictEqual(forbidden);
+  });
+});
+
+describe("a personal card", () => {
+  const CARD = makePersonalCard();
+  const NEW = makeVocabProgress({
+    cardId: CARD.id,
+    source: { kind: "talk", talkId: "t1", turn: 2 },
+    state: null,
+    firstDay: null,
+  });
+
+  /** A level-4 learner holding `cards`, each new and from a talk. */
+  async function holding(h: Harness, cards = [CARD]): Promise<void> {
+    await atLevel(h);
+    const written = await h.stores.forLearner(h.learner).commit({
+      puts: cards.flatMap((card) => [
+        { type: "card" as const, value: card },
+        { type: "vocabItem" as const, value: { ...NEW, cardId: card.id } },
+      ]),
+      updates: [],
+      expect: [],
+    });
+    expect(written.ok).toBe(true);
+  }
+
+  it("is dealt first among today's new cards, weak, beside the catalog's", async () => {
+    const h = makeHarness();
+    await holding(h);
+
+    const hub = await vocabHub(h.deps, h.context());
+    const session = await started(h, "s1");
+
+    expect(hub.ok && [hub.value.today.new, hub.value.weak]).toStrictEqual([10, 1]);
+    expect(session.cards[0]).toMatchObject({
+      id: CARD.id,
+      headword: "catch up",
+      example: CARD.example,
+      meaning: "近況を話す",
+      isNew: true,
+      personal: true,
+    });
+    expect(session.cards.slice(1).every((card) => !card.personal)).toBe(true);
+  });
+
+  it("takes an answer and keeps where it came from", async () => {
+    const h = makeHarness();
+    await holding(h);
+    const session = await started(h, "s1");
+
+    const finished = await finishVocabSession(h.deps, h.context(), {
+      sessionId: "s1",
+      answers: gradedAll(session).filter((answer) => answer.cardId === CARD.id),
+    });
+
+    expect(finished.ok && finished.value.answered).toBe(1);
+    expect(
+      (await h.stores.forLearner(h.learner).vocabItems()).get(CARD.id)?.value,
+    ).toMatchObject({ source: NEW.source, firstDay: "2026-09-22" });
+    const [review] = await h.stores.forLearner(h.learner).vocabReviewsOf("s1");
+    expect(review?.snapshot).toStrictEqual({
+      headword: "catch up",
+      meaning: "近況を話す",
+      category: "idiom",
+      level: 4,
+    });
+  });
+
+  it("made for another language pair is not dealt", async () => {
+    const h = makeHarness();
+    await holding(h, [{ ...CARD, l1: "ko" }]);
+
+    const hub = await vocabHub(h.deps, h.context());
+
+    expect(hub.ok && hub.value.weak).toBe(0);
+    expect((await started(h, "s1", "weak")).cards).toStrictEqual([]);
+  });
+
+  it("is deleted with its progress, its answers kept, and is dealt no more", async () => {
+    const h = makeHarness();
+    await holding(h);
+    const store = h.stores.forLearner(h.learner);
+    const session = await started(h, "s1");
+    await recordVocabAnswers(h.deps, h.context(), {
+      sessionId: "s1",
+      answers: gradedAll(session).filter((answer) => answer.cardId === CARD.id),
+    });
+
+    expect(
+      await deleteVocabCard(h.deps, h.context(), { cardId: CARD.id }),
+    ).toStrictEqual({ ok: true, value: undefined });
+
+    expect(await store.card(CARD.id)).toBeUndefined();
+    expect((await store.vocabItems()).has(CARD.id)).toBe(false);
+    expect(await store.vocabReviewsOf("s1")).toHaveLength(1);
+    expect((await started(h, "s2", "weak")).cards).toStrictEqual([]);
+    const resent = await started(h, "s1");
+    expect(session.cards.map((card) => card.id)).toContain(CARD.id);
+    expect(resent.cards.map((card) => card.id)).not.toContain(CARD.id);
+  });
+
+  it.each([
+    ["a catalog card", "v_word-3-0", "ERR_CARD_NOT_PERSONAL"],
+    ["an unknown card", "p_none", "ERR_CARD_NOT_FOUND"],
+  ])("refuses to delete %s", async (_, cardId, code) => {
+    const h = makeHarness();
+    await holding(h);
+
+    expect(await deleteVocabCard(h.deps, h.context(), { cardId })).toStrictEqual({
+      ok: false,
+      error: { code },
+    });
+    expect(await h.stores.forLearner(h.learner).card(CARD.id)).toBeDefined();
+  });
+
+  it("of another learner is not found, and stays", async () => {
+    const h = makeHarness();
+    await holding(h);
+
+    expect(
+      await deleteVocabCard(h.deps, otherLearner(h), { cardId: CARD.id }),
+    ).toStrictEqual({ ok: false, error: { code: "ERR_CARD_NOT_FOUND" } });
+    expect((await h.stores.forLearner(h.learner).card(CARD.id))?.value).toStrictEqual(
+      CARD,
+    );
   });
 });

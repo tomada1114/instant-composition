@@ -34,11 +34,11 @@ owns how to change it.
   `apps/api`'s `createApp` takes every dependency as an argument; `main.ts` (`pnpm api`)
   and `lambda.ts` (hosted) wire it. No worker, queue or second deployable exists. Only
   the talk context calls a language model, through the `LanguageModel` port, once per
-  step and inside the request that asked; the drill calls none. The provider is
-  OpenRouter, reached over HTTPS with the key from Parameter Store when hosted and from
-  `API_OPENROUTER_API_KEY` locally; a local run with no key, and every test, gets a
-  scripted stand-in. The edge wraps the model per request and logs one line per call,
-  never its text (`serving-the-api`).
+  step — and once at a kept talk's end, for card candidates — inside the request that
+  asked; the drill calls none. The provider is OpenRouter, reached over HTTPS with the
+  key from Parameter Store when hosted and from `API_OPENROUTER_API_KEY` locally; a
+  local run with no key, and every test, gets a scripted stand-in. The edge wraps the
+  model per request and logs one line per call, never its text (`serving-the-api`).
 
 ## Layers and contexts
 
@@ -58,25 +58,34 @@ their own:
 | learning-record      | the append-only review log and each item's FSRS projection | domain's `records.ts`, `review.ts` and `card-state.ts`                                                                     |
 | learner-model (v0)   | weak grammar concepts and subtopics                        | domain's `weakness.ts`, derived when read                                                                                  |
 | vocabulary           | vocabulary cards' progress, sessions and today's queue     | domain's `vocab*.ts` over `fsrs.ts` and `queue.ts`; application's `vocab-*.ts`                                             |
-| talk                 | a talk's scene and turns, and its three model tasks        | domain's `talk*.ts`; application's `start-talk.ts`, `send-turn.ts`, `end-talk.ts` and `talk-*.ts`                          |
+| talk                 | a talk's scene and turns, and its four model tasks         | domain's `talk*.ts`; application's `start-talk.ts`, `send-turn.ts`, `end-talk.ts` and `talk-*.ts`                          |
 
 - Streak, points and titles live inside practice-composition and count the drill alone.
   Items cross contexts only as an `ItemRef` (`kind` plus `id`), so a second activity
   adds a `kind` rather than changing composition.
 - The talk shares no data with the drill; the streak, the points and the records stay
   the drill's. The server runs a talk's steps in a fixed order and refuses one out of
-  order; the scene, teacher and partner tasks — each a versioned prompt, a JSON Schema
-  and a `read` — are the application's, shared by every model adapter. **REQUIRED:**
-  `building-the-talk-activity`.
+  order; the scene, teacher, partner and cards tasks — each a versioned prompt, a JSON
+  Schema and a `read` — are the application's, shared by every model adapter. A kept
+  talk with a corrected turn offers card candidates through one `talk-cards` call, kept
+  on the talk (`POST /v1/talks/{talkId}/candidates`), and adds the learner's picks to
+  the vocabulary (`…/cards`): a candidate whose headword a catalog card holds marks that
+  card as from the talk, any other becomes a personal card. The card rules a model's
+  card has to meet are the lint's, written again in the domain (`vocab-card.ts`) and
+  held to it by a test. **REQUIRED:** `building-the-talk-activity`.
 - The vocabulary context schedules each card with FSRS-6 (`fsrs.ts`): its own items,
   sessions and append-only answers, keyed apart from the drill's, and only a card's
   first answer of a practice day moves it. Today's queue, a category's share of it and
   the weak cards (from a talk, or eight lapses, until a stability of 21 days) are
   derived when read from the items and the catalog, under the daily limits in the
   settings. It reads the drill's level for the new cards' band and shares nothing else:
-  the streak, the points and the records stay the drill's. Its routes are
-  `GET /v1/vocab` (the hub) and `POST /v1/vocab/sessions`, with a session's
-  `…/{sessionId}/answers` and `…/finish`.
+  the streak, the points and the records stay the drill's. It deals the catalog's cards
+  and the learner's personal cards, made from a talk and kept in their own partition,
+  never in the catalog; a personal card is shown only for the language pair it was made
+  for. Its routes are `GET /v1/vocab` (the hub) and `POST /v1/vocab/sessions`, with a
+  session's `…/{sessionId}/answers` and `…/finish`, and
+  `DELETE /v1/vocab/cards/{cardId}`, which removes a personal card and its progress but
+  not its logged answers.
 - The learner model stores nothing: it is a pure pass over item projections the reads
   already load. Grammar weaknesses feed the deck; subtopic weaknesses are only shown.
 - The drill schedules each card with FSRS-6 (`fsrs.ts`), on the same rule as the
@@ -153,7 +162,8 @@ LEARNER#<id>  PORTION#<day> | DAY#<day>             a day's portion and tally
 LEARNER#<id>  ITEM#<kind>#<item>                    an item's projection: composition or vocab
 LEARNER#<id>  VOCAB#<session>                       a vocabulary session
 LEARNER#<id>  VOCAB#<session>#ANSWER#<answer>       its answers, append-only
-LEARNER#<id>  TALK#<talk>                           a talk with its turns; expiresAt until kept
+LEARNER#<id>  TALK#<talk>                           a talk with its turns and candidates; expiresAt until kept
+LEARNER#<id>  CARD#<card>                           a personal vocabulary card, made from a talk
 IDENTITY#<sub> LEARNER                              the identity mapping
 ```
 
@@ -164,16 +174,18 @@ IDENTITY#<sub> LEARNER                              the identity mapping
   A round and its answers are one prefix `Query`, as are a vocabulary session and its
   answers, and each kind of item; there is no secondary index.
 - Each command commits as one `TransactWriteItems`, puts conditioned on absence and
-  updates on the version read; projections change in the same commit that appends to the
-  log, so reads are point lookups. Answers commit per batch rather than all at `finish`,
-  because one transaction holds at most `MAX_COMMIT_ITEMS` (`keys.ts`) actions and a
-  long round with resends would not fit. The in-memory store and DynamoDB local run the
-  same contract suite. **REQUIRED:** `designing-application-core` for the commit shape.
+  updates and deletes on the version read — deleting a personal card with its progress
+  is the one delete, and no commit updates or deletes a log entry; projections change in
+  the same commit that appends to the log, so reads are point lookups. Answers commit
+  per batch rather than all at `finish`, because one transaction holds at most
+  `MAX_COMMIT_ITEMS` (`keys.ts`) actions and a long round with resends would not fit.
+  The in-memory store and DynamoDB local run the same contract suite. **REQUIRED:**
+  `designing-application-core` for the commit shape.
 - Nothing migrates stored items. A field a record gains is optional and read with its
   default when absent; a field a type drops stays in old items, and both stores read
-  settings, rounds, review details, item progress and talks through the fields their
-  types declare (`packages/adapters/src/declared.ts`), so it is neither returned nor
-  written back.
+  settings, rounds, review details, item progress, talks and personal cards through the
+  fields their types declare (`packages/adapters/src/declared.ts`), so it is neither
+  returned nor written back.
 
 ## The HTTP contract
 
@@ -190,7 +202,8 @@ IDENTITY#<sub> LEARNER                              the identity mapping
   name, so a queued body still carrying it is taken without it.
 - Writes are safe to resend: rounds, vocabulary sessions and answers carry client-made
   ids, a repeated answer is skipped, and finishing a finished round or session returns
-  its kept summary.
+  its kept summary. A model's first answer — a scene, a turn, a talk's candidates — is
+  stored and answered again; a candidate added twice is added once.
 - Answers travel in batches, so a live answer and a resent one take the same call; the
   web keeps unsent ones in the tab's `sessionStorage`. A client `answeredAt` is clamped
   between the round's start and the server's time, a late answer counts for its round's

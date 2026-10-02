@@ -126,17 +126,31 @@ function memoryStore(slots: Map<string, Slot>, counted: () => void): LearnerStor
           .sort(byTime),
       );
     },
+    card(id) {
+      counted();
+      return Promise.resolve(read({ type: "card", id }));
+    },
+    cards() {
+      counted();
+      return Promise.resolve(
+        new Map(all("card").map((stored) => [stored.value.id, stored])),
+      );
+    },
     commit(commit) {
       checkShape(commit);
       const writes = [
         ...commit.puts.map((entry) => ({ entry, version: null })),
         ...commit.updates,
       ];
+      const deletes = commit.deletes ?? [];
       const conflict =
         writes.some(({ entry, version }) => !holds(keyOf(entry), version)) ||
-        commit.expect.some(({ key, version }) => !holds(key, version));
+        [...commit.expect, ...deletes].some(({ key, version }) => !holds(key, version));
       if (conflict) {
         return Promise.resolve(err({ code: "ERR_CONFLICT" }));
+      }
+      for (const { key } of deletes) {
+        slots.delete(sortKeyOf(key));
       }
       for (const { entry, version } of writes) {
         slots.set(sortKeyOf(keyOf(entry)), {

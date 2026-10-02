@@ -3,6 +3,7 @@ import {
   createStandInModel,
   type StandInModel,
 } from "@instant-composition/adapters";
+import type { ModelRequest } from "@instant-composition/application";
 import { TALK_TUNING } from "@instant-composition/domain";
 
 import type {
@@ -17,10 +18,69 @@ import type { Fetch } from "./token-endpoint";
 /** Who the stand-in is, as its call record and the start-up line name it. */
 const STAND_IN = "stand-in";
 
+/** The stand-in's cards, one for each turn number, each meeting the card rules. */
+const STAND_IN_CARDS = [
+  [
+    "word",
+    "swamped",
+    "Having too much work to do.",
+    "I'm {{swamped}} with work this week.",
+    "She was swamped after the holidays.",
+    "忙しくて手一杯",
+  ],
+  [
+    "idiom",
+    "catch up",
+    "To talk about what has happened since you last met.",
+    "Let's {{catch}} {{up}} over coffee soon.",
+    "We caught up at the station.",
+    "近況を話す",
+  ],
+  [
+    "phrasal-verb",
+    "figure out",
+    "To find the answer to a problem.",
+    "I can't {{figure}} {{out}} this map.",
+    "He figured out the train times.",
+    "理解する",
+  ],
+  [
+    "phrase",
+    "no worries",
+    "Said to tell someone that something is fine.",
+    "A: Sorry I'm late.\nB: {{No}} {{worries}}.",
+    "A: Thanks for waiting.\nB: No worries.",
+    "気にしないで",
+  ],
+  [
+    "word",
+    "exhausted",
+    "Very tired.",
+    "I was {{exhausted}} after the trip.",
+    "The kids were exhausted by noon.",
+    "くたくたの",
+  ],
+  [
+    "phrasal-verb",
+    "run late",
+    "To be later than planned.",
+    "Sorry, I'm {{running}} {{late}} today.",
+    "The bus is running late again.",
+    "遅れている",
+  ],
+] as const;
+
+/** The turns a cards request lists, by the number each is tagged with. */
+function turnsAsked(request: ModelRequest<unknown>): number[] {
+  const text = request.messages.map((message) => message.text).join("\n");
+  return [...text.matchAll(/<turn number="(\d+)">/g)].map((match) => Number(match[1]));
+}
+
 /**
  * A stand-in model with an answer for every talk task, so a run with no key and
  * the tests can drive a whole talk: one fixed scene, a correction on every
- * turn, and a partner line naming the turn it answers, the last one closing.
+ * turn, a partner line naming the turn it answers, the last one closing, and
+ * a card for every corrected turn at the end.
  */
 export function standInTalkModel(): StandInModel {
   return createStandInModel({
@@ -46,6 +106,14 @@ export function standInTalkModel(): StandInModel {
             : `Stand-in reply to turn ${String(turn)}. What else?`,
       };
     },
+    "talk-cards": (request) => ({
+      candidates: turnsAsked(request).flatMap((turn) => {
+        const card = STAND_IN_CARDS[(turn - 1) % STAND_IN_CARDS.length];
+        if (card === undefined) return [];
+        const [category, headword, definition, example, example2, meaning] = card;
+        return [{ turn, category, headword, definition, example, example2, meaning }];
+      }),
+    }),
   });
 }
 

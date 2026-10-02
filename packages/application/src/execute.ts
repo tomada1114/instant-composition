@@ -21,21 +21,29 @@ export interface ApplicationDeps {
 /** One entry to write, and the version it was read at, if it was there. */
 export type Write = readonly [Entry, { readonly version: number } | undefined];
 
+/** An entry to delete, at the version it was read at. */
+export type Removal = NonNullable<Commit["deletes"]>[number];
+
 /** A put for an entry that was not there, an update at the version read otherwise. */
-export function commitOf(writes: readonly Write[]): Commit {
+export function commitOf(
+  writes: readonly Write[],
+  deletes: readonly Removal[] = [],
+): Commit {
   return {
     puts: writes.filter(([, read]) => read === undefined).map(([entry]) => entry),
     updates: writes.flatMap(([entry, read]) =>
       read === undefined ? [] : [{ entry, version: read.version }],
     ),
     expect: [],
+    ...(deletes.length === 0 ? {} : { deletes }),
   };
 }
 
-/** A decision: what to hand back, and what to write for it. */
+/** A decision: what to hand back, and what to write and delete for it. */
 export interface Planned<T> {
   readonly value: T;
   readonly writes: readonly Write[];
+  readonly deletes?: readonly Removal[];
 }
 
 /** How often a command re-runs from its load after another write won the race. */
@@ -54,10 +62,11 @@ export async function committed<T, E = ApplicationError>(
     if (!planned.ok) {
       return planned;
     }
-    if (planned.value.writes.length === 0) {
+    const { writes, deletes = [] } = planned.value;
+    if (writes.length === 0 && deletes.length === 0) {
       return ok(planned.value.value);
     }
-    const written = await store.commit(commitOf(planned.value.writes));
+    const written = await store.commit(commitOf(writes, deletes));
     if (written.ok) {
       return ok(planned.value.value);
     }

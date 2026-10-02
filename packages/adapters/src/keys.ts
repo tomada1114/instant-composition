@@ -48,6 +48,9 @@ export const IDENTITY_SORT_KEY = {
   profile: sortKeyOf({ type: "profile" }),
 } as const;
 
+/** The prefix of every personal vocabulary card, and of nothing else. */
+export const CARDS_PREFIX = "CARD#";
+
 /**
  * Where an entry sits inside its learner's partition, plus
  * `DAY#<day>` for the day tallies it does not list. A review sorts under its
@@ -80,6 +83,8 @@ export function sortKeyOf(key: Key): string {
       return `VOCAB#${part(key.id)}`;
     case "vocabReview":
       return `${vocabReviewsPrefix(key.sessionId)}${part(key.id)}`;
+    case "card":
+      return `${CARDS_PREFIX}${part(key.id)}`;
   }
 }
 
@@ -107,10 +112,12 @@ export function itemsPrefix(kind: string): string {
  * returning `ERR_CONFLICT`: nothing a retry could fix.
  */
 export function checkShape(commit: Commit): void {
+  const deletes = commit.deletes ?? [];
   const keys = [
     ...commit.puts.map((entry) => sortKeyOf(keyOf(entry))),
     ...commit.updates.map(({ entry }) => sortKeyOf(keyOf(entry))),
     ...commit.expect.map(({ key }) => sortKeyOf(key)),
+    ...deletes.map(({ key }) => sortKeyOf(key)),
   ];
   if (keys.length > MAX_COMMIT_ITEMS) {
     throw new RangeError(`A commit names at most ${String(MAX_COMMIT_ITEMS)} items.`);
@@ -118,10 +125,11 @@ export function checkShape(commit: Commit): void {
   if (new Set(keys).size !== keys.length) {
     throw new RangeError("A commit names each key once.");
   }
+  const logged = (type: Key["type"]): boolean =>
+    type === "review" || type === "vocabReview";
   if (
-    commit.updates.some(
-      ({ entry }) => entry.type === "review" || entry.type === "vocabReview",
-    )
+    commit.updates.some(({ entry }) => logged(entry.type)) ||
+    deletes.some(({ key }) => logged(key.type))
   ) {
     throw new RangeError("The review log is append-only.");
   }

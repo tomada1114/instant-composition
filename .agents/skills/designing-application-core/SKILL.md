@@ -66,8 +66,8 @@ written under.
 - No port method brackets reads and writes around a caller's callback (a
   `transaction(body)`). DynamoDB has no interactive transaction, and a caller-held one
   hides the consistency boundary inside the caller. `LearnerStore.commit` in
-  `packages/application/src/store.ts` is the shape instead: the writes, plus the
-  versions each read must still hold.
+  `packages/application/src/store.ts` is the shape instead: the writes and deletes, plus
+  the versions each read must still hold.
 - A read is a **query** answered from projections — item memory, learner totals —
   maintained on write, never by replaying the whole history per request.
 - Append-only logs (answers, reviews) are what projections are rebuilt from. Keep them:

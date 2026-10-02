@@ -12,7 +12,9 @@ import {
   updateLevel,
   updateProfile,
   updateSettings,
+  type AddCardsCommand,
   type ApplicationErrorCode,
+  type CardCandidates,
   type History,
   type PartnerReply,
   type RecitalCommand,
@@ -41,6 +43,8 @@ import {
   type VocabSummary,
 } from "@instant-composition/application";
 import {
+  type addCardsRequestSchema,
+  type cardCandidatesSchema,
   answerSchema,
   answersRequestSchema,
   gradeKeySchema,
@@ -165,6 +169,15 @@ describe("each response schema mirrors the application view it serves", () => {
     expectTypeOf<z.infer<typeof talkEndedSchema>>().toExtend<Wire<TalkEnded>>();
   });
 
+  it("CardCandidates", () => {
+    expectTypeOf<Wire<CardCandidates>>().toExtend<
+      z.infer<typeof cardCandidatesSchema>
+    >();
+    expectTypeOf<z.infer<typeof cardCandidatesSchema>>().toExtend<
+      Wire<CardCandidates>
+    >();
+  });
+
   it("VocabHub, VocabSessionView and VocabSummary", () => {
     expectTypeOf<Wire<VocabHub>>().toExtend<z.infer<typeof vocabHubSchema>>();
     expectTypeOf<z.infer<typeof vocabHubSchema>>().toExtend<Wire<VocabHub>>();
@@ -245,6 +258,12 @@ describe("each request schema carries exactly what its command takes", () => {
     };
     expectTypeOf<Placed>().toExtend<RecitalCommand>();
     expectTypeOf<RecitalCommand>().toExtend<Placed>();
+  });
+
+  it("a pick of candidates carries the indexes; the talk comes from the path", () => {
+    type Placed = z.infer<typeof addCardsRequestSchema> & { talkId: string };
+    expectTypeOf<Placed>().toExtend<AddCardsCommand>();
+    expectTypeOf<Wire<AddCardsCommand>>().toExtend<Placed>();
   });
 
   it("gives every code the application reports a status, the talk commands' included", () => {

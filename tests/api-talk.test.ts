@@ -7,6 +7,7 @@ import {
 } from "@instant-composition/api";
 import { learnerId, type LanguageModel } from "@instant-composition/application";
 import {
+  cardCandidatesSchema,
   errorResponseSchema,
   partnerReplySchema,
   ROUTES,
@@ -135,6 +136,121 @@ describe("a whole talk on the stand-in model", () => {
     expect(await contracted(ended, "endTalk", talkEndedSchema)).toStrictEqual({
       kept: false,
     });
+  });
+});
+
+/** Talk `t1` on `api`, six turns corrected by the stand-in, then ended. */
+async function finished(api: ApiHarness): Promise<void> {
+  await started(api);
+  for (const n of [1, 2, 3, 4, 5, 6]) await sent(api, n);
+  expect((await api.call("POST", "/v1/talks/t1/end")).status).toBe(200);
+}
+
+async function candidates(api: ApiHarness, talkId = "t1") {
+  return contracted(
+    await api.call("POST", `/v1/talks/${talkId}/candidates`),
+    "makeCandidates",
+    cardCandidatesSchema,
+  );
+}
+
+describe("the card candidates at a talk's end", () => {
+  it("answers a card per corrected turn from one call, and a resend the same without one", async () => {
+    const api = makeApi();
+    await finished(api);
+
+    const first = await candidates(api);
+    const again = await candidates(api);
+
+    expect(
+      first.candidates.map(({ index, turn, added }) => [index, turn, added]),
+    ).toStrictEqual([0, 1, 2, 3, 4, 5].map((index) => [index, index + 1, false]));
+    expect(again).toStrictEqual(first);
+    expect(
+      api.modelCalls
+        .filter(({ task }) => task === "talk-cards")
+        .map(({ promptVersion, outcome }) => [promptVersion, outcome]),
+    ).toStrictEqual([["talk-cards@1", "ok"]]);
+  });
+
+  it("adds a pick as a personal card that the next vocabulary session deals first", async () => {
+    // Example 3, over HTTP.
+    const api = makeApi();
+    await finished(api);
+    await candidates(api);
+
+    const added = await contracted(
+      await api.call("POST", "/v1/talks/t1/cards", { candidates: [1, 1] }),
+      "addCards",
+      cardCandidatesSchema,
+    );
+    const pick = added.candidates[1];
+    expect(pick).toMatchObject({ headword: "catch up", added: true, catalog: false });
+    expect(pick?.cardId).toMatch(/^p_/);
+
+    const session = await api.call("POST", "/v1/vocab/sessions", {
+      sessionId: "s1",
+      kind: "today",
+    });
+    const dealt = (await session.json()) as {
+      cards: { id: string; personal: boolean }[];
+    };
+    expect(dealt.cards[0]).toMatchObject({ id: pick?.cardId, personal: true });
+    const hub = (await (await api.call("GET", "/v1/vocab")).json()) as { weak: number };
+    expect(hub.weak).toBe(1);
+  });
+
+  it("answers 503 when the call fails, 409 before the end, and 400 for a pick it cannot take", async () => {
+    const api = makeApi();
+    await started(api);
+    await sent(api, 1);
+    expect(
+      await refusal(await api.call("POST", "/v1/talks/t1/candidates")),
+    ).toStrictEqual([409, "ERR_CONFLICT"]);
+    expect((await api.call("POST", "/v1/talks/t1/end")).status).toBe(200);
+    expect(
+      await refusal(await api.call("POST", "/v1/talks/t1/cards", { candidates: [0] })),
+    ).toStrictEqual([409, "ERR_CONFLICT"]);
+
+    api.model.failWith("malformed");
+    expect(
+      await refusal(await api.call("POST", "/v1/talks/t1/candidates")),
+    ).toStrictEqual([503, "ERR_MODEL_UNAVAILABLE"]);
+    api.model.failWith(undefined);
+    await candidates(api);
+
+    for (const body of [
+      { candidates: [] },
+      { candidates: [-1] },
+      { candidates: [0, 0, 0, 0, 0, 0, 0] },
+      { candidates: ["0"] },
+      {},
+    ]) {
+      expect(
+        await refusal(await api.call("POST", "/v1/talks/t1/cards", body)),
+      ).toStrictEqual([400, "ERR_BAD_REQUEST"]);
+    }
+    expect(
+      await refusal(await api.call("POST", "/v1/talks/t1/cards", { candidates: [1] })),
+    ).toStrictEqual([400, "ERR_BAD_REQUEST"]);
+  });
+
+  it("logs none of the candidates' text", async () => {
+    const api = makeApi();
+    await finished(api);
+    const offered = await candidates(api);
+    const logged = JSON.stringify([...api.lines, ...api.modelCalls]);
+
+    const texts = offered.candidates.flatMap(
+      ({ headword, definition, example, example2, meaning }) => [
+        headword,
+        definition,
+        example,
+        example2,
+        meaning,
+      ],
+    );
+    expect(texts.filter((text) => logged.includes(text))).toStrictEqual([]);
   });
 });
 
@@ -311,6 +427,8 @@ describe("another learner's talk", () => {
     ["retryReply", "/v1/talks/t1/reply", undefined],
     ["recordRecital", "/v1/talks/t1/turns/1/recital", { revealCount: 3 }],
     ["endTalk", "/v1/talks/t1/end", undefined],
+    ["makeCandidates", "/v1/talks/t1/candidates", undefined],
+    ["addCards", "/v1/talks/t1/cards", { candidates: [0] }],
   ])("is not found by %s, and is left as it was", async (operation, path, body) => {
     const { a, b, stored } = await twoLearners();
     const before = await stored();

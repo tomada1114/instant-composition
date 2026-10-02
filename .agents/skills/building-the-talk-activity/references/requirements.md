@@ -44,6 +44,9 @@
   model answer and point, and the recital (§3.3)
 - Text input and display (§3.4)
 - Saving the record of a talk (§3.5). There is no list screen.
+- Cards at the end: words, phrasal verbs and phrases the learner could not say, offered
+  as vocabulary card candidates under 「おわり」 for the learner to pick; the picked
+  ones join the vocabulary activity (#374 §3.7, [design.md](design.md)).
 
 **Exit:** There is no measured condition. Whether to build further or stop is decided by
 the owner's own sense of the app.
@@ -63,7 +66,6 @@ below is not a priority order.
 | Saving and resuming a talk closed midway                                                                                                         | The first version keeps only finished talks                                                                                | When losing a talk midway becomes noticeable                                                                      |
 | A target for waiting time                                                                                                                        | First run it, then look at the actual waits                                                                                | When the wait bothers the learner                                                                                 |
 | Automatic carry-over into the next talk. Example: on a second round of the same scene, the partner creates a chance to use the last model answer | There is no material until records accumulate                                                                              | Decided as the app is used                                                                                        |
-| Cards for words, phrasal verbs and phrases the learner could not say                                                                             | Plain memorization is left to another feature                                                                              | Decided as the app is used                                                                                        |
 | A personal instant-composition drill built from phrases the learner could not say in a talk                                                      | The instant-composition drill needs a change on its side too                                                               | Decided as the app is used                                                                                        |
 | Choosing the scene: scenes that follow a roadmap, multiple-choice scenes                                                                         | The first version checks whether random is enough                                                                          | When random does not keep the learner going                                                                       |
 | Detecting "the same phrasing every time" across talks, and a coach that builds practice from weak points                                         | It waits for accumulated records. A candidate for a design where the model chooses its own next step (an agent, AgentCore) | Decided as the app is used                                                                                        |
@@ -73,7 +75,8 @@ below is not a priority order.
 ### Out of scope
 
 - **A summary to read at the end of a scene.** Reading a batch of feedback has a poor
-  tempo and does not last.
+  tempo and does not last. The card candidates at the end are not one: they are a picker
+  of words to add, not feedback to read.
 - **Review that assumes rereading the talk.** If the learner would reread, they should
   talk again.
 - **Feedback that opens on a tap.** Tapping, expanding and waiting are all a chore, and
@@ -202,22 +205,22 @@ below is not a priority order.
 
 ### 3.5 The record of a talk
 
-| Item                 | Specification                                                                                                                                                                                                                                                             |
-| -------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| What is kept         | For a talk finished to the end or ended with 「終わる」: the scene, the start and end times, and the content of each turn (the partner's line, the Japanese, the English, the judgment, the model answer, the point, and the number of times 「もう一度見る」 was tapped) |
-| What is not kept     | A talk closed midway or ended without a way back. A talk where the learner tapped 「終わる」 without finishing a single turn                                                                                                                                              |
-| List                 | Not in the first version (later)                                                                                                                                                                                                                                          |
-| Role of looking back | Looking back is not assumed. The record is material for future features (carry-over into the next talk, cards, a personal instant-composition drill)                                                                                                                      |
-| Retention            | Indefinite                                                                                                                                                                                                                                                                |
-| Deletion             | In the first version, there is no way to delete from the app. It is decided when the list is added                                                                                                                                                                        |
+| Item                 | Specification                                                                                                                                                                                                                                                                                                                            |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| What is kept         | For a talk finished to the end or ended with 「終わる」: the scene, the start and end times, and the content of each turn (the partner's line, the Japanese, the English, the judgment, the model answer, the point, and the number of times 「もう一度見る」 was tapped), and the card candidates its end offered with which were added |
+| What is not kept     | A talk closed midway or ended without a way back. A talk where the learner tapped 「終わる」 without finishing a single turn                                                                                                                                                                                                             |
+| List                 | Not in the first version (later)                                                                                                                                                                                                                                                                                                         |
+| Role of looking back | Looking back is not assumed. The record is material for future features (carry-over into the next talk, cards, a personal instant-composition drill)                                                                                                                                                                                     |
+| Retention            | Indefinite                                                                                                                                                                                                                                                                                                                               |
+| Deletion             | In the first version, there is no way to delete from the app. It is decided when the list is added                                                                                                                                                                                                                                       |
 
 ## 4. Cross-cutting rules
 
 - **Delivery:** The app's dev environment. Used from a PC browser, with the existing
   sign-in.
 - **How progression is decided:** The app moves through the 6 steps in order. The model
-  answers once per step, as the scene, the partner and the teacher. The model is not
-  asked to choose which step comes next.
+  answers once per step, as the scene, the partner and the teacher, and once at the end
+  for the card candidates. The model is not asked to choose which step comes next.
 - **The model:**
   - Call Bedrock Converse directly; OpenRouter stands in until the dev account can
     ([design.md](design.md)).
@@ -228,8 +231,9 @@ below is not a priority order.
 - **On failure:** Not stopping the talk comes first. The specifics are in each feature's
   "Edge cases".
 - **Cost:**
-  - Model calls per talk (6 turns) are at most 13: 1 for generating the scene, and per
-    turn 1 for the teacher and 1 for the partner. Retries are not counted.
+  - Model calls per talk (6 turns) are at most 14: 1 for generating the scene, per turn
+    1 for the teacher and 1 for the partner, and 1 at the end for the card candidates of
+    a kept talk with a corrected turn. Retries are not counted.
   - The first version sets no cap, because one signed-in user uses it in dev.
 - **Language:** The text on screen is Japanese.
 - **Settings:** The first version has no settings. Values such as the number of turns

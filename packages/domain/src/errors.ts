@@ -35,11 +35,15 @@ export type TalkError =
  *
  * @remarks
  * Grouped by what a caller can do: `ERR_BAD_REQUEST` (a card the session did
- * not deal) and `ERR_SESSION_NOT_FOUND` (unknown, or another learner's) are the
- * caller's mistake; `ERR_SESSION_CLOSED` means the session has finished and
- * takes no new answer, so the caller should start another.
+ * not deal), `ERR_SESSION_NOT_FOUND` and `ERR_CARD_NOT_FOUND` (unknown, or
+ * another learner's) and `ERR_CARD_NOT_PERSONAL` (a catalog card, which no
+ * learner deletes) are the caller's mistake; `ERR_SESSION_CLOSED` means the
+ * session has finished and takes no new answer, so the caller should start
+ * another.
  */
 export type VocabError =
   | { readonly code: "ERR_BAD_REQUEST" }
   | { readonly code: "ERR_SESSION_NOT_FOUND" }
-  | { readonly code: "ERR_SESSION_CLOSED" };
+  | { readonly code: "ERR_SESSION_CLOSED" }
+  | { readonly code: "ERR_CARD_NOT_FOUND" }
+  | { readonly code: "ERR_CARD_NOT_PERSONAL" };

@@ -1,8 +1,9 @@
 import { describe, expect, expectTypeOf, it } from "vitest";
 
 import { createStandInModel } from "@instant-composition/adapters";
+import { standInTalkModel } from "@instant-composition/api";
 import type { ModelFailure, ModelReply } from "@instant-composition/application";
-import type { Result } from "@instant-composition/domain";
+import { fitsCardText, type CardText, type Result } from "@instant-composition/domain";
 
 import { describeLanguageModelContract, makeRequest } from "./language-model-contract";
 
@@ -111,5 +112,39 @@ describe("createStandInModel", () => {
     expectTypeOf(result).toEqualTypeOf<
       Result<ModelReply<{ readonly line: string }>, ModelFailure>
     >();
+  });
+});
+
+describe("the stand-in a keyless run serves", () => {
+  it("answers the cards task with one card per turn it is sent, each meeting the card rules", async () => {
+    const model = standInTalkModel();
+    const turns = [1, 2, 3, 4, 5, 6];
+    const text = turns
+      .map(
+        (turn) => `<turn number="${String(turn)}">\n<japanese>例</japanese>\n</turn>`,
+      )
+      .join("\n");
+
+    const result = await model.generate(
+      {
+        ...makeRequest(),
+        task: "talk-cards",
+        promptVersion: "talk-cards@1",
+        messages: [{ role: "user", text }],
+        output: {
+          name: "talk_cards",
+          schema: { type: "object" },
+          read: (value) => value,
+        },
+      },
+      signal(),
+    );
+    const { candidates } = (result.ok ? result.value.value : {}) as {
+      candidates?: (CardText & { turn: number })[];
+    };
+
+    expect(candidates?.map((candidate) => candidate.turn)).toStrictEqual(turns);
+    expect(candidates?.every((candidate) => fitsCardText(candidate))).toBe(true);
+    expect(new Set(candidates?.map((candidate) => candidate.headword)).size).toBe(6);
   });
 });

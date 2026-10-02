@@ -50,6 +50,9 @@ export {
 } from "./requests";
 export { ROUTES, type Route } from "./routes";
 export {
+  addCardsRequestSchema,
+  cardCandidateSchema,
+  cardCandidatesSchema,
   judgmentSchema,
   MAX_TALK_TEXT,
   partnerReplySchema,
@@ -75,6 +78,7 @@ export {
   settingsViewSchema,
 } from "./views";
 export {
+  cardIdParamSchema,
   sessionIdParamSchema,
   startVocabSessionRequestSchema,
   vocabAnswerSchema,

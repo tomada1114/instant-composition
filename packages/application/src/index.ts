@@ -55,6 +55,7 @@ export type {
   TalkCommandError,
 } from "./errors";
 export { type ApplicationDeps } from "./execute";
+export { deleteVocabCard } from "./delete-card";
 export { endTalk, recordRecital, type RecitalCommand } from "./end-talk";
 export { finishRound } from "./finish-round";
 export { home } from "./home";
@@ -109,8 +110,21 @@ export {
   type LearnerStores,
   type Stored,
 } from "./store";
+export {
+  addCards,
+  makeCandidates,
+  type AddCardsCommand,
+  type CardDeps,
+} from "./talk-candidates";
 export { TALK_PROMPTS, type TalkDeps, type TalkRequest } from "./talk-model";
-export type { PartnerReply, TalkEnded, TalkOpened, TurnResult } from "./talk-views";
+export type {
+  CardCandidates,
+  CardCandidateView,
+  PartnerReply,
+  TalkEnded,
+  TalkOpened,
+  TurnResult,
+} from "./talk-views";
 export { updateLevel } from "./update-level";
 export { updateSettings } from "./update-settings";
 export type {
