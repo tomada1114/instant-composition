@@ -43,7 +43,7 @@
   {
     "id": "c_2f5x4q3f",
     "ja": "私が腹立つのは彼らの後出しの条件変更だ。",
-    "en": "What rankles is how they moved the goalposts.",
+    "en": "What rankles me is how they moved the goalposts.",
     "alternatives": [
       "What annoys me is their changing the rules afterward.",
       "I'm irritated that they changed the requirements after the fact."
@@ -54,7 +54,13 @@
     "level": 10,
     "grammar": ["noun-clauses", "nested-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:568287c03557c8e80f5aff4f672582f6237f92651fa6380456b9aa122fa4789d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2j2w6m7c",
@@ -613,19 +619,25 @@
   },
   {
     "id": "c_7a9y9a5t",
-    "ja": "係員は更なる異議を許さないと言い張った。",
-    "en": "The clerk insisted they'd brook no further objections.",
+    "ja": "係員は異議はもう拒むと言い張った。",
+    "en": "The clerk insisted they'd reject further objections.",
     "alternatives": [
-      "The clerk insisted they wouldn't tolerate further objections.",
-      "The clerk maintained that no more objections were acceptable."
+      "The clerk insisted they'd refuse further objections.",
+      "The clerk insisted they'd reject any further objections."
     ],
-    "point": "brook no objections はこれ以上の異議を一切許さない強い拒絶。",
+    "point": "insisted は異議を拒むと強く言い張ったことを伝える。",
     "topic": "daily",
     "subtopic": "errands",
-    "level": 10,
+    "level": 6,
     "grammar": ["reported-speech"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b611c5dd1122c930ef58ea991199a152dbb28df6794d1377098613c67f7d71de",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7e7v8x4g",
@@ -667,22 +679,6 @@
         "at": "2026-09-29"
       }
     }
-  },
-  {
-    "id": "c_7p3f2z5k",
-    "ja": "決まり文句でなだめられ私は他の意見を求めた。",
-    "en": "Placated with platitudes, I sought a second opinion.",
-    "alternatives": [
-      "Soothed with empty phrases, I asked for another opinion.",
-      "Calmed with clichés, I sought another opinion."
-    ],
-    "point": "platitudes は中身のない型通りの言葉。",
-    "topic": "daily",
-    "subtopic": "errands",
-    "level": 10,
-    "grammar": ["participle-clauses"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
   },
   {
     "id": "c_7r4k6y4p",

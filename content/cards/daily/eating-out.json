@@ -460,10 +460,10 @@
   {
     "id": "c_4g3m5n8d",
     "ja": "店は我々の予約を既に見落としてた。",
-    "en": "The restaurant had already overlooked our reservation.",
+    "en": "The restaurant had overlooked our reservation.",
     "alternatives": [
-      "The restaurant had already missed our booking.",
-      "Our reservation had already escaped the restaurant's notice."
+      "The restaurant had missed our booking.",
+      "Our reservation had escaped the restaurant's notice."
     ],
     "point": "had overlooked で過去のある時点より前の見落とし。",
     "topic": "daily",
@@ -471,7 +471,13 @@
     "level": 6,
     "grammar": ["past-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef14a8d95b26d9b68c7f0ea5e4b6a435b8616867b1163cf7f5dbd564beb777f5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4n2s4p6j",
@@ -702,16 +708,22 @@
     "ja": "私は辛い料理を控えてる。",
     "en": "I'm cutting back on spicy dishes.",
     "alternatives": [
-      "I'm eating less spicy food.",
-      "I'm reducing how much spicy food I eat."
+      "I'm eating spicy food less often.",
+      "I'm having fewer spicy meals."
     ],
     "point": "cut back on は量や頻度を減らす。",
     "topic": "daily",
     "subtopic": "eating-out",
-    "level": 6,
+    "level": 5,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e922c461050fb6c53e16571e038c1afed86e4feee73a58635a172e59c09d83f3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6g3g4z2s",
@@ -1096,7 +1108,13 @@
     "level": 6,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:87a62977472e26126dac8fd7e53652d92ee82ec727decc7bf300d8b689fa4dae",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9v3a9c7r",

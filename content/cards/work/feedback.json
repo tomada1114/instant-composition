@@ -153,8 +153,8 @@
     "ja": "君が入れた例は適切だ。",
     "en": "The example you added is appropriate.",
     "alternatives": [
-      "The example you included fits well.",
-      "You chose an appropriate example to add."
+      "The example you included is appropriate.",
+      "The example you added fits well."
     ],
     "point": "you added がどの例かを説明する。",
     "topic": "work",
@@ -162,7 +162,13 @@
     "level": 4,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c4bfb09eeb84002100bac7eb478aa8ed1a30fcb70520dd8d816f95060062ffe6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3m2x3b7s",
@@ -774,10 +780,10 @@
   {
     "id": "c_8r5u6y4m",
     "ja": "私は色の使い方を見直すよ。",
-    "en": "I'll reconsider the color choices.",
+    "en": "I'll reconsider the color scheme.",
     "alternatives": [
-      "I'll rethink the choice of colors.",
-      "I'll review how the colors are used."
+      "I'll rethink the color scheme.",
+      "I'll review how colors are used."
     ],
     "point": "reconsider は一度決めた選択を考え直す。",
     "topic": "work",
@@ -785,7 +791,13 @@
     "level": 4,
     "grammar": ["future-forms"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7e7719b947c43a839147ae154f18cfc8496388a286e0f2384463a43e18bb13ee",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8t8w9r6j",
@@ -842,7 +854,13 @@
     "level": 4,
     "grammar": ["post-modification"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:59ff950c2deddc421310b92f6c3b60b843784e51d728a926ba95656c200dd2e6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8x7x2p5a",

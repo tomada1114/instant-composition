@@ -48,8 +48,8 @@
     "ja": "私は設定が怪しい気がします。",
     "en": "I'm inclined to suspect the configuration.",
     "alternatives": [
-      "My suspicion leans toward the configuration.",
-      "I tend to think the configuration's responsible."
+      "I suspect the configuration may be responsible.",
+      "I suspect the configuration is to blame."
     ],
     "point": "inclined to は断定を避けて見立てを伝える。",
     "topic": "tech",
@@ -57,7 +57,13 @@
     "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:595550e664049e51f002c068db3197c94fdc494ffb2a733c0d7fcb1e7692f5dc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2s5t6p7r",
@@ -183,7 +189,13 @@
     "level": 5,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:204a8cdd0f9b61958e0cba1af946c59701563163f08a966506f98782d76d4f76",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3b5p3t7q",
@@ -467,13 +479,19 @@
       "Which step got you stuck?",
       "Which step stopped you from proceeding?"
     ],
-    "point": "get stuck on はその手順で進めなくなる。",
+    "point": "be stuck on はその手順で先に進めない状態。",
     "topic": "tech",
     "subtopic": "debugging",
     "level": 5,
-    "grammar": ["wh-questions", "phrasal-verbs"],
+    "grammar": ["wh-questions"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4ef3a7b7059697b1ee6e9e9b170690fdbc254f606688b3bd07918346993d37da",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5d3g4p8t",
@@ -789,13 +807,19 @@
       "The bug I fixed still appears.",
       "The bug I repaired keeps occurring."
     ],
-    "point": "修正は過去形、今も収まらない状態は現在完了。",
+    "point": "I patched は過去の修正、still occurs は今も起きる状態。",
     "topic": "tech",
     "subtopic": "debugging",
     "level": 5,
     "grammar": ["tense-contrast", "relative-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2917cbd7b0c120be690d257aa1d491d868d9c3e94a99740d4d56d1bfbd4d84f1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7v4w2n6t",
@@ -808,10 +832,16 @@
     "point": "jump to conclusions は十分な調査なしに結論を出す。",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 7,
+    "level": 6,
     "grammar": ["gerunds"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7876da859ac02be4dc04fa216c1a7ea0b078847eb3569b7fb7592dee9b3de9fd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7v9h3x4j",
@@ -1008,19 +1038,26 @@
   },
   {
     "id": "c_9m3t5j3b",
-    "ja": "何が引き金か君は突き止めた？",
+    "ja": "君はもう何が引き金か特定した？",
     "en": "Have you pinpointed what triggers it?",
     "alternatives": [
       "Have you identified what's setting it off?",
-      "Have you established what causes it?"
+      "Have you established what causes it?",
+      "Did you identify what triggers it?"
     ],
     "point": "pinpoint は原因を正確に特定する。",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 7,
-    "grammar": ["indirect-questions"],
+    "level": 6,
+    "grammar": ["indirect-questions", "present-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:266598f362e3553e3c5d898cb54b77e2533227fffc30e70286aab52a002ca7ba",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9p2m9w8b",

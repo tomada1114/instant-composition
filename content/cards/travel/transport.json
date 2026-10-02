@@ -839,9 +839,15 @@
     "topic": "travel",
     "subtopic": "transport",
     "level": 9,
-    "grammar": ["tense-contrast", "inversion"],
+    "grammar": ["relative-clauses", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef647846c03f38749c3ffb68a2f4cdcf023ef1a032627dc2c938b8b7376d3dca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8x7n5n6u",
@@ -886,7 +892,7 @@
   },
   {
     "id": "c_9a4b8w8h",
-    "ja": "私が確認してたら立ち往生せず済んだのに。",
+    "ja": "私が確認してれば立ち往生せず済んだ。",
     "en": "Had I checked, I wouldn't have been stranded.",
     "alternatives": [
       "If I'd checked, I wouldn't have been stranded.",
@@ -898,7 +904,13 @@
     "level": 9,
     "grammar": ["third-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:feb2368610010b541179c15fbfef7d71bf64eb678d03ab3c8eea697defa5d84b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9d3s9c7q",

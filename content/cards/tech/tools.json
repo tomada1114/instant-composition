@@ -316,8 +316,8 @@
     "ja": "私はこのツールの癖を探ってる。",
     "en": "I'm exploring this tool's quirks.",
     "alternatives": [
-      "I'm investigating this tool's peculiarities.",
-      "I'm learning this tool's idiosyncrasies."
+      "I'm studying this tool's unusual behavior.",
+      "I'm figuring out this tool's quirks."
     ],
     "point": "quirks はツール独特の癖や挙動。",
     "topic": "tech",
@@ -325,7 +325,13 @@
     "level": 6,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4cfe502f833a423b8682f77c93e4bf173b43d0924c83160cb4db1c6096bfff8d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5d4c3d5a",
@@ -744,7 +750,13 @@
     "level": 6,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a5ece9cb509f85fb713a41210cf1e3bc70978d8650ab4f8692961f42f3cda945",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8y8e5t8y",
@@ -815,8 +827,8 @@
   },
   {
     "id": "c_9f4v4d9z",
-    "ja": "不具合に悩み私はツールを捨てた。",
-    "en": "Plagued by glitches, I ditched the tool.",
+    "ja": "バグに悩み私はツールを捨てた。",
+    "en": "Plagued by glitches, I ditched it.",
     "alternatives": [
       "Troubled by glitches, I abandoned the tool.",
       "I dropped the tool because of persistent glitches."
@@ -827,7 +839,13 @@
     "level": 6,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8bd667d15e1ef5b738f6b802a86b8385019aec1d470ba2cfef57f7243c880953",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9f5x5f8w",

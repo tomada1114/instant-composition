@@ -32,10 +32,16 @@
     "point": "was transferred は部署などを異動させられた。",
     "topic": "work",
     "subtopic": "job-interview",
-    "level": 3,
+    "level": 4,
     "grammar": ["passive-voice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:703360dadaf1694d5d76548a9f57551b2788a2a97ef722ff6a0d3556d94110a8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2q4q6w2f",
@@ -167,14 +173,20 @@
     "id": "c_3u8b9n5s",
     "ja": "私は引っ越す予定です。",
     "en": "I'm planning to move.",
-    "alternatives": ["I'm going to move.", "I'm set to relocate."],
-    "point": "be going to で決めている引っ越しを伝える。",
+    "alternatives": ["I'm going to move.", "I plan to move."],
+    "point": "planning to move で引っ越しを計画していると伝える。",
     "topic": "work",
     "subtopic": "job-interview",
     "level": 3,
     "grammar": ["future-forms"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c9d490eef4810498f1be9eabb35d718d32e0c5f6d609e1e49cf3045ef08c7e80",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4c7e9b2h",
@@ -317,7 +329,13 @@
     "level": 3,
     "grammar": ["present-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2dc32042007c4776c2a3bcf95f8bebfd5bc1a0506b5e404c8b25067c54637345",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4y4e6z7a",

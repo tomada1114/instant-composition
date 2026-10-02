@@ -693,17 +693,20 @@
     "id": "c_6y8d6t8a",
     "ja": "私は処理が遅いと思う。",
     "en": "I think processing is slow.",
-    "alternatives": [
-      "I believe processing takes too long.",
-      "I think it's slow to process."
-    ],
+    "alternatives": ["I believe processing is slow.", "Processing seems slow to me."],
     "point": "think の後の節で処理への評価を伝える。",
     "topic": "tech",
     "subtopic": "code-review",
     "level": 4,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9490e564ef4fc4e5e117b934de117990409afb305ec54f160161abba527d9d27",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7p9g2z9w",
@@ -724,6 +727,28 @@
         "hash": "sha256:ddc78183ce9c98134887b6c97184005af1a0fb706d7e0221100638b267adc9b5",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_7r3v7b6s",
+    "ja": "私は機能追加時にテストする。",
+    "en": "I test when adding features.",
+    "alternatives": [
+      "I run tests when adding features.",
+      "I test when I add features."
+    ],
+    "point": "when の後で機能を追加する時のテスト習慣を表す。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 4,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7d11ce39e155cc85f68f7f9812d2d4d820580a9a920c734eba9c5a44e2e3df10",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -851,22 +876,6 @@
     }
   },
   {
-    "id": "c_8v4x7p6s",
-    "ja": "私は機能追加時にテストする。",
-    "en": "I write tests when adding features.",
-    "alternatives": [
-      "I write tests when I add features.",
-      "When I add features, I include tests."
-    ],
-    "point": "when の後で機能追加とテストを書く習慣を結ぶ。",
-    "topic": "tech",
-    "subtopic": "code-review",
-    "level": 4,
-    "grammar": ["time-and-if-clauses"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_9a5g3e9x",
     "ja": "このコード、エラー処理がないよ。",
     "en": "This code is missing error handling.",
@@ -991,7 +1000,7 @@
   },
   {
     "id": "c_9z4h6u2f",
-    "ja": "この値は自動で設定される。",
+    "ja": "この値は自動設定される。",
     "en": "This value is set automatically.",
     "alternatives": [
       "The system sets this value automatically.",
@@ -1000,9 +1009,15 @@
     "point": "is set は値が設定される受動態。",
     "topic": "tech",
     "subtopic": "code-review",
-    "level": 4,
+    "level": 3,
     "grammar": ["passive-voice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e8bc3b568d35d800bc78224a2562e3d8d6f1948573735064e1b0f0cccbe9242",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   }
 ]

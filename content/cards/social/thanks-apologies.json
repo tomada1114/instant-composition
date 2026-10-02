@@ -219,7 +219,13 @@
     "level": 1,
     "grammar": ["there-is-are"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f6ee8855c6fded48accc10324e90565beacc877869e6a75e12e0acce67f05b16",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3j8m3g6r",
@@ -534,14 +540,20 @@
     "id": "c_5j9x2e7x",
     "ja": "君は親切だね。",
     "en": "You're kind.",
-    "alternatives": ["You're thoughtful.", "You're very nice."],
+    "alternatives": ["You're so kind.", "You're very nice."],
     "point": "kind は相手の親切さを褒める。",
     "topic": "social",
     "subtopic": "thanks-apologies",
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:80f829734ba910bf31c3a555e533191dd0651042998da13a6683fdebb3447995",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5q2d9a9c",
@@ -750,19 +762,6 @@
         "at": "2026-10-02"
       }
     }
-  },
-  {
-    "id": "c_7r4e7x2x",
-    "ja": "私を許して。",
-    "en": "Please forgive me.",
-    "alternatives": ["Please pardon me.", "Please excuse me."],
-    "point": "forgive me は過ちを許してほしいと頼む。",
-    "topic": "social",
-    "subtopic": "thanks-apologies",
-    "level": 1,
-    "grammar": ["imperatives"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
   },
   {
     "id": "c_7r9e5e5g",

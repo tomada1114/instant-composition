@@ -73,7 +73,13 @@
     "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7376f029f336e947e65ed25159ac6f3db65d500d722f14dcb6d8e606fba843ca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3c8w9s7r",
@@ -314,14 +320,20 @@
     "id": "c_4x4j8r7z",
     "ja": "私は添付を開ける。",
     "en": "I can open attachments.",
-    "alternatives": ["I'm able to open attachments.", "Attachments open for me."],
+    "alternatives": ["I'm able to open attachments.", "I can open attached files."],
     "point": "can open で添付ファイルを開ける能力や状況。",
     "topic": "work",
     "subtopic": "email-chat",
     "level": 2,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d54b87d9d56a0672b439099c9f093ea1368095ec396f2378bdc78996986e7d4e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5c3r4b9s",
@@ -388,7 +400,7 @@
   },
   {
     "id": "c_5q5u6v3g",
-    "ja": "君は誰に送った？",
+    "ja": "君は誰にメッセージ送った？",
     "en": "Who did you message?",
     "alternatives": ["Who did you send it to?", "Who received your message?"],
     "point": "who did you で送信先を尋ねる。",
@@ -397,7 +409,13 @@
     "level": 2,
     "grammar": ["wh-questions"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:00f59adf9f59185deb5110700a29ff7e55e56083480b4ef6ce8e71b11649ed82",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6g3f5f5b",

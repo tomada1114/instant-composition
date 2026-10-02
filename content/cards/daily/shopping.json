@@ -10,7 +10,13 @@
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b705fc135be9768db6473c47f29d40d9824f7726e2002feb56fec04a2d8f794b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2g9z5s9f",
@@ -184,10 +190,16 @@
     "point": "another one で同じ種類の別の商品。",
     "topic": "daily",
     "subtopic": "shopping",
-    "level": 2,
+    "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ce912c465341662936d10bd8194208ba4b1047d6cbc776fcb099a4247bcc1d68",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3w7k6w9t",
@@ -219,7 +231,13 @@
     "level": 2,
     "grammar": ["future-forms"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:23b4417d1c41d87e93ce4ee5b0e1c1447ab1bbd7b8b6efebbd81b7f7faf402e5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4a4p8g3g",
@@ -406,7 +424,13 @@
     "level": 1,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:84295f15065d32e33d26ed89d30088e001175c2f2eb1e336be647873339d70cf",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5y6e9y9d",
@@ -482,7 +506,13 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ad0c2420550c6f88f5836d169049bc590afc8d486bb4e56b27ee6bce098fbee4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6r7e6m2t",
@@ -621,7 +651,13 @@
     "level": 2,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:838db1dac585ca1130f3e81a571f962f27ea3e9918752c1da176154824318bc9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7t5j2j9d",

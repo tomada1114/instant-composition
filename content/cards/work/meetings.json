@@ -300,14 +300,20 @@
     "id": "c_5m2k8r4r",
     "ja": "私は目標を決めなきゃ。",
     "en": "I need to set goals.",
-    "alternatives": ["I have to establish goals.", "I must decide on goals."],
+    "alternatives": ["I have to choose goals.", "I must decide on goals."],
     "point": "need to set は設定する必要がある。",
     "topic": "work",
     "subtopic": "meetings",
     "level": 3,
     "grammar": ["infinitives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e33dc1080ad68569a4f7f8fc1d03a63567ed4cf0bc4d5717418f468f9fdb589f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5m9b6g4c",
@@ -399,14 +405,20 @@
     "id": "c_6h3v2r3q",
     "ja": "意見が三つあります。",
     "en": "There are three opinions.",
-    "alternatives": ["We have three opinions.", "Three opinions have been expressed."],
+    "alternatives": ["We have three opinions.", "There are three different opinions."],
     "point": "three の後は opinions と複数形。",
     "topic": "work",
     "subtopic": "meetings",
     "level": 3,
     "grammar": ["there-is-are"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fcdbd91fe4a55c83993e5d980a8c698362f4255eb47abfce5b4cd953ffb5ab41",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6m5r2s3k",
@@ -775,10 +787,16 @@
     "point": "Can I で先に話す許可を求める。",
     "topic": "work",
     "subtopic": "meetings",
-    "level": 3,
+    "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e56f46846f5048693e66621b71860373b919fc9f381b750b5abd380a0991058b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9j8r4n5d",

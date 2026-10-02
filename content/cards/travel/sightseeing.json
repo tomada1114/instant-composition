@@ -84,18 +84,24 @@
   {
     "id": "c_2g7m8u8f",
     "ja": "私はこの景色を心に刻むよ。",
-    "en": "I'll etch this view into memory.",
+    "en": "I'll commit this view to memory.",
     "alternatives": [
-      "I'll commit this view to memory.",
+      "I'll etch this view into my memory.",
       "I'll make sure I remember this view."
     ],
-    "point": "etch into memory ははっきり心に刻む。",
+    "point": "commit to memory は意識して記憶に刻む。",
     "topic": "travel",
     "subtopic": "sightseeing",
     "level": 7,
     "grammar": ["future-forms"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:789689cdc2ca37c26191bf88ab7554207b53fcec3109c773daa137bf531eda20",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2j8m7g6g",
@@ -1003,10 +1009,16 @@
     "point": "weave through は混雑の間を縫って進む。",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 7,
+    "level": 6,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d7e99cd34910768b80bd6618a27411a41500cf15918e4da64ced84c03143addd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9c2p5v6h",
@@ -1051,7 +1063,7 @@
   },
   {
     "id": "c_9t7z9d5m",
-    "ja": "私は少し期待外れだった気がします。",
+    "ja": "私はそれを少し期待外れに感じた。",
     "en": "I found it somewhat underwhelming.",
     "alternatives": [
       "It seemed slightly disappointing to me.",
@@ -1063,7 +1075,13 @@
     "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e9fee0f157667f9dfb3147715e92137e140351bb27762e63711e8ad11828df1a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9y4w7y9m",

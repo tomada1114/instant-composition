@@ -1057,7 +1057,7 @@
   },
   {
     "id": "c_9p9w6d9d",
-    "ja": "私は君を送れる。",
+    "ja": "私は君を車で送れる。",
     "en": "I can drive you.",
     "alternatives": ["I can give you a ride.", "I can take you by car."],
     "point": "drive you は車で相手を送る。",
@@ -1066,11 +1066,17 @@
     "level": 2,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7fae7a4d7ac6bfdd5575dcb7defd9eb7f4aeb63890f1802658ffcae540a3a455",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9u6q3b9h",
-    "ja": "軽い箱を運んで。",
+    "ja": "軽い方の箱を運んで。",
     "en": "Carry the lighter box.",
     "alternatives": ["Take the lighter box.", "Move the lighter box."],
     "point": "lighter は二つなどを比べて軽い方。",
@@ -1079,20 +1085,32 @@
     "level": 2,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:491cf87b49fd27a58a597294dfb72bd1a5747c26a327b1a061db945206c4bc9d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9v2g8f7f",
     "ja": "私は彼女を手伝った。",
     "en": "I helped her.",
-    "alternatives": ["I gave her help.", "I assisted her."],
+    "alternatives": ["I gave her some help.", "I helped her out."],
     "point": "helped は help の過去形。",
     "topic": "social",
     "subtopic": "favors",
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:731613bde32e5d61ad9748228c43db3f613ac79dcc8220c3e47f8465b8b9e2df",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9z6s7f3g",
