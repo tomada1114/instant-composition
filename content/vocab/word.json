@@ -1375,6 +1375,20 @@
     }
   },
   {
+    "id": "v_7j9y5z3g",
+    "category": "word",
+    "level": 1,
+    "headword": "umbrella",
+    "definition": "something you hold over your head to stay dry when it rains",
+    "example": "It's raining, so take your {{umbrella}}.",
+    "example2": "I left my umbrella on the train yesterday.",
+    "meanings": {
+      "ja": "傘"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_7k9b2j9r",
     "category": "word",
     "level": 5,
