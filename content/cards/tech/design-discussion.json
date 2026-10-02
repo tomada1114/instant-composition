@@ -445,6 +445,19 @@
     }
   },
   {
+    "id": "c_4v5p2u5u",
+    "ja": "私が図を描いてもいい？",
+    "en": "Can I draw a diagram?",
+    "alternatives": ["May I sketch a diagram?", "Is drawing a diagram okay?"],
+    "point": "draw a diagram で設計の図を描く。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4z2c9t4v",
     "ja": "私は案を既に比較してた。",
     "en": "I'd already weighed the options.",
@@ -742,6 +755,22 @@
     }
   },
   {
+    "id": "c_7t9s9p3m",
+    "ja": "この設計には弱点がある。",
+    "en": "This design has a weakness.",
+    "alternatives": [
+      "There's a weakness in this design.",
+      "This design has a weak point."
+    ],
+    "point": "a weakness は設計上の弱点。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 3,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7u7z6m3b",
     "ja": "私は設計の全体像を描いた。",
     "en": "I mapped out the architecture.",
@@ -803,6 +832,19 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_9d5v2n5a",
+    "ja": "私はデータの複製を避ける。",
+    "en": "I avoid copying data.",
+    "alternatives": ["I try not to copy data.", "I avoid making data copies."],
+    "point": "avoid の後は copying のように動名詞。",
+    "topic": "tech",
+    "subtopic": "design-discussion",
+    "level": 3,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9e5q4q5y",

@@ -19,6 +19,38 @@
     }
   },
   {
+    "id": "c_2n4u4c5k",
+    "ja": "日程に迷い私は判断を保留した。",
+    "en": "Torn over dates, I deferred judgment.",
+    "alternatives": [
+      "Unable to choose dates, I postponed my decision.",
+      "I put off deciding, torn over dates."
+    ],
+    "point": "torn は選択肢の間で気持ちが揺れている。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_3b9q6d9a",
+    "ja": "火曜の方が私たちは無理しない。",
+    "en": "Tuesday is less taxing for us.",
+    "alternatives": [
+      "Tuesday puts less strain on us.",
+      "Tuesday is less demanding for us."
+    ],
+    "point": "taxing は負担が大きい、骨が折れるという意味。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3j7e7v8t",
     "ja": "私は締切の再交渉を避けたい。",
     "en": "I'm keen to avoid renegotiating deadlines.",
@@ -840,6 +872,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_8g7r6s9a",
+    "ja": "我々に必要なのは確約だ。",
+    "en": "What we need is firm commitment.",
+    "alternatives": [
+      "A firm commitment is what we need.",
+      "We need a definite commitment."
+    ],
+    "point": "firm commitment は曖昧な予定ではなく確かな約束。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 7,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8h2s9b3m",

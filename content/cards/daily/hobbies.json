@@ -88,6 +88,19 @@
     }
   },
   {
+    "id": "c_3b9j7z4p",
+    "ja": "君は何を集めてる？",
+    "en": "What do you collect?",
+    "alternatives": ["What are you collecting?", "What things do you collect?"],
+    "point": "collect は趣味として物を集める。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 3,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3g2j4g6w",
     "ja": "近くに本屋があるよ。",
     "en": "There's a bookstore nearby.",
@@ -277,6 +290,19 @@
     }
   },
   {
+    "id": "c_5e9a8s8j",
+    "ja": "このゲームの方が簡単。",
+    "en": "This game's easier.",
+    "alternatives": ["This game is simpler.", "This game's less difficult."],
+    "point": "easier は easy の比較級。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5h3k3b7q",
     "ja": "近くにジムがあるよ。",
     "en": "There's a gym nearby.",
@@ -463,6 +489,22 @@
     }
   },
   {
+    "id": "c_6b3d6f7p",
+    "ja": "私は将棋の経験がない。",
+    "en": "I've never played shogi.",
+    "alternatives": [
+      "I haven't tried shogi yet.",
+      "I have no experience playing shogi."
+    ],
+    "point": "never と現在完了で経験がないと伝える。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 3,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6u3t3a4q",
     "ja": "週末は休むといいよ。",
     "en": "You should rest this weekend.",
@@ -545,6 +587,19 @@
     }
   },
   {
+    "id": "c_7c3b3p6h",
+    "ja": "君はどこで泳ぐ？",
+    "en": "Where do you swim?",
+    "alternatives": ["Where do you go swimming?", "Where's your swimming spot?"],
+    "point": "where で泳ぐ場所を尋ねる。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 2,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7d4f8a4y",
     "ja": "陶芸を勧めてくれたのは、姉だった。",
     "en": "It was my sister who suggested pottery.",
@@ -609,6 +664,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7v2r3v5q",
+    "ja": "私は菓子作りが好き。",
+    "en": "I enjoy baking sweets.",
+    "alternatives": ["I like making sweets.", "I like baking desserts."],
+    "point": "enjoy の後は baking のように動名詞。",
+    "topic": "daily",
+    "subtopic": "hobbies",
+    "level": 3,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7v2x6k5z",

@@ -268,6 +268,22 @@
     }
   },
   {
+    "id": "c_3s3g8q3j",
+    "ja": "この変更で私は前提を再考した。",
+    "en": "This change made me rethink assumptions.",
+    "alternatives": [
+      "This change prompted me to reconsider assumptions.",
+      "This change led me to revisit assumptions."
+    ],
+    "point": "make + 人 + 動詞の原形で再考させたと伝える。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 6,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3y8j9k4h",
     "ja": "PR は前より小さい。",
     "en": "It's smaller than before.",
@@ -306,6 +322,22 @@
     }
   },
   {
+    "id": "c_4h3h6v2e",
+    "ja": "長くても私は明白な名がいい。",
+    "en": "Though verbose, I prefer self-explanatory names.",
+    "alternatives": [
+      "I favor clear names despite their length.",
+      "I prefer self-explanatory names despite their length."
+    ],
+    "point": "self-explanatory は追加説明なしで意味が分かる。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 6,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4k8r9p2x",
     "ja": "彼が責任者を知ってるか私は疑問だ。",
     "en": "I doubt he knows who is responsible.",
@@ -326,6 +358,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_4n3w3p9x",
+    "ja": "この変更は不要かもしれません。",
+    "en": "This change may be redundant.",
+    "alternatives": [
+      "Perhaps this change is unnecessary.",
+      "This change might not be needed."
+    ],
+    "point": "may be で不要という指摘を断定せず伝える。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 6,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4q4h8m5d",

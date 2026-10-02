@@ -126,6 +126,22 @@
     }
   },
   {
+    "id": "c_2y8z3f3f",
+    "ja": "君が落ち着いたら私が訪ねるよ。",
+    "en": "I'll visit once you've found your feet.",
+    "alternatives": [
+      "I'll come by once you've settled in.",
+      "I'll visit after you've adjusted."
+    ],
+    "point": "settle in は新しい環境に慣れて落ち着く。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3b4w6e8y",
     "ja": "残っていたら、今ごろ結婚してたかも。",
     "en": "If I'd stayed, I might be married now.",
@@ -271,6 +287,22 @@
     }
   },
   {
+    "id": "c_3s9g7k7n",
+    "ja": "私は最近、人脈を作り直してる。",
+    "en": "I've been rebuilding my network lately.",
+    "alternatives": [
+      "I've been rebuilding my connections recently.",
+      "I've been reestablishing my contacts lately."
+    ],
+    "point": "rebuild my network は人とのつながりを築き直す。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3u2f6b6h",
     "ja": "私、家を買ったよ。",
     "en": "I bought a house.",
@@ -309,6 +341,19 @@
     }
   },
   {
+    "id": "c_4j9z2s7j",
+    "ja": "母は私に引き継ぎを頼んだ。",
+    "en": "Mom asked me to take over.",
+    "alternatives": ["Mom asked me to assume control.", "Mom asked me to take charge."],
+    "point": "take over は責任や仕事を引き継ぐ。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 5,
+    "grammar": ["verb-object-to-do", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4m3d7c8s",
     "ja": "どうやって成し遂げたのか教えてよ。",
     "en": "Tell me how you pulled it off.",
@@ -329,6 +374,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4r3t5g8p",
+    "ja": "私は異動で脇に追いやられた。",
+    "en": "I was sidelined by the transfer.",
+    "alternatives": [
+      "The transfer pushed me to the sidelines.",
+      "I was marginalized through the transfer."
+    ],
+    "point": "sidelined は中心的な仕事や役割から外される。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 7,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4s6h2z5n",
@@ -430,6 +491,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5e6n8j7r",
+    "ja": "その頃には私は就職してた。",
+    "en": "I'd landed a job by then.",
+    "alternatives": ["I'd found a job by then.", "I'd secured a job by that point."],
+    "point": "land a job は仕事を得る。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 5,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5h9z5m4r",
@@ -976,5 +1050,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9u8j3a8w",
+    "ja": "私は最近、家を探してる。",
+    "en": "I've been house hunting lately.",
+    "alternatives": [
+      "I've been looking for a home lately.",
+      "I've been searching for a house recently."
+    ],
+    "point": "have been hunting で最近続けている家探し。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 5,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   }
 ]

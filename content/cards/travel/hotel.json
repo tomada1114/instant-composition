@@ -44,6 +44,22 @@
     }
   },
   {
+    "id": "c_2r9t2s7p",
+    "ja": "私は駐車料を確かめとけばよかった。",
+    "en": "I wish I'd clarified parking fees.",
+    "alternatives": [
+      "I wish I'd checked the parking fees.",
+      "If only I'd asked about parking charges."
+    ],
+    "point": "clarify で曖昧な料金を明確にする。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 7,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2t5j8k9c",
     "ja": "私の朝食はまだ届かない。",
     "en": "My breakfast hasn't arrived yet.",
@@ -127,6 +143,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_3h2d5m8w",
+    "ja": "私たちは宿に二重請求されたのかも。",
+    "en": "The hotel might have double-billed us.",
+    "alternatives": [
+      "The hotel may have charged us twice.",
+      "We may have been double-billed by the hotel."
+    ],
+    "point": "double-bill は同じ料金を二重に請求する。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_3p8d7c2j",
@@ -859,6 +891,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9n3f5u5z",
+    "ja": "私は預けた荷物をまだ受け取ってない。",
+    "en": "I haven't retrieved the bags I checked.",
+    "alternatives": [
+      "I still haven't gotten my checked bags back.",
+      "I haven't collected the bags I left."
+    ],
+    "point": "預けた動作は過去形、未返却は現在完了で表す。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 7,
+    "grammar": ["tense-contrast", "relative-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9p5q8y8k",

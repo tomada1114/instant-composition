@@ -1,5 +1,18 @@
 [
   {
+    "id": "c_2c8p5u3x",
+    "ja": "私は音読を勧めます。",
+    "en": "I recommend reading aloud.",
+    "alternatives": ["I suggest reading out loud.", "My advice is to read aloud."],
+    "point": "recommend の後の行動は動名詞。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 3,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2g9j8e2g",
     "ja": "私たちに嫌味な褒め言葉は不要だった。",
     "en": "You could've spared us that backhanded compliment.",
@@ -238,6 +251,22 @@
     }
   },
   {
+    "id": "c_4q5f5f9x",
+    "ja": "君の説明は私を助けた。",
+    "en": "Your explanation helped me.",
+    "alternatives": [
+      "You helped me with your explanation.",
+      "I benefited from your explanation."
+    ],
+    "point": "helped me は私の理解を助けた。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 3,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4w9z3c2r",
     "ja": "こんな完成度の下書き、初めて見たよ。",
     "en": "Never have I seen such a polished draft.",
@@ -343,6 +372,19 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_5r8u4a4b",
+    "ja": "君の見出しは褒められた。",
+    "en": "Your heading was praised.",
+    "alternatives": ["Your heading received praise.", "People praised your heading."],
+    "point": "was praised で褒められた側を主語にする。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 3,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5y2v9r6s",

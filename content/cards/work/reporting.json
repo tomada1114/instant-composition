@@ -85,6 +85,22 @@
     }
   },
   {
+    "id": "c_2q2t4n2t",
+    "ja": "私たちは不足分を補える。",
+    "en": "We can make up the shortfall.",
+    "alternatives": [
+      "We can cover the shortfall.",
+      "We're able to make up the deficit."
+    ],
+    "point": "make up the shortfall は不足分を埋め合わせる。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["can-could-ability", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2s3k7u5f",
     "ja": "私があなたなら、上司に話します。",
     "en": "If I were you, I'd tell your boss.",
@@ -490,6 +506,22 @@
     }
   },
   {
+    "id": "c_5y7d5h2k",
+    "ja": "承認後に私が手配するよ。",
+    "en": "I'll arrange it once approval arrives.",
+    "alternatives": [
+      "I'll arrange it when approval comes through.",
+      "I'll make arrangements once we get approval."
+    ],
+    "point": "come through は待っていた承認などが届く。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["time-and-if-clauses", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6a5y5y9c",
     "ja": "足を引っ張っているのは、引き継ぎです。",
     "en": "What's holding us back is the handoff.",
@@ -674,6 +706,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7y5y9q6z",
+    "ja": "我々は見積もりが甘いと知った。",
+    "en": "We found the estimate was optimistic.",
+    "alternatives": [
+      "We discovered the estimate was too optimistic.",
+      "We learned that the estimate was optimistic."
+    ],
+    "point": "found の後の節で見積もりが楽観的だと伝える。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 5,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8a4m6d8y",

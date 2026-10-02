@@ -82,6 +82,22 @@
     }
   },
   {
+    "id": "c_2u4c8r7x",
+    "ja": "私は彼らが書面の約束を守るか疑ってる。",
+    "en": "I doubt they'll honor what's down in writing.",
+    "alternatives": [
+      "I doubt they'll stand by their written promise.",
+      "I doubt they'll honor what they promised in writing."
+    ],
+    "point": "honor は約束を正式に履行するという意味。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2u7y7j6h",
     "ja": "昨日来てれば、もう済んでたのに。",
     "en": "If I'd come yesterday, I'd be done.",
@@ -467,6 +483,22 @@
     }
   },
   {
+    "id": "c_5r6n8a9j",
+    "ja": "慣例でも私はこの手数料に異議がある。",
+    "en": "Custom notwithstanding, I take issue with this fee.",
+    "alternatives": [
+      "Despite the custom, I object to this fee.",
+      "Although customary, I find this fee objectionable."
+    ],
+    "point": "notwithstanding は慣例を認めつつ異議があると伝える。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5x9f6k3u",
     "ja": "頼んで、延滞料を免除してもらった。",
     "en": "I got them to waive the late fee.",
@@ -781,6 +813,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_8t8r2q7f",
+    "ja": "私は契約のごまかしを見抜けばよかった。",
+    "en": "I wish I'd seen through the contractual sleight of hand.",
+    "alternatives": [
+      "I wish I'd recognized the trickery in the contract.",
+      "If only I'd spotted how the contract misled me."
+    ],
+    "point": "sleight of hand は巧みにごまかす手口も指す。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 10,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8y3w4m3q",

@@ -236,6 +236,22 @@
     }
   },
   {
+    "id": "c_3q6f7c8x",
+    "ja": "私は原因をもう見つけた。",
+    "en": "I've already found the cause.",
+    "alternatives": [
+      "I've already identified the cause.",
+      "I've already discovered the cause."
+    ],
+    "point": "already found で原因特定の完了。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 3,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3q8f8k2x",
     "ja": "このエラー、いつから？",
     "en": "When did this error start?",
@@ -280,6 +296,19 @@
     }
   },
   {
+    "id": "c_3y2z2g6d",
+    "ja": "私は設定を調べなきゃ。",
+    "en": "I need to check settings.",
+    "alternatives": ["I have to inspect the settings.", "I must check the settings."],
+    "point": "need to check は確認する必要がある。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 3,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3z7f9k8j",
     "ja": "ログ上は、タイムアウトだね。",
     "en": "Judging by the logs, it's a timeout.",
@@ -302,6 +331,22 @@
     }
   },
   {
+    "id": "c_4j2b9v2z",
+    "ja": "この文字は無視されます。",
+    "en": "This character is ignored.",
+    "alternatives": [
+      "The system ignores this character.",
+      "This character gets ignored."
+    ],
+    "point": "is ignored で入力文字が処理されないと伝える。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 3,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4s3m9e8x",
     "ja": "早く教えてくれてたらなあ。",
     "en": "I wish you'd told me earlier.",
@@ -322,6 +367,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4y2c9m6c",
+    "ja": "我々は症状を原因と誤認したのかも。",
+    "en": "We may've mistaken symptoms for causes.",
+    "alternatives": [
+      "We might have confused symptoms with causes.",
+      "We may have misidentified symptoms as causes."
+    ],
+    "point": "mistake A for B はAをBだと思い違いする。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4z7j6m2y",
@@ -524,6 +585,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_6x8a7s7y",
+    "ja": "この可能性はまだ排除されてない。",
+    "en": "This possibility hasn't been ruled out.",
+    "alternatives": [
+      "This possibility hasn't yet been eliminated.",
+      "We haven't excluded this possibility yet."
+    ],
+    "point": "rule out は原因の候補から外す。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 7,
+    "grammar": ["passive-voice", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6x8u8k2m",
@@ -859,5 +936,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9s2e7y3q",
+    "ja": "我々が深く調べてたら気づけたのに。",
+    "en": "If we'd probed, we'd have caught it.",
+    "alternatives": [
+      "Had we probed, we'd have caught it.",
+      "We'd have caught it if we'd investigated."
+    ],
+    "point": "probe は原因を突き止めようと詳しく調べる。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 7,
+    "grammar": ["third-conditional", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   }
 ]

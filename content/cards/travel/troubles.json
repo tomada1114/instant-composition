@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2f2n2n2m",
+    "ja": "彼らに無理やり署名させられないで。",
+    "en": "Don't let them railroad you into signing.",
+    "alternatives": [
+      "Don't allow them to pressure you into signing.",
+      "Don't let them strong-arm you into signing."
+    ],
+    "point": "railroad 人 into は強引に承諾させる。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2k3g9z2c",
     "ja": "財布は昨日なくなりました。",
     "en": "My wallet went missing yesterday.",
@@ -99,6 +115,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_2x8m7e6r",
+    "ja": "私が疑ってるのは相手の誠意だ。",
+    "en": "It's their good faith I'm calling into question.",
+    "alternatives": [
+      "What I'm questioning is their good faith.",
+      "It's their sincerity that I'm questioning."
+    ],
+    "point": "call into question は信頼性を疑問に付す。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 10,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_2y7y5k4n",
@@ -790,6 +822,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8j5t2p4n",
+    "ja": "私はあの保証を鵜呑みにすべきでなかった。",
+    "en": "I shouldn't have taken that assurance at face value.",
+    "alternatives": [
+      "I shouldn't have accepted that assurance without question.",
+      "I should've questioned that assurance instead of trusting it."
+    ],
+    "point": "take at face value は言われたことを疑わず受け取る。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 10,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8m7t5w8p",

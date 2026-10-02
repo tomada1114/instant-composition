@@ -165,6 +165,19 @@
     }
   },
   {
+    "id": "c_2u3z7u8f",
+    "ja": "私は道を一本間違えました。",
+    "en": "I took the wrong street.",
+    "alternatives": ["I went down the wrong street.", "I chose the wrong street."],
+    "point": "take a street はその道を通る。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 4,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2y7x7h2y",
     "ja": "北へ進めば、目と鼻の先ですよ。",
     "en": "Heading north, you'll be a stone's throw away.",
@@ -490,6 +503,22 @@
     }
   },
   {
+    "id": "c_4x4t7c4n",
+    "ja": "橋の下の道を通って。",
+    "en": "Take the road under the bridge.",
+    "alternatives": [
+      "Follow the road beneath the bridge.",
+      "Use the road below the bridge."
+    ],
+    "point": "under the bridge で道の場所を後ろから説明する。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4x5a7h8z",
     "ja": "道案内お願いできる？",
     "en": "Could you guide me?",
@@ -552,6 +581,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5g4c6k9k",
+    "ja": "私はもう橋を渡りました。",
+    "en": "I've already crossed the bridge.",
+    "alternatives": [
+      "I've already gone across the bridge.",
+      "I've already made it across the bridge."
+    ],
+    "point": "cross は橋などを渡る動詞。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 4,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5h4a2p3m",

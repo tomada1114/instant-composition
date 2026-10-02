@@ -19,6 +19,22 @@
     }
   },
   {
+    "id": "c_2h8a9x5m",
+    "ja": "皆が合意した日が私には悩みの種だ。",
+    "en": "The date everyone agreed on troubles me.",
+    "alternatives": [
+      "I'm troubled by the date everyone chose.",
+      "The agreed date is a concern for me."
+    ],
+    "point": "agreed on で具体的な日について合意する。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2j8k6j3j",
     "ja": "君の懸念で私は旅行を再考中。",
     "en": "Your reservations have me second-guessing the trip.",
@@ -760,6 +776,22 @@
     }
   },
   {
+    "id": "c_7v9f8u5n",
+    "ja": "私は代替の予定を残したい。",
+    "en": "I want to keep a fallback.",
+    "alternatives": [
+      "I'd like to keep a backup plan.",
+      "I want to retain an alternative plan."
+    ],
+    "point": "fallback は予定が無理なときに使える代案。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7w6t8z5w",
     "ja": "その約束、金曜に延期できる？",
     "en": "Can we push it back to Friday?",
@@ -887,6 +919,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_8j7v4v6p",
+    "ja": "急かされ私は日取りを確定した。",
+    "en": "Pressed, I nailed down a date.",
+    "alternatives": [
+      "Under pressure, I finalized a date.",
+      "Feeling rushed, I fixed a date."
+    ],
+    "point": "nail down は日取りを曖昧なままにせず確定する。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 7,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8q8p2b7z",
