@@ -4,14 +4,25 @@
     "category": "phrase",
     "level": 4,
     "headword": "it's no big deal",
-    "definition": "said to tell someone that a minor mistake does not bother you",
+    "definition": "said to tell someone that a small problem is not important",
     "example": "A: Sorry, I spilled a little coffee on your desk.\nB: {{It's}} {{no}} {{big}} {{deal}}.",
     "example2": "Don't worry about the late fee; it's no big deal.",
     "meanings": {
       "ja": "たいしたことないよ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f5d4d52794124bf26771ef9ee178b829252145a377611a3e67609aef0f58ecd9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:3db404bc95c86f6df76f5f70128f9bc39957d83d1ef74d9e9415ff4602532711",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_2b6n6t8p",
@@ -50,7 +61,18 @@
       "ja": "ちょっと考えさせて"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0733d3b7c8133f2462760b0910e93de67a88e960725e1b416ab79576ae7a08e6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:a9e0da5f539d0a8ab34e8949cfd5111885e5dc197f5eaf19b4bad49b11415421",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_2k6g3h6b",
@@ -89,7 +111,18 @@
       "ja": "後で連絡するね"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4fea227fb1f667ac082bcc6dfb9294193ca774c2f7fcf3415e13124208ba68e1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:3e05ae7d78ad7a95d20a3f9039a829f6c2d5f35fb3988ddf323b0c11b9d49335",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_2u2e6m2v",
@@ -378,7 +411,18 @@
       "ja": "ご自由にどうぞ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:446af68f08a2a78c85eafe8d662ae60c5b8f3e6f38cb45c6973b844d322d1f22",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:42abd54f0cbba336bd6518ba1ffab677194c6641613b3c79b84033f9c4bcf0eb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3u3u4r8k",
@@ -467,7 +511,18 @@
       "ja": "今向かってるよ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:377dd014f0274f248fd096b38a0da705c67983395e8086902947cfbaf2a01704",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:578a4d7a2f6b937e5e5fd50310b79b58b29c2906107f7d046da0e7c38682fd72",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3y9n7g8h",
@@ -806,7 +861,18 @@
       "ja": "どうでもいいよ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:65987dd18cf2d5906e7ae7e2de224117aab8ce33806f1d737fa108f3c7cf851b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:bbfb1cb6c3b5de3614b65c69c2c1c66e60398193fd010b4aa4361d3f9877df39",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5b2z6p6n",
@@ -870,7 +936,18 @@
       "ja": "どういたしまして"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4f7a257ce5105ef2715cae57e0b4964a1495d5e087617e1a88ababeeb55c2fcd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:0e3d1014ff0478c9e5c1a01e5f7f17f4d215d2fdda231ccf353a7d462f2b6f3e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5h8n5c2k",
@@ -1359,7 +1436,18 @@
       "ja": "ほめ言葉と受け取るよ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:591996da39591bd2c6f7a5e3e8ca381599a8225246a76c3539067cf24b34f63b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:78d740e3a3f41e254d215e140ce2d69e452af2acf632741f384f576036b18c59",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8f4u7s9y",
@@ -1623,6 +1711,17 @@
       "ja": "そういえば"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9fd959837a662f4888c39d306ec8b73727fd5430f29f116f7cde5fa128e84586",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:46313ca5d37cf62af28473d2049194fb1f49baf98d27106cf942f63733114b6f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   }
 ]

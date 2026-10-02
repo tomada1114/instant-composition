@@ -86,7 +86,18 @@
       "ja": "先生"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1f3963a5ca5f953100ebf304bb60775fea7a4ffc12aad909c80bc87b965ed87f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:56c2abd9ccc8d52728e83e24c483eeab9ef720dffde26a616de49b92407f0a36",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_2q8b5j5e",
@@ -150,21 +161,43 @@
       "ja": "交渉する"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:94ad67dfc881070c6dfb2f916056eb61eefdc1517efa8c2444d2d974cb34058d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:2ebcdb958918de7a776d08baccbd9620248b2ab9988ddc1184aec50379a9362f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_2x6t7p6k",
     "category": "word",
     "level": 5,
     "headword": "recommend",
-    "definition": "to tell someone that something is good and worth trying",
+    "definition": "to tell someone that a person or thing is good and worth choosing",
     "example": "Can you {{recommend}} a good dentist near here?",
     "example2": "The doctor recommended more rest and plenty of water.",
     "meanings": {
       "ja": "勧める"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3fbfd2df745cf4ccd2fb071ba55d4bafd7aa796740d5a8d02107247b6ae68216",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:3a03e931aae86ef187dc9ed1cf15ac4d7e83c60c145c22305f8e0135920dba63",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_2z9j4n3j",
@@ -203,7 +236,18 @@
       "ja": "具体的な・目に見える"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:034ed8a3efea17247a2c0c285a18f2ffeca16eeec89e430d028dc7f98cd1552f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:8a207d96db0513a7339465a9d08b9992eed3e09e0fa26ec736a8d1f2d851a0f0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3e8m9d3e",
@@ -335,14 +379,25 @@
     "category": "word",
     "level": 9,
     "headword": "disparate",
-    "definition": "made up of parts that seem to have nothing in common",
+    "definition": "describing things that seem to have nothing in common with each other",
     "example": "The team merged {{disparate}} ideas into one clear plan.",
     "example2": "She studied disparate fields, from music to biology.",
     "meanings": {
       "ja": "異質な・かけ離れた"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:48762da2c22c3509fc923193637bdcef46c41634def12189e5d903ac79f991a5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:20186bba877317b8bf73377872f93a3485c2274f6a8f1975eff106a4e49037cb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4n2d2m6s",
@@ -656,7 +711,18 @@
       "ja": "説明責任がある"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:15116d793448ed24164f76b28bbf90eb9ebc977313df08bef9972618535b328a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c2de96216d676c72e05c4ffc64a8b55ac3d20a39351f3bb22c027964bac0001a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5w3g2d4h",
@@ -695,7 +761,18 @@
       "ja": "提案する"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d9ca75f2f1267f12861a7e0ac84914acf03d957aff87534df7d0ac73b1162746",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:2379eee450ed0d4694fd2549401d214968efff9b4bbe638a22b8fa1b7fe6dabd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6j2x4p6q",
@@ -734,7 +811,18 @@
       "ja": "朝食"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9621b48116364c3848397ad0830ab026a957e61d507ec585470f830636fd3ee7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:d297899e0b4ae9b9e03351cc450a225a8d6ebdc6c7ee6e5b98e72a956df4ef98",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6m7e7d5r",
@@ -923,7 +1011,18 @@
       "ja": "障害・妨げ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4f4cd865446631845826d5af71a676d43cf7c96d828905b466b728be0e7cefea",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:99ceabcf2941332488480d0928ce8fcc18e56a120d74a3cf30ffad68ead91477",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7c9k6r9d",
@@ -1062,7 +1161,18 @@
       "ja": "客"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:10c4276531309bf7340e303f1a15636fa789f82d0f14c0044585523c906d804a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:fd5e45472b6ac716898d31ce298ae9a275153b73bbe849fa2ec855e0f2594335",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7k9b2j9r",
@@ -1326,7 +1436,18 @@
       "ja": "本物の"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f6c1c41000b03269e63089fcdcb4d81e0c5714d8b6c8e5f78d2b0d8deb28c25a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:90da88afee3f37c9121391f234c45c17bb8e71cf3617503fd0952cb2d7bb7ead",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8j8b8y4f",
@@ -1340,7 +1461,18 @@
       "ja": "見落とす"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6919b1afc37f5130045307f40b59159311dbc361b1d48d01caf1189844a662d9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:3078426cafa2c59dad3ade366272962ebb84135c5d578a285fb4f83ba4c627c0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8p6n3j3k",
@@ -1354,7 +1486,18 @@
       "ja": "心地よい"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a78997a0f8ec358298644519c4a81a38d5efe59db08d951a7b14e534eeca31a0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:dacc094881e90917db270b119d71ee90065371f74c58fdcd50b44563cc411c20",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8s5n5k7b",
@@ -1393,7 +1536,18 @@
       "ja": "態度"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:66875bb3efac1b373493a6aa78c5eb5f8b3e31cd89c08a788fa7d5cdb40018b4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:4764ea245d57347c478cae2f655fe882a2bafdd2bcf1bcb0551d199d0fb3dfda",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8v5n9u8y",
@@ -1407,7 +1561,18 @@
       "ja": "微妙な違い"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3fd2d8d9605cce9e90f3f5a8283f44d292bff6278cdea80c882822c24e064186",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:3bef6e71daa755a522e451f47a638abec4415cfdeb3d6f9c0cfe7a10b57bec15",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8y2y6c4y",
@@ -1621,7 +1786,18 @@
       "ja": "制限する"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:308e66b241df7c02177ffaf97d3e1e8c67befb7c862abedc3c88a4f1a7611cdc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:887dd123b5c81aee643e7ca651f38603640cf61d9bd1fe254e262fd272282b66",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9t9b3h5d",
@@ -1635,7 +1811,18 @@
       "ja": "買う余裕がある"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5a3f085323e690dcf497ef264f681a899efa8d776bf27e2dcc9604facbd9a571",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c0498beb38709ebec62d62adc15607311652327a14de153707733a9ab6763a35",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9y9q6a5b",

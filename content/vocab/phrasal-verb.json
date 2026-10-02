@@ -61,7 +61,18 @@
       "ja": "運動する"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:028ceb55f6202a60aa8cd2a8d29d0da5d0952080a7e2a5caddf4e0124544e498",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:ee99efb88a3d425be1169f83359015b2ec9987c4959da4b6090220bcff006cf8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_2g5n7r3s",
@@ -275,7 +286,18 @@
       "ja": "中止する"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f262c14b160383ec1278ab3599f063c99973e47fa605d960034b84dff59bb70",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:6218cfafa197c38c5066205f0e3fcbfbf6d7c40ba14c335165784996f93be70b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3j7k7u6m",
@@ -314,7 +336,18 @@
       "ja": "育つ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:188a064b57b69a35108a0551f9c362bbd99d93f181e65a53c173507d9bfc70d2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c4a564e14b44ab1f365f6e51d05ecf4af480bb8d42c68fc58bee15c4471373f3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3s7m4s5f",
@@ -453,7 +486,18 @@
       "ja": "急ぐ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6cf6b5a99294272895665dc5a567b7d2c1de2b4b4fac936f725c22fb9bcf2a68",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:2d079cf14b0fb4e5523d8a06f2cbd4849570e0947d9f36ea6c8a46983f957e55",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4c9y8r9c",
@@ -567,7 +611,18 @@
       "ja": "辞任する"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f151e34135de8e0eaa98f5739fee7ca41799882ce2c4e8da95ddf2881e0073d3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c422dff7b2dbbe95e23470f1d51552cbb5f52f692c2b68ad5cd95f9a0d5f099e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4q8q2u9s",
@@ -581,7 +636,18 @@
       "ja": "考慮に入れる"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c38b1f55e0db521ab9d51d6f15cc22be58fc00b4fd2e6180d5c7b7ec49fb13b4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:cb051c8ff940211415a648a55649f38fdeb1fee748ce49f8e40d770d48f31afd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4t7z6j4t",
@@ -645,7 +711,18 @@
       "ja": "降りる"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d49fb33a61da62aa0ec44dd30e67767b6234955e11ddba2dee6678b45fad1272",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:f56135105c4e8ab785ab1c1954f929c788de98f06fa44828393f36b46820d471",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5b9z8r6s",
@@ -684,7 +761,18 @@
       "ja": "追いつく"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b3258adf66301d20f2f56a3ba38595b636c89cdfd9ca724f2d20a88277fb0f88",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:075ca89de8bf275882d28e5a1fb9e0d8f7ea61035c81dfea9f2fb3d52a9a9e71",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5g8w8x4k",
@@ -773,7 +861,18 @@
       "ja": "頓挫する"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:28b57853b5e84f9f13c4bdbb5b0c61171d98ca9fcb502fc602bc23632b8a49d0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:1bb0a5e5801a4ceca339ebf396e0c278ba9b54d5382e51fd8472a50b3be74255",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5t4p3q2n",
@@ -887,7 +986,18 @@
       "ja": "現れる"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6dc37fea53d81a747dc2103369ed7169ca347852195839458d76ead3ed3593ef",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:7fae2cb59214197d1694c4f7b3180845e9b564bb6765bf5b7eac319dab1c7751",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6f7h4h6g",
@@ -926,7 +1036,18 @@
       "ja": "結局〜になる"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8940c61cce4b0be226e62c580763ad8026d0a63c20e86a19a8348424be7ca79a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:235e0f05e8e8c9ea82a4b3f779d0df20016fffb518aefaeda6c79e63e03d067d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6m4v5a9v",
@@ -965,7 +1086,18 @@
       "ja": "故障する"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c0abff63c130207c3321541414a98352947ef50c7f015f600c1b33e2ded3281",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:519eb00794edb15c5b5950af949cc296a05b8e2ae0df545c62fae4c3287396c3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6u9z6p3t",
@@ -979,7 +1111,18 @@
       "ja": "結果的に〜になる"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3809cf0f3a993a3b4de1bc3dc713c106d614a6f1348df8425ca630b1f8887772",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:6fe7fee0ebba48baea0894ea4554878133ebbf092ba3fbb923ed0c1485a7b2fc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7c9k5h3k",
@@ -993,7 +1136,18 @@
       "ja": "選び出す"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e830008271b88ec4504fa6f7fe2df8026292fda8ff711e65b73e5b9cff542ff",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:64c461e4796d8d382e013a066e23997dee38e529eea2ed57b70c6f9611c95a18",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7f8d7x7c",
@@ -1107,7 +1261,18 @@
       "ja": "ぶらぶら過ごす・遊ぶ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d8cd4ef1667309598fb6c424aa02a57ec7302a0c0751d3279b58446bde66c44c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:fcb3ca717f55b4e61d7898b88c54d835e1e23c27415d53b9f88ba044472ef5e9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8d6q6b5b",
@@ -1321,21 +1486,43 @@
       "ja": "手を引く"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c382746931b8fcd25196c53ed87f6ba39992c2dae969d254daee113e07ce03ba",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:69b6cd8249716aa54f5484400df383403eb3f58e211adb631c10bd33af173f92",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9b6s9h2g",
     "category": "phrasal-verb",
     "level": 1,
     "headword": "go back",
-    "definition": "to return to a place you were in before",
-    "example": "I forgot my bag, so I must {{go}} {{back}}.",
+    "definition": "to travel again to a place you were in before",
+    "example": "I left my bag at the cafe, so I must {{go}} {{back}} there.",
     "example2": "Let's go back to the hotel.",
     "meanings": {
       "ja": "戻る"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7c84bfdca8d6819910b9f5674bf8dbee47f3c254e5fb57f53e526b7e3fad30c1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:7fb931689396ea9276110804156dbd08fcb6a857bdc645498cc003f92ccfc5e2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9b6u2z3u",
@@ -1399,7 +1586,18 @@
       "ja": "もたらす"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:662f2313724fcb2ba414f7222fd11e41cc00137744e3164acfb5f8262223c9a3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:5f51f964561b15432141755a00ae2b2464bd8dfe86ca72161d56946a37210137",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9e4y6u6f",

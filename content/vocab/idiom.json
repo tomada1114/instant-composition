@@ -11,7 +11,18 @@
       "ja": "同じ境遇にいる"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c6fa18b3acd2bd048808c4f042ec8870238424d97fb3856ae62b37dc2e6618ab",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:f18430c12eb58c5de1713dfcd44230182ec20ab7db8db67e3c8f13cee8b65d91",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_2c6v6j6y",
@@ -366,16 +377,27 @@
   {
     "id": "v_3z7r6q5j",
     "category": "idiom",
-    "level": 10,
+    "level": 8,
     "headword": "a bitter pill to swallow",
-    "definition": "a hard truth or loss that is painful to accept",
+    "definition": "a loss or truth that is very unpleasant to accept",
     "example": "Losing the final in overtime was {{a}} {{bitter}} {{pill}} {{to}} {{swallow}}.",
     "example2": "The pay cut was a bitter pill to swallow.",
     "meanings": {
       "ja": "受け入れがたい現実"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f6e3710247f25111b1878b864bdc80d06a4e462e4246cfe9a870f041d3eaa714",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:b5b4963a4b2727da3ed659cb2c6d91c69a6acca01961c4c69e67fdf90197cec4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3z8k7a8p",
@@ -564,7 +586,18 @@
       "ja": "見張る・注意しておく"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e44b446c703f323224ae6475ff16738e6b7afadf6536ac089d7a069d0f5b6980",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:d5776e492252a56bf520a72949ecb31f3cf7f537170c16933f0adc9356903d9a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5b2t3h3b",
@@ -1353,7 +1386,18 @@
       "ja": "目くそ鼻くそを笑う"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9a42c86fc7655afa99ef40747e64815477935ab943506cf09c1995f7fa88f5fc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:ab0ced479461fbeb067568b9bc5fd088125fb7ea64bc90756ec7e6b65b1f9e3b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8p7b4b4m",
@@ -1517,7 +1561,18 @@
       "ja": "意見が一致する"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:96fbfa103a9cd0bc167ef8d31d920e1c15bff402511406af14dd3923ab7d293a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:47de876ed7592f66f299e5b4de5ab83bda41de9038f48a444d55e5abdf53b7d1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9j2q9w6r",
@@ -1574,14 +1629,25 @@
     "category": "idiom",
     "level": 10,
     "headword": "a storm in a teacup",
-    "definition": "a lot of angry talk over something trivial",
-    "example": "The whole row turned out to be {{a}} {{storm}} {{in}} {{a}} {{teacup}}.",
+    "definition": "a big fuss over something that is not important",
+    "example": "The argument over the parking spot turned out to be {{a}} {{storm}} {{in}} {{a}} {{teacup}}.",
     "example2": "Don't panic; this is just a storm in a teacup.",
     "meanings": {
       "ja": "取るに足らない大騒ぎ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:00372ecabff47dc0aef120bfa62933891a5afe07e9a0cfb7035eb4338fb837c5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:2484710cd5d9cb3b97c2639348fcd25a122a67b3e1e763e3077d5828a8304ed2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9w4n5z3w",
