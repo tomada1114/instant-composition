@@ -4,6 +4,7 @@ import {
   dotSchema,
   gradeKeysSchema,
   levelModeSchema,
+  gradeSchema,
   passSchema,
   reachTopicSchema,
   reachViewSchema,
@@ -11,6 +12,9 @@ import {
   roundKindSchema,
   settingsSchema,
   subtopicRefSchema,
+  vocabCategorySchema,
+  vocabNewPerDaySchema,
+  vocabReviewsPerDaySchema,
 } from "./primitives";
 import {
   breakdownTopicSchema,
@@ -58,6 +62,19 @@ import {
   settingsViewSchema,
   totalsViewSchema,
 } from "./views";
+import {
+  startVocabSessionRequestSchema,
+  vocabAgainRowSchema,
+  vocabAnswerSchema,
+  vocabAnswersRequestSchema,
+  vocabCardSchema,
+  vocabCategoryViewSchema,
+  vocabHubSchema,
+  vocabIntervalsSchema,
+  vocabSessionKindSchema,
+  vocabSessionSchema,
+  vocabSummarySchema,
+} from "./vocab";
 
 /**
  * The schemas the document names under `components.schemas`, by the name a
@@ -115,5 +132,20 @@ export const COMPONENTS = {
   PartnerReply: partnerReplySchema,
   TurnResult: turnResultSchema,
   TalkEnded: talkEndedSchema,
+  Grade: gradeSchema,
+  VocabCategory: vocabCategorySchema,
+  VocabNewPerDay: vocabNewPerDaySchema,
+  VocabReviewsPerDay: vocabReviewsPerDaySchema,
+  VocabSessionKind: vocabSessionKindSchema,
+  StartVocabSessionRequest: startVocabSessionRequestSchema,
+  VocabAnswer: vocabAnswerSchema,
+  VocabAnswersRequest: vocabAnswersRequestSchema,
+  VocabCategoryView: vocabCategoryViewSchema,
+  VocabHub: vocabHubSchema,
+  VocabIntervals: vocabIntervalsSchema,
+  VocabCard: vocabCardSchema,
+  VocabSession: vocabSessionSchema,
+  VocabAgainRow: vocabAgainRowSchema,
+  VocabSummary: vocabSummarySchema,
   ErrorResponse: errorResponseSchema,
 } as const;

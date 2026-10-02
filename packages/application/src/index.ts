@@ -31,6 +31,25 @@ export {
   type WithdrawnItem,
 } from "./catalog-document";
 export type { VocabCategory, VocabItem } from "./vocab-item";
+export {
+  finishVocabSession,
+  recordVocabAnswers,
+  type VocabAnswersCommand,
+} from "./vocab-answers";
+export {
+  startVocabSession,
+  vocabHub,
+  type StartVocabSessionCommand,
+} from "./vocab-session";
+export type {
+  VocabAgainRow,
+  VocabCardView,
+  VocabCategoryView,
+  VocabHub,
+  VocabIntervals,
+  VocabSessionView,
+  VocabSummary,
+} from "./vocab-views";
 export type {
   ApplicationError,
   ApplicationErrorCode,

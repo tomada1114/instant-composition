@@ -102,6 +102,30 @@ export const TALK_TUNING = {
   selfShare: 2 / 3,
 } as const;
 
+/**
+ * Every tunable value the vocabulary rules read, kept apart from the drill's.
+ * The categories are in the order new cards take turns in.
+ */
+export const VOCAB_TUNING = {
+  categories: ["word", "idiom", "phrasal-verb", "phrase"],
+  /** New cards a day may bring, as the settings offer them. */
+  newPerDay: [0, 5, 10, 15, 20, 30],
+  defaultNewPerDay: 10,
+  /** Reviews a day may bring; `null` is no limit. */
+  reviewsPerDay: [50, 100, 200, null],
+  defaultReviewsPerDay: 100,
+  /** What one card takes, for the hub's estimate of minutes. */
+  secondsPerCard: 10,
+  /** Cards one extra session deals past today's queue. */
+  extraSize: 10,
+  /**
+   * A card is weak when it came from a talk or has lapsed `lapses` times,
+   * until its stability reaches `exitStabilityDays`; a weak session deals at
+   * most `sessionSize`.
+   */
+  weak: { lapses: 8, exitStabilityDays: 21, sessionSize: 20 },
+} as const;
+
 /** A milestone series: the listed values, then every `step` past the last one. */
 export interface MilestoneSeries {
   readonly fixed: readonly number[];

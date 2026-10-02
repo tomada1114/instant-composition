@@ -7,9 +7,10 @@ import * as z from "zod";
  * Grouped by what a client can do. The caller must sign in again first:
  * `ERR_UNAUTHENTICATED`. The request itself is wrong and resending
  * it changes nothing: `ERR_BAD_REQUEST`, `ERR_PAYLOAD_TOO_LARGE`,
- * `ERR_FORBIDDEN`, `ERR_ROUND_NOT_FOUND`, `ERR_TALK_NOT_FOUND`. The round, the
- * day or the talk has moved on, so reload before acting: `ERR_ROUND_CLOSED`,
- * `ERR_TALK_CLOSED`. Another write kept winning, or the language model gave no
+ * `ERR_FORBIDDEN`, `ERR_ROUND_NOT_FOUND`, `ERR_TALK_NOT_FOUND`,
+ * `ERR_SESSION_NOT_FOUND`. The round, the day, the talk or the vocabulary
+ * session has moved on, so reload before acting: `ERR_ROUND_CLOSED`,
+ * `ERR_TALK_CLOSED`, `ERR_SESSION_CLOSED`. Another write kept winning, or the language model gave no
  * usable answer, so the same request may be sent again: `ERR_CONFLICT`,
  * `ERR_MODEL_UNAVAILABLE`. The server needs something first — cards dealt or
  * the catalog repaired: `ERR_NOT_ENOUGH_CARDS`, `ERR_CONTENT_UNREADABLE`.
@@ -24,8 +25,10 @@ export const STATUS_BY_CODE = {
   ERR_FORBIDDEN: 403,
   ERR_ROUND_NOT_FOUND: 404,
   ERR_TALK_NOT_FOUND: 404,
+  ERR_SESSION_NOT_FOUND: 404,
   ERR_ROUND_CLOSED: 409,
   ERR_TALK_CLOSED: 409,
+  ERR_SESSION_CLOSED: 409,
   ERR_NOT_ENOUGH_CARDS: 409,
   ERR_CONFLICT: 409,
   ERR_PAYLOAD_TOO_LARGE: 413,
@@ -43,8 +46,10 @@ export const MESSAGE_BY_CODE = {
   ERR_FORBIDDEN: "The caller may not run this operation.",
   ERR_ROUND_NOT_FOUND: "No round has that id.",
   ERR_TALK_NOT_FOUND: "No talk has that id.",
+  ERR_SESSION_NOT_FOUND: "No vocabulary session has that id.",
   ERR_ROUND_CLOSED: "That round or day can no longer take this request.",
   ERR_TALK_CLOSED: "That talk has finished or ended and takes no more turns.",
+  ERR_SESSION_CLOSED: "That vocabulary session has finished and takes no new answer.",
   ERR_NOT_ENOUGH_CARDS: "Too few reviewed cards can be dealt for a round.",
   ERR_CONFLICT: "Another write to the same data kept winning; send the request again.",
   ERR_PAYLOAD_TOO_LARGE: "The request body is too large.",

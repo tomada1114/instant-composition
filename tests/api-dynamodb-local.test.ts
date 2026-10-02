@@ -10,6 +10,9 @@ import {
   talkEndedSchema,
   talkOpenedSchema,
   turnResultSchema,
+  vocabHubSchema,
+  vocabSessionSchema,
+  vocabSummarySchema,
 } from "@instant-composition/contracts";
 
 import {
@@ -21,8 +24,9 @@ import {
 import { NOON } from "./application-harness";
 import { localTables } from "./dynamodb-local";
 
-// The API over the DynamoDB store on DynamoDB local: the round's whole life,
-// the learner's profile and the grade keys through HTTP, as `pnpm api` serves it. Needs `pnpm db:up`; `pnpm
+// The API over the DynamoDB store on DynamoDB local: the round's whole life, a
+// vocabulary session's, the learner's profile and the grade keys through HTTP,
+// as `pnpm api` serves it. Needs `pnpm db:up`; `pnpm
 // test:dynamodb` runs it, never the default suite.
 
 const tables = localTables();
@@ -206,5 +210,62 @@ describe("the API on DynamoDB local", () => {
       (await backing.stores.forLearner(learnerId("learner-1")).settings())?.value
         .gradeKeys,
     ).toStrictEqual(gradeKeys);
+  });
+
+  it("runs a vocabulary session to its summary, never found by another learner", async () => {
+    const backing = await tables.freshBacking();
+    const a = makeApi({ ...backing, authenticator: subjectAuthenticator("subject-a") });
+    const b = makeApi({
+      ...backing,
+      authenticator: subjectAuthenticator("subject-b"),
+      newLearnerId: () => learnerId("learner-b"),
+    });
+    const session = vocabSessionSchema.parse(
+      await (
+        await a.call("POST", "/v1/vocab/sessions", { sessionId: "s1", kind: "today" })
+      ).json(),
+    );
+    const firsts = session.cards.map((card) => ({
+      id: `f:${card.id}`,
+      cardId: card.id,
+      pass: "first",
+      grade: "again",
+      elapsedMs: 2_000,
+    }));
+    const reasks = firsts.map((answer) => ({
+      ...answer,
+      id: `r:${answer.cardId}`,
+      pass: "retry",
+      grade: "good",
+    }));
+    const batch = { answers: [...firsts, ...reasks] };
+
+    expect(session.cards).toHaveLength(10);
+    expect((await a.call("POST", "/v1/vocab/sessions/s1/answers", batch)).status).toBe(
+      204,
+    );
+    expect((await a.call("POST", "/v1/vocab/sessions/s1/answers", batch)).status).toBe(
+      204,
+    );
+    expect((await b.call("POST", "/v1/vocab/sessions/s1/finish", batch)).status).toBe(
+      404,
+    );
+    const summary = vocabSummarySchema.parse(
+      await (
+        await a.call("POST", "/v1/vocab/sessions/s1/finish", { answers: [] })
+      ).json(),
+    );
+    const hub = vocabHubSchema.parse(await (await a.call("GET", "/v1/vocab")).json());
+    const mine = backing.stores.forLearner(learnerId("learner-1"));
+
+    expect(summary).toMatchObject({ answered: 10, new: 10, tomorrow: 10 });
+    expect(summary.again).toHaveLength(10);
+    expect(await mine.vocabReviewsOf("s1")).toHaveLength(20);
+    expect(
+      [...(await mine.vocabItems()).values()].map(({ version }) => version),
+    ).toStrictEqual(Array.from({ length: 10 }, () => 1));
+    expect(await mine.items()).toStrictEqual(new Map());
+    expect(hub.today).toStrictEqual({ due: 0, new: 0, minutes: 0 });
+    expect(hub.tomorrow).toBe(10);
   });
 });

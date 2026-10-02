@@ -9,6 +9,9 @@ import type {
   Settings,
   Talk,
   Turn,
+  VocabProgress,
+  VocabReview,
+  VocabSession,
 } from "@instant-composition/domain";
 
 // Factories for the packages/application suites. Nothing here asserts.
@@ -169,6 +172,64 @@ export function makeTalk(overrides: Partial<Talk> = {}): Talk {
   };
 }
 
+/** Progress on vocabulary card `v1`, answered once on 2026-09-22 and graded good. */
+export function makeVocabProgress(
+  overrides: Partial<VocabProgress> = {},
+): VocabProgress {
+  return {
+    cardId: "v1",
+    source: { kind: "catalog" },
+    state: {
+      stability: 2.3065,
+      difficulty: 2.118,
+      reps: 1,
+      lapses: 0,
+      lastDay: "2026-09-22",
+      dueDay: "2026-09-25",
+    },
+    firstDay: "2026-09-22",
+    ...overrides,
+  };
+}
+
+/** An open vocabulary session `s1` of today's queue, dealt on 2026-09-22. */
+export function makeVocabSession(overrides: Partial<VocabSession> = {}): VocabSession {
+  return {
+    id: "s1",
+    kind: "today",
+    category: null,
+    day: "2026-09-22",
+    deck: ["v1", "v2"],
+    startedAt: 1_000,
+    finishedAt: null,
+    tomorrow: null,
+    ...overrides,
+  };
+}
+
+/** The first answer of `v1` in session `s1`, graded good, which introduced it. */
+export function makeVocabReview(overrides: Partial<VocabReview> = {}): VocabReview {
+  return {
+    id: "va1",
+    sessionId: "s1",
+    cardId: "v1",
+    answeredAt: 2_000,
+    day: "2026-09-22",
+    pass: "first",
+    grade: "good",
+    elapsedMs: 4_000,
+    before: null,
+    after: makeVocabProgress().state,
+    snapshot: {
+      headword: "give up",
+      meaning: "あきらめる",
+      category: "phrasal-verb",
+      level: 4,
+    },
+    ...overrides,
+  };
+}
+
 /**
  * `value` with fields its type no longer declares, as an item written while the
  * typed-answer mode existed holds them.
@@ -199,5 +260,8 @@ export function oneOfEach(): Entry[] {
     { type: "day", value: makeDay() },
     { type: "item", value: makeItem() },
     { type: "talk", value: makeTalk({ turns: [makeTurn()] }) },
+    { type: "vocabItem", value: makeVocabProgress() },
+    { type: "vocabSession", value: makeVocabSession() },
+    { type: "vocabReview", value: makeVocabReview() },
   ];
 }

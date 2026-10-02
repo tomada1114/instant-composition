@@ -13,12 +13,16 @@ export {
   dotSchema,
   gradeKeySchema,
   gradeKeysSchema,
+  gradeSchema,
   idSchema,
   levelModeSchema,
   passSchema,
   roundKindSchema,
   settingsSchema,
   subtopicRefSchema,
+  vocabCategorySchema,
+  vocabNewPerDaySchema,
+  vocabReviewsPerDaySchema,
 } from "./primitives";
 export {
   historySchema,
@@ -63,3 +67,14 @@ export {
   roundSummarySchema,
   settingsViewSchema,
 } from "./views";
+export {
+  sessionIdParamSchema,
+  startVocabSessionRequestSchema,
+  vocabAnswerSchema,
+  vocabAnswersRequestSchema,
+  vocabCardSchema,
+  vocabHubSchema,
+  vocabSessionKindSchema,
+  vocabSessionSchema,
+  vocabSummarySchema,
+} from "./vocab";

@@ -1,4 +1,4 @@
-import type { PracticeError, TalkError } from "@instant-composition/domain";
+import type { PracticeError, TalkError, VocabError } from "@instant-composition/domain";
 
 import type { CatalogUnreadable } from "./catalog";
 import type { ModelFailure } from "./language-model";
@@ -12,13 +12,14 @@ import type { CommitConflict } from "./store";
  * the operation, and retrying changes nothing; `ERR_CONFLICT` means another
  * write kept winning the race, so the caller may send the same command again;
  * `ERR_CONTENT_UNREADABLE` needs the catalog repaired first. The practice rules'
- * own failures are `PracticeError`'s.
+ * own failures are `PracticeError`'s, and the vocabulary rules' `VocabError`'s.
  */
 export type ApplicationError =
   | { readonly code: "ERR_FORBIDDEN" }
   | CommitConflict
   | CatalogUnreadable
-  | PracticeError;
+  | PracticeError
+  | VocabError;
 
 export type ApplicationErrorCode = ApplicationError["code"];
 

@@ -36,9 +36,13 @@ export function levelViewOf(stats: LearnerStats, snapshot: CatalogSnapshot): Lev
 
 /** The settings as a client reads them, picked field by field for the reason `payloadOf` gives. */
 export function shownSettingsOf(settings: Settings): ShownSettings {
-  const { topics, focus, dailySize, sound, limitSeconds, gradeKeys } =
-    withDefaults(settings);
-  return { topics, focus, dailySize, sound, limitSeconds, gradeKeys };
+  const shown = withDefaults(settings);
+  const { topics, focus, dailySize, sound, limitSeconds, gradeKeys } = shown;
+  const { vocabNewPerDay, vocabReviewsPerDay } = shown;
+  return {
+    ...{ topics, focus, dailySize, sound, limitSeconds, gradeKeys },
+    ...{ vocabNewPerDay, vocabReviewsPerDay },
+  };
 }
 
 /** A round's answers as a client reads them back. */

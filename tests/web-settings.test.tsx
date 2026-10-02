@@ -37,6 +37,8 @@ const SETTINGS: Settings = {
   sound: true,
   limitSeconds: 30,
   gradeKeys: { ok: "ArrowRight", ng: "ArrowLeft" },
+  vocabNewPerDay: 10,
+  vocabReviewsPerDay: 100,
 };
 
 const LEVELS: SettingsPageView["levels"] = [

@@ -57,20 +57,31 @@ their own:
 | practice-composition | rounds, day portions, placement, level, deck composition     | domain's `compose*`, `deck`, `start*`, `placement`, `difficulty`; application's round and settings commands |
 | learning-record      | the append-only review log and each item's memory projection | domain's `records.ts` and `card-state.ts`                                                                   |
 | learner-model (v0)   | weak grammar concepts and subtopics                          | domain's `weakness.ts`, derived when read                                                                   |
+| vocabulary           | vocabulary cards' progress, sessions and today's queue       | domain's `vocab*.ts` over `fsrs.ts` and `queue.ts`; application's `vocab-*.ts`                              |
 | talk                 | a talk's scene and turns, and its three model tasks          | domain's `talk*.ts`; application's `start-talk.ts`, `send-turn.ts`, `end-talk.ts` and `talk-*.ts`           |
 
-- Streak, points and titles live inside practice-composition while it is the one
-  activity. Items cross contexts only as an `ItemRef` (`kind` plus `id`), so a second
-  activity adds a `kind` rather than changing composition.
+- Streak, points and titles live inside practice-composition and count the drill alone.
+  Items cross contexts only as an `ItemRef` (`kind` plus `id`), so a second activity
+  adds a `kind` rather than changing composition.
 - The talk shares no data with the drill; the streak, the points and the records stay
   the drill's. The server runs a talk's steps in a fixed order and refuses one out of
   order; the scene, teacher and partner tasks — each a versioned prompt, a JSON Schema
   and a `read` — are the application's, shared by every model adapter. **REQUIRED:**
   `building-the-talk-activity`.
+- The vocabulary context schedules each card with FSRS-6 (`fsrs.ts`): its own items,
+  sessions and append-only answers, keyed apart from the drill's, and only a card's
+  first answer of a practice day moves it. Today's queue, a category's share of it and
+  the weak cards (from a talk, or eight lapses, until a stability of 21 days) are
+  derived when read from the items and the catalog, under the daily limits in the
+  settings. It reads the drill's level for the new cards' band and shares nothing else:
+  the streak, the points and the records stay the drill's. Its routes are
+  `GET /v1/vocab` (the hub) and `POST /v1/vocab/sessions`, with a session's
+  `…/{sessionId}/answers` and `…/finish`.
 - The learner model stores nothing: it is a pure pass over item projections the reads
   already load. Grammar weaknesses feed the deck; subtopic weaknesses are only shown.
-- Scheduling is Leitner boxes. Each review logs a common outcome (`again`, `good`,
-  `easy`) with the memory state before and after, so a scheduler change is a replay.
+- The drill schedules with Leitner boxes. Each review logs a common outcome (`again`,
+  `good`, `easy`) with the memory state before and after, so a scheduler change is a
+  replay.
 
 How a context exposes its surface: **REQUIRED:** `designing-application-core`.
 
@@ -122,7 +133,9 @@ LEARNER#<id>  PROFILE | SETTINGS | STATS            single records
 LEARNER#<id>  ROUND#<round>                         a round
 LEARNER#<id>  ROUND#<round>#ANSWER#<answer>         the review log, append-only
 LEARNER#<id>  PORTION#<day> | DAY#<day>             a day's portion and tally
-LEARNER#<id>  ITEM#<kind>#<item>                    an item's memory projection
+LEARNER#<id>  ITEM#<kind>#<item>                    an item's projection: composition or vocab
+LEARNER#<id>  VOCAB#<session>                       a vocabulary session
+LEARNER#<id>  VOCAB#<session>#ANSWER#<answer>       its answers, append-only
 LEARNER#<id>  TALK#<talk>                           a talk with its turns; expiresAt until kept
 IDENTITY#<sub> LEARNER                              the identity mapping
 ```
@@ -131,7 +144,8 @@ IDENTITY#<sub> LEARNER                              the identity mapping
   without it once finished or ended, so only a talk never kept lapses. TTL deletes late,
   so the commands read a talk past its `expiresAt` as absent.
 - Every id in a key is escaped with `encodeURIComponent`, so none reaches across a `#`.
-  A round and its answers are one prefix `Query`; there is no secondary index.
+  A round and its answers are one prefix `Query`, as are a vocabulary session and its
+  answers, and each kind of item; there is no secondary index.
 - Each command commits as one `TransactWriteItems`, puts conditioned on absence and
   updates on the version read; projections change in the same commit that appends to the
   log, so reads are point lookups. Answers commit per batch rather than all at `finish`,
@@ -157,8 +171,9 @@ IDENTITY#<sub> LEARNER                              the identity mapping
   tab on an older bundle, and the answers it queued, still meet the new API. A field
   leaves `/v1` only once no client reads it; request objects strip fields they do not
   name, so a queued body still carrying it is taken without it.
-- Writes are safe to resend: rounds and answers carry client-made ids, a repeated answer
-  is skipped, and finishing a finished round returns its kept summary.
+- Writes are safe to resend: rounds, vocabulary sessions and answers carry client-made
+  ids, a repeated answer is skipped, and finishing a finished round or session returns
+  its kept summary.
 - Answers travel in batches, so a live answer and a resent one take the same call; the
   web keeps unsent ones in the tab's `sessionStorage`. A client `answeredAt` is clamped
   between the round's start and the server's time, a late answer counts for its round's

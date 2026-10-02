@@ -24,7 +24,10 @@ function copy<T>(value: T): T {
   return JSON.parse(JSON.stringify(value)) as T;
 }
 
-function byTime(a: ReviewEntry, b: ReviewEntry): number {
+/** The fields both logs sort by. */
+type Timed = Pick<ReviewEntry, "answeredAt" | "id">;
+
+function byTime(a: Timed, b: Timed): number {
   return a.answeredAt - b.answeredAt || a.id.localeCompare(b.id);
 }
 
@@ -103,6 +106,25 @@ function memoryStore(slots: Map<string, Slot>, counted: () => void): LearnerStor
     talk(id) {
       counted();
       return Promise.resolve(read({ type: "talk", id }));
+    },
+    vocabItems() {
+      counted();
+      return Promise.resolve(
+        new Map(all("vocabItem").map((stored) => [stored.value.cardId, stored])),
+      );
+    },
+    vocabSession(id) {
+      counted();
+      return Promise.resolve(read({ type: "vocabSession", id }));
+    },
+    vocabReviewsOf(sessionId) {
+      counted();
+      return Promise.resolve(
+        all("vocabReview")
+          .map(({ value }) => value)
+          .filter((review) => review.sessionId === sessionId)
+          .sort(byTime),
+      );
     },
     commit(commit) {
       checkShape(commit);

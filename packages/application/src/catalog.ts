@@ -8,6 +8,8 @@ import type {
   TopicInfo,
 } from "@instant-composition/domain";
 
+import type { VocabItem } from "./vocab-item";
+
 /** One step of the target's 1–10 ladder: its CEFR band and its exam reference. */
 export interface LevelInfo {
   readonly cefr: string;
@@ -30,6 +32,8 @@ export interface CatalogSnapshot {
   readonly shown: ReadonlyMap<string, CardContent>;
   /** Cards an answer may still name although they are not shown. */
   readonly retired: ReadonlyMap<string, RetiredCard>;
+  /** The vocabulary cards shown in `l1`, in the catalog's order. */
+  readonly vocab: ReadonlyMap<string, VocabItem>;
 }
 
 /** The catalog could not be read, so nothing can be dealt or checked against it. */
@@ -91,6 +95,7 @@ const EMPTY_SNAPSHOT: CatalogSnapshot = {
   conceptNames: new Map(),
   shown: new Map(),
   retired: new Map(),
+  vocab: new Map(),
 };
 
 /** The snapshot, or an empty one a screen can still be drawn from when it cannot be read. */

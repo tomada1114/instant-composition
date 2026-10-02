@@ -174,5 +174,9 @@ export function catalogSnapshotOf(
     conceptNames: conceptNamesFor(document.concepts, l1),
     shown,
     retired,
+    // A vocabulary card's meaning is in the document's own first language alone.
+    vocab: new Map(
+      l1 === document.l1 ? document.vocab.map((item) => [item.id, item]) : [],
+    ),
   };
 }

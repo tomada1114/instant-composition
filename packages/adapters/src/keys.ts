@@ -51,7 +51,8 @@ export const IDENTITY_SORT_KEY = {
 /**
  * Where an entry sits inside its learner's partition, plus
  * `DAY#<day>` for the day tallies it does not list. A review sorts under its
- * round, so a round's reviews are one prefix and no round id can match it.
+ * round, so a round's reviews are one prefix and no round id can match it; a
+ * vocabulary answer sorts under its session the same way, under `VOCAB#`.
  */
 export function sortKeyOf(key: Key): string {
   switch (key.type) {
@@ -70,15 +71,34 @@ export function sortKeyOf(key: Key): string {
     case "day":
       return `DAY#${part(key.day)}`;
     case "item":
-      return `ITEM#${part(key.item.kind)}#${part(key.item.id)}`;
+      return `${itemsPrefix(key.item.kind)}${part(key.item.id)}`;
     case "talk":
       return `TALK#${part(key.id)}`;
+    case "vocabItem":
+      return `${itemsPrefix("vocab")}${part(key.cardId)}`;
+    case "vocabSession":
+      return `VOCAB#${part(key.id)}`;
+    case "vocabReview":
+      return `${vocabReviewsPrefix(key.sessionId)}${part(key.id)}`;
   }
 }
 
 /** The sort key prefix every review of `sessionId` shares, and nothing else does. */
 export function reviewsPrefix(sessionId: string): string {
   return `ROUND#${part(sessionId)}#ANSWER#`;
+}
+
+/**
+ * The prefix of every vocabulary session's answers: under the session, kept
+ * apart from the drill's rounds, so neither log's read reaches the other.
+ */
+export function vocabReviewsPrefix(sessionId: string): string {
+  return `VOCAB#${part(sessionId)}#ANSWER#`;
+}
+
+/** The prefix of every item of one kind: the drill's `composition`, or `vocab`. */
+export function itemsPrefix(kind: string): string {
+  return `ITEM#${part(kind)}#`;
 }
 
 /**
@@ -98,7 +118,11 @@ export function checkShape(commit: Commit): void {
   if (new Set(keys).size !== keys.length) {
     throw new RangeError("A commit names each key once.");
   }
-  if (commit.updates.some(({ entry }) => entry.type === "review")) {
+  if (
+    commit.updates.some(
+      ({ entry }) => entry.type === "review" || entry.type === "vocabReview",
+    )
+  ) {
     throw new RangeError("The review log is append-only.");
   }
 }
