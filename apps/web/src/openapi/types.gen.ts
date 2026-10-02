@@ -276,6 +276,7 @@ export type HomePreview = {
 export type HomeView = {
     state: HomeState;
     week: Array<Dot>;
+    today: string;
     preview?: HomePreview;
     todayRounds: number;
     todayCards: number;

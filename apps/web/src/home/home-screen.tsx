@@ -81,7 +81,7 @@ export function HomeScreen({
               <Eyebrow aria-hidden>{t("streakEyebrow")}</Eyebrow>
             ) : null}
             <StreakFigure streak={streak} />
-            <WeekRow dots={view.week} findToday={state.kind !== "done"} />
+            <WeekRow dots={view.week} today={view.today} />
           </div>
         )}
       </div>

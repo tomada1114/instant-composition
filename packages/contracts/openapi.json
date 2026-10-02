@@ -1752,6 +1752,7 @@
         "properties": {
           "state": { "$ref": "#/components/schemas/HomeState" },
           "week": { "type": "array", "items": { "$ref": "#/components/schemas/Dot" } },
+          "today": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
           "preview": { "$ref": "#/components/schemas/HomePreview" },
           "todayRounds": {
             "type": "integer",
@@ -1772,6 +1773,7 @@
         "required": [
           "state",
           "week",
+          "today",
           "todayRounds",
           "todayCards",
           "dailySize",

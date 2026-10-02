@@ -181,6 +181,7 @@ export function homeView(
   return {
     state,
     week: WEEK,
+    today: "2026-09-23",
     preview: PREVIEW,
     todayRounds: 2,
     todayCards: 20,

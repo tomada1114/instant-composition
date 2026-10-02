@@ -25,6 +25,8 @@ export interface HomePreview {
 export interface HomeView {
   readonly state: HomeState;
   readonly week: readonly Dot[];
+  /** The learner's practice day, in their time zone: the day the week row rings. */
+  readonly today: string;
   readonly preview: HomePreview | undefined;
   readonly todayRounds: number;
   readonly todayCards: number;
