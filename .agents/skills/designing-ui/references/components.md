@@ -134,7 +134,7 @@ a loading state before anyone is known (home's skeleton, `/drill`'s wait).
   `bg-raised`.
 - **`top-bar`** (below `pc`): 56 tall, sticky at the top, `bg-card` over a 2px
   `border-border`. The brand at the left; the four sections at the right as the same
-  pills 40 tall, glyph and name from 640, the glyph alone below it with the name as its
+  pills 44 tall, glyph and name from 640, the glyph alone below it with the name as its
   `aria-label`.
 - Both are one `nav` named "menu", the page's only navigation landmark. Esc on records
   and settings still goes home.
@@ -376,7 +376,7 @@ breakdown that outgrows its card. Nothing is lit.
 Settings is one page: the `section-list` beside rows max 720.
 
 - `section-list`: 200 wide, sticky 32 from the top, links to `#cards`, `#level`, `#app`
-  and `#account`, each a pill 40 tall; the section in view is current (the sidebar's ink
+  and `#account`, each a pill 44 tall; the section in view is current (the sidebar's ink
   border and `aria-current="true"`). Below `pc`: a row of the same pills under the
   heading. Each section opens with a `heading` and its `id`.
 - `settings-row`: between 2px `border-border` hairlines, at least 64 tall: the label
