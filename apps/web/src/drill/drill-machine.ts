@@ -1,11 +1,11 @@
-import { isFast, TUNING } from "../lib/tuning";
+import { TUNING } from "../lib/tuning";
 import type { Grade } from "../openapi";
 import {
   answerId,
   currentCard,
   FRESH_FRONT,
   limitOf,
-  paceOf,
+  fastThresholdOf,
   usedMs,
   type DrillEvent,
   type DrillPhase,
@@ -99,7 +99,7 @@ function onBack(
   const fast =
     phase.mode === "self" &&
     event.grade !== "again" &&
-    isFast(phase.elapsedMs, paceOf(state));
+    phase.elapsedMs <= fastThresholdOf(state);
   return {
     ...record(state, event.grade, phase, event.wall),
     phase: {

@@ -1,5 +1,6 @@
 import {
   isClosing,
+  TALK_TUNING,
   type Judgment,
   type Scene,
   type Talk,
@@ -13,6 +14,8 @@ export interface TalkOpened {
   readonly talkId: string;
   readonly scene: Scene;
   readonly opening: string;
+  /** Turns the client shows and follows for this talk. */
+  readonly turnCount: number;
 }
 
 /** A stored talk's public view, without model metadata or recital counters. */
@@ -46,7 +49,12 @@ export interface TalkEnded {
 }
 
 export function openedOf(talk: Talk): TalkOpened {
-  return { talkId: talk.id, scene: talk.scene, opening: talk.opening };
+  return {
+    talkId: talk.id,
+    scene: talk.scene,
+    opening: talk.opening,
+    turnCount: TALK_TUNING.turns,
+  };
 }
 
 export function turnResultOf(turn: Turn): TurnResult {

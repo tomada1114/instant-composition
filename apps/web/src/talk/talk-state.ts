@@ -1,4 +1,3 @@
-import { TUNING } from "../lib/tuning";
 import type { PartnerReply, Scene, TalkOpened, TurnResult } from "../openapi";
 
 /** One turn as the screen holds it: each field arrives as its step is passed. */
@@ -36,6 +35,7 @@ export type TalkStep =
 export interface Talk {
   readonly talkId: string;
   readonly scene: Scene;
+  readonly turnCount: number;
   /** Every turn begun, the current one last. */
   readonly turns: readonly TalkTurn[];
   readonly step: TalkStep;
@@ -64,8 +64,6 @@ export type TalkEvent =
 
 export const IDLE: TalkState = { kind: "idle" };
 
-export const TALK_TURNS = TUNING.talkTurns;
-
 /** The current turn: the last one begun. */
 export function currentTurn(talk: Talk): TalkTurn {
   const turn = talk.turns.at(-1);
@@ -89,7 +87,7 @@ function withCurrent(talk: Talk, patch: Partial<TalkTurn>, step: TalkStep): Talk
 }
 
 /**
- * Shows the held reply: the next turn begins on it, turn 6's closing ends the
+ * Shows the held reply: the next turn begins on it, the last turn's closing ends the
  * talk, and a reply that did not arrive is W3g.
  */
 export function revealReply(talk: Talk): Talk {
@@ -97,7 +95,7 @@ export function revealReply(talk: Talk): Talk {
   if (turn.reply === undefined || turn.reply === null) {
     return { ...talk, step: "replyFailed" };
   }
-  if (turn.reply.closing || turn.n >= TALK_TURNS)
+  if (turn.reply.closing || turn.n >= talk.turnCount)
     return { ...talk, step: "ended", closed: true };
   const next: TalkTurn = {
     n: turn.n + 1,
@@ -177,12 +175,13 @@ export function talkReducer(state: TalkState, event: TalkEvent): TalkState {
     return state.kind === "preparing" ? { kind: "failed" } : state;
   if (event.type === "opened") {
     if (state.kind !== "preparing") return state;
-    const { talkId, scene, opening } = event.opened;
+    const { talkId, scene, opening, turnCount } = event.opened;
     return {
       kind: "talk",
       talk: {
         talkId,
         scene,
+        turnCount,
         turns: [{ n: 1, partnerLine: opening, revealCount: 0 }],
         step: "japanese",
       },

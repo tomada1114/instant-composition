@@ -32,6 +32,7 @@ export const POINT = "「詰まってて」→ swamped";
 export function opened(talkId: string): TalkOpened {
   return {
     talkId,
+    turnCount: 6,
     scene: {
       partner: "店員",
       place: "カフェ",

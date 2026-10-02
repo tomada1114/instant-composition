@@ -53,6 +53,8 @@ export const talkOpenedSchema = z.object({
   talkId: z.string(),
   scene: sceneSchema,
   opening: z.string(),
+  /** Turns this talk is planned to take, supplied by the domain. */
+  turnCount: z.int().min(1),
 });
 
 /** `fine` is the ○, `corrected` a correction, `failed` a teacher that answered nothing. */

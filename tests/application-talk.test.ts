@@ -88,6 +88,7 @@ describe("getTalk", () => {
       value: {
         talkId: "t1",
         status: "open",
+        turnCount: TALK_TUNING.turns,
         scene: {
           partner: SCENE.partner,
           place: SCENE.place,
@@ -166,6 +167,7 @@ describe("startTalk", () => {
       ok: true,
       value: {
         talkId: "t1",
+        turnCount: TALK_TUNING.turns,
         scene: {
           partner: SCENE.partner,
           place: SCENE.place,

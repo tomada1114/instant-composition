@@ -2,7 +2,6 @@ import { useTranslations } from "use-intl";
 import type { ReactElement } from "react";
 
 import { Button } from "../ui/button";
-import { TUNING } from "../lib/tuning";
 import { Kbd } from "../ui/kbd";
 import { Dialog } from "../ui/dialog";
 
@@ -13,10 +12,12 @@ import { Dialog } from "../ui/dialog";
  */
 export function LeaveDialog({
   position,
+  dayBoundaryHour,
   onLeave,
   onStay,
 }: Readonly<{
   position: number;
+  dayBoundaryHour: number;
   onLeave: () => void;
   onStay: () => void;
 }>): ReactElement {
@@ -28,7 +29,7 @@ export function LeaveDialog({
           {t("leave.title")}
         </h2>
         <p className="font-latin text-count text-muted-foreground">
-          {t("dialog.hint", { hour: TUNING.dayBoundaryHour, position })}
+          {t("dialog.hint", { hour: dayBoundaryHour, position })}
         </p>
       </div>
       <div className="grid grid-cols-2 gap-3">

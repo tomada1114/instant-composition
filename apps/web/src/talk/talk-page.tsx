@@ -14,7 +14,8 @@ import { TalkSession } from "./talk-session";
  */
 export function TalkPage(): ReactElement {
   const home = useQuery(HOME_QUERY);
-  if (home.data !== undefined) return <TalkSession sound={home.data.sound} />;
+  if (home.data !== undefined)
+    return <TalkSession sound={home.data.sound} turnCount={home.data.talkTurns} />;
   if (home.isPending) return <PageLoading withNav />;
   if (isSignedOut(home.error)) return <Navigate to="/" replace />;
   return (

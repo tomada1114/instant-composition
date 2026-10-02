@@ -3,7 +3,6 @@ import type { ReactElement } from "react";
 
 import { Button } from "../ui/button";
 import { isDefaultGradeKeys, keyLabel } from "../lib/grade-keys";
-import { TUNING } from "../lib/tuning";
 import type { GradeKeyTrio } from "../openapi";
 import { Kbd } from "../ui/kbd";
 import { Dialog } from "../ui/dialog";
@@ -43,11 +42,13 @@ function KeyLegend({ gradeKeys }: Readonly<{ gradeKeys: GradeKeyTrio }>): ReactE
 /** W8: stop here or go on; focus waits on "continue", which Escape also presses. */
 export function PauseDialog({
   position,
+  dayBoundaryHour,
   gradeKeys,
   onQuit,
   onContinue,
 }: Readonly<{
   position: number;
+  dayBoundaryHour: number;
   gradeKeys: GradeKeyTrio;
   onQuit: () => void;
   onContinue: () => void;
@@ -60,7 +61,7 @@ export function PauseDialog({
           {t("title")}
         </h2>
         <p className="font-latin text-count text-muted-foreground">
-          {t("hint", { hour: TUNING.dayBoundaryHour, position })}
+          {t("hint", { hour: dayBoundaryHour, position })}
         </p>
       </div>
       <KeyLegend gradeKeys={gradeKeys} />

@@ -17,7 +17,10 @@ import { useTalkKeys, useTalkLeave } from "./use-talk-guard";
  * layout until 「新しい会話」. From the first line until it ends, ✕, Esc, a
  * link and Back all ask first (W4).
  */
-export function TalkSession({ sound }: Readonly<{ sound: boolean }>): ReactElement {
+export function TalkSession({
+  sound,
+  turnCount,
+}: Readonly<{ sound: boolean; turnCount: number }>): ReactElement {
   const t = useTranslations("Talk");
   const navigate = useNavigate();
   const { state, notice, actions } = useTalk(sound);
@@ -42,6 +45,7 @@ export function TalkSession({ sound }: Readonly<{ sound: boolean }>): ReactEleme
     <>
       {talk === undefined ? (
         <TalkStart
+          turnCount={turnCount}
           status={state.kind === "talk" ? "idle" : state.kind}
           onStart={actions.start}
         />

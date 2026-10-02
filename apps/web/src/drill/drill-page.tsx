@@ -47,6 +47,7 @@ export function DrillPage({
       sound={view.sound}
       gradeKeys={view.gradeKeys}
       dailySize={view.dailySize}
+      dayBoundaryHour={view.dayBoundaryHour}
       available={view.state.kind === "not-enough" ? view.state.available : undefined}
       onKind={(next) => {
         void navigate({ to: "/drill", search: { kind: next } });

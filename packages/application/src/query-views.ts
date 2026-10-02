@@ -1,4 +1,8 @@
 import type {
+  DailySize,
+  DrillNewPerDay,
+  DrillReviewsPerDay,
+  LimitSeconds,
   Dot,
   GradeKeys,
   HomeState,
@@ -37,6 +41,10 @@ export interface HomeView {
   readonly todayLastRoundId: string | undefined;
   /** The size an extra round is dealt at: "one more N", `TUNING.extraSize`. */
   readonly dailySize: number;
+  /** The practice day's deadline hour in the learner's time zone. */
+  readonly dayBoundaryHour: number;
+  /** Turns the talk tile and start screen show. */
+  readonly talkTurns: number;
   readonly sound: boolean;
   readonly gradeKeys: Required<GradeKeys>;
   readonly contentError: boolean;
@@ -95,6 +103,14 @@ export interface RecordsView {
 /** The settings as saved, what can be chosen, and the difficulty now. */
 export interface SettingsPageView {
   readonly settings: ShownSettings;
+  /** The domain's choices and cap, in the order a client offers them. */
+  readonly options: {
+    readonly dailySizes: readonly DailySize[];
+    readonly newPerDay: readonly DrillNewPerDay[];
+    readonly reviewsPerDay: readonly DrillReviewsPerDay[];
+    readonly limitSeconds: readonly LimitSeconds[];
+    readonly maxFocus: number;
+  };
   readonly topics: readonly TopicInfo[];
   /** The same value as `difficulty.toeic`; deprecated in the /v1 contract and dropped at /v2. */
   readonly toeic: string | null;

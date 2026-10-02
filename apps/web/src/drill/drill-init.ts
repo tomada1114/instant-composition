@@ -15,7 +15,7 @@ export function initDrill(init: DrillInit): DrillState {
     roundId: init.roundId,
     retries: init.retries,
     limits: init.limits,
-    paces: init.paces,
+    fastThresholds: init.fastThresholds,
     isNew: init.isNew,
     fresh: init.deck.filter((id) => !answeredFirst.has(id) && shown(id)),
     firstShown: answeredFirst.size,

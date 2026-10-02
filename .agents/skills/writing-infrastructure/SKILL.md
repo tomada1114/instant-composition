@@ -167,6 +167,9 @@ a second design.
   pruned, and its upload invalidates `/*`. Without `web-dist` nothing is uploaded, so
   synthesis, the tests and a hand deploy of `foundation` need no build, and a hand
   deploy of `app` without it removes the uploads but keeps the files.
+- The entry upload also waits on the API function's update: a new bundle may require
+  additive response fields that the previous API does not yet serve. The old bundle
+  keeps working against the new API while the assets and entry are uploaded.
 - `-c alarm-email=<address>` comes from the repository **secret** `ALARM_EMAIL`, a
   secret so the address stays masked in the run's log. A deploy without it removes the
   alarm topic's subscription; the workflow still deploys and posts a warning.

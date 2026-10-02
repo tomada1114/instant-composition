@@ -14,6 +14,7 @@ export function resumedTalk(view: TalkView): Talk {
   }));
   const talk: Talk = {
     talkId: view.talkId,
+    turnCount: view.turnCount,
     scene: view.scene,
     turns:
       turns.length === 0

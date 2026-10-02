@@ -28,6 +28,7 @@ const CARD: DrillCard = {
   explanation: "push A to B",
   limitMs: 8000,
   paceMs: 8000,
+  fastMs: 4000,
   intervals: { again: 1, hard: 2, good: 3 },
   isNew: true,
 };
@@ -317,6 +318,7 @@ describe("PauseDialog", () => {
   it("lists the three grade keys, ← 1, 2 and → 3, while the learner keeps the default", () => {
     renderWithMessages(
       <PauseDialog
+        dayBoundaryHour={7}
         position={1}
         gradeKeys={DEFAULT_KEYS}
         onQuit={() => undefined}
@@ -335,6 +337,7 @@ describe("PauseDialog", () => {
   it("lists only the keys the learner chose", () => {
     renderWithMessages(
       <PauseDialog
+        dayBoundaryHour={7}
         position={1}
         gradeKeys={{ ok: "Digit1", ng: "ArrowUp", hard: "KeyS" }}
         onQuit={() => undefined}
@@ -351,6 +354,7 @@ describe("PauseDialog", () => {
   it("asks whether to stop here, and focuses continue", () => {
     renderWithMessages(
       <PauseDialog
+        dayBoundaryHour={7}
         position={7}
         gradeKeys={DEFAULT_KEYS}
         onQuit={() => undefined}
@@ -361,7 +365,7 @@ describe("PauseDialog", () => {
       screen.getByRole("dialog", { name: ja.Drill.dialog.title }),
     ).toBeInTheDocument();
     expect(
-      screen.getByText(fill(ja.Drill.dialog.hint, { hour: 4, position: 7 })),
+      screen.getByText(fill(ja.Drill.dialog.hint, { hour: 7, position: 7 })),
     ).toBeInTheDocument();
     expect(
       screen.getByRole("button", { name: ja.Drill.dialog.continue }),
@@ -373,6 +377,7 @@ describe("PauseDialog", () => {
     const onContinue = vi.fn();
     renderWithMessages(
       <PauseDialog
+        dayBoundaryHour={7}
         position={1}
         gradeKeys={DEFAULT_KEYS}
         onQuit={onQuit}
@@ -388,6 +393,7 @@ describe("PauseDialog", () => {
   it("keeps Tab inside the dialog", () => {
     renderWithMessages(
       <PauseDialog
+        dayBoundaryHour={7}
         position={1}
         gradeKeys={DEFAULT_KEYS}
         onQuit={() => undefined}

@@ -7,17 +7,20 @@ import { CloseGlyph } from "../ui/glyphs";
 import { IconButton } from "../ui/icon-button";
 import { Conversation } from "./conversation";
 import { StepPanel } from "./step-panel";
-import { currentTurn, keptTurns, TALK_TURNS, type Talk } from "./talk-state";
+import { currentTurn, keptTurns, type Talk } from "./talk-state";
 import type { TalkActions } from "./use-talk";
 
 /**
  * `designing-ui`'s `talk` progress: six 8-tall pills 4 apart, the done turns
  * `bg-good`, the rest `bg-bar-track`.
  */
-function TurnPills({ done }: Readonly<{ done: number }>): ReactElement {
+function TurnPills({
+  done,
+  total,
+}: Readonly<{ done: number; total: number }>): ReactElement {
   return (
     <div aria-hidden className="flex w-full max-w-reading gap-1">
-      {Array.from({ length: TALK_TURNS }, (_, index) => (
+      {Array.from({ length: total }, (_, index) => (
         <span
           key={index}
           data-done={index < done ? "" : undefined}
@@ -42,10 +45,12 @@ function TalkStrip({
   const t = useTranslations("Talk.strip");
   const ended = talk.step === "ended";
   const turn = currentTurn(talk).n;
-  const progress = <TurnPills done={ended ? keptTurns(talk) : turn - 1} />;
+  const progress = (
+    <TurnPills done={ended ? keptTurns(talk) : turn - 1} total={talk.turnCount} />
+  );
   const counters = (
     <span className="font-latin text-count whitespace-nowrap text-muted-foreground">
-      {t("progress", { current: turn, total: TALK_TURNS })}
+      {t("progress", { current: turn, total: talk.turnCount })}
     </span>
   );
   if (ended) return <FocusStrip progress={progress} counters={counters} />;

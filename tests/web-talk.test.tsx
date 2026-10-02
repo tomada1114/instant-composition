@@ -79,7 +79,7 @@ describe("resuming on this browser", () => {
   it("saves the opened id and reloads at turn 4 with three kept turns and their feedback", async () => {
     const calls = serveTalk({
       turn: (body) => Response.json(turnResult("corrected", body.turn)),
-      read: (talkId) => Response.json(talkView(talkId)),
+      read: (talkId) => Response.json({ ...talkView(talkId), turnCount: 5 }),
     });
     await renderApp("/talk");
     await begin();
@@ -102,7 +102,9 @@ describe("resuming on this browser", () => {
     expect(screen.getAllByText("english-3")[0]).toBeInTheDocument();
     expect(screen.getAllByText(MODEL_ANSWER)).toHaveLength(3);
     expect(screen.getAllByText(POINT)).toHaveLength(3);
-    expect(screen.getByText(progress(4))).toBeInTheDocument();
+    expect(
+      screen.getByText(fill(ja.Talk.strip.progress, { current: 4, total: 5 })),
+    ).toBeInTheDocument();
     expect(
       screen.getByRole("textbox", { name: ja.Talk.step.japanese }),
     ).toBeInTheDocument();
@@ -314,6 +316,13 @@ describe("resuming on this browser", () => {
 });
 
 describe("W2, the talk tab before a talk", () => {
+  it("shows the talk length returned by the home read", async () => {
+    serveTalk({ home: homeView({ kind: "ready", streak: COUNT }, { talkTurns: 7 }) });
+    await renderApp("/talk");
+    expect(screen.getByText("7")).toBeInTheDocument();
+    expect(screen.queryByText("6")).toBeNull();
+  });
+
   it("shows six turns, the scene left to the app, and 始める, under the navigation with talk current", async () => {
     serveTalk();
     await renderApp("/talk");

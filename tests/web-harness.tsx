@@ -11,6 +11,7 @@ import {
   type HomeView,
   type RoundPayload,
   type StreakView,
+  type SettingsPageView,
 } from "@instant-composition/web";
 
 // What the web client's rendered suites share: the whole app mounted at a
@@ -186,6 +187,8 @@ export function homeView(
     todayRounds: 2,
     todayCards: 20,
     dailySize: 10,
+    dayBoundaryHour: 4,
+    talkTurns: 6,
     sound: false,
     gradeKeys: { ok: "ArrowRight", ng: "ArrowLeft", hard: "Digit2" },
     contentError: false,
@@ -213,12 +216,21 @@ export function drillCard(id: string, overrides: Partial<DrillCard> = {}): Drill
     explanation: `point-${id}`,
     limitMs: 7000,
     paceMs: 7000,
+    fastMs: 3500,
     intervals: { again: 1, hard: 2, good: 3 },
     // A review: a card new to the learner comes back once more after its first ○.
     isNew: false,
     ...overrides,
   };
 }
+
+export const SETTINGS_OPTIONS: SettingsPageView["options"] = {
+  dailySizes: [5, 10, 15, 20, 30],
+  newPerDay: [0, 3, 5, 10, 15],
+  reviewsPerDay: [10, 20, 30, 50, null],
+  limitSeconds: [15, 20, 30, 45, 60],
+  maxFocus: 2,
+};
 
 export const ROUND: RoundPayload = {
   id: "round-1",

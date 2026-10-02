@@ -139,6 +139,7 @@ export type DrillCard = {
     explanation: string;
     limitMs: number;
     paceMs: number;
+    fastMs: number;
     intervals: GradeIntervals;
     isNew: boolean;
 };
@@ -312,6 +313,8 @@ export type HomeView = {
     todayCards: number;
     todayLastRoundId?: string;
     dailySize: number;
+    dayBoundaryHour: number;
+    talkTurns: number;
     sound: boolean;
     gradeKeys: GradeKeyTrio;
     contentError: boolean;
@@ -378,6 +381,13 @@ export type TopicInfo = {
 
 export type SettingsPageView = {
     settings: Settings;
+    options: {
+        dailySizes: Array<5 | 10 | 15 | 20 | 30>;
+        newPerDay: Array<DrillNewPerDay>;
+        reviewsPerDay: Array<DrillReviewsPerDay>;
+        limitSeconds: Array<15 | 20 | 30 | 45 | 60>;
+        maxFocus: number;
+    };
     topics: Array<TopicInfo>;
     /**
      * The same value as `difficulty.toeic`, which a client reads instead. Kept for /v1; removed in /v2.
@@ -424,12 +434,14 @@ export type TalkOpened = {
     talkId: string;
     scene: Scene;
     opening: string;
+    turnCount: number;
 };
 
 export type TalkView = {
     talkId: string;
     scene: Scene;
     opening: string;
+    turnCount: number;
     status: 'open' | 'finished' | 'ended' | 'discarded';
     turns: Array<{
         turn: number;

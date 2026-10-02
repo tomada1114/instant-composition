@@ -26,7 +26,10 @@ owns how to change it.
 
 - Every rule — which cards a round deals, the schedule, the level, the streak — runs on
   the server behind one versioned HTTP API. A client renders what the API returns and
-  sends what the learner did; it never computes a deck, a schedule or a level.
+  sends what the learner did; it never computes a deck, a schedule or a level. Rule
+  values a client shows or applies arrive on that screen's response: the settings
+  choices and focus cap, the home's deadline hour and talk length, a drill card's
+  fast-flip threshold, and the opened talk's planned turn count.
 - The web client is an ordinary API client with no private path into the code below the
   API. Authentication and authorization happen once, below the transport, so a second
   entry point (a job, a tool) would meet the same checks.
@@ -202,6 +205,8 @@ IDENTITY#<sub> LEARNER                              the identity mapping
   tab on an older bundle, and the answers it queued, still meet the new API. A field
   leaves `/v1` only once no client reads it; request objects strip fields they do not
   name, so a queued body still carrying it is taken without it.
+- The SPA's entry upload waits on the API function's update, so a new bundle that
+  requires additive response fields is exposed only after the API serves them.
 - Writes are safe to resend: rounds, vocabulary sessions and answers carry client-made
   ids, a repeated answer is skipped, and finishing a finished round or session returns
   its kept summary. A model's first answer — a scene, a turn, a talk's candidates — is

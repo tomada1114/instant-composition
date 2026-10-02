@@ -77,7 +77,7 @@ export {
 } from "./lib/endpoints";
 export { GRADES, isDefaultGradeKeys, isGradeKey, keyLabel } from "./lib/grade-keys";
 export { KeyMode } from "./lib/key-mode";
-export { isFast, TUNING } from "./lib/tuning";
+export { TUNING } from "./lib/tuning";
 export { cn } from "./lib/utils";
 export type {
   Answer,

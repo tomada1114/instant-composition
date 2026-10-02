@@ -25,6 +25,7 @@ export function DrillScreen({
   sound,
   gradeKeys,
   dailySize,
+  dayBoundaryHour,
   available,
   onKind,
 }: Readonly<{
@@ -34,6 +35,7 @@ export function DrillScreen({
   sound: boolean;
   gradeKeys: GradeKeyTrio;
   dailySize: number;
+  dayBoundaryHour: number;
   available: number | undefined;
   onKind: (kind: RoundKind) => void;
 }>): ReactElement | null {
@@ -82,6 +84,7 @@ export function DrillScreen({
       sound={sound}
       gradeKeys={gradeKeys}
       dailySize={dailySize}
+      dayBoundaryHour={dayBoundaryHour}
       onNext={(next) => {
         setPressed(true);
         onKind(next);
