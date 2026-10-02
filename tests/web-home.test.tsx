@@ -398,7 +398,7 @@ function discs(): (string | null)[] {
 }
 
 describe("the home screen's week row", () => {
-  it("rings today, the day after the last past one, apart from the days ahead, in words too", async () => {
+  it("rings the home view's today, apart from the days ahead, in words too", async () => {
     serveHome(homeView({ kind: "ready", streak: COUNT }));
     await renderApp("/");
     expect(discs()).toStrictEqual([
@@ -419,6 +419,7 @@ describe("the home screen's week row", () => {
       homeView(
         { kind: "done", restoresTo: null, streak: COUNT },
         {
+          today: "2026-09-22",
           week: [
             { day: "2026-09-21", state: "done" },
             { day: "2026-09-22", state: "done" },
@@ -434,11 +435,12 @@ describe("the home screen's week row", () => {
     expect(discs()).not.toContain("today");
   });
 
-  it("rings no day when every day is still to come, which cannot tell today apart", async () => {
+  it("rings an undone Monday, when every day is still to come", async () => {
     serveHome(
       homeView(
         { kind: "ready", streak: COUNT },
         {
+          today: "2026-09-21",
           week: ["21", "22", "23", "24", "25", "26", "27"].map((d) => ({
             day: `2026-09-${d}`,
             state: "upcoming" as const,
@@ -447,7 +449,7 @@ describe("the home screen's week row", () => {
       ),
     );
     await renderApp("/");
-    expect(discs()).not.toContain("today");
+    expect(discs()).toStrictEqual(["today", ...Array<string>(6).fill("upcoming")]);
   });
 });
 

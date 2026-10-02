@@ -127,6 +127,7 @@ export async function home(
   return ok({
     state,
     week: weekDots(completed, today, totals.firstDay ?? undefined),
+    today,
     preview:
       state.kind === "ready" || state.kind === "recover-offer"
         ? preview(

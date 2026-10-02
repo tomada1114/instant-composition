@@ -2,6 +2,7 @@ import * as z from "zod";
 
 import {
   countSchema,
+  dayKeySchema,
   dotSchema,
   gradeKeysSchema,
   levelModeSchema,
@@ -64,6 +65,8 @@ export const homePreviewSchema = z.object({
 export const homeViewSchema = z.object({
   state: homeStateSchema,
   week: z.array(dotSchema),
+  /** The learner's practice day, in their time zone: the day the week row rings. */
+  today: dayKeySchema,
   /** Absent when no round can be dealt today. */
   preview: homePreviewSchema.exactOptional(),
   todayRounds: countSchema,

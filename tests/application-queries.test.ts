@@ -169,6 +169,14 @@ describe("home", () => {
     });
   });
 
+  it("names today as the learner's practice day in their time zone", async () => {
+    const h = makeHarness();
+    await placed(h);
+    // 20:00 UTC on the 22nd is already 05:00 on the 23rd in Tokyo, past the day boundary.
+    const view = await home(h.deps, h.context(Date.UTC(2026, 8, 22, 20, 0)));
+    expect(view.ok && view.value.today).toBe("2026-09-23");
+  });
+
   it("estimates the minutes at the learner's chosen limit per card", async () => {
     const h = makeHarness();
     await placed(h);
