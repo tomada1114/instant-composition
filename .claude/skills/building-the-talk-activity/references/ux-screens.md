@@ -33,19 +33,13 @@ The flows, cross-cutting behavior and decisions are in [ux-flows.md](ux-flows.md
 
 ## 2. Wireframes
 
-### W1 Bottom tabs
+### W1 The navigation
 
-```
-├──────────┬──────────┬──────────┬──────────
-│  [家]    │ [吹出し] │  [棒]    │  [歯車]
-│  ホーム  │   会話   │   記録   │   設定
-└──────────┴──────────┴──────────┴──────────
-```
-
-- Three equal cells become four. The other rules (the current-tab mark, color,
-  height 49) stay as in designing-ui's tab bar.
-- A new glyph for 「会話」 (a speech-bubble line drawing, 20) is added.
-- Pressing a tab during a talk opens W4 (treated the same as the drill's leave sheet).
+「会話」 is the second of the shell's four sections — ホーム, 会話, 記録, 設定 — as
+glyph + label in the sidebar from 1024 and in the top bar below it (designing-ui's
+`sidebar` and `top-bar` recipes); its glyph is a speech-bubble line drawing, 20. A talk
+under way is in the focus layout, so no navigation shows; leaving is ✕ or the browser's
+Back, either of which opens W4.
 
 ### W2 The talk start screen
 

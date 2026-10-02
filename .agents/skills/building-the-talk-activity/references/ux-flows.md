@@ -197,8 +197,8 @@ Add a row for the talk screen to designing-ui's key table.
 
 ## 5. Decisions on the open points
 
-- Four tabs: the tab bar becomes four equal cells on every screen that shows it, and
-  designing-ui's ledger row and tab-bar recipe change with it.
+- Four sections: 「会話」 is the navigation's second section (#349 moved the navigation
+  to a sidebar and a top bar; designing-ui's ledger row and `sidebar` recipe hold it).
 - Phones (#349 D6): phone-specific code and rules are removed, since native apps will
   serve phones. The web client keeps no keyboard lift; below 1024 the layout collapses
   to one column. This supersedes the earlier iOS Safari keyboard decision.
