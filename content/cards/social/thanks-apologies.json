@@ -209,6 +209,19 @@
     }
   },
   {
+    "id": "c_3j5x2t6z",
+    "ja": "お礼のカードがある。",
+    "en": "There's a thank-you card.",
+    "alternatives": ["I have a thank-you card.", "A thank-you card is here."],
+    "point": "thank-you card は感謝を伝えるカード。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3j8m3g6r",
     "ja": "助けてくれてなきゃ、今困ってる。",
     "en": "If you hadn't helped, I'd be lost.",
@@ -518,6 +531,19 @@
     }
   },
   {
+    "id": "c_5j9x2e7x",
+    "ja": "君は親切だね。",
+    "en": "You're kind.",
+    "alternatives": ["You're thoughtful.", "You're very nice."],
+    "point": "kind は相手の親切さを褒める。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5q2d9a9c",
     "ja": "電話してれば、待たせなかった。",
     "en": "If I'd called, you wouldn't have waited.",
@@ -724,6 +750,19 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_7r4e7x2x",
+    "ja": "私を許して。",
+    "en": "Please forgive me.",
+    "alternatives": ["Please pardon me.", "Please excuse me."],
+    "point": "forgive me は過ちを許してほしいと頼む。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7r9e5e5g",

@@ -458,6 +458,22 @@
     }
   },
   {
+    "id": "c_4g3m5n8d",
+    "ja": "店は我々の予約を既に見落としてた。",
+    "en": "The restaurant had already overlooked our reservation.",
+    "alternatives": [
+      "The restaurant had already missed our booking.",
+      "Our reservation had already escaped the restaurant's notice."
+    ],
+    "point": "had overlooked で過去のある時点より前の見落とし。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 6,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4n2s4p6j",
     "ja": "ここに来たことある？",
     "en": "Have you been here before?",
@@ -680,6 +696,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5y9k5q5w",
+    "ja": "私は辛い料理を控えてる。",
+    "en": "I'm cutting back on spicy dishes.",
+    "alternatives": [
+      "I'm eating less spicy food.",
+      "I'm reducing how much spicy food I eat."
+    ],
+    "point": "cut back on は量や頻度を減らす。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 6,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6g3g4z2s",
@@ -1049,6 +1081,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_9t3z5u2g",
+    "ja": "私は隠れた追加料金を調べてる。",
+    "en": "I'm checking for hidden surcharges.",
+    "alternatives": [
+      "I'm looking for undisclosed extra charges.",
+      "I'm checking whether there are hidden additional fees."
+    ],
+    "point": "surcharge は通常の代金に加えて請求される料金。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 6,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9v3a9c7r",

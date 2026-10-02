@@ -22,6 +22,22 @@
     }
   },
   {
+    "id": "c_2f5t4y4e",
+    "ja": "私は別の部署に移された。",
+    "en": "I was transferred to another department.",
+    "alternatives": [
+      "I was moved to another department.",
+      "They transferred me to another department."
+    ],
+    "point": "was transferred は部署などを異動させられた。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 3,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2q4q6w2f",
     "ja": "何でも聞いて。",
     "en": "Ask me anything.",
@@ -146,6 +162,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3u8b9n5s",
+    "ja": "私は引っ越す予定です。",
+    "en": "I'm planning to move.",
+    "alternatives": ["I'm going to move.", "I'm set to relocate."],
+    "point": "be going to で決めている引っ越しを伝える。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 3,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4c7e9b2h",
@@ -273,6 +302,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4v8a6d2x",
+    "ja": "私は接客経験がある。",
+    "en": "I've served customers.",
+    "alternatives": [
+      "I have experience serving customers.",
+      "I've done customer service work."
+    ],
+    "point": "現在完了で接客の経験を伝える。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 3,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4y4e6z7a",

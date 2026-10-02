@@ -297,6 +297,19 @@
     }
   },
   {
+    "id": "c_5m2k8r4r",
+    "ja": "私は目標を決めなきゃ。",
+    "en": "I need to set goals.",
+    "alternatives": ["I have to establish goals.", "I must decide on goals."],
+    "point": "need to set は設定する必要がある。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 3,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5m9b6g4c",
     "ja": "今コピー配ってるよ。",
     "en": "I'm handing out copies.",
@@ -381,6 +394,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6h3v2r3q",
+    "ja": "意見が三つあります。",
+    "en": "There are three opinions.",
+    "alternatives": ["We have three opinions.", "Three opinions have been expressed."],
+    "point": "three の後は opinions と複数形。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6m5r2s3k",
@@ -740,6 +766,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9j5z8g6h",
+    "ja": "私が先に話してもいい？",
+    "en": "Can I speak first?",
+    "alternatives": ["May I go first?", "Is it okay to speak first?"],
+    "point": "Can I で先に話す許可を求める。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 3,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9j8r4n5d",

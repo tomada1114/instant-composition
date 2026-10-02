@@ -1,5 +1,18 @@
 [
   {
+    "id": "c_2a6z2w4g",
+    "ja": "私はこれを運べる。",
+    "en": "I can carry this.",
+    "alternatives": ["I can move this.", "I'm able to carry this."],
+    "point": "can carry で持って運べると伝える。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2g9z5s9f",
     "ja": "3月からずっとこれ狙ってたんだ。",
     "en": "I've been eyeing it since March.",
@@ -164,6 +177,19 @@
     }
   },
   {
+    "id": "c_3t2b6u3h",
+    "ja": "もう一つ見せて。",
+    "en": "Show me another one.",
+    "alternatives": ["Let me see another.", "Please show another one."],
+    "point": "another one で同じ種類の別の商品。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3w7k6w9t",
     "ja": "もっと安いのはありますか？",
     "en": "Do you have a cheaper one?",
@@ -181,6 +207,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3z2p3p5a",
+    "ja": "私は現金で払うよ。",
+    "en": "I'll pay cash.",
+    "alternatives": ["I'll pay in cash.", "I'll use cash to pay."],
+    "point": "pay cash は現金で支払う。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4a4p8g3g",
@@ -357,6 +396,19 @@
     }
   },
   {
+    "id": "c_5p5t8b8k",
+    "ja": "私は代金を払ってる。",
+    "en": "I'm paying now.",
+    "alternatives": ["I'm making a payment.", "I'm paying for this."],
+    "point": "am paying で今支払い中だと伝える。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5y6e9y9d",
     "ja": "いつ再入荷するか分かりますか？",
     "en": "Do you know when it'll restock?",
@@ -418,6 +470,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6p2q5h6a",
+    "ja": "この店は近い。",
+    "en": "This store is nearby.",
+    "alternatives": ["This shop is close.", "This store's near here."],
+    "point": "nearby は近くにある。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6r7e6m2t",
@@ -544,6 +609,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7n7b6n7r",
+    "ja": "私はこれを交換すべき？",
+    "en": "Should I exchange this?",
+    "alternatives": ["Should I swap this item?", "Would exchanging this be better?"],
+    "point": "should I で交換する方がよいか相談する。",
+    "topic": "daily",
+    "subtopic": "shopping",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7t5j2j9d",

@@ -149,6 +149,22 @@
     }
   },
   {
+    "id": "c_3g9n4n3a",
+    "ja": "君が入れた例は適切だ。",
+    "en": "The example you added is appropriate.",
+    "alternatives": [
+      "The example you included fits well.",
+      "You chose an appropriate example to add."
+    ],
+    "point": "you added がどの例かを説明する。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 4,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3m2x3b7s",
     "ja": "構成は見直した方がいいかもね。",
     "en": "You might want to rethink the structure.",
@@ -756,6 +772,22 @@
     }
   },
   {
+    "id": "c_8r5u6y4m",
+    "ja": "私は色の使い方を見直すよ。",
+    "en": "I'll reconsider the color choices.",
+    "alternatives": [
+      "I'll rethink the choice of colors.",
+      "I'll review how the colors are used."
+    ],
+    "point": "reconsider は一度決めた選択を考え直す。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 4,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_8t8w9r6j",
     "ja": "君の図は役に立つ。",
     "en": "Your chart helps.",
@@ -795,6 +827,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8x7j9t3k",
+    "ja": "表の下の注記が役立つ。",
+    "en": "The note below the table helps.",
+    "alternatives": [
+      "The note beneath the table is useful.",
+      "The note under the table is helpful."
+    ],
+    "point": "below the table で注記の場所を後ろから修飾する。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 4,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8x7x2p5a",

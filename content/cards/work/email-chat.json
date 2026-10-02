@@ -63,6 +63,19 @@
     }
   },
   {
+    "id": "c_3b3q7r5f",
+    "ja": "私が返信していい？",
+    "en": "May I reply?",
+    "alternatives": ["Can I respond?", "Is replying okay?"],
+    "point": "May I で返信する許可を確認する。",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3c8w9s7r",
     "ja": "再送していただけないでしょうか？",
     "en": "I wonder if you could resend it.",
@@ -298,6 +311,19 @@
     }
   },
   {
+    "id": "c_4x4j8r7z",
+    "ja": "私は添付を開ける。",
+    "en": "I can open attachments.",
+    "alternatives": ["I'm able to open attachments.", "Attachments open for me."],
+    "point": "can open で添付ファイルを開ける能力や状況。",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 2,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5c3r4b9s",
     "ja": "助けたいのは山々ですが、手一杯です。",
     "en": "Much as I'd like to help, I'm swamped.",
@@ -359,6 +385,19 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_5q5u6v3g",
+    "ja": "君は誰に送った？",
+    "en": "Who did you message?",
+    "alternatives": ["Who did you send it to?", "Who received your message?"],
+    "point": "who did you で送信先を尋ねる。",
+    "topic": "work",
+    "subtopic": "email-chat",
+    "level": 2,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6g3f5f5b",

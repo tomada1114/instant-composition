@@ -262,6 +262,22 @@
     }
   },
   {
+    "id": "c_4c8p5c4c",
+    "ja": "私は案内の矛盾を突き合わせてる。",
+    "en": "I'm working on reconciling conflicting information.",
+    "alternatives": [
+      "I'm trying to reconcile the conflicting information.",
+      "I'm working out how the contradictory information fits."
+    ],
+    "point": "reconcile は矛盾する情報を整理して一致させる。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 7,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4d2c8c3g",
     "ja": "予約したのは禁煙室でした。",
     "en": "The room I booked was non-smoking.",
@@ -302,6 +318,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_4s9j3w4z",
+    "ja": "宿は私たちを自力で対処させた。",
+    "en": "The hotel made us fend for ourselves.",
+    "alternatives": [
+      "The hotel made us manage without help.",
+      "The hotel left us to manage without help."
+    ],
+    "point": "fend for ourselves は助けなしに自力で対処する。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 7,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4t5c9h2j",
@@ -469,6 +501,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_5t5d8z8m",
+    "ja": "私は苦情を正式に申し立てたい。",
+    "en": "I'd like to lodge a complaint.",
+    "alternatives": [
+      "I'd like to file a formal complaint.",
+      "I want to make an official complaint."
+    ],
+    "point": "lodge a complaint は正式に苦情を申し立てる。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 7,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5x6y2k5u",

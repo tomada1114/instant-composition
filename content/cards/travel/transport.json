@@ -828,6 +828,22 @@
     }
   },
   {
+    "id": "c_8x6k2d4w",
+    "ja": "私が信じた路線は一度も当てになってない。",
+    "en": "Never has the route I trusted proved reliable.",
+    "alternatives": [
+      "The route I trusted has never proved reliable.",
+      "The route I trusted has never been dependable."
+    ],
+    "point": "never を先頭に出すと has が主語より前に出る。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 9,
+    "grammar": ["tense-contrast", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_8x7n5n6u",
     "ja": "電車が来ています。",
     "en": "The train is coming.",
@@ -867,6 +883,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9a4b8w8h",
+    "ja": "私が確認してたら立ち往生せず済んだのに。",
+    "en": "Had I checked, I wouldn't have been stranded.",
+    "alternatives": [
+      "If I'd checked, I wouldn't have been stranded.",
+      "I wouldn't have been stranded if I'd checked."
+    ],
+    "point": "had I で過去の反実仮想を倒置して表す。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 9,
+    "grammar": ["third-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9d3s9c7q",

@@ -690,6 +690,22 @@
     }
   },
   {
+    "id": "c_6y8d6t8a",
+    "ja": "私は処理が遅いと思う。",
+    "en": "I think processing is slow.",
+    "alternatives": [
+      "I believe processing takes too long.",
+      "I think it's slow to process."
+    ],
+    "point": "think の後の節で処理への評価を伝える。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 4,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7p9g2z9w",
     "ja": "マージ前に誰か気づいてたらなあ。",
     "en": "I wish someone had caught this before merging.",
@@ -835,6 +851,22 @@
     }
   },
   {
+    "id": "c_8v4x7p6s",
+    "ja": "私は機能追加時にテストする。",
+    "en": "I write tests when adding features.",
+    "alternatives": [
+      "I write tests when I add features.",
+      "When I add features, I include tests."
+    ],
+    "point": "when の後で機能追加とテストを書く習慣を結ぶ。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 4,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_9a5g3e9x",
     "ja": "このコード、エラー処理がないよ。",
     "en": "This code is missing error handling.",
@@ -956,5 +988,21 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9z4h6u2f",
+    "ja": "この値は自動で設定される。",
+    "en": "This value is set automatically.",
+    "alternatives": [
+      "The system sets this value automatically.",
+      "This value gets set automatically."
+    ],
+    "point": "is set は値が設定される受動態。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 4,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   }
 ]

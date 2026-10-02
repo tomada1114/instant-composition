@@ -1056,6 +1056,45 @@
     }
   },
   {
+    "id": "c_9p9w6d9d",
+    "ja": "私は君を送れる。",
+    "en": "I can drive you.",
+    "alternatives": ["I can give you a ride.", "I can take you by car."],
+    "point": "drive you は車で相手を送る。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 2,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_9u6q3b9h",
+    "ja": "軽い箱を運んで。",
+    "en": "Carry the lighter box.",
+    "alternatives": ["Take the lighter box.", "Move the lighter box."],
+    "point": "lighter は二つなどを比べて軽い方。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_9v2g8f7f",
+    "ja": "私は彼女を手伝った。",
+    "en": "I helped her.",
+    "alternatives": ["I gave her help.", "I assisted her."],
+    "point": "helped は help の過去形。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_9z6s7f3g",
     "ja": "消しゴム借りるね。",
     "en": "I'll borrow your eraser.",

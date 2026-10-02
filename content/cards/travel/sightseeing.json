@@ -82,6 +82,22 @@
     }
   },
   {
+    "id": "c_2g7m8u8f",
+    "ja": "私はこの景色を心に刻むよ。",
+    "en": "I'll etch this view into memory.",
+    "alternatives": [
+      "I'll commit this view to memory.",
+      "I'll make sure I remember this view."
+    ],
+    "point": "etch into memory ははっきり心に刻む。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 7,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2j8m7g6g",
     "ja": "早めに行った方がいいよ。",
     "en": "You should go early.",
@@ -977,6 +993,22 @@
     }
   },
   {
+    "id": "c_8z4x2d5v",
+    "ja": "私は人混みをかき分け続けてる。",
+    "en": "I've been weaving through crowds.",
+    "alternatives": [
+      "I've been threading my way through crowds.",
+      "I've been making my way through the crowds."
+    ],
+    "point": "weave through は混雑の間を縫って進む。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 7,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_9c2p5v6h",
     "ja": "人混みを避け私は穴場を見つけた。",
     "en": "Avoiding crowds, I unearthed a hidden gem.",
@@ -1016,6 +1048,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9t7z9d5m",
+    "ja": "私は少し期待外れだった気がします。",
+    "en": "I found it somewhat underwhelming.",
+    "alternatives": [
+      "It seemed slightly disappointing to me.",
+      "I felt it didn't quite meet expectations."
+    ],
+    "point": "somewhat underwhelming で期待外れを控えめに言う。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 7,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9y4w7y9m",

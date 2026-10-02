@@ -312,6 +312,22 @@
     }
   },
   {
+    "id": "c_4s8r9r7j",
+    "ja": "私はこのツールの癖を探ってる。",
+    "en": "I'm exploring this tool's quirks.",
+    "alternatives": [
+      "I'm investigating this tool's peculiarities.",
+      "I'm learning this tool's idiosyncrasies."
+    ],
+    "point": "quirks はツール独特の癖や挙動。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 6,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5d4c3d5a",
     "ja": "このツールは無料です。",
     "en": "This tool is free.",
@@ -715,6 +731,22 @@
     }
   },
   {
+    "id": "c_8v7x9p5y",
+    "ja": "君はこの設定を微調整すべき。",
+    "en": "You should fine-tune this configuration.",
+    "alternatives": [
+      "You should refine this configuration.",
+      "You ought to adjust this configuration carefully."
+    ],
+    "point": "fine-tune は少しずつ調整して最適化する。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 6,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_8y8e5t8y",
     "ja": "固定してれば、今は安定なのに。",
     "en": "If we'd pinned versions, we'd be stable.",
@@ -780,6 +812,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9f4v4d9z",
+    "ja": "不具合に悩み私はツールを捨てた。",
+    "en": "Plagued by glitches, I ditched the tool.",
+    "alternatives": [
+      "Troubled by glitches, I abandoned the tool.",
+      "I dropped the tool because of persistent glitches."
+    ],
+    "point": "plagued by は繰り返す問題に悩まされる。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9f5x5f8w",
