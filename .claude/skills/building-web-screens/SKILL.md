@@ -27,8 +27,8 @@ route generator.
 
 ## A screen is a route, a page and a screen
 
-Each area has its own directory under `apps/web/src/` (`home/`, `drill/`, `records/`,
-`settings/`, `summary/`), and a screen is three pieces there:
+Each area has its own directory under `apps/web/src/` (`home/`, `drill/`, `talk/`,
+`records/`, `settings/`, `summary/`), and a screen is three pieces there:
 
 - **The route**, in `apps/web/src/router.tsx`. The tree is written as code —
   `createRoute` with `getParentRoute`, a `path` and a `component`, then added to
@@ -57,9 +57,10 @@ router decides.
 reaches it as types generated from `packages/contracts/openapi.json` into
 `apps/web/src/openapi/` — types only, no generated fetch client.
 
-- **One call per operation**, in `apps/web/src/lib/endpoints.ts`. Each checks what it
-  sends against the operation's generated `<Operation>Data` with `satisfies` and reads
-  the answer as its `<Operation>Responses`, so the path template, the body and the
+- **One call per operation**, in `apps/web/src/lib/endpoints.ts` — the talk's five in
+  `talk-endpoints.ts` beside it, which keeps both under the size budget. Each checks
+  what it sends against the operation's generated `<Operation>Data` with `satisfies` and
+  reads the answer as its `<Operation>Responses`, so the path template, the body and the
   answer are the contract's rather than strings written here. A call returns a `Result`
   whose error is the envelope's `error.code`, or `ERR_NETWORK` when no readable answer
   came back; it never throws.
