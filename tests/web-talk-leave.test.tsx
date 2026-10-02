@@ -23,6 +23,7 @@ import {
   say,
   serveTalk,
   turnResult,
+  write,
 } from "./web-talk-harness";
 
 // The talk screen's failures — each row of ux-flows §4.4, none of them in red
@@ -147,6 +148,80 @@ describe("the talk's failures", () => {
     ).toBeInTheDocument();
   });
 
+  it.each([
+    ["sendTurn", 404, "ERR_TALK_NOT_FOUND", ja.Talk.toast.save],
+    ["sendTurn", 409, "ERR_TALK_CLOSED", ""],
+    ["retryReply", 404, "ERR_TALK_NOT_FOUND", ja.Talk.toast.save],
+    ["retryReply", 409, "ERR_TALK_CLOSED", ""],
+  ] as const)(
+    "ends the talk at おわり without endTalk when %s answers %i %s",
+    async (call, status, code, notice) => {
+      const calls = serveTalk(
+        call === "sendTurn"
+          ? { turn: () => refusal(status, code) }
+          : {
+              turn: (body) => Response.json(turnResult("fine", body.turn, null)),
+              reply: () => refusal(status, code),
+            },
+      );
+      await renderApp("/talk");
+      await begin();
+      await say("仕事が詰まってて", "I was swamped with work.");
+      if (call === "retryReply") {
+        await settle(320);
+        expect(screen.getByText(ja.Talk.reply.failed)).toBeInTheDocument();
+        press(ja.Talk.reply.retry);
+        await settle();
+      }
+      expect(
+        within(screen.getByRole("main")).getByText(ja.Talk.end.mark),
+      ).toBeInTheDocument();
+      expect(screen.queryByText(ja.Talk.reply.failed)).toBeNull();
+      expect(screen.queryByRole("button", { name: ja.Talk.reply.retry })).toBeNull();
+      expect(screen.queryByRole("button", { name: ja.Talk.strip.close })).toBeNull();
+      expect(
+        screen.getByRole("button", { name: ja.Talk.end.again }),
+      ).toBeInTheDocument();
+      expect(toast()).toBe(notice);
+      expect(posted(calls, END)).toStrictEqual([]);
+      expect(posted(calls, call === "sendTurn" ? TURNS : REPLY)).toHaveLength(1);
+    },
+  );
+
+  it("leaves W3g when a retried turn finds the talk gone", async () => {
+    const calls = serveTalk({
+      turn: (_body, asked) =>
+        asked === 0
+          ? refusal(503, "ERR_MODEL_UNAVAILABLE")
+          : refusal(404, "ERR_TALK_NOT_FOUND"),
+    });
+    await renderApp("/talk");
+    await begin();
+    await say("仕事が詰まってて", "I was swamped with work.");
+    expect(screen.getByText(ja.Talk.reply.failed)).toBeInTheDocument();
+
+    press(ja.Talk.reply.retry);
+    await settle();
+    expect(
+      within(screen.getByRole("main")).getByText(ja.Talk.end.mark),
+    ).toBeInTheDocument();
+    expect(toast()).toBe(ja.Talk.toast.save);
+    expect(posted(calls, TURNS)).toHaveLength(2);
+    expect(posted(calls, END)).toStrictEqual([]);
+  });
+
+  it("stays on W3g for any other refusal of a turn", async () => {
+    serveTalk({ turn: () => refusal(409, "ERR_CONFLICT") });
+    await renderApp("/talk");
+    await begin();
+    await say("仕事が詰まってて", "I was swamped with work.");
+    expect(screen.getByText(ja.Talk.reply.failed)).toBeInTheDocument();
+    expect(
+      screen.getByRole("button", { name: ja.Talk.reply.retry }),
+    ).toBeInTheDocument();
+    expect(within(screen.getByRole("main")).queryByText(ja.Talk.end.mark)).toBeNull();
+  });
+
   it("uses no red anywhere in a failure", async () => {
     serveTalk({ turn: (body) => Response.json(turnResult("fine", body.turn, null)) });
     await renderApp("/talk");
@@ -158,6 +233,29 @@ describe("the talk's failures", () => {
 });
 
 describe("W4, leaving a talk under way", () => {
+  it("does not bring W4 back with the next talk when the talk ended under a ✕-opened W4", async () => {
+    serveTalk({ turn: () => refusal(409, "ERR_TALK_CLOSED") });
+    await renderApp("/talk");
+    await begin();
+    write(ja.Talk.step.japanese, "仕事が詰まってて");
+    press(ja.Talk.step.send);
+    await settle();
+    write(ja.Talk.step.english, "I was swamped with work.");
+    press(ja.Talk.step.send);
+    press(ja.Talk.strip.close);
+    expect(leaveSheet()).not.toBeNull();
+    await settle();
+    await settle(16);
+    expect(leaveSheet()).toBeNull();
+    expect(
+      within(screen.getByRole("main")).getByText(ja.Talk.end.mark),
+    ).toBeInTheDocument();
+
+    press(ja.Talk.end.again);
+    await settle();
+    await settle(16);
+    expect(leaveSheet()).toBeNull();
+  });
   it("asks from ✕ that the talk will not be kept with no turn, stays on 続ける, and opens on Esc too", async () => {
     serveTalk();
     await renderApp("/talk");

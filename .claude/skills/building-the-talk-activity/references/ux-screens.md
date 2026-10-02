@@ -209,8 +209,8 @@ The flows, cross-cutting behavior and decisions are in [ux-flows.md](ux-flows.md
 │ [            新しい会話            ]     ← primary. Pressing it goes to W2's 「用意しています」
 ```
 
-- Ending with 「終える」 ("end") gives the same shape (no closing line; it starts
-  from 「おわり」("the end")).
+- Ending with 「終える」 ("end"), or a talk the server no longer takes (ux-flows §4.4),
+  gives the same shape (no closing line; it starts from 「おわり」("the end")).
 - The ✕ in the top bar goes away. After the end, the learner can leave straight from a
   tab (nothing is lost).
 - The conversation stays on this screen. No control is added for reading it back.

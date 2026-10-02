@@ -167,6 +167,21 @@ describe("the talk reducer", () => {
       ],
       "ended",
     ],
+    [
+      "a gone for another talk",
+      [...SENT, { type: "gone", talkId: "other" }],
+      "teacher",
+    ],
+    [
+      "a gone before anything was sent",
+      [...OPEN, { type: "gone", talkId: ID }],
+      "japanese",
+    ],
+    [
+      "a gone after the talk ended",
+      [...SENT, { type: "end" }, { type: "gone", talkId: ID }],
+      "ended",
+    ],
   ])("changes nothing for %s", (_, events, expected) => {
     const before = run(...events.slice(0, -1));
     const last = events.at(-1);
@@ -196,6 +211,25 @@ describe("the talk reducer", () => {
       );
     }
     expect(step(state)).toBe("ended");
+  });
+
+  it("ends a talk the server no longer takes while it waits for the teacher", () => {
+    expect(step(run(...SENT, { type: "gone", talkId: ID }))).toBe("ended");
+  });
+
+  it("ends a talk the server no longer takes while it waits for the partner, keeping its turns", () => {
+    const waiting = run(
+      ...SENT,
+      { type: "answered", talkId: ID, result: turnResult("fine", 1, null) },
+      { type: "shown", talkId: ID },
+      { type: "retrying", talkId: ID },
+    );
+    expect(step(waiting)).toBe("partner");
+    const after = talkReducer(waiting, { type: "gone", talkId: ID });
+    expect(step(after)).toBe("ended");
+    if (after.kind !== "talk" || waiting.kind !== "talk")
+      throw new Error("Both are talks.");
+    expect(after.talk.turns).toBe(waiting.talk.turns);
   });
 
   it("restarts from W2's preparing when a new talk is asked for", () => {
