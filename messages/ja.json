@@ -298,11 +298,6 @@
   },
   "Records": {
     "title": "記録",
-    "tabs": {
-      "overview": "概要",
-      "weak": "苦手",
-      "history": "記録"
-    },
     "breakdown": "{topic} の内訳",
     "difficulty": "難易度",
     "toeic": "TOEIC {toeic}",
@@ -338,9 +333,9 @@
   },
   "Settings": {
     "title": "設定",
-    "tabs": {
+    "sections": {
+      "label": "設定の項目",
       "cards": "出題",
-      "level": "難易度",
       "app": "アプリ"
     },
     "topics": {

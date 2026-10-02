@@ -3,15 +3,16 @@ import { useEffect, useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
 import { markPressed } from "../drill/pressed";
-import { SETTINGS_TABS, searchFor, type SettingsTab } from "../lib/screen-tabs";
-import { TabbedScreen } from "../lib/tabbed-screen";
+import { useShellNav } from "../lib/frame";
 import { useEscapeHome } from "../lib/use-escape-home";
 import type { SettingsPageView } from "../openapi";
 import { Button } from "../ui/button";
 import { Sheet } from "../ui/sheet";
-import { AppSection } from "./app-section";
+import { AppRows, SignOutRow } from "./app-section";
 import { LevelSection } from "./level-section";
 import { LimitSection } from "./limit-section";
+import { SectionList, useCurrentSection } from "./section-list";
+import { SettingsSection } from "./settings-row";
 import { FocusSection, SizeSection, TopicsSection } from "./settings-sections";
 import { useLevel } from "./use-level";
 import { useSettings } from "./use-settings";
@@ -39,7 +40,7 @@ function RetestSheet({
         </h2>
         <p className="text-muted-foreground">{t("body")}</p>
       </div>
-      <div className="flex flex-col gap-2.5">
+      <div className="grid grid-cols-2 gap-3">
         <Button variant="secondary" className="w-full" onClick={onCancel}>
           {t("cancel")}
         </Button>
@@ -52,64 +53,57 @@ function RetestSheet({
 }
 
 /**
- * W11: every change saves as it is made and says in one line what it does,
- * under three tabs — what is dealt, the level and the
- * seconds per card, and the app itself. The tab is the URL's `?tab=`.
+ * W11, one page: every change saves as it is made and says in one line what
+ * it does — what is dealt, the level and the seconds per card, the app, and
+ * the account — with a list of those sections beside the rows.
  */
 export function SettingsScreen({
   page,
-  tab,
-}: Readonly<{ page: SettingsPageView; tab: SettingsTab }>): ReactElement {
+}: Readonly<{ page: SettingsPageView }>): ReactElement {
   const t = useTranslations("Settings");
   const navigate = useNavigate();
   const state = useSettings(page.settings);
   const level = useLevel(page.difficulty, page.levels);
   const [asking, setAsking] = useState(false);
   const [zoneFailed, setZoneFailed] = useState(false);
+  const [current, choose] = useCurrentSection();
+  useShellNav();
   useEscapeHome(!asking);
 
   return (
-    <TabbedScreen
-      title={t("title")}
-      tabs={SETTINGS_TABS.map((value) => ({ value, label: t(`tabs.${value}`) }))}
-      tab={tab}
-      onTab={(next) => {
-        void navigate({
-          to: "/settings",
-          search: searchFor(SETTINGS_TABS, next),
-          replace: true,
-        });
-      }}
-      notice={
-        state.failed || level.failed || zoneFailed ? (
-          <p role="alert" className="rounded-control bg-raised px-4 py-3">
-            {t("saveFailed")}
-          </p>
-        ) : null
-      }
-    >
-      {tab === "cards" ? (
-        <>
-          <TopicsSection topics={page.topics} state={state} />
-          <FocusSection topics={page.topics} state={state} />
-          <SizeSection state={state} />
-        </>
-      ) : null}
-      {tab === "level" ? (
-        <>
-          <LevelSection
-            level={level}
-            levels={page.levels}
-            onRetest={() => {
-              setAsking(true);
-            }}
-          />
-          <LimitSection state={state} />
-        </>
-      ) : null}
-      {tab === "app" ? (
-        <AppSection state={state} onZoneFailedChange={setZoneFailed} />
-      ) : null}
+    <div className="mx-auto flex w-full max-w-dashboard flex-col gap-6">
+      <h1>{t("title")}</h1>
+      <div className="flex flex-col gap-8 pc:flex-row pc:items-start pc:gap-10">
+        <SectionList current={current} onChoose={choose} />
+        <div className="flex w-full max-w-reading min-w-0 flex-col gap-10">
+          {state.failed || level.failed || zoneFailed ? (
+            <p role="alert" className="rounded-control bg-raised px-4 py-3">
+              {t("saveFailed")}
+            </p>
+          ) : null}
+          <SettingsSection id="cards" title={t("sections.cards")}>
+            <TopicsSection topics={page.topics} state={state} />
+            <FocusSection topics={page.topics} state={state} />
+            <SizeSection state={state} />
+          </SettingsSection>
+          <SettingsSection id="level" title={t("difficulty.title")}>
+            <LevelSection
+              level={level}
+              levels={page.levels}
+              onRetest={() => {
+                setAsking(true);
+              }}
+            />
+            <LimitSection state={state} />
+          </SettingsSection>
+          <SettingsSection id="app" title={t("sections.app")}>
+            <AppRows state={state} onZoneFailedChange={setZoneFailed} />
+          </SettingsSection>
+          <SettingsSection id="account" title={t("signOut.title")}>
+            <SignOutRow />
+          </SettingsSection>
+        </div>
+      </div>
       {asking ? (
         <RetestSheet
           onCancel={() => {
@@ -121,6 +115,6 @@ export function SettingsScreen({
           }}
         />
       ) : null}
-    </TabbedScreen>
+    </div>
   );
 }

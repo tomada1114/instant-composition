@@ -41,8 +41,8 @@ export function TimeZoneRow({
 
   if (zone === undefined) {
     return profile.isPending ? (
-      <div className="flex flex-col border-t border-border py-4">
-        <h2 className="flex min-h-8 items-center">{t("title")}</h2>
+      <div className="flex min-h-16 flex-col justify-center py-3">
+        <h3>{t("title")}</h3>
       </div>
     ) : null;
   }
@@ -69,9 +69,9 @@ export function TimeZoneRow({
   }
 
   return (
-    <div className="flex flex-col gap-2 border-t border-border py-4">
+    <div className="flex flex-col gap-2 py-4">
       <div className="flex min-h-8 items-center justify-between gap-4">
-        <h2 id={labelId}>{t("title")}</h2>
+        <h3 id={labelId}>{t("title")}</h3>
         <select
           aria-labelledby={labelId}
           value={zone}

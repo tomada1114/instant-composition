@@ -1,18 +1,18 @@
-import { useId, type ReactElement } from "react";
+import type { ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
 import type { LevelMode, SettingsPageView } from "../openapi";
 import { Button } from "../ui/button";
 import { Segmented } from "../ui/segmented";
 import { LevelPicker } from "./level-picker";
-import { Heading } from "./settings-sections";
+import { SettingsRow } from "./settings-row";
 import type { LevelState } from "./use-level";
 
 /**
  * The level: who moves it, the level itself — a pick fixes it by hand, so
  * the levels are offered only in manual or before a placement — and
- * measuring again. Each change saves as it is made, and the controls
- * themselves show the mode and the level as they stand.
+ * measuring again, as rows. Each change saves as it is made, and the
+ * controls themselves show the mode and the level as they stand.
  */
 export function LevelSection({
   level,
@@ -24,46 +24,50 @@ export function LevelSection({
   onRetest: () => void;
 }>): ReactElement {
   const t = useTranslations("Settings.difficulty");
-  const id = useId();
   const { view } = level;
   const current = view.level;
+  const note = (
+    <p className="text-caption text-muted-foreground">
+      {view.mode === "manual"
+        ? t("manualNote")
+        : view.toeic === null
+          ? t("autoNote")
+          : t("autoAt", { toeic: view.toeic })}
+    </p>
+  );
   return (
-    <section aria-labelledby={id} className="flex flex-col gap-3">
-      <Heading id={id}>{t("title")}</Heading>
+    <>
       {current === null ? null : (
-        <Segmented<LevelMode>
-          label={t("mode")}
-          options={(["auto", "manual"] as const).map((mode) => ({
-            value: mode,
-            label: t(mode),
-            text: t(mode),
-          }))}
-          value={view.mode}
-          onChange={(mode) => {
-            level.choose(
-              mode === "auto" ? { mode } : { mode: "manual", level: current },
-            );
+        <SettingsRow label={t("mode")} note={note}>
+          <Segmented<LevelMode>
+            label={t("mode")}
+            options={(["auto", "manual"] as const).map((mode) => ({
+              value: mode,
+              label: t(mode),
+              text: t(mode),
+            }))}
+            value={view.mode}
+            onChange={(mode) => {
+              level.choose(
+                mode === "auto" ? { mode } : { mode: "manual", level: current },
+              );
+            }}
+          />
+        </SettingsRow>
+      )}
+      <SettingsRow wide label={t("levels")} note={current === null ? note : undefined}>
+        <LevelPicker
+          levels={levels}
+          value={current}
+          disabled={view.mode === "auto" && current !== null}
+          onChange={(picked) => {
+            level.choose({ mode: "manual", level: picked });
           }}
         />
-      )}
-      <LevelPicker
-        levels={levels}
-        value={current}
-        disabled={view.mode === "auto" && current !== null}
-        onChange={(picked) => {
-          level.choose({ mode: "manual", level: picked });
-        }}
-      />
-      <p className="text-caption text-muted-foreground">
-        {view.mode === "manual"
-          ? t("manualNote")
-          : view.toeic === null
-            ? t("autoNote")
-            : t("autoAt", { toeic: view.toeic })}
-      </p>
-      <Button variant="secondary" className="w-full" onClick={onRetest}>
-        {t("retest")}
-      </Button>
-    </section>
+        <Button variant="secondary" className="self-start" onClick={onRetest}>
+          {t("retest")}
+        </Button>
+      </SettingsRow>
+    </>
   );
 }

@@ -6,27 +6,10 @@ import type { Settings, SubtopicRef, TopicInfo } from "../openapi";
 import { ChoiceChip } from "../ui/choice-chip";
 import { Segmented } from "../ui/segmented";
 import { SelectCard } from "../ui/select-card";
+import { SettingsRow } from "./settings-row";
 import type { SettingsState } from "./use-settings";
 
 type DailySize = Settings["dailySize"];
-
-/** A section's muted name, with a figure at its right when `aside` is given. */
-export function Heading({
-  id,
-  children,
-  aside,
-}: Readonly<{ id: string; children: string; aside?: string }>): ReactElement {
-  return (
-    <div className="flex items-baseline justify-between">
-      <h2 id={id} className="text-muted-foreground">
-        {children}
-      </h2>
-      {aside === undefined ? null : (
-        <span className="font-latin text-count text-muted-foreground">{aside}</span>
-      )}
-    </div>
-  );
-}
 
 /** The topics, at least one kept: the last chosen card cannot be pressed off. */
 export function TopicsSection({
@@ -51,9 +34,8 @@ export function TopicsSection({
     });
   }
   return (
-    <section aria-labelledby={id} className="flex flex-col gap-3">
-      <Heading id={id}>{t("title")}</Heading>
-      <ul className="grid grid-cols-2 gap-2">
+    <SettingsRow wide id={id} label={t("title")}>
+      <ul aria-labelledby={id} className="grid grid-cols-2 gap-2">
         {topics.map((topic) => {
           const selected = chosen.includes(topic.id);
           return (
@@ -75,7 +57,7 @@ export function TopicsSection({
       <p role="status" className="text-caption text-muted-foreground empty:hidden">
         {refused ? t("keepOne") : ""}
       </p>
-    </section>
+    </SettingsRow>
   );
 }
 
@@ -114,13 +96,12 @@ export function FocusSection({
       )
       .join("・");
   return (
-    <section className="flex flex-col gap-3">
-      <Heading
-        id={id}
-        aside={t("count", { count: focus.length, max: TUNING.maxFocus })}
-      >
-        {t("title")}
-      </Heading>
+    <SettingsRow
+      wide
+      id={id}
+      label={t("title")}
+      aside={t("count", { count: focus.length, max: TUNING.maxFocus })}
+    >
       <div
         role="group"
         aria-labelledby={id}
@@ -149,7 +130,7 @@ export function FocusSection({
       {state.removedFocus.length > 0 ? (
         <p role="status">{t("removed", { names: names(state.removedFocus) })}</p>
       ) : null}
-    </section>
+    </SettingsRow>
   );
 }
 
@@ -158,10 +139,17 @@ export function SizeSection({
   state,
 }: Readonly<{ state: SettingsState }>): ReactElement {
   const t = useTranslations("Settings.size");
-  const id = useId();
   return (
-    <section className="flex flex-col gap-3">
-      <Heading id={id}>{t("title")}</Heading>
+    <SettingsRow
+      label={t("title")}
+      note={
+        state.completedToday ? (
+          <p role="status" className="text-caption text-muted-foreground">
+            {t("completed")}
+          </p>
+        ) : undefined
+      }
+    >
       <Segmented<DailySize>
         label={t("title")}
         options={TUNING.dailySizes.map((size) => ({
@@ -174,7 +162,6 @@ export function SizeSection({
           state.save({ dailySize });
         }}
       />
-      {state.completedToday ? <p role="status">{t("completed")}</p> : null}
-    </section>
+    </SettingsRow>
   );
 }

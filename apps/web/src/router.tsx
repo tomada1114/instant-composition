@@ -2,10 +2,7 @@ import {
   createRootRoute,
   createRoute,
   createRouter,
-  Navigate,
   Outlet,
-  useRouterState,
-  type SearchSchemaInput,
 } from "@tanstack/react-router";
 import type { ReactElement } from "react";
 
@@ -14,14 +11,6 @@ import { roundKindFrom } from "./drill/rounds";
 import { HomePage } from "./home/home-page";
 import { WelcomePage } from "./home/welcome-page";
 import { FocusLayout, ShellLayout } from "./lib/frame";
-import {
-  RECORDS_TABS,
-  SETTINGS_TABS,
-  addressedTab,
-  tabSearch,
-  type RecordsTab,
-  type SettingsTab,
-} from "./lib/screen-tabs";
 import { NotFound } from "./not-found";
 import type { RoundKind } from "./openapi";
 import { RecordsPage } from "./records/records-page";
@@ -75,17 +64,7 @@ const drillRoute = createRoute({
 const recordsRoute = createRoute({
   getParentRoute: () => shellRoute,
   path: "records",
-  // A missing `?tab=` is the first tab, and a link may leave it out; an
-  // unknown one is replaced by the bare path.
-  validateSearch: (
-    search: { tab?: RecordsTab } & SearchSchemaInput,
-  ): { tab?: RecordsTab | undefined } => tabSearch(RECORDS_TABS, search.tab),
-  component: function RecordsRoute(): ReactElement {
-    const searchStr = useRouterState({ select: (state) => state.location.searchStr });
-    const { tab, stray } = addressedTab(RECORDS_TABS, searchStr);
-    if (stray) return <Navigate to="/records" replace />;
-    return <RecordsPage tab={tab} />;
-  },
+  component: RecordsPage,
 });
 
 const recapRoute = createRoute({
@@ -97,15 +76,7 @@ const recapRoute = createRoute({
 const settingsRoute = createRoute({
   getParentRoute: () => shellRoute,
   path: "settings",
-  validateSearch: (
-    search: { tab?: SettingsTab } & SearchSchemaInput,
-  ): { tab?: SettingsTab | undefined } => tabSearch(SETTINGS_TABS, search.tab),
-  component: function SettingsRoute(): ReactElement {
-    const searchStr = useRouterState({ select: (state) => state.location.searchStr });
-    const { tab, stray } = addressedTab(SETTINGS_TABS, searchStr);
-    if (stray) return <Navigate to="/settings" replace />;
-    return <SettingsPage tab={tab} />;
-  },
+  component: SettingsPage,
 });
 
 const talkRoute = createRoute({
