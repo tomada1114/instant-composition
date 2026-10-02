@@ -25,3 +25,21 @@ Yes → **edit in place** (same id). No → **rebuild**: move the old card to
   **deleted**, not rebuilt. Do not keep sentences that resist fixing.
 - Deleting also goes to `content/tombstones.jsonl` (without `replacedBy`). An id in a
   tombstone is never reused.
+
+## A vocabulary card
+
+The same question decides it for a vocabulary card (`content/vocab/`), whose answer is
+its headword in one sense.
+
+| Edit in place (same id)                                                                                     | Rebuild (tombstone + new id)                                                     |
+| ----------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| Fixing a typo, punctuation or the blank marks                                                               | `headword` becomes another expression, beyond a fix to its spelling or base form |
+| Rewriting `definition`, `example` or `example2` for the same headword in the same sense                     | The card moves to another sense of the headword (`run` a company → `run` a race) |
+| Correcting `headword`'s spelling or base form (`gave up` → `give up`, `How's it going` → `how's it going?`) |                                                                                  |
+| Retagging `category` or `level`                                                                             |                                                                                  |
+| Adding, rewriting or clearing a meaning                                                                     |                                                                                  |
+
+A rebuild goes through `pnpm cards:add --kind vocab --replacing <old>`, which lets the
+new card keep the old one's headword, then `pnpm cards:tombstone --kind vocab` with
+`--replaced-by`. A deletion is a tombstone without `replacedBy`, marked
+`"kind": "vocab"`.

@@ -323,7 +323,8 @@ meaning has its own stamp, so one is shown for a first language only while both 
 meaning; `scripts/cards/vocab-rules.mjs` holds its lint limits. Every `pnpm cards:*`
 command takes `--kind vocab` to work on them; without it, a command means the drill's
 cards only. A vocabulary card's tombstone goes to the same `tombstones.jsonl`, marked
-`"kind": "vocab"`.
+`"kind": "vocab"`. Its guides are `guides/vocab-writing.md` and
+`guides/vocab-review-perspectives.md`, and each card skill below takes `kind=vocab`.
 
 Cards are written only by the three card skills below through `pnpm cards:*`, never by
 hand-editing the JSON: the commands assign ids, lint, check for near-duplicates, keep
@@ -355,9 +356,9 @@ names its own boundary with its neighbours.
 | `triaging-issues`            | filing, labelling, or ranking a GitHub issue                                                                                                           |
 | `designing-ui`               | the design direction, the theme tokens in `apps/web/src/globals.css`, a shadcn/ui component, or styling any screen                                     |
 | `shipping-issues`            | ranking open issues and shipping the top one (or all) through PR, CI, and merge                                                                        |
-| `generating-cards`           | writing new cards into `content/cards/`, filling thin cells, or adding a subtopic                                                                      |
-| `reviewing-cards`            | reviewing, fixing, deleting or stamping cards; `pnpm cards:lint` errors or a non-empty `pnpm cards:queue`                                              |
-| `backfilling-card-fields`    | filling a newly declared optional card field across existing cards                                                                                     |
+| `generating-cards`           | writing new cards into `content/cards/`, or vocabulary cards into `content/vocab/` with `kind=vocab`; filling thin cells, or adding a subtopic         |
+| `reviewing-cards`            | reviewing, fixing, deleting or stamping cards, vocabulary cards with `kind=vocab`; `pnpm cards:lint` errors or a non-empty `pnpm cards:queue`          |
+| `backfilling-card-fields`    | filling a newly declared optional card field across existing cards, or a new language's `meanings.<lang>` on vocabulary cards with `kind=vocab`        |
 | `starting-an-app`            | turning this template into a new app: the rename, the locales, the design direction                                                                    |
 | `mapping-the-architecture`   | the architecture as it stands and the patterns it adopts, or a change to a boundary, persistence shape, external contract, provider, or security model |
 | `designing-application-core` | domain rules, commands, queries, ports and adapters, projections, idempotency, or code that reads the clock or a timezone                              |

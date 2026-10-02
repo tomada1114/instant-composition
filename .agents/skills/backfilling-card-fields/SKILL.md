@@ -2,9 +2,10 @@
 name: backfilling-card-fields
 description: >
   Use when a new optional field is added to the instant-composition card schema and
-  existing cards under content/cards/ need it filled in, or when running
-  /backfilling-card-fields with a field name. Covers writing the field spec under
-  references/fields/, filling the field in batches, and handing it to review.
+  existing cards under content/cards/ need it filled in, when vocabulary cards under
+  content/vocab/ need a meaning in a new first language (meanings.<lang>, kind=vocab),
+  or when running /backfilling-card-fields with a field name. Covers writing the field
+  spec under references/fields/, filling the field in batches, and handing it to review.
 ---
 
 # Backfilling Card Fields
@@ -32,6 +33,7 @@ Stop and say which is missing if either is:
 
 ```
 /backfilling-card-fields <name> [topic=…] [level=…] [--limit <n>]
+/backfilling-card-fields meanings.<lang> kind=vocab [category=…] [level=…] [--limit <n>]
 ```
 
 `--limit` defaults to 200.
@@ -67,3 +69,33 @@ per 50 cards; this session runs the commands and git.
 6. Run `reviewing-cards --field <name>`. **REQUIRED:** `reviewing-cards`.
 7. Report: filled, rejected with reasons, batches skipped, the field review summary, and
    `pnpm -s cards:queue --missing <name> --count`.
+
+## Vocabulary cards (`kind=vocab`)
+
+A vocabulary card has no optional field — an unknown key fails lint — so what it
+backfills is a meaning in a new first language, `meanings.<lang>`. The procedure above
+holds with these changes:
+
+- **Preconditions**, instead of the two above: `<lang>` is in `VOCAB_LANGUAGES` in
+  `scripts/cards/vocab-schema.mjs` with its cap in `VOCAB_LIMITS.meaningChars` in
+  `scripts/cards/vocab-rules.mjs`, so lint accepts and caps the meaning; and
+  `references/fields/meanings.<lang>.md` exists with the same four sections, its **What
+  it holds** building on `content/guides/vocab-writing.md`'s "`meanings.ja`".
+- **Why it never hides a card.** Each meaning has its own stamp,
+  `stamps["meanings.<lang>"]`, beside `stamps.core`. A card is shown for a first
+  language only while its core stamp and that language's meaning stamp both match, so a
+  new meaning hides nothing from the languages already reviewed.
+- **Step 2.** `cards:queue --kind vocab` takes no `--missing`, so list the cards from
+  `pnpm -s cards:show --kind vocab [range] --json > tmp/cards/vocab.json` and split
+  those without the meaning, stamped first, into batches:
+  `node -e 'const [l,n]=process.argv.slice(1);const c=require("./tmp/cards/vocab.json").filter(x=>!(x.meanings||{})[l]).sort((a,b)=>Number(Boolean((b.stamps||{}).core))-Number(Boolean((a.stamps||{}).core))).slice(0,Number(n));for(let b=0;b*50<c.length;b++)require("fs").writeFileSync("tmp/cards/fill-"+(b+1)+".json",JSON.stringify(c.slice(b*50,b*50+50)));console.log(c.length)' <lang> <limit>`.
+- **Step 3.** The writer's prompt names `references/fields/meanings.<lang>.md` and
+  `content/guides/vocab-writing.md`, and its output is
+  `[{ "id": …, "meanings": { "<lang>": "…" } }]` in
+  `tmp/cards/meanings.<lang>-<b>.json`.
+- **Step 4.** `pnpm -s cards:update --kind vocab <file>` merges the meaning into the
+  card's `meanings`, leaving the other languages and every stamp as they were.
+- **Step 5.** Commit `feat(cards): backfill meanings.<lang> on <n> vocab cards`.
+- **Step 6.**
+  `reviewing-cards kind=vocab --field meanings.<lang> --ids <every id filled>`.
+- **Step 7.** Count what is still missing by rerunning step 2's listing.
