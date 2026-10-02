@@ -5,6 +5,7 @@ import { browserSound } from "@instant-composition/web";
 
 import {
   COUNT,
+  fakeApi,
   fakeTimers,
   fill,
   homeView,
@@ -130,6 +131,29 @@ describe("W2, the talk tab before a talk", () => {
     await settle();
     expect(screen.getByText(OPENING)).toBeInTheDocument();
     expect(posted(calls, /^\/api\/v1\/talks$/u)).toHaveLength(2);
+  });
+});
+
+describe("the talk tab's read", () => {
+  it("sends a signed-out visitor to the landing", async () => {
+    fakeApi(() => refusal(401, "ERR_UNAUTHENTICATED"));
+    await renderApp("/talk");
+    expect(window.location.pathname).toBe("/");
+  });
+
+  it("says the view could not be read, and shows W2 once it reads again", async () => {
+    let reads = 0;
+    fakeApi((call) => {
+      if (call.url !== "/api/v1/home") return undefined;
+      reads += 1;
+      return reads === 1
+        ? refusal(503, "ERR_UNAVAILABLE")
+        : Response.json(homeView({ kind: "ready", streak: COUNT }));
+    });
+    await renderApp("/talk");
+    press(ja.Home.loadFailed.reload);
+    await settle();
+    expect(screen.getByRole("button", { name: ja.Talk.start.go })).toBeInTheDocument();
   });
 });
 

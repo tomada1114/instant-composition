@@ -1,0 +1,204 @@
+import { describe, expect, it } from "vitest";
+
+import {
+  TALK_IDLE,
+  talkReducer,
+  type PartnerReply,
+  type TalkEvent,
+  type TalkOpened,
+  type TalkState,
+  type TurnResult,
+  type Verdict,
+} from "@instant-composition/web";
+
+// The talk screen's reducer, driven event by event: the steps a turn passes,
+// and the answers that arrive too late — for a step already left, a talk
+// already ended, or another talk — which change nothing.
+
+const ID = "talk-1";
+
+function opened(talkId: string): TalkOpened {
+  return {
+    talkId,
+    scene: {
+      partner: "店員",
+      place: "カフェ",
+      relation: "顔なじみ",
+      description: "カフェ。",
+    },
+    opening: "Hi there.",
+  };
+}
+
+function replyTo(n: number): PartnerReply {
+  return { line: `reply-${String(n)}`, closing: n === 6 };
+}
+
+function turnResult(
+  verdict: Verdict,
+  n: number,
+  reply: PartnerReply | null = replyTo(n),
+): TurnResult {
+  return {
+    judgment: { verdict, modelAnswer: "A model answer.", point: "要点" },
+    reply,
+  };
+}
+
+function run(...events: TalkEvent[]): TalkState {
+  return events.reduce(talkReducer, TALK_IDLE);
+}
+
+const OPEN: TalkEvent[] = [{ type: "start" }, { type: "opened", opened: opened(ID) }];
+const SENT: TalkEvent[] = [
+  ...OPEN,
+  { type: "japanese", text: "仕事が詰まってて" },
+  { type: "english", text: "I was busy." },
+];
+
+function step(state: TalkState): string {
+  return state.kind === "talk" ? state.talk.step : state.kind;
+}
+
+describe("the talk reducer", () => {
+  it("prepares, then opens on the scene with turn 1 asking for the Japanese", () => {
+    expect(step(run({ type: "start" }))).toBe("preparing");
+    const state = run(...OPEN);
+    expect(state.kind === "talk" ? state.talk.turns : []).toStrictEqual([
+      { n: 1, partnerLine: opened(ID).opening, revealCount: 0 },
+    ]);
+    expect(step(state)).toBe("japanese");
+  });
+
+  it.each<[string, TalkEvent[], string]>([
+    [
+      "a scene that arrives after nothing was asked",
+      [{ type: "opened", opened: opened(ID) }],
+      "idle",
+    ],
+    [
+      "a failed start that arrives after nothing was asked",
+      [{ type: "startFailed" }],
+      "idle",
+    ],
+    [
+      "English before the Japanese",
+      [...OPEN, { type: "english", text: "Hi." }],
+      "japanese",
+    ],
+    [
+      "a second Japanese",
+      [...SENT.slice(0, 3), { type: "japanese", text: "また" }],
+      "english",
+    ],
+    [
+      "a judgment for another talk",
+      [...SENT, { type: "answered", talkId: "other", result: turnResult("fine", 1) }],
+      "teacher",
+    ],
+    [
+      "a judgment before anything was sent",
+      [...OPEN, { type: "answered", talkId: ID, result: turnResult("fine", 1) }],
+      "japanese",
+    ],
+    [
+      "a failed turn before anything was sent",
+      [...OPEN, { type: "turnFailed", talkId: ID }],
+      "japanese",
+    ],
+    [
+      "hiding a fine turn",
+      [
+        ...SENT,
+        { type: "answered", talkId: ID, result: turnResult("fine", 1) },
+        { type: "hide" },
+      ],
+      "fine",
+    ],
+    [
+      "looking again before hiding",
+      [
+        ...SENT,
+        { type: "answered", talkId: ID, result: turnResult("corrected", 1) },
+        { type: "lookAgain" },
+      ],
+      "model",
+    ],
+    [
+      "言えた before hiding",
+      [
+        ...SENT,
+        { type: "answered", talkId: ID, result: turnResult("corrected", 1) },
+        { type: "said" },
+      ],
+      "model",
+    ],
+    [
+      "a ○ shown twice",
+      [
+        ...SENT,
+        { type: "answered", talkId: ID, result: turnResult("fine", 1) },
+        { type: "shown", talkId: ID },
+        { type: "shown", talkId: ID },
+      ],
+      "japanese",
+    ],
+    [
+      "a retry with nothing to retry",
+      [...OPEN, { type: "retrying", talkId: ID }],
+      "japanese",
+    ],
+    [
+      "a reply nobody asked for",
+      [...OPEN, { type: "replied", talkId: ID, reply: replyTo(1) }],
+      "japanese",
+    ],
+    [
+      "a failed reply nobody asked for",
+      [...OPEN, { type: "replyFailed", talkId: ID }],
+      "japanese",
+    ],
+    [
+      "a judgment after the talk ended",
+      [
+        ...SENT,
+        { type: "end" },
+        { type: "answered", talkId: ID, result: turnResult("fine", 1) },
+      ],
+      "ended",
+    ],
+  ])("changes nothing for %s", (_, events, expected) => {
+    const before = run(...events.slice(0, -1));
+    const last = events.at(-1);
+    if (last === undefined) throw new Error("Each row ends on the event under test.");
+    const after = talkReducer(before, last);
+    expect(step(after)).toBe(expected);
+    expect(after).toBe(before);
+  });
+
+  it("ends after the sixth turn even when its reply does not say it closes", () => {
+    let state = run(...OPEN);
+    for (let n = 1; n <= 6; n += 1) {
+      state = [
+        { type: "japanese", text: "日本語" },
+        { type: "english", text: "English." },
+        {
+          type: "answered",
+          talkId: ID,
+          result: turnResult("failed", n, {
+            line: `reply-${String(n)}`,
+            closing: false,
+          }),
+        },
+      ].reduce<TalkState>(
+        (last, event) => talkReducer(last, event as TalkEvent),
+        state,
+      );
+    }
+    expect(step(state)).toBe("ended");
+  });
+
+  it("restarts from W2's preparing when a new talk is asked for", () => {
+    expect(step(run(...SENT, { type: "end" }, { type: "start" }))).toBe("preparing");
+  });
+});
