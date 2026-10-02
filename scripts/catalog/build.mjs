@@ -11,6 +11,11 @@
 // since its review is listed as withdrawn with none of its text, and a deleted
 // one keeps the prompt its tombstone recorded, so an answer that names either
 // can still be taken.
+//
+// Vocabulary cards (content/vocab/) go into the same per-pair file as `vocab`:
+// a card is there exactly when `isVocabShown` says it is shown for the pair's
+// first language, carrying its meaning in that language. Any other vocabulary
+// card is simply absent; nothing yet answers by naming one.
 import console from "node:console";
 import { createHash } from "node:crypto";
 import { mkdirSync, writeFileSync } from "node:fs";
@@ -23,6 +28,12 @@ import { repoRoot } from "../lib/node-tools.mjs";
 import { CardsError } from "../cards/errors.mjs";
 import { ID_PATTERN, isShown } from "../cards/schema.mjs";
 import { compareIds, DEFAULT_ROOT, displayPath, loadStore } from "../cards/store.mjs";
+import {
+  asTypedVocab,
+  isVocabShown,
+  meaningOf,
+  VOCAB_ID_PATTERN,
+} from "../cards/vocab-schema.mjs";
 
 /** Where `pnpm catalog:build` writes, one `<target>/<l1>.json` per pair. */
 export const DEFAULT_OUT = path.join(repoRoot, "dist", "catalog");
@@ -107,6 +118,7 @@ export class CatalogError extends Error {
  * @property {unknown[]} items
  * @property {unknown[]} withdrawn
  * @property {unknown[]} tombstones
+ * @property {unknown[]} vocab
  */
 
 /**
@@ -236,6 +248,45 @@ function cardsOf(store) {
 }
 
 /**
+ * @param {import("../cards/store.mjs").Store} store - The loaded content root.
+ * @returns {import("../cards/vocab-schema.mjs").TypedVocab[]} Every vocabulary
+ *   card, sorted by id.
+ * @throws {CatalogError} `ERR_CATALOG_CONTENT` naming each card that lacks a
+ *   core field or repeats an id.
+ */
+function vocabOf(store) {
+  /** @type {string[]} */
+  const problems = [];
+  /** @type {Map<string, import("../cards/vocab-schema.mjs").TypedVocab>} */
+  const cards = new Map();
+  for (const entry of store.vocab) {
+    const where = displayPath(store.root, `vocab/${entry.file}`);
+    const card = asTypedVocab(entry.raw);
+    if (
+      card === undefined ||
+      !VOCAB_ID_PATTERN.test(card.id) ||
+      !Number.isInteger(card.level) ||
+      card.level < 1 ||
+      card.level > 10
+    ) {
+      problems.push(`${where} card #${String(entry.index)} lacks a core field`);
+    } else if (cards.has(card.id)) {
+      problems.push(`${where}: id ${card.id} is used twice`);
+    } else {
+      cards.set(card.id, card);
+    }
+  }
+  if (problems.length > 0) {
+    throw new CatalogError("ERR_CATALOG_CONTENT", "Some vocab cards cannot be built.", {
+      expected: "every vocab card with a unique id and all of its core fields",
+      actual: problems.join("; "),
+      next: "run `pnpm cards:lint --kind vocab` and fix what it reports, then rerun `pnpm catalog:build`.",
+    });
+  }
+  return [...cards.values()].sort((left, right) => compareIds(left.id, right.id));
+}
+
+/**
  * @param {Omit<CatalogDocument, "version" | "format">} body - The document
  *   without its version.
  * @returns {string} `sha256:<hex>` of the body's JSON.
@@ -262,6 +313,7 @@ export function catalogDocument(store, pair) {
   const cards = cardsOf(store);
   const shown = cards.filter((card) => isShown(card));
   const withdrawn = cards.filter((card) => !isShown(card));
+  const vocab = vocabOf(store).filter((card) => isVocabShown(card, l1));
   const body = {
     target,
     l1,
@@ -305,6 +357,17 @@ export function catalogDocument(store, pair) {
         level: tombstone.level,
         localizations: { [l1]: { prompt: tombstone.ja } },
       })),
+    vocab: vocab.map((card) => ({
+      id: card.id,
+      target,
+      category: card.category,
+      level: card.level,
+      headword: card.headword,
+      definition: card.definition,
+      example: card.example,
+      example2: card.example2,
+      meaning: meaningOf(card.meanings, l1) ?? "",
+    })),
   };
   return { format: FORMAT, version: versionOf(body), ...body };
 }
@@ -422,7 +485,8 @@ export function main(
       io.out(
         `Wrote ${shownPath(file)}: ${String(document.items.length)} items, ` +
           `${String(document.withdrawn.length)} withdrawn, ` +
-          `${String(document.tombstones.length)} tombstones (${document.version}).`,
+          `${String(document.tombstones.length)} tombstones, ` +
+          `${String(document.vocab.length)} vocab (${document.version}).`,
       );
     }
     return 0;

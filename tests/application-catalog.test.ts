@@ -100,6 +100,19 @@ function makeDocument(overrides: Partial<CatalogDocument> = {}): CatalogDocument
         localizations: {},
       },
     ],
+    vocab: [
+      {
+        id: "v_2a",
+        target: "en",
+        category: "phrasal-verb",
+        level: 4,
+        headword: "give up",
+        definition: "to stop trying to do something because it is too hard",
+        example: "She was so tired that she {{gave}} {{up}} halfway.",
+        example2: "Don't give up; you're almost there.",
+        meaning: "あきらめる",
+      },
+    ],
     ...overrides,
   };
 }
@@ -185,6 +198,12 @@ describe("a snapshot for one first language", () => {
         [1, { cefr: "A1+", toeic: "300" }],
         [2, { cefr: "A2", toeic: "" }],
       ]),
+    );
+  });
+
+  it("deals the drill the same cards whether or not the document holds vocabulary", () => {
+    expect(catalogSnapshotOf(makeDocument({ vocab: [] }), "ja")).toStrictEqual(
+      snapshot,
     );
   });
 

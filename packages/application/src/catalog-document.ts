@@ -7,6 +7,7 @@ import {
 } from "@instant-composition/domain";
 
 import type { CatalogSnapshot, LevelInfo } from "./catalog";
+import type { VocabItem } from "./vocab-item";
 
 /**
  * The file `pnpm catalog:build` writes for one language pair: items anchored on the target sentence, with what the learner reads
@@ -91,6 +92,8 @@ export interface CatalogDocument {
   readonly items: readonly CompositionItem[];
   readonly withdrawn: readonly WithdrawnItem[];
   readonly tombstones: readonly TombstoneItem[];
+  /** Empty in a snapshot built before vocabulary existed. */
+  readonly vocab: readonly VocabItem[];
 }
 
 function topicsFor(topics: readonly TopicEntry[], l1: LanguageTag): TopicInfo[] {

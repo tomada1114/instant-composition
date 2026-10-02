@@ -43,6 +43,8 @@ export {
 } from "./difficulty";
 export { EMPTY_STATS, emptyTally } from "./empty";
 export type { PracticeError, TalkError } from "./errors";
+export { previewGrades, retrievability, scheduleCard } from "./fsrs";
+export type { FsrsGrade, FsrsState, GradePreview, Scheduled } from "./fsrs";
 export {
   reviewList,
   roundGrowth,
@@ -93,6 +95,8 @@ export {
   type PlacementInput,
 } from "./placement";
 export { roundPoints, totals, type Totals } from "./points";
+export { todaysQueue, type DailyLimit, type QueueCandidate } from "./queue";
+export type { QueuedCard, QueueInput, TodaysQueue } from "./queue";
 export type {
   CompositionDetail,
   DayTally,

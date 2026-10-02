@@ -4,13 +4,16 @@ import path from "node:path";
 import { afterEach, describe, expect, it } from "vitest";
 
 import { CardsError } from "../scripts/cards/errors.mjs";
-import { coreHash } from "../scripts/cards/schema.mjs";
+import { coreHash, fieldHash } from "../scripts/cards/schema.mjs";
+import { vocabCoreHash } from "../scripts/cards/vocab-schema.mjs";
 import {
   jaCharsMax,
   jsonOut,
   makeCard,
   makeContentRoot,
   makeInput,
+  makeVocabCard,
+  makeVocabInput,
   removeContentRoots,
   runCards,
   GRAMMAR,
@@ -18,6 +21,7 @@ import {
   writeCards,
   writeInput,
   writeUnder,
+  writeVocab,
 } from "./cards-fixture";
 
 // Every `cards:*` command driven in-process through `main`, against a
@@ -1775,5 +1779,994 @@ describe("the writer's view of a cell", () => {
       "三の文です。",
       "四の文です。",
     ]);
+  });
+});
+
+// ---------------------------------------------------------------------------
+// The same commands under `--kind vocab`, against content/vocab/.
+
+function vocabFileOf(root: string, file: string): Record<string, unknown>[] {
+  return readJson(path.join(root, "vocab", file)) as Record<string, unknown>[];
+}
+
+interface VocabStamp {
+  hash: string;
+  perspectivesVersion: number;
+  at: string;
+}
+
+function vocabStamped(
+  card: Record<string, unknown>,
+  perspectivesVersion = 2,
+): Record<string, unknown> & { stamps: Record<string, VocabStamp> } {
+  const core = card as unknown as Parameters<typeof vocabCoreHash>[0];
+  const meanings = card["meanings"] as Record<string, string>;
+  const stamp = (hash: string): VocabStamp => ({
+    hash,
+    perspectivesVersion,
+    at: "2026-09-10",
+  });
+  return {
+    ...card,
+    stamps: {
+      core: stamp(vocabCoreHash(core)),
+      ...Object.fromEntries(
+        Object.entries(meanings).map(([lang, text]) => [
+          `meanings.${lang}`,
+          stamp(fieldHash(text)),
+        ]),
+      ),
+    },
+  };
+}
+
+function vocab(root: string, argv: string[]) {
+  const [command = "", ...rest] = argv;
+  return runCards(root, [command, "--kind", "vocab", ...rest]);
+}
+
+const PHRASE = {
+  category: "phrase",
+  level: 3,
+  headword: "no worries",
+  definition: "said to tell someone that something is not a problem",
+  example: "A: Sorry, I forgot to call you back.\nB: {{No worries}}.",
+  example2: "A: Thanks for waiting.\nB: No worries, I just got here.",
+  meanings: { ja: "気にしないで" },
+};
+
+describe("the command line with --kind", () => {
+  it.each([
+    ["an unknown kind", ["lint", "--kind", "grammar"]],
+    ["a kind without a value", ["lint", "--kind="]],
+    ["a topic= on a vocab command", ["queue", "--kind", "vocab", "topic=work"]],
+    ["a category= on a drill command", ["queue", "category=word"]],
+    ["an unknown category=", ["queue", "--kind", "vocab", "category=verb"]],
+    ["a drill-only flag", ["show", "--kind", "vocab", "--cell", "work/meetings"]],
+  ])("rejects %s", (_label, argv) => {
+    const run = runCards(makeContentRoot(), argv);
+    expect(run.code).toBe(1);
+    expect(errorCode(run.err)).toBe("ERR_CARDS_USAGE");
+  });
+
+  it("takes --kind=vocab, and --kind composition as the drill", () => {
+    const root = makeContentRoot();
+    writeVocab(root, "phrasal-verb.json", [makeVocabCard("v_2a2a2a2a")]);
+    writeCards(root, "work/meetings.json", [makeCard("c_2a2a2a2a")]);
+    expect(runCards(root, ["show", "--kind=vocab", "--brief"]).out).toBe(
+      "give up (phrasal-verb)",
+    );
+    expect(runCards(root, ["show", "--kind", "composition", "--brief"]).out).toBe(
+      "会議を始めましょう。 ⟶ Let's start the meeting.",
+    );
+  });
+
+  it("leaves the drill's lint exactly as it was when vocab/ holds errors", () => {
+    const root = makeContentRoot();
+    writeCards(root, "work/meetings.json", [makeCard("c_2a2a2a2a")]);
+    writeVocab(root, "phrase.json", [
+      makeVocabCard("v_2a2a2a2a", { ...PHRASE, example: "{{No worries}}." }),
+    ]);
+    const run = runCards(root, ["lint"]);
+    expect(run.code).toBe(0);
+    expect(run.out).toBe("cards:lint: 1 cards checked, 0 errors");
+  });
+});
+
+describe("cards:lint --kind vocab", () => {
+  it("passes a clean root", () => {
+    const root = makeContentRoot();
+    writeVocab(root, "phrasal-verb.json", [makeVocabCard("v_2a2a2a2a")]);
+    writeVocab(root, "phrase.json", [makeVocabCard("v_3a3a3a3a", PHRASE)]);
+    const run = vocab(root, ["lint"]);
+    expect(run.code).toBe(0);
+    expect(run.out).toBe("cards:lint: 2 vocab cards checked, 0 errors");
+  });
+
+  it("fails on a phrase whose example is one line, naming the card and the rule", () => {
+    const root = makeContentRoot();
+    writeVocab(root, "phrase.json", [
+      makeVocabCard("v_2a2a2a2a", {
+        ...PHRASE,
+        example: "{{No worries}}, it happens.",
+      }),
+    ]);
+    const run = vocab(root, ["lint"]);
+    expect(run.code).toBe(1);
+    expect(errorCode(run.err)).toBe("ERR_CARDS_LINT");
+    expect(run.out).toContain("v_2a2a2a2a DIALOGUE ");
+  });
+
+  it.each([
+    ["CATEGORY", { category: "verb" }],
+    ["LEVEL", { level: 11 }],
+    ["WORD_COUNT", { headword: "give up on the idea of it all" }],
+    ["HEADWORD", { headword: "give {{up}}" }],
+    ["JAPANESE_IN_EN", { headword: "give up あきらめ" }],
+    [
+      "WORD_COUNT",
+      {
+        definition:
+          "to stop trying to do something you wanted to do because it is far too hard",
+      },
+    ],
+    ["ONE_SENTENCE", { definition: "To stop trying. It is too hard." }],
+    ["ONE_LINE", { definition: "to stop trying\nbecause it is hard" }],
+    ["BLANK", { definition: "to {{stop}} trying" }],
+    ["BLANK", { example: "She was so tired that she gave up halfway." }],
+    ["BLANK", { example: "She was so tired that she {{gave up halfway." }],
+    ["BLANK", { example: "She was so tired that she {{took}} {{up}} halfway." }],
+    ["END_PUNCTUATION", { example: "She was so tired that she {{gave}} {{up}}" }],
+    ["ONE_SENTENCE", { example: "She was tired. She {{gave}} {{up}}." }],
+    ["ONE_LINE", { example: "She was tired.\nShe {{gave}} {{up}}." }],
+    ["DIALOGUE", { ...PHRASE, example: "B: Sorry.\nA: {{No worries}}." }],
+    [
+      "WORD_COUNT",
+      {
+        example:
+          "She was so very tired after the long day that she finally {{gave}} {{up}} on it.",
+      },
+    ],
+    ["ELLIPSIS", { example: "She was so tired that she {{gave}} {{up}}..." }],
+    ["BLANK", { example2: "Don't {{give}} up." }],
+    [
+      "WORD_COUNT",
+      {
+        example2:
+          "Don't give up now, because you are almost there and everyone is waiting for you today.",
+      },
+    ],
+    [
+      "MEANING_LENGTH",
+      { meanings: { ja: "あきらめてやめること、途中で投げ出してしまうこと" } },
+    ],
+    ["ONE_LINE", { meanings: { ja: "あきらめる\nやめる" } }],
+    ["SHAPE", { meanings: { zh: "放弃" } }],
+    ["SHAPE", { meanings: {} }],
+    ["SHAPE", { meanings: "あきらめる" }],
+    ["SHAPE", { meanings: { ja: "" } }],
+    ["SHAPE", { note: "extra" }],
+    ["SHAPE", { headword: "" }],
+    ["SHAPE", { level: "4" }],
+    ["SHAPE", { createdAt: "yesterday" }],
+    ["SHAPE", { stamps: [] }],
+    [
+      "SHAPE",
+      {
+        stamps: {
+          note: { hash: "sha256:0", perspectivesVersion: 1, at: "2026-09-10" },
+        },
+      },
+    ],
+    [
+      "SHAPE",
+      { stamps: { core: { hash: "x", perspectivesVersion: 1, at: "2026-09-10" } } },
+    ],
+  ])("reports %s for %j", (rule, overrides) => {
+    const root = makeContentRoot();
+    const card = makeVocabCard("v_2a2a2a2a", overrides);
+    const category = typeof card["category"] === "string" ? card["category"] : "x";
+    writeVocab(root, `${category}.json`, [card]);
+    const run = vocab(root, ["lint", "--json"]);
+    expect(run.code).toBe(1);
+    const { errors } = jsonOut(run) as { errors: { id: string; rule: string }[] };
+    expect(errors.map((finding) => finding.rule)).toContain(rule);
+  });
+
+  it("checks a phrase's example2 as one line or a two-line dialogue", () => {
+    const root = makeContentRoot();
+    writeVocab(root, "phrase.json", [
+      makeVocabCard("v_2a2a2a2a", {
+        ...PHRASE,
+        example2: "No worries, I just got here.",
+      }),
+      makeVocabCard("v_3a3a3a3a", {
+        ...PHRASE,
+        headword: "never mind",
+        example: "A: I lost it.\nB: {{Never mind}}.",
+        example2: "B: Thanks.\nA: Never mind.",
+      }),
+    ]);
+    const run = vocab(root, ["lint"]);
+    expect(run.out.split("\n").filter((line) => line.startsWith("v_"))).toEqual([
+      'v_3a3a3a3a DIALOGUE "example2" must be one line, or two lines "A: …" then "B: …"',
+    ]);
+  });
+
+  it("reports bad, duplicate, tombstoned, misplaced and unsorted cards, and stray files", () => {
+    const root = makeContentRoot();
+    writeVocab(root, "phrasal-verb.json", [
+      makeVocabCard("v_3a3a3a3a"),
+      makeVocabCard("v_2a2a2a2a"),
+      makeVocabCard("v_2a2a2a2a", {
+        headword: "pick up",
+        example: "{{Pick}} me {{up}}.",
+      }),
+      makeVocabCard("v_4a4a4a4a", { category: "idiom" }),
+      makeVocabCard("c_5a5a5a5a"),
+    ]);
+    writeVocab(root, "nested/word.json", []);
+    writeUnder(
+      root,
+      "tombstones.jsonl",
+      `${JSON.stringify({ kind: "vocab", id: "v_3a3a3a3a", category: "phrasal-verb", level: 4, headword: "give up", reason: "x", deletedAt: "2026-09-01" })}\n`,
+    );
+    const run = vocab(root, ["lint"]);
+    expect(run.out).toContain("v_2a2a2a2a ID_DUPLICATE ");
+    expect(run.out).toContain("v_3a3a3a3a ID_TOMBSTONED ");
+    expect(run.out).toContain(
+      "v_4a4a4a4a FILE_LOCATION sits in vocab/phrasal-verb.json; its category says vocab/idiom.json",
+    );
+    expect(run.out).toContain("c_5a5a5a5a ID_FORMAT ");
+    expect(run.out).toContain("vocab/phrasal-verb.json#1 FILE_ORDER ");
+    expect(run.out).toContain("vocab/nested/word.json FILE_LOCATION ");
+  });
+
+  it("names a card that is not an object by its file and index", () => {
+    const root = makeContentRoot();
+    writeUnder(root, "vocab/word.json", "[1]\n");
+    expect(vocab(root, ["lint"]).out).toContain("vocab/word.json#0 SHAPE ");
+  });
+
+  it("lints only --ids, reporting an unknown one on its own", () => {
+    const root = makeContentRoot();
+    writeVocab(root, "phrasal-verb.json", [
+      makeVocabCard("v_2a2a2a2a"),
+      makeVocabCard("v_3a3a3a3a", { level: 0 }),
+    ]);
+    const run = vocab(root, ["lint", "--ids", "v_2a2a2a2a", "v_9z9z9z9z"]);
+    expect(run.code).toBe(0);
+    expect(run.err).toBe("unknown id v_9z9z9z9z: does not exist");
+    expect(run.out).toBe("cards:lint: 1 vocab cards checked, 0 errors");
+  });
+});
+
+describe("cards:add --kind vocab", () => {
+  it("admits a card as v_…, sorted into its category's file", () => {
+    const root = makeContentRoot();
+    writeVocab(root, "phrasal-verb.json", [
+      makeVocabCard("v_9z9z9z9z", {
+        headword: "pick up",
+        example: "Can you {{pick}} me {{up}}?",
+        example2: "I'll pick you up.",
+      }),
+    ]);
+    const ids = ["v_2a2a2a2a"];
+    const run = runCards(
+      root,
+      ["add", "--kind", "vocab", writeInput(root, "new.json", [makeVocabInput()])],
+      { random: () => 0 },
+    );
+    expect(run.out).toBe(
+      "admitted v_2a2a2a2a  phrasal-verb L4\ncards:add: 1 admitted, 0 dropped",
+    );
+    const file = vocabFileOf(root, "phrasal-verb.json");
+    expect(file.map((card) => card["id"])).toEqual([...ids, "v_9z9z9z9z"]);
+    expect(Object.keys(file[0] ?? {})).toEqual([
+      "id",
+      "category",
+      "level",
+      "headword",
+      "definition",
+      "example",
+      "example2",
+      "meanings",
+      "createdAt",
+      "stamps",
+    ]);
+    expect(file[0]).toMatchObject({ createdAt: "2026-09-22", stamps: {} });
+  });
+
+  it("refuses a headword its category already has, but not one in another category", () => {
+    const root = makeContentRoot();
+    writeVocab(root, "phrasal-verb.json", [makeVocabCard("v_9z9z9z9z")]);
+    const input = writeInput(root, "new.json", [
+      makeVocabInput({ headword: "Give up" }),
+      makeVocabInput({ category: "idiom" }),
+      makeVocabInput({ category: "idiom" }),
+    ]);
+    const run = vocab(root, ["add", input, "--json"]);
+    const result = jsonOut(run) as {
+      admitted: { category: string }[];
+      dropped: { index: number; reasons: { rule: string; message: string }[] }[];
+    };
+    expect(result.admitted.map((card) => card.category)).toEqual(["idiom"]);
+    expect(result.dropped.map((drop) => [drop.index, drop.reasons[0]?.rule])).toEqual([
+      [0, "DUPLICATE"],
+      [2, "DUPLICATE"],
+    ]);
+    expect(result.dropped[0]?.reasons[0]?.message).toBe(
+      "same headword in phrasal-verb as v_9z9z9z9z (card)",
+    );
+  });
+
+  it("drops what fails lint, is not an object, or carries stored keys, and says why", () => {
+    const root = makeContentRoot();
+    const input = writeInput(root, "new.json", [
+      makeVocabInput({ example: "She {{took}} {{up}} tennis." }),
+      "give up",
+      makeVocabInput({ id: "v_2a2a2a2a" }),
+    ]);
+    const run = vocab(root, ["add", input]);
+    expect(run.code).toBe(0);
+    expect(run.out.split("\n")).toEqual([
+      'dropped input[0]  BLANK the blanked words "took up" are not a form of "give up"  give up',
+      "dropped input[1]  INPUT not a card object  ",
+      "dropped input[2]  INPUT must not carry id  give up",
+      "cards:add: 0 admitted, 3 dropped",
+    ]);
+    expect(existsSync(path.join(root, "vocab"))).toBe(false);
+  });
+
+  it("writes nothing under --dry-run", () => {
+    const root = makeContentRoot();
+    const run = vocab(root, [
+      "add",
+      writeInput(root, "new.json", [makeVocabInput()]),
+      "--dry-run",
+    ]);
+    expect(run.out).toMatch(/1 admitted/u);
+    expect(existsSync(path.join(root, "vocab"))).toBe(false);
+  });
+
+  it("does not hold a rebuild against the tombstone it replaces", () => {
+    const root = makeContentRoot();
+    writeUnder(
+      root,
+      "tombstones.jsonl",
+      `${JSON.stringify({ kind: "vocab", id: "v_3a3a3a3a", category: "phrasal-verb", level: 4, headword: "give up", reason: "x", deletedAt: "2026-09-01" })}\n`,
+    );
+    const input = writeInput(root, "new.json", [makeVocabInput()]);
+    expect(vocab(root, ["add", input]).out).toContain(
+      "DUPLICATE same headword in phrasal-verb as v_3a3a3a3a (tombstone)",
+    );
+    expect(vocab(root, ["add", input, "--replacing", "v_3a3a3a3a"]).out).toContain(
+      "1 admitted",
+    );
+  });
+
+  it("rejects --replacing an id that exists nowhere, and a missing input file", () => {
+    const root = makeContentRoot();
+    const input = writeInput(root, "new.json", [makeVocabInput()]);
+    expect(
+      errorCode(vocab(root, ["add", input, "--replacing", "v_9z9z9z9z"]).err),
+    ).toBe("ERR_CARDS_USAGE");
+    expect(errorCode(vocab(root, ["add"]).err)).toBe("ERR_CARDS_USAGE");
+    expect(errorCode(vocab(root, ["add", writeInput(root, "obj.json", {})]).err)).toBe(
+      "ERR_CARDS_INPUT",
+    );
+  });
+});
+
+describe("cards:update --kind vocab", () => {
+  it("merges fields and meanings, leaves stamps alone, and so re-queues the card", () => {
+    const root = makeContentRoot();
+    writeVocab(root, "phrasal-verb.json", [vocabStamped(makeVocabCard("v_2a2a2a2a"))]);
+    expect(vocab(root, ["queue", "--count"]).out).toBe("0");
+    const edits = writeInput(root, "edits.json", [
+      { id: "v_2a2a2a2a", level: 3, meanings: { ja: "諦める" } },
+    ]);
+    expect(vocab(root, ["update", edits]).out).toBe(
+      "updated v_2a2a2a2a  level, meanings\ncards:update: 1 updated, 0 rejected",
+    );
+    const [card] = vocabFileOf(root, "phrasal-verb.json");
+    expect(card).toMatchObject({ level: 3, meanings: { ja: "諦める" } });
+    expect(vocab(root, ["queue"]).out).toMatch(/^v_2a2a2a2a {2}changed /u);
+  });
+
+  it("moves a recategorized card to its new file under the same id", () => {
+    const root = makeContentRoot();
+    writeVocab(root, "phrasal-verb.json", [makeVocabCard("v_2a2a2a2a")]);
+    const edits = writeInput(root, "edits.json", [
+      { id: "v_2a2a2a2a", category: "idiom" },
+    ]);
+    const run = vocab(root, ["update", edits, "--json"]);
+    expect(jsonOut(run)).toEqual({
+      updated: [
+        { id: "v_2a2a2a2a", fields: ["category"], movedFrom: "phrasal-verb.json" },
+      ],
+      rejected: [],
+    });
+    expect(existsSync(path.join(root, "vocab", "phrasal-verb.json"))).toBe(false);
+    expect(vocabFileOf(root, "idiom.json").map((card) => card["id"])).toEqual([
+      "v_2a2a2a2a",
+    ]);
+  });
+
+  it("rejects entries that would fail lint or touch what it must not", () => {
+    const root = makeContentRoot();
+    writeVocab(root, "phrasal-verb.json", [makeVocabCard("v_2a2a2a2a")]);
+    writeUnder(
+      root,
+      "tombstones.jsonl",
+      `${JSON.stringify({ kind: "vocab", id: "v_3a3a3a3a", category: "word", level: 4, headword: "borrow", reason: "x", deletedAt: "2026-09-01" })}\n`,
+    );
+    const edits = writeInput(root, "edits.json", [
+      { id: "v_2a2a2a2a", meanings: { ja: null } },
+      { id: "v_2a2a2a2a", headword: null },
+      { id: "v_2a2a2a2a", createdAt: "2026-01-01" },
+      { id: "v_2a2a2a2a", meanings: "諦める" },
+      { id: "v_3a3a3a3a", level: 3 },
+      { id: "v_9z9z9z9z", level: 3 },
+      { level: 3 },
+      { id: "v_2a2a2a2a", meanings: { ja: "あきらめる", zh: null } },
+    ]);
+    const run = vocab(root, ["update", edits]);
+    expect(run.out.split("\n")).toEqual([
+      "updated v_2a2a2a2a  (no change)",
+      'rejected v_2a2a2a2a  SHAPE "meanings" holds no language',
+      'rejected v_2a2a2a2a  INPUT "headword" is a core field and cannot be cleared',
+      'rejected v_2a2a2a2a  INPUT "createdAt" is not an editable field',
+      'rejected v_2a2a2a2a  INPUT "meanings" must be an object keyed by language',
+      "rejected v_3a3a3a3a  UNKNOWN_ID this id is tombstoned",
+      "rejected v_9z9z9z9z  UNKNOWN_ID no vocab card has this id",
+      'rejected input[6]  INPUT each entry needs a string "id"',
+      "cards:update: 1 updated, 7 rejected",
+    ]);
+  });
+});
+
+describe("cards:tombstone --kind vocab", () => {
+  it("removes the card and appends a vocab tombstone, so the id is never handed out again", () => {
+    const root = makeContentRoot();
+    writeVocab(root, "phrasal-verb.json", [
+      makeVocabCard("v_2a2a2a2a"),
+      makeVocabCard("v_3a3a3a3a", {
+        headword: "pick up",
+        example: "{{Pick}} me {{up}}.",
+      }),
+    ]);
+    const run = vocab(root, [
+      "tombstone",
+      "--id",
+      "v_2a2a2a2a",
+      "--reason",
+      "duplicate: test",
+      "--replaced-by",
+      "v_3a3a3a3a",
+    ]);
+    expect(run.out).toBe("tombstoned v_2a2a2a2a → v_3a3a3a3a: duplicate: test");
+    expect(tombstoneLines(root)).toEqual([
+      {
+        kind: "vocab",
+        id: "v_2a2a2a2a",
+        category: "phrasal-verb",
+        level: 4,
+        headword: "give up",
+        reason: "duplicate: test",
+        deletedAt: "2026-09-22",
+        replacedBy: "v_3a3a3a3a",
+      },
+    ]);
+    expect(vocabFileOf(root, "phrasal-verb.json").map((card) => card["id"])).toEqual([
+      "v_3a3a3a3a",
+    ]);
+    expect(
+      runCards(root, ["new-id", "--kind", "vocab"], { random: () => 0 }).err,
+    ).toMatch(/ERR_CARDS_ID_SPACE/u);
+    expect(
+      vocab(root, ["tombstone", "--id", "v_2a2a2a2a", "--reason", "again"]).out,
+    ).toBe("already tombstoned v_2a2a2a2a");
+    // The drill's commands still read the log with a vocab line in it.
+    expect(runCards(root, ["show", "--tombstones", "--brief"]).out).toBe("none");
+  });
+
+  it("deletes the file of the last card in a category", () => {
+    const root = makeContentRoot();
+    writeVocab(root, "phrasal-verb.json", [makeVocabCard("v_2a2a2a2a")]);
+    expect(vocab(root, ["tombstone", "--id", "v_2a2a2a2a", "--reason", "x"]).code).toBe(
+      0,
+    );
+    expect(existsSync(path.join(root, "vocab", "phrasal-verb.json"))).toBe(false);
+  });
+
+  it.each([
+    ["no --id", ["--reason", "x"], "ERR_CARDS_USAGE"],
+    ["an empty --reason", ["--id", "v_2a2a2a2a", "--reason", " "], "ERR_CARDS_USAGE"],
+    ["an unknown id", ["--id", "v_9z9z9z9z", "--reason", "x"], "ERR_CARDS_UNKNOWN_ID"],
+    ["a drill id", ["--id", "c_2a2a2a2a", "--reason", "x"], "ERR_CARDS_UNKNOWN_ID"],
+    [
+      "--replaced-by itself",
+      ["--id", "v_2a2a2a2a", "--reason", "x", "--replaced-by", "v_2a2a2a2a"],
+      "ERR_CARDS_USAGE",
+    ],
+    [
+      "--replaced-by an unknown id",
+      ["--id", "v_2a2a2a2a", "--reason", "x", "--replaced-by", "v_9z9z9z9z"],
+      "ERR_CARDS_UNKNOWN_ID",
+    ],
+  ])("refuses %s", (_label, argv, code) => {
+    const root = makeContentRoot();
+    writeVocab(root, "phrasal-verb.json", [makeVocabCard("v_2a2a2a2a")]);
+    writeCards(root, "work/meetings.json", [makeCard("c_2a2a2a2a")]);
+    const run = vocab(root, ["tombstone", ...argv]);
+    expect(errorCode(run.err)).toBe(code);
+    expect(vocabFileOf(root, "phrasal-verb.json")).toHaveLength(1);
+  });
+
+  it("refuses a malformed vocab tombstone line", () => {
+    const root = makeContentRoot();
+    writeUnder(
+      root,
+      "tombstones.jsonl",
+      `${JSON.stringify({ kind: "vocab", id: "v_2a2a2a2a" })}\n`,
+    );
+    expect(errorCode(vocab(root, ["lint"]).err)).toBe("ERR_CARDS_TOMBSTONES");
+    writeUnder(
+      root,
+      "tombstones.jsonl",
+      `${JSON.stringify({ kind: "grammar", id: "g_1" })}\n`,
+    );
+    expect(errorCode(runCards(root, ["lint"]).err)).toBe("ERR_CARDS_TOMBSTONES");
+  });
+});
+
+describe("cards:stamp --kind vocab", () => {
+  it("stamps the core and every meaning with the hash, perspectives version and date", () => {
+    const root = makeContentRoot();
+    writeVocab(root, "phrasal-verb.json", [makeVocabCard("v_2a2a2a2a")]);
+    const run = vocab(root, ["stamp", "--ids", "v_2a2a2a2a"]);
+    expect(run.out).toBe("stamped v_2a2a2a2a core, meanings.ja");
+    const [card] = vocabFileOf(root, "phrasal-verb.json");
+    const expected = vocabStamped(makeVocabCard("v_2a2a2a2a")).stamps;
+    expect(card?.["stamps"]).toEqual({
+      core: { ...expected["core"], at: "2026-09-22" },
+      "meanings.ja": { ...expected["meanings.ja"], at: "2026-09-22" },
+    });
+  });
+
+  it("stamps one meaning alone with --field", () => {
+    const root = makeContentRoot();
+    writeVocab(root, "phrasal-verb.json", [makeVocabCard("v_2a2a2a2a")]);
+    expect(
+      vocab(root, ["stamp", "--ids", "v_2a2a2a2a", "--field", "meanings.ja"]).out,
+    ).toBe("stamped v_2a2a2a2a meanings.ja");
+    expect(vocab(root, ["queue"]).out).toMatch(/^v_2a2a2a2a {2}unstamped /u);
+  });
+
+  it("refuses a card that fails lint and an unknown id, but stamps the rest", () => {
+    const root = makeContentRoot();
+    writeVocab(root, "phrasal-verb.json", [
+      makeVocabCard("v_2a2a2a2a"),
+      makeVocabCard("v_3a3a3a3a", { headword: "pick up", example: "No blank here." }),
+    ]);
+    const run = vocab(root, ["stamp", "--ids", "v_2a2a2a2a,v_3a3a3a3a,v_9z9z9z9z"]);
+    expect(run.code).toBe(1);
+    expect(errorCode(run.err)).toBe("ERR_CARDS_STAMP_REFUSED");
+    expect(run.err).toContain(
+      "refused: v_9z9z9z9z (does not exist); v_3a3a3a3a (BLANK)",
+    );
+    expect(run.out).toBe("stamped v_2a2a2a2a core, meanings.ja");
+  });
+
+  it.each([
+    ["no --ids", [], "ERR_CARDS_USAGE"],
+    [
+      "a field that is not a meaning",
+      ["--ids", "v_2a2a2a2a", "--field", "headword"],
+      "ERR_CARDS_UNKNOWN_FIELD",
+    ],
+    [
+      "a language with no meanings",
+      ["--ids", "v_2a2a2a2a", "--field", "meanings.zh"],
+      "ERR_CARDS_UNKNOWN_FIELD",
+    ],
+  ])("refuses %s", (_label, argv, code) => {
+    const root = makeContentRoot();
+    writeVocab(root, "phrasal-verb.json", [makeVocabCard("v_2a2a2a2a")]);
+    expect(errorCode(vocab(root, ["stamp", ...argv]).err)).toBe(code);
+  });
+});
+
+describe("cards:queue --kind vocab", () => {
+  function queueRoot(): string {
+    const root = makeContentRoot();
+    const current = vocabStamped(makeVocabCard("v_2a2a2a2a"));
+    const outdated = vocabStamped(
+      makeVocabCard("v_3a3a3a3a", {
+        headword: "pick up",
+        example: "{{Pick}} me {{up}}.",
+      }),
+      1,
+    );
+    const changed = {
+      ...vocabStamped(
+        makeVocabCard("v_4a4a4a4a", {
+          headword: "put off",
+          example: "Don't {{put}} it {{off}}.",
+        }),
+      ),
+      level: 5,
+    };
+    const meaningChanged = {
+      ...vocabStamped(makeVocabCard("v_5a5a5a5a", { category: "idiom" })),
+      meanings: { ja: "諦める" },
+    };
+    writeVocab(root, "phrasal-verb.json", [current, outdated, changed]);
+    writeVocab(root, "idiom.json", [
+      meaningChanged,
+      makeVocabCard("v_6a6a6a6a", {
+        category: "idiom",
+        headword: "pick up",
+        example: "{{Pick}} me {{up}}.",
+      }),
+      makeVocabCard("v_7a7a7a7a", { category: "idiom", level: 0 }),
+    ]);
+    return root;
+  }
+
+  it("orders lint errors, unstamped, changed, then outdated, and leaves current cards out", () => {
+    const run = vocab(queueRoot(), ["queue"]);
+    expect(run.out.split("\n")).toEqual([
+      "v_7a7a7a7a  lint-error  idiom L0  give up",
+      "v_6a6a6a6a  unstamped  idiom L4  pick up",
+      "v_4a4a4a4a  changed  phrasal-verb L5  put off",
+      "v_5a5a5a5a  changed  idiom L4  give up",
+      "v_3a3a3a3a  outdated  phrasal-verb L4  pick up",
+      "5 queued, 5 listed",
+    ]);
+  });
+
+  it("filters by category and level, counts, limits, and prints JSON with lint errors", () => {
+    const root = queueRoot();
+    expect(vocab(root, ["queue", "category=idiom", "--count"]).out).toBe("3");
+    expect(vocab(root, ["queue", "level=5", "--count"]).out).toBe("1");
+    expect(vocab(root, ["queue", "--limit", "1"]).out).toBe(
+      "v_7a7a7a7a  lint-error  idiom L0  give up\n5 queued, 1 listed",
+    );
+    const [first] = jsonOut(vocab(root, ["queue", "--json", "--limit", "1"])) as {
+      reason: string;
+      errors: { rule: string }[];
+    }[];
+    expect(first?.reason).toBe("lint-error");
+    expect(first?.errors.map((finding) => finding.rule)).toEqual(["LEVEL"]);
+  });
+
+  it("lists every --ids card, current ones too, and reports an unknown id", () => {
+    const run = vocab(queueRoot(), ["queue", "--ids", "v_2a2a2a2a,v_9z9z9z9z"]);
+    expect(run.out).toBe(
+      "v_2a2a2a2a  current  phrasal-verb L4  give up\n1 queued, 1 listed",
+    );
+    expect(run.err).toBe("unknown id v_9z9z9z9z: does not exist");
+  });
+});
+
+describe("cards:show --kind vocab", () => {
+  function showRoot(): string {
+    const root = makeContentRoot();
+    writeVocab(root, "phrasal-verb.json", [vocabStamped(makeVocabCard("v_2a2a2a2a"))]);
+    writeVocab(root, "phrase.json", [makeVocabCard("v_3a3a3a3a", PHRASE)]);
+    writeVocab(root, "word.json", [{ id: "v_4a4a4a4a", category: "word" }]);
+    writeUnder(
+      root,
+      "tombstones.jsonl",
+      [
+        JSON.stringify({
+          id: "c_9z9z9z9z",
+          ja: "削除",
+          en: "Deleted.",
+          topic: "work",
+          subtopic: "meetings",
+          level: 1,
+          reason: "x",
+          deletedAt: "2026-09-01",
+        }),
+        JSON.stringify({
+          kind: "vocab",
+          id: "v_8a8a8a8a",
+          category: "word",
+          level: 3,
+          headword: "borrow",
+          reason: "too easy",
+          deletedAt: "2026-09-02",
+          replacedBy: "v_4a4a4a4a",
+        }),
+        JSON.stringify({
+          kind: "vocab",
+          id: "v_9a9a9a9a",
+          category: "idiom",
+          level: 5,
+          headword: "hit the road",
+          reason: "dup",
+          deletedAt: "2026-09-03",
+        }),
+        "",
+      ].join("\n"),
+    );
+    return root;
+  }
+
+  it("prints a category briefly", () => {
+    expect(
+      vocab(showRoot(), ["show", "category=phrase,phrasal-verb", "--brief"]).out,
+    ).toBe("give up (phrasal-verb)\nno worries (phrase)");
+    expect(vocab(showRoot(), ["show", "category=idiom", "--brief"]).out).toBe("none");
+  });
+
+  it("prints full cards with their status, a dialogue on one line", () => {
+    const run = vocab(showRoot(), ["show", "--level", "3-4"]);
+    expect(run.out.split("\n")).toEqual([
+      "v_2a2a2a2a  phrasal-verb L4  current",
+      "  headword: give up",
+      "  definition: to stop trying to do something because it is too hard",
+      "  example: She was so tired that she {{gave}} {{up}} halfway.",
+      "  example2: Don't give up; you're almost there.",
+      '  meanings: {"ja":"あきらめる"}',
+      "v_3a3a3a3a  phrase L3  unstamped",
+      "  headword: no worries",
+      "  definition: said to tell someone that something is not a problem",
+      "  example: A: Sorry, I forgot to call you back. / B: {{No worries}}.",
+      "  example2: A: Thanks for waiting. / B: No worries, I just got here.",
+      '  meanings: {"ja":"気にしないで"}',
+      "2 vocab cards",
+    ]);
+  });
+
+  it("prints a malformed card without failing, and cards as JSON", () => {
+    expect(vocab(showRoot(), ["show", "--ids", "v_4a4a4a4a"]).out).toContain(
+      "v_4a4a4a4a  word Lundefined  lint-error",
+    );
+    expect(
+      jsonOut(vocab(showRoot(), ["show", "--ids", "v_3a3a3a3a", "--json"])),
+    ).toEqual([makeVocabCard("v_3a3a3a3a", PHRASE)]);
+  });
+
+  it("prints vocab tombstones only, briefly, in full and as JSON", () => {
+    const root = showRoot();
+    expect(vocab(root, ["show", "--tombstones", "--brief"]).out).toBe(
+      "borrow (word)\nhit the road (idiom)",
+    );
+    expect(
+      vocab(root, ["show", "--tombstones", "category=word"]).out.split("\n"),
+    ).toEqual([
+      "v_8a8a8a8a  word L3  deleted 2026-09-02 → v_4a4a4a4a: too easy",
+      "  headword: borrow",
+      "1 tombstones",
+    ]);
+    expect(
+      vocab(root, ["show", "--tombstones", "--ids", "v_9a9a9a9a", "--json"]).out,
+    ).toContain('"headword": "hit the road"');
+    expect(
+      vocab(root, ["show", "--tombstones", "--brief", "category=phrase"]).out,
+    ).toBe("none");
+  });
+
+  it("rejects a malformed --level", () => {
+    expect(errorCode(vocab(showRoot(), ["show", "--level", "0"]).err)).toBe(
+      "ERR_CARDS_USAGE",
+    );
+  });
+});
+
+describe("cards:stats --kind vocab", () => {
+  function statsRoot(): string {
+    const root = makeContentRoot();
+    writeVocab(root, "phrasal-verb.json", [
+      vocabStamped(makeVocabCard("v_2a2a2a2a")),
+      makeVocabCard("v_3a3a3a3a", {
+        headword: "pick up",
+        example: "{{Pick}} me {{up}}.",
+        level: 5,
+      }),
+    ]);
+    writeVocab(root, "word.json", [
+      vocabStamped(
+        makeVocabCard("v_4a4a4a4a", {
+          category: "word",
+          headword: "borrow",
+          example: "Can I {{borrow}} it?",
+          level: 3,
+        }),
+      ),
+    ]);
+    writeUnder(
+      root,
+      "tombstones.jsonl",
+      `${JSON.stringify({ kind: "vocab", id: "v_9a9a9a9a", category: "word", level: 3, headword: "lend", reason: "x", deletedAt: "2026-09-01" })}\n`,
+    );
+    return root;
+  }
+
+  it("summarizes in a few lines with --short", () => {
+    expect(vocab(statsRoot(), ["stats", "--short"]).out.split("\n")).toEqual([
+      "vocab cards: 3 (shown 2; lint-error 0, unstamped 1, changed 0, outdated 0, current 2)",
+      "tombstones: 1",
+      "cells: 40, empty 37",
+    ]);
+  });
+
+  it("breaks down by category and level, with each category's total", () => {
+    const lines = vocab(statsRoot(), ["stats"]).out.split("\n");
+    expect(lines.slice(4)).toEqual([
+      "by category × level: L1 L2 L3 L4 L5 L6 L7 L8 L9 L10  total",
+      "  word: 0 0 1 0 0 0 0 0 0 0  1",
+      "  idiom: 0 0 0 0 0 0 0 0 0 0  0",
+      "  phrasal-verb: 0 0 0 1 1 0 0 0 0 0  2",
+      "  phrase: 0 0 0 0 0 0 0 0 0 0  0",
+    ]);
+  });
+
+  it("prints JSON", () => {
+    const stats = jsonOut(vocab(statsRoot(), ["stats", "--json"])) as Record<
+      string,
+      unknown
+    >;
+    expect(stats).toMatchObject({
+      total: 3,
+      shown: 2,
+      tombstones: 1,
+      byCategoryLevel: { word: { "3": 1 }, "phrasal-verb": { "4": 1, "5": 1 } },
+      cells: { total: 40, empty: 37 },
+    });
+  });
+});
+
+describe("cards:dupes --kind vocab", () => {
+  function dupesRoot(): string {
+    const root = makeContentRoot();
+    writeVocab(root, "phrasal-verb.json", [
+      makeVocabCard("v_2a2a2a2a"),
+      makeVocabCard("v_3a3a3a3a", { headword: "Give up" }),
+    ]);
+    writeVocab(root, "idiom.json", [
+      makeVocabCard("v_4a4a4a4a", { category: "idiom" }),
+    ]);
+    writeUnder(
+      root,
+      "tombstones.jsonl",
+      `${JSON.stringify({ kind: "vocab", id: "v_9a9a9a9a", category: "phrasal-verb", level: 4, headword: "give up", reason: "x", deletedAt: "2026-09-01" })}\n`,
+    );
+    return root;
+  }
+
+  it("lists cards sharing a headword within a category, with each other and with tombstones", () => {
+    expect(vocab(dupesRoot(), ["dupes"]).out.split("\n")).toEqual([
+      "v_2a2a2a2a ~ v_3a3a3a3a (card)  phrasal-verb: give up",
+      "v_2a2a2a2a ~ v_9a9a9a9a (tombstone)  phrasal-verb: give up",
+      "v_3a3a3a3a ~ v_9a9a9a9a (tombstone)  phrasal-verb: Give up",
+      "3 duplicate headwords",
+    ]);
+  });
+
+  it("limits the subjects to --ids and prints JSON", () => {
+    expect(
+      jsonOut(
+        vocab(dupesRoot(), ["dupes", "--ids", "v_4a4a4a4a,v_9z9z9z9z", "--json"]),
+      ),
+    ).toEqual([]);
+  });
+
+  it("checks a writer's draft from --input against the store", () => {
+    const root = dupesRoot();
+    const input = writeInput(root, "draft.json", [
+      { category: "idiom", headword: "GIVE UP" },
+    ]);
+    expect(jsonOut(vocab(root, ["dupes", "--input", input, "--json"]))).toEqual([
+      {
+        a: "input[0]",
+        b: "v_4a4a4a4a",
+        against: "card",
+        category: "idiom",
+        headword: "GIVE UP",
+      },
+    ]);
+    expect(
+      errorCode(
+        vocab(root, [
+          "dupes",
+          "--input",
+          writeInput(root, "bad.json", [{ category: "idiom" }]),
+        ]).err,
+      ),
+    ).toBe("ERR_CARDS_INPUT");
+    expect(
+      errorCode(
+        vocab(root, ["dupes", "--input", writeInput(root, "obj.json", {})]).err,
+      ),
+    ).toBe("ERR_CARDS_INPUT");
+  });
+});
+
+describe("cards:gaps --kind vocab", () => {
+  it("fills the thinnest category × level cells first, at most three each, spread across categories", () => {
+    const root = makeContentRoot();
+    writeVocab(root, "word.json", [
+      makeVocabCard("v_2a2a2a2a", {
+        category: "word",
+        headword: "borrow",
+        example: "Can I {{borrow}} it?",
+        level: 3,
+      }),
+    ]);
+    const { plan, planned } = jsonOut(
+      vocab(root, ["gaps", "12", "level=3", "--json"]),
+    ) as {
+      plan: { category: string; level: number; count: number }[];
+      planned: number;
+    };
+    expect(planned).toBe(12);
+    expect(
+      plan.map(
+        (cell) => `${cell.category} L${String(cell.level)} ×${String(cell.count)}`,
+      ),
+    ).toEqual(["idiom L3 ×3", "phrasal-verb L3 ×3", "phrase L3 ×3", "word L3 ×3"]);
+  });
+
+  it("prints a human plan, and warns of a shortfall", () => {
+    const root = makeContentRoot();
+    const run = vocab(root, ["gaps", "7", "category=word", "level=4-5"]);
+    expect(run.out.split("\n")).toHaveLength(3);
+    expect(run.out).toMatch(
+      /^word L[45] ×3\nword L[45] ×3\n6 vocab cards planned in 2 cells$/u,
+    );
+    expect(run.err).toMatch(/^WARN cards:gaps planned 6 of 7 vocab cards/u);
+  });
+
+  it.each([
+    ["no count", []],
+    ["a zero count", ["0"]],
+  ])("rejects %s", (_label, argv) => {
+    expect(errorCode(vocab(makeContentRoot(), ["gaps", ...argv]).err)).toBe(
+      "ERR_CARDS_USAGE",
+    );
+  });
+});
+
+describe("cards:new-id --kind vocab", () => {
+  it("prints v_ ids unused by any card or tombstone of either kind", () => {
+    const root = makeContentRoot();
+    writeVocab(root, "phrasal-verb.json", [makeVocabCard("v_2a2a2a2a")]);
+    const ids = vocab(root, ["new-id", "3"]).out.split("\n");
+    expect(new Set(ids).size).toBe(3);
+    for (const id of ids) expect(id).toMatch(/^v_(?:[2-9][a-hjkmnp-z]){4}$/u);
+    expect(vocab(root, ["new-id"]).out.split("\n")).toHaveLength(1);
+    const exhausted = runCards(root, ["new-id", "--kind", "vocab"], {
+      random: () => 0,
+    });
+    expect(errorCode(exhausted.err)).toBe("ERR_CARDS_ID_SPACE");
+  });
+
+  it("rejects a count outside 1–1000", () => {
+    expect(errorCode(vocab(makeContentRoot(), ["new-id", "1001"]).err)).toBe(
+      "ERR_CARDS_USAGE",
+    );
+  });
+});
+
+describe("vocab write safety", () => {
+  it("shares the drill's lock", () => {
+    const root = makeContentRoot();
+    writeUnder(root, ".cards.lock", "123\n");
+    const run = vocab(root, ["add", writeInput(root, "add.json", [makeVocabInput()])]);
+    expect(errorCode(run.err)).toBe("ERR_CARDS_BUSY");
+    expect(existsSync(path.join(root, "vocab"))).toBe(false);
+  });
+
+  it("refuses a vocab file that is not an array", () => {
+    const root = makeContentRoot();
+    writeUnder(root, "vocab/word.json", "{}\n");
+    const run = vocab(root, ["lint"]);
+    expect(errorCode(run.err)).toBe("ERR_CARDS_CARD_FILE");
+    expect(run.err).toContain("vocab/word.json");
   });
 });

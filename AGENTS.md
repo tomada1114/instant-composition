@@ -95,6 +95,7 @@ pnpm cards:show    # print cards or tombstones (--brief, --json)
 pnpm cards:dupes   # near-duplicate candidates within a subtopic and against tombstones
 pnpm cards:stats   # totals, review status, coverage by cell, grammar usage
 pnpm cards:new-id  # print fresh card ids
+pnpm cards:lint --kind vocab # every cards:* command, run on content/vocab/'s vocabulary cards
 pnpm catalog:build # write content/'s snapshot per language pair to dist/catalog/<target>/<l1>.json
 pnpm contracts:openapi # rewrite packages/contracts/openapi.json from the schemas
 pnpm cdk synth -c stage=dev # run the CDK CLI in infra/; synthesis needs no AWS credentials
@@ -150,7 +151,7 @@ on every edit is slow enough that it stops being run at all.
 | A test                                               | `pnpm exec vitest run tests/<name>.test.ts`                            |
 | A script under `scripts/`                            | `pnpm exec vitest run tests/<script>.test.ts`                          |
 | A script under `scripts/cards/`                      | `pnpm exec vitest run tests/cards-*.test.ts`                           |
-| Anything under `content/`                            | `pnpm cards:lint`                                                      |
+| Anything under `content/`                            | `pnpm cards:lint` and `pnpm cards:lint --kind vocab`                   |
 | A skill under `.agents/skills/`                      | `pnpm agents:sync && pnpm agents:check && pnpm test`                   |
 | `package.json`, `pnpm-workspace.yaml`                | `pnpm install`, then `pnpm check:source`                               |
 | Markdown                                             | `pnpm fix`                                                             |
@@ -312,6 +313,17 @@ lists `taxonomy.json`, `levels.json` and `grammar.json`, and the writing and rev
 guides under `guides/`. A card is shown only when its `stamps.core` hash matches its
 current fields — `scripts/cards/schema.mjs` holds that rule, and the snapshot carries
 only the cards it admits.
+
+Vocabulary cards are the second content kind: `vocab/<category>.json` (`word`, `idiom`,
+`phrasal-verb`, `phrase`; one id-sorted array each), with `v_` ids, an English
+definition, a cloze `example` (a two-line `A:`/`B:` dialogue for a `phrase`), `example2`
+and `meanings` keyed by first language. `stamps.core` covers the English fields and each
+meaning has its own stamp, so one is shown for a first language only while both match
+(`scripts/cards/vocab-schema.mjs`), and the snapshot carries it as `vocab` with that
+meaning; `scripts/cards/vocab-rules.mjs` holds its lint limits. Every `pnpm cards:*`
+command takes `--kind vocab` to work on them; without it, a command means the drill's
+cards only. A vocabulary card's tombstone goes to the same `tombstones.jsonl`, marked
+`"kind": "vocab"`.
 
 Cards are written only by the three card skills below through `pnpm cards:*`, never by
 hand-editing the JSON: the commands assign ids, lint, check for near-duplicates, keep

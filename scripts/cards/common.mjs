@@ -126,9 +126,26 @@ export function findingsByCard(store, context) {
 }
 
 /**
+ * The cards of one kind and the tombstones of that kind: a loaded store is
+ * one for the drill, and `vocabSource` makes one for vocabulary.
+ *
+ * @typedef {object} IdSource
+ * @property {import("./store.mjs").CardEntry[]} cards
+ * @property {readonly { id: string }[]} tombstones
+ */
+
+/**
+ * @param {import("./store.mjs").Store} store - The loaded content root.
+ * @returns {IdSource} Its vocabulary cards and their tombstones.
+ */
+export function vocabSource(store) {
+  return { cards: store.vocab, tombstones: store.vocabTombstones };
+}
+
+/**
  * Find a stored card by id.
  *
- * @param {import("./store.mjs").Store} store - The loaded content root.
+ * @param {IdSource} store - The cards to look in.
  * @param {string} id - Requested id.
  * @param {string} next - The next step to print for an unknown id.
  * @returns {import("./store.mjs").CardEntry} The entry.
@@ -158,7 +175,7 @@ export function entryById(store, id, next) {
  * Split requested ids into the stored cards and the ids no card has, so one
  * stale or deleted id is reported on its own instead of failing the batch.
  *
- * @param {import("./store.mjs").Store} store - The loaded content root.
+ * @param {IdSource} store - The cards to look in.
  * @param {readonly string[]} ids - Requested ids.
  * @returns {{ entries: import("./store.mjs").CardEntry[], unknown: UnknownId[] }}
  *   The entries in request order, and the ids that matched none.

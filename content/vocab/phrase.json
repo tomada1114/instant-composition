@@ -1,0 +1,252 @@
+[
+  {
+    "id": "v_3f4h2z5d",
+    "category": "phrase",
+    "level": 6,
+    "headword": "that makes sense",
+    "definition": "said to show you understand and accept a reason",
+    "example": "A: We moved the meeting because the client is busy.\nB: {{That makes sense}}.",
+    "example2": "A: I'll leave early to avoid traffic.\nB: That makes sense.",
+    "meanings": {
+      "ja": "なるほど、納得です"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:77cfd1d5875978e66ceab7bbc0602383552f17f63c4e0d941d6520332d09452a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:2a8950d9ed015a109770a6fc248fe9fa49de3268ed00507ef5f00ccd9843f19f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3p8j9a3w",
+    "category": "phrase",
+    "level": 6,
+    "headword": "I'm afraid not",
+    "definition": "a polite way to say no or give bad news",
+    "example": "A: Is there a later train tonight?\nB: {{I'm afraid not}}.",
+    "example2": "A: Can I change my seat?\nB: I'm afraid not; the flight is full.",
+    "meanings": {
+      "ja": "残念ながら、そうではありません"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:21904b968a87b6c01718fe0d320457e92cc16e59e5418992acacd91a15da1877",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:0f5e6e75fd3e5d1cec92b668d02adbcb20976db318880a59d76a7c4da03dedc5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3u3u4r8k",
+    "category": "phrase",
+    "level": 7,
+    "headword": "I'll keep that in mind",
+    "definition": "said to show you will remember some advice for later",
+    "example": "A: The office closes early on Fridays.\nB: Thanks, {{I'll keep that in mind}}.",
+    "example2": "A: Book early, because tickets sell out fast.\nB: Good tip, I'll keep that in mind.",
+    "meanings": {
+      "ja": "覚えておきます"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:88203bd185ed28c5b5b70025299ff4e5c17a934395b8667167690949a1cff11f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:9cf8a14b34f713dfe7852fb82d2ecf97e8c09ddc3aee34fa5e8707f79bdcdcff",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3y9n7g8h",
+    "category": "phrase",
+    "level": 5,
+    "headword": "how's it going?",
+    "definition": "a friendly way to ask someone how they are",
+    "example": "A: Hey, Tom! {{How's it going}}?\nB: Not bad, thanks.",
+    "example2": "A: How's it going with the new job?\nB: Pretty well, actually.",
+    "meanings": {
+      "ja": "調子はどう？"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cea9dd0c046a55d733bd374e01eac7cf142f1743995d9ed2f1fbecf37840dd3e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:d7670378a0cb8026f45887b4598856ac5330aef82f7734f6b8925b891a6fe28b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_4n9t2f2z",
+    "category": "phrase",
+    "level": 4,
+    "headword": "it's up to you",
+    "definition": "said when you let someone else make the decision",
+    "example": "A: Should we get pizza or sushi?\nB: {{It's up to you}}.",
+    "example2": "You can stay or go home; it's up to you.",
+    "meanings": {
+      "ja": "あなた次第だよ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:415008afe4b9c096057f8222d0b8f91080ed8a4614558711fce8abc26ae51c5f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:809958282af9e11ba97a09df3cf4ea3f802369e2c8646f8ac4843814a2e3f6bc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5x3t6s2x",
+    "category": "phrase",
+    "level": 4,
+    "headword": "same here",
+    "definition": "said to show that you feel or think the same thing",
+    "example": "A: I'm so tired today.\nB: {{Same here}}.",
+    "example2": "A: I can't wait for the holidays.\nB: Same here!",
+    "meanings": {
+      "ja": "私も同じ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bac53f6e3c3649cb8bc341733d6fa58b0aa9990545858255941f630c880cbc79",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:82700881f8de349329c94dff4ff96cb73114ef35a440836121c11ac4c10a281a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_6p3b9p2t",
+    "category": "phrase",
+    "level": 3,
+    "headword": "long time no see",
+    "definition": "said when you meet someone you have not seen for a long time",
+    "example": "A: {{Long time no see}}! How have you been?\nB: Great, thanks.",
+    "example2": "A: Long time no see!\nB: I know, it's been years.",
+    "meanings": {
+      "ja": "久しぶり"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a0e84eab3294136caea15bde196d6fedbe876ef822a07d39d2a2fffb4b6af91d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:ceba133d39960a68ba24177f58dbedb539fcbcfc47b08018dcd40969560a8859",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_6y4e7h9k",
+    "category": "phrase",
+    "level": 7,
+    "headword": "don't get me wrong",
+    "definition": "said before something that might be misunderstood or sound rude",
+    "example": "A: So you don't like the plan?\nB: {{Don't get me wrong}}, it's good, but it's expensive.",
+    "example2": "Don't get me wrong, I like my job, but the hours are long.",
+    "meanings": {
+      "ja": "誤解しないでね"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:301eb2835b4e0a548121b99688b058af19329d4c6eca3e4292a7e2a3d770a5da",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:b3617cb31c9e4289f1c6aa16d1d2e8e7e2bd33416e99fd440b45cc044c665f24",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_8f4u7s9y",
+    "category": "phrase",
+    "level": 5,
+    "headword": "I'll take it",
+    "definition": "said in a shop when you decide to buy something",
+    "example": "A: This jacket is twenty percent off today.\nB: Great, {{I'll take it}}.",
+    "example2": "A: The room has a view of the sea.\nB: Perfect, I'll take it.",
+    "meanings": {
+      "ja": "これにします"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ac7d3bbcd7439a7e703c7356fcab70f435fe46469af21de32312c3a3b7e1f312",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:2389a59f6a1569f4ad0bcbf21ae2943327078bc51028bd4d6d9c19c58b4bfa05",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9j2q5h8n",
+    "category": "phrase",
+    "level": 3,
+    "headword": "no worries",
+    "definition": "said to tell someone that something is not a problem",
+    "example": "A: Sorry, I forgot to call you back.\nB: {{No worries}}.",
+    "example2": "A: Thanks for waiting.\nB: No worries, I just got here.",
+    "meanings": {
+      "ja": "気にしないで"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f9b5e6a6c11488c4d35fe61761eeddd6647c4d31a72f8e01327eb68c1da5fea",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:f0c0dd44b7be4639642167ceeae14e57d4d4070adfdb0fc1a7b34b847fa33b83",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  }
+]

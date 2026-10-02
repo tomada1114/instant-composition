@@ -1,6 +1,7 @@
 // Reading and writing everything under the content root: the tag lists, the
-// card files, and the tombstone log. Every write goes through here so the
-// files keep one canonical shape.
+// card files of both kinds (the drill's under cards/, vocabulary under
+// vocab/), and the tombstone log they share. Every write goes through here so
+// the files keep one canonical shape.
 import {
   appendFileSync,
   closeSync,
@@ -22,6 +23,7 @@ import { parseJson, readKey } from "../lib/json.mjs";
 import { repoRoot, runNode } from "../lib/node-tools.mjs";
 import { CardsError } from "./errors.mjs";
 import { CORE_FIELDS } from "./schema.mjs";
+import { VOCAB_CORE_FIELDS } from "./vocab-schema.mjs";
 
 /** The content root this repository ships. */
 export const DEFAULT_ROOT = path.join(repoRoot, "content");
@@ -83,7 +85,8 @@ const MAX_ALLOWANCE = { words: 2, jaChars: 4 };
 /**
  * @typedef {object} CardEntry
  * @property {Record<string, unknown>} raw - The card as stored.
- * @property {string} file - Its file, relative to `cards/`.
+ * @property {string} file - Its file, relative to `cards/` (or `vocab/` for a
+ *   vocabulary card).
  * @property {number} index - Its position in that file.
  */
 
@@ -101,6 +104,22 @@ const MAX_ALLOWANCE = { words: 2, jaChars: 4 };
  */
 
 /**
+ * A deleted vocabulary card. Its line in `tombstones.jsonl` carries
+ * `kind: "vocab"`; a line without a `kind` is a drill card's, as every line
+ * written before vocabulary existed is.
+ *
+ * @typedef {object} VocabTombstone
+ * @property {"vocab"} kind
+ * @property {string} id
+ * @property {string} category
+ * @property {number} level
+ * @property {string} headword
+ * @property {string} reason
+ * @property {string} deletedAt
+ * @property {string} [replacedBy]
+ */
+
+/**
  * @typedef {object} Store
  * @property {string} root - The content root.
  * @property {Lists} lists
@@ -109,7 +128,13 @@ const MAX_ALLOWANCE = { words: 2, jaChars: 4 };
  *   path relative to `cards/`, each as stored.
  * @property {string[]} strayFiles - Files under `cards/` at no
  *   `<topic>/<subtopic>.json` path.
- * @property {Tombstone[]} tombstones
+ * @property {Tombstone[]} tombstones - The drill's tombstones.
+ * @property {CardEntry[]} vocab - Every vocabulary card, file by file.
+ * @property {Map<string, Record<string, unknown>[]>} vocabFiles - Vocabulary
+ *   files by path relative to `vocab/`, each as stored.
+ * @property {string[]} vocabStrayFiles - Files under `vocab/` at no
+ *   `<category>.json` path.
+ * @property {VocabTombstone[]} vocabTombstones
  */
 
 /**
@@ -421,6 +446,35 @@ function listFiles(directory, prefix) {
 
 /**
  * @param {unknown} value - A parsed tombstone line.
+ * @returns {VocabTombstone | undefined} The tombstone, when it has every field.
+ */
+function asVocabTombstone(value) {
+  const id = readKey(value, "id");
+  const category = readKey(value, "category");
+  const level = readKey(value, "level");
+  const headword = readKey(value, "headword");
+  const reason = readKey(value, "reason");
+  const deletedAt = readKey(value, "deletedAt");
+  const replacedBy = readKey(value, "replacedBy");
+  if (
+    typeof id !== "string" ||
+    typeof category !== "string" ||
+    !isInt(level) ||
+    typeof headword !== "string" ||
+    typeof reason !== "string" ||
+    typeof deletedAt !== "string" ||
+    (replacedBy !== undefined && typeof replacedBy !== "string")
+  ) {
+    return undefined;
+  }
+  /** @type {VocabTombstone} */
+  const tombstone = { kind: "vocab", id, category, level, headword, reason, deletedAt };
+  if (replacedBy !== undefined) tombstone.replacedBy = replacedBy;
+  return tombstone;
+}
+
+/**
+ * @param {unknown} value - A parsed tombstone line.
  * @returns {Tombstone | undefined} The tombstone, when it has every field.
  */
 function asTombstone(value) {
@@ -453,71 +507,95 @@ function asTombstone(value) {
 }
 
 /**
+ * @param {string} line - One line of the log.
+ * @returns {Tombstone | VocabTombstone | undefined} What it records, when it
+ *   is a well-formed tombstone of either kind.
+ */
+function parseTombstone(line) {
+  /** @type {unknown} */
+  let value;
+  try {
+    value = parseJson(line);
+  } catch {
+    return undefined;
+  }
+  const kind = readKey(value, "kind");
+  if (kind === "vocab") return asVocabTombstone(value);
+  return kind === undefined ? asTombstone(value) : undefined;
+}
+
+/**
  * @param {string} root - Content root.
- * @returns {Tombstone[]} Every tombstone, in file order.
+ * @returns {{ tombstones: Tombstone[], vocabTombstones: VocabTombstone[] }}
+ *   Every tombstone of each kind, in file order.
  * @throws {CardsError} `ERR_CARDS_TOMBSTONES` on a line that is not one.
  */
 function loadTombstones(root) {
-  const file = path.join(root, "tombstones.jsonl");
-  if (!existsSync(file)) return [];
   /** @type {Tombstone[]} */
   const tombstones = [];
+  /** @type {VocabTombstone[]} */
+  const vocabTombstones = [];
+  const file = path.join(root, "tombstones.jsonl");
+  if (!existsSync(file)) return { tombstones, vocabTombstones };
   for (const [index, line] of readFileSync(file, "utf8").split("\n").entries()) {
     if (line.trim() === "") continue;
-    /** @type {Tombstone | undefined} */
-    let tombstone;
-    try {
-      tombstone = asTombstone(parseJson(line));
-    } catch {
-      tombstone = undefined;
-    }
+    const tombstone = parseTombstone(line);
     if (tombstone === undefined) {
       throw new CardsError("ERR_CARDS_TOMBSTONES", "A tombstone line is malformed.", {
         expected:
-          "one JSON object per line with id, ja, en, topic, subtopic, level, reason, deletedAt",
+          'one JSON object per line: id, ja, en, topic, subtopic, level, reason, deletedAt for a drill card; kind "vocab", id, category, level, headword, reason, deletedAt for a vocabulary card',
         actual: `${displayPath(root, "tombstones.jsonl")} line ${String(index + 1)}`,
         next: "restore the file from git; tombstones are only ever appended by `pnpm cards:tombstone`.",
       });
     }
-    tombstones.push(tombstone);
+    if ("kind" in tombstone) vocabTombstones.push(tombstone);
+    else tombstones.push(tombstone);
   }
-  return tombstones;
+  return { tombstones, vocabTombstones };
 }
 
 /**
- * Load the whole content root.
+ * @typedef {object} CardDirectory
+ * @property {CardEntry[]} cards - Every card, file by file.
+ * @property {Map<string, Record<string, unknown>[]>} files - Card files by path
+ *   relative to the directory, each as stored.
+ * @property {string[]} strayFiles - JSON files at a path `placed` rejects.
+ */
+
+/**
+ * Read every card file under one directory of the content root.
  *
  * @param {string} root - Content root.
- * @returns {Store} Lists, cards and tombstones.
- * @throws {CardsError} When a list, a card file or the tombstone log cannot
- *   be read as JSON of the right outer shape.
+ * @param {string} directory - `cards` or `vocab`.
+ * @param {RegExp} placed - The relative paths a card file may sit at.
+ * @returns {CardDirectory} The cards and files found.
+ * @throws {CardsError} `ERR_CARDS_CARD_FILE` on a file that is not an array.
  */
-export function loadStore(root) {
-  const lists = loadLists(root);
+function loadCardDirectory(root, directory, placed) {
   /** @type {CardEntry[]} */
   const cards = [];
   /** @type {Map<string, Record<string, unknown>[]>} */
   const files = new Map();
   /** @type {string[]} */
   const strayFiles = [];
-  const cardsDirectory = path.join(root, "cards");
+  const absolute = path.join(root, directory);
 
-  for (const file of listFiles(cardsDirectory, "")) {
-    if (!/^[^/]+\/[^/]+\.json$/u.test(file)) {
+  for (const file of listFiles(absolute, "")) {
+    if (!placed.test(file)) {
       strayFiles.push(file);
       continue;
     }
     /** @type {unknown} */
     let parsed;
     try {
-      parsed = parseJson(readFileSync(path.join(cardsDirectory, file), "utf8"));
+      parsed = parseJson(readFileSync(path.join(absolute, file), "utf8"));
     } catch (error) {
       parsed = error;
     }
     if (!Array.isArray(parsed)) {
       throw new CardsError("ERR_CARDS_CARD_FILE", "A card file is not a JSON array.", {
         expected: "a JSON array of card objects",
-        actual: displayPath(root, `cards/${file}`),
+        actual: displayPath(root, `${directory}/${file}`),
         next: "restore the file from git; card files are written only by `pnpm cards:*`.",
       });
     }
@@ -534,7 +612,46 @@ export function loadStore(root) {
     }
     files.set(file, records);
   }
-  return { root, lists, cards, files, strayFiles, tombstones: loadTombstones(root) };
+  return { cards, files, strayFiles };
+}
+
+/**
+ * Load the whole content root.
+ *
+ * @param {string} root - Content root.
+ * @returns {Store} Lists, cards of both kinds and tombstones.
+ * @throws {CardsError} When a list, a card file or the tombstone log cannot
+ *   be read as JSON of the right outer shape.
+ */
+export function loadStore(root) {
+  const lists = loadLists(root);
+  const { cards, files, strayFiles } = loadCardDirectory(
+    root,
+    "cards",
+    /^[^/]+\/[^/]+\.json$/u,
+  );
+  const vocab = loadCardDirectory(root, "vocab", /^[^/]+\.json$/u);
+  const { tombstones, vocabTombstones } = loadTombstones(root);
+  return {
+    root,
+    lists,
+    cards,
+    files,
+    strayFiles,
+    tombstones,
+    vocab: vocab.cards,
+    vocabFiles: vocab.files,
+    vocabStrayFiles: vocab.strayFiles,
+    vocabTombstones,
+  };
+}
+
+/**
+ * @param {string} category - A vocabulary category.
+ * @returns {string} Its file, relative to `vocab/`.
+ */
+export function vocabFile(category) {
+  return `${category}.json`;
 }
 
 /**
@@ -547,7 +664,38 @@ export function loadStore(root) {
  * @returns {Record<string, unknown>} The same card with its keys reordered.
  */
 export function orderCard(raw, optionalNames) {
-  const order = ["id", ...CORE_FIELDS, ...optionalNames, "createdAt", "stamps"];
+  return orderKeys(raw, [
+    "id",
+    ...CORE_FIELDS,
+    ...optionalNames,
+    "createdAt",
+    "stamps",
+  ]);
+}
+
+/**
+ * Put a vocabulary card's keys in the one order every vocabulary file uses:
+ * `id`, the core fields, `meanings`, `createdAt`, `stamps`, then anything else.
+ *
+ * @param {Record<string, unknown>} raw - A vocabulary card.
+ * @returns {Record<string, unknown>} The same card with its keys reordered.
+ */
+export function orderVocabCard(raw) {
+  return orderKeys(raw, [
+    "id",
+    ...VOCAB_CORE_FIELDS,
+    "meanings",
+    "createdAt",
+    "stamps",
+  ]);
+}
+
+/**
+ * @param {Record<string, unknown>} raw - A card.
+ * @param {readonly string[]} order - The keys that come first, in order.
+ * @returns {Record<string, unknown>} The same card with its keys reordered.
+ */
+function orderKeys(raw, order) {
   /** @type {Record<string, unknown>} */
   const ordered = {};
   for (const key of order) {
@@ -670,17 +818,49 @@ export const prettierFormatter = prettierAt(
  * @returns {void}
  */
 export function writeCardFiles(root, files, optionalNames, formatter) {
+  writeSorted(
+    path.join(root, "cards"),
+    files,
+    (raw) => orderCard(raw, optionalNames),
+    formatter,
+  );
+}
+
+/**
+ * Write vocabulary files, each sorted by id with canonical key order, the
+ * same way {@link writeCardFiles} writes the drill's.
+ *
+ * @param {string} root - Content root.
+ * @param {ReadonlyMap<string, readonly Record<string, unknown>[]>} files -
+ *   Card arrays by path relative to `vocab/`.
+ * @param {Formatter} formatter - Formatter for the written files.
+ * @returns {void}
+ */
+export function writeVocabFiles(root, files, formatter) {
+  writeSorted(path.join(root, "vocab"), files, orderVocabCard, formatter);
+}
+
+/**
+ * @param {string} directory - Absolute directory the paths are relative to.
+ * @param {ReadonlyMap<string, readonly Record<string, unknown>[]>} files -
+ *   Card arrays by relative path.
+ * @param {(raw: Record<string, unknown>) => Record<string, unknown>} order -
+ *   Puts one card's keys in canonical order.
+ * @param {Formatter} formatter - Formatter for the written files.
+ * @returns {void}
+ */
+function writeSorted(directory, files, order, formatter) {
   /** @type {{ absolute: string, temp: string | undefined }[]} */
   const plans = [];
   for (const [file, records] of files) {
-    const absolute = path.join(root, "cards", file);
+    const absolute = path.join(directory, file);
     if (records.length === 0) {
       plans.push({ absolute, temp: undefined });
       continue;
     }
     const sorted = [...records]
       .sort((left, right) => compareIds(sortKey(left), sortKey(right)))
-      .map((raw) => orderCard(raw, optionalNames));
+      .map(order);
     // Keeps the `.json` extension so the formatter infers the parser, and a
     // leading dot so the loader never mistakes a leftover for a card file.
     const temp = path.join(
@@ -791,7 +971,7 @@ export function withLock(root, warn, action) {
  * Append tombstones to the log, one JSON object per line.
  *
  * @param {string} root - Content root.
- * @param {readonly Tombstone[]} tombstones - What to append.
+ * @param {readonly (Tombstone | VocabTombstone)[]} tombstones - What to append.
  * @returns {void}
  */
 export function appendTombstones(root, tombstones) {
