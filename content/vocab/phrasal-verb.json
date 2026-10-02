@@ -350,6 +350,20 @@
     }
   },
   {
+    "id": "v_3h8d7d7h",
+    "category": "phrasal-verb",
+    "level": 9,
+    "headword": "water down",
+    "definition": "to make a plan or rule weaker so it has less effect",
+    "example": "The committee {{watered}} {{down}} the new rules after strong complaints.",
+    "example2": "Critics say the final law was watered down too much.",
+    "meanings": {
+      "ja": "骨抜きにする"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_3j7a5k5m",
     "category": "phrasal-verb",
     "level": 5,
@@ -1023,6 +1037,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_5w3u8v8z",
+    "category": "phrasal-verb",
+    "level": 9,
+    "headword": "buckle down",
+    "definition": "to start working hard and seriously on a task",
+    "example": "I need to {{buckle}} {{down}} and finish this report tonight.",
+    "example2": "After a lazy summer, she buckled down for her exams.",
+    "meanings": {
+      "ja": "本腰を入れて取り組む"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_5w7e7k2z",

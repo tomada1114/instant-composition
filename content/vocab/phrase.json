@@ -800,6 +800,20 @@
     }
   },
   {
+    "id": "v_4p6a7e5p",
+    "category": "phrase",
+    "level": 5,
+    "headword": "sorry to keep you waiting",
+    "definition": "said politely when you arrive late to someone who waited for you",
+    "example": "A: Hi, {{sorry}} {{to}} {{keep}} {{you}} {{waiting}}.\nB: Oh, I only just got here myself.",
+    "example2": "A: Sorry to keep you waiting.\nB: That's fine; the doctor is ready now.",
+    "meanings": {
+      "ja": "お待たせしてすみません"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_4q4e8e4a",
     "category": "phrase",
     "level": 10,

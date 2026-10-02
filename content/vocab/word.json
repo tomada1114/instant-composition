@@ -775,6 +775,20 @@
     }
   },
   {
+    "id": "v_5t7d9s9p",
+    "category": "word",
+    "level": 8,
+    "headword": "lucrative",
+    "definition": "making a lot of money for the person doing it",
+    "example": "He left teaching for a more {{lucrative}} job in sales.",
+    "example2": "The company signed a lucrative contract with the airline.",
+    "meanings": {
+      "ja": "利益の大きい"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_5t8h9a3g",
     "category": "word",
     "level": 7,
@@ -1498,6 +1512,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_7w2h5f5p",
+    "category": "word",
+    "level": 9,
+    "headword": "paltry",
+    "definition": "so small in amount that it seems unfair or not worth much",
+    "example": "They offered him a {{paltry}} bonus after a record year.",
+    "example2": "She earned a paltry sum for months of work.",
+    "meanings": {
+      "ja": "わずかな、雀の涙の"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_8b8f4n7f",

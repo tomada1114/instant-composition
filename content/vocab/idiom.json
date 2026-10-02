@@ -1425,6 +1425,20 @@
     }
   },
   {
+    "id": "v_7n4n6y5a",
+    "category": "idiom",
+    "level": 1,
+    "headword": "by heart",
+    "definition": "remembered so well that you can say it without looking",
+    "example": "Tom knows the whole song {{by}} {{heart}}.",
+    "example2": "We learned the poem by heart for school.",
+    "meanings": {
+      "ja": "暗記して"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_7p4a6d5z",
     "category": "idiom",
     "level": 6,
@@ -1448,6 +1462,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_7p4q2s8j",
+    "category": "idiom",
+    "level": 1,
+    "headword": "all of a sudden",
+    "definition": "very quickly and when nobody expects it",
+    "example": "We were walking home when, {{all}} {{of}} {{a}} {{sudden}}, it began to rain.",
+    "example2": "All of a sudden, the lights went out.",
+    "meanings": {
+      "ja": "突然、不意に"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_7r5j8j2v",
@@ -2048,5 +2076,19 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_9x4u2k3g",
+    "category": "idiom",
+    "level": 1,
+    "headword": "once upon a time",
+    "definition": "the words that start many old stories for children",
+    "example": "{{Once}} {{upon}} {{a}} {{time}}, a small girl lived in a forest.",
+    "example2": "My mother read me that story every night.",
+    "meanings": {
+      "ja": "昔々"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   }
 ]
