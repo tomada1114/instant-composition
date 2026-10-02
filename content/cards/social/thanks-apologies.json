@@ -172,8 +172,8 @@
     "ja": "私が感謝するのは君の口の堅さだ。",
     "en": "It's your discretion that I appreciate.",
     "alternatives": [
-      "Your discretion is what I'm grateful for.",
-      "What I appreciate is your keeping things confidential."
+      "What I appreciate is your discretion.",
+      "It's your confidentiality that I appreciate."
     ],
     "point": "discretion は秘密を漏らさない配慮も表す。",
     "topic": "social",
@@ -181,7 +181,13 @@
     "level": 10,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5223d6604970e5c80692cb21202309271637223ccffecd22bc06c459705e6821",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3u9m7j6e",
@@ -368,11 +374,11 @@
   },
   {
     "id": "c_5f9b5u9p",
-    "ja": "君の存在を当然とは決して思わない。",
+    "ja": "君を当然の存在とは決して思わない。",
     "en": "Never will I take you for granted.",
     "alternatives": [
-      "I'll never treat your support as a given.",
-      "I won't ever take your kindness for granted."
+      "I'll never take you for granted.",
+      "I'll always appreciate having you around."
     ],
     "point": "take you for granted は君のありがたみを忘れること。",
     "topic": "social",
@@ -380,7 +386,13 @@
     "level": 10,
     "grammar": ["inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3c4f27344401966c9482c27cb0fcdabd2040895affe5ad79bf20a11f2aa5795f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5g7k8r7x",
@@ -592,11 +604,11 @@
   },
   {
     "id": "c_7y6e2m5j",
-    "ja": "君が事の重大さを察してくれて感謝する。",
+    "ja": "君が重大さを察してくれて私は感謝する。",
     "en": "I'm grateful you knew what was at stake.",
     "alternatives": [
-      "I'm grateful you understood how much was at stake.",
-      "Thank you for realizing what was at stake."
+      "I'm grateful you grasped what was at stake.",
+      "Thank you for understanding what was at stake."
     ],
     "point": "at stake は結果次第で失われかねないものを表す。",
     "topic": "social",
@@ -604,7 +616,13 @@
     "level": 10,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f1d0c0d3aeafc5f421df92f5544516194d6bdbb4b569c466cbb0e758921f750c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8a6x3y2t",

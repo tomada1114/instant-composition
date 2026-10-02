@@ -480,16 +480,22 @@
     "ja": "私はまだ峠を越えたとは言えない。",
     "en": "I wouldn't say I'm out of the woods.",
     "alternatives": [
-      "I can't quite say I'm in the clear yet.",
-      "I wouldn't claim my troubles are behind me."
+      "I wouldn't say I'm in the clear.",
+      "I can't say my troubles are over."
     ],
     "point": "out of the woods は危険や問題を脱した状態。",
     "topic": "social",
     "subtopic": "catching-up",
-    "level": 10,
+    "level": 9,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:de789d82f9a2d202e75e1745aaf1c1dc8af09b44d891eafb652ead5d3137d028",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5z3b7r7r",
@@ -686,10 +692,10 @@
   },
   {
     "id": "c_7j7q4p3h",
-    "ja": "私たちは早く仲直りしとけばよかった。",
+    "ja": "私たちは早く仲直りすればよかった。",
     "en": "I wish we'd buried the hatchet sooner.",
     "alternatives": [
-      "I wish we'd made peace a little earlier.",
+      "I wish we'd made peace sooner.",
       "If only we'd settled our differences sooner."
     ],
     "point": "bury the hatchet はけんかを終わりにして仲直りすること。",
@@ -698,7 +704,13 @@
     "level": 10,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:eb8bfc26af02d0a39b32f23871fcb5a207ca2f6b5360027f31aab0383f100665",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7m5r8g3d",

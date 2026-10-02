@@ -284,17 +284,20 @@
     "id": "c_5b4c6n4y",
     "ja": "私たちは運用担当に止めさせた。",
     "en": "We had ops pull the plug.",
-    "alternatives": [
-      "We got ops to shut it down.",
-      "We told operations to cut it off."
-    ],
+    "alternatives": ["We got ops to shut it down.", "We had operations stop it."],
     "point": "pull the plug は稼働中のものを停止させること。",
     "topic": "tech",
     "subtopic": "incidents",
     "level": 9,
     "grammar": ["causatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bf3bb0fd340318e8381ba0cf13efe7a812e1cabf1565766fb24b1d1efa13c6ca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5k3w9p2z",
@@ -408,8 +411,8 @@
     "ja": "落ちたのは中枢だと私たちは見ている。",
     "en": "We suspect what crashed was the linchpin.",
     "alternatives": [
-      "We think the core component is what crashed.",
-      "We suspect it was the central component that failed."
+      "We think the core component crashed.",
+      "We suspect the central component failed."
     ],
     "point": "linchpin は全体を支える要の部分を指す。",
     "topic": "tech",
@@ -417,7 +420,13 @@
     "level": 9,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:59bc4666b917c63006daf300cbeddec66f52780014864129cc61e2c85d941e81",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6p4s6j7a",
@@ -693,8 +702,8 @@
     "ja": "修正後もサーバーは延命状態だ。",
     "en": "Though patched, the server's on borrowed time.",
     "alternatives": [
-      "Despite the patch, the server's days are numbered.",
-      "Patched or not, the server won't last long."
+      "Even patched, the server's days are numbered.",
+      "Even patched, the server won't last long."
     ],
     "point": "on borrowed time はいつ終わってもおかしくない状態。",
     "topic": "tech",
@@ -702,7 +711,13 @@
     "level": 9,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:853eb56cab4b82a65a50a570c2d0ff89851d07f7237ffdfadb7f518684a633d1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9j7n3t6w",

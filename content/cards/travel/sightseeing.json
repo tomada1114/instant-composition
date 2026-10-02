@@ -221,22 +221,6 @@
     }
   },
   {
-    "id": "c_3s8x8h5c",
-    "ja": "空けば、私たちは自由に見て回れるのに。",
-    "en": "If crowds dispersed, we'd have free rein.",
-    "alternatives": [
-      "We could wander freely if the crowds thinned out.",
-      "If it emptied out, we could explore at will."
-    ],
-    "point": "free rein は自由に行動できる余地を表す。",
-    "topic": "travel",
-    "subtopic": "sightseeing",
-    "level": 10,
-    "grammar": ["second-conditional"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_4s6n8p5s",
     "ja": "ツアーは何分かかりますか？",
     "en": "How long is the tour?",
@@ -277,9 +261,9 @@
   {
     "id": "c_4t8r8p9u",
     "ja": "あのガイドは愛想を振りまきすぎた。",
-    "en": "That guide really laid the charm on thick.",
+    "en": "That guide laid the charm on thick.",
     "alternatives": [
-      "That guide really overdid the charm.",
+      "That guide overdid the charm.",
       "That guide went overboard with the charm."
     ],
     "point": "lay the charm on thick は愛想を過剰に振りまくこと。",
@@ -288,7 +272,13 @@
     "level": 10,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:18e3478f448fff363c2b363aff74311e5dbfe3c4e4b5e0d403497d002e32b8a4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4u4b4j6y",
@@ -485,6 +475,28 @@
     }
   },
   {
+    "id": "c_5t5e4c3n",
+    "ja": "空いてれば私たちは自由に巡れるのに。",
+    "en": "Were crowds thinner, we'd roam at will.",
+    "alternatives": [
+      "If it were quieter, we could wander freely.",
+      "With fewer crowds, we'd be free to explore."
+    ],
+    "point": "at will は自分の好きなように自由にという意味。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 9,
+    "grammar": ["second-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3a3bf512073b47e591ddfd7236a7a93218bcca56a6d347eea0da155a0b83657d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "c_6a7a8d9k",
     "ja": "展望台はありますか？",
     "en": "Is there a lookout?",
@@ -676,19 +688,25 @@
   },
   {
     "id": "c_9c2p5v6h",
-    "ja": "人混みを避けて私は穴場を見つけた。",
+    "ja": "人混みを避け私は穴場を見つけた。",
     "en": "Avoiding crowds, I unearthed a hidden gem.",
     "alternatives": [
-      "I found a hidden gem away from the crowds.",
-      "Steering clear of crowds, I found a real gem."
+      "I found a hidden gem avoiding crowds.",
+      "Avoiding crowds, I discovered a little-known treasure."
     ],
     "point": "hidden gem はまだあまり知られていない魅力ある場所。",
     "topic": "travel",
     "subtopic": "sightseeing",
-    "level": 10,
+    "level": 9,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1a0e55d467375192eb8294a20ac42f704215f037239fe6d7ee9685239ea42464",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9j5x3k3z",

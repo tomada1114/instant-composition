@@ -304,16 +304,22 @@
     "ja": "手空きなら私が問合せをさばくのに。",
     "en": "If I weren't swamped, I'd field inquiries.",
     "alternatives": [
-      "I'd handle the inquiries if I weren't so busy.",
-      "If I had breathing room, I'd handle the inquiries."
+      "If I were free, I'd handle inquiries.",
+      "I'd handle inquiries if I weren't busy."
     ],
     "point": "field は問い合わせなどを受けて対応すること。",
     "topic": "work",
     "subtopic": "requests",
-    "level": 9,
+    "level": 8,
     "grammar": ["second-conditional"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:12b6bf0c0cf725be5c3192cae7a1c63de551fb423543313688d55afabfa97fb9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5k6y2b6x",
@@ -383,8 +389,8 @@
     "ja": "細かな問題を潰してくれますか？",
     "en": "Could you iron out the wrinkles?",
     "alternatives": [
-      "Could you smooth out the rough edges?",
-      "Could you work out the remaining kinks?"
+      "Could you fix the minor issues?",
+      "Could you work out the kinks?"
     ],
     "point": "iron out the wrinkles は細かな問題を解消すること。",
     "topic": "work",
@@ -392,7 +398,13 @@
     "level": 9,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:779c6ecf1b58af57bf593dd4b2ceafc06838507241829b540c7a86fd1e7b295b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6d7y9z8f",
@@ -792,8 +804,8 @@
     "ja": "彼は穴埋めすると言った。",
     "en": "He said he'd pick up the slack.",
     "alternatives": [
-      "He said he'd cover the shortfall.",
-      "He said he'd take on the extra work."
+      "He said he'd cover the missing work.",
+      "He said he'd make up the shortfall."
     ],
     "point": "pick up the slack は足りない分の仕事を引き受けること。",
     "topic": "work",
@@ -801,6 +813,12 @@
     "level": 9,
     "grammar": ["reported-speech", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6ce627cbc8eb8e71a79e270e0df25b733932066a155e6008cd7608e6b43eb18e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   }
 ]

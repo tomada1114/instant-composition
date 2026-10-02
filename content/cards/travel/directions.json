@@ -302,19 +302,25 @@
   },
   {
     "id": "c_4b9e7d4q",
-    "ja": "この先に何があるか誰も分からない。",
+    "ja": "この先に何があるか誰も知らない。",
     "en": "What lies ahead is anyone's guess.",
     "alternatives": [
-      "Nobody can say what is up ahead.",
-      "What's farther down this road is a mystery."
+      "Nobody knows what lies ahead.",
+      "What we'll find ahead is a mystery."
     ],
     "point": "anyone's guess は誰にも分からないこと。",
     "topic": "travel",
     "subtopic": "directions",
-    "level": 10,
+    "level": 9,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cf4a58493d78ef63dc5003b787e285cbdd03f4fbcc2ba6c54aebf3b972f277f1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4e2y2z9u",
@@ -360,10 +366,10 @@
   {
     "id": "c_4s3q2v7g",
     "ja": "人が戸惑うのは道の急な曲がりだ。",
-    "en": "It's the dogleg that tends to throw people.",
+    "en": "It's the dogleg that throws people.",
     "alternatives": [
-      "It is the sharp bend that usually confuses people.",
-      "What trips people up is that sharp bend."
+      "What confuses people is the sharp bend.",
+      "It's the sharp bend that throws people off."
     ],
     "point": "dogleg は道などの急な折れ曲がりを指す。",
     "topic": "travel",
@@ -371,7 +377,13 @@
     "level": 10,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6eaa4a32f15d002d00f210799aa7d2a8b899ea021bdcc0d2a4af04e5336ae169",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4x4g7e8g",
@@ -685,11 +697,11 @@
   },
   {
     "id": "c_8q3k4m6c",
-    "ja": "私たちが左へそれてたら今は楽勝なのに。",
+    "ja": "左へそれてたら私たちは今楽勝なのに。",
     "en": "Had we veered left, we'd be home free.",
     "alternatives": [
-      "If we'd turned left, we'd be in the clear now.",
-      "Had we gone left, we'd have no obstacles now."
+      "If we'd gone left, we'd have it easy now.",
+      "We'd be home and dry if we'd turned left."
     ],
     "point": "home free は難所を越えて成功が確実な状態。",
     "topic": "travel",
@@ -697,7 +709,13 @@
     "level": 10,
     "grammar": ["mixed-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1086ba5215dfdb657a531e95e4d631468b17f582bba42b583a8acaf1059551f7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9c2k5k2b",

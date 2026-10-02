@@ -23,10 +23,10 @@
   },
   {
     "id": "c_2r8c7r7m",
-    "ja": "法務からまだ一言も返信がない。",
+    "ja": "私には法務からまだ返信がない。",
     "en": "I haven't heard a peep from legal.",
     "alternatives": [
-      "I've had no word from legal yet.",
+      "I've had no reply from legal yet.",
       "Legal still hasn't gotten back to me."
     ],
     "point": "not hear a peep は一言も音沙汰がないこと。",
@@ -35,7 +35,13 @@
     "level": 9,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2cc792c0b2e2c1584342cfc52755f9d3107954a097a9e5c1f132d80505096c2c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3c8w9s7r",
@@ -299,8 +305,8 @@
     "ja": "私のメールは雑務に埋もれた。",
     "en": "My email was lost in the shuffle.",
     "alternatives": [
-      "My email got overlooked in the rush.",
-      "My email slipped through the cracks."
+      "My email got overlooked amid the busywork.",
+      "My email got buried under busywork."
     ],
     "point": "lost in the shuffle は忙しさの中で見落とされること。",
     "topic": "work",
@@ -308,7 +314,13 @@
     "level": 9,
     "grammar": ["passive-voice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3a9efb1205e580b389f54d7f56f3938b5321cfd66cc7646734d5959250a70ee2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6g3f5f5b",
@@ -713,8 +725,8 @@
     "ja": "私は既にその件を決着させていた。",
     "en": "I'd already closed that loop.",
     "alternatives": [
-      "I'd already tied up that loose end.",
-      "I had already taken care of that matter."
+      "I'd already settled that matter.",
+      "I'd already tied up that loose end."
     ],
     "point": "close the loop は未決のやり取りを完結させること。",
     "topic": "work",
@@ -722,7 +734,13 @@
     "level": 9,
     "grammar": ["past-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4400c3d291e8def7f53c4b887b2421c008045863f6e48d2b7f985cf06e281275",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9y3f2c4n",

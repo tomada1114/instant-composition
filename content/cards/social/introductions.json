@@ -46,11 +46,11 @@
   },
   {
     "id": "c_2n2n6t8a",
-    "ja": "私は出版でずっと修業中です。",
+    "ja": "私は出版でずっと修業してます。",
     "en": "I've been cutting my teeth in publishing.",
     "alternatives": [
       "I've been learning the ropes in publishing.",
-      "I've been gaining my first experience in publishing."
+      "I've been getting my start in publishing."
     ],
     "point": "cut my teeth は初めの実務経験を積むこと。",
     "topic": "social",
@@ -58,7 +58,13 @@
     "level": 9,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3a50970413db90c29f7c26460df8072d373c859f14ee93dc2259938108eec0f1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2t9p7k9j",
@@ -87,8 +93,8 @@
     "ja": "私が重役と付き合う機会は稀だ。",
     "en": "Seldom do I rub shoulders with executives.",
     "alternatives": [
-      "I rarely get to mingle with executives.",
-      "I seldom get to mix with senior executives."
+      "I rarely mingle with executives.",
+      "I seldom mix with senior executives."
     ],
     "point": "rub shoulders with は人と交流すること。",
     "topic": "social",
@@ -96,7 +102,13 @@
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:60832d836034100fc795bffe9db794ea316d8d597964a1e9ef1c5c0ffa3c13df",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3c6q9n4a",
@@ -112,7 +124,13 @@
     "level": 9,
     "grammar": ["indirect-questions"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5cc8f4b325ac6f107c16d4fbdaeb051720b63b78bcc86e1b62f0553f818909d2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3d7g4c3x",

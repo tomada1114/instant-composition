@@ -212,11 +212,11 @@
   },
   {
     "id": "c_4k3d6x6e",
-    "ja": "君が電話してたら今は手探りじゃない。",
+    "ja": "君が電話してたら私は今手探りじゃない。",
     "en": "Had you called, I wouldn't be flying blind.",
     "alternatives": [
       "If you'd called, I wouldn't be in the dark.",
-      "I'd have some clue now if you'd phoned."
+      "I'd have some clue now if you'd called."
     ],
     "point": "flying blind は必要な情報なしで手探りすること。",
     "topic": "work",
@@ -224,7 +224,13 @@
     "level": 10,
     "grammar": ["mixed-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e9e815fb25ad38e509022b4e3eecc2a5e65995954dfa942020e6db15739a95d7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4q6y8h8b",
@@ -250,19 +256,25 @@
   },
   {
     "id": "c_4z2b6b2b",
-    "ja": "私は給与係とずっと電話が行き違いだ。",
+    "ja": "私は給与係とずっと電話が行き違う。",
     "en": "I've been playing phone tag with payroll.",
     "alternatives": [
-      "Payroll and I keep missing each other's calls.",
-      "Payroll and I haven't managed to connect by phone."
+      "Payroll and I keep playing phone tag.",
+      "Payroll and I can't connect by phone."
     ],
     "point": "play phone tag は互いの折り返し電話が行き違うこと。",
     "topic": "work",
     "subtopic": "phone-calls",
-    "level": 10,
-    "grammar": ["tense-contrast"],
+    "level": 9,
+    "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8703845e382843f326dd42bbb63383b7ed6b005ab3bbad53c6070835247dca8f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4z6r8g3z",
@@ -352,11 +364,11 @@
   },
   {
     "id": "c_6k2c7g3h",
-    "ja": "恐縮ですがお話が私には理解不能でした。",
+    "ja": "恐縮ですが私にはお話が理解不能でした。",
     "en": "I'm afraid what you said went over my head.",
     "alternatives": [
-      "I'm sorry, your point was beyond my understanding.",
-      "I'm afraid I couldn't grasp what you meant."
+      "I'm afraid I couldn't understand what you said.",
+      "Sorry, what you said was beyond me."
     ],
     "point": "go over my head は難しくて理解できないこと。",
     "topic": "work",
@@ -364,7 +376,13 @@
     "level": 10,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f7b35428ddd78fe9cf243fc13a5f2f47281d7cca93e066a3d398ef0ef60d0c3d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6q2c8g6q",

@@ -24,18 +24,24 @@
   {
     "id": "c_2r4z8r6n",
     "ja": "彼女はこの靴は長持ちすると言った。",
-    "en": "She said these shoes would go the distance.",
+    "en": "She said these shoes would wear well.",
     "alternatives": [
-      "She said these shoes would stand the test of time.",
-      "She said these shoes would last for ages."
+      "She said these shoes would last.",
+      "She said these shoes would hold up."
     ],
-    "point": "go the distance は最後まで持ちこたえること。",
+    "point": "wear well は使い続けても傷みにくいこと。",
     "topic": "daily",
     "subtopic": "shopping",
-    "level": 10,
+    "level": 8,
     "grammar": ["reported-speech"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9a2aedb094873c2f2b0b708c835994bd20caf7ec56d126369fa131d869a989ba",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3b3u4z8h",
@@ -118,8 +124,8 @@
     "ja": "彼らの売り物が本物だとは思えない。",
     "en": "I doubt what they're selling is the real McCoy.",
     "alternatives": [
-      "I don't think the stuff they're selling is genuine.",
-      "I doubt their merchandise is the genuine article."
+      "I doubt their goods are genuine.",
+      "I don't think they're selling the genuine article."
     ],
     "point": "the real McCoy は偽物でない本物のこと。",
     "topic": "daily",
@@ -127,7 +133,13 @@
     "level": 10,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:032e1ad5e1113d3a0a88cd2965d940938c613c8e12f6701348b4cc1d0fbda982",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3n5w2s4h",
@@ -494,8 +506,8 @@
     "ja": "私にはこれはちょっと高すぎるかな。",
     "en": "This feels a shade too steep for me.",
     "alternatives": [
-      "I feel this is a touch too pricey.",
-      "This seems just a bit too expensive for me."
+      "This seems a little too expensive for me.",
+      "It's a touch too pricey for me."
     ],
     "point": "a shade too steep はほんの少し高すぎるという言い方。",
     "topic": "daily",
@@ -503,7 +515,13 @@
     "level": 10,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dc6a612d5424d560b505e4fe8e328ada6022b3bf9c284636d5f496ab9285dd4f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8d4h6d4q",

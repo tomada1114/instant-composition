@@ -2,18 +2,24 @@
   {
     "id": "c_2b7c9a6t",
     "ja": "私はやっと風邪の峠を越えた。",
-    "en": "I've finally turned the corner with this bug.",
+    "en": "I've turned the corner with my cold.",
     "alternatives": [
-      "I've finally gotten past the worst of this bug.",
-      "I'm finally on the mend from this bug."
+      "My cold has finally started getting better.",
+      "I'm finally recovering from my cold."
     ],
     "point": "turn the corner は最悪の状態を越えて回復へ向かうこと。",
     "topic": "daily",
     "subtopic": "health",
-    "level": 10,
+    "level": 9,
     "grammar": ["tense-contrast"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7959eefd224a24d0746215237c7a2321d23ec8c271b1d4654f9b5ef12839b9e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2e3k7h6j",
@@ -228,11 +234,11 @@
   },
   {
     "id": "c_4r4q6z9p",
-    "ja": "こんなに疲れてなければ私は運動するのに。",
-    "en": "Were I less run-down, I'd get moving.",
+    "ja": "疲れてなければ私は運動するのに。",
+    "en": "Were I less run-down, I'd exercise.",
     "alternatives": [
-      "If I weren't so worn out, I'd exercise.",
-      "I'd get some exercise if I weren't so run-down."
+      "If I weren't worn out, I'd exercise.",
+      "I'd work out if I weren't exhausted."
     ],
     "point": "Were I は If I were の if を省いた形。",
     "topic": "daily",
@@ -240,7 +246,13 @@
     "level": 10,
     "grammar": ["second-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b533f10af4b8c7ba6144bc5e25d54ef9cf2a9d400c95413e3e02d97624af6d7b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4t5e2b4s",
@@ -558,18 +570,21 @@
   {
     "id": "c_6s3n4n4z",
     "ja": "私の症状は一度も和らがなかった。",
-    "en": "At no point did my symptoms let up.",
-    "alternatives": [
-      "My symptoms never eased up at all.",
-      "There wasn't a moment when my symptoms eased."
-    ],
+    "en": "Never once did my symptoms let up.",
+    "alternatives": ["My symptoms never eased up.", "My symptoms never subsided."],
     "point": "let up は症状や強さが和らぐこと。",
     "topic": "daily",
     "subtopic": "health",
-    "level": 10,
+    "level": 9,
     "grammar": ["inversion", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ac376ecbad006348d98c22e9b67b9ef2a425ef5abf8a37f92bd46693e691ccb2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6w2f3t3r",

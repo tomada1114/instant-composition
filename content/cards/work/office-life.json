@@ -593,8 +593,8 @@
     "ja": "ここでコーヒーと称する物には呆れる。",
     "en": "What passes for coffee here beggars belief.",
     "alternatives": [
-      "I can't believe they call this stuff coffee.",
-      "It's unbelievable that this is supposed to be coffee."
+      "I can't believe they call this coffee.",
+      "What they call coffee here is a joke."
     ],
     "point": "pass for はそれらしく見なされることを皮肉にも使う。",
     "topic": "work",
@@ -602,7 +602,13 @@
     "level": 10,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c3dddaa014594565834d505fb7198a5072cd828fdef168340a68fdb7d406e8b4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6k5e4d5g",
@@ -626,18 +632,24 @@
   {
     "id": "c_6m5t7j4w",
     "ja": "このオフィスに要るのは動ける広さだ。",
-    "en": "What this office needs is some elbow room.",
+    "en": "What this office needs is elbow room.",
     "alternatives": [
-      "What we need here is room to move.",
-      "It's more space that this office needs."
+      "What this office needs is room to move.",
+      "It's space to move that this office needs."
     ],
     "point": "elbow room は窮屈でなく動ける空間のこと。",
     "topic": "work",
     "subtopic": "office-life",
-    "level": 10,
+    "level": 9,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:12d5cdddb424eaad08161e53f969a63791a62077b84d2ae320b3a3970fb4d765",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7d3x6d3j",
@@ -752,8 +764,8 @@
     "ja": "総務は私たちを手続きで振り回す。",
     "en": "Admin has us jumping through hoops.",
     "alternatives": [
-      "Admin makes us deal with endless red tape.",
-      "Admin puts us through a lot of bureaucratic hassle."
+      "Admin makes us deal with red tape.",
+      "Admin puts us through endless bureaucratic hassle."
     ],
     "point": "jump through hoops は厄介な手続きをいくつもこなすこと。",
     "topic": "work",
@@ -761,7 +773,13 @@
     "level": 10,
     "grammar": ["causatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:64f9b967b4da2d6bdac8cfea33ccfd3ba260510fc6d60a7b625e4fa2048595fa",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8w2h8w6j",

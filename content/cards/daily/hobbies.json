@@ -45,19 +45,25 @@
   },
   {
     "id": "c_2x2d9g6f",
-    "ja": "私の陶芸はまだ合格点とはいかない。",
-    "en": "My pottery isn't quite up to snuff yet.",
+    "ja": "私の陶芸はまだ合格点に届かない。",
+    "en": "My pottery isn't up to snuff yet.",
     "alternatives": [
-      "My pottery isn't quite up to scratch yet.",
-      "My pottery isn't quite good enough yet."
+      "My pottery isn't up to scratch yet.",
+      "My pottery still isn't good enough."
     ],
     "point": "up to snuff は期待される水準に達していること。",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 10,
+    "level": 9,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e47e0d4074278884e6f1a830d26c4ab5f07b261668eaf30525f086636d173b08",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3a7t2x4r",
@@ -190,8 +196,8 @@
     "ja": "彼が絵で食えるとは思えない。",
     "en": "I doubt what he paints pays the bills.",
     "alternatives": [
-      "I doubt he makes a living from his paintings.",
-      "I don't think his paintings put food on the table."
+      "I doubt he makes a living painting.",
+      "I don't think his paintings cover his living expenses."
     ],
     "point": "pay the bills は生活費をまかなうこと。",
     "topic": "daily",
@@ -199,7 +205,13 @@
     "level": 10,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:67d430316e8dce4117ede5c10613e919d2b2c0397fc09b8303fd30945510d317",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5e6y6x3z",
@@ -559,16 +571,22 @@
     "ja": "写真に熱中して、私は散財した。",
     "en": "Bitten by the photography bug, I splurged.",
     "alternatives": [
-      "Hooked on photography, I went on a spending spree.",
-      "Caught up in photography, I spent a small fortune."
+      "Hooked on photography, I splurged.",
+      "Hooked on photography, I spent a fortune."
     ],
     "point": "photography bug は写真への熱中を表す。",
     "topic": "daily",
     "subtopic": "hobbies",
-    "level": 10,
+    "level": 9,
     "grammar": ["participle-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bf390bb609ddab3b14f58fcb8f67ac6dbee5a94a655c969907c0bf3bd22f33e2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8f6w6h6f",
