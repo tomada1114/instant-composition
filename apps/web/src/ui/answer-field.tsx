@@ -23,6 +23,8 @@ type AnswerFieldProps = Readonly<{
   listening?: boolean | undefined;
   /** Called on Space in an empty field outside a conversion, instead of typing the space. */
   onEmptySpace?: (() => void) | undefined;
+  /** The software keyboard's label for the Enter key, which sends. */
+  enterKeyHint?: "next" | "send" | undefined;
   className?: string | undefined;
 }>;
 
@@ -41,6 +43,7 @@ export function AnswerField({
   disabled = false,
   listening = false,
   onEmptySpace,
+  enterKeyHint,
   className,
 }: AnswerFieldProps): ReactElement {
   const composing = useRef(false);
@@ -68,6 +71,7 @@ export function AnswerField({
       disabled={disabled}
       readOnly={listening}
       data-listening={listening ? "" : undefined}
+      enterKeyHint={enterKeyHint}
       rows={1}
       maxLength={ANSWER_FIELD_MAX}
       spellCheck={false}

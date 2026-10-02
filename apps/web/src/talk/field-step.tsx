@@ -32,6 +32,7 @@ function JapaneseStep({ onSend, paused }: StepProps<string>): ReactElement {
           }}
           listening={speech.active}
           onEmptySpace={speech.supported ? speech.start : undefined}
+          enterKeyHint="next"
           label={t("japanese")}
           placeholder={t("japaneseHint")}
         />
@@ -85,6 +86,7 @@ function EnglishStep({ onSend, paused }: StepProps<string | null>): ReactElement
           }}
           listening={speech.active}
           onEmptySpace={speech.supported ? speech.start : undefined}
+          enterKeyHint="send"
           label={t("english")}
           placeholder={t("englishHint")}
         />
