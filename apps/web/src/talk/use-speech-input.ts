@@ -4,6 +4,7 @@ import { TUNING } from "../lib/tuning";
 import { ANSWER_FIELD_MAX } from "../ui/answer-field";
 import {
   appendHeard,
+  closeSoftKeyboard,
   heardText,
   recognitionConstructor,
   troubleOf,
@@ -145,6 +146,7 @@ export function useSpeechInput(
       setTrouble(undefined);
       setCancelled(false);
       setActive(true);
+      closeSoftKeyboard();
       recognition.start();
     }
     function finish(): void {

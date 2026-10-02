@@ -163,6 +163,16 @@ Firefox, Samsung Internet and tablets only keep working.
   `"suspended"`, after a call, Siri or an app switch, and leaves it silent until a
   gesture resumes it (#398 R5). The silent switch still mutes the tones: no
   `navigator.audioSession` change.
+- The talk's 「話す」 is withheld where the user agent names `CriOS`, `FxiOS` or
+  `EdgiOS` (`apps/web/src/talk/speech-recognition.ts`): Chrome, Firefox and Edge on iOS
+  expose `webkitSpeechRecognition` on WebKit, but a session there never starts — no
+  permission prompt, an error at once — so the button could not work (#398 R7, #404).
+  Safari on iOS and Chrome on Android keep it, started by a tap.
+- On a touch-only device, starting a recognition session blurs the focused talk field so
+  the soft keyboard closes rather than covering the panel; the field is read-only for
+  the session anyway (#404). The 2 s silence and 10 s no-input timers end the session on
+  iOS even when Safari does not end it, and Safari's final-only results fill the field
+  when they arrive.
 
 ## Implementation rules
 
