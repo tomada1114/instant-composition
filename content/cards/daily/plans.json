@@ -322,6 +322,22 @@
     }
   },
   {
+    "id": "c_5r4p6y7r",
+    "ja": "彼女が条件を変え続ける理由分かる？",
+    "en": "Know why she keeps moving the goalposts?",
+    "alternatives": [
+      "Do you know why she keeps changing the conditions?",
+      "Any idea why she continually changes the requirements?"
+    ],
+    "point": "move the goalposts は途中で条件を変える。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5s3a8d8e",
     "ja": "行けないなら教えてね。",
     "en": "Tell me if you can't.",
@@ -399,6 +415,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6m3h6j8q",
+    "ja": "私、空気を読んでおけばよかった。",
+    "en": "I wish I'd read the room.",
+    "alternatives": [
+      "I wish I'd picked up on everyone's mood.",
+      "If only I'd sensed how everyone felt."
+    ],
+    "point": "read the room は場の雰囲気や相手の気持ちを察する。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6n9p4b3x",
@@ -484,6 +516,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7d5x2r4v",
+    "ja": "彼女は金曜は望み薄だと言った。",
+    "en": "She said Friday was a long shot.",
+    "alternatives": [
+      "She said Friday was unlikely to work.",
+      "She said Friday had little chance of working."
+    ],
+    "point": "a long shot は実現する見込みが低いこと。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7k5b8d3a",

@@ -41,6 +41,38 @@
     }
   },
   {
+    "id": "c_3c8b4c3b",
+    "ja": "彼らは誰が裏で操るか知らないかも。",
+    "en": "I doubt they know who's pulling strings.",
+    "alternatives": [
+      "I'm not sure they know who's exerting hidden influence.",
+      "They may not know who is manipulating things."
+    ],
+    "point": "pull strings は裏で影響力を使って物事を動かす。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_3e9r6x2t",
+    "ja": "誰を不快にしてるか君は分かる？",
+    "en": "Any idea whose feathers we're ruffling?",
+    "alternatives": [
+      "Do you know who we are upsetting?",
+      "Do you know who is irritated by us?"
+    ],
+    "point": "ruffle feathers は人を不快にさせる。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 9,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3q2v6z6c",
     "ja": "議事録は私が取ります？",
     "en": "Shall I take the minutes?",
@@ -488,6 +520,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8f5p7j7g",
+    "ja": "彼女は敢えて反論してたはず。",
+    "en": "She must've been playing devil's advocate.",
+    "alternatives": [
+      "She must have been deliberately arguing the other side.",
+      "She must've been raising objections to test our reasoning."
+    ],
+    "point": "play devil's advocate は議論を深めるため敢えて反対する。",
+    "topic": "work",
+    "subtopic": "meetings",
+    "level": 9,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8m3s5s4j",

@@ -438,6 +438,22 @@
     }
   },
   {
+    "id": "c_6b6n7z4j",
+    "ja": "私、元気そうでも気力はもう底だ。",
+    "en": "Though outwardly chipper, I'm running on fumes.",
+    "alternatives": [
+      "I seem cheerful, though I'm completely spent.",
+      "Despite looking upbeat, I'm barely keeping going."
+    ],
+    "point": "chipper は快活な、run on fumes は気力が尽きかけた状態。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 10,
+    "grammar": ["concession-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6g5z7q7k",
     "ja": "どこが痛みますか？",
     "en": "Where does it hurt?",
@@ -885,6 +901,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_9d7u6m2m",
+    "ja": "私、一時の軽快を回復と誤認したはず。",
+    "en": "I must've confused respite with recovery.",
+    "alternatives": [
+      "I must have mistaken temporary relief for recovery.",
+      "I must've taken a brief improvement for recovery."
+    ],
+    "point": "respite は一時の休息や軽快、recovery は回復。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 10,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9r7g5z8q",

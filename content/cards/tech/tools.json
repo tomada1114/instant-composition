@@ -60,6 +60,22 @@
     }
   },
   {
+    "id": "c_2g9t8g9r",
+    "ja": "Gitが私に面倒を強いる。",
+    "en": "Git makes me jump through hoops.",
+    "alternatives": [
+      "Git makes me follow unnecessarily complicated steps.",
+      "Git forces me through needless procedural hurdles."
+    ],
+    "point": "jump through hoops は面倒な手順を踏まされる。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3a7n4b5f",
     "ja": "時短のため、エイリアスにした。",
     "en": "I aliased it to save time.",
@@ -736,6 +752,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9j3d8v7c",
+    "ja": "彼がツールの拒否理由を知るか疑問。",
+    "en": "I doubt he knows why it balked.",
+    "alternatives": [
+      "I'm not sure he understands why the tool refused.",
+      "He may not know why the tool resisted."
+    ],
+    "point": "balk は要求に抵抗して動かない、doubt の中に疑問節。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_9q3w9n4q",
+    "ja": "Gitが気まぐれじゃなきゃな。",
+    "en": "I wish Git weren't so temperamental.",
+    "alternatives": [
+      "If only Git weren't so unpredictable.",
+      "I wish Git behaved more consistently."
+    ],
+    "point": "temperamental は機嫌に左右されるように不安定。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9r4d4b3t",

@@ -124,6 +124,19 @@
     }
   },
   {
+    "id": "c_3s4d8z4g",
+    "ja": "私、家に電話したい。",
+    "en": "I want to call home.",
+    "alternatives": ["I'd like to phone home.", "I want to phone my family."],
+    "point": "want to do は行動の希望。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 3,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3t4t4v7q",
     "ja": "バッグがなくなったみたいです。",
     "en": "It seems my bag's gone missing.",
@@ -453,6 +466,19 @@
     }
   },
   {
+    "id": "c_6y5r8r6s",
+    "ja": "私たちは宿へ戻るよ。",
+    "en": "We'll return to the hotel.",
+    "alternatives": ["We're going back to the hotel.", "We'll head back to the hotel."],
+    "point": "will はこれからの行動を伝える。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 3,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7c4f3a3n",
     "ja": "荷物が別の空港に回されました。",
     "en": "My bag was rerouted to another airport.",
@@ -582,6 +608,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7t3w4x9v",
+    "ja": "私の鍵が効かなくなった。",
+    "en": "My key stopped working.",
+    "alternatives": ["My key no longer worked.", "My key ceased to work."],
+    "point": "stopped working は使えなくなった過去。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 3,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7y2x4u4h",

@@ -44,6 +44,19 @@
     }
   },
   {
+    "id": "c_2u4a4n5z",
+    "ja": "止まったら私に知らせて。",
+    "en": "Tell me if it stops.",
+    "alternatives": ["Let me know if it stops.", "Inform me if it stops."],
+    "point": "これからの条件でも if 節は現在形。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2v9b4u3r",
     "ja": "原因を、まだ追ってます。",
     "en": "We're still tracking down the cause.",
@@ -213,6 +226,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4f7f4w2k",
+    "ja": "私たちは確認を終えた。",
+    "en": "We finished checking.",
+    "alternatives": ["We're done checking.", "We completed our checks."],
+    "point": "finish の後は checking の形。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 3,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4j9z2s8d",
@@ -534,6 +560,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7c5k2r5e",
+    "ja": "私は彼に確認を頼んだ。",
+    "en": "I asked him to check.",
+    "alternatives": ["I requested that he check.", "I asked him to look."],
+    "point": "ask 人 to do で行動を頼む。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7q7m9q2z",

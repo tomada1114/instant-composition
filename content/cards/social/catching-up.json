@@ -271,6 +271,19 @@
     }
   },
   {
+    "id": "c_3u2f6b6h",
+    "ja": "私、家を買ったよ。",
+    "en": "I bought a house.",
+    "alternatives": ["I purchased a house.", "I bought my own house."],
+    "point": "bought は buy の過去形。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3w3a9f2c",
     "ja": "最近どうしてたか教えて。",
     "en": "Tell me how you've been.",
@@ -392,6 +405,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5h9z5m4r",
+    "ja": "私、犬を飼うよ。",
+    "en": "I'll get a dog.",
+    "alternatives": ["I'm going to get a dog.", "I'll adopt a dog."],
+    "point": "will でこれからの予定を話す。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5k8q4w7q",
@@ -799,6 +825,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9h2g3d4j",
+    "ja": "写真を見せてもらえる？",
+    "en": "Can I see photos?",
+    "alternatives": ["Could you show me some photos?", "May I look at the photos?"],
+    "point": "Can I で許可を求める。",
+    "topic": "social",
+    "subtopic": "catching-up",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9h6p5b8a",

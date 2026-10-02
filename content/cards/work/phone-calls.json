@@ -233,6 +233,19 @@
     }
   },
   {
+    "id": "c_4n3g5d6e",
+    "ja": "君、声を上げるべき。",
+    "en": "You should speak louder.",
+    "alternatives": ["You ought to speak louder.", "You should raise your voice."],
+    "point": "louder は今より大きな声で。",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4q6y8h8b",
     "ja": "詳しい者を呼びますね。",
     "en": "I'll get someone who knows more.",
@@ -562,6 +575,19 @@
     }
   },
   {
+    "id": "c_8b8t4y8v",
+    "ja": "君の声が小さい。",
+    "en": "Your voice is quiet.",
+    "alternatives": ["Your voice is soft.", "You sound quiet."],
+    "point": "voice の状態を is で表す。",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 2,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_8h7h9v7u",
     "ja": "通話は録音されています。",
     "en": "This call is being recorded.",
@@ -601,6 +627,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8y9m8m9s",
+    "ja": "私が電話を切った。",
+    "en": "I ended the call.",
+    "alternatives": ["I hung up.", "I finished the call."],
+    "point": "ended で通話を終えた過去を表す。",
+    "topic": "work",
+    "subtopic": "phone-calls",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9e5w8d7q",

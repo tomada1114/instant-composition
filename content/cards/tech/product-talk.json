@@ -212,6 +212,19 @@
     }
   },
   {
+    "id": "c_3h2e8q8b",
+    "ja": "私たちに助けが必要。",
+    "en": "We need help.",
+    "alternatives": ["We need some help.", "Help is needed."],
+    "point": "help は数えないので a をつけない。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3k3d3t4u",
     "ja": "もうリリースした？",
     "en": "Have you released it yet?",
@@ -645,6 +658,19 @@
     }
   },
   {
+    "id": "c_7t4r7f7x",
+    "ja": "君、これ使える？",
+    "en": "Can you use this?",
+    "alternatives": ["Can you work with this?", "Can you operate this?"],
+    "point": "Can you で可能かを尋ねる。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7x8w3s9j",
     "ja": "先月、ダークモードを出した。",
     "en": "We shipped dark mode last month.",
@@ -709,6 +735,19 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_8r2b7e5m",
+    "ja": "この画面は新しい。",
+    "en": "This screen is new.",
+    "alternatives": ["This is a new screen.", "The screen is new."],
+    "point": "new はこれまでなかったもの。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8y7m7r5b",

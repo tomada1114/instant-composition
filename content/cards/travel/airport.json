@@ -60,6 +60,22 @@
     }
   },
   {
+    "id": "c_3r7y3t4f",
+    "ja": "疲れ果てて私は搭乗を逃した。",
+    "en": "Exhausted, I missed boarding.",
+    "alternatives": [
+      "Worn out, I missed boarding.",
+      "I missed boarding from exhaustion."
+    ],
+    "point": "Exhausted は主語の状態を添える。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 6,
+    "grammar": ["participle-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3x7d4c3g",
     "ja": "あの便は今、搭乗中です。",
     "en": "That flight is boarding now.",
@@ -656,6 +672,32 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9g5f4r2y",
+    "ja": "私は搭乗口へ急いだ。",
+    "en": "I dashed to the boarding gate.",
+    "alternatives": ["I rushed to the gate.", "I hurried toward the gate."],
+    "point": "dash は急いで駆ける。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 6,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_9g7x4z6v",
+    "ja": "私、荷物減らしておけばな。",
+    "en": "I wish I'd packed lighter.",
+    "alternatives": ["If only I'd brought less luggage.", "I regret packing so much."],
+    "point": "pack lighter は荷物を少なくして旅の準備をする。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 6,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9n3w7k9b",

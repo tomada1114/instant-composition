@@ -63,6 +63,19 @@
     }
   },
   {
+    "id": "c_3c3z2d9a",
+    "ja": "私は少し安堵を感じる。",
+    "en": "I feel a measure of relief.",
+    "alternatives": ["I feel some relief.", "I feel a degree of relief."],
+    "point": "a measure of はある程度の、relief は数えない。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3d4u9f2y",
     "ja": "あの一言、飲み込めばよかった。",
     "en": "I wish I'd bitten my tongue.",
@@ -287,6 +300,22 @@
     }
   },
   {
+    "id": "c_4x3s9d9c",
+    "ja": "彼が漏らした秘密が気がかりだ。",
+    "en": "The secret he spilled worries me.",
+    "alternatives": [
+      "I worry about the secret he revealed.",
+      "The secret he let slip concerns me."
+    ],
+    "point": "spill a secret は秘密を漏らす。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4z6r6p5c",
     "ja": "今、わくわくしてる！",
     "en": "I'm feeling excited.",
@@ -364,6 +393,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_5m6x9d9z",
+    "ja": "君が無視してたら私はすねた。",
+    "en": "If you'd ignored me, I'd have sulked.",
+    "alternatives": [
+      "I'd have sulked if you'd ignored me.",
+      "Your ignoring me would've made me sulky."
+    ],
+    "point": "過去に実現しなかった条件は had ignored、sulk はすねる。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 6,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5n3s9g4y",

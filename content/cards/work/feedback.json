@@ -1,5 +1,21 @@
 [
   {
+    "id": "c_2g9j8e2g",
+    "ja": "君、嫌味な褒め言葉はいらなかったよ。",
+    "en": "You could've spared us that backhanded compliment.",
+    "alternatives": [
+      "You needn't have given us that insulting compliment.",
+      "You could've kept that veiled insult to yourself."
+    ],
+    "point": "could have spared は避けてほしかったという遠回しな非難。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2j9w8c6f",
     "ja": "早く言ってくれたら手伝ったよ。",
     "en": "I'd have helped if you'd asked.",
@@ -658,6 +674,22 @@
     }
   },
   {
+    "id": "c_9b8k2d7t",
+    "ja": "私が言葉を濁してたら君は今も気づかない。",
+    "en": "Had I equivocated, you'd be none the wiser.",
+    "alternatives": [
+      "If I'd been evasive, you still wouldn't know.",
+      "You'd still be unaware if I'd dodged the issue."
+    ],
+    "point": "equivocate は言葉を濁す、none the wiser は分からないまま。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_9d7a3k8f",
     "ja": "感想をもらえますか？",
     "en": "Could I get feedback?",
@@ -697,6 +729,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9k5h9e5t",
+    "ja": "彼女は私の褒め方が少し偉そうと言った。",
+    "en": "She said my praise sounded faintly patronizing.",
+    "alternatives": [
+      "She said my compliments sounded slightly condescending.",
+      "She said my praise sounded subtly superior."
+    ],
+    "point": "faintly patronizing はかすかに上から目線の。",
+    "topic": "work",
+    "subtopic": "feedback",
+    "level": 10,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9p8q6g6r",

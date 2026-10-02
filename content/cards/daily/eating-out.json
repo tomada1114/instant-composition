@@ -127,6 +127,22 @@
     }
   },
   {
+    "id": "c_3b4s4y6s",
+    "ja": "私たち、店は見切っとけばな。",
+    "en": "I wish we'd cut our losses.",
+    "alternatives": [
+      "I regret us sticking with that restaurant.",
+      "If only we'd walked away from that restaurant."
+    ],
+    "point": "cut our losses はこれ以上の損を避けて撤退する。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 9,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3d3d4x5t",
     "ja": "売ってるパンはいい香りだ。",
     "en": "The bread for sale smells great.",
@@ -354,6 +370,22 @@
     }
   },
   {
+    "id": "c_4x8w6r7n",
+    "ja": "私たち、こんな料理に奮発は稀だ。",
+    "en": "Seldom do we splurge on such fare.",
+    "alternatives": [
+      "We rarely spend lavishly on food like this.",
+      "We hardly ever splurge on this kind of food."
+    ],
+    "point": "Seldom を先頭に置くと do we の語順。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 9,
+    "grammar": ["inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5g5g6s8d",
     "ja": "私なら、日替わりにするけどね。",
     "en": "If I were you, I'd get the special.",
@@ -557,6 +589,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7d4r3r2m",
+    "ja": "会計で私は頭に血が上った。",
+    "en": "The bill had me seeing red.",
+    "alternatives": ["The bill made me furious.", "The bill had me fuming."],
+    "point": "have 人 doing で状態を引き起こす、see red は激怒する。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 9,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7e5h5q4u",
