@@ -51,10 +51,12 @@ export function SettingsSection({
 }: Readonly<{ id: string; title: string; children: ReactNode }>): ReactElement {
   const headingId = `${id}-title`;
   return (
+    // Below `pc` the top bar (56) stays stuck over the page, so a `#section`
+    // jump keeps the heading clear of it; from `pc` only the 32 of air.
     <section
       id={id}
       aria-labelledby={headingId}
-      className="flex scroll-mt-8 flex-col gap-2"
+      className="flex scroll-mt-20 flex-col gap-2 pc:scroll-mt-8"
     >
       <h2 id={headingId} className="text-heading">
         {title}
