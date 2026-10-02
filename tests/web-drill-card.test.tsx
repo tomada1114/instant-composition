@@ -7,7 +7,7 @@ import {
   CardFront,
   CatalogProvider,
   IntroScreen,
-  PauseSheet,
+  PauseDialog,
   TimerBar,
   TopStrip,
   type DrillCard,
@@ -234,10 +234,10 @@ function legend(container: HTMLElement): string[][] {
   );
 }
 
-describe("PauseSheet", () => {
+describe("PauseDialog", () => {
   it("lists → K F and ← J D while the learner keeps the default grade keys", () => {
     renderWithMessages(
-      <PauseSheet
+      <PauseDialog
         position={1}
         gradeKeys={DEFAULT_KEYS}
         onQuit={() => undefined}
@@ -254,7 +254,7 @@ describe("PauseSheet", () => {
 
   it("lists only the keys the learner chose", () => {
     renderWithMessages(
-      <PauseSheet
+      <PauseDialog
         position={1}
         gradeKeys={{ ok: "Digit1", ng: "ArrowUp" }}
         onQuit={() => undefined}
@@ -269,7 +269,7 @@ describe("PauseSheet", () => {
 
   it("asks whether to stop here, and focuses continue", () => {
     renderWithMessages(
-      <PauseSheet
+      <PauseDialog
         position={7}
         gradeKeys={DEFAULT_KEYS}
         onQuit={() => undefined}
@@ -289,7 +289,7 @@ describe("PauseSheet", () => {
     const onQuit = vi.fn();
     const onContinue = vi.fn();
     renderWithMessages(
-      <PauseSheet
+      <PauseDialog
         position={1}
         gradeKeys={DEFAULT_KEYS}
         onQuit={onQuit}
@@ -302,9 +302,9 @@ describe("PauseSheet", () => {
     expect(onContinue).toHaveBeenCalledOnce();
   });
 
-  it("keeps Tab inside the sheet", () => {
+  it("keeps Tab inside the dialog", () => {
     renderWithMessages(
-      <PauseSheet
+      <PauseDialog
         position={1}
         gradeKeys={DEFAULT_KEYS}
         onQuit={() => undefined}

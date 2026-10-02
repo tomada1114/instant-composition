@@ -35,8 +35,8 @@ function gradeOf(press: KeyPress, keys: GradeKeys): "ok" | "ng" | undefined {
 /**
  * Maps a key press to the drill's action in its current state, with `keys`
  * the learner's grade keys. While paused only Escape is taken, so Space and
- * Enter reach the sheet's focused button as a native press. `?` pauses too:
- * the pause sheet is where the keys are listed. A grade key never scrolls,
+ * Enter reach the dialog's focused button as a native press. `?` pauses too:
+ * the pause dialog is where the keys are listed. A grade key never scrolls,
  * so ↑ or ↓ chosen as one leaves the card to the other arrow.
  */
 export function keyAction(

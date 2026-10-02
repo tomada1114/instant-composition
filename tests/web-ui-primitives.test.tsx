@@ -11,7 +11,7 @@ import {
   FlameGlyph,
   HiddenAnswer,
   Segmented,
-  Sheet,
+  Dialog,
   StarGlyph,
   TalkLine,
   TargetGlyph,
@@ -19,10 +19,10 @@ import {
 } from "@instant-composition/web";
 
 // The shadcn/ui button copied into the web client, the `cn` it calls, and the
-// sheet. What is asserted is the wiring, not the styling: that a caller's own
+// dialog. What is asserted is the wiring, not the styling: that a caller's own
 // `className` wins over the component's default, which is the one behaviour
 // of `cn` a component's appearance depends on. No class list is pinned beyond
-// that, the button's lip, press and hover, and the sheet's breakpoint classes —
+// that, the button's lip, press and hover, and the dialog's breakpoint classes —
 // jsdom evaluates no stylesheet, so those classes are the only trace a test can
 // see of them, and a test restating more would fail on every legitimate
 // restyle, which is `designing-ui`'s subject, not this file's.
@@ -178,21 +178,21 @@ describe("Button", () => {
   });
 });
 
-describe("Sheet", () => {
+describe("Dialog", () => {
   // The one class list pinned here: jsdom lays nothing out, so the classes
   // are the only trace a test can see of where the dialog sits. None carries
   // a breakpoint: it is the same centered dialog at every width.
-  function renderSheet(): HTMLElement {
+  function renderDialog(): HTMLElement {
     render(
-      <Sheet titleId="sheet-title">
-        <h2 id="sheet-title">Paused</h2>
-      </Sheet>,
+      <Dialog titleId="dialog-title">
+        <h2 id="dialog-title">Paused</h2>
+      </Dialog>,
     );
     return screen.getByRole("dialog", { name: "Paused" });
   }
 
   it("opens centered over the scrim, at most 440 wide, every corner rounded", () => {
-    const dialog = renderSheet();
+    const dialog = renderDialog();
 
     const scrim = dialog.parentElement?.className.split(" ") ?? [];
     expect(scrim).toEqual(
@@ -211,7 +211,7 @@ describe("Sheet", () => {
   });
 
   it("is the same dialog at every width: no class waits on a breakpoint", () => {
-    const dialog = renderSheet();
+    const dialog = renderDialog();
 
     const classes = [
       ...(dialog.parentElement?.className.split(" ") ?? []),

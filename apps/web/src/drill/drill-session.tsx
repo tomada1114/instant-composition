@@ -9,8 +9,8 @@ import { progress, type DrillState } from "./drill-state";
 import { CardScreen } from "./card-screen";
 import { DrillDone } from "./drill-done";
 import { IntroScreen } from "./intro-screen";
-import { LeaveSheet } from "./leave-sheet";
-import { PauseSheet } from "./pause-sheet";
+import { LeaveDialog } from "./leave-dialog";
+import { PauseDialog } from "./pause-dialog";
 import { ReadyScreen } from "./ready-screen";
 import { browserSound, roundSound } from "./sound";
 import { Toast } from "./toast";
@@ -165,9 +165,9 @@ export function DrillSession({
         }}
       />
       {leave.asking ? (
-        <LeaveSheet position={resumeAt} onLeave={leave.leave} onStay={resume} />
+        <LeaveDialog position={resumeAt} onLeave={leave.leave} onStay={resume} />
       ) : state.paused ? (
-        <PauseSheet
+        <PauseDialog
           position={resumeAt}
           gradeKeys={gradeKeys}
           onQuit={goHome}

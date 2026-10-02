@@ -165,7 +165,7 @@ Add a row for the talk screen to designing-ui's key table.
 | Key   | Talk screen                                                                |
 | ----- | -------------------------------------------------------------------------- |
 | Enter | Sends inside a field. In W3e it is 「隠して言う」; in W3f it is 「言えた」 |
-| Esc   | Opens the leave confirmation (W4). Inside the sheet, 「続ける」            |
+| Esc   | Opens the leave confirmation (W4). Inside the dialog, 「続ける」           |
 | Tab   | Moves focus                                                                |
 
 - The ○ and × keys are not used (the talk has no self-grading).

@@ -7,7 +7,7 @@ import { useShellNav } from "../lib/frame";
 import { useEscapeHome } from "../lib/use-escape-home";
 import type { SettingsPageView } from "../openapi";
 import { Button } from "../ui/button";
-import { Sheet } from "../ui/sheet";
+import { Dialog } from "../ui/dialog";
 import { AppRows, SignOutRow } from "./app-section";
 import { LevelSection } from "./level-section";
 import { LimitSection } from "./limit-section";
@@ -18,7 +18,7 @@ import { useLevel } from "./use-level";
 import { useSettings } from "./use-settings";
 
 /** W12: measuring again is confirmed first; Esc and "cancel" close it. */
-function RetestSheet({
+function RetestDialog({
   onCancel,
   onConfirm,
 }: Readonly<{ onCancel: () => void; onConfirm: () => void }>): ReactElement {
@@ -33,7 +33,7 @@ function RetestSheet({
     };
   }, [onCancel]);
   return (
-    <Sheet titleId="retest-title">
+    <Dialog titleId="retest-title">
       <div className="flex flex-col gap-2">
         <h2 id="retest-title" className="text-heading">
           {t("title")}
@@ -48,7 +48,7 @@ function RetestSheet({
           {t("confirm")}
         </Button>
       </div>
-    </Sheet>
+    </Dialog>
   );
 }
 
@@ -105,7 +105,7 @@ export function SettingsScreen({
         </div>
       </div>
       {asking ? (
-        <RetestSheet
+        <RetestDialog
           onCancel={() => {
             setAsking(false);
           }}

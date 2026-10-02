@@ -118,7 +118,7 @@ describe("keyAction", () => {
     expect(keyAction(feedback, on("k"), DEFAULT)).toBeUndefined();
   });
 
-  it("only resumes on Escape while paused, leaving other keys to the sheet", () => {
+  it("only resumes on Escape while paused, leaving other keys to the dialog", () => {
     expect(keyAction(paused, on("Escape"), DEFAULT)).toStrictEqual({ type: "resume" });
     expect(keyAction(paused, on(" "), DEFAULT)).toBeUndefined();
     expect(keyAction(paused, on("Enter"), DEFAULT)).toBeUndefined();

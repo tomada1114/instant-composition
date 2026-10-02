@@ -24,7 +24,7 @@ The flows, cross-cutting behavior and decisions are in [ux-flows.md](ux-flows.md
 | W1  | Bottom tabs (four)                                | §3.1 entry                  | —                                                    |
 | W2  | The talk start screen (the 「会話」 ("talk") tab) | §3.1                        | before start / preparing / could not start           |
 | W3  | The talk screen                                   | §3.1 to 3.4                 | W3a to W3h (the bottom panel changes with each step) |
-| W4  | Leave-confirmation sheet                          | §3.1 ending midway          | 1 or more turns / 0 turns                            |
+| W4  | Leave-confirmation dialog                         | §3.1 ending midway          | 1 or more turns / 0 turns                            |
 | T   | Failure notice (toast)                            | edge cases of §3.1 and §3.3 | disappears after 4 seconds                           |
 
 - The route is `/talk`. W2 and W3 are two states of the same route. Reloading during a
@@ -220,7 +220,7 @@ Back, either of which opens W4.
 
 - It opens from ✕, a tab, or the browser's back (built like the drill's leave dialog, in
   `designing-ui`'s dialog frame).
-- Where 「終える」 goes depends on what opened the sheet.
+- Where 「終える」 goes depends on what opened the dialog.
   - From ✕, to W3h.
   - From a tab or back, to that destination.
 - With 1 or more turns, the talk is saved to the history.

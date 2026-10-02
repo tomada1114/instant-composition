@@ -6,7 +6,7 @@ import { isDefaultGradeKeys, keyLabel } from "../lib/grade-keys";
 import { TUNING } from "../lib/tuning";
 import type { GradeKeys } from "../openapi";
 import { Kbd } from "../ui/kbd";
-import { Sheet } from "../ui/sheet";
+import { Dialog } from "../ui/dialog";
 
 /**
  * The drill's keys, listed only once the learner has used one (`keys`
@@ -39,7 +39,7 @@ function KeyLegend({ gradeKeys }: Readonly<{ gradeKeys: GradeKeys }>): ReactElem
 }
 
 /** W8: stop here or go on; focus waits on "continue", which Escape also presses. */
-export function PauseSheet({
+export function PauseDialog({
   position,
   gradeKeys,
   onQuit,
@@ -52,7 +52,7 @@ export function PauseSheet({
 }>): ReactElement {
   const t = useTranslations("Drill.sheet");
   return (
-    <Sheet titleId="pause-title">
+    <Dialog titleId="pause-title">
       <div className="flex flex-col gap-2">
         <h2 id="pause-title" className="text-heading">
           {t("title")}
@@ -71,6 +71,6 @@ export function PauseSheet({
           <Kbd>Esc</Kbd>
         </Button>
       </div>
-    </Sheet>
+    </Dialog>
   );
 }

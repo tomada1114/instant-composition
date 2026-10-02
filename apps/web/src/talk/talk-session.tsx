@@ -3,7 +3,7 @@ import type { ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
 import { Toast } from "../drill/toast";
-import { TalkLeaveSheet } from "./talk-leave-sheet";
+import { TalkLeaveDialog } from "./talk-leave-dialog";
 import { TalkScreen } from "./talk-screen";
 import { TalkStart } from "./talk-start";
 import { keptTurns } from "./talk-state";
@@ -49,7 +49,7 @@ export function TalkSession({ sound }: Readonly<{ sound: boolean }>): ReactEleme
         <TalkScreen talk={talk} actions={actions} onClose={leave.ask} />
       )}
       {leave.asking !== undefined && talk !== undefined ? (
-        <TalkLeaveSheet turns={keptTurns(talk)} onLeave={end} onStay={leave.stay} />
+        <TalkLeaveDialog turns={keptTurns(talk)} onLeave={end} onStay={leave.stay} />
       ) : null}
       <Toast
         signal={notice.signal}
