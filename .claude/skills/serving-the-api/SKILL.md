@@ -30,16 +30,19 @@ that calls it through the `/api` proxy (`building-web-screens`); where a test go
 `bindRoutes` and throws `RouteTableError` (`ERR_API_ROUTE_TABLE`) when a route has no
 handler, a handler has no route, a handler validates another schema object than the
 route's `requestBody`, or the two disagree on a path parameter (`{roundId}`, `{talkId}`,
-`{turn}`: the handler's `params` must name exactly the ones its path does). So an
-operation is added in two places: the route in contracts (which regenerates
-`openapi.json`), then the handler. `tests/api-routes.test.ts` fails until both exist.
+`{turn}`, `{sessionId}`: the handler's `params` must name exactly the ones its path
+does). The vocabulary's handlers sit in `apps/api/src/vocab-operations.ts`, the talk's
+in `apps/api/src/talk-operations.ts`, each spread into `OPERATIONS`. So an operation is
+added in two places: the route in contracts (which regenerates `openapi.json`), then the
+handler. `tests/api-routes.test.ts` fails until both exist.
 
-Build a handler with the helpers there — `query`, `roundQuery`, `command`, and
-`talkCommand` and `talkAction` in `apps/api/src/talk-operations.ts` — rather than by
-hand: each takes the contracts schema itself, which is what the identity check compares.
-A talk handler answers a refusal with its code alone, so a `ModelFailure`'s `reason`
-never reaches the response or the request line. The success status comes from the route,
-never from the handler; a `204` route answers an empty body.
+Build a handler with the helpers — `query`, `roundQuery` and `command` in
+`apps/api/src/handlers.ts`, and `talkCommand` and `talkAction` in
+`apps/api/src/talk-operations.ts` — rather than by hand: each takes the contracts schema
+itself, which is what the identity check compares. A talk handler answers a refusal with
+its code alone, so a `ModelFailure`'s `reason` never reaches the response or the request
+line. The success status comes from the route, never from the handler; a `204` route
+answers an empty body.
 
 ## The order a request is checked in
 
