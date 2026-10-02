@@ -5,14 +5,15 @@ The flows, cross-cutting behavior and decisions are in [ux-flows.md](ux-flows.md
 - **Input:** [requirements.md](requirements.md) (settled). It is the source of truth for
   what the feature does; this file covers only the screens and flows. Copy and details
   may be adjusted to designing-ui.
-- **Foundation:** `designing-ui` (the "instrument" rules, components and behavior) and
+- **Foundation:** `designing-ui` (the "Lemon Arcade" rules, components and behavior) and
   `building-web-screens`.
   - Rules for color, type, spacing, motion, keys and accessibility belong to those
     skills and are not repeated here.
   - What is decided here is only what is new, and which existing components are used
     where.
-- **Premise:** a single phone-width column (390 × 844). On a PC it fits the column
-  designing-ui sets, at most 420 wide and 720 high.
+- **Premise:** a laptop browser first; the layout collapses to one column below 1024. W2
+  sits in the shell at most 720 wide; W3 is a column at most 720 wide centred on the
+  focus stage.
 - **How to read the wireframes:** the right-hand border is left off (Japanese widths
   break it). Text to the right of "←" is an annotation.
 
@@ -50,21 +51,19 @@ The flows, cross-cutting behavior and decisions are in [ux-flows.md](ux-flows.md
 
 ```
 ┌──────────────────────────────────────
-│ 会話                                    ← eyebrow
-│
-│
-│                 6                       ← the figure (number-xl)
-│               ターン                    ← mono-sm, muted
-│
-│
-│ ┌────────────────────────────────
-│ │ 場面はおまかせ                        ← panel (home-panel build). One line, muted
+│ ┌────────────────────────────────       ← one panel (home-panel build), max 720, in the shell
+│ │ 会話                                  ← eyebrow
+│ │               6                       ← the figure (number-xl)
+│ │             ターン                    ← count, muted
+│ │ 場面はおまかせ                        ← one line, muted
 │ │ [              始める              ]  ← primary
 │ └────────────────────────────────
-├──────────┬──────────┬──────────┬──────────
-│  ホーム  │  会話 ▔  │   記録   │   設定
-└──────────┴──────────┴──────────┴──────────
+│ 相手 → 日本語で → 英語で → お手本 → 言い直し → 相手   ← a turn's six steps, one line, caption, muted
+└──────────────────────────────────────
 ```
+
+- The shell's navigation stays beside W2; it goes once a talk opens and comes back only
+  after the talk ends or is left.
 
 | State           | Panel contents                                                                                  |
 | --------------- | ----------------------------------------------------------------------------------------------- |
@@ -79,8 +78,7 @@ The flows, cross-cutting behavior and decisions are in [ux-flows.md](ux-flows.md
 
 ```
 ┌──────────────────────────────────────
-│ ━━ ━━ ━━ ── ── ──                      ← 6 ticks. Done: white / now: grey / to come: line
-│ ✕               3 / 6                  ← top bar. End (✕), progress (mono-sm, muted)
+│ ✕    ━━ ━━ ━━ ── ── ──    3 / 6        ← focus strip: ✕; six pills, done good, rest bar-track; progress (count, muted)
 ├──────────────────────────────────────
 │ 場面                                    ← eyebrow
 │ 近所のカフェ。顔なじみの店員が、           ← muted, 1 to 2 lines of Japanese
@@ -97,21 +95,20 @@ The flows, cross-cutting behavior and decisions are in [ux-flows.md](ux-flows.md
 │ 相手                                    ← the current turn is white, earlier turns are muted
 │ Oh no. What kept you so busy?
 ├──────────────────────────────────────
-│ （手ごとの欄。W3a〜W3h）                 ← where the thumb reaches
-├──────────┬──────────┬──────────┬──────────
-│  ホーム  │  会話 ▔  │   記録   │   設定
-└──────────┴──────────┴──────────┴──────────
+│ （手ごとの欄。W3a〜W3h）                 ← the step panel: card, 2px border, padding 20
+└──────────────────────────────────────
 ```
 
-- The top bar and the bottom panel are fixed. Only the conversation between them
-  scrolls, and it is carried to the bottom edge when a new line appears.
+- W3 is in the focus layout: no navigation, the strip across the top, and a column at
+  most 720 wide centred on the stage, filling `100dvh − 64`.
+
+- The strip and the step panel stay put. Only the conversation between them scrolls, and
+  it is carried to the bottom edge when a new line appears.
 - The speaker is shown by an eyebrow. No bubbles or frames; turns are separated by a
   hairline (the rule: lines, not frames).
 - The current turn is white; earlier turns drop to muted.
 - The teacher's words appear in the layout of the drill's answer face (back-self). This
   sets them visually apart from the partner's lines.
-- While the keyboard is open, the bottom panel sits on top of the keyboard. How this
-  behaves on iOS Safari is settled in §5.
 
 ### W3a The Japanese step (step 2)
 
@@ -155,7 +152,7 @@ The flows, cross-cutting behavior and decisions are in [ux-flows.md](ux-flows.md
 ```
 │ あなた
 │ 仕事が詰まってて
-│ I was swamped with work.  ○            ← the English turns accent and gains a ○. The tick lights up too
+│ I was swamped with work.  ○            ← the English turns accent and gains a ○. That turn's pill fills once the turn is done
 │ 相手
 │ …                                       ← goes straight to waiting for the partner (W3c)
 ```
@@ -215,7 +212,7 @@ The flows, cross-cutting behavior and decisions are in [ux-flows.md](ux-flows.md
   tab (nothing is lost).
 - The conversation stays on this screen. No control is added for reading it back.
 
-### W4 Leave-confirmation sheet
+### W4 Leave-confirmation dialog
 
 ```
 ┌──────────────────────────────────────
@@ -223,12 +220,12 @@ The flows, cross-cutting behavior and decisions are in [ux-flows.md](ux-flows.md
 ├──────────────────────────────────────
 │ 会話を終えますか                         ← heading
 │ ここまでの 2 ターンは残ります              ← one line. With 0 turns: 「この会話は残りません」
-│ [             終える             ]       ← secondary
-│ [             続ける             ]       ← the main action. First focus. Esc also means 「続ける」
+│ [   終える   ] [   続ける   ]           ← side by side: 終える secondary; 続ける the main action at the right, first focus, also Esc
 └──────────────────────────────────────
 ```
 
-- It opens from ✕, a tab, or the browser's back (built like the drill's leave sheet).
+- It opens from ✕, a tab, or the browser's back (built like the drill's leave dialog, in
+  `designing-ui`'s dialog frame).
 - Where 「終える」 goes depends on what opened the sheet.
   - From ✕, to W3h.
   - From a tab or back, to that destination.

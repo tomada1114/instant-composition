@@ -6,8 +6,8 @@ import { Kbd } from "../ui/kbd";
 import { Sheet } from "../ui/sheet";
 
 /**
- * W4, the leave sheet's recipe: what ending keeps — the turns so far, or
- * nothing — then 「終える」 and 「続ける」, which takes focus and Esc presses.
+ * W4, the dialog's recipe: what ending keeps — the turns so far, or
+ * nothing — then 「終える」 and, at the right, 「続ける」, which takes focus and Esc presses.
  */
 export function TalkLeaveSheet({
   turns,
@@ -25,11 +25,11 @@ export function TalkLeaveSheet({
           {turns > 0 ? t("kept", { count: turns }) : t("lost")}
         </p>
       </div>
-      <div className="flex flex-col gap-2.5">
-        <Button variant="secondary" className="w-full" onClick={onLeave}>
+      <div className="flex gap-2.5">
+        <Button variant="secondary" className="flex-1" onClick={onLeave}>
           {t("end")}
         </Button>
-        <Button className="w-full" data-autofocus onClick={onStay}>
+        <Button className="flex-1" data-autofocus onClick={onStay}>
           {t("stay")}
           <Kbd>Esc</Kbd>
         </Button>
