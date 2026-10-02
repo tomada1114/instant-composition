@@ -196,8 +196,8 @@ Firefox, Samsung Internet and tablets only keep working.
 - A session belongs to the day it started. The day turns over at 04:00; a session that
   crosses it still counts toward the day it began — today's set, the streak, and the
   "different day" rule for mastery.
-- Load the whole day's set, and the backs a retry round needs, when "start" is pressed.
-  No loading state between cards: it would distort the timer.
+- Load the whole day's set, and the backs its re-asks need, when "start" is pressed. No
+  loading state between cards: it would distort the timer.
 - Starting values tuned by use live in configuration, never in a component: the time
   limits on offer and their default, the pace formula, the "fast" threshold, ring
   milestones, streak milestones and milestone names. The start screen's minutes estimate

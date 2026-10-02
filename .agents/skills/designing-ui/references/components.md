@@ -345,12 +345,12 @@ inside it, kept at its bottom, and the step panel rests on its foot.
   empty field, or a session running. Listening, from the browser's `start` event, it
   reads「聞いています」 in its pressed look: dropped onto its lip (`translate-y-1`,
   `shadow-none`) on `bg-raised` — no pulsing, no red, no new colour. Pressing it then
-  sends. W3a's row is the grade-pair layout (「話す」 / 「送る」); W3b's is three across
-  (「わからない」 / 「話す」 / 「送る」), `secondary` / `secondary` / `primary`. Without
-  recognition the rows stay as before. The state is named one way only: the label
-  changes, and a polite status announces 「聞いています」, and 「取り消しました」 on Esc
-  — no `aria-pressed`. Its error is one muted line with the notice glyph under the field
-  (`text-label text-muted-foreground`,
+  sends. W3a's is two across (「話す」 / 「送る」), `secondary` / `primary`; W3b's is
+  three across (「わからない」 / 「話す」 / 「送る」), `secondary` / `secondary` /
+  `primary`. Without recognition the rows stay as before. The state is named one way
+  only: the label changes, and a polite status announces 「聞いています」,
+  and 「取り消しました」 on Esc — no `aria-pressed`. Its error is one muted line with
+  the notice glyph under the field (`text-label text-muted-foreground`,
   `role="status"`): 「マイクが使えません」,「マイクが見つかりません」 or 「音声入力が使えませんでした」,
   cleared by the next press; at W3b it takes the place of 「英語で入力してください」.
 - **`talk-line`.** One turn: the speaker's `eyebrow` over the body in `text-body`. No

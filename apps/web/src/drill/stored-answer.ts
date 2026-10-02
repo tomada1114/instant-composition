@@ -21,7 +21,7 @@ export function readAnswer(value: unknown): AnswerInput | undefined {
   const graded =
     GRADES.includes(entry.grade) && typeof entry.timedOut === "boolean"
       ? { grade: entry.grade as AnswerInput["grade"], timedOut: entry.timedOut }
-      : typeof entry.result === "string"
+      : typeof entry.result === "string" && Object.hasOwn(RESULT_GRADES, entry.result)
         ? RESULT_GRADES[entry.result]
         : undefined;
   if (
