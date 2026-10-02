@@ -36,7 +36,7 @@ const twMerge = extendTailwindMerge({
       ],
       radius: ["control", "card", "panel"],
       shadow: ["lip"],
-      container: ["column"],
+      container: ["dashboard", "reading", "stage", "progress", "dialog"],
     },
   },
 });

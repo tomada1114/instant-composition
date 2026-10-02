@@ -1,11 +1,11 @@
-import { Link } from "@tanstack/react-router";
 import { useEffect, useMemo, useRef, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
 import { prefersReducedMotion } from "../drill/motion";
+import { FocusStrip } from "../lib/frame";
 import { usePrimaryKey } from "../lib/use-primary-key";
 import { Button } from "../ui/button";
-import { BackGlyph, CloseGlyph } from "../ui/glyphs";
+import { CloseGlyph } from "../ui/glyphs";
 import { IconButton } from "../ui/icon-button";
 import type { RoundKind, RoundSummary } from "../openapi";
 import { PrimaryButton } from "../ui/primary-button";
@@ -24,8 +24,7 @@ import {
  * W9 and its kin: what a round moved, top to bottom. `live` is the round
  * just finished — changed values count up and the buttons close it;
  * `recap` (W9r) re-reads today's last summary with every value final, and
- * ← and Esc (`onEnd`) go back. Whoever renders it puts the tab bar under it,
- * and its foot keeps clear of the bar.
+ * Esc goes back. Either way the focus strip's ✕ (`onEnd`) closes it.
  */
 export function SummaryScreen({
   summary,
@@ -82,24 +81,15 @@ export function SummaryScreen({
   const placement = summary.placement;
 
   return (
-    <main className="mx-auto box-content flex min-h-[calc(var(--column-height)-var(--tab-bar-space)-1rem)] max-w-column flex-col px-4 pt-4 pb-(--tab-bar-space)">
+    <div className="mx-auto flex w-full max-w-reading flex-col pt-6">
+      <FocusStrip
+        close={
+          <IconButton plain type="button" aria-label={t("close")} onClick={onEnd}>
+            <CloseGlyph />
+          </IconButton>
+        }
+      />
       <header className="flex flex-col gap-6">
-        <div className="flex h-11 items-center justify-between">
-          {live ? (
-            <>
-              <span />
-              <IconButton type="button" aria-label={t("close")} onClick={onEnd}>
-                <CloseGlyph />
-              </IconButton>
-            </>
-          ) : (
-            <IconButton asChild>
-              <Link to="/" aria-label={t("back")}>
-                <BackGlyph />
-              </Link>
-            </IconButton>
-          )}
-        </div>
         <h1
           ref={heading}
           tabIndex={-1}
@@ -137,7 +127,7 @@ export function SummaryScreen({
           onEnd={onEnd}
         />
       ) : null}
-    </main>
+    </div>
   );
 }
 
@@ -155,7 +145,7 @@ function SummaryActions({
 }>): ReactElement {
   const t = useTranslations("Summary");
   return (
-    <footer className="sticky bottom-[calc(var(--tab-bar-space)+var(--column-inset))] -mx-4 mt-auto flex flex-col gap-2.5 bg-background px-4 pt-3 pb-3">
+    <footer className="sticky bottom-0 -mx-4 mt-auto flex flex-col gap-2.5 bg-background px-4 pt-3 pb-3">
       {summary.yesterday ? (
         summary.todayOpen ? (
           <>

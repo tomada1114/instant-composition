@@ -10,6 +10,7 @@ import {
   fill,
   homeView,
   ja,
+  landmarks,
   navigations,
   refusal,
   renderApp,
@@ -68,7 +69,7 @@ afterEach(() => {
 });
 
 describe("W2, the talk tab before a talk", () => {
-  it("shows six turns, the scene left to the app, and 始める, under a tab bar with talk current", async () => {
+  it("shows six turns, the scene left to the app, and 始める, under the navigation with talk current", async () => {
     serveTalk();
     await renderApp("/talk");
     expect(screen.getByText("6")).toBeInTheDocument();
@@ -83,6 +84,7 @@ describe("W2, the talk tab before a talk", () => {
         ["/settings", null],
       ],
     ]);
+    expect(landmarks()).toStrictEqual(["navigation", "main"]);
   });
 
   it("says 用意しています on a start that cannot be pressed again while the scene is made", async () => {

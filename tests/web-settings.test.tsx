@@ -15,6 +15,7 @@ import {
   fakeTimers,
   fill,
   ja,
+  landmarks,
   navigations,
   press,
   refusal,
@@ -581,6 +582,19 @@ describe("the settings screen, W12 measuring again", () => {
         ["/settings", "page"],
       ],
     ]);
+    expect(landmarks()).toStrictEqual(["navigation", "main"]);
+  });
+
+  it("starts with the skip link, which moves focus to main", async () => {
+    serveSettings();
+    await renderApp("/settings");
+    const first = document.querySelector("a[href], button, input, [tabindex]");
+    const skip = screen.getByRole("link", { name: ja.Nav.skip });
+    expect(first).toBe(skip);
+    expect(skip).toHaveAttribute("href", "#main");
+    fireEvent.click(skip);
+    expect(screen.getByRole("main")).toHaveFocus();
+    expect(where()).toBe("/settings");
   });
 
   it("closes on cancel or Esc, and only then does Esc go back", async () => {
@@ -846,19 +860,16 @@ describe("the settings screen, its tabs", () => {
     ).toStrictEqual([null, null]);
   });
 
-  it("is the column's height yet grows to fit, its self-scrolling chips left out of that", async () => {
+  it("is as tall as its content", async () => {
     serveSettings();
     await renderApp("/settings");
     const main = screen.getByRole("main");
-    // A floor, never a fixed height: a tab taller than the column must
-    // push the page longer, not slide under the tab bar.
-    expect(main.className).toMatch(/(^|\s)min-h-\[calc\(var\(--column-height\)/u);
-    expect(main.className).not.toMatch(/(^|\s)(h|max-h)-/u);
-    const scrolls = [...main.querySelectorAll(".overflow-y-auto")];
-    expect(scrolls).toStrictEqual([
-      screen.getByRole("group", { name: ja.Settings.focus.title }),
-    ]);
-    for (const region of scrolls) expect(region).toHaveClass("contain-size");
+    // A screen is as tall as its content: no height of its own, and no
+    // region scrolling inside it, so the page scrolls instead.
+    for (const element of [main, main.firstElementChild]) {
+      expect(element?.getAttribute("class")).not.toMatch(/(^|\s)(min-h|max-h|h)-/u);
+    }
+    expect(main.querySelectorAll(".overflow-y-auto, .contain-size")).toHaveLength(0);
   });
 
   it.each([

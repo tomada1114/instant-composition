@@ -19,10 +19,7 @@ export function HomeSkeleton(): ReactElement {
   }, []);
 
   return (
-    <main
-      aria-hidden
-      className="mx-auto box-content flex min-h-[calc(var(--column-height)-var(--tab-bar-space)-1.75rem)] max-w-column flex-col gap-8 px-4 pt-4 pb-[calc(var(--tab-bar-space)+0.75rem)]"
-    >
+    <div aria-hidden className="mx-auto flex w-full max-w-reading flex-col gap-8">
       {shown ? (
         <>
           <div className="h-11" />
@@ -33,6 +30,6 @@ export function HomeSkeleton(): ReactElement {
           <div className="-mx-1 mt-auto h-64 rounded-card bg-card" />
         </>
       ) : null}
-    </main>
+    </div>
   );
 }

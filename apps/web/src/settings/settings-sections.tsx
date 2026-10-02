@@ -1,9 +1,7 @@
 import { useId, useState, type ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
-import { SELF_SCROLL } from "../lib/tabbed-screen";
 import { TUNING } from "../lib/tuning";
-import { cn } from "../lib/utils";
 import type { Settings, SubtopicRef, TopicInfo } from "../openapi";
 import { ChoiceChip } from "../ui/choice-chip";
 import { Segmented } from "../ui/segmented";
@@ -87,8 +85,7 @@ function same(a: SubtopicRef, b: SubtopicRef): boolean {
 
 /**
  * The chosen topics' subtopics as chips; two at most, then the rest stop
- * taking presses. The chips take the height the tab leaves and scroll inside
- * it, padded so a chip's hit area and focus outline are not clipped.
+ * taking presses.
  */
 export function FocusSection({
   topics,
@@ -117,7 +114,7 @@ export function FocusSection({
       )
       .join("・");
   return (
-    <section className="flex min-h-0 flex-1 flex-col gap-3">
+    <section className="flex flex-col gap-3">
       <Heading
         id={id}
         aside={t("count", { count: focus.length, max: TUNING.maxFocus })}
@@ -127,10 +124,7 @@ export function FocusSection({
       <div
         role="group"
         aria-labelledby={id}
-        className={cn(
-          "-m-1.5 flex min-h-14 flex-wrap content-start gap-2 p-1.5",
-          SELF_SCROLL,
-        )}
+        className="flex flex-wrap content-start gap-2"
       >
         {offered.map((ref) => {
           const selected = focus.some((chosen) => same(chosen, ref));

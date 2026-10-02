@@ -360,7 +360,7 @@ describe("SummaryScreen difficulty and reach variants", () => {
   });
 });
 
-describe("SummaryScreen after a round, over the tab bar", () => {
+describe("SummaryScreen after a round, in the focus layout", () => {
   afterEach(() => {
     act(() => {
       window.history.replaceState(null, "", "/");
@@ -369,7 +369,7 @@ describe("SummaryScreen after a round, over the tab bar", () => {
     vi.useRealTimers();
   });
 
-  it("carries the tab bar with its actions above it, and leaves at once on a tab", async () => {
+  it("shows no navigation, and leaves at once on the strip's ✕", async () => {
     fakeTimers();
     const answered = ROUND.deck.map((cardId) => ({
       id: `round-1:f:${cardId}`,
@@ -393,22 +393,11 @@ describe("SummaryScreen after a round, over the tab bar", () => {
     expect(
       screen.getByRole("heading", { level: 1, name: ja.Summary.title.today }),
     ).toBeInTheDocument();
-    expect(navigations()).toStrictEqual([
-      [
-        ["/", null],
-        ["/talk", null],
-        ["/records", null],
-        ["/settings", null],
-      ],
-    ]);
-    const actions = screen
-      .getByRole("button", { name: ja.Summary.actions.end })
-      .closest("footer");
-    expect(actions?.className).toContain("bottom-[calc(var(--tab-bar-space)");
+    expect(navigations()).toStrictEqual([]);
 
-    fireEvent.click(screen.getByRole("link", { name: ja.Nav.records }));
+    fireEvent.click(screen.getByRole("button", { name: ja.Summary.close }));
     await settle();
-    expect(window.location.pathname).toBe("/records");
+    expect(window.location.pathname).toBe("/");
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
   });
 });

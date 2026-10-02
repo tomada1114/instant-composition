@@ -17,12 +17,12 @@ export function SettingsPage({ tab }: Readonly<{ tab: SettingsTab }>): ReactElem
   // the app tab; nothing here waits for it.
   useQuery({ ...PROFILE_QUERY, refetchOnMount: "always" });
 
-  if (!page.isFetchedAfterMount) return <PageLoading withTabBar />;
+  if (!page.isFetchedAfterMount) return <PageLoading withNav />;
   if (isSignedOut(page.error)) return <Navigate to="/" replace />;
   if (page.isError || page.data === undefined) {
     return (
       <PageLoadFailed
-        withTabBar
+        withNav
         onReload={() => {
           void page.refetch();
         }}

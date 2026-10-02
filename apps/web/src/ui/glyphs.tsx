@@ -97,14 +97,6 @@ export function GearGlyph({ className }: GlyphProps): ReactElement {
   );
 }
 
-export function PauseGlyph({ className }: GlyphProps): ReactElement {
-  return (
-    <Glyph className={className}>
-      <path d="M7 5v10M13 5v10" strokeWidth="2" />
-    </Glyph>
-  );
-}
-
 export function ArrowGlyph({ className }: GlyphProps): ReactElement {
   return (
     <Glyph className={className}>

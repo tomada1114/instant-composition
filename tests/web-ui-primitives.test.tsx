@@ -46,7 +46,8 @@ describe("cn", () => {
     ["a type-scale size beside the display family", "text-number-xl", "font-display"],
     ["a radius token beside a padding", "rounded-card", "p-6"],
     ["the panel radius beside a padding", "rounded-panel", "p-6"],
-    ["the column width beside a width", "max-w-column", "w-full"],
+    ["the reading width beside a width", "max-w-reading", "w-full"],
+    ["the dialog width beside a width", "max-w-dialog", "w-full"],
     ["the lip beside the color it is painted", "shadow-lip", "shadow-action-lip"],
     ["the lip beside the control border's color", "shadow-lip", "shadow-input"],
     ["the count size beside the text on energy", "text-count", "text-on-energy"],
@@ -60,7 +61,8 @@ describe("cn", () => {
   it.each([
     ["a type-scale size", "text-body", "text-answer"],
     ["a radius token", "rounded-card", "rounded-full"],
-    ["a container token", "max-w-column", "max-w-none"],
+    ["a container token", "max-w-reading", "max-w-none"],
+    ["two container tokens", "max-w-stage", "max-w-dashboard"],
     ["the control radius", "rounded-control", "rounded-card"],
     ["the panel radius", "rounded-card", "rounded-panel"],
     ["the count size", "text-body", "text-count"],
@@ -177,9 +179,9 @@ describe("Button", () => {
 });
 
 describe("Sheet", () => {
-  // The one class list pinned here: jsdom evaluates no media query, so the
-  // `wide:` classes are the only trace a test can see of the sheet turning
-  // into a centered dialog on a PC while staying a bottom sheet on a phone.
+  // The one class list pinned here: jsdom lays nothing out, so the classes
+  // are the only trace a test can see of where the dialog sits. None carries
+  // a breakpoint: it is the same centered dialog at every width.
   function renderSheet(): HTMLElement {
     render(
       <Sheet titleId="sheet-title">
@@ -189,20 +191,34 @@ describe("Sheet", () => {
     return screen.getByRole("dialog", { name: "Paused" });
   }
 
-  it("rises from the bottom with its top corners rounded on a phone", () => {
+  it("opens centered over the scrim, at most 440 wide, every corner rounded", () => {
     const dialog = renderSheet();
 
-    expect(dialog.parentElement?.className.split(" ")).toContain("items-end");
-    expect(dialog.className.split(" ")).toContain("rounded-t-card");
+    const scrim = dialog.parentElement?.className.split(" ") ?? [];
+    expect(scrim).toEqual(
+      expect.arrayContaining(["fixed", "inset-0", "items-center", "justify-center"]),
+    );
+    expect(scrim).toContain("bg-background/70");
+    const panel = dialog.className.split(" ");
+    expect(panel).toEqual(
+      expect.arrayContaining([
+        "max-w-dialog",
+        "rounded-panel",
+        "border-2",
+        "bg-popover",
+      ]),
+    );
   });
 
-  it("opens centered over the same scrim, every corner rounded, on a wide window", () => {
+  it("is the same dialog at every width: no class waits on a breakpoint", () => {
     const dialog = renderSheet();
 
-    const scrim = dialog.parentElement?.className.split(" ");
-    expect(scrim).toContain("wide:items-center");
-    expect(scrim).toContain("bg-background/70");
-    expect(dialog.className.split(" ")).toContain("wide:rounded-card");
+    const classes = [
+      ...(dialog.parentElement?.className.split(" ") ?? []),
+      ...dialog.className.split(" "),
+    ];
+    expect(classes.filter((name) => name.includes(":"))).toStrictEqual([]);
+    expect(classes).not.toContain("items-end");
   });
 });
 

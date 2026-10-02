@@ -72,7 +72,10 @@
     "home": "ホーム",
     "talk": "会話",
     "records": "記録",
-    "settings": "設定"
+    "settings": "設定",
+    "brand": "Instant Composition",
+    "skip": "本文へ移動",
+    "close": "閉じる"
   },
   "Landing": {
     "brand": "Instant Composition",
@@ -238,7 +241,6 @@
       "recap": "今日の締め"
     },
     "close": "閉じる",
-    "back": "戻る",
     "growth": {
       "title": "今日の成長",
       "faster": "文が速くなった",

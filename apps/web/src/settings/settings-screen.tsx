@@ -53,7 +53,7 @@ function RetestSheet({
 
 /**
  * W11: every change saves as it is made and says in one line what it does,
- * under three tabs that each fit a phone — what is dealt, the level and the
+ * under three tabs — what is dealt, the level and the
  * seconds per card, and the app itself. The tab is the URL's `?tab=`.
  */
 export function SettingsScreen({

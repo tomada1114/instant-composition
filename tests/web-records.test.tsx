@@ -8,6 +8,7 @@ import {
   fakeTimers,
   fill,
   ja,
+  landmarks,
   navigations,
   press,
   renderApp,
@@ -199,7 +200,6 @@ describe("the records screen, W10", () => {
     expect(within(titles).getByText("7 · 14")).toBeInTheDocument();
     expect(within(titles).getByText("10 · 25 · 50 · 100")).toBeInTheDocument();
     const rows = titles.querySelector("dl");
-    expect(rows).toHaveAttribute("tabindex", "0");
     expect(rows).toHaveAccessibleName(ja.Records.titles.title);
   });
 
@@ -249,6 +249,7 @@ describe("the records screen, W10", () => {
         ["/settings", null],
       ],
     ]);
+    expect(landmarks()).toStrictEqual(["navigation", "main"]);
     fireEvent.click(screen.getByRole("link", { name: ja.Nav.home }));
     await settle();
     expect(where()).toBe("/");
@@ -424,18 +425,17 @@ describe("the records screen, its tabs", () => {
   });
 
   it.each(["/records", "/records?tab=history"])(
-    "is the column's height yet grows to fit at %s, its self-scrolling lists left out of that",
+    "is as tall as its content at %s",
     async (path) => {
       serveRecords();
       await renderApp(path);
       const main = screen.getByRole("main");
-      // A floor, never a fixed height: a tab taller than the column must
-      // push the page longer, not slide under the tab bar.
-      expect(main.className).toMatch(/(^|\s)min-h-\[calc\(var\(--column-height\)/u);
-      expect(main.className).not.toMatch(/(^|\s)(h|max-h)-/u);
-      const scrolls = [...main.querySelectorAll(".overflow-y-auto")];
-      expect(scrolls).toHaveLength(1);
-      for (const region of scrolls) expect(region).toHaveClass("contain-size");
+      // A screen is as tall as its content: no height of its own, and no
+      // region scrolling inside it, so the page scrolls instead.
+      for (const element of [main, main.firstElementChild]) {
+        expect(element?.getAttribute("class")).not.toMatch(/(^|\s)(min-h|max-h|h)-/u);
+      }
+      expect(main.querySelectorAll(".overflow-y-auto, .contain-size")).toHaveLength(0);
     },
   );
 

@@ -12,6 +12,7 @@ import {
   fill,
   homeView,
   ja,
+  landmarks,
   navigations,
   press,
   refusal,
@@ -503,65 +504,75 @@ describe("the drill's pause sheet", () => {
   });
 });
 
-describe("the drill's tab bar", () => {
-  /** The one navigation, with no tab current: the drill is none of them. */
-  const TABS = [
-    [
-      ["/", null],
-      ["/talk", null],
-      ["/records", null],
-      ["/settings", null],
-    ],
-  ];
-
+describe("the drill's focus layout", () => {
   function leaveSheet(): HTMLElement | null {
     return screen.queryByRole("dialog", { name: ja.Drill.leave.title });
   }
 
-  function chooseTab(name: string): void {
-    fireEvent.click(screen.getByRole("link", { name }));
+  function back(): void {
+    act(() => {
+      window.history.back();
+    });
   }
 
-  it("is on the start screen and the card screen, the card screen's actions above it", async () => {
+  /** Starts today's round from home, as a press does, so Back has home to go to. */
+  async function startFromHome(): Promise<void> {
+    await renderApp("/");
+    fireEvent.click(screen.getByRole("button", { name: ja.Home.today.start }));
+    await settle();
+    await settle(16);
+  }
+
+  it("shows no navigation on the start screen or mid-round, only main", async () => {
     serve();
     await renderApp("/drill?kind=today");
-    expect(navigations()).toStrictEqual(TABS);
+    expect(navigations()).toStrictEqual([]);
+    expect(landmarks()).toStrictEqual(["main"]);
     press("Enter");
     await settle(16);
     expect(screen.getByText("prompt-c1")).toBeInTheDocument();
-    expect(navigations()).toStrictEqual(TABS);
-    const main = screen.getByRole("main");
-    expect(main.className).toContain("var(--tab-bar-space)");
-    expect(main.compareDocumentPosition(screen.getByRole("navigation"))).toBe(
-      Node.DOCUMENT_POSITION_FOLLOWING,
-    );
+    expect(navigations()).toStrictEqual([]);
+    expect(landmarks()).toStrictEqual(["main"]);
   });
 
-  it("leaves the start screen at once, with nothing to lose", async () => {
+  it("pauses mid-round on the strip's ✕ at the top left", async () => {
+    serve();
+    await openRound("/drill?kind=today");
+    const close = screen.getByRole("button", { name: ja.Drill.card.pause });
+    expect(close.closest("[data-part=focus-strip]")).not.toBeNull();
+    fireEvent.click(close);
+    await settle(16);
+    expect(
+      screen.getByRole("dialog", { name: ja.Drill.sheet.title }),
+    ).toBeInTheDocument();
+  });
+
+  it("leaves the start screen at once on ✕, with nothing to lose", async () => {
     serve();
     await renderApp("/drill?kind=today");
-    chooseTab(ja.Nav.settings);
+    fireEvent.click(screen.getByRole("link", { name: ja.Nav.close }));
     await settle();
-    expect(where()).toBe("/settings");
+    expect(where()).toBe("/");
     expect(leaveSheet()).toBeNull();
   });
 
-  it("pauses the timer mid-round and asks before a tab leaves, staying on continue", async () => {
+  it("pauses the timer mid-round and asks before Back leaves, staying on continue", async () => {
     serve();
-    await openRound("/drill?kind=today");
+    await startFromHome();
     await settle(2000);
-    chooseTab(ja.Nav.records);
+    back();
     await settle();
+    await settle(16);
     expect(leaveSheet()).toBeInTheDocument();
     expect(
       screen.getByText(fill(ja.Drill.sheet.hint, { hour: 4, position: 1 })),
     ).toBeInTheDocument();
     expect(screen.queryByText("prompt-c1")).not.toBeInTheDocument();
-    expect(where()).toBe("/drill?kind=today");
 
     // Well past the card's 7 s while the sheet is open, and still not timed out.
     await settle(10_000);
     fireEvent.click(screen.getByRole("button", { name: ja.Drill.sheet.continue }));
+    await settle();
     await settle(16);
     expect(leaveSheet()).toBeNull();
     expect(where()).toBe("/drill?kind=today");
@@ -574,11 +585,13 @@ describe("the drill's tab bar", () => {
 
   it("stays on Escape, as continue does", async () => {
     serve();
-    await openRound("/drill?kind=today");
-    chooseTab(ja.Nav.home);
+    await startFromHome();
+    back();
     await settle();
+    await settle(16);
     expect(leaveSheet()).toBeInTheDocument();
     press("Escape");
+    await settle();
     await settle(16);
     expect(leaveSheet()).toBeNull();
     expect(screen.queryByRole("dialog")).toBeNull();
@@ -586,7 +599,7 @@ describe("the drill's tab bar", () => {
     expect(screen.getByText("prompt-c1")).toBeInTheDocument();
   });
 
-  it("goes to the chosen tab on leave, and home then resumes the round at the same card", async () => {
+  it("goes home on leave, and home then resumes the round at the same card", async () => {
     const calls = serve({
       homeLater: homeView({
         kind: "in-progress",
@@ -598,21 +611,19 @@ describe("the drill's tab bar", () => {
       }),
       next: { ...ROUND, answered: [firstPassOf("c1")] },
     });
-    await openRound("/drill?kind=today");
+    await startFromHome();
     await grade("k");
     expect(screen.getByText("prompt-c2")).toBeInTheDocument();
 
-    chooseTab(ja.Nav.settings);
+    back();
     await settle();
+    await settle(16);
     fireEvent.click(screen.getByRole("button", { name: ja.Drill.leave.go }));
-    await settle();
-    expect(where()).toBe("/settings");
-    expect(leaveSheet()).toBeNull();
-
-    chooseTab(ja.Nav.home);
     await settle();
     await settle(16);
     expect(where()).toBe("/");
+    expect(leaveSheet()).toBeNull();
+
     fireEvent.click(screen.getByRole("button", { name: ja.Home.progress.resume }));
     await settle();
     await settle(16);

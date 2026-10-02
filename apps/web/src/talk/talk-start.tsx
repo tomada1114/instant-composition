@@ -1,6 +1,7 @@
 import type { ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
+import { useShellNav } from "../lib/frame";
 import { Button } from "../ui/button";
 import { Eyebrow } from "../ui/eyebrow";
 import { ArrowGlyph } from "../ui/glyphs";
@@ -20,8 +21,9 @@ export function TalkStart({
   onStart: () => void;
 }>): ReactElement {
   const t = useTranslations("Talk.start");
+  useShellNav();
   return (
-    <main className="mx-auto box-content flex min-h-[calc(var(--column-height)-var(--tab-bar-space)-1.75rem)] max-w-column flex-col gap-8 px-4 pt-4 pb-[calc(var(--tab-bar-space)+0.75rem)]">
+    <div className="mx-auto flex w-full max-w-reading flex-col gap-8">
       <h1>
         <Eyebrow>{t("title")}</Eyebrow>
       </h1>
@@ -67,6 +69,6 @@ export function TalkStart({
           </>
         )}
       </section>
-    </main>
+    </div>
   );
 }

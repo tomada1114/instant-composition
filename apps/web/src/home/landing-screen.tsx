@@ -19,7 +19,7 @@ export function LandingScreen(): ReactElement {
   usePrimaryKey();
 
   return (
-    <main className="mx-auto box-content flex min-h-[calc(var(--column-height)-2.75rem)] max-w-column flex-col px-4 pt-8 pb-3">
+    <div className="mx-auto flex w-full max-w-reading flex-col">
       <div className="flex flex-col gap-3">
         <Eyebrow>{t("brand")}</Eyebrow>
         <h1 className="text-heading">{t("title")}</h1>
@@ -46,6 +46,6 @@ export function LandingScreen(): ReactElement {
           <Kbd>Space</Kbd>
         </a>
       </Button>
-    </main>
+    </div>
   );
 }

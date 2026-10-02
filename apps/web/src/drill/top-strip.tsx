@@ -1,9 +1,10 @@
 import { useTranslations } from "use-intl";
 import { useEffect, useRef, type ReactElement } from "react";
 
+import { FocusStrip } from "../lib/frame";
 import { cn } from "../lib/utils";
 import type { Pass } from "../openapi";
-import { PauseGlyph } from "../ui/glyphs";
+import { CloseGlyph } from "../ui/glyphs";
 import { IconButton } from "../ui/icon-button";
 import { playMotion } from "./motion";
 
@@ -45,7 +46,10 @@ export function Ticks({
   );
 }
 
-/** The ticks across the top; under them pause, the count, and the combo from 2. */
+/**
+ * The drill's focus strip: ✕, which pauses (as Esc and `?` do), the ticks
+ * centred, and the count with the combo from 2 at the right.
+ */
 export function TopStrip({
   pass,
   current,
@@ -69,36 +73,32 @@ export function TopStrip({
   }, [combo]);
 
   return (
-    <div className="flex flex-col gap-2">
-      <Ticks current={current} total={total} lit={lit} />
-      <div className="grid h-11 grid-cols-[1fr_auto_1fr] items-center">
-        <IconButton
-          plain
-          type="button"
-          aria-label={t("pause")}
-          onClick={onPause}
-          className="justify-self-start"
-        >
-          <PauseGlyph />
+    <FocusStrip
+      close={
+        <IconButton plain type="button" aria-label={t("pause")} onClick={onPause}>
+          <CloseGlyph />
         </IconButton>
-        <span className="font-latin text-count text-muted-foreground">
-          {pass === "first"
-            ? t("progress", { current, total })
-            : t("retryProgress", { current, total })}
-        </span>
-        <span className="justify-self-end">
+      }
+      progress={<Ticks current={current} total={total} lit={lit} />}
+      counters={
+        <>
+          <span className="font-latin text-count whitespace-nowrap text-muted-foreground">
+            {pass === "first"
+              ? t("progress", { current, total })
+              : t("retryProgress", { current, total })}
+          </span>
           {combo >= 2 ? (
             <span
               ref={comboRef}
               data-part="combo"
-              className="inline-flex items-baseline gap-1.5 rounded-full bg-energy px-3 py-0.5 font-latin text-count text-on-energy"
+              className="inline-flex items-baseline gap-1.5 rounded-full bg-energy px-3 py-0.5 font-latin text-count whitespace-nowrap text-on-energy"
             >
               <span className="font-display text-figure-sm">{combo}</span>
               {t("comboLabel")}
             </span>
           ) : null}
-        </span>
-      </div>
-    </div>
+        </>
+      }
+    />
   );
 }

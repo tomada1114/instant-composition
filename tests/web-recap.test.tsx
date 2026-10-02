@@ -9,6 +9,7 @@ import {
   fakeTimers,
   homeView,
   ja,
+  landmarks,
   navigations,
   press,
   refusal,
@@ -100,9 +101,6 @@ describe("the recap screen, W9r: re-reading today", () => {
       screen.queryByRole("button", { name: ja.Summary.actions.end }),
     ).not.toBeInTheDocument();
     expect(screen.queryByRole("button", { name: /もう/u })).not.toBeInTheDocument();
-    expect(
-      screen.queryByRole("button", { name: ja.Summary.close }),
-    ).not.toBeInTheDocument();
   });
 
   it("reads back a round finished in another browser, keeping nothing in this one", async () => {
@@ -143,32 +141,22 @@ describe("the recap screen, W9r: re-reading today", () => {
     expect(readsOf(calls, HOME_URL)).toBe(2);
   });
 
-  it("goes back on ←", async () => {
+  it("closes on the strip's ✕, going home", async () => {
     serveRecap();
     await renderApp("/recap");
-    const back = screen.getByRole("link", { name: ja.Summary.back });
-    expect(back).toHaveAttribute("href", "/");
-    fireEvent.click(back);
+    const close = screen.getByRole("button", { name: ja.Summary.close });
+    expect(close.closest("[data-part=focus-strip]")).not.toBeNull();
+    fireEvent.click(close);
     await settle();
     expect(where()).toBe("/");
   });
 
-  it("carries the tab bar, no tab current, and leaves at once on a tab", async () => {
+  it("sits in the focus layout, with no navigation", async () => {
     serveRecap();
     await renderApp("/recap");
     expectRecap();
-    expect(navigations()).toStrictEqual([
-      [
-        ["/", null],
-        ["/talk", null],
-        ["/records", null],
-        ["/settings", null],
-      ],
-    ]);
-    fireEvent.click(screen.getByRole("link", { name: ja.Nav.settings }));
-    await settle();
-    expect(where()).toBe("/settings");
-    expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
+    expect(navigations()).toStrictEqual([]);
+    expect(landmarks()).toStrictEqual(["main"]);
   });
 
   it("goes back on Esc", async () => {

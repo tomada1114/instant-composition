@@ -36,7 +36,7 @@ export function DrillScreen({
   dailySize: number;
   available: number | undefined;
   onKind: (kind: RoundKind) => void;
-}>): ReactElement {
+}>): ReactElement | null {
   const [kind, setKind] = useState(initialKind);
   const [attempt, setAttempt] = useState(0);
   const [pressed, setPressed] = useState(pressedOnArrival);
@@ -60,7 +60,7 @@ export function DrillScreen({
   }, [kind, attempt]);
 
   if (loaded.status === "loading" || loaded.attempt !== attempt) {
-    return <PageLoading withTabBar />;
+    return <PageLoading />;
   }
   if (loaded.status === "failed") {
     return (
