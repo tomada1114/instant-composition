@@ -1,0 +1,252 @@
+[
+  {
+    "id": "v_2a5k5k8t",
+    "category": "word",
+    "level": 3,
+    "headword": "crowded",
+    "definition": "full of people, with little space to move",
+    "example": "The train was really {{crowded}} this morning.",
+    "example2": "Let's go early before the beach gets crowded.",
+    "meanings": {
+      "ja": "混んでいる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fc1a4d7146bbed73f6be23383bdbe1beaa8ef20ba71c77147b05a2303856b2d3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:538843f9367a77a2347641dc5dbbf683e85bdd8380a45dd3be99e0a20c44c6c8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_2t6x2v3s",
+    "category": "word",
+    "level": 5,
+    "headword": "postpone",
+    "definition": "to move an event to a later time",
+    "example": "They had to {{postpone}} the meeting until next week.",
+    "example2": "The game was postponed because of the rain.",
+    "meanings": {
+      "ja": "延期する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7729c0833079924527e24c375892bca553248f5aa4863e0bc00000fe328e361e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:7708fce8ab322940d9069b850cb8edbc2b23eb3aa0f15b3ebb37d4288d8ec2ce",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3j6h3q4z",
+    "category": "word",
+    "level": 7,
+    "headword": "compromise",
+    "definition": "an agreement where each side accepts less than it wanted",
+    "example": "After a long discussion, we finally reached a {{compromise}}.",
+    "example2": "Every good relationship needs some compromise.",
+    "meanings": {
+      "ja": "妥協・歩み寄り"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:09d5bbbd5bd54eff6521423a6a19bff7e648ecf1272c29877bf3d8171c52f097",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:735d491f34d2a075341247087a75bf2342b99a5c1b56f8b9948be1aa069857ed",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5a7q4w2p",
+    "category": "word",
+    "level": 5,
+    "headword": "convenient",
+    "definition": "easy to use, or suitable for your plans",
+    "example": "Would Tuesday afternoon be {{convenient}} for you?",
+    "example2": "The hotel is in a convenient location near the station.",
+    "meanings": {
+      "ja": "都合がいい・便利な"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7974a90b894a5cee62b7f44419c6481546774b853e660163a9269397d0e5fe01",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:71c1b625f82ef415f36d09d6f9df23d26ef08729d968ef1b4b246ae295fa0f01",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5p8c6g7b",
+    "category": "word",
+    "level": 3,
+    "headword": "borrow",
+    "definition": "to take something from someone and give it back later",
+    "example": "Can I {{borrow}} your pen for a second?",
+    "example2": "She borrowed three books from the library.",
+    "meanings": {
+      "ja": "借りる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:62c4f244f289426d20095617cb272c4ad576ab4befd614a10f58a08e64aa70b1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:4ef65ac5121ee5de0c628bc5298d5a50727eb1ace21b27e14ff7418cab2d9d01",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_6p2g7b7e",
+    "category": "word",
+    "level": 6,
+    "headword": "reluctant",
+    "definition": "not wanting to do something and slow to agree to it",
+    "example": "She was {{reluctant}} to ask her boss for help.",
+    "example2": "Many people are reluctant to change their habits.",
+    "meanings": {
+      "ja": "気が進まない"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:94cd0ba641a447c54c106be3511deb8a72b036b4d168d3c897f0ea09faf1167c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:deff3703dbf447291b58cd0ad99a928ebcd4de913cf001ba06693d74f6b61598",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_6v5p3b6f",
+    "category": "word",
+    "level": 4,
+    "headword": "deadline",
+    "definition": "the time or day by which something must be finished",
+    "example": "We have to meet the {{deadline}} on Friday.",
+    "example2": "I work best when a deadline is close.",
+    "meanings": {
+      "ja": "締め切り"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f58521316edfbb7499146e5fdb8a0aa5785038abb25f19b7d0ee3f8ff8b5ed2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:8ef6d3cb4b16162f958d4dbfe206973c799332bd9707cc62d157323f92b03417",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7d8k6k2w",
+    "category": "word",
+    "level": 6,
+    "headword": "itinerary",
+    "definition": "a plan for a trip, with the places and times",
+    "example": "I've emailed you the {{itinerary}} for our trip to Kyoto.",
+    "example2": "Our itinerary includes two days in Osaka.",
+    "meanings": {
+      "ja": "旅程・旅行の日程"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3052dc72a96fdb48ce34b046dfb0c6380b2c25840335cd5858f19b139bb95f0d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:8bcb12e07b838265c2d42e87874c179b95d63d9ee79ea753a17257cd36cf5ba2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7e2w7n5v",
+    "category": "word",
+    "level": 7,
+    "headword": "overwhelmed",
+    "definition": "feeling that there is too much to deal with",
+    "example": "I felt completely {{overwhelmed}} during my first week at work.",
+    "example2": "It's normal to feel overwhelmed when you move to a new city.",
+    "meanings": {
+      "ja": "圧倒される・手に負えない"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f470d85015034d32195071bbd3c0e7b4fb09bff193484af1a8d73ed19a9fefef",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:ef2da228552af59785a651c76cf6615b08f96a0f3006da783128e5c790f774f7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9j7q7g5h",
+    "category": "word",
+    "level": 4,
+    "headword": "nervous",
+    "definition": "worried or a little afraid about something that is going to happen",
+    "example": "I always get {{nervous}} before a job interview.",
+    "example2": "He looked nervous on his first day at the new office.",
+    "meanings": {
+      "ja": "緊張している"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:768d3c3f9a0b5c7dfb14547c18e621f1c45c3181c013b61e081313a06b458aa7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:729dd3a9ec18bb4a699accf1f3240cee2dd2ad5ce3f7a9a6fb486a5928307041",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  }
+]

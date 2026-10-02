@@ -13,7 +13,7 @@ import { countWords } from "@instant-composition/domain";
 
 import { buildCatalog, CatalogError, main } from "../scripts/catalog/build.mjs";
 import { coreHash, fieldHash, isShown } from "../scripts/cards/schema.mjs";
-import { vocabCoreHash } from "../scripts/cards/vocab-schema.mjs";
+import { isVocabShown, vocabCoreHash } from "../scripts/cards/vocab-schema.mjs";
 import { DEFAULT_ROOT } from "../scripts/cards/store.mjs";
 import { repoRoot, runNode } from "../scripts/lib/node-tools.mjs";
 import {
@@ -340,6 +340,35 @@ describe("the snapshot built from content/", () => {
     expect(document.withdrawn.map((entry) => entry.id).sort()).toStrictEqual(
       [...unstampedIds].sort(),
     );
+  });
+
+  it("holds the 40 starter vocabulary cards, 10 per category, every one shown for ja", () => {
+    const vocab = readdirSync(path.join(DEFAULT_ROOT, "vocab"))
+      .filter((file) => file.endsWith(".json"))
+      .flatMap(
+        (file) =>
+          JSON.parse(
+            readFileSync(path.join(DEFAULT_ROOT, "vocab", file), "utf8"),
+          ) as Parameters<typeof isVocabShown>[0][],
+      );
+    const out = makeOut();
+    buildCatalog({ root: DEFAULT_ROOT, out });
+    const document = readDocument(out);
+    const perCategory = new Map<string, number>();
+    for (const item of document.vocab) {
+      perCategory.set(item.category, (perCategory.get(item.category) ?? 0) + 1);
+    }
+
+    expect(vocab.filter((card) => isVocabShown(card, "ja"))).toHaveLength(vocab.length);
+    expect(document.vocab).toHaveLength(vocab.length);
+    expect(document.vocab.length).toBeGreaterThanOrEqual(40);
+    expect(Math.min(...perCategory.values())).toBeGreaterThanOrEqual(10);
+    expect([...perCategory.keys()].sort()).toStrictEqual([
+      "idiom",
+      "phrasal-verb",
+      "phrase",
+      "word",
+    ]);
   });
 
   it("gives the application exactly the stamped cards to show for ja", () => {

@@ -139,6 +139,23 @@ describe("snapshotCatalog", () => {
     },
   );
 
+  it("reads a snapshot built before vocabulary existed, as one holding none", async () => {
+    const document = built();
+    const vocab = document["vocab"] as unknown[];
+    const withVocab = await snapshotCatalog(file).snapshot();
+    writeFileSync(
+      file,
+      JSON.stringify(
+        Object.fromEntries(Object.entries(document).filter(([key]) => key !== "vocab")),
+      ),
+    );
+
+    const withoutVocab = await snapshotCatalog(file).snapshot();
+
+    expect(vocab).not.toHaveLength(0);
+    expect(withoutVocab).toStrictEqual(withVocab);
+  });
+
   it("reads the file once and serves every later call from that read", async () => {
     built();
     const catalog = snapshotCatalog(file);
