@@ -1,0 +1,252 @@
+[
+  {
+    "id": "v_3s7m4s5f",
+    "category": "phrasal-verb",
+    "level": 6,
+    "headword": "come up with",
+    "definition": "to think of an idea, a plan or an answer",
+    "example": "She {{came up with}} a great name for the project.",
+    "example2": "We need to come up with a better plan by Monday.",
+    "meanings": {
+      "ja": "思いつく"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3e84dd65694ff9f0a0829aed7a849cf6ad20c8b7bc9482153a69ec43fb811aae",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:1c1dfaf0a433b4c53d0c78da42647f37109c1704c36cb88d1b738ccd53c8126c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3x9g6t5x",
+    "category": "phrasal-verb",
+    "level": 7,
+    "headword": "bring up",
+    "definition": "to start talking about a subject",
+    "example": "I didn't want to {{bring}} it {{up}} during dinner.",
+    "example2": "She brought up an important point in the meeting.",
+    "meanings": {
+      "ja": "（話題を）持ち出す"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f4d9a053e193913d8317f716d11663110ec2bff1397a58f599904c5770c90ed2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:a0863743b2e778f896698a7e5e72af32617a98fbe4abfa8fcfbc95f67fe97e85",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5b9z8r6s",
+    "category": "phrasal-verb",
+    "level": 3,
+    "headword": "pick up",
+    "definition": "to go somewhere to collect someone or something",
+    "example": "Can you {{pick}} me {{up}} at the station at six?",
+    "example2": "I need to pick up my dry cleaning after work.",
+    "meanings": {
+      "ja": "迎えに行く・取りに行く"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cc9bc45f7178dbfde4a6a8856cc25ecc8bc87d1a1448967218dde7935ac81508",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:5e15d30c90b2af23cdbc44fc166ec6d0d5738ea512e92326e49d1c14e7c2d12e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5t9r9a3k",
+    "category": "phrasal-verb",
+    "level": 5,
+    "headword": "figure out",
+    "definition": "to understand something or find an answer by thinking",
+    "example": "I can't {{figure out}} how to turn off this alarm.",
+    "example2": "We need to figure out why sales dropped last month.",
+    "meanings": {
+      "ja": "理解する・解決策を見つける"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:79e9d866bcc03ebbef8caa7bd9e17394e6a6b767d586177422290e717219c005",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:036a8fc592498b58024aaa4c1dcf9c89146c431c402d56ec3f7af84acf5b9f6f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_6f7h4h6g",
+    "category": "phrasal-verb",
+    "level": 6,
+    "headword": "run out of",
+    "definition": "to use all of something so that none is left",
+    "example": "We've {{run out of}} milk, so I'll buy some later.",
+    "example2": "My phone ran out of battery on the train.",
+    "meanings": {
+      "ja": "使い果たす・切らす"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f03e300b56fcfef8f29504d45535ac2dc80fef1ab005396524c8fe837a88b4d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:9f358d9f3542d2f1253ed3012db31896dbff59e39ae12db02d90b3225a4759d7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7f8d7x7c",
+    "category": "phrasal-verb",
+    "level": 5,
+    "headword": "put off",
+    "definition": "to decide to do something later than planned",
+    "example": "Stop {{putting}} it {{off}} and call the dentist today.",
+    "example2": "They put off the launch until next spring.",
+    "meanings": {
+      "ja": "先延ばしにする"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:58284b1765ba6c6a40cee4d1fd7280166a00cd3fd961eb0c14d5510dab495d80",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:eb73726c7025be1ac4b1e9da3b5b79b0c3c7b8a13af786de4ec2dd106579a2e3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7g2x5n5e",
+    "category": "phrasal-verb",
+    "level": 4,
+    "headword": "look forward to",
+    "definition": "to feel happy about something that is going to happen",
+    "example": "I'm really {{looking forward to}} seeing you next week.",
+    "example2": "We look forward to hearing from you.",
+    "meanings": {
+      "ja": "楽しみにする"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:836ee73e90e6199979b222b0f5b53c0f04b3b8e595d4b585cdc1b6746056833e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:a41710d6ca4e15334f9d222869f6c05b56379ab6e5537a79cff2f6006d9d6a6a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7m7m9n5w",
+    "category": "phrasal-verb",
+    "level": 7,
+    "headword": "turn down",
+    "definition": "to say no to an offer or a request",
+    "example": "He {{turned down}} the job because the salary was too low.",
+    "example2": "I had to turn down her invitation to the wedding.",
+    "meanings": {
+      "ja": "断る"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:95da79cf566bd4e4e733653bd2eaaf0151a4d73b2ac04c0b717f9f387472b254",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:5dbd0bcad1ff6375b021b6241be8ceef6d84d7a9aa8ef4df228a8244c9e1f985",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_8d6q6b5b",
+    "category": "phrasal-verb",
+    "level": 4,
+    "headword": "check in",
+    "definition": "to report your arrival at a hotel or an airport",
+    "example": "We can {{check in}} at the hotel after three.",
+    "example2": "Please check in at least two hours before your flight.",
+    "meanings": {
+      "ja": "チェックインする"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:afa45f4aef9bfcf74abfc65f34c1324c3d3b9270a5df7723b41ac98927ada2c6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:5e66d38f5d9374104165307896db4ee5d078123e0d3b0a2ffaa60b4bbea55a7b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_8k7v4s2x",
+    "category": "phrasal-verb",
+    "level": 3,
+    "headword": "give up",
+    "definition": "to stop trying to do something because it is too hard",
+    "example": "She was so tired that she {{gave}} {{up}} halfway.",
+    "example2": "Don't give up; you're almost there.",
+    "meanings": {
+      "ja": "あきらめる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c3606409844ced242fd026441bb55f10449984c1cf3d3c02a55d398ae47a017c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:3600795399ea6334aed712c08b2aaf7560e71dcce48b0f4294b0f83f8e1179ab",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  }
+]

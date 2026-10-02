@@ -1,7 +1,9 @@
 // Argument parsing shared by every `cards:*` command: flags, the range
-// filters (`topic=`, `subtopic=`, `level=`), and card id lists.
+// filters (`topic=`, `subtopic=`, `level=`, and `category=` for vocabulary),
+// and card id lists.
 import { readKey } from "../lib/json.mjs";
 import { CardsError } from "./errors.mjs";
+import { VOCAB_CATEGORIES } from "./vocab-schema.mjs";
 
 /**
  * @typedef {"boolean" | "string" | "int" | "ids"} FlagKind
@@ -12,6 +14,8 @@ import { CardsError } from "./errors.mjs";
  * @property {string} usage - One-line synopsis after `pnpm cards:<name>`.
  * @property {Record<string, FlagKind>} flags - Accepted flags, without `--`.
  * @property {boolean} range - Whether range filters are accepted.
+ * @property {boolean} [vocab] - A vocabulary command: its range filters are
+ *   `category=` and `level=`, and its id lists take `v_` ids.
  * @property {number} positionals - How many bare arguments are accepted.
  */
 
@@ -20,6 +24,7 @@ import { CardsError } from "./errors.mjs";
  * @property {string[]} [topics]
  * @property {{ topic: string, subtopic: string }} [subtopic]
  * @property {{ min: number, max: number }} [levels]
+ * @property {string[]} [categories]
  */
 
 /**
@@ -107,7 +112,8 @@ export function parseArgs(command, spec, argv) {
       } else if (kind === "ids") {
         const ids = splitIds(value);
         // `--ids c_a c_b` as well as `--ids c_a,c_b`: take following bare ids.
-        while (argv[index + 1]?.startsWith("c_") === true) {
+        const prefix = spec.vocab === true ? "v_" : "c_";
+        while (argv[index + 1]?.startsWith(prefix) === true) {
           index += 1;
           ids.push(...splitIds(argv[index] ?? ""));
         }
@@ -118,12 +124,15 @@ export function parseArgs(command, spec, argv) {
       }
       continue;
     }
-    const range = /^(topic|subtopic|level)=(.*)$/u.exec(token);
+    const range = /^(topic|subtopic|level|category)=(.*)$/u.exec(token);
     if (range !== null) {
-      if (!spec.range)
-        throw usageError(command, spec, `range filter "${token}" is not accepted`);
       const [, key, value = ""] = range;
-      if (key === "topic") {
+      const forKind = key === "level" || (key === "category") === (spec.vocab === true);
+      if (!spec.range || !forKind)
+        throw usageError(command, spec, `range filter "${token}" is not accepted`);
+      if (key === "category") {
+        parsed.range.categories = splitIds(value);
+      } else if (key === "topic") {
         parsed.range.topics = splitIds(value);
       } else if (key === "subtopic") {
         const [topic = "", subtopic = "", extra] = value.split("/");
@@ -207,7 +216,8 @@ export function isEmptyRange(range) {
   return (
     range.topics === undefined &&
     range.subtopic === undefined &&
-    range.levels === undefined
+    range.levels === undefined &&
+    range.categories === undefined
   );
 }
 
@@ -220,6 +230,12 @@ export function inRange(range, cell) {
   const topic = readKey(cell, "topic");
   const level = readKey(cell, "level");
   if (range.topics !== undefined && !range.topics.includes(String(topic))) return false;
+  if (
+    range.categories !== undefined &&
+    !range.categories.includes(String(readKey(cell, "category")))
+  ) {
+    return false;
+  }
   if (
     range.subtopic !== undefined &&
     (topic !== range.subtopic.topic ||
@@ -250,6 +266,15 @@ export function inRange(range, cell) {
  * @throws {CardsError} `ERR_CARDS_USAGE` for an unknown id.
  */
 export function checkRange(command, spec, range, topics) {
+  for (const category of range.categories ?? []) {
+    if (!VOCAB_CATEGORIES.some((known) => known === category)) {
+      throw usageError(
+        command,
+        spec,
+        `category "${category}" is not one of ${VOCAB_CATEGORIES.join(", ")}`,
+      );
+    }
+  }
   for (const topic of range.topics ?? []) {
     if (!topics.some((entry) => entry.id === topic)) {
       throw usageError(command, spec, `topic "${topic}" is not in taxonomy.json`);

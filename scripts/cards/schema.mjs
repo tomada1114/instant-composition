@@ -75,10 +75,12 @@ export const ID_PATTERN = /^c_(?:[2-9][a-hjkmnp-z]){4}$/u;
  * Draw one random card id. Uniqueness is the caller's job.
  *
  * @param {(max: number) => number} [random] - Returns an integer in `[0, max)`.
- * @returns {string} A fresh id matching {@link ID_PATTERN}.
+ * @param {string} [prefix] - `c_` for a drill card, `v_` for a vocabulary
+ *   card; the pairs after it are drawn from the same alphabet either way.
+ * @returns {string} A fresh id matching {@link ID_PATTERN} for `c_`.
  */
-export function randomId(random = randomInt) {
-  let id = "c_";
+export function randomId(random = randomInt, prefix = "c_") {
+  let id = prefix;
   for (let pair = 0; pair < 4; pair += 1) {
     id += ID_DIGITS.charAt(random(ID_DIGITS.length));
     id += ID_LETTERS.charAt(random(ID_LETTERS.length));
@@ -90,7 +92,7 @@ export function randomId(random = randomInt) {
  * @param {string} text - Canonical serialization.
  * @returns {string} `sha256:<hex>` of the UTF-8 bytes.
  */
-function sha256(text) {
+export function sha256(text) {
   return `sha256:${createHash("sha256").update(text, "utf8").digest("hex")}`;
 }
 

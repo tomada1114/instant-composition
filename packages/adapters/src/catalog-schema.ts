@@ -62,6 +62,22 @@ const catalogDocument = z.object({
       localizations: localized(z.object({ prompt: text })),
     }),
   ),
+  // Absent from a snapshot built before vocabulary existed.
+  vocab: z
+    .array(
+      z.object({
+        id: text,
+        target: text,
+        category: z.enum(["word", "idiom", "phrasal-verb", "phrase"]),
+        level,
+        headword: text,
+        definition: text,
+        example: text,
+        example2: text,
+        meaning: text,
+      }),
+    )
+    .default([]),
 });
 
 /** The document `value` holds, or `undefined` when it does not have the snapshot's shape. */

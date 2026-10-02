@@ -120,6 +120,14 @@ describe("snapshotCatalog", () => {
         ),
       }),
     ],
+    [
+      "a vocabulary card in an unknown category",
+      (document) => ({
+        ...document,
+        vocab: [{ ...(document["vocab"] as object[])[0], category: "verb" }],
+      }),
+    ],
+    ["vocabulary that is not an array", (document) => ({ ...document, vocab: {} })],
     ["an array", () => []],
     ["a bare string", () => "catalog"],
   ])(
@@ -130,6 +138,23 @@ describe("snapshotCatalog", () => {
       expect(await snapshotCatalog(file).snapshot()).toStrictEqual(MALFORMED);
     },
   );
+
+  it("reads a snapshot built before vocabulary existed, as one holding none", async () => {
+    const document = built();
+    const vocab = document["vocab"] as unknown[];
+    const withVocab = await snapshotCatalog(file).snapshot();
+    writeFileSync(
+      file,
+      JSON.stringify(
+        Object.fromEntries(Object.entries(document).filter(([key]) => key !== "vocab")),
+      ),
+    );
+
+    const withoutVocab = await snapshotCatalog(file).snapshot();
+
+    expect(vocab).not.toHaveLength(0);
+    expect(withoutVocab).toStrictEqual(withVocab);
+  });
 
   it("reads the file once and serves every later call from that read", async () => {
     built();

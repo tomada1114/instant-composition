@@ -30,6 +30,7 @@ export {
   type TopicEntry,
   type WithdrawnItem,
 } from "./catalog-document";
+export type { VocabCategory, VocabItem } from "./vocab-item";
 export type {
   ApplicationError,
   ApplicationErrorCode,

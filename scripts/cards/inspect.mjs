@@ -732,11 +732,13 @@ const MAX_NEW_IDS = 1000;
  * @param {Set<string>} taken - Ids in use; drawn ids are added to it.
  * @param {number} count - How many to draw.
  * @param {(max: number) => number} random - Integer source.
+ * @param {(random: (max: number) => number) => string} [draw] - Draws one id
+ *   of the kind wanted; a drill id by default.
  * @returns {string[]} The fresh ids.
  * @throws {CardsError} `ERR_CARDS_ID_SPACE` when the random source keeps
  *   returning taken ids.
  */
-export function freshIds(taken, count, random) {
+export function freshIds(taken, count, random, draw = randomId) {
   /** @type {string[]} */
   const ids = [];
   for (let attempts = 0; ids.length < count; attempts += 1) {
@@ -747,7 +749,7 @@ export function freshIds(taken, count, random) {
         next: "rerun the command; if it repeats, report it — the random source is not random.",
       });
     }
-    const id = randomId(random);
+    const id = draw(random);
     if (taken.has(id)) continue;
     taken.add(id);
     ids.push(id);

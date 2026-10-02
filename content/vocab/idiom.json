@@ -1,0 +1,252 @@
+[
+  {
+    "id": "v_3z8k7a8p",
+    "category": "idiom",
+    "level": 7,
+    "headword": "a blessing in disguise",
+    "definition": "something that seems bad at first but turns out to be good",
+    "example": "Missing that flight was {{a blessing in disguise}}.",
+    "example2": "Losing that job turned out to be a blessing in disguise.",
+    "meanings": {
+      "ja": "災い転じて福となす"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3cfaaa33b1b1d6e04e1b1a6a211b2fe1df2688f31e068a14ecc998992ab3f432",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:e579907e0ec844bb944daf6dfeba969694d451d2e6a873747e0ee750c162f95a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_4h9e7b9k",
+    "category": "idiom",
+    "level": 5,
+    "headword": "hit the road",
+    "definition": "to start a journey",
+    "example": "We should {{hit the road}} early to avoid the traffic.",
+    "example2": "It's getting late, so I'd better hit the road.",
+    "meanings": {
+      "ja": "出発する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d2734990ba4b0e1f6c2194d12ac4f1fe4a7697143dfca398508061e1af3c77c0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:0ac71fc4875f556b4f995b6f22e60663edab5c6a3fdc3d4504b31418ab1b7f39",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_6h4j7q3t",
+    "category": "idiom",
+    "level": 7,
+    "headword": "get the hang of",
+    "definition": "to learn how to do something after some practice",
+    "example": "It took me a month to {{get the hang of}} the new system.",
+    "example2": "Don't worry, you'll get the hang of it soon.",
+    "meanings": {
+      "ja": "コツをつかむ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cb186f1df9b7fe01e745088bb59dd5f12473ad6f0ee6d79abfb2af28179b90a2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:580fe46dd5d616cd0ceb65f91c8ca1952318e2a2ab28c2256391336d291ad994",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_6n7x3p2k",
+    "category": "idiom",
+    "level": 5,
+    "headword": "under the weather",
+    "definition": "feeling a little sick",
+    "example": "I'm feeling a bit {{under the weather}}, so I'll stay home today.",
+    "example2": "She was under the weather all weekend.",
+    "meanings": {
+      "ja": "体調がすぐれない"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a349451e0ad0725705ce3bfd764f5a7a01028dc44a6322fe7b34efb983e0fe0f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:f8e7de05ba3dd6b2909294d8f2eedc57346ed087881253fda099759008fcf274",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7e5j5f8p",
+    "category": "idiom",
+    "level": 6,
+    "headword": "cost an arm and a leg",
+    "definition": "to be very expensive",
+    "example": "That new laptop {{cost}} me {{an arm and a leg}}.",
+    "example2": "Hotels near the beach cost an arm and a leg in summer.",
+    "meanings": {
+      "ja": "目が飛び出るほど高い"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:22d438655d96954320406abb17d94be581a8a0073c8726da5eb073e0cb506d97",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:4624a86c286e61983184dcbc9045360db11dfd2fcbc08d5042b8ea1b6259c381",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7p4a6d5z",
+    "category": "idiom",
+    "level": 6,
+    "headword": "the last straw",
+    "definition": "the final problem that makes you lose your patience",
+    "example": "When he was late again, it was {{the last straw}}.",
+    "example2": "Losing my keys was the last straw on a terrible day.",
+    "meanings": {
+      "ja": "我慢の限界"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c4c9a3fece442c25f7ea7976bda839be24eaf8afe45b58667ec4f8fb38571d61",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:b82f80a7cb58c24620ef33bc6e006fd2bdea3fbd280b358b6fc229f11348ebc2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7u5p4x8m",
+    "category": "idiom",
+    "level": 3,
+    "headword": "a piece of cake",
+    "definition": "something that is very easy to do",
+    "example": "The test was {{a piece of cake}}.",
+    "example2": "Don't worry, setting up the printer is a piece of cake.",
+    "meanings": {
+      "ja": "朝飯前・とても簡単"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3e02a30f616cc668d23f4b0a816580a71933ec789dee398bb608b672eeab0243",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:3500322279b5e3b5a4979935719ded20d828820c9a5fd0774bd8e403acbec56a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_8p7b4b4m",
+    "category": "idiom",
+    "level": 4,
+    "headword": "on the same page",
+    "definition": "agreeing about what to do or what is happening",
+    "example": "Let's have a quick call so we're all {{on the same page}}.",
+    "example2": "Before we start, I want to make sure we're on the same page.",
+    "meanings": {
+      "ja": "認識が一致している"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5980bd7e6c7b7a9258d32c44cbab1140baf4fd5b5aea695f9a638b8ffe69bc36",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:350ca81a7ff8e51f810062e6816cfb66222f5cf2bcbbcfe919e3db18b90ed4f7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9d4r6s3h",
+    "category": "idiom",
+    "level": 4,
+    "headword": "break the ice",
+    "definition": "to say or do something that helps people feel relaxed",
+    "example": "He told a funny story to {{break the ice}} at the party.",
+    "example2": "A short game is a good way to break the ice.",
+    "meanings": {
+      "ja": "場を和ませる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:74e8d25355de714ab39e5e6af089693979484e6bea012651628206e8d0353de9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:b486f83177a08ca18c4a409a983f5a106cb42b1aed9fd73f0c41d4fce41453bb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9w4n5z3w",
+    "category": "idiom",
+    "level": 3,
+    "headword": "take it easy",
+    "definition": "to relax and not work too hard",
+    "example": "You've been busy all week, so {{take it easy}} this weekend.",
+    "example2": "The doctor told him to take it easy for a few days.",
+    "meanings": {
+      "ja": "のんびりする・無理しない"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:40726be96faa40cc4324b33cee4fc60489496a64e9b05a2e2a0de3c6d814309c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:48d6ae8060141b2ea6eff820802c006a092b18efadf7019c444f2eb7d7ee8a9a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  }
+]
