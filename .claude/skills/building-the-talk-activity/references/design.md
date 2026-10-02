@@ -277,6 +277,9 @@ Japanese.
   turn's reply; resending is safe, since a kept turn answers its stored result. The ○
   holds for the drill's feedback time (`TUNING.feedbackMaxMs`) over the partner's
   waiting line before the held reply shows.
+- `ERR_TALK_NOT_FOUND` or `ERR_TALK_CLOSED` from `sendTurn` or `retryReply` ends the
+  talk at W3h without calling `endTalk`, since resending can only fail the same way; the
+  404 also shows the save toast, because an expired talk was never kept (ux-flows §4.4).
 - W4's 「終える」 from ✕ shows W3h at once and tells a failed `endTalk` with the toast;
   from a tab or Back it sends `endTalk` and lets the navigation go without waiting, so a
   failure there is not shown.

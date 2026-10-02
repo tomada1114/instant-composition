@@ -132,13 +132,16 @@ Only within the four roles the rules name.
 
 ### 4.4 Handling failure
 
-| When                                               | Form           | Text                               | Next                                |
-| -------------------------------------------------- | -------------- | ---------------------------------- | ----------------------------------- |
-| The scene cannot be made (LLM, network)            | W2 panel       | 始められませんでした               | 「もう一度」 (secondary)            |
-| The teacher's judgment fails                       | Toast          | 判定できなかったので、先へ進みます | Waits for the partner automatically |
-| The partner's reply does not arrive (LLM, network) | The row in W3g | 返事を受け取れませんでした         | 「もう一度」 (secondary)            |
-| Saving the history fails                           | Toast          | 記録を保存できませんでした         | None (the talk ends)                |
+| When                                                                                                  | Form             | Text                               | Next                                          |
+| ----------------------------------------------------------------------------------------------------- | ---------------- | ---------------------------------- | --------------------------------------------- |
+| The scene cannot be made (LLM, network)                                                               | W2 panel         | 始められませんでした               | 「もう一度」 (secondary)                      |
+| The teacher's judgment fails                                                                          | Toast            | 判定できなかったので、先へ進みます | Waits for the partner automatically           |
+| The partner's reply does not arrive (LLM, network)                                                    | The row in W3g   | 返事を受け取れませんでした         | 「もう一度」 (secondary)                      |
+| Sending a turn or asking for the reply again finds the talk expired or unknown (`ERR_TALK_NOT_FOUND`) | W3h, and a toast | 記録を保存できませんでした         | None (the talk ends; `endTalk` is not called) |
+| Sending a turn or asking for the reply again finds the talk already ended (`ERR_TALK_CLOSED`)         | W3h              | —                                  | None (the talk ends; `endTalk` is not called) |
+| Saving the history fails                                                                              | Toast            | 記録を保存できませんでした         | None (the talk ends)                          |
 
+- Any other refusal of those two calls, or no answer, is W3g and its 「もう一度」.
 - Shown by text and glyph, with no red (rule).
 
 ### 4.5 Input rules
