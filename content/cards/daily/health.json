@@ -63,6 +63,19 @@
     }
   },
   {
+    "id": "c_2r6m3h5v",
+    "ja": "ここが痛い。",
+    "en": "There's pain here.",
+    "alternatives": ["It hurts here.", "This spot hurts."],
+    "point": "pain は数えずに痛みを表す。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2v3h3b4j",
     "ja": "医者曰く、原因はストレスだ。",
     "en": "The doctor says stress causes it.",
@@ -165,6 +178,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3r8a6t9v",
+    "ja": "私は歩けるよ。",
+    "en": "I can walk.",
+    "alternatives": ["I'm able to walk.", "I'm capable of walking."],
+    "point": "can で歩ける能力を伝える。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_3u5e8j5b",
@@ -828,6 +854,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9d4k8y7k",
+    "ja": "水が必要です。",
+    "en": "I need water.",
+    "alternatives": ["I need some water.", "Water is what I need."],
+    "point": "water は数えないので a をつけない。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9r7g5z8q",

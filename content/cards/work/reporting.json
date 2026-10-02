@@ -126,6 +126,19 @@
     }
   },
   {
+    "id": "c_3b8a8g9t",
+    "ja": "私は彼に報告を頼んだ。",
+    "en": "I asked him to report.",
+    "alternatives": ["I asked him for a report.", "I requested that he report."],
+    "point": "ask 人 to do で依頼した内容を伝える。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3j2v4m3g",
     "ja": "予算案は棚上げだと彼女に言われた。",
     "en": "She said the budget was shelved.",
@@ -251,6 +264,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4r3u2q4m",
+    "ja": "承認に遅れがあります。",
+    "en": "There's a delay in approval.",
+    "alternatives": [
+      "Approval is running late.",
+      "Approval is taking longer than expected."
+    ],
+    "point": "a delay in でどこに遅れがあるか示す。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 3,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4y2j8b7z",
@@ -444,6 +473,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6c2y7a2f",
+    "ja": "私は目標を達成しました。",
+    "en": "I met the target.",
+    "alternatives": ["I achieved the target.", "I reached the goal."],
+    "point": "meet a target は目標を達成する。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 3,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6h7q5x3y",

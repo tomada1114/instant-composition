@@ -110,6 +110,19 @@
     }
   },
   {
+    "id": "c_3n9v5t2u",
+    "ja": "何が動かない？",
+    "en": "What's not working?",
+    "alternatives": ["What isn't running?", "What's out of action?"],
+    "point": "what で動かないものを尋ねる。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3r3j5q8x",
     "ja": "午前三時から、ずっと火消しです。",
     "en": "We've been firefighting since 3 a.m.",
@@ -698,6 +711,19 @@
     }
   },
   {
+    "id": "c_9c3b7g3t",
+    "ja": "問題がある。",
+    "en": "There's a problem.",
+    "alternatives": ["Something is wrong.", "We've got a problem."],
+    "point": "there is で問題の存在を伝える。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_9g5v8q6v",
     "ja": "修正後もサーバーは延命状態だ。",
     "en": "Though patched, the server's on borrowed time.",
@@ -759,5 +785,18 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9u5m3q6a",
+    "ja": "私は直せるよ。",
+    "en": "I can fix it.",
+    "alternatives": ["I can repair it.", "I'm able to fix it."],
+    "point": "can の後は動詞の原形。",
+    "topic": "tech",
+    "subtopic": "incidents",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   }
 ]

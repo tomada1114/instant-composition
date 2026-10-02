@@ -230,6 +230,22 @@
     }
   },
   {
+    "id": "c_3v6f2x8k",
+    "ja": "僕を君の防波堤に使わないで。",
+    "en": "Don't have me run interference for you.",
+    "alternatives": [
+      "Don't make me shield you from interference.",
+      "Don't get me to deflect interference for you."
+    ],
+    "point": "run interference は邪魔や圧力を引き受けて人を守る。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3y8p9u8g",
     "ja": "君の負担が増えるのが心配だ。",
     "en": "I worry this increases your burden.",
@@ -482,6 +498,22 @@
     }
   },
   {
+    "id": "c_5p7h4r5p",
+    "ja": "受けてたら私は今、知らずに操られてる。",
+    "en": "Had I agreed, I'd be someone's cat's-paw now.",
+    "alternatives": [
+      "If I'd agreed, I'd be someone's unwitting pawn now.",
+      "I'd be someone's unwitting tool now had I agreed."
+    ],
+    "point": "cat's-paw は知らずに他人に利用される手先。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 10,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5t7y6r4w",
     "ja": "頼みは、ざっと見るだけ。",
     "en": "What I need is a quick look.",
@@ -720,6 +752,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7v4z6a6m",
+    "ja": "私はもう君への貸し以上に頼んだ。",
+    "en": "I've already overdrawn my favor account with you.",
+    "alternatives": [
+      "I've already asked more than you owe me.",
+      "I've already called in more favors than you owed."
+    ],
+    "point": "overdraw は貸しの残高以上に頼むという比喩。",
+    "topic": "social",
+    "subtopic": "favors",
+    "level": 10,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8d4x3z2v",

@@ -192,6 +192,19 @@
     }
   },
   {
+    "id": "c_3u6b3h8j",
+    "ja": "君に考え直してほしい。",
+    "en": "I want you to reconsider.",
+    "alternatives": ["I want you to rethink it.", "I'd like you to think again."],
+    "point": "reconsider は一度決めたことを考え直す。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 4,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4a5n5u4g",
     "ja": "ひと言いいですか？",
     "en": "May I say something?",
@@ -328,6 +341,22 @@
     }
   },
   {
+    "id": "c_5k5w3s2s",
+    "ja": "君に私の話に合わせてほしい。",
+    "en": "I need you to humor me.",
+    "alternatives": [
+      "I'd like you to indulge me.",
+      "I want you to play along with me."
+    ],
+    "point": "humor は相手に合わせてあげること。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5n3s9g4y",
     "ja": "言いたいことを言って、少し気が楽だ。",
     "en": "Having said my piece, I feel lighter.",
@@ -389,6 +418,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6b9d8q6w",
+    "ja": "私はだいぶ気が楽になった。",
+    "en": "I feel much more relaxed.",
+    "alternatives": ["I'm feeling far less tense.", "I feel a lot calmer."],
+    "point": "much は比較級の差を強める。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 4,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6c6d5c7h",
@@ -455,6 +497,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6v7k9m7b",
+    "ja": "私は不安をもう払拭した。",
+    "en": "I've put my fears to rest.",
+    "alternatives": [
+      "I've laid my worries to rest.",
+      "My fears have now been dispelled."
+    ],
+    "point": "put fears to rest は不安を解消する。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7c4z9t7s",
@@ -603,6 +661,19 @@
     }
   },
   {
+    "id": "c_8k9v6s6v",
+    "ja": "私は自信を取り戻した。",
+    "en": "I've regained my confidence.",
+    "alternatives": ["My confidence has returned.", "I have my confidence back."],
+    "point": "regain は失ったものを取り戻す。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 4,
+    "grammar": ["present-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_8r6e7r8r",
     "ja": "あの映画には、思わず泣かされた。",
     "en": "That movie made me tear up.",
@@ -721,6 +792,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9d6x2y3t",
+    "ja": "私は悪い知らせを覚悟してた。",
+    "en": "I'd braced myself for bad news.",
+    "alternatives": [
+      "I'd prepared myself for bad news.",
+      "I'd been ready for unwelcome news."
+    ],
+    "point": "brace oneself は悪いことに備えて心を構える。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 7,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9x9p2r4r",

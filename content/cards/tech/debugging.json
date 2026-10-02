@@ -132,6 +132,22 @@
     }
   },
   {
+    "id": "c_2v9q6y6s",
+    "ja": "エラーが減れば我々は調査をやめる",
+    "en": "We'll stop investigating when errors abate.",
+    "alternatives": [
+      "We'll end the investigation when the errors subside.",
+      "Once errors die down, we'll stop investigating."
+    ],
+    "point": "abate は強さや頻度が落ちること。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3c6u7c5y",
     "ja": "私は競合する実行経路を解きほぐした。",
     "en": "I teased apart the competing execution paths.",
@@ -637,6 +653,22 @@
     }
   },
   {
+    "id": "c_8r5d5t3a",
+    "ja": "彼にノイズを除いてと頼んだ。",
+    "en": "I asked him to filter out noise.",
+    "alternatives": [
+      "I asked him to remove the irrelevant signals.",
+      "I asked him to strip out the noise."
+    ],
+    "point": "filter out は必要なものとノイズを分ける。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_8v5f6s8p",
     "ja": "問題は、リトライが二重に走る点。",
     "en": "The problem is that retries run twice.",
@@ -657,6 +689,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9b5e7d7v",
+    "ja": "負荷をかけると現れるバグは厄介だ。",
+    "en": "Bugs that surface under load are elusive.",
+    "alternatives": [
+      "Bugs emerging under load are hard to pin down.",
+      "Bugs that appear under load are difficult to isolate."
+    ],
+    "point": "elusive は捉えにくく原因をつかみにくい。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 8,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9p2m9w8b",

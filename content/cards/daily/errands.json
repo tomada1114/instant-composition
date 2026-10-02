@@ -306,6 +306,22 @@
     }
   },
   {
+    "id": "c_5b8a3m6g",
+    "ja": "私に何の書類が要る？",
+    "en": "Which documents are required?",
+    "alternatives": [
+      "Which papers are required of me?",
+      "Which documents must I provide?"
+    ],
+    "point": "what documents で必要な書類を尋ねる。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 2,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5k3b4d9b",
     "ja": "パスポート更新しなきゃ。",
     "en": "I need to renew my passport.",
@@ -389,6 +405,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6d4m5b2j",
+    "ja": "私は住所を変更した。",
+    "en": "I changed my address.",
+    "alternatives": ["I updated my address.", "I made an address change."],
+    "point": "changed は住所を変更したという過去形。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6e6a6k6n",
@@ -655,6 +684,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9p2s8f9t",
+    "ja": "こっちの配達が安い。",
+    "en": "This delivery is cheaper.",
+    "alternatives": ["This shipping costs less.", "This delivery costs less."],
+    "point": "cheaper は料金がより安いこと。",
+    "topic": "daily",
+    "subtopic": "errands",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9s6p7r5u",

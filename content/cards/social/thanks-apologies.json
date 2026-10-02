@@ -417,6 +417,19 @@
     }
   },
   {
+    "id": "c_5e3y6t8g",
+    "ja": "お礼に何を渡せるかな？",
+    "en": "What can I give?",
+    "alternatives": ["What could I give you?", "What can I offer you?"],
+    "point": "what でお礼に渡せるものを尋ねる。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 2,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5f9b5u9p",
     "ja": "君を当然の存在とは決して思わない。",
     "en": "Never will I take you for granted.",
@@ -606,6 +619,19 @@
     }
   },
   {
+    "id": "c_7c5h2m5y",
+    "ja": "君の助けを借りてます。",
+    "en": "I'm accepting your help.",
+    "alternatives": ["I'm using your help.", "I'm making use of your help."],
+    "point": "accepting は助けを受け入れているところ。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7c8t6w4t",
     "ja": "アドバイスありがとう。",
     "en": "Thanks for the advice.",
@@ -689,6 +715,19 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_7z7s3z2n",
+    "ja": "私が弁償するよ。",
+    "en": "I'll pay for it.",
+    "alternatives": ["I'll cover the cost.", "I'm going to reimburse you."],
+    "point": "pay for で壊したものなどの代金を負担する。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8a6x3y2t",

@@ -85,6 +85,22 @@
     }
   },
   {
+    "id": "c_3d2b3f8n",
+    "ja": "引っ越してたら彼は今、心の支えがない。",
+    "en": "If he'd moved, he'd feel unmoored now.",
+    "alternatives": [
+      "Had he relocated, he'd feel adrift now.",
+      "If he'd moved, he'd feel emotionally unanchored now."
+    ],
+    "point": "unmoored は心のよりどころを失った比喩。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 10,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3m5n4m7k",
     "ja": "うちの犬は雨が嫌いなの。",
     "en": "My dog hates the rain.",
@@ -339,6 +355,19 @@
     }
   },
   {
+    "id": "c_5k4d9b3u",
+    "ja": "私は明日は休むよ。",
+    "en": "I'll rest tomorrow.",
+    "alternatives": ["I'm going to rest tomorrow.", "I plan to rest tomorrow."],
+    "point": "will でこれから休む予定を伝える。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5x7s5p3h",
     "ja": "花火、見ればよかったなあ。",
     "en": "I wish I'd seen the fireworks.",
@@ -440,6 +469,22 @@
     }
   },
   {
+    "id": "c_7c6a4n5a",
+    "ja": "今日は昨日より暖かい。",
+    "en": "Today's warmer than yesterday.",
+    "alternatives": [
+      "It's warmer today than yesterday.",
+      "Yesterday was colder than today."
+    ],
+    "point": "warmer than で昨日より暖かいと比べる。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7h9g6y3g",
     "ja": "週末はどこへ行ったの？",
     "en": "Where'd you go this weekend?",
@@ -498,6 +543,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8a5j8f3p",
+    "ja": "彼女は人の心の動きが分かると言う。",
+    "en": "She says she knows what makes people tick.",
+    "alternatives": [
+      "She says she understands what motivates people.",
+      "She says she grasps what drives people."
+    ],
+    "point": "what makes people tick は人を動かす心理。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8b3a8p5v",
@@ -604,6 +665,19 @@
     }
   },
   {
+    "id": "c_8u2r9n5t",
+    "ja": "ここに座ってもいい？",
+    "en": "Can I sit here?",
+    "alternatives": ["Is this seat okay for me?", "May I take this seat?"],
+    "point": "can I で座る許可を求める。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 2,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_8u9x5e9k",
     "ja": "今週はずっと暑いね。",
     "en": "It's been hot all week.",
@@ -621,6 +695,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9b7a9g6x",
+    "ja": "予報で私は予定を決め切らずにいた。",
+    "en": "The forecast had me hedging my bets.",
+    "alternatives": [
+      "The forecast made me keep my options open.",
+      "That forecast got me to avoid firm plans."
+    ],
+    "point": "hedge my bets は一つに賭けず選択肢を残す。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 10,
+    "grammar": ["causatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9c4h9n8u",

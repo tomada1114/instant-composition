@@ -83,6 +83,22 @@
     }
   },
   {
+    "id": "c_2h6j3v6f",
+    "ja": "工事の場所をご存じですか？",
+    "en": "Do you know where roadwork is?",
+    "alternatives": [
+      "Do you know the roadwork location?",
+      "Are you aware where the roadwork is?"
+    ],
+    "point": "where の後は疑問文ではなく主語と動詞の順。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 5,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2n5p2u7v",
     "ja": "信号までまっすぐ行って。",
     "en": "Go straight to the light.",
@@ -145,6 +161,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3b5z3h4b",
+    "ja": "裏道は避けたほうがいい。",
+    "en": "You should steer clear of backstreets.",
+    "alternatives": [
+      "You ought to avoid the backstreets.",
+      "It's best to keep off the backstreets."
+    ],
+    "point": "steer clear of は近づかず避ける。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 5,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_3q2c5z6w",
@@ -590,6 +622,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5v5w8k9p",
+    "ja": "入口は隠れた所にある。",
+    "en": "The entrance is tucked away.",
+    "alternatives": [
+      "The entrance is hidden from view.",
+      "The entrance is out of sight."
+    ],
+    "point": "tucked away は目につかない所にある。",
+    "topic": "travel",
+    "subtopic": "directions",
+    "level": 5,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6h7e7s9y",

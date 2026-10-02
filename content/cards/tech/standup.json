@@ -41,6 +41,22 @@
     }
   },
   {
+    "id": "c_2k3p3b6m",
+    "ja": "彼は我々の業務削減が必要と言った。",
+    "en": "He said we needed to trim scope.",
+    "alternatives": [
+      "He said we had to reduce the scope.",
+      "He said we needed to scale back the work."
+    ],
+    "point": "trim scope は取り組む範囲を絞る。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 8,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3j8v3k2p",
     "ja": "今日はブロッカー一つある。",
     "en": "There's one blocker today.",
@@ -58,6 +74,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3p8a9p4w",
+    "ja": "相談してたら我々は今迷わず済むのに。",
+    "en": "Had we consulted, we'd have clarity now.",
+    "alternatives": [
+      "If we'd sought advice, we'd have clarity now.",
+      "We'd be clear now had we asked for advice."
+    ],
+    "point": "clarity は曖昧さが消え、見通しがつくこと。",
+    "topic": "tech",
+    "subtopic": "standup",
+    "level": 8,
+    "grammar": ["mixed-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_3r3j5t5x",

@@ -101,6 +101,22 @@
     }
   },
   {
+    "id": "c_3e7r2f4p",
+    "ja": "そのプラグインはもう非推奨だ。",
+    "en": "That plugin has already been deprecated.",
+    "alternatives": [
+      "That plugin is already marked as deprecated.",
+      "They're already advising against using that plugin."
+    ],
+    "point": "deprecated は使用を推奨しなくなったという意味。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3n7t5d8w",
     "ja": "あとで更新するね。",
     "en": "I'll update it later.",
@@ -265,6 +281,22 @@
     }
   },
   {
+    "id": "c_5q2y8g5e",
+    "ja": "このツールの癖がどこか分かる？",
+    "en": "Do you know where this tool gets finicky?",
+    "alternatives": [
+      "Do you know where this tool becomes temperamental?",
+      "Can you identify where this tool becomes fussy?"
+    ],
+    "point": "finicky は細かい条件に敏感で扱いにくい。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5r6h8v5t",
     "ja": "確認してれば、時短できたのに。",
     "en": "If I'd checked, I'd have saved time.",
@@ -411,6 +443,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6z5c5y8x",
+    "ja": "標準入りのツールは余計に重い。",
+    "en": "This tool bundled by default is bloated.",
+    "alternatives": [
+      "This default-bundled tool is unnecessarily heavyweight.",
+      "This tool, included by default, carries unnecessary bulk."
+    ],
+    "point": "bloated は不要なものが多く重い状態。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7a2h3q8s",
