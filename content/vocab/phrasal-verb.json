@@ -1,5 +1,455 @@
 [
   {
+    "id": "v_2c8m8x7b",
+    "category": "phrasal-verb",
+    "level": 1,
+    "headword": "go out",
+    "definition": "to leave your house to do something outside",
+    "example": "We {{go}} {{out}} for a walk every morning.",
+    "example2": "Let's go out tonight.",
+    "meanings": {
+      "ja": "出かける"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:780d17ee569c1e0465e572c4e50b6c480bba740f0e770bf09fcf949b4b1b0266",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:72f1dab22a46ac9db9c98b1182f1bbf50118470219625165f2891d1c2473191c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_2c8w3e7z",
+    "category": "phrasal-verb",
+    "level": 2,
+    "headword": "turn on",
+    "definition": "to make a light or machine start working",
+    "example": "Please {{turn}} the light {{on}}; it's dark in here.",
+    "example2": "Can you turn on the TV?",
+    "meanings": {
+      "ja": "(電気などを)つける"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:17784031003a2a204db4852586013db3a6953b52ca65826a28d078979f836a63",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:af7d80b780ecf33243c7ead8b50b5c9edc878b2fa000f15351bdcd8f09357b4f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_2f3x3g6z",
+    "category": "phrasal-verb",
+    "level": 5,
+    "headword": "work out",
+    "definition": "to exercise your body to get stronger",
+    "example": "I {{work}} {{out}} at the gym three times a week.",
+    "example2": "She works out every morning before breakfast.",
+    "meanings": {
+      "ja": "運動する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:028ceb55f6202a60aa8cd2a8d29d0da5d0952080a7e2a5caddf4e0124544e498",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:ee99efb88a3d425be1169f83359015b2ec9987c4959da4b6090220bcff006cf8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_2g5n7r3s",
+    "category": "phrasal-verb",
+    "level": 8,
+    "headword": "wade through",
+    "definition": "to slowly deal with a large, boring amount of material",
+    "example": "I spent all weekend {{wading}} {{through}} legal documents.",
+    "example2": "Customers must wade through pages of terms before signing up.",
+    "meanings": {
+      "ja": "苦労して読み進める"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d8d41b1f22f2b67e7d0716bedc358ee203b4bf4eacc32238846a0054b74e2e10",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c3b34a9a65bf4c16131c46fbfcd98baf7cf0b9e4c9fd99a14d420a7089a5baa8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_2j6k8k2m",
+    "category": "phrasal-verb",
+    "level": 8,
+    "headword": "brush off",
+    "definition": "to refuse to take someone's warning or idea seriously",
+    "example": "He {{brushed}} my warning {{off}} and kept driving fast.",
+    "example2": "She brushed off the criticism with a smile.",
+    "meanings": {
+      "ja": "軽くあしらう・受け流す"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:038d94bf22627631f6a10c2897442c20e82191fe33e369a5ccc55a437a1f0fa4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:b987b425a65f8c86183ed0dbca696c5accaca55ead6f9f7bb647b6dd2826fb26",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_2n4y6u6d",
+    "category": "phrasal-verb",
+    "level": 1,
+    "headword": "come in",
+    "definition": "to enter a room or house",
+    "example": "Please {{come}} {{in}}; the door is open.",
+    "example2": "It is cold outside, so come in and have some tea.",
+    "meanings": {
+      "ja": "入る・入ってくる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:838c94c1f32186bd8df89a4869f4320c437017edbb5394e23ce018428e20ee74",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:0666be0e27f80e04b19cc29db6413b5b07339844543c60e542f465caabaa0e67",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_2p5q4y6b",
+    "category": "phrasal-verb",
+    "level": 7,
+    "headword": "bank on",
+    "definition": "to rely on something happening, as if you were sure of it",
+    "example": "Don't {{bank}} {{on}} good weather for the picnic.",
+    "example2": "I'm banking on you to finish the report.",
+    "meanings": {
+      "ja": "当てにする"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:59e175c5ea00ed3d78391fde1a8b5336b5c34ab4b0bb88c83c67b23852a4f22d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:db5c79b9f31c1843318c72a6b979857e678900878371d2e03e659fe0791ddb74",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_2p9v2q4m",
+    "category": "phrasal-verb",
+    "level": 2,
+    "headword": "write down",
+    "definition": "to put words on paper so you will not forget them",
+    "example": "Let me {{write}} {{down}} your phone number.",
+    "example2": "She wrote down the address on a card.",
+    "meanings": {
+      "ja": "書き留める"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ab6c0fecffcaefe5544d73e984f90517ccd79372d0d5043c2fc43d90b53254f9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:df6b0e72201ec357e95c267261fdd4c9f9e178cedcf0e5d666ee463d78725e54",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_2r8n3n9y",
+    "category": "phrasal-verb",
+    "level": 9,
+    "headword": "weed out",
+    "definition": "to find and remove the weak or unwanted ones from a group",
+    "example": "The firm uses a short test to {{weed}} {{out}} unsuitable applicants.",
+    "example2": "She weeded out every error before the report went to print.",
+    "meanings": {
+      "ja": "取り除く・ふるい落とす"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4bf897f5755f97e5b8fe0acc9af6107b2b041368a897ac488a339223957d2ee6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:6e8e3a8890b0cbb1db51c638a10aa5c276604960a005b542cc0c6c6387cb3cfd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_2w7b5m7v",
+    "category": "phrasal-verb",
+    "level": 9,
+    "headword": "tide over",
+    "definition": "to help someone get through a hard period with money or supplies",
+    "example": "This loan should {{tide}} us {{over}} until the next contract starts.",
+    "example2": "A quick snack will tide you over till dinner.",
+    "meanings": {
+      "ja": "当座をしのがせる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:09534b50e6e7068f0ad466ecae255196d4969b3c500bd5dbca536d7d4d3ed737",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:9670fe84e049f6767a342a52fbe6497a87be81246bf3e602131910318ea5a73e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_2z4k4p8u",
+    "category": "phrasal-verb",
+    "level": 4,
+    "headword": "cut down on",
+    "definition": "to use or do less of something",
+    "example": "I'm trying to {{cut}} {{down}} {{on}} sugar this month.",
+    "example2": "The doctor told him to cut down on salt.",
+    "meanings": {
+      "ja": "〜を減らす"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5dd28d9347662fdb36ec60e396293ef1602ce09884101387239209486ca5a5a5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:e559b598501cf7caccdf8c0d9c56e4fd045955549021922e4cb8bc0e1e9d82d1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3a3k2t7d",
+    "category": "phrasal-verb",
+    "level": 3,
+    "headword": "take off",
+    "definition": "to leave the ground and begin to fly, as a plane does",
+    "example": "The plane {{took}} {{off}} ten minutes late.",
+    "example2": "Please turn off your phone before we take off.",
+    "meanings": {
+      "ja": "離陸する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a6266404d781f333abfb23f5427eb029b26627593ecdecf575a06a52b267c929",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:57d1a71644d19b3af480ed3a1c7e680f61c5e27f826c8706f8966a1b3e7c614b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3e6u8w7d",
+    "category": "phrasal-verb",
+    "level": 4,
+    "headword": "set off",
+    "definition": "to start a journey",
+    "example": "We {{set}} {{off}} for the mountains at dawn.",
+    "example2": "They set off early to avoid the traffic.",
+    "meanings": {
+      "ja": "出発する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef8684de2a2a89b8634fec436462b8b42f1b3cdc979107ee59b51b196508a127",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:0ac71fc4875f556b4f995b6f22e60663edab5c6a3fdc3d4504b31418ab1b7f39",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3f6p8z7s",
+    "category": "phrasal-verb",
+    "level": 10,
+    "headword": "gloss over",
+    "definition": "to avoid giving details about an unpleasant fact so that it seems unimportant",
+    "example": "The report seems to {{gloss}} {{over}} the safety problems.",
+    "example2": "He glossed over his mistakes during the interview.",
+    "meanings": {
+      "ja": "ごまかす・さらりと流す"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:72628cc66b2c45254ef044a050e0e29145bcff7d43c1d1d87026008e4f4e062b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:37bd7c74df45137df24013ee93a454513e87e76a152cf5c3a167e1fd2042dde1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3h8d7d7h",
+    "category": "phrasal-verb",
+    "level": 9,
+    "headword": "water down",
+    "definition": "to make a plan or rule weaker so it has less effect",
+    "example": "The committee {{watered}} {{down}} the new rules after strong complaints.",
+    "example2": "Critics say the final law was watered down too much.",
+    "meanings": {
+      "ja": "骨抜きにする"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a2f5e6e9540252232f4ddaa51540910f98b6f772371e5ef5a19fe96a5b7523c8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:a681f2ab804302a30417f307fb6d3fdd02a0d60ada61e9077b060ee4ce171ee0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3j7a5k5m",
+    "category": "phrasal-verb",
+    "level": 5,
+    "headword": "call off",
+    "definition": "to decide that a planned event will not happen",
+    "example": "They {{called}} {{off}} the picnic because of the rain.",
+    "example2": "The company called off the trip.",
+    "meanings": {
+      "ja": "中止する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8f262c14b160383ec1278ab3599f063c99973e47fa605d960034b84dff59bb70",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:6218cfafa197c38c5066205f0e3fcbfbf6d7c40ba14c335165784996f93be70b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3j7k7u6m",
+    "category": "phrasal-verb",
+    "level": 8,
+    "headword": "phase out",
+    "definition": "to stop using or selling something slowly, step by step",
+    "example": "The airline plans to {{phase}} {{out}} its oldest planes by next year.",
+    "example2": "Many shops have phased out plastic bags.",
+    "meanings": {
+      "ja": "段階的に廃止する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:524fb2cfa76d248308bfaf2543571853420730992472c43500dc9050a24efa62",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:7182dec495e890e69e8c8cf8461146c32140f5eb9578e2c772d7b708a2c6f14d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3s5k4f3x",
+    "category": "phrasal-verb",
+    "level": 3,
+    "headword": "grow up",
+    "definition": "to change from a child into an adult",
+    "example": "I {{grew}} {{up}} in a small town by the sea.",
+    "example2": "What do you want to be when you grow up?",
+    "meanings": {
+      "ja": "育つ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:188a064b57b69a35108a0551f9c362bbd99d93f181e65a53c173507d9bfc70d2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c4a564e14b44ab1f365f6e51d05ecf4af480bb8d42c68fc58bee15c4471373f3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "v_3s7m4s5f",
     "category": "phrasal-verb",
     "level": 6,
@@ -19,6 +469,56 @@
       },
       "meanings.ja": {
         "hash": "sha256:1c1dfaf0a433b4c53d0c78da42647f37109c1704c36cb88d1b738ccd53c8126c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3t9a4r9s",
+    "category": "phrasal-verb",
+    "level": 5,
+    "headword": "carry out",
+    "definition": "to do a planned piece of work, such as a test or an order",
+    "example": "The team will {{carry}} {{out}} the survey next month.",
+    "example2": "The soldiers carried out their orders without question.",
+    "meanings": {
+      "ja": "実行する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:36e8b0df42ad6e2120f789bdce2ca19d39b402e2a299a14c96eb5cfc89b29744",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:9acaba25e0e44f2cccfe590d0c097858b3edce9dbadab57838d86e98b13a2393",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3w7w6g8x",
+    "category": "phrasal-verb",
+    "level": 6,
+    "headword": "back up",
+    "definition": "to copy computer files so they are not lost",
+    "example": "Remember to {{back}} {{up}} your files every week.",
+    "example2": "I backed up all my photos before the update.",
+    "meanings": {
+      "ja": "バックアップを取る"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7bc4fc4b47f4466441a9d3173ce90b8680f0323a8ce90e975fbb934a276f99a0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:48eb0daae29d7ad7eeef08ed4ff2aba1b9566ea00c3122137af2b8192f8a9a89",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       }
@@ -50,6 +550,306 @@
     }
   },
   {
+    "id": "v_3y3b2d7j",
+    "category": "phrasal-verb",
+    "level": 6,
+    "headword": "come across",
+    "definition": "to find or meet something by chance",
+    "example": "I {{came}} {{across}} my old diary while cleaning.",
+    "example2": "You might come across some odd words in this book.",
+    "meanings": {
+      "ja": "偶然見つける"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5f716656b72a3fedadf39d75215d7d9c9cfebd20e235a401cfead714cd95bf65",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:3c9b500ccffd31d18c327b28f4d35023a55d7701bccd6b88e7ed503ffb6a4974",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_4a7q7m5z",
+    "category": "phrasal-verb",
+    "level": 1,
+    "headword": "hurry up",
+    "definition": "to move or act faster because there is little time",
+    "example": "{{Hurry}} {{up}}, or we'll miss the bus!",
+    "example2": "Please hurry up so we are not late.",
+    "meanings": {
+      "ja": "急ぐ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6cf6b5a99294272895665dc5a567b7d2c1de2b4b4fac936f725c22fb9bcf2a68",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:2d079cf14b0fb4e5523d8a06f2cbd4849570e0947d9f36ea6c8a46983f957e55",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_4c9y8r9c",
+    "category": "phrasal-verb",
+    "level": 4,
+    "headword": "drop by",
+    "definition": "to visit someone for a short time without planning ahead",
+    "example": "Feel free to {{drop}} {{by}} my office anytime.",
+    "example2": "My neighbor dropped by with some fresh bread.",
+    "meanings": {
+      "ja": "ちょっと立ち寄る"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6f7e25c2c1fd3657ac7848535ec960f34135023eae15bf4abc7401c9223a2f65",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:452850ac5c744c0e53083788049f13a47bed1995c19e0b4f8fc1e15761d7684c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_4e5g9a9h",
+    "category": "phrasal-verb",
+    "level": 3,
+    "headword": "get up",
+    "definition": "to leave your bed after sleeping",
+    "example": "She was already awake but didn't want to {{get}} {{up}} yet.",
+    "example2": "He got up and made some tea.",
+    "meanings": {
+      "ja": "起きる・起床する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f7ba43d53169ee95f13546ef02ba735d247787a6bf5e8c83abd604a4b8b5b6ab",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:09a837527692a14dc1028bb6d43dd972a1f1f0340a15fb8ee7cbf46074729159",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_4e8y2w2p",
+    "category": "phrasal-verb",
+    "level": 6,
+    "headword": "look into",
+    "definition": "to examine a problem to learn its cause",
+    "example": "The manager promised to {{look}} {{into}} the complaint.",
+    "example2": "Police are looking into the missing money.",
+    "meanings": {
+      "ja": "調査する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4ae645828d821c2762a4c0b7888b6870726b0f6c789ebe39181c112ca3d6e203",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c27dea713af54f0cd50e762c3b1188af57859e9e5f99a68827a093bd16714ef6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_4f3u2w7f",
+    "category": "phrasal-verb",
+    "level": 2,
+    "headword": "wake up",
+    "definition": "to stop being asleep",
+    "example": "I usually {{wake}} {{up}} before my alarm rings.",
+    "example2": "She woke up late and missed the bus.",
+    "meanings": {
+      "ja": "目が覚める"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a659d251e78bf03ee4f0341c18c91fd0b209d087f0af9e2c92a3ad3edc4f37ce",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:90bb748b02f1cc35a6162d9c2a3d0ccc68104bf793c5a35179681f6f600ec8ca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_4j8q5q3g",
+    "category": "phrasal-verb",
+    "level": 7,
+    "headword": "step down",
+    "definition": "to leave an important job or position by choice",
+    "example": "The CEO will {{step}} {{down}} at the end of the year.",
+    "example2": "She stepped down after ten years as chair.",
+    "meanings": {
+      "ja": "辞任する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f151e34135de8e0eaa98f5739fee7ca41799882ce2c4e8da95ddf2881e0073d3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c422dff7b2dbbe95e23470f1d51552cbb5f52f692c2b68ad5cd95f9a0d5f099e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_4q5c3z2g",
+    "category": "phrasal-verb",
+    "level": 10,
+    "headword": "dredge up",
+    "definition": "to start talking again about an unpleasant past matter that people would rather forget",
+    "example": "Why did the reporter {{dredge}} {{up}} that old scandal?",
+    "example2": "I don't want to dredge up painful memories.",
+    "meanings": {
+      "ja": "蒸し返す"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e09dc9fea4afca83fe2b9b09b51bcf95e2cfb8b238c1bb0f85204d90d93c776d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:6226f682d3c7130d2f764cace74ef48498509371c7a0776cd7a122ce4f0a8e8a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_4q8q2u9s",
+    "category": "phrasal-verb",
+    "level": 8,
+    "headword": "factor in",
+    "definition": "to include something as a part of what you consider or calculate",
+    "example": "You should {{factor}} {{in}} travel time when planning the trip.",
+    "example2": "Did you factor the tax in?",
+    "meanings": {
+      "ja": "考慮に入れる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c38b1f55e0db521ab9d51d6f15cc22be58fc00b4fd2e6180d5c7b7ec49fb13b4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:cb051c8ff940211415a648a55649f38fdeb1fee748ce49f8e40d770d48f31afd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_4t7z6j4t",
+    "category": "phrasal-verb",
+    "level": 9,
+    "headword": "mull over",
+    "definition": "to think about something carefully for a long time",
+    "example": "She {{mulled}} the offer {{over}} for a week before replying.",
+    "example2": "Let me mull it over tonight and call you tomorrow.",
+    "meanings": {
+      "ja": "じっくり考える"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2c304d04f64cdabb3741db134f558c8e0bca62db0ffacb43d5270f1db732a01e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:e44aaa0cd459c92d128eddc5cd34557dd15d97a89db7f5573b68ee246c21c4d7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_4y8x4c6f",
+    "category": "phrasal-verb",
+    "level": 4,
+    "headword": "find out",
+    "definition": "to learn a fact that you did not know",
+    "example": "I'll {{find}} {{out}} when the store opens.",
+    "example2": "She found out the truth from her sister.",
+    "meanings": {
+      "ja": "調べて知る・突き止める"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:20b821d5b2a604f8e3337a0cba1154f0a849b0341828cdf9f751de25c028327c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:bd93b04cbeb95a95437e3d1b1969e9c2cd3c4bdc1f8d66b7d64116735b00acd3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5a8m9r2c",
+    "category": "phrasal-verb",
+    "level": 1,
+    "headword": "get off",
+    "definition": "to leave a bus, train or plane",
+    "example": "Please {{get}} {{off}} at the next stop.",
+    "example2": "She got off the train in Osaka.",
+    "meanings": {
+      "ja": "降りる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d49fb33a61da62aa0ec44dd30e67767b6234955e11ddba2dee6678b45fad1272",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:f56135105c4e8ab785ab1c1954f929c788de98f06fa44828393f36b46820d471",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "v_5b9z8r6s",
     "category": "phrasal-verb",
     "level": 3,
@@ -69,6 +869,156 @@
       },
       "meanings.ja": {
         "hash": "sha256:5e15d30c90b2af23cdbc44fc166ec6d0d5738ea512e92326e49d1c14e7c2d12e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5g5c4t2c",
+    "category": "phrasal-verb",
+    "level": 5,
+    "headword": "catch up",
+    "definition": "to reach someone who is ahead of you by moving faster",
+    "example": "Walk slowly, and I'll {{catch}} {{up}} with you.",
+    "example2": "He ran to catch up with the group.",
+    "meanings": {
+      "ja": "追いつく"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b3258adf66301d20f2f56a3ba38595b636c89cdfd9ca724f2d20a88277fb0f88",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:075ca89de8bf275882d28e5a1fb9e0d8f7ea61035c81dfea9f2fb3d52a9a9e71",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5g8w8x4k",
+    "category": "phrasal-verb",
+    "level": 3,
+    "headword": "look for",
+    "definition": "to try to find something",
+    "example": "I'm {{looking}} {{for}} my keys.",
+    "example2": "They are looking for a new apartment.",
+    "meanings": {
+      "ja": "探す"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f23102e13e8340e5d1d4602cd30a8985cc050c577dbac5dfda13536a5608b516",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:6a66982a0773f170927af788fcc6eec863d71002aaebb36ada278d114af93b1e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5m4z9h7n",
+    "category": "phrasal-verb",
+    "level": 2,
+    "headword": "put on",
+    "definition": "to start wearing a piece of clothing",
+    "example": "It's cold, so {{put}} {{on}} your coat.",
+    "example2": "He put on his shoes and left.",
+    "meanings": {
+      "ja": "身につける・着る"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:98f7951cb3dc3dfc6198bb1285f051913415e66feae9a9e47229e7f1c827c152",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:48ef2cf5873f14902e18dd8af6de518779dc93fa187e525c8fb2406988829be6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5n3v4m8z",
+    "category": "phrasal-verb",
+    "level": 2,
+    "headword": "turn off",
+    "definition": "to stop a light or machine from working",
+    "example": "Please {{turn}} {{off}} the TV before you go to bed.",
+    "example2": "She turned off the lights and left the room.",
+    "meanings": {
+      "ja": "消す"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1e7cb4c4ad5be385a96dae926e6b82621723f5beb8ce4505c9436bbec1bf5835",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:e711a74a5750d236c2211c861153eb6a79cf95bda0496c789223423cbb486ff4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5s9p3x3m",
+    "category": "phrasal-verb",
+    "level": 8,
+    "headword": "fall through",
+    "definition": "to fail to happen after being planned or agreed",
+    "example": "Our plans to buy the house {{fell}} {{through}}.",
+    "example2": "The deal fell through at the last minute.",
+    "meanings": {
+      "ja": "頓挫する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:28b57853b5e84f9f13c4bdbb5b0c61171d98ca9fcb502fc602bc23632b8a49d0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:1bb0a5e5801a4ceca339ebf396e0c278ba9b54d5382e51fd8472a50b3be74255",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5t4p3q2n",
+    "category": "phrasal-verb",
+    "level": 9,
+    "headword": "drum up",
+    "definition": "to work hard to get support, interest or business",
+    "example": "The café held a free tasting to {{drum}} {{up}} new customers.",
+    "example2": "He tried to drum up support for the petition.",
+    "meanings": {
+      "ja": "〈客や支持を〉集める"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:382cdad88fc29130fc7f5c0581cf1913aa28fbc0666f94b743530bbc20a836ba",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:ad19dd556947f7e66b395aa3baba69d4f5f1c85b238b1890c0dbaecc35e56867",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       }
@@ -100,6 +1050,106 @@
     }
   },
   {
+    "id": "v_5w3u8v8z",
+    "category": "phrasal-verb",
+    "level": 9,
+    "headword": "buckle down",
+    "definition": "to start working hard and seriously on a task",
+    "example": "I need to {{buckle}} {{down}} and finish this report tonight.",
+    "example2": "After a lazy summer, she buckled down for her exams.",
+    "meanings": {
+      "ja": "本腰を入れて取り組む"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ee618dac168b0cf6a4d65a646995ded5706ce4f45f0695c0341c4ec789150bef",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:a5dfeb7bf9e645abfe8977360332af1dd4f5b4be33c635a4eef579b49cb23f71",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5w7e7k2z",
+    "category": "phrasal-verb",
+    "level": 10,
+    "headword": "pencil in",
+    "definition": "to note a possible time for something that may still change",
+    "example": "I'll {{pencil}} you {{in}} for Thursday at three.",
+    "example2": "Can we pencil in a call for next week?",
+    "meanings": {
+      "ja": "仮の予定に入れる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:58e261b31b73c456f6001cf2ef22255b65d2be9d0c3111cd54632be01d1d4238",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:f5e9a9a7df9f9423da85acc24233fdb906c063440bf837a1c566288c426bc453",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_6a9x8a2q",
+    "category": "phrasal-verb",
+    "level": 1,
+    "headword": "stand up",
+    "definition": "to change from sitting to being on your feet",
+    "example": "The students {{stand}} {{up}} when the teacher comes in.",
+    "example2": "Stand up, please, and say your name.",
+    "meanings": {
+      "ja": "立ち上がる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:640e1075ba6da074bf1937bf38ff285976984d176bc91f8c044c84c361c23bbc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:e547e49859ea80ec0c4b7dd7946f070bacd50f123551eda63876f035c5173db4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_6d6g6e7t",
+    "category": "phrasal-verb",
+    "level": 3,
+    "headword": "show up",
+    "definition": "to arrive at a place where people expect you",
+    "example": "He didn't {{show}} {{up}} for the meeting.",
+    "example2": "She showed up an hour late.",
+    "meanings": {
+      "ja": "現れる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6dc37fea53d81a747dc2103369ed7169ca347852195839458d76ead3ed3593ef",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:7fae2cb59214197d1694c4f7b3180845e9b564bb6765bf5b7eac319dab1c7751",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "v_6f7h4h6g",
     "category": "phrasal-verb",
     "level": 6,
@@ -119,6 +1169,181 @@
       },
       "meanings.ja": {
         "hash": "sha256:9f358d9f3542d2f1253ed3012db31896dbff59e39ae12db02d90b3225a4759d7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_6g3h5d3u",
+    "category": "phrasal-verb",
+    "level": 6,
+    "headword": "end up",
+    "definition": "to finally be in a place or situation you did not plan",
+    "example": "We got lost and {{ended}} {{up}} in a tiny village.",
+    "example2": "If you don't study, you'll end up failing the test.",
+    "meanings": {
+      "ja": "結局〜になる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8940c61cce4b0be226e62c580763ad8026d0a63c20e86a19a8348424be7ca79a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:235e0f05e8e8c9ea82a4b3f779d0df20016fffb518aefaeda6c79e63e03d067d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_6m4v5a9v",
+    "category": "phrasal-verb",
+    "level": 2,
+    "headword": "come back",
+    "definition": "to return to a place where you were before",
+    "example": "Thanks for visiting; please {{come}} {{back}} again soon.",
+    "example2": "She left in March and came back in June.",
+    "meanings": {
+      "ja": "戻ってくる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:be8681cdedb2169cb46aaacc618f6790ec3ac4bde85ab077f0e09e5cb182475a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c6ea4ef1bd15f3ac60ee21c41299d391d2d2101e7ddb5e1d496ae71da96f6949",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_6n8w6h6d",
+    "category": "phrasal-verb",
+    "level": 6,
+    "headword": "break down",
+    "definition": "to stop working, as a machine or vehicle does",
+    "example": "Our car {{broke}} {{down}} on the highway.",
+    "example2": "The washing machine broke down again last night.",
+    "meanings": {
+      "ja": "故障する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c0abff63c130207c3321541414a98352947ef50c7f015f600c1b33e2ded3281",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:519eb00794edb15c5b5950af949cc296a05b8e2ae0df545c62fae4c3287396c3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_6u9z6p3t",
+    "category": "phrasal-verb",
+    "level": 6,
+    "headword": "turn out",
+    "definition": "to prove to be a certain way, often unexpectedly",
+    "example": "Everyone worried, but the party {{turned}} {{out}} great.",
+    "example2": "It turned out that he was my neighbor.",
+    "meanings": {
+      "ja": "結果的に〜になる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3809cf0f3a993a3b4de1bc3dc713c106d614a6f1348df8425ca630b1f8887772",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:6fe7fee0ebba48baea0894ea4554878133ebbf092ba3fbb923ed0c1485a7b2fc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7b9a4c6b",
+    "category": "phrasal-verb",
+    "level": 4,
+    "headword": "run into",
+    "definition": "to meet someone you did not plan to see",
+    "example": "I {{ran}} {{into}} my old teacher at the station.",
+    "example2": "You'll never guess who I ran into today.",
+    "meanings": {
+      "ja": "偶然出会う"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:04e41e7774eadfcced46f0902f936c190d37bb7a408502100945714f58529ca7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c14b8969f098316f1e65f17aabb5862ad50e13926cff1e4ed7b4f239f3b8afee",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7c9k5h3k",
+    "category": "phrasal-verb",
+    "level": 8,
+    "headword": "single out",
+    "definition": "to choose one person from a group for special attention",
+    "example": "The teacher {{singled}} {{out}} Ken for his excellent essay.",
+    "example2": "I don't want to single anyone out.",
+    "meanings": {
+      "ja": "選び出す"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e830008271b88ec4504fa6f7fe2df8026292fda8ff711e65b73e5b9cff542ff",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:64c461e4796d8d382e013a066e23997dee38e529eea2ed57b70c6f9611c95a18",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7e3r6m7j",
+    "category": "phrasal-verb",
+    "level": 9,
+    "headword": "pare down",
+    "definition": "to make something smaller by cutting away the parts that are not needed",
+    "example": "We had to {{pare}} {{down}} the guest list to thirty.",
+    "example2": "She pared her speech down to five minutes.",
+    "meanings": {
+      "ja": "削って減らす"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a18788f628c4f626adb2d2e54f2df5a02a2b7d64f479a75ba479f005d73f110f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:6175125ae769650bdfb0c7e65cb7d4be796ba0d67cf2f91d378cc4264c7657dc",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       }
@@ -175,6 +1400,31 @@
     }
   },
   {
+    "id": "v_7k8c4v7c",
+    "category": "phrasal-verb",
+    "level": 10,
+    "headword": "stave off",
+    "definition": "to keep something bad away for a while",
+    "example": "A quick snack helped me {{stave}} {{off}} hunger until dinner.",
+    "example2": "The firm borrowed money to stave off bankruptcy.",
+    "meanings": {
+      "ja": "食い止める・遠ざける"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:28cdabeb7e07079af1d152771c352370d15a238bb1dc7ce837e9a1796e49062e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:e6cc9fe264c871fb338d50d32feb62d25b2a7cd9f1e941957d19679f84e263ee",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "v_7m7m9n5w",
     "category": "phrasal-verb",
     "level": 7,
@@ -194,6 +1444,31 @@
       },
       "meanings.ja": {
         "hash": "sha256:5dbd0bcad1ff6375b021b6241be8ceef6d84d7a9aa8ef4df228a8244c9e1f985",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_8c8m4r6s",
+    "category": "phrasal-verb",
+    "level": 3,
+    "headword": "hang out",
+    "definition": "to spend relaxed time with friends without a plan",
+    "example": "We usually {{hang}} {{out}} at the park on Sundays.",
+    "example2": "Do you want to hang out tonight?",
+    "meanings": {
+      "ja": "ぶらぶら過ごす・遊ぶ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d8cd4ef1667309598fb6c424aa02a57ec7302a0c0751d3279b58446bde66c44c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:fcb3ca717f55b4e61d7898b88c54d835e1e23c27415d53b9f88ba044472ef5e9",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       }
@@ -225,6 +1500,56 @@
     }
   },
   {
+    "id": "v_8g9s3p4x",
+    "category": "phrasal-verb",
+    "level": 7,
+    "headword": "play down",
+    "definition": "to make something seem less serious or important than it is",
+    "example": "The mayor tried to {{play}} {{down}} the risk of flooding.",
+    "example2": "He always plays down his own achievements.",
+    "meanings": {
+      "ja": "軽く見せる・控えめに言う"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8e9e4e33c377c0d777dfca7d90405ba5cc46893cbb2402322825f2be877fba8d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:de9a5926d3152be7623bdc461a0e1afe1a11327f4f5f059e54955c13d52b62f2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_8k6j5e6y",
+    "category": "phrasal-verb",
+    "level": 7,
+    "headword": "sort out",
+    "definition": "to deal with a problem and find a solution",
+    "example": "I need to {{sort}} {{out}} my visa before I book the flight.",
+    "example2": "Let's sort this out like adults.",
+    "meanings": {
+      "ja": "解決する・整理する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:701f7b2d445c2ee4fe4a3a951d0117e98979e9157bf08df46877ae2ecd8a88c6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:d1111f749731d282963d01a8798a8b79ef28a87d35fcb5242fb4b183ce7941ca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "v_8k7v4s2x",
     "category": "phrasal-verb",
     "level": 3,
@@ -244,6 +1569,556 @@
       },
       "meanings.ja": {
         "hash": "sha256:3600795399ea6334aed712c08b2aaf7560e71dcce48b0f4294b0f83f8e1179ab",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_8q4k2u7x",
+    "category": "phrasal-verb",
+    "level": 9,
+    "headword": "rein in",
+    "definition": "to control something so that it does not grow too far or too fast",
+    "example": "The new manager tried to {{rein}} {{in}} the team's spending.",
+    "example2": "It is hard to rein in your temper after a long day.",
+    "meanings": {
+      "ja": "抑制する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0cd7b90b922f468ca2b93ee366a5edb51661cbedcd9770fe3425e052df3bcaae",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:4e9d0d214eb07243b5b0f1ac237b61689160b3b3ffa93fabc96f0f5359cb97e7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_8t4c5s7z",
+    "category": "phrasal-verb",
+    "level": 1,
+    "headword": "look at",
+    "definition": "to turn your eyes toward something and see it",
+    "example": "Please {{look}} {{at}} the board.",
+    "example2": "She is looking at a picture.",
+    "meanings": {
+      "ja": "〜を見る"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b287e48f349aec140a25647bac36286d6dad684b445ab9eb82671b4f0dee12fd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:8ae74a5dd74b44fb5e08e49c0d63e6bc3dd79a4f4f5e7242f287a8e6c98cea9e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_8y4a2t7q",
+    "category": "phrasal-verb",
+    "level": 8,
+    "headword": "scale back",
+    "definition": "to make a plan or activity smaller because of cost or limits",
+    "example": "The company had to {{scale}} {{back}} its hiring plans this year.",
+    "example2": "They scaled back the party because of the budget.",
+    "meanings": {
+      "ja": "縮小する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5359ef46adc4d7b5687b683bbc3c3f0dcf71c78b5c97659210c5091165b7dd55",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:364cef55a4f60fa009869500de94152c544304fd95fa93553b346e44b163065d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_8z6j5z9s",
+    "category": "phrasal-verb",
+    "level": 7,
+    "headword": "pull off",
+    "definition": "to succeed in doing something difficult that others thought was unlikely",
+    "example": "Nobody believed she could {{pull}} {{off}} such a big event alone.",
+    "example2": "The band pulled off a brilliant show despite the rain.",
+    "meanings": {
+      "ja": "やってのける"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2abf612e6e2d1c028ddbe5f3a30e67ab8790d7a7e0deccdf52f967f684a425f2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:fd08dcd2f20f06b97ee9e97bef6d44704a0a053cbf031266e14700982c467f83",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_8z6v4b8b",
+    "category": "phrasal-verb",
+    "level": 7,
+    "headword": "back out",
+    "definition": "to decide not to do something you had agreed to",
+    "example": "He {{backed}} {{out}} of the deal at the last minute.",
+    "example2": "Don't back out now.",
+    "meanings": {
+      "ja": "手を引く"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c382746931b8fcd25196c53ed87f6ba39992c2dae969d254daee113e07ce03ba",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:69b6cd8249716aa54f5484400df383403eb3f58e211adb631c10bd33af173f92",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9b6s9h2g",
+    "category": "phrasal-verb",
+    "level": 1,
+    "headword": "go back",
+    "definition": "to travel again to a place you were in before",
+    "example": "I left my bag at the cafe, so I must {{go}} {{back}} there.",
+    "example2": "Let's go back to the hotel.",
+    "meanings": {
+      "ja": "戻る"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7c84bfdca8d6819910b9f5674bf8dbee47f3c254e5fb57f53e526b7e3fad30c1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:7fb931689396ea9276110804156dbd08fcb6a857bdc645498cc003f92ccfc5e2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9b6u2z3u",
+    "category": "phrasal-verb",
+    "level": 5,
+    "headword": "fill out",
+    "definition": "to write the needed information in all the spaces of a form",
+    "example": "Please {{fill}} {{out}} this form before you see the doctor.",
+    "example2": "I filled out the application online last night.",
+    "meanings": {
+      "ja": "記入する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:72150b9ffc1aad515f1fa29bb09967b83eb290acf9bce3d15be59a435caed61b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:01930b52c4d14b5182bed0e4cd7d06f08b12748b1ff9ddf4ce33087193ab4b68",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9b7a3q9z",
+    "category": "phrasal-verb",
+    "level": 2,
+    "headword": "put away",
+    "definition": "to move something back to the place where it is kept",
+    "example": "After dinner, I {{put}} the dishes {{away}}.",
+    "example2": "Put your toys away, please.",
+    "meanings": {
+      "ja": "片づける"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4d4f1f1af6eedef410cf357646b264e6c66e1b25362b430e57dc5e4819cc4b2f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:54c9e139feb98b01945162040b2e91c43f5cd7d2c39607b360ef9f168bccfbc2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9c7d2n6w",
+    "category": "phrasal-verb",
+    "level": 2,
+    "headword": "slow down",
+    "definition": "to reduce the speed at which you move, speak or work",
+    "example": "Please {{slow}} {{down}}; I can't follow you.",
+    "example2": "The bus slows down near the school.",
+    "meanings": {
+      "ja": "速度を落とす"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0ab83d94440824739dd34387873623ba2891e34ba4a791eed9fcd0676f4ab3b5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:01ac6fb47626b291f7abdc909dc70ceff80f1849770fc2fb0dcdc33355ef7c67",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9c8j4p6b",
+    "category": "phrasal-verb",
+    "level": 7,
+    "headword": "bring about",
+    "definition": "to make an important change or result happen",
+    "example": "The new law {{brought}} {{about}} a real shift in how schools work.",
+    "example2": "What brought about the decision to close?",
+    "meanings": {
+      "ja": "もたらす"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:662f2313724fcb2ba414f7222fd11e41cc00137744e3164acfb5f8262223c9a3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:5f51f964561b15432141755a00ae2b2464bd8dfe86ca72161d56946a37210137",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9e4y6u6f",
+    "category": "phrasal-verb",
+    "level": 4,
+    "headword": "set up",
+    "definition": "to start something, or get it ready to use, such as a company or phone",
+    "example": "They {{set}} {{up}} a small company last year.",
+    "example2": "Can you help me set up my new phone?",
+    "meanings": {
+      "ja": "設立する・設定する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f33eea53e488b022946934f85ac2448e3f2bdd4f5f6c662baf9f9a540846f440",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:265b3dd03a0d9e8330020932422bee8164e0276af4212c2eedd4658193ab0cb3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9f4z3j2w",
+    "category": "phrasal-verb",
+    "level": 10,
+    "headword": "muddle through",
+    "definition": "to manage to finish a task without a good plan or skill",
+    "example": "We had no manual, so we {{muddled}} {{through}} somehow.",
+    "example2": "I don't speak French well, but I'll muddle through.",
+    "meanings": {
+      "ja": "なんとかやり抜く"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fa17fbdbf709c683dd98cc12b4952c5d8d2a9b3b064f66ac8f7465f25a96fa8d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:733aed1cd0cb6182d88b0ce01b3a584ce0bcd43dc7896465c2094dbb67073d01",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9f9n4n6z",
+    "category": "phrasal-verb",
+    "level": 10,
+    "headword": "fob off",
+    "definition": "to make someone accept an excuse or a poor thing so they stop asking",
+    "example": "The shop tried to {{fob}} me {{off}} with a vague apology.",
+    "example2": "Don't let them fob you off with excuses.",
+    "meanings": {
+      "ja": "ごまかして追い返す"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3ff2766cdb1af55065f9dbfa7c52fba694e4312938c55407926e288539d6a599",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:10ae0adf1d722aac9c0aa22b88181ee1134e1173c214c4048c36bdec5df35a35",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9g3u2b3u",
+    "category": "phrasal-verb",
+    "level": 8,
+    "headword": "iron out",
+    "definition": "to solve small problems in a plan or agreement",
+    "example": "We still need to {{iron}} {{out}} a few details in the contract.",
+    "example2": "The two teams ironed out their differences over lunch.",
+    "meanings": {
+      "ja": "解決する・調整する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b349cbbb68075cd422d97b7d0ec079c3c9ead273eb25c460510a608534898ccb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:74099411408a9529c58daee210b3046c1dda1978ec0b867bc10072aff10dd23a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9h5e2v6t",
+    "category": "phrasal-verb",
+    "level": 10,
+    "headword": "peter out",
+    "definition": "to slowly become weaker and then end",
+    "example": "The excitement began to {{peter}} {{out}} after the first week.",
+    "example2": "Their conversation petered out as the night grew late.",
+    "meanings": {
+      "ja": "次第に消える"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e822033c81b444100776a9189f3f432fd401086d3e615cb54160c6e9b8659577",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:977476657976f65455cbc2f40fc799fafcc1b29315aa6325eec83ba925c3ce60",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9j9y8n9t",
+    "category": "phrasal-verb",
+    "level": 10,
+    "headword": "hash out",
+    "definition": "to discuss a disagreement openly and in detail until it is settled",
+    "example": "The roommates sat down to {{hash}} {{out}} who would do which chores.",
+    "example2": "Let's hash this out over lunch.",
+    "meanings": {
+      "ja": "徹底的に話し合って決める"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a528148a8118b22f4303557c094183261d1c73a1c88690168f8cfe9528d53d99",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:2a011e217836e21aa2bb33b79687a1a0ea35646a6c29de0d72325db1cbd9e147",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9k6v3w5j",
+    "category": "phrasal-verb",
+    "level": 4,
+    "headword": "hand in",
+    "definition": "to give your work to a teacher or boss",
+    "example": "Please {{hand}} your report {{in}} before noon.",
+    "example2": "She handed in her essay a day early.",
+    "meanings": {
+      "ja": "提出する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d72e70ac5ab75554c322c912f47cfe767a90c8f0f30fc73d16b98e59a0e87c45",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:f72f32c9c8c2eb6654123c0d22dd848376e26b08073930d166e6595d78bbdaca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9k8s7q4q",
+    "category": "phrasal-verb",
+    "level": 10,
+    "headword": "shore up",
+    "definition": "to give extra support to something that is weak or likely to fail",
+    "example": "The city is trying to {{shore}} {{up}} the old bridge before winter.",
+    "example2": "She took a second job to shore up the family's savings.",
+    "meanings": {
+      "ja": "補強する・てこ入れする"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a48b8f0a2de72afa3bbd86453d2dbecd280037dd94838622f7aded2f4719ad28",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:99a75c16fdb76f05b45c33141df8c2f0344b6283920366b3ec7604518e7d9238",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9m8k8q9e",
+    "category": "phrasal-verb",
+    "level": 2,
+    "headword": "clean up",
+    "definition": "to get rid of the dirt and mess in a place",
+    "example": "Please {{clean}} {{up}} your room before dinner.",
+    "example2": "We cleaned up the kitchen after the party.",
+    "meanings": {
+      "ja": "片づける・きれいにする"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fdaab18c3caf5fa235d3537c8afe352beb04f375a069fb664cb4a84370cfd2f5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:a0e3e6e1e4a20c90dd2fa9e2259bf0412552f2c32d01d0091398f24d9e862f65",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9r8w3p4j",
+    "category": "phrasal-verb",
+    "level": 5,
+    "headword": "throw away",
+    "definition": "to put something you do not want in the trash",
+    "example": "Don't {{throw}} that box {{away}}; I might need it for storage.",
+    "example2": "He threw away all his old notebooks when he moved.",
+    "meanings": {
+      "ja": "捨てる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c0ccaf4cbce371d7629526c877a5ef620cb6f2fbd9ab1fd0fa2d5f85cd2e24d0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:516bfb251152db853bcf48cb8553174d618b9df01c1c1ec1855f08cdfd5b19f9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9s7g6z4z",
+    "category": "phrasal-verb",
+    "level": 9,
+    "headword": "tease out",
+    "definition": "to slowly find a fact or meaning hidden in something complicated",
+    "example": "It took weeks to {{tease}} the real cause {{out}} of the tangled data.",
+    "example2": "The lawyer teased the truth out of the witness.",
+    "meanings": {
+      "ja": "苦労して引き出す"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9413ad072ecdb293420a254e080653acadbb015d63800bc71531cf1ca297e303",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:2915126bf65ff75dc05cd46aa3131dc5d91d686f41fb6b8c5b3770ee26f3da0d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9w5r7y4u",
+    "category": "phrasal-verb",
+    "level": 1,
+    "headword": "sit down",
+    "definition": "to lower yourself onto a chair or seat",
+    "example": "Please {{sit}} {{down}}, and I will bring the menu.",
+    "example2": "The children sat down on the floor to hear the story.",
+    "meanings": {
+      "ja": "座る"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:444754e4407a2fef98514cffeb3721b32c0870506047d587fb35d5043bd0fdca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:5ccb3ce62567a96d7b6353ae044b80e5202bf346be1e6081390c55b62b26319f",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       }

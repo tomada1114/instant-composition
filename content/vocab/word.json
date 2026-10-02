@@ -25,6 +25,181 @@
     }
   },
   {
+    "id": "v_2b5c6m4c",
+    "category": "word",
+    "level": 8,
+    "headword": "undermine",
+    "definition": "to slowly make something weaker or less likely to succeed",
+    "example": "Constant criticism can {{undermine}} a new employee's confidence.",
+    "example2": "Rumors about the plan undermined the team's trust in the manager.",
+    "meanings": {
+      "ja": "徐々に損なう"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:10e31a1dd480a12c94afbd0c9a05566103e42ddfdbe3d09bd32e830169ddae2f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:156fdce588c2e3b0e595d6af0ff843b3f65ee5d66ebecda903ac6687883b2a6f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_2d8x5g2g",
+    "category": "word",
+    "level": 1,
+    "headword": "happy",
+    "definition": "feeling good because something nice has happened",
+    "example": "I am {{happy}} because today is Friday.",
+    "example2": "The children are happy to see the dog.",
+    "meanings": {
+      "ja": "うれしい・幸せな"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:89aaf4dbd005996fecab7ae9bf4aefc50e0c6573f9310d29238a1e1382d3a5df",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:d974a1ee242aae134a5f3cc7bf38f0d3e79f5551b03ed8a7625b4e076d966fd3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_2f5j3b8d",
+    "category": "word",
+    "level": 1,
+    "headword": "teacher",
+    "definition": "a person who works at a school and helps students learn",
+    "example": "My {{teacher}} is very kind.",
+    "example2": "The teacher writes a word on the board.",
+    "meanings": {
+      "ja": "先生"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1f3963a5ca5f953100ebf304bb60775fea7a4ffc12aad909c80bc87b965ed87f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:56c2abd9ccc8d52728e83e24c483eeab9ef720dffde26a616de49b92407f0a36",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_2k2e7n2c",
+    "category": "word",
+    "level": 2,
+    "headword": "neighbor",
+    "definition": "a person who lives in the next house or apartment",
+    "example": "My {{neighbor}} has a very friendly dog.",
+    "example2": "We said hello to our new neighbors.",
+    "meanings": {
+      "ja": "隣人・近所の人"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:31f2f7e79568bb67c8093968d699fb81f374e10857cd2cf961d79a61dc12a5a0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:d2d9160b0272844a9892b2e960478ec5e574a25ddeaaf0aa493314fdeecd936c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_2k3h4h5n",
+    "category": "word",
+    "level": 3,
+    "headword": "luggage",
+    "definition": "the bags and cases you take with you on a trip",
+    "example": "Please put your {{luggage}} on the shelf.",
+    "example2": "Our luggage got lost at the airport.",
+    "meanings": {
+      "ja": "荷物・手荷物"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5e0616f03d1ed0d80cf2e18bffea7d42a8e57e2f1d93cef1f56a46f01828026a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c4df2c92099cc88c40e874038448243364da17410e21e9025f6fda6a77622599",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_2q8b5j5e",
+    "category": "word",
+    "level": 1,
+    "headword": "busy",
+    "definition": "having a lot of things to do",
+    "example": "My father is {{busy}} on weekdays.",
+    "example2": "I was busy yesterday, so I did not call you.",
+    "meanings": {
+      "ja": "忙しい"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d267b1728dc0cdae37f98cbb45ccf9630bc345cf84ee0ed33c00abe9b6add2bb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:2bd0b4eb451bce37c45a591cd5d8a8007bb2eb64c2e74f8ba6a8c2690db701a3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_2s5d7z6p",
+    "category": "word",
+    "level": 8,
+    "headword": "cumbersome",
+    "definition": "large, heavy or slow in a way that is hard to handle",
+    "example": "The old software was {{cumbersome}} and hard to use.",
+    "example2": "The cumbersome rules slowed down every project.",
+    "meanings": {
+      "ja": "扱いにくい・面倒な"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:30afcf9675f50d07a1ce9c7c856ed821457099bf59465ab10e8b1fca7983747d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:1c20dc5ef2741b6fa87620d58701137f3b06cfe99c3ba5d2e350e53493605872",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "v_2t6x2v3s",
     "category": "word",
     "level": 5,
@@ -44,6 +219,131 @@
       },
       "meanings.ja": {
         "hash": "sha256:7708fce8ab322940d9069b850cb8edbc2b23eb3aa0f15b3ebb37d4288d8ec2ce",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_2w4x2e6r",
+    "category": "word",
+    "level": 7,
+    "headword": "negotiate",
+    "definition": "to discuss something formally to reach a deal",
+    "example": "They {{negotiated}} for weeks before signing the contract.",
+    "example2": "We're negotiating a lower price with the supplier.",
+    "meanings": {
+      "ja": "交渉する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:94ad67dfc881070c6dfb2f916056eb61eefdc1517efa8c2444d2d974cb34058d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:2ebcdb958918de7a776d08baccbd9620248b2ab9988ddc1184aec50379a9362f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_2x6t7p6k",
+    "category": "word",
+    "level": 5,
+    "headword": "recommend",
+    "definition": "to tell someone that a person or thing is good and worth choosing",
+    "example": "Can you {{recommend}} a good dentist near here?",
+    "example2": "The doctor recommended more rest and plenty of water.",
+    "meanings": {
+      "ja": "勧める"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3fbfd2df745cf4ccd2fb071ba55d4bafd7aa796740d5a8d02107247b6ae68216",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:3a03e931aae86ef187dc9ed1cf15ac4d7e83c60c145c22305f8e0135920dba63",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_2z9j4n3j",
+    "category": "word",
+    "level": 2,
+    "headword": "invite",
+    "definition": "to ask someone to come to a party or event",
+    "example": "She {{invited}} twenty friends to her birthday party.",
+    "example2": "Thank you for inviting me.",
+    "meanings": {
+      "ja": "招待する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e6cfed31724a5dcc3531bb12a2f9a0bdcca8d3adba2fa8159010c8e9fd31fe54",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:7bd1068e6e3780054a899d7705e0f3bdb47ea9228d082bb6b101e95bfc6f096f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3d7k6k5q",
+    "category": "word",
+    "level": 9,
+    "headword": "tangible",
+    "definition": "real enough to be seen, touched or clearly measured",
+    "example": "The new tool brought {{tangible}} benefits within a month.",
+    "example2": "There is no tangible proof of the claim.",
+    "meanings": {
+      "ja": "具体的な・目に見える"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:034ed8a3efea17247a2c0c285a18f2ffeca16eeec89e430d028dc7f98cd1552f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:8a207d96db0513a7339465a9d08b9992eed3e09e0fa26ec736a8d1f2d851a0f0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3e8m9d3e",
+    "category": "word",
+    "level": 8,
+    "headword": "plausible",
+    "definition": "seeming likely to be true or reasonable",
+    "example": "His excuse sounded {{plausible}}, but nobody could check it.",
+    "example2": "That is a plausible explanation for the delay.",
+    "meanings": {
+      "ja": "もっともらしい"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1027de7258ee3c62c7bf53c4b21596ce248eae53ca1425b2f4eb6320f09042e4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:09712d92a57a925f7dc22af77ccb053d4ac9564ffea5a90f3fb6407a0b415175",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       }
@@ -75,6 +375,256 @@
     }
   },
   {
+    "id": "v_3n2n7f2e",
+    "category": "word",
+    "level": 9,
+    "headword": "equivocal",
+    "definition": "so unclear that it fails to settle a question either way",
+    "example": "The senator gave an {{equivocal}} answer to a simple question.",
+    "example2": "The test results were equivocal, so the doctor ordered another one.",
+    "meanings": {
+      "ja": "あいまいな・どちらとも取れる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:161a798eaf563978226ee661bd4b7a6920990d690065d7a5439c3e854b696e0e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:50884d31a09cb49f21430b5e77087fa2f417106b89cbdbe33532c69059f477fb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3r4z6s7g",
+    "category": "word",
+    "level": 4,
+    "headword": "available",
+    "definition": "ready for you to use, buy or meet at a particular time",
+    "example": "Only two seats are still {{available}} on Thursday's flight.",
+    "example2": "The new phone will be available in stores next month.",
+    "meanings": {
+      "ja": "利用できる・空いている"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c00af67b3a23ce38f8ee32877252307fcdd4a82c98fe7331faf27665149e3e46",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:5df9e438cffdc692cfc9ab879ee682ec5b4da768cb0da4d1828eaf4a3b5c52a9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_4d8k7b5k",
+    "category": "word",
+    "level": 1,
+    "headword": "friend",
+    "definition": "a person you like and enjoy spending time with",
+    "example": "Ken is my best {{friend}}.",
+    "example2": "I play soccer with my friends on Sunday.",
+    "meanings": {
+      "ja": "友だち"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5085dac4d05dadec76089709f16f24369b7b7afa149c9a72e04aa8b7769dc716",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:247b7b6f849f921a68a4d0fa6a11320d59e30a58749ab5bae38f06b1bab51a2c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_4m6b3a6p",
+    "category": "word",
+    "level": 9,
+    "headword": "disparate",
+    "definition": "describing things that seem to have nothing in common with each other",
+    "example": "The team merged {{disparate}} ideas into one clear plan.",
+    "example2": "She studied disparate fields, from music to biology.",
+    "meanings": {
+      "ja": "異質な・かけ離れた"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:48762da2c22c3509fc923193637bdcef46c41634def12189e5d903ac79f991a5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:20186bba877317b8bf73377872f93a3485c2274f6a8f1975eff106a4e49037cb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_4n2d2m6s",
+    "category": "word",
+    "level": 10,
+    "headword": "obsequious",
+    "definition": "too eager to please someone powerful, in a way that seems fake",
+    "example": "The {{obsequious}} assistant laughed at every joke his boss told.",
+    "example2": "I found his obsequious bow embarrassing.",
+    "meanings": {
+      "ja": "媚びへつらう"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:907b90933df6b814a1588a5e037cc0940b4b9dd9892281f5ec5b5d0150ea9ad7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:974ef3727448ca84b4ed69478d2512c6f53885300716731fef294b52be9db628",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_4p7z5k4j",
+    "category": "word",
+    "level": 2,
+    "headword": "cheap",
+    "definition": "not costing much money",
+    "example": "This shirt was {{cheap}}, only five dollars.",
+    "example2": "We found a cheap hotel near the station.",
+    "meanings": {
+      "ja": "安い"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fc5bd0c0d5f297af564b2d7f0f83ea37899dca3aba7101f3b487b4a77f129e32",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c0835d784cd823f2a7c68c4590fa47ff02224353d11119172268e1d295b899aa",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_4q3x6c3w",
+    "category": "word",
+    "level": 1,
+    "headword": "hungry",
+    "definition": "wanting to eat food",
+    "example": "I am {{hungry}}, so I want some rice.",
+    "example2": "The hungry dog ate all of its food.",
+    "meanings": {
+      "ja": "お腹がすいた"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b7345fdcb2e3ad0dd7777783e964afe63149e7c5043c4df1b144d130f1eac25c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:243b69f9b2ba4ba3d16a0d0d329fe90c7cc963ea8894b6295940b75e36d13f49",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_4s5e9t7x",
+    "category": "word",
+    "level": 1,
+    "headword": "bag",
+    "definition": "something with handles that you use to carry your things",
+    "example": "She put her book in her {{bag}}.",
+    "example2": "My bag is under the table.",
+    "meanings": {
+      "ja": "かばん"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:84221934507cf1ba0467f1a68040593f5bbe1b128ba90a37c61eb41b137b1125",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:5a0f90f64df1e83985609215f4cd1d5c99c8170190545789dba03458c9c3f72d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_4x6e4u5n",
+    "category": "word",
+    "level": 1,
+    "headword": "thirsty",
+    "definition": "wanting to drink water or tea",
+    "example": "I am {{thirsty}} after the soccer game.",
+    "example2": "I get thirsty when I walk in the sun.",
+    "meanings": {
+      "ja": "のどが渇いた"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:ee776f1cd0e1b4e6e91686ff0ef453be2c3a6fd01f8a26bb90c9151c9a546604",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:91ef9d87c7f9eaf5b1d7f95d2a42c2f9d0917e7c829da722920a6ed086ea8dec",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_4z5f3e5m",
+    "category": "word",
+    "level": 3,
+    "headword": "prepare",
+    "definition": "to get ready for something that will happen soon",
+    "example": "I need to {{prepare}} for tomorrow's big meeting.",
+    "example2": "Are you prepared for tomorrow's test?",
+    "meanings": {
+      "ja": "準備する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7598e82a6d29247ec06977a40a0513ca77232b76c3b911fb0aa49ab2f1b7cf5c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:9d3990fe693b4f52e0b4c264fdb478670ebd4b172286c0dcb29bad8488a81b4a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "v_5a7q4w2p",
     "category": "word",
     "level": 5,
@@ -94,6 +644,81 @@
       },
       "meanings.ja": {
         "hash": "sha256:71c1b625f82ef415f36d09d6f9df23d26ef08729d968ef1b4b246ae295fa0f01",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5d2t4p9y",
+    "category": "word",
+    "level": 2,
+    "headword": "empty",
+    "definition": "having nothing inside",
+    "example": "The box was {{empty}} when I opened it.",
+    "example2": "Please don't leave the empty bottles on the table.",
+    "meanings": {
+      "ja": "空の"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:341ff88e63f22e96aec85e2813a4d7a33226a070253c49655f830da8a62bb1c4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:61f2d44cf01d6602aec8283a43fc7fac0036485cd5624afd334c5119fda0b16b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5e5g6a8n",
+    "category": "word",
+    "level": 3,
+    "headword": "polite",
+    "definition": "behaving in a kind way that shows respect for other people",
+    "example": "It is {{polite}} to say thank you when someone helps you.",
+    "example2": "The waiter was polite even when the guests were rude.",
+    "meanings": {
+      "ja": "礼儀正しい"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:195b7f1a1ae138894cfaaeda55d0f77db97c9dea5a5e8afdf340adc6cc9440e4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:0d1d702962556e6d2b2cbffaf300410db2b4ba46472422ba500763a899633b7d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5m8b4y2w",
+    "category": "word",
+    "level": 10,
+    "headword": "tenacious",
+    "definition": "holding on to a goal and refusing to let go, even when it is hard",
+    "example": "The {{tenacious}} reporter kept asking questions until she got an answer.",
+    "example2": "Our tenacious goalkeeper saved three shots in the final minute.",
+    "meanings": {
+      "ja": "粘り強い"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:18e0d73610765ee6a04308460a395c416a372f45c61487a536f96c5afe71d53f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:2b0cf674fed29d39d64d044384f1fd17d23a77a28fff8b5dfa36ea0b6a3c8f99",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       }
@@ -125,6 +750,306 @@
     }
   },
   {
+    "id": "v_5r9k8u5s",
+    "category": "word",
+    "level": 7,
+    "headword": "feasible",
+    "definition": "possible to do and likely to work in practice",
+    "example": "The plan sounds good, but is it {{feasible}}?",
+    "example2": "A feasible schedule leaves time for mistakes.",
+    "meanings": {
+      "ja": "実現可能な"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c872d239db5b470f083ad28021409eb5374db1c5f6d65f41b3847617a26622ba",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:e9e58ee75283f97b761190df32f4a21a94e1df6b12ea6c2b696c055d34595e19",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5t7d9s9p",
+    "category": "word",
+    "level": 8,
+    "headword": "lucrative",
+    "definition": "making a lot of money for the person doing it",
+    "example": "He left teaching for a more {{lucrative}} job in sales.",
+    "example2": "The company signed a lucrative contract with the airline.",
+    "meanings": {
+      "ja": "儲かる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:49fe57c5675456fb37919113e5f400ad10a36c36c608a9520aa5da232858739d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:3a54a1428d99b27d6d06c963203c542e12bfeb754374ec8bf459a6831f85a99d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5t8h9a3g",
+    "category": "word",
+    "level": 7,
+    "headword": "inevitable",
+    "definition": "certain to happen, whatever anyone does to stop it",
+    "example": "With so much snow, delays were {{inevitable}}.",
+    "example2": "Change is inevitable in any growing company.",
+    "meanings": {
+      "ja": "避けられない"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1d71ee430eafff669d8429d601a1988efe60f9c980ff09b8c25e0bf5ed680796",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:f7dd21a8ab002871e3b806bbb1c2f8ed1434544e4289ed37ffefbece77e86e96",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5v2h8b9s",
+    "category": "word",
+    "level": 7,
+    "headword": "accountable",
+    "definition": "expected to explain your decisions and accept the results",
+    "example": "Managers are {{accountable}} for their team's mistakes.",
+    "example2": "Who will be held accountable for the delay?",
+    "meanings": {
+      "ja": "説明責任がある"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:15116d793448ed24164f76b28bbf90eb9ebc977313df08bef9972618535b328a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c2de96216d676c72e05c4ffc64a8b55ac3d20a39351f3bb22c027964bac0001a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5w3g2d4h",
+    "category": "word",
+    "level": 8,
+    "headword": "mitigate",
+    "definition": "to make a harmful effect or problem less severe",
+    "example": "Planting trees can {{mitigate}} the effects of heavy flooding.",
+    "example2": "The company added extra staff to mitigate the risk of delays.",
+    "meanings": {
+      "ja": "軽減する・和らげる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:469c8a275b3a48c7d0efebcc3cc79696d366c2c38d8c635dabde8d7fb8923d6b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:3d0d54f53bf2aa7e3d55970634a17c2bd53e8935b217f2d3dcbb836c001b7534",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_6a7b8b9k",
+    "category": "word",
+    "level": 4,
+    "headword": "suggest",
+    "definition": "to offer an idea or plan for someone to consider",
+    "example": "Can I {{suggest}} a different time for the meeting?",
+    "example2": "She suggested that we take the train.",
+    "meanings": {
+      "ja": "提案する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d9ca75f2f1267f12861a7e0ac84914acf03d957aff87534df7d0ac73b1162746",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:2379eee450ed0d4694fd2549401d214968efff9b4bbe638a22b8fa1b7fe6dabd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_6e7z2f3b",
+    "category": "word",
+    "level": 10,
+    "headword": "recalcitrant",
+    "definition": "stubbornly refusing to obey rules or follow orders",
+    "example": "The {{recalcitrant}} student ignored every warning from the teacher.",
+    "example2": "The committee was recalcitrant and rejected all offers.",
+    "meanings": {
+      "ja": "反抗的な・手に負えない"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a4a37176532d9192ae11317df8fbd3fddc8f384fe56f8b471a84f74ec460cbe8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:ed8dcb32300a31c154e4b2fcd58191394740fb31cd87bc94127f094a191396b0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_6f4p7d8b",
+    "category": "word",
+    "level": 2,
+    "headword": "ticket",
+    "definition": "a small piece of paper that lets you enter a place or ride a train",
+    "example": "Can I have one {{ticket}} to Kyoto?",
+    "example2": "Do you have your train ticket?",
+    "meanings": {
+      "ja": "切符・チケット"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fdf08383930b3ac6805d2954ad91a32fe0de2a75b642859d97069a66ef43b2db",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:3970b2677d905499f43ea7f75d3ac0ee714d67493e967dd7fb67665154efa0cd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_6j2x4p6q",
+    "category": "word",
+    "level": 8,
+    "headword": "ambiguous",
+    "definition": "having more than one possible meaning, so it is unclear",
+    "example": "His reply was so {{ambiguous}} that nobody knew whether he agreed.",
+    "example2": "The contract's wording is ambiguous, so we should ask a lawyer.",
+    "meanings": {
+      "ja": "曖昧な・多義的な"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:bf66347f3e0319c154509d5c27eeff7f3c8f9085ce748199fa8bcc66299daaa9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:7b8f30d3f7d58b80a8b97dd31e556096ff0442b0851efef3c83a39146176d3fe",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_6j4d9e4e",
+    "category": "word",
+    "level": 1,
+    "headword": "breakfast",
+    "definition": "the meal you eat in the morning",
+    "example": "I eat {{breakfast}} at seven every day.",
+    "example2": "Do you want toast for breakfast?",
+    "meanings": {
+      "ja": "朝食"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9621b48116364c3848397ad0830ab026a957e61d507ec585470f830636fd3ee7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:d297899e0b4ae9b9e03351cc450a225a8d6ebdc6c7ee6e5b98e72a956df4ef98",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_6m7e7d5r",
+    "category": "word",
+    "level": 10,
+    "headword": "laconic",
+    "definition": "using very few words, sometimes in a way that seems blunt",
+    "example": "His {{laconic}} reply, just \"Fine,\" told us nothing.",
+    "example2": "The laconic farmer answered every question with a nod.",
+    "meanings": {
+      "ja": "言葉数の少ない"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8dbd70260dbf779ed396f6b55cde6a48bd9d901a16396f43766ad37841a140ce",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:0fcac406e2a3ab96050fe400889cff5d93b2c63cff2c29397fd404a47407cf6e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_6n3j8m2m",
+    "category": "word",
+    "level": 2,
+    "headword": "lonely",
+    "definition": "sad because you have no friends or people near you",
+    "example": "My grandmother feels {{lonely}} since she moved to a new town.",
+    "example2": "He was lonely in the big city at first.",
+    "meanings": {
+      "ja": "孤独な・寂しい"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:13747f4a906f9beca2e4b5923e67e068731e5f7df4aad241df6a7bc2b76a32fb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:8cdcc7b0df49e6b14c63f3a425f86d7e667cb021c9f76e49d3bc6ab60423b923",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "v_6p2g7b7e",
     "category": "word",
     "level": 6,
@@ -150,6 +1075,56 @@
     }
   },
   {
+    "id": "v_6p3r5w7y",
+    "category": "word",
+    "level": 5,
+    "headword": "refund",
+    "definition": "money that a shop gives back when you return something you bought",
+    "example": "I asked for a {{refund}} because the shirt was too small.",
+    "example2": "You'll get a full refund if you cancel today.",
+    "meanings": {
+      "ja": "返金"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e35ef8ca502589285d09c6f79aa4656ab697eae70cd5e3017259893ca5bf4743",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:6618f13201348df206d06b5fb8d6ea25767934028be79d4c379904e4d4600c8c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_6v2q3a7s",
+    "category": "word",
+    "level": 1,
+    "headword": "tall",
+    "definition": "measuring a lot from bottom to top, like a tree or a person",
+    "example": "My brother is very {{tall}}.",
+    "example2": "That is a tall building.",
+    "meanings": {
+      "ja": "背が高い・高い"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1215f187f05632421d263ed392cb017c5d09b00cde8a4e5ba4f1c86a25097136",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:72eaa94a73212c3e499497568e90f46bf2342648e961799d0f2f84e3ee10e6cf",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "v_6v5p3b6f",
     "category": "word",
     "level": 4,
@@ -169,6 +1144,106 @@
       },
       "meanings.ja": {
         "hash": "sha256:8ef6d3cb4b16162f958d4dbfe206973c799332bd9707cc62d157323f92b03417",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_6v5x4k4q",
+    "category": "word",
+    "level": 10,
+    "headword": "capricious",
+    "definition": "likely to change mood or mind suddenly for no clear reason",
+    "example": "The {{capricious}} weather changed from sun to storm and back every hour.",
+    "example2": "The king was capricious and often changed his orders.",
+    "meanings": {
+      "ja": "気まぐれな"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a468b26ae5c343b42371436798b6a0ebd6359b93e6a61a27fc0f65c64b300862",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:603022a98267a004dcc68a8aaef84049f3a7b1f223c93ab307e441474d33676e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_6x7y8m9z",
+    "category": "word",
+    "level": 3,
+    "headword": "habit",
+    "definition": "something you do often without thinking about it",
+    "example": "Biting your nails is a bad {{habit}}.",
+    "example2": "She has a habit of waking up at five.",
+    "meanings": {
+      "ja": "習慣"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5a0a8de666348c085b8ec75dbb6549cc451e731c0366256436fe1e7a81d58297",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:80b6541f23a19643fbe459a64acc3e811ecdba0db11f2211c57185a5acf5f8a3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7a4y7h5q",
+    "category": "word",
+    "level": 6,
+    "headword": "obstacle",
+    "definition": "something that blocks your way or makes a goal hard to reach",
+    "example": "Lack of money was the biggest {{obstacle}} to opening the cafe.",
+    "example2": "A fallen tree was an obstacle on the road.",
+    "meanings": {
+      "ja": "障害・妨げ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4f4cd865446631845826d5af71a676d43cf7c96d828905b466b728be0e7cefea",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:99ceabcf2941332488480d0928ce8fcc18e56a120d74a3cf30ffad68ead91477",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7c9k6r9d",
+    "category": "word",
+    "level": 9,
+    "headword": "scrutinize",
+    "definition": "to examine something very carefully to find any mistakes",
+    "example": "Auditors {{scrutinize}} every receipt in the report.",
+    "example2": "Voters scrutinized the candidate's past statements.",
+    "meanings": {
+      "ja": "詳しく調べる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8b79337d01ff83095497b673acf34b33f03c09fbdae8a04610d8c44a4dda680b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:f652d8dd1500c242c32f49bea0bb46835c1e8655bc0ac31a9b25749301319684",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       }
@@ -225,6 +1300,706 @@
     }
   },
   {
+    "id": "v_7g3z9h2m",
+    "category": "word",
+    "level": 9,
+    "headword": "exacerbate",
+    "definition": "to make a problem, pain or bad situation more severe",
+    "example": "Skipping sleep will only {{exacerbate}} your headaches.",
+    "example2": "The heavy rain exacerbated the flooding in the valley.",
+    "meanings": {
+      "ja": "悪化させる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8c947706d9f6217a2ea370bde5132cc2a984e50b36dd0decd201772c3b919eb4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:1fc2171aef4b34a052b5d319781bcfb66da4dde0b1ff6f8f6c62e91c10508752",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7h2y2x2u",
+    "category": "word",
+    "level": 6,
+    "headword": "adequate",
+    "definition": "good enough for a purpose, but not better than that",
+    "example": "The old laptop is {{adequate}} for writing emails, but not for video editing.",
+    "example2": "Adequate sleep helps you focus during the day.",
+    "meanings": {
+      "ja": "十分な・まずまずの"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3b877cf201d7485e646e4109fa59a048cfac6a3352ccc850521eb3e291742a59",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:1f8300a3f41d6deb46752b84e86ccc36b160901c113d30b67d19659b13004851",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7h5y9t5h",
+    "category": "word",
+    "level": 4,
+    "headword": "customer",
+    "definition": "a person who buys things or services from a shop",
+    "example": "The {{customer}} asked for a refund at the counter.",
+    "example2": "Our customers love the new menu.",
+    "meanings": {
+      "ja": "客"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:10c4276531309bf7340e303f1a15636fa789f82d0f14c0044585523c906d804a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:fd5e45472b6ac716898d31ce298ae9a275153b73bbe849fa2ec855e0f2594335",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7j9y5z3g",
+    "category": "word",
+    "level": 1,
+    "headword": "umbrella",
+    "definition": "something you hold over your head to stay dry when it rains",
+    "example": "It's raining, so take your {{umbrella}}.",
+    "example2": "I left my umbrella on the train yesterday.",
+    "meanings": {
+      "ja": "傘"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:df8852d1d36505a9241cd66b0960538cf2fcb811a96655ddb683ac26fbbbddc0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:fe8aaab15736c692776901fa26b3919dd70f0b73aa70f75980109164bf8ab9d0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7k9b2j9r",
+    "category": "word",
+    "level": 5,
+    "headword": "involve",
+    "definition": "to have something as a necessary part",
+    "example": "The job will {{involve}} some travel abroad.",
+    "example2": "Cooking for fifty people involves a lot of planning.",
+    "meanings": {
+      "ja": "伴う・含む"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5a523f48879464cd9d0135632a8ddf654d76c22eabeefe18c4210a447faedb79",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:752223804006c1a99a649cab28833103338ab1c2e4be273f310d4dd918d53313",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7m9a7k5k",
+    "category": "word",
+    "level": 2,
+    "headword": "angry",
+    "definition": "feeling very upset because someone did something wrong",
+    "example": "She was {{angry}} because her brother broke her phone.",
+    "example2": "Please don't be angry with me.",
+    "meanings": {
+      "ja": "怒った"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7dce805c612b06a5a767a5dbfa054d0f7053e7427a5603ab0d93305fb8292395",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:cc258d6a3dfc8c21edcbec320aacd64779a3126ccd401b43fa42984fa91c6b2a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7p3u5z4y",
+    "category": "word",
+    "level": 10,
+    "headword": "ubiquitous",
+    "definition": "seeming to be present everywhere at the same time",
+    "example": "Smartphones are now {{ubiquitous}}, even in remote villages.",
+    "example2": "The company's logo is ubiquitous in this part of the city.",
+    "meanings": {
+      "ja": "至る所にある"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f84c1ab028c47ef6b80b0e5544ca8a2b0db8da8249c6560995b1d74e211cd60c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:577dd45c477f96f1c493b556f6e1050c2cb511f39c6432439bb24830e089d5bd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7q5h7v4x",
+    "category": "word",
+    "level": 6,
+    "headword": "hesitate",
+    "definition": "to pause before you act because you feel unsure",
+    "example": "Don't {{hesitate}} to call me if you have any questions.",
+    "example2": "He hesitated at the door before knocking.",
+    "meanings": {
+      "ja": "ためらう"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cbbf2497243c2defd271c5406a8da067cdcbd90cfb6af4cd7d3f5e9d2a0c15f4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:ffdf5ba7b500f6711722f05ed676ff98505089ee277b01e3e7fa1b6a89deb6af",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7r6e2r9n",
+    "category": "word",
+    "level": 2,
+    "headword": "forget",
+    "definition": "to fail to remember something or someone",
+    "example": "I always {{forget}} his name when we meet.",
+    "example2": "Don't forget to lock the door.",
+    "meanings": {
+      "ja": "忘れる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:89e8b78568cf3668f7292d476ee165c648c98b9048f222edebf460efe5815d49",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:e352259b9e3a9c65d4d9f67706354954aeade40cc1e25020ef7d1f58a98d8e29",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7r6v2r5y",
+    "category": "word",
+    "level": 8,
+    "headword": "concede",
+    "definition": "to admit that something is true, often after resisting",
+    "example": "After an hour, he finally {{conceded}} that she was right.",
+    "example2": "The team conceded defeat before the game ended.",
+    "meanings": {
+      "ja": "しぶしぶ認める"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:89092e222e96b5156c6bc38e60be8d5db0e878037503fa26d8701b161ebc7e46",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:aea106a5a4c08065d2403a1cc8af3df949ba454b8686d6a94f44ebee15bea0af",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7w2h5f5p",
+    "category": "word",
+    "level": 9,
+    "headword": "paltry",
+    "definition": "so small in amount that it seems unfair or not worth much",
+    "example": "They offered him a {{paltry}} bonus after a record year.",
+    "example2": "She earned a paltry sum for months of work.",
+    "meanings": {
+      "ja": "わずかな、雀の涙の"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b69634dbe02d3a4b0c9ee4fb1a731d7d86de3dca903abe9600c55d24303f3940",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:a4c862c7e278d42b07aadcd224a2294a168dc5ea0bd13593eaaed79860aa75a8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_8b8f4n7f",
+    "category": "word",
+    "level": 9,
+    "headword": "ephemeral",
+    "definition": "lasting for only a very brief time",
+    "example": "Fame can be {{ephemeral}}, so save your money.",
+    "example2": "The beauty of cherry blossoms is ephemeral.",
+    "meanings": {
+      "ja": "はかない・つかの間の"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:924dca5dbfe0f868172df08a8141e624c583c2033d46cd04e1db77752c3945c1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:6f7fba430ed8df8629a7a3f95a1e16fc51f3adae32a6e5089cf609d07f98ce36",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_8d3g3r3q",
+    "category": "word",
+    "level": 8,
+    "headword": "ambivalent",
+    "definition": "having mixed feelings, both good and bad, about something",
+    "example": "She felt {{ambivalent}} about moving abroad for the job.",
+    "example2": "Voters remain ambivalent about the new law.",
+    "meanings": {
+      "ja": "相反する感情を持つ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0e3452bd40383211799c235ab40e8b801f41a35403fb6ad753a8d373d311d5c1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:7dca8ed5b647a7b872c1440e1b4174c899e5c78a3efb58e8eb428eb27f7e736f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_8d6e9w8z",
+    "category": "word",
+    "level": 3,
+    "headword": "decide",
+    "definition": "to reach a final answer about what to do, after thinking",
+    "example": "We couldn't {{decide}} where to eat, so we ordered pizza.",
+    "example2": "Have you decided what to wear?",
+    "meanings": {
+      "ja": "決める"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c8ef35b2bee867a07bfd27b4e5b628232cc433562359608d927e899da47c6f76",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:75153eca453af864e81727fdaf75f3f7c9aecb7a2f45c6574d76a9d0cec6f8d6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_8e4r9d3n",
+    "category": "word",
+    "level": 6,
+    "headword": "consistent",
+    "definition": "always behaving or happening in the same way over time",
+    "example": "He is a {{consistent}} player who scores about twenty points every single game.",
+    "example2": "Her grades have been consistent all year.",
+    "meanings": {
+      "ja": "安定した・一貫した"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:91a75dd4bbc3d9bd5e28696a6560501a29c57f1113202b24d65013e2448ff6b8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:8054764d8ca0eac950b942a2d08717f04b5be2691eab357f2058a92c01d6ce61",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_8g8y7z8s",
+    "category": "word",
+    "level": 6,
+    "headword": "genuine",
+    "definition": "not fake, but exactly what it is said to be",
+    "example": "Is this bag made of {{genuine}} leather?",
+    "example2": "Make sure the parts you buy are genuine.",
+    "meanings": {
+      "ja": "本物の"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f6c1c41000b03269e63089fcdcb4d81e0c5714d8b6c8e5f78d2b0d8deb28c25a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:90da88afee3f37c9121391f234c45c17bb8e71cf3617503fd0952cb2d7bb7ead",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_8j8b8y4f",
+    "category": "word",
+    "level": 7,
+    "headword": "overlook",
+    "definition": "to fail to see something that is there",
+    "example": "I {{overlooked}} a typo in the final report.",
+    "example2": "Please don't overlook the small details.",
+    "meanings": {
+      "ja": "見落とす"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6919b1afc37f5130045307f40b59159311dbc361b1d48d01caf1189844a662d9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:3078426cafa2c59dad3ade366272962ebb84135c5d578a285fb4f83ba4c627c0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_8p6n3j3k",
+    "category": "word",
+    "level": 4,
+    "headword": "comfortable",
+    "definition": "pleasant to wear or sit in, with nothing tight or hard",
+    "example": "These shoes are really {{comfortable}}, even after a long walk.",
+    "example2": "This sofa is very comfortable for reading.",
+    "meanings": {
+      "ja": "心地よい"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a78997a0f8ec358298644519c4a81a38d5efe59db08d951a7b14e534eeca31a0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:dacc094881e90917db270b119d71ee90065371f74c58fdcd50b44563cc411c20",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_8s5n5k7b",
+    "category": "word",
+    "level": 5,
+    "headword": "achieve",
+    "definition": "to reach something you wanted by working hard",
+    "example": "She worked for years to {{achieve}} her dream.",
+    "example2": "We achieved good results this quarter.",
+    "meanings": {
+      "ja": "達成する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cd7d3d6fae43cc0f165d3ef8050ec44da6c8442365503ff72b3637bd19e74c36",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:e7ea4fc4f56e5142554c9b27fbc57d8979aa79462c07d4b34e15905da99782a4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_8s8q2u8d",
+    "category": "word",
+    "level": 5,
+    "headword": "attitude",
+    "definition": "a person's general feelings about something, shown in how they act",
+    "example": "Her positive {{attitude}} made the long project easier.",
+    "example2": "I don't like his attitude toward customers.",
+    "meanings": {
+      "ja": "態度"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:66875bb3efac1b373493a6aa78c5eb5f8b3e31cd89c08a788fa7d5cdb40018b4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:4764ea245d57347c478cae2f655fe882a2bafdd2bcf1bcb0551d199d0fb3dfda",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_8v5n9u8y",
+    "category": "word",
+    "level": 9,
+    "headword": "nuance",
+    "definition": "a very small difference in meaning, tone or feeling",
+    "example": "The translation missed the subtle {{nuance}} of her joke.",
+    "example2": "He explained every nuance of the contract.",
+    "meanings": {
+      "ja": "微妙な違い"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3fd2d8d9605cce9e90f3f5a8283f44d292bff6278cdea80c882822c24e064186",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:3bef6e71daa755a522e451f47a638abec4415cfdeb3d6f9c0cfe7a10b57bec15",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_8y2y6c4y",
+    "category": "word",
+    "level": 4,
+    "headword": "schedule",
+    "definition": "a plan that lists the times when things will happen",
+    "example": "I have a tight {{schedule}} this week, so let's meet on Friday.",
+    "example2": "The train is running behind schedule today.",
+    "meanings": {
+      "ja": "予定・スケジュール"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3e1b464107fa3bdc26c6da7bc4e49d723ff56fd19d389741d50187d8e86b7a65",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:b6a90bd75b58140c20025614587afb015cb66f235401c1ea5028e415e9689e22",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9a3r2n6p",
+    "category": "word",
+    "level": 4,
+    "headword": "complain",
+    "definition": "to say that you are unhappy about something",
+    "example": "Several guests {{complain}} about the noise from the street every weekend.",
+    "example2": "She complained to the manager about the cold food.",
+    "meanings": {
+      "ja": "不満を言う"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4826d2189ec3af5f9aeddda78e0d889d4ecaaae1dddd5dcd37ebf973bbba5d5e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:350b8ed36c3959593e3139b8441d3e784aa24a3e47adf4eae7096d985bee5cec",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9a5j9t4w",
+    "category": "word",
+    "level": 7,
+    "headword": "substantial",
+    "definition": "much more than a small amount, enough to matter",
+    "example": "The company made a {{substantial}} profit this year.",
+    "example2": "They received a substantial amount of help.",
+    "meanings": {
+      "ja": "かなりの・相当な"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8c56b40b9f0b207ff3742147f3e3575adb8a727f63e8a0765cbdb9d5209def39",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:b8e9f85b71ceb811fd537c8fc51efad1bdfff26a394add1dc3821c2c849be8cd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9e2q6p8a",
+    "category": "word",
+    "level": 3,
+    "headword": "improve",
+    "definition": "to raise the quality of something, or to become higher in quality",
+    "example": "She practices every day to {{improve}} her English.",
+    "example2": "The weather should improve this afternoon.",
+    "meanings": {
+      "ja": "上達する・改善する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c4f6c7dd798e9f9eed2e606c6d2ceb10c984427c51762a5227acaa3ea3c62325",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:01f88786551722c049ae8877d99ea335267d2c808ae1b7be1f84d7aa695e8358",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9g2u6c7t",
+    "category": "word",
+    "level": 5,
+    "headword": "reliable",
+    "definition": "able to be trusted to work or act well",
+    "example": "My car is old, but it's very {{reliable}}.",
+    "example2": "Is this website a reliable source of news?",
+    "meanings": {
+      "ja": "頼りになる・信頼できる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6e42d2c3f4833f489d61998e40efaa8edc7bc549b24c71b6742b8d171bb44508",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:0d2ff4d58d0603ecf7230af15b277cdc2b1b249bfe09336a738207f05e37e494",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9g2w8p5f",
+    "category": "word",
+    "level": 9,
+    "headword": "perfunctory",
+    "definition": "done only because it is expected, without real care or interest",
+    "example": "The manager gave a {{perfunctory}} apology and hurried away.",
+    "example2": "Her thank-you was perfunctory, and nobody believed it.",
+    "meanings": {
+      "ja": "おざなりな"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b6e971a7f9f7f1bd996ab81b0c6f7a3cd2f9cba4a6c054addce949984b3a925c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:183d7d64495d9bc9688719b5098a273d4e0afb0beba4e4381e8cf7a009688b04",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9h7e2z7v",
+    "category": "word",
+    "level": 10,
+    "headword": "meticulous",
+    "definition": "showing great care about every small detail",
+    "example": "She keeps {{meticulous}} records of every purchase for tax season.",
+    "example2": "The editor's meticulous work caught every tiny error.",
+    "meanings": {
+      "ja": "細部まで綿密な"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e2cc54a10df318e7096bf6561b4afd9a223d2803605cc49ba37d7370bfcc313d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:06ed98fb69437d20b388d959a18e281c9d7496434569cc724b4b415041cedbb6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "v_9j7q7g5h",
     "category": "word",
     "level": 4,
@@ -244,6 +2019,131 @@
       },
       "meanings.ja": {
         "hash": "sha256:729dd3a9ec18bb4a699accf1f3240cee2dd2ad5ce3f7a9a6fb486a5928307041",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9m4t3d3b",
+    "category": "word",
+    "level": 6,
+    "headword": "restrict",
+    "definition": "to use rules to keep an activity or amount small",
+    "example": "The city will {{restrict}} cars in the old town on weekends.",
+    "example2": "Doctors restrict his sugar intake.",
+    "meanings": {
+      "ja": "制限する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:308e66b241df7c02177ffaf97d3e1e8c67befb7c862abedc3c88a4f1a7611cdc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:887dd123b5c81aee643e7ca651f38603640cf61d9bd1fe254e262fd272282b66",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9t2r3k2a",
+    "category": "word",
+    "level": 10,
+    "headword": "ostensible",
+    "definition": "appearing to be the reason, though it may not be the real one",
+    "example": "The {{ostensible}} purpose of the trip was a conference.",
+    "example2": "His ostensible reason for leaving early was a headache.",
+    "meanings": {
+      "ja": "表向きの"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e5b75c43d245d8212fa597989893435e7a3cd64fc1a5bc1009f2d4a34c3476b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:7d85e7432885f05e8f49c2424f05ce945b247a7b1b10afdd70b228eaf7fce327",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9t9b3h5d",
+    "category": "word",
+    "level": 5,
+    "headword": "afford",
+    "definition": "to have enough money to pay for something",
+    "example": "We can't {{afford}} a new car this year.",
+    "example2": "Can you afford to take a month off?",
+    "meanings": {
+      "ja": "買う余裕がある"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5a3f085323e690dcf497ef264f681a899efa8d776bf27e2dcc9604facbd9a571",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c0498beb38709ebec62d62adc15607311652327a14de153707733a9ab6763a35",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9y9q6a5b",
+    "category": "word",
+    "level": 8,
+    "headword": "pragmatic",
+    "definition": "caring more about what works than about ideals or theory",
+    "example": "She took a {{pragmatic}} approach to the budget.",
+    "example2": "Let's be pragmatic and choose the cheaper option.",
+    "meanings": {
+      "ja": "実利的な・現実的な"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c14ad65c1465465816a36f41dd2f4a8851e402684ce6522dfa403690acddbfde",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:cb4fcda06fd0434514ffe07d7e694778c9a8d88cd4685713b0429a8bf884449a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9z3r6a9v",
+    "category": "word",
+    "level": 3,
+    "headword": "explain",
+    "definition": "to make something clear by giving details",
+    "example": "Can you {{explain}} how this machine works?",
+    "example2": "He explained why he was late.",
+    "meanings": {
+      "ja": "説明する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:eb20d9cc5b980840b20fbe507c7d24c45838689c157dee02379d4494a52d4e36",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:0f6d1c49619f8241386efde4a100604194f297ba81953f2af5f01721cdd2da5a",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       }

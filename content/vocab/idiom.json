@@ -1,5 +1,455 @@
 [
   {
+    "id": "v_2a7q3s6m",
+    "category": "idiom",
+    "level": 5,
+    "headword": "in the same boat",
+    "definition": "sharing a bad situation with other people",
+    "example": "Don't worry; we're all {{in}} {{the}} {{same}} {{boat}} this week.",
+    "example2": "Both of us lost our jobs, so we're in the same boat.",
+    "meanings": {
+      "ja": "同じ境遇にいる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c6fa18b3acd2bd048808c4f042ec8870238424d97fb3856ae62b37dc2e6618ab",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:f18430c12eb58c5de1713dfcd44230182ec20ab7db8db67e3c8f13cee8b65d91",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_2c6v6j6y",
+    "category": "idiom",
+    "level": 7,
+    "headword": "read between the lines",
+    "definition": "to understand a hidden meaning that is not said directly",
+    "example": "If you {{read}} {{between}} {{the}} {{lines}}, she's unhappy.",
+    "example2": "His email was polite, but I could read between the lines.",
+    "meanings": {
+      "ja": "行間を読む"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:12cd80571a76333e1a5a149505f3a4a7ff036f40205d02c1907dc8df6b915ef9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:49523fa75070237604b43d33f8630c1c13957954023fc2565906a9bda9f2b5b8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_2e2g5a9y",
+    "category": "idiom",
+    "level": 8,
+    "headword": "off the record",
+    "definition": "said privately, not to be quoted or reported",
+    "example": "{{Off}} {{the}} {{record}}, I think the plan will fail.",
+    "example2": "The senator spoke off the record to reporters.",
+    "meanings": {
+      "ja": "オフレコで"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:30a6b1a8b3cc01e7215ff1e8805bcdac084012537876effcf6c3c32f52242939",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:461935df756819227375f19e9d2f321d1bd467ad4a579b6576ad76308406c531",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_2g2x4g7n",
+    "category": "idiom",
+    "level": 8,
+    "headword": "back to square one",
+    "definition": "in the same bad place as at the start, after a plan has failed",
+    "example": "The test failed, so we are {{back}} {{to}} {{square}} {{one}}.",
+    "example2": "After the client said no, the designers went back to square one.",
+    "meanings": {
+      "ja": "振り出しに戻って"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8b51530c5d551ab890909c021cf88e2aaa1a8491d449d43ffe0244ef6bb10cb8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:a3ed7e1ccfe082e08cf3a62dd2883e67fe7e523ba3f6351578821542549813b8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_2k8b2r5x",
+    "category": "idiom",
+    "level": 10,
+    "headword": "the writing on the wall",
+    "definition": "clear signs that something bad will soon happen",
+    "example": "After three bad quarters, the staff could see {{the}} {{writing}} {{on}} {{the}} {{wall}}.",
+    "example2": "He saw the writing on the wall and updated his résumé.",
+    "meanings": {
+      "ja": "悪い前兆・避けられない破滅"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:b610927a4491c6e71ef9892ccdc5599202fda373d52bb2f92eeee8f536b11983",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:1d01c809a2ee90ea9b392ef7688534f9dd58c360c628ea4353f381a172b989a5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_2n8y5u9b",
+    "category": "idiom",
+    "level": 4,
+    "headword": "in advance",
+    "definition": "before the time when something happens or is needed",
+    "example": "Please book the tickets {{in}} {{advance}}.",
+    "example2": "Thank you in advance for your help.",
+    "meanings": {
+      "ja": "前もって"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2720a13f5b796d46e1e4d413fefebd108f0ba4f2c4709c2d2e74b61da81b019d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:a06456ba7026aebab15d7ed235ccd8b39762554cb2a0311236c096a9b59ff0df",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3a4a8h2g",
+    "category": "idiom",
+    "level": 7,
+    "headword": "hit the nail on the head",
+    "definition": "to say exactly what is true or right about a problem",
+    "example": "You {{hit}} {{the}} {{nail}} {{on}} {{the}} {{head}} with that answer.",
+    "example2": "Her report hit the nail on the head.",
+    "meanings": {
+      "ja": "的を射る"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:458ba59298726785a44894e4e71a59ba1c3f661085adb4a5307016ae9f4d8eb3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:0a860b0279fb07d92ba41467be27d02476c19b843f9736ac725e17ae7ada131c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3a5x5m8k",
+    "category": "idiom",
+    "level": 7,
+    "headword": "the best of both worlds",
+    "definition": "a situation with the advantages of two different things at the same time",
+    "example": "Working from home two days a week gives her {{the}} {{best}} {{of}} {{both}} {{worlds}}.",
+    "example2": "Living near the beach and the city is the best of both worlds.",
+    "meanings": {
+      "ja": "いいとこ取り"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f47e19a206ab881a1d378b28ab5aa49d0ff09b769622bf2806b32a4eff720e76",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:6d5033f09dbe46c378daccfcce02fcf159acad1560e13f431f3e130d190034ee",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3a9q9q9m",
+    "category": "idiom",
+    "level": 10,
+    "headword": "play devil's advocate",
+    "definition": "to argue against an idea only to test it, not because you believe it",
+    "example": "Let me {{play}} {{devil's}} {{advocate}} and question our whole budget.",
+    "example2": "He likes to play devil's advocate during every team meeting.",
+    "meanings": {
+      "ja": "あえて反対意見を言う"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a24df9ef276709f1e3c9dd9eec0c8fe4921a6a59533ff191922e63aca7805481",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:350e033b1349ec9eebc1f4318429819f74997a15d5edb714ff5bfe4a4e0e11a5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3b3c8q9x",
+    "category": "idiom",
+    "level": 7,
+    "headword": "touch base",
+    "definition": "to contact someone briefly to share news or check progress",
+    "example": "Let's {{touch}} {{base}} on Friday before the meeting.",
+    "example2": "I'll touch base with the client this afternoon.",
+    "meanings": {
+      "ja": "連絡を取り合う"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c8436baa3412780e7661f9faa8d3fe5ea39ccd8a509577c570193b39660dd0b1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:019ca0b75fa39b7980ea31d9e1de48146602cd2566d61801a6e7281c302e64f7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3h6c9b6z",
+    "category": "idiom",
+    "level": 8,
+    "headword": "the tip of the iceberg",
+    "definition": "a small visible part of a much bigger problem",
+    "example": "The two complaints we got are only {{the}} {{tip}} {{of}} {{the}} {{iceberg}}.",
+    "example2": "That error was just the tip of the iceberg in our old system.",
+    "meanings": {
+      "ja": "氷山の一角"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7dbd53d8a5f569b493dd2f2ed6d1e4c8594f9ed8b535bb09b857457f128301e1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:457739d6b9e2ba7ce30de523be751fdb39b8c3ff2b21c16911b567f073709f21",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3j6a8p2w",
+    "category": "idiom",
+    "level": 4,
+    "headword": "once in a while",
+    "definition": "sometimes, but not often",
+    "example": "I eat out {{once}} {{in}} {{a}} {{while}}, usually on my birthday.",
+    "example2": "Once in a while, my brother calls me just to chat.",
+    "meanings": {
+      "ja": "たまに・時々"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8da720eae3e96434d33a3199b18e59a8196727a61a2b391e250874bfd8d3aa2c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:46db22704412da44b3ae621dec99d5da92b20b4770f37d362117c71f1b29cade",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3k9u2u4n",
+    "category": "idiom",
+    "level": 1,
+    "headword": "of course",
+    "definition": "used to say yes in a strong way",
+    "example": "{{Of}} {{course}} you can borrow my pen.",
+    "example2": "Of course I like your new bag.",
+    "meanings": {
+      "ja": "もちろん"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5b1e02ef28c191c867dab358079a88d718fe76dba95490bddc49bf317ce022c9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:d41796ae81c574eae405418fedec8d25f703fe3a7996a38fe6ef65d6954799e8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3m7t5v5s",
+    "category": "idiom",
+    "level": 6,
+    "headword": "call it a day",
+    "definition": "to stop working because you have done enough",
+    "example": "We're all tired, so let's {{call}} {{it}} {{a}} {{day}}.",
+    "example2": "After ten hours of painting, they called it a day.",
+    "meanings": {
+      "ja": "今日はここまでにする"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d0e57d9e7033e7058d6d77fc9fc8b6e8c23399b8ae5b58af9af68fbdcd64a624",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:a168f5808fe29f8d95c5b497984b683d7ce0e498f6ee57cef1a4f9203db63e0d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3n7g2u6g",
+    "category": "idiom",
+    "level": 1,
+    "headword": "have fun",
+    "definition": "to enjoy yourself while doing something",
+    "example": "We {{have}} {{fun}} at the park every Sunday.",
+    "example2": "Have fun at the party tonight!",
+    "meanings": {
+      "ja": "楽しむ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c0f38593fd6d5fb8dcbf19bc725747fd92a7916fa9130153020e334d513f1c56",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:3f5d5aa2cde2415fb17e81d146884ee95b07fcd655127c968780e594bb6ca3ad",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3p3r9u7w",
+    "category": "idiom",
+    "level": 8,
+    "headword": "bite the bullet",
+    "definition": "to do something hard or unpleasant that you have put off",
+    "example": "I finally decided to {{bite}} {{the}} {{bullet}} and see the dentist.",
+    "example2": "We had to bite the bullet and raise our prices.",
+    "meanings": {
+      "ja": "覚悟を決めてやる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3ead77456bd474b7b0c101ec5f7fc36a77822891108b41d87078ec0d2d734444",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:8f492255b65d06a8c422a2ecf2dd0b80f8a334819a0422115f9fef3766118a30",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3s2u3j6b",
+    "category": "idiom",
+    "level": 10,
+    "headword": "a red herring",
+    "definition": "something that leads people away from the real answer",
+    "example": "The missing key turned out to be {{a}} {{red}} {{herring}}.",
+    "example2": "The detective realized the muddy shoes were a red herring.",
+    "meanings": {
+      "ja": "人を惑わす偽の手がかり"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1cbc809e7931052c0e21ffdde17b0166d079dfd2f6564fbafcd1a47a01376449",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:7701e9a84fd38d51d509d9a3b171a9b3743d0eb6612a596adac311703709a9b3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3z7r6q5j",
+    "category": "idiom",
+    "level": 8,
+    "headword": "a bitter pill to swallow",
+    "definition": "a loss or truth that is very unpleasant to accept",
+    "example": "Losing the final in overtime was {{a}} {{bitter}} {{pill}} {{to}} {{swallow}}.",
+    "example2": "The pay cut was a bitter pill to swallow.",
+    "meanings": {
+      "ja": "受け入れがたい現実"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f6e3710247f25111b1878b864bdc80d06a4e462e4246cfe9a870f041d3eaa714",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:b5b4963a4b2727da3ed659cb2c6d91c69a6acca01961c4c69e67fdf90197cec4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "v_3z8k7a8p",
     "category": "idiom",
     "level": 7,
@@ -25,6 +475,81 @@
     }
   },
   {
+    "id": "v_4c2v2b6t",
+    "category": "idiom",
+    "level": 9,
+    "headword": "move the goalposts",
+    "definition": "to change the rules in the middle of something so it is harder to succeed",
+    "example": "Every time we meet the target, they {{move}} {{the}} {{goalposts}}.",
+    "example2": "It isn't fair to move the goalposts after the project has begun.",
+    "meanings": {
+      "ja": "途中で基準を変える"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1346a190122b41f5a167f86b506b1ece685459503b987b1a42e79af4a70ee1f3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:ccb00ba86d5a391ee6a2f542aae54b29df7143b9a06ea3f84fe4d9f00c99479a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_4e8v8g5k",
+    "category": "idiom",
+    "level": 8,
+    "headword": "jump the gun",
+    "definition": "to act too early, before the right time",
+    "example": "Don't {{jump}} {{the}} {{gun}}; we haven't heard the results yet.",
+    "example2": "The company jumped the gun and announced the product early.",
+    "meanings": {
+      "ja": "先走る"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:efe7cf3d959b9a1a8e715372aecc971dae70c9198776d150db81d3090d7a3cf1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:819482b803fd266a52535a1497ac721374e3cf0cee773292d91b993c3929e0c5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_4h3z2c4z",
+    "category": "idiom",
+    "level": 8,
+    "headword": "up in the air",
+    "definition": "not yet decided or settled",
+    "example": "Our holiday plans are still {{up}} {{in}} {{the}} {{air}}.",
+    "example2": "With the budget cut, the whole project is up in the air.",
+    "meanings": {
+      "ja": "未定で"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c8394e6a069b939df15c3cfe1b5a9015fcfe8e2474f98d5002e6947a0a0ff578",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:29b30ad1c9ed9cd362683a5cce57be91d15b2061aea4923452c359c4b577cb1e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "v_4h9e7b9k",
     "category": "idiom",
     "level": 5,
@@ -44,6 +569,531 @@
       },
       "meanings.ja": {
         "hash": "sha256:0ac71fc4875f556b4f995b6f22e60663edab5c6a3fdc3d4504b31418ab1b7f39",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_4q8j9u9r",
+    "category": "idiom",
+    "level": 3,
+    "headword": "so far",
+    "definition": "up to now",
+    "example": "{{So}} {{far}}, this trip has been wonderful.",
+    "example2": "I've read two chapters so far.",
+    "meanings": {
+      "ja": "今のところ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:aeee9ec35e15bb69fb31ef2921d6ff3e8a326217234036a3ef38a637e424e79d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:6f19fe2979e6408282c5f27b0edb624c67d4d917f5e16eb1c54c1f7d8d267c31",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_4r5y9r6p",
+    "category": "idiom",
+    "level": 3,
+    "headword": "in a row",
+    "definition": "one after another, with no break",
+    "example": "Our team won five games {{in}} {{a}} {{row}}.",
+    "example2": "It rained for three days in a row.",
+    "meanings": {
+      "ja": "連続して"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:50c96783d34d83e8ababd618b1eb522f6d66211c5e5e2a1154495f51ad42926c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:74dc81c33da5536063c7dd96755c0e779f1fda9f49a312d1ed6aacee2a15b361",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_4x3g4s8y",
+    "category": "idiom",
+    "level": 5,
+    "headword": "keep an eye on",
+    "definition": "to check on someone or something now and then so nothing goes wrong",
+    "example": "Could you {{keep}} {{an}} {{eye}} {{on}} my bag for a minute?",
+    "example2": "I'm keeping an eye on the weather before the trip.",
+    "meanings": {
+      "ja": "見張る・注意しておく"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e44b446c703f323224ae6475ff16738e6b7afadf6536ac089d7a069d0f5b6980",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:d5776e492252a56bf520a72949ecb31f3cf7f537170c16933f0adc9356903d9a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5b2t3h3b",
+    "category": "idiom",
+    "level": 2,
+    "headword": "at first",
+    "definition": "in the beginning, before things changed",
+    "example": "{{At}} {{first}}, I didn't like coffee, but now I love it.",
+    "example2": "At first, the new school felt big and scary.",
+    "meanings": {
+      "ja": "最初は"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:08710a447985dd258a6c4cbb5cbe9f14bbc5a3ef84f74ff99d813913d4af95d5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:948cd0eb793f547ba6f04d6d21a4dd1b6d651a30ba8c9b9e538e3a7da6d3e8d3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5f7r8m5q",
+    "category": "idiom",
+    "level": 7,
+    "headword": "sit on the fence",
+    "definition": "to refuse to choose a side in an argument",
+    "example": "Stop {{sitting}} {{on}} {{the}} {{fence}} and tell us your opinion.",
+    "example2": "Many voters are still on the fence this week.",
+    "meanings": {
+      "ja": "態度を決めかねる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:62ad80f1255b416686d609bc3415f869d0204e2b9bc740ff75d83fa06e418d6f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:5c7bc1bec1ab8021bde030142ba43296277fea7003626130ada3e4b84c10d4d1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5k3u6k7k",
+    "category": "idiom",
+    "level": 9,
+    "headword": "cut corners",
+    "definition": "to do a job in a cheaper or faster but worse way",
+    "example": "The builder tried to {{cut}} {{corners}} and used weak materials.",
+    "example2": "Never cut corners when you are checking safety equipment.",
+    "meanings": {
+      "ja": "手を抜く"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3d072eead9724c70f1fc36bd08132006d7e21183b643129918614cee4421f42e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c0f5c3ae5a0c12e6efd163ad077d11e29d97eea567942d8456f6e9337330472b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5m2t2p5q",
+    "category": "idiom",
+    "level": 2,
+    "headword": "a lot of",
+    "definition": "many or much",
+    "example": "She has {{a}} {{lot}} {{of}} friends in Osaka.",
+    "example2": "We had a lot of rain last week.",
+    "meanings": {
+      "ja": "たくさんの"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c591ccfc110cb5e9faf7de6a96c00aa5b11acdacac10a1174983460b7fc85834",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:74de11f07a14259bc1f3998445aff114396f58b435f6d5eadf8ca4b04bc49cbd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5n3r6s4e",
+    "category": "idiom",
+    "level": 1,
+    "headword": "in front of",
+    "definition": "at the place just before something, facing it",
+    "example": "The bus stops {{in}} {{front}} {{of}} the station.",
+    "example2": "Don't stand in front of the TV.",
+    "meanings": {
+      "ja": "〜の前に"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8cffb7a2358779bae7ba71e906a6ea69296bb893470d8f797791e9ec10b0f2a5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:83b4ea19c1279d0a917f79b81ce9787a7b14ec7664632c3288b884320df97561",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5p5b6w2k",
+    "category": "idiom",
+    "level": 3,
+    "headword": "right away",
+    "definition": "without any wait, as soon as you hear the request",
+    "example": "Please call me {{right}} {{away}}.",
+    "example2": "I'll do it right away.",
+    "meanings": {
+      "ja": "すぐに"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:34741bde426cf900b90276659cd6d9d41e23aad2836ee90d95b45c2e18c87e73",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:7939e1e564789ed5d9bd382dd20382ce017831cb611ec5c2f7b970c52589681f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5p6z5t9x",
+    "category": "idiom",
+    "level": 10,
+    "headword": "a bone to pick",
+    "definition": "a complaint you want to discuss with someone",
+    "example": "I've got {{a}} {{bone}} {{to}} {{pick}} with you about the mess.",
+    "example2": "She had a bone to pick with the landlord.",
+    "meanings": {
+      "ja": "文句がある"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f14ae0ccdb9ab3ca8f558a3e38b74b86c2953d62a95bfc5fd43517ed72a6034b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:4f0cee6d73dc15bca6388d347a09a010fbb2f19a6337e0d852ab6612eb5eacae",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5p9a3f8e",
+    "category": "idiom",
+    "level": 9,
+    "headword": "the lion's share",
+    "definition": "the largest part of something that is divided among several people",
+    "example": "She did {{the}} {{lion's}} {{share}} of the work.",
+    "example2": "The lion's share of the budget goes to research.",
+    "meanings": {
+      "ja": "大部分・最大の取り分"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:c5370d6bc59ce9022cf2d9af2a4ef14eb3e2f236bc251ebad32e3c0c93351ae0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:3d954dfc9b7fd96320cd3af323eaa3c4b64c4cf8354d2f88c17c185d8900220f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5p9c7p3u",
+    "category": "idiom",
+    "level": 9,
+    "headword": "burn one's bridges",
+    "definition": "to do something that makes it impossible to go back to a past situation",
+    "example": "He {{burned}} {{his}} {{bridges}} by shouting at his boss.",
+    "example2": "Don't burn your bridges when you leave a job.",
+    "meanings": {
+      "ja": "退路を断つ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:085f829e93d05eaa9df86d611de986e78485c413380c98522e97832e4c9c71fb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:4fb26ee63982b697aa9524c98536dfb15f7df3c6f0f80d230711e85795bc3430",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5r7u3j4x",
+    "category": "idiom",
+    "level": 9,
+    "headword": "skate on thin ice",
+    "definition": "to be in a risky situation where one mistake could cause trouble",
+    "example": "You're {{skating}} {{on}} {{thin}} {{ice}} if you miss another deadline.",
+    "example2": "She's skating on thin ice after missing so many meetings.",
+    "meanings": {
+      "ja": "危ない橋を渡る"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:05841cbc6cbee7cfedcf303a90341533017eca9e9b31281c73dc0f1c1699c4e5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:ddb571a274113cdc6018be0e74300d9ad95b520b6f0c1dd1d8c59cb8e4c0ed09",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5s4d6h3c",
+    "category": "idiom",
+    "level": 7,
+    "headword": "beat around the bush",
+    "definition": "to avoid saying the main point directly",
+    "example": "Stop {{beating}} {{around}} {{the}} {{bush}} and tell me.",
+    "example2": "He didn't beat around the bush when he quit.",
+    "meanings": {
+      "ja": "遠回しに言う"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f610c6edb4a65c3b0957827e77c3ac3ddb87e5df6d52c36fbfa67a6189fbc241",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:8d302f8c5e225939aacf24fada6ceab29ddbf442ae9f297000e491814c0e619a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5s7v4w2v",
+    "category": "idiom",
+    "level": 9,
+    "headword": "burn the midnight oil",
+    "definition": "to work or study very late into the night",
+    "example": "She had to {{burn}} {{the}} {{midnight}} {{oil}} to finish the report.",
+    "example2": "We burned the midnight oil all week before the launch.",
+    "meanings": {
+      "ja": "夜遅くまで働く"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:00c5b61cb0435ce894c3ccc16fa93e57e7558aa1c857e92cdad4fe7e81c8f682",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:8070f509e6b7d2b0044e1d87ea2384c3f9f1b60ac6b016fbe107bfd51aaa3dbe",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5t2w3b6j",
+    "category": "idiom",
+    "level": 3,
+    "headword": "make sure",
+    "definition": "to check or act so that something is certainly true",
+    "example": "{{Make}} {{sure}} you lock the door when you leave.",
+    "example2": "I made sure that everyone had a seat.",
+    "meanings": {
+      "ja": "確実にする・確かめる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:02e21cb06d790bcd3106a907a8fd921f86887802769edf3e86802a969825d9c1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:55886c3d78c03fd62e37474e22e9ce59b3e55695f9eccb95cd4c1b76bb9d83ff",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5t9f3m2t",
+    "category": "idiom",
+    "level": 5,
+    "headword": "in the long run",
+    "definition": "when you think about what will happen much later",
+    "example": "Saving money now will help you {{in}} {{the}} {{long}} {{run}}.",
+    "example2": "Cheap shoes cost more in the long run.",
+    "meanings": {
+      "ja": "長い目で見れば"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2df510a044099bf4a609e0fdc86e69ce038e5d088a1829c9128f77248c1a35fb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:816be7ed34a2853658ff383815d9dc0a0694d9fe2616f8cb39dd5c57a0ab5766",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5u7p4w6v",
+    "category": "idiom",
+    "level": 9,
+    "headword": "the elephant in the room",
+    "definition": "an obvious big problem that everyone avoids talking about",
+    "example": "Nobody mentioned the layoffs, but they were {{the}} {{elephant}} {{in}} {{the}} {{room}}.",
+    "example2": "We have to discuss the elephant in the room: our falling sales.",
+    "meanings": {
+      "ja": "誰も触れない大問題"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0faee0c0b6b2fb619cb9cc4dbcfb44855899b61586a57a5f76d010edb0dc71e0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:3d89a5ba9213ea7af0a08daa39e9905a6aa36a3968df609c52ffcf642b67d7e2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5u7r8r5z",
+    "category": "idiom",
+    "level": 2,
+    "headword": "for free",
+    "definition": "without paying any money",
+    "example": "The museum lets children in {{for}} {{free}} on Sundays.",
+    "example2": "He fixed my bike for free.",
+    "meanings": {
+      "ja": "無料で"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a05375dcba8f3f5d40b47b3a56149617f465829b5b38da73080d4681fd1dd41a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:656e25c1dad2e00cb4bbc28fe91d4316061ebd582a0d7864ff72d7a276741c4c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5w2d6t6t",
+    "category": "idiom",
+    "level": 8,
+    "headword": "a double-edged sword",
+    "definition": "something helpful that can also cause serious harm",
+    "example": "Social media is {{a}} {{double-edged}} {{sword}} for teenagers.",
+    "example2": "Fame can be a double-edged sword.",
+    "meanings": {
+      "ja": "諸刃の剣"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:29508222eeddd54470edb06f3dce42c19ae8c8557153cae6d369ac882ccd9809",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:199e26482ab9e34c124aa13cfa3e1e8c4cfab56d7a66f5281f7dc1864efb669c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_5w4w2y4y",
+    "category": "idiom",
+    "level": 10,
+    "headword": "throw someone under the bus",
+    "definition": "to blame someone unfairly to protect yourself",
+    "example": "He {{threw}} his coworker {{under}} {{the}} {{bus}} to save himself.",
+    "example2": "I'd never throw a friend under the bus like that.",
+    "meanings": {
+      "ja": "保身で人に責任を押しつける"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:34b6b3511701728ad049af3c4908195271c256e23c1fd4ddb9b2aa19938264fd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:dbf5d72470fd31b5ea70e77fa902bd58cac24a790062b54d9a49458a98fd6039",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       }
@@ -100,6 +1150,156 @@
     }
   },
   {
+    "id": "v_6q5j7w3v",
+    "category": "idiom",
+    "level": 2,
+    "headword": "all the time",
+    "definition": "very often, or without stopping",
+    "example": "My little brother asks me questions {{all}} {{the}} {{time}}.",
+    "example2": "It rains here all the time in June.",
+    "meanings": {
+      "ja": "いつも"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5db00467ba5b41d74d84d17673bfca90848892b17fe705a4fcc4fc1ea2cca6fb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:48b7ba06d078201ca480ff128100312a5bceaf1cdcbbe2519bb89ff70a71eed0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_6r5h4d5z",
+    "category": "idiom",
+    "level": 3,
+    "headword": "as usual",
+    "definition": "in the normal way, like most other times",
+    "example": "{{As}} {{usual}}, the morning train was late.",
+    "example2": "He ordered a black coffee, as usual.",
+    "meanings": {
+      "ja": "いつものように"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d325e1e41d9dfc957612cadb465cefa046b65f668f893446c7b3cb9dffe7283f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:f980cd91193915ff3203de71cb6390274a22107c5c112714d519ba1f10cc4e4a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_6r8g8e8t",
+    "category": "idiom",
+    "level": 3,
+    "headword": "take care of",
+    "definition": "to be responsible for keeping someone or something safe and well",
+    "example": "Can you {{take}} {{care}} {{of}} my cat this weekend?",
+    "example2": "She takes care of her little brother.",
+    "meanings": {
+      "ja": "世話をする"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a529c68e64e1507585af560f9cf6d0eb35618671f613be3ee91d47790e815ba7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:8597027c0d27e5b0e106b6225fef2e9003e1384b98a5831792c103902e610630",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_6w8j5v4e",
+    "category": "idiom",
+    "level": 10,
+    "headword": "wear one's heart on one's sleeve",
+    "definition": "to show your true feelings openly for everyone to see",
+    "example": "He {{wears}} his {{heart}} {{on}} his {{sleeve}}.",
+    "example2": "She never hides her feelings; she wears her heart on her sleeve.",
+    "meanings": {
+      "ja": "感情を隠さない"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7b162fd5cb43d70c9a300a6a5b19c99d0d011a2ec940e6989b3dc12cf3e027ae",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:de876b960f4f15dbd20fdc8597873bccf7b7697c2bc029f90b578a50a7cb7d25",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7a4j7v4j",
+    "category": "idiom",
+    "level": 6,
+    "headword": "pull someone's leg",
+    "definition": "to tell someone something untrue as a joke",
+    "example": "Are you serious, or are you {{pulling}} my {{leg}}?",
+    "example2": "I was only pulling your leg about the test.",
+    "meanings": {
+      "ja": "人をからかう"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e15a4facbd610958fac5376c097ebd4c82cdbe240ded045d8d6b71cc69cc5a94",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c3be79549bb1f63b89bc98c31a0bea47013477d54ce0f815e001fee5d488af33",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7b6r5h5h",
+    "category": "idiom",
+    "level": 6,
+    "headword": "spill the beans",
+    "definition": "to tell a secret by mistake or too early",
+    "example": "Who {{spilled}} {{the}} {{beans}} about the surprise party?",
+    "example2": "Promise you won't spill the beans to Dad.",
+    "meanings": {
+      "ja": "秘密をうっかり漏らす"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:3b01027b7ba0ed8c46d1a0eae33527fc18b10066a0f3d4eb7d0fae00613fc273",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:fa8cfed002b9a8217c5f244383ce355b078ff64b2eb34a3f9a50c01aa38ebaae",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "v_7e5j5f8p",
     "category": "idiom",
     "level": 6,
@@ -119,6 +1319,131 @@
       },
       "meanings.ja": {
         "hash": "sha256:4624a86c286e61983184dcbc9045360db11dfd2fcbc08d5042b8ea1b6259c381",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7f3a5d6q",
+    "category": "idiom",
+    "level": 4,
+    "headword": "in the end",
+    "definition": "as the result after a long time or many events",
+    "example": "We argued for hours, but {{in}} {{the}} {{end}} we agreed.",
+    "example2": "The trip was stressful, but fun in the end.",
+    "meanings": {
+      "ja": "結局"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:496827c42114b61d9335f781119fbb86b68cda4bd05b6dfd0f1e77727df11782",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:805cdb26b2c5670b7f157f74eb4cc32f8765f68cc553341a0cd55c1d2e8d8545",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7f9u9s6f",
+    "category": "idiom",
+    "level": 4,
+    "headword": "on the other hand",
+    "definition": "used to introduce a different point that contrasts with the one before",
+    "example": "The job pays well; {{on}} {{the}} {{other}} {{hand}}, the hours are long.",
+    "example2": "It is cheap but, on the other hand, quite far from here.",
+    "meanings": {
+      "ja": "一方で"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:e384d39479ea4599ec36de8e0055c7ac25058c8473e24e0b919a56921a3d2bf8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:042147ae07a91d230a115ebe312787c3f695e6753e1a818a16e24f623090d036",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7g4s2g5b",
+    "category": "idiom",
+    "level": 9,
+    "headword": "have a chip on one's shoulder",
+    "definition": "to stay angry about past unfair treatment",
+    "example": "He still {{has}} {{a}} {{chip}} {{on}} his {{shoulder}} about being passed over.",
+    "example2": "She had a chip on her shoulder after the layoffs.",
+    "meanings": {
+      "ja": "不満をくすぶらせている"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:2525907343a7fbb69583c41a70ed1b0492eed068a536e61b3ccf5b64faeef0d0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:fc9fb4ab6e2c303f4ed0d2806768bedc345dbc37c0f52df4b903812b18070c90",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7g5w4d8y",
+    "category": "idiom",
+    "level": 7,
+    "headword": "the ball is in your court",
+    "definition": "it is now the other person's job to decide or act next",
+    "example": "I've made my offer, so {{the}} {{ball}} {{is}} {{in}} {{your}} {{court}}.",
+    "example2": "She sent the contract, so the ball is in his court now.",
+    "meanings": {
+      "ja": "次はあなたの番だ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7553fe36e4340d3dbae30249aeb90b2e24d91fc98099514b042e8e197818815",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:49fdffdf91ca12037776789428dea1d6c774fe76ce3798d16e102edbd2b81313",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7n4n6y5a",
+    "category": "idiom",
+    "level": 4,
+    "headword": "by heart",
+    "definition": "remembered so well that you can say it without looking",
+    "example": "Tom knows the whole song {{by}} {{heart}}.",
+    "example2": "We learned the poem by heart for school.",
+    "meanings": {
+      "ja": "暗記して"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:7fdcff1aa402e2f0c49aaf6a6bb73c5eb3f01885f85a6c32dda03eb37cc2d5c6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:42d32b54def3ebe4387b346a494ba85e7bf37f98015d19588544e51248b42d4c",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       }
@@ -150,6 +1475,56 @@
     }
   },
   {
+    "id": "v_7r5j8j2v",
+    "category": "idiom",
+    "level": 9,
+    "headword": "a wild goose chase",
+    "definition": "a hopeless search for something that cannot be found",
+    "example": "We spent the whole day on {{a}} {{wild}} {{goose}} {{chase}} looking for that shop.",
+    "example2": "The tip turned out to be a wild goose chase.",
+    "meanings": {
+      "ja": "無駄な捜し回り"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:09be45f0ac4ddee0175e2f778b6b2f2c0c76b88e6341a5303ea39091c4a64401",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:9b684b259dc3bb9d235f26a1697adaa4a88137f79d6506d8723e6ce8ac933c9f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7s9c3r8z",
+    "category": "idiom",
+    "level": 4,
+    "headword": "in charge of",
+    "definition": "having control of a group or task and being responsible for it",
+    "example": "Who is {{in}} {{charge}} {{of}} the new project?",
+    "example2": "Mr. Park left me in charge of the shop today.",
+    "meanings": {
+      "ja": "〜を担当して"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1f1ba3f21d1046100a1ceba9503e6fed3cf25e079cceb74291528f263865db7c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:bf182a6d6316bf2a2a61b58a45e6c584a6d365ebd0ca4d45bd69064e9695c75f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "v_7u5p4x8m",
     "category": "idiom",
     "level": 3,
@@ -169,6 +1544,231 @@
       },
       "meanings.ja": {
         "hash": "sha256:3500322279b5e3b5a4979935719ded20d828820c9a5fd0774bd8e403acbec56a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7u7v9z9w",
+    "category": "idiom",
+    "level": 6,
+    "headword": "get cold feet",
+    "definition": "to become too nervous to do something you had planned",
+    "example": "He {{got}} {{cold}} {{feet}} a week before the wedding.",
+    "example2": "Don't get cold feet now; the interview will go well.",
+    "meanings": {
+      "ja": "怖気づく"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9c231a10b2d7ad0e636a78185bac67315f495d1fcf867c8ef7faed81a8d52481",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:1d55f683ce69f0a5647830064bff5e83b54a46f0a2d78889789575a09251dfe3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7v5p6m2n",
+    "category": "idiom",
+    "level": 6,
+    "headword": "out of the question",
+    "definition": "not possible and not allowed, so it cannot even be discussed",
+    "example": "Taking a vacation now is {{out}} {{of}} {{the}} {{question}}.",
+    "example2": "Paying that much for a bag is out of the question.",
+    "meanings": {
+      "ja": "論外だ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:161f44ec0989dfb110e9b3c414062886a7e15e1f16e4ba0d381f8ae7d7bde639",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:3f04910e0af6a1b074a64ec0cfff349ed275351f1d58445289130e7eee610cf5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7v7r8g3e",
+    "category": "idiom",
+    "level": 2,
+    "headword": "in a hurry",
+    "definition": "needing to move or act fast because there is little time",
+    "example": "Sorry, I can't talk now because I'm {{in}} {{a}} {{hurry}}.",
+    "example2": "Why are you always in a hurry on Monday mornings?",
+    "meanings": {
+      "ja": "急いで"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:696233af85bdeb49f3ca286becfa67367cfb05ca05b42d7f4a90c00fe2f7d366",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c2d3a9e010d1daa34342d852b96b16c71f4cf4bf7e6a350ea264d446a3f2a353",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7w6a5q8r",
+    "category": "idiom",
+    "level": 7,
+    "headword": "go the extra mile",
+    "definition": "to do more than is required in order to help someone",
+    "example": "The hotel staff {{went}} {{the}} {{extra}} {{mile}} for us.",
+    "example2": "She always goes the extra mile for her clients.",
+    "meanings": {
+      "ja": "期待以上に尽くす"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:6af96b23fc1254b24752be093a923d5d4840fbd626a2d09991ba31914825d5c9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:dafb9f15e9e00834402499e36caf05f8a8a10dbf7240a5a3b366ef863f020f8e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7w7m9y9r",
+    "category": "idiom",
+    "level": 5,
+    "headword": "out of the blue",
+    "definition": "suddenly and without any warning",
+    "example": "My old friend called me {{out}} {{of}} {{the}} {{blue}} yesterday.",
+    "example2": "The news came out of the blue.",
+    "meanings": {
+      "ja": "突然・藪から棒に"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:d6528f750d342354f4f351f272f500ea81ecfa84216a68e88a116a75c349ecbf",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:cb2418f9458cc58f179f1b2cba0ab2f2573634b8167dad5fbafbe984ebe87a13",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7w8w6p5x",
+    "category": "idiom",
+    "level": 3,
+    "headword": "by the way",
+    "definition": "said when you add a new topic to a conversation",
+    "example": "{{By}} {{the}} {{way}}, where did you park the car?",
+    "example2": "By the way, I really like your new haircut.",
+    "meanings": {
+      "ja": "ところで"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:024e2e24e7f6c2b0d491fbc8dca7f86a8ba59f9f8d40c4ea62e4fc2b17cc28dc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:005d3bac175c376475f1ee19fe55169093090f9724487ee5b15bd78046045e77",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7y2f2u3m",
+    "category": "idiom",
+    "level": 4,
+    "headword": "on purpose",
+    "definition": "in a way that you planned, not by chance",
+    "example": "I'm sure he broke the cup {{on}} {{purpose}}.",
+    "example2": "She didn't do it on purpose; it was an accident.",
+    "meanings": {
+      "ja": "わざと"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:1c9a105cbcaf2a853a63208ba96f90c78b0f6e249087912f9bcf399241afb8ca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:9aa04b6c9ccb4ef21cc9495d914ed2e1a03f38b7b8f0dc00400f48039c8bb5f7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_7y8q4s9d",
+    "category": "idiom",
+    "level": 6,
+    "headword": "by and large",
+    "definition": "used when you say something is true in most cases",
+    "example": "{{By}} {{and}} {{large}}, the customers were happy with the new menu.",
+    "example2": "By and large, the trains here run on time.",
+    "meanings": {
+      "ja": "概して"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:0d092bdadda8b07f526ef4b49f921b7925c22b115ec4271215852d272fba9550",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:0fbab2543f4b2e3037c1d6371760f25997c382c43ce8d16336d239dd3d241f4d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_8m7r5p3z",
+    "category": "idiom",
+    "level": 10,
+    "headword": "the pot calling the kettle black",
+    "definition": "said when someone criticizes a fault that they also have",
+    "example": "Honestly, that is {{the}} {{pot}} {{calling}} {{the}} {{kettle}} {{black}}, because you are messy too.",
+    "example2": "Him calling me lazy is the pot calling the kettle black.",
+    "meanings": {
+      "ja": "目くそ鼻くそを笑う"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9a42c86fc7655afa99ef40747e64815477935ab943506cf09c1995f7fa88f5fc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:ab0ced479461fbeb067568b9bc5fd088125fb7ea64bc90756ec7e6b65b1f9e3b",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       }
@@ -200,6 +1800,106 @@
     }
   },
   {
+    "id": "v_8p9k5w7j",
+    "category": "idiom",
+    "level": 3,
+    "headword": "for example",
+    "definition": "used to introduce something that shows what you mean",
+    "example": "I like sports, {{for}} {{example}}, tennis and swimming.",
+    "example2": "Some cities, for example Kyoto, are famous for temples.",
+    "meanings": {
+      "ja": "例えば"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:928e71a8731130e06156011ea2d5290d80ed3257ea8df803a23ce6a1cb541c97",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:9684978b295ebf05f6a1a43525a1f8c02e44442c8a915d28ecdf2681a9e808a7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_8q5z3b2f",
+    "category": "idiom",
+    "level": 2,
+    "headword": "in a minute",
+    "definition": "after a very short wait",
+    "example": "I'll be there {{in}} {{a}} {{minute}}.",
+    "example2": "Wait here, I'll be back in a minute.",
+    "meanings": {
+      "ja": "もうすぐ・すぐ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:cae7638843a18904a342555594d179a8db47af4e9113c7e4d21a429acaf6d429",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:1c687fd1e23ef9a22dea5d3ebdd4823769368bdc8c3a808b26ddf74f11bafe70",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_8x7z4w3f",
+    "category": "idiom",
+    "level": 1,
+    "headword": "right now",
+    "definition": "at this exact time, not later",
+    "example": "I am eating lunch {{right}} {{now}}.",
+    "example2": "Right now, my mother is in the kitchen.",
+    "meanings": {
+      "ja": "ちょうど今・今は"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:9270d7f2b686b790367e6ac79cf0a98dd6ba48aa4e5d9f41e5a2376ea84e1f0a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:020a166881166075ce50b11b1302dbaa082dc5bb95faec360081728236b78562",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9a5u4n8v",
+    "category": "idiom",
+    "level": 5,
+    "headword": "at the last minute",
+    "definition": "very close to the time when something must happen",
+    "example": "He changed his flight {{at}} {{the}} {{last}} {{minute}}.",
+    "example2": "Don't leave your homework until the last minute.",
+    "meanings": {
+      "ja": "ぎりぎりになって"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:497e2d49fe69216032cdc082424b5a4bbd2aa538bdf882c35712ca2726be19c1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:81a5eb3000431e3ca0b1af532a95f9ce41bf7223776fea40b8f0ce15d7d017f6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "v_9d4r6s3h",
     "category": "idiom",
     "level": 4,
@@ -225,6 +1925,131 @@
     }
   },
   {
+    "id": "v_9d6y5b3z",
+    "category": "idiom",
+    "level": 2,
+    "headword": "on time",
+    "definition": "at the planned moment, not early and not late",
+    "example": "The train arrived {{on}} {{time}}, so we caught our flight.",
+    "example2": "Please be on time for the meeting tomorrow.",
+    "meanings": {
+      "ja": "時間通りに"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:5d2a60a2b9b8152e8ec46c93a984401ace6b8dcb8069972e9239d0b343c70725",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:ca8c85f13684191528585ec8c93f623c03999360392bd7846d6f71d96d073c5d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9e4h8z9j",
+    "category": "idiom",
+    "level": 5,
+    "headword": "see eye to eye",
+    "definition": "to share someone's opinion about something, without arguing",
+    "example": "My sister and I never {{see}} {{eye}} {{to}} {{eye}} about money.",
+    "example2": "The two managers finally saw eye to eye on the budget.",
+    "meanings": {
+      "ja": "意見が一致する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:96fbfa103a9cd0bc167ef8d31d920e1c15bff402511406af14dd3923ab7d293a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:47de876ed7592f66f299e5b4de5ab83bda41de9038f48a444d55e5abdf53b7d1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9j2q9w6r",
+    "category": "idiom",
+    "level": 1,
+    "headword": "a little",
+    "definition": "a small amount, not much",
+    "example": "I speak {{a}} {{little}} English.",
+    "example2": "Please add a little sugar.",
+    "meanings": {
+      "ja": "少し"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4b6135e190e7565d8f477384aaae518a22c9bcced3a5c6c75ab6d2bfb3c555d5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:75ea308a242c0d66c3066601e34b90cf69064eb97181981bfc16260a6b3740a2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9j7w5g6w",
+    "category": "idiom",
+    "level": 1,
+    "headword": "all day",
+    "definition": "for the whole time from morning until night",
+    "example": "It rained {{all}} {{day}} yesterday.",
+    "example2": "I work all day on Mondays.",
+    "meanings": {
+      "ja": "一日中"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:8e329b45b629bb1729fb33c61a392e96b6dcf8338a9dd315cc77ae00079ae222",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:dc2e7e8cf5a5caa4237112ff9d705caeb0b88858554916ae53ca498ab20a254f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9r4g7b8t",
+    "category": "idiom",
+    "level": 10,
+    "headword": "a storm in a teacup",
+    "definition": "a big fuss over something that is not important",
+    "example": "The argument over the parking spot turned out to be {{a}} {{storm}} {{in}} {{a}} {{teacup}}.",
+    "example2": "Don't panic; this is just a storm in a teacup.",
+    "meanings": {
+      "ja": "取るに足らない大騒ぎ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:00372ecabff47dc0aef120bfa62933891a5afe07e9a0cfb7035eb4338fb837c5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:2484710cd5d9cb3b97c2639348fcd25a122a67b3e1e763e3077d5828a8304ed2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
     "id": "v_9w4n5z3w",
     "category": "idiom",
     "level": 3,
@@ -244,6 +2069,31 @@
       },
       "meanings.ja": {
         "hash": "sha256:48d6ae8060141b2ea6eff820802c006a092b18efadf7019c444f2eb7d7ee8a9a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_9x4u2k3g",
+    "category": "idiom",
+    "level": 2,
+    "headword": "once upon a time",
+    "definition": "the words that start many old stories for children",
+    "example": "{{Once}} {{upon}} {{a}} {{time}}, a small girl lived in a forest.",
+    "example2": "Many fairy tales in this book begin with once upon a time.",
+    "meanings": {
+      "ja": "昔々"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:fa5e17245cc6440e0ec50169bd50b585aebf1ecf99e125d9afc79cdc683858c1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:408fe7c40edb2ca1239164739044a8fe0f9e1818fd2cf7f0f1fcc015ac469258",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       }
