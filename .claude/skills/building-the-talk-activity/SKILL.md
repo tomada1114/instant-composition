@@ -4,10 +4,10 @@ description: >
   Covers the talk activity (the Talk tab, /talk): practicing conversation with a model
   playing a partner in a scene and a teacher who corrects on the spot — its
   requirements, screens and flows, the six-step turn, the /v1/talks operations, the
-  TALK# item, the scene, teacher and partner prompts, and the LanguageModel port with
-  its OpenRouter, stand-in and Bedrock adapters. Use when building, changing or
-  reviewing anything in the talk activity, writing or versioning one of its prompts, or
-  deciding how the activity behaves when a model call fails.
+  TALK# item, the scene, teacher, partner and card-candidate prompts, and the
+  LanguageModel port with its OpenRouter, stand-in and Bedrock adapters. Use when
+  building, changing or reviewing anything in the talk activity, writing or versioning
+  one of its prompts, or deciding how the activity behaves when a model call fails.
 ---
 
 # Building the Talk Activity
@@ -32,10 +32,11 @@ A learner talks in English with a partner in a scene the model makes up. Each tu
 six steps: the partner speaks; the learner says what they want to say in Japanese, then
 in English; when the English is worth correcting, the teacher gives a model answer of at
 most two sentences and a one-line point; the learner recites it from memory; the partner
-goes on. Six turns, then the partner closes the scene. The Japanese and English steps
-take typing, or speech through the browser's own recognition in Chrome on a PC
-(「話す」, in `ja-JP` and `en-US` as the step sets), sent when the learner stops
-speaking.
+goes on. Six turns, then the partner closes the scene; a kept talk with a correction
+then offers the words and phrases the learner could not say as vocabulary cards to pick.
+The Japanese and English steps take typing, or speech through the browser's own
+recognition in Chrome on a PC (「話す」, in `ja-JP` and `en-US` as the step sets), sent
+when the learner stops speaking.
 
 ## Read the reference you need
 
@@ -50,9 +51,10 @@ speaking.
 - **The server runs the steps; the model answers once per step.** No model call decides
   what comes next, and a client never computes a step. A change that lets a model pick
   the step is an architecture change (`mapping-the-architecture`).
-- **At most 13 model calls per talk:** one scene, then one teacher and one partner call
-  per turn, retries aside. Sending the teacher and the partner together is what keeps
-  the ○ path and the recital from waiting on the partner.
+- **At most 14 model calls per talk:** one scene, then one teacher and one partner call
+  per turn, and one card-candidates call at the end, retries aside. Sending the teacher
+  and the partner together is what keeps the ○ path and the recital from waiting on the
+  partner.
 - **A failed teacher call never stops a talk;** a failed scene or partner call
   offers「もう一度」. Nothing about either failure is shown in red.
 - **Never praise in words.** "Not worth correcting" is the ○ mark and the drill's ○

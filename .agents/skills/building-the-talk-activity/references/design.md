@@ -34,13 +34,15 @@ and changes in the same pull request as anything that moves them.
 All under `/api/v1`, added to `packages/contracts` like every other route. The Japanese
 step (W3a) calls nothing: the client sends the Japanese and the English together.
 
-| Operation       | Method and path                                | Request                       | Answer                                                | Model calls                      |
-| --------------- | ---------------------------------------------- | ----------------------------- | ----------------------------------------------------- | -------------------------------- |
-| `startTalk`     | `POST /v1/talks`                               | `{ talkId }`                  | the scene and the partner's opening line              | scene, 1                         |
-| `sendTurn`      | `POST /v1/talks/{talkId}/turns`                | `{ turn, japanese, english }` | the judgment, and the partner's reply when it arrived | teacher and partner, in parallel |
-| `retryReply`    | `POST /v1/talks/{talkId}/reply`                | none                          | the partner's reply to the latest turn                | partner, 1, unless already kept  |
-| `recordRecital` | `POST /v1/talks/{talkId}/turns/{turn}/recital` | `{ revealCount }`             | `204`                                                 | none                             |
-| `endTalk`       | `POST /v1/talks/{talkId}/end`                  | none                          | `{ kept }`: whether the talk is kept as a record      | none                             |
+| Operation        | Method and path                                | Request                       | Answer                                                | Model calls                      |
+| ---------------- | ---------------------------------------------- | ----------------------------- | ----------------------------------------------------- | -------------------------------- |
+| `startTalk`      | `POST /v1/talks`                               | `{ talkId }`                  | the scene and the partner's opening line              | scene, 1                         |
+| `sendTurn`       | `POST /v1/talks/{talkId}/turns`                | `{ turn, japanese, english }` | the judgment, and the partner's reply when it arrived | teacher and partner, in parallel |
+| `retryReply`     | `POST /v1/talks/{talkId}/reply`                | none                          | the partner's reply to the latest turn                | partner, 1, unless already kept  |
+| `recordRecital`  | `POST /v1/talks/{talkId}/turns/{turn}/recital` | `{ revealCount }`             | `204`                                                 | none                             |
+| `endTalk`        | `POST /v1/talks/{talkId}/end`                  | none                          | `{ kept }`: whether the talk is kept as a record      | none                             |
+| `makeCandidates` | `POST /v1/talks/{talkId}/candidates`           | none                          | `{ candidates }`: the card candidates, in order       | cards, 1, unless already kept    |
+| `addCards`       | `POST /v1/talks/{talkId}/cards`                | `{ candidates: [index, …] }`  | the candidates, the picks added                       | none                             |
 
 - `turn` is 1 to 6. `japanese` and `english` are 1 to 300 characters; `english` is
   `null` when the learner gave up with 「わからない」, and is refused with
@@ -63,6 +65,23 @@ step (W3a) calls nothing: the client sends the Japanese and the English together
   `ERR_MODEL_UNAVAILABLE` (503), which W2 and W3g answer with 「もう一度」.
 - `recordRecital` is fire-and-forget for the client: 「言えた」 shows the held reply at
   once, and a failed recital record is dropped rather than shown.
+- The card candidates (#374 §3.7) are asked for once a talk is kept — finished, or ended
+  holding a turn — and only when a turn was corrected, give-ups included; a talk with
+  none answers an empty list without a call, and one still open is `ERR_CONFLICT`. The
+  first answer is kept on the talk and a resend answers it. Each candidate whose
+  normalized headword a catalog card holds is answered as that card (`catalog: true`),
+  else as the learner's own card holding it, with `inLearning` when that card has been
+  answered; the text is then that card's. `ERR_CONTENT_UNREADABLE` when the catalog to
+  match against cannot be read.
+- `addCards` takes indexes into the kept list. A matched card's `ITEM#vocab#<id>` is
+  marked as from the talk and turn (weak, `isWeak`), added as new or kept as it stands;
+  any other candidate becomes a personal card, `CARD#<cardId>` in the learner's
+  partition, with `ITEM#vocab#<cardId>` new and from the talk, so the vocabulary
+  activity deals it first among the new. The talk records each index once with the card
+  it became, so a resend or a racing add adds nothing twice; an index past the list is
+  `ERR_BAD_REQUEST`, an add before the candidates `ERR_CONFLICT`. The vocabulary's own
+  `DELETE /v1/vocab/cards/{cardId}` removes a personal card and its progress, never its
+  logged answers; a catalog card there is `ERR_CARD_NOT_PERSONAL`.
 - `bindRoutes` in `apps/api/src/routes.ts` holds each handler to the path parameters its
   route names — `{roundId}`, `{talkId}` and `{turn}` — and each is validated with its
   contracts schema before the command runs.
@@ -89,7 +108,25 @@ interface Talk {
   scene: { partner: string; place: string; relation: string; description: string }; // Japanese
   opening: string; // the partner's first line
   turns: Turn[];
-  model: { provider: string; modelId: string; prompts: Record<TalkTask, string> }; // versions
+  model: {
+    provider: string;
+    modelId: string;
+    prompts: Partial<Record<TalkTask, string>>;
+  }; // versions at the start
+  cards?: {
+    // the card candidates at its end, from the one talk-cards call
+    promptVersion: string;
+    candidates: {
+      turn: number;
+      category;
+      headword;
+      definition;
+      example;
+      example2;
+      meaning;
+    }[];
+    added: { index: number; cardId: string }[]; // each index once, the card it became
+  };
 }
 
 interface Turn {
@@ -118,7 +155,12 @@ interface Turn {
   attribute, which no other entry sets.
 - The store port gains `talk(id)`, an `Entry`/`Key` of type `talk`, and a `Fields` list
   in `packages/adapters/src/declared.ts`; the contract suite's `READS` gains it,
-  isolation included. Nothing deletes an entry: the TTL does.
+  isolation included. Nothing deletes a talk: the TTL does.
+- A personal card is the vocabulary's entry, not the talk's: `CARD#<cardId>` holds the
+  model's text unreviewed, `target`, `l1`, the drill's level when it was made, the talk
+  and turn it came from, and when; `card(id)`, `cards()` and a commit's `deletes` read
+  and remove it. Its id is `p_` and twelve characters drawn from the talk and the
+  candidate, so it never meets a catalog id.
 - `model` records the provider, the model and each prompt's version, so a later look at
   the records can tell which prompt produced a turn.
 
@@ -133,7 +175,7 @@ interface LanguageModel {
 }
 
 interface ModelRequest<T> {
-  task: string; // TalkRequest narrows it to TalkTask: "talk-scene" | "talk-teacher" | "talk-partner"
+  task: string; // TalkRequest narrows it to TalkTask: "talk-scene" | "talk-teacher" | "talk-partner" | "talk-cards"
   promptVersion: string;
   system: string;
   messages: readonly { role: "user" | "assistant"; text: string }[];
@@ -164,7 +206,7 @@ interface ModelFailure {
 }
 ```
 
-- **Why one port and not one per task:** three tasks times two providers would be six
+- **Why one port and not one per task:** four tasks times two providers would be eight
   implementations. The tasks — prompt, output schema, version — live in the application
   and are shared by every adapter, so a provider change never touches a prompt, and the
   call record attaches to a task and a version. A bare `complete(prompt)` would lose
@@ -198,7 +240,7 @@ interface ModelFailure {
 | Adapter    | Where it runs                   | What it calls                                                                     |
 | ---------- | ------------------------------- | --------------------------------------------------------------------------------- |
 | OpenRouter | local with a key; `dev` for now | `POST https://openrouter.ai/api/v1/chat/completions` through the injected `fetch` |
-| Stand-in   | local without a key; tests      | nothing: scripted answers per task                                                |
+| Stand-in   | local without a key; tests      | nothing: scripted answers per task, a card for each turn a cards request lists    |
 | Bedrock    | `dev`, once #276 clears         | `ConverseCommand` from `@aws-sdk/client-bedrock-runtime`                          |
 
 - **OpenRouter** uses plain `fetch` and the OpenAI-compatible body, so it adds no
@@ -236,6 +278,7 @@ Japanese.
 | `talk-scene`   | the scene kind, which the domain draws from a seeded random: about 2/3 talking about yourself, 1/3 an errand or a small trouble | `{ partner, place, relation, description }` in Japanese, `description` 1–2 lines; `opening` in English | 1.0, 300                |
 | `talk-teacher` | the scene, the partner's line, the learner's Japanese, their English or nothing on a give-up                                    | `{ verdict, modelAnswer, point }`; `modelAnswer` and `point` empty when `fine`                         | 0.2, 300                |
 | `talk-partner` | the scene, the talk so far, this turn's Japanese and English, the turn number of 6                                              | `{ line }`, 1–2 sentences                                                                              | 0.7, 150                |
+| `talk-cards`   | a kept talk's corrected turns, each its Japanese, its English or the give-up, the model answer and the point                    | `{ candidates: [{ turn, category, headword, definition, example, example2, meaning }] }`               | 0.3, 1200               |
 
 - **Scene:** everyday conversation only; no specialist or heavy topic (politics,
   religion, medicine), no trouble that forces a long explanation; the partner is a
@@ -254,9 +297,20 @@ Japanese.
   scene in character with no question. The talk so far is sent as alternating messages:
   the partner's lines as `assistant`, each learner turn as `user` with its Japanese and
   English delimited.
-- Over-long output is not refused: the length rules are the prompt's to keep, and a
-  `read` refuses only a wrong shape. A model answer that runs long is worth seeing in
-  use before it is worth a failure. A blank where the step needs text — the partner's
+- **Cards:** at most one word, idiom, phrasal verb or set phrase per corrected turn —
+  the one the learner could not say, usually the point's key phrase — written as a
+  vocabulary card is: the headword in its base form, an English definition, the model
+  answer as the example when it holds the headword with each headword word marked
+  `{{…}}`, a second example, and the meaning in Japanese. Its `read` refuses a wrong
+  shape as `malformed`, and otherwise keeps a candidate only from a corrected turn not
+  yet taken whose text meets the rules the lint holds a catalog card to (`fitsCardText`,
+  `VOCAB_TUNING.card`, held to `scripts/cards/vocab-rules.mjs` by
+  `tests/domain-vocab-card.test.ts`), at most six: a candidate becomes a stored card, so
+  its lengths are checked, and one that breaks a rule is dropped rather than failing the
+  rest.
+- Over-long output is not refused elsewhere: the length rules are the prompt's to keep,
+  and a `read` refuses only a wrong shape. A model answer that runs long is worth seeing
+  in use before it is worth a failure. A blank where the step needs text — the partner's
   line, the opening, a scene field, a correction's model answer or point — and `fine` on
   a give-up are wrong answers, not long ones: a `read` refuses them as `malformed`, so
   the scene or reply is asked for again and a teacher's turn is kept as `failed`.
