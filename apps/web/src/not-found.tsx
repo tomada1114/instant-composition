@@ -17,7 +17,7 @@ export function NotFound(): ReactElement {
 
   return (
     <main className="mx-auto flex min-h-dvh max-w-dialog flex-col justify-center px-4 py-8">
-      <section className="flex flex-col gap-5 rounded-card bg-card p-5">
+      <section className="flex flex-col gap-5 rounded-panel border-2 border-border bg-card p-7">
         <div className="flex flex-col gap-1">
           <h1 className="text-heading">{t("title")}</h1>
           <p className="text-muted-foreground">{t("description")}</p>
