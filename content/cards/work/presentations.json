@@ -107,6 +107,19 @@
     }
   },
   {
+    "id": "c_3b4w9c4z",
+    "ja": "動画を流して。",
+    "en": "Start the video.",
+    "alternatives": ["Play the video.", "Put the video on."],
+    "point": "start は動画の再生を始める。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 1,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3b7d2n8s",
     "ja": "私、結論を飛ばした。",
     "en": "I skipped the conclusion.",
@@ -563,6 +576,32 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7j6e6p2p",
+    "ja": "これは写真です。",
+    "en": "This is a photo.",
+    "alternatives": ["It's a photograph.", "This picture's a photo."],
+    "point": "a photo は一枚の写真。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_7r2t8y5j",
+    "ja": "私は写真を出せる。",
+    "en": "I can show photos.",
+    "alternatives": ["I can display pictures.", "I can present photographs."],
+    "point": "can は写真を見せられることを表す。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7r6q7y7v",

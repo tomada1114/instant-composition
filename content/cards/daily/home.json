@@ -227,6 +227,19 @@
     }
   },
   {
+    "id": "c_5c6f3d9k",
+    "ja": "私たちは家事を分担する。",
+    "en": "We share the chores.",
+    "alternatives": ["We divide the household tasks.", "We split the housework."],
+    "point": "chores は日々の家事。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 3,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6b7z3d3h",
     "ja": "結局、皿は全部私が洗った。",
     "en": "I ended up washing all the dishes.",
@@ -394,6 +407,22 @@
     }
   },
   {
+    "id": "c_7n8z4q3z",
+    "ja": "この部屋の方が湿っぽい。",
+    "en": "This room is more humid.",
+    "alternatives": [
+      "This room has higher humidity.",
+      "Humidity is higher in this room."
+    ],
+    "point": "more humid は湿度がより高い。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 3,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7p4q7j9y",
     "ja": "掃除したのに、まだ埃っぽい。",
     "en": "Although I cleaned, it's still dusty.",
@@ -521,6 +550,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8p9a9m2t",
+    "ja": "誰が洗濯物を畳んだ？",
+    "en": "Who folded the laundry?",
+    "alternatives": ["Who did the laundry folding?", "Who did the folding?"],
+    "point": "fold the laundry は洗濯物を畳む。",
+    "topic": "daily",
+    "subtopic": "home",
+    "level": 3,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8q3d2d5r",

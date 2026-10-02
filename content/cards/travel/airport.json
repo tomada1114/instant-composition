@@ -60,6 +60,19 @@
     }
   },
   {
+    "id": "c_3g5p2s7e",
+    "ja": "私は荷物を運べる。",
+    "en": "I can carry bags.",
+    "alternatives": ["I'm able to carry bags.", "I can carry the luggage."],
+    "point": "can で荷物を運べると伝える。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3r7y3t4f",
     "ja": "疲れ果てて私は搭乗を逃した。",
     "en": "Exhausted, I missed boarding.",
@@ -143,6 +156,32 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_4f2g8c9c",
+    "ja": "私は席を探せる。",
+    "en": "I can find seats.",
+    "alternatives": ["I can locate seats.", "I'm able to find seats."],
+    "point": "can で空いている席を探せると伝える。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 2,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_4f9w9j8u",
+    "ja": "私の席はどこ？",
+    "en": "Where's my seat?",
+    "alternatives": ["Where is my place?", "Which seat is mine?"],
+    "point": "where で座席の場所を尋ねる。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 1,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4g6k5b7t",
@@ -244,6 +283,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4v2s2b8z",
+    "ja": "出るのはあの便が早い。",
+    "en": "That flight leaves earlier.",
+    "alternatives": ["That plane takes off earlier.", "That flight departs sooner."],
+    "point": "earlier は時刻がより早い。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 2,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4w5h3y4d",
@@ -482,6 +534,32 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6z8x3p8n",
+    "ja": "私の便は満席だ。",
+    "en": "My flight is full.",
+    "alternatives": ["My plane is full.", "There are no seats left."],
+    "point": "full は空いている席がない状態。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_7f8z6s2x",
+    "ja": "私、空港の外で待つ。",
+    "en": "I'll wait outside.",
+    "alternatives": ["I'm going to wait outside.", "I'll be waiting outside."],
+    "point": "will でこれから外で待つと伝える。",
+    "topic": "travel",
+    "subtopic": "airport",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7g4s2z2b",

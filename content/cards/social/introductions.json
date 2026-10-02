@@ -111,6 +111,19 @@
     }
   },
   {
+    "id": "c_2x2r3n6a",
+    "ja": "私は音楽が好き。",
+    "en": "I like music.",
+    "alternatives": ["I enjoy music.", "Music appeals to me."],
+    "point": "music は数えないので a をつけない。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 1,
+    "grammar": ["articles-and-countability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3c6q9n4a",
     "ja": "あなたの原動力を伺えますか？",
     "en": "May I ask what makes you tick?",
@@ -219,6 +232,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3n4h7v9u",
+    "ja": "そこに妹がいる。",
+    "en": "There's my younger sister.",
+    "alternatives": ["My younger sister's there.", "That's my little sister."],
+    "point": "There's でそこにいる人を指し示す。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_3n4u5s6w",
@@ -510,6 +536,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6d6m9p8v",
+    "ja": "私は先生です。",
+    "en": "I'm a teacher.",
+    "alternatives": ["I teach.", "Teaching is my job."],
+    "point": "職業を言う単数の名詞は a teacher。",
+    "topic": "social",
+    "subtopic": "introductions",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6g9a6h7j",

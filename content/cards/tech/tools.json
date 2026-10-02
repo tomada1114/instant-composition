@@ -202,6 +202,22 @@
     }
   },
   {
+    "id": "c_3w7h7e9w",
+    "ja": "窓口は定型文で私をあしらった。",
+    "en": "Support fobbed me off with boilerplate.",
+    "alternatives": [
+      "Support brushed me off with canned replies.",
+      "Support dismissed me with stock responses."
+    ],
+    "point": "fob off はその場しのぎの説明であしらう。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4g6q5g5s",
     "ja": "先月、CIを乗り換えた。",
     "en": "We switched CI tools last month.",
@@ -266,6 +282,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4h7d3y6d",
+    "ja": "あの更新は見せかけの価値かも。",
+    "en": "That upgrade might be fool's gold.",
+    "alternatives": [
+      "That upgrade may only look valuable.",
+      "That upgrade might have merely apparent value."
+    ],
+    "point": "fool's gold は価値があるようで実はないもの。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5d4c3d5a",
@@ -480,6 +512,22 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_6r6e5g5m",
+    "ja": "不満なのはツールの計画的陳腐化だ。",
+    "en": "What rankles is this tool's planned obsolescence.",
+    "alternatives": [
+      "This tool's planned obsolescence is what bothers me.",
+      "The planned obsolescence of this tool irritates me."
+    ],
+    "point": "rankle は不満を残す、What と is の形で問題を強調する。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["cleft-emphasis"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6z2m4s6c",

@@ -473,6 +473,19 @@
     }
   },
   {
+    "id": "c_5x6t6w3m",
+    "ja": "私、君を信じられる。",
+    "en": "I can trust you.",
+    "alternatives": ["I can have faith in you.", "I can put trust in you."],
+    "point": "trust は相手を信頼する。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 2,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5x6w8j8s",
     "ja": "彼、ほっとしたって言ってたよ。",
     "en": "He said he was relieved.",
@@ -661,6 +674,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7w2y9q3r",
+    "ja": "まだ望みはある。",
+    "en": "There's still hope.",
+    "alternatives": ["Hope still remains.", "There is hope yet."],
+    "point": "hope は数えないので there is。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 2,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7w3y4d5p",
@@ -908,6 +934,19 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_9e5c2b9c",
+    "ja": "心配をやめてよ。",
+    "en": "Stop worrying, please.",
+    "alternatives": ["Please stop fretting.", "Please quit worrying."],
+    "point": "stop の後は worrying の形。",
+    "topic": "daily",
+    "subtopic": "feelings",
+    "level": 2,
+    "grammar": ["imperatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9x9p2r4r",

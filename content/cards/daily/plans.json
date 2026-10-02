@@ -126,6 +126,22 @@
     }
   },
   {
+    "id": "c_3n5c8u3s",
+    "ja": "私たちが断ってたら大失敗を免れた。",
+    "en": "Had we declined, we'd have dodged disaster.",
+    "alternatives": [
+      "If we'd refused, we would've avoided disaster.",
+      "We'd have avoided disaster if we'd declined."
+    ],
+    "point": "Had we は過去の仮定、dodge disaster は惨事を免れる。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["third-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3t9j6j6z",
     "ja": "今週末はひまだよ。",
     "en": "I'm free this weekend.",
@@ -486,6 +502,22 @@
     }
   },
   {
+    "id": "c_6y8k7n9j",
+    "ja": "彼女は誰が水を差すか知らないかも。",
+    "en": "I doubt she knows who's playing spoilsport.",
+    "alternatives": [
+      "I'm not sure she knows who is spoiling things.",
+      "She may not know who is ruining the fun."
+    ],
+    "point": "spoilsport は人の楽しみに水を差す人。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7b9v5s8r",
     "ja": "駅前のカフェでいいよ。",
     "en": "The café by the station works.",
@@ -635,6 +667,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8q8p2b7z",
+    "ja": "彼女は旅行をずっと決めかねてる。",
+    "en": "She's been vacillating over our getaway.",
+    "alternatives": [
+      "She's been wavering over our trip.",
+      "She's been unable to decide about our getaway."
+    ],
+    "point": "vacillate は決められず気持ちが揺れ動く。",
+    "topic": "daily",
+    "subtopic": "plans",
+    "level": 9,
+    "grammar": ["present-perfect-continuous"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8x2v6k8x",

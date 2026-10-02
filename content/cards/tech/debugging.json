@@ -154,6 +154,19 @@
     }
   },
   {
+    "id": "c_3b5p3t7q",
+    "ja": "私、入力してなかった。",
+    "en": "I wasn't typing.",
+    "alternatives": ["I wasn't entering text.", "I wasn't keying in text."],
+    "point": "wasn't typing はその時入力していなかった。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3c6u7c5y",
     "ja": "私は競合する実行経路を解きほぐした。",
     "en": "I teased apart the competing execution paths.",
@@ -365,6 +378,19 @@
     }
   },
   {
+    "id": "c_5h4x8h9s",
+    "ja": "画面は真っ黒だ。",
+    "en": "The screen is black.",
+    "alternatives": ["The screen shows only black.", "All I see is black."],
+    "point": "black は画面全体が黒い状態。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 1,
+    "grammar": ["be-and-present-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5h9c2g7q",
     "ja": "決済で出るエラー、再現できたよ。",
     "en": "I reproduced the error occurring in checkout.",
@@ -469,6 +495,19 @@
     }
   },
   {
+    "id": "c_6j7z6v5g",
+    "ja": "君、ログを出力できる？",
+    "en": "Can you print logs?",
+    "alternatives": ["Can you output logs?", "Can you produce log entries?"],
+    "point": "print logs はログを出力する。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 2,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6x8u8k2m",
     "ja": "キャッシュを消して。",
     "en": "Clear the cache.",
@@ -510,6 +549,19 @@
     }
   },
   {
+    "id": "c_7g8u6k9g",
+    "ja": "私、入力できない。",
+    "en": "I can't type.",
+    "alternatives": ["Typing isn't possible for me.", "I can't enter text."],
+    "point": "can't で入力できない症状を伝える。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7j5p5v5j",
     "ja": "こんな厄介なバグ、初めて見た。",
     "en": "Never have I seen such a nasty bug.",
@@ -549,6 +601,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7v9h3x4j",
+    "ja": "私、ボタン試してる。",
+    "en": "I'm trying the button.",
+    "alternatives": ["I'm testing the button.", "I'm trying this button out."],
+    "point": "進行形でボタンを今試していると伝える。",
+    "topic": "tech",
+    "subtopic": "debugging",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7x6k3t5y",

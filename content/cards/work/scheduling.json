@@ -234,6 +234,22 @@
     }
   },
   {
+    "id": "c_5c4d9j5z",
+    "ja": "私は会議の変更に抵抗感がある。",
+    "en": "I'm reluctant to reschedule the meeting.",
+    "alternatives": [
+      "I'm hesitant about moving the meeting.",
+      "I'd rather not reschedule the meeting."
+    ],
+    "point": "reluctant to は気が進まない。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5g6w5f5s",
     "ja": "全員空いてる日に決めましょう。",
     "en": "Let's choose a day when everyone's free.",
@@ -382,6 +398,19 @@
     }
   },
   {
+    "id": "c_6w5s9q2e",
+    "ja": "私は日付を選んでる。",
+    "en": "I'm choosing dates.",
+    "alternatives": ["I'm picking the dates.", "I'm selecting dates."],
+    "point": "進行形で日付を今選んでいると伝える。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 1,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6y4d7x9c",
     "ja": "月曜の会議は中止です。",
     "en": "Monday's meeting is canceled.",
@@ -443,6 +472,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6z8u2r7j",
+    "ja": "私たちは日程をやり繰りしてる。",
+    "en": "We're juggling the dates.",
+    "alternatives": [
+      "We're trying to fit the dates together.",
+      "We're working to balance the scheduling demands."
+    ],
+    "point": "juggle は複数の都合をやり繰りする。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6z9a2g5x",
@@ -678,6 +723,19 @@
     }
   },
   {
+    "id": "c_8n7k6d7a",
+    "ja": "私は今会える。",
+    "en": "I can meet now.",
+    "alternatives": ["I can meet right now.", "I'm able to meet now."],
+    "point": "can で昼の時間に会えると伝える。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 1,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_8p2d4u9a",
     "ja": "午後なら空いています。",
     "en": "I'm free in the afternoon.",
@@ -762,6 +820,35 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9a3a2t5e",
+    "ja": "その締め切りは私たちが緩める。",
+    "en": "We'll relax that deadline.",
+    "alternatives": [
+      "We'll make that deadline less strict.",
+      "We're going to ease that deadline."
+    ],
+    "point": "relax a deadline は締め切りを厳しくなくする。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 6,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_9k8p2n5h",
+    "ja": "空き時間がない。",
+    "en": "There's no free time.",
+    "alternatives": ["No time is available.", "There aren't any free moments."],
+    "point": "time は数えないので there is。",
+    "topic": "work",
+    "subtopic": "scheduling",
+    "level": 1,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9q6y6y3q",

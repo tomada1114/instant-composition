@@ -312,6 +312,38 @@
     }
   },
   {
+    "id": "c_5k2u9z2f",
+    "ja": "彼は緩和と寛解の違いを知らないかも。",
+    "en": "I doubt he grasps why palliation isn't remission.",
+    "alternatives": [
+      "He may not understand why symptom relief is not remission.",
+      "He may not grasp how palliation differs from remission."
+    ],
+    "point": "palliation は症状の緩和、remission は病状が治まる寛解。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 10,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_5n2q6n7h",
+    "ja": "私が前兆に対処してたら今は回復期だ。",
+    "en": "Had I heeded warning signs, I'd be convalescing.",
+    "alternatives": [
+      "If I'd acted on the warning signs, I'd be recovering.",
+      "I'd be recuperating if I'd taken those signs seriously."
+    ],
+    "point": "過去の仮定から今の回復を表す、convalesce は病後回復する。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5p9q8w9t",
     "ja": "痛くなったら電話するよ。",
     "en": "I'll call if it hurts.",
@@ -686,6 +718,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6z9h3q7j",
+    "ja": "私、我慢強さと健康を混同してるかも。",
+    "en": "I may be conflating fortitude with wellness.",
+    "alternatives": [
+      "I might be confusing mental toughness with good health.",
+      "I may be mistaking endurance for being healthy."
+    ],
+    "point": "fortitude は苦痛に耐える強さ、健康そのものとは区別する。",
+    "topic": "daily",
+    "subtopic": "health",
+    "level": 10,
+    "grammar": ["hedging-softening"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7e4v4z2p",

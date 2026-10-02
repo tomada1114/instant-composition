@@ -149,6 +149,22 @@
     }
   },
   {
+    "id": "c_3m3b5z4p",
+    "ja": "私が曖昧に頼んでたら君は今も手探りだ。",
+    "en": "Had I equivocated, you'd still be flying blind.",
+    "alternatives": [
+      "If I'd been evasive, you'd still lack essential guidance.",
+      "You'd still be working without guidance if I'd equivocated."
+    ],
+    "point": "equivocate は言葉を濁す、fly blind は情報なしに進める。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3y9m6v5h",
     "ja": "お言葉に甘えられたらいいのですが。",
     "en": "I wish I could take you up on that.",
@@ -635,6 +651,22 @@
     }
   },
   {
+    "id": "c_7w7y5q7g",
+    "ja": "君がぼかしてたら私は職責を誤解した。",
+    "en": "Had you hedged, I'd have misread your remit.",
+    "alternatives": [
+      "If you'd been evasive, I'd have misunderstood your role.",
+      "I'd have misread your responsibilities if you'd hedged."
+    ],
+    "point": "hedge は曖昧にする、remit は依頼された役割や範囲。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 10,
+    "grammar": ["third-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_7x8h3r9p",
     "ja": "何かあれば、連絡してください。",
     "en": "Should anything come up, call me.",
@@ -861,6 +893,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9x4v4e7x",
+    "ja": "君の依頼はほぼ白紙委任に当たる。",
+    "en": "What you seek borders on carte blanche.",
+    "alternatives": [
+      "You're asking for almost unrestricted authority.",
+      "You're seeking virtually a free hand."
+    ],
+    "point": "border on はほとんど当たる、carte blanche は全面的な裁量。",
+    "topic": "work",
+    "subtopic": "requests",
+    "level": 10,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9y7s9a2b",

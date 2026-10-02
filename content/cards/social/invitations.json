@@ -249,6 +249,22 @@
     }
   },
   {
+    "id": "c_3x2h9q5p",
+    "ja": "私はもう参加を確認した。",
+    "en": "I've already confirmed my attendance.",
+    "alternatives": [
+      "I've already said that I'll attend.",
+      "I've already confirmed that I'm coming."
+    ],
+    "point": "現在完了で参加の意思を伝え済みと表す。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 4,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3x9j3s3d",
     "ja": "カイに来てと頼まれた。",
     "en": "Kai asked me to come.",
@@ -473,6 +489,22 @@
     }
   },
   {
+    "id": "c_5n2s6b6t",
+    "ja": "参加費は会費に含まれる。",
+    "en": "Admission is included in membership.",
+    "alternatives": [
+      "The membership fee covers admission.",
+      "Admission comes with the membership fee."
+    ],
+    "point": "is included で費用に含まれると伝える。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 4,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_5q7k2t8g",
     "ja": "ぜひ行きたいです。",
     "en": "I'd love to go.",
@@ -576,6 +608,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6x5s9h9r",
+    "ja": "同伴者を連れてよいですか？",
+    "en": "May I bring a guest?",
+    "alternatives": ["Could I bring someone along?", "Would bringing a guest be okay?"],
+    "point": "May I は丁寧に許可を求める。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 4,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6x7a3j7h",
