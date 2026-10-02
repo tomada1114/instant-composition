@@ -250,7 +250,7 @@
   },
   {
     "id": "c_3x2h9q5p",
-    "ja": "私はもう参加を確認した。",
+    "ja": "私はもう出席すると伝えた。",
     "en": "I've already confirmed my attendance.",
     "alternatives": [
       "I've already said that I'll attend.",
@@ -260,9 +260,15 @@
     "topic": "social",
     "subtopic": "invitations",
     "level": 4,
-    "grammar": ["tense-contrast"],
+    "grammar": ["present-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:62cf2670c59be194e50cca2294489536da3edcad3fce456a1fc101b9eacb923f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3x9j3s3d",
@@ -491,10 +497,10 @@
   {
     "id": "c_5n2s6b6t",
     "ja": "参加費は会費に含まれる。",
-    "en": "Admission is included in membership.",
+    "en": "Admission's included in membership fees.",
     "alternatives": [
-      "The membership fee covers admission.",
-      "Admission comes with the membership fee."
+      "Membership fees cover admission.",
+      "The membership fee includes admission."
     ],
     "point": "is included で費用に含まれると伝える。",
     "topic": "social",
@@ -502,7 +508,13 @@
     "level": 4,
     "grammar": ["passive-voice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:32b73a6af6d59ba3a9363daab6825120dfcc7f1ffc404d10f8dbdcce9972fa8e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5q7k2t8g",
@@ -611,16 +623,22 @@
   },
   {
     "id": "c_6x5s9h9r",
-    "ja": "同伴者を連れてよいですか？",
+    "ja": "同伴者もいいですか？",
     "en": "May I bring a guest?",
     "alternatives": ["Could I bring someone along?", "Would bringing a guest be okay?"],
     "point": "May I は丁寧に許可を求める。",
     "topic": "social",
     "subtopic": "invitations",
-    "level": 4,
+    "level": 2,
     "grammar": ["requests-permission"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:dc9816bc24c2745efc9ab6f22e0d456e15cf68debc4efb7867ad3fce6d01725c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6x7a3j7h",

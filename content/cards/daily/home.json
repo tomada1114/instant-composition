@@ -237,7 +237,13 @@
     "level": 3,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2b29983715abb79acacef3fed8b2c6faf6d0e6c26273a87fd24914c9ed976352",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6b7z3d3h",
@@ -408,7 +414,7 @@
   },
   {
     "id": "c_7n8z4q3z",
-    "ja": "この部屋の方が湿っぽい。",
+    "ja": "この部屋の方が湿度が高い。",
     "en": "This room is more humid.",
     "alternatives": [
       "This room has higher humidity.",
@@ -417,10 +423,16 @@
     "point": "more humid は湿度がより高い。",
     "topic": "daily",
     "subtopic": "home",
-    "level": 3,
+    "level": 4,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:064b6d76f70ddfde6350cd7890c071dc17a530dcaadaa1a0323bbec429c5c801",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7p4q7j9y",
@@ -555,14 +567,20 @@
     "id": "c_8p9a9m2t",
     "ja": "誰が洗濯物を畳んだ？",
     "en": "Who folded the laundry?",
-    "alternatives": ["Who did the laundry folding?", "Who did the folding?"],
+    "alternatives": ["Who folded the clothes?", "Who did the folding?"],
     "point": "fold the laundry は洗濯物を畳む。",
     "topic": "daily",
     "subtopic": "home",
     "level": 3,
     "grammar": ["wh-questions"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e9db6c4408f4e3b79a0ded4330057d0a20e333396847b47e6c6c2b1f2d3bf0ca",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8q3d2d5r",

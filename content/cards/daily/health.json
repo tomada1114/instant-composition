@@ -312,24 +312,8 @@
     }
   },
   {
-    "id": "c_5k2u9z2f",
-    "ja": "彼は緩和と寛解の違いを知らないかも。",
-    "en": "I doubt he grasps why palliation isn't remission.",
-    "alternatives": [
-      "He may not understand why symptom relief is not remission.",
-      "He may not grasp how palliation differs from remission."
-    ],
-    "point": "palliation は症状の緩和、remission は病状が治まる寛解。",
-    "topic": "daily",
-    "subtopic": "health",
-    "level": 10,
-    "grammar": ["nested-clauses"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_5n2q6n7h",
-    "ja": "私が前兆に対処してたら今は回復期だ。",
+    "ja": "私が前兆に対処してたら今は回復期なのに。",
     "en": "Had I heeded warning signs, I'd be convalescing.",
     "alternatives": [
       "If I'd acted on the warning signs, I'd be recovering.",
@@ -341,7 +325,13 @@
     "level": 10,
     "grammar": ["mixed-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:253904a8576a58c51c4c5e3ad3294d2feaf944292e333f0a95a00f4b66305799",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5p9q8w9t",
@@ -721,7 +711,7 @@
   },
   {
     "id": "c_6z9h3q7j",
-    "ja": "私、我慢強さと健康を混同してるかも。",
+    "ja": "私は忍耐と健康を混同してるかも。",
     "en": "I may be conflating fortitude with wellness.",
     "alternatives": [
       "I might be confusing mental toughness with good health.",
@@ -730,10 +720,16 @@
     "point": "fortitude は苦痛に耐える強さ、健康そのものとは区別する。",
     "topic": "daily",
     "subtopic": "health",
-    "level": 10,
+    "level": 9,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7433f823c5465baca1fc243259ff81a27de5d9b0009410e573b8a3c9a282931",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7e4v4z2p",

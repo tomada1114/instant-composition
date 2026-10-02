@@ -121,7 +121,13 @@
     "level": 1,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:72100343902a35ce144d243c62e7c847bca2b588ad27d9e87ec0da4453d4a2c1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3c6q9n4a",
@@ -235,7 +241,7 @@
   },
   {
     "id": "c_3n4h7v9u",
-    "ja": "そこに妹がいる。",
+    "ja": "そこに私の妹がいる。",
     "en": "There's my younger sister.",
     "alternatives": ["My younger sister's there.", "That's my little sister."],
     "point": "There's でそこにいる人を指し示す。",
@@ -244,7 +250,13 @@
     "level": 1,
     "grammar": ["there-is-are"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f2cd5adc3e8179fb79b95207c128bfd8d98d75ba8815cc218081ac398b9e212d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3n4u5s6w",
@@ -548,7 +560,13 @@
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:afb6cbbce319c222db98e91260df827d950c7a18eb4f82aa758c68f50c97793a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6g9a6h7j",

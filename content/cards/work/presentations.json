@@ -117,7 +117,13 @@
     "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:15e0cc917806fc30f3c07cce4efc51df0ed6719ae4be08c534fb17b5f44719a1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3b7d2n8s",
@@ -581,18 +587,24 @@
     "id": "c_7j6e6p2p",
     "ja": "これは写真です。",
     "en": "This is a photo.",
-    "alternatives": ["It's a photograph.", "This picture's a photo."],
+    "alternatives": ["It's a photo.", "This is a photograph."],
     "point": "a photo は一枚の写真。",
     "topic": "work",
     "subtopic": "presentations",
     "level": 1,
     "grammar": ["articles-and-countability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e990786dc7a05c34905d8ada965f7c5ea7f70a759454b2ad90c199324a887b52",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7r2t8y5j",
-    "ja": "私は写真を出せる。",
+    "ja": "私は写真を見せられる。",
     "en": "I can show photos.",
     "alternatives": ["I can display pictures.", "I can present photographs."],
     "point": "can は写真を見せられることを表す。",
@@ -601,7 +613,13 @@
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f6832d090ad9012f94938d5d5bd094d61d8b34fc782abf3707d0e370a91487d4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7r6q7y7v",

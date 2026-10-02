@@ -476,14 +476,20 @@
     "id": "c_5x6t6w3m",
     "ja": "私、君を信じられる。",
     "en": "I can trust you.",
-    "alternatives": ["I can have faith in you.", "I can put trust in you."],
+    "alternatives": ["I can count on you.", "I can have faith in you."],
     "point": "trust は相手を信頼する。",
     "topic": "daily",
     "subtopic": "feelings",
     "level": 2,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ad1ddf155eda60d4bfaca22ff831bd0e42ebd77cdbe251b14ff74ed951877ea9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5x6w8j8s",
@@ -686,7 +692,13 @@
     "level": 2,
     "grammar": ["there-is-are"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c66c78f068f5e1f1c38ec88aa4e8ff28ea303a83aa8175137d2d4bf0ffd6f06a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7w3y4d5p",
@@ -943,10 +955,16 @@
     "point": "stop の後は worrying の形。",
     "topic": "daily",
     "subtopic": "feelings",
-    "level": 2,
-    "grammar": ["imperatives"],
+    "level": 3,
+    "grammar": ["imperatives", "gerunds"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c6c974e958d0ab73c1b27d95d138c91279ebccbd673c4f8f44ccad0c07efeb95",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9x9p2r4r",

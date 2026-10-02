@@ -127,7 +127,7 @@
   },
   {
     "id": "c_3n5c8u3s",
-    "ja": "私たちが断ってたら大失敗を免れた。",
+    "ja": "我々が断ってたら大失敗を免れてた。",
     "en": "Had we declined, we'd have dodged disaster.",
     "alternatives": [
       "If we'd refused, we would've avoided disaster.",
@@ -139,7 +139,13 @@
     "level": 9,
     "grammar": ["third-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9ad4b8fb95cc523b4a8c9654d91347d3d2abbacf9abf7977d622efaa0944020c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3t9j6j6z",
@@ -512,10 +518,16 @@
     "point": "spoilsport は人の楽しみに水を差す人。",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 9,
+    "level": 8,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a458eb196f9a5a142c2b17f9c51c30ab3cc8b0014d8b74d40cae0d9a3652bc27",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7b9v5s8r",
@@ -671,10 +683,10 @@
   {
     "id": "c_8q8p2b7z",
     "ja": "彼女は旅行をずっと決めかねてる。",
-    "en": "She's been vacillating over our getaway.",
+    "en": "She's been vacillating over the trip.",
     "alternatives": [
-      "She's been wavering over our trip.",
-      "She's been unable to decide about our getaway."
+      "She's been wavering about the trip.",
+      "She's been unable to decide about the trip."
     ],
     "point": "vacillate は決められず気持ちが揺れ動く。",
     "topic": "daily",
@@ -682,7 +694,13 @@
     "level": 9,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cd4a95d76139a5a1372bf4854700a8076d5ebfd36914c1a8777ace0c78896fc2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8x2v6k8x",

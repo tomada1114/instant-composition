@@ -215,7 +215,13 @@
     "level": 9,
     "grammar": ["phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d374cb50bb9579ef43778f876ebdc20a8eac3629755e2472eb046f7034e2e346",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4g6q5g5s",
@@ -285,19 +291,25 @@
   },
   {
     "id": "c_4h7d3y6d",
-    "ja": "あの更新は見せかけの価値かも。",
+    "ja": "あの更新は見かけ倒しかも。",
     "en": "That upgrade might be fool's gold.",
     "alternatives": [
-      "That upgrade may only look valuable.",
-      "That upgrade might have merely apparent value."
+      "That upgrade may just seem worthwhile.",
+      "That upgrade might not be truly valuable."
     ],
     "point": "fool's gold は価値があるようで実はないもの。",
     "topic": "tech",
     "subtopic": "tools",
-    "level": 9,
+    "level": 8,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a54a9f368fad6ccfbffe9b491080f9e34f309855a29444bbcd6295a97420bbd2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5d4c3d5a",
@@ -527,7 +539,13 @@
     "level": 9,
     "grammar": ["cleft-emphasis"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:28c621468ee0145fff41062935b9616e26e3172129f23eb9c6b9e9b79515fe8e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6z2m4s6c",

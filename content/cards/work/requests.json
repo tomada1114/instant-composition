@@ -162,7 +162,13 @@
     "level": 10,
     "grammar": ["mixed-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:21e6eb55ab2ef8534163882fdb01235371b54f8d15744e810cd3b7b1a062a938",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3y9m6v5h",
@@ -652,7 +658,7 @@
   },
   {
     "id": "c_7w7y5q7g",
-    "ja": "君がぼかしてたら私は職責を誤解した。",
+    "ja": "君が濁してたら私は君の職責を誤解した。",
     "en": "Had you hedged, I'd have misread your remit.",
     "alternatives": [
       "If you'd been evasive, I'd have misunderstood your role.",
@@ -664,7 +670,13 @@
     "level": 10,
     "grammar": ["third-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3ec8a7a27cf7b942ef1d51b7feaa5eeba366acaa3a92cd4d9780e4720834c5d5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7x8h3r9p",
@@ -896,7 +908,7 @@
   },
   {
     "id": "c_9x4v4e7x",
-    "ja": "君の依頼はほぼ白紙委任に当たる。",
+    "ja": "君が求めてるのはほぼ白紙委任だ。",
     "en": "What you seek borders on carte blanche.",
     "alternatives": [
       "You're asking for almost unrestricted authority.",
@@ -908,7 +920,13 @@
     "level": 10,
     "grammar": ["noun-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:36fcf953610e23b127ba07d9bd7a6b43f500dc837b64df7207de3298beb0c7e8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9y7s9a2b",

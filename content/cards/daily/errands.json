@@ -177,7 +177,13 @@
     "level": 8,
     "grammar": ["modal-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f0cd3178af12345bc1117a3c26fce6371710899c303378c460202a3078814dff",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3d2w6x4x",
@@ -521,7 +527,13 @@
     "level": 8,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:00064e9583d3af3c538efabb303f28e3e05f3a61fb11a86b8c01d4ac7e314ff2",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7u5x9p7q",
@@ -732,7 +744,7 @@
     "en": "The document you requested is beside the point.",
     "alternatives": [
       "The document you asked for is irrelevant.",
-      "Your requested document is not relevant to this matter."
+      "That document you requested isn't relevant."
     ],
     "point": "beside the point は問題の本筋と関係がない。",
     "topic": "daily",
@@ -740,7 +752,13 @@
     "level": 8,
     "grammar": ["relative-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:60a0d17b50645dc4a3928e61ef36320b703a594647d46660f1bc70eb4c3f62f6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9p2s8f9t",

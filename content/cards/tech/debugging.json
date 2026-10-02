@@ -164,7 +164,13 @@
     "level": 2,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fe0bc69f41663676bc771e3822280edb8520c20be651452b93f547f60827d50a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3c6u7c5y",
@@ -381,14 +387,20 @@
     "id": "c_5h4x8h9s",
     "ja": "画面は真っ黒だ。",
     "en": "The screen is black.",
-    "alternatives": ["The screen shows only black.", "All I see is black."],
+    "alternatives": ["The screen's completely black.", "The display is black."],
     "point": "black は画面全体が黒い状態。",
     "topic": "tech",
     "subtopic": "debugging",
     "level": 1,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e08e6682ac7be824ec284fbf308221c4afba4868ca1cc03a972705028a218ef1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5h9c2g7q",
@@ -502,10 +514,16 @@
     "point": "print logs はログを出力する。",
     "topic": "tech",
     "subtopic": "debugging",
-    "level": 2,
+    "level": 4,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a206187c487ca899d5dad20a007b54da28ab8e30694e298d744d3cf89d055305",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6x8u8k2m",
@@ -552,14 +570,20 @@
     "id": "c_7g8u6k9g",
     "ja": "私、入力できない。",
     "en": "I can't type.",
-    "alternatives": ["Typing isn't possible for me.", "I can't enter text."],
+    "alternatives": ["I can't enter text.", "I can't type anything."],
     "point": "can't で入力できない症状を伝える。",
     "topic": "tech",
     "subtopic": "debugging",
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:eb3d323d1f77698398afc43c524056924c7e904fbed2a0966bb1d1fef0da1e3e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7j5p5v5j",
@@ -613,7 +637,13 @@
     "level": 1,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e08fb7c716ec33725b0c05e439de6b4fb1beac1c741ca368d25b60a5ce2e1a5d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7x6k3t5y",

@@ -235,7 +235,7 @@
   },
   {
     "id": "c_5c4d9j5z",
-    "ja": "私は会議の変更に抵抗感がある。",
+    "ja": "私は会議をずらすのに抵抗がある。",
     "en": "I'm reluctant to reschedule the meeting.",
     "alternatives": [
       "I'm hesitant about moving the meeting.",
@@ -247,7 +247,13 @@
     "level": 6,
     "grammar": ["infinitives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d0ad2724b3470e616ea9f8e8c463dfba7cdecd905757e087910a8a31958940cf",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5g6w5f5s",
@@ -408,7 +414,13 @@
     "level": 1,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:251dc3e73195d4b3b38b27151f14de31a2682c58b827f4b7bebbfc6322119386",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6y4d7x9c",
@@ -475,11 +487,11 @@
   },
   {
     "id": "c_6z8u2r7j",
-    "ja": "私たちは日程をやり繰りしてる。",
-    "en": "We're juggling the dates.",
+    "ja": "我々は日程をやり繰りしてる。",
+    "en": "We're juggling the schedule.",
     "alternatives": [
-      "We're trying to fit the dates together.",
-      "We're working to balance the scheduling demands."
+      "We're juggling the dates.",
+      "We're trying to fit the dates together."
     ],
     "point": "juggle は複数の都合をやり繰りする。",
     "topic": "work",
@@ -487,7 +499,13 @@
     "level": 6,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:634c6690da9690e8ff8f4579f7b9eeb66e74ad55f095558e555c50f5bb000208",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6z9a2g5x",
@@ -727,13 +745,19 @@
     "ja": "私は今会える。",
     "en": "I can meet now.",
     "alternatives": ["I can meet right now.", "I'm able to meet now."],
-    "point": "can で昼の時間に会えると伝える。",
+    "point": "can で今すぐ会えると伝える。",
     "topic": "work",
     "subtopic": "scheduling",
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1d1829bba51ed7d67719a12abe91812d08ce3c963cd48b30cd5c92d5aaf05a69",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8p2d4u9a",
@@ -823,32 +847,44 @@
   },
   {
     "id": "c_9a3a2t5e",
-    "ja": "その締め切りは私たちが緩める。",
+    "ja": "我々がその期限を緩める。",
     "en": "We'll relax that deadline.",
     "alternatives": [
-      "We'll make that deadline less strict.",
-      "We're going to ease that deadline."
+      "We'll make that deadline flexible.",
+      "We won't enforce that deadline strictly."
     ],
     "point": "relax a deadline は締め切りを厳しくなくする。",
     "topic": "work",
     "subtopic": "scheduling",
-    "level": 6,
+    "level": 5,
     "grammar": ["future-forms"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3fe42fccb3199b6bbf0d26be3afb32b40e4200493a6e9a8023c2de1fcf0ca88f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9k8p2n5h",
     "ja": "空き時間がない。",
     "en": "There's no free time.",
-    "alternatives": ["No time is available.", "There aren't any free moments."],
+    "alternatives": ["There's no spare time.", "No free time is left."],
     "point": "time は数えないので there is。",
     "topic": "work",
     "subtopic": "scheduling",
     "level": 1,
     "grammar": ["there-is-are"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:181f2ba6d1576405ec03ba4c6f45049d732dcb2b6d37bc45fa9d52a5a4196743",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9q6y6y3q",

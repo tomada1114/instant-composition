@@ -118,7 +118,13 @@
     "level": 6,
     "grammar": ["present-perfect", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f240ee783f532036fefed3e2e2783c9d7537ee6f8fc18402a9e352dbc83cfd65",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3h6a4n7j",
@@ -153,7 +159,13 @@
     "level": 6,
     "grammar": ["causatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:681a1091c027cd43e35093aed36ff412cd497f152a1d2303a672b632c705dda1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3z4d6x5a",
@@ -551,7 +563,13 @@
     "level": 6,
     "grammar": ["future-forms"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:407b5ab9c503a6d8cab26fe79fe2b0ef2d90bbf88cfad568b5c80e1292553d1d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6u6d4z5n",
