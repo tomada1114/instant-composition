@@ -492,6 +492,19 @@
     }
   },
   {
+    "id": "c_6h6r5c7h",
+    "ja": "私、車で送れるよ。",
+    "en": "I can drive you there.",
+    "alternatives": ["I can give you a ride.", "I can take you by car."],
+    "point": "can で可能な手助けを申し出る。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 3,
+    "grammar": ["can-could-ability"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_6m8f3z4v",
     "ja": "空いていれば、ぜひ行くんだけど。",
     "en": "I'd love to, if I were free.",
@@ -730,6 +743,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9u8x3q3v",
+    "ja": "夕食より昼食が都合いい。",
+    "en": "Lunch works better than dinner.",
+    "alternatives": [
+      "Lunch is more convenient than dinner.",
+      "Lunch suits me better than dinner."
+    ],
+    "point": "works better は予定の都合がよりよい。",
+    "topic": "social",
+    "subtopic": "invitations",
+    "level": 3,
+    "grammar": ["comparatives-superlatives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9w3z8t7m",

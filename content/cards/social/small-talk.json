@@ -63,6 +63,22 @@
     }
   },
   {
+    "id": "c_2u9w9z5q",
+    "ja": "君、最近何を読んだ？",
+    "en": "What have you read lately?",
+    "alternatives": [
+      "What have you been reading lately?",
+      "What did you read recently?"
+    ],
+    "point": "lately と現在完了で最近の読書を尋ねる。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 3,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2v4y4d7e",
     "ja": "今週末、花火大会があるよ。",
     "en": "There's a fireworks show this weekend.",
@@ -105,6 +121,35 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_3e5s2m7j",
+    "ja": "帰ったら私に連絡して。",
+    "en": "Call me when you return.",
+    "alternatives": ["Phone me when you get back.", "Ring me when you return."],
+    "point": "未来の帰宅でも when 節は現在形。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 3,
+    "grammar": ["time-and-if-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_3j6e6m3j",
+    "ja": "この辺の魅力って分かる？",
+    "en": "Do you know what draws people here?",
+    "alternatives": [
+      "Do you know why people come here?",
+      "Any idea what attracts people here?"
+    ],
+    "point": "間接疑問は what draws の語順。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 5,
+    "grammar": ["indirect-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_3m5n4m7k",
@@ -727,6 +772,22 @@
     }
   },
   {
+    "id": "c_8v2c4t8w",
+    "ja": "私の行きつけは借金ある店。",
+    "en": "My regular's that shop in debt.",
+    "alternatives": [
+      "That indebted shop is my usual place.",
+      "I usually go to that indebted shop."
+    ],
+    "point": "in debt は借金があるという後ろからの説明。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 5,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_9b7a9g6x",
     "ja": "予報で私は予定を決めずにいた。",
     "en": "The forecast had me hedging my bets.",
@@ -791,6 +852,35 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9f6m9t4t",
+    "ja": "私、朝寝坊が楽しみだ。",
+    "en": "I'm excited to sleep in.",
+    "alternatives": [
+      "I can't wait to sleep in.",
+      "I'm looking forward to sleeping late."
+    ],
+    "point": "sleep in はいつもより遅くまで寝る。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 5,
+    "grammar": ["infinitives", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_9n7d3b8y",
+    "ja": "私、波を眺めたいな。",
+    "en": "I want to watch waves.",
+    "alternatives": ["I'd like to watch the waves.", "I feel like watching waves."],
+    "point": "want to do で希望を表す。",
+    "topic": "social",
+    "subtopic": "small-talk",
+    "level": 3,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9q9a6y3n",

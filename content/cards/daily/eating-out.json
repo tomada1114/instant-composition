@@ -127,6 +127,35 @@
     }
   },
   {
+    "id": "c_3d3d4x5t",
+    "ja": "売ってるパンはいい香りだ。",
+    "en": "Bread on offer smells heavenly.",
+    "alternatives": [
+      "The available bread smells wonderful.",
+      "The bread for sale smells divine."
+    ],
+    "point": "on offer は売られているという後ろからの説明。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_3e7f8s3f",
+    "ja": "彼女に支払いを頼んだ。",
+    "en": "I asked her to pay.",
+    "alternatives": ["I requested that she pay.", "I asked her to handle payment."],
+    "point": "ask 人 to do で人に行動を頼む。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 3,
+    "grammar": ["verb-object-to-do"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3j2w6j7m",
     "ja": "何か食べるものが欲しいな。",
     "en": "I want something to eat.",
@@ -229,6 +258,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4b8c2r8f",
+    "ja": "頼んだのは別の料理です。",
+    "en": "What I ordered was something else.",
+    "alternatives": [
+      "I ordered a different dish.",
+      "My order was for a different dish."
+    ],
+    "point": "what I ordered は私が注文したもの。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4f5q7f3z",
@@ -559,6 +604,22 @@
     }
   },
   {
+    "id": "c_7z5c4f6v",
+    "ja": "料理は別々に出される。",
+    "en": "Dishes are served separately.",
+    "alternatives": [
+      "Each dish is served separately.",
+      "The dishes come out separately."
+    ],
+    "point": "are served は出されるという受動態。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 3,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_8c8j7h7d",
     "ja": "このスープは塩辛い。",
     "en": "This soup tastes salty.",
@@ -660,6 +721,19 @@
     }
   },
   {
+    "id": "c_9f5w4h8h",
+    "ja": "私、注文を終えたよ。",
+    "en": "I finished ordering.",
+    "alternatives": ["I have finished placing my order.", "I'm done ordering."],
+    "point": "finish の後は ordering の形。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 3,
+    "grammar": ["gerunds"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_9g8t3u5p",
     "ja": "予約したほうがいいよ。",
     "en": "You should book ahead.",
@@ -677,6 +751,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9s5a3z6k",
+    "ja": "彼は注文が抜けたと言った。",
+    "en": "He said our order got overlooked.",
+    "alternatives": [
+      "He said they missed our order.",
+      "He said our order was overlooked."
+    ],
+    "point": "said の後で過去の抜けを伝える。",
+    "topic": "daily",
+    "subtopic": "eating-out",
+    "level": 5,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9v3a9c7r",

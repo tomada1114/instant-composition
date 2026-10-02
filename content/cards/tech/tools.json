@@ -60,6 +60,22 @@
     }
   },
   {
+    "id": "c_2r3w9b8u",
+    "ja": "彼らが隔離を理解してるか疑問。",
+    "en": "I doubt they know what hermetic means.",
+    "alternatives": [
+      "I'm not sure they understand what hermetic means.",
+      "They may not know what hermetic means."
+    ],
+    "point": "hermetic は外部環境に依存しない隔離状態。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3a7n4b5f",
     "ja": "時短のため、エイリアスにした。",
     "en": "I aliased it to save time.",
@@ -159,6 +175,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3q2z7b8n",
+    "ja": "私たち、設定で脱線しなきゃな。",
+    "en": "I wish we'd avoided yak shaving.",
+    "alternatives": [
+      "If only we hadn't done unnecessary setup work.",
+      "I regret our unnecessary detours during setup."
+    ],
+    "point": "yak shaving は本筋から外れる連鎖的な余計な作業。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["wishes-regrets"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_3s8s5s7g",
@@ -373,6 +405,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5z6x2s5m",
+    "ja": "私たち、設定触らなきゃよかった。",
+    "en": "We should've left well enough alone.",
+    "alternatives": [
+      "We shouldn't have tinkered with the settings.",
+      "We should've left the settings as they were."
+    ],
+    "point": "leave well enough alone は十分よい状態をいじらない。",
+    "topic": "tech",
+    "subtopic": "tools",
+    "level": 9,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_6e4w9f7h",

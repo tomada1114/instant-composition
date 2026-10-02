@@ -107,6 +107,19 @@
     }
   },
   {
+    "id": "c_3b7d2n8s",
+    "ja": "私、結論を飛ばした。",
+    "en": "I skipped the conclusion.",
+    "alternatives": ["I omitted the conclusion.", "I left the conclusion out."],
+    "point": "skip は扱わずに飛ばす。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 2,
+    "grammar": ["past-simple"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3d8e3y6h",
     "ja": "詳細は後で共有されます。",
     "en": "Details will be shared later.",
@@ -443,6 +456,32 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6k9t7j8j",
+    "ja": "私が実演します。",
+    "en": "I'll demonstrate it.",
+    "alternatives": ["I'm going to demonstrate it.", "I'll show how it works."],
+    "point": "demonstrate は実際に動かして見せる。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_6n7p4r7g",
+    "ja": "図は省くべきだよ。",
+    "en": "You should omit diagrams.",
+    "alternatives": ["You ought to omit diagrams.", "You should leave diagrams out."],
+    "point": "should は助言を表す。",
+    "topic": "work",
+    "subtopic": "presentations",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7b2y3n4k",

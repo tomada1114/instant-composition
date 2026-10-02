@@ -19,6 +19,22 @@
     }
   },
   {
+    "id": "c_2d4h6x7u",
+    "ja": "君が反対してたら私たちは見送った。",
+    "en": "Had you pushed back, we'd have shelved it.",
+    "alternatives": [
+      "If you'd objected, we would've set it aside.",
+      "We would've postponed it if you'd opposed it."
+    ],
+    "point": "Had you は if を使わない過去の仮定。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 9,
+    "grammar": ["third-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2h4h2z6x",
     "ja": "命名が紛らわしいと思った。",
     "en": "I found the naming confusing.",
@@ -123,6 +139,22 @@
     }
   },
   {
+    "id": "c_2r9w4b4b",
+    "ja": "私たちは重複処理を省くべきだ。",
+    "en": "We should weed out duplicate logic.",
+    "alternatives": [
+      "We ought to eliminate the duplicated logic.",
+      "We should get rid of redundant logic."
+    ],
+    "point": "weed out は不要なものを選んで取り除く。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2y6f8r3h",
     "ja": "ここに誤字があるよ。",
     "en": "There's a typo here.",
@@ -142,6 +174,22 @@
     }
   },
   {
+    "id": "c_2z7t8n5j",
+    "ja": "私たち、命名揃えるべきだった。",
+    "en": "We should've standardized the naming.",
+    "alternatives": [
+      "We ought to have made the naming consistent.",
+      "We should've used a consistent naming scheme."
+    ],
+    "point": "should have done は過去の行動への反省。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3a2w2t7x",
     "ja": "ケンに名前変更を頼んで。",
     "en": "Ask Ken to rename it.",
@@ -159,6 +207,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3n3c5d5x",
+    "ja": "私たちは行間を読むべきだった。",
+    "en": "We should've read between the lines.",
+    "alternatives": [
+      "We should've picked up on the implicit meaning.",
+      "We ought to have inferred what wasn't stated."
+    ],
+    "point": "read between the lines は言外の意味を読む。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 9,
+    "grammar": ["modal-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_3y8j9k4h",
@@ -197,6 +261,38 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_4k8r9p2x",
+    "ja": "彼は責任者を分かってないかも。",
+    "en": "I doubt he knows where responsibility lies.",
+    "alternatives": [
+      "I'm not sure he knows who is accountable.",
+      "He may not know who bears responsibility."
+    ],
+    "point": "doubt の中に knows、その中に where 節がある。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 9,
+    "grammar": ["nested-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_4q4h8m5d",
+    "ja": "私たち、検査してたら見抜けた。",
+    "en": "If we'd linted, we'd have caught it.",
+    "alternatives": [
+      "We would've spotted it if we'd run lint.",
+      "Running lint would've helped us catch it."
+    ],
+    "point": "過去に実現しなかった条件は if と had done。",
+    "topic": "tech",
+    "subtopic": "code-review",
+    "level": 7,
+    "grammar": ["third-conditional"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_4v4t7r4d",

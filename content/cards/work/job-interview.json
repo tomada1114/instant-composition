@@ -234,6 +234,19 @@
     }
   },
   {
+    "id": "c_4y4e6z7a",
+    "ja": "私、通勤しなきゃ。",
+    "en": "I have to commute.",
+    "alternatives": ["I must commute.", "I need to commute."],
+    "point": "have to は必要性を表す。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_4y9z2z9a",
     "ja": "もっと早く転職すればよかった。",
     "en": "I wish I'd changed jobs sooner.",
@@ -469,6 +482,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_7e5z9p7u",
+    "ja": "私、営業を学んでる。",
+    "en": "I'm learning sales.",
+    "alternatives": ["I'm studying sales.", "I'm learning how to sell."],
+    "point": "進行形で現在取り組んでいることを表す。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 2,
+    "grammar": ["progressive-aspect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7j6g3g7r",
@@ -811,5 +837,18 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "c_9x7m9r6s",
+    "ja": "研修はありますか？",
+    "en": "Is there training?",
+    "alternatives": ["Is training available?", "Do you offer training?"],
+    "point": "training は数えないので there is を使う。",
+    "topic": "work",
+    "subtopic": "job-interview",
+    "level": 2,
+    "grammar": ["there-is-are"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   }
 ]

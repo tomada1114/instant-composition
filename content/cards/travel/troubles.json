@@ -19,6 +19,19 @@
     }
   },
   {
+    "id": "c_2m3x9t7s",
+    "ja": "私の荷物はどこ？",
+    "en": "Where's my luggage?",
+    "alternatives": ["Where is my baggage?", "Where are my bags?"],
+    "point": "luggage は数えないので is を使う。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 2,
+    "grammar": ["wh-questions"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2n8w7a9f",
     "ja": "タクシー運転手に、ぼられた。",
     "en": "A taxi driver ripped me off.",
@@ -125,6 +138,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_3u6a8t5z",
+    "ja": "私、領事館へ行くよ。",
+    "en": "I'll visit the consulate.",
+    "alternatives": ["I'm going to the consulate.", "I'll go to the consulate."],
+    "point": "consulate は領事館。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 2,
+    "grammar": ["future-forms"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_3w9t2t2m",
@@ -693,6 +719,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8w5g4w8q",
+    "ja": "私、宿を探さなきゃ。",
+    "en": "I must find lodging.",
+    "alternatives": ["I must find somewhere to stay.", "I have to find lodging."],
+    "point": "lodging は宿泊先を指す。",
+    "topic": "travel",
+    "subtopic": "troubles",
+    "level": 2,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9c5c5w2h",

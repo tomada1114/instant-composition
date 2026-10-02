@@ -180,6 +180,22 @@
     }
   },
   {
+    "id": "c_3k3p6c3c",
+    "ja": "ここの本物らしさは見せかけだ。",
+    "en": "What passes for authenticity here is window dressing.",
+    "alternatives": [
+      "The supposed authenticity here is merely for show.",
+      "What's presented as authentic here is only superficial."
+    ],
+    "point": "pass for と window dressing で本物らしさを疑う。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 10,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3k4a3r4k",
     "ja": "写真を撮りに来ました。",
     "en": "I came here to take photos.",
@@ -765,6 +781,22 @@
     }
   },
   {
+    "id": "c_7y5v5b4k",
+    "ja": "私たちがぐずぐずしてたら今は立ち往生だ。",
+    "en": "Had we dallied, we'd be stranded now.",
+    "alternatives": [
+      "If we'd lingered, we'd be stuck now.",
+      "We'd be stranded now if we'd dawdled."
+    ],
+    "point": "過去の仮定と今の結果を結ぶ、dally はぐずぐずする。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 10,
+    "grammar": ["mixed-conditional", "inversion"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_8f3x5y2u",
     "ja": "この塔は修復済みです。",
     "en": "This tower has been restored.",
@@ -915,6 +947,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9q8h8y8f",
+    "ja": "彼女は遺跡が信じ難いほどすごいと言った。",
+    "en": "She said the ruins beggared belief.",
+    "alternatives": [
+      "She said the ruins were almost impossibly impressive.",
+      "She said the ruins were beyond belief."
+    ],
+    "point": "beggar belief は信じ難いほどすごい。",
+    "topic": "travel",
+    "subtopic": "sightseeing",
+    "level": 10,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9y4w7y9m",

@@ -42,6 +42,22 @@
     }
   },
   {
+    "id": "c_2e3c7y4r",
+    "ja": "私たちが出すのは試作品です。",
+    "en": "What we're shipping is a prototype.",
+    "alternatives": [
+      "We're releasing a prototype.",
+      "The product we're releasing is a prototype."
+    ],
+    "point": "what 節で出すものをひとまとまりにする。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["relative-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_2n4d8c7a",
     "ja": "ユーザーに試すよう頼んで。",
     "en": "Ask users to try it.",
@@ -667,6 +683,22 @@
     }
   },
   {
+    "id": "c_8p9g5j6p",
+    "ja": "公開前に私たちは需要を測った。",
+    "en": "We'd gauged demand before launch.",
+    "alternatives": [
+      "Before launch, we'd assessed demand.",
+      "We'd measured demand before releasing it."
+    ],
+    "point": "had gauged で公開より前の判断を表す。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["past-perfect"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_8y7m7r5b",
     "ja": "ユーザーが望むのは速い検索。",
     "en": "What users want is fast search.",
@@ -772,6 +804,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9w5k9j2d",
+    "ja": "新機能を試してもらえますか？",
+    "en": "Mind giving our feature a whirl?",
+    "alternatives": [
+      "Could you try out our feature?",
+      "Would you try our new feature?"
+    ],
+    "point": "give 人や物 a whirl は気軽に試す。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 7,
+    "grammar": ["requests-permission"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9x9g4h4c",

@@ -88,6 +88,22 @@
     }
   },
   {
+    "id": "c_3g2s6n4y",
+    "ja": "私は追加料金を払わないよ。",
+    "en": "I won't cough up extra fees.",
+    "alternatives": [
+      "I'm not going to pay extra charges.",
+      "I refuse to pay the additional fees."
+    ],
+    "point": "cough up は渋々お金を出す。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["future-forms", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3p8d7c2j",
     "ja": "もっと静かなら、昨夜眠れたのに。",
     "en": "If it were quieter, I'd have slept.",
@@ -280,6 +296,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5f2n7g8d",
+    "ja": "到着前に宿は満室だった。",
+    "en": "It'd filled up before I arrived.",
+    "alternatives": [
+      "The hotel was full before I arrived.",
+      "The hotel had filled up before my arrival."
+    ],
+    "point": "had filled up は到着より前に満室になったこと。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["past-perfect", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5j9b9r8g",
@@ -510,6 +542,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_6p2e8b9x",
+    "ja": "私の予約は勝手に取り消された。",
+    "en": "My reservation was canceled without authorization.",
+    "alternatives": [
+      "My booking was canceled without my permission.",
+      "They canceled my reservation without my consent."
+    ],
+    "point": "without authorization は許可なく。",
+    "topic": "travel",
+    "subtopic": "hotel",
+    "level": 6,
+    "grammar": ["passive-voice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_7g6j8h2g",

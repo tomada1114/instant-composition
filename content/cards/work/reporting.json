@@ -167,6 +167,38 @@
     }
   },
   {
+    "id": "c_3t2r8s3m",
+    "ja": "確認前に彼は引き下がっていた。",
+    "en": "He'd backed down before our review.",
+    "alternatives": [
+      "Before our review, he'd withdrawn his position.",
+      "He'd conceded before we reviewed it."
+    ],
+    "point": "back down は主張を引っ込める。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["past-perfect", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "c_3t6s3k6g",
+    "ja": "保留中の資金が足かせです。",
+    "en": "Funding on hold is a bottleneck.",
+    "alternatives": [
+      "The suspended funding is holding us up.",
+      "Funding on hold is slowing us down."
+    ],
+    "point": "on hold は保留中、bottleneck は進行の妨げ。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["post-modification"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3w4a9t5d",
     "ja": "不具合は修正されました。",
     "en": "The bug was fixed.",
@@ -828,6 +860,22 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_9f8n4b5e",
+    "ja": "私たちは損失を抑えたいです。",
+    "en": "We aim to contain the losses.",
+    "alternatives": [
+      "Our goal is to limit the losses.",
+      "We want to keep the losses down."
+    ],
+    "point": "contain は損失が広がるのを抑える。",
+    "topic": "work",
+    "subtopic": "reporting",
+    "level": 6,
+    "grammar": ["infinitives"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_9g4d4a3w",

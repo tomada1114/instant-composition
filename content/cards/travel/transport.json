@@ -60,6 +60,22 @@
     }
   },
   {
+    "id": "c_2y7v3z3c",
+    "ja": "乗り換えが私には難関だ。",
+    "en": "What stumps me is changing trains.",
+    "alternatives": [
+      "Changing trains is what confuses me.",
+      "What I find baffling is changing trains."
+    ],
+    "point": "stump は困らせて分からなくさせる。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 6,
+    "grammar": ["noun-clauses"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "c_3j2h5n9z",
     "ja": "電車は遅れた上に、運休になった。",
     "en": "Not only was it late, it was canceled.",
@@ -223,6 +239,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_5q8n8k3p",
+    "ja": "私たち、タクシーは避けるべき。",
+    "en": "We should steer clear of taxis.",
+    "alternatives": ["We ought to avoid taxis.", "We should keep away from taxis."],
+    "point": "steer clear of は関わらないよう避ける。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 6,
+    "grammar": ["modal-obligation-advice"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_5r5v8p9d",
@@ -496,6 +525,19 @@
         "at": "2026-09-29"
       }
     }
+  },
+  {
+    "id": "c_8e2z4m3d",
+    "ja": "私の定期はもう失効した。",
+    "en": "My pass has already lapsed.",
+    "alternatives": ["My pass has already expired.", "My pass is no longer valid."],
+    "point": "has lapsed は失効して今も使えない状態。",
+    "topic": "travel",
+    "subtopic": "transport",
+    "level": 6,
+    "grammar": ["tense-contrast"],
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "c_8f3u7z7u",
