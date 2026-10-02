@@ -320,7 +320,6 @@ const referenceKeys = dottedKeys(catalogs.get(LOCALE)).sort();
 const MESSAGE_KEYS = [
   "Metadata.title",
   "Metadata.description",
-  "Home.brand",
   "Home.soundOn",
   "Home.soundOff",
   "Home.streakEyebrow",
