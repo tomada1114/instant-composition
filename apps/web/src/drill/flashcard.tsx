@@ -142,7 +142,7 @@ export function CardBack({
         data-part="back-scroll"
         tabIndex={overflowing ? 0 : undefined}
         className={cn(
-          "-mx-2 flex min-h-0 flex-1 flex-col gap-5 overflow-y-auto px-2",
+          "-mx-2 -mb-2 flex min-h-0 flex-1 flex-col gap-5 overflow-y-auto px-2 pb-2",
           hidden && "invisible",
         )}
       >
