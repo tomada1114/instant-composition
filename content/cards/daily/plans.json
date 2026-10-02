@@ -640,14 +640,20 @@
     "id": "c_7m8m4s4r",
     "ja": "日程がかち合ってる。",
     "en": "There's a scheduling clash.",
-    "alternatives": ["The timing clashes.", "The schedules overlap."],
+    "alternatives": ["The schedules clash.", "The schedules conflict."],
     "point": "a scheduling clash は日程が重なること。",
     "topic": "daily",
     "subtopic": "plans",
-    "level": 5,
+    "level": 4,
     "grammar": ["there-is-are"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:442cdec7f74465cdbbaf6490b0dc8e2964c845c9073a23d9e28511155b980ded",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7t7r9d5q",
@@ -739,16 +745,25 @@
   },
   {
     "id": "c_8b4x4e3m",
-    "ja": "私は週末の予定を詰めてる。",
-    "en": "I'm sorting out our weekend.",
-    "alternatives": ["I'm arranging our weekend plans.", "I'm organizing our weekend."],
+    "ja": "私は皆の週末の予定を詰めてる。",
+    "en": "I'm sorting out our weekend plans.",
+    "alternatives": [
+      "I'm finalizing our weekend plans.",
+      "I'm working out our weekend plans."
+    ],
     "point": "sort out は予定を整理して決める。",
     "topic": "daily",
     "subtopic": "plans",
     "level": 5,
-    "grammar": ["progressive-aspect"],
+    "grammar": ["progressive-aspect", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e7b759cbed538388f1fbc696934310c41d772bc42aa1a3219610bc3acf8c54a4",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8d2a5e4k",
@@ -815,19 +830,25 @@
   },
   {
     "id": "c_9p7g7r8v",
-    "ja": "金曜の仮予定でいい？",
+    "ja": "我々は金曜を仮予定にしていい？",
     "en": "Could we pencil in Friday?",
     "alternatives": [
-      "Could we tentatively schedule Friday?",
+      "Can we tentatively schedule Friday?",
       "Can we put Friday down provisionally?"
     ],
     "point": "pencil in は変更の余地を残して予定に入れる。",
     "topic": "daily",
     "subtopic": "plans",
     "level": 5,
-    "grammar": ["requests-permission"],
+    "grammar": ["requests-permission", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c5ba2a3c31718e88d1ac531e8e105cda9410ff9ee2c85d098d600bd11f7cc895",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9v9n5a7e",

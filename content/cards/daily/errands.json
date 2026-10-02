@@ -329,16 +329,22 @@
   },
   {
     "id": "c_4j5e6a7w",
-    "ja": "ここに判を押してもらえる？",
+    "ja": "ここに判を押してくれる？",
     "en": "Could you stamp here?",
-    "alternatives": ["Could you put your stamp here?", "Would you stamp this spot?"],
+    "alternatives": ["Could you put your stamp here?", "Would you stamp right here?"],
     "point": "stamp は判を押すという動詞でも使う。",
     "topic": "daily",
     "subtopic": "errands",
-    "level": 4,
+    "level": 3,
     "grammar": ["requests-permission"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cd286591e6adce45a5c0d5658b44da0a4feaaa437330928db23531b4188fc065",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4r2a9z2s",
@@ -373,7 +379,13 @@
     "level": 4,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4bed399f36f2cf58d548569e1e57fbf41bbb365154bb70f8abef762feb50ce8e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5k3b4d9b",
@@ -724,7 +736,13 @@
     "level": 4,
     "grammar": ["present-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9b64366c03e7834286eaaa6d6ffeff0ed60bbcf974a211fbed406dcfb5efdc41",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8y3w4m3q",

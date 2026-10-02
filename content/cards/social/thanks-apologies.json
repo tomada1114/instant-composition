@@ -603,19 +603,6 @@
     }
   },
   {
-    "id": "c_6t7g8k5w",
-    "ja": "解決してくれてありがとう。",
-    "en": "Thanks, you've sorted this out.",
-    "alternatives": ["Thanks for resolving this.", "I appreciate your solving this."],
-    "point": "sort out は問題を整理して解決する。",
-    "topic": "social",
-    "subtopic": "thanks-apologies",
-    "level": 5,
-    "grammar": ["present-perfect"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_6y7z3w6x",
     "ja": "君のしてくれたことが、沁みたよ。",
     "en": "What you did really touched me.",
@@ -687,9 +674,15 @@
     "topic": "social",
     "subtopic": "thanks-apologies",
     "level": 5,
-    "grammar": ["time-and-if-clauses"],
+    "grammar": ["time-and-if-clauses", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d00546994ccc6052c7a4cf9f8ca83004079d8ddc7565ef023a8a2635d8a2ddee",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7r9e5e5g",
@@ -730,6 +723,28 @@
     "stamps": {
       "core": {
         "hash": "sha256:90b1bbc8f8d84eaa97cdd8c7af3ea18d68bb9623bfba228a1df43430fb9bc3c0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "c_7y4a5r6d",
+    "ja": "調整してくれてありがとう。",
+    "en": "Thanks for ironing things out.",
+    "alternatives": [
+      "Thanks for sorting things out.",
+      "Thank you for resolving things."
+    ],
+    "point": "iron out は問題や行き違いを解決する。",
+    "topic": "social",
+    "subtopic": "thanks-apologies",
+    "level": 5,
+    "grammar": ["gerunds", "phrasal-verbs"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:841f656f8618ce16836f786b133ed37f51290061c30704f39e5b98ff5b99674c",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       }
@@ -958,14 +973,20 @@
     "id": "c_9k9v5d3k",
     "ja": "誘ってくれてありがとう。",
     "en": "Thanks for asking me to join.",
-    "alternatives": ["Thanks for inviting me along.", "I appreciate your invitation."],
+    "alternatives": ["Thanks for inviting me along.", "Thank you for inviting me."],
     "point": "ask 人 to do で参加するよう誘う。",
     "topic": "social",
     "subtopic": "thanks-apologies",
-    "level": 5,
-    "grammar": ["verb-object-to-do"],
+    "level": 3,
+    "grammar": ["verb-object-to-do", "gerunds"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bdb1710b3fe8c4578ee3a3dfa4e2c0f792539576be8db72fe155176fac109998",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9s4h8n6e",

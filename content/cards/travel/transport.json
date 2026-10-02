@@ -267,16 +267,22 @@
     "ja": "私はもうカードに入金した。",
     "en": "I've already topped up my card.",
     "alternatives": [
-      "I've already refilled my travel card.",
-      "I've already loaded money onto my card."
+      "I've already reloaded my card.",
+      "I've already recharged my transit card."
     ],
     "point": "top up は残高を追加する。",
     "topic": "travel",
     "subtopic": "transport",
     "level": 5,
-    "grammar": ["tense-contrast"],
+    "grammar": ["present-perfect", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4a2433c86f9b79a71ba0b2c5c905125cce4270a1d699cc3ea324b4cfe5c4d111",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5f9d2u3t",
@@ -486,19 +492,22 @@
   },
   {
     "id": "c_6n8j8x9z",
-    "ja": "私は彼女に乗換を頼んだ。",
+    "ja": "私、彼女に乗り換えを頼んだ。",
     "en": "I asked her to change trains.",
-    "alternatives": [
-      "I requested that she switch trains.",
-      "I asked her to switch trains."
-    ],
+    "alternatives": ["I asked her to switch trains.", "I requested she change trains."],
     "point": "ask 人 to do は行動を頼む。",
     "topic": "travel",
     "subtopic": "transport",
     "level": 5,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:798a0960b70a73c5a3928354f68c2a1a0a20bbad103c82b20d4b098f680ed948",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6t5a7q5r",
@@ -789,9 +798,15 @@
     "topic": "travel",
     "subtopic": "transport",
     "level": 5,
-    "grammar": ["past-perfect"],
+    "grammar": ["past-perfect", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:95cd4ef5a1d16bd5bc88aaff46b4eb6214726ce25872863f6dae4a962731ace9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8x3u4t6n",

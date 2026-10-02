@@ -717,15 +717,24 @@
   {
     "id": "c_5w7c8t2e",
     "ja": "この歩道の方が空いてる。",
-    "en": "This path is less crowded.",
-    "alternatives": ["This path has fewer people.", "This path isn't as crowded."],
+    "en": "This sidewalk is less crowded.",
+    "alternatives": [
+      "This sidewalk has fewer people.",
+      "This sidewalk isn't as crowded."
+    ],
     "point": "less crowded は人がより少なく混雑していない。",
     "topic": "travel",
     "subtopic": "directions",
     "level": 3,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:519195b6c51d08e9d5cbee58409bd0fcfa6d1e8c20f9591277071a25f4e06ee6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6h7e7s9y",
@@ -815,15 +824,21 @@
   {
     "id": "c_7h6r5u2m",
     "ja": "この道はどこに続く？",
-    "en": "Where does this trail lead?",
-    "alternatives": ["Where does this path go?", "Where is this trail headed?"],
+    "en": "Where does this road lead?",
+    "alternatives": ["Where does this road go?", "Where will this road take me?"],
     "point": "lead は道がある場所へ続くこと。",
     "topic": "travel",
     "subtopic": "directions",
     "level": 3,
     "grammar": ["wh-questions"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:919a491afe82ea0f251264d8d819ef5592141d0888dc419bbd81168c358c7145",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7y5r9g5z",

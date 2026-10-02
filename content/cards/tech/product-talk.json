@@ -387,7 +387,13 @@
     "level": 10,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:78e6aa1ac779f4ca1bedf9bc83ac19987c7b836d278ca99ac3489194ae6cfa28",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5h8a6d8f",
@@ -427,6 +433,28 @@
         "hash": "sha256:8204a04572e98953e915dc79d12da8da32aa7052f7980f462050a7a8c74b8542",
         "perspectivesVersion": 4,
         "at": "2026-09-29"
+      }
+    }
+  },
+  {
+    "id": "c_5u4m4z5z",
+    "ja": "彼女は注目と需要を混同するなと言った。",
+    "en": "She said not to conflate attention with demand.",
+    "alternatives": [
+      "She said not to confuse attention with demand.",
+      "She said not to mistake attention for demand."
+    ],
+    "point": "conflate A with B は別のものを混同する。",
+    "topic": "tech",
+    "subtopic": "product-talk",
+    "level": 9,
+    "grammar": ["reported-speech"],
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:4cea8e72ac6228d1651272df66219ee496f6b722d96746339f0b6bc0277c4124",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
       }
     }
   },
@@ -784,28 +812,12 @@
     }
   },
   {
-    "id": "c_8w7y7m5m",
-    "ja": "彼女は露出を裏付けと偽るなと言った。",
-    "en": "She said visibility shouldn't masquerade as validation.",
-    "alternatives": [
-      "She said exposure shouldn't pass for validation.",
-      "She said visibility shouldn't be misrepresented as validation."
-    ],
-    "point": "masquerade as は別のものになりすます、validation は裏付け。",
-    "topic": "tech",
-    "subtopic": "product-talk",
-    "level": 10,
-    "grammar": ["reported-speech"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_8x7u4k4p",
     "ja": "私たちが折れてたら今は客が激減だ。",
     "en": "Had we capitulated, we'd now be hemorrhaging customers.",
     "alternatives": [
-      "If we'd given in, we'd now be losing customers rapidly.",
-      "We'd now be shedding customers fast if we'd capitulated."
+      "If we'd given in, we'd now be hemorrhaging customers.",
+      "We'd be hemorrhaging customers now had we capitulated."
     ],
     "point": "過去の仮定で今の結果を表す、hemorrhage は大量に失う。",
     "topic": "tech",
@@ -813,7 +825,13 @@
     "level": 10,
     "grammar": ["mixed-conditional", "inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ca57300a5227139d93b26a79a69050896ee947c74d0d5d63000b51318e36540e",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8y7m7r5b",

@@ -413,7 +413,13 @@
     "level": 3,
     "grammar": ["be-and-present-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:13034a840c368db8889db023ec451ea0d1c21dc67e6a5346f59d23831d40a250",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_5g7w7f7s",
@@ -798,27 +804,39 @@
     "id": "c_8h6s6r3a",
     "ja": "この椅子の方が楽だ。",
     "en": "This chair is more comfortable.",
-    "alternatives": ["This chair feels comfier.", "This chair is less uncomfortable."],
+    "alternatives": ["This chair feels comfier.", "This chair feels more comfortable."],
     "point": "more comfortable はより座り心地がよい。",
     "topic": "work",
     "subtopic": "office-life",
     "level": 3,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0898ede931032c2cf87d2f4dab30de50f2b224362d71f02352772793912b2edf",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8q7h9u5v",
     "ja": "昼食後は私に電話して。",
-    "en": "Call me when lunch ends.",
-    "alternatives": ["Phone me when lunch is over.", "Ring me after lunch."],
+    "en": "Call me when lunch is over.",
+    "alternatives": ["Call me after lunch.", "Phone me once lunch is over."],
     "point": "未来の昼食後でも when 節は現在形。",
     "topic": "work",
     "subtopic": "office-life",
     "level": 3,
     "grammar": ["time-and-if-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ed2c7e93565ca1fe61b9440a1ade2ee924ffe17dedbb0c36f45caf78195201f1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8w2h8w6j",

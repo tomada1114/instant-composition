@@ -152,14 +152,20 @@
     "id": "c_3c3v8h5a",
     "ja": "皿二枚持ってきてね。",
     "en": "Please bring two plates.",
-    "alternatives": ["Please fetch two plates.", "Two plates here, please."],
+    "alternatives": ["Bring me two plates.", "Get me two plates."],
     "point": "bring は話し手の所へ持ってくる。",
     "topic": "daily",
     "subtopic": "eating-out",
     "level": 1,
     "grammar": ["imperatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c20c0109730de61b876467a58738deeff8378e6e8b47186ba8ad45c474ef0d00",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3d3d4x5t",
@@ -194,7 +200,13 @@
     "level": 1,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:67fbfd461b2c5374aecfd68e00659c5e1b81946f13142e8ad02596dc0c180cf5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3e7f8s3f",
@@ -302,16 +314,22 @@
   },
   {
     "id": "c_3q8w4u9f",
-    "ja": "私は外で食事する方がいい。",
-    "en": "I prefer to dine outside.",
-    "alternatives": ["I'd rather eat outside.", "Eating outdoors is my preference."],
+    "ja": "私は外で食べる方がいい。",
+    "en": "I prefer to eat outside.",
+    "alternatives": ["I'd rather eat outside.", "I prefer eating outdoors."],
     "point": "prefer to はこちらの方がよいという選択。",
     "topic": "daily",
     "subtopic": "eating-out",
-    "level": 4,
+    "level": 3,
     "grammar": ["infinitives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ac47cabf1e757fc2703647cb1d5e6bf3fe6bd3e7ccecd5406aeb66ea58b77d98",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3u4r6r6z",
@@ -365,7 +383,13 @@
     "level": 4,
     "grammar": ["comparatives-superlatives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a490f2ac49811095d81d2b14a60d892244f0126c3ff6f95746a5cb7883f990ac",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4b5j9c3q",
@@ -709,7 +733,13 @@
     "level": 1,
     "grammar": ["wh-questions"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:6a56dceb0a901ba9fb3c0d739eee7eddc1262fcea10ab6de8e046bfae77d073b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7d4r3r2m",
@@ -785,7 +815,13 @@
     "level": 4,
     "grammar": ["post-modification"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:965b82423e2c7c78435384b989a6c6c83a8e82e0c5ebb90a00b5f47dbca96e75",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_7v2x9f8j",

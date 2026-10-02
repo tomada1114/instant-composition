@@ -485,14 +485,20 @@
     "id": "c_6c7z4j5n",
     "ja": "私、よく眠れた。",
     "en": "I slept well.",
-    "alternatives": ["I got restful sleep.", "My sleep was restful."],
+    "alternatives": ["I had a good sleep.", "I slept soundly."],
     "point": "slept は sleep の過去形。",
     "topic": "daily",
     "subtopic": "health",
     "level": 2,
     "grammar": ["past-simple"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9a17b579c6dd5c71e2cb1576434c8412dce01ebed95feb0b834e096ee42ad80f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6g5z7q7k",
@@ -887,19 +893,6 @@
     }
   },
   {
-    "id": "c_8f4k5d2u",
-    "ja": "どこが痛いの？",
-    "en": "Where does it hurt?",
-    "alternatives": ["Where's the pain?", "Which part hurts?"],
-    "point": "痛む場所を尋ねるときは Where does it hurt。",
-    "topic": "daily",
-    "subtopic": "health",
-    "level": 2,
-    "grammar": ["wh-questions"],
-    "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
     "id": "c_8h8c8j4h",
     "ja": "たっぷり寝たのに、ぐったりだ。",
     "en": "Despite a full night's sleep, I'm wiped out.",
@@ -925,14 +918,20 @@
     "id": "c_8k7v9c7b",
     "ja": "私の足が震えてる。",
     "en": "My legs are shaking.",
-    "alternatives": ["My legs are trembling.", "I have trembling legs."],
+    "alternatives": ["My legs are trembling.", "My legs are shaky."],
     "point": "are shaking で今震えていると伝える。",
     "topic": "daily",
     "subtopic": "health",
-    "level": 2,
+    "level": 1,
     "grammar": ["progressive-aspect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4e7a1d577c1ec1b85e718b7823b3881c9cbad0aaf862b6f5ec0ab6c28252a36b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8y2z9m6u",

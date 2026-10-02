@@ -13,7 +13,13 @@
     "level": 7,
     "grammar": ["infinitives"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2dcf39f7a82bad174752ebef4b0931f3e7a445a67682c4e5ea015335fdfac34a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2q4q6w2f",
@@ -38,17 +44,20 @@
     "id": "c_2r7s2n3w",
     "ja": "私は現実派と言えるかも。",
     "en": "I'd describe myself as pragmatic.",
-    "alternatives": [
-      "I'd say I'm a practical thinker.",
-      "I see myself as a pragmatist."
-    ],
+    "alternatives": ["I'd say I'm pragmatic.", "I'd call myself a pragmatist."],
     "point": "I'd describe myself で自己評価を控えめにする。",
     "topic": "work",
     "subtopic": "job-interview",
     "level": 7,
     "grammar": ["hedging-softening"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:081f5a439ad5aa124a67a364200941286f4cf4f7b461205311ec43a228d51283",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3c3a2q4d",
@@ -781,7 +790,7 @@
     "en": "I've been spearheading our expansion.",
     "alternatives": [
       "I've been leading our expansion efforts.",
-      "I've been heading up our expansion."
+      "I've been heading up our business expansion."
     ],
     "point": "spearhead は先頭に立って推進する。",
     "topic": "work",
@@ -789,7 +798,13 @@
     "level": 7,
     "grammar": ["present-perfect-continuous"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ab8208e869b59b3d76316649462601dd7196300a810d71de916f76e483115dae",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8w9w7e5j",

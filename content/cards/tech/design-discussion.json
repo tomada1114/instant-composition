@@ -32,18 +32,24 @@
     "point": "mistook A for B は A を B と誤認した、panacea は万能薬。",
     "topic": "tech",
     "subtopic": "design-discussion",
-    "level": 9,
-    "grammar": ["tense-contrast"],
+    "level": 8,
+    "grammar": ["articles-and-countability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:73321468640642cbd2df3d4fc65f5f498fed98fe57b584dcb23807b87eb6e197",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2h2b7v8r",
-    "ja": "私は彼女に表分割を頼んだ。",
+    "ja": "私、彼女に表の分割を頼んだ。",
     "en": "I asked her to split tables.",
     "alternatives": [
-      "I requested that she divide tables.",
-      "I asked her to divide tables."
+      "I asked her to divide tables.",
+      "I asked her to separate the tables."
     ],
     "point": "ask 人 to do で表を分割するよう頼む。",
     "topic": "tech",
@@ -51,7 +57,13 @@
     "level": 5,
     "grammar": ["verb-object-to-do"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5c75120a97f248e877bdcc478d1bcd60721e0dce9099fb609712151cf4729c9b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2m5c2c2k",
@@ -437,8 +449,8 @@
     "ja": "私は案を既に比較してた。",
     "en": "I'd already weighed the options.",
     "alternatives": [
-      "I'd already considered the alternatives.",
-      "I'd already assessed our options."
+      "I'd already compared the options.",
+      "I'd already evaluated the alternatives."
     ],
     "point": "weigh the options は選択肢を比較検討する。",
     "topic": "tech",
@@ -446,7 +458,13 @@
     "level": 5,
     "grammar": ["past-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4df9496888c2663f0a6acdc3ef3161088d5e39370ada92b923602e08c93a1c10",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4z5h3c3p",
@@ -735,9 +753,15 @@
     "topic": "tech",
     "subtopic": "design-discussion",
     "level": 5,
-    "grammar": ["past-simple"],
+    "grammar": ["past-simple", "phrasal-verbs"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:17bdca6adeaad7d79851dababdc88f6c168211a024395916342797551503a316",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_8h9b2r9h",
@@ -801,11 +825,11 @@
   },
   {
     "id": "c_9h8f7g7c",
-    "ja": "私は高くついた勝利を悔やむ。",
+    "ja": "私は割に合わぬ勝利を悔やむ。",
     "en": "I wish I'd forgone that Pyrrhic victory.",
     "alternatives": [
-      "I regret securing that ruinously costly victory.",
-      "If only I'd avoided that ruinously costly win."
+      "I wish I'd avoided that costly victory.",
+      "I regret securing that ruinously costly victory."
     ],
     "point": "a Pyrrhic victory は代償が大きく利益が帳消しになる勝利。",
     "topic": "tech",
@@ -813,7 +837,13 @@
     "level": 9,
     "grammar": ["wishes-regrets"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:f33b6039b03eecc98f81d6efc625b0679db2f3d7436fc6105740c59e397a6b0f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9n5x8r4x",
@@ -836,19 +866,25 @@
   },
   {
     "id": "c_9p7p7r7x",
-    "ja": "私は設計の袋小路を予想せず。",
-    "en": "Little did I foresee this design's deadlock.",
+    "ja": "私は設計の袋小路を予想しなかった。",
+    "en": "Little did I foresee this design's dead end.",
     "alternatives": [
-      "I never anticipated this design's deadlock.",
+      "I never anticipated this design's dead end.",
       "I didn't foresee this design becoming a dead end."
     ],
-    "point": "Little を先頭にすると did I の語順、foresee は予見する。",
+    "point": "Little を先頭にすると did I の語順になる。",
     "topic": "tech",
     "subtopic": "design-discussion",
     "level": 9,
     "grammar": ["inversion"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5c4e935e84b7cd989175a40fae69d5e756e8a42e75ec77b96ba303b1518f6ab1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_9s3t9h5e",

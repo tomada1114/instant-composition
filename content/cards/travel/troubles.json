@@ -80,11 +80,11 @@
   },
   {
     "id": "c_2v4e8y4r",
-    "ja": "彼は旅の危うさを知らないかも。",
-    "en": "I doubt he grasps how precarious this is.",
+    "ja": "彼が旅の危うさを分かるとは思えない。",
+    "en": "I doubt he grasps how precarious travel is.",
     "alternatives": [
-      "I'm unsure he understands how risky this is.",
-      "He may not appreciate how precarious our situation is."
+      "I'm unsure he understands how risky travel is.",
+      "He may not grasp how precarious this trip is."
     ],
     "point": "doubt の中に grasps、その中に how 節、precarious は危うい。",
     "topic": "travel",
@@ -92,7 +92,13 @@
     "level": 9,
     "grammar": ["nested-clauses"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c421447288fdf20d66c7e7d8a4c5ab5c292e8c9f73a6dcc54dd167f55de150d3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_2y7y5k4n",
@@ -122,8 +128,8 @@
     "ja": "足止めでも私は卑屈にならない。",
     "en": "Though stranded, I won't grovel.",
     "alternatives": [
-      "Though stranded, I won't plead submissively.",
-      "Being stranded won't make me abase myself."
+      "I won't grovel, even though I'm stranded.",
+      "I refuse to grovel, though I'm stranded."
     ],
     "point": "grovel は卑屈に振る舞って頼む。",
     "topic": "travel",
@@ -131,7 +137,13 @@
     "level": 9,
     "grammar": ["concession-contrast"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:464f28c91cd165251dac2038d63c10be45e1e71fb8112be62710c8df946e5db6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3m8g6f3j",
@@ -258,19 +270,25 @@
   },
   {
     "id": "c_4c5b3q8m",
-    "ja": "私は既に口上を鵜呑みにした。",
+    "ja": "私は既に口上を鵜呑みにしてた。",
     "en": "I'd already swallowed their spiel.",
     "alternatives": [
-      "I'd already uncritically believed their sales pitch.",
-      "I'd already accepted their patter at face value."
+      "I'd already bought their sales pitch.",
+      "I'd already taken their pitch at face value."
     ],
     "point": "swallow a spiel は口上を鵜呑みにする。",
     "topic": "travel",
     "subtopic": "troubles",
-    "level": 9,
+    "level": 8,
     "grammar": ["past-perfect"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:63f7285ac4463feec1fa8ea88b7358e6c3b3dbe9491890775f2285e65cb0840c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_4d5j4t4z",

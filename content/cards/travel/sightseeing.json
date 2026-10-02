@@ -140,7 +140,7 @@
   },
   {
     "id": "c_2v8k4j5k",
-    "ja": "日焼け止めは持つべき。",
+    "ja": "君は日焼け止めを持つべき。",
     "en": "You should pack sunscreen.",
     "alternatives": ["You ought to bring sunscreen.", "It's best to take sunscreen."],
     "point": "sunscreen は日焼け止め。",
@@ -149,20 +149,32 @@
     "level": 3,
     "grammar": ["modal-obligation-advice"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:d8f810390409da58b8f456b4f4233c4c281987b5c4cd62847adff6811203c5f3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3a7x8h7b",
     "ja": "私は遺跡が見える。",
-    "en": "I can see ruins.",
-    "alternatives": ["Ruins are visible to me.", "I have ruins in view."],
+    "en": "I can see the ruins.",
+    "alternatives": ["I can spot the ruins.", "I can see some ruins."],
     "point": "can see は目に入って見えること。",
     "topic": "travel",
     "subtopic": "sightseeing",
     "level": 3,
     "grammar": ["can-could-ability"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bf54f3778378eb6fab621437ab7f287080e18e382741002b154b59ae023015cd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_3g6c2w5g",
@@ -734,14 +746,20 @@
     "id": "c_6j4u6q2z",
     "ja": "私は寺巡りが好き。",
     "en": "I enjoy visiting temples.",
-    "alternatives": ["I like touring temples.", "Visiting temples appeals to me."],
+    "alternatives": ["I like visiting temples.", "I like touring temples."],
     "point": "enjoy の後は visiting の形。",
     "topic": "travel",
     "subtopic": "sightseeing",
     "level": 3,
     "grammar": ["gerunds"],
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:4d9449e83d251b131fdae2a5518bc03e76a2f2fdb9b706c9cfa09571ce0dcf5d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "c_6u3j6j8y",
