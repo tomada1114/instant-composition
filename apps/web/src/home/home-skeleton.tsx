@@ -27,8 +27,8 @@ export function HomeSkeleton(): ReactElement {
         <>
           <div className="h-11" />
           <div className="my-auto flex flex-col gap-7">
-            <div className="h-28 w-40 rounded-tile bg-card" />
-            <div className="h-9 w-full rounded-bar bg-card" />
+            <div className="h-28 w-40 rounded-card bg-card" />
+            <div className="h-9 w-full rounded-full bg-card" />
           </div>
           <div className="-mx-1 mt-auto h-64 rounded-card bg-card" />
         </>

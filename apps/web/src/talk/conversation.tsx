@@ -26,7 +26,7 @@ function YourLine({
           data-part="your-english"
           className={cn(
             "flex items-center gap-2 font-latin transition-colors duration-160",
-            lit && "text-accent",
+            lit && "text-good-ink",
           )}
         >
           {turn.english}

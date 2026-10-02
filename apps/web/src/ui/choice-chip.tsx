@@ -5,8 +5,8 @@ import { cn } from "../lib/utils";
 import { CheckGlyph } from "./glyphs";
 
 /**
- * `chip/choice`: a pressable pill, selected as a white fill with a check —
- * never the accent. 36 tall, its hit area grown to 44.
+ * `chip/choice`: a pressable pill on `raised`, selected as an ink border with
+ * a check — never a colour. 36 tall, its hit area grown to 44.
  */
 export function ChoiceChip({
   label,
@@ -26,9 +26,9 @@ export function ChoiceChip({
       disabled={disabled}
       onClick={onToggle}
       className={cn(
-        "relative flex h-9 items-center gap-1.5 rounded-full px-3.5 text-label",
-        "before:absolute before:-inset-y-1 before:inset-x-0 before:content-['']",
-        selected ? "bg-primary text-primary-foreground" : "bg-card text-foreground",
+        "relative flex h-9 items-center gap-1.5 rounded-full border-2 bg-raised px-3.5 text-label text-foreground",
+        "before:absolute before:-inset-y-1.5 before:-inset-x-0.5 before:content-['']",
+        selected ? "border-foreground" : "border-border enabled:hover:border-input",
         "disabled:text-disabled",
       )}
     >

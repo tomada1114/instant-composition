@@ -44,7 +44,7 @@ function WelcomeStep({
       {children}
       <div className="sticky bottom-0 -mx-4 mt-auto flex flex-col gap-3 bg-background px-4 pt-2 pb-[calc(0.75rem+var(--safe-bottom))]">
         {failed ? (
-          <p role="alert" className="rounded-tile bg-raised px-4 py-3">
+          <p role="alert" className="rounded-control bg-raised px-4 py-3">
             {t("saveFailed")}
           </p>
         ) : null}

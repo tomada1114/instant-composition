@@ -22,7 +22,7 @@ export function InfoTip({
         onClick={() => {
           setOpen((value) => !value);
         }}
-        className="-my-3 flex size-11 items-center justify-center text-muted-foreground active:text-foreground aria-expanded:text-foreground"
+        className="-my-3 flex size-11 items-center justify-center text-muted-foreground hover:text-foreground active:text-foreground aria-expanded:text-foreground"
       >
         <InfoGlyph className="size-4" />
       </button>

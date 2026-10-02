@@ -78,7 +78,7 @@ export function TimeZoneRow({
           onChange={(event) => {
             save(event.target.value);
           }}
-          className="min-w-0 max-w-[60%] truncate bg-background font-mono text-mono-sm text-foreground"
+          className="min-w-0 max-w-[60%] truncate bg-background font-latin text-count text-foreground"
         >
           {choices.map((choice) => (
             <option key={choice} value={choice}>

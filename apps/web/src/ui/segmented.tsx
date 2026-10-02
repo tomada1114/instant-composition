@@ -3,8 +3,8 @@ import { useRef, type KeyboardEvent, type ReactElement } from "react";
 import { cn } from "../lib/utils";
 
 /**
- * `segmented`: one choice of a few, the chosen segment white on the raised
- * track. `columns` wraps more options than a phone's width holds into rows
+ * `segmented`: one choice of a few, the chosen segment a `surface` face in an
+ * ink border on the raised track; under the pointer the others take the face. `columns` wraps more options than a phone's width holds into rows
  * of that many; `value` null leaves every segment unchosen. `disabled`
  * shows the value without offering the others: the chosen segment keeps its
  * fill, the rest turn `text-disabled`, and none of them responds.
@@ -72,7 +72,7 @@ export function Segmented<T extends string | number>({
       aria-label={label}
       aria-disabled={disabled || undefined}
       className={cn(
-        "rounded-control bg-card p-1",
+        "rounded-control bg-raised p-1",
         columns === undefined ? "flex" : "grid gap-y-1",
       )}
       style={
@@ -100,12 +100,12 @@ export function Segmented<T extends string | number>({
             onChange(option.value);
           }}
           className={cn(
-            "h-11 flex-1 rounded-tile font-display text-action",
+            "h-11 flex-1 rounded-control border-2 font-display text-action",
             option.value === value
-              ? "bg-primary text-primary-foreground"
+              ? "border-foreground bg-card text-foreground"
               : disabled
-                ? "text-disabled"
-                : "text-foreground",
+                ? "border-transparent text-disabled"
+                : "border-transparent text-foreground hover:bg-card",
           )}
         >
           {option.text}

@@ -39,7 +39,7 @@ function TalkStrip({
             <CloseGlyph />
           </IconButton>
         )}
-        <span className="font-mono text-mono-sm text-muted-foreground">
+        <span className="font-latin text-count text-muted-foreground">
           {t("progress", { current: turn, total: TALK_TURNS })}
         </span>
       </div>

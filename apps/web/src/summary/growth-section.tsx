@@ -52,7 +52,7 @@ function Stat({
 }: Readonly<{ value: number; label: string }>): ReactElement {
   return (
     <div className="flex flex-col gap-1">
-      <span className="font-display text-number-md text-accent">{value}</span>
+      <span className="font-display text-number-md text-good-ink">{value}</span>
       <span className="text-label">{label}</span>
     </div>
   );
@@ -86,7 +86,7 @@ export function GrowthSection({
             render={(row) => (
               <>
                 <span className="flex-1 truncate">{row.prompt}</span>
-                <span className="shrink-0 font-mono text-mono-sm">
+                <span className="shrink-0 font-latin text-count">
                   {row.kind === "faster"
                     ? t("delta", { seconds: row.deltaMs / 1000 })
                     : t("fixedRow")}

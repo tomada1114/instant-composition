@@ -91,7 +91,7 @@ function BackFooter({
   return (
     <p className="flex justify-end">
       {fast ? (
-        <span ref={mark} className="font-display text-figure-sm text-accent">
+        <span ref={mark} className="font-display text-figure-sm text-good-ink">
           {t("fast", { seconds })}
         </span>
       ) : (
@@ -147,7 +147,7 @@ export function CardBack({
           lang="en"
           className={cn(
             "font-latin text-answer transition-colors duration-160",
-            feedback?.result === "ok" && "text-accent",
+            feedback?.result === "ok" && "text-good-ink",
             feedback?.result === "ng" && "text-muted-foreground",
           )}
         >
@@ -159,7 +159,7 @@ export function CardBack({
               <li
                 key={alternative}
                 lang="en"
-                className="border-b border-border py-3 font-latin text-alt text-soft"
+                className="border-b border-border py-3 font-latin text-alt text-muted-foreground"
               >
                 {alternative}
               </li>

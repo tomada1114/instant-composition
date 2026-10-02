@@ -23,9 +23,10 @@ type AnswerFieldProps = Readonly<{
 }>;
 
 /**
- * `designing-ui`'s `answer-field`: an underline and no border, growing from
- * one line, at most 300 characters. Enter sends instead of breaking the line.
- * Set at 16 (`text-alt`), since iOS Safari zooms the page into a smaller field.
+ * `designing-ui`'s `answer-field`: a `surface` field in a 2px control border,
+ * growing from one line, at most 300 characters. Enter sends instead of
+ * breaking the line. Set at 16 (`text-body`), since iOS Safari zooms the page
+ * into a smaller field.
  */
 export function AnswerField({
   value,
@@ -72,7 +73,7 @@ export function AnswerField({
         endedAt.current = event.timeStamp;
       }}
       className={cn(
-        "field-sizing-content min-h-11 w-full resize-none rounded-none border-0 border-b border-border bg-transparent py-2 text-alt text-foreground outline-none placeholder:text-muted-foreground focus-visible:border-foreground disabled:text-muted-foreground",
+        "field-sizing-content min-h-11 w-full resize-none rounded-control border-2 border-input bg-card px-4 py-3 text-body text-foreground placeholder:text-muted-foreground enabled:hover:bg-raised disabled:text-disabled",
         className,
       )}
     />

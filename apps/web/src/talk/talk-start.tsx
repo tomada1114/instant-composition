@@ -27,7 +27,7 @@ export function TalkStart({
       </h1>
       <p className="my-auto flex flex-col items-center gap-2">
         <span className="font-display text-number-xl">{TALK_TURNS}</span>
-        <span className="font-mono text-mono-sm text-muted-foreground">
+        <span className="font-latin text-count text-muted-foreground">
           {t("turns")}
         </span>
       </p>

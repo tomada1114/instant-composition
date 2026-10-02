@@ -26,7 +26,8 @@ export function StreakBlock({
           <span
             className={cn(
               "font-display text-number-lg",
-              streak.changed && "text-accent",
+              streak.changed &&
+                "text-energy [paint-order:stroke_fill] [-webkit-text-stroke:0.375rem_var(--on-energy)]",
             )}
           >
             {shown("streak", streak.value)}
@@ -49,7 +50,9 @@ export function DifficultyLine({
     <p
       className={cn(
         "flex gap-2",
-        change === "down" ? "text-muted-foreground" : change === "up" && "text-accent",
+        change === "down"
+          ? "text-muted-foreground"
+          : change === "up" && "text-good-ink",
       )}
     >
       <span>{t("line", { toeic })}</span>
@@ -112,9 +115,9 @@ export function TitleCards({
         <section
           key={title.key}
           data-title
-          className="flex flex-col gap-2 rounded-card border-[1.5px] border-accent bg-card p-5"
+          className="flex flex-col gap-2 rounded-card border-2 border-energy bg-card p-5"
         >
-          <p className="font-mono text-eyebrow text-muted-foreground uppercase">
+          <p className="font-latin text-eyebrow text-muted-foreground uppercase">
             {t("label")}
           </p>
           <h3 className="text-heading">{title.name}</h3>
@@ -136,13 +139,13 @@ export function PointsTotals({
     <section className="flex flex-col gap-4">
       <p className="flex items-baseline justify-between">
         {points.earned > 0 ? (
-          <span className="font-display text-figure-sm text-accent">
+          <span className="inline-flex h-8 items-center rounded-full bg-energy px-3 font-latin text-count text-on-energy shadow-lip shadow-energy-lip">
             {t("points.earned", { points: points.earned })}
           </span>
         ) : (
           <span />
         )}
-        <span className="font-mono text-mono-sm text-muted-foreground">
+        <span className="font-latin text-count text-muted-foreground">
           {t("points.total", { points: shown("points", points.total) })}
         </span>
       </p>
@@ -168,7 +171,7 @@ export function PointsTotals({
             >
               {grown > 0 ? (
                 <div
-                  className="bg-accent"
+                  className="bg-good-ink"
                   style={{ height: `${String((grown / bar.count) * 100)}%` }}
                 />
               ) : null}

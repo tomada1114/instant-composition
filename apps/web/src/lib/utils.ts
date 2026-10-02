@@ -8,9 +8,10 @@ import { extendTailwindMerge } from "tailwind-merge";
  * `tailwind-merge` only knows Tailwind's default theme. Left alone it files an
  * unknown `text-answer` with the colors — so `text-answer` beside
  * `text-muted-foreground` silently loses the size — and treats `rounded-card`
- * as no class it recognises. Every size, radius and container token
- * `globals.css` declares is listed here; adding one there means adding it
- * here too.
+ * as no class it recognises; it reads `shadow-lip` as a shadow color, so the
+ * lip's size and its color would knock each other out. Every size, radius,
+ * shadow and container token `globals.css` declares is listed here; adding
+ * one there means adding it here too.
  */
 const twMerge = extendTailwindMerge({
   extend: {
@@ -27,13 +28,14 @@ const twMerge = extendTailwindMerge({
         "front-long",
         "answer",
         "alt",
-        "mono-sm",
+        "count",
         "figure-sm",
         "number-md",
         "number-lg",
         "number-xl",
       ],
-      radius: ["card", "control", "tile", "icon", "bar"],
+      radius: ["control", "card", "panel"],
+      shadow: ["lip"],
       container: ["column"],
     },
   },

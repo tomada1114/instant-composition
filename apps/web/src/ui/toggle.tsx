@@ -3,8 +3,10 @@ import type { ReactElement } from "react";
 import { cn } from "../lib/utils";
 
 /**
- * `toggle`: on is a white track with a black knob at the right, off a raised
- * track with a grey knob at the left — position and fill, never color alone.
+ * `toggle`: on is an ink track with a `surface` knob at the right, off a
+ * raised track in a control border with a control-border knob at the left —
+ * position and fill, never color alone. Under the pointer the track steps
+ * once: off to `border`, on to `ink-2`.
  */
 export function Toggle({
   labelledBy,
@@ -25,16 +27,16 @@ export function Toggle({
         onChange(!on);
       }}
       className={cn(
-        "relative h-8 w-13 shrink-0 rounded-full transition-colors",
-        on ? "bg-primary" : "bg-raised",
+        "relative h-8 w-13 shrink-0 rounded-full border-2",
+        on
+          ? "border-foreground bg-foreground hover:border-muted-foreground hover:bg-muted-foreground"
+          : "border-input bg-raised hover:bg-border",
       )}
     >
       <span
         className={cn(
-          "absolute top-1/2 size-6 -translate-y-1/2 rounded-full transition-[left]",
-          on
-            ? "left-[calc(100%-1.75rem)] bg-primary-foreground"
-            : "left-1 bg-muted-foreground",
+          "absolute top-1/2 size-5 -translate-y-1/2 rounded-full transition-[left]",
+          on ? "left-[calc(100%-1.5rem)] bg-card" : "left-1 bg-input",
         )}
       />
     </button>

@@ -28,7 +28,7 @@ function KeyLegend({ gradeKeys }: Readonly<{ gradeKeys: GradeKeys }>): ReactElem
     >
       {rows.map(([key, label]) => (
         <div key={key} className="contents">
-          <dt className="font-mono text-mono-sm whitespace-pre text-foreground">
+          <dt className="font-latin text-count whitespace-pre text-foreground">
             {key}
           </dt>
           <dd>{label}</dd>
@@ -57,7 +57,7 @@ export function PauseSheet({
         <h2 id="pause-title" className="text-heading">
           {t("title")}
         </h2>
-        <p className="font-mono text-mono-sm text-muted-foreground">
+        <p className="font-latin text-count text-muted-foreground">
           {t("hint", { hour: TUNING.dayBoundaryHour, position })}
         </p>
       </div>

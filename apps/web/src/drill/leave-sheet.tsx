@@ -27,7 +27,7 @@ export function LeaveSheet({
         <h2 id="leave-title" className="text-heading">
           {t("leave.title")}
         </h2>
-        <p className="font-mono text-mono-sm text-muted-foreground">
+        <p className="font-latin text-count text-muted-foreground">
           {t("sheet.hint", { hour: TUNING.dayBoundaryHour, position })}
         </p>
       </div>

@@ -30,7 +30,7 @@ export function LandingScreen(): ReactElement {
             key={step}
             className="flex items-baseline gap-5 border-b border-border py-5"
           >
-            <span aria-hidden className="font-mono text-mono-sm text-muted-foreground">
+            <span aria-hidden className="font-latin text-count text-muted-foreground">
               {String(index + 1).padStart(2, "0")}
             </span>
             <span className="text-heading">{step}</span>

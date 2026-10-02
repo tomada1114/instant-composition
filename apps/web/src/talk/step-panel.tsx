@@ -9,7 +9,7 @@ import { Kbd } from "../ui/kbd";
 import { hasJapanese, type TalkStep } from "./talk-state";
 import type { TalkActions } from "./use-talk";
 
-/** The one accent action of a step, which Enter presses from outside a field. */
+/** The one `action` button of a step, which Enter presses from outside a field. */
 function Primary({
   onPress,
   disabled = false,

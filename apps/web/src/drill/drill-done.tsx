@@ -35,7 +35,7 @@ export function DrillDone({
     <>
       {finish.status === "failed" ? (
         <main className={SHELL}>
-          <div className="flex items-center gap-3 rounded-tile bg-raised px-4 py-3">
+          <div className="flex items-center gap-3 rounded-control bg-raised px-4 py-3">
             <NoticeGlyph />
             <p className="flex-1">{t("save.unsaved", { count: unsaved })}</p>
             <Button variant="text" className="px-2" onClick={finish.retry}>

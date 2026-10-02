@@ -5,7 +5,7 @@ import { ArrowGlyph } from "./glyphs";
 import { Kbd } from "./kbd";
 
 /**
- * The one accent button a screen carries, its label led on by an arrow.
+ * The one `action` button a screen carries, its label led on by an arrow.
  * `data-primary` is what `usePrimaryKey` presses on Space and Enter.
  */
 export function PrimaryButton({

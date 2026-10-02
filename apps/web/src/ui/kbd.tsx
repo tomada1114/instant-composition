@@ -3,7 +3,9 @@ import type { ReactElement } from "react";
 import { cn } from "../lib/utils";
 
 /**
- * A key hint pinned to one edge of the control it sits in. Hidden until the
+ * A key hint pinned to one edge of the control it sits in: a pill whose
+ * border is the control's own text color at 45%, around the key at full
+ * strength, so the key measures as the control's label does. Hidden until the
  * learner has used the keyboard (the `keys` variant in `globals.css`), and
  * hidden from assistive technology — the control already carries the name.
  * The control must be `relative`; `Button` is.
@@ -23,7 +25,7 @@ export function Kbd({
       aria-hidden
       data-slot="kbd"
       className={cn(
-        "pointer-events-none absolute hidden h-5 items-center rounded-full border border-current px-1.5 font-mono text-eyebrow tracking-normal opacity-45 keys:inline-flex",
+        "pointer-events-none absolute hidden h-5 items-center rounded-full border-[1.5px] border-current/45 px-1.5 font-latin text-eyebrow tracking-normal keys:inline-flex",
         side === "end" ? "right-3.5" : "left-3.5",
         className,
       )}

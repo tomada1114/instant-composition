@@ -182,7 +182,7 @@ describe("one turn", () => {
     await say("仕事が詰まってて", "I was swamped with work.");
 
     const english = screen.getByText("I was swamped with work.");
-    expect(english).toHaveClass("text-accent");
+    expect(english).toHaveClass("text-good-ink");
     expect(english.querySelector("svg")).not.toBeNull();
     expect(announced()).toBe(ja.Talk.announce.fine);
     expect(screen.queryByRole("button", { name: ja.Talk.teacher.hide })).toBeNull();
@@ -194,7 +194,9 @@ describe("one turn", () => {
       screen.getByRole("textbox", { name: ja.Talk.step.japanese }),
     ).toBeInTheDocument();
     expect(screen.queryByRole("button", { name: ja.Talk.teacher.hide })).toBeNull();
-    expect(screen.getByText("I was swamped with work.")).not.toHaveClass("text-accent");
+    expect(screen.getByText("I was swamped with work.")).not.toHaveClass(
+      "text-good-ink",
+    );
     expect(posted(calls, TURNS)).toStrictEqual([
       { turn: 1, japanese: "仕事が詰まってて", english: "I was swamped with work." },
     ]);

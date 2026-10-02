@@ -22,12 +22,12 @@ function Tile({
   note,
 }: Readonly<{ label: string; children: ReactNode; note?: string }>): ReactElement {
   return (
-    <div className="flex flex-col gap-2 rounded-tile bg-card p-4">
+    <div className="flex flex-col gap-2 rounded-card bg-card p-4">
       <dt className="text-caption text-muted-foreground">{label}</dt>
       <dd className="flex flex-col gap-1">
         <span className="font-display text-figure-sm">{children}</span>
         {note === undefined ? null : (
-          <span className="font-mono text-eyebrow text-muted-foreground">{note}</span>
+          <span className="font-latin text-eyebrow text-muted-foreground">{note}</span>
         )}
       </dd>
     </div>

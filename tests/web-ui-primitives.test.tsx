@@ -5,12 +5,16 @@ import { describe, expect, it, vi } from "vitest";
 import {
   ANSWER_FIELD_MAX,
   AnswerField,
+  BoltGlyph,
   Button,
   cn,
+  FlameGlyph,
   HiddenAnswer,
   Segmented,
   Sheet,
+  StarGlyph,
   TalkLine,
+  TargetGlyph,
   WaitingLine,
 } from "@instant-composition/web";
 
@@ -18,8 +22,10 @@ import {
 // sheet. What is asserted is the wiring, not the styling: that a caller's own
 // `className` wins over the component's default, which is the one behaviour
 // of `cn` a component's appearance depends on. No class list is pinned beyond
-// that and the sheet's breakpoint classes — a test restating one would fail on
-// every legitimate restyle, which is `designing-ui`'s subject, not this file's.
+// that, the button's lip, press and hover, and the sheet's breakpoint classes —
+// jsdom evaluates no stylesheet, so those classes are the only trace a test can
+// see of them, and a test restating more would fail on every legitimate
+// restyle, which is `designing-ui`'s subject, not this file's.
 
 describe("cn", () => {
   it("lets the later of two conflicting Tailwind utilities win", () => {
@@ -39,7 +45,14 @@ describe("cn", () => {
     ["a type-scale size beside a theme color", "text-answer", "text-muted-foreground"],
     ["a type-scale size beside the display family", "text-number-xl", "font-display"],
     ["a radius token beside a padding", "rounded-card", "p-6"],
+    ["the panel radius beside a padding", "rounded-panel", "p-6"],
     ["the column width beside a width", "max-w-column", "w-full"],
+    ["the lip beside the color it is painted", "shadow-lip", "shadow-action-lip"],
+    ["the lip beside the control border's color", "shadow-lip", "shadow-input"],
+    ["the count size beside the text on energy", "text-count", "text-on-energy"],
+    ["the button size beside the text on action", "text-action", "text-on-action"],
+    ["the button size beside the action fill", "text-action", "bg-action"],
+    ["the action fill beside its text", "bg-action", "text-on-action"],
   ])("keeps %s, since the two do not conflict", (_, first, second) => {
     expect(cn(first, second)).toBe(`${first} ${second}`);
   });
@@ -49,7 +62,35 @@ describe("cn", () => {
     ["a radius token", "rounded-card", "rounded-full"],
     ["a container token", "max-w-column", "max-w-none"],
     ["the control radius", "rounded-control", "rounded-card"],
+    ["the panel radius", "rounded-card", "rounded-panel"],
+    ["the count size", "text-body", "text-count"],
+    ["the lip", "shadow-lip", "shadow-none"],
   ])("lets the later of two conflicting uses of %s win", (_, first, second) => {
+    expect(cn(first, second)).toBe(second);
+  });
+
+  // Each colour `globals.css` adds, against one it replaces in the same
+  // property: `cn("bg-raised", "bg-energy")` keeps only `bg-energy`.
+  it.each([
+    ["bg-raised", "bg-action"],
+    ["bg-raised", "bg-action-hover"],
+    ["bg-raised", "bg-energy"],
+    ["bg-raised", "bg-energy-lip"],
+    ["bg-raised", "bg-good"],
+    ["bg-raised", "bg-good-hover"],
+    ["bg-raised", "bg-good-ink"],
+    ["bg-raised", "bg-bar-track"],
+    ["hover:bg-raised", "hover:bg-action-hover"],
+    ["text-foreground", "text-on-action"],
+    ["text-foreground", "text-on-energy"],
+    ["text-foreground", "text-on-good"],
+    ["text-foreground", "text-good-ink"],
+    ["text-foreground", "text-energy"],
+    ["border-input", "border-energy"],
+    ["shadow-input", "shadow-action-lip"],
+    ["shadow-input", "shadow-energy-lip"],
+    ["shadow-input", "shadow-good-lip"],
+  ])("keeps only %s's replacement %s", (first, second) => {
     expect(cn(first, second)).toBe(second);
   });
 });
@@ -88,10 +129,38 @@ describe("Button", () => {
   it("applies the variant it is given instead of the default one", () => {
     render(<Button variant="secondary">Save</Button>);
 
-    const { className } = screen.getByRole("button");
-    expect(className).toContain("bg-raised");
-    expect(className).not.toContain("bg-accent");
+    const classes = screen.getByRole("button").className.split(" ");
+    expect(classes).toContain("bg-card");
+    expect(classes).not.toContain("bg-action");
   });
+
+  it("stands the primary on its action lip, and drops it onto the lip while pressed", () => {
+    render(<Button>Start</Button>);
+
+    const classes = screen.getByRole("button").className.split(" ");
+    expect(classes).toEqual(
+      expect.arrayContaining([
+        "bg-action",
+        "shadow-lip",
+        "shadow-action-lip",
+        "active:translate-y-1",
+        "active:shadow-none",
+      ]),
+    );
+  });
+
+  it.each(["primary", "good", "secondary", "text"] as const)(
+    "gives the %s variant a hover state",
+    (variant) => {
+      render(<Button variant={variant}>Save</Button>);
+
+      const hovers = screen
+        .getByRole("button")
+        .className.split(" ")
+        .filter((name) => name.startsWith("hover:"));
+      expect(hovers).not.toHaveLength(0);
+    },
+  );
 
   it("keeps its type-scale size when a caller sets a color", () => {
     render(
@@ -314,4 +383,21 @@ describe("HiddenAnswer", () => {
     expect(container).toHaveTextContent(/^Hidden$/u);
     expect(container.textContent).not.toContain("swamped");
   });
+});
+
+describe("the filled glyphs", () => {
+  it.each([
+    ["flame", FlameGlyph],
+    ["bolt", BoltGlyph],
+    ["target", TargetGlyph],
+    ["star", StarGlyph],
+  ])(
+    "draws the %s solid in the current text color, hidden from a screen reader",
+    (_, Glyph) => {
+      const { container } = render(<Glyph />);
+      const svg = container.querySelector("svg");
+      expect(svg).toHaveAttribute("aria-hidden", "true");
+      expect(svg).toHaveAttribute("fill", "currentColor");
+    },
+  );
 });

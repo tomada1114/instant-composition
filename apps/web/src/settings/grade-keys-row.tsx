@@ -80,17 +80,15 @@ export function GradeKeysRow({
           setRefusal(null);
         }}
         className={cn(
-          "flex h-11 min-w-16 items-center justify-center gap-1.5 rounded-tile px-3",
-          listening
-            ? "bg-primary text-primary-foreground"
-            : "bg-raised text-foreground",
+          "flex h-11 min-w-16 items-center justify-center gap-1.5 rounded-control border-2 bg-raised px-3 text-foreground",
+          listening ? "border-foreground" : "border-input hover:bg-card",
         )}
       >
         <Glyph className="size-4" />
         {listening ? (
           <span className="text-label">{t("waiting")}</span>
         ) : (
-          <span className="font-mono text-mono-sm">{keyLabel(keys[grade])}</span>
+          <span className="font-latin text-count">{keyLabel(keys[grade])}</span>
         )}
       </button>
     );
