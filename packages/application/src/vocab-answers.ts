@@ -12,7 +12,9 @@ import type { RequestContext } from "./context";
 import type { ApplicationError } from "./errors";
 import { committed, storeFor, type ApplicationDeps, type Write } from "./execute";
 import type { LearnerStore } from "./store";
+import type { CatalogSnapshot } from "./catalog";
 import { loadVocab, summaryOf, vocabSnapshots } from "./vocab-load";
+import { shownCards } from "./vocab-shown";
 import type { VocabSummary } from "./vocab-views";
 
 export interface VocabAnswersCommand {
@@ -28,6 +30,14 @@ export interface VocabAnswersCommand {
 const ANSWERS_PER_COMMIT = 40;
 
 type Snapshots = ReadonlyMap<string, VocabReview["snapshot"]>;
+
+/** What a review keeps of each card an answer may name: the catalog's and the learner's own. */
+async function snapshotsOf(
+  store: LearnerStore,
+  snapshot: CatalogSnapshot,
+): Promise<Snapshots> {
+  return vocabSnapshots(shownCards(snapshot, await store.cards()));
+}
 
 function recordChunk(
   store: LearnerStore,
@@ -112,7 +122,8 @@ export async function recordVocabAnswers(
   if (!snapshot.ok) {
     return snapshot;
   }
-  return recordInto(bound.value, vocabSnapshots(snapshot.value), context, command);
+  const snapshots = await snapshotsOf(bound.value, snapshot.value);
+  return recordInto(bound.value, snapshots, context, command);
 }
 
 /**
@@ -149,12 +160,8 @@ export async function finishVocabSession(
   if (!snapshot.ok) {
     return snapshot;
   }
-  const recorded = await recordInto(
-    store,
-    vocabSnapshots(snapshot.value),
-    context,
-    command,
-  );
+  const snapshots = await snapshotsOf(store, snapshot.value);
+  const recorded = await recordInto(store, snapshots, context, command);
   if (!recorded.ok) {
     return recorded.error.code === "ERR_SESSION_CLOSED"
       ? ((await kept()) ?? recorded)

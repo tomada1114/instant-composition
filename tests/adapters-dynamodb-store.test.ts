@@ -134,6 +134,31 @@ describe("a commit", () => {
     });
   });
 
+  it("deletes a personal card under CARD# at the version read, in the same transaction", async () => {
+    await storeOf().commit({
+      puts: [],
+      updates: [],
+      expect: [],
+      deletes: [
+        { key: { type: "card", id: "p_a#b" }, version: 2 },
+        { key: { type: "vocabItem", cardId: "p_a#b" }, version: 1 },
+      ],
+    });
+
+    const items = calls[0]?.body["TransactItems"] as Record<
+      string,
+      Record<string, unknown>
+    >[];
+    expect(items.map((item) => item["Delete"])).toMatchObject([
+      {
+        Key: { PK: { S: "LEARNER#learner-a" }, SK: { S: "CARD#p_a%23b" } },
+        ConditionExpression: "#version = :version",
+        ExpressionAttributeValues: { ":version": { N: "2" } },
+      },
+      { Key: { SK: { S: "ITEM#vocab#p_a%23b" } } },
+    ]);
+  });
+
   it("writes an open talk's expiry beside its value as the TTL attribute, and a kept talk without one", async () => {
     await storeOf().commit({
       puts: [

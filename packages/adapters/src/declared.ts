@@ -3,6 +3,7 @@ import type {
   CompositionDetail,
   FirstPassMark,
   ItemProgress,
+  PersonalCard,
   Round,
   Settings,
   Talk,
@@ -85,6 +86,7 @@ const TALK = {
   opening: true,
   turns: true,
   model: true,
+  cards: true,
 } as const satisfies Fields<Talk>;
 
 const TURN = {
@@ -129,6 +131,12 @@ const VOCAB_REVIEW = {
   snapshot: true,
 } as const satisfies Fields<VocabReview>;
 
+const CARD = {
+  ...{ id: true, target: true, l1: true, category: true, level: true, headword: true },
+  ...{ definition: true, example: true, example2: true, meaning: true, source: true },
+  createdAt: true,
+} as const satisfies Fields<PersonalCard>;
+
 function declared<T extends object>(value: T, fields: Fields<T>): T {
   return Object.fromEntries(
     Object.entries(value).filter(([key]) => Object.hasOwn(fields, key)),
@@ -170,6 +178,8 @@ export function declaredValue(entry: Entry): Entry["value"] {
       return declared(entry.value, VOCAB_SESSION);
     case "vocabReview":
       return declared(entry.value, VOCAB_REVIEW);
+    case "card":
+      return declared(entry.value, CARD);
     case "profile":
     case "stats":
     case "portion":

@@ -1,5 +1,7 @@
 import type { Route } from "./routes";
 import {
+  addCardsRequestSchema,
+  cardCandidatesSchema,
   partnerReplySchema,
   recitalRequestSchema,
   startTalkRequestSchema,
@@ -80,5 +82,25 @@ export const TALK_ROUTES: readonly Route[] = [
     requestBody: null,
     success: { status: 200, body: talkEndedSchema },
     errors: TALK_ERRORS,
+  },
+  {
+    method: "post",
+    path: "/v1/talks/{talkId}/candidates",
+    operationId: "makeCandidates",
+    summary:
+      "The vocabulary card candidates at a kept talk's end, at most one per corrected turn: one model call, its answer kept on the talk, so a resend answers the same candidates without a call. A talk with no corrected turn answers none without a call; one still open is ERR_CONFLICT. A candidate whose headword a catalog card, or one of the learner's own, holds is answered as that card.",
+    requestBody: null,
+    success: { status: 200, body: cardCandidatesSchema },
+    errors: [...TALK_ERRORS, "ERR_CONTENT_UNREADABLE", "ERR_MODEL_UNAVAILABLE"],
+  },
+  {
+    method: "post",
+    path: "/v1/talks/{talkId}/cards",
+    operationId: "addCards",
+    summary:
+      "Adds the picked candidates to the learner's vocabulary, as new and weak cards: a matched card is marked as from the talk and kept as it stands, any other becomes a personal card. A candidate already added is not added again. Answers the candidates as they now stand; before the candidates were made it is ERR_CONFLICT, and an index past the list ERR_BAD_REQUEST.",
+    requestBody: addCardsRequestSchema,
+    success: { status: 200, body: cardCandidatesSchema },
+    errors: [...TALK_ERRORS, "ERR_PAYLOAD_TOO_LARGE", "ERR_CONTENT_UNREADABLE"],
   },
 ];

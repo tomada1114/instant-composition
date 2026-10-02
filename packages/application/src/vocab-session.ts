@@ -40,7 +40,7 @@ export async function vocabHub(
   }
   const figures = vocabFigures(loaded.value.state);
   return ok({
-    empty: loaded.value.snapshot.vocab.size === 0,
+    empty: loaded.value.cards.size === 0,
     today: { due: figures.due, new: figures.fresh, minutes: figures.minutes },
     categories: figures.categories.map(({ category, due, fresh, learning, total }) => ({
       category,

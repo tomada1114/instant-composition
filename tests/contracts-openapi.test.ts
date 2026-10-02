@@ -76,6 +76,7 @@ describe("openApiDocument", () => {
       ),
     );
     expect(operations.sort()).toStrictEqual([
+      "DELETE /v1/vocab/cards/{cardId} deleteVocabCard",
       "GET /v1/history getHistory",
       "GET /v1/home getHome",
       "GET /v1/me getProfile",
@@ -91,6 +92,8 @@ describe("openApiDocument", () => {
       "POST /v1/rounds/{roundId}/answers recordAnswers",
       "POST /v1/rounds/{roundId}/finish finishRound",
       "POST /v1/talks startTalk",
+      "POST /v1/talks/{talkId}/candidates makeCandidates",
+      "POST /v1/talks/{talkId}/cards addCards",
       "POST /v1/talks/{talkId}/end endTalk",
       "POST /v1/talks/{talkId}/reply retryReply",
       "POST /v1/talks/{talkId}/turns sendTurn",
@@ -145,10 +148,31 @@ describe("openApiDocument", () => {
     }
   });
 
-  it("answers a scene or a reply that could not be had with 503 ERR_MODEL_UNAVAILABLE", () => {
-    for (const path of ["/v1/talks", "/v1/talks/{talkId}/reply"]) {
+  it("validates a card's {cardId} as an id, answering another learner's 404 and a catalog card's 403", () => {
+    const operation = document.paths["/v1/vocab/cards/{cardId}"]?.["delete"];
+    expect(operation?.parameters).toStrictEqual([
+      {
+        name: "cardId",
+        in: "path",
+        required: true,
+        schema: { type: "string", minLength: 1, maxLength: 64 },
+      },
+    ]);
+    expect(operation?.responses["204"]).toStrictEqual({
+      description: "Done; no body.",
+    });
+    expect(operation?.responses["404"]?.description).toMatch(/^ERR_CARD_NOT_FOUND: /);
+    expect(operation?.responses["403"]?.description).toMatch(/ERR_CARD_NOT_PERSONAL: /);
+  });
+
+  it("answers a scene, a reply or candidates that could not be had with 503 ERR_MODEL_UNAVAILABLE", () => {
+    for (const path of [
+      "/v1/talks",
+      "/v1/talks/{talkId}/reply",
+      "/v1/talks/{talkId}/candidates",
+    ]) {
       expect(document.paths[path]?.["post"]?.responses["503"]?.description).toMatch(
-        /^ERR_MODEL_UNAVAILABLE: /,
+        /ERR_MODEL_UNAVAILABLE: /,
       );
     }
     expect(
@@ -220,7 +244,7 @@ describe("openApiDocument", () => {
 
   it("builds a route it is handed rather than only the shipped table", () => {
     expect(Object.keys(openApiDocument([probe]).paths)).toStrictEqual(["/v1/probe"]);
-    expect(ROUTES).toHaveLength(22);
+    expect(ROUTES).toHaveLength(25);
   });
 
   it.each([
@@ -234,7 +258,7 @@ describe("openApiDocument", () => {
   });
 
   it("refuses a path parameter it has no schema for", () => {
-    expect(() => openApiDocument([{ ...probe, path: "/v1/cards/{cardId}" }])).toThrow(
+    expect(() => openApiDocument([{ ...probe, path: "/v1/decks/{deckId}" }])).toThrow(
       Error,
     );
   });

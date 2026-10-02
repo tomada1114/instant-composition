@@ -21,8 +21,8 @@ const SESSION_ERRORS = [
 
 /**
  * The vocabulary activity's `/v1` operations. A session id names the
- * signed-in caller's own session; an unknown one, or another learner's, is
- * not found.
+ * signed-in caller's own session, and a card id in a path their own card; an
+ * unknown one, or another learner's, is not found.
  */
 export const VOCAB_ROUTES: readonly Route[] = [
   {
@@ -71,5 +71,23 @@ export const VOCAB_ROUTES: readonly Route[] = [
     requestBody: vocabAnswersRequestSchema,
     success: { status: 200, body: vocabSummarySchema },
     errors: SESSION_ERRORS,
+  },
+  {
+    method: "delete",
+    path: "/v1/vocab/cards/{cardId}",
+    operationId: "deleteVocabCard",
+    summary:
+      "Deletes one of the learner's own cards, made from a talk, and its progress; the answers logged for it stay. A catalog card is ERR_CARD_NOT_PERSONAL; an unknown card, one already deleted or another learner's, ERR_CARD_NOT_FOUND.",
+    requestBody: null,
+    success: { status: 204, body: null },
+    errors: [
+      "ERR_BAD_REQUEST",
+      "ERR_UNAUTHENTICATED",
+      "ERR_FORBIDDEN",
+      "ERR_CONFLICT",
+      "ERR_CONTENT_UNREADABLE",
+      "ERR_CARD_NOT_FOUND",
+      "ERR_CARD_NOT_PERSONAL",
+    ],
   },
 ];

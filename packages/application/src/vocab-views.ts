@@ -45,6 +45,8 @@ export interface VocabCardView {
   readonly intervals: GradeIntervals;
   /** Never answered before: its first answer introduces it. */
   readonly isNew: boolean;
+  /** The learner's own card, made from a talk, which they may delete. */
+  readonly personal: boolean;
 }
 
 /** `POST /v1/vocab/sessions`: the session and the cards it deals, in order. */

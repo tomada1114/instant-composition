@@ -39,6 +39,7 @@ export const TALK_PROMPTS = {
   "talk-scene": "talk-scene@1",
   "talk-teacher": "talk-teacher@1",
   "talk-partner": "talk-partner@1",
+  "talk-cards": "talk-cards@1",
 } as const satisfies Record<TalkTask, string>;
 
 /** One model call, bounded by `TALK_TUNING.modelTimeoutMs`. */

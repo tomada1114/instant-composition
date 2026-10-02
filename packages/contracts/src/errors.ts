@@ -7,8 +7,8 @@ import * as z from "zod";
  * Grouped by what a client can do. The caller must sign in again first:
  * `ERR_UNAUTHENTICATED`. The request itself is wrong and resending
  * it changes nothing: `ERR_BAD_REQUEST`, `ERR_PAYLOAD_TOO_LARGE`,
- * `ERR_FORBIDDEN`, `ERR_ROUND_NOT_FOUND`, `ERR_TALK_NOT_FOUND`,
- * `ERR_SESSION_NOT_FOUND`. The round, the day, the talk or the vocabulary
+ * `ERR_FORBIDDEN`, `ERR_CARD_NOT_PERSONAL`, `ERR_ROUND_NOT_FOUND`,
+ * `ERR_TALK_NOT_FOUND`, `ERR_SESSION_NOT_FOUND`, `ERR_CARD_NOT_FOUND`. The round, the day, the talk or the vocabulary
  * session has moved on, so reload before acting: `ERR_ROUND_CLOSED`,
  * `ERR_TALK_CLOSED`, `ERR_SESSION_CLOSED`. Another write kept winning, or the language model gave no
  * usable answer, so the same request may be sent again: `ERR_CONFLICT`,
@@ -23,9 +23,11 @@ export const STATUS_BY_CODE = {
   ERR_BAD_REQUEST: 400,
   ERR_UNAUTHENTICATED: 401,
   ERR_FORBIDDEN: 403,
+  ERR_CARD_NOT_PERSONAL: 403,
   ERR_ROUND_NOT_FOUND: 404,
   ERR_TALK_NOT_FOUND: 404,
   ERR_SESSION_NOT_FOUND: 404,
+  ERR_CARD_NOT_FOUND: 404,
   ERR_ROUND_CLOSED: 409,
   ERR_TALK_CLOSED: 409,
   ERR_SESSION_CLOSED: 409,
@@ -44,9 +46,12 @@ export const MESSAGE_BY_CODE = {
     "The request does not fit the round, the talk, the settings or the profile it names.",
   ERR_UNAUTHENTICATED: "The request carries no valid access token.",
   ERR_FORBIDDEN: "The caller may not run this operation.",
+  ERR_CARD_NOT_PERSONAL:
+    "That card is the catalog's; only a card made from a talk can be deleted.",
   ERR_ROUND_NOT_FOUND: "No round has that id.",
   ERR_TALK_NOT_FOUND: "No talk has that id.",
   ERR_SESSION_NOT_FOUND: "No vocabulary session has that id.",
+  ERR_CARD_NOT_FOUND: "No vocabulary card of the learner's own has that id.",
   ERR_ROUND_CLOSED: "That round or day can no longer take this request.",
   ERR_TALK_CLOSED: "That talk has finished or ended and takes no more turns.",
   ERR_SESSION_CLOSED: "That vocabulary session has finished and takes no new answer.",

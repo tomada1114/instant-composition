@@ -4,6 +4,7 @@ import type {
   FsrsState,
   ItemProgress,
   LearnerStats,
+  PersonalCard,
   Portion,
   ReviewEntry,
   Round,
@@ -274,6 +275,25 @@ export function makeVocabReview(overrides: Partial<VocabReview> = {}): VocabRevi
   };
 }
 
+/** A personal card `p_card00000001` made from turn 2 of talk `t1`. */
+export function makePersonalCard(overrides: Partial<PersonalCard> = {}): PersonalCard {
+  return {
+    id: "p_card00000001",
+    target: "en",
+    l1: "ja",
+    category: "idiom",
+    level: 4,
+    headword: "catch up",
+    definition: "To talk about what has happened since you last met.",
+    example: "Let's {{catch}} {{up}} over coffee soon.",
+    example2: "We caught up at the station.",
+    meaning: "近況を話す",
+    source: { kind: "talk", talkId: "t1", turn: 2 },
+    createdAt: 5_000,
+    ...overrides,
+  };
+}
+
 /**
  * `value` with fields its type no longer declares, as an item written while the
  * typed-answer mode existed holds them.
@@ -307,5 +327,6 @@ export function oneOfEach(): Entry[] {
     { type: "vocabItem", value: makeVocabProgress() },
     { type: "vocabSession", value: makeVocabSession() },
     { type: "vocabReview", value: makeVocabReview() },
+    { type: "card", value: makePersonalCard() },
   ];
 }

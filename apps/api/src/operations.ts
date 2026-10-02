@@ -55,6 +55,8 @@ export interface PathValues {
   readonly turn: number;
   /** The `{sessionId}` of a vocabulary session path; `""` on a path without one. */
   readonly sessionId: string;
+  /** The `{cardId}` of a vocabulary card path; `""` on a path without one. */
+  readonly cardId: string;
 }
 
 export type PathParam = keyof PathValues;

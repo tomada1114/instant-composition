@@ -5,6 +5,7 @@ import {
   withDefaults,
   type dealVocab,
   type DayKey,
+  type PersonalCard,
   type Result,
   type VocabProgress,
   type VocabReview,
@@ -16,7 +17,7 @@ import type { RequestContext } from "./context";
 import type { ApplicationError } from "./errors";
 import { todayOf } from "./execute";
 import type { LearnerStore, Stored } from "./store";
-import type { VocabItem } from "./vocab-item";
+import { shownCards, type ShownCard } from "./vocab-shown";
 import type { VocabCardView, VocabSessionView, VocabSummary } from "./vocab-views";
 
 /** What every vocabulary deal reads, as the domain takes it. */
@@ -25,13 +26,16 @@ export type VocabState = Parameters<typeof dealVocab>[0];
 /** What every vocabulary command and query reads first, taken once per attempt. */
 export interface VocabLoad {
   readonly snapshot: CatalogSnapshot;
+  /** The catalog's cards and the learner's own, by id. */
+  readonly cards: ReadonlyMap<string, ShownCard>;
+  readonly personal: ReadonlyMap<string, Stored<PersonalCard>>;
   readonly items: ReadonlyMap<string, Stored<VocabProgress>>;
   readonly state: VocabState;
 }
 
 /**
- * The catalog's vocabulary, the learner's limits and level, and their
- * progress on each card, as the state of `today` — the practice day of
+ * The catalog's vocabulary and the learner's own cards, the learner's limits
+ * and level, and their progress on each card, as the state of `today` — the practice day of
  * `context.now` unless a session names its own.
  */
 export async function loadVocab(
@@ -44,20 +48,24 @@ export async function loadVocab(
   if (!snapshot.ok) {
     return snapshot;
   }
-  const [settings, stats, items] = await Promise.all([
+  const [settings, stats, items, personal] = await Promise.all([
     store.settings(),
     store.stats(),
     store.vocabItems(),
+    store.cards(),
   ]);
   const limits = withDefaults(settings?.value ?? DEFAULT_SETTINGS);
+  const cards = shownCards(snapshot.value, personal);
   return ok({
     snapshot: snapshot.value,
+    cards,
+    personal,
     items,
     state: {
       today,
       // Before a placement or a pick sets the drill's level, the band starts at the bottom.
       level: stats?.value.level?.level ?? 1,
-      cards: [...snapshot.value.vocab.values()],
+      cards: [...cards.values()],
       progress: new Map([...items].map(([id, stored]) => [id, stored.value])),
       newPerDay: limits.vocabNewPerDay,
       reviewsPerDay: limits.vocabReviewsPerDay,
@@ -65,12 +73,12 @@ export async function loadVocab(
   });
 }
 
-/** What a review keeps of each card the catalog shows. */
+/** What a review keeps of each card the learner's vocabulary deals. */
 export function vocabSnapshots(
-  snapshot: CatalogSnapshot,
+  cards: ReadonlyMap<string, ShownCard>,
 ): Map<string, VocabReview["snapshot"]> {
   return new Map(
-    [...snapshot.vocab.values()].map(({ id, headword, meaning, category, level }) => [
+    [...cards.values()].map(({ id, headword, meaning, category, level }) => [
       id,
       { headword, meaning, category, level },
     ]),
@@ -78,7 +86,7 @@ export function vocabSnapshots(
 }
 
 function cardViewOf(
-  item: VocabItem,
+  item: ShownCard,
   progress: VocabProgress | undefined,
   day: DayKey,
 ): VocabCardView {
@@ -94,13 +102,14 @@ function cardViewOf(
       good: preview.good.intervalDays,
     },
     isNew: state === null,
+    personal: item.personal,
   };
 }
 
 /**
  * The session with its cards in the order dealt, each with the intervals its
  * first answer on the session's day would set. A card the catalog no longer
- * shows is left out.
+ * shows, or a personal card since deleted, is left out.
  */
 export function sessionViewOf(
   session: VocabSession,
@@ -112,7 +121,7 @@ export function sessionViewOf(
     category: session.category,
     day: session.day,
     cards: session.deck.flatMap((cardId) => {
-      const item = load.snapshot.vocab.get(cardId);
+      const item = load.cards.get(cardId);
       return item === undefined
         ? []
         : [cardViewOf(item, load.state.progress.get(cardId), session.day)];

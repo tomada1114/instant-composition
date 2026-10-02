@@ -4,6 +4,7 @@ import type {
   ItemProgress,
   ItemRef,
   LearnerStats,
+  PersonalCard,
   Portion,
   Result,
   ReviewEntry,
@@ -30,7 +31,8 @@ export type Entry =
   | { readonly type: "talk"; readonly value: Talk }
   | { readonly type: "vocabItem"; readonly value: VocabProgress }
   | { readonly type: "vocabSession"; readonly value: VocabSession }
-  | { readonly type: "vocabReview"; readonly value: VocabReview };
+  | { readonly type: "vocabReview"; readonly value: VocabReview }
+  | { readonly type: "card"; readonly value: PersonalCard };
 
 /** Where an entry lives inside the learner's own data; no key names a learner. */
 export type Key =
@@ -45,7 +47,8 @@ export type Key =
   | { readonly type: "talk"; readonly id: string }
   | { readonly type: "vocabItem"; readonly cardId: string }
   | { readonly type: "vocabSession"; readonly id: string }
-  | { readonly type: "vocabReview"; readonly sessionId: string; readonly id: string };
+  | { readonly type: "vocabReview"; readonly sessionId: string; readonly id: string }
+  | { readonly type: "card"; readonly id: string };
 
 export function keyOf(entry: Entry): Key {
   switch (entry.type) {
@@ -64,6 +67,7 @@ export function keyOf(entry: Entry): Key {
       return { type: "item", item: entry.value.item };
     case "talk":
     case "vocabSession":
+    case "card":
       return { type: entry.type, id: entry.value.id };
     case "vocabItem":
       return { type: "vocabItem", cardId: entry.value.cardId };
@@ -88,14 +92,17 @@ export interface Stored<T> {
  * @remarks
  * `puts` create entries that must not exist yet; `updates` replace entries
  * still at the version they were read at; `expect` states what must still hold
- * of entries read but not written — a version, or `null` for "still absent".
- * Review entries, the drill's and the vocabulary's, are only ever put: the
- * logs are append-only.
+ * of entries read but not written — a version, or `null` for "still absent";
+ * `deletes` remove entries still at the version they were read at. Review
+ * entries, the drill's and the vocabulary's, are only ever put: the logs are
+ * append-only, and no commit updates or deletes one.
  */
 export interface Commit {
   readonly puts: readonly Entry[];
   readonly updates: readonly { readonly entry: Entry; readonly version: number }[];
   readonly expect: readonly { readonly key: Key; readonly version: number | null }[];
+  /** Absent for a commit that deletes nothing, which is nearly every one. */
+  readonly deletes?: readonly { readonly key: Key; readonly version: number }[];
 }
 
 /** A condition of the commit no longer held, so nothing was written. */
@@ -133,6 +140,10 @@ export interface LearnerStore {
   vocabSession(id: string): Promise<Stored<VocabSession> | undefined>;
   /** A vocabulary session's answers, ordered by `answeredAt` and then by id. */
   vocabReviewsOf(sessionId: string): Promise<readonly VocabReview[]>;
+  /** One of the learner's personal vocabulary cards. */
+  card(id: string): Promise<Stored<PersonalCard> | undefined>;
+  /** Every personal vocabulary card the learner has, keyed by id. */
+  cards(): Promise<ReadonlyMap<string, Stored<PersonalCard>>>;
   commit(commit: Commit): Promise<Result<undefined, CommitConflict>>;
 }
 
