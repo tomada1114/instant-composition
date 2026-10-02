@@ -154,7 +154,7 @@
     "category": "phrase",
     "level": 6,
     "headword": "I couldn't agree more",
-    "definition": "said to show you completely agree with what someone just said",
+    "definition": "said to show you fully share someone's opinion",
     "example": "A: This city really needs more bike lanes.\nB: {{I}} {{couldn't}} {{agree}} {{more}}.",
     "example2": "A: Our manager explains things so clearly.\nB: I couldn't agree more.",
     "meanings": {
@@ -163,7 +163,7 @@
     "createdAt": "2026-10-02",
     "stamps": {
       "core": {
-        "hash": "sha256:7e26c76cf1374bb2b37f71716bf9b7bd346cae4ac3907db47983031388ed3f5d",
+        "hash": "sha256:804f49d2af600fb6740aea708f7d74db9f174aa7a8afdf7b902d0785520392f5",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       },
@@ -931,14 +931,14 @@
     "headword": "I rest my case",
     "definition": "said after you give proof that you think settles an argument",
     "example": "A: Every single time, she forgot. {{I}} {{rest}} {{my}} {{case}}.\nB: Okay, okay, you win.",
-    "example2": "A: See? He admitted it himself.\nB: Fine. You rest your case.",
+    "example2": "A: The receipt shows he paid on Friday. I rest my case.\nB: Fine, you're right.",
     "meanings": {
       "ja": "これで証明されたね"
     },
     "createdAt": "2026-10-02",
     "stamps": {
       "core": {
-        "hash": "sha256:090698ad46552102a7207c0b766cc6813f6790becda0885e4dd7dd72afdc8014",
+        "hash": "sha256:2aa888d74dae78b0e29e3d8a4e98c181fa14ad639ad75746afe8d9f4811b99bc",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       },
@@ -1658,7 +1658,7 @@
     "example": "A: What did you say?\nB: {{Never}} {{mind}}. It wasn't important.",
     "example2": "A: I can't find my pen.\nB: Never mind, I have another one.",
     "meanings": {
-      "ja": "気にしないで"
+      "ja": "気にしないで・もういいよ"
     },
     "createdAt": "2026-10-02",
     "stamps": {
@@ -1668,7 +1668,7 @@
         "at": "2026-10-02"
       },
       "meanings.ja": {
-        "hash": "sha256:f0c0dd44b7be4639642167ceeae14e57d4d4070adfdb0fc1a7b34b847fa33b83",
+        "hash": "sha256:1dde4a210b9e172d169f2295a2c0f680c44fd503993da789d076a6f49e348854",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       }

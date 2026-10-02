@@ -681,14 +681,14 @@
     "headword": "wake up",
     "definition": "to stop being asleep",
     "example": "I usually {{wake}} {{up}} before my alarm rings.",
-    "example2": "Don't wake up the baby.",
+    "example2": "She woke up late and missed the bus.",
     "meanings": {
       "ja": "目が覚める"
     },
     "createdAt": "2026-10-02",
     "stamps": {
       "core": {
-        "hash": "sha256:04489e6e35523a23b5d5c05b00b1ce9ffe8fb7329c06be0c65fe478295530703",
+        "hash": "sha256:a659d251e78bf03ee4f0341c18c91fd0b209d087f0af9e2c92a3ad3edc4f37ce",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       },

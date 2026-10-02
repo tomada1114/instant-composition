@@ -1655,20 +1655,20 @@
     "level": 6,
     "headword": "consistent",
     "definition": "always behaving or happening in the same way over time",
-    "example": "She is a {{consistent}} performer who rarely misses a target.",
-    "example2": "Your story is not consistent with what the video shows.",
+    "example": "He is a {{consistent}} player who scores about twenty points every single game.",
+    "example2": "Her grades have been consistent all year.",
     "meanings": {
-      "ja": "一貫した・矛盾のない"
+      "ja": "安定した・一貫した"
     },
     "createdAt": "2026-10-02",
     "stamps": {
       "core": {
-        "hash": "sha256:007da0d06ad3b6876c3708da46ad2e59233d665dd7253c7ef4f30481664656b8",
+        "hash": "sha256:91a75dd4bbc3d9bd5e28696a6560501a29c57f1113202b24d65013e2448ff6b8",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       },
       "meanings.ja": {
-        "hash": "sha256:5a07e151e9971c0840c2ef45981629e7be14ec905f1a4a544a0fbd1f2005b188",
+        "hash": "sha256:8054764d8ca0eac950b942a2d08717f04b5be2691eab357f2058a92c01d6ce61",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       }

@@ -125,31 +125,6 @@
     }
   },
   {
-    "id": "v_2m6w8n9t",
-    "category": "idiom",
-    "level": 2,
-    "headword": "a few",
-    "definition": "a small number of things or people",
-    "example": "I bought {{a}} {{few}} apples at the market.",
-    "example2": "A few of my friends live in Canada.",
-    "meanings": {
-      "ja": "いくつかの"
-    },
-    "createdAt": "2026-10-02",
-    "stamps": {
-      "core": {
-        "hash": "sha256:6ee1694fa781e614f2200f74a3da20678cf5ac96fd755c19eb6413b0cdad1a59",
-        "perspectivesVersion": 4,
-        "at": "2026-10-02"
-      },
-      "meanings.ja": {
-        "hash": "sha256:ce378a3d849cfeb164d92853396dca0d7e4b085d9d7722ba320e8c5f7e34b75e",
-        "perspectivesVersion": 4,
-        "at": "2026-10-02"
-      }
-    }
-  },
-  {
     "id": "v_2n8y5u9b",
     "category": "idiom",
     "level": 4,
@@ -194,6 +169,31 @@
       },
       "meanings.ja": {
         "hash": "sha256:0a860b0279fb07d92ba41467be27d02476c19b843f9736ac725e17ae7ada131c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
+  },
+  {
+    "id": "v_3a5x5m8k",
+    "category": "idiom",
+    "level": 7,
+    "headword": "the best of both worlds",
+    "definition": "a situation with the advantages of two different things at the same time",
+    "example": "Working from home two days a week gives her {{the}} {{best}} {{of}} {{both}} {{worlds}}.",
+    "example2": "Living near the beach and the city is the best of both worlds.",
+    "meanings": {
+      "ja": "いいとこ取り"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {
+      "core": {
+        "hash": "sha256:f47e19a206ab881a1d378b28ab5aa49d0ff09b769622bf2806b32a4eff720e76",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:6d5033f09dbe46c378daccfcce02fcf159acad1560e13f431f3e130d190034ee",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       }
