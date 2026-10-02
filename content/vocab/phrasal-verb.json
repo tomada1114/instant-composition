@@ -5,7 +5,7 @@
     "level": 6,
     "headword": "come up with",
     "definition": "to think of an idea, a plan or an answer",
-    "example": "She {{came up with}} a great name for the project.",
+    "example": "She {{came}} {{up}} {{with}} a great name for the project.",
     "example2": "We need to come up with a better plan by Monday.",
     "meanings": {
       "ja": "思いつく"
@@ -13,7 +13,7 @@
     "createdAt": "2026-10-02",
     "stamps": {
       "core": {
-        "hash": "sha256:3e84dd65694ff9f0a0829aed7a849cf6ad20c8b7bc9482153a69ec43fb811aae",
+        "hash": "sha256:999af200308cd1210537272d7569c38239022288115e92d3b46971d3c77fbe32",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       },
@@ -80,7 +80,7 @@
     "level": 5,
     "headword": "figure out",
     "definition": "to understand something or find an answer by thinking",
-    "example": "I can't {{figure out}} how to turn off this alarm.",
+    "example": "I can't {{figure}} {{out}} how to turn off this alarm.",
     "example2": "We need to figure out why sales dropped last month.",
     "meanings": {
       "ja": "理解する・解決策を見つける"
@@ -88,7 +88,7 @@
     "createdAt": "2026-10-02",
     "stamps": {
       "core": {
-        "hash": "sha256:79e9d866bcc03ebbef8caa7bd9e17394e6a6b767d586177422290e717219c005",
+        "hash": "sha256:a8d7ca28bc6030e92182f608cc5c1660457081a263607153ba6e94614bae1ee7",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       },
@@ -105,7 +105,7 @@
     "level": 6,
     "headword": "run out of",
     "definition": "to use all of something so that none is left",
-    "example": "We've {{run out of}} milk, so I'll buy some later.",
+    "example": "We've {{run}} {{out}} {{of}} milk, so I'll buy some later.",
     "example2": "My phone ran out of battery on the train.",
     "meanings": {
       "ja": "使い果たす・切らす"
@@ -113,7 +113,7 @@
     "createdAt": "2026-10-02",
     "stamps": {
       "core": {
-        "hash": "sha256:8f03e300b56fcfef8f29504d45535ac2dc80fef1ab005396524c8fe837a88b4d",
+        "hash": "sha256:16e50ec54699d0f2c8248edeafe94e6002f718416a873e0447656b4ba2b2b7c4",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       },
@@ -155,7 +155,7 @@
     "level": 4,
     "headword": "look forward to",
     "definition": "to feel happy about something that is going to happen",
-    "example": "I'm really {{looking forward to}} seeing you next week.",
+    "example": "I'm really {{looking}} {{forward}} {{to}} seeing you next week.",
     "example2": "We look forward to hearing from you.",
     "meanings": {
       "ja": "楽しみにする"
@@ -163,7 +163,7 @@
     "createdAt": "2026-10-02",
     "stamps": {
       "core": {
-        "hash": "sha256:836ee73e90e6199979b222b0f5b53c0f04b3b8e595d4b585cdc1b6746056833e",
+        "hash": "sha256:8178a666a77e44149ced53e20c232d0fc96c52412be46a3694384920c1e09107",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       },
@@ -180,7 +180,7 @@
     "level": 7,
     "headword": "turn down",
     "definition": "to say no to an offer or a request",
-    "example": "He {{turned down}} the job because the salary was too low.",
+    "example": "He {{turned}} {{down}} the job because the salary was too low.",
     "example2": "I had to turn down her invitation to the wedding.",
     "meanings": {
       "ja": "断る"
@@ -188,7 +188,7 @@
     "createdAt": "2026-10-02",
     "stamps": {
       "core": {
-        "hash": "sha256:95da79cf566bd4e4e733653bd2eaaf0151a4d73b2ac04c0b717f9f387472b254",
+        "hash": "sha256:92844444ab7bf3a58bc33d29e5265ecf453b5a777cd2eb2be3207259e8685cc1",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       },
@@ -205,7 +205,7 @@
     "level": 4,
     "headword": "check in",
     "definition": "to report your arrival at a hotel or an airport",
-    "example": "We can {{check in}} at the hotel after three.",
+    "example": "We can {{check}} {{in}} at the hotel after three.",
     "example2": "Please check in at least two hours before your flight.",
     "meanings": {
       "ja": "チェックインする"
@@ -213,7 +213,7 @@
     "createdAt": "2026-10-02",
     "stamps": {
       "core": {
-        "hash": "sha256:afa45f4aef9bfcf74abfc65f34c1324c3d3b9270a5df7723b41ac98927ada2c6",
+        "hash": "sha256:0e2c2bd3ce96305de78d66c071cae56f5cbccacc27e85e454d3235e597830141",
         "perspectivesVersion": 4,
         "at": "2026-10-02"
       },
