@@ -1,4 +1,10 @@
-import { useEffect, useRef, useState, type ReactElement, type RefObject } from "react";
+import {
+  useLayoutEffect,
+  useRef,
+  useState,
+  type ReactElement,
+  type RefObject,
+} from "react";
 
 const PIECES = 30;
 const DURATION_MS = 2500;
@@ -53,7 +59,9 @@ export function Confetti({
   const layer = useRef<HTMLDivElement>(null);
   const [done, setDone] = useState(false);
 
-  useEffect(() => {
+  // Before paint: until the pieces are placed and animating they would all
+  // show for a frame at the layer's top-left corner.
+  useLayoutEffect(() => {
     const host = layer.current;
     const from = origin.current;
     if (host === null) return undefined;
