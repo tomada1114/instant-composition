@@ -75,6 +75,21 @@ export const turnResultSchema = z.object({
   reply: partnerReplySchema.nullable(),
 });
 
+/** `GET /v1/talks/{talkId}`: public state for the signed-in learner's own talk. */
+export const talkViewSchema = talkOpenedSchema.extend({
+  status: z.enum(["open", "finished", "ended", "discarded"]),
+  turns: z.array(
+    z.object({
+      turn: turnSchema,
+      japanese: z.string(),
+      english: z.string().nullable(),
+      judgment: judgmentSchema,
+      reply: z.string().nullable(),
+      closing: z.boolean(),
+    }),
+  ),
+});
+
 /** `POST /v1/talks/{talkId}/end`: whether the talk is kept as a record. */
 export const talkEndedSchema = z.object({ kept: z.boolean() });
 

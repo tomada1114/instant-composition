@@ -1,6 +1,7 @@
 import {
   addCards,
   endTalk,
+  getTalk,
   makeCandidates,
   recordRecital,
   retryReply,
@@ -74,6 +75,9 @@ function talkCommand<T>(
 
 /** The talk activity's operations, keyed by `operationId`; the talk id comes from the path. */
 export const TALK_OPERATIONS: Readonly<Record<string, Operation>> = {
+  getTalk: talkAction(["talkId"], (deps, context, { talkId }) =>
+    getTalk(deps, context, talkId),
+  ),
   startTalk: talkCommand(startTalkRequestSchema, [], (deps, context, _, start) =>
     startTalk(deps, context, start),
   ),

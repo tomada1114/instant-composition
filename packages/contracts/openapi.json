@@ -1082,6 +1082,62 @@
         }
       }
     },
+    "/v1/talks/{talkId}": {
+      "get": {
+        "operationId": "getTalk",
+        "summary": "Reads the signed-in learner's own unexpired talk and kept turns without a model call or a write; omits model metadata and recital counters.",
+        "parameters": [
+          {
+            "name": "talkId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "string", "minLength": 1, "maxLength": 64 }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/TalkView" }
+              }
+            }
+          },
+          "400": {
+            "description": "ERR_BAD_REQUEST: The request does not fit the round, the talk, the settings or the profile it names.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "401": {
+            "description": "ERR_UNAUTHENTICATED: The request carries no valid access token.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "403": {
+            "description": "ERR_FORBIDDEN: The caller may not run this operation.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          },
+          "404": {
+            "description": "ERR_TALK_NOT_FOUND: No talk has that id.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/ErrorResponse" }
+              }
+            }
+          }
+        }
+      }
+    },
     "/v1/talks": {
       "post": {
         "operationId": "startTalk",
@@ -2636,6 +2692,41 @@
           "opening": { "type": "string" }
         },
         "required": ["talkId", "scene", "opening"]
+      },
+      "TalkView": {
+        "type": "object",
+        "properties": {
+          "talkId": { "type": "string" },
+          "scene": { "$ref": "#/components/schemas/Scene" },
+          "opening": { "type": "string" },
+          "status": {
+            "type": "string",
+            "enum": ["open", "finished", "ended", "discarded"]
+          },
+          "turns": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "turn": { "type": "integer", "minimum": 1, "maximum": 6 },
+                "japanese": { "type": "string" },
+                "english": { "type": ["string", "null"] },
+                "judgment": { "$ref": "#/components/schemas/Judgment" },
+                "reply": { "type": ["string", "null"] },
+                "closing": { "type": "boolean" }
+              },
+              "required": [
+                "turn",
+                "japanese",
+                "english",
+                "judgment",
+                "reply",
+                "closing"
+              ]
+            }
+          }
+        },
+        "required": ["talkId", "scene", "opening", "status", "turns"]
       },
       "Verdict": { "type": "string", "enum": ["fine", "corrected", "failed"] },
       "Judgment": {

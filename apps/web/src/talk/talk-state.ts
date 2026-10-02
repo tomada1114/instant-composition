@@ -18,11 +18,8 @@ export interface TalkTurn {
 }
 
 /**
- * Where the current turn stands, which is what the bottom panel shows:
- * W3a `japanese`, W3b `english`, W3c `teacher` and `partner`, W3d `fine`,
- * W3e `model`, W3f `hidden`, W3g `replyFailed` (the reply did not arrive)
- * and `turnFailed` (the turn itself was not answered), W3h `ended` (also a
- * talk the server no longer takes).
+ * The bottom panel's step: input, waiting, feedback, recital, retry or end.
+ * W3a–W3h and their visible behavior are recorded in ux-screens.md.
  */
 export type TalkStep =
   | "japanese"
@@ -52,7 +49,8 @@ export type TalkState =
   | { readonly kind: "talk"; readonly talk: Talk };
 
 export type TalkEvent =
-  | { readonly type: "start" | "startFailed" }
+  | { readonly type: "start" | "startFailed" | "resumeMissing" }
+  | { readonly type: "resumed"; readonly talk: Talk }
   | { readonly type: "opened"; readonly opened: TalkOpened }
   | { readonly type: "japanese"; readonly text: string }
   | { readonly type: "english"; readonly text: string | null }
@@ -94,7 +92,7 @@ function withCurrent(talk: Talk, patch: Partial<TalkTurn>, step: TalkStep): Talk
  * Shows the held reply: the next turn begins on it, turn 6's closing ends the
  * talk, and a reply that did not arrive is W3g.
  */
-function revealReply(talk: Talk): Talk {
+export function revealReply(talk: Talk): Talk {
   const turn = currentTurn(talk);
   if (turn.reply === undefined || turn.reply === null) {
     return { ...talk, step: "replyFailed" };
@@ -172,6 +170,9 @@ function talkStep(talk: Talk, event: TalkEvent): Talk {
 /** The talk screen's reducer: W2's start, then each step of each turn. */
 export function talkReducer(state: TalkState, event: TalkEvent): TalkState {
   if (event.type === "start") return { kind: "preparing" };
+  if (event.type === "resumeMissing") return state.kind === "preparing" ? IDLE : state;
+  if (event.type === "resumed")
+    return state.kind === "preparing" ? { kind: "talk", talk: event.talk } : state;
   if (event.type === "startFailed")
     return state.kind === "preparing" ? { kind: "failed" } : state;
   if (event.type === "opened") {

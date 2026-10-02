@@ -63,7 +63,6 @@ below is not a priority order.
 | On-device recognition (Chrome's `processLocally`)                                                                                                | A language pack of about 60 MB each; whether `ja-JP` is offered on-device is unverified (#395 D10)                         | When sending audio to Google becomes unacceptable                                                                 |
 | A list of records (date and scene; opening one shows its turns), and deleting a record                                                           | The first version needs only to save                                                                                       | After the flow runs                                                                                               |
 | Checking the recital (if it is far off, try once more)                                                                                           | It needs a standard for the check, and adds model calls                                                                    | When self-report feels too lenient                                                                                |
-| Saving and resuming a talk closed midway                                                                                                         | The first version keeps only finished talks                                                                                | When losing a talk midway becomes noticeable                                                                      |
 | A target for waiting time                                                                                                                        | First run it, then look at the actual waits                                                                                | When the wait bothers the learner                                                                                 |
 | Automatic carry-over into the next talk. Example: on a second round of the same scene, the partner creates a chance to use the last model answer | There is no material until records accumulate                                                                              | Decided as the app is used                                                                                        |
 | A personal instant-composition drill built from phrases the learner could not say in a talk                                                      | The instant-composition drill needs a change on its side too                                                               | Decided as the app is used                                                                                        |
@@ -134,8 +133,14 @@ below is not a priority order.
 - **The connection drops:**
   - Before the start, tell the learner that the talk cannot start.
   - Midway, treat it like a model failure (try again).
-- **The learner closes the app midway, or the talk ends without a way back:** The talk
-  is not saved. It is not resumed.
+- **The page reloads or the device discards a tab:** The same browser resumes its open
+  talk while the server still holds it (24 hours). Kept turns and feedback return; the
+  interrupted recital is skipped. Continue at the next Japanese input, retry a missing
+  partner reply, or show the end after a closing reply. This uses one local talk id, not
+  a home entry or resume on another device. A missing, expired or closed talk returns
+  quietly to the start screen; storage that throws disables resume.
+- **The learner explicitly ends the talk:** Its turns are kept, or it is discarded when
+  empty; the local id is removed and a later visit starts fresh.
 
 ### 3.2 The partner
 
@@ -208,7 +213,7 @@ below is not a priority order.
 | Item                 | Specification                                                                                                                                                                                                                                                                                                                            |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | What is kept         | For a talk finished to the end or ended with 「終わる」: the scene, the start and end times, and the content of each turn (the partner's line, the Japanese, the English, the judgment, the model answer, the point, and the number of times 「もう一度見る」 was tapped), and the card candidates its end offered with which were added |
-| What is not kept     | A talk closed midway or ended without a way back. A talk where the learner tapped 「終わる」 without finishing a single turn                                                                                                                                                                                                             |
+| What is not kept     | An open talk is resumable on this browser until its 24-hour expiry, but is not a permanent record. A talk ended without a single turn is discarded.                                                                                                                                                                                      |
 | List                 | Not in the first version (later)                                                                                                                                                                                                                                                                                                         |
 | Role of looking back | Looking back is not assumed. The record is material for future features (carry-over into the next talk, cards, a personal instant-composition drill)                                                                                                                                                                                     |
 | Retention            | Indefinite                                                                                                                                                                                                                                                                                                                               |

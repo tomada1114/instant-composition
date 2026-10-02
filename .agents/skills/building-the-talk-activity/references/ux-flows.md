@@ -86,8 +86,12 @@ The screen list and wireframes (W1 to W4, T) are in [ux-screens.md](ux-screens.m
                 ✕ から → [W3h おわり]　　タブ・戻るから → [その行き先]
 ```
 
-- Closed, reloaded, or the device discarded the page: it ends without asking, and that
-  talk is not kept.
+- Reloading or the device discarding the page leaves the server's talk open until its
+  expiry. Returning to `/talk` on the same browser reads it during W2's preparing state,
+  restores the kept conversation and continues after the last kept turn; the interrupted
+  recital is skipped. No key on another browser means W2 as usual.
+- Explicitly ending or discarding removes the local id. A read that finds no open talk
+  also clears it, quietly. W4 guards leaving a resumed talk just as a newly opened one.
 
 ## 4. Cross-cutting behavior
 

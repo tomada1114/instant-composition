@@ -15,6 +15,19 @@ export interface TalkOpened {
   readonly opening: string;
 }
 
+/** A stored talk's public view, without model metadata or recital counters. */
+export interface TalkView extends TalkOpened {
+  readonly status: Talk["status"];
+  readonly turns: readonly {
+    readonly turn: number;
+    readonly japanese: string;
+    readonly english: string | null;
+    readonly judgment: Judgment;
+    readonly reply: string | null;
+    readonly closing: boolean;
+  }[];
+}
+
 /** The partner's reply to a turn; `closing` on the last turn's. */
 export interface PartnerReply {
   readonly line: string;

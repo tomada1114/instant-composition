@@ -57,6 +57,7 @@ export type {
 export { type ApplicationDeps } from "./execute";
 export { deleteVocabCard } from "./delete-card";
 export { endTalk, recordRecital, type RecitalCommand } from "./end-talk";
+export { getTalk } from "./get-talk";
 export { finishRound } from "./finish-round";
 export { home } from "./home";
 export {
@@ -123,6 +124,7 @@ export type {
   PartnerReply,
   TalkEnded,
   TalkOpened,
+  TalkView,
   TurnResult,
 } from "./talk-views";
 export { updateLevel } from "./update-level";

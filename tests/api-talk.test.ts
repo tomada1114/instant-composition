@@ -13,6 +13,7 @@ import {
   ROUTES,
   talkEndedSchema,
   talkOpenedSchema,
+  talkViewSchema,
   turnResultSchema,
 } from "@instant-composition/contracts";
 import { err } from "@instant-composition/domain";
@@ -84,6 +85,76 @@ async function twoLearners() {
   const stored = () => a.stores.forLearner(learnerId("learner-1")).talk("t1");
   return { a, b, stored };
 }
+
+describe("reading a talk", () => {
+  it("reads its stored public state without another model call or mutation", async () => {
+    const api = makeApi();
+    const opened = await started(api);
+    await sent(api, 1, null);
+    const store = api.stores.forLearner(learnerId("learner-1"));
+    const before = await store.talk("t1");
+    const calls = api.modelCalls.length;
+    const view = await contracted(
+      await api.call("GET", "/v1/talks/t1"),
+      "getTalk",
+      talkViewSchema,
+    );
+    expect(view).toMatchObject({
+      ...opened,
+      status: "open",
+      turns: [{ turn: 1, english: null, closing: false }],
+    });
+    expect(view).not.toHaveProperty("model");
+    expect(view.turns[0]).not.toHaveProperty("revealCount");
+    expect(await store.talk("t1")).toStrictEqual(before);
+    expect(api.modelCalls).toHaveLength(calls);
+  });
+
+  it("reads an ended talk's status and turns", async () => {
+    const api = makeApi();
+    await started(api);
+    await sent(api, 1);
+    await api.call("POST", "/v1/talks/t1/end");
+    const view = await contracted(
+      await api.call("GET", "/v1/talks/t1"),
+      "getTalk",
+      talkViewSchema,
+    );
+    expect(view).toMatchObject({ status: "ended", turns: [{ turn: 1 }] });
+  });
+
+  it.each([
+    ["unknown", "t2", 0],
+    ["expired", "t1", DAY_MS],
+  ])("does not find an %s talk", async (_, id, elapsed) => {
+    const api = makeApi();
+    await started(api);
+    api.advance(elapsed);
+    expect(await refusal(await api.call("GET", `/v1/talks/${id}`))).toStrictEqual([
+      404,
+      "ERR_TALK_NOT_FOUND",
+    ]);
+  });
+
+  it("validates the read's talk id before reading it", async () => {
+    const api = makeApi();
+    expect(
+      await refusal(await api.call("GET", `/v1/talks/${"x".repeat(65)}`)),
+    ).toStrictEqual([400, "ERR_BAD_REQUEST"]);
+    expect(api.modelCalls).toStrictEqual([]);
+  });
+
+  it("does not expose or change another learner's talk", async () => {
+    const { b, stored } = await twoLearners();
+    const before = await stored();
+    expect(await refusal(await b.call("GET", "/v1/talks/t1"))).toStrictEqual([
+      404,
+      "ERR_TALK_NOT_FOUND",
+    ]);
+    expect(await stored()).toStrictEqual(before);
+    expect(b.modelCalls).toStrictEqual([]);
+  });
+});
 
 describe("a whole talk on the stand-in model", () => {
   it("starts, takes six turns, keeps a recital and ends kept", async () => {

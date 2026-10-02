@@ -36,6 +36,7 @@ step (W3a) calls nothing: the client sends the Japanese and the English together
 
 | Operation        | Method and path                                | Request                       | Answer                                                | Model calls                      |
 | ---------------- | ---------------------------------------------- | ----------------------------- | ----------------------------------------------------- | -------------------------------- |
+| `getTalk`        | `GET /v1/talks/{talkId}`                       | none                          | status, scene, opening and kept turns                 | none                             |
 | `startTalk`      | `POST /v1/talks`                               | `{ talkId }`                  | the scene and the partner's opening line              | scene, 1                         |
 | `sendTurn`       | `POST /v1/talks/{talkId}/turns`                | `{ turn, japanese, english }` | the judgment, and the partner's reply when it arrived | teacher and partner, in parallel |
 | `retryReply`     | `POST /v1/talks/{talkId}/reply`                | none                          | the partner's reply to the latest turn                | partner, 1, unless already kept  |
@@ -148,8 +149,8 @@ interface Turn {
   day after its start. The commit that keeps turn 6 makes it `finished`; `endTalk` makes
   it `ended` when it holds a turn and `discarded` when it holds none. `finished` and
   `ended` drop `expiresAt` and are kept for good; an `open` or `discarded` talk is
-  deleted by DynamoDB's TTL, so a talk closed mid-way is never kept, and nothing resumes
-  it.
+  deleted by DynamoDB's TTL. The same browser can resume an unexpired open talk; this
+  does not turn it into a kept record.
 - TTL deletes late, so the application reads a talk whose `expiresAt` has passed as
   absent; both stores then behave alike. The learner table gains `expiresAt` as its TTL
   attribute, which no other entry sets.
@@ -163,6 +164,23 @@ interface Turn {
   candidate, so it never meets a catalog id.
 - `model` records the provider, the model and each prompt's version, so a later look at
   the records can tell which prompt produced a turn.
+
+## Reading and resuming
+
+`getTalk` authorizes against the learner-bound store and reads `talk(talkId)` through
+`liveTalk`: unknown, expired and other learners' talks are `ERR_TALK_NOT_FOUND`. It
+writes nothing and calls no model. `TalkView` extends the opened view with `status` and
+`turns`: `turn`, `japanese`, `english` (null on give-up), `judgment`, `reply` (null
+while missing) and `closing`. Neither `model` nor `revealCount` leaves this query.
+
+The web client keeps only the opened id under `instant-composition:open-talk` in
+`localStorage`, with every access caught. A storage failure disables resume. Mounting
+`/talk` reads that id before W2; a transient read failure offers W2's retry for the same
+id. An open talk restores the scene and feedback and proceeds after the last kept turn,
+without repeating its recital. A missing or non-open talk quietly clears the id and
+shows W2. Ending, discarding or any talk call returning `ERR_TALK_NOT_FOUND` clears the
+matching id; a late answer for an older talk cannot clear a newer id. No other device or
+home entry resumes a talk.
 
 ## The model port
 
@@ -318,8 +336,8 @@ Japanese.
 ## The web client
 
 - The route is `/talk`, the navigation's second section 「会話」 with a speech-bubble
-  glyph. The screen holds the step it is on in React state: a reload loses the talk, as
-  requirements §3.1 asks.
+  glyph. The current step stays in React state; this browser reloads the open talk from
+  its saved id and continues after its kept turns (requirements §3.1).
 - New parts go into designing-ui's inventory first (ux-flows §4.1): the fourth section,
   the talk line, the waiting line, the hidden model answer, and the underline field
   rebuilt.

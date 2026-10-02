@@ -27,8 +27,11 @@ The flows, cross-cutting behavior and decisions are in [ux-flows.md](ux-flows.md
 | W4  | Leave-confirmation dialog                         | §3.1 ending midway          | 1 or more turns / 0 turns                            |
 | T   | Failure notice (toast)                            | edge cases of §3.1 and §3.3 | disappears after 4 seconds                           |
 
-- The route is `/talk`. W2 and W3 are two states of the same route. Reloading during a
-  talk does not keep that talk (as the requirements say).
+- The route is `/talk`. W2 and W3 are two states of the same route. With this browser's
+  saved talk id, W2 stays preparing while the talk is read. An open talk restores W3's
+  scene, kept turns and feedback, skips the interrupted recital and continues at the
+  next W3a, W3g for a missing reply, or W3h after a closing reply. A missing, expired or
+  closed talk quietly clears the id and shows W2. Other devices start at W2.
 - The history list, settings and the voice screen are not in the first version.
 
 ## 2. Wireframes
@@ -241,8 +244,8 @@ Back, either of which opens W4.
   - From ✕, to W3h.
   - From a tab or back, to that destination.
 - With 1 or more turns, the talk is saved to the history.
-- Closing the page or reloading does not ask (no confirmation is shown). That talk is
-  not kept.
+- Closing the page or reloading does not ask. The open talk can be resumed on this
+  browser until expiry; it becomes a permanent record only once ended or finished.
 
 ### T Failure notice (toast)
 

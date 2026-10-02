@@ -12,7 +12,7 @@ import { useTalkAnnouncement } from "./use-talk-announcement";
 import { useTalkKeys, useTalkLeave } from "./use-talk-guard";
 
 /**
- * The talk section, held in React state alone so a reload loses the talk: W2
+ * The talk section, resuming this browser's open talk on a reload: W2
  * under the shell's navigation until a talk opens, then W3 in the focus
  * layout until 「新しい会話」. From the first line until it ends, ✕, Esc, a
  * link and Back all ask first (W4).
