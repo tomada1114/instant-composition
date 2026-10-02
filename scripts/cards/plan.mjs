@@ -208,3 +208,70 @@ export function planGaps(input) {
   }
   return plan;
 }
+
+/**
+ * @typedef {object} PlannedVocabCell
+ * @property {string} category
+ * @property {number} level
+ * @property {number} count - Cards to write.
+ */
+
+/**
+ * Plan a vocabulary generation run over category × level cells: thinnest
+ * first, at most {@link MAX_PER_CELL} each, ties spread across categories as
+ * {@link planGaps} spreads them across topics; no grammar targets, no history.
+ *
+ * @param {{
+ *   categories: readonly string[],
+ *   cards: readonly import("./store.mjs").CardEntry[],
+ *   count: number,
+ *   range: import("./args.mjs").Range,
+ * }} input - The categories, the vocabulary cards, the count and the range.
+ * @returns {PlannedVocabCell[]} The cells to fill, in plan order.
+ */
+export function planVocabGaps(input) {
+  const { categories, range, count } = input;
+  /** @type {Map<string, number>} */
+  const counts = new Map();
+  for (const entry of input.cards) {
+    const key = `${String(entry.raw["category"])}/${String(entry.raw["level"])}`;
+    counts.set(key, (counts.get(key) ?? 0) + 1);
+  }
+  const levels = range.levels ?? { min: 1, max: 10 };
+  /** @type {{ category: string, level: number, have: number, order: [number, number] }[]} */
+  const cells = [];
+  for (const [categoryIndex, category] of categories.entries()) {
+    /** @type {{ level: number, rank: string }[]} */
+    const inCategory = [];
+    for (let level = levels.min; level <= levels.max; level += 1) {
+      if (!inRange(range, { category, level })) continue;
+      inCategory.push({ level, rank: spreadRank(`${category}/${String(level)}`) });
+    }
+    inCategory.sort((left, right) => (left.rank < right.rank ? -1 : 1));
+    for (const [position, cell] of inCategory.entries()) {
+      cells.push({
+        category,
+        level: cell.level,
+        have: counts.get(`${category}/${String(cell.level)}`) ?? 0,
+        order: [position, categoryIndex],
+      });
+    }
+  }
+  // Fewest cards first: the deficit against CELL_TARGET orders cells the same.
+  cells.sort(
+    (left, right) =>
+      left.have - right.have ||
+      left.order[0] - right.order[0] ||
+      left.order[1] - right.order[1],
+  );
+  /** @type {PlannedVocabCell[]} */
+  const plan = [];
+  let remaining = count;
+  for (const cell of cells) {
+    if (remaining <= 0) break;
+    const take = Math.min(MAX_PER_CELL, remaining);
+    remaining -= take;
+    plan.push({ category: cell.category, level: cell.level, count: take });
+  }
+  return plan;
+}

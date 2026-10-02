@@ -120,6 +120,14 @@ describe("snapshotCatalog", () => {
         ),
       }),
     ],
+    [
+      "a vocabulary card in an unknown category",
+      (document) => ({
+        ...document,
+        vocab: [{ ...(document["vocab"] as object[])[0], category: "verb" }],
+      }),
+    ],
+    ["vocabulary that is not an array", (document) => ({ ...document, vocab: {} })],
     ["an array", () => []],
     ["a bare string", () => "catalog"],
   ])(

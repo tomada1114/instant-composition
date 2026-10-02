@@ -11,6 +11,24 @@ import {
 } from "../scripts/cards/schema.mjs";
 import { findNearDuplicates, isNearDuplicate } from "../scripts/cards/similarity.mjs";
 import {
+  blanksMatch,
+  blanksOf,
+  fillBlanks,
+  findHeadwordDuplicates,
+  isFormOf,
+  normalizeHeadword,
+  wordsOf,
+} from "../scripts/cards/vocab-rules.mjs";
+import {
+  asTypedVocab,
+  canonicalVocabCore,
+  isVocabShown,
+  randomVocabId,
+  VOCAB_ID_PATTERN,
+  vocabCoreHash,
+  vocabStatusOf,
+} from "../scripts/cards/vocab-schema.mjs";
+import {
   charNgrams,
   countWords,
   dice,
@@ -373,4 +391,246 @@ describe("n-gram similarity", () => {
       expect(pair(ja, en)).toHaveLength(1);
     },
   );
+});
+
+// The vocabulary card's hash and shown rule, pinned the same way: the
+// canonical string by hand, its SHA-256 from `shasum -a 256`.
+const VOCAB_CORE = {
+  category: "phrasal-verb",
+  level: 4,
+  headword: "give up",
+  definition: "to stop trying to do something because it is too hard",
+  example: "She was so tired that she {{gave}} {{up}} halfway.",
+  example2: "Don't give up; you're almost there.",
+};
+const VOCAB_CANONICAL =
+  '{"category":"phrasal-verb","level":4,"headword":"give up","definition":"to stop trying to do something because it is too hard","example":"She was so tired that she {{gave}} {{up}} halfway.","example2":"Don\'t give up; you\'re almost there."}';
+const VOCAB_CORE_HASH =
+  "sha256:b44a52a45e2519d797541c7e8e4d181a496c14504e62b20ea905dd1f59785434";
+// `"あきらめる"`, the meaning's JSON, through `shasum -a 256`.
+const MEANING_HASH =
+  "sha256:3600795399ea6334aed712c08b2aaf7560e71dcce48b0f4294b0f83f8e1179ab";
+
+describe("the vocabulary core hash", () => {
+  it("serializes exactly the core fields in their fixed order", () => {
+    const shuffled = {
+      example2: VOCAB_CORE.example2,
+      example: VOCAB_CORE.example,
+      definition: VOCAB_CORE.definition,
+      headword: VOCAB_CORE.headword,
+      level: VOCAB_CORE.level,
+      category: VOCAB_CORE.category,
+      meanings: { ja: "あきらめる" },
+    };
+    expect(canonicalVocabCore(shuffled)).toBe(VOCAB_CANONICAL);
+  });
+
+  it("pins a known card to a known hash", () => {
+    expect(vocabCoreHash(VOCAB_CORE)).toBe(VOCAB_CORE_HASH);
+    expect(fieldHash("あきらめる")).toBe(MEANING_HASH);
+  });
+});
+
+describe("isVocabShown", () => {
+  const stamp = (hash: string) => ({ hash, perspectivesVersion: 1, at: "2026-09-22" });
+  const reviewed = {
+    ...VOCAB_CORE,
+    meanings: { ja: "あきらめる" },
+    stamps: { core: stamp(VOCAB_CORE_HASH), "meanings.ja": stamp(MEANING_HASH) },
+  };
+
+  it("shows a card whose core and meaning in that language match their stamps", () => {
+    expect(isVocabShown(reviewed, "ja")).toBe(true);
+  });
+
+  it("keeps showing it when a meaning in another language is added unreviewed", () => {
+    expect(
+      isVocabShown(
+        { ...reviewed, meanings: { ...reviewed.meanings, zh: "放弃" } },
+        "ja",
+      ),
+    ).toBe(true);
+  });
+
+  it("shows nothing to a language it has no meaning in", () => {
+    expect(isVocabShown(reviewed, "zh")).toBe(false);
+  });
+
+  it.each([
+    ["its core edited", { headword: "give in" }],
+    ["its meaning edited", { meanings: { ja: "諦める" } }],
+    ["no meaning stamp", { stamps: { core: stamp(VOCAB_CORE_HASH) } }],
+    ["no core stamp", { stamps: { "meanings.ja": stamp(MEANING_HASH) } }],
+  ])("hides a card with %s", (_label, overrides) => {
+    expect(isVocabShown({ ...reviewed, ...overrides }, "ja")).toBe(false);
+  });
+});
+
+describe("a vocabulary card's review status", () => {
+  const stamp = (hash: string, perspectivesVersion = 2) => ({
+    hash,
+    perspectivesVersion,
+    at: "2026-09-22",
+  });
+  const card = (
+    stamps: Record<string, unknown>,
+    meanings: unknown = { ja: "あきらめる" },
+  ) => ({
+    id: "v_2a3b4c5d",
+    ...VOCAB_CORE,
+    meanings,
+    stamps,
+  });
+
+  it.each([
+    ["current", { core: stamp(VOCAB_CORE_HASH), "meanings.ja": stamp(MEANING_HASH) }],
+    ["unstamped", { core: stamp(VOCAB_CORE_HASH) }],
+    ["changed", { core: stamp("sha256:0"), "meanings.ja": stamp(MEANING_HASH) }],
+    [
+      "outdated",
+      { core: stamp(VOCAB_CORE_HASH, 1), "meanings.ja": stamp(MEANING_HASH) },
+    ],
+  ])("is %s by its least reviewed part", (status, stamps) => {
+    expect(vocabStatusOf(card(stamps), false, 2)).toBe(status);
+  });
+
+  it("is a lint error when lint says so or the shape is wrong", () => {
+    expect(vocabStatusOf(card({}), true, 2)).toBe("lint-error");
+    expect(vocabStatusOf(card({}, ["あきらめる"]), false, 2)).toBe("lint-error");
+    expect(asTypedVocab({ ...card({}), level: "4" })).toBeUndefined();
+  });
+});
+
+describe("randomVocabId", () => {
+  it("alternates digits and letters after the v_ prefix", () => {
+    expect(randomVocabId(() => 0)).toBe("v_2a2a2a2a");
+  });
+
+  it.each(["v_7k2m9x4q", "c_7k2m9x4q", "v_7k2m9x4"])(
+    "matches only v_ ids: %s",
+    (id) => {
+      expect(VOCAB_ID_PATTERN.test(id)).toBe(id === "v_7k2m9x4q");
+    },
+  );
+});
+
+describe("the blanks in an example", () => {
+  it("reads what each blank holds and fills them back in", () => {
+    expect(blanksOf("Can you {{pick}} me {{up}} at six?")).toEqual({
+      blanks: ["pick", "up"],
+      wellFormed: true,
+    });
+    expect(fillBlanks("Can you {{pick}} me {{up}} at six?")).toBe(
+      "Can you pick me up at six?",
+    );
+  });
+
+  it.each(["Can you {{pick me up?", "Can you {{}} me up?", "Can you pick} me up?"])(
+    "calls %j malformed",
+    (text) => {
+      expect(blanksOf(text).wellFormed).toBe(false);
+    },
+  );
+
+  it("splits English into lower-case words, keeping inner apostrophes and hyphens", () => {
+    expect(wordsOf("“It’s a well-known {{rule}},” she said.")).toEqual([
+      "it's",
+      "a",
+      "well-known",
+      "rule",
+      "she",
+      "said",
+    ]);
+  });
+});
+
+describe("a blanked word as a form of the headword", () => {
+  it.each([
+    ["give", "give"],
+    ["gives", "give"],
+    ["giving", "give"],
+    ["gave", "give"],
+    ["given", "give"],
+    ["putting", "put"],
+    ["stopped", "stop"],
+    ["tries", "try"],
+    ["tried", "try"],
+    ["busier", "busy"],
+    ["dying", "die"],
+    ["knives", "knife"],
+    ["leaves", "leaf"],
+    ["children", "child"],
+    ["better", "good"],
+    ["forgotten", "forget"],
+    ["an", "a"],
+    ["me", "you"],
+    ["their", "my"],
+  ])("accepts %s for %s", (word, head) => {
+    expect(isFormOf(word, head)).toBe(true);
+  });
+
+  it.each([
+    ["take", "give"],
+    ["upon", "up"],
+    ["the", "a"],
+  ])("rejects %s for %s", (word, head) => {
+    expect(isFormOf(word, head)).toBe(false);
+  });
+
+  it.each([
+    [["gave", "up"], "give up"],
+    [["came", "up", "with"], "come up with"],
+    [["made", "up", "my", "mind"], "make up one's mind"],
+    [["made", "up", "mind"], "make up one's mind"],
+    [["got", "on", "nerves"], "get on someone's nerves"],
+    [["it's", "up", "to", "me"], "it's up to you"],
+  ])("matches the blanks %j to %j", (blanked, headword) => {
+    expect(blanksMatch(blanked, wordsOf(headword))).toBe(true);
+  });
+
+  it.each([
+    [["gave"], "give up"],
+    [["gave", "up", "on"], "give up"],
+    [["up", "gave"], "give up"],
+    [["made", "up", "a", "mind"], "make up one's mind"],
+    [[], "give up"],
+  ])("does not match the blanks %j to %j", (blanked, headword) => {
+    expect(blanksMatch(blanked, wordsOf(headword))).toBe(false);
+  });
+});
+
+describe("duplicate headwords", () => {
+  const card = (key: string, category: string, headword: string) => ({
+    key,
+    category,
+    headword,
+  });
+
+  it("are the same normalized headword in the same category", () => {
+    expect(normalizeHeadword("It’s up to you!")).toBe(
+      normalizeHeadword("it is up to you"),
+    );
+    expect(
+      findHeadwordDuplicates(
+        [card("input[0]", "phrasal-verb", "Give up")],
+        [card("v_a", "phrasal-verb", "give up"), card("v_b", "idiom", "give up")],
+        [{ ...card("v_c", "phrasal-verb", "give up."), replacedBy: "v_z" }],
+      ),
+    ).toEqual([
+      { a: "input[0]", b: "v_a", against: "card" },
+      { a: "input[0]", b: "v_c", against: "tombstone" },
+    ]);
+  });
+
+  it("leave out the tombstone the subject replaced, and report two subjects once", () => {
+    const subjects = [card("v_a", "word", "borrow"), card("v_b", "word", "borrow")];
+    expect(
+      findHeadwordDuplicates(subjects, subjects, [
+        { ...card("v_c", "word", "borrow"), replacedBy: "v_a" },
+      ]),
+    ).toEqual([
+      { a: "v_a", b: "v_b", against: "card" },
+      { a: "v_b", b: "v_c", against: "tombstone" },
+    ]);
+  });
 });
