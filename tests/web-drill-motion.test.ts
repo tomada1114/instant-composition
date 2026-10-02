@@ -53,6 +53,10 @@ describe("playMotion", () => {
     ["fade", 120],
     ["pulse", 120],
     ["chip", 320],
+    ["pop", 600],
+    ["flame", 800],
+    ["check", 500],
+    ["points", 500],
   ] as const)("plays %s over %i ms", (name, duration) => {
     stubReducedMotion(false);
     const el = element();

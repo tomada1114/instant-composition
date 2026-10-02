@@ -35,6 +35,7 @@ export { requestFinish, requestRound, roundKindFrom, sendAnswer } from "./drill/
 export {
   browserSound,
   createSoundPlayer,
+  roundSound,
   type SoundName,
   type ToneContext,
 } from "./drill/sound";
