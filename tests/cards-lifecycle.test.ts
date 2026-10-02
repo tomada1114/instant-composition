@@ -6,11 +6,13 @@ import { afterEach, describe, expect, it } from "vitest";
 
 import { repoRoot, runNode } from "../scripts/lib/node-tools.mjs";
 import { isShown } from "../scripts/cards/schema.mjs";
+import { isVocabShown } from "../scripts/cards/vocab-schema.mjs";
 import { prettierAt, prettierFormatter } from "../scripts/cards/store.mjs";
 import {
   jsonOut,
   makeContentRoot,
   makeInput,
+  makeVocabInput,
   removeContentRoots,
   runCards,
   writeCards,
@@ -156,6 +158,63 @@ describe("a card set's life through the cards:* commands", () => {
     expect(runCards(root, ["lint"]).out).toContain(`${deleted} ID_TOMBSTONED`);
     const fresh = runCards(root, ["new-id", "50"]).out.split("\n");
     expect(fresh).not.toContain(deleted);
+  });
+
+  it("takes vocabulary cards through the same life under --kind vocab", () => {
+    const root = makeContentRoot();
+    const options = { formatter: prettierFormatter };
+    const vocab = (argv: string[]) => {
+      const [command = "", ...rest] = argv;
+      return runCards(root, [command, "--kind", "vocab", ...rest], options);
+    };
+    const shown = () =>
+      (
+        jsonOut(vocab(["show", "--json"])) as Parameters<typeof isVocabShown>[0][]
+      ).filter((card) => isVocabShown(card, "ja")).length;
+
+    const input = writeInput(root, "vocab.json", [
+      makeVocabInput(),
+      makeVocabInput({
+        category: "phrase",
+        level: 3,
+        headword: "no worries",
+        definition: "said to tell someone that something is not a problem",
+        example: "A: Sorry, I forgot to call you back.\nB: {{No worries}}.",
+        example2: "A: Thanks for waiting.\nB: No worries, I just got here.",
+        meanings: { ja: "気にしないで" },
+      }),
+    ]);
+    const { admitted } = jsonOut(vocab(["add", input, "--json"])) as {
+      admitted: { id: string }[];
+    };
+    const ids = admitted.map((card) => card.id);
+    expect(ids).toHaveLength(2);
+
+    const check = runNode(prettier, [
+      "--config",
+      path.join(repoRoot, ".prettierrc.json"),
+      "--check",
+      path.join(root, "vocab"),
+    ]);
+    expect(check.status).toBe(0);
+
+    expect(vocab(["lint"]).code).toBe(0);
+    expect(vocab(["queue", "--count"]).out).toBe("2");
+    expect(vocab(["stamp", "--ids", ids.join(",")]).code).toBe(0);
+    expect(shown()).toBe(2);
+    expect(vocab(["queue", "--count"]).out).toBe("0");
+
+    const [edited = "", deleted = ""] = ids;
+    vocab([
+      "update",
+      writeInput(root, "edit.json", [{ id: edited, meanings: { ja: "諦める" } }]),
+    ]);
+    expect(shown()).toBe(1);
+    expect(vocab(["tombstone", "--id", deleted, "--reason", "test"]).code).toBe(0);
+    expect(vocab(["show", "--tombstones", "--brief"]).out).toBe("no worries (phrase)");
+    // The drill's commands read the same log and see none of it.
+    expect(runCards(root, ["lint"]).code).toBe(0);
+    expect(runCards(root, ["show", "--tombstones", "--brief"]).out).toBe("none");
   });
 
   it("runs as a command and exits non-zero on a lint error", () => {

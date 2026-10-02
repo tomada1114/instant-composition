@@ -84,6 +84,9 @@ How a context exposes its surface: **REQUIRED:** `designing-application-core`.
   target-anchored: an item is the target-language sentence with its alternatives, level
   and concept ids namespaced by the target (`en:grammar/<id>`), and the prompt and
   explanation are per-L1 localizations. One pair exists, `en` from `ja`.
+- Vocabulary cards (`content/vocab/`) ride in the same per-pair snapshot as `vocab`:
+  each reviewed card with its meaning in that pair's L1, and nothing of a card that has
+  none. The adapter reads a snapshot without `vocab` as one holding none.
 - Stamps are resolved at build time, so unreviewed text never leaves the build. An
   edited card ships as `withdrawn` (no text), a deleted one as a tombstone with its
   prompt, so an answer naming either still resolves; each review entry also snapshots

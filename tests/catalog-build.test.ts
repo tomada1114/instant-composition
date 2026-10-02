@@ -12,15 +12,18 @@ import {
 import { countWords } from "@instant-composition/domain";
 
 import { buildCatalog, CatalogError, main } from "../scripts/catalog/build.mjs";
-import { coreHash, isShown } from "../scripts/cards/schema.mjs";
+import { coreHash, fieldHash, isShown } from "../scripts/cards/schema.mjs";
+import { isVocabShown, vocabCoreHash } from "../scripts/cards/vocab-schema.mjs";
 import { DEFAULT_ROOT } from "../scripts/cards/store.mjs";
 import { repoRoot, runNode } from "../scripts/lib/node-tools.mjs";
 import {
   makeCard,
   makeContentRoot,
+  makeVocabCard,
   removeContentRoots,
   writeCards,
   writeUnder,
+  writeVocab,
 } from "./cards-fixture";
 
 // `pnpm catalog:build` against a throwaway content root and against the real
@@ -82,7 +85,29 @@ function capture(): Io {
   };
 }
 
-/** A root with a reviewed card, a never-reviewed one, one edited since review, and a tombstone. */
+/** A vocabulary card with its core, and each meaning it holds, stamped as it stands. */
+function vocabStamped(card: Record<string, unknown>): Record<string, unknown> {
+  const stamp = (hash: string) => ({ hash, perspectivesVersion: 2, at: "2026-09-22" });
+  const meanings = card["meanings"] as Record<string, string>;
+  return {
+    ...card,
+    stamps: {
+      core: stamp(vocabCoreHash(card as Parameters<typeof vocabCoreHash>[0])),
+      ...Object.fromEntries(
+        Object.entries(meanings).map(([lang, text]) => [
+          `meanings.${lang}`,
+          stamp(fieldHash(text)),
+        ]),
+      ),
+    },
+  };
+}
+
+/**
+ * A root with a reviewed card, a never-reviewed one, one edited since review,
+ * and a tombstone; and vocabulary cards reviewed, reviewed but for their
+ * meaning, and never reviewed, with a vocabulary tombstone.
+ */
 function mixedRoot(): string {
   const root = makeContentRoot();
   const reviewed = stamped(
@@ -94,19 +119,40 @@ function mixedRoot(): string {
   };
   writeCards(root, "work/meetings.json", [reviewed]);
   writeCards(root, "work/requests.json", [makeCard("c_3b4c5d6e"), edited]);
+  const meaningEdited = {
+    ...vocabStamped(makeVocabCard("v_3b4c5d6e", { headword: "pick up" })),
+    meanings: { ja: "迎えに行く" },
+  };
+  writeVocab(root, "phrasal-verb.json", [
+    vocabStamped(makeVocabCard("v_2a3b4c5d")),
+    meaningEdited,
+    makeVocabCard("v_4c5d6e7f", { headword: "put off" }),
+  ]);
   writeUnder(
     root,
     "tombstones.jsonl",
-    `${JSON.stringify({
-      id: "c_9z8y7x6w",
-      ja: "削除した文",
-      en: "A deleted sentence.",
-      topic: "daily",
-      subtopic: "home",
-      level: 4,
-      reason: "duplicate",
-      deletedAt: "2026-09-20",
-    })}\n`,
+    [
+      JSON.stringify({
+        id: "c_9z8y7x6w",
+        ja: "削除した文",
+        en: "A deleted sentence.",
+        topic: "daily",
+        subtopic: "home",
+        level: 4,
+        reason: "duplicate",
+        deletedAt: "2026-09-20",
+      }),
+      JSON.stringify({
+        kind: "vocab",
+        id: "v_9z8y7x6w",
+        category: "word",
+        level: 3,
+        headword: "borrow",
+        reason: "duplicate",
+        deletedAt: "2026-09-20",
+      }),
+      "",
+    ].join("\n"),
   );
   return root;
 }
@@ -132,6 +178,38 @@ describe("the snapshot built from a content root", () => {
         },
       },
     ]);
+  });
+
+  it("holds the vocabulary cards shown for ja, each with its ja meaning", () => {
+    const out = makeOut();
+    buildCatalog({ root: mixedRoot(), out });
+    const document = readDocument(out);
+
+    expect(document.vocab).toStrictEqual([
+      {
+        id: "v_2a3b4c5d",
+        target: "en",
+        category: "phrasal-verb",
+        level: 4,
+        headword: "give up",
+        definition: "to stop trying to do something because it is too hard",
+        example: "She was so tired that she {{gave}} {{up}} halfway.",
+        example2: "Don't give up; you're almost there.",
+        meaning: "あきらめる",
+      },
+    ]);
+    expect(JSON.stringify(document)).not.toContain("迎えに行く");
+  });
+
+  it("leaves out a vocabulary card with no meaning in the pair's first language", () => {
+    const root = makeContentRoot();
+    writeVocab(root, "phrasal-verb.json", [
+      vocabStamped(makeVocabCard("v_2a3b4c5d", { meanings: { zh: "放弃" } })),
+    ]);
+    const out = makeOut();
+    buildCatalog({ root, out });
+
+    expect(readDocument(out).vocab).toStrictEqual([]);
   });
 
   it("lists every unstamped card as withdrawn, with none of its text", () => {
@@ -264,6 +342,35 @@ describe("the snapshot built from content/", () => {
     );
   });
 
+  it("holds the 40 starter vocabulary cards, 10 per category, every one shown for ja", () => {
+    const vocab = readdirSync(path.join(DEFAULT_ROOT, "vocab"))
+      .filter((file) => file.endsWith(".json"))
+      .flatMap(
+        (file) =>
+          JSON.parse(
+            readFileSync(path.join(DEFAULT_ROOT, "vocab", file), "utf8"),
+          ) as Parameters<typeof isVocabShown>[0][],
+      );
+    const out = makeOut();
+    buildCatalog({ root: DEFAULT_ROOT, out });
+    const document = readDocument(out);
+    const perCategory = new Map<string, number>();
+    for (const item of document.vocab) {
+      perCategory.set(item.category, (perCategory.get(item.category) ?? 0) + 1);
+    }
+
+    expect(vocab.filter((card) => isVocabShown(card, "ja"))).toHaveLength(vocab.length);
+    expect(document.vocab).toHaveLength(vocab.length);
+    expect(document.vocab.length).toBeGreaterThanOrEqual(40);
+    expect(Math.min(...perCategory.values())).toBeGreaterThanOrEqual(10);
+    expect([...perCategory.keys()].sort()).toStrictEqual([
+      "idiom",
+      "phrasal-verb",
+      "phrase",
+      "word",
+    ]);
+  });
+
   it("gives the application exactly the stamped cards to show for ja", () => {
     const out = makeOut();
     buildCatalog({ root: DEFAULT_ROOT, out });
@@ -284,7 +391,7 @@ describe("pnpm catalog:build", () => {
     expect(run.err).toStrictEqual([]);
     expect(run.out).toHaveLength(1);
     expect(run.out[0]).toMatch(
-      /^Wrote en\/ja\.json: 1 items, 2 withdrawn, 1 tombstones \(sha256:[0-9a-f]{64}\)\.$/u,
+      /^Wrote en\/ja\.json: 1 items, 2 withdrawn, 1 tombstones, 1 vocab \(sha256:[0-9a-f]{64}\)\.$/u,
     );
   });
 
@@ -319,6 +426,39 @@ describe("pnpm catalog:build", () => {
     expect(() => buildCatalog({ root, out: makeOut() })).toThrow(
       expect.objectContaining({ code: "ERR_CATALOG_CONTENT" }),
     );
+  });
+
+  it.each([
+    [
+      "one lacking a core field",
+      [makeVocabCard("v_2a3b4c5d", { example2: 2 })],
+      "card #0",
+    ],
+    [
+      "one at a level outside 1–10",
+      [makeVocabCard("v_2a3b4c5d", { level: 0 })],
+      "card #0",
+    ],
+    ["one with a drill id", [makeVocabCard("c_2a3b4c5d")], "card #0"],
+    [
+      "an id used twice",
+      [
+        makeVocabCard("v_2a3b4c5d"),
+        makeVocabCard("v_2a3b4c5d", { headword: "pick up" }),
+      ],
+      "id v_2a3b4c5d is used twice",
+    ],
+  ])("refuses a vocabulary card file with %s", (_, cards, named) => {
+    const root = makeContentRoot();
+    writeVocab(root, "phrasal-verb.json", cards);
+    const run = capture();
+
+    expect(main(["--root", root, "--out", makeOut()], run.io)).toBe(1);
+    expect(run.err[0]).toMatch(
+      /^ERR_CATALOG_CONTENT: Some vocab cards cannot be built\./u,
+    );
+    expect(run.err[0]).toContain(`vocab/phrasal-verb.json`);
+    expect(run.err[0]).toContain(named);
   });
 
   it.each([

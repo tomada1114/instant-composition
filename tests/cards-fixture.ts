@@ -215,3 +215,36 @@ export function runCards(root: string, argv: string[], options: RunOptions = {})
 export function jsonOut(run: Run): unknown {
   return JSON.parse(run.out) as unknown;
 }
+
+/** A new vocabulary card input (no id, createdAt or stamps) with valid defaults. */
+export function makeVocabInput(
+  overrides: Record<string, unknown> = {},
+): Record<string, unknown> {
+  return {
+    category: "phrasal-verb",
+    level: 4,
+    headword: "give up",
+    definition: "to stop trying to do something because it is too hard",
+    example: "She was so tired that she {{gave}} {{up}} halfway.",
+    example2: "Don't give up; you're almost there.",
+    meanings: { ja: "あきらめる" },
+    ...overrides,
+  };
+}
+
+/** A stored vocabulary card with valid defaults and no stamps. */
+export function makeVocabCard(
+  id: string,
+  overrides: Record<string, unknown> = {},
+): Record<string, unknown> {
+  return { id, ...makeVocabInput(), createdAt: "2026-09-01", stamps: {}, ...overrides };
+}
+
+/** Write vocabulary cards straight into a file under vocab/, bypassing the commands. */
+export function writeVocab(
+  root: string,
+  file: string,
+  cards: readonly Record<string, unknown>[],
+): void {
+  writeUnder(root, `vocab/${file}`, `${JSON.stringify(cards, null, 2)}\n`);
+}
