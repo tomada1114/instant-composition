@@ -187,6 +187,11 @@ cookie needs no CORS. It has no server of its own, which is why server rendering
 second data layer would be a new architecture rather than a feature. **REQUIRED:**
 `building-web-screens`; the look is `designing-ui`'s.
 
+The talk's voice input is the one data flow that leaves the browser for a party other
+than the API: Chrome's Web Speech API, in its default mode, sends the microphone's audio
+to Google's speech service and hands the page text, which the client sends as typed text
+would be. The app records no audio and adds no endpoint (`building-the-talk-activity`).
+
 ## The dev AWS topology
 
 ```text

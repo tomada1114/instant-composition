@@ -32,8 +32,10 @@ A learner talks in English with a partner in a scene the model makes up. Each tu
 six steps: the partner speaks; the learner says what they want to say in Japanese, then
 in English; when the English is worth correcting, the teacher gives a model answer of at
 most two sentences and a one-line point; the learner recites it from memory; the partner
-goes on. Six turns, then the partner closes the scene. Text only; a learner who wants to
-speak uses the device keyboard's voice input.
+goes on. Six turns, then the partner closes the scene. The Japanese and English steps
+take typing, or speech through the browser's own recognition in Chrome on a PC
+(「話す」, in `ja-JP` and `en-US` as the step sets), sent when the learner stops
+speaking.
 
 ## Read the reference you need
 
