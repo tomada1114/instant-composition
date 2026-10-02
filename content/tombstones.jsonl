@@ -15,3 +15,5 @@
 {"kind":"vocab","id":"v_4z9p3k4w","category":"phrase","level":2,"headword":"no problem","reason":"Indistinguishable from the existing card no worries; the front cannot pin no problem.","deletedAt":"2026-10-02"}
 {"kind":"vocab","id":"v_5x2c2p3m","category":"phrase","level":2,"headword":"see you soon","reason":"Interchangeable with the existing card see you later, and the definition (in a short time) carries soon.","deletedAt":"2026-10-02"}
 {"kind":"vocab","id":"v_6s8d8y9s","category":"phrase","level":10,"headword":"you're telling me","reason":"Interchangeable with the existing card tell me about it; the front cannot pin one.","deletedAt":"2026-10-02"}
+{"kind":"vocab","id":"v_2u5u5e2y","category":"idiom","level":1,"headword":"a cup of","reason":"Plain literal collocation, not an idiom; definition is awkward and the card tests nothing.","deletedAt":"2026-10-02"}
+{"kind":"vocab","id":"v_8v3v8p9u","category":"idiom","level":1,"headword":"every day","reason":"Sum-of-words collocation, not an idiom; the definition leaks 'every'.","deletedAt":"2026-10-02"}

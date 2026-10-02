@@ -236,7 +236,18 @@
       "ja": "大丈夫です"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:bb237e7cc779921f0bedef5c8673dfb85435d1112a1141051b49295fe566d94f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:e0455a430026eee1edeaef7ffee8b05909412e0d1fc8557c0c228b885567bea5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3f4h2z5d",
@@ -266,7 +277,7 @@
   {
     "id": "v_3g5h6u4b",
     "category": "phrase",
-    "level": 9,
+    "level": 8,
     "headword": "I wouldn't go that far",
     "definition": "said to politely say that a claim is stronger than the truth",
     "example": "A: So the whole plan was a disaster?\nB: {{I}} {{wouldn't}} {{go}} {{that}} {{far}}.",
@@ -275,7 +286,18 @@
       "ja": "そこまでは言わないよ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:39c31165147279d40da833eb0f405dab75be70df2226b9a9ac62c8095e7639bd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:f478103258125c808c5d13c58910176f58638e774e2fd604f80c8495a8f73138",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3k3n7d9r",
@@ -505,7 +527,7 @@
   {
     "id": "v_3u9m3a5a",
     "category": "phrase",
-    "level": 7,
+    "level": 6,
     "headword": "you've got to be kidding",
     "definition": "said when you cannot believe what someone has just told you",
     "example": "A: The flight is delayed by six hours.\nB: {{You've}} {{got}} {{to}} {{be}} {{kidding}}!",
@@ -514,7 +536,18 @@
       "ja": "冗談でしょ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:8ab4d0f5ee79b50b701024ecb5746d28ba4aee679ff695b84bfaa308ff93af3b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:793d774994dffe075f24282d74fecd1b41c4d7fea4a146c3d846aa7169397815",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3w4h8e9j",
@@ -653,7 +686,18 @@
       "ja": "いくらですか"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ac19582726f71087de8db14aee7fdd0086c4ebcb6893f0a5ea855f702f18d6bc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:a30c6857a42cbaf9864e69bfea7fc0a0d5bf22c17e2e7d6149a56f173a91b435",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4f9e9y7f",
@@ -692,7 +736,18 @@
       "ja": "そういう意味じゃないよ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ed19d0c7a348cb75bb4cfc708888764a38b2ab8e17646c3fcb04d0881b51c2e8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:a4f6d9d76f2713cc504a0470671b63fd18c8b9fb277eaa194897c1f166369c3a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4m3z3z6x",
@@ -1006,7 +1061,18 @@
       "ja": "現実を見ようよ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a6aaa68f7e2ae7807ebed335ef238d95b73a5394bc6dfe3104cf91ed39e645ce",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:e4ee845acff637d3c8e4783acd3bd4a99544ebe3ba5653c4693a640b38770cea",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5h7k5j9r",
@@ -1188,14 +1254,25 @@
     "category": "phrase",
     "level": 10,
     "headword": "you're preaching to the choir",
-    "definition": "said to a person who already agrees strongly with your argument",
+    "definition": "said to someone who is wasting effort convincing you of what you already believe",
     "example": "A: We should recycle more.\nB: {{You're}} {{preaching}} {{to}} {{the}} {{choir}}.",
     "example2": "A: Exercise is important.\nB: You're preaching to the choir; I run daily.",
     "meanings": {
       "ja": "言われるまでもない"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c7ce0d83596ec5974b0407e762ef1d55f3f874c10e1da1313246996e614f2632",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:feefcc06ef35b3121895195ac37ee0d961345da6e50e80c8abd5bda4e1ff6de7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6e3c4p3w",
@@ -1425,7 +1502,7 @@
   {
     "id": "v_7b6q4w8g",
     "category": "phrase",
-    "level": 10,
+    "level": 7,
     "headword": "it is what it is",
     "definition": "said to accept a situation you cannot change, with a shrug",
     "example": "A: The flight's cancelled again.\nB: {{It}} {{is}} {{what}} {{it}} {{is}}.",
@@ -1434,7 +1511,18 @@
       "ja": "仕方ないよね"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3cbaae2ce5e2eee1f418549e10a29a9533ccc7a4999845b643254e2c2eb405e5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:f066392b0296866c1d3989d2f999fa72eb7a6992933aa44d91f724ab1cb0f5f6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7p7s3s5b",
@@ -1473,7 +1561,18 @@
       "ja": "また明日"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:17f29cd177dc47c590aa4334d550685b903838500ee280da56c14d03d187fddc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:48f624a60ad75f106b8c05995358b456a8badd398167bfc463ff599435a3b2e3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7w4n6j8k",
@@ -1612,7 +1711,18 @@
       "ja": "また今度にさせて"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0b28cafee6169df21171e6b2da4657ee16c35ac5605e7d137eb93b3e6b7d044a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:fb345db3f5cf4d16f5de1ebf00b220777511852fdb4ff9f0f7f882a188adf6eb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8j5m5p5d",
@@ -1701,21 +1811,43 @@
       "ja": "私が口出しするのもなんですが"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b1aac2873360eaec6e25211d1a0e135b08d59c878413f51dd93be42ea7539955",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:86cdbf10714e9759968b94957925acd4d6343dfe0aacd143e5fa5f6b93049b33",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8w2q7z6w",
     "category": "phrase",
     "level": 3,
     "headword": "I don't mind",
-    "definition": "said to show that you are happy to accept either choice",
+    "definition": "said when you have no preference, or when you are happy to allow something",
     "example": "A: Pizza or pasta?\nB: {{I}} {{don't}} {{mind}}.",
     "example2": "A: Can I open the window?\nB: I don't mind.",
     "meanings": {
-      "ja": "どちらでもいいよ"
+      "ja": "構わないよ・どちらでもいい"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:82aa5d5b919f7071cfc508531d1e38bff388a1b816e22407cade18bc24d81bac",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:217f981b73565fadc09bd30ba0045f479409e5dbfe65cea96432755fb9bfb9bc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9h5b5b6v",
@@ -1729,7 +1861,18 @@
       "ja": "うっかり忘れてた"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:1e47e406744ab80413d5732e2211294b0e9cbd2e62840998c52e5068c23c4535",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:1e9b2ec0ac2add37f3747850d39a32db82d9955746370b1118f5033b0299a729",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9j2q5h8n",
@@ -1893,7 +2036,18 @@
       "ja": "ごめんなさい"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3bdf56a90f3a93f910dca8c817addae4b3b9f81f9b349cf8c3863aba484b6023",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:6c6d9539ea354daedc080b2f857aee4d9efc3b87024d0d5100c383c750814784",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9u6p4j7m",
@@ -1932,6 +2086,17 @@
       "ja": "ちゃんと聞くよ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a1d0be816f4416e2ef637cb1a87e5048715794d1e949e5b0ce3b3cb467ca7548",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c69e75bc7141bc64c85dfebcca6ae387a67b9babc8a83652319f628c6a28ba0f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   }
 ]

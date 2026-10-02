@@ -111,7 +111,18 @@
       "ja": "隣人・近所の人"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:31f2f7e79568bb67c8093968d699fb81f374e10857cd2cf961d79a61dc12a5a0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:d2d9160b0272844a9892b2e960478ec5e574a25ddeaaf0aa493314fdeecd936c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_2k3h4h5n",
@@ -125,7 +136,18 @@
       "ja": "荷物・手荷物"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:5e0616f03d1ed0d80cf2e18bffea7d42a8e57e2f1d93cef1f56a46f01828026a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c4df2c92099cc88c40e874038448243364da17410e21e9025f6fda6a77622599",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_2q8b5j5e",
@@ -164,7 +186,18 @@
       "ja": "扱いにくい・面倒な"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:30afcf9675f50d07a1ce9c7c856ed821457099bf59465ab10e8b1fca7983747d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:1c20dc5ef2741b6fa87620d58701137f3b06cfe99c3ba5d2e350e53493605872",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_2t6x2v3s",
@@ -528,7 +561,18 @@
       "ja": "かばん"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:84221934507cf1ba0467f1a68040593f5bbe1b128ba90a37c61eb41b137b1125",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:5a0f90f64df1e83985609215f4cd1d5c99c8170190545789dba03458c9c3f72d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4x6e4u5n",
@@ -842,7 +886,18 @@
       "ja": "反抗的な・手に負えない"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a4a37176532d9192ae11317df8fbd3fddc8f384fe56f8b471a84f74ec460cbe8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:ed8dcb32300a31c154e4b2fcd58191394740fb31cd87bc94127f094a191396b0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6f4p7d8b",
@@ -856,7 +911,18 @@
       "ja": "切符・チケット"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fdf08383930b3ac6805d2954ad91a32fe0de2a75b642859d97069a66ef43b2db",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:3970b2677d905499f43ea7f75d3ac0ee714d67493e967dd7fb67665154efa0cd",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6j2x4p6q",
@@ -995,7 +1061,18 @@
       "ja": "返金"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e35ef8ca502589285d09c6f79aa4656ab697eae70cd5e3017259893ca5bf4743",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:6618f13201348df206d06b5fb8d6ea25767934028be79d4c379904e4d4600c8c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6v2q3a7s",
@@ -1909,7 +1986,18 @@
       "ja": "表向きの"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:9e5b75c43d245d8212fa597989893435e7a3cd64fc1a5bc1009f2d4a34c3476b",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:7d85e7432885f05e8f49c2424f05ce945b247a7b1b10afdd70b228eaf7fce327",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9t9b3h5d",

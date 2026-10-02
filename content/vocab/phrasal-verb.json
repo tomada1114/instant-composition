@@ -152,7 +152,7 @@
   {
     "id": "v_2p5q4y6b",
     "category": "phrasal-verb",
-    "level": 9,
+    "level": 7,
     "headword": "bank on",
     "definition": "to rely on something happening, as if you were sure of it",
     "example": "Don't {{bank}} {{on}} good weather for the picnic.",
@@ -161,7 +161,18 @@
       "ja": "当てにする"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:59e175c5ea00ed3d78391fde1a8b5336b5c34ab4b0bb88c83c67b23852a4f22d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:db5c79b9f31c1843318c72a6b979857e678900878371d2e03e659fe0791ddb74",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_2p9v2q4m",
@@ -175,7 +186,18 @@
       "ja": "書き留める"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ab6c0fecffcaefe5544d73e984f90517ccd79372d0d5043c2fc43d90b53254f9",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:df6b0e72201ec357e95c267261fdd4c9f9e178cedcf0e5d666ee463d78725e54",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_2r8n3n9y",
@@ -289,7 +311,18 @@
       "ja": "出発する"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ef8684de2a2a89b8634fec436462b8b42f1b3cdc979107ee59b51b196508a127",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:0ac71fc4875f556b4f995b6f22e60663edab5c6a3fdc3d4504b31418ab1b7f39",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3f6p8z7s",
@@ -671,14 +704,25 @@
     "category": "phrasal-verb",
     "level": 10,
     "headword": "dredge up",
-    "definition": "to bring back an unpleasant fact or memory that people had stopped mentioning",
+    "definition": "to start talking again about an unpleasant past matter that people would rather forget",
     "example": "Why did the reporter {{dredge}} {{up}} that old scandal?",
     "example2": "I don't want to dredge up painful memories.",
     "meanings": {
       "ja": "蒸し返す"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e09dc9fea4afca83fe2b9b09b51bcf95e2cfb8b238c1bb0f85204d90d93c776d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:6226f682d3c7130d2f764cace74ef48498509371c7a0776cd7a122ce4f0a8e8a",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4q8q2u9s",
@@ -1192,7 +1236,18 @@
       "ja": "偶然出会う"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:04e41e7774eadfcced46f0902f936c190d37bb7a408502100945714f58529ca7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:c14b8969f098316f1e65f17aabb5862ad50e13926cff1e4ed7b4f239f3b8afee",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7c9k5h3k",
@@ -1231,7 +1286,18 @@
       "ja": "削って減らす"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a18788f628c4f626adb2d2e54f2df5a02a2b7d64f479a75ba479f005d73f110f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:6175125ae769650bdfb0c7e65cb7d4be796ba0d67cf2f91d378cc4264c7657dc",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7f8d7x7c",
@@ -1663,14 +1729,25 @@
     "category": "phrasal-verb",
     "level": 2,
     "headword": "slow down",
-    "definition": "to start moving or doing something at a lower speed",
+    "definition": "to reduce the speed at which you move, speak or work",
     "example": "Please {{slow}} {{down}}; I can't follow you.",
     "example2": "The bus slows down near the school.",
     "meanings": {
       "ja": "速度を落とす"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0ab83d94440824739dd34387873623ba2891e34ba4a791eed9fcd0676f4ab3b5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:01ac6fb47626b291f7abdc909dc70ceff80f1849770fc2fb0dcdc33355ef7c67",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9c8j4p6b",
@@ -1734,7 +1811,18 @@
       "ja": "なんとかやり抜く"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fa17fbdbf709c683dd98cc12b4952c5d8d2a9b3b064f66ac8f7465f25a96fa8d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:733aed1cd0cb6182d88b0ce01b3a584ce0bcd43dc7896465c2094dbb67073d01",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9f9n4n6z",
@@ -1748,7 +1836,18 @@
       "ja": "ごまかして追い返す"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:3ff2766cdb1af55065f9dbfa7c52fba694e4312938c55407926e288539d6a599",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:10ae0adf1d722aac9c0aa22b88181ee1134e1173c214c4048c36bdec5df35a35",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9g3u2b3u",
@@ -1880,14 +1979,25 @@
     "category": "phrasal-verb",
     "level": 2,
     "headword": "clean up",
-    "definition": "to make a messy place neat by putting things in order",
+    "definition": "to get rid of the dirt and mess in a place",
     "example": "Please {{clean}} {{up}} your room before dinner.",
     "example2": "We cleaned up the kitchen after the party.",
     "meanings": {
-      "ja": "片づける"
+      "ja": "片づける・きれいにする"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fdaab18c3caf5fa235d3537c8afe352beb04f375a069fb664cb4a84370cfd2f5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:a0e3e6e1e4a20c90dd2fa9e2259bf0412552f2c32d01d0091398f24d9e862f65",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_9r8w3p4j",

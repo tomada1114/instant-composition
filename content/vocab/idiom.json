@@ -161,21 +161,18 @@
       "ja": "前もって"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
-    "id": "v_2u5u5e2y",
-    "category": "idiom",
-    "level": 1,
-    "headword": "a cup of",
-    "definition": "an amount of a hot drink that fills a small round container",
-    "example": "I'd like {{a}} {{cup}} {{of}} tea, please.",
-    "example2": "He drinks a cup of coffee every morning.",
-    "meanings": {
-      "ja": "一杯の"
-    },
-    "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:2720a13f5b796d46e1e4d413fefebd108f0ba4f2c4709c2d2e74b61da81b019d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:a06456ba7026aebab15d7ed235ccd8b39762554cb2a0311236c096a9b59ff0df",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3a4a8h2g",
@@ -189,7 +186,18 @@
       "ja": "的を射る"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:458ba59298726785a44894e4e71a59ba1c3f661085adb4a5307016ae9f4d8eb3",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:0a860b0279fb07d92ba41467be27d02476c19b843f9736ac725e17ae7ada131c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3a9q9q9m",
@@ -678,7 +686,18 @@
       "ja": "態度を決めかねる"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:62ad80f1255b416686d609bc3415f869d0204e2b9bc740ff75d83fa06e418d6f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:5c7bc1bec1ab8021bde030142ba43296277fea7003626130ada3e4b84c10d4d1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5k3u6k7k",
@@ -758,7 +777,7 @@
   {
     "id": "v_5p5b6w2k",
     "category": "idiom",
-    "level": 1,
+    "level": 3,
     "headword": "right away",
     "definition": "without any wait, as soon as you hear the request",
     "example": "Please call me {{right}} {{away}}.",
@@ -767,7 +786,18 @@
       "ja": "すぐに"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:34741bde426cf900b90276659cd6d9d41e23aad2836ee90d95b45c2e18c87e73",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:7939e1e564789ed5d9bd382dd20382ce017831cb611ec5c2f7b970c52589681f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5p6z5t9x",
@@ -803,10 +833,21 @@
     "example": "She did {{the}} {{lion's}} {{share}} of the work.",
     "example2": "The lion's share of the budget goes to research.",
     "meanings": {
-      "ja": "最大の分け前"
+      "ja": "大部分・最大の取り分"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:c5370d6bc59ce9022cf2d9af2a4ef14eb3e2f236bc251ebad32e3c0c93351ae0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:3d954dfc9b7fd96320cd3af323eaa3c4b64c4cf8354d2f88c17c185d8900220f",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5p9c7p3u",
@@ -817,10 +858,21 @@
     "example": "He {{burned}} {{his}} {{bridges}} by shouting at his boss.",
     "example2": "Don't burn your bridges when you leave a job.",
     "meanings": {
-      "ja": "後戻りできなくする"
+      "ja": "退路を断つ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:085f829e93d05eaa9df86d611de986e78485c413380c98522e97832e4c9c71fb",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:4fb26ee63982b697aa9524c98536dfb15f7df3c6f0f80d230711e85795bc3430",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5r7u3j4x",
@@ -829,12 +881,23 @@
     "headword": "skate on thin ice",
     "definition": "to be in a risky situation where one mistake could cause trouble",
     "example": "You're {{skating}} {{on}} {{thin}} {{ice}} if you miss another deadline.",
-    "example2": "He knew he was on thin ice with his manager.",
+    "example2": "She's skating on thin ice after missing so many meetings.",
     "meanings": {
       "ja": "危ない橋を渡る"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:05841cbc6cbee7cfedcf303a90341533017eca9e9b31281c73dc0f1c1699c4e5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:ddb571a274113cdc6018be0e74300d9ad95b520b6f0c1dd1d8c59cb8e4c0ed09",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5s4d6h3c",
@@ -898,7 +961,18 @@
       "ja": "確実にする・確かめる"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:02e21cb06d790bcd3106a907a8fd921f86887802769edf3e86802a969825d9c1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:55886c3d78c03fd62e37474e22e9ce59b3e55695f9eccb95cd4c1b76bb9d83ff",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5t9f3m2t",
@@ -1130,14 +1204,25 @@
     "category": "idiom",
     "level": 3,
     "headword": "take care of",
-    "definition": "to look after someone or something so that they stay safe or well",
+    "definition": "to be responsible for keeping someone or something safe and well",
     "example": "Can you {{take}} {{care}} {{of}} my cat this weekend?",
     "example2": "She takes care of her little brother.",
     "meanings": {
       "ja": "世話をする"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a529c68e64e1507585af560f9cf6d0eb35618671f613be3ee91d47790e815ba7",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:8597027c0d27e5b0e106b6225fef2e9003e1384b98a5831792c103902e610630",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_6w8j5v4e",
@@ -1151,7 +1236,18 @@
       "ja": "感情を隠さない"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7b162fd5cb43d70c9a300a6a5b19c99d0d011a2ec940e6989b3dc12cf3e027ae",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:de876b960f4f15dbd20fdc8597873bccf7b7697c2bc029f90b578a50a7cb7d25",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7a4j7v4j",
@@ -1265,7 +1361,18 @@
       "ja": "一方で"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:e384d39479ea4599ec36de8e0055c7ac25058c8473e24e0b919a56921a3d2bf8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:042147ae07a91d230a115ebe312787c3f695e6753e1a818a16e24f623090d036",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7g4s2g5b",
@@ -1304,7 +1411,18 @@
       "ja": "次はあなたの番だ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a7553fe36e4340d3dbae30249aeb90b2e24d91fc98099514b042e8e197818815",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:49fdffdf91ca12037776789428dea1d6c774fe76ce3798d16e102edbd2b81313",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7p4a6d5z",
@@ -1443,7 +1561,18 @@
       "ja": "論外だ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:161f44ec0989dfb110e9b3c414062886a7e15e1f16e4ba0d381f8ae7d7bde639",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:3f04910e0af6a1b074a64ec0cfff349ed275351f1d58445289130e7eee610cf5",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7v7r8g3e",
@@ -1582,7 +1711,18 @@
       "ja": "概して"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:0d092bdadda8b07f526ef4b49f921b7925c22b115ec4271215852d272fba9550",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:0fbab2543f4b2e3037c1d6371760f25997c382c43ce8d16336d239dd3d241f4d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8m7r5p3z",
@@ -1671,21 +1811,18 @@
       "ja": "もうすぐ・すぐ"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
-  },
-  {
-    "id": "v_8v3v8p9u",
-    "category": "idiom",
-    "level": 1,
-    "headword": "every day",
-    "definition": "done once in every twenty-four hours, again and again",
-    "example": "I walk my dog {{every}} {{day}} after school.",
-    "example2": "She practices the piano every day.",
-    "meanings": {
-      "ja": "毎日"
-    },
-    "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:cae7638843a18904a342555594d179a8db47af4e9113c7e4d21a429acaf6d429",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:1c687fd1e23ef9a22dea5d3ebdd4823769368bdc8c3a808b26ddf74f11bafe70",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8x7z4w3f",
