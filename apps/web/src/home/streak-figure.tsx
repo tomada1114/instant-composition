@@ -51,29 +51,29 @@ const DISC: Readonly<Record<DiscState, string>> = {
  * `week-row`: Monday to Sunday as seven 32 discs, each over its weekday —
  * done (an `energy` disc with a check), today not yet done (an ink ring),
  * open (a solid ring, can still be made up), missed (a `raised` disc), ahead
- * (a dashed ring). A tile narrower than the row's 272 shrinks the discs
- * rather than overflowing. The API sends today undone as `upcoming`, so `today`
- * names it. `lit` is a day a round just completed, drawn done.
+ * (a dashed ring). The API sends today undone as `upcoming`, like the days
+ * ahead and the days before the first practice, so with `findToday` it is
+ * the dot after the last past state (done, open, missed) — and none when
+ * every dot is `upcoming`, which cannot tell today apart. A tile narrower than the row's 272 shrinks the discs
+ * rather than overflowing. `lit` is a day a round just completed, drawn done.
  */
 export function WeekRow({
   dots,
-  today = null,
+  findToday = false,
   lit = null,
 }: Readonly<{
   dots: readonly Dot[];
-  today?: string | null;
+  findToday?: boolean;
   lit?: string | null;
 }>): ReactElement {
   const t = useTranslations("Home.week");
+  const past = dots.findLastIndex((dot) => dot.state !== "upcoming");
+  const today = findToday && past >= 0 ? dots[past + 1]?.day : undefined;
   return (
     <ol className="flex w-full max-w-68 gap-2">
       {dots.map((dot, index) => {
         const state: DiscState =
-          dot.day === lit
-            ? "done"
-            : dot.day === today && dot.state !== "done"
-              ? "today"
-              : dot.state;
+          dot.day === lit ? "done" : dot.day === today ? "today" : dot.state;
         return (
           <li
             key={dot.day}

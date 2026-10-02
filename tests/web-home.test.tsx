@@ -382,16 +382,18 @@ describe("the home screen's tiles, read from the records beside the home view", 
   });
 });
 
+/** The week row's disc states, Monday to Sunday. */
+function discs(): (string | null)[] {
+  return [...document.querySelectorAll("ol [data-state]")].map((disc) =>
+    disc.getAttribute("data-state"),
+  );
+}
+
 describe("the home screen's week row", () => {
-  it("marks today undone apart from the days ahead, and says each day's state in words", async () => {
-    vi.useFakeTimers({ toFake: ["Date", "setTimeout", "clearTimeout"] });
-    vi.setSystemTime(new Date(2026, 8, 23, 12));
+  it("rings today, the day after the last past one, apart from the days ahead, in words too", async () => {
     serveHome(homeView({ kind: "ready", streak: COUNT }));
     await renderApp("/");
-    const states = [...document.querySelectorAll("ol [data-state]")].map((disc) =>
-      disc.getAttribute("data-state"),
-    );
-    expect(states).toStrictEqual([
+    expect(discs()).toStrictEqual([
       "done",
       "gap",
       "today",
@@ -402,6 +404,42 @@ describe("the home screen's week row", () => {
     ]);
     expect(screen.getByText(ja.Home.week.today)).toHaveClass("sr-only");
     expect(screen.getByText(ja.Home.week.done)).toHaveClass("sr-only");
+  });
+
+  it("rings no day once today is done", async () => {
+    serveHome(
+      homeView(
+        { kind: "done", restoresTo: null, streak: COUNT },
+        {
+          week: [
+            { day: "2026-09-21", state: "done" },
+            { day: "2026-09-22", state: "done" },
+            ...["23", "24", "25", "26", "27"].map((d) => ({
+              day: `2026-09-${d}`,
+              state: "upcoming" as const,
+            })),
+          ],
+        },
+      ),
+    );
+    await renderApp("/");
+    expect(discs()).not.toContain("today");
+  });
+
+  it("rings no day when every day is still to come, which cannot tell today apart", async () => {
+    serveHome(
+      homeView(
+        { kind: "ready", streak: COUNT },
+        {
+          week: ["21", "22", "23", "24", "25", "26", "27"].map((d) => ({
+            day: `2026-09-${d}`,
+            state: "upcoming" as const,
+          })),
+        },
+      ),
+    );
+    await renderApp("/");
+    expect(discs()).not.toContain("today");
   });
 });
 

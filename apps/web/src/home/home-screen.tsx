@@ -16,12 +16,6 @@ import { HomeTiles } from "./home-tiles";
 import { SoundToggle } from "./sound-toggle";
 import { StreakFigure, WeekRow } from "./streak-figure";
 
-/** The browser's calendar day as the API keys a day, `YYYY-MM-DD`. */
-function dayKey(date: Date): string {
-  const pad = (value: number): string => String(value).padStart(2, "0");
-  return `${String(date.getFullYear())}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
-}
-
 /**
  * W3, on the dashboard grid: the date with the sound switch at its right;
  * today's panel (8 columns) beside the streak tile (4); then the three home
@@ -56,7 +50,6 @@ export function HomeScreen({
             month: "long",
             day: "numeric",
             weekday: "short",
-            timeZone: new Intl.DateTimeFormat().resolvedOptions().timeZone,
           })}
         </h1>
         <SoundToggle initial={view.sound} />
@@ -88,7 +81,7 @@ export function HomeScreen({
               <Eyebrow aria-hidden>{t("streakEyebrow")}</Eyebrow>
             ) : null}
             <StreakFigure streak={streak} />
-            <WeekRow dots={view.week} today={dayKey(now)} />
+            <WeekRow dots={view.week} findToday={state.kind !== "done"} />
           </div>
         )}
       </div>
