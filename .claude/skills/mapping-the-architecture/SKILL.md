@@ -26,7 +26,10 @@ owns how to change it.
 
 - Every rule — which cards a round deals, the schedule, the level, the streak — runs on
   the server behind one versioned HTTP API. A client renders what the API returns and
-  sends what the learner did; it never computes a deck, a schedule or a level.
+  sends what the learner did; it never computes a deck, a schedule or a level. Rule
+  values a client shows or applies arrive on that screen's response: the settings
+  choices and focus cap, the home's deadline hour and talk length, a drill card's
+  fast-flip threshold, and the opened talk's planned turn count.
 - The web client is an ordinary API client with no private path into the code below the
   API. Authentication and authorization happen once, below the transport, so a second
   entry point (a job, a tool) would meet the same checks.

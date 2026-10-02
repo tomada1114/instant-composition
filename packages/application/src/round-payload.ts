@@ -1,4 +1,5 @@
 import {
+  fastMsOf,
   gradeOf,
   intervalsOf,
   limitMsOf,
@@ -81,6 +82,7 @@ export function payloadOf(
         explanation,
         limitMs: limitMsOf(round, paceMs),
         paceMs,
+        fastMs: fastMsOf(paceMs),
         ...scheduleOf(round, id, firsts.get(id), items.get(id)),
       };
     }

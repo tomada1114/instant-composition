@@ -47,9 +47,14 @@ export function paceOf(answer: Paced): number {
   return answer.paceMs ?? answer.limitMs;
 }
 
+/** The latest a flip may come to count as fast, whatever the time limit. */
+export function fastMsOf(paceMs: number): number {
+  return paceMs * TUNING.fastRatio;
+}
+
 /** Whether a flip came within the "fast" share of its card's pace, whatever the limit. */
 export function isFast(elapsedMs: number, paceMs: number): boolean {
-  return elapsedMs <= paceMs * TUNING.fastRatio;
+  return elapsedMs <= fastMsOf(paceMs);
 }
 
 /**

@@ -73,6 +73,13 @@ afterEach(() => {
 });
 
 describe("W2, the talk tab before a talk", () => {
+  it("shows the talk length returned by the home read", async () => {
+    serveTalk({ home: homeView({ kind: "ready", streak: COUNT }, { talkTurns: 7 }) });
+    await renderApp("/talk");
+    expect(screen.getByText("7")).toBeInTheDocument();
+    expect(screen.queryByText("6")).toBeNull();
+  });
+
   it("shows six turns, the scene left to the app, and 始める, under the navigation with talk current", async () => {
     serveTalk();
     await renderApp("/talk");

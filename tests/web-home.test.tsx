@@ -303,8 +303,9 @@ function tile(name: string): HTMLElement {
 
 describe("the home screen's tiles, read from the records beside the home view", () => {
   it("shows the weak grammar, each topic's mastered count and the talk, each records tile leading to the records page", async () => {
-    serveHomeAndRecords(homeView({ kind: "ready", streak: COUNT }), () =>
-      Response.json(RECORDS),
+    serveHomeAndRecords(
+      homeView({ kind: "ready", streak: COUNT }, { talkTurns: 9 }),
+      () => Response.json(RECORDS),
     );
     await renderApp("/");
     expect(within(tile(ja.Home.tiles.weak)).getByText("現在完了")).toBeInTheDocument();
@@ -319,7 +320,7 @@ describe("the home screen's tiles, read from the records beside the home view", 
       ).toHaveAttribute("href", "/records");
     }
     const talk = within(tile(ja.Home.tiles.talk));
-    expect(talk.getByText(String(TUNING.talkTurns))).toBeInTheDocument();
+    expect(talk.getByText("9")).toBeInTheDocument();
     expect(talk.getByText(ja.Talk.start.scene)).toBeInTheDocument();
     expect(talk.getByRole("link", { name: ja.Home.tiles.talkStart })).toHaveAttribute(
       "href",
@@ -552,15 +553,16 @@ describe("the home screen, W3c: today's portion done", () => {
 
   it("makes making up yesterday the primary action until the cut-off", async () => {
     serveHome(
-      homeView({ kind: "done", restoresTo: 14, streak: { ...COUNT, value: 1 } }),
+      homeView(
+        { kind: "done", restoresTo: 14, streak: { ...COUNT, value: 1 } },
+        { dayBoundaryHour: 7 },
+      ),
     );
     await renderApp("/");
     expect(
       screen.getByText(fill(ja.Home.done.restores, { days: 14 })),
     ).toBeInTheDocument();
-    expect(
-      screen.getByText(fill(ja.Home.deadline, { hour: TUNING.dayBoundaryHour })),
-    ).toBeInTheDocument();
+    expect(screen.getByText(fill(ja.Home.deadline, { hour: 7 }))).toBeInTheDocument();
     fireEvent.click(
       screen.getByRole("button", { name: fill(ja.Home.done.more, { count: 10 }) }),
     );

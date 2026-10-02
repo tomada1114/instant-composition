@@ -1,6 +1,7 @@
 import {
   DEFAULT_SETTINGS,
   EMPTY_STATS,
+  TUNING,
   err,
   ok,
   type Result,
@@ -131,6 +132,13 @@ export async function settingsPage(
   const level = totals.level;
   return ok({
     settings: shownSettingsOf(settings?.value ?? DEFAULT_SETTINGS),
+    options: {
+      dailySizes: TUNING.dailySizes,
+      newPerDay: TUNING.newPerDay,
+      reviewsPerDay: TUNING.reviewsPerDay,
+      limitSeconds: TUNING.limitSeconds,
+      maxFocus: TUNING.maxFocus,
+    },
     topics: offeredTopics(snapshot),
     toeic: level === null ? null : toeicOf(snapshot, level.level),
     difficulty: levelViewOf(totals, snapshot),

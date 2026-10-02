@@ -20,6 +20,7 @@ import {
   refusal,
   renderApp,
   settle,
+  SETTINGS_OPTIONS,
   type ApiCall,
   warmUp,
 } from "./web-harness";
@@ -57,6 +58,7 @@ function settingsPage(topics: TopicInfo[] = TOPICS): SettingsPageView {
       vocabReviewsPerDay: 100,
     },
     topics,
+    options: SETTINGS_OPTIONS,
     toeic: null,
     difficulty: { mode: "auto", level: null, toeic: null },
     levels: ["300", "400", "500", "600", "730", "800", "860", "900", "950", "990+"].map(

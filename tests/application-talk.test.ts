@@ -80,6 +80,7 @@ describe("startTalk", () => {
       ok: true,
       value: {
         talkId: "t1",
+        turnCount: TALK_TUNING.turns,
         scene: {
           partner: SCENE.partner,
           place: SCENE.place,

@@ -6,7 +6,6 @@ import { Button } from "../ui/button";
 import { Eyebrow } from "../ui/eyebrow";
 import { ArrowGlyph } from "../ui/glyphs";
 import { Kbd } from "../ui/kbd";
-import { TALK_TURNS } from "./talk-state";
 
 /** The six steps of one turn, as one line of labels under W2's panel. */
 function TurnFlow(): ReactElement {
@@ -42,9 +41,11 @@ function TurnFlow(): ReactElement {
  */
 export function TalkStart({
   status,
+  turnCount,
   onStart,
 }: Readonly<{
   status: "idle" | "preparing" | "failed";
+  turnCount: number;
   onStart: () => void;
 }>): ReactElement {
   const t = useTranslations("Talk.start");
@@ -56,7 +57,7 @@ export function TalkStart({
           <Eyebrow>{t("title")}</Eyebrow>
         </h1>
         <p className="flex flex-col items-center gap-2">
-          <span className="font-display text-number-xl">{TALK_TURNS}</span>
+          <span className="font-display text-number-xl">{turnCount}</span>
           <span className="font-latin text-count text-muted-foreground">
             {t("turns")}
           </span>

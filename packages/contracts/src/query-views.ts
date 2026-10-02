@@ -2,6 +2,10 @@ import * as z from "zod";
 
 import {
   countSchema,
+  dailySizeSchema,
+  drillNewPerDaySchema,
+  drillReviewsPerDaySchema,
+  limitSecondsSchema,
   dayKeySchema,
   dotSchema,
   gradeKeyTrioSchema,
@@ -75,6 +79,10 @@ export const homeViewSchema = z.object({
   todayLastRoundId: z.string().exactOptional(),
   /** The size an extra round is dealt at: "one more N". */
   dailySize: countSchema,
+  /** The practice day's deadline hour in the learner's time zone. */
+  dayBoundaryHour: z.int().min(0).max(23),
+  /** Turns the talk tile and start screen show. */
+  talkTurns: countSchema,
   sound: z.boolean(),
   /** The keys the drill grades with, the default until the learner chooses keys. */
   gradeKeys: gradeKeyTrioSchema,
@@ -133,6 +141,14 @@ export const topicInfoSchema = z.object({
 
 export const settingsPageViewSchema = z.object({
   settings: settingsSchema,
+  /** Choices and cap supplied by the domain, in display order. */
+  options: z.object({
+    dailySizes: z.array(dailySizeSchema),
+    newPerDay: z.array(drillNewPerDaySchema),
+    reviewsPerDay: z.array(drillReviewsPerDaySchema),
+    limitSeconds: z.array(limitSecondsSchema),
+    maxFocus: countSchema,
+  }),
   topics: z.array(topicInfoSchema),
   toeic: z.string().nullable().meta({
     deprecated: true,

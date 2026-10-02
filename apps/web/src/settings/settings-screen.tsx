@@ -84,8 +84,12 @@ export function SettingsScreen({
           ) : null}
           <SettingsSection id="cards" title={t("sections.cards")}>
             <TopicsSection topics={page.topics} state={state} />
-            <FocusSection topics={page.topics} state={state} />
-            <DailyLimitRows state={state} />
+            <FocusSection
+              topics={page.topics}
+              state={state}
+              maxFocus={page.options.maxFocus}
+            />
+            <DailyLimitRows state={state} options={page.options} />
           </SettingsSection>
           <SettingsSection id="level" title={t("difficulty.title")}>
             <LevelSection
@@ -95,7 +99,7 @@ export function SettingsScreen({
                 setAsking(true);
               }}
             />
-            <LimitSection state={state} />
+            <LimitSection state={state} options={page.options} />
           </SettingsSection>
           <SettingsSection id="app" title={t("sections.app")}>
             <AppRows state={state} onZoneFailedChange={setZoneFailed} />

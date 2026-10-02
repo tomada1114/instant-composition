@@ -72,7 +72,13 @@ export { isClosing, liveTalk, openTalk, sceneKindOf } from "./talk-start";
 export { decideTurn, keepTurn, type TeacherJudgment } from "./talk-turn";
 export type { TurnCommand } from "./talk-turn";
 export { countWords, estimateMinutes, isFast, limitMsOf } from "./timer";
-export { paceMsForWords, paceMsOf, paceOf, paceSecondsForWords } from "./timer";
+export {
+  fastMsOf,
+  paceMsForWords,
+  paceMsOf,
+  paceOf,
+  paceSecondsForWords,
+} from "./timer";
 export type { Paced } from "./timer";
 export { TALK_TUNING, TUNING, VOCAB_TUNING, type MilestoneSeries } from "./tuning";
 export type { AnswerRecord, AnswerResult, CardContent, CardMeta } from "./types";

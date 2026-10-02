@@ -4,7 +4,6 @@ import { useId, type ReactElement, type ReactNode } from "react";
 import { useTranslations } from "use-intl";
 
 import { RECORDS_QUERY } from "../lib/queries";
-import { TUNING } from "../lib/tuning";
 import type { ReachTopic, RecordsView, WeakPoints } from "../openapi";
 import { Button } from "../ui/button";
 import { ArrowGlyph } from "../ui/glyphs";
@@ -140,7 +139,9 @@ function ReachRows({
  * query beside the home view — titles alone until it answers, one line if it
  * fails, while the rest of home works — and the talk, with its own start.
  */
-export function HomeTiles(): ReactElement {
+export function HomeTiles({
+  talkTurns,
+}: Readonly<{ talkTurns: number }>): ReactElement {
   const t = useTranslations("Home.tiles");
   const talk = useTranslations("Talk.start");
   const records = useQuery(RECORDS_QUERY);
@@ -166,7 +167,7 @@ export function HomeTiles(): ReactElement {
         }
       >
         <p className="flex items-baseline gap-1.5">
-          <span className="font-display text-figure-sm">{TUNING.talkTurns}</span>
+          <span className="font-display text-figure-sm">{talkTurns}</span>
           <span className="font-latin text-count text-muted-foreground">
             {talk("turns")}
           </span>

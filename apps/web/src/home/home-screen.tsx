@@ -85,7 +85,7 @@ export function HomeScreen({
           </div>
         )}
       </div>
-      <HomeTiles />
+      <HomeTiles talkTurns={view.talkTurns} />
     </div>
   );
 }
