@@ -65,7 +65,7 @@ function Actions({
     );
   }
   return (
-    <div className="grid grid-cols-2 gap-2.5">
+    <div className="grid grid-cols-2 gap-3">
       <Button
         variant="secondary"
         onClick={() => {
@@ -77,6 +77,7 @@ function Actions({
         <GradeKbd code={gradeKeys.ng} />
       </Button>
       <Button
+        variant="good"
         onClick={() => {
           onAction({ type: "grade", result: "ok" });
         }}
@@ -90,8 +91,11 @@ function Actions({
 }
 
 /**
- * W4 to W7: the focus strip, then the card, the timer under a front and the
- * actions, filling the stage top to bottom so the page itself never scrolls.
+ * W4 to W7: the focus strip, then the face on a card, with the timer under a
+ * front and the actions under either, at most 560 wide — the group centred
+ * on the stage, never pinned to the window's bottom edge. The group is held
+ * to the stage's height, so a back too tall for it scrolls inside the card
+ * and the page itself never does.
  */
 export function CardScreen({
   state,
@@ -112,7 +116,7 @@ export function CardScreen({
   const where = progress(state);
   const first = where.pass === "first";
   return (
-    <div className="mx-auto flex h-stage w-full max-w-reading flex-col gap-3 pt-3 pb-6">
+    <div className="flex max-h-[calc(100dvh-4rem)] w-full flex-col items-center gap-6 py-6">
       <TopStrip
         pass={where.pass}
         current={first ? round.offset + where.position : where.position}
@@ -123,34 +127,36 @@ export function CardScreen({
           onAction({ type: "pause" });
         }}
       />
-      {phase.kind === "front" ? (
-        <CardFront
-          card={content}
-          retry={card.pass === "retry"}
-          hidden={state.paused}
-          onFlip={() => {
-            onAction({ type: "flip" });
-          }}
-        />
-      ) : phase.kind === "back" ? (
-        <CardBack card={content} mode={phase.mode} elapsedMs={phase.elapsedMs} />
-      ) : phase.kind === "feedback" ? (
-        <CardBack
-          card={content}
-          mode="self"
-          elapsedMs={phase.elapsedMs}
-          feedback={phase}
-        />
-      ) : null}
-      <div className="h-7">
+      <div className="flex min-h-0 w-full flex-col rounded-panel border-2 border-border bg-card p-8">
+        {phase.kind === "front" ? (
+          <CardFront
+            card={content}
+            retry={card.pass === "retry"}
+            hidden={state.paused}
+            onFlip={() => {
+              onAction({ type: "flip" });
+            }}
+          />
+        ) : phase.kind === "back" ? (
+          <CardBack card={content} mode={phase.mode} elapsedMs={phase.elapsedMs} />
+        ) : phase.kind === "feedback" ? (
+          <CardBack
+            card={content}
+            mode="self"
+            elapsedMs={phase.elapsedMs}
+            feedback={phase}
+          />
+        ) : null}
+      </div>
+      <div className="flex w-full max-w-progress shrink-0 flex-col gap-4">
         {phase.kind === "front" ? (
           <TimerBar
             remainingMs={remainingMs(state) ?? content.limitMs}
             limitMs={content.limitMs}
           />
         ) : null}
+        <Actions phase={phase} gradeKeys={gradeKeys} onAction={onAction} />
       </div>
-      <Actions phase={phase} gradeKeys={gradeKeys} onAction={onAction} />
     </div>
   );
 }

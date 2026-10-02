@@ -31,7 +31,7 @@ export function LeaveSheet({
           {t("sheet.hint", { hour: TUNING.dayBoundaryHour, position })}
         </p>
       </div>
-      <div className="flex flex-col gap-2.5">
+      <div className="grid grid-cols-2 gap-3">
         <Button variant="secondary" className="w-full" onClick={onLeave}>
           {t("leave.go")}
         </Button>

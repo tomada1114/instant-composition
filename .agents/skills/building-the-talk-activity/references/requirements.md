@@ -3,7 +3,7 @@
 ## Context
 
 - **Platform and structure:**
-  - A web app, used mainly from a phone browser.
+  - A web app, used mainly from a PC (laptop) browser.
   - It is added to this repository as a new activity. It builds on the repository's
     structure: a Vite + React SPA, a Hono API on Lambda, DynamoDB, Cognito and CDK.
   - The language model's target provider is Bedrock Converse, called directly. Until the
@@ -211,7 +211,7 @@ below is not a priority order.
 
 ## 4. Cross-cutting rules
 
-- **Delivery:** The app's dev environment. Used from a phone browser, with the existing
+- **Delivery:** The app's dev environment. Used from a PC browser, with the existing
   sign-in.
 - **How progression is decided:** The app moves through the 6 steps in order. The model
   answers once per step, as the scene, the partner and the teacher. The model is not

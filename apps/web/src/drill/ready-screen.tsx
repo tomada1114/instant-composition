@@ -8,7 +8,10 @@ import { Eyebrow } from "../ui/eyebrow";
 import { ArrowGlyph } from "../ui/glyphs";
 import { Kbd } from "../ui/kbd";
 
-/** A round nobody started with a press: it names itself and waits for one. */
+/**
+ * A round nobody started with a press: it names itself and waits for one,
+ * centred on the stage with "start" under it.
+ */
 export function ReadyScreen({
   kind,
   count,
@@ -25,8 +28,8 @@ export function ReadyScreen({
   const t = useTranslations("Drill.ready");
   // The same place and count the card screen's top strip shows for this pass.
   return (
-    <div className="mx-auto flex w-full max-w-reading flex-col gap-10 py-6">
-      <div className="flex flex-col gap-3">
+    <div className="flex w-full flex-col items-center gap-10 py-6 text-center">
+      <div className="flex flex-col items-center gap-3">
         <Eyebrow aria-hidden>{t("eyebrow", { kind })}</Eyebrow>
         <h1 className="text-heading">{t("title", { kind, count })}</h1>
         <p className="font-latin text-count text-muted-foreground">
@@ -35,7 +38,7 @@ export function ReadyScreen({
             : t("resumeRetry", { position: where.position, total: where.total })}
         </p>
       </div>
-      <Button className="w-full" onClick={onStart}>
+      <Button className="w-full max-w-progress" onClick={onStart}>
         {t("start")}
         <ArrowGlyph className="size-4.5" />
         <Kbd>Space</Kbd>

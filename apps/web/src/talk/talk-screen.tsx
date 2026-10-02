@@ -1,8 +1,8 @@
 import type { ReactElement } from "react";
 import { useTranslations } from "use-intl";
 
-import { Ticks } from "../drill/top-strip";
 import { FocusStrip } from "../lib/frame";
+import { cn } from "../lib/utils";
 import { CloseGlyph } from "../ui/glyphs";
 import { IconButton } from "../ui/icon-button";
 import { Conversation } from "./conversation";
@@ -11,8 +11,29 @@ import { currentTurn, keptTurns, TALK_TURNS, type Talk } from "./talk-state";
 import type { TalkActions } from "./use-talk";
 
 /**
+ * `designing-ui`'s `talk` progress: six 8-tall pills 4 apart, the done turns
+ * `bg-good`, the rest `bg-bar-track`.
+ */
+function TurnPills({ done }: Readonly<{ done: number }>): ReactElement {
+  return (
+    <div aria-hidden className="flex w-full max-w-reading gap-1">
+      {Array.from({ length: TALK_TURNS }, (_, index) => (
+        <span
+          key={index}
+          data-done={index < done ? "" : undefined}
+          className={cn(
+            "h-2 flex-1 rounded-full transition-colors duration-160",
+            index < done ? "bg-good" : "bg-bar-track",
+          )}
+        />
+      ))}
+    </div>
+  );
+}
+
+/**
  * The focus strip of a talk: ✕ (going home once the talk has ended), the six
- * ticks, and `n / 6`.
+ * turns' pills, and `n / 6`.
  */
 function TalkStrip({
   talk,
@@ -21,15 +42,9 @@ function TalkStrip({
   const t = useTranslations("Talk.strip");
   const ended = talk.step === "ended";
   const turn = currentTurn(talk).n;
-  const progress = (
-    <Ticks
-      current={ended ? keptTurns(talk) + 1 : turn}
-      total={TALK_TURNS}
-      lit={talk.step === "fine"}
-    />
-  );
+  const progress = <TurnPills done={ended ? keptTurns(talk) : turn - 1} />;
   const counters = (
-    <span className="font-latin text-count text-muted-foreground">
+    <span className="font-latin text-count whitespace-nowrap text-muted-foreground">
       {t("progress", { current: turn, total: TALK_TURNS })}
     </span>
   );
@@ -48,8 +63,9 @@ function TalkStrip({
 }
 
 /**
- * W3, in the focus layout: the strip across the top, then the stage's
- * conversation, which alone scrolls, over the bottom panel.
+ * W3, in the focus layout: the strip across the top, then a column max 720
+ * centred on the stage — the conversation, which alone scrolls, over the step
+ * panel on its foot.
  */
 export function TalkScreen({
   talk,
@@ -61,12 +77,17 @@ export function TalkScreen({
   onClose: () => void;
 }>): ReactElement {
   return (
-    <div className="flex h-stage flex-col gap-3 pb-6">
+    <>
       <TalkStrip talk={talk} onClose={onClose} />
-      <Conversation talk={talk} />
-      <div className="flex flex-col gap-3 border-t border-border pt-3 empty:hidden">
-        <StepPanel step={talk.step} actions={actions} />
+      <div className="mx-auto flex h-stage w-full max-w-reading flex-col gap-4 pb-6">
+        <Conversation talk={talk} />
+        <div
+          data-part="step-panel"
+          className="flex flex-col gap-3 rounded-panel border-2 border-border bg-card p-5 empty:hidden"
+        >
+          <StepPanel step={talk.step} actions={actions} />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
