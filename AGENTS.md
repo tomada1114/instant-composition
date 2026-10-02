@@ -40,12 +40,16 @@ Corepack.
 
 ## Before the first screen
 
-The design direction is settled: an "instrument" — near-black canvas, white and grey
-ink, big figures and small tracked mono labels, one lime for the four roles
-`designing-ui` names — and it is dark only. `designing-ui` holds the lock, the ledger
-behind it and the component recipes; read it before building or restyling any screen. A
-screen adapts to the lock rather than renegotiating it: never choose a palette, a
-typeface or a layout by taste to get a screen done, and never add a light theme.
+The design direction is settled: "Lemon Arcade" — playful and game-like, in light and
+dark following the OS. A cream or charcoal canvas, rounded type with heavy figures,
+chunky buttons with a solid lip, and one job per colour: violet for the one primary
+action, yellow for energy and celebration, teal for ○ and what grew, ink for selection —
+and never red for a miss. It is PC first: one responsive layout with a sidebar from 1024
+wide and one column below. `designing-ui` holds the lock, the ledger behind it and the
+component recipes; read it before building or restyling any screen, and check it in both
+themes. A screen adapts to the lock rather than renegotiating it: never choose a
+palette, a typeface or a layout by taste to get a screen done, and never add an in-app
+theme switch.
 
 ## Before changing the architecture
 
