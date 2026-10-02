@@ -811,7 +811,18 @@
       "ja": "お待たせしてすみません"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:159b9b092848666d2f7d0a68876dd411c0f3cf8d26c39f2bd0a9018021c9d403",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:8b5546a38915fc2f4477d5955e5328dd771db38491f63eaeab71127712d07650",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_4q4e8e4a",

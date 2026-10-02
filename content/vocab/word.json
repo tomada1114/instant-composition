@@ -783,10 +783,21 @@
     "example": "He left teaching for a more {{lucrative}} job in sales.",
     "example2": "The company signed a lucrative contract with the airline.",
     "meanings": {
-      "ja": "利益の大きい"
+      "ja": "儲かる"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:49fe57c5675456fb37919113e5f400ad10a36c36c608a9520aa5da232858739d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:3a54a1428d99b27d6d06c963203c542e12bfeb754374ec8bf459a6831f85a99d",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5t8h9a3g",
@@ -1525,7 +1536,18 @@
       "ja": "わずかな、雀の涙の"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:b69634dbe02d3a4b0c9ee4fb1a731d7d86de3dca903abe9600c55d24303f3940",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:a4c862c7e278d42b07aadcd224a2294a168dc5ea0bd13593eaaed79860aa75a8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_8b8f4n7f",

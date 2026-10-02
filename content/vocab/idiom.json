@@ -1427,7 +1427,7 @@
   {
     "id": "v_7n4n6y5a",
     "category": "idiom",
-    "level": 1,
+    "level": 4,
     "headword": "by heart",
     "definition": "remembered so well that you can say it without looking",
     "example": "Tom knows the whole song {{by}} {{heart}}.",
@@ -1436,7 +1436,18 @@
       "ja": "暗記して"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:7fdcff1aa402e2f0c49aaf6a6bb73c5eb3f01885f85a6c32dda03eb37cc2d5c6",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:42d32b54def3ebe4387b346a494ba85e7bf37f98015d19588544e51248b42d4c",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_7p4a6d5z",
@@ -1462,20 +1473,6 @@
         "at": "2026-10-02"
       }
     }
-  },
-  {
-    "id": "v_7p4q2s8j",
-    "category": "idiom",
-    "level": 1,
-    "headword": "all of a sudden",
-    "definition": "very quickly and when nobody expects it",
-    "example": "We were walking home when, {{all}} {{of}} {{a}} {{sudden}}, it began to rain.",
-    "example2": "All of a sudden, the lights went out.",
-    "meanings": {
-      "ja": "突然、不意に"
-    },
-    "createdAt": "2026-10-02",
-    "stamps": {}
   },
   {
     "id": "v_7r5j8j2v",
@@ -2080,15 +2077,26 @@
   {
     "id": "v_9x4u2k3g",
     "category": "idiom",
-    "level": 1,
+    "level": 2,
     "headword": "once upon a time",
     "definition": "the words that start many old stories for children",
     "example": "{{Once}} {{upon}} {{a}} {{time}}, a small girl lived in a forest.",
-    "example2": "My mother read me that story every night.",
+    "example2": "Many fairy tales in this book begin with once upon a time.",
     "meanings": {
       "ja": "昔々"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:fa5e17245cc6440e0ec50169bd50b585aebf1ecf99e125d9afc79cdc683858c1",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:408fe7c40edb2ca1239164739044a8fe0f9e1818fd2cf7f0f1fcc015ac469258",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   }
 ]

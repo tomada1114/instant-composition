@@ -361,7 +361,18 @@
       "ja": "骨抜きにする"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:a2f5e6e9540252232f4ddaa51540910f98b6f772371e5ef5a19fe96a5b7523c8",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:a681f2ab804302a30417f307fb6d3fdd02a0d60ada61e9077b060ee4ce171ee0",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_3j7a5k5m",
@@ -1050,7 +1061,18 @@
       "ja": "本腰を入れて取り組む"
     },
     "createdAt": "2026-10-02",
-    "stamps": {}
+    "stamps": {
+      "core": {
+        "hash": "sha256:ee618dac168b0cf6a4d65a646995ded5706ce4f45f0695c0341c4ec789150bef",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      },
+      "meanings.ja": {
+        "hash": "sha256:a5dfeb7bf9e645abfe8977360332af1dd4f5b4be33c635a4eef579b49cb23f71",
+        "perspectivesVersion": 4,
+        "at": "2026-10-02"
+      }
+    }
   },
   {
     "id": "v_5w7e7k2z",
