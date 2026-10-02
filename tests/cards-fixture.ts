@@ -138,6 +138,11 @@ export function makeContentRoot(): string {
     "guides/review-perspectives.md",
     "# Review perspectives\n\nperspectivesVersion: 2\n",
   );
+  writeUnder(
+    root,
+    "guides/vocab-review-perspectives.md",
+    "# Vocabulary review perspectives\n\nperspectivesVersion: 2\n",
+  );
   writeUnder(root, "tombstones.jsonl", "");
   return root;
 }

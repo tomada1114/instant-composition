@@ -1,13 +1,15 @@
 # Vocabulary review perspectives
 
+perspectivesVersion: 4
+
 The checks a reviewer applies to a vocabulary card (`content/vocab/`), as
 `review-perspectives.md` holds them for the drill's cards. `vocab-writing.md` is the
 yardstick each check points to; `identity.md` decides edit against rebuild.
 
-A vocabulary stamp records the `perspectivesVersion` of `review-perspectives.md`: the
-`pnpm cards:*` commands read that one number for both kinds. A check added here, or
-changed so a verdict changes, bumps it there, which sends the drill's stamped cards back
-to the queue as well. Rewording that changes no verdict needs no bump.
+A vocabulary stamp records the `perspectivesVersion` above, this guide's own; the
+drill's cards record the one in `review-perspectives.md`, so bumping either sends only
+its own kind back to the queue. A check added here, or changed so a verdict changes,
+bumps it. Rewording that changes no verdict needs no bump.
 
 Each failure gets a verdict: `FIX` (repairable in place under `identity.md`), `REBUILD`
 (a repair would change the question) or `DROP` (not worth keeping), with a confidence of
