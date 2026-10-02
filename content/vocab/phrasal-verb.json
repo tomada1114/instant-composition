@@ -1,5 +1,33 @@
 [
   {
+    "id": "v_2n4y6u6d",
+    "category": "phrasal-verb",
+    "level": 1,
+    "headword": "come in",
+    "definition": "to enter a room or house",
+    "example": "Please {{come}} {{in}}; the door is open.",
+    "example2": "It is cold outside, so come in and have some tea.",
+    "meanings": {
+      "ja": "入る・入ってくる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_3j7k7u6m",
+    "category": "phrasal-verb",
+    "level": 8,
+    "headword": "phase out",
+    "definition": "to stop using or selling something slowly, step by step",
+    "example": "The airline plans to {{phase}} {{out}} its oldest planes by next year.",
+    "example2": "Many shops have phased out plastic bags.",
+    "meanings": {
+      "ja": "段階的に廃止する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_3s7m4s5f",
     "category": "phrasal-verb",
     "level": 6,
@@ -100,6 +128,20 @@
     }
   },
   {
+    "id": "v_6a9x8a2q",
+    "category": "phrasal-verb",
+    "level": 1,
+    "headword": "stand up",
+    "definition": "to rise from a chair so you are on your feet",
+    "example": "The students {{stand}} {{up}} when the teacher comes in.",
+    "example2": "Stand up, please, and say your name.",
+    "meanings": {
+      "ja": "立ち上がる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_6f7h4h6g",
     "category": "phrasal-verb",
     "level": 6,
@@ -175,6 +217,20 @@
     }
   },
   {
+    "id": "v_7k8c4v7c",
+    "category": "phrasal-verb",
+    "level": 10,
+    "headword": "stave off",
+    "definition": "to keep something bad away for a while",
+    "example": "A quick snack helped me {{stave}} {{off}} hunger until dinner.",
+    "example2": "The firm borrowed money to stave off bankruptcy.",
+    "meanings": {
+      "ja": "食い止める・遠ざける"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_7m7m9n5w",
     "category": "phrasal-verb",
     "level": 7,
@@ -248,5 +304,75 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_8y4a2t7q",
+    "category": "phrasal-verb",
+    "level": 8,
+    "headword": "scale back",
+    "definition": "to make a plan or activity smaller because of cost or limits",
+    "example": "The company had to {{scale}} {{back}} its hiring plans this year.",
+    "example2": "They scaled back the party because of the budget.",
+    "meanings": {
+      "ja": "縮小する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_9g3u2b3u",
+    "category": "phrasal-verb",
+    "level": 8,
+    "headword": "iron out",
+    "definition": "to solve small problems in a plan or agreement",
+    "example": "We still need to {{iron}} {{out}} a few details in the contract.",
+    "example2": "The two teams ironed out their differences over lunch.",
+    "meanings": {
+      "ja": "解決する・調整する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_9h5e2v6t",
+    "category": "phrasal-verb",
+    "level": 10,
+    "headword": "peter out",
+    "definition": "to slowly become weaker and then end",
+    "example": "The excitement began to {{peter}} {{out}} after the first week.",
+    "example2": "Their conversation petered out as the night grew late.",
+    "meanings": {
+      "ja": "次第に消える"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_9k8s7q4q",
+    "category": "phrasal-verb",
+    "level": 10,
+    "headword": "shore up",
+    "definition": "to give extra support to something that is weak or likely to fail",
+    "example": "The city is trying to {{shore}} {{up}} the old bridge before winter.",
+    "example2": "She took a second job to shore up the family's savings.",
+    "meanings": {
+      "ja": "補強する・てこ入れする"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_9w5r7y4u",
+    "category": "phrasal-verb",
+    "level": 1,
+    "headword": "sit down",
+    "definition": "to move your body so you are on a chair",
+    "example": "Please {{sit}} {{down}}, and I will bring the menu.",
+    "example2": "The children sat down on the floor to hear the story.",
+    "meanings": {
+      "ja": "座る"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   }
 ]

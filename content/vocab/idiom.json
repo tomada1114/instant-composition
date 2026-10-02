@@ -1,5 +1,131 @@
 [
   {
+    "id": "v_2g2x4g7n",
+    "category": "idiom",
+    "level": 8,
+    "headword": "back to square one",
+    "definition": "in the same bad place as at the start, after a plan has failed",
+    "example": "The test failed, so we are {{back}} {{to}} {{square}} {{one}}.",
+    "example2": "After the client said no, the designers went back to square one.",
+    "meanings": {
+      "ja": "振り出しに戻って"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_2k8b2r5x",
+    "category": "idiom",
+    "level": 10,
+    "headword": "the writing on the wall",
+    "definition": "clear signs that something bad will soon happen",
+    "example": "After three bad quarters, the staff could see {{the}} {{writing}} {{on}} {{the}} {{wall}}.",
+    "example2": "He saw the writing on the wall and updated his résumé.",
+    "meanings": {
+      "ja": "悪い前兆・避けられない破滅"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_3a9q9q9m",
+    "category": "idiom",
+    "level": 10,
+    "headword": "play devil's advocate",
+    "definition": "to argue against an idea only to test it, not because you believe it",
+    "example": "Let me {{play}} {{devil's}} {{advocate}} and question our whole budget.",
+    "example2": "He likes to play devil's advocate during every team meeting.",
+    "meanings": {
+      "ja": "あえて反対意見を言う"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_3h6c9b6z",
+    "category": "idiom",
+    "level": 8,
+    "headword": "the tip of the iceberg",
+    "definition": "a small visible part of a much bigger problem",
+    "example": "The two complaints we got are only {{the}} {{tip}} {{of}} {{the}} {{iceberg}}.",
+    "example2": "That error was just the tip of the iceberg in our old system.",
+    "meanings": {
+      "ja": "氷山の一角"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_3j6a8p2w",
+    "category": "idiom",
+    "level": 2,
+    "headword": "once in a while",
+    "definition": "sometimes, but not often",
+    "example": "I eat out {{once}} {{in}} {{a}} {{while}}, usually on my birthday.",
+    "example2": "Once in a while, my brother calls me just to chat.",
+    "meanings": {
+      "ja": "たまに・時々"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_3k9u2u4n",
+    "category": "idiom",
+    "level": 1,
+    "headword": "of course",
+    "definition": "used to say yes in a strong way",
+    "example": "{{Of}} {{course}} you can borrow my pen.",
+    "example2": "Of course I like your new bag.",
+    "meanings": {
+      "ja": "もちろん"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_3n7g2u6g",
+    "category": "idiom",
+    "level": 1,
+    "headword": "have fun",
+    "definition": "to enjoy yourself while doing something",
+    "example": "We {{have}} {{fun}} at the park every Sunday.",
+    "example2": "Have fun at the party tonight!",
+    "meanings": {
+      "ja": "楽しむ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_3p3r9u7w",
+    "category": "idiom",
+    "level": 8,
+    "headword": "bite the bullet",
+    "definition": "to do something hard or unpleasant that you have put off",
+    "example": "I finally decided to {{bite}} {{the}} {{bullet}} and see the dentist.",
+    "example2": "We had to bite the bullet and raise our prices.",
+    "meanings": {
+      "ja": "覚悟を決めてやる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_3s2u3j6b",
+    "category": "idiom",
+    "level": 10,
+    "headword": "a red herring",
+    "definition": "something that leads people away from the real answer",
+    "example": "The missing key turned out to be {{a}} {{red}} {{herring}}.",
+    "example2": "Don't let that small detail become a red herring in the debate.",
+    "meanings": {
+      "ja": "人を惑わす偽の手がかり"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_3z8k7a8p",
     "category": "idiom",
     "level": 7,
@@ -48,6 +174,34 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_5k3u6k7k",
+    "category": "idiom",
+    "level": 9,
+    "headword": "cut corners",
+    "definition": "to do a job in a cheaper or faster but worse way",
+    "example": "The builder tried to {{cut}} {{corners}} and used weak materials.",
+    "example2": "Never cut corners when you are checking safety equipment.",
+    "meanings": {
+      "ja": "手を抜く"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_5u7p4w6v",
+    "category": "idiom",
+    "level": 9,
+    "headword": "the elephant in the room",
+    "definition": "an obvious big problem that everyone avoids talking about",
+    "example": "Nobody mentioned the layoffs, but they were {{the}} {{elephant}} {{in}} {{the}} {{room}}.",
+    "example2": "We have to discuss the elephant in the room: our falling sales.",
+    "meanings": {
+      "ja": "誰も触れない大問題"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_6h4j7q3t",
@@ -175,6 +329,20 @@
     }
   },
   {
+    "id": "v_7v7r8g3e",
+    "category": "idiom",
+    "level": 2,
+    "headword": "in a hurry",
+    "definition": "needing to move or act fast because there is little time",
+    "example": "Sorry, I can't talk now because I'm {{in}} {{a}} {{hurry}}.",
+    "example2": "Why are you always in a hurry on Monday mornings?",
+    "meanings": {
+      "ja": "急いで"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_8p7b4b4m",
     "category": "idiom",
     "level": 4,
@@ -200,6 +368,20 @@
     }
   },
   {
+    "id": "v_8x7z4w3f",
+    "category": "idiom",
+    "level": 1,
+    "headword": "right now",
+    "definition": "at this exact time, not later",
+    "example": "I am eating lunch {{right}} {{now}}.",
+    "example2": "Right now, my mother is in the kitchen.",
+    "meanings": {
+      "ja": "今すぐ・ちょうど今"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_9d4r6s3h",
     "category": "idiom",
     "level": 4,
@@ -223,6 +405,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_9d6y5b3z",
+    "category": "idiom",
+    "level": 2,
+    "headword": "on time",
+    "definition": "at the planned moment, not early and not late",
+    "example": "The train arrived {{on}} {{time}}, so we caught our flight.",
+    "example2": "Please be on time for the meeting tomorrow.",
+    "meanings": {
+      "ja": "時間通りに"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_9w4n5z3w",

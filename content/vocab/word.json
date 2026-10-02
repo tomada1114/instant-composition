@@ -25,6 +25,34 @@
     }
   },
   {
+    "id": "v_2b5c6m4c",
+    "category": "word",
+    "level": 8,
+    "headword": "undermine",
+    "definition": "to slowly make something weaker or less likely to succeed",
+    "example": "Constant criticism can {{undermine}} a new employee's confidence.",
+    "example2": "Rumors about the plan undermined the team's trust in the manager.",
+    "meanings": {
+      "ja": "徐々に損なう"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_2q8b5j5e",
+    "category": "word",
+    "level": 1,
+    "headword": "busy",
+    "definition": "having a lot of things to do",
+    "example": "My father is {{busy}} on weekdays.",
+    "example2": "I was busy yesterday, so I did not call you.",
+    "meanings": {
+      "ja": "忙しい"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_2t6x2v3s",
     "category": "word",
     "level": 5,
@@ -75,6 +103,48 @@
     }
   },
   {
+    "id": "v_4p7z5k4j",
+    "category": "word",
+    "level": 2,
+    "headword": "cheap",
+    "definition": "not costing much money",
+    "example": "This shirt was {{cheap}}, only five dollars.",
+    "example2": "We found a cheap hotel near the station.",
+    "meanings": {
+      "ja": "安い"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_4q3x6c3w",
+    "category": "word",
+    "level": 1,
+    "headword": "hungry",
+    "definition": "wanting to eat food",
+    "example": "I am {{hungry}}, so I want some rice.",
+    "example2": "The hungry dog ate all of its food.",
+    "meanings": {
+      "ja": "お腹がすいた"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_4x6e4u5n",
+    "category": "word",
+    "level": 1,
+    "headword": "thirsty",
+    "definition": "wanting to drink water or tea",
+    "example": "I am {{thirsty}} after the soccer game.",
+    "example2": "I get thirsty when I walk in the sun.",
+    "meanings": {
+      "ja": "のどが渇いた"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_5a7q4w2p",
     "category": "word",
     "level": 5,
@@ -100,6 +170,34 @@
     }
   },
   {
+    "id": "v_5d2t4p9y",
+    "category": "word",
+    "level": 2,
+    "headword": "empty",
+    "definition": "having nothing inside",
+    "example": "The box was {{empty}} when I opened it.",
+    "example2": "Please don't leave the empty bottles on the table.",
+    "meanings": {
+      "ja": "空の"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_5m8b4y2w",
+    "category": "word",
+    "level": 10,
+    "headword": "tenacious",
+    "definition": "refusing to give up or let go, even in hard times",
+    "example": "The {{tenacious}} reporter kept asking questions until she got an answer.",
+    "example2": "Our tenacious goalkeeper saved three shots in the final minute.",
+    "meanings": {
+      "ja": "粘り強い"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_5p8c6g7b",
     "category": "word",
     "level": 3,
@@ -123,6 +221,48 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_5w3g2d4h",
+    "category": "word",
+    "level": 8,
+    "headword": "mitigate",
+    "definition": "to make a harmful effect or problem less severe",
+    "example": "Planting trees can {{mitigate}} the effects of heavy flooding.",
+    "example2": "The company added extra staff to mitigate the risk of delays.",
+    "meanings": {
+      "ja": "軽減する・和らげる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_6j2x4p6q",
+    "category": "word",
+    "level": 8,
+    "headword": "ambiguous",
+    "definition": "having more than one possible meaning, so it is unclear",
+    "example": "His reply was so {{ambiguous}} that nobody knew whether he agreed.",
+    "example2": "The contract's wording is ambiguous, so we should ask a lawyer.",
+    "meanings": {
+      "ja": "曖昧な・多義的な"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_6n3j8m2m",
+    "category": "word",
+    "level": 2,
+    "headword": "lonely",
+    "definition": "sad because you have no friends or people near you",
+    "example": "My grandmother feels {{lonely}} since she moved to a new town.",
+    "example2": "He was lonely in the big city at first.",
+    "meanings": {
+      "ja": "孤独な・寂しい"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_6p2g7b7e",
@@ -223,6 +363,34 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_7p3u5z4y",
+    "category": "word",
+    "level": 10,
+    "headword": "ubiquitous",
+    "definition": "seeming to be present everywhere at the same time",
+    "example": "Smartphones are now {{ubiquitous}}, even in remote villages.",
+    "example2": "The company's logo is ubiquitous in this part of the city.",
+    "meanings": {
+      "ja": "至る所にある"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_9h7e2z7v",
+    "category": "word",
+    "level": 10,
+    "headword": "meticulous",
+    "definition": "showing great care about every small detail",
+    "example": "She keeps {{meticulous}} records of every purchase for tax season.",
+    "example2": "The editor's meticulous work caught every tiny error.",
+    "meanings": {
+      "ja": "細部まで綿密な"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_9j7q7g5h",

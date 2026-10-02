@@ -1,5 +1,33 @@
 [
   {
+    "id": "v_2k6g3h6b",
+    "category": "phrase",
+    "level": 9,
+    "headword": "I'll take your word for it",
+    "definition": "said when you believe someone without checking the facts yourself",
+    "example": "A: This restaurant has the best pasta in town.\nB: {{I'll}} {{take}} {{your}} {{word}} {{for}} {{it}}.",
+    "example2": "A: The movie is great, trust me.\nB: I'll take your word for it.",
+    "meanings": {
+      "ja": "あなたを信じるよ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_2w9m9u7f",
+    "category": "phrase",
+    "level": 8,
+    "headword": "I couldn't agree more",
+    "definition": "said to show you completely agree with what someone just said",
+    "example": "A: This city really needs more bike lanes.\nB: {{I}} {{couldn't}} {{agree}} {{more}}.",
+    "example2": "A: Our manager explains things so clearly.\nB: I couldn't agree more.",
+    "meanings": {
+      "ja": "まったく同感です"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_3f4h2z5d",
     "category": "phrase",
     "level": 6,
@@ -23,6 +51,34 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_3k8t2v8b",
+    "category": "phrase",
+    "level": 9,
+    "headword": "that's easier said than done",
+    "definition": "said when a piece of advice sounds simple but is hard to follow",
+    "example": "A: Just stop worrying about the exam.\nB: {{That's}} {{easier}} {{said}} {{than}} {{done}}.",
+    "example2": "A: Why don't you quit and start your own business?\nB: That's easier said than done.",
+    "meanings": {
+      "ja": "言うは易く行うは難し"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_3p7w2p4u",
+    "category": "phrase",
+    "level": 1,
+    "headword": "see you later",
+    "definition": "said when you leave a person you will meet again soon",
+    "example": "A: I have to go to class now.\nB: OK. {{See}} {{you}} {{later}}!",
+    "example2": "A: Bye, Tom.\nB: See you later!",
+    "meanings": {
+      "ja": "またあとでね"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_3p8j9a3w",
@@ -100,6 +156,20 @@
     }
   },
   {
+    "id": "v_4f9e9y7f",
+    "category": "phrase",
+    "level": 8,
+    "headword": "fair enough",
+    "definition": "said to accept an opinion or request you do not fully share",
+    "example": "A: I'd rather not work this Saturday.\nB: {{Fair}} {{enough}}. I'll ask someone else.",
+    "example2": "A: I don't like spicy food.\nB: Fair enough. We'll order something mild.",
+    "meanings": {
+      "ja": "まあいいよ・なるほどね"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_4n9t2f2z",
     "category": "phrase",
     "level": 4,
@@ -123,6 +193,62 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_4x4d2q7y",
+    "category": "phrase",
+    "level": 10,
+    "headword": "I won't hold my breath",
+    "definition": "said when you doubt that something hoped for will really happen",
+    "example": "A: He promised to pay me back soon.\nB: {{I}} {{won't}} {{hold}} {{my}} {{breath}}.",
+    "example2": "A: They say the road will be fixed this month.\nB: I won't hold my breath.",
+    "meanings": {
+      "ja": "期待はしてないよ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_5h8n5c2k",
+    "category": "phrase",
+    "level": 1,
+    "headword": "excuse me",
+    "definition": "said to get someone's attention in a polite way",
+    "example": "A: {{Excuse}} {{me}}, where is the bus stop?\nB: It is over there.",
+    "example2": "A: Excuse me, is this seat free?\nB: Yes, please sit down.",
+    "meanings": {
+      "ja": "すみません"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_5n3y7q3u",
+    "category": "phrase",
+    "level": 10,
+    "headword": "tell me about it",
+    "definition": "said when you strongly agree because you have the same bad experience",
+    "example": "A: This traffic is awful today.\nB: {{Tell}} {{me}} {{about}} {{it}}. I've waited an hour.",
+    "example2": "A: Mondays are so hard.\nB: Tell me about it.",
+    "meanings": {
+      "ja": "まったくだよ・わかる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_5u5m7u4v",
+    "category": "phrase",
+    "level": 9,
+    "headword": "don't quote me on that",
+    "definition": "said when you are not sure that what you just said is correct",
+    "example": "A: When does the store open?\nB: Around nine, but {{don't}} {{quote}} {{me}} {{on}} {{that}}.",
+    "example2": "A: How far is the station?\nB: Maybe two miles. Don't quote me on that.",
+    "meanings": {
+      "ja": "確かじゃないけどね"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_5x3t6s2x",
@@ -150,6 +276,20 @@
     }
   },
   {
+    "id": "v_6e3c4p3w",
+    "category": "phrase",
+    "level": 2,
+    "headword": "sounds good",
+    "definition": "said to agree with a plan that someone has just told you",
+    "example": "A: Let's meet at six for dinner.\nB: {{Sounds}} {{good}}!",
+    "example2": "A: We can go to the beach on Sunday.\nB: Sounds good to me.",
+    "meanings": {
+      "ja": "いいね"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_6p3b9p2t",
     "category": "phrase",
     "level": 3,
@@ -175,6 +315,20 @@
     }
   },
   {
+    "id": "v_6u6m3n8c",
+    "category": "phrase",
+    "level": 1,
+    "headword": "thank you",
+    "definition": "said to show you are glad for something someone gave or did",
+    "example": "A: Here is your tea.\nB: {{Thank}} {{you}}.",
+    "example2": "A: This is a present for you.\nB: Thank you very much!",
+    "meanings": {
+      "ja": "ありがとう"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_6y4e7h9k",
     "category": "phrase",
     "level": 7,
@@ -198,6 +352,34 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_7p7s3s5b",
+    "category": "phrase",
+    "level": 2,
+    "headword": "what's up?",
+    "definition": "a casual way to ask what is new or what is wrong",
+    "example": "A: {{What's}} {{up}}?\nB: Not much. I'm just watching TV.",
+    "example2": "A: Hey, what's up? You look tired.\nB: I stayed up late.",
+    "meanings": {
+      "ja": "どうしたの？・元気？"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_8b2v2b2w",
+    "category": "phrase",
+    "level": 2,
+    "headword": "never mind",
+    "definition": "said to tell someone that a thing is not important now",
+    "example": "A: What did you say?\nB: {{Never}} {{mind}}. It wasn't important.",
+    "example2": "A: I can't find my pen.\nB: Never mind, I have another one.",
+    "meanings": {
+      "ja": "気にしないで"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_8f4u7s9y",
@@ -248,5 +430,33 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_9m5p6c3s",
+    "category": "phrase",
+    "level": 10,
+    "headword": "couldn't have said it better myself",
+    "definition": "said to praise what someone said as exactly what you think",
+    "example": "A: Honest feedback helps people grow, even if it stings.\nB: {{Couldn't}} {{have}} {{said}} {{it}} {{better}} {{myself}}.",
+    "example2": "A: Good teams trust each other first.\nB: Couldn't have said it better myself.",
+    "meanings": {
+      "ja": "私もそう言いたかった"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_9p5v9j3d",
+    "category": "phrase",
+    "level": 8,
+    "headword": "that's a fair point",
+    "definition": "said to accept that someone's argument is reasonable",
+    "example": "A: We can't afford a bigger office yet.\nB: {{That's}} {{a}} {{fair}} {{point}}.",
+    "example2": "A: Remote workers need clear rules too.\nB: That's a fair point; I'll draft some.",
+    "meanings": {
+      "ja": "もっともな指摘だね"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   }
 ]
