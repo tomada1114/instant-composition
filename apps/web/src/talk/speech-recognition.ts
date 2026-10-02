@@ -35,9 +35,17 @@ interface SpeechWindow {
   readonly webkitSpeechRecognition?: RecognitionConstructor;
 }
 
-/** The browser's recognition constructor, or `undefined` where it has none. */
+// Chrome, Firefox and Edge on iOS expose the interface on WebKit, but a
+// session there never starts: no permission prompt, an error at once.
+const IOS_OTHER_BROWSER = /\b(?:CriOS|FxiOS|EdgiOS)\//u;
+
+/**
+ * The browser's recognition constructor, or `undefined` where it has none or
+ * where it is an iOS browser other than Safari.
+ */
 export function recognitionConstructor(): RecognitionConstructor | undefined {
   if (typeof window === "undefined") return undefined;
+  if (IOS_OTHER_BROWSER.test(navigator.userAgent)) return undefined;
   const speech = window as unknown as SpeechWindow;
   return speech.SpeechRecognition ?? speech.webkitSpeechRecognition;
 }
@@ -80,4 +88,17 @@ export function appendHeard(before: string, heard: string, lang: string): string
   if (before === "" || heard === "") return before + heard;
   const separator = lang.startsWith("en") && !/\s$/u.test(before) ? " " : "";
   return before + separator + heard;
+}
+
+// A touch-only device: its soft keyboard would cover the panel while the
+// read-only field keeps focus, so a session takes the focus off the field.
+const TOUCH_ONLY = "(pointer: coarse) and (hover: none)";
+
+/** Closes the soft keyboard on a touch-only device by blurring the focused field. */
+export function closeSoftKeyboard(): void {
+  if (typeof matchMedia !== "function" || !matchMedia(TOUCH_ONLY).matches) return;
+  const focused = document.activeElement;
+  if (focused instanceof HTMLTextAreaElement || focused instanceof HTMLInputElement) {
+    focused.blur();
+  }
 }

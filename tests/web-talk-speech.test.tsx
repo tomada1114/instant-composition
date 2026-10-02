@@ -385,3 +385,110 @@ describe("a session cut short", () => {
     ]);
   });
 });
+
+describe("on a phone", () => {
+  const SAFARI =
+    "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 Mobile/15E148 Safari/604.1";
+  const ANDROID_CHROME =
+    "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0.0.0 Mobile Safari/537.36";
+  const IOS_OTHERS = [
+    [
+      "Chrome",
+      "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/129.0.6668.69 Mobile/15E148 Safari/604.1",
+    ],
+    [
+      "Firefox",
+      "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) FxiOS/131.0 Mobile/15E148 Safari/605.1.15",
+    ],
+    [
+      "Edge",
+      "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.0 EdgiOS/129.0.2792.84 Mobile/15E148 Safari/605.1.15",
+    ],
+  ] as const;
+
+  /** A touch-only phone whose browser names itself `userAgent`. */
+  function phone(userAgent: string): void {
+    vi.spyOn(navigator, "userAgent", "get").mockReturnValue(userAgent);
+    vi.stubGlobal("matchMedia", (query: string) => ({
+      matches: query === "(pointer: coarse) and (hover: none)",
+      media: query,
+      addEventListener: () => undefined,
+      removeEventListener: () => undefined,
+    }));
+  }
+
+  afterEach(() => {
+    vi.restoreAllMocks();
+  });
+
+  it("example 1: Safari on iOS, a tap and final results only, moves to W3b 2 s after the last word", async () => {
+    phone(SAFARI);
+    const calls = await atJapanese();
+    field(ja.Talk.step.japanese).focus();
+    press(ja.Talk.step.speak);
+    expect(session()).toMatchObject({ lang: "ja-JP", started: true });
+    expect(field(ja.Talk.step.japanese)).toHaveAttribute("readonly");
+    expect(field(ja.Talk.step.japanese)).not.toHaveFocus();
+    listen();
+    expect(field(ja.Talk.step.japanese)).toHaveValue("");
+    hear("仕事が詰まってて");
+    expect(field(ja.Talk.step.japanese)).toHaveValue("仕事が詰まってて");
+    await settle(TUNING.speechSilenceMs);
+    expect(field(ja.Talk.step.english)).toBeInTheDocument();
+    expect(session().aborted).toBe(true);
+    expect(posted(calls, TURNS)).toStrictEqual([]);
+  });
+
+  it("ends a Safari session that hears nothing after 10 s, though Safari does not end it", async () => {
+    phone(SAFARI);
+    await atJapanese();
+    press(ja.Talk.step.speak);
+    listen();
+    await settle(TUNING.speechNoInputMs);
+    expect(session().aborted).toBe(true);
+    expect(
+      screen.getByRole("button", { name: ja.Talk.step.speak }),
+    ).toBeInTheDocument();
+  });
+
+  it("example 2: Chrome on Android, a tap at W3b, sends the turn", async () => {
+    phone(ANDROID_CHROME);
+    const calls = await atEnglish();
+    press(ja.Talk.step.speak);
+    expect(session().lang).toBe("en-US");
+    listen();
+    hear("I was swamped with work");
+    await settle(TUNING.speechSilenceMs);
+    expect(posted(calls, TURNS)).toStrictEqual([
+      { turn: 1, japanese: "仕事が詰まってて", english: "I was swamped with work" },
+    ]);
+  });
+
+  it.each(IOS_OTHERS)(
+    "example 3: %s on iOS shows no 話す, and W3a keeps one 送る",
+    async (_browser, userAgent) => {
+      phone(userAgent);
+      await atJapanese();
+      expect(screen.queryByRole("button", { name: ja.Talk.step.speak })).toBeNull();
+      expect(
+        screen.getByRole("button", { name: ja.Talk.step.send }),
+      ).toBeInTheDocument();
+    },
+  );
+
+  it.each(["not-allowed", "service-not-allowed"])(
+    "example 4: Safari refusing with %s before start shows マイクが使えません; typing and 送る work",
+    async (error) => {
+      phone(SAFARI);
+      await atJapanese();
+      press(ja.Talk.step.speak);
+      fail(error);
+      expect(screen.getByText(ja.Talk.step.micRefused)).toBeInTheDocument();
+      expect(field(ja.Talk.step.japanese)).not.toHaveAttribute("readonly");
+      write(ja.Talk.step.japanese, "仕事が詰まってて");
+      press(ja.Talk.step.send);
+      await settle();
+      expect(field(ja.Talk.step.english)).toBeInTheDocument();
+    },
+  );
+});
