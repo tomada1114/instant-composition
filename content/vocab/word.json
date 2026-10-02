@@ -50,6 +50,20 @@
     }
   },
   {
+    "id": "v_2d8x5g2g",
+    "category": "word",
+    "level": 1,
+    "headword": "happy",
+    "definition": "feeling good because something nice has happened",
+    "example": "I am {{happy}} because today is Friday.",
+    "example2": "The children are happy to see the dog.",
+    "meanings": {
+      "ja": "うれしい・幸せな"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_2q8b5j5e",
     "category": "word",
     "level": 1,
@@ -123,6 +137,48 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_3n2n7f2e",
+    "category": "word",
+    "level": 9,
+    "headword": "equivocal",
+    "definition": "open to more than one meaning, so that it is unclear or evasive",
+    "example": "The senator gave an {{equivocal}} answer to a simple question.",
+    "example2": "The test results were equivocal, so the doctor ordered another one.",
+    "meanings": {
+      "ja": "あいまいな・どちらとも取れる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_3r4z6s7g",
+    "category": "word",
+    "level": 4,
+    "headword": "available",
+    "definition": "free to be used, bought or met at a certain time",
+    "example": "Is the conference room {{available}} on Thursday afternoon?",
+    "example2": "The new phone will be available in stores next month.",
+    "meanings": {
+      "ja": "利用できる・空いている"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_4d8k7b5k",
+    "category": "word",
+    "level": 1,
+    "headword": "friend",
+    "definition": "a person you like and enjoy spending time with",
+    "example": "Ken is my best {{friend}}.",
+    "example2": "I play soccer with my friends on Sunday.",
+    "meanings": {
+      "ja": "友だち"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_4p7z5k4j",
@@ -475,6 +531,20 @@
     }
   },
   {
+    "id": "v_6v2q3a7s",
+    "category": "word",
+    "level": 1,
+    "headword": "tall",
+    "definition": "measuring a lot from bottom to top, like a tree or a person",
+    "example": "My brother is very {{tall}}.",
+    "example2": "That is a tall building.",
+    "meanings": {
+      "ja": "背が高い・高い"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_6v5p3b6f",
     "category": "word",
     "level": 4,
@@ -575,6 +645,34 @@
     }
   },
   {
+    "id": "v_7g3z9h2m",
+    "category": "word",
+    "level": 9,
+    "headword": "exacerbate",
+    "definition": "to make a bad problem even worse",
+    "example": "Skipping sleep will only {{exacerbate}} your headaches.",
+    "example2": "The heavy rain exacerbated the flooding in the valley.",
+    "meanings": {
+      "ja": "悪化させる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_7h2y2x2u",
+    "category": "word",
+    "level": 6,
+    "headword": "adequate",
+    "definition": "good enough for a purpose, but not better than that",
+    "example": "The old laptop is {{adequate}} for writing emails, but not for video editing.",
+    "example2": "Adequate sleep helps you focus during the day.",
+    "meanings": {
+      "ja": "十分な・まずまずの"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_7k9b2j9r",
     "category": "word",
     "level": 5,
@@ -623,6 +721,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_7q5h7v4x",
+    "category": "word",
+    "level": 6,
+    "headword": "hesitate",
+    "definition": "to pause before you act because you feel unsure",
+    "example": "Don't {{hesitate}} to call me if you have any questions.",
+    "example2": "He hesitated at the door before knocking.",
+    "meanings": {
+      "ja": "ためらう"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_8b8f4n7f",
@@ -675,6 +787,20 @@
     }
   },
   {
+    "id": "v_8e4r9d3n",
+    "category": "word",
+    "level": 6,
+    "headword": "consistent",
+    "definition": "always behaving or happening in the same way over time",
+    "example": "She is a {{consistent}} performer who rarely misses a target.",
+    "example2": "Your story is not consistent with what the video shows.",
+    "meanings": {
+      "ja": "一貫した"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_8s5n5k7b",
     "category": "word",
     "level": 5,
@@ -698,6 +824,34 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_8y2y6c4y",
+    "category": "word",
+    "level": 4,
+    "headword": "schedule",
+    "definition": "a plan that lists the times when things will happen",
+    "example": "I have a tight {{schedule}} this week, so let's meet on Friday.",
+    "example2": "The train is running behind schedule today.",
+    "meanings": {
+      "ja": "予定・スケジュール"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_9a3r2n6p",
+    "category": "word",
+    "level": 4,
+    "headword": "complain",
+    "definition": "to say that you are unhappy about something",
+    "example": "Several guests {{complain}} about the noise from the street every weekend.",
+    "example2": "She complained to the manager about the cold food.",
+    "meanings": {
+      "ja": "不満を言う"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_9a5j9t4w",
@@ -773,6 +927,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_9g2w8p5f",
+    "category": "word",
+    "level": 9,
+    "headword": "perfunctory",
+    "definition": "done quickly without real care or interest, only because it is expected",
+    "example": "He gave the report a {{perfunctory}} glance and walked away.",
+    "example2": "Her thank-you was perfunctory, and nobody believed it.",
+    "meanings": {
+      "ja": "おざなりな"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_9h7e2z7v",

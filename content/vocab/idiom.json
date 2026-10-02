@@ -300,6 +300,20 @@
     }
   },
   {
+    "id": "v_4c2v2b6t",
+    "category": "idiom",
+    "level": 9,
+    "headword": "move the goalposts",
+    "definition": "to change the rules in the middle of something so it is harder to succeed",
+    "example": "Every time we meet the target, they {{move}} {{the}} {{goalposts}}.",
+    "example2": "It isn't fair to move the goalposts after the project has begun.",
+    "meanings": {
+      "ja": "途中で基準を変える"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_4h9e7b9k",
     "category": "idiom",
     "level": 5,
@@ -400,6 +414,20 @@
     }
   },
   {
+    "id": "v_5n3r6s4e",
+    "category": "idiom",
+    "level": 1,
+    "headword": "in front of",
+    "definition": "at the place just before something, facing it",
+    "example": "The bus stops {{in}} {{front}} {{of}} the station.",
+    "example2": "Don't stand in front of the TV.",
+    "meanings": {
+      "ja": "〜の前に"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_5s4d6h3c",
     "category": "idiom",
     "level": 7,
@@ -423,6 +451,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_5s7v4w2v",
+    "category": "idiom",
+    "level": 9,
+    "headword": "burn the midnight oil",
+    "definition": "to work or study very late into the night",
+    "example": "She had to {{burn}} {{the}} {{midnight}} {{oil}} to finish the report.",
+    "example2": "We burned the midnight oil all week before the launch.",
+    "meanings": {
+      "ja": "夜遅くまで働く"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_5t9f3m2t",
@@ -648,6 +690,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_7r5j8j2v",
+    "category": "idiom",
+    "level": 9,
+    "headword": "a wild goose chase",
+    "definition": "a hopeless search for something that cannot be found",
+    "example": "We spent the whole day on {{a}} {{wild}} {{goose}} {{chase}} looking for that shop.",
+    "example2": "The tip turned out to be a wild goose chase.",
+    "meanings": {
+      "ja": "無駄な捜し回り"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_7u5p4x8m",
@@ -923,6 +979,34 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_9j2q9w6r",
+    "category": "idiom",
+    "level": 1,
+    "headword": "a little",
+    "definition": "a small amount, not much",
+    "example": "I speak {{a}} {{little}} English.",
+    "example2": "Please add a little sugar.",
+    "meanings": {
+      "ja": "少し"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_9j7w5g6w",
+    "category": "idiom",
+    "level": 1,
+    "headword": "all day",
+    "definition": "for the whole time from morning until night",
+    "example": "It rained {{all}} {{day}} yesterday.",
+    "example2": "I work all day on Mondays.",
+    "meanings": {
+      "ja": "一日中"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_9w4n5z3w",

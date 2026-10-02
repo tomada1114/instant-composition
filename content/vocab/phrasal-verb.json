@@ -1,5 +1,19 @@
 [
   {
+    "id": "v_2c8m8x7b",
+    "category": "phrasal-verb",
+    "level": 1,
+    "headword": "go out",
+    "definition": "to leave your house to do something outside",
+    "example": "We {{go}} {{out}} for a walk every morning.",
+    "example2": "Let's go out tonight.",
+    "meanings": {
+      "ja": "出かける"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_2c8w3e7z",
     "category": "phrasal-verb",
     "level": 2,
@@ -100,6 +114,34 @@
     }
   },
   {
+    "id": "v_2r8n3n9y",
+    "category": "phrasal-verb",
+    "level": 9,
+    "headword": "weed out",
+    "definition": "to find and remove the weak or unwanted ones from a group",
+    "example": "The firm uses a short test to {{weed}} {{out}} unsuitable applicants.",
+    "example2": "She weeded out every error before the report went to print.",
+    "meanings": {
+      "ja": "ふるい落とす"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_2w7b5m7v",
+    "category": "phrasal-verb",
+    "level": 9,
+    "headword": "tide over",
+    "definition": "to help someone get through a hard period with money or supplies",
+    "example": "This loan should {{tide}} us {{over}} until the next contract starts.",
+    "example2": "A quick snack will tide you over till dinner.",
+    "meanings": {
+      "ja": "当座をしのがせる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_3a3k2t7d",
     "category": "phrasal-verb",
     "level": 3,
@@ -123,6 +165,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_3f6p8z7s",
+    "category": "phrasal-verb",
+    "level": 10,
+    "headword": "gloss over",
+    "definition": "to avoid giving details about an unpleasant fact so that it seems unimportant",
+    "example": "The report seems to {{gloss}} {{over}} the safety problems.",
+    "example2": "He glossed over his mistakes during the interview.",
+    "meanings": {
+      "ja": "ごまかす・さらりと流す"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_3j7k7u6m",
@@ -173,6 +229,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_3t9a4r9s",
+    "category": "phrasal-verb",
+    "level": 5,
+    "headword": "carry out",
+    "definition": "to do a planned piece of work, such as a test or an order",
+    "example": "The team will {{carry}} {{out}} the survey next month.",
+    "example2": "The soldiers carried out their orders without question.",
+    "meanings": {
+      "ja": "実行する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_3w7w6g8x",
@@ -425,6 +495,20 @@
     }
   },
   {
+    "id": "v_5n3v4m8z",
+    "category": "phrasal-verb",
+    "level": 2,
+    "headword": "turn off",
+    "definition": "to stop a light or machine from working",
+    "example": "Please {{turn}} {{off}} the TV before you go to bed.",
+    "example2": "She turned off the lights and left the room.",
+    "meanings": {
+      "ja": "消す"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_5t9r9a3k",
     "category": "phrasal-verb",
     "level": 5,
@@ -448,6 +532,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_5w7e7k2z",
+    "category": "phrasal-verb",
+    "level": 10,
+    "headword": "pencil in",
+    "definition": "to note a possible time for something that may still change",
+    "example": "I'll {{pencil}} you {{in}} for Thursday at three.",
+    "example2": "Can we pencil in a call for next week?",
+    "meanings": {
+      "ja": "仮の予定に入れる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_6a9x8a2q",
@@ -498,6 +596,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_6m4v5a9v",
+    "category": "phrasal-verb",
+    "level": 2,
+    "headword": "come back",
+    "definition": "to return to a place where you were before",
+    "example": "My father will {{come}} {{back}} from work at seven.",
+    "example2": "Come back soon, and tell me about the trip.",
+    "meanings": {
+      "ja": "戻ってくる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_7f8d7x7c",
@@ -625,6 +737,34 @@
     }
   },
   {
+    "id": "v_8g9s3p4x",
+    "category": "phrasal-verb",
+    "level": 7,
+    "headword": "play down",
+    "definition": "to make something seem less serious or important than it is",
+    "example": "The mayor tried to {{play}} {{down}} the risk of flooding.",
+    "example2": "He always plays down his own achievements.",
+    "meanings": {
+      "ja": "軽く見せる・控えめに言う"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_8k6j5e6y",
+    "category": "phrasal-verb",
+    "level": 7,
+    "headword": "sort out",
+    "definition": "to deal with a problem and find a solution",
+    "example": "I need to {{sort}} {{out}} my visa before I book the flight.",
+    "example2": "Let's sort this out like adults.",
+    "meanings": {
+      "ja": "解決する・整理する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_8k7v4s2x",
     "category": "phrasal-verb",
     "level": 3,
@@ -650,6 +790,34 @@
     }
   },
   {
+    "id": "v_8q4k2u7x",
+    "category": "phrasal-verb",
+    "level": 9,
+    "headword": "rein in",
+    "definition": "to control something so that it does not grow too far or too fast",
+    "example": "The new manager tried to {{rein}} {{in}} the team's spending.",
+    "example2": "It is hard to rein in your temper after a long day.",
+    "meanings": {
+      "ja": "抑制する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_8t4c5s7z",
+    "category": "phrasal-verb",
+    "level": 1,
+    "headword": "look at",
+    "definition": "to turn your eyes toward something and see it",
+    "example": "Please {{look}} {{at}} the board.",
+    "example2": "She is looking at a picture.",
+    "meanings": {
+      "ja": "〜を見る"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_8y4a2t7q",
     "category": "phrasal-verb",
     "level": 8,
@@ -673,6 +841,48 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_8z6j5z9s",
+    "category": "phrasal-verb",
+    "level": 7,
+    "headword": "pull off",
+    "definition": "to succeed in doing something difficult that others thought was unlikely",
+    "example": "Nobody believed she could {{pull}} {{off}} such a big event alone.",
+    "example2": "The band pulled off a brilliant show despite the rain.",
+    "meanings": {
+      "ja": "やってのける"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_9b6u2z3u",
+    "category": "phrasal-verb",
+    "level": 5,
+    "headword": "fill out",
+    "definition": "to write the needed information in all the spaces of a form",
+    "example": "Please {{fill}} {{out}} this form before you see the doctor.",
+    "example2": "I filled out the application online last night.",
+    "meanings": {
+      "ja": "記入する"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_9b7a3q9z",
+    "category": "phrasal-verb",
+    "level": 2,
+    "headword": "put away",
+    "definition": "to move something back to the place where it is kept",
+    "example": "After dinner, I {{put}} the dishes {{away}}.",
+    "example2": "Put your toys away, please.",
+    "meanings": {
+      "ja": "片づける"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_9e4y6u6f",
@@ -750,6 +960,20 @@
     }
   },
   {
+    "id": "v_9j9y8n9t",
+    "category": "phrasal-verb",
+    "level": 10,
+    "headword": "hash out",
+    "definition": "to talk about a problem in detail until you reach an agreement",
+    "example": "They spent two hours trying to {{hash}} {{out}} the final terms.",
+    "example2": "Let's hash this out over lunch.",
+    "meanings": {
+      "ja": "徹底的に話し合って決める"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_9k8s7q4q",
     "category": "phrasal-verb",
     "level": 10,
@@ -773,6 +997,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_9r8w3p4j",
+    "category": "phrasal-verb",
+    "level": 5,
+    "headword": "throw away",
+    "definition": "to put something you do not want in the trash",
+    "example": "Don't {{throw}} that box {{away}}; I might need it for storage.",
+    "example2": "He threw away all his old notebooks when he moved.",
+    "meanings": {
+      "ja": "捨てる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_9w5r7y4u",

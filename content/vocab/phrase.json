@@ -1,5 +1,19 @@
 [
   {
+    "id": "v_2b6n6t8p",
+    "category": "phrase",
+    "level": 8,
+    "headword": "I stand corrected",
+    "definition": "said to admit politely that you were wrong after someone shows you",
+    "example": "A: The meeting was on Tuesday, not Monday.\nB: Oh, {{I}} {{stand}} {{corrected}}.",
+    "example2": "A: You said it was closed. It's open.\nB: I stand corrected, thanks.",
+    "meanings": {
+      "ja": "失礼、私の間違いでした"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_2k6g3h6b",
     "category": "phrase",
     "level": 9,
@@ -73,6 +87,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_3k3n7d9r",
+    "category": "phrase",
+    "level": 9,
+    "headword": "be that as it may",
+    "definition": "said to move on after you accept a point that does not change your view",
+    "example": "A: The plan is expensive, I admit.\nB: {{Be}} {{that}} {{as}} {{it}} {{may}}, we must act now.",
+    "example2": "A: He didn't mean any harm.\nB: Be that as it may, he should apologize.",
+    "meanings": {
+      "ja": "それはそうとしても"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_3k8t2v8b",
@@ -200,6 +228,20 @@
     }
   },
   {
+    "id": "v_3w4h8e9j",
+    "category": "phrase",
+    "level": 10,
+    "headword": "I hear you",
+    "definition": "said to show you understand someone's feelings, even if you may not agree",
+    "example": "A: I'm exhausted by all these meetings.\nB: {{I}} {{hear}} {{you}}.",
+    "example2": "A: Nobody listens to my ideas.\nB: I hear you, but let's try once more.",
+    "meanings": {
+      "ja": "気持ちはわかるよ"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_3y9n7g8h",
     "category": "phrase",
     "level": 5,
@@ -300,6 +342,34 @@
     }
   },
   {
+    "id": "v_4t2y7x8r",
+    "category": "phrase",
+    "level": 2,
+    "headword": "how are you?",
+    "definition": "a friendly question you ask when you meet someone to learn how they feel",
+    "example": "A: {{How}} {{are}} {{you}}?\nB: I'm fine, thanks.",
+    "example2": "A: Hi, Mike. How are you today?\nB: Pretty good, and you?",
+    "meanings": {
+      "ja": "お元気ですか？"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_4t5s2r2q",
+    "category": "phrase",
+    "level": 5,
+    "headword": "count me in",
+    "definition": "said to tell others that you want to join an activity",
+    "example": "A: We're going hiking on Saturday.\nB: {{Count}} {{me}} {{in}}!",
+    "example2": "A: Anyone up for pizza tonight?\nB: Count me in.",
+    "meanings": {
+      "ja": "私も参加します"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_4x4d2q7y",
     "category": "phrase",
     "level": 10,
@@ -325,6 +395,34 @@
     }
   },
   {
+    "id": "v_4y6b3u9w",
+    "category": "phrase",
+    "level": 9,
+    "headword": "that goes without saying",
+    "definition": "said when a fact is so obvious that it needs no mention",
+    "example": "A: Please keep the files private.\nB: {{That}} {{goes}} {{without}} {{saying}}.",
+    "example2": "That goes without saying, but please arrive on time.",
+    "meanings": {
+      "ja": "言うまでもありません"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_4z9p3k4w",
+    "category": "phrase",
+    "level": 2,
+    "headword": "no problem",
+    "definition": "said politely after someone thanks you or says sorry for a small thing",
+    "example": "A: Thanks for helping me with my bag.\nB: {{No}} {{problem}}.",
+    "example2": "A: Sorry I'm late.\nB: No problem. We just started.",
+    "meanings": {
+      "ja": "どういたしまして"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_5b2z6p6n",
     "category": "phrase",
     "level": 7,
@@ -348,6 +446,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_5e2x3m6p",
+    "category": "phrase",
+    "level": 10,
+    "headword": "I'll let you go",
+    "definition": "said at the end of a call to stop keeping the other person busy",
+    "example": "A: Anyway, that's all from me.\nB: Great, {{I'll}} {{let}} {{you}} {{go}}.",
+    "example2": "A: It was nice catching up.\nB: Same here. I'll let you go.",
+    "meanings": {
+      "ja": "そろそろ切りますね"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_5h8n5c2k",
@@ -425,6 +537,20 @@
     }
   },
   {
+    "id": "v_5x2c2p3m",
+    "category": "phrase",
+    "level": 2,
+    "headword": "see you soon",
+    "definition": "said when you leave someone you will meet again in a short time",
+    "example": "A: I have to go now.\nB: OK, {{see}} {{you}} {{soon}}!",
+    "example2": "A: Thanks for the visit.\nB: See you soon, Anna.",
+    "meanings": {
+      "ja": "また近いうちにね"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_5x2s5g7j",
     "category": "phrase",
     "level": 6,
@@ -475,6 +601,20 @@
     }
   },
   {
+    "id": "v_6a4g6v9t",
+    "category": "phrase",
+    "level": 8,
+    "headword": "if you say so",
+    "definition": "said when you doubt something but will not argue about it",
+    "example": "A: This road is definitely the fastest way.\nB: {{If}} {{you}} {{say}} {{so}}.",
+    "example2": "A: I'm sure it won't rain today.\nB: If you say so, but I'm taking an umbrella.",
+    "meanings": {
+      "ja": "あなたがそう言うなら"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_6e3c4p3w",
     "category": "phrase",
     "level": 2,
@@ -500,6 +640,20 @@
     }
   },
   {
+    "id": "v_6n5d3k3w",
+    "category": "phrase",
+    "level": 5,
+    "headword": "it depends",
+    "definition": "said when you cannot give a simple answer because other things matter",
+    "example": "A: Will you take the job?\nB: {{It}} {{depends}}. What's the salary?",
+    "example2": "A: Is the hotel expensive?\nB: It depends on the season.",
+    "meanings": {
+      "ja": "場合によります"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
     "id": "v_6p3b9p2t",
     "category": "phrase",
     "level": 3,
@@ -523,6 +677,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_6s8d8y9s",
+    "category": "phrase",
+    "level": 10,
+    "headword": "you're telling me",
+    "definition": "said to show you know exactly what the speaker means from your own bad experience",
+    "example": "A: This heat is unbearable.\nB: {{You're}} {{telling}} {{me}}!",
+    "example2": "A: Parking here is a nightmare.\nB: You're telling me. I circled for twenty minutes.",
+    "meanings": {
+      "ja": "まったくだよ、よくわかる"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_6u6m3n8c",
@@ -623,6 +791,34 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_7w4n6j8k",
+    "category": "phrase",
+    "level": 8,
+    "headword": "point taken",
+    "definition": "said to show you accept someone's criticism or argument",
+    "example": "A: You really should have called us first.\nB: {{Point}} {{taken}}. I'll call next time.",
+    "example2": "A: We can't afford that, you know.\nB: Point taken.",
+    "meanings": {
+      "ja": "ご指摘はごもっとも"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
+  },
+  {
+    "id": "v_7w6d6h9r",
+    "category": "phrase",
+    "level": 5,
+    "headword": "what a relief",
+    "definition": "said when a worry has just ended and you feel much calmer",
+    "example": "A: Your test results came back normal.\nB: {{What}} {{a}} {{relief}}!",
+    "example2": "A: The train is only five minutes late.\nB: What a relief. I thought I'd miss the meeting.",
+    "meanings": {
+      "ja": "ああ、ほっとした"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_8b2v2b2w",
@@ -773,6 +969,20 @@
         "at": "2026-10-02"
       }
     }
+  },
+  {
+    "id": "v_9n6u6f9t",
+    "category": "phrase",
+    "level": 9,
+    "headword": "you can say that again",
+    "definition": "said to agree very strongly with what someone has just said",
+    "example": "A: This traffic is terrible today.\nB: {{You}} {{can}} {{say}} {{that}} {{again}}!",
+    "example2": "A: That movie was way too long.\nB: You can say that again.",
+    "meanings": {
+      "ja": "まったくその通り"
+    },
+    "createdAt": "2026-10-02",
+    "stamps": {}
   },
   {
     "id": "v_9p5v9j3d",
